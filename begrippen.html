@@ -158,6 +158,16 @@
         'wijsh':'boekderwijsheid','sirach':'jezussirach','tob':'tobit','jdt':'judith','bar':'baruch',
     };
 
+    /** Maak alle refs in een tekstblok klikbaar (bv. binnen uitleg). */
+    function linkifyText(text) {
+        if (!text) return text;
+        // Match: Ps 18:3, "1 Kor 13:1", Joh 4:23 etc. — buiten bestaande <a>-tags.
+        return text.replace(/(\b(?:[123]\s)?[A-Z][a-zé]{1,9}\.?\s+\d+:\d+(?:[-,]\d+)*)/g, m => {
+            const link = refToLink(m);
+            return link.startsWith('<a') ? link : m;
+        });
+    }
+
     /** Maak een ref als "Ps 18:3" of "1 Kor 13:1" klikbaar naar /#slug/chapter */
     function refToLink(ref) {
         if (!ref) return '';
@@ -332,16 +342,16 @@
             meta = `Nave's Topical Bible — sleutel: <code>${escapeHTML(woord)}</code>`;
         } else if (source === 'Begrippen' && nlBegrippenIndex[woord.toLowerCase()]) {
             const e = nlBegrippenIndex[woord.toLowerCase()];
-            body = `<p>${escapeHTML(e.uitleg || '')}</p>`;
-            if (e.ref) body += `<p><strong>Referentie:</strong> ${refToLink(e.ref)}</p>`;
+            body = `<p>${linkifyText(escapeHTML(e.uitleg || ''))}</p>`;
+            if (e.ref) body += `<p style="color:var(--gold);font-size:13px;">${refToLink(e.ref)}</p>`;
             if (e.boeken && e.boeken.length) body += `<p class="begrip-boeken"><strong>Voorkomend in:</strong> ${e.boeken.map(escapeHTML).join(', ')}</p>`;
             meta = `Nederlandse begrippen-supplement (${e.categorie || 'begrip'})`;
         } else {
             // Fallback voor click op item zonder bron-info: gebruik huidige item-data
             const found = alleBegrippen.find(b => b.woord === woord);
             if (found) {
-                body = `<p>${escapeHTML(found.uitleg || '')}</p>`;
-                if (found.ref) body += `<p><strong>Referentie:</strong> ${refToLink(found.ref)}</p>`;
+                body = `<p>${linkifyText(escapeHTML(found.uitleg || ''))}</p>`;
+                if (found.ref) body += `<p style="color:var(--gold);font-size:13px;">${refToLink(found.ref)}</p>`;
                 meta = found.categorie || '';
             } else {
                 body = '<p style="color:#999;">Geen artikel gevonden.</p>';
