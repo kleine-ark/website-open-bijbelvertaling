@@ -67,19 +67,23 @@ const Opties = {
 
         // === Godsnaam ===
         if (this.state.godsnaam === 'klassiek') {
-            // Volgorde belangrijk: composiet eerst
+            // Volgorde belangrijk: composiet eerst, daarna prep+vocatief, daarna default
             out = this._replaceOutsideTags(out, [
                 [/\bGod JAHWEH\b/g, 'de HEERE God'],
-                [/\bvan JAHWEH\b/g, 'van de HEERE'],
-                [/\baan JAHWEH\b/g, 'aan de HEERE'],
-                [/\bvoor JAHWEH\b/g, 'voor de HEERE'],
-                [/\btot JAHWEH\b/g, 'tot de HEERE'],
-                [/\bdoor JAHWEH\b/g, 'door de HEERE'],
-                [/\bin JAHWEH\b/g, 'in de HEERE'],
-                [/\bmet JAHWEH\b/g, 'met de HEERE'],
-                [/\bbij JAHWEH\b/g, 'bij de HEERE'],
                 [/\bJAHWEH van de legermachten\b/g, 'de HEERE der heirscharen'],
-                [/\bJAHWEH\b/g, 'HEERE'],
+                // Voorzetsels: "op JAHWEH" → "op de HEERE"
+                [/\b(op|van|aan|voor|tot|door|in|met|bij|over|onder|naast|achter|jegens|uit|na|sinds) JAHWEH\b/gi, '$1 de HEERE'],
+                // Echte vocatief alleen na "O " of "o "
+                [/\b([Oo]) JAHWEH\b/g, '$1 HEERE'],
+                // JAHWEH! als uitroep blijft vocatief zonder "de"
+                [/\bJAHWEH!/g, 'HEERE!'],
+                // Begin van zin (na . ! ? of regel-begin): "De HEERE"
+                [/(^|[.!?]\s+)JAHWEH\b/g, '$1De HEERE'],
+                // Default mid-zin: "de HEERE"
+                [/\bJAHWEH\b/g, 'de HEERE'],
+                // Cleanup: "de de HEERE" → "de HEERE" (in geval voorzetsel ontbrak)
+                [/\bde de HEERE\b/g, 'de HEERE'],
+                [/\bDe de HEERE\b/g, 'De HEERE'],
             ]);
         } else if (this.state.godsnaam === 'jhwh') {
             out = this._replaceOutsideTags(out, [
