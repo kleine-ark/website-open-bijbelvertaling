@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uitgangspunten &amp; techniek — Open Vertaling v0.12</title>
+    <meta name="description" content="Technische details, vertaalregels en datamodel van de Open Vertaling.">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { display: block; background: #f8f6f2; }
+        .page { max-width: 900px; padding: 30px 24px 80px; font-family: var(--font-body); }
+        .page h1 { font-family: var(--font-cursive); font-size: 36px; color: var(--navy); font-weight: 400; margin-bottom: 4px; }
+        .page .subtitle { color: var(--teal); font-size: 14px; margin-bottom: 24px; }
+        .page h2 { color: var(--navy); font-family: var(--font-cursive); font-size: 28px; font-weight: 400; margin: 36px 0 12px; border-bottom: 2px solid var(--gold); padding-bottom: 6px; scroll-margin-top: 60px; }
+        .page h3 { color: var(--teal); font-size: 16px; font-weight: 600; margin: 22px 0 6px; }
+        .page p, .page li { line-height: 1.7; margin-bottom: 6px; }
+        .page ul, .page ol { padding-left: 22px; margin-bottom: 14px; }
+        .page code { background: #f0ede8; padding: 2px 6px; border-radius: 3px; font-size: 13px; color: var(--navy); }
+        .page pre { background: var(--navy); color: #e0dcd4; padding: 14px; border-radius: 6px; overflow-x: auto; font-size: 12px; line-height: 1.5; margin: 10px 0 14px; }
+        .page table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 13px; }
+        .page th { background: var(--navy); color: #fff; padding: 7px 10px; text-align: left; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; }
+        .page td { padding: 5px 10px; border: 1px solid var(--border); color: #333; }
+        .page tr:nth-child(even) { background: rgba(146,182,180,0.06); }
+        .principle-box { background: rgba(146,182,180,0.12); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 11px 15px; margin: 10px 0; border-radius: 0 4px 4px 0; }
+        .principle-box strong { color: var(--navy); }
+        .toc { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px 20px; margin-bottom: 24px; }
+        .toc h3 { margin: 0 0 6px; font-size: 13px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; }
+        .toc ol { columns: 2; column-gap: 24px; padding-left: 20px; margin: 0; font-size: 13px; }
+        .toc a { color: var(--navy); text-decoration: none; }
+        .toc a:hover { color: var(--gold); }
+        .section-divider { border: none; border-top: 1px dashed var(--border); margin: 36px 0 0; }
+        .section-divider + h2 { margin-top: 18px; }
+        @media all {
+            body.in-iframe #topnav { display: none !important; }
+            body.in-iframe nav[style*="width:220px"] { display: none !important; }
+            body.in-iframe div[style*="display:flex;min-height"] { display: block !important; }
+            body.in-iframe { min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+<nav id="topnav" style="display:flex;align-items:center;background:#142e42;color:#fff;padding:0 30px;height:52px;font-family:'Fira Sans',sans-serif;position:sticky;top:0;z-index:300;">
+    <div style="font-family:'Allura',cursive;font-size:28px;color:#fff;">Open Vertaling<span class="topnav-subtitle"> Public Domain herziening van de SV1637</span> <span style="font-family:'Fira Sans';font-size:10px;font-weight:600;background:rgba(203,164,73,0.25);color:#cba449;padding:1px 6px;border-radius:3px;vertical-align:middle;margin-left:4px;"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.13.3</a></span></div>
+    <div style="display:flex;gap:2px;margin:0 auto;">
+        <a href="over-ov.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Over OV</a>
+        <a href="/" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Tekst</a>
+        <a href="wiki.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Wiki</a>
+        <a href="contact.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Contact</a>
+    </div>
+</nav>
+<div style="display:flex;min-height:calc(100vh - 52px);">
+    <nav style="width:220px;min-width:220px;background:#f5f2ed;border-right:1px solid #e5e1d8;padding:20px 0;font-family:'Fira Sans',sans-serif;font-size:14px;">
+        <div style="padding:0 16px 12px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;">Documentatie</div>
+        <a href="uitgangspunten.html" style="display:block;padding:8px 20px;color:#142e42;text-decoration:none;font-weight:600;border-left:3px solid #cba449;background:rgba(203,164,73,0.08);">Uitgangspunten &amp; techniek</a>
+        <a href="principes.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Wijzigingsprincipes</a>
+        <a href="statistieken.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Statistieken</a>
+        <a href="begrippen.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Begrippen</a>
+        <a href="changelog.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Changelog</a>
+            <div style="padding:12px 16px 8px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;margin-top:12px;">Lexicons</div>
+        <a href="lexicon-bdb.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Hebreeuws (BDB)</a>
+        <a href="lexicon-abbott.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Grieks (Abbott-Smith)</a>
+    </nav>
+
+    <div class="page" style="flex:1;">
+        <h1>Uitgangspunten &amp; techniek</h1>
+        <p class="subtitle">technische details + werkwijze</p>
+
+        <div class="principle-box" style="background:rgba(203,164,73,0.08);">
+            Visie, achtergrond en licentie staan op <a href="over-ov.html"><strong>Over OV</strong></a>.
+            Deze pagina behandelt de <em>technische uitwerking</em>: vertaalregels in detail, kanttekeningen-beleid,
+            datamodel, scripts en bronnen.
+        </div>
+
+        <div class="toc">
+            <h3>Inhoud</h3>
+            <ol>
+                <li><a href="#vertaalprincipes">Vertaalprincipes (detail)</a></li>
+                <li><a href="#wat-wijzigt">Wat wordt gewijzigd (tabel)</a></li>
+                <li><a href="#wat-blijft">Wat blijft behouden</a></li>
+                <li><a href="#godsnamen">Godsnamen</a></li>
+                <li><a href="#brontekst">Brontekstkeuze</a></li>
+                <li><a href="#kanttekeningen">Kanttekeningen-beleid</a></li>
+                <li><a href="#opmaak">Opmaak &amp; directe rede</a></li>
+                <li><a href="#theologie">Theologische keuzes</a></li>
+                <li><a href="#datamodel">Datamodel</a></li>
+                <li><a href="#phrase-diff">Phrase-level diff</a></li>
+                <li><a href="#grondtekst-lexicons">Grondtekst &amp; lexicons</a></li>
+                <li><a href="#begrippen-encyclopedie">Begrippen &amp; encyclopedie</a></li>
+                <li><a href="#scripts">Scripts &amp; API</a></li>
+                <li><a href="#bronnen">Bronnen &amp; licenties</a></li>
+            </ol>
+        </div>
+
+        <h2 id="vertaalprincipes">1. Vertaalprincipes (detail)</h2>
+        <p>Het kernprincipe — SV1888 als vertrekpunt, letterlijkheid boven leesbaarheid — is beschreven op
+        <a href="over-ov.html">Over OV</a>. Hieronder de praktische uitwerking.</p>
+
+        <h3>Positie in het spectrum</h3>
+        <div class="principle-box">
+            SV 1637 → SV 1888 → <strong><em>Open Vertaling</em></strong> → NBG-51 → HSV → EBV → NBV-21
+        </div>
+        <p>Conserve­render dan HSV, vrijer dan SV1888.</p>
+
+        <h3>Hebreeuwse versterkingen</h3>
+        <p>Letterlijk vertalen, niet glad strijken: <code>mot tamut</code> → <em>"de dood sterven"</em>
+        (niet "zeker sterven"). De infinitivus absolutus blijft staan; de Hebreeuwse retoriek is
+        onderdeel van de boodschap.</p>
+
+        <h3>Aanspreekvorm</h3>
+        <p>Altijd <strong>u/uw</strong>, nooit jij/je/jou/jouw — voor God, mensen en dieren. Geen
+        straattaal, wel gewoon hedendaags.</p>
+
+        <h3>Zinsbouw</h3>
+        <div class="principle-box">
+            Volg de zinsbouw van de SV1888 zo nauw mogelijk. Splits lange zinnen niet op en voeg geen
+            woorden toe die niet in de brontekst staan. De zinsopbouw mag <em>krom</em> zijn naar
+            moderne maatstaven; de oorspronkelijke structuur weegt zwaarder dan vloeiend modern proza.
+        </div>
+
+        <h2 id="wat-wijzigt">2. Wat wordt gewijzigd (tabel)</h2>
+        <p>Een hoog-niveau overzicht van wijzigingsgebieden staat op <a href="over-ov.html">Over OV</a>.
+        De volledige, genummerde lijst staat in de <a href="principes.html">Wijzigingsprincipes</a>.
+        Hieronder de hoofdcategorieën met concrete voorbeelden per regel.</p>
+
+        <table>
+            <thead><tr><th>Categorie</th><th>SV1888</th><th>Open Vertaling</th><th>Toelichting</th></tr></thead>
+            <tbody>
+                <tr><td rowspan="3"><strong>Naamvallen</strong></td><td>den / der / des</td><td>de / van de / van het</td><td>Niet meer begrepen</td></tr>
+                <tr><td>dien / dezen / denzelven</td><td>die / deze</td><td>Verwijzende naamvallen</td></tr>
+                <tr><td>Mijns Vaders / Lam Gods</td><td>van Mijn Vader / Lam van God</td><td>Genitief-modernisering</td></tr>
+                <tr><td rowspan="3"><strong>Werkwoordsvormen</strong></td><td>zeide / waart / zijt</td><td>zei / was / bent</td><td>"zeiden" blijft</td></tr>
+                <tr><td>kendet / geloofdet / wetet</td><td>kende / geloofde / weet</td><td>2e persoon-uitgangen</td></tr>
+                <tr><td>vlieden / schreien / verried</td><td>vluchten / huilen / verraadde</td><td>Verouderde werkwoorden</td></tr>
+                <tr><td><strong>Aanspreekvorm</strong></td><td>gij / Gij</td><td>u / U</td><td>Consequent u-vorm</td></tr>
+                <tr><td><strong>Godsnaam</strong></td><td>(de) HEERE / des HEEREN</td><td>JAHWEH / van JAHWEH</td><td>Tetragrammaton (יהוה)</td></tr>
+                <tr><td rowspan="6"><strong>Verouderde woorden</strong></td><td>weder / henen / klederen</td><td>weer / heen / kleren</td><td>Bijwoorden, meervouden</td></tr>
+                <tr><td>spijze / ledig / haastelijk</td><td>voedsel / leeg / haastig</td><td>Inhoudswoorden, bijwoorden</td></tr>
+                <tr><td>elkander / malkanderen</td><td>elkaar</td><td>Wederkerig vnw</td></tr>
+                <tr><td>dewijl / mitsgaders / overmits</td><td>omdat / en ook / aangezien</td><td>Verouderde voegwoorden</td></tr>
+                <tr><td>terstond / voorwaar (niet-zegen)</td><td>meteen / werkelijk</td><td>Bijwoorden</td></tr>
+                <tr><td>gelijkerwijs / desgelijks / iegelijk</td><td>zoals / evenzo / iedereen</td><td>Vormwoorden</td></tr>
+                <tr><td><strong>Spelling</strong></td><td>Habel / Neen / altemaal</td><td>Abel / Nee / allemaal</td><td>Gangbare moderne vormen</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="wat-blijft">3. Wat blijft behouden</h2>
+        <p>Bewust onaangetast (theologisch geladen, vast bijbels register, of zegensformule). Een korte
+        introductie hierop staat op <a href="over-ov.html">Over OV</a>; hieronder de volledige lijst:</p>
+        <div class="principle-box">
+            <strong>Heere</strong> (= Adonai, niet HEERE/JHWH), <strong>duisternis</strong>, <strong>Zijnen</strong>,
+            <strong>voorwaar</strong> (in zegens en plechtige uitspraken), de uitdrukking <em>"en het geschiedde"</em>,
+            <strong>Manninne</strong>, <strong>aankleven</strong> (Gen. 2:24), <strong>geboomte / gevogelte / gedierte</strong>
+            (Gen. 1), <strong>uitspansel</strong>, <strong>vermenigvuldigen</strong>, <strong>geest</strong>
+            (kleine letter waar πνεῦμα over de menselijke geest gaat).
+        </div>
+
+        <h2 id="godsnamen">4. Godsnamen</h2>
+        <h3>Oude Testament</h3>
+        <table>
+            <thead><tr><th>Statenvertaling</th><th>Open Vertaling</th><th>Hebreeuws</th></tr></thead>
+            <tbody>
+                <tr><td>HEERE</td><td>JAHWEH</td><td>יהוה (JHWH)</td></tr>
+                <tr><td>God</td><td>God</td><td>אלהים (Elohim)</td></tr>
+                <tr><td>de HEERE God</td><td><strong>God JAHWEH</strong></td><td>יהוה אלהים — Elohim eerst, dan de Naam</td></tr>
+                <tr><td>Heere HEERE</td><td>Adonai JAHWEH</td><td>אדני יהוה</td></tr>
+                <tr><td>Heere (= Adonai)</td><td>Heere</td><td>אדני — NIET JAHWEH; andere titel</td></tr>
+                <tr><td>HEERE der heirscharen</td><td>JAHWEH van de legermachten</td><td>יהוה צבאות</td></tr>
+                <tr><td>God de Almachtige</td><td>El Shaddai</td><td>אל שדי</td></tr>
+                <tr><td>God de Allerhoogste</td><td>El Elyon</td><td>אל עליון</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Nieuwe Testament</h3>
+        <table>
+            <thead><tr><th>Statenvertaling</th><th>Open Vertaling</th><th>Grieks</th></tr></thead>
+            <tbody>
+                <tr><td>Heere (in OT-citaten = God)</td><td>JAHWEH [Kurios]</td><td>Κύριος</td></tr>
+                <tr><td>Heere (= Jezus)</td><td>Heer [Kurios]</td><td>Κύριος</td></tr>
+                <tr><td>God</td><td>God [Theos]</td><td>Θεός</td></tr>
+                <tr><td>Christus</td><td>Christus [Christos]</td><td>Χριστός</td></tr>
+                <tr><td>Jezus</td><td>Jezus [Ièsous]</td><td>Ἰησοῦς</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="brontekst">5. Brontekstkeuze</h2>
+        <h3>Oude Testament</h3>
+        <div class="principle-box">
+            Primair: <strong>BHS/BHQ</strong> (Codex Leningradensis). Dode Zeerollen- en LXX-varianten
+            worden in kanttekeningen vermeld waar relevant.
+        </div>
+        <h3>Nieuwe Testament</h3>
+        <div class="principle-box">
+            Primair: <strong>NA28/ECM</strong>. Waar de SV een TR-lezing volgt die niet in de oudste
+            handschriften staat, wordt de NA28-lezing overgenomen. De TR-lezing wordt in de kanttekening
+            vermeld.
+        </div>
+
+        <h2 id="kanttekeningen">6. Kanttekeningen-beleid</h2>
+        <div class="principle-box">
+            Kanttekeningen worden <strong>minder ingrijpend</strong> herzien dan de bijbeltekst. Inhoudelijk
+            zo dicht mogelijk bij het origineel. Alleen spelling en onbegrijpelijke formuleringen
+            moderniseren. Theologische lading blijft, behalve tijdsgebonden disputen.
+        </div>
+        <h3>Geen nuancering op Gods Woord</h3>
+        <p>Formuleringen die Gods Woord nuanceren of relativeren worden verwijderd. Bijvoorbeeld
+        <em>"Op menselijke wijze over God gesproken"</em> bij Gen. 8:1 (<em>"En God gedacht aan Noach"</em>)
+        suggereert dat de tekst eigenlijk iets anders bedoelt dan wat er staat.</p>
+        <h3>Hertaalregels (uittreksel)</h3>
+        <ul>
+            <li><code>D.</code> → <em>Dat wil zeggen:</em> &nbsp;|&nbsp; <code>T.w. / N.</code> → <em>Namelijk</em></li>
+            <li><code>HEERE / IEHOVAH / Jehova / JahWeh</code> → altijd <strong>JAHWEH</strong></li>
+            <li><code>hel</code> → <code>dodenrijk</code> in OT (Sheol consequent)</li>
+            <li>Bijbelverwijzingen worden klikbaar; <code>Gen. 2.1</code> → <code>Gen. 2:1</code></li>
+            <li>Hebreeuwse/Griekse woorden voluit + transliteratie:
+                <em>"Hebr. nefesh (נֶפֶשׁ), ziel"</em>, <em>"Gr. kosmos (κόσμος), wereld"</em></li>
+            <li>Boekafkortingen moderniseren: <code>Psal.</code>→<code>Ps.</code>, <code>Actor.</code>→<code>Hand.</code>, etc.</li>
+            <li>Tijdsgebonden disputen vermijden (Contraremonstranten–Remonstranten, anti-katholieke polemiek)</li>
+        </ul>
+        <p>Gebruik <code>/hertaal-kanttekeningen &lt;boek&gt; &lt;hoofdstuk&gt;</code> om kanttekeningen
+        per hoofdstuk geautomatiseerd te hertalen.</p>
+
+        <h2 id="opmaak">7. Opmaak &amp; directe rede</h2>
+        <ul>
+            <li><strong>Woorden van God / Jezus / de Heilige Geest:</strong> <span style="color:#c0392b;font-style:italic;">"rood cursief, tussen aanhalingstekens"</span> — class <code>god-speaks</code></li>
+            <li><strong>Directe rede van mensen:</strong> <em>"cursief, tussen aanhalingstekens"</em> — class <code>direct-speech</code></li>
+            <li><strong>Kanttekening-markers:</strong> superscript-nummers/letters, klikbaar</li>
+        </ul>
+        <p>Citaten worden gemarkeerd via een <strong>segment-gebaseerd speech-v2 systeem</strong>
+        (<code>data/speech-v2/&lt;boek&gt;.json</code>) met text-fragment anchors (<code>start_after</code>,
+        <code>start_at</code>, <code>end_at</code>). Doorlopende citaten over meerdere verzen worden
+        expliciet gekoppeld via <code>continues</code> / <code>continued</code>.</p>
+
+        <h2 id="theologie">8. Theologische keuzes</h2>
+        <ul>
+            <li><strong>Dodenrijk:</strong> "dodenrijk" i.p.v. "hel" in het OT (Sheol consequent vertaald)</li>
+            <li><strong>geest vs Geest:</strong> kleine letter bij menselijke geest of houding (<em>"geest van slavernij"</em>); hoofdletter bij Heilige Geest</li>
+            <li><strong>"wereld" (kosmos):</strong> niet verengen — Joh. 3:16 etc.</li>
+            <li><strong>Spreuken 8:</strong> Wijsheid gemarkeerd als <em>citaat van Jezus</em> (pre-incarnatie)</li>
+            <li><strong>Geen confessionele positie</strong> in verbonds- of dooptheologie; meerdere lezingen worden eerlijk naast elkaar gepresenteerd (Hand. 13:48, Rom. 8–9)</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h2 id="datamodel">9. Datamodel</h2>
+        <div class="principle-box">
+            <strong>JSON als single source of truth.</strong> Per boek één bestand
+            <code>data/&lt;boek&gt;.json</code> met de volledige hoofdstuk- en versdata. SQLite wordt
+            alleen nog gebruikt voor schilderijen en zoeken.
+        </div>
+
+        <h3>Structuur per vers</h3>
+        <pre>{
+  "number": 1,
+  "ref": "bibgene001:01",
+  "text1637": "INDEN [1] [a] beginne [2] schiep Godt...",
+  "text1637_html": "&lt;i&gt;INDEN&lt;/i&gt; &lt;sup...&gt;1&lt;/sup&gt;...",
+  "textSV1888": "In den beginne schiep God den hemel...",
+  "text2026": "In het begin schiep God de hemel...",
+  "text2026_html": "In het begin &lt;sup class=\"note-marker\"&gt;...&lt;/sup&gt;",
+  "status": "final",                       // empty / draft / review / final
+  "grondtekst": [
+    {"woord": "בְּ/רֵאשִׁ֖ית", "strongs": "H7225", "morph": "HR/Ncfsa"},
+    ...
+  ],
+  "marginNotes": [
+    {"marker": "1", "type": "explanatory",
+     "text1637": "Des tijts der scheppinge...",
+     "text2026": "Van de tijd van de schepping..."}
+  ],
+  "phraseDiff": [
+    {"old": "den beginne", "new": "het begin"}
+  ]
+}</pre>
+
+        <h3>Edities</h3>
+        <table>
+            <thead><tr><th>Code</th><th>Beschrijving</th><th>Bron</th></tr></thead>
+            <tbody>
+                <tr><td><code>1637</code></td><td>Statenvertaling 1637 (origineel)</td><td>GBS / statenvertaling.net</td></tr>
+                <tr><td><code>sv1888</code></td><td>Statenvertaling 1888 (Tukker-spelling)</td><td>statenvertaling.net</td></tr>
+                <tr><td><code>2026</code></td><td>Open Vertaling (eigen werk)</td><td>CC0</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="phrase-diff">10. Phrase-level diff</h2>
+        <p>Per vers wordt een woord-/frasewijziging-overzicht berekend tussen SV1888 en Open Vertaling.
+        De diff staat als <code>phraseDiff</code> in elke vers-JSON.</p>
+        <h3>Algoritme (<code>scripts/phrase_diff.py</code>)</h3>
+        <ol>
+            <li><strong>Preprocessing:</strong> bekende vervangingen worden eerst geïdentificeerd en met placeholders vervangen</li>
+            <li><strong>LCS:</strong> Longest Common Subsequence op de overgebleven tokens</li>
+            <li><strong>Groepering:</strong> niet-matchende tokens worden tot phrase-blokken samengevoegd</li>
+        </ol>
+
+        <h2 id="grondtekst-lexicons">11. Grondtekst &amp; lexicons</h2>
+        <table>
+            <thead><tr><th>Bron</th><th>Testament</th><th>Dekking</th><th>Licentie</th></tr></thead>
+            <tbody>
+                <tr><td>Open Scriptures Hebrew Bible (OSHB)</td><td>OT</td><td>39 boeken</td><td>CC BY 4.0</td></tr>
+                <tr><td>Open Greek New Testament (OGNT)</td><td>NT</td><td>27 boeken</td><td>CC BY-NC-ND 4.0</td></tr>
+                <tr><td>BDB Hebrew Lexicon (1906)</td><td>OT</td><td>~8.700 entries</td><td>Publiek domein</td></tr>
+                <tr><td>Abbott-Smith Greek Lexicon (1922)</td><td>NT</td><td>~5.600 entries</td><td>Publiek domein</td></tr>
+                <tr><td>Septuaginta (LXX)</td><td>OT-Grieks</td><td>met Strong's + glosses</td><td>CC BY 4.0</td></tr>
+            </tbody>
+        </table>
+        <p>Doorzoekbare lexicons: <a href="lexicon-bdb.html">Hebreeuws (BDB)</a> en <a href="lexicon-abbott.html">Grieks (Abbott-Smith)</a>.</p>
+
+        <h2 id="begrippen-encyclopedie">12. Begrippen &amp; encyclopedie</h2>
+        <ul>
+            <li><strong>Begrippenlijsten per boek:</strong> 29 boeken (Genesis, Psalmen, hele NT) met circa
+                3.300 entries — bijbelse begrippen, plaatsen, personen, verklaard in context van het boek
+                (zie <a href="begrippen.html">Begrippen</a>)</li>
+            <li><strong>Encyclopedie:</strong> 8.842 artikelen uit Easton's Bible Dictionary en Nave's Topical Bible,
+                met AI-gegenereerde Nederlandse samenvattingen</li>
+        </ul>
+
+        <h2 id="scripts">13. Scripts &amp; API</h2>
+        <h3>Lokale server</h3>
+        <pre>python3 server.py 8888</pre>
+        <p>Python HTTP-server met JSON-API en statische bestanden.</p>
+
+        <h3>Belangrijkste API-endpoints</h3>
+        <table>
+            <thead><tr><th>Endpoint</th><th>Beschrijving</th></tr></thead>
+            <tbody>
+                <tr><td><code>GET /data/&lt;boek&gt;.json</code></td><td>Volledig boek (hoofdstukken + verzen)</td></tr>
+                <tr><td><code>GET /data/books.json</code></td><td>Boeken-manifest</td></tr>
+                <tr><td><code>GET /data/begrippenlijst-INDEX.json</code></td><td>Index van begrippenlijsten</td></tr>
+                <tr><td><code>GET /api/paintings?book=X&amp;ch=N</code></td><td>Schilderijen bij hoofdstuk</td></tr>
+                <tr><td><code>GET /api/search?q=X</code></td><td>Zoek in alle tekstedities</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Belangrijkste scripts</h3>
+        <table>
+            <thead><tr><th>Script</th><th>Functie</th></tr></thead>
+            <tbody>
+                <tr><td><code>apply_uitgangspunten_all.py</code></td><td>Past wijzigingsprincipes toe op alle boeken</td></tr>
+                <tr><td><code>apply_speech_v2.py</code></td><td>Past speech-v2 markup toe (God / mens / Jezus)</td></tr>
+                <tr><td><code>generate_diffs_with_principes.py</code></td><td>Phrase-diff + koppeling met principe-IDs</td></tr>
+                <tr><td><code>place_note_markers.py</code></td><td>Kanttekening-nummers in HTML positioneren</td></tr>
+                <tr><td><code>add_grondtekst_all.py</code></td><td>Strong's nummers toevoegen aan verzen</td></tr>
+                <tr><td><code>export_static_html.py</code></td><td>Statische HTML genereren voor export</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="bronnen">14. Bronnen &amp; licenties</h2>
+        <table>
+            <thead><tr><th>Bron</th><th>Wat</th><th>Licentie</th></tr></thead>
+            <tbody>
+                <tr><td>Statenvertaling 1637</td><td>Bijbeltekst + kanttekeningen</td><td>Publiek domein</td></tr>
+                <tr><td>statenvertaling.net</td><td>SV1888 tekst + kanttekeningen + 815 schilderijen</td><td>Publiek domein</td></tr>
+                <tr><td>OSHB (GitHub)</td><td>Hebreeuwse grondtekst + morfologie</td><td>CC BY 4.0</td></tr>
+                <tr><td>OGNT (GitHub)</td><td>Griekse grondtekst + morfologie</td><td>CC BY-NC-ND 4.0</td></tr>
+                <tr><td>BDB Lexicon</td><td>Hebreeuws lexicon</td><td>Publiek domein (1906)</td></tr>
+                <tr><td>Abbott-Smith</td><td>Grieks lexicon</td><td>Publiek domein (1922)</td></tr>
+                <tr><td>Easton's Bible Dictionary</td><td>Encyclopedie (3.802 artikelen)</td><td>Publiek domein</td></tr>
+                <tr><td>Nave's Topical Bible</td><td>Encyclopedie (5.040 onderwerpen)</td><td>Publiek domein</td></tr>
+                <tr><td><strong>Open Vertaling</strong></td><td>Eigen vertaalwerk + samenvattingen</td><td><strong>CC0 (publiek domein)</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

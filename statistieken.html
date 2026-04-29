@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistieken — Open Vertaling v0.12</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .stats-page { max-width: 1000px; margin: 0 auto; padding: 20px 20px 60px; font-family: var(--font-body); }
+        .stats-page h1 { color: var(--navy); font-family: var(--font-cursive); font-size: 32px; font-weight: 400; margin-bottom: 4px; }
+        .stats-page .subtitle { color: var(--teal); font-size: 14px; margin-bottom: 30px; }
+        .stats-page h2 { color: var(--navy); font-size: 20px; margin: 32px 0 12px; border-bottom: 2px solid var(--gold); padding-bottom: 6px; }
+        .stats-page h3 { color: var(--teal); font-size: 16px; margin: 24px 0 8px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0; }
+        .stat-card {
+            background: #fff; border: 1px solid var(--border); border-radius: 10px;
+            padding: 20px; text-align: center;
+        }
+        .stat-number { font-size: 32px; font-weight: 700; color: var(--navy); }
+        .stat-label { font-size: 13px; color: var(--teal); margin-top: 4px; font-family: var(--font-body); }
+        .stat-card.gold { border-left: 4px solid var(--gold); }
+        .stat-card.teal { border-left: 4px solid var(--teal); }
+        .stat-card.red { border-left: 4px solid #c0392b; }
+
+        .book-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+        .book-table th { background: var(--navy); color: #fff; padding: 8px 10px; text-align: left; font-weight: 500; }
+        .book-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); }
+        .book-table tr:hover { background: rgba(203,164,73,0.06); }
+        .book-table tr:nth-child(even) { background: rgba(146,182,180,0.05); }
+
+        .back-link { display: inline-block; margin-bottom: 16px; color: var(--teal); text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: var(--gold); }
+    </style>
+    <style>
+        @media all {
+            body.in-iframe #topnav { display: none !important; }
+            body.in-iframe nav[style*="width:220px"] { display: none !important; }
+            body.in-iframe div[style*="display:flex;min-height"] { display: block !important; }
+            body.in-iframe { min-height: auto; }
+        }
+    </style>
+</head>
+<body style="display:block;">
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+<nav id="topnav" style="display:flex;align-items:center;background:#142e42;color:#fff;padding:0 30px;height:52px;font-family:'Fira Sans',sans-serif;position:sticky;top:0;z-index:300;">
+    <div style="font-family:'Allura',cursive;font-size:28px;color:#fff;">Open Vertaling<span class="topnav-subtitle"> Public Domain herziening van de SV1637</span> <span style="font-family:'Fira Sans';font-size:10px;font-weight:600;background:rgba(203,164,73,0.25);color:#cba449;padding:1px 6px;border-radius:3px;vertical-align:middle;margin-left:4px;"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.13.3</a></span></div>
+    <div style="display:flex;gap:2px;margin:0 auto;">
+        <a href="over-ov.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Over OV</a>
+        <a href="/" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Tekst</a>
+        <a href="wiki.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Wiki</a>
+        <a href="contact.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Contact</a>
+    </div>
+</nav>
+<div style="display:flex;min-height:calc(100vh - 52px);">
+    <!-- Side navigation -->
+                    <nav style="width:220px;min-width:220px;background:#f5f2ed;border-right:1px solid #e5e1d8;padding:20px 0;font-family:'Fira Sans',sans-serif;font-size:14px;">
+            <div style="padding:0 16px 12px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;">Documentatie</div>
+            <a href="uitgangspunten.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Uitgangspunten &amp; techniek</a>
+            <a href="principes.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Wijzigingsprincipes</a>
+            <a href="statistieken.html" style="display:block;padding:8px 20px;color:#142e42;text-decoration:none;font-weight:600;border-left:3px solid #cba449;background:rgba(203,164,73,0.08);">Statistieken</a>
+            <a href="begrippen.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Begrippen</a>
+            <a href="changelog.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Changelog</a>
+            <div style="padding:12px 16px 8px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;margin-top:12px;">Lexicons</div>
+            <a href="lexicon-bdb.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Hebreeuws (BDB)</a>
+            <a href="lexicon-abbott.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Grieks (Abbott-Smith)</a>
+        </nav>
+<div class="stats-page" style="flex:1;">
+    <h1>Statistieken</h1>
+    <p class="subtitle">Laatst bijgewerkt: 29 april 2026</p>
+
+    <h2>Omvang</h2>
+    <div class="stat-grid">
+        <div class="stat-card gold">
+            <div class="stat-number">82</div>
+            <div class="stat-label">Bijbelboeken (incl. apocriefen)</div>
+        </div>
+        <div class="stat-card gold">
+            <div class="stat-number">1.370</div>
+            <div class="stat-label">Hoofdstukken</div>
+        </div>
+        <div class="stat-card gold">
+            <div class="stat-number">37.235</div>
+            <div class="stat-label">Verzen</div>
+        </div>
+        <div class="stat-card gold">
+            <div class="stat-number">69.129</div>
+            <div class="stat-label">Kanttekeningen</div>
+        </div>
+    </div>
+
+    <h2>Vertaalwerk</h2>
+    <div class="stat-grid">
+        <div class="stat-card teal">
+            <div class="stat-number">63.193</div>
+            <div class="stat-label">Woordwijzigingen (SV1888 &rarr; OV)</div>
+        </div>
+        <div class="stat-card teal">
+            <div class="stat-number">27.953</div>
+            <div class="stat-label">Verzen met wijzigingen</div>
+        </div>
+        <div class="stat-card teal">
+            <div class="stat-number">75.1%</div>
+            <div class="stat-label">Verzen gewijzigd t.o.v. SV1888</div>
+        </div>
+        <div class="stat-card teal">
+            <div class="stat-number">69.129</div>
+            <div class="stat-label">Kanttekeningen hertaald</div>
+        </div>
+    </div>
+
+    <h2>Sprekers (speech&#8209;v2)</h2>
+    <div class="stat-grid">
+        <div class="stat-card red">
+            <div class="stat-number">18.008</div>
+            <div class="stat-label">Verzen met spreker-markering</div>
+        </div>
+        <div class="stat-card red">
+            <div class="stat-number">18.677</div>
+            <div class="stat-label">Spreker-segmenten (God + mens)</div>
+        </div>
+        <div class="stat-card red">
+            <div class="stat-number">82</div>
+            <div class="stat-label">Boeken met speech-data</div>
+        </div>
+    </div>
+
+    <h2>Grondtekst</h2>
+    <div class="stat-grid">
+        <div class="stat-card">
+            <div class="stat-number">441.868</div>
+            <div class="stat-label">Hebreeuwse/Griekse bronwoorden</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">BDB + Abbott-Smith</div>
+            <div class="stat-label">Lexicons (Hebreeuws + Grieks)</div>
+        </div>
+    </div>
+
+    <h2>Begrippen &amp; encyclopedie</h2>
+    <div class="stat-grid">
+        <div class="stat-card gold">
+            <div class="stat-number">6.976</div>
+            <div class="stat-label">Begrippen in begrippenlijsten (29 boeken)</div>
+        </div>
+        <div class="stat-card gold">
+            <div class="stat-number">12.981</div>
+            <div class="stat-label">Encyclopedie-entries (totaal)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">3.802</div>
+            <div class="stat-label">Easton's Bible Dictionary</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">5.040</div>
+            <div class="stat-label">Nave's Topical Bible</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">4.139</div>
+            <div class="stat-label">Nederlandse begrippen</div>
+        </div>
+    </div>
+
+    <h2>Per boek</h2>
+    <p style="font-size:13px;color:#666;margin:0 0 12px;">Wijzigingen = woord-niveau verschillen met SV1888. Verz. gewijz. = aantal verzen met &eacute;&eacute;n of meer wijzigingen. Bronwoorden = Hebreeuwse/Griekse grondwoorden met Strong's nummer.</p>
+    <table class="book-table">
+        <thead>
+            <tr>
+                <th>Boek</th>
+                <th>Hfdst</th>
+                <th>Verzen</th>
+                <th>Kanttek.</th>
+                <th>Wijzigingen</th>
+                <th>Verz. gewijz.</th>
+                <th>Bronwoorden</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1 Johannes</td>
+            <td>5</td>
+            <td>105</td>
+            <td>448</td>
+            <td>192</td>
+            <td>77</td>
+            <td>2140</td>
+        </tr>
+        <tr>
+            <td>1 Koningen</td>
+            <td>22</td>
+            <td>817</td>
+            <td>1619</td>
+            <td>1706</td>
+            <td>691</td>
+            <td>12904</td>
+        </tr>
+        <tr>
+            <td>1 Korintiërs</td>
+            <td>16</td>
+            <td>437</td>
+            <td>1370</td>
+            <td>744</td>
+            <td>349</td>
+            <td>6830</td>
+        </tr>
+        <tr>
+            <td>1 Kronieken</td>
+            <td>29</td>
+            <td>942</td>
+            <td>1132</td>
+            <td>1214</td>
+            <td>564</td>
+            <td>10599</td>
+        </tr>
+        <tr>
+            <td>1 Makkabeeën</td>
+            <td>16</td>
+            <td>929</td>
+            <td>0</td>
+            <td>700</td>
+            <td>464</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>1 Petrus</td>
+            <td>5</td>
+            <td>105</td>
+            <td>375</td>
+            <td>184</td>
+            <td>82</td>
+            <td>1679</td>
+        </tr>
+        <tr>
+            <td>1 Samuel</td>
+            <td>31</td>
+            <td>811</td>
+            <td>1432</td>
+            <td>1861</td>
+            <td>691</td>
+            <td>13251</td>
+        </tr>
+        <tr>
+            <td>1 Tessalonicenzen</td>
+            <td>5</td>
+            <td>89</td>
+            <td>256</td>
+            <td>164</td>
+            <td>69</td>
+            <td>1481</td>
+        </tr>
+        <tr>
+            <td>1 Timotheüs</td>
+            <td>6</td>
+            <td>113</td>
+            <td>345</td>
+            <td>123</td>
+            <td>65</td>
+            <td>1591</td>
+        </tr>
+        <tr>
+            <td>2 Johannes</td>
+            <td>1</td>
+            <td>13</td>
+            <td>47</td>
+            <td>25</td>
+            <td>9</td>
+            <td>245</td>
+        </tr>
+        <tr>
+            <td>2 Koningen</td>
+            <td>25</td>
+            <td>719</td>
+            <td>1374</td>
+            <td>1702</td>
+            <td>646</td>
+            <td>12262</td>
+        </tr>
+        <tr>
+            <td>2 Korintiërs</td>
+            <td>13</td>
+            <td>256</td>
+            <td>679</td>
+            <td>381</td>
+            <td>193</td>
+            <td>4477</td>
+        </tr>
+        <tr>
+            <td>2 Kronieken</td>
+            <td>36</td>
+            <td>822</td>
+            <td>1732</td>
+            <td>1767</td>
+            <td>680</td>
+            <td>13291</td>
+        </tr>
+        <tr>
+            <td>2 Makkabeeën</td>
+            <td>15</td>
+            <td>558</td>
+            <td>0</td>
+            <td>497</td>
+            <td>310</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2 Petrus</td>
+            <td>3</td>
+            <td>61</td>
+            <td>296</td>
+            <td>113</td>
+            <td>54</td>
+            <td>1099</td>
+        </tr>
+        <tr>
+            <td>2 Samuel</td>
+            <td>24</td>
+            <td>695</td>
+            <td>1404</td>
+            <td>1483</td>
+            <td>597</td>
+            <td>11007</td>
+        </tr>
+        <tr>
+            <td>2 Tessalonicenzen</td>
+            <td>3</td>
+            <td>47</td>
+            <td>160</td>
+            <td>87</td>
+            <td>39</td>
+            <td>823</td>
+        </tr>
+        <tr>
+            <td>2 Timotheüs</td>
+            <td>4</td>
+            <td>83</td>
+            <td>352</td>
+            <td>113</td>
+            <td>65</td>
+            <td>1238</td>
+        </tr>
+        <tr>
+            <td>3 Ezra</td>
+            <td>9</td>
+            <td>453</td>
+            <td>0</td>
+            <td>422</td>
+            <td>265</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3 Johannes</td>
+            <td>1</td>
+            <td>15</td>
+            <td>53</td>
+            <td>16</td>
+            <td>8</td>
+            <td>218</td>
+        </tr>
+        <tr>
+            <td>3 Makkabeeën</td>
+            <td>7</td>
+            <td>179</td>
+            <td>0</td>
+            <td>241</td>
+            <td>131</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>4 Ezra</td>
+            <td>16</td>
+            <td>874</td>
+            <td>0</td>
+            <td>1020</td>
+            <td>565</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Amos</td>
+            <td>9</td>
+            <td>146</td>
+            <td>474</td>
+            <td>317</td>
+            <td>127</td>
+            <td>2042</td>
+        </tr>
+        <tr>
+            <td>Baruch</td>
+            <td>6</td>
+            <td>212</td>
+            <td>0</td>
+            <td>213</td>
+            <td>125</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Bel en de draak</td>
+            <td>1</td>
+            <td>41</td>
+            <td>0</td>
+            <td>48</td>
+            <td>29</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Boek der Wijsheid</td>
+            <td>19</td>
+            <td>438</td>
+            <td>0</td>
+            <td>468</td>
+            <td>272</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Daniël</td>
+            <td>12</td>
+            <td>357</td>
+            <td>1285</td>
+            <td>839</td>
+            <td>299</td>
+            <td>5884</td>
+        </tr>
+        <tr>
+            <td>Deuteronomium</td>
+            <td>34</td>
+            <td>959</td>
+            <td>1515</td>
+            <td>2536</td>
+            <td>861</td>
+            <td>14246</td>
+        </tr>
+        <tr>
+            <td>Efeziers</td>
+            <td>6</td>
+            <td>155</td>
+            <td>469</td>
+            <td>267</td>
+            <td>132</td>
+            <td>2422</td>
+        </tr>
+        <tr>
+            <td>Esther</td>
+            <td>10</td>
+            <td>167</td>
+            <td>412</td>
+            <td>462</td>
+            <td>149</td>
+            <td>3057</td>
+        </tr>
+        <tr>
+            <td>Esther (apocrief)</td>
+            <td>7</td>
+            <td>102</td>
+            <td>0</td>
+            <td>89</td>
+            <td>58</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Exodus</td>
+            <td>40</td>
+            <td>1213</td>
+            <td>1821</td>
+            <td>2702</td>
+            <td>1048</td>
+            <td>16635</td>
+        </tr>
+        <tr>
+            <td>Ezechiël</td>
+            <td>48</td>
+            <td>1273</td>
+            <td>3402</td>
+            <td>2598</td>
+            <td>1066</td>
+            <td>18653</td>
+        </tr>
+        <tr>
+            <td>Ezra</td>
+            <td>10</td>
+            <td>280</td>
+            <td>334</td>
+            <td>441</td>
+            <td>169</td>
+            <td>3754</td>
+        </tr>
+        <tr>
+            <td>Filemon</td>
+            <td>1</td>
+            <td>25</td>
+            <td>70</td>
+            <td>35</td>
+            <td>21</td>
+            <td>335</td>
+        </tr>
+        <tr>
+            <td>Filippenzen</td>
+            <td>4</td>
+            <td>104</td>
+            <td>445</td>
+            <td>161</td>
+            <td>81</td>
+            <td>1629</td>
+        </tr>
+        <tr>
+            <td>Galaten</td>
+            <td>6</td>
+            <td>149</td>
+            <td>694</td>
+            <td>237</td>
+            <td>114</td>
+            <td>2230</td>
+        </tr>
+        <tr>
+            <td>Gebed van Azaria</td>
+            <td>1</td>
+            <td>27</td>
+            <td>0</td>
+            <td>33</td>
+            <td>18</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Gebed van Manasse</td>
+            <td>1</td>
+            <td>14</td>
+            <td>0</td>
+            <td>21</td>
+            <td>9</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Genesis</td>
+            <td>50</td>
+            <td>1533</td>
+            <td>2816</td>
+            <td>2648</td>
+            <td>1160</td>
+            <td>20590</td>
+        </tr>
+        <tr>
+            <td>Gezang in de vuuroven</td>
+            <td>1</td>
+            <td>40</td>
+            <td>0</td>
+            <td>87</td>
+            <td>39</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Habakuk</td>
+            <td>3</td>
+            <td>56</td>
+            <td>260</td>
+            <td>110</td>
+            <td>48</td>
+            <td>671</td>
+        </tr>
+        <tr>
+            <td>Haggaï</td>
+            <td>2</td>
+            <td>38</td>
+            <td>98</td>
+            <td>155</td>
+            <td>37</td>
+            <td>591</td>
+        </tr>
+        <tr>
+            <td>Handelingen</td>
+            <td>28</td>
+            <td>1007</td>
+            <td>2134</td>
+            <td>1597</td>
+            <td>772</td>
+            <td>18450</td>
+        </tr>
+        <tr>
+            <td>Hebreeën</td>
+            <td>13</td>
+            <td>303</td>
+            <td>979</td>
+            <td>478</td>
+            <td>235</td>
+            <td>4953</td>
+        </tr>
+        <tr>
+            <td>Hooglied</td>
+            <td>8</td>
+            <td>117</td>
+            <td>523</td>
+            <td>158</td>
+            <td>73</td>
+            <td>1238</td>
+        </tr>
+        <tr>
+            <td>Hosea</td>
+            <td>14</td>
+            <td>197</td>
+            <td>758</td>
+            <td>254</td>
+            <td>128</td>
+            <td>2341</td>
+        </tr>
+        <tr>
+            <td>Jakobus</td>
+            <td>5</td>
+            <td>108</td>
+            <td>428</td>
+            <td>193</td>
+            <td>90</td>
+            <td>1745</td>
+        </tr>
+        <tr>
+            <td>Jeremia</td>
+            <td>52</td>
+            <td>1364</td>
+            <td>3609</td>
+            <td>3131</td>
+            <td>1203</td>
+            <td>21822</td>
+        </tr>
+        <tr>
+            <td>Jesaja</td>
+            <td>66</td>
+            <td>1292</td>
+            <td>4949</td>
+            <td>2841</td>
+            <td>1072</td>
+            <td>16934</td>
+        </tr>
+        <tr>
+            <td>Jezus Sirach</td>
+            <td>51</td>
+            <td>1526</td>
+            <td>0</td>
+            <td>1269</td>
+            <td>830</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Job</td>
+            <td>42</td>
+            <td>1070</td>
+            <td>2595</td>
+            <td>1128</td>
+            <td>653</td>
+            <td>8284</td>
+        </tr>
+        <tr>
+            <td>Johannes</td>
+            <td>21</td>
+            <td>880</td>
+            <td>1843</td>
+            <td>1713</td>
+            <td>744</td>
+            <td>15635</td>
+        </tr>
+        <tr>
+            <td>Jona</td>
+            <td>4</td>
+            <td>48</td>
+            <td>146</td>
+            <td>93</td>
+            <td>40</td>
+            <td>680</td>
+        </tr>
+        <tr>
+            <td>Jozua</td>
+            <td>24</td>
+            <td>658</td>
+            <td>755</td>
+            <td>1332</td>
+            <td>490</td>
+            <td>10051</td>
+        </tr>
+        <tr>
+            <td>Joël</td>
+            <td>3</td>
+            <td>73</td>
+            <td>226</td>
+            <td>128</td>
+            <td>55</td>
+            <td>687</td>
+        </tr>
+        <tr>
+            <td>Judas</td>
+            <td>1</td>
+            <td>25</td>
+            <td>129</td>
+            <td>44</td>
+            <td>22</td>
+            <td>458</td>
+        </tr>
+        <tr>
+            <td>Judith</td>
+            <td>16</td>
+            <td>327</td>
+            <td>0</td>
+            <td>408</td>
+            <td>195</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Klaagliederen</td>
+            <td>5</td>
+            <td>154</td>
+            <td>550</td>
+            <td>214</td>
+            <td>110</td>
+            <td>1542</td>
+        </tr>
+        <tr>
+            <td>Kolossenzen</td>
+            <td>4</td>
+            <td>95</td>
+            <td>348</td>
+            <td>172</td>
+            <td>80</td>
+            <td>1582</td>
+        </tr>
+        <tr>
+            <td>Leviticus</td>
+            <td>27</td>
+            <td>859</td>
+            <td>1268</td>
+            <td>1772</td>
+            <td>734</td>
+            <td>11842</td>
+        </tr>
+        <tr>
+            <td>Lukas</td>
+            <td>24</td>
+            <td>1151</td>
+            <td>1675</td>
+            <td>1917</td>
+            <td>889</td>
+            <td>19482</td>
+        </tr>
+        <tr>
+            <td>Maleachi</td>
+            <td>4</td>
+            <td>55</td>
+            <td>228</td>
+            <td>188</td>
+            <td>54</td>
+            <td>782</td>
+        </tr>
+        <tr>
+            <td>Markus</td>
+            <td>16</td>
+            <td>678</td>
+            <td>964</td>
+            <td>1041</td>
+            <td>518</td>
+            <td>11304</td>
+        </tr>
+        <tr>
+            <td>Mattheüs</td>
+            <td>28</td>
+            <td>1071</td>
+            <td>1650</td>
+            <td>1871</td>
+            <td>822</td>
+            <td>18346</td>
+        </tr>
+        <tr>
+            <td>Micha</td>
+            <td>7</td>
+            <td>105</td>
+            <td>473</td>
+            <td>195</td>
+            <td>88</td>
+            <td>1396</td>
+        </tr>
+        <tr>
+            <td>Nahum</td>
+            <td>3</td>
+            <td>47</td>
+            <td>206</td>
+            <td>81</td>
+            <td>36</td>
+            <td>539</td>
+        </tr>
+        <tr>
+            <td>Nehemia</td>
+            <td>13</td>
+            <td>407</td>
+            <td>579</td>
+            <td>650</td>
+            <td>244</td>
+            <td>5198</td>
+        </tr>
+        <tr>
+            <td>Numeri</td>
+            <td>36</td>
+            <td>1288</td>
+            <td>1523</td>
+            <td>2477</td>
+            <td>1054</td>
+            <td>16189</td>
+        </tr>
+        <tr>
+            <td>Obadja</td>
+            <td>1</td>
+            <td>21</td>
+            <td>79</td>
+            <td>42</td>
+            <td>18</td>
+            <td>291</td>
+        </tr>
+        <tr>
+            <td>Openbaring</td>
+            <td>22</td>
+            <td>405</td>
+            <td>1194</td>
+            <td>787</td>
+            <td>328</td>
+            <td>9851</td>
+        </tr>
+        <tr>
+            <td>Prediker</td>
+            <td>12</td>
+            <td>222</td>
+            <td>696</td>
+            <td>367</td>
+            <td>173</td>
+            <td>2999</td>
+        </tr>
+        <tr>
+            <td>Psalmen</td>
+            <td>150</td>
+            <td>2528</td>
+            <td>4873</td>
+            <td>3006</td>
+            <td>1729</td>
+            <td>19588</td>
+        </tr>
+        <tr>
+            <td>Richteren</td>
+            <td>21</td>
+            <td>618</td>
+            <td>1153</td>
+            <td>1255</td>
+            <td>516</td>
+            <td>9885</td>
+        </tr>
+        <tr>
+            <td>Romeinen</td>
+            <td>16</td>
+            <td>434</td>
+            <td>1596</td>
+            <td>754</td>
+            <td>337</td>
+            <td>7111</td>
+        </tr>
+        <tr>
+            <td>Ruth</td>
+            <td>4</td>
+            <td>85</td>
+            <td>154</td>
+            <td>203</td>
+            <td>67</td>
+            <td>1294</td>
+        </tr>
+        <tr>
+            <td>Spreuken</td>
+            <td>31</td>
+            <td>915</td>
+            <td>2544</td>
+            <td>980</td>
+            <td>585</td>
+            <td>6984</td>
+        </tr>
+        <tr>
+            <td>Susanna</td>
+            <td>1</td>
+            <td>64</td>
+            <td>0</td>
+            <td>73</td>
+            <td>34</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Titus</td>
+            <td>3</td>
+            <td>46</td>
+            <td>180</td>
+            <td>41</td>
+            <td>26</td>
+            <td>659</td>
+        </tr>
+        <tr>
+            <td>Tobit</td>
+            <td>14</td>
+            <td>276</td>
+            <td>0</td>
+            <td>389</td>
+            <td>194</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Zacharia</td>
+            <td>14</td>
+            <td>211</td>
+            <td>741</td>
+            <td>592</td>
+            <td>191</td>
+            <td>3085</td>
+        </tr>
+        <tr>
+            <td>Zefanja</td>
+            <td>3</td>
+            <td>53</td>
+            <td>212</td>
+            <td>137</td>
+            <td>48</td>
+            <td>767</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div><!-- /flex wrapper -->
+</body>
+</html>

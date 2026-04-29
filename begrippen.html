@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begrippen — Open Vertaling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { display: block; background: #f8f6f2; }
+        .wiki-sidebar {
+            width: 220px; min-width: 220px; background: #f5f2ed; border-right: 1px solid #e5e1d8;
+            padding: 20px 0; font-family: 'Fira Sans', sans-serif; font-size: 14px;
+        }
+        .wiki-sidebar a {
+            display: block; padding: 8px 20px; color: #333; text-decoration: none; border-left: 3px solid transparent;
+        }
+        .wiki-sidebar a:hover { background: rgba(203,164,73,0.08); }
+        .wiki-sidebar a.active { color: #142e42; font-weight: 600; border-left-color: #cba449; background: rgba(203,164,73,0.08); }
+        .page { max-width: 900px; margin: 0 auto; padding: 30px 24px 80px; font-family: var(--font-body); }
+        .page h1 { font-family: var(--font-cursive); font-size: 36px; color: var(--navy); font-weight: 400; margin-bottom: 4px; }
+        .page .subtitle { color: var(--teal); font-size: 14px; margin-bottom: 20px; }
+        .zoek-input { width: 100%; padding: 10px 16px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; font-family: var(--font-body); outline: none; margin-bottom: 16px; }
+        .zoek-input:focus { border-color: var(--gold); }
+        .cat-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+        .cat-btn { padding: 5px 14px; border: 1px solid #ddd; border-radius: 16px; font-size: 12px; cursor: pointer; background: #fff; font-family: var(--font-body); transition: all 0.15s; }
+        .cat-btn:hover, .cat-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+        .begrip-card { padding: 12px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: background 0.1s; }
+        .begrip-card:hover { background: rgba(203,164,73,0.04); }
+        .begrip-woord { font-size: 16px; font-weight: 600; color: var(--navy); }
+        .begrip-cat { font-size: 11px; color: var(--teal); text-transform: uppercase; margin-left: 8px; padding: 1px 6px; border-radius: 3px; background: rgba(146,182,180,0.12); }
+        .begrip-cat.cat-Easton { background: #dbeafe; color: #1e40af; }
+        .begrip-cat.cat-Nave { background: #d1fae5; color: #065f46; }
+        .begrip-cat.cat-Begrippen { background: #fef3c7; color: #92400e; }
+        .begrip-uitleg { font-size: 14px; color: #555; margin-top: 4px; line-height: 1.6; }
+        .begrip-ref { font-size: 12px; color: var(--gold); margin-top: 2px; }
+        .begrip-ref-link { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+        .begrip-ref-link:hover { color: var(--navy); border-bottom-color: var(--navy); }
+        .begrip-count { color: #999; font-size: 13px; }
+        .encyc-link { display: inline-block; margin-left: 8px; font-size: 11px; padding: 1px 6px; border-radius: 3px; background: var(--navy); color: #cba449; text-decoration: none; }
+        .encyc-link:hover { background: #1f3f5a; }
+        .encyc-missing { display: inline-block; margin-left: 8px; font-size: 11px; padding: 1px 6px; border-radius: 3px; background: #f5f2ed; color: #999; }
+        .begrip-boeken { font-size: 11px; color: var(--teal); margin-top: 4px; }
+        /* Detail-modal */
+        .detail-modal {
+            display: none; position: fixed; inset: 0; background: rgba(20,46,66,0.7);
+            z-index: 500; align-items: center; justify-content: center;
+        }
+        .detail-modal.open { display: flex; }
+        .detail-card {
+            background: #fff; border-radius: 8px; max-width: 720px; width: 92%;
+            max-height: 88vh; overflow-y: auto; padding: 24px 28px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3); position: relative;
+        }
+        .detail-card h2 { font-family: var(--font-cursive); font-size: 32px; color: var(--navy); margin: 0 0 6px; font-weight: 400; }
+        .detail-card .meta { color: var(--teal); font-size: 13px; margin-bottom: 14px; }
+        .detail-card .body { font-size: 15px; line-height: 1.7; color: #333; }
+        .detail-card .body p { margin: 0 0 12px; }
+        .detail-close { position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 24px; cursor: pointer; color: #999; }
+        .detail-close:hover { color: var(--navy); }
+    </style>
+    <style>
+        @media all {
+            body.in-iframe #topnav { display: none !important; }
+            body.in-iframe nav[style*="width:220px"] { display: none !important; }
+            body.in-iframe div[style*="display:flex;min-height"] { display: block !important; }
+            body.in-iframe { min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+    <nav id="topnav" style="display:flex;align-items:center;background:#142e42;color:#fff;padding:0 30px;height:52px;font-family:'Fira Sans',sans-serif;position:sticky;top:0;z-index:300;">
+        <div style="font-family:'Allura',cursive;font-size:28px;color:#fff;">Open Vertaling<span class="topnav-subtitle"> Public Domain herziening van de SV1637</span> <span style="font-family:'Fira Sans';font-size:10px;font-weight:600;background:rgba(203,164,73,0.25);color:#cba449;padding:1px 6px;border-radius:3px;vertical-align:middle;margin-left:4px;"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.13.3</a></span></div>
+        <div style="display:flex;gap:2px;margin:0 auto;">
+            <a href="over-ov.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Over OV</a>
+            <a href="/" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Tekst</a>
+            <a href="wiki.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Wiki</a>
+            <a href="contact.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Contact</a>
+        </div>
+    </nav>
+
+    <div style="display:flex;min-height:calc(100vh - 52px);">
+        <!-- Side navigation -->
+                        <nav style="width:220px;min-width:220px;background:#f5f2ed;border-right:1px solid #e5e1d8;padding:20px 0;font-family:'Fira Sans',sans-serif;font-size:14px;">
+            <div style="padding:0 16px 12px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;">Documentatie</div>
+            <a href="uitgangspunten.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Uitgangspunten &amp; techniek</a>
+            <a href="principes.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Wijzigingsprincipes</a>
+            <a href="statistieken.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Statistieken</a>
+            <a href="begrippen.html" style="display:block;padding:8px 20px;color:#142e42;text-decoration:none;font-weight:600;border-left:3px solid #cba449;background:rgba(203,164,73,0.08);">Begrippen</a>
+            <a href="changelog.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Changelog</a>
+            <div style="padding:12px 16px 8px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;margin-top:12px;">Lexicons</div>
+            <a href="lexicon-bdb.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Hebreeuws (BDB)</a>
+            <a href="lexicon-abbott.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Grieks (Abbott-Smith)</a>
+        </nav>
+
+        <div class="page" style="flex:1;">
+        <h1>Begrippen</h1>
+        <p class="subtitle">Encyclopedie en begrippenlijsten</p>
+
+        <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
+            <select id="bron-select" style="padding:8px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;font-family:var(--font-body);">
+                <option value="encyclopedie">Encyclopedie (Easton + Nave + Nederlandse begrippen)</option>
+            </select>
+        </div>
+
+        <input type="text" class="zoek-input" id="begrip-zoek" placeholder="Zoek een begrip..." oninput="filterBegrippen()">
+
+        <div class="cat-filters" id="cat-filters"></div>
+
+        <p class="begrip-count" id="begrip-count"></p>
+        <div id="begrippen-lijst"></div>
+    </div>
+
+    <!-- Detail-modal voor encyclopedie-artikelen -->
+    <div class="detail-modal" id="detail-modal" onclick="if(event.target===this)closeDetail()">
+        <div class="detail-card">
+            <button class="detail-close" onclick="closeDetail()">&times;</button>
+            <div id="detail-content"></div>
+        </div>
+    </div>
+
+    <script>
+    let alleBegrippen = [];
+    let activeCat = null;
+    let huidigeBron = 'encyclopedie';
+    // Volledige encyclopedie-data (voor detail-weergave en cross-link vanuit boek-lijsten)
+    let encycData = { easton: {}, nave: {}, eastonSum: {}, naveSum: {}, mapping: {} };
+    let nlBegrippenIndex = {}; // woord(lower) → entry from supplement
+
+    function escapeHTML(s) {
+        return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // Boek-afkorting → slug (zoals gebruikt in begrip-refs)
+    const BOOK_SLUG = {
+        'gen':'genesis','ex':'exodus','lev':'leviticus','num':'numeri','deut':'deuteronomium',
+        'joz':'jozua','richt':'richteren','ruth':'ruth',
+        '1 sam':'1samuel','2 sam':'2samuel','1 kon':'1koningen','2 kon':'2koningen',
+        '1 kron':'1kronieken','2 kron':'2kronieken','ezra':'ezra','neh':'nehemia','esth':'esther','est':'esther',
+        'job':'job','ps':'psalmen','psa':'psalmen','psalm':'psalmen',
+        'spr':'spreuken','pred':'prediker','hoogl':'hooglied','hgl':'hooglied',
+        'jes':'jesaja','jer':'jeremia','klaagl':'klaagliederen','klg':'klaagliederen',
+        'ezech':'ezechiel','ez':'ezechiel','dan':'daniel','hos':'hosea','joel':'joel','joël':'joel',
+        'amos':'amos','obad':'obadja','jona':'jona','micha':'micha','mi':'micha','nah':'nahum',
+        'hab':'habakuk','zef':'zefanja','hagg':'haggai','hag':'haggai','zach':'zacharia','mal':'maleachi',
+        'mat':'mattheus','matt':'mattheus','mt':'mattheus','mark':'markus','mk':'markus','mar':'markus',
+        'luk':'lukas','lk':'lukas','luc':'lukas','joh':'johannes',
+        'hand':'handelingen','rom':'romeinen',
+        '1 kor':'1korinthiers','2 kor':'2korinthiers','1 cor':'1korinthiers','2 cor':'2korinthiers',
+        'gal':'galaten','ef':'efeziers','efez':'efeziers','filip':'filippenzen','fil':'filippenzen',
+        'kol':'kolossenzen','col':'kolossenzen',
+        '1 tess':'1tessalonicensen','2 tess':'2tessalonicensen','1 th':'1tessalonicensen','2 th':'2tessalonicensen',
+        '1 tim':'1timotheus','2 tim':'2timotheus','tit':'titus','filem':'filemon','flm':'filemon',
+        'hebr':'hebreeen','heb':'hebreeen','jak':'jakobus','jac':'jakobus',
+        '1 petr':'1petrus','2 petr':'2petrus','1 pet':'1petrus','2 pet':'2petrus',
+        '1 joh':'1johannes','2 joh':'2johannes','3 joh':'3johannes','jud':'judas',
+        'op':'openbaring','openb':'openbaring','apoc':'openbaring',
+        'wijsh':'boekderwijsheid','sirach':'jezussirach','tob':'tobit','jdt':'judith','bar':'baruch',
+    };
+
+    /** Maak een ref als "Ps 18:3" of "1 Kor 13:1" klikbaar naar /#slug/chapter */
+    function refToLink(ref) {
+        if (!ref) return '';
+        const m = ref.match(/^([123]\s)?([A-Za-zé]+)\.?\s+(\d+)(?::(\d+(?:[-,]\d+)*))?/);
+        if (!m) return escapeHTML(ref);
+        const prefix = (m[1] || '').trim();
+        const book = m[2].toLowerCase();
+        const ch = m[3];
+        const vs = m[4];
+        const key = (prefix ? prefix + ' ' : '') + book;
+        const slug = BOOK_SLUG[key] || BOOK_SLUG[book];
+        if (!slug) return escapeHTML(ref);
+        const url = `/#${slug}/${ch}` + (vs ? `/${vs.split(/[,-]/)[0]}` : '');
+        return `<a href="${url}" target="_top" class="begrip-ref-link" title="Open ${escapeHTML(ref)} in tekst">${escapeHTML(ref)}</a>`;
+    }
+
+    async function laadEncycRaw() {
+        if (Object.keys(encycData.easton).length) return;  // al geladen
+        const [easton, nave, eastonSum, naveSum, mapping, nlBegr] = await Promise.all([
+            fetch('data/encyclopedie_easton.json').then(r=>r.json()),
+            fetch('data/encyclopedie_nave.json').then(r=>r.json()),
+            fetch('data/encyclopedie_easton_summaries.json').then(r=>r.json()),
+            fetch('data/encyclopedie_nave_summaries.json').then(r=>r.json()),
+            fetch('data/encyclopedie-mapping.json').then(r=>r.json()),
+            fetch('data/encyclopedie_nl_begrippen.json').then(r=>r.json()),
+        ]);
+        encycData = { easton, nave, eastonSum, naveSum, mapping };
+        nlBegrippenIndex = {};
+        for (const e of nlBegr) {
+            nlBegrippenIndex[e.woord.toLowerCase()] = e;
+        }
+        return nlBegr;
+    }
+
+    /** Vind encyclopedie-match voor een Nederlands woord. Returns {key, source} of null. */
+    function findEncyc(woord) {
+        if (!woord) return null;
+        const lower = woord.toLowerCase();
+        // Direct match (case-insensitive) in Easton
+        for (const k of Object.keys(encycData.easton)) {
+            if (k.toLowerCase() === lower) return { key: k, source: 'Easton' };
+        }
+        // Direct in Nave
+        for (const k of Object.keys(encycData.nave)) {
+            if (k.toLowerCase() === lower) return { key: k, source: 'Nave' };
+        }
+        // Via NL→EN mapping
+        const mapKey = Object.keys(encycData.mapping).find(k => k.toLowerCase() === lower);
+        if (mapKey) {
+            const en = encycData.mapping[mapKey];
+            if (encycData.easton[en]) return { key: en, source: 'Easton', viaNL: woord };
+            if (encycData.nave[en]) return { key: en, source: 'Nave', viaNL: woord };
+        }
+        // In NL-begrippen supplement
+        if (nlBegrippenIndex[lower]) return { key: nlBegrippenIndex[lower].woord, source: 'Begrippen' };
+        return null;
+    }
+
+    async function laadBron(bron) {
+        document.getElementById('begrippen-lijst').innerHTML = '<p style="color:#999;">Laden...</p>';
+        activeCat = null;
+        huidigeBron = bron;
+        location.hash = bron === 'encyclopedie' ? '' : '#bron=' + bron;
+
+        if (bron === 'encyclopedie') {
+            try {
+                const nlBegr = await laadEncycRaw();
+                alleBegrippen = [];
+                for (const [key, val] of Object.entries(encycData.easton)) {
+                    alleBegrippen.push({ woord: key, uitleg: encycData.eastonSum[key] || '', categorie: 'Easton' });
+                }
+                for (const [key, val] of Object.entries(encycData.nave)) {
+                    if (!encycData.easton[key]) {
+                        alleBegrippen.push({ woord: key, uitleg: encycData.naveSum[key] || '', categorie: 'Nave' });
+                    }
+                }
+                for (const e of nlBegr) {
+                    alleBegrippen.push({
+                        woord: e.woord, uitleg: e.uitleg, ref: e.ref, categorie: 'Begrippen',
+                        boeken: e.boeken
+                    });
+                }
+                alleBegrippen.sort((a, b) => a.woord.localeCompare(b.woord, 'nl'));
+            } catch(e) {
+                document.getElementById('begrippen-lijst').innerHTML = '<p style="color:#c00;">Fout bij laden encyclopedie: ' + escapeHTML(e.message) + '</p>';
+                return;
+            }
+        } else {
+            try {
+                await laadEncycRaw();  // ook nodig voor cross-links
+                const resp = await fetch(`data/begrippenlijst-${bron}.json`);
+                alleBegrippen = await resp.json();
+            } catch(e) {
+                document.getElementById('begrippen-lijst').innerHTML = '<p style="color:#999;">Geen begrippenlijst beschikbaar voor dit boek.</p>';
+                return;
+            }
+        }
+
+        renderCategorieen();
+        filterBegrippen();
+    }
+
+    function renderCategorieen() {
+        const cats = [...new Set(alleBegrippen.map(b => b.categorie))].sort();
+        const el = document.getElementById('cat-filters');
+        el.innerHTML = `<button class="cat-btn active" data-cat="">Alle (${alleBegrippen.length})</button>` +
+            cats.map(c => {
+                const count = alleBegrippen.filter(b => b.categorie === c).length;
+                return `<button class="cat-btn" data-cat="${escapeHTML(c)}">${escapeHTML(c)} (${count})</button>`;
+            }).join('');
+        el.querySelectorAll('.cat-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                el.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCat = btn.dataset.cat || null;
+                filterBegrippen();
+            });
+        });
+    }
+
+    function filterBegrippen() {
+        const zoek = document.getElementById('begrip-zoek').value.toLowerCase();
+        let filtered = alleBegrippen;
+        if (activeCat) filtered = filtered.filter(b => b.categorie === activeCat);
+        if (zoek) filtered = filtered.filter(b => b.woord.toLowerCase().includes(zoek) || (b.uitleg && b.uitleg.toLowerCase().includes(zoek)));
+
+        document.getElementById('begrip-count').textContent = `${filtered.length} begrippen`;
+        const html = filtered.slice(0, 100).map(b => {
+            const cat = b.categorie || 'begrip';
+            const catClass = ['Easton','Nave','Begrippen'].includes(cat) ? `cat-${cat}` : '';
+            // Cross-link naar encyclopedie indien match (alleen op boek-lijsten)
+            let encycBadge = '';
+            if (huidigeBron !== 'encyclopedie') {
+                const m = findEncyc(b.woord);
+                if (m) {
+                    encycBadge = `<a class="encyc-link" href="#woord=${encodeURIComponent(m.key)}" onclick="event.stopPropagation();openDetail('${encodeURIComponent(m.key)}','${m.source}');return false;">→ Encyclopedie (${m.source})</a>`;
+                } else {
+                    encycBadge = `<span class="encyc-missing" title="Geen encyclopedie-match">geen artikel</span>`;
+                }
+            }
+            const refHtml = b.ref ? `<div class="begrip-ref" onclick="event.stopPropagation()">${refToLink(b.ref)}</div>` : '';
+            const woordEnc = encodeURIComponent(b.woord);
+            return `<div class="begrip-card" onclick="openDetail('${woordEnc}','${cat}')">
+                <span class="begrip-woord">${escapeHTML(b.woord)}</span>
+                <span class="begrip-cat ${catClass}">${escapeHTML(cat)}</span>
+                ${encycBadge}
+                <div class="begrip-uitleg">${escapeHTML(b.uitleg || '').slice(0, 280)}${b.uitleg && b.uitleg.length > 280 ? '…' : ''}</div>
+                ${refHtml}
+            </div>`;
+        }).join('') + (filtered.length > 100 ? `<p style="color:#999;text-align:center;">… en ${filtered.length - 100} meer. Verfijn uw zoekopdracht.</p>` : '');
+        document.getElementById('begrippen-lijst').innerHTML = html;
+    }
+
+    /** Open detail-modal voor een woord. Source: Easton/Nave/Begrippen. */
+    function openDetail(woordEnc, source) {
+        const woord = decodeURIComponent(woordEnc);
+        let title = woord, body = '', meta = '';
+
+        if (source === 'Easton' && encycData.easton[woord]) {
+            const v = encycData.easton[woord];
+            const sum = encycData.eastonSum[woord] || '';
+            const en = (v.text_en || '').replace(/\[REF:([^|]+)\|([^\]]+)\]/g, '<a href="#" onclick="return false;">$2</a>');
+            body = (sum ? `<p><strong>Nederlandse samenvatting:</strong> ${escapeHTML(sum)}</p><hr style="border:none;border-top:1px solid #eee;margin:14px 0;">` : '')
+                 + `<p style="color:#666;font-size:13px;"><strong>Easton's Bible Dictionary (1893):</strong></p>${en}`;
+            meta = `Easton's Bible Dictionary — sleutel: <code>${escapeHTML(woord)}</code>`;
+        } else if (source === 'Nave' && encycData.nave[woord]) {
+            const v = encycData.nave[woord];
+            const sum = encycData.naveSum[woord] || '';
+            const en = (v.text_en || '').replace(/\[REF:([^|]+)\|([^\]]+)\]/g, '<a href="#" onclick="return false;">$2</a>');
+            body = (sum ? `<p><strong>Nederlandse samenvatting:</strong> ${escapeHTML(sum)}</p><hr style="border:none;border-top:1px solid #eee;margin:14px 0;">` : '')
+                 + `<p style="color:#666;font-size:13px;"><strong>Nave's Topical Bible (1896):</strong></p>${en}`;
+            meta = `Nave's Topical Bible — sleutel: <code>${escapeHTML(woord)}</code>`;
+        } else if (source === 'Begrippen' && nlBegrippenIndex[woord.toLowerCase()]) {
+            const e = nlBegrippenIndex[woord.toLowerCase()];
+            body = `<p>${escapeHTML(e.uitleg || '')}</p>`;
+            if (e.ref) body += `<p><strong>Referentie:</strong> ${refToLink(e.ref)}</p>`;
+            if (e.boeken && e.boeken.length) body += `<p class="begrip-boeken"><strong>Voorkomend in:</strong> ${e.boeken.map(escapeHTML).join(', ')}</p>`;
+            meta = `Nederlandse begrippen-supplement (${e.categorie || 'begrip'})`;
+        } else {
+            // Fallback voor click op item zonder bron-info: gebruik huidige item-data
+            const found = alleBegrippen.find(b => b.woord === woord);
+            if (found) {
+                body = `<p>${escapeHTML(found.uitleg || '')}</p>`;
+                if (found.ref) body += `<p><strong>Referentie:</strong> ${refToLink(found.ref)}</p>`;
+                meta = found.categorie || '';
+            } else {
+                body = '<p style="color:#999;">Geen artikel gevonden.</p>';
+            }
+        }
+
+        document.getElementById('detail-content').innerHTML = `
+            <h2>${escapeHTML(title)}</h2>
+            <div class="meta">${meta}</div>
+            <div class="body">${body}</div>
+        `;
+        document.getElementById('detail-modal').classList.add('open');
+        // URL-hash voor deeplink
+        const newHash = `#woord=${woordEnc}` + (huidigeBron !== 'encyclopedie' ? `&bron=${huidigeBron}` : '');
+        if (location.hash !== newHash) history.replaceState(null, '', newHash);
+    }
+
+    function closeDetail() {
+        document.getElementById('detail-modal').classList.remove('open');
+        // Hash ontdoen van &woord
+        const params = new URLSearchParams(location.hash.slice(1).replace(/&/g, '&'));
+        params.delete('woord');
+        const rest = params.toString();
+        history.replaceState(null, '', rest ? '#' + rest : ' ');
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDetail();
+    });
+
+    // Letter-navigatie
+    document.getElementById('bron-select').addEventListener('change', (e) => laadBron(e.target.value));
+
+    // Vul dropdown dynamisch met alle beschikbare begrippenlijsten uit INDEX
+    (async () => {
+        try {
+            const r = await fetch('data/begrippenlijst-INDEX.json');
+            const idx = await r.json();
+            const sel = document.getElementById('bron-select');
+            // Optgroup OT
+            const ot = idx.filter(b => b.testament === 'OT');
+            const nt = idx.filter(b => b.testament === 'NT');
+            if (ot.length) {
+                const og = document.createElement('optgroup');
+                og.label = 'Oude Testament';
+                ot.forEach(b => {
+                    const o = document.createElement('option');
+                    o.value = b.slug;
+                    o.textContent = `${b.name} (${b.count})`;
+                    og.appendChild(o);
+                });
+                sel.appendChild(og);
+            }
+            if (nt.length) {
+                const og = document.createElement('optgroup');
+                og.label = 'Nieuwe Testament';
+                nt.forEach(b => {
+                    const o = document.createElement('option');
+                    o.value = b.slug;
+                    o.textContent = `${b.name} (${b.count})`;
+                    og.appendChild(o);
+                });
+                sel.appendChild(og);
+            }
+        } catch(e) {
+            console.warn('Begrippenlijst INDEX kon niet geladen worden', e);
+        }
+    })();
+
+    // Bepaal initiële bron + woord uit hash
+    function parseHash() {
+        const h = location.hash.slice(1);
+        if (!h) return { bron: 'encyclopedie' };
+        const params = {};
+        for (const part of h.split('&')) {
+            const [k,v] = part.split('=');
+            params[k] = v ? decodeURIComponent(v) : '';
+        }
+        return { bron: params.bron || 'encyclopedie', woord: params.woord };
+    }
+
+    (async () => {
+        const { bron, woord } = parseHash();
+        const sel = document.getElementById('bron-select');
+        // Wacht tot de dropdown gevuld is voor we de waarde kunnen zetten
+        await new Promise(res => setTimeout(res, 100));
+        if (bron && [...sel.options].some(o => o.value === bron)) sel.value = bron;
+        await laadBron(bron);
+        if (woord) {
+            // Probeer in alle 3 bronnen
+            const m = findEncyc(woord);
+            if (m) openDetail(encodeURIComponent(m.key), m.source);
+            else openDetail(encodeURIComponent(woord), 'unknown');
+        }
+    })();
+
+    window.addEventListener('hashchange', () => {
+        const { bron, woord } = parseHash();
+        if (bron !== huidigeBron) {
+            const sel = document.getElementById('bron-select');
+            if ([...sel.options].some(o => o.value === bron)) {
+                sel.value = bron;
+                laadBron(bron).then(() => {
+                    if (woord) {
+                        const m = findEncyc(woord);
+                        if (m) openDetail(encodeURIComponent(m.key), m.source);
+                    }
+                });
+            }
+        } else if (woord) {
+            const m = findEncyc(woord);
+            if (m) openDetail(encodeURIComponent(m.key), m.source);
+        }
+    });
+    </script>
+    </div>
+    </div>
+</body>
+</html>

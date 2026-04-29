@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog — Open Vertaling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { display: block; background: #f8f6f2; }
+        .page { max-width: 900px; padding: 30px 24px 80px; font-family: var(--font-body); }
+        .page h1 { font-family: var(--font-cursive); font-size: 36px; color: var(--navy); font-weight: 400; margin-bottom: 4px; }
+        .page .subtitle { color: var(--teal); font-size: 14px; margin-bottom: 30px; }
+        .version-block { margin-bottom: 32px; }
+        .version-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; border-bottom: 2px solid var(--gold); padding-bottom: 8px; }
+        .version-badge { background: var(--navy); color: var(--gold); font-size: 16px; font-weight: 700; padding: 4px 12px; border-radius: 4px; }
+        .version-date { color: var(--teal); font-size: 14px; }
+        .change-list { padding-left: 0; list-style: none; }
+        .change-list li { padding: 6px 0; border-bottom: 1px solid #f0ede8; font-size: 14px; line-height: 1.6; }
+        .change-type { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 3px; margin-right: 6px; text-transform: uppercase; }
+        .type-principe { background: #ede9fe; color: #5b21b6; }
+        .type-fix { background: #fef3c7; color: #92400e; }
+        .type-systeem { background: #dbeafe; color: #1e40af; }
+        .type-bulk { background: #d1fae5; color: #065f46; }
+        .type-uitzondering { background: #fce7f3; color: #9d174d; }
+        .wiki-sidebar { width: 220px; min-width: 220px; background: #f5f2ed; border-right: 1px solid #e5e1d8; padding: 20px 0; font-family: 'Fira Sans', sans-serif; font-size: 14px; }
+        .wiki-sidebar a { display: block; padding: 8px 20px; color: #333; text-decoration: none; border-left: 3px solid transparent; }
+        .wiki-sidebar a:hover { background: rgba(203,164,73,0.08); }
+        .wiki-sidebar a.active { color: #142e42; font-weight: 600; border-left-color: #cba449; background: rgba(203,164,73,0.08); }
+    </style>
+    <style>
+        @media all {
+            body.in-iframe #topnav { display: none !important; }
+            body.in-iframe nav[style*="width:220px"] { display: none !important; }
+            body.in-iframe div[style*="display:flex;min-height"] { display: block !important; }
+            body.in-iframe { min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+    <nav id="topnav" style="display:flex;align-items:center;background:#142e42;color:#fff;padding:0 30px;height:52px;font-family:'Fira Sans',sans-serif;position:sticky;top:0;z-index:300;">
+        <div style="font-family:'Allura',cursive;font-size:28px;color:#fff;">Open Vertaling<span class="topnav-subtitle"> Public Domain herziening van de SV1637</span> <span style="font-family:'Fira Sans';font-size:10px;font-weight:600;background:rgba(203,164,73,0.25);color:#cba449;padding:1px 6px;border-radius:3px;vertical-align:middle;margin-left:4px;"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.13.3</a></span></div>
+        <div style="display:flex;gap:2px;margin:0 auto;">
+            <a href="over-ov.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Over OV</a>
+            <a href="/" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Tekst</a>
+            <a href="wiki.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Wiki</a>
+            <a href="contact.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Contact</a>
+        </div>
+    </nav>
+
+    <div style="display:flex;min-height:calc(100vh - 52px);">
+                        <nav style="width:220px;min-width:220px;background:#f5f2ed;border-right:1px solid #e5e1d8;padding:20px 0;font-family:'Fira Sans',sans-serif;font-size:14px;">
+            <div style="padding:0 16px 12px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;">Documentatie</div>
+            <a href="uitgangspunten.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Uitgangspunten &amp; techniek</a>
+            <a href="principes.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Wijzigingsprincipes</a>
+            <a href="statistieken.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Statistieken</a>
+            <a href="begrippen.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Begrippen</a>
+            <a href="changelog.html" style="display:block;padding:8px 20px;color:#142e42;text-decoration:none;font-weight:600;border-left:3px solid #cba449;background:rgba(203,164,73,0.08);">Changelog</a>
+            <div style="padding:12px 16px 8px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;margin-top:12px;">Lexicons</div>
+            <a href="lexicon-bdb.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Hebreeuws (BDB)</a>
+            <a href="lexicon-abbott.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Grieks (Abbott-Smith)</a>
+        </nav>
+
+        <div class="page" style="flex:1;">
+            <h1>Changelog</h1>
+            <p class="subtitle">Alle wijzigingen per versie</p>
+
+            <div id="changelog-container">Laden...</div>
+        </div>
+    </div>
+
+    <script>
+    async function loadChangelog() {
+        const resp = await fetch('data/changelog.json');
+        const data = await resp.json();
+        const container = document.getElementById('changelog-container');
+
+        const typeLabels = {
+            'principe': 'Principe', 'fix': 'Fix', 'systeem': 'Systeem',
+            'bulk': 'Bulk', 'uitzondering': 'Uitzondering'
+        };
+        const typeClass = {
+            'principe': 'type-principe', 'fix': 'type-fix', 'systeem': 'type-systeem',
+            'bulk': 'type-bulk', 'uitzondering': 'type-uitzondering'
+        };
+
+        // Groepeer per versie (data/changelog.json heeft nieuwste bovenaan)
+        const versies = {};
+        for (const dag of data.wijzigingen) {
+            const v = dag.versie || 'onbekend';
+            if (!versies[v]) versies[v] = [];
+            versies[v].push(dag);
+        }
+
+        let html = '';
+        for (const [versie, dagen] of Object.entries(versies)) {
+            const alleItems = dagen.flatMap(d => d.items.map(i => ({...i, datum: d.datum})));
+            html += `<div class="version-block" id="${versie}">
+                <div class="version-header">
+                    <span class="version-badge">${versie || 'dev'}</span>
+                    <span class="version-date">${dagen.map(d => d.datum).join(', ')}</span>
+                    <span style="color:#999;font-size:13px;">${alleItems.length} wijzigingen</span>
+                </div>
+                <ul class="change-list">
+                    ${alleItems.map(item => {
+                        const t = item.type || 'fix';
+                        return `<li>
+                            <span class="change-type ${typeClass[t] || 'type-fix'}">${typeLabels[t] || t}</span>
+                            ${item.id ? `<strong>${item.id}</strong> ` : ''}
+                            ${item.beschrijving || ''}
+                            ${item.aantal ? ` (${item.aantal}x)` : ''}
+                        </li>`;
+                    }).join('')}
+                </ul>
+            </div>`;
+        }
+
+        container.innerHTML = html;
+
+        // Scroll naar hash
+        if (location.hash) {
+            const el = document.getElementById(location.hash.slice(1));
+            if (el) el.scrollIntoView({behavior: 'smooth'});
+        }
+    }
+
+    loadChangelog();
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Vertaling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/lees.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="reader-header">
+        <div class="header-left">
+            <h1 class="site-title">Open Vertaling</h1>
+        </div>
+        <div class="header-center">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Zoek in de bijbel..." autocomplete="off">
+                <div id="search-results" class="search-dropdown"></div>
+            </div>
+        </div>
+        <div class="header-right">
+            <button id="dark-mode-toggle" title="Donkere modus" aria-label="Donkere modus">
+                <span class="icon-sun">&#9788;</span>
+                <span class="icon-moon">&#9790;</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation bar -->
+    <nav id="book-nav">
+        <button id="nav-book-btn" class="nav-selector" aria-label="Kies boek">
+            <span id="nav-book-name">Genesis</span>
+            <span class="nav-arrow">&#9662;</span>
+        </button>
+        <div id="chapter-buttons" class="chapter-btns"></div>
+        <button id="prev-ch" class="ch-arrow" title="Vorig hoofdstuk" aria-label="Vorig hoofdstuk">&#8249;</button>
+        <button id="next-ch" class="ch-arrow" title="Volgend hoofdstuk" aria-label="Volgend hoofdstuk">&#8250;</button>
+    </nav>
+
+    <!-- Book selector overlay -->
+    <div id="book-selector" class="overlay hidden">
+        <div class="overlay-content">
+            <div class="overlay-header">
+                <h2>Kies een boek</h2>
+                <button class="overlay-close" aria-label="Sluiten">&times;</button>
+            </div>
+            <div id="book-list"></div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <main id="reader-content">
+        <article id="chapter-text">
+            <div id="book-intro" class="book-intro hidden"></div>
+            <h2 id="chapter-heading"></h2>
+            <p id="chapter-intro" class="chapter-intro"></p>
+            <div id="verses"></div>
+        </article>
+    </main>
+
+    <!-- Margin notes panel (desktop) -->
+    <aside id="notes-panel" class="hidden">
+        <div class="notes-panel-header">
+            <h3>Kanttekeningen</h3>
+            <button class="notes-close" aria-label="Sluiten">&times;</button>
+        </div>
+        <div id="notes-content"></div>
+    </aside>
+
+    <!-- Copy toolbar -->
+    <div id="copy-toolbar" class="copy-toolbar">
+        <span id="copy-count"></span>
+        <button id="copy-formatted">Met opmaak</button>
+        <button id="copy-plain">Zonder opmaak</button>
+        <button id="copy-close">&times;</button>
+    </div>
+
+    <!-- Lexicon modal -->
+    <div id="lexicon-modal" class="overlay hidden">
+        <div class="overlay-content overlay-large">
+            <div class="overlay-header">
+                <h2 id="lexicon-title">Lexicon</h2>
+                <button class="overlay-close" aria-label="Sluiten">&times;</button>
+            </div>
+            <div id="lexicon-body"></div>
+        </div>
+    </div>
+
+    <!-- Strong's popover -->
+    <div id="strongs-popover" class="popover hidden">
+        <div class="popover-word" id="popover-word"></div>
+        <div class="popover-strongs" id="popover-strongs"></div>
+        <div class="popover-gloss" id="popover-gloss"></div>
+        <button class="popover-more" id="popover-more">Meer in lexicon</button>
+    </div>
+
+    <!-- Mobile bottom nav -->
+    <nav id="mobile-nav">
+        <button class="mobile-tab active" data-tab="bijbel">
+            <span class="tab-icon">&#128214;</span>
+            <span class="tab-label">Bijbel</span>
+        </button>
+        <button class="mobile-tab" data-tab="zoek">
+            <span class="tab-icon">&#128269;</span>
+            <span class="tab-label">Zoek</span>
+        </button>
+        <button class="mobile-tab" data-tab="instellingen">
+            <span class="tab-icon">&#9881;</span>
+            <span class="tab-label">Instellingen</span>
+        </button>
+    </nav>
+
+    <script src="js/lees.js"></script>
+    <script src="js/lees-lexicon.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* Print stylesheet */
+@media print {
+    #app-header { position: static; }
+    #toolbar { display: none; }
+    .verse-cell[contenteditable] { border: none !important; }
+    .note-tooltip { display: none !important; }
+    body { font-size: 12px; }
+    .verse-row { break-inside: avoid; }
+}
