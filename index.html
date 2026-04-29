@@ -127,8 +127,15 @@
             return null;
         }
 
-        function search() {
+        async function search() {
             const q = searchInput.value.trim().toLowerCase();
+            // Lazy-load het juiste lexicon indien nog niet geladen
+            const lang = langSelect.value;
+            if (window.LexiconLoader) {
+                results.innerHTML = '<p style="color:#999;">Lexicon laden…</p>';
+                try { await window.LexiconLoader.ensureLoaded(lang); }
+                catch (e) { results.innerHTML = '<p style="color:#c00;">Kon lexicon niet laden.</p>'; return; }
+            }
             const lex = getLexicon();
             if (!lex) { results.innerHTML = '<p style="color:#999;">Lexicon niet geladen.</p>'; return; }
 
@@ -359,8 +366,31 @@
         </div>
     </div>
 
-    <script src="js/grieks-woordenboek.js"></script>
-    <script src="js/hebreeuws-woordenboek.js"></script>
+    <!-- Lexicons worden on-demand geladen via Lexicon.ensureLoaded() — niet automatisch op page load (samen 14 MB) -->
+    <script>
+    // Lazy-loader voor lexicons. Roep aan voordat je bdbLexicon/abbottSmithLexicon nodig hebt.
+    window.LexiconLoader = {
+        promises: {},
+        load(which) {
+            if (this.promises[which]) return this.promises[which];
+            this.promises[which] = new Promise((resolve, reject) => {
+                const src = which === 'hebrew' ? 'js/hebreeuws-woordenboek.js' : 'js/grieks-woordenboek.js';
+                const s = document.createElement('script');
+                s.src = src; s.async = true;
+                s.onload = () => resolve();
+                s.onerror = () => reject(new Error('Lexicon load failed: ' + src));
+                document.head.appendChild(s);
+            });
+            return this.promises[which];
+        },
+        async ensureLoaded(which) {
+            const v = which === 'hebrew' ? 'bdbLexicon' : 'abbottSmithLexicon';
+            if (typeof window[v] !== 'undefined') return;
+            await this.load(which);
+        },
+        async ensureBoth() { await Promise.all([this.load('hebrew'), this.load('greek')]); },
+    };
+    </script>
     <script src="js/storage.js"></script>
     <script src="js/data-loader.js"></script>
     <script src="js/navigation.js"></script>

@@ -92,11 +92,16 @@ const Lexicon = {
         }
     },
 
-    showEntry(wordEl) {
+    async showEntry(wordEl) {
         this.hideTooltip();
 
         const strongs = wordEl.dataset.strongs;
         if (!strongs) return;
+
+        // Lazy-load lexicon indien nog niet geladen (bespaart 14 MB initial load)
+        if (window.LexiconLoader) {
+            await window.LexiconLoader.ensureLoaded(strongs.startsWith('H') ? 'hebrew' : 'greek');
+        }
 
         let entry = null;
         let lexiconName = '';
@@ -157,8 +162,14 @@ const Lexicon = {
         tooltip.style.top = top + 'px';
     },
 
-    showEntryByStrongs(strongs, anchorEl) {
+    async showEntryByStrongs(strongs, anchorEl) {
         this.hideTooltip();
+
+        // Lazy-load lexicon indien nog niet geladen
+        if (window.LexiconLoader) {
+            await window.LexiconLoader.ensureLoaded(strongs.startsWith('H') ? 'hebrew' : 'greek');
+        }
+
         let entry = null;
         let lexiconName = '';
 
