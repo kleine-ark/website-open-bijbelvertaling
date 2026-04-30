@@ -67,10 +67,55 @@
     color: #fff;
     background: rgba(255,255,255,0.1);
 }
+/* Hamburger-knop (verborgen op desktop) */
+.topnav-hamburger {
+    display: none;
+    background: none; border: none; cursor: pointer;
+    width: 36px; height: 32px; padding: 0;
+    flex-direction: column; justify-content: center; align-items: center;
+    gap: 4px; margin-left: 4px;
+}
+.topnav-hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: #fff; border-radius: 1px;
+    transition: transform 0.2s, opacity 0.2s;
+}
+.topnav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.topnav-hamburger.open span:nth-child(2) { opacity: 0; }
+.topnav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
 @media (max-width: 768px) {
-    #topnav { padding: 0 12px; height: 36px; }
-    .topnav-brand { font-size: 18px; }
-    .topnav-links a { padding: 4px 8px; font-size: 11px; }
+    #topnav { padding: 0 12px; height: 48px; }
+    .topnav-brand { font-size: 16px; }
+    .topnav-subtitle, .topnav-version { display: none; }
+
+    .topnav-hamburger { display: flex; }
+
+    /* Links als off-canvas dropdown vanuit topnav */
+    .topnav-links {
+        display: none;
+        position: fixed;
+        top: 48px; right: 0;
+        background: var(--navy);
+        border-left: 1px solid rgba(203,164,73,0.3);
+        border-bottom: 1px solid rgba(203,164,73,0.3);
+        border-bottom-left-radius: 8px;
+        flex-direction: column;
+        padding: 8px 0;
+        margin: 0;
+        gap: 0;
+        min-width: 180px;
+        box-shadow: -2px 4px 16px rgba(0,0,0,0.3);
+        z-index: 400;
+    }
+    .topnav-links.open { display: flex; }
+    .topnav-links a {
+        padding: 12px 24px; font-size: 15px;
+        color: rgba(255,255,255,0.9);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .topnav-links a:last-child { border-bottom: none; }
+    .topnav-links a:hover { background: rgba(203,164,73,0.15); color: var(--gold); }
 }
 
 /* === Leesmodus === */

@@ -488,3 +488,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Hamburger menu: sluit bij klik buiten
+document.addEventListener('click', (e) => {
+    const links = document.getElementById('topnav-links');
+    const hamburger = document.getElementById('topnav-hamburger');
+    if (!links || !hamburger) return;
+    if (!links.contains(e.target) && !hamburger.contains(e.target)) {
+        links.classList.remove('open');
+        hamburger.classList.remove('open');
+    }
+});
