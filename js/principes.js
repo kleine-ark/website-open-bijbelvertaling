@@ -16,22 +16,28 @@
 
     async function init() {
         try {
-            const [principesResp, booksResp] = await Promise.all([
+            // Laad alleen 2 kleine files: principes-definities + pre-computed counts/verses
+            // (was: 82 boek-JSONs van ~1MB elk = 80+ MB)
+            const [principesResp, dataResp] = await Promise.all([
                 fetch('data/wijzigingsprincipes.json'),
-                fetch('data/books.json')
+                fetch('data/principes-data.json'),
             ]);
             const principesJson = await principesResp.json();
-            const booksJson = await booksResp.json();
+            const data = await dataResp.json();
 
             principesData = principesJson.principes || [];
-            booksData = booksJson.books || [];
+            countPerPrincipe = data.counts || {};
 
-            // Scan all book JSON files to count occurrences per principe
-            await scanAllBooks();
+            // Convert pre-computed verses naar oude formaat voor render
+            for (const [pid, list] of Object.entries(data.verses || {})) {
+                versenCache[pid] = list.map(e => ({
+                    bookId: e.b, bookName: e.n, chapter: e.c, verse: e.v,
+                    old: e.o, new: e.x, text: '',
+                }));
+            }
 
             render();
 
-            // If URL has a hash, scroll to and expand that principe
             if (window.location.hash) {
                 const targetId = window.location.hash.slice(1);
                 expandPrincipe(targetId);
@@ -39,26 +45,6 @@
         } catch (err) {
             document.getElementById('principes-container').innerHTML =
                 `<div class="loading-msg" style="color:#b91c1c">Fout bij laden: ${err.message}</div>`;
-        }
-    }
-
-    async function scanAllBooks() {
-        // Load all book JSONs in parallel (batched)
-        const BATCH_SIZE = 10;
-        for (let i = 0; i < booksData.length; i += BATCH_SIZE) {
-            const batch = booksData.slice(i, i + BATCH_SIZE);
-            const results = await Promise.all(
-                batch.map(book =>
-                    fetch(`data/${book.id}.json`)
-                        .then(r => r.json())
-                        .catch(() => null)
-                )
-            );
-            results.forEach((data, idx) => {
-                if (!data) return;
-                const book = batch[idx];
-                processBookData(book, data);
-            });
         }
     }
 
