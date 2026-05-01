@@ -4,7 +4,7 @@ const Opties = {
     STORAGE_KEY: 'sv2026_vertaalopties',
 
     DEFAULTS: {
-        godsnaam: 'ov',          // 'ov' (JAHWEH/God JAHWEH) | 'klassiek' (HEERE/HEERE God) | 'jhwh' (יהוה)
+        godsnaam: 'ov',          // 'ov' (JAHWEH) | 'klassiek' (HEERE) | 'jehovah' (Jehovah) | 'jhwh' (יהוה)
         kolomLayout: 'naast',    // 'naast' (parallelle kolom) | 'eronder' (nieuwe regel onder OV2026)
     },
 
@@ -84,6 +84,11 @@ const Opties = {
                 // Cleanup: "de de HEERE" → "de HEERE" (in geval voorzetsel ontbrak)
                 [/\bde de HEERE\b/g, 'de HEERE'],
                 [/\bDe de HEERE\b/g, 'De HEERE'],
+            ]);
+        } else if (this.state.godsnaam === 'jehovah') {
+            out = this._replaceOutsideTags(out, [
+                [/\bGod JAHWEH\b/g, 'God Jehovah'],
+                [/\bJAHWEH\b/g, 'Jehovah'],
             ]);
         } else if (this.state.godsnaam === 'jhwh') {
             out = this._replaceOutsideTags(out, [
