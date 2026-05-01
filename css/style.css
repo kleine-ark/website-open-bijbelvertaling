@@ -2395,7 +2395,7 @@ body.show-tags .verse-tag {
     text-align: center;
     margin: 0;
     font-family: var(--font-cursive);
-    font-size: 20px;
+    font-size: 28px;
     font-weight: 400;
     color: #fff;
     line-height: 1.2;
@@ -2409,14 +2409,14 @@ body.show-tags .verse-tag {
 .mp-group { margin-bottom: 18px; }
 .mp-group-label {
     font-family: var(--font-body);
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--teal, #1f6f7c);
-    padding: 0 4px 8px;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    margin-bottom: 8px;
+    padding: 0 4px 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    margin-bottom: 10px;
 }
 .mp-list {
     display: grid;
@@ -2537,15 +2537,15 @@ body.show-tags .verse-tag {
 .chf-play.is-playing .rf-pause-icon { display: block; }
 .chf-speed {
     flex: 0 0 auto;
-    height: 32px;
-    min-width: 44px;
-    padding: 0 12px;
-    border-radius: 16px;
+    height: 26px;
+    min-width: 36px;
+    padding: 0 8px;
+    border-radius: 13px;
     border: 1px solid var(--gold, #cba449);
     background: rgba(203,164,73,0.1);
     color: var(--navy, #142e42);
     font-family: var(--font-body);
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.15s;
@@ -2656,3 +2656,49 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     background: rgba(203,164,73,0.3) !important;
 }
 .col-resize-handle:hover { background: var(--gold, #cba449) !important; opacity: 1; }
+
+/* === Mobile audio in footer-nav === */
+@media (max-width: 768px) {
+    .mfn-audio {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-width: 0;
+    }
+    .mfn-play {
+        flex: 0 0 auto;
+        width: 44px; height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: var(--gold, #cba449);
+        color: var(--navy, #142e42);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .mfn-play:hover { background: #d9b35d; }
+    .mfn-play.hidden { display: none; }
+    .mfn-play .rf-pause-icon { display: none; }
+    .mfn-play.is-playing .rf-play-icon { display: none; }
+    .mfn-play.is-playing .rf-pause-icon { display: block; }
+    .mfn-speed {
+        flex: 0 0 auto;
+        height: 28px;
+        min-width: 40px;
+        padding: 0 10px;
+        border-radius: 14px;
+        border: 1px solid var(--gold, #cba449);
+        background: rgba(203,164,73,0.15);
+        color: #fff;
+        font-family: var(--font-body);
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .mfn-speed:hover { background: var(--gold, #cba449); color: var(--navy, #142e42); }
+    .mfn-speed.hidden { display: none; }
+}

@@ -126,10 +126,16 @@
         </div>
     </main>
 
-    <!-- Mobiele footer-nav: vorig hoofdstuk | label | volgend hoofdstuk. Alleen zichtbaar ≤768px. -->
+    <!-- Mobiele footer-nav: vorig hoofdstuk | play-knop + speed | volgend hoofdstuk. Alleen zichtbaar ≤768px. -->
     <nav id="mobile-footer-nav" aria-label="Hoofdstuk-navigatie">
         <button id="mobile-prev-btn" aria-label="Vorig hoofdstuk" onclick="Navigation.navigateRelative(-1)">&#9664;</button>
-        <div id="mobile-chapter-label" aria-live="polite"></div>
+        <div class="mfn-audio">
+            <button id="audio-play-mobile" class="mfn-play hidden" aria-label="Speel voorlezing af" title="Voorlezing">
+                <svg class="rf-play-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><polygon points="6,4 22,12 6,20" fill="currentColor"/></svg>
+                <svg class="rf-pause-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>
+            </button>
+            <button id="audio-speed-mobile" class="mfn-speed hidden" aria-label="Afspeelsnelheid" title="Snelheid">1×</button>
+        </div>
         <button id="mobile-next-btn" aria-label="Volgend hoofdstuk" onclick="Navigation.navigateRelative(1)">&#9654;</button>
     </nav>
 
