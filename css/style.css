@@ -2602,13 +2602,15 @@ body.show-tags .verse-tag {
 }
 
 /* === KT-popup-modus: maak nootmarkers prominenter en clickable-uitnodigend === */
-body.kt-popup-mode .col-2026 .note-marker {
+body.kt-popup-mode #content.hide-margin2026 [data-col="2026"] sup.note-marker,
+body.kt-popup-mode .col-2026 sup.note-marker {
+    display: inline !important;
     color: var(--gold, #cba449);
     font-weight: 700;
     cursor: pointer;
     padding: 0 1px;
 }
-body.kt-popup-mode .col-2026 .note-marker:hover {
+body.kt-popup-mode .col-2026 sup.note-marker:hover {
     background: rgba(203,164,73,0.18);
     border-radius: 2px;
 }

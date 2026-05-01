@@ -14,16 +14,21 @@ const ColumnResize = {
     },
 
     loadWidths() {
-        const saved = localStorage.getItem('sv2026_columnWidths');
+        // Vorige versies sloegen pixel-waardes op die de standaard 50/50-layout
+        // overschreven. Die worden eenmalig genegeerd zodat kolommen weer
+        // standaard gelijk verdeeld zijn.
+        const saved = localStorage.getItem('sv2026_columnWidths_v2');
         if (saved) {
             try {
                 this.customWidths = JSON.parse(saved);
             } catch(e) {}
         }
+        // Oude key opruimen
+        localStorage.removeItem('sv2026_columnWidths');
     },
 
     saveWidths() {
-        localStorage.setItem('sv2026_columnWidths', JSON.stringify(this.customWidths));
+        localStorage.setItem('sv2026_columnWidths_v2', JSON.stringify(this.customWidths));
     },
 
     addResizeHandles() {
@@ -79,12 +84,13 @@ const ColumnResize = {
     },
 
     applyWidths() {
-        // Overschrijf App.COL_WIDTHS met custom waarden
+        // Overschrijf App.COL_WIDTHS met custom waarden — maar gebruik
+        // standaard `minmax(0, 1fr)` voor échte 50/50 (of 33/33/33) verdeling.
         const parts = ['40px'];
         App.ALL_COLS.forEach(col => {
             const cb = document.querySelector(`[data-toggle-col="${col}"]`);
             if (cb && cb.checked) {
-                parts.push(this.customWidths[col] || App.COL_WIDTHS[col] || '1fr');
+                parts.push(this.customWidths[col] || 'minmax(0, 1fr)');
             }
         });
         const template = parts.join(' ');
