@@ -38,21 +38,16 @@ const MobileNav = {
         this.inited = true;
 
         const bookBtn = document.getElementById('mobile-book-btn');
-        const chBtn   = document.getElementById('mobile-chapter-btn');
         const optBtn  = document.getElementById('mobile-opties-btn');
-        if (!bookBtn || !chBtn || !optBtn) return;
+        if (!bookBtn || !optBtn) return;
 
         // Manifest preloaden voor naam-mapping
         const manifest = await DataLoader.loadManifest();
         this.bookById = {};
         for (const b of manifest.books) this.bookById[b.id] = b;
 
-        // Knoppen openen overlay
+        // Boek+hoofdstuk-knop opent altijd boek-overlay (kies boek → kies hoofdstuk)
         bookBtn.addEventListener('click', () => this.openPicker('books'));
-        chBtn.addEventListener('click', () => {
-            const bid = Navigation.currentBook || 'genesis';
-            this.openPicker('chapters', bid);
-        });
 
         // Overlay-controls
         document.getElementById('mp-close').addEventListener('click', () => this.closePicker());
@@ -145,8 +140,14 @@ const MobileNav = {
             item.className = 'mp-item' + (sameBook && ch === currentChapter ? ' active' : '');
             item.textContent = ch;
             item.addEventListener('click', () => {
+                // Direct het topbar-label updaten zodat het niet de oude waarde
+                // toont terwijl Navigation nog moet bijwerken via hashchange.
+                const bookLbl = document.querySelector('#mobile-book-btn .mp-label');
+                if (bookLbl) bookLbl.textContent = `${book.nameDutch} ${ch}`;
                 location.hash = `#${book.id}/${ch}`;
                 this.closePicker();
+                // Backup: sync na korte delay (na Navigation hashchange handler)
+                setTimeout(() => this.syncFromState(), 80);
             });
             list.appendChild(item);
         }
@@ -234,11 +235,9 @@ const MobileNav = {
         if (!bookId) return;
         const book = this.bookById[bookId];
 
-        // Knop-labels updaten
+        // Knop-label updaten — combineer boek + hoofdstuk in één label
         const bookLbl = document.querySelector('#mobile-book-btn .mp-label');
-        if (bookLbl && book) bookLbl.textContent = book.nameDutch;
-        const chLbl = document.querySelector('#mobile-chapter-btn .mp-label');
-        if (chLbl) chLbl.textContent = String(ch);
+        if (bookLbl && book) bookLbl.textContent = `${book.nameDutch} ${ch}`;
 
         // Footer-label "Boek X / Y"
         const label = document.getElementById('mobile-chapter-label');

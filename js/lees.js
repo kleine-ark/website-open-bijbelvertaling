@@ -87,43 +87,39 @@ const Lees = {
         window.scrollTo(0, 0);
     },
 
-    // === Audio-speler ===
+    // === Audio-speler in reader-footer ===
     async updateAudioPlayer(book, chapter) {
-        const player = document.getElementById('audio-player');
         const audioEl = document.getElementById('audio-el');
         const playBtn = document.getElementById('audio-play-big');
-        const titleEl = document.getElementById('audio-title');
-        const subEl   = document.getElementById('audio-sub');
-        if (!player || !audioEl) return;
+        const label   = document.getElementById('reader-footer-label');
+        if (!audioEl || !playBtn) return;
+
+        // Footer-label altijd updaten (ook zonder audio)
+        if (label) label.textContent = `${book.nameDutch || book.id} ${chapter}`;
 
         const url = `audio/${book.id}/${chapter}.mp3`;
-        // Probe of bestand bestaat (HEAD request)
         let exists = false;
         try {
             const r = await fetch(url, { method: 'HEAD' });
             exists = r.ok;
         } catch (e) { exists = false; }
 
+        // Pause oude audio bij hoofdstuk-wissel
+        try { audioEl.pause(); } catch (e) {}
+
         if (!exists) {
-            player.classList.add('hidden');
-            audioEl.pause();
+            playBtn.classList.add('hidden');
             audioEl.removeAttribute('src');
             return;
         }
-
-        // Reset
-        audioEl.pause();
         audioEl.src = url;
         playBtn.classList.remove('is-playing');
-        titleEl.textContent = `Voorlezing: ${book.nameDutch || book.id} ${chapter}`;
-        subEl.textContent = 'Klik om te beluisteren';
-        player.classList.remove('hidden');
+        playBtn.classList.remove('hidden');
     },
 
     setupAudioPlayer() {
         const audioEl = document.getElementById('audio-el');
         const playBtn = document.getElementById('audio-play-big');
-        const subEl   = document.getElementById('audio-sub');
         if (!audioEl || !playBtn) return;
 
         playBtn.addEventListener('click', () => {
@@ -133,17 +129,10 @@ const Lees = {
         audioEl.addEventListener('play', () => {
             playBtn.classList.add('is-playing');
             playBtn.setAttribute('aria-label', 'Pauzeer voorlezing');
-            playBtn.setAttribute('title', 'Pauzeer voorlezing');
-            subEl.textContent = 'Aan het afspelen…';
         });
         audioEl.addEventListener('pause', () => {
             playBtn.classList.remove('is-playing');
             playBtn.setAttribute('aria-label', 'Speel voorlezing af');
-            playBtn.setAttribute('title', 'Speel voorlezing af');
-            subEl.textContent = audioEl.ended ? 'Klaar' : 'Gepauzeerd';
-        });
-        audioEl.addEventListener('ended', () => {
-            subEl.textContent = 'Klaar';
         });
     },
 
@@ -468,9 +457,14 @@ const Lees = {
             btn.addEventListener('click', () => btn.closest('.overlay').classList.add('hidden'));
         });
 
-        // Chapter arrows
+        // Chapter arrows (top nav)
         document.getElementById('prev-ch').addEventListener('click', () => this.navigateRelative(-1));
         document.getElementById('next-ch').addEventListener('click', () => this.navigateRelative(1));
+        // Footer-nav (sticky bottom)
+        const rfPrev = document.getElementById('rf-prev');
+        const rfNext = document.getElementById('rf-next');
+        if (rfPrev) rfPrev.addEventListener('click', () => this.navigateRelative(-1));
+        if (rfNext) rfNext.addEventListener('click', () => this.navigateRelative(1));
 
         // Keyboard nav
         document.addEventListener('keydown', (e) => {
