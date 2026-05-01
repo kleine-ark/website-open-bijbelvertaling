@@ -135,8 +135,16 @@ const MobileNav = {
                 item.className = 'mp-item' + (b.id === currentBook ? ' active' : '');
                 item.textContent = b.nameDutch;
                 item.addEventListener('click', () => {
-                    // Direct door naar hoofdstuk-keuze van dit boek
-                    this.openPicker('chapters', b.id);
+                    const chapters = b.chaptersIncluded || [];
+                    if (chapters.length === 1) {
+                        // 1-hoofdstuk-boek: direct navigeren, picker dicht
+                        location.hash = `#${b.id}/${chapters[0]}`;
+                        this.closePicker();
+                        setTimeout(() => this.syncFromState(), 80);
+                    } else {
+                        // Meerdere hoofdstukken: door naar hoofdstuk-keuze
+                        this.openPicker('chapters', b.id);
+                    }
                 });
                 list.appendChild(item);
             }

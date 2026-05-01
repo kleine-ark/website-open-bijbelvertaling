@@ -1756,7 +1756,7 @@ sup.note-marker:hover {
     .verse-row { max-width: 100%; min-width: 0; }
     .verse-cell, .col-2026 { min-width: 0; word-wrap: break-word; overflow-wrap: anywhere; }
     #content-topbar { padding: 8px 4px; gap: 6px; }
-    #content-topbar #chapter-title { font-size: 22px; }
+    #content-topbar #chapter-title { display: none !important; }   /* dubbel met mobile-book-btn picker */
 
     /* Verzen leesbaarder op mobile */
     #content.reading-mode .verse-row {
@@ -2188,13 +2188,14 @@ body.show-tags .verse-tag {
     /* Nieuwe mobile pick-buttons (vervangen <select>) */
     .mobile-pick-btn {
         height: 40px;
-        padding: 0 10px;
+        padding: 0 12px;
         background: #fff;
         border: 1px solid var(--border);
         border-radius: 6px;
         color: var(--navy);
-        font-family: var(--font-body);
-        font-size: 14px;
+        font-family: 'EB Garamond', Georgia, serif;
+        font-size: 17px;
+        font-style: italic;
         font-weight: 600;
         cursor: pointer;
         display: inline-flex;
