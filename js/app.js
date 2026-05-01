@@ -126,17 +126,21 @@ const App = {
     },
 
     async renderChapter(bookId, chapterNum) {
-        const book = await DataLoader.loadBook(bookId);
+        // Manifest (klein) + chapter (klein) parallel
+        const [book, chapter] = await Promise.all([
+            DataLoader.loadBook(bookId),                      // bouwt lazy book-object
+            DataLoader.loadChapter(bookId, chapterNum),       // alleen huidige chapter
+        ]);
         if (!book) {
             document.getElementById('verses-container').innerHTML = '<p>Boek niet gevonden.</p>';
             return;
         }
-
-        const chapter = book.chapters.find(c => c.number === chapterNum);
         if (!chapter) {
             document.getElementById('verses-container').innerHTML = '<p>Hoofdstuk niet gevonden.</p>';
             return;
         }
+        // Pre-fetch buurchapters bij idle (volgende klik = instant)
+        DataLoader.prefetchAdjacent(bookId, chapterNum);
 
         // Titel
         document.getElementById('chapter-title').textContent =
