@@ -67,6 +67,7 @@ const App = {
     _updateAudioPlayer(bookId, chapter) {
         const playBtn = document.getElementById('audio-play-big');
         const speedBtn = document.getElementById('audio-speed');
+        const scrubWrap = document.getElementById('audio-scrubber-wrap');
         const audioEl = document.getElementById('audio-el');
         if (!playBtn || !audioEl) return;
         try { audioEl.pause(); } catch (e) {}
@@ -74,6 +75,7 @@ const App = {
         if (!list.includes(chapter)) {
             playBtn.classList.add('hidden');
             if (speedBtn) speedBtn.classList.add('hidden');
+            if (scrubWrap) scrubWrap.classList.add('hidden');
             audioEl.removeAttribute('src');
             return;
         }
@@ -81,15 +83,33 @@ const App = {
         playBtn.classList.remove('is-playing');
         playBtn.classList.remove('hidden');
         if (speedBtn) speedBtn.classList.remove('hidden');
+        if (scrubWrap) scrubWrap.classList.remove('hidden');
+        // Reset scrubber
+        const scrubber = document.getElementById('audio-scrubber');
+        const cur = document.getElementById('audio-time-cur');
+        const tot = document.getElementById('audio-time-tot');
+        if (scrubber) scrubber.value = 0;
+        if (cur) cur.textContent = '0:00';
+        if (tot) tot.textContent = '0:00';
     },
 
     _setupAudioPlayer() {
         const audioEl = document.getElementById('audio-el');
         const playBtn = document.getElementById('audio-play-big');
         const speedBtn = document.getElementById('audio-speed');
+        const scrubber = document.getElementById('audio-scrubber');
+        const curEl = document.getElementById('audio-time-cur');
+        const totEl = document.getElementById('audio-time-tot');
         if (!audioEl || !playBtn) return;
         if (playBtn._wired) return;
         playBtn._wired = true;
+
+        const fmt = (sec) => {
+            if (!isFinite(sec) || sec < 0) return '0:00';
+            const m = Math.floor(sec / 60), s = Math.floor(sec % 60);
+            return `${m}:${s.toString().padStart(2, '0')}`;
+        };
+
         // Play / pause
         playBtn.addEventListener('click', () => {
             if (audioEl.paused) audioEl.play();
@@ -97,6 +117,7 @@ const App = {
         });
         audioEl.addEventListener('play', () => playBtn.classList.add('is-playing'));
         audioEl.addEventListener('pause', () => playBtn.classList.remove('is-playing'));
+
         // Snelheid: 1× → 1.25× → 1.5× → 2× → 0.75× → 1×
         if (speedBtn) {
             const cycle = [1, 1.25, 1.5, 2, 0.75];
@@ -105,6 +126,28 @@ const App = {
                 idx = (idx + 1) % cycle.length;
                 audioEl.playbackRate = cycle[idx];
                 speedBtn.textContent = cycle[idx] + '×';
+            });
+        }
+
+        // Scrubber: doorspoelen + tijd-display
+        if (scrubber) {
+            audioEl.addEventListener('loadedmetadata', () => {
+                scrubber.max = audioEl.duration || 0;
+                if (totEl) totEl.textContent = fmt(audioEl.duration);
+            });
+            audioEl.addEventListener('timeupdate', () => {
+                if (!scrubber._dragging) {
+                    scrubber.value = audioEl.currentTime;
+                    if (curEl) curEl.textContent = fmt(audioEl.currentTime);
+                }
+            });
+            scrubber.addEventListener('input', () => {
+                scrubber._dragging = true;
+                if (curEl) curEl.textContent = fmt(parseFloat(scrubber.value));
+            });
+            scrubber.addEventListener('change', () => {
+                audioEl.currentTime = parseFloat(scrubber.value);
+                scrubber._dragging = false;
             });
         }
     },

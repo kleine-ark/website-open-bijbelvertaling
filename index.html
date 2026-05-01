@@ -114,6 +114,11 @@
                     <svg class="rf-play-icon" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><polygon points="6,4 22,12 6,20" fill="currentColor"/></svg>
                     <svg class="rf-pause-icon" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>
                 </button>
+                <div class="chf-scrubber hidden" id="audio-scrubber-wrap">
+                    <span class="chf-time" id="audio-time-cur">0:00</span>
+                    <input type="range" id="audio-scrubber" class="chf-scrubber-input" min="0" max="100" value="0" step="0.1" aria-label="Doorspoelen">
+                    <span class="chf-time" id="audio-time-tot">0:00</span>
+                </div>
                 <button id="audio-speed" class="chf-speed hidden" aria-label="Afspeelsnelheid" title="Klik om snelheid te wisselen">1×</button>
             </div>
             <button onclick="Navigation.navigateRelative(1)" class="chf-btn chf-next">Volgend hoofdstuk &#8250;</button>

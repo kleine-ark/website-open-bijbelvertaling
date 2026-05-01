@@ -2552,3 +2552,51 @@ body.show-tags .verse-tag {
 }
 .chf-speed:hover { background: var(--gold, #cba449); color: #fff; }
 .chf-speed.hidden { display: none; }
+
+/* Scrubber (doorspoelen) */
+.chf-scrubber {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+    max-width: 360px;
+}
+.chf-scrubber.hidden { display: none; }
+.chf-time {
+    flex: 0 0 auto;
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--navy, #142e42);
+    font-variant-numeric: tabular-nums;
+    min-width: 36px;
+    text-align: center;
+}
+.chf-scrubber-input {
+    flex: 1 1 auto;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: rgba(20,46,66,0.18);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+.chf-scrubber-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--gold, #cba449);
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.chf-scrubber-input::-moz-range-thumb {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--gold, #cba449);
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
