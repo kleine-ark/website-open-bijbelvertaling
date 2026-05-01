@@ -36,6 +36,7 @@
             <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path fill="currentColor" d="M6 8L0 0h12z"/></svg>
         </button>
         <button type="button" id="mobile-begrippen-btn" class="mobile-toggle-btn is-on" aria-label="Begrippen aan/uit" title="Begrippen aan/uit" aria-pressed="true">B</button>
+        <button type="button" id="mobile-kt-btn" class="mobile-toggle-btn is-on" aria-label="Kanttekeningen aan/uit" title="Kanttekeningen-popup aan/uit" aria-pressed="true">KT</button>
         <button id="mobile-opties-btn" aria-label="Opties openen" title="Opties">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
         </button>
@@ -99,11 +100,11 @@
             <div data-col="margin1637">KT 1637</div>
             <div data-col="sv1888">SV 1888</div>
             <div data-col="marginSV1888">KT 1888</div>
-            <div data-col="2026">OV2026</div>
+            <div data-col="2026">OSV</div>
             <div data-col="margin2026">OSV KT</div>
             <div data-col="hebrew">Hebr/Grieks</div>
-            <div data-col="diff">Verschillen tekst OV2026</div>
-            <div data-col="noteDiff">Verschillen KT OV2026</div>
+            <div data-col="diff">Verschillen tekst OSV</div>
+            <div data-col="noteDiff">Verschillen KT OSV</div>
         </div>
 
         <div id="verses-container"></div>
@@ -480,7 +481,7 @@
                 <div class="opt-group-label">Tekstedities</div>
                 <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
                 <label><input type="checkbox" data-toggle-col="sv1888"> SV 1888</label>
-                <label><input type="checkbox" data-toggle-col="2026" checked> OV2026</label>
+                <label><input type="checkbox" data-toggle-col="2026" checked> OSV</label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Kanttekeningen</div>
@@ -492,8 +493,8 @@
             <div class="opt-group">
                 <div class="opt-group-label">Analyse</div>
                 <label><input type="checkbox" data-toggle-col="hebrew"> Hebr/Grieks</label>
-                <label><input type="checkbox" data-toggle-col="diff"> Verschillen tekst OV2026</label>
-                <label><input type="checkbox" data-toggle-col="noteDiff"> Verschillen KT OV2026</label>
+                <label><input type="checkbox" data-toggle-col="diff"> Verschillen tekst OSV</label>
+                <label><input type="checkbox" data-toggle-col="noteDiff"> Verschillen KT OSV</label>
                 <label><input type="checkbox" id="toggle-begrippen" checked onchange="Begrippen.toggle(this.checked)"> Begrippen</label>
                 <label><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"> Tags</label>
             </div>

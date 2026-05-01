@@ -65,6 +65,19 @@ const MobileNav = {
             });
         }
 
+        // KT-popup aan/uit toggle
+        const ktBtn = document.getElementById('mobile-kt-btn');
+        if (ktBtn) {
+            ktBtn.addEventListener('click', () => {
+                const on = !ktBtn.classList.contains('is-on');
+                ktBtn.classList.toggle('is-on', on);
+                ktBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+                document.body.classList.toggle('kt-popup-mode', on);
+                const cb = document.getElementById('toggle-kt-popup');
+                if (cb) cb.checked = on;
+            });
+        }
+
         // Overlay-controls
         document.getElementById('mp-close').addEventListener('click', () => this.closePicker());
         document.getElementById('mp-back').addEventListener('click', () => {
