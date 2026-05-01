@@ -96,36 +96,21 @@
         <button class="popover-more" id="popover-more">Meer in lexicon</button>
     </div>
 
-    <!-- Audio-speler: verschijnt onderaan content wanneer voor dit hoofdstuk
-         een audio-bestand bestaat (audio/{book}/{chapter}.mp3). -->
-    <div id="audio-player" class="audio-player hidden" aria-label="Voorlezing">
-        <button id="audio-play-big" class="audio-play-big" aria-label="Speel voorlezing af" title="Speel voorlezing af">
-            <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
-                <polygon points="6,4 22,12 6,20" fill="currentColor"/>
-            </svg>
+    <!-- Footer: altijd zichtbaar onderaan met vorig/volgend hoofdstuk + audio-knop -->
+    <footer id="reader-footer" class="reader-footer" aria-label="Hoofdstuk-navigatie en voorlezing">
+        <button class="rf-btn rf-nav" id="rf-prev" aria-label="Vorig hoofdstuk" title="Vorig hoofdstuk">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        <div class="audio-meta">
-            <div class="audio-title" id="audio-title">Voorlezing</div>
-            <div class="audio-sub" id="audio-sub">Klik om te beluisteren</div>
-        </div>
+        <button class="rf-btn rf-play hidden" id="audio-play-big" aria-label="Speel voorlezing af" title="Voorlezing">
+            <svg class="rf-play-icon" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><polygon points="6,4 22,12 6,20" fill="currentColor"/></svg>
+            <svg class="rf-pause-icon" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>
+        </button>
+        <div class="rf-label" id="reader-footer-label" aria-live="polite">Genesis 1</div>
+        <button class="rf-btn rf-nav" id="rf-next" aria-label="Volgend hoofdstuk" title="Volgend hoofdstuk">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
         <audio id="audio-el" preload="none"></audio>
-    </div>
-
-    <!-- Mobile bottom nav -->
-    <nav id="mobile-nav">
-        <button class="mobile-tab active" data-tab="bijbel">
-            <span class="tab-icon">&#128214;</span>
-            <span class="tab-label">Bijbel</span>
-        </button>
-        <button class="mobile-tab" data-tab="zoek">
-            <span class="tab-icon">&#128269;</span>
-            <span class="tab-label">Zoek</span>
-        </button>
-        <button class="mobile-tab" data-tab="instellingen">
-            <span class="tab-icon">&#9881;</span>
-            <span class="tab-label">Instellingen</span>
-        </button>
-    </nav>
+    </footer>
 
     <script src="js/lees.js"></script>
     <script src="js/lees-lexicon.js"></script>
