@@ -88,31 +88,28 @@ const Lees = {
     },
 
     // === Audio-speler in reader-footer ===
+    // Hardcoded lijst van hoofdstukken met voorlezing (uitbreiden naarmate
+    // er meer audio-bestanden in audio/{book}/{ch}.mp3 staan).
+    AUDIO_AVAILABLE: {
+        genesis: [1],
+    },
+
     async updateAudioPlayer(book, chapter) {
         const audioEl = document.getElementById('audio-el');
         const playBtn = document.getElementById('audio-play-big');
         const label   = document.getElementById('reader-footer-label');
         if (!audioEl || !playBtn) return;
 
-        // Footer-label altijd updaten (ook zonder audio)
         if (label) label.textContent = `${book.nameDutch || book.id} ${chapter}`;
-
-        const url = `audio/${book.id}/${chapter}.mp3`;
-        let exists = false;
-        try {
-            const r = await fetch(url, { method: 'HEAD' });
-            exists = r.ok;
-        } catch (e) { exists = false; }
-
-        // Pause oude audio bij hoofdstuk-wissel
         try { audioEl.pause(); } catch (e) {}
 
-        if (!exists) {
+        const list = this.AUDIO_AVAILABLE[book.id] || [];
+        if (!list.includes(chapter)) {
             playBtn.classList.add('hidden');
             audioEl.removeAttribute('src');
             return;
         }
-        audioEl.src = url;
+        audioEl.src = `audio/${book.id}/${chapter}.mp3`;
         playBtn.classList.remove('is-playing');
         playBtn.classList.remove('hidden');
     },

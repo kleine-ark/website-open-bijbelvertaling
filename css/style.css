@@ -15,11 +15,12 @@
     border-bottom: 2px solid var(--gold);   /* doorlopende gouden lijn onder topnav */
 }
 .topnav-brand {
-    font-family: var(--font-body);
-    font-size: 18px;
-    font-weight: 600;
+    font-family: var(--font-cursive, 'Allura', cursive);
+    font-size: 32px;
+    font-weight: 400;
     color: #fff;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+    line-height: 1;
 }
 .topnav-subtitle {
     font-size: 11px;
@@ -1834,7 +1835,7 @@ sup.note-marker:hover {
         min-width: 0;
         max-width: calc(100vw - 20px);
     }
-    #content-topbar #chapter-title { font-size: 18px; }
+    #content-topbar #chapter-title { display: none; }   /* dubbel met mobile-book-btn label */
     .quickfilter span, #columns-btn svg, #opties-btn svg { display: none; }
 }
 
@@ -2425,10 +2426,13 @@ body.show-tags .verse-tag {
     background: #fff;
     border: 1px solid var(--border, #e5e1d8);
     border-radius: 8px;
-    padding: 12px 14px;
+    padding: 14px 16px;
     color: var(--navy);
-    font-family: var(--font-body);
-    font-size: 15px;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.01em;
     text-align: left;
     cursor: pointer;
     transition: background 0.12s, border-color 0.12s;
@@ -2452,7 +2456,9 @@ body.show-tags .verse-tag {
     text-align: center;
     padding: 14px 6px;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: normal;       /* hoofdstuk-cijfers niet cursief */
 }
 
 /* === Chapter-footer (vorig/volgend hoofdstuk) — sticky onderaan ===
