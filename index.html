@@ -632,6 +632,25 @@
     <script src="js/opties.js"></script>
     <script src="js/app.js"></script>
 
+    <!-- Service Worker: offline-cache + instant 2e bezoek -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').then(reg => {
+                // Listen for updates
+                reg.addEventListener('updatefound', () => {
+                    const sw = reg.installing;
+                    sw && sw.addEventListener('statechange', () => {
+                        if (sw.state === 'activated' && navigator.serviceWorker.controller) {
+                            console.info('Service Worker bijgewerkt — verversen voor nieuwe content');
+                        }
+                    });
+                });
+            }).catch(err => console.warn('SW registration failed:', err));
+        });
+    }
+    </script>
+
     <!-- Begrippen popover -->
     <div id="begrip-popover" style="display:none;position:absolute;z-index:600;background:#fff;border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:14px 18px;box-shadow:0 4px 16px rgba(0,0,0,0.15);max-width:350px;font-family:var(--font-body);font-size:14px;line-height:1.6;">
         <div id="begrip-woord" style="font-size:18px;font-weight:600;color:var(--navy);margin-bottom:4px;"></div>
