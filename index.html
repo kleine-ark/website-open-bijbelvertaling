@@ -109,8 +109,15 @@
 
         <div id="chapter-footer">
             <button onclick="Navigation.navigateRelative(-1)" class="chf-btn chf-prev">&#8249; Vorig hoofdstuk</button>
-            <span id="chapter-footer-label" class="chf-label" aria-live="polite"></span>
+            <div class="chf-center">
+                <button id="audio-play-big" class="chf-play hidden" aria-label="Speel voorlezing af" title="Voorlezing">
+                    <svg class="rf-play-icon" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><polygon points="6,4 22,12 6,20" fill="currentColor"/></svg>
+                    <svg class="rf-pause-icon" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>
+                </button>
+                <button id="audio-speed" class="chf-speed hidden" aria-label="Afspeelsnelheid" title="Klik om snelheid te wisselen">1×</button>
+            </div>
             <button onclick="Navigation.navigateRelative(1)" class="chf-btn chf-next">Volgend hoofdstuk &#8250;</button>
+            <audio id="audio-el" preload="none"></audio>
         </div>
     </main>
 

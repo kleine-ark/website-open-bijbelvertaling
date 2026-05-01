@@ -43,7 +43,7 @@
 .topnav-links {
     display: flex;
     gap: 2px;
-    margin-left: 24px;     /* dichter bij brand-logo i.p.v. gecentreerd */
+    margin-left: 20%;
     margin-right: auto;
 }
 .topnav-search {
@@ -2504,3 +2504,51 @@ body.show-tags .verse-tag {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+/* === Play-knop + snelheid in chapter-footer (index.html) === */
+.chf-center {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 0;
+}
+.chf-play {
+    flex: 0 0 auto;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    background: var(--gold, #cba449);
+    color: var(--navy, #142e42);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background 0.15s, transform 0.1s;
+}
+.chf-play:hover { background: #d9b35d; }
+.chf-play:active { transform: scale(0.96); }
+.chf-play.hidden { display: none; }
+.chf-play .rf-pause-icon { display: none; }
+.chf-play.is-playing .rf-play-icon { display: none; }
+.chf-play.is-playing .rf-pause-icon { display: block; }
+.chf-speed {
+    flex: 0 0 auto;
+    height: 32px;
+    min-width: 44px;
+    padding: 0 12px;
+    border-radius: 16px;
+    border: 1px solid var(--gold, #cba449);
+    background: rgba(203,164,73,0.1);
+    color: var(--navy, #142e42);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.chf-speed:hover { background: var(--gold, #cba449); color: #fff; }
+.chf-speed.hidden { display: none; }
