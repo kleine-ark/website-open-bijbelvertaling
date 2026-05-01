@@ -97,9 +97,9 @@ const App = {
         });
         audioEl.addEventListener('play', () => playBtn.classList.add('is-playing'));
         audioEl.addEventListener('pause', () => playBtn.classList.remove('is-playing'));
-        // Snelheid: 1× → 1.25× → 1.5× → 2× → 1×
+        // Snelheid: 1× → 1.25× → 1.5× → 2× → 0.75× → 1×
         if (speedBtn) {
-            const cycle = [1, 1.25, 1.5, 2];
+            const cycle = [1, 1.25, 1.5, 2, 0.75];
             let idx = 0;
             speedBtn.addEventListener('click', () => {
                 idx = (idx + 1) % cycle.length;
