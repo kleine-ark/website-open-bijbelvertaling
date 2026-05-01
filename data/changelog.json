@@ -6,55 +6,95 @@
       "items": [
         {
           "type": "feature",
-          "beschrijving": "Login + cloud-sync: Google-login via Firebase, highlights synchroniseren tussen apparaten via Firestore. Werkt graceful zonder Firebase-config (anonieme localStorage-modus)."
+          "beschrijving": "Inloggen met Google: rechtsboven verschijnt een 'Login'-knop. Na inloggen worden je markeringen automatisch tussen al je apparaten gesynchroniseerd (telefoon, laptop, tablet) via Firebase. Zonder login werkt alles ook — markeringen worden dan alleen lokaal in deze browser bewaard."
         },
         {
           "type": "feature",
-          "beschrijving": "Highlights: 4 kleuren (magenta, lichtblauw, lichtgroen, lichtgeel) op vers- en woord-niveau. Selecteer tekst → kleuren-palette verschijnt. Klik op een markering om die individueel te wissen. Char-offset opslag (werkt over <sup>-noten en <i>-spans heen)."
+          "beschrijving": "Markeringen in 4 kleuren (magenta, lichtblauw, lichtgroen, lichtgeel) — selecteer een woord of vers en kies een kleur uit het zwevende palette. Werkt op losse woorden én op hele verzen. Verkeerd gemarkeerd? Klik op de gele/blauwe vlek en de markering verdwijnt — alleen die ene, niet de rest van het vers."
         },
         {
           "type": "feature",
-          "beschrijving": "Feedback-knop in highlight-palette + via rechter-muisklik: open een modal, vul suggestie in, verstuurt naar Firestore + e-mail (maartenvroegindeweij@gmail.com via /api/feedback)."
+          "beschrijving": "Feedback geven op de tekst: selecteer een stukje tekst, klik op de 💬-knop in het kleuren-palette (of rechter-muisklik) → vul je suggestie in → verzend. De feedback komt direct in een mail bij Maarten Vroegindeweij aan, met versverwijzing en geselecteerde tekst."
         },
         {
           "type": "feature",
-          "beschrijving": "Audio-voorlezing (Genesis 1 als eerste): grote gouden play-knop onderaan lees.html. Audio-bestanden in audio/{book}/{chapter}.mp3 — speler verschijnt automatisch wanneer beschikbaar."
+          "beschrijving": "Voorlezing van Genesis 1 én Johannes 1: open lees.html op die hoofdstukken en zie onderin een grote gouden ▶-knop. Klik om de audio te starten. Volgende hoofdstukken worden later toegevoegd in audio/{boek}/{hoofdstuk}.mp3."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Voorpagina met hero-afbeelding: over-ov.html opent met een schilderij van Jezus en de Samaritaanse vrouw bij de bron (Johannes 4) met de quote 'Ik ben het, Die met u spreekt'. De afbeelding gaat zacht over in de pagina-content via een fade-out gradient."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Mobiele bijbel-picker: tap op de boek-knop bovenaan en je krijgt een fullscreen-overlay met alle boeken (gegroepeerd per Pentateuch / Historische / Profeten / Apocriefen / Evangeliën / etc.) in cursief Garamond. Tap een boek → zie meteen het hoofdstuk-grid → tap een hoofdstuk → overlay sluit en je bent er. Dus boek + hoofdstuk in 2 taps."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Sticky audio-+-navigatie-footer onderaan lees.html: vorig hoofdstuk-pijltje, gouden play-knop voor voorlezing (alleen zichtbaar bij hoofdstukken met audio), de naam van het huidige hoofdstuk in cursief, en een volgend hoofdstuk-pijltje. Blijft altijd in beeld tijdens scrollen."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Tekstkwaliteit-wizard (tekstkwaliteit.html): 6.700 mogelijke verbeterpunten uit een AI-scan over alle 82 bijbelboeken, gebundeld per patroon (verouderde woorden, niet-lopende zinnen, cascade-bugs uit eerdere bulk-fixes, ontbrekende voorzetsels, etc.). Per bundel kies je 'pas alles toe' of 'sla over'."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Begrippen aan-uit per boek: 81 van de 82 bijbelboeken hebben nu een eigen begrippenlijst (Genesis 927 begrippen, Psalmen 776, Johannes 431, etc.). Klik op een woord en zie een popup met uitleg. Plus een cross-boek encyclopedie-supplement met 6.895 algemene NL-begrippen — totaal 13.136 entries, 8.304 unieke woorden."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Apocriefe boeken expliciet toegevoegd in de positie-omschrijving: 16 apocriefe boeken uit SV1637 (3 Ezra, 4 Ezra, Tobit, Judith, Boek der Wijsheid, Jezus Sirach, Baruch, etc.) staan tussen Oude en Nieuwe Testament conform de SV1637-volgorde. Worden meegenomen in alle scans, begrippen en lexicon-koppelingen."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Site-footer op alle statische pagina's: navy-balk onderaan met OV2026-wordmark, gouden bovenlijn, navigatie-links en versie-info. Geeft visuele rust onder lange pagina's."
         },
         {
           "type": "ui",
-          "beschrijving": "Hero op over-ov.html: schilderij Jezus + Samaritaanse vrouw (Joh 4:26) met fade-out naar pagina-content. Quote 'Ik ben het, Die met u spreekt'."
+          "beschrijving": "Cursief Allura-logo 'Open Vertaling' linksboven in topnav (was eerst plain Fira Sans bold). Topnav-links (Over OV / Tekst / Wiki / Contact) opgeschoven naar links, dichter bij het logo."
         },
         {
           "type": "ui",
-          "beschrijving": "Site-footer op alle statische pagina's: navy-balk met OV2026-wordmark, gouden bovenlijn, navigatie-links en versie-info."
+          "beschrijving": "Topnav hoger (72px desktop, 56px mobiel) met doorlopende gouden onderlijn. Sidebars links én rechts hebben dezelfde gouden bovenlijn — visuele consistentie. Sidebar-header sticky bovenin sidebar zodat de inklap-toggle altijd bereikbaar blijft."
         },
         {
           "type": "ui",
-          "beschrijving": "Topnav hoger (72px desktop, 56px mobiel) met doorlopende gouden onderlijn. Sidebars (links + rechts) krijgen ook gouden bovenlijn voor visuele consistentie."
+          "beschrijving": "Bij twee zichtbare kolommen (bv. SV1888 + OV2026 naast elkaar) zijn de breedtes nu standaard 50/50 (`minmax(0, 1fr)` i.p.v. `1fr`). Lange content duwt geen kolom meer scheef. Kolom-resize (slepen op grens) blijft werken voor handmatige aanpassing."
         },
         {
           "type": "ui",
-          "beschrijving": "Mobiele picker-overlay: vervangt de native dropdowns door fullscreen book-grid → chapter-grid flow. Boek kiezen springt direct door naar hoofdstuk-keuze (1-klik flow)."
+          "beschrijving": "Sticky chapter-footer onderaan index.html met 'Vorig hoofdstuk' / 'Boeknaam X / Y' / 'Volgend hoofdstuk' — blijft altijd zichtbaar tijdens scrollen door lange hoofdstukken."
         },
         {
           "type": "ui",
-          "beschrijving": "Hamburger naar rechts op mobiel, groter en duidelijker (44×44, dikkere strepen). Search 🔍 emoji vervangen door schoon SVG-vergrootglas. Strong's checkbox uit Opties verwijderd (overgenomen door inline-Strong's modus)."
+          "beschrijving": "'Tekst'-link in de topnav opent voortaan Johannes 1 (i.p.v. Genesis 1) met begrippen-popup standaard aan. Begrippen-checkbox in Opties is default checked — klikbare oranje begrippen verschijnen direct."
         },
         {
           "type": "ui",
-          "beschrijving": "Tekstkwaliteit-wizard: tekstkwaliteit.html met 6.700 issues uit AI-scan over alle 82 boeken (VEROUDERD_WOORD, CASCADE_BUG, GENITIEF_REST, NIET_LOPENDE_ZIN, etc.). Bundeling per patroon, mens beslist per bundel of fix wordt toegepast."
+          "beschrijving": "Strong's-checkbox uit het Analyse-blok in Opties verwijderd — Strong's-nummers zijn nu inline beschikbaar in de Hebr/Grieks-kolom. Search-emoji 🔍 vervangen door schoon SVG-vergrootglas. Hamburger op mobiel groter (44×44) en aan de rechterkant met dikkere strepen."
         },
         {
           "type": "ui",
-          "beschrijving": "Begrippenlijsten compleet: 81/82 boeken (encyclopedie-supplement: 6.895 NL begrippen, 13.136 totaal-entries, 8.304 unieke woorden)."
+          "beschrijving": "Contact-pagina: LinkedIn-knop (linkedin.com/in/maarten-vroegindeweij) en kleineark.com-knop met SVG-icoontjes naast e-mailadres."
         },
         {
           "type": "fix",
-          "beschrijving": "Layout-bug 'donker gat' onder topnav verholpen: app-header was leeg-maar-dark op leespagina, nu transparent met :has()-selector. Mobile body { overflow-x: hidden } voorkomt rogue-element overflow."
+          "beschrijving": "Cloud-highlights merge-bug: na lokaal verwijderen van een markering kwam die bij refresh terug uit de cloud (per-key union-merge). Vervangen door last-writer-wins op het hele state-object — verwijderingen blijven nu definitief weg."
         },
         {
           "type": "fix",
-          "beschrijving": "Highlight-bug: 2e voorkomen van 'God' markeerde altijd het 1e voorkomen (text-search via indexOf). Nu char-offset based — markering komt op het exact geselecteerde stuk."
+          "beschrijving": "Highlight-bug: het 2e voorkomen van een woord (bv. 'God') markeerde altijd het 1e voorkomen omdat de DOM-zoeker `indexOf` gebruikte. Nu wordt het exacte char-offset binnen de cel-tekst opgeslagen — markering komt op precies het geselecteerde stuk, ook over <sup>-noten en <i>-spans heen."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Layout-bug 'donker gat' onder topnav: het lege #app-header element (book-nav/toolbar verborgen) toonde toch zijn navy-blauwe achtergrond. Nu transparent gemaakt met :has()-selector zodat de chapter-titel direct onder topnav aansluit."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Mobile picker bug: na chapter-pick toonde de topbar-knop nog het oude hoofdstuk-nr (bv. 'Genesis 18' bij keuze Genesis 1). Direct label-update + delayed sync als backup."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Audio play-knop bleef verborgen op live site: HEAD-probe werd door service worker geblokkeerd → vervangen door hardcoded AUDIO_AVAILABLE map in lees.js."
         }
       ]
     },

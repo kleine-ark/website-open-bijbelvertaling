@@ -43,7 +43,8 @@
 .topnav-links {
     display: flex;
     gap: 2px;
-    margin: 0 auto;
+    margin-left: 24px;     /* dichter bij brand-logo i.p.v. gecentreerd */
+    margin-right: auto;
 }
 .topnav-search {
     background: none;
