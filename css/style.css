@@ -2600,3 +2600,15 @@ body.show-tags .verse-tag {
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     cursor: pointer;
 }
+
+/* === KT-popup-modus: maak nootmarkers prominenter en clickable-uitnodigend === */
+body.kt-popup-mode .col-2026 .note-marker {
+    color: var(--gold, #cba449);
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0 1px;
+}
+body.kt-popup-mode .col-2026 .note-marker:hover {
+    background: rgba(203,164,73,0.18);
+    border-radius: 2px;
+}
