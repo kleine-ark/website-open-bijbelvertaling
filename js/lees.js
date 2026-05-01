@@ -80,8 +80,8 @@ const Lees = {
         this.renderChapterButtons(book);
         this.renderChapter(book, chapter);
 
-        // Audio-speler tonen/verbergen
-        this.updateAudioPlayer(book, chapter);
+        // Audio-speler tonen/verbergen — bookId apart doorgeven (book.id niet altijd gezet)
+        this.updateAudioPlayer(bookId, book, chapter);
 
         // Scroll to top
         window.scrollTo(0, 0);
@@ -92,24 +92,25 @@ const Lees = {
     // er meer audio-bestanden in audio/{book}/{ch}.mp3 staan).
     AUDIO_AVAILABLE: {
         genesis: [1],
+        johannes: [1],
     },
 
-    async updateAudioPlayer(book, chapter) {
+    async updateAudioPlayer(bookId, book, chapter) {
         const audioEl = document.getElementById('audio-el');
         const playBtn = document.getElementById('audio-play-big');
         const label   = document.getElementById('reader-footer-label');
         if (!audioEl || !playBtn) return;
 
-        if (label) label.textContent = `${book.nameDutch || book.id} ${chapter}`;
+        if (label) label.textContent = `${(book && book.nameDutch) || bookId} ${chapter}`;
         try { audioEl.pause(); } catch (e) {}
 
-        const list = this.AUDIO_AVAILABLE[book.id] || [];
+        const list = this.AUDIO_AVAILABLE[bookId] || [];
         if (!list.includes(chapter)) {
             playBtn.classList.add('hidden');
             audioEl.removeAttribute('src');
             return;
         }
-        audioEl.src = `audio/${book.id}/${chapter}.mp3`;
+        audioEl.src = `audio/${bookId}/${chapter}.mp3`;
         playBtn.classList.remove('is-playing');
         playBtn.classList.remove('hidden');
     },
