@@ -311,7 +311,7 @@ body.dark .icon-sun { display: none; }
     .header-center { display: none; } /* search moves to mobile tab */
     #book-nav { padding: 6px 12px; top: 43px; }
     #reader-content { padding: 20px 16px 120px; }
-    #chapter-heading { font-size: 22px; }
+    #chapter-heading { display: none; }   /* dubbel met footer-label op mobiel */
     #notes-panel { width: 100%; top: 0; }
     #mobile-nav { display: flex; }
     .copy-toolbar.visible { bottom: 70px; } /* above mobile nav */

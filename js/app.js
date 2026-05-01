@@ -66,24 +66,25 @@ const App = {
 
     _updateAudioPlayer(bookId, chapter) {
         const playBtn = document.getElementById('audio-play-big');
+        const playMob = document.getElementById('audio-play-mobile');
         const speedBtn = document.getElementById('audio-speed');
+        const speedMob = document.getElementById('audio-speed-mobile');
         const scrubWrap = document.getElementById('audio-scrubber-wrap');
         const audioEl = document.getElementById('audio-el');
-        if (!playBtn || !audioEl) return;
+        if (!audioEl) return;
         try { audioEl.pause(); } catch (e) {}
         const list = App.AUDIO_AVAILABLE[bookId] || [];
-        if (!list.includes(chapter)) {
-            playBtn.classList.add('hidden');
-            if (speedBtn) speedBtn.classList.add('hidden');
-            if (scrubWrap) scrubWrap.classList.add('hidden');
-            audioEl.removeAttribute('src');
-            return;
-        }
+        const show = list.includes(chapter);
+        const setHidden = (el, hide) => { if (el) el.classList.toggle('hidden', hide); };
+        setHidden(playBtn, !show);
+        setHidden(playMob, !show);
+        setHidden(speedBtn, !show);
+        setHidden(speedMob, !show);
+        setHidden(scrubWrap, !show);
+        if (!show) { audioEl.removeAttribute('src'); return; }
         audioEl.src = `audio/${bookId}/${chapter}.mp3`;
-        playBtn.classList.remove('is-playing');
-        playBtn.classList.remove('hidden');
-        if (speedBtn) speedBtn.classList.remove('hidden');
-        if (scrubWrap) scrubWrap.classList.remove('hidden');
+        if (playBtn) playBtn.classList.remove('is-playing');
+        if (playMob) playMob.classList.remove('is-playing');
         // Reset scrubber
         const scrubber = document.getElementById('audio-scrubber');
         const cur = document.getElementById('audio-time-cur');
@@ -96,13 +97,15 @@ const App = {
     _setupAudioPlayer() {
         const audioEl = document.getElementById('audio-el');
         const playBtn = document.getElementById('audio-play-big');
+        const playMob = document.getElementById('audio-play-mobile');
         const speedBtn = document.getElementById('audio-speed');
+        const speedMob = document.getElementById('audio-speed-mobile');
         const scrubber = document.getElementById('audio-scrubber');
         const curEl = document.getElementById('audio-time-cur');
         const totEl = document.getElementById('audio-time-tot');
-        if (!audioEl || !playBtn) return;
-        if (playBtn._wired) return;
-        playBtn._wired = true;
+        if (!audioEl || (!playBtn && !playMob)) return;
+        if (audioEl._wired) return;
+        audioEl._wired = true;
 
         const fmt = (sec) => {
             if (!isFinite(sec) || sec < 0) return '0:00';
@@ -110,24 +113,34 @@ const App = {
             return `${m}:${s.toString().padStart(2, '0')}`;
         };
 
-        // Play / pause
-        playBtn.addEventListener('click', () => {
+        // Play / pause — beide knoppen (desktop + mobile) wirelinen
+        const togglePlay = () => {
             if (audioEl.paused) audioEl.play();
             else audioEl.pause();
+        };
+        if (playBtn) playBtn.addEventListener('click', togglePlay);
+        if (playMob) playMob.addEventListener('click', togglePlay);
+        audioEl.addEventListener('play', () => {
+            if (playBtn) playBtn.classList.add('is-playing');
+            if (playMob) playMob.classList.add('is-playing');
         });
-        audioEl.addEventListener('play', () => playBtn.classList.add('is-playing'));
-        audioEl.addEventListener('pause', () => playBtn.classList.remove('is-playing'));
+        audioEl.addEventListener('pause', () => {
+            if (playBtn) playBtn.classList.remove('is-playing');
+            if (playMob) playMob.classList.remove('is-playing');
+        });
 
-        // Snelheid: 1× → 1.25× → 1.5× → 2× → 0.75× → 1×
-        if (speedBtn) {
-            const cycle = [1, 1.25, 1.5, 2, 0.75];
-            let idx = 0;
-            speedBtn.addEventListener('click', () => {
-                idx = (idx + 1) % cycle.length;
-                audioEl.playbackRate = cycle[idx];
-                speedBtn.textContent = cycle[idx] + '×';
-            });
-        }
+        // Snelheid: 1× → 1.25× → 1.5× → 2× → 0.75× → 1× (gedeeld tussen desktop + mobile)
+        const cycle = [1, 1.25, 1.5, 2, 0.75];
+        let idx = 0;
+        const cycleSpeed = () => {
+            idx = (idx + 1) % cycle.length;
+            audioEl.playbackRate = cycle[idx];
+            const lbl = cycle[idx] + '×';
+            if (speedBtn) speedBtn.textContent = lbl;
+            if (speedMob) speedMob.textContent = lbl;
+        };
+        if (speedBtn) speedBtn.addEventListener('click', cycleSpeed);
+        if (speedMob) speedMob.addEventListener('click', cycleSpeed);
 
         // Scrubber: doorspoelen + tijd-display
         if (scrubber) {
