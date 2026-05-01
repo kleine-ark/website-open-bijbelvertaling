@@ -49,6 +49,22 @@ const MobileNav = {
         // Boek+hoofdstuk-knop opent altijd boek-overlay (kies boek → kies hoofdstuk)
         bookBtn.addEventListener('click', () => this.openPicker('books'));
 
+        // Begrippen aan/uit toggle
+        const begrBtn = document.getElementById('mobile-begrippen-btn');
+        if (begrBtn) {
+            begrBtn.addEventListener('click', () => {
+                const on = !begrBtn.classList.contains('is-on');
+                begrBtn.classList.toggle('is-on', on);
+                begrBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+                // Sync met desktop-checkboxen
+                const cb1 = document.getElementById('toggle-begrippen');
+                const cb2 = document.getElementById('quick-begrippen');
+                if (cb1) cb1.checked = on;
+                if (cb2) cb2.checked = on;
+                if (window.Begrippen) Begrippen.toggle(on);
+            });
+        }
+
         // Overlay-controls
         document.getElementById('mp-close').addEventListener('click', () => this.closePicker());
         document.getElementById('mp-back').addEventListener('click', () => {
