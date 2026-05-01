@@ -28,6 +28,7 @@ const Lees = {
         this.manifest = await this.fetchJSON('/data/books.json');
         this.buildBookById();
         this.setupEventListeners();
+        this.setupAudioPlayer();
         this.restoreDarkMode();
         this.handleHash();
         window.addEventListener('hashchange', () => this.handleHash());
@@ -79,8 +80,71 @@ const Lees = {
         this.renderChapterButtons(book);
         this.renderChapter(book, chapter);
 
+        // Audio-speler tonen/verbergen
+        this.updateAudioPlayer(book, chapter);
+
         // Scroll to top
         window.scrollTo(0, 0);
+    },
+
+    // === Audio-speler ===
+    async updateAudioPlayer(book, chapter) {
+        const player = document.getElementById('audio-player');
+        const audioEl = document.getElementById('audio-el');
+        const playBtn = document.getElementById('audio-play-big');
+        const titleEl = document.getElementById('audio-title');
+        const subEl   = document.getElementById('audio-sub');
+        if (!player || !audioEl) return;
+
+        const url = `audio/${book.id}/${chapter}.mp3`;
+        // Probe of bestand bestaat (HEAD request)
+        let exists = false;
+        try {
+            const r = await fetch(url, { method: 'HEAD' });
+            exists = r.ok;
+        } catch (e) { exists = false; }
+
+        if (!exists) {
+            player.classList.add('hidden');
+            audioEl.pause();
+            audioEl.removeAttribute('src');
+            return;
+        }
+
+        // Reset
+        audioEl.pause();
+        audioEl.src = url;
+        playBtn.classList.remove('is-playing');
+        titleEl.textContent = `Voorlezing: ${book.nameDutch || book.id} ${chapter}`;
+        subEl.textContent = 'Klik om te beluisteren';
+        player.classList.remove('hidden');
+    },
+
+    setupAudioPlayer() {
+        const audioEl = document.getElementById('audio-el');
+        const playBtn = document.getElementById('audio-play-big');
+        const subEl   = document.getElementById('audio-sub');
+        if (!audioEl || !playBtn) return;
+
+        playBtn.addEventListener('click', () => {
+            if (audioEl.paused) audioEl.play();
+            else audioEl.pause();
+        });
+        audioEl.addEventListener('play', () => {
+            playBtn.classList.add('is-playing');
+            playBtn.setAttribute('aria-label', 'Pauzeer voorlezing');
+            playBtn.setAttribute('title', 'Pauzeer voorlezing');
+            subEl.textContent = 'Aan het afspelen…';
+        });
+        audioEl.addEventListener('pause', () => {
+            playBtn.classList.remove('is-playing');
+            playBtn.setAttribute('aria-label', 'Speel voorlezing af');
+            playBtn.setAttribute('title', 'Speel voorlezing af');
+            subEl.textContent = audioEl.ended ? 'Klaar' : 'Gepauzeerd';
+        });
+        audioEl.addEventListener('ended', () => {
+            subEl.textContent = 'Klaar';
+        });
     },
 
     renderChapterButtons(book) {

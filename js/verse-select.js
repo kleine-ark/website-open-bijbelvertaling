@@ -8,10 +8,17 @@ const VerseSelect = {
         // Kopieer-toolbar toevoegen aan DOM
         const toolbar = document.createElement('div');
         toolbar.id = 'copy-toolbar';
+        const HL_COLORS = ['magenta', 'lichtblauw', 'lichtgroen', 'lichtgeel'];
+        const HL_LABELS = { magenta: 'Magenta', lichtblauw: 'Lichtblauw', lichtgroen: 'Lichtgroen', lichtgeel: 'Lichtgeel' };
+        const paletteHtml = `<div class="hl-palette hl-palette-toolbar" id="verse-hl-palette">
+            ${HL_COLORS.map(c => `<button class="hl-color-btn hl-color-${c}" data-hl-color="${c}" title="Markeer ${HL_LABELS[c]}"></button>`).join('')}
+            <button class="hl-color-btn hl-clear" data-hl-action="clear" title="Wis markering">&times;</button>
+        </div>`;
         toolbar.innerHTML = `
             <span id="copy-count"></span>
             <button id="copy-formatted" title="Kopieer met versnummers, opmaak en Godscitaten">Met opmaak</button>
             <button id="copy-plain" title="Kopieer als platte tekst">Zonder opmaak</button>
+            ${paletteHtml}
             <button id="copy-close" title="Deselecteer alles">&times;</button>
         `;
         document.body.appendChild(toolbar);
@@ -19,6 +26,26 @@ const VerseSelect = {
         document.getElementById('copy-formatted').addEventListener('click', () => this.copy(true));
         document.getElementById('copy-plain').addEventListener('click', () => this.copy(false));
         document.getElementById('copy-close').addEventListener('click', () => this.clearAll());
+
+        // Highlight-palet voor geselecteerde verzen
+        document.getElementById('verse-hl-palette').addEventListener('click', (e) => {
+            const btn = e.target.closest('button.hl-color-btn');
+            if (!btn) return;
+            const color = btn.dataset.hlColor;
+            const action = btn.dataset.hlAction;
+            const rows = this.getSelectedRows();
+            if (rows.length === 0 || typeof Highlight === 'undefined') return;
+            for (const row of rows) {
+                const bookId = row.dataset.book;
+                const ch = parseInt(row.dataset.chapter, 10);
+                const vs = parseInt(row.dataset.verse, 10);
+                if (action === 'clear') {
+                    Highlight.clearVerse(bookId, ch, vs);
+                } else if (color) {
+                    Highlight.setVerseColor(bookId, ch, vs, color);
+                }
+            }
+        });
 
         // Luister naar klikken op versnummers
         document.getElementById('verses-container').addEventListener('click', (e) => {

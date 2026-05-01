@@ -331,3 +331,55 @@ body.dark .icon-sun { display: none; }
     #notes-panel, .popover, .overlay { display: none !important; }
     #reader-content { max-width: 100%; padding: 0; }
 }
+
+/* === Audio-speler (voorlezing) === */
+.audio-player {
+    position: sticky;
+    bottom: 0;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    background: linear-gradient(to top, var(--navy, #142e42), color-mix(in srgb, var(--navy, #142e42) 90%, transparent));
+    border-top: 2px solid var(--gold, #cba449);
+    color: #fff;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+}
+.audio-player.hidden { display: none; }
+.audio-play-big {
+    flex: 0 0 auto;
+    width: 56px; height: 56px;
+    border: none; border-radius: 50%;
+    background: var(--gold, #cba449);
+    color: var(--navy, #142e42);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.audio-play-big:hover { background: #d9b35d; }
+.audio-play-big:active { transform: scale(0.96); }
+.audio-play-big svg { display: block; margin-left: 2px; }   /* play-driehoek lichtjes naar rechts */
+.audio-play-big.is-playing svg polygon { display: none; }
+.audio-play-big.is-playing::after {
+    content: "";
+    width: 18px; height: 22px;
+    border-left: 6px solid var(--navy, #142e42);
+    border-right: 6px solid var(--navy, #142e42);
+}
+.audio-meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 auto; }
+.audio-title { font-weight: 600; font-size: 15px; line-height: 1.3; }
+.audio-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+
+@media (max-width: 768px) {
+    .audio-player {
+        bottom: 56px;   /* boven mobile-nav */
+        padding: 10px 14px;
+        gap: 10px;
+    }
+    .audio-play-big { width: 48px; height: 48px; }
+    .audio-play-big svg { width: 26px; height: 26px; }
+}

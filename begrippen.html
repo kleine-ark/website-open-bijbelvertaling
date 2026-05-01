@@ -31,6 +31,29 @@
         .begrip-cat.cat-Easton { background: #dbeafe; color: #1e40af; }
         .begrip-cat.cat-Nave { background: #d1fae5; color: #065f46; }
         .begrip-cat.cat-Begrippen { background: #fef3c7; color: #92400e; }
+        /* Lexicon-master categorie-kleuren */
+        .begrip-cat.cat-plaats { background: #d1fae5; color: #065f46; }
+        .begrip-cat.cat-persoon { background: #dbeafe; color: #1e40af; }
+        .begrip-cat.cat-volk { background: #ede9fe; color: #5b21b6; }
+        .begrip-cat.cat-naam_van_God { background: #fef3c7; color: #92400e; font-weight: 600; }
+        .begrip-cat.cat-theologisch_begrip { background: #fce7f3; color: #9d174d; }
+        .begrip-cat.cat-cultisch { background: #fed7aa; color: #9a3412; }
+        .begrip-cat.cat-feest { background: #fef9c3; color: #854d0e; }
+        .begrip-cat.cat-ambt { background: #e0e7ff; color: #3730a3; }
+        .begrip-cat.cat-liturgie { background: #ddd6fe; color: #5b21b6; }
+        .begrip-cat.cat-figuur { background: #ffe4e6; color: #9f1239; }
+        .begrip-cat.cat-werkwoord_begrip { background: #fce7f3; color: #be185d; }
+        .begrip-cat.cat-gewicht_maat { background: #f1f5f9; color: #334155; }
+        .begrip-cat.cat-tijdsmaat { background: #f1f5f9; color: #334155; }
+        .begrip-cat.cat-wet { background: #fee2e2; color: #991b1b; }
+        .begrip-cat.cat-getal_symbolisch { background: #f5f3ff; color: #6d28d9; }
+        .begrip-cat.cat-voorwerp { background: #fef3c7; color: #78350f; }
+        .begrip-cat.cat-begrip { background: rgba(146,182,180,0.18); color: var(--teal); }
+        .ai-badge {
+            display: inline-block; margin-left: 6px; font-size: 10px;
+            padding: 1px 6px; border-radius: 3px; background: #fb923c; color: #fff;
+            font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+        }
         .begrip-uitleg { font-size: 14px; color: #555; margin-top: 4px; line-height: 1.6; }
         .begrip-ref { font-size: 12px; color: var(--gold); margin-top: 2px; }
         .begrip-ref-link { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); }
@@ -70,10 +93,10 @@
 <body>
 <script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
     <nav id="topnav" style="display:flex;align-items:center;background:#142e42;color:#fff;padding:0 30px;height:52px;font-family:'Fira Sans',sans-serif;position:sticky;top:0;z-index:300;">
-        <div style="font-family:'Allura',cursive;font-size:28px;color:#fff;">Open Vertaling<span class="topnav-subtitle"> Public Domain herziening van de SV1637</span> <span style="font-family:'Fira Sans';font-size:10px;font-weight:600;background:rgba(203,164,73,0.25);color:#cba449;padding:1px 6px;border-radius:3px;vertical-align:middle;margin-left:4px;"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.13.3</a></span></div>
+        <div style="font-family:'Allura',cursive;font-size:28px;color:#fff;">Open Vertaling<span class="topnav-subtitle"> Public Domain herziening van de SV1637</span> <span style="font-family:'Fira Sans';font-size:10px;font-weight:600;background:rgba(203,164,73,0.25);color:#cba449;padding:1px 6px;border-radius:3px;vertical-align:middle;margin-left:4px;"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.14</a></span></div>
         <div style="display:flex;gap:2px;margin:0 auto;">
             <a href="over-ov.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Over OV</a>
-            <a href="/" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Tekst</a>
+            <a href="index.html#johannes/1" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Tekst</a>
             <a href="wiki.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Wiki</a>
             <a href="contact.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Contact</a>
         </div>
@@ -99,6 +122,7 @@
 
         <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
             <select id="bron-select" style="padding:8px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;font-family:var(--font-body);">
+                <option value="lexicon">Lexicon (gecategoriseerd)</option>
                 <option value="encyclopedie">Encyclopedie (Easton + Nave + Nederlandse begrippen)</option>
             </select>
         </div>
@@ -122,10 +146,11 @@
     <script>
     let alleBegrippen = [];
     let activeCat = null;
-    let huidigeBron = 'encyclopedie';
+    let huidigeBron = 'lexicon';
     // Volledige encyclopedie-data (voor detail-weergave en cross-link vanuit boek-lijsten)
     let encycData = { easton: {}, nave: {}, eastonSum: {}, naveSum: {}, mapping: {} };
     let nlBegrippenIndex = {}; // woord(lower) → entry from supplement
+    let lexiconIndex = {};     // lemma(lower) → entry from lexicon-master.json
 
     function escapeHTML(s) {
         return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -230,7 +255,35 @@
         document.getElementById('begrippen-lijst').innerHTML = '<p style="color:#999;">Laden...</p>';
         activeCat = null;
         huidigeBron = bron;
-        location.hash = bron === 'encyclopedie' ? '' : '#bron=' + bron;
+        location.hash = bron === 'lexicon' ? '' : '#bron=' + bron;
+
+        if (bron === 'lexicon') {
+            try {
+                const resp = await fetch('data/lexicon-master.json');
+                const lex = await resp.json();
+                lexiconIndex = {};
+                alleBegrippen = lex.map(e => {
+                    lexiconIndex[e.lemma.toLowerCase()] = e;
+                    return {
+                        woord: e.lemma,
+                        uitleg: e.uitleg,
+                        ref: e.ref,
+                        categorie: e.categorie,
+                        ai_generated: e.ai_generated,
+                        varianten: e.varianten,
+                        boeken: e.ook_in_boeken,
+                        _isLexicon: true,
+                    };
+                });
+                alleBegrippen.sort((a, b) => a.woord.localeCompare(b.woord, 'nl'));
+            } catch(e) {
+                document.getElementById('begrippen-lijst').innerHTML = '<p style="color:#c00;">Fout bij laden lexicon: ' + escapeHTML(e.message) + '</p>';
+                return;
+            }
+            renderCategorieen();
+            filterBegrippen();
+            return;
+        }
 
         if (bron === 'encyclopedie') {
             try {
@@ -297,10 +350,13 @@
         document.getElementById('begrip-count').textContent = `${filtered.length} begrippen`;
         const html = filtered.slice(0, 100).map(b => {
             const cat = b.categorie || 'begrip';
-            const catClass = ['Easton','Nave','Begrippen'].includes(cat) ? `cat-${cat}` : '';
-            // Cross-link naar encyclopedie indien match (alleen op boek-lijsten)
+            // Sanitize cat voor className-gebruik
+            const catSafe = String(cat).replace(/[^A-Za-z0-9_]/g, '_');
+            const catClass = `cat-${catSafe}`;
+            const aiBadge = b.ai_generated ? `<span class="ai-badge" title="Door AI gegenereerd">AI</span>` : '';
+            // Cross-link naar encyclopedie indien match (alleen op boek-lijsten, niet op lexicon zelf)
             let encycBadge = '';
-            if (huidigeBron !== 'encyclopedie') {
+            if (huidigeBron !== 'encyclopedie' && huidigeBron !== 'lexicon') {
                 const m = findEncyc(b.woord);
                 if (m) {
                     encycBadge = `<a class="encyc-link" href="#woord=${encodeURIComponent(m.key)}" onclick="event.stopPropagation();openDetail('${encodeURIComponent(m.key)}','${m.source}');return false;">→ Encyclopedie (${m.source})</a>`;
@@ -310,9 +366,11 @@
             }
             const refHtml = b.ref ? `<div class="begrip-ref" onclick="event.stopPropagation()">${refToLink(b.ref)}</div>` : '';
             const woordEnc = encodeURIComponent(b.woord);
-            return `<div class="begrip-card" onclick="openDetail('${woordEnc}','${cat}')">
+            const source = b._isLexicon ? 'Lexicon' : cat;
+            return `<div class="begrip-card" onclick="openDetail('${woordEnc}','${source}')">
                 <span class="begrip-woord">${escapeHTML(b.woord)}</span>
                 <span class="begrip-cat ${catClass}">${escapeHTML(cat)}</span>
+                ${aiBadge}
                 ${encycBadge}
                 <div class="begrip-uitleg">${escapeHTML(b.uitleg || '').slice(0, 280)}${b.uitleg && b.uitleg.length > 280 ? '…' : ''}</div>
                 ${refHtml}
@@ -321,12 +379,33 @@
         document.getElementById('begrippen-lijst').innerHTML = html;
     }
 
-    /** Open detail-modal voor een woord. Source: Easton/Nave/Begrippen. */
+    /** Open detail-modal voor een woord. Source: Easton/Nave/Begrippen/Lexicon. */
     function openDetail(woordEnc, source) {
         const woord = decodeURIComponent(woordEnc);
         let title = woord, body = '', meta = '';
 
-        if (source === 'Easton' && encycData.easton[woord]) {
+        if (source === 'Lexicon' && lexiconIndex[woord.toLowerCase()]) {
+            const e = lexiconIndex[woord.toLowerCase()];
+            const cat = e.categorie || 'begrip';
+            const catSafe = String(cat).replace(/[^A-Za-z0-9_]/g, '_');
+            const aiBadge = e.ai_generated ? `<span class="ai-badge" style="font-size:11px;padding:2px 8px;">AI-generated</span>` : '';
+            const catBadge = `<span class="begrip-cat cat-${catSafe}" style="font-size:13px;padding:3px 10px;">${escapeHTML(cat)}</span>`;
+            let h = `<p style="margin-bottom:14px;">${catBadge} ${aiBadge}</p>`;
+            if (e.varianten && e.varianten.length > 1) {
+                h += `<p style="font-size:13px;color:#666;margin-bottom:12px;"><strong>Varianten:</strong> ${e.varianten.map(escapeHTML).join(', ')}</p>`;
+            }
+            h += `<p>${linkifyText(escapeHTML(e.uitleg || ''))}</p>`;
+            if (e.ref) h += `<p style="color:var(--gold);font-size:13px;">${refToLink(e.ref)}</p>`;
+            if (e.ook_in_boeken && e.ook_in_boeken.length) {
+                const boekenHtml = e.ook_in_boeken.map(slug => {
+                    const naam = slug.replace(/^(\d+)/, '$1 ');
+                    return `<a href="/#${slug}/1" target="_top" style="display:inline-block;padding:2px 8px;margin:2px;background:rgba(146,182,180,0.12);color:var(--teal);border-radius:3px;font-size:12px;text-decoration:none;">${escapeHTML(naam)}</a>`;
+                }).join('');
+                h += `<p style="margin-top:14px;font-size:13px;color:#666;"><strong>Voorkomend in:</strong></p><div>${boekenHtml}</div>`;
+            }
+            body = h;
+            meta = `Lexicon-master — lemma: <code>${escapeHTML(e.lemma)}</code>`;
+        } else if (source === 'Easton' && encycData.easton[woord]) {
             const v = encycData.easton[woord];
             const sum = encycData.eastonSum[woord] || '';
             const en = (v.text_en || '').replace(/\[REF:([^|]+)\|([^\]]+)\]/g, '<a href="#" onclick="return false;">$2</a>');
@@ -365,7 +444,7 @@
         `;
         document.getElementById('detail-modal').classList.add('open');
         // URL-hash voor deeplink
-        const newHash = `#woord=${woordEnc}` + (huidigeBron !== 'encyclopedie' ? `&bron=${huidigeBron}` : '');
+        const newHash = `#woord=${woordEnc}` + (huidigeBron !== 'lexicon' ? `&bron=${huidigeBron}` : '');
         if (location.hash !== newHash) history.replaceState(null, '', newHash);
     }
 
@@ -424,13 +503,24 @@
     // Bepaal initiële bron + woord uit hash
     function parseHash() {
         const h = location.hash.slice(1);
-        if (!h) return { bron: 'encyclopedie' };
+        if (!h) return { bron: 'lexicon' };
         const params = {};
         for (const part of h.split('&')) {
             const [k,v] = part.split('=');
             params[k] = v ? decodeURIComponent(v) : '';
         }
-        return { bron: params.bron || 'encyclopedie', woord: params.woord };
+        return { bron: params.bron || 'lexicon', woord: params.woord };
+    }
+
+    /** Probeer een woord te openen — eerst Lexicon, dan Encyclopedie. */
+    function openWoordSmart(woord) {
+        if (lexiconIndex[woord.toLowerCase()]) {
+            openDetail(encodeURIComponent(lexiconIndex[woord.toLowerCase()].lemma), 'Lexicon');
+            return;
+        }
+        const m = findEncyc(woord);
+        if (m) openDetail(encodeURIComponent(m.key), m.source);
+        else openDetail(encodeURIComponent(woord), 'unknown');
     }
 
     (async () => {
@@ -440,12 +530,7 @@
         await new Promise(res => setTimeout(res, 100));
         if (bron && [...sel.options].some(o => o.value === bron)) sel.value = bron;
         await laadBron(bron);
-        if (woord) {
-            // Probeer in alle 3 bronnen
-            const m = findEncyc(woord);
-            if (m) openDetail(encodeURIComponent(m.key), m.source);
-            else openDetail(encodeURIComponent(woord), 'unknown');
-        }
+        if (woord) openWoordSmart(woord);
     })();
 
     window.addEventListener('hashchange', () => {
@@ -455,19 +540,36 @@
             if ([...sel.options].some(o => o.value === bron)) {
                 sel.value = bron;
                 laadBron(bron).then(() => {
-                    if (woord) {
-                        const m = findEncyc(woord);
-                        if (m) openDetail(encodeURIComponent(m.key), m.source);
-                    }
+                    if (woord) openWoordSmart(woord);
                 });
             }
         } else if (woord) {
-            const m = findEncyc(woord);
-            if (m) openDetail(encodeURIComponent(m.key), m.source);
+            openWoordSmart(woord);
         }
     });
     </script>
     </div>
     </div>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-brand">
+                <span class="site-footer-mark">OV<span style="color:var(--gold);">2026</span></span>
+                <span class="site-footer-tag">Open Vertaling — public-domain herziening van de Statenvertaling 1637/1888</span>
+            </div>
+            <nav class="site-footer-links">
+                <a href="index.html#johannes/1">Tekst</a>
+                <a href="over-ov.html">Over OV</a>
+                <a href="wiki.html">Wiki</a>
+                <a href="principes.html">Wijzigingsprincipes</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="site-footer-meta">
+                <span>v0.14 · 1 mei 2026</span>
+                <span>CC0 · vrij van alle rechten</span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
