@@ -58,6 +58,57 @@ const App = {
         return result.join('');
     },
     // Kolom-breedtes: gelijk verdeeld
+    // Hoofdstukken met voorlezing-audio (audio/{book}/{ch}.mp3)
+    AUDIO_AVAILABLE: {
+        genesis: [1],
+        johannes: [1],
+    },
+
+    _updateAudioPlayer(bookId, chapter) {
+        const playBtn = document.getElementById('audio-play-big');
+        const speedBtn = document.getElementById('audio-speed');
+        const audioEl = document.getElementById('audio-el');
+        if (!playBtn || !audioEl) return;
+        try { audioEl.pause(); } catch (e) {}
+        const list = App.AUDIO_AVAILABLE[bookId] || [];
+        if (!list.includes(chapter)) {
+            playBtn.classList.add('hidden');
+            if (speedBtn) speedBtn.classList.add('hidden');
+            audioEl.removeAttribute('src');
+            return;
+        }
+        audioEl.src = `audio/${bookId}/${chapter}.mp3`;
+        playBtn.classList.remove('is-playing');
+        playBtn.classList.remove('hidden');
+        if (speedBtn) speedBtn.classList.remove('hidden');
+    },
+
+    _setupAudioPlayer() {
+        const audioEl = document.getElementById('audio-el');
+        const playBtn = document.getElementById('audio-play-big');
+        const speedBtn = document.getElementById('audio-speed');
+        if (!audioEl || !playBtn) return;
+        if (playBtn._wired) return;
+        playBtn._wired = true;
+        // Play / pause
+        playBtn.addEventListener('click', () => {
+            if (audioEl.paused) audioEl.play();
+            else audioEl.pause();
+        });
+        audioEl.addEventListener('play', () => playBtn.classList.add('is-playing'));
+        audioEl.addEventListener('pause', () => playBtn.classList.remove('is-playing'));
+        // Snelheid: 1× → 1.25× → 1.5× → 2× → 1×
+        if (speedBtn) {
+            const cycle = [1, 1.25, 1.5, 2];
+            let idx = 0;
+            speedBtn.addEventListener('click', () => {
+                idx = (idx + 1) % cycle.length;
+                audioEl.playbackRate = cycle[idx];
+                speedBtn.textContent = cycle[idx] + '×';
+            });
+        }
+    },
+
     COL_WIDTHS: {
         // minmax(0, 1fr) i.p.v. '1fr' zodat lange content een kolom niet
         // breder duwt dan zijn helft — bij 2 zichtbare kolommen wordt het echt 50/50.
@@ -80,6 +131,9 @@ const App = {
 
         await Navigation.renderBookNav();
         await Sidebar.renderTree();
+
+        // Audio play-knop in chapter-footer wirelinen
+        App._setupAudioPlayer();
 
         // Strong's toggle (optioneel — checkbox is verwijderd uit Opties)
         const strongsCb = document.getElementById('toggle-strongs');
@@ -165,6 +219,8 @@ const App = {
             const total = (book.chapters && book.chapters.length) || (book.chaptersIncluded && book.chaptersIncluded.length) || 0;
             chfLabel.textContent = total ? `${book.nameDutch} ${chapterNum} / ${total}` : `${book.nameDutch} ${chapterNum}`;
         }
+        // Audio play-knop tonen voor hoofdstukken met voorlezing
+        App._updateAudioPlayer(bookId, chapterNum);
 
         // Boekinleiding (alleen bij hoofdstuk 1)
         const bookIntroEl = document.getElementById('book-intro');
