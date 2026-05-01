@@ -7,7 +7,80 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         body { display: block; background: #f8f6f2; }
-        .page { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; font-family: var(--font-body); }
+        /* Hero met fade-out: schilderij van Jezus en de Samaritaanse vrouw bij de bron */
+        .hero {
+            position: relative;
+            height: clamp(280px, 48vh, 520px);
+            background-image:
+                linear-gradient(to bottom, rgba(248,246,242,0) 50%, rgba(248,246,242,0.85) 85%, #f8f6f2 100%),
+                url('images/jezus-samaritaanse-vrouw.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            margin-bottom: -80px;   /* hero overlapt naar pagina-content voor zachte overgang */
+        }
+        /* OV2026 wordmark linksboven in de hero */
+        .hero-mark {
+            position: absolute;
+            top: 28px;
+            left: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            color: var(--navy);
+            text-shadow: 0 1px 2px rgba(255,255,255,0.55);
+        }
+        .hero-mark-name {
+            font-family: var(--font-cursive);
+            font-size: clamp(20px, 2.6vw, 28px);
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            color: var(--navy);
+        }
+        .hero-mark-id {
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: clamp(34px, 5.2vw, 56px);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--navy);
+            line-height: 1;
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 4px;
+        }
+        .hero-mark-year {
+            color: var(--gold);
+            font-weight: 700;
+            margin-left: 2px;
+        }
+        @media (max-width: 600px) {
+            .hero-mark { top: 18px; left: 16px; }
+        }
+        .hero-quote {
+            position: absolute;
+            left: 50%;
+            bottom: 110px;
+            transform: translateX(-50%);
+            text-align: center;
+            color: var(--navy);
+            font-family: var(--font-cursive);
+            font-size: clamp(18px, 2.4vw, 26px);
+            line-height: 1.4;
+            max-width: 720px;
+            padding: 0 16px;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+        }
+        .hero-quote .ref {
+            display: block;
+            margin-top: 6px;
+            font-family: var(--font-body);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+        }
+        .page { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; font-family: var(--font-body); position: relative; }
         .page h1 { font-family: var(--font-cursive); font-size: 36px; color: var(--navy); font-weight: 400; margin-bottom: 4px; }
         .page .subtitle { color: var(--teal); font-size: 15px; margin-bottom: 32px; }
         .page h2 { color: var(--navy); font-size: 20px; margin: 32px 0 12px; border-bottom: 2px solid var(--gold); padding-bottom: 6px; }
@@ -21,64 +94,133 @@
 </head>
 <body>
     <nav id="topnav">
-        <div class="topnav-brand">Open Vertaling<span class="topnav-subtitle"> Public Domain herziening van de SV1637</span> <span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.13.3</a></span></div>
+        <div class="topnav-brand">Open Vertaling<span class="topnav-subtitle"> Public Domain herziening van de SV1637</span> <span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.14</a></span></div>
         <div class="topnav-links">
             <a href="over-ov.html" style="color:#fff;">Over OV</a>
-            <a href="/">Tekst</a>
+            <a href="index.html#johannes/1">Tekst</a>
             <a href="wiki.html">Wiki</a>
             <a href="contact.html" target="_blank">Contact</a>
         </div>
     </nav>
 
+    <div class="hero" role="img" aria-label="Schilderij: Jezus en de Samaritaanse vrouw bij de bron — Johannes 4">
+        <p class="hero-quote">
+            <em>Jezus zei tot haar: "Ik ben het, Die met u spreekt."</em>
+            <span class="ref">Johannes 4:26</span>
+        </p>
+    </div>
+
     <div class="page">
         <h1>Over de Open Vertaling</h1>
         <p class="subtitle">Herziening van de Statenvertaling 1637/1888</p>
 
-        <h2>Status project: in ontwikkeling</h2>
-
         <h2>Wat is de Open Vertaling?</h2>
-        <p>De Open Vertaling is een <strong>vrij beschikbare</strong> herziening van de Statenvertaling uit 1637. Het doel is een bijbeltekst die dicht bij het origineel blijft, maar leesbaar is voor hedendaagse gelovigen zonder dat er rechten aan verbonden zijn.</p>
-
-        <p>De tekst is volledig <strong>Public Domain</strong>. Iedereen mag de tekst gebruiken, kopiëren, verspreiden en aanpassen zonder toestemming of bronvermelding.</p>
+        <p>De Open Vertaling is een <strong>vrij beschikbare</strong> herziening van de Statenvertaling uit 1637. Het doel is een herziening te maken van de Statenvertaling die zoveel mogelijk gelijk is aan de oorspronkelijke Statenvertaling, maar wel leesbaar is voor nieuwe gelovigen door onbekende 17e-eeuwse woorden te vervangen.</p>
+        <p>De Open Vertaling moderniseert de spelling en woordkeus waar dat nodig is voor leesbaarheid.</p>
 
         <h2>Aanleiding</h2>
-        <div class="highlight">
-            <p>De directe aanleiding was de ontdekking dat voor een evangelisatietraktaat rechten betaald moesten worden aan de uitgever van de gebruikte bijbelvertaling. Gods Woord zou vrij beschikbaar moeten zijn voor iedereen die het wil verspreiden.</p>
-        </div>
-
-        <p>Een aantal Nederlandse bijbelvertalingen is auteursrechtenvrij: de Statenvertaling van 1637 (SV1637) en de herziene editie SV1888, de Leidse Vertaling (1899-1912) en de Petrus Canisius Vertaling (1929/1939). Andere oudere edities buiten het auteursrecht bestaan eveneens. De Open Vertaling neemt de <strong>SV1637/SV1888</strong> als vertrekpunt vanwege de letterlijke aansluiting bij de grondtekst en het rijke kerkelijk register.</p>
-
-        <p>De Open Vertaling moderniseert de spelling en woordkeus waar dat nodig is voor leesbaarheid. De zinsbouw en het bijbelse register worden zoveel mogelijk behouden.</p>
-
-        <h3>Auteursrecht op Gods Woord?</h3>
-        <p>Het is een merkwaardige situatie. De Bijbel is het meest verspreide boek ter wereld &mdash; geschreven door profeten en apostelen, geïnspireerd door de Heilige Geest, bedoeld voor alle mensen. Toch zijn de meeste hedendaagse Nederlandse vertalingen beschermd door auteursrecht. Wie meerdere hoofdstukken wil citeren in een boekje, op een website of in een evangelisatiefolder, of bijbeltekst wil laten drukken of digitaal verspreiden, moet toestemming vragen en soms betalen.</p>
-
-        <p>Wij begrijpen dat vertalers en uitgevers hun werk willen beschermen, en dat er kosten verbonden zijn aan het vertaalproces. Maar het voelt ongemakkelijk dat het Woord van God &mdash; dat ons oproept om het vrijelijk te verspreiden &mdash; achter juridische beperkingen schuilgaat. <em>"Wat u om niet ontvangen hebt, geeft het om niet"</em> (Mattheüs 10:8).</p>
+        <p>De directe aanleiding was de ontdekking dat voor een evangelisatietraktaat rechten betaald moesten worden aan de uitgever van de gebruikte bijbelvertaling.</p>
+        <p>Een aantal Nederlandse bijbelvertalingen is auteursrechtenvrij &mdash; onder andere de Statenvertaling van 1637 (SV1637) en de herziene editie SV1888, de Leidse Vertaling (1899-1912) en de Petrus Canisius Vertaling (1929/1939). Andere oudere edities buiten het auteursrecht bestaan eveneens.</p>
+        <p>Het voelt ongemakkelijk dat het Woord van God achter juridische beperkingen schuilgaat. <em>"Wat u om niet ontvangen hebt, geeft het om niet"</em> (Mattheüs 10:8).</p>
 
         <h2>Gemaakt met behulp van AI</h2>
-        <p>Deze herziening is tot stand gekomen met behulp van kunstmatige intelligentie. Het is een <strong>iteratief proces</strong>: eerst zijn de wijzigingsprincipes opgesteld, vervolgens is op basis daarvan hertaald, daarna opnieuw gelezen en gecorrigeerd. Uiteindelijk zal de gehele tekst handmatig op fouten gecontroleerd worden &mdash; dat proces is momenteel gaande.</p>
-        <p>AI is ingezet voor het identificeren van verouderde woorden, het doorvoeren van spellingwijzigingen, het markeren van citaten en het controleren van consistentie &mdash; altijd onder menselijke regie en beoordeling.</p>
-
-        <p>We werken met versies. De actuele versie is <strong>v0.13.3</strong> van <strong>27 april 2026</strong>. Elke wijziging wordt geregistreerd en is traceerbaar via de <a href="principes.html">wijzigingsprincipes</a>.</p>
+        <p>Deze herziening is tot stand gekomen met behulp van kunstmatige intelligentie. Het is een <strong>iteratief proces</strong>: eerst zijn de wijzigingsprincipes opgesteld, vervolgens is op basis daarvan hertaald, daarna opnieuw gelezen en gecorrigeerd. Uiteindelijk zal de gehele tekst handmatig op fouten gecontroleerd worden. Dat proces is momenteel gaande.</p>
+        <p>AI is ingezet voor het identificeren van verouderde woorden, het doorvoeren van spellingwijzigingen, het markeren van citaten en het controleren van consistentie onder menselijke regie en beoordeling.</p>
+        <p>We werken met versies. De actuele versie is <strong>v0.14</strong> van <strong>30 april 2026</strong>. Elke wijziging wordt geregistreerd en is traceerbaar via de <a href="principes.html">wijzigingsprincipes</a>.</p>
 
         <h2>Uitgangspunt: een eerlijke vermenging</h2>
-        <p>Een probleem bij elke herziening van de Statenvertaling is dat je al snel een nieuwe vertaling maakt. De verschillen tussen 17e-eeuws en hedendaags Nederlands zijn zo groot dat je, als je alles consequent zou moderniseren, een heel ander boek overhoudt.</p>
+        <p>Een probleem bij elke herziening van de Statenvertaling is dat je al snel een nieuwe vertaling maakt. De verschillen tussen 17e-eeuws en hedendaags Nederlands zijn zo groot dat je, als je alles consequent zou moderniseren, een heel ander boek overhoudt. Je ziet ook dat de HSV eigenlijk geen herziening is, maar de facto een nieuwe vertaling.</p>
 
-        <p>Wij kiezen bewust voor een andere weg: we <strong>accepteren dat 17e-eeuws en 21e-eeuws taalgebruik vermengd wordt</strong>. Niet alles wordt gemoderniseerd. Woorden als "uitspansel", "gedierte" en "gevogelte" blijven staan. De zinsbouw volgt het origineel. Maar woorden die werkelijk niet meer begrepen worden "doch", "dewijl", "alzo" worden vervangen.</p>
+        <p>Wij kiezen bewust voor een andere weg: we <strong>accepteren dat 17e-eeuws en 21e-eeuws taalgebruik vermengd wordt</strong>. Niet alles wordt gemoderniseerd. Woorden als "uitspansel", "gedierte" en "gevogelte" blijven staan. De zinsbouw volgt het origineel. Maar woorden die moeilijker begrepen worden zoals "vervaart", "dewijl", "alzo" worden vervangen.</p>
 
-        <p>Is dat inconsistent? Misschien. Maar bedenk dit: in de gereformeerde traditie kennen we al eeuwenlang de <em>tale Kanaäns</em> &mdash; een religieus dialect dat niemand in het dagelijks leven spreekt, maar dat in de kerk en bij het bijbellezen volkomen natuurlijk klinkt.</p>
+        <p>Is dat inconsistent? Misschien. Maar bedenk dit: in de gereformeerde traditie kennen we al eeuwenlang de <em>tale Kanaäns</em>. Dat is een religieus dialect dat niemand in het dagelijks leven spreekt, maar dat in de kerk en bij het bijbellezen volkomen natuurlijk klinkt.</p>
 
-        <p>De Open Vertaling creëert bewust een vergelijkbaar mengregister. Stel dat duizenden mensen deze tekst gaan lezen, citeren en gebruiken dan wordt deze vermenging van oud en nieuw gewoon een nieuw, levend bijbels Nederlands. Niet 17e-eeuws, niet 21e-eeuws, maar iets ertussenin: <strong>herkenbaar voor wie met de Statenvertaling is opgegroeid, toegankelijk voor wie er voor het eerst in leest</strong>.</p>
+        <p>De Open Vertaling creëert bewust een vergelijkbare vermenging. Stel dat duizenden mensen deze tekst gaan lezen, citeren en gebruiken &mdash; dan wordt deze vermenging van oud en nieuw gewoon een nieuw, levend bijbels Nederlands. Niet 17e-eeuws, niet 21e-eeuws, maar iets ertussenin: <strong>herkenbaar voor wie met de Statenvertaling is opgegroeid, toegankelijk voor wie er voor het eerst in leest</strong>.</p>
 
         <h2>Positie</h2>
         <p>De Open Vertaling positioneert zich als volgt:</p>
         <ul>
-            <li><strong>Basis:</strong> de Statenvertaling 1888</li>
+            <li><strong>Basis:</strong> de Statenvertaling 1888 en de kanttekeningen</li>
+            <li><strong>Naamvallen</strong> die niet meer begrepen worden (den → de, der → van de)</li>
+            <li><strong>Werkwoordsvormen</strong> (zeide → zei)</li>
+            <li><strong>Aanspreekvormen</strong> (gij → u)</li>
+            <li><strong>Verouderde woorden</strong> (doch → maar, dewijl → omdat, alzo → zo)</li>
             <li><strong>Minimale wijzigingen:</strong> alleen wat echt nodig is voor leesbaarheid</li>
-            <li><strong>Godsnaam:</strong> JAHWEH in plaats van HEERE (de werkelijke naam van God)</li>
-            <li><strong>Geen theologische interpretatie:</strong> zo letterlijk mogelijk vertalen</li>
+            <li><strong>Godsnaam &mdash; 4 opties:</strong> JAHWEH (default, de werkelijke naam van God) · HEERE (klassiek SV) · Jehovah (klassiek Latijns) · יהוה (Hebreeuws). De lezer kiest zelf via de Opties-sidebar.</li>
+            <li><strong>Apocriefe boeken toegevoegd:</strong> 16 apocriefe boeken uit de Statenvertaling 1637 (3 Ezra, 4 Ezra, Tobit, Judith, Boek der Wijsheid, Jezus Sirach, Baruch, etc.) — tussen Oude en Nieuwe Testament, conform SV1637-volgorde.</li>
+            <li><strong>Geen theologische interpretatie:</strong> zo letterlijk mogelijk herzien</li>
             <li><strong>Met kanttekeningen:</strong> de oorspronkelijke Statenvertaling-kanttekeningen, hertaald naar modern Nederlands</li>
+            <li><strong>Woorden van God</strong> rood en cursief weergegeven</li>
+            <li><strong>Directe rede</strong> cursief met aanhalingstekens</li>
         </ul>
+        <p>Zie de <a href="wiki.html">Wiki</a> voor de volledige lijst van wijzigingsprincipes.</p>
+
+        <h2>Wijzigingsprincipes — kort overzicht</h2>
+        <p>Elke wijziging in de Open Vertaling wordt geregeld door een <strong>genummerd principe</strong> (V1, V2, …). Op die manier blijft elke verandering ten opzichte van de SV1888 traceerbaar en omkeerbaar. Op dit moment zijn er <strong>296 principes</strong> in 7 hoofdgroepen:</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:18px 0 22px;">
+            <div style="border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;background:#fff;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <strong style="color:var(--navy);">Verouderde woorden</strong>
+                    <span style="font-size:12px;color:var(--teal);font-weight:600;">217</span>
+                </div>
+                <div style="font-size:13px;color:#555;line-height:1.6;">doch → maar · dewijl → omdat · alzo → zo · ganse → gehele · honig → honing</div>
+            </div>
+            <div style="border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;background:#fff;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <strong style="color:var(--navy);">Werkwoordsvormen</strong>
+                    <span style="font-size:12px;color:var(--teal);font-weight:600;">14</span>
+                </div>
+                <div style="font-size:13px;color:#555;line-height:1.6;">zeide → zei · ziet → zie · weet → wist · zoudet → zou</div>
+            </div>
+            <div style="border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;background:#fff;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <strong style="color:var(--navy);">Naamvallen</strong>
+                    <span style="font-size:12px;color:var(--teal);font-weight:600;">13</span>
+                </div>
+                <div style="font-size:13px;color:#555;line-height:1.6;">den → de · der → van de · des → van het · mijns heils → van mijn heil</div>
+            </div>
+            <div style="border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;background:#fff;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <strong style="color:var(--navy);">Godsnaam</strong>
+                    <span style="font-size:12px;color:var(--teal);font-weight:600;">7</span>
+                </div>
+                <div style="font-size:13px;color:#555;line-height:1.6;">HEERE → JAHWEH (de werkelijke naam van God) · HEERE God → God JAHWEH</div>
+            </div>
+            <div style="border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;background:#fff;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <strong style="color:var(--navy);">Spelling</strong>
+                    <span style="font-size:12px;color:var(--teal);font-weight:600;">4</span>
+                </div>
+                <div style="font-size:13px;color:#555;line-height:1.6;">honig → honing · Habel → Abel · Neen → Nee</div>
+            </div>
+            <div style="border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;background:#fff;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <strong style="color:var(--navy);">Aanspreekvormen</strong>
+                    <span style="font-size:12px;color:var(--teal);font-weight:600;">3</span>
+                </div>
+                <div style="font-size:13px;color:#555;line-height:1.6;">gij → u · ulieden → u · uwer → uw / van u</div>
+            </div>
+            <div style="border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;background:#fff;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <strong style="color:var(--navy);">Overig</strong>
+                    <span style="font-size:12px;color:var(--teal);font-weight:600;">38</span>
+                </div>
+                <div style="font-size:13px;color:#555;line-height:1.6;">-lijk-bijwoorden, tegenwoordige deelwoorden, vaste uitdrukkingen, reparaties, idioom-herstel</div>
+            </div>
+        </div>
+
+        <p style="font-size:13px;color:#666;">Wat <strong>blijft staan</strong>: bijbels-religieus register als <em>uitspansel</em>, <em>gedierte</em>, <em>gevogelte</em>, <em>geboomte</em>, en vaste uitdrukkingen als <em>te zijner tijd</em>, <em>in den beginne</em>, <em>voorwaar</em>. Zie de <a href="principes.html">complete principe-lijst</a> voor regex, aantallen en uitzonderingen.</p>
+
+        <h2>Status project: in ontwikkeling</h2>
+        <p>De vertaling is grotendeels door AI tot stand gekomen en wordt momenteel handmatig nagelopen.
+        Onderstaande gedeelten zijn <strong>door een mens vers-voor-vers gecontroleerd</strong> en gelden als de meest betrouwbare delen:</p>
+        <ul class="verified-list" style="list-style:none;padding-left:0;margin:12px 0;">
+            <li style="display:inline-block;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;margin:0 8px 6px 0;">✓ Genesis 1–20</li>
+            <li style="display:inline-block;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;margin:0 8px 6px 0;">✓ Psalm 1–30</li>
+            <li style="display:inline-block;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;margin:0 8px 6px 0;">✓ Johannes (volledig)</li>
+        </ul>
+        <p style="font-size:13px;color:#666;">De rest van de bijbeltekst is wel volledig vertaald en doorgelopen op systematische principes (zie <a href="principes.html">Wijzigingsprincipes</a>), maar nog niet handmatig vers-voor-vers nagelopen.</p>
 
         <h2>Voorbeeld</h2>
         <p>Johannes 1:51-52 in drie edities naast elkaar:</p>
@@ -113,29 +255,35 @@
             </tbody>
         </table>
 
-        <h2>Wat is gewijzigd?</h2>
-        <p>De herziening richt zich op de volgende gebieden:</p>
-        <ul>
-            <li>Naamvallen die niet meer begrepen worden (den → de, der → van de)</li>
-            <li>Aanspreekvormen (gij → u)</li>
-            <li>Verouderde woorden (doch → maar, dewijl → omdat, alzo → zo)</li>
-            <li>De Godsnaam (HEERE → JAHWEH)</li>
-            <li>Werkwoordsvormen (zeide → zei)</li>
-        </ul>
-        <li>Woorden van God rood en cursief weergegeven</li>
-            <li>Directe rede cursief met aanhalingstekens</li>
-        </ul>
-        <p>Daarnaast zijn er inhoudelijke keuzes gemaakt, zoals de Godsnaam (JAHWEH), het markeren van citaten, en het toevoegen van begripsverklaringen. Zie de <a href="wiki.html">Wiki</a> voor de volledige lijst van wijzigingsprincipes.</p>
-
         <h2>Licentie</h2>
         <div class="highlight">
-            <p><strong>Public Domain / CC0</strong> deze tekst is vrij van alle rechten. Gebruik het voor prediking, evangelisatie, studie, publicatie, apps, of welk doel dan ook. Geen toestemming nodig, geen bronvermelding vereist.</p>
+            <p><strong>Public Domain / CC0</strong> &mdash; deze tekst is vrij van alle rechten. Gebruik het voor prediking, evangelisatie, studie, publicatie, apps, of welk doel dan ook. Geen toestemming nodig, geen bronvermelding vereist.</p>
         </div>
 
         <p style="margin-top:40px;color:#999;font-size:13px;">
-            <a href="/">← Terug naar de tekst</a> ·
-            <a href="" target="_blank">Open Vertaling</a>
+            <a href="/">← Terug naar de tekst</a>
         </p>
     </div>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-brand">
+                <span class="site-footer-mark">OV<span style="color:var(--gold);">2026</span></span>
+                <span class="site-footer-tag">Open Vertaling — public-domain herziening van de Statenvertaling 1637/1888</span>
+            </div>
+            <nav class="site-footer-links">
+                <a href="index.html#johannes/1">Tekst</a>
+                <a href="over-ov.html">Over OV</a>
+                <a href="wiki.html">Wiki</a>
+                <a href="principes.html">Wijzigingsprincipes</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="site-footer-meta">
+                <span>v0.14 · 1 mei 2026</span>
+                <span>CC0 · vrij van alle rechten</span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

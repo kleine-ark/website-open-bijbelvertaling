@@ -77,12 +77,22 @@ const App = {
         await Navigation.renderBookNav();
         await Sidebar.renderTree();
 
-        // Strong's toggle
-        document.getElementById('toggle-strongs').addEventListener('change', () => {
-            if (Navigation.currentBook && Navigation.currentChapter) {
-                App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
+        // Strong's toggle (optioneel — checkbox is verwijderd uit Opties)
+        const strongsCb = document.getElementById('toggle-strongs');
+        if (strongsCb) {
+            strongsCb.addEventListener('change', () => {
+                if (Navigation.currentBook && Navigation.currentChapter) {
+                    App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
+                }
+            });
+        }
+        // Begrippen-default: als checkbox checked is bij load → meteen activeren
+        setTimeout(() => {
+            const begrCb = document.getElementById('toggle-begrippen') || document.getElementById('quick-begrippen');
+            if (begrCb && begrCb.checked && window.Begrippen) {
+                Begrippen.toggle(true);
             }
-        });
+        }, 200);
 
         // Toolbar knoppen
         document.getElementById('btn-save').addEventListener('click', () => Editor.saveAll());
@@ -340,6 +350,8 @@ const App = {
         if (typeof Tags !== 'undefined') Tags.renderTagsForChapter(bookId, chapterNum);
         // Begrippen herladen bij boekwisseling
         if (typeof Begrippen !== 'undefined') Begrippen.reload(bookId);
+        // Highlights toepassen op nieuwe rijen
+        if (typeof Highlight !== 'undefined') Highlight.applyToChapter(bookId, chapterNum);
     },
 
     updateProgress() {

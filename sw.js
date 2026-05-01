@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = '2026-05-01a';
+const VERSION = '2026-05-01f';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -32,6 +32,7 @@ const PRECACHE_URLS = [
     '/js/column-resize.js',
     '/js/column-reorder.js',
     '/js/verse-select.js',
+    '/js/highlight.js',
     '/js/tags.js',
     '/data/books.json',
 ];

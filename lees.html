@@ -96,6 +96,21 @@
         <button class="popover-more" id="popover-more">Meer in lexicon</button>
     </div>
 
+    <!-- Audio-speler: verschijnt onderaan content wanneer voor dit hoofdstuk
+         een audio-bestand bestaat (audio/{book}/{chapter}.mp3). -->
+    <div id="audio-player" class="audio-player hidden" aria-label="Voorlezing">
+        <button id="audio-play-big" class="audio-play-big" aria-label="Speel voorlezing af" title="Speel voorlezing af">
+            <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+                <polygon points="6,4 22,12 6,20" fill="currentColor"/>
+            </svg>
+        </button>
+        <div class="audio-meta">
+            <div class="audio-title" id="audio-title">Voorlezing</div>
+            <div class="audio-sub" id="audio-sub">Klik om te beluisteren</div>
+        </div>
+        <audio id="audio-el" preload="none"></audio>
+    </div>
+
     <!-- Mobile bottom nav -->
     <nav id="mobile-nav">
         <button class="mobile-tab active" data-tab="bijbel">
