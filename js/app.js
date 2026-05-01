@@ -59,9 +59,13 @@ const App = {
     },
     // Kolom-breedtes: gelijk verdeeld
     COL_WIDTHS: {
-        '1637': '1fr', 'margin1637': '1fr', 'sv1888': '1fr', 'marginSV1888': '1fr',
-        '2026': '1fr', 'margin2026': '1fr', 'nbg51': '1fr', 'hsv': '1fr',
-        'hebrew': '1fr', 'diff': '1fr', 'noteDiff': '1fr'
+        // minmax(0, 1fr) i.p.v. '1fr' zodat lange content een kolom niet
+        // breder duwt dan zijn helft — bij 2 zichtbare kolommen wordt het echt 50/50.
+        '1637': 'minmax(0, 1fr)', 'margin1637': 'minmax(0, 1fr)',
+        'sv1888': 'minmax(0, 1fr)', 'marginSV1888': 'minmax(0, 1fr)',
+        '2026': 'minmax(0, 1fr)', 'margin2026': 'minmax(0, 1fr)',
+        'nbg51': 'minmax(0, 1fr)', 'hsv': 'minmax(0, 1fr)',
+        'hebrew': 'minmax(0, 1fr)', 'diff': 'minmax(0, 1fr)', 'noteDiff': 'minmax(0, 1fr)'
     },
 
     async init() {
@@ -155,6 +159,12 @@ const App = {
         // Titel
         document.getElementById('chapter-title').textContent =
             `${book.nameDutch} ${chapterNum}`;
+        // Chapter-footer label (sticky onderaan)
+        const chfLabel = document.getElementById('chapter-footer-label');
+        if (chfLabel) {
+            const total = (book.chapters && book.chapters.length) || (book.chaptersIncluded && book.chaptersIncluded.length) || 0;
+            chfLabel.textContent = total ? `${book.nameDutch} ${chapterNum} / ${total}` : `${book.nameDutch} ${chapterNum}`;
+        }
 
         // Boekinleiding (alleen bij hoofdstuk 1)
         const bookIntroEl = document.getElementById('book-intro');

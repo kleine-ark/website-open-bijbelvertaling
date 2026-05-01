@@ -70,31 +70,27 @@ const CloudHighlights = {
             const cloudTs = (cloudState._meta && cloudState._meta.lastLocalEdit) || 0;
             const localTs = (Highlight.state._meta && Highlight.state._meta.lastLocalEdit) || 0;
 
-            // Per-vers merge: laatste-wint op grof niveau (cloud vs local)
-            // Voor verzen die slechts in 1 bron bestaan: behoud beide.
-            const merged = {};
-            const allKeys = new Set([...Object.keys(cloudState), ...Object.keys(Highlight.state)]);
-            allKeys.forEach(k => {
-                if (k === '_meta') return;
-                const c = cloudState[k];
-                const l = Highlight.state[k];
-                if (c && !l) merged[k] = c;
-                else if (l && !c) merged[k] = l;
-                else if (c && l) merged[k] = (cloudTs > localTs) ? c : l;
-            });
-            merged._meta = { lastLocalEdit: Math.max(cloudTs, localTs) };
+            // Last-writer-wins op het hele state-object. Anders wordt
+            // een lokale verwijdering "geresurrecteerd" door per-key
+            // union-merge (cloud heeft entry, local niet → terug erin).
+            // Eerste-keer login (lokaal nog niets) → adopteer cloud.
+            const localHasAny = Object.keys(Highlight.state).some(k => k !== '_meta');
+            const adoptCloud = !localHasAny || cloudTs > localTs;
 
-            Highlight.state = merged;
-            // Schrijf merged naar localStorage zonder cloud-loop te triggeren
-            try {
-                localStorage.setItem(Highlight.STORAGE_KEY, JSON.stringify(merged));
-            } catch (e) { console.warn(e); }
-
-            // Re-render huidig hoofdstuk indien zichtbaar
-            this._reRenderCurrent();
-
-            // Push merged terug naar cloud (consistent state)
-            await this.pushNow();
+            if (adoptCloud) {
+                Highlight.state = JSON.parse(JSON.stringify(cloudState));
+                if (!Highlight.state._meta) Highlight.state._meta = {};
+                Highlight.state._meta.lastLocalEdit = cloudTs;
+                try {
+                    localStorage.setItem(Highlight.STORAGE_KEY, JSON.stringify(Highlight.state));
+                } catch (e) { console.warn(e); }
+                // Markeer als reeds gepusht zodat we niet onmiddellijk weer pushen
+                this.lastPushedJSON = JSON.stringify(Highlight.state);
+                this._reRenderCurrent();
+            } else {
+                // Local is gelijk of nieuwer → push local naar cloud (overschrijft)
+                await this.pushNow();
+            }
         } catch (e) {
             console.warn('[CloudHighlights] pull failed:', e);
         }
