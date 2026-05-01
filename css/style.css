@@ -2638,6 +2638,9 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     border-radius: 2px;
 }
 
+/* Vers-link in begrip-popover verbergen — gebruiker wil geen tekst-links in popup */
+#begrip-popover #begrip-ref { display: none; }
+
 /* === Definitieve 50/50 fix: forceer grid-layout in reading-mode ===
    Voorheen was .verse-row flex met inline cellen → grid-template-columns
    deed niets. Nu echt grid met cellen als block, zodat 2 kolommen exact
