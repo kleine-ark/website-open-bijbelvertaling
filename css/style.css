@@ -2229,6 +2229,28 @@ body.show-tags .verse-tag {
         padding: 0;
         box-sizing: border-box;
     }
+    /* Begrippen aan/uit pill in mobile-topbar */
+    .mobile-toggle-btn {
+        flex: 0 0 40px;
+        width: 40px; height: 40px;
+        border: 1px solid var(--border);
+        background: #fff;
+        color: var(--navy);
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 700;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.15s;
+    }
+    .mobile-toggle-btn.is-on {
+        background: var(--gold, #cba449);
+        color: #fff;
+        border-color: var(--gold, #cba449);
+    }
+    .mobile-toggle-btn:hover { border-color: var(--gold, #cba449); }
     #mobile-opties-btn:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
 
     /* --- Sticky bottom nav --- */
