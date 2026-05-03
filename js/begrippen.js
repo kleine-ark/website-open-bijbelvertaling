@@ -31,17 +31,34 @@ const Begrippen = {
     },
 
     buildLookup() {
+        // Twee niveaus: caseLookup (exacte case voor woorden waar dat ertoe doet,
+        // bv. 'Geest' = Heilige Geest vs 'geest' = nieuwe mens) en lookup (lowercase fallback).
         this.lookup = {};
-        // Eerst supplement (cross-boek): bevat ALLE 4.139+ unieke begrippen uit alle boeken
+        this.caseLookup = {};
+        // Eerst supplement (cross-boek)
         for (const item of this.supplement || []) {
+            this.caseLookup[item.woord] = item;
             this.lookup[item.woord.toLowerCase()] = item;
-            if (item.ook) for (const alt of item.ook) this.lookup[alt.toLowerCase()] = item;
+            if (item.ook) for (const alt of item.ook) {
+                this.caseLookup[alt] = item;
+                this.lookup[alt.toLowerCase()] = item;
+            }
         }
-        // Dan boek-specifiek: overschrijft supplement (rijkere uitleg + boek-context)
+        // Dan boek-specifiek (overschrijft supplement)
         for (const item of this.data || []) {
+            this.caseLookup[item.woord] = item;
             this.lookup[item.woord.toLowerCase()] = item;
-            if (item.ook) for (const alt of item.ook) this.lookup[alt.toLowerCase()] = item;
+            if (item.ook) for (const alt of item.ook) {
+                this.caseLookup[alt] = item;
+                this.lookup[alt.toLowerCase()] = item;
+            }
         }
+    },
+
+    // Vind een begrip met case-sensitive prioriteit, fallback naar lowercase
+    findItem(word) {
+        if (this.caseLookup && this.caseLookup[word]) return this.caseLookup[word];
+        return this.lookup[word.toLowerCase()] || null;
     },
 
     async loadEncyclopedieMapping() {
@@ -116,7 +133,7 @@ const Begrippen = {
 
             const frag = document.createDocumentFragment();
             for (const part of parts) {
-                if (this.lookup[part.toLowerCase()]) {
+                if (this.findItem(part)) {
                     const span = document.createElement('span');
                     span.className = 'begrip-link';
                     span.textContent = part;
@@ -144,7 +161,7 @@ const Begrippen = {
     },
 
     showPopover(word, anchorEl) {
-        const item = this.lookup[word.toLowerCase()];
+        const item = this.findItem(word);
         if (!item) return;
 
         const pop = document.getElementById('begrip-popover');
