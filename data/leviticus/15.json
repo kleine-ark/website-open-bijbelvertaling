@@ -154,7 +154,14 @@
       ],
       "text2026_html": "<span class=\"god-speaks\"><i>Spreekt tot de kinderen van Israël, en zegt tot hen: Een ieder man, als hij vloeiende zal zijn uit zijn vlees, zal om zijn vloed onrein zijn.</i></span>",
       "textSV1888_html": "Spreekt tot de kinderen Israëls, en zegt tot hen:<sup class=\"note-marker\" data-note=\"1\">1</sup> Een ieder man, als hij vloeiende zal zijn uit zijn<sup class=\"note-marker\" data-note=\"2\">2</sup> vlees, zal om zijn vloed onrein zijn.",
-      "text1637_html": "Spreeckt tot de kinderen Israëls, ende segt tot hen; <sup class=\"note-marker\" data-note=\"1\">1</sup> Een yeder man, als hy vloeyende sal zijn uyt sijnen <sup class=\"note-marker\" data-note=\"2\">2</sup> vleesche, sal om sijnen vloet onreyn zijn."
+      "text1637_html": "Spreeckt tot de kinderen Israëls, ende segt tot hen; <sup class=\"note-marker\" data-note=\"1\">1</sup> Een yeder man, als hy vloeyende sal zijn uyt sijnen <sup class=\"note-marker\" data-note=\"2\">2</sup> vleesche, sal om sijnen vloet onreyn zijn.",
+      "phraseDiff": [
+        {
+          "old": "Israëls,",
+          "new": "van Israël,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 3,
@@ -1084,14 +1091,19 @@
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Oock het aerden vat, het welcke hy, die den vloet heeft, sal aengeroert hebben, sal gebroken worden: maer alle houten vat sal met water gespoelt worden.",
       "phraseDiff": [
         {
-          "old": "hetwelk",
-          "new": "dat",
+          "old": "vat, hetwelk",
+          "new": "pot, dat",
           "principe": "N6"
         },
         {
           "old": "den",
           "new": "de",
           "principe": "N6"
+        },
+        {
+          "old": "vat",
+          "new": "voorwerp",
+          "principe": null
         }
       ]
     },
@@ -1349,8 +1361,8 @@
       "text1637_html": "Ende ten achtsten dage sal hy voor sich twee tortelduyven, ofte <sup class=\"note-marker\" data-note=\"13\">13</sup> twee jonge duyven nemen: ende sal voor het aengesicht des HEEREN, aen de deure der Tente der t' samen-komste komen, ende salse den Priester geven.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
+          "old": "den achtsten",
+          "new": "de achtste",
           "principe": "N1"
         },
         {
@@ -2958,8 +2970,8 @@
       "text1637_html": "Ende op den achtsten dach salse voor haer twee tortelduyven, ofte twee jonge duyven nemen: ende sy sal die tot den Priester brengen, aen de deure der Tente der t'samen-komste.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
+          "old": "den achtsten",
+          "new": "de achtste",
           "principe": "N1"
         },
         {
@@ -3171,6 +3183,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "Israëls",
+          "new": "van Israël",
+          "principe": null
         }
       ]
     },
