@@ -64,6 +64,41 @@ const App = {
         johannes: [1],
     },
 
+    // Hoofdstukken die handmatig vers-voor-vers zijn nagelopen.
+    // Voor andere hoofdstukken: AI-concept-banner tonen.
+    VERIFIED_CHAPTERS: {
+        genesis:    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        psalmen:    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+        johannes:   'all',
+        handelingen:[1,2,3,4,5,6],
+        filemon:    'all',
+        judas:      'all',
+    },
+
+    _isVerified(bookId, chapter) {
+        const v = App.VERIFIED_CHAPTERS[bookId];
+        if (!v) return false;
+        if (v === 'all') return true;
+        return Array.isArray(v) && v.includes(chapter);
+    },
+
+    _updateVerifiedBanner(bookId, chapter) {
+        let banner = document.getElementById('ai-concept-banner');
+        if (App._isVerified(bookId, chapter)) {
+            if (banner) banner.style.display = 'none';
+            return;
+        }
+        if (!banner) {
+            banner = document.createElement('div');
+            banner.id = 'ai-concept-banner';
+            banner.className = 'ai-concept-banner';
+            banner.innerHTML = '<strong>⚠ Let op:</strong> AI-wijzigingen. Concept. Nog geen menselijke controle plaatsgevonden — kans op nog niet opgeloste onjuistheden.';
+            const container = document.getElementById('verses-container');
+            if (container && container.parentNode) container.parentNode.insertBefore(banner, container);
+        }
+        banner.style.display = 'block';
+    },
+
     _updateAudioPlayer(bookId, chapter) {
         const playBtn = document.getElementById('audio-play-big');
         const playMob = document.getElementById('audio-play-mobile');
@@ -277,6 +312,8 @@ const App = {
         }
         // Audio play-knop tonen voor hoofdstukken met voorlezing
         App._updateAudioPlayer(bookId, chapterNum);
+        // AI-concept-banner tonen voor niet-geverifieerde hoofdstukken
+        App._updateVerifiedBanner(bookId, chapterNum);
 
         // Boekinleiding (alleen bij hoofdstuk 1)
         const bookIntroEl = document.getElementById('book-intro');

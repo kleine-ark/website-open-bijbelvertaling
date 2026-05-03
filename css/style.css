@@ -2728,3 +2728,17 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     .mfn-speed:hover { background: var(--gold, #cba449); color: var(--navy, #142e42); }
     .mfn-speed.hidden { display: none; }
 }
+
+/* === AI-concept-banner (boven verzen bij niet-geverifieerde hoofdstukken) === */
+.ai-concept-banner {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin: 12px 0 18px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.55;
+    color: #78350f;
+}
+.ai-concept-banner strong { color: #92400e; }
