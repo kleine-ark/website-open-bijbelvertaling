@@ -904,14 +904,9 @@
           "principe": "W1"
         },
         {
-          "old": "den Heere:",
-          "new": "de Heer:",
+          "old": "den",
+          "new": "de",
           "principe": "G1"
-        },
-        {
-          "old": "Heere,",
-          "new": "Heer,",
-          "principe": null
         },
         {
           "old": "den",
@@ -1481,6 +1476,11 @@
           "principe": "W1"
         },
         {
+          "old": "zichzelven",
+          "new": "zichzelf",
+          "principe": null
+        },
+        {
           "old": "weder",
           "new": "weer",
           "principe": "V66"
@@ -2012,8 +2012,8 @@
       "text1637_html": "Ende de eerste quam, ende seyde, Heere, uw' pondt heeft tien ponden daer toe gewonnen.",
       "phraseDiff": [
         {
-          "old": "zeide:",
-          "new": "zei:",
+          "old": "zeide: Heer,",
+          "new": "zei: Heere,",
           "principe": "W1"
         }
       ]
@@ -2255,8 +2255,8 @@
       "text1637_html": "Ende de tweede quam ende seyde, Heere, uw' pondt heeft vijf ponden <sup class=\"note-marker\" data-note=\"19\">19</sup> gewonnen.",
       "phraseDiff": [
         {
-          "old": "zeide:",
-          "new": "zei:",
+          "old": "zeide: Heer,",
+          "new": "zei: Heere,",
           "principe": "W1"
         }
       ]
@@ -2459,6 +2459,11 @@
       "textSV1888_html": "En een ander kwam, zeggende: Heer, zie hier uw pond, hetwelk ik in een<sup class=\"note-marker\" data-note=\"20\">20</sup> zweetdoek weggelegd had;",
       "text1637_html": "Ende een ander quam seggende, Heere, siet [<i>hier</i>] uw' pondt, 'twelck ick in eenen <sup class=\"note-marker\" data-note=\"20\">20</sup> sweet-doeck wech geleyt hadde:",
       "phraseDiff": [
+        {
+          "old": "Heer,",
+          "new": "Heere,",
+          "principe": null
+        },
         {
           "old": "hetwelk",
           "new": "dat",
@@ -3098,7 +3103,14 @@
         }
       ],
       "text2026_html": "<span class=\"god-speaks\"><i>En zij zeiden tot hem: Heere, hij heeft tien ponden.</i></span>",
-      "text1637_html": "Ende sy seyden tot hem, Heere hy heeft tien ponden."
+      "text1637_html": "Ende sy seyden tot hem, Heere hy heeft tien ponden.",
+      "phraseDiff": [
+        {
+          "old": "Heer,",
+          "new": "Heere,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 26,
@@ -3912,8 +3924,8 @@
           "principe": "V42"
         },
         {
-          "old": "Heere van node",
-          "new": "Heer nodig",
+          "old": "van node",
+          "new": "nodig",
           "principe": "O15"
         }
       ]
@@ -4162,11 +4174,6 @@
       "text2026_html": "<span class=\"direct-speech\"><i>En zij zeiden: <span class=\"direct-spee</span><span class=\"direct-speech\"><i>ch\"></i></span><i>De Heere heeft het nodig.</i></i></span>",
       "text1637_html": "Ende sy seyden, De Heere heeft het van noode.",
       "phraseDiff": [
-        {
-          "old": "Heere",
-          "new": "Heer",
-          "principe": "G1"
-        },
         {
           "old": "van node.",
           "new": "nodig.",
@@ -4628,6 +4635,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "stemme,",
+          "new": "stem,",
+          "principe": null
         }
       ]
     },
@@ -4775,7 +4787,7 @@
         },
         {
           "old": "des Heeren!",
-          "new": "van de Heer!",
+          "new": "van de Heere!",
           "principe": "G2"
         },
         {

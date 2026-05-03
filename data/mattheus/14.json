@@ -1861,8 +1861,8 @@
       "text1637_html": "<sup class=\"note-marker\" data-note=\"k\">k</sup> Ende als het nu avondt wierdt, quamen sijne Discipelen tot hem, seggende, Dese plaetse is woest, ende <sup class=\"note-marker\" data-note=\"15\">15</sup> de tijdt is nu voorby gegaen: laet de scharen van u, op dat sy henen gaen in de vlecken, ende haer selven spijse coopen.",
       "phraseDiff": [
         {
-          "old": "spijze",
-          "new": "voedsel",
+          "old": "zichzelven spijze",
+          "new": "zichzelf voedsel",
           "principe": "V49"
         }
       ]
@@ -2568,7 +2568,14 @@
         }
       ],
       "text2026_html": "Die nu gegeten hadden, waren ongeveer vijf duizend mannen, zonder de vrouwen en kinderen.",
-      "text1637_html": "Die nu gegeten hadden, waren ontrent vijf duysent mannen, sonder de vrouwen ende kinderen."
+      "text1637_html": "Die nu gegeten hadden, waren ontrent vijf duysent mannen, sonder de vrouwen ende kinderen.",
+      "phraseDiff": [
+        {
+          "old": "omtrent",
+          "new": "ongeveer",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 22,
@@ -3446,8 +3453,13 @@
       "text1637_html": "Ende Petrus antwoordde hem, ende seyde, Heere, indien ghy het zijt, so gebiedt my tot u te comen op het water.",
       "phraseDiff": [
         {
-          "old": "zeide: Heere! indien Gij",
-          "new": "zei: Heer! als U",
+          "old": "zeide:",
+          "new": "zei:",
+          "principe": "W1"
+        },
+        {
+          "old": "indien Gij",
+          "new": "als U",
           "principe": "V41"
         },
         {
@@ -3694,11 +3706,6 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
-        },
-        {
-          "old": "Heere,",
-          "new": "Heer,",
-          "principe": null
         }
       ]
     },
