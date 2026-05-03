@@ -99,13 +99,18 @@
       ],
       "hsv": "En een zekere man, van wie de naam Ananias was, verkocht samen met zijn vrouw Saffira een eigendom,",
       "nbg51": "En een zeker man, met name Ananias, met zijn vrouw Saffira, verkocht een eigendom,",
-      "text2026_html": "En een zeker man, met de naam Ananias, met Saffira, zijn vrouw, verkocht<sup class=\"note-marker\" data-note=\"1\">1</sup> een bezittingen;",
+      "text2026_html": "En een zeker man, met de naam Ananias, met Saffira, zijn vrouw, verkocht<sup class=\"note-marker\" data-note=\"1\">1</sup> zijn bezittingen;",
       "textSV1888": "En een zeker man, met name Ananias, met Saffira, zijn vrouw, verkocht een have;",
       "textSV1888_html": "En een zeker man, met name Ananias, met Saffira, zijn vrouw, verkocht<sup class=\"note-marker\" data-note=\"1\">1</sup> een have;",
       "phraseDiff": [
         {
-          "old": "have;",
-          "new": "bezittingen;",
+          "old": "name",
+          "new": "de naam",
+          "principe": null
+        },
+        {
+          "old": "een have;",
+          "new": "zijn bezittingen;",
           "principe": "V28"
         }
       ]
@@ -132,7 +137,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En onttrok van de prijs, ook met medeweten van zijn vrouw; en bracht een zeker deel, en legde dat aan de voeten van de apostelen.",
+      "text2026": "En onttrok van de prijs, ook met medeweten van zijn vrouw; en bracht een deel, en legde dat aan de voeten van de apostelen.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -253,7 +258,7 @@
       ],
       "hsv": "en hield een deel van de opbrengst achter, ook met medeweten van zijn vrouw, en hij bracht een bepaald gedeelte en legde dat aan de voeten van de apostelen.",
       "nbg51": "hield iets van de opbrengst achter, met medeweten van zijn vrouw, en bracht een zeker deel en legde het aan de voeten der apostelen.",
-      "text2026_html": "En<sup class=\"note-marker\" data-note=\"2\">2</sup> onttrok van de prijs, ook met medeweten van zijn vrouw; en bracht een zeker deel, en legde<sup class=\"note-marker\" data-note=\"3\">3</sup> dat aan de voeten van de apostelen.",
+      "text2026_html": "En<sup class=\"note-marker\" data-note=\"2\">2</sup> onttrok van de prijs, ook met medeweten van zijn vrouw; en bracht een deel, en legde<sup class=\"note-marker\" data-note=\"3\">3</sup> dat aan de voeten van de apostelen.",
       "textSV1888": "En onttrok van den prijs, ook met medeweten zijner vrouw; en bracht een zeker deel, en legde dat aan de voeten der apostelen.",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"2\">2</sup> onttrok van den prijs, ook met medeweten zijner vrouw; en bracht een zeker deel, en legde<sup class=\"note-marker\" data-note=\"3\">3</sup> dat aan de voeten der apostelen.",
       "phraseDiff": [
@@ -266,6 +271,11 @@
           "old": "zijner",
           "new": "van zijn",
           "principe": "N7"
+        },
+        {
+          "old": "zeker",
+          "new": "",
+          "principe": null
         },
         {
           "old": "der",
@@ -859,6 +869,11 @@
       "textSV1888_html": "En Ananias, deze woorden horende, viel neder en<sup class=\"note-marker\" data-note=\"12\">12</sup> gaf den geest. En er kwam grote vrees over allen, die dit hoorden.",
       "phraseDiff": [
         {
+          "old": "neder",
+          "new": "neer",
+          "principe": null
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
@@ -988,7 +1003,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En het was ongeveer drie uren daarna, dat ook zijn vrouw daar inkwam, niet wetende, wat er geschied was;",
+      "text2026": "En ongeveer drie uur later kwam ook zijn vrouw binnen, zonder te weten wat er was gebeurd;",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -1085,9 +1100,31 @@
       ],
       "hsv": "En het gebeurde na verloop van ongeveer drie uur dat ook zijn vrouw daar binnenkwam, zonder te weten wat er gebeurd was.",
       "nbg51": "En het geschiedde na verloop van ongeveer drie uur, dat zijn vrouw binnenkwam, onkundig van wat er gebeurd was.",
-      "text2026_html": "En het was ongeveer<sup class=\"note-marker\" data-note=\"15\">15</sup> drie uren daarna, dat ook zijn vrouw daar inkwam,<sup class=\"note-marker\" data-note=\"16\">16</sup> niet wetende, wat<sup class=\"note-marker\" data-note=\"17\">17</sup> er geschied was;",
+      "text2026_html": "En ongeveer drie<sup class=\"note-marker\" data-note=\"15\">15</sup> uur later kwam ook zijn vrouw binnen, zonder<sup class=\"note-marker\" data-note=\"16\">16</sup> te weten wat <sup class=\"note-marker\" data-note=\"17\">17</sup>er was gebeurd;",
       "textSV1888": "En het was omtrent drie uren daarna, dat ook zijn vrouw daar inkwam, niet wetende, wat er geschied was;",
-      "textSV1888_html": "En het was omtrent<sup class=\"note-marker\" data-note=\"15\">15</sup> drie uren daarna, dat ook zijn vrouw daar inkwam,<sup class=\"note-marker\" data-note=\"16\">16</sup> niet wetende, wat<sup class=\"note-marker\" data-note=\"17\">17</sup> er geschied was;"
+      "textSV1888_html": "En het was omtrent<sup class=\"note-marker\" data-note=\"15\">15</sup> drie uren daarna, dat ook zijn vrouw daar inkwam,<sup class=\"note-marker\" data-note=\"16\">16</sup> niet wetende, wat<sup class=\"note-marker\" data-note=\"17\">17</sup> er geschied was;",
+      "phraseDiff": [
+        {
+          "old": "het was omtrent",
+          "new": "ongeveer",
+          "principe": null
+        },
+        {
+          "old": "uren daarna, dat",
+          "new": "uur later kwam",
+          "principe": null
+        },
+        {
+          "old": "daar inkwam, niet wetende,",
+          "new": "binnen, zonder te weten",
+          "principe": null
+        },
+        {
+          "old": "geschied was;",
+          "new": "was gebeurd;",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 8,
@@ -1448,7 +1485,7 @@
         },
         {
           "old": "des Heeren?",
-          "new": "van de Heer?",
+          "new": "van de Heere?",
           "principe": "G2"
         },
         {
@@ -1465,7 +1502,7 @@
       "text1637_html": "Ende sy viel terstont neder voor sijne voeten, ende gaf den geest. Ende de jongelingen ingekomen zijnde vonden'se doodt, ende droegen'[<i>se</i>] uyt, ende begroeven'[<i>se</i>] by haren man.",
       "marginNotes": [],
       "textHerzien": "",
-      "text2026": "En zij viel meteen neder voor zijn voeten, en gaf de geest. En de jongemannen ingekomen zijnde, vonden haar dood en droegen ze uit, en begroeven haar bij haar man.",
+      "text2026": "En zij viel meteen neer voor zijn voeten, en gaf de geest. En de jongemannen ingekomen zijnde, vonden haar dood en droegen ze uit, en begroeven haar bij haar man.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -1610,12 +1647,12 @@
       ],
       "hsv": "En zij viel onmiddellijk voor zijn voeten neer en gaf de geest. En toen de jongemannen binnengekomen waren, troffen zij haar dood aan, en zij droegen haar naar buiten en begroeven haar bij haar man.",
       "nbg51": "En zij viel terstond neder voor zijn voeten en blies de adem uit; en de jonge mannen kwamen binnen en vonden haar dood en zij droegen haar uit en begroeven haar bij haar man.",
-      "text2026_html": "En zij viel meteen neder voor zijn voeten, en gaf de geest. En de jongemannen ingekomen zijnde, vonden haar dood en droegen ze uit, en begroeven haar bij haar man.",
+      "text2026_html": "En zij viel meteen neer voor zijn voeten, en gaf de geest. En de jongemannen ingekomen zijnde, vonden haar dood en droegen ze uit, en begroeven haar bij haar man.",
       "textSV1888": "En zij viel terstond neder voor zijn voeten, en gaf den geest. En de jongelingen ingekomen zijnde, vonden haar dood en droegen ze uit, en begroeven haar bij haar man.",
       "phraseDiff": [
         {
-          "old": "terstond",
-          "new": "meteen",
+          "old": "terstond neder",
+          "new": "meteen neer",
           "principe": "V8"
         },
         {
@@ -1637,7 +1674,7 @@
       "text1637_html": "Ende daer quam groote vreese over de geheele Gemeynte, ende over alle die dit hoorden.",
       "marginNotes": [],
       "textHerzien": "",
-      "text2026": "En er kwam grote vreze over de gehele Gemeente, en over allen, die dit hoorden.",
+      "text2026": "En er kwam grote vreze over heel de gemeente, en over allen, die dit hoorden.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -1728,8 +1765,20 @@
       ],
       "hsv": "En er kwam grote vrees over heel de gemeente en over allen die dit hoorden.",
       "nbg51": "En een grote vrees kwam over de gehele gemeente en over allen, die dit hoorden. Tekenen en wonderen",
-      "text2026_html": "En er kwam grote vreze over de gehele Gemeente, en over allen, die dit hoorden.",
-      "textSV1888": "En er kwam grote vreze over de gehele Gemeente, en over allen, die dit hoorden."
+      "text2026_html": "En er kwam grote vreze over heel de gemeente, en over allen, die dit hoorden.",
+      "textSV1888": "En er kwam grote vreze over de gehele Gemeente, en over allen, die dit hoorden.",
+      "phraseDiff": [
+        {
+          "old": "",
+          "new": "heel",
+          "principe": null
+        },
+        {
+          "old": "gehele Gemeente,",
+          "new": "gemeente,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 12,
@@ -1760,7 +1809,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En door de handen van de apostelen geschiedden vele tekenen en wonderen onder het volk; en zij waren allen eensgezind in het voorhof van Salomo.",
+      "text2026": "En door de handen van de apostelen werden vele tekenen en wonderen onder het volk gedaan; en zij waren allen eensgezind in het voorhof van Salomo.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -1899,7 +1948,7 @@
       ],
       "hsv": "ⓐEn er gebeurden door de handen van de apostelen veel tekenen en wonderen onder het volk; en zij waren allen eensgezind bijeen in de zuilengang van Salomo.",
       "nbg51": "En door de handen der apostelen geschiedden vele tekenen en wonderen onder het volk; en zij waren allen eendrachtig bijeen in de zuilengang van Salomo.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> En<sup class=\"note-marker\" data-note=\"22\">22</sup> door de handen van de apostelen geschiedden vele tekenen en wonderen onder het volk; en zij waren allen eensgezind in het<sup class=\"note-marker\" data-note=\"23\">23</sup> voorhof van Salomo.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> En<sup class=\"note-marker\" data-note=\"22\">22</sup> door de handen van de apostelen werden vele tekenen en wonderen onder het volk gedaan; en zij waren allen eensgezind in het<sup class=\"note-marker\" data-note=\"23\">23</sup> voorhof van Salomo.",
       "textSV1888": "En door de handen der apostelen geschiedden vele tekenen en wonderen onder het volk; en zij waren allen eendrachtelijk in het voorhof van Salomo.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> En<sup class=\"note-marker\" data-note=\"22\">22</sup> door de handen der apostelen geschiedden vele tekenen en wonderen onder het volk; en zij waren allen eendrachtelijk in het<sup class=\"note-marker\" data-note=\"23\">23</sup> voorhof van Salomo.",
       "phraseDiff": [
@@ -1907,6 +1956,21 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "geschiedden",
+          "new": "werden",
+          "principe": null
+        },
+        {
+          "old": "volk;",
+          "new": "volk gedaan;",
+          "principe": null
+        },
+        {
+          "old": "eendrachtelijk",
+          "new": "eensgezind",
+          "principe": null
         }
       ]
     },
@@ -2108,8 +2172,8 @@
       "textSV1888_html": "En er werden<sup class=\"note-marker\" data-note=\"26\">26</sup> meer en meer toegedaan, die den Heere geloofden, menigten beide van mannen en van vrouwen;",
       "phraseDiff": [
         {
-          "old": "den Heere",
-          "new": "de Heer",
+          "old": "den",
+          "new": "de",
           "principe": "G1"
         }
       ]
@@ -2598,6 +2662,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "nijdigheid;",
+          "new": "jaloezie;",
+          "principe": null
         }
       ]
     },
@@ -2694,7 +2763,14 @@
       "hsv": "En zij sloegen hun handen aan de apostelen en zetten hen vast in de openbare gevangenis.",
       "nbg51": "en zij sloegen de handen aan de apostelen en zetten hen in het huis van bewaring.",
       "text2026_html": "En sloegen hun handen aan de apostelen, en zetten hen in de openbare gevangenis.",
-      "textSV1888": "En sloegen hun handen aan de apostelen, en zetten hen in de gemene gevangenis."
+      "textSV1888": "En sloegen hun handen aan de apostelen, en zetten hen in de gemene gevangenis.",
+      "phraseDiff": [
+        {
+          "old": "gemene",
+          "new": "openbare",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 19,
@@ -2815,7 +2891,7 @@
       "phraseDiff": [
         {
           "old": "des Heeren",
-          "new": "van de Heer",
+          "new": "van de Heere",
           "principe": "G2"
         },
         {
@@ -2857,7 +2933,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Gaat heen, en staat, en spreekt in de tempel tot het volk al de woorden van deze levens.",
+      "text2026": "Ga, en sta en spreekt in de tempel tot het volk al de woorden van deze levens.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -2954,10 +3030,20 @@
       ],
       "hsv": "Ga in de tempel staan en spreek tot het volk al de woorden van dit leven.",
       "nbg51": "Gaat heen, gaat in de tempel staan en spreekt tot het volk al deze woorden des levens.",
-      "text2026_html": "<span class=\"direct-speech\"><i>Gaat heen, en<sup class=\"note-marker\" data-note=\"35\">35</sup> staat, en spreekt in de tempel tot het volk<sup class=\"note-marker\" data-note=\"36\">36</sup> al de woorden van deze levens.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Ga, en<sup class=\"note-marker\" data-note=\"35\">35</sup> sta en spreekt in de tempel tot het volk<sup class=\"note-marker\" data-note=\"36\">36</sup> al de woorden van deze levens.</i></span>",
       "textSV1888": "Gaat heen, en staat, en spreekt in den tempel tot het volk al de woorden dezes levens.",
       "textSV1888_html": "Gaat heen, en<sup class=\"note-marker\" data-note=\"35\">35</sup> staat, en spreekt in den tempel tot het volk<sup class=\"note-marker\" data-note=\"36\">36</sup> al de woorden dezes levens.",
       "phraseDiff": [
+        {
+          "old": "Gaat heen,",
+          "new": "Ga,",
+          "principe": null
+        },
+        {
+          "old": "staat,",
+          "new": "sta",
+          "principe": null
+        },
         {
           "old": "den",
           "new": "de",
@@ -3236,7 +3322,7 @@
         },
         {
           "old": "te zamen,",
-          "new": "tezamen,",
+          "new": "samen,",
           "principe": null
         },
         {
@@ -3355,6 +3441,11 @@
           "old": "wederom,",
           "new": "opnieuw,",
           "principe": "V6"
+        },
+        {
+          "old": "boodschapten",
+          "new": "meldden",
+          "principe": null
         }
       ]
     },
@@ -3673,6 +3764,11 @@
           "old": "des tempels,",
           "new": "van de tempel,",
           "principe": "N3"
+        },
+        {
+          "old": "twijfelmoedig",
+          "new": "in twijfel",
+          "principe": null
         }
       ]
     },
@@ -3832,6 +3928,11 @@
       "textSV1888": "En er kwam een, en boodschapte hun, zeggende: Ziet, de mannen, die gij in de gevangenis gezet hebt, staan in den tempel, en leren het volk.",
       "phraseDiff": [
         {
+          "old": "boodschapte",
+          "new": "meldde",
+          "principe": null
+        },
+        {
           "old": "Ziet,",
           "new": "Zie,",
           "principe": "V198"
@@ -3863,7 +3964,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Toen ging de hoofdman heen, met de dienaren, en bracht hen, maar niet met geweld (want zij vreesden het volk, opdat zij niet gestenigd werden).",
+      "text2026": "Toen ging de hoofdman erheen, met de dienaren, en bracht hen, maar niet met geweld (want zij vreesden het volk, opdat zij niet gestenigd werden).",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -3978,14 +4079,24 @@
       ],
       "hsv": "Toen ging de bevelhebber er met de dienaars heen en bracht hen zonder geweld mee, ⓓwant zij waren bevreesd voor het volk dat ze anders gestenigd zouden worden.",
       "nbg51": "Toen ging de hoofdman met zijn dienaren erheen en nam hen mede, maar niet met geweld, want zij waren bevreesd, dat het volk hen stenigen zou;",
-      "text2026_html": "Toen ging de hoofdman heen, met de dienaren, en bracht hen, maar niet met geweld<sup class=\"note-marker\" data-note=\"d\">d</sup> (want zij vreesden het volk, opdat zij niet gestenigd werden).",
+      "text2026_html": "Toen ging de hoofdman erheen, met de dienaren, en bracht hen, maar niet met geweld<sup class=\"note-marker\" data-note=\"d\">d</sup> (want zij vreesden het volk, opdat zij niet gestenigd werden).",
       "textSV1888": "Toen ging de hoofdman heen, met de dienaren, en bracht hen, doch niet met geweld (want zij vreesden het volk, opdat zij niet gestenigd wierden).",
       "textSV1888_html": "Toen ging de hoofdman heen, met de dienaren, en bracht hen, doch niet met geweld<sup class=\"note-marker\" data-note=\"d\">d</sup> (want zij vreesden het volk, opdat zij niet gestenigd wierden).",
       "phraseDiff": [
         {
+          "old": "heen,",
+          "new": "erheen,",
+          "principe": null
+        },
+        {
           "old": "doch",
           "new": "maar",
           "principe": "V1"
+        },
+        {
+          "old": "wierden).",
+          "new": "werden).",
+          "principe": null
         }
       ]
     },
@@ -4091,6 +4202,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "vraagde",
+          "new": "vroeg",
+          "principe": null
         },
         {
           "old": "zeide:",
@@ -5017,7 +5133,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Maar een zeker Farizeër stond op in de raad, met de naam Gamaliël, een leraar van de wet, in waarde gehouden bij al het volk, en gebood, dat men de apostelen een weinig zou doen buiten staan.",
+      "text2026": "Maar een zekere Farizeeër stond op in de raad, met de naam Gamaliël, een leraar van de wet, in waarde gehouden bij al het volk, en gebood, dat men de apostelen een weinig zou doen buiten staan.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -5144,14 +5260,24 @@
       ],
       "hsv": "Maar er stond iemand op in de Raad, een Farizeeër van wie de naam Gamaliël was, een leraar van de wet, die in hoge achting stond bij heel het volk. Hij gaf opdracht dat men de apostelen even buiten zou doen staan.",
       "nbg51": "Maar een zeker Farizeeër in de Raad, genaamd Gamaliël, een wetgeleerde, in ere bij het gehele volk, stond op en verzocht de mensen een ogenblik buiten te doen staan,",
-      "text2026_html": "Maar een zeker Farizeër stond op in de raad, met de naam<sup class=\"note-marker\" data-note=\"51\">51</sup> Gamaliël, een leraar van de wet, in waarde gehouden bij al het volk, en gebood, dat men de apostelen<sup class=\"note-marker\" data-note=\"52\">52</sup> een weinig zou doen buiten staan.",
+      "text2026_html": "Maar een zekere Farizeeër stond op in de raad, met de naam<sup class=\"note-marker\" data-note=\"51\">51</sup> Gamaliël, een leraar van de wet, in waarde gehouden bij al het volk, en gebood, dat men de apostelen<sup class=\"note-marker\" data-note=\"52\">52</sup> een weinig zou doen buiten staan.",
       "textSV1888": "Maar een zeker Farizeër stond op in den raad, met name Gamaliël, een leraar der wet, in waarde gehouden bij al het volk, en gebood, dat men de apostelen een weinig zou doen buiten staan.",
       "textSV1888_html": "Maar een zeker Farizeër stond op in den raad, met name<sup class=\"note-marker\" data-note=\"51\">51</sup> Gamaliël, een leraar der wet, in waarde gehouden bij al het volk, en gebood, dat men de apostelen<sup class=\"note-marker\" data-note=\"52\">52</sup> een weinig zou doen buiten staan.",
       "phraseDiff": [
         {
+          "old": "zeker Farizeër",
+          "new": "zekere Farizeeër",
+          "principe": null
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "name",
+          "new": "de naam",
+          "principe": null
         },
         {
           "old": "der",
@@ -5516,6 +5642,11 @@
           "old": "dien",
           "new": "die",
           "principe": "N4"
+        },
+        {
+          "old": "omtrent",
+          "new": "ongeveer",
+          "principe": null
         }
       ]
     },
@@ -5975,7 +6106,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Maar als het uit God is, zo kunt u dat niet breken; opdat u niet misschien bevonden wordt ook tegen God te strijden.",
+      "text2026": "Maar als het uit God is, kunt u het niet kapotmaken; opdat u niet misschien bevonden wordt ook tegen God te strijden.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -6078,7 +6209,7 @@
       ],
       "hsv": "maar als het van God afkomstig is, kunt u dat niet afbreken, opdat u niet misschien ook ⓝtegen God blijkt te strijden.",
       "nbg51": "maar indien het uit God is, zult gij hen niet kunnen vernietigen; het mocht eens blijken, dat gij tegen God strijdt. En zij lieten zich door hem gezeggen,",
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar als het<sup class=\"note-marker\" data-note=\"65\">65</sup> uit God is, zo kunt u dat niet<sup class=\"note-marker\" data-note=\"66\">66</sup> breken; opdat u niet<sup class=\"note-marker\" data-note=\"67\">67</sup> misschien bevonden wordt ook<sup class=\"note-marker\" data-note=\"o\">o</sup> tegen God te strijden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar als het<sup class=\"note-marker\" data-note=\"65\">65</sup> uit God is, kunt u het niet kapotmaken<sup class=\"note-marker\" data-note=\"66\">66</sup>; opdat u niet<sup class=\"note-marker\" data-note=\"67\">67</sup> misschien bevonden wordt ook<sup class=\"note-marker\" data-note=\"o\">o</sup> tegen God te strijden.</i></span>",
       "textSV1888": "Maar indien het uit God is, zo kunt gij dat niet breken; opdat gij niet misschien bevonden wordt ook tegen God te strijden.",
       "textSV1888_html": "Maar indien het<sup class=\"note-marker\" data-note=\"65\">65</sup> uit God is, zo kunt gij dat niet<sup class=\"note-marker\" data-note=\"66\">66</sup> breken; opdat gij niet<sup class=\"note-marker\" data-note=\"67\">67</sup> misschien bevonden wordt ook<sup class=\"note-marker\" data-note=\"o\">o</sup> tegen God te strijden.",
       "phraseDiff": [
@@ -6088,9 +6219,19 @@
           "principe": "V41"
         },
         {
-          "old": "gij",
-          "new": "u",
+          "old": "zo",
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "gij dat",
+          "new": "u het",
           "principe": "A1"
+        },
+        {
+          "old": "breken;",
+          "new": "kapotmaken;",
+          "principe": null
         },
         {
           "old": "gij",
@@ -6128,7 +6269,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En zij gaven hem gehoor; en als zij de apostelen tot zich geroepen hadden, geselden zij dezelfde, en geboden hun, dat zij niet zouden spreken in de Naam van Jezus; en lieten hen gaan.",
+      "text2026": "En zij gaven hem gehoor; en als zij de apostelen tot zich geroepen hadden, geselden zij hen en geboden hun, dat zij niet zouden spreken in de Naam van Jezus; en lieten hen gaan.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -6225,13 +6366,13 @@
       ],
       "hsv": "En zij lieten zich door hem overtuigen; en toen zij de apostelen bij zich geroepen hadden, geselden zij hen en geboden hun dat zij niet zouden spreken in de Naam van Jezus, en zij lieten hen gaan.",
       "nbg51": "en na de apostelen voorgeroepen te hebben, lieten zij hen geselen en verboden hun te spreken in de naam van Jezus, en gaven hun de vrijheid.",
-      "text2026_html": "En zij<sup class=\"note-marker\" data-note=\"68\">68</sup> gaven hem gehoor; en als zij de apostelen tot zich geroepen hadden,<sup class=\"note-marker\" data-note=\"69\">69</sup> geselden zij dezelfde, en geboden hun, dat zij niet zouden spreken<sup class=\"note-marker\" data-note=\"70\">70</sup> in de Naam van Jezus; en lieten hen gaan.",
+      "text2026_html": "En zij<sup class=\"note-marker\" data-note=\"68\">68</sup> gaven hem gehoor; en als zij de apostelen tot zich geroepen hadden,<sup class=\"note-marker\" data-note=\"69\">69</sup> geselden zij hen en geboden hun, dat zij niet zouden spreken<sup class=\"note-marker\" data-note=\"70\">70</sup> in de Naam van Jezus; en lieten hen gaan.",
       "textSV1888": "En zij gaven hem gehoor; en als zij de apostelen tot zich geroepen hadden, geselden zij dezelve, en geboden hun, dat zij niet zouden spreken in den Naam van Jezus; en lieten hen gaan.",
       "textSV1888_html": "En zij<sup class=\"note-marker\" data-note=\"68\">68</sup> gaven hem gehoor; en als zij de apostelen tot zich geroepen hadden,<sup class=\"note-marker\" data-note=\"69\">69</sup> geselden zij dezelve, en geboden hun, dat zij niet zouden spreken<sup class=\"note-marker\" data-note=\"70\">70</sup> in den Naam van Jezus; en lieten hen gaan.",
       "phraseDiff": [
         {
           "old": "dezelve,",
-          "new": "dezelfde,",
+          "new": "hen",
           "principe": "O3"
         },
         {

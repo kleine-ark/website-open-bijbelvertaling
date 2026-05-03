@@ -308,7 +308,7 @@
       "textSV1888_html": "En hij zeide: Gij mannen<sup class=\"note-marker\" data-note=\"2\">2</sup> broeders en vaders, hoort toe: de God der heerlijkheid verscheen<sup class=\"note-marker\" data-note=\"3\">3</sup> onzen vader Abraham, nog zijnde in<sup class=\"note-marker\" data-note=\"4\">4</sup> Mesopotamië,<sup class=\"note-marker\" data-note=\"5\">5</sup> eer hij woonde in<sup class=\"note-marker\" data-note=\"6\">6</sup> Charran;",
       "phraseDiff": [
         {
-          "old": "zeide: Gij",
+          "old": "zeide: Gij mannen",
           "new": "zei: U",
           "principe": "A1"
         },
@@ -1116,6 +1116,11 @@
           "old": "zoude",
           "new": "zou",
           "principe": "V50"
+        },
+        {
+          "old": "kwalijk handelen,",
+          "new": "mishandelen,",
+          "principe": null
         }
       ]
     },
@@ -1528,14 +1533,19 @@
           "principe": "N2"
         },
         {
-          "old": "alzo",
-          "new": "zo",
+          "old": "alzo gewon",
+          "new": "zo verwekte",
           "principe": "V42"
         },
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "gewon",
+          "new": "verwekte",
+          "principe": null
         }
       ]
     },
@@ -1667,7 +1677,14 @@
       "nbg51": "En de aartsvaders verkochten uit naijver Jozef naar Egypte, maar God was met hem,",
       "text2026_html": "<span class=\"direct-speech\"><i>En de patriarchen,<sup class=\"note-marker\" data-note=\"l\">l</sup> jaloers zijnde,<sup class=\"note-marker\" data-note=\"m\">m</sup> verkochten Jozef, om naar Egypte gebracht te worden; en God<sup class=\"note-marker\" data-note=\"21\">21</sup> was met hem,</i></span>",
       "textSV1888": "En de patriarchen, nijdig zijnde, verkochten Jozef, om naar Egypte gebracht te worden; en God was met hem,",
-      "textSV1888_html": "En de patriarchen,<sup class=\"note-marker\" data-note=\"l\">l</sup> nijdig zijnde,<sup class=\"note-marker\" data-note=\"m\">m</sup> verkochten Jozef, om naar Egypte gebracht te worden; en God<sup class=\"note-marker\" data-note=\"21\">21</sup> was met hem,"
+      "textSV1888_html": "En de patriarchen,<sup class=\"note-marker\" data-note=\"l\">l</sup> nijdig zijnde,<sup class=\"note-marker\" data-note=\"m\">m</sup> verkochten Jozef, om naar Egypte gebracht te worden; en God<sup class=\"note-marker\" data-note=\"21\">21</sup> was met hem,",
+      "phraseDiff": [
+        {
+          "old": "nijdig",
+          "new": "jaloers",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 10,
@@ -1698,7 +1715,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En verloste hem uit al zijn verdrukkingen, en gaf hem genade en wijsheid voor Farao, de koning van Egypteland; en hij stelde hem tot een overste over Egypte, en zijn gehele huis.",
+      "text2026": "En verloste hem uit al zijn verdrukkingen, en gaf hem genade en wijsheid voor Farao, de koning van Egypteland; en hij stelde hem tot een overste over Egypte, en heel zijn huis.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -1885,7 +1902,7 @@
       ],
       "hsv": "en verloste hem uit al zijn verdrukkingen, en Hij gaf hem genade en wijsheid tegenover de farao, de koning van Egypte; en die ⓚstelde hem aan als bestuurder over Egypte en over heel zijn huis.",
       "nbg51": "en verloste hem uit al zijn verdrukkingen en gaf hem genade en wijsheid tegenover Farao, de koning van Egypte, die hem aanstelde tot hoofd over Egypte en over zijn gehele huis.",
-      "text2026_html": "<span class=\"direct-speech\"><i>En verloste hem uit al zijn verdrukkingen, en gaf hem<sup class=\"note-marker\" data-note=\"22\">22</sup> genade en wijsheid voor Farao, de koning van Egypteland; en hij<sup class=\"note-marker\" data-note=\"n\">n</sup> stelde hem tot een<sup class=\"note-marker\" data-note=\"23\">23</sup> overste over Egypte, en zijn gehele huis.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En verloste hem uit al zijn verdrukkingen, en gaf hem<sup class=\"note-marker\" data-note=\"22\">22</sup> genade en wijsheid voor Farao, de koning van Egypteland; en hij<sup class=\"note-marker\" data-note=\"n\">n</sup> stelde hem tot een<sup class=\"note-marker\" data-note=\"23\">23</sup> overste over Egypte, en heel zijn huis.</i></span>",
       "textSV1888": "En verloste hem uit al zijn verdrukkingen, en gaf hem genade en wijsheid voor Farao, den koning van Egypteland; en hij stelde hem tot een overste over Egypte, en zijn gehele huis.",
       "textSV1888_html": "En verloste hem uit al zijn verdrukkingen, en gaf hem<sup class=\"note-marker\" data-note=\"22\">22</sup> genade en wijsheid voor Farao, den koning van Egypteland; en hij<sup class=\"note-marker\" data-note=\"n\">n</sup> stelde hem tot een<sup class=\"note-marker\" data-note=\"23\">23</sup> overste over Egypte, en zijn gehele huis.",
       "phraseDiff": [
@@ -1893,6 +1910,16 @@
           "old": "den",
           "new": "de",
           "principe": "N1c"
+        },
+        {
+          "old": "",
+          "new": "heel",
+          "principe": "N1c"
+        },
+        {
+          "old": "gehele",
+          "new": "",
+          "principe": null
         }
       ]
     },
@@ -1918,7 +1945,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En er kwam een hongersnood over het gehele land van Egypte en Kanaän, en grote benauwdheid; en onze vaders vonden geen spijs.",
+      "text2026": "En er kwam een hongersnood over heel het land van Egypte en Kanaän, en grote benauwdheid; en onze vaders vonden geen spijs.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -2039,9 +2066,21 @@
       ],
       "hsv": "ⓛEr kwam echter een hongersnood over heel het land Egypte en Kanaän en grote benauwdheid; en onze vaderen vonden geen voedsel.",
       "nbg51": "En er kwam hongersnood over geheel Egypte en Kanaän en grote verdrukking, en onze vaderen vonden geen voedsel.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"o\">o</sup><span class=\"direct-speech\"><i> En er kwam een hongersnood over het gehele land van Egypte en Kanaän, en grote benauwdheid; en onze vaders vonden<sup class=\"note-marker\" data-note=\"24\">24</sup> geen spijs.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"o\">o</sup><span class=\"direct-speech\"><i> En er kwam een hongersnood over heel het land van Egypte en Kanaän, en grote benauwdheid; en onze vaders vonden<sup class=\"note-marker\" data-note=\"24\">24</sup> geen spijs.</i></span>",
       "textSV1888": "En er kwam een hongersnood over het gehele land van Egypte en Kanaän, en grote benauwdheid; en onze vaders vonden geen spijs.",
-      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"o\">o</sup> En er kwam een hongersnood over het gehele land van Egypte en Kanaän, en grote benauwdheid; en onze vaders vonden<sup class=\"note-marker\" data-note=\"24\">24</sup> geen spijs."
+      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"o\">o</sup> En er kwam een hongersnood over het gehele land van Egypte en Kanaän, en grote benauwdheid; en onze vaders vonden<sup class=\"note-marker\" data-note=\"24\">24</sup> geen spijs.",
+      "phraseDiff": [
+        {
+          "old": "",
+          "new": "heel",
+          "principe": "V204"
+        },
+        {
+          "old": "gehele",
+          "new": "",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 12,
@@ -2318,7 +2357,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En Jozef zond heen, en ontbood zijn vader Jakob, en al zijn geslacht, bestaande in vijf en zeventig zielen.",
+      "text2026": "En Jozef stuurde bericht en ontbood zijn vader Jakob, en al zijn geslacht, bestaande in vijf en zeventig zielen.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -2421,9 +2460,16 @@
       ],
       "hsv": "En Jozef stuurde hen terug en liet zijn vader Jakob halen en heel zijn familie, die uit vijfenzeventig zielen bestond.",
       "nbg51": "En Jozef zond heen om zijn vader Jakob te laten komen en al zijn bloedverwanten, vijfenzeventig zielen.",
-      "text2026_html": "<span class=\"direct-speech\"><i>En Jozef zond heen, en ontbood zijn vader Jakob, en al zijn<sup class=\"note-marker\" data-note=\"27\">27</sup> geslacht, bestaande in<sup class=\"note-marker\" data-note=\"28\">28</sup> vijf en zeventig zielen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En Jozef stuurde bericht en ontbood zijn vader Jakob, en al zijn<sup class=\"note-marker\" data-note=\"27\">27</sup> geslacht, bestaande in<sup class=\"note-marker\" data-note=\"28\">28</sup> vijf en zeventig zielen.</i></span>",
       "textSV1888": "En Jozef zond heen, en ontbood zijn vader Jakob, en al zijn geslacht, bestaande in vijf en zeventig zielen.",
-      "textSV1888_html": "En Jozef zond heen, en ontbood zijn vader Jakob, en al zijn<sup class=\"note-marker\" data-note=\"27\">27</sup> geslacht, bestaande in<sup class=\"note-marker\" data-note=\"28\">28</sup> vijf en zeventig zielen."
+      "textSV1888_html": "En Jozef zond heen, en ontbood zijn vader Jakob, en al zijn<sup class=\"note-marker\" data-note=\"27\">27</sup> geslacht, bestaande in<sup class=\"note-marker\" data-note=\"28\">28</sup> vijf en zeventig zielen.",
+      "phraseDiff": [
+        {
+          "old": "zond heen,",
+          "new": "stuurde bericht",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 15,
@@ -2887,6 +2933,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "wies",
+          "new": "groeide",
+          "principe": null
         }
       ]
     },
@@ -3010,7 +3061,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Deze gebruikte listigheid tegen ons geslacht, en handelde kwalijk met onze vaderen, zodat zij hun jonge kinderen moesten wegwerpen, opdat zij niet zouden voorttelen.",
+      "text2026": "Deze gebruikte listigheid tegen ons geslacht, en behandelde onze vaderen slecht, zodat zij hun jonge kinderen moesten wegwerpen, opdat zij niet zouden voorttelen.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -3131,9 +3182,21 @@
       ],
       "hsv": "Die ging listig met ons geslacht om en behandelde onze vaderen slecht door hen hun jonge kinderen te vondeling te laten leggen, opdat zij zich niet zouden voortplanten.",
       "nbg51": "Deze nam list te baat tegenover ons geslacht en handelde slecht met de vaderen, en liet hen hun zuigelingen te vondeling leggen, opdat het volk zich niet zou voortplanten.",
-      "text2026_html": "<span class=\"direct-speech\"><i>Deze<sup class=\"note-marker\" data-note=\"36\">36</sup> gebruikte listigheid tegen ons geslacht, en handelde kwalijk met onze vaderen, zodat zij hun jonge kinderen moesten wegwerpen, opdat zij niet zouden<sup class=\"note-marker\" data-note=\"37\">37</sup> voorttelen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Deze<sup class=\"note-marker\" data-note=\"36\">36</sup> gebruikte listigheid tegen ons geslacht, en behandelde onze vaderen slecht, zodat zij hun jonge kinderen moesten wegwerpen, opdat zij niet zouden<sup class=\"note-marker\" data-note=\"37\">37</sup> voorttelen.</i></span>",
       "textSV1888": "Deze gebruikte listigheid tegen ons geslacht, en handelde kwalijk met onze vaderen, zodat zij hun jonge kinderen moesten wegwerpen, opdat zij niet zouden voorttelen.",
-      "textSV1888_html": "Deze<sup class=\"note-marker\" data-note=\"36\">36</sup> gebruikte listigheid tegen ons geslacht, en handelde kwalijk met onze vaderen, zodat zij hun jonge kinderen moesten wegwerpen, opdat zij niet zouden<sup class=\"note-marker\" data-note=\"37\">37</sup> voorttelen."
+      "textSV1888_html": "Deze<sup class=\"note-marker\" data-note=\"36\">36</sup> gebruikte listigheid tegen ons geslacht, en handelde kwalijk met onze vaderen, zodat zij hun jonge kinderen moesten wegwerpen, opdat zij niet zouden<sup class=\"note-marker\" data-note=\"37\">37</sup> voorttelen.",
+      "phraseDiff": [
+        {
+          "old": "handelde kwalijk met",
+          "new": "behandelde",
+          "principe": null
+        },
+        {
+          "old": "vaderen,",
+          "new": "vaderen slecht,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 20,
@@ -3283,8 +3346,8 @@
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"y\">y</sup> In welken tijd Mozes werd geboren, en was<sup class=\"note-marker\" data-note=\"38\">38</sup> uitnemend schoon; welke drie maanden opgevoed werd in het huis zijns vaders.",
       "phraseDiff": [
         {
-          "old": "welken",
-          "new": "welke",
+          "old": "In welken",
+          "new": "Waarin",
           "principe": "N6"
         },
         {
@@ -3695,7 +3758,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En ziende een, die onrecht leed, beschermde hij hem, en wreekte degene, die overlast gebeurde, en versloeg de Egyptenaar.",
+      "text2026": "En ziende een, die onrecht leed, beschermde hij hem, en nam wraak voor hem die onrecht werd aangedaan, en versloeg de Egyptenaar.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -3780,19 +3843,14 @@
       ],
       "hsv": "ⓥEn toen hij iemand zag die onrecht leed, nam hij hem in bescherming en wreekte degene die mishandeld werd: hij sloeg de Egyptenaar dood.",
       "nbg51": "En toen hij er een onrechtvaardig zag behandelen, beschermde hij hem en nam het voor hem op, die mishandeld werd, door de Egyptenaar neer te slaan.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"direct-speech\"><i> En ziende<sup class=\"note-marker\" data-note=\"42\">42</sup> een, die onrecht leed, beschermde hij hem, en wreekte degene, die overlast gebeurde, en versloeg de Egyptenaar.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"direct-speech\"><i> En ziende<sup class=\"note-marker\" data-note=\"42\">42</sup> een, die onrecht leed, beschermde hij hem, en nam wraak voor hem die onrecht werd aangedaan, en versloeg de Egyptenaar.</i></span>",
       "textSV1888": "En ziende een, die onrecht leed, beschermde hij hem, en wreekte dengene, dien overlast geschiedde, en versloeg den Egyptenaar.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> En ziende<sup class=\"note-marker\" data-note=\"42\">42</sup> een, die onrecht leed, beschermde hij hem, en wreekte dengene, dien overlast geschiedde, en versloeg den Egyptenaar.",
       "phraseDiff": [
         {
-          "old": "dengene, dien",
-          "new": "degene, die",
+          "old": "wreekte dengene, dien overlast geschiedde,",
+          "new": "nam wraak voor hem die onrecht werd aangedaan,",
           "principe": "N4"
-        },
-        {
-          "old": "geschiedde,",
-          "new": "gebeurde,",
-          "principe": "V199"
         },
         {
           "old": "den",
@@ -4481,7 +4539,14 @@
       "nbg51": "En Mozes vluchtte op dit woord en werd een bijwoner in het land Midjan, waar hij twee zonen verwekte.",
       "text2026_html": "<span class=\"direct-speech\"><i>En Mozes vluchtte<sup class=\"note-marker\" data-note=\"48\">48</sup> op dat woord en werd een vreemdeling in het land Madiam, waar hij twee zonen verwekte.</i></span>",
       "textSV1888": "En Mozes vluchtte op dat woord en werd een vreemdeling in het land Madiam, waar hij twee zonen gewon.",
-      "textSV1888_html": "En Mozes vluchtte<sup class=\"note-marker\" data-note=\"48\">48</sup> op dat woord en werd een vreemdeling in het land Madiam, waar hij twee zonen gewon."
+      "textSV1888_html": "En Mozes vluchtte<sup class=\"note-marker\" data-note=\"48\">48</sup> op dat woord en werd een vreemdeling in het land Madiam, waar hij twee zonen gewon.",
+      "phraseDiff": [
+        {
+          "old": "gewon.",
+          "new": "verwekte.",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 30,
@@ -4634,7 +4699,7 @@
       "phraseDiff": [
         {
           "old": "des Heeren,",
-          "new": "van de Heer,",
+          "new": "van de Heere,",
           "principe": "G2"
         },
         {
@@ -4659,7 +4724,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Mozes nu, dat ziende, verwonderde zich over het visioen; en als hij daarheen ging, om dat te bezien, zo gebeurde een stem van de Heere tot hem,",
+      "text2026": "Mozes nu, dat ziende, verwonderde zich over het visioen; en als hij daarheen ging, om dat te bezien, klonk er een stem van de Heere tot hem,",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -4750,23 +4815,28 @@
       ],
       "hsv": "Toen Mozes dat zag, verwonderde hij zich over wat hij zag; en toen hij ernaartoe ging om het te bekijken, kwam er een stem van de Heere tot hem:",
       "nbg51": "En toen Mozes dit zag, verwonderde hij zich over het gezicht, en toen hij erheen ging om het te onderzoeken, kwam een stem des Heren (tot hem):",
-      "text2026_html": "<span class=\"direct-speech\"><i>Mozes nu, dat ziende, verwonderde zich over het visioen; en als hij daarheen ging, om<sup class=\"note-marker\" data-note=\"52\">52</sup> dat te bezien, zo gebeurde een stem van de Heere tot hem,</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Mozes nu, dat ziende, verwonderde zich over het visioen; en als hij daarheen ging, om<sup class=\"note-marker\" data-note=\"52\">52</sup> dat te bezien, klonk er een stem van de Heere tot hem,</i></span>",
       "textSV1888": "Mozes nu, dat ziende, verwonderde zich over het gezicht; en als hij derwaarts ging, om dat te bezien, zo geschiedde een stem des Heeren tot hem,",
       "textSV1888_html": "Mozes nu, dat ziende, verwonderde zich over het gezicht; en als hij derwaarts ging, om<sup class=\"note-marker\" data-note=\"52\">52</sup> dat te bezien, zo geschiedde een stem des Heeren tot hem,",
       "phraseDiff": [
+        {
+          "old": "gezicht;",
+          "new": "visioen;",
+          "principe": null
+        },
         {
           "old": "derwaarts",
           "new": "daarheen",
           "principe": "V55"
         },
         {
-          "old": "geschiedde",
-          "new": "gebeurde",
+          "old": "zo geschiedde",
+          "new": "klonk er",
           "principe": "V199"
         },
         {
           "old": "des Heeren",
-          "new": "van de Heer",
+          "new": "van de Heere",
           "principe": "G2"
         }
       ]
@@ -5099,13 +5169,13 @@
       "textSV1888_html": "En de Heere zeide tot hem:<sup class=\"note-marker\" data-note=\"f\">f</sup> Ontbind<sup class=\"note-marker\" data-note=\"55\">55</sup> de schoenen van uw voeten; want de plaats in welke gij staat, is<sup class=\"note-marker\" data-note=\"56\">56</sup> heilig land.",
       "phraseDiff": [
         {
-          "old": "Heere zeide",
-          "new": "Heer zei",
+          "old": "zeide",
+          "new": "zei",
           "principe": "W1"
         },
         {
-          "old": "gij",
-          "new": "u",
+          "old": "in welke gij",
+          "new": "waarin u",
           "principe": "A1"
         }
       ]
@@ -5300,9 +5370,24 @@
       "textSV1888_html": "Ik heb<sup class=\"note-marker\" data-note=\"57\">57</sup> merkelijk gezien de mishandeling Mijns volks, dat in Egypte is, en Ik heb hun zuchten gehoord en ben<sup class=\"note-marker\" data-note=\"58\">58</sup> nedergekomen, om hen daaruit te verlossen; en nu, kom herwaarts, Ik zal u naar Egypte zenden.",
       "phraseDiff": [
         {
+          "old": "merkelijk",
+          "new": "duidelijk",
+          "principe": null
+        },
+        {
           "old": "Mijns volks,",
           "new": "van Mijn volk,",
           "principe": "V213"
+        },
+        {
+          "old": "nedergekomen,",
+          "new": "neergekomen,",
+          "principe": null
+        },
+        {
+          "old": "herwaarts,",
+          "new": "hierheen,",
+          "principe": null
         }
       ]
     },
@@ -5842,11 +5927,6 @@
       "textSV1888_html": "Deze is de Mozes, die tot de kinderen Israëls gezegd heeft:<sup class=\"note-marker\" data-note=\"i\">i</sup> De Heere, uw God, zal u<sup class=\"note-marker\" data-note=\"60\">60</sup> een Profeet verwekken uit uw broederen, gelijk mij;<sup class=\"note-marker\" data-note=\"k\">k</sup> Dien zult gij horen.",
       "phraseDiff": [
         {
-          "old": "Heere,",
-          "new": "Heer,",
-          "principe": null
-        },
-        {
           "old": "broederen, gelijk",
           "new": "broeders, zoals",
           "principe": "O22b"
@@ -6263,6 +6343,11 @@
       "textSV1888_html": "Denwelken onze vaders niet wilden gehoorzaam zijn,<sup class=\"note-marker\" data-note=\"65\">65</sup> maar verwierpen hem, en keerden met hun harten<sup class=\"note-marker\" data-note=\"66\">66</sup> weder naar Egypte;",
       "phraseDiff": [
         {
+          "old": "Denwelken",
+          "new": "Die",
+          "principe": "N6"
+        },
+        {
           "old": "weder",
           "new": "weer",
           "principe": "V66"
@@ -6284,7 +6369,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Zeggende tot Aäron: Maak ons goden, die voor ons heengaan; want wat deze Mozes aangaat, die ons uit het land van Egypte geleid heeft, wij weten niet, wat hem geschied is.",
+      "text2026": "Zeggende tot Aäron: Maak ons goden, die voor ons heengaan; want wat deze Mozes aangaat, die ons uit het land van Egypte geleid heeft, wij weten niet wat er met hem is gebeurd.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -6443,6 +6528,21 @@
           "old": "dezen",
           "new": "deze",
           "principe": "N4"
+        },
+        {
+          "old": "niet,",
+          "new": "niet",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "er met",
+          "principe": "N4"
+        },
+        {
+          "old": "geschied is.",
+          "new": "is gebeurd.",
+          "principe": null
         }
       ]
     },
@@ -6883,6 +6983,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "Israëls?",
+          "new": "van Israël?",
+          "principe": null
         }
       ]
     },
@@ -7137,7 +7242,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "De tabernakel van het getuigenis was onder onze vaderen in de woestijn, zoals geordineerd had Hij, Die tot Mozes zei, dat hij dezelfde maken zou naar de afbeelding, die hij gezien had;",
+      "text2026": "De tabernakel van het getuigenis was onder onze vaderen in de woestijn, zoals geordineerd had Hij, Die tot Mozes zei, dat hij die maken zou naar de afbeelding, die hij gezien had;",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -7288,7 +7393,7 @@
       ],
       "hsv": "Bij onze vaderen in de woestijn was de tent van de getuigenis, zoals Hij Die tot Mozes sprak, hem had opgedragen deze te maken ⓚovereenkomstig de afbeelding die hij gezien had.",
       "nbg51": "De tent der getuigenis hadden onze vaderen in de woestijn, zoals Hij het geboden had, die tot Mozes zeide, dat hij haar moest maken naar het voorbeeld, dat hij gezien had.",
-      "text2026_html": "<span class=\"direct-speech\"><i>De tabernakel<sup class=\"note-marker\" data-note=\"81\">81</sup> van het getuigenis was onder onze vaderen in de woestijn, zoals geordineerd had Hij, Die tot Mozes zei, dat hij dezelfde maken zou naar de afbeelding,<sup class=\"note-marker\" data-note=\"q\">q</sup> die hij gezien had;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>De tabernakel<sup class=\"note-marker\" data-note=\"81\">81</sup> van het getuigenis was onder onze vaderen in de woestijn, zoals geordineerd had Hij, Die tot Mozes zei, dat hij die maken zou naar de afbeelding,<sup class=\"note-marker\" data-note=\"q\">q</sup> die hij gezien had;</i></span>",
       "textSV1888": "De tabernakel der getuigenis was onder onze vaderen in de woestijn, gelijk geordineerd had Hij, Die tot Mozes zeide, dat hij denzelven maken zou naar de afbeelding, die hij gezien had;",
       "textSV1888_html": "De tabernakel<sup class=\"note-marker\" data-note=\"81\">81</sup> der getuigenis was onder onze vaderen in de woestijn, gelijk geordineerd had Hij, Die tot Mozes zeide, dat hij denzelven maken zou naar de afbeelding,<sup class=\"note-marker\" data-note=\"q\">q</sup> die hij gezien had;",
       "phraseDiff": [
@@ -7309,7 +7414,7 @@
         },
         {
           "old": "denzelven",
-          "new": "dezelfde",
+          "new": "die",
           "principe": "N4"
         }
       ]
@@ -7668,6 +7773,16 @@
           "principe": "V75"
         },
         {
+          "old": "begeerd",
+          "new": "verzocht",
+          "principe": null
+        },
+        {
+          "old": "woonstede",
+          "new": "woning",
+          "principe": null
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
@@ -8016,11 +8131,6 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
-        },
-        {
-          "old": "Heere,",
-          "new": "Heer,",
-          "principe": null
         },
         {
           "old": "Mijner",
@@ -9126,7 +9236,14 @@
       "hsv": "Maar zij riepen met luide stem, stopten hun oren dicht en stormden eensgezind op hem af.",
       "nbg51": "Maar zij begonnen luidkeels te schreeuwen, stopten hun oren toe en stormden als één man op hem los;",
       "text2026_html": "Maar zij, roepende met grote stemme, stopten hun oren, en vielen eensgezind op hem aan;",
-      "textSV1888": "Maar zij, roepende met grote stemme, stopten hun oren, en vielen eendrachtelijk op hem aan;"
+      "textSV1888": "Maar zij, roepende met grote stemme, stopten hun oren, en vielen eendrachtelijk op hem aan;",
+      "phraseDiff": [
+        {
+          "old": "eendrachtelijk",
+          "new": "eensgezind",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 58,
@@ -9303,6 +9420,11 @@
           "old": "klederen",
           "new": "kleren",
           "principe": "V68"
+        },
+        {
+          "old": "eens jongelings,",
+          "new": "van een jongeman,",
+          "principe": null
         }
       ]
     },
@@ -9414,14 +9536,7 @@
       "nbg51": "En zij stenigden Stefanus, die de Here aanriep, zeggende: Here Jezus, ontvang mijn geest.",
       "text2026_html": "En zij stenigden Stefanus, aanroepende en zeggende: <span class=\"direct-speech\"><i>Heere Jezus, ontvang mijn geest.</i></span>",
       "textSV1888": "En zij stenigden Stefanus, aanroepende en zeggende: Heere Jezus, ontvang mijn geest.",
-      "textSV1888_html": "En zij stenigden Stefanus, aanroepende en zeggende:<sup class=\"note-marker\" data-note=\"e\">e</sup> Heere Jezus, ontvang mijn<sup class=\"note-marker\" data-note=\"8\">8</sup> geest.",
-      "phraseDiff": [
-        {
-          "old": "Heere",
-          "new": "Heer",
-          "principe": null
-        }
-      ]
+      "textSV1888_html": "En zij stenigden Stefanus, aanroepende en zeggende:<sup class=\"note-marker\" data-note=\"e\">e</sup> Heere Jezus, ontvang mijn<sup class=\"note-marker\" data-note=\"8\">8</sup> geest."
     },
     {
       "number": 60,
@@ -9573,14 +9688,7 @@
       "nbg51": "En op de knieën vallende, riep hij met luider stem: Here, reken hun deze zonde niet toe! En met deze woorden ontsliep hij. En Saulus stemde in met zijn terechtstelling. Currently Selected: De Handelingen der Apostelen 7 : NBG51 Highlight Share",
       "text2026_html": "En vallende op de knieën, riep hij<sup class=\"note-marker\" data-note=\"9\">9</sup> met grote<sup class=\"note-marker\" data-note=\"f\">f</sup> stem:<sup class=\"note-marker\" data-note=\"10\">10</sup> <span class=\"direct-speech\"><i>Heere, reken hun deze zonde niet toe!</i></span> En als hij dat gezegd had,<sup class=\"note-marker\" data-note=\"11\">11</sup> ontsliep hij.",
       "textSV1888": "En vallende op de knieën, riep hij met grote stem: Heere, reken hun deze zonde niet toe! En als hij dat gezegd had, ontsliep hij.",
-      "textSV1888_html": "En vallende op de knieën, riep hij<sup class=\"note-marker\" data-note=\"9\">9</sup> met grote stem:<sup class=\"note-marker\" data-note=\"f\">f</sup> Heere,<sup class=\"note-marker\" data-note=\"10\">10</sup> reken hun deze zonde niet toe! En als hij dat gezegd had,<sup class=\"note-marker\" data-note=\"11\">11</sup> ontsliep hij.",
-      "phraseDiff": [
-        {
-          "old": "Heere,",
-          "new": "Heer,",
-          "principe": null
-        }
-      ]
+      "textSV1888_html": "En vallende op de knieën, riep hij<sup class=\"note-marker\" data-note=\"9\">9</sup> met grote stem:<sup class=\"note-marker\" data-note=\"f\">f</sup> Heere,<sup class=\"note-marker\" data-note=\"10\">10</sup> reken hun deze zonde niet toe! En als hij dat gezegd had,<sup class=\"note-marker\" data-note=\"11\">11</sup> ontsliep hij."
     }
   ]
 }
