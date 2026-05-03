@@ -83,6 +83,9 @@ const Lees = {
         // Audio-speler tonen/verbergen — bookId apart doorgeven (book.id niet altijd gezet)
         this.updateAudioPlayer(bookId, book, chapter);
 
+        // AI-concept-banner tonen voor niet-geverifieerde hoofdstukken
+        this._updateVerifiedBanner(bookId, chapter);
+
         // Scroll to top
         window.scrollTo(0, 0);
     },
@@ -93,6 +96,39 @@ const Lees = {
     AUDIO_AVAILABLE: {
         genesis: [1],
         johannes: [1],
+    },
+
+    VERIFIED_CHAPTERS: {
+        genesis:    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        psalmen:    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+        johannes:   'all',
+        handelingen:[1,2,3,4,5,6],
+        filemon:    'all',
+        judas:      'all',
+    },
+
+    _isVerified(bookId, chapter) {
+        const v = this.VERIFIED_CHAPTERS[bookId];
+        if (!v) return false;
+        if (v === 'all') return true;
+        return Array.isArray(v) && v.includes(chapter);
+    },
+
+    _updateVerifiedBanner(bookId, chapter) {
+        let banner = document.getElementById('ai-concept-banner');
+        if (this._isVerified(bookId, chapter)) {
+            if (banner) banner.style.display = 'none';
+            return;
+        }
+        if (!banner) {
+            banner = document.createElement('div');
+            banner.id = 'ai-concept-banner';
+            banner.className = 'ai-concept-banner';
+            banner.innerHTML = '<strong>⚠ Let op:</strong> AI-wijzigingen. Concept. Nog geen menselijke controle plaatsgevonden — kans op nog niet opgeloste onjuistheden.';
+            const versesEl = document.getElementById('verses');
+            if (versesEl && versesEl.parentNode) versesEl.parentNode.insertBefore(banner, versesEl);
+        }
+        banner.style.display = 'block';
     },
 
     async updateAudioPlayer(bookId, book, chapter) {
