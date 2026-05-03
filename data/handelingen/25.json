@@ -247,7 +247,7 @@
       "number": 3,
       "textSV1888": "Begerende gunst tegen hem, opdat hij hem zou doen komen te Jeruzalem; en leggende een lage, om hem op den weg om te brengen.",
       "text1637": "Begeerende gunste tegen [6] hem, op dat hy hem soude doen komen te Ierusalem: [ende] leggende eene lage, om hem op den wegh om te brengen.",
-      "text2026": "Begerende gunst tegen hem, opdat hij hem zou doen komen te Jeruzalem; en leggende een lage, om hem op de weg om te brengen.",
+      "text2026": "Zij vroegen om als gunst tegen hem, opdat hij hem zou doen komen te Jeruzalem; terwijl zij een hinderlaag legden, om hem op de weg om te brengen.",
       "marginNotes": [
         {
           "marker": "6",
@@ -355,10 +355,25 @@
           "gloss": "〔road"
         }
       ],
-      "text2026_html": "Begerende gunst tegen<sup class=\"note-marker\" data-note=\"6\">6</sup> hem, opdat hij hem zou doen komen te Jeruzalem; en leggende een lage, om hem op de weg om te brengen.",
+      "text2026_html": "Zij vroegen om als gunst tegen<sup class=\"note-marker\" data-note=\"6\">6</sup> hem, opdat hij hem zou doen komen te Jeruzalem; terwijl zij een hinderlaag legden, om hem op de weg om te brengen.",
       "textSV1888_html": "Begerende gunst tegen<sup class=\"note-marker\" data-note=\"6\">6</sup> hem, opdat hij hem zou doen komen te Jeruzalem; en leggende een lage, om hem op den weg om te brengen.",
       "text1637_html": "Begeerende gunste tegen <sup class=\"note-marker\" data-note=\"6\">6</sup> hem, op dat hy hem soude doen komen te Ierusalem: [<i>ende</i>] leggende eene lage, om hem op den wegh om te brengen.",
       "phraseDiff": [
+        {
+          "old": "Begerende",
+          "new": "Zij vroegen om als",
+          "principe": null
+        },
+        {
+          "old": "en leggende",
+          "new": "terwijl zij",
+          "principe": null
+        },
+        {
+          "old": "lage,",
+          "new": "hinderlaag legden,",
+          "principe": null
+        },
         {
           "old": "den",
           "new": "de",
@@ -491,6 +506,11 @@
           "old": "derwaarts",
           "new": "daarheen",
           "principe": "V55"
+        },
+        {
+          "old": "verreizen.",
+          "new": "vertrekken.",
+          "principe": null
         }
       ]
     },
@@ -498,7 +518,7 @@
       "number": 5,
       "textSV1888": "Die dan, zeide hij, onder u kunnen, dat zij mede afreizen, en zo er iets onbehoorlijks in dezen man is, dat zij hem beschuldigen.",
       "text1637": "Die dan, seyde hy, onder u connen, dat sy mede [8] afreysen, ende so daer yet onbehoorlicks in desen man is, dat sy hem beschuldigen.",
-      "text2026": "Die dan, zei hij, onder u kunnen, dat zij mede afreizen, en zo er iets onbehoorlijks in deze man is, dat zij hem beschuldigen.",
+      "text2026": "Die dan, zei hij, onder u kunnen, dat zij mede afreizen, en als er iets onbehoorlijks aan deze man is, dat zij hem beschuldigen.",
       "marginNotes": [
         {
           "marker": "8",
@@ -606,7 +626,7 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Die dan, zei hij, onder u kunnen, dat zij mede<sup class=\"note-marker\" data-note=\"8\">8</sup> afreizen, en zo er iets onbehoorlijks in deze man is, dat zij hem beschuldigen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Die dan, zei hij, onder u kunnen, dat zij mede<sup class=\"note-marker\" data-note=\"8\">8</sup> afreizen, en als er iets onbehoorlijks aan deze man is, dat zij hem beschuldigen.</i></span>",
       "textSV1888_html": "Die dan, zeide hij, onder u kunnen, dat zij mede<sup class=\"note-marker\" data-note=\"8\">8</sup> afreizen, en zo er iets onbehoorlijks in dezen man is, dat zij hem beschuldigen.",
       "text1637_html": "Die dan, seyde hy, onder u connen, dat sy mede <sup class=\"note-marker\" data-note=\"8\">8</sup> afreysen, ende so daer yet onbehoorlicks in desen man is, dat sy hem beschuldigen.",
       "phraseDiff": [
@@ -616,8 +636,13 @@
           "principe": "W1"
         },
         {
-          "old": "dezen",
-          "new": "deze",
+          "old": "zo",
+          "new": "als",
+          "principe": null
+        },
+        {
+          "old": "in dezen",
+          "new": "aan deze",
           "principe": "N4"
         }
       ]
@@ -781,14 +806,19 @@
       "text1637_html": "Ende als hy onder haer <sup class=\"note-marker\" data-note=\"9\">9</sup> niet meer als tien dagen overgebracht en hadde, quam hy af na Cesareen, ende des anderen daeghs op den Richter-stoel geseten zijnde beval hy dat Paulus soude [<i>voort</i>] gebracht worden.",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
+          "old": "des anderen daags,",
+          "new": "",
           "principe": "N3"
         },
         {
           "old": "den",
-          "new": "de",
+          "new": "de andere dag, op de",
           "principe": "N1"
+        },
+        {
+          "old": "voor gebracht",
+          "new": "voorgebracht",
+          "principe": null
         }
       ]
     },
@@ -1941,7 +1971,7 @@
       "number": 14,
       "textSV1888": "En toen zij aldaar vele dagen doorgebracht hadden, heeft Festus de zaken van Paulus aan den koning verhaald, zeggende: Hier is een zeker man van Felix gevangen gelaten;",
       "text1637": "Ende doe sy aldaer vele dagen overgebracht hadden, heeft Festus de saecken Pauli aen den Coninck verhaelt, seggende, [c] [Hier] is een seker man van Felix gevangen gelaten:",
-      "text2026": "En toen zij daar vele dagen doorgebracht hadden, heeft Festus de zaken van Paulus aan de koning verhaald, zeggende: Hier is een zeker man van Felix gevangen gelaten;",
+      "text2026": "En toen zij daar vele dagen doorgebracht hadden, vertelde Festus de zaken van Paulus aan de koning, zeggende: Hier is een man die door Felix gevangen is gelaten;",
       "marginNotes": [
         {
           "marker": "c",
@@ -2091,7 +2121,7 @@
           "gloss": "〔prisoner"
         }
       ],
-      "text2026_html": "En toen zij daar vele dagen doorgebracht hadden, heeft Festus de zaken van Paulus aan de koning verhaald, zeggende: <span class=\"direct-speech\"><i>Hier is een zeker man van Felix gevangen gelaten;</i></span>",
+      "text2026_html": "En toen zij daar vele dagen doorgebracht hadden, vertelde Festus de zaken van Paulus aan de koning, zeggende: <span class=\"direct-speech\"><i>Hier is een man die door Felix gevangen is gelaten;</i></span>",
       "textSV1888_html": "En toen zij aldaar vele dagen doorgebracht hadden, heeft Festus de zaken van Paulus aan den koning verhaald, zeggende:<sup class=\"note-marker\" data-note=\"c\">c</sup> Hier is een zeker man van Felix gevangen gelaten;",
       "text1637_html": "Ende doe sy aldaer vele dagen overgebracht hadden, heeft Festus de saecken Pauli aen den Coninck verhaelt, seggende, <sup class=\"note-marker\" data-note=\"c\">c</sup> [<i>Hier</i>] is een seker man van Felix gevangen gelaten:",
       "phraseDiff": [
@@ -2101,8 +2131,28 @@
           "principe": "V36"
         },
         {
-          "old": "den",
-          "new": "de",
+          "old": "heeft",
+          "new": "vertelde",
+          "principe": null
+        },
+        {
+          "old": "den koning verhaald,",
+          "new": "de koning,",
+          "principe": "N1c"
+        },
+        {
+          "old": "zeker",
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "van",
+          "new": "die door",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "is",
           "principe": "N1c"
         }
       ]
@@ -2600,8 +2650,8 @@
           "principe": "N1"
         },
         {
-          "old": "zoude",
-          "new": "zou",
+          "old": "zoude voor gebracht",
+          "new": "zou voorgebracht",
           "principe": "V50"
         }
       ]
@@ -3510,9 +3560,19 @@
       "text1637_html": "Des andere<i>n</i> daeghs dan als Agrippa gekomen was, ende Bernice met groote <sup class=\"note-marker\" data-note=\"31\">31</sup> pracht, ende als sy ingegaen waren in het <sup class=\"note-marker\" data-note=\"32\">32</sup> Richt-huys met de Overste over duysent, ende de mannen die de voornaemste der stadt waren, wiert Paulus door Festi bevel [<i>voort</i>] gebracht.",
       "phraseDiff": [
         {
-          "old": "Des",
-          "new": "Van de",
+          "old": "Des anderen daags",
+          "new": "Op de andere dag",
           "principe": "N3"
+        },
+        {
+          "old": "",
+          "new": "van",
+          "principe": null
+        },
+        {
+          "old": "voor gebracht.",
+          "new": "voorgebracht.",
+          "principe": null
         }
       ]
     },
@@ -3520,7 +3580,7 @@
       "number": 24,
       "textSV1888": "En Festus zeide: Koning Agrippa, en gij mannen allen, die met ons hier tegenwoordig zijt, gij ziet dezen, van welken mij de ganse menigte der Joden heeft aangesproken, beide te Jeruzalem en hier, roepende, dat hij niet meer behoort te leven.",
       "text1637": "Ende Festus seyde, Agrippa Coninck, ende ghy mannen alle die met ons [hier] tegenwoordich zijt, ghy siet desen, van welcken my de gansche menichte der Ioden heeft aengesproken, beyde te Ierusalem ende hier, roepende dat hy niet meer en behoort te leven.",
-      "text2026": "En Festus zei: Koning Agrippa, en u mannen allen, die met ons hier tegenwoordig zijt, u ziet deze, van welke mij de gehele menigte van de Joden heeft aangesproken, beide te Jeruzalem en hier, roepende, dat hij niet meer behoort te leven.",
+      "text2026": "En Festus zei: Koning Agrippa, en u mannen allen, die met ons hier tegenwoordig zijt, u ziet deze, van welke mij heel de menigte van de Joden heeft aangesproken, beide te Jeruzalem en hier, roepende, dat hij niet meer behoort te leven.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3728,7 +3788,7 @@
           "gloss": "〔never again"
         }
       ],
-      "text2026_html": "En Festus zei: <span class=\"direct-speech\"><i>Koning Agrippa, en u mannen allen, die met ons hier tegenwoordig zijt, u ziet deze, van welke mij de gehele menigte van de Joden heeft aangesproken, beide te Jeruzalem en hier, roepende, dat hij niet meer behoort te leven.</i></span>",
+      "text2026_html": "En Festus zei: <span class=\"direct-speech\"><i>Koning Agrippa, en u mannen allen, die met ons hier tegenwoordig zijt, u ziet deze, van welke mij heel de menigte van de Joden heeft aangesproken, beide te Jeruzalem en hier, roepende, dat hij niet meer behoort te leven.</i></span>",
       "text1637_html": "Ende Festus seyde, Agrippa Coninck, ende ghy mannen alle die met ons [<i>hier</i>] tegenwoordich zijt, ghy siet desen, van welcken my de gansche menichte der Ioden heeft aengesproken, beyde te Ierusalem ende hier, roepende dat hy niet meer en behoort te leven.",
       "phraseDiff": [
         {
@@ -3757,8 +3817,13 @@
           "principe": "N6"
         },
         {
+          "old": "",
+          "new": "heel",
+          "principe": "N6"
+        },
+        {
           "old": "ganse",
-          "new": "gehele",
+          "new": "",
           "principe": "V3"
         },
         {

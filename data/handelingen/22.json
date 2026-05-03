@@ -85,7 +85,14 @@
       ],
       "text2026_html": "<span class=\"direct-speech\"><i>Mannen<sup class=\"note-marker\" data-note=\"1\">1</sup> broeders en vaders, hoort mijn verantwoording, die ik tegenwoordig tot u doen zal.</i></span>",
       "textSV1888_html": "Mannen<sup class=\"note-marker\" data-note=\"1\">1</sup> broeders en vaders, hoort mijn verantwoording, die ik tegenwoordig tot u doen zal.",
-      "text1637_html": "MAnnen <sup class=\"note-marker\" data-note=\"1\">1</sup> Broeders ende Vaders, hoort mijne verantwoordinge, die ick tegenwoordelijck tot u [<i>doen sal</i>]."
+      "text1637_html": "MAnnen <sup class=\"note-marker\" data-note=\"1\">1</sup> Broeders ende Vaders, hoort mijne verantwoordinge, die ick tegenwoordelijck tot u [<i>doen sal</i>].",
+      "phraseDiff": [
+        {
+          "old": "Mannen broeders",
+          "new": "Broeders",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 2,
@@ -607,7 +614,7 @@
       "number": 5,
       "textSV1888": "Gelijk mij ook de hogepriester getuige is, en de gehele raad der ouderlingen; van dewelke ik ook brieven genomen hebbende tot de broeders, ben naar Damaskus gereisd, om ook degenen, die daar waren, gebonden te brengen naar Jeruzalem, opdat zij gestraft zouden worden.",
       "text1637": "Gelijck my oock de Hooge-priester getuyge is, ende den geheelen Raedt der Ouderlingen: van de welcke ick oock brieven genomen hebbende tot [8] de broeders, ben na Damascum gereyst, om oock de gene die daer waren, gebonden te brengen nae Ierusalem, op dat sy gestraft souden worden.",
-      "text2026": "Zoals mij ook de hogepriester getuige is, en de gehele raad van de ouderlingen; van die ik ook brieven genomen hebbende tot de broeders, ben naar Damaskus gereisd, om ook degenen, die daar waren, gebonden te brengen naar Jeruzalem, opdat zij gestraft zouden worden.",
+      "text2026": "Zoals mij ook de hogepriester getuige is, en heel de raad van de oudsten; van die ik ook brieven genomen hebbende tot de broeders, ben naar Damaskus gereisd, om ook degenen, die daar waren, gebonden te brengen naar Jeruzalem, opdat zij gestraft zouden worden.",
       "marginNotes": [
         {
           "marker": "8",
@@ -805,7 +812,7 @@
           "gloss": "〔to punish"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zoals mij ook de hogepriester getuige is, en de gehele raad van de ouderlingen; van die ik ook brieven genomen hebbende tot<sup class=\"note-marker\" data-note=\"8\">8</sup> de broeders, ben naar Damaskus gereisd, om ook degenen, die daar waren, gebonden te brengen naar Jeruzalem, opdat zij gestraft zouden worden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zoals mij ook de hogepriester getuige is, en heel de raad van de oudsten; van die ik ook brieven genomen hebbende tot<sup class=\"note-marker\" data-note=\"8\">8</sup> de broeders, ben naar Damaskus gereisd, om ook degenen, die daar waren, gebonden te brengen naar Jeruzalem, opdat zij gestraft zouden worden.</i></span>",
       "textSV1888_html": "Gelijk mij ook de hogepriester getuige is, en de gehele raad der ouderlingen; van dewelke ik ook brieven genomen hebbende tot<sup class=\"note-marker\" data-note=\"8\">8</sup> de broeders, ben naar Damaskus gereisd, om ook degenen, die daar waren, gebonden te brengen naar Jeruzalem, opdat zij gestraft zouden worden.",
       "text1637_html": "Gelijck my oock de Hooge-priester getuyge is, ende den geheelen Raedt der Ouderlingen: van de welcke ick oock brieven genomen hebbende tot <sup class=\"note-marker\" data-note=\"8\">8</sup> de broeders, ben na Damascum gereyst, om oock de gene die daer waren, gebonden te brengen nae Ierusalem, op dat sy gestraft souden worden.",
       "phraseDiff": [
@@ -815,13 +822,23 @@
           "principe": null
         },
         {
-          "old": "der",
-          "new": "van de",
+          "old": "",
+          "new": "heel",
+          "principe": "V75"
+        },
+        {
+          "old": "gehele",
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "der ouderlingen;",
+          "new": "",
           "principe": "N2"
         },
         {
           "old": "dewelke",
-          "new": "die",
+          "new": "de oudsten; van die",
           "principe": "V75"
         }
       ]
@@ -980,9 +997,14 @@
           "principe": "V199"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1b"
+          "old": "omtrent den",
+          "new": "ongeveer de",
+          "principe": "N1"
+        },
+        {
+          "old": "snellijk",
+          "new": "plotseling",
+          "principe": null
         },
         {
           "old": "den",
@@ -1219,8 +1241,8 @@
       "text1637_html": "Ende ick antwoordde, Wie zijt ghy Heere? Ende hy seyde tot my, Ick ben Iesus de Nazarener, welcken ghy vervolght.",
       "phraseDiff": [
         {
-          "old": "zijt Gij, Heere?",
-          "new": "bent U, Heer?",
+          "old": "zijt Gij,",
+          "new": "bent U,",
           "principe": "A1"
         },
         {
@@ -1527,13 +1549,13 @@
       "text1637_html": "Ende ick seyde, Heere, wat sal ick doen? Ende de Heere seyde tot my, Staet op ende gaet henen na Damascum: ende aldaer sal met u gesproken worden, van alle het gene dat u geordineert is te doen.",
       "phraseDiff": [
         {
-          "old": "zeide: Heere!",
-          "new": "zei: Heer!",
+          "old": "zeide:",
+          "new": "zei:",
           "principe": "W1"
         },
         {
-          "old": "Heere zeide",
-          "new": "Heer zei",
+          "old": "zeide",
+          "new": "zei",
           "principe": "W1"
         },
         {
@@ -1552,7 +1574,7 @@
       "number": 11,
       "textSV1888": "En als ik vanwege de heerlijkheid deszelven lichts niet zag, zo werd ik bij de hand geleid van degenen, die met mij waren, en kwam te Damaskus.",
       "text1637": "Ende als ick [11] van wegen de heerlickheyt des selven lichts niet en sagh, so wierdt ick by de handt geleydt van de gene die met my waren, ende quam tot Damascum.",
-      "text2026": "En als ik vanwege de heerlijkheid dezelfde lichts niet zag, zo werd ik bij de hand geleid van degenen, die met mij waren, en kwam te Damaskus.",
+      "text2026": "En als ik vanwege de heerlijkheid van dat licht niet zag, zo werd ik bij de hand geleid van degenen, die met mij waren, en kwam te Damaskus.",
       "marginNotes": [
         {
           "marker": "11",
@@ -1672,13 +1694,13 @@
           "gloss": "〔Damascus"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En als ik<sup class=\"note-marker\" data-note=\"11\">11</sup> vanwege de heerlijkheid dezelfde lichts niet zag, zo werd ik bij de hand geleid van degenen, die met mij waren, en kwam te Damaskus.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En als ik<sup class=\"note-marker\" data-note=\"11\">11</sup> vanwege de heerlijkheid van dat licht niet zag, zo werd ik bij de hand geleid van degenen, die met mij waren, en kwam te Damaskus.</i></span>",
       "textSV1888_html": "En als ik<sup class=\"note-marker\" data-note=\"11\">11</sup> vanwege de heerlijkheid deszelven lichts niet zag, zo werd ik bij de hand geleid van degenen, die met mij waren, en kwam te Damaskus.",
       "text1637_html": "Ende als ick <sup class=\"note-marker\" data-note=\"11\">11</sup> van wegen de heerlickheyt des selven lichts niet en sagh, so wierdt ick by de handt geleydt van de gene die met my waren, ende quam tot Damascum.",
       "phraseDiff": [
         {
-          "old": "deszelven",
-          "new": "dezelfde",
+          "old": "deszelven lichts",
+          "new": "van dat licht",
           "principe": null
         }
       ]
@@ -1785,13 +1807,20 @@
       ],
       "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"direct-speech\"><i> En een zekere Ananias, een godvrezend man naar de wet, goede getuigenis hebbende van al de Joden, die daar woonden,</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> En een zekere Ananias, een godvruchtig man naar de wet, goede getuigenis hebbende van al de Joden, die daar woonden,",
-      "text1637_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> En<i>de</i> een seker Ananias, een Godtvruchtigh man na de Wet, [<i>goedt</i>] getuygenisse hebbende van alle de Ioden [hier] die [<i>daer</i>] woonden,"
+      "text1637_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> En<i>de</i> een seker Ananias, een Godtvruchtigh man na de Wet, [<i>goedt</i>] getuygenisse hebbende van alle de Ioden [hier] die [<i>daer</i>] woonden,",
+      "phraseDiff": [
+        {
+          "old": "godvruchtig",
+          "new": "godvrezend",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 13,
       "textSV1888": "Kwam tot mij, en bij mij staande, zeide tot mij: Saul, broeder, word weder ziende! En ter zelfder ure werd ik ziende op hem.",
       "text1637": "[12] Quam tot my, ende by [my] staende seyde tot my, Saul broeder, [13] Wort weder siende. Ende ter selver uyre [14] wierdt ick siende op hem.",
-      "text2026": "Kwam tot mij, en bij mij staande, zei tot mij: Saul, broeder, word weer ziende! En ter zelfder ure werd ik ziende op hem.",
+      "text2026": "Kwam tot mij, en bij mij staande, zei tot mij: Saul, broeder, word weer ziende! En op datzelfde moment kon ik hem zien.",
       "marginNotes": [
         {
           "marker": "12",
@@ -1932,6 +1961,16 @@
           "old": "weder",
           "new": "weer",
           "principe": "V66"
+        },
+        {
+          "old": "ter zelfder ure werd",
+          "new": "op datzelfde moment kon",
+          "principe": null
+        },
+        {
+          "old": "ziende op hem.",
+          "new": "hem zien.",
+          "principe": null
         }
       ]
     },
@@ -2335,7 +2374,7 @@
         },
         {
           "old": "des Heeren.",
-          "new": "van de Heer.",
+          "new": "van de Heere.",
           "principe": "G2"
         }
       ]
@@ -2472,6 +2511,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "vertrekking van zinnen",
+          "new": "geestvervoering",
+          "principe": null
         }
       ]
     },
@@ -2622,8 +2666,8 @@
           "principe": "W1"
         },
         {
-          "old": "der",
-          "new": "van de",
+          "old": "in der haast",
+          "new": "snel weg",
           "principe": "N2"
         }
       ]
@@ -2757,8 +2801,8 @@
       "text1637_html": "Ende ick seyde, Heere, sy weten <sup class=\"note-marker\" data-note=\"k\">k</sup> dat ick inde gevangenisse wierp, ende inde Synagogen geesselde die in u geloofden:",
       "phraseDiff": [
         {
-          "old": "zeide: Heere,",
-          "new": "zei: Heer,",
+          "old": "zeide:",
+          "new": "zei:",
           "principe": "W1"
         }
       ]
@@ -2938,7 +2982,7 @@
       "number": 21,
       "textSV1888": "En Hij zeide tot mij: Ga heen; want Ik zal u ver tot de heidenen afzenden.",
       "text1637": "Ende hy seyde tot my, Gaet henen: [m] want ick sal u verre tot den heydenen af senden.",
-      "text2026": "En Hij zei tot mij: Ga heen; want Ik zal u ver tot de heidenen afzenden.",
+      "text2026": "En Hij zei tot mij: Ga, want Ik zal u ver weg naar de heidenen zenden.",
       "marginNotes": [
         {
           "marker": "m",
@@ -3030,6 +3074,21 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Ga heen;",
+          "new": "Ga,",
+          "principe": null
+        },
+        {
+          "old": "tot",
+          "new": "weg naar",
+          "principe": null
+        },
+        {
+          "old": "afzenden.",
+          "new": "zenden.",
+          "principe": null
         }
       ]
     },
@@ -3037,7 +3096,7 @@
       "number": 22,
       "textSV1888": "Zij hoorden hem nu tot dit woord toe; en zij verhieven hun stem, zeggende: Weg van de aarde met zulk een, want het is niet behoorlijk, dat hij leve.",
       "text1637": "Sy hoorden hem nu [21] tot dit woort toe: ende sy verhieven hare stemme, seggende, [n] Wech van der aerde met sulck eenen: want het en is niet behoorlijck dat hy leve.",
-      "text2026": "Zij hoorden hem nu tot dit woord toe; en zij verhieven hun stem, zeggende: Weg van de aarde met zulk een, want het is niet behoorlijk, dat hij leve.",
+      "text2026": "Zij hoorden hem nu tot dit woord toe; en zij verhieven hun stem, zeggende: Weg van de aarde met zulk een, want het is niet gepast dat hij blijft leven.",
       "marginNotes": [
         {
           "marker": "21",
@@ -3200,9 +3259,21 @@
           "gloss": "〔to live"
         }
       ],
-      "text2026_html": "Zij hoorden hem nu tot dit woord toe; en zij verhieven hun stem, zeggende: <span class=\"direct-speech\"><i>Weg van de aarde met zulk een, want het is niet behoorlijk, dat hij leve.</i></span>",
+      "text2026_html": "Zij hoorden hem nu tot dit woord toe; en zij verhieven hun stem, zeggende: <span class=\"direct-speech\"><i>Weg van de aarde met zulk een, want het is niet gepast dat hij blijft leven.</i></span>",
       "textSV1888_html": "Zij hoorden hem nu<sup class=\"note-marker\" data-note=\"21\">21</sup> tot dit woord toe; en zij verhieven hun stem, zeggende:<sup class=\"note-marker\" data-note=\"n\">n</sup> Weg van de aarde met zulk een, want het is niet behoorlijk, dat hij leve.",
-      "text1637_html": "Sy hoorden hem nu <sup class=\"note-marker\" data-note=\"21\">21</sup> tot dit woort toe: ende sy verhieven hare stemme, seggende, <sup class=\"note-marker\" data-note=\"n\">n</sup> Wech van der aerde met sulck eenen: want het en is niet behoorlijck dat hy leve."
+      "text1637_html": "Sy hoorden hem nu <sup class=\"note-marker\" data-note=\"21\">21</sup> tot dit woort toe: ende sy verhieven hare stemme, seggende, <sup class=\"note-marker\" data-note=\"n\">n</sup> Wech van der aerde met sulck eenen: want het en is niet behoorlijck dat hy leve.",
+      "phraseDiff": [
+        {
+          "old": "behoorlijk,",
+          "new": "gepast",
+          "principe": null
+        },
+        {
+          "old": "leve.",
+          "new": "blijft leven.",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 23,
@@ -3463,6 +3534,11 @@
       "textSV1888_html": "Zo beval<sup class=\"note-marker\" data-note=\"24\">24</sup> de overste, dat men hem in<sup class=\"note-marker\" data-note=\"25\">25</sup> de legerplaats zou brengen, en zeide, dat men hem met geselen onderzoeken zou, opdat hij verstaan mocht, om wat oorzaak zij alzo over hem riepen.",
       "text1637_html": "Soo beval <sup class=\"note-marker\" data-note=\"24\">24</sup> de Overste datmen hem in <sup class=\"note-marker\" data-note=\"25\">25</sup> de leger-plaetse soude brengen, ende seyde datmen hem met geesselen ondersoecken soude, op dat hy verstaen mochte om wat oorsaecke sy alsoo over hem riepen.",
       "phraseDiff": [
+        {
+          "old": "legerplaats",
+          "new": "kazerne",
+          "principe": null
+        },
         {
           "old": "zeide,",
           "new": "zei,",
@@ -3781,6 +3857,11 @@
       "text2026_html": "Als nu de hoofdman over honderd dat hoorde, ging hij toe, en meldde het de overste, zeggende: <span class=\"direct-speech\"><i>Zie, wat u te doen hebt; want deze mens is een Romein.</i></span>",
       "text1637_html": "Als nu de hooftman over hondert [<i>dat</i>] hoorde, ginck hy toe ende boodschapte het den Oversten, seggende, Siet wat ghy te doen hebt: want dese mensche is een Romeyn.",
       "phraseDiff": [
+        {
+          "old": "boodschapte",
+          "new": "meldde",
+          "principe": null
+        },
         {
           "old": "den",
           "new": "de",
@@ -4212,7 +4293,7 @@
       "number": 30,
       "textSV1888": "En des anderen daags, willende de zekerheid weten, waarom hij van de Joden beschuldigd werd, maakte hij hem los van de banden, en beval, dat de overpriesters en hun gehele raad zouden komen; en Paulus afgebracht hebbende, stelde hij hem voor hen.",
       "text1637": "Ende des anderen [daeghs], willende de sekerheyt weten, waerom hy van de Ioden beschuldight wiert, maeckte hy hem los van de banden, ende beval dat de Overpriesters ende haren geheelen Raedt souden komen: ende Paulum [30] afgebracht hebbende stelde hy [hem] voor haer.",
-      "text2026": "En op de andere dag, willende de zekerheid weten, waarom hij van de Joden beschuldigd werd, maakte hij hem los van de banden, en beval, dat de overpriesters en hun gehele raad zouden komen; en Paulus afgebracht hebbende, stelde hij hem voor hen.",
+      "text2026": "En op de andere dag, willende de zekerheid weten, waarom hij van de Joden beschuldigd werd, maakte hij hem los van de banden, en beval, dat de overpriesters en heel hun raad zou bijeenkomen; en Paulus afgebracht hebbende, stelde hij hem voor hen.",
       "marginNotes": [
         {
           "marker": "30",
@@ -4410,14 +4491,29 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "En op de andere dag, willende de zekerheid weten, waarom hij van de Joden beschuldigd werd, maakte hij hem los van de banden, en beval, dat de overpriesters en hun gehele raad zouden komen; en Paulus<sup class=\"note-marker\" data-note=\"30\">30</sup> afgebracht hebbende, stelde hij hem voor hen.",
+      "text2026_html": "En op de andere dag, willende de zekerheid weten, waarom hij van de Joden beschuldigd werd, maakte hij hem los van de banden, en beval, dat de overpriesters en heel hun raad zou bijeenkomen; en Paulus<sup class=\"note-marker\" data-note=\"30\">30</sup> afgebracht hebbende, stelde hij hem voor hen.",
       "textSV1888_html": "En des anderen daags, willende de zekerheid weten, waarom hij van de Joden beschuldigd werd, maakte hij hem los van de banden, en beval, dat de overpriesters en hun gehele raad zouden komen; en Paulus<sup class=\"note-marker\" data-note=\"30\">30</sup> afgebracht hebbende, stelde hij hem voor hen.",
       "text1637_html": "Ende des anderen [<i>daeghs</i>], willende de sekerheyt weten, waerom hy van de Ioden beschuldight wiert, maeckte hy hem los van de banden, ende beval dat de Overpriesters ende haren geheelen Raedt souden komen: ende Paulum <sup class=\"note-marker\" data-note=\"30\">30</sup> afgebracht hebbende stelde hy [<i>hem</i>] voor haer.",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
+          "old": "des anderen daags,",
+          "new": "op de andere dag,",
           "principe": "N3"
+        },
+        {
+          "old": "",
+          "new": "heel",
+          "principe": null
+        },
+        {
+          "old": "gehele",
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "zouden komen;",
+          "new": "zou bijeenkomen;",
+          "principe": null
         }
       ]
     }

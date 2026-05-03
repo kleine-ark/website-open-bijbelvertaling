@@ -550,6 +550,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "omtrent",
+          "new": "ongeveer",
+          "principe": null
         }
       ]
     },
@@ -575,7 +580,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En het gebeurde op de andere dag, dat hun oversten en ouderlingen en Schriftgeleerden te Jeruzalem vergaderden;",
+      "text2026": "Op de andere dag vergaderden hun oversten en ouderlingen en Schriftgeleerden te Jeruzalem;",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -684,14 +689,19 @@
       ],
       "hsv": "En het gebeurde de volgende dag dat hun leiders en oudsten en schriftgeleerden in Jeruzalem bijeenkwamen,",
       "nbg51": "En het geschiedde tegen de volgende dag, dat hun oversten en hun oudsten en hun schriftgeleerden bijeenkwamen te Jeruzalem,",
-      "text2026_html": "En het gebeurde op de andere dag, dat hun<sup class=\"note-marker\" data-note=\"8\">8</sup> oversten en ouderlingen en Schriftgeleerden<sup class=\"note-marker\" data-note=\"9\">9</sup> te Jeruzalem vergaderden;",
+      "text2026_html": "Op de andere dag vergaderden hun <sup class=\"note-marker\" data-note=\"8\">8</sup>oversten en ouderlingen en Schriftgeleerden<sup class=\"note-marker\" data-note=\"9\">9</sup> te Jeruzalem;",
       "textSV1888": "En het geschiedde des anderen daags, dat hun oversten en ouderlingen en Schriftgeleerden te Jeruzalem vergaderden;",
       "textSV1888_html": "En het geschiedde des anderen daags, dat hun<sup class=\"note-marker\" data-note=\"8\">8</sup> oversten en ouderlingen en Schriftgeleerden<sup class=\"note-marker\" data-note=\"9\">9</sup> te Jeruzalem vergaderden;",
       "phraseDiff": [
         {
-          "old": "geschiedde des",
-          "new": "gebeurde van de",
+          "old": "En het geschiedde des anderen daags, dat",
+          "new": "Op de andere dag vergaderden",
           "principe": "V199"
+        },
+        {
+          "old": "Jeruzalem vergaderden;",
+          "new": "Jeruzalem;",
+          "principe": null
         }
       ]
     },
@@ -981,6 +991,11 @@
       "textSV1888_html": "En als zij<sup class=\"note-marker\" data-note=\"14\">14</sup> hen in het midden gesteld hadden, vraagden zij:<sup class=\"note-marker\" data-note=\"a\">a</sup> Door wat kracht, of door wat<sup class=\"note-marker\" data-note=\"15\">15</sup> naam hebt gijlieden dit gedaan?",
       "phraseDiff": [
         {
+          "old": "vraagden",
+          "new": "vroegn",
+          "principe": null
+        },
+        {
           "old": "gijlieden",
           "new": "u",
           "principe": "A2"
@@ -1154,7 +1169,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Zo wij heden rechterlijk onderzocht worden over de weldaad aan een ziek mens geschied, waardoor hij gezond geworden is;",
+      "text2026": "Aangezien wij vandaag gerechtelijk worden ondervraagd over de weldaad aan een ziek mens bewezen, waardoor hij gezond geworden is;",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -1233,19 +1248,34 @@
       ],
       "hsv": "Wanneer wij vandaag ondervraagd worden over de weldaad aan een zieke man bewezen, waardoor hij gezond geworden is,",
       "nbg51": "indien wij thans in verhoor genomen worden ter zake van een weldaad aan een zieke, waardoor hij gezond geworden is,",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"18\">18</sup><span class=\"direct-speech\"><i> Zo wij heden<sup class=\"note-marker\" data-note=\"19\">19</sup> rechterlijk onderzocht worden over de weldaad aan een ziek mens geschied, waardoor hij<sup class=\"note-marker\" data-note=\"20\">20</sup> gezond geworden is;</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"18\">18</sup><span class=\"direct-speech\"><i> Aangezien wij<sup class=\"note-marker\" data-note=\"19\">19</sup> vandaag gerechtelijk worden ondervraagd over de weldaad aan een ziek mens bewezen, waardoor hij<sup class=\"note-marker\" data-note=\"20\">20</sup> gezond geworden is;</i></span>",
       "textSV1888": "Alzo wij heden rechterlijk onderzocht worden over de weldaad aan een krank mens geschied, waardoor hij gezond geworden is;",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"18\">18</sup> Alzo wij heden<sup class=\"note-marker\" data-note=\"19\">19</sup> rechterlijk onderzocht worden over de weldaad aan een krank mens geschied, waardoor hij<sup class=\"note-marker\" data-note=\"20\">20</sup> gezond geworden is;",
       "phraseDiff": [
         {
           "old": "Alzo",
-          "new": "Zo",
+          "new": "Aangezien",
+          "principe": "V42"
+        },
+        {
+          "old": "heden rechterlijk onderzocht",
+          "new": "vandaag gerechtelijk",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "ondervraagd",
           "principe": "V42"
         },
         {
           "old": "krank",
           "new": "ziek",
           "principe": "V46"
+        },
+        {
+          "old": "geschied,",
+          "new": "bewezen,",
+          "principe": null
         }
       ]
     },
@@ -1271,7 +1301,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Zo zij u allen duidelijk, en het gehele volk Israël, dat door de Naam van Jezus Christus, de Nazarener, Die u gekruist hebt, Welke God van de doden heeft opgewekt, door Hem, zeg ik, staat deze hier voor u gezond.",
+      "text2026": "Zo zij u allen duidelijk, en heel het volk Israël, dat door de Naam van Jezus Christus, de Nazarener, Die u gekruist hebt, Welke God van de doden heeft opgewekt, door Hem, zeg ik, staat deze hier voor u gezond.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -1476,13 +1506,23 @@
       ],
       "hsv": "laat het dan bij u allen en bij heel het volk Israël bekend zijn dat door de Naam van Jezus Christus, de Nazarener, Die u gekruisigd hebt maar Die God uit de doden opgewekt heeft, dat door Hem deze man hier gezond voor u staat.",
       "nbg51": "dan moet aan u allen en het ganse volk van Israël bekend zijn, dat door de naam van Jezus Christus, de Nazoreeër, die gij gekruisigd hebt, maar die God heeft opgewekt uit de doden, dat door die naam deze hier gezond voor u staat.",
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo zij u allen duidelijk, en het gehele volk Israël, dat<sup class=\"note-marker\" data-note=\"21\">21</sup> door de Naam van Jezus Christus, de Nazarener, Die u gekruist hebt, Welke God van de doden heeft opgewekt,<sup class=\"note-marker\" data-note=\"22\">22</sup> door Hem, zeg ik, staat deze hier voor u gezond.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo zij u allen duidelijk, en heel het volk Israël, dat<sup class=\"note-marker\" data-note=\"21\">21</sup> door de Naam van Jezus Christus, de Nazarener, Die u gekruist hebt, Welke God van de doden heeft opgewekt,<sup class=\"note-marker\" data-note=\"22\">22</sup> door Hem, zeg ik, staat deze hier voor u gezond.</i></span>",
       "textSV1888": "Zo zij u allen kennelijk, en het ganse volk Israël, dat door den Naam van Jezus Christus, den Nazarener, Dien gij gekruist hebt, Welken God van de doden heeft opgewekt, door Hem, zeg ik, staat deze hier voor u gezond.",
       "textSV1888_html": "Zo zij u allen kennelijk, en het ganse volk Israël, dat<sup class=\"note-marker\" data-note=\"21\">21</sup> door den Naam van Jezus Christus, den Nazarener, Dien gij gekruist hebt, Welken God van de doden heeft opgewekt,<sup class=\"note-marker\" data-note=\"22\">22</sup> door Hem, zeg ik, staat deze hier voor u gezond.",
       "phraseDiff": [
         {
+          "old": "kennelijk,",
+          "new": "duidelijk,",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "heel",
+          "principe": "N6"
+        },
+        {
           "old": "ganse",
-          "new": "gehele",
+          "new": "",
           "principe": "V3"
         },
         {
@@ -2296,7 +2336,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Zeggende: Wat zullen wij deze mensen doen? Want dat er een bekend teken door hen geschied is, is openbaar aan allen, die te Jeruzalem wonen, en wij kunnen het niet loochenen.",
+      "text2026": "Zeggende: Wat zullen wij deze mensen doen? Want dat er een bekend teken door hen is gedaan, is openbaar aan allen, die te Jeruzalem wonen, en wij kunnen het niet loochenen.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -2441,7 +2481,7 @@
       ],
       "hsv": "en zeiden: ⓟWat zullen wij met deze mensen doen? Want dat er een alom bekend teken door hen is verricht, is duidelijk voor allen die in Jeruzalem wonen, en wij kunnen het niet ontkennen.",
       "nbg51": "en zij zeiden: Wat moeten wij met deze mensen beginnen? Want dat er een kennelijk wonderteken door hen verricht is, is duidelijk aan allen, die te Jeruzalem wonen, en wij kunnen het niet loochenen;",
-      "text2026_html": "Zeggende:<sup class=\"note-marker\" data-note=\"d\">d</sup> <span class=\"direct-speech\"><i>Wat zullen wij deze mensen doen? Want dat<sup class=\"note-marker\" data-note=\"37\">37</sup> er een bekend teken door hen geschied is, is openbaar aan allen, die te Jeruzalem wonen, en wij kunnen het niet loochenen.</i></span>",
+      "text2026_html": "Zeggende:<sup class=\"note-marker\" data-note=\"d\">d</sup> <span class=\"direct-speech\"><i>Wat zullen wij deze mensen doen? Want dat<sup class=\"note-marker\" data-note=\"37\">37</sup> er een bekend teken door hen is gedaan, is openbaar aan allen, die te Jeruzalem wonen, en wij kunnen het niet loochenen.</i></span>",
       "textSV1888": "Zeggende: Wat zullen wij dezen mensen doen? Want dat er een bekend teken door hen geschied is, is openbaar aan allen, die te Jeruzalem wonen, en wij kunnen het niet loochenen.",
       "textSV1888_html": "Zeggende:<sup class=\"note-marker\" data-note=\"d\">d</sup> Wat zullen wij dezen mensen doen? Want dat<sup class=\"note-marker\" data-note=\"37\">37</sup> er een bekend teken door hen geschied is, is openbaar aan allen, die te Jeruzalem wonen, en wij kunnen het niet loochenen.",
       "phraseDiff": [
@@ -2449,6 +2489,11 @@
           "old": "dezen",
           "new": "deze",
           "principe": "N4"
+        },
+        {
+          "old": "geschied is,",
+          "new": "is gedaan,",
+          "principe": null
         }
       ]
     },
@@ -3047,7 +3092,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Maar zij dreigden hen nog meer, en lieten ze gaan, niets vindende, hoe zij hen straffen zouden, omwille van het volk; want zij verheerlijkten allen God over wat er geschied was.",
+      "text2026": "Maar zij dreigden hen nog meer, en lieten ze gaan, niets vindende, hoe zij hen straffen zouden, omwille van het volk; want zij verheerlijkten allen God over wat er was gebeurd.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -3186,7 +3231,7 @@
       ],
       "hsv": "Maar zij dreigden hen nog meer en omdat zij niets konden vinden om hen te straffen, lieten zij hen gaan ⓡter wille van het volk; want ze verheerlijkten allen God over ⓢwat er gebeurd was.",
       "nbg51": "Maar zij dreigden nog meer, doch lieten hen vrij, daar zij geen vorm konden vinden om hen te straffen – en wel om het volk; want allen verheerlijkten God om hetgeen er geschied was;",
-      "text2026_html": "Maar zij dreigden hen nog meer, en lieten ze gaan, niets vindende,<sup class=\"note-marker\" data-note=\"44\">44</sup> hoe zij hen straffen zouden,<sup class=\"note-marker\" data-note=\"45\">45</sup><sup class=\"note-marker\" data-note=\"f\">f</sup> omwille van het volk; want zij verheerlijkten allen God over wat<sup class=\"note-marker\" data-note=\"g\">g</sup> er geschied was.",
+      "text2026_html": "Maar zij dreigden hen nog meer, en lieten ze gaan, niets vindende,<sup class=\"note-marker\" data-note=\"44\">44</sup> hoe zij hen straffen zouden,<sup class=\"note-marker\" data-note=\"45\">45</sup><sup class=\"note-marker\" data-note=\"f\">f</sup> omwille van het volk; want zij verheerlijkten allen God over wat<sup class=\"note-marker\" data-note=\"g\">g</sup> er was gebeurd.",
       "textSV1888": "Maar zij dreigden hen nog meer, en lieten ze gaan, niets vindende, hoe zij hen straffen zouden, om des volks wil; want zij verheerlijkten allen God over hetgeen er geschied was.",
       "textSV1888_html": "Maar zij dreigden hen nog meer, en lieten ze gaan, niets vindende,<sup class=\"note-marker\" data-note=\"44\">44</sup> hoe zij hen straffen zouden,<sup class=\"note-marker\" data-note=\"45\">45</sup><sup class=\"note-marker\" data-note=\"f\">f</sup> om des volks wil; want zij verheerlijkten allen God over hetgeen<sup class=\"note-marker\" data-note=\"g\">g</sup> er geschied was.",
       "phraseDiff": [
@@ -3199,6 +3244,11 @@
           "old": "hetgeen",
           "new": "wat",
           "principe": "V4"
+        },
+        {
+          "old": "geschied was.",
+          "new": "was gebeurd.",
+          "principe": null
         }
       ]
     },
@@ -3217,7 +3267,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Want de mens was meer dan veertig jaren oud, aan welke dit teken van de genezing geschied was.",
+      "text2026": "Want de mens was meer dan veertig jaren oud, aan wie dit teken van genezing was gebeurd.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -3314,19 +3364,24 @@
       ],
       "hsv": "Want de man aan wie dit teken van genezing verricht was, was ouder dan veertig jaar.",
       "nbg51": "want de mens, aan wie dit teken der genezing verricht was, was boven de veertig jaar.",
-      "text2026_html": "Want de mens was<sup class=\"note-marker\" data-note=\"46\">46</sup> meer dan veertig jaren oud, aan welke dit teken van de genezing geschied was.",
+      "text2026_html": "Want de mens was<sup class=\"note-marker\" data-note=\"46\">46</sup> meer dan veertig jaren oud, aan wie dit teken van genezing was gebeurd.",
       "textSV1888": "Want de mens was meer dan veertig jaren oud, aan welken dit teken der genezing geschied was.",
       "textSV1888_html": "Want de mens was<sup class=\"note-marker\" data-note=\"46\">46</sup> meer dan veertig jaren oud, aan welken dit teken der genezing geschied was.",
       "phraseDiff": [
         {
           "old": "welken",
-          "new": "welke",
+          "new": "wie",
           "principe": "N6"
         },
         {
           "old": "der",
-          "new": "van de",
+          "new": "van",
           "principe": "N2"
+        },
+        {
+          "old": "geschied was.",
+          "new": "was gebeurd.",
+          "principe": null
         }
       ]
     },
@@ -3665,8 +3720,13 @@
           "principe": "N4"
         },
         {
-          "old": "Heere! Gij zijt",
-          "new": "Heer! U bent",
+          "old": "eendrachtelijk",
+          "new": "eensgezind",
+          "principe": null
+        },
+        {
+          "old": "Gij zijt",
+          "new": "U bent",
           "principe": "A1"
         },
         {
@@ -3986,12 +4046,12 @@
         },
         {
           "old": "te zamen",
-          "new": "tezamen",
+          "new": "samen",
           "principe": null
         },
         {
-          "old": "den Heere,",
-          "new": "de Heer,",
+          "old": "den",
+          "new": "de",
           "principe": "G1"
         }
       ]
@@ -4208,7 +4268,7 @@
       "phraseDiff": [
         {
           "old": "der",
-          "new": "van de",
+          "new": "",
           "principe": "N2"
         },
         {
@@ -4488,14 +4548,7 @@
       "nbg51": "En nu, Here, let op hun dreigingen en geef uw dienstknechten met alle vrijmoedigheid uw woord te spreken,",
       "text2026_html": "<span class=\"direct-speech\"><i>En nu dan, Heere,<sup class=\"note-marker\" data-note=\"58\">58</sup> zie op hun dreigingen, en geef Uw<sup class=\"note-marker\" data-note=\"59\">59</sup> dienstknechten met alle vrijmoedigheid Uw woord te spreken;</i></span>",
       "textSV1888": "En nu dan, Heere, zie op hun dreigingen, en geef Uw dienstknechten met alle vrijmoedigheid Uw woord te spreken;",
-      "textSV1888_html": "En nu dan, Heere,<sup class=\"note-marker\" data-note=\"58\">58</sup> zie op hun dreigingen, en geef Uw<sup class=\"note-marker\" data-note=\"59\">59</sup> dienstknechten met alle vrijmoedigheid Uw woord te spreken;",
-      "phraseDiff": [
-        {
-          "old": "Heere,",
-          "new": "Heer,",
-          "principe": null
-        }
-      ]
+      "textSV1888_html": "En nu dan, Heere,<sup class=\"note-marker\" data-note=\"58\">58</sup> zie op hun dreigingen, en geef Uw<sup class=\"note-marker\" data-note=\"59\">59</sup> dienstknechten met alle vrijmoedigheid Uw woord te spreken;"
     },
     {
       "number": 30,
@@ -4885,6 +4938,11 @@
       "textSV1888_html": "En als<sup class=\"note-marker\" data-note=\"63\">63</sup> zij gebeden hadden, werd de plaats, in welke zij vergaderd waren,<sup class=\"note-marker\" data-note=\"64\">64</sup><sup class=\"note-marker\" data-note=\"m\">m</sup> bewogen. En zij werden allen<sup class=\"note-marker\" data-note=\"65\">65</sup> vervuld met den Heiligen Geest, en spraken het Woord Gods met vrijmoedigheid.",
       "phraseDiff": [
         {
+          "old": "in welke",
+          "new": "waarin",
+          "principe": null
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
@@ -5247,8 +5305,8 @@
       "textSV1888_html": "En de apostelen gaven met grote<sup class=\"note-marker\" data-note=\"68\">68</sup> kracht getuigenis van de opstanding van den Heere Jezus; en er was grote<sup class=\"note-marker\" data-note=\"69\">69</sup> genade over hen allen.",
       "phraseDiff": [
         {
-          "old": "den Heere",
-          "new": "de Heer",
+          "old": "den",
+          "new": "de",
           "principe": "G1"
         }
       ]
@@ -5725,7 +5783,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Zo hij een akker had, verkocht die, en bracht het geld, en legde het aan de voeten van de apostelen.",
+      "text2026": "Aangezien hij een akker had, verkocht hij die, en bracht het geld, en legde het aan de voeten van de apostelen.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -5816,18 +5874,18 @@
       ],
       "hsv": "had een akker, verkocht die en bracht het geld en legde het aan de voeten van de apostelen.",
       "nbg51": "die eigenaar was van een akker, verkocht die en bracht het geld en legde het aan de voeten der apostelen. Currently Selected: De Handelingen der Apostelen 4 : NBG51 Highlight Share",
-      "text2026_html": "Zo hij een akker had, verkocht die, en bracht<sup class=\"note-marker\" data-note=\"75\">75</sup> het geld, en legde het aan de voeten van de apostelen.",
+      "text2026_html": "Aangezien hij een akker had, verkocht hij die, en bracht<sup class=\"note-marker\" data-note=\"75\">75</sup> het geld, en legde het aan de voeten van de apostelen.",
       "textSV1888": "Alzo hij een akker had, verkocht dien, en bracht het geld, en legde het aan de voeten der apostelen.",
       "textSV1888_html": "Alzo hij een akker had, verkocht dien, en bracht<sup class=\"note-marker\" data-note=\"75\">75</sup> het geld, en legde het aan de voeten der apostelen.",
       "phraseDiff": [
         {
           "old": "Alzo",
-          "new": "Zo",
+          "new": "Aangezien",
           "principe": "V42"
         },
         {
           "old": "dien,",
-          "new": "die,",
+          "new": "hij die,",
           "principe": "N4"
         },
         {

@@ -428,7 +428,14 @@
       "nbg51": "Maar Petrus begon hun alles in geregelde orde uiteen te zetten en zeide:",
       "text2026_html": "<sup class=\"note-marker\" data-note=\"4\">4</sup><span class=\"direct-speech\"><i> Maar Petrus, beginnende,<sup class=\"note-marker\" data-note=\"5\">5</sup> vertelde het hun vervolgens, zeggende:</i></span>",
       "textSV1888": "Maar Petrus, beginnende, verhaalde het hun vervolgens, zeggende:",
-      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"4\">4</sup> Maar Petrus, beginnende,<sup class=\"note-marker\" data-note=\"5\">5</sup> verhaalde het hun vervolgens, zeggende:"
+      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"4\">4</sup> Maar Petrus, beginnende,<sup class=\"note-marker\" data-note=\"5\">5</sup> verhaalde het hun vervolgens, zeggende:",
+      "phraseDiff": [
+        {
+          "old": "verhaalde",
+          "new": "vertelde",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 5,
@@ -445,7 +452,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Ik was in de stad Joppe, biddende en zag in een geestvervoering een visioen, namelijk een zeker voorwerp, zoals een groot linnen laken, neerdalende, bij de vier hoeken neergelaten uit de hemel, en het kwam tot bij mij;",
+      "text2026": "Ik was in de stad Joppe, biddende en zag in een geestvervoering een visioen, namelijk een voorwerp, zoals een groot linnen laken, neerdalende, bij de vier hoeken neergelaten uit de hemel, en het kwam tot bij mij;",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -614,13 +621,33 @@
       ],
       "hsv": "ⓨIk was in de stad Joppe aan het bidden en zag in geestvervoering een visioen: een bepaald voorwerp daalde neer, dat leek op een groot linnen laken, dat aan de vier hoeken neergelaten werd uit de hemel, en het kwam tot dicht bij mij.",
       "nbg51": "Ik was in de stad Joppe in gebed en zag in zinsverrukking een gezicht: een voorwerp daalde neder in de vorm van een groot laken, dat aan de vier hoeken uit de hemel neergelaten werd, en het kwam vlak bij mij.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup><span class=\"direct-speech\"><i> Ik was in de stad Joppe, biddende en zag in een geestvervoering een visioen, namelijk een zeker voorwerp, zoals een groot linnen laken, neerdalende, bij de vier hoeken neergelaten uit de hemel, en het kwam tot bij mij;</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup><span class=\"direct-speech\"><i> Ik was in de stad Joppe, biddende en zag in een geestvervoering een visioen, namelijk een voorwerp, zoals een groot linnen laken, neerdalende, bij de vier hoeken neergelaten uit de hemel, en het kwam tot bij mij;</i></span>",
       "textSV1888": "Ik was in de stad Joppe, biddende en zag in een vertrekking van zinnen een gezicht, namelijk een zeker vat, gelijk een groot linnen laken, nederdalende, bij de vier hoeken nedergelaten uit den hemel, en het kwam tot bij mij;",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Ik was in de stad Joppe, biddende en zag in een vertrekking van zinnen een gezicht, namelijk een zeker vat, gelijk een groot linnen laken, nederdalende, bij de vier hoeken nedergelaten uit den hemel, en het kwam tot bij mij;",
       "phraseDiff": [
         {
-          "old": "gelijk",
-          "new": "zoals",
+          "old": "vertrekking van zinnen",
+          "new": "geestvervoering",
+          "principe": null
+        },
+        {
+          "old": "gezicht,",
+          "new": "visioen,",
+          "principe": null
+        },
+        {
+          "old": "zeker vat, gelijk",
+          "new": "voorwerp, zoals",
+          "principe": null
+        },
+        {
+          "old": "nederdalende,",
+          "new": "neerdalende,",
+          "principe": null
+        },
+        {
+          "old": "nedergelaten",
+          "new": "neergelaten",
           "principe": null
         },
         {
@@ -777,11 +804,6 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
-        },
-        {
-          "old": "des hemels.",
-          "new": "van de hemel.",
-          "principe": "N3"
         }
       ]
     },
@@ -986,9 +1008,14 @@
       "textSV1888_html": "Maar ik zeide: Geenszins, Heere, want nooit is<sup class=\"note-marker\" data-note=\"c\">c</sup> iets, dat gemeen of onrein was, in mijn mond ingegaan.",
       "phraseDiff": [
         {
-          "old": "zeide: Geenszins, Heere,",
-          "new": "zei: In geen geval, Heer,",
+          "old": "zeide: Geenszins,",
+          "new": "zei: In geen geval,",
           "principe": "V14"
+        },
+        {
+          "old": "gemeen",
+          "new": "onheilig",
+          "principe": null
         }
       ]
     },
@@ -999,7 +1026,7 @@
       "text1637_html": "Doch de stemme antwoordde my ten tweede<i>n</i> mael uyt den hemel, Het gene Godt gereynight heeft, en sult ghy niet gemeyn maken.",
       "marginNotes": [],
       "textHerzien": "",
-      "text2026": "Maar de stem antwoordde mij ten tweeden male uit de hemel: Wat God gereinigd heeft, zult u niet onheilig maken.",
+      "text2026": "Maar de stem antwoordde mij voor de tweede keer uit de hemel: Wat God gereinigd heeft, zult u niet onheilig maken.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -1096,13 +1123,18 @@
       ],
       "hsv": "Maar de stem antwoordde mij voor de tweede keer uit de hemel: Wat God gereinigd heeft, mag u niet voor onheilig houden.",
       "nbg51": "Doch ten tweeden male antwoordde mij een stem uit de hemel: Wat God rein verklaard heeft, moogt gij niet voor onheilig houden.",
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar de stem antwoordde mij ten tweeden male uit de hemel: <span class=\"god-speaks\"><i>Wat God gereinigd heef</i></span>t, zult u niet onheilig maken.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar de stem antwoordde mij voor de tweede keer uit de hemel: <span class=\"god-speaks\"><i>Wat God gereinigd heef</i></span>t, zult u niet onheilig maken.</i></span>",
       "textSV1888": "Doch de stem antwoordde mij ten tweeden male uit den hemel: Hetgeen God gereinigd heeft, zult gij niet gemeen maken.",
       "phraseDiff": [
         {
           "old": "Doch",
           "new": "Maar",
           "principe": "V1"
+        },
+        {
+          "old": "ten tweeden male",
+          "new": "voor de tweede keer",
+          "principe": null
         },
         {
           "old": "den",
@@ -1118,6 +1150,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "gemeen",
+          "new": "onheilig",
+          "principe": null
         }
       ]
     },
@@ -1211,8 +1248,8 @@
       "textSV1888": "En dit geschiedde tot driemaal; en alles werd wederom opgetrokken in den hemel.",
       "phraseDiff": [
         {
-          "old": "geschiedde",
-          "new": "gebeurde",
+          "old": "geschiedde tot driemaal;",
+          "new": "gebeurde 3 keer;",
           "principe": "V199"
         },
         {
@@ -1234,7 +1271,7 @@
       "text1637_html": "Ende siet ter selver [<i>uyre</i>] stonden daer dry mannen voor het huys daer ick in was, die van Cesareen tot my afgesonden waren.",
       "marginNotes": [],
       "textHerzien": "",
-      "text2026": "En zie, ter zelfder ure stonden er drie mannen voor het huis, daar ik in was, die van Cesarea tot mij afgezonden waren.",
+      "text2026": "En zie, op datzelfde moment stonden er drie mannen voor het huis, daar ik in was, die van Cesarea tot mij afgezonden waren.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -1343,12 +1380,12 @@
       ],
       "hsv": "En zie, ogenblikkelijk daarna stonden er drie mannen, die vanuit Caesarea naar mij toe gestuurd waren, voor het huis waarin ik was.",
       "nbg51": "En zie, terstond daarop bleven drie mannen voor het huis staan, waarin wij waren, die uit Caesarea tot mij waren gezonden.",
-      "text2026_html": "<span class=\"direct-speech\"><i>En zie, ter zelfder ure stonden er drie mannen voor het huis, daar ik in was, die van Cesarea tot mij afgezonden waren.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En zie, op datzelfde moment stonden er drie mannen voor het huis, daar ik in was, die van Cesarea tot mij afgezonden waren.</i></span>",
       "textSV1888": "En ziet, ter zelfder ure stonden er drie mannen voor het huis, daar ik in was, die van Cesarea tot mij afgezonden waren.",
       "phraseDiff": [
         {
-          "old": "ziet,",
-          "new": "zie,",
+          "old": "ziet, ter zelfder ure",
+          "new": "zie, op datzelfde moment",
           "principe": "V198"
         }
       ]
@@ -1536,8 +1573,13 @@
         },
         {
           "old": "des",
-          "new": "van de",
+          "new": "het huis van de",
           "principe": "N3"
+        },
+        {
+          "old": "huis",
+          "new": "",
+          "principe": null
         }
       ]
     },
@@ -1548,7 +1590,7 @@
       "text1637_html": "Ende hy heeft ons verhaelt hoe hy eenen Engel gesien hadde, die in sijn huys stondt, ende tot hem seyde, Sendt mannen na Ioppe, ende ontbiedt Simon, die toegenaemt is Petrus:",
       "marginNotes": [],
       "textHerzien": "",
-      "text2026": "En hij heeft ons verhaald, hoe hij een engel gezien had, die in zijn huis stond, en tot hem zei: Zend mannen naar Joppe, en ontbied Simon, die toegenaamd is Petrus;",
+      "text2026": "En hij heeft ons verteld hoe hij een engel had gezien, die in zijn huis stond, en tot hem zei: Zend mannen naar Joppe, en ontbied Simon, die toegenaamd is Petrus;",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -1693,9 +1735,19 @@
       ],
       "hsv": "En hij berichtte ons hoe hij een engel gezien had, die in zijn huis stond en tegen hem zei: Stuur mannen naar Joppe en ontbied Simon die ook Petrus genoemd wordt.",
       "nbg51": "en hij heeft ons medegedeeld, hoe hij een engel in zijn huis had zien staan, die tot hem zeide: Zend iemand naar Joppe en nodig Simon uit, die bijgenaamd wordt Petrus;",
-      "text2026_html": "<span class=\"direct-speech\"><i>En hij heeft ons verhaald, hoe hij een engel gezien had, die in zijn huis stond, en tot hem zei: <span class=\"direct-speech\"><i>Zend mannen naar Joppe, en ontbied S</i></span>imon, die toegenaamd is Petrus;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En hij heeft ons verteld hoe hij een engel had gezien, die in zijn huis stond, en tot hem zei: <span class=\"direct-speech\"><i>Zend mannen naar Joppe, en ontbied S</i></span>imon, die toegenaamd is Petrus;</i></span>",
       "textSV1888": "En hij heeft ons verhaald, hoe hij een engel gezien had, die in zijn huis stond, en tot hem zeide: Zend mannen naar Joppe, en ontbied Simon, die toegenaamd is Petrus;",
       "phraseDiff": [
+        {
+          "old": "verhaald,",
+          "new": "verteld",
+          "principe": null
+        },
+        {
+          "old": "gezien had,",
+          "new": "had gezien,",
+          "principe": null
+        },
         {
           "old": "zeide:",
           "new": "zei:",
@@ -2124,7 +2176,7 @@
       "phraseDiff": [
         {
           "old": "des Heeren,",
-          "new": "van de Heer,",
+          "new": "van de Heere,",
           "principe": "G2"
         },
         {
@@ -2331,11 +2383,6 @@
           "old": "Indien",
           "new": "Als",
           "principe": "V41"
-        },
-        {
-          "old": "Heere",
-          "new": "Heer",
-          "principe": "G1"
         }
       ]
     },
@@ -2354,7 +2401,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En als zij dit hoorden, waren zij tevreden, en verheerlijkten God, zeggende: Zo heeft dan God ook de heidenen de bekering gegeven ten leven!",
+      "text2026": "En als zij dit hoorden, waren zij tevreden, en verheerlijkten God, zeggende: Zo heeft dan God ook de heidenen de bekering tot het leven gegeven!",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -2481,7 +2528,7 @@
       ],
       "hsv": "En toen zij dit hoorden, waren zij gerustgesteld, en zij verheerlijkten God en zeiden: Zo heeft God dus ook aan de heidenen de bekering gegeven die tot het leven leidt.",
       "nbg51": "En toen zij dit gehoord hadden, kwamen zij tot rust en verheerlijkten God, zeggende: Zo heeft dan God ook de heidenen de bekering ten leven geschonken. Barnabas en Saulus naar Antiochië",
-      "text2026_html": "En als zij dit hoorden, waren zij tevreden, en verheerlijkten God, zeggende: <span class=\"direct-speech\"><i>Zo heeft dan God ook de heidenen de bekering gegeven ten leven!</i></span>",
+      "text2026_html": "En als zij dit hoorden, waren zij tevreden, en verheerlijkten God, zeggende: <span class=\"direct-speech\"><i>Zo heeft dan God ook de heidenen de bekering tot het leven gegeven!</i></span>",
       "textSV1888": "En als zij dit hoorden, waren zij tevreden, en verheerlijkten God, zeggende: Zo heeft dan God ook den heidenen de bekering gegeven ten leven!",
       "textSV1888_html": "En als zij dit hoorden, waren zij tevreden, en verheerlijkten God, zeggende: Zo heeft dan God ook den heidenen de bekering<sup class=\"note-marker\" data-note=\"11\">11</sup> gegeven ten leven!",
       "phraseDiff": [
@@ -2489,6 +2536,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "gegeven ten leven!",
+          "new": "tot het leven gegeven!",
+          "principe": null
         }
       ]
     },
@@ -2542,7 +2594,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Degenen nu, die verstrooid waren door de verdrukking, die over Stefanus geschied was, gingen het land door tot Fenicië toe, en Cyprus, en Antiochië, tot niemand het Woord sprekende, dan alleen tot de Joden.",
+      "text2026": "Degenen nu, die verstrooid waren door de verdrukking, die over Stefanus was gekomen, gingen het land door tot Fenicië toe, en Cyprus, en Antiochië, tot niemand het Woord sprekende, dan alleen tot de Joden.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -2705,9 +2757,16 @@
       ],
       "hsv": "ⓔZij nu die, door de verdrukking die in verband met Stefanus plaatsgevonden had, overal verspreid waren, gingen het land door tot Fenicië, Cyprus en Antiochië toe, terwijl zij tot niemand het Woord spraken dan alleen tot de Joden.",
       "nbg51": "Zij dan, die verstrooid werden door de verdrukking, welke in verband met Stefanus plaats vond, trokken verder tot Fenicië, Cyprus en Antiochië toe, zonder tot iemand het woord te spreken dan alleen tot de Joden.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Degenen nu, die verstrooid waren door de verdrukking, die<sup class=\"note-marker\" data-note=\"12\">12</sup> over Stefanus geschied was, gingen het land door tot<sup class=\"note-marker\" data-note=\"13\">13</sup> Fenicië toe, en<sup class=\"note-marker\" data-note=\"14\">14</sup> Cyprus, en<sup class=\"note-marker\" data-note=\"15\">15</sup> Antiochië, tot niemand het Woord sprekende, dan<sup class=\"note-marker\" data-note=\"16\">16</sup> alleen tot de Joden.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Degenen nu, die verstrooid waren door de verdrukking, die<sup class=\"note-marker\" data-note=\"12\">12</sup> over Stefanus was gekomen, gingen het land door tot<sup class=\"note-marker\" data-note=\"13\">13</sup> Fenicië toe, en<sup class=\"note-marker\" data-note=\"14\">14</sup> Cyprus, en<sup class=\"note-marker\" data-note=\"15\">15</sup> Antiochië, tot niemand het Woord sprekende, dan<sup class=\"note-marker\" data-note=\"16\">16</sup> alleen tot de Joden.",
       "textSV1888": "Degenen nu, die verstrooid waren door de verdrukking, die over Stefanus geschied was, gingen het land door tot Fenicië toe, en Cyprus, en Antiochië, tot niemand het Woord sprekende, dan alleen tot de Joden.",
-      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Degenen nu, die verstrooid waren door de verdrukking, die<sup class=\"note-marker\" data-note=\"12\">12</sup> over Stefanus geschied was, gingen het land door tot<sup class=\"note-marker\" data-note=\"13\">13</sup> Fenicië toe, en<sup class=\"note-marker\" data-note=\"14\">14</sup> Cyprus, en<sup class=\"note-marker\" data-note=\"15\">15</sup> Antiochië, tot niemand het Woord sprekende, dan<sup class=\"note-marker\" data-note=\"16\">16</sup> alleen tot de Joden."
+      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Degenen nu, die verstrooid waren door de verdrukking, die<sup class=\"note-marker\" data-note=\"12\">12</sup> over Stefanus geschied was, gingen het land door tot<sup class=\"note-marker\" data-note=\"13\">13</sup> Fenicië toe, en<sup class=\"note-marker\" data-note=\"14\">14</sup> Cyprus, en<sup class=\"note-marker\" data-note=\"15\">15</sup> Antiochië, tot niemand het Woord sprekende, dan<sup class=\"note-marker\" data-note=\"16\">16</sup> alleen tot de Joden.",
+      "phraseDiff": [
+        {
+          "old": "geschied was,",
+          "new": "was gekomen,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 20,
@@ -2894,9 +2953,9 @@
           "principe": "N6"
         },
         {
-          "old": "den Heere",
-          "new": "de Heer",
-          "principe": "G1"
+          "old": "den",
+          "new": "de",
+          "principe": "N6"
         }
       ]
     },
@@ -3025,12 +3084,12 @@
       "phraseDiff": [
         {
           "old": "des Heeren",
-          "new": "van de Heer",
+          "new": "van de Heere",
           "principe": "G2"
         },
         {
-          "old": "den Heere.",
-          "new": "de Heer.",
+          "old": "den",
+          "new": "de",
           "principe": "G1"
         }
       ]
@@ -3379,8 +3438,8 @@
           "principe": "N3"
         },
         {
-          "old": "den Heere",
-          "new": "de Heer",
+          "old": "den",
+          "new": "de",
           "principe": "G1"
         }
       ]
@@ -3518,9 +3577,9 @@
           "principe": "N3"
         },
         {
-          "old": "den Heere",
-          "new": "de Heer",
-          "principe": "G1"
+          "old": "schare den",
+          "new": "menigte de",
+          "principe": "N1"
         }
       ]
     },
@@ -3779,7 +3838,14 @@
       "nbg51": "En het geschiedde, dat zij een vol jaar in de gemeente gastvrij ontvangen werden en een brede schare leerden en dat de discipelen het eerst te Antiochië Christenen genoemd werden.",
       "text2026_html": "En het is geschied, dat zij een geheel jaar samen vergaderden in de Gemeente, en een grote menigte leerden; en dat de discipelen eerst te Antiochië<sup class=\"note-marker\" data-note=\"28\">28</sup> Christenen genaamd werden.",
       "textSV1888": "En het is geschied, dat zij een geheel jaar samen vergaderden in de Gemeente, en een grote schare leerden; en dat de discipelen eerst te Antiochië Christenen genaamd werden.",
-      "textSV1888_html": "En het is geschied, dat zij een geheel jaar samen vergaderden in de Gemeente, en een grote schare leerden; en dat de discipelen eerst te Antiochië<sup class=\"note-marker\" data-note=\"28\">28</sup> Christenen genaamd werden."
+      "textSV1888_html": "En het is geschied, dat zij een geheel jaar samen vergaderden in de Gemeente, en een grote schare leerden; en dat de discipelen eerst te Antiochië<sup class=\"note-marker\" data-note=\"28\">28</sup> Christenen genaamd werden.",
+      "phraseDiff": [
+        {
+          "old": "schare",
+          "new": "menigte",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 27,
@@ -3796,7 +3862,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En in dezelfde dagen kwamen enige profeten af van Jeruzalem te Antiochië.",
+      "text2026": "En in die dagen kwamen enige profeten af van Jeruzalem te Antiochië.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -3869,9 +3935,16 @@
       ],
       "hsv": "En in die dagen kwamen enkele profeten vanuit Jeruzalem naar Antiochië.",
       "nbg51": "En in die dagen kwamen profeten van Jeruzalem te Antiochië;",
-      "text2026_html": "En in dezelfde dagen kwamen<sup class=\"note-marker\" data-note=\"29\">29</sup> enige profeten af van Jeruzalem te Antiochië.",
+      "text2026_html": "En in die dagen kwamen<sup class=\"note-marker\" data-note=\"29\">29</sup> enige profeten af van Jeruzalem te Antiochië.",
       "textSV1888": "En in dezelfde dagen kwamen enige profeten af van Jeruzalem te Antiochië.",
-      "textSV1888_html": "En in dezelfde dagen kwamen<sup class=\"note-marker\" data-note=\"29\">29</sup> enige profeten af van Jeruzalem te Antiochië."
+      "textSV1888_html": "En in dezelfde dagen kwamen<sup class=\"note-marker\" data-note=\"29\">29</sup> enige profeten af van Jeruzalem te Antiochië.",
+      "phraseDiff": [
+        {
+          "old": "dezelfde",
+          "new": "die",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 28,
@@ -3902,7 +3975,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En één uit hen, met de naam Agabus, stond op, en gaf te kennen door de Geest, dat er een grote hongersnood zou wezen over de gehele wereld; die ook gekomen is onder de keizer Claudius.",
+      "text2026": "En één uit hen, met de naam Agabus, stond op, en gaf te kennen door de Geest, dat er een grote hongersnood zou wezen over heel de wereld; die ook gekomen is onder de keizer Claudius.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -4047,7 +4120,7 @@
       ],
       "hsv": "En een van hen, van wie de naam ⓙAgabus was, stond op en gaf door de Geest te kennen dat er een grote hongersnood zou zijn over heel de wereld, die ook gekomen is onder keizer Claudius.",
       "nbg51": "en één uit hen, genaamd Agabus, stond op en gaf door de Geest te kennen, dat een grote hongersnood zou komen over het gehele rijk, die dan ook gekomen is onder Claudius.",
-      "text2026_html": "En één uit hen, met de naam<sup class=\"note-marker\" data-note=\"n\">n</sup> Agabus, stond op, en<sup class=\"note-marker\" data-note=\"30\">30</sup> gaf te kennen door de Geest, dat er een grote hongersnood zou wezen over de gehele wereld; die ook gekomen is<sup class=\"note-marker\" data-note=\"31\">31</sup> onder de keizer Claudius.",
+      "text2026_html": "En één uit hen, met de naam<sup class=\"note-marker\" data-note=\"n\">n</sup> Agabus, stond op, en<sup class=\"note-marker\" data-note=\"30\">30</sup> gaf te kennen door de Geest, dat er een grote hongersnood zou wezen over heel de wereld; die ook gekomen is<sup class=\"note-marker\" data-note=\"31\">31</sup> onder de keizer Claudius.",
       "textSV1888": "En een uit hen, met name Agabus, stond op, en gaf te kennen door den Geest, dat er een grote hongersnood zou wezen over de gehele wereld; dewelke ook gekomen is onder den keizer Claudius.",
       "textSV1888_html": "En een uit hen, met name<sup class=\"note-marker\" data-note=\"n\">n</sup> Agabus, stond op, en<sup class=\"note-marker\" data-note=\"30\">30</sup> gaf te kennen door den Geest, dat er een grote hongersnood zou wezen over de gehele wereld; dewelke ook gekomen is<sup class=\"note-marker\" data-note=\"31\">31</sup> onder den keizer Claudius.",
       "phraseDiff": [
@@ -4057,9 +4130,24 @@
           "principe": null
         },
         {
+          "old": "name",
+          "new": "de naam",
+          "principe": null
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "",
+          "new": "heel",
+          "principe": "V75"
+        },
+        {
+          "old": "gehele",
+          "new": "",
+          "principe": null
         },
         {
           "old": "dewelke",
@@ -4095,7 +4183,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En naar gelang een ieder van de discipelen vermocht, besloot elk van hen iets te zenden ten dienste van de broeders, die in Judea woonden.",
+      "text2026": "En naar gelang een ieder van de discipelen vermocht, besloot elk van hen iets te sturen voor de hulp aan de broeders, die in Judea woonden.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -4210,18 +4298,23 @@
       ],
       "hsv": "En de discipelen besloten, ieder naar vermogen, iets te sturen ten dienste van de broeders die in Judea woonden,",
       "nbg51": "En de discipelen besloten, dat elk van hen naar draagkracht iets zenden zou tot ondersteuning van de broeders, die in Judea woonden;",
-      "text2026_html": "En naar gelang een ieder<sup class=\"note-marker\" data-note=\"32\">32</sup> van de discipelen vermocht, besloot elk van hen iets te zenden ten<sup class=\"note-marker\" data-note=\"33\">33</sup> dienste van de broeders, die in Judea woonden.",
+      "text2026_html": "En naar gelang een ieder<sup class=\"note-marker\" data-note=\"32\">32</sup> van de discipelen vermocht, besloot elk van hen iets te sturen voor<sup class=\"note-marker\" data-note=\"33\">33</sup> de hulp aan de broeders, die in Judea woonden.",
       "textSV1888": "En naardat een iegelijk der discipelen vermocht, besloot elk van hen iets te zenden ten dienste der broederen, die in Judea woonden.",
       "textSV1888_html": "En naardat een iegelijk<sup class=\"note-marker\" data-note=\"32\">32</sup> der discipelen vermocht, besloot elk van hen iets te zenden ten<sup class=\"note-marker\" data-note=\"33\">33</sup> dienste der broederen, die in Judea woonden.",
       "phraseDiff": [
+        {
+          "old": "naardat",
+          "new": "naar gelang",
+          "principe": null
+        },
         {
           "old": "iegelijk der",
           "new": "ieder van de",
           "principe": "V5"
         },
         {
-          "old": "der broederen,",
-          "new": "van de broeders,",
+          "old": "zenden ten dienste der broederen,",
+          "new": "sturen voor de hulp aan de broeders,",
           "principe": "O22b"
         }
       ]

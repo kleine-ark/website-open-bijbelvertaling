@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En hij kwam te Derbe en Lystre. En ziet, aldaar was een zeker discipel, met name Timotheüs, zoon van een gelovige Joodse vrouw, maar van een Grieksen vader;",
       "text1637": "ENde hy quam tot [1] Derben ende Lystren: ende siet, aldaer was een seker Discipel, met name [2] Timotheus, sone van eene [3] geloovige Ioodsche [4] vrouwe, maer van eenen [5] Grieckschen vader.",
-      "text2026": "En hij kwam te Derbe en Lystre. En zie, daar was een zeker discipel, met de naam Timotheüs, zoon van een gelovige Joodse vrouw, maar van een Grieksen vader;",
+      "text2026": "En hij kwam te Derbe en Lystre. En zie, daar was een discipel met de naam Timotheüs, zoon van een gelovige Joodse vrouw, maar van een Grieksen vader;",
       "marginNotes": [
         {
           "marker": "1",
@@ -183,7 +183,7 @@
           "gloss": "〔a Greek"
         }
       ],
-      "text2026_html": "En hij kwam te<sup class=\"note-marker\" data-note=\"1\">1</sup> Derbe en Lystre. En zie, daar was een zeker discipel, met de naam<sup class=\"note-marker\" data-note=\"2\">2</sup> Timotheüs,<sup class=\"note-marker\" data-note=\"3\">3</sup> zoon<sup class=\"note-marker\" data-note=\"4\">4</sup> van een<sup class=\"note-marker\" data-note=\"5\">5</sup> gelovige Joodse vrouw, maar van een Grieksen vader;",
+      "text2026_html": "En hij kwam te<sup class=\"note-marker\" data-note=\"1\">1</sup> Derbe en Lystre. En zie, daar was een discipel met de naam Timotheüs<sup class=\"note-marker\" data-note=\"2\">2</sup>,<sup class=\"note-marker\" data-note=\"3\">3</sup> zoon<sup class=\"note-marker\" data-note=\"4\">4</sup> van een<sup class=\"note-marker\" data-note=\"5\">5</sup> gelovige Joodse vrouw, maar van een Grieksen vader;",
       "textSV1888_html": "En hij kwam te<sup class=\"note-marker\" data-note=\"1\">1</sup> Derbe en Lystre. En ziet, aldaar was een zeker discipel, met name<sup class=\"note-marker\" data-note=\"2\">2</sup> Timotheüs,<sup class=\"note-marker\" data-note=\"3\">3</sup> zoon<sup class=\"note-marker\" data-note=\"4\">4</sup> van een<sup class=\"note-marker\" data-note=\"5\">5</sup> gelovige Joodse vrouw, maar van een Grieksen vader;",
       "text1637_html": "ENde hy quam tot <sup class=\"note-marker\" data-note=\"1\">1</sup> Derben ende Lystren: ende siet, aldaer was een seker Discipel, met name <sup class=\"note-marker\" data-note=\"2\">2</sup> Timotheus, sone van eene <sup class=\"note-marker\" data-note=\"3\">3</sup> geloovige Ioodsche <sup class=\"note-marker\" data-note=\"4\">4</sup> vrouwe, maer van eenen <sup class=\"note-marker\" data-note=\"5\">5</sup> Grieckschen vader.",
       "phraseDiff": [
@@ -191,6 +191,16 @@
           "old": "ziet, aldaar",
           "new": "zie, daar",
           "principe": "V36"
+        },
+        {
+          "old": "zeker discipel,",
+          "new": "discipel",
+          "principe": null
+        },
+        {
+          "old": "name",
+          "new": "de naam",
+          "principe": null
         }
       ]
     },
@@ -1314,6 +1324,11 @@
           "principe": "N1"
         },
         {
+          "old": "gezicht",
+          "new": "visioen",
+          "principe": null
+        },
+        {
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
@@ -1456,14 +1471,14 @@
       "text1637_html": "Als hy nu dit gesichte gesien hadde, so sochten <sup class=\"note-marker\" data-note=\"25\">25</sup> wy terstont na Macedonien te reysen, <sup class=\"note-marker\" data-note=\"26\">26</sup> besluytende [<i>daer uyt</i>] dat ons de Heere geroepen hadde, om den selven het Euangelium te vercondigen.",
       "phraseDiff": [
         {
+          "old": "gezicht",
+          "new": "visioen",
+          "principe": null
+        },
+        {
           "old": "terstond",
           "new": "meteen",
           "principe": "V8"
-        },
-        {
-          "old": "Heere",
-          "new": "Heer",
-          "principe": "G1"
         },
         {
           "old": "om denzelven",
@@ -1736,7 +1751,14 @@
       ],
       "text2026_html": "En van daar naar<sup class=\"note-marker\" data-note=\"29\">29</sup> Filippi, welke is<sup class=\"note-marker\" data-note=\"30\">30</sup> de eerste stad van dit<sup class=\"note-marker\" data-note=\"31\">31</sup> deel van Macedonië, een kolonie. En wij onthielden ons in die stad enkele dagen.",
       "textSV1888_html": "En van daar naar<sup class=\"note-marker\" data-note=\"29\">29</sup> Filippi, welke is<sup class=\"note-marker\" data-note=\"30\">30</sup> de eerste stad van dit<sup class=\"note-marker\" data-note=\"31\">31</sup> deel van Macedonië, een kolonie. En wij onthielden ons in die stad ettelijke dagen.",
-      "text1637_html": "Ende van daer na <sup class=\"note-marker\" data-note=\"29\">29</sup> Philippi, welcke is <sup class=\"note-marker\" data-note=\"30\">30</sup> de eerste stadt deses deels van Macedonien, <sup class=\"note-marker\" data-note=\"31\">31</sup> een colonie. Ende wy onthielden ons in die stadt etlicke dagen."
+      "text1637_html": "Ende van daer na <sup class=\"note-marker\" data-note=\"29\">29</sup> Philippi, welcke is <sup class=\"note-marker\" data-note=\"30\">30</sup> de eerste stadt deses deels van Macedonien, <sup class=\"note-marker\" data-note=\"31\">31</sup> een colonie. Ende wy onthielden ons in die stadt etlicke dagen.",
+      "phraseDiff": [
+        {
+          "old": "ettelijke",
+          "new": "enkele",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 13,
@@ -1905,6 +1927,11 @@
           "old": "geschieden;",
           "new": "gebeuren;",
           "principe": "V40"
+        },
+        {
+          "old": "nedergezeten",
+          "new": "gezeten",
+          "principe": null
         }
       ]
     },
@@ -1912,7 +1939,7 @@
       "number": 14,
       "textSV1888": "En een zekere vrouw, met name Lydia, een purperverkoopster, van de stad Thyatira, die God diende, hoorde ons; welker hart de Heere heeft geopend, dat zij acht nam op hetgeen van Paulus gesproken werd.",
       "text1637": "Ende een sekere vrouwe, met name Lydia, een purper-verkoopster, [34] van de stadt Thyatiren, die Godt diende, hoorde [ons]: [35] welcker herte de Heere heeft geopent, dat sy [36] acht name op het gene van Paulo gesproken wiert.",
-      "text2026": "En een zekere vrouw, met de naam Lydia, een purperverkoopster, van de stad Thyatira, die God diende, hoorde ons; welker hart de Heere heeft geopend, dat zij acht nam op wat van Paulus gesproken werd.",
+      "text2026": "En een vrouw met de naam Lydia, een purperverkoopster, van de stad Thyatira, die God diende, hoorde ons; welker hart de Heere heeft geopend, dat zij acht nam op wat van Paulus gesproken werd.",
       "marginNotes": [
         {
           "marker": "34",
@@ -2082,14 +2109,19 @@
           "gloss": "〔Paul"
         }
       ],
-      "text2026_html": "En een zekere vrouw, met de naam Lydia, een purperverkoopster,<sup class=\"note-marker\" data-note=\"34\">34</sup> van de stad Thyatira, die God diende, hoorde ons;<sup class=\"note-marker\" data-note=\"35\">35</sup> welker hart de Heere heeft geopend, dat zij<sup class=\"note-marker\" data-note=\"36\">36</sup> acht nam op wat van Paulus gesproken werd.",
+      "text2026_html": "En een vrouw met de naam Lydia, een purperverkoopster,<sup class=\"note-marker\" data-note=\"34\">34</sup> van de stad Thyatira, die God diende, hoorde ons;<sup class=\"note-marker\" data-note=\"35\">35</sup> welker hart de Heere heeft geopend, dat zij<sup class=\"note-marker\" data-note=\"36\">36</sup> acht nam op wat van Paulus gesproken werd.",
       "textSV1888_html": "En een zekere vrouw, met name Lydia, een purperverkoopster,<sup class=\"note-marker\" data-note=\"34\">34</sup> van de stad Thyatira, die God diende, hoorde ons;<sup class=\"note-marker\" data-note=\"35\">35</sup> welker hart de Heere heeft geopend, dat zij<sup class=\"note-marker\" data-note=\"36\">36</sup> acht nam op hetgeen van Paulus gesproken werd.",
       "text1637_html": "Ende een sekere vrouwe, met name Lydia, een purper-verkoopster, <sup class=\"note-marker\" data-note=\"34\">34</sup> van de stadt Thyatiren, die Godt diende, hoorde [<i>ons</i>]: <sup class=\"note-marker\" data-note=\"35\">35</sup> welcker herte de Heere heeft geopent, dat sy <sup class=\"note-marker\" data-note=\"36\">36</sup> acht name op het gene van Paulo gesproken wiert.",
       "phraseDiff": [
         {
-          "old": "Heere",
-          "new": "Heer",
-          "principe": "G1"
+          "old": "zekere vrouw,",
+          "new": "vrouw",
+          "principe": null
+        },
+        {
+          "old": "name",
+          "new": "de naam",
+          "principe": null
         },
         {
           "old": "hetgeen",
@@ -2302,8 +2334,8 @@
           "principe": "V41"
         },
         {
-          "old": "den Heere",
-          "new": "de Heer",
+          "old": "den",
+          "new": "de",
           "principe": "G1"
         }
       ]
@@ -2312,7 +2344,7 @@
       "number": 16,
       "textSV1888": "En het geschiedde, als wij tot het gebed heengingen, dat een zekere dienstmaagd, hebbende een waarzeggenden geest, ons ontmoette, welke haar heren groot gewin toebracht met waarzeggen.",
       "text1637": "Ende het geschiedde als wy [41] tot het gebedt henen gingen, dat een sekere [42] dienstmaeghd [f] hebbende [43] eenen waerseggenden geest, ons ontmoette, welcke haren heeren [g] groot gewin toebracht met waerseggen.",
-      "text2026": "En het gebeurde, als wij tot het gebed heengingen, dat een zekere dienstmaagd, hebbende een waarzeggenden geest, ons ontmoette, welke haar heren groot gewin toebracht met waarzeggen.",
+      "text2026": "Toen wij op weg waren naar het gebed, ontmoette ons een dienstmaagd die een waarzeggende geest had, welke haar heren groot gewin toebracht met waarzeggen.",
       "marginNotes": [
         {
           "marker": "41",
@@ -2484,14 +2516,29 @@
           "gloss": "〔to divine"
         }
       ],
-      "text2026_html": "En het gebeurde, als wij<sup class=\"note-marker\" data-note=\"41\">41</sup> tot het gebed heengingen, dat een zekere<sup class=\"note-marker\" data-note=\"42\">42</sup> dienstmaagd,<sup class=\"note-marker\" data-note=\"f\">f</sup> hebbende<sup class=\"note-marker\" data-note=\"43\">43</sup> een waarzeggenden geest, ons ontmoette, welke haar heren<sup class=\"note-marker\" data-note=\"g\">g</sup> groot gewin toebracht met waarzeggen.",
+      "text2026_html": "Toen wij op weg waren<sup class=\"note-marker\" data-note=\"41\">41</sup> naar het gebed, ontmoette ons<sup class=\"note-marker\" data-note=\"42\">42</sup> een dienstmaagd<sup class=\"note-marker\" data-note=\"f\">f</sup> <sup class=\"note-marker\" data-note=\"43\">43</sup>die een waarzeggende geest had, welke haar heren<sup class=\"note-marker\" data-note=\"g\">g</sup> groot gewin toebracht met waarzeggen.",
       "textSV1888_html": "En het geschiedde, als wij<sup class=\"note-marker\" data-note=\"41\">41</sup> tot het gebed heengingen, dat een zekere<sup class=\"note-marker\" data-note=\"42\">42</sup> dienstmaagd,<sup class=\"note-marker\" data-note=\"f\">f</sup> hebbende<sup class=\"note-marker\" data-note=\"43\">43</sup> een waarzeggenden geest, ons ontmoette, welke haar heren<sup class=\"note-marker\" data-note=\"g\">g</sup> groot gewin toebracht met waarzeggen.",
       "text1637_html": "Ende het geschiedde als wy <sup class=\"note-marker\" data-note=\"41\">41</sup> tot het gebedt henen gingen, dat een sekere <sup class=\"note-marker\" data-note=\"42\">42</sup> dienstmaeghd <sup class=\"note-marker\" data-note=\"f\">f</sup> hebbende <sup class=\"note-marker\" data-note=\"43\">43</sup> eenen waerseggenden geest, ons ontmoette, welcke haren heeren <sup class=\"note-marker\" data-note=\"g\">g</sup> groot gewin toebracht met waerseggen.",
       "phraseDiff": [
         {
-          "old": "geschiedde,",
-          "new": "gebeurde,",
+          "old": "En",
+          "new": "Toen wij op weg waren naar",
+          "principe": null
+        },
+        {
+          "old": "geschiedde, als wij tot het gebed heengingen, dat",
+          "new": "gebed, ontmoette ons",
           "principe": "V199"
+        },
+        {
+          "old": "zekere dienstmaagd, hebbende",
+          "new": "dienstmaagd die",
+          "principe": null
+        },
+        {
+          "old": "waarzeggenden geest, ons ontmoette,",
+          "new": "waarzeggende geest had,",
+          "principe": null
         }
       ]
     },
@@ -2499,7 +2546,7 @@
       "number": 17,
       "textSV1888": "Dezelve volgde Paulus en ons achterna, en riep, zeggende: Deze mensen zijn dienstknechten Gods des Allerhoogsten, die ons den weg der zaligheid verkondigen.",
       "text1637": "De selve volghde Paulum ende ons achter aen, ende riep, seggende, [44] Dese menschen zijn dienstknechten Godts des Allerhooghsten die [45] ons den wegh der saligheyt verkondigen.",
-      "text2026": "Dezelfde volgde Paulus en ons achterna, en riep, zeggende: Deze mensen zijn dienstknechten Gods van de Allerhoogste, die ons de weg van de zaligheid verkondigen.",
+      "text2026": "Zij volgde Paulus en ons, en riep, zeggende: Deze mensen zijn dienstknechten Gods van de Allerhoogste, die ons de weg van de zaligheid verkondigen.",
       "marginNotes": [
         {
           "marker": "44",
@@ -2650,14 +2697,19 @@
           "gloss": "〔salvation"
         }
       ],
-      "text2026_html": "Dezelfde volgde Paulus en ons achterna, en riep, zeggende: <span class=\"direct-speech\"><i>Deze mensen zijn dienstknechten Gods van de Allerhoogste, die ons de weg van de zaligheid verkondigen.</i></span>",
+      "text2026_html": "Zij volgde Paulus en ons, en riep, zeggende: <span class=\"direct-speech\"><i>Deze mensen zijn dienstknechten Gods van de Allerhoogste, die ons de weg van de zaligheid verkondigen.</i></span>",
       "textSV1888_html": "Dezelve volgde Paulus en ons achterna, en riep, zeggende:<sup class=\"note-marker\" data-note=\"44\">44</sup> Deze mensen zijn dienstknechten Gods des Allerhoogsten, die<sup class=\"note-marker\" data-note=\"45\">45</sup> ons den weg der zaligheid verkondigen.",
       "text1637_html": "De selve volghde Paulum ende ons achter aen, ende riep, seggende, <sup class=\"note-marker\" data-note=\"44\">44</sup> Dese menschen zijn dienstknechten Godts des Allerhooghsten die <sup class=\"note-marker\" data-note=\"45\">45</sup> ons den wegh der saligheyt verkondigen.",
       "phraseDiff": [
         {
           "old": "Dezelve",
-          "new": "Dezelfde",
+          "new": "Zij",
           "principe": "O3"
+        },
+        {
+          "old": "ons achterna,",
+          "new": "ons,",
+          "principe": null
         },
         {
           "old": "des Allerhoogsten,",
@@ -2680,7 +2732,7 @@
       "number": 18,
       "textSV1888": "En dit deed zij vele dagen lang. Maar Paulus, daarover ontevreden zijnde, keerde zich om, en zeide tot den geest: Ik gebied u in den Naam van Jezus Christus, dat gij van haar uitgaat. En hij ging uit ter zelfder ure.",
       "text1637": "Ende dit dede sy vele dagen lanck. Maer Paulus [daer over] [46] te onvreden zijnde, keerde hem om, ende seyde tot den geest, Ick gebiede u in den name Iesu Christi, dat ghy [47] van haer uytgaet. [h] Ende hy ginck uyt ter selver uyre.",
-      "text2026": "En dit deed zij vele dagen lang. Maar Paulus, daarover ontevreden zijnde, keerde zich om, en zei tot de geest: Ik gebied u in de Naam van Jezus Christus, dat u van haar uitgaat. En hij ging uit ter zelfder ure.",
+      "text2026": "En dit deed zij vele dagen lang. Maar Paulus, daarover ontevreden zijnde, keerde zich om, en zei tot de geest: Ik gebied u in de Naam van Jezus Christus, dat u van haar uitgaat. En hij ging op datzelfde moment uit haar weg.",
       "marginNotes": [
         {
           "marker": "46",
@@ -2874,7 +2926,7 @@
           "gloss": "〔hour"
         }
       ],
-      "text2026_html": "En dit deed zij vele dagen lang. Maar Paulus, daarover ontevreden zijnde, keerde zich om, en zei tot de geest: <span class=\"direct-speech\"><i>Ik gebied u in de Naam van Jezus Christus, dat u van haar uitgaat.</i></span> En hij ging uit ter zelfder ure.",
+      "text2026_html": "En dit deed zij vele dagen lang. Maar Paulus, daarover ontevreden zijnde, keerde zich om, en zei tot de geest: <span class=\"direct-speech\"><i>Ik gebied u in de Naam van Jezus Christus, dat u van haar uitgaat.</i></span> En hij ging op datzelfde moment uit haar weg.",
       "textSV1888_html": "En dit deed zij vele dagen lang. Maar Paulus,<sup class=\"note-marker\" data-note=\"46\">46</sup> daarover ontevreden zijnde, keerde zich om, en zeide tot den geest: Ik gebied u in den Naam van Jezus Christus, dat gij<sup class=\"note-marker\" data-note=\"47\">47</sup> van haar uitgaat.<sup class=\"note-marker\" data-note=\"h\">h</sup> En hij ging uit ter zelfder ure.",
       "text1637_html": "Ende dit dede sy vele dagen lanck. Maer Paulus [<i>daer over</i>] <sup class=\"note-marker\" data-note=\"46\">46</sup> te onvreden zijnde, keerde hem om, ende seyde tot den geest, Ick gebiede u in den name Iesu Christi, dat ghy <sup class=\"note-marker\" data-note=\"47\">47</sup> van haer uytgaet. <sup class=\"note-marker\" data-note=\"h\">h</sup> Ende hy ginck uyt ter selver uyre.",
       "phraseDiff": [
@@ -2897,6 +2949,16 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "",
+          "new": "op datzelfde moment",
+          "principe": "A1"
+        },
+        {
+          "old": "ter zelfder ure.",
+          "new": "haar weg.",
+          "principe": null
         }
       ]
     },
@@ -3114,7 +3176,7 @@
       "number": 20,
       "textSV1888": "En als zij hen tot de hoofdmannen gebracht hadden, zeiden zij: Deze mensen beroeren onze stad, daar zij Joden zijn.",
       "text1637": "Ende als sy'se tot [52] de Hooft-mannen gebracht hadden, seyden sy, [k] Dese menschen beroeren onse stadt, daer sy [53] Ioden zijn.",
-      "text2026": "En als zij hen tot de hoofdmannen gebracht hadden, zeiden zij: Deze mensen beroeren onze stad, daar zij Joden zijn.",
+      "text2026": "En als zij hen tot de hoofdmannen gebracht hadden, zeiden zij: Deze mensen brengen onze stad in opschudding, daar zij Joden zijn.",
       "marginNotes": [
         {
           "marker": "52",
@@ -3230,9 +3292,21 @@
           "gloss": "〔to be"
         }
       ],
-      "text2026_html": "En als zij hen tot<sup class=\"note-marker\" data-note=\"52\">52</sup> de hoofdmannen gebracht hadden, zeiden zij:<sup class=\"note-marker\" data-note=\"k\">k</sup> <span class=\"direct-speech\"><i>Deze mensen beroeren onze stad, daar zij<sup class=\"note-marker\" data-note=\"53\">53</sup> Joden zijn.</i></span>",
+      "text2026_html": "En als zij hen tot<sup class=\"note-marker\" data-note=\"52\">52</sup> de hoofdmannen gebracht hadden, zeiden zij:<sup class=\"note-marker\" data-note=\"k\">k</sup> <span class=\"direct-speech\"><i>Deze mensen brengen onze stad in opschudding, daar zij<sup class=\"note-marker\" data-note=\"53\">53</sup> Joden zijn.</i></span>",
       "textSV1888_html": "En als zij hen tot<sup class=\"note-marker\" data-note=\"52\">52</sup> de hoofdmannen gebracht hadden, zeiden zij:<sup class=\"note-marker\" data-note=\"k\">k</sup> Deze mensen beroeren onze stad, daar zij<sup class=\"note-marker\" data-note=\"53\">53</sup> Joden zijn.",
-      "text1637_html": "Ende als sy'se tot <sup class=\"note-marker\" data-note=\"52\">52</sup> de Hooft-mannen gebracht hadden, seyden sy, <sup class=\"note-marker\" data-note=\"k\">k</sup> Dese menschen beroeren onse stadt, daer sy <sup class=\"note-marker\" data-note=\"53\">53</sup> Ioden zijn."
+      "text1637_html": "Ende als sy'se tot <sup class=\"note-marker\" data-note=\"52\">52</sup> de Hooft-mannen gebracht hadden, seyden sy, <sup class=\"note-marker\" data-note=\"k\">k</sup> Dese menschen beroeren onse stadt, daer sy <sup class=\"note-marker\" data-note=\"53\">53</sup> Ioden zijn.",
+      "phraseDiff": [
+        {
+          "old": "beroeren",
+          "new": "brengen",
+          "principe": null
+        },
+        {
+          "old": "stad,",
+          "new": "stad in opschudding,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 21,
@@ -3457,6 +3531,11 @@
       "textSV1888_html": "En de schare stond gezamenlijk tegen hen op; en de hoofdmannen,<sup class=\"note-marker\" data-note=\"55\">55</sup> hun de klederen afgescheurd hebbende,<sup class=\"note-marker\" data-note=\"l\">l</sup> bevalen hen te<sup class=\"note-marker\" data-note=\"56\">56</sup> geselen.",
       "text1637_html": "Ende de schare stondt gesamentlick tegen haer op: ende de Hooftmannen <sup class=\"note-marker\" data-note=\"55\">55</sup> haer de cleederen afgescheurt hebbende, <sup class=\"note-marker\" data-note=\"l\">l</sup> bevalen'se te <sup class=\"note-marker\" data-note=\"56\">56</sup> geesselen.",
       "phraseDiff": [
+        {
+          "old": "schare",
+          "new": "menigte",
+          "principe": null
+        },
         {
           "old": "klederen",
           "new": "kleren",
@@ -3865,8 +3944,8 @@
       "text1637_html": "Ende ontrent de middernacht <sup class=\"note-marker\" data-note=\"m\">m</sup> baden Paulus ende Silas, ende <sup class=\"note-marker\" data-note=\"61\">61</sup> songen Gode lof-sangen: ende <sup class=\"note-marker\" data-note=\"62\">62</sup> de gevangene hoorden na haer.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
+          "old": "omtrent den",
+          "new": "ongeveer de",
           "principe": "N1"
         }
       ]
@@ -4038,8 +4117,8 @@
       "text1637_html": "Ende daer geschiedde snellick een groote aerdbevinge, also dat de fondamenten des kerckers <sup class=\"note-marker\" data-note=\"63\">63</sup> beweeght wierden: <sup class=\"note-marker\" data-note=\"n\">n</sup> ende terstondt wierden alle de deuren <sup class=\"note-marker\" data-note=\"64\">64</sup> geopent, ende de banden van alle wierden los.",
       "phraseDiff": [
         {
-          "old": "geschiedde",
-          "new": "gebeurde",
+          "old": "geschiedde snellijk",
+          "new": "gebeurde plotseling",
           "principe": "V199"
         },
         {
@@ -4215,6 +4294,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "zichzelven",
+          "new": "zichzelf",
+          "principe": null
         }
       ]
     },
@@ -4326,13 +4410,20 @@
       ],
       "text2026_html": "Maar Paulus riep met grote stem, zeggende: <span class=\"direct-speech\"><i>Doe uzelf geen kwaad; want wij zijn allen hier.</i></span>",
       "textSV1888_html": "Maar Paulus riep met<sup class=\"note-marker\" data-note=\"66\">66</sup> grote stem, zeggende: Doe uzelven geen kwaad; want wij zijn allen hier.",
-      "text1637_html": "Maer Paulus riep met <sup class=\"note-marker\" data-note=\"66\">66</sup> grooter stemme, seggende, En doet u selven geen quaet: want wy zijn alle hier."
+      "text1637_html": "Maer Paulus riep met <sup class=\"note-marker\" data-note=\"66\">66</sup> grooter stemme, seggende, En doet u selven geen quaet: want wy zijn alle hier.",
+      "phraseDiff": [
+        {
+          "old": "uzelven",
+          "new": "uzelf",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 29,
       "textSV1888": "En als hij licht geëist had, sprong hij in, en werd zeer bevende, en viel voor Paulus en Silas neder aan de voeten;",
       "text1637": "Ende als hy licht ge-eyscht hadde, spranck hy in, ende wiert zeer bevende, ende viel voor Paulo ende Sila neder [aende voeten].",
-      "text2026": "En als hij licht geëist had, sprong hij in, en werd zeer bevende, en viel voor Paulus en Silas neder aan de voeten;",
+      "text2026": "En als hij licht geëist had, sprong hij in, en werd zeer bevende, en viel voor Paulus en Silas neer aan hun voeten;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4414,8 +4505,20 @@
           "gloss": "〔Silas"
         }
       ],
-      "text2026_html": "En als hij licht geëist had, sprong hij in, en werd zeer bevende, en viel voor Paulus en Silas neder aan de voeten;",
-      "text1637_html": "Ende als hy licht ge-eyscht hadde, spranck hy in, ende wiert zeer bevende, ende viel voor Paulo ende Sila neder [<i>aende voeten</i>]."
+      "text2026_html": "En als hij licht geëist had, sprong hij in, en werd zeer bevende, en viel voor Paulus en Silas neer aan hun voeten;",
+      "text1637_html": "Ende als hy licht ge-eyscht hadde, spranck hy in, ende wiert zeer bevende, ende viel voor Paulo ende Sila neder [<i>aende voeten</i>].",
+      "phraseDiff": [
+        {
+          "old": "neder",
+          "new": "neer",
+          "principe": null
+        },
+        {
+          "old": "de",
+          "new": "hun",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 30,
@@ -4641,8 +4744,8 @@
       "text1637_html": "Ende sy seyden, <sup class=\"note-marker\" data-note=\"p\">p</sup> Gelooft in den Heer Iesum Christum, ende ghy sult saligh worden, ghy ende <sup class=\"note-marker\" data-note=\"68\">68</sup> uw' huys.",
       "phraseDiff": [
         {
-          "old": "den Heere",
-          "new": "de Heer",
+          "old": "den",
+          "new": "de",
           "principe": "G1"
         },
         {
@@ -4754,7 +4857,7 @@
       "phraseDiff": [
         {
           "old": "des Heeren,",
-          "new": "van de Heer,",
+          "new": "van de Heere,",
           "principe": "G2"
         }
       ]
@@ -4763,7 +4866,7 @@
       "number": 33,
       "textSV1888": "En hij nam hen tot zich in dezelve ure des nachts, en wies hen van de striemen; en hij werd terstond gedoopt, en al de zijnen.",
       "text1637": "Ende hy nam haer tot hem in de selve uyre des nachts, ende [69] wiesch [haer] van de stramen: ende hy wierdt terstont gedoopt, ende alle de sijne.",
-      "text2026": "En hij nam hen tot zich in dezelfde ure bij nacht, en groeide hen van de striemen; en hij werd meteen gedoopt, en al de zijn.",
+      "text2026": "En hij nam hen tot zich op datzelfde uur in de nacht, en groeide hen van de striemen; en hij werd meteen gedoopt, en al de zijn.",
       "marginNotes": [
         {
           "marker": "69",
@@ -4901,19 +5004,24 @@
           "gloss": "〔instantly"
         }
       ],
-      "text2026_html": "En hij nam hen tot zich in dezelfde ure bij nacht, en<sup class=\"note-marker\" data-note=\"69\">69</sup> groeide hen van de striemen; en hij werd meteen gedoopt, en al de zijn.",
+      "text2026_html": "En hij nam hen tot zich op datzelfde uur in de nacht, en<sup class=\"note-marker\" data-note=\"69\">69</sup> groeide hen van de striemen; en hij werd meteen gedoopt, en al de zijn.",
       "textSV1888_html": "En hij nam hen tot zich in dezelve ure des nachts, en<sup class=\"note-marker\" data-note=\"69\">69</sup> wies hen van de striemen; en hij werd terstond gedoopt, en al de zijnen.",
       "text1637_html": "Ende hy nam haer tot hem in de selve uyre des nachts, ende <sup class=\"note-marker\" data-note=\"69\">69</sup> wiesch [<i>haer</i>] van de stramen: ende hy wierdt terstont gedoopt, ende alle de sijne.",
       "phraseDiff": [
         {
-          "old": "dezelve",
-          "new": "dezelfde",
+          "old": "",
+          "new": "op datzelfde uur",
+          "principe": "V8"
+        },
+        {
+          "old": "dezelve ure des nachts,",
+          "new": "de nacht,",
           "principe": "O3"
         },
         {
-          "old": "des nachts,",
-          "new": "bij nacht,",
-          "principe": "N3"
+          "old": "wies",
+          "new": "groeide",
+          "principe": null
         },
         {
           "old": "terstond",
@@ -5154,7 +5262,7 @@
       "number": 36,
       "textSV1888": "En de stokbewaarder boodschapte deze woorden aan Paulus, zeggende: De hoofdmannen hebben gezonden, dat gij zoudt losgelaten worden; gaat dan nu uit, en reist heen in vrede.",
       "text1637": "Ende de stockwaerder boodschapte dese woorden aen Paulum, [seggende], De Hooftmannen hebben gesonden dat ghy soudt los gelaten worden: Gaet dan nu uyt, ende reyst henen in vrede.",
-      "text2026": "En de stokbewaarder meldde deze woorden aan Paulus, zeggende: De hoofdmannen hebben gezonden, dat u zou losgelaten worden; gaat dan nu uit, en reist heen in vrede.",
+      "text2026": "En de stokbewaarder meldde deze woorden aan Paulus, zeggende: De hoofdmannen hebben gezonden, dat u zou losgelaten worden; ga dan nu naar buiten en vertrek in vrede.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -5290,13 +5398,33 @@
           "gloss": "〔peace"
         }
       ],
-      "text2026_html": "En de stokbewaarder meldde deze woorden aan Paulus, zeggende: <span class=\"direct-speech\"><i>De hoofdmannen hebben gezonden, dat u zou losgelaten worden; gaat dan nu uit, en reist heen in vrede.</i></span>",
+      "text2026_html": "En de stokbewaarder meldde deze woorden aan Paulus, zeggende: <span class=\"direct-speech\"><i>De hoofdmannen hebben gezonden, dat u zou losgelaten worden; ga dan nu naar buiten en vertrek in vrede.</i></span>",
       "text1637_html": "Ende de stockwaerder boodschapte dese woorden aen Paulum, [<i>seggende</i>], De Hooftmannen hebben gesonden dat ghy soudt los gelaten worden: Gaet dan nu uyt, ende reyst henen in vrede.",
       "phraseDiff": [
+        {
+          "old": "boodschapte",
+          "new": "meldde",
+          "principe": null
+        },
         {
           "old": "gij zoudt",
           "new": "u zou",
           "principe": "V202"
+        },
+        {
+          "old": "gaat",
+          "new": "ga",
+          "principe": null
+        },
+        {
+          "old": "uit,",
+          "new": "naar buiten",
+          "principe": null
+        },
+        {
+          "old": "reist heen",
+          "new": "vertrek",
+          "principe": null
         }
       ]
     },
@@ -5304,7 +5432,7 @@
       "number": 37,
       "textSV1888": "Maar Paulus zeide tot hen: Zij hebben ons, die Romeinen zijn, onveroordeeld in het openbaar gegeseld, en in de gevangenis geworpen, en werpen zij ons nu heimelijk daaruit? Niet alzo; maar dat zij zelven komen, en ons uitleiden.",
       "text1637": "Maer Paulus seyde [74] tot haer, Sy hebben ons [75] die Romeynen zijn, [76] onveroordeelt in't openbaer gegeesselt, ende in de gevangenisse geworpen, ende werpen'se ons nu heymelijck daer uyt? [77] Niet alsoo: maer dat'se selve komen, ende ons uytleyden.",
-      "text2026": "Maar Paulus zei tot hen: Zij hebben ons, die Romeinen zijn, onveroordeeld in het openbaar gegeseld, en in de gevangenis geworpen, en werpen zij ons nu in het geheim daaruit? Niet zo; maar dat zij zelven komen, en ons uitleiden.",
+      "text2026": "Maar Paulus zei tot hen: Zij hebben ons, die Romeinen zijn, onveroordeeld in het openbaar gegeseld, en in de gevangenis geworpen, en werpen zij ons nu in het geheim daaruit? Niet zo; maar laat zij zelf komen en ons uitleiden.",
       "marginNotes": [
         {
           "marker": "74",
@@ -5505,7 +5633,7 @@
           "gloss": "〔to lead out"
         }
       ],
-      "text2026_html": "Maar Paulus zei tot hen: <span class=\"direct-speech\"><i>Zij hebben ons, die Romeinen zijn, onveroordeeld in het openbaar gegeseld, en in de gevangenis geworpen, en werpen zij ons nu in het geheim daaruit? Niet zo; maar dat zij zelven komen, en ons uitleiden.</i></span>",
+      "text2026_html": "Maar Paulus zei tot hen: <span class=\"direct-speech\"><i>Zij hebben ons, die Romeinen zijn, onveroordeeld in het openbaar gegeseld, en in de gevangenis geworpen, en werpen zij ons nu in het geheim daaruit? Niet zo; maar laat zij zelf komen en ons uitleiden.</i></span>",
       "textSV1888_html": "Maar Paulus zeide<sup class=\"note-marker\" data-note=\"74\">74</sup> tot hen: Zij hebben ons,<sup class=\"note-marker\" data-note=\"75\">75</sup> die Romeinen zijn,<sup class=\"note-marker\" data-note=\"76\">76</sup> onveroordeeld in het openbaar gegeseld, en in de gevangenis geworpen, en werpen zij ons nu heimelijk daaruit?<sup class=\"note-marker\" data-note=\"77\">77</sup> Niet alzo; maar dat zij zelven komen, en ons uitleiden.",
       "text1637_html": "Maer Paulus seyde <sup class=\"note-marker\" data-note=\"74\">74</sup> tot haer, Sy hebben ons <sup class=\"note-marker\" data-note=\"75\">75</sup> die Romeynen zijn, <sup class=\"note-marker\" data-note=\"76\">76</sup> onveroordeelt in't openbaer gegeesselt, ende in de gevangenisse geworpen, ende werpen'se ons nu heymelijck daer uyt? <sup class=\"note-marker\" data-note=\"77\">77</sup> Niet alsoo: maer dat'se selve komen, ende ons uytleyden.",
       "phraseDiff": [
@@ -5523,6 +5651,16 @@
           "old": "alzo;",
           "new": "zo;",
           "principe": "V42"
+        },
+        {
+          "old": "dat",
+          "new": "laat",
+          "principe": null
+        },
+        {
+          "old": "zelven komen,",
+          "new": "zelf komen",
+          "principe": null
         }
       ]
     },
@@ -5644,6 +5782,11 @@
       "text1637_html": "Ende de stadts-dienaers boodschapten dese woorden wederom den Hoofdmannen: ende sy wierden bevreest, <sup class=\"note-marker\" data-note=\"78\">78</sup> hoordende dat sy <sup class=\"note-marker\" data-note=\"79\">79</sup> Romeynen waren.",
       "phraseDiff": [
         {
+          "old": "boodschapten",
+          "new": "meldden",
+          "principe": null
+        },
+        {
           "old": "wederom den",
           "new": "opnieuw de",
           "principe": "V6"
@@ -5741,13 +5884,20 @@
       ],
       "text2026_html": "En zij, komende, baden hen, en als zij hen uitgeleid hadden,<sup class=\"note-marker\" data-note=\"r\">r</sup> verzochten zij, dat<sup class=\"note-marker\" data-note=\"80\">80</sup> zij uit de stad gaan zouden.",
       "textSV1888_html": "En zij, komende, baden hen, en als zij hen uitgeleid hadden,<sup class=\"note-marker\" data-note=\"r\">r</sup> begeerden zij, dat<sup class=\"note-marker\" data-note=\"80\">80</sup> zij uit de stad gaan zouden.",
-      "text1637_html": "Ende sy komende baden haer, ende als sy'se uyt-geleydt hadden <sup class=\"note-marker\" data-note=\"r\">r</sup> begeerden sy, dat'se <sup class=\"note-marker\" data-note=\"80\">80</sup> uyt de stadt gaen souden."
+      "text1637_html": "Ende sy komende baden haer, ende als sy'se uyt-geleydt hadden <sup class=\"note-marker\" data-note=\"r\">r</sup> begeerden sy, dat'se <sup class=\"note-marker\" data-note=\"80\">80</sup> uyt de stadt gaen souden.",
+      "phraseDiff": [
+        {
+          "old": "begeerden",
+          "new": "verzochten",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 40,
       "textSV1888": "En uitgegaan zijnde uit de gevangenis, gingen zij in tot Lydia; en de broeders gezien hebbende, vertroostten zij dezelve, en gingen uit de stad.",
       "text1637": "Ende uytgegaen zijnde uyt de gevangenisse, gingen sy in [81] tot Lydiam: ende de broeders gesien hebbende [82] vertroosteden [83] sy de selve, ende gingen uyt [de stadt].",
-      "text2026": "En uitgegaan zijnde uit de gevangenis, gingen zij in tot Lydia; en de broeders gezien hebbende, vertroostten zij dezelfde, en gingen uit de stad.",
+      "text2026": "En uitgegaan zijnde uit de gevangenis, gingen zij in tot Lydia; en de broeders gezien hebbende, vertroostten zij hen en vertrokken uit de stad.",
       "marginNotes": [
         {
           "marker": "81",
@@ -5869,14 +6019,19 @@
           "gloss": "〔to go out"
         }
       ],
-      "text2026_html": "En uitgegaan zijnde uit de gevangenis, gingen zij in<sup class=\"note-marker\" data-note=\"81\">81</sup> tot Lydia; en de broeders gezien hebbende,<sup class=\"note-marker\" data-note=\"82\">82</sup> vertroostten<sup class=\"note-marker\" data-note=\"83\">83</sup> zij dezelfde, en gingen uit de stad.",
+      "text2026_html": "En uitgegaan zijnde uit de gevangenis, gingen zij in<sup class=\"note-marker\" data-note=\"81\">81</sup> tot Lydia; en de broeders gezien hebbende,<sup class=\"note-marker\" data-note=\"82\">82</sup> vertroostten<sup class=\"note-marker\" data-note=\"83\">83</sup> zij hen en vertrokken uit de stad.",
       "textSV1888_html": "En uitgegaan zijnde uit de gevangenis, gingen zij in<sup class=\"note-marker\" data-note=\"81\">81</sup> tot Lydia; en de broeders gezien hebbende,<sup class=\"note-marker\" data-note=\"82\">82</sup> vertroostten<sup class=\"note-marker\" data-note=\"83\">83</sup> zij dezelve, en gingen uit de stad.",
       "text1637_html": "Ende uytgegaen zijnde uyt de gevangenisse, gingen sy in <sup class=\"note-marker\" data-note=\"81\">81</sup> tot Lydiam: ende de broeders gesien hebbende <sup class=\"note-marker\" data-note=\"82\">82</sup> vertroosteden <sup class=\"note-marker\" data-note=\"83\">83</sup> sy de selve, ende gingen uyt [<i>de stadt</i>].",
       "phraseDiff": [
         {
           "old": "dezelve,",
-          "new": "dezelfde,",
+          "new": "hen",
           "principe": "O3"
+        },
+        {
+          "old": "gingen",
+          "new": "vertrokken",
+          "principe": null
         }
       ]
     }
