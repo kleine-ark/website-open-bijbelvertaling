@@ -73,6 +73,7 @@ const App = {
         handelingen:[1,2,3,4,5,6,7,8],
         romeinen:   [1,2],
         '1johannes':'all',
+        '2johannes':'all',
         gebedvanmanasse:'all',
         filemon:    'all',
         judas:      'all',

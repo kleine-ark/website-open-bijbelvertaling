@@ -39,7 +39,7 @@
 <body>
 <script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
     <nav id="topnav" style="display:flex;align-items:center;background:#142e42;color:#fff;padding:0 30px;height:52px;font-family:'Fira Sans',sans-serif;position:sticky;top:0;z-index:300;">
-        <div style="font-family:'Allura',cursive;font-size:28px;color:#fff;">Open Staten Vertaling<span class="topnav-subtitle"> public-domain herziening van de Statenvertaling</span> <span style="font-family:'Fira Sans';font-size:10px;font-weight:600;background:rgba(203,164,73,0.25);color:#cba449;padding:1px 6px;border-radius:3px;vertical-align:middle;margin-left:4px;"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.14</a></span></div>
+        <div style="font-family:'Allura',cursive;font-size:28px;color:#fff;">Open Staten Vertaling<span class="topnav-subtitle"> public-domain herziening van de Statenvertaling</span> <span style="font-family:'Fira Sans';font-size:10px;font-weight:600;background:rgba(203,164,73,0.25);color:#cba449;padding:1px 6px;border-radius:3px;vertical-align:middle;margin-left:4px;"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.14.1</a></span></div>
         <div style="display:flex;gap:2px;margin:0 auto;">
             <a href="over-ov.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Over OV</a>
             <a href="index.html#johannes/1" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Tekst</a>
@@ -65,14 +65,48 @@
             <h1>Changelog</h1>
             <p class="subtitle">Alle wijzigingen per versie</p>
 
+            <div id="stats-per-day" style="background:#fff;border:1px solid #e5e1d8;border-radius:8px;padding:16px 20px;margin-bottom:24px;">
+                <div style="font-size:12px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">Wijzigingen per dag (laatste 21 dagen)</div>
+                <div id="stats-bars"></div>
+            </div>
+
             <div id="changelog-container">Laden...</div>
         </div>
     </div>
 
     <script>
+    function renderStatsPerDay(data) {
+        // Verzamel items-per-dag uit alle entries (laatste 21 unieke datums)
+        const perDay = {};
+        for (const dag of data.wijzigingen) {
+            if (!dag.datum) continue;
+            perDay[dag.datum] = (perDay[dag.datum] || 0) + (dag.items?.length || 0);
+        }
+        const sorted = Object.entries(perDay).sort((a,b) => b[0].localeCompare(a[0])).slice(0, 21).reverse();
+        if (sorted.length === 0) return;
+        const max = Math.max(...sorted.map(([,n]) => n));
+        const fmt = (iso) => {
+            const [y,m,d] = iso.split('-');
+            const months = ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
+            return `${parseInt(d)} ${months[parseInt(m)-1]}`;
+        };
+        const html = sorted.map(([datum, n]) => {
+            const w = max > 0 ? (n / max * 100) : 0;
+            return `<div style="display:flex;align-items:center;gap:10px;font-size:12px;margin-bottom:3px;">
+                <span style="width:62px;color:#666;text-align:right;flex-shrink:0;">${fmt(datum)}</span>
+                <div style="flex:1;background:#f0ede8;border-radius:3px;height:18px;position:relative;overflow:hidden;">
+                    <div style="background:linear-gradient(90deg,#cba449,#d4b463);height:100%;width:${w}%;border-radius:3px;"></div>
+                </div>
+                <span style="width:42px;color:#142e42;font-weight:600;font-size:11px;">${n}</span>
+            </div>`;
+        }).join('');
+        document.getElementById('stats-bars').innerHTML = html;
+    }
+
     async function loadChangelog() {
         const resp = await fetch('data/changelog.json');
         const data = await resp.json();
+        renderStatsPerDay(data);
         const container = document.getElementById('changelog-container');
 
         const typeLabels = {
@@ -142,7 +176,7 @@
                 <a href="contact.html">Contact</a>
             </nav>
             <div class="site-footer-meta">
-                <span>v0.14 · 1 mei 2026</span>
+                <span>v0.14.1 · 4 mei 2026</span>
                 <span>CC0 · vrij van alle rechten</span>
             </div>
         </div>
