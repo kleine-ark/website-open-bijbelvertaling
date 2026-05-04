@@ -1,6 +1,80 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-05-04",
+      "versie": "v0.14.1",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Romeinen 2 vers-voor-vers handmatig nagekeken en gemarkeerd als verified (banner verdwijnt)"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Romeinen 2-3: 'oordeel/goedertierenheid/waarheid Gods' → '... van God'; 'Welke ieder' → 'Die een ieder'; 'een anderen' → 'een ander'; Rom 3:1 'nuttigheid van de besnijdenis' → 'nut van de besnijdenis'"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Gebed van Manasse 1:1 'God onzer vaderen' → 'God van onze vaderen'; volledig verified"
+        }
+      ]
+    },
+    {
+      "datum": "2026-05-03",
+      "versie": "v0.14.1",
+      "items": [
+        {
+          "type": "bulk",
+          "beschrijving": "'iegelijk' → 'iedereen' was systematisch foutief vertaald; correctie naar 'ieder' / 'een ieder' / 'iedere [zelfst.nw.]' bijbel-breed: 279 verzen in 200 hoofdstukken"
+        },
+        {
+          "type": "bulk",
+          "beschrijving": "Massa-modernisering 'X Gods' → 'X van God' bijbel-breed (kracht, liefde, genade, vrede, toorn, Geest, wil, Naam, Zoon, beeld, Koninkrijk, huis, volk, kinderen, Engel, engelen, Knecht, Lam) — honderden verzen"
+        },
+        {
+          "type": "bulk",
+          "beschrijving": "'gedurig' → 'steeds' (126 voorkomens in 85 hoofdstukken); 'ten grave' → 'naar het graf' (datief uitgang weg); 'rechterhand Gods' → 'rechterhand van God'; 'grote/luide stemme' → 'grote/luide stem'; 'X Israëls' → 'X van Israël' (kinderen, zonen, volk, stammen, koningen)"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Handelingen 7+8 vers-voor-vers handmatig nagekeken en gemarkeerd als verified — incl. veel HTML-correcties (citaat-grenzen, gebroken note-markers), Madiam→Midian, achtsten→achtste, voorttelen→voortplanten, Hand 7:18 een ander koning, etc."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "1 Johannes (alle 5 hoofdstukken) vers-voor-vers handmatig nagekeken en gemarkeerd als verified — incl. 'Een iedereen' → 'Een ieder' patroon, 'Hij daarin' → 'Hij in hen', 'met de woorde' → 'met het woord', 'God is meerder' → 'God is meer'"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Romeinen 1 vers-voor-vers handmatig nagekeken en gemarkeerd als verified — incl. 'geliefden van God', 'met als doel dat', 'zowel het mijne als het uwe', 'En eveneens'"
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Begrippen-popup toont nu een waarschuwing 'AI-generated, nog niet gecontroleerd' — onderaan elke begrip-uitleg"
+        },
+        {
+          "type": "feature",
+          "beschrijving": "AI-concept-banner voor niet-geverifieerde hoofdstukken op zowel index.html als lees.html. Voorpagina toont expliciete lijst van handmatig nagekeken hoofdstukken"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Begrippen-banner op voorpagina + begrippen.html (concept-waarschuwing AI). Diverse begrippen toegevoegd voor Hand 5-8: Judas de Galileër, Grieken, Hebreeën, Prochorus, Nicolaus, Antiochië, Libertijnen, Cilicië, Azië, Charran, Mesopotamië, Farao, Patriarchen, Jozef, Kanaän, Azote. Verwijderd als begrip: 'hout', 'eerste', 'zeventig', 'koning', 'werken', 'waarom'"
+        },
+        {
+          "type": "systeem",
+          "beschrijving": "phraseDiff bijbel-breed meermaals geregenereerd na de bulk-wijzigingen (70.6k diff-items, 91% gekoppeld aan principe)"
+        }
+      ]
+    },
+    {
+      "datum": "2026-05-02",
+      "versie": "v0.14.1",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Handelingen 5-6 vers-voor-vers nagekeken en gemarkeerd als verified — incl. Hand 5:30 herschreven naar 'De God van onze vaderen heeft Jezus opgewekt, Die u omgebracht hebt, Hem hangend aan het hout'; Hand 5:37 'maakte veel volks afvallig' → 'maakte veel van het volk afvallig'; Hand 5:41 'waardig geacht waren om vanwege Zijn Naam smaadheid'; 'verkoren' → 'kozen'"
+        }
+      ]
+    },
+    {
       "datum": "2026-05-01",
       "versie": "v0.14",
       "items": [
