@@ -151,96 +151,12 @@
       "versie": "v0.14",
       "items": [
         {
-          "type": "feature",
-          "beschrijving": "Inloggen met Google: rechtsboven verschijnt een 'Login'-knop. Na inloggen worden je markeringen automatisch tussen al je apparaten gesynchroniseerd (telefoon, laptop, tablet) via Firebase. Zonder login werkt alles ook — markeringen worden dan alleen lokaal in deze browser bewaard."
-        },
-        {
-          "type": "feature",
-          "beschrijving": "Markeringen in 4 kleuren (magenta, lichtblauw, lichtgroen, lichtgeel) — selecteer een woord of vers en kies een kleur uit het zwevende palette. Werkt op losse woorden én op hele verzen. Verkeerd gemarkeerd? Klik op de gele/blauwe vlek en de markering verdwijnt — alleen die ene, niet de rest van het vers."
-        },
-        {
-          "type": "feature",
-          "beschrijving": "Feedback geven op de tekst: selecteer een stukje tekst, klik op de 💬-knop in het kleuren-palette (of rechter-muisklik) → vul je suggestie in → verzend. De feedback komt direct in een mail bij Maarten Vroegindeweij aan, met versverwijzing en geselecteerde tekst."
-        },
-        {
-          "type": "feature",
-          "beschrijving": "Voorlezing van Genesis 1 én Johannes 1: open lees.html op die hoofdstukken en zie onderin een grote gouden ▶-knop. Klik om de audio te starten. Volgende hoofdstukken worden later toegevoegd in audio/{boek}/{hoofdstuk}.mp3."
-        },
-        {
-          "type": "feature",
-          "beschrijving": "Voorpagina met hero-afbeelding: over-ov.html opent met een schilderij van Jezus en de Samaritaanse vrouw bij de bron (Johannes 4) met de quote 'Ik ben het, Die met u spreekt'. De afbeelding gaat zacht over in de pagina-content via een fade-out gradient."
-        },
-        {
-          "type": "feature",
-          "beschrijving": "Mobiele bijbel-picker: tap op de boek-knop bovenaan en je krijgt een fullscreen-overlay met alle boeken (gegroepeerd per Pentateuch / Historische / Profeten / Apocriefen / Evangeliën / etc.) in cursief Garamond. Tap een boek → zie meteen het hoofdstuk-grid → tap een hoofdstuk → overlay sluit en je bent er. Dus boek + hoofdstuk in 2 taps."
-        },
-        {
-          "type": "feature",
-          "beschrijving": "Sticky audio-+-navigatie-footer onderaan lees.html: vorig hoofdstuk-pijltje, gouden play-knop voor voorlezing (alleen zichtbaar bij hoofdstukken met audio), de naam van het huidige hoofdstuk in cursief, en een volgend hoofdstuk-pijltje. Blijft altijd in beeld tijdens scrollen."
-        },
-        {
-          "type": "feature",
-          "beschrijving": "Tekstkwaliteit-wizard (tekstkwaliteit.html): 6.700 mogelijke verbeterpunten uit een AI-scan over alle 82 bijbelboeken, gebundeld per patroon (verouderde woorden, niet-lopende zinnen, cascade-bugs uit eerdere bulk-fixes, ontbrekende voorzetsels, etc.). Per bundel kies je 'pas alles toe' of 'sla over'."
-        },
-        {
-          "type": "feature",
-          "beschrijving": "Begrippen aan-uit per boek: 81 van de 82 bijbelboeken hebben nu een eigen begrippenlijst (Genesis 927 begrippen, Psalmen 776, Johannes 431, etc.). Klik op een woord en zie een popup met uitleg. Plus een cross-boek encyclopedie-supplement met 6.895 algemene NL-begrippen — totaal 13.136 entries, 8.304 unieke woorden."
-        },
-        {
-          "type": "feature",
-          "beschrijving": "Apocriefe boeken expliciet toegevoegd in de positie-omschrijving: 16 apocriefe boeken uit SV1637 (3 Ezra, 4 Ezra, Tobit, Judith, Boek der Wijsheid, Jezus Sirach, Baruch, etc.) staan tussen Oude en Nieuwe Testament conform de SV1637-volgorde. Worden meegenomen in alle scans, begrippen en lexicon-koppelingen."
-        },
-        {
-          "type": "feature",
-          "beschrijving": "Site-footer op alle statische pagina's: navy-balk onderaan met OV2026-wordmark, gouden bovenlijn, navigatie-links en versie-info. Geeft visuele rust onder lange pagina's."
-        },
-        {
-          "type": "ui",
-          "beschrijving": "Cursief Allura-logo 'Open Vertaling' linksboven in topnav (was eerst plain Fira Sans bold). Topnav-links (Over OV / Tekst / Wiki / Contact) opgeschoven naar links, dichter bij het logo."
-        },
-        {
-          "type": "ui",
-          "beschrijving": "Topnav hoger (72px desktop, 56px mobiel) met doorlopende gouden onderlijn. Sidebars links én rechts hebben dezelfde gouden bovenlijn — visuele consistentie. Sidebar-header sticky bovenin sidebar zodat de inklap-toggle altijd bereikbaar blijft."
-        },
-        {
-          "type": "ui",
-          "beschrijving": "Bij twee zichtbare kolommen (bv. SV1888 + OV2026 naast elkaar) zijn de breedtes nu standaard 50/50 (`minmax(0, 1fr)` i.p.v. `1fr`). Lange content duwt geen kolom meer scheef. Kolom-resize (slepen op grens) blijft werken voor handmatige aanpassing."
-        },
-        {
-          "type": "ui",
-          "beschrijving": "Sticky chapter-footer onderaan index.html met 'Vorig hoofdstuk' / 'Boeknaam X / Y' / 'Volgend hoofdstuk' — blijft altijd zichtbaar tijdens scrollen door lange hoofdstukken."
-        },
-        {
-          "type": "ui",
-          "beschrijving": "'Tekst'-link in de topnav opent voortaan Johannes 1 (i.p.v. Genesis 1) met begrippen-popup standaard aan. Begrippen-checkbox in Opties is default checked — klikbare oranje begrippen verschijnen direct."
-        },
-        {
-          "type": "ui",
-          "beschrijving": "Strong's-checkbox uit het Analyse-blok in Opties verwijderd — Strong's-nummers zijn nu inline beschikbaar in de Hebr/Grieks-kolom. Search-emoji 🔍 vervangen door schoon SVG-vergrootglas. Hamburger op mobiel groter (44×44) en aan de rechterkant met dikkere strepen."
-        },
-        {
-          "type": "ui",
-          "beschrijving": "Contact-pagina: LinkedIn-knop (linkedin.com/in/maarten-vroegindeweij) en kleineark.com-knop met SVG-icoontjes naast e-mailadres."
+          "type": "bulk",
+          "beschrijving": "Begrippenlijsten verdiept en uitgebreid: 81 van de 82 bijbelboeken hebben nu een eigen begrippenlijst (Genesis 927, Psalmen 776, Johannes 431, etc.) — totaal 13.136 begrippen-entries (8.304 unieke woorden) inclusief encyclopedie-supplement"
         },
         {
           "type": "fix",
-          "beschrijving": "Cloud-highlights merge-bug: na lokaal verwijderen van een markering kwam die bij refresh terug uit de cloud (per-key union-merge). Vervangen door last-writer-wins op het hele state-object — verwijderingen blijven nu definitief weg."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "Highlight-bug: het 2e voorkomen van een woord (bv. 'God') markeerde altijd het 1e voorkomen omdat de DOM-zoeker `indexOf` gebruikte. Nu wordt het exacte char-offset binnen de cel-tekst opgeslagen — markering komt op precies het geselecteerde stuk, ook over <sup>-noten en <i>-spans heen."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "Layout-bug 'donker gat' onder topnav: het lege #app-header element (book-nav/toolbar verborgen) toonde toch zijn navy-blauwe achtergrond. Nu transparent gemaakt met :has()-selector zodat de chapter-titel direct onder topnav aansluit."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "Mobile picker bug: na chapter-pick toonde de topbar-knop nog het oude hoofdstuk-nr (bv. 'Genesis 18' bij keuze Genesis 1). Direct label-update + delayed sync als backup."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "Audio play-knop bleef verborgen op live site: HEAD-probe werd door service worker geblokkeerd → vervangen door hardcoded AUDIO_AVAILABLE map in lees.js."
+          "beschrijving": "Apocriefe boeken expliciet meegenomen op SV1637-positie tussen Oude en Nieuwe Testament: 16 boeken (3 Ezra, 4 Ezra, Tobit, Judith, Boek der Wijsheid, Jezus Sirach, Baruch, etc.) inclusief in alle scans en begrippen"
         }
       ]
     },
@@ -249,44 +165,48 @@
       "versie": "v0.13.6",
       "items": [
         {
-          "type": "bulk",
-          "beschrijving": "Modernisering ronde 2 (V222–V231): tweede systematische pas op patronen die nog door de hele Bijbel stonden. Veilige globale vervangingen: altoos→altijd (V222, 29 hoofdtekst + 135 marginNotes); daarhenen→daarheen (V223, 34 + 88); ten dage (dat|als|van|toen|wanneer|waarop)→op de dag … (V224, 135 + 4 specials + 275 marginNotes)."
+          "type": "principe",
+          "beschrijving": "V222 altoos → altijd (29 hoofdtekst + 135 marginNotes)"
         },
         {
-          "type": "bulk",
-          "beschrijving": "vreze (van/voor/des/Gods)→vrees voor (V225): 33 hoofdtekst-fixes (genitief 22 + Gods 8 + voor 3) + 31 generic 'vreze van X' + 124 marginNotes. Skip: Vreze van Izak (Gen 31:42, 31:53, naam-epitheton). Restant 82 'vreze' (subject/predicatief in vaste uitdrukkingen) bewust gehouden."
+          "type": "principe",
+          "beschrijving": "V223 daarhenen → daarheen (34 + 88)"
         },
         {
-          "type": "fix",
-          "beschrijving": "-lijk-bijwoorden moderniseren: klaarlijk→duidelijk (V226, 5 + 79); welbehagelijk→welgevallig (V227, 9 + 30)."
+          "type": "principe",
+          "beschrijving": "V224 ten dage (dat|als|van|toen|wanneer|waarop) → op de dag … (135 hoofdtekst + 4 specials + 275 marginNotes)"
         },
         {
-          "type": "fix",
-          "beschrijving": "Tegenwoordig deelwoord constructies (V228): 5 verzen handmatig herzien (Sirach 42:19, 1 Kon 8:32 en 6:12, 2 Kron 6:23, Jer 20:15). Stylistisch acceptabele participia (etende/drinkende/wandelende narratief) bewust niet aangetast."
+          "type": "principe",
+          "beschrijving": "V225 vreze (van/voor/des/Gods) → vrees voor (33 hoofdtekst + 31 'vreze van X' + 124 marginNotes). Skip: 'Vreze van Izak' (Gen 31:42, 31:53, naam-epitheton). Restant 82 'vreze' (subject/predicatief) bewust gehouden"
         },
         {
-          "type": "fix",
-          "beschrijving": "verborgene→verborgen (V229): 15 attributieve fixes hoofdtekst (verborgene plaatsen/dingen/misdracht/etc) + 46 marginNotes. Substantief 'in het verborgene' behouden."
+          "type": "principe",
+          "beschrijving": "V226 klaarlijk → duidelijk (5 + 79); V227 welbehagelijk → welgevallig (9 + 30)"
         },
         {
-          "type": "bulk",
-          "beschrijving": "dezelfde-anaforisch (V230): in vorige pass was SV-anaforisch dezelve/denzelven/derzelver/dezelven gewoon door 'dezelfde' vervangen, wat awkward modern Nederlands gaf (=identical). Cross-check met SV1888: alleen waar SV anaforisch pron had ~232 PASS-1 patches naar 'daar+prep' (in→daarin, op→daarop, door→daardoor, …) + 15 PASS-2 OBJ-fixes (genas hen, doet die, overtoog die, …). Modern uses 'dezelfde dag/wijze/Geest/God' bewust gehouden. Tag-tolerant HTML-pass voor 17 verzen waar <sup>-noten tussen prep en dezelfde zaten."
+          "type": "principe",
+          "beschrijving": "V228 tegenwoordig deelwoord constructies: 5 verzen handmatig herzien (Sirach 42:19, 1 Kon 8:32 + 6:12, 2 Kron 6:23, Jer 20:15). Stylistisch acceptabele participia (etende/drinkende/wandelende narratief) bewust niet aangetast"
         },
         {
-          "type": "fix",
-          "beschrijving": "X handen werk → het werk van X handen (V231): 3 voorkomens (Jer 25:6, Jes 64:8, Job 34:19). Ps 138:8 reeds eerder gefixt."
+          "type": "principe",
+          "beschrijving": "V229 verborgene → verborgen: 15 attributieve fixes (verborgene plaatsen/dingen/misdracht/etc) + 46 marginNotes. Substantief 'in het verborgene' behouden"
         },
         {
-          "type": "fix",
-          "beschrijving": "Cascade html-fixes: tag-tolerante regex-passes voor 17 dezelfde + 3 verborgene + 10 ten dage gevallen waar HTML <sup>-noten de patroon-match braken. Plus 1 manuele HTML-fix Jer 18:17 ('ten dage huns verderfs' → 'op de dag van hun verderf')."
+          "type": "principe",
+          "beschrijving": "V230 dezelfde-anaforisch: SV-anaforisch dezelve/denzelven/derzelver/dezelven was eerder onterecht door 'dezelfde' (= identical) vervangen. Nu cross-check met SV1888: ~232 patches naar 'daar+prep' (in→daarin, op→daarop, door→daardoor, …) + 15 OBJ-fixes (genas hen, doet die, overtoog die, …). Modern 'dezelfde dag/wijze/Geest/God' bewust gehouden"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V231 X handen werk → het werk van X handen (3 voorkomens: Jer 25:6, Jes 64:8, Job 34:19; Ps 138:8 reeds gefixt)"
         },
         {
           "type": "skip",
-          "beschrijving": "Bewust niet aangetast: J. trotsheden (0 voorkomens) en gerechtigheden (16 voorkomens) — 'gerechtigheden' wordt in OT consistent gebruikt voor 'rechtvaardige daden' (echte meervoud), modern Nederlands behoudt deze betekenis. Overige acceptabele oud-bijbeltaal-idiomen in 'vreze' (subject) gelaten."
+          "beschrijving": "Bewust niet aangetast: trotsheden (0 voorkomens) en gerechtigheden (16 voorkomens) — 'gerechtigheden' wordt in OT consistent gebruikt voor 'rechtvaardige daden' (echte meervoud), modern Nederlands behoudt deze betekenis"
         },
         {
           "type": "skip",
-          "beschrijving": "Skiplist gerespecteerd: 45 handmatige-correcties verzen (35 in psalmen 5-19; gen 12:7, gen 25:22, gen 1:27, mi 7:17, johannes 1:11, joh 1:13, job 22:10) niet aangeraakt — text2026 én text2026_html intact gehouden."
+          "beschrijving": "Skiplist gerespecteerd: 45 handmatig-gecorrigeerde verzen (35 in psalmen 5-19; gen 12:7, gen 25:22, gen 1:27, mi 7:17, joh 1:11, joh 1:13, job 22:10) niet aangeraakt"
         }
       ]
     },
@@ -295,36 +215,36 @@
       "versie": "v0.13.5",
       "items": [
         {
-          "type": "bulk",
-          "beschrijving": "Cascade-reparatie genitief-pronomina (V218): 2.688 verzen waar Uwer/zijner/hunner door eerdere bulkfix simpelweg gestript was naar uw/zijn/hun zonder 'van' (analoog aan eerdere mijner→van mijn correctie). Triple-match met SV1888 als bron: 1.053 uwer-cases, 1.129 zijner-cases, 600 hunner-cases. Top boeken: psalmen (308), jeremia (188), ezechiel (174), deuteronomium (160), jesaja (156), numeri (132), 2kronieken (124), genesis (122), leviticus (116), jezussirach (92)."
+          "type": "principe",
+          "beschrijving": "V218 cascade-reparatie genitief-pronomina: 2.688 verzen waar Uwer/zijner/hunner door eerdere bulkfix simpelweg gestript was naar uw/zijn/hun zonder 'van' (analoog aan eerdere mijner→van mijn correctie). Triple-match met SV1888 als bron: 1.053 uwer-cases, 1.129 zijner-cases, 600 hunner-cases. Top boeken: psalmen (308), jeremia (188), ezechiel (174), deuteronomium (160), jesaja (156), numeri (132), 2kronieken (124), genesis (122), leviticus (116), jezussirach (92)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V219 idioom-restoratie 'te zijner tijd': in 25 verzen was het door bulkfix verlost tot 'te zijn tijd' (ongrammaticaal). Hersteld als vaste uitdrukking"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V220 verb+genitief-idiomen: 39 verzen waar 'zich/Mij/ik [pron-gen] ontfermen/erbarmen/gedenken' niet 'van' maar 'over' (ontfermen/erbarmen) of 'aan' (gedenken/herinneren) vereist. Bv. Jes 55:7 'zich Zijn ontfermen' → 'zich over hem ontfermen'; Fil 1:3 'ik uw gedenk' → 'ik aan u gedenk'"
         },
         {
           "type": "fix",
-          "beschrijving": "Idioom-restoratie 'te zijner tijd' (V219): in 25 verzen was het door bulkfix verlost tot 'te zijn tijd' (ongrammaticaal). Hersteld als vaste uitdrukking."
+          "beschrijving": "om-X-wil cascade: 'om uw/zijn/hun X wil' → 'omwille van uw/zijn/hun X' conform V217 (30 verzen in psalmen, jeremia, jesaja e.a.)"
         },
         {
           "type": "fix",
-          "beschrijving": "Verb+genitief-idiomen (V220): 39 verzen waar 'zich/Mij/ik [pron-gen] ontfermen/erbarmen/gedenken' niet 'van' maar 'over' (ontfermen/erbarmen) of 'aan' (gedenken/herinneren) vereist. Bv. Jes 55:7 'zich Zijn ontfermen' → 'zich over hem ontfermen'; Fil 1:3 'ik uw gedenk' → 'ik aan u gedenk'."
+          "beschrijving": "MarginNotes-citaten Uwer (196 vervangingen in 32 boeken): in kanttekeningen geciteerde bijbelverzen met 'Uwer X' nu consistent met hoofdtekst gemaakt (→ 'van Uw X'). Top boeken: hebreeen (23), jesaja (22), jeremia (17), daniel (14), micha (11)"
         },
         {
           "type": "fix",
-          "beschrijving": "om-X-wil cascade (30): 'om uw/zijn/hun X wil' → 'omwille van uw/zijn/hun X' conform V217 (psalmen, jeremia, jesaja e.a.)."
+          "beschrijving": "Cascade-bug 'van van' (V218 nasleep): 4 verzen (Gen 23:3, Hand 3:2, Hand 14:8, Luk 1:15) waar 'van zijner moeders lijf' eerder gerepareerd was tot 'van zijn moeders lijf', maar bij her-toepassing 'van van zijn moeders lijf' was geworden — gerepareerd"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V221 verkleinwoord 'manneken' bij dieren: Ex 12:5 + Deut 15:19 'manneken' → 'mannetje' (mannelijk lam). Op 12:13 (manneken=mannelijk kind, Christus) bewust niet aangetast wegens retorisch belang. Vrouwkens (2 Tim 3:6-7) eveneens behouden wegens nuance van γυναικάρια"
         },
         {
           "type": "fix",
-          "beschrijving": "MarginNotes-citaten Uwer (196 vervangingen in 32 boeken): in kanttekeningen geciteerde bijbelverzen met 'Uwer X' nu consistent met hoofdtekst gemaakt (→ 'van Uw X'). Top boeken: hebreeen (23), jesaja (22), jeremia (17), daniel (14), micha (11)."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "Cascade-bug 'van van' (V218 nasleep): 4 verzen (Gen 23:3, Hand 3:2, Hand 14:8, Luk 1:15) waar 'van zijner moeders lijf' eerder gerepareerd was tot 'van zijn moeders lijf', maar bij her-toepassing 'van van zijn moeders lijf' was geworden — gerepareerd."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "Verkleinwoord 'manneken' bij dieren (V221): Ex 12:5 + Deut 15:19 'manneken' → 'mannetje' (mannelijk lam). Op 12:13 (manneken=mannelijk kind, Christus) bewust niet aangetast wegens retorisch belang. Vrouwkens (2 Tim 3:6-7) eveneens behouden wegens nuance van γυναικάρια."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "Edge-cases handmatig: Tobit 11:18 'zich zijn had ontfermd' → 'zich over hem had ontfermd' (perfectum-vorm); Filemon 1:20 'mij uw hierin genieten' → 'mij van u hierin genieten'."
+          "beschrijving": "Edge-cases handmatig: Tobit 11:18 'zich zijn had ontfermd' → 'zich over hem had ontfermd' (perfectum-vorm); Filemon 1:20 'mij uw hierin genieten' → 'mij van u hierin genieten'"
         }
       ]
     },
@@ -334,7 +254,7 @@
       "items": [
         {
           "type": "fix",
-          "beschrijving": "welker → wier teruggedraaid in 73 verzen (84 vervangingen). 'wier' werkte niet als modern equivalent; 'welker' blijft staan."
+          "beschrijving": "welker → wier teruggedraaid in 73 verzen (84 vervangingen). 'wier' werkte niet als modern equivalent; 'welker' blijft staan"
         }
       ]
     },
@@ -344,35 +264,27 @@
       "items": [
         {
           "type": "bulk",
-          "beschrijving": "Begrippenlijsten Psalmen + volledig NT verdiept en uitgebreid: 2.339 → 6.976 entries verdeeld over 29 boeken (Genesis 927, Psalmen 729, Mattheüs 353, Markus 281, Lukas 356, Johannes 431, Handelingen 349, Romeinen 214, 1 Kor 198, 2 Kor 156, Galaten 164, Efeziërs 213, Filippenzen 154, Kolossenzen 183, 1 Tess 126, 2 Tess 113, 1 Tim 173, 2 Tim 184, Titus 126, Filemon 109, Hebreeën 214, Jakobus 169, 1 Petrus 182, 2 Petrus 144, 1 Joh 158, 2 Joh 61, 3 Joh 63, Judas 138, Openbaring 308)."
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Encyclopedie-supplement gemaakt: 4.139 NL-begrippen (encyclopedie_nl_begrippen.json) samengevoegd met Easton (3.802) + Nave (5.040). Nederlandse begrippen uit alle boekenlijsten gededupliceerd, samengevoegd en gekoppeld aan Engelse encyclopedie-entries waar mogelijk."
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Klikbare encyclopedie-detailmodal toegevoegd: begrippen in tekst openen een modal met volledig encyclopedie-artikel (Easton, Nave of NL-supplement). Deeplinks (?term=...) ondersteund voor directe verwijzingen vanuit andere pagina's."
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Speech-v2: Spreuken 8 volledig gemarkeerd als Wijsheid spreekt (= Jezus, prefiguratie). 33 segmenten in vers 4 t/m 36, allemaal type 'god' / speaker 'Jezus' (data/speech-v2/spreuken.json)."
+          "beschrijving": "Begrippenlijsten Psalmen + volledig NT verdiept en uitgebreid: 2.339 → 6.976 entries verdeeld over 29 boeken (Genesis 927, Psalmen 729, Mattheüs 353, Markus 281, Lukas 356, Johannes 431, Handelingen 349, Romeinen 214, 1 Kor 198, 2 Kor 156, Galaten 164, Efeziërs 213, Filippenzen 154, Kolossenzen 183, 1 Tess 126, 2 Tess 113, 1 Tim 173, 2 Tim 184, Titus 126, Filemon 109, Hebreeën 214, Jakobus 169, 1 Petrus 182, 2 Petrus 144, 1 Joh 158, 2 Joh 61, 3 Joh 63, Judas 138, Openbaring 308)"
         },
         {
           "type": "fix",
-          "beschrijving": "Joh 1:13 'Welke niet uit den bloede' → 'Die niet uit het bloed': betrekkelijk vnw 'Welke' naar 'Die' (verbindt natuurlijker met 'aan hen' uit vers 12)."
+          "beschrijving": "Spreuken 8 volledig gemarkeerd als Wijsheid spreekt (= Jezus, prefiguratie). 33 segmenten in vers 4 t/m 36, allemaal type 'god' / spreker 'Jezus'"
         },
         {
           "type": "fix",
-          "beschrijving": "Gen 1:27 'man en vrouw schiep Hij ze' → 'man en vrouw schiep Hij hen' (persoonlijk vnw 'hen' eerbiediger voor mensen na lijdend voorwerp)."
+          "beschrijving": "Joh 1:13 'Welke niet uit den bloede' → 'Die niet uit het bloed' (betrekkelijk vnw 'Welke' → 'Die', verbindt natuurlijker met 'aan hen' uit vers 12)"
         },
         {
           "type": "fix",
-          "beschrijving": "12 Psalm 18 correcties: 'op Welken ik betrouw' → 'op Wie ik betrouw', 'Hoorn mijns heils' → 'Hoorn van mijn heil', 'beken Belials' → 'beken van Belial', 'snellijk' → 'snel', 'daarhenen' → 'daarheen', 'ten dage mijns ongevals' → 'op de dag van mijn ongeluk', 'tot een Steunsel' → 'tot een Steun', 'reinigheid' → 'reinheid', 'goddelooslijk' → 'goddeloos', 'omgorddet' → 'omgordde', 'mijns heils' → 'van mijn heil', 'van de dodenrijk' → 'van het dodenrijk'."
+          "beschrijving": "Gen 1:27 'man en vrouw schiep Hij ze' → 'man en vrouw schiep Hij hen' (persoonlijk vnw 'hen' eerbiediger voor mensen na lijdend voorwerp)"
         },
         {
           "type": "fix",
-          "beschrijving": "Aanvullende Psalm-correcties: Ps 5:4 'Van de morgens' → 'In de morgen', Ps 5:7 'van de bedrogs' → 'van de bedriegerij', Ps 8:5 'dat U zijn gedenkt' → 'dat U hem gedenkt', Ps 16:5 'mijns bekers' → 'van mijn beker', Ps 17:14 (2x) 'welker deel/buik' → 'wier deel/buik'."
+          "beschrijving": "12 Psalm 18 correcties: 'op Welken ik betrouw' → 'op Wie ik betrouw'; 'Hoorn mijns heils' → 'Hoorn van mijn heil'; 'beken Belials' → 'beken van Belial'; 'snellijk' → 'snel'; 'daarhenen' → 'daarheen'; 'ten dage mijns ongevals' → 'op de dag van mijn ongeluk'; 'tot een Steunsel' → 'tot een Steun'; 'reinigheid' → 'reinheid'; 'goddelooslijk' → 'goddeloos'; 'omgorddet' → 'omgordde'; 'mijns heils' → 'van mijn heil'; 'van de dodenrijk' → 'van het dodenrijk'"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Aanvullende Psalm-correcties: Ps 5:4 'Van de morgens' → 'In de morgen'; Ps 5:7 'van de bedrogs' → 'van de bedriegerij'; Ps 8:5 'dat U zijn gedenkt' → 'dat U hem gedenkt'; Ps 16:5 'mijns bekers' → 'van mijn beker'; Ps 17:14 (2x) 'welker deel/buik' → 'wier deel/buik'"
         }
       ]
     },
@@ -381,37 +293,32 @@
       "versie": "v0.13.2",
       "items": [
         {
-          "type": "fix",
-          "beschrijving": "welks → wiens / waarvan: 55 voorkomens betrekkelijk vnw (mannelijk/onzijdig genitief) per voorkomen vervangen op basis van antecedent (persoon: wiens; zaak: waarvan/waarvan het). Voorbeeld Gen 1:11 \"geboomte welks zaad\" → \"geboomte waarvan het zaad\"; Ps 33:12 \"volk welks God JAHWEH is\" → \"volk wiens God JAHWEH is\"."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "welker → wier / waarvan: 120 voorkomens betrekkelijk vnw (vrouwelijk/meervoud genitief) per voorkomen vervangen (persoon: wier; zaak: waarvan/waarvan de). Voorbeeld Ps 17:14 \"welker deel\" → \"wier deel\"; Heb 11:10 \"welker Kunstenaar\" → \"waarvan de Kunstenaar\"."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "mijns X → van mijn X: 266 vervangingen (text + html) verdeeld over 62 boeken. Vaste constructies handmatig: \"om Mijns Naams wil\" → \"omwille van Mijn Naam\" (~16x), \"Mijns niet waardig\" → \"Mij niet waardig\" (Mat 10:37, 33; Lk 9:26), \"zich Mijns en Mijn(er) woorden schamen\" → \"zich voor Mij en Mijn woorden schamen\" (Mk 8:38, Lk 9:26), \"het brood mijns bescheiden deels\" → \"het brood dat mij toekomt\" (Spr 30:8), \"ten dage Mijns bezoekens\" → \"op de dag van Mijn bezoeking\" (Exo 32:34), \"mijns naams gedenken\" → \"aan mijn naam denken\" (Bar 2:32). Topboeken: psalmen (57), jesaja (37), genesis (32), jeremia (28), ezechiel (25), job (21), numeri (18), 2samuel (15), 4ezra (14), daniel (14)."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "U U → U Zich: 21 voorkomens reflexief, alle Gij→U cascade-artefacten. Voorbeelden: Ps 18:26 \"houdt U U goedertieren\" → \"houdt U Zich goedertieren\"; Mat 21:16 \"hebt U U lof toebereid\" → \"hebt U Zich lof toebereid\"; Lk 10:40 \"trekt U U dat niet aan\" → \"trekt U Zich dat niet aan\"; ook 2Sa 22:26-27, Ps 28:1, 80:16, 80:18, 89:47, Jes 63:14, 64:12, Zac 1:12, Num 16:22, 2Sa 7:23, 1Kr 17:21, Job 7:19."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "zijn (object) → hem: Heb 2:6 \"dat U zijn gedenkt\" → \"dat U hem gedenkt\" (analoog aan Ps 8:5 die al gedaan was). Pattern bredere scan toonde slechts deze ene resterende."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "fondament(en) → fundament(en): 41 vervangingen, spelling gemoderniseerd (case-preserving). Voorbeelden Hand 16:26, Ps 82:5, 137:7, Heb 11:10."
-        },
-        {
-          "type": "fix",
-          "beschrijving": "Cascade-reparaties van eerdere bulkfixes (mijner/zijner + N2): \"om van mijn/Mijn X wil\" → \"omwille van mijn/Mijn X\" (28 verzen); \"van van\" → \"van\" (32 dubbele \"van\"); \"Om omwille van\" → \"Omwille van\" (1, jes 48:9). Topboeken: jeremia, 1korinthiers, mattheüs, makkabeeen."
+          "type": "principe",
+          "beschrijving": "V211 welks → wiens / waarvan: 55 voorkomens betrekkelijk vnw (mannelijk/onzijdig genitief) per voorkomen vervangen op basis van antecedent (persoon: wiens; zaak: waarvan/waarvan het). Voorbeeld Gen 1:11 'geboomte welks zaad' → 'geboomte waarvan het zaad'; Ps 33:12 'volk welks God JAHWEH is' → 'volk wiens God JAHWEH is'"
         },
         {
           "type": "principe",
-          "id": "V211-V217",
-          "beschrijving": "Nieuwe principes toegevoegd: V211 welks → wiens/waarvan, V212 welker → wier/waarvan, V213 mijns X → van mijn X, V214 fondament → fundament, V215 U U → U Zich, V216 zijn (object) → hem, V217 cascade-reparaties."
+          "beschrijving": "V212 welker → wier / waarvan: 120 voorkomens betrekkelijk vnw (vrouwelijk/meervoud genitief) per voorkomen vervangen (persoon: wier; zaak: waarvan/waarvan de). Voorbeeld Ps 17:14 'welker deel' → 'wier deel'; Heb 11:10 'welker Kunstenaar' → 'waarvan de Kunstenaar'"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V213 mijns X → van mijn X: 266 vervangingen (text + html) verdeeld over 62 boeken. Vaste constructies handmatig: 'om Mijns Naams wil' → 'omwille van Mijn Naam' (~16x); 'Mijns niet waardig' → 'Mij niet waardig' (Mat 10:37, 33; Lk 9:26); 'zich Mijns en Mijn(er) woorden schamen' → 'zich voor Mij en Mijn woorden schamen' (Mk 8:38, Lk 9:26); 'het brood mijns bescheiden deels' → 'het brood dat mij toekomt' (Spr 30:8); 'ten dage Mijns bezoekens' → 'op de dag van Mijn bezoeking' (Exo 32:34); 'mijns naams gedenken' → 'aan mijn naam denken' (Bar 2:32). Topboeken: psalmen (57), jesaja (37), genesis (32), jeremia (28), ezechiel (25), job (21), numeri (18), 2samuel (15), 4ezra (14), daniel (14)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V215 U U → U Zich: 21 voorkomens reflexief, alle Gij→U cascade-artefacten. Voorbeelden: Ps 18:26 'houdt U U goedertieren' → 'houdt U Zich goedertieren'; Mat 21:16 'hebt U U lof toebereid' → 'hebt U Zich lof toebereid'; Lk 10:40 'trekt U U dat niet aan' → 'trekt U Zich dat niet aan'; ook 2Sa 22:26-27, Ps 28:1, 80:16, 80:18, 89:47, Jes 63:14, 64:12, Zac 1:12, Num 16:22, 2Sa 7:23, 1Kr 17:21, Job 7:19"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V216 zijn (object) → hem: Heb 2:6 'dat U zijn gedenkt' → 'dat U hem gedenkt' (analoog aan Ps 8:5 die al gedaan was). Pattern bredere scan toonde slechts deze ene resterende"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V214 fondament(en) → fundament(en): 41 vervangingen, spelling gemoderniseerd (case-preserving). Voorbeelden Hand 16:26, Ps 82:5, 137:7, Heb 11:10"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V217 cascade-reparaties van eerdere bulkfixes (mijner/zijner + N2): 'om van mijn/Mijn X wil' → 'omwille van mijn/Mijn X' (28 verzen); 'van van' → 'van' (32 dubbele 'van'); 'Om omwille van' → 'Omwille van' (1, jes 48:9). Topboeken: jeremia, 1korinthiers, mattheüs, makkabeeen"
         }
       ]
     },
@@ -420,14 +327,12 @@
       "versie": "v0.13.1",
       "items": [
         {
-          "type": "fix",
-          "beschrijving": "Mijner-genitief gefixt: 'mijner X' → 'van mijn X' in 224 verzen (231 vervangingen text + 226 in HTML, plus 4 handmatige patches voor synoniem-vervangen nouns: maagschap→familie, grimmigheid→woede, broederen→broers). Topboeken: psalmen (50), jesaja (24), job (21), genesis (15), ezechiel (12), jeremia (12). Voorbeeld: Psalm 16:5 'het deel mijn erve' → 'het deel van mijn erve'."
+          "type": "principe",
+          "beschrijving": "mijner → van mijn (genitief 1e persoon, context-bewust). In v0.13 onjuist als simpel mijner→mijn vervangen; in v0.13.1 hersteld naar 'van mijn X'"
         },
         {
-          "type": "principe",
-          "id": "V210",
-          "beschrijving": "mijner → van mijn (genitief 1e persoon, context-bewust). In v0.13 onjuist als simpel mijner→mijn vervangen; in v0.13.1 hersteld naar 'van mijn X'.",
-          "aantal": 240
+          "type": "fix",
+          "beschrijving": "Mijner-genitief gefixt: 'mijner X' → 'van mijn X' in 224 verzen (231 vervangingen text + 226 in HTML, plus 4 handmatige patches voor synoniem-vervangen nouns: maagschap → familie, grimmigheid → woede, broederen → broers). Topboeken: psalmen (50), jesaja (24), job (21), genesis (15), ezechiel (12), jeremia (12). Voorbeeld: Psalm 16:5 'het deel mijn erve' → 'het deel van mijn erve'"
         }
       ]
     },
@@ -437,11 +342,11 @@
       "items": [
         {
           "type": "bulk",
-          "beschrijving": "5.409 verouderde woorden vervangen door hele bijbel (AI-bewust, 138 unieke woorden): aldus→zo, alhier→hier, nochtans→toch, ziet→zie (context), uws/zijns/huns/haars/harer (genitief→omschrijving), geschiedde→gebeurde, etc. Top 5: ziet (715x), geschiedde (670x), uws (473x), zijns (362x), zoudt (271x)."
+          "beschrijving": "5.409 verouderde woorden vervangen door hele bijbel (AI-bewust, 138 unieke woorden): aldus → zo, alhier → hier, nochtans → toch, ziet → zie (context), uws/zijns/huns/haars/harer (genitief → omschrijving), geschiedde → gebeurde, etc. Top 5: ziet (715x), geschiedde (670x), uws (473x), zijns (362x), zoudt (271x)"
         },
         {
           "type": "principe",
-          "beschrijving": "138 nieuwe wijzigingsprincipes V72-V209 toegevoegd voor verouderde-woorden-batch: elk principe documenteert oud→nieuw met regex en uitzonderingen."
+          "beschrijving": "138 nieuwe wijzigingsprincipes V72-V209 toegevoegd voor verouderde-woorden-batch: elk principe documenteert oud → nieuw met regex en uitzonderingen"
         }
       ]
     },
@@ -451,19 +356,15 @@
       "items": [
         {
           "type": "bulk",
-          "beschrijving": "11.616 bulk-vervangingen verouderde woorden door hele bijbel (weder→weer, klederen→kleren, henen→heen, elkander→elkaar, spijze→voedsel, eersten→eerste, haastelijk→haastig, gelijkerwijs→zoals, etc.)"
+          "beschrijving": "11.616 bulk-vervangingen verouderde woorden door hele bijbel: weder → weer, klederen → kleren, henen → heen, elkander → elkaar, spijze → voedsel, eersten → eerste, haastelijk → haastig, gelijkerwijs → zoals, etc."
         },
         {
           "type": "principe",
-          "id": "W6",
-          "beschrijving": "zijt u / u zijt → bent u / u bent (AI-gestuurd, 116 uitzonderingen voor zegensformules)",
-          "aantal": 2228
+          "beschrijving": "zijt u / u zijt → bent u / u bent (AI-gestuurd, 116 uitzonderingen voor zegensformules)"
         },
         {
           "type": "principe",
-          "id": "V46",
-          "beschrijving": "gelijk (voegwoord) → zoals (79 uitzonderingen voor bijv.nw/bijw.)",
-          "aantal": 1780
+          "beschrijving": "gelijk (voegwoord) → zoals (79 uitzonderingen voor bijv.nw/bijw.)"
         },
         {
           "type": "bulk",
@@ -471,7 +372,7 @@
         },
         {
           "type": "bulk",
-          "beschrijving": "4.270 broeder→broer / zuster→zus: AI-gestuurde context-analyse (familielid=broer, geestelijk=broeder behouden). OT alles vervangen, NT brieven behouden, evangeliën per vers beoordeeld."
+          "beschrijving": "4.270 broeder → broer / zuster → zus: AI-gestuurde context-analyse (familielid = broer, geestelijk = broeder behouden). OT alles vervangen, NT brieven behouden, evangeliën per vers beoordeeld"
         },
         {
           "type": "fix",
@@ -479,121 +380,83 @@
         },
         {
           "type": "fix",
-          "beschrijving": "27 Johannes-specifieke correcties: Joh 1:35 'Van de anderen daags'→'Op de andere dag', 1:36 'Ziet'→'Zie', 1:40 'Komt en ziet'→'Komt en zie', 4:8 'voedsel'→'eten', etc."
+          "beschrijving": "27 Johannes-specifieke correcties: Joh 1:35 'Van de anderen daags' → 'Op de andere dag'; 1:36 'Ziet' → 'Zie'; 1:40 'Komt en ziet' → 'Komt en zie'; 4:8 'voedsel' → 'eten'; etc."
         },
         {
           "type": "principe",
-          "id": "V36",
-          "beschrijving": "aldaar → daar",
-          "aantal": 700
+          "beschrijving": "aldaar → daar"
         },
         {
           "type": "principe",
-          "id": "V41",
-          "beschrijving": "indien → als",
-          "aantal": 2000
+          "beschrijving": "indien → als"
         },
         {
           "type": "principe",
-          "id": "V42",
-          "beschrijving": "alzo → zo",
-          "aantal": 2854
+          "beschrijving": "alzo → zo"
         },
         {
           "type": "principe",
-          "id": "V40",
-          "beschrijving": "geschieden → gebeuren",
-          "aantal": 604
+          "beschrijving": "geschieden → gebeuren"
         },
         {
           "type": "principe",
-          "id": "V38",
-          "beschrijving": "beginsel → begin",
-          "aantal": 130
+          "beschrijving": "beginsel → begin"
         },
         {
           "type": "principe",
-          "id": "V37",
-          "beschrijving": "genood → uitgenodigd",
-          "aantal": 10
+          "beschrijving": "genood → uitgenodigd"
         },
         {
           "type": "principe",
-          "id": "V45",
-          "beschrijving": "wassen (groeien) → groeien",
-          "aantal": 144
+          "beschrijving": "wassen (groeien) → groeien"
         },
         {
           "type": "principe",
-          "id": "V44",
-          "beschrijving": "enigen → enige",
-          "aantal": 198
+          "beschrijving": "enigen → enige"
         },
         {
           "type": "principe",
-          "id": "V43",
-          "beschrijving": "alrede → al",
-          "aantal": 60
+          "beschrijving": "alrede → al"
         },
         {
           "type": "principe",
-          "id": "O9",
-          "beschrijving": "Koninkrijk Gods → Koninkrijk van God",
-          "aantal": 142
+          "beschrijving": "Koninkrijk Gods → Koninkrijk van God"
         },
         {
           "type": "principe",
-          "id": "O10",
-          "beschrijving": "toorn Gods → toorn van God",
-          "aantal": 24
+          "beschrijving": "toorn Gods → toorn van God"
         },
         {
           "type": "principe",
-          "id": "O11",
-          "beschrijving": "Geest Gods → Geest van God",
-          "aantal": 155
+          "beschrijving": "Geest Gods → Geest van God"
         },
         {
           "type": "principe",
-          "id": "O12",
-          "beschrijving": "Koning Israëls → Koning van Israël",
-          "aantal": 12
+          "beschrijving": "Koning Israëls → Koning van Israël"
+        },
+        {
+          "type": "uitzondering",
+          "beschrijving": "werkelijk,werkelijk → voorwaar,voorwaar (teruggedraaid — bijbelse uitdrukking behouden)"
         },
         {
           "type": "principe",
-          "id": "V39",
-          "beschrijving": "werkelijk,werkelijk → voorwaar,voorwaar (teruggedraaid — bijbelse uitdrukking behouden)",
-          "aantal": 50
+          "beschrijving": "krank/kranke/krankheid → ziek/zieke/ziekte"
         },
         {
           "type": "principe",
-          "id": "V46b",
-          "beschrijving": "krank/kranke/krankheid → ziek/zieke/ziekte",
-          "aantal": 244
+          "beschrijving": "beddeken → bed"
         },
         {
           "type": "principe",
-          "id": "V47",
-          "beschrijving": "beddeken → bed",
-          "aantal": 22
+          "beschrijving": "evengelijk → gelijkenis"
         },
         {
           "type": "principe",
-          "id": "V48",
-          "beschrijving": "evengelijk → gelijkenis",
-          "aantal": 6
+          "beschrijving": "doorluchtig → glorierijk"
         },
         {
           "type": "principe",
-          "id": "V31",
-          "beschrijving": "doorluchtig → glorierijk",
-          "aantal": 27
-        },
-        {
-          "type": "principe",
-          "id": "V49",
-          "beschrijving": "ledig → leeg",
-          "aantal": 276
+          "beschrijving": "ledig → leeg"
         },
         {
           "type": "fix",
@@ -605,75 +468,19 @@
         },
         {
           "type": "fix",
-          "beschrijving": "voordat dat → voordat (29x, bijeffect van eer→voordat vervanging)"
+          "beschrijving": "voordat dat → voordat (29x, bijeffect van eer → voordat vervanging)"
         },
         {
           "type": "fix",
           "beschrijving": "kinderen Gods → kinderen van God (181x, genitief-modernisering)"
         },
         {
-          "type": "systeem",
-          "beschrijving": "Website volledig herontworpen: topnav met 'Open Vertaling — Public Domain herziening van de SV1637', wiki-frame met gedeelde sidebar"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Leesmodus: als alleen OV2026 aan staat, geen tabel maar leesbare tekst (EB Garamond, flex-layout)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Kolommen-dropdown vervangen door 'Filters' knop met gegroepeerde opties + quickfilter Begrippen"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Contenteditable verwijderd — tekst niet meer bewerkbaar in browser (read-only modus)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Nieuwe pagina's: over-ov.html (Over de Open Vertaling), contact.html, begrippen.html (8.842 encyclopedie-artikelen), changelog.html"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Encyclopedie geïntegreerd: Easton (3.802) + Nave (5.040) artikelen met AI-gegenereerde 1-zin samenvattingen"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Begrippen-links verwijzen naar eigen begrippen-pagina (niet meer naar dekleineark.com)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Alle dekleineark.com referenties verwijderd — onafhankelijke website"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Boekinleiding + hoofdstukinleiding optioneel via Filters → Weergave (standaard verborgen)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Tags optioneel via Filters (standaard verborgen)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Dyslexie-modus verplaatst van sidebar naar Filters → Weergave (Lexend font, grotere letter/woordafstand)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Scroll-to-top bij navigatie naar volgend/vorig hoofdstuk"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Kanttekeningcijfers automatisch verborgen als KT kolom uit staat"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Progress-balk en status-indicator verborgen"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "219 verouderde woorden geïnventariseerd (data/verouderde-woorden-inventarisatie.json) als referentie voor toekomstige rondes"
-        },
-        {
-          "type": "systeem",
+          "type": "principe",
           "beschrijving": "Herzieningsregels vastgelegd: Heere (Adonai) behouden in NT, Voorwaar behouden, duisternis behouden, broeder/zuster context-afhankelijk, spijze/weder/ware context-afhankelijk"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "219 verouderde woorden geïnventariseerd als referentie voor toekomstige rondes"
         }
       ]
     },
@@ -682,110 +489,60 @@
       "versie": "v0.11",
       "items": [
         {
-          "type": "systeem",
-          "beschrijving": "Speech-v2 systeem gebouwd: segment-gebaseerde citaat-markering met tekst-fragmenten als ankers (geen woordposities)"
-        },
-        {
           "type": "bulk",
-          "beschrijving": "Alle 82 bijbelboeken verwerkt met speech-v2: 8.416 God-citaten + 10.260 menselijke citaten = 18.676 verzen"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Meerdere sprekers per vers ondersteund (bijv. Gen 18:28-32 Abraham + God dialoog)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Johannes volledig geaudit per hoofdstuk (21 hfst, 880 verzen, 4 correcties)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Wijzigingsprincipes-systeem: 68+ genummerde principes met subcategorieën, 97% koppeling aan diff-items"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Principes-pagina (principes.html): overzicht per categorie, expandeerbare verslijsten met verstekst, uitzondering-knop"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "POST /api/uitzondering endpoint: wijzigingen ongedaan maken via browser, opgeslagen in handmatige-correcties.json"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "✕ knop in diff-kolom: per diff-item een uitzondering maken"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Encyclopedie-links: 332 NL→EN mappings, begrippen in tekst linken naar encyclopedie"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "285 begrippen begrippenlijst Johannes (personen, plaatsen, theologische begrippen, voor jonge gelovigen)"
-        },
-        {
-          "type": "principe",
-          "id": "V35",
-          "beschrijving": "waardig → waard",
-          "aantal": 87
-        },
-        {
-          "type": "principe",
-          "id": "W5",
-          "beschrijving": "waart → was",
-          "aantal": 87
-        },
-        {
-          "type": "principe",
-          "id": "W6",
-          "beschrijving": "u zijt → u bent (eerste batch)",
-          "aantal": 388
-        },
-        {
-          "type": "principe",
-          "id": "O5",
-          "beschrijving": "Lam Gods → Lam van God",
-          "aantal": 2
-        },
-        {
-          "type": "principe",
-          "id": "O6",
-          "beschrijving": "engelen Gods → engelen van God",
-          "aantal": 8
-        },
-        {
-          "type": "principe",
-          "id": "O7",
-          "beschrijving": "Zone/Zoon Gods → Zoon van God",
-          "aantal": 29
-        },
-        {
-          "type": "principe",
-          "id": "O8",
-          "beschrijving": "Zijn lichaams → van Zijn lichaam",
-          "aantal": 24
+          "beschrijving": "Citaat-markering bijbel-breed afgerond: 8.416 God-citaten + 10.260 menselijke citaten = 18.676 verzen met directe rede gemarkeerd. Meerdere sprekers per vers ondersteund (bv. Gen 18:28-32 Abraham + God dialoog)"
         },
         {
           "type": "fix",
-          "beschrijving": "Joh 1:11 Zijn → Zijnen (bewust behouden als SV-formulering)"
+          "beschrijving": "Johannes volledig per hoofdstuk geaudit (21 hfst, 880 verzen, 4 correcties)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "68+ wijzigingsprincipes met subcategorieën, 97% koppeling aan diff-items"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "285 begrippen toegevoegd in begrippenlijst Johannes (personen, plaatsen, theologische begrippen, voor jonge gelovigen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "waardig → waard"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "waart → was"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "u zijt → u bent (eerste batch)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "Lam Gods → Lam van God"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "engelen Gods → engelen van God"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "Zone/Zoon Gods → Zoon van God"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "Zijn lichaams → van Zijn lichaam"
+        },
+        {
+          "type": "uitzondering",
+          "beschrijving": "Joh 1:11 Zijnen bewust behouden als SV-formulering (niet vereenvoudigd naar Zijn)"
         },
         {
           "type": "fix",
           "beschrijving": "Joh 3:1 'wiens naam was Nicodemus' → 'van wie de naam Nicodemus was'"
         },
         {
-          "type": "fix",
+          "type": "uitzondering",
           "beschrijving": "Joh 1:3 Hetzelve bewust behouden (niet vervangen door Hetzelfde of Hem)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Statische export schrijft nu direct naar website repo (geen kopieer-stap)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Changelog als JSON (data/changelog.json) — alle wijzigingen automatisch geregistreerd"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "/wijzig slash-command voor het doorvoeren van wijzigingen via de pipeline"
         }
       ]
     },
@@ -799,51 +556,31 @@
         },
         {
           "type": "bulk",
-          "beschrijving": "922 begrippen in begrippenlijst Genesis: personen, plaatsen, volkeren, theologische begrippen, verouderde woorden. Geschreven voor jonge gelovigen."
+          "beschrijving": "922 begrippen toegevoegd in begrippenlijst Genesis: personen, plaatsen, volkeren, theologische begrippen, verouderde woorden. Geschreven voor jonge gelovigen"
         },
         {
-          "type": "systeem",
-          "beschrijving": "Begrippen klikbaar in tekst (oranje met underline), popup met uitleg + encyclopedie-link"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Tag-systeem met 7 tags en ranking: Schepping, Bekering, Gods leiding, Geloof, Gebed, Zonde, Verbond. Sleutelteksten (★), belangrijke en aanvullende verzen."
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Statistieken-pagina: live aantallen per boek, woordwijzigingen, citaten, grondtekst-dekking"
-        },
-        {
-          "type": "systeem",
+          "type": "principe",
           "beschrijving": "Wijzigingsprincipes-systeem: genummerde principes (N1-N8, A1-A3, G1-G7, W1-W7, V1-V49, S1-S3, O1-O12), 93% koppeling aan diff-items"
         },
         {
           "type": "principe",
-          "id": "V31",
-          "beschrijving": "doorluchtig → glorierijk",
-          "aantal": 27
+          "beschrijving": "doorluchtig → glorierijk"
         },
         {
           "type": "fix",
-          "beschrijving": "voordat dat → voordat (29x, bijeffect van eer→voordat gecorrigeerd)"
+          "beschrijving": "voordat dat → voordat (29x, bijeffect van eer → voordat gecorrigeerd)"
         },
         {
           "type": "principe",
-          "id": "V32",
-          "beschrijving": "eer (voordat) → voordat",
-          "aantal": 277
+          "beschrijving": "eer (voordat) → voordat"
         },
         {
           "type": "principe",
-          "id": "V33",
-          "beschrijving": "moede → moe",
-          "aantal": 82
+          "beschrijving": "moede → moe"
         },
         {
           "type": "principe",
-          "id": "V34",
-          "beschrijving": "wien → wie",
-          "aantal": 240
+          "beschrijving": "wien → wie"
         },
         {
           "type": "fix",
@@ -855,31 +592,15 @@
         },
         {
           "type": "fix",
-          "beschrijving": "Gen 19:12 engelen correct als menselijk citaat (niet God)"
+          "beschrijving": "Gen 19:12 engelen correct als menselijk citaat gemarkeerd (niet God)"
         },
         {
           "type": "fix",
           "beschrijving": "Gen 16:11 'van JAHWEH Engel' → 'Engel van JAHWEH' (woordvolgorde)"
         },
         {
-          "type": "systeem",
-          "beschrijving": "Server.py overgezet naar JSON als single source of truth (geen SQLite meer voor bijbeldata)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "phraseDiff geëxporteerd van SQLite naar JSON (24.722 verzen)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "KT Diff kolom: phrase-level diff voor kanttekeningen (SV1888 vs OV2026)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Handmatige correcties beschermd: data/handmatige-correcties.json, scripts respecteren uitzonderingen"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Statische export 1.370 pagina's gepusht naar GitHub (website-de-kleine-ark/bijbel/)"
+          "type": "principe",
+          "beschrijving": "Tag-systeem met 7 tags en ranking voor sleutelteksten: Schepping, Bekering, Gods leiding, Geloof, Gebed, Zonde, Verbond. Sleutelteksten (★), belangrijke en aanvullende verzen"
         }
       ]
     },
@@ -889,15 +610,15 @@
       "items": [
         {
           "type": "bulk",
-          "beschrijving": "God-speaks: 6.322 verzen gecureerd door 6 parallelle AI-agents die elk een batch boeken volledig doorlazen"
+          "beschrijving": "God-spreekt-citaten: 6.322 verzen gecureerd door 6 parallelle AI-agents die elk een batch boeken volledig doorlazen"
         },
         {
           "type": "bulk",
-          "beschrijving": "All-speech: 5.000 directe citaten geïdentificeerd met spreker en vers-bereik (start/end). Doorlopende citaten over meerdere verzen."
+          "beschrijving": "Directe citaten: 5.000 met spreker en vers-bereik (start/end) geïdentificeerd. Doorlopende citaten over meerdere verzen ondersteund"
         },
         {
           "type": "bulk",
-          "beschrijving": "22.112 verouderde woorden vervangen: doch→maar (1.062x), ganse→gehele (725x), hetgeen→wat (553x), iegelijk→iedereen (322x), wederom→opnieuw (268x), mitsgaders→en ook (160x), terstond→meteen (139x), voorwaar→werkelijk (133x), lieden→mensen (112x), desgelijks→evenzo (100x), en 18 andere"
+          "beschrijving": "22.112 verouderde woorden vervangen: doch → maar (1.062x), ganse → gehele (725x), hetgeen → wat (553x), iegelijk → iedereen (322x — later teruggedraaid in v0.14.1, zie hierboven), wederom → opnieuw (268x), mitsgaders → en ook (160x), terstond → meteen (139x), voorwaar → werkelijk (133x — later teruggedraaid), lieden → mensen (112x), desgelijks → evenzo (100x), en 18 andere"
         },
         {
           "type": "bulk",
@@ -905,39 +626,27 @@
         },
         {
           "type": "principe",
-          "id": "G1",
-          "beschrijving": "de HEERE / den HEERE → JAHWEH (Godsnaam יהוה)",
-          "aantal": 300
+          "beschrijving": "de HEERE / den HEERE → JAHWEH (Godsnaam יהוה)"
         },
         {
           "type": "principe",
-          "id": "W1",
-          "beschrijving": "zeide → zei",
-          "aantal": 596
+          "beschrijving": "zeide → zei"
         },
         {
           "type": "principe",
-          "id": "N1",
-          "beschrijving": "den → de (naamvallen)",
-          "aantal": 2293
+          "beschrijving": "den → de (naamvallen)"
         },
         {
           "type": "principe",
-          "id": "N2",
-          "beschrijving": "der → van de",
-          "aantal": 1418
+          "beschrijving": "der → van de"
         },
         {
           "type": "principe",
-          "id": "N3",
-          "beschrijving": "des → van de / van het",
-          "aantal": 228
+          "beschrijving": "des → van de / van het"
         },
         {
           "type": "principe",
-          "id": "A1",
-          "beschrijving": "gij / Gij → u / U",
-          "aantal": 1064
+          "beschrijving": "gij / Gij → u / U"
         },
         {
           "type": "fix",
@@ -956,48 +665,8 @@
           "beschrijving": "wijfje → vrouwtje (50x)"
         },
         {
-          "type": "systeem",
-          "beschrijving": "God-speaks opmaak: rood (#c0392b), vet, cursief, met aanhalingstekens (\"...\")"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Menselijke citaten: cursief met aanhalingstekens"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Traditionele bijbelverdeling: Pentateuch, Historische boeken, Poëtische boeken, Profeten, Apocriefen (SV1637-volgorde), Evangeliën, Brieven, Openbaring"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Apocriefen op traditionele SV1637-plek: tussen Kleine profeten en Evangeliën"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Leesversie mockup goedgekeurd (HSV-stijl desktop, YouVersion mobiel)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Statische HTML export: 1.370 pagina's met boek/hoofdstuk picker"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Schilderijen: verticale scroll-gallery (was grid)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Vorig/volgend hoofdstuk knoppen onderaan de pagina"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Verse selectie: klik/shift-klik op versnummers, kopieer-toolbar met 'Met opmaak' / 'Zonder opmaak'"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Hoofdstukinleidingen tonen nu text2026 (hertaald) in plaats van text1637"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Uitgangspunten: 'Geen nuancering op Gods Woord' — kanttekeningen die Gods Woord relativeren (bijv. 'op menselijke wijze gesproken') worden verwijderd"
+          "type": "principe",
+          "beschrijving": "Uitgangspunt: 'Geen nuancering op Gods Woord' — kanttekeningen die Gods Woord relativeren (bv. 'op menselijke wijze gesproken') worden verwijderd"
         }
       ]
     },
@@ -1006,72 +675,20 @@
       "versie": "v0.8",
       "items": [
         {
-          "type": "systeem",
-          "beschrijving": "Nieuw uitgangspunt: SV1888 als vertrekpunt, minimale wijzigingen. Letterlijkheid boven leesbaarheid."
+          "type": "principe",
+          "beschrijving": "Nieuw uitgangspunt: SV1888 als vertrekpunt, minimale wijzigingen. Letterlijkheid boven leesbaarheid"
         },
         {
           "type": "bulk",
           "beschrijving": "Genesis compleet herzien (50 hoofdstukken): zo dicht mogelijk bij SV1888, inclusief 50 hoofdstuk-inleidingen"
         },
         {
-          "type": "systeem",
-          "beschrijving": "SQLite database opgezet (open_vertaling.db): alle data in één bestand"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Phrase-level diff: vergelijking OV↔SV1888 op begripsniveau met bekende vervangingspatronen"
-        },
-        {
           "type": "bulk",
-          "beschrijving": "Volledige SV1888 geladen: alle 83 boeken, 37.314 verzen (66 canoniek + 16 apocrief + 1 gebed)"
+          "beschrijving": "Volledige SV1888 als basistekst geladen: alle 83 boeken, 37.314 verzen (66 canoniek + 16 apocrief + 1 gebed)"
         },
         {
-          "type": "bulk",
-          "beschrijving": "Grondtekst: 441.868 Hebreeuwse/Griekse woorden met Strong's nummers (83% dekking)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Strong's inline: klikbare blauwe Strong's nummers bij OV-tekst met lexicon-tooltip"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "937 schilderijen gekoppeld: 815 statenvertaling.net + 122 Jan van 't Hoff (gospelimages.com)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Lexicon-pagina: doorzoekbaar BDB Hebreeuws (~8.700 entries) + Abbott-Smith Grieks (~5.600 entries)"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Sidebar-navigatie: boomstructuur met boeken, lexicons, uitgangspunten, technische docs"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Kolom-toggles: SV1637, KT1637, SV1888, KT1888, OV2026, KT2026, Hebr/Grieks, Diff"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Column resize en reorder: kolommen verbreden/versmallen en herordenen"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Dyslexie-modus: Lexend font, grotere letter/woordafstand, links uitgelijnd"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Woordenlijst: 184 bijbelse termen met uitleg"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Tooltip: nootmarkers tonen KT2026 (hertaald) als hoofdtekst"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Technische documentatie: volledig datamodel, scripts, API, bronnen"
-        },
-        {
-          "type": "systeem",
-          "beschrijving": "Uitgangspunten herzien: God JAHWEH, Heere≠HEERE onderscheid, tijdsgebonden disputen vermijden"
+          "type": "principe",
+          "beschrijving": "Uitgangspunten herzien: God JAHWEH, Heere ≠ HEERE onderscheid, tijdsgebonden disputen vermijden"
         }
       ]
     },
@@ -1080,7 +697,7 @@
       "versie": "v0.7",
       "items": [
         {
-          "type": "systeem",
+          "type": "principe",
           "beschrijving": "Vertaalfilosofie verschoven: letterlijkheid boven leesbaarheid"
         },
         {
@@ -1092,11 +709,7 @@
           "beschrijving": "Kanttekeningen alle 83 boeken vertaald naar modern Nederlands"
         },
         {
-          "type": "systeem",
-          "beschrijving": "Hebreeuwse en Griekse woorden in origineel schrift bij kanttekeningen (bijv. 'Hebr. nefesh (נֶפֶשׁ), ziel')"
-        },
-        {
-          "type": "systeem",
+          "type": "principe",
           "beschrijving": "Bijbels register vastgesteld: woorden als gedierte, gevogelte, uitspansel, afgrond, alzo, aldaar, hof, spijze behouden"
         }
       ]
