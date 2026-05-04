@@ -106,6 +106,7 @@ const Lees = {
         romeinen:   [1,2],
         '1johannes':'all',
         '2johannes':'all',
+        '3johannes':'all',
         gebedvanmanasse:'all',
         filemon:    'all',
         judas:      'all',
