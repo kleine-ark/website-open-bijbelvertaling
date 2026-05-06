@@ -100,7 +100,7 @@ const Lees = {
     // er meer audio-bestanden in audio/{book}/{ch}.mp3 staan).
     AUDIO_AVAILABLE: {
         genesis: [1],
-        johannes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+        johannes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
         handelingen: [1,2,3,4,5,6,7,8],
         romeinen: [1,2,3,4],
         '1johannes': [1,2,3,4,5],
