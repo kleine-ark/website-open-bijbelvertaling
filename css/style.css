@@ -2742,3 +2742,181 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     color: #78350f;
 }
 .ai-concept-banner strong { color: #92400e; }
+
+/* ===========================================================================
+   Bijbel-zoek-overlay (js/search.js) — werkt op zowel index.html als lees.html
+   =========================================================================== */
+.search-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 46, 66, 0.55);
+    z-index: 1200;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 16px 24px;
+    overflow-y: auto;
+}
+.search-overlay.hidden { display: none; }
+.search-overlay .search-panel {
+    background: #fff;
+    width: 100%;
+    max-width: 760px;
+    border-radius: 10px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.35);
+    border-top: 4px solid var(--gold, #cba449);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 84px);
+}
+.search-overlay .search-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border-light, #e8e4dc);
+    background: #fff;
+}
+.search-overlay #search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: var(--font-body, 'Fira Sans', sans-serif);
+    padding: 6px 4px;
+    color: #222;
+    background: transparent;
+}
+.search-overlay #search-input::placeholder { color: #999; }
+.search-overlay .search-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: #888;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+.search-overlay .search-close:hover { color: var(--navy, #142e42); background: #f4f1ea; }
+
+.search-overlay .search-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    align-items: center;
+    padding: 10px 18px;
+    border-bottom: 1px solid var(--border-light, #e8e4dc);
+    background: #faf8f5;
+    font-size: 12px;
+    color: #555;
+}
+.search-overlay .search-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 2px 4px;
+    user-select: none;
+}
+.search-overlay .search-cat input { margin: 0; cursor: pointer; }
+.search-overlay .search-cat-actions {
+    margin-left: auto;
+    font-size: 11px;
+    color: #888;
+}
+.search-overlay .search-cat-actions a {
+    color: var(--gold, #cba449);
+    text-decoration: none;
+    font-weight: 500;
+}
+.search-overlay .search-cat-actions a:hover { text-decoration: underline; }
+
+.search-overlay .search-results {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+    background: #fff;
+}
+.search-overlay .search-empty {
+    padding: 28px 18px;
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
+}
+.search-overlay .search-result {
+    padding: 12px 18px;
+    border-bottom: 1px solid #f0ece4;
+    cursor: pointer;
+    transition: background 0.12s;
+}
+.search-overlay .search-result:hover,
+.search-overlay .search-result:focus { background: #f8f4ea; outline: none; }
+.search-overlay .search-result-ref {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold, #cba449);
+    letter-spacing: 0.02em;
+    margin-bottom: 3px;
+}
+.search-overlay .search-result-text {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.55;
+}
+.search-overlay .search-result-text mark {
+    background: #fef3c7;
+    color: inherit;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+.search-overlay .search-more {
+    padding: 12px 18px;
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    background: #faf8f5;
+    border-top: 1px solid var(--border-light, #e8e4dc);
+}
+
+/* Mobiel: full-width overlay */
+@media (max-width: 640px) {
+    .search-overlay { padding: 0; }
+    .search-overlay .search-panel {
+        max-width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        border-top: none;
+    }
+    .search-overlay .search-categories { font-size: 11px; }
+}
+
+/* === Vers-highlight bij navigatie via zoekfunctie === */
+@keyframes searchHighlightFade {
+    0%   { background-color: #fef3c7; box-shadow: inset 3px 0 0 #f59e0b; }
+    70%  { background-color: #fef3c7; box-shadow: inset 3px 0 0 #f59e0b; }
+    100% { background-color: transparent; box-shadow: inset 3px 0 0 transparent; }
+}
+.search-highlight,
+.search-highlight .verse-cell,
+[data-verse].search-highlight {
+    animation: searchHighlightFade 3s ease-out;
+}
+/* In de tabel-layout (index.html) zit data-verse op .verse-row; markeer
+   ook visueel duidelijk de hele rij. */
+.verse-row.search-highlight {
+    background-color: #fef3c7 !important;
+    box-shadow: inset 3px 0 0 #f59e0b;
+    transition: background-color 1.5s ease-out, box-shadow 1.5s ease-out;
+}
+/* In lees.html zit data-verse op .verse-span; markeer de tekst rond het vers. */
+.verse-span.search-highlight {
+    background-color: #fef3c7;
+    box-shadow: 0 0 0 4px #fef3c7;
+    border-radius: 3px;
+    transition: background-color 1.5s ease-out, box-shadow 1.5s ease-out;
+}
+
