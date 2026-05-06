@@ -306,9 +306,18 @@ const App = {
         // Pre-fetch buurchapters bij idle (volgende klik = instant)
         DataLoader.prefetchAdjacent(bookId, chapterNum);
 
-        // Titel
-        document.getElementById('chapter-title').textContent =
-            `${book.nameDutch} ${chapterNum}`;
+        // Titel — concept-marker bij niet-geverifieerde hoofdstukken
+        const titleEl = document.getElementById('chapter-title');
+        const verified = App._isVerified(bookId, chapterNum);
+        titleEl.textContent = `${book.nameDutch} ${chapterNum}`;
+        titleEl.classList.toggle('chapter-unverified', !verified);
+        if (!verified) {
+            const tag = document.createElement('span');
+            tag.className = 'chapter-concept-tag';
+            tag.textContent = 'CONCEPT — NIET GECONTROLEERD';
+            titleEl.appendChild(document.createTextNode(' '));
+            titleEl.appendChild(tag);
+        }
         // Chapter-footer label (sticky onderaan)
         const chfLabel = document.getElementById('chapter-footer-label');
         if (chfLabel) {

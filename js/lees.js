@@ -188,6 +188,8 @@ const Lees = {
             const btn = document.createElement('button');
             btn.textContent = ch;
             btn.classList.toggle('active', ch === this.currentChapter);
+            btn.classList.toggle('unverified', !this._isVerified(this.currentBook, ch));
+            btn.title = this._isVerified(this.currentBook, ch) ? '' : 'Concept — nog niet handmatig gecontroleerd';
             btn.addEventListener('click', () => {
                 location.hash = `#${this.currentBook}/${ch}`;
             });
@@ -199,9 +201,18 @@ const Lees = {
         const chapter = book.chapters.find(c => c.number === chapterNum);
         if (!chapter) return;
 
-        // Heading
-        document.getElementById('chapter-heading').textContent =
-            `${book.nameDutch} ${chapterNum}`;
+        // Heading — concept-marker bij niet-geverifieerde hoofdstukken
+        const headingEl = document.getElementById('chapter-heading');
+        const isVerified = this._isVerified(this.currentBook, chapterNum);
+        headingEl.textContent = `${book.nameDutch} ${chapterNum}`;
+        headingEl.classList.toggle('chapter-unverified', !isVerified);
+        if (!isVerified) {
+            const tag = document.createElement('span');
+            tag.className = 'chapter-concept-tag';
+            tag.textContent = 'CONCEPT — NIET GECONTROLEERD';
+            headingEl.appendChild(document.createTextNode(' '));
+            headingEl.appendChild(tag);
+        }
 
         // Book intro (only chapter 1)
         const introEl = document.getElementById('book-intro');

@@ -607,3 +607,46 @@ body.dark .search-overlay .search-result-text mark { background: #f59e0b; color:
 body.dark .search-overlay .search-more { background: #1c1c2e; color: #999; }
 body.dark .verse-span.search-highlight { background-color: #f59e0b; box-shadow: 0 0 0 4px #f59e0b; color: #1a1a2e; }
 
+
+/* === Concept / niet-gecontroleerd hoofdstuk markering (lees) === */
+.chapter-concept-tag {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #f59e0b;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-left: 10px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+/* Hoofdstuk-knoppen in lees.html — niet-geverifieerd subtiele warning-tint */
+#chapter-buttons button.unverified {
+    color: #92400e;
+    background: rgba(254,243,199,0.4);
+    border-color: rgba(245,158,11,0.4);
+}
+#chapter-buttons button.unverified:hover {
+    background: rgba(254,243,199,0.7);
+}
+#chapter-buttons button.unverified.active {
+    color: #fff;
+    background: #92400e;
+    border-color: #92400e;
+}
+
+/* Dark-mode variant */
+body.dark .chapter-concept-tag {
+    background: rgba(245,158,11,0.18);
+    color: #fbbf24;
+    border-color: rgba(245,158,11,0.4);
+}
+body.dark #chapter-buttons button.unverified {
+    color: #fbbf24;
+    background: rgba(245,158,11,0.10);
+}
