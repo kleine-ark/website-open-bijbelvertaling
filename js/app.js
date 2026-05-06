@@ -62,7 +62,6 @@ const App = {
     AUDIO_AVAILABLE: {
         genesis: [1],
         johannes: [1],
-        '1johannes': [1, 2, 3, 4, 5],
     },
 
     // Hoofdstukken die handmatig vers-voor-vers zijn nagelopen.
@@ -72,6 +71,7 @@ const App = {
         psalmen:    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
         johannes:   'all',
         handelingen:[1,2,3,4,5,6,7,8],
+        markus:     [1,2],
         romeinen:   [1,2,3,4],
         '1johannes':'all',
         '2johannes':'all',

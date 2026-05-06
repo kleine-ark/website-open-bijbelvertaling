@@ -1705,7 +1705,7 @@
       "number": 15,
       "textSV1888": "Boter en honig zal Hij eten, totdat Hij wete te verwerpen het kwade, en te verkiezen het goede.",
       "text1637": "Boter ende honich sal [44] hy eten, [45] tot dat hy wete te verwerpen het quade, ende te verkiesen het goede.",
-      "text2026": "Boter en honig zal Hij eten, totdat Hij wete te verwerpen het kwade, en te verkiezen het goede.",
+      "text2026": "Boter en honing zal Hij eten, totdat Hij wete te verwerpen het kwade, en te verkiezen het goede.",
       "marginNotes": [
         {
           "marker": "45",
@@ -1764,9 +1764,16 @@
           "morph": "HRd/Aamsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Boter en honig zal Hij eten,<sup class=\"note-marker\" data-note=\"45\">45</sup> totdat Hij wete te verwerpen het kwade, en te verkiezen het goede.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Boter en honing zal Hij eten,<sup class=\"note-marker\" data-note=\"45\">45</sup> totdat Hij wete te verwerpen het kwade, en te verkiezen het goede.</i></span>",
       "textSV1888_html": "Boter en honig zal Hij eten,<sup class=\"note-marker\" data-note=\"45\">45</sup> totdat Hij wete te verwerpen het kwade, en te verkiezen het goede.",
-      "text1637_html": "Boter ende honich sal <sup class=\"note-marker\" data-note=\"44\">44</sup> hy eten, <sup class=\"note-marker\" data-note=\"45\">45</sup> tot dat hy wete te verwerpen het quade, ende te verkiesen het goede."
+      "text1637_html": "Boter ende honich sal <sup class=\"note-marker\" data-note=\"44\">44</sup> hy eten, <sup class=\"note-marker\" data-note=\"45\">45</sup> tot dat hy wete te verwerpen het quade, ende te verkiesen het goede.",
+      "phraseDiff": [
+        {
+          "old": "honig",
+          "new": "honing",
+          "principe": "V233"
+        }
+      ]
     },
     {
       "number": 16,
@@ -2575,7 +2582,7 @@
       "number": 22,
       "textSV1888": "En het zal geschieden, dat hij vanwege de veelheid der melk, die zij geven zullen, boter zal eten; ja, een ieder, die overgebleven zal zijn in het midden des lands, die zal boter en honig eten.",
       "text1637": "Ende 't sal geschieden, dat hy van wegen de veelheyt des melcks die sy [69] geven sullen, [70] boter sal eten: ja een yeder [71] die overgebleven sal zijn [72] in't midden des lants, die sal [73] boter ende honich eten.",
-      "text2026": "En het zal gebeuren, dat hij vanwege de veelheid van de melk, die zij geven zullen, boter zal eten; ja, een ieder, die overgebleven zal zijn in het midden van het land, die zal boter en honig eten.",
+      "text2026": "En het zal gebeuren, dat hij vanwege de veelheid van de melk, die zij geven zullen, boter zal eten; ja, een ieder, die overgebleven zal zijn in het midden van het land, die zal boter en honing eten.",
       "marginNotes": [
         {
           "marker": "71",
@@ -2685,7 +2692,7 @@
           "morph": "HTd/Ncbsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En het zal gebeuren, dat hij vanwege de veelheid van de melk, die zij geven zullen, boter zal eten; ja, een ieder,<sup class=\"note-marker\" data-note=\"71\">71</sup> die overgebleven zal zijn<sup class=\"note-marker\" data-note=\"72\">72</sup> in het midden van het land, die zal<sup class=\"note-marker\" data-note=\"73\">73</sup> boter en honig eten.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En het zal gebeuren, dat hij vanwege de veelheid van de melk, die zij geven zullen, boter zal eten; ja, een ieder,<sup class=\"note-marker\" data-note=\"71\">71</sup> die overgebleven zal zijn<sup class=\"note-marker\" data-note=\"72\">72</sup> in het midden van het land, die zal<sup class=\"note-marker\" data-note=\"73\">73</sup> boter en honing eten.</i></span>",
       "textSV1888_html": "En het zal geschieden, dat hij vanwege de veelheid der melk, die zij geven zullen, boter zal eten; ja, een ieder,<sup class=\"note-marker\" data-note=\"71\">71</sup> die overgebleven zal zijn<sup class=\"note-marker\" data-note=\"72\">72</sup> in het midden des lands, die zal<sup class=\"note-marker\" data-note=\"73\">73</sup> boter en honig eten.",
       "text1637_html": "Ende 't sal geschieden, dat hy van wegen de veelheyt des melcks die sy <sup class=\"note-marker\" data-note=\"69\">69</sup> geven sullen, <sup class=\"note-marker\" data-note=\"70\">70</sup> boter sal eten: ja een yeder <sup class=\"note-marker\" data-note=\"71\">71</sup> die overgebleven sal zijn <sup class=\"note-marker\" data-note=\"72\">72</sup> in't midden des lants, die sal <sup class=\"note-marker\" data-note=\"73\">73</sup> boter ende honich eten.",
       "phraseDiff": [
@@ -2703,6 +2710,11 @@
           "old": "des lands,",
           "new": "van het land,",
           "principe": "N3"
+        },
+        {
+          "old": "honig",
+          "new": "honing",
+          "principe": "V233"
         }
       ]
     },
