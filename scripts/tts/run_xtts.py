@@ -1,14 +1,21 @@
-"""Genereer Genesis 1 met XTTS-v2 (voice-cloned vanuit Artlist sample).
+"""Genereer audio met XTTS-v2 (voice-cloned vanuit Artlist sample).
 
 Run met .venv-xtts geactiveerd:
     source .venv-xtts/bin/activate
-    python -m scripts.tts.run_xtts
+    COQUI_TOS_AGREED=1 python -m scripts.tts.run_xtts --book 1johannes --chapters 1-5
+    COQUI_TOS_AGREED=1 python -m scripts.tts.run_xtts --book genesis --chapter 1
 """
 from __future__ import annotations
+import argparse
 import subprocess
 import json
+import sys
 from pathlib import Path
 
+
+# ---------------------------------------------------------------------------
+# Blackwell patch — MUST be preserved verbatim
+# ---------------------------------------------------------------------------
 
 def _patch_torchaudio_for_blackwell() -> None:
     """Patch torchaudio Spectrogram/MelSpectrogram voor RTX 5070 (sm_120 / Blackwell).
@@ -51,45 +58,149 @@ def _patch_torchaudio_for_blackwell() -> None:
         print(f"Waarschuwing: Blackwell-patch mislukt ({exc}); ga door zonder patch.")
 
 
-def extract_genesis_1() -> str:
-    data = json.loads(Path("data/genesis/1.json").read_text(encoding="utf-8"))
+# ---------------------------------------------------------------------------
+# Tekst-extractie
+# ---------------------------------------------------------------------------
+
+def extract_text(book: str, chapter: int) -> str:
+    """Lees text2026 uit data/{book}/{chapter}.json."""
+    data_file = Path(f"data/{book}/{chapter}.json")
+    if not data_file.exists():
+        raise SystemExit(f"Data-bestand ontbreekt: {data_file}")
+    data = json.loads(data_file.read_text(encoding="utf-8"))
     return " ".join(v["text2026"].strip() for v in data["verses"] if v.get("text2026"))
 
 
-def main() -> None:
-    _patch_torchaudio_for_blackwell()
+# ---------------------------------------------------------------------------
+# Argument-parsing
+# ---------------------------------------------------------------------------
 
-    from TTS.api import TTS
+def _parse_chapters(value: str) -> list[int]:
+    """Parseer '1', '1,2,3' of '1-5' naar een lijst integers."""
+    if "-" in value and "," not in value:
+        start, end = value.split("-", 1)
+        return list(range(int(start), int(end) + 1))
+    return [int(c.strip()) for c in value.split(",")]
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Genereer voorlezing-MP3s met XTTS-v2."
+    )
+    parser.add_argument("--book", required=True, help="Bijbelboek-ID, bijv. 1johannes of genesis")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument(
+        "--chapter",
+        dest="chapters_raw",
+        metavar="CHAPTERS",
+        help="Hoofdstuknummer(s): '1', '1,2,3' of '1-5'",
+    )
+    group.add_argument(
+        "--chapters",
+        dest="chapters_raw",
+        metavar="CHAPTERS",
+        help="Alias voor --chapter",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Overschrijf bestaande MP3s",
+    )
+    return parser.parse_args()
+
+
+# ---------------------------------------------------------------------------
+# Hoofd-logica
+# ---------------------------------------------------------------------------
+
+def generate_chapter(
+    tts,
+    book: str,
+    chapter: int,
+    sample_wav: Path,
+    force: bool,
+) -> bool:
+    """Genereer audio voor één hoofdstuk. Retourneert True bij succes."""
+    out_dir = Path(f"audio/{book}")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_mp3 = out_dir / f"{chapter}.mp3"
+
+    if out_mp3.exists() and not force:
+        print(f"  Sla over (bestaat al): {out_mp3}  — gebruik --force om te overschrijven")
+        return True
+
+    text = extract_text(book, chapter)
+    print(f"  Tekst-lengte: {len(text)} chars")
+
+    out_wav = out_dir / f"{chapter}.wav"
+    try:
+        tts.tts_to_file(
+            text=text,
+            speaker_wav=str(sample_wav),
+            language="nl",
+            file_path=str(out_wav),
+            split_sentences=True,
+        )
+
+        # WAV → MP3 (128 kbps mono)
+        subprocess.run(
+            [
+                "ffmpeg", "-y", "-i", str(out_wav),
+                "-codec:a", "libmp3lame", "-b:a", "128k", "-ac", "1",
+                str(out_mp3),
+            ],
+            check=True,
+            capture_output=True,
+        )
+        out_wav.unlink()
+        print(f"  Klaar: {out_mp3}")
+        return True
+    except Exception as exc:
+        print(f"  FOUT bij {book} hfst {chapter}: {exc}", file=sys.stderr)
+        if out_wav.exists():
+            out_wav.unlink()
+        return False
+
+
+def main() -> None:
+    args = parse_args()
+    chapters = _parse_chapters(args.chapters_raw)
 
     sample_wav = Path("audio/_pilot/_sample/sample.wav")
     if not sample_wav.exists():
         raise SystemExit(f"Voice-sample ontbreekt: {sample_wav}. Run eerst Task 2.")
 
-    text = extract_genesis_1()
-    print(f"Tekst-lengte: {len(text)} chars")
+    # Bepaal welke hoofdstukken daadwerkelijk gegenereerd moeten worden
+    to_generate = []
+    for ch in chapters:
+        out_mp3 = Path(f"audio/{args.book}/{ch}.mp3")
+        if out_mp3.exists() and not args.force:
+            print(f"Sla over (bestaat al): {out_mp3}")
+        else:
+            to_generate.append(ch)
 
-    out_dir = Path("audio/_pilot/xtts")
-    out_dir.mkdir(parents=True, exist_ok=True)
-    out_wav = out_dir / "genesis-1.wav"
-    out_mp3 = out_dir / "genesis-1.mp3"
+    if not to_generate:
+        print("Alle gevraagde hoofdstukken bestaan al. Klaar.")
+        return
 
+    # Model eenmalig laden
+    _patch_torchaudio_for_blackwell()
+    from TTS.api import TTS  # noqa: PLC0415 — bewust laat importeren (patch eerst)
+    print(f"Model laden voor {len(to_generate)} hoofdstuk(ken)…")
     tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=True)
-    tts.tts_to_file(
-        text=text,
-        speaker_wav=str(sample_wav),
-        language="nl",
-        file_path=str(out_wav),
-        split_sentences=True,
-    )
 
-    # WAV → MP3 (128 kbps mono) om te matchen met Artlist baseline
-    subprocess.run([
-        "ffmpeg", "-y", "-i", str(out_wav),
-        "-codec:a", "libmp3lame", "-b:a", "128k", "-ac", "1",
-        str(out_mp3),
-    ], check=True)
-    out_wav.unlink()  # Tussenbestand opruimen
-    print(f"Klaar: {out_mp3}")
+    failed: list[int] = []
+    for ch in to_generate:
+        print(f"\n=== {args.book} / hoofdstuk {ch} ===")
+        ok = generate_chapter(tts, args.book, ch, sample_wav, args.force)
+        if not ok:
+            failed.append(ch)
+
+    if failed:
+        print(f"\nMISLUKT voor hoofdstuk(ken): {failed}", file=sys.stderr)
+        sys.exit(1)
+    else:
+        print("\nAlle hoofdstukken succesvol gegenereerd.")
 
 
 if __name__ == "__main__":
