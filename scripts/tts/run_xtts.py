@@ -7,10 +7,15 @@ Run met .venv-xtts geactiveerd:
 """
 from __future__ import annotations
 import argparse
+import re
 import subprocess
 import json
 import sys
 from pathlib import Path
+
+# XTTS-v2 hard-cap voor Nederlands is 250 chars / 400 tokens per call.
+# We splitsen daaronder zodat lange Paulus-zinnen niet truncen.
+MAX_CHUNK_CHARS = 200
 
 
 # ---------------------------------------------------------------------------
@@ -110,6 +115,75 @@ def parse_args() -> argparse.Namespace:
 
 
 # ---------------------------------------------------------------------------
+# Tekst-chunking
+# ---------------------------------------------------------------------------
+
+# Splitspatroon: behoudt de leestekens aan het eind van elk segment
+_SENT_SPLIT = re.compile(r"(?<=[.!?])\s+")
+_CLAUSE_SPLIT = re.compile(r"(?<=[;:])\s+")
+_COMMA_SPLIT = re.compile(r"(?<=,)\s+")
+
+
+def _hard_wrap_words(text: str, max_chars: int) -> list[str]:
+    """Laatste redmiddel: wrap op woordgrenzen, geen leesteken-boundary."""
+    chunks: list[str] = []
+    current = ""
+    for word in text.split():
+        if not current:
+            current = word
+        elif len(current) + 1 + len(word) <= max_chars:
+            current = current + " " + word
+        else:
+            chunks.append(current)
+            current = word
+    if current:
+        chunks.append(current)
+    return chunks
+
+
+def _split_with(pattern: re.Pattern[str], text: str, max_chars: int) -> list[str]:
+    """Split op pattern, val terug op verdere splitsing voor te lange stukken."""
+    parts = pattern.split(text)
+    out: list[str] = []
+    for p in parts:
+        p = p.strip()
+        if not p:
+            continue
+        if len(p) <= max_chars:
+            out.append(p)
+        elif pattern is _SENT_SPLIT:
+            out.extend(_split_with(_CLAUSE_SPLIT, p, max_chars))
+        elif pattern is _CLAUSE_SPLIT:
+            out.extend(_split_with(_COMMA_SPLIT, p, max_chars))
+        else:
+            out.extend(_hard_wrap_words(p, max_chars))
+    return out
+
+
+def chunk_text(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list[str]:
+    """Splits tekst tot chunks ≤max_chars, prefer zinsgrens > clausegrens > komma > woord.
+
+    Voegt aansluitende kleine chunks samen tot vlak onder max_chars zodat we
+    niet onnodig veel kleine TTS-calls maken (prosody flowt beter binnen één call).
+    """
+    pieces = _split_with(_SENT_SPLIT, text.strip(), max_chars)
+
+    merged: list[str] = []
+    current = ""
+    for p in pieces:
+        if not current:
+            current = p
+        elif len(current) + 1 + len(p) <= max_chars:
+            current = current + " " + p
+        else:
+            merged.append(current)
+            current = p
+    if current:
+        merged.append(current)
+    return merged
+
+
+# ---------------------------------------------------------------------------
 # Hoofd-logica
 # ---------------------------------------------------------------------------
 
@@ -130,17 +204,48 @@ def generate_chapter(
         return True
 
     text = extract_text(book, chapter)
-    print(f"  Tekst-lengte: {len(text)} chars")
+    chunks = chunk_text(text)
+    print(f"  Tekst-lengte: {len(text)} chars in {len(chunks)} chunk(s)")
 
+    chunk_wavs: list[Path] = []
     out_wav = out_dir / f"{chapter}.wav"
+    concat_list = out_dir / f"{chapter}.concat.txt"
+
+    def _cleanup() -> None:
+        for p in chunk_wavs + [out_wav, concat_list]:
+            if p.exists():
+                p.unlink()
+
     try:
-        tts.tts_to_file(
-            text=text,
-            speaker_wav=str(sample_wav),
-            language="nl",
-            file_path=str(out_wav),
-            split_sentences=True,
-        )
+        for i, chunk in enumerate(chunks):
+            chunk_wav = out_dir / f"{chapter}.chunk{i:03d}.wav"
+            tts.tts_to_file(
+                text=chunk,
+                speaker_wav=str(sample_wav),
+                language="nl",
+                file_path=str(chunk_wav),
+                split_sentences=False,
+            )
+            chunk_wavs.append(chunk_wav)
+
+        if len(chunk_wavs) == 1:
+            chunk_wavs[0].rename(out_wav)
+        else:
+            # Concat WAVs via demuxer met absolute paden (geen cwd-issue)
+            concat_list.write_text(
+                "\n".join(f"file '{p.resolve()}'" for p in chunk_wavs) + "\n",
+                encoding="utf-8",
+            )
+            subprocess.run(
+                [
+                    "ffmpeg", "-y", "-f", "concat", "-safe", "0",
+                    "-i", str(concat_list),
+                    "-c", "copy",
+                    str(out_wav),
+                ],
+                check=True,
+                capture_output=True,
+            )
 
         # WAV → MP3 (128 kbps mono)
         subprocess.run(
@@ -152,13 +257,12 @@ def generate_chapter(
             check=True,
             capture_output=True,
         )
-        out_wav.unlink()
-        print(f"  Klaar: {out_mp3}")
+        _cleanup()
+        print(f"  Klaar: {out_mp3} ({len(chunks)} chunk(s) samengevoegd)")
         return True
     except Exception as exc:
         print(f"  FOUT bij {book} hfst {chapter}: {exc}", file=sys.stderr)
-        if out_wav.exists():
-            out_wav.unlink()
+        _cleanup()
         return False
 
 
