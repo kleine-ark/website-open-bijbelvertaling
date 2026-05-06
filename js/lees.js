@@ -101,6 +101,7 @@ const Lees = {
     AUDIO_AVAILABLE: {
         genesis: [1],
         johannes: [1],
+        '1johannes': [1, 2, 3, 4, 5],
     },
 
     VERIFIED_CHAPTERS: {
