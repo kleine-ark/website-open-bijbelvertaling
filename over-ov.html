@@ -97,12 +97,15 @@
 <body>
     <nav id="topnav">
         <div class="topnav-brand">Open Staten Vertaling<span class="topnav-subtitle"> public-domain herziening van de Statenvertaling</span> <span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.14.1</a></span></div>
-        <div class="topnav-links">
+        <div class="topnav-links" id="topnav-links">
             <a href="over-ov.html" style="color:#fff;">Over OV</a>
             <a href="index.html#johannes/1">Tekst</a>
             <a href="wiki.html">Wiki</a>
             <a href="contact.html" target="_blank">Contact</a>
         </div>
+        <button class="topnav-hamburger" id="topnav-hamburger" onclick="document.getElementById('topnav-links').classList.toggle('open');this.classList.toggle('open')" title="Menu" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
     <div class="hero" role="img" aria-label="Schilderij: Jezus en de Samaritaanse vrouw bij de bron — Johannes 4">
