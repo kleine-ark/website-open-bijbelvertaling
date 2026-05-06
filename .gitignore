@@ -12,4 +12,9 @@ vendor/
 audio/_pilot/
 audio/_progress.json
 audio/_errors.log
+audio/_rollout.log
+# Tussenbestanden van XTTS-chunking — alleen .mp3's commiten
+audio/*/*.chunk*.wav
+audio/*/*.concat.txt
+audio/*/*.wav
 .venv-piper/
