@@ -2920,3 +2920,38 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     transition: background-color 1.5s ease-out, box-shadow 1.5s ease-out;
 }
 
+
+/* === Concept / niet-gecontroleerd hoofdstuk markering === */
+.chapter-concept-tag {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #f59e0b;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-left: 8px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+/* Inhoudsopgave / sidebar / mobile picker — niet-geverifieerde hoofdstukken */
+.tree-ch-btn.unverified,
+.mp-item.unverified {
+    color: #92400e;
+    background: rgba(254,243,199,0.4);
+}
+.tree-ch-btn.unverified:hover,
+.mp-item.unverified:hover {
+    background: rgba(254,243,199,0.7);
+}
+.tree-ch-btn.unverified::after,
+.mp-item.unverified::after {
+    content: "•";
+    color: #f59e0b;
+    margin-left: 2px;
+    font-weight: 700;
+}
