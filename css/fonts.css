@@ -1,0 +1,125 @@
+/* Lokale fonts — gehost in /fonts/, geen externe afhankelijkheid (Google Fonts).
+   Subsets: latin (geen full Unicode-range om bestandsgrootte beperkt te houden). */
+
+@font-face {
+    font-family: 'Allura';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/allura-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/fira-sans-400.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/fira-sans-400-italic.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/fira-sans-500.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/fira-sans-600.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/fira-sans-700.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/fonts/lexend-300.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/lexend-400.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/lexend-500.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/lexend-600.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/lexend-700.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/eb-garamond-400.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/eb-garamond-400-italic.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/eb-garamond-500.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/eb-garamond-500-italic.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/eb-garamond-600.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/eb-garamond-700.woff2') format('woff2');
+}
