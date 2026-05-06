@@ -62,6 +62,7 @@ const App = {
     AUDIO_AVAILABLE: {
         genesis: [1],
         johannes: [1],
+        '1johannes': [1, 2, 3, 4, 5],
     },
 
     // Hoofdstukken die handmatig vers-voor-vers zijn nagelopen.
