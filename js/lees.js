@@ -88,6 +88,11 @@ const Lees = {
 
         // Scroll to top
         window.scrollTo(0, 0);
+
+        // Als de hash een ?v=N bevat, scroll/highlight dat vers (search-navigatie).
+        if (window.Search && /[?&]v=\d+/.test(location.hash)) {
+            window.Search.handleVerseHash();
+        }
     },
 
     // === Audio-speler in reader-footer ===
@@ -424,42 +429,8 @@ const Lees = {
     },
 
     // === Search ===
-
-    async search(query) {
-        if (!query || query.length < 2) {
-            document.getElementById('search-results').classList.remove('visible');
-            return;
-        }
-        const results = await this.fetchJSON(`/api/search?q=${encodeURIComponent(query)}`);
-        const dropdown = document.getElementById('search-results');
-
-        if (results.length === 0) {
-            dropdown.innerHTML = '<div class="search-result">Geen resultaten</div>';
-        } else {
-            dropdown.innerHTML = results
-                .filter(r => r.edition === '2026')
-                .slice(0, 20)
-                .map(r => {
-                    const bookMeta = this.bookById[r.book_id];
-                    const name = bookMeta ? bookMeta.nameDutch : r.book_id;
-                    const highlighted = r.text.replace(
-                        new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'),
-                        '<mark>$1</mark>'
-                    );
-                    const snippet = highlighted.length > 150
-                        ? '...' + highlighted.substring(
-                            Math.max(0, highlighted.toLowerCase().indexOf(query.toLowerCase()) - 40),
-                            Math.min(highlighted.length, highlighted.toLowerCase().indexOf(query.toLowerCase()) + 110)
-                          ) + '...'
-                        : highlighted;
-                    return `<div class="search-result" data-book="${r.book_id}" data-ch="${r.chapter}" data-verse="${r.number}">
-                        <span class="search-result-ref">${name} ${r.chapter}:${r.number}</span>
-                        ${snippet}
-                    </div>`;
-                }).join('');
-        }
-        dropdown.classList.add('visible');
-    },
+    // Verplaatst naar js/search.js (Search-module). De /api/search backend-call
+    // is verwijderd — de zoekfunctie is volledig client-side via search-index.json.
 
     // === Dark mode ===
 
@@ -525,24 +496,9 @@ const Lees = {
         // Dark mode
         document.getElementById('dark-mode-toggle').addEventListener('click', () => this.toggleDarkMode());
 
-        // Search
-        let searchTimeout;
-        document.getElementById('search-input').addEventListener('input', (e) => {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => this.search(e.target.value.trim()), 300);
-        });
-        document.getElementById('search-results').addEventListener('click', (e) => {
-            const item = e.target.closest('.search-result');
-            if (!item || !item.dataset.book) return;
-            location.hash = `#${item.dataset.book}/${item.dataset.ch}`;
-            document.getElementById('search-results').classList.remove('visible');
-            document.getElementById('search-input').value = '';
-        });
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-bar')) {
-                document.getElementById('search-results').classList.remove('visible');
-            }
-        });
+        // Search wordt nu door js/search.js (Search-module) afgehandeld.
+        // De #lees-search-trigger input opent de overlay; verdere logica zit
+        // in Search.init() / Search.open(). Geen oude /api/search-call meer.
 
         // Mobile swipe
         document.addEventListener('touchstart', (e) => {
@@ -561,9 +517,7 @@ const Lees = {
                 const action = tab.dataset.tab;
                 if (action === 'bijbel') this.openBookSelector();
                 if (action === 'zoek') {
-                    const header = document.getElementById('reader-header');
-                    header.querySelector('.header-center').style.display = 'block';
-                    document.getElementById('search-input').focus();
+                    if (window.Search) window.Search.open();
                 }
                 if (action === 'instellingen') this.toggleDarkMode();
             });
