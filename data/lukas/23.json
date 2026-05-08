@@ -443,7 +443,7 @@
       "number": 4,
       "textSV1888": "En Pilatus zeide tot de overpriesters en de scharen: Ik vind geen schuld in dezen Mens.",
       "text1637": "Ende Pilatus seyde tot de Overpriesters ende de scharen, Ick en vinde geen [6] schult in desen mensche.",
-      "text2026": "En Pilatus zei tot de overpriesters en de scharen: Ik vind geen schuld in deze Mens.",
+      "text2026": "En Pilatus zei tot de overpriesters en de menigten: Ik vind geen schuld in deze Mens.",
       "marginNotes": [
         {
           "marker": "6",
@@ -557,7 +557,7 @@
           "gloss": "〔this/he/she/it"
         }
       ],
-      "text2026_html": "En Pilatus zei tot de overpriesters en de scharen: <span class=\"direct-speech\"><i>Ik vind geen schuld in deze Mens.</i></span>",
+      "text2026_html": "En Pilatus zei tot de overpriesters en de menigten: <span class=\"direct-speech\"><i>Ik vind geen schuld in deze Mens.</i></span>",
       "textSV1888_html": "En Pilatus zeide tot de overpriesters en de scharen: Ik vind geen<sup class=\"note-marker\" data-note=\"6\">6</sup> schuld in dezen Mens.",
       "text1637_html": "Ende Pilatus seyde tot de Overpriesters ende de scharen, Ick en vinde geen <sup class=\"note-marker\" data-note=\"6\">6</sup> schult in desen mensche.",
       "phraseDiff": [
@@ -565,6 +565,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "scharen:",
+          "new": "menigten:",
+          "principe": "V234"
         },
         {
           "old": "dezen",
@@ -5860,7 +5865,7 @@
       "number": 48,
       "textSV1888": "En al de scharen, die samengekomen waren om dit te aanschouwen, ziende de dingen, die geschied waren, keerden wederom, slaande op hun borsten.",
       "text1637": "Ende alle de scharen, die daer te samen gekomen waren om dit te aenschouwen, siende de dingen, die geschiet waren, keerden wederom [54] slaende op hare borsten.",
-      "text2026": "En al de scharen, die samengekomen waren om dit te aanschouwen, ziende de dingen, die geschied waren, keerden opnieuw, slaande op hun borsten.",
+      "text2026": "En al de menigten, die samengekomen waren om dit te aanschouwen, ziende de dingen, die geschied waren, keerden opnieuw, slaande op hun borsten.",
       "marginNotes": [
         {
           "marker": "54",
@@ -5968,10 +5973,15 @@
           "gloss": "〔to return"
         }
       ],
-      "text2026_html": "En al de scharen, die samengekomen waren om dit te aanschouwen, ziende de dingen, die geschied waren, keerden opnieuw,<sup class=\"note-marker\" data-note=\"54\">54</sup> slaande op hun borsten.",
+      "text2026_html": "En al de menigten, die samengekomen waren om dit te aanschouwen, ziende de dingen, die geschied waren, keerden opnieuw,<sup class=\"note-marker\" data-note=\"54\">54</sup> slaande op hun borsten.",
       "textSV1888_html": "En al de scharen, die samengekomen waren om dit te aanschouwen, ziende de dingen, die geschied waren, keerden wederom,<sup class=\"note-marker\" data-note=\"54\">54</sup> slaande op hun borsten.",
       "text1637_html": "Ende alle de scharen, die daer te samen gekomen waren om dit te aenschouwen, siende de dingen, die geschiet waren, keerden wederom <sup class=\"note-marker\" data-note=\"54\">54</sup> slaende op hare borsten.",
       "phraseDiff": [
+        {
+          "old": "scharen,",
+          "new": "menigten,",
+          "principe": "V234"
+        },
         {
           "old": "wederom,",
           "new": "opnieuw,",
