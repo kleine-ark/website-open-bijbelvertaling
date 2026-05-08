@@ -37,6 +37,17 @@
         { id: 'openbaring', label: 'Openbaring', books: ['openbaring'] },
     ];
 
+    // Canonieke boek-volgorde uit CATEGORIES (Pentateuch → Openbaring)
+    function bookOrderMap() {
+        const o = {};
+        let i = 0;
+        for (const cat of CATEGORIES) {
+            for (const b of cat.books) o[b] = i++;
+        }
+        return o;
+    }
+    const BOOK_ORDER = bookOrderMap();
+
     function bookCategoryMap() {
         const m = {};
         for (const cat of CATEGORIES) {
@@ -286,8 +297,7 @@
 
             const ql = q.toLowerCase();
             const cats = this._activeCategories();
-            const results = [];
-            let totalMatches = 0;
+            const allMatches = [];
 
             for (let i = 0; i < this.index.length; i++) {
                 const e = this.index[i];
@@ -295,9 +305,20 @@
                 if (cat && !cats.has(cat)) continue;
                 if (!cat && cats.size === 0) continue; // unknown book + nothing selected
                 if (e._tl.indexOf(ql) === -1) continue;
-                totalMatches++;
-                if (results.length < MAX_RESULTS) results.push(e);
+                allMatches.push(e);
             }
+            const totalMatches = allMatches.length;
+
+            // Sorteer op canonieke boek-volgorde (Mattheüs vóór Markus etc.),
+            // dan op hoofdstuk + vers.
+            allMatches.sort((a, b) => {
+                const oa = BOOK_ORDER[a.b] ?? 999;
+                const ob = BOOK_ORDER[b.b] ?? 999;
+                if (oa !== ob) return oa - ob;
+                if (a.c !== b.c) return a.c - b.c;
+                return a.v - b.v;
+            });
+            const results = allMatches.slice(0, MAX_RESULTS);
 
             if (totalMatches === 0) {
                 this._renderPlaceholder(`Geen resultaten voor "${escapeHtml(q)}".`);
