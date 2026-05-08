@@ -2376,6 +2376,14 @@
       "beschrijving": "Verouderde spelling 'honig' moderniseren naar 'honing'. Geen betekenisverschil, alleen spelling.",
       "regex": "\\bhonig\\b(?!ing)",
       "voorbeeld": "Mar 1:6 'wilde honig' → 'wilde honing'"
+    },
+    {
+      "id": "V234",
+      "categorie": "verouderde-woorden",
+      "titel": "schare → menigte",
+      "beschrijving": "'Schare' (verzameling mensen) is in modern Nederlands niet meer gangbaar. Vervangen door 'menigte'. Meervoud: 'scharen' → 'menigten'.",
+      "regex": "\\bschare(n)?\\b",
+      "voorbeeld": "Mar 3:20 'vergaderde opnieuw een schare' → 'vergaderde opnieuw een menigte'"
     }
   ]
 }

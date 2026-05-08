@@ -167,7 +167,7 @@
       "number": 3,
       "textSV1888": "En zocht Jezus te zien, wie Hij was; en kon niet vanwege de schare, omdat hij klein van persoon was.",
       "text1637": "Ende socht Iesum te sien, wie hy was: ende en konde niet van wegen de schare, omdat hy kleyn [4] van persoon was.",
-      "text2026": "En zocht Jezus te zien, wie Hij was; en kon niet vanwege de schare, omdat hij klein van persoon was.",
+      "text2026": "En zocht Jezus te zien, wie Hij was; en kon niet vanwege de menigte, omdat hij klein van persoon was.",
       "marginNotes": [
         {
           "marker": "4",
@@ -287,9 +287,16 @@
           "gloss": "〔to be"
         }
       ],
-      "text2026_html": "En zocht Jezus te zien, wie Hij was; en kon niet vanwege de schare, omdat hij klein<sup class=\"note-marker\" data-note=\"4\">4</sup> van persoon was.",
+      "text2026_html": "En zocht Jezus te zien, wie Hij was; en kon niet vanwege de menigte, omdat hij klein<sup class=\"note-marker\" data-note=\"4\">4</sup> van persoon was.",
       "textSV1888_html": "En zocht Jezus te zien, wie Hij was; en kon niet vanwege de schare, omdat hij klein<sup class=\"note-marker\" data-note=\"4\">4</sup> van persoon was.",
-      "text1637_html": "Ende socht Iesum te sien, wie hy was: ende en konde niet van wegen de schare, omdat hy kleyn <sup class=\"note-marker\" data-note=\"4\">4</sup> van persoon was."
+      "text1637_html": "Ende socht Iesum te sien, wie hy was: ende en konde niet van wegen de schare, omdat hy kleyn <sup class=\"note-marker\" data-note=\"4\">4</sup> van persoon was.",
+      "phraseDiff": [
+        {
+          "old": "schare,",
+          "new": "menigte,",
+          "principe": "V234"
+        }
+      ]
     },
     {
       "number": 4,
@@ -4801,7 +4808,7 @@
       "number": 39,
       "textSV1888": "En sommigen der Farizeën uit de schare zeiden tot Hem: Meester, bestraf Uw discipelen.",
       "text1637": "Ende sommige der Phariseen uyt de schare seyden tot hem, Meester bestraft uwe Discipelen.",
-      "text2026": "En sommigen van de Farizeën uit de schare zeiden tot Hem: Meester, bestraf Uw discipelen.",
+      "text2026": "En sommigen van de Farizeën uit de menigte zeiden tot Hem: Meester, bestraf Uw discipelen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4895,13 +4902,18 @@
           "gloss": "〔you"
         }
       ],
-      "text2026_html": "En sommigen van de Farizeën uit de schare zeiden tot Hem: <span class=\"direct-speech\"><i>Meester, bestraf Uw discipelen.</i></span>",
+      "text2026_html": "En sommigen van de Farizeën uit de menigte zeiden tot Hem: <span class=\"direct-speech\"><i>Meester, bestraf Uw discipelen.</i></span>",
       "text1637_html": "Ende sommige der Phariseen uyt de schare seyden tot hem, Meester bestraft uwe Discipelen.",
       "phraseDiff": [
         {
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "schare",
+          "new": "menigte",
+          "principe": "V234"
         }
       ]
     },
