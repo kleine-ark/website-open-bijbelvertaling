@@ -54,6 +54,17 @@ const Lees = {
         return data;
     },
 
+    // Per-hoofdstuk JSON laden — verzen zitten sinds de chapter-split (Phase 1)
+    // niet meer in /data/{bookId}.json maar in /data/{bookId}/{ch}.json.
+    async loadChapter(bookId, chapter) {
+        const key = `${bookId}/${chapter}`;
+        this.chapterCache = this.chapterCache || {};
+        if (this.chapterCache[key]) return this.chapterCache[key];
+        const data = await this.fetchJSON(`/data/${bookId}/${chapter}.json`);
+        this.chapterCache[key] = data;
+        return data;
+    },
+
     // === Navigation ===
 
     handleHash() {
@@ -78,7 +89,7 @@ const Lees = {
         // Update nav
         document.getElementById('nav-book-name').textContent = book.nameDutch || bookId;
         this.renderChapterButtons(book);
-        this.renderChapter(book, chapter);
+        await this.renderChapter(book, chapter);
 
         // Audio-speler tonen/verbergen — bookId apart doorgeven (book.id niet altijd gezet)
         this.updateAudioPlayer(bookId, book, chapter);
@@ -198,8 +209,22 @@ const Lees = {
         }
     },
 
-    renderChapter(book, chapterNum) {
-        const chapter = book.chapters.find(c => c.number === chapterNum);
+    async renderChapter(book, chapterNum) {
+        // Verzen zitten in een apart per-hoofdstuk-bestand (post chapter-split)
+        let chapter = book.chapters.find(c => c.number === chapterNum);
+        if (chapter && (!chapter.verses || chapter.verses.length === 0)) {
+            try {
+                const ch = await this.loadChapter(book.id || this.currentBook, chapterNum);
+                if (ch && ch.verses) {
+                    chapter = Object.assign({}, chapter, ch);
+                } else {
+                    chapter.verses = [];
+                }
+            } catch (e) {
+                console.warn('loadChapter mislukt:', e);
+                chapter.verses = [];
+            }
+        }
         if (!chapter) return;
 
         // Heading — concept-marker bij niet-geverifieerde hoofdstukken
