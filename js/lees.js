@@ -261,11 +261,23 @@ const Lees = {
             span.appendChild(textNode);
 
             // Klik op hele vers (nummer of tekst) → selecteer; behalve op note-markers / strong's tags
-            span.addEventListener('click', (e) => {
+            span.addEventListener('mouseup', (e) => {
                 // Skip als klik op interactief sub-element
                 if (e.target.closest('.note-marker, .strongs-inline, a, .begrip-link')) return;
-                // Skip als gebruiker tekst-selecteert (browser-native selection)
-                if (window.getSelection && window.getSelection().toString().length > 0) return;
+                // Als de gebruiker zelf een sub-stuk geselecteerd heeft binnen één vers
+                // (drag-select op woord/zin), respecteer die selectie en doe niets.
+                const sel = window.getSelection && window.getSelection();
+                const selText = sel ? sel.toString() : '';
+                if (selText && selText.length > 0) {
+                    // Check of die selectie binnen DEZE vers-span valt en uit eigen actie kwam
+                    // (niet uit ons _applyNativeTextSelection — die selecteert hele verses).
+                    const ranges = sel.rangeCount ? sel.getRangeAt(0) : null;
+                    const wholeVerseText = (span.querySelector('.verse-text') || span).textContent;
+                    if (ranges && selText.length < wholeVerseText.length * 0.9) {
+                        // Echt sub-selectie binnen vers — niet onze auto-selectie
+                        return;
+                    }
+                }
                 this.handleVerseClick(e, verse.number);
             });
 
@@ -360,9 +372,33 @@ const Lees = {
             document.getElementById('copy-count').textContent =
                 `${count} vers${count > 1 ? 'en' : ''} geselecteerd`;
             toolbar.classList.add('visible');
+            // Maak ook een browser-native tekst-selectie van de geselecteerde verzen,
+            // zodat de gebruiker direct Ctrl+C kan gebruiken.
+            this._applyNativeTextSelection();
         } else {
             toolbar.classList.remove('visible');
+            // Wis browser-selectie als alle verzen gedeselecteerd zijn
+            const sel = window.getSelection && window.getSelection();
+            if (sel) sel.removeAllRanges();
         }
+    },
+
+    _applyNativeTextSelection() {
+        const spans = this.getSelectedVerses();
+        if (spans.length === 0) return;
+        const sel = window.getSelection && window.getSelection();
+        if (!sel) return;
+        sel.removeAllRanges();
+        // Range over de eerste t/m laatste vers-span (gesorteerd op DOM-volgorde)
+        const range = document.createRange();
+        const first = spans[0];
+        const last = spans[spans.length - 1];
+        const firstText = first.querySelector('.verse-text');
+        const lastText = last.querySelector('.verse-text');
+        if (!firstText || !lastText) return;
+        range.setStartBefore(firstText);
+        range.setEndAfter(lastText);
+        sel.addRange(range);
     },
 
     getSelectedVerses() {
