@@ -260,18 +260,8 @@ const Lees = {
             textNode.innerHTML = this.wrapWordsWithStrongs(html, verse.grondtekst);
             span.appendChild(textNode);
 
-            // Klik op hele vers (nummer of tekst) → selecteer; behalve op note-markers / strong's tags.
-            // We gebruiken pointerup en houden track van mouse-drag-distance om sub-selectie
-            // (woord/zin slepen voor copy) te onderscheiden van een echte klik.
-            let downX = 0, downY = 0;
-            span.addEventListener('pointerdown', (e) => { downX = e.clientX; downY = e.clientY; });
-            span.addEventListener('pointerup', (e) => {
-                if (e.target.closest('.note-marker, .strongs-inline, a, .begrip-link')) return;
-                const moved = Math.hypot(e.clientX - downX, e.clientY - downY);
-                // Een "echte" klik = pointer bewoog minder dan 5px tussen down en up
-                if (moved > 5) return; // user is dragging — laat browser-selectie staan
-                this.handleVerseClick(e, verse.number);
-            });
+            // Versnummer-klik = navigatie/note-popup behavior (bestaande gedrag)
+            num.addEventListener('click', (e) => this.handleVerseClick(e, verse.number));
 
             // Space between verses
             span.appendChild(document.createTextNode(' '));
@@ -324,7 +314,175 @@ const Lees = {
         panel.classList.remove('hidden');
     },
 
-    // === Verse selection & copy ===
+    // === Tekst-selectie-driven toolbar ===
+    // Luistert naar browser-native selectie binnen #verses; toont onderbalk met
+    // Delen / Kopiëren / Met opmaak / Op afbeelding zolang er tekst geselecteerd is.
+
+    _setupSelectionListener() {
+        if (this._selListenerSet) return;
+        this._selListenerSet = true;
+        // Debounce zodat we niet bij elke micro-update herrenderen
+        let timer = null;
+        document.addEventListener('selectionchange', () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => this._handleSelectionChange(), 80);
+        });
+    },
+
+    _handleSelectionChange() {
+        const sel = window.getSelection();
+        if (!sel) return;
+        const text = sel.toString().trim();
+        const toolbar = document.getElementById('copy-toolbar');
+        if (!toolbar) return;
+        // Selectie moet binnen #verses zitten
+        if (!text || sel.rangeCount === 0) {
+            toolbar.classList.remove('visible');
+            return;
+        }
+        const range = sel.getRangeAt(0);
+        const versesEl = document.getElementById('verses');
+        if (!versesEl || !versesEl.contains(range.commonAncestorContainer)) {
+            toolbar.classList.remove('visible');
+            return;
+        }
+        // Bepaal welke verzen de selectie raakt en bouw label
+        const versNums = this._getSelectedVerseNumbers(range);
+        const ref = this._buildRefFromNums(versNums);
+        const cnt = document.getElementById('copy-count');
+        if (cnt) cnt.textContent = ref ? `${ref} geselecteerd` : `${text.length} tekens geselecteerd`;
+        toolbar.classList.add('visible');
+    },
+
+    _getSelectedVerseNumbers(range) {
+        const versSpans = document.querySelectorAll('.verse-span');
+        const nums = [];
+        versSpans.forEach(span => {
+            // Een vers raakt de range als zijn DOM-positie overlapt
+            if (range.intersectsNode && range.intersectsNode(span)) {
+                const n = parseInt(span.dataset.verse);
+                if (!isNaN(n)) nums.push(n);
+            }
+        });
+        return nums.sort((a,b) => a - b);
+    },
+
+    _buildRefFromNums(nums) {
+        if (!nums || nums.length === 0) return '';
+        const book = this.bookById?.[this.currentBook];
+        const name = (book && book.nameDutch) || this.currentBook;
+        if (nums.length === 1) return `${name} ${this.currentChapter}:${nums[0]}`;
+        const range = nums.every((n,i) => i === 0 || n === nums[i-1]+1);
+        if (range) return `${name} ${this.currentChapter}:${nums[0]}-${nums[nums.length-1]}`;
+        return `${name} ${this.currentChapter}:${nums.join(',')}`;
+    },
+
+    _getSelectionData() {
+        const sel = window.getSelection();
+        if (!sel || !sel.toString().trim()) return null;
+        const range = sel.getRangeAt(0);
+        const versNums = this._getSelectedVerseNumbers(range);
+        const ref = this._buildRefFromNums(versNums);
+        // Plain text: directe sel.toString() — clean up note-marker artefacten
+        const plain = sel.toString().replace(/\s+/g, ' ').trim();
+        // HTML met opmaak: clone DocumentFragment en strip note-markers
+        const frag = range.cloneContents();
+        frag.querySelectorAll('.note-marker, .strongs-inline').forEach(m => m.remove());
+        const div = document.createElement('div');
+        div.appendChild(frag);
+        const html = div.innerHTML.trim();
+        return { plain, html, ref, versNums };
+    },
+
+    // === Toolbar acties — werken op de huidige browser-selectie ===
+
+    copyPlain() {
+        const data = this._getSelectionData();
+        if (!data) return;
+        const text = data.ref ? `${data.plain}\n\n— ${data.ref}` : data.plain;
+        navigator.clipboard.writeText(text).then(() => this.showCopyFeedback('Gekopieerd'));
+    },
+
+    copyFormatted() {
+        const data = this._getSelectionData();
+        if (!data) return;
+        const html = data.ref
+            ? `${data.html}<br><br><em>— ${data.ref}</em>`
+            : data.html;
+        const plain = data.ref ? `${data.plain}\n\n— ${data.ref}` : data.plain;
+        if (window.ClipboardItem) {
+            navigator.clipboard.write([new ClipboardItem({
+                'text/html': new Blob([html], { type: 'text/html' }),
+                'text/plain': new Blob([plain], { type: 'text/plain' }),
+            })]).then(() => this.showCopyFeedback('Gekopieerd met opmaak'));
+        } else {
+            navigator.clipboard.writeText(plain).then(() => this.showCopyFeedback('Gekopieerd'));
+        }
+    },
+
+    async shareSelection() {
+        const data = this._getSelectionData();
+        if (!data) return;
+        const text = data.ref
+            ? `${data.plain}\n\n— ${data.ref} (Open Staten Vertaling)`
+            : data.plain;
+        if (navigator.share) {
+            try {
+                await navigator.share({ title: data.ref || 'Open Staten Vertaling', text, url: location.href });
+                return;
+            } catch (e) { if (e.name === 'AbortError') return; }
+        }
+        navigator.clipboard.writeText(text).then(() => this.showCopyFeedback('Gekopieerd (delen niet ondersteund)'));
+    },
+
+    selectionAsImage() {
+        const data = this._getSelectionData();
+        if (!data) return;
+        // Render op canvas — zelfde stijl als versAsImage maar met een vrije tekst-block
+        const canvas = document.getElementById('vers-image-canvas');
+        const W = 1200, PAD = 80;
+        canvas.width = W;
+        canvas.height = 1600;
+        const ctx = canvas.getContext('2d');
+        const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        grad.addColorStop(0, '#f8f4ec'); grad.addColorStop(1, '#ede4d0');
+        ctx.fillStyle = grad; ctx.fillRect(0, 0, W, canvas.height);
+        ctx.fillStyle = '#cba449'; ctx.fillRect(0, 0, 8, canvas.height);
+        ctx.fillStyle = '#142e42';
+        ctx.font = '36px Georgia, "EB Garamond", serif';
+        ctx.textBaseline = 'top';
+
+        const wrap = (text, maxW, lineH, x, y) => {
+            const words = text.split(' ');
+            let line = '';
+            for (const word of words) {
+                const test = line ? line + ' ' + word : word;
+                if (ctx.measureText(test).width > maxW && line) {
+                    ctx.fillText(line, x, y); y += lineH; line = word;
+                } else line = test;
+            }
+            if (line) { ctx.fillText(line, x, y); y += lineH; }
+            return y;
+        };
+        let y = PAD;
+        y = wrap(data.plain, W - PAD * 2, 50, PAD, y) + 30;
+        if (data.ref) {
+            ctx.font = 'italic 26px Georgia, serif'; ctx.fillStyle = '#5a7a8a';
+            ctx.fillText(`— ${data.ref}`, PAD, y); y += 38;
+        }
+        ctx.font = '18px "Fira Sans", sans-serif'; ctx.fillStyle = '#999';
+        ctx.fillText('Open Staten Vertaling · openvertaling.nl', PAD, y); y += 30;
+
+        const finalH = Math.max(y + PAD, 400);
+        const tmp = document.createElement('canvas');
+        tmp.width = W; tmp.height = finalH;
+        tmp.getContext('2d').drawImage(canvas, 0, 0);
+        canvas.width = W; canvas.height = finalH;
+        canvas.getContext('2d').drawImage(tmp, 0, 0);
+        document.getElementById('vers-image-modal').classList.remove('hidden');
+    },
+
+    // === Verse selection & copy (oude vers-nummer-klik handler — blijft werken) ===
 
     handleVerseClick(e, verseNum) {
         const key = String(verseNum);
@@ -697,11 +855,20 @@ const Lees = {
         });
 
         // Copy toolbar — Delen / Kopiëren / Met opmaak / Op afbeelding
-        document.getElementById('vers-share').addEventListener('click', () => this.shareVerses());
-        document.getElementById('copy-plain').addEventListener('click', () => this.copyVerses(false));
-        document.getElementById('copy-formatted').addEventListener('click', () => this.copyVerses(true));
-        document.getElementById('vers-image').addEventListener('click', () => this.versAsImage());
-        document.getElementById('copy-close').addEventListener('click', () => this.clearSelection());
+        // Werkt op browser-native tekst-selectie (drag/long-press → toolbar verschijnt onderin)
+        this._setupSelectionListener();
+        // mousedown op de toolbar mag de selectie niet wissen (anders is de selectie weg
+        // tegen de tijd dat het click-event aankomt)
+        const toolbar = document.getElementById('copy-toolbar');
+        if (toolbar) toolbar.addEventListener('mousedown', (e) => e.preventDefault());
+        document.getElementById('vers-share').addEventListener('click', () => this.shareSelection());
+        document.getElementById('copy-plain').addEventListener('click', () => this.copyPlain());
+        document.getElementById('copy-formatted').addEventListener('click', () => this.copyFormatted());
+        document.getElementById('vers-image').addEventListener('click', () => this.selectionAsImage());
+        document.getElementById('copy-close').addEventListener('click', () => {
+            const sel = window.getSelection(); if (sel) sel.removeAllRanges();
+            document.getElementById('copy-toolbar').classList.remove('visible');
+        });
 
         // Image-modal
         document.getElementById('vers-image-download').addEventListener('click', () => this.downloadVersImage());
