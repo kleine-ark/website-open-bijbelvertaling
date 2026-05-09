@@ -1926,15 +1926,20 @@ body.dyslexia-mode .verses-table tr:nth-child(even) td {
     color: var(--gold);
 }
 
-/* === Verse selectie === */
+/* === Verse selectie — subtiel licht-blauw === */
 .verse-row.verse-selected {
-    background: rgba(203, 164, 73, 0.12) !important;
-    outline: 1px solid rgba(203, 164, 73, 0.3);
-    outline-offset: -1px;
+    background: rgba(96, 165, 250, 0.12) !important;
+    outline: none;
 }
 .verse-row.verse-selected .verse-num {
-    background: rgba(203, 164, 73, 0.2);
+    background: rgba(96, 165, 250, 0.22);
     color: var(--navy);
+}
+/* Browser-native ::selection: zachter licht-blauw i.p.v. browser-default */
+.verse-row .col-2026 ::selection,
+.verse-row .col-2026::selection {
+    background: rgba(96, 165, 250, 0.30);
+    color: inherit;
 }
 
 /* Kopieer-toolbar */
