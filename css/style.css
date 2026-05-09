@@ -2258,18 +2258,20 @@ body.show-tags .verse-tag {
     .mobile-toggle-btn:hover { border-color: var(--gold, #cba449); }
     #mobile-opties-btn:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
 
-    /* --- Sticky bottom nav --- */
+    /* --- Sticky bottom nav — respect iOS safe-area-inset-bottom (Safari URL-bar) --- */
     #mobile-footer-nav {
         display: flex;
         align-items: stretch;
         position: fixed;
-        left: 0; right: 0; bottom: 0;
+        left: 0; right: 0;
+        bottom: 0;
+        padding-bottom: env(safe-area-inset-bottom, 0);
         z-index: 180;
         background: var(--navy);
         color: #fff;
         border-top: 2px solid var(--gold);
         box-shadow: 0 -2px 8px rgba(0,0,0,0.18);
-        height: 56px;
+        min-height: 56px;
     }
     #mobile-footer-nav button {
         flex: 0 0 64px;
@@ -2300,8 +2302,9 @@ body.show-tags .verse-tag {
         padding: 0 8px;
     }
 
-    /* Reserveer ruimte onderin zodat content niet onder de footer valt */
-    body { padding-bottom: 56px; }
+    /* Reserveer ruimte onderin zodat content niet onder de footer valt
+       (incl. iOS safe-area zodat content niet achter Safari URL-bar verdwijnt) */
+    body { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px)); }
 
     /* --- Verberg desktop-elementen die op mobiel verwarrend zijn --- */
     /* De ◀-driehoek voor links-inklappen blijft binnen sidebar header maar de
@@ -3024,7 +3027,8 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
         font-size: 12px;
         flex-wrap: wrap;
         justify-content: center;
-        bottom: 64px;  /* exact boven mobile-footer-nav (56px + 8px gap) */
+        /* footer-nav (56px) + safe-area + 8px gap */
+        bottom: calc(56px + env(safe-area-inset-bottom, 0px) + 8px);
     }
     #copy-count {
         min-width: 0;
