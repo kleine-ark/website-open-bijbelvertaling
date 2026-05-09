@@ -99,17 +99,8 @@ const Lees = {
     // Hardcoded lijst van hoofdstukken met voorlezing (uitbreiden naarmate
     // er meer audio-bestanden in audio/{book}/{ch}.mp3 staan).
     AUDIO_AVAILABLE: {
-        genesis: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
-        psalmen: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-        johannes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
-        handelingen: [1,2,3,4,5,6,7,8],
-        romeinen: [1,2,3,4],
-        '1johannes': [1,2,3,4,5],
-        '2johannes': [1],
-        '3johannes': [1],
-        gebedvanmanasse: [1],
-        filemon: [1],
-        judas: [1],
+        genesis: [1],
+        johannes: [1],
     },
 
     VERIFIED_CHAPTERS: {
@@ -259,7 +250,6 @@ const Lees = {
             const num = document.createElement('span');
             num.className = 'verse-num';
             num.textContent = verse.number;
-            num.addEventListener('click', (e) => this.handleVerseClick(e, verse.number));
             span.appendChild(num);
 
             // Verse text (use text2026_html which has god-speaks + note-markers)
@@ -269,6 +259,15 @@ const Lees = {
             // Add Strong's word wrapping
             textNode.innerHTML = this.wrapWordsWithStrongs(html, verse.grondtekst);
             span.appendChild(textNode);
+
+            // Klik op hele vers (nummer of tekst) → selecteer; behalve op note-markers / strong's tags
+            span.addEventListener('click', (e) => {
+                // Skip als klik op interactief sub-element
+                if (e.target.closest('.note-marker, .strongs-inline, a, .begrip-link')) return;
+                // Skip als gebruiker tekst-selecteert (browser-native selection)
+                if (window.getSelection && window.getSelection().toString().length > 0) return;
+                this.handleVerseClick(e, verse.number);
+            });
 
             // Space between verses
             span.appendChild(document.createTextNode(' '));
@@ -411,6 +410,171 @@ const Lees = {
         setTimeout(() => { el.textContent = orig; el.style.color = ''; }, 1500);
     },
 
+    // Bouw een leesbare ref-string ("Genesis 1:1" of "Genesis 1:1-3" of "Genesis 1:1, 3, 5")
+    _buildRef() {
+        const book = this.bookById?.[this.currentBook];
+        const name = (book && book.nameDutch) || this.currentBook;
+        const nums = [...this.selected].map(n => parseInt(n)).sort((a,b) => a-b);
+        if (nums.length === 0) return `${name} ${this.currentChapter}`;
+        // Detecteer aaneensluitende reeks
+        let isRange = nums.length > 1 && nums.every((n, i) => i === 0 || n === nums[i-1] + 1);
+        if (isRange) return `${name} ${this.currentChapter}:${nums[0]}-${nums[nums.length-1]}`;
+        if (nums.length === 1) return `${name} ${this.currentChapter}:${nums[0]}`;
+        return `${name} ${this.currentChapter}:${nums.join(', ')}`;
+    },
+
+    // Web Share API — werkt vooral op mobiel; valt terug op kopiëren-naar-klembord
+    async shareVerses() {
+        const spans = this.getSelectedVerses();
+        if (spans.length === 0) return;
+        const text = spans.map(span => {
+            const num = span.dataset.verse;
+            const clone = span.querySelector('.verse-text').cloneNode(true);
+            clone.querySelectorAll('.note-marker, .strongs-inline').forEach(m => m.remove());
+            return `${num} ${clone.textContent.trim()}`;
+        }).join('\n');
+        const ref = this._buildRef();
+        const fullText = `${text}\n\n— ${ref} (Open Staten Vertaling)`;
+        if (navigator.share) {
+            try {
+                await navigator.share({ title: ref, text: fullText, url: location.href });
+                return;
+            } catch (e) { /* user cancelled, valt door naar fallback */
+                if (e.name === 'AbortError') return;
+            }
+        }
+        // Fallback: kopieer naar klembord
+        try {
+            await navigator.clipboard.writeText(fullText);
+            this.showCopyFeedback('Tekst naar klembord (delen niet ondersteund)');
+        } catch {
+            alert('Delen niet ondersteund in deze browser.');
+        }
+    },
+
+    // Render geselecteerde verzen op een canvas met perkament-achtergrond
+    versAsImage() {
+        const spans = this.getSelectedVerses();
+        if (spans.length === 0) return;
+        const ref = this._buildRef();
+        const verses = spans.map(span => ({
+            num: span.dataset.verse,
+            text: (() => {
+                const c = span.querySelector('.verse-text').cloneNode(true);
+                c.querySelectorAll('.note-marker, .strongs-inline').forEach(m => m.remove());
+                return c.textContent.trim().replace(/\s+/g, ' ');
+            })(),
+        }));
+
+        const canvas = document.getElementById('vers-image-canvas');
+        const W = 1200, PAD = 80;
+        canvas.width = W;
+        // Hoogte berekenen na render met dummy
+
+        const ctx = canvas.getContext('2d');
+        // Voorlopig grote hoogte; trim later
+        canvas.height = 1600;
+
+        // Achtergrond: warme perkament-gradient met goud-accent
+        const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        grad.addColorStop(0, '#f8f4ec');
+        grad.addColorStop(1, '#ede4d0');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, W, canvas.height);
+
+        // Linker goud-band
+        ctx.fillStyle = '#cba449';
+        ctx.fillRect(0, 0, 8, canvas.height);
+
+        // Tekst-stijl
+        ctx.fillStyle = '#142e42';
+        ctx.font = '36px Georgia, "EB Garamond", serif';
+        ctx.textBaseline = 'top';
+
+        const wrap = (text, maxW, lineH, x, y) => {
+            const words = text.split(' ');
+            let line = '';
+            for (const word of words) {
+                const test = line ? line + ' ' + word : word;
+                if (ctx.measureText(test).width > maxW && line) {
+                    ctx.fillText(line, x, y);
+                    y += lineH;
+                    line = word;
+                } else {
+                    line = test;
+                }
+            }
+            if (line) { ctx.fillText(line, x, y); y += lineH; }
+            return y;
+        };
+
+        let y = PAD;
+        const maxW = W - PAD * 2;
+        const lineH = 50;
+
+        for (const { num, text } of verses) {
+            // Versnummer in goud
+            ctx.font = 'bold 28px Georgia, serif';
+            ctx.fillStyle = '#cba449';
+            ctx.fillText(num, PAD, y + 6);
+            // Tekst in donker
+            ctx.font = '36px Georgia, "EB Garamond", serif';
+            ctx.fillStyle = '#142e42';
+            y = wrap(text, maxW - 60, lineH, PAD + 60, y);
+            y += 18;
+        }
+        y += 20;
+
+        // Reference + branding onderin
+        ctx.font = 'italic 26px Georgia, serif';
+        ctx.fillStyle = '#5a7a8a';
+        ctx.fillText(`— ${ref}`, PAD, y);
+        y += 38;
+        ctx.font = '18px "Fira Sans", sans-serif';
+        ctx.fillStyle = '#999';
+        ctx.fillText('Open Staten Vertaling · openvertaling.nl', PAD, y);
+        y += 30;
+
+        // Trim canvas naar werkelijke hoogte
+        const finalH = Math.max(y + PAD, 400);
+        const tmp = document.createElement('canvas');
+        tmp.width = W;
+        tmp.height = finalH;
+        tmp.getContext('2d').drawImage(canvas, 0, 0);
+        canvas.width = W;
+        canvas.height = finalH;
+        canvas.getContext('2d').drawImage(tmp, 0, 0);
+
+        // Toon modal
+        document.getElementById('vers-image-modal').classList.remove('hidden');
+    },
+
+    downloadVersImage() {
+        const canvas = document.getElementById('vers-image-canvas');
+        const ref = this._buildRef().replace(/[^a-zA-Z0-9-]+/g, '_');
+        const link = document.createElement('a');
+        link.download = `${ref}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    },
+
+    async shareVersImage() {
+        const canvas = document.getElementById('vers-image-canvas');
+        const ref = this._buildRef();
+        canvas.toBlob(async (blob) => {
+            if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], 'vers.png', { type: 'image/png' })] })) {
+                try {
+                    await navigator.share({
+                        title: ref,
+                        files: [new File([blob], `${ref}.png`, { type: 'image/png' })],
+                    });
+                } catch (e) { /* user cancelled */ }
+            } else {
+                this.downloadVersImage();
+            }
+        }, 'image/png');
+    },
+
     // === Book selector ===
 
     openBookSelector() {
@@ -504,10 +668,24 @@ const Lees = {
             if (e.key === 'ArrowRight') this.navigateRelative(1);
         });
 
-        // Copy toolbar
-        document.getElementById('copy-formatted').addEventListener('click', () => this.copyVerses(true));
+        // Copy toolbar — Delen / Kopiëren / Met opmaak / Op afbeelding
+        document.getElementById('vers-share').addEventListener('click', () => this.shareVerses());
         document.getElementById('copy-plain').addEventListener('click', () => this.copyVerses(false));
+        document.getElementById('copy-formatted').addEventListener('click', () => this.copyVerses(true));
+        document.getElementById('vers-image').addEventListener('click', () => this.versAsImage());
         document.getElementById('copy-close').addEventListener('click', () => this.clearSelection());
+
+        // Image-modal
+        document.getElementById('vers-image-download').addEventListener('click', () => this.downloadVersImage());
+        document.getElementById('vers-image-share').addEventListener('click', () => this.shareVersImage());
+        document.getElementById('vers-image-close').addEventListener('click', () => {
+            document.getElementById('vers-image-modal').classList.add('hidden');
+        });
+        document.getElementById('vers-image-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'vers-image-modal') {
+                document.getElementById('vers-image-modal').classList.add('hidden');
+            }
+        });
 
         // Notes panel close
         document.querySelector('.notes-close').addEventListener('click', () => {

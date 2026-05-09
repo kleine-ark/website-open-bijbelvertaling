@@ -650,3 +650,32 @@ body.dark #chapter-buttons button.unverified {
     color: #fbbf24;
     background: rgba(245,158,11,0.10);
 }
+
+/* Verse-row klikbaar (selecteer hele tekstrij, niet alleen nummer) */
+.verse-span { cursor: pointer; }
+.verse-span .verse-num { cursor: pointer; }
+.verse-span.selected { background: rgba(203,164,73,0.18); border-radius: 3px; }
+
+/* Copy-toolbar — extra knoppen Delen + Op afbeelding */
+.copy-toolbar #vers-share,
+.copy-toolbar #vers-image {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.copy-toolbar #vers-share svg { display: inline-block; }
+
+/* Modal overlay voor afbeelding */
+#vers-image-modal {
+    position: fixed; inset: 0; background: rgba(20,46,66,0.7);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1000; padding: 20px;
+}
+#vers-image-modal.hidden { display: none; }
+
+/* Compactere knoppen op mobiel zodat de 5 knoppen passen */
+@media (max-width: 600px) {
+    .copy-toolbar { padding: 8px 10px; gap: 6px; flex-wrap: wrap; }
+    .copy-toolbar button { padding: 7px 10px; font-size: 13px; }
+    .copy-toolbar #vers-share svg { width: 14px; height: 14px; }
+}
