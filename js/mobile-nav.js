@@ -61,7 +61,7 @@ const MobileNav = {
                 const cb2 = document.getElementById('quick-begrippen');
                 if (cb1) cb1.checked = on;
                 if (cb2) cb2.checked = on;
-                if (window.Begrippen) Begrippen.toggle(on);
+                if (typeof Begrippen !== 'undefined') Begrippen.toggle(on);
             });
         }
 
