@@ -69,12 +69,29 @@
         <div id="notes-content"></div>
     </aside>
 
-    <!-- Copy toolbar -->
+    <!-- Copy / share toolbar — verschijnt onderin als verzen geselecteerd zijn -->
     <div id="copy-toolbar" class="copy-toolbar">
         <span id="copy-count"></span>
-        <button id="copy-formatted">Met opmaak</button>
-        <button id="copy-plain">Zonder opmaak</button>
-        <button id="copy-close">&times;</button>
+        <button id="vers-share" title="Delen via systeem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
+            Delen
+        </button>
+        <button id="copy-plain" title="Kopieer als platte tekst">Kopiëren</button>
+        <button id="copy-formatted" title="Kopieer met versnummers en opmaak">Met opmaak</button>
+        <button id="vers-image" title="Maak afbeelding met de tekst">Op afbeelding</button>
+        <button id="copy-close" title="Deselecteer alles">&times;</button>
+    </div>
+
+    <!-- Modal voor afbeelding-preview (verschijnt na 'Op afbeelding') -->
+    <div id="vers-image-modal" class="overlay hidden" role="dialog" aria-label="Afbeelding van vers">
+        <div style="background:#fff;border-radius:8px;padding:18px;max-width:680px;width:92vw;max-height:92vh;overflow:auto;display:flex;flex-direction:column;align-items:center;gap:12px;">
+            <canvas id="vers-image-canvas" style="max-width:100%;height:auto;border:1px solid #e5e1d8;border-radius:6px;background:#f8f6f2;"></canvas>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+                <button id="vers-image-download" style="background:#cba449;color:#fff;border:none;padding:9px 18px;border-radius:5px;font-weight:600;cursor:pointer;">Download als PNG</button>
+                <button id="vers-image-share" style="background:#142e42;color:#fff;border:none;padding:9px 18px;border-radius:5px;font-weight:600;cursor:pointer;">Delen</button>
+                <button id="vers-image-close" style="background:#eee;color:#333;border:none;padding:9px 18px;border-radius:5px;font-weight:600;cursor:pointer;">Sluiten</button>
+            </div>
+        </div>
     </div>
 
     <!-- Lexicon modal -->
