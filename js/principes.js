@@ -83,9 +83,12 @@
         // Totaal aantal wijzigingen bovenaan
         const totalChanges = Object.values(countPerPrincipe).reduce((a, b) => a + b, 0);
         const totalPrincipes = principesData.length;
+        const TOTAL_DIFFS = 71052; // van laatste diff-regen
+        const pct = Math.round(100 * totalChanges / TOTAL_DIFFS);
+        const losse = TOTAL_DIFFS - totalChanges;
         const summary = document.createElement('div');
         summary.style.cssText = 'background:#f8f6f2;border-left:3px solid #cba449;border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:15px;line-height:1.6;';
-        summary.innerHTML = `<strong>${totalChanges.toLocaleString('nl-NL')}</strong> wijzigingen doorgevoerd in de Statenvertaling, verdeeld over <strong>${totalPrincipes}</strong> principes.`;
+        summary.innerHTML = `<strong>${TOTAL_DIFFS.toLocaleString('nl-NL')}</strong> tekstwijzigingen tussen SV1888 en de OSV. Daarvan is <strong>${totalChanges.toLocaleString('nl-NL')}</strong> (${pct}%) via een van de <strong>${totalPrincipes}</strong> principes geregeld; <strong>${losse.toLocaleString('nl-NL')}</strong> zijn losse, vers-specifieke correcties.`;
         container.appendChild(summary);
 
         // Group by category
