@@ -2480,6 +2480,30 @@
       "beschrijving": "'Genaken' (oud-Nederlands voor naderen/dichtbij komen) → 'naderen'. Inclusief vervoegingen: genaakten→naderden, genaakte→naderde.",
       "regex": "\\b[Gg]enaak(en|ten|te)?\\b",
       "voorbeeld": "Mar 11:1 'als zij Jeruzalem genaakten' → 'als zij Jeruzalem naderden'"
+    },
+    {
+      "id": "V247",
+      "categorie": "spelling",
+      "titel": "ongehevelde → ongezuurde",
+      "beschrijving": "Verouderde term voor brood zonder zuurdesem.",
+      "regex": "\\bongeheveld(e)?\\b",
+      "voorbeeld": "Mar 14:1 'ongehevelde broden' → 'ongezuurde broden'"
+    },
+    {
+      "id": "V248",
+      "categorie": "verouderde-woorden",
+      "titel": "valselijk → vals",
+      "beschrijving": "-lijk-bijwoord-modernisering.",
+      "regex": "\\bvalselijk\\b",
+      "voorbeeld": "Mar 14:57 'getuigden valselijk' → 'getuigden vals'"
+    },
+    {
+      "id": "V249",
+      "categorie": "verouderde-woorden",
+      "titel": "kreaturen → schepselen",
+      "beschrijving": "Verlatiniseerd creatuur → schepsel.",
+      "regex": "\\bkreatu(ren|ur)\\b",
+      "voorbeeld": "Mar 16:15 'aan alle kreaturen' → 'aan alle schepselen'"
     }
   ]
 }

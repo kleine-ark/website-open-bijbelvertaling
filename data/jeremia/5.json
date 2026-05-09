@@ -134,7 +134,7 @@
       "number": 2,
       "textSV1888": "En of zij al zeggen: Zo waarachtig als de HEERE leeft! zo zweren zij toch valselijk.",
       "text1637": "Ende of sy al [3] seggen; [Soo waerachtich als] de HEERE leeft: so sweeren sy [4] doch valschelick.",
-      "text2026": "En of zij al zeggen: Zo waarachtig als JAHWEH leeft! zo zweren zij toch valselijk.",
+      "text2026": "En of zij al zeggen: Zo waarachtig als JAHWEH leeft! zo zweren zij toch vals.",
       "marginNotes": [
         {
           "marker": "3",
@@ -188,7 +188,7 @@
           "morph": "HVNi3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En of zij al<sup class=\"note-marker\" data-note=\"3\">3</sup> zeggen: Zo waarachtig als JAHWEH leeft! zo zweren zij<sup class=\"note-marker\" data-note=\"4\">4</sup> toch valselijk.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En of zij al<sup class=\"note-marker\" data-note=\"3\">3</sup> zeggen: Zo waarachtig als JAHWEH leeft! zo zweren zij<sup class=\"note-marker\" data-note=\"4\">4</sup> toch vals.</i></span>",
       "textSV1888_html": "En of zij al<sup class=\"note-marker\" data-note=\"3\">3</sup> zeggen: Zo waarachtig als de HEERE leeft! zo zweren zij<sup class=\"note-marker\" data-note=\"4\">4</sup> toch valselijk.",
       "text1637_html": "Ende of sy al <sup class=\"note-marker\" data-note=\"3\">3</sup> seggen; [Soo waerachtich als] de HEERE leeft: so sweeren sy <sup class=\"note-marker\" data-note=\"4\">4</sup> doch valschelick.",
       "phraseDiff": [
@@ -196,6 +196,11 @@
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
+        },
+        {
+          "old": "valselijk.",
+          "new": "vals.",
+          "principe": "V248"
         }
       ]
     },
@@ -3384,7 +3389,7 @@
       "number": 31,
       "textSV1888": "De profeten profeteren valselijk, en de priesters heersen door hun handen; en Mijn volk heeft het gaarne alzo; maar wat zult gij ten einde van dien maken?",
       "text1637": "De [60] Propheten propheteren [v] [61] valschelick, ende de Priesteren heerschen door [62] hare handen, ende mijn volck [63] heeft het geerne alsoo: maer wat sult ghy ten [64] eynde van dien maken?",
-      "text2026": "De profeten profeteren valselijk, en de priesters heersen door hun handen; en Mijn volk heeft het gaarne zo; maar wat zult u ten einde van die maken?",
+      "text2026": "De profeten profeteren vals, en de priesters heersen door hun handen; en Mijn volk heeft het gaarne zo; maar wat zult u ten einde van die maken?",
       "marginNotes": [
         {
           "marker": "60",
@@ -3496,10 +3501,15 @@
           "morph": "HR/Ncfsc/Sp3fs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>De<sup class=\"note-marker\" data-note=\"60\">60</sup> profeten profeteren<sup class=\"note-marker\" data-note=\"61\">61</sup><sup class=\"note-marker\" data-note=\"v\">v</sup> valselijk, en de priesters heersen door<sup class=\"note-marker\" data-note=\"62\">62</sup> hun handen; en Mijn volk<sup class=\"note-marker\" data-note=\"63\">63</sup> heeft het gaarne zo; maar wat zult u ten<sup class=\"note-marker\" data-note=\"64\">64</sup> einde van die maken?</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>De<sup class=\"note-marker\" data-note=\"60\">60</sup> profeten profeteren<sup class=\"note-marker\" data-note=\"61\">61</sup><sup class=\"note-marker\" data-note=\"v\">v</sup> vals, en de priesters heersen door<sup class=\"note-marker\" data-note=\"62\">62</sup> hun handen; en Mijn volk<sup class=\"note-marker\" data-note=\"63\">63</sup> heeft het gaarne zo; maar wat zult u ten<sup class=\"note-marker\" data-note=\"64\">64</sup> einde van die maken?</i></span>",
       "textSV1888_html": "De<sup class=\"note-marker\" data-note=\"60\">60</sup> profeten profeteren<sup class=\"note-marker\" data-note=\"61\">61</sup><sup class=\"note-marker\" data-note=\"v\">v</sup> valselijk, en de priesters heersen door<sup class=\"note-marker\" data-note=\"62\">62</sup> hun handen; en Mijn volk<sup class=\"note-marker\" data-note=\"63\">63</sup> heeft het gaarne alzo; maar wat zult gij ten<sup class=\"note-marker\" data-note=\"64\">64</sup> einde van dien maken?",
       "text1637_html": "De <sup class=\"note-marker\" data-note=\"60\">60</sup> Prophete<i>n</i> propheteren <sup class=\"note-marker\" data-note=\"v\">v</sup> <sup class=\"note-marker\" data-note=\"61\">61</sup> valschelick, ende de Priesteren heerschen door <sup class=\"note-marker\" data-note=\"62\">62</sup> hare handen, ende mijn volck <sup class=\"note-marker\" data-note=\"63\">63</sup> heeft het geerne alsoo: maer wat sult ghy ten <sup class=\"note-marker\" data-note=\"64\">64</sup> eynde van dien maken?",
       "phraseDiff": [
+        {
+          "old": "valselijk,",
+          "new": "vals,",
+          "principe": "V248"
+        },
         {
           "old": "alzo;",
           "new": "zo;",
