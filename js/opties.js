@@ -12,10 +12,13 @@ const Opties = {
 
     init() {
         const saved = localStorage.getItem(this.STORAGE_KEY);
+        // Mobiele default: kolommen 'eronder' i.p.v. 'naast' — beter leesbaar op smal scherm
+        const defaults = { ...this.DEFAULTS };
+        if (window.innerWidth <= 768) defaults.kolomLayout = 'eronder';
         try {
-            this.state = saved ? { ...this.DEFAULTS, ...JSON.parse(saved) } : { ...this.DEFAULTS };
+            this.state = saved ? { ...defaults, ...JSON.parse(saved) } : { ...defaults };
         } catch (e) {
-            this.state = { ...this.DEFAULTS };
+            this.state = { ...defaults };
         }
 
         // Sync radio buttons
