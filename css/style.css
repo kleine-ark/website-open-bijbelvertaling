@@ -3012,3 +3012,47 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 @media (max-width: 768px) {
     .topnav-search-input { display: none; }
 }
+
+/* === Mobiele copy-toolbar — compacter zodat het past === */
+@media (max-width: 768px) {
+    #copy-toolbar {
+        left: 8px;
+        right: 8px;
+        transform: none;
+        max-width: none;
+        padding: 8px 10px;
+        gap: 6px;
+        font-size: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #copy-toolbar.visible {
+        bottom: 70px;  /* boven de mobile-footer-nav */
+    }
+    #copy-count {
+        min-width: 0;
+        flex-basis: 100%;
+        text-align: center;
+        font-size: 11px;
+        opacity: 0.85;
+        margin-bottom: 2px;
+    }
+    #copy-toolbar button {
+        padding: 6px 10px;
+        font-size: 12px;
+        flex: 0 1 auto;
+    }
+    #copy-toolbar #vers-share svg,
+    #copy-toolbar #vers-image svg {
+        width: 13px;
+        height: 13px;
+    }
+    /* Verberg "kopiëren met opmaak" tekst, alleen icon-style afkortingen */
+    #copy-toolbar #vers-share { padding: 6px 10px; }
+}
+
+/* Heel smal scherm: nog compacter — alle 4 functies blijven */
+@media (max-width: 420px) {
+    #copy-toolbar { padding: 6px 8px; gap: 4px; }
+    #copy-toolbar button { padding: 6px 8px; font-size: 11px; }
+}
