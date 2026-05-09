@@ -3058,11 +3058,15 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     #copy-toolbar button { padding: 6px 8px; font-size: 11px; }
 }
 
-/* === Mobiel: extra kolommen ALTIJD onder OV2026 (block-layout), niet ernaast === */
+/* === Mobiel: extra kolommen ALTIJD onder OV2026 (block-layout), niet ernaast ===
+   Override 'display: grid !important' uit reading-mode-block (regel ~2655) */
 @media (max-width: 768px) {
-    #verses-container .verse-row {
-        display: block;
+    #verses-container .verse-row,
+    #content.reading-mode .verse-row,
+    #content.reading-mode.layout-eronder .verse-row {
+        display: block !important;
         padding: 8px 14px 10px;
+        gap: 0;
     }
     #verses-container .verse-num {
         display: inline;
