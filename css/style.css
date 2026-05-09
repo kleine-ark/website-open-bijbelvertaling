@@ -3053,3 +3053,46 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     #copy-toolbar { padding: 6px 8px; gap: 4px; }
     #copy-toolbar button { padding: 6px 8px; font-size: 11px; }
 }
+
+/* === Mobiel: extra kolommen ALTIJD onder OV2026 (block-layout), niet ernaast === */
+@media (max-width: 768px) {
+    #verses-container .verse-row {
+        display: block;
+        padding: 8px 14px 10px;
+    }
+    #verses-container .verse-num {
+        display: inline;
+        margin-right: 4px;
+    }
+    #verses-container .verse-cell {
+        display: block;
+        margin-top: 4px;
+        padding-left: 0;
+        border-left: none;
+        flex: none;
+        min-width: 0;
+        max-width: 100%;
+    }
+    /* OV2026 kolom direct na nummer, geen extra marge */
+    #verses-container .verse-cell.col-2026 {
+        margin-top: 0;
+        display: inline;
+    }
+    /* Extra kolommen (diff, sv1888, etc.) krijgen labeltje voor duidelijkheid */
+    #verses-container .verse-cell.col-diff::before {
+        content: 'Verschillen SV-OSV';
+        display: block;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--teal);
+        font-weight: 600;
+        margin-top: 8px;
+        margin-bottom: 4px;
+    }
+    #verses-container .verse-cell.col-sv1888::before { content: 'SV 1888'; display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--teal); font-weight: 600; margin-top: 8px; margin-bottom: 4px; }
+    #verses-container .verse-cell.col-1637::before { content: 'SV 1637'; display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--teal); font-weight: 600; margin-top: 8px; margin-bottom: 4px; }
+    #verses-container .verse-cell.col-margin2026::before { content: 'OSV kanttekeningen'; display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--teal); font-weight: 600; margin-top: 8px; margin-bottom: 4px; }
+    #verses-container .verse-cell.col-hebrew::before { content: 'Hebr/Grieks'; display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--teal); font-weight: 600; margin-top: 8px; margin-bottom: 4px; }
+    #verses-container .verse-cell.col-noteDiff::before { content: 'Verschillen KT'; display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--teal); font-weight: 600; margin-top: 8px; margin-bottom: 4px; }
+}
