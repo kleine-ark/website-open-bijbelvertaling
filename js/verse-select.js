@@ -47,7 +47,7 @@ const VerseSelect = {
             }
         });
 
-        // Luister naar klikken op versnummers
+        // Luister naar klikken op versnummers (legacy: highlight-toggle e.d.)
         document.getElementById('verses-container').addEventListener('click', (e) => {
             const num = e.target.closest('.verse-num');
             if (!num) return;
@@ -57,13 +57,10 @@ const VerseSelect = {
             const verseKey = row.dataset.verse;
 
             if (e.shiftKey && this.lastClicked) {
-                // Shift+klik: selecteer bereik
                 this.selectRange(this.lastClicked, verseKey);
             } else if (e.ctrlKey || e.metaKey) {
-                // Ctrl/Cmd+klik: toggle
                 this.toggle(verseKey);
             } else {
-                // Gewone klik: als al geselecteerd, deselecteer. Anders selecteer alleen deze.
                 if (this.selected.has(verseKey) && this.selected.size === 1) {
                     this.clearAll();
                 } else {
@@ -74,6 +71,82 @@ const VerseSelect = {
             this.lastClicked = verseKey;
             this.updateUI();
         });
+
+        // NIEUW: klik op de OV2026 tekst-cel selecteert de tekst browser-native
+        // (zodat Ctrl+C werkt) + toont copy-toolbar onderin.
+        // Drag-select (>5px) wordt gerespecteerd voor sub-selectie van een woord/zin.
+        let downX = 0, downY = 0;
+        const versesContainer = document.getElementById('verses-container');
+        versesContainer.addEventListener('pointerdown', (e) => {
+            downX = e.clientX; downY = e.clientY;
+        });
+        versesContainer.addEventListener('pointerup', (e) => {
+            // Skip als klik op interactief sub-element
+            if (e.target.closest('.note-marker, .strongs-inline, a, .begrip-link, .verse-num, button')) return;
+            const cell = e.target.closest('.col-2026');
+            if (!cell) return;
+            const moved = Math.hypot(e.clientX - downX, e.clientY - downY);
+            if (moved > 5) return; // user is drag-selecting
+            const sel = window.getSelection();
+            if (!sel) return;
+            sel.removeAllRanges();
+            const range = document.createRange();
+            range.selectNodeContents(cell);
+            sel.addRange(range);
+        });
+
+        // selectionchange-driven toolbar — luistert op browser-native selectie
+        // binnen #verses-container, ongeacht hoe die ontstond (klik of drag).
+        this._setupSelectionToolbar();
+    },
+
+    _setupSelectionToolbar() {
+        let timer = null;
+        document.addEventListener('selectionchange', () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => this._handleSelectionChange(), 80);
+        });
+        // mousedown op toolbar mag selectie niet wissen
+        const tb = document.getElementById('copy-toolbar');
+        if (tb) tb.addEventListener('mousedown', (e) => e.preventDefault());
+    },
+
+    _handleSelectionChange() {
+        const sel = window.getSelection();
+        const tb = document.getElementById('copy-toolbar');
+        if (!tb) return;
+        if (!sel || sel.rangeCount === 0 || !sel.toString().trim()) {
+            // Behoud zichtbaarheid als gebruiker via versnummer-klik selecteerde
+            if (this.selected.size === 0) tb.classList.remove('visible');
+            return;
+        }
+        const versesContainer = document.getElementById('verses-container');
+        const range = sel.getRangeAt(0);
+        if (!versesContainer || !versesContainer.contains(range.commonAncestorContainer)) return;
+        // Bepaal welke vers-rij(en) de selectie raakt
+        const rows = [...document.querySelectorAll('.verse-row')];
+        const nums = rows.filter(r => range.intersectsNode && range.intersectsNode(r))
+            .map(r => parseInt(r.dataset.verse))
+            .filter(n => !isNaN(n))
+            .sort((a, b) => a - b);
+        const cnt = document.getElementById('copy-count');
+        if (cnt && nums.length) {
+            // Bouw "Boek H:V" uit chapter-title — clone & strip de CONCEPT-badge
+            const bookEl = document.getElementById('chapter-title');
+            let bookName = '';
+            if (bookEl) {
+                const clone = bookEl.cloneNode(true);
+                clone.querySelectorAll('.chapter-concept-tag').forEach(t => t.remove());
+                bookName = clone.textContent.trim();
+            }
+            const refRange = nums.length === 1
+                ? `${bookName}:${nums[0]}`
+                : (nums.every((n,i) => i===0 || n === nums[i-1]+1)
+                    ? `${bookName}:${nums[0]}-${nums[nums.length-1]}`
+                    : `${bookName}:${nums.join(',')}`);
+            cnt.textContent = `${refRange} geselecteerd`;
+        }
+        tb.classList.add('visible');
     },
 
     select(key) {
