@@ -2955,3 +2955,7 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     margin-left: 2px;
     font-weight: 700;
 }
+
+/* Audio-container containers verbergen op hoofdstukken zonder voorlezing */
+.chf-center.hidden { display: none; }
+.mfn-audio.hidden { display: none; }

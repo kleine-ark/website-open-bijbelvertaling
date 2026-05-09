@@ -60,17 +60,8 @@ const App = {
     // Kolom-breedtes: gelijk verdeeld
     // Hoofdstukken met voorlezing-audio (audio/{book}/{ch}.mp3)
     AUDIO_AVAILABLE: {
-        genesis: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
-        psalmen: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-        johannes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
-        handelingen: [1,2,3,4,5,6,7,8],
-        romeinen: [1,2,3,4],
-        '1johannes': [1,2,3,4,5],
-        '2johannes': [1],
-        '3johannes': [1],
-        gebedvanmanasse: [1],
-        filemon: [1],
-        judas: [1],
+        genesis: [1],
+        johannes: [1],
     },
 
     // Hoofdstukken die handmatig vers-voor-vers zijn nagelopen.
@@ -121,6 +112,9 @@ const App = {
         const speedMob = document.getElementById('audio-speed-mobile');
         const scrubWrap = document.getElementById('audio-scrubber-wrap');
         const audioEl = document.getElementById('audio-el');
+        // Containers ook hide-en zodat ze geen ruimte innemen op hoofdstukken zonder audio
+        const chfCenter = playBtn ? playBtn.closest('.chf-center') : null;
+        const mfnAudio = playMob ? playMob.closest('.mfn-audio') : null;
         if (!audioEl) return;
         try { audioEl.pause(); } catch (e) {}
         const list = App.AUDIO_AVAILABLE[bookId] || [];
@@ -131,6 +125,8 @@ const App = {
         setHidden(speedBtn, !show);
         setHidden(speedMob, !show);
         setHidden(scrubWrap, !show);
+        setHidden(chfCenter, !show);
+        setHidden(mfnAudio, !show);
         if (!show) { audioEl.removeAttribute('src'); return; }
         audioEl.src = `audio/${bookId}/${chapter}.mp3`;
         if (playBtn) playBtn.classList.remove('is-playing');
