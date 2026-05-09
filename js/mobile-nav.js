@@ -102,7 +102,7 @@ const MobileNav = {
         this.pickerMode = mode;
         body.innerHTML = '';
         if (mode === 'books') {
-            title.textContent = 'Kies een bijbelboek';
+            title.textContent = 'Kies een boek';
             back.classList.add('hidden');
             this._renderBooks(body);
         } else {

@@ -192,9 +192,9 @@
                 `<label class="search-cat"><input type="checkbox" class="search-cat-cb" data-cat="${c.id}" checked> ${escapeHtml(c.label)}</label>`
             ).join('');
             return `
-                <div class="search-panel" role="dialog" aria-label="Zoeken in de bijbel">
+                <div class="search-panel" role="dialog" aria-label="Zoeken in Gods Woord">
                     <div class="search-header">
-                        <input type="text" id="search-input" placeholder="Zoek in de bijbel..." autocomplete="off" autofocus>
+                        <input type="text" id="search-input" placeholder="Zoek in Gods Woord..." autocomplete="off" autofocus>
                         <button class="search-close" aria-label="Sluiten" title="Sluiten">&times;</button>
                     </div>
                     <div class="search-categories">
@@ -272,14 +272,14 @@
             // Index lazy laden in achtergrond (toont placeholder zolang nog niet klaar)
             this._ensureIndex().then(() => {
                 if (this.inputEl && this.inputEl.value.trim()) this._render();
-                else this._renderPlaceholder('Type een woord om te zoeken in alle bijbelboeken.');
+                else this._renderPlaceholder('Type een woord om te zoeken in alle boeken van Gods Woord.');
             }).catch(err => {
                 this._renderPlaceholder('Kon de zoek-index niet laden: ' + err.message);
             });
             setTimeout(() => this.inputEl && this.inputEl.focus(), 0);
             if (!this.inputEl.value.trim()) {
                 this._renderPlaceholder(this.index
-                    ? 'Type een woord om te zoeken in alle bijbelboeken.'
+                    ? 'Type een woord om te zoeken in alle boeken van Gods Woord.'
                     : 'Index laden…');
             }
         },
