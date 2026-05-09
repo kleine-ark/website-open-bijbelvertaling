@@ -2504,6 +2504,14 @@
       "beschrijving": "Verlatiniseerd creatuur → schepsel.",
       "regex": "\\bkreatu(ren|ur)\\b",
       "voorbeeld": "Mar 16:15 'aan alle kreaturen' → 'aan alle schepselen'"
+    },
+    {
+      "id": "V250",
+      "categorie": "spelling",
+      "titel": "trema-fixes (Kapernaüm, Bethsaïda, Saraï)",
+      "beschrijving": "Diacritische tekens (trema's) toevoegen op eigennamen waar modern Nederlands een trema vereist om uitspraak duidelijk te maken: Kapernaum→Kapernaüm, Bethsaida→Bethsaïda, Sarai→Saraï. Boaz, Aäron, Naäman, Israël blijven onaangetast (al correct).",
+      "regex": "\\b(Kapernaum|Bethsaida|Sarai)\\b",
+      "voorbeeld": "Mat 4:13 'in Kapernaum' → 'in Kapernaüm'"
     }
   ]
 }
