@@ -119,7 +119,7 @@ const Lees = {
         psalmen:    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
         johannes:   'all',
         handelingen:[1,2,3,4,5,6,7,8],
-        markus:     [1,2],
+        markus:     [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
         romeinen:   [1,2,3,4],
         '1johannes':'all',
         '2johannes':'all',
@@ -286,7 +286,35 @@ const Lees = {
             span.appendChild(textNode);
 
             // Versnummer-klik = navigatie/note-popup behavior (bestaande gedrag)
-            num.addEventListener('click', (e) => this.handleVerseClick(e, verse.number));
+            num.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.handleVerseClick(e, verse.number);
+            });
+
+            // Klik op vers-tekst → selecteer de hele vers-tekst (browser-native via Range API).
+            // Dit triggert selectionchange → toolbar onderin verschijnt.
+            // Skip note-markers / strong's / begrip-links — die hebben eigen acties.
+            // Drag-select (>5px verplaatsing) wordt niet overruled — gebruiker kan nog steeds
+            // een woord/zin slepen.
+            let downX = 0, downY = 0;
+            span.addEventListener('pointerdown', (e) => {
+                downX = e.clientX; downY = e.clientY;
+            });
+            span.addEventListener('pointerup', (e) => {
+                if (e.target.closest('.note-marker, .strongs-inline, a, .begrip-link, .verse-num')) return;
+                const moved = Math.hypot(e.clientX - downX, e.clientY - downY);
+                if (moved > 5) return; // user drag-selecteerde een sub-stuk
+                // Selecteer de hele vers-tekst programmatisch
+                const textEl = span.querySelector('.verse-text');
+                if (!textEl) return;
+                const sel = window.getSelection();
+                if (!sel) return;
+                sel.removeAllRanges();
+                const range = document.createRange();
+                range.selectNodeContents(textEl);
+                sel.addRange(range);
+                // selectionchange-listener triggert vanzelf en toont toolbar
+            });
 
             // Space between verses
             span.appendChild(document.createTextNode(' '));
