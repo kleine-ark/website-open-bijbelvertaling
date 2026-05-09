@@ -213,17 +213,33 @@ const VerseSelect = {
         });
 
         if (withFormatting) {
-            // HTML: versnummers vet, god-speaks rood+cursief
+            // HTML: versnummers superscript-vet, god-speaks rood+cursief met
+            // aanhalingstekens, direct-speech cursief met aanhalingstekens.
+            // CSS classes worden vertaald naar inline styles zodat ze in Word/
+            // Mail/Outlook ook werken (die hebben onze stylesheet niet).
             const htmlParts = col2026.map(({ num, cell }) => {
-                // Kloon de cel inhoud maar strip contenteditable artefacten
                 const clone = cell.cloneNode(true);
-                // Verwijder note-markers voor kopieer
                 clone.querySelectorAll('.note-marker').forEach(m => m.remove());
                 clone.querySelectorAll('.strongs-inline').forEach(m => m.remove());
-                const inner = clone.innerHTML.trim();
-                return `<b>${num}</b> ${inner}`;
+                // god-speaks → rode cursief tekst met „..." aanhalingstekens
+                clone.querySelectorAll('.god-speaks').forEach(span => {
+                    const inner = span.innerHTML;
+                    const wrap = document.createElement('span');
+                    wrap.setAttribute('style', 'color:#c0392b;');
+                    wrap.innerHTML = '„' + inner + '”';
+                    span.replaceWith(wrap);
+                });
+                // direct-speech → cursief met „..." aanhalingstekens
+                clone.querySelectorAll('.direct-speech').forEach(span => {
+                    const inner = span.innerHTML;
+                    const wrap = document.createElement('em');
+                    wrap.innerHTML = '„' + inner + '”';
+                    span.replaceWith(wrap);
+                });
+                // Versnummer in superscript (i.p.v. <b> dat hele tekst vet maakt)
+                return `<sup style="font-weight:600;">${num}</sup> ${clone.innerHTML.trim()}`;
             });
-            const html = htmlParts.join('<br>\n');
+            const html = '<div style="font-family:Georgia,serif;line-height:1.6;">' + htmlParts.join('<br>\n') + '</div>';
 
             // Platte tekst als fallback
             const plain = col2026.map(({ num, cell }) => {
