@@ -260,24 +260,16 @@ const Lees = {
             textNode.innerHTML = this.wrapWordsWithStrongs(html, verse.grondtekst);
             span.appendChild(textNode);
 
-            // Klik op hele vers (nummer of tekst) → selecteer; behalve op note-markers / strong's tags
-            span.addEventListener('mouseup', (e) => {
-                // Skip als klik op interactief sub-element
+            // Klik op hele vers (nummer of tekst) → selecteer; behalve op note-markers / strong's tags.
+            // We gebruiken pointerup en houden track van mouse-drag-distance om sub-selectie
+            // (woord/zin slepen voor copy) te onderscheiden van een echte klik.
+            let downX = 0, downY = 0;
+            span.addEventListener('pointerdown', (e) => { downX = e.clientX; downY = e.clientY; });
+            span.addEventListener('pointerup', (e) => {
                 if (e.target.closest('.note-marker, .strongs-inline, a, .begrip-link')) return;
-                // Als de gebruiker zelf een sub-stuk geselecteerd heeft binnen één vers
-                // (drag-select op woord/zin), respecteer die selectie en doe niets.
-                const sel = window.getSelection && window.getSelection();
-                const selText = sel ? sel.toString() : '';
-                if (selText && selText.length > 0) {
-                    // Check of die selectie binnen DEZE vers-span valt en uit eigen actie kwam
-                    // (niet uit ons _applyNativeTextSelection — die selecteert hele verses).
-                    const ranges = sel.rangeCount ? sel.getRangeAt(0) : null;
-                    const wholeVerseText = (span.querySelector('.verse-text') || span).textContent;
-                    if (ranges && selText.length < wholeVerseText.length * 0.9) {
-                        // Echt sub-selectie binnen vers — niet onze auto-selectie
-                        return;
-                    }
-                }
+                const moved = Math.hypot(e.clientX - downX, e.clientY - downY);
+                // Een "echte" klik = pointer bewoog minder dan 5px tussen down en up
+                if (moved > 5) return; // user is dragging — laat browser-selectie staan
                 this.handleVerseClick(e, verse.number);
             });
 

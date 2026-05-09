@@ -2311,7 +2311,7 @@
       "number": 24,
       "textSV1888": "Daarom zult gij, in het ganse land uwer bezitting, lossing voor het land toelaten.",
       "text1637": "Daerom [27] sult ghy in den gantschen lande uwer besittinge, lossinge voor het lant [28] toelaten.",
-      "text2026": "Daarom zult u, in het gehele land van uw bezitting, lossing voor het land toelaten.",
+      "text2026": "Daarom zult u, in het gehele land van uw bezitting, losprijs voor het land toelaten.",
       "marginNotes": [
         {
           "marker": "27",
@@ -2360,7 +2360,7 @@
           "morph": "HRd/Ncbsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Daarom<sup class=\"note-marker\" data-note=\"27\">27</sup> zult u, in het gehele land van uw bezitting, lossing voor het land<sup class=\"note-marker\" data-note=\"28\">28</sup> toelaten.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Daarom<sup class=\"note-marker\" data-note=\"27\">27</sup> zult u, in het gehele land van uw bezitting, losprijs voor het land<sup class=\"note-marker\" data-note=\"28\">28</sup> toelaten.</i></span>",
       "textSV1888_html": "Daarom<sup class=\"note-marker\" data-note=\"27\">27</sup> zult gij, in het ganse land uwer bezitting, lossing voor het land<sup class=\"note-marker\" data-note=\"28\">28</sup> toelaten.",
       "text1637_html": "Daerom <sup class=\"note-marker\" data-note=\"27\">27</sup> sult ghy in den gantschen lande uwer besittinge, lossinge voor het lant <sup class=\"note-marker\" data-note=\"28\">28</sup> toelaten.",
       "phraseDiff": [
@@ -2378,6 +2378,11 @@
           "old": "uwer",
           "new": "van uw",
           "principe": "N7"
+        },
+        {
+          "old": "lossing",
+          "new": "losprijs",
+          "principe": "V242"
         }
       ]
     },
@@ -2473,7 +2478,7 @@
       "number": 26,
       "textSV1888": "En wanneer iemand geen losser zal hebben, maar zijn hand bekomen en hij gevonden zal hebben, zoveel genoeg is tot zijn lossing;",
       "text1637": "Ende wanneer yemant geen losser en sal hebben; [29] maer sijne hant bekomen, ende hy gevonden sal hebben, [30] soo veel genoech is tot sijne lossinge:",
-      "text2026": "En wanneer iemand geen losser zal hebben, maar zijn hand bekomen en hij gevonden zal hebben, zoveel genoeg is tot zijn lossing;",
+      "text2026": "En wanneer iemand geen losser zal hebben, maar zijn hand bekomen en hij gevonden zal hebben, zoveel genoeg is tot zijn losprijs;",
       "marginNotes": [
         {
           "marker": "29",
@@ -2547,9 +2552,16 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En wanneer iemand geen losser zal hebben,<sup class=\"note-marker\" data-note=\"29\">29</sup> maar zijn hand bekomen en hij gevonden zal hebben,<sup class=\"note-marker\" data-note=\"30\">30</sup> zoveel genoeg is tot zijn lossing;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En wanneer iemand geen losser zal hebben,<sup class=\"note-marker\" data-note=\"29\">29</sup> maar zijn hand bekomen en hij gevonden zal hebben,<sup class=\"note-marker\" data-note=\"30\">30</sup> zoveel genoeg is tot zijn losprijs;</i></span>",
       "textSV1888_html": "En wanneer iemand geen losser zal hebben,<sup class=\"note-marker\" data-note=\"29\">29</sup> maar zijn hand bekomen en hij gevonden zal hebben,<sup class=\"note-marker\" data-note=\"30\">30</sup> zoveel genoeg is tot zijn lossing;",
-      "text1637_html": "Ende wanneer yemant geen losser en sal hebben; <sup class=\"note-marker\" data-note=\"29\">29</sup> maer sijne hant bekomen, ende hy gevonden sal hebben, <sup class=\"note-marker\" data-note=\"30\">30</sup> soo veel genoech is tot sijne lossinge:"
+      "text1637_html": "Ende wanneer yemant geen losser en sal hebben; <sup class=\"note-marker\" data-note=\"29\">29</sup> maer sijne hant bekomen, ende hy gevonden sal hebben, <sup class=\"note-marker\" data-note=\"30\">30</sup> soo veel genoech is tot sijne lossinge:",
+      "phraseDiff": [
+        {
+          "old": "lossing;",
+          "new": "losprijs;",
+          "principe": "V242"
+        }
+      ]
     },
     {
       "number": 27,
@@ -2811,7 +2823,7 @@
       "number": 29,
       "textSV1888": "Insgelijks, wanneer iemand een woonhuis in een bemuurde stad zal verkocht hebben, zo zal zijn lossing zijn, totdat het jaar zijner verkoping volkomen zal zijn; in een vol jaar zal zijn lossing wezen.",
       "text1637": "Insgelijcks, wanneer yemant een woon-huys [in] een [34] bemuerde stadt sal verkocht hebben; so sal sijne lossinge zijn tot dat het jaer sijner verkoopinge volkomen sal zijn, in een [35] vol jaer sal sijne lossinge wesen.",
-      "text2026": "Insgelijks, wanneer iemand een woonhuis in een bemuurde stad zal verkocht hebben, zo zal zijn lossing zijn, totdat het jaar van zijn verkoping volkomen zal zijn; in een vol jaar zal zijn lossing wezen.",
+      "text2026": "Insgelijks, wanneer iemand een woonhuis in een bemuurde stad zal verkocht hebben, zo zal zijn losprijs zijn, totdat het jaar van zijn verkoping volkomen zal zijn; in een vol jaar zal zijn losprijs wezen.",
       "marginNotes": [
         {
           "marker": "34",
@@ -2910,14 +2922,24 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Insgelijks, wanneer iemand een woonhuis in een<sup class=\"note-marker\" data-note=\"34\">34</sup> bemuurde stad zal verkocht hebben, zo zal zijn lossing zijn, totdat het jaar van zijn verkoping volkomen zal zijn; in een<sup class=\"note-marker\" data-note=\"35\">35</sup> vol jaar zal zijn lossing wezen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Insgelijks, wanneer iemand een woonhuis in een<sup class=\"note-marker\" data-note=\"34\">34</sup> bemuurde stad zal verkocht hebben, zo zal zijn losprijs zijn, totdat het jaar van zijn verkoping volkomen zal zijn; in een<sup class=\"note-marker\" data-note=\"35\">35</sup> vol jaar zal zijn losprijs wezen.</i></span>",
       "textSV1888_html": "Insgelijks, wanneer iemand een woonhuis in een<sup class=\"note-marker\" data-note=\"34\">34</sup> bemuurde stad zal verkocht hebben, zo zal zijn lossing zijn, totdat het jaar zijner verkoping volkomen zal zijn; in een<sup class=\"note-marker\" data-note=\"35\">35</sup> vol jaar zal zijn lossing wezen.",
       "text1637_html": "Insgelijcks, wanneer yemant een woon-huys [in] een <sup class=\"note-marker\" data-note=\"34\">34</sup> bemuerde stadt sal verkocht hebben; so sal sijne lossinge zijn tot dat het jaer sijner verkoopinge volkomen sal zijn, in een <sup class=\"note-marker\" data-note=\"35\">35</sup> vol jaer sal sijne lossinge wesen.",
       "phraseDiff": [
         {
+          "old": "lossing",
+          "new": "losprijs",
+          "principe": "V242"
+        },
+        {
           "old": "zijner",
           "new": "van zijn",
           "principe": "N7"
+        },
+        {
+          "old": "lossing",
+          "new": "losprijs",
+          "principe": "V242"
         }
       ]
     },
@@ -3074,7 +3096,7 @@
       "number": 31,
       "textSV1888": "Doch de huizen der dorpen, die rondom geen muur hebben, zullen als het veld des lands gerekend worden; daarvoor zal lossing zijn, en zij zullen in het jubeljaar uitgaan.",
       "text1637": "Doch de huysen der dorpen, die rontom geenen muer en hebben, sullen als het velt des lants gerekent worden: [38] daer voor sal lossinge zijn; ende sy sullen in het Iubel-jaer uytgaen.",
-      "text2026": "Maar de huizen van de dorpen, die rondom geen muur hebben, zullen als het veld van het land gerekend worden; daarvoor zal lossing zijn, en zij zullen in het jubeljaar uitgaan.",
+      "text2026": "Maar de huizen van de dorpen, die rondom geen muur hebben, zullen als het veld van het land gerekend worden; daarvoor zal losprijs zijn, en zij zullen in het jubeljaar uitgaan.",
       "marginNotes": [
         {
           "marker": "38",
@@ -3166,7 +3188,7 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar de huizen van de dorpen, die rondom geen muur hebben, zullen als het veld van het land gerekend worden;<sup class=\"note-marker\" data-note=\"38\">38</sup> daarvoor zal lossing zijn, en zij zullen in het jubeljaar uitgaan.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar de huizen van de dorpen, die rondom geen muur hebben, zullen als het veld van het land gerekend worden;<sup class=\"note-marker\" data-note=\"38\">38</sup> daarvoor zal losprijs zijn, en zij zullen in het jubeljaar uitgaan.</i></span>",
       "textSV1888_html": "Doch de huizen der dorpen, die rondom geen muur hebben, zullen als het veld des lands gerekend worden;<sup class=\"note-marker\" data-note=\"38\">38</sup> daarvoor zal lossing zijn, en zij zullen in het jubeljaar uitgaan.",
       "text1637_html": "Doch de huysen der dorpen, die rontom geenen muer en hebben, sullen als het velt des lants gerekent worden: <sup class=\"note-marker\" data-note=\"38\">38</sup> daer voor sal lossinge zijn; ende sy sullen in het Iubel-jaer uytgaen.",
       "phraseDiff": [
@@ -3184,6 +3206,11 @@
           "old": "des lands",
           "new": "van het land",
           "principe": "N3"
+        },
+        {
+          "old": "lossing",
+          "new": "losprijs",
+          "principe": "V242"
         }
       ]
     },
@@ -3191,7 +3218,7 @@
       "number": 32,
       "textSV1888": "Aangaande de steden der Levieten, en de huizen der steden hunner bezitting; de Levieten zullen een eeuwige lossing hebben.",
       "text1637": "Aengaende de steden der Leviten, [ende] de huysen der steden harer besittinge; de Leviten sullen [39] eene eeuwige lossinge hebben.",
-      "text2026": "Aangaande de steden van de Levieten, en de huizen van de steden van hun bezitting; de Levieten zullen een eeuwige lossing hebben.",
+      "text2026": "Aangaande de steden van de Levieten, en de huizen van de steden van hun bezitting; de Levieten zullen een eeuwige losprijs hebben.",
       "marginNotes": [
         {
           "marker": "39",
@@ -3248,7 +3275,7 @@
           "morph": "HRd/Ngmpa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Aangaande de steden van de Levieten, en de huizen van de steden van hun bezitting; de Levieten zullen<sup class=\"note-marker\" data-note=\"39\">39</sup> een eeuwige lossing hebben.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Aangaande de steden van de Levieten, en de huizen van de steden van hun bezitting; de Levieten zullen<sup class=\"note-marker\" data-note=\"39\">39</sup> een eeuwige losprijs hebben.</i></span>",
       "textSV1888_html": "Aangaande de steden der Levieten, en de huizen der steden hunner bezitting; de Levieten zullen<sup class=\"note-marker\" data-note=\"39\">39</sup> een eeuwige lossing hebben.",
       "text1637_html": "Aengaende de steden der Leviten, [ende] de huysen der steden harer besittinge; de Leviten sullen <sup class=\"note-marker\" data-note=\"39\">39</sup> eene eeuwige lossinge hebben.",
       "phraseDiff": [
@@ -3266,6 +3293,11 @@
           "old": "hunner",
           "new": "van hun",
           "principe": "N7"
+        },
+        {
+          "old": "lossing",
+          "new": "losprijs",
+          "principe": "V242"
         }
       ]
     },
@@ -3273,7 +3305,7 @@
       "number": 33,
       "textSV1888": "En als men onder de Levieten lossing zal gedaan hebben, zo zal de koop van het huis en van de stad zijner bezitting in het jubeljaar uitgaan; want de huizen van de steden der Levieten zijn hun bezitting in het midden van de kinderen Israëls.",
       "text1637": "Ende alsmen [40] onder de Leviten lossinge sal gedaen hebben, so sal de koop [41] des huyses, ende [42] der stadt sijner besittinge, in het Iubel-jaer uytgaen: want de huysen van de steden der Leviten zijn hare besittinge in het midden der kinderen Israëls.",
-      "text2026": "En als men onder de Levieten lossing zal gedaan hebben, zo zal de koop van het huis en van de stad van zijn bezitting in het jubeljaar uitgaan; want de huizen van de steden van de Levieten zijn hun bezitting in het midden van de kinderen van Israël.",
+      "text2026": "En als men onder de Levieten losprijs zal gedaan hebben, zo zal de koop van het huis en van de stad van zijn bezitting in het jubeljaar uitgaan; want de huizen van de steden van de Levieten zijn hun bezitting in het midden van de kinderen van Israël.",
       "marginNotes": [
         {
           "marker": "40",
@@ -3394,10 +3426,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En als<sup class=\"note-marker\" data-note=\"40\">40</sup> men onder de Levieten lossing zal gedaan hebben, zo zal de koop<sup class=\"note-marker\" data-note=\"41\">41</sup> van het huis en<sup class=\"note-marker\" data-note=\"42\">42</sup> van de stad van zijn bezitting in het jubeljaar uitgaan; want de huizen van de steden van de Levieten zijn hun bezitting in het midden van de kinderen van Israël.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En als<sup class=\"note-marker\" data-note=\"40\">40</sup> men onder de Levieten losprijs zal gedaan hebben, zo zal de koop<sup class=\"note-marker\" data-note=\"41\">41</sup> van het huis en<sup class=\"note-marker\" data-note=\"42\">42</sup> van de stad van zijn bezitting in het jubeljaar uitgaan; want de huizen van de steden van de Levieten zijn hun bezitting in het midden van de kinderen van Israël.</i></span>",
       "textSV1888_html": "En als<sup class=\"note-marker\" data-note=\"40\">40</sup> men onder de Levieten lossing zal gedaan hebben, zo zal de koop<sup class=\"note-marker\" data-note=\"41\">41</sup> van het huis en<sup class=\"note-marker\" data-note=\"42\">42</sup> van de stad zijner bezitting in het jubeljaar uitgaan; want de huizen van de steden der Levieten zijn hun bezitting in het midden van de kinderen Israëls.",
       "text1637_html": "Ende alsmen <sup class=\"note-marker\" data-note=\"40\">40</sup> onder de Leviten lossinge sal gedaen hebben, so sal de koop <sup class=\"note-marker\" data-note=\"41\">41</sup> des huyses, ende <sup class=\"note-marker\" data-note=\"42\">42</sup> der stadt sijner besittinge, in het Iubel-jaer uytgaen: want de huysen van de steden der Leviten zijn hare besittinge in het midden der kinderen Israëls.",
       "phraseDiff": [
+        {
+          "old": "lossing",
+          "new": "losprijs",
+          "principe": "V242"
+        },
         {
           "old": "zijner",
           "new": "van zijn",
@@ -4796,7 +4833,7 @@
       "number": 48,
       "textSV1888": "Nadat hij zich zal verkocht hebben, zal er lossing voor hem zijn; een van zijn broeders zal hem lossen;",
       "text1637": "Na dat hy sich sal verkocht hebben, salder lossinge voor hem zijn; een van sijne broederen sal hem lossen:",
-      "text2026": "Nadat hij zich zal verkocht hebben, zal er lossing voor hem zijn; één van zijn broers zal hem lossen;",
+      "text2026": "Nadat hij zich zal verkocht hebben, zal er losprijs voor hem zijn; één van zijn broers zal hem lossen;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4840,9 +4877,14 @@
           "morph": "HVqi3ms/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Nadat hij zich zal verkocht hebben, zal er lossing voor hem zijn; één van zijn broers zal hem lossen;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Nadat hij zich zal verkocht hebben, zal er losprijs voor hem zijn; één van zijn broers zal hem lossen;</i></span>",
       "text1637_html": "Na dat hy sich sal verkocht hebben, salder lossinge voor hem zijn; een van sijne broederen sal hem lossen:",
       "phraseDiff": [
+        {
+          "old": "lossing",
+          "new": "losprijs",
+          "principe": "V242"
+        },
         {
           "old": "een",
           "new": "één",
@@ -5091,7 +5133,7 @@
       "number": 51,
       "textSV1888": "Indien nog vele van die jaren zijn, naar die zal hij tot zijn lossing van het geld, waarover hij gekocht is, wedergeven.",
       "text1637": "Indien noch vele van die [62] jaren zijn: [63] nae die sal hy tot sijne lossinge van [64] het gelt, daer voor hy gekocht is, wedergeven.",
-      "text2026": "Als nog vele van die jaren zijn, naar die zal hij tot zijn lossing van het geld, waarover hij gekocht is, wedergeven.",
+      "text2026": "Als nog vele van die jaren zijn, naar die zal hij tot zijn losprijs van het geld, waarover hij gekocht is, wedergeven.",
       "marginNotes": [
         {
           "marker": "62",
@@ -5162,7 +5204,7 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Als nog vele van die<sup class=\"note-marker\" data-note=\"62\">62</sup> jaren zijn,<sup class=\"note-marker\" data-note=\"63\">63</sup> naar die zal hij tot zijn lossing van<sup class=\"note-marker\" data-note=\"64\">64</sup> het geld, waarover hij gekocht is, wedergeven.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Als nog vele van die<sup class=\"note-marker\" data-note=\"62\">62</sup> jaren zijn,<sup class=\"note-marker\" data-note=\"63\">63</sup> naar die zal hij tot zijn losprijs van<sup class=\"note-marker\" data-note=\"64\">64</sup> het geld, waarover hij gekocht is, wedergeven.</i></span>",
       "textSV1888_html": "Indien nog vele van die<sup class=\"note-marker\" data-note=\"62\">62</sup> jaren zijn,<sup class=\"note-marker\" data-note=\"63\">63</sup> naar die zal hij tot zijn lossing van<sup class=\"note-marker\" data-note=\"64\">64</sup> het geld, waarover hij gekocht is, wedergeven.",
       "text1637_html": "Indien noch vele van die <sup class=\"note-marker\" data-note=\"62\">62</sup> jaren zijn: <sup class=\"note-marker\" data-note=\"63\">63</sup> nae die sal hy tot sijne lossinge van <sup class=\"note-marker\" data-note=\"64\">64</sup> het gelt, daer voor hy gekocht is, wedergeven.",
       "phraseDiff": [
@@ -5170,6 +5212,11 @@
           "old": "Indien",
           "new": "Als",
           "principe": "V41"
+        },
+        {
+          "old": "lossing",
+          "new": "losprijs",
+          "principe": "V242"
         }
       ]
     },
@@ -5177,7 +5224,7 @@
       "number": 52,
       "textSV1888": "En indien er nog weinige van die jaren overgebleven zijn, tot aan het jubeljaar, zo zal hij met hem rekenen; naar zijn jaren zal hij zijn lossing wedergeven.",
       "text1637": "Ende indiender noch weynige van die jaren overgebleven zijn, tot aen het Iubel-jaer; so sal hy met hem rekenen; nae sijne jaren sal hy sijne lossinge wedergeven.",
-      "text2026": "En als er nog weinige van die jaren overgebleven zijn, tot aan het jubeljaar, zo zal hij met hem rekenen; naar zijn jaren zal hij zijn lossing wedergeven.",
+      "text2026": "En als er nog weinige van die jaren overgebleven zijn, tot aan het jubeljaar, zo zal hij met hem rekenen; naar zijn jaren zal hij zijn losprijs wedergeven.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -5251,13 +5298,18 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En als er nog weinige van die jaren overgebleven zijn, tot aan het jubeljaar, zo zal hij met hem rekenen; naar zijn jaren zal hij zijn lossing wedergeven.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En als er nog weinige van die jaren overgebleven zijn, tot aan het jubeljaar, zo zal hij met hem rekenen; naar zijn jaren zal hij zijn losprijs wedergeven.</i></span>",
       "text1637_html": "Ende indiender noch weynige van die jaren overgebleven zijn, tot aen het Iubel-jaer; so sal hy met hem rekenen; nae sijne jaren sal hy sijne lossinge wedergeven.",
       "phraseDiff": [
         {
           "old": "indien",
           "new": "als",
           "principe": "V41"
+        },
+        {
+          "old": "lossing",
+          "new": "losprijs",
+          "principe": "V242"
         }
       ]
     },

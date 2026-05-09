@@ -2432,6 +2432,22 @@
       "beschrijving": "'Vlek' (oud-Nederlands voor klein dorp/gehucht) → 'plaats'. Behouden: gevallen waar 'vlek' = smet/spot betekent (2 Petr 2:13, Ef 5:27, Jud 1:12, Jer 13:23 luipaard, BdW 13:14 op afgodsbeeld).",
       "regex": "\\bvlek(ken)?\\b",
       "voorbeeld": "Mar 1:38 'in de bijliggende vlekken' → 'in de bijliggende plaatsen'"
+    },
+    {
+      "id": "V241",
+      "categorie": "spelling",
+      "titel": "satanas → satan",
+      "beschrijving": "Verlatiniseerde naam 'satanas' (Grieks σατανᾶς) → moderne Nederlandse vorm 'satan'. Hoofdletter behouden bij eigennaam-functie.",
+      "regex": "\\b[Ss]atanas\\b",
+      "voorbeeld": "Mar 8:33 'achter Mij, satanas' → 'achter Mij, satan'"
+    },
+    {
+      "id": "V242",
+      "categorie": "verouderde-woorden",
+      "titel": "lossing → losprijs",
+      "beschrijving": "'Lossing' (in zin van: prijs voor vrijkoping) → 'losprijs' (modern equivalent). Gangbaar in evangelies (Mat 20:28, Mar 10:45) en theologisch register.",
+      "regex": "\\b[Ll]ossing\\b",
+      "voorbeeld": "Mar 8:37 'tot lossing van zijn ziel' → 'tot losprijs van zijn ziel'"
     }
   ]
 }
