@@ -20,7 +20,7 @@
             <a href="contact.html" target="_blank">Contact</a>
         </div>
         <!-- Brede zoekbalk in topnav (desktop). Klik/focus opent zoek-overlay. -->
-        <input type="search" id="topnav-search-input" class="topnav-search-input" placeholder="Zoek in de bijbel… (Ctrl+K)" autocomplete="off" aria-label="Zoeken in de bijbel">
+        <input type="search" id="topnav-search-input" class="topnav-search-input" placeholder="Zoek in Gods Woord… (Ctrl+K)" autocomplete="off" aria-label="Zoeken in Gods Woord">
         <button class="topnav-search" onclick="if(typeof Search!=='undefined') Search.open();" title="Zoeken (Ctrl+K)" aria-label="Zoeken">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="11" cy="11" r="7"/>
@@ -50,7 +50,7 @@
     <div id="mobile-picker" class="mp-overlay hidden" aria-hidden="true">
         <div class="mp-header">
             <button class="mp-back" id="mp-back" aria-label="Terug">&#9664;</button>
-            <h3 class="mp-title" id="mp-title">Kies een bijbelboek</h3>
+            <h3 class="mp-title" id="mp-title">Kies een boek</h3>
             <button class="mp-close" id="mp-close" aria-label="Sluiten">&times;</button>
         </div>
         <div class="mp-body" id="mp-body"></div>
@@ -285,7 +285,7 @@
             <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:2px solid var(--gold);background:var(--navy);flex-wrap:wrap;gap:8px;">
                 <h2 style="font-family:var(--font-cursive);font-size:24px;color:var(--teal-light);font-weight:400;">Schilderijen</h2>
                 <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-                    <input type="text" id="paintings-search" placeholder="Zoek titel, schilder of bijbeltekst..." style="padding:6px 12px;border-radius:4px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:#fff;font-family:var(--font-body);font-size:13px;width:280px;" autocomplete="off">
+                    <input type="text" id="paintings-search" placeholder="Zoek titel, schilder of tekst..." style="padding:6px 12px;border-radius:4px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:#fff;font-family:var(--font-body);font-size:13px;width:280px;" autocomplete="off">
                     <select id="paintings-artist-filter" style="padding:5px 8px;border-radius:4px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:#fff;font-family:var(--font-body);font-size:12px;">
                         <option value="" style="color:#333;">Alle schilders</option>
                     </select>
@@ -339,7 +339,7 @@
                     <li><strong>599 verouderde woorden vervangen:</strong> eer→voordat (277x), moede→moe (82x), wien→wie (240x)</li>
                     <li><strong>1.130x dezer/dezes → van deze</strong></li>
                     <li><strong>Begrippenlijst Genesis:</strong> 922 begrippen — personen, plaatsen, volkeren, theologische begrippen, verouderde woorden. Geschreven voor jonge gelovigen. Klikbare woorden (oranje) met popup-uitleg.</li>
-                    <li><strong>Tag-systeem:</strong> Topicale tags op bijbelverzen (bijv. "Gods leiding"). Gekleurde bolletjes bij versnummers, rechtermuisklik om tags toe te voegen.</li>
+                    <li><strong>Tag-systeem:</strong> Topicale tags op verzen (bijv. "Gods leiding"). Gekleurde bolletjes bij versnummers, rechtermuisklik om tags toe te voegen.</li>
                     <li><strong>Statistieken-pagina:</strong> Live statistieken met aantallen per boek, woordwijzigingen, citaten, grondtekst-dekking. Per versie changelog.</li>
                     <li><strong>Engel van JAHWEH / Engel Gods:</strong> Als begrip met Hebreeuws (מַלְאַךְ יהוה / מַלְאַךְ אֱלֹהִים)</li>
                     <li><strong>Gen 6:4:</strong> Nephilim in plaats van reuzen</li>
@@ -367,9 +367,9 @@
                     <li><strong>Spelling inleidingen:</strong> 83 boekinleidingen en 158 hoofdstukinleidingen gemoderniseerd (Evangelist, persoon, Farao, Egypte, etc.)</li>
                     <li><strong>Neen→Nee</strong> (129x), <strong>Habel→Abel</strong> (27x), <strong>dewijl→omdat</strong> (1.513x), <strong>wijfje→vrouwtje</strong> (50x)</li>
                     <li><strong>Gen 6:4:</strong> reuzen → Nephilim</li>
-                    <li><strong>Traditionele bijbelverdeling:</strong> Pentateuch, Historische boeken, Poëtische boeken, Profeten, Apocriefen (SV1637-volgorde, tussen OT en NT), Evangeliën, Brieven, Openbaring</li>
+                    <li><strong>Traditionele boek-indeling:</strong> Pentateuch, Historische boeken, Poëtische boeken, Profeten, Apocriefen (SV1637-volgorde, tussen OT en NT), Evangeliën, Brieven, Openbaring</li>
                     <li><strong>Leesversie:</strong> mockup goedgekeurd (HSV-stijl desktop, YouVersion mobiel). Statische HTML export: 1.370 pagina's met boek/hoofdstuk picker.</li>
-                    <li><strong>JSON als single source of truth:</strong> server.py leest direct van JSON bestanden, geen SQLite-tussenlaag meer voor bijbeldata</li>
+                    <li><strong>JSON als single source of truth:</strong> server.py leest direct van JSON bestanden, geen SQLite-tussenlaag meer voor de tekst van Gods Woord</li>
                     <li><strong>KT Diff kolom:</strong> phrase-level diff voor kanttekeningen (SV1888 vs OV2026)</li>
                     <li><strong>Kanttekening-diff:</strong> 24.722 verzen met phraseDiff geëxporteerd naar JSON</li>
                     <li><strong>Hoofdstukinleidingen:</strong> tonen nu text2026 (hertaald) in plaats van text1637</li>
@@ -400,7 +400,7 @@
                 <h3 style="color:var(--navy);margin:16px 0 8px;font-size:16px;">v0.7 — 22 maart 2026</h3>
                 <ul style="padding-left:20px;margin-bottom:16px;">
                     <li><strong>Vertaaluitgangspunten herzien:</strong> letterlijkheid boven leesbaarheid</li>
-                    <li><strong>Bijbels register behouden:</strong> gedierte, gevogelte, uitspansel, afgrond, alzo</li>
+                    <li><strong>Schrift-register behouden:</strong> gedierte, gevogelte, uitspansel, afgrond, alzo</li>
                     <li><strong>Genesis 1-4 herzien</strong> op basis van nieuwe uitgangspunten</li>
                     <li><strong>Johannes 3 herzien:</strong> "alzo lief", "wederom geboren", "verhoogd", kanttekening 29 geneutraliseerd</li>
                     <li><strong>Romeinen 8 herzien:</strong> "dienstbaarheid", "ijdelheid", calvinistische bias geneutraliseerd (Rom 9)</li>
