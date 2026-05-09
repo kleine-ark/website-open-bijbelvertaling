@@ -85,19 +85,39 @@ const VerseSelect = {
             if (e.target.closest('.note-marker, .strongs-inline, a, .begrip-link, .verse-num, button')) return;
             const cell = e.target.closest('.col-2026');
             if (!cell) return;
+            const row = cell.closest('.verse-row');
+            if (!row) return;
             const moved = Math.hypot(e.clientX - downX, e.clientY - downY);
             if (moved > 5) return; // user is drag-selecting
-            const sel = window.getSelection();
-            if (!sel) return;
-            sel.removeAllRanges();
-            const range = document.createRange();
-            range.selectNodeContents(cell);
-            sel.addRange(range);
+            const verseKey = row.dataset.verse;
+            this.toggle(verseKey);
+            this._syncBrowserSelectionToSelected();
+            this.updateUI();
         });
 
         // selectionchange-driven toolbar — luistert op browser-native selectie
         // binnen #verses-container, ongeacht hoe die ontstond (klik of drag).
         this._setupSelectionToolbar();
+    },
+
+    // Synchroniseer browser-native Selection met de this.selected set.
+    // Probeer addRange per geselecteerde vers (Firefox toont dat als losse
+    // highlights; Chrome rendert alleen de eerste range — visueel valt
+    // .verse-row.verse-selected dat alsnog op via de CSS class).
+    _syncBrowserSelectionToSelected() {
+        const sel = window.getSelection();
+        if (!sel) return;
+        sel.removeAllRanges();
+        const keys = [...this.selected];
+        for (const key of keys) {
+            const row = document.querySelector(`.verse-row[data-verse="${key}"]`);
+            if (!row) continue;
+            const cell = row.querySelector('.col-2026');
+            if (!cell) continue;
+            const range = document.createRange();
+            range.selectNodeContents(cell);
+            try { sel.addRange(range); } catch (e) { /* sommige browsers limiteren range-count */ }
+        }
     },
 
     _setupSelectionToolbar() {
@@ -115,37 +135,19 @@ const VerseSelect = {
         const sel = window.getSelection();
         const tb = document.getElementById('copy-toolbar');
         if (!tb) return;
+        // Als er via klik al verzen geselecteerd zijn (this.selected),
+        // laat updateUI dat afhandelen — niet overrulen vanuit selectionchange.
+        if (this.selected.size > 0) { tb.classList.add('visible'); return; }
         if (!sel || sel.rangeCount === 0 || !sel.toString().trim()) {
-            // Behoud zichtbaarheid als gebruiker via versnummer-klik selecteerde
-            if (this.selected.size === 0) tb.classList.remove('visible');
+            tb.classList.remove('visible');
             return;
         }
         const versesContainer = document.getElementById('verses-container');
         const range = sel.getRangeAt(0);
         if (!versesContainer || !versesContainer.contains(range.commonAncestorContainer)) return;
-        // Bepaal welke vers-rij(en) de selectie raakt
-        const rows = [...document.querySelectorAll('.verse-row')];
-        const nums = rows.filter(r => range.intersectsNode && range.intersectsNode(r))
-            .map(r => parseInt(r.dataset.verse))
-            .filter(n => !isNaN(n))
-            .sort((a, b) => a - b);
+        // Drag-selectie → toon "X tekens geselecteerd"
         const cnt = document.getElementById('copy-count');
-        if (cnt && nums.length) {
-            // Bouw "Boek H:V" uit chapter-title — clone & strip de CONCEPT-badge
-            const bookEl = document.getElementById('chapter-title');
-            let bookName = '';
-            if (bookEl) {
-                const clone = bookEl.cloneNode(true);
-                clone.querySelectorAll('.chapter-concept-tag').forEach(t => t.remove());
-                bookName = clone.textContent.trim();
-            }
-            const refRange = nums.length === 1
-                ? `${bookName}:${nums[0]}`
-                : (nums.every((n,i) => i===0 || n === nums[i-1]+1)
-                    ? `${bookName}:${nums[0]}-${nums[nums.length-1]}`
-                    : `${bookName}:${nums.join(',')}`);
-            cnt.textContent = `${refRange} geselecteerd`;
-        }
+        if (cnt) cnt.textContent = `${sel.toString().length} tekens geselecteerd`;
         tb.classList.add('visible');
     },
 
@@ -192,7 +194,22 @@ const VerseSelect = {
         const toolbar = document.getElementById('copy-toolbar');
         const count = this.selected.size;
         if (count > 0) {
-            document.getElementById('copy-count').textContent = `${count} vers${count > 1 ? 'en' : ''} geselecteerd`;
+            // Bouw "Boek H:V[-W of ,X]" label
+            const nums = [...this.selected].map(n => parseInt(n)).filter(n => !isNaN(n)).sort((a,b) => a-b);
+            const bookEl = document.getElementById('chapter-title');
+            let bookName = '';
+            if (bookEl) {
+                const clone = bookEl.cloneNode(true);
+                clone.querySelectorAll('.chapter-concept-tag').forEach(t => t.remove());
+                bookName = clone.textContent.trim();
+            }
+            let ref;
+            if (nums.length === 1) ref = `${bookName}:${nums[0]}`;
+            else if (nums.every((n,i) => i===0 || n === nums[i-1]+1))
+                ref = `${bookName}:${nums[0]}-${nums[nums.length-1]}`;
+            else
+                ref = `${bookName}:${nums.join(',')}`;
+            document.getElementById('copy-count').textContent = `${ref} (${count} vers${count > 1 ? 'en' : ''})`;
             toolbar.classList.add('visible');
         } else {
             toolbar.classList.remove('visible');
