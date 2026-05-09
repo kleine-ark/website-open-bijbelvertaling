@@ -75,12 +75,16 @@ const Sidebar = {
             if (!this.isMobile()) localStorage.setItem('sv2026_sidebarRightCollapsed', 'false');
         };
 
-        // Default state
-        if (this.isMobile()) {
-            collapse();
-        } else if (localStorage.getItem('sv2026_sidebarRightCollapsed') === 'true') {
+        // Default state — bekijk eerst localStorage; daarna fallback naar
+        // de class op het element zelf (HTML kan default 'collapsed' staan).
+        const stored = localStorage.getItem('sv2026_sidebarRightCollapsed');
+        const startsCollapsed = stored !== null
+            ? stored === 'true'
+            : r.classList.contains('collapsed');
+        if (this.isMobile() || startsCollapsed) {
             collapse();
         } else {
+            r.classList.remove('collapsed');
             openBtn.style.display = 'none';
         }
 
