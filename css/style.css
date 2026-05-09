@@ -2959,3 +2959,51 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 /* Audio-container containers verbergen op hoofdstukken zonder voorlezing */
 .chf-center.hidden { display: none; }
 .mfn-audio.hidden { display: none; }
+
+/* === Quickfilter-knoppen bovenin (in plaats van checkboxen) === */
+.quickfilter-btn {
+    display: inline-block;
+    padding: 5px 14px;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--navy);
+    border-radius: 16px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: all 0.15s;
+}
+.quickfilter-btn:hover { border-color: var(--gold); color: var(--gold); }
+.quickfilter-btn.is-on,
+.quickfilter-btn[aria-pressed="true"] {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+}
+
+/* === Brede zoekbalk in topnav (desktop) === */
+.topnav-search-input {
+    flex: 1 1 320px;
+    max-width: 480px;
+    min-width: 200px;
+    margin: 0 16px;
+    padding: 7px 14px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(203,164,73,0.35);
+    border-radius: 18px;
+    color: #fff;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: background 0.15s, border-color 0.15s;
+}
+.topnav-search-input::placeholder { color: rgba(255,255,255,0.55); }
+.topnav-search-input:hover { background: rgba(255,255,255,0.16); border-color: rgba(203,164,73,0.55); }
+.topnav-search-input:focus { background: rgba(255,255,255,0.18); border-color: var(--gold); }
+
+/* Op mobiel verbergen — daar blijft de search-icon-knop staan */
+@media (max-width: 768px) {
+    .topnav-search-input { display: none; }
+}

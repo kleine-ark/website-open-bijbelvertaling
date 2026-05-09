@@ -228,6 +228,22 @@
                 headerInput.addEventListener('focus', () => this.open());
                 headerInput.addEventListener('click', () => this.open());
             }
+            // Brede zoekbalk in topnav van index.html — focus/typen opent overlay,
+            // tekst wordt overgenomen in de overlay-input.
+            const topnavInput = document.getElementById('topnav-search-input');
+            if (topnavInput) {
+                const openWithQuery = () => {
+                    this.open();
+                    if (this.inputEl && topnavInput.value) {
+                        this.inputEl.value = topnavInput.value;
+                        topnavInput.value = '';
+                        this._render();
+                    }
+                };
+                topnavInput.addEventListener('focus', () => this.open());
+                topnavInput.addEventListener('click', () => this.open());
+                topnavInput.addEventListener('input', openWithQuery);
+            }
         },
 
         _wireKeyboard() {
