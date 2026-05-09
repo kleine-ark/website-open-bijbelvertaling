@@ -1942,26 +1942,25 @@ body.dyslexia-mode .verses-table tr:nth-child(even) td {
     color: inherit;
 }
 
-/* Kopieer-toolbar */
+/* Kopieer-toolbar — alleen zichtbaar bij selectie */
 #copy-toolbar {
     position: fixed;
-    bottom: -60px;
+    bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--navy);
     color: #fff;
     padding: 10px 18px;
     border-radius: 10px;
-    display: flex;
+    display: none;
     align-items: center;
     gap: 12px;
     z-index: 9999;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    transition: bottom 0.25s ease;
     font-size: 14px;
 }
 #copy-toolbar.visible {
-    bottom: 24px;
+    display: flex;
 }
 #copy-count {
     font-weight: 500;
@@ -3013,7 +3012,7 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     .topnav-search-input { display: none; }
 }
 
-/* === Mobiele copy-toolbar — compacter zodat het past === */
+/* === Mobiele copy-toolbar — apart boven de footer-nav, compacter === */
 @media (max-width: 768px) {
     #copy-toolbar {
         left: 8px;
@@ -3025,9 +3024,7 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
         font-size: 12px;
         flex-wrap: wrap;
         justify-content: center;
-    }
-    #copy-toolbar.visible {
-        bottom: 70px;  /* boven de mobile-footer-nav */
+        bottom: 64px;  /* exact boven mobile-footer-nav (56px + 8px gap) */
     }
     #copy-count {
         min-width: 0;
