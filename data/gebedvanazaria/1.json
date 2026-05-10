@@ -5,14 +5,19 @@
       "number": 24,
       "text1637": "EN zij wandelden in het midden der vlam, zingende God, en lovende de Here.",
       "textSV1888": "EN zij wandelden in het midden der vlam, zingende God, en lovende de Here.",
-      "text2026": "EN zij wandelden in het midden van de vlam, zingende God, en lovende de Here.",
+      "text2026": "EN zij wandelden in het midden van de vlam, zingende God, en lovende de JAHWEH.",
       "marginNotes": [],
-      "text2026_html": "EN zij wandelden in het midden van de vlam, zingende God, en lovende de Here.",
+      "text2026_html": "EN zij wandelden in het midden van de vlam, zingende God, en lovende de JAHWEH.",
       "phraseDiff": [
         {
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "Here.",
+          "new": "JAHWEH.",
+          "principe": "V280"
         }
       ]
     },
@@ -35,18 +40,13 @@
       "number": 26,
       "text1637": "Geloofd zijt gij, Here, gij God onzer vaderen, uw naam zij geprezen en verheerlijkt in der eeuwigheid.",
       "textSV1888": "Geloofd zijt gij, Here, gij God onzer vaderen, uw naam zij geprezen en verheerlijkt in der eeuwigheid.",
-      "text2026": "Geloofd zijt u, Here, u God onzer vaderen, uw naam zij geprezen en verheerlijkt in van de eeuwigheid.",
+      "text2026": "Geloofd zijt u, JAHWEH, u God onzer vaderen, uw naam zij geprezen en verheerlijkt in van de eeuwigheid.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Geloofd zijt u, Here, u God onzer vaderen, uw naam zij geprezen en verheerlijkt in van de eeuwigheid.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Geloofd zijt u, JAHWEH, u God onzer vaderen, uw naam zij geprezen en verheerlijkt in van de eeuwigheid.</i></span>",
       "phraseDiff": [
         {
-          "old": "gij,",
-          "new": "u,",
-          "principe": "A1"
-        },
-        {
-          "old": "gij",
-          "new": "u",
+          "old": "gij, Here, gij",
+          "new": "u, JAHWEH, u",
           "principe": "A1"
         },
         {
@@ -273,10 +273,15 @@
       "number": 37,
       "text1637": "Want, Here, wij zijn minder geworden dan al de heidenen, en wij zijn heden vernederd op de ganse aarde, om onzer zonden wil.",
       "textSV1888": "Want, Here, wij zijn minder geworden dan al de heidenen, en wij zijn heden vernederd op de ganse aarde, om onzer zonden wil.",
-      "text2026": "Want, Here, wij zijn minder geworden dan al de heidenen, en wij zijn heden vernederd op de gehele aarde, om onzer zonden wil.",
+      "text2026": "Want, JAHWEH, wij zijn minder geworden dan al de heidenen, en wij zijn heden vernederd op de gehele aarde, om onzer zonden wil.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want, Here, wij zijn minder geworden dan al de heidenen, en wij zijn heden vernederd op de gehele aarde, om onzer zonden wil.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want, JAHWEH, wij zijn minder geworden dan al de heidenen, en wij zijn heden vernederd op de gehele aarde, om onzer zonden wil.</i></span>",
       "phraseDiff": [
+        {
+          "old": "Here,",
+          "new": "JAHWEH,",
+          "principe": "V280"
+        },
         {
           "old": "ganse",
           "new": "gehele",
@@ -347,9 +352,16 @@
       "number": 43,
       "text1637": "En verlos ons hieruit naar uw wonderdaden en geef Here, uw naam eer.",
       "textSV1888": "En verlos ons hieruit naar uw wonderdaden en geef Here, uw naam eer.",
-      "text2026": "En verlos ons hieruit naar uw wonderdaden en geef Here, uw naam eer.",
+      "text2026": "En verlos ons hieruit naar uw wonderdaden en geef JAHWEH, uw naam eer.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>En verlos ons hieruit naar uw wonderdaden en geef Here, uw naam eer.</i></span>"
+      "text2026_html": "<span class=\"direct-speech\"><i>En verlos ons hieruit naar uw wonderdaden en geef JAHWEH, uw naam eer.</i></span>",
+      "phraseDiff": [
+        {
+          "old": "Here,",
+          "new": "JAHWEH,",
+          "principe": "V280"
+        }
+      ]
     },
     {
       "number": 44,
@@ -363,9 +375,9 @@
       "number": 45,
       "text1637": "En doe hun gewaarworden, dat gij de Here zijt, de enige God, die heerlijk is op de gehele aarde.",
       "textSV1888": "En doe hun gewaarworden, dat gij de Here zijt, de enige God, die heerlijk is op de gehele aarde.",
-      "text2026": "En doe hun gewaarworden, dat u de Here bent, de enige God, die heerlijk is op de gehele aarde.",
+      "text2026": "En doe hun gewaarworden, dat u de JAHWEH bent, de enige God, die heerlijk is op de gehele aarde.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>En doe hun gewaarworden, dat u de Here bent, de enige God, die heerlijk is op de gehele aarde.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En doe hun gewaarworden, dat u de JAHWEH bent, de enige God, die heerlijk is op de gehele aarde.</i></span>",
       "phraseDiff": [
         {
           "old": "gij",
@@ -373,9 +385,9 @@
           "principe": "A1"
         },
         {
-          "old": "zijt,",
-          "new": "bent,",
-          "principe": null
+          "old": "Here zijt,",
+          "new": "JAHWEH bent,",
+          "principe": "V280"
         }
       ]
     },
