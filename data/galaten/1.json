@@ -1700,7 +1700,7 @@
       "number": 13,
       "textSV1888": "Want gij hebt mijn omgang gehoord, die eertijds in het Jodendom was, dat ik uitnemend zeer de Gemeente Gods vervolgde, en dezelve verwoestte;",
       "text1637": "[k] Want ghy hebt mijnen ommeganck gehoort, die [36] eertijts in het Iodendom was, dat ick [37] uytnemende seer de Gemeynten Godts vervolghde, ende de selve [38] verwoestede.",
-      "text2026": "Want u hebt mijn omgang gehoord, die eertijds in het Jodendom was, dat ik uitnemend zeer de Gemeente Gods vervolgde, en dezelfde verwoestte;",
+      "text2026": "Want u hebt mijn omgang gehoord, die vroeger in het Jodendom was, dat ik uitnemend zeer de Gemeente Gods vervolgde, en dezelfde verwoestte;",
       "marginNotes": [
         {
           "marker": "k",
@@ -1853,7 +1853,7 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"k\">k</sup> Want u hebt mijn omgang gehoord, die<sup class=\"note-marker\" data-note=\"36\">36</sup> eertijds in het Jodendom was, dat ik<sup class=\"note-marker\" data-note=\"37\">37</sup> uitnemend zeer de Gemeente Gods vervolgde, en dezelfde<sup class=\"note-marker\" data-note=\"38\">38</sup> verwoestte;",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"k\">k</sup> Want u hebt mijn omgang gehoord, die<sup class=\"note-marker\" data-note=\"36\">36</sup> vroeger in het Jodendom was, dat ik<sup class=\"note-marker\" data-note=\"37\">37</sup> uitnemend zeer de Gemeente Gods vervolgde, en dezelfde<sup class=\"note-marker\" data-note=\"38\">38</sup> verwoestte;",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"k\">k</sup> Want gij hebt mijn omgang gehoord, die<sup class=\"note-marker\" data-note=\"36\">36</sup> eertijds in het Jodendom was, dat ik<sup class=\"note-marker\" data-note=\"37\">37</sup> uitnemend zeer de Gemeente Gods vervolgde, en dezelve<sup class=\"note-marker\" data-note=\"38\">38</sup> verwoestte;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"k\">k</sup> Want ghy hebt mijnen ommeganck gehoort, die <sup class=\"note-marker\" data-note=\"36\">36</sup> eertijts in het Iodendom was, dat ick <sup class=\"note-marker\" data-note=\"37\">37</sup> uytnemende seer de Gemeynten Godts vervolghde, ende de selve <sup class=\"note-marker\" data-note=\"38\">38</sup> verwoestede.",
       "phraseDiff": [
@@ -1861,6 +1861,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "eertijds",
+          "new": "vroeger",
+          "principe": "V252"
         },
         {
           "old": "dezelve",
@@ -3073,7 +3078,7 @@
       "number": 23,
       "textSV1888": "Maar zij hadden alleenlijk gehoord, dat men zeide: Degene, die ons eertijds vervolgde, verkondigt nu het geloof, hetwelk hij eertijds verwoestte.",
       "text1637": "Maer sy hadden alleenlijck gehoort [datmen seyde], [65] De gene die [66] ons eertijts vervolghde, vercondight nu [67] het geloove, ’t welck hy eertijts [68] verwoestede.",
-      "text2026": "Maar zij hadden alleen gehoord, dat men zei: Degene, die ons eertijds vervolgde, verkondigt nu het geloof, dat hij eertijds verwoestte.",
+      "text2026": "Maar zij hadden alleen gehoord, dat men zei: Degene, die ons vroeger vervolgde, verkondigt nu het geloof, dat hij vroeger verwoestte.",
       "marginNotes": [
         {
           "marker": "65",
@@ -3202,7 +3207,7 @@
           "gloss": "〔to lay waste"
         }
       ],
-      "text2026_html": "Maar zij hadden alleen gehoord, dat men zei: <span class=\"direct-speech\"><i>Degene, die ons eertijds vervolgde, verkondigt nu het geloof, dat hij eertijds verwoestte.</i></span>",
+      "text2026_html": "Maar zij hadden alleen gehoord, dat men zei: <span class=\"direct-speech\"><i>Degene, die ons vroeger vervolgde, verkondigt nu het geloof, dat hij vroeger verwoestte.</i></span>",
       "textSV1888_html": "Maar zij hadden alleenlijk gehoord, dat<sup class=\"note-marker\" data-note=\"65\">65</sup> men zeide: Degene, die<sup class=\"note-marker\" data-note=\"66\">66</sup> ons eertijds vervolgde, verkondigt nu<sup class=\"note-marker\" data-note=\"67\">67</sup> het geloof, hetwelk hij eertijds<sup class=\"note-marker\" data-note=\"68\">68</sup> verwoestte.",
       "text1637_html": "Maer sy hadden alleenlijck gehoort <i>[datmen seyde]</i>, <sup class=\"note-marker\" data-note=\"65\">65</sup> De gene die <sup class=\"note-marker\" data-note=\"66\">66</sup> ons eertijts vervolghde, vercondight nu <sup class=\"note-marker\" data-note=\"67\">67</sup> het geloove, ’t welck hy eertijts <sup class=\"note-marker\" data-note=\"68\">68</sup> verwoestede.",
       "phraseDiff": [
@@ -3217,9 +3222,19 @@
           "principe": "W1"
         },
         {
+          "old": "eertijds",
+          "new": "vroeger",
+          "principe": "V252"
+        },
+        {
           "old": "hetwelk",
           "new": "dat",
           "principe": "N6"
+        },
+        {
+          "old": "eertijds",
+          "new": "vroeger",
+          "principe": "V252"
         }
       ]
     },
