@@ -2712,6 +2712,14 @@
       "beschrijving": "Modernisering.",
       "regex": "\\b[Ee]envoudigheid\\b",
       "voorbeeld": "Ef 6:5 'in eenvoudigheid' → 'in eenvoud'"
+    },
+    {
+      "id": "V276",
+      "categorie": "verouderde-woorden",
+      "titel": "gedurigheid → volharding (cascade-fix steedsheid)",
+      "beschrijving": "'Gedurigheid' (volharding/voortdurendheid) → 'volharding'. Cascade-fix: eerdere bulk 'gedurig→steeds' (V231) maakte ten onrechte 'gedurigheid' → 'steedsheid' (geen woord). Nu beide hersteld naar 'volharding'.",
+      "regex": "\\b([Gg]edurig|[Ss]teeds)heid\\b",
+      "voorbeeld": "Ef 6:18 'met alle steedsheid' → 'met alle volharding'"
     }
   ]
 }
