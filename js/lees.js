@@ -110,8 +110,19 @@ const Lees = {
     // Hardcoded lijst van hoofdstukken met voorlezing (uitbreiden naarmate
     // er meer audio-bestanden in audio/{book}/{ch}.mp3 staan).
     AUDIO_AVAILABLE: {
-        genesis: [1],
-        johannes: [1],
+        genesis: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        psalmen: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+        markus: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
+        johannes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
+        handelingen: [1,2,3,4,5,6,7,8],
+        romeinen: [1,2,3,4],
+        efeziers: [1,2,3,4,5,6],
+        '1johannes': [1,2,3,4,5],
+        '2johannes': [1],
+        '3johannes': [1],
+        gebedvanmanasse: [1],
+        filemon: [1],
+        judas: [1],
     },
 
     VERIFIED_CHAPTERS: {
