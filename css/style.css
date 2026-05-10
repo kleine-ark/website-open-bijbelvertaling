@@ -289,9 +289,9 @@
     flex-wrap: wrap;
     gap: 16px;
     border-bottom: 1px solid #f0ede8;
-    margin-bottom: 2px;
-    padding: 3px 24px;
-    line-height: 1.55;
+    margin-bottom: 0;
+    padding: 1px 24px;
+    line-height: 1.4;
     font-family: 'EB Garamond', Georgia, serif;
     font-size: 17px;
 }
@@ -3077,9 +3077,9 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     #content.reading-mode .verse-row,
     #content.reading-mode.layout-eronder .verse-row {
         display: block !important;
-        padding: 2px 14px 4px;
+        padding: 1px 14px 1px;
         margin-bottom: 0 !important;
-        line-height: 1.55 !important;
+        line-height: 1.4 !important;
         gap: 0;
     }
     #verses-container .verse-num {
