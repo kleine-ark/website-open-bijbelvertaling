@@ -135,6 +135,19 @@ const Lees = {
         return Array.isArray(v) && v.includes(chapter);
     },
 
+    // Boek-niveau: is élk hoofdstuk in dit boek nagekeken?
+    // - 'all' → ja
+    // - array met evenveel entries als het boek hoofdstukken heeft → ja
+    // - geen entry of korter array → nee (= deels of niet nagekeken)
+    _isBookFullyVerified(book) {
+        if (!book) return false;
+        const v = this.VERIFIED_CHAPTERS[book.id];
+        if (!v) return false;
+        if (v === 'all') return true;
+        const total = (book.chaptersIncluded || []).length;
+        return Array.isArray(v) && total > 0 && v.length >= total;
+    },
+
     _updateVerifiedBanner(bookId, chapter) {
         let banner = document.getElementById('ai-concept-banner');
         if (this._isVerified(bookId, chapter)) {
@@ -838,6 +851,15 @@ const Lees = {
                 const btn = document.createElement('button');
                 btn.textContent = book.nameDutch;
                 btn.classList.toggle('active', book.id === this.currentBook);
+                if (!this._isBookFullyVerified(book)) {
+                    btn.classList.add('book-unverified');
+                    btn.title = 'Bevat hoofdstukken die nog niet vers-voor-vers zijn nagekeken';
+                    const flag = document.createElement('span');
+                    flag.className = 'book-flag-unverified';
+                    flag.textContent = '⚠';
+                    flag.setAttribute('aria-hidden', 'true');
+                    btn.appendChild(flag);
+                }
                 btn.addEventListener('click', () => {
                     overlay.classList.add('hidden');
                     location.hash = `#${book.id}/1`;
