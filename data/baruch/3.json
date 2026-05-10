@@ -11,8 +11,13 @@
       "phraseDiff": [
         {
           "old": "Here, gij",
-          "new": "JAHWEH, u",
+          "new": "JAHWEH, U",
           "principe": "A1"
+        },
+        {
+          "old": "u.",
+          "new": "U.",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -86,6 +91,11 @@
           "old": "Here,",
           "new": "JAHWEH,",
           "principe": "V280"
+        },
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -133,7 +143,7 @@
       "phraseDiff": [
         {
           "old": "gij zijt",
-          "new": "u bent",
+          "new": "U bent",
           "principe": "A1"
         }
       ],
@@ -190,7 +200,7 @@
       "phraseDiff": [
         {
           "old": "Here, gij",
-          "new": "JAHWEH, u",
+          "new": "JAHWEH, U",
           "principe": "A1"
         },
         {
@@ -204,7 +214,12 @@
           "principe": "N2"
         },
         {
-          "old": "Here",
+          "old": "u",
+          "new": "U",
+          "principe": null
+        },
+        {
+          "old": "de Here",
           "new": "JAHWEH",
           "principe": "V280"
         }
@@ -345,6 +360,16 @@
       "text2026_html": "<span class=\"direct-speech\"><i>Gedenk niet de ongerechtigheden onzer vaderen, maar gedenk aan Uw hand en aan Uw naam te van deze tijd.</i></span>",
       "phraseDiff": [
         {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
           "old": "dezer",
           "new": "van deze",
           "principe": "N5"
@@ -426,14 +451,14 @@
       "text2026_html": "<span class=\"direct-speech\"><i>Want U bent JAHWEH onze God, en wij zullen U loven, JAHWEH.</i></span>",
       "phraseDiff": [
         {
-          "old": "gij zijt",
-          "new": "u bent",
+          "old": "gij zijt de Here",
+          "new": "U bent JAHWEH",
           "principe": "A1"
         },
         {
-          "old": "Here",
-          "new": "JAHWEH",
-          "principe": "V280"
+          "old": "u",
+          "new": "U",
+          "principe": null
         },
         {
           "old": "Here.",
@@ -493,9 +518,24 @@
       "text2026_html": "<span class=\"direct-speech\"><i>Want daarom hebt U Uw vreze gegeven in onze harten, op dat wij Uw naam zouden aanroepen, en wij zullen U loven in onze vreemdelingschap, en wij hebben ter harte genomen al de ongerechtigheden onzer vaderen, die tegen U gezondigd hebben.</i></span>",
       "phraseDiff": [
         {
-          "old": "gij",
-          "new": "u",
+          "old": "gij uw",
+          "new": "U Uw",
           "principe": "A1"
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
+        },
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -651,11 +691,11 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
-          "old": "Here",
+          "old": "de Here",
           "new": "JAHWEH",
           "principe": "V280"
         }
@@ -1270,6 +1310,13 @@
           "woord": "αυτος",
           "lemma": "αὐτός"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "schat kamers",
+          "new": "schatkamers",
+          "principe": null
+        }
       ]
     },
     {
@@ -1284,6 +1331,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "gedierten,",
+          "new": "dieren,",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -1933,7 +1985,7 @@
         },
         {
           "old": "zijner",
-          "new": "van zijn",
+          "new": "van Zijn",
           "principe": "N7"
         }
       ],
@@ -2130,7 +2182,7 @@
       "text2026_html": "Deze heeft JAHWEH niet verkoren, noch hun de weg van de kennis te verstaan gegeven.",
       "phraseDiff": [
         {
-          "old": "Here",
+          "old": "de Here",
           "new": "JAHWEH",
           "principe": "V280"
         },
@@ -2542,6 +2594,18 @@
           "woord": "τετραπους",
           "lemma": "τετράπους"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "hij",
+          "new": "Hij",
+          "principe": null
+        },
+        {
+          "old": "zijn",
+          "new": "Zijn",
+          "principe": null
+        }
       ]
     },
     {
@@ -2599,6 +2663,18 @@
         {
           "woord": "τρομος",
           "lemma": "τρόμος"
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "hij",
+          "new": "Hij",
+          "principe": null
+        },
+        {
+          "old": "hem",
+          "new": "Hem",
+          "principe": null
         }
       ]
     },
@@ -2704,6 +2780,13 @@
           "woord": "αυτος",
           "lemma": "αὐτός"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "hem,",
+          "new": "Hem,",
+          "principe": null
+        }
       ]
     },
     {
@@ -2750,6 +2833,13 @@
           "woord": "αυτος",
           "lemma": "αὐτός"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "hem",
+          "new": "Hem",
+          "principe": null
+        }
       ]
     },
     {
@@ -2764,6 +2854,16 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "zijn",
+          "new": "Zijn",
+          "principe": null
+        },
+        {
+          "old": "hem",
+          "new": "Hem",
+          "principe": null
         }
       ],
       "grondtekst": [

@@ -171,7 +171,29 @@
       "nbg51": "Waaruit komt bij u strijden en vechten voort? Is het niet hieruit: uit uw hartstochten, die in uw leden zich ten strijde toerusten?",
       "text2026_html": "Vanwaar<sup class=\"note-marker\" data-note=\"1\">1</sup> komen strijden en vechterijen onder u? Komen zij niet hiervan, namelijk<sup class=\"note-marker\" data-note=\"2\">2</sup> uit uw hartstochten,<sup class=\"note-marker\" data-note=\"a\">a</sup> die<sup class=\"note-marker\" data-note=\"3\">3</sup> in uw lichaamsdelen<sup class=\"note-marker\" data-note=\"4\">4</sup> strijd voeren?",
       "textSV1888": "Van waar komen krijgen en vechterijen onder u? Komen zij niet hiervan, namelijk uit uw wellusten, die in uw leden strijd voeren?",
-      "textSV1888_html": "Van waar<sup class=\"note-marker\" data-note=\"1\">1</sup> komen krijgen en vechterijen onder u? Komen zij niet hiervan, namelijk<sup class=\"note-marker\" data-note=\"2\">2</sup> uit uw wellusten,<sup class=\"note-marker\" data-note=\"a\">a</sup> die<sup class=\"note-marker\" data-note=\"3\">3</sup> in uw leden<sup class=\"note-marker\" data-note=\"4\">4</sup> strijd voeren?"
+      "textSV1888_html": "Van waar<sup class=\"note-marker\" data-note=\"1\">1</sup> komen krijgen en vechterijen onder u? Komen zij niet hiervan, namelijk<sup class=\"note-marker\" data-note=\"2\">2</sup> uit uw wellusten,<sup class=\"note-marker\" data-note=\"a\">a</sup> die<sup class=\"note-marker\" data-note=\"3\">3</sup> in uw leden<sup class=\"note-marker\" data-note=\"4\">4</sup> strijd voeren?",
+      "phraseDiff": [
+        {
+          "old": "Van waar",
+          "new": "Vanwaar",
+          "principe": "V296"
+        },
+        {
+          "old": "krijgen",
+          "new": "strijden",
+          "principe": null
+        },
+        {
+          "old": "wellusten,",
+          "new": "hartstochten,",
+          "principe": "V297"
+        },
+        {
+          "old": "leden",
+          "new": "lichaamsdelen",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 2,
@@ -390,9 +412,9 @@
           "principe": "A1"
         },
         {
-          "old": "doch gij",
-          "new": "maar u",
-          "principe": "V1"
+          "old": "krijg, doch gij",
+          "new": "strijd, maar u",
+          "principe": "V203"
         },
         {
           "old": "gij",
@@ -545,6 +567,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "wellusten",
+          "new": "hartstochten",
+          "principe": "V297"
         },
         {
           "old": "zoudt.",
@@ -760,6 +787,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "Gods",
+          "new": "van God",
+          "principe": null
         },
         {
           "old": "der",
@@ -1062,19 +1094,14 @@
           "principe": null
         },
         {
-          "old": "God wederstaat",
-          "new": "'God weerstaat",
+          "old": "wederstaat",
+          "new": "weerstaat",
           "principe": null
         },
         {
-          "old": "den nederigen",
-          "new": "de nedrigen",
+          "old": "den",
+          "new": "de",
           "principe": "N1"
-        },
-        {
-          "old": "genade.",
-          "new": "genade.'",
-          "principe": null
         }
       ]
     },
@@ -1198,9 +1225,14 @@
       "textSV1888_html": "Zo<sup class=\"note-marker\" data-note=\"27\">27</sup> onderwerpt u dan Gode;<sup class=\"note-marker\" data-note=\"f\">f</sup> wederstaat<sup class=\"note-marker\" data-note=\"28\">28</sup> den duivel, en<sup class=\"note-marker\" data-note=\"29\">29</sup> hij zal van u vlieden.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "W10"
+          "old": "Zo onderwerpt",
+          "new": "Onderwerp",
+          "principe": null
+        },
+        {
+          "old": "Gode; wederstaat den",
+          "new": "aan God; bied weerstand aan de",
+          "principe": "N1"
         },
         {
           "old": "vlieden.",
@@ -1341,6 +1373,16 @@
       "textSV1888": "Naakt tot God, en Hij zal tot u naken. Reinigt de handen, gij zondaars, en zuivert de harten, gij dubbelhartigen!",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"30\">30</sup> Naakt tot God, en Hij zal tot u<sup class=\"note-marker\" data-note=\"31\">31</sup> naken.<sup class=\"note-marker\" data-note=\"g\">g</sup> Reinigt<sup class=\"note-marker\" data-note=\"32\">32</sup> de handen, gij zondaars, en zuivert de harten,<sup class=\"note-marker\" data-note=\"33\">33</sup> gij dubbelhartigen!",
       "phraseDiff": [
+        {
+          "old": "Naakt",
+          "new": "Nader",
+          "principe": null
+        },
+        {
+          "old": "naken.",
+          "new": "naderen.",
+          "principe": null
+        },
         {
           "old": "gij",
           "new": "u",
@@ -1779,9 +1821,24 @@
       "textSV1888_html": "Broeders, spreekt<sup class=\"note-marker\" data-note=\"36\">36</sup> niet kwalijk van elkander. Die van zijn broeder kwalijk spreekt en zijn broeder<sup class=\"note-marker\" data-note=\"37\">37</sup> oordeelt, die spreekt kwalijk van de wet, en<sup class=\"note-marker\" data-note=\"38\">38</sup> oordeelt de wet. Indien gij nu de wet oordeelt, zo zijt gij geen dader der wet, maar<sup class=\"note-marker\" data-note=\"39\">39</sup> een rechter.",
       "phraseDiff": [
         {
+          "old": "kwalijk",
+          "new": "verkeerd",
+          "principe": null
+        },
+        {
           "old": "elkander.",
           "new": "elkaar.",
           "principe": "V65"
+        },
+        {
+          "old": "kwalijk",
+          "new": "verkeerd",
+          "principe": null
+        },
+        {
+          "old": "kwalijk",
+          "new": "verkeerd",
+          "principe": null
         },
         {
           "old": "Indien gij",
@@ -2127,14 +2184,19 @@
       "textSV1888_html": "Welaan nu gij, die daar zegt:<sup class=\"note-marker\" data-note=\"41\">41</sup><sup class=\"note-marker\" data-note=\"l\">l</sup> Wij zullen heden of morgen naar zulk een stad reizen, en aldaar een jaar<sup class=\"note-marker\" data-note=\"42\">42</sup> doorbrengen, en<sup class=\"note-marker\" data-note=\"43\">43</sup> koopmanschap drijven, en winst doen.",
       "phraseDiff": [
         {
-          "old": "gij,",
-          "new": "u,",
-          "principe": "A1"
+          "old": "Welaan nu gij,",
+          "new": "Nu dan u,",
+          "principe": "V298"
         },
         {
           "old": "aldaar",
           "new": "daar",
           "principe": "V36"
+        },
+        {
+          "old": "koopmanschap",
+          "new": "handel",
+          "principe": "V299"
         }
       ]
     },
@@ -2314,6 +2376,11 @@
           "old": "geschieden",
           "new": "gebeuren",
           "principe": "V40"
+        },
+        {
+          "old": "weinig tijds",
+          "new": "korte tijd",
+          "principe": "V300"
         }
       ]
     },
@@ -2561,6 +2628,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "alle zodanige",
+          "new": "al zulk soort",
+          "principe": "V303"
         }
       ]
     },
