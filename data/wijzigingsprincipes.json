@@ -2760,6 +2760,54 @@
       "beschrijving": "Cascade-fix uitsluitend toegepast in apocriefen met Hebreeuws/Aramees vermoedelijk origineel: SV1888 'des HEEREN' (genitief van HEERE = JHWH) is via eerdere bulkfixes 'des Heeren'→'des Heren'/'van de Heren' geworden. Hersteld naar 'van JAHWEH'. Apocriefen met Grieks origineel (Wijsheid, 2-3 Mak, 3 Ezra, Gebed Manasse, Brief van Jeremia=Bar 6) en het Oude Testament zelf zijn NIET aangetast door dit principe. (V280 dekt Here→JAHWEH/Heere policy per boek-categorie.)",
       "regex": "\\b(des Heren|van de Heren|den Heren)\\b",
       "voorbeeld": "Bar 1:18 'stem van de Heren onzes Gods' → 'stem van JAHWEH onze God'"
+    },
+    {
+      "id": "V282",
+      "categorie": "Verouderde woorden",
+      "oud": "gebrekkelijk(e)",
+      "nieuw": "gebrekkig(e)",
+      "toelichting": "Verouderde adjectiefvorm",
+      "regex": "\\b[Gg]ebrekkelijke?\\b"
+    },
+    {
+      "id": "V283",
+      "categorie": "Verouderde woorden",
+      "oud": "naburin(nen) / nabuur",
+      "nieuw": "buurvrouw(en) / buurman / buren",
+      "toelichting": "Verouderde aanduidingen voor (vrouwelijke) buur",
+      "regex": "\\b[Nn]aburinnen|[Nn]aburen|[Nn]aburin|[Nn]abuur\\b"
+    },
+    {
+      "id": "V284",
+      "categorie": "Verouderde woorden",
+      "oud": "somwijlen",
+      "nieuw": "soms",
+      "toelichting": "Verouderd bijwoord",
+      "regex": "\\b[Ss]omwijlen\\b"
+    },
+    {
+      "id": "V285",
+      "categorie": "Verouderde woorden",
+      "oud": "baar (van de zee)",
+      "nieuw": "golf",
+      "toelichting": "Bijbels-archaïsch voor zeegolf; alleen in waterzee-context vervangen",
+      "regex": "\\b[Bb]aren? van de zee\\b"
+    },
+    {
+      "id": "V286",
+      "categorie": "Verouderde woorden",
+      "oud": "nedergeworpen",
+      "nieuw": "neergeworpen",
+      "toelichting": "Spelling-modernisering",
+      "regex": "\\b[Nn]edergeworpen\\b"
+    },
+    {
+      "id": "V287",
+      "categorie": "Verouderde woorden",
+      "oud": "ongestadig(e)",
+      "nieuw": "onstandvastig(e)",
+      "toelichting": "Verouderd adjectief",
+      "regex": "\\b[Oo]ngestadige?\\b"
     }
   ]
 }
