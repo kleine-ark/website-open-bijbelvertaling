@@ -15,6 +15,7 @@ window.AUDIO_AVAILABLE = {
     handelingen: [1,2,3,4,5,6,7,8],
     romeinen: [1,2,3,4],
     efeziers: [1,2,3,4,5,6],
+    baruch: [1,2,3,4,5,6],
     '1johannes': [1,2,3,4,5],
     '2johannes': [1],
     '3johannes': [1],
