@@ -1,0 +1,107 @@
+{
+  "book": "hebreeen",
+  "chapter": 1,
+  "verses": {
+    "1": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "velerlei",
+          "suggestion": "veel verschillende",
+          "note": "verouderd",
+          "confidence": 0.65
+        },
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "voortijds",
+          "suggestion": "voorheen",
+          "note": "verouderd bijwoord",
+          "confidence": 0.65
+        },
+        {
+          "type": "PRESENT_PARTICIPLE",
+          "fragment": "hebbende",
+          "suggestion": "die ... ww-finiet",
+          "note": "present participle",
+          "confidence": 0.55
+        }
+      ],
+      "rating": 2
+    },
+    "2": {
+      "issues": [],
+      "rating": 5
+    },
+    "3": {
+      "issues": [
+        {
+          "type": "SPELLING",
+          "fragment": "Zichzelven",
+          "suggestion": "zichzelf / uzelf",
+          "note": "verouderd vnw -zelven",
+          "confidence": 0.7
+        }
+      ],
+      "rating": 3
+    },
+    "4": {
+      "issues": [],
+      "rating": 5
+    },
+    "5": {
+      "issues": [],
+      "rating": 5
+    },
+    "6": {
+      "issues": [],
+      "rating": 5
+    },
+    "7": {
+      "issues": [],
+      "rating": 5
+    },
+    "8": {
+      "issues": [],
+      "rating": 5
+    },
+    "9": {
+      "issues": [],
+      "rating": 5
+    },
+    "10": {
+      "issues": [],
+      "rating": 5
+    },
+    "11": {
+      "issues": [],
+      "rating": 5
+    },
+    "12": {
+      "issues": [],
+      "rating": 5
+    },
+    "13": {
+      "issues": [],
+      "rating": 5
+    },
+    "14": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "dergenen",
+          "suggestion": "van degenen",
+          "note": "genitief",
+          "confidence": 0.8
+        },
+        {
+          "type": "CASCADE_BUG",
+          "fragment": "om dergenen wil",
+          "suggestion": "omwille van X",
+          "note": "om-wil constructie",
+          "confidence": 0.85
+        }
+      ],
+      "rating": 2
+    }
+  }
+}

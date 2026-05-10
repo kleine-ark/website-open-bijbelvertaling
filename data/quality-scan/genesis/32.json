@@ -1,0 +1,63 @@
+{
+  "book": "genesis",
+  "chapter": 32,
+  "scanned_at": "2026-05-01T18:45:39+00:00",
+  "scanner_model": "claude-opus-4-7-pattern-scan",
+  "verses": {
+    "2": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "heirleger Gods",
+          "voorstel": "heirleger van God",
+          "confidence": 0.7,
+          "reden": "Postnominale eigennaam-genitief (X Naam+s) → 'X van Naam'"
+        }
+      ],
+      "rating": 4
+    },
+    "9": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "vader Abrahams",
+          "voorstel": "vader van Abraham",
+          "confidence": 0.7,
+          "reden": "Postnominale eigennaam-genitief (X Naam+s) → 'X van Naam'"
+        },
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "vader Izaks",
+          "voorstel": "vader van Izak",
+          "confidence": 0.7,
+          "reden": "Postnominale eigennaam-genitief (X Naam+s) → 'X van Naam'"
+        }
+      ],
+      "rating": 3
+    },
+    "11": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "vreze",
+          "voorstel": "vrees",
+          "confidence": 0.85,
+          "reden": "verouderde naamval"
+        }
+      ],
+      "rating": 3
+    },
+    "32": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "kinderen Israëls",
+          "voorstel": "kinderen van Israël",
+          "confidence": 0.7,
+          "reden": "Postnominale eigennaam-genitief (X Naam+s) → 'X van Naam'"
+        }
+      ],
+      "rating": 4
+    }
+  }
+}

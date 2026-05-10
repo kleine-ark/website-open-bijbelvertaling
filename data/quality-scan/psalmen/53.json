@@ -1,0 +1,51 @@
+{
+  "book": "psalmen",
+  "chapter": 53,
+  "scanned_at": "2026-05-01T18:43:22.446668+00:00",
+  "scanner_model": "claude-opus-4.7",
+  "verses": {
+    "1": {
+      "issues": [],
+      "rating": 5
+    },
+    "2": {
+      "issues": [],
+      "rating": 5
+    },
+    "3": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "match": "nedergezien",
+          "suggestion": "neergekeken",
+          "confidence": 0.9
+        }
+      ],
+      "rating": 3
+    },
+    "4": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "match": "te zamen",
+          "suggestion": "tezamen/samen",
+          "confidence": 0.7
+        }
+      ],
+      "rating": 3
+    },
+    "5": {
+      "issues": [],
+      "rating": 5
+    },
+    "6": {
+      "issues": [],
+      "rating": 5,
+      "note": "manual-correctie skipped"
+    },
+    "7": {
+      "issues": [],
+      "rating": 5
+    }
+  }
+}

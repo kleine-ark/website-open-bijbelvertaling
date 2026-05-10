@@ -1,0 +1,26 @@
+{
+  "book": "4ezra",
+  "chapter": 13,
+  "verses": {
+    "49": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "dergenen",
+          "suggest": "van degenen"
+        }
+      ],
+      "rating": 4
+    },
+    "53": {
+      "issues": [
+        {
+          "type": "CASCADE_BUG",
+          "fragment": "om wiens wil",
+          "suggest": "omwille van X"
+        }
+      ],
+      "rating": 4
+    }
+  }
+}

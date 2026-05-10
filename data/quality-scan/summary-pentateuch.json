@@ -1,0 +1,61 @@
+{
+  "scanned_at": "2026-05-01T18:45:39+00:00",
+  "scanner": "claude-opus-4-7-pattern-scan",
+  "books": {
+    "genesis": {
+      "chapters": 50,
+      "verses_scanned": 1530,
+      "verses_with_issues": 39,
+      "total_issues": 45,
+      "by_type": {
+        "GENITIEF_REST": 35,
+        "VEROUDERD_WOORD": 8,
+        "CASCADE_BUG": 2
+      }
+    },
+    "exodus": {
+      "chapters": 40,
+      "verses_scanned": 1213,
+      "verses_with_issues": 134,
+      "total_issues": 142,
+      "by_type": {
+        "GENITIEF_REST": 125,
+        "VEROUDERD_WOORD": 15,
+        "CASCADE_BUG": 1,
+        "PRESENT_PARTICIPLE": 1
+      }
+    },
+    "leviticus": {
+      "chapters": 27,
+      "verses_scanned": 859,
+      "verses_with_issues": 61,
+      "total_issues": 64,
+      "by_type": {
+        "GENITIEF_REST": 57,
+        "VEROUDERD_WOORD": 3,
+        "PRESENT_PARTICIPLE": 4
+      }
+    },
+    "numeri": {
+      "chapters": 36,
+      "verses_scanned": 1288,
+      "verses_with_issues": 166,
+      "total_issues": 188,
+      "by_type": {
+        "GENITIEF_REST": 174,
+        "VEROUDERD_WOORD": 14
+      }
+    },
+    "deuteronomium": {
+      "chapters": 34,
+      "verses_scanned": 959,
+      "verses_with_issues": 55,
+      "total_issues": 61,
+      "by_type": {
+        "GENITIEF_REST": 38,
+        "VEROUDERD_WOORD": 22,
+        "NAAMVAL_UITGANG": 1
+      }
+    }
+  }
+}
