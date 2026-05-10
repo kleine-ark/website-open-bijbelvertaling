@@ -91,7 +91,7 @@
       "number": 2,
       "textSV1888": "Want den dwaze brengt de toornigheid om, en de ijver doodt den slechte.",
       "text1637": "Want den [4] dwasen brengt de [5] toornicheyt om: ende den yver doodt den [6] slechten.",
-      "text2026": "Want de dwaze brengt de toornigheid om, en de ijver doodt de slechte.",
+      "text2026": "Want de dwaze brengt de boosheid om, en de ijver doodt de slechte.",
       "marginNotes": [
         {
           "marker": "4",
@@ -152,7 +152,7 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want de<sup class=\"note-marker\" data-note=\"4\">4</sup> dwaze brengt de<sup class=\"note-marker\" data-note=\"5\">5</sup> toornigheid om, en de ijver doodt de<sup class=\"note-marker\" data-note=\"6\">6</sup> slechte.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want de<sup class=\"note-marker\" data-note=\"4\">4</sup> dwaze brengt de<sup class=\"note-marker\" data-note=\"5\">5</sup> boosheid om, en de ijver doodt de<sup class=\"note-marker\" data-note=\"6\">6</sup> slechte.</i></span>",
       "textSV1888_html": "Want den<sup class=\"note-marker\" data-note=\"4\">4</sup> dwaze brengt de<sup class=\"note-marker\" data-note=\"5\">5</sup> toornigheid om, en de ijver doodt den<sup class=\"note-marker\" data-note=\"6\">6</sup> slechte.",
       "text1637_html": "Want den <sup class=\"note-marker\" data-note=\"4\">4</sup> dwasen brengt de <sup class=\"note-marker\" data-note=\"5\">5</sup> toornicheyt om: ende den yver doodt den <sup class=\"note-marker\" data-note=\"6\">6</sup> slechten.",
       "phraseDiff": [
@@ -160,6 +160,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "toornigheid",
+          "new": "boosheid",
+          "principe": "V262"
         },
         {
           "old": "den",

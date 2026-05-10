@@ -5403,7 +5403,7 @@
       "number": 37,
       "textSV1888": "En niemand doet nieuwen wijn in oude lederzakken; anders zo zal de nieuwe wijn de lederzakken doen bersten, en de wijn zal uitgestort worden, en de lederzakken zullen verderven.",
       "text1637": "Ende niemant en doet [o] nieuwen wijn in oude [leder-] sacken: anders so sal de nieuwe wijn de [leder-] sacken doen bersten, ende de [wijn] sal uytgestort worden, ende de [leder-] sacken sullen verderven.",
-      "text2026": "En niemand doet nieuwen wijn in oude lederzakken; anders zo zal de nieuwe wijn de lederzakken doen bersten, en de wijn zal uitgestort worden, en de lederzakken zullen verderven.",
+      "text2026": "En niemand doet nieuwe wijn in oude lederzakken; anders zo zal de nieuwe wijn de lederzakken doen bersten, en de wijn zal uitgestort worden, en de lederzakken zullen verderven.",
       "marginNotes": [
         {
           "marker": "o",
@@ -5571,15 +5571,22 @@
           "gloss": "〔to destroy"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En niemand doet<sup class=\"note-marker\" data-note=\"o\">o</sup> nieuwen wijn in oude lederzakken; anders zo zal de nieuwe wijn de lederzakken doen bersten, en de wijn zal uitgestort worden, en de lederzakken zullen verderven.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En niemand doet<sup class=\"note-marker\" data-note=\"o\">o</sup> nieuwe wijn in oude lederzakken; anders zo zal de nieuwe wijn de lederzakken doen bersten, en de wijn zal uitgestort worden, en de lederzakken zullen verderven.</i></span>",
       "textSV1888_html": "En niemand doet<sup class=\"note-marker\" data-note=\"o\">o</sup> nieuwen wijn in oude lederzakken; anders zo zal de nieuwe wijn de lederzakken doen bersten, en de wijn zal uitgestort worden, en de lederzakken zullen verderven.",
-      "text1637_html": "Ende niemant en doet <sup class=\"note-marker\" data-note=\"o\">o</sup> nieuwen wijn in oude [<i>leder-</i>] sacken: anders so sal de nieuwe wijn de [<i>leder-</i>] sacken doen bersten, ende de [<i>wijn</i>] sal uytgestort worden, ende de [<i>leder-</i>] sacken sullen verderven."
+      "text1637_html": "Ende niemant en doet <sup class=\"note-marker\" data-note=\"o\">o</sup> nieuwen wijn in oude [<i>leder-</i>] sacken: anders so sal de nieuwe wijn de [<i>leder-</i>] sacken doen bersten, ende de [<i>wijn</i>] sal uytgestort worden, ende de [<i>leder-</i>] sacken sullen verderven.",
+      "phraseDiff": [
+        {
+          "old": "nieuwen",
+          "new": "nieuwe",
+          "principe": "V260"
+        }
+      ]
     },
     {
       "number": 38,
       "textSV1888": "Maar nieuwen wijn moet men in nieuwe lederzakken doen, en zij worden beide te zamen behouden.",
       "text1637": "Maer nieuwen wijn moetmen in nieuwe [leder-] sacken doen, ende sy worden beyde te samen behouden.",
-      "text2026": "Maar nieuwen wijn moet men in nieuwe lederzakken doen, en zij worden beide te zamen behouden.",
+      "text2026": "Maar nieuwe wijn moet men in nieuwe lederzakken doen, en zij worden beide te zamen behouden.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -5625,14 +5632,21 @@
           "gloss": "〔must be put"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar nieuwen wijn moet men in nieuwe lederzakken doen, en zij worden beide te zamen behouden.</i></span>",
-      "text1637_html": "Maer nieuwen wijn moetmen in nieuwe [<i>leder-</i>] sacken doen, ende sy worden beyde te samen behouden."
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar nieuwe wijn moet men in nieuwe lederzakken doen, en zij worden beide te zamen behouden.</i></span>",
+      "text1637_html": "Maer nieuwen wijn moetmen in nieuwe [<i>leder-</i>] sacken doen, ende sy worden beyde te samen behouden.",
+      "phraseDiff": [
+        {
+          "old": "nieuwen",
+          "new": "nieuwe",
+          "principe": "V260"
+        }
+      ]
     },
     {
       "number": 39,
       "textSV1888": "En niemand, die ouden drinkt, begeert terstond nieuwen; want hij zegt: De oude is beter.",
       "text1637": "Ende niemandt die ouden drinckt, begeert terstont nieuwen: want hy seght, De oude is [37] beter.",
-      "text2026": "En niemand, die ouden drinkt, begeert meteen nieuwen; want hij zegt: De oude is beter.",
+      "text2026": "En niemand, die oude drinkt, begeert meteen nieuwe; want hij zegt: De oude is beter.",
       "marginNotes": [
         {
           "marker": "37",
@@ -5716,14 +5730,19 @@
           "gloss": "〔to be"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En niemand, die ouden drinkt, begeert meteen nieuwen; want hij zegt: De oude is beter.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En niemand, die oude drinkt, begeert meteen nieuwe; want hij zegt: De oude is beter.</i></span>",
       "textSV1888_html": "En niemand, die ouden drinkt, begeert terstond nieuwen; want hij zegt: De oude is<sup class=\"note-marker\" data-note=\"37\">37</sup> beter.",
       "text1637_html": "Ende niemandt die ouden drinckt, begeert terstont nieuwen: want hy seght, De oude is <sup class=\"note-marker\" data-note=\"37\">37</sup> beter.",
       "phraseDiff": [
         {
-          "old": "terstond",
-          "new": "meteen",
-          "principe": "V8"
+          "old": "ouden",
+          "new": "oude",
+          "principe": "V260"
+        },
+        {
+          "old": "terstond nieuwen;",
+          "new": "meteen nieuwe;",
+          "principe": "V260"
         }
       ]
     }
