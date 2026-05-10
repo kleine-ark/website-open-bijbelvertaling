@@ -57,12 +57,8 @@ const App = {
 
         return result.join('');
     },
-    // Kolom-breedtes: gelijk verdeeld
-    // Hoofdstukken met voorlezing-audio (audio/{book}/{ch}.mp3)
-    AUDIO_AVAILABLE: {
-        genesis: [1],
-        johannes: [1],
-    },
+    // AUDIO_AVAILABLE leeft in js/audio-available.js (window.AUDIO_AVAILABLE) —
+    // niet hier definieren. Wordt door de TTS-rollout-script bijgewerkt.
 
     // Hoofdstukken die handmatig vers-voor-vers zijn nagelopen.
     // Voor andere hoofdstukken: AI-concept-banner tonen.
@@ -118,7 +114,7 @@ const App = {
         const mfnAudio = playMob ? playMob.closest('.mfn-audio') : null;
         if (!audioEl) return;
         try { audioEl.pause(); } catch (e) {}
-        const list = App.AUDIO_AVAILABLE[bookId] || [];
+        const list = (window.AUDIO_AVAILABLE || {})[bookId] || [];
         const show = list.includes(chapter);
         const setHidden = (el, hide) => { if (el) el.classList.toggle('hidden', hide); };
         setHidden(playBtn, !show);
