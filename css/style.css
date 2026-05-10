@@ -3059,13 +3059,16 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 }
 
 /* === Mobiel: extra kolommen ALTIJD onder OV2026 (block-layout), niet ernaast ===
-   Override 'display: grid !important' uit reading-mode-block (regel ~2655) */
+   Override 'display: grid !important' uit reading-mode-block (regel ~2655)
+   Plus: compactere vers-spacing op smal scherm. */
 @media (max-width: 768px) {
     #verses-container .verse-row,
     #content.reading-mode .verse-row,
     #content.reading-mode.layout-eronder .verse-row {
         display: block !important;
-        padding: 8px 14px 10px;
+        padding: 2px 14px 4px;
+        margin-bottom: 0 !important;
+        line-height: 1.55 !important;
         gap: 0;
     }
     #verses-container .verse-num {
