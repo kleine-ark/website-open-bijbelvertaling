@@ -167,6 +167,14 @@ body.dark .icon-sun { display: none; }
 }
 .book-group-items button:hover { background: var(--selected); border-color: var(--accent); }
 .book-group-items button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.book-group-items button.book-unverified { color: var(--text-muted, #888); }
+.book-group-items button.book-unverified.active { color: #fff; }
+.book-flag-unverified {
+    display: inline-block; margin-left: 4px;
+    color: #d97706; /* warm-amber, leesbaar in light + dark */
+    font-size: 11px; line-height: 1;
+}
+.book-group-items button.active .book-flag-unverified { color: #fff; }
 
 /* === Main content === */
 #reader-content {
