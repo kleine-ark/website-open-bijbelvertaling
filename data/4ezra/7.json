@@ -38,8 +38,8 @@
           "principe": "W1"
         },
         {
-          "old": "zeide",
-          "new": "zei",
+          "old": "hij zeide",
+          "new": "Hij zei",
           "principe": "W1"
         }
       ]
@@ -127,8 +127,8 @@
           "principe": "V280"
         },
         {
-          "old": "zeide",
-          "new": "zei",
+          "old": "hij zeide",
+          "new": "Hij zei",
           "principe": "W1"
         }
       ]
@@ -364,6 +364,16 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "hij",
+          "new": "Hij",
+          "principe": null
+        },
+        {
+          "old": "zijn",
+          "new": "Zijn",
+          "principe": null
         }
       ]
     },
@@ -761,7 +771,14 @@
       "textSV1888": "En dat de aangezichten dergenen, die zich onthouden hebben, blinken zullen boven de sterren, en toch onze aangezichten zwart zullen zijn boven de duisternis?",
       "text2026": "En dat de aangezichten van degenen, die zich onthouden hebben, blinken zullen boven de sterren, en toch onze aangezichten zwart zullen zijn boven de duisternis?",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>En dat de aangezichten van degenen, die zich onthouden hebben, blinken zullen boven de sterren, en toch onze aangezichten zwart zullen zijn boven de duisternis?</i></span>"
+      "text2026_html": "<span class=\"direct-speech\"><i>En dat de aangezichten van degenen, die zich onthouden hebben, blinken zullen boven de sterren, en toch onze aangezichten zwart zullen zijn boven de duisternis?</i></span>",
+      "phraseDiff": [
+        {
+          "old": "dergenen,",
+          "new": "van degenen,",
+          "principe": "V302"
+        }
+      ]
     },
     {
       "number": 56,
@@ -893,6 +910,11 @@
           "old": "Here",
           "new": "JAHWEH",
           "principe": "V280"
+        },
+        {
+          "old": "hij",
+          "new": "Hij",
+          "principe": null
         },
         {
           "old": "hunner",
