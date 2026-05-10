@@ -125,6 +125,7 @@ const Lees = {
         filemon:    'all',
         judas:      'all',
         baruch:     'all',
+        jakobus:    'all',
     },
 
     _isVerified(bookId, chapter) {
