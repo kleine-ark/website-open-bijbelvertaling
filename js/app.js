@@ -76,6 +76,8 @@ const App = {
         gebedvanmanasse:'all',
         filemon:    'all',
         judas:      'all',
+        baruch:     'all',
+        jakobus:    'all',
     },
 
     _isVerified(bookId, chapter) {
