@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grondteksten van Gods Woord — Open Staten Vertaling v0.14.2</title>
+    <meta name="description" content="Per bijbelboek: oorspronkelijke taal, oudste handschrift, aantal tekstgetuigen en links naar de belangrijkste codices.">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { display: block; background: #f8f6f2; }
+        .page { max-width: 1100px; padding: 30px 24px 80px; font-family: var(--font-body); }
+        .page h1 { font-family: var(--font-cursive); font-size: 36px; color: var(--navy); font-weight: 400; margin-bottom: 4px; }
+        .page .subtitle { color: var(--teal); font-size: 14px; margin-bottom: 24px; }
+        .page h2 {
+            color: var(--navy); font-family: var(--font-cursive); font-size: 28px;
+            font-weight: 400; margin: 36px 0 12px;
+            border-bottom: 2px solid var(--gold); padding-bottom: 6px;
+            scroll-margin-top: 60px;
+        }
+        .page h3 { color: var(--teal); font-size: 16px; font-weight: 600; margin: 22px 0 6px; }
+        .page p, .page li { line-height: 1.7; margin-bottom: 6px; }
+        .page ul, .page ol { padding-left: 22px; margin-bottom: 14px; }
+        .page a { color: var(--teal); text-decoration: none; }
+        .page a:hover { color: var(--gold); text-decoration: underline; }
+        .page code {
+            background: #f0ede8; padding: 2px 6px; border-radius: 3px;
+            font-size: 13px; color: var(--navy);
+        }
+
+        .principle-box {
+            background: rgba(146,182,180,0.12); border: 1px solid var(--border);
+            border-left: 4px solid var(--gold);
+            padding: 11px 15px; margin: 10px 0; border-radius: 0 4px 4px 0;
+        }
+        .principle-box strong { color: var(--navy); }
+
+        .toc {
+            background: #fff; border: 1px solid var(--border); border-radius: 8px;
+            padding: 14px 20px; margin-bottom: 24px;
+        }
+        .toc h3 {
+            margin: 0 0 6px; font-size: 13px; color: var(--gold);
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .toc ol { columns: 2; column-gap: 24px; padding-left: 20px; margin: 0; font-size: 13px; }
+        .toc a { color: var(--navy); }
+
+        /* Manuscript table */
+        .ms-table {
+            width: 100%; border-collapse: collapse; margin: 10px 0 22px;
+            font-size: 13px; background: #fff;
+        }
+        .ms-table th {
+            background: var(--navy); color: #fff; padding: 8px 10px;
+            text-align: left; font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .ms-table td {
+            padding: 6px 10px; border: 1px solid var(--border);
+            color: #333; vertical-align: top;
+        }
+        .ms-table tr:nth-child(even) td { background: rgba(146,182,180,0.06); }
+        .ms-table tr:hover td { background: rgba(203,164,73,0.08); }
+        .ms-table .book-name {
+            font-weight: 600; color: var(--navy);
+            white-space: nowrap; min-width: 140px;
+        }
+        .ms-table .lang {
+            font-style: italic; color: var(--teal);
+            white-space: nowrap;
+        }
+        .ms-table .ms-name { min-width: 180px; }
+        .ms-table .ms-date {
+            white-space: nowrap; color: #555;
+            font-family: 'Fira Sans', sans-serif; font-size: 12px;
+        }
+        .ms-table .ms-count {
+            text-align: right; white-space: nowrap;
+            font-family: 'Fira Sans', sans-serif; font-size: 12px;
+            color: #555;
+        }
+        .ms-table .ms-links { font-size: 12px; }
+        .ms-table .ms-links a { display: inline-block; margin-right: 6px; }
+
+        .codex-card {
+            background: #fff; border: 1px solid var(--border);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 6px 6px 0;
+            padding: 12px 16px; margin: 10px 0;
+        }
+        .codex-card h4 {
+            margin: 0 0 4px; color: var(--navy);
+            font-family: 'Fira Sans', sans-serif; font-size: 15px;
+        }
+        .codex-card .meta {
+            font-size: 12px; color: var(--teal); margin-bottom: 6px;
+            font-family: 'Fira Sans', sans-serif;
+        }
+        .codex-card p { margin: 4px 0; font-size: 13px; line-height: 1.6; }
+
+        .legend {
+            display: flex; flex-wrap: wrap; gap: 12px;
+            font-size: 12px; color: #555; margin: 8px 0 14px;
+            font-family: 'Fira Sans', sans-serif;
+        }
+        .legend span {
+            background: rgba(146,182,180,0.12); padding: 3px 8px;
+            border-radius: 3px; border: 1px solid var(--border);
+        }
+
+        .section-divider { border: none; border-top: 1px dashed var(--border); margin: 36px 0 0; }
+        .section-divider + h2 { margin-top: 18px; }
+
+        @media all {
+            body.in-iframe #topnav { display: none !important; }
+            body.in-iframe nav[style*="width:220px"] { display: none !important; }
+            body.in-iframe div[style*="display:flex;min-height"] { display: block !important; }
+            body.in-iframe { min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+<nav id="topnav" style="display:flex;align-items:center;background:#142e42;color:#fff;padding:0 30px;height:52px;font-family:'Fira Sans',sans-serif;position:sticky;top:0;z-index:300;">
+    <div style="font-family:'Allura',cursive;font-size:28px;color:#fff;">Open Staten Vertaling<span class="topnav-subtitle"> public-domain herziening van de Statenvertaling</span> <span style="font-family:'Fira Sans';font-size:10px;font-weight:600;background:rgba(203,164,73,0.25);color:#cba449;padding:1px 6px;border-radius:3px;vertical-align:middle;margin-left:4px;"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.14.2</a></span></div>
+    <div style="display:flex;gap:2px;margin:0 auto;">
+        <a href="over-ov.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Over OV</a>
+        <a href="index.html#johannes/1" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Tekst</a>
+        <a href="wiki.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Wiki</a>
+        <a href="contact.html" style="color:rgba(255,255,255,0.6);text-decoration:none;padding:8px 18px;border-radius:6px;font-size:15px;font-weight:500;">Contact</a>
+    </div>
+</nav>
+<div style="display:flex;min-height:calc(100vh - 52px);">
+    <nav style="width:220px;min-width:220px;background:#f5f2ed;border-right:1px solid #e5e1d8;padding:20px 0;font-family:'Fira Sans',sans-serif;font-size:14px;">
+        <div style="padding:0 16px 12px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;">Documentatie</div>
+        <a href="uitgangspunten.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Uitgangspunten &amp; techniek</a>
+        <a href="principes.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Wijzigingsprincipes</a>
+        <a href="statistieken.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Statistieken</a>
+        <a href="begrippen.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Begrippen</a>
+        <div style="padding:12px 16px 8px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;margin-top:12px;">Tekstkritiek</div>
+        <a href="grondteksten.html" style="display:block;padding:8px 20px;color:#142e42;text-decoration:none;font-weight:600;border-left:3px solid #cba449;background:rgba(203,164,73,0.08);">Grondteksten</a>
+        <a href="changelog.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Changelog</a>
+        <div style="padding:12px 16px 8px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;margin-top:12px;">Lexicons</div>
+        <a href="lexicon-bdb.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Hebreeuws (BDB)</a>
+        <a href="lexicon-abbott.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Grieks (Abbott-Smith)</a>
+    </nav>
+
+    <div class="page" style="flex:1;">
+        <h1>Grondteksten van Gods Woord</h1>
+        <p class="subtitle">tekstgeschiedenis &amp; handschriften per bijbelboek</p>
+
+        <div class="principle-box" style="background:rgba(203,164,73,0.08);">
+            Gods Woord is door God ingegeven, maar door mensenhanden bewaard en doorgegeven. Deze pagina
+            geeft per bijbelboek de oorspronkelijke taal, het oudste bekende handschrift, een schatting
+            van het aantal tekstgetuigen, en links naar de belangrijkste handschriften die online zijn
+            te raadplegen. De gegevens zijn een samenvatting; voor exacte aantallen en datering raadplege
+            men de wetenschappelijke literatuur (NA28, BHS/BHQ, ECM, Liste van Aland).
+        </div>
+
+        <div class="toc">
+            <h3>Inhoud</h3>
+            <ol>
+                <li><a href="#inleiding">Inleiding: wat zijn grondteksten?</a></li>
+                <li><a href="#ot">Oude Testament — Hebreeuws &amp; Aramees</a></li>
+                <li><a href="#apocriefen">Apocriefen — gemengd</a></li>
+                <li><a href="#nt">Nieuwe Testament — Grieks</a></li>
+                <li><a href="#codices">Belangrijkste codices</a></li>
+                <li><a href="#verder">Verder lezen</a></li>
+            </ol>
+        </div>
+
+        <h2 id="inleiding">1. Inleiding: wat zijn grondteksten?</h2>
+        <p>Onder <strong>grondtekst</strong> verstaan we de oorspronkelijke taal waarin een bijbelboek werd
+        geschreven: <em>Hebreeuws</em> en (gedeeltelijk) <em>Aramees</em> voor het Oude Testament,
+        <em>Koinè-Grieks</em> voor het Nieuwe Testament. De originele autografen (de eerste handschriften
+        van Mozes, Jesaja, Paulus enzovoort) zijn niet bewaard gebleven. Wat we wél hebben zijn duizenden
+        afschriften (handschriften, papyri, perkamenten codices) waaruit tekstcritici de oorspronkelijke
+        tekst kunnen reconstrueren.</p>
+
+        <p>Voor het OT werken we met de <strong>Masoretische Tekst</strong> (MT), bewaard door joodse
+        schriftgeleerden (Masoreten) tot in zijn perfecte vorm rond de 10e eeuw na Christus. De
+        Statenvertalers (1637) gebruikten de gedrukte Hebreeuwse tekst van Bomberg/Ben Chajim (1525);
+        moderne uitgaven als BHS en BHQ baseren zich op de <strong>Codex Leningradensis</strong> (1008 AD).</p>
+
+        <p>Voor het NT bestonden voor de Statenvertalers slechts enkele Griekse handschriften (de
+        Textus Receptus, gebaseerd op laat-Byzantijnse mss.). Sinds de 19e eeuw zijn duizenden
+        oudere handschriften ontdekt: ruim <strong>5.800 Griekse NT-handschriften</strong> (papyri,
+        unciale en minuskele codices, lectionaria) — meer dan welk ander antiek geschrift ook.</p>
+
+        <p>De Open Staten Vertaling volgt voor het OT de <strong>BHS/BHQ</strong> (Codex Leningradensis)
+        en voor het NT de <strong>NA28/ECM</strong>; zie ook
+        <a href="uitgangspunten.html#brontekst">Uitgangspunten &amp; techniek &mdash; brontekstkeuze</a>.</p>
+
+        <div class="legend">
+            <span><strong>OH</strong> = Oudste volledige Hebreeuwse tekst (Codex Leningradensis 1008 AD)</span>
+            <span><strong>DSS</strong> = Dead Sea Scrolls (Qumran ~250 v.Chr. - 70 n.Chr.)</span>
+            <span><strong>LXX</strong> = Septuaginta (Grieks, 3e-1e eeuw v.Chr.)</span>
+        </div>
+
+        <h2 id="ot">2. Oude Testament — Hebreeuws &amp; Aramees</h2>
+        <p>De 39 OT-boeken zijn oorspronkelijk geschreven in <em>klassiek Hebreeuws</em>, met enkele
+        Aramese gedeelten in Daniël (2:4b–7:28), Ezra (4:8–6:18; 7:12–26), één vers in Jeremia (10:11)
+        en twee Aramese woorden in Genesis (31:47). De volledige Hebreeuwse Bijbel is bewaard in:</p>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Aleppo_Codex" target="_blank">Aleppo Codex</a> (ca. 930 AD) — oorspronkelijk volledig, sinds 1947 ca. 60% bewaard.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Leningrad_Codex" target="_blank">Leningrad Codex</a> (1008 AD) — oudste complete Hebr. Bijbel, basis van BHS/BHQ.</li>
+            <li><a href="https://www.deadseascrolls.org.il/" target="_blank">Dode Zeerollen</a> (Qumran, ~250 v.Chr.–70 n.Chr.) — fragmenten van bijna alle OT-boeken behalve Esther; 1.000 jaar ouder dan de Masoretische codices.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Cairo_Geniza" target="_blank">Cairo Geniza</a> (vondst 1896, fragmenten 6e–11e eeuw) — duizenden Hebr. fragmenten.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Septuagint" target="_blank">Septuaginta</a> (LXX, 3e–1e eeuw v.Chr.) — Griekse vertaling, bewaard in NT-codices Sinaiticus &amp; Vaticanus.</li>
+        </ul>
+
+        <table class="ms-table">
+            <thead>
+                <tr>
+                    <th>Boek</th>
+                    <th>Taal</th>
+                    <th>Oudste handschrift</th>
+                    <th>Datering</th>
+                    <th>Tekstgetuigen</th>
+                    <th>Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Pentateuch -->
+                <tr><td class="book-name">Genesis</td><td class="lang">Hebreeuws</td><td class="ms-name">4QGen-Exod<sup>a</sup>, 4QGen<sup>b</sup> e.a. (DSS); volledig in Aleppo/Leningrad Codex</td><td class="ms-date">~125 v.Chr. (DSS) / 1008 AD (volledig)</td><td class="ms-count">~24 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='genesis'" target="_blank">DSS</a> · <a href="https://en.wikipedia.org/wiki/Leningrad_Codex" target="_blank">Leningrad</a></td></tr>
+                <tr><td class="book-name">Exodus</td><td class="lang">Hebreeuws</td><td class="ms-name">4QpaleoExod<sup>m</sup>, 4QExod<sup>a-k</sup> (DSS, paleo-Hebreeuws schrift)</td><td class="ms-date">~100 v.Chr.</td><td class="ms-count">~21 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='exodus'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Leviticus</td><td class="lang">Hebreeuws</td><td class="ms-name">11QpaleoLev<sup>a</sup>, 4QLev (DSS, paleo-schrift)</td><td class="ms-date">~150–100 v.Chr.</td><td class="ms-count">~17 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='leviticus'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Numeri</td><td class="lang">Hebreeuws</td><td class="ms-name">4QNum<sup>b</sup>, 2QNum (DSS)</td><td class="ms-date">~30 v.Chr.</td><td class="ms-count">~12 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='numbers'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Deuteronomium</td><td class="lang">Hebreeuws</td><td class="ms-name">4QDeut<sup>a-q</sup> (DSS); zilveren amuletten Ketef Hinnom (Num. 6:24-26 ~600 v.Chr.)</td><td class="ms-date">~150 v.Chr. (DSS)</td><td class="ms-count">~33 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='deuteronomy'" target="_blank">DSS</a></td></tr>
+
+                <!-- Historische boeken -->
+                <tr><td class="book-name">Jozua</td><td class="lang">Hebreeuws</td><td class="ms-name">4QJosh<sup>a</sup>, 4QJosh<sup>b</sup> (DSS)</td><td class="ms-date">~100 v.Chr.</td><td class="ms-count">2 DSS-fragmenten + LXX</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='joshua'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Richteren</td><td class="lang">Hebreeuws</td><td class="ms-name">4QJudg<sup>a</sup>, 4QJudg<sup>b</sup>, 1QJudg (DSS)</td><td class="ms-date">~50–25 v.Chr.</td><td class="ms-count">3 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='judges'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Ruth</td><td class="lang">Hebreeuws</td><td class="ms-name">2QRuth<sup>a</sup>, 4QRuth<sup>a,b</sup> (DSS)</td><td class="ms-date">~50 v.Chr.</td><td class="ms-count">4 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='ruth'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">1 Samuel</td><td class="lang">Hebreeuws</td><td class="ms-name">4QSam<sup>a</sup> (zeer uitgebreid), 4QSam<sup>b,c</sup>, 1QSam (DSS)</td><td class="ms-date">~250 v.Chr. (4QSam<sup>b</sup>, oudste OT-mss.)</td><td class="ms-count">4 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='samuel'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">2 Samuel</td><td class="lang">Hebreeuws</td><td class="ms-name">4QSam<sup>a</sup> (zelfde rol als 1 Sam.)</td><td class="ms-date">~50–25 v.Chr.</td><td class="ms-count">samen met 1 Sam.</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='samuel'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">1 Koningen</td><td class="lang">Hebreeuws</td><td class="ms-name">5QKgs, 6QpapKgs (DSS, fragmentarisch)</td><td class="ms-date">~150 v.Chr.</td><td class="ms-count">3 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='kings'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">2 Koningen</td><td class="lang">Hebreeuws</td><td class="ms-name">6QpapKgs (DSS); volledig in Leningrad Codex</td><td class="ms-date">~150 v.Chr. (DSS)</td><td class="ms-count">samen met 1 Kon.</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='kings'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">1 Kronieken</td><td class="lang">Hebreeuws</td><td class="ms-name">4QChr (klein fragment); volledig in Aleppo/Leningrad Codex</td><td class="ms-date">~50 v.Chr.</td><td class="ms-count">1 DSS-fragment</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Aleppo_Codex" target="_blank">Aleppo</a></td></tr>
+                <tr><td class="book-name">2 Kronieken</td><td class="lang">Hebreeuws</td><td class="ms-name">Volledig in Aleppo/Leningrad Codex; geen DSS</td><td class="ms-date">930 AD (Aleppo)</td><td class="ms-count">— (Masoretisch)</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Aleppo_Codex" target="_blank">Aleppo</a></td></tr>
+                <tr><td class="book-name">Ezra</td><td class="lang">Hebr. + Aramees (4:8–6:18; 7:12–26)</td><td class="ms-name">4QEzra (klein fragment); volledig in Leningrad Codex</td><td class="ms-date">~50 v.Chr.</td><td class="ms-count">1 DSS-fragment</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='ezra'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Nehemia</td><td class="lang">Hebreeuws</td><td class="ms-name">4QNeh (klein fragment); volledig in Leningrad Codex</td><td class="ms-date">~50 v.Chr.</td><td class="ms-count">1 DSS-fragment</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Leningrad_Codex" target="_blank">Leningrad</a></td></tr>
+                <tr><td class="book-name">Esther</td><td class="lang">Hebreeuws</td><td class="ms-name">Geen DSS-fragmenten gevonden (enige OT-boek); volledig in Aleppo/Leningrad Codex</td><td class="ms-date">930 AD (Aleppo)</td><td class="ms-count">— (geen DSS)</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Aleppo_Codex" target="_blank">Aleppo</a></td></tr>
+
+                <!-- Poëtische boeken -->
+                <tr><td class="book-name">Job</td><td class="lang">Hebreeuws</td><td class="ms-name">4QpaleoJob<sup>c</sup>, 4QJob<sup>a,b</sup>, 11QtgJob (Aramees Targum)</td><td class="ms-date">~50 v.Chr.</td><td class="ms-count">4 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='job'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Psalmen</td><td class="lang">Hebreeuws</td><td class="ms-name">11QPs<sup>a</sup> (Grote Psalmenrol), 4QPs<sup>a-w</sup> (DSS) — meest geattesteerde OT-boek</td><td class="ms-date">~30–50 n.Chr.</td><td class="ms-count">~40 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/manuscript/11Q5-1" target="_blank">11QPs<sup>a</sup></a> · <a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='psalms'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Spreuken</td><td class="lang">Hebreeuws</td><td class="ms-name">4QProv<sup>a</sup>, 4QProv<sup>b</sup> (DSS, fragmentarisch)</td><td class="ms-date">~50 v.Chr.</td><td class="ms-count">2 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='proverbs'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Prediker</td><td class="lang">Hebreeuws</td><td class="ms-name">4QQoh<sup>a</sup>, 4QQoh<sup>b</sup> (DSS)</td><td class="ms-date">~175–150 v.Chr. (4QQoh<sup>a</sup>)</td><td class="ms-count">2 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='qohelet'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Hooglied</td><td class="lang">Hebreeuws</td><td class="ms-name">4QCant<sup>a,b,c</sup>, 6QCant (DSS)</td><td class="ms-date">~30 v.Chr.</td><td class="ms-count">4 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='song'" target="_blank">DSS</a></td></tr>
+
+                <!-- Grote en kleine profeten -->
+                <tr><td class="book-name">Jesaja</td><td class="lang">Hebreeuws</td><td class="ms-name">1QIsa<sup>a</sup> (Grote Jesajarol — volledig, 7,3 m lang), 1QIsa<sup>b</sup>, 4QIsa<sup>a-r</sup></td><td class="ms-date">~125 v.Chr. (1QIsa<sup>a</sup>)</td><td class="ms-count">~22 DSS-fragmenten</td><td class="ms-links"><a href="http://dss.collections.imj.org.il/isaiah" target="_blank">1QIsa<sup>a</sup></a> · <a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='isaiah'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Jeremia</td><td class="lang">Hebr. + 1 vers Aramees (10:11)</td><td class="ms-name">4QJer<sup>a-e</sup>, 2QJer (DSS); LXX-versie ~12% korter dan MT</td><td class="ms-date">~200 v.Chr. (4QJer<sup>a</sup>)</td><td class="ms-count">6 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='jeremiah'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Klaagliederen</td><td class="lang">Hebreeuws</td><td class="ms-name">3QLam, 4QLam, 5QLam<sup>a,b</sup> (DSS)</td><td class="ms-date">~30 v.Chr.</td><td class="ms-count">4 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='lamentations'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Ezechiël</td><td class="lang">Hebreeuws</td><td class="ms-name">4QEzek<sup>a,b,c</sup>, 11QEzek, MasEzek (DSS)</td><td class="ms-date">~50 v.Chr.</td><td class="ms-count">6 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='ezekiel'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Daniël</td><td class="lang">Hebr. + Aramees (2:4b–7:28)</td><td class="ms-name">4QDan<sup>a-e</sup>, 1QDan<sup>a,b</sup>, 6QDan (DSS)</td><td class="ms-date">~125 v.Chr. (vóór veronderstelde 2e-eeuwse compositie)</td><td class="ms-count">8 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='daniel'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Hosea</td><td class="lang">Hebreeuws</td><td class="ms-name">4QXII<sup>a,c,d,g</sup> (Twaalf-profetenrollen, DSS)</td><td class="ms-date">~150 v.Chr.</td><td class="ms-count">~8 DSS-fragmenten (Twaalf samen)</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='hosea'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Joël</td><td class="lang">Hebreeuws</td><td class="ms-name">4QXII<sup>c,g</sup>, MurXII (DSS)</td><td class="ms-date">~150 v.Chr.</td><td class="ms-count">2 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='joel'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Amos</td><td class="lang">Hebreeuws</td><td class="ms-name">4QXII<sup>c,g</sup>, MurXII, 5QAmos (DSS)</td><td class="ms-date">~150 v.Chr.</td><td class="ms-count">3 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='amos'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Obadja</td><td class="lang">Hebreeuws</td><td class="ms-name">4QXII<sup>g</sup>, MurXII (DSS)</td><td class="ms-date">~50 v.Chr.</td><td class="ms-count">2 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='obadiah'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Jona</td><td class="lang">Hebreeuws</td><td class="ms-name">4QXII<sup>a,f,g</sup>, MurXII (DSS)</td><td class="ms-date">~150 v.Chr.</td><td class="ms-count">4 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='jonah'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Micha</td><td class="lang">Hebreeuws</td><td class="ms-name">4QXII<sup>g</sup>, MurXII, 8ḤevXIIgr (Grieks!)</td><td class="ms-date">~50 v.Chr.</td><td class="ms-count">3 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='micah'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Nahum</td><td class="lang">Hebreeuws</td><td class="ms-name">MurXII, 4QpNah (Pesher), 4QXII<sup>g</sup></td><td class="ms-date">~50 v.Chr.</td><td class="ms-count">2 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='nahum'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Habakuk</td><td class="lang">Hebreeuws</td><td class="ms-name">1QpHab (Habakuk-pesher, beroemd), MurXII, 8ḤevXIIgr</td><td class="ms-date">~50 v.Chr. (1QpHab)</td><td class="ms-count">3 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q14-1" target="_blank">1QpHab</a></td></tr>
+                <tr><td class="book-name">Zefanja</td><td class="lang">Hebreeuws</td><td class="ms-name">4QXII<sup>b,g</sup>, MurXII, 8ḤevXIIgr</td><td class="ms-date">~150 v.Chr.</td><td class="ms-count">3 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='zephaniah'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Haggaï</td><td class="lang">Hebreeuws</td><td class="ms-name">4QXII<sup>b,e</sup>, MurXII (DSS)</td><td class="ms-date">~150 v.Chr.</td><td class="ms-count">2 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='haggai'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Zacharia</td><td class="lang">Hebreeuws</td><td class="ms-name">4QXII<sup>a,e,g</sup>, MurXII, 8ḤevXIIgr</td><td class="ms-date">~150 v.Chr.</td><td class="ms-count">4 DSS-fragmenten</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='zechariah'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Maleachi</td><td class="lang">Hebreeuws</td><td class="ms-name">4QXII<sup>a</sup> (Twaalf-profetenrol)</td><td class="ms-date">~150 v.Chr.</td><td class="ms-count">1 DSS-fragment</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='malachi'" target="_blank">DSS</a></td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="apocriefen">3. Apocriefen — gemengde tekstgeschiedenis</h2>
+        <p>De apocriefen (in de Rooms-Katholieke en Oosters-Orthodoxe canon: deuterocanonieke boeken)
+        zijn niet door alle kerken erkend als geïnspireerd. De Statenvertalers gaven ze plaats
+        <em>tussen</em> OT en NT met een waarschuwende voorrede. Ze zijn overgeleverd in verschillende
+        talen: enkele oorspronkelijk in <strong>Hebreeuws</strong> of <strong>Aramees</strong>, andere in
+        <strong>Grieks</strong>. De volledige tekst is bewaard in de grote LXX-codices
+        (Vaticanus, Sinaiticus, Alexandrinus).</p>
+
+        <table class="ms-table">
+            <thead>
+                <tr>
+                    <th>Boek</th>
+                    <th>Taal</th>
+                    <th>Oudste handschrift</th>
+                    <th>Datering</th>
+                    <th>Tekstgetuigen</th>
+                    <th>Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="book-name">3 Ezra</td><td class="lang">Grieks (vert. uit Hebr/Aram)</td><td class="ms-name">Codex Vaticanus, Alexandrinus (LXX)</td><td class="ms-date">4e–5e eeuw</td><td class="ms-count">~25 LXX-handschriften</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/1_Esdras" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">4 Ezra</td><td class="lang">Latijn (verloren Hebr/Grieks origineel)</td><td class="ms-name">Codex Sangermanensis (Vulgaat); Syrische, Ethiopische, Armeense, Arabische versies</td><td class="ms-date">9e eeuw (Sangermanensis)</td><td class="ms-count">~10 Latijnse mss. + Oosterse versies</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/2_Esdras" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">Tobit</td><td class="lang">Aramees / Hebreeuws (oorspr.)</td><td class="ms-name">4QTob<sup>a-d</sup> (Aramees), 4QTob<sup>e</sup> (Hebreeuws); Grieks in Sinaiticus &amp; Vaticanus</td><td class="ms-date">~100 v.Chr. (DSS)</td><td class="ms-count">5 DSS-fragmenten + LXX</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='tobit'" target="_blank">DSS</a> · <a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">Judith</td><td class="lang">Grieks (mogelijk vert. uit Hebr.)</td><td class="ms-name">Codex Vaticanus, Sinaiticus, Alexandrinus</td><td class="ms-date">4e eeuw</td><td class="ms-count">~12 LXX-handschriften</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Book_of_Judith" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">Boek der Wijsheid</td><td class="lang">Grieks (oorspr.)</td><td class="ms-name">Codex Vaticanus, Sinaiticus, Alexandrinus</td><td class="ms-date">4e eeuw</td><td class="ms-count">~30 LXX-handschriften</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">Jezus Sirach</td><td class="lang">Hebreeuws (oorspr.); Grieks (kleinzoon, ~132 v.Chr.)</td><td class="ms-name">Cairo Geniza Hebr. (~2/3 bewaard); Masada-rol (MasSir, Hebr.); 2QSir, 11QPs<sup>a</sup> (DSS)</td><td class="ms-date">~25 v.Chr. (Masada)</td><td class="ms-count">~6 Hebr. fragmenten + LXX</td><td class="ms-links"><a href="https://www.deadseascrolls.org.il/explore-the-archive/search#q='ben+sira'" target="_blank">DSS</a></td></tr>
+                <tr><td class="book-name">Baruch</td><td class="lang">Grieks (mogelijk vert. uit Hebr.)</td><td class="ms-name">Codex Vaticanus, Alexandrinus (Sinaiticus mist Bar.)</td><td class="ms-date">4e eeuw</td><td class="ms-count">~20 LXX-handschriften</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Book_of_Baruch" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">Esther (apocrief)</td><td class="lang">Grieks (uitbreidingen op Hebr. Esther)</td><td class="ms-name">Codex Vaticanus, Sinaiticus, Alexandrinus</td><td class="ms-date">4e eeuw</td><td class="ms-count">in alle LXX-Esther mss.</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Additions_to_Esther" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">Gebed van Azaria</td><td class="lang">Grieks (deel van LXX-Daniël 3)</td><td class="ms-name">Codex Vaticanus, Sinaiticus (LXX-Daniël)</td><td class="ms-date">4e eeuw</td><td class="ms-count">in alle LXX-Daniël mss.</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">Gezang in de vuuroven</td><td class="lang">Grieks (deel van LXX-Daniël 3)</td><td class="ms-name">Codex Vaticanus, Sinaiticus (LXX-Daniël)</td><td class="ms-date">4e eeuw</td><td class="ms-count">in alle LXX-Daniël mss.</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">Susanna</td><td class="lang">Grieks (uitbreiding op LXX-Daniël)</td><td class="ms-name">Codex Vaticanus, Sinaiticus, Alexandrinus; Theodotion-versie</td><td class="ms-date">4e eeuw</td><td class="ms-count">in alle LXX-Daniël mss.</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Susanna_(Book_of_Daniel)" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">Bel en de draak</td><td class="lang">Grieks (uitbreiding op LXX-Daniël)</td><td class="ms-name">Codex Vaticanus, Sinaiticus, Alexandrinus</td><td class="ms-date">4e eeuw</td><td class="ms-count">in alle LXX-Daniël mss.</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Bel_and_the_Dragon" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">Gebed van Manasse</td><td class="lang">Grieks (oorspr. omstreden)</td><td class="ms-name">Codex Alexandrinus (in <em>Oden</em>); Apostolische Constituties</td><td class="ms-date">5e eeuw</td><td class="ms-count">~12 mss.</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Prayer_of_Manasseh" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">1 Makkabeeën</td><td class="lang">Grieks (vert. uit Hebr., origineel verloren)</td><td class="ms-name">Codex Sinaiticus, Alexandrinus, Venetus (Vat. mist Mak.)</td><td class="ms-date">4e eeuw (Sinaiticus)</td><td class="ms-count">~8 LXX-handschriften</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">2 Makkabeeën</td><td class="lang">Grieks (oorspr.)</td><td class="ms-name">Codex Alexandrinus, Venetus (Vat. mist Mak.)</td><td class="ms-date">5e eeuw</td><td class="ms-count">~8 LXX-handschriften</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/2_Maccabees" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">3 Makkabeeën</td><td class="lang">Grieks (oorspr.)</td><td class="ms-name">Codex Alexandrinus, Venetus (niet in Vulgaat noch SV-canonieke apocr. lijst, wel in OV)</td><td class="ms-date">5e eeuw</td><td class="ms-count">~6 LXX-handschriften</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/3_Maccabees" target="_blank">Wiki</a></td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="nt">4. Nieuwe Testament — Grieks</h2>
+        <p>Het Nieuwe Testament is geschreven in <em>Koinè-Grieks</em> (de algemene volkstaal van het
+        Romeinse Rijk in de 1e eeuw). De NT-tekst is uitzonderlijk goed overgeleverd: ruim
+        <strong>5.800 Griekse handschriften</strong> (waarvan ca. 140 papyri uit de 2e–4e eeuw),
+        plus ruim 10.000 Latijnse en duizenden Syrische, Koptische, Armeense en andere oude vertalingen.
+        De vroegste fragmenten dateren uit minder dan een eeuw na de oorspronkelijke compositie.</p>
+
+        <p>Belangrijke vroege papyri:</p>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Papyrus_52" target="_blank"><strong>P52</strong></a> (Rylands, ~125 AD) — fragment Joh. 18; oudste NT-handschrift.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Papyrus_66" target="_blank"><strong>P66</strong></a> (Bodmer II, ~200 AD) — bijna volledig Johannes-evangelie.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Papyrus_75" target="_blank"><strong>P75</strong></a> (Bodmer XIV-XV, ~175–225 AD) — Lukas + Joh.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Papyrus_45" target="_blank"><strong>P45</strong></a> (Chester Beatty I, ~250 AD) — vier evangeliën + Hand.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank"><strong>P46</strong></a> (Chester Beatty II, ~200 AD) — Paulinische brieven + Hebr.</li>
+        </ul>
+
+        <table class="ms-table">
+            <thead>
+                <tr>
+                    <th>Boek</th>
+                    <th>Taal</th>
+                    <th>Oudste handschrift</th>
+                    <th>Datering</th>
+                    <th>Tekstgetuigen</th>
+                    <th>Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Evangeliën + Hand. -->
+                <tr><td class="book-name">Mattheüs</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P104 (~150 AD); P64/67, P77; volledig in Sinaiticus &amp; Vaticanus</td><td class="ms-date">~150 AD (P104)</td><td class="ms-count">~24 papyri + alle majuskels</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a> · <a href="https://ntvmr.uni-muenster.de/" target="_blank">NTVMR</a></td></tr>
+                <tr><td class="book-name">Markus</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P45 (~250 AD); volledig in Sinaiticus &amp; Vaticanus</td><td class="ms-date">~250 AD (P45)</td><td class="ms-count">~5 papyri + alle majuskels</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">Lukas</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P75 (~200 AD), P4 (~200 AD); volledig in Sinaiticus &amp; Vaticanus</td><td class="ms-date">~200 AD (P75)</td><td class="ms-count">~10 papyri + alle majuskels</td><td class="ms-links"><a href="https://www.csntm.org/" target="_blank">CSNTM</a></td></tr>
+                <tr><td class="book-name">Johannes</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P52 (~125 AD), P66 (~200 AD), P75</td><td class="ms-date">~125 AD (P52, oudste NT-fragment)</td><td class="ms-count">~30 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_52" target="_blank">P52</a> · <a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">Handelingen</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P45 (~250 AD), P74; volledig in Sinaiticus, Vaticanus, Bezae</td><td class="ms-date">~250 AD (P45)</td><td class="ms-count">~14 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Codex_Bezae" target="_blank">Bezae</a> · <a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+
+                <!-- Brieven Paulus -->
+                <tr><td class="book-name">Romeinen</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P46 (~200 AD); volledig in Sinaiticus &amp; Vaticanus</td><td class="ms-date">~200 AD (P46)</td><td class="ms-count">~6 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank">P46</a> · <a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">1 Korintiërs</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P46 (~200 AD); P14, P15, P34</td><td class="ms-date">~200 AD (P46)</td><td class="ms-count">~6 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank">P46</a></td></tr>
+                <tr><td class="book-name">2 Korintiërs</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P46 (~200 AD); P34, P124</td><td class="ms-date">~200 AD (P46)</td><td class="ms-count">~3 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank">P46</a></td></tr>
+                <tr><td class="book-name">Galaten</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P46 (~200 AD); P51, P99</td><td class="ms-date">~200 AD (P46)</td><td class="ms-count">~3 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank">P46</a></td></tr>
+                <tr><td class="book-name">Efeziers</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P46 (~200 AD); P49</td><td class="ms-date">~200 AD (P46)</td><td class="ms-count">~2 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank">P46</a></td></tr>
+                <tr><td class="book-name">Filippenzen</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P46 (~200 AD); P16, P61</td><td class="ms-date">~200 AD (P46)</td><td class="ms-count">~3 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank">P46</a></td></tr>
+                <tr><td class="book-name">Kolossenzen</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P46 (~200 AD); P61</td><td class="ms-date">~200 AD (P46)</td><td class="ms-count">~2 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank">P46</a></td></tr>
+                <tr><td class="book-name">1 Tessalonicenzen</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P46 (~200 AD); P30, P65</td><td class="ms-date">~200 AD (P46)</td><td class="ms-count">~3 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank">P46</a></td></tr>
+                <tr><td class="book-name">2 Tessalonicenzen</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P30 (~200 AD); volledig in Sinaiticus &amp; Vaticanus</td><td class="ms-date">~200 AD (P30)</td><td class="ms-count">~2 papyri + alle majuskels</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">1 Timotheüs</td><td class="lang">Koinè-Grieks</td><td class="ms-name">Geen vroege papyri; oudste in Codex Sinaiticus (4e eeuw)</td><td class="ms-date">~350 AD (Sinaiticus)</td><td class="ms-count">— (geen papyri) + alle majuskels behalve B</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">2 Timotheüs</td><td class="lang">Koinè-Grieks</td><td class="ms-name">Geen vroege papyri; oudste in Codex Sinaiticus (4e eeuw)</td><td class="ms-date">~350 AD (Sinaiticus)</td><td class="ms-count">— (geen papyri) + alle majuskels behalve B</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">Titus</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P32 (~200 AD); volledig in Sinaiticus, Alexandrinus</td><td class="ms-date">~200 AD (P32)</td><td class="ms-count">1 papyrus + alle majuskels behalve B</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_32" target="_blank">P32</a></td></tr>
+                <tr><td class="book-name">Filemon</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P87 (~125 AD), P139; volledig in Sinaiticus, Vaticanus</td><td class="ms-date">~125 AD (P87)</td><td class="ms-count">2 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_87" target="_blank">P87</a></td></tr>
+
+                <!-- Hebr. + Algemene zendbrieven + Op. -->
+                <tr><td class="book-name">Hebreeën</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P46 (~200 AD), P12, P13, P17</td><td class="ms-date">~200 AD (P46)</td><td class="ms-count">~5 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank">P46</a></td></tr>
+                <tr><td class="book-name">Jakobus</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P20 (~250 AD), P23 (~225 AD), P54, P74, P100</td><td class="ms-date">~225 AD (P23)</td><td class="ms-count">~6 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_23" target="_blank">P23</a></td></tr>
+                <tr><td class="book-name">1 Petrus</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P72 (~300 AD); P81, P125</td><td class="ms-date">~300 AD (P72)</td><td class="ms-count">~3 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_72" target="_blank">P72</a></td></tr>
+                <tr><td class="book-name">2 Petrus</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P72 (~300 AD); volledig in Sinaiticus &amp; Vaticanus</td><td class="ms-date">~300 AD (P72)</td><td class="ms-count">1 papyrus + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_72" target="_blank">P72</a></td></tr>
+                <tr><td class="book-name">1 Johannes</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P9 (~250 AD); volledig in Sinaiticus &amp; Vaticanus</td><td class="ms-date">~250 AD (P9)</td><td class="ms-count">1 papyrus + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_9" target="_blank">P9</a></td></tr>
+                <tr><td class="book-name">2 Johannes</td><td class="lang">Koinè-Grieks</td><td class="ms-name">Geen vroege papyri; oudste in Sinaiticus (4e eeuw)</td><td class="ms-date">~350 AD (Sinaiticus)</td><td class="ms-count">— (geen papyri) + alle majuskels</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">3 Johannes</td><td class="lang">Koinè-Grieks</td><td class="ms-name">Geen vroege papyri; oudste in Sinaiticus (4e eeuw)</td><td class="ms-date">~350 AD (Sinaiticus)</td><td class="ms-count">— (geen papyri) + alle majuskels</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+                <tr><td class="book-name">Judas</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P72 (~300 AD), P78 (~300 AD)</td><td class="ms-date">~300 AD (P72)</td><td class="ms-count">2 papyri + alle majuskels</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_72" target="_blank">P72</a></td></tr>
+                <tr><td class="book-name">Openbaring</td><td class="lang">Koinè-Grieks</td><td class="ms-name">P98 (~150 AD), P115 (~250 AD), P47 (~250 AD)</td><td class="ms-date">~150 AD (P98, fragment)</td><td class="ms-count">~7 papyri + Sinaiticus, Alexandrinus (Vat. mist Op.)</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Papyrus_47" target="_blank">P47</a> · <a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="codices">5. Belangrijkste codices</h2>
+        <p>De volgende handschriften zijn de fundering van de moderne tekstkritiek. Vrijwel alle
+        kritische edities (BHS, BHQ, NA28, ECM) baseren zich primair op deze getuigen.</p>
+
+        <h3>Hebreeuwse Bijbel</h3>
+        <div class="codex-card">
+            <h4>Codex Leningradensis (B19A)</h4>
+            <div class="meta">1008 AD · Russische Nationale Bibliotheek, Sint-Petersburg</div>
+            <p>Oudste volledige Hebreeuwse Bijbel. Geschreven door Samuel ben Jacob in Caïro,
+            gevocaliseerd volgens de Ben Asjer-traditie. Basis van de
+            <a href="https://en.wikipedia.org/wiki/Biblia_Hebraica_Stuttgartensia" target="_blank">BHS</a> (1977)
+            en de <a href="https://en.wikipedia.org/wiki/Biblia_Hebraica_Quinta" target="_blank">BHQ</a> (sinds 2004).
+            Online: <a href="https://archive.org/details/Leningrad_Codex" target="_blank">Internet Archive (facsimile)</a>.</p>
+        </div>
+        <div class="codex-card">
+            <h4>Aleppo Codex</h4>
+            <div class="meta">ca. 930 AD · Israël Museum, Jeruzalem (de Heiligdomschrijn)</div>
+            <p>Door de Masoreten beschouwd als de meest perfecte tekst (Aaron ben Asjer corrigeerde de
+            vocalisatie). Oorspronkelijk de volledige Hebreeuwse Bijbel; tijdens de pogrom van Aleppo (1947)
+            ging ca. 40% verloren (waaronder vrijwel de hele Tora). Gebruikt door Maimonides als referentie.
+            Online: <a href="https://www.aleppocodex.org/" target="_blank">aleppocodex.org</a>.</p>
+        </div>
+        <div class="codex-card">
+            <h4>Dode Zeerollen (Qumran)</h4>
+            <div class="meta">~250 v.Chr. – 70 n.Chr. · diverse instellingen, Israël</div>
+            <p>Tussen 1947 en 1956 ontdekt in elf grotten bij Qumran. Bevatten fragmenten van vrijwel alle
+            OT-boeken (behalve Esther) — circa 1.000 jaar ouder dan de Masoretische codices. Bevestigen de
+            opmerkelijke stabiliteit van de Hebreeuwse tekstoverlevering. Online:
+            <a href="https://www.deadseascrolls.org.il/" target="_blank">Leon Levy Dead Sea Scrolls Digital Library</a>.</p>
+        </div>
+        <div class="codex-card">
+            <h4>Cairo Geniza</h4>
+            <div class="meta">vondst 1896 (fragmenten 6e–11e eeuw) · Cambridge, Oxford e.a.</div>
+            <p>Genizah (opslag voor versleten heilige geschriften) van de Ben Ezra-synagoge in Caïro. Bevat
+            ~300.000 joodse manuscripten waaronder de oudste Hebreeuwse fragmenten van Jezus Sirach en
+            verschillende OT-tekstgetuigen. Online:
+            <a href="https://cudl.lib.cam.ac.uk/collections/genizah/1" target="_blank">Cambridge Digital Library</a>.</p>
+        </div>
+
+        <h3>Griekse Bijbel (LXX + NT)</h3>
+        <div class="codex-card">
+            <h4>Codex Sinaiticus (א, 01)</h4>
+            <div class="meta">4e eeuw (~330–360 AD) · British Library, Leipzig, Sint-Petersburg, St. Catharina-klooster</div>
+            <p>Een van de twee oudste volledige Griekse Bijbels. Bevat het complete NT en grote delen van
+            de LXX (incl. apocriefen) plus Barnabas en de <em>Herder van Hermas</em>. Ontdekt door
+            Tischendorf in 1844 op de Sinaï. Online digitaal hersamengesteld:
+            <a href="https://www.codexsinaiticus.org/" target="_blank">codexsinaiticus.org</a>.</p>
+        </div>
+        <div class="codex-card">
+            <h4>Codex Vaticanus (B, 03)</h4>
+            <div class="meta">4e eeuw (~325–350 AD) · Vaticaanse Bibliotheek, Rome</div>
+            <p>Mogelijk de oudste volledige Griekse Bijbel. Mist Hebr. 9:14–13:25, Pastoraalbrieven, Filemon
+            en Openbaring. Door velen als de tekstkritisch hoogwaardigste majuskel beschouwd. Online:
+            <a href="https://digi.vatlib.it/view/MSS_Vat.gr.1209" target="_blank">DigiVatLib (facsimile)</a>.</p>
+        </div>
+        <div class="codex-card">
+            <h4>Codex Alexandrinus (A, 02)</h4>
+            <div class="meta">5e eeuw (~400–440 AD) · British Library, Londen</div>
+            <p>Bevat vrijwel volledige LXX (incl. apocriefen + 3 &amp; 4 Makk.) en NT (mist enkele bladzijden
+            van Mt., Joh. en 2 Kor.). Plus 1 &amp; 2 Clemens. Geschenk van patriarch Cyrillus Lucaris aan
+            koning Karel I in 1627. Online:
+            <a href="https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_d_viii" target="_blank">British Library</a>.</p>
+        </div>
+        <div class="codex-card">
+            <h4>Codex Bezae Cantabrigiensis (D, 05)</h4>
+            <div class="meta">5e eeuw · Cambridge University Library</div>
+            <p>Tweetalig (Grieks + Latijn), bevat de evangeliën en Handelingen. Bekend om de
+            <em>Westerse tekst</em>, met opvallende uitbreidingen in Handelingen (~10% langer dan
+            Sinaiticus/Vaticanus). Door Theodorus Beza geschonken aan Cambridge in 1581. Online:
+            <a href="https://cudl.lib.cam.ac.uk/view/MS-NN-00002-00041" target="_blank">Cambridge Digital Library</a>.</p>
+        </div>
+
+        <h2 id="verder">6. Verder lezen</h2>
+        <ul>
+            <li><a href="https://ntvmr.uni-muenster.de/" target="_blank">INTF — New Testament Virtual Manuscript Room</a> (Münster) — alle ~5.800 NT-handschriften, met afbeeldingen en transcripties.</li>
+            <li><a href="https://www.csntm.org/" target="_blank">CSNTM — Center for the Study of New Testament Manuscripts</a> (Dallas) — hoogwaardige digitale foto's van NT-handschriften.</li>
+            <li><a href="https://www.deadseascrolls.org.il/" target="_blank">Leon Levy Dead Sea Scrolls Digital Library</a> — alle Qumran-rollen.</li>
+            <li><a href="https://www.codexsinaiticus.org/" target="_blank">Codex Sinaiticus Project</a> — virtueel hersamengestelde codex.</li>
+            <li><a href="https://manuscript-bible.com/" target="_blank">Manuscript Bible</a> — toegankelijk overzicht van bijbelhandschriften.</li>
+            <li><a href="https://www.die-bibel.de/en/bible-society/about-us/scholarly-editions" target="_blank">Deutsche Bibelgesellschaft</a> — uitgevers van BHS, BHQ, NA28, ECM.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Categories_of_New_Testament_manuscripts" target="_blank">Categorieën van NT-handschriften (Aland)</a> — Wikipedia-overzicht.</li>
+            <li>Bruce M. Metzger &amp; Bart D. Ehrman, <em>The Text of the New Testament</em> (Oxford, 4e ed. 2005).</li>
+            <li>Emanuel Tov, <em>Textual Criticism of the Hebrew Bible</em> (Fortress, 3e ed. 2012).</li>
+        </ul>
+        <p>Voor de praktische gevolgen voor deze vertaling: zie
+        <a href="uitgangspunten.html#brontekst">Uitgangspunten — brontekstkeuze</a>.</p>
+    </div>
+</div>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-brand">
+                <span class="site-footer-mark">OSV<</span>
+                <span class="site-footer-tag">Open Staten Vertaling — public-domain herziening van de Statenvertaling 1637/1888</span>
+            </div>
+            <nav class="site-footer-links">
+                <a href="index.html#johannes/1">Tekst</a>
+                <a href="over-ov.html">Over OV</a>
+                <a href="wiki.html">Wiki</a>
+                <a href="principes.html">Wijzigingsprincipes</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="site-footer-meta">
+                <span>v0.14.2 · 9 mei 2026</span>
+                <span>CC0 · vrij van alle rechten</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
