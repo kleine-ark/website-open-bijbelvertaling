@@ -1820,7 +1820,7 @@
       "number": 15,
       "textSV1888": "Opdat gij misschien geen verbond maakt met den inwoner van dat land; en zij hun goden niet nahoereren, noch hun goden offerande doen, en hij u nodigende, gij van hun offerande etet.",
       "text1637": "Op dat ghy misschien geen verbont en maeckt met den inwoonder des selven lants, ende sy haren Goden niet na [18] hoereren, noch hare Goden offerhande en doen, ende hy u noodigende ghy van hare offerhande etet.",
-      "text2026": "Opdat u misschien geen verbond maakt met de inwoner van dat land; en zij hun goden niet nahoereren, noch hun goden offerande doen, en hij u nodigende, u van hun offerande etet.",
+      "text2026": "Opdat u misschien geen verbond maakt met de inwoner van dat land; en zij hun goden niet nahoereren, noch hun goden offergave doen, en hij u nodigende, u van hun offergave etet.",
       "marginNotes": [
         {
           "marker": "18",
@@ -1902,7 +1902,7 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Opdat u misschien geen verbond maakt met de inwoner van dat land; en zij hun goden niet nahoereren,<sup class=\"note-marker\" data-note=\"18\">18</sup> noch hun goden offerande doen, en hij u nodigende, u van hun offerande etet.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Opdat u misschien geen verbond maakt met de inwoner van dat land; en zij hun goden niet nahoereren,<sup class=\"note-marker\" data-note=\"18\">18</sup> noch hun goden offergave doen, en hij u nodigende, u van hun offergave etet.</i></span>",
       "textSV1888_html": "Opdat gij misschien geen verbond maakt met den inwoner van dat land; en zij hun goden niet nahoereren,<sup class=\"note-marker\" data-note=\"18\">18</sup> noch hun goden offerande doen, en hij u nodigende, gij van hun offerande etet.",
       "text1637_html": "Op dat ghy misschien geen verbont en maeckt met den inwoonder des selven lants, ende sy haren Goden niet na <sup class=\"note-marker\" data-note=\"18\">18</sup> hoereren, noch hare Goden offerhande en doe<i>n</i>, ende hy u noodigende ghy van hare offerhande etet.",
       "phraseDiff": [
@@ -1917,9 +1917,19 @@
           "principe": "N1"
         },
         {
+          "old": "offerande",
+          "new": "offergave",
+          "principe": "V263"
+        },
+        {
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "offerande",
+          "new": "offergave",
+          "principe": "V263"
         }
       ]
     },
