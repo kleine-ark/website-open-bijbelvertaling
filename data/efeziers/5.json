@@ -872,7 +872,7 @@
       "number": 7,
       "textSV1888": "Zo zijt dan hun medegenoten niet.",
       "text1637": "So en zijt dan hare mede-genooten niet.",
-      "text2026": "Zo zijt dan hun medegenoten niet.",
+      "text2026": "Zo wees dan niet hun metgezellen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -906,8 +906,25 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "Zo zijt dan hun medegenoten niet.",
-      "text1637_html": "So en zijt dan hare mede-genooten niet."
+      "text2026_html": "Zo wees dan niet hun metgezellen.",
+      "text1637_html": "So en zijt dan hare mede-genooten niet.",
+      "phraseDiff": [
+        {
+          "old": "zijt",
+          "new": "wees",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "niet",
+          "principe": null
+        },
+        {
+          "old": "medegenoten niet.",
+          "new": "metgezellen.",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 8,
@@ -1160,7 +1177,7 @@
       "number": 10,
       "textSV1888": "Beproevende wat den Heere welbehagelijk zij.",
       "text1637": "[13] Beproevende wat den Heere wel behagelijck zy.",
-      "text2026": "Beproevende wat de Heere welgevallig zij.",
+      "text2026": "Beproef wat de Heere welbehaaglijk zij.",
       "marginNotes": [
         {
           "marker": "13",
@@ -1208,10 +1225,15 @@
           "gloss": "〔lord"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"13\">13</sup> Beproevende wat de Heere welgevallig zij.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"13\">13</sup> Beproef wat de Heere welbehaaglijk zij.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"13\">13</sup> Beproevende wat den Heere welbehagelijk zij.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"13\">13</sup> Beproevende wat den Heere wel behagelijck zy.",
       "phraseDiff": [
+        {
+          "old": "Beproevende",
+          "new": "Beproef",
+          "principe": null
+        },
         {
           "old": "den",
           "new": "de",
@@ -1219,7 +1241,7 @@
         },
         {
           "old": "welbehagelijk",
-          "new": "welgevallig",
+          "new": "welbehaaglijk",
           "principe": "V227"
         }
       ]
