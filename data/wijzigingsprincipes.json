@@ -2512,6 +2512,14 @@
       "beschrijving": "Diacritische tekens (trema's) toevoegen op eigennamen waar modern Nederlands een trema vereist om uitspraak duidelijk te maken: Kapernaum→Kapernaüm, Bethsaida→Bethsaïda, Sarai→Saraï. Boaz, Aäron, Naäman, Israël blijven onaangetast (al correct).",
       "regex": "\\b(Kapernaum|Bethsaida|Sarai)\\b",
       "voorbeeld": "Mat 4:13 'in Kapernaum' → 'in Kapernaüm'"
+    },
+    {
+      "id": "V251",
+      "categorie": "verouderde-woorden",
+      "titel": "verordineren → bestemmen",
+      "beschrijving": "Verlatiniseerd 'verordineren' (predestinatie/voorbeschikken) → 'bestemmen' (modern equivalent). Inclusief vervoegingen: verordineerd→bestemd, verordineerde→bestemde, etc.",
+      "regex": "\\b[Vv]erordineer[a-z]*\\b",
+      "voorbeeld": "Ef 1:5 'Die ons te voren verordineerd heeft' → 'Die ons te voren bestemd heeft'"
     }
   ]
 }
