@@ -1,0 +1,32 @@
+{
+  "book": "deuteronomium",
+  "chapter": 6,
+  "scanned_at": "2026-05-01T18:45:39+00:00",
+  "scanner_model": "claude-opus-4-7-pattern-scan",
+  "verses": {
+    "3": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "honig",
+          "voorstel": "honing",
+          "confidence": 0.85,
+          "reden": "verouderde spelling"
+        }
+      ],
+      "rating": 3
+    },
+    "25": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "onzes Gods",
+          "voorstel": "van onze God",
+          "confidence": 0.9,
+          "reden": "Genitief op -s niet meer modern; gebruik 'van'"
+        }
+      ],
+      "rating": 3
+    }
+  }
+}

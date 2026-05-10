@@ -1,0 +1,36 @@
+{
+  "book": "boekderwijsheid",
+  "chapter": 18,
+  "verses": {
+    "1": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "welker",
+          "suggest": "wier"
+        }
+      ],
+      "rating": 4
+    },
+    "16": {
+      "issues": [
+        {
+          "type": "PRESENT_PARTICIPLE",
+          "fragment": "Dragende een scherp",
+          "suggest": "die ... werkwoord-finiet"
+        }
+      ],
+      "rating": 4
+    },
+    "21": {
+      "issues": [
+        {
+          "type": "PRESENT_PARTICIPLE",
+          "fragment": "brengende de wapenen",
+          "suggest": "die ... werkwoord-finiet"
+        }
+      ],
+      "rating": 4
+    }
+  }
+}

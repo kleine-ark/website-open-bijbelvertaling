@@ -1,0 +1,82 @@
+{
+  "book": "genesis",
+  "chapter": 31,
+  "scanned_at": "2026-05-01T18:45:39+00:00",
+  "scanner_model": "claude-opus-4-7-pattern-scan",
+  "verses": {
+    "1": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "onzes vaders",
+          "voorstel": "van onze vader",
+          "confidence": 0.9,
+          "reden": "Genitief op -s niet meer modern; gebruik 'van'"
+        },
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "onzes vaders",
+          "voorstel": "van onze vader",
+          "confidence": 0.9,
+          "reden": "Genitief op -s niet meer modern; gebruik 'van'"
+        }
+      ],
+      "rating": 3
+    },
+    "14": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "onzes vaders",
+          "voorstel": "van onze vader",
+          "confidence": 0.9,
+          "reden": "Genitief op -s niet meer modern; gebruik 'van'"
+        }
+      ],
+      "rating": 3
+    },
+    "29": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "ulieder",
+          "voorstel": "uw",
+          "confidence": 0.85,
+          "reden": "verouderd bezit-vnw 2e mv"
+        }
+      ],
+      "rating": 3
+    },
+    "42": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "Vreze",
+          "voorstel": "vrees",
+          "confidence": 0.85,
+          "reden": "verouderde naamval"
+        }
+      ],
+      "rating": 3
+    },
+    "53": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "Vreze",
+          "voorstel": "vrees",
+          "confidence": 0.85,
+          "reden": "verouderde naamval"
+        },
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "vaders Izaks",
+          "voorstel": "vaders van Izak",
+          "confidence": 0.7,
+          "reden": "Postnominale eigennaam-genitief (X Naam+s) → 'X van Naam'"
+        }
+      ],
+      "rating": 3
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "book": "deuteronomium",
+  "chapter": 11,
+  "scanned_at": "2026-05-01T18:45:39+00:00",
+  "scanner_model": "claude-opus-4-7-pattern-scan",
+  "verses": {
+    "9": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "honig",
+          "voorstel": "honing",
+          "confidence": 0.85,
+          "reden": "verouderde spelling"
+        }
+      ],
+      "rating": 3
+    },
+    "16": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "ulieder",
+          "voorstel": "uw",
+          "confidence": 0.85,
+          "reden": "verouderd bezit-vnw 2e mv"
+        }
+      ],
+      "rating": 3
+    },
+    "25": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "vreze",
+          "voorstel": "vrees",
+          "confidence": 0.85,
+          "reden": "verouderde naamval"
+        }
+      ],
+      "rating": 3
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "book": "1petrus",
+  "chapter": 4,
+  "verses": {
+    "1": {
+      "issues": [],
+      "rating": 5
+    },
+    "2": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "begeerlijkheden",
+          "suggestion": "begeerten",
+          "note": "-lijkheid-vorm",
+          "confidence": 0.65
+        }
+      ],
+      "rating": 4
+    },
+    "3": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "begeerlijkheden",
+          "suggestion": "begeerten",
+          "note": "-lijkheid-vorm",
+          "confidence": 0.65
+        },
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "is ons",
+          "suggestion": "van X Y",
+          "note": "verouderde dubbele -s genitief",
+          "confidence": 0.8
+        },
+        {
+          "type": "NAAMVAL_UITGANG",
+          "fragment": "de heidenen wil",
+          "suggestion": "controleer -en uitgang",
+          "note": "naamval-restant",
+          "confidence": 0.75
+        }
+      ],
+      "rating": 1
+    },
+    "4": {
+      "issues": [],
+      "rating": 5
+    },
+    "5": {
+      "issues": [],
+      "rating": 5
+    },
+    "6": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "opdat",
+          "suggestion": "zodat",
+          "note": "verouderd voegw",
+          "confidence": 0.65
+        },
+        {
+          "type": "NIET_LOPENDE_ZIN",
+          "fragment": "opdat",
+          "suggestion": "zodat",
+          "note": "verouderd voegw",
+          "confidence": 0.65
+        }
+      ],
+      "rating": 3
+    },
+    "7": {
+      "issues": [],
+      "rating": 5
+    },
+    "8": {
+      "issues": [],
+      "rating": 5
+    },
+    "9": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "murmureren",
+          "suggestion": "mopperaars",
+          "note": "verouderd ww",
+          "confidence": 0.65
+        },
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "jegens",
+          "suggestion": "tegenover",
+          "note": "verouderd voorz",
+          "confidence": 0.65
+        }
+      ],
+      "rating": 3
+    },
+    "10": {
+      "issues": [],
+      "rating": 5
+    },
+    "11": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "opdat",
+          "suggestion": "zodat",
+          "note": "verouderd voegw",
+          "confidence": 0.65
+        },
+        {
+          "type": "CASCADE_BUG",
+          "fragment": "het woordn",
+          "suggestion": "de woorden",
+          "note": "kapotte vorm uit cascade",
+          "confidence": 0.85
+        },
+        {
+          "type": "NIET_LOPENDE_ZIN",
+          "fragment": "opdat",
+          "suggestion": "zodat",
+          "note": "verouderd voegw",
+          "confidence": 0.65
+        }
+      ],
+      "rating": 1
+    },
+    "12": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "iets vreemds",
+          "suggestion": "van X Y",
+          "note": "verouderde dubbele -s genitief",
+          "confidence": 0.8
+        }
+      ],
+      "rating": 3
+    },
+    "13": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "opdat",
+          "suggestion": "zodat",
+          "note": "verouderd voegw",
+          "confidence": 0.65
+        },
+        {
+          "type": "NIET_LOPENDE_ZIN",
+          "fragment": "opdat",
+          "suggestion": "zodat",
+          "note": "verouderd voegw",
+          "confidence": 0.65
+        }
+      ],
+      "rating": 3
+    },
+    "14": {
+      "issues": [],
+      "rating": 5
+    },
+    "15": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "eens anders",
+          "suggestion": "van X Y",
+          "note": "verouderde dubbele -s genitief",
+          "confidence": 0.8
+        }
+      ],
+      "rating": 3
+    },
+    "16": {
+      "issues": [],
+      "rating": 5
+    },
+    "17": {
+      "issues": [],
+      "rating": 5
+    },
+    "18": {
+      "issues": [],
+      "rating": 5
+    },
+    "19": {
+      "issues": [],
+      "rating": 5
+    }
+  }
+}

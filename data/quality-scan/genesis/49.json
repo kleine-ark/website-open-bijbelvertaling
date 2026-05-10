@@ -1,0 +1,56 @@
+{
+  "book": "genesis",
+  "chapter": 49,
+  "scanned_at": "2026-05-01T18:45:39+00:00",
+  "scanner_model": "claude-opus-4-7-pattern-scan",
+  "verses": {
+    "16": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "stammen Israëls",
+          "voorstel": "stammen van Israël",
+          "confidence": 0.7,
+          "reden": "Postnominale eigennaam-genitief (X Naam+s) → 'X van Naam'"
+        }
+      ],
+      "rating": 4
+    },
+    "24": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "steen Israëls",
+          "voorstel": "steen van Israël",
+          "confidence": 0.7,
+          "reden": "Postnominale eigennaam-genitief (X Naam+s) → 'X van Naam'"
+        }
+      ],
+      "rating": 4
+    },
+    "25": {
+      "issues": [
+        {
+          "type": "CASCADE_BUG",
+          "fragment": "Van van",
+          "voorstel": null,
+          "confidence": 0.85,
+          "reden": "dubbele 'van'"
+        }
+      ],
+      "rating": 3
+    },
+    "32": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "zonen Heths",
+          "voorstel": "zonen van Heth",
+          "confidence": 0.7,
+          "reden": "Postnominale eigennaam-genitief (X Naam+s) → 'X van Naam'"
+        }
+      ],
+      "rating": 4
+    }
+  }
+}

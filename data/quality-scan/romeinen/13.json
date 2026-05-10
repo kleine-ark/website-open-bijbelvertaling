@@ -1,0 +1,116 @@
+{
+  "book": "romeinen",
+  "chapter": 13,
+  "verses": {
+    "1": {
+      "issues": [],
+      "rating": 5
+    },
+    "2": {
+      "issues": [],
+      "rating": 5
+    },
+    "3": {
+      "issues": [
+        {
+          "type": "SPELLING",
+          "fragment": "vreze",
+          "suggestion": "vrees",
+          "note": "verouderde naamval",
+          "confidence": 0.7
+        }
+      ],
+      "rating": 3
+    },
+    "4": {
+      "issues": [],
+      "rating": 5
+    },
+    "5": {
+      "issues": [],
+      "rating": 5
+    },
+    "6": {
+      "issues": [
+        {
+          "type": "PRESENT_PARTICIPLE",
+          "fragment": "zijnde",
+          "suggestion": "die ... ww-finiet",
+          "note": "present participle",
+          "confidence": 0.55
+        }
+      ],
+      "rating": 4
+    },
+    "7": {
+      "issues": [
+        {
+          "type": "SPELLING",
+          "fragment": "vreze",
+          "suggestion": "vrees",
+          "note": "verouderde naamval",
+          "confidence": 0.7
+        },
+        {
+          "type": "SPELLING",
+          "fragment": "vreze",
+          "suggestion": "vrees",
+          "note": "verouderde naamval",
+          "confidence": 0.7
+        }
+      ],
+      "rating": 2
+    },
+    "8": {
+      "issues": [],
+      "rating": 5
+    },
+    "9": {
+      "issues": [],
+      "rating": 5
+    },
+    "10": {
+      "issues": [],
+      "rating": 5
+    },
+    "11": {
+      "issues": [
+        {
+          "type": "GENITIEF_REST",
+          "fragment": "is ons",
+          "suggestion": "van X Y",
+          "note": "verouderde dubbele -s genitief",
+          "confidence": 0.8
+        },
+        {
+          "type": "CASCADE_BUG",
+          "fragment": "het het",
+          "suggestion": "het",
+          "note": "dubbel lidwoord",
+          "confidence": 0.85
+        }
+      ],
+      "rating": 2
+    },
+    "12": {
+      "issues": [],
+      "rating": 5
+    },
+    "13": {
+      "issues": [],
+      "rating": 5
+    },
+    "14": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "begeerlijkheden",
+          "suggestion": "begeerten",
+          "note": "-lijkheid-vorm",
+          "confidence": 0.65
+        }
+      ],
+      "rating": 4
+    }
+  }
+}

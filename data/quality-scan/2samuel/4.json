@@ -1,0 +1,72 @@
+{
+  "book": "2samuel",
+  "chapter": 4,
+  "scanned_at": "2026-05-01T18:43:48.688911Z",
+  "scanner_model": "claude-opus-heuristic-v1",
+  "verses": {
+    "1": {
+      "issues": [],
+      "rating": 5
+    },
+    "2": {
+      "issues": [],
+      "rating": 5
+    },
+    "3": {
+      "issues": [],
+      "rating": 5
+    },
+    "4": {
+      "issues": [],
+      "rating": 5
+    },
+    "5": {
+      "issues": [],
+      "rating": 5
+    },
+    "6": {
+      "issues": [],
+      "rating": 5
+    },
+    "7": {
+      "issues": [
+        {
+          "type": "VEROUDERD_WOORD",
+          "fragment": "gansen",
+          "voorstel": "gehele",
+          "confidence": 0.7,
+          "reden": "Verouderd: gansen → gehele"
+        }
+      ],
+      "rating": 4
+    },
+    "8": {
+      "issues": [],
+      "rating": 5
+    },
+    "9": {
+      "issues": [],
+      "rating": 5
+    },
+    "10": {
+      "issues": [],
+      "rating": 5
+    },
+    "11": {
+      "issues": [
+        {
+          "type": "NAAMVAL_UITGANG",
+          "fragment": "rechtvaardigen man",
+          "voorstel": "",
+          "confidence": 0.55,
+          "reden": "verouderde -en uitgang op bvnw"
+        }
+      ],
+      "rating": 4
+    },
+    "12": {
+      "issues": [],
+      "rating": 5
+    }
+  }
+}
