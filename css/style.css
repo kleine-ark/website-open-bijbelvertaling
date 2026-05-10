@@ -668,9 +668,9 @@ body {
     color: #fff;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: calc(100vh - 72px);
     position: sticky;
-    top: 0;
+    top: 72px;  /* onder topnav (72px hoog) zodat header altijd zichtbaar blijft */
     z-index: 200;
     transition: margin-left 0.25s, min-width 0.25s, width 0.25s;
     overflow: hidden;
@@ -737,9 +737,9 @@ body {
     background: #faf8f3;
     border-left: 1px solid var(--border-light);
     border-top: 2px solid var(--gold);
-    height: 100vh;
+    height: calc(100vh - 72px);
     position: sticky;
-    top: 0;
+    top: 72px;
     z-index: 100;
     overflow-y: auto;
     transition: margin-right 0.25s, min-width 0.25s, width 0.25s;
