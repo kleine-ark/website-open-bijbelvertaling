@@ -922,7 +922,7 @@
       "number": 8,
       "textSV1888": "En van sommigen, dat Elias verschenen was; en van anderen, dat een profeet van de ouden was opgestaan.",
       "text1637": "Ende van sommige, dat Elias verschenen was: ende [van] andere, dat een Propheet vanden ouden was opgestaen.",
-      "text2026": "En van sommigen, dat Elia verschenen was; en van anderen, dat een profeet van de ouden was opgestaan.",
+      "text2026": "En van sommigen, dat Elia verschenen was; en van anderen, dat een profeet van de oude was opgestaan.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1010,13 +1010,18 @@
           "gloss": "〔to arise"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En van sommigen, dat Elia verschenen was; en van anderen, dat een profeet van de ouden was opgestaan.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En van sommigen, dat Elia verschenen was; en van anderen, dat een profeet van de oude was opgestaan.</i></span>",
       "text1637_html": "Ende van sommige, dat Elias verschenen was: ende [<i>van</i>] andere, dat een Propheet vanden ouden was opgestaen.",
       "phraseDiff": [
         {
           "old": "Elias",
           "new": "Elia",
           "principe": "V244"
+        },
+        {
+          "old": "ouden",
+          "new": "oude",
+          "principe": "V260"
         }
       ]
     },
@@ -2622,7 +2627,7 @@
       "number": 19,
       "textSV1888": "En zij, antwoordende, zeiden: Johannes de Doper; en anderen: Elias; en anderen: Dat enig profeet van de ouden opgestaan is.",
       "text1637": "Ende sy antwoordende seyden, [m] Ioannes de Dooper: ende andere Elias: ende andere, dat eenich Propheet van den ouden opgestaen is.",
-      "text2026": "En zij, antwoordende, zeiden: Johannes de Doper; en anderen: Elia; en anderen: Dat enig profeet van de ouden opgestaan is.",
+      "text2026": "En zij, antwoordende, zeiden: Johannes de Doper; en anderen: Elia; en anderen: Dat enig profeet van de oude opgestaan is.",
       "marginNotes": [
         {
           "marker": "m",
@@ -2742,7 +2747,7 @@
           "gloss": "〔to arise"
         }
       ],
-      "text2026_html": "En zij, antwoordende, zeiden:<sup class=\"note-marker\" data-note=\"m\">m</sup> <span class=\"direct-speech\"><i>Johannes de Doper; en anderen: Elia; en anderen: Dat enig profeet van de ouden opgestaan is.</i></span>",
+      "text2026_html": "En zij, antwoordende, zeiden:<sup class=\"note-marker\" data-note=\"m\">m</sup> <span class=\"direct-speech\"><i>Johannes de Doper; en anderen: Elia; en anderen: Dat enig profeet van de oude opgestaan is.</i></span>",
       "textSV1888_html": "En zij, antwoordende, zeiden:<sup class=\"note-marker\" data-note=\"m\">m</sup> Johannes de Doper; en anderen: Elias; en anderen: Dat enig profeet van de ouden opgestaan is.",
       "text1637_html": "Ende sy antwoordende seyden, <sup class=\"note-marker\" data-note=\"m\">m</sup> Ioannes de Dooper: ende andere Elias: ende andere, dat eenich Propheet van den ouden opgestaen is.",
       "phraseDiff": [
@@ -2750,6 +2755,11 @@
           "old": "Elias;",
           "new": "Elia;",
           "principe": "V244"
+        },
+        {
+          "old": "ouden",
+          "new": "oude",
+          "principe": "V260"
         }
       ]
     },

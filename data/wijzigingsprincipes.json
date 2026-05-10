@@ -2584,6 +2584,30 @@
       "beschrijving": "'Ontuchtigheid' (oude vorm) → 'ontucht' (modern equivalent).",
       "regex": "\\b[Oo]ntuchtighed(en|ig)?\\b",
       "voorbeeld": "Ef 4:19 'overgegeven tot ontuchtigheid' → '... tot ontucht'"
+    },
+    {
+      "id": "V260",
+      "categorie": "spelling",
+      "titel": "ouden/nieuwen → oude/nieuwe",
+      "beschrijving": "n-uitgang van attributief bijv.nw. weg (oud-Nederlandse accusatief): den ouden/nieuwen mens → de oude/nieuwe mens.",
+      "regex": "\\b(N|n)?(O|o)uden\\b|\\b(N|n)ieuwen\\b",
+      "voorbeeld": "Ef 4:22 'de ouden mens' → 'de oude mens'"
+    },
+    {
+      "id": "V261",
+      "categorie": "verouderde-woorden",
+      "titel": "elkanders → elkaars",
+      "beschrijving": "Bezittelijk vnw 'elkanders' → 'elkaars' (modern equivalent).",
+      "regex": "\\b[Ee]lkanders\\b",
+      "voorbeeld": "Ef 4:25 'wij zijn elkanders leden' → 'wij zijn elkaars leden'"
+    },
+    {
+      "id": "V262",
+      "categorie": "verouderde-woorden",
+      "titel": "toornig/toornigheid → boos/boosheid",
+      "beschrijving": "'Toornig' (oud-Nederlands voor boos) → 'boos'; 'toornigheid' → 'boosheid'.",
+      "regex": "\\b[Tt]oornig(heid)?\\b",
+      "voorbeeld": "Ef 4:26 'Wordt toornig' → 'Wordt boos'"
     }
   ]
 }

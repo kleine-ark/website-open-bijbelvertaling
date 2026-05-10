@@ -709,7 +709,7 @@
       "number": 12,
       "textSV1888": "De vorsten zijn door hunlieder hand opgehangen; de aangezichten der ouden zijn niet geëerd geweest.",
       "text1637": "[24] De Vorsten zijn door haerlieder hant opgehangen, [25] de aengesichten der ouden en zijn niet ge-eert geweest.",
-      "text2026": "De vorsten zijn door hunlieder hand opgehangen; de aangezichten van de ouden zijn niet geëerd geweest.",
+      "text2026": "De vorsten zijn door hunlieder hand opgehangen; de aangezichten van de oude zijn niet geëerd geweest.",
       "marginNotes": [
         {
           "marker": "24",
@@ -763,14 +763,14 @@
           "morph": "HVNp3cp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"24\">24</sup><span class=\"direct-speech\"><i> De vorsten zijn door hunlieder hand opgehangen;<sup class=\"note-marker\" data-note=\"25\">25</sup> de aangezichten van de ouden zijn niet geëerd geweest.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"24\">24</sup><span class=\"direct-speech\"><i> De vorsten zijn door hunlieder hand opgehangen;<sup class=\"note-marker\" data-note=\"25\">25</sup> de aangezichten van de oude zijn niet geëerd geweest.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"24\">24</sup> De vorsten zijn door hunlieder hand opgehangen;<sup class=\"note-marker\" data-note=\"25\">25</sup> de aangezichten der ouden zijn niet geëerd geweest.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"24\">24</sup> De Vorsten zijn door haerlieder hant opgehangen, <sup class=\"note-marker\" data-note=\"25\">25</sup> de aengesichten der ouden en zijn niet ge-eert geweest.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der ouden",
+          "new": "van de oude",
+          "principe": "V260"
         }
       ]
     },
@@ -849,7 +849,7 @@
       "number": 14,
       "textSV1888": "De ouden houden op van de poort, de jongelingen van hun snarenspel.",
       "text1637": "De [29] oude houden op van de poorte, de jongelingen [30] van haer snarenspel.",
-      "text2026": "De ouden houden op van de poort, de jongemannen van hun snarenspel.",
+      "text2026": "De oude houden op van de poort, de jongemannen van hun snarenspel.",
       "marginNotes": [
         {
           "marker": "29",
@@ -893,10 +893,15 @@
           "morph": "HR/Ncfsc/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>De<sup class=\"note-marker\" data-note=\"29\">29</sup> ouden houden op van de poort, de jongemannen<sup class=\"note-marker\" data-note=\"30\">30</sup> van hun snarenspel.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>De<sup class=\"note-marker\" data-note=\"29\">29</sup> oude houden op van de poort, de jongemannen<sup class=\"note-marker\" data-note=\"30\">30</sup> van hun snarenspel.</i></span>",
       "textSV1888_html": "De<sup class=\"note-marker\" data-note=\"29\">29</sup> ouden houden op van de poort, de jongelingen<sup class=\"note-marker\" data-note=\"30\">30</sup> van hun snarenspel.",
       "text1637_html": "De <sup class=\"note-marker\" data-note=\"29\">29</sup> oude houden op van de poorte, de jongelingen <sup class=\"note-marker\" data-note=\"30\">30</sup> van haer snarenspel.",
       "phraseDiff": [
+        {
+          "old": "ouden",
+          "new": "oude",
+          "principe": "V260"
+        },
         {
           "old": "jongelingen",
           "new": "jongemannen",
