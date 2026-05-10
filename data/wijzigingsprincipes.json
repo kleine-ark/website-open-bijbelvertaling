@@ -2752,6 +2752,14 @@
       "beschrijving": "Per apocrief boek toegepast op basis van origineel-taal: bij vermoedelijk Hebreeuws/Aramees origineel (Tobit, Judith, Sirach, Baruch 1-5, Gebed Azarja, Gezang in Vuuroven, Susanna, Bel & Draak, 1 Mak, 4 Ezra, Esther-toev): Here→JAHWEH (LXX κύριος ↔ verm. Hebr. יהוה). Bij Grieks origineel (Wijsheid, 2+3 Mak, 3 Ezra, Gebed Manasse, Brief van Jeremia=Bar 6): Here→Heere (κύριος is daar geen vertaling).",
       "regex": "\\bHere\\b",
       "voorbeeld": "Bar 1:5 'baden tot de Here' → 'baden tot JAHWEH'"
+    },
+    {
+      "id": "V281",
+      "categorie": "theologisch",
+      "titel": "des Heren / van de Heren → van JAHWEH",
+      "beschrijving": "Cascade-fix bij OT en Hebr-origineel apocriefen: SV1888 'des HEEREN' (genitief van HEERE=JHWH) is via eerdere bulkfixes 'des Heeren'→'des Heren'/'van de Heren' geworden. Nu hersteld naar 'van JAHWEH' conform de OT-Godsnaam-policy. NT en Grieks-origineel apocriefen (Wijsheid, 2-3 Mak, 3 Ezra, Gebed Manasse, Brief van Jeremia=Bar 6): NIET aangetast.",
+      "regex": "\\b(des Heren|van de Heren|den Heren)\\b",
+      "voorbeeld": "Bar 1:18 'stem van de Heren onzes Gods' → 'stem van JAHWEH onze God'"
     }
   ]
 }
