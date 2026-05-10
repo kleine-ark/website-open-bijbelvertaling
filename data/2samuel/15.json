@@ -1205,7 +1205,7 @@
       "number": 11,
       "textSV1888": "En er gingen met Absalom van Jeruzalem tweehonderd mannen, genodigd zijnde, doch gaande in hun eenvoudigheid, want zij wisten van geen zaak.",
       "text1637": "Ende daer gingen met Absalom van Ierusalem twee hondert mannen [18] genoodicht zijnde, doch gaende in hare eenvoudicheyt: want sy en wisten [van] geen sake.",
-      "text2026": "En er gingen met Absalom van Jeruzalem tweehonderd mannen, genodigd zijnde, maar gaande in hun eenvoudigheid, want zij wisten van geen zaak.",
+      "text2026": "En er gingen met Absalom van Jeruzalem tweehonderd mannen, genodigd zijnde, maar gaande in hun eenvoud, want zij wisten van geen zaak.",
       "marginNotes": [
         {
           "marker": "18",
@@ -1282,7 +1282,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "En er gingen met Absalom van Jeruzalem tweehonderd mannen,<sup class=\"note-marker\" data-note=\"18\">18</sup> genodigd zijnde, maar gaande in hun eenvoudigheid, want zij wisten van geen zaak.",
+      "text2026_html": "En er gingen met Absalom van Jeruzalem tweehonderd mannen,<sup class=\"note-marker\" data-note=\"18\">18</sup> genodigd zijnde, maar gaande in hun eenvoud, want zij wisten van geen zaak.",
       "textSV1888_html": "En er gingen met Absalom van Jeruzalem tweehonderd mannen,<sup class=\"note-marker\" data-note=\"18\">18</sup> genodigd zijnde, doch gaande in hun eenvoudigheid, want zij wisten van geen zaak.",
       "text1637_html": "Ende daer gingen met Absalom van Ierusalem twee hondert mannen <sup class=\"note-marker\" data-note=\"18\">18</sup> genoodicht zijnde, doch gaende in hare eenvoudicheyt: want sy en wisten [van] geen sake.",
       "phraseDiff": [
@@ -1290,6 +1290,11 @@
           "old": "doch",
           "new": "maar",
           "principe": "V1"
+        },
+        {
+          "old": "eenvoudigheid,",
+          "new": "eenvoud,",
+          "principe": "V275"
         }
       ]
     },
