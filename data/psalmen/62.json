@@ -678,7 +678,7 @@
       "number": 10,
       "textSV1888": "Immers zijn de gemene lieden ijdelheid, de grote lieden zijn leugen; in de weegschaal opgewogen, zouden zij samen lichter zijn dan de ijdelheid.",
       "text1637": "Immers zijn de [20] gemeyne lieden ydelheyt, de groote lieden zijn [21] leugen: [22] in de weechschale opgewogen, souden sy t’samen [lichter] zijn dan d’ydelheyt.",
-      "text2026": "Immers zijn de gemene mensen ijdelheid, de grote mensen zijn leugen; in de weegschaal opgewogen, zouden zij samen lichter zijn dan de ijdelheid.",
+      "text2026": "Immers zijn de gemene mensen zinloosheid, de grote mensen zijn leugen; in de weegschaal opgewogen, zouden zij samen lichter zijn dan de zinloosheid.",
       "marginNotes": [
         {
           "marker": "20",
@@ -764,19 +764,24 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Immers zijn de<sup class=\"note-marker\" data-note=\"20\">20</sup> gemene mensen ijdelheid, de grote mensen zijn<sup class=\"note-marker\" data-note=\"21\">21</sup> leugen;<sup class=\"note-marker\" data-note=\"22\">22</sup> in de weegschaal opgewogen, zouden zij samen lichter zijn dan de ijdelheid.",
+      "text2026_html": "Immers zijn de<sup class=\"note-marker\" data-note=\"20\">20</sup> gemene mensen zinloosheid, de grote mensen zijn<sup class=\"note-marker\" data-note=\"21\">21</sup> leugen;<sup class=\"note-marker\" data-note=\"22\">22</sup> in de weegschaal opgewogen, zouden zij samen lichter zijn dan de zinloosheid.",
       "textSV1888_html": "Immers zijn de<sup class=\"note-marker\" data-note=\"20\">20</sup> gemene lieden ijdelheid, de grote lieden zijn<sup class=\"note-marker\" data-note=\"21\">21</sup> leugen;<sup class=\"note-marker\" data-note=\"22\">22</sup> in de weegschaal opgewogen, zouden zij samen lichter zijn dan de ijdelheid.",
       "text1637_html": "Immers zijn de <sup class=\"note-marker\" data-note=\"20\">20</sup> gemeyne lieden ydelheyt, de groote lieden zijn <sup class=\"note-marker\" data-note=\"21\">21</sup> leugen: <sup class=\"note-marker\" data-note=\"22\">22</sup> in de weechschale opgewogen, souden sy t’samen [lichter] zijn dan d’ydelheyt.",
       "phraseDiff": [
         {
-          "old": "lieden",
-          "new": "mensen",
+          "old": "lieden ijdelheid,",
+          "new": "mensen zinloosheid,",
           "principe": "V10"
         },
         {
           "old": "lieden",
           "new": "mensen",
           "principe": "V10"
+        },
+        {
+          "old": "ijdelheid.",
+          "new": "zinloosheid.",
+          "principe": null
         }
       ]
     },
