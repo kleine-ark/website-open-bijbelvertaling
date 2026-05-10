@@ -2720,6 +2720,30 @@
       "beschrijving": "'Gedurigheid' (volharding/voortdurendheid) → 'volharding'. Cascade-fix: eerdere bulk 'gedurig→steeds' (V231) maakte ten onrechte 'gedurigheid' → 'steedsheid' (geen woord). Nu beide hersteld naar 'volharding'.",
       "regex": "\\b([Gg]edurig|[Ss]teeds)heid\\b",
       "voorbeeld": "Ef 6:18 'met alle steedsheid' → 'met alle volharding'"
+    },
+    {
+      "id": "V277",
+      "categorie": "verouderde-woorden",
+      "titel": "Denwelken/denwelke → Die/die",
+      "beschrijving": "Oude relatieve vorm van denwelke (mannelijk accusatief) → die.",
+      "regex": "\\b[Dd]enwelken?\\b",
+      "voorbeeld": "Ef 6:22 'Denwelken ik tot u gezonden heb' → 'Die ik tot u gezonden heb'"
+    },
+    {
+      "id": "V278",
+      "categorie": "verouderde-woorden",
+      "titel": "onverderfelijk(heid) → onvergankelijk(heid)",
+      "beschrijving": "Modernisering.",
+      "regex": "\\b[Oo]nverderfelijk(heid)?\\b",
+      "voorbeeld": "1 Kor 9:25 'wij een onverderfelijke kroon' → 'wij een onvergankelijke kroon'"
+    },
+    {
+      "id": "V279",
+      "categorie": "verouderde-woorden",
+      "titel": "geheimenis → geheim",
+      "beschrijving": "Cascade: V271 maakte verborgenheid→geheimenis; gebruiker wil korter \"geheim\". Inclusief meervoud.",
+      "regex": "\\b[Gg]eheimenis(sen)?\\b",
+      "voorbeeld": "Ef 6:19 'het geheimenis van het Evangelie' → 'het geheim van het Evangelie'"
     }
   ]
 }
