@@ -83,7 +83,7 @@
         // Totaal aantal wijzigingen bovenaan
         const totalChanges = Object.values(countPerPrincipe).reduce((a, b) => a + b, 0);
         const totalPrincipes = principesData.length;
-        const TOTAL_DIFFS = 71052; // van laatste diff-regen
+        const TOTAL_DIFFS = 72349; // van laatste diff-regen
         const pct = Math.round(100 * totalChanges / TOTAL_DIFFS);
         const losse = TOTAL_DIFFS - totalChanges;
         const summary = document.createElement('div');
