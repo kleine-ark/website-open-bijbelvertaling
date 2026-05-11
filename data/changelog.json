@@ -1,6 +1,156 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-05-11",
+      "versie": "v0.15",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Baruch volledig nageleze (alle 6 hoofdstukken). Bar 1-6 vers-voor-vers gecontroleerd: o.a. Bar 1:14 'op het juiste tijdstip', Bar 1:18+21+22 'Heren onzes Gods'→'JAHWEH onze God', Bar 2:1 Zijn Woord/Hij, Bar 3:15 schat kamers→schatkamers, Bar 3:17 betrouwen, Bar 3:23 Hagar/kooplieden/Merran-begrippen generiek, Bar 4:1 geboden van God, Bar 4:9+14+26 buren van Sion, Bar 4:10/14/20/22+5:2 Eeuwige, Bar 4:22 Heilige Verlosser, Bar 6:1 Vanwaar/zonden, Bar 6:5 Heere→JAHWEH, Bar 6:6 Mijn engel/Hij"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Jakobus volledig nageleze (alle 5 hoofdstukken). Citaat-grenzen Jak 2:3+8+11+23, 4:6+13+15, 5:12 hersteld; talloze per-vers fixes (zie principes V282-V307)"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Apocriefen-brede Godsnaam-pronouns hoofdletters: Hij/Hem/Zijn waar verwijzend naar God in Tobit, Judith, Wijsheid, Sirach, 1-3 Makkabeeën, 3-4 Ezra, gebed-azaria/manasse, susanna, bel-en-de-draak, gezang-vuuroven (~316 verzen aangepast)"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Cascade-bug 'in van JAHWEH wet' → 'in de wet van JAHWEH' bibel-breed hersteld (246 hits in 145 files)"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Begrippen volledig opgeschoond: 1.366 te-generieke entries verwijderd (zoon/dochter/vader/water/ster etc.); 40 hoofdwoorden gesynchroniseerd over alle boeken; 60 protected theologische begrippen herschreven met generieke definities"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V282 gebrekkelijk → gebrekkig"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V283 naburin(nen)/nabuur → buurvrouw/buurman/buren (38 voorkomens)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V284 somwijlen → soms"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V285 baar/baren van de zee → golf/golven (14 voorkomens)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V286 nedergeworpen → neergeworpen (24 voorkomens)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V287 ongestadig(e) → onstandvastig(e) (8 voorkomens)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V288 velerlei → allerlei (10 voorkomens)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V289 ras → haastig (6 voorkomens)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V290 nuttigheid → nut (28 voorkomens in 13 files)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V291 het rad onzer geboorte → onze levensloop (Jak 3:6)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V292 denzelfden → denzelfde (38 voorkomens)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V293 nijd → afgunst"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V294 gezeglijk → voor rede vatbaar"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V295 niet partijdig → onpartijdig"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V296 Van waar → Vanwaar"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V297 wellust(en) → hartstocht(en)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V298 Welaan (nu) → Nu dan"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V299 koopmanschap drijven → handel drijven"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V300 weinig tijds → korte tijd"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V301 werklieden/werkman → arbeiders/arbeider"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V302 dergenen → van degenen"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V303 alle zodanige → al zulk soort"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V304 Sebaoth → Zebaoth"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V305 lekkerlijk → lekker"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V306 spaden regen → spade regen"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V307 genaakt/genaken → nadert/naderen (21 voorkomens)"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Zoon van de Mensen → Zoon des mensen (revert N3-cascade — klassieke Bijbelse uitdrukking blijft archaïsch, 52 voorkomens)"
+        },
+        {
+          "type": "systeem",
+          "beschrijving": "Wijzigingsprincipes-categorieën genormaliseerd (verouderde-woorden→Verouderde woorden, etc.). 371 principes in 7 hoofdgroepen"
+        },
+        {
+          "type": "systeem",
+          "beschrijving": "Diff-script herrekend: 73.079 phraseDiff items (66.149 = 91% gekoppeld aan principe)"
+        },
+        {
+          "type": "systeem",
+          "beschrijving": "Voorpagina (over-ov.html): plan v1.0 (sept 2026) + begrippenlijst (okt) + kanttekeningen (jan 2027) toegevoegd; uitgangspunt-passage 'jonge vader die voorleest'; principes-overzicht bijgewerkt; nageleze-lijst uitgebreid met Baruch en Jakobus (9,6%); statistieken bijgewerkt"
+        },
+        {
+          "type": "systeem",
+          "beschrijving": "Service Worker VERSION naar 2026-05-11"
+        }
+      ]
+    },
+    {
       "datum": "2026-05-09",
       "versie": "v0.14.2",
       "items": [
