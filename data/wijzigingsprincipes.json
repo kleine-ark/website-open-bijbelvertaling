@@ -3152,6 +3152,46 @@
       "nieuw": "veel volk",
       "toelichting": "Genitief-uitgang -s verwijderd",
       "regex": "\\bveel volks\\b"
+    },
+    {
+      "id": "V331",
+      "categorie": "Verouderde woorden",
+      "oud": "gansen dag",
+      "nieuw": "gehele dag",
+      "toelichting": "Modernisering 'ganse' → 'gehele' (al elders V-X) toegepast op vaste verbinding 'gansen dag'",
+      "regex": "\\bgansen dag\\b"
+    },
+    {
+      "id": "V332",
+      "categorie": "Verouderde woorden",
+      "oud": "vettigheid",
+      "nieuw": "overvloed",
+      "toelichting": "Bijbels-archaïsch voor rijkdom/welvaart (vetheid van het land) — vervangen door modern 'overvloed'",
+      "regex": "\\b[Vv]ettigheid\\b"
+    },
+    {
+      "id": "V333",
+      "categorie": "Verouderde woorden",
+      "oud": "Dies",
+      "nieuw": "Daarom dat",
+      "toelichting": "Verouderd voegwoord (oorzaak/gevolg)",
+      "regex": "\\bDies\\b"
+    },
+    {
+      "id": "V334",
+      "categorie": "Verouderde woorden",
+      "oud": "hovaardig(e/en) / hovaardij",
+      "nieuw": "hoogmoedig(e/en) / hoogmoed",
+      "toelichting": "Modernere term voor trots/hoogmoed",
+      "regex": "\\b[Hh]ovaardig(e|en|lijk)?\\b|\\b[Hh]ovaardij\\b"
+    },
+    {
+      "id": "V335",
+      "categorie": "Spelling",
+      "oud": "nedergestoten / nedervalt / nedergevallen / etc.",
+      "nieuw": "neergestoten / neervalt / neergevallen / etc.",
+      "toelichting": "Spellingmodernisering 'neder-' → 'neer-' (analoog aan V286 nedergeworpen)",
+      "regex": "\\b[Nn]eder(gestoten|valt|val|gevallen|gevolgd)\\b"
     }
   ]
 }
