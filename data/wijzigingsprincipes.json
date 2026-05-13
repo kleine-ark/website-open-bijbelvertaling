@@ -3272,6 +3272,30 @@
       "nieuw": "mest",
       "toelichting": "Bijbels-archaïsch voor uitwerpselen/vuilnis. Sluit aan bij HSV/NBV (mest)",
       "regex": "\\b[Dd]rek\\b"
+    },
+    {
+      "id": "V346",
+      "categorie": "Verouderde woorden",
+      "oud": "naarstig(lijk) / naarstigheid",
+      "nieuw": "ijverig / ijver",
+      "toelichting": "Modernere term voor 'met ijver/vlijt'",
+      "regex": "\\b[Nn]aarstig(lijk)?\\b|\\b[Nn]aarstigheid\\b"
+    },
+    {
+      "id": "V347",
+      "categorie": "Naamvallen",
+      "oud": "in van de eeuwigheid (cascade)",
+      "nieuw": "in de eeuwigheid",
+      "toelichting": "Cascade-fix van V281+N2: 'in der eeuwigheid' → 'in van de eeuwigheid' → hersteld",
+      "regex": "in van de eeuwigheid"
+    },
+    {
+      "id": "V348",
+      "categorie": "Verouderde woorden",
+      "oud": "het welging met / welging",
+      "nieuw": "X voorspoedig verliep / voorspoed",
+      "toelichting": "Verouderde uitdrukking 'het welging' (= het ging goed/voorspoedig). Modernisering naar 'X voorspoedig verliep' (als verbum) of 'voorspoed' (als noun).",
+      "regex": "\\b[Ww]elging\\b"
     }
   ]
 }
