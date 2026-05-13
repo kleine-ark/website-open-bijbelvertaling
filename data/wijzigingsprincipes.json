@@ -3216,6 +3216,62 @@
       "nieuw": "schaal / schalen",
       "toelichting": "Grieks φιάλη (phialē) — brede ondiepe schaal voor wijn/water/wierook. Modernisering analoog aan HSV/NBV/NBG51.",
       "regex": "\\b[Ff]iolen?\\b"
+    },
+    {
+      "id": "V339",
+      "categorie": "Verouderde woorden",
+      "oud": "ontvloden / ontvlood / ontvliedt",
+      "nieuw": "ontvlucht / ontvluchtte / ontvlucht",
+      "toelichting": "Verouderde vormen van 'ontvlieden' = ontvluchten",
+      "regex": "\\b[Oo]ntvl(oden|ood|iedt)\\b"
+    },
+    {
+      "id": "V340",
+      "categorie": "Verouderde woorden",
+      "oud": "vloden / vlieden / vliedt / vlood",
+      "nieuw": "vluchtten / vluchten / vlucht / vluchtte",
+      "toelichting": "Verouderde vormen van 'vlieden' = vluchten",
+      "regex": "\\b[Vv]l(oden|ieden|iedt|ood)\\b"
+    },
+    {
+      "id": "V341",
+      "categorie": "Verouderde woorden",
+      "oud": "kastijding",
+      "nieuw": "vergelding",
+      "toelichting": "Verouderde term voor straf/oordeel. Modern: vergelding (sluit aan bij verwoesting + toorn-context)",
+      "regex": "\\b[Kk]astijding\\b"
+    },
+    {
+      "id": "V342",
+      "categorie": "Vesting / sterkte",
+      "oud": "sterkte / sterkten (burcht)",
+      "nieuw": "vesting / vestingen",
+      "toelichting": "Context-aware: alleen waar 'sterkte' = burcht/fortificatie (niet waar = kracht). 67 vervangen, 179 'sterkte=kracht' bewust behouden",
+      "regex": "\\b[Ss]terkten?\\b"
+    },
+    {
+      "id": "V343",
+      "categorie": "Verouderde woorden",
+      "oud": "lagen / laag (mil. ambush)",
+      "nieuw": "hinderlagen / hinderlaag",
+      "toelichting": "Context-aware: alleen waar 'lagen/laag' = ambush/hinderlaag (niet waar = verleden tijd van 'liggen' of adjectief). 27 vervangen, 64 behouden",
+      "regex": "\\b[Ll]ag(en)?\\b"
+    },
+    {
+      "id": "V344",
+      "categorie": "Verouderde woorden",
+      "oud": "jonkheid",
+      "nieuw": "jeugd",
+      "toelichting": "Modernere term voor jonge jaren",
+      "regex": "\\b[Jj]onkheid\\b"
+    },
+    {
+      "id": "V345",
+      "categorie": "Verouderde woorden",
+      "oud": "drek",
+      "nieuw": "mest",
+      "toelichting": "Bijbels-archaïsch voor uitwerpselen/vuilnis. Sluit aan bij HSV/NBV (mest)",
+      "regex": "\\b[Dd]rek\\b"
     }
   ]
 }
