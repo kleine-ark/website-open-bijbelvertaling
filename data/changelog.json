@@ -1,6 +1,268 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-05-14",
+      "versie": "v0.16",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "1 Makkabeeën volledig nageleze (alle 16 hoofdstukken, 924 verzen). Per-vers controle op citaat-grenzen, godsnaam-pronouns, verouderde woorden en plaatsnamen. 12e boek vers-voor-vers gecontroleerd."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Apocriefen-brede U/Uw hoofdletter-audit voor God-aanspreking: 211 u→U + 137 uw→Uw vervangingen verspreid over 152 verzen in Tobit, Judith, Boek der Wijsheid, Sirach, Gebed van Azaria, 1-3 Makkabeeën en andere apocriefen."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Plaatsnamen in 1 Makkabeeën: 114 nieuwe begrippen-entries toegevoegd (o.a. Galgala, Masaloth, Arbele, Berea, Cafarsalama, Bethsura, Gazara, Accaron, Azote, Celo-Syrië, Aferema, Lydda, Ramatha, Samarië, Sampsames, Delos, Myndos, Sicionen, Karië, Samos, Pamfilië, Lycië, Halicarnassus, Koos, Side, Aradus, Faselis, Gortyna, Knidus, Cyprus, Cyrene, Kedron, Medië, Spartiaten, Areus, Antiochus, Demetrius, Seleucus, Lucius, Athenobius, etc.)"
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Multi-entry begrippen-systeem voor homoniemen toegevoegd: één woord kan nu meerdere betekenissen tonen in de begrippen-popover (bijv. schorpioen=dier vs gevechtsmachine, koninkrijk=Gods vs aards koninkrijk)."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Begrippen-opschoning: te generieke entries verwijderd (aandoen, uitroepen, ik ben, vraag, raad, verheven, regeren, gemeenschap-specifieke, weg, vreemde, tienden, gaven, wezen, schoonvader, ontvangen, baren, bekende e.a.)."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Cascade-fix \"in van de eeuwigheid\" → \"in de eeuwigheid\" (305× in 79 files) - aftermath van V281 Heeren→JAHWEH combinatie met N3 des→van de."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Cascade-fix \"in van wie de X\" → \"in wie de X\" (49× in 18 files) - aftermath van V312 wiens→van wie."
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V317 speelt wel → speelt welluidend"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V318 vergaderen → verzamelen (zonder cultische-context)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V319 ten erve → als erfenis"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V320 formeert → vormt"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V321 legermacht → leger"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V322 feilt → faalt"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V323 verbeidt → verwacht"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V324 gelaat → gezicht"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V325 tegenspoed → tegenslag"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V326 spies → speer"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V327 slibberig → spiegelglad"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V328 wrevelig → narrig/wrokkig (context-aware)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V329 hunlieder → hun"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V330 veel volks → veel volk"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V331 gansen dag → gehele dag"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V332 vettigheid → overvloed"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V333 Dies → Daarom dat"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V334 hovaardig → hoogmoedig"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V335 nedergestoten → neergestoten"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V336 hovaardigheid → trots"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V337 volvaardig → bereidwillig"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V338 fiool → schaal"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V339 ontvloden → ontvlucht"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V340 vloden → vluchten"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V341 kastijding → vergelding"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V342 sterkte → vesting (context-aware: vesting vs kracht)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V343 lagen → hinderlagen (context-aware: ambush vs liggen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V344 jonkheid → jeugd"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V345 drek → mest"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V346 naarstig → ijverig"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V347 in van de eeuwigheid → in de eeuwigheid (cascade-herstel)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V348 welging → voorspoedig"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V349 smaadheid → smaad"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V350 bezoldiging → soldij"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V351 verkoor → verkoos"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V352 beeltenis → beeld"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V353 togen/toog → trokken/trok"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V354 neder → neer"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V355 stoutmoedig → dapper / stoutheid → onverschrokkenheid"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V356 krijgsvolk → soldaten"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V357 vermaard → beroemd"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V358 afgunstigheid → afgunst"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V359 ten X-en male → voor de Xe keer (tweeden→tweede, derden→derde, etc.)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V360 lage → hinderlaag (enkelvoud)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V361 gelast → bevolen"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V362 afgemat → vermoeid"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V363 verspieder → spion"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V364 koninklijke hoed → kroon"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V365 grote stem → luide stem"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V366 gedachtenis → herinnering"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V367 vrijdom → vrijstelling"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V368 erve → erfenis"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V369 onzer vaderen → van onze vaders"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V370 wederrechtelijk → onrechtmatig"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V371 schikte → stelde op"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V372 uitvallende → uitrukkend"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V373 verhovaardigd → hoogmoediger"
+        }
+      ]
+    },
+    {
       "datum": "2026-05-11",
       "versie": "v0.15",
       "items": [
