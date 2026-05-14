@@ -31,34 +31,46 @@ const Begrippen = {
     },
 
     buildLookup() {
-        // Twee niveaus: caseLookup (exacte case voor woorden waar dat ertoe doet,
-        // bv. 'Geest' = Heilige Geest vs 'geest' = nieuwe mens) en lookup (lowercase fallback).
-        this.lookup = {};
-        this.caseLookup = {};
-        // Eerst supplement (cross-boek)
-        for (const item of this.supplement || []) {
-            this.caseLookup[item.woord] = item;
-            this.lookup[item.woord.toLowerCase()] = item;
+        // Multi-entry support: lookup[word] is een ARRAY van entries (homoniemen).
+        // caseLookup en lookup voor case-sensitive vs lowercase fallback (Geest vs geest).
+        // Boek-specifieke entries staan vóór supplement-entries (eerst getoond in popup).
+        this.lookup = {};       // lowercase -> [items]
+        this.caseLookup = {};   // exacte case -> [items]
+        const addEntry = (key, item, store) => {
+            if (!store[key]) store[key] = [];
+            // Voorkom dubbel inschuiven (zelfde object referentie)
+            if (!store[key].includes(item)) store[key].push(item);
+        };
+        // Eerst boek-specifiek (krijgt prioriteit in popup-volgorde)
+        for (const item of this.data || []) {
+            addEntry(item.woord, item, this.caseLookup);
+            addEntry(item.woord.toLowerCase(), item, this.lookup);
             if (item.ook) for (const alt of item.ook) {
-                this.caseLookup[alt] = item;
-                this.lookup[alt.toLowerCase()] = item;
+                addEntry(alt, item, this.caseLookup);
+                addEntry(alt.toLowerCase(), item, this.lookup);
             }
         }
-        // Dan boek-specifiek (overschrijft supplement)
-        for (const item of this.data || []) {
-            this.caseLookup[item.woord] = item;
-            this.lookup[item.woord.toLowerCase()] = item;
+        // Dan supplement (cross-boek) — wordt erachter aangevoegd
+        for (const item of this.supplement || []) {
+            addEntry(item.woord, item, this.caseLookup);
+            addEntry(item.woord.toLowerCase(), item, this.lookup);
             if (item.ook) for (const alt of item.ook) {
-                this.caseLookup[alt] = item;
-                this.lookup[alt.toLowerCase()] = item;
+                addEntry(alt, item, this.caseLookup);
+                addEntry(alt.toLowerCase(), item, this.lookup);
             }
         }
     },
 
-    // Vind een begrip met case-sensitive prioriteit, fallback naar lowercase
-    findItem(word) {
+    // Vind ALLE begrippen voor een woord (voor homoniemen). Eerste = hoogste prioriteit.
+    findItems(word) {
         if (this.caseLookup && this.caseLookup[word]) return this.caseLookup[word];
-        return this.lookup[word.toLowerCase()] || null;
+        return this.lookup[word.toLowerCase()] || [];
+    },
+
+    // Backward-compat: vind eerste begrip
+    findItem(word) {
+        const items = this.findItems(word);
+        return items.length > 0 ? items[0] : null;
     },
 
     async loadEncyclopedieMapping() {
@@ -161,8 +173,9 @@ const Begrippen = {
     },
 
     showPopover(word, anchorEl) {
-        const item = this.findItem(word);
-        if (!item) return;
+        const items = this.findItems(word);
+        if (!items.length) return;
+        const item = items[0];   // primair (= eerste, meestal boek-specifiek)
 
         const pop = document.getElementById('begrip-popover');
         document.getElementById('begrip-woord').textContent = item.woord;
@@ -175,7 +188,22 @@ const Begrippen = {
             'overig': 'Overig'
         };
         document.getElementById('begrip-cat').textContent = catLabels[item.categorie] || item.categorie;
-        document.getElementById('begrip-uitleg').textContent = item.uitleg;
+
+        // Multi-entry render: als er meer dan 1 begrip is, toon alle als genummerde definities
+        const uitlegEl = document.getElementById('begrip-uitleg');
+        if (items.length > 1) {
+            uitlegEl.innerHTML = '';
+            items.forEach((it, idx) => {
+                const div = document.createElement('div');
+                div.style.cssText = idx === 0 ? '' : 'margin-top:8px;padding-top:8px;border-top:1px dashed #e5e1d8;';
+                const label = it.betekenis ? it.betekenis : (catLabels[it.categorie] || it.categorie);
+                div.innerHTML = `<strong style="color:var(--teal);font-size:12px;text-transform:uppercase;letter-spacing:0.04em;">${idx+1}. ${label}</strong><br>${it.uitleg}`;
+                uitlegEl.appendChild(div);
+            });
+        } else {
+            uitlegEl.textContent = item.uitleg;
+        }
+
         // Klikbare ref (geen "Eerste vermelding" label meer)
         const refEl = document.getElementById('begrip-ref');
         if (item.ref) {
