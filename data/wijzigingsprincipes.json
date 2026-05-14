@@ -3368,6 +3368,78 @@
       "nieuw": "beroemd(e/er) / beroemdheid / wijdberoemd",
       "toelichting": "Modernere term voor wijdbekend, gerenommeerd",
       "regex": "\\b[Vv]ermaard(e|er|heid)?\\b|\\bwijdvermaard\\b"
+    },
+    {
+      "id": "V358",
+      "categorie": "Verouderde woorden",
+      "oud": "afgunstigheid",
+      "nieuw": "afgunst",
+      "toelichting": "Modernere variant zonder het verouderde -igheid suffix",
+      "regex": "\\b[Aa]fgunstigheid\\b"
+    },
+    {
+      "id": "V359",
+      "categorie": "Verouderde woorden",
+      "oud": "ten X-en male",
+      "nieuw": "voor de X-e keer",
+      "toelichting": "Verouderde naamval-uitdrukking (ten eersten/tweeden/derden/anderen male) — moderniseren naar 'voor de Xe keer'",
+      "regex": "\\bten (eersten|tweeden|derden|anderen) male\\b"
+    },
+    {
+      "id": "V360",
+      "categorie": "Verouderde woorden",
+      "oud": "lage / een lage gelegd",
+      "nieuw": "hinderlaag / een hinderlaag gelegd",
+      "toelichting": "Vrouwelijke vorm 'lage' (= hinderlaag) — context-aware: alleen waar 'een lage' / 'de lage' staat in militaire context (vgl. V343 voor lagen/laag)",
+      "regex": "\\b(?:een |de )?lage gelegd\\b"
+    },
+    {
+      "id": "V361",
+      "categorie": "Werkwoordsvormen",
+      "oud": "gelast",
+      "nieuw": "bevolen",
+      "toelichting": "Verouderd verleden-deelwoord van 'gelasten' (= bevelen)",
+      "regex": "\\b[Gg]elast\\b"
+    },
+    {
+      "id": "V362",
+      "categorie": "Verouderde woorden",
+      "oud": "afgemat / afmatten / afmatte",
+      "nieuw": "vermoeid / vermoeien / vermoeide",
+      "toelichting": "Modernere term voor uitgeput/vermoeid",
+      "regex": "\\b[Aa]fma(t|tt(en|e))\\b"
+    },
+    {
+      "id": "V363",
+      "categorie": "Verouderde woorden",
+      "oud": "verspieder(s) / verspieden / verspiedde",
+      "nieuw": "spion(nen) / bespioneren / bespioneerde",
+      "toelichting": "Modernere term voor militaire spion",
+      "regex": "\\b[Vv]erspied(er|ers|en|de)\\b"
+    },
+    {
+      "id": "V364",
+      "categorie": "Verouderde woorden",
+      "oud": "(de/een) koninklijke hoed",
+      "nieuw": "(de/een) kroon",
+      "toelichting": "Hellenistische διάδημα — fillet/diadeem die kings als teken van koningschap droegen. Modern: kroon (vgl. HSV/NBV)",
+      "regex": "\\b(?:de |een )?koninklijke hoed\\b"
+    },
+    {
+      "id": "V365",
+      "categorie": "Verouderde woorden",
+      "oud": "grote stem",
+      "nieuw": "luide stem",
+      "toelichting": "Modernere uitdrukking — 'grote stem' (Hebr. qol gadol, Gr. phōnē megalē) is letterlijk maar in modern Nederlands ongebruikelijk; 'luide stem' is gangbaar",
+      "regex": "\\b[Gg]rote stem\\b"
+    },
+    {
+      "id": "V366",
+      "categorie": "Verouderde woorden",
+      "oud": "gedachtenis",
+      "nieuw": "herinnering",
+      "toelichting": "Modernere term voor herinnering / nagedachtenis (Hebr. zeker)",
+      "regex": "\\b[Gg]edachtenis\\b"
     }
   ]
 }
