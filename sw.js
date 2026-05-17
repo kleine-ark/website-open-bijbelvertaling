@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = '2026-05-17b';
+const VERSION = '2026-05-17c';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -22,6 +22,17 @@ const PRECACHE_URLS = [
     '/js/data-loader.js',
     '/js/book-orders.js',
     '/js/navigation.js',
+    // Lokale fonts — pre-cachen zodat ze ook in slechte verbinding-situaties direct aanwezig zijn
+    '/fonts/allura-400.woff2',
+    '/fonts/fira-sans-400.woff2',
+    '/fonts/fira-sans-500.woff2',
+    '/fonts/fira-sans-600.woff2',
+    '/fonts/fira-sans-700.woff2',
+    '/fonts/eb-garamond-400.woff2',
+    '/fonts/eb-garamond-400-italic.woff2',
+    '/fonts/eb-garamond-500.woff2',
+    '/fonts/eb-garamond-600.woff2',
+    '/fonts/eb-garamond-700.woff2',
     '/js/sidebar.js',
     '/js/app.js',
     '/js/opties.js',
