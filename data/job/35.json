@@ -342,7 +342,7 @@
       "number": 6,
       "textSV1888": "Indien gij zondigt, wat bedrijft gij tegen Hem? Indien uw overtredingen menigvuldig zijn, wat doet gij Hem?",
       "text1637": "Indien ghy sondicht, [12] wat bedrijft ghy tegen hem? indien uwe overtredingen menichvuldich zijn, [13] wat doet ghy hem?",
-      "text2026": "Als u zondigt, wat bedrijft u tegen Hem? Als uw overtredingen menigvuldig zijn, wat doet u Hem?",
+      "text2026": "Als u zondigt, wat bedrijft u tegen Hem? Als uw overtredingen veelvuldig zijn, wat doet u Hem?",
       "marginNotes": [
         {
           "marker": "12",
@@ -411,7 +411,7 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Als u zondigt,<sup class=\"note-marker\" data-note=\"12\">12</sup> wat bedrijft u tegen Hem? Als uw overtredingen menigvuldig zijn,<sup class=\"note-marker\" data-note=\"13\">13</sup> wat doet u Hem?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Als u zondigt,<sup class=\"note-marker\" data-note=\"12\">12</sup> wat bedrijft u tegen Hem? Als uw overtredingen veelvuldig zijn,<sup class=\"note-marker\" data-note=\"13\">13</sup> wat doet u Hem?</i></span>",
       "textSV1888_html": "Indien gij zondigt,<sup class=\"note-marker\" data-note=\"12\">12</sup> wat bedrijft gij tegen Hem? Indien uw overtredingen menigvuldig zijn,<sup class=\"note-marker\" data-note=\"13\">13</sup> wat doet gij Hem?",
       "text1637_html": "Indien ghy sondicht, <sup class=\"note-marker\" data-note=\"12\">12</sup> wat bedrijft ghy tegen hem? indien uwe overtredingen menichvuldich zijn, <sup class=\"note-marker\" data-note=\"13\">13</sup> wat doet ghy hem?",
       "phraseDiff": [
@@ -434,6 +434,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "menigvuldig(e/en/er)",
+          "new": "veelvuldig(e/en/er)",
+          "principe": "V394"
         }
       ]
     },
