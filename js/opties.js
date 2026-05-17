@@ -6,6 +6,8 @@ const Opties = {
     DEFAULTS: {
         godsnaam: 'ov',          // 'ov' (JAHWEH) | 'klassiek' (HEERE) | 'jehovah' (Jehovah) | 'jhwh' (יהוה)
         kolomLayout: 'naast',    // 'naast' (parallelle kolom) | 'eronder' (nieuwe regel onder OV2026)
+        boekvolgorde: 'canoniek',// 'canoniek' | 'tenach' | 'chronologisch' | 'auteur' | 'lengte'
+        versnummers: 'aan',      // 'aan' | 'uit'
     },
 
     state: {},
@@ -29,6 +31,7 @@ const Opties = {
 
         // Pas layout-class direct toe (geen re-render nodig — pure CSS)
         this.applyLayoutClass();
+        this.applyVerseNumbersClass();
 
         // Listen to changes
         document.querySelectorAll('[data-optie]').forEach(input => {
@@ -36,9 +39,16 @@ const Opties = {
                 if (input.checked) {
                     this.state[input.dataset.optie] = input.value;
                     this.save();
-                    if (input.dataset.optie === 'kolomLayout') {
-                        // Layout is puur CSS-toggle — geen re-render
+                    const optie = input.dataset.optie;
+                    if (optie === 'kolomLayout') {
                         this.applyLayoutClass();
+                    } else if (optie === 'versnummers') {
+                        // Pure CSS-toggle — geen re-render
+                        this.applyVerseNumbersClass();
+                    } else if (optie === 'boekvolgorde') {
+                        // Sidebar + topnav opnieuw renderen, geen hoofdstuk-rerender
+                        if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
+                        if (typeof Navigation !== 'undefined' && Navigation.renderBookNav) Navigation.renderBookNav();
                     } else {
                         this.applyToCurrentChapter();
                     }
@@ -53,6 +63,11 @@ const Opties = {
         content.classList.remove('layout-naast', 'layout-eronder');
         const mode = this.state.kolomLayout === 'eronder' ? 'eronder' : 'naast';
         content.classList.add('layout-' + mode);
+    },
+
+    applyVerseNumbersClass() {
+        // Toggle een class op <body> zodat CSS de versnummers kan verbergen.
+        document.body.classList.toggle('hide-verse-numbers', this.state.versnummers === 'uit');
     },
 
     save() {
