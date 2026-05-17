@@ -3784,6 +3784,46 @@
       "nieuw": "losprijs / losprijzen",
       "toelichting": "SV-gebruik: 'rantsoen' = ransom/afkoopsom (Hebr. kofer). Modern Nederlands kent 'rantsoen' enkel als voedselportie. Consistent met V242 (lossing → losprijs).",
       "regex": "\\b[Rr]antsoenen?\\b"
+    },
+    {
+      "id": "V410",
+      "categorie": "Verouderde woorden",
+      "oud": "var / varre / varren",
+      "nieuw": "stier / stieren",
+      "toelichting": "Verouderd voor jonge offerstier (Hebr. par) — modern Nederlands kent dit woord niet meer. 'Stier' dekt de meeste contexten; voor lev-offer-onderscheid kan contextueel 'jonge stier' worden gebruikt.",
+      "regex": "\\b[Vv]ar(re[nn]?|s)?\\b"
+    },
+    {
+      "id": "V411",
+      "categorie": "Naamvallen",
+      "oud": "Mijn is/zijn/was/waren (predicaat-bezit)",
+      "nieuw": "van Mij is/zijn/was/waren",
+      "toelichting": "Verouderd predicatief bezittelijk voornaamwoord — modern Nederlands gebruikt 'van Mij' in deze positie. 'Mijn [zelfstandig naamwoord]' (attributief) blijft ongewijzigd.",
+      "regex": "\\b[Mm]ijn (is|zijn|was|waren)\\b"
+    },
+    {
+      "id": "V412",
+      "categorie": "Verouderde woorden",
+      "oud": "henenwerpen / henenwerpt / henenwerpde",
+      "nieuw": "wegwerpen / wegwerpt / wegwerpte",
+      "toelichting": "Verouderde samenstelling 'henen-' = 'weg-' (henenvliegen → wegvliegen, henengaan → weggaan). Specifiek voor 'werpen' hier; algemener 'henen-' kan apart aangepakt worden.",
+      "regex": "\\b[Hh]enenwerp(en|t|de|den)?\\b"
+    },
+    {
+      "id": "V413",
+      "categorie": "Verouderde woorden",
+      "oud": "godvergetenden",
+      "nieuw": "godvergeters",
+      "toelichting": "Verouderde substantiverende deelwoordvorm — modern Nederlands gebruikt 'godvergeters' (zelfstandig naamwoord).",
+      "regex": "\\b[Gg]odvergetenden\\b"
+    },
+    {
+      "id": "V414",
+      "categorie": "Verouderde woorden",
+      "oud": "gans (bijwoord/adjectief = geheel)",
+      "nieuw": "geheel",
+      "toelichting": "Verouderde adverbiale/adjectivische vorm van 'geheel' (Hebr. kol). 'Gans verteerd' → 'geheel verteerd', 'gans Israel' → 'geheel Israel'. Niet te verwarren met 'gans' (dier) — komt in onze tekst niet voor.",
+      "regex": "\\b[Gg]ans\\b"
     }
   ]
 }

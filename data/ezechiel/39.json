@@ -2036,7 +2036,7 @@
       "number": 18,
       "textSV1888": "Het vlees der helden zult gij eten, en het bloed van de vorsten der aarde drinken; der rammen, der lammeren, en bokken, en varren, die altemaal gemesten van Basan zijn.",
       "text1637": "Het vleesch der Helden sullet ghy eten, ende het bloet der Vorsten der aerde drincken: [35] der rammen, der lammeren, ende bocken, [ende] varren, die altemael [36] gemeste van Basan zijn.",
-      "text2026": "Het vlees van de helden zult u eten, en het bloed van de vorsten van de aarde drinken; van de rammen, van de lammeren, en bokken, en varren, die allemaal gemesten van Basan zijn.",
+      "text2026": "Het vlees van de helden zult u eten, en het bloed van de vorsten van de aarde drinken; van de rammen, van de lammeren, en bokken, en stieren, die allemaal gemesten van Basan zijn.",
       "marginNotes": [
         {
           "marker": "35",
@@ -2125,7 +2125,7 @@
           "morph": "HNcmsc/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Het vlees van de helden zult u eten, en het bloed van de vorsten van de aarde drinken;<sup class=\"note-marker\" data-note=\"35\">35</sup> van de rammen, van de lammeren, en bokken, en varren, die allemaal<sup class=\"note-marker\" data-note=\"36\">36</sup> gemesten van Basan zijn.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Het vlees van de helden zult u eten, en het bloed van de vorsten van de aarde drinken;<sup class=\"note-marker\" data-note=\"35\">35</sup> van de rammen, van de lammeren, en bokken, en stieren, die allemaal<sup class=\"note-marker\" data-note=\"36\">36</sup> gemesten van Basan zijn.</i></span>",
       "textSV1888_html": "Het vlees der helden zult gij eten, en het bloed van de vorsten der aarde drinken;<sup class=\"note-marker\" data-note=\"35\">35</sup> der rammen, der lammeren, en bokken, en varren, die altemaal<sup class=\"note-marker\" data-note=\"36\">36</sup> gemesten van Basan zijn.",
       "text1637_html": "Het vleesch der Helden sullet ghy eten, ende het bloet der Vorsten der aerde drincken: <sup class=\"note-marker\" data-note=\"35\">35</sup> der rammen, der lammeren, ende bocken, [ende] varren, die altemael <sup class=\"note-marker\" data-note=\"36\">36</sup> gemeste van Basan zijn.",
       "phraseDiff": [
@@ -2158,6 +2158,11 @@
           "old": "altemaal",
           "new": "allemaal",
           "principe": "V21"
+        },
+        {
+          "old": "var/varre/varren",
+          "new": "stier/stieren",
+          "principe": "V410"
         }
       ]
     },
