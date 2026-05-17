@@ -3720,6 +3720,62 @@
       "nieuw": "zeg",
       "toelichting": "Conjunctief van 'zeggen' (1e pers. enk.) — modern Nederlands gebruikt enkel de indicatief 'zeg' (1e pers. tegenwoordige tijd). 'Wij zeggen' / 'zij zeggen' (3e pers. mv.) blijft ongewijzigd.",
       "regex": "\\b[Zz]egge\\b"
+    },
+    {
+      "id": "V402",
+      "categorie": "Naamvallen",
+      "oud": "[zelfstandig naamwoord] Gods (verbogen genitief)",
+      "nieuw": "[zelfstandig naamwoord] van God",
+      "toelichting": "Verouderde verbogen genitief van God — 'huis Gods' → 'huis van God', 'kracht Gods' → 'kracht van God', etc. Allowlist met ~85 kerkelijke kernzelfstandige naamwoorden om false-positives op preposities/possessieven (van/in/uws/des Gods) te vermijden.",
+      "regex": "\\b(man|huis|ark|kinderen|kind|genade|kracht|volk|heerlijkheid|kerk|stad|naam|woord|hand|ogen|oog|wet|raad|gunst|wijsheid|geest|oordeel|oordelen|vrede|vrees|vreze|troon|dienst|wil|dag|dagen|dochter|dochters|zoon|zonen|knecht|knechten|koninkrijk|koning|profeet|profeten|engel|engelen|hart|gerechtigheid|recht|rechtvaardigheid|gebod|geboden|hulp|eer|glorie|belofte|beloften|mond|werk|werken|dienaar|dienaren|getuige|getuigen|openbaring|gezicht|gezichten|droom|vinger|lof|prijs|troost|vriend|vrienden|gemeente|leven|schepping|beeld|rechterhand|liefde|toorn|tempel|kennis|mens|aangezicht|berg|gave|woorden|arm|armen|glans|wonderen|majesteit|daden|daad|volken|altaar|stem|rust) Gods\\b"
+    },
+    {
+      "id": "V403",
+      "categorie": "Naamvallen",
+      "oud": "Allerhoogsten (verbogen)",
+      "nieuw": "Allerhoogste",
+      "toelichting": "Mannelijk-acc verbogen vorm van 'Allerhoogste' (Hebr. Eljon) — Goddelijke naam. Modern Nederlands kent geen -en uitgang in deze positie.",
+      "regex": "\\b[Aa]llerhoogsten\\b"
+    },
+    {
+      "id": "V404",
+      "categorie": "Verouderde woorden",
+      "oud": "Hoog Vertrek",
+      "nieuw": "Vesting",
+      "toelichting": "SV-uitdrukking voor 'onneembare hoogte / veilige verblijfplaats' (Hebr. misgab) — moderne metafoor voor God als bescherming is 'vesting' of 'burcht'. Alleen samenstelling 'Hoog Vertrek' wordt vervangen; los 'vertrek' (= kamer/departure) blijft.",
+      "regex": "\\b[Hh]oog [Vv]ertrek\\b"
+    },
+    {
+      "id": "V405",
+      "categorie": "Spelling",
+      "oud": "wagenen (meervoud)",
+      "nieuw": "wagens",
+      "toelichting": "Verouderde meervoudsvorm van 'wagen' — modern Nederlands gebruikt 'wagens' (strijdwagens, oorlogswagens, etc.).",
+      "regex": "\\b[Ww]agenen\\b"
+    },
+    {
+      "id": "V406",
+      "categorie": "Naamvallen",
+      "oud": "Godes (verbogen genitief)",
+      "nieuw": "van God",
+      "toelichting": "Verouderde genitief van God (parallel aan 'Gods'). 'is/zijn Godes' → 'is/zijn van God'; '[nw] Godes' → '[nw] van God' (zelfde allowlist als V402).",
+      "regex": "\\b(is|zijn|ben|bent|was|waren|[a-z]+) Godes\\b"
+    },
+    {
+      "id": "V407",
+      "categorie": "Verouderde woorden",
+      "oud": "blijde",
+      "nieuw": "blij",
+      "toelichting": "Verouderde verbogen vorm van adjectief 'blij' — modern Nederlands gebruikt enkel 'blij'/'blije'. 'Blijde Boodschap' blijft contextueel mogelijk; auto-conversie van adjectief-positie.",
+      "regex": "\\b[Bb]lijde\\b"
+    },
+    {
+      "id": "V408",
+      "categorie": "Verouderde woorden",
+      "oud": "slechten",
+      "nieuw": "eenvoudigen",
+      "toelichting": "Verouderd voor 'eenvoudige mensen' (Hebr. petajim — onnozelen, naïeven). Modern 'slecht' betekent kwaad/laag, dus letterlijke vertaling misleidt. 'Eenvoudigen' behoudt de bedoeling.",
+      "regex": "\\b[Ss]lechten\\b"
     }
   ]
 }
