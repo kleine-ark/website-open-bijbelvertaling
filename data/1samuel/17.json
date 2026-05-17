@@ -891,7 +891,7 @@
       "number": 10,
       "textSV1888": "Verder zeide de Filistijn: Ik heb heden de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij te zamen strijden!",
       "text1637": "[11] Voorder seyde de Philistijn, [12] Ick hebbe heden de slachordens Israëls gehoont, [seggende], Geeft my eenen man, dat wy t’ samen strijden.",
-      "text2026": "Verder zei de Filistijn: Ik heb heden de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij te zamen strijden!",
+      "text2026": "Verder zei de Filistijn: Ik heb heden de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij samen strijden!",
       "marginNotes": [
         {
           "marker": "11",
@@ -980,7 +980,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Verder zei de Filistijn: <span class=\"direct-speech\"><i>Ik heb heden de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij te zamen strijden!</i></span>",
+      "text2026_html": "Verder zei de Filistijn: <span class=\"direct-speech\"><i>Ik heb heden de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij samen strijden!</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"11\">11</sup> Verder zeide de Filistijn:<sup class=\"note-marker\" data-note=\"12\">12</sup> Ik heb heden de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij te zamen strijden!",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"11\">11</sup> Voorder seyde de Philistijn, <sup class=\"note-marker\" data-note=\"12\">12</sup> Ick hebbe heden de slachordens Israëls gehoont, [seggende], Geeft my eenen man, dat wy t’ samen strijden.",
       "phraseDiff": [
@@ -988,6 +988,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "te zamen",
+          "new": "(zie principe)",
+          "principe": "V374"
         }
       ]
     },

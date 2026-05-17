@@ -243,7 +243,7 @@
       "number": 4,
       "textSV1888": "Zij doen de nooddruftigen wijken van den weg; te zamen versteken zich de ellendigen des lands.",
       "text1637": "Sy doen de nootdurftigen [10] wijcken vanden wech: t'samen [b] versteken sich de elendige des lants.",
-      "text2026": "Zij doen de nooddruftigen wijken van de weg; te zamen versteken zich de ellendigen van het land.",
+      "text2026": "Zij doen de nooddruftigen wijken van de weg; samen versteken zich de ellendigen van het land.",
       "marginNotes": [
         {
           "marker": "10",
@@ -310,6 +310,11 @@
           "old": "des lands.",
           "new": "van het land.",
           "principe": "N3"
+        },
+        {
+          "old": "te zamen",
+          "new": "(zie principe)",
+          "principe": "V374"
         }
       ]
     },
@@ -1365,7 +1370,7 @@
       "number": 17,
       "textSV1888": "Want de morgenstond is hun te zamen de schaduw des doods; als men hen kent, zijn zij in de strikken van des doods schaduw.",
       "text1637": "Want de morgenstont is [45] hen t'samen [46] de schaduwe des doots: alsmense kent, zijnse [in] de [47] schricken van des doots schaduwe.",
-      "text2026": "Want de morgenstond is hun te zamen de schaduw van de dood; als men hen kent, zijn zij in de strikken van de dood schaduw.",
+      "text2026": "Want de morgenstond is hun samen de schaduw van de dood; als men hen kent, zijn zij in de strikken van de dood schaduw.",
       "marginNotes": [
         {
           "marker": "45",
@@ -1436,7 +1441,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want de morgenstond is<sup class=\"note-marker\" data-note=\"45\">45</sup> hun te zamen de schaduw van de dood; als men hen kent,<sup class=\"note-marker\" data-note=\"46\">46</sup> zijn zij in de strikken van de<sup class=\"note-marker\" data-note=\"47\">47</sup> dood schaduw.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want de morgenstond is<sup class=\"note-marker\" data-note=\"45\">45</sup> hun samen de schaduw van de dood; als men hen kent,<sup class=\"note-marker\" data-note=\"46\">46</sup> zijn zij in de strikken van de<sup class=\"note-marker\" data-note=\"47\">47</sup> dood schaduw.</i></span>",
       "textSV1888_html": "Want de morgenstond is<sup class=\"note-marker\" data-note=\"45\">45</sup> hun te zamen de schaduw des doods; als men hen kent,<sup class=\"note-marker\" data-note=\"46\">46</sup> zijn zij in de strikken<sup class=\"note-marker\" data-note=\"47\">47</sup> van des doods schaduw.",
       "text1637_html": "Want de morgenstont is <sup class=\"note-marker\" data-note=\"45\">45</sup> hen t'samen <sup class=\"note-marker\" data-note=\"46\">46</sup> de schaduwe des doots: alsmense kent, zijnse [in] de <sup class=\"note-marker\" data-note=\"47\">47</sup> schricken van des doots schaduwe.",
       "phraseDiff": [
@@ -1449,6 +1454,11 @@
           "old": "des doods",
           "new": "de dood",
           "principe": "N3"
+        },
+        {
+          "old": "te zamen",
+          "new": "(zie principe)",
+          "principe": "V374"
         }
       ]
     },
