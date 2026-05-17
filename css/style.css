@@ -1258,12 +1258,19 @@ body.show-chapter-intro #chapter-intro { display: block !important; }
     position: relative;
 }
 
-/* Optie: versnummers verbergen — opacity in plaats van display:none zodat de status-balk en klik-handlers blijven werken */
+/* Optie: versnummers verbergen — color transparent + visibility hidden zodat de status-balk en klik-handlers blijven werken.
+   !important nodig omdat #content.reading-mode .verse-num een specifieker selector heeft. */
 body.hide-verse-numbers .verse-num {
-    color: transparent;
+    color: transparent !important;
+    visibility: hidden;
 }
 body.hide-verse-numbers .verse-num:hover {
-    color: var(--brown);
+    color: var(--brown) !important;
+    visibility: visible;
+}
+/* Status-streep (::after) blijft zichtbaar — handig voor de status-klik */
+body.hide-verse-numbers .verse-num::after {
+    visibility: visible;
 }
 
 /* Status indicator */
