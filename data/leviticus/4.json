@@ -945,7 +945,7 @@
       "number": 8,
       "textSV1888": "Verder, al het vet van den var des zondoffers zal hij daarvan opnemen; het vet bedekkende het ingewand, en al het vet, dat aan het ingewand is;",
       "text1637": "Voorder, al het vet des varren des sondoffers sal hy daer van opnemen: [c] het vet bedeckende het ingewant, ende al het vet, dat aen het ingewant is;",
-      "text2026": "Verder, al het vet van de var van het zondoffer zal hij daarvan opnemen; het vet bedekkende het ingewand, en al het vet, dat aan het ingewand is;",
+      "text2026": "Verder, al het vet van de var van het zondoffer zal hij daarvan opnemen; het vet bedekkende het binnenste, en al het vet, dat aan het binnenste is;",
       "marginNotes": [
         {
           "marker": "c",
@@ -1047,7 +1047,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Verder, al het vet van de var van het zondoffer zal hij daarvan opnemen;<sup class=\"note-marker\" data-note=\"c\">c</sup> het vet bedekkende het ingewand, en al het vet, dat aan het ingewand is;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Verder, al het vet van de var van het zondoffer zal hij daarvan opnemen;<sup class=\"note-marker\" data-note=\"c\">c</sup> het vet bedekkende het binnenste, en al het vet, dat aan het binnenste is;</i></span>",
       "textSV1888_html": "Verder, al het vet van den var des zondoffers zal hij daarvan opnemen;<sup class=\"note-marker\" data-note=\"c\">c</sup> het vet bedekkende het ingewand, en al het vet, dat aan het ingewand is;",
       "text1637_html": "Voorder, al het vet des varren des sondoffers sal hy daer van opnemen: <sup class=\"note-marker\" data-note=\"c\">c</sup> het vet bedeckende het ingewant, ende al het vet, dat aen het ingewant is;",
       "phraseDiff": [
@@ -1060,6 +1060,11 @@
           "old": "des zondoffers",
           "new": "van het zondoffer",
           "principe": "N3"
+        },
+        {
+          "old": "ingewand",
+          "new": "binnenste",
+          "principe": "V383"
         }
       ]
     },
@@ -1255,7 +1260,7 @@
       "number": 11,
       "textSV1888": "Maar de huid van dien var, en al zijn vlees, met zijn hoofd en met zijn schenkelen, en zijn ingewand, en zijn mest;",
       "text1637": "Maer de [e] huyt van dien varre, ende al sijn vleesch, met sijn hooft, ende met sijne schenckelen, ende sijn ingewant, ende sijn mist;",
-      "text2026": "Maar de huid van die var, en al zijn vlees, met zijn hoofd en met zijn schenkelen, en zijn ingewand, en zijn mest;",
+      "text2026": "Maar de huid van die var, en al zijn vlees, met zijn hoofd en met zijn schenkelen, en zijn binnenste, en zijn mest;",
       "marginNotes": [
         {
           "marker": "e",
@@ -1327,7 +1332,7 @@
           "morph": "HC/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar de<sup class=\"note-marker\" data-note=\"e\">e</sup> huid van die var, en al zijn vlees, met zijn hoofd en met zijn schenkelen, en zijn ingewand, en zijn mest;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar de<sup class=\"note-marker\" data-note=\"e\">e</sup> huid van die var, en al zijn vlees, met zijn hoofd en met zijn schenkelen, en zijn binnenste, en zijn mest;</i></span>",
       "textSV1888_html": "Maar de<sup class=\"note-marker\" data-note=\"e\">e</sup> huid van dien var, en al zijn vlees, met zijn hoofd en met zijn schenkelen, en zijn ingewand, en zijn mest;",
       "text1637_html": "Maer de <sup class=\"note-marker\" data-note=\"e\">e</sup> huyt van dien varre, ende al sijn vleesch, met sijn hooft, ende met sijne schenckelen, ende sijn ingewant, ende sijn mist;",
       "phraseDiff": [
@@ -1335,6 +1340,11 @@
           "old": "dien",
           "new": "die",
           "principe": "N4"
+        },
+        {
+          "old": "ingewand",
+          "new": "binnenste",
+          "principe": "V383"
         }
       ]
     },
