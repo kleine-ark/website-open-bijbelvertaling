@@ -124,7 +124,7 @@
       "phraseDiff": [
         {
           "old": "heir",
-          "new": "legermacht",
+          "new": "leger",
           "principe": "O2"
         }
       ]
@@ -599,13 +599,13 @@
       "text1637_html": "Ende de schacht sijner spiesse was als een wevers boom, ende het lemmer sijner spiesse was van ses hondert sikelen ysers: ende de schilt-drager ginck voor sijn aengesichte.",
       "phraseDiff": [
         {
-          "old": "zijner",
-          "new": "van zijn",
+          "old": "zijner spies",
+          "new": "van zijn speer",
           "principe": "N7"
         },
         {
-          "old": "zijner",
-          "new": "van zijn",
+          "old": "zijner spies",
+          "new": "van zijn speer",
           "principe": "N7"
         }
       ]
@@ -991,7 +991,7 @@
         },
         {
           "old": "te zamen",
-          "new": "(zie principe)",
+          "new": "samen",
           "principe": "V374"
         }
       ]
@@ -1064,18 +1064,13 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -1205,6 +1200,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "wiens",
+          "new": "van wie de",
+          "principe": "V312"
         }
       ]
     },
@@ -2040,7 +2040,7 @@
         },
         {
           "old": "heir",
-          "new": "legermacht",
+          "new": "leger",
           "principe": "O2"
         }
       ]
@@ -2336,7 +2336,7 @@
       "phraseDiff": [
         {
           "old": "heir der",
-          "new": "legermacht van de",
+          "new": "leger van de",
           "principe": "O2"
         }
       ]
@@ -2789,17 +2789,12 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N4"
-        },
-        {
-          "old": "den",
-          "new": "de",
-          "principe": "N4"
-        },
-        {
-          "old": "levenden [nw]",
-          "new": "(zie principe)",
           "principe": "V390"
+        },
+        {
+          "old": "den levenden",
+          "new": "de levende",
+          "principe": "N1"
         }
       ]
     },
@@ -3911,12 +3906,12 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N1"
+          "principe": "V390"
         },
         {
           "old": "den",
           "new": "de",
-          "principe": "N1"
+          "principe": "V390"
         },
         {
           "old": "alzo",
@@ -3929,14 +3924,9 @@
           "principe": null
         },
         {
-          "old": "den",
-          "new": "de",
+          "old": "den levenden",
+          "new": "de levende",
           "principe": "N1"
-        },
-        {
-          "old": "levenden [nw]",
-          "new": "(zie principe)",
-          "principe": "V390"
         }
       ]
     },
@@ -5032,6 +5022,11 @@
           "principe": "A1"
         },
         {
+          "old": "spies,",
+          "new": "speer,",
+          "principe": "V326"
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N4"
@@ -5235,13 +5230,8 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -5347,13 +5337,18 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
+        },
+        {
+          "old": "spies",
+          "new": "speer",
+          "principe": "V326"
         },
         {
           "old": "krijg",
@@ -5369,11 +5364,6 @@
           "old": "ulieden",
           "new": "u",
           "principe": "A2"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -6313,9 +6303,9 @@
           "principe": "W1"
         },
         {
-          "old": "den krijgsoverste:",
-          "new": "de oorlogsoverste:",
-          "principe": "N1"
+          "old": "den krijgsoverste: Wiens",
+          "new": "de oorlogsoverste: Van wie de",
+          "principe": "V312"
         },
         {
           "old": "zeide:",
@@ -6384,6 +6374,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "wiens",
+          "new": "van wie de",
+          "principe": "V312"
         }
       ]
     },
@@ -6570,6 +6565,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Wiens",
+          "new": "Van wie de",
+          "principe": "V312"
         },
         {
           "old": "zijt gij,",

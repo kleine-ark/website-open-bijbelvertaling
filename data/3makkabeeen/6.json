@@ -178,8 +178,13 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -243,9 +248,24 @@
           "principe": "A1"
         },
         {
-          "old": "verdelg*",
-          "new": "(zie principe)",
+          "old": "stoutheid,",
+          "new": "onverschrokkenheid,",
+          "principe": "V355"
+        },
+        {
+          "old": "hovaardige",
+          "new": "hoogmoedige",
+          "principe": "V334"
+        },
+        {
+          "old": "verdelgd,",
+          "new": "vernietigd,",
           "principe": "V375"
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -341,19 +361,34 @@
           "principe": "A1"
         },
         {
+          "old": "spies",
+          "new": "speer",
+          "principe": "V326"
+        },
+        {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
+          "old": "stoutheid",
+          "new": "onverschrokkenheid",
+          "principe": "V355"
+        },
+        {
           "old": "gij, Here,",
-          "new": "u, Heere,",
+          "new": "U, Heere,",
           "principe": "A1"
         },
         {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -483,7 +518,7 @@
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         }
       ],
@@ -667,7 +702,7 @@
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         }
       ],
@@ -804,23 +839,28 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "hetwelk",
           "new": "dat",
           "principe": "N6"
+        },
+        {
+          "old": "smaadheid",
+          "new": "smaad",
+          "principe": "V349"
         }
       ],
       "grondtekst": [
@@ -906,13 +946,18 @@
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "Here,",
           "new": "Heere,",
           "principe": "V280"
+        },
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -988,8 +1033,8 @@
           "principe": null
         },
         {
-          "old": "gij",
-          "new": "u",
+          "old": "gij uw",
+          "new": "U Uw",
           "principe": "A1"
         }
       ],
@@ -1082,12 +1127,12 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "Here, gij",
-          "new": "Heere, u",
+          "new": "Heere, U",
           "principe": "A1"
         }
       ],
@@ -1262,6 +1307,13 @@
           "woord": "αυτος",
           "lemma": "αὐτός"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
+        }
       ]
     },
     {
@@ -1279,7 +1331,7 @@
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         }
       ],
@@ -1400,7 +1452,7 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
@@ -1410,7 +1462,7 @@
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
@@ -1419,14 +1471,9 @@
           "principe": "V280"
         },
         {
-          "old": "gij",
-          "new": "u",
+          "old": "gij uw",
+          "new": "U Uw",
           "principe": "A1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ],
       "grondtekst": [
@@ -1498,12 +1545,12 @@
       "phraseDiff": [
         {
           "old": "gelijk gij",
-          "new": "zoals u",
+          "new": "zoals U",
           "principe": "A1"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
@@ -1724,18 +1771,13 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "schreien",
           "new": "huilen",
           "principe": "W11"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ],
       "grondtekst": [
@@ -1943,6 +1985,11 @@
           "old": "des konings",
           "new": "van de koning",
           "principe": "N3"
+        },
+        {
+          "old": "stoutmoedigheid.",
+          "new": "onverschrokkenheid.",
+          "principe": "V355"
         }
       ],
       "grondtekst": [
@@ -2398,6 +2445,11 @@
           "old": "dezen,",
           "new": "deze,",
           "principe": "N4"
+        },
+        {
+          "old": "sterkten",
+          "new": "vestingen",
+          "principe": "V342"
         }
       ],
       "grondtekst": [
@@ -3303,6 +3355,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "stoutheid",
+          "new": "onverschrokkenheid",
+          "principe": "V355"
         }
       ],
       "grondtekst": [
@@ -3844,8 +3901,8 @@
       ],
       "phraseDiff": [
         {
-          "old": "te zamen",
-          "new": "(zie principe)",
+          "old": "tezamen",
+          "new": "samen",
           "principe": "V374"
         }
       ]

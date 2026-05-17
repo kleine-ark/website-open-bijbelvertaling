@@ -277,7 +277,14 @@
       ],
       "text2026_html": "Tegen hem trok op<sup class=\"note-marker\" data-note=\"4\">4</sup> Salmaneser, koning van Assyrië; en Hosea werd zijn knecht, dat hij hem<sup class=\"note-marker\" data-note=\"5\">5</sup> een geschenk gaf.",
       "textSV1888_html": "Tegen hem toog op<sup class=\"note-marker\" data-note=\"4\">4</sup> Salmaneser, koning van Assyrië; en Hosea werd zijn knecht, dat hij hem<sup class=\"note-marker\" data-note=\"5\">5</sup> een geschenk gaf.",
-      "text1637_html": "Tegen hem tooch op <sup class=\"note-marker\" data-note=\"4\">4</sup> Salmaneser Coninck van Assyrien: ende Hosea wert sijn knecht, dat hy hem <sup class=\"note-marker\" data-note=\"5\">5</sup> een geschenck gaf."
+      "text1637_html": "Tegen hem tooch op <sup class=\"note-marker\" data-note=\"4\">4</sup> Salmaneser Coninck van Assyrien: ende Hosea wert sijn knecht, dat hy hem <sup class=\"note-marker\" data-note=\"5\">5</sup> een geschenck gaf.",
+      "phraseDiff": [
+        {
+          "old": "toog",
+          "new": "trok",
+          "principe": "V353"
+        }
+      ]
     },
     {
       "number": 4,
@@ -526,14 +533,14 @@
       "text1637_html": "Want <sup class=\"note-marker\" data-note=\"a\">a</sup> de Coninck van Assyrien tooch op in het gantsche lant: ja hy quam op nae Samaria, ende hy belegerdese drie jaren.",
       "phraseDiff": [
         {
-          "old": "ganse",
-          "new": "gehele",
-          "principe": "V3"
+          "old": "toog",
+          "new": "trok",
+          "principe": "V353"
         },
         {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
+          "old": "ganse",
+          "new": "hele",
+          "principe": "V3"
         }
       ]
     },
@@ -1091,6 +1098,11 @@
           "old": "den",
           "new": "de",
           "principe": "G1"
+        },
+        {
+          "old": "vaste",
+          "new": "versterkte",
+          "principe": "V308"
         }
       ]
     },
@@ -1373,6 +1385,11 @@
       "textSV1888_html": "En zij hadden de<sup class=\"note-marker\" data-note=\"21\">21</sup> drekgoden gediend, waarvan de HEERE tot hen gezegd<sup class=\"note-marker\" data-note=\"d\">d</sup> had: Gij zult deze zaak niet doen.",
       "text1637_html": "Ende sy hadden den <sup class=\"note-marker\" data-note=\"21\">21</sup> Dreck-goden gedient; daer vande HEERE tot hen geseyt hadde; <sup class=\"note-marker\" data-note=\"d\">d</sup> Ghy en sult dese sake niet doen.",
       "phraseDiff": [
+        {
+          "old": "drekgoden",
+          "new": "afgoden",
+          "principe": null
+        },
         {
           "old": "de HEERE",
           "new": "JAHWEH",
@@ -2015,7 +2032,7 @@
         },
         {
           "old": "heir des hemels,",
-          "new": "legermacht van de hemel,",
+          "new": "leger van de hemel,",
           "principe": "O2"
         }
       ]
@@ -2459,18 +2476,13 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "der",
           "new": "van de",
           "principe": "N2"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },

@@ -676,7 +676,14 @@
       ],
       "text2026_html": "<span class=\"direct-speech\"><i>En Hij<sup class=\"note-marker\" data-note=\"17\">17</sup> openbaart het voor hun oor ter tucht, en<sup class=\"note-marker\" data-note=\"18\">18</sup> zegt, dat zij zich van de ongerechtigheid bekeren zouden.</i></span>",
       "textSV1888_html": "En Hij<sup class=\"note-marker\" data-note=\"17\">17</sup> openbaart het voor hunlieder oor ter tucht, en<sup class=\"note-marker\" data-note=\"18\">18</sup> zegt, dat zij zich van de ongerechtigheid bekeren zouden.",
-      "text1637_html": "Ende hy <sup class=\"note-marker\" data-note=\"17\">17</sup> openbaert'et [voor] haer lieder oore ter tucht; ende <sup class=\"note-marker\" data-note=\"18\">18</sup> seyt, datse hen van de ongerechticheyt bekeeren souden."
+      "text1637_html": "Ende hy <sup class=\"note-marker\" data-note=\"17\">17</sup> openbaert'et [voor] haer lieder oore ter tucht; ende <sup class=\"note-marker\" data-note=\"18\">18</sup> seyt, datse hen van de ongerechticheyt bekeeren souden.",
+      "phraseDiff": [
+        {
+          "old": "hunlieder",
+          "new": "hun",
+          "principe": "V329"
+        }
+      ]
     },
     {
       "number": 11,
@@ -964,7 +971,14 @@
       ],
       "text2026_html": "<sup class=\"note-marker\" data-note=\"27\">27</sup><sup class=\"note-marker\" data-note=\"d\">d</sup><span class=\"direct-speech\"><i> Hun ziel zal in de jeugd sterven, en hun leven onder de<sup class=\"note-marker\" data-note=\"28\">28</sup> schandjongens.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"27\">27</sup><sup class=\"note-marker\" data-note=\"d\">d</sup> Hun ziel zal in de jonkheid sterven, en hun leven onder de<sup class=\"note-marker\" data-note=\"28\">28</sup> schandjongens.",
-      "text1637_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> <sup class=\"note-marker\" data-note=\"27\">27</sup> Hare ziele sal in der jonckheyt sterven; ende haer leven onder de <sup class=\"note-marker\" data-note=\"28\">28</sup> schant-jongers."
+      "text1637_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> <sup class=\"note-marker\" data-note=\"27\">27</sup> Hare ziele sal in der jonckheyt sterven; ende haer leven onder de <sup class=\"note-marker\" data-note=\"28\">28</sup> schant-jongers.",
+      "phraseDiff": [
+        {
+          "old": "jonkheid",
+          "new": "jeugd",
+          "principe": "V344"
+        }
+      ]
     },
     {
       "number": 15,
@@ -1027,6 +1041,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "hunlieder",
+          "new": "hun",
+          "principe": "V329"
         }
       ]
     },
@@ -1326,9 +1345,9 @@
           "principe": "V77"
         },
         {
-          "old": "rantsoen(en)",
-          "new": "losprijs/losprijzen",
-          "principe": "V409"
+          "old": "rantsoen",
+          "new": "losprijs",
+          "principe": null
         }
       ]
     },

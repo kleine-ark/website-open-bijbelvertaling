@@ -716,7 +716,7 @@
       "phraseDiff": [
         {
           "old": "Here, gij",
-          "new": "JAHWEH, u",
+          "new": "JAHWEH, U",
           "principe": "A1"
         },
         {
@@ -728,6 +728,11 @@
           "old": "mijner",
           "new": "van mijn",
           "principe": "N7"
+        },
+        {
+          "old": "uw erve",
+          "new": "Uw erfenis",
+          "principe": "V368"
         },
         {
           "old": "der",
@@ -1454,14 +1459,14 @@
       "text2026_html": "En zij beiden gingen samen uit, naar haar gewoonte, en door het leger gegaan zijnde, gingen zij rondom dat dal heen, en klommen op de berg van de stad Bethulië, en kwamen aan haar poorten.",
       "phraseDiff": [
         {
+          "old": "tezamen",
+          "new": "samen",
+          "principe": "V374"
+        },
+        {
           "old": "der",
           "new": "van de",
           "principe": "N2"
-        },
-        {
-          "old": "te zamen",
-          "new": "(zie principe)",
-          "principe": "V374"
         }
       ],
       "grondtekst": [
@@ -2038,8 +2043,8 @@
       ],
       "phraseDiff": [
         {
-          "old": "te zamen",
-          "new": "(zie principe)",
+          "old": "tezamen",
+          "new": "samen",
           "principe": "V374"
         }
       ]
@@ -2822,8 +2827,13 @@
         },
         {
           "old": "gij,",
-          "new": "u,",
+          "new": "U,",
           "principe": "A1"
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
         }
       ],
       "grondtekst": null
@@ -2886,11 +2896,11 @@
         {
           "old": "Gods",
           "new": "van God",
-          "principe": null
+          "principe": "V402"
         },
         {
           "old": "der",
-          "new": "van de",
+          "new": "de",
           "principe": "N2"
         },
         {

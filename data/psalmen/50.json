@@ -639,8 +639,8 @@
       "text1637_html": "Ick sal uyt u huys geenen varre nemen; [noch] bocken uyt uwe koyen.",
       "phraseDiff": [
         {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
+          "old": "var",
+          "new": "stier",
           "principe": "V410"
         }
       ]
@@ -707,13 +707,13 @@
       "phraseDiff": [
         {
           "old": "des wouds",
-          "new": "van de woud",
+          "new": "van het woud",
           "principe": "N3"
         },
         {
-          "old": "des wouds is Mijn",
-          "new": "van het woud is van Mij",
-          "principe": "N3"
+          "old": "Mijn,",
+          "new": "van Mij,",
+          "principe": null
         }
       ]
     },
@@ -854,7 +854,14 @@
       ],
       "text2026_html": "<span class=\"god-speaks\"><i>Zo Mij hongerde, Ik zou het u niet zeggen; want<sup class=\"note-marker\" data-note=\"a\">a</sup> Van Mij is de wereld en haar<sup class=\"note-marker\" data-note=\"19\">19</sup> volheid.</i></span>",
       "textSV1888_html": "Zo Mij hongerde, Ik zou het u niet zeggen; want<sup class=\"note-marker\" data-note=\"a\">a</sup> Mijn is de wereld en haar<sup class=\"note-marker\" data-note=\"19\">19</sup> volheid.",
-      "text1637_html": "So my hongerde, ick en soude’t u niet seggen: want <sup class=\"note-marker\" data-note=\"a\">a</sup> mijne is de werelt ende hare <sup class=\"note-marker\" data-note=\"19\">19</sup> volheyt."
+      "text1637_html": "So my hongerde, ick en soude’t u niet seggen: want <sup class=\"note-marker\" data-note=\"a\">a</sup> mijne is de werelt ende hare <sup class=\"note-marker\" data-note=\"19\">19</sup> volheyt.",
+      "phraseDiff": [
+        {
+          "old": "Mijn",
+          "new": "van Mij",
+          "principe": "V411"
+        }
+      ]
     },
     {
       "number": 13,
@@ -1167,6 +1174,16 @@
           "old": "Dewijl gij",
           "new": "Omdat u",
           "principe": "V2"
+        },
+        {
+          "old": "kastijding",
+          "new": "vergelding",
+          "principe": "V341"
+        },
+        {
+          "old": "henenwerpt.",
+          "new": "wegwerpt.",
+          "principe": "V412"
         }
       ]
     },
@@ -1574,9 +1591,9 @@
       "text1637_html": "Verstaet dit doch, ghy godt-vergetende: op dat ick niet en <sup class=\"note-marker\" data-note=\"33\">33</sup> verscheure, ende niemant en redde.",
       "phraseDiff": [
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "gij godvergetenden!",
+          "new": "u godvergeters!",
+          "principe": "V413"
         }
       ]
     },

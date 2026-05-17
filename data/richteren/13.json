@@ -193,7 +193,14 @@
       ],
       "text2026_html": "En er was een man van<sup class=\"note-marker\" data-note=\"1\">1</sup> Zora, uit het geslacht van<sup class=\"note-marker\" data-note=\"2\">2</sup> een Daniet, van wie de naam was Manoach; en zijn huisvrouw was onvruchtbaar en baarde niet.",
       "textSV1888_html": "En er was een man van<sup class=\"note-marker\" data-note=\"1\">1</sup> Zora, uit het geslacht van<sup class=\"note-marker\" data-note=\"2\">2</sup> een Daniet, wiens naam was Manoach; en zijn huisvrouw was onvruchtbaar en baarde niet.",
-      "text1637_html": "Ende daer was een man van <sup class=\"note-marker\" data-note=\"1\">1</sup> Zora, uyt het geslachte eens <sup class=\"note-marker\" data-note=\"2\">2</sup> Daniters, wiens naem was Manoah: ende sijne huysvrouwe was onvruchtbaer, ende en baerde niet."
+      "text1637_html": "Ende daer was een man van <sup class=\"note-marker\" data-note=\"1\">1</sup> Zora, uyt het geslachte eens <sup class=\"note-marker\" data-note=\"2\">2</sup> Daniters, wiens naem was Manoah: ende sijne huysvrouwe was onvruchtbaer, ende en baerde niet.",
+      "phraseDiff": [
+        {
+          "old": "wiens",
+          "new": "van wie de",
+          "principe": "V312"
+        }
+      ]
     },
     {
       "number": 3,
@@ -580,6 +587,11 @@
           "principe": "A1"
         },
         {
+          "old": "wiens",
+          "new": "wie de",
+          "principe": "V312"
+        },
+        {
           "old": "der",
           "new": "van de",
           "principe": "N2"
@@ -738,6 +750,16 @@
       "textSV1888_html": "Toen kwam deze vrouw in, en sprak tot haar man, zeggende: Er kwam een<sup class=\"note-marker\" data-note=\"10\">10</sup> Man Gods tot mij, Wiens aangezicht was als het aangezicht van een Engel Gods, zeer<sup class=\"note-marker\" data-note=\"11\">11</sup> vreselijk; en ik vraagde Hem niet, van waar Hij was, en Zijn naam gaf Hij mij niet te kennen.",
       "text1637_html": "Doe quam dese vrouwe in, en<i>de</i> sprack tot haren man, seggende; Daer quam een <sup class=\"note-marker\" data-note=\"10\">10</sup> man Godts tot my, wiens aensicht was als het aensicht van een Engel Godes, seer <sup class=\"note-marker\" data-note=\"11\">11</sup> vreeslick: ende ick en vraechde hem niet, van waer hy was, ende sijnen name en gaf hy my niet te kennen.",
       "phraseDiff": [
+        {
+          "old": "Gods",
+          "new": "van God",
+          "principe": "V402"
+        },
+        {
+          "old": "Wiens",
+          "new": "Van wie de",
+          "principe": "V312"
+        },
         {
           "old": "Gods,",
           "new": "van God,",
@@ -1044,8 +1066,8 @@
           "principe": null
         },
         {
-          "old": "Dien Gij",
-          "new": "Die U",
+          "old": "Gods, Dien Gij",
+          "new": "van God, Die U",
           "principe": "N4"
         },
         {
@@ -1154,7 +1176,7 @@
         {
           "old": "Gods",
           "new": "van God",
-          "principe": null
+          "principe": "V402"
         },
         {
           "old": "wederom",
@@ -2724,7 +2746,7 @@
         },
         {
           "old": "zulks",
-          "new": "(zie principe)",
+          "new": "dat",
           "principe": "V400"
         }
       ]

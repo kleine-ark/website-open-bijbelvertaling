@@ -136,7 +136,7 @@
         {
           "old": "vreze Gods",
           "new": "vrees voor God",
-          "principe": "V225"
+          "principe": "V402"
         }
       ]
     },
@@ -198,6 +198,11 @@
         {
           "old": "zichzelven",
           "new": "zichzelf",
+          "principe": null
+        },
+        {
+          "old": "bevindt,",
+          "new": "vindt,",
           "principe": null
         }
       ]
@@ -340,7 +345,14 @@
         }
       ],
       "text2026_html": "Hij bedenkt onrecht op zijn bed; hij stelt zich op een weg, die niet goed is; het kwaad verwerpt hij niet.",
-      "text1637_html": "Hy bedenckt onrecht op sijn leger; hy stelt sich op eenen wech, die niet goet en is; het quaet en verwerpt hy niet."
+      "text1637_html": "Hy bedenckt onrecht op sijn leger; hy stelt sich op eenen wech, die niet goet en is; het quaet en verwerpt hy niet.",
+      "phraseDiff": [
+        {
+          "old": "leger;",
+          "new": "bed;",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 6,
@@ -491,9 +503,9 @@
       "text1637_html": "Uwe gerechticheyt is als de bergen <sup class=\"note-marker\" data-note=\"7\">7</sup> Godts, uwe oordeelen zijn een grooten <sup class=\"note-marker\" data-note=\"8\">8</sup> afgront: HEERE, ghy behoudt <sup class=\"note-marker\" data-note=\"9\">9</sup> menschen ende beesten.",
       "phraseDiff": [
         {
-          "old": "bergen Gods",
-          "new": "bergen van God",
-          "principe": "N3"
+          "old": "Gods,",
+          "new": "van God,",
+          "principe": null
         },
         {
           "old": "HEERE! Gij",
@@ -568,6 +580,11 @@
       "text1637_html": "Hoe dierbaer is uwe goedertierenheyt, o Godt! dies de menschen kinderen onder de <sup class=\"note-marker\" data-note=\"10\">10</sup> schaduwe uwer vleugelen toevlucht nemen.",
       "phraseDiff": [
         {
+          "old": "Dies",
+          "new": "Daarom dat",
+          "principe": "V333"
+        },
+        {
           "old": "Uwer",
           "new": "van Uw",
           "principe": "N7"
@@ -625,14 +642,19 @@
       "text1637_html": "Sy worden <sup class=\"note-marker\" data-note=\"11\">11</sup> droncken van de vet-ticheyt uwes huyes; ende ghy drencktse [uyt] de beke uwer wellusten.",
       "phraseDiff": [
         {
-          "old": "Uws huizes;",
-          "new": "Van uw huize;",
-          "principe": "V200"
+          "old": "vettigheid Uws huizes;",
+          "new": "overvloed van Uw huis;",
+          "principe": "V332"
         },
         {
-          "old": "Gij",
-          "new": "U",
+          "old": "Gij drenkt",
+          "new": "U laat",
           "principe": "A1"
+        },
+        {
+          "old": "",
+          "new": "drinken",
+          "principe": "N7"
         },
         {
           "old": "Uwer wellusten.",
@@ -835,13 +857,8 @@
       "text1637_html": "De voet der <sup class=\"note-marker\" data-note=\"16\">16</sup> hoovaerdigen en kome niet over my; ende de hant der godtloosen en doe my niet <sup class=\"note-marker\" data-note=\"17\">17</sup> omswerven.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
-        },
-        {
-          "old": "hovaardigen",
-          "new": "hoogmoedigen",
+          "old": "der hovaardigen",
+          "new": "van de hoogmoedigen",
           "principe": "V334"
         },
         {
@@ -919,7 +936,12 @@
         {
           "old": "der",
           "new": "van de",
-          "principe": "V66"
+          "principe": "V335"
+        },
+        {
+          "old": "nedergestoten,",
+          "new": "neergestoten,",
+          "principe": "V335"
         },
         {
           "old": "weder",

@@ -732,13 +732,8 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ],
       "grondtekst": [
@@ -1270,6 +1265,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "tegenspoed",
+          "new": "tegenslag",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -2105,6 +2105,11 @@
           "old": "scharen",
           "new": "menigten",
           "principe": "V234"
+        },
+        {
+          "old": "vergaderd",
+          "new": "verzameld",
+          "principe": "V318"
         }
       ],
       "grondtekst": [
@@ -2301,6 +2306,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "lagen",
+          "new": "hinderlagen",
+          "principe": "V343"
         },
         {
           "old": "verordineerd",
@@ -2731,6 +2741,11 @@
           "principe": "V1"
         },
         {
+          "old": "vergaderd",
+          "new": "verzameld",
+          "principe": "V318"
+        },
+        {
           "old": "zijnen,",
           "new": "zijn,",
           "principe": null
@@ -3072,6 +3087,11 @@
           "principe": "V41"
         },
         {
+          "old": "Gods",
+          "new": "van God",
+          "principe": "V402"
+        },
+        {
           "old": "weder",
           "new": "weer",
           "principe": "V66"
@@ -3348,12 +3368,12 @@
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "uwer",
-          "new": "van uw",
+          "new": "van Uw",
           "principe": "N7"
         }
       ],
@@ -3426,7 +3446,7 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
@@ -4006,6 +4026,13 @@
         {
           "woord": "υβριζω",
           "lemma": "ὑβρίζω"
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "smaadheid",
+          "new": "smaad",
+          "principe": "V349"
         }
       ]
     },

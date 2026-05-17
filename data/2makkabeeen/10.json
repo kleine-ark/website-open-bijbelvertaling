@@ -600,6 +600,11 @@
           "principe": "N2"
         },
         {
+          "old": "gedachtenis",
+          "new": "herinnering",
+          "principe": "V366"
+        },
+        {
           "old": "weinig tijds",
           "new": "korte tijd",
           "principe": "V300"
@@ -829,18 +834,13 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "der",
           "new": "van de",
           "principe": "N2"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ],
       "grondtekst": [
@@ -1450,6 +1450,11 @@
       "text2026_html": "En Gorgias, veldoverste geworden zijnde van die plaatsen, onderhield vreemd soldaten, en voerde steeds de oorlog tegen de Joden.",
       "phraseDiff": [
         {
+          "old": "krijgsvolk,",
+          "new": "soldaten,",
+          "principe": "V356"
+        },
+        {
           "old": "gedurig",
           "new": "steeds",
           "principe": null
@@ -1606,6 +1611,13 @@
           "woord": "επιχειρεω",
           "lemma": "ἐπιχειρέω"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "sterkten",
+          "new": "vestingen",
+          "principe": "V342"
+        }
       ]
     },
     {
@@ -1622,9 +1634,9 @@
           "principe": null
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "sterkten der",
+          "new": "vestingen van de",
+          "principe": "V342"
         }
       ],
       "grondtekst": [
@@ -2131,6 +2143,11 @@
           "principe": "V4"
         },
         {
+          "old": "vergaderde",
+          "new": "verzamelde",
+          "principe": "V318"
+        },
+        {
           "old": "des volks,",
           "new": "van het volk,",
           "principe": "N3"
@@ -2377,6 +2394,13 @@
           "woord": "δισμυριοι",
           "lemma": "δισμύριοι"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "sterkten",
+          "new": "vestingen",
+          "principe": "V342"
+        }
       ]
     },
     {
@@ -2494,6 +2518,18 @@
         {
           "woord": "ιουδαια",
           "lemma": "Ἰουδαία"
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "vergaderd",
+          "new": "verzameld",
+          "principe": "V318"
+        },
+        {
+          "old": "krijgsvolk,",
+          "new": "soldaten,",
+          "principe": "V356"
         }
       ]
     },
@@ -3265,6 +3301,13 @@
           "woord": "χαιρεας",
           "lemma": "Χαιρέας"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "sterkte,",
+          "new": "vesting,",
+          "principe": "V342"
+        }
       ]
     },
     {
@@ -3318,6 +3361,13 @@
         {
           "woord": "τεσσαρες",
           "lemma": "τέσσαρες"
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "sterkte",
+          "new": "vesting",
+          "principe": "V342"
         }
       ]
     },

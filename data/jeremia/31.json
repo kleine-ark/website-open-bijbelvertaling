@@ -943,13 +943,18 @@
           "principe": "V198"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "vergaderen",
+          "new": "verzamelen",
+          "principe": "V318"
         },
         {
-          "old": "te zamen",
-          "new": "(zie principe)",
+          "old": "der",
+          "new": "van de",
+          "principe": "V318"
+        },
+        {
+          "old": "te zamen;",
+          "new": "samen;",
           "principe": "V374"
         }
       ]
@@ -1231,9 +1236,9 @@
           "principe": "A1"
         },
         {
-          "old": "weder",
-          "new": "weer",
-          "principe": "V66"
+          "old": "weder vergaderen,",
+          "new": "weer verzamelen,",
+          "principe": "V318"
         }
       ]
     },
@@ -1649,14 +1654,14 @@
           "principe": "V79"
         },
         {
-          "old": "ouden",
-          "new": "oude",
+          "old": "ouden te zamen;",
+          "new": "oude samen;",
           "principe": "V260"
         },
         {
-          "old": "te zamen",
-          "new": "(zie principe)",
-          "principe": "V374"
+          "old": "hunlieder",
+          "new": "hun",
+          "principe": "V329"
         }
       ]
     },
@@ -2411,8 +2416,8 @@
           "principe": "O13"
         },
         {
-          "old": "mijner",
-          "new": "van mijn",
+          "old": "smaadheid mijner",
+          "new": "smaad van mijn",
           "principe": "N7"
         }
       ]
@@ -2588,6 +2593,11 @@
       "text1637_html": "<sup class=\"note-marker\" data-note=\"70\">70</sup> Is [niet] Ephraim my een dierbaer sone? is hy [my niet] een <sup class=\"note-marker\" data-note=\"71\">71</sup> troetelkint? want sint dat ick <sup class=\"note-marker\" data-note=\"72\">72</sup> tegen hem gesproke<i>n</i> hebbe, dencke ick noch <sup class=\"note-marker\" data-note=\"73\">73</sup> eernstelick aen hem: daerom <sup class=\"note-marker\" data-note=\"74\">74</sup> rommelt mijn ingewant over hem; ick sal my sijner <sup class=\"note-marker\" data-note=\"75\">75</sup> sekerlick ontfermen, spreeckt de HEERE.",
       "phraseDiff": [
         {
+          "old": "ingewand",
+          "new": "binnenste",
+          "principe": "V383"
+        },
+        {
           "old": "zijner zekerlijk",
           "new": "zijn zeker",
           "principe": "N7"
@@ -2596,11 +2606,6 @@
           "old": "de HEERE.",
           "new": "JAHWEH.",
           "principe": "G1"
-        },
-        {
-          "old": "ingewand",
-          "new": "binnenste",
-          "principe": "V383"
         }
       ]
     },
@@ -3155,7 +3160,7 @@
         },
         {
           "old": "te zamen",
-          "new": "(zie principe)",
+          "new": "samen",
           "principe": "V374"
         }
       ]
@@ -4878,18 +4883,13 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "de HEERE.",
           "new": "JAHWEH.",
           "principe": "G1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -5260,7 +5260,7 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
@@ -5287,11 +5287,6 @@
           "old": "weder",
           "new": "weer",
           "principe": "V66"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     }

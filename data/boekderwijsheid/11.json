@@ -302,14 +302,14 @@
       "text2026_html": "Dat dat in plaats van een fontein van de altijd vlietende stroom, zij door etterachtig bloed zijn ontroerd geworden, tot overtuiging van het gebod de kleine kinderen te doden.",
       "phraseDiff": [
         {
+          "old": "Zulks",
+          "new": "Dat",
+          "principe": "V400"
+        },
+        {
           "old": "des gebods",
           "new": "van het gebod",
           "principe": "N3"
-        },
-        {
-          "old": "zulks",
-          "new": "(zie principe)",
-          "principe": "V400"
         }
       ],
       "grondtekst": [
@@ -662,9 +662,9 @@
       "text2026_html": "Want een dubbel verdriet beving hen en een zuchten, met de herinnering van de dingen die voorbijgegaan waren.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "gedachtenis der",
+          "new": "herinnering van de",
+          "principe": "V366"
         }
       ],
       "grondtekst": [
@@ -1246,8 +1246,8 @@
           "principe": "V212"
         },
         {
-          "old": "te zamen",
-          "new": "(zie principe)",
+          "old": "tezamen",
+          "new": "samen",
           "principe": "V374"
         }
       ],
@@ -1368,12 +1368,12 @@
       "phraseDiff": [
         {
           "old": "uwer",
-          "new": "van uw",
+          "new": "van Uw",
           "principe": "N7"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         }
       ],
@@ -1512,6 +1512,18 @@
           "woord": "γη",
           "lemma": "γῆ"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "u,",
+          "new": "U,",
+          "principe": null
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        }
       ]
     },
     {
@@ -1524,18 +1536,13 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
-          "old": "gelijk",
-          "new": "zoals",
+          "old": "u gelijk",
+          "new": "U zoals",
           "principe": null
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ],
       "grondtekst": [
@@ -1599,17 +1606,22 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
+          "old": "u",
+          "new": "U",
+          "principe": null
+        },
+        {
           "old": "overmits gij",
-          "new": "omdat u",
+          "new": "omdat U",
           "principe": "V13"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
@@ -1695,22 +1707,22 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "hadt, gij zoudt",
-          "new": "had, u zou",
+          "new": "had, U zou",
           "principe": "V202"
         }
       ],
@@ -1791,7 +1803,7 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
@@ -1803,6 +1815,11 @@
           "old": "hetgeen",
           "new": "wat",
           "principe": "V4"
+        },
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -1850,12 +1867,17 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
+          "old": "uwe",
+          "new": "Uwe",
+          "principe": null
+        },
+        {
           "old": "Here, gij",
-          "new": "Heere, u",
+          "new": "Heere, U",
           "principe": "A1"
         },
         {

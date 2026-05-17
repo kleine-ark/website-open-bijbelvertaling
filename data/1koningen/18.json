@@ -1306,6 +1306,11 @@
           "old": "den HEERE",
           "new": "JAHWEH",
           "principe": "G1"
+        },
+        {
+          "old": "jonkheid",
+          "new": "jeugd",
+          "principe": "V344"
         }
       ]
     },
@@ -1632,6 +1637,11 @@
           "old": "HEERE der heirscharen",
           "new": "legermachten",
           "principe": "G5"
+        },
+        {
+          "old": "Wiens",
+          "new": "Van wie de",
+          "principe": "V312"
         }
       ]
     },
@@ -2113,18 +2123,13 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -2377,7 +2382,7 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
@@ -2404,11 +2409,6 @@
           "old": "een",
           "new": "één",
           "principe": null
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -2677,9 +2677,19 @@
       "text1637_html": "Datmen ons dan twee varren geve, ende dat sy voor hen den eene<i>n</i> varre kiesen, ende den selven in stucken deelen, ende op het hout leggen, maer geen vyer daer aen leggen: ende ick sal den anderen varre bereyden, ende op het hout <sup class=\"note-marker\" data-note=\"37\">37</sup> leggen, ende geen vyer daer aen leggen.",
       "phraseDiff": [
         {
+          "old": "varren",
+          "new": "stieren",
+          "principe": "V410"
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N4"
+        },
+        {
+          "old": "var",
+          "new": "stier",
+          "principe": "V410"
         },
         {
           "old": "denzelven",
@@ -2692,8 +2702,8 @@
           "principe": "N4"
         },
         {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
+          "old": "var",
+          "new": "stier",
           "principe": "V410"
         }
       ]
@@ -2854,18 +2864,13 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -2991,6 +2996,11 @@
           "principe": "A2"
         },
         {
+          "old": "var,",
+          "new": "stier,",
+          "principe": "V410"
+        },
+        {
           "old": "gij",
           "new": "u",
           "principe": "A2"
@@ -3009,11 +3019,6 @@
           "old": "uws gods",
           "new": "van uw god",
           "principe": "V200"
-        },
-        {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
-          "principe": "V410"
         }
       ]
     },
@@ -3177,13 +3182,8 @@
       "text1637_html": "Ende sy namen den varre <sup class=\"note-marker\" data-note=\"41\">41</sup> dien hy hen gegeven hadde, ende bereydden [hem], ende riepen den name Baals aen, van den morgen, tot op den middach, seggende: O Baal antwoordt ons! Maer daer en was geene stemme, noch geen antwoorder: ende <sup class=\"note-marker\" data-note=\"42\">42</sup> sy sprongen <sup class=\"note-marker\" data-note=\"43\">43</sup> tegen den altaer, dien men gemaeckt hadde.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N4"
-        },
-        {
-          "old": "dien",
-          "new": "die",
+          "old": "den var, dien",
+          "new": "de stier, die",
           "principe": "N4"
         },
         {
@@ -3200,11 +3200,6 @@
           "old": "den",
           "new": "de",
           "principe": "N4"
-        },
-        {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
-          "principe": "V410"
         }
       ]
     },
@@ -3669,18 +3664,13 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "des HEEREN,",
           "new": "van JAHWEH,",
           "principe": "G2"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -4002,13 +3992,13 @@
       "text1637_html": "Ende hy schickte het hout, ende deelde den varre in stucken, ende leyde [hem] op het hout.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "schikte",
+          "new": "stelde op",
+          "principe": "V371"
         },
         {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
+          "old": "den var",
+          "new": "de stier",
           "principe": "V410"
         }
       ]
@@ -4131,9 +4121,24 @@
           "principe": "W1"
         },
         {
-          "old": "Voorts zeide",
-          "new": "Verder zei",
-          "principe": "V27"
+          "old": "ten tweeden male.",
+          "new": "voor de tweede keer.",
+          "principe": "V359"
+        },
+        {
+          "old": "ten tweeden male. Voorts zeide",
+          "new": "voor de tweede keer. Verder zei",
+          "principe": "V359"
+        },
+        {
+          "old": "ten derden male.",
+          "new": "voor de derde keer.",
+          "principe": "V359"
+        },
+        {
+          "old": "ten derden male;",
+          "new": "voor de derde keer;",
+          "principe": "V359"
         }
       ]
     },
@@ -4747,7 +4752,7 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
@@ -4759,11 +4764,6 @@
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -5074,9 +5074,9 @@
       "text1637_html": "Also tooch Achab op, om te eten, ende te drincken; maer Elia ginck op nae de hoochte van Carmel, <sup class=\"note-marker\" data-note=\"73\">73</sup> ende breydde sich uyt voorwaerts ter aerde; daer na leyde hy sijn aengesicht tusschen sijne knyen.",
       "phraseDiff": [
         {
-          "old": "Alzo",
-          "new": "Zo",
-          "principe": "V42"
+          "old": "Alzo toog",
+          "new": "Zo trok",
+          "principe": "V353"
         },
         {
           "old": "voorwaarts",
@@ -5467,6 +5467,11 @@
           "old": "geschiedde",
           "new": "gebeurde",
           "principe": "V199"
+        },
+        {
+          "old": "toog",
+          "new": "trok",
+          "principe": "V353"
         }
       ]
     },

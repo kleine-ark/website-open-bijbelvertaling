@@ -721,6 +721,11 @@
           "principe": "N3"
         },
         {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
+        },
+        {
           "old": "des",
           "new": "van de",
           "principe": "N3"
@@ -1583,9 +1588,9 @@
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"44\">44</sup><sup class=\"note-marker\" data-note=\"h\">h</sup> De goddeloze is een<sup class=\"note-marker\" data-note=\"45\">45</sup> rantsoen voor de rechtvaardigen, en de trouweloze voor de oprechten.",
       "phraseDiff": [
         {
-          "old": "rantsoen(en)",
-          "new": "losprijs/losprijzen",
-          "principe": "V409"
+          "old": "rantsoen",
+          "new": "losprijs",
+          "principe": null
         }
       ]
     },
@@ -1741,8 +1746,8 @@
           "principe": "N3"
         },
         {
-          "old": "zulks",
-          "new": "(zie principe)",
+          "old": "zulks.",
+          "new": "dat.",
           "principe": "V400"
         }
       ]
@@ -1823,8 +1828,8 @@
       "textSV1888_html": "Die<sup class=\"note-marker\" data-note=\"49\">49</sup> rechtvaardigheid en<sup class=\"note-marker\" data-note=\"50\">50</sup> weldadigheid najaagt, zal het leven,<sup class=\"note-marker\" data-note=\"51\">51</sup> rechtvaardigheid en eer vinden.",
       "phraseDiff": [
         {
-          "old": "najaag*",
-          "new": "nastreef*",
+          "old": "najaagt,",
+          "new": "nastreeft,",
           "principe": "V379"
         }
       ]
@@ -1910,8 +1915,8 @@
           "principe": "N2"
         },
         {
-          "old": "huns vertrouwens",
-          "new": "van hun vertrouwen",
+          "old": "huns vertrouwens neder.",
+          "new": "van hun vertrouwen neer.",
           "principe": "V205"
         }
       ]
@@ -2051,7 +2056,19 @@
       "nbg51": "Een overmoedige en vermetele heet spotter,",
       "textSV1888": "Die een hovaardig pocher is, zijn naam is spotter; hij gaat met hovaardige verbolgenheid te werk.",
       "text2026_html": "<sup class=\"note-marker\" data-note=\"56\">56</sup> Die een hoogmoedig pocher is,<sup class=\"note-marker\" data-note=\"57\">57</sup> zijn naam is spotter;<sup class=\"note-marker\" data-note=\"58\">58</sup> hij gaat met hoogmoedige verbolgenheid te werk.",
-      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"56\">56</sup> Die een hovaardig pocher is,<sup class=\"note-marker\" data-note=\"57\">57</sup> zijn naam is spotter;<sup class=\"note-marker\" data-note=\"58\">58</sup> hij gaat met hovaardige verbolgenheid te werk."
+      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"56\">56</sup> Die een hovaardig pocher is,<sup class=\"note-marker\" data-note=\"57\">57</sup> zijn naam is spotter;<sup class=\"note-marker\" data-note=\"58\">58</sup> hij gaat met hovaardige verbolgenheid te werk.",
+      "phraseDiff": [
+        {
+          "old": "hovaardig",
+          "new": "hoogmoedig",
+          "principe": "V334"
+        },
+        {
+          "old": "hovaardige",
+          "new": "hoogmoedige",
+          "principe": "V334"
+        }
+      ]
     },
     {
       "number": 25,
@@ -2208,14 +2225,9 @@
       "textSV1888_html": "Den gansen dag begeert hij<sup class=\"note-marker\" data-note=\"61\">61</sup> begeerlijke dingen; maar<sup class=\"note-marker\" data-note=\"h\">h</sup> de rechtvaardige<sup class=\"note-marker\" data-note=\"62\">62</sup> zal geven, en niet inhouden.",
       "phraseDiff": [
         {
-          "old": "Den",
-          "new": "De",
+          "old": "Den gansen",
+          "new": "De hele",
           "principe": "N1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },

@@ -1774,9 +1774,14 @@
           "principe": "O22a"
         },
         {
-          "old": "X aangaande",
-          "new": "(zie principe)",
+          "old": "",
+          "new": "wat",
           "principe": "V389"
+        },
+        {
+          "old": "aangaande,",
+          "new": "betreft,",
+          "principe": null
         }
       ]
     },
@@ -1874,7 +1879,14 @@
         }
       ],
       "text2026_html": "En die mannen namen dat geschenk, en namen dubbel geld in hun hand, en Benjamin; en zij maakten zich op, en trokken af naar Egypte, en zij stonden voor Jozefs aangezicht.",
-      "text1637_html": "Ende die mannen namen dat selve geschenck, ende namen dobbel gelt in hare hant, ende Benjamin: ende sy maeckten hen op, ende togen af nae Egypten, ende sy stonden voor Iosephs aengesichte."
+      "text1637_html": "Ende die mannen namen dat selve geschenck, ende namen dobbel gelt in hare hant, ende Benjamin: ende sy maeckten hen op, ende togen af nae Egypten, ende sy stonden voor Iosephs aengesichte.",
+      "phraseDiff": [
+        {
+          "old": "togen",
+          "new": "trokken",
+          "principe": "V353"
+        }
+      ]
     },
     {
       "number": 16,
@@ -3428,6 +3440,11 @@
           "old": "onzen",
           "new": "onze",
           "principe": "N8"
+        },
+        {
+          "old": "neder.",
+          "new": "neer.",
+          "principe": "V354"
         }
       ]
     },
@@ -3730,6 +3747,11 @@
       "text1637_html": "Ende Ioseph haestede hem, want sijn <sup class=\"note-marker\" data-note=\"41\">41</sup> ingewant ontstack tegen sijnen broeder, ende hy socht te weenen: ende hy ginck in eene kamer, <sup class=\"note-marker\" data-note=\"i\">i</sup> ende weende aldaer.",
       "phraseDiff": [
         {
+          "old": "ingewand",
+          "new": "binnenste",
+          "principe": "V383"
+        },
+        {
           "old": "broeder,",
           "new": "broer,",
           "principe": "O22a"
@@ -3743,11 +3765,6 @@
           "old": "weende aldaar.",
           "new": "huilde daar.",
           "principe": "V36"
-        },
-        {
-          "old": "ingewand",
-          "new": "binnenste",
-          "principe": "V383"
         }
       ]
     },
@@ -4020,19 +4037,9 @@
       "text1637_html": "Ende sy richteden voor <sup class=\"note-marker\" data-note=\"44\">44</sup> hem aen <sup class=\"note-marker\" data-note=\"45\">45</sup> in 't bysonder, ende voor <sup class=\"note-marker\" data-note=\"46\">46</sup> haer in't bysonder, ende voor de Egyptenaren, die met hem aten, in't bysonder: want de Egyptenaers en mogen geen broot eten met de Hebreen, dewijle <sup class=\"note-marker\" data-note=\"47\">47</sup> sulcx den Egyptenaren een grouwel is.",
       "phraseDiff": [
         {
-          "old": "dewijl",
-          "new": "omdat",
+          "old": "dewijl zulks den",
+          "new": "omdat dat de",
           "principe": "V2"
-        },
-        {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
-        },
-        {
-          "old": "zulks",
-          "new": "(zie principe)",
-          "principe": "V400"
         }
       ]
     },
@@ -4142,6 +4149,11 @@
       "textSV1888_html": "En zij aten<sup class=\"note-marker\" data-note=\"48\">48</sup> voor zijn aangezicht, de eerstgeborene naar zijn eerstgeboorte, en<sup class=\"note-marker\" data-note=\"49\">49</sup> de jongere naar zijn jonkheid;<sup class=\"note-marker\" data-note=\"50\">50</sup> dies verwonderden zich de mannen<sup class=\"note-marker\" data-note=\"51\">51</sup> onder elkander.",
       "text1637_html": "Ende sy aten <sup class=\"note-marker\" data-note=\"48\">48</sup> voor sijn aengesichte, de Eerstgeboren nae sijne eerstgeboorte, ende <sup class=\"note-marker\" data-note=\"49\">49</sup> de jongere nae sijne jonckheyt: <sup class=\"note-marker\" data-note=\"50\">50</sup> dies verwonderde<i>n</i> hen de mannen <sup class=\"note-marker\" data-note=\"51\">51</sup> onder malkanderen.",
       "phraseDiff": [
+        {
+          "old": "jonkheid;",
+          "new": "jeugd;",
+          "principe": "V344"
+        },
         {
           "old": "elkander.",
           "new": "elkaar.",

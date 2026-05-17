@@ -75,7 +75,19 @@
       ],
       "text2026_html": "Een<sup class=\"note-marker\" data-note=\"1\">1</sup> onderwijzing van<sup class=\"note-marker\" data-note=\"2\">2</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> David. Welgelukzalig is hij, van wie de overtreding<sup class=\"note-marker\" data-note=\"3\">3</sup> vergeven, van wie de zonde bedekt is.",
       "textSV1888_html": "Een<sup class=\"note-marker\" data-note=\"1\">1</sup> onderwijzing van<sup class=\"note-marker\" data-note=\"2\">2</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> David. Welgelukzalig is hij, wiens overtreding<sup class=\"note-marker\" data-note=\"3\">3</sup> vergeven, wiens zonde bedekt is.",
-      "text1637_html": "EEn <sup class=\"note-marker\" data-note=\"1\">1</sup> onderwijsinge Davids. <sup class=\"note-marker\" data-note=\"a\">a</sup> <sup class=\"note-marker\" data-note=\"2\">2</sup> Welgelucksalich is hy, wiens overtredinge <sup class=\"note-marker\" data-note=\"3\">3</sup> vergeven, wiens sonde bedeckt is."
+      "text1637_html": "EEn <sup class=\"note-marker\" data-note=\"1\">1</sup> onderwijsinge Davids. <sup class=\"note-marker\" data-note=\"a\">a</sup> <sup class=\"note-marker\" data-note=\"2\">2</sup> Welgelucksalich is hy, wiens overtredinge <sup class=\"note-marker\" data-note=\"3\">3</sup> vergeven, wiens sonde bedeckt is.",
+      "phraseDiff": [
+        {
+          "old": "wiens",
+          "new": "van wie de",
+          "principe": "V312"
+        },
+        {
+          "old": "wiens",
+          "new": "van wie de",
+          "principe": "V312"
+        }
+      ]
     },
     {
       "number": 2,
@@ -151,6 +163,11 @@
           "old": "dien de HEERE",
           "new": "die JAHWEH",
           "principe": "N4"
+        },
+        {
+          "old": "wiens",
+          "new": "wie de",
+          "principe": "V312"
         }
       ]
     },
@@ -210,14 +227,9 @@
       "text1637_html": "Doe ick <sup class=\"note-marker\" data-note=\"5\">5</sup> sweech, wierden mijne beenderen veroudert, in mijn brullen den gantschen dach.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
+          "old": "den gansen",
+          "new": "de hele",
           "principe": "N1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -308,7 +320,14 @@
       ],
       "text2026_html": "Want Uw<sup class=\"note-marker\" data-note=\"6\">6</sup> hand was dag en nacht zwaar op mij; mijn<sup class=\"note-marker\" data-note=\"7\">7</sup> levensvocht werd veranderd in zomerdroogten.<sup class=\"note-marker\" data-note=\"8\">8</sup> Sela.",
       "textSV1888_html": "Want Uw<sup class=\"note-marker\" data-note=\"6\">6</sup> hand was dag en nacht zwaar op mij; mijn<sup class=\"note-marker\" data-note=\"7\">7</sup> sap werd veranderd in zomerdroogten.<sup class=\"note-marker\" data-note=\"8\">8</sup> Sela.",
-      "text1637_html": "Want uwe <sup class=\"note-marker\" data-note=\"6\">6</sup> hant was dach ende nacht swaer op my, mijn <sup class=\"note-marker\" data-note=\"7\">7</sup> sap wert verandert in somer-droochten, <sup class=\"note-marker\" data-note=\"8\">8</sup> Sela!"
+      "text1637_html": "Want uwe <sup class=\"note-marker\" data-note=\"6\">6</sup> hant was dach ende nacht swaer op my, mijn <sup class=\"note-marker\" data-note=\"7\">7</sup> sap wert verandert in somer-droochten, <sup class=\"note-marker\" data-note=\"8\">8</sup> Sela!",
+      "phraseDiff": [
+        {
+          "old": "sap",
+          "new": "levensvocht",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 5,
@@ -437,9 +456,9 @@
           "principe": "G1"
         },
         {
-          "old": "Gij",
-          "new": "U",
-          "principe": "A1"
+          "old": "Gij vergaaft",
+          "new": "U vergaf",
+          "principe": "V313"
         },
         {
           "old": "mijner",
@@ -555,7 +574,19 @@
       ],
       "text2026_html": "Hierom zal U ieder<sup class=\"note-marker\" data-note=\"12\">12</sup> heilige aanbidden in<sup class=\"note-marker\" data-note=\"13\">13</sup> de tijd dat U Zich laat vinden; ja, in een overstroming van<sup class=\"note-marker\" data-note=\"14\">14</sup> grote wateren zullen zij hem niet aanraken.",
       "textSV1888_html": "Hierom zal U ieder<sup class=\"note-marker\" data-note=\"12\">12</sup> heilige aanbidden in<sup class=\"note-marker\" data-note=\"13\">13</sup> vindenstijd; ja, in een overloop van<sup class=\"note-marker\" data-note=\"14\">14</sup> grote wateren zullen zij hem niet aanraken.",
-      "text1637_html": "Hierom sal u een yeder <sup class=\"note-marker\" data-note=\"12\">12</sup> heylige aenbidden in <sup class=\"note-marker\" data-note=\"13\">13</sup> vindens tijt; Ia in eenen overloop van <sup class=\"note-marker\" data-note=\"14\">14</sup> groote wateren, sullen sy hem niet aenraken."
+      "text1637_html": "Hierom sal u een yeder <sup class=\"note-marker\" data-note=\"12\">12</sup> heylige aenbidden in <sup class=\"note-marker\" data-note=\"13\">13</sup> vindens tijt; Ia in eenen overloop van <sup class=\"note-marker\" data-note=\"14\">14</sup> groote wateren, sullen sy hem niet aenraken.",
+      "phraseDiff": [
+        {
+          "old": "vindenstijd;",
+          "new": "de tijd dat U Zich laat vinden;",
+          "principe": null
+        },
+        {
+          "old": "overloop",
+          "new": "overstroming",
+          "principe": "V314"
+        }
+      ]
     },
     {
       "number": 7,
@@ -635,9 +666,9 @@
           "principe": "A1"
         },
         {
-          "old": "Gij",
-          "new": "U",
-          "principe": "A1"
+          "old": "Verberging; Gij",
+          "new": "plek om te schuilen; U",
+          "principe": "V315"
         },
         {
           "old": "Gij",
@@ -846,6 +877,11 @@
           "old": "men",
           "new": "",
           "principe": null
+        },
+        {
+          "old": "genake.",
+          "new": "zou naderen.",
+          "principe": "V316"
         }
       ]
     },
