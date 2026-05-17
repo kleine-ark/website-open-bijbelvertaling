@@ -448,7 +448,7 @@
       "number": 7,
       "textSV1888": "Gewisselijk, Hij heeft mij nu vermoeid; Gij hebt mijn ganse vergadering verwoest.",
       "text1637": "Gewisselick, [11] hy heeft my nu [12] vermoeyt: ghy hebt [13] mijne gantsche vergaderinge verwoest.",
-      "text2026": "Zeker, Hij heeft mij nu vermoeid; U hebt mijn gehele vergadering verwoest.",
+      "text2026": "Zeker, Hij heeft mij nu vermoeid; U hebt mijn hele vergadering verwoest.",
       "marginNotes": [
         {
           "marker": "11",
@@ -504,7 +504,7 @@
           "morph": "HNcfsc/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zeker,<sup class=\"note-marker\" data-note=\"11\">11</sup> Hij heeft mij nu<sup class=\"note-marker\" data-note=\"12\">12</sup> vermoeid; U hebt<sup class=\"note-marker\" data-note=\"13\">13</sup> mijn gehele vergadering verwoest.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zeker,<sup class=\"note-marker\" data-note=\"11\">11</sup> Hij heeft mij nu<sup class=\"note-marker\" data-note=\"12\">12</sup> vermoeid; U hebt<sup class=\"note-marker\" data-note=\"13\">13</sup> mijn hele vergadering verwoest.</i></span>",
       "textSV1888_html": "Gewisselijk,<sup class=\"note-marker\" data-note=\"11\">11</sup> Hij heeft mij nu<sup class=\"note-marker\" data-note=\"12\">12</sup> vermoeid; Gij hebt<sup class=\"note-marker\" data-note=\"13\">13</sup> mijn ganse vergadering verwoest.",
       "text1637_html": "Gewisselick, <sup class=\"note-marker\" data-note=\"11\">11</sup> hy heeft my nu <sup class=\"note-marker\" data-note=\"12\">12</sup> vermoeyt: ghy hebt <sup class=\"note-marker\" data-note=\"13\">13</sup> mijne gantsche vergaderinge verwoest.",
       "phraseDiff": [
@@ -522,6 +522,11 @@
           "old": "ganse",
           "new": "gehele",
           "principe": "V3"
+        },
+        {
+          "old": "gehele",
+          "new": "(zie principe)",
+          "principe": "V391"
         }
       ]
     },

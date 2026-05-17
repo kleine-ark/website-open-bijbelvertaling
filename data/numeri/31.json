@@ -1339,7 +1339,7 @@
       "number": 14,
       "textSV1888": "En Mozes werd grotelijks vertoornd tegen de bevelhebbers des heirs, de hoofdlieden der duizenden, en de hoofdlieden der honderden, die uit den strijd van dien oorlog kwamen.",
       "text1637": "Ende Mose wert grootelicks vertoornt tegen de Bevelhebberen des heyrs, de hooft-lieden der duysenden, ende de hooft-lieden der honderden, die uyt den strijdt van die oorloge quamen.",
-      "text2026": "En Mozes werd grotelijks vertoornd tegen de bevelhebbers van de heirs, de hoofdlieden van de duizenden, en de hoofdlieden van de honderden, die uit de strijd van die oorlog kwamen.",
+      "text2026": "En Mozes werd enorm vertoornd tegen de bevelhebbers van de heirs, de hoofdlieden van de duizenden, en de hoofdlieden van de honderden, die uit de strijd van die oorlog kwamen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1403,7 +1403,7 @@
           "morph": "HTd/Ncfsa"
         }
       ],
-      "text2026_html": "En Mozes werd grotelijks vertoornd tegen de bevelhebbers van de heirs, de hoofdlieden van de duizenden, en de hoofdlieden van de honderden, die uit de strijd van die oorlog kwamen.",
+      "text2026_html": "En Mozes werd enorm vertoornd tegen de bevelhebbers van de heirs, de hoofdlieden van de duizenden, en de hoofdlieden van de honderden, die uit de strijd van die oorlog kwamen.",
       "text1637_html": "Ende Mose wert grootelicks vertoornt tegen de Bevelhebberen des heyrs, de hooft-lieden der duysenden, ende de hooft-lieden der honderden, die uyt den strijdt van die oorloge quamen.",
       "phraseDiff": [
         {
@@ -1430,6 +1430,11 @@
           "old": "dien",
           "new": "die",
           "principe": "N4"
+        },
+        {
+          "old": "grotelijks",
+          "new": "enorm",
+          "principe": "V388"
         }
       ]
     },
@@ -2687,7 +2692,7 @@
       "number": 27,
       "textSV1888": "En deel den buit in twee helften tussen degenen, die den strijd aangegrepen hebben, die tot den strijd uitgegaan zijn, en tussen de ganse vergadering.",
       "text1637": "Ende [h] deelt den buyt [29] in twee helften tusschen de gene die den strijt aengegrepen hebben, die tot den krijch uytgegaen zijn; ende tusschen de gantsche vergaderinge.",
-      "text2026": "En deel de buit in twee helften tussen degenen, die de strijd aangegrepen hebben, die tot de strijd uitgegaan zijn, en tussen de gehele vergadering.",
+      "text2026": "En deel de buit in twee helften tussen degenen, die de strijd aangegrepen hebben, die tot de strijd uitgegaan zijn, en tussen de hele vergadering.",
       "marginNotes": [
         {
           "marker": "h",
@@ -2761,7 +2766,7 @@
           "morph": "HTd/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En<sup class=\"note-marker\" data-note=\"h\">h</sup> deel de buit<sup class=\"note-marker\" data-note=\"29\">29</sup> in twee helften tussen degenen, die de strijd aangegrepen hebben, die tot de strijd uitgegaan zijn, en tussen de gehele vergadering.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En<sup class=\"note-marker\" data-note=\"h\">h</sup> deel de buit<sup class=\"note-marker\" data-note=\"29\">29</sup> in twee helften tussen degenen, die de strijd aangegrepen hebben, die tot de strijd uitgegaan zijn, en tussen de hele vergadering.</i></span>",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"h\">h</sup> deel den buit<sup class=\"note-marker\" data-note=\"29\">29</sup> in twee helften tussen degenen, die den strijd aangegrepen hebben, die tot den strijd uitgegaan zijn, en tussen de ganse vergadering.",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"h\">h</sup> deelt den buyt <sup class=\"note-marker\" data-note=\"29\">29</sup> in twee helften tusschen de gene die den strijt aengegrepen hebben, die tot den krijch uytgegaen zijn; ende tusschen de gantsche vergaderinge.",
       "phraseDiff": [
@@ -2784,6 +2789,11 @@
           "old": "ganse",
           "new": "gehele",
           "principe": "V3"
+        },
+        {
+          "old": "gehele",
+          "new": "(zie principe)",
+          "principe": "V391"
         }
       ]
     },
