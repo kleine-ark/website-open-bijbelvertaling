@@ -2,6 +2,63 @@
   "wijzigingen": [
     {
       "datum": "2026-05-17",
+      "versie": "v0.16.2",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Psalmen 44-56 volledig nageleze (13 hoofdstukken, 212 verzen). Totaal nu 168 hoofdstukken / 4.950 verzen handmatig vers-voor-vers gecontroleerd (12,1% / 13,3%)."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Inleiding over-ov.html herschreven: 'AI als hulpmiddel, niet als beslisser' — alle wijzigingsprincipes zijn menselijke beslissingen, AI voert alleen consistent uit onder regie van die principes."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Boekvolgorde-keuze toegevoegd aan opties (5 modes: canoniek, Joodse Tenach, chronologisch, op auteur, op lengte). Sidebar en topnav re-renderen automatisch bij wisseling. Nieuwe js/book-orders.js."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Versnummers tonen/verbergen optie toegevoegd. CSS-toggle behoudt klikbare status-balk."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Begrippen-UI tijdelijk verborgen (mobile-btn, quickfilter, opties-checkbox) tot begrippenlijsten handmatig gecontroleerd zijn."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Fonts pre-gecacht in service worker (10 woff2 bestanden: Allura, Fira Sans, EB Garamond) voor consistente weergave op alle browsers/clients."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Cascade-fix: foutief V32 toegepast (eer→voordat) waar 'eer' = eer/glorie betekent (17 verzen hersteld, o.a. Ps 57:6 'Uw eer zij over de hele aarde')."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Cascade-fix 'in van de [Naam] [nw]' → 'in [art] [nw] van de [Naam]' bibel-breed (recursief incl. marginNotes)."
+        },
+        {"type": "principe", "beschrijving": "V402 [nw] Gods → [nw] van God (1996 verzen, allowlist)"},
+        {"type": "principe", "beschrijving": "V403 Allerhoogsten → Allerhoogste (136 verzen)"},
+        {"type": "principe", "beschrijving": "V404 Hoog Vertrek → Vesting (45 verzen)"},
+        {"type": "principe", "beschrijving": "V405 wagenen → wagens (259 verzen)"},
+        {"type": "principe", "beschrijving": "V406 Godes → van God (61 verzen)"},
+        {"type": "principe", "beschrijving": "V407 blijde → blij (137 verzen)"},
+        {"type": "principe", "beschrijving": "V408 slechten → eenvoudigen (11 verzen)"},
+        {"type": "principe", "beschrijving": "V409 rantsoen → losprijs (7 verzen)"},
+        {"type": "principe", "beschrijving": "V410 var/varre/varren → stier/stieren (131 verzen)"},
+        {"type": "principe", "beschrijving": "V411 Mijn is/zijn (predicaat) → van Mij is/zijn (46 verzen)"},
+        {"type": "principe", "beschrijving": "V412 henenwerpen → wegwerpen (3 verzen)"},
+        {"type": "principe", "beschrijving": "V413 godvergetenden → godvergeters (3 verzen)"},
+        {"type": "principe", "beschrijving": "V414 gans (adv/adj) → geheel (476 files!)"},
+        {"type": "principe", "beschrijving": "V415 [adj] ware (subjunctief) → [adj] was (81 verzen)"},
+        {"type": "principe", "beschrijving": "V416 vernachten → overnachten (126 files)"},
+        {"type": "principe", "beschrijving": "V417 misbaar → luid weeklagen (28 files)"},
+        {"type": "principe", "beschrijving": "V418 ten huize Gods → in het huis van God (13 files)"},
+        {"type": "principe", "beschrijving": "V419 rotten samen → spannen samen (14 files)"},
+        {"type": "principe", "beschrijving": "V420 voleinden/voleindigen → voltooien (242 verzen)"}
+      ]
+    },
+    {
+      "datum": "2026-05-17",
       "versie": "v0.16.1",
       "items": [
         {
