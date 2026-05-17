@@ -3824,6 +3824,38 @@
       "nieuw": "geheel",
       "toelichting": "Verouderde adverbiale/adjectivische vorm van 'geheel' (Hebr. kol). 'Gans verteerd' → 'geheel verteerd', 'gans Israel' → 'geheel Israel'. Niet te verwarren met 'gans' (dier) — komt in onze tekst niet voor.",
       "regex": "\\b[Gg]ans\\b"
+    },
+    {
+      "id": "V415",
+      "categorie": "Werkwoordsvormen",
+      "oud": "[adj/deelwoord] ware (subjunctief)",
+      "nieuw": "[adj] was",
+      "toelichting": "Conjunctief van 'zijn' (was/zou zijn) — modern Nederlands gebruikt indicatief 'was'. Allowlist met ~35 voorgaande adjectieven/deelwoorden om te onderscheiden van adjectief 'ware' (=echt/waar).",
+      "regex": "\\b(verstandig|wijs|goed|zalig|gestorven|geweest|mogelijk|niet|nuttig|nuttiger|beter|nodig|onwaardig|waardig|veilig|zeker|onzeker|moeilijk|gemakkelijk|dood|levend|bevreesd|genoeg|zoet|sterk|machtig|mooi|schoon|rijk|arm|jong|oud|klein|groot|vol|leeg|dichtbij|ver|onmogelijk|genadig|rechtvaardig|heilig) ware\\b"
+    },
+    {
+      "id": "V416",
+      "categorie": "Verouderde woorden",
+      "oud": "vernachten / vernacht / vernachtte / vernachtten",
+      "nieuw": "overnachten / overnacht / overnachtte / overnachtten",
+      "toelichting": "Verouderd voor 'de nacht doorbrengen' (Hebr. lun) — modern Nederlands gebruikt 'overnachten'.",
+      "regex": "\\b[Vv]ernacht(en|te|ten|tede|tte|tten)?\\b"
+    },
+    {
+      "id": "V417",
+      "categorie": "Verouderde woorden",
+      "oud": "misbaar",
+      "nieuw": "luid weeklagen",
+      "toelichting": "SV-gebruik voor luid klagen/jammeren (Hebr. zaaq). Modern Nederlands kent 'misbaar' enkel als 'niet onmisbaar' (negatie) of als nominalisering — actie-betekenis is verouderd. 'Luid weeklagen' vangt vocal lament.",
+      "regex": "\\b[Mm]isbaar\\b"
+    },
+    {
+      "id": "V418",
+      "categorie": "Naamvallen",
+      "oud": "ten huize Gods",
+      "nieuw": "in het huis van God",
+      "toelichting": "Verouderde datief-constructie 'ten huize' (te + den + huize). Modern Nederlands gebruikt 'in het huis'. Wordt gecombineerd met genitief-modernisering Gods → van God.",
+      "regex": "\\b[Tt]en huize Gods\\b"
     }
   ]
 }
