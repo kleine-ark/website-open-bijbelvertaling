@@ -302,7 +302,7 @@
       "number": 3,
       "textSV1888": "Toen zeide Simson tot henlieden: Ik ben ditmaal onschuldig van de Filistijnen, wanneer ik aan hen kwaad doe.",
       "text1637": "Doe seyde Simson van [7] haerlieden; [8] Ick ben ditmael onschuldich vande Philistijnen, wanneer ick aen hen quaet doe.",
-      "text2026": "Toen zei Simson tot henlieden: Ik ben ditmaal onschuldig van de Filistijnen, wanneer ik aan hen kwaad doe.",
+      "text2026": "Toen zei Simson tot hen: Ik ben ditmaal onschuldig van de Filistijnen, wanneer ik aan hen kwaad doe.",
       "marginNotes": [
         {
           "marker": "7",
@@ -376,7 +376,7 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "Toen zei Simson tot henlieden: <span class=\"direct-speech\"><i>Ik ben ditmaal onschuldig van de Filistijnen, wanneer ik aan hen kwaad doe.</i></span>",
+      "text2026_html": "Toen zei Simson tot hen: <span class=\"direct-speech\"><i>Ik ben ditmaal onschuldig van de Filistijnen, wanneer ik aan hen kwaad doe.</i></span>",
       "textSV1888_html": "Toen zeide Simson tot henlieden: Ik ben ditmaal onschuldig van<sup class=\"note-marker\" data-note=\"7\">7</sup> de<sup class=\"note-marker\" data-note=\"8\">8</sup> Filistijnen, wanneer ik aan hen kwaad doe.",
       "text1637_html": "Doe seyde Simson van <sup class=\"note-marker\" data-note=\"7\">7</sup> haerlieden; <sup class=\"note-marker\" data-note=\"8\">8</sup> Ick ben ditmael onschuldich vande Philistijnen, wanneer ick aen hen quaet doe.",
       "phraseDiff": [
@@ -384,6 +384,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "henlieden",
+          "new": "hen",
+          "principe": "V395"
         }
       ]
     },

@@ -1,6 +1,120 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-05-17",
+      "versie": "v0.16.1",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Psalmen 32-43 volledig nageleze (12 hoofdstukken, 223 verzen). Per-vers controle op godsnaam-pronouns, verouderde woorden, citatie-grenzen en N-cascade-bugs. Totaal nu 155 hoofdstukken / 4.738 verzen handmatig vers-voor-vers gecontroleerd."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Cascade-fix 'vanwege van [art] [X] [Y]' → 'vanwege [Y] van [art] [X]' bibel-breed (Ps 43:2 patroon + Ps 73 mg-note, recursief in marginNotes)."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Tientallen specifieke per-vers fixes Ps 31-43 (Ps 35:16 tafelbroeders-uitzondering, Ps 36:7/12, Ps 37:7/10/16/19/38/39, Ps 38:2, Ps 39:5/11/12/14, Ps 40:4/17, Ps 41:3/4/9/10/13, Ps 42:6/7, Ps 43:1/2, Ps 44:5/14)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V374 te zamen/tezamen → samen (215 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V375 verdelg* → vernietig* (130 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V376 ter tijd van → in de tijd van"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V377 groten [zelfstandig naamwoord] → grote (mannelijk acc lift)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V378 nedergebogen → neergebogen (V354-compound)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V379 najagen → nastreven (16 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V380 plage (enkelvoud) → plaag (37 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V381 bevalligheid → aantrekkingskracht"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V382 verkwikke (subjunctief) → verkwik"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V383 ingewand (enkelvoud) → binnenste (46 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V384 nooddruftig(e/en) → arm(e/en) (47 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V385 vertoef* → wacht* / 'vertoef niet' → 'wacht niet langer'"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V386 Belialsstuk → vervloekt iets (Ps 41:9, Ps 101:3)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V387 verzenen (mv.) → hiel (11 verzen, matcht NT-idioom Joh 13:18)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V388 grotelijks → enorm (30 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V389 X aangaande (postpositioneel) → wat X betreft"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V390 levenden [zelfstandig naamwoord] → levende (42 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V391 gehele → hele (958 verzen!)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V392 placht / plachten → was gewend / waren gewend"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V393 twistzaak → rechtszaak (16 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V394 menigvuldig(e/er) → veelvuldig (22 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V395 henlieden → hen (42 verzen)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V396 wederpartijder(s) → tegenstander(s)"
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V397 dengenen (datief mv.) → van hen (77 verzen)"
+        }
+      ]
+    },
+    {
       "datum": "2026-05-14",
       "versie": "v0.16",
       "items": [

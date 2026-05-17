@@ -3664,6 +3664,30 @@
       "nieuw": "veelvuldig / veelvuldige / veelvuldiger / veelvuldigen",
       "toelichting": "Verouderd adjectief voor 'veelvoudig/talrijk' (Hebr. rab/rabbim, harbeh). Modern Nederlands gebruikt 'veelvuldig' (dichtst bij origineel) of contextueel 'overvloedig', 'rijk', 'groot'.",
       "regex": "\\b[Mm]enigvuldig(e|en|er|heid)?\\b"
+    },
+    {
+      "id": "V395",
+      "categorie": "Verouderde woorden",
+      "oud": "henlieden",
+      "nieuw": "hen",
+      "toelichting": "Pleonastische verlengde objectvorm van 'hen' — verstevigend in SV-stijl. Modern Nederlands gebruikt enkel 'hen' (vgl. V329 hunlieder → hun).",
+      "regex": "\\b[Hh]enlieden\\b"
+    },
+    {
+      "id": "V396",
+      "categorie": "Verouderde woorden",
+      "oud": "wederpartijder / wederpartijders",
+      "nieuw": "tegenstander / tegenstanders",
+      "toelichting": "Verouderde samenstelling voor wie men tegen zich heeft in een geschil — modern Nederlands gebruikt 'tegenstander'. 'Wederpartij' (=tegenpartij in juridisch geschil) blijft staan in formele context.",
+      "regex": "\\b[Ww]ederpartijders?\\b"
+    },
+    {
+      "id": "V397",
+      "categorie": "Naamvallen",
+      "oud": "dengenen (datief meervoud van 'diegene')",
+      "nieuw": "van hen / aan hen",
+      "toelichting": "Verouderde datief meervoud: 'tot/voor dengenen die ...' → 'van/voor hen die ...'. Singulier 'dengene' (= die/diegene/hem) blijft contextueel.",
+      "regex": "\\b[Dd]engenen\\b"
     }
   ]
 }
