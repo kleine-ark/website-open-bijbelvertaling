@@ -528,7 +528,7 @@
       "number": 10,
       "textSV1888": "Ik zoek U met mijn gehele hart, laat mij van Uw geboden niet afdwalen.",
       "text1637": "Ick soecke u met mijn geheel herte, en laet my van uwe geboden niet afdwalen.",
-      "text2026": "Ik zoek U met mijn gehele hart, laat mij van Uw geboden niet afdwalen.",
+      "text2026": "Ik zoek U met mijn hele hart, laat mij van Uw geboden niet afdwalen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -562,8 +562,15 @@
           "morph": "HR/Ncfpc/Sp2ms"
         }
       ],
-      "text2026_html": "Ik zoek U met mijn gehele hart, laat mij van Uw geboden niet afdwalen.",
-      "text1637_html": "Ick soecke u met mijn geheel herte, en laet my van uwe geboden niet afdwale<i>n</i>."
+      "text2026_html": "Ik zoek U met mijn hele hart, laat mij van Uw geboden niet afdwalen.",
+      "text1637_html": "Ick soecke u met mijn geheel herte, en laet my van uwe geboden niet afdwale<i>n</i>.",
+      "phraseDiff": [
+        {
+          "old": "gehele",
+          "new": "(zie principe)",
+          "principe": "V391"
+        }
+      ]
     },
     {
       "number": 11,
@@ -5389,7 +5396,7 @@
       "number": 97,
       "textSV1888": "Mem. Hoe lief heb ik Uw wet! Zij is mijn betrachting den gansen dag.",
       "text1637": "Hoe lief hebbe ick uwe Wet! sy is [102] mijne betrachtinge den gantschen dach.",
-      "text2026": "Mem. Hoe lief heb ik Uw wet! Zij is mijn betrachting de gehele dag.",
+      "text2026": "Mem. Hoe lief heb ik Uw wet! Zij is mijn betrachting de hele dag.",
       "marginNotes": [
         {
           "marker": "102",
@@ -5436,7 +5443,7 @@
           "morph": "HNcfsc/Sp1cs"
         }
       ],
-      "text2026_html": "Mem. Hoe lief heb ik Uw wet! Zij is<sup class=\"note-marker\" data-note=\"102\">102</sup> mijn betrachting de gehele dag.",
+      "text2026_html": "Mem. Hoe lief heb ik Uw wet! Zij is<sup class=\"note-marker\" data-note=\"102\">102</sup> mijn betrachting de hele dag.",
       "textSV1888_html": "Mem. Hoe lief heb ik Uw wet! Zij is<sup class=\"note-marker\" data-note=\"102\">102</sup> mijn betrachting den gansen dag.",
       "text1637_html": "Hoe lief hebbe ick uwe Wet! sy is <sup class=\"note-marker\" data-note=\"102\">102</sup> mijne betrachtinge den gantschen dach.",
       "phraseDiff": [
@@ -5444,6 +5451,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "gehele",
+          "new": "(zie principe)",
+          "principe": "V391"
         }
       ]
     },

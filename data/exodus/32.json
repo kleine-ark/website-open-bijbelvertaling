@@ -340,7 +340,7 @@
       "number": 3,
       "textSV1888": "Toen rukte het ganse volk de gouden oorsierselen af, die in hun oren waren; en zij brachten ze tot Aäron.",
       "text1637": "Doe ruckte dat gantsche volck de goudene oor-cierselen af, die in hare ooren waren: ende sy brachtense tot Aaron.",
-      "text2026": "Toen rukte het gehele volk de gouden oorsierselen af, die in hun oren waren; en zij brachten ze tot Aäron.",
+      "text2026": "Toen rukte het hele volk de gouden oorsierselen af, die in hun oren waren; en zij brachten ze tot Aäron.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -399,13 +399,18 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Toen rukte het gehele volk de gouden oorsierselen af, die in hun oren waren; en zij brachten ze tot Aäron.",
+      "text2026_html": "Toen rukte het hele volk de gouden oorsierselen af, die in hun oren waren; en zij brachten ze tot Aäron.",
       "text1637_html": "Doe ruckte dat gantsche volck de goudene oor-cierselen af, die in hare ooren waren: ende sy brachtense tot Aaron.",
       "phraseDiff": [
         {
           "old": "ganse",
           "new": "gehele",
           "principe": "V3"
+        },
+        {
+          "old": "gehele",
+          "new": "(zie principe)",
+          "principe": "V391"
         }
       ]
     },
@@ -1497,7 +1502,7 @@
       "number": 13,
       "textSV1888": "Gedenk aan Abraham, aan Izak en aan Israël, Uw knechten, aan welke Gij bij Uzelven gezworen hebt, en hebt tot hen gesproken: Ik zal uw zaad vermenigvuldigen als de sterren des hemels; en dit gehele land, waarvan Ik gezegd heb, zal Ik aan ulieder zaad geven, dat zij het erfelijk bezitten in eeuwigheid.",
       "text1637": "[23] [h] Gedenckt aen Abraham, aen Isaac, ende aen Israël uwe knechten, den welcken ghy [24] by u selven gesworen hebt, ende hebt tot hen gesproken, Ick sal u lieder zaet vermenichvuldigen [25] als de sterren des hemels: ende dit geheele lant, daer van ick [26] geseyt hebbe, sal ick u lieder zaet geven, dat sy het erflick besitten in eeuwichheyt.",
-      "text2026": "Gedenk aan Abraham, aan Izak en aan Israël, Uw knechten, aan welke U bij Uzelf gezworen hebt, en hebt tot hen gesproken: Ik zal uw zaad vermenigvuldigen als de sterren van de hemel; en dit gehele land, waarvan Ik gezegd heb, zal Ik aan uw zaad geven, dat zij het erfelijk bezitten in eeuwigheid.",
+      "text2026": "Gedenk aan Abraham, aan Izak en aan Israël, Uw knechten, aan welke U bij Uzelf gezworen hebt, en hebt tot hen gesproken: Ik zal uw zaad vermenigvuldigen als de sterren van de hemel; en dit hele land, waarvan Ik gezegd heb, zal Ik aan uw zaad geven, dat zij het erfelijk bezitten in eeuwigheid.",
       "marginNotes": [
         {
           "marker": "h",
@@ -1662,7 +1667,7 @@
           "morph": "HR/Ncmsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"23\">23</sup><sup class=\"note-marker\" data-note=\"h\">h</sup><span class=\"direct-speech\"><i> Gedenk aan Abraham, aan Izak en aan Israël, Uw knechten, aan welke<sup class=\"note-marker\" data-note=\"24\">24</sup> U bij Uzelf gezworen hebt, en hebt tot hen gesproken: Ik zal uw zaad vermenigvuldigen<sup class=\"note-marker\" data-note=\"25\">25</sup> als de sterren van de hemel; en dit gehele land, waarvan Ik<sup class=\"note-marker\" data-note=\"26\">26</sup> gezegd heb, zal Ik aan uw zaad geven, dat zij het erfelijk bezitten in eeuwigheid.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"23\">23</sup><sup class=\"note-marker\" data-note=\"h\">h</sup><span class=\"direct-speech\"><i> Gedenk aan Abraham, aan Izak en aan Israël, Uw knechten, aan welke<sup class=\"note-marker\" data-note=\"24\">24</sup> U bij Uzelf gezworen hebt, en hebt tot hen gesproken: Ik zal uw zaad vermenigvuldigen<sup class=\"note-marker\" data-note=\"25\">25</sup> als de sterren van de hemel; en dit hele land, waarvan Ik<sup class=\"note-marker\" data-note=\"26\">26</sup> gezegd heb, zal Ik aan uw zaad geven, dat zij het erfelijk bezitten in eeuwigheid.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"23\">23</sup><sup class=\"note-marker\" data-note=\"h\">h</sup> Gedenk aan Abraham, aan Izak en aan Israël, Uw knechten, aan welke<sup class=\"note-marker\" data-note=\"24\">24</sup> Gij bij Uzelven gezworen hebt, en hebt tot hen gesproken: Ik zal uw zaad vermenigvuldigen<sup class=\"note-marker\" data-note=\"25\">25</sup> als de sterren des hemels; en dit gehele land, waarvan Ik<sup class=\"note-marker\" data-note=\"26\">26</sup> gezegd heb, zal Ik aan ulieder zaad geven, dat zij het erfelijk bezitten in eeuwigheid.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"23\">23</sup> <sup class=\"note-marker\" data-note=\"h\">h</sup> Gedenckt aen Abraham, aen Isaac, ende aen Israël uwe knechten, den welcken ghy <sup class=\"note-marker\" data-note=\"24\">24</sup> by u selven gesworen hebt, en<i>de</i> hebt tot hen gesproken, Ick sal u lieder zaet vermenichvuldigen <sup class=\"note-marker\" data-note=\"25\">25</sup> als de sterren des hemels: ende dit geheele lant, daer van ick <sup class=\"note-marker\" data-note=\"26\">26</sup> geseyt hebbe, sal ick u lieder zaet geven, dat sy het erflick besitten in eeuwichheyt.",
       "phraseDiff": [
@@ -1680,6 +1685,11 @@
           "old": "des hemels;",
           "new": "van de hemel;",
           "principe": "N3"
+        },
+        {
+          "old": "gehele",
+          "new": "(zie principe)",
+          "principe": "V391"
         }
       ]
     },

@@ -136,7 +136,7 @@
       "number": 3,
       "textSV1888": "Schoon van gelegenheid, een vreugde der ganse aarde is de berg Sion, aan de zijden van het noorden; de stad des groten Konings.",
       "text1637": "Schoon van [5] gelegentheyt, eene vreuchde der [6] gantscher aerde is de berch Zion, [aen] de zijden van’t [7] Noorden; [a] De stadt des grooten [8] Conincks.",
-      "text2026": "Schoon van gelegenheid, een vreugde van de gehele aarde is de berg Sion, aan de zijden van het noorden; de stad van de groten Konings.",
+      "text2026": "Schoon van gelegenheid, een vreugde van de hele aarde is de berg Sion, aan de zijden van het noorden; de stad van de groten Konings.",
       "marginNotes": [
         {
           "marker": "5",
@@ -236,7 +236,7 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "Schoon van<sup class=\"note-marker\" data-note=\"5\">5</sup> gelegenheid, een vreugde van<sup class=\"note-marker\" data-note=\"6\">6</sup> de gehele aarde is de berg Sion, aan de zijden van<sup class=\"note-marker\" data-note=\"7\">7</sup> het noorden;<sup class=\"note-marker\" data-note=\"a\">a</sup> de stad van de<sup class=\"note-marker\" data-note=\"8\">8</sup> groten Konings.",
+      "text2026_html": "Schoon van<sup class=\"note-marker\" data-note=\"5\">5</sup> gelegenheid, een vreugde van<sup class=\"note-marker\" data-note=\"6\">6</sup> de hele aarde is de berg Sion, aan de zijden van<sup class=\"note-marker\" data-note=\"7\">7</sup> het noorden;<sup class=\"note-marker\" data-note=\"a\">a</sup> de stad van de<sup class=\"note-marker\" data-note=\"8\">8</sup> groten Konings.",
       "textSV1888_html": "Schoon van<sup class=\"note-marker\" data-note=\"5\">5</sup> gelegenheid, een vreugde der<sup class=\"note-marker\" data-note=\"6\">6</sup> ganse aarde is de berg Sion, aan de zijden van<sup class=\"note-marker\" data-note=\"7\">7</sup> het noorden;<sup class=\"note-marker\" data-note=\"a\">a</sup> de stad des groten<sup class=\"note-marker\" data-note=\"8\">8</sup> Konings.",
       "text1637_html": "Schoon van <sup class=\"note-marker\" data-note=\"5\">5</sup> gelegentheyt, eene vreuchde der <sup class=\"note-marker\" data-note=\"6\">6</sup> gantscher aerde is de berch Zion, [aen] de zijden van’t <sup class=\"note-marker\" data-note=\"7\">7</sup> Noorden; <sup class=\"note-marker\" data-note=\"a\">a</sup> De stadt des grooten <sup class=\"note-marker\" data-note=\"8\">8</sup> Conincks.",
       "phraseDiff": [
@@ -249,6 +249,11 @@
           "old": "des",
           "new": "van de",
           "principe": "N3"
+        },
+        {
+          "old": "gehele",
+          "new": "(zie principe)",
+          "principe": "V391"
         }
       ]
     },

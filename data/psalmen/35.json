@@ -886,7 +886,7 @@
       "number": 13,
       "textSV1888": "Mij aangaande daarentegen, als zij krank waren, was een zak mijn kleed; ik kwelde mijn ziel met vasten, en mijn gebed keerde weder in mijn boezem.",
       "text1637": "My daerentegen aengaende, als sy kranck waren, was een [21] sack mijn kleet, ick quelde mijne ziele met vasten, ende mijn gebedt [22] keerde weder in mijnen boesem.",
-      "text2026": "Mij aangaande daarentegen, als zij ziek waren, was een zak mijn kleed; ik kwelde mijn ziel met vasten, en mijn gebed keerde weer in mijn boezem.",
+      "text2026": "Wat mij betreft daarentegen, als zij ziek waren, was een zak mijn kleed; ik kwelde mijn ziel met vasten, en mijn gebed keerde weer in mijn boezem.",
       "marginNotes": [
         {
           "marker": "21",
@@ -960,7 +960,7 @@
           "morph": "HVqi3fs"
         }
       ],
-      "text2026_html": "Mij aangaande daarentegen, als zij ziek waren, was een<sup class=\"note-marker\" data-note=\"21\">21</sup> zak mijn kleed; ik kwelde mijn ziel met vasten, en mijn gebed<sup class=\"note-marker\" data-note=\"22\">22</sup> keerde weer in mijn boezem.",
+      "text2026_html": "Wat mij betreft daarentegen, als zij ziek waren, was een<sup class=\"note-marker\" data-note=\"21\">21</sup> zak mijn kleed; ik kwelde mijn ziel met vasten, en mijn gebed<sup class=\"note-marker\" data-note=\"22\">22</sup> keerde weer in mijn boezem.",
       "textSV1888_html": "Mij aangaande daarentegen, als zij krank waren, was een<sup class=\"note-marker\" data-note=\"21\">21</sup> zak mijn kleed; ik kwelde mijn ziel met vasten, en mijn gebed<sup class=\"note-marker\" data-note=\"22\">22</sup> keerde weder in mijn boezem.",
       "text1637_html": "My daerentegen aengaende, als sy kranck ware<i>n</i>, was een <sup class=\"note-marker\" data-note=\"21\">21</sup> sack mijn kleet, ick quelde mijne ziele met vasten, ende mijn gebedt <sup class=\"note-marker\" data-note=\"22\">22</sup> keerde weder in mijnen boesem.",
       "phraseDiff": [
@@ -973,6 +973,11 @@
           "old": "weder",
           "new": "weer",
           "principe": "V66"
+        },
+        {
+          "old": "X aangaande",
+          "new": "(zie principe)",
+          "principe": "V389"
         }
       ]
     },
@@ -1988,7 +1993,7 @@
       "number": 28,
       "textSV1888": "Zo zal mijn tong vermelden Uw gerechtigheid, en Uw lof den gansen dag.",
       "text1637": "So sal mijne tonge vermelden uwe gerechticheyt; [ende] uwen lof den gantschen dach.",
-      "text2026": "Zo zal mijn tong vermelden Uw gerechtigheid, en Uw lof de gehele dag.",
+      "text2026": "Zo zal mijn tong vermelden Uw gerechtigheid, en Uw lof de hele dag.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2022,13 +2027,18 @@
           "morph": "HNcfsc/Sp2ms"
         }
       ],
-      "text2026_html": "Zo zal mijn tong vermelden Uw gerechtigheid, en Uw lof de gehele dag.",
+      "text2026_html": "Zo zal mijn tong vermelden Uw gerechtigheid, en Uw lof de hele dag.",
       "text1637_html": "So sal mijne tonge vermelden uwe gerechticheyt; [ende] uwen lof den gantschen dach.",
       "phraseDiff": [
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "gehele",
+          "new": "(zie principe)",
+          "principe": "V391"
         }
       ]
     }

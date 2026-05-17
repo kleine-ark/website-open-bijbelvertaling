@@ -3608,6 +3608,46 @@
       "nieuw": "hiel",
       "toelichting": "Verouderd meervoud van 'verzen' = hielen. Idioom 'de verzenen tegen iemand verheffen' = zich tegen iemand keren / verraden. Moderne vertalingen gebruiken hier het enkelvoud 'hiel' (vgl. Joh 13:18 citaat van Ps 41:10). Past ook bij Gen 3:15 (hiel vermorzelen).",
       "regex": "\\b[Vv]erzenen\\b"
+    },
+    {
+      "id": "V388",
+      "categorie": "Verouderde woorden",
+      "oud": "grotelijks",
+      "nieuw": "enorm",
+      "toelichting": "Verouderd intensief bijwoord — 'in hoge mate', 'zeer'. Modern: 'enorm', 'sterk', 'zeer'. Vaak in combinaties als 'zich grotelijks verheugen' / 'grotelijks verheven'.",
+      "regex": "\\b[Gg]rotelijks\\b"
+    },
+    {
+      "id": "V389",
+      "categorie": "Naamvallen",
+      "oud": "X aangaande (postpositioneel)",
+      "nieuw": "wat X betreft",
+      "toelichting": "Verouderde postpositionele constructie 'mij/u/hem/haar/ons/hen/hun/zich aangaande'. Modern Nederlands gebruikt 'wat X betreft'. Prepositioneel 'aangaande X' blijft (kan ook 'over' of 'betreffende' worden).",
+      "regex": "\\b([Mm]ij|[Uu]|[Hh]em|[Hh]aar|[Oo]ns|[Hh]en|[Hh]un|[Zz]ich) aangaande\\b"
+    },
+    {
+      "id": "V390",
+      "categorie": "Naamvallen",
+      "oud": "levenden [zelfstandig naamwoord]",
+      "nieuw": "levende [zelfstandig naamwoord]",
+      "toelichting": "Verbogen adjectief 'levenden' (mannelijk acc./dat.) voor zelfstandig naamwoord. Modern Nederlands kent geen -en uitgang. 'De levenden' (= levende personen) blijft.",
+      "regex": "\\blevenden\\s+(?=God|water|vogel|steen|bok|man|weg|HEERE|JAHWEH|Heer|wezen|ware)"
+    },
+    {
+      "id": "V391",
+      "categorie": "Verouderde woorden",
+      "oud": "gehele",
+      "nieuw": "hele",
+      "toelichting": "Verbogen vorm van 'geheel' — moderne spreektaal gebruikt 'hele' (de hele dag, de hele wereld). 'Geheel' als zelfstandig naamwoord ('het geheel') blijft.",
+      "regex": "\\b[Gg]ehele\\b"
+    },
+    {
+      "id": "V392",
+      "categorie": "Werkwoordsvormen",
+      "oud": "placht / plachten / plachte",
+      "nieuw": "was gewend / waren gewend",
+      "toelichting": "Verouderde verleden tijd van 'plegen' (= gewoon zijn te). Modern Nederlands gebruikt 'was/waren gewend te' of 'placht' alleen in zeer formeel register. Constructie blijft 'was gewend [te + infinitief]'.",
+      "regex": "\\b[Pp]lacht(en|e)?\\b"
     }
   ]
 }
