@@ -131,7 +131,7 @@
       "number": 3,
       "textSV1888": "De HEERE zal hem bewaren, en zal hem bij het leven behouden; hij zal op aarde gelukzalig gemaakt worden. Geef hem ook niet over in zijner vijanden begeerte.",
       "text1637": "De HEERE sal hem bewaren, ende sal hem by’t [4] leven behouden, hy sal op [5] aerden gelucksalich gemaeckt worden: [6] En geeft hem oock niet over in sijner vyanden [7] begeerte.",
-      "text2026": "JAHWEH zal hem bewaren, en zal hem bij het leven behouden; hij zal op aarde gelukzalig gemaakt worden. Geef hem ook niet over in van zijn vijanden begeerte.",
+      "text2026": "JAHWEH zal hem bewaren, en zal hem bij het leven behouden; hij zal op aarde gelukzalig gemaakt worden. Geef hem ook niet over aan de begeerte van zijn vijanden.",
       "marginNotes": [
         {
           "marker": "4",
@@ -222,6 +222,11 @@
           "old": "zijner",
           "new": "van zijn",
           "principe": "N7"
+        },
+        {
+          "old": "in zijner vijanden begeerte",
+          "new": "aan de begeerte van zijn vijanden",
+          "principe": "N3"
         }
       ]
     },
@@ -229,7 +234,7 @@
       "number": 4,
       "textSV1888": "De HEERE zal hem ondersteunen op het ziekbed; in zijn krankheid verandert Gij zijn ganse leger.",
       "text1637": "De HEERE sal hem ondersteunen op het [8] sieck-bedde; in sijne kranckheyt [9] verandert ghy sijn gantsch leger.",
-      "text2026": "JAHWEH zal hem ondersteunen op het ziekbed; in zijn ziekte verandert U zijn gehele leger.",
+      "text2026": "JAHWEH zal hem ondersteunen op het ziekbed; in zijn ziekte verandert U zijn gehele bed.",
       "marginNotes": [
         {
           "marker": "8",
@@ -293,7 +298,7 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "JAHWEH zal hem ondersteunen op het<sup class=\"note-marker\" data-note=\"8\">8</sup> ziekbed; in zijn ziekte<sup class=\"note-marker\" data-note=\"9\">9</sup> verandert U zijn gehele leger.",
+      "text2026_html": "JAHWEH zal hem ondersteunen op het<sup class=\"note-marker\" data-note=\"8\">8</sup> ziekbed; in zijn ziekte<sup class=\"note-marker\" data-note=\"9\">9</sup> verandert U zijn gehele bed.",
       "textSV1888_html": "De HEERE zal hem ondersteunen op het<sup class=\"note-marker\" data-note=\"8\">8</sup> ziekbed; in zijn krankheid<sup class=\"note-marker\" data-note=\"9\">9</sup> verandert Gij zijn ganse leger.",
       "text1637_html": "De HEERE sal hem ondersteunen op het <sup class=\"note-marker\" data-note=\"8\">8</sup> sieck-bedde; in sijne kranckheyt <sup class=\"note-marker\" data-note=\"9\">9</sup> verandert ghy sijn gantsch leger.",
       "phraseDiff": [
@@ -316,6 +321,11 @@
           "old": "ganse",
           "new": "gehele",
           "principe": "V3"
+        },
+        {
+          "old": "leger (= bed)",
+          "new": "bed",
+          "principe": "V342b"
         }
       ]
     },
