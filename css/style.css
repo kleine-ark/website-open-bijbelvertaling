@@ -1258,6 +1258,14 @@ body.show-chapter-intro #chapter-intro { display: block !important; }
     position: relative;
 }
 
+/* Optie: versnummers verbergen — opacity in plaats van display:none zodat de status-balk en klik-handlers blijven werken */
+body.hide-verse-numbers .verse-num {
+    color: transparent;
+}
+body.hide-verse-numbers .verse-num:hover {
+    color: var(--brown);
+}
+
 /* Status indicator */
 .verse-num::after {
     content: '';
