@@ -371,6 +371,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1c"
+        },
+        {
+          "old": "toog,",
+          "new": "trok,",
+          "principe": "V353"
         }
       ]
     },
@@ -520,7 +525,14 @@
       ],
       "text2026_html": "En David<sup class=\"note-marker\" data-note=\"b\">b</sup> nam hem duizend<sup class=\"note-marker\" data-note=\"9\">9</sup> wagens af, en zevenhonderd<sup class=\"note-marker\" data-note=\"10\">10</sup> ruiteren, en twintig duizend man te voet; en David ontzenuwde<sup class=\"note-marker\" data-note=\"11\">11</sup> alle<sup class=\"note-marker\" data-note=\"12\">12</sup> wagenpaarden, en hield daarvan honderd wagens over.",
       "textSV1888_html": "En David<sup class=\"note-marker\" data-note=\"b\">b</sup> nam hem duizend<sup class=\"note-marker\" data-note=\"9\">9</sup> wagens af, en zevenhonderd<sup class=\"note-marker\" data-note=\"10\">10</sup> ruiteren, en twintig duizend man te voet; en David ontzenuwde<sup class=\"note-marker\" data-note=\"11\">11</sup> alle<sup class=\"note-marker\" data-note=\"12\">12</sup> wagenpaarden, en hield daarvan honderd wagenen over.",
-      "text1637_html": "Ende David <sup class=\"note-marker\" data-note=\"b\">b</sup> nam hem duysent <sup class=\"note-marker\" data-note=\"9\">9</sup> [wagens] af, ende seven hondert <sup class=\"note-marker\" data-note=\"10\">10</sup> ruyteren, ende twintich duysent man te voete: ende David ontsenuwde <sup class=\"note-marker\" data-note=\"11\">11</sup> alle <sup class=\"note-marker\" data-note=\"12\">12</sup> wagen-peerden, ende hieldt daer van hondert wagenen overich."
+      "text1637_html": "Ende David <sup class=\"note-marker\" data-note=\"b\">b</sup> nam hem duysent <sup class=\"note-marker\" data-note=\"9\">9</sup> [wagens] af, ende seven hondert <sup class=\"note-marker\" data-note=\"10\">10</sup> ruyteren, ende twintich duysent man te voete: ende David ontsenuwde <sup class=\"note-marker\" data-note=\"11\">11</sup> alle <sup class=\"note-marker\" data-note=\"12\">12</sup> wagen-peerden, ende hieldt daer van hondert wagenen overich.",
+      "phraseDiff": [
+        {
+          "old": "wagenen",
+          "new": "wagens",
+          "principe": "V405"
+        }
+      ]
     },
     {
       "number": 5,
@@ -977,13 +989,8 @@
       "phraseDiff": [
         {
           "old": "ganse heir",
-          "new": "gehele legermacht",
+          "new": "hele leger",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -1615,6 +1622,11 @@
       "text1637_html": "En<i>de</i> hy leyde besettingen in Edom, in gantsch Edom leyde hy besettingen, ende alle Edomiten werden <sup class=\"note-marker\" data-note=\"27\">27</sup> David tot knechten: ende de HEERE <sup class=\"note-marker\" data-note=\"28\">28</sup> behoedde David over al, waer hy henen tooch.",
       "phraseDiff": [
         {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
+        },
+        {
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
@@ -1714,14 +1726,14 @@
           "principe": "V42"
         },
         {
-          "old": "ganse",
-          "new": "gehele",
+          "old": "gans",
+          "new": "geheel",
           "principe": "V3"
         },
         {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
+          "old": "ganse",
+          "new": "hele",
+          "principe": "V3"
         }
       ]
     },
@@ -1806,7 +1818,7 @@
       "phraseDiff": [
         {
           "old": "heir;",
-          "new": "legermacht;",
+          "new": "leger;",
           "principe": "O2"
         }
       ]

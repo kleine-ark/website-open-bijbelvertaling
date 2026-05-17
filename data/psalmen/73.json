@@ -76,8 +76,8 @@
       "text1637_html": "EEn Psalm <sup class=\"note-marker\" data-note=\"1\">1</sup> Asaphs. <sup class=\"note-marker\" data-note=\"2\">2</sup> Immers is Godt Israël goet; den genen <sup class=\"note-marker\" data-note=\"3\">3</sup> die reyn van herten zijn.",
       "phraseDiff": [
         {
-          "old": "dengenen",
-          "new": "van hen",
+          "old": "dengenen,",
+          "new": "van hen,",
           "principe": "V397"
         }
       ]
@@ -145,9 +145,14 @@
       "text1637_html": "Maer my aengaende, <sup class=\"note-marker\" data-note=\"4\">4</sup> mijne voeten waren bynae uytgeweken: mijne treden waren by-kans uytgeschoten.",
       "phraseDiff": [
         {
-          "old": "X aangaande",
-          "new": "(zie principe)",
+          "old": "",
+          "new": "wat",
           "principe": "V389"
+        },
+        {
+          "old": "aangaande,",
+          "new": "betreft,",
+          "principe": null
         }
       ]
     },
@@ -394,7 +399,14 @@
       ],
       "text2026_html": "Daarom<sup class=\"note-marker\" data-note=\"11\">11</sup> omringt hen de hoogmoed als een keten; het geweld bedekt hen als een<sup class=\"note-marker\" data-note=\"12\">12</sup> gewaad.",
       "textSV1888_html": "Daarom<sup class=\"note-marker\" data-note=\"11\">11</sup> omringt hen de hovaardij als een keten; het geweld bedekt hen als een<sup class=\"note-marker\" data-note=\"12\">12</sup> gewaad.",
-      "text1637_html": "Daerom <sup class=\"note-marker\" data-note=\"11\">11</sup> omringtse de hoovaerdye als een keten: het gewelt bedecktse [als] een <sup class=\"note-marker\" data-note=\"12\">12</sup> gewaet."
+      "text1637_html": "Daerom <sup class=\"note-marker\" data-note=\"11\">11</sup> omringtse de hoovaerdye als een keten: het gewelt bedecktse [als] een <sup class=\"note-marker\" data-note=\"12\">12</sup> gewaet.",
+      "phraseDiff": [
+        {
+          "old": "hovaardij",
+          "new": "hoogmoed",
+          "principe": "V334"
+        }
+      ]
     },
     {
       "number": 7,
@@ -907,14 +919,9 @@
           "principe": "V2"
         },
         {
-          "old": "den",
-          "new": "de",
+          "old": "den gansen",
+          "new": "de hele",
           "principe": "N1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -1901,14 +1908,19 @@
       "text1637_html": "Maer my aengaende; ’tis my goet, <sup class=\"note-marker\" data-note=\"53\">53</sup> nae by Godt te wesen: ick sette mijn betrouwen op den Heere HEERE; om alle uwe wercken te vertellen.",
       "phraseDiff": [
         {
+          "old": "",
+          "new": "wat",
+          "principe": "V389"
+        },
+        {
+          "old": "aangaande,",
+          "new": "betreft,",
+          "principe": null
+        },
+        {
           "old": "den Heere HEERE,",
           "new": "de Adonai JAHWEH,",
           "principe": "G1"
-        },
-        {
-          "old": "X aangaande",
-          "new": "(zie principe)",
-          "principe": "V389"
         }
       ]
     }

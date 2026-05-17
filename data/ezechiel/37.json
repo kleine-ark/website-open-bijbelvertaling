@@ -123,6 +123,11 @@
           "principe": "G1"
         },
         {
+          "old": "neder",
+          "new": "neer",
+          "principe": "V354"
+        },
+        {
           "old": "dezelve",
           "new": "dezelfde",
           "principe": "O3"
@@ -1179,8 +1184,13 @@
           "principe": null
         },
         {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
+        },
+        {
           "old": "heir.",
-          "new": "legermacht.",
+          "new": "leger.",
           "principe": "O2"
         }
       ]
@@ -1316,18 +1326,13 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "Israëls;",
           "new": "van Israël;",
           "principe": null
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -1892,18 +1897,13 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "Israëls,",
           "new": "van Israël,",
           "principe": null
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -2353,6 +2353,11 @@
           "old": "dewelke gij",
           "new": "die u",
           "principe": "V75"
+        },
+        {
+          "old": "hunlieder",
+          "new": "hun",
+          "principe": "V329"
         }
       ]
     },
@@ -2523,12 +2528,17 @@
         {
           "old": "der",
           "new": "van de",
-          "principe": "N2"
+          "principe": "V318"
         },
         {
           "old": "waarhenen",
           "new": "waarheen",
           "principe": "V232"
+        },
+        {
+          "old": "vergaderen",
+          "new": "verzamelen",
+          "principe": "V318"
         }
       ]
     },
@@ -2682,14 +2692,14 @@
       "text1637_html": "Ende ick salse maken tot een eenich volck in den lande, op de bergen Israëls; ende sy sullen alle te samen <sup class=\"note-marker\" data-note=\"a\">a</sup> eenen eenigen <sup class=\"note-marker\" data-note=\"41\">41</sup> Coninck tot Coninck hebben: ende sy en sullen niet meer tot twee volcken zijn, nochte voortaen meer in twee Coninckrijcken <sup class=\"note-marker\" data-note=\"42\">42</sup> verdeylt zijn.",
       "phraseDiff": [
         {
+          "old": "te zamen",
+          "new": "samen",
+          "principe": "V374"
+        },
+        {
           "old": "enigen",
           "new": "enige",
           "principe": "V44"
-        },
-        {
-          "old": "te zamen",
-          "new": "(zie principe)",
-          "principe": "V374"
         }
       ]
     },
@@ -2850,6 +2860,11 @@
       "text1637_html": "Ende sy en sullen haer niet meer verontreynigen met hare <sup class=\"note-marker\" data-note=\"43\">43</sup> dreckgoden, ende met hare <sup class=\"note-marker\" data-note=\"44\">44</sup> verfoeyselen, ende met <sup class=\"note-marker\" data-note=\"45\">45</sup> alle hare overtredingen: ende ick salse verlossen uyt alle hare woonplaetsen, in de welcke sy <sup class=\"note-marker\" data-note=\"46\">46</sup> gesondicht hebben, ende salse reynigen; so sullen sy my tot een volck zijn, ende ick sal hen tot eenen Godt zijn.",
       "phraseDiff": [
         {
+          "old": "drekgoden,",
+          "new": "afgoden,",
+          "principe": null
+        },
+        {
           "old": "dewelke",
           "new": "die",
           "principe": "V75"
@@ -2961,14 +2976,14 @@
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"b\">b</sup> mijn <sup class=\"note-marker\" data-note=\"47\">47</sup> knecht David sal Coninck over hen zijn; ende sy sullen alle te samen eenen <sup class=\"note-marker\" data-note=\"48\">48</sup> herder hebben: ende sy sullen in mijne rechten wandelen, ende mijne insettingen bewaren ende die doen.",
       "phraseDiff": [
         {
+          "old": "te zamen",
+          "new": "samen",
+          "principe": "V374"
+        },
+        {
           "old": "inzettingen",
           "new": "voorschriften",
           "principe": "V76"
-        },
-        {
-          "old": "te zamen",
-          "new": "(zie principe)",
-          "principe": "V374"
         }
       ]
     },
@@ -3101,7 +3116,14 @@
         }
       ],
       "text2026_html": "<span class=\"god-speaks\"><i>En zij zullen wonen in het land, dat Ik Mijn knecht Jakob gegeven heb, waarin uw vaders gewoond hebben; ja, daarin zullen zij wonen, zij en hun kinderen, en hun kindskinderen tot in eeuwigheid, en Mijn Knecht David zal hun Vorst zijn tot in eeuwigheid.</i></span>",
-      "text1637_html": "Ende sy sullen woonen in’t lant, dat ick mijnen knecht Iacob gegeven hebbe, daer in uwe vaders gewoont hebben: Ia daer in sullense woonen, sy ende hare kinderen, ende hare kints kinderen tot in eeuwicheyt, ende mijn knecht David sal haerlieder Vorst zijn tot in eeuwicheyt."
+      "text1637_html": "Ende sy sullen woonen in’t lant, dat ick mijnen knecht Iacob gegeven hebbe, daer in uwe vaders gewoont hebben: Ia daer in sullense woonen, sy ende hare kinderen, ende hare kints kinderen tot in eeuwicheyt, ende mijn knecht David sal haerlieder Vorst zijn tot in eeuwicheyt.",
+      "phraseDiff": [
+        {
+          "old": "hunlieder",
+          "new": "hun",
+          "principe": "V329"
+        }
+      ]
     },
     {
       "number": 26,

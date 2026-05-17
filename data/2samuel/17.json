@@ -886,6 +886,11 @@
           "old": "krijgsman,",
           "new": "soldaat,",
           "principe": "V119"
+        },
+        {
+          "old": "vernachten",
+          "new": "overnachten",
+          "principe": "V416"
         }
       ]
     },
@@ -1192,7 +1197,19 @@
       ],
       "text2026_html": "<span class=\"direct-speech\"><i>Zo zou hij, die ook een<sup class=\"note-marker\" data-note=\"16\">16</sup> dapper man is, van wie de hart is als een leeuwenhart, te<sup class=\"note-marker\" data-note=\"17\">17</sup> enen male smelten; want geheel Israël weet, dat uw vader een held is, en het dappere mannen zijn, die met hem zijn.</i></span>",
       "textSV1888_html": "Zo zou hij, die ook een<sup class=\"note-marker\" data-note=\"16\">16</sup> dapper man is, wiens hart is als een leeuwenhart, te<sup class=\"note-marker\" data-note=\"17\">17</sup> enen male smelten; want gans Israël weet, dat uw vader een held is, en het dappere mannen zijn, die met hem zijn.",
-      "text1637_html": "So soude hy, die oock een <sup class=\"note-marker\" data-note=\"16\">16</sup> dapper man is, wiens herte is als een leewe<i>n</i> herte, <sup class=\"note-marker\" data-note=\"17\">17</sup> teenemael smelten: want gantsch Israël weet, dat uwe vader een helt is, ende het dappere mannen zijn, die met hem zijn."
+      "text1637_html": "So soude hy, die oock een <sup class=\"note-marker\" data-note=\"16\">16</sup> dapper man is, wiens herte is als een leewe<i>n</i> herte, <sup class=\"note-marker\" data-note=\"17\">17</sup> teenemael smelten: want gantsch Israël weet, dat uwe vader een helt is, ende het dappere mannen zijn, die met hem zijn.",
+      "phraseDiff": [
+        {
+          "old": "wiens",
+          "new": "van wie de",
+          "principe": "V312"
+        },
+        {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
+        }
+      ]
     },
     {
       "number": 11,
@@ -1323,6 +1340,11 @@
       "textSV1888_html": "Maar ik rade, dat<sup class=\"note-marker\" data-note=\"18\">18</sup> in alle haast tot u verzameld worde gans Israël, van<sup class=\"note-marker\" data-note=\"19\">19</sup> Dan tot Ber-seba toe, als zand, dat aan de zee is, in menigte; en dat uw<sup class=\"note-marker\" data-note=\"20\">20</sup> persoon medega in den strijd.",
       "text1637_html": "Maer ick rade, dat <sup class=\"note-marker\" data-note=\"18\">18</sup> in aller haest tot u versamelt worde gantsch Israël, van <sup class=\"note-marker\" data-note=\"19\">19</sup> Dan tot Ber-Seba toe, als zant, dat aen de zee is, in menichte: ende dat uwe <sup class=\"note-marker\" data-note=\"20\">20</sup> persoon mede gae in den strijt.",
       "phraseDiff": [
+        {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
+        },
         {
           "old": "den",
           "new": "de",
@@ -1623,6 +1645,11 @@
           "old": "indien",
           "new": "als",
           "principe": "V41"
+        },
+        {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
         },
         {
           "old": "tot dezelve",
@@ -2103,9 +2130,9 @@
           "principe": "V56"
         },
         {
-          "old": "dezen",
-          "new": "deze",
-          "principe": "N4"
+          "old": "Vernacht dezen",
+          "new": "Overnacht deze",
+          "principe": "V416"
         },
         {
           "old": "der",
@@ -3107,6 +3134,11 @@
           "principe": "N1"
         },
         {
+          "old": "toog",
+          "new": "trok",
+          "principe": "V353"
+        },
+        {
           "old": "Alzo",
           "new": "Zo",
           "principe": "V42"
@@ -3196,7 +3228,14 @@
       ],
       "text2026_html": "David nu kwam te<sup class=\"note-marker\" data-note=\"42\">42</sup> Mahanaim, en Absalom trok over de Jordaan, hij en alle mannen van Israël met hem.",
       "textSV1888_html": "David nu kwam te<sup class=\"note-marker\" data-note=\"42\">42</sup> Mahanaim, en Absalom toog over de Jordaan, hij en alle mannen van Israël met hem.",
-      "text1637_html": "David nu quam tot <sup class=\"note-marker\" data-note=\"42\">42</sup> Mahanaim: ende Absalom tooch over de Iordane, hy, ende alle mannen Israels met hem."
+      "text1637_html": "David nu quam tot <sup class=\"note-marker\" data-note=\"42\">42</sup> Mahanaim: ende Absalom tooch over de Iordane, hy, ende alle mannen Israels met hem.",
+      "phraseDiff": [
+        {
+          "old": "toog",
+          "new": "trok",
+          "principe": "V353"
+        }
+      ]
     },
     {
       "number": 25,
@@ -3361,8 +3400,13 @@
       "phraseDiff": [
         {
           "old": "heir.",
-          "new": "legermacht.",
+          "new": "leger.",
           "principe": "O2"
+        },
+        {
+          "old": "wiens",
+          "new": "van wie de",
+          "principe": "V312"
         },
         {
           "old": "zuster",

@@ -30,14 +30,19 @@
           "principe": "V198"
         },
         {
+          "old": "gehele",
+          "new": "hele",
+          "principe": "V391"
+        },
+        {
           "old": "des hemels",
           "new": "van de hemel",
           "principe": "N3"
         },
         {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
+          "old": "vergaderd.",
+          "new": "verzameld.",
+          "principe": "V318"
         }
       ]
     },
@@ -175,7 +180,7 @@
         },
         {
           "old": "gehele",
-          "new": "(zie principe)",
+          "new": "hele",
           "principe": "V391"
         }
       ]
@@ -446,13 +451,8 @@
       "phraseDiff": [
         {
           "old": "ganse aardrijk,",
-          "new": "gehele aarde,",
+          "new": "hele aarde,",
           "principe": "V18"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -596,13 +596,8 @@
         },
         {
           "old": "ganse aardrijk",
-          "new": "gehele aarde",
+          "new": "hele aarde",
           "principe": "V18"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -650,7 +645,14 @@
       "textSV1888": "Daarom is uw versmading gekomen, tot de Allerhoogste, en uw hovaardigheid tot de sterke.",
       "text2026": "Daarom is uw versmading gekomen, tot de Allerhoogste, en uw trots tot de sterke.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Daarom is uw versmading gekomen, tot de Allerhoogste, en uw trots tot de sterke.</i></span>"
+      "text2026_html": "<span class=\"direct-speech\"><i>Daarom is uw versmading gekomen, tot de Allerhoogste, en uw trots tot de sterke.</i></span>",
+      "phraseDiff": [
+        {
+          "old": "hovaardigheid",
+          "new": "trots",
+          "principe": "V336"
+        }
+      ]
     },
     {
       "number": 44,
@@ -660,6 +662,11 @@
       "marginNotes": [],
       "text2026_html": "<span class=\"direct-speech\"><i>En de Allerhoogste heeft de hoogmoedige tijden aangezien, en zie, zij zijn geëindigd, en hun boze daden zijn vervuld.</i></span>",
       "phraseDiff": [
+        {
+          "old": "hovaardige",
+          "new": "hoogmoedige",
+          "principe": "V334"
+        },
         {
           "old": "ziet,",
           "new": "zie,",
@@ -691,6 +698,11 @@
       "text2026_html": "<span class=\"direct-speech\"><i>Opdat de hele aarde weer verfrist worde, en tot zichzelf kome, van uw geweld bevrijd zijnde, en dat zij mag hopen op het oordeel en de barmhartigheid van degene die haar gemaakt heeft.</i></span>",
       "phraseDiff": [
         {
+          "old": "gehele",
+          "new": "hele",
+          "principe": "V391"
+        },
+        {
           "old": "weder verkwikt",
           "new": "weer verfrist",
           "principe": "V98"
@@ -699,11 +711,6 @@
           "old": "desgenen",
           "new": "van degene",
           "principe": "O14"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     }

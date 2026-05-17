@@ -15,6 +15,11 @@
           "principe": "N3"
         },
         {
+          "old": "gehele",
+          "new": "hele",
+          "principe": "V391"
+        },
+        {
           "old": "hetwelk",
           "new": "dat",
           "principe": "N6"
@@ -33,11 +38,6 @@
           "old": "krijg",
           "new": "oorlog",
           "principe": "V203"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ],
       "grondtekst": [
@@ -517,7 +517,7 @@
         },
         {
           "old": "gehele",
-          "new": "(zie principe)",
+          "new": "hele",
           "principe": "V391"
         }
       ],
@@ -788,7 +788,7 @@
       "phraseDiff": [
         {
           "old": "gehele",
-          "new": "(zie principe)",
+          "new": "hele",
           "principe": "V391"
         }
       ]
@@ -1521,14 +1521,19 @@
           "principe": "N2"
         },
         {
-          "old": "des lands,",
-          "new": "van het land,",
-          "principe": "N3"
+          "old": "neder",
+          "new": "neer",
+          "principe": "V354"
         },
         {
           "old": "gehele",
-          "new": "(zie principe)",
+          "new": "hele",
           "principe": "V391"
+        },
+        {
+          "old": "des lands,",
+          "new": "van het land,",
+          "principe": "N3"
         }
       ],
       "grondtekst": [
@@ -1670,9 +1675,19 @@
           "principe": "V2"
         },
         {
+          "old": "gehele",
+          "new": "hele",
+          "principe": "V391"
+        },
+        {
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "wagenen",
+          "new": "wagens",
+          "principe": "V405"
         },
         {
           "old": "ledig,",
@@ -1685,14 +1700,24 @@
           "principe": "V79"
         },
         {
+          "old": "neder",
+          "new": "neer",
+          "principe": "V354"
+        },
+        {
           "old": "der",
           "new": "van de",
           "principe": "N2"
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
+        },
+        {
+          "old": "tezamen",
+          "new": "samen",
+          "principe": "V374"
         },
         {
           "old": "der",
@@ -1708,16 +1733,6 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
-        },
-        {
-          "old": "te zamen",
-          "new": "(zie principe)",
-          "principe": "V374"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ],
       "grondtekst": [
@@ -2097,7 +2112,7 @@
       "phraseDiff": [
         {
           "old": "gehele",
-          "new": "(zie principe)",
+          "new": "hele",
           "principe": "V391"
         }
       ]
@@ -2193,9 +2208,14 @@
       "text2026_html": "Wij nemen tegen u tot getuigen de hemel en de aarde, en onze God en JAHWEH van onze vaders, die ons vergeldt naar onze misdaden, en naar de misdaden van onze vaders, opdat Hij niet doe naar deze woorden op de dag van heden.",
       "phraseDiff": [
         {
-          "old": "Here",
-          "new": "JAHWEH",
-          "principe": "V280"
+          "old": "Here onzer vaderen,",
+          "new": "JAHWEH van onze vaders,",
+          "principe": "V369"
+        },
+        {
+          "old": "onzer vaderen,",
+          "new": "van onze vaders,",
+          "principe": "V369"
         },
         {
           "old": "hij",

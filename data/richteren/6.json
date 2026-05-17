@@ -1599,8 +1599,13 @@
         },
         {
           "old": "der",
-          "new": "van de",
+          "new": "de hand van de",
           "principe": "V95"
+        },
+        {
+          "old": "hand",
+          "new": "",
+          "principe": null
         }
       ]
     },
@@ -2303,6 +2308,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "neder.",
+          "new": "neer.",
+          "principe": "V354"
         }
       ]
     },
@@ -3133,13 +3143,18 @@
           "principe": "W1"
         },
         {
+          "old": "var",
+          "new": "stier",
+          "principe": "V410"
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "G1"
         },
         {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
+          "old": "var,",
+          "new": "stier,",
           "principe": "V410"
         }
       ]
@@ -3286,14 +3301,19 @@
           "principe": "G1"
         },
         {
-          "old": "dezer",
-          "new": "van deze",
+          "old": "dezer sterkte,",
+          "new": "van deze vesting,",
           "principe": "N5"
         },
         {
           "old": "den",
           "new": "de",
           "principe": "G1"
+        },
+        {
+          "old": "var,",
+          "new": "stier,",
+          "principe": "V410"
         },
         {
           "old": "der",
@@ -3304,11 +3324,6 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
-        },
-        {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
-          "principe": "V410"
         }
       ]
     },
@@ -3577,8 +3592,8 @@
           "principe": "N3"
         },
         {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
+          "old": "var",
+          "new": "stier",
           "principe": "V410"
         }
       ]
@@ -4295,6 +4310,11 @@
       "text1637_html": "Doe <sup class=\"note-marker\" data-note=\"55\">55</sup> tooch de Geest des HEEREN Gideon aen: ende hy <sup class=\"note-marker\" data-note=\"56\">56</sup> blies met de basuyne, ende de <sup class=\"note-marker\" data-note=\"57\">57</sup> Abi-Ezriters werden achter hem by een geroepen.",
       "phraseDiff": [
         {
+          "old": "toog",
+          "new": "trok",
+          "principe": "V353"
+        },
+        {
           "old": "des HEEREN",
           "new": "van JAHWEH",
           "principe": "G2"
@@ -4403,6 +4423,11 @@
       "textSV1888_html": "Ook zond hij boden in<sup class=\"note-marker\" data-note=\"58\">58</sup> gans Manasse, en die werden ook achter hem bijeengeroepen; desgelijks zond hij boden in<sup class=\"note-marker\" data-note=\"59\">59</sup> Aser, en in Zebulon, en in Nafthali; en zij kwamen op, hun tegemoet.",
       "text1637_html": "Oock sondt hy boden in <sup class=\"note-marker\" data-note=\"58\">58</sup> gantsch Manasse, ende die werden oock achter hem by een geroepen: desgelijcx sondt hy boden in <sup class=\"note-marker\" data-note=\"59\">59</sup> Aser, ende in Zebulon, ende in Naphtali, en<i>de</i> sy quamen op hen te gemoet,",
       "phraseDiff": [
+        {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
+        },
         {
           "old": "desgelijks",
           "new": "evenzo",
@@ -4676,7 +4701,7 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
@@ -4693,11 +4718,6 @@
           "old": "Gij",
           "new": "U",
           "principe": "A1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -4971,13 +4991,8 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -5079,13 +5094,8 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     }

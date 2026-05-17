@@ -397,6 +397,11 @@
           "principe": "N7"
         },
         {
+          "old": "vergaderen",
+          "new": "verzamelen",
+          "principe": "V318"
+        },
+        {
           "old": "waarhenen",
           "new": "waarheen",
           "principe": "V232"
@@ -2029,13 +2034,8 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -2664,8 +2664,8 @@
           "principe": "G2"
         },
         {
-          "old": "Zijns",
-          "new": "Zijn",
+          "old": "Zijns harten;",
+          "new": "van Zijn hart;",
           "principe": "V201"
         },
         {
@@ -3916,6 +3916,11 @@
           "principe": "G1"
         },
         {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
+        },
+        {
           "old": "de HEERE.",
           "new": "JAHWEH.",
           "principe": "G1"
@@ -4450,8 +4455,13 @@
       "phraseDiff": [
         {
           "old": "des HEEREN",
-          "new": "van JAHWEH",
+          "new": "het",
           "principe": "G2"
+        },
+        {
+          "old": "",
+          "new": "van JAHWEH",
+          "principe": "V390"
         },
         {
           "old": "gij",
@@ -4469,19 +4479,14 @@
           "principe": "V2"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "G1"
+          "old": "den levenden",
+          "new": "de levende",
+          "principe": "N1"
         },
         {
           "old": "den HEERE der heirscharen, onzen",
           "new": "JAHWEH van de legermachten, onze",
           "principe": "G1"
-        },
-        {
-          "old": "levenden [nw]",
-          "new": "(zie principe)",
-          "principe": "V390"
         }
       ]
     },
@@ -4940,7 +4945,14 @@
       ],
       "text2026_html": "<span class=\"god-speaks\"><i>En Ik zal u<sup class=\"note-marker\" data-note=\"85\">85</sup> eeuwige smaad<sup class=\"note-marker\" data-note=\"86\">86</sup> aandoen, en<sup class=\"note-marker\" data-note=\"v\">v</sup> eeuwige schande, die niet zal worden vergeten.</i></span>",
       "textSV1888_html": "En Ik zal u<sup class=\"note-marker\" data-note=\"85\">85</sup> eeuwige smaadheid<sup class=\"note-marker\" data-note=\"86\">86</sup> aandoen, en<sup class=\"note-marker\" data-note=\"v\">v</sup> eeuwige schande, die niet zal worden vergeten.",
-      "text1637_html": "Ende ick sal u <sup class=\"note-marker\" data-note=\"85\">85</sup> eeuwige smaetheyt <sup class=\"note-marker\" data-note=\"86\">86</sup> aendoen: ende <sup class=\"note-marker\" data-note=\"v\">v</sup> eeuwige schande, die niet en sal worden vergeten."
+      "text1637_html": "Ende ick sal u <sup class=\"note-marker\" data-note=\"85\">85</sup> eeuwige smaetheyt <sup class=\"note-marker\" data-note=\"86\">86</sup> aendoen: ende <sup class=\"note-marker\" data-note=\"v\">v</sup> eeuwige schande, die niet en sal worden vergeten.",
+      "phraseDiff": [
+        {
+          "old": "smaadheid",
+          "new": "smaad",
+          "principe": "V349"
+        }
+      ]
     }
   ],
   "chapterIntro": {

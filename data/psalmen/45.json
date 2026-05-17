@@ -201,9 +201,9 @@
           "principe": "V401"
         },
         {
-          "old": "pen eens vaardigen schrijvers",
-          "new": "pen van een vaardige schrijver",
-          "principe": "N3"
+          "old": "eens vaardigen schrijvers.",
+          "new": "van een vaardige schrijver.",
+          "principe": null
         }
       ]
     },
@@ -1088,6 +1088,11 @@
           "old": "Heere",
           "new": "Heer",
           "principe": null
+        },
+        {
+          "old": "neder.",
+          "new": "neer.",
+          "principe": "V354"
         }
       ]
     },
@@ -1235,11 +1240,6 @@
       "text1637_html": "Des Conincks dochter is geheel vereerlickt <sup class=\"note-marker\" data-note=\"40\">40</sup> inwendich; hare kleedinge is van gouden <sup class=\"note-marker\" data-note=\"41\">41</sup> borduersel.",
       "phraseDiff": [
         {
-          "old": "Des",
-          "new": "Van de",
-          "principe": "N3"
-        },
-        {
           "old": "Des Konings Dochter",
           "new": "De dochter van de Koning",
           "principe": "N3"
@@ -1360,8 +1360,8 @@
       "text1637_html": "Sy sullen geleydt worden met <sup class=\"note-marker\" data-note=\"42\">42</sup> alle-blijtschap ende verheuginge; sy sullen ingaen in des Conincks Paleys.",
       "phraseDiff": [
         {
-          "old": "des Konings",
-          "new": "van de Koning",
+          "old": "des Konings paleis.",
+          "new": "het paleis van de Koning.",
           "principe": "N3"
         }
       ]
@@ -1440,13 +1440,8 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },

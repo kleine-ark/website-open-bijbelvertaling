@@ -144,7 +144,14 @@
       ],
       "text2026_html": "Merk op mij, en verhoor mij; ik bedrijf luid weeklagen in mijn<sup class=\"note-marker\" data-note=\"2\">2</sup> klacht, en maak<sup class=\"note-marker\" data-note=\"3\">3</sup> getier;",
       "textSV1888_html": "Merk op mij, en verhoor mij; ik bedrijf misbaar in mijn<sup class=\"note-marker\" data-note=\"2\">2</sup> klacht, en maak<sup class=\"note-marker\" data-note=\"3\">3</sup> getier;",
-      "text1637_html": "Merckt op my, ende verhoort my: ick bedrijve misbaer in mijne <sup class=\"note-marker\" data-note=\"2\">2</sup> klachte, ende maeck <sup class=\"note-marker\" data-note=\"3\">3</sup> getier;"
+      "text1637_html": "Merckt op my, ende verhoort my: ick bedrijve misbaer in mijne <sup class=\"note-marker\" data-note=\"2\">2</sup> klachte, ende maeck <sup class=\"note-marker\" data-note=\"3\">3</sup> getier;",
+      "phraseDiff": [
+        {
+          "old": "misbaar",
+          "new": "luid weeklagen",
+          "principe": "V417"
+        }
+      ]
     },
     {
       "number": 4,
@@ -441,7 +448,19 @@
       ],
       "text2026_html": "Zodat ik zeg:<sup class=\"note-marker\" data-note=\"9\">9</sup> Och, dat mij iemand<sup class=\"note-marker\" data-note=\"10\">10</sup> vleugelen, als ener<sup class=\"note-marker\" data-note=\"11\">11</sup> duive, gave! ik zou wegvliegen,<sup class=\"note-marker\" data-note=\"12\">12</sup> waar ik blijven mocht.",
       "textSV1888_html": "Zodat ik zeg:<sup class=\"note-marker\" data-note=\"9\">9</sup> Och, dat mij iemand<sup class=\"note-marker\" data-note=\"10\">10</sup> vleugelen, als ener<sup class=\"note-marker\" data-note=\"11\">11</sup> duive, gave! ik zou henenvliegen,<sup class=\"note-marker\" data-note=\"12\">12</sup> waar ik blijven mocht.",
-      "text1637_html": "So dat ick segge; <sup class=\"note-marker\" data-note=\"9\">9</sup> Och dat my yemant <sup class=\"note-marker\" data-note=\"10\">10</sup> vleugelen, als eener <sup class=\"note-marker\" data-note=\"11\">11</sup> duyve, gave! Ick soude henen vliegen, <sup class=\"note-marker\" data-note=\"12\">12</sup> waer ick blijven mochte."
+      "text1637_html": "So dat ick segge; <sup class=\"note-marker\" data-note=\"9\">9</sup> Och dat my yemant <sup class=\"note-marker\" data-note=\"10\">10</sup> vleugelen, als eener <sup class=\"note-marker\" data-note=\"11\">11</sup> duyve, gave! Ick soude henen vliegen, <sup class=\"note-marker\" data-note=\"12\">12</sup> waer ick blijven mochte.",
+      "phraseDiff": [
+        {
+          "old": "ener duive, gave!",
+          "new": "van een duif zou geven!",
+          "principe": null
+        },
+        {
+          "old": "henenvliegen,",
+          "new": "wegvliegen,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 8,
@@ -511,6 +530,11 @@
           "old": "Ziet,",
           "new": "Zie,",
           "principe": "V198"
+        },
+        {
+          "old": "vernachten",
+          "new": "overnachten",
+          "principe": "V416"
         }
       ]
     },
@@ -572,8 +596,8 @@
       "text1637_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup> Ick soude haeste<i>n</i> dat ick ontquame; van den <sup class=\"note-marker\" data-note=\"17\">17</sup> drijvenden wint, van den storm.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
+          "old": "den drijvenden",
+          "new": "de drijvende",
           "principe": "N1"
         },
         {
@@ -1000,14 +1024,19 @@
       "text1637_html": "Die wy t’samen <sup class=\"note-marker\" data-note=\"28\">28</sup> in soeticheyt heymelick raet pleegden: wy wandelden <sup class=\"note-marker\" data-note=\"29\">29</sup> in geselschap ten huyse Godes.",
       "phraseDiff": [
         {
+          "old": "te zamen",
+          "new": "samen",
+          "principe": "V374"
+        },
+        {
           "old": "heimelijk",
           "new": "in het geheim",
           "principe": "V57"
         },
         {
-          "old": "te zamen",
-          "new": "(zie principe)",
-          "principe": "V374"
+          "old": "ten huize Gods.",
+          "new": "in het huis van God.",
+          "principe": "V418"
         }
       ]
     },
@@ -1132,14 +1161,14 @@
       "text1637_html": "My aengaende, ick sal tot Godt roepen: ende de HEERE sal my verlossen.",
       "phraseDiff": [
         {
+          "old": "Mij aangaande,",
+          "new": "Wat mij betreft,",
+          "principe": "V389"
+        },
+        {
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
-        },
-        {
-          "old": "X aangaande",
-          "new": "(zie principe)",
-          "principe": "V389"
         }
       ]
     },
@@ -1404,6 +1433,11 @@
           "old": "dewijl",
           "new": "omdat",
           "principe": "V2"
+        },
+        {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
         }
       ]
     },
@@ -1676,6 +1710,11 @@
           "old": "den HEERE,",
           "new": "JAHWEH,",
           "principe": "G1"
+        },
+        {
+          "old": "wankele.",
+          "new": "zou wankelen.",
+          "principe": null
         }
       ]
     },
@@ -1802,6 +1841,11 @@
           "old": "des bloeds",
           "new": "van het bloed",
           "principe": "N3"
+        },
+        {
+          "old": "ter",
+          "new": "tot op de",
+          "principe": null
         }
       ]
     }

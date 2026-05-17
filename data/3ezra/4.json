@@ -947,6 +947,13 @@
           "woord": "αυτος",
           "lemma": "αὐτός"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "neder,",
+          "new": "neer,",
+          "principe": "V354"
+        }
       ]
     },
     {
@@ -3138,14 +3145,14 @@
       "text2026_html": "<span class=\"direct-speech\"><i>De hele aarde roept de waarheid aan, en de hemel looft dezelfde, en al de werken worden bewogen en beven, en bij haar is geen onrecht.</i></span>",
       "phraseDiff": [
         {
+          "old": "gehele",
+          "new": "hele",
+          "principe": "V391"
+        },
+        {
           "old": "dezelve,",
           "new": "dezelfde,",
           "principe": "O3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ],
       "grondtekst": [
@@ -3427,7 +3434,7 @@
       "phraseDiff": [
         {
           "old": "der",
-          "new": "van de",
+          "new": "de",
           "principe": "N2"
         }
       ],
@@ -4891,14 +4898,14 @@
       "text2026_html": "En dat het hele land, dat zij bewoonden, voor hen zonder schatting zou zijn: en dat de Idumeeërs de plaatsen van de Joden zouden verlaten, die zij ingenomen hadden;",
       "phraseDiff": [
         {
+          "old": "gehele",
+          "new": "hele",
+          "principe": "V391"
+        },
+        {
           "old": "vlekken der",
           "new": "plaatsen van de",
           "principe": "V240"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ],
       "grondtekst": [
@@ -5333,7 +5340,12 @@
         {
           "old": "Gods",
           "new": "van God",
-          "principe": null
+          "principe": "V402"
+        },
+        {
+          "old": "voleindigd,",
+          "new": "voltooid,",
+          "principe": "V420"
         }
       ],
       "grondtekst": [
@@ -5458,6 +5470,13 @@
         {
           "woord": "οψωνιον",
           "lemma": "ὀψώνιον"
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "bezoldiging",
+          "new": "soldij",
+          "principe": null
         }
       ]
     },
@@ -5753,6 +5772,28 @@
           "woord": "οικετης",
           "lemma": "οἰκέτης"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
+        },
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        }
       ]
     },
     {
@@ -5765,13 +5806,18 @@
       "phraseDiff": [
         {
           "old": "gij,",
-          "new": "u,",
+          "new": "U,",
           "principe": "A1"
         },
         {
-          "old": "Here",
-          "new": "Heere",
-          "principe": "V280"
+          "old": "u,",
+          "new": "U,",
+          "principe": null
+        },
+        {
+          "old": "Here onzer vaderen.",
+          "new": "Heere van onze vaders.",
+          "principe": "V369"
         }
       ],
       "grondtekst": [

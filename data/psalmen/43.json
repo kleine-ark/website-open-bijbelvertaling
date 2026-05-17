@@ -89,6 +89,11 @@
           "principe": "A1"
         },
         {
+          "old": "twistzaak;",
+          "new": "rechtszaak;",
+          "principe": "V393"
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
@@ -102,11 +107,6 @@
           "old": "des",
           "new": "van de",
           "principe": "N3"
-        },
-        {
-          "old": "twistzaak",
-          "new": "rechtszaak",
-          "principe": "V393"
         }
       ]
     },
@@ -208,13 +208,8 @@
           "principe": "A1"
         },
         {
-          "old": "des vijands",
-          "new": "van de vijand",
-          "principe": "N3"
-        },
-        {
-          "old": "vanwege des vijands onderdrukking",
-          "new": "vanwege de onderdrukking van de vijand",
+          "old": "des vijands onderdrukking?",
+          "new": "de onderdrukking van de vijand?",
           "principe": "N3"
         }
       ]
@@ -537,8 +532,13 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "",
           "principe": "A1"
+        },
+        {
+          "old": "neder,",
+          "new": "u neer,",
+          "principe": "V354"
         },
         {
           "old": "zijt gij",
@@ -546,14 +546,14 @@
           "principe": "A1"
         },
         {
+          "old": "menigvuldige",
+          "new": "veelvuldige",
+          "principe": "V394"
+        },
+        {
           "old": "mijns aangezichts,",
           "new": "van mijn aangezicht,",
           "principe": "V213"
-        },
-        {
-          "old": "menigvuldig(e/en/er)",
-          "new": "veelvuldig(e/en/er)",
-          "principe": "V394"
         }
       ]
     }

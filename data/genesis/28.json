@@ -750,6 +750,11 @@
           "principe": "V42"
         },
         {
+          "old": "toog",
+          "new": "trok",
+          "principe": "V353"
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1d"
@@ -1228,7 +1233,14 @@
       ],
       "text2026_html": "Jakob dan trok uit van<sup class=\"note-marker\" data-note=\"12\">12</sup> Ber-seba, en ging naar Haran.",
       "textSV1888_html": "Jakob dan toog uit van<sup class=\"note-marker\" data-note=\"12\">12</sup> Ber-seba, en ging naar Haran.",
-      "text1637_html": "Iacob dan tooch uyt van <sup class=\"note-marker\" data-note=\"12\">12</sup> BerSeba, ende ginck nae Haran."
+      "text1637_html": "Iacob dan tooch uyt van <sup class=\"note-marker\" data-note=\"12\">12</sup> BerSeba, ende ginck nae Haran.",
+      "phraseDiff": [
+        {
+          "old": "toog",
+          "new": "trok",
+          "principe": "V353"
+        }
+      ]
     },
     {
       "number": 11,
@@ -1360,6 +1372,11 @@
       "textSV1888_html": "En hij geraakte<sup class=\"note-marker\" data-note=\"13\">13</sup> op een plaats, waar hij vernachtte; want de zon was ondergegaan; en hij nam<sup class=\"note-marker\" data-note=\"14\">14</sup> van de stenen dier plaats, en maakte zijn hoofdpeluw, en leide zich te slapen te dierzelver plaats.",
       "text1637_html": "Ende hy geraeckte <sup class=\"note-marker\" data-note=\"13\">13</sup> op eene plaetse daer hy vernachtte, want de Sonne was ondergegaen: ende hy nam <sup class=\"note-marker\" data-note=\"14\">14</sup> van de steenen dier plaetse, ende maeckte sijne hooft-peulue, ende leyde sich te slapen te dier selver plaetse.",
       "phraseDiff": [
+        {
+          "old": "vernachtte;",
+          "new": "overnachtte;",
+          "principe": "V416"
+        },
         {
           "old": "dier",
           "new": "van die",
@@ -1559,7 +1576,12 @@
         {
           "old": "Gods",
           "new": "van God",
-          "principe": "O6"
+          "principe": "V402"
+        },
+        {
+          "old": "neder.",
+          "new": "neer.",
+          "principe": "V354"
         }
       ]
     },
@@ -3240,7 +3262,7 @@
         {
           "old": "Gods",
           "new": "van God",
-          "principe": null
+          "principe": "V402"
         },
         {
           "old": "Gij",

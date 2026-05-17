@@ -332,7 +332,14 @@
       ],
       "text2026_html": "En hun vader had hun vele gaven gegeven van zilver, en van goud, en van<sup class=\"note-marker\" data-note=\"4\">4</sup> kostelijkheden, met versterkte steden in Juda; maar het koninkrijk gaf hij Joram, omdat hij de<sup class=\"note-marker\" data-note=\"5\">5</sup> eerstgeborene was.",
       "textSV1888_html": "En hun vader had hun vele gaven gegeven van zilver, en van goud, en van<sup class=\"note-marker\" data-note=\"4\">4</sup> kostelijkheden, met vaste steden in Juda; maar het koninkrijk gaf hij Joram, omdat hij de<sup class=\"note-marker\" data-note=\"5\">5</sup> eerstgeborene was.",
-      "text1637_html": "Ende haer vader hadde hen vele gaven gegeven van silver, ende van gout, ende van <sup class=\"note-marker\" data-note=\"4\">4</sup> uytgelesene kostelicheden, met vaste steden in Iuda: maer het Coninckrijcke gaf hy Ioram, om dat hy de <sup class=\"note-marker\" data-note=\"5\">5</sup> eerst geboren was."
+      "text1637_html": "Ende haer vader hadde hen vele gaven gegeven van silver, ende van gout, ende van <sup class=\"note-marker\" data-note=\"4\">4</sup> uytgelesene kostelicheden, met vaste steden in Iuda: maer het Coninckrijcke gaf hy Ioram, om dat hy de <sup class=\"note-marker\" data-note=\"5\">5</sup> eerst geboren was.",
+      "phraseDiff": [
+        {
+          "old": "vaste",
+          "new": "versterkte",
+          "principe": "V308"
+        }
+      ]
     },
     {
       "number": 4,
@@ -1040,14 +1047,24 @@
       "text1637_html": "Daerom tooch Ioram <sup class=\"note-marker\" data-note=\"17\">17</sup> voort met sijne Overste, ende alle de wagenen met hem: <sup class=\"note-marker\" data-note=\"18\">18</sup> ende hy maeckte sich des nachts op, <sup class=\"note-marker\" data-note=\"f\">f</sup> ende sloech de Edomiten, die rontom hem waren, ende de Overste der wagenen.",
       "phraseDiff": [
         {
+          "old": "toog",
+          "new": "trok",
+          "principe": "V353"
+        },
+        {
+          "old": "wagenen",
+          "new": "wagens",
+          "principe": "V405"
+        },
+        {
           "old": "des nachts",
           "new": "in de nacht",
           "principe": "N3"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der wagenen.",
+          "new": "van de wagens.",
+          "principe": "V405"
         }
       ]
     },
@@ -1727,14 +1744,14 @@
           "principe": "G1"
         },
         {
-          "old": "have.",
-          "new": "bezittingen.",
-          "principe": "V28"
-        },
-        {
           "old": "plage",
           "new": "plaag",
           "principe": "V380"
+        },
+        {
+          "old": "have.",
+          "new": "bezittingen.",
+          "principe": "V28"
         }
       ]
     },
@@ -2111,6 +2128,11 @@
       "text1637_html": "Die toogen op in Iuda, ende <sup class=\"note-marker\" data-note=\"34\">34</sup> braken daer in, ende voerden alle have wech, die in het huys des Conincks gevonden wert; selfs oock sijne kinderen, ende sijne wijven: so dat hem geen sone overgelaten en wert, dan <sup class=\"note-marker\" data-note=\"35\">35</sup> Ioahaz de kleynste sijner sonen.",
       "phraseDiff": [
         {
+          "old": "togen",
+          "new": "trokken",
+          "principe": "V353"
+        },
+        {
           "old": "have",
           "new": "bezittingen",
           "principe": "V28"
@@ -2198,14 +2220,14 @@
           "principe": "G1"
         },
         {
-          "old": "krankheid,",
-          "new": "ziekte,",
-          "principe": "V46"
-        },
-        {
           "old": "ingewand",
           "new": "binnenste",
           "principe": "V383"
+        },
+        {
+          "old": "krankheid,",
+          "new": "ziekte,",
+          "principe": "V46"
         }
       ]
     },

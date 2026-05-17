@@ -407,7 +407,7 @@
       "phraseDiff": [
         {
           "old": "heir",
-          "new": "legermacht",
+          "new": "leger",
           "principe": "O2"
         },
         {
@@ -795,27 +795,17 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
-        },
-        {
-          "old": "Israëls",
-          "new": "van Israël",
-          "principe": null
-        },
-        {
-          "old": "doch",
-          "new": "maar",
-          "principe": "V1"
-        },
-        {
-          "old": "Israëls",
-          "new": "van Israël",
-          "principe": null
-        },
-        {
-          "old": "najaag*",
-          "new": "nastreef*",
           "principe": "V379"
+        },
+        {
+          "old": "Israëls najaagde; doch",
+          "new": "van Israël nastreefde; maar",
+          "principe": "V379"
+        },
+        {
+          "old": "Israëls",
+          "new": "van Israël",
+          "principe": null
         }
       ]
     },
@@ -941,7 +931,7 @@
       "phraseDiff": [
         {
           "old": "heir; nevens",
-          "new": "legermacht; naast",
+          "new": "leger; naast",
           "principe": "V19"
         }
       ]
@@ -1067,6 +1057,11 @@
           "principe": "V198"
         },
         {
+          "old": "togen",
+          "new": "trokken",
+          "principe": "V353"
+        },
+        {
           "old": "Israëls",
           "new": "van Israël",
           "principe": null
@@ -1173,6 +1168,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
         },
         {
           "old": "gij",
@@ -1889,8 +1889,13 @@
         },
         {
           "old": "heir,",
-          "new": "legermacht,",
+          "new": "leger,",
           "principe": "O2"
+        },
+        {
+          "old": "wagenen",
+          "new": "wagens",
+          "principe": "V405"
         }
       ]
     },
@@ -1954,6 +1959,11 @@
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
+        },
+        {
+          "old": "wagenen",
+          "new": "wagens",
+          "principe": "V405"
         }
       ]
     },
@@ -2059,7 +2069,7 @@
         },
         {
           "old": "heir",
-          "new": "legermacht",
+          "new": "leger",
           "principe": "O2"
         }
       ]
@@ -2520,7 +2530,14 @@
         }
       ],
       "text2026_html": "En de Egyptenaars vervolgden hen, en gingen in, achter hen, al de paarden van Farao, zijn wagens en zijn ruiteren, in het midden van de zee.",
-      "text1637_html": "Ende de Egyptenaers vervolgdense, ende gingen in, achter hen, alle Pharaos peerden, sijne wagenen, ende sijne ruyteren, in ’t midden van de Zee."
+      "text1637_html": "Ende de Egyptenaers vervolgdense, ende gingen in, achter hen, alle Pharaos peerden, sijne wagenen, ende sijne ruyteren, in ’t midden van de Zee.",
+      "phraseDiff": [
+        {
+          "old": "wagenen",
+          "new": "wagens",
+          "principe": "V405"
+        }
+      ]
     },
     {
       "number": 24,
@@ -2792,8 +2809,8 @@
       "text1637_html": "Ende hy stiet de raderen <sup class=\"note-marker\" data-note=\"27\">27</sup> harer wagenen wech, ende <sup class=\"note-marker\" data-note=\"28\">28</sup> dedese swaerlick voort-varen: <sup class=\"note-marker\" data-note=\"29\">29</sup> doe seyden de Egyptenaers, Laett ons vlieden van het aengesichte Israëls, want de <sup class=\"note-marker\" data-note=\"30\">30</sup> HEERE strijdt voor haer tegen de Egyptenaers.",
       "phraseDiff": [
         {
-          "old": "hunner",
-          "new": "van hun",
+          "old": "hunner wagenen",
+          "new": "van hun wagens",
           "principe": "N7"
         },
         {
@@ -2922,6 +2939,11 @@
           "old": "wederkeren",
           "new": "terugkeren",
           "principe": null
+        },
+        {
+          "old": "wagenen",
+          "new": "wagens",
+          "principe": "V405"
         }
       ]
     },
@@ -3213,19 +3235,19 @@
       "text1637_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Want als de wateren <sup class=\"note-marker\" data-note=\"36\">36</sup> weder keerden, so bedeckten sy de wagenen, ende de ruyters des gantschen heyrs Pharaos, dat <sup class=\"note-marker\" data-note=\"37\">37</sup> hen nagevolgt was in de Zee: daer en bleef niet een van haer overich.",
       "phraseDiff": [
         {
+          "old": "wagenen",
+          "new": "wagens",
+          "principe": "V405"
+        },
+        {
           "old": "ganse heir",
-          "new": "gehele legermacht",
+          "new": "hele leger",
           "principe": "V3"
         },
         {
           "old": "een",
           "new": "één",
           "principe": null
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },

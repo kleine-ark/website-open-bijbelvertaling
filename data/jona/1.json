@@ -193,7 +193,14 @@
       ],
       "text2026_html": "<span class=\"god-speaks\"><i>Maak u op, ga naar de<sup class=\"note-marker\" data-note=\"a\">a</sup> grote stad<sup class=\"note-marker\" data-note=\"3\">3</sup> Nineve, en<sup class=\"note-marker\" data-note=\"4\">4</sup> predik tegen haar;<sup class=\"note-marker\" data-note=\"5\">5</sup> want<sup class=\"note-marker\" data-note=\"6\">6</sup> hun boosheid is<sup class=\"note-marker\" data-note=\"7\">7</sup> opgeklommen voor Mijn aangezicht.</i></span>",
       "textSV1888_html": "Maak u op, ga naar de<sup class=\"note-marker\" data-note=\"a\">a</sup> grote stad<sup class=\"note-marker\" data-note=\"3\">3</sup> Nineve, en<sup class=\"note-marker\" data-note=\"4\">4</sup> predik tegen haar;<sup class=\"note-marker\" data-note=\"5\">5</sup> want<sup class=\"note-marker\" data-note=\"6\">6</sup> hunlieder boosheid is<sup class=\"note-marker\" data-note=\"7\">7</sup> opgeklommen voor Mijn aangezicht.",
-      "text1637_html": "Maeckt u op, gaet nae de <sup class=\"note-marker\" data-note=\"a\">a</sup> groote stadt <sup class=\"note-marker\" data-note=\"3\">3</sup> Nineve, ende <sup class=\"note-marker\" data-note=\"4\">4</sup> predickt tegen haer: <sup class=\"note-marker\" data-note=\"5\">5</sup> want <sup class=\"note-marker\" data-note=\"6\">6</sup> haerlieder boosheyt is <sup class=\"note-marker\" data-note=\"7\">7</sup> opgeklommen voor mijn aengesichte."
+      "text1637_html": "Maeckt u op, gaet nae de <sup class=\"note-marker\" data-note=\"a\">a</sup> groote stadt <sup class=\"note-marker\" data-note=\"3\">3</sup> Nineve, ende <sup class=\"note-marker\" data-note=\"4\">4</sup> predickt tegen haer: <sup class=\"note-marker\" data-note=\"5\">5</sup> want <sup class=\"note-marker\" data-note=\"6\">6</sup> haerlieder boosheyt is <sup class=\"note-marker\" data-note=\"7\">7</sup> opgeklommen voor mijn aengesichte.",
+      "phraseDiff": [
+        {
+          "old": "hunlieder",
+          "new": "hun",
+          "principe": "V329"
+        }
+      ]
     },
     {
       "number": 3,
@@ -361,19 +368,24 @@
           "principe": "G2"
         },
         {
+          "old": "neder",
+          "new": "neer",
+          "principe": "V354"
+        },
+        {
           "old": "hetzelve,",
           "new": "hetzelfde,",
           "principe": "O4"
         },
         {
-          "old": "des HEEREN.",
-          "new": "van JAHWEH.",
-          "principe": "G2"
-        },
-        {
           "old": "henlieden",
           "new": "hen",
           "principe": "V395"
+        },
+        {
+          "old": "des HEEREN.",
+          "new": "van JAHWEH.",
+          "principe": "G2"
         }
       ]
     },
@@ -655,6 +667,11 @@
           "old": "van dezelve",
           "new": "daarvan",
           "principe": "O3"
+        },
+        {
+          "old": "neder,",
+          "new": "neer,",
+          "principe": "V354"
         }
       ]
     },
@@ -929,6 +946,11 @@
           "principe": "V27"
         },
         {
+          "old": "wiens",
+          "new": "wie de",
+          "principe": "V312"
+        },
+        {
           "old": "Alzo",
           "new": "Zo",
           "principe": "V42"
@@ -1062,6 +1084,11 @@
       "textSV1888_html": "Toen zeiden zij tot hem: Verklaar ons nu,<sup class=\"note-marker\" data-note=\"28\">28</sup> om wiens wil ons dit kwaad overkomt. Wat is uw<sup class=\"note-marker\" data-note=\"29\">29</sup> werk en van waar komt gij? Welk is uw land en van welk volk zijt gij?",
       "text1637_html": "Doe seyden sy tot hem; Verclaert ons nu, <sup class=\"note-marker\" data-note=\"28\">28</sup> om wiens wille ons dit quaet [overkomt]: wat is u <sup class=\"note-marker\" data-note=\"29\">29</sup> werck, ende van waer komt ghy? welck is u lant? ende van welcken volcke zijt ghy?",
       "phraseDiff": [
+        {
+          "old": "wiens",
+          "new": "wie de",
+          "principe": "V312"
+        },
         {
           "old": "van waar",
           "new": "vanwaar",
@@ -2059,14 +2086,14 @@
           "principe": "G1"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "G1"
-        },
-        {
           "old": "ingewand",
           "new": "binnenste",
           "principe": "V383"
+        },
+        {
+          "old": "den",
+          "new": "de",
+          "principe": "G1"
         }
       ]
     }

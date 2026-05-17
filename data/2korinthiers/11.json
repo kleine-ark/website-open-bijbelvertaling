@@ -1136,7 +1136,14 @@
       ],
       "text2026_html": "Ik heb andere Gemeenten<sup class=\"note-marker\" data-note=\"17\">17</sup> beroofd, soldij van haar nemende,<sup class=\"note-marker\" data-note=\"18\">18</sup> om u te bedienen; en als ik bij u tegenwoordig was en gebrek<sup class=\"note-marker\" data-note=\"e\">e</sup> had, ben ik niemand<sup class=\"note-marker\" data-note=\"19\">19</sup> lastig gevallen.",
       "textSV1888_html": "Ik heb andere Gemeenten<sup class=\"note-marker\" data-note=\"17\">17</sup> beroofd, bezoldiging van haar nemende,<sup class=\"note-marker\" data-note=\"18\">18</sup> om u te bedienen; en als ik bij u tegenwoordig was en gebrek<sup class=\"note-marker\" data-note=\"e\">e</sup> had, ben ik niemand<sup class=\"note-marker\" data-note=\"19\">19</sup> lastig gevallen.",
-      "text1637_html": "Ick hebbe andere Gemeynten <sup class=\"note-marker\" data-note=\"17\">17</sup> berooft, besoldinge [<i>van haer</i>] nemende <sup class=\"note-marker\" data-note=\"18\">18</sup> om u te bedienen: ende als ick by u tegenwoordigh was, ende gebreck hadde, <sup class=\"note-marker\" data-note=\"e\">e</sup> en ben ick niemandt <sup class=\"note-marker\" data-note=\"19\">19</sup> lastigh gevallen."
+      "text1637_html": "Ick hebbe andere Gemeynten <sup class=\"note-marker\" data-note=\"17\">17</sup> berooft, besoldinge [<i>van haer</i>] nemende <sup class=\"note-marker\" data-note=\"18\">18</sup> om u te bedienen: ende als ick by u tegenwoordigh was, ende gebreck hadde, <sup class=\"note-marker\" data-note=\"e\">e</sup> en ben ick niemandt <sup class=\"note-marker\" data-note=\"19\">19</sup> lastigh gevallen.",
+      "phraseDiff": [
+        {
+          "old": "bezoldiging",
+          "new": "soldij",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 9,
@@ -1709,6 +1716,11 @@
       "text1637_html": "Maer dat ick doe, dat sal ick noch doen, om de oorsaecke af te snijden den genen die oorsaecke [<i>hebben</i>] willen, op dat sy in ’t gene sy roemen, bevonden mochten worden <sup class=\"note-marker\" data-note=\"26\">26</sup> gelijck als wy.",
       "phraseDiff": [
         {
+          "old": "dengenen,",
+          "new": "van hen,",
+          "principe": "V397"
+        },
+        {
           "old": "hetgeen",
           "new": "wat",
           "principe": "V4"
@@ -1717,11 +1729,6 @@
           "old": "gelijk",
           "new": "zoals",
           "principe": null
-        },
-        {
-          "old": "dengenen",
-          "new": "van hen",
-          "principe": "V397"
         }
       ]
     },
@@ -3989,7 +3996,7 @@
         },
         {
           "old": "der",
-          "new": "van de",
+          "new": "de",
           "principe": "N2"
         }
       ]
@@ -4218,7 +4225,12 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N1"
+          "principe": "V339"
+        },
+        {
+          "old": "ontvlood",
+          "new": "ontvluchtte",
+          "principe": "V339"
         }
       ]
     }

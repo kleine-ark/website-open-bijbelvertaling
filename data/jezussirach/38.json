@@ -622,6 +622,11 @@
           "principe": "V264"
         },
         {
+          "old": "gedachtenis",
+          "new": "herinnering",
+          "principe": "V366"
+        },
+        {
           "old": "hem",
           "new": "Hem",
           "principe": null
@@ -1636,6 +1641,13 @@
           "woord": "σοφιζω",
           "lemma": "σοφίζω"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "gedachtenis",
+          "new": "herinnering",
+          "principe": "V366"
+        }
       ]
     },
     {
@@ -2355,6 +2367,13 @@
           "woord": "καμινος",
           "lemma": "κάμινος"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "voleinden.",
+          "new": "voltooien.",
+          "principe": "V420"
+        }
       ]
     },
     {
@@ -2575,6 +2594,18 @@
           "woord": "διανοεομαι",
           "lemma": "διανοέομαι"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "voleinden,",
+          "new": "voltooien,",
+          "principe": "V420"
+        },
+        {
+          "old": "voleindigd",
+          "new": "voltooid",
+          "principe": "V420"
+        }
       ]
     },
     {
@@ -2766,9 +2797,9 @@
       "text2026_html": "In het algemeen, niemand wordt wijs behalve degene die zijn ziel daartoe begeeft, en die zijn betrachting heeft in de wet van de Allerhoogste.",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des Allerhoogsten.",
+          "new": "van de Allerhoogste.",
+          "principe": "V403"
         }
       ],
       "grondtekst": null

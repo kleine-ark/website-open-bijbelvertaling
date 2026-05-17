@@ -119,8 +119,8 @@
           "principe": "A1"
         },
         {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
+          "old": "var,",
+          "new": "stier,",
           "principe": "V410"
         }
       ]
@@ -318,13 +318,8 @@
           "principe": "N1"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
-        },
-        {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
+          "old": "den var",
+          "new": "de stier",
           "principe": "V410"
         }
       ]
@@ -1091,9 +1086,9 @@
           "principe": "A1"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den var",
+          "new": "de stier",
+          "principe": "V410"
         },
         {
           "old": "der",
@@ -1101,13 +1096,8 @@
           "principe": "N2"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
-        },
-        {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
+          "old": "den var",
+          "new": "de stier",
           "principe": "V410"
         }
       ]
@@ -1185,9 +1175,9 @@
           "principe": "A1"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den var",
+          "new": "de stier",
+          "principe": "V410"
         },
         {
           "old": "des HEEREN,",
@@ -1198,11 +1188,6 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
-        },
-        {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
-          "principe": "V410"
         }
       ]
     },
@@ -1314,9 +1299,9 @@
           "principe": "A1"
         },
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des vars",
+          "new": "van de stiers",
+          "principe": "V410"
         },
         {
           "old": "des altaars",
@@ -1337,11 +1322,6 @@
           "old": "des altaars.",
           "new": "van het altaar.",
           "principe": "N3"
-        },
-        {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
-          "principe": "V410"
         }
       ]
     },
@@ -1467,6 +1447,11 @@
           "principe": "N6"
         },
         {
+          "old": "ingewand",
+          "new": "binnenste",
+          "principe": "V383"
+        },
+        {
           "old": "aan dezelve",
           "new": "daaraan",
           "principe": "O3"
@@ -1475,11 +1460,6 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
-        },
-        {
-          "old": "ingewand",
-          "new": "binnenste",
-          "principe": "V383"
         }
       ]
     },
@@ -1569,19 +1549,19 @@
       "text1637_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> Maer het vleesch des varren, ende sijn vel, ende sijnen dreck, sult ghy met vyere verbranden, buyten het leger: het is een sond-offer.",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des vars,",
+          "new": "van de stiers,",
+          "principe": "V410"
+        },
+        {
+          "old": "drek,",
+          "new": "mest,",
+          "principe": "V345"
         },
         {
           "old": "gij",
           "new": "u",
           "principe": "A1"
-        },
-        {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
-          "principe": "V410"
         }
       ]
     },
@@ -1851,14 +1831,14 @@
           "principe": "A1"
         },
         {
-          "old": "wassen,",
-          "new": "groeien,",
-          "principe": "V45"
-        },
-        {
           "old": "ingewand",
           "new": "binnenste",
           "principe": "V383"
+        },
+        {
+          "old": "wassen,",
+          "new": "groeien,",
+          "principe": "V45"
         }
       ]
     },
@@ -2626,6 +2606,11 @@
           "principe": "V7"
         },
         {
+          "old": "ingewand",
+          "new": "binnenste",
+          "principe": "V383"
+        },
+        {
           "old": "der",
           "new": "van de",
           "principe": "V7"
@@ -2644,11 +2629,6 @@
           "old": "der",
           "new": "van de",
           "principe": "V7"
-        },
-        {
-          "old": "ingewand",
-          "new": "binnenste",
-          "principe": "V383"
         }
       ]
     },
@@ -4228,9 +4208,9 @@
           "principe": "N3"
         },
         {
-          "old": "des zondoffers",
-          "new": "van het zondoffer",
-          "principe": "N3"
+          "old": "var des zondoffers",
+          "new": "stier van het zondoffer",
+          "principe": "V410"
         },
         {
           "old": "gij",
@@ -4246,11 +4226,6 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
-        },
-        {
-          "old": "var/varre/varren",
-          "new": "stier/stieren",
-          "principe": "V410"
         }
       ]
     },

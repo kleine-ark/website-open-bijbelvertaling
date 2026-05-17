@@ -162,13 +162,18 @@
       "phraseDiff": [
         {
           "old": "gij, Here, gij",
-          "new": "u, JAHWEH, u",
+          "new": "U, JAHWEH, U",
           "principe": "A1"
         },
         {
+          "old": "onzer vaderen, uw naam",
+          "new": "van onze vaders, Uw Naam",
+          "principe": "V369"
+        },
+        {
           "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "new": "de",
+          "principe": "V369"
         }
       ],
       "grondtekst": [
@@ -256,13 +261,28 @@
       "phraseDiff": [
         {
           "old": "gij zijt",
-          "new": "u bent",
+          "new": "U bent",
           "principe": "A1"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -383,12 +403,17 @@
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
+          "old": "onzer vaderen,",
+          "new": "van onze vaders,",
+          "principe": "V369"
+        },
+        {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         }
       ],
@@ -535,6 +560,11 @@
           "old": "Overmits",
           "new": "Omdat",
           "principe": "V13"
+        },
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -617,14 +647,24 @@
       "text2026_html": "<span class=\"direct-speech\"><i>En wij hebben Uw geboden niet gehoord, noch gehouden; en hebben niet gedaan zoals U ons geboden had, opdat het ons voorspoed.</i></span>",
       "phraseDiff": [
         {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
           "old": "gelijk gij",
-          "new": "zoals u",
+          "new": "zoals U",
           "principe": "A1"
         },
         {
           "old": "hadt,",
           "new": "had,",
           "principe": "V206"
+        },
+        {
+          "old": "welging.",
+          "new": "voorspoed.",
+          "principe": "V348"
         }
       ],
       "grondtekst": [
@@ -684,17 +724,17 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         }
       ],
@@ -777,7 +817,7 @@
         },
         {
           "old": "gehele",
-          "new": "(zie principe)",
+          "new": "hele",
           "principe": "V391"
         }
       ],
@@ -940,6 +980,18 @@
           "woord": "σε.1",
           "lemma": "σέ"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
+        }
       ]
     },
     {
@@ -957,7 +1009,12 @@
         },
         {
           "old": "om uws naams wil,",
-          "new": "omwille van uw naam,",
+          "new": "omwille van Uw Naam,",
+          "principe": "V200"
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
           "principe": "V200"
         }
       ],
@@ -1037,13 +1094,23 @@
       "text2026_html": "<span class=\"direct-speech\"><i>En neem Uw barmhartigheid niet van ons, om Abrahams wil, die door U geliefd is, en om Izaäk van Uw knecht wil, en om Israël van Uw heiligen wil;</i></span>",
       "phraseDiff": [
         {
+          "old": "uw",
+          "new": "Uw",
+          "principe": "V200"
+        },
+        {
+          "old": "u",
+          "new": "U",
+          "principe": "V200"
+        },
+        {
           "old": "uws knechts",
-          "new": "van uw knecht",
+          "new": "van Uw knecht",
           "principe": "V200"
         },
         {
           "old": "uws",
-          "new": "van uw",
+          "new": "van Uw",
           "principe": "V200"
         }
       ],
@@ -1160,18 +1227,18 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
           "old": "gij",
-          "new": "u",
+          "new": "U",
           "principe": "A1"
         },
         {
-          "old": "gelijk",
-          "new": "zoals",
-          "principe": null
+          "old": "menigvuldigen gelijk",
+          "new": "veelvuldigen zoals",
+          "principe": "V394"
         },
         {
           "old": "des hemels,",
@@ -1187,11 +1254,6 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
-        },
-        {
-          "old": "menigvuldig(e/en/er)",
-          "new": "veelvuldig(e/en/er)",
-          "principe": "V394"
         }
       ],
       "grondtekst": [
@@ -1308,13 +1370,8 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ],
       "grondtekst": [
@@ -1617,6 +1674,13 @@
           "woord": "πιων",
           "lemma": "πίων"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
+        }
       ]
     },
     {
@@ -1636,6 +1700,21 @@
           "old": "offerande",
           "new": "offergave",
           "principe": "V263"
+        },
+        {
+          "old": "u,",
+          "new": "U,",
+          "principe": null
+        },
+        {
+          "old": "u,",
+          "new": "U,",
+          "principe": null
+        },
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -1793,6 +1872,23 @@
           "woord": "ημας",
           "lemma": "ἡμᾶς"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "u",
+          "new": "U",
+          "principe": null
+        },
+        {
+          "old": "u,",
+          "new": "U,",
+          "principe": null
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        }
       ]
     },
     {
@@ -1863,6 +1959,18 @@
           "woord": "σου",
           "lemma": "σοῦ"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        }
       ]
     },
     {
@@ -1874,8 +1982,13 @@
       "text2026_html": "<span class=\"direct-speech\"><i>En verlos ons hieruit naar Uw wonderdaden en geef JAHWEH, Uw Naam eer.</i></span>",
       "phraseDiff": [
         {
-          "old": "Here,",
-          "new": "JAHWEH,",
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        },
+        {
+          "old": "Here, uw naam",
+          "new": "JAHWEH, Uw Naam",
           "principe": "V280"
         }
       ],
@@ -2030,6 +2143,13 @@
           "woord": "συντριβω",
           "lemma": "συντρίβω"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "uw",
+          "new": "Uw",
+          "principe": null
+        }
       ]
     },
     {
@@ -2042,12 +2162,12 @@
       "phraseDiff": [
         {
           "old": "gij de Here zijt,",
-          "new": "u JAHWEH bent,",
+          "new": "U JAHWEH bent,",
           "principe": "A1"
         },
         {
           "old": "gehele",
-          "new": "(zie principe)",
+          "new": "hele",
           "principe": "V391"
         }
       ],
@@ -2323,6 +2443,11 @@
           "old": "des Heren",
           "new": "van JAHWEH",
           "principe": "V281"
+        },
+        {
+          "old": "neder",
+          "new": "neer",
+          "principe": "V354"
         }
       ],
       "grondtekst": [
@@ -2433,6 +2558,11 @@
           "old": "des",
           "new": "van de",
           "principe": "N3"
+        },
+        {
+          "old": "gans",
+          "new": "geheel",
+          "principe": "V414"
         }
       ],
       "grondtekst": [

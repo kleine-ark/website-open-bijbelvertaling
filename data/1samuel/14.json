@@ -1845,13 +1845,8 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -2143,6 +2138,16 @@
           "principe": "W1"
         },
         {
+          "old": "Gods",
+          "new": "van God",
+          "principe": "V402"
+        },
+        {
+          "old": "Gods",
+          "new": "van God",
+          "principe": "V402"
+        },
+        {
           "old": "dien",
           "new": "die",
           "principe": "N4"
@@ -2293,8 +2298,13 @@
         },
         {
           "old": "der",
-          "new": "van de",
+          "new": "het leger van de",
           "principe": "N2"
+        },
+        {
+          "old": "leger",
+          "new": "",
+          "principe": null
         },
         {
           "old": "zeide",
@@ -2957,13 +2967,8 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -3034,18 +3039,13 @@
       "phraseDiff": [
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
           "old": "honig",
           "new": "honing",
           "principe": "V233"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -4829,13 +4829,8 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -4962,7 +4957,7 @@
         },
         {
           "old": "ganse",
-          "new": "gehele",
+          "new": "hele",
           "principe": "V3"
         },
         {
@@ -4974,11 +4969,6 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
-        },
-        {
-          "old": "gehele",
-          "new": "(zie principe)",
-          "principe": "V391"
         }
       ]
     },
@@ -5676,7 +5666,14 @@
       ],
       "text2026_html": "Saul nu trok op van achter de Filistijnen, en de Filistijnen trokken aan hun plaats.",
       "textSV1888_html": "Saul nu toog op van achter de Filistijnen, en de Filistijnen trokken aan hun plaats.",
-      "text1637_html": "Saul nu tooch op <sup class=\"note-marker\" data-note=\"83\">83</sup> van achter de Philistijnen, ende de Philistijnen trocken aen hare plaetse."
+      "text1637_html": "Saul nu tooch op <sup class=\"note-marker\" data-note=\"83\">83</sup> van achter de Philistijnen, ende de Philistijnen trocken aen hare plaetse.",
+      "phraseDiff": [
+        {
+          "old": "toog",
+          "new": "trok",
+          "principe": "V353"
+        }
+      ]
     },
     {
       "number": 47,
@@ -6291,6 +6288,11 @@
           "old": "krijg",
           "new": "strijd",
           "principe": "V203"
+        },
+        {
+          "old": "vergaderde",
+          "new": "verzamelde",
+          "principe": "V318"
         }
       ]
     }
