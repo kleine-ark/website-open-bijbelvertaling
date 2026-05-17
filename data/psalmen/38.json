@@ -40,7 +40,7 @@
       "number": 2,
       "textSV1888": "O HEERE! straf mij niet in Uw groten toorn, en kastijd mij niet in Uw grimmigheid.",
       "text1637": "[a] O HEERE, [2] en straft my niet in uwen [3] grooten toorn; ende kastijdt my niet in uwe grimmicheyt.",
-      "text2026": "O JAHWEH! straf mij niet in Uw groten toorn, en kastijd mij niet in Uw woede.",
+      "text2026": "O JAHWEH! straf mij niet in Uw grote toorn, en kastijd mij niet in Uw woede.",
       "marginNotes": [
         {
           "marker": "a",
@@ -96,10 +96,15 @@
           "morph": "HVpi2ms/Sp1cs"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> O JAHWEH!<sup class=\"note-marker\" data-note=\"2\">2</sup> straf mij niet in Uw<sup class=\"note-marker\" data-note=\"3\">3</sup> groten toorn, en kastijd mij niet in Uw woede.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> O JAHWEH!<sup class=\"note-marker\" data-note=\"2\">2</sup> straf mij niet in Uw<sup class=\"note-marker\" data-note=\"3\">3</sup> grote toorn, en kastijd mij niet in Uw woede.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> O HEERE!<sup class=\"note-marker\" data-note=\"2\">2</sup> straf mij niet in Uw<sup class=\"note-marker\" data-note=\"3\">3</sup> groten toorn, en kastijd mij niet in Uw grimmigheid.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> O HEERE, <sup class=\"note-marker\" data-note=\"2\">2</sup> en straft my niet in uwen <sup class=\"note-marker\" data-note=\"3\">3</sup> grooten toorn; ende kastijdt my niet in uwe grimmicheyt.",
       "phraseDiff": [
+        {
+          "old": "groten",
+          "new": "grote",
+          "principe": "N1"
+        },
         {
           "old": "HEERE!",
           "new": "JAHWEH!",
@@ -360,7 +365,7 @@
       "number": 7,
       "textSV1888": "Ik ben krom geworden, ik ben uitermate zeer nedergebogen; ik ga den gansen dag in het zwart.",
       "text1637": "Ick ben [9] krom geworden, ick ben uyttermaten seer nedergebogen; [b] ick gae den gantschen dach in’t [10] swart.",
-      "text2026": "Ik ben krom geworden, ik ben uitermate zeer nedergebogen; ik ga de gehele dag in het zwart.",
+      "text2026": "Ik ben krom geworden, ik ben uitermate zeer neergebogen; ik ga de gehele dag in het zwart.",
       "marginNotes": [
         {
           "marker": "9",
@@ -426,7 +431,7 @@
           "morph": "HVpp1cs"
         }
       ],
-      "text2026_html": "Ik ben<sup class=\"note-marker\" data-note=\"9\">9</sup> krom geworden, ik ben uitermate zeer nedergebogen;<sup class=\"note-marker\" data-note=\"b\">b</sup> ik ga de gehele dag in<sup class=\"note-marker\" data-note=\"10\">10</sup> het zwart.",
+      "text2026_html": "Ik ben<sup class=\"note-marker\" data-note=\"9\">9</sup> krom geworden, ik ben uitermate zeer neergebogen;<sup class=\"note-marker\" data-note=\"b\">b</sup> ik ga de gehele dag in<sup class=\"note-marker\" data-note=\"10\">10</sup> het zwart.",
       "textSV1888_html": "Ik ben<sup class=\"note-marker\" data-note=\"9\">9</sup> krom geworden, ik ben uitermate zeer nedergebogen;<sup class=\"note-marker\" data-note=\"b\">b</sup> ik ga den gansen dag in<sup class=\"note-marker\" data-note=\"10\">10</sup> het zwart.",
       "text1637_html": "Ick ben <sup class=\"note-marker\" data-note=\"9\">9</sup> krom geworden, ick ben uyttermaten seer nedergebogen; <sup class=\"note-marker\" data-note=\"b\">b</sup> ick gae den gantschen dach in’t <sup class=\"note-marker\" data-note=\"10\">10</sup> swart.",
       "phraseDiff": [
@@ -434,6 +439,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "nedergebogen",
+          "new": "(zie principe)",
+          "principe": "V378"
         }
       ]
     },
@@ -1285,7 +1295,7 @@
       "number": 21,
       "textSV1888": "En die kwaad voor goed vergelden, staan mij tegen, omdat ik het goede najaag.",
       "text1637": "Ende die quaet voor goet vergelden, [27] staen my tegen; om dat ick het goede najage.",
-      "text2026": "En die kwaad voor goed vergelden, staan mij tegen, omdat ik het goede najaag.",
+      "text2026": "En die kwaad voor goed vergelden, staan mij tegen, omdat ik het goede nastreef.",
       "marginNotes": [
         {
           "marker": "27",
@@ -1337,9 +1347,16 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "En die kwaad voor goed vergelden,<sup class=\"note-marker\" data-note=\"27\">27</sup> staan mij tegen, omdat ik het goede najaag.",
+      "text2026_html": "En die kwaad voor goed vergelden,<sup class=\"note-marker\" data-note=\"27\">27</sup> staan mij tegen, omdat ik het goede nastreef.",
       "textSV1888_html": "En die kwaad voor goed vergelden,<sup class=\"note-marker\" data-note=\"27\">27</sup> staan mij tegen, omdat ik het goede najaag.",
-      "text1637_html": "Ende die quaet voor goet vergelden, <sup class=\"note-marker\" data-note=\"27\">27</sup> staen my tegen; om dat ick het goede najage."
+      "text1637_html": "Ende die quaet voor goet vergelden, <sup class=\"note-marker\" data-note=\"27\">27</sup> staen my tegen; om dat ick het goede najage.",
+      "phraseDiff": [
+        {
+          "old": "najaag*",
+          "new": "nastreef*",
+          "principe": "V379"
+        }
+      ]
     },
     {
       "number": 22,

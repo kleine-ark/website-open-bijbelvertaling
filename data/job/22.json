@@ -1364,7 +1364,7 @@
       "number": 20,
       "textSV1888": "Dewijl onze stand niet verdelgd is, maar het vuur hun overblijfsel verteerd heeft.",
       "text1637": "Dewijle [35] onsen stant niet verdelcht en is; maer het [36] vyer haer [37] overblijfsel verteert heeft.",
-      "text2026": "Omdat onze stand niet verdelgd is, maar het vuur hun overblijfsel verteerd heeft.",
+      "text2026": "Omdat onze stand niet vernietigd is, maar het vuur hun overblijfsel verteerd heeft.",
       "marginNotes": [
         {
           "marker": "35",
@@ -1425,7 +1425,7 @@
           "morph": "HNcbsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Omdat<sup class=\"note-marker\" data-note=\"35\">35</sup> onze stand niet verdelgd is, maar het<sup class=\"note-marker\" data-note=\"36\">36</sup> vuur hun<sup class=\"note-marker\" data-note=\"37\">37</sup> overblijfsel verteerd heeft.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Omdat<sup class=\"note-marker\" data-note=\"35\">35</sup> onze stand niet vernietigd is, maar het<sup class=\"note-marker\" data-note=\"36\">36</sup> vuur hun<sup class=\"note-marker\" data-note=\"37\">37</sup> overblijfsel verteerd heeft.</i></span>",
       "textSV1888_html": "Dewijl<sup class=\"note-marker\" data-note=\"35\">35</sup> onze stand niet verdelgd is, maar het<sup class=\"note-marker\" data-note=\"36\">36</sup> vuur hun<sup class=\"note-marker\" data-note=\"37\">37</sup> overblijfsel verteerd heeft.",
       "text1637_html": "Dewijle <sup class=\"note-marker\" data-note=\"35\">35</sup> onsen stant niet verdelcht en is; maer het <sup class=\"note-marker\" data-note=\"36\">36</sup> vyer haer <sup class=\"note-marker\" data-note=\"37\">37</sup> overblijfsel verteert heeft.",
       "phraseDiff": [
@@ -1433,6 +1433,11 @@
           "old": "Dewijl",
           "new": "Omdat",
           "principe": "V2"
+        },
+        {
+          "old": "verdelg*",
+          "new": "(zie principe)",
+          "principe": "V375"
         }
       ]
     },

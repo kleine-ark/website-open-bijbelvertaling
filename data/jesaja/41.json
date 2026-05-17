@@ -265,7 +265,7 @@
       "number": 3,
       "textSV1888": "Dat hij ze najaagde en doortrok met vrede, door een pad, hetwelk hij met zijn voeten niet gegaan had?",
       "text1637": "Dat hyse najaechde, [ende] trock door [met] vrede, door een padt, ['t welck] hy met sijne voeten [11] niet gegaen en hadde?",
-      "text2026": "Dat hij ze najaagde en doortrok met vrede, door een pad, dat hij met zijn voeten niet gegaan had?",
+      "text2026": "Dat hij ze nastreefde en doortrok met vrede, door een pad, dat hij met zijn voeten niet gegaan had?",
       "marginNotes": [
         {
           "marker": "11",
@@ -312,7 +312,7 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "Dat hij ze najaagde en doortrok met vrede, door een pad, dat hij met zijn voeten<sup class=\"note-marker\" data-note=\"11\">11</sup> niet gegaan had?",
+      "text2026_html": "Dat hij ze nastreefde en doortrok met vrede, door een pad, dat hij met zijn voeten<sup class=\"note-marker\" data-note=\"11\">11</sup> niet gegaan had?",
       "textSV1888_html": "Dat hij ze najaagde en doortrok met vrede, door een pad, hetwelk hij met zijn voeten<sup class=\"note-marker\" data-note=\"11\">11</sup> niet gegaan had?",
       "text1637_html": "Dat hyse najaechde, [ende] trock door [met] vrede, door een padt, ['t welck] hy met sijne voeten <sup class=\"note-marker\" data-note=\"11\">11</sup> niet gegaen en hadde?",
       "phraseDiff": [
@@ -320,6 +320,11 @@
           "old": "hetwelk",
           "new": "dat",
           "principe": "N6"
+        },
+        {
+          "old": "najaag*",
+          "new": "nastreef*",
+          "principe": "V379"
         }
       ]
     },
@@ -2490,7 +2495,7 @@
       "number": 23,
       "textSV1888": "Verkondigt dingen, die hierna komen zullen, opdat wij weten, dat gij goden zijt; ja, doet goed, en doet kwaad, dat wij verbaasd staan, en te zamen toezien.",
       "text1637": "Verkondicht dingen die hierna komen sullen, op dat wy weten, dat ghy Goden zijt, ja [65] doet goet, ende doet quaet, dat wy verbaest staen, ende t'samen [66] toesien.",
-      "text2026": "Verkondigt dingen, die hierna komen zullen, opdat wij weten, dat u goden bent; ja, doet goed, en doet kwaad, dat wij verbaasd staan, en te zamen toezien.",
+      "text2026": "Verkondigt dingen, die hierna komen zullen, opdat wij weten, dat u goden bent; ja, doet goed, en doet kwaad, dat wij verbaasd staan, en samen toezien.",
       "marginNotes": [
         {
           "marker": "66",
@@ -2587,6 +2592,11 @@
           "old": "zijt;",
           "new": "bent;",
           "principe": null
+        },
+        {
+          "old": "te zamen",
+          "new": "(zie principe)",
+          "principe": "V374"
         }
       ]
     },

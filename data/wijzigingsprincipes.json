@@ -3496,6 +3496,54 @@
       "nieuw": "hoogmoedig(er) worden",
       "toelichting": "Verouderd reflexief werkwoord — passief opzwellen van trots; vgl. V334 hovaardig → hoogmoedig",
       "regex": "\\b[Vv]erhovaardigde?\\b"
+    },
+    {
+      "id": "V374",
+      "categorie": "Spelling",
+      "oud": "te zamen / tezamen",
+      "nieuw": "samen",
+      "toelichting": "Verouderde dubbelspelling — modern Nederlands kent alleen 'samen'. Behoud van 'gezamenlijk' en 'samen-' samenstellingen.",
+      "regex": "\\b[Tt]e ?zamen\\b"
+    },
+    {
+      "id": "V375",
+      "categorie": "Verouderde woorden",
+      "oud": "verdelgen / verdelgd / verdelgt / verdelgde / verdelgden",
+      "nieuw": "vernietigen / vernietigd / vernietigt / vernietigde / vernietigden",
+      "toelichting": "Verouderd werkwoord voor uitroeien/vernietigen — moderner equivalent is 'vernietigen' (Hebr. shamad / charam).",
+      "regex": "\\b[Vv]erdelg(en|t|de|den|d)?\\b"
+    },
+    {
+      "id": "V376",
+      "categorie": "Naamvallen",
+      "oud": "ter tijd van",
+      "nieuw": "in de tijd van",
+      "toelichting": "Datief-constructie met 'ter' (te der) — modern Nederlands gebruikt 'in de'. Uitzonderingen: 'ter rechter tijd', 'ter gezetter tijd' en 'te zijner tijd' (vaste uitdrukkingen).",
+      "regex": "\\b[Tt]er tijd van\\b"
+    },
+    {
+      "id": "V377",
+      "categorie": "Naamvallen",
+      "oud": "groten [zelfstandig naamwoord]",
+      "nieuw": "grote [zelfstandig naamwoord]",
+      "toelichting": "Mannelijk accusatief verbogen vorm van 'groot' voor zelfstandige naamwoorden. Modern Nederlands kent geen -en uitgang meer in deze positie. Alleen toegepast voor zelfstandig naamwoord; 'de groten' (= belangrijke personen) blijft.",
+      "regex": "\\bgroten\\s+(?=[a-z])"
+    },
+    {
+      "id": "V378",
+      "categorie": "Spelling",
+      "oud": "nedergebogen / nederbogen",
+      "nieuw": "neergebogen",
+      "toelichting": "Spelling-modernisering naar V354 (neder → neer). Specifieke samenstelling met 'buigen' — past niet bij V354 base regex.",
+      "regex": "\\b[Nn]edergebogen(e?)\\b"
+    },
+    {
+      "id": "V379",
+      "categorie": "Werkwoordsvormen",
+      "oud": "najagen / najaagt / najaagde / najaagden",
+      "nieuw": "nastreven / nastreeft / nastreefde / nastreefden",
+      "toelichting": "Verouderd werkwoord voor 'achterna jagen' in figuurlijke betekenis (idealen, doelen, vrede) — moderner is 'nastreven'. Letterlijke achtervolging blijft 'achternazitten/achtervolgen'.",
+      "regex": "\\b[Nn]ajaag(en|t|de|den)?\\b"
     }
   ]
 }
