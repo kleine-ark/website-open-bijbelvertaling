@@ -3688,6 +3688,38 @@
       "nieuw": "van hen / aan hen",
       "toelichting": "Verouderde datief meervoud: 'tot/voor dengenen die ...' → 'van/voor hen die ...'. Singulier 'dengene' (= die/diegene/hem) blijft contextueel.",
       "regex": "\\b[Dd]engenen\\b"
+    },
+    {
+      "id": "V398",
+      "categorie": "Naamvallen",
+      "oud": "onzes [zelfstandig naamwoord]s (verbogen genitief)",
+      "nieuw": "van onze/ons [zelfstandig naamwoord]",
+      "toelichting": "Verouderde genitief van 'onze/ons' — 'onzes Gods' → 'van onze God', 'onzes heils' → 'van ons heil'. Lidwoord-keuze afhankelijk van geslacht (de-woord → onze, het-woord → ons). Gehardcodeerde gender-tabel voor bijbelse kernwoorden.",
+      "regex": "\\bonzes ([A-Za-z]+)\\b"
+    },
+    {
+      "id": "V399",
+      "categorie": "Naamvallen",
+      "oud": "vreemden [Hoofdletter-zelfstandig-naamwoord]",
+      "nieuw": "vreemde [X]",
+      "toelichting": "Mannelijk accusatief verbogen vorm — 'vreemden God' → 'vreemde God'. Aanvulling op V377 (groten → grote) voor gevallen met hoofdletter-woord.",
+      "regex": "\\bvreemden (?=[A-Z])"
+    },
+    {
+      "id": "V400",
+      "categorie": "Verouderde woorden",
+      "oud": "zulks",
+      "nieuw": "dat",
+      "toelichting": "Verouderde aanwijzende vorm (= 'zo iets', 'dergelijks') — modern Nederlands gebruikt 'dat' of 'zoiets'. Contextueel kan ook 'dergelijks', 'dit' beter passen.",
+      "regex": "\\b[Zz]ulks\\b"
+    },
+    {
+      "id": "V401",
+      "categorie": "Werkwoordsvormen",
+      "oud": "zegge (1e pers. enk. subjunctief)",
+      "nieuw": "zeg",
+      "toelichting": "Conjunctief van 'zeggen' (1e pers. enk.) — modern Nederlands gebruikt enkel de indicatief 'zeg' (1e pers. tegenwoordige tijd). 'Wij zeggen' / 'zij zeggen' (3e pers. mv.) blijft ongewijzigd.",
+      "regex": "\\b[Zz]egge\\b"
     }
   ]
 }

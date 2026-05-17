@@ -514,7 +514,7 @@
       "number": 9,
       "textSV1888": "Wij moeten ons brood met gevaar onzes levens halen, vanwege het zwaard der woestijn.",
       "text1637": "Wy moeten [18] ons broot [19] met perikel onses levens halen, [20] van wegen het sweert der woestijne.",
-      "text2026": "Wij moeten ons brood met gevaar onzes levens halen, vanwege het zwaard van de woestijn.",
+      "text2026": "Wij moeten ons brood met gevaar van ons leven halen, vanwege het zwaard van de woestijn.",
       "marginNotes": [
         {
           "marker": "18",
@@ -570,7 +570,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Wij moeten<sup class=\"note-marker\" data-note=\"18\">18</sup> ons brood<sup class=\"note-marker\" data-note=\"19\">19</sup> met gevaar onzes levens halen,<sup class=\"note-marker\" data-note=\"20\">20</sup> vanwege het zwaard van de woestijn.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wij moeten<sup class=\"note-marker\" data-note=\"18\">18</sup> ons brood<sup class=\"note-marker\" data-note=\"19\">19</sup> met gevaar van ons leven halen,<sup class=\"note-marker\" data-note=\"20\">20</sup> vanwege het zwaard van de woestijn.</i></span>",
       "textSV1888_html": "Wij moeten<sup class=\"note-marker\" data-note=\"18\">18</sup> ons brood<sup class=\"note-marker\" data-note=\"19\">19</sup> met gevaar onzes levens halen,<sup class=\"note-marker\" data-note=\"20\">20</sup> vanwege het zwaard der woestijn.",
       "text1637_html": "Wy moeten <sup class=\"note-marker\" data-note=\"18\">18</sup> ons broot <sup class=\"note-marker\" data-note=\"19\">19</sup> met perikel onses levens halen, <sup class=\"note-marker\" data-note=\"20\">20</sup> van wegen het sweert der woestijne.",
       "phraseDiff": [
@@ -578,6 +578,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "onzes [X]",
+          "new": "(zie principe)",
+          "principe": "V398"
         }
       ]
     },
@@ -970,7 +975,7 @@
       "number": 16,
       "textSV1888": "De kroon onzes hoofds is afgevallen; o wee nu onzer, dat wij zo gezondigd hebben!",
       "text1637": "[33] De kroone onses hoofts is afgevallen, ô wee nu onser, dat wy [soo] gesondicht hebben.",
-      "text2026": "De kroon onzes hoofds is afgevallen; o wee nu onzer, dat wij zo gezondigd hebben!",
+      "text2026": "De kroon van ons hoofd is afgevallen; o wee nu onzer, dat wij zo gezondigd hebben!",
       "marginNotes": [
         {
           "marker": "33",
@@ -1022,9 +1027,16 @@
           "morph": "HVqp1cp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup><span class=\"direct-speech\"><i> De kroon onzes hoofds is afgevallen; o wee nu onzer, dat wij zo gezondigd hebben!</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup><span class=\"direct-speech\"><i> De kroon van ons hoofd is afgevallen; o wee nu onzer, dat wij zo gezondigd hebben!</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> De kroon onzes hoofds is afgevallen; o wee nu onzer, dat wij zo gezondigd hebben!",
-      "text1637_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> De kroone onses hoofts is afgevallen, ô wee nu onser, dat wy [soo] gesondicht hebben."
+      "text1637_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> De kroone onses hoofts is afgevallen, ô wee nu onser, dat wy [soo] gesondicht hebben.",
+      "phraseDiff": [
+        {
+          "old": "onzes [X]",
+          "new": "(zie principe)",
+          "principe": "V398"
+        }
+      ]
     },
     {
       "number": 17,
