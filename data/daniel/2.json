@@ -731,7 +731,7 @@
       "number": 7,
       "textSV1888": "Zij antwoordden ten tweeden male, en zeiden: De koning zegge zijn knechten den droom, dan zullen wij de uitlegging te kennen geven.",
       "text1637": "Sy antwoordden ten tweeden male, ende seyden, De Coninck segge sijnen knechten den droom, dan sullen wy de uytlegginge te kennen geven.",
-      "text2026": "Zij antwoordden voor de tweede keer, en zeiden: De koning zegge zijn knechten de droom, dan zullen wij de uitlegging te kennen geven.",
+      "text2026": "Zij antwoordden voor de tweede keer, en zeiden: De koning zeg zijn knechten de droom, dan zullen wij de uitlegging te kennen geven.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -780,13 +780,18 @@
           "morph": "AVhi1cp"
         }
       ],
-      "text2026_html": "Zij antwoordden voor de tweede keer, en zeiden: <span class=\"direct-speech\"><i>De koning zegge zijn knechten de droom, dan zullen wij de uitlegging te kennen geven.</i></span>",
+      "text2026_html": "Zij antwoordden voor de tweede keer, en zeiden: <span class=\"direct-speech\"><i>De koning zeg zijn knechten de droom, dan zullen wij de uitlegging te kennen geven.</i></span>",
       "text1637_html": "Sy antwoordden ten tweeden male, ende seyden, De Coninck segge sijnen knechten den droom, dan sullen wy de uytlegginge te kennen geven.",
       "phraseDiff": [
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "zegge",
+          "new": "zeg",
+          "principe": "V401"
         }
       ]
     },
@@ -5064,7 +5069,7 @@
       "number": 40,
       "textSV1888": "En het vierde koninkrijk zal hard zijn, gelijk ijzer; aangezien het ijzer alles vermaalt en verzwakt; gelijk nu het ijzer, dat zulks alles verbreekt, alzo zal het vermalen en verbreken.",
       "text1637": "Ende [112] het vierde Coninckrijcke sal hart zijn, gelijck yser: aengesien het yser alles vermaelt, ende verswackt: [113] gelijck nu het yser, dat sulcx alles verbreeckt, [alsoo] sal’t vermalen ende verbreken.",
-      "text2026": "En het vierde koninkrijk zal hard zijn, zoals ijzer; aangezien het ijzer alles vermaalt en verzwakt; zoals nu het ijzer, dat zulks alles verbreekt, zo zal het vermalen en verbreken.",
+      "text2026": "En het vierde koninkrijk zal hard zijn, zoals ijzer; aangezien het ijzer alles vermaalt en verzwakt; zoals nu het ijzer, dat dat alles verbreekt, zo zal het vermalen en verbreken.",
       "marginNotes": [
         {
           "marker": "112",
@@ -5178,7 +5183,7 @@
           "morph": "AC/Vqi3fs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En<sup class=\"note-marker\" data-note=\"112\">112</sup> het vierde koninkrijk zal hard zijn, zoals ijzer; aangezien het ijzer alles vermaalt en verzwakt;<sup class=\"note-marker\" data-note=\"113\">113</sup> zoals nu het ijzer, dat zulks alles verbreekt, zo zal het vermalen en verbreken.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En<sup class=\"note-marker\" data-note=\"112\">112</sup> het vierde koninkrijk zal hard zijn, zoals ijzer; aangezien het ijzer alles vermaalt en verzwakt;<sup class=\"note-marker\" data-note=\"113\">113</sup> zoals nu het ijzer, dat dat alles verbreekt, zo zal het vermalen en verbreken.</i></span>",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"112\">112</sup> het vierde koninkrijk zal hard zijn, gelijk ijzer; aangezien het ijzer alles vermaalt en verzwakt;<sup class=\"note-marker\" data-note=\"113\">113</sup> gelijk nu het ijzer, dat zulks alles verbreekt, alzo zal het vermalen en verbreken.",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"112\">112</sup> het vierde Coninckrijcke sal hart zijn, gelijck yser: aengesien het yser alles vermaelt, ende verswackt: <sup class=\"note-marker\" data-note=\"113\">113</sup> gelijck nu het yser, dat sulcx alles verbreeckt, [alsoo] sal’t vermalen ende verbreken.",
       "phraseDiff": [
@@ -5196,6 +5201,11 @@
           "old": "alzo",
           "new": "zo",
           "principe": "V42"
+        },
+        {
+          "old": "zulks",
+          "new": "(zie principe)",
+          "principe": "V400"
         }
       ]
     },

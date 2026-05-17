@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Toen hoorde hij de woorden der zonen van Laban, zeggende: Jakob heeft genomen alles, wat onzes vaders was, en van hetgeen, dat onzes vaders was, heeft hij al deze heerlijkheid gemaakt.",
       "text1637": "DOe hoorde hy de woorden der sonen Labans, seggende, Iacob heeft genomen alles wat onses vaders was: ende van 'tgene dat onses vaders was heeft hy [1] alle dese heerlickheyt gemaeckt.",
-      "text2026": "Toen hoorde hij de woorden van de zonen van Laban, zeggende: Jakob heeft genomen alles, wat onzes vaders was, en van wat, dat onzes vaders was, heeft hij al deze heerlijkheid gemaakt.",
+      "text2026": "Toen hoorde hij de woorden van de zonen van Laban, zeggende: Jakob heeft genomen alles, wat van onze vader was, en van wat, dat van onze vader was, heeft hij al deze heerlijkheid gemaakt.",
       "marginNotes": [
         {
           "marker": "1",
@@ -118,7 +118,7 @@
           "morph": "HTd/Pdxms"
         }
       ],
-      "text2026_html": "Toen hoorde hij de woorden van de zonen van Laban, zeggende: <span class=\"direct-speech\"><i>Jakob heeft genomen alles, wat onzes vaders was, en van wat, dat onzes vaders was, heeft hij al deze heerlijkheid gemaakt.</i></span>",
+      "text2026_html": "Toen hoorde hij de woorden van de zonen van Laban, zeggende: <span class=\"direct-speech\"><i>Jakob heeft genomen alles, wat van onze vader was, en van wat, dat van onze vader was, heeft hij al deze heerlijkheid gemaakt.</i></span>",
       "textSV1888_html": "Toen hoorde hij de woorden der zonen van Laban, zeggende: Jakob heeft genomen alles, wat onzes vaders was, en van hetgeen, dat onzes vaders was, heeft hij<sup class=\"note-marker\" data-note=\"1\">1</sup> al deze heerlijkheid gemaakt.",
       "text1637_html": "DOe hoorde hy de woorden der sonen Labans, seggende, Iacob heeft genome<i>n</i> alles wat onses vaders was: ende van 'tgene dat onses vaders was heeft hy <sup class=\"note-marker\" data-note=\"1\">1</sup> alle dese heerlickheyt gemaeckt.",
       "phraseDiff": [
@@ -131,6 +131,11 @@
           "old": "hetgeen,",
           "new": "wat,",
           "principe": "V4"
+        },
+        {
+          "old": "onzes [X]",
+          "new": "(zie principe)",
+          "principe": "V398"
         }
       ]
     },
@@ -1758,7 +1763,7 @@
       "number": 14,
       "textSV1888": "Toen antwoordden Rachel en Lea, en zeiden tot hem: Is er nog voor ons een deel of erfenis, in het huis onzes vaders?",
       "text1637": "Doe antwoordde Rachel ende Lea, ende seyden tot hem: [19] Isser noch voor ons een deel, ofte erffenisse in onses vaders huys?",
-      "text2026": "Toen antwoordden Rachel en Lea, en zeiden tot hem: Is er nog voor ons een deel of erfenis, in het huis onzes vaders?",
+      "text2026": "Toen antwoordden Rachel en Lea, en zeiden tot hem: Is er nog voor ons een deel of erfenis, in het huis van onze vader?",
       "marginNotes": [
         {
           "marker": "19",
@@ -1825,9 +1830,16 @@
           "morph": "HNcmsc/Sp1cp"
         }
       ],
-      "text2026_html": "Toen antwoordden Rachel en Lea, en zeiden tot hem:<sup class=\"note-marker\" data-note=\"19\">19</sup> <span class=\"direct-speech\"><i>Is er nog voor ons een deel of erfenis, in het huis onzes vaders?</span></i></span>",
+      "text2026_html": "Toen antwoordden Rachel en Lea, en zeiden tot hem:<sup class=\"note-marker\" data-note=\"19\">19</sup> <span class=\"direct-speech\"><i>Is er nog voor ons een deel of erfenis, in het huis van onze vader?</span></i></span>",
       "textSV1888_html": "Toen antwoordden Rachel en Lea, en zeiden tot hem:<sup class=\"note-marker\" data-note=\"19\">19</sup> Is er nog voor ons een deel of erfenis, in het huis onzes vaders?",
-      "text1637_html": "Doe antwoordde Rachel ende Lea, ende seyden tot hem: <sup class=\"note-marker\" data-note=\"19\">19</sup> Isser noch voor ons ee<i>n</i> deel, ofte erffenisse in onses vaders huys?"
+      "text1637_html": "Doe antwoordde Rachel ende Lea, ende seyden tot hem: <sup class=\"note-marker\" data-note=\"19\">19</sup> Isser noch voor ons ee<i>n</i> deel, ofte erffenisse in onses vaders huys?",
+      "phraseDiff": [
+        {
+          "old": "onzes [X]",
+          "new": "(zie principe)",
+          "principe": "V398"
+        }
+      ]
     },
     {
       "number": 15,
