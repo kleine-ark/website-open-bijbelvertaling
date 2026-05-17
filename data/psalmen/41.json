@@ -655,7 +655,7 @@
       "number": 9,
       "textSV1888": "Een Belialsstuk kleeft hem aan; en hij, die nederligt, zal niet weder opstaan.",
       "text1637": "Een Belials stuck [18] kleeft hem aen: ende hy die nederleyt, en sal niet [19] weder opstaen.",
-      "text2026": "Een Belialsstuk kleeft hem aan; en hij, die nederligt, zal niet weer opstaan.",
+      "text2026": "Een vervloekt iets kleeft hem aan; en hij, die nederligt, zal niet weer opstaan.",
       "marginNotes": [
         {
           "marker": "18",
@@ -719,7 +719,7 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "Een Belialsstuk<sup class=\"note-marker\" data-note=\"18\">18</sup> kleeft hem aan; en hij, die nederligt, zal niet<sup class=\"note-marker\" data-note=\"19\">19</sup> weer opstaan.",
+      "text2026_html": "Een vervloekt iets<sup class=\"note-marker\" data-note=\"18\">18</sup> kleeft hem aan; en hij, die nederligt, zal niet<sup class=\"note-marker\" data-note=\"19\">19</sup> weer opstaan.",
       "textSV1888_html": "Een Belialsstuk<sup class=\"note-marker\" data-note=\"18\">18</sup> kleeft hem aan; en hij, die nederligt, zal niet<sup class=\"note-marker\" data-note=\"19\">19</sup> weder opstaan.",
       "text1637_html": "Een Belials stuck <sup class=\"note-marker\" data-note=\"18\">18</sup> kleeft hem aen: ende hy die nederleyt, en sal niet <sup class=\"note-marker\" data-note=\"19\">19</sup> weder opstaen.",
       "phraseDiff": [
@@ -727,6 +727,11 @@
           "old": "weder",
           "new": "weer",
           "principe": "V66"
+        },
+        {
+          "old": "Belialsstuk",
+          "new": "vervloekt iets",
+          "principe": "V386"
         }
       ]
     },
@@ -734,7 +739,7 @@
       "number": 10,
       "textSV1888": "Zelfs de man mijns vredes, op welken ik vertrouwde, die mijn brood at, heeft de verzenen tegen mij grotelijks verheven.",
       "text1637": "Selfs [20] de man mijnes vredes, op welcken ick vertrouwde, [a] die mijn [21] broot at, heeft de verssene tegen my [22] grootelicx verheven.",
-      "text2026": "Zelfs de man van mijn vrede, op welke ik vertrouwde, die mijn brood at, heeft de verzenen tegen mij grotelijks verheven.",
+      "text2026": "Zelfs de man van mijn vrede, op wie ik vertrouwde, die mijn brood at, heeft de hiel tegen mij grotelijks verheven.",
       "marginNotes": [
         {
           "marker": "20",
@@ -822,7 +827,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Zelfs<sup class=\"note-marker\" data-note=\"20\">20</sup> de man van mijn vrede, op welke ik vertrouwde,<sup class=\"note-marker\" data-note=\"a\">a</sup> die mijn<sup class=\"note-marker\" data-note=\"21\">21</sup> brood at, heeft de verzenen tegen mij<sup class=\"note-marker\" data-note=\"22\">22</sup> grotelijks verheven.",
+      "text2026_html": "Zelfs<sup class=\"note-marker\" data-note=\"20\">20</sup> de man van mijn vrede, op wie ik vertrouwde,<sup class=\"note-marker\" data-note=\"a\">a</sup> die mijn<sup class=\"note-marker\" data-note=\"21\">21</sup> brood at, heeft de hiel tegen mij<sup class=\"note-marker\" data-note=\"22\">22</sup> grotelijks verheven.",
       "textSV1888_html": "Zelfs<sup class=\"note-marker\" data-note=\"20\">20</sup> de man mijns vredes, op welken ik vertrouwde,<sup class=\"note-marker\" data-note=\"a\">a</sup> die mijn<sup class=\"note-marker\" data-note=\"21\">21</sup> brood at, heeft de verzenen tegen mij<sup class=\"note-marker\" data-note=\"22\">22</sup> grotelijks verheven.",
       "text1637_html": "Selfs <sup class=\"note-marker\" data-note=\"20\">20</sup> de man mijnes vredes, op welcken ick vertrouwde, <sup class=\"note-marker\" data-note=\"a\">a</sup> die mijn <sup class=\"note-marker\" data-note=\"21\">21</sup> broot at, heeft de verssene tegen my <sup class=\"note-marker\" data-note=\"22\">22</sup> grootelicx verheven.",
       "phraseDiff": [
@@ -835,6 +840,16 @@
           "old": "welken",
           "new": "welke",
           "principe": "N6"
+        },
+        {
+          "old": "op welke",
+          "new": "op wie",
+          "principe": "V"
+        },
+        {
+          "old": "verzenen",
+          "new": "hiel",
+          "principe": "V387"
         }
       ]
     },
