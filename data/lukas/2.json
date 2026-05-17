@@ -694,7 +694,7 @@
       "number": 7,
       "textSV1888": "En zij baarde haar eerstgeboren Zoon, en wond Hem in doeken, en leide Hem neder in de kribbe, omdat voor henlieden geen plaats was in de herberg.",
       "text1637": "Ende sy [d] baerde haren [10] eerst-geboren soon, ende wandt hem in [11] doecken, ende leyde hem neder inde cribbe, om dat voor haer lieden geen plaetse en was inde herberge.",
-      "text2026": "En zij baarde haar eerstgeboren Zoon, en wond Hem in doeken, en leide Hem neer in de kribbe, omdat voor henlieden geen plaats was in de herberg.",
+      "text2026": "En zij baarde haar eerstgeboren Zoon, en wond Hem in doeken, en leide Hem neer in de kribbe, omdat voor hen geen plaats was in de herberg.",
       "marginNotes": [
         {
           "marker": "d",
@@ -858,9 +858,16 @@
           "gloss": "〔guest room/inn"
         }
       ],
-      "text2026_html": "En zij<sup class=\"note-marker\" data-note=\"d\">d</sup> baarde haar<sup class=\"note-marker\" data-note=\"10\">10</sup> eerstgeboren Zoon, en wond Hem in<sup class=\"note-marker\" data-note=\"11\">11</sup> doeken, en leide Hem neer in de kribbe, omdat voor henlieden geen plaats was in de herberg.",
+      "text2026_html": "En zij<sup class=\"note-marker\" data-note=\"d\">d</sup> baarde haar<sup class=\"note-marker\" data-note=\"10\">10</sup> eerstgeboren Zoon, en wond Hem in<sup class=\"note-marker\" data-note=\"11\">11</sup> doeken, en leide Hem neer in de kribbe, omdat voor hen geen plaats was in de herberg.",
       "textSV1888_html": "En zij<sup class=\"note-marker\" data-note=\"d\">d</sup> baarde haar<sup class=\"note-marker\" data-note=\"10\">10</sup> eerstgeboren Zoon, en wond Hem in<sup class=\"note-marker\" data-note=\"11\">11</sup> doeken, en leide Hem neder in de kribbe, omdat voor henlieden geen plaats was in de herberg.",
-      "text1637_html": "Ende sy <sup class=\"note-marker\" data-note=\"d\">d</sup> baerde haren <sup class=\"note-marker\" data-note=\"10\">10</sup> eerst-geboren soon, ende wandt hem in <sup class=\"note-marker\" data-note=\"11\">11</sup> doecken, ende leyde hem neder inde cribbe, om dat voor haer lieden geen plaetse en was inde herberge."
+      "text1637_html": "Ende sy <sup class=\"note-marker\" data-note=\"d\">d</sup> baerde haren <sup class=\"note-marker\" data-note=\"10\">10</sup> eerst-geboren soon, ende wandt hem in <sup class=\"note-marker\" data-note=\"11\">11</sup> doecken, ende leyde hem neder inde cribbe, om dat voor haer lieden geen plaetse en was inde herberge.",
+      "phraseDiff": [
+        {
+          "old": "henlieden",
+          "new": "hen",
+          "principe": "V395"
+        }
+      ]
     },
     {
       "number": 8,
@@ -4269,7 +4276,7 @@
       "number": 34,
       "textSV1888": "En Simeon zegende henlieden, en zeide tot Maria, Zijn moeder: Zie, Deze wordt gezet tot een val en opstanding veler in Israël, en tot een teken, dat wedersproken zal worden.",
       "text1637": "Ende Symeon segende haerlieden, ende seyde tot Mariam sijne moeder, Siet, [q] dese wort [41] geset tot eenen val ende opstandinge veler in Israël, ende tot [42] een teecken [r] dat wedersproken sal worden,",
-      "text2026": "En Simeon zegende henlieden, en zei tot Maria, Zijn moeder: Zie, Deze wordt gezet tot een val en opstanding veler in Israël, en tot een teken, dat wedersproken zal worden.",
+      "text2026": "En Simeon zegende hen, en zei tot Maria, Zijn moeder: Zie, Deze wordt gezet tot een val en opstanding veler in Israël, en tot een teken, dat wedersproken zal worden.",
       "marginNotes": [
         {
           "marker": "q",
@@ -4458,7 +4465,7 @@
           "gloss": "〔to dispute"
         }
       ],
-      "text2026_html": "En Simeon zegende henlieden, en zei tot Maria, Zijn moeder: <span class=\"direct-speech\"><i>Zie, Deze wordt gezet tot een val en opstanding veler in Israël, en tot een teken, dat wedersproken zal worden.</i></span>",
+      "text2026_html": "En Simeon zegende hen, en zei tot Maria, Zijn moeder: <span class=\"direct-speech\"><i>Zie, Deze wordt gezet tot een val en opstanding veler in Israël, en tot een teken, dat wedersproken zal worden.</i></span>",
       "textSV1888_html": "En Simeon zegende henlieden, en zeide tot Maria, Zijn moeder: Zie,<sup class=\"note-marker\" data-note=\"q\">q</sup> Deze wordt<sup class=\"note-marker\" data-note=\"41\">41</sup> gezet tot een val en opstanding veler in Israël, en tot<sup class=\"note-marker\" data-note=\"42\">42</sup> een teken,<sup class=\"note-marker\" data-note=\"r\">r</sup> dat wedersproken zal worden.",
       "text1637_html": "Ende Symeon segende haerlieden, ende seyde tot Mariam sijne moeder, Siet, <sup class=\"note-marker\" data-note=\"q\">q</sup> dese wort <sup class=\"note-marker\" data-note=\"41\">41</sup> geset tot eenen val ende opstandinge veler in Israël, ende tot <sup class=\"note-marker\" data-note=\"42\">42</sup> een teecken <sup class=\"note-marker\" data-note=\"r\">r</sup> dat wedersproken sal worden,",
       "phraseDiff": [
@@ -4466,6 +4473,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "henlieden",
+          "new": "hen",
+          "principe": "V395"
         }
       ]
     },
