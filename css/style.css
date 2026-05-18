@@ -292,7 +292,7 @@
     margin-bottom: 0;
     padding: 1px 24px;
     line-height: 1.4;
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 17px;
 }
 #content.reading-mode .verse-num {
@@ -638,8 +638,11 @@
     --status-draft: #cba449;
     --status-review: #76978a;
     --status-final: #5cb85c;
-    --font-body: 'Fira Sans', sans-serif;
-    --font-cursive: 'Allura', cursive;
+    /* Font-stacks met systeem-fallbacks — als web-fonts niet laden,
+       gebruikt de browser een vergelijkbaar systeemfont (Mac/Win/Linux). */
+    --font-body: 'Fira Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-cursive: 'Allura', 'Brush Script MT', 'Lucida Handwriting', 'Apple Chancery', cursive;
+    --font-serif: 'EB Garamond', 'Garamond', 'Cambria', 'Times New Roman', Georgia, serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1227,7 +1230,7 @@ body.show-chapter-intro #chapter-intro { display: block !important; }
 #content.reading-mode .col-2026 {
     font-size: 16px;
     line-height: 1.85;
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: var(--font-serif);
 }
 #content.reading-mode #chapter-title { max-width: 100%; }
 /* hide-X overschrijft ook in layout-eronder (anders won show-rule met hogere specificiteit) */
@@ -2223,7 +2226,7 @@ body.show-tags .verse-tag {
         border: 1px solid var(--border);
         border-radius: 6px;
         color: var(--navy);
-        font-family: 'EB Garamond', Georgia, serif;
+        font-family: var(--font-serif);
         font-size: 17px;
         font-style: italic;
         font-weight: 600;
@@ -2385,7 +2388,7 @@ body.show-tags .verse-tag {
 }
 .site-footer-brand { display: flex; flex-direction: column; gap: 6px; }
 .site-footer-mark {
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 26px;
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -2485,7 +2488,7 @@ body.show-tags .verse-tag {
     border-radius: 8px;
     padding: 14px 16px;
     color: var(--navy);
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 19px;
     font-style: italic;
     font-weight: 500;
@@ -2514,7 +2517,7 @@ body.show-tags .verse-tag {
     padding: 14px 6px;
     font-weight: 600;
     font-size: 18px;
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-style: normal;       /* hoofdstuk-cijfers niet cursief */
 }
 
