@@ -1,6 +1,102 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-05-20",
+      "versie": "v0.16.3",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Psalmen 57-100 volledig nageleze (44 hoofdstukken, 770 verzen). Totaal nu 212 hoofdstukken / 5.720 verzen handmatig vers-voor-vers gecontroleerd (15,2% / 15,4%)."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Sheol (OT) optie: keuze tussen 'dodenrijk' (default, modern) en 'hel' (SV-traditioneel). Pure CSS-transform via Opties.transformOV."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Feedback-mailto fallback: bij server-fail krijgt gebruiker klikbare link naar eigen mailprogramma met pre-gevulde inhoud."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Font-stack uitgebreid met systeem-fallbacks (Allura → Brush Script MT/Apple Chancery; Fira Sans → Segoe UI/Roboto; EB Garamond → Cambria/Georgia) zodat tekst er altijd goed uitziet, ook als web-fonts niet laden."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Inleiding bijgewerkt: nieuwe 'Doel' sectie (doelgroep = nieuwe gelovigen op straat) + 'Bewust afwijkende keuzes' sectie (historische onderbouwing met verwijzing naar Belijdenisgeschriften 1632 en Zwitserse revisies 1702)."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Begrippen-UI verborgen tot begrippenlijsten handmatig gecontroleerd zijn."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Cascade-fixes recursief incl. marginNotes: 'voor van X wil' → 'vanwege X', 'In Van wie' → 'Van Wie', 'zijn Zijne' → 'zijn van Hem', 'Van uw' → 'van Uw' bibel-breed."
+        },
+        {"type": "principe", "beschrijving": "V421 stokebranden → opruiers"},
+        {"type": "principe", "beschrijving": "V422 heimelijk(e/en/er) → geheim/geheime (82 verzen)"},
+        {"type": "principe", "beschrijving": "V423 legerstede(n) → slaapplaats(en)"},
+        {"type": "principe", "beschrijving": "V424 eens [Noun]s → van een [Noun] (311 verzen, allowlist)"},
+        {"type": "principe", "beschrijving": "V425 verstandelijk → verstandig (54 verzen)"},
+        {"type": "principe", "beschrijving": "V426 aller [Noun] → alle [Noun] (105 files, allowlist)"},
+        {"type": "principe", "beschrijving": "V427 schalkheid → listigheid"},
+        {"type": "principe", "beschrijving": "V428 [Possessive] [Noun]s → van [Poss] [Noun] (289 verzen)"},
+        {"type": "principe", "beschrijving": "V429 geveinsdelijk → geveinst (17 verzen)"},
+        {"type": "principe", "beschrijving": "V430 mergbeesten → vetgemeste dieren"},
+        {"type": "principe", "beschrijving": "V431 uittoog/uittoogt → uittrok/uittrokt (58 verzen)"},
+        {"type": "principe", "beschrijving": "V432 rechtmatigheid → oprechtheid"},
+        {"type": "principe", "beschrijving": "V433 [verb]det → [verb]de (355 verzen, 2e pers enk -t)"},
+        {"type": "principe", "beschrijving": "V434 ener [vrouw.nw] → van een [nw] (145 verzen)"},
+        {"type": "principe", "beschrijving": "V435 volkomene → volkomen (25 verzen)"},
+        {"type": "principe", "beschrijving": "V436 om X[s] wil → vanwege X (59 verzen)"},
+        {"type": "principe", "beschrijving": "V437 hittigheid → hitte (84 verzen)"},
+        {"type": "principe", "beschrijving": "V438 verkeerdelijk → verkeerd (30 verzen)"},
+        {"type": "principe", "beschrijving": "V439 lekken → likken (44 verzen)"},
+        {"type": "principe", "beschrijving": "V440 opgeblazen(e/en) → hoogmoedig (50 verzen)"},
+        {"type": "principe", "beschrijving": "V441 harte → hart (219 verzen, idioom-cleanup)"},
+        {"type": "principe", "beschrijving": "V442 verschonen → sparen (136 verzen)"},
+        {"type": "principe", "beschrijving": "V443 uitgeschoten → uitgegleden"},
+        {"type": "principe", "beschrijving": "V444 boselijk → boos"},
+        {"type": "principe", "beschrijving": "V445 wateren eens vollen bekers → water van een volle beker"},
+        {"type": "principe", "beschrijving": "V446 alle morgens → elke morgen"},
+        {"type": "principe", "beschrijving": "V447 dichtigheid → dichtheid"},
+        {"type": "principe", "beschrijving": "V448 [Noun] [BijbelseNaam]s → van [Naam] (2441 verzen!)"},
+        {"type": "principe", "beschrijving": "V449 ten oordeel → tot het oordeel (41 verzen)"},
+        {"type": "principe", "beschrijving": "V450 genen → anderen (16 verzen, context-aware via agent)"},
+        {"type": "principe", "beschrijving": "V451 overleide → overlegde"},
+        {"type": "principe", "beschrijving": "V452 doorluchtig(e/er) → stralend(e/er)"},
+        {"type": "principe", "beschrijving": "V453 loffelijk(e/er) → prijzenswaardig"},
+        {"type": "principe", "beschrijving": "V454 wederhorig → opstandig"},
+        {"type": "principe", "beschrijving": "V455 wederspannig → opstandig"},
+        {"type": "principe", "beschrijving": "V456 kliefde → kloof (sterke verleden)"},
+        {"type": "principe", "beschrijving": "V457 drenkte hen overvloedig → gaf hen overvloedig te drinken"},
+        {"type": "principe", "beschrijving": "V458 nedervellen → neervellen / velde neer (35 verzen)"},
+        {"type": "principe", "beschrijving": "V459 alweder → opnieuw"},
+        {"type": "principe", "beschrijving": "V460 vurigen → vurige (N1 lift, 23 verzen)"},
+        {"type": "principe", "beschrijving": "V463 trouwelooslijk → trouweloos (98 verzen)"},
+        {"type": "principe", "beschrijving": "V464 bloeds → bloed (42 verzen)"},
+        {"type": "principe", "beschrijving": "V465 aanschijn(s) → aangezicht(s) (139 verzen)"},
+        {"type": "principe", "beschrijving": "V466 verschijn blinkende → verschijn blinkend"},
+        {"type": "principe", "beschrijving": "V467 Gode → voor God (241 files; uitzondering 'Gode zij dank')"},
+        {"type": "principe", "beschrijving": "V468 ter bestemder tijd → op de vastgestelde tijd"},
+        {"type": "principe", "beschrijving": "V469 onweder → onweer (81 verzen)"},
+        {"type": "principe", "beschrijving": "V470 lande (datief) → land (43 verzen, idioom-allowlist)"},
+        {"type": "principe", "beschrijving": "V471 [Zz]ijt mij → wees/Wees mij (imperatief)"},
+        {"type": "principe", "beschrijving": "V472 ondersten → onderste (N1 lift)"},
+        {"type": "principe", "beschrijving": "V473 groten [Noun] → grote [Noun] (uitbreiding V377)"},
+        {"type": "principe", "beschrijving": "V474 vervaarnissen → angsten"},
+        {"type": "principe", "beschrijving": "V475 toornigheden → toornvlagen"},
+        {"type": "principe", "beschrijving": "V476 verbolgen → toornig (37 verzen)"},
+        {"type": "principe", "beschrijving": "V477 verbolgenheid → toorn (156 verzen)"},
+        {"type": "principe", "beschrijving": "V478 verbolgenheden → uitbarstingen van toorn (10 verzen)"},
+        {"type": "principe", "beschrijving": "V479 waarmede → waarmee (301 files!)"},
+        {"type": "principe", "beschrijving": "V480 snellijk → snel (76 verzen)"},
+        {"type": "principe", "beschrijving": "V481 [prep] welken → [prep] welke (147 verzen)"},
+        {"type": "principe", "beschrijving": "V482 vogelvangers → vogelvanger"},
+        {"type": "principe", "beschrijving": "V483 ten ware dat → tenzij"},
+        {"type": "principe", "beschrijving": "V484 nederbukken → neerbuigen (28 verzen)"}
+      ]
+    },
+    {
       "datum": "2026-05-17",
       "versie": "v0.16.2",
       "items": [
