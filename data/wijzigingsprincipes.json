@@ -3928,6 +3928,22 @@
       "nieuw": "listigheid",
       "toelichting": "Verouderd voor sluwheid/snoodheid (Hebr. avlah, awen — kwaadaardige listigheid). Modern Nederlands gebruikt 'listigheid' (sluw bedoelde plannen) of contextueel 'gemenheid'.",
       "regex": "\\b[Ss]chalkheid\\b"
+    },
+    {
+      "id": "V428",
+      "categorie": "Naamvallen",
+      "oud": "[Possessive] [zelfstandig naamwoord]s (verbogen genitief)",
+      "nieuw": "van [Possessive] [zelfstandig naamwoord]",
+      "toelichting": "Verouderde genitief-s na bezittelijk voornaamwoord: 'Zijn Naams' → 'van Zijn Naam', 'Zijn roems' → 'van Zijn roem'. Allowlist met ~30 kernzelfstandige naamwoorden om false-positives ('Mijn huis', 'Zijn plaats' die op -s eindigen maar geen genitief zijn) te vermijden.",
+      "regex": "\\b(Uw|Zijn|Mijn|Haar|onze|hun) (Naams|naams|roems|toorns|volks|geestes|Geestes|heils|lichaams|hoofds|vleses|vleeses|gerichts|oordeels|monds|harts|wegs|koninkrijks|priesterdoms|verbonds|aangezichts|erfdeels|lichts|duisters|tabernakels|heiligdoms|oogs|voets)\\b"
+    },
+    {
+      "id": "V429",
+      "categorie": "Verouderde woorden",
+      "oud": "geveinsdelijk",
+      "nieuw": "geveinst",
+      "toelichting": "Verouderd bijwoord — modern Nederlands gebruikt 'geveinst' (deelwoord) of 'huichelachtig'. 'Geveinsd(e)' (deelwoord) blijft.",
+      "regex": "\\b[Gg]eveinsdelijk\\b"
     }
   ]
 }
