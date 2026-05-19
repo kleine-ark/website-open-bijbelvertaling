@@ -4320,6 +4320,54 @@
       "nieuw": "uitbarstingen van toorn",
       "toelichting": "Verouderde meervoudsvorm — modern: 'uitbarstingen van toorn'.",
       "regex": "\\b[Vv]erbolgenheden\\b"
+    },
+    {
+      "id": "V479",
+      "categorie": "Spelling",
+      "oud": "waarmede",
+      "nieuw": "waarmee",
+      "toelichting": "Verouderde spelling — modern: 'waarmee'.",
+      "regex": "\\b[Ww]aarmede\\b"
+    },
+    {
+      "id": "V480",
+      "categorie": "Verouderde woorden",
+      "oud": "snellijk",
+      "nieuw": "snel",
+      "toelichting": "Verouderde -lijk bijwoordvorm — modern 'snel'.",
+      "regex": "\\b[Ss]nellijk\\b"
+    },
+    {
+      "id": "V481",
+      "categorie": "Naamvallen",
+      "oud": "[prep] welken (mannelijk-acc relatief)",
+      "nieuw": "[prep] welke",
+      "toelichting": "N1-lift voor relatief pronomen 'welken' achter preposities (in/van/op/met/etc.). Modern: 'welke'.",
+      "regex": "\\b(in|van|op|door|met|tot|bij|aan|onder|voor|over|na|jegens|zonder|tussen|naar|achter|uit) [Ww]elken\\b"
+    },
+    {
+      "id": "V482",
+      "categorie": "Naamvallen",
+      "oud": "vogelvangers (mv)",
+      "nieuw": "vogelvanger (ev)",
+      "toelichting": "Verouderd meervoud — modern Nederlands gebruikt het enkelvoud.",
+      "regex": "\\b[Vv]ogelvangers\\b"
+    },
+    {
+      "id": "V483",
+      "categorie": "Verouderde woorden",
+      "oud": "ten ware dat",
+      "nieuw": "tenzij",
+      "toelichting": "Verouderde conditionele constructie — modern Nederlands gebruikt 'tenzij' (Hebr. luleï).",
+      "regex": "\\b[Tt]en ware dat\\b"
+    },
+    {
+      "id": "V484",
+      "categorie": "Verouderde woorden",
+      "oud": "nederbukken / nederbukte / nederbukkende",
+      "nieuw": "neerbuigen / boog neer / neerbuigend",
+      "toelichting": "Verouderd compound — modern: 'neerbuigen' (V354-compound).",
+      "regex": "\\b[Nn]ederbuk[a-z]*\\b"
     }
   ]
 }
