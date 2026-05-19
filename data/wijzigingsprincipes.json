@@ -4016,6 +4016,70 @@
       "nieuw": "verkeerd",
       "toelichting": "Verouderde -lijk bijwoordvorm — modern Nederlands gebruikt enkel 'verkeerd' adverbiaal.",
       "regex": "\\b[Vv]erkeerdelijk\\b"
+    },
+    {
+      "id": "V439",
+      "categorie": "Spelling",
+      "oud": "lekken / gelekt (= likken)",
+      "nieuw": "likken / gelikt",
+      "toelichting": "SV gebruikt 'lekken' voor 'likken' (Hebr. lachach — honden likken bloed, vijanden likken stof). Modern Nederlands: 'lekken' = leak (drippen), 'likken' = lick (tong). Risico-context: ~99 verzen, allemaal lick-betekenis.",
+      "regex": "\\b[Ll]ekken|[Gg]elekt\\b"
+    },
+    {
+      "id": "V440",
+      "categorie": "Verouderde woorden",
+      "oud": "opgeblazen(e/en)",
+      "nieuw": "hoogmoedig(e/en)",
+      "toelichting": "Verouderde figuurlijke vorm — modern Nederlands gebruikt 'hoogmoedig'. Consistent met V334 (hovaardig → hoogmoedig).",
+      "regex": "\\b[Oo]pgeblazen(en|e)?\\b"
+    },
+    {
+      "id": "V441",
+      "categorie": "Verouderde woorden",
+      "oud": "harte (oude vorm in idiomen)",
+      "nieuw": "hart",
+      "toelichting": "Verouderde flexie-vorm in vaste uitdrukkingen: 'van harte' → 'van hart' (rein van harte), 'ter harte' → 'ter hart' (= naar hart), 'ganser/goeder harte' (samen met V414/N1-lift) → 'gansen/goeder hart'. Modern Nederlands gebruikt 'hart' overal.",
+      "regex": "\\b[Hh]arte\\b"
+    },
+    {
+      "id": "V442",
+      "categorie": "Verouderde woorden",
+      "oud": "verschonen / verschoont / verschoonde",
+      "nieuw": "sparen / spaart / spaarde",
+      "toelichting": "SV gebruikt 'verschonen' voor 'sparen, medelijden hebben met' (Hebr. chus). Modern Nederlands 'verschonen' = wettelijk vrijstellen of kleding wisselen — andere betekenis. 'Sparen' is helder en kort.",
+      "regex": "\\b[Vv]erschon(en|t|de|den)?\\b"
+    },
+    {
+      "id": "V443",
+      "categorie": "Verouderde woorden",
+      "oud": "uitgeschoten (= uitgegleden)",
+      "nieuw": "uitgegleden",
+      "toelichting": "SV-vorm voor wegglijden van voetstap (Hebr. shapakh). Modern Nederlands gebruikt 'uitgegleden'.",
+      "regex": "\\b[Uu]itgeschoten\\b"
+    },
+    {
+      "id": "V444",
+      "categorie": "Verouderde woorden",
+      "oud": "boselijk",
+      "nieuw": "boos",
+      "toelichting": "Verouderde -lijk vorm — modern Nederlands gebruikt enkel 'boos' adverbiaal/adjectief.",
+      "regex": "\\b[Bb]oselijk\\b"
+    },
+    {
+      "id": "V445",
+      "categorie": "Naamvallen",
+      "oud": "wateren eens vollen bekers",
+      "nieuw": "water van een volle beker",
+      "toelichting": "Verouderde genitief-constructie Ps 73:10. Combineert eens X-s (V424), N1 vollen, en mv→ev (wateren→water).",
+      "regex": "\\bwateren eens vollen bekers\\b"
+    },
+    {
+      "id": "V446",
+      "categorie": "Verouderde woorden",
+      "oud": "alle morgens",
+      "nieuw": "elke morgen",
+      "toelichting": "Verouderde uitdrukking — modern Nederlands: 'elke morgen' of 'iedere ochtend'.",
+      "regex": "\\b[Aa]lle morgens\\b"
     }
   ]
 }
