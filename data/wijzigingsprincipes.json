@@ -3872,6 +3872,54 @@
       "nieuw": "voltooien / voltooid / voltooide",
       "toelichting": "Verouderde samenstelling 'vol + einden' = tot een einde brengen (Hebr. gamar, kalah). Modern Nederlands gebruikt 'voltooien'. Voor sterke theologische context (Joh 19:30) kan 'volbrengen' contextueel beter passen — niet auto-converted.",
       "regex": "\\b[Vv]oleind(igd|igden|igde|igen|igt|den|de|en|t)?\\b"
+    },
+    {
+      "id": "V421",
+      "categorie": "Verouderde woorden",
+      "oud": "stokebranden",
+      "nieuw": "opruiers",
+      "toelichting": "Verouderd voor 'opstokers/aanstokers' (Hebr. lohatim = vlammen, fig. zij die haat aansteken). Modern: 'opruiers'.",
+      "regex": "\\b[Ss]tokebranden\\b"
+    },
+    {
+      "id": "V422",
+      "categorie": "Verouderde woorden",
+      "oud": "heimelijk / heimelijke / heimelijken",
+      "nieuw": "geheim / geheime",
+      "toelichting": "Verouderd adjectief voor 'in het geheim/verborgen'. Modern Nederlands gebruikt 'geheim'. Mannelijk-acc verbogen vorm 'heimelijken' wordt naar 'geheime' (N1 lift).",
+      "regex": "\\b[Hh]eimelijk(en|er|e)?\\b"
+    },
+    {
+      "id": "V423",
+      "categorie": "Verouderde woorden",
+      "oud": "legerstede / legersteden",
+      "nieuw": "slaapplaats / slaapplaatsen",
+      "toelichting": "Verouderd voor bed/slaapplek (leger=bed + stede=plaats). Modern: 'slaapplaats' of 'bed'. 'Bed' is gangbaarder maar 'slaapplaats' behoudt het samengestelde karakter.",
+      "regex": "\\b[Ll]egerstede(n)?\\b"
+    },
+    {
+      "id": "V424",
+      "categorie": "Naamvallen",
+      "oud": "eens [zelfstandig naamwoord]s (oude genitief)",
+      "nieuw": "van een [zelfstandig naamwoord]",
+      "toelichting": "Verouderde genitief 'eens mans/vaders/konings/etc.' Modern Nederlands gebruikt 'van een man'. Allowlist met ~35 kerkelijke kernzelfstandige naamwoorden om false-positives ('eens daags' = ooit) te vermijden.",
+      "regex": "\\beens (mans|anders|iegelijks|dienstknechts|leeuws|sikkels|konings|arends|ieders|troons|wouds|bekers|volks|zwaards|geroeps|iemands|broeders|vaders|priesters|profeets|dieners|knechts|meesters|huizes|lichaams|hoofds|monds|harts|lands|veldes|wegs|tijds)\\b"
+    },
+    {
+      "id": "V425",
+      "categorie": "Verouderde woorden",
+      "oud": "verstandelijk",
+      "nieuw": "verstandig",
+      "toelichting": "Verouderd adverb/adjectief — modern Nederlands gebruikt 'verstandig'. 'Verstandelijk' komt nog wel voor maar in beperktere academische context (verstandelijke vermogens).",
+      "regex": "\\b[Vv]erstandelijk\\b"
+    },
+    {
+      "id": "V426",
+      "categorie": "Naamvallen",
+      "oud": "aller [zelfstandig naamwoord] (oude genitief mv.)",
+      "nieuw": "alle [zelfstandig naamwoord]",
+      "toelichting": "Verouderde genitief van 'al' (mv.). Modern Nederlands gebruikt 'alle' of 'van alle'. Allowlist met kernzelfstandige naamwoorden om risico te beperken.",
+      "regex": "\\b[Aa]ller (einden|dingen|mensen|tijd|heidenen|moeder|schepselen|tijt|kreaturen|levenden|dieren|knechten|plaatsen|dagen|jaren|volken|volkeren|engelen|heiligen|wegen|werken|goederen|wateren|liefde)\\b"
     }
   ]
 }
