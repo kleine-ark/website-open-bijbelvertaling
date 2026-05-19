@@ -4080,6 +4080,94 @@
       "nieuw": "elke morgen",
       "toelichting": "Verouderde uitdrukking — modern Nederlands: 'elke morgen' of 'iedere ochtend'.",
       "regex": "\\b[Aa]lle morgens\\b"
+    },
+    {
+      "id": "V447",
+      "categorie": "Verouderde woorden",
+      "oud": "dichtigheid",
+      "nieuw": "dichtheid",
+      "toelichting": "Verouderd -igheid achtervoegsel (Hebr. avoth). Modern: 'dichtheid'.",
+      "regex": "\\b[Dd]ichtigheid\\b"
+    },
+    {
+      "id": "V448",
+      "categorie": "Naamvallen",
+      "oud": "[Noun] [BijbelseNaam]s (oude genitief)",
+      "nieuw": "[Noun] van [Naam]",
+      "toelichting": "Verouderde -s genitief na bijbelse naam: 'God Jakobs' → 'God van Jakob', 'huis Davids' → 'huis van David'. Allowlist met ~25 kernzelfstandige naamwoorden en namen.",
+      "regex": "\\b(God|Heer|Heere|huis|volk|stam|zoon|zonen|dochter|dochters|zaad|knechten|knecht|kinderen|tabernakel|stad|steden|land|hand|rechterhand|aangezicht|arm|wet|wegen|weg|naam|heiligdom|gebod|geboden|beker|kelk|staf|troon|altaar|offer|offers) (Jakobs|Davids|Abrahams|Salomos|Izaks|Jozefs|Aärons|Israëls)\\b"
+    },
+    {
+      "id": "V449",
+      "categorie": "Naamvallen",
+      "oud": "ten oordeel",
+      "nieuw": "tot het oordeel",
+      "toelichting": "Verouderde datief 'ten' — modern 'tot het'.",
+      "regex": "\\bten oordeel\\b"
+    },
+    {
+      "id": "V450",
+      "categorie": "Verouderde woorden",
+      "oud": "genen (oud-Ned. voor 'die anderen')",
+      "nieuw": "anderen",
+      "toelichting": "Verouderd in paar-constructie 'deze...gene(n)...'. Context-aware (16 verzen): behouden in idiomen 'te genen dage', 'degenen die'.",
+      "regex": "\\b[Gg]enen\\b"
+    },
+    {
+      "id": "V451",
+      "categorie": "Werkwoordsvormen",
+      "oud": "overleide / overleiden",
+      "nieuw": "overlegde / overlegden",
+      "toelichting": "Verouderde verleden tijd van 'overleggen' (Hebr. siach).",
+      "regex": "\\b[Oo]verleide[nn]?\\b"
+    },
+    {
+      "id": "V452",
+      "categorie": "Verouderde woorden",
+      "oud": "doorluchtig(e/er)",
+      "nieuw": "stralend(e/er)",
+      "toelichting": "Verouderd voor 'luisterrijk/stralend' (Hebr. addir). Modern: 'stralend'.",
+      "regex": "\\b[Dd]oorluchtig(e|er)?\\b"
+    },
+    {
+      "id": "V453",
+      "categorie": "Verouderde woorden",
+      "oud": "loffelijk(e/er)",
+      "nieuw": "prijzenswaardig(e/er)",
+      "toelichting": "Verouderde -lijk vorm — modern 'prijzenswaardig' (Hebr. hilel).",
+      "regex": "\\b[Ll]offelijk(e|er)?\\b"
+    },
+    {
+      "id": "V454",
+      "categorie": "Verouderde woorden",
+      "oud": "wederhorig(e/en/heid)",
+      "nieuw": "opstandig(e/en/heid)",
+      "toelichting": "Verouderd voor ongehoorzaam (Hebr. sarar/marah).",
+      "regex": "\\b[Ww]ederhorig(heid|en|e)?\\b"
+    },
+    {
+      "id": "V455",
+      "categorie": "Verouderde woorden",
+      "oud": "wederspannig(e/en/heid/er)",
+      "nieuw": "opstandig(e/en/heid/er)",
+      "toelichting": "Verouderd voor weerbarstig/opstandig (Hebr. sarar/meri).",
+      "regex": "\\b[Ww]ederspannig(heid|er|en|e)?\\b"
+    },
+    {
+      "id": "V456",
+      "categorie": "Werkwoordsvormen",
+      "oud": "kliefde (verleden van klieven)",
+      "nieuw": "kloof",
+      "toelichting": "Modern Nederlands gebruikt sterke vorm 'kloof' (klieven-kloof-gekloven).",
+      "regex": "\\b[Kk]liefde\\b"
+    },
+    {
+      "id": "V457",
+      "categorie": "Verouderde woorden",
+      "oud": "drenkte hen overvloedig",
+      "nieuw": "gaf hen overvloedig te drinken",
+      "toelichting": "Verouderd 'drenken' = laten drinken. Modern: 'te drinken geven'.",
+      "regex": "\\b[Dd]renkte hen overvloedig\\b"
     }
   ]
 }

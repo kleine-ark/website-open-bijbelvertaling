@@ -491,7 +491,7 @@
       "number": 8,
       "textSV1888": "Maar God is Rechter; Hij vernedert dezen, en verhoogt genen.",
       "text1637": "Maer Godt [18] is Richter: hy vernedert desen, ende verhoocht genen.",
-      "text2026": "Maar God is Rechter; Hij vernedert deze, en verhoogt genen.",
+      "text2026": "Maar God is Rechter; Hij vernedert deze, en verhoogt anderen.",
       "marginNotes": [
         {
           "marker": "18",
@@ -538,7 +538,7 @@
           "morph": "HVhi3ms"
         }
       ],
-      "text2026_html": "Maar God<sup class=\"note-marker\" data-note=\"18\">18</sup> is Rechter; Hij vernedert deze, en verhoogt genen.",
+      "text2026_html": "Maar God<sup class=\"note-marker\" data-note=\"18\">18</sup> is Rechter; Hij vernedert deze, en verhoogt anderen.",
       "textSV1888_html": "Maar God<sup class=\"note-marker\" data-note=\"18\">18</sup> is Rechter; Hij vernedert dezen, en verhoogt genen.",
       "text1637_html": "Maer Godt <sup class=\"note-marker\" data-note=\"18\">18</sup> is Richter: hy vernedert desen, ende verhoocht genen.",
       "phraseDiff": [
@@ -546,6 +546,11 @@
           "old": "dezen,",
           "new": "deze,",
           "principe": "N4"
+        },
+        {
+          "old": "genen",
+          "new": "anderen",
+          "principe": "V450"
         }
       ]
     },
