@@ -182,7 +182,16 @@ const Feedback = {
             status.textContent = 'Bedankt! Je feedback is ontvangen.';
             setTimeout(() => this.close(), 1400);
         } else {
-            status.textContent = 'Versturen mislukt — probeer later opnieuw.';
+            // Fallback: open mailto: met pre-gevulde inhoud zodat de gebruiker
+            // de feedback nog via zijn eigen mail-client kan versturen.
+            const subject = `[OSV feedback] ${payload.ref}`;
+            const body =
+                `Vers: ${payload.ref}\n` +
+                `Geselecteerde tekst:\n  "${payload.selected}"\n\n` +
+                `Suggestie:\n${payload.suggestion}\n\n` +
+                `---\nVerzonden vanaf: ${payload.userAgent}\n`;
+            const mailto = `mailto:maartenvroegindeweij@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            status.innerHTML = 'Online versturen mislukt. <a href="' + mailto + '" style="color:var(--gold);font-weight:600;">Klik hier om via je mailprogramma te versturen</a>.';
             sendBtn.disabled = false;
         }
     }

@@ -374,7 +374,7 @@
       "number": 5,
       "textSV1888": "Mijn ziel is in het midden der leeuwen, ik lig onder stokebranden, mensenkinderen, welker tanden spiesen en pijlen zijn, en hun tong een scherp zwaard.",
       "text1637": "Mijne [12] ziele is in’t midden der leeuwen, ick ligge [onder] [13] stoke-branden, menschen kinderen, welcker tanden [14] spiessen ende pijlen zijn: ende hare tonge een [15] scherp sweert.",
-      "text2026": "Mijn ziel is in het midden van de leeuwen, ik lig onder stokebranden, mensenkinderen, van wie de tanden spiesen en pijlen zijn, en hun tong een scherp zwaard.",
+      "text2026": "Mijn ziel is in het midden van de leeuwen, ik lig onder opruiers, mensenkinderen, van wie de tanden spiesen en pijlen zijn, en hun tong een scherp zwaard.",
       "marginNotes": [
         {
           "marker": "12",
@@ -472,7 +472,7 @@
           "morph": "HAafsa"
         }
       ],
-      "text2026_html": "Mijn<sup class=\"note-marker\" data-note=\"12\">12</sup> ziel is in het midden van de leeuwen, ik lig<sup class=\"note-marker\" data-note=\"13\">13</sup> onder stokebranden, mensenkinderen, van wie de tanden spiesen en pijlen zijn<sup class=\"note-marker\" data-note=\"14\">14</sup>, en hun tong een<sup class=\"note-marker\" data-note=\"15\">15</sup> scherp zwaard.",
+      "text2026_html": "Mijn<sup class=\"note-marker\" data-note=\"12\">12</sup> ziel is in het midden van de leeuwen, ik lig<sup class=\"note-marker\" data-note=\"13\">13</sup> onder opruiers, mensenkinderen, van wie de tanden spiesen en pijlen zijn<sup class=\"note-marker\" data-note=\"14\">14</sup>, en hun tong een<sup class=\"note-marker\" data-note=\"15\">15</sup> scherp zwaard.",
       "textSV1888_html": "Mijn<sup class=\"note-marker\" data-note=\"12\">12</sup> ziel is in het midden der leeuwen, ik lig<sup class=\"note-marker\" data-note=\"13\">13</sup> onder stokebranden, mensenkinderen, welker tanden<sup class=\"note-marker\" data-note=\"14\">14</sup> spiesen en pijlen zijn, en hun tong een<sup class=\"note-marker\" data-note=\"15\">15</sup> scherp zwaard.",
       "text1637_html": "Mijne <sup class=\"note-marker\" data-note=\"12\">12</sup> ziele is in’t midden der leeuwen, ick ligge [onder] <sup class=\"note-marker\" data-note=\"13\">13</sup> stoke-branden, mensche<i>n</i> kinderen, welcker tanden <sup class=\"note-marker\" data-note=\"14\">14</sup> spiessen ende pijlen zijn: ende hare tonge een <sup class=\"note-marker\" data-note=\"15\">15</sup> scherp sweert.",
       "phraseDiff": [
@@ -480,6 +480,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "stokebranden",
+          "new": "opruiers",
+          "principe": "V421"
         }
       ]
     },
