@@ -3952,6 +3952,54 @@
       "nieuw": "vetgemeste dieren",
       "toelichting": "Verouderd voor vetgemeste offerdieren (Hebr. mechim — dieren met veel merg/vet, geschikt voor brandoffer). Modern: 'vetgemeste dieren'.",
       "regex": "\\b[Mm]ergbeesten\\b"
+    },
+    {
+      "id": "V431",
+      "categorie": "Werkwoordsvormen",
+      "oud": "uittoog / uittoogt / uittogen",
+      "nieuw": "uittrok / uittrokt / uittrokken",
+      "toelichting": "Verleden tijd van 'uittrekken' (Hebr. yatsa = uitgaan, optrekken — Exodus-context). Compound-uitbreiding van V353 (togen/toog → trokken/trok).",
+      "regex": "\\b[Uu]ittogen|[Uu]ittoogt?\\b"
+    },
+    {
+      "id": "V432",
+      "categorie": "Verouderde woorden",
+      "oud": "rechtmatigheid",
+      "nieuw": "oprechtheid",
+      "toelichting": "Modern Nederlands 'rechtmatigheid' = wettelijkheid (juridisch), wat de bijbelse betekenis (Hebr. mesharim = billijkheid/oprechtheid in oordeel) mist. 'Oprechtheid' dichter bij yashar-stam.",
+      "regex": "\\b[Rr]echtmatigheid\\b"
+    },
+    {
+      "id": "V433",
+      "categorie": "Werkwoordsvormen",
+      "oud": "[werkwoord]det (2e pers. enk. -t)",
+      "nieuw": "[werkwoord]de",
+      "toelichting": "Verouderde 2e persoon enkelvoud uitgang in verleden tijd (bereiddet, hoordet, wildet, soudet, etc.) — modern Nederlands gebruikt enkel -de zonder -t. ~355 voorkomens in text2026.",
+      "regex": "\\b[a-z]+det\\b"
+    },
+    {
+      "id": "V434",
+      "categorie": "Naamvallen",
+      "oud": "ener [vrouwelijk zelfstandig naamwoord] (oude genitief)",
+      "nieuw": "van een [zelfstandig naamwoord]",
+      "toelichting": "Verouderde genitief van vrouwelijke 'een' — 'ener vrouw(e)' → 'van een vrouw', 'ener duive' → 'van een duif'. Allowlist met ~25 kernzelfstandige naamwoorden om risico te beperken; oude flexie-vormen (duive→duif) worden gemoderniseerd.",
+      "regex": "\\bener (vrouw|vrouwe|stad|hand|gordijn|stelling|leliebloem|duive|weduwe|efa|menigte|weduwvrouw|barende|maagd|maget|koe|geit|palmboom|stem|eerstgeborene|grote|zeer)\\b"
+    },
+    {
+      "id": "V435",
+      "categorie": "Verouderde woorden",
+      "oud": "volkomene",
+      "nieuw": "volkomen",
+      "toelichting": "Verouderde verbogen vorm van 'volkomen' — modern Nederlands gebruikt 'volkomen' attributief en predicatief. 'Volkomene' is achterhaald.",
+      "regex": "\\b[Vv]olkomene\\b"
+    },
+    {
+      "id": "V436",
+      "categorie": "Naamvallen",
+      "oud": "om X[s] wil (omwille-van constructie)",
+      "nieuw": "vanwege X",
+      "toelichting": "Verouderde constructie 'om [genitief]s wil' = omwille van X. Modern Nederlands gebruikt 'vanwege X'. Werkt op eigennamen (om Davids wil → vanwege David), bezittelijke voornaamwoorden (om Uws tempels wil → vanwege Uw tempel), en pronominaal (om diens wil → vanwege die).",
+      "regex": "\\b[Oo]m ([A-Z][a-z]+|[a-z]+|Uws [A-Za-z]+|diens|dies|[Ww]iens)s? wil\\b"
     }
   ]
 }
