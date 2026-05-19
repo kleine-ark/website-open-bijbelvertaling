@@ -4260,10 +4260,26 @@
     {
       "id": "V471",
       "categorie": "Werkwoordsvormen",
-      "oud": "Zijt mij (imperatief)",
-      "nieuw": "Wees mij",
-      "toelichting": "Verouderde 2e pers. mv. imperatief van 'zijn' — modern Nederlands gebruikt 'Wees'. 'Zijt mij genadig' → 'Wees mij genadig'.",
-      "regex": "\\bZijt mij\\b"
+      "oud": "Zijt/zijt mij (imperatief)",
+      "nieuw": "Wees/wees mij",
+      "toelichting": "Verouderde 2e pers. mv. imperatief van 'zijn' — modern Nederlands gebruikt 'wees'. 'Zijt mij genadig' → 'Wees mij genadig'.",
+      "regex": "\\b[Zz]ijt mij\\b"
+    },
+    {
+      "id": "V472",
+      "categorie": "Naamvallen",
+      "oud": "ondersten (mannelijk-acc verbogen)",
+      "nieuw": "onderste",
+      "toelichting": "N1-lift voor adjectief 'onderste' (superlatief). Modern Nederlands kent geen -en uitgang.",
+      "regex": "\\b[Oo]ndersten\\b"
+    },
+    {
+      "id": "V473",
+      "categorie": "Naamvallen",
+      "oud": "groten [zelfstandig naamwoord] (mannelijk-acc)",
+      "nieuw": "grote [zelfstandig naamwoord]",
+      "toelichting": "Uitbreiding van V377 — nu ook met hoofdletter-volgwoord (eigennaam): 'groten David' → 'grote David'. 'De groten' (zelfstandig naamwoord = belangrijke personen) blijft.",
+      "regex": "\\b[Gg]roten\\b(?=\\s+[A-Za-z])"
     }
   ]
 }
