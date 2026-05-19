@@ -8,6 +8,7 @@ const Opties = {
         kolomLayout: 'naast',    // 'naast' (parallelle kolom) | 'eronder' (nieuwe regel onder OV2026)
         boekvolgorde: 'canoniek',// 'canoniek' | 'tenach' | 'chronologisch' | 'auteur' | 'lengte'
         versnummers: 'aan',      // 'aan' | 'uit'
+        otSheol: 'dodenrijk',    // 'dodenrijk' (OT-context, modern) | 'hel' (SV-traditioneel)
     },
 
     state: {},
@@ -82,6 +83,14 @@ const Opties = {
     transformOV(html) {
         if (!html) return html;
         let out = html;
+
+        // === OT-Sheol: dodenrijk → hel (optioneel) ===
+        if (this.state.otSheol === 'hel') {
+            out = this._replaceOutsideTags(out, [
+                [/\bdodenrijk\b/g, 'hel'],
+                [/\bDodenrijk\b/g, 'Hel'],
+            ]);
+        }
 
         // === Godsnaam ===
         if (this.state.godsnaam === 'klassiek') {

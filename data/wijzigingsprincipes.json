@@ -4000,6 +4000,22 @@
       "nieuw": "vanwege X",
       "toelichting": "Verouderde constructie 'om [genitief]s wil' = omwille van X. Modern Nederlands gebruikt 'vanwege X'. Werkt op eigennamen (om Davids wil → vanwege David), bezittelijke voornaamwoorden (om Uws tempels wil → vanwege Uw tempel), en pronominaal (om diens wil → vanwege die).",
       "regex": "\\b[Oo]m ([A-Z][a-z]+|[a-z]+|Uws [A-Za-z]+|diens|dies|[Ww]iens)s? wil\\b"
+    },
+    {
+      "id": "V437",
+      "categorie": "Verouderde woorden",
+      "oud": "hittigheid",
+      "nieuw": "hitte",
+      "toelichting": "Verouderd zelfstandig naamwoord — modern Nederlands gebruikt 'hitte' (Hebr. cher/charon = brandende toorn of letterlijke hitte).",
+      "regex": "\\b[Hh]ittigheid\\b"
+    },
+    {
+      "id": "V438",
+      "categorie": "Verouderde woorden",
+      "oud": "verkeerdelijk",
+      "nieuw": "verkeerd",
+      "toelichting": "Verouderde -lijk bijwoordvorm — modern Nederlands gebruikt enkel 'verkeerd' adverbiaal.",
+      "regex": "\\b[Vv]erkeerdelijk\\b"
     }
   ]
 }
