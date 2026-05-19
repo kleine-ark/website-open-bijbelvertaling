@@ -4240,6 +4240,30 @@
       "nieuw": "op de vastgestelde tijd",
       "toelichting": "Verouderde datief 'ter' met verbogen 'bestemder' — modern Nederlands gebruikt 'op de vastgestelde tijd' (Hebr. mo'ed = vastgestelde feesttijd).",
       "regex": "\\bter bestemder tijd\\b"
+    },
+    {
+      "id": "V469",
+      "categorie": "Spelling",
+      "oud": "onweder",
+      "nieuw": "onweer",
+      "toelichting": "Verouderde spelling — modern Nederlands gebruikt 'onweer'. (Vgl. V354 neder → neer, V416 vernachten → overnachten.)",
+      "regex": "\\b[Oo]nweder\\b"
+    },
+    {
+      "id": "V470",
+      "categorie": "Naamvallen",
+      "oud": "lande (datief in vaste constructies)",
+      "nieuw": "land",
+      "toelichting": "Verouderde datief 'lande' in idiomen: 'den lande' → 'het land', 'in den lande' → 'in het land', 'verren lande' → 'ver land', 'desen/uwen/zijnen lande' → 'dit/uw/zijn land'. 'Te land' (idioom 'op land') blijft.",
+      "regex": "\\b(den|in den|verren|te|desen|uwen|zijnen|haren|eigen|Uw|gansen|gantsen) lande\\b"
+    },
+    {
+      "id": "V471",
+      "categorie": "Werkwoordsvormen",
+      "oud": "Zijt mij (imperatief)",
+      "nieuw": "Wees mij",
+      "toelichting": "Verouderde 2e pers. mv. imperatief van 'zijn' — modern Nederlands gebruikt 'Wees'. 'Zijt mij genadig' → 'Wees mij genadig'.",
+      "regex": "\\bZijt mij\\b"
     }
   ]
 }
