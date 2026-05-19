@@ -4280,6 +4280,22 @@
       "nieuw": "grote [zelfstandig naamwoord]",
       "toelichting": "Uitbreiding van V377 — nu ook met hoofdletter-volgwoord (eigennaam): 'groten David' → 'grote David'. 'De groten' (zelfstandig naamwoord = belangrijke personen) blijft.",
       "regex": "\\b[Gg]roten\\b(?=\\s+[A-Za-z])"
+    },
+    {
+      "id": "V474",
+      "categorie": "Verouderde woorden",
+      "oud": "vervaarnis(sen)",
+      "nieuw": "angst(en)",
+      "toelichting": "Verouderd voor 'verschrikkingen/angsten' (Hebr. emah). Gekozen voor 'angsten' om duplicatie met 'verschrikkingen' te voorkomen.",
+      "regex": "\\b[Vv]ervaarnissen?\\b"
+    },
+    {
+      "id": "V475",
+      "categorie": "Verouderde woorden",
+      "oud": "toornigheden",
+      "nieuw": "toornvlagen",
+      "toelichting": "Verouderde meervoudsvorm van 'toornigheid' (woedeuitbarstingen). Modern: 'toornvlagen' (Hebr. charon af).",
+      "regex": "\\b[Tt]oornigheden\\b"
     }
   ]
 }
