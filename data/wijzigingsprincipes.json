@@ -4448,6 +4448,14 @@
       "nieuw": "tot een woning",
       "toelichting": "Verouderde datief 'ter' (te-der) — modern 'tot een woning'.",
       "regex": "\\b[Tt]er woning\\b"
+    },
+    {
+      "id": "V495",
+      "categorie": "Naamvallen",
+      "oud": "is/zijn mijn (predicaat-bezit)",
+      "nieuw": "is/zijn van mij",
+      "toelichting": "Predicatief bezittelijk voornaamwoord — modern: 'van mij'. Pattern: 'is mijn' direct gevolgd door interpunctie (geen attributief gebruik). Vgl. V411 (Mijn is/zijn → van Mij is/zijn).",
+      "regex": "\\bis mijn(?=[,;.!?])"
     }
   ]
 }
