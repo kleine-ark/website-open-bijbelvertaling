@@ -4392,6 +4392,14 @@
       "nieuw": "elke morgen",
       "toelichting": "Verouderd attributief 'allen' (mannelijk-acc verbogen) bij 'morgen'. Vgl. V446 (alle morgens → elke morgen).",
       "regex": "\\b[Aa]llen morgen\\b"
+    },
+    {
+      "id": "V488",
+      "categorie": "Naamvallen",
+      "oud": "heiligen [zelfstandig naamwoord] (mannelijk-acc)",
+      "nieuw": "heilige [zelfstandig naamwoord]",
+      "toelichting": "N1-lift voor adjectief 'heilig' bij zelfstandig naamwoord. Allowlist: Naam, berg, tempel, geest, dag, plaats, vrouw, kus, sabbat, etc. Standalone 'heiligen' (= heilige personen) blijft.",
+      "regex": "\\b[Hh]eiligen (Naam|naam|berg|tempel|heuvel|plaats|geest|Geest|dag|dagen|stad|huis|engel|engelen|kus|vader|vrouw|vrouwen|schrift|altaar|olie|sabbat|offer|offers|volk|wet|grond|arm|beker|geboden|beloften|Schrift)\\b"
     }
   ]
 }
