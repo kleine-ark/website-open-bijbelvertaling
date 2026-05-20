@@ -4400,6 +4400,14 @@
       "nieuw": "heilige [zelfstandig naamwoord]",
       "toelichting": "N1-lift voor adjectief 'heilig' bij zelfstandig naamwoord. Allowlist: Naam, berg, tempel, geest, dag, plaats, vrouw, kus, sabbat, etc. Standalone 'heiligen' (= heilige personen) blijft.",
       "regex": "\\b[Hh]eiligen (Naam|naam|berg|tempel|heuvel|plaats|geest|Geest|dag|dagen|stad|huis|engel|engelen|kus|vader|vrouw|vrouwen|schrift|altaar|olie|sabbat|offer|offers|volk|wet|grond|arm|beker|geboden|beloften|Schrift)\\b"
+    },
+    {
+      "id": "V489",
+      "categorie": "Spelling",
+      "oud": "dienaars (oud meervoud)",
+      "nieuw": "dienaren",
+      "toelichting": "Verouderd -aars meervoud — modern Nederlands gebruikt 'dienaren' (Hebr. mesharetim).",
+      "regex": "\\b[Dd]ienaars\\b"
     }
   ]
 }
