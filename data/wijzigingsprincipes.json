@@ -4488,6 +4488,14 @@
       "nieuw": "aan ons gedachtig",
       "toelichting": "Verouderde genitief 'onzer' bij werkwoord 'gedachtig zijn'. Modern: 'aan ons gedachtig'.",
       "regex": "\\b[Oo]nzer gedachtig\\b"
+    },
+    {
+      "id": "V500",
+      "categorie": "Spelling",
+      "oud": "de dodenrijk / de hel (in OT)",
+      "nieuw": "het dodenrijk",
+      "toelichting": "Twee correcties: (1) 'de dodenrijk' → 'het dodenrijk' (artikel-fix, 'dodenrijk' is het-woord) bibel-breed; (2) 'de hel' in OT-context (Hebr. sheol) → 'het dodenrijk'. NT 'de hel' (Grieks gehenna) blijft onaangetast.",
+      "regex": "\\b[Dd]e dodenrijk\\b|\\b[Dd]e hel\\b (OT-only)"
     }
   ]
 }
