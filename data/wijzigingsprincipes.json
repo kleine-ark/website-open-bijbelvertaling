@@ -4616,6 +4616,14 @@
       "nieuw": "onstuimige wateren",
       "toelichting": "Oud 'stout' = woest/wild (niet modern 'ondeugend'). Hebr. zedonim = onstuimig.",
       "regex": "\\bstoute wateren\\b"
+    },
+    {
+      "id": "V516",
+      "categorie": "Naamvallen",
+      "oud": "[Noun] Sions/Jeruzalems/etc.",
+      "nieuw": "[Noun] van Sion/Jeruzalem/etc.",
+      "toelichting": "V448-extension voor plaatsnamen. Allowlist NOUNS: gevangenen/dochter/zonen/volk/muren/poorten/berg/wachters/etc. NAMES: Sion/Jeruzalem/Bethel/Hebron/Babel.",
+      "regex": "\\b(gevangenen|dochter|dochters|zoon|zonen|kinderen|volk|muren|poorten|berg|heuvel|wachters|heilige|heiligen|tempel|stad) (Sions|Jeruzalems|Bethels|Hebrons|Babels)\\b"
     }
   ]
 }
