@@ -4624,6 +4624,14 @@
       "nieuw": "[Noun] van Sion/Jeruzalem/etc.",
       "toelichting": "V448-extension voor plaatsnamen. Allowlist NOUNS: gevangenen/dochter/zonen/volk/muren/poorten/berg/wachters/etc. NAMES: Sion/Jeruzalem/Bethel/Hebron/Babel.",
       "regex": "\\b(gevangenen|dochter|dochters|zoon|zonen|kinderen|volk|muren|poorten|berg|heuvel|wachters|heilige|heiligen|tempel|stad) (Sions|Jeruzalems|Bethels|Hebrons|Babels)\\b"
+    },
+    {
+      "id": "V517",
+      "categorie": "Naamvallen",
+      "oud": "eens helds",
+      "nieuw": "van een held",
+      "toelichting": "V424-extension voor 'held'.",
+      "regex": "\\beens helds\\b"
     }
   ]
 }
