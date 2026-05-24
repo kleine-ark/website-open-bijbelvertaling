@@ -4504,6 +4504,14 @@
       "nieuw": "hoeksteen",
       "toelichting": "Verouderde uitdrukking voor 'cornerstone' (Hebr. rosh pinnah). Modern: 'hoeksteen' (HSV, NBV21).",
       "regex": "\\b[Hh]oofd des hoeks\\b"
+    },
+    {
+      "id": "V502",
+      "categorie": "Naamvallen",
+      "oud": "van ganser hart",
+      "nieuw": "met heel mijn/zijn/uw/hun hart",
+      "toelichting": "Verouderde genitief-constructie (Hebr. bekol lev). Context-aware vervanging: bezittelijk voornaamwoord op basis van subject in dezelfde clausule (ik→mijn, u→uw, hij→zijn, zij→hun).",
+      "regex": "\\bvan ganser hart\\b"
     }
   ]
 }
