@@ -4528,6 +4528,14 @@
       "nieuw": "leren",
       "toelichting": "Verouderde adjectief-vorm — modern Nederlands gebruikt 'leren' (lederen schoenen → leren schoenen).",
       "regex": "\\b[Ll]ederen\\b"
+    },
+    {
+      "id": "V505",
+      "categorie": "Naamvallen",
+      "oud": "Ik ben Uw[,;.!?] (predicaat)",
+      "nieuw": "Ik ben van U",
+      "toelichting": "Predicatief 'Ik ben Uw' (gevolgd door interpunctie) — modern: 'Ik ben van U'. Attribuut 'Ik ben Uw knecht' blijft.",
+      "regex": "\\b[Ii]k ben Uw(?=[,;.!?])"
     }
   ]
 }
