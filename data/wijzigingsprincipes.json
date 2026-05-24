@@ -4600,6 +4600,22 @@
       "nieuw": "Bewaarder van Israël",
       "toelichting": "V448-extension: 'Bewaarder' toegevoegd aan NOUNS-allowlist.",
       "regex": "\\b[Bb]ewaarder Israëls\\b"
+    },
+    {
+      "id": "V514",
+      "categorie": "Verouderde woorden",
+      "oud": "Ten ware [X] (zonder 'dat')",
+      "nieuw": "Tenzij [X]",
+      "toelichting": "Aanvulling V483 (ten ware dat → tenzij) voor varianten zonder 'dat'.",
+      "regex": "\\b[Tt]en ware (?!dat\\b)"
+    },
+    {
+      "id": "V515",
+      "categorie": "Verouderde woorden",
+      "oud": "stoute wateren",
+      "nieuw": "onstuimige wateren",
+      "toelichting": "Oud 'stout' = woest/wild (niet modern 'ondeugend'). Hebr. zedonim = onstuimig.",
+      "regex": "\\bstoute wateren\\b"
     }
   ]
 }
