@@ -4568,6 +4568,38 @@
       "nieuw": "is/was ver",
       "toelichting": "Verouderde verbogen vorm bij predicatief gebruik. Modern Nederlands: 'ver'.",
       "regex": "\\b(is|was) verre\\b"
+    },
+    {
+      "id": "V510",
+      "categorie": "Naamvallen",
+      "oud": "eens machtigen",
+      "nieuw": "van een machtige",
+      "toelichting": "Aanvulling V424 (eens [Noun]s → van een [Noun]) voor adjectivische 'machtigen'.",
+      "regex": "\\beens machtigen\\b"
+    },
+    {
+      "id": "V511",
+      "categorie": "Werkwoordsvormen",
+      "oud": "wone (subjunctief)",
+      "nieuw": "woon",
+      "toelichting": "Verouderde subjunctief 1e pers enk van 'wonen'.",
+      "regex": "\\b[Ww]one\\b"
+    },
+    {
+      "id": "V512",
+      "categorie": "Spelling",
+      "oud": "Hammaaloth",
+      "nieuw": "Hammaäloth",
+      "toelichting": "Hebreeuws transliteratie met aä-trema (Hebr. ham-ma'aloth = de opgangen). Modernste spelling met trema.",
+      "regex": "\\b[Hh]ammaaloth\\b"
+    },
+    {
+      "id": "V513",
+      "categorie": "Naamvallen",
+      "oud": "Bewaarder Israëls",
+      "nieuw": "Bewaarder van Israël",
+      "toelichting": "V448-extension: 'Bewaarder' toegevoegd aan NOUNS-allowlist.",
+      "regex": "\\b[Bb]ewaarder Israëls\\b"
     }
   ]
 }
