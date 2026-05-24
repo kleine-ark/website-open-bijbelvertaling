@@ -4512,6 +4512,14 @@
       "nieuw": "met heel mijn/zijn/uw/hun hart",
       "toelichting": "Verouderde genitief-constructie (Hebr. bekol lev). Context-aware vervanging: bezittelijk voornaamwoord op basis van subject in dezelfde clausule (ik→mijn, u→uw, hij→zijn, zij→hun).",
       "regex": "\\bvan ganser hart\\b"
+    },
+    {
+      "id": "V503",
+      "categorie": "Naamvallen",
+      "oud": "met gansen/ganser hart",
+      "nieuw": "met heel [poss] hart",
+      "toelichting": "Verouderde datief 'gansen/ganser' bij 'hart'. Context-aware: ik→mijn, u→uw, hij→zijn, zij→hun.",
+      "regex": "\\bmet gans(en|er) hart\\b"
     }
   ]
 }
