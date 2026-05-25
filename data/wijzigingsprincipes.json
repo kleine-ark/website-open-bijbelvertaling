@@ -4848,6 +4848,22 @@
       "nieuw": "bouwers",
       "toelichting": "Verouderd; modern Nederlands (gangbaar in HSV/NBV21).",
       "regex": "\\b[Bb]ouwlieden\\b"
+    },
+    {
+      "id": "V545",
+      "categorie": "Verouderde sterke verbuiging",
+      "oud": "luider stem(me/men) / luider geluid / luider gejuich",
+      "nieuw": "luide [Noun]",
+      "toelichting": "Verouderde sterke -er uitgang op het positief adjectief; modern Nederlands kent alleen 'luide' (positief) of 'luider' (comparatief, niet bedoeld hier).",
+      "regex": "\\b[Ll]uider\\b(?=\\s+(stem|stemme|stemmen|geluid|gejuich))"
+    },
+    {
+      "id": "V546",
+      "categorie": "Cascade-fix V281",
+      "oud": "briefs (cascade van SV-genitief 'des briefs')",
+      "nieuw": "brief",
+      "toelichting": "Cascade-bug: V281 (des → van de/het) liet de SV-genitief-s achter bij 'brief'. 'briefs' bestaat niet in modern Nederlands; altijd singular 'brief'.",
+      "regex": "\\b[Bb]riefs\\b"
     }
   ]
 }
