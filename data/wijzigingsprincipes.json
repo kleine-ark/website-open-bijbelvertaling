@@ -4912,6 +4912,38 @@
       "nieuw": "die stad",
       "toelichting": "SV-anaphor 'dezelve stad' (= 'die/dat stad, eerder genoemd') werd verkeerd gemoderniseerd naar 'dezelfde stad' (= 'identical city'). Modern Nederlands: 'die stad' voor terugverwijzing.",
       "regex": "\\b[Dd]ie?zelf?de stad\\b|\\b[Dd]iezelve stad\\b"
+    },
+    {
+      "id": "V553",
+      "categorie": "Verouderde naamval",
+      "oud": "te dier tijd",
+      "nieuw": "in die tijd",
+      "toelichting": "Verouderde vrouwelijke datief 'dier' (= 'die'); modern Nederlands: 'in die tijd' (biblisch register, consistent met 'in die dagen').",
+      "regex": "\\b[Tt]e dier tijd\\b"
+    },
+    {
+      "id": "V554",
+      "categorie": "Verouderde werkwoordvorm",
+      "oud": "leide",
+      "nieuw": "legde",
+      "toelichting": "SV-verleden tijd van 'leggen' (= 'leyde'); modern Nederlands: 'legde'. NB: verleden tijd van 'leiden' is 'leidde' (dubbele -d-), niet 'leide' — geen conflict.",
+      "regex": "\\b[Ll]eide\\b"
+    },
+    {
+      "id": "V555",
+      "categorie": "Cascade-fix V281",
+      "oud": "(de) grote Gods",
+      "nieuw": "(de) grote God",
+      "toelichting": "Cascade-bug: SV-genitief 'des groten Gods' (= 'of the great God') werd verkeerd gemoderniseerd naar 'de grote Gods' met spuriose -s. Hoort 'de grote God' te zijn.",
+      "regex": "\\b[Gg]rote Gods\\b"
+    },
+    {
+      "id": "V556",
+      "categorie": "Verouderd werkwoord",
+      "oud": "voltrekken / voltrekt / voltrekking",
+      "nieuw": "voltooien / voltooit / voltooiing",
+      "toelichting": "Modern Nederlands 'voltrekken' is gereserveerd voor formele acten (huwelijk, vonnis). Voor bouw/werk/belofte gebruikt modern Nederlands 'voltooien'.",
+      "regex": "\\b[Vv]oltrek(ken|t|king)\\b"
     }
   ]
 }
