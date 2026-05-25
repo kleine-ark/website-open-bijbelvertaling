@@ -4824,6 +4824,22 @@
       "nieuw": "jongeman(nen)",
       "toelichting": "Verouderd; modern Nederlands.",
       "regex": "\\b[Jj]on(g|ge) gezel(len)?\\b"
+    },
+    {
+      "id": "V542",
+      "categorie": "Verouderd relativum",
+      "oud": "Dewelken / dewelken (plural)",
+      "nieuw": "Zij (subject) / die (relativum) / wie (na voorzetsel)",
+      "toelichting": "Verouderd meervouds-relativum. Zin-start subject → 'Zij'; mid-sentence relativum → 'die'; na voorzetsel (door/van/voor/tot/etc.) → 'wie' (personen).",
+      "regex": "\\b[Dd]ewelken\\b"
+    },
+    {
+      "id": "V543",
+      "categorie": "Verouderd woord",
+      "oud": "poortier(s)",
+      "nieuw": "poortwachter(s)",
+      "toelichting": "Verouderd; modern Nederlands (gangbaar in HSV/NBV21). Behoudt 'poort' i.t.t. 'deur'.",
+      "regex": "\\b[Pp]oortiers?\\b"
     }
   ]
 }
