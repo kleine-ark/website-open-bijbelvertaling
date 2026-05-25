@@ -4864,6 +4864,30 @@
       "nieuw": "brief",
       "toelichting": "Cascade-bug: V281 (des → van de/het) liet de SV-genitief-s achter bij 'brief'. 'briefs' bestaat niet in modern Nederlands; altijd singular 'brief'.",
       "regex": "\\b[Bb]riefs\\b"
+    },
+    {
+      "id": "V547",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "(en) op zulken tijd",
+      "nieuw": "enzovoorts",
+      "toelichting": "Aramese sluit-formule in koninklijke brieven (וּכְעֶנֶת); letterlijk 'en op dit tijdstip', functioneel = 'enzovoorts/etc.' Modern Nederlands: enzovoorts.",
+      "regex": "\\b(?:[Ee]n )?[Oo]p zulken tijd\\b"
+    },
+    {
+      "id": "V548",
+      "categorie": "Verouderd woord",
+      "oud": "cijns(en)",
+      "nieuw": "belasting(en)",
+      "toelichting": "Verouderde fiscaal-juridische term (= grondbelasting/tribuut). Modern Nederlands: belasting.",
+      "regex": "\\b[Cc]ijnsen?\\b"
+    },
+    {
+      "id": "V549",
+      "categorie": "Verouderd woord",
+      "oud": "(oude/ouden) impost(en)",
+      "nieuw": "(vanouds gevestigde) accijns(en)",
+      "toelichting": "Verouderde fiscaal-juridische term (= verbruiks-heffing op goederen; Aramees בְלוֹ). SV-bijvoeging 'oude' = 'vanouds geheven' (per kanttekening), niet 'verouderd'.",
+      "regex": "\\b(?:[Oo]ude(?:n)? )?[Ii]mposten?\\b"
     }
   ]
 }
