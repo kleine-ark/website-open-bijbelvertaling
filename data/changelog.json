@@ -1,6 +1,46 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-05-25",
+      "versie": "v0.16.6",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Ezra volledig (10 hoofdstukken, 280 verzen) nageleze. Totaal nu 273 hoofdstukken / 6.955 verzen handmatig vers-voor-vers gecontroleerd (19,6% / 18,7%). 15 boeken volledig."
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V542-V570 (29 nieuwe principes): Dewelken → Zij/die/wie (context-aware), poortier → poortwachter, bouwlieden → bouwers, luider stem → luide stem, briefs cascade-fix, op zulken tijd → enzovoorts, cijns → belasting, impost → accijns, feil(en) → fout/falen, met arm en geweld → met geweld en macht, dezelfde stad → die stad, te dier tijd → in die tijd (170×), leide → legde (369×), grote Gods cascade-fix, voltrekken → voltooien, aan gene zijde → aan de overzijde, van gene [N] → van geen [N], generlei → geen enkele, de gene die → degenen die, priesteren → priesters (518×), Nethinim → tempelknechten, hoofden van vaderen → familiehoofden, alzulks → zoiets, manspersoon → man, rechten weg → rechte weg, kameren → kamers (132×), ten huize van → in het huis van, dochteren → dochters (633×), deze/dit aangaande → wat dit betreft."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Cascade-fixes via Opus 4.7 agents: 'van de koning [Noun]' (~187 verzen) en 'JAHWEH [Noun]' (~171 verzen) context-aware door agents geanalyseerd en hersteld naar correcte modernisering met juiste artikel-gender en woordvolgorde."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "'vaardig' context-aware modernisering via Opus 4.7 agent (bekwaam / bereid / 'kwam over' afhankelijk van betekenis)."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Over-pagina: melding toegevoegd dat ook reeds nageleze delen retroactief kunnen wijzigen door principe-aanpassingen."
+        }
+      ]
+    },
+    {
+      "datum": "2026-05-25",
+      "versie": "v0.16.5",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Psalmen volledig (1-150) afgerond + Susanna nageleze (33 hfdst, 568 verzen). Totaal nu 263 hoofdstukken / 6.675 verzen handmatig vers-voor-vers gecontroleerd (18,9% / 17,9%). 14 boeken volledig."
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V502-V541 (40 nieuwe principes voor Psalmen 119-150 + Susanna): ganser hart-modernisering, Hebreeuwse trema's, garvenbinder → schovenbinder, kindskinderen → kleinkinderen, ten ware → tenzij, te dienzelfden dage → op dezelfde dag, betamelijk → passend, hare → haar (208×), te verhalen → te vertellen, verstoken → verstopt (context-aware), jonge gezel → jongeman, en meer."
+        }
+      ]
+    },
+    {
       "datum": "2026-05-20",
       "versie": "v0.16.4",
       "items": [

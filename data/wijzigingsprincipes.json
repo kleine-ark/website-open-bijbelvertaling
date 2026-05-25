@@ -4944,6 +4944,118 @@
       "nieuw": "voltooien / voltooit / voltooiing",
       "toelichting": "Modern Nederlands 'voltrekken' is gereserveerd voor formele acten (huwelijk, vonnis). Voor bouw/werk/belofte gebruikt modern Nederlands 'voltooien'.",
       "regex": "\\b[Vv]oltrek(ken|t|king)\\b"
+    },
+    {
+      "id": "V557",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "aan gene zijde",
+      "nieuw": "aan de overzijde",
+      "toelichting": "Verouderd 'gene' (= die andere/ginds). Modern Nederlands: 'aan de overzijde' (biblisch register, past bij rivieren/zee). Paired idiom 'aan deze en aan gene zijde' → 'aan deze en aan de andere zijde'.",
+      "regex": "\\b[Aa]an gene zijde\\b"
+    },
+    {
+      "id": "V558",
+      "categorie": "Verouderde negation",
+      "oud": "van gene [Noun]",
+      "nieuw": "van geen [Noun]",
+      "toelichting": "SV 'gene' als variant van 'geen' (negation, niet anaphoric). Pattern: 'van gene waarde/kracht/branding/macht/etc.' = 'van geen X'.",
+      "regex": "\\b[Vv]an gene (waarde|kracht|branding|plaats|macht|oorzaak|gave|vastigheid|overwinning|hoop|genade|gerechtigheid|opstanding|opkomst|vergelding|wijze)\\b"
+    },
+    {
+      "id": "V559",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "generlei (wijze)",
+      "nieuw": "geen enkele (wijze)",
+      "toelichting": "Verouderd; 'generlei' = 'geen enkele' / 'op geen enkele manier'. Modern Nederlands: 'geen enkele'.",
+      "regex": "\\b[Gg]enerlei\\b"
+    },
+    {
+      "id": "V560",
+      "categorie": "Verouderde anaphor",
+      "oud": "de gene die",
+      "nieuw": "degenen die",
+      "toelichting": "SV-anaphor 'de gene die' (= 'die degenen die'). Modern Nederlands: 'degenen die' (meervoud, dekt de meeste gevallen).",
+      "regex": "\\b[Dd]e gene die\\b"
+    },
+    {
+      "id": "V561",
+      "categorie": "Verouderd meervoud",
+      "oud": "priesteren",
+      "nieuw": "priesters",
+      "toelichting": "SV-meervoud op -en (priesteren); modern Nederlands: priesters.",
+      "regex": "\\b[Pp]riesteren\\b"
+    },
+    {
+      "id": "V562",
+      "categorie": "Verouderd leenwoord",
+      "oud": "Nethinim",
+      "nieuw": "tempelknechten",
+      "toelichting": "Hebreeuws נְתִינִים (netinim) = 'de gegevenen' — tempeldienaren toegewezen aan de Levieten voor lagere tempeldiensten (Gibeonieten en latere groepen, zie Jozua 9). HSV/NBV21: 'tempelknechten'.",
+      "regex": "\\b[Nn]ethinim\\b"
+    },
+    {
+      "id": "V563",
+      "categorie": "Hebraïsme",
+      "oud": "hoofden van [poss] vaderen",
+      "nieuw": "familiehoofden",
+      "toelichting": "Hebraïsche uitdrukking 'rashei avot' (= 'heads of fathers'/'houses') voor stamhoofden/familiehoofden. Modern Nederlands (NBV21/HSV): 'familiehoofden'.",
+      "regex": "\\b[Hh]oofden (van (hun|de|hen|hunne|onze|uw|mijn|haar|zijn) vaderen|hunner vaderen)\\b"
+    },
+    {
+      "id": "V564",
+      "categorie": "Verouderd voornaamwoord",
+      "oud": "alzulks (en alzulks)",
+      "nieuw": "zoiets / zoveel en nog meer",
+      "toelichting": "SV demonstrative neuter ('zo iets'). Standalone → 'zoiets'; eed-formule 'alzulks en alzulks daartoe doen' → 'zoveel en nog meer daartoe doen' (Hebraïsche zwaarte-formule).",
+      "regex": "\\b[Aa]lzulks\\b"
+    },
+    {
+      "id": "V565",
+      "categorie": "Verouderd woord",
+      "oud": "manspersoon / manspersonen",
+      "nieuw": "man / mannen",
+      "toelichting": "Verouderde compositum 'manspersoon'; modern Nederlands: 'man'. In context met 'vrouwen' blijft genus-aanduiding helder.",
+      "regex": "\\b[Mm]anspersoon(en)?\\b"
+    },
+    {
+      "id": "V566",
+      "categorie": "Verouderde sterke verbuiging",
+      "oud": "rechten weg",
+      "nieuw": "rechte weg",
+      "toelichting": "Verouderde sterke -en uitgang op attributief adjectief (mannelijke accusatief/datief). Modern Nederlands: zwakke uitgang -e ('de/een rechte weg').",
+      "regex": "\\b[Rr]echten weg\\b"
+    },
+    {
+      "id": "V567",
+      "categorie": "Verouderd meervoud",
+      "oud": "kameren",
+      "nieuw": "kamers",
+      "toelichting": "SV-meervoud op -en (kameren); modern Nederlands: kamers.",
+      "regex": "\\b[Kk]ameren\\b"
+    },
+    {
+      "id": "V568",
+      "categorie": "Verouderde naamval",
+      "oud": "ten huize van",
+      "nieuw": "in het huis van",
+      "toelichting": "Verouderde datief-constructie 'ten huize' (= 'te dem huize' = 'in het huis'). Modern Nederlands: 'in het huis van' (slankst) of 'thuis bij' (informeel). In Bijbel-context met onderwerp (God/koning/etc.) past 'in het huis van' het beste.",
+      "regex": "\\b[Tt]en huize van\\b"
+    },
+    {
+      "id": "V569",
+      "categorie": "Verouderd meervoud",
+      "oud": "dochteren",
+      "nieuw": "dochters",
+      "toelichting": "SV-meervoud op -en (dochteren); modern Nederlands: dochters.",
+      "regex": "\\b[Dd]ochteren\\b"
+    },
+    {
+      "id": "V570",
+      "categorie": "Verouderd voornaamwoord",
+      "oud": "(aangaande dit/deze) / (dit/deze aangaande)",
+      "nieuw": "wat dit betreft",
+      "toelichting": "SV-idioom 'aangaande dit/deze' / 'deze aangaande' (= 'concerning this' / 'as for this'). Modern Nederlands: 'wat dit betreft'. Generieke 'aangaande' (standalone, 1255 hits) blijft staan.",
+      "regex": "\\b([Aa]angaande (dit|deze)|(dit|deze) aangaande)\\b"
     }
   ]
 }

@@ -128,6 +128,7 @@ const Lees = {
         jakobus:    'all',
         '1makkabeeen': 'all',
         susanna:    'all',
+        ezra:       'all',
     },
 
     _isVerified(bookId, chapter) {
