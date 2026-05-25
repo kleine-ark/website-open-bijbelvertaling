@@ -4888,6 +4888,30 @@
       "nieuw": "(vanouds gevestigde) accijns(en)",
       "toelichting": "Verouderde fiscaal-juridische term (= verbruiks-heffing op goederen; Aramees בְלוֹ). SV-bijvoeging 'oude' = 'vanouds geheven' (per kanttekening), niet 'verouderd'.",
       "regex": "\\b(?:[Oo]ude(?:n)? )?[Ii]mposten?\\b"
+    },
+    {
+      "id": "V550",
+      "categorie": "Verouderd woord",
+      "oud": "feil(en)",
+      "nieuw": "fout / falen",
+      "toelichting": "Verouderd: feilen (ww) = falen/missen; feil (zn) = fout/vergissing. Behoudt 'feilbaar' en 'feilloos' (nog modern).",
+      "regex": "\\b[Ff]eilen?\\b"
+    },
+    {
+      "id": "V551",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "met arm en geweld",
+      "nieuw": "met geweld en macht",
+      "toelichting": "Aramees-Hebreeuws doublet בְּאֶדְרָע וְחָיִל ('met sterke arm en kracht' = gewapende macht). Modern Nederlands: 'met geweld en macht' behoudt parallelism.",
+      "regex": "\\b[Mm]et arm en geweld\\b"
+    },
+    {
+      "id": "V552",
+      "categorie": "Cascade-fix anaphor",
+      "oud": "dezelfde stad / diezelve stad",
+      "nieuw": "die stad",
+      "toelichting": "SV-anaphor 'dezelve stad' (= 'die/dat stad, eerder genoemd') werd verkeerd gemoderniseerd naar 'dezelfde stad' (= 'identical city'). Modern Nederlands: 'die stad' voor terugverwijzing.",
+      "regex": "\\b[Dd]ie?zelf?de stad\\b|\\b[Dd]iezelve stad\\b"
     }
   ]
 }
