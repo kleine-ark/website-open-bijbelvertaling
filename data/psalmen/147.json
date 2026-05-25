@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Looft den HEERE, want onzen God te psalmzingen is goed, dewijl Hij liefelijk is; de lof is betamelijk.",
       "text1637": "LOoft den HEERE, want onsen Godt te psalm-singen [1] is goet, [2] dewijle hy lieflick is: [a] [3] de lof is betamelick.",
-      "text2026": "Looft JAHWEH, want onze God te psalmzingen is goed, omdat Hij liefelijk is; de lof is betamelijk.",
+      "text2026": "Looft JAHWEH, want onze God te psalmzingen is goed, omdat Hij liefelijk is; de lof is passend.",
       "marginNotes": [
         {
           "marker": "1",
@@ -33,7 +33,7 @@
           "type": "explanatory",
           "textSV1888": "de lof is betamelijk: Hij wil zeggen: Het betaamt den kinderen Gods den Heere te loven. Of, de lof des Heeren is in zichzelf een schone zaak.",
           "text1637": "Hy wil seggen, het betaemt de kinderen Godes den Heere te loven. ofte, de lof des Heeren is in sich selven een schoone sake.",
-          "text2026": "de lof is betamelijk: Hij wil zeggen: Het betaamt de kinderen van God de Heer te loven. Of, de lof van de Heer is in zichzelf een schone zaak."
+          "text2026": "de lof is passend: Hij wil zeggen: Het betaamt de kinderen van God de Heer te loven. Of, de lof van de Heer is in zichzelf een schone zaak."
         }
       ],
       "grondtekst": [
@@ -88,7 +88,7 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "Looft JAHWEH, want onze God te psalmzingen<sup class=\"note-marker\" data-note=\"1\">1</sup> is goed,<sup class=\"note-marker\" data-note=\"2\">2</sup> omdat Hij liefelijk is;<sup class=\"note-marker\" data-note=\"3\">3</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> de lof is betamelijk.",
+      "text2026_html": "Looft JAHWEH, want onze God te psalmzingen<sup class=\"note-marker\" data-note=\"1\">1</sup> is goed,<sup class=\"note-marker\" data-note=\"2\">2</sup> omdat Hij liefelijk is;<sup class=\"note-marker\" data-note=\"3\">3</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> de lof is passend.",
       "textSV1888_html": "Looft den HEERE, want onzen God te psalmzingen<sup class=\"note-marker\" data-note=\"1\">1</sup> is goed,<sup class=\"note-marker\" data-note=\"2\">2</sup> dewijl Hij liefelijk is;<sup class=\"note-marker\" data-note=\"3\">3</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> de lof is betamelijk.",
       "text1637_html": "LOoft den HEERE, want onsen Godt te psalm-singen <sup class=\"note-marker\" data-note=\"1\">1</sup> is goet, <sup class=\"note-marker\" data-note=\"2\">2</sup> dewijle hy lieflick is: <sup class=\"note-marker\" data-note=\"a\">a</sup> <sup class=\"note-marker\" data-note=\"3\">3</sup> de lof is betamelick.",
       "phraseDiff": [
@@ -106,6 +106,11 @@
           "old": "dewijl",
           "new": "omdat",
           "principe": "V2"
+        },
+        {
+          "old": "betamelijk.",
+          "new": "passend.",
+          "principe": "V536"
         }
       ]
     },
@@ -305,7 +310,7 @@
       "number": 5,
       "textSV1888": "Onze Heere is groot en van veel kracht; Zijns verstands is geen getal.",
       "text1637": "Onse Heere is groot, ende [9] van vele kracht: [10] sijnes verstants en is geen getal.",
-      "text2026": "Onze Heer is groot en van veel kracht; Zijn verstands is geen getal.",
+      "text2026": "Onze Heer is groot en van veel kracht; Zijn verstand is onmeetbaar.",
       "marginNotes": [
         {
           "marker": "9",
@@ -359,7 +364,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Onze Heer is groot en<sup class=\"note-marker\" data-note=\"9\">9</sup> van veel kracht;<sup class=\"note-marker\" data-note=\"10\">10</sup> Zijn verstands is geen getal.",
+      "text2026_html": "Onze Heer is groot en<sup class=\"note-marker\" data-note=\"9\">9</sup> van veel kracht;<sup class=\"note-marker\" data-note=\"10\">10</sup> Zijn verstand is onmeetbaar.",
       "textSV1888_html": "Onze Heere is groot en<sup class=\"note-marker\" data-note=\"9\">9</sup> van veel kracht;<sup class=\"note-marker\" data-note=\"10\">10</sup> Zijns verstands is geen getal.",
       "text1637_html": "Onse Heere is groot, ende <sup class=\"note-marker\" data-note=\"9\">9</sup> van vele kracht: <sup class=\"note-marker\" data-note=\"10\">10</sup> sijnes verstants en is geen getal.",
       "phraseDiff": [
@@ -369,9 +374,14 @@
           "principe": null
         },
         {
-          "old": "Zijns",
-          "new": "Zijn",
+          "old": "Zijns verstands",
+          "new": "Zijn verstand",
           "principe": "V201"
+        },
+        {
+          "old": "geen getal.",
+          "new": "onmeetbaar.",
+          "principe": null
         }
       ]
     },

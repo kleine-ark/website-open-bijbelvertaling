@@ -291,7 +291,7 @@
           "type": "explanatory",
           "textSV1888": "Dat is, ernstiglijk en met aanhouding verzocht, om haar huis en land, dat enigen in haar afwezen bezeten hadden weder te krijgen. Vergelijk vers 6 . 2 Koningen 8:6 : En de koning ondervraagde de vrouw, en zij vertelde het hem. Toen gaf de koning haar een kamerling, zeggende: Doe haar wederhebben alles, wat het hare was, daartoe alle inkomsten des akkers, van den dag af, dat zij het land verlaten heeft, tot nu toe.",
           "text1637": "D. eernstelick, ende met aenhoudinge versochte, om haer huys ende lant, dat eenige in haer afwesen beseten hadden, weder te krijgen. Vergel. het volgende 6. vers.",
-          "text2026": "Dat is, ernstiglijk en met aanhouding verzocht, om haar huis en land, dat enige in haar afwezen bezeten hadden weer te krijgen. Vergelijk vers 6 . 2 Koningen 8:6 : En de koning ondervraagde de vrouw, en zij vertelde het hem. Toen gaf de koning haar een kamerling, zeggende: Doe haar wederhebben alles, wat het hare was, daartoe alle inkomsten van de akker, van de dag af, dat zij het land verlaten heeft, tot nu toe."
+          "text2026": "Dat is, ernstiglijk en met aanhouding verzocht, om haar huis en land, dat enige in haar afwezen bezeten hadden weer te krijgen. Vergelijk vers 6 . 2 Koningen 8:6 : En de koning ondervraagde de vrouw, en zij vertelde het hem. Toen gaf de koning haar een kamerling, zeggende: Doe haar wederhebben alles, wat het haar was, daartoe alle inkomsten van de akker, van de dag af, dat zij het land verlaten heeft, tot nu toe."
         }
       ],
       "grondtekst": [
@@ -743,7 +743,7 @@
       "number": 6,
       "textSV1888": "En de koning ondervraagde de vrouw, en zij vertelde het hem. Toen gaf de koning haar een kamerling, zeggende: Doe haar wederhebben alles, wat het hare was, daartoe alle inkomsten des akkers, van den dag af, dat zij het land verlaten heeft, tot nu toe.",
       "text1637": "Ende de Coninck [6] ondervraechde de vrouwe, ende sy verteldet hem: doe gaf de Coninck haer eenen [7] Camerlinck, seggende; Doet [haer] weder hebben alles wat hare was, daer toe alle inkomsten des ackers, vanden dage af, dat sy het lant verlaten heeft, tot nu toe.",
-      "text2026": "En de koning ondervraagde de vrouw, en zij vertelde het hem. Toen gaf de koning haar een kamerling, zeggende: Doe haar wederhebben alles, wat het hare was, daartoe alle inkomsten van de akker, van de dag af, dat zij het land verlaten heeft, tot nu toe.",
+      "text2026": "En de koning ondervraagde de vrouw, en zij vertelde het hem. Toen gaf de koning haar een kamerling, zeggende: Doe haar wederhebben alles, wat het haar was, daartoe alle inkomsten van de akker, van de dag af, dat zij het land verlaten heeft, tot nu toe.",
       "marginNotes": [
         {
           "marker": "6",
@@ -892,10 +892,15 @@
           "morph": "HD"
         }
       ],
-      "text2026_html": "En de koning ondervraagde de vrouw, en zij vertelde het hem. Toen gaf de koning haar een kamerling, zeggende: <span class=\"direct-speech\"><i>Doe haar wederhebben alles, wat het hare was, daartoe alle inkomsten van de akker, van de dag af, dat zij het land verlaten heeft, tot nu toe.</i></span>",
+      "text2026_html": "En de koning ondervraagde de vrouw, en zij vertelde het hem. Toen gaf de koning haar een kamerling, zeggende: <span class=\"direct-speech\"><i>Doe haar wederhebben alles, wat het haar was, daartoe alle inkomsten van de akker, van de dag af, dat zij het land verlaten heeft, tot nu toe.</i></span>",
       "textSV1888_html": "En de koning<sup class=\"note-marker\" data-note=\"6\">6</sup> ondervraagde de vrouw, en zij vertelde het hem. Toen gaf de koning haar een<sup class=\"note-marker\" data-note=\"7\">7</sup> kamerling, zeggende: Doe haar wederhebben alles, wat het hare was, daartoe alle inkomsten des akkers, van den dag af, dat zij het land verlaten heeft, tot nu toe.",
       "text1637_html": "Ende de Coninck <sup class=\"note-marker\" data-note=\"6\">6</sup> ondervraechde de vrouwe, ende sy verteldet hem: doe gaf de Coninck haer eenen <sup class=\"note-marker\" data-note=\"7\">7</sup> Camerlinck, seggende; Doet [haer] weder hebben alles wat hare was, daer toe alle inkomsten des ackers, vanden dage af, dat sy het lant verlaten heeft, tot nu toe.",
       "phraseDiff": [
+        {
+          "old": "hare",
+          "new": "haar",
+          "principe": "V538"
+        },
         {
           "old": "des akkers,",
           "new": "",
@@ -2575,6 +2580,11 @@
           "old": "gelijk",
           "new": "zoals",
           "principe": null
+        },
+        {
+          "old": "allen",
+          "new": "alle",
+          "principe": "V532"
         }
       ]
     },
