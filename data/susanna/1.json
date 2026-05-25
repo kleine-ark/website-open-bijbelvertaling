@@ -5,9 +5,9 @@
       "number": 1,
       "text1637": "Daar was een man woonachtig te Babylon, wiens naam was Jojakim.",
       "textSV1888": "Daar was een man woonachtig te Babylon, wiens naam was Jojakim.",
-      "text2026": "Daar was een man woonachtig te Babylon, van wie de naam was Jojakim.",
+      "text2026": "Daar was een man in Babylon, van wie de naam was Jojakim.",
       "marginNotes": [],
-      "text2026_html": "Daar was een man woonachtig te Babylon, van wie de naam was Jojakim.",
+      "text2026_html": "Daar was een man in Babylon, van wie de naam was Jojakim.",
       "grondtekst": [
         {
           "woord": "και",
@@ -51,6 +51,11 @@
         }
       ],
       "phraseDiff": [
+        {
+          "old": "woonachtig te",
+          "new": "in",
+          "principe": "V537"
+        },
         {
           "old": "wiens",
           "new": "van wie de",
@@ -135,9 +140,9 @@
       "number": 3,
       "text1637": "Want hare ouders waren rechtvaardig en hadden hun dochter onderwezen naar de wet van Mozes.",
       "textSV1888": "Want hare ouders waren rechtvaardig en hadden hun dochter onderwezen naar de wet van Mozes.",
-      "text2026": "Want hare ouders waren rechtvaardig en hadden hun dochter onderwezen naar de wet van Mozes.",
+      "text2026": "Want haar ouders waren rechtvaardig en hadden hun dochter onderwezen naar de wet van Mozes.",
       "marginNotes": [],
-      "text2026_html": "Want hare ouders waren rechtvaardig en hadden hun dochter onderwezen naar de wet van Mozes.",
+      "text2026_html": "Want haar ouders waren rechtvaardig en hadden hun dochter onderwezen naar de wet van Mozes.",
       "grondtekst": [
         {
           "woord": "και",
@@ -194,6 +199,13 @@
         {
           "woord": "μωσευς",
           "lemma": "Μωσεύς"
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "hare",
+          "new": "haar",
+          "principe": "V538"
         }
       ]
     },
@@ -846,14 +858,19 @@
       "number": 11,
       "text1637": "Overmits zij zich schaamden hun lusten te verhalen, en dat zij met haar wilden te doen hebben.",
       "textSV1888": "Overmits zij zich schaamden hun lusten te verhalen, en dat zij met haar wilden te doen hebben.",
-      "text2026": "Omdat zij zich schaamden hun lusten te verhalen, en dat zij met haar wilden te doen hebben.",
+      "text2026": "Omdat zij zich schaamden hun lusten te vertellen, en dat zij met haar wilden te doen hebben.",
       "marginNotes": [],
-      "text2026_html": "Omdat zij zich schaamden hun lusten te verhalen, en dat zij met haar wilden te doen hebben.",
+      "text2026_html": "Omdat zij zich schaamden hun lusten te vertellen, en dat zij met haar wilden te doen hebben.",
       "phraseDiff": [
         {
           "old": "Overmits",
           "new": "Omdat",
           "principe": "V13"
+        },
+        {
+          "old": "verhalen,",
+          "new": "vertellen,",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -1397,19 +1414,14 @@
       "number": 17,
       "text1637": "En zij zeide tot haar maagden: Haalt mij nu zalf en zeep, en sluit de deuren van de hof, opdat ik mij mag wassen.",
       "textSV1888": "En zij zeide tot haar maagden: Haalt mij nu zalf en zeep, en sluit de deuren van de hof, opdat ik mij mag wassen.",
-      "text2026": "En zij zei tot haar maagden: Haalt mij nu zalf en zeep, en sluit de deuren van de hof, opdat ik mij mag groeien.",
+      "text2026": "En zij zei tot haar maagden: Haalt mij nu zalf en zeep, en sluit de deuren van de hof, opdat ik mij mag wassen.",
       "marginNotes": [],
-      "text2026_html": "En zij zei tot haar maagden: <span class=\"direct-speech\"><i>Haalt mij nu zalf en zeep, en sluit de deuren van de hof, opdat ik mij mag groeien.</i></span>",
+      "text2026_html": "En zij zei tot haar maagden: <span class=\"direct-speech\"><i>Haalt mij nu zalf en zeep, en sluit de deuren van de hof, opdat ik mij mag wassen.</i></span>",
       "phraseDiff": [
         {
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
-        },
-        {
-          "old": "wassen.",
-          "new": "groeien.",
-          "principe": "V45"
         }
       ],
       "grondtekst": [
@@ -1491,9 +1503,9 @@
       "number": 18,
       "text1637": "En zij deden als zij zeide, en zij sloten de deuren van de hof toe, en gingen door een zijdeur om te halen hetgeen haar was bevolen; en zij zagen de oudsten niet, omdat zij zich verstoken hadden.",
       "textSV1888": "En zij deden als zij zeide, en zij sloten de deuren van de hof toe, en gingen door een zijdeur om te halen hetgeen haar was bevolen; en zij zagen de oudsten niet, omdat zij zich verstoken hadden.",
-      "text2026": "En zij deden als zij zei, en zij sloten de deuren van de hof toe, en gingen door een zijdeur om te halen wat haar was bevolen; en zij zagen de oudsten niet, omdat zij zich verstoken hadden.",
+      "text2026": "En zij deden als zij zei, en zij sloten de deuren van de hof toe, en gingen door een zijdeur om te halen wat haar was bevolen; en zij zagen de oudsten niet, omdat zij zich verstopt hadden.",
       "marginNotes": [],
-      "text2026_html": "En zij deden als zij zei, en zij sloten de deuren van de hof toe, en gingen door een zijdeur om te halen wat haar was bevolen; en zij zagen de oudsten niet, omdat zij zich verstoken hadden.",
+      "text2026_html": "En zij deden als zij zei, en zij sloten de deuren van de hof toe, en gingen door een zijdeur om te halen wat haar was bevolen; en zij zagen de oudsten niet, omdat zij zich verstopt hadden.",
       "phraseDiff": [
         {
           "old": "zeide,",
@@ -1504,6 +1516,11 @@
           "old": "hetgeen",
           "new": "wat",
           "principe": "V4"
+        },
+        {
+          "old": "verstoken",
+          "new": "verstopt",
+          "principe": "V540"
         }
       ],
       "grondtekst": [
@@ -1804,14 +1821,19 @@
       "number": 21,
       "text1637": "Doch indien niet zo zullen wij tegen u getuigen dat een jong gezel bij u is geweest, en dat gij daarom uw dienstmaagden van u hebt weggezonden.",
       "textSV1888": "Doch indien niet zo zullen wij tegen u getuigen dat een jong gezel bij u is geweest, en dat gij daarom uw dienstmaagden van u hebt weggezonden.",
-      "text2026": "Maar als niet zo zullen wij tegen u getuigen dat een jong gezel bij u is geweest, en dat u daarom uw dienaressen van u hebt weggezonden.",
+      "text2026": "Maar als niet zo zullen wij tegen u getuigen dat een jongeman bij u is geweest, en dat u daarom uw dienaressen van u hebt weggezonden.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar als niet zo zullen wij tegen u getuigen dat een jong gezel bij u is geweest, en dat u daarom uw dienaressen van u hebt weggezonden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar als niet zo zullen wij tegen u getuigen dat een jongeman bij u is geweest, en dat u daarom uw dienaressen van u hebt weggezonden.</i></span>",
       "phraseDiff": [
         {
           "old": "Doch indien",
           "new": "Maar als",
           "principe": "V41"
+        },
+        {
+          "old": "jong gezel",
+          "new": "jongeman",
+          "principe": "V541"
         },
         {
           "old": "gij",
@@ -1921,6 +1943,11 @@
           "old": "indien",
           "new": "als",
           "principe": "V41"
+        },
+        {
+          "old": "ontvlieden.",
+          "new": "ontvluchten.",
+          "principe": "V533"
         }
       ],
       "grondtekst": [
@@ -3147,9 +3174,9 @@
       "number": 37,
       "text1637": "Een jong gezel kwam tot haar, die verstoken was, en legde zich bij haar.",
       "textSV1888": "Een jong gezel kwam tot haar, die verstoken was, en legde zich bij haar.",
-      "text2026": "Een jong gezel kwam tot haar, die verstoken was, en legde zich bij haar.",
+      "text2026": "Een jongeman kwam tot haar, die verstopt was, en legde zich bij haar.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Een jong gezel kwam tot haar, die verstoken was, en legde zich bij haar.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Een jongeman kwam tot haar, die verstopt was, en legde zich bij haar.</i></span>",
       "grondtekst": [
         {
           "woord": "και",
@@ -3198,6 +3225,18 @@
         {
           "woord": "αυτος",
           "lemma": "αὐτός"
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "jong gezel",
+          "new": "jongeman",
+          "principe": "V541"
+        },
+        {
+          "old": "verstoken",
+          "new": "verstopt",
+          "principe": "V540"
         }
       ]
     },
@@ -3271,14 +3310,19 @@
       "number": 39,
       "text1637": "En ziende hen bij elkander, konden wij de gezel niet machtig worden, omdat hij sterker was dan wij; en hij deed de deuren open en sprong weg.",
       "textSV1888": "En ziende hen bij elkander, konden wij de gezel niet machtig worden, omdat hij sterker was dan wij; en hij deed de deuren open en sprong weg.",
-      "text2026": "En ziende hen bij elkaar, konden wij de gezel niet machtig worden, omdat hij sterker was dan wij; en hij deed de deuren open en sprong weg.",
+      "text2026": "En ziende hen bij elkaar, konden wij de jongeman niet machtig worden, omdat hij sterker was dan wij; en hij deed de deuren open en sprong weg.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>En ziende hen bij elkaar, konden wij de gezel niet machtig worden, omdat hij sterker was dan wij; en hij deed de deuren open en sprong weg.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En ziende hen bij elkaar, konden wij de jongeman niet machtig worden, omdat hij sterker was dan wij; en hij deed de deuren open en sprong weg.</i></span>",
       "phraseDiff": [
         {
           "old": "elkander,",
           "new": "elkaar,",
           "principe": "V65"
+        },
+        {
+          "old": "gezel",
+          "new": "jongeman",
+          "principe": null
         }
       ],
       "grondtekst": [

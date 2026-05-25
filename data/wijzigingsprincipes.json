@@ -4760,6 +4760,70 @@
       "nieuw": "ontvluchten / ontvlucht",
       "toelichting": "Verouderd 'vlieden' = vluchten. Aanvulling op V340 (vloden → vluchten), V528 (heenvlieden → heenvluchten), V339 (ontvloden → ontvlucht).",
       "regex": "\\b[Oo]ntvliede[nn]?\\b"
+    },
+    {
+      "id": "V534",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "te dienzelfden dage",
+      "nieuw": "op dezelfde dag",
+      "toelichting": "Verouderde naamvalsvorm; modern Nederlands.",
+      "regex": "\\b[Tt]e dienzelfden dage\\b"
+    },
+    {
+      "id": "V535",
+      "categorie": "Genitief-modernisering",
+      "oud": "van de goddelozen weg",
+      "nieuw": "de goddelozen weg",
+      "toelichting": "SV-genitief 'der goddelozen weg' (= 'de weg der goddelozen') werd in modernisering 'van de goddelozen weg', wat dubbelzinnig leest ('weg' als pad of als bijwoord 'wegnemen'). Beter terug naar voorgeplaatste genitief zonder 'van'.",
+      "regex": "\\b[Vv]an de goddelozen weg\\b"
+    },
+    {
+      "id": "V536",
+      "categorie": "Verouderd woord",
+      "oud": "betamelijk",
+      "nieuw": "passend",
+      "toelichting": "Verouderd; modern Nederlands.",
+      "regex": "\\b[Bb]etamelijk(?:e|ste)?\\b"
+    },
+    {
+      "id": "V537",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "woonachtig te [Plaats]",
+      "nieuw": "in [Plaats]",
+      "toelichting": "Verouderd; modern Nederlands.",
+      "regex": "\\b[Ww]oonachtig te [A-Z]\\w+\\b"
+    },
+    {
+      "id": "V538",
+      "categorie": "Verouderde naamval",
+      "oud": "hare",
+      "nieuw": "haar",
+      "toelichting": "Archaïsche genitief/datief van 'haar'; in modern Nederlands alleen nog 'haar'.",
+      "regex": "\\b[Hh]are\\b"
+    },
+    {
+      "id": "V539",
+      "categorie": "Verouderd werkwoord",
+      "oud": "te verhalen",
+      "nieuw": "te vertellen",
+      "toelichting": "Verouderd; modern Nederlands. Alleen 'te verhalen' (inf.) — laat zelfstandig naamwoord 'verhalen' (= stories) staan.",
+      "regex": "\\bte verhalen\\b"
+    },
+    {
+      "id": "V540",
+      "categorie": "Verouderd werkwoord",
+      "oud": "verstoken (hebben/zijn/etc. = verbergen)",
+      "nieuw": "verstopt",
+      "toelichting": "Verouderd voltooid deelwoord 'versteken'. Alleen vervangen waar betekenis 'verbergen' is, NIET waar het 'beroofd zijn van' betekent (= 'verstoken zijn van X').",
+      "regex": "\\b[Vv]erstoken\\b(?!\\s+(ben|bent|was|waren|zijn|zijnde|wordt|worden|werd|werden|is|te zijn)\\s+van)"
+    },
+    {
+      "id": "V541",
+      "categorie": "Verouderd woord",
+      "oud": "jonge gezel(len) / jong gezel",
+      "nieuw": "jongeman(nen)",
+      "toelichting": "Verouderd; modern Nederlands.",
+      "regex": "\\b[Jj]on(g|ge) gezel(len)?\\b"
     }
   ]
 }
