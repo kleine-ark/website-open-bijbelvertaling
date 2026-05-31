@@ -2726,7 +2726,7 @@
       "categorie": "Verouderde woorden",
       "titel": "Denwelken/denwelke → Die/die",
       "beschrijving": "Oude relatieve vorm van denwelke (mannelijk accusatief) → die.",
-      "regex": "\\b[Dd]enwelken?\\b",
+      "regex": "\\b[Dd]enwelke(?:n)?\\b",
       "voorbeeld": "Ef 6:22 'Denwelken ik tot u gezonden heb' → 'Die ik tot u gezonden heb'"
     },
     {
@@ -2767,7 +2767,7 @@
       "oud": "gebrekkelijk(e)",
       "nieuw": "gebrekkig(e)",
       "toelichting": "Verouderde adjectiefvorm",
-      "regex": "\\b[Gg]ebrekkelijke?\\b"
+      "regex": "\\b[Gg]ebrekkelijk(?:e)?\\b"
     },
     {
       "id": "V283",
@@ -2807,7 +2807,7 @@
       "oud": "ongestadig(e)",
       "nieuw": "onstandvastig(e)",
       "toelichting": "Verouderd adjectief",
-      "regex": "\\b[Oo]ngestadige?\\b"
+      "regex": "\\b[Oo]ngestadig(?:e)?\\b"
     },
     {
       "id": "V288",
@@ -2887,7 +2887,7 @@
       "oud": "wellust(en)",
       "nieuw": "hartstocht(en)",
       "toelichting": "Verouderd zelfstandig naamwoord — passies/begeerten",
-      "regex": "\\b[Ww]ellusten?\\b"
+      "regex": "\\b[Ww]elluste(?:n)?\\b"
     },
     {
       "id": "V298",
@@ -3111,7 +3111,7 @@
       "oud": "tegenspoed(en)",
       "nieuw": "tegenslag(en)",
       "toelichting": "Modernere term voor ellende/kwaad dat iemand overkomt",
-      "regex": "\\b[Tt]egenspoeden?\\b"
+      "regex": "\\b[Tt]egenspoede(?:n)?\\b"
     },
     {
       "id": "V326",
@@ -3127,7 +3127,7 @@
       "oud": "slibberig(e)",
       "nieuw": "spiegelglad(de)",
       "toelichting": "Verouderd adjectief — glad",
-      "regex": "\\b[Ss]libberige?\\b"
+      "regex": "\\b[Ss]libberig(?:e)?\\b"
     },
     {
       "id": "V328",
@@ -3135,7 +3135,7 @@
       "oud": "wrevelig(e)",
       "nieuw": "context-afhankelijk: vals(e), boosaardig(e), eigenzinnige, koppig",
       "toelichting": "Hebreeuws חָמָס (chamas, geweld/onrecht). Vertaling per context: 'wrevelige getuige' → 'valse getuige' (Deut 19:16, Ps 35:11); 'wreveligen haat' → 'boosaardige haat' (Ps 25:19); 'wrevelige dochter/zoon' → 'eigenzinnige' (Sir 42:14); 'wordt wrevelig' → 'wordt koppig' (Sir 30:8); generieke fallback: boosaardig",
-      "regex": "\\b[Ww]revelige?n?\\b"
+      "regex": "\\b[Ww]revelige?(?:n)?\\b"
     },
     {
       "id": "V329",
@@ -3215,7 +3215,7 @@
       "oud": "fiool / fiolen",
       "nieuw": "schaal / schalen",
       "toelichting": "Grieks φιάλη (phialē) — brede ondiepe schaal voor wijn/water/wierook. Modernisering analoog aan HSV/NBV/NBG51.",
-      "regex": "\\b[Ff]iolen?\\b"
+      "regex": "\\b[Ff]iole(?:n)?\\b"
     },
     {
       "id": "V339",
@@ -3247,7 +3247,7 @@
       "oud": "sterkte / sterkten (burcht)",
       "nieuw": "vesting / vestingen",
       "toelichting": "Context-aware: alleen waar 'sterkte' = burcht/fortificatie (niet waar = kracht). 67 vervangen, 179 'sterkte=kracht' bewust behouden",
-      "regex": "\\b[Ss]terkten?\\b"
+      "regex": "\\b[Ss]terkte(?:n)?\\b"
     },
     {
       "id": "V343",
@@ -3311,7 +3311,7 @@
       "oud": "bezoldiging(en)",
       "nieuw": "soldij",
       "toelichting": "Klassiek-Nederlands voor militaire wedde — past bij krijgsmachten-context",
-      "regex": "\\b[Bb]ezoldigingen?\\b"
+      "regex": "\\b[Bb]ezoldiginge(?:n)?\\b"
     },
     {
       "id": "V351",
@@ -3495,7 +3495,7 @@
       "oud": "verhovaardigd (worden)",
       "nieuw": "hoogmoedig(er) worden",
       "toelichting": "Verouderd reflexief werkwoord — passief opzwellen van trots; vgl. V334 hovaardig → hoogmoedig",
-      "regex": "\\b[Vv]erhovaardigde?\\b"
+      "regex": "\\b[Vv]erhovaardigd(?:e)?\\b"
     },
     {
       "id": "V374",
@@ -3679,7 +3679,7 @@
       "oud": "wederpartijder / wederpartijders",
       "nieuw": "tegenstander / tegenstanders",
       "toelichting": "Verouderde samenstelling voor wie men tegen zich heeft in een geschil — modern Nederlands gebruikt 'tegenstander'. 'Wederpartij' (=tegenpartij in juridisch geschil) blijft staan in formele context.",
-      "regex": "\\b[Ww]ederpartijders?\\b"
+      "regex": "\\b[Ww]ederpartijder(?:s)?\\b"
     },
     {
       "id": "V397",
@@ -3783,7 +3783,7 @@
       "oud": "rantsoen / rantsoenen",
       "nieuw": "losprijs / losprijzen",
       "toelichting": "SV-gebruik: 'rantsoen' = ransom/afkoopsom (Hebr. kofer). Modern Nederlands kent 'rantsoen' enkel als voedselportie. Consistent met V242 (lossing → losprijs).",
-      "regex": "\\b[Rr]antsoenen?\\b"
+      "regex": "\\b[Rr]antsoene(?:n)?\\b"
     },
     {
       "id": "V410",
@@ -3959,7 +3959,7 @@
       "oud": "uittoog / uittoogt / uittogen",
       "nieuw": "uittrok / uittrokt / uittrokken",
       "toelichting": "Verleden tijd van 'uittrekken' (Hebr. yatsa = uitgaan, optrekken — Exodus-context). Compound-uitbreiding van V353 (togen/toog → trokken/trok).",
-      "regex": "\\b[Uu]ittogen|[Uu]ittoogt?\\b"
+      "regex": "\\b[Uu]ittogen|[Uu]ittoog(?:t)?\\b"
     },
     {
       "id": "V432",
@@ -4215,7 +4215,7 @@
       "oud": "aanschijn / aanschijns",
       "nieuw": "aangezicht / aangezichts",
       "toelichting": "Verouderd voor 'aangezicht' (Hebr. panim). Modern Nederlands gebruikt 'aangezicht' of 'gezicht'.",
-      "regex": "\\b[Aa]anschijns?\\b"
+      "regex": "\\b[Aa]anschijn(?:s)?\\b"
     },
     {
       "id": "V466",
@@ -4287,7 +4287,7 @@
       "oud": "vervaarnis(sen)",
       "nieuw": "angst(en)",
       "toelichting": "Verouderd voor 'verschrikkingen/angsten' (Hebr. emah). Gekozen voor 'angsten' om duplicatie met 'verschrikkingen' te voorkomen.",
-      "regex": "\\b[Vv]ervaarnissen?\\b"
+      "regex": "\\b[Vv]ervaarnisse(?:n)?\\b"
     },
     {
       "id": "V475",
@@ -4423,7 +4423,7 @@
       "oud": "landouwe(n)",
       "nieuw": "akker(s)",
       "toelichting": "Verouderd voor 'bebouwd land/veld' (Hebr. adamah, sadeh). Modern: 'akker'.",
-      "regex": "\\b[Ll]andouwen?\\b"
+      "regex": "\\b[Ll]andouwe(?:n)?\\b"
     },
     {
       "id": "V492",
@@ -4543,7 +4543,7 @@
       "oud": "vlieten / vliett (werkwoord)",
       "nieuw": "stromen / stroomt",
       "toelichting": "Verouderd werkwoord voor 'stromen' (Hebr. nahar). 'Vliet' als zelfstandig naamwoord (riviertje) blijft.",
-      "regex": "\\b[Vv]liett?e?n?\\b"
+      "regex": "\\b[Vv]liett?e?(?:n)?\\b"
     },
     {
       "id": "V507",
@@ -4655,7 +4655,7 @@
       "oud": "garvenbinder(s)",
       "nieuw": "schovenbinder(s)",
       "toelichting": "Verouderd voor 'die schoven bindt' (Hebr. me'amer). Modern: 'schovenbinder'.",
-      "regex": "\\b[Gg]arvenbinders?\\b"
+      "regex": "\\b[Gg]arvenbinder(?:s)?\\b"
     },
     {
       "id": "V521",
@@ -4695,7 +4695,7 @@
       "oud": "tegenpartijder(s)",
       "nieuw": "tegenstander(s)",
       "toelichting": "Verouderde samenstelling — modern Nederlands gebruikt 'tegenstander' (Hebr. tsar). Aanvulling op V396 (wederpartijder) en V497 (wederpartij).",
-      "regex": "\\b[Tt]egenpartijders?\\b"
+      "regex": "\\b[Tt]egenpartijder(?:s)?\\b"
     },
     {
       "id": "V526",
@@ -4839,7 +4839,7 @@
       "oud": "poortier(s)",
       "nieuw": "poortwachter(s)",
       "toelichting": "Verouderd; modern Nederlands (gangbaar in HSV/NBV21). Behoudt 'poort' i.t.t. 'deur'.",
-      "regex": "\\b[Pp]oortiers?\\b"
+      "regex": "\\b[Pp]oortier(?:s)?\\b"
     },
     {
       "id": "V544",
@@ -4879,7 +4879,7 @@
       "oud": "cijns(en)",
       "nieuw": "belasting(en)",
       "toelichting": "Verouderde fiscaal-juridische term (= grondbelasting/tribuut). Modern Nederlands: belasting.",
-      "regex": "\\b[Cc]ijnsen?\\b"
+      "regex": "\\b[Cc]ijnse(?:n)?\\b"
     },
     {
       "id": "V549",
@@ -4887,7 +4887,7 @@
       "oud": "(oude/ouden) impost(en)",
       "nieuw": "(vanouds gevestigde) accijns(en)",
       "toelichting": "Verouderde fiscaal-juridische term (= verbruiks-heffing op goederen; Aramees בְלוֹ). SV-bijvoeging 'oude' = 'vanouds geheven' (per kanttekening), niet 'verouderd'.",
-      "regex": "\\b(?:[Oo]ude(?:n)? )?[Ii]mposten?\\b"
+      "regex": "\\b(?:[Oo]ude(?:n)? )?[Ii]mposte(?:n)?\\b"
     },
     {
       "id": "V550",
@@ -4895,7 +4895,7 @@
       "oud": "feil(en)",
       "nieuw": "fout / falen",
       "toelichting": "Verouderd: feilen (ww) = falen/missen; feil (zn) = fout/vergissing. Behoudt 'feilbaar' en 'feilloos' (nog modern).",
-      "regex": "\\b[Ff]eilen?\\b"
+      "regex": "\\b[Ff]eile(?:n)?\\b"
     },
     {
       "id": "V551",
@@ -5111,7 +5111,7 @@
       "oud": "evengelijk(e)",
       "nieuw": "gelijk / dezelfde",
       "toelichting": "Verouderde versterkte vorm van 'gelijk'. Standalone → 'gelijk'; attributief (evengelijke gave) → 'dezelfde'.",
-      "regex": "\\b[Ee]vengelijke?\\b"
+      "regex": "\\b[Ee]vengelijk(?:e)?\\b"
     },
     {
       "id": "V582",
