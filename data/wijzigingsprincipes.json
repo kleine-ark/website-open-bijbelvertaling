@@ -5056,6 +5056,38 @@
       "nieuw": "wat dit betreft",
       "toelichting": "SV-idioom 'aangaande dit/deze' / 'deze aangaande' (= 'concerning this' / 'as for this'). Modern Nederlands: 'wat dit betreft'. Generieke 'aangaande' (standalone, 1255 hits) blijft staan.",
       "regex": "\\b([Aa]angaande (dit|deze)|(dit|deze) aangaande)\\b"
+    },
+    {
+      "id": "V571",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "deel noch lot",
+      "nieuw": "part noch deel",
+      "toelichting": "SV-Hebraïsme/doublet 'deel noch lot' (= portion nor share). Modern Nederlands idioom 'part noch deel hebben aan' is gangbaar (Van Dale) en draagt dezelfde 'geen enkel aandeel'-betekenis.",
+      "regex": "\\b[Dd]eel noch lot\\b"
+    },
+    {
+      "id": "V572",
+      "categorie": "Naamspelling",
+      "oud": "Damaskus",
+      "nieuw": "Damascus",
+      "toelichting": "Modernisering plaatsnaam (Van Dale, NBV21, HSV).",
+      "regex": "\\bDamaskus\\b"
+    },
+    {
+      "id": "V573",
+      "categorie": "Verouderd voorzetsel",
+      "oud": "te Damascus",
+      "nieuw": "in Damascus",
+      "toelichting": "Verouderd voorzetsel 'te' bij plaatsnaam; modern Nederlands: 'in [Plaats]'.",
+      "regex": "\\b[Tt]e Damascus\\b"
+    },
+    {
+      "id": "V578",
+      "categorie": "Verouderde spelling",
+      "oud": "over einde",
+      "nieuw": "overeind",
+      "toelichting": "Verouderde gesplitste spelling van 'overeind' (= rechtop). Modern Nederlands: aan elkaar geschreven.",
+      "regex": "\\bover einde\\b"
     }
   ]
 }
