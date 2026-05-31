@@ -5128,6 +5128,78 @@
       "nieuw": "u/U bent buiten zinnen",
       "toelichting": "SV-idioom 'u raast' (= 'u bent waanzinnig / krankzinnig'). Modern Nederlands: 'u bent buiten zinnen' (vaste uitdrukking). HSV Hand 12:15: 'U bent buiten zinnen'.",
       "regex": "\\b[Uu] raast\\b"
+    },
+    {
+      "id": "V584",
+      "categorie": "Verouderd werkwoord",
+      "oud": "gespijzigd",
+      "nieuw": "gevoed",
+      "toelichting": "Verouderd voltooid deelwoord van 'spijzigen' (= voeden). Modern Nederlands: 'gevoed' (van 'voeden'). Aansluitend op V526 (spijs → voedsel).",
+      "regex": "\\bgespijzigd\\b"
+    },
+    {
+      "id": "V585",
+      "categorie": "Verouderd adjectief",
+      "oud": "gezette",
+      "nieuw": "vastgestelde",
+      "toelichting": "Verouderd adjectivisch deelwoord 'gezette' (= ingestelde/bepaalde). Modern Nederlands: 'vastgestelde' (vooral bij 'hoogtijden', 'tijden', 'orde').",
+      "regex": "\\bgezette\\b"
+    },
+    {
+      "id": "V586",
+      "categorie": "Verouderde correlatief",
+      "oud": "beide(n) X en Y",
+      "nieuw": "zowel X als Y",
+      "toelichting": "SV correlative-coordination 'beide X en Y' / 'beiden X en Y' (= 'both X and Y'). Modern Nederlands: 'zowel X als Y'.",
+      "regex": "\\b[Bb]eide(n)? \\w+ en\\b"
+    },
+    {
+      "id": "V587",
+      "categorie": "Verouderd werkwoord (context)",
+      "oud": "(het recht / de rechte wegen) verkeren",
+      "nieuw": "verdraaien",
+      "toelichting": "SV 'verkeren' heeft polysemie: (1) wonen/verblijven, (2) perverteren/verdraaien, (3) omgaan met. Alleen (2) wordt vervangen: 'het recht verkeren' → 'het recht verdraaien'; 'rechte wegen verkeren' → 'rechte wegen verdraaien'.",
+      "regex": "\\b(het recht|te verkeren de rechte wegen) verkeren\\b"
+    },
+    {
+      "id": "V588",
+      "categorie": "Verouderd werkwoord (context)",
+      "oud": "verzochten (in vragen-sense)",
+      "nieuw": "vroegen",
+      "toelichting": "SV 'verzochten' = (1) vragen/verzoeken OF (2) op proef stellen (tempt). Alleen sense (1) → 'vroegen'. Sense (2) — 'verzochten God/Mij' — blijft staan.",
+      "regex": "\\bverzochten (een|de|verlof|vrede|raad|barmhartigheden|hem|haar|hen|hun)\\b"
+    },
+    {
+      "id": "V589",
+      "categorie": "Cascade-fix genitief",
+      "oud": "[Noun] Israëls",
+      "nieuw": "[Noun] van Israël",
+      "toelichting": "SV-genitief 'des Israëls' / '[Noun] Israëls' → post-noun pattern moderniseert naar 'van Israël'. Pre-noun 'Israëls [Noun]' (= 'X van Israël') context-aware later.",
+      "regex": "\\b(volk|kinderen|koning(en)?|scepter|stam(men)?|steden|huis|land|God|naam|leger|vorsten|rechters|priesters|gemeente|profeten|oudsten|oversten) Israëls\\b"
+    },
+    {
+      "id": "V590",
+      "categorie": "Cascade-fix genitief",
+      "oud": "[Noun] Abrahams",
+      "nieuw": "[Noun] van Abraham",
+      "toelichting": "SV-genitief 'des Abrahams' / '[Noun] Abrahams' → post-noun pattern moderniseert naar 'van Abraham'.",
+      "regex": "\\b(geslacht|zaad|kinderen|huis|God|zoon(en)?|dochters|afstammelingen|nakomelingen) Abrahams\\b"
+    },
+    {
+      "id": "V591",
+      "categorie": "Verouderde verbuiging",
+      "oud": "elken",
+      "nieuw": "elke",
+      "toelichting": "Verouderde mannelijke accusatief/datief 'elken'; modern Nederlands: 'elke' (de-woorden) of 'elk' (het-woorden). Hier breed 'elke' — overcorrectie naar 'elk' bij het-woorden eventueel later.",
+      "regex": "\\b[Ee]lken\\b"
+    },
+    {
+      "id": "V592",
+      "categorie": "Verouderd werkwoord",
+      "oud": "geordineerd",
+      "nieuw": "bestemd",
+      "toelichting": "Verouderd Latijn-Nederlands voltooid deelwoord van 'ordineren' (= bestemmen/voorbeschikken). Modern Nederlands: 'bestemd' (predestinatorisch).",
+      "regex": "\\bgeordineerd\\b"
     }
   ]
 }
