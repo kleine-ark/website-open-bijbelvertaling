@@ -1,12 +1,38 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-05-31",
+      "versie": "v0.16.7",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Handelingen 9-16 nagelezen (8 hoofdstukken, 307 verzen). Totaal nu 281 hoofdstukken / 7.262 verzen handmatig vers-voor-vers gecontroleerd (20,2% / 19,5%)."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Citatie-controle door 3 parallel Opus 4.7-agents over alle resterende boeken (OT excl. Genesis 1-20/Ps/Ezra, NT-rest excl. al-nagelezen, Apocriefen excl. al-nagelezen): ~775 citatie-fixes — swapped close tags, duplicate opens, narratief-in-span, multi-spreker dialogen, vergeten wraps, mid-word breuken. Plus Handelingen 9-28: 42 fixes via aparte agent-run."
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V571-V604 (34 nieuwe principes): deel noch lot → part noch deel, Damaskus → Damascus, te Damascus → in Damascus, over einde → overeind, 3 keer → drie keer, belangende → wat betreft, evengelijk → gelijk/dezelfde, Grieksen → Grieken, U raast → U bent buiten zinnen, gespijzigd → gevoed, gezette → vastgestelde, beide(n) X en Y → zowel X als Y, verkeren (context) → verdraaien/verbleven, verzochten → vroegen, [N] Israëls → [N] van Israël (228×), [N] Abrahams → [N] van Abraham, elken → elke (174×), geordineerd → bestemd (96×), verledene → vroegere, verkoren → gekozen (478×, excl. uitverkoren), naar de wijze van Mozes → volgens het gebruik van Mozes, zulke wijze → dezelfde manier, meerderen → meerdere, medenemen → meenemen, achtte billijk → achtte het juist, omwille van → vanwege (238×), verordening → bepaling, welker hart → van wie het hart, dienstknecht(en) Gods → dienstknecht(en) van God."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Vele Handelingen 9-16 verse-specifieke fixes: Hand 9:5/6/10/40 citatie-grenzen, Hand 10:38 Welke→Die, Hand 11:4/7/8/9/12/13/16 citatie-fixes, Hand 12:5/7/8/15/17/20 fixes, Hand 13:15 'Mannen broeders' hersteld, Hand 13:22/25/33/34/47 outer direct-speech verwijderd (Paulus' narratief in eigen sermon), Hand 14:21 'in die stad', Hand 15:2 'bepaald', Hand 15:5 citatie-split, Hand 15:18 god-speaks verwijderd, Hand 16:1 'Griekse vader', Hand 16:33 'al de zijnen' hersteld."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Over-pagina herorganiseerd: 'Doel' + 'Aanleiding' samengevoegd, aanleiding-alinea's bovenaan, paragraaf-volgorde 'Uitgangspunt' voor 'AI als hulpmiddel' gewisseld, tekstuele toevoeging over betrouwbaarheid SV met voorbeelden moeilijke oude woorden, melding over retroactieve principe-aanpassingen toegevoegd."
+        }
+      ]
+    },
+    {
       "datum": "2026-05-25",
       "versie": "v0.16.6",
       "items": [
         {
           "type": "fix",
-          "beschrijving": "Ezra volledig (10 hoofdstukken, 280 verzen) nageleze. Totaal nu 273 hoofdstukken / 6.955 verzen handmatig vers-voor-vers gecontroleerd (19,6% / 18,7%). 15 boeken volledig."
+          "beschrijving": "Ezra volledig (10 hoofdstukken, 280 verzen) nagelezen. Totaal nu 273 hoofdstukken / 6.955 verzen handmatig vers-voor-vers gecontroleerd (19,6% / 18,7%). 15 boeken volledig."
         },
         {
           "type": "principe",
@@ -22,7 +48,7 @@
         },
         {
           "type": "fix",
-          "beschrijving": "Over-pagina: melding toegevoegd dat ook reeds nageleze delen retroactief kunnen wijzigen door principe-aanpassingen."
+          "beschrijving": "Over-pagina: melding toegevoegd dat ook reeds nagelezen delen retroactief kunnen wijzigen door principe-aanpassingen."
         }
       ]
     },
@@ -32,7 +58,7 @@
       "items": [
         {
           "type": "fix",
-          "beschrijving": "Psalmen volledig (1-150) afgerond + Susanna nageleze (33 hfdst, 568 verzen). Totaal nu 263 hoofdstukken / 6.675 verzen handmatig vers-voor-vers gecontroleerd (18,9% / 17,9%). 14 boeken volledig."
+          "beschrijving": "Psalmen volledig (1-150) afgerond + Susanna nagelezen (33 hfdst, 568 verzen). Totaal nu 263 hoofdstukken / 6.675 verzen handmatig vers-voor-vers gecontroleerd (18,9% / 17,9%). 14 boeken volledig."
         },
         {
           "type": "principe",
@@ -46,7 +72,7 @@
       "items": [
         {
           "type": "fix",
-          "beschrijving": "Psalmen 101-118 volledig nageleze (18 hoofdstukken, 387 verzen). Totaal nu 230 hoofdstukken / 6.107 verzen handmatig vers-voor-vers gecontroleerd (16,5% / 16,4%)."
+          "beschrijving": "Psalmen 101-118 volledig nagelezen (18 hoofdstukken, 387 verzen). Totaal nu 230 hoofdstukken / 6.107 verzen handmatig vers-voor-vers gecontroleerd (16,5% / 16,4%)."
         },
         {
           "type": "fix",
@@ -136,7 +162,7 @@
       "items": [
         {
           "type": "fix",
-          "beschrijving": "Psalmen 57-100 volledig nageleze (44 hoofdstukken, 770 verzen). Totaal nu 212 hoofdstukken / 5.720 verzen handmatig vers-voor-vers gecontroleerd (15,2% / 15,4%)."
+          "beschrijving": "Psalmen 57-100 volledig nagelezen (44 hoofdstukken, 770 verzen). Totaal nu 212 hoofdstukken / 5.720 verzen handmatig vers-voor-vers gecontroleerd (15,2% / 15,4%)."
         },
         {
           "type": "feature",
@@ -418,7 +444,7 @@
       "items": [
         {
           "type": "fix",
-          "beschrijving": "Psalmen 44-56 volledig nageleze (13 hoofdstukken, 212 verzen). Totaal nu 168 hoofdstukken / 4.950 verzen handmatig vers-voor-vers gecontroleerd (12,1% / 13,3%)."
+          "beschrijving": "Psalmen 44-56 volledig nagelezen (13 hoofdstukken, 212 verzen). Totaal nu 168 hoofdstukken / 4.950 verzen handmatig vers-voor-vers gecontroleerd (12,1% / 13,3%)."
         },
         {
           "type": "fix",
@@ -532,7 +558,7 @@
       "items": [
         {
           "type": "fix",
-          "beschrijving": "Psalmen 32-43 volledig nageleze (12 hoofdstukken, 223 verzen). Per-vers controle op godsnaam-pronouns, verouderde woorden, citatie-grenzen en N-cascade-bugs. Totaal nu 155 hoofdstukken / 4.738 verzen handmatig vers-voor-vers gecontroleerd."
+          "beschrijving": "Psalmen 32-43 volledig nagelezen (12 hoofdstukken, 223 verzen). Per-vers controle op godsnaam-pronouns, verouderde woorden, citatie-grenzen en N-cascade-bugs. Totaal nu 155 hoofdstukken / 4.738 verzen handmatig vers-voor-vers gecontroleerd."
         },
         {
           "type": "fix",
@@ -646,7 +672,7 @@
       "items": [
         {
           "type": "fix",
-          "beschrijving": "1 Makkabeeën volledig nageleze (alle 16 hoofdstukken, 924 verzen). Per-vers controle op citaat-grenzen, godsnaam-pronouns, verouderde woorden en plaatsnamen. 12e boek vers-voor-vers gecontroleerd."
+          "beschrijving": "1 Makkabeeën volledig nagelezen (alle 16 hoofdstukken, 924 verzen). Per-vers controle op citaat-grenzen, godsnaam-pronouns, verouderde woorden en plaatsnamen. 12e boek vers-voor-vers gecontroleerd."
         },
         {
           "type": "fix",
@@ -908,11 +934,11 @@
       "items": [
         {
           "type": "fix",
-          "beschrijving": "Baruch volledig nageleze (alle 6 hoofdstukken). Bar 1-6 vers-voor-vers gecontroleerd: o.a. Bar 1:14 'op het juiste tijdstip', Bar 1:18+21+22 'Heren onzes Gods'→'JAHWEH onze God', Bar 2:1 Zijn Woord/Hij, Bar 3:15 schat kamers→schatkamers, Bar 3:17 betrouwen, Bar 3:23 Hagar/kooplieden/Merran-begrippen generiek, Bar 4:1 geboden van God, Bar 4:9+14+26 buren van Sion, Bar 4:10/14/20/22+5:2 Eeuwige, Bar 4:22 Heilige Verlosser, Bar 6:1 Vanwaar/zonden, Bar 6:5 Heere→JAHWEH, Bar 6:6 Mijn engel/Hij"
+          "beschrijving": "Baruch volledig nagelezen (alle 6 hoofdstukken). Bar 1-6 vers-voor-vers gecontroleerd: o.a. Bar 1:14 'op het juiste tijdstip', Bar 1:18+21+22 'Heren onzes Gods'→'JAHWEH onze God', Bar 2:1 Zijn Woord/Hij, Bar 3:15 schat kamers→schatkamers, Bar 3:17 betrouwen, Bar 3:23 Hagar/kooplieden/Merran-begrippen generiek, Bar 4:1 geboden van God, Bar 4:9+14+26 buren van Sion, Bar 4:10/14/20/22+5:2 Eeuwige, Bar 4:22 Heilige Verlosser, Bar 6:1 Vanwaar/zonden, Bar 6:5 Heere→JAHWEH, Bar 6:6 Mijn engel/Hij"
         },
         {
           "type": "fix",
-          "beschrijving": "Jakobus volledig nageleze (alle 5 hoofdstukken). Citaat-grenzen Jak 2:3+8+11+23, 4:6+13+15, 5:12 hersteld; talloze per-vers fixes (zie principes V282-V307)"
+          "beschrijving": "Jakobus volledig nagelezen (alle 5 hoofdstukken). Citaat-grenzen Jak 2:3+8+11+23, 4:6+13+15, 5:12 hersteld; talloze per-vers fixes (zie principes V282-V307)"
         },
         {
           "type": "fix",

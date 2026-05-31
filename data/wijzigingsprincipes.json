@@ -5200,6 +5200,102 @@
       "nieuw": "bestemd",
       "toelichting": "Verouderd Latijn-Nederlands voltooid deelwoord van 'ordineren' (= bestemmen/voorbeschikken). Modern Nederlands: 'bestemd' (predestinatorisch).",
       "regex": "\\bgeordineerd\\b"
+    },
+    {
+      "id": "V593",
+      "categorie": "Verouderde verbuiging",
+      "oud": "verledene",
+      "nieuw": "vroegere",
+      "toelichting": "SV-verbuiging 'verledene' van 'verleden'. Modern Nederlands: 'vroegere' (= past, former). Vooral 'verledene tijden/dagen' → 'vroegere tijden/dagen'.",
+      "regex": "\\b[Vv]erledene\\b"
+    },
+    {
+      "id": "V594",
+      "categorie": "Verouderd werkwoord",
+      "oud": "verkoren",
+      "nieuw": "gekozen",
+      "toelichting": "SV-voltooid deelwoord van 'verkiezen' (= to choose). Modern Nederlands: 'gekozen' (van 'kiezen'). NB: 'uitverkoren' (theologisch begrip = elect) blijft staan. NB: 'verkorenen' (zelfstandig nw = de uitverkorenen) blijft.",
+      "regex": "(?<!uit)\\b[Vv]erkoren\\b(?!en)"
+    },
+    {
+      "id": "V595",
+      "categorie": "Verouderd werkwoord (context)",
+      "oud": "verkeerden (dwellen-sense)",
+      "nieuw": "verbleven",
+      "toelichting": "SV 'verkeerden' = (1) dwelen/verblijven, (2) zelfst.nw 'verkeerden' (perverse ones), (3) sterke verbuiging 'verkeerden zin' (= verkeerde). Alleen (1) → 'verbleven', wanneer gevolgd door 'daar/in/onder/aldaar' of preceeded door 'in [Plaats]'.",
+      "regex": "\\bverkeerden (daar|dan daar|in|onder|aldaar)\\b"
+    },
+    {
+      "id": "V596",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "naar de wijze van Mozes",
+      "nieuw": "volgens het gebruik van Mozes",
+      "toelichting": "SV 'naar de wijze van X' = 'according to the manner/custom of X'. Modern Nederlands voor Mozaïsche wet-gebruik: 'volgens het gebruik van Mozes' (gebruik = ritueel/voorschrift).",
+      "regex": "\\b[Nn]aar de wijze van Mozes\\b"
+    },
+    {
+      "id": "V597",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "(op) zulke wijze",
+      "nieuw": "(op) dezelfde manier",
+      "toelichting": "SV 'op zulke wijze (als)' = 'on such a manner as' (= 'in the same way as'). Modern Nederlands: 'op dezelfde manier'.",
+      "regex": "\\b[Zz]ulke wijze\\b"
+    },
+    {
+      "id": "V598",
+      "categorie": "Verouderde verbuiging",
+      "oud": "meerderen",
+      "nieuw": "meerdere",
+      "toelichting": "Verouderde sterke verbuiging 'meerderen' (mannelijke accusatief/datief). Modern Nederlands: 'meerdere' (zonder -n). NB: SV-betekenis vaak comparatief 'groter'; modern 'meerdere' is meer 'several/more' — kan in sommige contexten ambigu lezen, per-vers checken.",
+      "regex": "\\b[Mm]eerderen\\b"
+    },
+    {
+      "id": "V599",
+      "categorie": "Verouderde spelling",
+      "oud": "medenemen / medegenomen / medenam(en)",
+      "nieuw": "meenemen / meegenomen / meenam(en)",
+      "toelichting": "Verouderde 'mede-' compositum-vorm. Modern Nederlands: 'mee-'.",
+      "regex": "\\b[Mm]ede(nemen|genomen|nam(en)?|neemt)\\b"
+    },
+    {
+      "id": "V600",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "achtte billijk",
+      "nieuw": "achtte het juist",
+      "toelichting": "SV 'achtte billijk' (= 'considered fair/equitable'). Modern Nederlands: 'achtte het juist'.",
+      "regex": "\\b[Aa]chtte billijk\\b"
+    },
+    {
+      "id": "V601",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "omwille van",
+      "nieuw": "vanwege",
+      "toelichting": "Verouderde voorzetsel-uitdrukking 'omwille van'. Modern Nederlands: 'vanwege' (slankst) of 'om ... wil' (formeler).",
+      "regex": "\\b[Oo]mwille van\\b"
+    },
+    {
+      "id": "V602",
+      "categorie": "Verouderd woord",
+      "oud": "verordening(en)",
+      "nieuw": "bepaling(en)",
+      "toelichting": "Verouderd juridisch-formele 'verordening(en)' (= decree/ordinance). Modern Nederlands: 'bepaling(en)' (algemener; in juridische zin nog 'verordening' maar in Bijbelse context past 'bepaling' beter).",
+      "regex": "\\b[Vv]erordening(en)?\\b"
+    },
+    {
+      "id": "V603",
+      "categorie": "Verouderd relativum",
+      "oud": "welker hart",
+      "nieuw": "van wie het hart",
+      "toelichting": "SV 'welker' = genitief van 'welke' (= 'of whom/whose'). Persoon-specifiek 'welker hart' → 'van wie het hart'. Generieke 'welker [Noun]' (~1000+ instances) blijft polysemisch context-bont — per-vers handmatig of in latere bredere principe.",
+      "regex": "\\bwelker hart\\b"
+    },
+    {
+      "id": "V604",
+      "categorie": "Cascade-fix genitief Gods",
+      "oud": "dienstknecht(en) Gods",
+      "nieuw": "dienstknecht(en) van God",
+      "toelichting": "SV-genitief 'des Gods'/'Gods' post-noun → 'van God'. Eerste van een grotere cascade-cleanup voor '[Noun] Gods'. Bredere cascade (man Gods, huis Gods, Koninkrijk Gods, kinderen Gods, Geest Gods, etc.) volgt later via context-aware agent — riskant voor bulk omdat sommige 'X Gods' constructies modern Nederlands blijven (vaste uitdrukkingen).",
+      "regex": "\\b[Dd]ienstknecht(en)? Gods\\b"
     }
   ]
 }
