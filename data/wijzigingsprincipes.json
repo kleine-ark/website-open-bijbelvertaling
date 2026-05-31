@@ -5088,6 +5088,38 @@
       "nieuw": "overeind",
       "toelichting": "Verouderde gesplitste spelling van 'overeind' (= rechtop). Modern Nederlands: aan elkaar geschreven.",
       "regex": "\\bover einde\\b"
+    },
+    {
+      "id": "V579",
+      "categorie": "Schrijfwijze getallen",
+      "oud": "3 keer",
+      "nieuw": "drie keer",
+      "toelichting": "Modern Nederlandse conventie: kleine getallen (0-12) in tekst voluit geschreven, niet als cijfer.",
+      "regex": "\\b3 keer\\b"
+    },
+    {
+      "id": "V580",
+      "categorie": "Verouderd voorzetsel",
+      "oud": "(B)elangende",
+      "nieuw": "(W)at betreft",
+      "toelichting": "SV-prepositie 'belangende' (= 'concerning / as for'). Modern Nederlands: 'wat betreft'.",
+      "regex": "\\b[Bb]elangende\\b"
+    },
+    {
+      "id": "V581",
+      "categorie": "Verouderd woord",
+      "oud": "evengelijk(e)",
+      "nieuw": "gelijk / dezelfde",
+      "toelichting": "Verouderde versterkte vorm van 'gelijk'. Standalone → 'gelijk'; attributief (evengelijke gave) → 'dezelfde'.",
+      "regex": "\\b[Ee]vengelijke?\\b"
+    },
+    {
+      "id": "V582",
+      "categorie": "Verouderd meervoud",
+      "oud": "Grieksen",
+      "nieuw": "Grieken",
+      "toelichting": "SV-meervoud 'Grieksen' (van 'Grieks' als zelfst nw). Modern Nederlands: 'Grieken' (van 'Griek').",
+      "regex": "\\b[Gg]rieksen\\b"
     }
   ]
 }
