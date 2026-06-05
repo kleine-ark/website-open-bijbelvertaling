@@ -638,11 +638,49 @@
     --status-draft: #cba449;
     --status-review: #76978a;
     --status-final: #5cb85c;
+
+    /* Semantische tokens — gebruikt door dark-mode override.
+       Bestaande --navy/--gold/etc blijven brand-kleuren (gelijk in beide modes). */
+    --bg-page: #f8f6f2;          /* paginagrond (parchment) */
+    --bg-surface: #ffffff;       /* kaartjes, panelen, sidebars */
+    --bg-surface-alt: #f5f2ed;   /* lichte alt-vlakken */
+    --bg-elevated: #fefcf6;      /* hover / popup */
+    --text-primary: #333333;     /* body text */
+    --text-secondary: #555555;   /* secundair */
+    --text-muted: #888888;       /* hint, meta */
+    --border-default: #d4d0c8;
+    --border-soft: #e8e4dc;
+    --shadow-soft: 0 2px 8px rgba(0,0,0,0.08);
+
     /* Font-stacks met systeem-fallbacks — als web-fonts niet laden,
        gebruikt de browser een vergelijkbaar systeemfont (Mac/Win/Linux). */
     --font-body: 'Fira Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --font-cursive: 'Allura', 'Brush Script MT', 'Lucida Handwriting', 'Apple Chancery', cursive;
     --font-serif: 'EB Garamond', 'Garamond', 'Cambria', 'Times New Roman', Georgia, serif;
+}
+
+/* Donker thema — semantische tokens overgeschreven, brand-kleuren (--navy/--gold/--teal) blijven herkenbaar. */
+:root[data-theme="donker"] {
+    --bg-page: #1a1d24;
+    --bg-surface: #242830;
+    --bg-surface-alt: #1f232a;
+    --bg-elevated: #2c313b;
+    --parchment: #1a1d24;         /* override de oude variabele zodat bestaande code automatisch donker wordt */
+    --green-tint: #20262a;
+    --yellow-tint: #2a2620;
+    --text-primary: #e6e3dc;
+    --text-secondary: #b9b6ad;
+    --text-muted: #8a8780;
+    --border-default: #3a3f4a;
+    --border-soft: #2e333d;
+    --border: #3a3f4a;             /* legacy --border ook donker */
+    --border-light: #2e333d;
+    --shadow-soft: 0 2px 8px rgba(0,0,0,0.4);
+    /* Brand kleuren iets ophelderd voor leesbaarheid op donker */
+    --gold: #d6b15a;
+    --teal-light: #a5c4b8;
+    --teal-bg: rgba(146, 182, 180, 0.10);
+    --header-bg: #0e1924;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -651,13 +689,55 @@ body {
     font-family: var(--font-body);
     font-size: 15px;
     line-height: 1.65;
-    color: #333;
-    background: #f0ede8;
+    color: var(--text-primary);
+    background: var(--bg-page);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;     /* voorkomt mobile-overflow door rogue elementen */
 }
+
+/* Donker thema: gericht overschrijven van veelgebruikte hard-coded waarden. Brand-kleuren (navy/gold) blijven gelijk. */
+:root[data-theme="donker"] body { background: var(--bg-page); color: var(--text-primary); }
+:root[data-theme="donker"] #content,
+:root[data-theme="donker"] .page,
+:root[data-theme="donker"] .stats-page { background: var(--bg-page) !important; color: var(--text-primary); }
+:root[data-theme="donker"] aside,
+:root[data-theme="donker"] #sidebar-right { background: var(--bg-surface) !important; color: var(--text-primary); }
+:root[data-theme="donker"] .verse-row,
+:root[data-theme="donker"] .verse-row * { color: var(--text-primary); }
+:root[data-theme="donker"] .verse-num { color: var(--text-muted); }
+:root[data-theme="donker"] .text-cell,
+:root[data-theme="donker"] [class*="text-"] { color: var(--text-primary); }
+:root[data-theme="donker"] .chapter-intro,
+:root[data-theme="donker"] .hint,
+:root[data-theme="donker"] .subtitle,
+:root[data-theme="donker"] small { color: var(--text-secondary); }
+:root[data-theme="donker"] table,
+:root[data-theme="donker"] td,
+:root[data-theme="donker"] th { color: var(--text-primary); border-color: var(--border-default); }
+:root[data-theme="donker"] tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+:root[data-theme="donker"] tr:nth-child(odd)  { background: transparent; }
+:root[data-theme="donker"] .book-table tr:hover { background: rgba(203,164,73,0.10); }
+:root[data-theme="donker"] .stat-card { background: var(--bg-surface) !important; color: var(--text-primary); border-color: var(--border-default); }
+:root[data-theme="donker"] .principe-card { background: var(--bg-surface); color: var(--text-primary); border-color: var(--border-default); }
+:root[data-theme="donker"] input[type="text"],
+:root[data-theme="donker"] input[type="search"],
+:root[data-theme="donker"] select,
+:root[data-theme="donker"] textarea {
+    background: var(--bg-surface-alt); color: var(--text-primary); border-color: var(--border-default);
+}
+:root[data-theme="donker"] a { color: var(--gold); }
+:root[data-theme="donker"] a:visited { color: var(--gold); }
+:root[data-theme="donker"] .highlight { background: rgba(203,164,73,0.10); }
+:root[data-theme="donker"] code,
+:root[data-theme="donker"] pre { background: var(--bg-surface-alt); color: var(--text-primary); }
+:root[data-theme="donker"] .note-marker { color: var(--gold); }
+:root[data-theme="donker"] .direct-speech i,
+:root[data-theme="donker"] .god-speaks i { color: inherit; }
+:root[data-theme="donker"] .god-speaks { color: #ff8a7a; }
+:root[data-theme="donker"] img { opacity: 0.92; }
+:root[data-theme="donker"] .hero { filter: brightness(0.7); }
 #app-container {
     display: flex;
     flex: 1;
