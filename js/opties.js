@@ -9,6 +9,7 @@ const Opties = {
         boekvolgorde: 'canoniek',// 'canoniek' | 'tenach' | 'chronologisch' | 'auteur' | 'lengte'
         versnummers: 'aan',      // 'aan' | 'uit'
         otSheol: 'dodenrijk',    // 'dodenrijk' (OT-context, modern) | 'hel' (SV-traditioneel)
+        thema: 'auto',           // 'auto' (systeem) | 'licht' | 'donker'
     },
 
     state: {},
@@ -33,6 +34,7 @@ const Opties = {
         // Pas layout-class direct toe (geen re-render nodig — pure CSS)
         this.applyLayoutClass();
         this.applyVerseNumbersClass();
+        this.applyThemeClass();
 
         // Listen to changes
         document.querySelectorAll('[data-optie]').forEach(input => {
@@ -46,6 +48,8 @@ const Opties = {
                     } else if (optie === 'versnummers') {
                         // Pure CSS-toggle — geen re-render
                         this.applyVerseNumbersClass();
+                    } else if (optie === 'thema') {
+                        this.applyThemeClass();
                     } else if (optie === 'boekvolgorde') {
                         // Sidebar + topnav opnieuw renderen, geen hoofdstuk-rerender
                         if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
@@ -69,6 +73,20 @@ const Opties = {
     applyVerseNumbersClass() {
         // Toggle een class op <body> zodat CSS de versnummers kan verbergen.
         document.body.classList.toggle('hide-verse-numbers', this.state.versnummers === 'uit');
+    },
+
+    applyThemeClass() {
+        // Zet data-theme op <html>. 'auto' = volg systeem-voorkeur, anders expliciet.
+        const root = document.documentElement;
+        const choice = this.state.thema;
+        if (choice === 'donker') {
+            root.setAttribute('data-theme', 'donker');
+        } else if (choice === 'licht') {
+            root.setAttribute('data-theme', 'licht');
+        } else {
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            root.setAttribute('data-theme', prefersDark ? 'donker' : 'licht');
+        }
     },
 
     save() {
