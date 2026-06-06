@@ -1,4 +1,4 @@
-/* Open Vertaling — Leesversie */
+/* Open Staten Vertaling — Leesversie */
 
 const Lees = {
     manifest: null,

@@ -88,7 +88,7 @@
         const losse = TOTAL_DIFFS - totalChanges;
         const summary = document.createElement('div');
         summary.style.cssText = 'background:#f8f6f2;border-left:3px solid #cba449;border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:15px;line-height:1.6;';
-        summary.innerHTML = `<strong>${TOTAL_DIFFS.toLocaleString('nl-NL')}</strong> tekstwijzigingen tussen SV1888 en de OSV. Daarvan is <strong>${totalChanges.toLocaleString('nl-NL')}</strong> (${pct}%) via een van de <strong>${totalPrincipes}</strong> principes geregeld; <strong>${losse.toLocaleString('nl-NL')}</strong> zijn losse, vers-specifieke correcties.`;
+        summary.innerHTML = `<strong>${TOTAL_DIFFS.toLocaleString('nl-NL')}</strong> tekstwijzigingen tussen SV1888 en de OV. Daarvan is <strong>${totalChanges.toLocaleString('nl-NL')}</strong> (${pct}%) via een van de <strong>${totalPrincipes}</strong> principes geregeld; <strong>${losse.toLocaleString('nl-NL')}</strong> zijn losse, vers-specifieke correcties.`;
         container.appendChild(summary);
 
         // Group by category

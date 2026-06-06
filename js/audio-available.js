@@ -1,4 +1,4 @@
-/* Open Vertaling — AUDIO_AVAILABLE
+/* Open Staten Vertaling — AUDIO_AVAILABLE
  *
  * GENEREER-OUTPUT — niet handmatig editen.
  * Wordt automatisch bijgewerkt door scripts/tts/run_xtts.py rollouts.

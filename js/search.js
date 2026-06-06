@@ -1,4 +1,4 @@
-/* Open Vertaling — Bijbeltekst-zoekfunctie
+/* Open Staten Vertaling — Bijbeltekst-zoekfunctie
  *
  * Pure client-side. Laadt data/search-index.json lazy bij eerste open.
  * Substring-match (case-insensitive) op text2026 (fallback SV1888).
