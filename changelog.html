@@ -40,7 +40,7 @@
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
-<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+<script>if (window.self !== window.top) { document.body.classList.add('in-iframe'); document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('a[href]').forEach(function(a){ var h=a.getAttribute('href'); if(h && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('http') && !h.startsWith('javascript:')) a.target='_top'; }); }); }</script>
     <nav id="topnav">
     <div class="topnav-brand">Open Staten Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.16.8</a></span></div>
     <div class="topnav-links" id="topnav-links">

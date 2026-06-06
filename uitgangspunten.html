@@ -33,6 +33,20 @@
         .toc a:hover { color: var(--gold); }
         .section-divider { border: none; border-top: 1px dashed var(--border); margin: 36px 0 0; }
         .section-divider + h2 { margin-top: 18px; }
+        /* Donker thema — alle hardcoded lichte vlakken in deze pagina overrulen */
+        :root[data-theme="donker"] body { background: var(--bg-page); color: var(--text-primary); }
+        :root[data-theme="donker"] .page h1,
+        :root[data-theme="donker"] .page h2 { color: var(--text-primary); }
+        :root[data-theme="donker"] .page h3,
+        :root[data-theme="donker"] .page .subtitle { color: var(--text-secondary); }
+        :root[data-theme="donker"] .page code { background: var(--bg-surface-alt); color: var(--text-primary); }
+        :root[data-theme="donker"] .page td { color: var(--text-primary); border-color: var(--border-default); }
+        :root[data-theme="donker"] .page tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+        :root[data-theme="donker"] .principle-box { background: var(--bg-surface) !important; border-color: var(--border-default); color: var(--text-primary); }
+        :root[data-theme="donker"] .principle-box strong { color: var(--text-primary); }
+        :root[data-theme="donker"] .toc { background: var(--bg-surface); border-color: var(--border-default); }
+        :root[data-theme="donker"] .toc a { color: var(--text-primary); }
+        :root[data-theme="donker"] .toc a:hover { color: var(--gold); }
         @media all {
             body.in-iframe #topnav { display: none !important; }
             body.in-iframe nav[style*="width:220px"] { display: none !important; }
@@ -43,7 +57,7 @@
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
-<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+<script>if (window.self !== window.top) { document.body.classList.add('in-iframe'); document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('a[href]').forEach(function(a){ var h=a.getAttribute('href'); if(h && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('http') && !h.startsWith('javascript:')) a.target='_top'; }); }); }</script>
 <nav id="topnav">
     <div class="topnav-brand">Open Staten Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.16.8</a></span></div>
     <div class="topnav-links" id="topnav-links">
