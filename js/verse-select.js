@@ -406,3 +406,4 @@ const VerseSelect = {
 };
 
 document.addEventListener('DOMContentLoaded', () => VerseSelect.init());
+window.VerseSelect = VerseSelect;
