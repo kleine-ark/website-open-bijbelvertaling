@@ -3621,3 +3621,72 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 :root[data-theme="donker"] #topnav {
     border-bottom: 1px solid var(--border-default);
 }
+
+/* === DONKER THEMA — Topnav volledig zwart === */
+:root[data-theme="donker"] #topnav {
+    background: #0a0d12 !important;     /* bijna zwart */
+    color: #e6e3dc !important;
+    border-bottom: 2px solid var(--gold) !important;
+}
+:root[data-theme="donker"] .topnav-brand,
+:root[data-theme="donker"] .topnav-brand a,
+:root[data-theme="donker"] .topnav-links a,
+:root[data-theme="donker"] .topnav-subtitle {
+    color: #e6e3dc !important;
+}
+:root[data-theme="donker"] .topnav-links a:hover {
+    color: #fff !important;
+}
+:root[data-theme="donker"] .topnav-version a {
+    color: var(--gold) !important;
+}
+:root[data-theme="donker"] .topnav-search,
+:root[data-theme="donker"] .topnav-theme {
+    color: rgba(255,255,255,0.85) !important;
+}
+:root[data-theme="donker"] .topnav-search:hover,
+:root[data-theme="donker"] .topnav-theme:hover {
+    background: rgba(255,255,255,0.10) !important;
+    color: #fff !important;
+}
+:root[data-theme="donker"] .topnav-search-input {
+    background: rgba(255,255,255,0.05) !important;
+    color: #e6e3dc !important;
+    border-color: rgba(255,255,255,0.10) !important;
+}
+:root[data-theme="donker"] .topnav-search-input::placeholder {
+    color: rgba(255,255,255,0.45) !important;
+}
+
+/* Hamburger menu spans (witte balkjes) */
+:root[data-theme="donker"] .topnav-hamburger span {
+    background: #fff !important;
+}
+
+/* Pas pagina-body op alle pagina's (over-ov, statistieken, etc.) */
+:root[data-theme="donker"] .page,
+:root[data-theme="donker"] .stats-page,
+:root[data-theme="donker"] .page p,
+:root[data-theme="donker"] .page li,
+:root[data-theme="donker"] .page h1,
+:root[data-theme="donker"] .page h2,
+:root[data-theme="donker"] .page h3 {
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] .page a { color: var(--gold) !important; }
+
+/* Side-navigatie op stat-pagina's (iframe-context) */
+:root[data-theme="donker"] nav[style*="background:#f5f2ed"] a,
+:root[data-theme="donker"] nav[style*="background: #f5f2ed"] a {
+    color: var(--text-primary) !important;
+}
+
+/* Hero op over-ov.html — donker tinten */
+:root[data-theme="donker"] .hero {
+    filter: brightness(0.55) saturate(0.85);
+}
+:root[data-theme="donker"] .hero-quote,
+:root[data-theme="donker"] .hero-mark-name,
+:root[data-theme="donker"] .hero-mark-id { color: var(--text-primary) !important; text-shadow: 0 1px 2px rgba(0,0,0,0.55) !important; }
+
+/* Inline `style="color:#fff"` op donker thema — laat staan (witte tekst op donker) */
