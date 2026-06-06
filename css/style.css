@@ -73,6 +73,28 @@
 .topnav-search:hover { color: #fff; background: rgba(255,255,255,0.12); }
 .topnav-search svg { display: block; }
 
+/* Topnav thema-toggle (zon/maan icon) */
+.topnav-theme {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.15s;
+}
+.topnav-theme:hover { color: #fff; background: rgba(255,255,255,0.12); }
+.topnav-theme svg { display: block; }
+/* Toon sun in licht-mode, moon in donker-mode (icoon van wat je KRIJGT bij klik). */
+.topnav-theme .theme-icon-sun { display: none; }
+.topnav-theme .theme-icon-moon { display: block; }
+:root[data-theme="donker"] .topnav-theme .theme-icon-sun { display: block; }
+:root[data-theme="donker"] .topnav-theme .theme-icon-moon { display: none; }
+
 /* === Auth-slot in topnav === */
 .topnav-auth {
     display: flex;

@@ -5336,6 +5336,110 @@
       "nieuw": "noodzakelijker",
       "toelichting": "SV-comparatief 'nodiger' (van 'nodig'). Modern Nederlands: 'noodzakelijker' (= meer noodzakelijk).",
       "regex": "\\bnodiger\\b"
+    },
+    {
+      "id": "V610",
+      "categorie": "Verouderde comparatief",
+      "oud": "uitnemender",
+      "nieuw": "uitmuntender",
+      "toelichting": "SV-comparatief 'uitnemender' (= 'more excellent'). Modern Nederlands: 'uitmuntender' (= more excellent / outstanding). NB: 'uitnemend' (positief) blijft staan.",
+      "regex": "\\b[Uu]itnemender\\b"
+    },
+    {
+      "id": "V611",
+      "categorie": "Verouderde werkwoordvorm",
+      "oud": "(u/gij) moogt",
+      "nieuw": "(u) mag",
+      "toelichting": "SV 2e persoon ev/mv van 'mogen' = 'moogt' (na 'gij/u'). Modern Nederlands: 'u mag' (zowel ev als beleefdheidsvorm mv).",
+      "regex": "\\b[Mm]oogt\\b"
+    },
+    {
+      "id": "V612",
+      "categorie": "Verouderd woord + cascade",
+      "oud": "gestaltenis (Gods)",
+      "nieuw": "gestalte (van God)",
+      "toelichting": "SV 'gestaltenis' (= 'form / shape') is verouderd; modern Nederlands: 'gestalte'. Plus cascade-fix: 'gestaltenis Gods' (genitief) → 'gestalte van God'.",
+      "regex": "\\b[Gg]estaltenis\\b"
+    },
+    {
+      "id": "V613",
+      "categorie": "Verouderd bijwoord",
+      "oud": "uitermate",
+      "nieuw": "bovenmate",
+      "toelichting": "SV 'uitermate' (= 'beyond measure / exceedingly'). Modern Nederlands: 'bovenmate' (= 'beyond measure'); 'uitermate' bestaat nog wel maar voelt formeel/SV.",
+      "regex": "\\b[Uu]itermate\\b"
+    },
+    {
+      "id": "V614",
+      "categorie": "Verouderde sterke verbuiging",
+      "oud": "allen naam",
+      "nieuw": "alle naam",
+      "toelichting": "SV 'allen naam' (mannelijke accusatief sterke verbuiging, = 'every name'). Modern Nederlands: 'alle naam' (zonder -n, behoudt distributieve betekenis).",
+      "regex": "\\b[Aa]llen naam\\b"
+    },
+    {
+      "id": "V615",
+      "categorie": "Verouderd -lijk bijwoord",
+      "oud": "oprechtelijk",
+      "nieuw": "oprecht",
+      "toelichting": "SV-bijwoord met -lijk-suffix; modern Nederlands gebruikt 'oprecht' zonder -lijk.",
+      "regex": "\\b[Oo]prechtelijk\\b"
+    },
+    {
+      "id": "V616",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "uw zaken zal bezorgen",
+      "nieuw": "voor uw zaken zal zorgen",
+      "toelichting": "SV 'iemands zaken bezorgen' (= 'voor iemands zaken zorgen / verzorgen'). Modern Nederlands: 'voor uw zaken zal zorgen'.",
+      "regex": "\\b[Uu]w zaken zal bezorgen\\b"
+    },
+    {
+      "id": "V617",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "van stonde aan",
+      "nieuw": "ogenblikkelijk",
+      "toelichting": "SV-tijdsuitdrukking 'van stonde aan' (= 'immediately / at once'). Modern Nederlands: 'ogenblikkelijk' (slankst) of 'direct' / 'meteen'.",
+      "regex": "\\b[Vv]an stonde aan\\b"
+    },
+    {
+      "id": "V618",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "bedienaar (van mijn nooddruft)",
+      "nieuw": "dienaar (van wat ik nodig heb)",
+      "toelichting": "SV 'bedienaar' (= 'minister/servant') wordt 'dienaar'. Plus vaste uitdrukking 'bedienaar van mijn nooddruft' → 'dienaar van wat ik nodig heb'. NB: standalone 'nooddruft' (levensbehoeften) blijft staan voor latere principe-overweging.",
+      "regex": "\\b[Bb]edienaar\\b"
+    },
+    {
+      "id": "V619",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "zeer begerig was",
+      "nieuw": "vurig verlangde",
+      "toelichting": "SV 'zeer begerig was' (= 'was greatly desiring'). Modern Nederlands: 'vurig verlangde' (= longed eagerly).",
+      "regex": "\\bzeer begerig was\\b"
+    },
+    {
+      "id": "V620",
+      "categorie": "Verouderde datief",
+      "oud": "ten achtste dag",
+      "nieuw": "op de achtste dag",
+      "toelichting": "SV-datief 'ten X dag' (= 'te dem X dag' = 'op de X dag'). Modern Nederlands: 'op de achtste dag'.",
+      "regex": "\\b[Tt]en achtste dag\\b"
+    },
+    {
+      "id": "V621",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "mij gewin was",
+      "nieuw": "voor mij winst was",
+      "toelichting": "SV 'mij gewin' = datief constructie 'voor mij winst'. Modern Nederlands: 'voor mij winst was'.",
+      "regex": "\\bmij gewin was\\b"
+    },
+    {
+      "id": "V622",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "schade geacht",
+      "nieuw": "als schade beschouwd",
+      "toelichting": "SV 'schade geacht' (= 'considered loss/damage'). Modern Nederlands: 'als schade beschouwd' / 'als verlies gerekend'.",
+      "regex": "\\b[Ss]chade geacht\\b"
     }
   ]
 }
