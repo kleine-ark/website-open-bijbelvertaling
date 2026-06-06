@@ -203,7 +203,7 @@
       "number": 3,
       "textSV1888": "De oude vrouwen insgelijks, dat zij in haar dracht zijn, gelijk den heiligen betaamt, dat zij geen lasteressen zijn, zich niet tot veel wijns begevende, maar leraressen zijn van het goede;",
       "text1637": "De oude vrouwen insgelijcks [a] dat sy in [5] [hare] dracht zijn gelijck den heyligen betaemt, dat’se [b] geen lastaeressen en zijn, [6] haer niet tot veel wijns begevende, [maer] leeraeressen zijn van ’tgoede:",
-      "text2026": "De oude vrouwen insgelijks, dat zij in haar dracht zijn, zoals de heiligen past, dat zij geen lasteressen zijn, zich niet tot veel wijns begevende, maar leraressen zijn van het goede;",
+      "text2026": "De oude vrouwen ook, dat zij in haar gedrag zijn, zoals de heiligen past, dat zij geen lasteressen zijn, zich niet tot veel wijn begevende, maar leraressen zijn van het goede;",
       "marginNotes": [
         {
           "marker": "5",
@@ -308,10 +308,20 @@
           "gloss": "〔teaching good"
         }
       ],
-      "text2026_html": "De oude vrouwen insgelijks,<sup class=\"note-marker\" data-note=\"a\">a</sup> dat zij in<sup class=\"note-marker\" data-note=\"5\">5</sup> haar dracht zijn, zoals de heiligen past, dat<sup class=\"note-marker\" data-note=\"b\">b</sup> zij geen lasteressen zijn,<sup class=\"note-marker\" data-note=\"6\">6</sup> zich niet tot veel wijns begevende, maar leraressen zijn van het goede;",
+      "text2026_html": "De oude vrouwen ook,<sup class=\"note-marker\" data-note=\"a\">a</sup> dat zij in<sup class=\"note-marker\" data-note=\"5\">5</sup> haar gedrag zijn, zoals de heiligen past, dat<sup class=\"note-marker\" data-note=\"b\">b</sup> zij geen lasteressen zijn,<sup class=\"note-marker\" data-note=\"6\">6</sup> zich niet tot veel wijn begevende, maar leraressen zijn van het goede;",
       "textSV1888_html": "De oude vrouwen insgelijks,<sup class=\"note-marker\" data-note=\"a\">a</sup> dat zij in<sup class=\"note-marker\" data-note=\"5\">5</sup> haar dracht zijn, gelijk den heiligen betaamt, dat<sup class=\"note-marker\" data-note=\"b\">b</sup> zij geen lasteressen zijn,<sup class=\"note-marker\" data-note=\"6\">6</sup> zich niet tot veel wijns begevende, maar leraressen zijn van het goede;",
       "text1637_html": "De oude vrouwen insgelijcks <sup class=\"note-marker\" data-note=\"a\">a</sup> dat sy in <sup class=\"note-marker\" data-note=\"5\">5</sup> [<i>hare</i>] dracht zijn gelijck den heyligen betaemt, dat’se <sup class=\"note-marker\" data-note=\"b\">b</sup> geen lastaeressen en zijn, <sup class=\"note-marker\" data-note=\"6\">6</sup> haer niet tot veel wijns begevende, [<i>maer</i>] leeraeressen zijn van ’tgoede:",
       "phraseDiff": [
+        {
+          "old": "insgelijks,",
+          "new": "ook,",
+          "principe": "V653"
+        },
+        {
+          "old": "dracht",
+          "new": "gedrag",
+          "principe": null
+        },
         {
           "old": "gelijk den",
           "new": "zoals de",
@@ -321,6 +331,11 @@
           "old": "betaamt,",
           "new": "past,",
           "principe": "V92"
+        },
+        {
+          "old": "wijns",
+          "new": "wijn",
+          "principe": "V654"
         }
       ]
     },
@@ -542,7 +557,7 @@
       "number": 6,
       "textSV1888": "Vermaan den jongen mannen insgelijks, dat zij matig zijn.",
       "text1637": "De jonge [mannen] insgelijcks vermaent dat sy [13] matigh zijn.",
-      "text2026": "Vermaan de jongen mannen insgelijks, dat zij matig zijn.",
+      "text2026": "Vermaan de jonge mannen ook, dat zij matig zijn.",
       "marginNotes": [
         {
           "marker": "13",
@@ -584,14 +599,19 @@
           "gloss": "〔be of sound mind"
         }
       ],
-      "text2026_html": "Vermaan de jongen mannen insgelijks, dat zij<sup class=\"note-marker\" data-note=\"13\">13</sup> matig zijn.",
+      "text2026_html": "Vermaan de jonge mannen ook, dat zij<sup class=\"note-marker\" data-note=\"13\">13</sup> matig zijn.",
       "textSV1888_html": "Vermaan den jongen mannen insgelijks, dat zij<sup class=\"note-marker\" data-note=\"13\">13</sup> matig zijn.",
       "text1637_html": "De jonge [<i>mannen</i>] insgelijcks vermaent dat sy <sup class=\"note-marker\" data-note=\"13\">13</sup> matigh zijn.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
+          "old": "den jongen",
+          "new": "de jonge",
           "principe": "N1"
+        },
+        {
+          "old": "insgelijks,",
+          "new": "ook,",
+          "principe": "V653"
         }
       ]
     },
