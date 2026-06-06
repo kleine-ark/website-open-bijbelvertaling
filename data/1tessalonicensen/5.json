@@ -1748,7 +1748,7 @@
       "number": 14,
       "textSV1888": "En wij bidden u, broeders, vermaant de ongeregelden, vertroost de kleinmoedigen, ondersteunt de zwakken, zijt lankmoedig jegens allen.",
       "text1637": "Ende wy bidden u, broeders, vermaent [33] de ongeregelde, vertroost de cleynmoedige, [34] ondersteunt de swacke, zijt lanckmoedigh tegen alle.",
-      "text2026": "En wij bidden u, broeders, vermaant de ongeregelden, vertroost de kleinmoedigen, ondersteunt de zwakken, bent geduldig jegens allen.",
+      "text2026": "En wij bidden u, broeders, vermaant de ongeregelden, vertroost de kleinmoedigen, ondersteunt de zwakken, bent geduldig tegenover allen.",
       "marginNotes": [
         {
           "marker": "33",
@@ -1863,13 +1863,13 @@
           "gloss": "〔all"
         }
       ],
-      "text2026_html": "En wij bidden u, broeders, vermaant<sup class=\"note-marker\" data-note=\"33\">33</sup> de ongeregelden, vertroost de kleinmoedigen,<sup class=\"note-marker\" data-note=\"34\">34</sup> ondersteunt de zwakken, bent geduldig jegens allen.",
+      "text2026_html": "En wij bidden u, broeders, vermaant<sup class=\"note-marker\" data-note=\"33\">33</sup> de ongeregelden, vertroost de kleinmoedigen,<sup class=\"note-marker\" data-note=\"34\">34</sup> ondersteunt de zwakken, bent geduldig tegenover allen.",
       "textSV1888_html": "En wij bidden u, broeders, vermaant<sup class=\"note-marker\" data-note=\"33\">33</sup> de ongeregelden, vertroost de kleinmoedigen,<sup class=\"note-marker\" data-note=\"34\">34</sup> ondersteunt de zwakken, zijt lankmoedig jegens allen.",
       "text1637_html": "Ende wy bidden u, broeders, vermaent <sup class=\"note-marker\" data-note=\"33\">33</sup> de ongeregelde, vertroost de cleynmoedige, <sup class=\"note-marker\" data-note=\"34\">34</sup> ondersteunt de swacke, zijt lanckmoedigh tegen alle.",
       "phraseDiff": [
         {
-          "old": "zijt lankmoedig",
-          "new": "bent geduldig",
+          "old": "zijt lankmoedig jegens",
+          "new": "bent geduldig tegenover",
           "principe": "V91"
         }
       ]
@@ -1878,7 +1878,7 @@
       "number": 15,
       "textSV1888": "Ziet, dat niemand kwaad voor kwaad iemand vergelde; maar jaagt allen tijd het goede na, zo jegens elkander als jegens allen.",
       "text1637": "[m] Siet dat niemandt quaet voor quaet yemandt en vergelde: maer jaeght alle tijdt [35] het goede na, so tegen malcanderen als tegen alle.",
-      "text2026": "Zie, dat niemand kwaad voor kwaad iemand vergelde; maar jaagt alle tijd het goede na, zo jegens elkaar als jegens allen.",
+      "text2026": "Zie, dat niemand kwaad voor kwaad iemand vergelde; maar jaagt alle tijd het goede na, zo tegenover elkaar als tegenover allen.",
       "marginNotes": [
         {
           "marker": "35",
@@ -2011,7 +2011,7 @@
           "gloss": "〔all"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup> Zie, dat niemand kwaad voor kwaad iemand vergelde; maar jaagt alle tijd<sup class=\"note-marker\" data-note=\"35\">35</sup> het goede na, zo jegens elkaar als jegens allen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup> Zie, dat niemand kwaad voor kwaad iemand vergelde; maar jaagt alle tijd<sup class=\"note-marker\" data-note=\"35\">35</sup> het goede na, zo tegenover elkaar als tegenover allen.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup> Ziet, dat niemand kwaad voor kwaad iemand vergelde; maar jaagt allen tijd<sup class=\"note-marker\" data-note=\"35\">35</sup> het goede na, zo jegens elkander als jegens allen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup> Siet dat niemandt quaet voor quaet yemandt en vergelde: maer jaeght alle tijdt <sup class=\"note-marker\" data-note=\"35\">35</sup> het goede na, so tegen malcanderen als tegen alle.",
       "phraseDiff": [
@@ -2026,9 +2026,14 @@
           "principe": null
         },
         {
-          "old": "elkander",
-          "new": "elkaar",
+          "old": "jegens elkander",
+          "new": "tegenover elkaar",
           "principe": "V65"
+        },
+        {
+          "old": "jegens",
+          "new": "tegenover",
+          "principe": "V656"
         }
       ]
     },

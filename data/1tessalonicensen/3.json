@@ -1638,7 +1638,7 @@
       "number": 12,
       "textSV1888": "En de Heere vermeerdere u, en make u overvloedig in de liefde jegens elkander en jegens allen, gelijk wij ook zijn jegens u;",
       "text1637": "Ende de Heere [21] vermeerdere u, ende maecke [u] overvloedigh in de liefde tegen malcanderen, ende tegen alle, gelijck [22] wy oock zijn tegen u:",
-      "text2026": "En de Heere vermeerdere u, en make u overvloedig in de liefde jegens elkaar en jegens allen, zoals wij ook zijn jegens u;",
+      "text2026": "En de Heere vermeerdere u, en make u overvloedig in de liefde tegenover elkaar en tegenover allen, zoals wij ook zijn tegenover u;",
       "marginNotes": [
         {
           "marker": "21",
@@ -1652,7 +1652,7 @@
           "type": "explanatory",
           "textSV1888": "Namelijk overvloedig in de liefde jegens u.",
           "text1637": "N. overvloedigh inde liefde tegen u.",
-          "text2026": "Namelijk overvloedig in de liefde jegens u."
+          "text2026": "Namelijk overvloedig in de liefde tegenover u."
         }
       ],
       "grondtekst": [
@@ -1771,19 +1771,29 @@
           "gloss": "〔you"
         }
       ],
-      "text2026_html": "En de Heere<sup class=\"note-marker\" data-note=\"21\">21</sup> vermeerdere u, en make u overvloedig in de liefde jegens elkaar en jegens allen, zoals<sup class=\"note-marker\" data-note=\"22\">22</sup> wij ook zijn jegens u;",
+      "text2026_html": "En de Heere<sup class=\"note-marker\" data-note=\"21\">21</sup> vermeerdere u, en make u overvloedig in de liefde tegenover elkaar en tegenover allen, zoals<sup class=\"note-marker\" data-note=\"22\">22</sup> wij ook zijn tegenover u;",
       "textSV1888_html": "En de Heere<sup class=\"note-marker\" data-note=\"21\">21</sup> vermeerdere u, en make u overvloedig in de liefde jegens elkander en jegens allen, gelijk<sup class=\"note-marker\" data-note=\"22\">22</sup> wij ook zijn jegens u;",
       "text1637_html": "Ende de Heere <sup class=\"note-marker\" data-note=\"21\">21</sup> vermeerdere u, ende maecke [<i>u</i>] overvloedigh in de liefde tegen malcanderen, ende tegen alle, gelijck <sup class=\"note-marker\" data-note=\"22\">22</sup> wy oock zijn tegen u:",
       "phraseDiff": [
         {
-          "old": "elkander",
-          "new": "elkaar",
+          "old": "jegens elkander",
+          "new": "tegenover elkaar",
           "principe": "V65"
+        },
+        {
+          "old": "jegens",
+          "new": "tegenover",
+          "principe": "V656"
         },
         {
           "old": "gelijk",
           "new": "zoals",
           "principe": null
+        },
+        {
+          "old": "jegens",
+          "new": "tegenover",
+          "principe": "V656"
         }
       ]
     },
