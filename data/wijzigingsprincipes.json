@@ -5768,6 +5768,38 @@
       "nieuw": "zichtbaar",
       "toelichting": "Verouderd 'zienlijk(en)' (= zichtbaar) vervangen door 'zichtbaar'; attributieve verbuigingen 'zienlijke/zienlijken' → 'zichtbare'.",
       "regex": "\\b[Zz]ienlijk(en|e)?\\b"
+    },
+    {
+      "id": "V663",
+      "categorie": "W",
+      "oud": "onbeschuldig",
+      "nieuw": "onschuldig",
+      "toelichting": "Verouderd 'onbeschuldig(lijk)' (= zonder schuld) vervangen door 'onschuldig'.",
+      "regex": "\\bonbeschuldig(lijk)?\\b"
+    },
+    {
+      "id": "V664",
+      "categorie": "S",
+      "oud": "gefondeerd",
+      "nieuw": "gefundeerd",
+      "toelichting": "Verouderde spelling 'gefondeerd' vervangen door 'gefundeerd'.",
+      "regex": "\\bgefondee?rd[a-z]*\\b"
+    },
+    {
+      "id": "V665",
+      "categorie": "W",
+      "oud": "kreatuur",
+      "nieuw": "schepsel",
+      "toelichting": "Verouderd 'creatuur/kreatuur' (en verbuigingen) vervangen door 'schepsel'/'schepselen' (enkelvoud/meervoud naar context).",
+      "regex": "\\b[ck]reatu[a-z]*\\b"
+    },
+    {
+      "id": "V666",
+      "categorie": "W",
+      "oud": "vastigheid",
+      "nieuw": "vastheid",
+      "toelichting": "Verouderd 'vastigheid' vervangen door modern 'vastheid'.",
+      "regex": "\\b[Vv]astigheid\\b"
     }
   ]
 }
