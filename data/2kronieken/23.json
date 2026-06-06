@@ -171,32 +171,32 @@
         {
           "old": "der",
           "new": "van de",
-          "principe": "V521"
+          "principe": "N2"
         },
         {
           "old": "den",
           "new": "de",
-          "principe": "N1d"
+          "principe": "N1"
         },
         {
           "old": "den",
           "new": "de",
-          "principe": "N1d"
+          "principe": "N1"
         },
         {
           "old": "den",
           "new": "de",
-          "principe": "N1d"
+          "principe": "N1"
         },
         {
           "old": "den",
           "new": "de",
-          "principe": "N1d"
+          "principe": "N1"
         },
         {
           "old": "den",
           "new": "de",
-          "principe": "N1d"
+          "principe": "N1"
         }
       ]
     },
@@ -308,9 +308,9 @@
           "principe": "V318"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "V318"
+          "old": "hoofden der vaderen",
+          "new": "familiehoofden",
+          "principe": "N2"
         }
       ]
     },
@@ -454,7 +454,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
+          "principe": "N1"
         },
         {
           "old": "zeide",
@@ -581,8 +581,13 @@
           "principe": "N1"
         },
         {
-          "old": "der",
-          "new": "van de",
+          "old": "priesteren",
+          "new": "priesters",
+          "principe": "V561"
+        },
+        {
+          "old": "poortiers der",
+          "new": "poortwachters van de",
           "principe": "N2"
         }
       ]
@@ -689,7 +694,7 @@
         {
           "old": "des HEEREN.",
           "new": "van JAHWEH.",
-          "principe": "G2"
+          "principe": "N3"
         }
       ]
     },
@@ -825,12 +830,17 @@
         {
           "old": "des HEEREN,",
           "new": "van JAHWEH,",
-          "principe": "G2"
+          "principe": "N3"
+        },
+        {
+          "old": "priesteren",
+          "new": "priesters",
+          "principe": "V561"
         },
         {
           "old": "des HEEREN",
           "new": "van JAHWEH",
-          "principe": "G2"
+          "principe": "N3"
         }
       ]
     },
@@ -968,7 +978,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "A2"
+          "principe": "N1"
         }
       ]
     },
@@ -1261,12 +1271,12 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N1c"
+          "principe": "N1"
         },
         {
           "old": "Gods",
           "new": "van God",
-          "principe": "V402"
+          "principe": null
         }
       ]
     },
@@ -1409,7 +1419,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N1c"
+          "principe": "N1"
         }
       ]
     },
@@ -1546,8 +1556,13 @@
       "phraseDiff": [
         {
           "old": "des konings",
-          "new": "van de koning",
+          "new": "de",
           "principe": "N3"
+        },
+        {
+          "old": "",
+          "new": "van de koning",
+          "principe": null
         }
       ]
     },
@@ -1640,12 +1655,12 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N1c"
+          "principe": "N1"
         },
         {
           "old": "des HEEREN.",
           "new": "van JAHWEH.",
-          "principe": "G2"
+          "principe": "N3"
         }
       ]
     },
@@ -1864,12 +1879,12 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N1c"
+          "principe": "N1"
         },
         {
           "old": "den",
           "new": "de",
-          "principe": "N1c"
+          "principe": "N1"
         },
         {
           "old": "des lands",
@@ -2056,7 +2071,7 @@
         {
           "old": "des HEEREN",
           "new": "van JAHWEH",
-          "principe": "G2"
+          "principe": "N3"
         }
       ]
     },
@@ -2242,12 +2257,12 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
+          "principe": "N1"
         },
         {
           "old": "den HEERE",
           "new": "JAHWEH",
-          "principe": "G1"
+          "principe": "N1"
         }
       ]
     },
@@ -2537,7 +2552,7 @@
         {
           "old": "des HEEREN,",
           "new": "van JAHWEH,",
-          "principe": "G2"
+          "principe": "N3"
         },
         {
           "old": "der",
@@ -2545,14 +2560,19 @@
           "principe": "N2"
         },
         {
-          "old": "des HEEREN",
-          "new": "van JAHWEH",
-          "principe": "G2"
+          "old": "priesteren,",
+          "new": "priesters,",
+          "principe": "V561"
         },
         {
           "old": "des HEEREN",
           "new": "van JAHWEH",
-          "principe": "G2"
+          "principe": "N3"
+        },
+        {
+          "old": "des HEEREN",
+          "new": "van JAHWEH",
+          "principe": "N3"
         },
         {
           "old": "gelijk",
@@ -2628,9 +2648,14 @@
       "text1637_html": "Ende hy stelde de poortiers aen de poorten van het Huys des HEEREN: op dat niemant in eenich dinck onreyn zijnde, in en quame.",
       "phraseDiff": [
         {
+          "old": "poortiers",
+          "new": "poortwachters",
+          "principe": "V543"
+        },
+        {
           "old": "des HEEREN,",
           "new": "van JAHWEH,",
-          "principe": "G2"
+          "principe": "N3"
         }
       ]
     },
@@ -2824,12 +2849,12 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N1c"
+          "principe": "N1"
         },
         {
           "old": "des HEEREN",
           "new": "van JAHWEH",
-          "principe": "G2"
+          "principe": "N3"
         },
         {
           "old": "der",
@@ -2844,12 +2869,12 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N1c"
+          "principe": "N1"
         },
         {
           "old": "den",
           "new": "de",
-          "principe": "N1c"
+          "principe": "N1"
         },
         {
           "old": "des koninkrijks.",

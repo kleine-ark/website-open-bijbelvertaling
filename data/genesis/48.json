@@ -755,7 +755,7 @@
         {
           "old": "eer",
           "new": "voordat",
-          "principe": "V32"
+          "principe": null
         }
       ]
     },
@@ -876,6 +876,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "gewinnen,",
+          "new": "winnen,",
+          "principe": "V624"
         },
         {
           "old": "hunner broederen",
@@ -1080,7 +1085,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N1e"
+          "principe": "N1"
         },
         {
           "old": "aldaar",
@@ -1090,7 +1095,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N1e"
+          "principe": "N1"
         }
       ]
     },
@@ -1163,7 +1168,7 @@
         {
           "old": "zeide: Wiens",
           "new": "zei: Van wie de",
-          "principe": "V312"
+          "principe": "W1"
         }
       ]
     },
@@ -1923,6 +1928,11 @@
       "text1637_html": "Maer Israël streckte sijne rechterhant uyt, ende <sup class=\"note-marker\" data-note=\"25\">25</sup> leydese op Ephraims hooft, hoewel hy de <sup class=\"note-marker\" data-note=\"26\">26</sup> minste was, ende sijne slinckerhant op Manasses hooft: <sup class=\"note-marker\" data-note=\"27\">27</sup> hy bestierde sijne handen verstandelick; <sup class=\"note-marker\" data-note=\"28\">28</sup> want Manasse was de eerstgeboren.",
       "phraseDiff": [
         {
+          "old": "leide",
+          "new": "legde",
+          "principe": "V554"
+        },
+        {
           "old": "verstandelijk;",
           "new": "verstandig;",
           "principe": "V425"
@@ -2409,6 +2419,11 @@
       "textSV1888_html": "Toen Jozef zag, dat zijn vader zijn rechterhand op het hoofd van Efraïm leide, zo was het kwaad<sup class=\"note-marker\" data-note=\"32\">32</sup> in zijn ogen, en hij ondervatte zijns vaders hand, om die van het hoofd van Efraïm op het hoofd van Manasse af te brengen.",
       "text1637_html": "Doe Ioseph sach, dat sijn vader sijne rechterhant op Ephraims hooft leyde, so was het quaet <sup class=\"note-marker\" data-note=\"32\">32</sup> in sijne oogen, ende hy ondervattede sijnes vaders hant, om die van Ephraims hooft, op Manasses hooft af te brengen.",
       "phraseDiff": [
+        {
+          "old": "leide,",
+          "new": "legde,",
+          "principe": "V554"
+        },
         {
           "old": "zijns vaders",
           "new": "van zijn vader",
@@ -3330,7 +3345,7 @@
         {
           "old": "der",
           "new": "van de",
-          "principe": "O22b"
+          "principe": "N2"
         }
       ]
     }

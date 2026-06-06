@@ -81,7 +81,12 @@
         {
           "old": "Voorts geschiedde",
           "new": "Verder gebeurde",
-          "principe": "V199"
+          "principe": "V27"
+        },
+        {
+          "old": "poortiers,",
+          "new": "poortwachters,",
+          "principe": "V543"
         }
       ]
     },
@@ -482,7 +487,7 @@
         {
           "old": "doch des volks",
           "new": "maar van het volk",
-          "principe": "V1"
+          "principe": "N3"
         }
       ]
     },
@@ -756,7 +761,7 @@
         {
           "old": "der",
           "new": "van de",
-          "principe": "W2"
+          "principe": "N2"
         },
         {
           "old": "wedergekeerd",
@@ -2536,7 +2541,14 @@
         }
       ],
       "text2026_html": "De poortwachters: de kinderen van Sallum, de kinderen van Ater, de kinderen van Talmon, de kinderen van Akkub, de kinderen van Hatita, de kinderen van Sobai, honderd acht en dertig;",
-      "text1637_html": "De Poortiers; De kinderen Sallums, de kinderen Aters, de kinderen Talmons, de kinderen Hakubs, de kinderen van Hattita, de kinderen van Sobai, hondert, acht-ende-dertich."
+      "text1637_html": "De Poortiers; De kinderen Sallums, de kinderen Aters, de kinderen Talmons, de kinderen Hakubs, de kinderen van Hattita, de kinderen van Sobai, hondert, acht-ende-dertich.",
+      "phraseDiff": [
+        {
+          "old": "poortiers:",
+          "new": "poortwachters:",
+          "principe": "V543"
+        }
+      ]
     },
     {
       "number": 46,
@@ -2582,7 +2594,14 @@
         }
       ],
       "text2026_html": "De tempelknechten: de kinderen van Ziha, de kinderen van Hasufa, de kinderen van Tabbaoth;",
-      "text1637_html": "De Nethinim: De kinderen van Ziha, de kinderen van Hasupha, de kinderen van Tabbaoth,"
+      "text1637_html": "De Nethinim: De kinderen van Ziha, de kinderen van Hasupha, de kinderen van Tabbaoth,",
+      "phraseDiff": [
+        {
+          "old": "Nethinim:",
+          "new": "tempelknechten:",
+          "principe": "V562"
+        }
+      ]
     },
     {
       "number": 47,
@@ -3210,6 +3229,11 @@
       "text1637_html": "Alle de Nethinim, ende de kinderen der knechten van Salomo, waren drie hondert, twee ende negentich.",
       "phraseDiff": [
         {
+          "old": "Nethinim,",
+          "new": "tempelknechten,",
+          "principe": "V562"
+        },
+        {
           "old": "der",
           "new": "van de",
           "principe": "N2"
@@ -3487,6 +3511,16 @@
       "text1637_html": "Ende van de Priesteren, de kinderen van Habaja, de kinderen van Koz: de kinderen van Barzillai, die eene vrouwe van de dochteren Barzillai des Gileaditers genomen hadde, ende nae haren naem genoemt was.",
       "phraseDiff": [
         {
+          "old": "priesteren,",
+          "new": "priesters,",
+          "principe": "V561"
+        },
+        {
+          "old": "dochteren",
+          "new": "dochters",
+          "principe": "V569"
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
@@ -3552,7 +3586,7 @@
         {
           "old": "Dezen",
           "new": "Deze",
-          "principe": "N4"
+          "principe": null
         }
       ]
     },
@@ -4074,8 +4108,8 @@
       "text1637_html": "<sup class=\"note-marker\" data-note=\"19\">19</sup> Een deel nu van de hoofden der vaderen gaven tot het werck: <sup class=\"note-marker\" data-note=\"20\">20</sup> Hattirsatha gaf ten schatte, aen gout, duysent <sup class=\"note-marker\" data-note=\"21\">21</sup> drachmen, vijftich spreng-beckens, vijf hondert ende dertich Priester-rocken.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
+          "old": "hoofden der vaderen",
+          "new": "familiehoofden",
           "principe": "N2"
         },
         {
@@ -4172,8 +4206,8 @@
       "text1637_html": "Ende [andere] van de hoofden der vaderen gaven ten schatte des wercks, aen gout, twintich duysent drachmen, ende aen silver, twee duysent, ende twee hondert ponden.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
+          "old": "hoofden der vaderen",
+          "new": "familiehoofden",
           "principe": "N2"
         },
         {
@@ -4321,6 +4355,16 @@
       "textSV1888_html": "En de priesters, en de Levieten, en de poortiers, en de zangers, en sommigen van<sup class=\"note-marker\" data-note=\"22\">22</sup> het volk, en de Nethinim, en gans<sup class=\"note-marker\" data-note=\"23\">23</sup> Israël, woonden in hun steden.",
       "text1637_html": "Ende de Priesters, ende de Leviten, ende de Poortiers, ende de Sangers, ende [sommige] van <sup class=\"note-marker\" data-note=\"22\">22</sup> den volcke, ende de Nethinim, ende gantsch <sup class=\"note-marker\" data-note=\"23\">23</sup> Israël woonden in hare steden.",
       "phraseDiff": [
+        {
+          "old": "poortiers,",
+          "new": "poortwachters,",
+          "principe": "V543"
+        },
+        {
+          "old": "Nethinim,",
+          "new": "tempelknechten,",
+          "principe": "V562"
+        },
         {
           "old": "gans",
           "new": "geheel",
