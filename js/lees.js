@@ -131,6 +131,7 @@ const Lees = {
         ezra:       'all',
         filippenzen:'all',
         titus:      'all',
+        kolossenzen:'all',
     },
 
     _isVerified(bookId, chapter) {
