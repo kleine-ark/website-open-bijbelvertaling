@@ -5576,6 +5576,62 @@
       "nieuw": "een man met één vrouw",
       "toelichting": "Hebraïsche genitief-constructie 'van een vrouw man' (= 'a one-wife man' = monogaam). Modern Nederlands: 'een man met één vrouw'.",
       "regex": "\\b[Vv]an een vrouw man\\b"
+    },
+    {
+      "id": "V640",
+      "categorie": "Cascade-fix genitief Gods",
+      "oud": "huisverzorger Gods",
+      "nieuw": "huisverzorger van God",
+      "toelichting": "SV-genitief 'Gods' post-noun → 'van God'.",
+      "regex": "\\b[Hh]uisverzorger Gods\\b"
+    },
+    {
+      "id": "V641",
+      "categorie": "Verouderd compositum",
+      "oud": "vuil-gewinzoeker",
+      "nieuw": "zoeker van oneerlijke winst",
+      "toelichting": "SV-compositum 'vuil-gewinzoeker' (Grieks αἰσχροκερδής 'aischrokerdēs' = 'shamefully greedy'). Modern Nederlands: 'zoeker van oneerlijke winst' (= iemand die op oneerbare wijze geld nastreeft).",
+      "regex": "\\b[Vv]uil-gewinzoeker\\b"
+    },
+    {
+      "id": "V642",
+      "categorie": "Verouderd bijwoord",
+      "oud": "gaarne",
+      "nieuw": "graag",
+      "toelichting": "SV-bijwoord 'gaarne' (= 'gladly, willingly'). Modern Nederlands: 'graag'.",
+      "regex": "\\b[Gg]aarne\\b"
+    },
+    {
+      "id": "V643",
+      "categorie": "Verouderd woord",
+      "oud": "smijter",
+      "nieuw": "vechtersbaas",
+      "toelichting": "SV 'smijter' (Grieks πλήκτης = 'smiter, brawler' = iemand die slaat/vecht). Modern Nederlands: 'vechtersbaas'.",
+      "regex": "\\b[Ss]mijter\\b"
+    },
+    {
+      "id": "V644",
+      "categorie": "Verouderde spelling",
+      "oud": "wederleggen / wederlegging",
+      "nieuw": "weerleggen / weerlegging",
+      "toelichting": "SV-spelling 'weder-' compositum. Modern Nederlands: 'weer-'.",
+      "regex": "\\b[Ww]ederleg(g(en|ing|inge|inghe)|t|d|den)?\\b"
+    },
+    {
+      "id": "V645",
+      "categorie": "Verouderd bijwoord",
+      "oud": "inzonderheid",
+      "nieuw": "in het bijzonder",
+      "toelichting": "SV-bijwoord 'inzonderheid' (= 'in particular / especially'). Modern Nederlands: 'in het bijzonder'.",
+      "regex": "\\b[Ii]nzonderheid\\b"
+    },
+    {
+      "id": "V646",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "rein de reinen",
+      "nieuw": "rein voor de reinen",
+      "toelichting": "SV-datief constructie 'rein de reinen' (= 'rein voor de reinen'). Modern Nederlands: 'rein voor de reinen'.",
+      "regex": "\\b[Rr]ein de reinen\\b"
     }
   ]
 }
