@@ -81,6 +81,7 @@ const App = {
         '1makkabeeen': 'all',
         susanna:    'all',
         ezra:       'all',
+        filippenzen:'all',
     },
 
     _isVerified(bookId, chapter) {
