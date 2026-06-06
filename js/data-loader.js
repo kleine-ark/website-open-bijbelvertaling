@@ -1,4 +1,4 @@
-/* Open Vertaling — Data laden (per-chapter, na chapter-split refactor) */
+/* Open Staten Vertaling — Data laden (per-chapter, na chapter-split refactor) */
 
 const DataLoader = {
     manifest: null,                 // books.json (boeken-overzicht)

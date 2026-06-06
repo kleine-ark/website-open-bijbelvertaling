@@ -1,4 +1,4 @@
-/* Open Vertaling — Kolom drag-and-drop herordening */
+/* Open Staten Vertaling — Kolom drag-and-drop herordening */
 
 const ColumnReorder = {
     draggedCol: null,

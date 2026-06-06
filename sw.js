@@ -1,4 +1,4 @@
-/* Open Vertaling — Service Worker
+/* Open Staten Vertaling — Service Worker
  *
  * Strategieën:
  *   - shell (HTML/CSS/JS): cache-first met background network-update

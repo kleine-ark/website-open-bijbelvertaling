@@ -96,7 +96,7 @@
                     this.setAttribute('aria-pressed', on);
                     this.classList.toggle('is-on', on);
                     const cb = document.querySelector('input[data-toggle-col=diff]'); if (cb) { cb.checked = on; cb.dispatchEvent(new Event('change',{bubbles:true})); }
-                ">Verschillen SV-OSV</button>
+                ">Verschillen SV-OV</button>
             </div>
         </div>
         <div id="book-intro"></div>
@@ -110,11 +110,11 @@
             <div data-col="margin1637">KT 1637</div>
             <div data-col="sv1888">SV 1888</div>
             <div data-col="marginSV1888">KT 1888</div>
-            <div data-col="2026">OSV</div>
-            <div data-col="margin2026">OSV KT</div>
+            <div data-col="2026">OV</div>
+            <div data-col="margin2026">OV KT</div>
             <div data-col="hebrew">Hebr/Grieks</div>
-            <div data-col="diff">Verschillen SV-OSV</div>
-            <div data-col="noteDiff">Verschillen KT SV-OSV</div>
+            <div data-col="diff">Verschillen SV-OV</div>
+            <div data-col="noteDiff">Verschillen KT SV-OV</div>
         </div>
 
         <div id="verses-container"></div>
@@ -400,7 +400,7 @@
                     <li><strong>Romeinen 8 herzien:</strong> "dienstbaarheid", "ijdelheid", calvinistische bias geneutraliseerd (Rom 9)</li>
                     <li><strong>Kanttekeningen alle boeken hertaald:</strong> volledig modern Nederlands, Hebreeuwse en Griekse woorden met origineel schrift toegevoegd</li>
                     <li><strong>Calvinistische bias geneutraliseerd:</strong> Hand. 13:48, Rom. 8-9, Joh. 3:16</li>
-                    <li><strong>Nieuw design:</strong> huisstijl Open Vertaling (navy/goud/teal)</li>
+                    <li><strong>Nieuw design:</strong> huisstijl Open Staten Vertaling (navy/goud/teal)</li>
                 </ul>
 
                 <h3 style="color:var(--navy);margin:16px 0 8px;font-size:16px;">v0.6 — februari 2026</h3>
@@ -516,20 +516,20 @@
                 <div class="opt-group-label">Tekstedities</div>
                 <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
                 <label><input type="checkbox" data-toggle-col="sv1888"> SV 1888</label>
-                <label><input type="checkbox" data-toggle-col="2026" checked> OSV</label>
+                <label><input type="checkbox" data-toggle-col="2026" checked> OV</label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Kanttekeningen</div>
                 <label><input type="checkbox" data-toggle-col="margin1637"> KT 1637</label>
                 <label><input type="checkbox" data-toggle-col="marginSV1888"> KT 1888</label>
-                <label><input type="checkbox" data-toggle-col="margin2026"> OSV KT (kolom)</label>
-                <label><input type="checkbox" id="toggle-kt-popup" checked onchange="document.body.classList.toggle('kt-popup-mode', this.checked)"> OSV KT (popup)</label>
+                <label><input type="checkbox" data-toggle-col="margin2026"> OV KT (kolom)</label>
+                <label><input type="checkbox" id="toggle-kt-popup" checked onchange="document.body.classList.toggle('kt-popup-mode', this.checked)"> OV KT (popup)</label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Analyse</div>
                 <label><input type="checkbox" data-toggle-col="hebrew"> Hebr/Grieks</label>
-                <label><input type="checkbox" data-toggle-col="diff"> Verschillen SV-OSV</label>
-                <label><input type="checkbox" data-toggle-col="noteDiff"> Verschillen KT SV-OSV</label>
+                <label><input type="checkbox" data-toggle-col="diff"> Verschillen SV-OV</label>
+                <label><input type="checkbox" data-toggle-col="noteDiff"> Verschillen KT SV-OV</label>
                 <label><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"> Tags</label>
             </div>
             <div class="opt-group">

@@ -184,7 +184,7 @@ const Feedback = {
         } else {
             // Fallback: open mailto: met pre-gevulde inhoud zodat de gebruiker
             // de feedback nog via zijn eigen mail-client kan versturen.
-            const subject = `[OSV feedback] ${payload.ref}`;
+            const subject = `[OV feedback] ${payload.ref}`;
             const body =
                 `Vers: ${payload.ref}\n` +
                 `Geselecteerde tekst:\n  "${payload.selected}"\n\n` +

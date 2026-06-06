@@ -1,4 +1,4 @@
-/* Open Vertaling — Kolombreedte aanpassen door slepen */
+/* Open Staten Vertaling — Kolombreedte aanpassen door slepen */
 
 const ColumnResize = {
     isResizing: false,
