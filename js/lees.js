@@ -129,6 +129,7 @@ const Lees = {
         '1makkabeeen': 'all',
         susanna:    'all',
         ezra:       'all',
+        filippenzen:'all',
     },
 
     _isVerified(bookId, chapter) {

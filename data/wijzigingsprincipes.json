@@ -5504,6 +5504,78 @@
       "nieuw": "hun God",
       "toelichting": "SV-genitief 'welker' (= 'whose, plural'). Modern Nederlands: 'hun' (possessief).",
       "regex": "\\b[Ww]elker God\\b"
+    },
+    {
+      "id": "V631",
+      "categorie": "Verouderd relativum",
+      "oud": "welker namen",
+      "nieuw": "van wie de namen",
+      "toelichting": "SV-genitief 'welker' (plural, = 'whose'). Modern Nederlands: 'van wie' (personen-context).",
+      "regex": "\\b[Ww]elker namen\\b"
+    },
+    {
+      "id": "V632",
+      "categorie": "Verouderd werkwoord",
+      "oud": "verwakkerd",
+      "nieuw": "wakker geworden",
+      "toelichting": "SV-voltooid deelwoord 'verwakkerd' (van 'verwakkeren' = ontwaken/herleven). Modern Nederlands: 'wakker geworden' (figuurlijk = opgeleefd).",
+      "regex": "\\b[Vv]erwakkerd\\b"
+    },
+    {
+      "id": "V633",
+      "categorie": "Verouderd adjectief",
+      "oud": "vergenoegd",
+      "nieuw": "tevreden",
+      "toelichting": "SV-adjectief 'vergenoegd' (= 'satisfied / content'). Modern Nederlands: 'tevreden'.",
+      "regex": "\\bvergenoegd\\b"
+    },
+    {
+      "id": "V634",
+      "categorie": "Verouderd meervoud",
+      "oud": "uitgaaf",
+      "nieuw": "uitgaven",
+      "toelichting": "SV-meervoud (collectief) 'uitgaaf'; modern Nederlands gebruikt 'uitgaven' (meervoud van 'uitgave').",
+      "regex": "\\b[Uu]itgaaf\\b"
+    },
+    {
+      "id": "V635",
+      "categorie": "Cascade-fix genitief Gods",
+      "oud": "uitverkorenen Gods",
+      "nieuw": "uitverkorenen van God",
+      "toelichting": "SV-genitief 'Gods' post-noun → 'van God'.",
+      "regex": "\\b[Uu]itverkorenen Gods\\b"
+    },
+    {
+      "id": "V636",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "te zijn/Zijn tijd",
+      "nieuw": "op zijn/Zijn tijd",
+      "toelichting": "SV 'te zijn tijd' (datief). Modern Nederlands: 'op zijn tijd'.",
+      "regex": "\\b[Tt]e [Zz]ijn tijd\\b"
+    },
+    {
+      "id": "V637",
+      "categorie": "Verouderde sterke verbuiging",
+      "oud": "oprechten zoon",
+      "nieuw": "oprechte zoon",
+      "toelichting": "SV-sterke verbuiging -en op attributief adjectief; modern Nederlands: -e.",
+      "regex": "\\b[Oo]prechten zoon\\b"
+    },
+    {
+      "id": "V638",
+      "categorie": "Verouderd adjectief",
+      "oud": "(het) gemeen (geloof)",
+      "nieuw": "(het) gemeenschappelijk (geloof)",
+      "toelichting": "SV 'gemeen' (= 'common, shared'). Modern Nederlands: 'gemeenschappelijk' (= 'shared'); 'gemeen' heeft tegenwoordig pejoratieve betekenis (= 'low, mean').",
+      "regex": "\\b[Hh]et gemeen geloof\\b"
+    },
+    {
+      "id": "V639",
+      "categorie": "Verouderde Hebraïsme",
+      "oud": "van een vrouw man",
+      "nieuw": "een man met één vrouw",
+      "toelichting": "Hebraïsche genitief-constructie 'van een vrouw man' (= 'a one-wife man' = monogaam). Modern Nederlands: 'een man met één vrouw'.",
+      "regex": "\\b[Vv]an een vrouw man\\b"
     }
   ]
 }

@@ -1,6 +1,36 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-06-06",
+      "versie": "v0.16.8",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Filippenzen volledig (4 hoofdstukken, 104 verzen) nagelezen. Totaal nu 285 hoofdstukken / 7.366 verzen handmatig vers-voor-vers gecontroleerd (20,5% / 19,8%). 16 boeken volledig."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Dark mode: thema-toggle (☀/🌙) in topnav voor 1-klik wissel + Opties → Thema (auto/licht/donker). Uitgebreide CSS-overrides voor leesbaarheid in donker thema. Inline script in <head> voorkomt flash-of-light."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Hernoemd: 'Open Vertaling' → 'Open Staten Vertaling' bibel-breed. Afkorting overal 'OV' (voorheen mix OSV/OV)."
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V605-V639 (35 nieuwe principes): zo dikwijls → telkens, te alle(n) tijd → altijd, gedijen → strekken, toebrenging → ondersteuning, nodiger → noodzakelijker, verkeerden → verbleven (context), naar de wijze van Mozes → volgens het gebruik, zulke wijze → dezelfde manier, meerderen → meerdere, medenemen → meenemen, achtte billijk → achtte het juist, omwille van → vanwege (238×), verordening → bepaling, welker hart → van wie het hart, dienstknechten Gods → dienstknechten van God, ten achtste dag → op de achtste dag, mij gewin was → voor mij winst was, schade geacht → als schade beschouwd, moge → mag (146×), gewinnen → winnen / gewin → winst (179×), naar het wit → naar het doel, roeping Gods → roeping van God, denzelfde → deze (52×), dikmaals → dikwijls (44×), welker einde/God/namen → hun einde/God / van wie de namen, verwakkerd → wakker geworden, vergenoegd → tevreden, uitgaaf → uitgaven, uitverkorenen Gods → uitverkorenen van God, te zijn tijd → op zijn tijd (78×), oprechten zoon → oprechte zoon, het gemeen geloof → het gemeenschappelijk geloof, van een vrouw man → een man met één vrouw."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Opus 4.7 agents context-aware: beide → zowel (121 fixes), gebrek (3 fixes), datzelfde (25 fixes), Grieks/Griekse (25 fixes), beangst (lopend)."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "principes-data.json gerebuild: 88.001 toepassingen over alle 696 principes (was: counts voor slechts 333). 25 regex word-boundary bugs gepatched."
+        }
+      ]
+    },
+    {
       "datum": "2026-05-31",
       "versie": "v0.16.7",
       "items": [
