@@ -10,6 +10,7 @@ const Auth = {
     db: null,
     currentUser: null,
     listeners: [],   // (user|null) => void
+    CACHE_KEY: 'osv_auth_cache',
 
     onChange(cb) {
         this.listeners.push(cb);
@@ -23,10 +24,36 @@ const Auth = {
         });
     },
 
+    saveCache(user) {
+        try {
+            if (user) {
+                localStorage.setItem(this.CACHE_KEY, JSON.stringify({
+                    displayName: user.displayName || null,
+                    photoURL: user.photoURL || null,
+                    email: user.email || null
+                }));
+            } else {
+                localStorage.removeItem(this.CACHE_KEY);
+            }
+        } catch (e) { /* localStorage geweigerd — niet kritiek */ }
+    },
+
+    loadCache() {
+        try {
+            const raw = localStorage.getItem(this.CACHE_KEY);
+            return raw ? JSON.parse(raw) : null;
+        } catch (e) { return null; }
+    },
+
     async init() {
+        // Instant render vanuit cache zodat de naam direct verschijnt
+        // i.p.v. te wachten op Firebase-CDN + onAuthStateChanged round-trip.
+        const cached = this.loadCache();
+        if (cached) this.renderButton(cached);
+
         if (!window.firebaseEnabled) {
             console.info('[Auth] Firebase niet geconfigureerd — login uitgeschakeld.');
-            this.renderButton(null);
+            if (!cached) this.renderButton(null);
             return;
         }
         try {
@@ -48,12 +75,13 @@ const Auth = {
             };
             authMod.onAuthStateChanged(this.auth, (user) => {
                 this.currentUser = user;
+                this.saveCache(user);
                 this.renderButton(user);
                 this.notify();
             });
         } catch (e) {
             console.warn('[Auth] kon Firebase niet laden:', e);
-            this.renderButton(null);
+            if (!cached) this.renderButton(null);
         }
     },
 
