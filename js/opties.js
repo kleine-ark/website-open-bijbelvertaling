@@ -36,6 +36,20 @@ const Opties = {
         this.applyVerseNumbersClass();
         this.applyThemeClass();
 
+        // Topnav-knop voor 1-klik thema-wissel (donker ↔ licht)
+        const themeBtn = document.getElementById('topnav-theme-toggle');
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                const cur = document.documentElement.dataset.theme === 'donker' ? 'licht' : 'donker';
+                this.state.thema = cur;
+                this.save();
+                this.applyThemeClass();
+                document.querySelectorAll('input[data-optie="thema"]').forEach(r => {
+                    r.checked = (r.value === cur);
+                });
+            });
+        }
+
         // Listen to changes
         document.querySelectorAll('[data-optie]').forEach(input => {
             input.addEventListener('change', () => {
