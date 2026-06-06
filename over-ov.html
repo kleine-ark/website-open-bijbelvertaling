@@ -105,7 +105,6 @@
         <a href="contact.html">Contact</a>
     </div>
     <input type="search" id="topnav-search-input" class="topnav-search-input" placeholder="Zoek in Gods Woord… (Ctrl+K)" autocomplete="off" aria-label="Zoeken in Gods Woord" onkeydown="if(event.key===&#39;Enter&#39;){var q=this.value.trim();if(q){location.href=&#39;index.html?q=&#39;+encodeURIComponent(q);}}">
-    <button class="topnav-search" id="topnav-search-btn" title="Zoeken (Ctrl+K)" aria-label="Zoeken" onclick="var i=document.getElementById(&#39;topnav-search-input&#39;);var q=i?i.value.trim():&#39;&#39;;if(q){location.href=&#39;index.html?q=&#39;+encodeURIComponent(q);}else{location.href=&#39;index.html&#39;;}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
     <button class="topnav-theme" id="topnav-theme-toggle" title="Thema: licht/donker" aria-label="Wissel thema"><svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
     <button class="topnav-hamburger" id="topnav-hamburger" onclick="document.getElementById(&#39;topnav-links&#39;).classList.toggle(&#39;open&#39;);this.classList.toggle(&#39;open&#39;)" title="Menu" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -128,7 +127,67 @@
                 .ov-stats { grid-template-columns: repeat(2, 1fr) !important; }
             }
         </style>
-<div style="border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;background:#fff;">
+
+        <h2>Wat is de Open Staten Vertaling?</h2>
+        <p>De Open Staten Vertaling is een <strong>vrij beschikbare</strong> herziening van de Statenvertaling uit 1637. Het doel is een herziening te maken van de Statenvertaling die zoveel mogelijk gelijk is aan de oorspronkelijke Statenvertaling, maar wel leesbaar is voor nieuwe gelovigen door onbekende 17e-eeuwse woorden te vervangen. Bij de herziening hebben we de versie uit 1888 gehanteerd.</p>
+        <p>De Open Staten Vertaling moderniseert de spelling en woordkeus waar dat nodig is voor leesbaarheid.</p>
+
+        <h2>Doel en aanleiding</h2>
+        <p>De directe aanleiding was de ontdekking dat voor een evangelisatietraktaat rechten betaald moesten worden aan de uitgever van de gebruikte vertaling van Gods Woord.</p>
+        <p>Een aantal Nederlandse vertalingen van Gods Woord is auteursrechtenvrij &mdash; onder andere de Statenvertaling van 1637 (SV1637) en de herziene editie SV1888, de Leidse Vertaling (1899-1912) en de Petrus Canisius Vertaling (1929/1939). Andere oudere edities buiten het auteursrecht bestaan eveneens.</p>
+        <p>Het voelt ongemakkelijk dat het Woord van God achter juridische beperkingen schuilgaat. <em>"Wat u om niet ontvangen hebt, geeft het om niet"</em> (Mattheüs 10:8).</p>
+        <p>Het doel van deze hertaling is om een vertaling beschikbaar te stellen voor <strong>nieuwe gelovigen</strong> die we op straat tegenkomen. Als ze zich werkelijk tot God bekeerd hebben, merk je dat ze hongerig zijn en willen weten wat Gods Woord echt zegt. De Statenvertaling is de meest betrouwbare vertaling, maar voor hen vaak nog moeilijk te lezen.</p>
+        <p>De Statenvertaling is de meest betrouwbare Nederlandse vertaling. Ik heb meerdere keren meegemaakt dat nieuwe gelovigen expliciet vragen naar de meest betrouwbare vertaling en gretig nieuwe woorden leren. In de oude Statenvertaling staan echter ook veel oude woorden die het lezen nodeloos ingewikkeld maken. Zoals <em>"Ten ware"</em>, <em>"cijnsbaar"</em>, <em>"rad onzer geboorte"</em>, <em>"stout"</em>, <em>"wederrechtelijk"</em>, <em>"schalkheid"</em>, en <em>"met vervaardheid vervaard"</em>. Soms heeft het wel een mooie poëtische klank, maar dringt de werkelijke betekenis door tot de lezer?</p>
+        <p>De Open Staten Vertaling wil een <strong>leesbare herziening</strong> van de Statenvertaling bieden &mdash; inclusief de oorspronkelijke kanttekeningen en een uitgebreide begrippenlijst &mdash; online beschikbaar via deze website en via een app.</p>
+        <p class="highlight">Doelgroep: <strong>nieuwe gelovigen</strong> die voor het eerst zelfstandig in Gods Woord willen lezen.</p>
+
+        <h2>Uitgangspunt: een eerlijke vermenging</h2>
+        <p>Een probleem bij elke herziening van de Statenvertaling is dat je al snel een nieuwe vertaling maakt. De verschillen tussen 17e-eeuws en hedendaags Nederlands zijn zo groot dat je, als je alles consequent zou moderniseren, een heel ander boek overhoudt. Je ziet ook dat de HSV eigenlijk geen herziening is, maar de facto een nieuwe vertaling.</p>
+
+        <p>Wij kiezen bewust voor een andere weg: we <strong>accepteren dat 17e-eeuws en 21e-eeuws taalgebruik vermengd wordt</strong>. Niet alles wordt gemoderniseerd. Woorden als "uitspansel", "gedierte" en "gevogelte" blijven staan. De zinsbouw volgt het origineel. Maar woorden die moeilijker begrepen worden zoals "vervaart", "dewijl", "alzo" worden vervangen.</p>
+
+        <p>Is dat inconsistent? Misschien. Maar bedenk dit: in de gereformeerde traditie kennen we al eeuwenlang de <em>tale Kanaäns</em>. Dat is een religieus dialect dat niemand in het dagelijks leven spreekt, maar dat in de kerk en bij het lezen van Gods Woord volkomen natuurlijk klinkt.</p>
+
+        <p>De Open Staten Vertaling creëert bewust een vergelijkbare vermenging. Stel dat duizenden mensen deze tekst gaan lezen, citeren en gebruiken &mdash; dan wordt deze vermenging van oud en nieuw gewoon een nieuw, levend Schrift-Nederlands. Niet 17e-eeuws, niet 21e-eeuws, maar iets ertussenin: <strong>herkenbaar voor wie met de Statenvertaling is opgegroeid, toegankelijk voor wie er voor het eerst in leest</strong>.</p>
+
+        <p>Bijvoorbeeld een jonge vader die aan tafel voorleest uit de Statenvertaling, vervangt zelf al allerlei woorden &mdash; <em>des</em>, <em>der</em>, <em>denzelve</em>, <em>gij</em> &mdash; door begrijpelijker varianten, juist omdat zijn kinderen anders niets van de tekst meekrijgen. <strong>De facto vindt deze manier van lezen dus al plaats.</strong> De Open Staten Vertaling legt vast wat al aan tientallen tafels gebeurt: een eerlijke, voorzichtige modernisering die de SV-tekst dichter bij de luisteraar brengt zonder hem te vervangen.</p>
+
+        <h2>AI als hulpmiddel, niet als beslisser</h2>
+        <p><strong>Alle wijzigingsprincipes zijn menselijke beslissingen.</strong> Elk principe is door een mens overwogen, geformuleerd en goedgekeurd voordat het werd toegepast. Het ene woord vervangen door het andere &mdash; "hovaardig" door "hoogmoedig", "Heeren" door "JAHWEH", "te zamen" door "samen" &mdash; gebeurt op basis van expliciete, gepubliceerde <a href="principes.html">wijzigingsprincipes</a>. Niets gebeurt autonoom.</p>
+        <p>AI wordt gebruikt als <strong>hulpmiddel</strong>: voor het identificeren van verouderde woorden, het uitvoeren van regelmatige tekstvervangingen onder regie van die principes, het markeren van citaten, het signaleren van cascade-effecten en het controleren van consistentie. Elke wijziging blijft <strong>traceerbaar</strong> in de phrase-diff naast de SV1888-grondtekst, zodat de gebruiker exact ziet wat er is veranderd &eacute;n waarom (welk principe).</p>
+        <p>Het is een <strong>iteratief proces</strong>: eerst zijn de wijzigingsprincipes opgesteld, vervolgens is op basis daarvan hertaald, daarna opnieuw gelezen en gecorrigeerd. Uiteindelijk wordt de gehele tekst handmatig vers-voor-vers door een mens gecontroleerd. Dat proces is momenteel gaande &mdash; zie <a href="#status">status hieronder</a>.</p>
+        <p>We werken met versies. De actuele versie is <strong>v0.16.8</strong> van <strong>6 juni 2026</strong>. Elke wijziging wordt geregistreerd en is traceerbaar via de <a href="principes.html">wijzigingsprincipes</a>.</p>
+
+        <h2>Positie</h2>
+        <p>De Open Staten Vertaling positioneert zich als volgt:</p>
+        <ul>
+            <li><strong>Basis:</strong> de Statenvertaling 1888 en de kanttekeningen</li>
+            <li><strong>Naamvallen</strong> die niet meer begrepen worden (den → de, der → van de)</li>
+            <li><strong>Werkwoordsvormen</strong> (zeide → zei)</li>
+            <li><strong>Aanspreekvormen</strong> (gij → u)</li>
+            <li><strong>Verouderde woorden</strong> (doch → maar, dewijl → omdat, alzo → zo)</li>
+            <li><strong>Minimale wijzigingen:</strong> alleen wat echt nodig is voor leesbaarheid</li>
+            <li><strong>Godsnaam &mdash; 4 opties:</strong> JAHWEH (default, de werkelijke naam van God) · HEERE (klassiek SV) · Jehovah (klassiek Latijns) · יהוה (Hebreeuws). De lezer kiest zelf via de Opties-sidebar.</li>
+            <li><strong>Apocriefe boeken toegevoegd:</strong> 16 apocriefe boeken uit de Statenvertaling 1637 (3 Ezra, 4 Ezra, Tobit, Judith, Boek der Wijsheid, Jezus Sirach, Baruch, etc.).</li>
+            <li><strong>Geen theologische interpretatie:</strong> zo letterlijk mogelijk herzien</li>
+            <li><strong>Met kanttekeningen:</strong> de oorspronkelijke Statenvertaling-kanttekeningen, hertaald naar modern Nederlands</li>
+            <li><strong>Woorden van God</strong> rood en cursief weergegeven</li>
+            <li><strong>Directe rede</strong> cursief met aanhalingstekens</li>
+        </ul>
+        <p>Zie de <a href="wiki.html">Wiki</a> voor de volledige lijst van wijzigingsprincipes.</p>
+
+        <h2>Wijzigingsprincipes — kort overzicht</h2>
+        <p>Elke wijziging in de Open Staten Vertaling wordt geregeld door een <strong>genummerd principe</strong> (V1, V2, …). Op die manier blijft elke verandering ten opzichte van de SV1888 traceerbaar en omkeerbaar. Op dit moment zijn er <strong>704 principes</strong> in 7 hoofdgroepen:</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:18px 0 22px;">
+            <div style="border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;background:#fff;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                    <strong style="color:var(--navy);">Verouderde woorden</strong>
+                    <span style="font-size:12px;color:var(--teal);font-weight:600;">396</span>
+                </div>
+                <div style="font-size:13px;color:#555;line-height:1.6;">doch → maar · dewijl → omdat · alzo → zo · ganse → gehele · wellust → hartstocht · genaakt → nadert</div>
+            </div>
+            <div style="border:1px solid #e5e1d8;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;background:#fff;">
                 <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
                     <strong style="color:var(--navy);">Naamvallen</strong>
                     <span style="font-size:12px;color:var(--teal);font-weight:600;">53</span>
