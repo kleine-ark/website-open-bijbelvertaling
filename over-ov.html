@@ -31,6 +31,28 @@
         :root[data-theme="donker"] .hero-mark-name,
         :root[data-theme="donker"] .hero-mark-id { color: #e6e3dc; text-shadow: 0 1px 2px rgba(0,0,0,0.7); }
         :root[data-theme="donker"] .hero-quote { color: #e6e3dc; text-shadow: 0 1px 3px rgba(0,0,0,0.7); }
+        /* Donker thema — pagina-inhoud leesbaar maken */
+        :root[data-theme="donker"] .page h1,
+        :root[data-theme="donker"] .page h2 { color: var(--text-primary); }
+        :root[data-theme="donker"] .page h2 a { color: var(--text-primary); }
+        :root[data-theme="donker"] .page h3 { color: var(--text-secondary); }
+        :root[data-theme="donker"] .page p,
+        :root[data-theme="donker"] .page li { color: var(--text-primary) !important; }
+        :root[data-theme="donker"] .page p[style*="#666"],
+        :root[data-theme="donker"] .page td[style*="#666"] { color: var(--text-secondary) !important; }
+        :root[data-theme="donker"] .page table td { color: var(--text-primary); }
+        /* "Nagekeken"-badges: donker-vriendelijk groen i.p.v. licht groen */
+        :root[data-theme="donker"] .verified-list li {
+            background: rgba(52,211,153,0.16) !important;
+            color: #6ee7b7 !important;
+            border-color: rgba(110,231,183,0.4) !important;
+        }
+        /* Cijfer-kaarten */
+        :root[data-theme="donker"] .ov-stats > div {
+            background: var(--bg-surface) !important;
+            border-color: var(--border-default) !important;
+        }
+        :root[data-theme="donker"] .ov-stats > div > div:first-child { color: var(--text-primary) !important; }
         /* OV2026 wordmark linksboven in de hero */
         .hero-mark {
             position: absolute;
@@ -277,6 +299,8 @@
             <li style="display:inline-block;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;margin:0 8px 6px 0;">✓ Baruch</li>
             <li style="display:inline-block;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;margin:0 8px 6px 0;">✓ Jakobus</li>
             <li style="display:inline-block;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;margin:0 8px 6px 0;">✓ 1 Makkabeeën</li>
+            <li style="display:inline-block;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;margin:0 8px 6px 0;">✓ Titus</li>
+            <li style="display:inline-block;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;margin:0 8px 6px 0;">✓ Kolossenzen</li>
         </ul>
         <p style="font-size:13px;color:#666;">De rest van de tekst is wel volledig vertaald en doorgelopen op systematische principes (zie <a href="principes.html">Wijzigingsprincipes</a>), maar nog niet handmatig vers-voor-vers nagelopen.</p>
         <div style="background:#fef3c7;border-left:4px solid #f59e0b;border-radius:0 6px 6px 0;padding:12px 16px;margin:14px 0;font-size:13px;line-height:1.6;color:#78350f;">
@@ -336,15 +360,15 @@
         <div class="ov-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0 24px;">
             <div style="background:#fff;border:1px solid #e5e1d8;border-top:3px solid var(--gold);border-radius:6px;padding:18px 14px;text-align:center;">
                 <div style="font-family:'EB Garamond',Georgia,serif;font-size:34px;font-weight:700;color:var(--navy);line-height:1;">82</div>
-                <div style="font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:0.05em;margin-top:6px;font-weight:600;">boeken <span style="opacity:0.7;font-weight:400;text-transform:none;letter-spacing:0;">waarvan <strong>16</strong> volledig nagelezen</span></div>
+                <div style="font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:0.05em;margin-top:6px;font-weight:600;">boeken <span style="opacity:0.7;font-weight:400;text-transform:none;letter-spacing:0;">waarvan <strong>18</strong> volledig nagelezen</span></div>
             </div>
             <div style="background:#fff;border:1px solid #e5e1d8;border-top:3px solid var(--gold);border-radius:6px;padding:18px 14px;text-align:center;">
                 <div style="font-family:'EB Garamond',Georgia,serif;font-size:34px;font-weight:700;color:var(--navy);line-height:1;">1.392</div>
-                <div style="font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:0.05em;margin-top:6px;font-weight:600;">hoofdstukken <span style="opacity:0.7;font-weight:400;text-transform:none;letter-spacing:0;">waarvan <strong>285</strong> nagelezen (20,5%)</span></div>
+                <div style="font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:0.05em;margin-top:6px;font-weight:600;">hoofdstukken <span style="opacity:0.7;font-weight:400;text-transform:none;letter-spacing:0;">waarvan <strong>292</strong> nagelezen (21,0%)</span></div>
             </div>
             <div style="background:#fff;border:1px solid #e5e1d8;border-top:3px solid var(--gold);border-radius:6px;padding:18px 14px;text-align:center;">
                 <div style="font-family:'EB Garamond',Georgia,serif;font-size:34px;font-weight:700;color:var(--navy);line-height:1;">37.235</div>
-                <div style="font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:0.05em;margin-top:6px;font-weight:600;">verzen <span style="opacity:0.7;font-weight:400;text-transform:none;letter-spacing:0;">waarvan <strong>7.366</strong> nagelezen (19,8%)</span></div>
+                <div style="font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:0.05em;margin-top:6px;font-weight:600;">verzen <span style="opacity:0.7;font-weight:400;text-transform:none;letter-spacing:0;">waarvan <strong>7.507</strong> nagelezen (20,2%)</span></div>
             </div>
             <div style="background:#fff;border:1px solid #e5e1d8;border-top:3px solid var(--gold);border-radius:6px;padding:18px 14px;text-align:center;">
                 <div style="font-family:'EB Garamond',Georgia,serif;font-size:34px;font-weight:700;color:var(--navy);line-height:1;">80.552</div>
