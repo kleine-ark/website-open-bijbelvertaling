@@ -293,6 +293,16 @@ const Highlight = {
                 this.addWordHighlight(bookId, ch, vs, range, color);
             }
             this.hidePalette();
+            // Na het arceren de tekstselectie opheffen — gebruiker wil
+            // vermoedelijk iets anders gaan doen (i.t.t. kopiëren, waar de
+            // selectie juist behouden blijft).
+            try {
+                const s = window.getSelection();
+                if (s) s.removeAllRanges();
+            } catch (err) { /* no-op */ }
+            if (window.VerseSelect && typeof window.VerseSelect.clearAll === 'function') {
+                window.VerseSelect.clearAll();
+            }
         });
         this.palette = pal;
         return pal;
