@@ -314,6 +314,8 @@ const VerseSelect = {
     asImage() {
         const data = this._buildRefAndText();
         if (!data) return;
+        // Verberg het highlight-kleurpalet wanneer de afbeeldings-modal opent
+        if (window.Highlight && typeof Highlight.hidePalette === 'function') Highlight.hidePalette();
         // Bouw modal als die nog niet bestaat
         let modal = document.getElementById('vers-image-modal');
         if (!modal) {
@@ -321,7 +323,7 @@ const VerseSelect = {
             modal.id = 'vers-image-modal';
             modal.style.cssText = 'position:fixed;inset:0;background:rgba(20,46,66,0.7);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;';
             modal.innerHTML = `
-                <div style="background:#fff;border-radius:8px;padding:18px;max-width:680px;width:92vw;max-height:92vh;overflow:auto;display:flex;flex-direction:column;align-items:center;gap:12px;">
+                <div class="vers-image-dialog" style="background:#fff;border-radius:8px;padding:18px;max-width:680px;width:92vw;max-height:92vh;overflow:auto;display:flex;flex-direction:column;align-items:center;gap:12px;">
                     <canvas id="vers-image-canvas" style="max-width:100%;height:auto;border:1px solid #e5e1d8;border-radius:6px;background:#f8f6f2;"></canvas>
                     <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
                         <button id="vers-image-download" style="background:#cba449;color:#fff;border:none;padding:9px 18px;border-radius:5px;font-weight:600;cursor:pointer;">Download als PNG</button>

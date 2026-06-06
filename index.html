@@ -92,7 +92,7 @@
                     this.setAttribute('aria-pressed', on);
                     this.classList.toggle('is-on', on);
                     const cb = document.querySelector('input[data-toggle-col=diff]'); if (cb) { cb.checked = on; cb.dispatchEvent(new Event('change',{bubbles:true})); }
-                ">Verschillen SV-OV</button>
+                ">Verschillen SV-OSV</button>
             </div>
         </div>
         <div id="book-intro"></div>
@@ -106,11 +106,11 @@
             <div data-col="margin1637">KT 1637</div>
             <div data-col="sv1888">SV 1888</div>
             <div data-col="marginSV1888">KT 1888</div>
-            <div data-col="2026">OV</div>
-            <div data-col="margin2026">OV KT</div>
+            <div data-col="2026">OSV</div>
+            <div data-col="margin2026">OSV KT</div>
             <div data-col="hebrew">Hebr/Grieks</div>
-            <div data-col="diff">Verschillen SV-OV</div>
-            <div data-col="noteDiff">Verschillen KT SV-OV</div>
+            <div data-col="diff">Verschillen SV-OSV</div>
+            <div data-col="noteDiff">Verschillen KT SV-OSV</div>
         </div>
 
         <div id="verses-container"></div>
@@ -474,7 +474,7 @@
         <div id="sidebar-right-body">
             <div class="opt-group">
                 <div class="opt-group-label">Godsnaam (OT)</div>
-                <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="ov"> JAHWEH / God JAHWEH <span class="hint">(OV)</span></label>
+                <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="ov"> JAHWEH / God JAHWEH <span class="hint">(OSV)</span></label>
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="klassiek"> HEERE / de HEERE God <span class="hint">(SV)</span></label>
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jehovah"> Jehovah / God Jehovah <span class="hint">(klassiek lat.)</span></label>
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jhwh"> יהוה / God יהוה <span class="hint">(Hebr.)</span></label>
@@ -499,7 +499,7 @@
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Sheol (OT)</div>
-                <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="dodenrijk"> Dodenrijk <span class="hint">(OV, modern)</span></label>
+                <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="dodenrijk"> Dodenrijk <span class="hint">(OSV, modern)</span></label>
                 <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="hel"> Hel <span class="hint">(SV-traditioneel)</span></label>
             </div>
             <div class="opt-group">
@@ -512,20 +512,20 @@
                 <div class="opt-group-label">Tekstedities</div>
                 <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
                 <label><input type="checkbox" data-toggle-col="sv1888"> SV 1888</label>
-                <label><input type="checkbox" data-toggle-col="2026" checked> OV</label>
+                <label><input type="checkbox" data-toggle-col="2026" checked> OSV</label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Kanttekeningen</div>
                 <label><input type="checkbox" data-toggle-col="margin1637"> KT 1637</label>
                 <label><input type="checkbox" data-toggle-col="marginSV1888"> KT 1888</label>
-                <label><input type="checkbox" data-toggle-col="margin2026"> OV KT (kolom)</label>
-                <label><input type="checkbox" id="toggle-kt-popup" checked onchange="document.body.classList.toggle('kt-popup-mode', this.checked)"> OV KT (popup)</label>
+                <label><input type="checkbox" data-toggle-col="margin2026"> OSV KT (kolom)</label>
+                <label><input type="checkbox" id="toggle-kt-popup" checked onchange="document.body.classList.toggle('kt-popup-mode', this.checked)"> OSV KT (popup)</label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Analyse</div>
                 <label><input type="checkbox" data-toggle-col="hebrew"> Hebr/Grieks</label>
-                <label><input type="checkbox" data-toggle-col="diff"> Verschillen SV-OV</label>
-                <label><input type="checkbox" data-toggle-col="noteDiff"> Verschillen KT SV-OV</label>
+                <label><input type="checkbox" data-toggle-col="diff"> Verschillen SV-OSV</label>
+                <label><input type="checkbox" data-toggle-col="noteDiff"> Verschillen KT SV-OSV</label>
                 <label><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"> Tags</label>
             </div>
             <div class="opt-group">
@@ -737,6 +737,7 @@
     <script src="js/firebase-config.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/cloud-highlights.js"></script>
+    <script src="js/cloud-opties.js"></script>
     <script src="js/feedback.js"></script>
 
     <!-- Service Worker: offline-cache + instant 2e bezoek -->
