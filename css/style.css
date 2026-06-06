@@ -3474,3 +3474,150 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 
 /* Span/em inline blokken in kanttekeningen */
 :root[data-theme="donker"] .kt-explainer { color: var(--text-secondary) !important; }
+
+/* ========================================================================
+   DONKER THEMA — agressieve "alles zwart" pass voor Tekst-pagina (desktop + mobile)
+   ======================================================================== */
+
+/* Content-topbar (sticky balk met boek/hoofdstuk-titel) */
+:root[data-theme="donker"] #content-topbar {
+    background: var(--bg-surface) !important;
+    border-bottom-color: var(--border-default) !important;
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] #content-topbar #chapter-title { color: var(--text-primary) !important; }
+
+/* Hoofd-nav-balken (book-nav, chapter-nav) */
+:root[data-theme="donker"] #book-nav,
+:root[data-theme="donker"] #chapter-nav,
+:root[data-theme="donker"] .nav-bar,
+:root[data-theme="donker"] #app-header {
+    background: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-default) !important;
+}
+:root[data-theme="donker"] .nav-bar button,
+:root[data-theme="donker"] .nav-bar a {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] .nav-bar button:hover,
+:root[data-theme="donker"] .nav-bar a:hover {
+    background: var(--bg-surface-alt) !important;
+}
+
+/* Sidebar (links) — momenteel navy; in donker mag het iets donkerder/contrast */
+:root[data-theme="donker"] #sidebar {
+    background: var(--bg-surface-alt) !important;
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] #sidebar #sidebar-tree,
+:root[data-theme="donker"] #sidebar input,
+:root[data-theme="donker"] #sidebar button {
+    color: var(--text-primary) !important;
+}
+
+/* Mobile-topbar */
+:root[data-theme="donker"] #mobile-topbar {
+    background: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-default) !important;
+}
+:root[data-theme="donker"] #mobile-topbar button,
+:root[data-theme="donker"] .mobile-pick-btn,
+:root[data-theme="donker"] .mobile-toggle-btn,
+:root[data-theme="donker"] #mobile-opties-btn,
+:root[data-theme="donker"] #mobile-book-btn,
+:root[data-theme="donker"] #mobile-kt-btn {
+    background: var(--bg-surface-alt) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-default) !important;
+}
+
+/* Mobile picker overlay */
+:root[data-theme="donker"] #mobile-picker,
+:root[data-theme="donker"] .mp-overlay {
+    background: var(--bg-page) !important;
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] .mp-header {
+    background: var(--bg-surface) !important;
+    border-bottom-color: var(--border-default) !important;
+}
+:root[data-theme="donker"] .mp-title { color: var(--text-primary) !important; }
+:root[data-theme="donker"] .mp-back,
+:root[data-theme="donker"] .mp-close { color: var(--text-primary) !important; }
+:root[data-theme="donker"] .mp-body { background: var(--bg-page) !important; }
+:root[data-theme="donker"] .mp-body button,
+:root[data-theme="donker"] .mp-body a {
+    background: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-default) !important;
+}
+
+/* Toolbar (boven, opslaan/exporteer/etc.) */
+:root[data-theme="donker"] #toolbar {
+    background: var(--bg-surface) !important;
+    border-color: var(--border-default) !important;
+}
+:root[data-theme="donker"] #toolbar button {
+    background: var(--bg-surface-alt) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-default) !important;
+}
+
+/* Progress-bar */
+:root[data-theme="donker"] #progress-bar {
+    background: var(--bg-surface-alt) !important;
+}
+:root[data-theme="donker"] #progress-fill {
+    background: var(--gold) !important;
+}
+:root[data-theme="donker"] #progress-text {
+    color: var(--text-secondary) !important;
+}
+
+/* Chapter footer (audio etc.) */
+:root[data-theme="donker"] #chapter-footer,
+:root[data-theme="donker"] .chf-btn,
+:root[data-theme="donker"] .chf-play {
+    background: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-default) !important;
+}
+
+/* Algemene catch-all: alles wat inline parchment-bg heeft */
+:root[data-theme="donker"] [style*="#f8f6f2"],
+:root[data-theme="donker"] [style*="#faf8f3"],
+:root[data-theme="donker"] [style*="#f5f2ed"],
+:root[data-theme="donker"] [style*="#e5e1d8"] {
+    background-color: var(--bg-surface) !important;
+}
+
+/* Inline #fff backgrounds (modals, kaarten) */
+:root[data-theme="donker"] [style*="background:#fff"],
+:root[data-theme="donker"] [style*="background: #fff"],
+:root[data-theme="donker"] [style*="background:white"],
+:root[data-theme="donker"] [style*="background: white"] {
+    background: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Tekst color overrides voor inline grijs/donker */
+:root[data-theme="donker"] [style*="color:#333"],
+:root[data-theme="donker"] [style*="color: #333"],
+:root[data-theme="donker"] [style*="color:#000"],
+:root[data-theme="donker"] [style*="color:#142e42"] {
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] [style*="color:#666"],
+:root[data-theme="donker"] [style*="color:#555"],
+:root[data-theme="donker"] [style*="color:#777"],
+:root[data-theme="donker"] [style*="color:#888"] {
+    color: var(--text-secondary) !important;
+}
+
+/* Topnav blijft navy — al donker. Voeg lichte accent voor zichtbaarheid in donker thema. */
+:root[data-theme="donker"] #topnav {
+    border-bottom: 1px solid var(--border-default);
+}
