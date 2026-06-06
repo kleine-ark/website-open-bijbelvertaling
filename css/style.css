@@ -3216,3 +3216,239 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     #verses-container .verse-cell.col-hebrew::before { content: 'Hebr/Grieks'; display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--teal); font-weight: 600; margin-top: 8px; margin-bottom: 4px; }
     #verses-container .verse-cell.col-noteDiff::before { content: 'Verschillen KT'; display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--teal); font-weight: 600; margin-top: 8px; margin-bottom: 4px; }
 }
+
+/* ========================================================================
+   DONKER THEMA — uitgebreide overrides
+   Hoge specificiteit + !important om hardcoded inline-styles in HTML te overrulen.
+   Brand-kleuren (--navy, --gold) blijven herkenbaar; alleen achtergronden/tekst
+   en grijswaarden worden geïnverteerd.
+   ======================================================================== */
+
+:root[data-theme="donker"] {
+    color-scheme: dark;
+}
+
+/* Hoofd-layout */
+:root[data-theme="donker"] body,
+:root[data-theme="donker"] #app-container,
+:root[data-theme="donker"] #main-wrapper,
+:root[data-theme="donker"] #content,
+:root[data-theme="donker"] main {
+    background: var(--bg-page) !important;
+    color: var(--text-primary);
+}
+
+/* Topnav blijft navy (al donker, herkenbaar brand) — geen wijziging */
+
+/* Linker sidebar (boeknavigatie) — al navy, behoud */
+/* Rechter sidebar (Opties) */
+:root[data-theme="donker"] #sidebar-right {
+    background: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+    border-left-color: var(--border-default) !important;
+}
+:root[data-theme="donker"] #sidebar-right-header {
+    background: var(--bg-surface-alt) !important;
+    border-bottom-color: var(--border-default) !important;
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] #sidebar-right .opt-group-label {
+    color: var(--text-secondary) !important;
+}
+:root[data-theme="donker"] #sidebar-right label {
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] #sidebar-right .hint {
+    color: var(--text-muted) !important;
+}
+
+/* Boek-intro + chapter-intro */
+:root[data-theme="donker"] #book-intro,
+:root[data-theme="donker"] #chapter-intro {
+    color: var(--text-secondary) !important;
+    background: rgba(255,255,255,0.02) !important;
+}
+
+/* Vers-rij + alle vers-cellen */
+:root[data-theme="donker"] #verses-container,
+:root[data-theme="donker"] .verse-row {
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] .verse-row:hover {
+    background: rgba(255,255,255,0.03) !important;
+}
+:root[data-theme="donker"] .verse-cell,
+:root[data-theme="donker"] .text-cell,
+:root[data-theme="donker"] .verse-text,
+:root[data-theme="donker"] [class*="col-"] {
+    color: var(--text-primary);
+}
+:root[data-theme="donker"] .verse-num {
+    color: var(--text-muted) !important;
+}
+
+/* Kolom-headers */
+:root[data-theme="donker"] .column-headers {
+    background: var(--bg-surface-alt) !important;
+    color: var(--text-secondary) !important;
+    border-color: var(--border-default) !important;
+}
+:root[data-theme="donker"] .column-headers > div {
+    color: var(--text-secondary) !important;
+}
+
+/* Content topbar (h2 chapter-title) */
+:root[data-theme="donker"] #content-topbar,
+:root[data-theme="donker"] #content-topbar #chapter-title {
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] #chapter-title {
+    color: var(--text-primary) !important;
+}
+
+/* Chapter footer (audio/nav) */
+:root[data-theme="donker"] #chapter-footer {
+    background: var(--bg-surface) !important;
+    border-top-color: var(--border-default) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Knoppen — algemeen */
+:root[data-theme="donker"] button:not(.topnav-hamburger):not(#topnav-hamburger):not([class*="navy"]) {
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+    border-color: var(--border-default);
+}
+:root[data-theme="donker"] button:hover {
+    background: var(--bg-elevated);
+}
+:root[data-theme="donker"] .quickfilter-btn {
+    background: var(--bg-surface-alt) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-default) !important;
+}
+:root[data-theme="donker"] .quickfilter-btn.is-on,
+:root[data-theme="donker"] .quickfilter-btn[aria-pressed="true"] {
+    background: var(--gold) !important;
+    color: var(--bg-page) !important;
+}
+
+/* Inputs/zoekvelden */
+:root[data-theme="donker"] input[type="text"],
+:root[data-theme="donker"] input[type="search"],
+:root[data-theme="donker"] input[type="email"],
+:root[data-theme="donker"] textarea,
+:root[data-theme="donker"] select {
+    background: var(--bg-surface-alt) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-default) !important;
+}
+:root[data-theme="donker"] input::placeholder,
+:root[data-theme="donker"] textarea::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Modals/popups met hardcoded background:#fff */
+:root[data-theme="donker"] div[style*="background:#fff"],
+:root[data-theme="donker"] div[style*="background: #fff"] {
+    background: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] div[style*="color:#333"] {
+    color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] div[style*="color:#666"],
+:root[data-theme="donker"] div[style*="color:#555"],
+:root[data-theme="donker"] span[style*="color:#666"],
+:root[data-theme="donker"] span[style*="color:#555"] {
+    color: var(--text-secondary) !important;
+}
+
+/* Begrippen-popover */
+:root[data-theme="donker"] #begrip-popover {
+    background: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-default) !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5) !important;
+}
+:root[data-theme="donker"] #begrip-woord {
+    color: var(--gold) !important;
+}
+:root[data-theme="donker"] #begrip-uitleg,
+:root[data-theme="donker"] #begrip-cat,
+:root[data-theme="donker"] #begrip-ref {
+    color: var(--text-primary) !important;
+}
+
+/* KT-popup (kanttekeningen) */
+:root[data-theme="donker"] .kt-popup,
+:root[data-theme="donker"] [class*="kt-"][class*="popup"] {
+    background: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-default) !important;
+}
+
+/* Phrase-diff (verschillen) */
+:root[data-theme="donker"] .phrase-removed { color: #ff7a85 !important; background: rgba(255,122,133,0.10) !important; }
+:root[data-theme="donker"] .phrase-added { color: #7ed27a !important; background: rgba(126,210,122,0.10) !important; }
+
+/* Verse-row hover/selection */
+:root[data-theme="donker"] .verse-row.selected,
+:root[data-theme="donker"] .verse-row[data-selected="true"] {
+    background: rgba(203,164,73,0.15) !important;
+}
+
+/* Audio-player */
+:root[data-theme="donker"] #audio-scrubber {
+    background: var(--bg-surface-alt) !important;
+}
+
+/* Hr en dividers */
+:root[data-theme="donker"] hr { border-color: var(--border-default) !important; }
+
+/* Tabel-styling (statistieken / principes pagina) */
+:root[data-theme="donker"] table { background: transparent !important; color: var(--text-primary) !important; }
+:root[data-theme="donker"] table th { background: var(--bg-surface-alt) !important; color: var(--text-primary) !important; }
+:root[data-theme="donker"] table td { border-color: var(--border-default) !important; }
+
+/* Side navigation (in iframes — statistieken etc.) */
+:root[data-theme="donker"] nav[style*="background:#f5f2ed"],
+:root[data-theme="donker"] nav[style*="background: #f5f2ed"] {
+    background: var(--bg-surface) !important;
+}
+:root[data-theme="donker"] nav[style*="background:#f5f2ed"] a,
+:root[data-theme="donker"] nav[style*="background: #f5f2ed"] a {
+    color: var(--text-primary) !important;
+}
+
+/* Statistieken stat-cards */
+:root[data-theme="donker"] .stat-card { background: var(--bg-surface) !important; color: var(--text-primary) !important; border-color: var(--border-default) !important; }
+:root[data-theme="donker"] .stat-number { color: var(--text-primary) !important; }
+:root[data-theme="donker"] .stat-label { color: var(--text-secondary) !important; }
+
+/* Principes-card */
+:root[data-theme="donker"] .principe-card { background: var(--bg-surface) !important; color: var(--text-primary) !important; border-color: var(--border-default) !important; }
+:root[data-theme="donker"] .principe-header { color: var(--text-primary) !important; }
+:root[data-theme="donker"] .principe-count { color: var(--text-secondary) !important; }
+
+/* H2/h3 onder pagina */
+:root[data-theme="donker"] h1, :root[data-theme="donker"] h2, :root[data-theme="donker"] h3, :root[data-theme="donker"] h4 { color: var(--text-primary); }
+:root[data-theme="donker"] .subtitle { color: var(--text-muted) !important; }
+:root[data-theme="donker"] em { color: inherit; }
+
+/* AI-concept banner — al een gele badge, blijft */
+
+/* Page-paginas (over-ov/uitgangspunten/etc.) */
+:root[data-theme="donker"] .page,
+:root[data-theme="donker"] .page p,
+:root[data-theme="donker"] .page li { color: var(--text-primary); }
+:root[data-theme="donker"] .page p { color: var(--text-primary); }
+:root[data-theme="donker"] .highlight {
+    background: rgba(203,164,73,0.08) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Topnav-link kleuren al via rgba — blijven werken */
+
+/* Span/em inline blokken in kanttekeningen */
+:root[data-theme="donker"] .kt-explainer { color: var(--text-secondary) !important; }
