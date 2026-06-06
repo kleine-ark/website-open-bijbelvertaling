@@ -2056,15 +2056,27 @@ body.dyslexia-mode .verses-table tr:nth-child(even) td {
     color: var(--gold);
 }
 
-/* === Verse selectie — subtiel licht-blauw === */
+/* === Verse selectie — underline i.p.v. arcering === */
 .verse-row.verse-selected {
-    background: rgba(96, 165, 250, 0.12) !important;
+    background: transparent !important;
     outline: none;
 }
-.verse-row.verse-selected .verse-num {
-    background: rgba(96, 165, 250, 0.22);
-    color: var(--navy);
+.verse-row.verse-selected .col-2026,
+.verse-row.verse-selected .verse-text {
+    text-decoration: underline;
+    text-decoration-color: rgba(96, 165, 250, 0.85);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 }
+.verse-row.verse-selected .verse-num {
+    background: transparent;
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-color: rgba(96, 165, 250, 0.85);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+:root[data-theme="donker"] .verse-row.verse-selected .verse-num { color: var(--text-primary); }
 /* Browser-native ::selection: zachter licht-blauw i.p.v. browser-default */
 .verse-row .col-2026 ::selection,
 .verse-row .col-2026::selection {

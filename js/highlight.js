@@ -398,6 +398,23 @@ const Highlight = {
         this.load();
         // Mouseup wereldwijd: filter op col-2026 in handler
         document.addEventListener('mouseup', (e) => this.handleMouseUp(e));
+        // Mobile/touch: touchend vuurt waar mouseup soms niet doet bij text-selectie
+        document.addEventListener('touchend', (e) => {
+            // Iets vertragen zodat het OS de selectie heeft afgerond
+            setTimeout(() => this.handleMouseUp(e), 50);
+        }, { passive: true });
+        // Fallback voor pen/touch op iOS: selectionchange luistert op het document
+        let selDebounce = null;
+        document.addEventListener('selectionchange', () => {
+            clearTimeout(selDebounce);
+            selDebounce = setTimeout(() => {
+                const sel = window.getSelection();
+                if (!sel || sel.isCollapsed || !sel.toString().trim()) return;
+                // Alleen tonen als palette nog niet open is voor deze selectie
+                if (this.palette && this.palette.style.display === 'flex') return;
+                this.handleMouseUp({ target: sel.anchorNode && sel.anchorNode.parentElement || document.body });
+            }, 220);
+        });
         // Klik op bestaande markering → die markering wissen (alleen zonder selectie)
         document.addEventListener('click', (e) => this.handleMarkClick(e));
         // Klik buiten palette → verbergen
