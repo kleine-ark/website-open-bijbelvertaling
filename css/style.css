@@ -2103,11 +2103,22 @@ body.dyslexia-mode .verses-table tr:nth-child(even) td {
     text-underline-offset: 3px;
 }
 :root[data-theme="donker"] .verse-row.verse-selected .verse-num { color: var(--text-primary); }
-/* Browser-native ::selection: zachter licht-blauw i.p.v. browser-default */
+/* Browser-native ::selection: geen achtergrond, alleen onderstreping */
 .verse-row .col-2026 ::selection,
 .verse-row .col-2026::selection {
-    background: rgba(96, 165, 250, 0.30);
+    background: transparent;
     color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(96, 165, 250, 0.85);
+    text-decoration-thickness: 2px;
+}
+.verse-row .col-2026 ::-moz-selection,
+.verse-row .col-2026::-moz-selection {
+    background: transparent;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(96, 165, 250, 0.85);
+    text-decoration-thickness: 2px;
 }
 
 /* Kopieer-toolbar — alleen zichtbaar bij selectie */
@@ -3467,10 +3478,10 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 :root[data-theme="donker"] .phrase-removed { color: #ff7a85 !important; background: rgba(255,122,133,0.10) !important; }
 :root[data-theme="donker"] .phrase-added { color: #7ed27a !important; background: rgba(126,210,122,0.10) !important; }
 
-/* Verse-row hover/selection */
+/* Verse-row selection — geen background, alleen underline (afgehandeld in .verse-selected hierboven) */
 :root[data-theme="donker"] .verse-row.selected,
 :root[data-theme="donker"] .verse-row[data-selected="true"] {
-    background: rgba(203,164,73,0.15) !important;
+    background: transparent !important;
 }
 
 /* Audio-player */
