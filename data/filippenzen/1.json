@@ -163,6 +163,11 @@
       "text1637_html": "<i>PAULUS</i> ende <sup class=\"note-marker\" data-note=\"1\">1</sup> Timotheus, dienstknechten Iesu Christi, alle den heyligen in Christo Iesu die te <sup class=\"note-marker\" data-note=\"2\">2</sup> Philippis zijn, met de <sup class=\"note-marker\" data-note=\"3\">3</sup> Opsienders ende <sup class=\"note-marker\" data-note=\"4\">4</sup> Diakenen:",
       "phraseDiff": [
         {
+          "old": "",
+          "new": "aan",
+          "principe": null
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
@@ -269,7 +274,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
+          "principe": "N1"
         }
       ]
     },
@@ -347,6 +352,11 @@
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Ik dank mijn God, zo dikwijls als ik uwer gedenk.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Ick dancke mijnen Godt soo dickwils als ick uwer gedencke,",
       "phraseDiff": [
+        {
+          "old": "zo dikwijls",
+          "new": "telkens",
+          "principe": "V605"
+        },
         {
           "old": "uwer",
           "new": "aan U",
@@ -444,8 +454,8 @@
       "text1637_html": "(Alletijt in alle mijnen gebede voor u allen, met blijdschap ’t gebedt doende)",
       "phraseDiff": [
         {
-          "old": "allen",
-          "new": "alle",
+          "old": "(Te allen tijd",
+          "new": "(Altijd",
           "principe": "V532"
         }
       ]
@@ -571,7 +581,7 @@
         {
           "old": "den eersten",
           "new": "de eerste",
-          "principe": "O20"
+          "principe": "N1"
         }
       ]
     },
@@ -721,7 +731,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "V420"
+          "principe": "N1"
         }
       ]
     },
@@ -994,9 +1004,14 @@
           "principe": null
         },
         {
-          "old": "gij,",
-          "new": "u,",
+          "old": "gij, beide",
+          "new": "u, zowel",
           "principe": "A1"
+        },
+        {
+          "old": "en",
+          "new": "als",
+          "principe": null
         },
         {
           "old": "gij",
@@ -1975,12 +1990,12 @@
         {
           "old": "der broederen",
           "new": "van de broeders",
-          "principe": "O22b"
+          "principe": "N2"
         },
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
+          "principe": "N1"
         }
       ]
     },
@@ -2675,8 +2690,13 @@
       "text1637_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> Want ick weet <sup class=\"note-marker\" data-note=\"54\">54</sup> dat dit my ter saligheydt gedyen sal <sup class=\"note-marker\" data-note=\"55\">55</sup> door uw’ gebedt, ende toe-brenginge des Gheests Iesu Christi,",
       "phraseDiff": [
         {
-          "old": "des Geestes",
-          "new": "van de Geest",
+          "old": "gedijen",
+          "new": "strekken",
+          "principe": "V607"
+        },
+        {
+          "old": "toebrenging des Geestes",
+          "new": "ondersteuning van de Geest",
           "principe": "N3"
         }
       ]
@@ -2931,18 +2951,8 @@
       "text1637_html": "Volgens mijne <sup class=\"note-marker\" data-note=\"56\">56</sup> ernstige verwachtinge ende hope, <sup class=\"note-marker\" data-note=\"h\">h</sup> dat ick in geene sake en sal <sup class=\"note-marker\" data-note=\"57\">57</sup> beschaemt worden: maer [<i>dat</i>] in alle vrymoedicheydt, <sup class=\"note-marker\" data-note=\"58\">58</sup> gelijck alle tijdt, alsoo oock nu Christus sal <sup class=\"note-marker\" data-note=\"59\">59</sup> groot gemaeckt worden <sup class=\"note-marker\" data-note=\"60\">60</sup> in mijn lichaem, <sup class=\"note-marker\" data-note=\"61\">61</sup> het zy door het leven, <sup class=\"note-marker\" data-note=\"62\">62</sup> het zy door de doot.",
       "phraseDiff": [
         {
-          "old": "gelijk",
-          "new": "zoals",
-          "principe": null
-        },
-        {
-          "old": "allen",
-          "new": "alle",
-          "principe": "V532"
-        },
-        {
-          "old": "alzo",
-          "new": "zo",
+          "old": "gelijk te allen tijd, alzo",
+          "new": "zoals altijd, zo",
           "principe": "V42"
         },
         {
@@ -3038,7 +3048,14 @@
       ],
       "text2026_html": "<sup class=\"note-marker\" data-note=\"63\">63</sup> Want<sup class=\"note-marker\" data-note=\"64\">64</sup> het leven is mij Christus, en<sup class=\"note-marker\" data-note=\"65\">65</sup> het sterven is mij winst.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"63\">63</sup> Want<sup class=\"note-marker\" data-note=\"64\">64</sup> het leven is mij Christus, en<sup class=\"note-marker\" data-note=\"65\">65</sup> het sterven is mij gewin.",
-      "text1637_html": "<sup class=\"note-marker\" data-note=\"63\">63</sup> Want <sup class=\"note-marker\" data-note=\"64\">64</sup> het leven is my Christus, ende <sup class=\"note-marker\" data-note=\"65\">65</sup> het sterven is [<i>my</i>] gewin."
+      "text1637_html": "<sup class=\"note-marker\" data-note=\"63\">63</sup> Want <sup class=\"note-marker\" data-note=\"64\">64</sup> het leven is my Christus, ende <sup class=\"note-marker\" data-note=\"65\">65</sup> het sterven is [<i>my</i>] gewin.",
+      "phraseDiff": [
+        {
+          "old": "gewin.",
+          "new": "winst.",
+          "principe": "V624"
+        }
+      ]
     },
     {
       "number": 22,
@@ -3419,7 +3436,14 @@
       ],
       "text2026_html": "Maar<sup class=\"note-marker\" data-note=\"75\">75</sup> in het vlees te blijven, is noodzakelijker<sup class=\"note-marker\" data-note=\"76\">76</sup> om uwentwil.",
       "textSV1888_html": "Maar<sup class=\"note-marker\" data-note=\"75\">75</sup> in het vlees te blijven, is nodiger<sup class=\"note-marker\" data-note=\"76\">76</sup> om uwentwil.",
-      "text1637_html": "Maer <sup class=\"note-marker\" data-note=\"75\">75</sup> in den vleesche te blijven, is noodiger <sup class=\"note-marker\" data-note=\"76\">76</sup> om uwent wille."
+      "text1637_html": "Maer <sup class=\"note-marker\" data-note=\"75\">75</sup> in den vleesche te blijven, is noodiger <sup class=\"note-marker\" data-note=\"76\">76</sup> om uwent wille.",
+      "phraseDiff": [
+        {
+          "old": "nodiger",
+          "new": "noodzakelijker",
+          "principe": "V609"
+        }
+      ]
     },
     {
       "number": 25,
@@ -3723,7 +3747,7 @@
         {
           "old": "tegenwoordigheid wederom",
           "new": "aanwezigheid opnieuw",
-          "principe": "V16"
+          "principe": "V6"
         }
       ]
     },
@@ -3962,7 +3986,12 @@
         {
           "old": "waardiglijk",
           "new": "waardig",
-          "principe": "V169"
+          "principe": "V35"
+        },
+        {
+          "old": "moge",
+          "new": "mag",
+          "principe": "V623"
         },
         {
           "old": "gij",
@@ -4429,12 +4458,12 @@
       "phraseDiff": [
         {
           "old": "Denzelfden",
-          "new": "Denzelfde",
+          "new": "Deze",
           "principe": "V292"
         },
         {
-          "old": "gij",
-          "new": "u",
+          "old": "hoedanigen gij",
+          "new": "die u",
           "principe": "A1"
         }
       ]

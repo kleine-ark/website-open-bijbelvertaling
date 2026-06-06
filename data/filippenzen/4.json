@@ -175,7 +175,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
+          "principe": "N1"
         }
       ]
     },
@@ -285,7 +285,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
+          "principe": "N1"
         }
       ]
     },
@@ -564,7 +564,7 @@
         {
           "old": "",
           "new": "samen",
-          "principe": "N4"
+          "principe": null
         },
         {
           "old": "in",
@@ -582,14 +582,14 @@
           "principe": null
         },
         {
-          "old": "de andere",
-          "new": "",
+          "old": "",
+          "new": "mijn overige medearbeiders, van wie",
           "principe": null
         },
         {
-          "old": "",
-          "new": "overige",
-          "principe": "N4"
+          "old": "andere mijn medearbeiders, welker",
+          "new": "",
+          "principe": "V212"
         },
         {
           "old": "des levens.",
@@ -681,16 +681,11 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
+          "principe": "N1"
         },
         {
-          "old": "allen",
-          "new": "alle",
-          "principe": "V532"
-        },
-        {
-          "old": "wederom",
-          "new": "opnieuw",
+          "old": "te allen tijd; wederom",
+          "new": "altijd; opnieuw",
           "principe": "V6"
         }
       ]
@@ -1522,7 +1517,7 @@
         {
           "old": "Hetgeen gij",
           "new": "Wat u",
-          "principe": "V4"
+          "principe": "A1"
         },
         {
           "old": "des vredes",
@@ -1712,7 +1707,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
+          "principe": "N1"
         },
         {
           "old": "gij",
@@ -1720,14 +1715,9 @@
           "principe": "A1"
         },
         {
-          "old": "wederom",
-          "new": "opnieuw",
+          "old": "wederom verwakkerd zijt",
+          "new": "opnieuw wakker geworden bent",
           "principe": "V6"
-        },
-        {
-          "old": "zijt",
-          "new": "bent",
-          "principe": null
         },
         {
           "old": "gij",
@@ -1871,6 +1861,11 @@
       ],
       "textSV1888_html": "Niet dat ik dit<sup class=\"note-marker\" data-note=\"45\">45</sup> zeg vanwege gebrek; want ik<sup class=\"note-marker\" data-note=\"46\">46</sup><sup class=\"note-marker\" data-note=\"k\">k</sup> heb geleerd<sup class=\"note-marker\" data-note=\"47\">47</sup> vergenoegd te zijn<sup class=\"note-marker\" data-note=\"48\">48</sup> in hetgeen ik ben.",
       "phraseDiff": [
+        {
+          "old": "vergenoegd",
+          "new": "tevreden",
+          "principe": "V633"
+        },
         {
           "old": "hetgeen",
           "new": "wat",
@@ -2048,7 +2043,29 @@
           "gloss": "〔to lack"
         }
       ],
-      "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"49\">49</sup> ik weet<sup class=\"note-marker\" data-note=\"50\">50</sup><sup class=\"note-marker\" data-note=\"l\">l</sup> vernederd te worden, ik weet ook<sup class=\"note-marker\" data-note=\"51\">51</sup> overvloed te hebben; alleszins en in alles ben ik<sup class=\"note-marker\" data-note=\"52\">52</sup> onderwezen, beide verzadigd te zijn en honger te lijden, beide overvloed te hebben en gebrek te lijden."
+      "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"49\">49</sup> ik weet<sup class=\"note-marker\" data-note=\"50\">50</sup><sup class=\"note-marker\" data-note=\"l\">l</sup> vernederd te worden, ik weet ook<sup class=\"note-marker\" data-note=\"51\">51</sup> overvloed te hebben; alleszins en in alles ben ik<sup class=\"note-marker\" data-note=\"52\">52</sup> onderwezen, beide verzadigd te zijn en honger te lijden, beide overvloed te hebben en gebrek te lijden.",
+      "phraseDiff": [
+        {
+          "old": "beide",
+          "new": "zowel",
+          "principe": null
+        },
+        {
+          "old": "en",
+          "new": "als",
+          "principe": null
+        },
+        {
+          "old": "beide",
+          "new": "zowel",
+          "principe": null
+        },
+        {
+          "old": "en",
+          "new": "als",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 13,
@@ -2439,6 +2456,11 @@
           "principe": "N3"
         },
         {
+          "old": "uitgaaf",
+          "new": "uitgaven",
+          "principe": "V634"
+        },
+        {
           "old": "gij",
           "new": "u",
           "principe": "A1"
@@ -2551,6 +2573,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "nooddruft.",
+          "new": "wat ik nodig had.",
+          "principe": null
         }
       ]
     },
@@ -3140,7 +3167,7 @@
         {
           "old": "Onzen",
           "new": "Onze",
-          "principe": "N8"
+          "principe": null
         }
       ]
     },
@@ -3337,8 +3364,8 @@
       "textSV1888_html": "Al de heiligen groeten u, en meest die<sup class=\"note-marker\" data-note=\"78\">78</sup> van het huis des keizers zijn.",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
+          "old": "des keizers",
+          "new": "van de keizer",
           "principe": "N3"
         }
       ]

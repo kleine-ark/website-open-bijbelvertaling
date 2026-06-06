@@ -243,14 +243,9 @@
           "principe": "V62"
         },
         {
-          "old": "gij door dezelve",
-          "new": "u daardoor",
-          "principe": "O3"
-        },
-        {
-          "old": "opwassen;",
-          "new": "verrijzen;",
-          "principe": "V253"
+          "old": "gij door dezelve moogt opwassen;",
+          "new": "u daardoor mag verrijzen;",
+          "principe": "A1"
         }
       ]
     },
@@ -327,7 +322,7 @@
         {
           "old": "Indien gij",
           "new": "Als u",
-          "principe": "V41"
+          "principe": "A1"
         }
       ]
     },
@@ -459,7 +454,7 @@
         {
           "old": "levenden",
           "new": "levende",
-          "principe": "V390"
+          "principe": null
         }
       ]
     },
@@ -990,22 +985,27 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "N4"
+          "principe": "N1"
         },
         {
           "old": "Dien",
           "new": "Die",
-          "principe": "N4"
+          "principe": null
+        },
+        {
+          "old": "bouwlieden",
+          "new": "bouwers",
+          "principe": "V544"
         },
         {
           "old": "des",
           "new": "van de",
-          "principe": "V501"
+          "principe": "N3"
         },
         {
           "old": "des",
           "new": "van de",
-          "principe": "V501"
+          "principe": "N3"
         },
         {
           "old": "der",
@@ -1365,7 +1365,7 @@
         {
           "old": "gij zoudt",
           "new": "u zou",
-          "principe": "V202"
+          "principe": "A1"
         },
         {
           "old": "Desgenen,",
@@ -1990,13 +1990,13 @@
       "phraseDiff": [
         {
           "old": "om des Heeren wil;",
-          "new": "omwille van de Heere;",
-          "principe": "G2"
+          "new": "vanwege de Heere;",
+          "principe": "N3"
         },
         {
           "old": "den",
           "new": "de",
-          "principe": "N1c"
+          "principe": "N1"
         }
       ]
     },
@@ -2100,7 +2100,7 @@
         {
           "old": "der",
           "new": "van de",
-          "principe": "V302"
+          "principe": "N2"
         },
         {
           "old": "dergenen,",
@@ -2488,7 +2488,7 @@
         {
           "old": "eert den",
           "new": "eer de",
-          "principe": "V272"
+          "principe": "N1"
         }
       ]
     },
@@ -2942,7 +2942,7 @@
         {
           "old": "indien gij",
           "new": "als u",
-          "principe": "V41"
+          "principe": "A1"
         },
         {
           "old": "gij",
@@ -2952,7 +2952,7 @@
         {
           "old": "indien gij",
           "new": "als u",
-          "principe": "V41"
+          "principe": "A1"
         },
         {
           "old": "gij",
@@ -3320,7 +3320,7 @@
         {
           "old": "Dien,",
           "new": "Die,",
-          "principe": "N4"
+          "principe": null
         },
         {
           "old": "rechtvaardiglijk",

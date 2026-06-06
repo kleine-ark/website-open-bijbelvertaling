@@ -130,12 +130,12 @@
         {
           "old": "der",
           "new": "van de",
-          "principe": "V55"
+          "principe": "N2"
         },
         {
           "old": "der",
           "new": "van de",
-          "principe": "V55"
+          "principe": "N2"
         },
         {
           "old": "derwaarts",
@@ -312,7 +312,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
+          "principe": "N1"
         }
       ]
     },
@@ -750,7 +750,7 @@
         {
           "old": "",
           "new": "JAHWEH van",
-          "principe": "V436"
+          "principe": null
         },
         {
           "old": "HEERE des Egyptenaars",
@@ -765,7 +765,7 @@
         {
           "old": "des HEEREN",
           "new": "van JAHWEH",
-          "principe": "G2"
+          "principe": "N3"
         }
       ]
     },
@@ -1582,7 +1582,7 @@
         {
           "old": "lieden des huizes",
           "new": "mensen van de huize",
-          "principe": "V10"
+          "principe": "N3"
         }
       ]
     },
@@ -1907,7 +1907,12 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "V10"
+          "principe": "N1"
+        },
+        {
+          "old": "luider",
+          "new": "luide",
+          "principe": null
         }
       ]
     },
@@ -2038,7 +2043,14 @@
         }
       ],
       "text2026_html": "En zij legde zijn kleed bij zich, totdat zijn heer in zijn huis kwam.",
-      "text1637_html": "Ende sy leyde sijn kleet by haer, tot dat sijn heere in sijn huys quam."
+      "text1637_html": "Ende sy leyde sijn kleet by haer, tot dat sijn heere in sijn huys quam.",
+      "phraseDiff": [
+        {
+          "old": "leide",
+          "new": "legde",
+          "principe": "V554"
+        }
+      ]
     },
     {
       "number": 17,
@@ -2504,8 +2516,13 @@
       "phraseDiff": [
         {
           "old": "des konings",
-          "new": "van de koning",
+          "new": "de",
           "principe": "N3"
+        },
+        {
+          "old": "",
+          "new": "van de koning",
+          "principe": null
         },
         {
           "old": "alzo",
@@ -2613,7 +2630,7 @@
         {
           "old": "den",
           "new": "de",
-          "principe": "G1"
+          "principe": "N1"
         }
       ]
     },
@@ -2861,6 +2878,11 @@
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
+        },
+        {
+          "old": "gedijen.",
+          "new": "strekken.",
+          "principe": "V607"
         }
       ]
     }
