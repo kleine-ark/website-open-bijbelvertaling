@@ -1318,13 +1318,12 @@ body.show-chapter-intro #chapter-intro { display: block !important; }
 
 /* === Verzen grid === */
 #verses-container {
-    border: 1px solid var(--border);
-    border-top: none;
+    border: none;
 }
 
 .verse-row {
     display: grid;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: none;
 }
 .verse-row:hover { background: rgba(0,0,0,0.01); }
 
@@ -1396,7 +1395,7 @@ body.hide-verse-numbers .verse-num::after {
 /* Cellen */
 .verse-cell {
     padding: 8px 12px;
-    border-right: 1px solid var(--border-light);
+    border-right: none;
     min-height: 40px;
     word-wrap: break-word;
 }
@@ -3452,6 +3451,15 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 :root[data-theme="donker"] .principe-card { background: var(--bg-surface) !important; color: var(--text-primary) !important; border-color: var(--border-default) !important; }
 :root[data-theme="donker"] .principe-header { color: var(--text-primary) !important; }
 :root[data-theme="donker"] .principe-count { color: var(--text-secondary) !important; }
+:root[data-theme="donker"] .principes-summary { background: var(--bg-surface) !important; color: var(--text-primary) !important; }
+/* Categorie-badges leesbaar maken in donker thema: zachtere tinten */
+:root[data-theme="donker"] .cat-N { background: rgba(96,165,250,0.16) !important; color: #93c5fd !important; }
+:root[data-theme="donker"] .cat-A { background: rgba(52,211,153,0.16) !important; color: #6ee7b7 !important; }
+:root[data-theme="donker"] .cat-G { background: rgba(251,191,36,0.16) !important; color: #fcd34d !important; }
+:root[data-theme="donker"] .cat-W { background: rgba(251,146,60,0.16) !important; color: #fdba74 !important; }
+:root[data-theme="donker"] .cat-V { background: rgba(167,139,250,0.18) !important; color: #c4b5fd !important; }
+:root[data-theme="donker"] .cat-S { background: rgba(244,114,182,0.16) !important; color: #f9a8d4 !important; }
+:root[data-theme="donker"] .cat-O { background: rgba(156,163,175,0.16) !important; color: #d1d5db !important; }
 
 /* H2/h3 onder pagina */
 :root[data-theme="donker"] h1, :root[data-theme="donker"] h2, :root[data-theme="donker"] h3, :root[data-theme="donker"] h4 { color: var(--text-primary); }
