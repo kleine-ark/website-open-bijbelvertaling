@@ -5440,6 +5440,70 @@
       "nieuw": "als schade beschouwd",
       "toelichting": "SV 'schade geacht' (= 'considered loss/damage'). Modern Nederlands: 'als schade beschouwd' / 'als verlies gerekend'.",
       "regex": "\\b[Ss]chade geacht\\b"
+    },
+    {
+      "id": "V623",
+      "categorie": "Verouderde aanvoegende wijs",
+      "oud": "moge",
+      "nieuw": "mag",
+      "toelichting": "SV-aanvoegende wijs/jussief 'moge' (= 'may'). Modern Nederlands: 'mag' (modaal) of behouden in zegenformule ('Moge God u zegenen'). In meeste Bijbel-contexten 'opdat ... moge zijn' → 'opdat ... mag zijn'.",
+      "regex": "\\b[Mm]oge\\b"
+    },
+    {
+      "id": "V624",
+      "categorie": "Verouderd werkwoord",
+      "oud": "gewinnen / gewin",
+      "nieuw": "winnen / winst",
+      "toelichting": "SV 'gewinnen' (= 'to gain/win') en 'gewin' (= 'winst/gain'). Modern Nederlands: 'winnen' / 'winst'.",
+      "regex": "\\b[Gg]ewin(nen)?\\b"
+    },
+    {
+      "id": "V625",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "naar het wit",
+      "nieuw": "naar het doel",
+      "toelichting": "SV 'naar het wit' (= 'toward the target/goal'; 'wit' was schiet-doel). Modern Nederlands: 'naar het doel'.",
+      "regex": "\\b[Nn]aar het wit\\b"
+    },
+    {
+      "id": "V626",
+      "categorie": "Cascade-fix genitief Gods",
+      "oud": "roeping Gods",
+      "nieuw": "roeping van God",
+      "toelichting": "SV-genitief 'Gods' post-noun → 'van God'. Onderdeel van de bredere 'X Gods' cascade-cleanup.",
+      "regex": "\\b[Rr]oeping Gods\\b"
+    },
+    {
+      "id": "V627",
+      "categorie": "Verouderd voornaamwoord",
+      "oud": "denzelfde",
+      "nieuw": "deze",
+      "toelichting": "SV-mannelijke accusatief 'denzelfde' (= 'dezelve'/'die'). Cascade van eerdere V230 (dezelve → die). Modern Nederlands: 'deze' (anaphor).",
+      "regex": "\\b[Dd]enzelfde\\b"
+    },
+    {
+      "id": "V628",
+      "categorie": "Verouderd bijwoord",
+      "oud": "dikmaals",
+      "nieuw": "dikwijls",
+      "toelichting": "SV-bijwoord 'dikmaals' (= 'often'). Modern Nederlands: 'dikwijls' (formeel) of 'vaak' (informeel).",
+      "regex": "\\bdikmaals\\b"
+    },
+    {
+      "id": "V629",
+      "categorie": "Verouderd relativum",
+      "oud": "welker einde",
+      "nieuw": "hun einde",
+      "toelichting": "SV-genitief 'welker' (= 'whose, plural'). Voor groep-personen ('die anti-christ-types ...') modern Nederlands: 'hun' (possessief). Patroon: 'welker [zn]' → 'hun [zn]'.",
+      "regex": "\\b[Ww]elker einde\\b"
+    },
+    {
+      "id": "V630",
+      "categorie": "Verouderd relativum",
+      "oud": "welker God",
+      "nieuw": "hun God",
+      "toelichting": "SV-genitief 'welker' (= 'whose, plural'). Modern Nederlands: 'hun' (possessief).",
+      "regex": "\\b[Ww]elker God\\b"
     }
   ]
 }
