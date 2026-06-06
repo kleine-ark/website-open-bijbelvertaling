@@ -265,10 +265,13 @@
             });
         },
 
-        open() {
+        open(prefillQuery) {
             if (!this.rootEl) return;
             this.rootEl.classList.remove('hidden');
             this.rootEl.setAttribute('aria-hidden', 'false');
+            if (prefillQuery && this.inputEl) {
+                this.inputEl.value = prefillQuery;
+            }
             // Index lazy laden in achtergrond (toont placeholder zolang nog niet klaar)
             this._ensureIndex().then(() => {
                 if (this.inputEl && this.inputEl.value.trim()) this._render();
