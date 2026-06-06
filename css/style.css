@@ -227,6 +227,10 @@
 .feedback-modal-dialog .fb-send { background: var(--navy); color: #fff; }
 .feedback-modal-dialog .fb-send:hover:not(:disabled) { background: var(--gold); color: var(--navy); }
 .feedback-modal-dialog .fb-send:disabled { opacity: 0.55; cursor: not-allowed; }
+/* Donker thema — "Delen als afbeelding"-modal */
+:root[data-theme="donker"] .vers-image-dialog { background: var(--bg-surface) !important; }
+:root[data-theme="donker"] .vers-image-dialog #vers-image-close { background: var(--bg-surface-alt) !important; color: var(--text-primary) !important; }
+
 /* Donker thema — feedback-modal */
 :root[data-theme="donker"] .feedback-modal-dialog {
     background: var(--bg-surface) !important;
@@ -2641,31 +2645,31 @@ body.show-tags .verse-tag {
     padding: 14px 12px 32px;
     -webkit-overflow-scrolling: touch;
 }
-.mp-group { margin-bottom: 18px; }
+.mp-group { margin-bottom: 12px; }
 .mp-group-label {
     font-family: var(--font-body);
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--teal, #1f6f7c);
-    padding: 0 4px 10px;
+    padding: 0 4px 6px;
     border-bottom: 1px solid rgba(0,0,0,0.08);
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 .mp-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 6px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 5px;
 }
 .mp-item {
     background: #fff;
     border: 1px solid var(--border, #e5e1d8);
-    border-radius: 8px;
-    padding: 14px 16px;
+    border-radius: 7px;
+    padding: 9px 12px;
     color: var(--navy);
     font-family: var(--font-serif);
-    font-size: 19px;
+    font-size: 16px;
     font-style: italic;
     font-weight: 500;
     letter-spacing: 0.01em;
