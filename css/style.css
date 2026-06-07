@@ -803,8 +803,10 @@ body {
 :root[data-theme="donker"] .note-marker { color: var(--gold); }
 :root[data-theme="donker"] .direct-speech i,
 :root[data-theme="donker"] .god-speaks i { color: inherit; }
-:root[data-theme="donker"] .god-speaks { color: #ffc2b9; }
-:root[data-theme="donker"] .devil-speaks { color: #d8d18a; }
+:root[data-theme="donker"] .god-speaks,
+:root[data-theme="donker"] .god-speaks i { color: #d98c80 !important; }
+:root[data-theme="donker"] .devil-speaks,
+:root[data-theme="donker"] .devil-speaks i { color: #d8d18a !important; }
 :root[data-theme="donker"] img { opacity: 0.92; }
 :root[data-theme="donker"] .hero { filter: brightness(0.7); }
 #app-container {
