@@ -334,14 +334,16 @@
     .topnav-links a:hover { background: rgba(203,164,73,0.15); color: var(--gold); }
 }
 
-/* === Versierde initiaal (drop-cap) op eerste vers van een hoofdstuk === */
-#content.reading-mode .verse-row:first-of-type .col-2026::first-letter {
+/* === Versierde initiaal (drop-cap) op eerste vers van een hoofdstuk ===
+   Via <span class="dropcap"> (JS), niet ::first-letter — zo wordt bij een
+   citaat de eerste LETTER vergroot en niet het aanhalingsteken. */
+#content.reading-mode .verse-row:first-of-type .col-2026 .dropcap {
     float: left;
     font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
-    font-size: 3.4em;
-    line-height: 0.78;
-    padding: 4px 10px 0 0;
-    margin-top: 2px;
+    font-size: 2.7em;
+    line-height: 0.72;
+    padding: 6px 9px 0 0;
+    margin-top: 3px;
     color: var(--gold);
     font-weight: 600;
     text-transform: uppercase;
@@ -801,7 +803,7 @@ body {
 :root[data-theme="donker"] .note-marker { color: var(--gold); }
 :root[data-theme="donker"] .direct-speech i,
 :root[data-theme="donker"] .god-speaks i { color: inherit; }
-:root[data-theme="donker"] .god-speaks { color: #ffb3a8; }
+:root[data-theme="donker"] .god-speaks { color: #ffc2b9; }
 :root[data-theme="donker"] .devil-speaks { color: #d8d18a; }
 :root[data-theme="donker"] img { opacity: 0.92; }
 :root[data-theme="donker"] .hero { filter: brightness(0.7); }
