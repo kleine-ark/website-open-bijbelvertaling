@@ -218,7 +218,7 @@
       "number": 4,
       "textSV1888": "Want gewisselijk, gij zijt leugenstoffeerders; gij allen zijt nietige medicijnmeesters.",
       "text1637": "Want gewisselick ghy zijt [5] leugenstoffeerders: ghy alle zijt [a] [6] nietige medecijn-meesters.",
-      "text2026": "Want zeker, u bent leugenstoffeerders; u allen bent nietige medicijnmeesters.",
+      "text2026": "Want zeker, u bent leugenstoffeerders; u allen bent nietige dokters.",
       "marginNotes": [
         {
           "marker": "5",
@@ -279,7 +279,7 @@
           "morph": "HNcmsc/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want zeker, u bent<sup class=\"note-marker\" data-note=\"5\">5</sup> leugenstoffeerders; u allen bent<sup class=\"note-marker\" data-note=\"6\">6</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> nietige medicijnmeesters.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want zeker, u bent<sup class=\"note-marker\" data-note=\"5\">5</sup> leugenstoffeerders; u allen bent<sup class=\"note-marker\" data-note=\"6\">6</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> nietige dokters.</i></span>",
       "textSV1888_html": "Want gewisselijk, gij zijt<sup class=\"note-marker\" data-note=\"5\">5</sup> leugenstoffeerders; gij allen zijt<sup class=\"note-marker\" data-note=\"6\">6</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> nietige medicijnmeesters.",
       "text1637_html": "Want gewisselick ghy zijt <sup class=\"note-marker\" data-note=\"5\">5</sup> leugenstoffeerders: ghy alle zijt <sup class=\"note-marker\" data-note=\"a\">a</sup> <sup class=\"note-marker\" data-note=\"6\">6</sup> nietige medecijn-meesters.",
       "phraseDiff": [
@@ -297,6 +297,11 @@
           "old": "zijt",
           "new": "bent",
           "principe": null
+        },
+        {
+          "old": "medicijnmeesters.",
+          "new": "dokters.",
+          "principe": "V680"
         }
       ]
     },
