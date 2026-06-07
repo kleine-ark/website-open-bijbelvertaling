@@ -482,8 +482,11 @@
             <button id="sidebar-right-toggle" title="Opties inklappen">▶</button>
         </div>
         <div id="sidebar-right-body">
+
+            <!-- ===== 1. WEERGAVE ===== -->
+            <div class="opt-section">Weergave</div>
             <div class="opt-group">
-                <div class="opt-group-label">Weergave</div>
+                <div class="opt-group-label">Pagina &amp; leeshulp</div>
                 <label><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"> Boekinleiding</label>
                 <label><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"> Hoofdstukinleiding</label>
                 <label><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"> Dyslexie-modus</label>
@@ -494,6 +497,14 @@
                 <label><input type="radio" name="opt-versnummers" data-optie="versnummers" value="uit"> Verbergen</label>
             </div>
             <div class="opt-group">
+                <div class="opt-group-label">Layout extra kolommen</div>
+                <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="naast"> Ernaast <span class="hint">(parallelle kolom)</span></label>
+                <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="eronder"> Eronder <span class="hint">(nieuwe regel)</span></label>
+            </div>
+
+            <!-- ===== 2. THEOLOGISCH ===== -->
+            <div class="opt-section">Theologisch</div>
+            <div class="opt-group">
                 <div class="opt-group-label">Godsnaam (OT)</div>
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="ov"> JAHWEH / God JAHWEH <span class="hint">(OSV)</span></label>
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="klassiek"> HEERE / de HEERE God <span class="hint">(SV)</span></label>
@@ -501,15 +512,13 @@
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jhwh"> יהוה / God יהוה <span class="hint">(Hebr.)</span></label>
             </div>
             <div class="opt-group">
-                <div class="opt-group-label">Layout extra kolommen</div>
-                <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="naast"> Ernaast <span class="hint">(parallelle kolom)</span></label>
-                <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="eronder"> Eronder <span class="hint">(nieuwe regel)</span></label>
-            </div>
-            <div class="opt-group">
                 <div class="opt-group-label">Sheol (OT)</div>
                 <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="dodenrijk"> Dodenrijk <span class="hint">(OSV, modern)</span></label>
                 <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="hel"> Hel <span class="hint">(SV-traditioneel)</span></label>
             </div>
+
+            <!-- ===== 3. VERTALING &amp; BRONNEN ===== -->
+            <div class="opt-section">Vertaling &amp; bronnen</div>
             <div class="opt-group">
                 <div class="opt-group-label">Tekstedities</div>
                 <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
