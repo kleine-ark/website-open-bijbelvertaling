@@ -828,7 +828,6 @@ body {
     z-index: 200;
     transition: margin-left 0.25s, min-width 0.25s, width 0.25s;
     overflow: hidden;
-    border-top: 2px solid var(--gold);
 }
 #sidebar.collapsed {
     width: 0;
@@ -890,7 +889,6 @@ body {
     min-width: 280px;
     background: #faf8f3;
     border-left: 1px solid var(--border-light);
-    border-top: 2px solid var(--gold);
     height: calc(100vh - 72px);
     position: sticky;
     top: 72px;
@@ -1911,6 +1909,24 @@ sup.note-marker:hover {
 }
 .devil-speaks::before { content: '\201C'; }
 .devil-speaks::after { content: '\201D'; }
+
+/* === Citaatopmaak UIT (optie) — alle citaat-styling neutraliseren === */
+body.citaten-uit .direct-speech,
+body.citaten-uit .god-speaks,
+body.citaten-uit .devil-speaks,
+body.citaten-uit .direct-speech i,
+body.citaten-uit .god-speaks i,
+body.citaten-uit .devil-speaks i {
+    color: inherit !important;
+    font-style: normal !important;
+    font-weight: inherit !important;
+}
+body.citaten-uit .direct-speech::before,
+body.citaten-uit .direct-speech::after,
+body.citaten-uit .god-speaks::before,
+body.citaten-uit .god-speaks::after,
+body.citaten-uit .devil-speaks::before,
+body.citaten-uit .devil-speaks::after { content: none !important; }
 
 /* Bijbelverwijzingen links */
 .ref-link {
