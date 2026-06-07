@@ -271,8 +271,10 @@ const MobileNav = {
 
     syncFromState() {
         if (!this.bookById) return;
-        const bookId = Navigation.currentBook;
-        const ch = Navigation.currentChapter;
+        const hashMatch = (location.hash || '').match(/#([a-z0-9]+)(?:\/(\d+))?/i);
+        const bookId = Navigation.currentBook || (hashMatch && hashMatch[1]);
+        // Hoofdstuk kan bij eerste mobiele load nog null zijn → val terug op URL-hash, anders 1.
+        const ch = Navigation.currentChapter || (hashMatch && hashMatch[2] ? parseInt(hashMatch[2], 10) : 1);
         if (!bookId) return;
         const book = this.bookById[bookId];
 
