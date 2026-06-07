@@ -492,6 +492,7 @@
                 <label><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"> Boekinleiding</label>
                 <label><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"> Hoofdstukinleiding</label>
                 <label><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"> Dyslexie-modus</label>
+                <label><input type="checkbox" id="toggle-citaten" checked onchange="document.body.classList.toggle('citaten-uit', !this.checked);localStorage.setItem('citaatopmaak', this.checked)"> Citaatopmaak <span class="hint">(cursief, « », rood = God, geel = duivel)</span></label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Versnummers</div>
@@ -714,7 +715,13 @@
         var cb = document.getElementById('toggle-dyslexia');
         if (cb) cb.checked = true;
     }
-    </script>
+    // Citaatopmaak herstellen (standaard AAN; alleen uitzetten als expliciet 'false')
+    if (localStorage.getItem('citaatopmaak') === 'false') {
+        document.body.classList.add('citaten-uit');
+        var cc = document.getElementById('toggle-citaten');
+        if (cc) cc.checked = false;
+    }
+</script>
     <script src="js/sidebar.js"></script>
     <script src="js/mobile-nav.js"></script>
     <script src="js/column-resize.js"></script>
