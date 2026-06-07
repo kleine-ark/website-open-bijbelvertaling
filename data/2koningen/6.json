@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En de kinderen der profeten zeiden tot Elisa: Zie nu, de plaats, waar wij wonen voor uw aangezicht, is voor ons te eng.",
       "text1637": "ENde de kinderen der Propheten seyden tot Elisa; Siet nu, de plaetse daer wy [1] woonen voor u aengesichte, is voor ons te enge.",
-      "text2026": "En de kinderen van de profeten zeiden tot Elisa: Zie nu, de plaats, waar wij wonen voor uw aangezicht, is voor ons te eng.",
+      "text2026": "En de kinderen van de profeten zeiden tot Elisa: Zie nu, de plaats, waar wij wonen voor uw aangezicht, is voor ons te nauw.",
       "marginNotes": [
         {
           "marker": "1",
@@ -92,7 +92,7 @@
           "morph": "HR/Sp1cp"
         }
       ],
-      "text2026_html": "En de kinderen van de profeten zeiden tot Elisa: <span class=\"direct-speech\"><i>Zie nu, de plaats, waar wij<sup class=\"note-marker\" data-note=\"1\">1</sup> wonen voor uw aangezicht, is voor ons te eng.</i></span>",
+      "text2026_html": "En de kinderen van de profeten zeiden tot Elisa: <span class=\"direct-speech\"><i>Zie nu, de plaats, waar wij<sup class=\"note-marker\" data-note=\"1\">1</sup> wonen voor uw aangezicht, is voor ons te nauw.</i></span>",
       "textSV1888_html": "En de kinderen der profeten zeiden tot Elisa: Zie nu, de plaats, waar wij<sup class=\"note-marker\" data-note=\"1\">1</sup> wonen voor uw aangezicht, is voor ons te eng.",
       "text1637_html": "ENde de kinderen der Propheten seyden tot Elisa; Siet nu, de plaetse daer wy <sup class=\"note-marker\" data-note=\"1\">1</sup> woonen voor u aengesichte, is voor ons te enge.",
       "phraseDiff": [
@@ -100,6 +100,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "eng.",
+          "new": "nauw.",
+          "principe": "V676"
         }
       ]
     },
