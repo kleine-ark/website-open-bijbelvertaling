@@ -350,7 +350,7 @@
       "number": 4,
       "textSV1888": "Want zij binden lasten, die zwaar zijn en kwalijk om te dragen, en leggen ze op de schouderen der mensen; maar zij willen die met hun vinger niet verroeren.",
       "text1637": "[d] Want sy [3] binden lasten die swaer zijn ende qualick om dragen, ende leggense op de schouderen der menschen, maer sy en willen die met haren vinger niet verroeren.",
-      "text2026": "Want zij binden lasten, die zwaar zijn en kwalijk om te dragen, en leggen ze op de schouderen van de mensen; maar zij willen die met hun vinger niet verroeren.",
+      "text2026": "Want zij binden lasten, die zwaar zijn en kwalijk om te dragen, en leggen ze op de schouders van de mensen; maar zij willen die met hun vinger niet verroeren.",
       "marginNotes": [
         {
           "marker": "d",
@@ -501,13 +501,13 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup><span class=\"god-speaks\"><i> Want zij<sup class=\"note-marker\" data-note=\"3\">3</sup> binden lasten, die zwaar zijn en kwalijk om te dragen, en leggen ze op de schouderen van de mensen; maar zij willen die met hun vinger niet verroeren.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup><span class=\"god-speaks\"><i> Want zij<sup class=\"note-marker\" data-note=\"3\">3</sup> binden lasten, die zwaar zijn en kwalijk om te dragen, en leggen ze op de schouders van de mensen; maar zij willen die met hun vinger niet verroeren.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> Want zij<sup class=\"note-marker\" data-note=\"3\">3</sup> binden lasten, die zwaar zijn en kwalijk om te dragen, en leggen ze op de schouderen der mensen; maar zij willen die met hun vinger niet verroeren.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> Want sy <sup class=\"note-marker\" data-note=\"3\">3</sup> binden lasten die swaer zijn ende qualick om dragen, ende leggense op de schouderen der menschen, maer sy en willen die met haren vinger niet verroeren.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
+          "old": "schouderen der",
+          "new": "schouders van de",
           "principe": "N2"
         }
       ]
@@ -516,7 +516,7 @@
       "number": 5,
       "textSV1888": "En al hun werken doen zij, om van de mensen gezien te worden; want zij maken hun gedenkcedels breed, en maken de zomen van hun klederen groot.",
       "text1637": "Ende alle hare wercken doen sy [e] om van de menschen gesien te worden. Want sy maken [f] hare [4] gedenck-cedels breedt, ende maken de [5] zoomen van hare kleederen groot.",
-      "text2026": "En al hun werken doen zij, om van de mensen gezien te worden; want zij maken hun gedenkcedels breed, en maken de zomen van hun kleren groot.",
+      "text2026": "En al hun werken doen zij, om van de mensen gezien te worden; want zij maken hun gebedsriemen breed, en maken de zomen van hun kleren groot.",
       "marginNotes": [
         {
           "marker": "e",
@@ -669,10 +669,15 @@
           "gloss": "〔edge"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En al hun werken doen zij,<sup class=\"note-marker\" data-note=\"e\">e</sup> om van de mensen gezien te worden; want zij maken<sup class=\"note-marker\" data-note=\"f\">f</sup> hun<sup class=\"note-marker\" data-note=\"4\">4</sup> gedenkcedels breed, en maken de<sup class=\"note-marker\" data-note=\"5\">5</sup> zomen van hun kleren groot.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En al hun werken doen zij,<sup class=\"note-marker\" data-note=\"e\">e</sup> om van de mensen gezien te worden; want zij maken<sup class=\"note-marker\" data-note=\"f\">f</sup> hun<sup class=\"note-marker\" data-note=\"4\">4</sup> gebedsriemen breed, en maken de<sup class=\"note-marker\" data-note=\"5\">5</sup> zomen van hun kleren groot.</i></span>",
       "textSV1888_html": "En al hun werken doen zij,<sup class=\"note-marker\" data-note=\"e\">e</sup> om van de mensen gezien te worden; want zij maken<sup class=\"note-marker\" data-note=\"f\">f</sup> hun<sup class=\"note-marker\" data-note=\"4\">4</sup> gedenkcedels breed, en maken de<sup class=\"note-marker\" data-note=\"5\">5</sup> zomen van hun klederen groot.",
       "text1637_html": "Ende alle hare wercken doen sy <sup class=\"note-marker\" data-note=\"e\">e</sup> om van de menschen gesien te worden. Want sy maken <sup class=\"note-marker\" data-note=\"f\">f</sup> hare <sup class=\"note-marker\" data-note=\"4\">4</sup> gedenck-cedels breedt, ende maken de <sup class=\"note-marker\" data-note=\"5\">5</sup> zoomen van hare kleederen groot.",
       "phraseDiff": [
+        {
+          "old": "gedenkcedels",
+          "new": "gebedsriemen",
+          "principe": "V733"
+        },
         {
           "old": "klederen",
           "new": "kleren",
@@ -881,7 +886,7 @@
       "number": 8,
       "textSV1888": "Doch gij zult niet Rabbi genaamd worden; want Een is uw Meester, namelijk Christus; en gij zijt allen broeders.",
       "text1637": "Doch ghy en sult niet [7] Rabbi ge-naemt worden, want een is uw’ [8] Meester, [namelick] Christus: ende ghy zijt alle broeders.",
-      "text2026": "Maar u zult niet Rabbi genaamd worden; want Een is uw Meester, namelijk Christus; en u bent allen broeders.",
+      "text2026": "Maar u zult niet Rabbi genaamd worden; want Eén is uw Meester, namelijk Christus; en u bent allen broeders.",
       "marginNotes": [
         {
           "marker": "7",
@@ -1004,6 +1009,11 @@
           "old": "Doch gij",
           "new": "Maar u",
           "principe": "A1"
+        },
+        {
+          "old": "Een",
+          "new": "Eén",
+          "principe": null
         },
         {
           "old": "gij zijt",
