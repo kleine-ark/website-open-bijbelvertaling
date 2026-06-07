@@ -6384,6 +6384,22 @@
       "nieuw": "wiens / wier",
       "toelichting": "Kromme eerdere vervanging hersteld: bezittelijk \"van wie de X\" → \"wiens/wier X\". Legitieme betrekkelijke bijzinnen (\"van wie de broer ziek was\") blijven.",
       "regex": "\\bvan wie de\\b"
+    },
+    {
+      "id": "V735",
+      "categorie": "Spelling",
+      "oud": "een (telwoord)",
+      "nieuw": "één",
+      "toelichting": "Telwoord \"een\" → \"één\" waar het nadrukkelijk 1 betekent (op één dag, één lichaam, niet één). Lidwoord \"een\" blijft.",
+      "regex": "\\b[Ee]en\\b"
+    },
+    {
+      "id": "V736",
+      "categorie": "Verouderde woorden",
+      "oud": "gene zijde",
+      "nieuw": "de overzijde",
+      "toelichting": "\"(op/over) gene zijde van\" → \"de overzijde/andere zijde van\"; \"deze…gene\" → \"de een…de ander\"; \"gene\" (=geen/degene) per context.",
+      "regex": "\\bgene\\b"
     }
   ]
 }
