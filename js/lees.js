@@ -132,6 +132,7 @@ const Lees = {
         filippenzen:'all',
         titus:      'all',
         kolossenzen:'all',
+        mattheus:   [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
     },
 
     _isVerified(bookId, chapter) {

@@ -36,7 +36,7 @@ def main():
     books = json.load(open(os.path.join(DATA, 'books.json'), encoding='utf-8'))['books']
     verified = parse_verified()
 
-    ch_total = verses_total = ch_ver = verses_ver = books_full = diff_total = 0
+    ch_total = verses_total = ch_ver = verses_ver = books_full = diff_total = diff_via_principe = 0
     for b in books:
         bid = b['id']; chs = b.get('chaptersIncluded', [])
         ch_total += len(chs)
@@ -54,7 +54,11 @@ def main():
             if v == 'all' or (isinstance(v, list) and ch in v):
                 ch_ver += 1; verses_ver += len(vs)
             for x in vs:
-                diff_total += len(x.get('phraseDiff') or [])
+                pds = x.get('phraseDiff') or []
+                diff_total += len(pds)
+                for pd in pds:
+                    if pd.get('principe'):
+                        diff_via_principe += 1
 
     principes = len(json.load(open(os.path.join(DATA, 'wijzigingsprincipes.json'), encoding='utf-8'))['principes'])
 
@@ -74,6 +78,9 @@ def main():
         'verses_verified_pct': pct(verses_ver, verses_total),
         'principes': principes,
         'text_changes': diff_total,
+        'changes_via_principe': diff_via_principe,
+        'changes_via_principe_pct': pct(diff_via_principe, diff_total),
+        'changes_los': diff_total - diff_via_principe,
     }
     out = os.path.join(DATA, 'stats.json')
     json.dump(stats, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
