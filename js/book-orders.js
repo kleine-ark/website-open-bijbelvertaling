@@ -44,6 +44,28 @@ const BookOrders = {
         }
     },
 
+    // === Orthodox (Septuaginta / LXX) ===
+    // Oosters-Orthodoxe canon op basis van de Septuaginta:
+    //  - deuterocanonieke boeken geïntegreerd tussen de historische en wijsheidsboeken
+    //  - De Twaalf (kleine profeten) VÓÓR de grote profeten
+    //  - 1 Esdras = 3 Ezra; 2 Esdras = Ezra + Nehemia; Brief van Jeremia = Baruch 6
+    orthodox: {
+        label: 'Orthodox (Septuaginta)',
+        groups: {
+            'Pentateuch (Wet)': ['genesis', 'exodus', 'leviticus', 'numeri', 'deuteronomium'],
+            'Historische boeken': ['jozua', 'richteren', 'ruth', '1samuel', '2samuel', '1koningen', '2koningen', '1kronieken', '2kronieken', '3ezra', 'ezra', 'nehemia', 'tobit', 'judith', 'esther', 'estherapocrief', '1makkabeeen', '2makkabeeen', '3makkabeeen'],
+            'Wijsheid & poëzie': ['psalmen', 'gebedvanmanasse', 'job', 'spreuken', 'prediker', 'hooglied', 'boekderwijsheid', 'jezussirach'],
+            'De Twaalf (kleine profeten)': ['hosea', 'amos', 'micha', 'joel', 'obadja', 'jona', 'nahum', 'habakuk', 'zefanja', 'haggai', 'zacharia', 'maleachi'],
+            'Grote profeten': ['jesaja', 'jeremia', 'baruch', 'klaagliederen', 'ezechiel', 'daniel', 'gebedvanazaria', 'gezangindevuuroven', 'susanna', 'belenddedraak'],
+            '4 Ezra (aanhangsel)': ['4ezra'],
+            'Evangeliën': ['mattheus', 'markus', 'lukas', 'johannes'],
+            'Handelingen': ['handelingen'],
+            'Algemene brieven': ['jakobus', '1petrus', '2petrus', '1johannes', '2johannes', '3johannes', 'judas'],
+            'Brieven van Paulus': ['romeinen', '1korinthiers', '2korinthiers', 'galaten', 'efeziers', 'filippenzen', 'kolossenzen', '1tessalonicensen', '2tessalonicensen', '1timotheus', '2timotheus', 'titus', 'filemon', 'hebreeen'],
+            'Openbaring': ['openbaring'],
+        }
+    },
+
     // === Chronologisch (gebeurtenissen-tijdlijn) ===
     // Op basis van wanneer de gebeurtenissen plaatsvonden (niet schrijftijd).
     // Globale ordening; sommige boeken gelijktijdig — vrije keuze in plaatsing.
