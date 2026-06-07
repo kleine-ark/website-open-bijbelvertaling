@@ -334,6 +334,19 @@
     .topnav-links a:hover { background: rgba(203,164,73,0.15); color: var(--gold); }
 }
 
+/* === Versierde initiaal (drop-cap) op eerste vers van een hoofdstuk === */
+#content.reading-mode .verse-row:first-of-type .col-2026::first-letter {
+    float: left;
+    font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
+    font-size: 3.4em;
+    line-height: 0.78;
+    padding: 4px 10px 0 0;
+    margin-top: 2px;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 /* === Leesmodus === */
 #content.reading-mode .column-headers { display: none; }
 #content.reading-mode .verse-row {
@@ -3614,6 +3627,9 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 :root[data-theme="donker"] #sidebar {
     background: var(--bg-surface-alt) !important;
     color: var(--text-primary) !important;
+}
+:root[data-theme="donker"] #sidebar-header {
+    background: #000000 !important;   /* was navy/blauw — nu zwart */
 }
 :root[data-theme="donker"] #sidebar #sidebar-tree,
 :root[data-theme="donker"] #sidebar input,
