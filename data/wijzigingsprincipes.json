@@ -5808,6 +5808,30 @@
       "nieuw": "verwekte",
       "toelichting": "Verouderd 'gewon' (verleden tijd van 'gewinnen' = verwekken, in geslachtsregisters 'verwekte') vervangen door 'verwekte'.",
       "regex": "\\bgewon\\b"
+    },
+    {
+      "id": "V668",
+      "categorie": "S",
+      "oud": "kemelshaar",
+      "nieuw": "kameelhaar",
+      "toelichting": "Verouderde spelling 'kemelshaar' (haar van een kemel/kameel) vervangen door 'kameelhaar'.",
+      "regex": "\\b[Kk]emelshaar\\b"
+    },
+    {
+      "id": "V669",
+      "categorie": "W",
+      "oud": "adderengebroedsels",
+      "nieuw": "adderengebroed",
+      "toelichting": "Verouderd meervoud 'adderengebroedsels' vervangen door het collectieve 'adderengebroed' (gebroed van adders).",
+      "regex": "\\badder[a-z]*gebroedsels\\b"
+    },
+    {
+      "id": "V670",
+      "categorie": "W",
+      "oud": "toekomende toorn",
+      "nieuw": "komende toorn",
+      "toelichting": "'toekomende(n) toorn' (de toorn die komen zal) vervangen door 'komende toorn'.",
+      "regex": "\\btoekomende[n]? toorn\\b"
     }
   ]
 }
