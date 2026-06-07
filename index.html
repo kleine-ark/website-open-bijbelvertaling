@@ -473,6 +473,23 @@
         </div>
         <div id="sidebar-right-body">
             <div class="opt-group">
+                <div class="opt-group-label">Weergave</div>
+                <label><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"> Boekinleiding</label>
+                <label><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"> Hoofdstukinleiding</label>
+                <label><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"> Dyslexie-modus</label>
+            </div>
+            <div class="opt-group">
+                <div class="opt-group-label">Thema</div>
+                <label><input type="radio" name="opt-thema" data-optie="thema" value="auto"> Auto <span class="hint">(volg systeem)</span></label>
+                <label><input type="radio" name="opt-thema" data-optie="thema" value="licht"> Licht</label>
+                <label><input type="radio" name="opt-thema" data-optie="thema" value="donker"> Donker</label>
+            </div>
+            <div class="opt-group">
+                <div class="opt-group-label">Versnummers</div>
+                <label><input type="radio" name="opt-versnummers" data-optie="versnummers" value="aan"> Tonen</label>
+                <label><input type="radio" name="opt-versnummers" data-optie="versnummers" value="uit"> Verbergen</label>
+            </div>
+            <div class="opt-group">
                 <div class="opt-group-label">Godsnaam (OT)</div>
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="ov"> JAHWEH / God JAHWEH <span class="hint">(OSV)</span></label>
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="klassiek"> HEERE / de HEERE God <span class="hint">(SV)</span></label>
@@ -493,20 +510,9 @@
                 <label><input type="radio" name="opt-boekvolgorde" data-optie="boekvolgorde" value="lengte"> Op lengte <span class="hint">(aantal hfdst.)</span></label>
             </div>
             <div class="opt-group">
-                <div class="opt-group-label">Versnummers</div>
-                <label><input type="radio" name="opt-versnummers" data-optie="versnummers" value="aan"> Tonen</label>
-                <label><input type="radio" name="opt-versnummers" data-optie="versnummers" value="uit"> Verbergen</label>
-            </div>
-            <div class="opt-group">
                 <div class="opt-group-label">Sheol (OT)</div>
                 <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="dodenrijk"> Dodenrijk <span class="hint">(OSV, modern)</span></label>
                 <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="hel"> Hel <span class="hint">(SV-traditioneel)</span></label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Thema</div>
-                <label><input type="radio" name="opt-thema" data-optie="thema" value="auto"> Auto <span class="hint">(volg systeem)</span></label>
-                <label><input type="radio" name="opt-thema" data-optie="thema" value="licht"> Licht</label>
-                <label><input type="radio" name="opt-thema" data-optie="thema" value="donker"> Donker</label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Tekstedities</div>
@@ -527,12 +533,6 @@
                 <label><input type="checkbox" data-toggle-col="diff"> Verschillen SV-OSV</label>
                 <label><input type="checkbox" data-toggle-col="noteDiff"> Verschillen KT SV-OSV</label>
                 <label><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"> Tags</label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Weergave</div>
-                <label><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"> Boekinleiding</label>
-                <label><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"> Hoofdstukinleiding</label>
-                <label><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"> Dyslexie-modus</label>
             </div>
         </div>
     </aside>
