@@ -88,6 +88,31 @@ const BookOrders = {
         }
     },
 
+    // === Vermoedelijke schrijftijd (wanneer geschreven) ===
+    // Op basis van de geschatte ontstaanstijd van de TEKST (niet de gebeurtenissen).
+    // Datering is onzeker en omstreden; hier een gangbare, traditioneel-behoudende
+    // schatting met periode-labels.
+    schrijftijd: {
+        label: 'Vermoedelijke schrijftijd',
+        groups: {
+            'Patriarchale tijd (Job, zeer oud)': ['job'],
+            'Mozes — Pentateuch (±1440–1400 v.Chr.)': ['genesis', 'exodus', 'leviticus', 'numeri', 'deuteronomium'],
+            'Intrede & Richtertijd (±1400–1050)': ['jozua', 'richteren', 'ruth'],
+            'Verenigd koninkrijk — David & Salomo (±1010–930)': ['psalmen', 'spreuken', 'prediker', 'hooglied'],
+            '8e eeuw v.Chr. (vroege schrijvende profeten)': ['obadja', 'joel', 'jona', 'amos', 'hosea', 'jesaja', 'micha'],
+            '7e eeuw v.Chr. (vóór de ballingschap)': ['nahum', 'zefanja', 'habakuk', 'jeremia', 'klaagliederen'],
+            'Ballingschap — 6e eeuw v.Chr.': ['ezechiel', 'daniel', '1samuel', '2samuel', '1koningen', '2koningen'],
+            'Na de ballingschap (±520–430)': ['haggai', 'zacharia', 'maleachi', 'ezra', 'nehemia', 'esther', '1kronieken', '2kronieken'],
+            'Intertestamentair — apocriefen (±300–50 v.Chr.)': ['3ezra', '4ezra', 'tobit', 'judith', 'boekderwijsheid', 'jezussirach', 'baruch', 'estherapocrief', 'gebedvanazaria', 'gezangindevuuroven', 'susanna', 'belenddedraak', 'gebedvanmanasse', '1makkabeeen', '2makkabeeen', '3makkabeeen'],
+            'Vroege brieven (±45–52 n.Chr.)': ['jakobus', 'galaten', '1tessalonicensen', '2tessalonicensen'],
+            'Grote Paulus-brieven (±55–57)': ['1korinthiers', '2korinthiers', 'romeinen'],
+            'Evangeliën & Handelingen (±60–65)': ['markus', 'mattheus', 'lukas', 'handelingen'],
+            'Gevangenisbrieven (±60–62)': ['efeziers', 'filippenzen', 'kolossenzen', 'filemon'],
+            'Latere brieven (±63–68)': ['1timotheus', 'titus', '1petrus', '2timotheus', '2petrus', 'hebreeen', 'judas'],
+            'Johannes-geschriften (±85–95)': ['johannes', '1johannes', '2johannes', '3johannes', 'openbaring'],
+        }
+    },
+
     // === Op auteur / traditie ===
     auteur: {
         label: 'Op auteur',
