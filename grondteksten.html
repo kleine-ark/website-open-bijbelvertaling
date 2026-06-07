@@ -543,5 +543,6 @@
 <script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);document.querySelectorAll('input[data-optie="thema"]').forEach(function(r){r.checked=(r.value===cur);});}catch(e){console.error(e);}});})();</script>
 <script src="js/firebase-config.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/stats-inject.js"></script>
 </body>
 </html>
