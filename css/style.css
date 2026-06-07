@@ -3875,13 +3875,13 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     color: var(--text-primary) !important;
 }
 
-/* Hero op over-ov.html — donker tinten */
-:root[data-theme="donker"] .hero {
-    filter: brightness(0.55) saturate(0.85);
-}
+/* Hero op over-ov.html — donker thema: GEEN brightness-dimming (afbeelding helder
+   houden; alleen de gradient onderaan in over-ov.html fadet naar donker). */
 :root[data-theme="donker"] .hero-quote,
 :root[data-theme="donker"] .hero-mark-name,
-:root[data-theme="donker"] .hero-mark-id { color: var(--text-primary) !important; text-shadow: 0 1px 2px rgba(0,0,0,0.55) !important; }
+:root[data-theme="donker"] .hero-mark-id { color: #ffffff !important; text-shadow: 0 1px 4px rgba(0,0,0,0.85) !important; }
+:root[data-theme="donker"] .hero-quote em { color: #ffffff !important; }
+:root[data-theme="donker"] .hero-quote .ref { color: #f1d489 !important; text-shadow: 0 1px 4px rgba(0,0,0,0.9) !important; }
 
 /* Inline `style="color:#fff"` op donker thema — laat staan (witte tekst op donker) */
 
