@@ -765,6 +765,9 @@ body {
     line-height: 1.65;
     color: var(--text-primary);
     background: var(--bg-page);
+    /* Geen synthetisch vet/cursief — gebruik altijd de echte geladen font-faces,
+       zodat tekst op elk apparaat identiek is (geen 'extra schuin' cursief op mobiel). */
+    font-synthesis: none;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -3636,7 +3639,7 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 :root[data-theme="donker"] .cat-A { background: rgba(52,211,153,0.16) !important; color: #6ee7b7 !important; }
 :root[data-theme="donker"] .cat-G { background: rgba(251,191,36,0.16) !important; color: #fcd34d !important; }
 :root[data-theme="donker"] .cat-W { background: rgba(251,146,60,0.16) !important; color: #fdba74 !important; }
-:root[data-theme="donker"] .cat-V { background: rgba(167,139,250,0.18) !important; color: #c4b5fd !important; }
+:root[data-theme="donker"] .cat-V { background: rgba(167,139,250,0.32) !important; color: #ddd0ff !important; }
 :root[data-theme="donker"] .cat-S { background: rgba(244,114,182,0.16) !important; color: #f9a8d4 !important; }
 :root[data-theme="donker"] .cat-O { background: rgba(156,163,175,0.16) !important; color: #d1d5db !important; }
 
