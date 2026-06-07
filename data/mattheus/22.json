@@ -546,7 +546,7 @@
       "number": 5,
       "textSV1888": "Maar zij, zulks niet achtende, zijn heengegaan, deze tot zijn akker, gene tot zijn koopmanschap.",
       "text1637": "Maer sy [sulcks] niet achtende zijn henen gegaen, dese tot sijnen acker, gene tot sijne coopmanschap.",
-      "text2026": "Maar zij, dat niet achtende, zijn heengegaan, deze tot zijn akker, gene tot zijn koopmanschap.",
+      "text2026": "Maar zij, dat niet achtende, zijn heengegaan, deze tot zijn akker, de ander tot zijn koopmanschap.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -646,13 +646,18 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar zij, dat niet achtende, zijn heengegaan, deze tot zijn akker, gene tot zijn koopmanschap.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar zij, dat niet achtende, zijn heengegaan, deze tot zijn akker, de ander tot zijn koopmanschap.</i></span>",
       "text1637_html": "Maer sy [<i>sulcks</i>] niet achtende zijn henen gegaen, dese tot sijnen acker, gene tot sijne coopmanschap.",
       "phraseDiff": [
         {
           "old": "zulks",
           "new": "dat",
           "principe": "V400"
+        },
+        {
+          "old": "gene",
+          "new": "de ander",
+          "principe": null
         }
       ]
     },
@@ -738,7 +743,7 @@
       "number": 7,
       "textSV1888": "Als nu de koning dat hoorde, werd hij toornig, en zijn krijgsheiren zendende, heeft die doodslagers vernield, en hun stad in brand gestoken.",
       "text1637": "Als nu de Coninck [dat] hoorde, wiert hy toornich, ende sijne [9] crijchs-heyren sendende heeft die dootslagers vernielt, ende hare stadt in brandt gesteken.",
-      "text2026": "Als nu de koning dat hoorde, werd hij boos, en zijn krijgsheiren zendende, heeft die doodslagers vernield, en hun stad in brand gestoken.",
+      "text2026": "Als nu de koning dat hoorde, werd hij boos, en zijn legers zendende, heeft die moordenaars vernield, en hun stad in brand gestoken.",
       "marginNotes": [
         {
           "marker": "9",
@@ -858,7 +863,7 @@
           "gloss": "〔to burn"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Als nu de koning dat hoorde, werd hij boos, en zijn<sup class=\"note-marker\" data-note=\"9\">9</sup> krijgsheiren zendende, heeft die doodslagers vernield, en hun stad in brand gestoken.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Als nu de koning dat hoorde, werd hij boos, en zijn<sup class=\"note-marker\" data-note=\"9\">9</sup> legers zendende, heeft die moordenaars vernield, en hun stad in brand gestoken.</i></span>",
       "textSV1888_html": "Als nu de koning dat hoorde, werd hij toornig, en zijn<sup class=\"note-marker\" data-note=\"9\">9</sup> krijgsheiren zendende, heeft die doodslagers vernield, en hun stad in brand gestoken.",
       "text1637_html": "Als nu de Coninck [<i>dat</i>] hoorde, wiert hy toornich, ende sijne <sup class=\"note-marker\" data-note=\"9\">9</sup> crijchs-heyren sendende heeft die dootslagers vernielt, ende hare stadt in brandt gesteken.",
       "phraseDiff": [
@@ -866,6 +871,16 @@
           "old": "toornig,",
           "new": "boos,",
           "principe": "V262"
+        },
+        {
+          "old": "krijgsheiren",
+          "new": "legers",
+          "principe": "V728"
+        },
+        {
+          "old": "doodslagers",
+          "new": "moordenaars",
+          "principe": "V729"
         }
       ]
     },
