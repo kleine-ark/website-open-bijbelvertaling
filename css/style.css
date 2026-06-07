@@ -713,26 +713,27 @@
 
 /* Donker thema — semantische tokens overgeschreven, brand-kleuren (--navy/--gold/--teal) blijven herkenbaar. */
 :root[data-theme="donker"] {
-    --bg-page: #1a1d24;
-    --bg-surface: #242830;
-    --bg-surface-alt: #1f232a;
-    --bg-elevated: #2c313b;
-    --parchment: #1a1d24;         /* override de oude variabele zodat bestaande code automatisch donker wordt */
-    --green-tint: #20262a;
-    --yellow-tint: #2a2620;
-    --text-primary: #e6e3dc;
-    --text-secondary: #b9b6ad;
+    /* Neutraal zwart/grijs — geen blauwzweem */
+    --bg-page: #0a0a0a;
+    --bg-surface: #181818;
+    --bg-surface-alt: #121212;
+    --bg-elevated: #202020;
+    --parchment: #0a0a0a;         /* override de oude variabele zodat bestaande code automatisch donker wordt */
+    --green-tint: #1a1f1a;
+    --yellow-tint: #201d16;
+    --text-primary: #e8e6e0;
+    --text-secondary: #b8b5ad;
     --text-muted: #8a8780;
-    --border-default: #3a3f4a;
-    --border-soft: #2e333d;
-    --border: #3a3f4a;             /* legacy --border ook donker */
-    --border-light: #2e333d;
-    --shadow-soft: 0 2px 8px rgba(0,0,0,0.4);
+    --border-default: #3a3a3a;
+    --border-soft: #2a2a2a;
+    --border: #3a3a3a;             /* legacy --border ook donker */
+    --border-light: #2a2a2a;
+    --shadow-soft: 0 2px 8px rgba(0,0,0,0.5);
     /* Brand kleuren iets ophelderd voor leesbaarheid op donker */
     --gold: #d6b15a;
     --teal-light: #a5c4b8;
     --teal-bg: rgba(146, 182, 180, 0.10);
-    --header-bg: #0e1924;
+    --header-bg: #000000;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -787,7 +788,7 @@ body {
 :root[data-theme="donker"] .note-marker { color: var(--gold); }
 :root[data-theme="donker"] .direct-speech i,
 :root[data-theme="donker"] .god-speaks i { color: inherit; }
-:root[data-theme="donker"] .god-speaks { color: #ff8a7a; }
+:root[data-theme="donker"] .god-speaks { color: #ffb3a8; }
 :root[data-theme="donker"] img { opacity: 0.92; }
 :root[data-theme="donker"] .hero { filter: brightness(0.7); }
 #app-container {
@@ -2224,7 +2225,7 @@ body.dyslexia-mode .verses-table tr:nth-child(even) td {
 }
 /* Donker thema — palet leesbaar tegen donkere paginas */
 :root[data-theme="donker"] .hl-palette-float {
-    background: #0d1018 !important;
+    background: #000000 !important;
     color: var(--text-primary) !important;
     border: 1px solid var(--border-default);
     box-shadow: 0 4px 18px rgba(0,0,0,0.6);
@@ -3711,7 +3712,7 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 
 /* === DONKER THEMA — Topnav volledig zwart === */
 :root[data-theme="donker"] #topnav {
-    background: #0a0d12 !important;     /* bijna zwart */
+    background: #000000 !important;     /* echt zwart */
     color: #e6e3dc !important;
     border-bottom: 2px solid var(--gold) !important;
 }
