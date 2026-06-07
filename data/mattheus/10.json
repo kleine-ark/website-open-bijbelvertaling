@@ -4094,7 +4094,7 @@
       "number": 29,
       "textSV1888": "Worden niet twee musjes om een penningsken verkocht? En niet een van deze zal op de aarde vallen zonder uw Vader.",
       "text1637": "En worden niet twee [28] muschkens om [29] een pennincksken verkocht? Ende niet een van desen en sal op de aerde vallen sonder uwen Vader.",
-      "text2026": "Worden niet twee musjes om een penningsken verkocht? En niet één van deze zal op de aarde vallen zonder uw Vader.",
+      "text2026": "Worden niet twee musjes om een penninkje verkocht? En niet één van deze zal op de aarde vallen zonder uw Vader.",
       "marginNotes": [
         {
           "marker": "28",
@@ -4108,7 +4108,7 @@
           "type": "explanatory",
           "textSV1888": "een penningsken verkocht: Grieks, Assarion (ἀσσαρίου); hetwelk een penning was, wegende ontrent vier greinen of azen zilvers, doende omtrent een duit (ruim 1/2 cent).",
           "text1637": "Gr. Assarion, het welck een pennicksken was wegende ontrent vier greynen ofte asen silvers, doende ontrent een duyt.",
-          "text2026": "een penningsken verkocht: Grieks, Assarion (ἀσσαρίου); dat een penning was, wegende ontrent vier greinen of azen zilvers, doende omtrent een duit (ruim 1/2 cent)."
+          "text2026": "een penninkje verkocht: Grieks, Assarion (ἀσσαρίου); dat een penning was, wegende ontrent vier greinen of azen zilvers, doende omtrent een duit (ruim 1/2 cent)."
         }
       ],
       "grondtekst": [
@@ -4221,10 +4221,15 @@
           "gloss": "〔you"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Worden niet twee<sup class=\"note-marker\" data-note=\"28\">28</sup> musjes om<sup class=\"note-marker\" data-note=\"29\">29</sup> een penningsken verkocht? En niet één van deze zal op de aarde vallen zonder uw Vader.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Worden niet twee<sup class=\"note-marker\" data-note=\"28\">28</sup> musjes om<sup class=\"note-marker\" data-note=\"29\">29</sup> een penninkje verkocht? En niet één van deze zal op de aarde vallen zonder uw Vader.</i></span>",
       "textSV1888_html": "Worden niet twee<sup class=\"note-marker\" data-note=\"28\">28</sup> musjes om<sup class=\"note-marker\" data-note=\"29\">29</sup> een penningsken verkocht? En niet een van deze zal op de aarde vallen zonder uw Vader.",
       "text1637_html": "En worden niet twee <sup class=\"note-marker\" data-note=\"28\">28</sup> muschkens om <sup class=\"note-marker\" data-note=\"29\">29</sup> een pennincksken verkocht? Ende niet een van desen en sal op de aerde vallen sonder uwen Vader.",
       "phraseDiff": [
+        {
+          "old": "penningsken",
+          "new": "penninkje",
+          "principe": "V690"
+        },
         {
           "old": "een",
           "new": "één",
@@ -5566,7 +5571,7 @@
       "number": 41,
       "textSV1888": "Die een profeet ontvangt in den naam eens profeten, zal het loon eens profeten ontvangen; en die een rechtvaardige ontvangt in den naam eens rechtvaardigen, zal het loon eens rechtvaardigen ontvangen.",
       "text1637": "[l] Die eenen Propheet ontfangt [34] inden naem eens Propheten, sal den loon eens Propheten ontfangen: ende die eenen rechtveerdigen ontfangt in den naem eens rechtveerdigen, sal den loon eens rechtveerdigen ontfangen.",
-      "text2026": "Die een profeet ontvangt in de naam eens profeten, zal het loon eens profeten ontvangen; en die een rechtvaardige ontvangt in de naam eens rechtvaardigen, zal het loon eens rechtvaardigen ontvangen.",
+      "text2026": "Die een profeet ontvangt in de naam van de profeten, zal het loon van de profeten ontvangen; en die een rechtvaardige ontvangt in de naam van de rechtvaardigen, zal het loon van de rechtvaardigen ontvangen.",
       "marginNotes": [
         {
           "marker": "l",
@@ -5699,7 +5704,7 @@
           "gloss": "〔to take"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"l\">l</sup><span class=\"god-speaks\"><i> Die een profeet ontvangt<sup class=\"note-marker\" data-note=\"34\">34</sup> in de naam eens profeten, zal het loon eens profeten ontvangen; en die een rechtvaardige ontvangt in de naam eens rechtvaardigen, zal het loon eens rechtvaardigen ontvangen.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"l\">l</sup><span class=\"god-speaks\"><i> Die een profeet ontvangt<sup class=\"note-marker\" data-note=\"34\">34</sup> in de naam van de profeten, zal het loon van de profeten ontvangen; en die een rechtvaardige ontvangt in de naam van de rechtvaardigen, zal het loon van de rechtvaardigen ontvangen.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"l\">l</sup> Die een profeet ontvangt<sup class=\"note-marker\" data-note=\"34\">34</sup> in den naam eens profeten, zal het loon eens profeten ontvangen; en die een rechtvaardige ontvangt in den naam eens rechtvaardigen, zal het loon eens rechtvaardigen ontvangen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"l\">l</sup> Die eenen Propheet ontfangt <sup class=\"note-marker\" data-note=\"34\">34</sup> inden naem eens Propheten, sal den loon eens Propheten ontfangen: ende die eenen rechtveerdigen ontfangt in den naem eens rechtveerdigen, sal den loon eens rechtveerdigen ontfangen.",
       "phraseDiff": [
@@ -5709,9 +5714,29 @@
           "principe": "N1"
         },
         {
+          "old": "eens",
+          "new": "van de",
+          "principe": null
+        },
+        {
+          "old": "eens",
+          "new": "van de",
+          "principe": null
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "eens",
+          "new": "van de",
+          "principe": null
+        },
+        {
+          "old": "eens",
+          "new": "van de",
+          "principe": null
         }
       ]
     },
@@ -5719,7 +5744,7 @@
       "number": 42,
       "textSV1888": "En zo wie een van deze kleinen te drinken geeft alleenlijk een beker koud water, in den naam eens discipels, voorwaar zeg Ik u, hij zal zijn loon geenszins verliezen.",
       "text1637": "[m] Ende so wie een van dese [35] cleyne te drincken geeft alleenlijck [36] eenen beker coud [waters], inden name eens Discipels, voorwaer segge ick u, hy en sal sijnen loon geensins verliesen.",
-      "text2026": "En zo wie één van deze kleinen te drinken geeft alleen een beker koud water, in de naam eens discipels, werkelijk zeg Ik u, hij zal zijn loon in geen geval verliezen.",
+      "text2026": "En zo wie één van deze kleinen te drinken geeft alleen een beker koud water, in de naam van een discipel, werkelijk zeg Ik u, hij zal zijn loon in geen geval verliezen.",
       "marginNotes": [
         {
           "marker": "m",
@@ -5883,7 +5908,7 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En zo wie één van deze<sup class=\"note-marker\" data-note=\"35\">35</sup> kleinen te drinken geeft alleen<sup class=\"note-marker\" data-note=\"36\">36</sup> een beker koud water, in de naam eens discipels, werkelijk zeg Ik u, hij zal zijn loon in geen geval verliezen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En zo wie één van deze<sup class=\"note-marker\" data-note=\"35\">35</sup> kleinen te drinken geeft alleen<sup class=\"note-marker\" data-note=\"36\">36</sup> een beker koud water, in de naam van een discipel, werkelijk zeg Ik u, hij zal zijn loon in geen geval verliezen.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup> En zo wie een van deze<sup class=\"note-marker\" data-note=\"35\">35</sup> kleinen te drinken geeft alleenlijk<sup class=\"note-marker\" data-note=\"36\">36</sup> een beker koud water, in den naam eens discipels, voorwaar zeg Ik u, hij zal zijn loon geenszins verliezen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup> Ende so wie een van dese <sup class=\"note-marker\" data-note=\"35\">35</sup> cleyne te drincken geeft alleenlijck <sup class=\"note-marker\" data-note=\"36\">36</sup> eenen beker coud [<i>waters</i>], inden name eens Discipels, voorwaer segge ick u, hy en sal sijnen loon geensins verliesen.",
       "phraseDiff": [
@@ -5903,8 +5928,8 @@
           "principe": "N1"
         },
         {
-          "old": "voorwaar",
-          "new": "werkelijk",
+          "old": "eens discipels, voorwaar",
+          "new": "van een discipel, werkelijk",
           "principe": "V9"
         },
         {
