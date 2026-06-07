@@ -4918,7 +4918,7 @@
       "number": 42,
       "textSV1888": "En zeide: Wat dunkt u van den Christus? Wiens Zoon is Hij? Zij zeiden tot Hem: Davids Zoon.",
       "text1637": "Ende seyde, Wat dunckt u van [36] de Christus, Wiens sone is hy? Sy seyden tot hem, Davids [sone.]",
-      "text2026": "En zei: Wat denkt u van de Christus? Van wie de Zoon is Hij? Zij zeiden tot Hem: Davids Zoon.",
+      "text2026": "En zei: Wat denkt u van de Christus? Van wie is Hij de Zoon? Zij zeiden tot Hem: Davids Zoon.",
       "marginNotes": [
         {
           "marker": "36",
@@ -5014,7 +5014,7 @@
           "gloss": "〔David"
         }
       ],
-      "text2026_html": "En zei: <span class=\"god-speaks\"><i>Wat denkt u van de Christus? Van wie de Zoon is Hij?</i></span> Zij zeiden tot Hem: <span class=\"direct-speech\"><i>Davids Zoon.</i></span>",
+      "text2026_html": "En zei: <span class=\"god-speaks\"><i>Wat denkt u van de Christus? Van wie is Hij de Zoon?</i></span> Zij zeiden tot Hem: <span class=\"direct-speech\"><i>Davids Zoon.</i></span>",
       "textSV1888_html": "En zeide: Wat dunkt u van<sup class=\"note-marker\" data-note=\"36\">36</sup> den Christus? Wiens Zoon is Hij? Zij zeiden tot Hem: Davids Zoon.",
       "text1637_html": "Ende seyde, Wat dunckt u van <sup class=\"note-marker\" data-note=\"36\">36</sup> de Christus, Wiens sone is hy? Sy seyden tot hem, Davids [<i>sone.</i>]",
       "phraseDiff": [
@@ -5034,9 +5034,14 @@
           "principe": "N1"
         },
         {
-          "old": "Wiens",
-          "new": "Van wie de",
+          "old": "Wiens Zoon",
+          "new": "Van wie",
           "principe": "V312"
+        },
+        {
+          "old": "Hij?",
+          "new": "Hij de Zoon?",
+          "principe": null
         }
       ]
     },
