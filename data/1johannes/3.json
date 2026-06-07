@@ -2599,7 +2599,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Een ieder die zijn broeder haat, is een doodslager; en u weet, dat geen doodslager het eeuwige leven heeft in zich blijvende.",
+      "text2026": "Een ieder die zijn broeder haat, is een moordenaar; en u weet, dat geen moordenaar het eeuwige leven heeft in zich blijvende.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -2726,7 +2726,7 @@
       ],
       "hsv": "Ieder die zijn broeder haat, is een moordenaar; ⓡen u weet dat geen moordenaar het eeuwige leven blijvend in zich heeft.",
       "nbg51": "Een ieder, die zijn broeder haat, is een mensenmoorder en gij weet, dat geen mensenmoorder eeuwig leven blijvend in zich heeft.",
-      "text2026_html": "Een ieder die zijn broeder haat, is<sup class=\"note-marker\" data-note=\"56\">56</sup> een doodslager;<sup class=\"note-marker\" data-note=\"q\">q</sup> en u weet, dat geen doodslager het eeuwige leven heeft in zich<sup class=\"note-marker\" data-note=\"57\">57</sup> blijvende.",
+      "text2026_html": "Een ieder die zijn broeder haat, is<sup class=\"note-marker\" data-note=\"56\">56</sup> een moordenaar;<sup class=\"note-marker\" data-note=\"q\">q</sup> en u weet, dat geen moordenaar het eeuwige leven heeft in zich<sup class=\"note-marker\" data-note=\"57\">57</sup> blijvende.",
       "textSV1888": "Een iegelijk, die zijn broeder haat, is een doodslager; en gij weet, dat geen doodslager het eeuwige leven heeft in zich blijvende.",
       "textSV1888_html": "Een iegelijk, die zijn broeder haat, is<sup class=\"note-marker\" data-note=\"56\">56</sup> een doodslager;<sup class=\"note-marker\" data-note=\"q\">q</sup> en gij weet, dat geen doodslager het eeuwige leven heeft in zich<sup class=\"note-marker\" data-note=\"57\">57</sup> blijvende.",
       "phraseDiff": [
@@ -2736,9 +2736,19 @@
           "principe": "V5"
         },
         {
+          "old": "doodslager;",
+          "new": "moordenaar;",
+          "principe": "V729"
+        },
+        {
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "doodslager",
+          "new": "moordenaar",
+          "principe": "V729"
         }
       ]
     },
