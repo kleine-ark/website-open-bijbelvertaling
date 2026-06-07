@@ -1510,7 +1510,7 @@
       "number": 10,
       "textSV1888": "Zo kwamen zij, en riepen tot den poortier der stad, en boodschapten hun, zeggende: Wij zijn gekomen tot het leger der Syriërs, en ziet, niemand was daar, noch eens mensen stem; maar paarden aangebonden, en ezels aangebonden, en tenten, gelijk als zij waren.",
       "text1637": "So quamense, ende riepen tot [20] den Poortier der stadt, ende bootschapten [21] hen, seggende; Wy zijn gekomen tot het leger der Syriers, ende siet, niemant en was daer, nochte geens menschen stemme; maer peerden aengebonden, ende esels aengebonden, ende tenten, gelijck als sy waren.",
-      "text2026": "Zo kwamen zij, en riepen tot de poortwachter van de stad, en boodschapten hun, zeggende: Wij zijn gekomen tot het leger van de Syriërs, en zie, niemand was daar, noch eens mensen stem; maar paarden aangebonden, en ezels aangebonden, en tenten, zoals als zij waren.",
+      "text2026": "Zo kwamen zij, en riepen tot de poortwachter van de stad, en boodschapten hun, zeggende: Wij zijn gekomen tot het leger van de Syriërs, en zie, niemand was daar, noch de stem van een mens; maar paarden aangebonden, en ezels aangebonden, en tenten, zoals als zij waren.",
       "marginNotes": [
         {
           "marker": "20",
@@ -1664,7 +1664,7 @@
           "morph": "HPp3mp"
         }
       ],
-      "text2026_html": "Zo kwamen zij, en riepen tot de poortwachter van de stad, en boodschapten hun, zeggende: <span class=\"direct-speech\"><i>Wij zijn gekomen tot het leger van de Syriërs, en zie, niemand was daar, noch eens mensen stem; maar paarden aangebonden, en ezels aangebonden, en tenten, zoals als zij waren.</i></span>",
+      "text2026_html": "Zo kwamen zij, en riepen tot de poortwachter van de stad, en boodschapten hun, zeggende: <span class=\"direct-speech\"><i>Wij zijn gekomen tot het leger van de Syriërs, en zie, niemand was daar, noch de stem van een mens; maar paarden aangebonden, en ezels aangebonden, en tenten, zoals als zij waren.</i></span>",
       "textSV1888_html": "Zo kwamen zij, en riepen tot<sup class=\"note-marker\" data-note=\"20\">20</sup> den poortier der stad, en boodschapten<sup class=\"note-marker\" data-note=\"21\">21</sup> hun, zeggende: Wij zijn gekomen tot het leger der Syriërs, en ziet, niemand was daar, noch eens mensen stem; maar paarden aangebonden, en ezels aangebonden, en tenten, gelijk als zij waren.",
       "text1637_html": "So quamense, ende riepen tot <sup class=\"note-marker\" data-note=\"20\">20</sup> den Poortier der stadt, ende bootschapten <sup class=\"note-marker\" data-note=\"21\">21</sup> hen, seggende; Wy zijn gekomen tot het leger der Syriers, ende siet, niemant en was daer, nochte geens menschen stemme; maer peerden aengebonden, ende esels aengebonden, ende tenten, gelijck als sy ware<i>n</i>.",
       "phraseDiff": [
@@ -1682,6 +1682,11 @@
           "old": "ziet,",
           "new": "zie,",
           "principe": "V198"
+        },
+        {
+          "old": "eens mensen stem;",
+          "new": "de stem van een mens;",
+          "principe": null
         },
         {
           "old": "gelijk",

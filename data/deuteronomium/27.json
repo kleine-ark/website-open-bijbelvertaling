@@ -1192,7 +1192,7 @@
       "number": 11,
       "textSV1888": "En Mozes gebood het volk te dien dage, zeggende:",
       "text1637": "Ende Mose geboodt den volcke te dien dage, seggende:",
-      "text2026": "En Mozes gebood het volk te die dage, zeggende:",
+      "text2026": "En Mozes gebood het volk op die dag, zeggende:",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1231,12 +1231,12 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En Mozes gebood het volk te die dage, zeggende:</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En Mozes gebood het volk op die dag, zeggende:</i></span>",
       "text1637_html": "Ende Mose geboodt den volcke te dien dage, seggende:",
       "phraseDiff": [
         {
-          "old": "dien",
-          "new": "die",
+          "old": "te dien dage,",
+          "new": "op die dag,",
           "principe": "N4"
         }
       ]
@@ -2257,7 +2257,7 @@
       "number": 25,
       "textSV1888": "Vervloekt zij, die geschenk neemt, om een ziel, het bloed eens onschuldigen, te verslaan! En al het volk zal zeggen: Amen.",
       "text1637": "Vervloeckt zy, [16] die geschenck neemt, om [17] eene ziele, [18] het bloet eens onschuldigen, te verslaen: ende al ’t volck sal seggen, Amen.",
-      "text2026": "Vervloekt zij, die geschenk neemt, om een ziel, het bloed eens onschuldigen, te verslaan! En al het volk zal zeggen: Amen.",
+      "text2026": "Vervloekt zij, die geschenk neemt, om een ziel, het bloed van een onschuldige, te verslaan! En al het volk zal zeggen: Amen.",
       "marginNotes": [
         {
           "marker": "16",
@@ -2338,9 +2338,16 @@
           "morph": "HD"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Vervloekt zij,<sup class=\"note-marker\" data-note=\"16\">16</sup> die geschenk neemt, om<sup class=\"note-marker\" data-note=\"17\">17</sup> een ziel,<sup class=\"note-marker\" data-note=\"18\">18</sup> het bloed eens onschuldigen, te verslaan! En al het volk zal zeggen: Amen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Vervloekt zij,<sup class=\"note-marker\" data-note=\"16\">16</sup> die geschenk neemt, om<sup class=\"note-marker\" data-note=\"17\">17</sup> een ziel,<sup class=\"note-marker\" data-note=\"18\">18</sup> het bloed van een onschuldige, te verslaan! En al het volk zal zeggen: Amen.</i></span>",
       "textSV1888_html": "Vervloekt zij,<sup class=\"note-marker\" data-note=\"16\">16</sup> die geschenk neemt, om<sup class=\"note-marker\" data-note=\"17\">17</sup> een ziel,<sup class=\"note-marker\" data-note=\"18\">18</sup> het bloed eens onschuldigen, te verslaan! En al het volk zal zeggen: Amen.",
-      "text1637_html": "Vervloeckt zy, <sup class=\"note-marker\" data-note=\"16\">16</sup> die geschenck neemt, om <sup class=\"note-marker\" data-note=\"17\">17</sup> eene ziele, <sup class=\"note-marker\" data-note=\"18\">18</sup> het bloet eens onschuldigen, te verslaen: ende al ’t volck sal seggen, Amen."
+      "text1637_html": "Vervloeckt zy, <sup class=\"note-marker\" data-note=\"16\">16</sup> die geschenck neemt, om <sup class=\"note-marker\" data-note=\"17\">17</sup> eene ziele, <sup class=\"note-marker\" data-note=\"18\">18</sup> het bloet eens onschuldigen, te verslaen: ende al ’t volck sal seggen, Amen.",
+      "phraseDiff": [
+        {
+          "old": "eens onschuldigen,",
+          "new": "van een onschuldige,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 26,

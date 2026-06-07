@@ -48,7 +48,7 @@
       "number": 2,
       "textSV1888": "Spreek tot de kinderen Israëls, en zeg tot hen: Wanneer een man of een vrouw zich afgescheiden zal hebben, belovende de gelofte eens Nazireërs, om zich den HEERE af te zonderen;",
       "text1637": "Spreeckt tot de kinderen Israëls, ende segt tot hen: wanneer een man ofte eene vrouwe sich afgescheyden sal hebben, belovende de gelofte eenes [1] Nazireers, om sich den HEERE af te sonderen;",
-      "text2026": "Spreek tot de kinderen van Israël, en zeg tot hen: Wanneer een man of een vrouw zich afgescheiden zal hebben, belovende de gelofte eens Nazireërs, om zich JAHWEH af te zonderen;",
+      "text2026": "Spreek tot de kinderen van Israël, en zeg tot hen: Wanneer een man of een vrouw zich afgescheiden zal hebben, belovende de gelofte van een Nazireër, om zich JAHWEH af te zonderen;",
       "marginNotes": [
         {
           "marker": "1",
@@ -140,13 +140,18 @@
           "morph": "HR/Np"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Spreek tot de kinderen van Israël, en zeg tot hen: Wanneer een man of een vrouw zich afgescheiden zal hebben, belovende de gelofte eens<sup class=\"note-marker\" data-note=\"1\">1</sup> Nazireërs, om zich JAHWEH af te zonderen;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Spreek tot de kinderen van Israël, en zeg tot hen: Wanneer een man of een vrouw zich afgescheiden zal hebben, belovende de gelofte van een Nazireër<sup class=\"note-marker\" data-note=\"1\">1</sup>, om zich JAHWEH af te zonderen;</i></span>",
       "textSV1888_html": "Spreek tot de kinderen Israëls, en zeg tot hen: Wanneer een man of een vrouw zich afgescheiden zal hebben, belovende de gelofte eens<sup class=\"note-marker\" data-note=\"1\">1</sup> Nazireërs, om zich den HEERE af te zonderen;",
       "text1637_html": "Spreeckt tot de kinderen Israëls, ende segt tot hen: wanneer een man ofte eene vrouwe sich afgescheyden sal hebben, belovende de gelofte eenes <sup class=\"note-marker\" data-note=\"1\">1</sup> Nazireers, om sich den HEERE af te sonderen;",
       "phraseDiff": [
         {
           "old": "Israëls,",
           "new": "van Israël,",
+          "principe": null
+        },
+        {
+          "old": "eens Nazireërs,",
+          "new": "van een Nazireër,",
           "principe": null
         },
         {
@@ -535,7 +540,7 @@
       "number": 6,
       "textSV1888": "Al de dagen, die hij zich den HEERE zal afgezonderd hebben, zal hij tot het lichaam eens doden niet gaan.",
       "text1637": "Alle de dagen, die hy sich den HEERE sal afgesondert hebben, en sal hy tot het [7] lichaem eens dooden niet gaen.",
-      "text2026": "Al de dagen, die hij zich JAHWEH zal afgezonderd hebben, zal hij tot het lichaam eens doden niet gaan.",
+      "text2026": "Al de dagen, die hij zich JAHWEH zal afgezonderd hebben, zal hij tot het lichaam van een dode niet gaan.",
       "marginNotes": [
         {
           "marker": "7",
@@ -592,7 +597,7 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Al de dagen, die hij zich JAHWEH zal afgezonderd hebben, zal hij tot het<sup class=\"note-marker\" data-note=\"7\">7</sup> lichaam eens doden niet gaan.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Al de dagen, die hij zich JAHWEH zal afgezonderd hebben, zal hij tot het lichaam van een dode<sup class=\"note-marker\" data-note=\"7\">7</sup> niet gaan.</i></span>",
       "textSV1888_html": "Al de dagen, die hij zich den HEERE zal afgezonderd hebben, zal hij tot het<sup class=\"note-marker\" data-note=\"7\">7</sup> lichaam eens doden niet gaan.",
       "text1637_html": "Alle de dagen, die hy sich den HEERE sal afgesondert hebben, en sal hy tot het <sup class=\"note-marker\" data-note=\"7\">7</sup> lichaem eens dooden niet gaen.",
       "phraseDiff": [
@@ -600,6 +605,11 @@
           "old": "den HEERE",
           "new": "JAHWEH",
           "principe": "N1"
+        },
+        {
+          "old": "eens doden",
+          "new": "van een dode",
+          "principe": null
         }
       ]
     },
