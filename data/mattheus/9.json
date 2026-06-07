@@ -112,7 +112,7 @@
       "number": 2,
       "textSV1888": "En Jezus, hun geloof ziende, zeide tot den geraakte: Zoon! wees welgemoed; uw zonden zijn u vergeven.",
       "text1637": "Ende Iesus [3] haer geloove siende, seyde tot den geraeckten, Sone, [4] zijt wel gemoet, uwe sonden zijn u vergeven.",
-      "text2026": "En Jezus, hun geloof ziende, zei tot de geraakte: Zoon! wees welgemoed; uw zonden zijn u vergeven.",
+      "text2026": "En Jezus, hun geloof ziende, zei tot de geraakte: Zoon! heb goede moed; uw zonden zijn u vergeven.",
       "marginNotes": [
         {
           "marker": "3",
@@ -275,7 +275,7 @@
           "gloss": "〔sin"
         }
       ],
-      "text2026_html": "En Jezus,<sup class=\"note-marker\" data-note=\"3\">3</sup> hun geloof ziende, zei tot de geraakte:<sup class=\"note-marker\" data-note=\"4\">4</sup> <span class=\"god-speaks\"><i>Zoon! wees welgemoed; uw zonden zijn u vergeven.</i></span>",
+      "text2026_html": "En Jezus,<sup class=\"note-marker\" data-note=\"3\">3</sup> hun geloof ziende, zei tot de geraakte:<sup class=\"note-marker\" data-note=\"4\">4</sup> <span class=\"god-speaks\"><i>Zoon! heb goede moed; uw zonden zijn u vergeven.</i></span>",
       "textSV1888_html": "En Jezus,<sup class=\"note-marker\" data-note=\"3\">3</sup> hun geloof ziende, zeide tot den geraakte:<sup class=\"note-marker\" data-note=\"4\">4</sup> Zoon! wees welgemoed; uw zonden zijn u vergeven.",
       "text1637_html": "Ende Iesus <sup class=\"note-marker\" data-note=\"3\">3</sup> haer geloove siende, seyde tot den geraeckten, Sone, <sup class=\"note-marker\" data-note=\"4\">4</sup> zijt wel gemoet, uwe sonden zijn u vergeven.",
       "phraseDiff": [
@@ -288,6 +288,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "wees welgemoed;",
+          "new": "heb goede moed;",
+          "principe": "V681"
         }
       ]
     },
@@ -2141,7 +2146,7 @@
       "number": 16,
       "textSV1888": "Ook zet niemand een lap ongevold laken op een oud kleed; want deszelfs aangezette lap scheurt af van het kleed, en er wordt een ergere scheur.",
       "text1637": "Oock en set niemandt [20] eenen lap [21] ongevolt laecken, op een oudt kleedt: want desselven [22] aengesette lap [23] scheurt af van het kleedt, ende daer wort een erger scheure.",
-      "text2026": "Ook zet niemand een lap ongevold laken op een oud kleed; want zijn aangezette lap scheurt af van het kleed, en er wordt een ergere scheur.",
+      "text2026": "Ook zet niemand een lap niet gekrompen laken op een oud kleed; want zijn aangezette lap scheurt af van het kleed, en er wordt een ergere scheur.",
       "marginNotes": [
         {
           "marker": "20",
@@ -2155,7 +2160,7 @@
           "type": "explanatory",
           "textSV1888": "ongevold laken: Of, onbereid, nieuw, ongesleten; gelijk Luk. 5:36 . Lukas 5:36 : En Hij zeide ook tot hen een gelijkenis: Niemand zet een lap van een nieuw kleed op een oud kleed; anders zo scheurt ook dat nieuwe het oude, en de lap van het nieuwe komt met het oude niet overeen.",
           "text1637": "Ofte, Onbereydt, nieuw, ongesleten: gelijck Luc. 5.36.",
-          "text2026": "ongevold laken: Of, onbereid, nieuw, ongesleten; gelijk Luk. 5:36 . Lukas 5:36 : En Hij zei ook tot hen een gelijkenis: Niemand zet een lap van een nieuw kleed op een oud kleed; anders zo scheurt ook dat nieuwe het oude, en de lap van het nieuwe komt met het oude niet overeen."
+          "text2026": "niet gekrompen laken: Of, onbereid, nieuw, ongesleten; gelijk Luk. 5:36 . Lukas 5:36 : En Hij zei ook tot hen een gelijkenis: Niemand zet een lap van een nieuw kleed op een oud kleed; anders zo scheurt ook dat nieuwe het oude, en de lap van het nieuwe komt met het oude niet overeen."
         },
         {
           "marker": "22",
@@ -2169,7 +2174,7 @@
           "type": "explanatory",
           "textSV1888": "scheurt af van het kleed: Of, scheurt iets af, gelijk Mark. 2:21 ; namelijk het nieuwe van het oude, dat is, scheurt den aangezetten lap af. Marcus 2:21 : En niemand naait een lap ongevold laken op een oud kleed; anders scheurt deszelfs nieuwe aangenaaide lap iets af van het oude kleed, en er wordt een ergere scheur.",
           "text1637": "Ofte, Scheurt yet af, gelijck Marc. 2.21. N. het nieuwe van het oude. D. scheurt den aengesetten lap af.",
-          "text2026": "scheurt af van het kleed: Of, scheurt iets af, gelijk Mark. 2:21 ; namelijk het nieuwe van het oude, dat is, scheurt de aangezetten lap af. Marcus 2:21 : En niemand naait een lap ongevold laken op een oud kleed; anders scheurt deszelfs nieuwe aangenaaide lap iets af van het oude kleed, en er wordt een ergere scheur."
+          "text2026": "scheurt af van het kleed: Of, scheurt iets af, gelijk Mark. 2:21 ; namelijk het nieuwe van het oude, dat is, scheurt de aangezetten lap af. Marcus 2:21 : En niemand naait een lap niet gekrompen laken op een oud kleed; anders scheurt deszelfs nieuwe aangenaaide lap iets af van het oude kleed, en er wordt een ergere scheur."
         }
       ],
       "grondtekst": [
@@ -2300,10 +2305,15 @@
           "gloss": "〔to be"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Ook zet niemand<sup class=\"note-marker\" data-note=\"20\">20</sup> een lap<sup class=\"note-marker\" data-note=\"21\">21</sup> ongevold laken op een oud kleed; want zijn<sup class=\"note-marker\" data-note=\"22\">22</sup> aangezette lap<sup class=\"note-marker\" data-note=\"23\">23</sup> scheurt af van het kleed, en er wordt een ergere scheur.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Ook zet niemand<sup class=\"note-marker\" data-note=\"20\">20</sup> een lap<sup class=\"note-marker\" data-note=\"21\">21</sup> niet gekrompen laken op een oud kleed; want zijn<sup class=\"note-marker\" data-note=\"22\">22</sup> aangezette lap<sup class=\"note-marker\" data-note=\"23\">23</sup> scheurt af van het kleed, en er wordt een ergere scheur.</i></span>",
       "textSV1888_html": "Ook zet niemand<sup class=\"note-marker\" data-note=\"20\">20</sup> een lap<sup class=\"note-marker\" data-note=\"21\">21</sup> ongevold laken op een oud kleed; want deszelfs<sup class=\"note-marker\" data-note=\"22\">22</sup> aangezette lap<sup class=\"note-marker\" data-note=\"23\">23</sup> scheurt af van het kleed, en er wordt een ergere scheur.",
       "text1637_html": "Oock en set niemandt <sup class=\"note-marker\" data-note=\"20\">20</sup> eenen lap <sup class=\"note-marker\" data-note=\"21\">21</sup> ongevolt laecken, op een oudt kleedt: want desselven <sup class=\"note-marker\" data-note=\"22\">22</sup> aengesette lap <sup class=\"note-marker\" data-note=\"23\">23</sup> scheurt af van het kleedt, ende daer wort een erger scheure.",
       "phraseDiff": [
+        {
+          "old": "ongevold",
+          "new": "niet gekrompen",
+          "principe": "V684"
+        },
         {
           "old": "deszelfs",
           "new": "zijn",
@@ -2315,21 +2325,21 @@
       "number": 17,
       "textSV1888": "Noch doet men nieuwen wijn in oude lederzakken; anders zo bersten de lederzakken, en de wijn wordt uitgestort, en de lederzakken verderven, maar men doet nieuwen wijn in nieuwe lederzakken, en beide te zamen worden behouden.",
       "text1637": "[h] Noch men doet geenen nieuwen wijn in oude [leder-]sacken: anders [24] so bersten de [leder-]sacken, ende de wijn wort uytgestort, ende de [leder-]sacken verderven: maer men doet nieuwen wijn in nieuwe [leder-]sacken, ende beyde te samen worden behouden.",
-      "text2026": "Noch doet men nieuwe wijn in oude lederzakken; anders zo bersten de lederzakken, en de wijn wordt uitgestort, en de lederzakken verderven, maar men doet nieuwe wijn in nieuwe lederzakken, en beide samen worden behouden.",
+      "text2026": "Noch doet men nieuwe wijn in oude lederen zakken; anders zo barsten de lederen zakken, en de wijn wordt uitgestort, en de lederen zakken verderven, maar men doet nieuwe wijn in nieuwe lederen zakken, en beide samen worden behouden.",
       "marginNotes": [
         {
           "marker": "h",
           "type": "crossref",
           "textSV1888": "Marc. 2:22 . Marcus 2:22 : En niemand doet nieuwen wijn in oude lederzakken; anders doet de nieuwe wijn de lederzakken bersten en de wijn wordt uitgestort, en de lederzakken verderven; maar nieuwen wijn moet men in nieuwe lederzakken doen.",
           "text1637": "Actor. 2.4. Marc. 2.21.",
-          "text2026": "Mark. 2:22 . Marcus 2:22 : En niemand doet nieuwen wijn in oude lederzakken; anders doet de nieuwe wijn de lederzakken bersten en de wijn wordt uitgestort, en de lederzakken verderven; maar nieuwen wijn moet men in nieuwe lederzakken doen."
+          "text2026": "Mark. 2:22 . Marcus 2:22 : En niemand doet nieuwen wijn in oude lederen zakken; anders doet de nieuwe wijn de lederen zakken barsten en de wijn wordt uitgestort, en de lederen zakken verderven; maar nieuwen wijn moet men in nieuwe lederen zakken doen."
         },
         {
           "marker": "24",
           "type": "explanatory",
           "textSV1888": "zo bersten de leder zakken: Of, scheuren.",
           "text1637": "Ofte, scheuren.",
-          "text2026": "zo bersten de leder zakken: Of, scheuren."
+          "text2026": "zo barsten de leder zakken: Of, scheuren."
         }
       ],
       "grondtekst": [
@@ -2526,7 +2536,7 @@
           "gloss": "〔to preserve"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup><span class=\"god-speaks\"><i> Noch doet men nieuwe wijn in oude lederzakken; anders<sup class=\"note-marker\" data-note=\"24\">24</sup> zo bersten de lederzakken, en de wijn wordt uitgestort, en de lederzakken verderven, maar men doet nieuwe wijn in nieuwe lederzakken, en beide samen worden behouden.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup><span class=\"god-speaks\"><i> Noch doet men nieuwe wijn in oude lederen zakken; anders<sup class=\"note-marker\" data-note=\"24\">24</sup> zo barsten de lederen zakken, en de wijn wordt uitgestort, en de lederen zakken verderven, maar men doet nieuwe wijn in nieuwe lederen zakken, en beide samen worden behouden.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Noch doet men nieuwen wijn in oude lederzakken; anders<sup class=\"note-marker\" data-note=\"24\">24</sup> zo bersten de lederzakken, en de wijn wordt uitgestort, en de lederzakken verderven, maar men doet nieuwen wijn in nieuwe lederzakken, en beide te zamen worden behouden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Noch men doet geenen nieuwen wijn in oude [<i>leder-</i>]sacken: anders <sup class=\"note-marker\" data-note=\"24\">24</sup> so bersten de [<i>leder-</i>]sacken, ende de wijn wort uytgestort, ende de [<i>leder-</i>]sacken verderven: maer men doet nieuwen wijn in nieuwe [<i>leder-</i>]sacken, ende beyde te samen worden behouden.",
       "phraseDiff": [
@@ -2536,9 +2546,34 @@
           "principe": "V260"
         },
         {
+          "old": "lederzakken;",
+          "new": "lederen zakken;",
+          "principe": "V504"
+        },
+        {
+          "old": "bersten",
+          "new": "barsten",
+          "principe": "V682"
+        },
+        {
+          "old": "lederzakken,",
+          "new": "lederen zakken,",
+          "principe": "V504"
+        },
+        {
+          "old": "lederzakken",
+          "new": "lederen zakken",
+          "principe": "V504"
+        },
+        {
           "old": "nieuwen",
           "new": "nieuwe",
           "principe": "V260"
+        },
+        {
+          "old": "lederzakken,",
+          "new": "lederen zakken,",
+          "principe": "V504"
         },
         {
           "old": "te zamen",
@@ -3068,7 +3103,7 @@
       "number": 22,
       "textSV1888": "En Jezus, Zich omkerende, en haar ziende, zeide: Wees welgemoed, dochter! uw geloof heeft u behouden. En de vrouw werd gezond van dezelve ure af.)",
       "text1637": "Ende Iesus hem omkeerende, ende haer siende, seyde, [l] Zijt wel gemoet dochter, uw’ geloove heeft u behouden. Ende de vrouwe wiert gesont van de selve uyre af.",
-      "text2026": "En Jezus, Zich omkerende, en haar ziende, zei: Wees welgemoed, dochter! uw geloof heeft u behouden. En de vrouw werd gezond van dezelfde ure af.)",
+      "text2026": "En Jezus, Zich omkerende, en haar ziende, zei: Heb goede moed, dochter! uw geloof heeft u behouden. En de vrouw werd gezond van dezelfde ure af.)",
       "marginNotes": [
         {
           "marker": "l",
@@ -3218,13 +3253,13 @@
           "gloss": "〔that"
         }
       ],
-      "text2026_html": "En Jezus, Zich omkerende, en haar ziende, zei:<sup class=\"note-marker\" data-note=\"l\">l</sup> <span class=\"god-speaks\"><i>Wees welgemoed, dochter! uw geloof heeft u behouden.</i></span> En de vrouw werd gezond van dezelfde ure af.)",
+      "text2026_html": "En Jezus, Zich omkerende, en haar ziende, zei:<sup class=\"note-marker\" data-note=\"l\">l</sup> <span class=\"god-speaks\"><i>Heb goede moed, dochter! uw geloof heeft u behouden.</i></span> En de vrouw werd gezond van dezelfde ure af.)",
       "textSV1888_html": "En Jezus, Zich omkerende, en haar ziende, zeide:<sup class=\"note-marker\" data-note=\"l\">l</sup> Wees welgemoed, dochter! uw geloof heeft u behouden. En de vrouw werd gezond van dezelve ure af.)",
       "text1637_html": "Ende Iesus hem omkeerende, ende haer siende, seyde, <sup class=\"note-marker\" data-note=\"l\">l</sup> Zijt wel gemoet dochter, uw’ geloove heeft u behouden. En<i>de</i> de vrouwe wiert gesont van de selve uyre af.",
       "phraseDiff": [
         {
-          "old": "zeide:",
-          "new": "zei:",
+          "old": "zeide: Wees welgemoed,",
+          "new": "zei: Heb goede moed,",
           "principe": "W1"
         },
         {
@@ -3674,14 +3709,14 @@
       "number": 27,
       "textSV1888": "En als Jezus van daar voortging, zijn Hem twee blinden gevolgd, roepende en zeggende: Gij Zone Davids, ontferm U onzer!",
       "text1637": "Ende als Iesus van daer voortginck, zijn hem twee blinde gevolcht, roepende ende seggende, [Ghy] [33] sone Davids ontfermt u onser.",
-      "text2026": "En als Jezus van daar voortging, zijn Hem twee blinden gevolgd, roepende en zeggende: U Zone Davids, ontferm U onzer!",
+      "text2026": "En als Jezus van daar voortging, zijn Hem twee blinden gevolgd, roepende en zeggende: U Zoon van David, ontferm U over ons!",
       "marginNotes": [
         {
           "marker": "33",
           "type": "explanatory",
           "textSV1888": "Zone Davids, ontferm u onzer: De Messias was voor een zoon van David bekend, omdat Hij uit het geslacht Davids zou voorkomen, volgens de belofte aan David gedaan. Zie Matth. 1:1 . Mattheüs 1:1 : Het boek des geslachts van JEZUS CHRISTUS, den Zoon van David, den zoon van Abraham.",
           "text1637": "De Messias was voor een Sone Davids bekent, om dat hy uyt den geslachte Davids soude voortkomen, volgens de belofte aen David gedaen. Siet Mat. 1. vers 1.",
-          "text2026": "Zone Davids, ontferm u onzer: De Messias was voor een zoon van David bekend, omdat Hij uit het geslacht Davids zou voorkomen, volgens de belofte aan David gedaan. Zie Matt. 1:1 . Mattheüs 1:1 : Het boek van het geslacht van JEZUS CHRISTUS, de Zoon van David, de zoon van Abraham."
+          "text2026": "Zoon van David, ontferm u over ons: De Messias was voor een zoon van David bekend, omdat Hij uit het geslacht Davids zou voorkomen, volgens de belofte aan David gedaan. Zie Matt. 1:1 . Mattheüs 1:1 : Het boek van het geslacht van JEZUS CHRISTUS, de Zoon van David, de zoon van Abraham."
         }
       ],
       "grondtekst": [
@@ -3782,14 +3817,19 @@
           "gloss": "〔David"
         }
       ],
-      "text2026_html": "En als Jezus van daar voortging, zijn Hem twee blinden gevolgd, roepende en zeggende: <span class=\"direct-speech\"><i>U Zone Davids, ontferm U onzer!</i></span>",
+      "text2026_html": "En als Jezus van daar voortging, zijn Hem twee blinden gevolgd, roepende en zeggende: <span class=\"direct-speech\"><i>U Zoon van David, ontferm U over ons!</i></span>",
       "textSV1888_html": "En als Jezus van daar voortging, zijn Hem twee blinden gevolgd, roepende en zeggende:<sup class=\"note-marker\" data-note=\"33\">33</sup> Gij Zone Davids, ontferm U onzer!",
       "text1637_html": "Ende als Iesus van daer voortginck, zijn hem twee blinde gevolcht, roepende ende seggende, [<i>Ghy</i>] <sup class=\"note-marker\" data-note=\"33\">33</sup> sone Davids ontfermt u onser.",
       "phraseDiff": [
         {
-          "old": "Gij",
-          "new": "U",
+          "old": "Gij Zone Davids,",
+          "new": "U Zoon van David,",
           "principe": "A1"
+        },
+        {
+          "old": "onzer!",
+          "new": "over ons!",
+          "principe": null
         }
       ]
     },
@@ -4041,7 +4081,7 @@
       "number": 30,
       "textSV1888": "En hun ogen zijn geopend geworden. En Jezus heeft hun zeer gestrengelijk verboden, zeggende: Ziet, dat niemand het wete.",
       "text1637": "Ende hare oogen zijn geopent geworden. [o] Ende Iesus heeft haer [34] seer strengelick verboden, seggende, Siet, dat het niemant en wete.",
-      "text2026": "En hun ogen zijn geopend geworden. En Jezus heeft hun zeer gestrengelijk verboden, zeggende: Zie, dat niemand het wete.",
+      "text2026": "En hun ogen zijn geopend geworden. En Jezus heeft hun zeer streng verboden, zeggende: Zie, dat niemand het wete.",
       "marginNotes": [
         {
           "marker": "o",
@@ -4144,10 +4184,15 @@
           "gloss": "〔to know"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En hun ogen zijn geopend geworden.</i></span> En Jezus heeft hun zeer gestrengelijk verboden, zeggende: Zie, dat niemand het wete.",
+      "text2026_html": "En hun ogen zijn geopend geworden. En Jezus heeft hun zeer streng verboden, zeggende: <span class=\"god-speaks\"><i>Zie, dat niemand het wete.</i></span>",
       "textSV1888_html": "En hun ogen zijn geopend geworden.<sup class=\"note-marker\" data-note=\"o\">o</sup> En Jezus heeft hun<sup class=\"note-marker\" data-note=\"34\">34</sup> zeer gestrengelijk verboden, zeggende: Ziet, dat niemand het wete.",
       "text1637_html": "Ende hare oogen zijn geopent geworden. <sup class=\"note-marker\" data-note=\"o\">o</sup> Ende Iesus heeft haer <sup class=\"note-marker\" data-note=\"34\">34</sup> seer strengelick verboden, seggende, Siet, dat het niemant en wete.",
       "phraseDiff": [
+        {
+          "old": "gestrengelijk",
+          "new": "streng",
+          "principe": "V687"
+        },
         {
           "old": "Ziet,",
           "new": "Zie,",
@@ -4159,7 +4204,7 @@
       "number": 31,
       "textSV1888": "Maar zij, uitgegaan zijnde, hebben Hem ruchtbaar gemaakt door dat gehele land.",
       "text1637": "[p] Maer sy uytgegaen zijnde, hebben hem ruchtbaer gemaeckt, door dat geheele landt.",
-      "text2026": "Maar zij, uitgegaan zijnde, hebben Hem ruchtbaar gemaakt door dat hele land.",
+      "text2026": "Maar zij, uitgegaan zijnde, hebben Hem bekend gemaakt door dat hele land.",
       "marginNotes": [
         {
           "marker": "p",
@@ -4231,10 +4276,15 @@
           "gloss": "〔that"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"p\">p</sup> Maar zij, uitgegaan zijnde, hebben Hem ruchtbaar gemaakt door dat hele land.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"p\">p</sup> Maar zij, uitgegaan zijnde, hebben Hem bekend gemaakt door dat hele land.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"p\">p</sup> Maar zij, uitgegaan zijnde, hebben Hem ruchtbaar gemaakt door dat gehele land.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"p\">p</sup> Maer sy uytgegaen zijnde, hebben hem ruchtbaer gemaeckt, door dat geheele landt.",
       "phraseDiff": [
+        {
+          "old": "ruchtbaar",
+          "new": "bekend",
+          "principe": "V688"
+        },
         {
           "old": "gehele",
           "new": "hele",
@@ -4339,7 +4389,7 @@
       "number": 33,
       "textSV1888": "En als de duivel uitgeworpen was, sprak de stomme. En de scharen verwonderden zich, zeggende: Er is nooit desgelijks in Israël gezien!",
       "text1637": "Ende als de Duyvel uytgeworpen was, sprack de stomme. Ende de scharen verwonderden haer, seggende, Daer en is noyt [36] desgelijcks in Israël gesien.",
-      "text2026": "En als de duivel uitgeworpen was, sprak de stomme. En de menigten verwonderden zich, zeggende: Er is nooit evenzo in Israël gezien!",
+      "text2026": "En als de duivel uitgeworpen was, sprak de stomme. En de menigten verwonderden zich, zeggende: Er is nooit zoiets in Israël gezien!",
       "marginNotes": [
         {
           "marker": "36",
@@ -4459,7 +4509,7 @@
           "gloss": "〔Israel"
         }
       ],
-      "text2026_html": "En als de duivel uitgeworpen was, sprak de stomme. En de menigten verwonderden zich, zeggende: <span class=\"direct-speech\"><i>Er is nooit evenzo in Israël gezien!</i></span>",
+      "text2026_html": "En als de duivel uitgeworpen was, sprak de stomme. En de menigten verwonderden zich, zeggende: <span class=\"direct-speech\"><i>Er is nooit zoiets in Israël gezien!</i></span>",
       "textSV1888_html": "En als de duivel uitgeworpen was, sprak de stomme. En de scharen verwonderden zich, zeggende: Er is nooit<sup class=\"note-marker\" data-note=\"36\">36</sup> desgelijks in Israël gezien!",
       "text1637_html": "Ende als de Duyvel uytgeworpen was, sprack de stomme. Ende de scharen verwonderden haer, seggende, Daer en is noyt <sup class=\"note-marker\" data-note=\"36\">36</sup> desgelijcks in Israël gesien.",
       "phraseDiff": [
@@ -4470,7 +4520,7 @@
         },
         {
           "old": "desgelijks",
-          "new": "evenzo",
+          "new": "zoiets",
           "principe": "V11"
         }
       ]
@@ -4590,7 +4640,7 @@
       "number": 35,
       "textSV1888": "En Jezus omging al de steden en vlekken, lerende in hun synagogen, en predikende het Evangelie des Koninkrijks, en genezende alle ziekte en alle kwale onder het volk.",
       "text1637": "[s] Ende Iesus omginck alle de steden ende vlecken, leerende in hare Synagogen, ende predikende het Euangelium des Coninckrijcks, ende genesende [38] alle sieckten ende alle qualen onder den volcke.",
-      "text2026": "En Jezus omging al de steden en plaatsen, lerende in hun synagogen, en predikende het Evangelie van het Koninkrijk, en genezende alle ziekte en alle kwale onder het volk.",
+      "text2026": "En Jezus omging al de steden en plaatsen, lerende in hun synagogen, en predikende het Evangelie van het Koninkrijk, en genezende alle ziekte en alle kwalen onder het volk.",
       "marginNotes": [
         {
           "marker": "s",
@@ -4604,7 +4654,7 @@
           "type": "explanatory",
           "textSV1888": "Alle ziekten en alle kwalen onder het volk: Dat is, allerllei. Zie Matth. 4:23 . Mattheüs 4:23 : En Jezus omging geheel Galilea, lerende in hun synagogen en predikende het Evangelie des Koninkrijks, en genezende alle ziekte en alle kwale onder het volk.",
           "text1637": "D. Allerley. siet Matth. 4.23.",
-          "text2026": "Alle ziekten en alle kwalen onder het volk: Dat is, allerllei. Zie Matt. 4:23 . Mattheüs 4:23 : En Jezus omging geheel Galilea, lerende in hun synagogen en predikende het Evangelie van het Koninkrijk, en genezende alle ziekte en alle kwale onder het volk."
+          "text2026": "Alle ziekten en alle kwalen onder het volk: Dat is, allerllei. Zie Matt. 4:23 . Mattheüs 4:23 : En Jezus omging geheel Galilea, lerende in hun synagogen en predikende het Evangelie van het Koninkrijk, en genezende alle ziekte en alle kwalen onder het volk."
         }
       ],
       "grondtekst": [
@@ -4777,7 +4827,7 @@
           "gloss": "〔sickness"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"s\">s</sup> En Jezus omging al de steden en plaatsen, lerende in hun synagogen, en predikende het Evangelie van het Koninkrijk, en genezende<sup class=\"note-marker\" data-note=\"38\">38</sup> alle ziekte en alle kwale onder het volk.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"s\">s</sup> En Jezus omging al de steden en plaatsen, lerende in hun synagogen, en predikende het Evangelie van het Koninkrijk, en genezende<sup class=\"note-marker\" data-note=\"38\">38</sup> alle ziekte en alle kwalen onder het volk.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"s\">s</sup> En Jezus omging al de steden en vlekken, lerende in hun synagogen, en predikende het Evangelie des Koninkrijks, en genezende<sup class=\"note-marker\" data-note=\"38\">38</sup> alle ziekte en alle kwale onder het volk.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"s\">s</sup> Ende Iesus omginck alle de steden ende vlecken, leerende in hare Synagogen, ende predikende het Euangelium des Coninckrijcks, ende genesende <sup class=\"note-marker\" data-note=\"38\">38</sup> alle sieckten ende alle qualen onder den volcke.",
       "phraseDiff": [
@@ -4790,6 +4840,11 @@
           "old": "des Koninkrijks,",
           "new": "van het Koninkrijk,",
           "principe": "N3"
+        },
+        {
+          "old": "kwale",
+          "new": "kwalen",
+          "principe": null
         }
       ]
     },

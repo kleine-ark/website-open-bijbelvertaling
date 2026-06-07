@@ -1321,14 +1321,6 @@
       "regex": "\\b[Vv]erfoeisel\\b"
     },
     {
-      "id": "V102",
-      "categorie": "Verouderde woorden",
-      "oud": "stadhouders",
-      "nieuw": "gouverneurs",
-      "toelichting": "Verouderd",
-      "regex": "\\b[Ss]tadhouders\\b"
-    },
-    {
       "id": "V103",
       "categorie": "Verouderde woorden",
       "oud": "alom",
@@ -5960,6 +5952,78 @@
       "nieuw": "dokter",
       "toelichting": "Verouderd 'medicijnmeester(s)' → 'dokter(s)' (modern Nederlands; geen 'doktor', dat is Duits).",
       "regex": "\\b[Mm]edicijnmeester(s)?\\b"
+    },
+    {
+      "id": "V681",
+      "categorie": "Verouderde uitdrukking",
+      "oud": "wees welgemoed",
+      "nieuw": "heb goede moed",
+      "toelichting": "Verouderd 'wees welgemoed' (= heb goede moed, wees getroost) → 'heb goede moed'.",
+      "regex": "\\b[Ww]ees welgemoed\\b"
+    },
+    {
+      "id": "V682",
+      "categorie": "Spelling",
+      "oud": "bersten",
+      "nieuw": "barsten",
+      "toelichting": "Verouderde spelling 'bersten' (en vervoegingen) → 'barsten'.",
+      "regex": "\\b[Bb]erst[a-z]*\\b"
+    },
+    {
+      "id": "V683",
+      "categorie": "Verouderde woorden",
+      "oud": "lederzakken",
+      "nieuw": "lederen zakken",
+      "toelichting": "'lederzak(ken)' (één woord) → 'lederen zak(ken)' (leren wijnzakken).",
+      "regex": "\\b[Ll]ederzak(ken)?\\b"
+    },
+    {
+      "id": "V684",
+      "categorie": "Verouderde woorden",
+      "oud": "ongevold",
+      "nieuw": "niet gekrompen",
+      "toelichting": "Verouderd 'ongevold' (laken dat nog niet gevold/gekrompen is) → 'niet gekrompen'.",
+      "regex": "\\b[Oo]ngevold[e]?\\b"
+    },
+    {
+      "id": "V685",
+      "categorie": "Naamvallen",
+      "oud": "Zone Davids",
+      "nieuw": "Zoon van David",
+      "toelichting": "Genitief-naamval 'Zone Davids' → 'Zoon van David'.",
+      "regex": "\\b[Zz]one Davids\\b"
+    },
+    {
+      "id": "V686",
+      "categorie": "Naamvallen",
+      "oud": "ontferm U onzer",
+      "nieuw": "ontferm U over ons",
+      "toelichting": "'ontferm U/u onzer' (genitief) → 'ontferm U/u over ons'.",
+      "regex": "\\bontferm ([Uu]) onzer\\b"
+    },
+    {
+      "id": "V687",
+      "categorie": "Verouderde woorden",
+      "oud": "gestrengelijk",
+      "nieuw": "streng",
+      "toelichting": "Verouderd '-lijk'-bijwoord 'gestrengelijk' → 'streng'.",
+      "regex": "\\b[Gg]estrengelijk\\b"
+    },
+    {
+      "id": "V688",
+      "categorie": "Verouderde woorden",
+      "oud": "ruchtbaar",
+      "nieuw": "bekend",
+      "toelichting": "'ruchtbaar (maken/worden)' (= ruchtbaar, algemeen bekend) → 'bekend'.",
+      "regex": "\\b[Rr]uchtbaar\\b"
+    },
+    {
+      "id": "V689",
+      "categorie": "Naamvallen",
+      "oud": "alle kwale",
+      "nieuw": "alle kwalen",
+      "toelichting": "Naamval-rest 'alle kwale' → 'alle kwalen' (meervoud).",
+      "regex": "\\balle kwale\\b"
     }
   ]
 }
