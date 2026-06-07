@@ -89,7 +89,11 @@ const CloudOpties = {
         try {
             // Radio/checkbox-inputs bijwerken
             document.querySelectorAll('[data-optie]').forEach(input => {
-                input.checked = Opties.state[input.dataset.optie] === input.value;
+                if (input.tagName === 'SELECT') {
+                    input.value = Opties.state[input.dataset.optie];
+                } else {
+                    input.checked = Opties.state[input.dataset.optie] === input.value;
+                }
             });
             if (Opties.applyLayoutClass) Opties.applyLayoutClass();
             if (Opties.applyVerseNumbersClass) Opties.applyVerseNumbersClass();

@@ -25,10 +25,14 @@ const Opties = {
             this.state = { ...defaults };
         }
 
-        // Sync radio buttons
+        // Sync radio buttons + selects
         document.querySelectorAll('[data-optie]').forEach(input => {
             const optie = input.dataset.optie;
-            input.checked = this.state[optie] === input.value;
+            if (input.tagName === 'SELECT') {
+                input.value = this.state[optie];
+            } else {
+                input.checked = this.state[optie] === input.value;
+            }
         });
 
         // Pas layout-class direct toe (geen re-render nodig — pure CSS)
@@ -53,7 +57,7 @@ const Opties = {
         // Listen to changes
         document.querySelectorAll('[data-optie]').forEach(input => {
             input.addEventListener('change', () => {
-                if (input.checked) {
+                if (input.tagName === 'SELECT' || input.checked) {
                     this.state[input.dataset.optie] = input.value;
                     this.save();
                     const optie = input.dataset.optie;

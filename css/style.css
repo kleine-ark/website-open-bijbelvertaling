@@ -962,6 +962,36 @@ body.drawer-open #mobile-backdrop { display: block; }
 #sidebar-search input::placeholder { color: rgba(255,255,255,0.4); }
 #sidebar-search input:focus { border-color: var(--gold); background: rgba(255,255,255,0.12); }
 
+/* Boekvolgorde-keuze in linker sidebar */
+#sidebar-boekvolgorde {
+    padding: 0 12px 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+#sidebar-boekvolgorde label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex: 0 0 auto;
+}
+#sidebar-boekvolgorde select {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 5px 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 12px;
+    outline: none;
+    cursor: pointer;
+}
+#sidebar-boekvolgorde select:focus { border-color: var(--gold); }
+#sidebar-boekvolgorde select option { color: #222; }
+
 #sidebar-tree {
     flex: 1;
     overflow-y: auto;
