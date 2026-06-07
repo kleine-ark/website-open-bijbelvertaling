@@ -535,7 +535,7 @@
       "number": 8,
       "textSV1888": "Uw goddeloosheid zou zijn tegen een man, gelijk gij zijt, en uw gerechtigheid voor eens mensen kind.",
       "text1637": "Uwe godtloosheyt soude zijn [15] tegen eenen man gelijck ghy zijt, ende uwe gerech-ticheyt [16] voor eens [17] menschen kint.",
-      "text2026": "Uw goddeloosheid zou zijn tegen een man, zoals u bent, en uw gerechtigheid voor eens mensen kind.",
+      "text2026": "Uw goddeloosheid zou zijn tegen een man, zoals u bent, en uw gerechtigheid voor het kind van een mens.",
       "marginNotes": [
         {
           "marker": "15",
@@ -591,7 +591,7 @@
           "morph": "HNcfsc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Uw goddeloosheid zou zijn<sup class=\"note-marker\" data-note=\"15\">15</sup> tegen een man, zoals u bent, en uw gerechtigheid<sup class=\"note-marker\" data-note=\"16\">16</sup> voor eens<sup class=\"note-marker\" data-note=\"17\">17</sup> mensen kind.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Uw goddeloosheid zou zijn<sup class=\"note-marker\" data-note=\"15\">15</sup> tegen een man, zoals u bent, en uw gerechtigheid<sup class=\"note-marker\" data-note=\"16\">16</sup> voor het kind van een mens<sup class=\"note-marker\" data-note=\"17\">17</sup>.</i></span>",
       "textSV1888_html": "Uw goddeloosheid zou zijn<sup class=\"note-marker\" data-note=\"15\">15</sup> tegen een man, gelijk gij zijt, en uw gerechtigheid<sup class=\"note-marker\" data-note=\"16\">16</sup> voor eens<sup class=\"note-marker\" data-note=\"17\">17</sup> mensen kind.",
       "text1637_html": "Uwe godtloosheyt soude zijn <sup class=\"note-marker\" data-note=\"15\">15</sup> tegen eenen man gelijck ghy zijt, en<i>de</i> uwe gerech-ticheyt <sup class=\"note-marker\" data-note=\"16\">16</sup> voor eens <sup class=\"note-marker\" data-note=\"17\">17</sup> menschen kint.",
       "phraseDiff": [
@@ -599,6 +599,11 @@
           "old": "gelijk gij zijt,",
           "new": "zoals u bent,",
           "principe": "A1"
+        },
+        {
+          "old": "eens mensen kind.",
+          "new": "het kind van een mens.",
+          "principe": null
         }
       ]
     },
