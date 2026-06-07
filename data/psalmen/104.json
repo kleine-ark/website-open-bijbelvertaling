@@ -803,14 +803,14 @@
       "number": 11,
       "textSV1888": "Zij drenken al het gedierte des velds; de woudezels breken er hun dorst mede.",
       "text1637": "Sy drencken al’t gedierte des velts: de wout-ezels [20] brekender haren dorst [mede].",
-      "text2026": "Zij drenken al het gedierte van het veld; de woudezels breken er hun dorst mede.",
+      "text2026": "Zij drenken al het gedierte van het veld; de woudezels breken er hun dorst mee.",
       "marginNotes": [
         {
           "marker": "20",
           "type": "explanatory",
           "textSV1888": "breken er hun dorst mede : Te weten, met de wateren der fonteinen en rivieren. Anders, zijn lessen er hun dorst mede .",
           "text1637": "T.w. met de wateren der fonteynen ende rivieren. And. Sy lesschender haren dorst mede.",
-          "text2026": "breken er hun dorst mede : Te weten, met de wateren van de fonteinen en rivieren. Anders, zijn lessen er hun dorst mede ."
+          "text2026": "breken er hun dorst mee : Te weten, met de wateren van de fonteinen en rivieren. Anders, zijn lessen er hun dorst mee ."
         }
       ],
       "grondtekst": [
@@ -850,7 +850,7 @@
           "morph": "HNcmsc/Sp3mp"
         }
       ],
-      "text2026_html": "Zij drenken al het gedierte van het veld; de woudezels<sup class=\"note-marker\" data-note=\"20\">20</sup> breken er hun dorst mede.",
+      "text2026_html": "Zij drenken al het gedierte van het veld; de woudezels<sup class=\"note-marker\" data-note=\"20\">20</sup> breken er hun dorst mee.",
       "textSV1888_html": "Zij drenken al het gedierte des velds; de woudezels<sup class=\"note-marker\" data-note=\"20\">20</sup> breken er hun dorst mede.",
       "text1637_html": "Sy drencke<i>n</i> al’t gedierte des velts: de wout-ezels <sup class=\"note-marker\" data-note=\"20\">20</sup> brekender hare<i>n</i> dorst [mede].",
       "phraseDiff": [
@@ -858,6 +858,11 @@
           "old": "des velds;",
           "new": "van het veld;",
           "principe": "N3"
+        },
+        {
+          "old": "mede.",
+          "new": "mee.",
+          "principe": "V707"
         }
       ]
     },

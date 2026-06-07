@@ -1391,7 +1391,7 @@
       "number": 13,
       "textSV1888": "Zo verbrandde hij het huis des HEEREN en het huis des konings; mitsgaders alle huizen van Jeruzalem en alle huizen der groten verbrandde hij met vuur.",
       "text1637": "So verbrandde hy het huys des HEEREN, ende het huys des Conincks: mitsgaders alle huysen van Ierusalem, [9] ende alle huysen der Grooten verbrandde hy met vyer.",
-      "text2026": "Zo verbrandde hij het huis van JAHWEH en het huis van de koning; en ook alle huizen van Jeruzalem en alle huizen van de grote verbrandde hij met vuur.",
+      "text2026": "Zo verbrandde hij het huis van JAHWEH en het huis van de koning; en ook alle huizen van Jeruzalem en alle huizen van de groten verbrandde hij met vuur.",
       "marginNotes": [
         {
           "marker": "9",
@@ -1488,7 +1488,7 @@
           "morph": "HRd/Ncbsa"
         }
       ],
-      "text2026_html": "Zo verbrandde hij het huis van JAHWEH en het huis van de koning; en ook alle huizen van Jeruzalem<sup class=\"note-marker\" data-note=\"9\">9</sup> en alle huizen van de grote verbrandde hij met vuur.",
+      "text2026_html": "Zo verbrandde hij het huis van JAHWEH en het huis van de koning; en ook alle huizen van Jeruzalem<sup class=\"note-marker\" data-note=\"9\">9</sup> en alle huizen van de groten verbrandde hij met vuur.",
       "textSV1888_html": "Zo verbrandde hij het huis des HEEREN en het huis des konings; mitsgaders alle huizen van Jeruzalem<sup class=\"note-marker\" data-note=\"9\">9</sup> en alle huizen der groten verbrandde hij met vuur.",
       "text1637_html": "So verbrandde hy het huys des HEEREN, ende het huys des Conincks: mitsgaders alle huysen van Ierusalem, <sup class=\"note-marker\" data-note=\"9\">9</sup> ende alle huysen der Grooten verbrandde hy met vyer.",
       "phraseDiff": [
@@ -1503,8 +1503,8 @@
           "principe": "N3"
         },
         {
-          "old": "der groten",
-          "new": "van de grote",
+          "old": "der",
+          "new": "van de",
           "principe": "N2"
         }
       ]
@@ -1975,14 +1975,14 @@
       "number": 18,
       "textSV1888": "Ook namen zij de potten en de schoffelen, en de gaffelen, en de sprengbekkens, en de rookschalen, en al de koperen vaten, waar men den dienst mede deed.",
       "text1637": "Oock namen sy de potten, ende de schoeffelen, ende de gaffelen, ende de spreng-beckens, ende de roock-schalen, ende alle de kopere vaten [12] daermen den dienst met dede.",
-      "text2026": "Ook namen zij de potten en de schoffelen, en de gaffelen, en de sprengbekkens, en de rookschalen, en al de koperen voorwerpen, waar men de dienst mede deed.",
+      "text2026": "Ook namen zij de potten en de schoffelen, en de gaffelen, en de sprengbekkens, en de rookschalen, en al de koperen voorwerpen, waar men de dienst mee deed.",
       "marginNotes": [
         {
           "marker": "12",
           "type": "explanatory",
           "textSV1888": "12 waar men den dienst mede deed: Hebreeuws, met welke zij dienden; dat is, waar men in het huis des Heeren placht den dienst mede te verrichten, of die men tot den dienst placht te gebruiken.",
           "text1637": "Hebr. met de welcke sy dienden. D. daermen in het huys des Heeren plach den dienst mede te verrichten, ofte, diemen tot den dienst plach te gebruycken.",
-          "text2026": "12 waar men de dienst mede deed: Hebreeuws, met welke zij dienden; dat is, waar men in het huis van de Heern placht de dienst mede te verrichten, of die men tot de dienst placht te gebruiken."
+          "text2026": "12 waar men de dienst mee deed: Hebreeuws, met welke zij dienden; dat is, waar men in het huis van de Heern placht de dienst mee te verrichten, of die men tot de dienst placht te gebruiken."
         }
       ],
       "grondtekst": [
@@ -2077,7 +2077,7 @@
           "morph": "HVqp3cp"
         }
       ],
-      "text2026_html": "Ook namen zij de potten en de schoffelen, en de gaffelen, en de sprengbekkens, en de rookschalen, en al de koperen voorwerpen,<sup class=\"note-marker\" data-note=\"12\">12</sup> waar men de dienst mede deed.",
+      "text2026_html": "Ook namen zij de potten en de schoffelen, en de gaffelen, en de sprengbekkens, en de rookschalen, en al de koperen voorwerpen,<sup class=\"note-marker\" data-note=\"12\">12</sup> waar men de dienst mee deed.",
       "textSV1888_html": "Ook namen zij de potten en de schoffelen, en de gaffelen, en de sprengbekkens, en de rookschalen, en al de koperen vaten,<sup class=\"note-marker\" data-note=\"12\">12</sup> waar men den dienst mede deed.",
       "text1637_html": "Oock namen sy de potten, ende de schoeffelen, ende de gaffelen, en<i>de</i> de spreng-beckens, ende de roock-schalen, ende alle de kopere vaten <sup class=\"note-marker\" data-note=\"12\">12</sup> daermen den dienst met dede.",
       "phraseDiff": [
@@ -2090,6 +2090,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "mede",
+          "new": "mee",
+          "principe": "V707"
         }
       ]
     },
