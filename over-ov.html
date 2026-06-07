@@ -41,6 +41,8 @@
         :root[data-theme="donker"] .page p[style*="#666"],
         :root[data-theme="donker"] .page td[style*="#666"] { color: var(--text-secondary) !important; }
         :root[data-theme="donker"] .page table td { color: var(--text-primary); }
+        /* Inline navy-gekleurde woorden (categorie-namen e.d.) leesbaar in dark mode */
+        :root[data-theme="donker"] .page strong[style*="navy"] { color: var(--gold) !important; }
         /* "Nagekeken"-badges: donker-vriendelijk groen i.p.v. licht groen */
         :root[data-theme="donker"] .verified-list li {
             background: rgba(52,211,153,0.16) !important;

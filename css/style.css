@@ -817,7 +817,8 @@ body {
 :root[data-theme="donker"] .devil-speaks,
 :root[data-theme="donker"] .devil-speaks i { color: #d8d18a !important; }
 :root[data-theme="donker"] img { opacity: 0.92; }
-:root[data-theme="donker"] .hero { filter: brightness(0.7); }
+/* Geen brightness-dimming op de hero: de bovenkant moet helder zijn; alleen de
+   gradient onderaan (in over-ov.html) verzorgt de fade naar de donkere pagina. */
 #app-container {
     display: flex;
     flex: 1;
