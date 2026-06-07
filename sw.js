@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = '2026-06-07q';
+const VERSION = '2026-06-07r';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -98,8 +98,15 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Shell files (HTML, CSS, andere JS)
-    if (path.endsWith('.html') || path.endsWith('.css') || path.endsWith('.js') || path === '/') {
+    // CSS + JS: network-first — stijl/gedrag-wijzigingen meteen zichtbaar,
+    // cache alleen als fallback (offline). Voorkomt "verandering pas na 2e refresh".
+    if (path.endsWith('.css') || path.endsWith('.js')) {
+        event.respondWith(networkFirst(req, SHELL_CACHE));
+        return;
+    }
+
+    // HTML: cache-first met background-refresh (snel, en HTML wijzigt minder vaak)
+    if (path.endsWith('.html') || path === '/') {
         event.respondWith(cacheFirstWithRefresh(req, SHELL_CACHE));
         return;
     }
@@ -132,6 +139,20 @@ async function cacheFirstWithRefresh(req, cacheName) {
         return resp;
     }).catch(() => cached || Response.error());
     return cached || fetchPromise;
+}
+
+/** Network-first: probeer netwerk, val terug op cache bij offline.
+ *  Voor CSS/JS zodat wijzigingen direct zichtbaar zijn. */
+async function networkFirst(req, cacheName) {
+    const cache = await caches.open(cacheName);
+    try {
+        const resp = await fetch(req);
+        if (resp.ok) cache.put(req, resp.clone());
+        return resp;
+    } catch (e) {
+        const cached = await cache.match(req);
+        return cached || new Response('Offline en niet in cache', { status: 503 });
+    }
 }
 
 /** Stale-while-revalidate: cached versie direct, fetch op achtergrond. */
