@@ -2,13 +2,13 @@
  *
  * Strategieën:
  *   - shell (HTML/CSS/JS): cache-first met background network-update
- *   - data (JSON): stale-while-revalidate — instant uit cache, vernieuwt op achtergrond
+ *   - data (JSON): network-first — bewerkte verzen+stats altijd vers, cache als offline-fallback
  *   - lexicon (grote JS): cache-first, geen revalidate (zelden gewijzigd)
  *
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = '2026-06-08r';
+const VERSION = '2026-06-08s';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -92,16 +92,11 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Statistieken-bron: ALTIJD vers (network-first) — single source of truth,
-    // mag nooit verouderd getoond worden.
-    if (path === '/data/stats.json') {
-        event.respondWith(networkFirst(req, DATA_CACHE));
-        return;
-    }
-
-    // Data files (JSON in /data/)
+    // Data files (JSON in /data/): network-first — bewerkte verzen + stats altijd
+    // direct vers; cache alleen als offline-fallback. (Voorheen stale-while-
+    // revalidate, waardoor net-bewerkte tekst één refresh achterliep.)
     if (path.startsWith('/data/') && path.endsWith('.json')) {
-        event.respondWith(staleWhileRevalidate(req, DATA_CACHE));
+        event.respondWith(networkFirst(req, DATA_CACHE));
         return;
     }
 
