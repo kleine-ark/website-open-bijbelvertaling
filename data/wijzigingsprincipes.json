@@ -2206,8 +2206,7 @@
       "oud": "welker",
       "nieuw": "wier / waarvan",
       "toelichting": "[TERUGGEDRAAID 2026-04-29] welker → wier was niet gewenst; alle 84 vervangingen ongedaan gemaakt.",
-      "regex": "\\b[Ww]elker\\b",
-      "actief": false
+      "regex": "\\b[Ww]elker\\b"
     },
     {
       "id": "V213",
@@ -2372,392 +2371,441 @@
     {
       "id": "V233",
       "categorie": "Spelling",
-      "titel": "honig → honing",
-      "beschrijving": "Verouderde spelling 'honig' moderniseren naar 'honing'. Geen betekenisverschil, alleen spelling.",
+      "oud": "honig",
+      "nieuw": "honing",
+      "toelichting": "Verouderde spelling 'honig' moderniseren naar 'honing'. Geen betekenisverschil, alleen spelling.",
       "regex": "\\bhonig\\b(?!ing)",
       "voorbeeld": "Mar 1:6 'wilde honig' → 'wilde honing'"
     },
     {
       "id": "V234",
       "categorie": "Verouderde woorden",
-      "titel": "schare → menigte",
-      "beschrijving": "'Schare' (verzameling mensen) is in modern Nederlands niet meer gangbaar. Vervangen door 'menigte'. Meervoud: 'scharen' → 'menigten'.",
+      "oud": "schare",
+      "nieuw": "menigte",
+      "toelichting": "'Schare' (verzameling mensen) is in modern Nederlands niet meer gangbaar. Vervangen door 'menigte'. Meervoud: 'scharen' → 'menigten'.",
       "regex": "\\bschare(n)?\\b",
       "voorbeeld": "Mar 3:20 'vergaderde opnieuw een schare' → 'vergaderde opnieuw een menigte'"
     },
     {
       "id": "V235",
       "categorie": "Verouderde woorden",
-      "titel": "magen → familieleden",
-      "beschrijving": "'Magen' (oud-Nederlands voor verwanten) → 'familieleden' (modern equivalent).",
+      "oud": "magen",
+      "nieuw": "familieleden",
+      "toelichting": "'Magen' (oud-Nederlands voor verwanten) → 'familieleden' (modern equivalent).",
       "regex": "\\bmagen\\b",
       "voorbeeld": "Mar 6:4 'onder zijn magen' → 'onder zijn familieleden'"
     },
     {
       "id": "V236",
       "categorie": "Verouderde woorden",
-      "titel": "brokken → stukken brood",
-      "beschrijving": "'Brokken' (overgebleven brood na de wonderbare spijziging) → 'stukken brood' (duidelijker en moderner).",
+      "oud": "brokken",
+      "nieuw": "stukken brood",
+      "toelichting": "'Brokken' (overgebleven brood na de wonderbare spijziging) → 'stukken brood' (duidelijker en moderner).",
       "regex": "\\bbrokken\\b",
       "voorbeeld": "Mar 6:43 'twaalf volle korven brokken' → 'twaalf volle korven stukken brood'"
     },
     {
       "id": "V237",
       "categorie": "Verouderde woorden",
-      "titel": "spooksel → spook",
-      "beschrijving": "'Spooksel' (geestverschijning) → 'spook' (modern equivalent zonder verkleinwoord-suffix).",
+      "oud": "spooksel",
+      "nieuw": "spook",
+      "toelichting": "'Spooksel' (geestverschijning) → 'spook' (modern equivalent zonder verkleinwoord-suffix).",
       "regex": "\\bspooksel\\b",
       "voorbeeld": "Mar 6:49 'meenden dat het een spooksel was' → 'meenden dat het een spook was'"
     },
     {
       "id": "V238",
       "categorie": "Verouderde woorden",
-      "titel": "beddekens → bedden",
-      "beschrijving": "Verkleinwoord 'beddekens' (kleine bedden / draagbare britsen) → 'bedden'.",
+      "oud": "beddekens",
+      "nieuw": "bedden",
+      "toelichting": "Verkleinwoord 'beddekens' (kleine bedden / draagbare britsen) → 'bedden'.",
       "regex": "\\bbeddekens\\b",
       "voorbeeld": "Mar 6:55 'op beddekens' → 'op bedden'"
     },
     {
       "id": "V239",
       "categorie": "Verouderde woorden",
-      "titel": "zoom Zijn(s) kleeds → zoom van Zijn kleed",
-      "beschrijving": "Genitief-constructie 'zoom Zijns kleeds' (van Zijn kleed) → 'zoom van Zijn kleed' (moderne voorzetsel-omschrijving). Geldt voor de evangelie-passages waar de zieke Jezus' kleed wil aanraken.",
+      "oud": "zoom Zijn(s) kleeds",
+      "nieuw": "zoom van Zijn kleed",
+      "toelichting": "Genitief-constructie 'zoom Zijns kleeds' (van Zijn kleed) → 'zoom van Zijn kleed' (moderne voorzetsel-omschrijving). Geldt voor de evangelie-passages waar de zieke Jezus' kleed wil aanraken.",
       "regex": "zoom Zijns? kleeds",
       "voorbeeld": "Mar 6:56 'de zoom Zijn kleeds aanraken' → 'de zoom van Zijn kleed aanraken'"
     },
     {
       "id": "V240",
       "categorie": "Verouderde woorden",
-      "titel": "vlek/vlekken (= dorp) → plaats/plaatsen",
-      "beschrijving": "'Vlek' (oud-Nederlands voor klein dorp/gehucht) → 'plaats'. Behouden: gevallen waar 'vlek' = smet/spot betekent (2 Petr 2:13, Ef 5:27, Jud 1:12, Jer 13:23 luipaard, BdW 13:14 op afgodsbeeld).",
+      "oud": "vlek/vlekken (= dorp)",
+      "nieuw": "plaats/plaatsen",
+      "toelichting": "'Vlek' (oud-Nederlands voor klein dorp/gehucht) → 'plaats'. Behouden: gevallen waar 'vlek' = smet/spot betekent (2 Petr 2:13, Ef 5:27, Jud 1:12, Jer 13:23 luipaard, BdW 13:14 op afgodsbeeld).",
       "regex": "\\bvlek(ken)?\\b",
       "voorbeeld": "Mar 1:38 'in de bijliggende vlekken' → 'in de bijliggende plaatsen'"
     },
     {
       "id": "V241",
       "categorie": "Spelling",
-      "titel": "satanas → satan",
-      "beschrijving": "Verlatiniseerde naam 'satanas' (Grieks σατανᾶς) → moderne Nederlandse vorm 'satan'. Hoofdletter behouden bij eigennaam-functie.",
+      "oud": "satanas",
+      "nieuw": "satan",
+      "toelichting": "Verlatiniseerde naam 'satanas' (Grieks σατανᾶς) → moderne Nederlandse vorm 'satan'. Hoofdletter behouden bij eigennaam-functie.",
       "regex": "\\b[Ss]atanas\\b",
       "voorbeeld": "Mar 8:33 'achter Mij, satanas' → 'achter Mij, satan'"
     },
     {
       "id": "V242",
       "categorie": "Verouderde woorden",
-      "titel": "lossing → losprijs",
-      "beschrijving": "'Lossing' (in zin van: prijs voor vrijkoping) → 'losprijs' (modern equivalent). Gangbaar in evangelies (Mat 20:28, Mar 10:45) en theologisch register.",
+      "oud": "lossing",
+      "nieuw": "losprijs",
+      "toelichting": "'Lossing' (in zin van: prijs voor vrijkoping) → 'losprijs' (modern equivalent). Gangbaar in evangelies (Mat 20:28, Mar 10:45) en theologisch register.",
       "regex": "\\b[Ll]ossing\\b",
       "voorbeeld": "Mar 8:37 'tot lossing van zijn ziel' → 'tot losprijs van zijn ziel'"
     },
     {
       "id": "V243",
       "categorie": "Verouderde woorden",
-      "titel": "voller → wolbewerker",
-      "beschrijving": "'Voller' (oud-Nederlands beroep: iemand die wol vol-/dik-werkte) → 'wolbewerker' (modern equivalent).",
+      "oud": "voller",
+      "nieuw": "wolbewerker",
+      "toelichting": "'Voller' (oud-Nederlands beroep: iemand die wol vol-/dik-werkte) → 'wolbewerker' (modern equivalent).",
       "regex": "\\bvoller\\b",
       "voorbeeld": "Mar 9:3 'geen voller op aarde' → 'geen wolbewerker op aarde'"
     },
     {
       "id": "V244",
       "categorie": "Spelling",
-      "titel": "Elias → Elia",
-      "beschrijving": "Verlatiniseerde naam 'Elias' (Grieks Ἠλίας) → moderne Nederlandse vorm 'Elia' (= Hebr. אֵלִיָּהוּ). Geldt voor de profeet Elia.",
+      "oud": "Elias",
+      "nieuw": "Elia",
+      "toelichting": "Verlatiniseerde naam 'Elias' (Grieks Ἠλίας) → moderne Nederlandse vorm 'Elia' (= Hebr. אֵלִיָּהוּ). Geldt voor de profeet Elia.",
       "regex": "\\bElias\\b",
       "voorbeeld": "Mar 9:4 'verscheen hun Elias' → 'verscheen hun Elia'"
     },
     {
       "id": "V245",
       "categorie": "Verouderde woorden",
-      "titel": "hoedanige → zoals",
-      "beschrijving": "'Hoedanige' (oude relatieve betrekking) → 'zoals' (modern equivalent in vergelijkende constructies).",
+      "oud": "hoedanige",
+      "nieuw": "zoals",
+      "toelichting": "'Hoedanige' (oude relatieve betrekking) → 'zoals' (modern equivalent in vergelijkende constructies).",
       "regex": "\\bhoedanige\\b",
       "voorbeeld": "Mar 9:3 'hoedanige geen wolbewerker' → 'zoals geen wolbewerker'"
     },
     {
       "id": "V246",
       "categorie": "Verouderde woorden",
-      "titel": "genaken → naderen",
-      "beschrijving": "'Genaken' (oud-Nederlands voor naderen/dichtbij komen) → 'naderen'. Inclusief vervoegingen: genaakten→naderden, genaakte→naderde.",
+      "oud": "genaken",
+      "nieuw": "naderen",
+      "toelichting": "'Genaken' (oud-Nederlands voor naderen/dichtbij komen) → 'naderen'. Inclusief vervoegingen: genaakten→naderden, genaakte→naderde.",
       "regex": "\\b[Gg]enaak(en|ten|te)?\\b",
       "voorbeeld": "Mar 11:1 'als zij Jeruzalem genaakten' → 'als zij Jeruzalem naderden'"
     },
     {
       "id": "V247",
       "categorie": "Spelling",
-      "titel": "ongehevelde → ongezuurde",
-      "beschrijving": "Verouderde term voor brood zonder zuurdesem.",
+      "oud": "ongehevelde",
+      "nieuw": "ongezuurde",
+      "toelichting": "Verouderde term voor brood zonder zuurdesem.",
       "regex": "\\bongeheveld(e)?\\b",
       "voorbeeld": "Mar 14:1 'ongehevelde broden' → 'ongezuurde broden'"
     },
     {
       "id": "V248",
       "categorie": "Verouderde woorden",
-      "titel": "valselijk → vals",
-      "beschrijving": "-lijk-bijwoord-modernisering.",
+      "oud": "valselijk",
+      "nieuw": "vals",
+      "toelichting": "-lijk-bijwoord-modernisering.",
       "regex": "\\bvalselijk\\b",
       "voorbeeld": "Mar 14:57 'getuigden valselijk' → 'getuigden vals'"
     },
     {
       "id": "V249",
       "categorie": "Verouderde woorden",
-      "titel": "kreaturen → schepselen",
-      "beschrijving": "Verlatiniseerd creatuur → schepsel.",
+      "oud": "kreaturen",
+      "nieuw": "schepselen",
+      "toelichting": "Verlatiniseerd creatuur → schepsel.",
       "regex": "\\bkreatu(ren|ur)\\b",
       "voorbeeld": "Mar 16:15 'aan alle kreaturen' → 'aan alle schepselen'"
     },
     {
       "id": "V250",
       "categorie": "Spelling",
-      "titel": "trema-fixes (Kapernaüm, Bethsaïda, Saraï)",
-      "beschrijving": "Diacritische tekens (trema's) toevoegen op eigennamen waar modern Nederlands een trema vereist om uitspraak duidelijk te maken: Kapernaum→Kapernaüm, Bethsaida→Bethsaïda, Sarai→Saraï. Boaz, Aäron, Naäman, Israël blijven onaangetast (al correct).",
+      "oud": "Kapernaum / Bethsaida / Sarai",
+      "nieuw": "Kapernaüm / Bethsaïda / Saraï",
+      "toelichting": "Diacritische tekens (trema's) toevoegen op eigennamen waar modern Nederlands een trema vereist om uitspraak duidelijk te maken: Kapernaum→Kapernaüm, Bethsaida→Bethsaïda, Sarai→Saraï. Boaz, Aäron, Naäman, Israël blijven onaangetast (al correct).",
       "regex": "\\b(Kapernaum|Bethsaida|Sarai)\\b",
       "voorbeeld": "Mat 4:13 'in Kapernaum' → 'in Kapernaüm'"
     },
     {
       "id": "V251",
       "categorie": "Verouderde woorden",
-      "titel": "verordineren → bestemmen",
-      "beschrijving": "Verlatiniseerd 'verordineren' (predestinatie/voorbeschikken) → 'bestemmen' (modern equivalent). Inclusief vervoegingen: verordineerd→bestemd, verordineerde→bestemde, etc.",
+      "oud": "verordineren",
+      "nieuw": "bestemmen",
+      "toelichting": "Verlatiniseerd 'verordineren' (predestinatie/voorbeschikken) → 'bestemmen' (modern equivalent). Inclusief vervoegingen: verordineerd→bestemd, verordineerde→bestemde, etc.",
       "regex": "\\b[Vv]erordineer[a-z]*\\b",
       "voorbeeld": "Ef 1:5 'Die ons te voren verordineerd heeft' → 'Die ons te voren bestemd heeft'"
     },
     {
       "id": "V252",
       "categorie": "Verouderde woorden",
-      "titel": "eertijds → vroeger",
-      "beschrijving": "'Eertijds' (oud-Nederlands voor in vroeger tijden) → 'vroeger' (modern equivalent).",
+      "oud": "eertijds",
+      "nieuw": "vroeger",
+      "toelichting": "'Eertijds' (oud-Nederlands voor in vroeger tijden) → 'vroeger' (modern equivalent).",
       "regex": "\\b[Ee]ertijds\\b",
       "voorbeeld": "Ef 2:3 'waaronder ook wij allen eertijds verkeerd hebben' → '... vroeger verkeerd hebben'"
     },
     {
       "id": "V253",
       "categorie": "Verouderde woorden",
-      "titel": "opwassen → verrijzen",
-      "beschrijving": "'Opwassen' (oud-Nederlands voor groeien/opbloeien) → 'verrijzen'. Inclusief vervoegingen: opwast→verrijst, opwies→verrees, opgewassen→verrezen.",
+      "oud": "opwassen",
+      "nieuw": "verrijzen",
+      "toelichting": "'Opwassen' (oud-Nederlands voor groeien/opbloeien) → 'verrijzen'. Inclusief vervoegingen: opwast→verrijst, opwies→verrees, opgewassen→verrezen.",
       "regex": "\\bop(was(t|sen)?|wies(en)?|gewassen)\\b",
       "voorbeeld": "Ef 2:21 'opwast tot een heiligen tempel' → 'verrijst tot een heiligen tempel'"
     },
     {
       "id": "V254",
       "categorie": "Verouderde woorden",
-      "titel": "benaarstigen → beijveren",
-      "beschrijving": "'Benaarstigen' (oud-Nederlands voor zich beijveren/inspannen) → 'beijveren'. Inclusief vervoegingen: benaarstigende→beijverende, benaarstigt→beijvert.",
+      "oud": "benaarstigen",
+      "nieuw": "beijveren",
+      "toelichting": "'Benaarstigen' (oud-Nederlands voor zich beijveren/inspannen) → 'beijveren'. Inclusief vervoegingen: benaarstigende→beijverende, benaarstigt→beijvert.",
       "regex": "\\b[Bb]enaarstig[a-z]*\\b",
       "voorbeeld": "Ef 4:3 'benaarstigende te behouden' → 'beijverende te behouden'"
     },
     {
       "id": "V255",
       "categorie": "Verouderde woorden",
-      "titel": "enigheid → eenheid",
-      "beschrijving": "'Enigheid' (oud-Nederlands voor eenheid/eensgezindheid) → 'eenheid' (modern equivalent).",
+      "oud": "enigheid",
+      "nieuw": "eenheid",
+      "toelichting": "'Enigheid' (oud-Nederlands voor eenheid/eensgezindheid) → 'eenheid' (modern equivalent).",
       "regex": "\\b[Ee]nigheid\\b",
       "voorbeeld": "Ef 4:3 'enigheid van de Geest' → 'eenheid van de Geest'"
     },
     {
       "id": "V256",
       "categorie": "Spelling",
-      "titel": "onreinigheid → onreinheid",
-      "beschrijving": "Verouderde spelling 'onreinigheid' moderniseren naar 'onreinheid'. Inclusief meervoud onreinigheden→onreinheden.",
+      "oud": "onreinigheid",
+      "nieuw": "onreinheid",
+      "toelichting": "Verouderde spelling 'onreinigheid' moderniseren naar 'onreinheid'. Inclusief meervoud onreinigheden→onreinheden.",
       "regex": "\\b[Oo]nreinighed(en|ig)?\\b",
       "voorbeeld": "Ef 4:19 'tot werking van alle onreinigheid' → '... onreinheid'"
     },
     {
       "id": "V257",
       "categorie": "Verouderde woorden",
-      "titel": "gieriglijk → gierig",
-      "beschrijving": "-lijk-bijwoord modernisering: 'gieriglijk' → 'gierig' (modern bijwoord en bijv.nw zijn identiek).",
+      "oud": "gieriglijk",
+      "nieuw": "gierig",
+      "toelichting": "-lijk-bijwoord modernisering: 'gieriglijk' → 'gierig' (modern bijwoord en bijv.nw zijn identiek).",
       "regex": "\\b[Gg]ieriglijk\\b",
       "voorbeeld": "Ef 4:19 'om alle onreinheid gieriglijk te bedrijven' → '... gierig te bedrijven'"
     },
     {
       "id": "V258",
       "categorie": "Verouderde woorden",
-      "titel": "ijdelheid → zinloosheid",
-      "beschrijving": "'IJdelheid' (Hebr. הֶבֶל hevel = leegte/vergankelijkheid) → 'zinloosheid'. Niet 'ijdel' in de zin van trots/eitelheid maar in de bijbelse zin van leegheid/vergeefsheid (Prediker 1:2 'IJdelheid der ijdelheden, alles is ijdelheid' → 'Zinloosheid der zinloosheden, alles is zinloosheid'). Inclusief meervoud.",
+      "oud": "ijdelheid",
+      "nieuw": "zinloosheid",
+      "toelichting": "'IJdelheid' (Hebr. הֶבֶל hevel = leegte/vergankelijkheid) → 'zinloosheid'. Niet 'ijdel' in de zin van trots/eitelheid maar in de bijbelse zin van leegheid/vergeefsheid (Prediker 1:2 'IJdelheid der ijdelheden, alles is ijdelheid' → 'Zinloosheid der zinloosheden, alles is zinloosheid'). Inclusief meervoud.",
       "regex": "\\b[IiJ]+jdelhed(en|eid)\\b",
       "voorbeeld": "Pred 1:2 'IJdelheid der ijdelheden, alles is ijdelheid' → 'Zinloosheid der zinloosheden, alles is zinloosheid'"
     },
     {
       "id": "V259",
       "categorie": "Verouderde woorden",
-      "titel": "ontuchtigheid → ontucht",
-      "beschrijving": "'Ontuchtigheid' (oude vorm) → 'ontucht' (modern equivalent).",
+      "oud": "ontuchtigheid",
+      "nieuw": "ontucht",
+      "toelichting": "'Ontuchtigheid' (oude vorm) → 'ontucht' (modern equivalent).",
       "regex": "\\b[Oo]ntuchtighed(en|ig)?\\b",
       "voorbeeld": "Ef 4:19 'overgegeven tot ontuchtigheid' → '... tot ontucht'"
     },
     {
       "id": "V260",
       "categorie": "Spelling",
-      "titel": "ouden/nieuwen → oude/nieuwe",
-      "beschrijving": "n-uitgang van attributief bijv.nw. weg (oud-Nederlandse accusatief): den ouden/nieuwen mens → de oude/nieuwe mens.",
+      "oud": "ouden/nieuwen",
+      "nieuw": "oude/nieuwe",
+      "toelichting": "n-uitgang van attributief bijv.nw. weg (oud-Nederlandse accusatief): den ouden/nieuwen mens → de oude/nieuwe mens.",
       "regex": "\\b(N|n)?(O|o)uden\\b|\\b(N|n)ieuwen\\b",
       "voorbeeld": "Ef 4:22 'de ouden mens' → 'de oude mens'"
     },
     {
       "id": "V261",
       "categorie": "Verouderde woorden",
-      "titel": "elkanders → elkaars",
-      "beschrijving": "Bezittelijk vnw 'elkanders' → 'elkaars' (modern equivalent).",
+      "oud": "elkanders",
+      "nieuw": "elkaars",
+      "toelichting": "Bezittelijk vnw 'elkanders' → 'elkaars' (modern equivalent).",
       "regex": "\\b[Ee]lkanders\\b",
       "voorbeeld": "Ef 4:25 'wij zijn elkanders leden' → 'wij zijn elkaars leden'"
     },
     {
       "id": "V262",
       "categorie": "Verouderde woorden",
-      "titel": "toornig/toornigheid → boos/boosheid",
-      "beschrijving": "'Toornig' (oud-Nederlands voor boos) → 'boos'; 'toornigheid' → 'boosheid'.",
+      "oud": "toornig/toornigheid",
+      "nieuw": "boos/boosheid",
+      "toelichting": "'Toornig' (oud-Nederlands voor boos) → 'boos'; 'toornigheid' → 'boosheid'.",
       "regex": "\\b[Tt]oornig(heid)?\\b",
       "voorbeeld": "Ef 4:26 'Wordt toornig' → 'Wordt boos'"
     },
     {
       "id": "V263",
       "categorie": "Verouderde woorden",
-      "titel": "offerande → offergave",
-      "beschrijving": "'Offerande' (oud-Nederlands) → 'offergave'. Inclusief meervoud offeranden→offergaven. NB: 'offerhande' (cultische slachtoffer) blijft een aparte term.",
+      "oud": "offerande",
+      "nieuw": "offergave",
+      "toelichting": "'Offerande' (oud-Nederlands) → 'offergave'. Inclusief meervoud offeranden→offergaven. NB: 'offerhande' (cultische slachtoffer) blijft een aparte term.",
       "regex": "\\b[Oo]fferande[n]?\\b",
       "voorbeeld": "Ef 5:2 'tot een offerande aan God' → 'tot een offergave aan God'"
     },
     {
       "id": "V264",
       "categorie": "Verouderde woorden",
-      "titel": "welriekenden/welriekende reuk → aangename geur",
-      "beschrijving": "'Welriekenden/welriekende reuk' (vaste SV-uitdrukking voor offergeur) → 'aangename geur' (modern equivalent). N-uitgang ook weg.",
+      "oud": "welriekenden/welriekende reuk",
+      "nieuw": "aangename geur",
+      "toelichting": "'Welriekenden/welriekende reuk' (vaste SV-uitdrukking voor offergeur) → 'aangename geur' (modern equivalent). N-uitgang ook weg.",
       "regex": "\\b[Ww]elriekend(e|en) reuk\\b",
       "voorbeeld": "Ef 5:2 'tot een welriekenden reuk' → 'tot een aangename geur'"
     },
     {
       "id": "V265",
       "categorie": "Verouderde woorden",
-      "titel": "zot geklap → dwaze praat",
-      "beschrijving": "'Zot geklap' (oud-Nederlands voor dwaze/gekke praat) → 'dwaze praat'.",
+      "oud": "zot geklap",
+      "nieuw": "dwaze praat",
+      "toelichting": "'Zot geklap' (oud-Nederlands voor dwaze/gekke praat) → 'dwaze praat'.",
       "regex": "\\b[Zz]ot geklap\\b",
       "voorbeeld": "Ef 5:4 'noch zot geklap' → 'noch dwaze praat'"
     },
     {
       "id": "V266",
       "categorie": "Verouderde woorden",
-      "titel": "gekkernij → gekkigheid",
-      "beschrijving": "'Gekkernij' (oud-Nederlands) → 'gekkigheid' (modern equivalent).",
+      "oud": "gekkernij",
+      "nieuw": "gekkigheid",
+      "toelichting": "'Gekkernij' (oud-Nederlands) → 'gekkigheid' (modern equivalent).",
       "regex": "\\b[Gg]ekkernij(en)?\\b",
       "voorbeeld": "Ef 5:4 'noch gekkernij' → 'noch gekkigheid'"
     },
     {
       "id": "V267",
       "categorie": "Verouderde woorden",
-      "titel": "ijdele woorden → lichtzinnige woorden",
-      "beschrijving": "'IJdele woorden' (loze/lege woorden) → 'lichtzinnige woorden' — past beter in moderne context van Ef 5:6.",
+      "oud": "ijdele woorden",
+      "nieuw": "lichtzinnige woorden",
+      "toelichting": "'IJdele woorden' (loze/lege woorden) → 'lichtzinnige woorden' — past beter in moderne context van Ef 5:6.",
       "regex": "\\b[IiJ]+jdele woorden\\b",
       "voorbeeld": "Ef 5:6 'door ijdele woorden' → 'door lichtzinnige woorden'"
     },
     {
       "id": "V268",
       "categorie": "Verouderde woorden",
-      "titel": "medegenoten → metgezellen",
-      "beschrijving": "'Medegenoten' (oude vorm) → 'metgezellen' (modern equivalent voor reisgenoten/deelgenoten).",
+      "oud": "medegenoten",
+      "nieuw": "metgezellen",
+      "toelichting": "'Medegenoten' (oude vorm) → 'metgezellen' (modern equivalent voor reisgenoten/deelgenoten).",
       "regex": "\\b[Mm]edegenoot(en)?\\b",
       "voorbeeld": "Ef 5:7 'hun medegenoten' → 'hun metgezellen'"
     },
     {
       "id": "V269",
       "categorie": "Verouderde woorden",
-      "titel": "welgevallig → welbehaaglijk",
-      "beschrijving": "Modernisering: 'welgevallig' → 'welbehaaglijk' op gebruikersverzoek.",
+      "oud": "welgevallig",
+      "nieuw": "welbehaaglijk",
+      "toelichting": "Modernisering: 'welgevallig' → 'welbehaaglijk' op gebruikersverzoek.",
       "regex": "\\b[Ww]elgevallig\\b",
       "voorbeeld": "Ef 5:10 'wat de Heere welgevallig' → 'wat de Heere welbehaaglijk'"
     },
     {
       "id": "V270",
       "categorie": "Verouderde woorden",
-      "titel": "weest → wees",
-      "beschrijving": "Imperatief 'weest' (oud-Nederlands meervoud) → 'wees' (modern equivalent, zowel enkel- als meervoudsvorm).",
+      "oud": "weest",
+      "nieuw": "wees",
+      "toelichting": "Imperatief 'weest' (oud-Nederlands meervoud) → 'wees' (modern equivalent, zowel enkel- als meervoudsvorm).",
       "regex": "\\b[Ww]eest\\b",
       "voorbeeld": "Ef 5:22 'Weest aan uw eigen mannen onderdanig' → 'Wees aan uw eigen mannen onderdanig'"
     },
     {
       "id": "V271",
       "categorie": "Verouderde woorden",
-      "titel": "verborgenheid → geheimenis",
-      "beschrijving": "'Verborgenheid' (Grieks μυστήριον = mysterion) → 'geheimenis' — modern theologisch register, conform HSV en NBG. Inclusief meervoud.",
+      "oud": "verborgenheid",
+      "nieuw": "geheimenis",
+      "toelichting": "'Verborgenheid' (Grieks μυστήριον = mysterion) → 'geheimenis' — modern theologisch register, conform HSV en NBG. Inclusief meervoud.",
       "regex": "\\b[Vv]erborgenhed(en|eid)\\b",
       "voorbeeld": "Ef 5:32 'Deze verborgenheid is groot' → 'Deze geheimenis is groot'"
     },
     {
       "id": "V272",
       "categorie": "Verouderde woorden",
-      "titel": "Eert → Eer (imperatief)",
-      "beschrijving": "Imperatief 'Eert' (oud-Nederlandse meervoudsvorm) → 'Eer'. NB: derde persoon enkelvoud 'eert' (hij eert) blijft 'eert' — dit principe geldt alleen voor de gebiedende wijs.",
+      "oud": "Eert",
+      "nieuw": "Eer (imperatief)",
+      "toelichting": "Imperatief 'Eert' (oud-Nederlandse meervoudsvorm) → 'Eer'. NB: derde persoon enkelvoud 'eert' (hij eert) blijft 'eert' — dit principe geldt alleen voor de gebiedende wijs.",
       "regex": "\\b[Ee]ert\\b",
       "voorbeeld": "Ef 6:2 'Eert uw vader en moeder' → 'Eer uw vader en moeder'"
     },
     {
       "id": "V273",
       "categorie": "Verouderde woorden",
-      "titel": "lering → onderwijzing",
-      "beschrijving": "Modernisering: lering→onderwijzing.",
+      "oud": "lering",
+      "nieuw": "onderwijzing",
+      "toelichting": "Modernisering: lering→onderwijzing.",
       "regex": "\\b[Ll]ering(en)?\\b",
       "voorbeeld": "Ef 6:4 'in de lering' → 'in de onderwijzing'"
     },
     {
       "id": "V274",
       "categorie": "Verouderde woorden",
-      "titel": "vermaning → terechtwijzing",
-      "beschrijving": "Modernisering.",
+      "oud": "vermaning",
+      "nieuw": "terechtwijzing",
+      "toelichting": "Modernisering.",
       "regex": "\\b[Vv]ermaning(en)?\\b",
       "voorbeeld": "Ef 6:4 'en vermaning' → 'en terechtwijzing'"
     },
     {
       "id": "V275",
       "categorie": "Verouderde woorden",
-      "titel": "eenvoudigheid → eenvoud",
-      "beschrijving": "Modernisering.",
+      "oud": "eenvoudigheid",
+      "nieuw": "eenvoud",
+      "toelichting": "Modernisering.",
       "regex": "\\b[Ee]envoudigheid\\b",
       "voorbeeld": "Ef 6:5 'in eenvoudigheid' → 'in eenvoud'"
     },
     {
       "id": "V276",
       "categorie": "Verouderde woorden",
-      "titel": "gedurigheid → volharding (cascade-fix steedsheid)",
-      "beschrijving": "'Gedurigheid' (volharding/voortdurendheid) → 'volharding'. Cascade-fix: eerdere bulk 'gedurig→steeds' (V231) maakte ten onrechte 'gedurigheid' → 'steedsheid' (geen woord). Nu beide hersteld naar 'volharding'.",
+      "oud": "gedurigheid",
+      "nieuw": "volharding (cascade-fix steedsheid)",
+      "toelichting": "'Gedurigheid' (volharding/voortdurendheid) → 'volharding'. Cascade-fix: eerdere bulk 'gedurig→steeds' (V231) maakte ten onrechte 'gedurigheid' → 'steedsheid' (geen woord). Nu beide hersteld naar 'volharding'.",
       "regex": "\\b([Gg]edurig|[Ss]teeds)heid\\b",
       "voorbeeld": "Ef 6:18 'met alle steedsheid' → 'met alle volharding'"
     },
     {
       "id": "V277",
       "categorie": "Verouderde woorden",
-      "titel": "Denwelken/denwelke → Die/die",
-      "beschrijving": "Oude relatieve vorm van denwelke (mannelijk accusatief) → die.",
+      "oud": "Denwelken/denwelke",
+      "nieuw": "Die/die",
+      "toelichting": "Oude relatieve vorm van denwelke (mannelijk accusatief) → die.",
       "regex": "\\b[Dd]enwelke(?:n)?\\b",
       "voorbeeld": "Ef 6:22 'Denwelken ik tot u gezonden heb' → 'Die ik tot u gezonden heb'"
     },
     {
       "id": "V278",
       "categorie": "Verouderde woorden",
-      "titel": "onverderfelijk(heid) → onvergankelijk(heid)",
-      "beschrijving": "Modernisering.",
+      "oud": "onverderfelijk(heid)",
+      "nieuw": "onvergankelijk(heid)",
+      "toelichting": "Modernisering.",
       "regex": "\\b[Oo]nverderfelijk(heid)?\\b",
       "voorbeeld": "1 Kor 9:25 'wij een onverderfelijke kroon' → 'wij een onvergankelijke kroon'"
     },
     {
       "id": "V279",
       "categorie": "Verouderde woorden",
-      "titel": "geheimenis → geheim",
-      "beschrijving": "Cascade: V271 maakte verborgenheid→geheimenis; gebruiker wil korter \"geheim\". Inclusief meervoud.",
+      "oud": "geheimenis",
+      "nieuw": "geheim",
+      "toelichting": "Cascade: V271 maakte verborgenheid→geheimenis; gebruiker wil korter \"geheim\". Inclusief meervoud.",
       "regex": "\\b[Gg]eheimenis(sen)?\\b",
       "voorbeeld": "Ef 6:19 'het geheimenis van het Evangelie' → 'het geheim van het Evangelie'"
     },
     {
       "id": "V280",
       "categorie": "Godsnamen",
-      "titel": "Apocriefen: Here → JAHWEH (Hebr/Aram bron) / Heere (Grieks bron)",
-      "beschrijving": "Per apocrief boek toegepast op basis van origineel-taal: bij vermoedelijk Hebreeuws/Aramees origineel (Tobit, Judith, Sirach, Baruch 1-5, Gebed Azarja, Gezang in Vuuroven, Susanna, Bel & Draak, 1 Mak, 4 Ezra, Esther-toev): Here→JAHWEH (LXX κύριος ↔ verm. Hebr. יהוה). Bij Grieks origineel (Wijsheid, 2+3 Mak, 3 Ezra, Gebed Manasse, Brief van Jeremia=Bar 6): Here→Heere (κύριος is daar geen vertaling).",
+      "oud": "Apocriefen: Here",
+      "nieuw": "JAHWEH (Hebr/Aram bron) / Heere (Grieks bron)",
+      "toelichting": "Per apocrief boek toegepast op basis van origineel-taal: bij vermoedelijk Hebreeuws/Aramees origineel (Tobit, Judith, Sirach, Baruch 1-5, Gebed Azarja, Gezang in Vuuroven, Susanna, Bel & Draak, 1 Mak, 4 Ezra, Esther-toev): Here→JAHWEH (LXX κύριος ↔ verm. Hebr. יהוה). Bij Grieks origineel (Wijsheid, 2+3 Mak, 3 Ezra, Gebed Manasse, Brief van Jeremia=Bar 6): Here→Heere (κύριος is daar geen vertaling).",
       "regex": "\\bHere\\b",
       "voorbeeld": "Bar 1:5 'baden tot de Here' → 'baden tot JAHWEH'"
     },
     {
       "id": "V281",
       "categorie": "Godsnamen",
-      "titel": "des Heren / van de Heren → van JAHWEH (apocriefen)",
-      "beschrijving": "Cascade-fix uitsluitend toegepast in apocriefen met Hebreeuws/Aramees vermoedelijk origineel: SV1888 'des HEEREN' (genitief van HEERE = JHWH) is via eerdere bulkfixes 'des Heeren'→'des Heren'/'van de Heren' geworden. Hersteld naar 'van JAHWEH'. Apocriefen met Grieks origineel (Wijsheid, 2-3 Mak, 3 Ezra, Gebed Manasse, Brief van Jeremia=Bar 6) en het Oude Testament zelf zijn NIET aangetast door dit principe. (V280 dekt Here→JAHWEH/Heere policy per boek-categorie.)",
+      "oud": "des Heren / van de Heren",
+      "nieuw": "van JAHWEH (apocriefen)",
+      "toelichting": "Cascade-fix uitsluitend toegepast in apocriefen met Hebreeuws/Aramees vermoedelijk origineel: SV1888 'des HEEREN' (genitief van HEERE = JHWH) is via eerdere bulkfixes 'des Heeren'→'des Heren'/'van de Heren' geworden. Hersteld naar 'van JAHWEH'. Apocriefen met Grieks origineel (Wijsheid, 2-3 Mak, 3 Ezra, Gebed Manasse, Brief van Jeremia=Bar 6) en het Oude Testament zelf zijn NIET aangetast door dit principe. (V280 dekt Here→JAHWEH/Heere policy per boek-categorie.)",
       "regex": "\\b(des Heren|van de Heren|den Heren)\\b",
       "voorbeeld": "Bar 1:18 'stem van de Heren onzes Gods' → 'stem van JAHWEH onze God'"
     },
@@ -3243,7 +3291,7 @@
     },
     {
       "id": "V342",
-      "categorie": "Vesting / sterkte",
+      "categorie": "Verouderde woorden",
       "oud": "sterkte / sterkten (burcht)",
       "nieuw": "vesting / vestingen",
       "toelichting": "Context-aware: alleen waar 'sterkte' = burcht/fortificatie (niet waar = kracht). 67 vervangen, 179 'sterkte=kracht' bewust behouden",
@@ -4763,7 +4811,7 @@
     },
     {
       "id": "V534",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "te dienzelfden dage",
       "nieuw": "op dezelfde dag",
       "toelichting": "Verouderde naamvalsvorm; modern Nederlands.",
@@ -4771,7 +4819,7 @@
     },
     {
       "id": "V535",
-      "categorie": "Genitief-modernisering",
+      "categorie": "Verouderde woorden",
       "oud": "van de goddelozen weg",
       "nieuw": "de goddelozen weg",
       "toelichting": "SV-genitief 'der goddelozen weg' (= 'de weg der goddelozen') werd in modernisering 'van de goddelozen weg', wat dubbelzinnig leest ('weg' als pad of als bijwoord 'wegnemen'). Beter terug naar voorgeplaatste genitief zonder 'van'.",
@@ -4779,7 +4827,7 @@
     },
     {
       "id": "V536",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "betamelijk",
       "nieuw": "passend",
       "toelichting": "Verouderd; modern Nederlands.",
@@ -4787,7 +4835,7 @@
     },
     {
       "id": "V537",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "woonachtig te [Plaats]",
       "nieuw": "in [Plaats]",
       "toelichting": "Verouderd; modern Nederlands.",
@@ -4795,7 +4843,7 @@
     },
     {
       "id": "V538",
-      "categorie": "Verouderde naamval",
+      "categorie": "Verouderde woorden",
       "oud": "hare",
       "nieuw": "haar",
       "toelichting": "Archaïsche genitief/datief van 'haar'; in modern Nederlands alleen nog 'haar'.",
@@ -4803,7 +4851,7 @@
     },
     {
       "id": "V539",
-      "categorie": "Verouderd werkwoord",
+      "categorie": "Verouderde woorden",
       "oud": "te verhalen",
       "nieuw": "te vertellen",
       "toelichting": "Verouderd; modern Nederlands. Alleen 'te verhalen' (inf.) — laat zelfstandig naamwoord 'verhalen' (= stories) staan.",
@@ -4811,7 +4859,7 @@
     },
     {
       "id": "V540",
-      "categorie": "Verouderd werkwoord",
+      "categorie": "Verouderde woorden",
       "oud": "verstoken (hebben/zijn/etc. = verbergen)",
       "nieuw": "verstopt",
       "toelichting": "Verouderd voltooid deelwoord 'versteken'. Alleen vervangen waar betekenis 'verbergen' is, NIET waar het 'beroofd zijn van' betekent (= 'verstoken zijn van X').",
@@ -4819,7 +4867,7 @@
     },
     {
       "id": "V541",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "jonge gezel(len) / jong gezel",
       "nieuw": "jongeman(nen)",
       "toelichting": "Verouderd; modern Nederlands.",
@@ -4827,7 +4875,7 @@
     },
     {
       "id": "V542",
-      "categorie": "Verouderd relativum",
+      "categorie": "Verouderde woorden",
       "oud": "Dewelken / dewelken (plural)",
       "nieuw": "Zij (subject) / die (relativum) / wie (na voorzetsel)",
       "toelichting": "Verouderd meervouds-relativum. Zin-start subject → 'Zij'; mid-sentence relativum → 'die'; na voorzetsel (door/van/voor/tot/etc.) → 'wie' (personen).",
@@ -4835,7 +4883,7 @@
     },
     {
       "id": "V543",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "poortier(s)",
       "nieuw": "poortwachter(s)",
       "toelichting": "Verouderd; modern Nederlands (gangbaar in HSV/NBV21). Behoudt 'poort' i.t.t. 'deur'.",
@@ -4843,7 +4891,7 @@
     },
     {
       "id": "V544",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "bouwlieden",
       "nieuw": "bouwers",
       "toelichting": "Verouderd; modern Nederlands (gangbaar in HSV/NBV21).",
@@ -4851,7 +4899,7 @@
     },
     {
       "id": "V545",
-      "categorie": "Verouderde sterke verbuiging",
+      "categorie": "Verouderde woorden",
       "oud": "luider stem(me/men) / luider geluid / luider gejuich",
       "nieuw": "luide [Noun]",
       "toelichting": "Verouderde sterke -er uitgang op het positief adjectief; modern Nederlands kent alleen 'luide' (positief) of 'luider' (comparatief, niet bedoeld hier).",
@@ -4859,7 +4907,7 @@
     },
     {
       "id": "V546",
-      "categorie": "Cascade-fix V281",
+      "categorie": "Verouderde woorden",
       "oud": "briefs (cascade van SV-genitief 'des briefs')",
       "nieuw": "brief",
       "toelichting": "Cascade-bug: V281 (des → van de/het) liet de SV-genitief-s achter bij 'brief'. 'briefs' bestaat niet in modern Nederlands; altijd singular 'brief'.",
@@ -4867,7 +4915,7 @@
     },
     {
       "id": "V547",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "(en) op zulken tijd",
       "nieuw": "enzovoorts",
       "toelichting": "Aramese sluit-formule in koninklijke brieven (וּכְעֶנֶת); letterlijk 'en op dit tijdstip', functioneel = 'enzovoorts/etc.' Modern Nederlands: enzovoorts.",
@@ -4875,7 +4923,7 @@
     },
     {
       "id": "V548",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "cijns(en)",
       "nieuw": "belasting(en)",
       "toelichting": "Verouderde fiscaal-juridische term (= grondbelasting/tribuut). Modern Nederlands: belasting.",
@@ -4883,7 +4931,7 @@
     },
     {
       "id": "V549",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "(oude/ouden) impost(en)",
       "nieuw": "(vanouds gevestigde) accijns(en)",
       "toelichting": "Verouderde fiscaal-juridische term (= verbruiks-heffing op goederen; Aramees בְלוֹ). SV-bijvoeging 'oude' = 'vanouds geheven' (per kanttekening), niet 'verouderd'.",
@@ -4891,7 +4939,7 @@
     },
     {
       "id": "V550",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "feil(en)",
       "nieuw": "fout / falen",
       "toelichting": "Verouderd: feilen (ww) = falen/missen; feil (zn) = fout/vergissing. Behoudt 'feilbaar' en 'feilloos' (nog modern).",
@@ -4899,7 +4947,7 @@
     },
     {
       "id": "V551",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "met arm en geweld",
       "nieuw": "met geweld en macht",
       "toelichting": "Aramees-Hebreeuws doublet בְּאֶדְרָע וְחָיִל ('met sterke arm en kracht' = gewapende macht). Modern Nederlands: 'met geweld en macht' behoudt parallelism.",
@@ -4907,7 +4955,7 @@
     },
     {
       "id": "V552",
-      "categorie": "Cascade-fix anaphor",
+      "categorie": "Verouderde woorden",
       "oud": "dezelfde stad / diezelve stad",
       "nieuw": "die stad",
       "toelichting": "SV-anaphor 'dezelve stad' (= 'die/dat stad, eerder genoemd') werd verkeerd gemoderniseerd naar 'dezelfde stad' (= 'identical city'). Modern Nederlands: 'die stad' voor terugverwijzing.",
@@ -4915,7 +4963,7 @@
     },
     {
       "id": "V553",
-      "categorie": "Verouderde naamval",
+      "categorie": "Verouderde woorden",
       "oud": "te dier tijd",
       "nieuw": "in die tijd",
       "toelichting": "Verouderde vrouwelijke datief 'dier' (= 'die'); modern Nederlands: 'in die tijd' (biblisch register, consistent met 'in die dagen').",
@@ -4923,7 +4971,7 @@
     },
     {
       "id": "V554",
-      "categorie": "Verouderde werkwoordvorm",
+      "categorie": "Verouderde woorden",
       "oud": "leide",
       "nieuw": "legde",
       "toelichting": "SV-verleden tijd van 'leggen' (= 'leyde'); modern Nederlands: 'legde'. NB: verleden tijd van 'leiden' is 'leidde' (dubbele -d-), niet 'leide' — geen conflict.",
@@ -4931,7 +4979,7 @@
     },
     {
       "id": "V555",
-      "categorie": "Cascade-fix V281",
+      "categorie": "Verouderde woorden",
       "oud": "(de) grote Gods",
       "nieuw": "(de) grote God",
       "toelichting": "Cascade-bug: SV-genitief 'des groten Gods' (= 'of the great God') werd verkeerd gemoderniseerd naar 'de grote Gods' met spuriose -s. Hoort 'de grote God' te zijn.",
@@ -4939,7 +4987,7 @@
     },
     {
       "id": "V556",
-      "categorie": "Verouderd werkwoord",
+      "categorie": "Verouderde woorden",
       "oud": "voltrekken / voltrekt / voltrekking",
       "nieuw": "voltooien / voltooit / voltooiing",
       "toelichting": "Modern Nederlands 'voltrekken' is gereserveerd voor formele acten (huwelijk, vonnis). Voor bouw/werk/belofte gebruikt modern Nederlands 'voltooien'.",
@@ -4947,7 +4995,7 @@
     },
     {
       "id": "V557",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "aan gene zijde",
       "nieuw": "aan de overzijde",
       "toelichting": "Verouderd 'gene' (= die andere/ginds). Modern Nederlands: 'aan de overzijde' (biblisch register, past bij rivieren/zee). Paired idiom 'aan deze en aan gene zijde' → 'aan deze en aan de andere zijde'.",
@@ -4955,7 +5003,7 @@
     },
     {
       "id": "V558",
-      "categorie": "Verouderde negation",
+      "categorie": "Verouderde woorden",
       "oud": "van gene [Noun]",
       "nieuw": "van geen [Noun]",
       "toelichting": "SV 'gene' als variant van 'geen' (negation, niet anaphoric). Pattern: 'van gene waarde/kracht/branding/macht/etc.' = 'van geen X'.",
@@ -4963,7 +5011,7 @@
     },
     {
       "id": "V559",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "generlei (wijze)",
       "nieuw": "geen enkele (wijze)",
       "toelichting": "Verouderd; 'generlei' = 'geen enkele' / 'op geen enkele manier'. Modern Nederlands: 'geen enkele'.",
@@ -4971,7 +5019,7 @@
     },
     {
       "id": "V560",
-      "categorie": "Verouderde anaphor",
+      "categorie": "Verouderde woorden",
       "oud": "de gene die",
       "nieuw": "degenen die",
       "toelichting": "SV-anaphor 'de gene die' (= 'die degenen die'). Modern Nederlands: 'degenen die' (meervoud, dekt de meeste gevallen).",
@@ -4979,7 +5027,7 @@
     },
     {
       "id": "V561",
-      "categorie": "Verouderd meervoud",
+      "categorie": "Verouderde woorden",
       "oud": "priesteren",
       "nieuw": "priesters",
       "toelichting": "SV-meervoud op -en (priesteren); modern Nederlands: priesters.",
@@ -4987,7 +5035,7 @@
     },
     {
       "id": "V562",
-      "categorie": "Verouderd leenwoord",
+      "categorie": "Verouderde woorden",
       "oud": "Nethinim",
       "nieuw": "tempelknechten",
       "toelichting": "Hebreeuws נְתִינִים (netinim) = 'de gegevenen' — tempeldienaren toegewezen aan de Levieten voor lagere tempeldiensten (Gibeonieten en latere groepen, zie Jozua 9). HSV/NBV21: 'tempelknechten'.",
@@ -4995,7 +5043,7 @@
     },
     {
       "id": "V563",
-      "categorie": "Hebraïsme",
+      "categorie": "Verouderde woorden",
       "oud": "hoofden van [poss] vaderen",
       "nieuw": "familiehoofden",
       "toelichting": "Hebraïsche uitdrukking 'rashei avot' (= 'heads of fathers'/'houses') voor stamhoofden/familiehoofden. Modern Nederlands (NBV21/HSV): 'familiehoofden'.",
@@ -5003,7 +5051,7 @@
     },
     {
       "id": "V564",
-      "categorie": "Verouderd voornaamwoord",
+      "categorie": "Verouderde woorden",
       "oud": "alzulks (en alzulks)",
       "nieuw": "zoiets / zoveel en nog meer",
       "toelichting": "SV demonstrative neuter ('zo iets'). Standalone → 'zoiets'; eed-formule 'alzulks en alzulks daartoe doen' → 'zoveel en nog meer daartoe doen' (Hebraïsche zwaarte-formule).",
@@ -5011,7 +5059,7 @@
     },
     {
       "id": "V565",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "manspersoon / manspersonen",
       "nieuw": "man / mannen",
       "toelichting": "Verouderde compositum 'manspersoon'; modern Nederlands: 'man'. In context met 'vrouwen' blijft genus-aanduiding helder.",
@@ -5019,7 +5067,7 @@
     },
     {
       "id": "V566",
-      "categorie": "Verouderde sterke verbuiging",
+      "categorie": "Verouderde woorden",
       "oud": "rechten weg",
       "nieuw": "rechte weg",
       "toelichting": "Verouderde sterke -en uitgang op attributief adjectief (mannelijke accusatief/datief). Modern Nederlands: zwakke uitgang -e ('de/een rechte weg').",
@@ -5027,7 +5075,7 @@
     },
     {
       "id": "V567",
-      "categorie": "Verouderd meervoud",
+      "categorie": "Verouderde woorden",
       "oud": "kameren",
       "nieuw": "kamers",
       "toelichting": "SV-meervoud op -en (kameren); modern Nederlands: kamers.",
@@ -5035,7 +5083,7 @@
     },
     {
       "id": "V568",
-      "categorie": "Verouderde naamval",
+      "categorie": "Verouderde woorden",
       "oud": "ten huize van",
       "nieuw": "in het huis van",
       "toelichting": "Verouderde datief-constructie 'ten huize' (= 'te dem huize' = 'in het huis'). Modern Nederlands: 'in het huis van' (slankst) of 'thuis bij' (informeel). In Bijbel-context met onderwerp (God/koning/etc.) past 'in het huis van' het beste.",
@@ -5043,7 +5091,7 @@
     },
     {
       "id": "V569",
-      "categorie": "Verouderd meervoud",
+      "categorie": "Verouderde woorden",
       "oud": "dochteren",
       "nieuw": "dochters",
       "toelichting": "SV-meervoud op -en (dochteren); modern Nederlands: dochters.",
@@ -5051,7 +5099,7 @@
     },
     {
       "id": "V570",
-      "categorie": "Verouderd voornaamwoord",
+      "categorie": "Verouderde woorden",
       "oud": "(aangaande dit/deze) / (dit/deze aangaande)",
       "nieuw": "wat dit betreft",
       "toelichting": "SV-idioom 'aangaande dit/deze' / 'deze aangaande' (= 'concerning this' / 'as for this'). Modern Nederlands: 'wat dit betreft'. Generieke 'aangaande' (standalone, 1255 hits) blijft staan.",
@@ -5059,7 +5107,7 @@
     },
     {
       "id": "V571",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "deel noch lot",
       "nieuw": "part noch deel",
       "toelichting": "SV-Hebraïsme/doublet 'deel noch lot' (= portion nor share). Modern Nederlands idioom 'part noch deel hebben aan' is gangbaar (Van Dale) en draagt dezelfde 'geen enkel aandeel'-betekenis.",
@@ -5067,7 +5115,7 @@
     },
     {
       "id": "V572",
-      "categorie": "Naamspelling",
+      "categorie": "Verouderde woorden",
       "oud": "Damaskus",
       "nieuw": "Damascus",
       "toelichting": "Modernisering plaatsnaam (Van Dale, NBV21, HSV).",
@@ -5075,7 +5123,7 @@
     },
     {
       "id": "V573",
-      "categorie": "Verouderd voorzetsel",
+      "categorie": "Verouderde woorden",
       "oud": "te Damascus",
       "nieuw": "in Damascus",
       "toelichting": "Verouderd voorzetsel 'te' bij plaatsnaam; modern Nederlands: 'in [Plaats]'.",
@@ -5083,7 +5131,7 @@
     },
     {
       "id": "V578",
-      "categorie": "Verouderde spelling",
+      "categorie": "Verouderde woorden",
       "oud": "over einde",
       "nieuw": "overeind",
       "toelichting": "Verouderde gesplitste spelling van 'overeind' (= rechtop). Modern Nederlands: aan elkaar geschreven.",
@@ -5091,7 +5139,7 @@
     },
     {
       "id": "V579",
-      "categorie": "Schrijfwijze getallen",
+      "categorie": "Verouderde woorden",
       "oud": "3 keer",
       "nieuw": "drie keer",
       "toelichting": "Modern Nederlandse conventie: kleine getallen (0-12) in tekst voluit geschreven, niet als cijfer.",
@@ -5099,7 +5147,7 @@
     },
     {
       "id": "V580",
-      "categorie": "Verouderd voorzetsel",
+      "categorie": "Verouderde woorden",
       "oud": "(B)elangende",
       "nieuw": "(W)at betreft",
       "toelichting": "SV-prepositie 'belangende' (= 'concerning / as for'). Modern Nederlands: 'wat betreft'.",
@@ -5107,7 +5155,7 @@
     },
     {
       "id": "V581",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "evengelijk(e)",
       "nieuw": "gelijk / dezelfde",
       "toelichting": "Verouderde versterkte vorm van 'gelijk'. Standalone → 'gelijk'; attributief (evengelijke gave) → 'dezelfde'.",
@@ -5115,7 +5163,7 @@
     },
     {
       "id": "V582",
-      "categorie": "Verouderd meervoud",
+      "categorie": "Verouderde woorden",
       "oud": "Grieksen",
       "nieuw": "Grieken",
       "toelichting": "SV-meervoud 'Grieksen' (van 'Grieks' als zelfst nw). Modern Nederlands: 'Grieken' (van 'Griek').",
@@ -5123,7 +5171,7 @@
     },
     {
       "id": "V583",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "u/U raast",
       "nieuw": "u/U bent buiten zinnen",
       "toelichting": "SV-idioom 'u raast' (= 'u bent waanzinnig / krankzinnig'). Modern Nederlands: 'u bent buiten zinnen' (vaste uitdrukking). HSV Hand 12:15: 'U bent buiten zinnen'.",
@@ -5131,7 +5179,7 @@
     },
     {
       "id": "V584",
-      "categorie": "Verouderd werkwoord",
+      "categorie": "Verouderde woorden",
       "oud": "gespijzigd",
       "nieuw": "gevoed",
       "toelichting": "Verouderd voltooid deelwoord van 'spijzigen' (= voeden). Modern Nederlands: 'gevoed' (van 'voeden'). Aansluitend op V526 (spijs → voedsel).",
@@ -5139,7 +5187,7 @@
     },
     {
       "id": "V585",
-      "categorie": "Verouderd adjectief",
+      "categorie": "Verouderde woorden",
       "oud": "gezette",
       "nieuw": "vastgestelde",
       "toelichting": "Verouderd adjectivisch deelwoord 'gezette' (= ingestelde/bepaalde). Modern Nederlands: 'vastgestelde' (vooral bij 'hoogtijden', 'tijden', 'orde').",
@@ -5147,7 +5195,7 @@
     },
     {
       "id": "V586",
-      "categorie": "Verouderde correlatief",
+      "categorie": "Verouderde woorden",
       "oud": "beide(n) X en Y",
       "nieuw": "zowel X als Y",
       "toelichting": "SV correlative-coordination 'beide X en Y' / 'beiden X en Y' (= 'both X and Y'). Modern Nederlands: 'zowel X als Y'.",
@@ -5155,7 +5203,7 @@
     },
     {
       "id": "V587",
-      "categorie": "Verouderd werkwoord (context)",
+      "categorie": "Verouderde woorden",
       "oud": "(het recht / de rechte wegen) verkeren",
       "nieuw": "verdraaien",
       "toelichting": "SV 'verkeren' heeft polysemie: (1) wonen/verblijven, (2) perverteren/verdraaien, (3) omgaan met. Alleen (2) wordt vervangen: 'het recht verkeren' → 'het recht verdraaien'; 'rechte wegen verkeren' → 'rechte wegen verdraaien'.",
@@ -5163,7 +5211,7 @@
     },
     {
       "id": "V588",
-      "categorie": "Verouderd werkwoord (context)",
+      "categorie": "Verouderde woorden",
       "oud": "verzochten (in vragen-sense)",
       "nieuw": "vroegen",
       "toelichting": "SV 'verzochten' = (1) vragen/verzoeken OF (2) op proef stellen (tempt). Alleen sense (1) → 'vroegen'. Sense (2) — 'verzochten God/Mij' — blijft staan.",
@@ -5171,7 +5219,7 @@
     },
     {
       "id": "V589",
-      "categorie": "Cascade-fix genitief",
+      "categorie": "Verouderde woorden",
       "oud": "[Noun] Israëls",
       "nieuw": "[Noun] van Israël",
       "toelichting": "SV-genitief 'des Israëls' / '[Noun] Israëls' → post-noun pattern moderniseert naar 'van Israël'. Pre-noun 'Israëls [Noun]' (= 'X van Israël') context-aware later.",
@@ -5179,7 +5227,7 @@
     },
     {
       "id": "V590",
-      "categorie": "Cascade-fix genitief",
+      "categorie": "Verouderde woorden",
       "oud": "[Noun] Abrahams",
       "nieuw": "[Noun] van Abraham",
       "toelichting": "SV-genitief 'des Abrahams' / '[Noun] Abrahams' → post-noun pattern moderniseert naar 'van Abraham'.",
@@ -5187,7 +5235,7 @@
     },
     {
       "id": "V591",
-      "categorie": "Verouderde verbuiging",
+      "categorie": "Verouderde woorden",
       "oud": "elken",
       "nieuw": "elke",
       "toelichting": "Verouderde mannelijke accusatief/datief 'elken'; modern Nederlands: 'elke' (de-woorden) of 'elk' (het-woorden). Hier breed 'elke' — overcorrectie naar 'elk' bij het-woorden eventueel later.",
@@ -5195,7 +5243,7 @@
     },
     {
       "id": "V592",
-      "categorie": "Verouderd werkwoord",
+      "categorie": "Verouderde woorden",
       "oud": "geordineerd",
       "nieuw": "bestemd",
       "toelichting": "Verouderd Latijn-Nederlands voltooid deelwoord van 'ordineren' (= bestemmen/voorbeschikken). Modern Nederlands: 'bestemd' (predestinatorisch).",
@@ -5203,7 +5251,7 @@
     },
     {
       "id": "V593",
-      "categorie": "Verouderde verbuiging",
+      "categorie": "Verouderde woorden",
       "oud": "verledene",
       "nieuw": "vroegere",
       "toelichting": "SV-verbuiging 'verledene' van 'verleden'. Modern Nederlands: 'vroegere' (= past, former). Vooral 'verledene tijden/dagen' → 'vroegere tijden/dagen'.",
@@ -5211,7 +5259,7 @@
     },
     {
       "id": "V594",
-      "categorie": "Verouderd werkwoord",
+      "categorie": "Verouderde woorden",
       "oud": "verkoren",
       "nieuw": "gekozen",
       "toelichting": "SV-voltooid deelwoord van 'verkiezen' (= to choose). Modern Nederlands: 'gekozen' (van 'kiezen'). NB: 'uitverkoren' (theologisch begrip = elect) blijft staan. NB: 'verkorenen' (zelfstandig nw = de uitverkorenen) blijft.",
@@ -5219,7 +5267,7 @@
     },
     {
       "id": "V595",
-      "categorie": "Verouderd werkwoord (context)",
+      "categorie": "Verouderde woorden",
       "oud": "verkeerden (dwellen-sense)",
       "nieuw": "verbleven",
       "toelichting": "SV 'verkeerden' = (1) dwelen/verblijven, (2) zelfst.nw 'verkeerden' (perverse ones), (3) sterke verbuiging 'verkeerden zin' (= verkeerde). Alleen (1) → 'verbleven', wanneer gevolgd door 'daar/in/onder/aldaar' of preceeded door 'in [Plaats]'.",
@@ -5227,7 +5275,7 @@
     },
     {
       "id": "V596",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "naar de wijze van Mozes",
       "nieuw": "volgens het gebruik van Mozes",
       "toelichting": "SV 'naar de wijze van X' = 'according to the manner/custom of X'. Modern Nederlands voor Mozaïsche wet-gebruik: 'volgens het gebruik van Mozes' (gebruik = ritueel/voorschrift).",
@@ -5235,7 +5283,7 @@
     },
     {
       "id": "V597",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "(op) zulke wijze",
       "nieuw": "(op) dezelfde manier",
       "toelichting": "SV 'op zulke wijze (als)' = 'on such a manner as' (= 'in the same way as'). Modern Nederlands: 'op dezelfde manier'.",
@@ -5243,7 +5291,7 @@
     },
     {
       "id": "V598",
-      "categorie": "Verouderde verbuiging",
+      "categorie": "Verouderde woorden",
       "oud": "meerderen",
       "nieuw": "meerdere",
       "toelichting": "Verouderde sterke verbuiging 'meerderen' (mannelijke accusatief/datief). Modern Nederlands: 'meerdere' (zonder -n). NB: SV-betekenis vaak comparatief 'groter'; modern 'meerdere' is meer 'several/more' — kan in sommige contexten ambigu lezen, per-vers checken.",
@@ -5251,7 +5299,7 @@
     },
     {
       "id": "V599",
-      "categorie": "Verouderde spelling",
+      "categorie": "Verouderde woorden",
       "oud": "medenemen / medegenomen / medenam(en)",
       "nieuw": "meenemen / meegenomen / meenam(en)",
       "toelichting": "Verouderde 'mede-' compositum-vorm. Modern Nederlands: 'mee-'.",
@@ -5259,7 +5307,7 @@
     },
     {
       "id": "V600",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "achtte billijk",
       "nieuw": "achtte het juist",
       "toelichting": "SV 'achtte billijk' (= 'considered fair/equitable'). Modern Nederlands: 'achtte het juist'.",
@@ -5267,7 +5315,7 @@
     },
     {
       "id": "V601",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "omwille van",
       "nieuw": "vanwege",
       "toelichting": "Verouderde voorzetsel-uitdrukking 'omwille van'. Modern Nederlands: 'vanwege' (slankst) of 'om ... wil' (formeler).",
@@ -5275,7 +5323,7 @@
     },
     {
       "id": "V602",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "verordening(en)",
       "nieuw": "bepaling(en)",
       "toelichting": "Verouderd juridisch-formele 'verordening(en)' (= decree/ordinance). Modern Nederlands: 'bepaling(en)' (algemener; in juridische zin nog 'verordening' maar in Bijbelse context past 'bepaling' beter).",
@@ -5283,7 +5331,7 @@
     },
     {
       "id": "V603",
-      "categorie": "Verouderd relativum",
+      "categorie": "Verouderde woorden",
       "oud": "welker hart",
       "nieuw": "van wie het hart",
       "toelichting": "SV 'welker' = genitief van 'welke' (= 'of whom/whose'). Persoon-specifiek 'welker hart' → 'van wie het hart'. Generieke 'welker [Noun]' (~1000+ instances) blijft polysemisch context-bont — per-vers handmatig of in latere bredere principe.",
@@ -5291,7 +5339,7 @@
     },
     {
       "id": "V604",
-      "categorie": "Cascade-fix genitief Gods",
+      "categorie": "Verouderde woorden",
       "oud": "dienstknecht(en) Gods",
       "nieuw": "dienstknecht(en) van God",
       "toelichting": "SV-genitief 'des Gods'/'Gods' post-noun → 'van God'. Eerste van een grotere cascade-cleanup voor '[Noun] Gods'. Bredere cascade (man Gods, huis Gods, Koninkrijk Gods, kinderen Gods, Geest Gods, etc.) volgt later via context-aware agent — riskant voor bulk omdat sommige 'X Gods' constructies modern Nederlands blijven (vaste uitdrukkingen).",
@@ -5299,7 +5347,7 @@
     },
     {
       "id": "V605",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "zo dikwijls",
       "nieuw": "telkens",
       "toelichting": "SV 'zo dikwijls' (= 'as often as / every time'). Modern Nederlands: 'telkens' (slankst) of 'zo vaak'.",
@@ -5307,7 +5355,7 @@
     },
     {
       "id": "V606",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "te alle(n) tijd",
       "nieuw": "altijd",
       "toelichting": "SV 'te allen tijd' (verouderde datief-meervoud, = 'at all times'). Cascade-modernisering naar 'te alle tijd' (n-verlies) is óók nog SV-achtig. Modern Nederlands: 'altijd'.",
@@ -5315,7 +5363,7 @@
     },
     {
       "id": "V607",
-      "categorie": "Verouderd werkwoord",
+      "categorie": "Verouderde woorden",
       "oud": "gedijen / gedijde",
       "nieuw": "strekken / strekte",
       "toelichting": "SV 'gedijen' (= 'leiden tot / strekken tot'). Modern Nederlands kent 'gedijen' nog wel als 'opbloeien', maar in SV-context ('ter zaligheid gedijen') betekent het 'leiden tot' / 'strekken tot'.",
@@ -5323,7 +5371,7 @@
     },
     {
       "id": "V608",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "toebrenging",
       "nieuw": "ondersteuning",
       "toelichting": "SV 'toebrenging' (Grieks ἐπιχορηγία = 'epichorégia' = supply, assistance). Modern Nederlands: 'ondersteuning' (HSV: 'ondersteuning'; NBV21: 'hulp').",
@@ -5331,7 +5379,7 @@
     },
     {
       "id": "V609",
-      "categorie": "Verouderde comparatief",
+      "categorie": "Verouderde woorden",
       "oud": "nodiger",
       "nieuw": "noodzakelijker",
       "toelichting": "SV-comparatief 'nodiger' (van 'nodig'). Modern Nederlands: 'noodzakelijker' (= meer noodzakelijk).",
@@ -5339,7 +5387,7 @@
     },
     {
       "id": "V610",
-      "categorie": "Verouderde comparatief",
+      "categorie": "Verouderde woorden",
       "oud": "uitnemender",
       "nieuw": "uitmuntender",
       "toelichting": "SV-comparatief 'uitnemender' (= 'more excellent'). Modern Nederlands: 'uitmuntender' (= more excellent / outstanding). NB: 'uitnemend' (positief) blijft staan.",
@@ -5347,7 +5395,7 @@
     },
     {
       "id": "V611",
-      "categorie": "Verouderde werkwoordvorm",
+      "categorie": "Verouderde woorden",
       "oud": "(u/gij) moogt",
       "nieuw": "(u) mag",
       "toelichting": "SV 2e persoon ev/mv van 'mogen' = 'moogt' (na 'gij/u'). Modern Nederlands: 'u mag' (zowel ev als beleefdheidsvorm mv).",
@@ -5355,7 +5403,7 @@
     },
     {
       "id": "V612",
-      "categorie": "Verouderd woord + cascade",
+      "categorie": "Verouderde woorden",
       "oud": "gestaltenis (Gods)",
       "nieuw": "gestalte (van God)",
       "toelichting": "SV 'gestaltenis' (= 'form / shape') is verouderd; modern Nederlands: 'gestalte'. Plus cascade-fix: 'gestaltenis Gods' (genitief) → 'gestalte van God'.",
@@ -5363,7 +5411,7 @@
     },
     {
       "id": "V613",
-      "categorie": "Verouderd bijwoord",
+      "categorie": "Verouderde woorden",
       "oud": "uitermate",
       "nieuw": "bovenmate",
       "toelichting": "SV 'uitermate' (= 'beyond measure / exceedingly'). Modern Nederlands: 'bovenmate' (= 'beyond measure'); 'uitermate' bestaat nog wel maar voelt formeel/SV.",
@@ -5371,7 +5419,7 @@
     },
     {
       "id": "V614",
-      "categorie": "Verouderde sterke verbuiging",
+      "categorie": "Verouderde woorden",
       "oud": "allen naam",
       "nieuw": "alle naam",
       "toelichting": "SV 'allen naam' (mannelijke accusatief sterke verbuiging, = 'every name'). Modern Nederlands: 'alle naam' (zonder -n, behoudt distributieve betekenis).",
@@ -5379,7 +5427,7 @@
     },
     {
       "id": "V615",
-      "categorie": "Verouderd -lijk bijwoord",
+      "categorie": "Verouderde woorden",
       "oud": "oprechtelijk",
       "nieuw": "oprecht",
       "toelichting": "SV-bijwoord met -lijk-suffix; modern Nederlands gebruikt 'oprecht' zonder -lijk.",
@@ -5387,7 +5435,7 @@
     },
     {
       "id": "V616",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "uw zaken zal bezorgen",
       "nieuw": "voor uw zaken zal zorgen",
       "toelichting": "SV 'iemands zaken bezorgen' (= 'voor iemands zaken zorgen / verzorgen'). Modern Nederlands: 'voor uw zaken zal zorgen'.",
@@ -5395,7 +5443,7 @@
     },
     {
       "id": "V617",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "van stonde aan",
       "nieuw": "ogenblikkelijk",
       "toelichting": "SV-tijdsuitdrukking 'van stonde aan' (= 'immediately / at once'). Modern Nederlands: 'ogenblikkelijk' (slankst) of 'direct' / 'meteen'.",
@@ -5403,7 +5451,7 @@
     },
     {
       "id": "V618",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "bedienaar (van mijn nooddruft)",
       "nieuw": "dienaar (van wat ik nodig heb)",
       "toelichting": "SV 'bedienaar' (= 'minister/servant') wordt 'dienaar'. Plus vaste uitdrukking 'bedienaar van mijn nooddruft' → 'dienaar van wat ik nodig heb'. NB: standalone 'nooddruft' (levensbehoeften) blijft staan voor latere principe-overweging.",
@@ -5411,7 +5459,7 @@
     },
     {
       "id": "V619",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "zeer begerig was",
       "nieuw": "vurig verlangde",
       "toelichting": "SV 'zeer begerig was' (= 'was greatly desiring'). Modern Nederlands: 'vurig verlangde' (= longed eagerly).",
@@ -5419,7 +5467,7 @@
     },
     {
       "id": "V620",
-      "categorie": "Verouderde datief",
+      "categorie": "Verouderde woorden",
       "oud": "ten achtste dag",
       "nieuw": "op de achtste dag",
       "toelichting": "SV-datief 'ten X dag' (= 'te dem X dag' = 'op de X dag'). Modern Nederlands: 'op de achtste dag'.",
@@ -5427,7 +5475,7 @@
     },
     {
       "id": "V621",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "mij gewin was",
       "nieuw": "voor mij winst was",
       "toelichting": "SV 'mij gewin' = datief constructie 'voor mij winst'. Modern Nederlands: 'voor mij winst was'.",
@@ -5435,7 +5483,7 @@
     },
     {
       "id": "V622",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "schade geacht",
       "nieuw": "als schade beschouwd",
       "toelichting": "SV 'schade geacht' (= 'considered loss/damage'). Modern Nederlands: 'als schade beschouwd' / 'als verlies gerekend'.",
@@ -5443,7 +5491,7 @@
     },
     {
       "id": "V623",
-      "categorie": "Verouderde aanvoegende wijs",
+      "categorie": "Verouderde woorden",
       "oud": "moge",
       "nieuw": "mag",
       "toelichting": "SV-aanvoegende wijs/jussief 'moge' (= 'may'). Modern Nederlands: 'mag' (modaal) of behouden in zegenformule ('Moge God u zegenen'). In meeste Bijbel-contexten 'opdat ... moge zijn' → 'opdat ... mag zijn'.",
@@ -5451,7 +5499,7 @@
     },
     {
       "id": "V624",
-      "categorie": "Verouderd werkwoord",
+      "categorie": "Verouderde woorden",
       "oud": "gewinnen / gewin",
       "nieuw": "winnen / winst",
       "toelichting": "SV 'gewinnen' (= 'to gain/win') en 'gewin' (= 'winst/gain'). Modern Nederlands: 'winnen' / 'winst'.",
@@ -5459,7 +5507,7 @@
     },
     {
       "id": "V625",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "naar het wit",
       "nieuw": "naar het doel",
       "toelichting": "SV 'naar het wit' (= 'toward the target/goal'; 'wit' was schiet-doel). Modern Nederlands: 'naar het doel'.",
@@ -5467,7 +5515,7 @@
     },
     {
       "id": "V626",
-      "categorie": "Cascade-fix genitief Gods",
+      "categorie": "Verouderde woorden",
       "oud": "roeping Gods",
       "nieuw": "roeping van God",
       "toelichting": "SV-genitief 'Gods' post-noun → 'van God'. Onderdeel van de bredere 'X Gods' cascade-cleanup.",
@@ -5475,7 +5523,7 @@
     },
     {
       "id": "V627",
-      "categorie": "Verouderd voornaamwoord",
+      "categorie": "Verouderde woorden",
       "oud": "denzelfde",
       "nieuw": "deze",
       "toelichting": "SV-mannelijke accusatief 'denzelfde' (= 'dezelve'/'die'). Cascade van eerdere V230 (dezelve → die). Modern Nederlands: 'deze' (anaphor).",
@@ -5483,7 +5531,7 @@
     },
     {
       "id": "V628",
-      "categorie": "Verouderd bijwoord",
+      "categorie": "Verouderde woorden",
       "oud": "dikmaals",
       "nieuw": "dikwijls",
       "toelichting": "SV-bijwoord 'dikmaals' (= 'often'). Modern Nederlands: 'dikwijls' (formeel) of 'vaak' (informeel).",
@@ -5491,7 +5539,7 @@
     },
     {
       "id": "V629",
-      "categorie": "Verouderd relativum",
+      "categorie": "Verouderde woorden",
       "oud": "welker einde",
       "nieuw": "hun einde",
       "toelichting": "SV-genitief 'welker' (= 'whose, plural'). Voor groep-personen ('die anti-christ-types ...') modern Nederlands: 'hun' (possessief). Patroon: 'welker [zn]' → 'hun [zn]'.",
@@ -5499,7 +5547,7 @@
     },
     {
       "id": "V630",
-      "categorie": "Verouderd relativum",
+      "categorie": "Verouderde woorden",
       "oud": "welker God",
       "nieuw": "hun God",
       "toelichting": "SV-genitief 'welker' (= 'whose, plural'). Modern Nederlands: 'hun' (possessief).",
@@ -5507,7 +5555,7 @@
     },
     {
       "id": "V631",
-      "categorie": "Verouderd relativum",
+      "categorie": "Verouderde woorden",
       "oud": "welker namen",
       "nieuw": "van wie de namen",
       "toelichting": "SV-genitief 'welker' (plural, = 'whose'). Modern Nederlands: 'van wie' (personen-context).",
@@ -5515,7 +5563,7 @@
     },
     {
       "id": "V632",
-      "categorie": "Verouderd werkwoord",
+      "categorie": "Verouderde woorden",
       "oud": "verwakkerd",
       "nieuw": "wakker geworden",
       "toelichting": "SV-voltooid deelwoord 'verwakkerd' (van 'verwakkeren' = ontwaken/herleven). Modern Nederlands: 'wakker geworden' (figuurlijk = opgeleefd).",
@@ -5523,7 +5571,7 @@
     },
     {
       "id": "V633",
-      "categorie": "Verouderd adjectief",
+      "categorie": "Verouderde woorden",
       "oud": "vergenoegd",
       "nieuw": "tevreden",
       "toelichting": "SV-adjectief 'vergenoegd' (= 'satisfied / content'). Modern Nederlands: 'tevreden'.",
@@ -5531,7 +5579,7 @@
     },
     {
       "id": "V634",
-      "categorie": "Verouderd meervoud",
+      "categorie": "Verouderde woorden",
       "oud": "uitgaaf",
       "nieuw": "uitgaven",
       "toelichting": "SV-meervoud (collectief) 'uitgaaf'; modern Nederlands gebruikt 'uitgaven' (meervoud van 'uitgave').",
@@ -5539,7 +5587,7 @@
     },
     {
       "id": "V635",
-      "categorie": "Cascade-fix genitief Gods",
+      "categorie": "Verouderde woorden",
       "oud": "uitverkorenen Gods",
       "nieuw": "uitverkorenen van God",
       "toelichting": "SV-genitief 'Gods' post-noun → 'van God'.",
@@ -5547,7 +5595,7 @@
     },
     {
       "id": "V636",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "te zijn/Zijn tijd",
       "nieuw": "op zijn/Zijn tijd",
       "toelichting": "SV 'te zijn tijd' (datief). Modern Nederlands: 'op zijn tijd'.",
@@ -5555,7 +5603,7 @@
     },
     {
       "id": "V637",
-      "categorie": "Verouderde sterke verbuiging",
+      "categorie": "Verouderde woorden",
       "oud": "oprechten zoon",
       "nieuw": "oprechte zoon",
       "toelichting": "SV-sterke verbuiging -en op attributief adjectief; modern Nederlands: -e.",
@@ -5563,7 +5611,7 @@
     },
     {
       "id": "V638",
-      "categorie": "Verouderd adjectief",
+      "categorie": "Verouderde woorden",
       "oud": "(het) gemeen (geloof)",
       "nieuw": "(het) gemeenschappelijk (geloof)",
       "toelichting": "SV 'gemeen' (= 'common, shared'). Modern Nederlands: 'gemeenschappelijk' (= 'shared'); 'gemeen' heeft tegenwoordig pejoratieve betekenis (= 'low, mean').",
@@ -5571,7 +5619,7 @@
     },
     {
       "id": "V639",
-      "categorie": "Verouderde Hebraïsme",
+      "categorie": "Verouderde woorden",
       "oud": "van een vrouw man",
       "nieuw": "een man met één vrouw",
       "toelichting": "Hebraïsche genitief-constructie 'van een vrouw man' (= 'a one-wife man' = monogaam). Modern Nederlands: 'een man met één vrouw'.",
@@ -5579,7 +5627,7 @@
     },
     {
       "id": "V640",
-      "categorie": "Cascade-fix genitief Gods",
+      "categorie": "Verouderde woorden",
       "oud": "huisverzorger Gods",
       "nieuw": "huisverzorger van God",
       "toelichting": "SV-genitief 'Gods' post-noun → 'van God'.",
@@ -5587,7 +5635,7 @@
     },
     {
       "id": "V641",
-      "categorie": "Verouderd compositum",
+      "categorie": "Verouderde woorden",
       "oud": "vuil-gewinzoeker",
       "nieuw": "zoeker van oneerlijke winst",
       "toelichting": "SV-compositum 'vuil-gewinzoeker' (Grieks αἰσχροκερδής 'aischrokerdēs' = 'shamefully greedy'). Modern Nederlands: 'zoeker van oneerlijke winst' (= iemand die op oneerbare wijze geld nastreeft).",
@@ -5595,7 +5643,7 @@
     },
     {
       "id": "V642",
-      "categorie": "Verouderd bijwoord",
+      "categorie": "Verouderde woorden",
       "oud": "gaarne",
       "nieuw": "graag",
       "toelichting": "SV-bijwoord 'gaarne' (= 'gladly, willingly'). Modern Nederlands: 'graag'.",
@@ -5603,7 +5651,7 @@
     },
     {
       "id": "V643",
-      "categorie": "Verouderd woord",
+      "categorie": "Verouderde woorden",
       "oud": "smijter",
       "nieuw": "vechtersbaas",
       "toelichting": "SV 'smijter' (Grieks πλήκτης = 'smiter, brawler' = iemand die slaat/vecht). Modern Nederlands: 'vechtersbaas'.",
@@ -5611,7 +5659,7 @@
     },
     {
       "id": "V644",
-      "categorie": "Verouderde spelling",
+      "categorie": "Verouderde woorden",
       "oud": "wederleggen / wederlegging",
       "nieuw": "weerleggen / weerlegging",
       "toelichting": "SV-spelling 'weder-' compositum. Modern Nederlands: 'weer-'.",
@@ -5619,7 +5667,7 @@
     },
     {
       "id": "V645",
-      "categorie": "Verouderd bijwoord",
+      "categorie": "Verouderde woorden",
       "oud": "inzonderheid",
       "nieuw": "in het bijzonder",
       "toelichting": "SV-bijwoord 'inzonderheid' (= 'in particular / especially'). Modern Nederlands: 'in het bijzonder'.",
@@ -5627,7 +5675,7 @@
     },
     {
       "id": "V646",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "rein de reinen",
       "nieuw": "rein voor de reinen",
       "toelichting": "SV-datief constructie 'rein de reinen' (= 'rein voor de reinen'). Modern Nederlands: 'rein voor de reinen'.",
@@ -5635,7 +5683,7 @@
     },
     {
       "id": "V647",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "verleiders van zinnen",
       "nieuw": "misleiders",
       "toelichting": "SV 'verleiders van zinnen' (= 'deceivers of minds'; Grieks φρεναπάται phrenapatai). Modern Nederlands: slank 'misleiders'.",
@@ -5643,7 +5691,7 @@
     },
     {
       "id": "V648",
-      "categorie": "Verouderde uitdrukking",
+      "categorie": "Verouderde woorden",
       "oud": "luie buiken",
       "nieuw": "luilakken",
       "toelichting": "SV 'luie buiken' (Grieks γαστέρες ἀργαί 'gasteres argai' = 'idle bellies' — Titus 1:12 citaat van Epimenides). Modern Nederlands: 'luilakken' (slank).",
@@ -5651,7 +5699,7 @@
     },
     {
       "id": "V649",
-      "categorie": "Verouderd werkwoord",
+      "categorie": "Verouderde woorden",
       "oud": "verontkennen",
       "nieuw": "ontkennen",
       "toelichting": "Verouderd compositum 'verontkennen'; modern Nederlands: 'ontkennen'.",
@@ -5659,7 +5707,7 @@
     },
     {
       "id": "V650",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "alle goed werk",
       "nieuw": "elk goed werk",
       "toelichting": "Bij enkelvoudig zelfstandig naamwoord gebruikt modern Nederlands 'elk' i.p.v. 'alle'; de plural 'alle goede werken' blijft ongewijzigd.",
@@ -5667,7 +5715,7 @@
     },
     {
       "id": "V651",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "lijdzaamheid",
       "nieuw": "volharding",
       "toelichting": "Verouderd 'lijdzaamheid' (= geduldig verdragen) vervangen door 'volharding'; sluit aan bij HSV/NBV en dekt het Grieks 'hupomonè'. Adjectief 'lijdzaam' nog niet ingesloten.",
@@ -5675,7 +5723,7 @@
     },
     {
       "id": "V651b",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "lijdzaam",
       "nieuw": "volhardend",
       "toelichting": "Adjectief 'lijdzaam(e)' (= geduldig volhardend) vervangen door 'volhardend(e)'; complement van V651.",
@@ -5683,7 +5731,7 @@
     },
     {
       "id": "V652",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "gestaltenis",
       "nieuw": "gestalte",
       "toelichting": "Verouderde vorm 'gestaltenis(sen)' vervangen door het hedendaagse 'gestalte(s)'. Dezelfde betekenis (vorm, voorkomen, verschijning).",
@@ -5691,7 +5739,7 @@
     },
     {
       "id": "V653",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "insgelijks",
       "nieuw": "ook",
       "toelichting": "Verouderd bijwoord 'insgelijks' (= eveneens, op dezelfde wijze) vervangen door modern 'ook'.",
@@ -5699,7 +5747,7 @@
     },
     {
       "id": "V654",
-      "categorie": "N",
+      "categorie": "Naamvallen",
       "oud": "wijns",
       "nieuw": "wijn",
       "toelichting": "Genitief-uitgang 'wijns' (uit 'des wijns', 'veel wijns') vervangen door onverbogen 'wijn'.",
@@ -5707,7 +5755,7 @@
     },
     {
       "id": "V655",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "rijkelijk",
       "nieuw": "rijk",
       "toelichting": "Verouderd bijwoord 'rijkelijk' (= overvloedig) vervangen door 'rijk', dat in modern Nederlands ook adverbiaal gebruikt wordt ('rijk versierd', 'rijk uitgegoten').",
@@ -5715,7 +5763,7 @@
     },
     {
       "id": "V656",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "jegens",
       "nieuw": "tegenover",
       "toelichting": "Verouderd voorzetsel 'jegens' (= ten opzichte van) vervangen door 'tegenover'; sluit aan bij HSV.",
@@ -5723,7 +5771,7 @@
     },
     {
       "id": "V657",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "ernstelijk",
       "nieuw": "ernstig",
       "toelichting": "Verouderde adverbiale uitgang -lijk in 'ernstelijk' vervangen door modern 'ernstig'.",
@@ -5731,7 +5779,7 @@
     },
     {
       "id": "V658",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "zorgvuldiglijk",
       "nieuw": "zorgvuldig",
       "toelichting": "Verouderde adverbiale uitgang -lijk in 'zorgvuldiglijk' vervangen door modern 'zorgvuldig'.",
@@ -5739,7 +5787,7 @@
     },
     {
       "id": "V659",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "benaarstig u",
       "nieuw": "doe uw best",
       "toelichting": "Verouderd 'zich benaarstigen' (= zich inspannen, zijn best doen; Gr. σπουδάζω) context-afhankelijk vervangen: gebiedend 'benaarstig u' → 'doe uw best', 'benaarstigt zich' → 'spant zich in', 'benaarstiging' → 'ijver'.",
@@ -5747,7 +5795,7 @@
     },
     {
       "id": "V660",
-      "categorie": "N",
+      "categorie": "Naamvallen",
       "oud": "gelovigen (bijvoeglijk)",
       "nieuw": "gelovige",
       "toelichting": "'gelovigen' als bijvoeglijk naamwoord vóór een zelfstandig naamwoord (bv. 'gelovige broeders', 'de gelovige Abraham') krijgt de enkelvoudige verbuiging 'gelovige'. Als zelfstandig naamwoord ('de gelovigen' = de mensen die geloven) blijft het ongewijzigd.",
@@ -5755,7 +5803,7 @@
     },
     {
       "id": "V661",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "onzienlijk",
       "nieuw": "onzichtbaar",
       "toelichting": "Verouderd 'onzienlijk(en)' (= niet zichtbaar) vervangen door 'onzichtbaar'; attributieve verbuigingen 'onzienlijke/onzienlijken' → 'onzichtbare'.",
@@ -5763,7 +5811,7 @@
     },
     {
       "id": "V662",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "zienlijk",
       "nieuw": "zichtbaar",
       "toelichting": "Verouderd 'zienlijk(en)' (= zichtbaar) vervangen door 'zichtbaar'; attributieve verbuigingen 'zienlijke/zienlijken' → 'zichtbare'.",
@@ -5771,7 +5819,7 @@
     },
     {
       "id": "V663",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "onbeschuldig",
       "nieuw": "onschuldig",
       "toelichting": "Verouderd 'onbeschuldig(lijk)' (= zonder schuld) vervangen door 'onschuldig'.",
@@ -5779,7 +5827,7 @@
     },
     {
       "id": "V664",
-      "categorie": "S",
+      "categorie": "Spelling",
       "oud": "gefondeerd",
       "nieuw": "gefundeerd",
       "toelichting": "Verouderde spelling 'gefondeerd' vervangen door 'gefundeerd'.",
@@ -5787,7 +5835,7 @@
     },
     {
       "id": "V665",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "kreatuur",
       "nieuw": "schepsel",
       "toelichting": "Verouderd 'creatuur/kreatuur' (en verbuigingen) vervangen door 'schepsel'/'schepselen' (enkelvoud/meervoud naar context).",
@@ -5795,7 +5843,7 @@
     },
     {
       "id": "V666",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "vastigheid",
       "nieuw": "vastheid",
       "toelichting": "Verouderd 'vastigheid' vervangen door modern 'vastheid'.",
@@ -5803,7 +5851,7 @@
     },
     {
       "id": "V667",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "gewon",
       "nieuw": "verwekte",
       "toelichting": "Verouderd 'gewon' (verleden tijd van 'gewinnen' = verwekken, in geslachtsregisters 'verwekte') vervangen door 'verwekte'.",
@@ -5811,7 +5859,7 @@
     },
     {
       "id": "V668",
-      "categorie": "S",
+      "categorie": "Spelling",
       "oud": "kemelshaar",
       "nieuw": "kameelhaar",
       "toelichting": "Verouderde spelling 'kemelshaar' (haar van een kemel/kameel) vervangen door 'kameelhaar'.",
@@ -5819,7 +5867,7 @@
     },
     {
       "id": "V669",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "adderengebroedsels",
       "nieuw": "adderengebroed",
       "toelichting": "Verouderd meervoud 'adderengebroedsels' vervangen door het collectieve 'adderengebroed' (gebroed van adders).",
@@ -5827,7 +5875,7 @@
     },
     {
       "id": "V670",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "toekomende toorn",
       "nieuw": "komende toorn",
       "toelichting": "'toekomende(n) toorn' (de toorn die komen zal) vervangen door 'komende toorn'.",
@@ -5835,7 +5883,7 @@
     },
     {
       "id": "V671",
-      "categorie": "W",
+      "categorie": "Werkwoordsvormen",
       "oud": "uitgehouwen (boom)",
       "nieuw": "omgehakt",
       "toelichting": "'uitgehouwen' in de zin van een boom die wordt geveld → 'omgehakt' (Matt 3:10, 7:19, Luk 3:9). NIET toegepast waar 'uitgehouwen' = uitgehakt in steen (bornputten, stenen, graf, steenrots).",
@@ -5843,7 +5891,7 @@
     },
     {
       "id": "V672",
-      "categorie": "S",
+      "categorie": "Spelling",
       "oud": "duive",
       "nieuw": "duif",
       "toelichting": "Verouderde vorm 'duive' (enkelvoud) vervangen door 'duif'. Het meervoud 'duiven' blijft ongewijzigd.",
