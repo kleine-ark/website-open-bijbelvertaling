@@ -922,6 +922,18 @@ body {
     padding: 12px 16px 24px;
     flex: 1;
 }
+/* Hoofdsectie in opties (Weergave / Theologisch / Vertaling) */
+.opt-section {
+    font-family: var(--font-cursive, 'Allura', cursive);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--teal);
+    margin: 18px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--gold);
+}
+.opt-section:first-child { margin-top: 0; }
+:root[data-theme="donker"] .opt-section { color: var(--teal-light); }
 .opt-group { margin-bottom: 14px; }
 .opt-group:last-child { margin-bottom: 0; }
 .opt-group-label {
