@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = '2026-06-08p';
+const VERSION = '2026-06-08q';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -89,6 +89,13 @@ self.addEventListener('fetch', (event) => {
     // Lexicon (grote JS)
     if (path.endsWith('/js/hebreeuws-woordenboek.js') || path.endsWith('/js/grieks-woordenboek.js')) {
         event.respondWith(cacheFirst(req, LEXICON_CACHE));
+        return;
+    }
+
+    // Statistieken-bron: ALTIJD vers (network-first) — single source of truth,
+    // mag nooit verouderd getoond worden.
+    if (path === '/data/stats.json') {
+        event.respondWith(networkFirst(req, DATA_CACHE));
         return;
     }
 
