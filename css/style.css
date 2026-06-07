@@ -789,6 +789,7 @@ body {
 :root[data-theme="donker"] .direct-speech i,
 :root[data-theme="donker"] .god-speaks i { color: inherit; }
 :root[data-theme="donker"] .god-speaks { color: #ffb3a8; }
+:root[data-theme="donker"] .devil-speaks { color: #ffd24d; }
 :root[data-theme="donker"] img { opacity: 0.92; }
 :root[data-theme="donker"] .hero { filter: brightness(0.7); }
 #app-container {
@@ -1551,6 +1552,12 @@ span.direct-speech {
 }
 span.direct-speech::before { content: '\201C'; }
 span.direct-speech::after { content: '\201D'; }
+span.devil-speaks {
+    color: #9a7d0a !important;
+    font-style: italic !important;
+    font-weight: bold !important;
+    display: inline !important;
+}
 .verse-cell[contenteditable="true"]:focus {
     box-shadow: inset 0 0 0 2px #4a90d9;
     background: #fff;
@@ -1836,6 +1843,15 @@ sup.note-marker:hover {
 }
 .god-speaks::before { content: '\201C'; }
 .god-speaks::after { content: '\201D'; }
+
+/* Woorden van de duivel/satan/verzoeker — geel/amber + cursief + aanhalingstekens */
+.devil-speaks {
+    color: #9a7d0a !important;
+    font-style: italic !important;
+    font-weight: bold;
+}
+.devil-speaks::before { content: '\201C'; }
+.devil-speaks::after { content: '\201D'; }
 
 /* Bijbelverwijzingen links */
 .ref-link {
