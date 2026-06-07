@@ -8,6 +8,7 @@
     const CATEGORY_ORDER = ['Naamvallen', 'Aanspreekvormen', 'Godsnamen', 'Werkwoordsvormen', 'Verouderde woorden', 'Spelling', 'Overig'];
 
     let principesData = [];
+    let statsData = null;
     let booksData = [];
     // Cache: principe-ID -> [{bookId, bookName, chapter, verse, old, new}]
     let versenCache = {};
@@ -18,12 +19,14 @@
         try {
             // Laad alleen 2 kleine files: principes-definities + pre-computed counts/verses
             // (was: 82 boek-JSONs van ~1MB elk = 80+ MB)
-            const [principesResp, dataResp] = await Promise.all([
+            const [principesResp, dataResp, statsResp] = await Promise.all([
                 fetch('data/wijzigingsprincipes.json'),
                 fetch('data/principes-data.json'),
+                fetch('data/stats.json').catch(() => null),
             ]);
             const principesJson = await principesResp.json();
             const data = await dataResp.json();
+            try { statsData = statsResp ? await statsResp.json() : null; } catch (e) { statsData = null; }
 
             principesData = principesJson.principes || [];
             countPerPrincipe = data.counts || {};
@@ -82,9 +85,10 @@
 
         // Totaal aantal wijzigingen bovenaan
         const totalChanges = Object.values(countPerPrincipe).reduce((a, b) => a + b, 0);
-        const totalPrincipes = principesData.length;
-        const TOTAL_DIFFS = 72349; // van laatste diff-regen
-        const pct = Math.round(100 * totalChanges / TOTAL_DIFFS);
+        const totalPrincipes = (statsData && statsData.principes) || principesData.length;
+        // Totaal tekstwijzigingen uit de centrale stats.json (zelfde bron als hoofdpagina)
+        const TOTAL_DIFFS = (statsData && statsData.text_changes) || totalChanges;
+        const pct = TOTAL_DIFFS ? Math.round(100 * totalChanges / TOTAL_DIFFS) : 0;
         const losse = TOTAL_DIFFS - totalChanges;
         const summary = document.createElement('div');
         summary.className = 'principes-summary';
