@@ -348,6 +348,12 @@
     font-weight: 600;
     text-transform: uppercase;
 }
+/* Begint het hoofdstuk met een citaat? Dan het openings-aanhalingsteken
+   weglaten — de grote drop-cap-letter staat al vooraan; een « ná de hoofdletter
+   ziet er gek uit. Sluit-aanhalingsteken (::after) blijft staan. */
+#content.reading-mode .verse-row:first-of-type .col-2026 .direct-speech::before,
+#content.reading-mode .verse-row:first-of-type .col-2026 .god-speaks::before,
+#content.reading-mode .verse-row:first-of-type .col-2026 .devil-speaks::before { content: none; }
 
 /* === Leesmodus === */
 #content.reading-mode .column-headers { display: none; }
