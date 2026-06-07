@@ -801,7 +801,7 @@
       "number": 6,
       "textSV1888": "Groet Maria, die veel voor ons gearbeid heeft.",
       "text1637": "Groet Mariam, die veel voor [20] ons [21] gearbeydt heeft.",
-      "text2026": "Groet Maria, die veel voor ons gearbeid heeft.",
+      "text2026": "Groet Maria, die veel voor ons gewerkt heeft.",
       "marginNotes": [
         {
           "marker": "20",
@@ -815,7 +815,7 @@
           "type": "explanatory",
           "textSV1888": "gearbeid heeft: Namelijk met hen te herbergen, en andere diensten te doen.",
           "text1637": "N. met haer te herbergen, ende andere diensten te doen.",
-          "text2026": "gearbeid heeft: Namelijk met hen te herbergen, en andere diensten te doen."
+          "text2026": "gewerkt heeft: Namelijk met hen te herbergen, en andere diensten te doen."
         }
       ],
       "grondtekst": [
@@ -862,9 +862,16 @@
           "gloss": "〔you"
         }
       ],
-      "text2026_html": "Groet Maria, die veel voor<sup class=\"note-marker\" data-note=\"20\">20</sup> ons<sup class=\"note-marker\" data-note=\"21\">21</sup> gearbeid heeft.",
+      "text2026_html": "Groet Maria, die veel voor<sup class=\"note-marker\" data-note=\"20\">20</sup> ons<sup class=\"note-marker\" data-note=\"21\">21</sup> gewerkt heeft.",
       "textSV1888_html": "Groet Maria, die veel voor<sup class=\"note-marker\" data-note=\"20\">20</sup> ons<sup class=\"note-marker\" data-note=\"21\">21</sup> gearbeid heeft.",
-      "text1637_html": "Groet Mariam, die veel voor <sup class=\"note-marker\" data-note=\"20\">20</sup> ons <sup class=\"note-marker\" data-note=\"21\">21</sup> gearbeydt heeft."
+      "text1637_html": "Groet Mariam, die veel voor <sup class=\"note-marker\" data-note=\"20\">20</sup> ons <sup class=\"note-marker\" data-note=\"21\">21</sup> gearbeydt heeft.",
+      "phraseDiff": [
+        {
+          "old": "gearbeid",
+          "new": "gewerkt",
+          "principe": "V723"
+        }
+      ]
     },
     {
       "number": 7,
@@ -1443,7 +1450,7 @@
       "number": 12,
       "textSV1888": "Groet Tryfena en Tryfosa, vrouwen die in den Heere arbeiden. Groet Persis, de beminde zuster, die veel gearbeid heeft in den Heere.",
       "text1637": "Groet Tryphenam ende Tryphosam, [vrouwen] [32] die inden Heere arbeyden. Groet Persidem de beminde [suster], die veel gearbeydt heeft inden Heere.",
-      "text2026": "Groet Tryfena en Tryfosa, vrouwen die in de Heere arbeiden. Groet Persis, de beminde zuster, die veel gearbeid heeft in de Heere.",
+      "text2026": "Groet Tryfena en Tryfosa, vrouwen die in de Heere arbeiden. Groet Persis, de beminde zuster, die veel gewerkt heeft in de Heere.",
       "marginNotes": [
         {
           "marker": "32",
@@ -1557,7 +1564,7 @@
           "gloss": "〔lord"
         }
       ],
-      "text2026_html": "Groet Tryfena en Tryfosa,<sup class=\"note-marker\" data-note=\"32\">32</sup> vrouwen die in de Heere arbeiden. Groet Persis, de beminde zuster, die veel gearbeid heeft in de Heere.",
+      "text2026_html": "Groet Tryfena en Tryfosa,<sup class=\"note-marker\" data-note=\"32\">32</sup> vrouwen die in de Heere arbeiden. Groet Persis, de beminde zuster, die veel gewerkt heeft in de Heere.",
       "textSV1888_html": "Groet Tryfena en Tryfosa,<sup class=\"note-marker\" data-note=\"32\">32</sup> vrouwen die in den Heere arbeiden. Groet Persis, de beminde zuster, die veel gearbeid heeft in den Heere.",
       "text1637_html": "Groet Tryphenam ende Tryphosam, [<i>vrouwen</i>] <sup class=\"note-marker\" data-note=\"32\">32</sup> die inden Heere arbeyden. Groet Persidem de beminde [<i>suster</i>], die veel gearbeydt heeft inden Heere.",
       "phraseDiff": [
@@ -1565,6 +1572,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "gearbeid",
+          "new": "gewerkt",
+          "principe": "V723"
         },
         {
           "old": "den",
