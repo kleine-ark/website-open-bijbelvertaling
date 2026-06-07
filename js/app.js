@@ -545,6 +545,46 @@ const App = {
         }
         // Highlights toepassen op nieuwe rijen
         if (typeof Highlight !== 'undefined') Highlight.applyToChapter(bookId, chapterNum);
+        // Versierde initiaal (drop-cap) op het eerste vers
+        App._applyDropcap();
+    },
+
+    /* Zet de eerste ECHTE letter van het eerste vers in een <span class="dropcap">.
+     * Slaat leidende aanhalingstekens, note-markers (sup) en citaat-spans over,
+     * zodat bij een citaat niet het aanhalingsteken wordt vergroot maar de letter. */
+    _applyDropcap() {
+        const container = document.getElementById('verses-container');
+        if (!container) return;
+        // Verwijder oude dropcap (bij hervertonen)
+        const old = container.querySelector('.dropcap');
+        if (old) old.replaceWith(...old.childNodes);
+        const firstRow = container.querySelector('.verse-row');
+        if (!firstRow) return;
+        const cell = firstRow.querySelector('.col-2026');
+        if (!cell) return;
+        // Loop door tekstnodes (in document-volgorde) en zoek de eerste letter.
+        const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+                // Sla note-markers (sup) over
+                if (node.parentElement && node.parentElement.closest('sup')) return NodeFilter.FILTER_REJECT;
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        });
+        let node;
+        while ((node = walker.nextNode())) {
+            const m = node.nodeValue.match(/[A-Za-zÀ-ÿ]/);
+            if (!m) continue;
+            const idx = node.nodeValue.indexOf(m[0]);
+            // Split: tekst vóór de letter blijft, letter wordt dropcap, rest erna blijft
+            const after = node.splitText(idx);          // after begint met de letter
+            const letter = after.nodeValue[0];
+            const rest = after.splitText(1);            // rest = na de letter
+            const span = document.createElement('span');
+            span.className = 'dropcap';
+            span.textContent = letter;
+            after.replaceWith(span);                     // vervang de losse letter-node
+            break;
+        }
     },
 
     updateProgress() {
