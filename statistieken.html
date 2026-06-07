@@ -76,21 +76,21 @@
         </nav>
 <div class="stats-page" style="flex:1;">
     <h1>Statistieken</h1>
-    <p class="subtitle">Laatst bijgewerkt: 6 juni 2026 (v0.17.0)</p>
+    <p class="subtitle">Laatst bijgewerkt: <span data-stat="date">7 juni 2026</span> (<span data-stat="version">v0.17.0</span>)</p>
 
     <h2>Omvang</h2>
     <div class="stat-grid">
         <div class="stat-card gold">
-            <div class="stat-number">82</div>
+            <div class="stat-number" data-stat="books_total">82</div>
             <div class="stat-label">Boeken (incl. apocriefen)</div>
         </div>
         <div class="stat-card gold">
-            <div class="stat-number">1.392</div>
-            <div class="stat-label">Hoofdstukken <span style="font-weight:400;opacity:0.7;font-size:11px;display:block;">waarvan <strong style="color:var(--teal);">292</strong> handmatig nagelezen (21,0%)</span></div>
+            <div class="stat-number" data-stat="chapters_total">1.370</div>
+            <div class="stat-label">Hoofdstukken <span style="font-weight:400;opacity:0.7;font-size:11px;display:block;">waarvan <strong style="color:var(--teal);" data-stat="chapters_verified">292</strong> handmatig nagelezen (<span data-stat="chapters_verified_pct" data-stat-suffix="%">21,3</span>)</span></div>
         </div>
         <div class="stat-card gold">
-            <div class="stat-number">37.235</div>
-            <div class="stat-label">Verzen <span style="font-weight:400;opacity:0.7;font-size:11px;display:block;">waarvan <strong style="color:var(--teal);">7.507</strong> handmatig nagelezen (20,2%)</span></div>
+            <div class="stat-number" data-stat="verses_total">37.235</div>
+            <div class="stat-label">Verzen <span style="font-weight:400;opacity:0.7;font-size:11px;display:block;">waarvan <strong style="color:var(--teal);" data-stat="verses_verified">7.507</strong> handmatig nagelezen (<span data-stat="verses_verified_pct" data-stat-suffix="%">20,2</span>)</span></div>
         </div>
         <div class="stat-card gold">
             <div class="stat-number">69.129</div>
@@ -101,8 +101,8 @@
     <h2>Vertaalwerk</h2>
     <div class="stat-grid">
         <div class="stat-card teal">
-            <div class="stat-number">80.552</div>
-            <div class="stat-label">Woordwijzigingen (SV1888 &rarr; OV)</div>
+            <div class="stat-number" data-stat="text_changes">80.812</div>
+            <div class="stat-label">Woordwijzigingen (SV1888 &rarr; OSV)</div>
         </div>
         <div class="stat-card teal">
             <div class="stat-number">31.002</div>
@@ -1184,5 +1184,6 @@
 <script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);document.querySelectorAll('input[data-optie="thema"]').forEach(function(r){r.checked=(r.value===cur);});}catch(e){console.error(e);}});})();</script>
 <script src="js/firebase-config.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/stats-inject.js"></script>
 </body>
 </html>
