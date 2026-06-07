@@ -561,7 +561,7 @@
       "number": 5,
       "textSV1888": "Zegt der dochter Sions: Zie, uw Koning komt tot u, zachtmoedig en gezeten op een ezelin en een veulen, zijnde een jong ener jukdragende ezelin.",
       "text1637": "[b] Segget [5] de dochter Sion: siet uwe Coninck komt [tot] u sachtmoedich ende geseten op een [6] eselinne, ende een veulen zijnde een [7] jonck eener jockdragende [eselinne].",
-      "text2026": "Zegt van de dochter van Sion: Zie, uw Koning komt tot u, zachtmoedig en gezeten op een ezelin en een veulen, zijnde een jong ener jukdragende ezelin.",
+      "text2026": "Zegt van de dochter van Sion: Zie, uw Koning komt tot u, zachtmoedig en gezeten op een ezelin en een veulen, het veulen van een lastdier.",
       "marginNotes": [
         {
           "marker": "b",
@@ -714,7 +714,7 @@
           "gloss": "〔donkey"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Zegt<sup class=\"note-marker\" data-note=\"5\">5</sup> van de dochter van Sion: Zie, uw Koning komt tot u, zachtmoedig en gezeten op een<sup class=\"note-marker\" data-note=\"6\">6</sup> ezelin en een veulen, zijnde een<sup class=\"note-marker\" data-note=\"7\">7</sup> jong ener jukdragende ezelin.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> <span class=\"direct-speech\"><i>Zegt<sup class=\"note-marker\" data-note=\"5\">5</sup> van de dochter van Sion: Zie, uw Koning komt tot u, zachtmoedig en gezeten op een<sup class=\"note-marker\" data-note=\"6\">6</sup> ezelin en een veulen, zijnde een<sup class=\"note-marker\" data-note=\"7\">7</sup> jong ener jukdragende ezelin.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Zegt<sup class=\"note-marker\" data-note=\"5\">5</sup> der dochter Sions: Zie, uw Koning komt tot u, zachtmoedig en gezeten op een<sup class=\"note-marker\" data-note=\"6\">6</sup> ezelin en een veulen, zijnde een<sup class=\"note-marker\" data-note=\"7\">7</sup> jong ener jukdragende ezelin.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Segget <sup class=\"note-marker\" data-note=\"5\">5</sup> de dochter Sion: siet uwe Coninck komt [<i>tot</i>] u sachtmoedich ende geseten op een <sup class=\"note-marker\" data-note=\"6\">6</sup> eselinne, ende een veulen zijnde een <sup class=\"note-marker\" data-note=\"7\">7</sup> jonck eener jockdragende [<i>eselinne</i>].",
       "phraseDiff": [
@@ -726,6 +726,16 @@
         {
           "old": "Sions:",
           "new": "van Sion:",
+          "principe": null
+        },
+        {
+          "old": "zijnde",
+          "new": "het veulen van",
+          "principe": null
+        },
+        {
+          "old": "jong ener jukdragende ezelin.",
+          "new": "lastdier.",
           "principe": null
         }
       ]
@@ -818,7 +828,7 @@
       "number": 7,
       "textSV1888": "Brachten de ezelin en het veulen, en leiden hun klederen op dezelve, en zetten Hem daarop.",
       "text1637": "Brachten de eselinne ende het veulen, [c] ende leyden hare kleederen op de selve, ende [d] setteden [hem] [8] daer op.",
-      "text2026": "Brachten de ezelin en het veulen, en leiden hun kleren daarop, en zetten Hem daarop.",
+      "text2026": "Brachten de ezelin en het veulen, en legden hun kleren daarop, en zetten Hem daarop.",
       "marginNotes": [
         {
           "marker": "c",
@@ -940,10 +950,15 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "Brachten de ezelin en het veulen,<sup class=\"note-marker\" data-note=\"c\">c</sup> en leiden hun kleren daarop, en<sup class=\"note-marker\" data-note=\"d\">d</sup> zetten<sup class=\"note-marker\" data-note=\"8\">8</sup> Hem daarop.",
+      "text2026_html": "Brachten de ezelin en het veulen,<sup class=\"note-marker\" data-note=\"c\">c</sup> en legden hun kleren daarop, en<sup class=\"note-marker\" data-note=\"d\">d</sup> zetten<sup class=\"note-marker\" data-note=\"8\">8</sup> Hem daarop.",
       "textSV1888_html": "Brachten de ezelin en het veulen,<sup class=\"note-marker\" data-note=\"c\">c</sup> en leiden hun klederen op dezelve, en<sup class=\"note-marker\" data-note=\"d\">d</sup> zetten<sup class=\"note-marker\" data-note=\"8\">8</sup> Hem daarop.",
       "text1637_html": "Brachten de eselinne ende het veulen, <sup class=\"note-marker\" data-note=\"c\">c</sup> ende leyden hare kleederen op de selve, ende <sup class=\"note-marker\" data-note=\"d\">d</sup> setteden [<i>hem</i>] <sup class=\"note-marker\" data-note=\"8\">8</sup> daer op.",
       "phraseDiff": [
+        {
+          "old": "leiden",
+          "new": "legden",
+          "principe": null
+        },
         {
           "old": "klederen op dezelve,",
           "new": "kleren daarop,",
