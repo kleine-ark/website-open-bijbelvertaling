@@ -22,6 +22,13 @@
         }
         .contact-card .name { font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
         .contact-card .email { font-size: 15px; color: var(--gold); }
+        /* Donker thema */
+        :root[data-theme="donker"] body { background: var(--bg-page); }
+        :root[data-theme="donker"] .page h1 { color: var(--text-primary); }
+        :root[data-theme="donker"] .page p { color: var(--text-primary); }
+        :root[data-theme="donker"] .contact-card { background: var(--bg-surface) !important; border-color: var(--border-default) !important; }
+        :root[data-theme="donker"] .contact-card .name { color: var(--text-primary); }
+        :root[data-theme="donker"] .contact-card a[style*="navy"] { color: var(--text-primary) !important; }
     </style>
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
