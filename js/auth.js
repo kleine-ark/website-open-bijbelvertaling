@@ -79,6 +79,14 @@ const Auth = {
                 this.renderButton(user);
                 this.notify();
             });
+            // Rond een eventuele redirect-login af (mobiel gebruikt redirect i.p.v. popup)
+            if (authMod.getRedirectResult) {
+                authMod.getRedirectResult(this.auth).catch((e) => {
+                    if (e && e.code && e.code !== 'auth/no-auth-event') {
+                        console.warn('[Auth] redirect-result:', e.code);
+                    }
+                });
+            }
         } catch (e) {
             console.warn('[Auth] kon Firebase niet laden:', e);
             if (!cached) this.renderButton(null);
@@ -87,11 +95,27 @@ const Auth = {
 
     async login() {
         if (!this.auth) return;
-        const { GoogleAuthProvider, signInWithPopup } = window._fb.authMod;
+        const { GoogleAuthProvider, signInWithPopup, signInWithRedirect } = window._fb.authMod;
         const provider = new GoogleAuthProvider();
+        // Mobiel/touch: popups worden vaak geblokkeerd of afgebroken
+        // (auth/cancelled-popup-request) → gebruik de redirect-flow.
+        const useRedirect = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
         try {
+            if (useRedirect && signInWithRedirect) {
+                await signInWithRedirect(this.auth, provider);
+                return;
+            }
             await signInWithPopup(this.auth, provider);
         } catch (e) {
+            // Benigne: dubbel-trigger of door gebruiker gesloten popup → niet storen.
+            if (e && (e.code === 'auth/cancelled-popup-request' || e.code === 'auth/popup-closed-by-user')) {
+                console.info('[Auth] login geannuleerd:', e.code);
+                return;
+            }
+            // Popup geblokkeerd → val terug op redirect.
+            if (e && e.code === 'auth/popup-blocked' && signInWithRedirect) {
+                try { await signInWithRedirect(this.auth, provider); return; } catch (e2) { e = e2; }
+            }
             console.warn('[Auth] login afgebroken:', e);
             alert('Inloggen mislukt: ' + (e.message || e.code || 'onbekend'));
         }

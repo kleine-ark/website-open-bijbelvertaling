@@ -299,8 +299,18 @@
 
 @media (max-width: 768px) {
     #topnav { padding: 0 12px; height: 56px; }
-    .topnav-brand { font-size: 23px; }
-    .topnav-subtitle, .topnav-version { display: none; }
+    /* Merknaam op mobiel: rechtop serif i.p.v. het sterk cursieve Allura
+       (op iPhone nauwelijks leesbaar). */
+    .topnav-brand {
+        font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
+        font-size: 21px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+    }
+    .topnav-subtitle { display: none; }
+    /* Versienummer klein zichtbaar naast de merknaam op mobiel. */
+    .topnav-version { display: inline; font-size: 11px; margin-left: 6px; vertical-align: middle; opacity: 0.85; }
+    .topnav-version a { font-size: 11px; }
 
     .topnav-hamburger { display: flex; }
     /* Op mobiel: push search/auth/hamburger naar rechts (links is verborgen,
@@ -777,8 +787,11 @@ body {
 /* Donker thema: gericht overschrijven van veelgebruikte hard-coded waarden. Brand-kleuren (navy/gold) blijven gelijk. */
 :root[data-theme="donker"] body { background: var(--bg-page); color: var(--text-primary); }
 :root[data-theme="donker"] #content,
+/* .page transparant in dark (body levert de donkere achtergrond) — voorkomt dat
+   het zwarte .page-blok via de hero-overlap (-80px) een harde rand over de
+   afbeelding legt op over-ov. */
 :root[data-theme="donker"] .page,
-:root[data-theme="donker"] .stats-page { background: var(--bg-page) !important; color: var(--text-primary); }
+:root[data-theme="donker"] .stats-page { background: transparent !important; color: var(--text-primary); }
 :root[data-theme="donker"] aside,
 :root[data-theme="donker"] #sidebar-right { background: var(--bg-surface) !important; color: var(--text-primary); }
 :root[data-theme="donker"] .verse-row,
@@ -2572,35 +2585,42 @@ body.show-tags .verse-tag {
     #mobile-opties-btn:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
 
     /* --- Sticky bottom nav — respect iOS safe-area-inset-bottom (Safari URL-bar) --- */
+    /* Volledig transparante balk: de verstekst loopt eronderdoor; alleen de
+       knoppen (zwevende cirkels) zijn zichtbaar en klikbaar. */
     #mobile-footer-nav {
         display: flex;
-        align-items: stretch;
+        align-items: center;
+        justify-content: space-between;
         position: fixed;
         left: 0; right: 0;
         bottom: 0;
-        padding-bottom: env(safe-area-inset-bottom, 0);
+        padding: 0 20px calc(10px + env(safe-area-inset-bottom, 0));
         z-index: 180;
-        background: var(--navy);
-        color: #fff;
-        border-top: 2px solid var(--gold);
-        box-shadow: 0 -2px 8px rgba(0,0,0,0.18);
-        min-height: 56px;
+        background: transparent;
+        border-top: none;
+        box-shadow: none;
+        min-height: 0;
+        pointer-events: none;   /* tikken op de tekst erachter blijft mogelijk */
     }
-    #mobile-footer-nav button {
-        flex: 0 0 64px;
-        background: none;
+    #mobile-footer-nav button { pointer-events: auto; cursor: pointer; }
+    /* Vorig/volgend hoofdstuk: cirkel met open (outline) pijl, kleiner. */
+    #mobile-prev-btn, #mobile-next-btn {
+        flex: 0 0 auto;
+        width: 46px; height: 46px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        background: rgba(255,255,255,0.6);
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
         color: var(--gold);
-        border: none;
-        font-size: 22px;
-        cursor: pointer;
-        min-width: 44px;
-        min-height: 44px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
     }
-    #mobile-footer-nav button:disabled { color: rgba(255,255,255,0.25); cursor: not-allowed; }
-    #mobile-footer-nav button:hover:not(:disabled) { background: rgba(203,164,73,0.15); }
+    #mobile-prev-btn:disabled, #mobile-next-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    #mobile-prev-btn svg, #mobile-next-btn svg { width: 22px; height: 22px; }
+    .mfn-audio { pointer-events: none; display: inline-flex; align-items: center; gap: 8px; }
     #mobile-chapter-label {
         flex: 1 1 auto;
         display: flex;
@@ -3006,26 +3026,29 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 /* === Mobile audio in footer-nav === */
 @media (max-width: 768px) {
     .mfn-audio {
-        flex: 1 1 auto;
+        flex: 0 1 auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 12px;
+        gap: 10px;
         min-width: 0;
     }
+    /* Play-knop: grotere gevulde cirkel met gevulde driehoek; groter dan de
+       vorig/volgend-cirkels. */
     .mfn-play {
         flex: 0 0 auto;
-        width: 44px; height: 44px;
+        width: 62px; height: 62px;
         border-radius: 50%;
         border: none;
         background: var(--gold, #cba449);
-        color: var(--navy, #142e42);
+        color: #fff;
         cursor: pointer;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        box-shadow: 0 3px 12px rgba(0,0,0,0.32);
     }
+    .mfn-play svg { width: 26px; height: 26px; }
     .mfn-play:hover { background: #d9b35d; }
     .mfn-play.hidden { display: none; }
     .mfn-play .rf-pause-icon { display: none; }
@@ -3877,11 +3900,13 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 
 /* Hero op over-ov.html — donker thema: GEEN brightness-dimming (afbeelding helder
    houden; alleen de gradient onderaan in over-ov.html fadet naar donker). */
+/* Hero-citaat + wordmark liggen op het LICHTE schilderij → ook in dark mode
+   donker (navy) houden met lichte schaduw, anders vallen ze weg. */
 :root[data-theme="donker"] .hero-quote,
+:root[data-theme="donker"] .hero-quote em,
 :root[data-theme="donker"] .hero-mark-name,
-:root[data-theme="donker"] .hero-mark-id { color: #ffffff !important; text-shadow: 0 1px 4px rgba(0,0,0,0.85) !important; }
-:root[data-theme="donker"] .hero-quote em { color: #ffffff !important; }
-:root[data-theme="donker"] .hero-quote .ref { color: #f1d489 !important; text-shadow: 0 1px 4px rgba(0,0,0,0.9) !important; }
+:root[data-theme="donker"] .hero-mark-id { color: var(--navy, #142e42) !important; text-shadow: 0 1px 3px rgba(255,255,255,0.6) !important; }
+:root[data-theme="donker"] .hero-quote .ref { color: var(--navy, #142e42) !important; text-shadow: 0 1px 3px rgba(255,255,255,0.7) !important; }
 
 /* Inline `style="color:#fff"` op donker thema — laat staan (witte tekst op donker) */
 
@@ -3948,5 +3973,22 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 :root[data-theme="donker"] a[href*="github.com"],
 :root[data-theme="donker"] a[href*="twitter.com"],
 :root[data-theme="donker"] a[href*="mailto:"] {
+    color: var(--gold) !important;
+}
+
+/* === Mobiele leeservaring: extra verfijningen === */
+@media (max-width: 768px) {
+    /* Grotere leestekst */
+    #content.reading-mode .col-2026 { font-size: 19px; line-height: 1.9; }
+    /* 'Verschillen SV-OSV'-knop verbergen → groter leesvenster */
+    #quick-diff-btn { display: none !important; }
+    /* Verstekst mag onder de zwevende navigatieknoppen doorlopen */
+    #content { padding-bottom: 8px; }
+}
+/* Vorig/volgend-cirkels in dark mode: donkere glas-achtergrond i.p.v. wit */
+:root[data-theme="donker"] #mobile-prev-btn,
+:root[data-theme="donker"] #mobile-next-btn {
+    background: rgba(18,18,18,0.55) !important;
+    border-color: var(--gold) !important;
     color: var(--gold) !important;
 }
