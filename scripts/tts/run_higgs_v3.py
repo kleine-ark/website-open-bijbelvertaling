@@ -70,19 +70,29 @@ def _parse_chapters(value: str) -> list[int]:
     return [int(c.strip()) for c in value.split(",")]
 
 
-def build_chapter_jobs(book: str, chapters: list[int], pilot: bool) -> list[dict]:
+def build_chapter_jobs(
+    book: str,
+    chapters: list[int],
+    pilot: bool,
+    voice: str = "",
+    label: str = "",
+) -> list[dict]:
     """Bouw chapter-job dicts voor de gegeven hoofdstukken.
 
-    pilot=True schrijft naar audio/_pilot/higgs-v3/{book}-{ch}.mp3,
-    anders naar de productie-locatie audio/{book}/{ch}.mp3.
+    pilot=True schrijft naar audio/_pilot/higgs-v3/{book}-{ch}[-label].mp3,
+    anders naar de productie-locatie audio/{book}/{ch}[-voice].mp3.
+
+    voice = stem-suffix voor productie ('m' of 'v'); label = vrije suffix
+    voor pilot-vergelijkingen.
     """
     jobs = []
     for ch in chapters:
-        out = (
-            f"audio/_pilot/higgs-v3/{book}-{ch}.mp3"
-            if pilot
-            else f"audio/{book}/{ch}.mp3"
-        )
+        if pilot:
+            suffix = f"-{label}" if label else ""
+            out = f"audio/_pilot/higgs-v3/{book}-{ch}{suffix}.mp3"
+        else:
+            suffix = f"-{voice}" if voice else ""
+            out = f"audio/{book}/{ch}{suffix}.mp3"
         jobs.append({
             "book": book,
             "chapter": ch,
@@ -358,21 +368,34 @@ def _parse_args() -> "argparse.Namespace":
                    help="Schrijf naar audio/_pilot/higgs-v3/ i.p.v. productie")
     p.add_argument("--force", action="store_true",
                    help="Overschrijf bestaande MP3's (default: skip)")
+    p.add_argument("--sample", default="audio/_pilot/_sample/sample",
+                   help="Basispad van voice-clone-referentie (zonder extensie); "
+                        "gebruikt {sample}.wav + {sample}.txt")
+    p.add_argument("--voice", default="",
+                   help="Stem-suffix voor productie-output: 'm' of 'v' "
+                        "→ audio/{book}/{ch}-{voice}.mp3")
+    p.add_argument("--label", default="",
+                   help="Vrije suffix voor pilot-output (vergelijkingen)")
     return p.parse_args()
 
 
 def main() -> None:
     args = _parse_args()
 
-    if not SAMPLE_WAV.exists() or not SAMPLE_TXT.exists():
+    sample_wav = PROJECT_ROOT / f"{args.sample}.wav"
+    sample_txt = PROJECT_ROOT / f"{args.sample}.txt"
+    if not sample_wav.exists() or not sample_txt.exists():
         raise SystemExit(
-            f"Voice-sample ontbreekt: {SAMPLE_WAV} of {SAMPLE_TXT}\n"
-            "Run eerst prepare_voice_sample.py."
+            f"Voice-sample ontbreekt: {sample_wav} of {sample_txt}\n"
+            "Run eerst prepare_voice_sample.py of geef --sample <basispad>."
         )
 
     if args.book and args.chapters:
         chapters = _parse_chapters(args.chapters)
-        jobs = build_chapter_jobs(args.book, chapters, pilot=args.pilot)
+        jobs = build_chapter_jobs(
+            args.book, chapters, pilot=args.pilot,
+            voice=args.voice, label=args.label,
+        )
     else:
         # Geen args → pilot-default (Genesis 1 + Jakobus 1)
         jobs = (
@@ -393,10 +416,10 @@ def main() -> None:
         print("Alle gevraagde hoofdstukken bestaan al. Klaar.")
         return
 
-    ref_text = SAMPLE_TXT.read_text(encoding="utf-8").strip()
-    ref_audio = str(SAMPLE_WAV.absolute())
+    ref_text = sample_txt.read_text(encoding="utf-8").strip()
+    ref_audio = str(sample_wav.absolute())
 
-    print(f"Voice sample: {SAMPLE_WAV}")
+    print(f"Voice sample: {sample_wav}")
     print(f"Model: {MODEL_ID}")
     print(f"Server poort: {SERVER_PORT}")
     print(f"Te genereren: {len(todo)} hoofdstuk(ken)")
