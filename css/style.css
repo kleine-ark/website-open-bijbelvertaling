@@ -4025,7 +4025,12 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 .header-title,
 .mp-title,
 .opt-section,
+.opt-group-label,
 .tree-book-label {
     font-family: var(--font-serif, 'EB Garamond', Georgia, serif) !important;
     font-style: italic !important;
+}
+/* Mobiel: geen kanttekeningen-checkbox in de opties (KT staat standaard uit). */
+@media (max-width: 768px) {
+    label:has(#toggle-kt-popup) { display: none; }
 }
