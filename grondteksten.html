@@ -131,6 +131,20 @@
             body.in-iframe div[style*="display:flex;min-height"] { display: block !important; }
             body.in-iframe { min-height: auto; }
         }
+        /* Donker thema — anders blijven .toc/.codex-card/.ms-table wit */
+        :root[data-theme="donker"] body { background: var(--bg-page); color: var(--text-primary); }
+        :root[data-theme="donker"] .toc { background: var(--bg-surface) !important; border-color: var(--border-default) !important; }
+        :root[data-theme="donker"] .toc h3 { color: var(--text-primary); }
+        :root[data-theme="donker"] .toc a { color: var(--text-primary); }
+        :root[data-theme="donker"] .codex-card { background: var(--bg-surface) !important; border-color: var(--border-default) !important; color: var(--text-primary); }
+        :root[data-theme="donker"] .codex-card h4 { color: var(--text-primary); }
+        :root[data-theme="donker"] .codex-card .meta,
+        :root[data-theme="donker"] .codex-card p { color: var(--text-secondary); }
+        :root[data-theme="donker"] .ms-table { background: transparent !important; }
+        :root[data-theme="donker"] .ms-table td { color: var(--text-primary); border-color: var(--border-default); }
+        :root[data-theme="donker"] .ms-table th { background: var(--bg-surface); color: var(--text-primary); }
+        :root[data-theme="donker"] h1, :root[data-theme="donker"] h2, :root[data-theme="donker"] h3 { color: var(--text-primary); }
+        :root[data-theme="donker"] p, :root[data-theme="donker"] li, :root[data-theme="donker"] td { color: var(--text-primary); }
     </style>
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
