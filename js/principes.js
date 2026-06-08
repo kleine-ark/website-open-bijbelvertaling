@@ -103,6 +103,21 @@
             grouped[cat].push(p);
         }
 
+        // Sorteer binnen elke categorie op nummer (prefix-letter, getal, suffix),
+        // bv. N1, N1a, N2, … V224, V225 — zodat de nummering netjes oploopt.
+        const idKey = (p) => {
+            const m = String(p.id || '').match(/^([A-Za-z]*)(\d+)(.*)$/);
+            return m ? [m[1], parseInt(m[2], 10), m[3]] : [String(p.id || ''), 0, ''];
+        };
+        for (const cat in grouped) {
+            grouped[cat].sort((a, b) => {
+                const ka = idKey(a), kb = idKey(b);
+                if (ka[0] !== kb[0]) return ka[0] < kb[0] ? -1 : 1;
+                if (ka[1] !== kb[1]) return ka[1] - kb[1];
+                return ka[2] < kb[2] ? -1 : (ka[2] > kb[2] ? 1 : 0);
+            });
+        }
+
         for (const cat of CATEGORY_ORDER) {
             const items = grouped[cat];
             if (!items || items.length === 0) continue;

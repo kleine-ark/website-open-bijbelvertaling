@@ -2,6 +2,28 @@
   "wijzigingen": [
     {
       "datum": "2026-06-08",
+      "versie": "v0.18.1",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Mattheus VOLLEDIG nagelezen (28 hoofdstukken). Totaal nu 19 boeken volledig, 320 hoofdstukken / 8.578 verzen handmatig vers-voor-vers gecontroleerd."
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V709-V750: o.a. hoge berg, tabernakelen->tenten, dunkt->denkt, hunnen->hun, landpalen->gebied, oorbaar->raadzaam, bezwaarlijk->moeilijk, kemel->kameel, dienstknecht->dienaar, woeker->rente, wisselaren->bankiers, nijdigheid->afgunst, wedergebracht->teruggebracht."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Context-agents: 'van wie de'->wiens/wier herstel, ergeren/skandalizo->ten val komen/struikelen/aanstoot, verloochenen behouden in geloofscontext, telwoord een->een, gene->overzijde/de ander/geen, zelfden->zelfde. Tientallen citaat-grenzen gecorrigeerd."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Vers-opmerkingen openen nu een vooringevuld GitHub-issue. Mobiel: transparante navigatiebalk met cirkelknoppen + gouden play-knop (dark), zoekbare boekkeuze die naar het huidige boek scrollt, vorig/volgend over boekgrenzen, kanttekeningen standaard uit, login via redirect. Typografie gelijkgetrokken."
+        }
+      ]
+    },
+    {
+      "datum": "2026-06-08",
       "versie": "v0.18.0",
       "items": [
         {
