@@ -1,6 +1,36 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-06-08",
+      "versie": "v0.18.0",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Mattheüs 1–16 volledig vers-voor-vers nagelezen (528 verzen). Totaal nu 18 boeken volledig; statistieken bijgewerkt."
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V667–V737 (ruim 70 nieuwe principes): o.a. verwekte, Zie, kameelhaar, adderengebroed, huichelaars, dikwijls, dunkt→denkt, hunnen→hun, behoordet→behoorde, landpalen→gebied, hardigheid→hardheid, oorbaar→raadzaam, derzulken→voor zodanigen, bezwaarlijk→moeilijk, kemel→kameel, gearbeid→gewerkt, krijgsheiren→legers, doodslagers→moordenaars, schouderen→schouders, gedenkcedels→gebedsriemen, wonderheden→wonderen, tweeden→tweede, landlieden→landbouwers, aangaat→betreft, nutter→beter, helle→hel."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Context-agents: broeder→broer, eens-genitief, der→van de, 'van wie de' → wiens/wier (188 herstellingen van een kromme Wiens-vervanging), telwoord een→één, eersten/eerste, gene→overzijde/de ander/geen."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Citaat-grenzen gecorrigeerd in tientallen verzen (verteltekst buiten de God/duivel-spans)."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Eén centrale stats.json als single source of truth; principes.html toont nu kloppende aantallen (geregeld-via-principe als subset van totaal). Vers-data + stats network-first zodat wijzigingen direct zichtbaar zijn."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Dark mode: echt zwart thema, hero-afbeelding niet meer gedimd/vervlakt, God-citaat helderder, categorie-namen leesbaar. Mobiel: grotere leestekst, transparante navigatiebalk met cirkelknoppen, merknaam leesbaar, login via redirect (lost popup-fout op)."
+        }
+      ]
+    },
+    {
       "datum": "2026-06-06",
       "versie": "v0.16.8",
       "items": [
