@@ -79,14 +79,14 @@
       "number": 2,
       "textSV1888": "Gelijk de dienstknecht hijgt naar de schaduw, en gelijk de dagloner verwacht zijn werkloon;",
       "text1637": "Gelijck [3] de dienst-knecht [4] hijgt nae de [5] schaduwe: ende gelijck de dach-looner verwacht sijnen [6] werck-loon:",
-      "text2026": "Zoals de dienstknecht hijgt naar de schaduw, en zoals de dagloner verwacht zijn werkloon;",
+      "text2026": "Zoals de dienaar hijgt naar de schaduw, en zoals de dagloner verwacht zijn werkloon;",
       "marginNotes": [
         {
           "marker": "3",
           "type": "explanatory",
           "textSV1888": "de dienstknecht: Te weten, die vermoeid is door den arbeid des dags.",
           "text1637": "Te weten, die vermoeyt is door den arbeyt des daechs.",
-          "text2026": "de dienstknecht: Te weten, die vermoeid is door de arbeid van de dags."
+          "text2026": "de dienaar: Te weten, die vermoeid is door de arbeid van de dags."
         },
         {
           "marker": "4",
@@ -142,7 +142,7 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zoals<sup class=\"note-marker\" data-note=\"3\">3</sup> de dienstknecht<sup class=\"note-marker\" data-note=\"4\">4</sup> hijgt naar de<sup class=\"note-marker\" data-note=\"5\">5</sup> schaduw, en zoals de dagloner verwacht zijn<sup class=\"note-marker\" data-note=\"6\">6</sup> werkloon;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zoals<sup class=\"note-marker\" data-note=\"3\">3</sup> de dienaar<sup class=\"note-marker\" data-note=\"4\">4</sup> hijgt naar de<sup class=\"note-marker\" data-note=\"5\">5</sup> schaduw, en zoals de dagloner verwacht zijn<sup class=\"note-marker\" data-note=\"6\">6</sup> werkloon;</i></span>",
       "textSV1888_html": "Gelijk<sup class=\"note-marker\" data-note=\"3\">3</sup> de dienstknecht<sup class=\"note-marker\" data-note=\"4\">4</sup> hijgt naar de<sup class=\"note-marker\" data-note=\"5\">5</sup> schaduw, en gelijk de dagloner verwacht zijn<sup class=\"note-marker\" data-note=\"6\">6</sup> werkloon;",
       "text1637_html": "Gelijck <sup class=\"note-marker\" data-note=\"3\">3</sup> de dienst-knecht <sup class=\"note-marker\" data-note=\"4\">4</sup> hijgt nae de <sup class=\"note-marker\" data-note=\"5\">5</sup> schaduwe: ende gelijck de dach-looner verwacht sijnen <sup class=\"note-marker\" data-note=\"6\">6</sup> werck-loon:",
       "phraseDiff": [
@@ -150,6 +150,11 @@
           "old": "Gelijk",
           "new": "Zoals",
           "principe": null
+        },
+        {
+          "old": "dienstknecht",
+          "new": "dienaar",
+          "principe": "V744"
         },
         {
           "old": "gelijk",
