@@ -40,6 +40,10 @@ const Opties = {
         this.applyVerseNumbersClass();
         this.applyThemeClass();
 
+        // Versnummers-checkbox (in 'Pagina & leeshulp') synchroniseren met state
+        const vnCb = document.getElementById('toggle-versnummers');
+        if (vnCb) vnCb.checked = this.state.versnummers !== 'uit';
+
         // Topnav-knop voor 1-klik thema-wissel (donker ↔ licht)
         const themeBtn = document.getElementById('topnav-theme-toggle');
         if (themeBtn) {

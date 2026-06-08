@@ -146,7 +146,7 @@ const Navigation = {
         window.scrollTo(0, 0);
     },
 
-    navigateRelative(offset) {
+    async navigateRelative(offset) {
         if (!this.currentBook) return;
         const chapterBtns = document.querySelectorAll('#chapter-nav button');
         const chapters = Array.from(chapterBtns).map(b => parseInt(b.dataset.chapter));
@@ -154,6 +154,28 @@ const Navigation = {
         const newIdx = idx + offset;
         if (newIdx >= 0 && newIdx < chapters.length) {
             location.hash = `#${this.currentBook}/${chapters[newIdx]}`;
+            return;
         }
+        // Voorbij de boekgrens → naar het aangrenzende boek (in de actieve volgorde)
+        try {
+            const manifest = await DataLoader.loadManifest();
+            const mode = (window.Opties && Opties.state && Opties.state.boekvolgorde) || 'canoniek';
+            const orderIds = (typeof getFlatBookOrder === 'function')
+                ? getFlatBookOrder(mode, manifest)
+                : manifest.books.map(b => b.id);
+            const byId = Object.fromEntries(manifest.books.map(b => [b.id, b]));
+            const bIdx = orderIds.indexOf(this.currentBook);
+            if (bIdx < 0) return;
+            if (newIdx < 0 && bIdx > 0) {
+                // Laatste hoofdstuk van het vorige boek
+                const prev = byId[orderIds[bIdx - 1]];
+                const last = prev.chaptersIncluded[prev.chaptersIncluded.length - 1];
+                location.hash = `#${prev.id}/${last}`;
+            } else if (newIdx >= chapters.length && bIdx < orderIds.length - 1) {
+                // Eerste hoofdstuk van het volgende boek
+                const next = byId[orderIds[bIdx + 1]];
+                location.hash = `#${next.id}/${next.chaptersIncluded[0]}`;
+            }
+        } catch (e) { console.warn('[Navigation] cross-book nav faalde:', e); }
     }
 };

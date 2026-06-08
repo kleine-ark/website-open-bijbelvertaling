@@ -684,7 +684,7 @@
       "number": 6,
       "textSV1888": "Maar zo wie een van deze kleinen, die in Mij geloven, ergert, het ware hem nutter, dat een molensteen aan zijn hals gehangen, en dat hij verzonken ware in de diepte der zee.",
       "text1637": "[e] Maer so wie eenen van dese kleynen, die in my gelooven, [6] ergert, het ware hem nutter dat een [7] meulensteen aen sijnen hals gehangen, ende dat hy versoncken ware in de diepte der zee.",
-      "text2026": "Maar zo wie één van deze kleinen, die in Mij geloven, ergert, het ware hem beter, dat een molensteen aan zijn hals gehangen, en dat hij verzonken ware in de diepte van de zee.",
+      "text2026": "Maar zo wie één van deze kleinen, die in Mij geloven, ten val brengt, het ware hem beter, dat een molensteen aan zijn hals gehangen, en dat hij verzonken ware in de diepte van de zee.",
       "marginNotes": [
         {
           "marker": "e",
@@ -884,7 +884,7 @@
           "gloss": "〔sea"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar zo wie één van deze kleinen, die in Mij geloven,<sup class=\"note-marker\" data-note=\"6\">6</sup> ergert, het ware hem beter, dat een<sup class=\"note-marker\" data-note=\"7\">7</sup> molensteen aan zijn hals gehangen, en dat hij verzonken ware in de diepte van de zee.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar zo wie één van deze kleinen, die in Mij geloven,<sup class=\"note-marker\" data-note=\"6\">6</sup> ten val brengt, het ware hem beter, dat een<sup class=\"note-marker\" data-note=\"7\">7</sup> molensteen aan zijn hals gehangen, en dat hij verzonken ware in de diepte van de zee.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Maar zo wie een van deze kleinen, die in Mij geloven,<sup class=\"note-marker\" data-note=\"6\">6</sup> ergert, het ware hem nutter, dat een<sup class=\"note-marker\" data-note=\"7\">7</sup> molensteen aan zijn hals gehangen, en dat hij verzonken ware in de diepte der zee.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Maer so wie eenen van dese kleynen, die in my gelooven, <sup class=\"note-marker\" data-note=\"6\">6</sup> ergert, het ware hem nutter dat een <sup class=\"note-marker\" data-note=\"7\">7</sup> meulensteen aen sijnen hals gehangen, ende dat hy versoncken ware in de diepte der zee.",
       "phraseDiff": [
@@ -892,6 +892,11 @@
           "old": "een",
           "new": "één",
           "principe": "V735"
+        },
+        {
+          "old": "ergert,",
+          "new": "ten val brengt,",
+          "principe": "V747"
         },
         {
           "old": "nutter,",
@@ -909,7 +914,7 @@
       "number": 7,
       "textSV1888": "Wee der wereld van de ergernissen, want het is noodzakelijk, dat de ergernissen komen; doch wee dien mens, door welken de ergernis komt!",
       "text1637": "Wee der werelt van de ergernissen: [f] want het is [8] nootsakelick dat de ergernissen komen: [g] Doch wee dien mensche door welcken de ergernisse komt.",
-      "text2026": "Wee de wereld van de ergernissen, want het is noodzakelijk, dat de ergernissen komen; maar wee die mens, door welke de ergernis komt!",
+      "text2026": "Wee de wereld vanwege de struikelblokken, want het is noodzakelijk, dat de struikelblokken komen; maar wee die mens, door welke het struikelblok komt!",
       "marginNotes": [
         {
           "marker": "f",
@@ -1055,7 +1060,7 @@
           "gloss": "〔to come/go"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Wee de wereld van de ergernissen,<sup class=\"note-marker\" data-note=\"f\">f</sup> want het is<sup class=\"note-marker\" data-note=\"8\">8</sup> noodzakelijk, dat de ergernissen komen;<sup class=\"note-marker\" data-note=\"g\">g</sup> maar wee die mens, door welke de ergernis komt!</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Wee de wereld vanwege de struikelblokken,<sup class=\"note-marker\" data-note=\"f\">f</sup> want het is<sup class=\"note-marker\" data-note=\"8\">8</sup> noodzakelijk, dat de struikelblokken komen;<sup class=\"note-marker\" data-note=\"g\">g</sup> maar wee die mens, door welke het struikelblok komt!</i></span>",
       "textSV1888_html": "Wee der wereld van de ergernissen,<sup class=\"note-marker\" data-note=\"f\">f</sup> want het is<sup class=\"note-marker\" data-note=\"8\">8</sup> noodzakelijk, dat de ergernissen komen;<sup class=\"note-marker\" data-note=\"g\">g</sup> doch wee dien mens, door welken de ergernis komt!",
       "text1637_html": "Wee der werelt van de ergernissen: <sup class=\"note-marker\" data-note=\"f\">f</sup> want het is <sup class=\"note-marker\" data-note=\"8\">8</sup> nootsakelick dat de ergernissen komen: <sup class=\"note-marker\" data-note=\"g\">g</sup> Doch wee dien mensche door welcken de ergernisse komt.",
       "phraseDiff": [
@@ -1063,6 +1068,21 @@
           "old": "der",
           "new": "de",
           "principe": "N2"
+        },
+        {
+          "old": "van",
+          "new": "vanwege",
+          "principe": null
+        },
+        {
+          "old": "ergernissen,",
+          "new": "struikelblokken,",
+          "principe": "V747"
+        },
+        {
+          "old": "ergernissen",
+          "new": "struikelblokken",
+          "principe": "V747"
         },
         {
           "old": "doch",
@@ -1075,8 +1095,8 @@
           "principe": "N4"
         },
         {
-          "old": "welken",
-          "new": "welke",
+          "old": "welken de ergernis",
+          "new": "welke het struikelblok",
           "principe": "N6"
         }
       ]
@@ -1085,7 +1105,7 @@
       "number": 8,
       "textSV1888": "Indien dan uw hand of uw voet u ergert, houwt ze af en werpt ze van u. Het is u beter, tot het leven in te gaan, kreupel of verminkt zijnde, dan twee handen of twee voeten hebbende, in het eeuwige vuur geworpen te worden.",
       "text1637": "[h] Indien dan uwe [9] hant ofte uwe voet u ergert, houwt’se af ende werpt’se van u. Het is u beter tot den leven in te gaen, kreupel, ofte verminckt [zijnde], dan twee handen ofte twee voeten hebbende in’t eeuwige vyer geworpen te worden.",
-      "text2026": "Als dan uw hand of uw voet u ergert, houwt ze af en werpt ze van u. Het is u beter, tot het leven in te gaan, kreupel of verminkt zijnde, dan twee handen of twee voeten hebbende, in het eeuwige vuur geworpen te worden.",
+      "text2026": "Als dan uw hand of uw voet u doet struikelen, houwt ze af en werpt ze van u. Het is u beter, tot het leven in te gaan, kreupel of verminkt zijnde, dan twee handen of twee voeten hebbende, in het eeuwige vuur geworpen te worden.",
       "marginNotes": [
         {
           "marker": "h",
@@ -1344,7 +1364,7 @@
           "gloss": "〔eternal"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup><span class=\"god-speaks\"><i> Als dan uw<sup class=\"note-marker\" data-note=\"9\">9</sup> hand of uw voet u ergert, houwt ze af en werpt ze van u. Het is u beter, tot het leven in te gaan, kreupel of verminkt zijnde, dan twee handen of twee voeten hebbende, in het eeuwige vuur geworpen te worden.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup><span class=\"god-speaks\"><i> Als dan uw<sup class=\"note-marker\" data-note=\"9\">9</sup> hand of uw voet u doet struikelen, houwt ze af en werpt ze van u. Het is u beter, tot het leven in te gaan, kreupel of verminkt zijnde, dan twee handen of twee voeten hebbende, in het eeuwige vuur geworpen te worden.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Indien dan uw<sup class=\"note-marker\" data-note=\"9\">9</sup> hand of uw voet u ergert, houwt ze af en werpt ze van u. Het is u beter, tot het leven in te gaan, kreupel of verminkt zijnde, dan twee handen of twee voeten hebbende, in het eeuwige vuur geworpen te worden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Indien dan uwe <sup class=\"note-marker\" data-note=\"9\">9</sup> hant ofte uwe voet u ergert, houwt’se af en<i>de</i> werpt’se van u. Het is u beter tot den leven in te gaen, kreupel, ofte verminckt [<i>zijnde</i>], dan twee handen ofte twee voeten hebbende in’t eeuwige vyer geworpen te worden.",
       "phraseDiff": [
@@ -1352,6 +1372,11 @@
           "old": "Indien",
           "new": "Als",
           "principe": "V41"
+        },
+        {
+          "old": "ergert,",
+          "new": "doet struikelen,",
+          "principe": "V747"
         }
       ]
     },
@@ -1359,7 +1384,7 @@
       "number": 9,
       "textSV1888": "En indien uw oog u ergert, trekt het uit, en werpt het van u. Het is u beter, maar een oog hebbende, tot het leven in te gaan, dan twee ogen hebbende, in het helse vuur geworpen te worden.",
       "text1637": "Ende indien uwe ooge u ergert trecktse uyt, ende werptse van u. Het is u beter maer een ooge hebbende tot het leven in te gaen, dan twee oogen hebbende in’t helsche vyer geworpen te worden.",
-      "text2026": "En als uw oog u ergert, trekt het uit, en werpt het van u. Het is u beter, maar één oog hebbende, tot het leven in te gaan, dan twee ogen hebbende, in het helse vuur geworpen te worden.",
+      "text2026": "En als uw oog u doet struikelen, trekt het uit, en werpt het van u. Het is u beter, maar één oog hebbende, tot het leven in te gaan, dan twee ogen hebbende, in het helse vuur geworpen te worden.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1549,13 +1574,18 @@
           "gloss": "〔fire"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En als uw oog u ergert, trekt het uit, en werpt het van u. Het is u beter, maar één oog hebbende, tot het leven in te gaan, dan twee ogen hebbende, in het helse vuur geworpen te worden.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En als uw oog u doet struikelen, trekt het uit, en werpt het van u. Het is u beter, maar één oog hebbende, tot het leven in te gaan, dan twee ogen hebbende, in het helse vuur geworpen te worden.</i></span>",
       "text1637_html": "Ende indien uwe ooge u ergert trecktse uyt, ende werptse van u. Het is u beter maer een ooge hebbende tot het leven in te gaen, dan twee oogen hebbende in’t helsche vyer geworpen te worden.",
       "phraseDiff": [
         {
           "old": "indien",
           "new": "als",
           "principe": "V41"
+        },
+        {
+          "old": "ergert,",
+          "new": "doet struikelen,",
+          "principe": "V747"
         },
         {
           "old": "een",

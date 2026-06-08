@@ -255,7 +255,7 @@
       "number": 3,
       "textSV1888": "Ik zal wegrapen mensen en beesten; Ik zal wegrapen de vogelen des hemels, en de vissen der zee, en de ergernissen met de goddelozen; ja, Ik zal de mensen uit dit land uitroeien, spreekt de HEERE.",
       "text1637": "Ick sal wech-rapen menschen ende [6] beesten, Ick sal wech-rapen de vogelen des hemels, ende de visschen der zee, ende [7] de ergernissen met de godtloose, ja ick sal de menschen uyt desen lande uytroeyen, spreeckt de HEERE.",
-      "text2026": "Ik zal wegrapen mensen en beesten; Ik zal wegrapen de vogels des hemels, en de vissen van de zee, en de ergernissen met de goddelozen; ja, Ik zal de mensen uit dit land uitroeien, spreekt JAHWEH.",
+      "text2026": "Ik zal wegrapen mensen en beesten; Ik zal wegrapen de vogels des hemels, en de vissen van de zee, en de struikelblokken met de goddelozen; ja, Ik zal de mensen uit dit land uitroeien, spreekt JAHWEH.",
       "marginNotes": [
         {
           "marker": "6",
@@ -369,7 +369,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Ik zal wegrapen mensen en<sup class=\"note-marker\" data-note=\"6\">6</sup> beesten; Ik zal wegrapen de vogels des hemels, en de vissen van de zee, en<sup class=\"note-marker\" data-note=\"7\">7</sup> de ergernissen met de goddelozen; ja, Ik zal de mensen uit dit land uitroeien, spreekt JAHWEH.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Ik zal wegrapen mensen en<sup class=\"note-marker\" data-note=\"6\">6</sup> beesten; Ik zal wegrapen de vogels des hemels, en de vissen van de zee, en<sup class=\"note-marker\" data-note=\"7\">7</sup> de struikelblokken met de goddelozen; ja, Ik zal de mensen uit dit land uitroeien, spreekt JAHWEH.</i></span>",
       "textSV1888_html": "Ik zal wegrapen mensen en<sup class=\"note-marker\" data-note=\"6\">6</sup> beesten; Ik zal wegrapen de vogelen des hemels, en de vissen der zee, en<sup class=\"note-marker\" data-note=\"7\">7</sup> de ergernissen met de goddelozen; ja, Ik zal de mensen uit dit land uitroeien, spreekt de HEERE.",
       "text1637_html": "Ick sal wech-rapen menschen ende <sup class=\"note-marker\" data-note=\"6\">6</sup> beesten, Ick sal wech-rapen de vogelen des hemels, ende de visschen der zee, ende <sup class=\"note-marker\" data-note=\"7\">7</sup> de ergernissen met de godtloose, ja ick sal de menschen uyt desen lande uytroeyen, spreeckt de HEERE.",
       "phraseDiff": [
@@ -382,6 +382,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "ergernissen",
+          "new": "struikelblokken",
+          "principe": "V747"
         },
         {
           "old": "de HEERE.",
@@ -1719,7 +1724,7 @@
       "number": 14,
       "textSV1888": "De grote dag des HEEREN is nabij; hij is nabij, en zeer haastende; de stem van den dag des HEEREN; de held zal aldaar bitterlijk schreeuwen.",
       "text1637": "[52] De groote dach des HEEREN is nae by, hy is nae by, ende seer haestende; [53] de stemme des dachs des HEEREN: [54] de heldt sal [55] aldaer bitterlick schreeuwen.",
-      "text2026": "De grote dag van JAHWEH is nabij; hij is nabij, en zeer haastende; de stem van de dag van JAHWEH; de held zal daar bitterlijk schreeuwen.",
+      "text2026": "De grote dag van JAHWEH is nabij; hij is nabij, en zeer haastende; de stem van de dag van JAHWEH; de held zal daar bitter schreeuwen.",
       "marginNotes": [
         {
           "marker": "52",
@@ -1822,7 +1827,7 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"52\">52</sup><span class=\"god-speaks\"><i> De grote dag van JAHWEH is nabij; hij is nabij, en zeer haastende;<sup class=\"note-marker\" data-note=\"53\">53</sup> de stem van<sup class=\"note-marker\" data-note=\"54\">54</sup> de dag van JAHWEH;<sup class=\"note-marker\" data-note=\"55\">55</sup> de held zal daar bitterlijk schreeuwen.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"52\">52</sup><span class=\"god-speaks\"><i> De grote dag van JAHWEH is nabij; hij is nabij, en zeer haastende;<sup class=\"note-marker\" data-note=\"53\">53</sup> de stem van<sup class=\"note-marker\" data-note=\"54\">54</sup> de dag van JAHWEH;<sup class=\"note-marker\" data-note=\"55\">55</sup> de held zal daar bitter schreeuwen.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"52\">52</sup> De grote dag des HEEREN is nabij; hij is nabij, en zeer haastende;<sup class=\"note-marker\" data-note=\"53\">53</sup> de stem van den dag des HEEREN;<sup class=\"note-marker\" data-note=\"54\">54</sup> de held zal<sup class=\"note-marker\" data-note=\"55\">55</sup> aldaar bitterlijk schreeuwen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"52\">52</sup> De groote dach des HEEREN is nae by, hy is nae by, ende seer haestende; <sup class=\"note-marker\" data-note=\"53\">53</sup> de stemme des dachs des HEEREN: <sup class=\"note-marker\" data-note=\"54\">54</sup> de heldt sal <sup class=\"note-marker\" data-note=\"55\">55</sup> aldaer bitterlick schreeuwen.",
       "phraseDiff": [
@@ -1842,8 +1847,8 @@
           "principe": "N3"
         },
         {
-          "old": "aldaar",
-          "new": "daar",
+          "old": "aldaar bitterlijk",
+          "new": "daar bitter",
           "principe": "V36"
         }
       ]

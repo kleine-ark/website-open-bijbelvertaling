@@ -109,7 +109,7 @@
       "number": 2,
       "textSV1888": "Mensenkind! schrijf u den naam van den dag op, even van dezen zelfden dag; de koning van Babel legt zich voor Jeruzalem, even op dezen zelfden dag.",
       "text1637": "Menschen kint, [3] schrijft u den naem van den dach op, [4] even van desen selven dach; De Coninck van Babel [5] legt sich voor Ierusalem, even op desen selven dach.",
-      "text2026": "Mensenkind! schrijf u de naam van de dag op, even van deze zelfden dag; de koning van Babel legt zich voor Jeruzalem, even op deze zelfden dag.",
+      "text2026": "Mensenkind! schrijf u de naam van de dag op, juist van deze zelfde dag; de koning van Babel legt zich voor Jeruzalem, juist op deze zelfde dag.",
       "marginNotes": [
         {
           "marker": "3",
@@ -230,7 +230,7 @@
           "morph": "HTd/Pdxms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Mensenkind!<sup class=\"note-marker\" data-note=\"3\">3</sup> schrijf u de naam van de dag op,<sup class=\"note-marker\" data-note=\"4\">4</sup> even van deze zelfden dag; de koning van Babel<sup class=\"note-marker\" data-note=\"5\">5</sup> legt zich voor Jeruzalem, even op deze zelfden dag.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Mensenkind!<sup class=\"note-marker\" data-note=\"3\">3</sup> schrijf u de naam van de dag op,<sup class=\"note-marker\" data-note=\"4\">4</sup> juist van deze zelfde dag; de koning van Babel<sup class=\"note-marker\" data-note=\"5\">5</sup> legt zich voor Jeruzalem, juist op deze zelfde dag.</i></span>",
       "textSV1888_html": "Mensenkind!<sup class=\"note-marker\" data-note=\"3\">3</sup> schrijf u den naam van den dag op,<sup class=\"note-marker\" data-note=\"4\">4</sup> even van dezen zelfden dag; de koning van Babel<sup class=\"note-marker\" data-note=\"5\">5</sup> legt zich voor Jeruzalem, even op dezen zelfden dag.",
       "text1637_html": "Menschen kint, <sup class=\"note-marker\" data-note=\"3\">3</sup> schrijft u den naem van den dach op, <sup class=\"note-marker\" data-note=\"4\">4</sup> even van desen selven dach; De Coninck van Babel <sup class=\"note-marker\" data-note=\"5\">5</sup> legt sich voor Ierusalem, even op desen selven dach.",
       "phraseDiff": [
@@ -245,13 +245,23 @@
           "principe": "N1"
         },
         {
-          "old": "dezen",
-          "new": "deze",
+          "old": "even",
+          "new": "juist",
+          "principe": null
+        },
+        {
+          "old": "dezen zelfden",
+          "new": "deze zelfde",
           "principe": "N4"
         },
         {
-          "old": "dezen",
-          "new": "deze",
+          "old": "even",
+          "new": "juist",
+          "principe": null
+        },
+        {
+          "old": "dezen zelfden",
+          "new": "deze zelfde",
           "principe": "N4"
         }
       ]
@@ -3045,7 +3055,7 @@
       "number": 26,
       "textSV1888": "Dat tenzelfden dage een ontkomene tot u zal komen, om uw oren dat te doen horen?",
       "text1637": "Dat ten selven dage een [64] ontkomene tot u sal komen, om [uwe] ooren [dat] te doen hooren?",
-      "text2026": "Dat tenzelfden dage een ontkomene tot u zal komen, om uw oren dat te doen horen?",
+      "text2026": "Dat op diezelfde dag een ontkomene tot u zal komen, om uw oren dat te doen horen?",
       "marginNotes": [
         {
           "marker": "64",
@@ -3092,9 +3102,16 @@
           "morph": "HNcfda"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Dat tenzelfden dage een<sup class=\"note-marker\" data-note=\"64\">64</sup> ontkomene tot u zal komen, om uw oren dat te doen horen?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Dat op diezelfde dag een<sup class=\"note-marker\" data-note=\"64\">64</sup> ontkomene tot u zal komen, om uw oren dat te doen horen?</i></span>",
       "textSV1888_html": "Dat tenzelfden dage een<sup class=\"note-marker\" data-note=\"64\">64</sup> ontkomene tot u zal komen, om uw oren dat te doen horen?",
-      "text1637_html": "Dat ten selven dage een <sup class=\"note-marker\" data-note=\"64\">64</sup> ontkomene tot u sal komen, om [uwe] ooren [dat] te doen hooren?"
+      "text1637_html": "Dat ten selven dage een <sup class=\"note-marker\" data-note=\"64\">64</sup> ontkomene tot u sal komen, om [uwe] ooren [dat] te doen hooren?",
+      "phraseDiff": [
+        {
+          "old": "tenzelfden dage",
+          "new": "op diezelfde dag",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 27,
