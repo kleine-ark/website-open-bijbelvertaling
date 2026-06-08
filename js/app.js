@@ -613,12 +613,18 @@ const App = {
         const saved = localStorage.getItem('sv2026_columnVisibility');
         let visibility = saved ? JSON.parse(saved) : null;
 
-        // Defaults: 1637, 2026, margin1637, margin2026 aan; rest uit
+        // Defaults: 1637, 2026, margin1637, margin2026 aan; rest uit.
+        // Mobiel zonder opgeslagen voorkeur: alleen OSV (2026), geen verschillen.
         if (!visibility) {
             visibility = {};
+            const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
             this.ALL_COLS.forEach(col => {
-                const cb = document.querySelector(`[data-toggle-col="${col}"]`);
-                visibility[col] = cb ? cb.checked : false;
+                if (isMobile) {
+                    visibility[col] = (col === '2026' || col === 'margin2026');
+                } else {
+                    const cb = document.querySelector(`[data-toggle-col="${col}"]`);
+                    visibility[col] = cb ? cb.checked : false;
+                }
             });
         }
 
