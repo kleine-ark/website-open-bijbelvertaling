@@ -140,24 +140,6 @@ const Feedback = {
             userAgent: navigator.userAgent
         };
 
-        // 0) GitHub-issue vooringevuld openen — in de ingelogde GitHub-sessie van
-        //    de gebruiker (geen server/token nodig; veilig). Synchroon t.o.v. de
-        //    klik, anders blokkeert de browser het nieuwe tabblad.
-        try {
-            const issueTitle = `Vers-opmerking: ${payload.ref}`;
-            const issueBody =
-                `**Vers:** ${payload.ref}\n\n` +
-                `**Geselecteerde tekst:**\n> ${payload.selected || '(geen selectie)'}\n\n` +
-                `**Opmerking / suggestie:**\n${payload.suggestion}\n\n` +
-                `---\n_Verzonden via openvertaling.nl_`;
-            const issueUrl = 'https://github.com/kleine-ark/website-open-bijbelvertaling/issues/new'
-                + '?title=' + encodeURIComponent(issueTitle)
-                + '&body=' + encodeURIComponent(issueBody)
-                + '&labels=' + encodeURIComponent('vers-opmerking');
-            this._issueUrl = issueUrl;
-            window.open(issueUrl, '_blank', 'noopener');
-        } catch (e) { console.warn('[Feedback] GitHub-issue openen faalde:', e); }
-
         const tasks = [];
 
         // 1) Firestore (indien ingelogd & beschikbaar)
@@ -194,13 +176,21 @@ const Feedback = {
             }
         })());
 
-        await Promise.all(tasks);
-        // Primair: het GitHub-issue is geopend. Toon link voor het geval het
-        // tabblad door de browser geblokkeerd is.
-        status.innerHTML = 'Een GitHub-issue is geopend — klik daar op '
-            + '<strong>“Submit new issue”</strong> om te plaatsen.'
-            + (this._issueUrl ? ' <a href="' + this._issueUrl + '" target="_blank" rel="noopener" style="color:var(--gold);font-weight:600;">Niet geopend? Klik hier</a>.' : '');
-        setTimeout(() => this.close(), 4000);
+        const results = await Promise.all(tasks);
+        const ok = results.some(r => r && r.indexOf('fail') === -1);
+        if (ok) {
+            status.textContent = 'Bedankt! Je opmerking is verstuurd.';
+            setTimeout(() => this.close(), 1600);
+        } else {
+            const subject = `[OSV opmerking] ${payload.ref}`;
+            const body =
+                `Vers: ${payload.ref}\n` +
+                `Geselecteerde tekst:\n  "${payload.selected}"\n\n` +
+                `Suggestie:\n${payload.suggestion}\n`;
+            const mailto = `mailto:algemeen3bm@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            status.innerHTML = 'Online versturen mislukt. <a href="' + mailto + '" style="color:var(--gold);font-weight:600;">Klik hier om via je mailprogramma te versturen</a>.';
+            sendBtn.disabled = false;
+        }
     }
 };
 
