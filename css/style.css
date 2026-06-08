@@ -2783,18 +2783,18 @@ body.show-tags .verse-tag {
 }
 .mp-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: 1fr;   /* boeken: één lange lijst onder elkaar */
     gap: 5px;
 }
 .mp-item {
     background: #fff;
     border: 1px solid var(--border, #e5e1d8);
     border-radius: 7px;
-    padding: 9px 12px;
+    padding: 11px 14px;
     color: var(--navy);
-    font-family: var(--font-serif);
+    font-family: var(--font-body);   /* normaal lettertype, niet cursief serif */
     font-size: 16px;
-    font-style: italic;
+    font-style: normal;
     font-weight: 500;
     letter-spacing: 0.01em;
     text-align: left;
