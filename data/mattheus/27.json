@@ -234,7 +234,7 @@
       "number": 3,
       "textSV1888": "Toen heeft Judas, dien Hem verraden had, ziende, dat Hij veroordeeld was, berouw gehad, en heeft de dertig zilveren penningen den overpriesters en den ouderlingen wedergebracht,",
       "text1637": "Doe heeft Iudas, die hem verraden hadde, siende dat hy veroordeelt was, [2] berouw gehadt, ende heeft de dertich silvere [penningen] den Overpriesteren ende den Ouderlingen [3] wedergebracht.",
-      "text2026": "Toen heeft Judas, die Hem verraden had, ziende, dat Hij veroordeeld was, berouw gehad, en heeft de dertig zilveren penningen de overpriesters en de ouderlingen wedergebracht,",
+      "text2026": "Toen heeft Judas, die Hem verraden had, ziende, dat Hij veroordeeld was, berouw gehad, en heeft de dertig zilveren penningen de overpriesters en de ouderlingen teruggebracht,",
       "marginNotes": [
         {
           "marker": "2",
@@ -355,7 +355,7 @@
           "gloss": "〔elder"
         }
       ],
-      "text2026_html": "Toen heeft Judas, die Hem verraden had, ziende, dat Hij veroordeeld was,<sup class=\"note-marker\" data-note=\"2\">2</sup> berouw gehad, en heeft de dertig zilveren penningen de overpriesters en de ouderlingen<sup class=\"note-marker\" data-note=\"3\">3</sup> wedergebracht,",
+      "text2026_html": "Toen heeft Judas, die Hem verraden had, ziende, dat Hij veroordeeld was,<sup class=\"note-marker\" data-note=\"2\">2</sup> berouw gehad, en heeft de dertig zilveren penningen de overpriesters en de ouderlingen<sup class=\"note-marker\" data-note=\"3\">3</sup> teruggebracht,",
       "textSV1888_html": "Toen heeft Judas, dien Hem verraden had, ziende, dat Hij veroordeeld was,<sup class=\"note-marker\" data-note=\"2\">2</sup> berouw gehad, en heeft de dertig zilveren penningen den overpriesters en den ouderlingen<sup class=\"note-marker\" data-note=\"3\">3</sup> wedergebracht,",
       "text1637_html": "Doe heeft Iudas, die hem verraden hadde, siende dat hy veroordeelt was, <sup class=\"note-marker\" data-note=\"2\">2</sup> berouw gehadt, ende heeft de dertich silvere [<i>penningen</i>] den Overpriesteren ende den Ouderlingen <sup class=\"note-marker\" data-note=\"3\">3</sup> wedergebracht.",
       "phraseDiff": [
@@ -373,6 +373,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "wedergebracht,",
+          "new": "teruggebracht,",
+          "principe": "V749"
         }
       ]
     },
@@ -1117,7 +1122,7 @@
           "gloss": "〔Israel"
         }
       ],
-      "text2026_html": "Toen is vervuld geworden, wat gesproken is door de profeet Jeremia, zeggende: En zij hebben de dertig zilveren penningen genomen, de waarde van de Gewaardeerden van de kinderen van Israël, Die zij gewaardeerd hebben;",
+      "text2026_html": "Toen is vervuld geworden, wat gesproken is door de profeet Jeremia, zeggende: <span class=\"direct-speech\"><i>En zij hebben de dertig zilveren penningen genomen, de waarde van de Gewaardeerden van de kinderen van Israël, Die zij gewaardeerd hebben;</i></span>",
       "textSV1888_html": "Toen is vervuld geworden, hetgeen gesproken is<sup class=\"note-marker\" data-note=\"e\">e</sup> door den profeet<sup class=\"note-marker\" data-note=\"9\">9</sup> Jeremia, zeggende: En zij hebben de dertig zilveren penningen genomen,<sup class=\"note-marker\" data-note=\"10\">10</sup> de waarde des Gewaardeerden van de kinderen Israëls, Denwelken zij gewaardeerd hebben;",
       "text1637_html": "Doe is vervult geworden ’t gene gesproken is <sup class=\"note-marker\" data-note=\"e\">e</sup> door den Propheet <sup class=\"note-marker\" data-note=\"9\">9</sup> Ieremiam, seggende, Ende sy hebben de dertich silvere [<i>penningen</i>] genomen, <sup class=\"note-marker\" data-note=\"10\">10</sup> de weerde des geweerdeerden van de kinderen Israëls, den welcken sy geweerdeert hebben.",
       "phraseDiff": [
@@ -1965,7 +1970,7 @@
       "number": 17,
       "textSV1888": "Als zij dan vergaderd waren, zeide Pilatus tot hen: Welken wilt gij, dat ik u zal loslaten, Bar-abbas, of Jezus, Die genaamd wordt Christus?",
       "text1637": "Als sy dan vergadert waren seyde Pilatus tot haer, Welcken wilt ghy dat ick u sal los laten, Barabbam ofte Iesum, die genaemt wort Christus?",
-      "text2026": "Als zij dan verzameld waren, zei Pilatus tot hen: Welken wilt u, dat ik u zal loslaten, Bar-abbas, of Jezus, Die genaamd wordt Christus?",
+      "text2026": "Als zij dan verzameld waren, zei Pilatus tot hen: Welke wilt u, dat ik u zal loslaten, Bar-abbas, of Jezus, Die genoemd wordt Christus?",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2083,7 +2088,7 @@
           "gloss": "〔Christ"
         }
       ],
-      "text2026_html": "Als zij dan verzameld waren, zei Pilatus tot hen: <span class=\"direct-speech\"><i>Welken wilt u, dat ik u zal loslaten, Bar-abbas, of Jezus, Die genaamd wordt Christus?</i></span>",
+      "text2026_html": "Als zij dan verzameld waren, zei Pilatus tot hen: <span class=\"direct-speech\"><i>Welke wilt u, dat ik u zal loslaten, Bar-abbas, of Jezus, Die genoemd wordt Christus?</i></span>",
       "text1637_html": "Als sy dan vergadert waren seyde Pilatus tot haer, Welcken wilt ghy dat ick u sal los laten, Barabbam ofte Iesum, die genaemt wort Christus?",
       "phraseDiff": [
         {
@@ -2097,9 +2102,19 @@
           "principe": "W1"
         },
         {
+          "old": "Welken",
+          "new": "Welke",
+          "principe": null
+        },
+        {
           "old": "gij,",
           "new": "u,",
           "principe": "A1"
+        },
+        {
+          "old": "genaamd",
+          "new": "genoemd",
+          "principe": null
         }
       ]
     },
@@ -2107,7 +2122,7 @@
       "number": 18,
       "textSV1888": "Want hij wist, dat zij Hem door nijdigheid overgeleverd hadden.",
       "text1637": "Want hy wist dat sy hem door nijdicheyt overgelevert hadden.",
-      "text2026": "Want hij wist, dat zij Hem door nijdigheid overgeleverd hadden.",
+      "text2026": "Want hij wist, dat zij Hem door afgunst overgeleverd hadden.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2153,8 +2168,15 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "Want hij wist, dat zij Hem door nijdigheid overgeleverd hadden.",
-      "text1637_html": "Want hy wist dat sy hem door nijdicheyt overgelevert hadden."
+      "text2026_html": "Want hij wist, dat zij Hem door afgunst overgeleverd hadden.",
+      "text1637_html": "Want hy wist dat sy hem door nijdicheyt overgelevert hadden.",
+      "phraseDiff": [
+        {
+          "old": "nijdigheid",
+          "new": "afgunst",
+          "principe": "V750"
+        }
+      ]
     },
     {
       "number": 19,
