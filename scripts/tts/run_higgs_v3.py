@@ -14,10 +14,21 @@ Architectuurnoten:
   - v3 wordt geserveerd via sglang-omni (OpenAI-compatible /v1/audio/speech API)
   - Voice cloning via ref_audio + ref_text parameters
 
-Blackwell / sm_120 / CUDA-13 situatie:
-  - sgl_kernel sm100/common_ops.abi3.so is gecompileerd tegen CUDA 12
-  - Fix: LD_LIBRARY_PATH bevat CUDA-12 libs (nvrtc, cublas) uit lokale/Ollama-installatie
-  - Torch 2.9.1+cu130 draait prima; alleen sgl_kernel heeft de workaround nodig
+Blackwell / sm_120 / CUDA-13 situatie (RTX 5070, CUDA 13.0 driver):
+  sgl_kernel:
+    - sm100/common_ops.abi3.so is gecompileerd tegen CUDA 12
+    - Fix: LD_LIBRARY_PATH bevat CUDA-12 libs (nvrtc, cublas) uit lokale/Ollama-installatie
+
+  flashinfer JIT-compilatie:
+    - ninja in venv/bin (niet op systeem-PATH) — fix: venv/bin op PATH van server-env
+    - nvcc 13.3.33 via pip install nvidia-cuda-nvcc
+    - CCCL headers 13.3 vs CUDART_VERSION 13.0 → mismatch check → fix: FLASHINFER_EXTRA_CUDAFLAGS
+    - linker zoekt libcudart in lib64/, maar de .so staat in lib/ → fix: FLASHINFER_EXTRA_LDFLAGS
+    - libcudart.so symlink aanmaken in nvidia/cu13/lib/ (libcudart.so → libcudart.so.13)
+
+  Overig:
+    - nvidia-cuda-cccl installeren (geeft nv/target header die ontbrak)
+    - qwen-vl-utils installeren (sglang_omni dependency)
 """
 from __future__ import annotations
 
@@ -28,6 +39,9 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+from scripts.tts.pronunciation import apply_lexicon, load_lexicon
 
 # ---------------------------------------------------------------------------
 # Constanten
@@ -42,23 +56,40 @@ SAMPLE_TXT = PROJECT_ROOT / "audio/_pilot/_sample/sample.txt"
 MODEL_ID = "bosonai/higgs-audio-v3-tts-4b"
 SERVER_PORT = 8765  # gebruik niet-standaard poort zodat we niet conflicteren
 
+# Uitspraak-lexicon eenmalig laden (woord -> herspelling voor betere klemtoon)
+LEXICON = load_lexicon()
+
 # Chunking: v3 max tokens per call is onbekend, maar we zijn voorzichtig
 MAX_CHUNK_WORDS = 80   # ~400–600 chars per chunk; korter = veiliger voor eerste run
 
-CHAPTERS = [
-    {
-        "book": "genesis",
-        "chapter": 1,
-        "data_path": "data/genesis/1.json",
-        "out_mp3": "audio/_pilot/higgs-v3/genesis-1.mp3",
-    },
-    {
-        "book": "jakobus",
-        "chapter": 1,
-        "data_path": "data/jakobus/1.json",
-        "out_mp3": "audio/_pilot/higgs-v3/jakobus-1.mp3",
-    },
-]
+def _parse_chapters(value: str) -> list[int]:
+    """Parseer '1', '1,2,3' of '1-5' naar een lijst integers."""
+    if "-" in value and "," not in value:
+        start, end = value.split("-", 1)
+        return list(range(int(start), int(end) + 1))
+    return [int(c.strip()) for c in value.split(",")]
+
+
+def build_chapter_jobs(book: str, chapters: list[int], pilot: bool) -> list[dict]:
+    """Bouw chapter-job dicts voor de gegeven hoofdstukken.
+
+    pilot=True schrijft naar audio/_pilot/higgs-v3/{book}-{ch}.mp3,
+    anders naar de productie-locatie audio/{book}/{ch}.mp3.
+    """
+    jobs = []
+    for ch in chapters:
+        out = (
+            f"audio/_pilot/higgs-v3/{book}-{ch}.mp3"
+            if pilot
+            else f"audio/{book}/{ch}.mp3"
+        )
+        jobs.append({
+            "book": book,
+            "chapter": ch,
+            "data_path": f"data/{book}/{ch}.json",
+            "out_mp3": out,
+        })
+    return jobs
 
 # ---------------------------------------------------------------------------
 # Hulpfuncties
@@ -85,6 +116,27 @@ def _make_env() -> dict[str, str]:
         cu13 = str(VENV / "lib/python3.12/site-packages/nvidia/cu13")
         if Path(cu13).is_dir():
             env["CUDA_HOME"] = cu13
+
+    # flashinfer JIT-compileert CUDA-kernels via ninja; ninja zit in venv/bin
+    # nvcc zit in nvidia/cu13/bin (geïnstalleerd via nvidia-cuda-nvcc package)
+    venv_bin = str(VENV / "bin")
+    nvcc_bin = str(VENV / "lib/python3.12/site-packages/nvidia/cu13/bin")
+    existing_path = env.get("PATH", "")
+    path_parts = [p for p in [venv_bin, nvcc_bin, existing_path] if p]
+    env["PATH"] = ":".join(path_parts)
+
+    # nvcc 13.3 vs CUDART headers 13.0 versie-mismatch: CCCL-check uitschakelen.
+    # FLASHINFER_EXTRA_CUDAFLAGS wordt door flashinfer toegevoegd aan nvcc-aanroepen.
+    if "FLASHINFER_EXTRA_CUDAFLAGS" not in env:
+        env["FLASHINFER_EXTRA_CUDAFLAGS"] = "-DCCCL_DISABLE_CTK_COMPATIBILITY_CHECK"
+
+    # flashinfer linkt tegen -lcudart maar zoekt in cu13/lib64 terwijl de .so
+    # in cu13/lib staat. FLASHINFER_EXTRA_LDFLAGS voegt de juiste lib-dir toe.
+    cu13_lib = str(VENV / "lib/python3.12/site-packages/nvidia/cu13/lib")
+    if "FLASHINFER_EXTRA_LDFLAGS" not in env:
+        env["FLASHINFER_EXTRA_LDFLAGS"] = f"-L{cu13_lib}"
+    else:
+        env["FLASHINFER_EXTRA_LDFLAGS"] += f" -L{cu13_lib}"
 
     return env
 
@@ -209,6 +261,8 @@ def generate_chapter(
     out_mp3.parent.mkdir(parents=True, exist_ok=True)
 
     raw_text = extract_chapter_text(chapter_info["data_path"])
+    # Uitspraak-lexicon toepassen op de TTS-input (raakt de site-tekst niet)
+    raw_text = apply_lexicon(raw_text, LEXICON)
     text = normalize_text(raw_text)
     print(f"\nHoofdstuk: {chapter_info['book']} {chapter_info['chapter']}")
     print(f"Tekst: {len(text)} chars")
@@ -294,12 +348,50 @@ def generate_chapter(
 # ---------------------------------------------------------------------------
 
 
+def _parse_args() -> "argparse.Namespace":
+    import argparse
+
+    p = argparse.ArgumentParser(description="Higgs Audio v3 TTS — hoofdstuk-rollout.")
+    p.add_argument("--book", help="Boek-id, bijv. genesis of 1johannes")
+    p.add_argument("--chapters", help="Hoofdstukken: '1', '1,2,3' of '1-5'")
+    p.add_argument("--pilot", action="store_true",
+                   help="Schrijf naar audio/_pilot/higgs-v3/ i.p.v. productie")
+    p.add_argument("--force", action="store_true",
+                   help="Overschrijf bestaande MP3's (default: skip)")
+    return p.parse_args()
+
+
 def main() -> None:
+    args = _parse_args()
+
     if not SAMPLE_WAV.exists() or not SAMPLE_TXT.exists():
         raise SystemExit(
             f"Voice-sample ontbreekt: {SAMPLE_WAV} of {SAMPLE_TXT}\n"
             "Run eerst prepare_voice_sample.py."
         )
+
+    if args.book and args.chapters:
+        chapters = _parse_chapters(args.chapters)
+        jobs = build_chapter_jobs(args.book, chapters, pilot=args.pilot)
+    else:
+        # Geen args → pilot-default (Genesis 1 + Jakobus 1)
+        jobs = (
+            build_chapter_jobs("genesis", [1], pilot=True)
+            + build_chapter_jobs("jakobus", [1], pilot=True)
+        )
+
+    # Idempotent: bestaande output overslaan tenzij --force
+    todo = []
+    for job in jobs:
+        out = PROJECT_ROOT / job["out_mp3"]
+        if out.exists() and not args.force:
+            print(f"Sla over (bestaat al): {job['out_mp3']}")
+        else:
+            todo.append(job)
+
+    if not todo:
+        print("Alle gevraagde hoofdstukken bestaan al. Klaar.")
+        return
 
     ref_text = SAMPLE_TXT.read_text(encoding="utf-8").strip()
     ref_audio = str(SAMPLE_WAV.absolute())
@@ -307,20 +399,27 @@ def main() -> None:
     print(f"Voice sample: {SAMPLE_WAV}")
     print(f"Model: {MODEL_ID}")
     print(f"Server poort: {SERVER_PORT}")
+    print(f"Te genereren: {len(todo)} hoofdstuk(ken)")
 
     server_proc = None
+    failed: list[str] = []
     try:
         server_proc = start_server()
 
         # Lees server-output asynchroon terwijl we wachten
         wait_for_server(server_proc, timeout=360)
 
-        for chapter in CHAPTERS:
-            generate_chapter(
-                chapter,
-                ref_audio_path=ref_audio,
-                ref_text=ref_text,
-            )
+        for chapter in todo:
+            try:
+                generate_chapter(
+                    chapter,
+                    ref_audio_path=ref_audio,
+                    ref_text=ref_text,
+                )
+            except Exception as exc:  # noqa: BLE001 — laat één hoofdstuk de run niet killen
+                label = f"{chapter['book']} {chapter['chapter']}"
+                print(f"  FOUT bij {label}: {exc}", file=sys.stderr)
+                failed.append(label)
 
     except KeyboardInterrupt:
         print("\nAfgebroken door gebruiker.")
@@ -333,6 +432,9 @@ def main() -> None:
             except subprocess.TimeoutExpired:
                 server_proc.kill()
 
+    if failed:
+        print(f"\nMISLUKT voor: {failed}", file=sys.stderr)
+        sys.exit(1)
     print("\nKlaar.")
 
 
