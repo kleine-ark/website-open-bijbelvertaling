@@ -36,6 +36,27 @@
         .wiki-iframe {
             flex: 1; border: none; min-height: calc(100vh - 52px);
         }
+        /* Mobiel: zijmenu inklapbaar */
+        .wiki-menu-toggle { display: none; }
+        @media (max-width: 768px) {
+            .wiki-shell { flex-direction: column; }
+            .wiki-menu-toggle {
+                display: flex; align-items: center; gap: 8px;
+                width: 100%; text-align: left; padding: 12px 16px;
+                background: #f5f2ed; border: none; border-bottom: 1px solid #e5e1d8;
+                font: 600 14px 'Fira Sans', sans-serif; color: #142e42; cursor: pointer;
+            }
+            .wiki-sidebar {
+                width: 100%; min-width: 0; padding: 6px 0;
+                border-right: none; border-bottom: 1px solid #e5e1d8;
+            }
+            .wiki-sidebar.collapsed { display: none; }
+            .wiki-iframe { min-height: calc(100vh - 110px); }
+        }
+        :root[data-theme="donker"] .wiki-menu-toggle {
+            background: var(--bg-surface) !important; color: var(--text-primary) !important;
+            border-color: var(--border-default) !important;
+        }
     </style>
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
@@ -57,6 +78,10 @@
 </nav>
 
     <div class="wiki-shell">
+        <button class="wiki-menu-toggle" id="wiki-menu-toggle" aria-label="Documentatie-menu in-/uitklappen">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            Documentatie-menu
+        </button>
         <nav class="wiki-sidebar">
             <div class="section-label">Documentatie</div>
             <a href="#uitgangspunten" data-page="uitgangspunten.html" class="active">Uitgangspunten &amp; techniek</a>
@@ -77,6 +102,15 @@
         var sidebar = document.querySelector('.wiki-sidebar');
         var iframe = document.getElementById('wiki-frame');
         var links = sidebar.querySelectorAll('a[data-page]');
+
+        // Mobiel: zijmenu inklapbaar (standaard ingeklapt; sluit na een keuze)
+        var isMobile = function() { return window.matchMedia('(max-width: 768px)').matches; };
+        var menuToggle = document.getElementById('wiki-menu-toggle');
+        if (menuToggle) menuToggle.addEventListener('click', function() { sidebar.classList.toggle('collapsed'); });
+        if (isMobile()) sidebar.classList.add('collapsed');
+        links.forEach(function(a) {
+            a.addEventListener('click', function() { if (isMobile()) sidebar.classList.add('collapsed'); });
+        });
 
         // Map hash to page
         var hashMap = {};
