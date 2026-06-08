@@ -289,6 +289,23 @@ const MobileNav = {
             label.textContent = `${book.nameDutch} ${ch} / ${total}`;
         }
 
+        // Vorig/volgend-knop verbergen aan de uiterste grenzen
+        // (Genesis 1 = geen 'vorig'; laatste hfdst van het laatste boek = geen 'volgend').
+        try {
+            const mode = (window.Opties && Opties.state && Opties.state.boekvolgorde) || 'canoniek';
+            const manifest = { books: Object.values(this.bookById) };
+            const orderIds = (typeof getFlatBookOrder === 'function')
+                ? getFlatBookOrder(mode, manifest) : manifest.books.map(b => b.id);
+            const bIdx = orderIds.indexOf(bookId);
+            const chs = (book && book.chaptersIncluded) || [];
+            const atFirst = bIdx === 0 && ch === chs[0];
+            const atLast = bIdx === orderIds.length - 1 && ch === chs[chs.length - 1];
+            const prevBtn = document.getElementById('mobile-prev-btn');
+            const nextBtn = document.getElementById('mobile-next-btn');
+            if (prevBtn) prevBtn.style.visibility = atFirst ? 'hidden' : '';
+            if (nextBtn) nextBtn.style.visibility = atLast ? 'hidden' : '';
+        } catch (e) {}
+
         // Disable prev/next aan de uiteinden
         const prev = document.getElementById('mobile-prev-btn');
         const next = document.getElementById('mobile-next-btn');
