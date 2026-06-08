@@ -433,7 +433,7 @@
 /* "naast" (default): bestaande flex-rij — kolommen ernaast.
    "eronder": elk cel als block onder elkaar binnen het vers. */
 #content.reading-mode.layout-eronder .verse-row {
-    display: block;
+    display: block !important;   /* wint van .verse-row{display:grid!important}; diff stroomt zo ONDER de tekst */
     padding: 3px 24px 4px;
 }
 #content.reading-mode.layout-eronder .verse-num {
