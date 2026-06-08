@@ -3992,3 +3992,9 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     border-color: var(--gold) !important;
     color: var(--gold) !important;
 }
+/* Play-knop in dark mode: gouden omranding (donkere vulling, gouden driehoek). */
+:root[data-theme="donker"] .mfn-play {
+    background: rgba(18,18,18,0.6) !important;
+    border: 2px solid var(--gold) !important;
+    color: var(--gold) !important;
+}

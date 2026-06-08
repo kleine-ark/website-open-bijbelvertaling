@@ -620,7 +620,7 @@ const App = {
             const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
             this.ALL_COLS.forEach(col => {
                 if (isMobile) {
-                    visibility[col] = (col === '2026' || col === 'margin2026');
+                    visibility[col] = (col === '2026');   // alleen OSV, geen verschillen/kanttekeningen
                 } else {
                     const cb = document.querySelector(`[data-toggle-col="${col}"]`);
                     visibility[col] = cb ? cb.checked : false;
