@@ -4014,3 +4014,18 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     border: 2px solid var(--gold) !important;
     color: var(--gold) !important;
 }
+
+/* === Typografie-uniformering ===
+   Merknaam, hoofdstuktitels, boeknamen en panel-koppen gebruiken nu één rustige
+   cursief (EB Garamond italic) i.p.v. het sterk cursieve Allura — minder rommelig.
+   (Het decoratieve Allura blijft alleen op de over-ov hero.) */
+.topnav-brand,
+#chapter-title,
+#sidebar-header h1,
+.header-title,
+.mp-title,
+.opt-section,
+.tree-book-label {
+    font-family: var(--font-serif, 'EB Garamond', Georgia, serif) !important;
+    font-style: italic !important;
+}
