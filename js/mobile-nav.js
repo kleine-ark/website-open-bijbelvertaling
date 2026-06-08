@@ -117,6 +117,11 @@ const MobileNav = {
         overlay.setAttribute('aria-hidden', 'false');
         // Body-scroll blokkeren
         document.body.style.overflow = 'hidden';
+        // Boekenlijst: meteen naar het huidige (actieve) boek scrollen
+        if (mode === 'books') {
+            const active = body.querySelector('.mp-item.active');
+            if (active) active.scrollIntoView({ block: 'center' });
+        }
     },
 
     closePicker() {
@@ -131,6 +136,25 @@ const MobileNav = {
 
     _renderBooks(body) {
         const currentBook = Navigation.currentBook;
+        // Zoekbalk bovenin
+        const search = document.createElement('input');
+        search.type = 'search';
+        search.className = 'mp-search';
+        search.placeholder = 'Zoek een boek…';
+        search.setAttribute('aria-label', 'Zoek een boek');
+        search.addEventListener('input', () => {
+            const q = search.value.trim().toLowerCase();
+            body.querySelectorAll('.mp-group').forEach(grp => {
+                let anyVisible = false;
+                grp.querySelectorAll('.mp-item').forEach(item => {
+                    const match = !q || item.textContent.toLowerCase().includes(q);
+                    item.style.display = match ? '' : 'none';
+                    if (match) anyVisible = true;
+                });
+                grp.style.display = anyVisible ? '' : 'none';
+            });
+        });
+        body.appendChild(search);
         for (const [label, ids] of this.BOOK_GROUPS) {
             const books = ids.map(id => this.bookById[id]).filter(Boolean);
             if (!books.length) continue;
