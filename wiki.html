@@ -103,6 +103,17 @@
         var iframe = document.getElementById('wiki-frame');
         var links = sidebar.querySelectorAll('a[data-page]');
 
+        // Iframe-thema synchroon houden met de parent (anders licht/donker omgekeerd)
+        function syncIframeTheme() {
+            try {
+                var theme = document.documentElement.getAttribute('data-theme') || 'licht';
+                var doc = iframe.contentDocument || (iframe.contentWindow && iframe.contentWindow.document);
+                if (doc && doc.documentElement) doc.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        }
+        iframe.addEventListener('load', syncIframeTheme);
+        window.WikiSyncIframeTheme = syncIframeTheme;
+
         // Mobiel: zijmenu inklapbaar (standaard ingeklapt; sluit na een keuze)
         var isMobile = function() { return window.matchMedia('(max-width: 768px)').matches; };
         var menuToggle = document.getElementById('wiki-menu-toggle');
@@ -156,7 +167,7 @@
         }
     })();
     </script>
-<script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);document.querySelectorAll('input[data-optie="thema"]').forEach(function(r){r.checked=(r.value===cur);});}catch(e){console.error(e);}});})();</script>
+<script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);if(window.WikiSyncIframeTheme)window.WikiSyncIframeTheme();document.querySelectorAll('input[data-optie="thema"]').forEach(function(r){r.checked=(r.value===cur);});}catch(e){console.error(e);}});})();</script>
 <script src="js/firebase-config.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/stats-inject.js"></script>
