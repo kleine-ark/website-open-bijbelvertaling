@@ -175,26 +175,37 @@ const Lees = {
     async updateAudioPlayer(bookId, book, chapter) {
         const audioEl = document.getElementById('audio-el');
         const playBtn = document.getElementById('audio-play-big');
+        const voiceBtn = document.getElementById('audio-voice');
         const label   = document.getElementById('reader-footer-label');
         if (!audioEl || !playBtn) return;
 
         if (label) label.textContent = `${(book && book.nameDutch) || bookId} ${chapter}`;
         try { audioEl.pause(); } catch (e) {}
 
-        const list = (window.AUDIO_AVAILABLE || {})[bookId] || [];
-        if (!list.includes(chapter)) {
+        // Onthoud huidig hoofdstuk zodat de stem-toggle dezelfde audio herlaadt
+        this._audioBookId = bookId;
+        this._audioChapter = chapter;
+
+        const ov = window.OV_AUDIO;
+        if (!ov || !ov.available(bookId, chapter)) {
             playBtn.classList.add('hidden');
+            if (voiceBtn) voiceBtn.classList.add('hidden');
             audioEl.removeAttribute('src');
             return;
         }
-        audioEl.src = `audio/${bookId}/${chapter}.mp3`;
+        audioEl.src = ov.src(bookId, chapter);
         playBtn.classList.remove('is-playing');
         playBtn.classList.remove('hidden');
+        if (voiceBtn) {
+            voiceBtn.classList.remove('hidden');
+            voiceBtn.textContent = ov.label();
+        }
     },
 
     setupAudioPlayer() {
         const audioEl = document.getElementById('audio-el');
         const playBtn = document.getElementById('audio-play-big');
+        const voiceBtn = document.getElementById('audio-voice');
         if (!audioEl || !playBtn) return;
 
         playBtn.addEventListener('click', () => {
@@ -209,6 +220,24 @@ const Lees = {
             playBtn.classList.remove('is-playing');
             playBtn.setAttribute('aria-label', 'Speel voorlezing af');
         });
+
+        // Stem-toggle (man/vrouw): wissel bron, behoud positie + afspeelstatus
+        if (voiceBtn) {
+            voiceBtn.addEventListener('click', () => {
+                const ov = window.OV_AUDIO;
+                if (!ov || this._audioBookId == null) return;
+                const wasPlaying = !audioEl.paused;
+                const pos = audioEl.currentTime || 0;
+                ov.toggleVoice();
+                voiceBtn.textContent = ov.label();
+                audioEl.src = ov.src(this._audioBookId, this._audioChapter);
+                audioEl.addEventListener('loadedmetadata', function once() {
+                    audioEl.removeEventListener('loadedmetadata', once);
+                    try { audioEl.currentTime = Math.min(pos, audioEl.duration || pos); } catch (e) {}
+                    if (wasPlaying) audioEl.play();
+                });
+            });
+        }
     },
 
     renderChapterButtons(book) {

@@ -302,7 +302,9 @@ def generate_chapter(
         }
 
         t0 = time.time()
-        resp = requests.post(url, json=payload, headers=headers, timeout=300)
+        # 120s ruim voldoende voor één chunk van 80 woorden (~10-30s gezond);
+        # korter = vastgelopen server wordt sneller gedetecteerd door de supervisor.
+        resp = requests.post(url, json=payload, headers=headers, timeout=120)
         resp.raise_for_status()
 
         chunk_wav.write_bytes(resp.content)
@@ -376,6 +378,12 @@ def _parse_args() -> "argparse.Namespace":
                         "→ audio/{book}/{ch}-{voice}.mp3")
     p.add_argument("--label", default="",
                    help="Vrije suffix voor pilot-output (vergelijkingen)")
+    p.add_argument("--temperature", type=float, default=0.3,
+                   help="Generatie-temperature; hoger = meer intonatie/variatie "
+                        "(default 0.3)")
+    p.add_argument("--manifest",
+                   help="JSON-bestand [{book, chapters:[...]}] — verwerk veel "
+                        "boeken in één server-sessie (voor grote rollout)")
     return p.parse_args()
 
 
@@ -390,7 +398,17 @@ def main() -> None:
             "Run eerst prepare_voice_sample.py of geef --sample <basispad>."
         )
 
-    if args.book and args.chapters:
+    if args.manifest:
+        # Manifest = JSON-lijst [{"book":..., "chapters":[...]}, ...]
+        # Eén server-sessie verwerkt alle boeken (efficiënt voor grote rollout).
+        manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
+        jobs = []
+        for entry in manifest:
+            jobs += build_chapter_jobs(
+                entry["book"], entry["chapters"], pilot=args.pilot,
+                voice=args.voice, label=args.label,
+            )
+    elif args.book and args.chapters:
         chapters = _parse_chapters(args.chapters)
         jobs = build_chapter_jobs(
             args.book, chapters, pilot=args.pilot,
@@ -438,6 +456,7 @@ def main() -> None:
                     chapter,
                     ref_audio_path=ref_audio,
                     ref_text=ref_text,
+                    temperature=args.temperature,
                 )
             except Exception as exc:  # noqa: BLE001 — laat één hoofdstuk de run niet killen
                 label = f"{chapter['book']} {chapter['chapter']}"

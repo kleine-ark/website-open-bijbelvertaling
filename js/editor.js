@@ -55,14 +55,8 @@ const Editor = {
             });
         });
 
-        // Status klik op versnummer
-        const numCell = row.querySelector('.verse-num');
-        if (numCell) {
-            numCell.addEventListener('click', (e) => {
-                e.stopPropagation();
-                this.showStatusDropdown(e.target, row, bookId, chapterNum, verseNum);
-            });
-        }
+        // (Status-dropdown Concept/Review/Definitief op het versnummer is
+        //  uitgeschakeld — editor-functie, hoort niet in de leesweergave.)
     },
 
     saveVerse(row, bookId, chapterNum, verseNum) {

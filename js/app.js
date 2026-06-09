@@ -121,10 +121,17 @@ const App = {
         // Containers ook hide-en zodat ze geen ruimte innemen op hoofdstukken zonder audio
         const chfCenter = playBtn ? playBtn.closest('.chf-center') : null;
         const mfnAudio = playMob ? playMob.closest('.mfn-audio') : null;
+        const voiceBtn = document.getElementById('audio-voice');
+        const voiceMob = document.getElementById('audio-voice-mobile');
         if (!audioEl) return;
         try { audioEl.pause(); } catch (e) {}
-        const list = (window.AUDIO_AVAILABLE || {})[bookId] || [];
-        const show = list.includes(chapter);
+
+        // Onthoud huidig hoofdstuk voor de stem-toggle
+        App._audioBookId = bookId;
+        App._audioChapter = chapter;
+
+        const ov = window.OV_AUDIO;
+        const show = !!(ov && ov.available(bookId, chapter));
         const setHidden = (el, hide) => { if (el) el.classList.toggle('hidden', hide); };
         setHidden(playBtn, !show);
         setHidden(playMob, !show);
@@ -133,8 +140,12 @@ const App = {
         setHidden(scrubWrap, !show);
         setHidden(chfCenter, !show);
         setHidden(mfnAudio, !show);
+        setHidden(voiceBtn, !show);
+        setHidden(voiceMob, !show);
         if (!show) { audioEl.removeAttribute('src'); return; }
-        audioEl.src = `audio/${bookId}/${chapter}.mp3`;
+        audioEl.src = ov.src(bookId, chapter);
+        if (voiceBtn) voiceBtn.textContent = ov.label();
+        if (voiceMob) voiceMob.textContent = ov.label();
         if (playBtn) playBtn.classList.remove('is-playing');
         if (playMob) playMob.classList.remove('is-playing');
         // Reset scrubber
@@ -194,6 +205,30 @@ const App = {
         if (speedBtn) speedBtn.addEventListener('click', cycleSpeed);
         if (speedMob) speedMob.addEventListener('click', cycleSpeed);
 
+        // Stem-toggle (man/vrouw): wissel bron, behoud positie + afspeelstatus
+        const voiceBtn = document.getElementById('audio-voice');
+        const voiceMob = document.getElementById('audio-voice-mobile');
+        const toggleVoice = () => {
+            const ov = window.OV_AUDIO;
+            if (!ov || App._audioBookId == null) return;
+            const wasPlaying = !audioEl.paused;
+            const pos = audioEl.currentTime || 0;
+            ov.toggleVoice();
+            const lbl = ov.label();
+            if (voiceBtn) voiceBtn.textContent = lbl;
+            if (voiceMob) voiceMob.textContent = lbl;
+            // Opties-radio's synchroniseren
+            document.querySelectorAll('input[name="opt-stem"]').forEach(r => { r.checked = (r.value === ov.getVoice()); });
+            audioEl.src = ov.src(App._audioBookId, App._audioChapter);
+            audioEl.addEventListener('loadedmetadata', function once() {
+                audioEl.removeEventListener('loadedmetadata', once);
+                try { audioEl.currentTime = Math.min(pos, audioEl.duration || pos); } catch (e) {}
+                if (wasPlaying) audioEl.play();
+            });
+        };
+        if (voiceBtn) voiceBtn.addEventListener('click', toggleVoice);
+        if (voiceMob) voiceMob.addEventListener('click', toggleVoice);
+
         // Scrubber: doorspoelen + tijd-display
         if (scrubber) {
             audioEl.addEventListener('loadedmetadata', () => {
@@ -213,6 +248,51 @@ const App = {
             scrubber.addEventListener('change', () => {
                 audioEl.currentTime = parseFloat(scrubber.value);
                 scrubber._dragging = false;
+            });
+        }
+
+        // === Opties-paneel: stem (man/vrouw) + afspeelsnelheid ===
+        const storedSpeed = parseFloat(localStorage.getItem('ov_speed')) || 1;
+        audioEl.playbackRate = storedSpeed;
+        // Opgeslagen snelheid opnieuw toepassen bij elk nieuw fragment
+        audioEl.addEventListener('loadedmetadata', () => {
+            audioEl.playbackRate = parseFloat(localStorage.getItem('ov_speed')) || 1;
+        });
+        // Stem opnieuw laden met behoud van positie + status
+        const reloadVoice = () => {
+            const ov = window.OV_AUDIO;
+            if (!ov || App._audioBookId == null) return;
+            const wasPlaying = !audioEl.paused;
+            const pos = audioEl.currentTime || 0;
+            audioEl.src = ov.src(App._audioBookId, App._audioChapter);
+            const lbl = ov.label();
+            if (voiceBtn) voiceBtn.textContent = lbl;
+            if (voiceMob) voiceMob.textContent = lbl;
+            audioEl.addEventListener('loadedmetadata', function once() {
+                audioEl.removeEventListener('loadedmetadata', once);
+                try { audioEl.currentTime = Math.min(pos, audioEl.duration || pos); } catch (e) {}
+                if (wasPlaying) audioEl.play();
+            });
+        };
+        const ovHelper = window.OV_AUDIO;
+        document.querySelectorAll('input[name="opt-stem"]').forEach(r => {
+            if (ovHelper) r.checked = (r.value === ovHelper.getVoice());
+            r.addEventListener('change', () => {
+                if (!r.checked || !window.OV_AUDIO) return;
+                window.OV_AUDIO.setVoice(r.value);
+                reloadVoice();
+            });
+        });
+        const speedSel = document.getElementById('opt-audio-speed');
+        if (speedSel) {
+            speedSel.value = String(storedSpeed);
+            speedSel.addEventListener('change', () => {
+                const sp = parseFloat(speedSel.value) || 1;
+                localStorage.setItem('ov_speed', String(sp));
+                audioEl.playbackRate = sp;
+                const lbl = sp + '×';
+                if (speedBtn) speedBtn.textContent = lbl;
+                if (speedMob) speedMob.textContent = lbl;
             });
         }
     },
