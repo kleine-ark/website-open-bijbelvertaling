@@ -437,8 +437,11 @@
     padding: 3px 24px 4px;
 }
 #content.reading-mode.layout-eronder .verse-num {
-    display: inline;
+    display: inline !important;   /* wint van .verse-row .verse-num{display:block!important} */
+    text-align: left !important;
+    vertical-align: super;
     margin-right: 4px;
+    padding-right: 0;
 }
 /* Toon zichtbare cellen als block-paragrafen onder OV2026.
    Hide-rules blijven werken via display:none !important. */
@@ -2932,6 +2935,25 @@ body.show-tags .verse-tag {
 .chf-speed:hover { background: var(--gold, #cba449); color: #fff; }
 .chf-speed.hidden { display: none; }
 
+/* Stem-toggle (man/vrouw) — desktop */
+.chf-voice {
+    flex: 0 0 auto;
+    height: 26px;
+    min-width: 52px;
+    padding: 0 10px;
+    border-radius: 13px;
+    border: 1px solid var(--gold, #cba449);
+    background: rgba(203,164,73,0.1);
+    color: var(--navy, #142e42);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.chf-voice:hover { background: var(--gold, #cba449); color: #fff; }
+.chf-voice.hidden { display: none; }
+
 /* Scrubber (doorspoelen) */
 .chf-scrubber {
     flex: 1 1 auto;
@@ -3086,6 +3108,22 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     }
     .mfn-speed:hover { background: var(--gold, #cba449); color: var(--navy, #142e42); }
     .mfn-speed.hidden { display: none; }
+    .mfn-voice {
+        flex: 0 0 auto;
+        height: 28px;
+        min-width: 52px;
+        padding: 0 10px;
+        border-radius: 14px;
+        border: 1px solid var(--gold, #cba449);
+        background: rgba(203,164,73,0.15);
+        color: #fff;
+        font-family: var(--font-body);
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .mfn-voice:hover { background: var(--gold, #cba449); color: var(--navy, #142e42); }
+    .mfn-voice.hidden { display: none; }
 }
 
 /* === AI-concept-banner (boven verzen bij niet-geverifieerde hoofdstukken) === */
@@ -3314,6 +3352,11 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     margin-left: 2px;
     font-weight: 700;
 }
+/* Mobiele picker: GEEN 'nog niet nagekeken'-markering op hoofdstukken
+   (de gele achtergrond + • verwarren — zag eruit als 'geblokkeerd'). */
+.mp-item.unverified { color: inherit; background: none; }
+.mp-item.unverified:hover { background: rgba(203,164,73,0.08); }
+.mp-item.unverified::after { content: none; }
 
 /* Audio-container containers verbergen op hoofdstukken zonder voorlezing */
 .chf-center.hidden { display: none; }
@@ -4010,7 +4053,7 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 }
 /* Play-knop in dark mode: gouden omranding (donkere vulling, gouden driehoek). */
 :root[data-theme="donker"] .mfn-play {
-    background: rgba(18,18,18,0.6) !important;
+    background: #161616 !important;   /* ondoorzichtig, niet semi-transparant */
     border: 2px solid var(--gold) !important;
     color: var(--gold) !important;
 }
@@ -4033,4 +4076,10 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 /* Mobiel: geen kanttekeningen-checkbox in de opties (KT staat standaard uit). */
 @media (max-width: 768px) {
     label:has(#toggle-kt-popup) { display: none; }
+}
+
+/* Mobiel: de (lege) #content-topbar verbergen — gaf een grijze balk tussen de
+   mobiele boek/hoofdstuk-bar en de tekst; boek+hoofdstuk staan al in de topbar. */
+@media (max-width: 768px) {
+    #content-topbar { display: none !important; }
 }

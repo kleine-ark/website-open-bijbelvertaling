@@ -295,12 +295,19 @@ const MobileNav = {
 
     syncFromState() {
         if (!this.bookById) return;
+        // De URL-hash is leidend (boek én hoofdstuk samen). Navigation.* kan kort
+        // achterlopen na een boekwissel → gaf bv. 'Genesis 91' (oud hoofdstuk bij
+        // nieuw boek). Daarom hash eerst, Navigation alleen als fallback.
         const hashMatch = (location.hash || '').match(/#([a-z0-9]+)(?:\/(\d+))?/i);
-        const bookId = Navigation.currentBook || (hashMatch && hashMatch[1]);
-        // Hoofdstuk kan bij eerste mobiele load nog null zijn → val terug op URL-hash, anders 1.
-        const ch = Navigation.currentChapter || (hashMatch && hashMatch[2] ? parseInt(hashMatch[2], 10) : 1);
+        const bookId = (hashMatch && hashMatch[1]) || Navigation.currentBook;
         if (!bookId) return;
         const book = this.bookById[bookId];
+        let ch = (hashMatch && hashMatch[2]) ? parseInt(hashMatch[2], 10)
+                 : (Navigation.currentChapter || 1);
+        // Valideer tegen de hoofdstukken van dít boek (voorkomt onmogelijke nummers).
+        if (book && Array.isArray(book.chaptersIncluded) && book.chaptersIncluded.indexOf(ch) === -1) {
+            ch = book.chaptersIncluded[0];
+        }
 
         // Knop-label updaten — combineer boek + hoofdstuk in één label
         const bookLbl = document.querySelector('#mobile-book-btn .mp-label');

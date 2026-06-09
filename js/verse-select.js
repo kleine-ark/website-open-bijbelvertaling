@@ -321,7 +321,7 @@ const VerseSelect = {
         if (!modal) {
             modal = document.createElement('div');
             modal.id = 'vers-image-modal';
-            modal.style.cssText = 'position:fixed;inset:0;background:rgba(20,46,66,0.7);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;';
+            modal.style.cssText = 'position:fixed;inset:0;background:rgba(12,20,28,0.97);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;';
             modal.innerHTML = `
                 <div class="vers-image-dialog" style="background:#fff;border-radius:8px;padding:18px;max-width:680px;width:92vw;max-height:92vh;overflow:auto;display:flex;flex-direction:column;align-items:center;gap:12px;">
                     <canvas id="vers-image-canvas" style="max-width:100%;height:auto;border:1px solid #e5e1d8;border-radius:6px;background:#f8f6f2;"></canvas>
