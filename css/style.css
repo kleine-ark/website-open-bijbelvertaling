@@ -3962,10 +3962,10 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 /* Hero-citaat + wordmark liggen op het LICHTE schilderij → ook in dark mode
    donker (navy) houden met lichte schaduw, anders vallen ze weg. */
 :root[data-theme="donker"] .hero-quote,
-:root[data-theme="donker"] .hero-quote em,
+:root[data-theme="donker"] .hero-quote em { color: #000 !important; font-weight: 700 !important; text-shadow: 0 1px 4px rgba(255,255,255,0.75) !important; }
 :root[data-theme="donker"] .hero-mark-name,
 :root[data-theme="donker"] .hero-mark-id { color: var(--navy, #142e42) !important; text-shadow: 0 1px 3px rgba(255,255,255,0.6) !important; }
-:root[data-theme="donker"] .hero-quote .ref { color: var(--navy, #142e42) !important; text-shadow: 0 1px 3px rgba(255,255,255,0.7) !important; }
+:root[data-theme="donker"] .hero-quote .ref { color: #000 !important; font-weight: 700 !important; text-shadow: 0 1px 4px rgba(255,255,255,0.8) !important; }
 
 /* Inline `style="color:#fff"` op donker thema — laat staan (witte tekst op donker) */
 
@@ -4100,3 +4100,19 @@ body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row::a
 
 /* Stem (Man/Vrouw) en snelheid (1×) staan nu in het opties-paneel → uit de speler. */
 #audio-speed, #audio-voice, #audio-speed-mobile, #audio-voice-mobile { display: none !important; }
+
+/* Mobiele audio-scrubber: sleepbare voortgangsbalk bovenin de footer-nav. */
+.mfn-scrubber {
+    position: absolute;
+    left: 16px; right: 16px; top: -4px;
+    width: auto; margin: 0;
+    pointer-events: auto;
+    -webkit-appearance: none; appearance: none;
+    height: 5px; border-radius: 3px;
+    background: rgba(203,164,73,0.35);
+    accent-color: var(--gold);
+    cursor: pointer;
+}
+.mfn-scrubber.hidden { display: none; }
+.mfn-scrubber::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--gold); box-shadow: 0 1px 3px rgba(0,0,0,0.3); cursor: pointer; }
+.mfn-scrubber::-moz-range-thumb { width: 16px; height: 16px; border: none; border-radius: 50%; background: var(--gold); cursor: pointer; }

@@ -117,6 +117,7 @@ const App = {
         const speedBtn = document.getElementById('audio-speed');
         const speedMob = document.getElementById('audio-speed-mobile');
         const scrubWrap = document.getElementById('audio-scrubber-wrap');
+        const scrubMob = document.getElementById('audio-scrubber-mobile');
         const audioEl = document.getElementById('audio-el');
         // Containers ook hide-en zodat ze geen ruimte innemen op hoofdstukken zonder audio
         const chfCenter = playBtn ? playBtn.closest('.chf-center') : null;
@@ -138,6 +139,7 @@ const App = {
         setHidden(speedBtn, !show);
         setHidden(speedMob, !show);
         setHidden(scrubWrap, !show);
+        setHidden(scrubMob, !show);
         setHidden(chfCenter, !show);
         setHidden(mfnAudio, !show);
         setHidden(voiceBtn, !show);
@@ -229,25 +231,27 @@ const App = {
         if (voiceBtn) voiceBtn.addEventListener('click', toggleVoice);
         if (voiceMob) voiceMob.addEventListener('click', toggleVoice);
 
-        // Scrubber: doorspoelen + tijd-display
-        if (scrubber) {
+        // Scrubber: doorspoelen + tijd-display (desktop + mobiel)
+        const scrubbers = [document.getElementById('audio-scrubber'),
+                           document.getElementById('audio-scrubber-mobile')].filter(Boolean);
+        if (scrubbers.length) {
             audioEl.addEventListener('loadedmetadata', () => {
-                scrubber.max = audioEl.duration || 0;
+                scrubbers.forEach(s => { s.max = audioEl.duration || 0; });
                 if (totEl) totEl.textContent = fmt(audioEl.duration);
             });
             audioEl.addEventListener('timeupdate', () => {
-                if (!scrubber._dragging) {
-                    scrubber.value = audioEl.currentTime;
-                    if (curEl) curEl.textContent = fmt(audioEl.currentTime);
-                }
+                scrubbers.forEach(s => { if (!s._dragging) s.value = audioEl.currentTime; });
+                if (curEl) curEl.textContent = fmt(audioEl.currentTime);
             });
-            scrubber.addEventListener('input', () => {
-                scrubber._dragging = true;
-                if (curEl) curEl.textContent = fmt(parseFloat(scrubber.value));
-            });
-            scrubber.addEventListener('change', () => {
-                audioEl.currentTime = parseFloat(scrubber.value);
-                scrubber._dragging = false;
+            scrubbers.forEach(s => {
+                s.addEventListener('input', () => {
+                    s._dragging = true;
+                    if (curEl) curEl.textContent = fmt(parseFloat(s.value));
+                });
+                s.addEventListener('change', () => {
+                    audioEl.currentTime = parseFloat(s.value);
+                    s._dragging = false;
+                });
             });
         }
 
