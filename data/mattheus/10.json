@@ -1159,7 +1159,7 @@
       "number": 10,
       "textSV1888": "Noch male tot den weg, noch twee rokken, noch schoenen, noch staf; want de arbeider is zijn voedsel waardig.",
       "text1637": "Noch male tot den wech, noch [14] twee rocken, noch schoenen, noch staf. [g] Want de arbeyder is sijn voetsel weerdich.",
-      "text2026": "Noch male tot de weg, noch twee rokken, noch schoenen, noch staf; want de arbeider is zijn voedsel waard.",
+      "text2026": "Noch reiszak tot de weg, noch twee rokken, noch schoenen, noch staf; want de arbeider is zijn voedsel waard.",
       "marginNotes": [
         {
           "marker": "14",
@@ -1286,10 +1286,15 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Noch male tot de weg, noch<sup class=\"note-marker\" data-note=\"14\">14</sup> twee rokken, noch schoenen, noch staf;<sup class=\"note-marker\" data-note=\"g\">g</sup> want de arbeider is zijn voedsel waard.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Noch reiszak tot de weg, noch<sup class=\"note-marker\" data-note=\"14\">14</sup> twee rokken, noch schoenen, noch staf;<sup class=\"note-marker\" data-note=\"g\">g</sup> want de arbeider is zijn voedsel waard.</i></span>",
       "textSV1888_html": "Noch male tot den weg, noch<sup class=\"note-marker\" data-note=\"14\">14</sup> twee rokken, noch schoenen, noch staf;<sup class=\"note-marker\" data-note=\"g\">g</sup> want de arbeider is zijn voedsel waardig.",
       "text1637_html": "Noch male tot den wech, noch <sup class=\"note-marker\" data-note=\"14\">14</sup> twee rocken, noch schoenen, noch staf. <sup class=\"note-marker\" data-note=\"g\">g</sup> Want de arbeyder is sijn voetsel weerdich.",
       "phraseDiff": [
+        {
+          "old": "male",
+          "new": "reiszak",
+          "principe": "V760"
+        },
         {
           "old": "den",
           "new": "de",
@@ -2071,7 +2076,7 @@
       "number": 16,
       "textSV1888": "Ziet, Ik zende u als schapen in het midden der wolven; zijt dan voorzichtig gelijk de slangen, en oprecht gelijk de duiven.",
       "text1637": "[m] Siet, ick sende u als schapen in’t midden der wolven: Zijt dan voorsichtich gelijck de slangen, ende [20] oprecht gelijck de duyven.",
-      "text2026": "Zie, Ik zend u als schapen in het midden van de wolven; wees dan voorzichtig zoals de slangen, en oprecht zoals de duiven.",
+      "text2026": "Zie, Ik zend u als schapen in het midden van de wolven; wees dan voorzichtig gelijk de slangen, en oprecht gelijk de duiven.",
       "marginNotes": [
         {
           "marker": "m",
@@ -2210,7 +2215,7 @@
           "gloss": "〔dove"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup><span class=\"god-speaks\"><i> Zie, Ik zend u als schapen in het midden van de wolven; wees dan voorzichtig zoals de slangen, en oprecht zoals de duiven.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup><span class=\"god-speaks\"><i> Zie, Ik zend u als schapen in het midden van de wolven; wees dan voorzichtig gelijk de slangen, en oprecht gelijk de duiven.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup> Ziet, Ik zende u als schapen in het midden der wolven; zijt dan voorzichtig gelijk de slangen, en oprecht gelijk de duiven.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup> Siet, ick sende u als schapen in’t midden der wolven: Zijt dan voorsichtich gelijck de slangen, ende <sup class=\"note-marker\" data-note=\"20\">20</sup> oprecht gelijck de duyven.",
       "phraseDiff": [
@@ -2232,16 +2237,6 @@
         {
           "old": "zijt",
           "new": "wees",
-          "principe": null
-        },
-        {
-          "old": "gelijk",
-          "new": "zoals",
-          "principe": null
-        },
-        {
-          "old": "gelijk",
-          "new": "zoals",
           "principe": null
         }
       ]
