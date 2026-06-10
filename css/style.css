@@ -4083,3 +4083,17 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 @media (max-width: 768px) {
     #content-topbar { display: none !important; }
 }
+
+/* === Versnummers uit → verzen vloeien als doorlopende tekst (dichter op elkaar) ===
+   Alleen in de standaard "naast"-leesmodus; de "eronder"-layout (meerdere edities)
+   blijft per vers gestapeld. */
+body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row {
+    display: inline;
+    padding: 0;
+}
+body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row .col-2026 {
+    display: inline;
+}
+body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row::after {
+    content: " ";
+}
