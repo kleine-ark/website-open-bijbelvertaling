@@ -243,7 +243,7 @@
       "number": 3,
       "textSV1888": "De HEERE dan verhoorde de stem van Israël, en gaf de Kanaänieten over; en hij verbande hen en hun steden; en hij noemde den naam dier plaats Horma.",
       "text1637": "De HEERE dan verhoorde de stemme Israëls, ende [5] gaf de Canaaniten over, ende [6] hy verbandde haer, ende hare steden: ende [7] hy noemde den name dier plaetse [8] Horma.",
-      "text2026": "JAHWEH dan verhoorde de stem van Israël, en gaf de Kanaänieten over; en hij verbande hen en hun steden; en hij noemde de naam dier plaats Horma.",
+      "text2026": "JAHWEH dan verhoorde de stem van Israël, en gaf de Kanaänieten over; en hij verbande hen en hun steden; en hij noemde de naam van die plaats Horma.",
       "marginNotes": [
         {
           "marker": "5",
@@ -351,7 +351,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "JAHWEH dan verhoorde de stem van Israël, en<sup class=\"note-marker\" data-note=\"5\">5</sup> gaf de Kanaänieten over; en<sup class=\"note-marker\" data-note=\"6\">6</sup> hij verbande hen en hun steden; en<sup class=\"note-marker\" data-note=\"7\">7</sup> hij noemde de naam dier plaats<sup class=\"note-marker\" data-note=\"8\">8</sup> Horma.",
+      "text2026_html": "JAHWEH dan verhoorde de stem van Israël, en<sup class=\"note-marker\" data-note=\"5\">5</sup> gaf de Kanaänieten over; en<sup class=\"note-marker\" data-note=\"6\">6</sup> hij verbande hen en hun steden; en<sup class=\"note-marker\" data-note=\"7\">7</sup> hij noemde de naam van die plaats<sup class=\"note-marker\" data-note=\"8\">8</sup> Horma.",
       "textSV1888_html": "De HEERE dan verhoorde de stem van Israël, en<sup class=\"note-marker\" data-note=\"5\">5</sup> gaf de Kanaänieten over; en<sup class=\"note-marker\" data-note=\"6\">6</sup> hij verbande hen en hun steden; en<sup class=\"note-marker\" data-note=\"7\">7</sup> hij noemde den naam dier plaats<sup class=\"note-marker\" data-note=\"8\">8</sup> Horma.",
       "text1637_html": "De HEERE dan verhoorde de stemme Israëls, ende <sup class=\"note-marker\" data-note=\"5\">5</sup> gaf de Canaaniten over, ende <sup class=\"note-marker\" data-note=\"6\">6</sup> hy verbandde haer, ende hare steden: ende <sup class=\"note-marker\" data-note=\"7\">7</sup> hy noemde den name dier plaetse <sup class=\"note-marker\" data-note=\"8\">8</sup> Horma.",
       "phraseDiff": [
@@ -364,6 +364,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "dier",
+          "new": "van die",
+          "principe": null
         }
       ]
     },
@@ -2102,7 +2107,7 @@
       "number": 22,
       "textSV1888": "Laat mij door uw land trekken. Wij zullen niet afwijken in de akkers, noch in de wijngaarden; wij zullen het water der putten niet drinken; wij zullen op den koninklijken weg gaan, totdat wij uw landpale doorgetogen zijn.",
       "text1637": "Laet my door u lant trecken, [h] wy en sullen niet afwijcken in de ackers, noch inde wijngaerden, wy en sullen het water der putten niet drincken: wy sullen op den Conincklicken wech gaen, tot dat wy uwe lant-pale doorgetogen zijn.",
-      "text2026": "Laat mij door uw land trekken. Wij zullen niet afwijken in de akkers, noch in de wijngaarden; wij zullen het water van de putten niet drinken; wij zullen op de koninklijken weg gaan, totdat wij uw landpale doorgetogen zijn.",
+      "text2026": "Laat mij door uw land trekken. Wij zullen niet afwijken in de akkers, noch in de wijngaarden; wij zullen het water van de putten niet drinken; wij zullen op de koninklijke weg gaan, totdat wij uw landpale doorgetogen zijn.",
       "marginNotes": [
         {
           "marker": "h",
@@ -2199,7 +2204,7 @@
           "morph": "HNcmsc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Laat mij door uw land<sup class=\"note-marker\" data-note=\"h\">h</sup> trekken. Wij zullen niet afwijken in de akkers, noch in de wijngaarden; wij zullen het water van de putten niet drinken; wij zullen op de koninklijken weg gaan, totdat wij uw landpale doorgetogen zijn.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Laat mij door uw land<sup class=\"note-marker\" data-note=\"h\">h</sup> trekken. Wij zullen niet afwijken in de akkers, noch in de wijngaarden; wij zullen het water van de putten niet drinken; wij zullen op de koninklijke weg gaan, totdat wij uw landpale doorgetogen zijn.</i></span>",
       "textSV1888_html": "Laat mij door uw land<sup class=\"note-marker\" data-note=\"h\">h</sup> trekken. Wij zullen niet afwijken in de akkers, noch in de wijngaarden; wij zullen het water der putten niet drinken; wij zullen op den koninklijken weg gaan, totdat wij uw landpale doorgetogen zijn.",
       "text1637_html": "Laet my door u lant trecken, <sup class=\"note-marker\" data-note=\"h\">h</sup> wy en sullen niet afwijcken in de ackers, noch inde wijngaerden, wy en sullen het water der putten niet drincken: wy sullen op den Conincklicken wech gaen, tot dat wy uwe lant-pale doorgetogen zijn.",
       "phraseDiff": [
@@ -2209,8 +2214,8 @@
           "principe": "N2"
         },
         {
-          "old": "den",
-          "new": "de",
+          "old": "den koninklijken",
+          "new": "de koninklijke",
           "principe": "N1"
         }
       ]
