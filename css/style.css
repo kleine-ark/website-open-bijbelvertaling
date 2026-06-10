@@ -4152,3 +4152,20 @@ body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row::a
 :root[data-theme="donker"] .card,
 :root[data-theme="donker"] .info-card,
 :root[data-theme="donker"] .ms-table { background: var(--bg-surface) !important; border-color: var(--border-default) !important; color: var(--text-primary) !important; }
+
+/* === Engelen-citaten — BLAUW ===
+   Woorden van een (gewone) engel krijgen een blauwe citatiekleur. De
+   'Engel des HEEREN' in het OT is God zelf → die houdt de rode .god-speaks. */
+span.angel-speaks, .angel-speaks {
+    color: #1d4ed8 !important;
+    font-style: italic !important;
+    font-weight: bold !important;
+    display: inline !important;
+}
+.angel-speaks::before { content: '\201C'; }
+.angel-speaks::after { content: '\201D'; }
+:root[data-theme="donker"] .angel-speaks,
+:root[data-theme="donker"] .angel-speaks i { color: #7ab0ff !important; }
+#content.reading-mode .verse-row:first-of-type .col-2026 .angel-speaks::before { content: none; }
+body.citaten-uit .angel-speaks,
+body.citaten-uit .angel-speaks i { color: inherit !important; font-style: normal !important; font-weight: inherit !important; }
