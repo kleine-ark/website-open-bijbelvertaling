@@ -3945,7 +3945,7 @@
       "number": 33,
       "textSV1888": "En toen zij kwamen op de plaats, genaamd Hoofdschedelplaats, kruisigden zij Hem aldaar, en de kwaaddoeners, den een ter rechterzijde en den ander ter linkerzijde.",
       "text1637": "[q] Ende doe sy quamen op de plaetse genaemt [38] Hooftscheel-[plaetse], cruycighden sy hem aldaer, ende de quaetdoenders, den eenen ter rechter, ende den anderen ter slincker [zijde].",
-      "text2026": "En toen zij kwamen op de plaats, genaamd Hoofdschedelplaats, kruisigden zij Hem daar, en de kwaaddoeners, de één ter rechterzijde en de ander ter linkerzijde.",
+      "text2026": "En toen zij kwamen op de plaats, genaamd Hoofdschedelplaats, kruisigden zij Hem daar, en de kwaaddoeners, de één aan de rechterzijde en de ander aan de linkerzijde.",
       "marginNotes": [
         {
           "marker": "q",
@@ -4102,7 +4102,7 @@
           "gloss": "〔left"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"q\">q</sup> En toen zij kwamen op de plaats, genaamd<sup class=\"note-marker\" data-note=\"38\">38</sup> Hoofdschedelplaats, kruisigden zij Hem daar, en de kwaaddoeners, de één ter rechterzijde en de ander ter linkerzijde.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"q\">q</sup> En toen zij kwamen op de plaats, genaamd<sup class=\"note-marker\" data-note=\"38\">38</sup> Hoofdschedelplaats, kruisigden zij Hem daar, en de kwaaddoeners, de één aan de rechterzijde en de ander aan de linkerzijde.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"q\">q</sup> En toen zij kwamen op de plaats, genaamd<sup class=\"note-marker\" data-note=\"38\">38</sup> Hoofdschedelplaats, kruisigden zij Hem aldaar, en de kwaaddoeners, den een ter rechterzijde en den ander ter linkerzijde.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"q\">q</sup> Ende doe sy quamen op de plaetse genaemt <sup class=\"note-marker\" data-note=\"38\">38</sup> Hooftscheel-[<i>plaetse</i>], cruycighden sy hem aldaer, ende de quaetdoenders, den eenen ter rechter, ende den anderen ter slincker [<i>zijde</i>].",
       "phraseDiff": [
@@ -4112,14 +4112,19 @@
           "principe": "V36"
         },
         {
-          "old": "den een",
-          "new": "de één",
+          "old": "den een ter",
+          "new": "de één aan de",
           "principe": "N1"
         },
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "ter",
+          "new": "aan de",
+          "principe": null
         }
       ]
     },
