@@ -40,7 +40,7 @@ window.OV_AUDIO = {
     labels: { m: 'Man', v: 'Vrouw' },
     getVoice() {
         const v = localStorage.getItem('ov_voice');
-        return (v === 'v' || v === 'm') ? v : 'm';
+        return (v === 'v' || v === 'm') ? v : 'v';   // standaard: vrouwenstem
     },
     setVoice(v) {
         if (v === 'm' || v === 'v') localStorage.setItem('ov_voice', v);
