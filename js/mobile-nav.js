@@ -333,18 +333,11 @@ const MobileNav = {
             const atLast = bIdx === orderIds.length - 1 && ch === chs[chs.length - 1];
             const prevBtn = document.getElementById('mobile-prev-btn');
             const nextBtn = document.getElementById('mobile-next-btn');
-            if (prevBtn) prevBtn.style.visibility = atFirst ? 'hidden' : '';
-            if (nextBtn) nextBtn.style.visibility = atLast ? 'hidden' : '';
+            // Alleen aan de absolute uiteinden verbergen; elders blijven de knoppen
+            // actief — navigateRelative() steekt dan de boekgrens over.
+            if (prevBtn) { prevBtn.style.visibility = atFirst ? 'hidden' : ''; prevBtn.disabled = atFirst; }
+            if (nextBtn) { nextBtn.style.visibility = atLast ? 'hidden' : ''; nextBtn.disabled = atLast; }
         } catch (e) {}
-
-        // Disable prev/next aan de uiteinden
-        const prev = document.getElementById('mobile-prev-btn');
-        const next = document.getElementById('mobile-next-btn');
-        if (book && prev && next) {
-            const idx = book.chaptersIncluded.indexOf(ch);
-            prev.disabled = (idx <= 0);
-            next.disabled = (idx < 0 || idx >= book.chaptersIncluded.length - 1);
-        }
     },
 
     _openOpties() {
