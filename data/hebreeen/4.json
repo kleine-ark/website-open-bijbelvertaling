@@ -540,7 +540,7 @@
       "number": 4,
       "textSV1888": "Want Hij heeft ergens van den zevenden dag aldus gesproken: En God heeft op den zevenden dag van al Zijn werken gerust.",
       "text1637": "Want hy heeft [12] ergens van den sevensten [dagh] aldus gesproken, [b] Ende Godt heeft in den sevensten dagh [13] van alle sijne wercken [14] gerust.",
-      "text2026": "Want Hij heeft ergens van de zevenden dag zo gesproken: En God heeft op de zevenden dag van al Zijn werken gerust.",
+      "text2026": "Want Hij heeft ergens van de zevende dag zo gesproken: En God heeft op de zevende dag van al Zijn werken gerust.",
       "marginNotes": [
         {
           "marker": "12",
@@ -699,13 +699,13 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want Hij heeft<sup class=\"note-marker\" data-note=\"12\">12</sup> ergens van de zevenden dag zo gesproken:<sup class=\"note-marker\" data-note=\"b\">b</sup> En God heeft op de zevenden dag<sup class=\"note-marker\" data-note=\"13\">13</sup> van al Zijn werken<sup class=\"note-marker\" data-note=\"14\">14</sup> gerust.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want Hij heeft<sup class=\"note-marker\" data-note=\"12\">12</sup> ergens van de zevende dag zo gesproken:<sup class=\"note-marker\" data-note=\"b\">b</sup> En God heeft op de zevende dag<sup class=\"note-marker\" data-note=\"13\">13</sup> van al Zijn werken<sup class=\"note-marker\" data-note=\"14\">14</sup> gerust.</i></span>",
       "textSV1888_html": "Want Hij heeft<sup class=\"note-marker\" data-note=\"12\">12</sup> ergens van den zevenden dag aldus gesproken:<sup class=\"note-marker\" data-note=\"b\">b</sup> En God heeft op den zevenden dag<sup class=\"note-marker\" data-note=\"13\">13</sup> van al Zijn werken<sup class=\"note-marker\" data-note=\"14\">14</sup> gerust.",
       "text1637_html": "Want hy heeft <sup class=\"note-marker\" data-note=\"12\">12</sup> ergens van den sevensten [<i>dagh</i>] aldus gesproken, <sup class=\"note-marker\" data-note=\"b\">b</sup> Ende Godt heeft in den sevensten dagh <sup class=\"note-marker\" data-note=\"13\">13</sup> van alle sijne wercken <sup class=\"note-marker\" data-note=\"14\">14</sup> gerust.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
+          "old": "den zevenden",
+          "new": "de zevende",
           "principe": "N1"
         },
         {
@@ -714,8 +714,8 @@
           "principe": "V72"
         },
         {
-          "old": "den",
-          "new": "de",
+          "old": "den zevenden",
+          "new": "de zevende",
           "principe": "N1"
         }
       ]
@@ -945,7 +945,7 @@
       "number": 7,
       "textSV1888": "Zo bepaalt Hij wederom een zekeren dag, namelijk heden, door David zeggende, zo langen tijd daarna (gelijkerwijs gezegd is): Heden, indien gij Zijn stem hoort, zo verhardt uw harten niet.",
       "text1637": "So bepaelt [18] hy wederom eenen sekeren dagh, [namelijck] Heden, [19] door David seggende so langen [20] tijdt daer na (gelijckerwijs geseght is) [c] Heden indien ghy sijne stemme hooret, so en verhardet uwe herten niet.",
-      "text2026": "Zo bepaalt Hij opnieuw een zekeren dag, namelijk heden, door David zeggende, zo langen tijd daarna (zoals gezegd is): Heden, als u Zijn stem hoort, zo verhardt uw harten niet.",
+      "text2026": "Zo bepaalt Hij opnieuw een zekere dag, namelijk heden, door David zeggende, zo langen tijd daarna (zoals gezegd is): Heden, als u Zijn stem hoort, zo verhardt uw harten niet.",
       "marginNotes": [
         {
           "marker": "18",
@@ -1122,7 +1122,7 @@
           "gloss": "〔you"
         }
       ],
-      "text2026_html": "Zo bepaalt Hij opnieuw een zekeren dag, namelijk heden, door David zeggende, zo langen tijd daarna (zoals gezegd is): Heden, als u Zijn stem hoort, zo verhardt uw harten niet.",
+      "text2026_html": "Zo bepaalt Hij opnieuw een zekere dag, namelijk heden, door David zeggende, zo langen tijd daarna (zoals gezegd is): Heden, als u Zijn stem hoort, zo verhardt uw harten niet.",
       "textSV1888_html": "Zo bepaalt<sup class=\"note-marker\" data-note=\"18\">18</sup> Hij wederom een zekeren dag, namelijk heden,<sup class=\"note-marker\" data-note=\"19\">19</sup> door David zeggende, zo langen<sup class=\"note-marker\" data-note=\"20\">20</sup> tijd daarna (gelijkerwijs gezegd is):<sup class=\"note-marker\" data-note=\"c\">c</sup> Heden, indien gij Zijn stem hoort, zo verhardt uw harten niet.",
       "text1637_html": "So bepaelt <sup class=\"note-marker\" data-note=\"18\">18</sup> hy wederom eenen sekeren dagh, [<i>namelijck</i>] Heden, <sup class=\"note-marker\" data-note=\"19\">19</sup> door David seggende so langen <sup class=\"note-marker\" data-note=\"20\">20</sup> tijdt daer na (gelijckerwijs geseght is) <sup class=\"note-marker\" data-note=\"c\">c</sup> Heden indien ghy sijne stemme hooret, so en verhardet uwe herten niet.",
       "phraseDiff": [
@@ -1130,6 +1130,11 @@
           "old": "wederom",
           "new": "opnieuw",
           "principe": "V6"
+        },
+        {
+          "old": "zekeren",
+          "new": "zekere",
+          "principe": null
         },
         {
           "old": "(gelijkerwijs",
@@ -1147,7 +1152,7 @@
       "number": 8,
       "textSV1888": "Want indien Jozua hen in de rust gebracht heeft, zo had Hij daarna niet gesproken van een anderen dag.",
       "text1637": "Want indien [21] Iesus haer [22] inde ruste gebracht heeft, soo en hadde hy daer nae niet gesproken van eenen anderen dagh.",
-      "text2026": "Want als Jozua hen in de rust gebracht heeft, zo had Hij daarna niet gesproken van een anderen dag.",
+      "text2026": "Want als Jozua hen in de rust gebracht heeft, zo had Hij daarna niet gesproken van een andere dag.",
       "marginNotes": [
         {
           "marker": "21",
@@ -1244,7 +1249,7 @@
           "gloss": "〔day"
         }
       ],
-      "text2026_html": "Want als<sup class=\"note-marker\" data-note=\"21\">21</sup> Jozua hen<sup class=\"note-marker\" data-note=\"22\">22</sup> in de rust gebracht heeft, zo had Hij daarna niet gesproken van een anderen dag.",
+      "text2026_html": "Want als<sup class=\"note-marker\" data-note=\"21\">21</sup> Jozua hen<sup class=\"note-marker\" data-note=\"22\">22</sup> in de rust gebracht heeft, zo had Hij daarna niet gesproken van een andere dag.",
       "textSV1888_html": "Want indien<sup class=\"note-marker\" data-note=\"21\">21</sup> Jozua hen<sup class=\"note-marker\" data-note=\"22\">22</sup> in de rust gebracht heeft, zo had Hij daarna niet gesproken van een anderen dag.",
       "text1637_html": "Want indien <sup class=\"note-marker\" data-note=\"21\">21</sup> Iesus haer <sup class=\"note-marker\" data-note=\"22\">22</sup> inde ruste gebracht heeft, soo en hadde hy daer nae niet gesproken van eenen anderen dagh.",
       "phraseDiff": [
@@ -1252,6 +1257,11 @@
           "old": "indien",
           "new": "als",
           "principe": "V41"
+        },
+        {
+          "old": "anderen",
+          "new": "andere",
+          "principe": null
         }
       ]
     },
