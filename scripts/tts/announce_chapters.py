@@ -58,15 +58,18 @@ def synth_phrase(text: str, ref_audio: str, ref_text: str, out_mp3: Path,
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--voice", required=True, choices=["m", "v"], help="stem-suffix m/v")
-    ap.add_argument("--sample", required=True,
-                    help="basispad voice-clone-referentie (zonder extensie); {sample}.wav + {sample}.txt")
+    ap.add_argument("--sample", default=None,
+                    help="basispad voice-clone-referentie (zonder extensie); {sample}.wav + {sample}.txt. "
+                         "Default: audio/_pilot/_sample/voice-male (m) of voice-female (v).")
     ap.add_argument("--max", type=int, default=150, help="hoogste hoofdstuknummer (Psalmen = 150)")
     ap.add_argument("--min", type=int, default=1)
     ap.add_argument("--overwrite", action="store_true", help="bestaande clips opnieuw genereren")
     args = ap.parse_args()
 
-    ref_wav = PROJECT_ROOT / f"{args.sample}.wav"
-    ref_txt = PROJECT_ROOT / f"{args.sample}.txt"
+    sample = args.sample or ("audio/_pilot/_sample/voice-male" if args.voice == "m"
+                             else "audio/_pilot/_sample/voice-female")
+    ref_wav = PROJECT_ROOT / f"{sample}.wav"
+    ref_txt = PROJECT_ROOT / f"{sample}.txt"
     if not ref_wav.exists() or not ref_txt.exists():
         sys.exit(f"Referentie ontbreekt: {ref_wav} / {ref_txt}")
     ref_text = ref_txt.read_text(encoding="utf-8").strip()
