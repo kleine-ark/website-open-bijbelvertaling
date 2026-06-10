@@ -4097,3 +4097,6 @@ body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row .c
 body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row::after {
     content: " ";
 }
+
+/* Stem (Man/Vrouw) en snelheid (1×) staan nu in het opties-paneel → uit de speler. */
+#audio-speed, #audio-voice, #audio-speed-mobile, #audio-voice-mobile { display: none !important; }
