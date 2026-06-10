@@ -1,6 +1,28 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-06-10",
+      "versie": "v0.18.3",
+      "items": [
+        {
+          "type": "feature",
+          "beschrijving": "Audio-opties (mannen-/vrouwenstem + afspeelsnelheid) in het opties-paneel; stem-/snelheidsknoppen uit de speler. Voorlezing standaard vrouwenstem."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Versnummers uit -> verzen lopen door als doorlopende prozatekst (dichter op elkaar)."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Mobiel: 'vorige/volgende' steekt nu de boekgrens over (hoofdstuk 1 -> laatste hoofdstuk vorige boek) i.p.v. uitgegrijsde knop; KT-knop -> zoekicoon; lege grijze balk weg; play-knop ondoorzichtig (dark); 'Genesis 91'-labelbug; geen 'niet-nagekeken'-markering in picker; Concept/Review/Definitief-dropdown verwijderd."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Verschillen werkt in Eronder-layout; grondteksten + contact dark mode; wiki thema-sync + inklapbaar menu; principes op nummer gesorteerd; share-afbeelding overlay ondoorzichtig."
+        }
+      ]
+    },
+    {
       "datum": "2026-06-08",
       "versie": "v0.18.1",
       "items": [
