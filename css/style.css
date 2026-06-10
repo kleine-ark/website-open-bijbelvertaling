@@ -4116,3 +4116,39 @@ body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row::a
 .mfn-scrubber.hidden { display: none; }
 .mfn-scrubber::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--gold); box-shadow: 0 1px 3px rgba(0,0,0,0.3); cursor: pointer; }
 .mfn-scrubber::-moz-range-thumb { width: 16px; height: 16px; border: none; border-radius: 50%; background: var(--gold); cursor: pointer; }
+
+/* ===========================================================================
+   DARK MODE — GEDEELDE, OVERERFBARE REGELS (één centrale plek)
+   Nieuwe pagina's die deze klassen gebruiken worden vanzelf donker; geen
+   per-pagina dark-CSS meer nodig. Liever var(--bg-surface) dan #fff in pagina's.
+   =========================================================================== */
+/* Zoek-overlay */
+:root[data-theme="donker"] .search-overlay .search-panel,
+:root[data-theme="donker"] .search-overlay .search-header,
+:root[data-theme="donker"] .search-overlay .search-results { background: var(--bg-surface) !important; }
+:root[data-theme="donker"] .search-overlay .search-categories,
+:root[data-theme="donker"] .search-overlay .search-more { background: var(--bg-surface-alt) !important; color: var(--text-secondary) !important; }
+:root[data-theme="donker"] .search-overlay .search-header { border-color: var(--border-default) !important; }
+:root[data-theme="donker"] .search-overlay #search-input,
+:root[data-theme="donker"] .search-overlay input[type="text"],
+:root[data-theme="donker"] .search-overlay input[type="search"] { color: var(--text-primary) !important; background: var(--bg-surface) !important; }
+:root[data-theme="donker"] .search-overlay .search-result { border-color: var(--border-soft) !important; color: var(--text-primary) !important; }
+:root[data-theme="donker"] .search-overlay .search-result-text { color: var(--text-primary) !important; }
+:root[data-theme="donker"] .search-overlay .search-result:hover,
+:root[data-theme="donker"] .search-overlay .search-result:focus { background: var(--bg-elevated) !important; }
+:root[data-theme="donker"] .search-overlay .search-close:hover { background: var(--bg-elevated) !important; color: var(--text-primary) !important; }
+:root[data-theme="donker"] .search-overlay .search-category,
+:root[data-theme="donker"] .search-overlay .search-cat { color: var(--text-secondary) !important; }
+
+/* Hamburger-uitklapmenu (mobiel) → zwart i.p.v. wit */
+:root[data-theme="donker"] #topnav-links.open,
+:root[data-theme="donker"] .topnav-links.open { background: #000 !important; border-color: var(--border-default) !important; }
+:root[data-theme="donker"] #topnav-links.open a { color: var(--text-primary) !important; }
+
+/* Generieke content-kaarten/boxen: vang hardgecodeerde witte achtergronden op. */
+:root[data-theme="donker"] .contact-card,
+:root[data-theme="donker"] .toc,
+:root[data-theme="donker"] .codex-card,
+:root[data-theme="donker"] .card,
+:root[data-theme="donker"] .info-card,
+:root[data-theme="donker"] .ms-table { background: var(--bg-surface) !important; border-color: var(--border-default) !important; color: var(--text-primary) !important; }
