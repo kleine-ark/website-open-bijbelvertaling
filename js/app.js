@@ -144,8 +144,17 @@ const App = {
         setHidden(mfnAudio, !show);
         setHidden(voiceBtn, !show);
         setHidden(voiceMob, !show);
-        if (!show) { audioEl.removeAttribute('src'); return; }
+        if (!show) { audioEl.removeAttribute('src'); App._autoplayNext = false; return; }
         audioEl.src = ov.src(bookId, chapter);
+        // Auto-doorspelen: na 'ended' navigeren we naar het volgende hoofdstuk;
+        // zodra dat fragment geladen is, meteen verder afspelen.
+        if (App._autoplayNext) {
+            App._autoplayNext = false;
+            audioEl.addEventListener('loadedmetadata', function once() {
+                audioEl.removeEventListener('loadedmetadata', once);
+                audioEl.play().catch(() => {});
+            });
+        }
         if (voiceBtn) voiceBtn.textContent = ov.label();
         if (voiceMob) voiceMob.textContent = ov.label();
         if (playBtn) playBtn.classList.remove('is-playing');
@@ -192,6 +201,14 @@ const App = {
         audioEl.addEventListener('pause', () => {
             if (playBtn) playBtn.classList.remove('is-playing');
             if (playMob) playMob.classList.remove('is-playing');
+        });
+        // Einde hoofdstuk → automatisch doorspelen naar het volgende hoofdstuk
+        // (navigeert ook over de boekgrens; _updateAudioPlayer start het fragment).
+        audioEl.addEventListener('ended', () => {
+            App._autoplayNext = true;
+            if (typeof Navigation !== 'undefined' && Navigation.navigateRelative) {
+                Navigation.navigateRelative(1);
+            }
         });
 
         // Snelheid: 1× → 1.25× → 1.5× → 2× → 0.75× → 1× (gedeeld tussen desktop + mobile)
