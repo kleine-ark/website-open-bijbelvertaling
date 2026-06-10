@@ -168,27 +168,41 @@ const App = {
         if (tot) tot.textContent = '0:00';
     },
 
-    // Kondig "Hoofdstuk N" aan via browser-spraak, start daarna de voorlezing.
+    // Kondig "Hoofdstuk N" aan en start daarna de voorlezing.
+    // Voorkeur: een vooraf gegenereerde clip in DEZELFDE stem
+    // (audio/_announce/{m|v}/{n}.mp3). Niet aanwezig → browser-spraak als fallback.
     _announceThenPlay(audioEl, chapter) {
         const start = () => { try { audioEl.play().catch(() => {}); } catch (e) {} };
+        if (chapter == null) { start(); return; }
+        const voice = (window.OV_AUDIO && OV_AUDIO.getVoice) ? OV_AUDIO.getVoice() : 'v';
+        let done = false;
+        const once = (fn) => { if (!done) { done = true; fn(); } };
+        try {
+            const clip = new Audio(`audio/_announce/${voice}/${chapter}.mp3`);
+            clip.addEventListener('ended', () => once(start));
+            clip.addEventListener('error', () => once(() => App._announceTTS(chapter, start)));
+            clip.play().catch(() => once(() => App._announceTTS(chapter, start)));
+        } catch (e) {
+            once(() => App._announceTTS(chapter, start));
+        }
+    },
+
+    // Fallback: spreek "Hoofdstuk N" uit via de browser-spraak, dan callback.
+    _announceTTS(chapter, then) {
+        let started = false;
+        const go = () => { if (!started) { started = true; then(); } };
         try {
             const synth = window.speechSynthesis;
-            if (synth && window.SpeechSynthesisUtterance && chapter != null) {
+            if (synth && window.SpeechSynthesisUtterance) {
                 const u = new SpeechSynthesisUtterance('Hoofdstuk ' + chapter);
-                u.lang = 'nl-NL';
-                u.rate = 0.95;
-                let started = false;
-                const go = () => { if (!started) { started = true; start(); } };
-                u.onend = go;
-                u.onerror = go;
-                synth.cancel();
-                synth.speak(u);
-                // Fallback voor browsers waar onend uitblijft
+                u.lang = 'nl-NL'; u.rate = 0.95;
+                u.onend = go; u.onerror = go;
+                synth.cancel(); synth.speak(u);
                 setTimeout(go, 2500);
                 return;
             }
         } catch (e) {}
-        start();
+        go();
     },
 
     _setupAudioPlayer() {
