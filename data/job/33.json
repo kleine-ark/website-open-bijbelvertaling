@@ -332,7 +332,7 @@
       "number": 6,
       "textSV1888": "Zie, ik ben Godes, gelijk gij; uit het leem ben ik ook afgesneden.",
       "text1637": "[a] Siet, [9] ick ben Godts, gelijck ghy: [11] uyt den leeme ben ick oock afgesneden.",
-      "text2026": "Zie, ik ben van God, zoals u; uit het leem ben ik ook afgesneden.",
+      "text2026": "Zie, ik ben van God, gelijk u; uit het leem ben ik ook afgesneden.",
       "marginNotes": [
         {
           "marker": "a",
@@ -398,13 +398,18 @@
           "morph": "HPp1cs"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"direct-speech\"><i> Zie,<sup class=\"note-marker\" data-note=\"9\">9</sup> ik ben van God, zoals u; uit het leem ben ik ook afgesneden.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"direct-speech\"><i> Zie,<sup class=\"note-marker\" data-note=\"9\">9</sup> ik ben van God, gelijk u; uit het leem ben ik ook afgesneden.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Zie,<sup class=\"note-marker\" data-note=\"9\">9</sup> ik ben Godes, gelijk gij; uit het leem ben ik ook afgesneden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Siet, <sup class=\"note-marker\" data-note=\"9\">9</sup> ick ben Godts, gelijck ghy: <sup class=\"note-marker\" data-note=\"11\">11</sup> uyt den leeme ben ick oock afgesneden.",
       "phraseDiff": [
         {
-          "old": "Godes, gelijk gij;",
-          "new": "van God, zoals u;",
+          "old": "Godes,",
+          "new": "van God,",
+          "principe": null
+        },
+        {
+          "old": "gij;",
+          "new": "u;",
           "principe": "A1"
         }
       ]
