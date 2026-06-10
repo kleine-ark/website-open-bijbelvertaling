@@ -928,7 +928,7 @@
       "number": 6,
       "textSV1888": "En God zeide tot hem in den droom: Ik heb ook geweten, dat gij dit in oprechtheid uws harten gedaan hebt, en Ik heb u ook belet van tegen Mij te zondigen; daarom heb Ik u niet toegelaten, haar aan te roeren.",
       "text1637": "Ende Godt seyde tot hem in den droom: Ick hebbe oock geweten, dat [15] ghy dit in oprechticheyt uwes herten gedaen hebt, ende ick heb u oock belett [16] van tegen my te sondigen: daerom en hebbe ick u niet [17] toegelaten, haer aen te roeren.",
-      "text2026": "En God zei tot hem in de droom: Ik heb ook geweten, dat u dit in oprechtheid van uw harten gedaan hebt, en Ik heb u ook belet van tegen Mij te zondigen; daarom heb Ik u niet toegelaten, haar aan te roeren.",
+      "text2026": "En God zei tot hem in de droom: Ik heb ook geweten, dat u dit in oprechtheid van uw hart gedaan hebt, en Ik heb u ook belet van tegen Mij te zondigen; daarom heb Ik u niet toegelaten, haar aan te roeren.",
       "marginNotes": [
         {
           "marker": "15",
@@ -1138,7 +1138,7 @@
           "morph": "HR/Sp3fs"
         }
       ],
-      "text2026_html": "En God zei tot hem in de droom: <span class=\"god-speaks\"><i>Ik heb ook geweten, dat u dit in oprechtheid van uw harten gedaan hebt, en Ik heb u ook belet van tegen Mij te zondigen; daarom heb Ik u niet toegelaten, haar aan te roeren.</i></span>",
+      "text2026_html": "En God zei tot hem in de droom: <span class=\"god-speaks\"><i>Ik heb ook geweten, dat u dit in oprechtheid van uw hart gedaan hebt, en Ik heb u ook belet van tegen Mij te zondigen; daarom heb Ik u niet toegelaten, haar aan te roeren.</i></span>",
       "textSV1888_html": "En God zeide tot hem in den droom: Ik heb ook geweten, dat<sup class=\"note-marker\" data-note=\"15\">15</sup> gij dit in oprechtheid uws harten gedaan hebt, en Ik heb u ook belet<sup class=\"note-marker\" data-note=\"16\">16</sup> van tegen Mij te zondigen; daarom heb Ik u niet<sup class=\"note-marker\" data-note=\"17\">17</sup> toegelaten, haar aan te roeren.",
       "text1637_html": "Ende Godt seyde tot hem in den droom: Ick hebbe oock gewete<i>n</i>, dat <sup class=\"note-marker\" data-note=\"15\">15</sup> ghy dit in oprechticheyt uwes herten gedaen hebt, ende ick heb u oock belett <sup class=\"note-marker\" data-note=\"16\">16</sup> van tegen my te sondigen: daerom en hebbe ick u niet <sup class=\"note-marker\" data-note=\"17\">17</sup> toegelaten, haer aen te roeren.",
       "phraseDiff": [
@@ -1158,8 +1158,8 @@
           "principe": "A1"
         },
         {
-          "old": "uws",
-          "new": "van uw",
+          "old": "uws harten",
+          "new": "van uw hart",
           "principe": "V200"
         }
       ]
@@ -2232,7 +2232,7 @@
       "number": 13,
       "textSV1888": "En het is geschied, als God mij uit mijns vaders huis deed dwalen, zo sprak ik tot haar: Dit zij uw weldadigheid, die gij bij mij doen zult; aan alle plaatsen waar wij komen zullen, zeg van mij: Hij is mijn broeder!",
       "text1637": "Ende het is geschiet, als my Godt uyt mijnes vaders huys [32] dede dwalen, so sprack ick tot haer: Dit zy uwe weldadicheyt, die ghy by my doen sult; [33] aen alle plaetse daer wy komen sullen, [b] segt van my, Hy is mijn broeder.",
-      "text2026": "En het is geschied, als God mij uit van mijn vader huis deed dwalen, zo sprak ik tot haar: Dit zij uw weldadigheid, die u bij mij doen zult; aan alle plaatsen waar wij komen zullen, zeg van mij: Hij is mijn broer!",
+      "text2026": "En het is geschied, als God mij uit het huis van mijn vader deed dwalen, zo sprak ik tot haar: Dit zij uw weldadigheid, die u bij mij doen zult; aan alle plaatsen waar wij komen zullen, zeg van mij: Hij is mijn broer!",
       "marginNotes": [
         {
           "marker": "32",
@@ -2448,14 +2448,19 @@
           "morph": "HPp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En het is geschied, als God mij uit van mijn vader huis deed dwalen, zo sprak ik tot haar: Dit zij uw weldadigheid, die u bij mij doen zult; aan alle plaatsen waar wij komen zullen, zeg van mij: Hij is mijn broer!</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En het is geschied, als God mij uit het huis van mijn vader deed dwalen, zo sprak ik tot haar: Dit zij uw weldadigheid, die u bij mij doen zult; aan alle plaatsen waar wij komen zullen, zeg van mij: Hij is mijn broer!</i></span>",
       "textSV1888_html": "En het is geschied, als God mij uit mijns vaders huis<sup class=\"note-marker\" data-note=\"32\">32</sup> deed dwalen, zo sprak ik tot haar: Dit zij uw weldadigheid, die gij bij mij doen zult;<sup class=\"note-marker\" data-note=\"33\">33</sup> aan alle plaatsen waar wij komen zullen,<sup class=\"note-marker\" data-note=\"b\">b</sup> zeg van mij: Hij is mijn broeder!",
       "text1637_html": "Ende het is geschiet, als my Godt uyt mijnes vaders huys <sup class=\"note-marker\" data-note=\"32\">32</sup> dede dwalen, so sprack ick tot haer: Dit zy uwe weldadicheyt, die ghy by my doen sult; <sup class=\"note-marker\" data-note=\"33\">33</sup> aen alle plaetse daer wy komen sullen, <sup class=\"note-marker\" data-note=\"b\">b</sup> segt van my, Hy is mijn broeder.",
       "phraseDiff": [
         {
           "old": "mijns vaders",
-          "new": "van mijn vader",
+          "new": "het",
           "principe": "O12"
+        },
+        {
+          "old": "",
+          "new": "van mijn vader",
+          "principe": null
         },
         {
           "old": "gij",

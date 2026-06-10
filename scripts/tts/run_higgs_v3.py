@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import signal
 import subprocess
 import sys
@@ -59,8 +60,10 @@ SERVER_PORT = 8765  # gebruik niet-standaard poort zodat we niet conflicteren
 # Uitspraak-lexicon eenmalig laden (woord -> herspelling voor betere klemtoon)
 LEXICON = load_lexicon()
 
-# Chunking: v3 max tokens per call is onbekend, maar we zijn voorzichtig
-MAX_CHUNK_WORDS = 80   # ~400–600 chars per chunk; korter = veiliger voor eerste run
+# Chunking: kleiner = vaker een zinsgrens = vaker een pauze tussen zinnen.
+MAX_CHUNK_WORDS = 40
+# Stilte (ms) die tussen opeenvolgende chunks wordt geplakt → pauze tussen zinnen.
+PAUSE_MS = 500
 
 def _parse_chapters(value: str) -> list[int]:
     """Parseer '1', '1,2,3' of '1-5' naar een lijst integers."""
@@ -165,15 +168,43 @@ def normalize_text(text: str) -> str:
     return text
 
 
+_SENT_SPLIT = re.compile(r"(?<=[.!?])\s+")
+
+
 def chunk_text(text: str, max_words: int = MAX_CHUNK_WORDS) -> list[str]:
-    words = text.split()
-    chunks = []
-    for i in range(0, len(words), max_words):
-        chunk = " ".join(words[i : i + max_words])
-        if not chunk.endswith((".", "!", "?", ",", ";", '"', "'")):
-            chunk += "."
-        chunks.append(chunk)
-    return chunks
+    """Splits in chunks die ALTIJD op een zinsgrens eindigen.
+
+    Zinnen worden gegroepeerd tot ~max_words; we breken nooit middenin een zin.
+    Hierdoor valt elke chunk-grens (waar we straks stilte tussen plakken) samen
+    met een zinseinde → natuurlijke, langere pauzes tussen zinnen.
+    Een enkele zin langer dan max_words wordt alsnog op woorden gehakt (zeldzaam).
+    """
+    sentences = [s.strip() for s in _SENT_SPLIT.split(text.strip()) if s.strip()]
+    chunks: list[str] = []
+    cur: list[str] = []
+    cur_words = 0
+    for sent in sentences:
+        n = len(sent.split())
+        if n > max_words and not cur:
+            # losse zin te lang → op woorden hakken
+            w = sent.split()
+            for i in range(0, len(w), max_words):
+                chunks.append(" ".join(w[i : i + max_words]))
+            continue
+        if cur_words + n > max_words and cur:
+            chunks.append(" ".join(cur))
+            cur, cur_words = [], 0
+        cur.append(sent)
+        cur_words += n
+    if cur:
+        chunks.append(" ".join(cur))
+    # garandeer eind-leesteken per chunk
+    out = []
+    for c in chunks:
+        if not c.endswith((".", "!", "?", ",", ";", '"', "'")):
+            c += "."
+        out.append(c)
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -313,12 +344,34 @@ def generate_chapter(
 
     total_gen = time.time() - start_time
 
-    # Aaneenschakelen met ffmpeg
-    print(f"  Aaneenschakelen {len(wav_chunks)} chunks...")
+    # Aaneenschakelen met ffmpeg, met stilte tussen de chunks (pauze tussen zinnen)
+    print(f"  Aaneenschakelen {len(wav_chunks)} chunks (pauze {PAUSE_MS}ms)...")
+    silence_wav = out_mp3.with_suffix(".silence.wav")
+    if PAUSE_MS > 0 and wav_chunks:
+        # Stilte in exact hetzelfde formaat als de chunks (anders faalt -c copy)
+        probe = subprocess.run(
+            ["ffprobe", "-v", "quiet", "-print_format", "json", "-show_streams",
+             str(wav_chunks[0])],
+            capture_output=True, text=True,
+        )
+        st = (json.loads(probe.stdout).get("streams", [{}])[0]) if probe.stdout else {}
+        sr = st.get("sample_rate", "24000")
+        ch = st.get("channels", 1)
+        codec = st.get("codec_name", "pcm_s16le")
+        subprocess.run(
+            ["ffmpeg", "-y", "-f", "lavfi",
+             "-i", f"anullsrc=r={sr}:cl={'mono' if ch == 1 else 'stereo'}",
+             "-t", f"{PAUSE_MS / 1000:.3f}", "-c:a", codec, str(silence_wav)],
+            check=True, capture_output=True,
+        )
+
     concat_list = out_mp3.with_suffix(".concat.txt")
-    concat_list.write_text(
-        "\n".join(f"file '{str(w.absolute())}'" for w in wav_chunks), encoding="utf-8"
-    )
+    lines = []
+    for idx, w in enumerate(wav_chunks):
+        lines.append(f"file '{str(w.absolute())}'")
+        if PAUSE_MS > 0 and idx < len(wav_chunks) - 1 and silence_wav.exists():
+            lines.append(f"file '{str(silence_wav.absolute())}'")
+    concat_list.write_text("\n".join(lines), encoding="utf-8")
 
     out_wav = out_mp3.with_suffix(".wav")
     subprocess.run(
@@ -326,6 +379,7 @@ def generate_chapter(
          "-c", "copy", str(out_wav)],
         check=True, capture_output=True,
     )
+    silence_wav.unlink(missing_ok=True)
 
     # WAV → MP3 128k mono
     subprocess.run(

@@ -998,7 +998,7 @@
       "number": 7,
       "textSV1888": "De HEERE, de God des hemels, Die mij uit mijns vaders huis en uit het land mijner maagschap genomen heeft, en Die tot mij gesproken heeft, en Die mij gezworen heeft, zeggende: Aan uw zaad zal Ik dit land geven! Die Zelf zal Zijn Engel voor uw aangezicht zenden, dat gij voor mijn zoon van daar een vrouw neemt.",
       "text1637": "[c] De HEERE de Godt des hemels, die my uyt mijnes vaders huys, ende uyt het lant mijner maechschap genomen heeft, ende die tot my gesproken heeft, ende die my gesworen heeft, seggende, [d] Uwen zade sal ick dit lant geven; die selve sal sijnen Engel voor u aengesichte senden, dat ghy mijnen sone van daer eene vrouwe neemt.",
-      "text2026": "De JAHWEH, de God van de hemel, Die mij uit van mijn vader huis en uit het land van mijn familie genomen heeft, en Die tot mij gesproken heeft, en Die mij gezworen heeft, zeggende: Aan uw zaad zal Ik dit land geven! Die Zelf zal Zijn Engel voor uw aangezicht zenden, dat u voor mijn zoon van daar een vrouw neemt.",
+      "text2026": "De JAHWEH, de God van de hemel, Die mij uit het huis van mijn vader en uit het land van mijn familie genomen heeft, en Die tot mij gesproken heeft, en Die mij gezworen heeft, zeggende: Aan uw zaad zal Ik dit land geven! Die Zelf zal Zijn Engel voor uw aangezicht zenden, dat u voor mijn zoon van daar een vrouw neemt.",
       "marginNotes": [
         {
           "marker": "c",
@@ -1230,7 +1230,7 @@
           "morph": "HR/D"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>De JAHWEH, de God van de hemel, Die mij uit van mijn vader huis en uit het land van mijn familie genomen heeft, en Die tot mij gesproken heeft, en Die mij gezworen heeft, zeggende: Aan uw zaad zal Ik dit land geven! Die Zelf zal Zijn Engel voor uw aangezicht zenden, dat u voor mijn zoon van daar een vrouw neemt.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>De JAHWEH, de God van de hemel, Die mij uit het huis van mijn vader en uit het land van mijn familie genomen heeft, en Die tot mij gesproken heeft, en Die mij gezworen heeft, zeggende: Aan uw zaad zal Ik dit land geven! Die Zelf zal Zijn Engel voor uw aangezicht zenden, dat u voor mijn zoon van daar een vrouw neemt.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> De HEERE, de God des hemels, Die mij uit mijns vaders huis en uit het land mijner maagschap genomen heeft, en Die tot mij gesproken heeft, en Die mij gezworen heeft, zeggende:<sup class=\"note-marker\" data-note=\"d\">d</sup> Aan uw zaad zal Ik dit land geven! Die Zelf zal Zijn Engel voor uw aangezicht zenden, dat gij voor mijn zoon van daar een vrouw neemt.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> De HEERE de Godt des hemels, die my uyt mijnes vaders huys, ende uyt het lant mijner maechschap genomen heeft, ende die tot my gesproken heeft, ende die my gesworen heeft, seggende, <sup class=\"note-marker\" data-note=\"d\">d</sup> Uwen zade sal ick dit lant geven; die selve sal sijnen Engel voor u aengesichte senden, dat ghy mijnen sone van daer eene vrouwe neemt.",
       "phraseDiff": [
@@ -1246,8 +1246,13 @@
         },
         {
           "old": "mijns vaders",
-          "new": "van mijn vader",
+          "new": "het",
           "principe": "O12"
+        },
+        {
+          "old": "",
+          "new": "van mijn vader",
+          "principe": null
         },
         {
           "old": "mijner maagschap",
@@ -3079,7 +3084,7 @@
       "number": 23,
       "textSV1888": "Want hij had gezegd: Wiens dochter zijt gij? geef het mij toch te kennen; is er ook ten huize uws vaders plaats voor ons, om te vernachten?",
       "text1637": "[32] Want hy hadde geseyt; Wiens dochter zijt ghy? geeft het my doch te kennen: isser oock ten huyse uwes vaders plaetse voor ons, om te vernachten?",
-      "text2026": "Want hij had gezegd: Wiens dochter bent u? geef het mij toch te kennen; is er ook in het huis van uw vader plaats voor ons, om te overnachten?",
+      "text2026": "Want hij had gezegd: Wiens dochter bent u? geef het mij toch te kennen; is er in het huis van uw vader ook plaats voor ons, om te overnachten?",
       "marginNotes": [
         {
           "marker": "32",
@@ -3178,7 +3183,7 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "Want hij had gezegd: <span class=\"direct-speech\"><i>Wiens dochter bent u? geef het mij toch te kennen; is er ook in het huis van uw vader plaats voor ons, om te overnachten?</i></span>",
+      "text2026_html": "Want hij had gezegd: <span class=\"direct-speech\"><i>Wiens dochter bent u? geef het mij toch te kennen; is er in het huis van uw vader ook plaats voor ons, om te overnachten?</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"32\">32</sup> Want hij had gezegd: Wiens dochter zijt gij? geef het mij toch te kennen; is er ook ten huize uws vaders plaats voor ons, om te vernachten?",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"32\">32</sup> Want hy hadde geseyt; Wiens dochter zijt ghy? geeft het my doch te kennen: isser oock ten huyse uwes vaders plaetse voor ons, om te vernachten?",
       "phraseDiff": [
@@ -3188,8 +3193,13 @@
           "principe": "A1"
         },
         {
-          "old": "ten huize uws vaders",
+          "old": "",
           "new": "in het huis van uw vader",
+          "principe": null
+        },
+        {
+          "old": "ten huize uws vaders",
+          "new": "",
           "principe": "V200"
         },
         {
@@ -5063,7 +5073,7 @@
       "number": 40,
       "textSV1888": "En hij zeide tot mij: De HEERE, voor Wiens aangezicht ik gewandeld heb, zal Zijn Engel met u zenden, en Hij zal uw weg voorspoedig maken, dat gij voor mijn zoon een vrouw neemt, uit mijn geslacht en uit mijns vaders huis.",
       "text1637": "Ende hy seyde tot my: De HEERE voor wiens aengesichte [52] ick gewandelt hebbe, sal sijnen Engel met u senden, ende hy sal uwen wech voorspoedich maken, dat ghy mijnen sone eene vrouwe neemt uyt mijn geslachte, ende uyt mijns vaders huys.",
-      "text2026": "En hij zei tot mij: De JAHWEH, voor Wiens aangezicht ik gewandeld heb, zal Zijn Engel met u zenden, en Hij zal uw weg voorspoedig maken, dat u voor mijn zoon een vrouw neemt, uit mijn geslacht en uit van mijn vader huis.",
+      "text2026": "En hij zei tot mij: De JAHWEH, voor Wiens aangezicht ik gewandeld heb, zal Zijn Engel met u zenden, en Hij zal uw weg voorspoedig maken, dat u voor mijn zoon een vrouw neemt, uit mijn geslacht en uit het huis van mijn vader.",
       "marginNotes": [
         {
           "marker": "52",
@@ -5170,7 +5180,7 @@
           "morph": "HNcmsc/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En hij zei tot mij: De JAHWEH, voor Wiens aangezicht ik gewandeld heb, zal Zijn Engel met u zenden, en Hij zal uw weg voorspoedig maken, dat u voor mijn zoon een vrouw neemt, uit mijn geslacht en uit van mijn vader huis.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En hij zei tot mij: De JAHWEH, voor Wiens aangezicht ik gewandeld heb, zal Zijn Engel met u zenden, en Hij zal uw weg voorspoedig maken, dat u voor mijn zoon een vrouw neemt, uit mijn geslacht en uit het huis van mijn vader.</i></span>",
       "textSV1888_html": "En hij zeide tot mij: De HEERE, voor Wiens aangezicht<sup class=\"note-marker\" data-note=\"52\">52</sup> ik gewandeld heb, zal Zijn Engel met u zenden, en Hij zal uw weg voorspoedig maken, dat gij voor mijn zoon een vrouw neemt, uit mijn geslacht en uit mijns vaders huis.",
       "text1637_html": "Ende hy seyde tot my: De HEERE voor wiens aengesichte <sup class=\"note-marker\" data-note=\"52\">52</sup> ick gewandelt hebbe, sal sijnen Engel met u senden, ende hy sal uwen wech voorspoedich maken, dat ghy mijnen sone eene vrouwe neemt uyt mijn geslachte, ende uyt mijns vaders huys.",
       "phraseDiff": [
@@ -5190,8 +5200,8 @@
           "principe": "A1"
         },
         {
-          "old": "mijns vaders",
-          "new": "van mijn vader",
+          "old": "mijns vaders huis.",
+          "new": "het huis van mijn vader.",
           "principe": "O12"
         }
       ]
