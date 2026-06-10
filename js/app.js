@@ -152,7 +152,7 @@ const App = {
             App._autoplayNext = false;
             audioEl.addEventListener('loadedmetadata', function once() {
                 audioEl.removeEventListener('loadedmetadata', once);
-                audioEl.play().catch(() => {});
+                App._announceThenPlay(audioEl, chapter);
             });
         }
         if (voiceBtn) voiceBtn.textContent = ov.label();
@@ -166,6 +166,29 @@ const App = {
         if (scrubber) scrubber.value = 0;
         if (cur) cur.textContent = '0:00';
         if (tot) tot.textContent = '0:00';
+    },
+
+    // Kondig "Hoofdstuk N" aan via browser-spraak, start daarna de voorlezing.
+    _announceThenPlay(audioEl, chapter) {
+        const start = () => { try { audioEl.play().catch(() => {}); } catch (e) {} };
+        try {
+            const synth = window.speechSynthesis;
+            if (synth && window.SpeechSynthesisUtterance && chapter != null) {
+                const u = new SpeechSynthesisUtterance('Hoofdstuk ' + chapter);
+                u.lang = 'nl-NL';
+                u.rate = 0.95;
+                let started = false;
+                const go = () => { if (!started) { started = true; start(); } };
+                u.onend = go;
+                u.onerror = go;
+                synth.cancel();
+                synth.speak(u);
+                // Fallback voor browsers waar onend uitblijft
+                setTimeout(go, 2500);
+                return;
+            }
+        } catch (e) {}
+        start();
     },
 
     _setupAudioPlayer() {
@@ -208,6 +231,37 @@ const App = {
             App._autoplayNext = true;
             if (typeof Navigation !== 'undefined' && Navigation.navigateRelative) {
                 Navigation.navigateRelative(1);
+            }
+        });
+
+        // === Meescrollen met de voorlezing ===
+        // Geen vers-timestamps in de MP3 → positie schatten op tekstlengte per vers.
+        let scrollMap = null, lastScrollIdx = -1, userScrollAt = 0;
+        const buildScrollMap = () => {
+            const rows = Array.from(document.querySelectorAll('#content .verse-row'));
+            let cum = 0;
+            scrollMap = rows.map(r => {
+                const len = ((r.textContent || '').trim().length) || 1;
+                const start = cum; cum += len;
+                return { row: r, end: cum };
+            });
+            scrollMap._total = cum || 1;
+            lastScrollIdx = -1;
+        };
+        audioEl.addEventListener('play', buildScrollMap);
+        // Handmatig scrollen pauzeert het meescrollen ~6s (zodat je rustig kunt lezen)
+        ['wheel', 'touchmove'].forEach(ev =>
+            window.addEventListener(ev, () => { userScrollAt = Date.now(); }, { passive: true }));
+        audioEl.addEventListener('timeupdate', () => {
+            if (audioEl.paused || !audioEl.duration || !scrollMap || !scrollMap.length) return;
+            if (Date.now() - userScrollAt < 6000) return;
+            const pos = (audioEl.currentTime / audioEl.duration) * scrollMap._total;
+            let idx = scrollMap.findIndex(v => pos < v.end);
+            if (idx < 0) idx = scrollMap.length - 1;
+            if (idx !== lastScrollIdx) {
+                lastScrollIdx = idx;
+                const row = scrollMap[idx].row;
+                if (row) row.scrollIntoView({ block: 'center', behavior: 'smooth' });
             }
         });
 
