@@ -1,0 +1,5186 @@
+[chain] Wachten tot mannenstem-marathon klaar is...
+########## ROLLOUT stem='v' (sample=audio/_pilot/_sample/voice-female, temp=0.6) ##########
+[sup] stem=v: 0/320 klaar
+[sup] === poging 1 voor stem=v (14:25:22) ===
+Voice sample: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/_pilot/_sample/voice-female.wav
+Model: bosonai/higgs-audio-v3-tts-4b
+Server poort: 8765
+Te genereren: 320 hoofdstuk(ken)
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+Hoofdstuk: genesis 1
+Tekst: 4265 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (9.8s)
+  [2/11] 80 woorden... ok (10.0s)
+  [3/11] 80 woorden... ok (9.5s)
+  [4/11] 80 woorden... ok (9.5s)
+  [5/11] 80 woorden... ok (8.3s)
+  [6/11] 80 woorden... ok (10.7s)
+  [7/11] 80 woorden... ok (9.4s)
+  [8/11] 80 woorden... ok (8.5s)
+  [9/11] 80 woorden... ok (9.6s)
+  [10/11] 80 woorden... ok (9.3s)
+  [11/11] 2 woorden... ok (0.4s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/1-v.mp3
+  Duur: 275.0s | Grootte: 4297 KB | Generatietijd: 94.9s
+
+Hoofdstuk: genesis 2
+Tekst: 3210 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (8.3s)
+  [2/9] 80 woorden... ok (8.6s)
+  [3/9] 80 woorden... ok (8.2s)
+  [4/9] 80 woorden... ok (8.6s)
+  [5/9] 80 woorden... ok (7.4s)
+  [6/9] 80 woorden... ok (8.5s)
+  [7/9] 80 woorden... ok (8.5s)
+  [8/9] 80 woorden... ok (9.1s)
+  [9/9] 6 woorden... ok (0.8s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/2-v.mp3
+  Duur: 199.0s | Grootte: 3109 KB | Generatietijd: 68.0s
+
+Hoofdstuk: genesis 3
+Tekst: 3462 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (7.5s)
+  [2/9] 80 woorden... ok (9.1s)
+  [3/9] 80 woorden... ok (8.5s)
+  [4/9] 80 woorden... ok (9.5s)
+  [5/9] 80 woorden... ok (8.5s)
+  [6/9] 80 woorden... ok (9.4s)
+  [7/9] 80 woorden... ok (8.6s)
+  [8/9] 80 woorden... ok (9.1s)
+  [9/9] 58 woorden... ok (6.4s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/3-v.mp3
+  Duur: 224.1s | Grootte: 3502 KB | Generatietijd: 76.5s
+
+Hoofdstuk: genesis 4
+Tekst: 3181 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (8.7s)
+  [2/8] 80 woorden... ok (9.2s)
+  [3/8] 80 woorden... ok (8.6s)
+  [4/8] 80 woorden... ok (9.1s)
+  [5/8] 80 woorden... ok (9.7s)
+  [6/8] 80 woorden... ok (9.8s)
+  [7/8] 80 woorden... ok (10.0s)
+  [8/8] 36 woorden... ok (4.3s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/4-v.mp3
+  Duur: 203.3s | Grootte: 3176 KB | Generatietijd: 69.4s
+
+Hoofdstuk: genesis 5
+Tekst: 2935 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (9.6s)
+  [2/7] 80 woorden... ok (10.5s)
+  [3/7] 80 woorden... ok (9.1s)
+  [4/7] 80 woorden... ok (9.7s)
+  [5/7] 80 woorden... ok (10.9s)
+  [6/7] 80 woorden... ok (10.1s)
+  [7/7] 22 woorden... ok (3.9s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/5-v.mp3
+  Duur: 186.5s | Grootte: 2914 KB | Generatietijd: 63.7s
+
+Hoofdstuk: genesis 6
+Tekst: 2952 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.3s)
+  [2/8] 80 woorden... ok (8.7s)
+  [3/8] 80 woorden... ok (9.9s)
+  [4/8] 80 woorden... ok (8.8s)
+  [5/8] 80 woorden... ok (9.0s)
+  [6/8] 80 woorden... ok (8.6s)
+  [7/8] 80 woorden... ok (8.7s)
+  [8/8] 9 woorden... ok (0.9s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/6-v.mp3
+  Duur: 187.1s | Grootte: 2924 KB | Generatietijd: 64.0s
+
+Hoofdstuk: genesis 7
+Tekst: 3084 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (8.3s)
+  [2/8] 80 woorden... ok (9.0s)
+  [3/8] 80 woorden... ok (8.9s)
+  [4/8] 80 woorden... ok (9.6s)
+  [5/8] 80 woorden... ok (8.8s)
+  [6/8] 80 woorden... ok (9.3s)
+  [7/8] 80 woorden... ok (8.7s)
+  [8/8] 33 woorden... ok (3.9s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/7-v.mp3
+  Duur: 194.3s | Grootte: 3035 KB | Generatietijd: 66.3s
+
+Hoofdstuk: genesis 8
+Tekst: 3004 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (8.4s)
+  [2/8] 80 woorden... ok (8.8s)
+  [3/8] 80 woorden... ok (8.0s)
+  [4/8] 80 woorden... ok (8.5s)
+  [5/8] 80 woorden... ok (9.2s)
+  [6/8] 80 woorden... ok (10.1s)
+  [7/8] 80 woorden... ok (8.5s)
+  [8/8] 22 woorden... ok (2.8s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/8-v.mp3
+  Duur: 188.5s | Grootte: 2945 KB | Generatietijd: 64.4s
+
+Hoofdstuk: genesis 9
+Tekst: 3462 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (8.6s)
+  [2/9] 80 woorden... ok (8.0s)
+  [3/9] 80 woorden... ok (9.6s)
+  [4/9] 80 woorden... ok (8.8s)
+  [5/9] 80 woorden... ok (8.7s)
+  [6/9] 80 woorden... ok (9.2s)
+  [7/9] 80 woorden... ok (9.3s)
+  [8/9] 80 woorden... ok (9.9s)
+  [9/9] 35 woorden... ok (4.7s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/9-v.mp3
+  Duur: 224.9s | Grootte: 3514 KB | Generatietijd: 76.8s
+
+Hoofdstuk: genesis 10
+Tekst: 2766 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (10.6s)
+  [2/7] 80 woorden... ok (9.2s)
+  [3/7] 80 woorden... ok (11.0s)
+  [4/7] 80 woorden... ok (11.0s)
+  [5/7] 80 woorden... ok (8.8s)
+  [6/7] 80 woorden... ok (10.9s)
+  [7/7] 18 woorden... ok (2.0s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/10-v.mp3
+  Duur: 185.9s | Grootte: 2905 KB | Generatietijd: 63.5s
+
+Hoofdstuk: genesis 11
+Tekst: 3401 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.1s)
+  [2/8] 80 woorden... ok (8.6s)
+  [3/8] 80 woorden... ok (9.5s)
+  [4/8] 80 woorden... ok (8.7s)
+  [5/8] 80 woorden... ok (10.8s)
+  [6/8] 80 woorden... ok (9.3s)
+  [7/8] 80 woorden... ok (10.0s)
+  [8/8] 45 woorden... ok (6.2s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/11-v.mp3
+  Duur: 211.1s | Grootte: 3298 KB | Generatietijd: 72.1s
+
+Hoofdstuk: genesis 12
+Tekst: 2696 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (9.1s)
+  [2/7] 80 woorden... ok (9.0s)
+  [3/7] 80 woorden... ok (9.1s)
+  [4/7] 80 woorden... ok (9.0s)
+  [5/7] 80 woorden... ok (9.1s)
+  [6/7] 80 woorden... ok (11.4s)
+  [7/7] 38 woorden... ok (4.7s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/12-v.mp3
+  Duur: 179.6s | Grootte: 2806 KB | Generatietijd: 61.3s
+
+Hoofdstuk: genesis 13
+Tekst: 2244 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.1s)
+  [2/6] 80 woorden... ok (9.7s)
+  [3/6] 80 woorden... ok (9.3s)
+  [4/6] 80 woorden... ok (8.7s)
+  [5/6] 80 woorden... ok (9.0s)
+  [6/6] 41 woorden... ok (5.7s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/13-v.mp3
+  Duur: 151.2s | Grootte: 2363 KB | Generatietijd: 51.6s
+
+Hoofdstuk: genesis 14
+Tekst: 3374 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.1s)
+  [2/8] 80 woorden... ok (10.3s)
+  [3/8] 80 woorden... ok (10.5s)
+  [4/8] 80 woorden... ok (9.5s)
+  [5/8] 80 woorden... ok (10.1s)
+  [6/8] 80 woorden... ok (9.4s)
+  [7/8] 80 woorden... ok (8.8s)
+  [8/8] 54 woorden... ok (6.9s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/14-v.mp3
+  Duur: 218.2s | Grootte: 3409 KB | Generatietijd: 74.5s
+
+Hoofdstuk: genesis 15
+Tekst: 2428 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.0s)
+  [2/6] 80 woorden... ok (8.6s)
+  [3/6] 80 woorden... ok (10.0s)
+  [4/6] 80 woorden... ok (8.6s)
+  [5/6] 80 woorden... ok (10.0s)
+  [6/6] 55 woorden... ok (7.2s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/15-v.mp3
+  Duur: 156.3s | Grootte: 2442 KB | Generatietijd: 53.4s
+
+Hoofdstuk: genesis 16
+Tekst: 2203 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.7s)
+  [2/6] 80 woorden... ok (9.2s)
+  [3/6] 80 woorden... ok (8.6s)
+  [4/6] 80 woorden... ok (9.1s)
+  [5/6] 80 woorden... ok (9.8s)
+  [6/6] 14 woorden... ok (1.8s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/16-v.mp3
+  Duur: 141.0s | Grootte: 2203 KB | Generatietijd: 48.2s
+
+Hoofdstuk: genesis 17
+Tekst: 3602 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (9.6s)
+  [2/9] 80 woorden... ok (8.5s)
+  [3/9] 80 woorden... ok (9.5s)
+  [4/9] 80 woorden... ok (8.6s)
+  [5/9] 80 woorden... ok (9.6s)
+  [6/9] 80 woorden... ok (9.7s)
+  [7/9] 80 woorden... ok (9.5s)
+  [8/9] 80 woorden... ok (10.0s)
+  [9/9] 44 woorden... ok (5.6s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/17-v.mp3
+  Duur: 235.7s | Grootte: 3683 KB | Generatietijd: 80.5s
+
+Hoofdstuk: genesis 18
+Tekst: 4431 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (8.3s)
+  [2/11] 80 woorden... ok (9.4s)
+  [3/11] 80 woorden... ok (9.2s)
+  [4/11] 80 woorden... ok (10.1s)
+  [5/11] 80 woorden... ok (10.0s)
+  [6/11] 80 woorden... ok (9.0s)
+  [7/11] 80 woorden... ok (9.5s)
+  [8/11] 80 woorden... ok (8.4s)
+  [9/11] 80 woorden... ok (8.8s)
+  [10/11] 80 woorden... ok (8.9s)
+  [11/11] 31 woorden... ok (4.0s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/18-v.mp3
+  Duur: 280.0s | Grootte: 4375 KB | Generatietijd: 95.6s
+
+Hoofdstuk: genesis 19
+Tekst: 5791 chars
+Chunks: 14
+  [1/14] 80 woorden... ok (8.7s)
+  [2/14] 80 woorden... ok (8.7s)
+  [3/14] 80 woorden... ok (8.4s)
+  [4/14] 80 woorden... ok (8.9s)
+  [5/14] 80 woorden... ok (9.4s)
+  [6/14] 80 woorden... ok (9.6s)
+  [7/14] 80 woorden... ok (8.7s)
+  [8/14] 80 woorden... ok (9.5s)
+  [9/14] 80 woorden... ok (8.5s)
+  [10/14] 80 woorden... ok (8.6s)
+  [11/14] 80 woorden... ok (8.5s)
+  [12/14] 80 woorden... ok (8.6s)
+  [13/14] 80 woorden... ok (8.9s)
+  [14/14] 76 woorden... ok (8.5s)
+  Aaneenschakelen 14 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/19-v.mp3
+  Duur: 361.7s | Grootte: 5652 KB | Generatietijd: 123.4s
+
+Hoofdstuk: genesis 20
+Tekst: 2675 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (9.1s)
+  [2/7] 80 woorden... ok (8.9s)
+  [3/7] 80 woorden... ok (8.7s)
+  [4/7] 80 woorden... ok (9.0s)
+  [5/7] 80 woorden... ok (8.7s)
+  [6/7] 80 woorden... ok (9.7s)
+  [7/7] 30 woorden... ok (4.6s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/genesis/20-v.mp3
+  Duur: 171.9s | Grootte: 2686 KB | Generatietijd: 58.7s
+
+Hoofdstuk: psalmen 1
+Tekst: 665 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (8.4s)
+  [2/2] 43 woorden... ok (5.2s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/1-v.mp3
+  Duur: 39.9s | Grootte: 624 KB | Generatietijd: 13.7s
+
+Hoofdstuk: psalmen 2
+Tekst: 1071 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.6s)
+  [2/3] 80 woorden... ok (9.9s)
+  [3/3] 30 woorden... ok (4.0s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/2-v.mp3
+  Duur: 68.9s | Grootte: 1076 KB | Generatietijd: 23.5s
+
+Hoofdstuk: psalmen 3
+Tekst: 745 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (12.8s)
+  [2/2] 54 woorden... ok (6.6s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/3-v.mp3
+  Duur: 57.0s | Grootte: 891 KB | Generatietijd: 19.5s
+
+Hoofdstuk: psalmen 4
+Tekst: 867 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.5s)
+  [2/2] 74 woorden... ok (9.3s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/4-v.mp3
+  Duur: 55.1s | Grootte: 861 KB | Generatietijd: 18.8s
+
+Hoofdstuk: psalmen 5
+Tekst: 1388 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (9.5s)
+  [2/4] 80 woorden... ok (9.6s)
+  [3/4] 80 woorden... ok (9.5s)
+  [4/4] 7 woorden... ok (1.6s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/5-v.mp3
+  Duur: 88.1s | Grootte: 1377 KB | Generatietijd: 30.1s
+
+Hoofdstuk: psalmen 6
+Tekst: 951 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (11.9s)
+  [2/3] 80 woorden... ok (10.0s)
+  [3/3] 2 woorden... ok (0.5s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/6-v.mp3
+  Duur: 65.1s | Grootte: 1017 KB | Generatietijd: 22.3s
+
+Hoofdstuk: psalmen 7
+Tekst: 1805 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.6s)
+  [2/4] 80 woorden... ok (9.5s)
+  [3/4] 80 woorden... ok (10.3s)
+  [4/4] 79 woorden... ok (9.3s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/7-v.mp3
+  Duur: 116.5s | Grootte: 1820 KB | Generatietijd: 39.8s
+
+Hoofdstuk: psalmen 8
+Tekst: 901 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.8s)
+  [2/3] 80 woorden... ok (8.3s)
+  [3/3] 12 woorden... ok (2.1s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/8-v.mp3
+  Duur: 59.0s | Grootte: 922 KB | Generatietijd: 20.2s
+
+Hoofdstuk: psalmen 9
+Tekst: 2024 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (10.7s)
+  [2/5] 80 woorden... ok (9.2s)
+  [3/5] 80 woorden... ok (10.4s)
+  [4/5] 80 woorden... ok (10.1s)
+  [5/5] 17 woorden... ok (2.9s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/9-v.mp3
+  Duur: 126.9s | Grootte: 1982 KB | Generatietijd: 43.4s
+
+Hoofdstuk: psalmen 10
+Tekst: 1912 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (10.0s)
+  [2/5] 80 woorden... ok (9.9s)
+  [3/5] 80 woorden... ok (10.3s)
+  [4/5] 80 woorden... ok (9.2s)
+  [5/5] 23 woorden... ok (2.5s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/10-v.mp3
+  Duur: 122.8s | Grootte: 1918 KB | Generatietijd: 42.0s
+
+Hoofdstuk: psalmen 11
+Tekst: 814 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.5s)
+  [2/2] 53 woorden... ok (7.8s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/11-v.mp3
+  Duur: 53.9s | Grootte: 841 KB | Generatietijd: 18.4s
+
+Hoofdstuk: psalmen 12
+Tekst: 880 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.8s)
+  [2/2] 60 woorden... ok (8.5s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/12-v.mp3
+  Duur: 56.8s | Grootte: 888 KB | Generatietijd: 19.4s
+
+Hoofdstuk: psalmen 13
+Tekst: 622 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.6s)
+  [2/2] 25 woorden... ok (3.3s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/13-v.mp3
+  Duur: 40.7s | Grootte: 635 KB | Generatietijd: 13.9s
+
+Hoofdstuk: psalmen 14
+Tekst: 854 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.2s)
+  [2/2] 66 woorden... ok (8.3s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/14-v.mp3
+  Duur: 54.4s | Grootte: 850 KB | Generatietijd: 18.6s
+
+Hoofdstuk: psalmen 15
+Tekst: 583 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.1s)
+  [2/2] 19 woorden... ok (2.5s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/15-v.mp3
+  Duur: 36.9s | Grootte: 576 KB | Generatietijd: 12.6s
+
+Hoofdstuk: psalmen 16
+Tekst: 1115 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.1s)
+  [2/3] 80 woorden... ok (9.6s)
+  [3/3] 39 woorden... ok (5.0s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/16-v.mp3
+  Duur: 69.6s | Grootte: 1087 KB | Generatietijd: 23.8s
+
+Hoofdstuk: psalmen 17
+Tekst: 1679 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.6s)
+  [2/4] 80 woorden... ok (10.9s)
+  [3/4] 80 woorden... ok (10.1s)
+  [4/4] 50 woorden... ok (6.6s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/17-v.mp3
+  Duur: 111.9s | Grootte: 1749 KB | Generatietijd: 38.2s
+
+Hoofdstuk: psalmen 18
+Tekst: 4895 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (9.5s)
+  [2/12] 80 woorden... ok (9.5s)
+  [3/12] 80 woorden... ok (9.9s)
+  [4/12] 80 woorden... ok (9.9s)
+  [5/12] 80 woorden... ok (9.3s)
+  [6/12] 80 woorden... ok (8.6s)
+  [7/12] 80 woorden... ok (9.2s)
+  [8/12] 80 woorden... ok (9.1s)
+  [9/12] 80 woorden... ok (9.0s)
+  [10/12] 80 woorden... ok (9.5s)
+  [11/12] 80 woorden... ok (9.2s)
+  [12/12] 14 woorden... ok (2.1s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/18-v.mp3
+  Duur: 306.9s | Grootte: 4795 KB | Generatietijd: 104.9s
+
+Hoofdstuk: psalmen 19
+Tekst: 1549 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (9.2s)
+  [2/4] 80 woorden... ok (9.9s)
+  [3/4] 80 woorden... ok (10.5s)
+  [4/4] 31 woorden... ok (4.4s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/19-v.mp3
+  Duur: 99.5s | Grootte: 1555 KB | Generatietijd: 34.0s
+
+Hoofdstuk: psalmen 20
+Tekst: 868 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.1s)
+  [2/2] 78 woorden... ok (10.1s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/20-v.mp3
+  Duur: 56.4s | Grootte: 882 KB | Generatietijd: 19.2s
+
+Hoofdstuk: psalmen 21
+Tekst: 1300 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (12.1s)
+  [2/3] 80 woorden... ok (9.9s)
+  [3/3] 76 woorden... ok (8.5s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/21-v.mp3
+  Duur: 89.4s | Grootte: 1396 KB | Generatietijd: 30.5s
+
+Hoofdstuk: psalmen 22
+Tekst: 3245 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (10.8s)
+  [2/8] 80 woorden... ok (9.1s)
+  [3/8] 80 woorden... ok (9.7s)
+  [4/8] 80 woorden... ok (9.3s)
+  [5/8] 80 woorden... ok (8.9s)
+  [6/8] 80 woorden... ok (9.4s)
+  [7/8] 80 woorden... ok (9.8s)
+  [8/8] 14 woorden... ok (1.9s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/22-v.mp3
+  Duur: 201.5s | Grootte: 3148 KB | Generatietijd: 68.9s
+
+Hoofdstuk: psalmen 23
+Tekst: 670 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.9s)
+  [2/2] 44 woorden... ok (5.7s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/23-v.mp3
+  Duur: 45.5s | Grootte: 711 KB | Generatietijd: 15.5s
+
+Hoofdstuk: psalmen 24
+Tekst: 943 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.0s)
+  [2/3] 80 woorden... ok (11.1s)
+  [3/3] 20 woorden... ok (2.6s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/24-v.mp3
+  Duur: 66.7s | Grootte: 1042 KB | Generatietijd: 22.8s
+
+Hoofdstuk: psalmen 25
+Tekst: 2048 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (11.4s)
+  [2/5] 80 woorden... ok (10.9s)
+  [3/5] 80 woorden... ok (10.0s)
+  [4/5] 80 woorden... ok (10.4s)
+  [5/5] 36 woorden... ok (5.2s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/25-v.mp3
+  Duur: 140.4s | Grootte: 2194 KB | Generatietijd: 47.9s
+
+Hoofdstuk: psalmen 26
+Tekst: 948 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.8s)
+  [2/3] 80 woorden... ok (9.2s)
+  [3/3] 18 woorden... ok (2.2s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/26-v.mp3
+  Duur: 62.1s | Grootte: 971 KB | Generatietijd: 21.3s
+
+Hoofdstuk: psalmen 27
+Tekst: 1732 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.5s)
+  [2/4] 80 woorden... ok (8.3s)
+  [3/4] 80 woorden... ok (9.9s)
+  [4/4] 78 woorden... ok (9.5s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/27-v.mp3
+  Duur: 111.8s | Grootte: 1747 KB | Generatietijd: 38.2s
+
+Hoofdstuk: psalmen 28
+Tekst: 1129 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.3s)
+  [2/3] 80 woorden... ok (8.8s)
+  [3/3] 51 woorden... ok (6.5s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/28-v.mp3
+  Duur: 72.2s | Grootte: 1128 KB | Generatietijd: 24.6s
+
+Hoofdstuk: psalmen 29
+Tekst: 910 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.6s)
+  [2/3] 80 woorden... ok (9.3s)
+  [3/3] 4 woorden... ok (0.7s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/29-v.mp3
+  Duur: 57.0s | Grootte: 891 KB | Generatietijd: 19.6s
+
+Hoofdstuk: psalmen 30
+Tekst: 1188 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.3s)
+  [2/3] 80 woorden... ok (9.3s)
+  [3/3] 53 woorden... ok (7.2s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/30-v.mp3
+  Duur: 78.3s | Grootte: 1224 KB | Generatietijd: 26.7s
+
+Hoofdstuk: psalmen 31
+Tekst: 2715 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (10.6s)
+  [2/7] 80 woorden... ok (9.9s)
+  [3/7] 80 woorden... ok (9.4s)
+  [4/7] 80 woorden... ok (9.3s)
+  [5/7] 80 woorden... ok (9.5s)
+  [6/7] 80 woorden... ok (10.0s)
+  [7/7] 6 woorden... ok (0.8s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/31-v.mp3
+  Duur: 174.1s | Grootte: 2721 KB | Generatietijd: 59.5s
+
+Hoofdstuk: psalmen 32
+Tekst: 1307 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.8s)
+  [2/3] 80 woorden... ok (9.4s)
+  [3/3] 66 woorden... ok (8.2s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/32-v.mp3
+  Duur: 83.3s | Grootte: 1302 KB | Generatietijd: 28.4s
+
+Hoofdstuk: psalmen 33
+Tekst: 1745 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.0s)
+  [2/4] 80 woorden... ok (9.0s)
+  [3/4] 80 woorden... ok (9.5s)
+  [4/4] 71 woorden... ok (8.2s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/33-v.mp3
+  Duur: 107.4s | Grootte: 1678 KB | Generatietijd: 36.7s
+
+Hoofdstuk: psalmen 34
+Tekst: 2096 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (10.5s)
+  [2/5] 80 woorden... ok (11.7s)
+  [3/5] 80 woorden... ok (10.7s)
+  [4/5] 80 woorden... ok (9.3s)
+  [5/5] 48 woorden... ok (6.6s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/34-v.mp3
+  Duur: 142.9s | Grootte: 2233 KB | Generatietijd: 48.8s
+
+Hoofdstuk: psalmen 35
+Tekst: 3000 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (12.9s)
+  [2/7] 80 woorden... ok (9.3s)
+  [3/7] 80 woorden... ok (9.7s)
+  [4/7] 80 woorden... ok (9.6s)
+  [5/7] 80 woorden... ok (9.2s)
+  [6/7] 80 woorden... ok (9.8s)
+  [7/7] 55 woorden... ok (6.7s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/35-v.mp3
+  Duur: 196.4s | Grootte: 3069 KB | Generatietijd: 67.1s
+
+Hoofdstuk: psalmen 36
+Tekst: 1284 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.4s)
+  [2/3] 80 woorden... ok (10.1s)
+  [3/3] 67 woorden... ok (8.3s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/36-v.mp3
+  Duur: 81.4s | Grootte: 1272 KB | Generatietijd: 27.8s
+
+Hoofdstuk: psalmen 37
+Tekst: 4006 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (8.7s)
+  [2/9] 80 woorden... ok (10.8s)
+  [3/9] 80 woorden... ok (9.8s)
+  [4/9] 80 woorden... ok (9.6s)
+  [5/9] 80 woorden... ok (10.9s)
+  [6/9] 80 woorden... ok (10.6s)
+  [7/9] 80 woorden... ok (10.0s)
+  [8/9] 80 woorden... ok (9.4s)
+  [9/9] 46 woorden... ok (5.9s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/37-v.mp3
+  Duur: 251.7s | Grootte: 3932 KB | Generatietijd: 85.9s
+
+Hoofdstuk: psalmen 38
+Tekst: 1970 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.7s)
+  [2/5] 80 woorden... ok (9.6s)
+  [3/5] 80 woorden... ok (9.4s)
+  [4/5] 80 woorden... ok (9.9s)
+  [5/5] 37 woorden... ok (5.5s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/38-v.mp3
+  Duur: 129.0s | Grootte: 2015 KB | Generatietijd: 44.0s
+
+Hoofdstuk: psalmen 39
+Tekst: 1494 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (9.9s)
+  [2/4] 80 woorden... ok (9.3s)
+  [3/4] 80 woorden... ok (10.0s)
+  [4/4] 34 woorden... ok (4.1s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/39-v.mp3
+  Duur: 97.5s | Grootte: 1523 KB | Generatietijd: 33.3s
+
+Hoofdstuk: psalmen 40
+Tekst: 2240 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (8.8s)
+  [2/5] 80 woorden... ok (9.5s)
+  [3/5] 80 woorden... ok (9.0s)
+  [4/5] 80 woorden... ok (10.5s)
+  [5/5] 80 woorden... ok (9.0s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/40-v.mp3
+  Duur: 137.1s | Grootte: 2143 KB | Generatietijd: 46.8s
+
+Hoofdstuk: psalmen 41
+Tekst: 1394 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.3s)
+  [2/4] 80 woorden... ok (10.0s)
+  [3/4] 80 woorden... ok (9.6s)
+  [4/4] 9 woorden... ok (1.8s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/41-v.mp3
+  Duur: 92.9s | Grootte: 1451 KB | Generatietijd: 31.8s
+
+Hoofdstuk: psalmen 42
+Tekst: 1518 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (9.3s)
+  [2/4] 80 woorden... ok (8.9s)
+  [3/4] 80 woorden... ok (9.3s)
+  [4/4] 45 woorden... ok (5.1s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/42-v.mp3
+  Duur: 95.6s | Grootte: 1494 KB | Generatietijd: 32.7s
+
+Hoofdstuk: psalmen 43
+Tekst: 688 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (8.8s)
+  [2/2] 57 woorden... ok (6.6s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/43-v.mp3
+  Duur: 45.3s | Grootte: 707 KB | Generatietijd: 15.4s
+
+Hoofdstuk: psalmen 44
+Tekst: 2441 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.4s)
+  [2/6] 80 woorden... ok (9.9s)
+  [3/6] 80 woorden... ok (9.1s)
+  [4/6] 80 woorden... ok (9.4s)
+  [5/6] 80 woorden... ok (9.2s)
+  [6/6] 37 woorden... ok (5.5s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/44-v.mp3
+  Duur: 153.9s | Grootte: 2404 KB | Generatietijd: 52.5s
+
+Hoofdstuk: psalmen 45
+Tekst: 1977 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.8s)
+  [2/5] 80 woorden... ok (9.9s)
+  [3/5] 80 woorden... ok (10.4s)
+  [4/5] 80 woorden... ok (9.5s)
+  [5/5] 22 woorden... ok (3.2s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/45-v.mp3
+  Duur: 125.1s | Grootte: 1955 KB | Generatietijd: 42.7s
+
+Hoofdstuk: psalmen 46
+Tekst: 1198 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.8s)
+  [2/3] 80 woorden... ok (10.1s)
+  [3/3] 52 woorden... ok (6.1s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/46-v.mp3
+  Duur: 76.3s | Grootte: 1193 KB | Generatietijd: 26.0s
+
+Hoofdstuk: psalmen 47
+Tekst: 801 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (11.8s)
+  [2/2] 57 woorden... ok (7.0s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/47-v.mp3
+  Duur: 55.1s | Grootte: 860 KB | Generatietijd: 18.8s
+
+Hoofdstuk: psalmen 48
+Tekst: 1298 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.7s)
+  [2/3] 80 woorden... ok (8.8s)
+  [3/3] 75 woorden... ok (9.0s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/48-v.mp3
+  Duur: 80.8s | Grootte: 1262 KB | Generatietijd: 27.6s
+
+Hoofdstuk: psalmen 49
+Tekst: 1990 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.8s)
+  [2/5] 80 woorden... ok (9.6s)
+  [3/5] 80 woorden... ok (9.1s)
+  [4/5] 80 woorden... ok (9.2s)
+  [5/5] 35 woorden... ok (4.5s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/49-v.mp3
+  Duur: 123.6s | Grootte: 1932 KB | Generatietijd: 42.2s
+
+Hoofdstuk: psalmen 50
+Tekst: 1929 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.8s)
+  [2/5] 80 woorden... ok (10.0s)
+  [3/5] 80 woorden... ok (8.9s)
+  [4/5] 80 woorden... ok (8.5s)
+  [5/5] 46 woorden... ok (5.7s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/50-v.mp3
+  Duur: 125.5s | Grootte: 1961 KB | Generatietijd: 42.8s
+
+Hoofdstuk: psalmen 51
+Tekst: 1897 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (11.1s)
+  [2/5] 80 woorden... ok (9.9s)
+  [3/5] 80 woorden... ok (9.5s)
+  [4/5] 80 woorden... ok (10.2s)
+  [5/5] 16 woorden... ok (2.2s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/51-v.mp3
+  Duur: 126.0s | Grootte: 1969 KB | Generatietijd: 43.1s
+
+Hoofdstuk: psalmen 52
+Tekst: 1119 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.6s)
+  [2/3] 80 woorden... ok (9.6s)
+  [3/3] 39 woorden... ok (5.0s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/52-v.mp3
+  Duur: 73.8s | Grootte: 1154 KB | Generatietijd: 25.2s
+
+Hoofdstuk: psalmen 53
+Tekst: 921 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.0s)
+  [2/2] 76 woorden... ok (9.7s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/53-v.mp3
+  Duur: 57.6s | Grootte: 901 KB | Generatietijd: 19.7s
+
+Hoofdstuk: psalmen 54
+Tekst: 736 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (8.7s)
+  [2/2] 55 woorden... ok (6.6s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/54-v.mp3
+  Duur: 44.8s | Grootte: 700 KB | Generatietijd: 15.3s
+
+Hoofdstuk: psalmen 55
+Tekst: 2477 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (10.6s)
+  [2/6] 80 woorden... ok (10.4s)
+  [3/6] 80 woorden... ok (9.5s)
+  [4/6] 80 woorden... ok (9.3s)
+  [5/6] 80 woorden... ok (9.8s)
+  [6/6] 50 woorden... ok (6.1s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/55-v.mp3
+  Duur: 163.2s | Grootte: 2550 KB | Generatietijd: 55.7s
+
+Hoofdstuk: psalmen 56
+Tekst: 1276 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.7s)
+  [2/3] 80 woorden... ok (9.4s)
+  [3/3] 80 woorden... ok (9.0s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/56-v.mp3
+  Duur: 82.1s | Grootte: 1282 KB | Generatietijd: 28.0s
+
+Hoofdstuk: psalmen 57
+Tekst: 1319 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.9s)
+  [2/3] 80 woorden... ok (10.1s)
+  [3/3] 77 woorden... ok (8.7s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/57-v.mp3
+  Duur: 84.0s | Grootte: 1313 KB | Generatietijd: 28.7s
+
+Hoofdstuk: psalmen 58
+Tekst: 1241 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (11.1s)
+  [2/3] 80 woorden... ok (10.0s)
+  [3/3] 49 woorden... ok (5.5s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/58-v.mp3
+  Duur: 77.9s | Grootte: 1218 KB | Generatietijd: 26.6s
+
+Hoofdstuk: psalmen 59
+Tekst: 1994 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.2s)
+  [2/5] 80 woorden... ok (10.8s)
+  [3/5] 80 woorden... ok (9.2s)
+  [4/5] 80 woorden... ok (9.2s)
+  [5/5] 40 woorden... ok (7.0s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/59-v.mp3
+  Duur: 132.8s | Grootte: 2074 KB | Generatietijd: 45.3s
+
+Hoofdstuk: psalmen 60
+Tekst: 1347 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.8s)
+  [2/4] 80 woorden... ok (9.8s)
+  [3/4] 80 woorden... ok (9.6s)
+  [4/4] 5 woorden... ok (0.8s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/60-v.mp3
+  Duur: 90.6s | Grootte: 1415 KB | Generatietijd: 31.0s
+
+Hoofdstuk: psalmen 61
+Tekst: 822 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.2s)
+  [2/2] 69 woorden... ok (8.3s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/61-v.mp3
+  Duur: 51.5s | Grootte: 805 KB | Generatietijd: 17.6s
+
+Hoofdstuk: psalmen 62
+Tekst: 1299 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.5s)
+  [2/3] 80 woorden... ok (9.0s)
+  [3/3] 70 woorden... ok (8.9s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/62-v.mp3
+  Duur: 83.4s | Grootte: 1303 KB | Generatietijd: 28.5s
+
+Hoofdstuk: psalmen 63
+Tekst: 1110 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.5s)
+  [2/3] 80 woorden... ok (8.9s)
+  [3/3] 47 woorden... ok (5.2s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/63-v.mp3
+  Duur: 69.2s | Grootte: 1081 KB | Generatietijd: 23.6s
+
+Hoofdstuk: psalmen 64
+Tekst: 1046 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (12.1s)
+  [2/3] 80 woorden... ok (10.0s)
+  [3/3] 17 woorden... ok (2.0s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/64-v.mp3
+  Duur: 70.3s | Grootte: 1099 KB | Generatietijd: 24.1s
+
+Hoofdstuk: psalmen 65
+Tekst: 1427 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.2s)
+  [2/4] 80 woorden... ok (8.9s)
+  [3/4] 80 woorden... ok (8.8s)
+  [4/4] 18 woorden... ok (2.2s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/65-v.mp3
+  Duur: 88.0s | Grootte: 1375 KB | Generatietijd: 30.1s
+
+Hoofdstuk: psalmen 66
+Tekst: 1801 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (11.0s)
+  [2/5] 80 woorden... ok (9.8s)
+  [3/5] 80 woorden... ok (9.1s)
+  [4/5] 80 woorden... ok (9.6s)
+  [5/5] 6 woorden... ok (1.1s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/66-v.mp3
+  Duur: 118.7s | Grootte: 1855 KB | Generatietijd: 40.6s
+
+Hoofdstuk: psalmen 67
+Tekst: 620 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.7s)
+  [2/2] 34 woorden... ok (5.2s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/67-v.mp3
+  Duur: 43.8s | Grootte: 684 KB | Generatietijd: 15.0s
+
+Hoofdstuk: psalmen 68
+Tekst: 3966 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (13.2s)
+  [2/9] 80 woorden... ok (9.9s)
+  [3/9] 80 woorden... ok (9.9s)
+  [4/9] 80 woorden... ok (9.5s)
+  [5/9] 80 woorden... ok (9.7s)
+  [6/9] 80 woorden... ok (9.2s)
+  [7/9] 80 woorden... ok (10.4s)
+  [8/9] 80 woorden... ok (10.3s)
+  [9/9] 58 woorden... ok (7.2s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/68-v.mp3
+  Duur: 261.8s | Grootte: 4091 KB | Generatietijd: 89.4s
+
+Hoofdstuk: psalmen 69
+Tekst: 3728 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (10.0s)
+  [2/9] 80 woorden... ok (9.6s)
+  [3/9] 80 woorden... ok (8.8s)
+  [4/9] 80 woorden... ok (9.5s)
+  [5/9] 80 woorden... ok (10.3s)
+  [6/9] 80 woorden... ok (9.1s)
+  [7/9] 80 woorden... ok (9.5s)
+  [8/9] 80 woorden... ok (10.1s)
+  [9/9] 29 woorden... ok (3.3s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/69-v.mp3
+  Duur: 234.8s | Grootte: 3669 KB | Generatietijd: 80.2s
+
+Hoofdstuk: psalmen 70
+Tekst: 590 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.8s)
+  [2/2] 27 woorden... ok (3.5s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/70-v.mp3
+  Duur: 38.8s | Grootte: 606 KB | Generatietijd: 13.3s
+
+Hoofdstuk: psalmen 71
+Tekst: 2428 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.8s)
+  [2/6] 80 woorden... ok (9.1s)
+  [3/6] 80 woorden... ok (9.7s)
+  [4/6] 80 woorden... ok (9.9s)
+  [5/6] 80 woorden... ok (9.7s)
+  [6/6] 43 woorden... ok (5.9s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/71-v.mp3
+  Duur: 158.5s | Grootte: 2477 KB | Generatietijd: 54.1s
+
+Hoofdstuk: psalmen 72
+Tekst: 2080 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (11.8s)
+  [2/5] 80 woorden... ok (8.5s)
+  [3/5] 80 woorden... ok (8.4s)
+  [4/5] 80 woorden... ok (8.0s)
+  [5/5] 57 woorden... ok (8.4s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/72-v.mp3
+  Duur: 131.9s | Grootte: 2061 KB | Generatietijd: 45.0s
+
+Hoofdstuk: psalmen 73
+Tekst: 2323 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.5s)
+  [2/6] 80 woorden... ok (8.6s)
+  [3/6] 80 woorden... ok (9.2s)
+  [4/6] 80 woorden... ok (9.6s)
+  [5/6] 80 woorden... ok (8.7s)
+  [6/6] 32 woorden... ok (3.7s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/73-v.mp3
+  Duur: 144.2s | Grootte: 2253 KB | Generatietijd: 49.3s
+
+Hoofdstuk: psalmen 74
+Tekst: 2302 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (10.2s)
+  [2/6] 80 woorden... ok (9.5s)
+  [3/6] 80 woorden... ok (9.6s)
+  [4/6] 80 woorden... ok (9.3s)
+  [5/6] 80 woorden... ok (9.2s)
+  [6/6] 12 woorden... ok (1.9s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/74-v.mp3
+  Duur: 145.4s | Grootte: 2272 KB | Generatietijd: 49.7s
+
+Hoofdstuk: psalmen 75
+Tekst: 998 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.9s)
+  [2/3] 80 woorden... ok (9.3s)
+  [3/3] 11 woorden... ok (1.5s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/75-v.mp3
+  Duur: 63.2s | Grootte: 988 KB | Generatietijd: 21.6s
+
+Hoofdstuk: psalmen 76
+Tekst: 1112 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.1s)
+  [2/3] 80 woorden... ok (9.6s)
+  [3/3] 41 woorden... ok (5.5s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/76-v.mp3
+  Duur: 73.8s | Grootte: 1154 KB | Generatietijd: 25.2s
+
+Hoofdstuk: psalmen 77
+Tekst: 1790 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.1s)
+  [2/5] 80 woorden... ok (10.6s)
+  [3/5] 80 woorden... ok (9.1s)
+  [4/5] 80 woorden... ok (9.8s)
+  [5/5] 6 woorden... ok (0.8s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/77-v.mp3
+  Duur: 115.4s | Grootte: 1803 KB | Generatietijd: 39.5s
+
+Hoofdstuk: psalmen 78
+Tekst: 6704 chars
+Chunks: 15
+  [1/15] 80 woorden... ok (9.9s)
+  [2/15] 80 woorden... ok (10.1s)
+  [3/15] 80 woorden... ok (9.6s)
+  [4/15] 80 woorden... ok (9.4s)
+  [5/15] 80 woorden... ok (9.5s)
+  [6/15] 80 woorden... ok (8.5s)
+  [7/15] 80 woorden... ok (9.8s)
+  [8/15] 80 woorden... ok (10.0s)
+  [9/15] 80 woorden... ok (9.7s)
+  [10/15] 80 woorden... ok (9.6s)
+  [11/15] 80 woorden... ok (9.0s)
+  [12/15] 80 woorden... ok (8.3s)
+  [13/15] 80 woorden... ok (9.4s)
+  [14/15] 80 woorden... ok (9.5s)
+  [15/15] 62 woorden... ok (7.4s)
+  Aaneenschakelen 15 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/78-v.mp3
+  Duur: 409.3s | Grootte: 6396 KB | Generatietijd: 139.8s
+
+Hoofdstuk: psalmen 79
+Tekst: 1517 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (11.3s)
+  [2/4] 80 woorden... ok (10.3s)
+  [3/4] 80 woorden... ok (9.3s)
+  [4/4] 29 woorden... ok (4.2s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/79-v.mp3
+  Duur: 102.5s | Grootte: 1602 KB | Generatietijd: 35.0s
+
+Hoofdstuk: psalmen 80
+Tekst: 1857 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (11.4s)
+  [2/5] 80 woorden... ok (9.5s)
+  [3/5] 80 woorden... ok (9.4s)
+  [4/5] 80 woorden... ok (8.9s)
+  [5/5] 10 woorden... ok (1.4s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/80-v.mp3
+  Duur: 118.6s | Grootte: 1853 KB | Generatietijd: 40.5s
+
+Hoofdstuk: psalmen 81
+Tekst: 1595 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (9.9s)
+  [2/4] 80 woorden... ok (9.0s)
+  [3/4] 80 woorden... ok (9.4s)
+  [4/4] 53 woorden... ok (6.6s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/81-v.mp3
+  Duur: 102.2s | Grootte: 1596 KB | Generatietijd: 34.9s
+
+Hoofdstuk: psalmen 82
+Tekst: 653 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.6s)
+  [2/2] 40 woorden... ok (4.8s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/82-v.mp3
+  Duur: 42.0s | Grootte: 656 KB | Generatietijd: 14.3s
+
+Hoofdstuk: psalmen 83
+Tekst: 1474 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.0s)
+  [2/4] 80 woorden... ok (10.4s)
+  [3/4] 80 woorden... ok (9.9s)
+  [4/4] 30 woorden... ok (3.5s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/83-v.mp3
+  Duur: 99.3s | Grootte: 1551 KB | Generatietijd: 33.9s
+
+Hoofdstuk: psalmen 84
+Tekst: 1376 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.1s)
+  [2/4] 80 woorden... ok (10.1s)
+  [3/4] 80 woorden... ok (10.3s)
+  [4/4] 9 woorden... ok (1.7s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/84-v.mp3
+  Duur: 93.9s | Grootte: 1467 KB | Generatietijd: 32.1s
+
+Hoofdstuk: psalmen 85
+Tekst: 1187 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.8s)
+  [2/3] 80 woorden... ok (9.5s)
+  [3/3] 54 woorden... ok (6.8s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/85-v.mp3
+  Duur: 76.3s | Grootte: 1193 KB | Generatietijd: 26.1s
+
+Hoofdstuk: psalmen 86
+Tekst: 1591 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.0s)
+  [2/4] 80 woorden... ok (8.8s)
+  [3/4] 80 woorden... ok (9.3s)
+  [4/4] 57 woorden... ok (7.5s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/86-v.mp3
+  Duur: 104.4s | Grootte: 1632 KB | Generatietijd: 35.6s
+
+Hoofdstuk: psalmen 87
+Tekst: 649 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.9s)
+  [2/2] 35 woorden... ok (4.7s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/87-v.mp3
+  Duur: 42.8s | Grootte: 669 KB | Generatietijd: 14.6s
+
+Hoofdstuk: psalmen 88
+Tekst: 1702 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.1s)
+  [2/4] 80 woorden... ok (9.6s)
+  [3/4] 80 woorden... ok (10.0s)
+  [4/4] 64 woorden... ok (8.0s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/88-v.mp3
+  Duur: 110.6s | Grootte: 1728 KB | Generatietijd: 37.8s
+
+Hoofdstuk: psalmen 89
+Tekst: 4791 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (10.4s)
+  [2/11] 80 woorden... ok (9.8s)
+  [3/11] 80 woorden... ok (9.0s)
+  [4/11] 80 woorden... ok (9.5s)
+  [5/11] 80 woorden... ok (8.8s)
+  [6/11] 80 woorden... ok (9.3s)
+  [7/11] 80 woorden... ok (9.3s)
+  [8/11] 80 woorden... ok (8.9s)
+  [9/11] 80 woorden... ok (9.5s)
+  [10/11] 80 woorden... ok (10.2s)
+  [11/11] 45 woorden... ok (6.8s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/89-v.mp3
+  Duur: 297.1s | Grootte: 4643 KB | Generatietijd: 101.5s
+
+Hoofdstuk: psalmen 90
+Tekst: 1736 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.8s)
+  [2/4] 80 woorden... ok (9.8s)
+  [3/4] 80 woorden... ok (8.4s)
+  [4/4] 69 woorden... ok (8.3s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/90-v.mp3
+  Duur: 109.7s | Grootte: 1714 KB | Generatietijd: 37.4s
+
+Hoofdstuk: psalmen 91
+Tekst: 1512 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (8.8s)
+  [2/4] 80 woorden... ok (9.9s)
+  [3/4] 80 woorden... ok (8.3s)
+  [4/4] 42 woorden... ok (4.6s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/91-v.mp3
+  Duur: 92.7s | Grootte: 1448 KB | Generatietijd: 31.7s
+
+Hoofdstuk: psalmen 92
+Tekst: 1421 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.5s)
+  [2/4] 80 woorden... ok (8.5s)
+  [3/4] 80 woorden... ok (8.8s)
+  [4/4] 6 woorden... ok (0.8s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/92-v.mp3
+  Duur: 83.4s | Grootte: 1303 KB | Generatietijd: 28.6s
+
+Hoofdstuk: psalmen 93
+Tekst: 525 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (11.0s)
+  [2/2] 7 woorden... ok (1.1s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/93-v.mp3
+  Duur: 35.3s | Grootte: 551 KB | Generatietijd: 12.1s
+
+Hoofdstuk: psalmen 94
+Tekst: 2000 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (11.1s)
+  [2/5] 80 woorden... ok (10.0s)
+  [3/5] 80 woorden... ok (9.8s)
+  [4/5] 80 woorden... ok (10.4s)
+  [5/5] 15 woorden... ok (2.4s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/94-v.mp3
+  Duur: 128.0s | Grootte: 1999 KB | Generatietijd: 43.8s
+
+Hoofdstuk: psalmen 95
+Tekst: 999 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.0s)
+  [2/3] 80 woorden... ok (9.5s)
+  [3/3] 26 woorden... ok (3.3s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/95-v.mp3
+  Duur: 63.6s | Grootte: 993 KB | Generatietijd: 21.8s
+
+Hoofdstuk: psalmen 96
+Tekst: 1194 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.1s)
+  [2/3] 80 woorden... ok (9.8s)
+  [3/3] 48 woorden... ok (5.5s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/96-v.mp3
+  Duur: 74.0s | Grootte: 1156 KB | Generatietijd: 25.3s
+
+Hoofdstuk: psalmen 97
+Tekst: 1162 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.4s)
+  [2/3] 80 woorden... ok (9.9s)
+  [3/3] 32 woorden... ok (4.2s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/97-v.mp3
+  Duur: 71.8s | Grootte: 1122 KB | Generatietijd: 24.5s
+
+Hoofdstuk: psalmen 98
+Tekst: 972 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.5s)
+  [2/3] 80 woorden... ok (10.5s)
+  [3/3] 5 woorden... ok (0.9s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/98-v.mp3
+  Duur: 64.0s | Grootte: 1000 KB | Generatietijd: 21.9s
+
+Hoofdstuk: psalmen 99
+Tekst: 906 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.3s)
+  [2/3] 80 woorden... ok (10.1s)
+  [3/3] 1 woorden... ok (0.4s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/99-v.mp3
+  Duur: 60.5s | Grootte: 945 KB | Generatietijd: 20.7s
+
+Hoofdstuk: psalmen 100
+Tekst: 425 chars
+Chunks: 1
+  [1/1] 72 woorden... ok (10.6s)
+  Aaneenschakelen 1 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/100-v.mp3
+  Duur: 31.1s | Grootte: 486 KB | Generatietijd: 10.6s
+
+Hoofdstuk: psalmen 101
+Tekst: 949 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (8.5s)
+  [2/3] 80 woorden... ok (9.7s)
+  [3/3] 12 woorden... ok (1.5s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/101-v.mp3
+  Duur: 57.6s | Grootte: 900 KB | Generatietijd: 19.7s
+
+Hoofdstuk: psalmen 102
+Tekst: 2658 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.6s)
+  [2/6] 80 woorden... ok (9.0s)
+  [3/6] 80 woorden... ok (9.7s)
+  [4/6] 80 woorden... ok (9.6s)
+  [5/6] 80 woorden... ok (9.2s)
+  [6/6] 75 woorden... ok (8.8s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/102-v.mp3
+  Duur: 163.2s | Grootte: 2550 KB | Generatietijd: 55.8s
+
+Hoofdstuk: psalmen 103
+Tekst: 1882 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.8s)
+  [2/4] 80 woorden... ok (10.3s)
+  [3/4] 80 woorden... ok (9.3s)
+  [4/4] 78 woorden... ok (11.5s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/103-v.mp3
+  Duur: 122.8s | Grootte: 1919 KB | Generatietijd: 41.9s
+
+Hoofdstuk: psalmen 104
+Tekst: 3200 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.7s)
+  [2/8] 80 woorden... ok (9.1s)
+  [3/8] 80 woorden... ok (8.8s)
+  [4/8] 80 woorden... ok (9.9s)
+  [5/8] 80 woorden... ok (8.6s)
+  [6/8] 80 woorden... ok (9.7s)
+  [7/8] 80 woorden... ok (10.5s)
+  [8/8] 18 woorden... ok (2.6s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/104-v.mp3
+  Duur: 201.8s | Grootte: 3153 KB | Generatietijd: 68.9s
+
+Hoofdstuk: psalmen 105
+Tekst: 3591 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (11.1s)
+  [2/8] 80 woorden... ok (9.6s)
+  [3/8] 80 woorden... ok (9.2s)
+  [4/8] 80 woorden... ok (9.0s)
+  [5/8] 80 woorden... ok (9.8s)
+  [6/8] 80 woorden... ok (9.6s)
+  [7/8] 80 woorden... ok (9.0s)
+  [8/8] 74 woorden... ok (8.7s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/105-v.mp3
+  Duur: 222.9s | Grootte: 3483 KB | Generatietijd: 76.1s
+
+Hoofdstuk: psalmen 106
+Tekst: 4425 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (9.9s)
+  [2/10] 80 woorden... ok (9.8s)
+  [3/10] 80 woorden... ok (9.2s)
+  [4/10] 80 woorden... ok (9.9s)
+  [5/10] 80 woorden... ok (10.0s)
+  [6/10] 80 woorden... ok (9.4s)
+  [7/10] 80 woorden... ok (9.2s)
+  [8/10] 80 woorden... ok (9.1s)
+  [9/10] 80 woorden... ok (8.6s)
+  [10/10] 41 woorden... ok (5.8s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/106-v.mp3
+  Duur: 265.0s | Grootte: 4140 KB | Generatietijd: 90.9s
+
+Hoofdstuk: psalmen 107
+Tekst: 3763 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (9.1s)
+  [2/9] 80 woorden... ok (9.7s)
+  [3/9] 80 woorden... ok (9.7s)
+  [4/9] 80 woorden... ok (9.2s)
+  [5/9] 80 woorden... ok (9.6s)
+  [6/9] 80 woorden... ok (9.9s)
+  [7/9] 80 woorden... ok (9.8s)
+  [8/9] 80 woorden... ok (10.1s)
+  [9/9] 10 woorden... ok (1.6s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/107-v.mp3
+  Duur: 230.4s | Grootte: 3600 KB | Generatietijd: 78.8s
+
+Hoofdstuk: psalmen 108
+Tekst: 1145 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.7s)
+  [2/3] 80 woorden... ok (10.0s)
+  [3/3] 55 woorden... ok (6.6s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/108-v.mp3
+  Duur: 77.0s | Grootte: 1203 KB | Generatietijd: 26.3s
+
+Hoofdstuk: psalmen 109
+Tekst: 2915 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (11.6s)
+  [2/7] 80 woorden... ok (9.2s)
+  [3/7] 80 woorden... ok (9.5s)
+  [4/7] 80 woorden... ok (8.4s)
+  [5/7] 80 woorden... ok (9.9s)
+  [6/7] 80 woorden... ok (9.6s)
+  [7/7] 45 woorden... ok (5.4s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/109-v.mp3
+  Duur: 186.1s | Grootte: 2908 KB | Generatietijd: 63.5s
+
+Hoofdstuk: psalmen 110
+Tekst: 821 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.4s)
+  [2/2] 70 woorden... ok (7.7s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/110-v.mp3
+  Duur: 50.1s | Grootte: 783 KB | Generatietijd: 17.1s
+
+Hoofdstuk: psalmen 111
+Tekst: 1114 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (7.9s)
+  [2/3] 80 woorden... ok (11.4s)
+  [3/3] 26 woorden... ok (3.4s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/111-v.mp3
+  Duur: 66.5s | Grootte: 1039 KB | Generatietijd: 22.8s
+
+Hoofdstuk: psalmen 112
+Tekst: 1108 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.8s)
+  [2/3] 80 woorden... ok (8.1s)
+  [3/3] 23 woorden... ok (3.1s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/112-v.mp3
+  Duur: 61.4s | Grootte: 959 KB | Generatietijd: 21.0s
+
+Hoofdstuk: psalmen 113
+Tekst: 615 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.5s)
+  [2/2] 34 woorden... ok (4.2s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/113-v.mp3
+  Duur: 40.2s | Grootte: 628 KB | Generatietijd: 13.8s
+
+Hoofdstuk: psalmen 114
+Tekst: 570 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.2s)
+  [2/2] 20 woorden... ok (2.9s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/114-v.mp3
+  Duur: 38.4s | Grootte: 601 KB | Generatietijd: 13.2s
+
+Hoofdstuk: psalmen 115
+Tekst: 1368 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (9.9s)
+  [2/4] 80 woorden... ok (9.0s)
+  [3/4] 80 woorden... ok (9.8s)
+  [4/4] 12 woorden... ok (1.6s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/115-v.mp3
+  Duur: 88.5s | Grootte: 1383 KB | Generatietijd: 30.3s
+
+Hoofdstuk: psalmen 116
+Tekst: 1488 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.3s)
+  [2/4] 80 woorden... ok (9.5s)
+  [3/4] 80 woorden... ok (10.6s)
+  [4/4] 25 woorden... ok (3.9s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/116-v.mp3
+  Duur: 100.4s | Grootte: 1569 KB | Generatietijd: 34.3s
+
+Hoofdstuk: psalmen 117
+Tekst: 161 chars
+Chunks: 1
+  [1/1] 25 woorden... ok (4.1s)
+  Aaneenschakelen 1 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/117-v.mp3
+  Duur: 11.9s | Grootte: 186 KB | Generatietijd: 4.1s
+
+Hoofdstuk: psalmen 118
+Tekst: 2451 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (10.3s)
+  [2/6] 80 woorden... ok (8.6s)
+  [3/6] 80 woorden... ok (9.4s)
+  [4/6] 80 woorden... ok (9.2s)
+  [5/6] 80 woorden... ok (9.9s)
+  [6/6] 42 woorden... ok (5.3s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/118-v.mp3
+  Duur: 154.2s | Grootte: 2410 KB | Generatietijd: 52.7s
+
+Hoofdstuk: psalmen 119
+Tekst: 13691 chars
+Chunks: 31
+  [1/31] 80 woorden... ok (10.0s)
+  [2/31] 80 woorden... ok (9.0s)
+  [3/31] 80 woorden... ok (9.2s)
+  [4/31] 80 woorden... ok (10.2s)
+  [5/31] 80 woorden... ok (9.9s)
+  [6/31] 80 woorden... ok (9.6s)
+  [7/31] 80 woorden... ok (9.7s)
+  [8/31] 80 woorden... ok (9.6s)
+  [9/31] 80 woorden... ok (9.8s)
+  [10/31] 80 woorden... ok (10.1s)
+  [11/31] 80 woorden... ok (10.3s)
+  [12/31] 80 woorden... ok (9.5s)
+  [13/31] 80 woorden... ok (9.3s)
+  [14/31] 80 woorden... ok (9.5s)
+  [15/31] 80 woorden... ok (9.5s)
+  [16/31] 80 woorden... ok (9.1s)
+  [17/31] 80 woorden... ok (9.5s)
+  [18/31] 80 woorden... ok (8.9s)
+  [19/31] 80 woorden... ok (10.2s)
+  [20/31] 80 woorden... ok (9.2s)
+  [21/31] 80 woorden... ok (9.2s)
+  [22/31] 80 woorden... ok (10.1s)
+  [23/31] 80 woorden... ok (10.2s)
+  [24/31] 80 woorden... ok (10.5s)
+  [25/31] 80 woorden... ok (9.8s)
+  [26/31] 80 woorden... ok (10.9s)
+  [27/31] 80 woorden... ok (10.6s)
+  [28/31] 80 woorden... ok (9.8s)
+  [29/31] 80 woorden... ok (10.4s)
+  [30/31] 80 woorden... ok (9.5s)
+  [31/31] 23 woorden... ok (2.8s)
+  Aaneenschakelen 31 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/119-v.mp3
+  Duur: 866.8s | Grootte: 13543 KB | Generatietijd: 296.1s
+
+Hoofdstuk: psalmen 120
+Tekst: 508 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.9s)
+  [2/2] 12 woorden... ok (1.4s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/120-v.mp3
+  Duur: 32.8s | Grootte: 513 KB | Generatietijd: 11.3s
+
+Hoofdstuk: psalmen 121
+Tekst: 541 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.0s)
+  [2/2] 20 woorden... ok (2.5s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/121-v.mp3
+  Duur: 36.5s | Grootte: 570 KB | Generatietijd: 12.5s
+
+Hoofdstuk: psalmen 122
+Tekst: 708 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.6s)
+  [2/2] 52 woorden... ok (6.0s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/122-v.mp3
+  Duur: 45.6s | Grootte: 713 KB | Generatietijd: 15.6s
+
+Hoofdstuk: psalmen 123
+Tekst: 454 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (8.7s)
+  [2/2] 10 woorden... ok (1.4s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/123-v.mp3
+  Duur: 29.4s | Grootte: 459 KB | Generatietijd: 10.1s
+
+Hoofdstuk: psalmen 124
+Tekst: 651 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.0s)
+  [2/2] 35 woorden... ok (4.3s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/124-v.mp3
+  Duur: 41.7s | Grootte: 652 KB | Generatietijd: 14.3s
+
+Hoofdstuk: psalmen 125
+Tekst: 570 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.9s)
+  [2/2] 19 woorden... ok (2.4s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/125-v.mp3
+  Duur: 35.9s | Grootte: 560 KB | Generatietijd: 12.3s
+
+Hoofdstuk: psalmen 126
+Tekst: 567 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.6s)
+  [2/2] 13 woorden... ok (2.0s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/126-v.mp3
+  Duur: 36.9s | Grootte: 576 KB | Generatietijd: 12.6s
+
+Hoofdstuk: psalmen 127
+Tekst: 632 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (11.7s)
+  [2/2] 34 woorden... ok (4.1s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/127-v.mp3
+  Duur: 46.5s | Grootte: 726 KB | Generatietijd: 15.9s
+
+Hoofdstuk: psalmen 128
+Tekst: 525 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.4s)
+  [2/2] 14 woorden... ok (1.9s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/128-v.mp3
+  Duur: 35.9s | Grootte: 561 KB | Generatietijd: 12.3s
+
+Hoofdstuk: psalmen 129
+Tekst: 647 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.2s)
+  [2/2] 30 woorden... ok (3.7s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/129-v.mp3
+  Duur: 40.6s | Grootte: 634 KB | Generatietijd: 13.9s
+
+Hoofdstuk: psalmen 130
+Tekst: 571 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (19.4s)
+  [2/2] 20 woorden... ok (2.8s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/130-v.mp3
+  Duur: 64.8s | Grootte: 1013 KB | Generatietijd: 22.2s
+
+Hoofdstuk: psalmen 131
+Tekst: 353 chars
+Chunks: 1
+  [1/1] 68 woorden... ok (8.1s)
+  Aaneenschakelen 1 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/131-v.mp3
+  Duur: 23.8s | Grootte: 372 KB | Generatietijd: 8.1s
+
+Hoofdstuk: psalmen 132
+Tekst: 1550 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.3s)
+  [2/4] 80 woorden... ok (10.2s)
+  [3/4] 80 woorden... ok (9.4s)
+  [4/4] 32 woorden... ok (4.4s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/132-v.mp3
+  Duur: 100.2s | Grootte: 1566 KB | Generatietijd: 34.2s
+
+Hoofdstuk: psalmen 133
+Tekst: 376 chars
+Chunks: 1
+  [1/1] 70 woorden... ok (8.4s)
+  Aaneenschakelen 1 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/133-v.mp3
+  Duur: 24.8s | Grootte: 387 KB | Generatietijd: 8.4s
+
+Hoofdstuk: psalmen 134
+Tekst: 242 chars
+Chunks: 1
+  [1/1] 45 woorden... ok (6.7s)
+  Aaneenschakelen 1 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/134-v.mp3
+  Duur: 19.7s | Grootte: 308 KB | Generatietijd: 6.7s
+
+Hoofdstuk: psalmen 135
+Tekst: 1635 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (8.4s)
+  [2/4] 80 woorden... ok (9.0s)
+  [3/4] 80 woorden... ok (9.8s)
+  [4/4] 59 woorden... ok (7.8s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/135-v.mp3
+  Duur: 102.8s | Grootte: 1606 KB | Generatietijd: 35.1s
+
+Hoofdstuk: psalmen 136
+Tekst: 2300 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (16.6s)
+  [2/5] 80 woorden... ok (28.1s)
+  [3/5] 80 woorden... ok (10.7s)
+  [4/5] 80 woorden... ok (10.4s)
+  [5/5] 45 woorden... ok (6.1s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/136-v.mp3
+  Duur: 210.0s | Grootte: 3282 KB | Generatietijd: 71.9s
+
+Hoofdstuk: psalmen 137
+Tekst: 965 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.5s)
+  [2/3] 80 woorden... ok (10.2s)
+  [3/3] 7 woorden... ok (1.1s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/137-v.mp3
+  Duur: 60.6s | Grootte: 947 KB | Generatietijd: 20.8s
+
+Hoofdstuk: psalmen 138
+Tekst: 954 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (8.8s)
+  [2/3] 80 woorden... ok (9.1s)
+  [3/3] 19 woorden... ok (2.9s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/138-v.mp3
+  Duur: 60.6s | Grootte: 947 KB | Generatietijd: 20.7s
+
+Hoofdstuk: psalmen 139
+Tekst: 2062 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.9s)
+  [2/5] 80 woorden... ok (8.8s)
+  [3/5] 80 woorden... ok (9.6s)
+  [4/5] 80 woorden... ok (9.6s)
+  [5/5] 75 woorden... ok (9.5s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/139-v.mp3
+  Duur: 138.6s | Grootte: 2166 KB | Generatietijd: 47.3s
+
+Hoofdstuk: psalmen 140
+Tekst: 1408 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.8s)
+  [2/4] 80 woorden... ok (10.1s)
+  [3/4] 80 woorden... ok (9.6s)
+  [4/4] 8 woorden... ok (1.2s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/140-v.mp3
+  Duur: 92.4s | Grootte: 1444 KB | Generatietijd: 31.6s
+
+Hoofdstuk: psalmen 141
+Tekst: 1188 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (9.3s)
+  [2/3] 80 woorden... ok (9.2s)
+  [3/3] 52 woorden... ok (6.4s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/141-v.mp3
+  Duur: 73.1s | Grootte: 1141 KB | Generatietijd: 24.9s
+
+Hoofdstuk: psalmen 142
+Tekst: 844 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.1s)
+  [2/2] 78 woorden... ok (9.0s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/142-v.mp3
+  Duur: 53.0s | Grootte: 828 KB | Generatietijd: 18.1s
+
+Hoofdstuk: psalmen 143
+Tekst: 1323 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.3s)
+  [2/4] 80 woorden... ok (9.6s)
+  [3/4] 80 woorden... ok (9.7s)
+  [4/4] 5 woorden... ok (0.6s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/143-v.mp3
+  Duur: 88.4s | Grootte: 1381 KB | Generatietijd: 30.3s
+
+Hoofdstuk: psalmen 144
+Tekst: 1603 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.3s)
+  [2/4] 80 woorden... ok (9.6s)
+  [3/4] 80 woorden... ok (9.9s)
+  [4/4] 39 woorden... ok (6.4s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/144-v.mp3
+  Duur: 105.6s | Grootte: 1651 KB | Generatietijd: 36.1s
+
+Hoofdstuk: psalmen 145
+Tekst: 1983 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (10.6s)
+  [2/5] 80 woorden... ok (12.5s)
+  [3/5] 80 woorden... ok (10.7s)
+  [4/5] 80 woorden... ok (9.6s)
+  [5/5] 14 woorden... ok (1.8s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/145-v.mp3
+  Duur: 132.3s | Grootte: 2068 KB | Generatietijd: 45.3s
+
+Hoofdstuk: psalmen 146
+Tekst: 897 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (10.5s)
+  [2/2] 78 woorden... ok (8.5s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/146-v.mp3
+  Duur: 55.7s | Grootte: 870 KB | Generatietijd: 19.0s
+
+Hoofdstuk: psalmen 147
+Tekst: 1532 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (10.4s)
+  [2/4] 80 woorden... ok (9.2s)
+  [3/4] 80 woorden... ok (9.0s)
+  [4/4] 32 woorden... ok (4.8s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/147-v.mp3
+  Duur: 97.7s | Grootte: 1526 KB | Generatietijd: 33.4s
+
+Hoofdstuk: psalmen 148
+Tekst: 1141 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (10.1s)
+  [2/3] 80 woorden... ok (11.0s)
+  [3/3] 43 woorden... ok (5.5s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/148-v.mp3
+  Duur: 77.9s | Grootte: 1217 KB | Generatietijd: 26.6s
+
+Hoofdstuk: psalmen 149
+Tekst: 815 chars
+Chunks: 2
+  [1/2] 80 woorden... ok (9.6s)
+  [2/2] 60 woorden... ok (8.9s)
+  Aaneenschakelen 2 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/149-v.mp3
+  Duur: 54.2s | Grootte: 847 KB | Generatietijd: 18.5s
+
+Hoofdstuk: psalmen 150
+Tekst: 448 chars
+Chunks: 1
+  [1/1] 75 woorden... ok (9.5s)
+  Aaneenschakelen 1 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/psalmen/150-v.mp3
+  Duur: 28.0s | Grootte: 437 KB | Generatietijd: 9.5s
+
+Hoofdstuk: johannes 1
+Tekst: 5413 chars
+Chunks: 13
+  [1/13] 80 woorden... ok (8.8s)
+  [2/13] 80 woorden... ok (9.1s)
+  [3/13] 80 woorden... ok (9.3s)
+  [4/13] 80 woorden... ok (8.8s)
+  [5/13] 80 woorden... ok (9.6s)
+  [6/13] 80 woorden... ok (9.4s)
+  [7/13] 80 woorden... ok (8.9s)
+  [8/13] 80 woorden... ok (9.0s)
+  [9/13] 80 woorden... ok (10.0s)
+  [10/13] 80 woorden... ok (10.4s)
+  [11/13] 80 woorden... ok (10.4s)
+  [12/13] 80 woorden... ok (11.1s)
+  [13/13] 55 woorden... ok (7.0s)
+  Aaneenschakelen 13 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/1-v.mp3
+  Duur: 356.9s | Grootte: 5576 KB | Generatietijd: 121.8s
+
+Hoofdstuk: johannes 2
+Tekst: 2718 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (8.7s)
+  [2/7] 80 woorden... ok (9.4s)
+  [3/7] 80 woorden... ok (9.6s)
+  [4/7] 80 woorden... ok (9.1s)
+  [5/7] 80 woorden... ok (9.3s)
+  [6/7] 80 woorden... ok (9.8s)
+  [7/7] 29 woorden... ok (3.2s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/2-v.mp3
+  Duur: 173.1s | Grootte: 2704 KB | Generatietijd: 59.1s
+
+Hoofdstuk: johannes 3
+Tekst: 4190 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (8.7s)
+  [2/10] 80 woorden... ok (9.5s)
+  [3/10] 80 woorden... ok (10.0s)
+  [4/10] 80 woorden... ok (9.4s)
+  [5/10] 80 woorden... ok (9.1s)
+  [6/10] 80 woorden... ok (9.1s)
+  [7/10] 80 woorden... ok (8.4s)
+  [8/10] 80 woorden... ok (9.0s)
+  [9/10] 80 woorden... ok (10.4s)
+  [10/10] 59 woorden... ok (5.9s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/3-v.mp3
+  Duur: 262.1s | Grootte: 4096 KB | Generatietijd: 89.5s
+
+Hoofdstuk: johannes 4
+Tekst: 5874 chars
+Chunks: 14
+  [1/14] 80 woorden... ok (10.2s)
+  [2/14] 80 woorden... ok (9.3s)
+  [3/14] 80 woorden... ok (8.7s)
+  [4/14] 80 woorden... ok (9.1s)
+  [5/14] 80 woorden... ok (9.3s)
+  [6/14] 80 woorden... ok (10.1s)
+  [7/14] 80 woorden... ok (9.4s)
+  [8/14] 80 woorden... ok (8.7s)
+  [9/14] 80 woorden... ok (9.5s)
+  [10/14] 80 woorden... ok (9.9s)
+  [11/14] 80 woorden... ok (9.0s)
+  [12/14] 80 woorden... ok (9.9s)
+  [13/14] 80 woorden... ok (9.8s)
+  [14/14] 72 woorden... ok (8.4s)
+  Aaneenschakelen 14 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/4-v.mp3
+  Duur: 384.7s | Grootte: 6011 KB | Generatietijd: 131.3s
+
+Hoofdstuk: johannes 5
+Tekst: 5193 chars
+Chunks: 13
+  [1/13] 80 woorden... ok (10.0s)
+  [2/13] 80 woorden... ok (9.3s)
+  [3/13] 80 woorden... ok (9.2s)
+  [4/13] 80 woorden... ok (10.3s)
+  [5/13] 80 woorden... ok (9.0s)
+  [6/13] 80 woorden... ok (8.8s)
+  [7/13] 80 woorden... ok (9.4s)
+  [8/13] 80 woorden... ok (8.8s)
+  [9/13] 80 woorden... ok (9.8s)
+  [10/13] 80 woorden... ok (9.1s)
+  [11/13] 80 woorden... ok (8.6s)
+  [12/13] 80 woorden... ok (8.7s)
+  [13/13] 26 woorden... ok (3.2s)
+  Aaneenschakelen 13 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/5-v.mp3
+  Duur: 334.3s | Grootte: 5224 KB | Generatietijd: 114.2s
+
+Hoofdstuk: johannes 6
+Tekst: 7901 chars
+Chunks: 19
+  [1/19] 80 woorden... ok (9.6s)
+  [2/19] 80 woorden... ok (9.7s)
+  [3/19] 80 woorden... ok (10.6s)
+  [4/19] 80 woorden... ok (9.4s)
+  [5/19] 80 woorden... ok (9.2s)
+  [6/19] 80 woorden... ok (9.6s)
+  [7/19] 80 woorden... ok (9.5s)
+  [8/19] 80 woorden... ok (8.7s)
+  [9/19] 80 woorden... ok (8.9s)
+  [10/19] 80 woorden... ok (8.6s)
+  [11/19] 80 woorden... ok (9.4s)
+  [12/19] 80 woorden... ok (9.2s)
+  [13/19] 80 woorden... ok (8.3s)
+  [14/19] 80 woorden... ok (9.4s)
+  [15/19] 80 woorden... ok (8.5s)
+  [16/19] 80 woorden... ok (10.1s)
+  [17/19] 80 woorden... ok (9.4s)
+  [18/19] 80 woorden... ok (9.6s)
+  [19/19] 34 woorden... ok (4.3s)
+  Aaneenschakelen 19 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/6-v.mp3
+  Duur: 504.1s | Grootte: 7876 KB | Generatietijd: 172.2s
+
+Hoofdstuk: johannes 7
+Tekst: 5385 chars
+Chunks: 13
+  [1/13] 80 woorden... ok (9.3s)
+  [2/13] 80 woorden... ok (8.7s)
+  [3/13] 80 woorden... ok (8.8s)
+  [4/13] 80 woorden... ok (9.4s)
+  [5/13] 80 woorden... ok (10.4s)
+  [6/13] 80 woorden... ok (9.2s)
+  [7/13] 80 woorden... ok (9.6s)
+  [8/13] 80 woorden... ok (9.4s)
+  [9/13] 80 woorden... ok (8.4s)
+  [10/13] 80 woorden... ok (8.7s)
+  [11/13] 80 woorden... ok (10.3s)
+  [12/13] 80 woorden... ok (10.2s)
+  [13/13] 47 woorden... ok (5.9s)
+  Aaneenschakelen 13 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/7-v.mp3
+  Duur: 346.9s | Grootte: 5420 KB | Generatietijd: 118.4s
+
+Hoofdstuk: johannes 8
+Tekst: 6817 chars
+Chunks: 17
+  [1/17] 80 woorden... ok (9.6s)
+  [2/17] 80 woorden... ok (10.1s)
+  [3/17] 80 woorden... ok (9.7s)
+  [4/17] 80 woorden... ok (9.8s)
+  [5/17] 80 woorden... ok (9.9s)
+  [6/17] 80 woorden... ok (9.6s)
+  [7/17] 80 woorden... ok (9.7s)
+  [8/17] 80 woorden... ok (9.1s)
+  [9/17] 80 woorden... ok (10.3s)
+  [10/17] 80 woorden... ok (8.5s)
+  [11/17] 80 woorden... ok (9.6s)
+  [12/17] 80 woorden... ok (8.9s)
+  [13/17] 80 woorden... ok (9.4s)
+  [14/17] 80 woorden... ok (8.9s)
+  [15/17] 80 woorden... ok (9.5s)
+  [16/17] 80 woorden... ok (10.0s)
+  [17/17] 26 woorden... ok (3.2s)
+  Aaneenschakelen 17 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/8-v.mp3
+  Duur: 456.4s | Grootte: 7131 KB | Generatietijd: 155.9s
+
+Hoofdstuk: johannes 9
+Tekst: 4508 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (10.2s)
+  [2/11] 80 woorden... ok (8.9s)
+  [3/11] 80 woorden... ok (10.7s)
+  [4/11] 80 woorden... ok (9.2s)
+  [5/11] 80 woorden... ok (10.1s)
+  [6/11] 80 woorden... ok (9.6s)
+  [7/11] 80 woorden... ok (8.9s)
+  [8/11] 80 woorden...   FOUT bij johannes 9: HTTPConnectionPool(host='127.0.0.1', port=8765): Read timed out. (read timeout=120)
+
+Hoofdstuk: johannes 10
+Tekst: 4274 chars
+Chunks: 11
+  [1/11] 80 woorden...   FOUT bij johannes 10: HTTPConnectionPool(host='127.0.0.1', port=8765): Read timed out. (read timeout=120)
+
+Hoofdstuk: johannes 11
+Tekst: 6081 chars
+Chunks: 15
+  [1/15] 80 woorden...   FOUT bij johannes 11: HTTPConnectionPool(host='127.0.0.1', port=8765): Read timed out. (read timeout=120)
+
+Hoofdstuk: johannes 12
+Tekst: 5886 chars
+Chunks: 14
+  [1/14] 80 woorden... [sup] VASTGELOPEN gedetecteerd (stale=5, recent-timeouts=3) → herstart
+[sup] stem=v: 178/320 klaar
+[sup] === poging 2 voor stem=v (16:42:00) ===
+Sla over (bestaat al): audio/genesis/1-v.mp3
+Sla over (bestaat al): audio/genesis/2-v.mp3
+Sla over (bestaat al): audio/genesis/3-v.mp3
+Sla over (bestaat al): audio/genesis/4-v.mp3
+Sla over (bestaat al): audio/genesis/5-v.mp3
+Sla over (bestaat al): audio/genesis/6-v.mp3
+Sla over (bestaat al): audio/genesis/7-v.mp3
+Sla over (bestaat al): audio/genesis/8-v.mp3
+Sla over (bestaat al): audio/genesis/9-v.mp3
+Sla over (bestaat al): audio/genesis/10-v.mp3
+Sla over (bestaat al): audio/genesis/11-v.mp3
+Sla over (bestaat al): audio/genesis/12-v.mp3
+Sla over (bestaat al): audio/genesis/13-v.mp3
+Sla over (bestaat al): audio/genesis/14-v.mp3
+Sla over (bestaat al): audio/genesis/15-v.mp3
+Sla over (bestaat al): audio/genesis/16-v.mp3
+Sla over (bestaat al): audio/genesis/17-v.mp3
+Sla over (bestaat al): audio/genesis/18-v.mp3
+Sla over (bestaat al): audio/genesis/19-v.mp3
+Sla over (bestaat al): audio/genesis/20-v.mp3
+Sla over (bestaat al): audio/psalmen/1-v.mp3
+Sla over (bestaat al): audio/psalmen/2-v.mp3
+Sla over (bestaat al): audio/psalmen/3-v.mp3
+Sla over (bestaat al): audio/psalmen/4-v.mp3
+Sla over (bestaat al): audio/psalmen/5-v.mp3
+Sla over (bestaat al): audio/psalmen/6-v.mp3
+Sla over (bestaat al): audio/psalmen/7-v.mp3
+Sla over (bestaat al): audio/psalmen/8-v.mp3
+Sla over (bestaat al): audio/psalmen/9-v.mp3
+Sla over (bestaat al): audio/psalmen/10-v.mp3
+Sla over (bestaat al): audio/psalmen/11-v.mp3
+Sla over (bestaat al): audio/psalmen/12-v.mp3
+Sla over (bestaat al): audio/psalmen/13-v.mp3
+Sla over (bestaat al): audio/psalmen/14-v.mp3
+Sla over (bestaat al): audio/psalmen/15-v.mp3
+Sla over (bestaat al): audio/psalmen/16-v.mp3
+Sla over (bestaat al): audio/psalmen/17-v.mp3
+Sla over (bestaat al): audio/psalmen/18-v.mp3
+Sla over (bestaat al): audio/psalmen/19-v.mp3
+Sla over (bestaat al): audio/psalmen/20-v.mp3
+Sla over (bestaat al): audio/psalmen/21-v.mp3
+Sla over (bestaat al): audio/psalmen/22-v.mp3
+Sla over (bestaat al): audio/psalmen/23-v.mp3
+Sla over (bestaat al): audio/psalmen/24-v.mp3
+Sla over (bestaat al): audio/psalmen/25-v.mp3
+Sla over (bestaat al): audio/psalmen/26-v.mp3
+Sla over (bestaat al): audio/psalmen/27-v.mp3
+Sla over (bestaat al): audio/psalmen/28-v.mp3
+Sla over (bestaat al): audio/psalmen/29-v.mp3
+Sla over (bestaat al): audio/psalmen/30-v.mp3
+Sla over (bestaat al): audio/psalmen/31-v.mp3
+Sla over (bestaat al): audio/psalmen/32-v.mp3
+Sla over (bestaat al): audio/psalmen/33-v.mp3
+Sla over (bestaat al): audio/psalmen/34-v.mp3
+Sla over (bestaat al): audio/psalmen/35-v.mp3
+Sla over (bestaat al): audio/psalmen/36-v.mp3
+Sla over (bestaat al): audio/psalmen/37-v.mp3
+Sla over (bestaat al): audio/psalmen/38-v.mp3
+Sla over (bestaat al): audio/psalmen/39-v.mp3
+Sla over (bestaat al): audio/psalmen/40-v.mp3
+Sla over (bestaat al): audio/psalmen/41-v.mp3
+Sla over (bestaat al): audio/psalmen/42-v.mp3
+Sla over (bestaat al): audio/psalmen/43-v.mp3
+Sla over (bestaat al): audio/psalmen/44-v.mp3
+Sla over (bestaat al): audio/psalmen/45-v.mp3
+Sla over (bestaat al): audio/psalmen/46-v.mp3
+Sla over (bestaat al): audio/psalmen/47-v.mp3
+Sla over (bestaat al): audio/psalmen/48-v.mp3
+Sla over (bestaat al): audio/psalmen/49-v.mp3
+Sla over (bestaat al): audio/psalmen/50-v.mp3
+Sla over (bestaat al): audio/psalmen/51-v.mp3
+Sla over (bestaat al): audio/psalmen/52-v.mp3
+Sla over (bestaat al): audio/psalmen/53-v.mp3
+Sla over (bestaat al): audio/psalmen/54-v.mp3
+Sla over (bestaat al): audio/psalmen/55-v.mp3
+Sla over (bestaat al): audio/psalmen/56-v.mp3
+Sla over (bestaat al): audio/psalmen/57-v.mp3
+Sla over (bestaat al): audio/psalmen/58-v.mp3
+Sla over (bestaat al): audio/psalmen/59-v.mp3
+Sla over (bestaat al): audio/psalmen/60-v.mp3
+Sla over (bestaat al): audio/psalmen/61-v.mp3
+Sla over (bestaat al): audio/psalmen/62-v.mp3
+Sla over (bestaat al): audio/psalmen/63-v.mp3
+Sla over (bestaat al): audio/psalmen/64-v.mp3
+Sla over (bestaat al): audio/psalmen/65-v.mp3
+Sla over (bestaat al): audio/psalmen/66-v.mp3
+Sla over (bestaat al): audio/psalmen/67-v.mp3
+Sla over (bestaat al): audio/psalmen/68-v.mp3
+Sla over (bestaat al): audio/psalmen/69-v.mp3
+Sla over (bestaat al): audio/psalmen/70-v.mp3
+Sla over (bestaat al): audio/psalmen/71-v.mp3
+Sla over (bestaat al): audio/psalmen/72-v.mp3
+Sla over (bestaat al): audio/psalmen/73-v.mp3
+Sla over (bestaat al): audio/psalmen/74-v.mp3
+Sla over (bestaat al): audio/psalmen/75-v.mp3
+Sla over (bestaat al): audio/psalmen/76-v.mp3
+Sla over (bestaat al): audio/psalmen/77-v.mp3
+Sla over (bestaat al): audio/psalmen/78-v.mp3
+Sla over (bestaat al): audio/psalmen/79-v.mp3
+Sla over (bestaat al): audio/psalmen/80-v.mp3
+Sla over (bestaat al): audio/psalmen/81-v.mp3
+Sla over (bestaat al): audio/psalmen/82-v.mp3
+Sla over (bestaat al): audio/psalmen/83-v.mp3
+Sla over (bestaat al): audio/psalmen/84-v.mp3
+Sla over (bestaat al): audio/psalmen/85-v.mp3
+Sla over (bestaat al): audio/psalmen/86-v.mp3
+Sla over (bestaat al): audio/psalmen/87-v.mp3
+Sla over (bestaat al): audio/psalmen/88-v.mp3
+Sla over (bestaat al): audio/psalmen/89-v.mp3
+Sla over (bestaat al): audio/psalmen/90-v.mp3
+Sla over (bestaat al): audio/psalmen/91-v.mp3
+Sla over (bestaat al): audio/psalmen/92-v.mp3
+Sla over (bestaat al): audio/psalmen/93-v.mp3
+Sla over (bestaat al): audio/psalmen/94-v.mp3
+Sla over (bestaat al): audio/psalmen/95-v.mp3
+Sla over (bestaat al): audio/psalmen/96-v.mp3
+Sla over (bestaat al): audio/psalmen/97-v.mp3
+Sla over (bestaat al): audio/psalmen/98-v.mp3
+Sla over (bestaat al): audio/psalmen/99-v.mp3
+Sla over (bestaat al): audio/psalmen/100-v.mp3
+Sla over (bestaat al): audio/psalmen/101-v.mp3
+Sla over (bestaat al): audio/psalmen/102-v.mp3
+Sla over (bestaat al): audio/psalmen/103-v.mp3
+Sla over (bestaat al): audio/psalmen/104-v.mp3
+Sla over (bestaat al): audio/psalmen/105-v.mp3
+Sla over (bestaat al): audio/psalmen/106-v.mp3
+Sla over (bestaat al): audio/psalmen/107-v.mp3
+Sla over (bestaat al): audio/psalmen/108-v.mp3
+Sla over (bestaat al): audio/psalmen/109-v.mp3
+Sla over (bestaat al): audio/psalmen/110-v.mp3
+Sla over (bestaat al): audio/psalmen/111-v.mp3
+Sla over (bestaat al): audio/psalmen/112-v.mp3
+Sla over (bestaat al): audio/psalmen/113-v.mp3
+Sla over (bestaat al): audio/psalmen/114-v.mp3
+Sla over (bestaat al): audio/psalmen/115-v.mp3
+Sla over (bestaat al): audio/psalmen/116-v.mp3
+Sla over (bestaat al): audio/psalmen/117-v.mp3
+Sla over (bestaat al): audio/psalmen/118-v.mp3
+Sla over (bestaat al): audio/psalmen/119-v.mp3
+Sla over (bestaat al): audio/psalmen/120-v.mp3
+Sla over (bestaat al): audio/psalmen/121-v.mp3
+Sla over (bestaat al): audio/psalmen/122-v.mp3
+Sla over (bestaat al): audio/psalmen/123-v.mp3
+Sla over (bestaat al): audio/psalmen/124-v.mp3
+Sla over (bestaat al): audio/psalmen/125-v.mp3
+Sla over (bestaat al): audio/psalmen/126-v.mp3
+Sla over (bestaat al): audio/psalmen/127-v.mp3
+Sla over (bestaat al): audio/psalmen/128-v.mp3
+Sla over (bestaat al): audio/psalmen/129-v.mp3
+Sla over (bestaat al): audio/psalmen/130-v.mp3
+Sla over (bestaat al): audio/psalmen/131-v.mp3
+Sla over (bestaat al): audio/psalmen/132-v.mp3
+Sla over (bestaat al): audio/psalmen/133-v.mp3
+Sla over (bestaat al): audio/psalmen/134-v.mp3
+Sla over (bestaat al): audio/psalmen/135-v.mp3
+Sla over (bestaat al): audio/psalmen/136-v.mp3
+Sla over (bestaat al): audio/psalmen/137-v.mp3
+Sla over (bestaat al): audio/psalmen/138-v.mp3
+Sla over (bestaat al): audio/psalmen/139-v.mp3
+Sla over (bestaat al): audio/psalmen/140-v.mp3
+Sla over (bestaat al): audio/psalmen/141-v.mp3
+Sla over (bestaat al): audio/psalmen/142-v.mp3
+Sla over (bestaat al): audio/psalmen/143-v.mp3
+Sla over (bestaat al): audio/psalmen/144-v.mp3
+Sla over (bestaat al): audio/psalmen/145-v.mp3
+Sla over (bestaat al): audio/psalmen/146-v.mp3
+Sla over (bestaat al): audio/psalmen/147-v.mp3
+Sla over (bestaat al): audio/psalmen/148-v.mp3
+Sla over (bestaat al): audio/psalmen/149-v.mp3
+Sla over (bestaat al): audio/psalmen/150-v.mp3
+Sla over (bestaat al): audio/johannes/1-v.mp3
+Sla over (bestaat al): audio/johannes/2-v.mp3
+Sla over (bestaat al): audio/johannes/3-v.mp3
+Sla over (bestaat al): audio/johannes/4-v.mp3
+Sla over (bestaat al): audio/johannes/5-v.mp3
+Sla over (bestaat al): audio/johannes/6-v.mp3
+Sla over (bestaat al): audio/johannes/7-v.mp3
+Sla over (bestaat al): audio/johannes/8-v.mp3
+Voice sample: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/_pilot/_sample/voice-female.wav
+Model: bosonai/higgs-audio-v3-tts-4b
+Server poort: 8765
+Te genereren: 142 hoofdstuk(ken)
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+Hoofdstuk: johannes 9
+Tekst: 4508 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (11.1s)
+  [2/11] 80 woorden... ok (9.4s)
+  [3/11] 80 woorden... ok (9.9s)
+  [4/11] 80 woorden... ok (9.4s)
+  [5/11] 80 woorden... ok (9.4s)
+  [6/11] 80 woorden... ok (9.1s)
+  [7/11] 80 woorden... ok (9.3s)
+  [8/11] 80 woorden... ok (9.8s)
+  [9/11] 80 woorden... ok (10.1s)
+  [10/11] 80 woorden... ok (9.0s)
+  [11/11] 57 woorden... ok (6.9s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/9-v.mp3
+  Duur: 300.4s | Grootte: 4694 KB | Generatietijd: 103.5s
+
+Hoofdstuk: johannes 10
+Tekst: 4274 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (9.4s)
+  [2/11] 80 woorden... ok (9.6s)
+  [3/11] 80 woorden... ok (9.4s)
+  [4/11] 80 woorden... ok (8.7s)
+  [5/11] 80 woorden... ok (9.1s)
+  [6/11] 80 woorden... ok (9.0s)
+  [7/11] 80 woorden... ok (8.9s)
+  [8/11] 80 woorden... ok (9.3s)
+  [9/11] 80 woorden... ok (9.5s)
+  [10/11] 80 woorden... ok (9.0s)
+  [11/11] 15 woorden... ok (1.8s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/10-v.mp3
+  Duur: 274.2s | Grootte: 4285 KB | Generatietijd: 93.6s
+
+Hoofdstuk: johannes 11
+Tekst: 6081 chars
+Chunks: 15
+  [1/15] 80 woorden... ok (9.3s)
+  [2/15] 80 woorden... ok (9.5s)
+  [3/15] 80 woorden... ok (9.0s)
+  [4/15] 80 woorden... ok (9.5s)
+  [5/15] 80 woorden... ok (9.5s)
+  [6/15] 80 woorden... ok (9.6s)
+  [7/15] 80 woorden... ok (10.3s)
+  [8/15] 80 woorden... ok (9.9s)
+  [9/15] 80 woorden... ok (9.8s)
+  [10/15] 80 woorden... ok (9.0s)
+  [11/15] 80 woorden... ok (10.4s)
+  [12/15] 80 woorden... ok (10.2s)
+  [13/15] 80 woorden... ok (9.5s)
+  [14/15] 80 woorden... ok (9.3s)
+  [15/15] 14 woorden... ok (1.5s)
+  Aaneenschakelen 15 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/11-v.mp3
+  Duur: 398.8s | Grootte: 6231 KB | Generatietijd: 136.1s
+
+Hoofdstuk: johannes 12
+Tekst: 5886 chars
+Chunks: 14
+  [1/14] 80 woorden... ok (9.6s)
+  [2/14] 80 woorden... ok (9.7s)
+  [3/14] 80 woorden... ok (9.9s)
+  [4/14] 80 woorden... ok (10.3s)
+  [5/14] 80 woorden... ok (9.5s)
+  [6/14] 80 woorden... ok (10.5s)
+  [7/14] 80 woorden... ok (9.3s)
+  [8/14] 80 woorden... ok (9.7s)
+  [9/14] 80 woorden... ok (9.7s)
+  [10/14] 80 woorden... ok (9.7s)
+  [11/14] 80 woorden... ok (9.5s)
+  [12/14] 80 woorden... ok (9.5s)
+  [13/14] 80 woorden... ok (9.7s)
+  [14/14] 29 woorden... ok (4.4s)
+  Aaneenschakelen 14 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/12-v.mp3
+  Duur: 384.0s | Grootte: 6000 KB | Generatietijd: 131.0s
+
+Hoofdstuk: johannes 13
+Tekst: 4341 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (8.9s)
+  [2/11] 80 woorden... ok (8.9s)
+  [3/11] 80 woorden... ok (9.7s)
+  [4/11] 80 woorden... ok (9.0s)
+  [5/11] 80 woorden... ok (10.1s)
+  [6/11] 80 woorden... ok (11.0s)
+  [7/11] 80 woorden... ok (10.0s)
+  [8/11] 80 woorden... ok (9.9s)
+  [9/11] 80 woorden... ok (10.8s)
+  [10/11] 80 woorden... ok (9.7s)
+  [11/11] 27 woorden... ok (3.7s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/13-v.mp3
+  Duur: 297.9s | Grootte: 4654 KB | Generatietijd: 101.7s
+
+Hoofdstuk: johannes 14
+Tekst: 3571 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (8.2s)
+  [2/10] 80 woorden... ok (9.2s)
+  [3/10] 80 woorden... ok (8.7s)
+  [4/10] 80 woorden... ok (8.9s)
+  [5/10] 80 woorden... ok (8.6s)
+  [6/10] 80 woorden... ok (9.5s)
+  [7/10] 80 woorden... ok (9.3s)
+  [8/10] 80 woorden... ok (8.7s)
+  [9/10] 80 woorden... ok (9.3s)
+  [10/10] 14 woorden... ok (1.9s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/14-v.mp3
+  Duur: 240.9s | Grootte: 3764 KB | Generatietijd: 82.3s
+
+Hoofdstuk: johannes 15
+Tekst: 3079 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (8.8s)
+  [2/8] 80 woorden... ok (9.0s)
+  [3/8] 80 woorden... ok (9.7s)
+  [4/8] 80 woorden... ok (8.7s)
+  [5/8] 80 woorden... ok (9.1s)
+  [6/8] 80 woorden... ok (8.9s)
+  [7/8] 80 woorden... ok (9.3s)
+  [8/8] 38 woorden... ok (4.1s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/15-v.mp3
+  Duur: 198.3s | Grootte: 3098 KB | Generatietijd: 67.7s
+
+Hoofdstuk: johannes 16
+Tekst: 4070 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (8.9s)
+  [2/10] 80 woorden... ok (8.2s)
+  [3/10] 80 woorden... ok (8.9s)
+  [4/10] 80 woorden... ok (8.3s)
+  [5/10] 80 woorden... ok (8.4s)
+  [6/10] 80 woorden... ok (8.9s)
+  [7/10] 80 woorden... ok (9.4s)
+  [8/10] 80 woorden... ok (8.7s)
+  [9/10] 80 woorden... ok (9.6s)
+  [10/10] 75 woorden... ok (8.2s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/16-v.mp3
+  Duur: 256.7s | Grootte: 4010 KB | Generatietijd: 87.5s
+
+Hoofdstuk: johannes 17
+Tekst: 3137 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.4s)
+  [2/8] 80 woorden... ok (9.4s)
+  [3/8] 80 woorden... ok (8.5s)
+  [4/8] 80 woorden... ok (8.7s)
+  [5/8] 80 woorden... ok (8.6s)
+  [6/8] 80 woorden... ok (8.8s)
+  [7/8] 80 woorden... ok (9.7s)
+  [8/8] 63 woorden... ok (7.8s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/17-v.mp3
+  Duur: 208.2s | Grootte: 3254 KB | Generatietijd: 71.0s
+
+Hoofdstuk: johannes 18
+Tekst: 5025 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (10.5s)
+  [2/12] 80 woorden... ok (9.6s)
+  [3/12] 80 woorden... ok (10.1s)
+  [4/12] 80 woorden... ok (10.0s)
+  [5/12] 80 woorden... ok (8.9s)
+  [6/12] 80 woorden... ok (9.3s)
+  [7/12] 80 woorden... ok (9.9s)
+  [8/12] 80 woorden... ok (9.9s)
+  [9/12] 80 woorden... ok (10.2s)
+  [10/12] 80 woorden... ok (10.1s)
+  [11/12] 80 woorden... ok (8.9s)
+  [12/12] 27 woorden... ok (3.7s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/18-v.mp3
+  Duur: 325.0s | Grootte: 5078 KB | Generatietijd: 110.9s
+
+Hoofdstuk: johannes 19
+Tekst: 5408 chars
+Chunks: 13
+  [1/13] 80 woorden... ok (9.9s)
+  [2/13] 80 woorden... ok (9.8s)
+  [3/13] 80 woorden... ok (9.0s)
+  [4/13] 80 woorden... ok (9.6s)
+  [5/13] 80 woorden... ok (10.6s)
+  [6/13] 80 woorden... ok (9.6s)
+  [7/13] 80 woorden... ok (9.7s)
+  [8/13] 80 woorden... ok (10.6s)
+  [9/13] 80 woorden... ok (9.3s)
+  [10/13] 80 woorden... ok (9.1s)
+  [11/13] 80 woorden... ok (10.0s)
+  [12/13] 80 woorden... ok (9.1s)
+  [13/13] 26 woorden... ok (3.0s)
+  Aaneenschakelen 13 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/19-v.mp3
+  Duur: 349.3s | Grootte: 5458 KB | Generatietijd: 119.2s
+
+Hoofdstuk: johannes 20
+Tekst: 3873 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (8.7s)
+  [2/10] 80 woorden... ok (8.6s)
+  [3/10] 80 woorden... ok (8.8s)
+  [4/10] 80 woorden... ok (9.5s)
+  [5/10] 80 woorden... ok (9.3s)
+  [6/10] 80 woorden... ok (9.0s)
+  [7/10] 80 woorden... ok (9.8s)
+  [8/10] 80 woorden... ok (8.7s)
+  [9/10] 80 woorden... ok (9.5s)
+  [10/10] 22 woorden... ok (2.8s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/20-v.mp3
+  Duur: 248.0s | Grootte: 3874 KB | Generatietijd: 84.7s
+
+Hoofdstuk: johannes 21
+Tekst: 3658 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (10.4s)
+  [2/9] 80 woorden... ok (10.0s)
+  [3/9] 80 woorden... ok (9.4s)
+  [4/9] 80 woorden... ok (9.6s)
+  [5/9] 80 woorden... ok (10.1s)
+  [6/9] 80 woorden... ok (9.6s)
+  [7/9] 80 woorden... ok (10.3s)
+  [8/9] 80 woorden... ok (9.1s)
+  [9/9] 45 woorden... ok (5.9s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/johannes/21-v.mp3
+  Duur: 247.0s | Grootte: 3859 KB | Generatietijd: 84.3s
+
+Hoofdstuk: handelingen 1
+Tekst: 3722 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (10.0s)
+  [2/9] 80 woorden... ok (9.7s)
+  [3/9] 80 woorden... ok (8.3s)
+  [4/9] 80 woorden... ok (9.6s)
+  [5/9] 80 woorden... ok (10.7s)
+  [6/9] 80 woorden... ok (10.6s)
+  [7/9] 80 woorden... ok (9.6s)
+  [8/9] 80 woorden... ok (10.0s)
+  [9/9] 26 woorden... ok (3.0s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/1-v.mp3
+  Duur: 239.1s | Grootte: 3735 KB | Generatietijd: 81.6s
+
+Hoofdstuk: handelingen 2
+Tekst: 5681 chars
+Chunks: 13
+  [1/13] 80 woorden... ok (8.9s)
+  [2/13] 80 woorden... ok (10.4s)
+  [3/13] 80 woorden... ok (10.0s)
+  [4/13] 80 woorden... ok (8.5s)
+  [5/13] 80 woorden... ok (9.1s)
+  [6/13] 80 woorden... ok (10.2s)
+  [7/13] 80 woorden... ok (9.3s)
+  [8/13] 80 woorden... ok (9.3s)
+  [9/13] 80 woorden... ok (10.2s)
+  [10/13] 80 woorden... ok (9.3s)
+  [11/13] 80 woorden... ok (9.5s)
+  [12/13] 80 woorden... ok (9.2s)
+  [13/13] 63 woorden... ok (7.6s)
+  Aaneenschakelen 13 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/2-v.mp3
+  Duur: 355.7s | Grootte: 5558 KB | Generatietijd: 121.4s
+
+Hoofdstuk: handelingen 3
+Tekst: 3552 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.4s)
+  [2/8] 80 woorden... ok (9.8s)
+  [3/8] 80 woorden... ok (9.7s)
+  [4/8] 80 woorden... ok (10.2s)
+  [5/8] 80 woorden... ok (9.5s)
+  [6/8] 80 woorden... ok (8.9s)
+  [7/8] 80 woorden... ok (9.5s)
+  [8/8] 79 woorden... ok (9.3s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/3-v.mp3
+  Duur: 223.6s | Grootte: 3494 KB | Generatietijd: 76.3s
+
+Hoofdstuk: handelingen 4
+Tekst: 4751 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (8.7s)
+  [2/11] 80 woorden... ok (10.2s)
+  [3/11] 80 woorden... ok (9.7s)
+  [4/11] 80 woorden... ok (10.0s)
+  [5/11] 80 woorden... ok (8.4s)
+  [6/11] 80 woorden... ok (9.2s)
+  [7/11] 80 woorden... ok (9.2s)
+  [8/11] 80 woorden... ok (9.6s)
+  [9/11] 80 woorden... ok (9.8s)
+  [10/11] 80 woorden... ok (9.3s)
+  [11/11] 46 woorden... ok (6.0s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/4-v.mp3
+  Duur: 292.9s | Grootte: 4577 KB | Generatietijd: 99.9s
+
+Hoofdstuk: handelingen 5
+Tekst: 5604 chars
+Chunks: 13
+  [1/13] 80 woorden... ok (9.4s)
+  [2/13] 80 woorden... ok (9.7s)
+  [3/13] 80 woorden... ok (9.5s)
+  [4/13] 80 woorden... ok (8.8s)
+  [5/13] 80 woorden... ok (9.7s)
+  [6/13] 80 woorden... ok (9.2s)
+  [7/13] 80 woorden... ok (9.4s)
+  [8/13] 80 woorden... ok (9.7s)
+  [9/13] 80 woorden... ok (8.2s)
+  [10/13] 80 woorden... ok (9.3s)
+  [11/13] 80 woorden... ok (9.6s)
+  [12/13] 80 woorden... ok (9.0s)
+  [13/13] 66 woorden... ok (7.8s)
+  Aaneenschakelen 13 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/5-v.mp3
+  Duur: 349.3s | Grootte: 5458 KB | Generatietijd: 119.2s
+
+Hoofdstuk: handelingen 6
+Tekst: 2050 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.8s)
+  [2/5] 80 woorden... ok (10.3s)
+  [3/5] 80 woorden... ok (10.4s)
+  [4/5] 80 woorden... ok (9.9s)
+  [5/5] 35 woorden... ok (4.2s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/6-v.mp3
+  Duur: 130.5s | Grootte: 2039 KB | Generatietijd: 44.6s
+
+Hoofdstuk: handelingen 7
+Tekst: 7790 chars
+Chunks: 18
+  [1/18] 80 woorden... ok (9.1s)
+  [2/18] 80 woorden... ok (9.0s)
+  [3/18] 80 woorden... ok (9.3s)
+  [4/18] 80 woorden... ok (9.5s)
+  [5/18] 80 woorden... ok (9.7s)
+  [6/18] 80 woorden... ok (10.4s)
+  [7/18] 80 woorden... ok (9.5s)
+  [8/18] 80 woorden... ok (9.7s)
+  [9/18] 80 woorden... ok (8.9s)
+  [10/18] 80 woorden... ok (9.1s)
+  [11/18] 80 woorden... ok (8.8s)
+  [12/18] 80 woorden... ok (8.7s)
+  [13/18] 80 woorden... ok (9.0s)
+  [14/18] 80 woorden... ok (9.6s)
+  [15/18] 80 woorden... ok (9.0s)
+  [16/18] 80 woorden... ok (9.7s)
+  [17/18] 80 woorden... ok (8.8s)
+  [18/18] 53 woorden... ok (7.2s)
+  Aaneenschakelen 18 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/7-v.mp3
+  Duur: 483.0s | Grootte: 7548 KB | Generatietijd: 164.9s
+
+Hoofdstuk: handelingen 8
+Tekst: 4847 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (9.6s)
+  [2/11] 80 woorden... ok (9.3s)
+  [3/11] 80 woorden... ok (9.1s)
+  [4/11] 80 woorden... ok (10.2s)
+  [5/11] 80 woorden... ok (8.7s)
+  [6/11] 80 woorden... ok (9.0s)
+  [7/11] 80 woorden... ok (9.9s)
+  [8/11] 80 woorden... ok (9.1s)
+  [9/11] 80 woorden... ok (9.4s)
+  [10/11] 80 woorden... ok (10.4s)
+  [11/11] 77 woorden... ok (8.9s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/8-v.mp3
+  Duur: 303.5s | Grootte: 4741 KB | Generatietijd: 103.5s
+
+Hoofdstuk: handelingen 9
+Tekst: 5573 chars
+Chunks: 13
+  [1/13] 80 woorden... ok (9.8s)
+  [2/13] 80 woorden... ok (9.4s)
+  [3/13] 80 woorden... ok (8.7s)
+  [4/13] 80 woorden... ok (9.6s)
+  [5/13] 80 woorden... ok (9.2s)
+  [6/13] 80 woorden... ok (9.4s)
+  [7/13] 80 woorden... ok (10.2s)
+  [8/13] 80 woorden... ok (10.0s)
+  [9/13] 80 woorden... ok (8.7s)
+  [10/13] 80 woorden... ok (10.7s)
+  [11/13] 80 woorden... ok (9.9s)
+  [12/13] 80 woorden... ok (10.0s)
+  [13/13] 70 woorden... ok (8.6s)
+  Aaneenschakelen 13 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/9-v.mp3
+  Duur: 363.7s | Grootte: 5683 KB | Generatietijd: 124.1s
+
+Hoofdstuk: handelingen 10
+Tekst: 6131 chars
+Chunks: 14
+  [1/14] 80 woorden... ok (10.0s)
+  [2/14] 80 woorden... ok (9.8s)
+  [3/14] 80 woorden... ok (8.8s)
+  [4/14] 80 woorden... ok (9.7s)
+  [5/14] 80 woorden... ok (10.6s)
+  [6/14] 80 woorden... ok (10.4s)
+  [7/14] 80 woorden... ok (9.7s)
+  [8/14] 80 woorden... ok (8.9s)
+  [9/14] 80 woorden... ok (9.6s)
+  [10/14] 80 woorden... ok (9.7s)
+  [11/14] 80 woorden... ok (10.3s)
+  [12/14] 80 woorden... ok (9.4s)
+  [13/14] 80 woorden... ok (9.9s)
+  [14/14] 73 woorden... ok (8.8s)
+  Aaneenschakelen 14 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/10-v.mp3
+  Duur: 397.2s | Grootte: 6207 KB | Generatietijd: 135.6s
+
+Hoofdstuk: handelingen 11
+Tekst: 3803 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (11.2s)
+  [2/9] 80 woorden... ok (9.3s)
+  [3/9] 80 woorden... ok (9.2s)
+  [4/9] 80 woorden... ok (8.5s)
+  [5/9] 80 woorden... ok (8.6s)
+  [6/9] 80 woorden... ok (9.7s)
+  [7/9] 80 woorden... ok (9.2s)
+  [8/9] 80 woorden... ok (8.9s)
+  [9/9] 59 woorden... ok (6.8s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/11-v.mp3
+  Duur: 238.5s | Grootte: 3726 KB | Generatietijd: 81.4s
+
+Hoofdstuk: handelingen 12
+Tekst: 3660 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (8.8s)
+  [2/9] 80 woorden... ok (10.1s)
+  [3/9] 80 woorden... ok (9.0s)
+  [4/9] 80 woorden... ok (8.7s)
+  [5/9] 80 woorden... ok (9.5s)
+  [6/9] 80 woorden... ok (9.2s)
+  [7/9] 80 woorden... ok (9.9s)
+  [8/9] 80 woorden... ok (9.1s)
+  [9/9] 25 woorden... ok (3.9s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/12-v.mp3
+  Duur: 228.7s | Grootte: 3574 KB | Generatietijd: 78.1s
+
+Hoofdstuk: handelingen 13
+Tekst: 6887 chars
+Chunks: 16
+  [1/16] 80 woorden... ok (10.5s)
+  [2/16] 80 woorden... ok (9.4s)
+  [3/16] 80 woorden... ok (9.6s)
+  [4/16] 80 woorden... ok (8.9s)
+  [5/16] 80 woorden... ok (9.9s)
+  [6/16] 80 woorden... ok (9.6s)
+  [7/16] 80 woorden... ok (10.2s)
+  [8/16] 80 woorden... ok (9.2s)
+  [9/16] 80 woorden... ok (9.6s)
+  [10/16] 80 woorden... ok (9.2s)
+  [11/16] 80 woorden... ok (9.0s)
+  [12/16] 80 woorden... ok (10.1s)
+  [13/16] 80 woorden... ok (9.2s)
+  [14/16] 80 woorden... ok (9.1s)
+  [15/16] 80 woorden... ok (9.4s)
+  [16/16] 31 woorden... ok (3.7s)
+  Aaneenschakelen 16 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/13-v.mp3
+  Duur: 429.2s | Grootte: 6706 KB | Generatietijd: 146.5s
+
+Hoofdstuk: handelingen 14
+Tekst: 3526 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (10.0s)
+  [2/8] 80 woorden... ok (9.3s)
+  [3/8] 80 woorden... ok (10.3s)
+  [4/8] 80 woorden... ok (9.4s)
+  [5/8] 80 woorden... ok (8.5s)
+  [6/8] 80 woorden... ok (9.1s)
+  [7/8] 80 woorden... ok (9.9s)
+  [8/8] 47 woorden... ok (5.6s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/14-v.mp3
+  Duur: 211.7s | Grootte: 3307 KB | Generatietijd: 72.2s
+
+Hoofdstuk: handelingen 15
+Tekst: 5373 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (10.3s)
+  [2/12] 80 woorden... ok (10.5s)
+  [3/12] 80 woorden... ok (10.4s)
+  [4/12] 80 woorden... ok (9.7s)
+  [5/12] 80 woorden... ok (10.4s)
+  [6/12] 80 woorden... ok (9.3s)
+  [7/12] 80 woorden... ok (10.2s)
+  [8/12] 80 woorden... ok (10.5s)
+  [9/12] 80 woorden... ok (9.9s)
+  [10/12] 80 woorden... ok (10.0s)
+  [11/12] 80 woorden... ok (9.5s)
+  [12/12] 40 woorden... ok (5.6s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/15-v.mp3
+  Duur: 340.7s | Grootte: 5323 KB | Generatietijd: 116.3s
+
+Hoofdstuk: handelingen 16
+Tekst: 5391 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (9.0s)
+  [2/12] 80 woorden... ok (9.3s)
+  [3/12] 80 woorden... ok (10.8s)
+  [4/12] 80 woorden... ok (9.1s)
+  [5/12] 80 woorden... ok (9.6s)
+  [6/12] 80 woorden... ok (9.3s)
+  [7/12] 80 woorden... ok (9.1s)
+  [8/12] 80 woorden... ok (9.9s)
+  [9/12] 80 woorden... ok (10.2s)
+  [10/12] 80 woorden... ok (8.5s)
+  [11/12] 80 woorden... ok (10.2s)
+  [12/12] 80 woorden... ok (9.5s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/handelingen/16-v.mp3
+  Duur: 335.3s | Grootte: 5239 KB | Generatietijd: 114.5s
+
+Hoofdstuk: markus 1
+Tekst: 4915 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (8.8s)
+  [2/12] 80 woorden... ok (9.0s)
+  [3/12] 80 woorden... ok (8.9s)
+  [4/12] 80 woorden... ok (10.2s)
+  [5/12] 80 woorden... ok (8.7s)
+  [6/12] 80 woorden... ok (10.0s)
+  [7/12] 80 woorden... ok (9.6s)
+  [8/12] 80 woorden... ok (9.6s)
+  [9/12] 80 woorden... ok (9.6s)
+  [10/12] 80 woorden... ok (10.4s)
+  [11/12] 80 woorden... ok (9.5s)
+  [12/12] 23 woorden... ok (2.4s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/1-v.mp3
+  Duur: 313.1s | Grootte: 4891 KB | Generatietijd: 106.9s
+
+Hoofdstuk: markus 2
+Tekst: 3668 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (9.4s)
+  [2/9] 80 woorden... ok (9.9s)
+  [3/9] 80 woorden... ok (9.1s)
+  [4/9] 80 woorden... ok (9.8s)
+  [5/9] 80 woorden... ok (9.6s)
+  [6/9] 80 woorden... ok (9.1s)
+  [7/9] 80 woorden... ok (8.9s)
+  [8/9] 80 woorden... ok (9.2s)
+  [9/9] 28 woorden... ok (3.1s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/2-v.mp3
+  Duur: 228.2s | Grootte: 3566 KB | Generatietijd: 78.0s
+
+Hoofdstuk: markus 3
+Tekst: 3751 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (8.8s)
+  [2/9] 80 woorden... ok (9.6s)
+  [3/9] 80 woorden... ok (9.7s)
+  [4/9] 80 woorden... ok (8.6s)
+  [5/9] 80 woorden... ok (11.1s)
+  [6/9] 80 woorden... ok (9.8s)
+  [7/9] 80 woorden... ok (9.1s)
+  [8/9] 80 woorden... ok (9.9s)
+  [9/9] 44 woorden... ok (5.7s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/3-v.mp3
+  Duur: 240.9s | Grootte: 3764 KB | Generatietijd: 82.3s
+
+Hoofdstuk: markus 4
+Tekst: 4876 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (8.4s)
+  [2/12] 80 woorden... ok (8.6s)
+  [3/12] 80 woorden... ok (9.3s)
+  [4/12] 80 woorden... ok (9.7s)
+  [5/12] 80 woorden... ok (10.0s)
+  [6/12] 80 woorden... ok (10.1s)
+  [7/12] 80 woorden... ok (9.1s)
+  [8/12] 80 woorden... ok (9.4s)
+  [9/12] 80 woorden... ok (9.1s)
+  [10/12] 80 woorden... ok (8.8s)
+  [11/12] 80 woorden... ok (8.9s)
+  [12/12] 32 woorden... ok (3.8s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/4-v.mp3
+  Duur: 308.2s | Grootte: 4816 KB | Generatietijd: 105.3s
+
+Hoofdstuk: markus 5
+Tekst: 4932 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (8.7s)
+  [2/12] 80 woorden... ok (9.0s)
+  [3/12] 80 woorden... ok (10.0s)
+  [4/12] 80 woorden... ok (8.9s)
+  [5/12] 80 woorden... ok (8.3s)
+  [6/12] 80 woorden... ok (9.2s)
+  [7/12] 80 woorden... ok (8.5s)
+  [8/12] 80 woorden... ok (9.4s)
+  [9/12] 80 woorden... ok (9.7s)
+  [10/12] 80 woorden... ok (10.5s)
+  [11/12] 80 woorden... ok (9.1s)
+  [12/12] 60 woorden... ok (7.5s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/5-v.mp3
+  Duur: 318.7s | Grootte: 4980 KB | Generatietijd: 108.8s
+
+Hoofdstuk: markus 6
+Tekst: 7169 chars
+Chunks: 17
+  [1/17] 80 woorden... ok (9.3s)
+  [2/17] 80 woorden... ok (8.5s)
+  [3/17] 80 woorden... ok (9.0s)
+  [4/17] 80 woorden... ok (10.1s)
+  [5/17] 80 woorden... ok (10.5s)
+  [6/17] 80 woorden... ok (9.4s)
+  [7/17] 80 woorden... ok (9.8s)
+  [8/17] 80 woorden... ok (8.3s)
+  [9/17] 80 woorden... ok (9.0s)
+  [10/17] 80 woorden... ok (10.3s)
+  [11/17] 80 woorden... ok (9.0s)
+  [12/17] 80 woorden... ok (9.5s)
+  [13/17] 80 woorden... ok (8.7s)
+  [14/17] 80 woorden... ok (7.8s)
+  [15/17] 80 woorden... ok (9.4s)
+  [16/17] 80 woorden... ok (9.6s)
+  [17/17] 42 woorden... ok (5.2s)
+  Aaneenschakelen 17 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/6-v.mp3
+  Duur: 448.9s | Grootte: 7014 KB | Generatietijd: 153.3s
+
+Hoofdstuk: markus 7
+Tekst: 4401 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (9.2s)
+  [2/10] 80 woorden... ok (10.8s)
+  [3/10] 80 woorden... ok (9.9s)
+  [4/10] 80 woorden... ok (8.6s)
+  [5/10] 80 woorden... ok (8.8s)
+  [6/10] 80 woorden... ok (11.0s)
+  [7/10] 80 woorden... ok (9.6s)
+  [8/10] 80 woorden... ok (8.5s)
+  [9/10] 80 woorden... ok (8.6s)
+  [10/10] 69 woorden... ok (8.1s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/7-v.mp3
+  Duur: 272.6s | Grootte: 4260 KB | Generatietijd: 93.1s
+
+Hoofdstuk: markus 8
+Tekst: 4583 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (8.7s)
+  [2/11] 80 woorden... ok (9.6s)
+  [3/11] 80 woorden... ok (9.5s)
+  [4/11] 80 woorden... ok (8.8s)
+  [5/11] 80 woorden... ok (9.6s)
+  [6/11] 80 woorden... ok (9.2s)
+  [7/11] 80 woorden... ok (9.8s)
+  [8/11] 80 woorden... ok (9.4s)
+  [9/11] 80 woorden... ok (9.5s)
+  [10/11] 80 woorden... ok (8.9s)
+  [11/11] 43 woorden... ok (4.7s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/8-v.mp3
+  Duur: 285.9s | Grootte: 4467 KB | Generatietijd: 97.6s
+
+Hoofdstuk: markus 9
+Tekst: 6189 chars
+Chunks: 15
+  [1/15] 80 woorden... ok (9.7s)
+  [2/15] 80 woorden... ok (9.4s)
+  [3/15] 80 woorden... ok (9.8s)
+  [4/15] 80 woorden... ok (9.3s)
+  [5/15] 80 woorden... ok (10.0s)
+  [6/15] 80 woorden... ok (9.0s)
+  [7/15] 80 woorden... ok (10.2s)
+  [8/15] 80 woorden... ok (10.8s)
+  [9/15] 80 woorden... ok (9.1s)
+  [10/15] 80 woorden... ok (9.0s)
+  [11/15] 80 woorden... ok (9.7s)
+  [12/15] 80 woorden... ok (8.5s)
+  [13/15] 80 woorden... ok (8.2s)
+  [14/15] 80 woorden... ok (9.0s)
+  [15/15] 30 woorden... ok (4.0s)
+  Aaneenschakelen 15 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/9-v.mp3
+  Duur: 397.3s | Grootte: 6208 KB | Generatietijd: 135.7s
+
+Hoofdstuk: markus 10
+Tekst: 6445 chars
+Chunks: 15
+  [1/15] 80 woorden... ok (9.8s)
+  [2/15] 80 woorden... ok (8.5s)
+  [3/15] 80 woorden... ok (16.4s)
+  [4/15] 80 woorden... ok (8.8s)
+  [5/15] 80 woorden... ok (9.8s)
+  [6/15] 80 woorden... ok (10.2s)
+  [7/15] 80 woorden... ok (9.9s)
+  [8/15] 80 woorden... ok (10.7s)
+  [9/15] 80 woorden... ok (9.3s)
+  [10/15] 80 woorden... ok (10.0s)
+  [11/15] 80 woorden... ok (9.3s)
+  [12/15] 80 woorden... ok (9.3s)
+  [13/15] 80 woorden... ok (8.5s)
+  [14/15] 80 woorden... ok (10.4s)
+  [15/15] 69 woorden... ok (8.2s)
+  Aaneenschakelen 15 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/10-v.mp3
+  Duur: 437.0s | Grootte: 6828 KB | Generatietijd: 149.1s
+
+Hoofdstuk: markus 11
+Tekst: 4126 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (8.7s)
+  [2/10] 80 woorden... ok (9.1s)
+  [3/10] 80 woorden... ok (9.1s)
+  [4/10] 80 woorden... ok (9.2s)
+  [5/10] 80 woorden... ok (9.2s)
+  [6/10] 80 woorden... ok (10.7s)
+  [7/10] 80 woorden... ok (8.7s)
+  [8/10] 80 woorden... ok (9.4s)
+  [9/10] 80 woorden... ok (9.6s)
+  [10/10] 47 woorden... ok (6.2s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/11-v.mp3
+  Duur: 263.4s | Grootte: 4116 KB | Generatietijd: 89.9s
+
+Hoofdstuk: markus 12
+Tekst: 5888 chars
+Chunks: 14
+  [1/14] 80 woorden... ok (8.9s)
+  [2/14] 80 woorden... ok (9.4s)
+  [3/14] 80 woorden... ok (8.9s)
+  [4/14] 80 woorden... ok (9.8s)
+  [5/14] 80 woorden... ok (10.0s)
+  [6/14] 80 woorden... ok (10.1s)
+  [7/14] 80 woorden... ok (8.8s)
+  [8/14] 80 woorden... ok (8.0s)
+  [9/14] 80 woorden... ok (9.6s)
+  [10/14] 80 woorden... ok (8.9s)
+  [11/14] 80 woorden... ok (9.2s)
+  [12/14] 80 woorden... ok (8.9s)
+  [13/14] 80 woorden... ok (8.2s)
+  [14/14] 43 woorden... ok (6.2s)
+  Aaneenschakelen 14 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/12-v.mp3
+  Duur: 366.3s | Grootte: 5723 KB | Generatietijd: 125.0s
+
+Hoofdstuk: markus 13
+Tekst: 4516 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (9.5s)
+  [2/11] 80 woorden... ok (10.3s)
+  [3/11] 80 woorden... ok (10.1s)
+  [4/11] 80 woorden... ok (9.4s)
+  [5/11] 80 woorden... ok (8.6s)
+  [6/11] 80 woorden... ok (9.0s)
+  [7/11] 80 woorden... ok (10.0s)
+  [8/11] 80 woorden... ok (9.1s)
+  [9/11] 80 woorden... ok (9.6s)
+  [10/11] 80 woorden... ok (9.8s)
+  [11/11] 16 woorden... ok (2.1s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/13-v.mp3
+  Duur: 285.6s | Grootte: 4463 KB | Generatietijd: 97.6s
+
+Hoofdstuk: markus 14
+Tekst: 8544 chars
+Chunks: 20
+  [1/20] 80 woorden... ok (9.0s)
+  [2/20] 80 woorden... ok (10.1s)
+  [3/20] 80 woorden... ok (9.8s)
+  [4/20] 80 woorden... ok (9.8s)
+  [5/20] 80 woorden... ok (9.1s)
+  [6/20] 80 woorden... ok (9.1s)
+  [7/20] 80 woorden... ok (9.0s)
+  [8/20] 80 woorden... ok (9.6s)
+  [9/20] 80 woorden... ok (8.4s)
+  [10/20] 80 woorden... ok (9.7s)
+  [11/20] 80 woorden... ok (10.3s)
+  [12/20] 80 woorden... ok (10.6s)
+  [13/20] 80 woorden... ok (9.8s)
+  [14/20] 80 woorden... ok (10.6s)
+  [15/20] 80 woorden... ok (9.9s)
+  [16/20] 80 woorden... ok (9.3s)
+  [17/20] 80 woorden... ok (9.4s)
+  [18/20] 80 woorden... ok (9.4s)
+  [19/20] 80 woorden... ok (10.2s)
+  [20/20] 47 woorden... ok (5.8s)
+  Aaneenschakelen 20 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/14-v.mp3
+  Duur: 553.1s | Grootte: 8642 KB | Generatietijd: 188.8s
+
+Hoofdstuk: markus 15
+Tekst: 5115 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (10.4s)
+  [2/12] 80 woorden... ok (9.9s)
+  [3/12] 80 woorden... ok (9.9s)
+  [4/12] 80 woorden... ok (9.3s)
+  [5/12] 80 woorden... ok (8.7s)
+  [6/12] 80 woorden... ok (9.8s)
+  [7/12] 80 woorden... ok (10.1s)
+  [8/12] 80 woorden... ok (10.8s)
+  [9/12] 80 woorden... ok (10.5s)
+  [10/12] 80 woorden... ok (10.4s)
+  [11/12] 80 woorden... ok (9.1s)
+  [12/12] 14 woorden... ok (2.0s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/15-v.mp3
+  Duur: 324.6s | Grootte: 5073 KB | Generatietijd: 110.9s
+
+Hoofdstuk: markus 16
+Tekst: 2528 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (8.6s)
+  [2/6] 80 woorden... ok (9.0s)
+  [3/6] 80 woorden... ok (9.8s)
+  [4/6] 80 woorden... ok (9.8s)
+  [5/6] 80 woorden... ok (9.8s)
+  [6/6] 40 woorden... ok (5.6s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/markus/16-v.mp3
+  Duur: 154.0s | Grootte: 2406 KB | Generatietijd: 52.6s
+
+Hoofdstuk: romeinen 1
+Tekst: 4315 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (9.6s)
+  [2/9] 80 woorden... ok (10.2s)
+  [3/9] 80 woorden... ok (9.3s)
+  [4/9] 80 woorden... ok (9.2s)
+  [5/9] 80 woorden... ok (9.8s)
+  [6/9] 80 woorden... ok (10.5s)
+  [7/9] 80 woorden... ok (10.1s)
+  [8/9] 80 woorden... ok (10.0s)
+  [9/9] 69 woorden... ok (14.0s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/romeinen/1-v.mp3
+  Duur: 271.2s | Grootte: 4238 KB | Generatietijd: 92.6s
+
+Hoofdstuk: romeinen 2
+Tekst: 3506 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.9s)
+  [2/8] 80 woorden... ok (10.4s)
+  [3/8] 80 woorden... ok (9.3s)
+  [4/8] 80 woorden... ok (9.0s)
+  [5/8] 80 woorden... ok (9.0s)
+  [6/8] 80 woorden... ok (8.8s)
+  [7/8] 80 woorden... ok (9.6s)
+  [8/8] 65 woorden... ok (6.9s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/romeinen/2-v.mp3
+  Duur: 213.4s | Grootte: 3334 KB | Generatietijd: 72.9s
+
+Hoofdstuk: romeinen 3
+Tekst: 3314 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.1s)
+  [2/8] 80 woorden... ok (9.8s)
+  [3/8] 80 woorden... ok (10.4s)
+  [4/8] 80 woorden... ok (8.8s)
+  [5/8] 80 woorden... ok (9.3s)
+  [6/8] 80 woorden... ok (10.2s)
+  [7/8] 80 woorden... ok (8.7s)
+  [8/8] 20 woorden... ok (2.3s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/romeinen/3-v.mp3
+  Duur: 201.0s | Grootte: 3141 KB | Generatietijd: 68.7s
+
+Hoofdstuk: romeinen 4
+Tekst: 3157 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (10.0s)
+  [2/7] 80 woorden... ok (10.8s)
+  [3/7] 80 woorden... ok (9.2s)
+  [4/7] 80 woorden... ok (8.7s)
+  [5/7] 80 woorden... ok (9.0s)
+  [6/7] 80 woorden... ok (9.2s)
+  [7/7] 67 woorden... ok (9.3s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/romeinen/4-v.mp3
+  Duur: 194.1s | Grootte: 3033 KB | Generatietijd: 66.3s
+
+Hoofdstuk: 1johannes 1
+Tekst: 1368 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (9.0s)
+  [2/4] 80 woorden... ok (9.1s)
+  [3/4] 80 woorden... ok (9.6s)
+  [4/4] 11 woorden... ok (1.3s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1johannes/1-v.mp3
+  Duur: 84.6s | Grootte: 1321 KB | Generatietijd: 29.0s
+
+Hoofdstuk: 1johannes 2
+Tekst: 3769 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (8.8s)
+  [2/9] 80 woorden... ok (9.6s)
+  [3/9] 80 woorden... ok (8.8s)
+  [4/9] 80 woorden... ok (9.2s)
+  [5/9] 80 woorden... ok (8.6s)
+  [6/9] 80 woorden... ok (9.3s)
+  [7/9] 80 woorden... ok (8.9s)
+  [8/9] 80 woorden... ok (8.7s)
+  [9/9] 72 woorden... ok (8.6s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1johannes/2-v.mp3
+  Duur: 236.1s | Grootte: 3688 KB | Generatietijd: 80.6s
+
+Hoofdstuk: 1johannes 3
+Tekst: 3029 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (9.1s)
+  [2/7] 80 woorden... ok (10.1s)
+  [3/7] 80 woorden... ok (8.5s)
+  [4/7] 80 woorden... ok (9.0s)
+  [5/7] 80 woorden... ok (8.4s)
+  [6/7] 80 woorden... ok (9.2s)
+  [7/7] 74 woorden... ok (9.2s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1johannes/3-v.mp3
+  Duur: 185.6s | Grootte: 2900 KB | Generatietijd: 63.4s
+
+Hoofdstuk: 1johannes 4
+Tekst: 2614 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (8.9s)
+  [2/7] 80 woorden... ok (9.1s)
+  [3/7] 80 woorden... ok (9.4s)
+  [4/7] 80 woorden... ok (9.9s)
+  [5/7] 80 woorden... ok (8.8s)
+  [6/7] 80 woorden... ok (9.0s)
+  [7/7] 12 woorden... ok (1.6s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1johannes/4-v.mp3
+  Duur: 166.3s | Grootte: 2599 KB | Generatietijd: 56.9s
+
+Hoofdstuk: 1johannes 5
+Tekst: 2790 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (9.7s)
+  [2/7] 80 woorden... ok (9.5s)
+  [3/7] 80 woorden... ok (9.8s)
+  [4/7] 80 woorden... ok (9.3s)
+  [5/7] 80 woorden... ok (8.4s)
+  [6/7] 80 woorden... ok (8.6s)
+  [7/7] 54 woorden... ok (6.8s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1johannes/5-v.mp3
+  Duur: 181.1s | Grootte: 2829 KB | Generatietijd: 62.2s
+
+Hoofdstuk: 2johannes 1
+Tekst: 1658 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (9.1s)
+  [2/4] 80 woorden... ok (9.2s)
+  [3/4] 80 woorden... ok (9.4s)
+  [4/4] 66 woorden... ok (7.3s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/2johannes/1-v.mp3
+  Duur: 102.4s | Grootte: 1600 KB | Generatietijd: 34.9s
+
+Hoofdstuk: 3johannes 1
+Tekst: 1629 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (9.3s)
+  [2/4] 80 woorden... ok (9.3s)
+  [3/4] 80 woorden... ok (9.7s)
+  [4/4] 53 woorden... ok (6.4s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/3johannes/1-v.mp3
+  Duur: 101.3s | Grootte: 1583 KB | Generatietijd: 34.6s
+
+Hoofdstuk: efeziers 1
+Tekst: 2825 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (10.0s)
+  [2/7] 80 woorden... ok (9.7s)
+  [3/7] 80 woorden... ok (8.9s)
+  [4/7] 80 woorden... ok (10.3s)
+  [5/7] 80 woorden... ok (8.7s)
+  [6/7] 80 woorden... ok (8.9s)
+  [7/7] 24 woorden... ok (3.1s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/efeziers/1-v.mp3
+  Duur: 174.7s | Grootte: 2730 KB | Generatietijd: 59.7s
+
+Hoofdstuk: efeziers 2
+Tekst: 2598 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (8.0s)
+  [2/6] 80 woorden... ok (9.6s)
+  [3/6] 80 woorden... ok (9.9s)
+  [4/6] 80 woorden... ok (9.4s)
+  [5/6] 80 woorden... ok (9.4s)
+  [6/6] 53 woorden... ok (6.7s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/efeziers/2-v.mp3
+  Duur: 155.2s | Grootte: 2425 KB | Generatietijd: 53.0s
+
+Hoofdstuk: efeziers 3
+Tekst: 2370 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.2s)
+  [2/6] 80 woorden... ok (10.1s)
+  [3/6] 80 woorden... ok (9.9s)
+  [4/6] 80 woorden... ok (10.4s)
+  [5/6] 80 woorden... ok (9.1s)
+  [6/6] 15 woorden... ok (2.3s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/efeziers/3-v.mp3
+  Duur: 149.4s | Grootte: 2335 KB | Generatietijd: 51.1s
+
+Hoofdstuk: efeziers 4
+Tekst: 3499 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (10.2s)
+  [2/8] 80 woorden... ok (9.3s)
+  [3/8] 80 woorden... ok (9.2s)
+  [4/8] 80 woorden... ok (10.2s)
+  [5/8] 80 woorden... ok (10.3s)
+  [6/8] 80 woorden... ok (9.3s)
+  [7/8] 80 woorden... ok (9.2s)
+  [8/8] 57 woorden... ok (8.1s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/efeziers/4-v.mp3
+  Duur: 222.5s | Grootte: 3477 KB | Generatietijd: 75.9s
+
+Hoofdstuk: efeziers 5
+Tekst: 3238 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (11.2s)
+  [2/7] 80 woorden... ok (9.6s)
+  [3/7] 80 woorden... ok (10.2s)
+  [4/7] 80 woorden... ok (10.3s)
+  [5/7] 80 woorden... ok (9.0s)
+  [6/7] 80 woorden... ok (9.6s)
+  [7/7] 79 woorden... ok (8.8s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/efeziers/5-v.mp3
+  Duur: 200.5s | Grootte: 3133 KB | Generatietijd: 68.4s
+
+Hoofdstuk: efeziers 6
+Tekst: 2649 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (8.7s)
+  [2/6] 80 woorden... ok (9.8s)
+  [3/6] 80 woorden... ok (9.8s)
+  [4/6] 80 woorden... ok (9.5s)
+  [5/6] 80 woorden... ok (8.5s)
+  [6/6] 71 woorden... ok (8.6s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/efeziers/6-v.mp3
+  Duur: 160.8s | Grootte: 2513 KB | Generatietijd: 54.9s
+
+Hoofdstuk: gebedvanmanasse 1
+Tekst: 2321 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (10.4s)
+  [2/6] 80 woorden... ok (10.0s)
+  [3/6] 80 woorden... ok (10.3s)
+  [4/6] 80 woorden... ok (9.5s)
+  [5/6] 80 woorden... ok (8.6s)
+  [6/6] 12 woorden... ok (1.6s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/gebedvanmanasse/1-v.mp3
+  Duur: 147.2s | Grootte: 2300 KB | Generatietijd: 50.4s
+
+Hoofdstuk: filemon 1
+Tekst: 2417 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (10.3s)
+  [2/6] 80 woorden... ok (9.4s)
+  [3/6] 80 woorden... ok (8.7s)
+  [4/6] 80 woorden... ok (8.6s)
+  [5/6] 80 woorden... ok (9.4s)
+  [6/6] 39 woorden... ok (6.5s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/filemon/1-v.mp3
+  Duur: 154.7s | Grootte: 2417 KB | Generatietijd: 52.8s
+
+Hoofdstuk: judas 1
+Tekst: 3731 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (10.1s)
+  [2/8] 80 woorden... ok (10.1s)
+  [3/8] 80 woorden... ok (11.0s)
+  [4/8] 80 woorden... ok (9.5s)
+  [5/8] 80 woorden... ok (10.3s)
+  [6/8] 80 woorden... ok (10.6s)
+  [7/8] 80 woorden... ok (10.7s)
+  [8/8] 42 woorden... ok (6.5s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/judas/1-v.mp3
+  Duur: 230.6s | Grootte: 3603 KB | Generatietijd: 78.8s
+
+Hoofdstuk: baruch 1
+Tekst: 3594 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (10.1s)
+  [2/9] 80 woorden... ok (8.6s)
+  [3/9] 80 woorden... ok (9.7s)
+  [4/9] 80 woorden... ok (10.0s)
+  [5/9] 80 woorden... ok (9.3s)
+  [6/9] 80 woorden... ok (9.0s)
+  [7/9] 80 woorden... ok (9.4s)
+  [8/9] 80 woorden... ok (8.6s)
+  [9/9] 30 woorden... ok (3.1s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/baruch/1-v.mp3
+  Duur: 227.8s | Grootte: 3559 KB | Generatietijd: 77.8s
+
+Hoofdstuk: baruch 2
+Tekst: 5288 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (8.9s)
+  [2/12] 80 woorden... ok (9.4s)
+  [3/12] 80 woorden... ok (9.6s)
+  [4/12] 80 woorden... ok (10.2s)
+  [5/12] 80 woorden... ok (10.4s)
+  [6/12] 80 woorden... ok (10.1s)
+  [7/12] 80 woorden... ok (9.2s)
+  [8/12] 80 woorden... ok (9.0s)
+  [9/12] 80 woorden... ok (9.0s)
+  [10/12] 80 woorden... ok (9.6s)
+  [11/12] 80 woorden... ok (8.8s)
+  [12/12] 80 woorden... ok (8.5s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/baruch/2-v.mp3
+  Duur: 330.6s | Grootte: 5166 KB | Generatietijd: 112.9s
+
+Hoofdstuk: baruch 3
+Tekst: 4143 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (9.9s)
+  [2/10] 80 woorden... ok (10.0s)
+  [3/10] 80 woorden... ok (9.6s)
+  [4/10] 80 woorden... ok (8.7s)
+  [5/10] 80 woorden... ok (8.7s)
+  [6/10] 80 woorden... ok (9.1s)
+  [7/10] 80 woorden... ok (9.6s)
+  [8/10] 80 woorden... ok (9.5s)
+  [9/10] 80 woorden... ok (9.4s)
+  [10/10] 24 woorden... ok (2.9s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/baruch/3-v.mp3
+  Duur: 255.9s | Grootte: 3998 KB | Generatietijd: 87.4s
+
+Hoofdstuk: baruch 4
+Tekst: 4283 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (9.2s)
+  [2/10] 80 woorden... ok (9.3s)
+  [3/10] 80 woorden... ok (8.8s)
+  [4/10] 80 woorden... ok (8.8s)
+  [5/10] 80 woorden... ok (8.6s)
+  [6/10] 80 woorden... ok (9.3s)
+  [7/10] 80 woorden... ok (9.7s)
+  [8/10] 80 woorden... ok (9.3s)
+  [9/10] 80 woorden... ok (9.5s)
+  [10/10] 64 woorden... ok (7.5s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/baruch/4-v.mp3
+  Duur: 263.3s | Grootte: 4114 KB | Generatietijd: 89.9s
+
+Hoofdstuk: baruch 5
+Tekst: 1312 chars
+Chunks: 3
+  [1/3] 80 woorden... ok (8.6s)
+  [2/3] 80 woorden... ok (9.0s)
+  [3/3] 74 woorden... ok (9.1s)
+  Aaneenschakelen 3 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/baruch/5-v.mp3
+  Duur: 78.2s | Grootte: 1221 KB | Generatietijd: 26.7s
+
+Hoofdstuk: baruch 6
+Tekst: 9180 chars
+Chunks: 21
+  [1/21] 80 woorden... ok (10.2s)
+  [2/21] 80 woorden... ok (8.7s)
+  [3/21] 80 woorden... ok (9.1s)
+  [4/21] 80 woorden... ok (8.3s)
+  [5/21] 80 woorden... ok (8.8s)
+  [6/21] 80 woorden... ok (8.4s)
+  [7/21] 80 woorden... ok (9.3s)
+  [8/21] 80 woorden... ok (9.2s)
+  [9/21] 80 woorden... ok (10.1s)
+  [10/21] 80 woorden... ok (9.2s)
+  [11/21] 80 woorden... ok (9.0s)
+  [12/21] 80 woorden... ok (9.2s)
+  [13/21] 80 woorden... ok (9.1s)
+  [14/21] 80 woorden... ok (9.3s)
+  [15/21] 80 woorden... ok (8.9s)
+  [16/21] 80 woorden... ok (10.3s)
+  [17/21] 80 woorden... ok (8.8s)
+  [18/21] 80 woorden... ok (8.9s)
+  [19/21] 80 woorden... ok (8.8s)
+  [20/21] 80 woorden... ok (9.5s)
+  [21/21] 43 woorden... ok (4.7s)
+  Aaneenschakelen 21 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/baruch/6-v.mp3
+  Duur: 550.5s | Grootte: 8601 KB | Generatietijd: 188.0s
+
+Hoofdstuk: jakobus 1
+Tekst: 3146 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (28.0s)
+  [2/7] 80 woorden... ok (9.7s)
+  [3/7] 80 woorden... ok (9.1s)
+  [4/7] 80 woorden... ok (9.8s)
+  [5/7] 80 woorden... ok (10.4s)
+  [6/7] 80 woorden... ok (10.5s)
+  [7/7] 59 woorden... ok (7.8s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/jakobus/1-v.mp3
+  Duur: 249.6s | Grootte: 3901 KB | Generatietijd: 85.4s
+
+Hoofdstuk: jakobus 2
+Tekst: 3167 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (8.7s)
+  [2/8] 80 woorden... ok (10.2s)
+  [3/8] 80 woorden... ok (9.0s)
+  [4/8] 80 woorden... ok (9.3s)
+  [5/8] 80 woorden... ok (8.9s)
+  [6/8] 80 woorden... ok (9.1s)
+  [7/8] 80 woorden... ok (9.9s)
+  [8/8] 20 woorden... ok (2.3s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/jakobus/2-v.mp3
+  Duur: 197.4s | Grootte: 3085 KB | Generatietijd: 67.5s
+
+Hoofdstuk: jakobus 3
+Tekst: 2188 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.2s)
+  [2/5] 80 woorden... ok (9.5s)
+  [3/5] 80 woorden... ok (9.6s)
+  [4/5] 80 woorden... ok (9.9s)
+  [5/5] 57 woorden... ok (8.0s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/jakobus/3-v.mp3
+  Duur: 135.6s | Grootte: 2119 KB | Generatietijd: 46.3s
+
+Hoofdstuk: jakobus 4
+Tekst: 2005 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (10.2s)
+  [2/5] 80 woorden... ok (9.1s)
+  [3/5] 80 woorden... ok (9.9s)
+  [4/5] 80 woorden... ok (9.8s)
+  [5/5] 48 woorden... ok (5.2s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/jakobus/4-v.mp3
+  Duur: 129.6s | Grootte: 2026 KB | Generatietijd: 44.3s
+
+Hoofdstuk: jakobus 5
+Tekst: 2557 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.3s)
+  [2/6] 80 woorden... ok (9.3s)
+  [3/6] 80 woorden... ok (9.2s)
+  [4/6] 80 woorden... ok (9.5s)
+  [5/6] 80 woorden... ok (9.0s)
+  [6/6] 67 woorden... ok (7.4s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/jakobus/5-v.mp3
+  Duur: 157.4s | Grootte: 2459 KB | Generatietijd: 53.7s
+
+Hoofdstuk: 1makkabeeen 1
+Tekst: 7710 chars
+Chunks: 17
+  [1/17] 80 woorden... ok (9.9s)
+  [2/17] 80 woorden... ok (9.9s)
+  [3/17] 80 woorden... ok (10.2s)
+  [4/17] 80 woorden... ok (9.0s)
+  [5/17] 80 woorden... ok (9.3s)
+  [6/17] 80 woorden... ok (9.8s)
+  [7/17] 80 woorden... ok (9.1s)
+  [8/17] 80 woorden... ok (9.6s)
+  [9/17] 80 woorden... ok (8.9s)
+  [10/17] 80 woorden... ok (9.5s)
+  [11/17] 80 woorden... ok (10.1s)
+  [12/17] 80 woorden... ok (8.8s)
+  [13/17] 80 woorden... ok (10.2s)
+  [14/17] 80 woorden... ok (8.7s)
+  [15/17] 80 woorden... ok (8.7s)
+  [16/17] 80 woorden... ok (8.9s)
+  [17/17] 63 woorden... ok (7.8s)
+  Aaneenschakelen 17 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/1-v.mp3
+  Duur: 463.4s | Grootte: 7240 KB | Generatietijd: 158.2s
+
+Hoofdstuk: 1makkabeeen 2
+Tekst: 8203 chars
+Chunks: 19
+  [1/19] 80 woorden... ok (11.5s)
+  [2/19] 80 woorden... ok (8.6s)
+  [3/19] 80 woorden... ok (10.0s)
+  [4/19] 80 woorden... ok (8.6s)
+  [5/19] 80 woorden... ok (9.0s)
+  [6/19] 80 woorden... ok (9.2s)
+  [7/19] 80 woorden... ok (8.8s)
+  [8/19] 80 woorden... ok (8.9s)
+  [9/19] 80 woorden... ok (8.4s)
+  [10/19] 80 woorden... ok (8.7s)
+  [11/19] 80 woorden... ok (9.3s)
+  [12/19] 80 woorden... ok (8.8s)
+  [13/19] 80 woorden... ok (8.7s)
+  [14/19] 80 woorden... ok (8.7s)
+  [15/19] 80 woorden... ok (9.6s)
+  [16/19] 80 woorden... ok (11.2s)
+  [17/19] 80 woorden... ok (9.2s)
+  [18/19] 80 woorden... ok (8.5s)
+  [19/19] 51 woorden... ok (5.4s)
+  Aaneenschakelen 19 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/2-v.mp3
+  Duur: 500.9s | Grootte: 7827 KB | Generatietijd: 171.1s
+
+Hoofdstuk: 1makkabeeen 3
+Tekst: 8467 chars
+Chunks: 19
+  [1/19] 80 woorden... ok (9.1s)
+  [2/19] 80 woorden... ok (10.1s)
+  [3/19] 80 woorden... ok (10.0s)
+  [4/19] 80 woorden... ok (8.9s)
+  [5/19] 80 woorden... ok (10.1s)
+  [6/19] 80 woorden... ok (8.7s)
+  [7/19] 80 woorden... ok (8.7s)
+  [8/19] 80 woorden... ok (9.3s)
+  [9/19] 80 woorden... ok (8.0s)
+  [10/19] 80 woorden... ok (9.3s)
+  [11/19] 80 woorden... ok (8.6s)
+  [12/19] 80 woorden... ok (10.1s)
+  [13/19] 80 woorden... ok (9.1s)
+  [14/19] 80 woorden... ok (9.5s)
+  [15/19] 80 woorden... ok (9.3s)
+  [16/19] 80 woorden... ok (8.6s)
+  [17/19] 80 woorden... ok (9.3s)
+  [18/19] 80 woorden... ok (11.0s)
+  [19/19] 59 woorden... ok (6.5s)
+  Aaneenschakelen 19 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/3-v.mp3
+  Duur: 509.7s | Grootte: 7965 KB | Generatietijd: 174.0s
+
+Hoofdstuk: 1makkabeeen 4
+Tekst: 7901 chars
+Chunks: 18
+  [1/18] 80 woorden... ok (8.9s)
+  [2/18] 80 woorden... ok (8.8s)
+  [3/18] 80 woorden... ok (8.6s)
+  [4/18] 80 woorden... ok (9.4s)
+  [5/18] 80 woorden... ok (9.6s)
+  [6/18] 80 woorden... ok (9.1s)
+  [7/18] 80 woorden... ok (9.8s)
+  [8/18] 80 woorden... ok (10.2s)
+  [9/18] 80 woorden... ok (9.3s)
+  [10/18] 80 woorden... ok (9.7s)
+  [11/18] 80 woorden... ok (9.8s)
+  [12/18] 80 woorden... ok (9.1s)
+  [13/18] 80 woorden... ok (8.6s)
+  [14/18] 80 woorden... ok (8.7s)
+  [15/18] 80 woorden... ok (9.4s)
+  [16/18] 80 woorden... ok (10.2s)
+  [17/18] 80 woorden... ok (9.0s)
+  [18/18] 57 woorden... ok (7.2s)
+  Aaneenschakelen 18 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/4-v.mp3
+  Duur: 483.9s | Grootte: 7561 KB | Generatietijd: 165.3s
+
+Hoofdstuk: 1makkabeeen 5
+Tekst: 9884 chars
+Chunks: 23
+  [1/23] 80 woorden... ok (9.4s)
+  [2/23] 80 woorden... ok (8.6s)
+  [3/23] 80 woorden... ok (11.4s)
+  [4/23] 80 woorden... ok (9.0s)
+  [5/23] 80 woorden... ok (10.1s)
+  [6/23] 80 woorden... ok (10.0s)
+  [7/23] 80 woorden... ok (9.4s)
+  [8/23] 80 woorden... ok (9.5s)
+  [9/23] 80 woorden... ok (8.5s)
+  [10/23] 80 woorden... ok (8.8s)
+  [11/23] 80 woorden... ok (8.8s)
+  [12/23] 80 woorden... ok (10.2s)
+  [13/23] 80 woorden... ok (8.9s)
+  [14/23] 80 woorden... ok (8.5s)
+  [15/23] 80 woorden... ok (9.0s)
+  [16/23] 80 woorden... ok (8.8s)
+  [17/23] 80 woorden... ok (8.6s)
+  [18/23] 80 woorden... ok (8.9s)
+  [19/23] 80 woorden... ok (10.8s)
+  [20/23] 80 woorden... ok (9.7s)
+  [21/23] 80 woorden... ok (9.0s)
+  [22/23] 80 woorden... ok (8.8s)
+  [23/23] 24 woorden... ok (2.4s)
+  Aaneenschakelen 23 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/5-v.mp3
+  Duur: 605.7s | Grootte: 9463 KB | Generatietijd: 206.9s
+
+Hoofdstuk: 1makkabeeen 6
+Tekst: 9332 chars
+Chunks: 21
+  [1/21] 80 woorden... ok (10.6s)
+  [2/21] 80 woorden... ok (8.8s)
+  [3/21] 80 woorden... ok (9.4s)
+  [4/21] 80 woorden... ok (8.7s)
+  [5/21] 80 woorden... ok (9.3s)
+  [6/21] 80 woorden... ok (10.1s)
+  [7/21] 80 woorden... ok (9.5s)
+  [8/21] 80 woorden... ok (8.7s)
+  [9/21] 80 woorden... ok (8.8s)
+  [10/21] 80 woorden... ok (10.3s)
+  [11/21] 80 woorden... ok (9.2s)
+  [12/21] 80 woorden... ok (10.1s)
+  [13/21] 80 woorden... ok (9.8s)
+  [14/21] 80 woorden... ok (8.6s)
+  [15/21] 80 woorden... ok (8.8s)
+  [16/21] 80 woorden... ok (8.1s)
+  [17/21] 80 woorden... ok (10.0s)
+  [18/21] 80 woorden... ok (9.5s)
+  [19/21] 80 woorden... ok (8.9s)
+  [20/21] 80 woorden... ok (9.0s)
+  [21/21] 66 woorden... ok (7.7s)
+  Aaneenschakelen 21 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/6-v.mp3
+  Duur: 567.2s | Grootte: 8862 KB | Generatietijd: 193.7s
+
+Hoofdstuk: 1makkabeeen 7
+Tekst: 6787 chars
+Chunks: 16
+  [1/16] 80 woorden... ok (9.5s)
+  [2/16] 80 woorden... ok (9.1s)
+  [3/16] 80 woorden... ok (9.3s)
+  [4/16] 80 woorden... ok (9.0s)
+  [5/16] 80 woorden... ok (10.7s)
+  [6/16] 80 woorden... ok (9.1s)
+  [7/16] 80 woorden... ok (10.5s)
+  [8/16] 80 woorden... ok (9.3s)
+  [9/16] 80 woorden... ok (9.8s)
+  [10/16] 80 woorden... ok (9.3s)
+  [11/16] 80 woorden... ok (8.9s)
+  [12/16] 80 woorden... ok (9.8s)
+  [13/16] 80 woorden... ok (10.7s)
+  [14/16] 80 woorden... ok (9.9s)
+  [15/16] 80 woorden... ok (9.1s)
+  [16/16] 14 woorden... ok (1.6s)
+  Aaneenschakelen 16 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/7-v.mp3
+  Duur: 425.1s | Grootte: 6642 KB | Generatietijd: 145.8s
+
+Hoofdstuk: 1makkabeeen 8
+Tekst: 5531 chars
+Chunks: 13
+  [1/13] 80 woorden... ok (8.6s)
+  [2/13] 80 woorden... ok (9.4s)
+  [3/13] 80 woorden...   FOUT bij 1makkabeeen 8: HTTPConnectionPool(host='127.0.0.1', port=8765): Read timed out. (read timeout=120)
+
+Hoofdstuk: 1makkabeeen 9
+Tekst: 9910 chars
+Chunks: 23
+  [1/23] 80 woorden...   FOUT bij 1makkabeeen 9: HTTPConnectionPool(host='127.0.0.1', port=8765): Read timed out. (read timeout=120)
+
+Hoofdstuk: 1makkabeeen 10
+Tekst: 12865 chars
+Chunks: 29
+  [1/29] 80 woorden...   FOUT bij 1makkabeeen 10: HTTPConnectionPool(host='127.0.0.1', port=8765): Read timed out. (read timeout=120)
+
+Hoofdstuk: 1makkabeeen 11
+Tekst: 10778 chars
+Chunks: 24
+  [1/24] 80 woorden... [sup] VASTGELOPEN gedetecteerd (stale=4, recent-timeouts=3) → herstart
+[sup] stem=v: 261/320 klaar
+[sup] === poging 3 voor stem=v (19:04:37) ===
+Sla over (bestaat al): audio/genesis/1-v.mp3
+Sla over (bestaat al): audio/genesis/2-v.mp3
+Sla over (bestaat al): audio/genesis/3-v.mp3
+Sla over (bestaat al): audio/genesis/4-v.mp3
+Sla over (bestaat al): audio/genesis/5-v.mp3
+Sla over (bestaat al): audio/genesis/6-v.mp3
+Sla over (bestaat al): audio/genesis/7-v.mp3
+Sla over (bestaat al): audio/genesis/8-v.mp3
+Sla over (bestaat al): audio/genesis/9-v.mp3
+Sla over (bestaat al): audio/genesis/10-v.mp3
+Sla over (bestaat al): audio/genesis/11-v.mp3
+Sla over (bestaat al): audio/genesis/12-v.mp3
+Sla over (bestaat al): audio/genesis/13-v.mp3
+Sla over (bestaat al): audio/genesis/14-v.mp3
+Sla over (bestaat al): audio/genesis/15-v.mp3
+Sla over (bestaat al): audio/genesis/16-v.mp3
+Sla over (bestaat al): audio/genesis/17-v.mp3
+Sla over (bestaat al): audio/genesis/18-v.mp3
+Sla over (bestaat al): audio/genesis/19-v.mp3
+Sla over (bestaat al): audio/genesis/20-v.mp3
+Sla over (bestaat al): audio/psalmen/1-v.mp3
+Sla over (bestaat al): audio/psalmen/2-v.mp3
+Sla over (bestaat al): audio/psalmen/3-v.mp3
+Sla over (bestaat al): audio/psalmen/4-v.mp3
+Sla over (bestaat al): audio/psalmen/5-v.mp3
+Sla over (bestaat al): audio/psalmen/6-v.mp3
+Sla over (bestaat al): audio/psalmen/7-v.mp3
+Sla over (bestaat al): audio/psalmen/8-v.mp3
+Sla over (bestaat al): audio/psalmen/9-v.mp3
+Sla over (bestaat al): audio/psalmen/10-v.mp3
+Sla over (bestaat al): audio/psalmen/11-v.mp3
+Sla over (bestaat al): audio/psalmen/12-v.mp3
+Sla over (bestaat al): audio/psalmen/13-v.mp3
+Sla over (bestaat al): audio/psalmen/14-v.mp3
+Sla over (bestaat al): audio/psalmen/15-v.mp3
+Sla over (bestaat al): audio/psalmen/16-v.mp3
+Sla over (bestaat al): audio/psalmen/17-v.mp3
+Sla over (bestaat al): audio/psalmen/18-v.mp3
+Sla over (bestaat al): audio/psalmen/19-v.mp3
+Sla over (bestaat al): audio/psalmen/20-v.mp3
+Sla over (bestaat al): audio/psalmen/21-v.mp3
+Sla over (bestaat al): audio/psalmen/22-v.mp3
+Sla over (bestaat al): audio/psalmen/23-v.mp3
+Sla over (bestaat al): audio/psalmen/24-v.mp3
+Sla over (bestaat al): audio/psalmen/25-v.mp3
+Sla over (bestaat al): audio/psalmen/26-v.mp3
+Sla over (bestaat al): audio/psalmen/27-v.mp3
+Sla over (bestaat al): audio/psalmen/28-v.mp3
+Sla over (bestaat al): audio/psalmen/29-v.mp3
+Sla over (bestaat al): audio/psalmen/30-v.mp3
+Sla over (bestaat al): audio/psalmen/31-v.mp3
+Sla over (bestaat al): audio/psalmen/32-v.mp3
+Sla over (bestaat al): audio/psalmen/33-v.mp3
+Sla over (bestaat al): audio/psalmen/34-v.mp3
+Sla over (bestaat al): audio/psalmen/35-v.mp3
+Sla over (bestaat al): audio/psalmen/36-v.mp3
+Sla over (bestaat al): audio/psalmen/37-v.mp3
+Sla over (bestaat al): audio/psalmen/38-v.mp3
+Sla over (bestaat al): audio/psalmen/39-v.mp3
+Sla over (bestaat al): audio/psalmen/40-v.mp3
+Sla over (bestaat al): audio/psalmen/41-v.mp3
+Sla over (bestaat al): audio/psalmen/42-v.mp3
+Sla over (bestaat al): audio/psalmen/43-v.mp3
+Sla over (bestaat al): audio/psalmen/44-v.mp3
+Sla over (bestaat al): audio/psalmen/45-v.mp3
+Sla over (bestaat al): audio/psalmen/46-v.mp3
+Sla over (bestaat al): audio/psalmen/47-v.mp3
+Sla over (bestaat al): audio/psalmen/48-v.mp3
+Sla over (bestaat al): audio/psalmen/49-v.mp3
+Sla over (bestaat al): audio/psalmen/50-v.mp3
+Sla over (bestaat al): audio/psalmen/51-v.mp3
+Sla over (bestaat al): audio/psalmen/52-v.mp3
+Sla over (bestaat al): audio/psalmen/53-v.mp3
+Sla over (bestaat al): audio/psalmen/54-v.mp3
+Sla over (bestaat al): audio/psalmen/55-v.mp3
+Sla over (bestaat al): audio/psalmen/56-v.mp3
+Sla over (bestaat al): audio/psalmen/57-v.mp3
+Sla over (bestaat al): audio/psalmen/58-v.mp3
+Sla over (bestaat al): audio/psalmen/59-v.mp3
+Sla over (bestaat al): audio/psalmen/60-v.mp3
+Sla over (bestaat al): audio/psalmen/61-v.mp3
+Sla over (bestaat al): audio/psalmen/62-v.mp3
+Sla over (bestaat al): audio/psalmen/63-v.mp3
+Sla over (bestaat al): audio/psalmen/64-v.mp3
+Sla over (bestaat al): audio/psalmen/65-v.mp3
+Sla over (bestaat al): audio/psalmen/66-v.mp3
+Sla over (bestaat al): audio/psalmen/67-v.mp3
+Sla over (bestaat al): audio/psalmen/68-v.mp3
+Sla over (bestaat al): audio/psalmen/69-v.mp3
+Sla over (bestaat al): audio/psalmen/70-v.mp3
+Sla over (bestaat al): audio/psalmen/71-v.mp3
+Sla over (bestaat al): audio/psalmen/72-v.mp3
+Sla over (bestaat al): audio/psalmen/73-v.mp3
+Sla over (bestaat al): audio/psalmen/74-v.mp3
+Sla over (bestaat al): audio/psalmen/75-v.mp3
+Sla over (bestaat al): audio/psalmen/76-v.mp3
+Sla over (bestaat al): audio/psalmen/77-v.mp3
+Sla over (bestaat al): audio/psalmen/78-v.mp3
+Sla over (bestaat al): audio/psalmen/79-v.mp3
+Sla over (bestaat al): audio/psalmen/80-v.mp3
+Sla over (bestaat al): audio/psalmen/81-v.mp3
+Sla over (bestaat al): audio/psalmen/82-v.mp3
+Sla over (bestaat al): audio/psalmen/83-v.mp3
+Sla over (bestaat al): audio/psalmen/84-v.mp3
+Sla over (bestaat al): audio/psalmen/85-v.mp3
+Sla over (bestaat al): audio/psalmen/86-v.mp3
+Sla over (bestaat al): audio/psalmen/87-v.mp3
+Sla over (bestaat al): audio/psalmen/88-v.mp3
+Sla over (bestaat al): audio/psalmen/89-v.mp3
+Sla over (bestaat al): audio/psalmen/90-v.mp3
+Sla over (bestaat al): audio/psalmen/91-v.mp3
+Sla over (bestaat al): audio/psalmen/92-v.mp3
+Sla over (bestaat al): audio/psalmen/93-v.mp3
+Sla over (bestaat al): audio/psalmen/94-v.mp3
+Sla over (bestaat al): audio/psalmen/95-v.mp3
+Sla over (bestaat al): audio/psalmen/96-v.mp3
+Sla over (bestaat al): audio/psalmen/97-v.mp3
+Sla over (bestaat al): audio/psalmen/98-v.mp3
+Sla over (bestaat al): audio/psalmen/99-v.mp3
+Sla over (bestaat al): audio/psalmen/100-v.mp3
+Sla over (bestaat al): audio/psalmen/101-v.mp3
+Sla over (bestaat al): audio/psalmen/102-v.mp3
+Sla over (bestaat al): audio/psalmen/103-v.mp3
+Sla over (bestaat al): audio/psalmen/104-v.mp3
+Sla over (bestaat al): audio/psalmen/105-v.mp3
+Sla over (bestaat al): audio/psalmen/106-v.mp3
+Sla over (bestaat al): audio/psalmen/107-v.mp3
+Sla over (bestaat al): audio/psalmen/108-v.mp3
+Sla over (bestaat al): audio/psalmen/109-v.mp3
+Sla over (bestaat al): audio/psalmen/110-v.mp3
+Sla over (bestaat al): audio/psalmen/111-v.mp3
+Sla over (bestaat al): audio/psalmen/112-v.mp3
+Sla over (bestaat al): audio/psalmen/113-v.mp3
+Sla over (bestaat al): audio/psalmen/114-v.mp3
+Sla over (bestaat al): audio/psalmen/115-v.mp3
+Sla over (bestaat al): audio/psalmen/116-v.mp3
+Sla over (bestaat al): audio/psalmen/117-v.mp3
+Sla over (bestaat al): audio/psalmen/118-v.mp3
+Sla over (bestaat al): audio/psalmen/119-v.mp3
+Sla over (bestaat al): audio/psalmen/120-v.mp3
+Sla over (bestaat al): audio/psalmen/121-v.mp3
+Sla over (bestaat al): audio/psalmen/122-v.mp3
+Sla over (bestaat al): audio/psalmen/123-v.mp3
+Sla over (bestaat al): audio/psalmen/124-v.mp3
+Sla over (bestaat al): audio/psalmen/125-v.mp3
+Sla over (bestaat al): audio/psalmen/126-v.mp3
+Sla over (bestaat al): audio/psalmen/127-v.mp3
+Sla over (bestaat al): audio/psalmen/128-v.mp3
+Sla over (bestaat al): audio/psalmen/129-v.mp3
+Sla over (bestaat al): audio/psalmen/130-v.mp3
+Sla over (bestaat al): audio/psalmen/131-v.mp3
+Sla over (bestaat al): audio/psalmen/132-v.mp3
+Sla over (bestaat al): audio/psalmen/133-v.mp3
+Sla over (bestaat al): audio/psalmen/134-v.mp3
+Sla over (bestaat al): audio/psalmen/135-v.mp3
+Sla over (bestaat al): audio/psalmen/136-v.mp3
+Sla over (bestaat al): audio/psalmen/137-v.mp3
+Sla over (bestaat al): audio/psalmen/138-v.mp3
+Sla over (bestaat al): audio/psalmen/139-v.mp3
+Sla over (bestaat al): audio/psalmen/140-v.mp3
+Sla over (bestaat al): audio/psalmen/141-v.mp3
+Sla over (bestaat al): audio/psalmen/142-v.mp3
+Sla over (bestaat al): audio/psalmen/143-v.mp3
+Sla over (bestaat al): audio/psalmen/144-v.mp3
+Sla over (bestaat al): audio/psalmen/145-v.mp3
+Sla over (bestaat al): audio/psalmen/146-v.mp3
+Sla over (bestaat al): audio/psalmen/147-v.mp3
+Sla over (bestaat al): audio/psalmen/148-v.mp3
+Sla over (bestaat al): audio/psalmen/149-v.mp3
+Sla over (bestaat al): audio/psalmen/150-v.mp3
+Sla over (bestaat al): audio/johannes/1-v.mp3
+Sla over (bestaat al): audio/johannes/2-v.mp3
+Sla over (bestaat al): audio/johannes/3-v.mp3
+Sla over (bestaat al): audio/johannes/4-v.mp3
+Sla over (bestaat al): audio/johannes/5-v.mp3
+Sla over (bestaat al): audio/johannes/6-v.mp3
+Sla over (bestaat al): audio/johannes/7-v.mp3
+Sla over (bestaat al): audio/johannes/8-v.mp3
+Sla over (bestaat al): audio/johannes/9-v.mp3
+Sla over (bestaat al): audio/johannes/10-v.mp3
+Sla over (bestaat al): audio/johannes/11-v.mp3
+Sla over (bestaat al): audio/johannes/12-v.mp3
+Sla over (bestaat al): audio/johannes/13-v.mp3
+Sla over (bestaat al): audio/johannes/14-v.mp3
+Sla over (bestaat al): audio/johannes/15-v.mp3
+Sla over (bestaat al): audio/johannes/16-v.mp3
+Sla over (bestaat al): audio/johannes/17-v.mp3
+Sla over (bestaat al): audio/johannes/18-v.mp3
+Sla over (bestaat al): audio/johannes/19-v.mp3
+Sla over (bestaat al): audio/johannes/20-v.mp3
+Sla over (bestaat al): audio/johannes/21-v.mp3
+Sla over (bestaat al): audio/handelingen/1-v.mp3
+Sla over (bestaat al): audio/handelingen/2-v.mp3
+Sla over (bestaat al): audio/handelingen/3-v.mp3
+Sla over (bestaat al): audio/handelingen/4-v.mp3
+Sla over (bestaat al): audio/handelingen/5-v.mp3
+Sla over (bestaat al): audio/handelingen/6-v.mp3
+Sla over (bestaat al): audio/handelingen/7-v.mp3
+Sla over (bestaat al): audio/handelingen/8-v.mp3
+Sla over (bestaat al): audio/handelingen/9-v.mp3
+Sla over (bestaat al): audio/handelingen/10-v.mp3
+Sla over (bestaat al): audio/handelingen/11-v.mp3
+Sla over (bestaat al): audio/handelingen/12-v.mp3
+Sla over (bestaat al): audio/handelingen/13-v.mp3
+Sla over (bestaat al): audio/handelingen/14-v.mp3
+Sla over (bestaat al): audio/handelingen/15-v.mp3
+Sla over (bestaat al): audio/handelingen/16-v.mp3
+Sla over (bestaat al): audio/markus/1-v.mp3
+Sla over (bestaat al): audio/markus/2-v.mp3
+Sla over (bestaat al): audio/markus/3-v.mp3
+Sla over (bestaat al): audio/markus/4-v.mp3
+Sla over (bestaat al): audio/markus/5-v.mp3
+Sla over (bestaat al): audio/markus/6-v.mp3
+Sla over (bestaat al): audio/markus/7-v.mp3
+Sla over (bestaat al): audio/markus/8-v.mp3
+Sla over (bestaat al): audio/markus/9-v.mp3
+Sla over (bestaat al): audio/markus/10-v.mp3
+Sla over (bestaat al): audio/markus/11-v.mp3
+Sla over (bestaat al): audio/markus/12-v.mp3
+Sla over (bestaat al): audio/markus/13-v.mp3
+Sla over (bestaat al): audio/markus/14-v.mp3
+Sla over (bestaat al): audio/markus/15-v.mp3
+Sla over (bestaat al): audio/markus/16-v.mp3
+Sla over (bestaat al): audio/romeinen/1-v.mp3
+Sla over (bestaat al): audio/romeinen/2-v.mp3
+Sla over (bestaat al): audio/romeinen/3-v.mp3
+Sla over (bestaat al): audio/romeinen/4-v.mp3
+Sla over (bestaat al): audio/1johannes/1-v.mp3
+Sla over (bestaat al): audio/1johannes/2-v.mp3
+Sla over (bestaat al): audio/1johannes/3-v.mp3
+Sla over (bestaat al): audio/1johannes/4-v.mp3
+Sla over (bestaat al): audio/1johannes/5-v.mp3
+Sla over (bestaat al): audio/2johannes/1-v.mp3
+Sla over (bestaat al): audio/3johannes/1-v.mp3
+Sla over (bestaat al): audio/efeziers/1-v.mp3
+Sla over (bestaat al): audio/efeziers/2-v.mp3
+Sla over (bestaat al): audio/efeziers/3-v.mp3
+Sla over (bestaat al): audio/efeziers/4-v.mp3
+Sla over (bestaat al): audio/efeziers/5-v.mp3
+Sla over (bestaat al): audio/efeziers/6-v.mp3
+Sla over (bestaat al): audio/gebedvanmanasse/1-v.mp3
+Sla over (bestaat al): audio/filemon/1-v.mp3
+Sla over (bestaat al): audio/judas/1-v.mp3
+Sla over (bestaat al): audio/baruch/1-v.mp3
+Sla over (bestaat al): audio/baruch/2-v.mp3
+Sla over (bestaat al): audio/baruch/3-v.mp3
+Sla over (bestaat al): audio/baruch/4-v.mp3
+Sla over (bestaat al): audio/baruch/5-v.mp3
+Sla over (bestaat al): audio/baruch/6-v.mp3
+Sla over (bestaat al): audio/jakobus/1-v.mp3
+Sla over (bestaat al): audio/jakobus/2-v.mp3
+Sla over (bestaat al): audio/jakobus/3-v.mp3
+Sla over (bestaat al): audio/jakobus/4-v.mp3
+Sla over (bestaat al): audio/jakobus/5-v.mp3
+Sla over (bestaat al): audio/1makkabeeen/1-v.mp3
+Sla over (bestaat al): audio/1makkabeeen/2-v.mp3
+Sla over (bestaat al): audio/1makkabeeen/3-v.mp3
+Sla over (bestaat al): audio/1makkabeeen/4-v.mp3
+Sla over (bestaat al): audio/1makkabeeen/5-v.mp3
+Sla over (bestaat al): audio/1makkabeeen/6-v.mp3
+Sla over (bestaat al): audio/1makkabeeen/7-v.mp3
+Voice sample: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/_pilot/_sample/voice-female.wav
+Model: bosonai/higgs-audio-v3-tts-4b
+Server poort: 8765
+Te genereren: 59 hoofdstuk(ken)
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+Hoofdstuk: 1makkabeeen 8
+Tekst: 5531 chars
+Chunks: 13
+  [1/13] 80 woorden... ok (9.6s)
+  [2/13] 80 woorden... ok (9.6s)
+  [3/13] 80 woorden... ok (10.1s)
+  [4/13] 80 woorden... ok (9.3s)
+  [5/13] 80 woorden... ok (10.1s)
+  [6/13] 80 woorden... ok (9.4s)
+  [7/13] 80 woorden... ok (9.1s)
+  [8/13] 80 woorden... ok (9.4s)
+  [9/13] 80 woorden... ok (9.4s)
+  [10/13] 80 woorden... ok (9.7s)
+  [11/13] 80 woorden... ok (9.6s)
+  [12/13] 80 woorden... ok (9.5s)
+  [13/13] 9 woorden... ok (1.1s)
+  Aaneenschakelen 13 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/8-v.mp3
+  Duur: 335.7s | Grootte: 5245 KB | Generatietijd: 115.6s
+
+Hoofdstuk: 1makkabeeen 9
+Tekst: 9910 chars
+Chunks: 23
+  [1/23] 80 woorden... ok (9.2s)
+  [2/23] 80 woorden... ok (10.2s)
+  [3/23] 80 woorden... ok (9.5s)
+  [4/23] 80 woorden... ok (9.3s)
+  [5/23] 80 woorden... ok (9.4s)
+  [6/23] 80 woorden... ok (9.5s)
+  [7/23] 80 woorden... ok (9.6s)
+  [8/23] 80 woorden... ok (9.0s)
+  [9/23] 80 woorden... ok (9.7s)
+  [10/23] 80 woorden... ok (9.4s)
+  [11/23] 80 woorden... ok (10.2s)
+  [12/23] 80 woorden... ok (10.2s)
+  [13/23] 80 woorden... ok (9.3s)
+  [14/23] 80 woorden... ok (7.9s)
+  [15/23] 80 woorden... ok (9.7s)
+  [16/23] 80 woorden... ok (9.9s)
+  [17/23] 80 woorden... ok (9.6s)
+  [18/23] 80 woorden... ok (9.5s)
+  [19/23] 80 woorden... ok (9.4s)
+  [20/23] 80 woorden... ok (8.8s)
+  [21/23] 80 woorden... ok (8.7s)
+  [22/23] 80 woorden... ok (8.4s)
+  [23/23] 38 woorden... ok (4.7s)
+  Aaneenschakelen 23 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/9-v.mp3
+  Duur: 619.4s | Grootte: 9678 KB | Generatietijd: 211.3s
+
+Hoofdstuk: 1makkabeeen 10
+Tekst: 12865 chars
+Chunks: 29
+  [1/29] 80 woorden... ok (10.2s)
+  [2/29] 80 woorden... ok (8.4s)
+  [3/29] 80 woorden... ok (8.6s)
+  [4/29] 80 woorden... ok (9.9s)
+  [5/29] 80 woorden... ok (9.3s)
+  [6/29] 80 woorden... ok (9.0s)
+  [7/29] 80 woorden... ok (9.2s)
+  [8/29] 80 woorden... ok (8.9s)
+  [9/29] 80 woorden... ok (8.8s)
+  [10/29] 80 woorden... ok (9.6s)
+  [11/29] 80 woorden... ok (8.6s)
+  [12/29] 80 woorden... ok (9.3s)
+  [13/29] 80 woorden... ok (9.3s)
+  [14/29] 80 woorden... ok (9.3s)
+  [15/29] 80 woorden... ok (9.4s)
+  [16/29] 80 woorden... ok (9.1s)
+  [17/29] 80 woorden... ok (9.5s)
+  [18/29] 80 woorden... ok (9.2s)
+  [19/29] 80 woorden... ok (10.3s)
+  [20/29] 80 woorden... ok (9.6s)
+  [21/29] 80 woorden... ok (9.0s)
+  [22/29] 80 woorden... ok (10.3s)
+  [23/29] 80 woorden... ok (8.8s)
+  [24/29] 80 woorden... ok (9.2s)
+  [25/29] 80 woorden... ok (10.4s)
+  [26/29] 80 woorden... ok (9.3s)
+  [27/29] 80 woorden... ok (8.8s)
+  [28/29] 80 woorden... ok (9.8s)
+  [29/29] 47 woorden... ok (5.6s)
+  Aaneenschakelen 29 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/10-v.mp3
+  Duur: 782.3s | Grootte: 12223 KB | Generatietijd: 266.9s
+
+Hoofdstuk: 1makkabeeen 11
+Tekst: 10778 chars
+Chunks: 24
+  [1/24] 80 woorden... ok (8.8s)
+  [2/24] 80 woorden... ok (8.7s)
+  [3/24] 80 woorden... ok (10.6s)
+  [4/24] 80 woorden... ok (9.0s)
+  [5/24] 80 woorden... ok (10.1s)
+  [6/24] 80 woorden... ok (10.4s)
+  [7/24] 80 woorden... ok (9.5s)
+  [8/24] 80 woorden... ok (9.5s)
+  [9/24] 80 woorden... ok (9.5s)
+  [10/24] 80 woorden... ok (10.4s)
+  [11/24] 80 woorden... ok (9.0s)
+  [12/24] 80 woorden... ok (9.1s)
+  [13/24] 80 woorden... ok (8.4s)
+  [14/24] 80 woorden... ok (9.4s)
+  [15/24] 80 woorden... ok (9.3s)
+  [16/24] 80 woorden... ok (8.1s)
+  [17/24] 80 woorden... ok (9.0s)
+  [18/24] 80 woorden... ok (8.7s)
+  [19/24] 80 woorden... ok (9.0s)
+  [20/24] 80 woorden... ok (8.8s)
+  [21/24] 80 woorden... ok (9.9s)
+  [22/24] 80 woorden... ok (9.7s)
+  [23/24] 80 woorden... ok (8.8s)
+  [24/24] 80 woorden... ok (9.4s)
+  Aaneenschakelen 24 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/11-v.mp3
+  Duur: 654.4s | Grootte: 10225 KB | Generatietijd: 223.3s
+
+Hoofdstuk: 1makkabeeen 12
+Tekst: 7528 chars
+Chunks: 17
+  [1/17] 80 woorden... ok (9.2s)
+  [2/17] 80 woorden... ok (10.0s)
+  [3/17] 80 woorden... ok (9.7s)
+  [4/17] 80 woorden... ok (9.5s)
+  [5/17] 80 woorden... ok (9.8s)
+  [6/17] 80 woorden... ok (9.1s)
+  [7/17] 80 woorden... ok (8.3s)
+  [8/17] 80 woorden... ok (18.3s)
+  [9/17] 80 woorden... ok (9.3s)
+  [10/17] 80 woorden... ok (9.5s)
+  [11/17] 80 woorden... ok (8.3s)
+  [12/17] 80 woorden... ok (9.6s)
+  [13/17] 80 woorden... ok (9.9s)
+  [14/17] 80 woorden... ok (8.7s)
+  [15/17] 80 woorden... ok (9.6s)
+  [16/17] 80 woorden... ok (10.3s)
+  [17/17] 60 woorden... ok (7.2s)
+  Aaneenschakelen 17 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/12-v.mp3
+  Duur: 487.4s | Grootte: 7615 KB | Generatietijd: 166.3s
+
+Hoofdstuk: 1makkabeeen 13
+Tekst: 7482 chars
+Chunks: 17
+  [1/17] 80 woorden... ok (9.1s)
+  [2/17] 80 woorden... ok (8.4s)
+  [3/17] 80 woorden... ok (9.3s)
+  [4/17] 80 woorden... ok (9.5s)
+  [5/17] 80 woorden... ok (9.0s)
+  [6/17] 80 woorden... ok (8.4s)
+  [7/17] 80 woorden... ok (9.2s)
+  [8/17] 80 woorden... ok (9.5s)
+  [9/17] 80 woorden... ok (9.5s)
+  [10/17] 80 woorden... ok (9.4s)
+  [11/17] 80 woorden... ok (10.0s)
+  [12/17] 80 woorden... ok (8.8s)
+  [13/17] 80 woorden... ok (10.1s)
+  [14/17] 80 woorden... ok (8.8s)
+  [15/17] 80 woorden... ok (8.9s)
+  [16/17] 80 woorden... ok (9.8s)
+  [17/17] 70 woorden... ok (7.7s)
+  Aaneenschakelen 17 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/13-v.mp3
+  Duur: 456.0s | Grootte: 7125 KB | Generatietijd: 155.6s
+
+Hoofdstuk: 1makkabeeen 14
+Tekst: 7977 chars
+Chunks: 18
+  [1/18] 80 woorden... ok (10.0s)
+  [2/18] 80 woorden... ok (9.9s)
+  [3/18] 80 woorden... ok (9.0s)
+  [4/18] 80 woorden... ok (9.2s)
+  [5/18] 80 woorden... ok (11.6s)
+  [6/18] 80 woorden... ok (9.7s)
+  [7/18] 80 woorden... ok (10.1s)
+  [8/18] 80 woorden... ok (9.3s)
+  [9/18] 80 woorden... ok (9.0s)
+  [10/18] 80 woorden... ok (9.3s)
+  [11/18] 80 woorden... ok (9.3s)
+  [12/18] 80 woorden... ok (8.9s)
+  [13/18] 80 woorden... ok (8.9s)
+  [14/18] 80 woorden... ok (8.9s)
+  [15/18] 80 woorden... ok (8.6s)
+  [16/18] 80 woorden... ok (8.0s)
+  [17/18] 80 woorden... ok (8.9s)
+  [18/18] 42 woorden... ok (4.5s)
+  Aaneenschakelen 18 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/14-v.mp3
+  Duur: 477.4s | Grootte: 7459 KB | Generatietijd: 162.9s
+
+Hoofdstuk: 1makkabeeen 15
+Tekst: 6204 chars
+Chunks: 14
+  [1/14] 80 woorden... ok (9.1s)
+  [2/14] 80 woorden... ok (9.3s)
+  [3/14] 80 woorden... ok (9.3s)
+  [4/14] 80 woorden... ok (10.1s)
+  [5/14] 80 woorden... ok (9.5s)
+  [6/14] 80 woorden... ok (9.4s)
+  [7/14] 80 woorden... ok (9.9s)
+  [8/14] 80 woorden... ok (11.2s)
+  [9/14] 80 woorden... ok (9.9s)
+  [10/14] 80 woorden... ok (9.0s)
+  [11/14] 80 woorden... ok (10.1s)
+  [12/14] 80 woorden... ok (9.6s)
+  [13/14] 80 woorden... ok (8.8s)
+  [14/14] 51 woorden... ok (6.1s)
+  Aaneenschakelen 14 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/15-v.mp3
+  Duur: 384.6s | Grootte: 6010 KB | Generatietijd: 131.2s
+
+Hoofdstuk: 1makkabeeen 16
+Tekst: 3779 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (8.6s)
+  [2/9] 80 woorden... ok (9.3s)
+  [3/9] 80 woorden... ok (8.2s)
+  [4/9] 80 woorden... ok (9.2s)
+  [5/9] 80 woorden... ok (8.8s)
+  [6/9] 80 woorden... ok (10.0s)
+  [7/9] 80 woorden... ok (8.9s)
+  [8/9] 80 woorden... ok (9.0s)
+  [9/9] 52 woorden... ok (6.2s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/1makkabeeen/16-v.mp3
+  Duur: 229.4s | Grootte: 3584 KB | Generatietijd: 78.3s
+
+Hoofdstuk: susanna 1
+Tekst: 7838 chars
+Chunks: 19
+  [1/19] 80 woorden... ok (9.2s)
+  [2/19] 80 woorden... ok (9.3s)
+  [3/19] 80 woorden... ok (9.6s)
+  [4/19] 80 woorden... ok (9.8s)
+  [5/19] 80 woorden... ok (8.4s)
+  [6/19] 80 woorden... ok (8.6s)
+  [7/19] 80 woorden... ok (8.3s)
+  [8/19] 80 woorden... ok (8.5s)
+  [9/19] 80 woorden... ok (9.5s)
+  [10/19] 80 woorden... ok (8.4s)
+  [11/19] 80 woorden... ok (8.8s)
+  [12/19] 80 woorden... ok (9.4s)
+  [13/19] 80 woorden... ok (9.2s)
+  [14/19] 80 woorden... ok (8.9s)
+  [15/19] 80 woorden... ok (10.2s)
+  [16/19] 80 woorden... ok (9.2s)
+  [17/19] 80 woorden... ok (8.8s)
+  [18/19] 80 woorden... ok (9.4s)
+  [19/19] 13 woorden... ok (1.3s)
+  Aaneenschakelen 19 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/susanna/1-v.mp3
+  Duur: 482.5s | Grootte: 7540 KB | Generatietijd: 164.7s
+
+Hoofdstuk: ezra 1
+Tekst: 1997 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.9s)
+  [2/5] 80 woorden... ok (9.3s)
+  [3/5] 80 woorden... ok (10.1s)
+  [4/5] 80 woorden... ok (10.8s)
+  [5/5] 24 woorden... ok (3.5s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/ezra/1-v.mp3
+  Duur: 127.9s | Grootte: 1999 KB | Generatietijd: 43.7s
+
+Hoofdstuk: ezra 2
+Tekst: 5710 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (9.4s)
+  [2/12] 80 woorden... ok (10.7s)
+  [3/12] 80 woorden... ok (12.1s)
+  [4/12] 80 woorden... ok (9.3s)
+  [5/12] 80 woorden... ok (12.7s)
+  [6/12] 80 woorden... ok (9.1s)
+  [7/12] 80 woorden... ok (10.8s)
+  [8/12] 80 woorden... ok (10.2s)
+  [9/12] 80 woorden... ok (10.0s)
+  [10/12] 80 woorden... ok (10.1s)
+  [11/12] 80 woorden... ok (10.0s)
+  [12/12] 51 woorden... ok (6.7s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/ezra/2-v.mp3
+  Duur: 355.0s | Grootte: 5547 KB | Generatietijd: 121.2s
+
+Hoofdstuk: ezra 3
+Tekst: 2932 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (10.1s)
+  [2/7] 80 woorden... ok (10.3s)
+  [3/7] 80 woorden... ok (9.9s)
+  [4/7] 80 woorden... ok (8.9s)
+  [5/7] 80 woorden... ok (9.2s)
+  [6/7] 80 woorden... ok (9.1s)
+  [7/7] 43 woorden... ok (5.1s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/ezra/3-v.mp3
+  Duur: 183.7s | Grootte: 2870 KB | Generatietijd: 62.7s
+
+Hoofdstuk: ezra 4
+Tekst: 4281 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (9.7s)
+  [2/10] 80 woorden... ok (9.7s)
+  [3/10] 80 woorden... ok (12.7s)
+  [4/10] 80 woorden... ok (9.9s)
+  [5/10] 80 woorden... ok (10.7s)
+  [6/10] 80 woorden... ok (8.6s)
+  [7/10] 80 woorden... ok (10.5s)
+  [8/10] 80 woorden... ok (9.6s)
+  [9/10] 80 woorden... ok (9.7s)
+  [10/10] 21 woorden... ok (3.0s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/ezra/4-v.mp3
+  Duur: 275.4s | Grootte: 4303 KB | Generatietijd: 94.1s
+
+Hoofdstuk: ezra 5
+Tekst: 3190 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.9s)
+  [2/8] 80 woorden... ok (9.4s)
+  [3/8] 80 woorden... ok (9.8s)
+  [4/8] 80 woorden... ok (9.4s)
+  [5/8] 80 woorden... ok (9.1s)
+  [6/8] 80 woorden... ok (9.5s)
+  [7/8] 80 woorden... ok (8.6s)
+  [8/8] 22 woorden... ok (2.6s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/ezra/5-v.mp3
+  Duur: 199.9s | Grootte: 3124 KB | Generatietijd: 68.3s
+
+Hoofdstuk: ezra 6
+Tekst: 4266 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (10.0s)
+  [2/10] 80 woorden... ok (9.6s)
+  [3/10] 80 woorden... ok (9.0s)
+  [4/10] 80 woorden... ok (9.3s)
+  [5/10] 80 woorden... ok (8.7s)
+  [6/10] 80 woorden... ok (9.6s)
+  [7/10] 80 woorden... ok (9.1s)
+  [8/10] 80 woorden... ok (10.1s)
+  [9/10] 80 woorden... ok (9.1s)
+  [10/10] 46 woorden... ok (4.9s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/ezra/6-v.mp3
+  Duur: 262.3s | Grootte: 4099 KB | Generatietijd: 89.6s
+
+Hoofdstuk: ezra 7
+Tekst: 4562 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (10.8s)
+  [2/11] 80 woorden... ok (9.4s)
+  [3/11] 80 woorden... ok (8.1s)
+  [4/11] 80 woorden... ok (9.8s)
+  [5/11] 80 woorden... ok (8.7s)
+  [6/11] 80 woorden... ok (9.1s)
+  [7/11] 80 woorden... ok (9.2s)
+  [8/11] 80 woorden... ok (9.0s)
+  [9/11] 80 woorden... ok (9.6s)
+  [10/11] 80 woorden... ok (8.8s)
+  [11/11] 53 woorden... ok (6.4s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/ezra/7-v.mp3
+  Duur: 289.6s | Grootte: 4525 KB | Generatietijd: 98.8s
+
+Hoofdstuk: ezra 8
+Tekst: 5274 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (8.6s)
+  [2/12] 80 woorden... ok (8.7s)
+  [3/12] 80 woorden... ok (8.9s)
+  [4/12] 80 woorden... ok (10.2s)
+  [5/12] 80 woorden... ok (9.9s)
+  [6/12] 80 woorden... ok (9.9s)
+  [7/12] 80 woorden... ok (9.0s)
+  [8/12] 80 woorden... ok (10.0s)
+  [9/12] 80 woorden... ok (10.6s)
+  [10/12] 80 woorden... ok (8.6s)
+  [11/12] 80 woorden... ok (9.6s)
+  [12/12] 70 woorden... ok (9.2s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/ezra/8-v.mp3
+  Duur: 332.1s | Grootte: 5190 KB | Generatietijd: 113.3s
+
+Hoofdstuk: ezra 9
+Tekst: 3523 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (9.7s)
+  [2/9] 80 woorden... ok (8.4s)
+  [3/9] 80 woorden... ok (9.1s)
+  [4/9] 80 woorden... ok (9.5s)
+  [5/9] 80 woorden... ok (8.8s)
+  [6/9] 80 woorden... ok (8.8s)
+  [7/9] 80 woorden... ok (8.8s)
+  [8/9] 80 woorden... ok (9.6s)
+  [9/9] 4 woorden... ok (0.7s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/ezra/9-v.mp3
+  Duur: 215.1s | Grootte: 3361 KB | Generatietijd: 73.5s
+
+Hoofdstuk: ezra 10
+Tekst: 5094 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (9.4s)
+  [2/12] 80 woorden... ok (8.7s)
+  [3/12] 80 woorden... ok (8.7s)
+  [4/12] 80 woorden... ok (8.6s)
+  [5/12] 80 woorden... ok (10.0s)
+  [6/12] 80 woorden... ok (8.7s)
+  [7/12] 80 woorden... ok (10.2s)
+  [8/12] 80 woorden... ok (8.6s)
+  [9/12] 80 woorden... ok (12.7s)
+  [10/12] 80 woorden... ok (9.0s)
+  [11/12] 80 woorden... ok (8.4s)
+  [12/12] 25 woorden... ok (4.3s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/ezra/10-v.mp3
+  Duur: 314.1s | Grootte: 4907 KB | Generatietijd: 107.3s
+
+Hoofdstuk: filippenzen 1
+Tekst: 3535 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.6s)
+  [2/8] 80 woorden... ok (9.3s)
+  [3/8] 80 woorden... ok (9.5s)
+  [4/8] 80 woorden... ok (10.3s)
+  [5/8] 80 woorden... ok (10.1s)
+  [6/8] 80 woorden... ok (9.2s)
+  [7/8] 80 woorden... ok (10.0s)
+  [8/8] 66 woorden... ok (7.6s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/filippenzen/1-v.mp3
+  Duur: 221.7s | Grootte: 3463 KB | Generatietijd: 75.6s
+
+Hoofdstuk: filippenzen 2
+Tekst: 3393 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.6s)
+  [2/8] 80 woorden... ok (9.2s)
+  [3/8] 80 woorden... ok (9.1s)
+  [4/8] 80 woorden... ok (9.8s)
+  [5/8] 80 woorden... ok (8.9s)
+  [6/8] 80 woorden... ok (8.5s)
+  [7/8] 80 woorden... ok (9.1s)
+  [8/8] 58 woorden... ok (7.0s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/filippenzen/2-v.mp3
+  Duur: 208.6s | Grootte: 3259 KB | Generatietijd: 71.2s
+
+Hoofdstuk: filippenzen 3
+Tekst: 2618 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.3s)
+  [2/6] 80 woorden... ok (9.7s)
+  [3/6] 80 woorden... ok (9.0s)
+  [4/6] 80 woorden... ok (8.8s)
+  [5/6] 80 woorden... ok (9.4s)
+  [6/6] 69 woorden... ok (8.7s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/filippenzen/3-v.mp3
+  Duur: 161.2s | Grootte: 2519 KB | Generatietijd: 55.0s
+
+Hoofdstuk: filippenzen 4
+Tekst: 2632 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (10.6s)
+  [2/6] 80 woorden... ok (9.7s)
+  [3/6] 80 woorden... ok (9.1s)
+  [4/6] 80 woorden... ok (9.8s)
+  [5/6] 80 woorden... ok (9.6s)
+  [6/6] 73 woorden... ok (12.0s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/filippenzen/4-v.mp3
+  Duur: 178.5s | Grootte: 2789 KB | Generatietijd: 60.9s
+
+Hoofdstuk: titus 1
+Tekst: 2199 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (10.1s)
+  [2/5] 80 woorden... ok (10.2s)
+  [3/5] 80 woorden... ok (8.8s)
+  [4/5] 80 woorden... ok (11.0s)
+  [5/5] 41 woorden... ok (5.4s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/titus/1-v.mp3
+  Duur: 133.1s | Grootte: 2080 KB | Generatietijd: 45.5s
+
+Hoofdstuk: titus 2
+Tekst: 1700 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (9.3s)
+  [2/4] 80 woorden... ok (9.2s)
+  [3/4] 80 woorden... ok (11.6s)
+  [4/4] 36 woorden... ok (5.3s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/titus/2-v.mp3
+  Duur: 103.9s | Grootte: 1623 KB | Generatietijd: 35.5s
+
+Hoofdstuk: titus 3
+Tekst: 1853 chars
+Chunks: 4
+  [1/4] 80 woorden... ok (11.4s)
+  [2/4] 80 woorden... ok (10.4s)
+  [3/4] 80 woorden... ok (9.9s)
+  [4/4] 60 woorden... ok (7.8s)
+  Aaneenschakelen 4 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/titus/3-v.mp3
+  Duur: 115.9s | Grootte: 1812 KB | Generatietijd: 39.6s
+
+Hoofdstuk: kolossenzen 1
+Tekst: 3791 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (9.5s)
+  [2/9] 80 woorden... ok (9.2s)
+  [3/9] 80 woorden... ok (9.1s)
+  [4/9] 80 woorden... ok (9.3s)
+  [5/9] 80 woorden... ok (9.4s)
+  [6/9] 80 woorden... ok (9.2s)
+  [7/9] 80 woorden... ok (8.5s)
+  [8/9] 80 woorden... ok (9.5s)
+  [9/9] 41 woorden... ok (6.0s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/kolossenzen/1-v.mp3
+  Duur: 233.6s | Grootte: 3650 KB | Generatietijd: 79.7s
+
+Hoofdstuk: kolossenzen 2
+Tekst: 3082 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (8.4s)
+  [2/7] 80 woorden... ok (9.2s)
+  [3/7] 80 woorden... ok (9.2s)
+  [4/7] 80 woorden... ok (9.3s)
+  [5/7] 80 woorden... ok (9.6s)
+  [6/7] 80 woorden... ok (10.1s)
+  [7/7] 60 woorden... ok (8.4s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/kolossenzen/2-v.mp3
+  Duur: 188.1s | Grootte: 2939 KB | Generatietijd: 64.2s
+
+Hoofdstuk: kolossenzen 3
+Tekst: 2632 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.5s)
+  [2/6] 80 woorden... ok (10.8s)
+  [3/6] 80 woorden... ok (11.6s)
+  [4/6] 80 woorden... ok (9.2s)
+  [5/6] 80 woorden... ok (10.2s)
+  [6/6] 56 woorden... ok (6.3s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/kolossenzen/3-v.mp3
+  Duur: 168.9s | Grootte: 2638 KB | Generatietijd: 57.6s
+
+Hoofdstuk: kolossenzen 4
+Tekst: 1982 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.9s)
+  [2/5] 80 woorden... ok (10.5s)
+  [3/5] 80 woorden... ok (10.3s)
+  [4/5] 80 woorden... ok (10.1s)
+  [5/5] 37 woorden... ok (5.1s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/kolossenzen/4-v.mp3
+  Duur: 134.7s | Grootte: 2104 KB | Generatietijd: 46.0s
+
+Hoofdstuk: mattheus 1
+Tekst: 2734 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (10.4s)
+  [2/6] 80 woorden... ok (13.3s)
+  [3/6] 80 woorden... ok (9.4s)
+  [4/6] 80 woorden... ok (9.5s)
+  [5/6] 80 woorden... ok (9.6s)
+  [6/6] 55 woorden... ok (7.4s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/1-v.mp3
+  Duur: 174.3s | Grootte: 2724 KB | Generatietijd: 59.5s
+
+Hoofdstuk: mattheus 2
+Tekst: 3477 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (10.6s)
+  [2/8] 80 woorden... ok (9.2s)
+  [3/8] 80 woorden... ok (9.9s)
+  [4/8] 80 woorden... ok (10.1s)
+  [5/8] 80 woorden... ok (8.6s)
+  [6/8] 80 woorden... ok (10.8s)
+  [7/8] 80 woorden... ok (9.3s)
+  [8/8] 52 woorden... ok (7.2s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/2-v.mp3
+  Duur: 221.6s | Grootte: 3462 KB | Generatietijd: 75.6s
+
+Hoofdstuk: mattheus 3
+Tekst: 2061 chars
+Chunks: 5
+  [1/5] 80 woorden... ok (9.1s)
+  [2/5] 80 woorden... ok (9.4s)
+  [3/5] 80 woorden... ok (8.6s)
+  [4/5] 80 woorden... ok (9.7s)
+  [5/5] 55 woorden... ok (7.1s)
+  Aaneenschakelen 5 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/3-v.mp3
+  Duur: 129.0s | Grootte: 2015 KB | Generatietijd: 44.0s
+
+Hoofdstuk: mattheus 4
+Tekst: 3006 chars
+Chunks: 7
+  [1/7] 80 woorden... ok (8.6s)
+  [2/7] 80 woorden... ok (9.0s)
+  [3/7] 80 woorden... ok (9.6s)
+  [4/7] 80 woorden... ok (10.3s)
+  [5/7] 80 woorden... ok (9.9s)
+  [6/7] 80 woorden... ok (11.4s)
+  [7/7] 62 woorden... ok (8.5s)
+  Aaneenschakelen 7 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/4-v.mp3
+  Duur: 197.2s | Grootte: 3081 KB | Generatietijd: 67.3s
+
+Hoofdstuk: mattheus 5
+Tekst: 5549 chars
+Chunks: 14
+  [1/14] 80 woorden... ok (9.6s)
+  [2/14] 80 woorden... ok (10.1s)
+  [3/14] 80 woorden... ok (8.8s)
+  [4/14] 80 woorden... ok (8.9s)
+  [5/14] 80 woorden... ok (8.7s)
+  [6/14] 80 woorden... ok (8.9s)
+  [7/14] 80 woorden... ok (8.9s)
+  [8/14] 80 woorden... ok (9.0s)
+  [9/14] 80 woorden... ok (8.6s)
+  [10/14] 80 woorden... ok (8.6s)
+  [11/14] 80 woorden... ok (8.9s)
+  [12/14] 80 woorden... ok (8.8s)
+  [13/14] 80 woorden... ok (8.9s)
+  [14/14] 11 woorden... ok (1.7s)
+  Aaneenschakelen 14 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/5-v.mp3
+  Duur: 346.3s | Grootte: 5412 KB | Generatietijd: 118.3s
+
+Hoofdstuk: mattheus 6
+Tekst: 4267 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (8.2s)
+  [2/11] 80 woorden... ok (8.5s)
+  [3/11] 80 woorden... ok (8.8s)
+  [4/11] 80 woorden... ok (10.0s)
+  [5/11] 80 woorden... ok (9.5s)
+  [6/11] 80 woorden... ok (9.3s)
+  [7/11] 80 woorden... ok (8.8s)
+  [8/11] 80 woorden... ok (9.0s)
+  [9/11] 80 woorden... ok (8.8s)
+  [10/11] 80 woorden... ok (9.7s)
+  [11/11] 7 woorden... ok (1.0s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/6-v.mp3
+  Duur: 268.4s | Grootte: 4194 KB | Generatietijd: 91.7s
+
+Hoofdstuk: mattheus 7
+Tekst: 3385 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (8.8s)
+  [2/8] 80 woorden... ok (10.0s)
+  [3/8] 80 woorden... ok (8.4s)
+  [4/8] 80 woorden... ok (8.5s)
+  [5/8] 80 woorden... ok (9.6s)
+  [6/8] 80 woorden... ok (8.5s)
+  [7/8] 80 woorden... ok (9.8s)
+  [8/8] 77 woorden... ok (8.9s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/7-v.mp3
+  Duur: 212.3s | Grootte: 3318 KB | Generatietijd: 72.5s
+
+Hoofdstuk: mattheus 8
+Tekst: 4183 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (10.2s)
+  [2/10] 80 woorden... ok (9.6s)
+  [3/10] 80 woorden... ok (10.0s)
+  [4/10] 80 woorden... ok (9.0s)
+  [5/10] 80 woorden... ok (8.6s)
+  [6/10] 80 woorden... ok (9.5s)
+  [7/10] 80 woorden... ok (10.0s)
+  [8/10] 80 woorden... ok (7.4s)
+  [9/10] 80 woorden... ok (8.9s)
+  [10/10] 53 woorden... ok (6.7s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/8-v.mp3
+  Duur: 263.4s | Grootte: 4116 KB | Generatietijd: 89.9s
+
+Hoofdstuk: mattheus 9
+Tekst: 4429 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (9.6s)
+  [2/10] 80 woorden... ok (9.4s)
+  [3/10] 80 woorden... ok (10.8s)
+  [4/10] 80 woorden... ok (10.8s)
+  [5/10] 80 woorden... ok (9.4s)
+  [6/10] 80 woorden... ok (10.1s)
+  [7/10] 80 woorden... ok (8.9s)
+  [8/10] 80 woorden... ok (9.8s)
+  [9/10] 80 woorden... ok (9.7s)
+  [10/10] 72 woorden... ok (9.0s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/9-v.mp3
+  Duur: 285.6s | Grootte: 4463 KB | Generatietijd: 97.5s
+
+Hoofdstuk: mattheus 10
+Tekst: 4940 chars
+Chunks: 12
+  [1/12] 80 woorden... ok (11.1s)
+  [2/12] 80 woorden... ok (9.5s)
+  [3/12] 80 woorden... ok (8.7s)
+  [4/12] 80 woorden... ok (8.6s)
+  [5/12] 80 woorden... ok (9.1s)
+  [6/12] 80 woorden... ok (8.7s)
+  [7/12] 80 woorden... ok (9.1s)
+  [8/12] 80 woorden... ok (8.6s)
+  [9/12] 80 woorden... ok (8.2s)
+  [10/12] 80 woorden... ok (9.2s)
+  [11/12] 80 woorden... ok (9.6s)
+  [12/12] 28 woorden... ok (3.2s)
+  Aaneenschakelen 12 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/10-v.mp3
+  Duur: 303.3s | Grootte: 4739 KB | Generatietijd: 103.6s
+
+Hoofdstuk: mattheus 11
+Tekst: 3634 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (9.3s)
+  [2/9] 80 woorden... ok (9.8s)
+  [3/9] 80 woorden... ok (9.1s)
+  [4/9] 80 woorden... ok (9.1s)
+  [5/9] 80 woorden... ok (9.8s)
+  [6/9] 80 woorden... ok (8.9s)
+  [7/9] 80 woorden... ok (8.4s)
+  [8/9] 80 woorden... ok (9.0s)
+  [9/9] 25 woorden... ok (2.9s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/11-v.mp3
+  Duur: 223.1s | Grootte: 3485 KB | Generatietijd: 76.2s
+
+Hoofdstuk: mattheus 12
+Tekst: 6222 chars
+Chunks: 15
+  [1/15] 80 woorden... ok (9.2s)
+  [2/15] 80 woorden... ok (8.9s)
+  [3/15] 80 woorden... ok (8.7s)
+  [4/15] 80 woorden... ok (9.4s)
+  [5/15] 80 woorden... ok (9.7s)
+  [6/15] 80 woorden... ok (9.6s)
+  [7/15] 80 woorden... ok (9.2s)
+  [8/15] 80 woorden... ok (9.1s)
+  [9/15] 80 woorden... ok (8.8s)
+  [10/15] 80 woorden... ok (8.3s)
+  [11/15] 80 woorden... ok (8.7s)
+  [12/15] 80 woorden... ok (8.9s)
+  [13/15] 80 woorden... ok (9.6s)
+  [14/15] 80 woorden... ok (9.5s)
+  [15/15] 20 woorden... ok (2.4s)
+  Aaneenschakelen 15 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/12-v.mp3
+  Duur: 380.8s | Grootte: 5950 KB | Generatietijd: 130.1s
+
+Hoofdstuk: mattheus 13
+Tekst: 7589 chars
+Chunks: 18
+  [1/18] 80 woorden... ok (8.9s)
+  [2/18] 80 woorden... ok (9.0s)
+  [3/18] 80 woorden... ok (9.7s)
+  [4/18] 80 woorden... ok (9.2s)
+  [5/18] 80 woorden... ok (9.3s)
+  [6/18] 80 woorden... ok (9.3s)
+  [7/18] 80 woorden... ok (10.0s)
+  [8/18] 80 woorden... ok (9.1s)
+  [9/18] 80 woorden... ok (9.3s)
+  [10/18] 80 woorden... ok (8.5s)
+  [11/18] 80 woorden... ok (9.8s)
+  [12/18] 80 woorden... ok (8.5s)
+  [13/18] 80 woorden... ok (9.3s)
+  [14/18] 80 woorden... ok (9.9s)
+  [15/18] 80 woorden... ok (9.0s)
+  [16/18] 80 woorden... ok (9.9s)
+  [17/18] 80 woorden... ok (9.4s)
+  [18/18] 13 woorden... ok (1.7s)
+  Aaneenschakelen 18 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/13-v.mp3
+  Duur: 468.2s | Grootte: 7316 KB | Generatietijd: 159.9s
+
+Hoofdstuk: mattheus 14
+Tekst: 3905 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (9.9s)
+  [2/9] 80 woorden... ok (8.8s)
+  [3/9] 80 woorden... ok (9.5s)
+  [4/9] 80 woorden... ok (9.2s)
+  [5/9] 80 woorden... ok (9.8s)
+  [6/9] 80 woorden... ok (8.6s)
+  [7/9] 80 woorden... ok (9.3s)
+  [8/9] 80 woorden... ok (10.8s)
+  [9/9] 78 woorden... ok (9.4s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/14-v.mp3
+  Duur: 250.2s | Grootte: 3910 KB | Generatietijd: 85.3s
+
+Hoofdstuk: mattheus 15
+Tekst: 4371 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (9.7s)
+  [2/10] 80 woorden... ok (9.4s)
+  [3/10] 80 woorden... ok (10.6s)
+  [4/10] 80 woorden... ok (9.6s)
+  [5/10] 80 woorden... ok (12.6s)
+  [6/10] 80 woorden... ok (9.6s)
+  [7/10] 80 woorden... ok (10.1s)
+  [8/10] 80 woorden... ok (9.4s)
+  [9/10] 80 woorden... ok (9.3s)
+  [10/10] 53 woorden... ok (6.1s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/15-v.mp3
+  Duur: 282.1s | Grootte: 4408 KB | Generatietijd: 96.3s
+
+Hoofdstuk: mattheus 16
+Tekst: 3713 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (9.2s)
+  [2/9] 80 woorden... ok (9.2s)
+  [3/9] 80 woorden... ok (9.0s)
+  [4/9] 80 woorden... ok (10.3s)
+  [5/9] 80 woorden... ok (10.2s)
+  [6/9] 80 woorden... ok (8.1s)
+  [7/9] 80 woorden... ok (10.3s)
+  [8/9] 80 woorden... ok (9.1s)
+  [9/9] 40 woorden... ok (4.4s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/16-v.mp3
+  Duur: 234.3s | Grootte: 3661 KB | Generatietijd: 80.0s
+
+Hoofdstuk: mattheus 17
+Tekst: 3297 chars
+Chunks: 8
+  [1/8] 80 woorden... ok (9.5s)
+  [2/8] 80 woorden... ok (10.5s)
+  [3/8] 80 woorden... ok (11.3s)
+  [4/8] 80 woorden... ok (8.5s)
+  [5/8] 80 woorden... ok (9.6s)
+  [6/8] 80 woorden... ok (9.0s)
+  [7/8] 80 woorden... ok (9.7s)
+  [8/8] 51 woorden... ok (6.1s)
+  Aaneenschakelen 8 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/17-v.mp3
+  Duur: 217.5s | Grootte: 3398 KB | Generatietijd: 74.2s
+
+Hoofdstuk: mattheus 18
+Tekst: 4667 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (8.7s)
+  [2/11] 80 woorden... ok (9.5s)
+  [3/11] 80 woorden... ok (8.8s)
+  [4/11] 80 woorden... ok (9.3s)
+  [5/11] 80 woorden... ok (8.9s)
+  [6/11] 80 woorden... ok (8.1s)
+  [7/11] 80 woorden... ok (10.0s)
+  [8/11] 80 woorden... ok (9.8s)
+  [9/11] 80 woorden... ok (11.2s)
+  [10/11] 80 woorden... ok (9.9s)
+  [11/11] 63 woorden... ok (7.5s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/18-v.mp3
+  Duur: 297.5s | Grootte: 4649 KB | Generatietijd: 101.5s
+
+Hoofdstuk: mattheus 19
+Tekst: 3778 chars
+Chunks: 9
+  [1/9] 80 woorden... ok (9.2s)
+  [2/9] 80 woorden... ok (9.5s)
+  [3/9] 80 woorden... ok (9.1s)
+  [4/9] 80 woorden... ok (9.3s)
+  [5/9] 80 woorden... ok (9.6s)
+  [6/9] 80 woorden... ok (9.7s)
+  [7/9] 80 woorden... ok (9.2s)
+  [8/9] 80 woorden... ok (10.0s)
+  [9/9] 53 woorden... ok (7.8s)
+  Aaneenschakelen 9 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/19-v.mp3
+  Duur: 244.5s | Grootte: 3821 KB | Generatietijd: 83.5s
+
+Hoofdstuk: mattheus 20
+Tekst: 4056 chars
+Chunks: 10
+  [1/10] 80 woorden... ok (8.6s)
+  [2/10] 80 woorden... ok (9.5s)
+  [3/10] 80 woorden... ok (9.7s)
+  [4/10] 80 woorden... ok (8.7s)
+  [5/10] 80 woorden... ok (9.4s)
+  [6/10] 80 woorden... ok (9.2s)
+  [7/10] 80 woorden... ok (9.1s)
+  [8/10] 80 woorden... ok (8.3s)
+  [9/10] 80 woorden... ok (10.7s)
+  [10/10] 32 woorden... ok (4.7s)
+  Aaneenschakelen 10 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/20-v.mp3
+  Duur: 257.7s | Grootte: 4026 KB | Generatietijd: 87.9s
+
+Hoofdstuk: mattheus 21
+Tekst: 5987 chars
+Chunks: 14
+  [1/14] 80 woorden... ok (9.2s)
+  [2/14] 80 woorden... ok (10.0s)
+  [3/14] 80 woorden... ok (9.7s)
+  [4/14] 80 woorden... ok (9.0s)
+  [5/14] 80 woorden... ok (9.2s)
+  [6/14] 80 woorden... ok (9.8s)
+  [7/14] 80 woorden... ok (9.3s)
+  [8/14] 80 woorden... ok (8.7s)
+  [9/14] 80 woorden... ok (9.8s)
+  [10/14] 80 woorden... ok (9.3s)
+  [11/14] 80 woorden... ok (10.3s)
+  [12/14] 80 woorden... ok (9.8s)
+  [13/14] 80 woorden... ok (8.9s)
+  [14/14] 57 woorden... ok (7.5s)
+  Aaneenschakelen 14 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/21-v.mp3
+  Duur: 381.9s | Grootte: 5967 KB | Generatietijd: 130.4s
+
+Hoofdstuk: mattheus 22
+Tekst: 4600 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (10.7s)
+  [2/11] 80 woorden... ok (9.8s)
+  [3/11] 80 woorden... ok (10.9s)
+  [4/11] 80 woorden... ok (9.6s)
+  [5/11] 80 woorden... ok (9.7s)
+  [6/11] 80 woorden... ok (10.4s)
+  [7/11] 80 woorden... ok (9.2s)
+  [8/11] 80 woorden... ok (8.6s)
+  [9/11] 80 woorden... ok (10.0s)
+  [10/11] 80 woorden... ok (10.0s)
+  [11/11] 26 woorden... ok (2.9s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/22-v.mp3
+  Duur: 297.9s | Grootte: 4654 KB | Generatietijd: 101.7s
+
+Hoofdstuk: mattheus 23
+Tekst: 4826 chars
+Chunks: 11
+  [1/11] 80 woorden... ok (8.6s)
+  [2/11] 80 woorden... ok (9.5s)
+  [3/11] 80 woorden... ok (11.7s)
+  [4/11] 80 woorden... ok (10.0s)
+  [5/11] 80 woorden... ok (9.2s)
+  [6/11] 80 woorden... ok (9.9s)
+  [7/11] 80 woorden... ok (10.6s)
+  [8/11] 80 woorden... ok (10.4s)
+  [9/11] 80 woorden... ok (8.8s)
+  [10/11] 80 woorden... ok (8.9s)
+  [11/11] 71 woorden... ok (8.9s)
+  Aaneenschakelen 11 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/23-v.mp3
+  Duur: 310.9s | Grootte: 4858 KB | Generatietijd: 106.5s
+
+Hoofdstuk: mattheus 24
+Tekst: 5722 chars
+Chunks: 14
+  [1/14] 80 woorden... ok (8.8s)
+  [2/14] 80 woorden... ok (9.4s)
+  [3/14] 80 woorden... ok (9.5s)
+  [4/14] 80 woorden... ok (9.8s)
+  [5/14] 80 woorden... ok (8.4s)
+  [6/14] 80 woorden... ok (9.9s)
+  [7/14] 80 woorden... ok (8.8s)
+  [8/14] 80 woorden... ok (8.5s)
+  [9/14] 80 woorden... ok (9.9s)
+  [10/14] 80 woorden... ok (10.7s)
+  [11/14] 80 woorden... ok (9.3s)
+  [12/14] 80 woorden... ok (9.4s)
+  [13/14] 80 woorden... ok (8.1s)
+  [14/14] 4 woorden... ok (0.6s)
+  Aaneenschakelen 14 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/24-v.mp3
+  Duur: 354.5s | Grootte: 5539 KB | Generatietijd: 121.1s
+
+Hoofdstuk: mattheus 25
+Tekst: 5464 chars
+Chunks: 13
+  [1/13] 80 woorden... ok (9.7s)
+  [2/13] 80 woorden... ok (10.8s)
+  [3/13] 80 woorden... ok (8.9s)
+  [4/13] 80 woorden... ok (9.5s)
+  [5/13] 80 woorden... ok (9.8s)
+  [6/13] 80 woorden... ok (9.8s)
+  [7/13] 80 woorden... ok (9.3s)
+  [8/13] 80 woorden... ok (9.3s)
+  [9/13] 80 woorden... ok (9.3s)
+  [10/13] 80 woorden... ok (9.7s)
+  [11/13] 80 woorden... ok (9.1s)
+  [12/13] 80 woorden... ok (9.5s)
+  [13/13] 46 woorden... ok (5.3s)
+  Aaneenschakelen 13 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/25-v.mp3
+  Duur: 351.8s | Grootte: 5496 KB | Generatietijd: 120.0s
+
+Hoofdstuk: mattheus 26
+Tekst: 8732 chars
+Chunks: 20
+  [1/20] 80 woorden... ok (9.8s)
+  [2/20] 80 woorden... ok (10.7s)
+  [3/20] 80 woorden... ok (8.9s)
+  [4/20] 80 woorden... ok (8.7s)
+  [5/20] 80 woorden... ok (9.9s)
+  [6/20] 80 woorden... ok (9.4s)
+  [7/20] 80 woorden... ok (9.1s)
+  [8/20] 80 woorden... ok (9.1s)
+  [9/20] 80 woorden... ok (9.5s)
+  [10/20] 80 woorden... ok (10.0s)
+  [11/20] 80 woorden... ok (9.7s)
+  [12/20] 80 woorden... ok (9.8s)
+  [13/20] 80 woorden... ok (10.3s)
+  [14/20] 80 woorden... ok (9.4s)
+  [15/20] 80 woorden... ok (9.6s)
+  [16/20] 80 woorden... ok (9.7s)
+  [17/20] 80 woorden... ok (9.9s)
+  [18/20] 80 woorden... ok (10.2s)
+  [19/20] 80 woorden... ok (10.1s)
+  [20/20] 60 woorden... ok (7.4s)
+  Aaneenschakelen 20 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/26-v.mp3
+  Duur: 560.1s | Grootte: 8751 KB | Generatietijd: 191.1s
+
+Hoofdstuk: mattheus 27
+Tekst: 7688 chars
+Chunks: 17
+  [1/17] 80 woorden... ok (10.8s)
+  [2/17] 80 woorden... ok (9.9s)
+  [3/17] 80 woorden... ok (9.1s)
+  [4/17] 80 woorden... ok (9.2s)
+  [5/17] 80 woorden... ok (9.7s)
+  [6/17] 80 woorden... ok (9.1s)
+  [7/17] 80 woorden... ok (9.6s)
+  [8/17] 80 woorden... ok (9.4s)
+  [9/17] 80 woorden... ok (10.2s)
+  [10/17] 80 woorden... ok (11.2s)
+  [11/17] 80 woorden... ok (9.5s)
+  [12/17] 80 woorden... ok (10.6s)
+  [13/17] 80 woorden... ok (11.1s)
+  [14/17] 80 woorden... ok (10.4s)
+  [15/17] 80 woorden... ok (9.7s)
+  [16/17] 80 woorden... ok (11.0s)
+  [17/17] 47 woorden... ok (6.0s)
+  Aaneenschakelen 17 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/27-v.mp3
+  Duur: 487.5s | Grootte: 7618 KB | Generatietijd: 166.4s
+
+Hoofdstuk: mattheus 28
+Tekst: 2423 chars
+Chunks: 6
+  [1/6] 80 woorden... ok (9.5s)
+  [2/6] 80 woorden... ok (9.9s)
+  [3/6] 80 woorden... ok (11.2s)
+  [4/6] 80 woorden... ok (9.8s)
+  [5/6] 80 woorden... ok (9.7s)
+  [6/6] 36 woorden... ok (4.2s)
+  Aaneenschakelen 6 chunks...
+  Klaar: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/audio/mattheus/28-v.mp3
+  Duur: 159.2s | Grootte: 2488 KB | Generatietijd: 54.4s
+Server stoppen...
+
+Klaar.
+[sup] stem=v: 320/320 klaar
+[sup] stem=v KLAAR

@@ -1,0 +1,26 @@
+===== SUPERVISED ROLLOUT START Tue Jun  9 09:29:40 AM CEST 2026 — 320 hfst/stem =====
+########## ROLLOUT stem='m' (sample=audio/_pilot/_sample/voice-male, temp=0.3) ##########
+[sup] stem=m: 178/320 klaar
+[sup] === poging 1 voor stem=m (09:29:40) ===
+[sup] VASTGELOPEN gedetecteerd (stale=5, recent-timeouts=3) → herstart
+/tmp/supervised_rollout.sh: line 11: 224483 Killed                  LD_LIBRARY_PATH="/home/maarten/.local/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib:/usr/local/lib/ollama/cuda_v12" CUDA_HOME="$VENV/lib/python3.12/site-packages/nvidia/cu13" FLASHINFER_EXTRA_CUDAFLAGS="-DCCCL_DISABLE_CTK_COMPATIBILITY_CHECK" FLASHINFER_EXTRA_LDFLAGS="-L$VENV/lib/python3.12/site-packages/nvidia/cu13/lib" setsid "$VENV/bin/python" -m scripts.tts.run_higgs_v3 --manifest "$MANIFEST" --voice "$voice" --sample "$sample" --temperature "$temp" >> "$log" 2>&1
+[sup] stem=m: 261/320 klaar
+[sup] === poging 2 voor stem=m (12:20:47) ===
+[sup] stem=m: 320/320 klaar
+[sup] stem=m KLAAR
+########## ROLLOUT stem='v' (sample=audio/_pilot/_sample/voice-female, temp=0.6) ##########
+[sup] stem=v: 0/320 klaar
+[sup] === poging 1 voor stem=v (14:25:22) ===
+[sup] VASTGELOPEN gedetecteerd (stale=5, recent-timeouts=3) → herstart
+/tmp/supervised_rollout.sh: line 11: 1543114 Killed                  LD_LIBRARY_PATH="/home/maarten/.local/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib:/usr/local/lib/ollama/cuda_v12" CUDA_HOME="$VENV/lib/python3.12/site-packages/nvidia/cu13" FLASHINFER_EXTRA_CUDAFLAGS="-DCCCL_DISABLE_CTK_COMPATIBILITY_CHECK" FLASHINFER_EXTRA_LDFLAGS="-L$VENV/lib/python3.12/site-packages/nvidia/cu13/lib" setsid "$VENV/bin/python" -m scripts.tts.run_higgs_v3 --manifest "$MANIFEST" --voice "$voice" --sample "$sample" --temperature "$temp" >> "$log" 2>&1
+[sup] stem=v: 178/320 klaar
+[sup] === poging 2 voor stem=v (16:42:00) ===
+[sup] VASTGELOPEN gedetecteerd (stale=4, recent-timeouts=3) → herstart
+/tmp/supervised_rollout.sh: line 11: 2154113 Killed                  LD_LIBRARY_PATH="/home/maarten/.local/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib:/usr/local/lib/ollama/cuda_v12" CUDA_HOME="$VENV/lib/python3.12/site-packages/nvidia/cu13" FLASHINFER_EXTRA_CUDAFLAGS="-DCCCL_DISABLE_CTK_COMPATIBILITY_CHECK" FLASHINFER_EXTRA_LDFLAGS="-L$VENV/lib/python3.12/site-packages/nvidia/cu13/lib" setsid "$VENV/bin/python" -m scripts.tts.run_higgs_v3 --manifest "$MANIFEST" --voice "$voice" --sample "$sample" --temperature "$temp" >> "$log" 2>&1
+[sup] stem=v: 261/320 klaar
+[sup] === poging 3 voor stem=v (19:04:37) ===
+[sup] stem=v: 320/320 klaar
+[sup] stem=v KLAAR
+===== SUPERVISED ROLLOUT KLAAR Tue Jun  9 08:45:13 PM CEST 2026 =====
+man:   320/320
+vrouw: 320/320
