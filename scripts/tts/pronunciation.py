@@ -39,7 +39,13 @@ def _match_case(original: str, replacement: str) -> str:
     - 'Begere'  -> 'Begére'   (eerste letter hoofdletter)
     - 'BEGERE'  -> 'BEGÉRE'   (volledig hoofdletters)
     - 'begere'  -> 'begére'   (kleine letters, ongewijzigd)
+
+    Uitzondering: als de vervanging zélf al een hoofdletter bevat, is de
+    schrijfwijze bewust gekozen (bijv. 'Jaawee', 'Ka-in') en gebruiken we die
+    letterlijk — zo wordt 'JAHWEH' niet 'JAAWEE' (dat zou TTS kunnen spellen).
     """
+    if any(c.isupper() for c in replacement):
+        return replacement
     if original.isupper():
         return replacement.upper()
     if original[:1].isupper():
