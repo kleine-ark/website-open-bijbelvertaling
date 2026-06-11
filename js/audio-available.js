@@ -1,14 +1,12 @@
 /* Open Staten Vertaling — AUDIO_AVAILABLE + stem-keuze
  *
  * GENEREER-OUTPUT — niet handmatig editen.
- * Wordt bijgewerkt door de TTS-rollout (scripts/tts/run_higgs_v3.py).
+ * Bijgewerkt door de TTS-rollout (scripts/tts/run_higgs_v3.py).
  *
- * Elk vermeld hoofdstuk heeft TWEE voorlezingen op de server:
+ * Elk vermeld hoofdstuk heeft TWEE voorlezingen (Higgs Audio v3, voice-cloned):
  *   audio/{book}/{ch}-m.mp3  (mannenstem)
  *   audio/{book}/{ch}-v.mp3  (vrouwenstem)
- * Higgs Audio v3, voice-cloned. De luisteraar kiest de stem in de speler.
- *
- * Geladen via <script> in lees.html en index.html, vóór js/lees.js en js/app.js.
+ * De luisteraar kiest de stem in de speler.
  */
 window.AUDIO_AVAILABLE = {
     genesis: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
@@ -33,29 +31,16 @@ window.AUDIO_AVAILABLE = {
     titus: [1,2,3],
     kolossenzen: [1,2,3,4],
     mattheus: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],
+    lukas: [1,2,3,4,5,6,7,8,9,10,11],
 };
 
 /* Centrale stem-helper — gedeeld door lees.js en app.js. */
 window.OV_AUDIO = {
     labels: { m: 'Man', v: 'Vrouw' },
-    getVoice() {
-        const v = localStorage.getItem('ov_voice');
-        return (v === 'v' || v === 'm') ? v : 'v';   // standaard: vrouwenstem
-    },
-    setVoice(v) {
-        if (v === 'm' || v === 'v') localStorage.setItem('ov_voice', v);
-    },
-    toggleVoice() {
-        const nv = this.getVoice() === 'm' ? 'v' : 'm';
-        this.setVoice(nv);
-        return nv;
-    },
+    getVoice() { const v = localStorage.getItem('ov_voice'); return (v === 'v' || v === 'm') ? v : 'm'; },
+    setVoice(v) { if (v === 'm' || v === 'v') localStorage.setItem('ov_voice', v); },
+    toggleVoice() { const nv = this.getVoice() === 'm' ? 'v' : 'm'; this.setVoice(nv); return nv; },
     label(v) { return this.labels[v || this.getVoice()]; },
-    src(bookId, chapter) {
-        return `audio/${bookId}/${chapter}-${this.getVoice()}.mp3`;
-    },
-    available(bookId, chapter) {
-        const list = (window.AUDIO_AVAILABLE || {})[bookId] || [];
-        return list.includes(chapter);
-    },
+    src(bookId, chapter) { return `audio/${bookId}/${chapter}-${this.getVoice()}.mp3`; },
+    available(bookId, chapter) { const list = (window.AUDIO_AVAILABLE || {})[bookId] || []; return list.includes(chapter); },
 };
