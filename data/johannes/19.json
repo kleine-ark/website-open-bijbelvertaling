@@ -2152,7 +2152,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En het was de voorbereiding van het pascha, en ongeveer de zesde ure; en hij zei tot de Joden: Zie, uw Koning!",
+      "text2026": "En het was de voorbereiding van het pascha, en ongeveer het zesde uur; en hij zei tot de Joden: Zie, uw Koning!",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -2261,13 +2261,18 @@
       ],
       "hsv": "En het was de voorbereiding van het Pascha, ongeveer het zesde uur; en hij zei tegen de Joden: Zie, uw Koning!",
       "nbg51": "En het was Voorbereiding voor het Pascha, ongeveer het zesde uur, en hij zeide tot de Joden: Zie, uw koning!",
-      "text2026_html": "En het was de voorbereiding van het pascha, en ongeveer de zesde ure; en hij zei tot de Joden: <span class=\"direct-speech\"><i>Zie, uw Koning!</i></span>",
+      "text2026_html": "En het was de voorbereiding van het pascha, en ongeveer het zesde uur; en hij zei tot de Joden: <span class=\"direct-speech\"><i>Zie, uw Koning!</i></span>",
       "textSV1888": "En het was de voorbereiding van het pascha, en omtrent de zesde ure; en hij zeide tot de Joden: Ziet, uw Koning!",
       "textSV1888_html": "En het was de<sup class=\"note-marker\" data-note=\"26\">26</sup> voorbereiding van het pascha, en omtrent<sup class=\"note-marker\" data-note=\"27\">27</sup> de zesde ure; en hij zeide tot de Joden: Ziet, uw Koning!",
       "phraseDiff": [
         {
-          "old": "omtrent",
-          "new": "ongeveer",
+          "old": "omtrent de",
+          "new": "ongeveer het",
+          "principe": null
+        },
+        {
+          "old": "ure;",
+          "new": "uur;",
           "principe": null
         },
         {
@@ -4311,7 +4316,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Daarna zei Hij tot de discipel: Zie, uw moeder. En van die ure aan nam haar de discipel in zijn huis.",
+      "text2026": "Daarna zei Hij tot de discipel: Zie, uw moeder. En van dat uur af aan nam haar de discipel in zijn huis.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -4438,7 +4443,7 @@
       ],
       "hsv": "Daarna zei Hij tegen de discipel: Zie, uw moeder. En vanaf dat moment nam de discipel haar in zijn huis.",
       "nbg51": "Daarna zeide Hij tot de discipel: Zie, uw moeder. En van dat uur af nam de discipel haar bij zich in huis. Het sterven van Jezus",
-      "text2026_html": "Daarna zei Hij tot de discipel: <span class=\"god-speaks\"><i>Zie, uw moeder.</i></span> En van die ure aan nam haar de discipel in zijn huis.</i>",
+      "text2026_html": "Daarna zei Hij tot de discipel: <span class=\"god-speaks\"><i>Zie, uw moeder.</i></span> En van dat uur af aan nam haar de discipel in zijn huis.</i>",
       "textSV1888": "Daarna zeide Hij tot den discipel: Zie, uw moeder. En van die ure aan nam haar de discipel in zijn huis.",
       "textSV1888_html": "Daarna zeide Hij tot den discipel: Zie, uw<sup class=\"note-marker\" data-note=\"45\">45</sup> moeder. En van die ure aan nam haar de discipel<sup class=\"note-marker\" data-note=\"46\">46</sup> in zijn huis.",
       "phraseDiff": [
@@ -4451,6 +4456,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "die ure",
+          "new": "dat uur af",
+          "principe": null
         }
       ]
     },
