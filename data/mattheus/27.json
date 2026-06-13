@@ -5337,7 +5337,7 @@
       "number": 45,
       "textSV1888": "En van de zesde ure aan werd er duisternis over de gehele aarde, tot de negende ure toe.",
       "text1637": "[z] Ende van der [37] sester uyre aen, wiert’er [38] duysternisse over de geheele [39] aerde tot de negende uyre toe.",
-      "text2026": "En van de zesde ure aan werd er duisternis over de hele aarde, tot de negende ure toe.",
+      "text2026": "En van het zesde uur aan werd er duisternis over de hele aarde, tot het negende uur toe.",
       "marginNotes": [
         {
           "marker": "z",
@@ -5448,14 +5448,34 @@
           "gloss": "〔ninth (hour)"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"z\">z</sup> En van de<sup class=\"note-marker\" data-note=\"37\">37</sup> zesde ure aan werd<sup class=\"note-marker\" data-note=\"38\">38</sup> er duisternis over de hele<sup class=\"note-marker\" data-note=\"39\">39</sup> aarde, tot de negende ure toe.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"z\">z</sup> En van de<sup class=\"note-marker\" data-note=\"37\">37</sup> zesde uur aan werd<sup class=\"note-marker\" data-note=\"38\">38</sup> er duisternis over de hele<sup class=\"note-marker\" data-note=\"39\">39</sup> aarde, tot het negende uur toe.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"z\">z</sup> En van de<sup class=\"note-marker\" data-note=\"37\">37</sup> zesde ure aan werd<sup class=\"note-marker\" data-note=\"38\">38</sup> er duisternis over de gehele<sup class=\"note-marker\" data-note=\"39\">39</sup> aarde, tot de negende ure toe.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"z\">z</sup> Ende van der <sup class=\"note-marker\" data-note=\"37\">37</sup> sester uyre aen, wiert’er <sup class=\"note-marker\" data-note=\"38\">38</sup> duysternisse over de geheele <sup class=\"note-marker\" data-note=\"39\">39</sup> aerde tot de negende uyre toe.",
       "phraseDiff": [
         {
+          "old": "de",
+          "new": "het",
+          "principe": null
+        },
+        {
+          "old": "ure",
+          "new": "uur",
+          "principe": null
+        },
+        {
           "old": "gehele",
           "new": "hele",
           "principe": "V391"
+        },
+        {
+          "old": "de",
+          "new": "het",
+          "principe": null
+        },
+        {
+          "old": "ure",
+          "new": "uur",
+          "principe": null
         }
       ]
     },
@@ -5463,7 +5483,7 @@
       "number": 46,
       "textSV1888": "En omtrent de negende ure riep Jezus met een grote stem zeggende: ELI, ELI, LAMA SABACHTHANI! dat is: Mijn God! Mijn God! Waarom hebt Gij Mij verlaten!",
       "text1637": "Ende ontrent de negende uyre [a] riep Iesus met een groote stemme, seggende, [40] ELI, ELI, LAMA SABACHTHANI, dat is, Mijn Godt, mijn Godt, waerom hebt ghy my [41] verlaten.",
-      "text2026": "En ongeveer de negende ure riep Jezus met een luide stem zeggende: ELI, ELI, LAMA SABACHTHANI! dat is: Mijn God! Mijn God! Waarom hebt U Mij verlaten!",
+      "text2026": "En ongeveer het negende uur riep Jezus met een luide stem zeggende: ELI, ELI, LAMA SABACHTHANI! dat is: Mijn God! Mijn God! Waarom hebt U Mij verlaten!",
       "marginNotes": [
         {
           "marker": "a",
@@ -5633,13 +5653,18 @@
           "gloss": "〔to leave behind"
         }
       ],
-      "text2026_html": "En ongeveer de negende ure riep Jezus met een luide stem zeggende: <span class=\"god-speaks\"><i>ELI, ELI, LAMA SABACHTHANI! dat is: Mijn God! Mijn God! Waarom hebt U Mij verlaten!</i></span>",
+      "text2026_html": "En ongeveer het negende uur riep Jezus met een luide stem zeggende: <span class=\"god-speaks\"><i>ELI, ELI, LAMA SABACHTHANI! dat is: Mijn God! Mijn God! Waarom hebt U Mij verlaten!</i></span>",
       "textSV1888_html": "En omtrent de negende ure<sup class=\"note-marker\" data-note=\"a\">a</sup> riep Jezus met een grote stem zeggende:<sup class=\"note-marker\" data-note=\"40\">40</sup> ELI, ELI, LAMA SABACHTHANI! dat is: Mijn God! Mijn God! Waarom hebt Gij Mij<sup class=\"note-marker\" data-note=\"41\">41</sup> verlaten!",
       "text1637_html": "Ende ontrent de negende uyre <sup class=\"note-marker\" data-note=\"a\">a</sup> riep Iesus met een groote stemme, seggende, <sup class=\"note-marker\" data-note=\"40\">40</sup> ELI, ELI, LAMA SABACHTHANI, dat is, Mijn Godt, mijn Godt, waerom hebt ghy my <sup class=\"note-marker\" data-note=\"41\">41</sup> verlaten.",
       "phraseDiff": [
         {
-          "old": "omtrent",
-          "new": "ongeveer",
+          "old": "omtrent de",
+          "new": "ongeveer het",
+          "principe": null
+        },
+        {
+          "old": "ure",
+          "new": "uur",
           "principe": null
         },
         {
