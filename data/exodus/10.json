@@ -3435,7 +3435,7 @@
       "number": 28,
       "textSV1888": "Maar Farao zeide tot hem: Ga van mij! wacht u, dat gij niet meer mijn aangezicht ziet; want op welken dag gij mijn aangezicht zult zien, zult gij sterven!",
       "text1637": "Maer Pharao seyde tot hem, Gaet van my, wacht u dat ghy niet meer mijn aengesichte en siet; want in welcken dage ghy mijn aengesichte sult sien, [34] sult ghy sterven.",
-      "text2026": "Maar Farao zei tot hem: Ga van mij! wacht u, dat u niet meer mijn aangezicht ziet; want op welke dag u mijn aangezicht zult zien, zult u sterven!",
+      "text2026": "Maar Farao zei tot hem: Ga van mij! pas op dat u niet meer mijn aangezicht ziet; want op welke dag u mijn aangezicht zult zien, zult u sterven!",
       "marginNotes": [
         {
           "marker": "34",
@@ -3527,7 +3527,7 @@
           "morph": "HVqi2ms"
         }
       ],
-      "text2026_html": "Maar Farao zei tot hem: <span class=\"direct-speech\"><i>Ga van mij! wacht u, dat u niet meer mijn aangezicht ziet; want op welke dag u mijn aangezicht zult zien, zult u sterven!</i></span>",
+      "text2026_html": "Maar Farao zei tot hem: <span class=\"direct-speech\"><i>Ga van mij! pas op dat u niet meer mijn aangezicht ziet; want op welke dag u mijn aangezicht zult zien, zult u sterven!</i></span>",
       "textSV1888_html": "Maar Farao zeide tot hem: Ga van mij! wacht u, dat gij niet meer mijn aangezicht ziet; want op welken dag gij mijn aangezicht zult zien,<sup class=\"note-marker\" data-note=\"34\">34</sup> zult gij sterven!",
       "text1637_html": "Maer Pharao seyde tot hem, Gaet van my, wacht u dat ghy niet meer mijn aengesichte en siet; want in welcken dage ghy mijn aengesichte sult sien, <sup class=\"note-marker\" data-note=\"34\">34</sup> sult ghy sterven.",
       "phraseDiff": [
@@ -3535,6 +3535,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "wacht u,",
+          "new": "pas op",
+          "principe": null
         },
         {
           "old": "gij",
