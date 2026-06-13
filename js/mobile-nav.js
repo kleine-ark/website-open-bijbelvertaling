@@ -155,7 +155,40 @@ const MobileNav = {
             });
         });
         body.appendChild(search);
-        for (const [label, ids] of this.BOOK_GROUPS) {
+
+        // Boekvolgorde-keuze (zelfde opties als de desktop-sidebar)
+        const mode = (window.Opties && Opties.state && Opties.state.boekvolgorde) || 'canoniek';
+        const orderSel = document.createElement('select');
+        orderSel.className = 'mp-order';
+        orderSel.setAttribute('aria-label', 'Boekvolgorde');
+        [['canoniek','Canoniek (SV / westers)'],['tenach','Joodse Tenach (TNK)'],['orthodox','Orthodox (Septuaginta)'],['chronologisch','Chronologisch (gebeurtenissen)'],['schrijftijd','Vermoedelijke schrijftijd'],['auteur','Op auteur'],['lengte','Op lengte']].forEach(([v,t]) => {
+            const o = document.createElement('option');
+            o.value = v; o.textContent = 'Volgorde: ' + t;
+            if (v === mode) o.selected = true;
+            orderSel.appendChild(o);
+        });
+        orderSel.addEventListener('change', () => {
+            if (window.Opties) {
+                Opties.state.boekvolgorde = orderSel.value;
+                Opties.save();
+                if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
+                document.querySelectorAll('select[data-optie="boekvolgorde"]').forEach(s => { s.value = orderSel.value; });
+            }
+            body.innerHTML = '';
+            this._renderBooks(body);
+        });
+        body.appendChild(orderSel);
+
+        // Groepen volgens de gekozen volgorde (val terug op de statische canon)
+        let groups = this.BOOK_GROUPS;
+        try {
+            if (typeof getBookOrderGroups === 'function') {
+                const g = getBookOrderGroups(mode, { books: Object.values(this.bookById) });
+                if (g) groups = Object.entries(g);
+            }
+        } catch (e) {}
+
+        for (const [label, ids] of groups) {
             const books = ids.map(id => this.bookById[id]).filter(Boolean);
             if (!books.length) continue;
             const grp = document.createElement('div');

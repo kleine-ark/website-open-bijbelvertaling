@@ -4169,3 +4169,12 @@ span.angel-speaks, .angel-speaks {
 #content.reading-mode .verse-row:first-of-type .col-2026 .angel-speaks::before { content: none; }
 body.citaten-uit .angel-speaks,
 body.citaten-uit .angel-speaks i { color: inherit !important; font-style: normal !important; font-weight: inherit !important; }
+
+/* Boekvolgorde-dropdown in de mobiele boekpicker */
+.mp-order {
+    width: 100%; box-sizing: border-box; margin: 0 0 12px;
+    padding: 10px 12px; border: 1px solid var(--border, #e5e1d8);
+    border-radius: 8px; font-family: var(--font-body); font-size: 14px;
+    background: var(--bg-surface, #fff); color: var(--text-primary, #142e42);
+}
+:root[data-theme="donker"] .mp-order { background: var(--bg-surface) !important; color: var(--text-primary) !important; border-color: var(--border-default) !important; }
