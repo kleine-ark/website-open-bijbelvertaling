@@ -1946,7 +1946,7 @@
       "number": 17,
       "textSV1888": "En geen mens zal in de tent der samenkomst zijn, als hij zal ingaan, om in het heilige verzoening te doen, totdat hij zal uitkomen; alzo zal hij verzoening doen, voor zichzelven, en voor zijn huis, en voor de gehele gemeente van Israël.",
       "text1637": "Ende geen mensche en sal inde Tente der t' samen-komste zijn, als [25] hy sal ingaen, om in [26] het Heylige versoeninge te doen, tot dat hy sal uytkomen: alsoo sal hy versoeninge doen voor hem selven, ende voor sijn huys, ende voor de geheele gemeynte Israëls.",
-      "text2026": "En geen mens zal in de tent van de samenkomst zijn, als hij zal ingaan, om in het heilige verzoening te doen, totdat hij zal uitkomen; zo zal hij verzoening doen, voor zichzelf, en voor zijn huis, en voor de hele gemeente van Israël.",
+      "text2026": "En geen mens zal in de tent van de samenkomst zijn, als hij zal ingaan, om in het heilige verzoening te doen, voordat hij zal uitkomen; zo zal hij verzoening doen, voor zichzelf, en voor zijn huis, en voor de hele gemeente van Israël.",
       "marginNotes": [
         {
           "marker": "25",
@@ -2060,7 +2060,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En geen mens zal in de tent van de samenkomst zijn, als<sup class=\"note-marker\" data-note=\"25\">25</sup> hij zal ingaan, om in<sup class=\"note-marker\" data-note=\"26\">26</sup> het heilige verzoening te doen, totdat hij zal uitkomen; zo zal hij verzoening doen, voor zichzelf, en voor zijn huis, en voor de hele gemeente van Israël.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En geen mens zal in de tent van de samenkomst zijn, als<sup class=\"note-marker\" data-note=\"25\">25</sup> hij zal ingaan, om in<sup class=\"note-marker\" data-note=\"26\">26</sup> het heilige verzoening te doen, voordat hij zal uitkomen; zo zal hij verzoening doen, voor zichzelf, en voor zijn huis, en voor de hele gemeente van Israël.</i></span>",
       "textSV1888_html": "En geen mens zal in de tent der samenkomst zijn, als<sup class=\"note-marker\" data-note=\"25\">25</sup> hij zal ingaan, om in<sup class=\"note-marker\" data-note=\"26\">26</sup> het heilige verzoening te doen, totdat hij zal uitkomen; alzo zal hij verzoening doen, voor zichzelven, en voor zijn huis, en voor de gehele gemeente van Israël.",
       "text1637_html": "Ende geen mensche en sal inde Tente der t' samen-komste zijn, als <sup class=\"note-marker\" data-note=\"25\">25</sup> hy sal ingaen, om in <sup class=\"note-marker\" data-note=\"26\">26</sup> het Heylige versoeninge te doen, tot dat hy sal uytkomen: alsoo sal hy versoeninge doen voor hem selven, ende voor sijn huys, ende voor de geheele gemeynte Israëls.",
       "phraseDiff": [
@@ -2070,14 +2070,18 @@
           "principe": "N2"
         },
         {
+          "old": "totdat",
+          "new": "voordat",
+          "principe": "V778"
+        },
+        {
           "old": "alzo",
           "new": "zo",
           "principe": "V42"
         },
         {
           "old": "zichzelven,",
-          "new": "zichzelf,",
-          "principe": null
+          "new": "zichzelf,"
         },
         {
           "old": "gehele",
