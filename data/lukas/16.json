@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En Hij zeide ook tot Zijn discipelen: Er was een zeker rijk mens, welke een rentmeester had; en deze werd bij hem verklaagd, als die zijn goederen doorbracht.",
       "text1637": "ENde hy seyde oock tot sijne Discipelen, Daer was een seker rijck mensche, welcke eenen [1] rentmeester hadde, ende dese wierdt by hem verclaeght, als die sijne goederen [2] doorbracht.",
-      "text2026": "En Hij zei ook tot Zijn discipelen: Er was een zeker rijk mens, welke een rentmeester had; en deze werd bij hem verklaagd, als die zijn goederen doorbracht.",
+      "text2026": "En Hij zei ook tot Zijn discipelen: Er was een zeker rijk mens, die een rentmeester had; en deze werd bij hem aangeklaagd, als die zijn goederen doorbracht.",
       "marginNotes": [
         {
           "marker": "1",
@@ -156,14 +156,21 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "En Hij zei ook tot Zijn discipelen: <span class=\"god-speaks\"><i>Er was een zeker rijk mens, welke een rentmeester had; en deze werd bij hem verklaagd, als die zijn goederen doorbracht.</i></span>",
+      "text2026_html": "En Hij zei ook tot Zijn discipelen: <span class=\"god-speaks\"><i>Er was een zeker rijk mens, die een rentmeester had; en deze werd bij hem aangeklaagd, als die zijn goederen doorbracht.</i></span>",
       "textSV1888_html": "En Hij zeide ook tot Zijn discipelen: Er was een zeker rijk mens, welke een<sup class=\"note-marker\" data-note=\"1\">1</sup> rentmeester had; en deze werd bij hem verklaagd, als die zijn goederen<sup class=\"note-marker\" data-note=\"2\">2</sup> doorbracht.",
       "text1637_html": "ENde hy seyde oock tot sijne Discipelen, Daer was een seker rijck mensche, welcke eenen <sup class=\"note-marker\" data-note=\"1\">1</sup> rentmeester hadde, ende dese wierdt by hem verclaeght, als die sijne goederen <sup class=\"note-marker\" data-note=\"2\">2</sup> doorbracht.",
       "phraseDiff": [
         {
           "old": "zeide",
-          "new": "zei",
-          "principe": "W1"
+          "new": "zei"
+        },
+        {
+          "old": "welke",
+          "new": "die"
+        },
+        {
+          "old": "verklaagd,",
+          "new": "aangeklaagd,"
         }
       ]
     },
@@ -599,7 +606,7 @@
       "number": 5,
       "textSV1888": "En hij riep tot zich een iegelijk van de schuldenaars zijns heeren, en zeide tot den eersten: Hoeveel zijt gij mijn heer schuldig?",
       "text1637": "Ende hy riep tot hem een yegelick van de schuldenaers sijns heeren, ende seyde tot den eersten, Hoe veel zijt ghy mijnen heere schuldich?",
-      "text2026": "En hij riep tot zich ieder van de schuldenaars van zijn heeren, en zei tot de eerste: Hoeveel bent u mijn heer schuldig?",
+      "text2026": "En hij riep tot zich ieder van de schuldenaars van zijn heer, en zei tot de eerste: Hoeveel bent u mijn heer schuldig?",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -705,33 +712,28 @@
           "gloss": "〔I/we"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En hij riep tot zich ieder van de schuldenaars van zijn heeren, en zei tot de eerste: Hoeveel bent u mijn heer schuldig?</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En hij riep tot zich ieder van de schuldenaars van zijn heer, en zei tot de eerste: Hoeveel bent u mijn heer schuldig?</i></span>",
       "text1637_html": "Ende hy riep tot hem een yegelick van de schuldenaers sijns heeren, ende seyde tot den eersten, Hoe veel zijt ghy mijnen heere schuldich?",
       "phraseDiff": [
         {
           "old": "een iegelijk",
-          "new": "ieder",
-          "principe": "V5"
+          "new": "ieder"
         },
         {
-          "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
+          "old": "zijns heeren,",
+          "new": "van zijn heer,"
         },
         {
           "old": "zeide",
-          "new": "zei",
-          "principe": "W1"
+          "new": "zei"
         },
         {
           "old": "den eersten:",
-          "new": "de eerste:",
-          "principe": "N1"
+          "new": "de eerste:"
         },
         {
           "old": "zijt gij",
-          "new": "bent u",
-          "principe": "A1"
+          "new": "bent u"
         }
       ]
     },
