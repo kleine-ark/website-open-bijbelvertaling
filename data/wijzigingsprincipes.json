@@ -6744,6 +6744,14 @@
       "nieuw": "aanklagen / klaagt aan / aangeklaagd / aanklager / aanklacht",
       "toelichting": "'verklagen' (= aanklagen/beschuldigen) → 'aanklagen'. Let op: scheidbaar werkwoord, juiste woordvolgorde. NIET 'verklaren' (= uitleggen, met -r-) wijzigen. Voltooid deelwoord 'verklaagd' → 'aangeklaagd', zelfstandig naamwoord 'verklager' → 'aanklager'. Contextueel-handmatig.",
       "regex": "\\bverkla(ag|g)\\w*\\b"
+    },
+    {
+      "id": "V781",
+      "categorie": "Verouderde woorden",
+      "oud": "dien / dienzelven / dienzelfden (aanwijzend)",
+      "nieuw": "die (op die dag, in die nacht, die man, enz.)",
+      "toelichting": "Aanwijzend voornaamwoord 'dien' (verbogen vorm van 'die') en de vormen 'dienzelven'/'dienzelfden' -> 'die', met natuurlijke moderne formulering: 'te/op dienzelven dage' -> 'op die dag', 'in dienzelven nacht' -> 'in die nacht', 'dienzelven man/hoorn/honger/tijd' -> 'die man/hoorn/honger/tijd'. WAARSCHUWING: het WERKWOORD 'dienen' NIET wijzigen (bijv. 'Die ik dien in mijn geest', 'dien de HEERE', 'dien mij'). Ook samenstellingen met 'dien' als deel met rust laten: indien, bedienen, verdienen, dienst, dienaar, dienstknecht, godsdienst, enz. Daarom contextueel-handmatig toegepast, niet via blinde regex.",
+      "regex": "\\b[Dd]ienzel(?:v|fd)\\w*\\b"
     }
   ]
 }
