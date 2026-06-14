@@ -2354,7 +2354,7 @@
       "number": 20,
       "textSV1888": "Doch bidt, dat uw vlucht niet geschiede des winters, noch op een sabbat.",
       "text1637": "Doch bidt dat uwe vlucht niet en geschiede [22] des winters, noch [o] op eenen Sabbath.",
-      "text2026": "Maar bidt, dat uw vlucht niet geschiede van de winters, noch op een sabbat.",
+      "text2026": "Maar bidt, dat uw vlucht niet gebeurt in de winter, noch op een sabbat.",
       "marginNotes": [
         {
           "marker": "22",
@@ -2439,7 +2439,7 @@
           "gloss": "〔Sabbath"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar bidt, dat uw vlucht niet geschiede<sup class=\"note-marker\" data-note=\"22\">22</sup> van de winters, noch<sup class=\"note-marker\" data-note=\"o\">o</sup> op een sabbat.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar bidt, dat uw vlucht niet gebeurt<sup class=\"note-marker\" data-note=\"22\">22</sup> in de winter, noch<sup class=\"note-marker\" data-note=\"o\">o</sup> op een sabbat.</i></span>",
       "textSV1888_html": "Doch bidt, dat uw vlucht niet geschiede<sup class=\"note-marker\" data-note=\"22\">22</sup> des winters, noch<sup class=\"note-marker\" data-note=\"o\">o</sup> op een sabbat.",
       "text1637_html": "Doch bidt dat uwe vlucht niet en geschiede <sup class=\"note-marker\" data-note=\"22\">22</sup> des winters, noch <sup class=\"note-marker\" data-note=\"o\">o</sup> op eenen Sabbath.",
       "phraseDiff": [
@@ -2449,9 +2449,9 @@
           "principe": "V1"
         },
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "geschiede des winters,",
+          "new": "gebeurt in de winter,",
+          "principe": "V776"
         }
       ]
     },
@@ -5874,7 +5874,7 @@
       "number": 44,
       "textSV1888": "Daarom, zijt ook gij bereid; want in welke ure gij het niet meent, zal de Zoon des mensen komen.",
       "text1637": "Daerom zijt oock ghy bereyt, want in welcke uyre ghy ’t niet en meynt, sal de Sone des menschen komen.",
-      "text2026": "Daarom, wees ook u bereid; want op welk uur u het niet meent, zal de Zoon des mensen komen.",
+      "text2026": "Daarom, wees ook u bereid; want op welk uur u het niet denkt, zal de Zoon des mensen komen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -5974,13 +5974,12 @@
           "gloss": "〔to come/go"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Daarom, wees ook u bereid; want op welk uur u het niet meent, zal de Zoon des mensen komen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Daarom, wees ook u bereid; want op welk uur u het niet denkt, zal de Zoon des mensen komen.</i></span>",
       "text1637_html": "Daerom zijt oock ghy bereyt, want in welcke uyre ghy ’t niet en meynt, sal de Sone des menschen komen.",
       "phraseDiff": [
         {
           "old": "zijt",
-          "new": "wees",
-          "principe": null
+          "new": "wees"
         },
         {
           "old": "gij",
@@ -5991,6 +5990,11 @@
           "old": "in welke ure gij",
           "new": "op welk uur u",
           "principe": "A1"
+        },
+        {
+          "old": "meent,",
+          "new": "denkt,",
+          "principe": "V774"
         }
       ]
     },
