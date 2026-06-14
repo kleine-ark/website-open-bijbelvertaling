@@ -976,7 +976,7 @@
       "number": 8,
       "textSV1888": "Opdat Ik de grimmigheid doe opgaan om wraak te oefenen, heb Ik ook haar bloed op een gladde steenrots gelegd, opdat het niet bedekt worde.",
       "text1637": "[28] Op dat ick de grimmicheyt doe opgaen om [29] wrake te oeffenen, hebb’ ick [oock] haer [30] bloet op eene gladde steenrotze geleyt, op dat het niet bedeckt en worde.",
-      "text2026": "Opdat Ik de woede doe opgaan om wraak te oefenen, heb Ik ook haar bloed op een gladde steenrots gelegd, opdat het niet bedekt worde.",
+      "text2026": "Opdat Ik de woede doe opgaan om wraak te oefenen, heb Ik ook haar bloed op een gladde steenrots gelegd, opdat het niet bedekt wordt.",
       "marginNotes": [
         {
           "marker": "28",
@@ -1062,7 +1062,7 @@
           "morph": "HVNc"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"28\">28</sup><span class=\"god-speaks\"><i> Opdat Ik de woede doe opgaan om wraak te oefenen, heb Ik ook haar bloed op een<sup class=\"note-marker\" data-note=\"29\">29</sup><sup class=\"note-marker\" data-note=\"30\">30</sup> gladde steenrots gelegd, opdat het niet bedekt worde.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"28\">28</sup><span class=\"god-speaks\"><i> Opdat Ik de woede doe opgaan om wraak te oefenen, heb Ik ook haar bloed op een<sup class=\"note-marker\" data-note=\"29\">29</sup><sup class=\"note-marker\" data-note=\"30\">30</sup> gladde steenrots gelegd, opdat het niet bedekt wordt.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"28\">28</sup> Opdat Ik de grimmigheid doe opgaan om wraak te oefenen, heb Ik ook haar bloed op een<sup class=\"note-marker\" data-note=\"29\">29</sup><sup class=\"note-marker\" data-note=\"30\">30</sup> gladde steenrots gelegd, opdat het niet bedekt worde.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"28\">28</sup> Op dat ick de grimmicheyt doe opgaen om <sup class=\"note-marker\" data-note=\"29\">29</sup> wrake te oeffenen, hebb’ ick [oock] haer <sup class=\"note-marker\" data-note=\"30\">30</sup> bloet op eene gladde steenrotze geleyt, op dat het niet bedeckt en worde.",
       "phraseDiff": [
@@ -1070,6 +1070,11 @@
           "old": "grimmigheid",
           "new": "woede",
           "principe": "V77"
+        },
+        {
+          "old": "worde.",
+          "new": "wordt.",
+          "principe": "V772"
         }
       ]
     },
@@ -1284,7 +1289,7 @@
       "number": 11,
       "textSV1888": "Stel hem daarna ledig op zijn kolen, opdat hij heet worde, en zijn roest verbrande, en zijn onreinigheid in het midden van hem versmelte, zijn schuim verteerd worde.",
       "text1637": "Stelt [37] hem daerna ledich op sijne kolen; op dat hy heet worde, ende sijne roest verbrande, ende sijne onreynicheyt in’t midden van hem [38] versmelte, sijn schuym verteert worde.",
-      "text2026": "Stel hem daarna leeg op zijn kolen, opdat hij heet worde, en zijn roest verbrande, en zijn onreinheid in het midden van hem versmelte, zijn schuim verteerd worde.",
+      "text2026": "Stel hem daarna leeg op zijn kolen, opdat hij heet wordt, en zijn roest verbrande, en zijn onreinheid in het midden van hem versmelte, zijn schuim verteerd wordt.",
       "marginNotes": [
         {
           "marker": "37",
@@ -1368,19 +1373,27 @@
           "morph": "HNcfsc/Sp3fs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Stel<sup class=\"note-marker\" data-note=\"37\">37</sup> hem daarna leeg op zijn kolen, opdat hij heet worde, en zijn roest verbrande, en zijn onreinheid in het midden van hem<sup class=\"note-marker\" data-note=\"38\">38</sup> versmelte, zijn schuim verteerd worde.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Stel<sup class=\"note-marker\" data-note=\"37\">37</sup> hem daarna leeg op zijn kolen, opdat hij heet wordt, en zijn roest verbrande, en zijn onreinheid in het midden van hem<sup class=\"note-marker\" data-note=\"38\">38</sup> versmelte, zijn schuim verteerd wordt.</i></span>",
       "textSV1888_html": "Stel<sup class=\"note-marker\" data-note=\"37\">37</sup> hem daarna ledig op zijn kolen, opdat hij heet worde, en zijn roest verbrande, en zijn onreinigheid in het midden van hem<sup class=\"note-marker\" data-note=\"38\">38</sup> versmelte, zijn schuim verteerd worde.",
       "text1637_html": "Stelt <sup class=\"note-marker\" data-note=\"37\">37</sup> hem daerna ledich op sijne kolen; op dat hy heet worde, ende sijne roest verbrande, ende sijne onreynicheyt in’t midden van hem <sup class=\"note-marker\" data-note=\"38\">38</sup> versmelte, sijn schuym verteert worde.",
       "phraseDiff": [
         {
           "old": "ledig",
-          "new": "leeg",
-          "principe": null
+          "new": "leeg"
+        },
+        {
+          "old": "worde,",
+          "new": "wordt,",
+          "principe": "V772"
         },
         {
           "old": "onreinigheid",
-          "new": "onreinheid",
-          "principe": null
+          "new": "onreinheid"
+        },
+        {
+          "old": "worde.",
+          "new": "wordt.",
+          "principe": "V772"
         }
       ]
     },
