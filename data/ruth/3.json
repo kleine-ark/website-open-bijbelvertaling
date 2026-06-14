@@ -233,7 +233,7 @@
       "number": 3,
       "textSV1888": "Zo baad u, en zalf u, en doe uw klederen aan, en ga af naar den dorsvloer; maar maak u den man niet bekend, totdat hij geëindigd zal hebben te eten en te drinken.",
       "text1637": "So baedt u, ende [5] salft u, ende doet uwe [6] kleederen [7] aen, ende gaet af nae den dorsch-vloer: [maer] en maeckt u den man niet bekent, tot dat hy ge-eyndigt sal hebben te eten ende te drincken.",
-      "text2026": "Zo baad u, en zalf u, en doe uw kleren aan, en ga af naar de dorsvloer; maar maak u de man niet bekend, totdat hij geëindigd zal hebben te eten en te drinken.",
+      "text2026": "Zo baad u, en zalf u, en doe uw kleren aan, en ga af naar de dorsvloer; maar maak u de man niet bekend, voordat hij geëindigd zal hebben te eten en te drinken.",
       "marginNotes": [
         {
           "marker": "5",
@@ -329,7 +329,7 @@
           "morph": "HC/R/Vqc"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo baad u, en<sup class=\"note-marker\" data-note=\"5\">5</sup> zalf u, en doe uw<sup class=\"note-marker\" data-note=\"6\">6</sup> kleren<sup class=\"note-marker\" data-note=\"7\">7</sup> aan, en ga af naar de dorsvloer; maar maak u de man niet bekend, totdat hij geëindigd zal hebben te eten en te drinken.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo baad u, en<sup class=\"note-marker\" data-note=\"5\">5</sup> zalf u, en doe uw<sup class=\"note-marker\" data-note=\"6\">6</sup> kleren<sup class=\"note-marker\" data-note=\"7\">7</sup> aan, en ga af naar de dorsvloer; maar maak u de man niet bekend, voordat hij geëindigd zal hebben te eten en te drinken.</i></span>",
       "textSV1888_html": "Zo baad u, en<sup class=\"note-marker\" data-note=\"5\">5</sup> zalf u, en doe uw<sup class=\"note-marker\" data-note=\"6\">6</sup> klederen<sup class=\"note-marker\" data-note=\"7\">7</sup> aan, en ga af naar den dorsvloer; maar maak u den man niet bekend, totdat hij geëindigd zal hebben te eten en te drinken.",
       "text1637_html": "So baedt u, ende <sup class=\"note-marker\" data-note=\"5\">5</sup> salft u, ende doet uwe <sup class=\"note-marker\" data-note=\"6\">6</sup> kleederen <sup class=\"note-marker\" data-note=\"7\">7</sup> aen, ende gaet af nae den dorsch-vloer: [maer] en maeckt u den man niet bekent, tot dat hy ge-eyndigt sal hebben te eten ende te drincken.",
       "phraseDiff": [
@@ -347,6 +347,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "totdat",
+          "new": "voordat",
+          "principe": "V778"
         }
       ]
     },
