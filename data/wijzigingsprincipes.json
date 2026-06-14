@@ -6752,6 +6752,14 @@
       "nieuw": "die (op die dag, in die nacht, die man, enz.)",
       "toelichting": "Aanwijzend voornaamwoord 'dien' (verbogen vorm van 'die') en de vormen 'dienzelven'/'dienzelfden' -> 'die', met natuurlijke moderne formulering: 'te/op dienzelven dage' -> 'op die dag', 'in dienzelven nacht' -> 'in die nacht', 'dienzelven man/hoorn/honger/tijd' -> 'die man/hoorn/honger/tijd'. WAARSCHUWING: het WERKWOORD 'dienen' NIET wijzigen (bijv. 'Die ik dien in mijn geest', 'dien de HEERE', 'dien mij'). Ook samenstellingen met 'dien' als deel met rust laten: indien, bedienen, verdienen, dienst, dienaar, dienstknecht, godsdienst, enz. Daarom contextueel-handmatig toegepast, niet via blinde regex.",
       "regex": "\\b[Dd]ienzel(?:v|fd)\\w*\\b"
+    },
+    {
+      "id": "V782",
+      "categorie": "Verouderde woorden",
+      "oud": "tegenstander / tegenstanders (juridische context)",
+      "nieuw": "tegenpartij / tegenpartijen",
+      "toelichting": "UITZONDERING op V93/V121/V396/V497/V525: in JURIDISCHE / rechtszaak-context (de wederpartij in een geschil of proces voor de rechter; Grieks ἀντίδικος, Hebr. de aanklager/satan in een rechtsgeding) wordt 'tegenstander' wél 'tegenpartij'. Bijv. 'verzoen u met uw tegenpartij' bij de rechter (Matt. 5:25), 'de begeerte van mijn tegenpartijen' naast 'valse getuigen' (Ps. 27:12), de aanklagers in het rechtsgeding van Ps. 109:20,29. NIET toepassen op militaire/algemene vijand of een persoonlijke/geestelijke tegenstander (de satan als 'tegenstander', vijanden in de strijd, 'weersta de tegenstander'): daar blijft 'tegenstander' staan. Bij twijfel: laten staan. Contextueel-handmatig toegepast, niet via blinde regex.",
+      "regex": "\\b[Tt]egenpartij(?:en)?\\b"
     }
   ]
 }

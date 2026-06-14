@@ -1077,7 +1077,7 @@
       "number": 12,
       "textSV1888": "Geef mij niet over in de begeerte mijner tegenpartijders; want valse getuigen zijn tegen mij opgestaan, mitsgaders die wrevel uitblaast.",
       "text1637": "Geeft my niet over in de [25] begeerte mijner tegenpartijders: want valsche getuygen [26] zijn tegen my opgestaen, mitsgaders die wrevel [27] uytblaest.",
-      "text2026": "Geef mij niet over in de begeerte van mijn tegenstanders; want valse getuigen zijn tegen mij opgestaan, en ook die wrevel uitblaast.",
+      "text2026": "Geef mij niet over in de begeerte van mijn tegenpartijen; want valse getuigen zijn tegen mij opgestaan, en ook die wrevel uitblaast.",
       "marginNotes": [
         {
           "marker": "25",
@@ -1158,14 +1158,19 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Geef mij niet over in de<sup class=\"note-marker\" data-note=\"25\">25</sup> begeerte van mijn tegenstanders; want valse getuigen<sup class=\"note-marker\" data-note=\"26\">26</sup> zijn tegen mij opgestaan, en ook die wrevel<sup class=\"note-marker\" data-note=\"27\">27</sup> uitblaast.",
+      "text2026_html": "Geef mij niet over in de<sup class=\"note-marker\" data-note=\"25\">25</sup> begeerte van mijn tegenpartijen; want valse getuigen<sup class=\"note-marker\" data-note=\"26\">26</sup> zijn tegen mij opgestaan, en ook die wrevel<sup class=\"note-marker\" data-note=\"27\">27</sup> uitblaast.",
       "textSV1888_html": "Geef mij niet over in de<sup class=\"note-marker\" data-note=\"25\">25</sup> begeerte mijner tegenpartijders; want valse getuigen<sup class=\"note-marker\" data-note=\"26\">26</sup> zijn tegen mij opgestaan, mitsgaders die wrevel<sup class=\"note-marker\" data-note=\"27\">27</sup> uitblaast.",
       "text1637_html": "Geeft my niet over in de <sup class=\"note-marker\" data-note=\"25\">25</sup> begeerte mijner tegenpartijders: want valsche getuygen <sup class=\"note-marker\" data-note=\"26\">26</sup> zijn tegen my opgestaen, mitsgaders die wrevel <sup class=\"note-marker\" data-note=\"27\">27</sup> uytblaest.",
       "phraseDiff": [
         {
-          "old": "mijner tegenpartijders;",
-          "new": "van mijn tegenstanders;",
+          "old": "mijner",
+          "new": "van mijn",
           "principe": "N7"
+        },
+        {
+          "old": "tegenpartijders;",
+          "new": "tegenpartijen;",
+          "principe": "V782"
         },
         {
           "old": "mitsgaders",
