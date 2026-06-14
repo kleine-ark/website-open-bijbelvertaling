@@ -467,7 +467,7 @@
       "number": 4,
       "textSV1888": "En indien hij zevenmaal daags tegen u zondigt, en zevenmaal daags tot u wederkeert, zeggende: Het is mij leed; zo zult gij het hem vergeven.",
       "text1637": "[c] Ende indien hy [5] sevenmael 'sdaeghs tegen u sondight, ende sevenmael 'sdaeghs tot u wederkeert, seggende, Het is my leet, so sult ghy't hem vergeven.",
-      "text2026": "En als hij zevenmaal daags tegen u zondigt, en zevenmaal daags tot u terugkeert, zeggende: Het is mij leed; zo zult u het hem vergeven.",
+      "text2026": "En als hij zevenmaal per dag tegen u zondigt, en zevenmaal per dag tot u terugkeert, zeggende: Het is mij leed; zo zult u het hem vergeven.",
       "marginNotes": [
         {
           "marker": "c",
@@ -588,24 +588,29 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En als hij zevenmaal daags tegen u zondigt, en zevenmaal daags tot u terugkeert, zeggende: Het is mij leed; zo zult u het hem vergeven.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En als hij zevenmaal per dag tegen u zondigt, en zevenmaal per dag tot u terugkeert, zeggende: Het is mij leed; zo zult u het hem vergeven.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> En indien hij<sup class=\"note-marker\" data-note=\"5\">5</sup> zevenmaal daags tegen u zondigt, en zevenmaal daags tot u wederkeert, zeggende: Het is mij leed; zo zult gij het hem vergeven.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Ende indien hy <sup class=\"note-marker\" data-note=\"5\">5</sup> sevenmael 'sdaeghs tegen u sondight, ende sevenmael 'sdaeghs tot u wederkeert, seggende, Het is my leet, so sult ghy't hem vergeven.",
       "phraseDiff": [
         {
           "old": "indien",
-          "new": "als",
-          "principe": "V41"
+          "new": "als"
+        },
+        {
+          "old": "daags",
+          "new": "per dag"
+        },
+        {
+          "old": "daags",
+          "new": "per dag"
         },
         {
           "old": "wederkeert,",
-          "new": "terugkeert,",
-          "principe": "W2"
+          "new": "terugkeert,"
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "u"
         }
       ]
     },
