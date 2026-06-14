@@ -1,6 +1,36 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-06-14",
+      "versie": "v0.19.0",
+      "items": [
+        {
+          "type": "feature",
+          "beschrijving": "Pericoop-kopjes voor de hele bijbel en apocriefe boeken: 3392 eigen, originele tussenkopjes per tekstgedeelte (aan/uit in instellingen)."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Doorlopend lezen: scroll oneindig door alle hoofdstukken heen (lazy-loading). De hoofdstuktitel bovenaan en de URL lopen mee; de vorige/volgende-knoppen verdwijnen in deze modus."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Hoofdstukinleidingen voor de hele bijbel gemoderniseerd (17e-eeuws Nederlands naar hedendaags) en nu inline in de tekstkolom, onder de hoofdstukkop."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Nieuwe instelling 'Hoofdstuknummers' (aan/uit) en een compacter instellingen-paneel."
+        },
+        {
+          "type": "principe",
+          "beschrijving": "V771-V779 bibel-breed contextueel toegepast: Aanmerkt->Let op, worde->word/wordt, Meent->Denkt, veeleer->eerder, geschieden->gebeuren, totdat->voordat (bij ontkenning) en aanvoegende-wijs-vormen->indicatief. Liturgische formules ('Uw wil geschiede', 'geheiligd worde Uw Naam') bewust ongemoeid."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Lukas 12-13 vers-voor-vers herzien; diverse console- en weergavefixes."
+        }
+      ]
+    },
+    {
       "datum": "2026-06-10",
       "versie": "v0.18.4",
       "items": [
