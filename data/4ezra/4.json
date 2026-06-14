@@ -14,9 +14,9 @@
       "number": 2,
       "text1637": "En zeide tot mij: Uw hart gaat veel te hoog in deze wereld, dat gij meent de weg des allerhoogsten te begrijpen.",
       "textSV1888": "En zeide tot mij: Uw hart gaat veel te hoog in deze wereld, dat gij meent de weg des allerhoogsten te begrijpen.",
-      "text2026": "En zei tot mij: Uw hart gaat veel te hoog in deze wereld, dat u meent de weg van de allerhoogste te begrijpen.",
+      "text2026": "En zei tot mij: Uw hart gaat veel te hoog in deze wereld, dat u denkt de weg van de allerhoogste te begrijpen.",
       "marginNotes": [],
-      "text2026_html": "En zei tot mij: <span class=\"direct-speech\"><i>Uw hart gaat veel te hoog in deze wereld, dat u meent de weg van de allerhoogste te begrijpen.</i></span>",
+      "text2026_html": "En zei tot mij: <span class=\"direct-speech\"><i>Uw hart gaat veel te hoog in deze wereld, dat u denkt de weg van de allerhoogste te begrijpen.</i></span>",
       "phraseDiff": [
         {
           "old": "zeide",
@@ -24,9 +24,9 @@
           "principe": "W1"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "gij meent",
+          "new": "u denkt",
+          "principe": "V774"
         },
         {
           "old": "des allerhoogsten",
@@ -763,9 +763,16 @@
       "number": 37,
       "text1637": "En hij heeft de tijden met een maat gemeten, en heeft de tijden met een getal geteld, en hij beweegt en roert het niet, totdat de voorzegde maat vervuld is.",
       "textSV1888": "En hij heeft de tijden met een maat gemeten, en heeft de tijden met een getal geteld, en hij beweegt en roert het niet, totdat de voorzegde maat vervuld is.",
-      "text2026": "En hij heeft de tijden met een maat gemeten, en heeft de tijden met een getal geteld, en hij beweegt en roert het niet, totdat de voorzegde maat vervuld is.",
+      "text2026": "En hij heeft de tijden met een maat gemeten, en heeft de tijden met een getal geteld, en hij beweegt en roert het niet, voordat de voorzegde maat vervuld is.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>En hij heeft de tijden met een maat gemeten, en heeft de tijden met een getal geteld, en hij beweegt en roert het niet, totdat de voorzegde maat vervuld is.</i></span>"
+      "text2026_html": "<span class=\"direct-speech\"><i>En hij heeft de tijden met een maat gemeten, en heeft de tijden met een getal geteld, en hij beweegt en roert het niet, voordat de voorzegde maat vervuld is.</i></span>",
+      "phraseDiff": [
+        {
+          "old": "totdat",
+          "new": "voordat",
+          "principe": "V778"
+        }
+      ]
     },
     {
       "number": 38,
@@ -1010,19 +1017,14 @@
       "number": 51,
       "text1637": "En ik bad en zeide: Meent gij, dat ik tot in die dagen zal leven, of wat zal het in die dagen zijn?",
       "textSV1888": "En ik bad en zeide: Meent gij, dat ik tot in die dagen zal leven, of wat zal het in die dagen zijn?",
-      "text2026": "En ik bad en zei: Meent u, dat ik tot in die dagen zal leven, of wat zal het in die dagen zijn?",
+      "text2026": "En ik bad en zei: Denkt u, dat ik tot in die dagen zal leven, of wat zal het in die dagen zijn?",
       "marginNotes": [],
-      "text2026_html": "En ik bad en zei: <span class=\"direct-speech\"><i>Meent u, dat ik tot in die dagen zal leven, of wat zal het in die dagen zijn?</i></span>",
+      "text2026_html": "En ik bad en zei: <span class=\"direct-speech\"><i>Denkt u, dat ik tot in die dagen zal leven, of wat zal het in die dagen zijn?</i></span>",
       "phraseDiff": [
         {
-          "old": "zeide:",
-          "new": "zei:",
-          "principe": "W1"
-        },
-        {
-          "old": "gij,",
-          "new": "u,",
-          "principe": "A1"
+          "old": "zeide: Meent gij,",
+          "new": "zei: Denkt u,",
+          "principe": "V774"
         }
       ]
     },
