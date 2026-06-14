@@ -1684,7 +1684,7 @@
       "number": 13,
       "textSV1888": "Wanneer gijlieden in de stad komt, zo zult gij hem vinden, eer hij opgaat op de hoogte om te eten; want het volk zal niet eten, totdat hij komt, want hij zegent het offer, daarna eten de genodigden; daarom gaat nu op, want hem, als heden zult gij hem vinden.",
       "text1637": "Wanneer ghylieden in de stadt komt, alsoo sult ghy hem vinden, eer hy opgaet op de hoochte om te eten, want het volck en sal niet eten tot dat hy komt, want [26] hy segent [27] het offer, daer na eten de genoodichde: daerom gaet nu op, want hem, als heden sult ghy hem vinden.",
-      "text2026": "Wanneer u in de stad komt, zo zult u hem vinden, voordat hij opgaat op de hoogte om te eten; want het volk zal niet eten, totdat hij komt, want hij zegent het offer, daarna eten de genodigden; daarom gaat nu op, want hem, als heden zult u hem vinden.",
+      "text2026": "Wanneer u in de stad komt, zo zult u hem vinden, voordat hij opgaat op de hoogte om te eten; want het volk zal niet eten, voordat hij komt, want hij zegent het offer, daarna eten de genodigden; daarom gaat nu op, want hem, als heden zult u hem vinden.",
       "marginNotes": [
         {
           "marker": "26",
@@ -1853,7 +1853,7 @@
           "morph": "HTo/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer u in de stad komt, zo zult u hem vinden, voordat hij opgaat op de hoogte om te eten; want het volk zal niet eten, totdat hij komt, want<sup class=\"note-marker\" data-note=\"26\">26</sup> hij zegent<sup class=\"note-marker\" data-note=\"27\">27</sup> het offer, daarna eten de genodigden; daarom gaat nu op, want hem, als heden zult u hem vinden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer u in de stad komt, zo zult u hem vinden, voordat hij opgaat op de hoogte om te eten; want het volk zal niet eten, voordat hij komt, want<sup class=\"note-marker\" data-note=\"26\">26</sup> hij zegent<sup class=\"note-marker\" data-note=\"27\">27</sup> het offer, daarna eten de genodigden; daarom gaat nu op, want hem, als heden zult u hem vinden.</i></span>",
       "textSV1888_html": "Wanneer gijlieden in de stad komt, zo zult gij hem vinden, eer hij opgaat op de hoogte om te eten; want het volk zal niet eten, totdat hij komt, want<sup class=\"note-marker\" data-note=\"26\">26</sup> hij zegent<sup class=\"note-marker\" data-note=\"27\">27</sup> het offer, daarna eten de genodigden; daarom gaat nu op, want hem, als heden zult gij hem vinden.",
       "text1637_html": "Wanneer ghylieden in de stadt komt, alsoo sult ghy hem vinden, eer hy opgaet op de hoochte om te eten, want het volck en sal niet eten tot dat hy komt, want <sup class=\"note-marker\" data-note=\"26\">26</sup> hy segent <sup class=\"note-marker\" data-note=\"27\">27</sup> het offer, daer na eten de genoodichde: daerom gaet nu op, want hem, als heden sult ghy hem vinden.",
       "phraseDiff": [
@@ -1869,8 +1869,12 @@
         },
         {
           "old": "eer",
+          "new": "voordat"
+        },
+        {
+          "old": "totdat",
           "new": "voordat",
-          "principe": null
+          "principe": "V778"
         },
         {
           "old": "gij",
