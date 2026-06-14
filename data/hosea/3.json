@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En de HEERE zeide tot mij: Ga wederom henen, bemin een vrouw, die, bemind zijnde van haar vriend, nochtans overspel doet; gelijk de HEERE de kinderen Israëls bemint, maar zij zien om naar andere goden, en beminnen de flessen der druiven.",
       "text1637": "ENde de HEERE [1] seyde tot my, Gaet wederom henen, bemint eene vrouwe, die bemint zijnde van [haren] [2] vrient, nochtans overspel doet: [3] gelijck de HEERE de kinderen Israëls bemint, maer sy sien om nae andere goden, ende beminnen de vlesschen der [4] druyven.",
-      "text2026": "En JAHWEH zei tot mij: Ga opnieuw heen, bemin een vrouw, die, bemind zijnde van haar vriend, toch overspel doet; gelijk JAHWEH de kinderen van Israël bemint, maar zij zien om naar andere goden, en beminnen de flessen van de druiven.",
+      "text2026": "En JAHWEH zei tot mij: Ga opnieuw heen, houd van een vrouw, die, geliefd zijnde door haar vriend, toch overspel doet; zoals JAHWEH van de kinderen van Israël houdt, maar zij zien om naar andere goden, en houden van de flessen van de druiven.",
       "marginNotes": [
         {
           "marker": "1",
@@ -153,7 +153,7 @@
           "morph": "HNcmpa"
         }
       ],
-      "text2026_html": "En JAHWEH zei tot mij: <span class=\"god-speaks\"><i>Ga opnieuw heen, bemin een vrouw, die, bemind zijnde van haar vriend, toch overspel doet; gelijk JAHWEH de kinderen van Israël bemint, maar zij zien om naar andere goden, en beminnen de flessen van de druiven.</i></span>",
+      "text2026_html": "En JAHWEH zei tot mij: <span class=\"god-speaks\"><i>Ga opnieuw heen, houd van een vrouw, die, geliefd zijnde door haar vriend, toch overspel doet; zoals JAHWEH van de kinderen van Israël houdt, maar zij zien om naar andere goden, en houden van de flessen van de druiven.</i></span>",
       "textSV1888_html": "En de HEERE<sup class=\"note-marker\" data-note=\"1\">1</sup> zeide tot mij: Ga wederom henen, bemin een vrouw, die, bemind zijnde van<sup class=\"note-marker\" data-note=\"2\">2</sup> haar vriend, nochtans overspel doet;<sup class=\"note-marker\" data-note=\"3\">3</sup> gelijk de HEERE de kinderen Israëls bemint, maar zij zien om naar andere goden, en beminnen de flessen der<sup class=\"note-marker\" data-note=\"4\">4</sup> druiven.",
       "text1637_html": "ENde de HEERE <sup class=\"note-marker\" data-note=\"1\">1</sup> seyde tot my, Gaet wederom henen, bemint eene vrouwe, die bemint zijnde van [haren] <sup class=\"note-marker\" data-note=\"2\">2</sup> vrient, nochtans overspel doet: <sup class=\"note-marker\" data-note=\"3\">3</sup> gelijck de HEERE de kinderen Israëls bemint, maer sy sien om nae andere goden, ende beminnen de vlesschen der <sup class=\"note-marker\" data-note=\"4\">4</sup> druyven.",
       "phraseDiff": [
@@ -163,9 +163,19 @@
           "principe": "G1"
         },
         {
-          "old": "wederom henen,",
-          "new": "opnieuw heen,",
-          "principe": "V6"
+          "old": "wederom henen, bemin",
+          "new": "opnieuw heen, houd van",
+          "principe": "V785"
+        },
+        {
+          "old": "bemind",
+          "new": "geliefd",
+          "principe": "V785"
+        },
+        {
+          "old": "van",
+          "new": "door",
+          "principe": "V785"
         },
         {
           "old": "nochtans",
@@ -173,14 +183,19 @@
           "principe": "V73"
         },
         {
-          "old": "de HEERE",
-          "new": "JAHWEH",
-          "principe": "G1"
+          "old": "gelijk de HEERE",
+          "new": "zoals JAHWEH van",
+          "principe": "V785"
         },
         {
-          "old": "Israëls",
-          "new": "van Israël",
-          "principe": null
+          "old": "Israëls bemint,",
+          "new": "van Israël houdt,",
+          "principe": "V785"
+        },
+        {
+          "old": "beminnen",
+          "new": "houden van",
+          "principe": "V785"
         },
         {
           "old": "der",
