@@ -75,7 +75,7 @@
 
     <div class="page">
         <h1>Onderwerpen</h1>
-        <p class="intro">Bijbelgedeelten geordend op thema. Klik op een vers om het in de tekst te openen. Een <span style="color:var(--gold);">&#9733;</span> markeert een sleuteltekst.</p>
+        <p class="intro">Bijbelgedeelten geordend op thema. Klik op een vers om het in de tekst te openen. Een <span style="color:var(--gold);">&#9733;</span> markeert een sleuteltekst. &nbsp;<a href="insluiten.html" style="color:var(--gold);">Een citaat insluiten op je eigen site →</a></p>
         <input type="search" class="ond-zoek" id="ond-zoek" placeholder="Filter op onderwerp…" aria-label="Filter op onderwerp">
         <div class="ond-grid" id="ond-grid"><p class="ond-empty">Onderwerpen laden…</p></div>
 
@@ -97,17 +97,27 @@
         const zoek = document.getElementById('ond-zoek');
         const detail = document.getElementById('ond-detail');
         let TAGS = [];
+        const BOOKORDER = {};
 
         function refToHref(ref) {
             const sp = ref.lastIndexOf(' ');
             const book = ref.slice(0, sp);
-            const ch = ref.slice(sp + 1).split(':')[0];
-            return `index.html#${book}/${ch}`;
+            const chv = ref.slice(sp + 1).split(':');
+            return `index.html#${book}/${chv[0]}/${chv[1] || ''}`;
+        }
+        function refKey(ref) {
+            const sp = ref.lastIndexOf(' ');
+            const book = ref.slice(0, sp);
+            const chv = ref.slice(sp + 1).split(':');
+            return [BOOKORDER[book] !== undefined ? BOOKORDER[book] : 999, parseInt(chv[0]) || 0, parseInt(chv[1]) || 0];
         }
         function verzenVan(tag) {
             return (tag.verzen || [])
                 .map(it => typeof it === 'string' ? { ref: it, rang: 3 } : it)
-                .sort((a, b) => (a.rang || 3) - (b.rang || 3));
+                .sort((a, b) => {
+                    const ka = refKey(a.ref), kb = refKey(b.ref);
+                    return ka[0] - kb[0] || ka[1] - kb[1] || ka[2] - kb[2];
+                });
         }
         // Lazy: laad de verstekst via de OSV-bibliotheek zodra een item in beeld komt
         let _io = null;
@@ -181,11 +191,19 @@
         // Spreker-tags (apart bestand) + onderwerp-tags samenvoegen
         Promise.all([
             fetch('data/tags.json').then(r => r.json()).catch(() => ({ tags: [] })),
-            fetch('data/spreker-tags.json').then(r => r.ok ? r.json() : { tags: [] }).catch(() => ({ tags: [] }))
-        ]).then(([a, b]) => init([...(a.tags || []), ...(b.tags || [])]));
+            fetch('data/spreker-tags.json').then(r => r.ok ? r.json() : { tags: [] }).catch(() => ({ tags: [] })),
+            fetch('data/books.json').then(r => r.json()).catch(() => ({ books: [] }))
+        ]).then(([a, b, bk]) => {
+            let flat = null;
+            try { if (window.getFlatBookOrder) flat = getFlatBookOrder('canoniek', bk); } catch (e) {}
+            if (!flat || !flat.length) flat = (bk.books || []).map(x => x.id);
+            flat.forEach((id, i) => { BOOKORDER[id] = i; });
+            init([...(a.tags || []), ...(b.tags || [])]);
+        });
     })();
     </script>
     <script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);}catch(e){console.error(e);}});})();</script>
+    <script src="js/book-orders.js"></script>
     <script src="embed.js" defer></script>
     <script src="js/firebase-config.js"></script>
     <script src="js/auth.js"></script>
