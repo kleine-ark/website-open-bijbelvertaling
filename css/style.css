@@ -4196,6 +4196,24 @@ body.hoofdstuknummers-uit #chapter-title,
 body.hoofdstuknummers-uit #content-topbar #chapter-title,
 body.hoofdstuknummers-uit .chapter-separator { display: none !important; }
 
+/* Hoofdstukinleiding inline in de tekstkolom (instelling) */
+.chapter-intro-inline { display: none; }
+body.show-chapter-intro .chapter-intro-inline {
+    display: block;
+    font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
+    font-style: italic;
+    font-size: 0.96em;
+    line-height: 1.5;
+    color: var(--text-secondary, #6b6b6b);
+    margin: 4px 24px 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px dotted var(--border, #e0dccf);
+}
+@media (max-width: 640px) { body.show-chapter-intro .chapter-intro-inline { margin: 4px 16px 14px; } }
+
+/* Doorlopend lezen: vorige/volgende-navigatie onderaan verbergen */
+body.doorlopend-aan #chapter-footer { display: none !important; }
+
 /* Doorlopend lezen: scheiding tussen aaneengeschoven hoofdstukken */
 .chapter-separator {
     font-family: var(--font-cursive, 'Tangerine', cursive);

@@ -488,20 +488,13 @@ const App = {
         }
         // Pre-fetch buurchapters bij idle (volgende klik = instant)
         DataLoader.prefetchAdjacent(bookId, chapterNum);
+        // Boeknaam onthouden (gebruikt door scroll-spy bij doorlopend lezen)
+        App._contNames = App._contNames || {};
+        App._contNames[bookId] = book.nameDutch;
 
         if (!append) {
         // Titel — concept-marker bij niet-geverifieerde hoofdstukken
-        const titleEl = document.getElementById('chapter-title');
-        const verified = App._isVerified(bookId, chapterNum);
-        titleEl.textContent = `${book.nameDutch} ${chapterNum}`;
-        titleEl.classList.toggle('chapter-unverified', !verified);
-        if (!verified) {
-            const tag = document.createElement('span');
-            tag.className = 'chapter-concept-tag';
-            tag.textContent = 'CONCEPT — NIET GECONTROLEERD';
-            titleEl.appendChild(document.createTextNode(' '));
-            titleEl.appendChild(tag);
-        }
+        App._setTitle(bookId, chapterNum);
         // Chapter-footer label (sticky onderaan)
         const chfLabel = document.getElementById('chapter-footer-label');
         if (chfLabel) {
@@ -529,16 +522,10 @@ const App = {
             bookIntroEl.style.display = 'none';
         }
 
-        // Hoofdstuk inleiding
-        const introEl = document.getElementById('chapter-intro');
-        if (chapter.chapterIntro && (chapter.chapterIntro.text2026 || chapter.chapterIntro.text1637)) {
-            introEl.textContent = chapter.chapterIntro.text2026 || chapter.chapterIntro.text1637;
-            introEl.style.display = 'block';
-            introEl.classList.remove('expanded');
-            introEl.onclick = () => introEl.classList.toggle('expanded');
-        } else {
-            introEl.style.display = 'none';
-        }
+        // Hoofdstukinleiding wordt nu INLINE in de tekstkolom getoond (zie hieronder),
+        // niet meer in een apart frame.
+        const introFrame = document.getElementById('chapter-intro');
+        if (introFrame) introFrame.style.display = 'none';
         }  // einde if(!append): bovenstaande chrome alleen bij normaal renderen
 
         // Pericoop-kopjes (NBG-stijl indeling, eigen koppen) — eenmalig laden
@@ -564,6 +551,17 @@ const App = {
             sep.dataset.book = bookId;
             sep.dataset.chapter = chapterNum;
             container.appendChild(sep);
+        }
+
+        // Hoofdstukinleiding inline in de tekstkolom (onder de hoofdstukkop),
+        // zichtbaar via instelling (body.show-chapter-intro)
+        if (chapter.chapterIntro && (chapter.chapterIntro.text2026 || chapter.chapterIntro.text1637)) {
+            const intro = document.createElement('div');
+            intro.className = 'chapter-intro-inline';
+            intro.dataset.book = bookId;
+            intro.dataset.chapter = chapterNum;
+            intro.textContent = chapter.chapterIntro.text2026 || chapter.chapterIntro.text1637;
+            container.appendChild(intro);
         }
 
         for (const verse of chapter.verses) {
@@ -753,17 +751,36 @@ const App = {
         App._afterRenderContinuous(append);
     },
 
+    // Hoofdstuktitel (met concept-marker) zetten — gedeeld door render + scroll-spy
+    _setTitle(bookId, chapterNum) {
+        const titleEl = document.getElementById('chapter-title');
+        if (!titleEl) return;
+        const name = (App._contNames && App._contNames[bookId]) || bookId;
+        const verified = App._isVerified(bookId, chapterNum);
+        titleEl.textContent = `${name} ${chapterNum}`;
+        titleEl.classList.toggle('chapter-unverified', !verified);
+        if (!verified) {
+            const tag = document.createElement('span');
+            tag.className = 'chapter-concept-tag';
+            tag.textContent = 'CONCEPT — NIET GECONTROLEERD';
+            titleEl.appendChild(document.createTextNode(' '));
+            titleEl.appendChild(tag);
+        }
+    },
+
     // === Doorlopend lezen (lazy-load volgende hoofdstukken bij scrollen) ===
     _afterRenderContinuous(append) {
         const container = document.getElementById('verses-container');
         if (!container) return;
         const on = localStorage.getItem('doorlopend') === 'true';
+        document.body.classList.toggle('doorlopend-aan', on);
         let sentinel = document.getElementById('continuous-sentinel');
         if (!on) {
             if (sentinel) sentinel.remove();
             if (App._contObserver) { App._contObserver.disconnect(); App._contObserver = null; }
             return;
         }
+        App._setupScrollSpy();
         if (!append) {
             App._contLast = { bookId: Navigation.currentBook, chapterNum: Navigation.currentChapter };
             App._contLoading = false;
@@ -814,6 +831,47 @@ const App = {
             }
         } catch (e) { console.warn('[doorlopend] laden volgende hoofdstuk faalde:', e); }
         App._contLoading = false;
+    },
+
+    // Scroll-spy: werk de hoofdstuktitel bovenaan (en de URL) bij naar het
+    // hoofdstuk dat momenteel boven in beeld staat — alleen bij doorlopend lezen.
+    _setupScrollSpy() {
+        if (App._scrollSpyWired) return;
+        App._scrollSpyWired = true;
+        let ticking = false;
+        const onScroll = () => {
+            if (localStorage.getItem('doorlopend') !== 'true') return;
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => { ticking = false; App._updateTitleFromScroll(); });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        const sc = document.getElementById('content');
+        if (sc) sc.addEventListener('scroll', onScroll, { passive: true });
+    },
+
+    _updateTitleFromScroll() {
+        const rows = document.querySelectorAll('#verses-container .verse-row');
+        if (!rows.length) return;
+        const threshold = 140;   // net onder de sticky bovenbalk
+        let cur = null;
+        for (const r of rows) {
+            const rect = r.getBoundingClientRect();
+            if (rect.bottom > threshold) { cur = r; break; }
+        }
+        if (!cur) cur = rows[rows.length - 1];
+        const bookId = cur.dataset.book;
+        const ch = parseInt(cur.dataset.chapter, 10);
+        if (!bookId || !ch) return;
+        if (App._spyBook === bookId && App._spyChapter === ch) return;
+        App._spyBook = bookId; App._spyChapter = ch;
+        App._setTitle(bookId, ch);
+        // footer-label + interne navigatiepointers meenemen (voor vorige/volgende)
+        if (typeof Navigation !== 'undefined') {
+            Navigation.currentBook = bookId;
+            Navigation.currentChapter = ch;
+        }
+        try { history.replaceState(null, '', `#${bookId}/${ch}`); } catch (e) {}
     },
 
     /* Zet de eerste ECHTE letter van het eerste vers in een <span class="dropcap">.

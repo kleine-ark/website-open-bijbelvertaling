@@ -675,7 +675,8 @@
         searchInput.addEventListener('input', () => { clearTimeout(debounce); debounce = setTimeout(renderGrid, 200); });
         artistFilter.addEventListener('change', renderGrid);
 
-        document.getElementById('btn-schilderijen').addEventListener('click', () => { loadArtworks(); });
+        var _btnSchilderijen = document.getElementById('btn-schilderijen');
+        if (_btnSchilderijen) _btnSchilderijen.addEventListener('click', () => { loadArtworks(); });
     })();
     </script>
 
@@ -752,6 +753,7 @@
     }
     // Doorlopend lezen herstellen (standaard UIT; alleen aan als expliciet 'true')
     if (localStorage.getItem('doorlopend') === 'true') {
+        document.body.classList.add('doorlopend-aan');
         var cd = document.getElementById('toggle-doorlopend');
         if (cd) cd.checked = true;
     }
