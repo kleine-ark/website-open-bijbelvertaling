@@ -427,7 +427,7 @@
       "number": 4,
       "textSV1888": "Hoor, Israël! de HEERE, onze God, is een enig HEERE!",
       "text1637": "[a] Hoort, Israël, de HEERE onse Godt, is een [3] eenich HEERE.",
-      "text2026": "Hoor, Israël! JAHWEH, onze God, is een enig JAHWEH!",
+      "text2026": "Hoor, Israël! JAHWEH, onze God, is één enig JAHWEH!",
       "marginNotes": [
         {
           "marker": "a",
@@ -476,7 +476,7 @@
           "morph": "HAcmsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"direct-speech\"><i> Hoor, Israël! JAHWEH, onze God, is een<sup class=\"note-marker\" data-note=\"3\">3</sup> enig JAHWEH!</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"direct-speech\"><i> Hoor, Israël! JAHWEH, onze God, is één<sup class=\"note-marker\" data-note=\"3\">3</sup> enig JAHWEH!</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Hoor, Israël! de HEERE, onze God, is een<sup class=\"note-marker\" data-note=\"3\">3</sup> enig HEERE!",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Hoort, Israël, de HEERE onse Godt, is een <sup class=\"note-marker\" data-note=\"3\">3</sup> eenich HEERE.",
       "phraseDiff": [
@@ -484,6 +484,11 @@
           "old": "de HEERE,",
           "new": "JAHWEH,",
           "principe": "G1"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         },
         {
           "old": "HEERE!",
