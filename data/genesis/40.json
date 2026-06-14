@@ -449,7 +449,7 @@
       "number": 5,
       "textSV1888": "Zij droomden nu beiden een droom, elk zijn droom, in een nacht, elk naar de uitlegging zijns drooms, de schenker en de bakker, die des konings van Egypte waren, die gevangen waren in het gevangenhuis.",
       "text1637": "Sy droomden nu beyde eenen droom, elck sijnen droom, in eener nacht, [7] elck nae de uytlegginge sijnes drooms: de Schencker, ende de Backer, [8] die des Conincks van Egypten waren, die gevangen waren in 't gevangen-huys.",
-      "text2026": "Zij droomden nu beiden een droom, elk zijn droom, in een nacht, elk naar de uitlegging van zijn droom, de schenker en de bakker, die van de koning van Egypte waren, die gevangen waren in het gevangenhuis.",
+      "text2026": "Zij droomden nu beiden een droom, elk zijn droom, in één nacht, elk naar de uitlegging van zijn droom, de schenker en de bakker, die van de koning van Egypte waren, die gevangen waren in het gevangenhuis.",
       "marginNotes": [
         {
           "marker": "7",
@@ -619,7 +619,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "Zij droomden nu beiden een droom, elk zijn droom, in een nacht,<sup class=\"note-marker\" data-note=\"7\">7</sup> elk naar de uitlegging van zijn droom, de schenker en de bakker,<sup class=\"note-marker\" data-note=\"8\">8</sup> die van de koning van Egypte waren, die gevangen waren in het gevangenhuis.",
+      "text2026_html": "Zij droomden nu beiden een droom, elk zijn droom, in één nacht,<sup class=\"note-marker\" data-note=\"7\">7</sup> elk naar de uitlegging van zijn droom, de schenker en de bakker,<sup class=\"note-marker\" data-note=\"8\">8</sup> die van de koning van Egypte waren, die gevangen waren in het gevangenhuis.",
       "textSV1888_html": "Zij droomden nu beiden een droom, elk zijn droom, in een nacht,<sup class=\"note-marker\" data-note=\"7\">7</sup> elk naar de uitlegging zijns drooms, de schenker en de bakker,<sup class=\"note-marker\" data-note=\"8\">8</sup> die des konings van Egypte waren, die gevangen waren in het gevangenhuis.",
       "text1637_html": "Sy droomden nu beyde eenen droom, elck sijnen droom, in eener nacht, <sup class=\"note-marker\" data-note=\"7\">7</sup> elck nae de uytlegginge sijnes drooms: de Schencker, ende de Backer, <sup class=\"note-marker\" data-note=\"8\">8</sup> die des Conincks van Egypten waren, die gevangen waren in 't gevangen-huys.",
       "phraseDiff": [
@@ -632,6 +632,11 @@
           "old": "des konings",
           "new": "van de koning",
           "principe": "N3"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },
