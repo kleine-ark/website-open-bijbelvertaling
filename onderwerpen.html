@@ -19,12 +19,17 @@
         .ond-terug { background: none; border: none; color: var(--gold); font-size: 14px; cursor: pointer; padding: 0 0 14px; font-weight: 600; }
         #ond-detail h2 { font-size: 24px; color: var(--navy); display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 600; }
         .beschr-detail { color: #555; line-height: 1.6; margin: 0 0 6px; max-width: 640px; }
-        .ond-verzen-lijst { list-style: none; padding: 0; margin: 14px 0 0; column-width: 220px; column-gap: 28px; }
-        .ond-verzen-lijst li { margin-bottom: 7px; break-inside: avoid; }
-        .ond-verzen-lijst a { color: var(--navy); text-decoration: none; }
-        .ond-verzen-lijst a:hover { color: var(--gold); text-decoration: underline; }
-        .ond-verzen-lijst .ster { color: var(--gold); }
-        .ond-verzen-lijst .vnote { display: block; font-size: 12px; color: #888; font-style: italic; }
+        .ond-verzen-lijst { list-style: none; padding: 0; margin: 14px 0 0; max-width: 680px; }
+        .ond-vers { margin: 0 0 16px; padding-bottom: 14px; border-bottom: 1px solid #eee; }
+        .ond-vers-kop { font-family: system-ui, sans-serif; font-size: 13px; font-weight: 600; color: var(--gold); margin-bottom: 3px; }
+        .ond-vers-kop a { color: var(--gold); text-decoration: none; }
+        .ond-vers-kop a:hover { text-decoration: underline; }
+        .ond-vers-kop .ster { color: var(--gold); }
+        .ond-vers-tekst { font-family: var(--font-serif, 'EB Garamond', Georgia, serif); font-size: 1.02em; line-height: 1.6; color: #222; min-height: 1.4em; }
+        .ond-vers-tekst .osv-bron { display: none; }
+        .ond-vers .vnote { font-style: italic; color: #888; font-weight: 400; }
+        :root[data-theme="donker"] .ond-vers { border-color: #2a2a2a; }
+        :root[data-theme="donker"] .ond-vers-tekst { color: var(--text-primary); }
         :root[data-theme="donker"] #ond-detail h2 { color: var(--text-primary); }
         :root[data-theme="donker"] .beschr-detail { color: var(--text-secondary, #aaa); }
         :root[data-theme="donker"] .ond-verzen-lijst a { color: var(--text-primary); }
@@ -104,6 +109,22 @@
                 .map(it => typeof it === 'string' ? { ref: it, rang: 3 } : it)
                 .sort((a, b) => (a.rang || 3) - (b.rang || 3));
         }
+        // Lazy: laad de verstekst via de OSV-bibliotheek zodra een item in beeld komt
+        let _io = null;
+        function observeTeksten(root) {
+            if (_io) _io.disconnect();
+            _io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting) return;
+                    const el = e.target; _io.unobserve(el);
+                    const ref = el.dataset.ref;
+                    if (window.OSV) {
+                        OSV.cite(ref, { link: false }).then(r => { el.innerHTML = r.html; }).catch(() => {});
+                    }
+                });
+            }, { rootMargin: '400px' });
+            root.querySelectorAll('.ond-vers-tekst[data-ref]').forEach(el => _io.observe(el));
+        }
         function toonGrid() {
             detail.style.display = 'none';
             grid.style.display = '';
@@ -132,11 +153,16 @@
                 `<span class="ond-dot" style="background:${tag.kleur || '#999'}"></span>${tag.naam || ''}`;
             document.getElementById('ond-detail-beschr').textContent = tag.beschrijving || '';
             document.getElementById('ond-detail-count').textContent = `${verzen.length} vers${verzen.length === 1 ? '' : 'en'}`;
-            document.getElementById('ond-detail-lijst').innerHTML = verzen.map(it => {
+            const lijst = document.getElementById('ond-detail-lijst');
+            lijst.innerHTML = verzen.map(it => {
                 const ster = (it.rang === 1) ? '<span class="ster">&#9733;</span> ' : '';
                 const note = it.notitie ? `<span class="vnote">${it.notitie}</span>` : '';
-                return `<li>${ster}<a href="${refToHref(it.ref)}">${it.ref}</a>${note}</li>`;
+                return `<li class="ond-vers">
+                    <div class="ond-vers-kop">${ster}<a href="${refToHref(it.ref)}">${it.ref}</a>${note}</div>
+                    <div class="ond-vers-tekst osv-cite" data-ref="${it.ref}"></div>
+                </li>`;
             }).join('');
+            observeTeksten(lijst);
             window.scrollTo(0, 0);
             location.hash = 'tag=' + encodeURIComponent(id);
         }
@@ -160,6 +186,7 @@
     })();
     </script>
     <script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);}catch(e){console.error(e);}});})();</script>
+    <script src="embed.js" defer></script>
     <script src="js/firebase-config.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/stats-inject.js"></script>
