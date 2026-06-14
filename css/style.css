@@ -2290,6 +2290,34 @@ body.dyslexia-mode .verses-table tr:nth-child(even) td {
     padding: 4px 10px !important;
     margin-left: 4px;
 }
+/* Kleur-dropdown in de selectie-toolbar */
+#vers-color-wrap { position: relative; display: inline-flex; }
+#vers-color-menu {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    background: var(--card-bg, #1d3a4f);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 7px;
+    gap: 7px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    z-index: 1001;
+}
+#vers-color-wrap.open #vers-color-menu { display: flex; }
+.vc-swatch {
+    width: 26px !important; height: 26px;
+    border-radius: 50% !important;
+    border: 2px solid rgba(255,255,255,0.35) !important;
+    cursor: pointer; padding: 0 !important;
+}
+.vc-swatch:hover { transform: scale(1.12); }
+.vc-swatch.vc-none {
+    background: rgba(255,255,255,0.15) !important;
+    color: #fff; font-size: 13px; line-height: 1; display: flex;
+    align-items: center; justify-content: center;
+}
 
 /* === Highlight-palet === */
 .hl-palette {

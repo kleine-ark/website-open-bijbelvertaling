@@ -4,6 +4,14 @@ const VerseSelect = {
     selected: new Set(),
     lastClicked: null,
 
+    // Markeerkleuren (sleutels = Highlight.COLORS), met swatch-kleur voor de dropdown
+    HL_COLORS: [
+        { key: 'lichtgeel',  label: 'Geel',    css: 'rgba(255,255,0,0.6)' },
+        { key: 'lichtgroen', label: 'Groen',   css: 'rgba(144,238,144,0.7)' },
+        { key: 'lichtblauw', label: 'Blauw',   css: 'rgba(135,206,235,0.8)' },
+        { key: 'magenta',    label: 'Magenta', css: 'rgba(255,0,255,0.45)' },
+    ],
+
     // Unieke sleutel per vers (boek/hoofdstuk/vers) — nodig voor doorlopend lezen,
     // waar meerdere hoofdstukken tegelijk in de DOM staan en data-verse botst.
     _key(row) { return `${row.dataset.book}/${row.dataset.chapter}/${row.dataset.verse}`; },
@@ -19,8 +27,21 @@ const VerseSelect = {
         toolbar.id = 'copy-toolbar';
         const shareIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>';
         const imgIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+        const paletteIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C18.879 16.371 22 13.25 22 9.5 22 5.36 17.5 2 12 2z"/></svg>';
+        const noteIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+        const colorSwatches = this.HL_COLORS.map(c =>
+            `<button class="vc-swatch" data-color="${c.key}" title="${c.label}" style="background:${c.css}"></button>`
+        ).join('');
         toolbar.innerHTML = `
             <span id="copy-count"></span>
+            <div id="vers-color-wrap">
+                <button id="vers-color" title="Markeerkleur">${paletteIcon} Kleur</button>
+                <div id="vers-color-menu">
+                    ${colorSwatches}
+                    <button class="vc-swatch vc-none" data-color="" title="Kleur verwijderen">✕</button>
+                </div>
+            </div>
+            <button id="vers-note" title="Opmerking / suggestie">${noteIcon} Opmerking</button>
             <button id="vers-share" title="Delen via systeem">${shareIcon} Delen</button>
             <button id="copy-plain" title="Kopieer als platte tekst">Tekst kopiëren</button>
             <button id="copy-formatted" title="Kopieer met versnummers, opmaak en Godscitaten">Kopiëren met opmaak</button>
@@ -29,6 +50,22 @@ const VerseSelect = {
         `;
         document.body.appendChild(toolbar);
 
+        // Kleur-dropdown
+        const colorWrap = document.getElementById('vers-color-wrap');
+        document.getElementById('vers-color').addEventListener('click', (e) => {
+            e.stopPropagation();
+            colorWrap.classList.toggle('open');
+        });
+        document.querySelectorAll('#vers-color-menu .vc-swatch').forEach(sw => {
+            sw.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.applyColor(sw.dataset.color);
+                colorWrap.classList.remove('open');
+            });
+        });
+        document.addEventListener('click', () => colorWrap.classList.remove('open'));
+
+        document.getElementById('vers-note').addEventListener('click', () => this.openNote());
         document.getElementById('vers-share').addEventListener('click', () => this.share());
         document.getElementById('copy-plain').addEventListener('click', () => this.copy(false));
         document.getElementById('copy-formatted').addEventListener('click', () => this.copy(true));
@@ -208,6 +245,31 @@ const VerseSelect = {
         // Geordend op positie in de DOM
         const rows = [...document.querySelectorAll('.verse-row')];
         return rows.filter(r => this.selected.has(this._key(r)));
+    },
+
+    // Markeerkleur toepassen op alle geselecteerde verzen (lege color = wissen)
+    applyColor(color) {
+        const rows = this.getSelectedRows();
+        if (!rows.length || !window.Highlight) return;
+        rows.forEach(r => {
+            const b = r.dataset.book, c = parseInt(r.dataset.chapter, 10), v = parseInt(r.dataset.verse, 10);
+            if (color) Highlight.setVerseColor(b, c, v, color);
+            else Highlight.clearVerse(b, c, v);
+        });
+    },
+
+    // Opmerking/suggestie openen voor het (eerste) geselecteerde vers
+    openNote() {
+        const rows = this.getSelectedRows();
+        if (!rows.length || !window.Feedback) return;
+        const first = rows[0];
+        const data = this._buildRefAndText();
+        Feedback.open({
+            bookId: first.dataset.book,
+            ch: parseInt(first.dataset.chapter, 10),
+            vs: parseInt(first.dataset.verse, 10),
+            text: data ? data.plain : ''
+        });
     },
 
     copy(withFormatting) {
