@@ -309,6 +309,9 @@ const Highlight = {
     },
 
     showPaletteAt(rect) {
+        // Niet tonen wanneer er een vers-selectie actief is — kleur/opmerking
+        // zitten dan in de onderste selectie-toolbar.
+        if (window.VerseSelect && VerseSelect.selected && VerseSelect.selected.size > 0) return;
         const pal = this.buildPalette();
         pal.style.display = 'flex';
         // Plaats boven selectie
