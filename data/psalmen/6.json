@@ -69,7 +69,7 @@
       "number": 2,
       "textSV1888": "O HEERE, straf mij niet in Uw toorn, en kastijd mij niet in Uw grimmigheid!",
       "text1637": "ô HEERE, en [a] straft my niet in uwen toorn, ende en [3] kastijdt my niet in uwe grimmicheyt.",
-      "text2026": "O JAHWEH, straf mij niet in Uw toorn, en kastijd mij niet in Uw woede!",
+      "text2026": "O JAHWEH, straf mij niet in Uw toorn, en straf mij niet in Uw woede!",
       "marginNotes": [
         {
           "marker": "a",
@@ -123,7 +123,7 @@
           "morph": "HVpi2ms/Sp1cs"
         }
       ],
-      "text2026_html": "O JAHWEH,<sup class=\"note-marker\" data-note=\"a\">a</sup> straf mij niet in Uw toorn, en kastijd<sup class=\"note-marker\" data-note=\"3\">3</sup> mij niet in Uw woede!",
+      "text2026_html": "O JAHWEH,<sup class=\"note-marker\" data-note=\"a\">a</sup> straf mij niet in Uw toorn, en straf<sup class=\"note-marker\" data-note=\"3\">3</sup> mij niet in Uw woede!",
       "textSV1888_html": "O HEERE, straf<sup class=\"note-marker\" data-note=\"a\">a</sup> mij niet in Uw toorn, en kastijd<sup class=\"note-marker\" data-note=\"3\">3</sup> mij niet in Uw grimmigheid!",
       "text1637_html": "ô HEERE, en <sup class=\"note-marker\" data-note=\"a\">a</sup> straft my niet in uwen toorn, ende en <sup class=\"note-marker\" data-note=\"3\">3</sup> kastijdt my niet in uwe grimmicheyt.",
       "phraseDiff": [
@@ -131,6 +131,11 @@
           "old": "HEERE,",
           "new": "JAHWEH,",
           "principe": null
+        },
+        {
+          "old": "kastijd",
+          "new": "straf",
+          "principe": "V787"
         },
         {
           "old": "grimmigheid!",
