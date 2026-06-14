@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En het geschiedde, als Hij gekomen was in het huis van een der oversten der Farizeën, op den sabbat, om brood te eten, dat zij Hem waarnamen.",
       "text1637": "ENde het geschiedde, als hy gekomen was in het huys van [1] een der Oversten der Phariseen, op den Sabbath, om broot te eten, dat sy hem [2] waernamen.",
-      "text2026": "En het gebeurde, als Hij gekomen was in het huis van één van de oversten van de Farizeën, op de sabbat, om brood te eten, dat zij Hem waarnamen.",
+      "text2026": "En het gebeurde, als Hij gekomen was in het huis van één van de oversten van de Farizeën, op de sabbat, om brood te eten, dat zij scherp op Hem letten.",
       "marginNotes": [
         {
           "marker": "1",
@@ -150,29 +150,33 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "En het gebeurde, als Hij gekomen was in het huis van<sup class=\"note-marker\" data-note=\"1\">1</sup> één van de oversten van de Farizeën, op de sabbat, om brood te eten, dat zij Hem<sup class=\"note-marker\" data-note=\"2\">2</sup> waarnamen.",
+      "text2026_html": "En het gebeurde, als Hij gekomen was in het huis van<sup class=\"note-marker\" data-note=\"1\">1</sup> één van de oversten van de Farizeën, op de sabbat, om brood te eten, dat zij scherp op Hem<sup class=\"note-marker\" data-note=\"2\">2</sup> letten.",
       "textSV1888_html": "En het geschiedde, als Hij gekomen was in het huis van<sup class=\"note-marker\" data-note=\"1\">1</sup> een der oversten der Farizeën, op den sabbat, om brood te eten, dat zij Hem<sup class=\"note-marker\" data-note=\"2\">2</sup> waarnamen.",
       "text1637_html": "ENde het geschiedde, als hy gekomen was in het huys van <sup class=\"note-marker\" data-note=\"1\">1</sup> een der Oversten der Phariseen, op de<i>n</i> Sabbath, om broot te eten, dat sy hem <sup class=\"note-marker\" data-note=\"2\">2</sup> waernamen.",
       "phraseDiff": [
         {
           "old": "geschiedde,",
-          "new": "gebeurde,",
-          "principe": "V199"
+          "new": "gebeurde,"
         },
         {
           "old": "een der",
-          "new": "één van de",
-          "principe": "N2"
+          "new": "één van de"
         },
         {
           "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "new": "van de"
         },
         {
           "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "new": "de"
+        },
+        {
+          "old": "",
+          "new": "scherp op"
+        },
+        {
+          "old": "waarnamen.",
+          "new": "letten."
         }
       ]
     },
@@ -438,14 +442,14 @@
           "gloss": "〔to release"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar zij zwegen stil. En Hij nam hem, en genas hem, en liet hem gaan.</i></span>",
+      "text2026_html": "Maar zij zwegen stil. En Hij nam hem, en genas hem, en liet hem gaan.",
       "text1637_html": "Maer sy swegen stille. Ende hy nam [<i>hem</i>], ende genas hem, ende liet [<i>hem</i>] gaen."
     },
     {
       "number": 5,
       "textSV1888": "En Hij, hun antwoordende, zeide: Wiens ezel of os van ulieden zal in een put vallen, en die hem niet terstond zal uittrekken op den dag des sabbats?",
       "text1637": "Ende hy haer antwoordende seyde, [a] Wiens esel ofte osse van u lieden sal in eenen put vallen, ende die hem niet terstont en sal uyttrecken op den dagh des Sabbaths?",
-      "text2026": "En Hij, hun antwoordende, zei: Wiens ezel of os van u zal in een put vallen, en die hem niet meteen zal uittrekken op de dag van de sabbats?",
+      "text2026": "En Hij, hun antwoordende, zei: Wie van u zal, als zijn ezel of os in een put valt, hem er niet meteen uittrekken op de dag van de sabbat?",
       "marginNotes": [
         {
           "marker": "a",
@@ -583,34 +587,37 @@
           "gloss": "〔Sabbath"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En Hij, hun antwoordende, zei:<sup class=\"note-marker\" data-note=\"a\">a</sup> Wiens ezel of os van u zal in een put vallen, en die hem niet meteen zal uittrekken op de dag van de sabbats?</i></span>",
+      "text2026_html": "En Hij, hun antwoordende, zei:<sup class=\"note-marker\" data-note=\"a\">a</sup> <span class=\"god-speaks\"><i>Wie van u zal, als zijn ezel of os in een put valt, hem er niet meteen uittrekken op de dag van de sabbat?</i></span>",
       "textSV1888_html": "En Hij, hun antwoordende, zeide:<sup class=\"note-marker\" data-note=\"a\">a</sup> Wiens ezel of os van ulieden zal in een put vallen, en die hem niet terstond zal uittrekken op den dag des sabbats?",
       "text1637_html": "Ende hy haer antwoordende seyde, <sup class=\"note-marker\" data-note=\"a\">a</sup> Wiens esel ofte osse van u lieden sal in eenen put vallen, ende die hem niet terstont en sal uyttrecken op den dagh des Sabbaths?",
       "phraseDiff": [
         {
-          "old": "zeide:",
-          "new": "zei:",
-          "principe": "W1"
+          "old": "zeide: Wiens",
+          "new": "zei: Wie van u zal, als zijn"
         },
         {
-          "old": "ulieden",
-          "new": "u",
-          "principe": "A2"
+          "old": "van ulieden zal",
+          "new": ""
         },
         {
-          "old": "terstond",
-          "new": "meteen",
-          "principe": "V8"
+          "old": "vallen, en die",
+          "new": "valt,"
+        },
+        {
+          "old": "",
+          "new": "er"
+        },
+        {
+          "old": "terstond zal",
+          "new": "meteen"
         },
         {
           "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "new": "de"
         },
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des sabbats?",
+          "new": "van de sabbat?"
         }
       ]
     },
@@ -658,7 +665,7 @@
           "gloss": "〔this/he/she/it"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En zij konden Hem daarop niet weer antwoorden.</i></span>",
+      "text2026_html": "En zij konden Hem daarop niet weer antwoorden.",
       "text1637_html": "Ende sy en konden hem daer op niet weder-antwoorden.",
       "phraseDiff": [
         {
@@ -775,7 +782,7 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En Hij zei tot de<sup class=\"note-marker\" data-note=\"4\">4</sup> genodigden een<sup class=\"note-marker\" data-note=\"5\">5</sup> gelijkenis, aanmerkende, hoe zij de vooraanzittingen verkozen; zeggende tot hen:</i></span>",
+      "text2026_html": "En Hij zei tot de<sup class=\"note-marker\" data-note=\"4\">4</sup> genodigden een<sup class=\"note-marker\" data-note=\"5\">5</sup> gelijkenis, aanmerkende, hoe zij de vooraanzittingen verkozen; zeggende tot hen:",
       "textSV1888_html": "En Hij zeide tot de<sup class=\"note-marker\" data-note=\"4\">4</sup> genoden een<sup class=\"note-marker\" data-note=\"5\">5</sup> gelijkenis, aanmerkende, hoe zij de vooraanzittingen verkozen; zeggende tot hen:",
       "text1637_html": "Ende hy seyde tot de <sup class=\"note-marker\" data-note=\"4\">4</sup> genoodde een <sup class=\"note-marker\" data-note=\"5\">5</sup> gelijckenisse, aenmerckende hoe sy de vooraensittingen verkoren: seggende tot haer,",
       "phraseDiff": [
@@ -795,7 +802,7 @@
       "number": 8,
       "textSV1888": "Wanneer gij van iemand ter bruiloft genood zult zijn, zo zet u niet in de eerste zitplaats; opdat niet misschien een waardiger dan gij van hem genood zij;",
       "text1637": "Wanneer ghy van yemant ter bruyloft genoodt sult zijn, so en set u niet in de eerste sit-plaetse: op dat niet misschien een [6] weerdiger dan ghy, van hem genoodt zy:",
-      "text2026": "Wanneer u van iemand ter bruiloft uitgenodigd zult zijn, zo zet u niet in de eerste zitplaats; opdat niet misschien een waardiger dan u van hem uitgenodigd zij;",
+      "text2026": "Wanneer u van iemand ter bruiloft uitgenodigd zult zijn, zo zet u niet in de eerste zitplaats; opdat niet misschien één waardiger dan u van hem uitgenodigd zij;",
       "marginNotes": [
         {
           "marker": "6",
@@ -915,29 +922,29 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Wanneer u van iemand ter bruiloft uitgenodigd zult zijn, zo zet u niet in de eerste zitplaats; opdat niet misschien een<sup class=\"note-marker\" data-note=\"6\">6</sup> waardiger dan u van hem uitgenodigd zij;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Wanneer u van iemand ter bruiloft uitgenodigd zult zijn, zo zet u niet in de eerste zitplaats; opdat niet misschien één<sup class=\"note-marker\" data-note=\"6\">6</sup> waardiger dan u van hem uitgenodigd zij;</i></span>",
       "textSV1888_html": "Wanneer gij van iemand ter bruiloft genood zult zijn, zo zet u niet in de eerste zitplaats; opdat niet misschien een<sup class=\"note-marker\" data-note=\"6\">6</sup> waardiger dan gij van hem genood zij;",
       "text1637_html": "Wanneer ghy van yemant ter bruyloft genoodt sult zijn, so en set u niet in de eerste sit-plaetse: op dat niet misschien een <sup class=\"note-marker\" data-note=\"6\">6</sup> weerdiger dan ghy, van hem genoodt zy:",
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "u"
         },
         {
           "old": "genood",
-          "new": "uitgenodigd",
-          "principe": "V37"
+          "new": "uitgenodigd"
+        },
+        {
+          "old": "een",
+          "new": "één"
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "u"
         },
         {
           "old": "genood",
-          "new": "uitgenodigd",
-          "principe": "V37"
+          "new": "uitgenodigd"
         }
       ]
     },
@@ -1430,7 +1437,7 @@
       "number": 12,
       "textSV1888": "En Hij zeide ook tot dengene, die Hem genood had: Wanneer gij een middagmaal of avondmaal zult houden, zo roep niet uw vrienden, noch uw broeders, noch uw magen, noch uw rijke geburen; opdat ook dezelve u niet te eniger tijd wedernoden, en u vergelding geschiede.",
       "text1637": "Ende hy seyde oock tot den genen die hem genoodt hadde, [d] Wanneer ghy een middaghmael ofte avontmael sult houden, [8] soo en roept niet uwe vrienden, noch uwe broeders, noch uwe magen, noch [uwe] rijcke gebueren: op dat oock de selve u niet te eeniger tijt weder en nooden, ende u vergeldinge en geschiede.",
-      "text2026": "En Hij zei ook tot dengene, die Hem uitgenodigd had: Wanneer u een middagmaal of avondmaal zult houden, zo roep niet uw vrienden, noch uw broers, noch uw familieleden, noch uw rijke geburen; opdat ook dezelfde u niet te eniger tijd wedernoden, en u vergelding geschiede.",
+      "text2026": "En Hij zei ook tot degene die Hem uitgenodigd had: Wanneer u een middagmaal of avondmaal zult houden, zo roep niet uw vrienden, noch uw broers, noch uw familieleden, noch uw rijke geburen; opdat ook dezelfde u niet te eniger tijd wedernoden, en u vergelding geschiede.",
       "marginNotes": [
         {
           "marker": "d",
@@ -1665,39 +1672,37 @@
           "gloss": "〔you"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En Hij zei ook tot dengene, die Hem uitgenodigd had: Wanneer u een middagmaal of avondmaal zult houden, zo roep niet uw vrienden, noch uw broers, noch uw familieleden, noch uw rijke geburen; opdat ook dezelfde u niet te eniger tijd wedernoden, en u vergelding geschiede.</i></span>",
+      "text2026_html": "En Hij zei ook tot degene die Hem uitgenodigd had: <span class=\"god-speaks\"><i>Wanneer u een middagmaal of avondmaal zult houden, zo roep niet uw vrienden, noch uw broers, noch uw familieleden, noch uw rijke geburen; opdat ook dezelfde u niet te eniger tijd wedernoden, en u vergelding geschiede.</i></span>",
       "textSV1888_html": "En Hij zeide ook tot dengene, die Hem genood had:<sup class=\"note-marker\" data-note=\"d\">d</sup> Wanneer gij een middagmaal of avondmaal zult houden,<sup class=\"note-marker\" data-note=\"8\">8</sup> zo roep niet uw vrienden, noch uw broeders, noch uw magen, noch uw rijke geburen; opdat ook dezelve u niet te eniger tijd wedernoden, en u vergelding geschiede.",
       "text1637_html": "Ende hy seyde oock tot den genen die hem genoodt hadde, <sup class=\"note-marker\" data-note=\"d\">d</sup> Wanneer ghy een middaghmael ofte avontmael sult houden, <sup class=\"note-marker\" data-note=\"8\">8</sup> soo en roept niet uwe vrienden, noch uwe broeders, noch uwe magen, noch [<i>uwe</i>] rijcke gebueren: op dat oock de selve u niet te eeniger tijt weder en nooden, ende u vergeldinge en geschiede.",
       "phraseDiff": [
         {
           "old": "zeide",
-          "new": "zei",
-          "principe": "W1"
+          "new": "zei"
+        },
+        {
+          "old": "dengene,",
+          "new": "degene"
         },
         {
           "old": "genood",
-          "new": "uitgenodigd",
-          "principe": "V37"
+          "new": "uitgenodigd"
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "u"
         },
         {
           "old": "broeders,",
-          "new": "broers,",
-          "principe": null
+          "new": "broers,"
         },
         {
           "old": "magen,",
-          "new": "familieleden,",
-          "principe": "V235"
+          "new": "familieleden,"
         },
         {
           "old": "dezelve",
-          "new": "dezelfde",
-          "principe": "O3"
+          "new": "dezelfde"
         }
       ]
     },
