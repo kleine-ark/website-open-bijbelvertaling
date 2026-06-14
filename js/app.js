@@ -471,7 +471,8 @@ const App = {
         }
     },
 
-    async renderChapter(bookId, chapterNum) {
+    async renderChapter(bookId, chapterNum, opts = {}) {
+        const append = !!opts.append;   // doorlopend-lezen: hoofdstuk onderaan toevoegen
         // Manifest (klein) + chapter (klein) parallel
         const [book, chapter] = await Promise.all([
             DataLoader.loadBook(bookId),                      // bouwt lazy book-object
