@@ -6768,6 +6768,22 @@
       "nieuw": "stem",
       "toelichting": "Het archaïsche enkelvoud 'stemme' (zelfstandig naamwoord = geluid/stem) wordt 'stem'. Bijv. 'de stemme des HEEREN' → 'de stem van de HEERE', 'met luider stemme' → 'met luide stem', 'verhief zijn stemme' → 'verhief zijn stem'. WAARSCHUWING: NIET toepassen op het meervoud 'stemmen' (= meerdere stemmen, correct), en evenmin op werkwoordsvormen en samenstellingen van het werkwoord 'stemmen' (stemmen uitbrengen/afstemmen): 'instemmen', 'overeenstemmen', 'afstemmen', 'toestemmen', 'instemme', 'overeenstemme', 'toestemming', 'instemming' enz. blijven onveranderd. Woordgrenzen helpen, maar controleer per geval; in de bijbel is 'stemme' vrijwel altijd het naamwoord.",
       "regex": "\\b[Ss]temme\\b"
+    },
+    {
+      "id": "V784",
+      "categorie": "Verouderde woorden",
+      "oud": "arglistigheid / arglistig / arglistiglijk",
+      "nieuw": "sluwheid / sluw",
+      "toelichting": "Het verouderde 'arglistigheid' (zelfstandig naamwoord = listigheid/geslepenheid) wordt 'sluwheid'. De bijvoeglijke en bijwoordelijke vormen volgen: 'arglistig' → 'sluw', 'arglistige' → 'sluwe', het zelfstandig gebruikte 'de arglistigen' → 'de sluwen', en het bijwoord 'arglistiglijk' → 'op sluwe wijze'. Betekenis blijft: listig, geslepen, met kwade bedoeling.",
+      "regex": "\\b[Aa]rglistig(?:heid|e|en|lijk)?\\b"
+    },
+    {
+      "id": "V785",
+      "categorie": "Verouderd werkwoord",
+      "oud": "beminnen / bemint / beminde / bemind",
+      "nieuw": "houden van / geliefde / geliefd",
+      "toelichting": "Het verouderde werkwoord 'beminnen' (= liefhebben, houden van) wordt 'houden van', correct vervoegd en met de juiste woordvolgorde (scheidbaar): 'hij bemint X' → 'hij houdt van X', 'beminnen X' → 'houden van X', 'beminde' als werkwoord → 'hield van'. In een bijzin gaat het werkwoord naar achteren: 'omdat hij X bemint' → 'omdat hij van X houdt'. WAARSCHUWING: waar 'beminde(n)' een zelfstandig naamwoord of bijvoeglijk is (= geliefde) → 'geliefde(n)'; het voltooid deelwoord 'bemind' (= geliefd) → 'geliefd'; het zelfstandig naamwoord 'beminnaars' (= liefhebbers) → 'liefhebbers'. Bij een plechtige liefdesuitspraak mag 'liefhebben' gekozen worden; standaard 'houden van'.",
+      "regex": "\\b[Bb]emin(?:t|nen|nende|de|den|d|naars?)?\\b"
     }
   ]
 }
