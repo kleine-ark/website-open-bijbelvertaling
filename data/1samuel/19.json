@@ -1072,7 +1072,7 @@
       "number": 10,
       "textSV1888": "Saul nu zocht met de spies David aan den wand te spitten, doch hij ontweek van het aangezicht van Saul, die met de spies in den wand sloeg. Toen vlood David, en ontkwam in dienzelfden nacht.",
       "text1637": "Saul nu socht met de spiesse [9] David aen den wandt te spitten, doch hy ontweeck van het aengesichte Sauls, die met de spieesse in den wandt sloech: doe vloodt David, ende ontquam in dien selven nacht.",
-      "text2026": "Saul nu zocht met de speer David aan de wand te spitten, maar hij ontweek van het aangezicht van Saul, die met de speer in de wand sloeg. Toen vluchtte David, en ontkwam in dienzelfden nacht.",
+      "text2026": "Saul nu zocht met de speer David aan de wand te spitten, maar hij ontweek van het aangezicht van Saul, die met de speer in de wand sloeg. Toen vluchtte David, en ontkwam in die nacht.",
       "marginNotes": [
         {
           "marker": "9",
@@ -1174,7 +1174,7 @@
           "morph": "HPp3ms"
         }
       ],
-      "text2026_html": "Saul nu zocht met de speer<sup class=\"note-marker\" data-note=\"9\">9</sup> David aan de wand te spitten, maar hij ontweek van het aangezicht van Saul, die met de speer in de wand sloeg. Toen vluchtte David, en ontkwam in dienzelfden nacht.",
+      "text2026_html": "Saul nu zocht met de speer<sup class=\"note-marker\" data-note=\"9\">9</sup> David aan de wand te spitten, maar hij ontweek van het aangezicht van Saul, die met de speer in de wand sloeg. Toen vluchtte David, en ontkwam in die nacht.",
       "textSV1888_html": "Saul nu zocht met de spies<sup class=\"note-marker\" data-note=\"9\">9</sup> David aan den wand te spitten, doch hij ontweek van het aangezicht van Saul, die met de spies in den wand sloeg. Toen vlood David, en ontkwam in dienzelfden nacht.",
       "text1637_html": "Saul nu socht met de spiesse <sup class=\"note-marker\" data-note=\"9\">9</sup> David aen den wandt te spitten, doch hy ontweeck van het aengesichte Sauls, die met de spieesse in den wandt sloech: doe vloodt David, ende ontquam in dien selven nacht.",
       "phraseDiff": [
@@ -1207,6 +1207,11 @@
           "old": "vlood",
           "new": "vluchtte",
           "principe": "W10"
+        },
+        {
+          "old": "dienzelfden",
+          "new": "die",
+          "principe": "V781"
         }
       ]
     },
@@ -2619,7 +2624,7 @@
       "number": 24,
       "textSV1888": "En hij toog zelf ook zijn klederen uit, en hij profeteerde zelf ook, voor het aangezicht van Samuël; en hij viel bloot neder dienzelfden gansen dag, en den gansen nacht. Daarom zegt men: Is Saul ook onder de profeten?",
       "text1637": "Ende [27] hy tooch selfs oock sijne cleederen uyt, ende hy propheteerde selfs oock, voor het aengesichte Samuels, ende [28] hy viel [29] bloot neder dien selven gantschen dach, ende de gantsche nacht: daerom seytmen, [30] Is Saul oock onder de Propheten?",
-      "text2026": "En hij trok zelf ook zijn kleren uit, en hij profeteerde zelf ook, voor het aangezicht van Samuël; en hij viel bloot neer dienzelfden hele dag, en de ganse nacht. Daarom zegt men: Is Saul ook onder de profeten?",
+      "text2026": "En hij trok zelf ook zijn kleren uit, en hij profeteerde zelf ook, voor het aangezicht van Samuël; en hij viel bloot neer die hele dag, en de ganse nacht. Daarom zegt men: Is Saul ook onder de profeten?",
       "marginNotes": [
         {
           "marker": "27",
@@ -2762,7 +2767,7 @@
           "morph": "HRd/Ncmpa"
         }
       ],
-      "text2026_html": "En hij trok zelf ook zijn kleren uit, en hij profeteerde zelf ook, voor het aangezicht van Samuël; en hij viel bloot neer dienzelfden hele dag, en de ganse nacht. Daarom zegt men: Is Saul ook onder de profeten?",
+      "text2026_html": "En hij trok zelf ook zijn kleren uit, en hij profeteerde zelf ook, voor het aangezicht van Samuël; en hij viel bloot neer die hele dag, en de ganse nacht. Daarom zegt men: Is Saul ook onder de profeten?",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"27\">27</sup> hij toog zelf ook zijn klederen uit, en hij profeteerde zelf ook, voor het aangezicht van Samuël; en<sup class=\"note-marker\" data-note=\"28\">28</sup> hij viel<sup class=\"note-marker\" data-note=\"29\">29</sup> bloot neder dienzelfden gansen dag, en den gansen nacht. Daarom zegt<sup class=\"note-marker\" data-note=\"30\">30</sup> men: Is Saul ook onder de profeten?",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"27\">27</sup> hy tooch selfs oock sijne cleederen uyt, ende hy propheteerde selfs oock, voor het aengesichte Samuels, ende <sup class=\"note-marker\" data-note=\"28\">28</sup> hy viel <sup class=\"note-marker\" data-note=\"29\">29</sup> bloot neder dien selven gantschen dach, ende de gantsche nacht: daerom seytmen, <sup class=\"note-marker\" data-note=\"30\">30</sup> Is Saul oock onder de Prophete<i>n</i>?",
       "phraseDiff": [
@@ -2777,14 +2782,9 @@
           "principe": "V68"
         },
         {
-          "old": "neder",
-          "new": "neer",
+          "old": "neder dienzelfden gansen",
+          "new": "neer die hele",
           "principe": "V354"
-        },
-        {
-          "old": "gansen",
-          "new": "hele",
-          "principe": null
         },
         {
           "old": "den gansen",
