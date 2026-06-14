@@ -4378,7 +4378,7 @@
       "number": 33,
       "textSV1888": "Daarna werd hem te eten voorgezet; maar hij zeide: Ik zal niet eten, totdat ik mijn woorden gesproken heb. En hij zeide: Spreek!",
       "text1637": "Daer na [44] wert hem te eten voorgeset: maer hy seyde; Ick en sal niet eten tot dat ick mijne woorden gesproken hebbe: ende [45] hy seyde; Spreeckt.",
-      "text2026": "Daarna werd hem te eten voorgezet; maar hij zei: Ik zal niet eten, totdat ik mijn woorden gesproken heb. En hij zei: Spreek!",
+      "text2026": "Daarna werd hem te eten voorgezet; maar hij zei: Ik zal niet eten, voordat ik mijn woorden gesproken heb. En hij zei: Spreek!",
       "marginNotes": [
         {
           "marker": "44",
@@ -4457,7 +4457,7 @@
           "morph": "HVpv2ms"
         }
       ],
-      "text2026_html": "Daarna werd hem te eten voorgezet; maar hij zei: <span class=\"direct-speech\"><i>Ik zal niet eten, totdat ik mijn woorden gesproken heb.</i></span> En hij zei: <span class=\"direct-speech\"><i>Spreek!</i></span>",
+      "text2026_html": "Daarna werd hem te eten voorgezet; maar hij zei: <span class=\"direct-speech\"><i>Ik zal niet eten, voordat ik mijn woorden gesproken heb.</i></span> En hij zei: <span class=\"direct-speech\"><i>Spreek!</i></span>",
       "textSV1888_html": "Daarna<sup class=\"note-marker\" data-note=\"44\">44</sup> werd hem te eten voorgezet; maar hij zeide: Ik zal niet eten, totdat ik mijn woorden gesproken heb. En<sup class=\"note-marker\" data-note=\"45\">45</sup> hij zeide: Spreek!",
       "text1637_html": "Daer na <sup class=\"note-marker\" data-note=\"44\">44</sup> wert hem te eten voorgeset: maer hy seyde; Ick en sal niet eten tot dat ick mijne woorden gesproken hebbe: ende <sup class=\"note-marker\" data-note=\"45\">45</sup> hy seyde; Spreeckt.",
       "phraseDiff": [
@@ -4465,6 +4465,11 @@
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
+        },
+        {
+          "old": "totdat",
+          "new": "voordat",
+          "principe": "V778"
         },
         {
           "old": "zeide:",
