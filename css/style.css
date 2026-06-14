@@ -4178,3 +4178,15 @@ body.citaten-uit .angel-speaks i { color: inherit !important; font-style: normal
     background: var(--bg-surface, #fff); color: var(--text-primary, #142e42);
 }
 :root[data-theme="donker"] .mp-order { background: var(--bg-surface) !important; color: var(--text-primary) !important; border-color: var(--border-default) !important; }
+
+/* Pericoop-kopjes (NBG-stijl indeling, eigen koppen) */
+.pericope-heading {
+    font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.18em;
+    color: var(--gold, #cba449);
+    margin: 24px 24px 6px;
+    line-height: 1.3;
+}
+body.pericopen-uit .pericope-heading { display: none; }
