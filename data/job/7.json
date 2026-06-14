@@ -1460,7 +1460,7 @@
       "number": 19,
       "textSV1888": "Hoe lang keert Gij U niet af van mij, en laat niet van mij af, totdat ik mijn speeksel inzwelge?",
       "text1637": "Hoe lange [49] en keert ghy u niet af van my? [ende] en laet niet van my af, tot dat ick [50] mijn speecksel inswelge?",
-      "text2026": "Hoe lang keert U Zich niet af van mij, en laat niet van mij af, totdat ik mijn speeksel inzwelge?",
+      "text2026": "Hoe lang keert U Zich niet af van mij, en laat niet van mij af, voordat ik mijn speeksel inzwelge?",
       "marginNotes": [
         {
           "marker": "49",
@@ -1524,7 +1524,7 @@
           "morph": "HNcmsc/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Hoe lang<sup class=\"note-marker\" data-note=\"49\">49</sup> keert U Zich niet af van mij, en laat niet van mij af, totdat ik<sup class=\"note-marker\" data-note=\"50\">50</sup> mijn speeksel inzwelge?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Hoe lang<sup class=\"note-marker\" data-note=\"49\">49</sup> keert U Zich niet af van mij, en laat niet van mij af, voordat ik<sup class=\"note-marker\" data-note=\"50\">50</sup> mijn speeksel inzwelge?</i></span>",
       "textSV1888_html": "Hoe lang<sup class=\"note-marker\" data-note=\"49\">49</sup> keert Gij U niet af van mij, en laat niet van mij af, totdat ik<sup class=\"note-marker\" data-note=\"50\">50</sup> mijn speeksel inzwelge?",
       "text1637_html": "Hoe lange <sup class=\"note-marker\" data-note=\"49\">49</sup> en keert ghy u niet af van my? [ende] en laet niet van my af, tot dat ick <sup class=\"note-marker\" data-note=\"50\">50</sup> mijn speecksel inswelge?",
       "phraseDiff": [
@@ -1535,8 +1535,12 @@
         },
         {
           "old": "",
-          "new": "Zich",
-          "principe": null
+          "new": "Zich"
+        },
+        {
+          "old": "totdat",
+          "new": "voordat",
+          "principe": "V778"
         }
       ]
     },
