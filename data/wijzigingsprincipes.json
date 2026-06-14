@@ -6760,6 +6760,14 @@
       "nieuw": "tegenpartij / tegenpartijen",
       "toelichting": "UITZONDERING op V93/V121/V396/V497/V525: in JURIDISCHE / rechtszaak-context (de wederpartij in een geschil of proces voor de rechter; Grieks ἀντίδικος, Hebr. de aanklager/satan in een rechtsgeding) wordt 'tegenstander' wél 'tegenpartij'. Bijv. 'verzoen u met uw tegenpartij' bij de rechter (Matt. 5:25), 'de begeerte van mijn tegenpartijen' naast 'valse getuigen' (Ps. 27:12), de aanklagers in het rechtsgeding van Ps. 109:20,29. NIET toepassen op militaire/algemene vijand of een persoonlijke/geestelijke tegenstander (de satan als 'tegenstander', vijanden in de strijd, 'weersta de tegenstander'): daar blijft 'tegenstander' staan. Bij twijfel: laten staan. Contextueel-handmatig toegepast, niet via blinde regex.",
       "regex": "\\b[Tt]egenpartij(?:en)?\\b"
+    },
+    {
+      "id": "V783",
+      "categorie": "Verouderde woorden",
+      "oud": "stemme",
+      "nieuw": "stem",
+      "toelichting": "Het archaïsche enkelvoud 'stemme' (zelfstandig naamwoord = geluid/stem) wordt 'stem'. Bijv. 'de stemme des HEEREN' → 'de stem van de HEERE', 'met luider stemme' → 'met luide stem', 'verhief zijn stemme' → 'verhief zijn stem'. WAARSCHUWING: NIET toepassen op het meervoud 'stemmen' (= meerdere stemmen, correct), en evenmin op werkwoordsvormen en samenstellingen van het werkwoord 'stemmen' (stemmen uitbrengen/afstemmen): 'instemmen', 'overeenstemmen', 'afstemmen', 'toestemmen', 'instemme', 'overeenstemme', 'toestemming', 'instemming' enz. blijven onveranderd. Woordgrenzen helpen, maar controleer per geval; in de bijbel is 'stemme' vrijwel altijd het naamwoord.",
+      "regex": "\\b[Ss]temme\\b"
     }
   ]
 }
