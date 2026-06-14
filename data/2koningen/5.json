@@ -1238,7 +1238,7 @@
       "number": 10,
       "textSV1888": "Toen zond Elisa tot hem een bode, zeggende: Ga heen en was u zevenmaal in de Jordaan, en uw vlees zal u wederkomen, en gij zult rein zijn.",
       "text1637": "Doe sondt Elisa tot hem eenen bode, seggende: Gaet henen, ende wascht u [20] sevenmael inde Iordane, ende u vleesch sal u [21] wederkomen, ende [22] ghy sult reyn zijn.",
-      "text2026": "Toen zond Elisa tot hem een bode, zeggende: Ga heen en was u zevenmaal in de Jordaan, en uw vlees zal u wederkomen, en u zult rein zijn.",
+      "text2026": "Toen zond Elisa tot hem een bode, zeggende: Ga heen en was u zevenmaal in de Jordaan, en uw vlees zal u terugkomen, en u zult rein zijn.",
       "marginNotes": [
         {
           "marker": "20",
@@ -1334,10 +1334,15 @@
           "morph": "HC/Vqv2ms"
         }
       ],
-      "text2026_html": "Toen zond Elisa tot hem een bode, zeggende: <span class=\"direct-speech\"><i>Ga heen en was u zevenmaal in de Jordaan, en uw vlees zal u wederkomen, en u zult rein zijn.</i></span>",
+      "text2026_html": "Toen zond Elisa tot hem een bode, zeggende: <span class=\"direct-speech\"><i>Ga heen en was u zevenmaal in de Jordaan, en uw vlees zal u terugkomen, en u zult rein zijn.</i></span>",
       "textSV1888_html": "Toen zond Elisa tot hem een bode, zeggende: Ga heen en was u<sup class=\"note-marker\" data-note=\"20\">20</sup> zevenmaal in de Jordaan, en uw vlees zal u<sup class=\"note-marker\" data-note=\"21\">21</sup> wederkomen, en<sup class=\"note-marker\" data-note=\"22\">22</sup> gij zult rein zijn.",
       "text1637_html": "Doe sondt Elisa tot hem eenen bode, seggende: Gaet henen, ende wascht u <sup class=\"note-marker\" data-note=\"20\">20</sup> sevenmael inde Iordane, ende u vleesch sal u <sup class=\"note-marker\" data-note=\"21\">21</sup> wederkomen, ende <sup class=\"note-marker\" data-note=\"22\">22</sup> ghy sult reyn zijn.",
       "phraseDiff": [
+        {
+          "old": "wederkomen,",
+          "new": "terugkomen,",
+          "principe": "V769"
+        },
         {
           "old": "gij",
           "new": "u",
@@ -3108,7 +3113,7 @@
       "number": 23,
       "textSV1888": "En Naäman zeide: Belieft het u, neem twee talenten. En hij hield aan bij hem, en bond twee talenten zilvers in twee buidels, met twee wisselklederen, en hij leide ze op twee van zijn jongens, die ze voor zijn aangezicht droegen.",
       "text1637": "Ende Naaman seyde, Believet u, neemt twee talenten: ende hy hielt aen by hem, ende bondt twee talenten silvers in twee buydels, met twee wissel-kleederen, ende hy leydese op twee van sijne jongens, diese voor sijn aengesicht droegen.",
-      "text2026": "En Naäman zei: Belieft het u, neem twee talenten. En hij hield aan bij hem, en bond twee talenten zilvers in twee buidels, met twee wisselklederen, en hij legde ze op twee van zijn jongens, die ze voor zijn aangezicht droegen.",
+      "text2026": "En Naäman zei: Belieft het u, neem twee talenten. En hij hield aan bij hem, en bond twee talenten zilvers in twee beurzen, met twee wisselklederen, en hij legde ze op twee van zijn jongens, die ze voor zijn aangezicht droegen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3217,13 +3222,18 @@
           "morph": "HR/Ncbpc/Sp3ms"
         }
       ],
-      "text2026_html": "En Naäman zei: <span class=\"direct-speech\"><i>Belieft het u, neem twee talenten. En hij hield aan bij hem, en bond twee talenten zilvers in twee buidels, met twee wisselklederen, en hij legde ze op twee van zijn jongens, die ze voor zijn aangezicht droegen.</i></span>",
+      "text2026_html": "En Naäman zei: <span class=\"direct-speech\"><i>Belieft het u, neem twee talenten. En hij hield aan bij hem, en bond twee talenten zilvers in twee beurzen, met twee wisselklederen, en hij legde ze op twee van zijn jongens, die ze voor zijn aangezicht droegen.</i></span>",
       "text1637_html": "Ende Naaman seyde, Believet u, neemt twee talenten: ende hy hielt aen by hem, ende bondt twee talenten silvers in twee buydels, met twee wissel-kleederen, ende hy leydese op twee van sijne jongens, diese voor sijn aengesicht droegen.",
       "phraseDiff": [
         {
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
+        },
+        {
+          "old": "buidels,",
+          "new": "beurzen,",
+          "principe": "V768"
         },
         {
           "old": "leide",
