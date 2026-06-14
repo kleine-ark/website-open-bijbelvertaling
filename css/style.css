@@ -4239,8 +4239,11 @@ body.show-chapter-intro .chapter-intro-inline {
 }
 @media (max-width: 640px) { body.show-chapter-intro .chapter-intro-inline { margin: 4px 16px 14px; } }
 
-/* Doorlopend lezen: vorige/volgende-navigatie onderaan verbergen */
-body.doorlopend-aan #chapter-footer { display: none !important; }
+/* Doorlopend lezen: alleen vorige/volgende-knoppen verbergen, play-knop behouden */
+body.doorlopend-aan #chapter-footer .chf-prev,
+body.doorlopend-aan #chapter-footer .chf-next,
+body.doorlopend-aan #mobile-prev-btn,
+body.doorlopend-aan #mobile-next-btn { display: none !important; }
 
 /* Doorlopend lezen: scheiding tussen aaneengeschoven hoofdstukken */
 .chapter-separator {
