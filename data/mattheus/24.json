@@ -165,7 +165,7 @@
       "number": 2,
       "textSV1888": "En Jezus zeide tot hen: Ziet gij niet al deze dingen? Voorwaar zeg Ik: Hier zal niet een steen op den anderen steen gelaten worden, die niet afgebroken zal worden.",
       "text1637": "Ende Iesus seyde tot haer, En siet ghy niet alle dese dingen? Voorwaer segge ick, [b] Hier en sal [3] niet [eenen] steen op den [anderen] steen gelaten worden, die niet [4] afgebroken en sal worden.",
-      "text2026": "En Jezus zei tot hen: Ziet u niet al deze dingen? Werkelijk zeg Ik: Hier zal niet een steen op de anderen steen gelaten worden, die niet afgebroken zal worden.",
+      "text2026": "En Jezus zei tot hen: Ziet u niet al deze dingen? Werkelijk zeg Ik: Hier zal niet één steen op de anderen steen gelaten worden, die niet afgebroken zal worden.",
       "marginNotes": [
         {
           "marker": "b",
@@ -323,7 +323,7 @@
           "gloss": "〔to destroy/lodge"
         }
       ],
-      "text2026_html": "En Jezus zei tot hen: <span class=\"god-speaks\"><i>Ziet u niet al deze dingen? Werkelijk zeg Ik: Hier zal niet een steen op de anderen steen gelaten worden, die niet afgebroken zal worden.</i></span>",
+      "text2026_html": "En Jezus zei tot hen: <span class=\"god-speaks\"><i>Ziet u niet al deze dingen? Werkelijk zeg Ik: Hier zal niet één steen op de anderen steen gelaten worden, die niet afgebroken zal worden.</i></span>",
       "textSV1888_html": "En Jezus zeide tot hen: Ziet gij niet al deze dingen? Voorwaar zeg Ik:<sup class=\"note-marker\" data-note=\"b\">b</sup> Hier zal<sup class=\"note-marker\" data-note=\"3\">3</sup> niet een steen op den anderen steen gelaten worden, die niet<sup class=\"note-marker\" data-note=\"4\">4</sup> afgebroken zal worden.",
       "text1637_html": "Ende Iesus seyde tot haer, En siet ghy niet alle dese dingen? Voorwaer segge ick, <sup class=\"note-marker\" data-note=\"b\">b</sup> Hier en sal <sup class=\"note-marker\" data-note=\"3\">3</sup> niet [<i>eenen</i>] steen op den [<i>anderen</i>] steen gelaten worden, die niet <sup class=\"note-marker\" data-note=\"4\">4</sup> afgebroken en sal worden.",
       "phraseDiff": [
@@ -346,6 +346,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },
@@ -2244,7 +2249,7 @@
       "number": 19,
       "textSV1888": "Maar wee den bevruchten, en den zogenden vrouwen in die dagen!",
       "text1637": "Maer [21] wee den bevruchten ende den soogenden [vrouwen] in die dagen.",
-      "text2026": "Maar wee de bevruchten, en de zogenden vrouwen in die dagen!",
+      "text2026": "Maar wee de zwangeren, en de zogenden vrouwen in die dagen!",
       "marginNotes": [
         {
           "marker": "21",
@@ -2334,7 +2339,7 @@
           "gloss": "〔day"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar<sup class=\"note-marker\" data-note=\"21\">21</sup> wee de bevruchten, en de zogenden vrouwen in die dagen!</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar<sup class=\"note-marker\" data-note=\"21\">21</sup> wee de zwangeren, en de zogenden vrouwen in die dagen!</i></span>",
       "textSV1888_html": "Maar<sup class=\"note-marker\" data-note=\"21\">21</sup> wee den bevruchten, en den zogenden vrouwen in die dagen!",
       "text1637_html": "Maer <sup class=\"note-marker\" data-note=\"21\">21</sup> wee den bevruchten ende den soogenden [<i>vrouwen</i>] in die dagen.",
       "phraseDiff": [
@@ -2347,6 +2352,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "bevruchten",
+          "new": "zwangeren",
+          "principe": null
         }
       ]
     },

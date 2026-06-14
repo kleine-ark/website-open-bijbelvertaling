@@ -1373,7 +1373,7 @@
       "number": 12,
       "textSV1888": "Zeggende: Deze laatsten hebben maar een uur gearbeid, en gij hebt ze ons gelijk gemaakt, die den last des daags en de hitte gedragen hebben.",
       "text1637": "Seggende, Dese laetste en hebben [maer] een uyre [8] gearbeydt, ende ghy hebtse ons gelijck gemaeckt, die wy den last des daegs ende de hitte gedragen hebben.",
-      "text2026": "Zeggende: Deze laatsten hebben maar een uur gewerkt, en u hebt ze ons gelijk gemaakt, die de last overdag en de hitte gedragen hebben.",
+      "text2026": "Zeggende: Deze laatsten hebben maar één uur gewerkt, en u hebt ze ons gelijk gemaakt, die de last overdag en de hitte gedragen hebben.",
       "marginNotes": [
         {
           "marker": "8",
@@ -1511,7 +1511,7 @@
           "gloss": "〔heat"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zeggende: Deze laatsten hebben maar een uur gewerkt, en u<sup class=\"note-marker\" data-note=\"8\">8</sup> hebt ze ons gelijk gemaakt, die de last overdag en de hitte gedragen hebben.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zeggende: Deze laatsten hebben maar één uur gewerkt, en u<sup class=\"note-marker\" data-note=\"8\">8</sup> hebt ze ons gelijk gemaakt, die de last overdag en de hitte gedragen hebben.</i></span>",
       "textSV1888_html": "Zeggende: Deze laatsten hebben maar een uur gearbeid, en gij<sup class=\"note-marker\" data-note=\"8\">8</sup> hebt ze ons gelijk gemaakt, die den last des daags en de hitte gedragen hebben.",
       "text1637_html": "Seggende, Dese laetste en hebben [<i>maer</i>] een uyre <sup class=\"note-marker\" data-note=\"8\">8</sup> gearbeydt, ende ghy hebtse ons gelijck gemaeckt, die wy den last des daegs ende de hitte gedragen hebben.",
       "phraseDiff": [
@@ -1534,6 +1534,11 @@
           "old": "des daags",
           "new": "overdag",
           "principe": "N3"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },
