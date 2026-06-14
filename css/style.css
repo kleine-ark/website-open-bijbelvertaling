@@ -4245,6 +4245,19 @@ body.doorlopend-aan #chapter-footer .chf-next,
 body.doorlopend-aan #mobile-prev-btn,
 body.doorlopend-aan #mobile-next-btn { display: none !important; }
 
+/* Doorlopend lezen: geen footer-strook — de player zweeft vóór de tekst */
+body.doorlopend-aan #chapter-footer {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    margin-top: 0;
+    justify-content: center;
+    pointer-events: none;   /* lege strook vangt geen klikken; tekst blijft selecteerbaar */
+}
+body.doorlopend-aan #chapter-footer .chf-center { pointer-events: auto; }
+
 /* Doorlopend lezen: scheiding tussen aaneengeschoven hoofdstukken */
 .chapter-separator {
     font-family: var(--font-cursive, 'Tangerine', cursive);
