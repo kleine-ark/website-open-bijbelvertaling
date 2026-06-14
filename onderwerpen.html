@@ -13,7 +13,21 @@
         .page .intro { line-height: 1.7; margin-bottom: 22px; color: #444; max-width: 640px; }
         .ond-zoek { width: 100%; max-width: 360px; padding: 9px 14px; border: 1px solid #d8d2c4; border-radius: 8px; font-size: 15px; margin-bottom: 26px; }
         .ond-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
-        .ond-card { background: #fff; border: 1px solid #e5e1d8; border-radius: 10px; padding: 18px 20px; box-shadow: 0 1px 4px rgba(20,46,66,0.05); }
+        .ond-card { background: #fff; border: 1px solid #e5e1d8; border-radius: 10px; padding: 18px 20px; box-shadow: 0 1px 4px rgba(20,46,66,0.05); text-align: left; width: 100%; font: inherit; cursor: pointer; transition: box-shadow .15s, transform .1s; }
+        .ond-card:hover { box-shadow: 0 4px 14px rgba(20,46,66,0.12); transform: translateY(-1px); }
+        /* Detailweergave */
+        .ond-terug { background: none; border: none; color: var(--gold); font-size: 14px; cursor: pointer; padding: 0 0 14px; font-weight: 600; }
+        #ond-detail h2 { font-size: 24px; color: var(--navy); display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 600; }
+        .beschr-detail { color: #555; line-height: 1.6; margin: 0 0 6px; max-width: 640px; }
+        .ond-verzen-lijst { list-style: none; padding: 0; margin: 14px 0 0; column-width: 220px; column-gap: 28px; }
+        .ond-verzen-lijst li { margin-bottom: 7px; break-inside: avoid; }
+        .ond-verzen-lijst a { color: var(--navy); text-decoration: none; }
+        .ond-verzen-lijst a:hover { color: var(--gold); text-decoration: underline; }
+        .ond-verzen-lijst .ster { color: var(--gold); }
+        .ond-verzen-lijst .vnote { display: block; font-size: 12px; color: #888; font-style: italic; }
+        :root[data-theme="donker"] #ond-detail h2 { color: var(--text-primary); }
+        :root[data-theme="donker"] .beschr-detail { color: var(--text-secondary, #aaa); }
+        :root[data-theme="donker"] .ond-verzen-lijst a { color: var(--text-primary); }
         .ond-card h2 { font-size: 18px; color: var(--navy); margin: 0 0 6px; display: flex; align-items: center; gap: 9px; font-weight: 600; }
         .ond-dot { width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0; }
         .ond-card .beschr { font-size: 13.5px; color: #666; line-height: 1.55; margin: 0 0 12px; }
@@ -59,55 +73,90 @@
         <p class="intro">Bijbelgedeelten geordend op thema. Klik op een vers om het in de tekst te openen. Een <span style="color:var(--gold);">&#9733;</span> markeert een sleuteltekst.</p>
         <input type="search" class="ond-zoek" id="ond-zoek" placeholder="Filter op onderwerp…" aria-label="Filter op onderwerp">
         <div class="ond-grid" id="ond-grid"><p class="ond-empty">Onderwerpen laden…</p></div>
+
+        <!-- Detailweergave van één onderwerp -->
+        <div id="ond-detail" style="display:none;">
+            <button id="ond-terug" class="ond-terug">&#8249; Alle onderwerpen</button>
+            <h2 id="ond-detail-titel"></h2>
+            <p id="ond-detail-beschr" class="beschr-detail"></p>
+            <div id="ond-detail-count" class="count"></div>
+            <ul class="ond-verzen-lijst" id="ond-detail-lijst"></ul>
+        </div>
+
         <p style="margin-top:40px;"><a href="/" style="color:var(--gold);">← Terug naar de tekst</a></p>
     </div>
 
     <script>
     (function () {
         const grid = document.getElementById('ond-grid');
+        const zoek = document.getElementById('ond-zoek');
+        const detail = document.getElementById('ond-detail');
+        let TAGS = [];
+
         function refToHref(ref) {
-            // "genesis 1:3" -> "index.html#genesis/1"
             const sp = ref.lastIndexOf(' ');
             const book = ref.slice(0, sp);
-            const chv = ref.slice(sp + 1);
-            const ch = chv.split(':')[0];
+            const ch = ref.slice(sp + 1).split(':')[0];
             return `index.html#${book}/${ch}`;
         }
-        function render(tags) {
-            if (!tags || !tags.length) { grid.innerHTML = '<p class="ond-empty">Nog geen onderwerpen.</p>'; return; }
-            tags.sort((a, b) => (b.verzen ? b.verzen.length : 0) - (a.verzen ? a.verzen.length : 0));
-            grid.innerHTML = tags.map(tag => {
-                const verzen = (tag.verzen || [])
-                    .map(it => typeof it === 'string' ? { ref: it, rang: 3 } : it)
-                    .sort((a, b) => (a.rang || 3) - (b.rang || 3));
-                const items = verzen.map(it => {
-                    const ster = (it.rang === 1) ? '<span class="ster">&#9733;</span> ' : '';
-                    return `<li><a href="${refToHref(it.ref)}" title="${(it.notitie || '').replace(/"/g,'&quot;')}">${ster}${it.ref}</a></li>`;
-                }).join('');
-                return `<div class="ond-card" data-naam="${(tag.naam || '').toLowerCase()}">
+        function verzenVan(tag) {
+            return (tag.verzen || [])
+                .map(it => typeof it === 'string' ? { ref: it, rang: 3 } : it)
+                .sort((a, b) => (a.rang || 3) - (b.rang || 3));
+        }
+        function toonGrid() {
+            detail.style.display = 'none';
+            grid.style.display = '';
+            zoek.style.display = '';
+            if (!TAGS.length) { grid.innerHTML = '<p class="ond-empty">Nog geen onderwerpen.</p>'; return; }
+            const sorted = [...TAGS].sort((a, b) => (b.verzen ? b.verzen.length : 0) - (a.verzen ? a.verzen.length : 0));
+            grid.innerHTML = sorted.map(tag => {
+                const n = (tag.verzen || []).length;
+                return `<button class="ond-card" data-id="${tag.id}" data-naam="${(tag.naam || '').toLowerCase()}">
                     <h2><span class="ond-dot" style="background:${tag.kleur || '#999'}"></span>${tag.naam || ''}</h2>
                     ${tag.beschrijving ? `<p class="beschr">${tag.beschrijving}</p>` : ''}
-                    <div class="count">${verzen.length} vers${verzen.length === 1 ? '' : 'en'}</div>
-                    <ul class="ond-verzen">${items}</ul>
-                </div>`;
+                    <div class="count">${n} vers${n === 1 ? '' : 'en'} &rsaquo;</div>
+                </button>`;
             }).join('');
+            grid.querySelectorAll('.ond-card').forEach(c =>
+                c.addEventListener('click', () => toonDetail(c.dataset.id)));
         }
-        // Filter
-        document.getElementById('ond-zoek').addEventListener('input', function () {
+        function toonDetail(id) {
+            const tag = TAGS.find(t => t.id === id);
+            if (!tag) return;
+            grid.style.display = 'none';
+            zoek.style.display = 'none';
+            detail.style.display = '';
+            const verzen = verzenVan(tag);
+            document.getElementById('ond-detail-titel').innerHTML =
+                `<span class="ond-dot" style="background:${tag.kleur || '#999'}"></span>${tag.naam || ''}`;
+            document.getElementById('ond-detail-beschr').textContent = tag.beschrijving || '';
+            document.getElementById('ond-detail-count').textContent = `${verzen.length} vers${verzen.length === 1 ? '' : 'en'}`;
+            document.getElementById('ond-detail-lijst').innerHTML = verzen.map(it => {
+                const ster = (it.rang === 1) ? '<span class="ster">&#9733;</span> ' : '';
+                const note = it.notitie ? `<span class="vnote">${it.notitie}</span>` : '';
+                return `<li>${ster}<a href="${refToHref(it.ref)}">${it.ref}</a>${note}</li>`;
+            }).join('');
+            window.scrollTo(0, 0);
+            location.hash = 'tag=' + encodeURIComponent(id);
+        }
+        document.getElementById('ond-terug').addEventListener('click', () => { location.hash = ''; toonGrid(); });
+        zoek.addEventListener('input', function () {
             const q = this.value.trim().toLowerCase();
             document.querySelectorAll('.ond-card').forEach(c => {
                 c.style.display = (!q || c.dataset.naam.includes(q)) ? '' : 'none';
             });
         });
-        // Data: lokale toevoegingen (ov_tags) hebben voorrang, anders tags.json
-        let local = null;
-        try { local = JSON.parse(localStorage.getItem('ov_tags')); } catch (e) {}
-        if (local && local.tags && local.tags.length) {
-            render(local.tags);
-        } else {
-            fetch('data/tags.json').then(r => r.json()).then(d => render(d.tags || []))
-                .catch(() => { grid.innerHTML = '<p class="ond-empty">Onderwerpen konden niet geladen worden.</p>'; });
+        function init(tags) {
+            TAGS = tags || [];
+            const m = (location.hash || '').match(/tag=([^&]+)/);
+            if (m) toonDetail(decodeURIComponent(m[1])); else toonGrid();
         }
+        // Spreker-tags (apart bestand) + onderwerp-tags samenvoegen
+        Promise.all([
+            fetch('data/tags.json').then(r => r.json()).catch(() => ({ tags: [] })),
+            fetch('data/spreker-tags.json').then(r => r.ok ? r.json() : { tags: [] }).catch(() => ({ tags: [] }))
+        ]).then(([a, b]) => init([...(a.tags || []), ...(b.tags || [])]));
     })();
     </script>
     <script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);}catch(e){console.error(e);}});})();</script>
