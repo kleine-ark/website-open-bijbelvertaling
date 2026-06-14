@@ -502,7 +502,7 @@
                 <label><input type="checkbox" id="toggle-versnummers" checked onchange="Opties.state.versnummers=this.checked?'aan':'uit';Opties.applyVerseNumbersClass();Opties.save();"> Versnummers</label>
                 <label><input type="checkbox" id="toggle-hoofdstuknummers" checked onchange="document.body.classList.toggle('hoofdstuknummers-uit', !this.checked);localStorage.setItem('hoofdstuknummers', this.checked)"> Hoofdstuknummers</label>
                 <label><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"> Pericoop-kopjes <span class="hint">(tussenkopjes per gedeelte)</span></label>
-                <label><input type="checkbox" id="toggle-doorlopend" onchange="localStorage.setItem('doorlopend', this.checked); location.reload();"> Doorlopend lezen <span class="hint">(scroll automatisch door hoofdstukken)</span></label>
+                <label><input type="checkbox" id="toggle-doorlopend" onchange="localStorage.setItem('doorlopend', this.checked); document.body.classList.toggle('doorlopend-aan', this.checked); if (typeof App !== 'undefined' && typeof Navigation !== 'undefined' && Navigation.currentBook) { App.renderChapter(Navigation.currentBook, Navigation.currentChapter); }"> Doorlopend lezen <span class="hint">(scroll automatisch door hoofdstukken)</span></label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Layout extra kolommen</div>
