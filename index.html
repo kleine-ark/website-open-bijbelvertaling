@@ -500,6 +500,7 @@
                 <label><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"> Dyslexie-modus</label>
                 <label><input type="checkbox" id="toggle-citaten" checked onchange="document.body.classList.toggle('citaten-uit', !this.checked);localStorage.setItem('citaatopmaak', this.checked)"> Citaatopmaak <span class="hint">(cursief, « », rood = God, geel = duivel)</span></label>
                 <label><input type="checkbox" id="toggle-versnummers" checked onchange="Opties.state.versnummers=this.checked?'aan':'uit';Opties.applyVerseNumbersClass();Opties.save();"> Versnummers</label>
+                <label><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"> Pericoop-kopjes <span class="hint">(tussenkopjes per gedeelte)</span></label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Layout extra kolommen</div>
@@ -740,6 +741,12 @@
         document.body.classList.add('citaten-uit');
         var cc = document.getElementById('toggle-citaten');
         if (cc) cc.checked = false;
+    }
+    // Pericoop-kopjes herstellen (standaard AAN; alleen uit als expliciet 'false')
+    if (localStorage.getItem('pericopen') === 'false') {
+        document.body.classList.add('pericopen-uit');
+        var cp = document.getElementById('toggle-pericopen');
+        if (cp) cp.checked = false;
     }
 </script>
     <script src="js/sidebar.js"></script>

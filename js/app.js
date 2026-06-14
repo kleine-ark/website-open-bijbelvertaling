@@ -538,11 +538,29 @@ const App = {
             introEl.style.display = 'none';
         }
 
+        // Pericoop-kopjes (NBG-stijl indeling, eigen koppen) — eenmalig laden
+        if (App._pericopen === undefined) {
+            App._pericopen = null;
+            try { App._pericopen = await (await fetch('data/pericopen.json')).json(); }
+            catch (e) { App._pericopen = {}; }
+        }
+        const pericMap = {};
+        for (const p of ((App._pericopen && App._pericopen[bookId]) || [])) {
+            if (p.c === chapterNum) pericMap[p.v] = p.t;
+        }
+
         // Verzen renderen
         const container = document.getElementById('verses-container');
         container.innerHTML = '';
 
         for (const verse of chapter.verses) {
+            // Pericoop-kop vóór dit vers?
+            if (pericMap[verse.number]) {
+                const h = document.createElement('div');
+                h.className = 'pericope-heading';
+                h.textContent = pericMap[verse.number];
+                container.appendChild(h);
+            }
             const row = document.createElement('div');
             row.className = 'verse-row';
             row.dataset.status = verse.status || 'empty';
