@@ -8064,7 +8064,7 @@
       "number": 58,
       "textSV1888": "Want als gij heengaat met uw wederpartij voor de overheid, zo doet naarstigheid op den weg, om van hem verlost te worden; opdat hij misschien u niet voor den rechter trekke, en de rechter u den gerechtsdienaar overlevere, en de gerechtsdienaar u in de gevangenis werpe.",
       "text1637": "[g] Want als ghy henen gaet met uwe wederpartye voor de Overheyt, so doet neersticheyt op den wegh om van hem [51] verlost te worden, op dat hy misschien u niet voor den rechter en trecke, ende de rechter u den [52] gerechts-dienaer over levere, ende de gerechts-dienaer u inde gevanckenisse werpe.",
-      "text2026": "Want als u heengaat met uw tegenpartij voor de overheid, zo doet moeite op de weg, om van hem verlost te worden; opdat hij misschien u niet voor de rechter trekke, en de rechter u de gerechtsdienaar overlevere, en de gerechtsdienaar u in de gevangenis werpe.",
+      "text2026": "Want als u heengaat met uw tegenpartij voor de overheid, zo doet moeite op de weg, om van hem verlost te worden; opdat hij misschien u niet voor de rechter sleept, en de rechter u de gerechtsdienaar overlevert, en de gerechtsdienaar u in de gevangenis werpe.",
       "marginNotes": [
         {
           "marker": "g",
@@ -8312,7 +8312,7 @@
           "gloss": "〔prison/watch"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"god-speaks\"><i> Want als u heengaat met uw tegenpartij voor de overheid, zo doet moeite op de weg, om van hem<sup class=\"note-marker\" data-note=\"51\">51</sup> verlost te worden; opdat hij misschien u niet voor de rechter trekke, en de rechter u de<sup class=\"note-marker\" data-note=\"52\">52</sup> gerechtsdienaar overlevere, en de gerechtsdienaar u in de gevangenis werpe.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"god-speaks\"><i> Want als u heengaat met uw tegenpartij voor de overheid, zo doet moeite op de weg, om van hem<sup class=\"note-marker\" data-note=\"51\">51</sup> verlost te worden; opdat hij misschien u niet voor de rechter sleept, en de rechter u de<sup class=\"note-marker\" data-note=\"52\">52</sup> gerechtsdienaar overlevert, en de gerechtsdienaar u in de gevangenis werpe.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> Want als gij heengaat met uw wederpartij voor de overheid, zo doet naarstigheid op den weg, om van hem<sup class=\"note-marker\" data-note=\"51\">51</sup> verlost te worden; opdat hij misschien u niet voor den rechter trekke, en de rechter u den<sup class=\"note-marker\" data-note=\"52\">52</sup> gerechtsdienaar overlevere, en de gerechtsdienaar u in de gevangenis werpe.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> Want als ghy henen gaet met uwe wederpartye voor de Overheyt, so doet neersticheyt op den wegh om van hem <sup class=\"note-marker\" data-note=\"51\">51</sup> verlost te worden, op dat hy misschien u niet voor den rechter en trecke, ende de rechter u den <sup class=\"note-marker\" data-note=\"52\">52</sup> gerechts-dienaer over levere, ende de gerechts-dienaer u inde gevanckenisse werpe.",
       "phraseDiff": [
@@ -8337,8 +8337,16 @@
           "new": "de"
         },
         {
+          "old": "trekke,",
+          "new": "sleept,"
+        },
+        {
           "old": "den",
           "new": "de"
+        },
+        {
+          "old": "overlevere,",
+          "new": "overlevert,"
         }
       ]
     },
@@ -8346,7 +8354,7 @@
       "number": 59,
       "textSV1888": "Ik zeg u: Gij zult van daar geenszins uitgaan, totdat gij ook het laatste penningsken betaald zult hebben.",
       "text1637": "Ick segge u, ghy en sult van daer geensins uytgaen, tot dat ghy oock het laetste [53] pennincksken betaelt sult hebben.",
-      "text2026": "Ik zeg u: U zult van daar in geen geval uitgaan, totdat u ook het laatste penninkje betaald zult hebben.",
+      "text2026": "Ik zeg u: U zult van daar in geen geval uitgaan, voordat u ook het laatste penninkje betaald zult hebben.",
       "marginNotes": [
         {
           "marker": "53",
@@ -8430,29 +8438,25 @@
           "gloss": "〔to pay"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Ik zeg u: U zult van daar in geen geval uitgaan, totdat u ook het laatste<sup class=\"note-marker\" data-note=\"53\">53</sup> penninkje betaald zult hebben.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Ik zeg u: U zult van daar in geen geval uitgaan, voordat u ook het laatste<sup class=\"note-marker\" data-note=\"53\">53</sup> penninkje betaald zult hebben.</i></span>",
       "textSV1888_html": "Ik zeg u: Gij zult van daar geenszins uitgaan, totdat gij ook het laatste<sup class=\"note-marker\" data-note=\"53\">53</sup> penningsken betaald zult hebben.",
       "text1637_html": "Ick segge u, ghy en sult van daer geensins uytgaen, tot dat ghy oock het laetste <sup class=\"note-marker\" data-note=\"53\">53</sup> pennincksken betaelt sult hebbe<i>n</i>.",
       "phraseDiff": [
         {
           "old": "Gij",
-          "new": "U",
-          "principe": "A1"
+          "new": "U"
         },
         {
           "old": "geenszins",
-          "new": "in geen geval",
-          "principe": "V14"
+          "new": "in geen geval"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "totdat gij",
+          "new": "voordat u"
         },
         {
           "old": "penningsken",
-          "new": "penninkje",
-          "principe": "V690"
+          "new": "penninkje"
         }
       ]
     }
