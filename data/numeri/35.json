@@ -1321,7 +1321,7 @@
         {
           "old": "totdat",
           "new": "voordat",
-          "principe": "V778"
+          "principe": null
         }
       ]
     },
@@ -3116,7 +3116,7 @@
       "number": 30,
       "textSV1888": "Al wie de ziel slaat, naar den mond der getuigen zal men den doodslager doden, maar een enig getuige zal niet getuigen tegen een ziel, dat zij sterve.",
       "text1637": "Al wie [30] eene ziele slaet, [f] nae den mont der getuygen [31] salmen den dootslager dooden: maer een eenich getuyge en sal niet getuygen tegens eene ziele, [32] datse sterve.",
-      "text2026": "Al wie de ziel slaat, naar de mond van de getuigen zal men de moordenaar doden, maar een enig getuige zal niet getuigen tegen een ziel, dat zij sterve.",
+      "text2026": "Al wie de ziel slaat, naar de mond van de getuigen zal men de moordenaar doden, maar één enig getuige zal niet getuigen tegen een ziel, dat zij sterve.",
       "marginNotes": [
         {
           "marker": "30",
@@ -3219,7 +3219,7 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Al wie<sup class=\"note-marker\" data-note=\"30\">30</sup> de<sup class=\"note-marker\" data-note=\"f\">f</sup> ziel slaat,<sup class=\"note-marker\" data-note=\"31\">31</sup> naar de mond van de getuigen zal men de moordenaar doden, maar een enig getuige zal niet getuigen tegen een ziel,<sup class=\"note-marker\" data-note=\"32\">32</sup> dat zij sterve.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Al wie<sup class=\"note-marker\" data-note=\"30\">30</sup> de<sup class=\"note-marker\" data-note=\"f\">f</sup> ziel slaat,<sup class=\"note-marker\" data-note=\"31\">31</sup> naar de mond van de getuigen zal men de moordenaar doden, maar één enig getuige zal niet getuigen tegen een ziel,<sup class=\"note-marker\" data-note=\"32\">32</sup> dat zij sterve.</i></span>",
       "textSV1888_html": "Al wie<sup class=\"note-marker\" data-note=\"30\">30</sup> de<sup class=\"note-marker\" data-note=\"f\">f</sup> ziel slaat, naar den mond der getuigen<sup class=\"note-marker\" data-note=\"31\">31</sup> zal men den doodslager doden, maar een enig getuige zal niet getuigen tegen een ziel,<sup class=\"note-marker\" data-note=\"32\">32</sup> dat zij sterve.",
       "text1637_html": "Al wie <sup class=\"note-marker\" data-note=\"30\">30</sup> eene ziele slaet, <sup class=\"note-marker\" data-note=\"f\">f</sup> nae den mont der getuygen <sup class=\"note-marker\" data-note=\"31\">31</sup> salmen den dootslager dooden: maer een eenich getuyge en sal niet getuygen tegens eene ziele, <sup class=\"note-marker\" data-note=\"32\">32</sup> datse sterve.",
       "phraseDiff": [
@@ -3237,6 +3237,11 @@
           "old": "den doodslager",
           "new": "de moordenaar",
           "principe": "N1"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },

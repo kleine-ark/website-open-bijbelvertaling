@@ -2332,7 +2332,7 @@
       "number": 22,
       "textSV1888": "Maar zij vielen op hun aangezichten, en zeiden: O God! God der geesten van alle vlees! een enig man zal gezondigd hebben, en zult Gij U over deze ganse vergadering grotelijks vertoornen?",
       "text1637": "Maer sy vielen op hare aengesichten, ende seyden; O Godt, Godt [c] der [30] geesten alles [31] vleesches: [32] een eenich man sal gesondigt hebben, ende sult ghy u over dese gantsche vergaderinge grootlicx vertoornen?",
-      "text2026": "Maar zij vielen op hun aangezichten, en zeiden: O God! God van de geesten van alle vlees! een enig man zal gezondigd hebben, en zult U Zich over deze hele vergadering enorm vertoornen?",
+      "text2026": "Maar zij vielen op hun aangezichten, en zeiden: O God! God van de geesten van alle vlees! één enig man zal gezondigd hebben, en zult U Zich over deze hele vergadering enorm vertoornen?",
       "marginNotes": [
         {
           "marker": "c",
@@ -2445,7 +2445,7 @@
           "morph": "HVqi2ms"
         }
       ],
-      "text2026_html": "Maar zij vielen op hun aangezichten, en zeiden: <span class=\"direct-speech\"><i>O God! God<sup class=\"note-marker\" data-note=\"c\">c</sup> van<sup class=\"note-marker\" data-note=\"30\">30</sup> de geesten van<sup class=\"note-marker\" data-note=\"31\">31</sup> alle<sup class=\"note-marker\" data-note=\"32\">32</sup> vlees! een enig man zal gezondigd hebben, en zult U Zich over deze hele vergadering enorm vertoornen?</i></span>",
+      "text2026_html": "Maar zij vielen op hun aangezichten, en zeiden: <span class=\"direct-speech\"><i>O God! God<sup class=\"note-marker\" data-note=\"c\">c</sup> van<sup class=\"note-marker\" data-note=\"30\">30</sup> de geesten van<sup class=\"note-marker\" data-note=\"31\">31</sup> alle<sup class=\"note-marker\" data-note=\"32\">32</sup> vlees! één enig man zal gezondigd hebben, en zult U Zich over deze hele vergadering enorm vertoornen?</i></span>",
       "textSV1888_html": "Maar zij vielen op hun aangezichten, en zeiden: O God! God<sup class=\"note-marker\" data-note=\"c\">c</sup> der<sup class=\"note-marker\" data-note=\"30\">30</sup> geesten van<sup class=\"note-marker\" data-note=\"31\">31</sup> alle<sup class=\"note-marker\" data-note=\"32\">32</sup> vlees! een enig man zal gezondigd hebben, en zult Gij U over deze ganse vergadering grotelijks vertoornen?",
       "text1637_html": "Maer sy vielen op hare aengesichten, ende seyden; O Godt, Godt <sup class=\"note-marker\" data-note=\"c\">c</sup> der <sup class=\"note-marker\" data-note=\"30\">30</sup> geesten alles <sup class=\"note-marker\" data-note=\"31\">31</sup> vleesches: <sup class=\"note-marker\" data-note=\"32\">32</sup> een eenich man sal gesondigt hebben, ende sult ghy u over dese gantsche vergaderinge grootlicx vertoornen?",
       "phraseDiff": [
@@ -2453,6 +2453,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         },
         {
           "old": "Gij",
@@ -3933,7 +3938,8 @@
       "phraseDiff": [
         {
           "old": "Israëls,",
-          "new": "van Israël,"
+          "new": "van Israël,",
+          "principe": null
         },
         {
           "old": "des HEEREN;",
@@ -3943,15 +3949,17 @@
         {
           "old": "worde",
           "new": "wordt",
-          "principe": "V772"
+          "principe": null
         },
         {
           "old": "gelijk",
-          "new": "zoals"
+          "new": "zoals",
+          "principe": null
         },
         {
           "old": "",
-          "new": "JAHWEH door"
+          "new": "JAHWEH door",
+          "principe": null
         },
         {
           "old": "HEERE door den",
