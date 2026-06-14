@@ -489,6 +489,7 @@ const App = {
         // Pre-fetch buurchapters bij idle (volgende klik = instant)
         DataLoader.prefetchAdjacent(bookId, chapterNum);
 
+        if (!append) {
         // Titel — concept-marker bij niet-geverifieerde hoofdstukken
         const titleEl = document.getElementById('chapter-title');
         const verified = App._isVerified(bookId, chapterNum);
@@ -538,6 +539,7 @@ const App = {
         } else {
             introEl.style.display = 'none';
         }
+        }  // einde if(!append): bovenstaande chrome alleen bij normaal renderen
 
         // Pericoop-kopjes (NBG-stijl indeling, eigen koppen) — eenmalig laden
         if (App._pericopen === undefined) {
@@ -552,7 +554,17 @@ const App = {
 
         // Verzen renderen
         const container = document.getElementById('verses-container');
-        container.innerHTML = '';
+        if (!append) {
+            container.innerHTML = '';
+        } else {
+            // Doorlopend lezen: scheidingskop voor het toegevoegde hoofdstuk
+            const sep = document.createElement('div');
+            sep.className = 'chapter-separator';
+            sep.textContent = `${book.nameDutch} ${chapterNum}`;
+            sep.dataset.book = bookId;
+            sep.dataset.chapter = chapterNum;
+            container.appendChild(sep);
+        }
 
         for (const verse of chapter.verses) {
             // Pericoop-kop vóór dit vers?
@@ -737,6 +749,71 @@ const App = {
         if (typeof Highlight !== 'undefined') Highlight.applyToChapter(bookId, chapterNum);
         // Versierde initiaal (drop-cap) op het eerste vers
         App._applyDropcap();
+        // Doorlopend lezen: sentinel/observer beheren
+        App._afterRenderContinuous(append);
+    },
+
+    // === Doorlopend lezen (lazy-load volgende hoofdstukken bij scrollen) ===
+    _afterRenderContinuous(append) {
+        const container = document.getElementById('verses-container');
+        if (!container) return;
+        const on = localStorage.getItem('doorlopend') === 'true';
+        let sentinel = document.getElementById('continuous-sentinel');
+        if (!on) {
+            if (sentinel) sentinel.remove();
+            if (App._contObserver) { App._contObserver.disconnect(); App._contObserver = null; }
+            return;
+        }
+        if (!append) {
+            App._contLast = { bookId: Navigation.currentBook, chapterNum: Navigation.currentChapter };
+            App._contLoading = false;
+        }
+        if (!sentinel) {
+            sentinel = document.createElement('div');
+            sentinel.id = 'continuous-sentinel';
+            sentinel.style.height = '1px';
+        }
+        container.appendChild(sentinel);   // altijd naar het einde verplaatsen
+        if (!App._contObserver) {
+            App._contObserver = new IntersectionObserver((entries) => {
+                if (entries.some(e => e.isIntersecting)) App._loadNextContinuous();
+            }, { rootMargin: '1000px 0px' });
+        } else {
+            App._contObserver.disconnect();
+        }
+        App._contObserver.observe(sentinel);
+    },
+
+    async _loadNextContinuous() {
+        if (App._contLoading || localStorage.getItem('doorlopend') !== 'true') return;
+        const last = App._contLast;
+        if (!last) return;
+        App._contLoading = true;
+        try {
+            const manifest = await DataLoader.loadManifest();
+            const mode = (window.Opties && Opties.state && Opties.state.boekvolgorde) || 'canoniek';
+            const orderIds = (typeof getFlatBookOrder === 'function')
+                ? getFlatBookOrder(mode, manifest) : manifest.books.map(b => b.id);
+            const byId = Object.fromEntries(manifest.books.map(b => [b.id, b]));
+            const cur = byId[last.bookId];
+            const chs = (cur && cur.chaptersIncluded) || [];
+            const idx = chs.indexOf(last.chapterNum);
+            let nextBook = null, nextCh = null;
+            if (idx >= 0 && idx < chs.length - 1) {
+                nextBook = last.bookId; nextCh = chs[idx + 1];
+            } else {
+                const bi = orderIds.indexOf(last.bookId);
+                const nb = (bi >= 0 && bi < orderIds.length - 1) ? byId[orderIds[bi + 1]] : null;
+                if (nb && nb.chaptersIncluded && nb.chaptersIncluded.length) {
+                    nextBook = nb.id; nextCh = nb.chaptersIncluded[0];
+                }
+            }
+            if (nextCh != null) {
+                await App.renderChapter(nextBook, nextCh, { append: true });
+                App._contLast = { bookId: nextBook, chapterNum: nextCh };
+            }
+        } catch (e) { console.warn('[doorlopend] laden volgende hoofdstuk faalde:', e); }
+        App._contLoading = false;
     },
 
     /* Zet de eerste ECHTE letter van het eerste vers in een <span class="dropcap">.

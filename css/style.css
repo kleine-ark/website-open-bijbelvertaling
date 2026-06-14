@@ -4190,3 +4190,16 @@ body.citaten-uit .angel-speaks i { color: inherit !important; font-style: normal
     line-height: 1.3;
 }
 body.pericopen-uit .pericope-heading { display: none; }
+
+/* Doorlopend lezen: scheiding tussen aaneengeschoven hoofdstukken */
+.chapter-separator {
+    font-family: var(--font-cursive, 'Tangerine', cursive);
+    font-size: 1.7em;
+    color: var(--gold, #cba449);
+    text-align: center;
+    margin: 40px auto 14px;
+    padding-top: 22px;
+    max-width: 680px;
+    border-top: 1px solid var(--border, #e7e1d4);
+}
+@media (max-width: 640px) { .chapter-separator { margin: 28px 16px 10px; } }
