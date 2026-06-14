@@ -4257,6 +4257,17 @@ body.doorlopend-aan #chapter-footer {
     pointer-events: none;   /* lege strook vangt geen klikken; tekst blijft selecteerbaar */
 }
 body.doorlopend-aan #chapter-footer .chf-center { pointer-events: auto; }
+/* Verloop onderaan naar de paginakleur (wit in licht, zwart in donker) zodat
+   de zwevende player goed leesbaar is. */
+body.doorlopend-aan #chapter-footer::after {
+    content: '';
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: 140px;
+    background: linear-gradient(to bottom, transparent, var(--bg-page) 75%);
+    pointer-events: none;
+    z-index: -1;
+}
 
 /* Doorlopend lezen: scheiding tussen aaneengeschoven hoofdstukken */
 .chapter-separator {
