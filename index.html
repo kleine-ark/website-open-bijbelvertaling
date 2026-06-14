@@ -501,6 +501,7 @@
                 <label><input type="checkbox" id="toggle-citaten" checked onchange="document.body.classList.toggle('citaten-uit', !this.checked);localStorage.setItem('citaatopmaak', this.checked)"> Citaatopmaak <span class="hint">(cursief, « », rood = God, geel = duivel)</span></label>
                 <label><input type="checkbox" id="toggle-versnummers" checked onchange="Opties.state.versnummers=this.checked?'aan':'uit';Opties.applyVerseNumbersClass();Opties.save();"> Versnummers</label>
                 <label><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"> Pericoop-kopjes <span class="hint">(tussenkopjes per gedeelte)</span></label>
+                <label><input type="checkbox" id="toggle-doorlopend" onchange="localStorage.setItem('doorlopend', this.checked); if(window.App&&window.Navigation&&Navigation.currentBook) App.renderChapter(Navigation.currentBook, Navigation.currentChapter);"> Doorlopend lezen <span class="hint">(scroll automatisch door hoofdstukken)</span></label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Layout extra kolommen</div>
@@ -747,6 +748,11 @@
         document.body.classList.add('pericopen-uit');
         var cp = document.getElementById('toggle-pericopen');
         if (cp) cp.checked = false;
+    }
+    // Doorlopend lezen herstellen (standaard UIT; alleen aan als expliciet 'true')
+    if (localStorage.getItem('doorlopend') === 'true') {
+        var cd = document.getElementById('toggle-doorlopend');
+        if (cd) cd.checked = true;
     }
 </script>
     <script src="js/sidebar.js"></script>
