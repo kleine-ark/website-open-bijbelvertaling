@@ -133,7 +133,7 @@ const Lees = {
         titus:      'all',
         kolossenzen:'all',
         mattheus:   'all',
-        lukas:      [1,2,3,4,5,6,7,8,9,10,11],
+        lukas:      'all',
     },
 
     _isVerified(bookId, chapter) {
