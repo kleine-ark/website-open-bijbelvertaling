@@ -766,6 +766,33 @@ const App = {
         App._afterRenderContinuous(append, prepend);
     },
 
+    // Scroll naar een specifiek vers en selecteer/markeer het (bv. vanaf Onderwerpen)
+    focusVerse(bookId, ch, vs) {
+        let tries = 0;
+        const tryFocus = () => {
+            const row = document.querySelector(`.verse-row[data-book="${bookId}"][data-chapter="${ch}"][data-verse="${vs}"]`)
+                     || document.querySelector(`.verse-row[data-verse="${vs}"]`);
+            if (!row) {
+                if (tries++ < 20) { setTimeout(tryFocus, 80); } else { window.scrollTo(0, 0); }
+                return;
+            }
+            row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            try {
+                if (window.VerseSelect && VerseSelect._key) {
+                    VerseSelect.clearAll();
+                    VerseSelect.select(VerseSelect._key(row));
+                    VerseSelect.lastClicked = VerseSelect._key(row);
+                    VerseSelect.updateUI();
+                } else {
+                    row.classList.add('verse-selected');
+                }
+            } catch (e) {}
+            row.classList.add('verse-flash');
+            setTimeout(() => row.classList.remove('verse-flash'), 1700);
+        };
+        setTimeout(tryFocus, 60);
+    },
+
     // Hoofdstuktitel (met concept-marker) zetten — gedeeld door render + scroll-spy
     _setTitle(bookId, chapterNum) {
         const titleEl = document.getElementById('chapter-title');

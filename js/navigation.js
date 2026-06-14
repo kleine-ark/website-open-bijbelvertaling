@@ -125,6 +125,7 @@ const Navigation = {
         const parts = hash.split('/');
         const bookId = parts[0];
         const chapter = parseInt(parts[1]) || 1;
+        const targetVerse = parts[2] ? parseInt(parts[2]) : null;
 
         if (bookId !== this.currentBook) {
             this.currentBook = bookId;
@@ -142,8 +143,12 @@ const Navigation = {
         // Laad en render het hoofdstuk
         await App.renderChapter(bookId, chapter);
 
-        // Scroll naar boven bij navigatie
-        window.scrollTo(0, 0);
+        // Naar een specifiek vers scrollen + selecteren, anders naar boven
+        if (targetVerse && App.focusVerse) {
+            App.focusVerse(bookId, chapter, targetVerse);
+        } else {
+            window.scrollTo(0, 0);
+        }
     },
 
     async navigateRelative(offset) {
