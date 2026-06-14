@@ -839,7 +839,7 @@
       "number": 12,
       "textSV1888": "Hij maakt te niet de gedachten der arglistigen; dat hun handen niet een ding uitrichten.",
       "text1637": "[d] Hy maeckt te niet de gedachten der archlistigen, dat hare handen niet [24] een dinck uyt en richten.",
-      "text2026": "Hij maakt te niet de gedachten van de sluwen; dat hun handen niet een ding uitrichten.",
+      "text2026": "Hij maakt te niet de gedachten van de sluwen; dat hun handen niet één ding uitrichten.",
       "marginNotes": [
         {
           "marker": "d",
@@ -893,14 +893,19 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup><span class=\"direct-speech\"><i> Hij maakt te niet de gedachten van de sluwen; dat hun handen niet<sup class=\"note-marker\" data-note=\"24\">24</sup> een ding uitrichten.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup><span class=\"direct-speech\"><i> Hij maakt te niet de gedachten van de sluwen; dat hun handen niet<sup class=\"note-marker\" data-note=\"24\">24</sup> één ding uitrichten.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> Hij maakt te niet de gedachten der arglistigen; dat hun handen niet<sup class=\"note-marker\" data-note=\"24\">24</sup> een ding uitrichten.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> Hy maeckt te niet de gedachten der archlistigen, dat hare hande<i>n</i> niet <sup class=\"note-marker\" data-note=\"24\">24</sup> een dinck uyt en richten.",
       "phraseDiff": [
         {
           "old": "der arglistigen;",
           "new": "van de sluwen;",
-          "principe": "V784"
+          "principe": "N2"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },
