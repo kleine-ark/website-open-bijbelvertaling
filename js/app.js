@@ -472,7 +472,8 @@ const App = {
     },
 
     async renderChapter(bookId, chapterNum, opts = {}) {
-        const append = !!opts.append;   // doorlopend-lezen: hoofdstuk onderaan toevoegen
+        const append = !!opts.append;    // doorlopend-lezen: hoofdstuk onderaan toevoegen
+        const prepend = !!opts.prepend;  // doorlopend-lezen: hoofdstuk bovenaan toevoegen
         // Manifest (klein) + chapter (klein) parallel
         const [book, chapter] = await Promise.all([
             DataLoader.loadBook(bookId),                      // bouwt lazy book-object
@@ -492,7 +493,7 @@ const App = {
         App._contNames = App._contNames || {};
         App._contNames[bookId] = book.nameDutch;
 
-        if (!append) {
+        if (!append && !prepend) {
         // Titel — concept-marker bij niet-geverifieerde hoofdstukken
         App._setTitle(bookId, chapterNum);
         // Chapter-footer label (sticky onderaan)
@@ -541,16 +542,20 @@ const App = {
 
         // Verzen renderen
         const container = document.getElementById('verses-container');
-        if (!append) {
+        // sink = waar de nieuwe nodes heen gaan. Bij prepend bouwen we eerst in een
+        // fragment, en plaatsen dat daarna bovenaan (met scroll-compensatie).
+        const sink = prepend ? document.createDocumentFragment() : container;
+        if (!append && !prepend) {
             container.innerHTML = '';
-        } else {
+        }
+        if (append || prepend) {
             // Doorlopend lezen: scheidingskop voor het toegevoegde hoofdstuk
             const sep = document.createElement('div');
             sep.className = 'chapter-separator';
             sep.textContent = `${book.nameDutch} ${chapterNum}`;
             sep.dataset.book = bookId;
             sep.dataset.chapter = chapterNum;
-            container.appendChild(sep);
+            sink.appendChild(sep);
         }
 
         // Hoofdstukinleiding inline in de tekstkolom (onder de hoofdstukkop),
@@ -561,7 +566,7 @@ const App = {
             intro.dataset.book = bookId;
             intro.dataset.chapter = chapterNum;
             intro.textContent = chapter.chapterIntro.text2026 || chapter.chapterIntro.text1637;
-            container.appendChild(intro);
+            sink.appendChild(intro);
         }
 
         for (const verse of chapter.verses) {
@@ -570,7 +575,7 @@ const App = {
                 const h = document.createElement('div');
                 h.className = 'pericope-heading';
                 h.textContent = pericMap[verse.number];
-                container.appendChild(h);
+                sink.appendChild(h);
             }
             const row = document.createElement('div');
             row.className = 'verse-row';
@@ -719,7 +724,7 @@ const App = {
                 <div class="verse-cell col-noteDiff" data-col="noteDiff">${noteDiffHtml}</div>
             `;
 
-            container.appendChild(row);
+            sink.appendChild(row);
             Editor.attachVerseListeners(row, bookId, chapterNum, verse.number);
             // Rechtermuisknop op versnummer = tag toevoegen
             row.querySelector('.verse-num').addEventListener('contextmenu', (e) => {
@@ -728,6 +733,16 @@ const App = {
                     Tags.showAddTagPopup(bookId, chapterNum, verse.number, e.target);
                 }
             });
+        }
+
+        // Doorlopend lezen: prepend-fragment bovenaan plaatsen met scroll-compensatie
+        // zodat de leespositie niet verspringt.
+        if (prepend) {
+            const scroller = App._getScroller();
+            const prevH = scroller ? scroller.scrollHeight : 0;
+            const prevTop = scroller ? scroller.scrollTop : 0;
+            container.insertBefore(sink, container.firstChild);
+            if (scroller) scroller.scrollTop = prevTop + (scroller.scrollHeight - prevH);
         }
 
         this.updateProgress();
@@ -748,7 +763,7 @@ const App = {
         // Versierde initiaal (drop-cap) op het eerste vers
         App._applyDropcap();
         // Doorlopend lezen: sentinel/observer beheren
-        App._afterRenderContinuous(append);
+        App._afterRenderContinuous(append, prepend);
     },
 
     // Hoofdstuktitel (met concept-marker) zetten — gedeeld door render + scroll-spy
@@ -768,37 +783,50 @@ const App = {
         }
     },
 
-    // === Doorlopend lezen (lazy-load volgende hoofdstukken bij scrollen) ===
-    _afterRenderContinuous(append) {
+    // Bepaal het scrollbare element (document of #content)
+    _getScroller() {
+        const c = document.getElementById('content');
+        if (c && c.scrollHeight > c.clientHeight + 5) return c;
+        return document.scrollingElement || document.documentElement;
+    },
+
+    // === Doorlopend lezen (lazy-load hoofdstukken bij omhoog/omlaag scrollen) ===
+    _afterRenderContinuous(append, prepend) {
         const container = document.getElementById('verses-container');
         if (!container) return;
         const on = localStorage.getItem('doorlopend') === 'true';
         document.body.classList.toggle('doorlopend-aan', on);
-        let sentinel = document.getElementById('continuous-sentinel');
+        let bottom = document.getElementById('continuous-sentinel');
+        let top = document.getElementById('continuous-sentinel-top');
         if (!on) {
-            if (sentinel) sentinel.remove();
+            if (bottom) bottom.remove();
+            if (top) top.remove();
             if (App._contObserver) { App._contObserver.disconnect(); App._contObserver = null; }
             return;
         }
         App._setupScrollSpy();
-        if (!append) {
+        if (!append && !prepend) {
             App._contLast = { bookId: Navigation.currentBook, chapterNum: Navigation.currentChapter };
+            App._contFirst = { bookId: Navigation.currentBook, chapterNum: Navigation.currentChapter };
             App._contLoading = false;
         }
-        if (!sentinel) {
-            sentinel = document.createElement('div');
-            sentinel.id = 'continuous-sentinel';
-            sentinel.style.height = '1px';
-        }
-        container.appendChild(sentinel);   // altijd naar het einde verplaatsen
+        if (!bottom) { bottom = document.createElement('div'); bottom.id = 'continuous-sentinel'; bottom.style.height = '1px'; }
+        if (!top) { top = document.createElement('div'); top.id = 'continuous-sentinel-top'; top.style.height = '1px'; }
+        container.appendChild(bottom);                       // altijd onderaan
+        container.insertBefore(top, container.firstChild);   // altijd bovenaan
         if (!App._contObserver) {
             App._contObserver = new IntersectionObserver((entries) => {
-                if (entries.some(e => e.isIntersecting)) App._loadNextContinuous();
-            }, { rootMargin: '1000px 0px' });
+                for (const e of entries) {
+                    if (!e.isIntersecting) continue;
+                    if (e.target.id === 'continuous-sentinel-top') App._loadPrevContinuous();
+                    else App._loadNextContinuous();
+                }
+            }, { rootMargin: '600px 0px' });
         } else {
             App._contObserver.disconnect();
         }
-        App._contObserver.observe(sentinel);
+        App._contObserver.observe(bottom);
+        App._contObserver.observe(top);
     },
 
     async _loadNextContinuous() {
@@ -830,6 +858,38 @@ const App = {
                 App._contLast = { bookId: nextBook, chapterNum: nextCh };
             }
         } catch (e) { console.warn('[doorlopend] laden volgende hoofdstuk faalde:', e); }
+        App._contLoading = false;
+    },
+
+    async _loadPrevContinuous() {
+        if (App._contLoading || localStorage.getItem('doorlopend') !== 'true') return;
+        const first = App._contFirst;
+        if (!first) return;
+        App._contLoading = true;
+        try {
+            const manifest = await DataLoader.loadManifest();
+            const mode = (window.Opties && Opties.state && Opties.state.boekvolgorde) || 'canoniek';
+            const orderIds = (typeof getFlatBookOrder === 'function')
+                ? getFlatBookOrder(mode, manifest) : manifest.books.map(b => b.id);
+            const byId = Object.fromEntries(manifest.books.map(b => [b.id, b]));
+            const cur = byId[first.bookId];
+            const chs = (cur && cur.chaptersIncluded) || [];
+            const idx = chs.indexOf(first.chapterNum);
+            let prevBook = null, prevCh = null;
+            if (idx > 0) {
+                prevBook = first.bookId; prevCh = chs[idx - 1];
+            } else {
+                const bi = orderIds.indexOf(first.bookId);
+                const pb = (bi > 0) ? byId[orderIds[bi - 1]] : null;
+                if (pb && pb.chaptersIncluded && pb.chaptersIncluded.length) {
+                    prevBook = pb.id; prevCh = pb.chaptersIncluded[pb.chaptersIncluded.length - 1];
+                }
+            }
+            if (prevCh != null) {
+                await App.renderChapter(prevBook, prevCh, { prepend: true });
+                App._contFirst = { bookId: prevBook, chapterNum: prevCh };
+            }
+        } catch (e) { console.warn('[doorlopend] vorige hoofdstuk laden faalde:', e); }
         App._contLoading = false;
     },
 

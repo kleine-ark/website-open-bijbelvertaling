@@ -4,6 +4,15 @@ const VerseSelect = {
     selected: new Set(),
     lastClicked: null,
 
+    // Unieke sleutel per vers (boek/hoofdstuk/vers) — nodig voor doorlopend lezen,
+    // waar meerdere hoofdstukken tegelijk in de DOM staan en data-verse botst.
+    _key(row) { return `${row.dataset.book}/${row.dataset.chapter}/${row.dataset.verse}`; },
+    _rowByKey(key) {
+        const p = key.split('/');
+        if (p.length < 3) return document.querySelector(`.verse-row[data-verse="${key}"]`);
+        return document.querySelector(`.verse-row[data-book="${p[0]}"][data-chapter="${p[1]}"][data-verse="${p[2]}"]`);
+    },
+
     init() {
         // Kopieer-toolbar toevoegen aan DOM
         const toolbar = document.createElement('div');
@@ -33,7 +42,7 @@ const VerseSelect = {
             const row = num.closest('.verse-row');
             if (!row) return;
 
-            const verseKey = row.dataset.verse;
+            const verseKey = this._key(row);
 
             if (e.shiftKey && this.lastClicked) {
                 this.selectRange(this.lastClicked, verseKey);
@@ -68,7 +77,7 @@ const VerseSelect = {
             if (!row) return;
             const moved = Math.hypot(e.clientX - downX, e.clientY - downY);
             if (moved > 5) return; // user is drag-selecting
-            const verseKey = row.dataset.verse;
+            const verseKey = this._key(row);
             this.toggle(verseKey);
             this._syncBrowserSelectionToSelected();
             this.updateUI();
@@ -89,7 +98,7 @@ const VerseSelect = {
         sel.removeAllRanges();
         const keys = [...this.selected];
         for (const key of keys) {
-            const row = document.querySelector(`.verse-row[data-verse="${key}"]`);
+            const row = this._rowByKey(key);
             if (!row) continue;
             const cell = row.querySelector('.col-2026');
             if (!cell) continue;
@@ -132,13 +141,13 @@ const VerseSelect = {
 
     select(key) {
         this.selected.add(key);
-        const row = document.querySelector(`.verse-row[data-verse="${key}"]`);
+        const row = this._rowByKey(key);
         if (row) row.classList.add('verse-selected');
     },
 
     deselect(key) {
         this.selected.delete(key);
-        const row = document.querySelector(`.verse-row[data-verse="${key}"]`);
+        const row = this._rowByKey(key);
         if (row) row.classList.remove('verse-selected');
     },
 
@@ -152,14 +161,14 @@ const VerseSelect = {
 
     selectRange(fromKey, toKey) {
         const rows = [...document.querySelectorAll('.verse-row')];
-        const fromIdx = rows.findIndex(r => r.dataset.verse === fromKey);
-        const toIdx = rows.findIndex(r => r.dataset.verse === toKey);
+        const fromIdx = rows.findIndex(r => this._key(r) === fromKey);
+        const toIdx = rows.findIndex(r => this._key(r) === toKey);
         if (fromIdx < 0 || toIdx < 0) return;
 
         const start = Math.min(fromIdx, toIdx);
         const end = Math.max(fromIdx, toIdx);
         for (let i = start; i <= end; i++) {
-            this.select(rows[i].dataset.verse);
+            this.select(this._key(rows[i]));
         }
     },
 
@@ -174,7 +183,7 @@ const VerseSelect = {
         const count = this.selected.size;
         if (count > 0) {
             // Bouw "Boek H:V[-W of ,X]" label
-            const nums = [...this.selected].map(n => parseInt(n)).filter(n => !isNaN(n)).sort((a,b) => a-b);
+            const nums = [...this.selected].map(k => parseInt(String(k).split('/').pop())).filter(n => !isNaN(n)).sort((a,b) => a-b);
             const bookEl = document.getElementById('chapter-title');
             let bookName = '';
             if (bookEl) {
@@ -198,7 +207,7 @@ const VerseSelect = {
     getSelectedRows() {
         // Geordend op positie in de DOM
         const rows = [...document.querySelectorAll('.verse-row')];
-        return rows.filter(r => this.selected.has(r.dataset.verse));
+        return rows.filter(r => this.selected.has(this._key(r)));
     },
 
     copy(withFormatting) {
