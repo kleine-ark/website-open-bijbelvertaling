@@ -159,7 +159,7 @@
       "number": 2,
       "textSV1888": "En zo iemand meent iets te weten, die heeft nog niets gekend, gelijk men behoort te kennen.",
       "text1637": "Ende so yemandt [5] meynt yet te weten, die en heeft noch niets gekent, gelijck men behoort te kennen.",
-      "text2026": "En zo iemand meent iets te weten, die heeft nog niets gekend, zoals men behoort te kennen.",
+      "text2026": "En zo iemand denkt iets te weten, die heeft nog niets gekend, zoals men behoort te kennen.",
       "marginNotes": [
         {
           "marker": "5",
@@ -231,14 +231,18 @@
           "gloss": "〔to know"
         }
       ],
-      "text2026_html": "En zo iemand<sup class=\"note-marker\" data-note=\"5\">5</sup> meent iets te weten, die heeft nog niets gekend, zoals men behoort te kennen.",
+      "text2026_html": "En zo iemand<sup class=\"note-marker\" data-note=\"5\">5</sup> denkt iets te weten, die heeft nog niets gekend, zoals men behoort te kennen.",
       "textSV1888_html": "En zo iemand<sup class=\"note-marker\" data-note=\"5\">5</sup> meent iets te weten, die heeft nog niets gekend, gelijk men behoort te kennen.",
       "text1637_html": "Ende so yemandt <sup class=\"note-marker\" data-note=\"5\">5</sup> meynt yet te weten, die en heeft noch niets gekent, gelijck men behoort te kennen.",
       "phraseDiff": [
         {
+          "old": "meent",
+          "new": "denkt",
+          "principe": "V774"
+        },
+        {
           "old": "gelijk",
-          "new": "zoals",
-          "principe": null
+          "new": "zoals"
         }
       ]
     },
@@ -1269,7 +1273,7 @@
       "number": 9,
       "textSV1888": "Maar ziet toe, dat deze uw macht niet enigerwijze een aanstoot worde dengenen, die zwak zijn.",
       "text1637": "[i] Maer siet toe dat [23] dese uwe macht niet eeniger wijse [24] een aenstoot en worde den genen die swack zijn.",
-      "text2026": "Maar ziet toe, dat deze uw macht niet enigerwijze een aanstoot worde van hen, die zwak zijn.",
+      "text2026": "Maar ziet toe, dat deze uw macht niet enigerwijze een aanstoot wordt van hen, die zwak zijn.",
       "marginNotes": [
         {
           "marker": "23",
@@ -1367,14 +1371,14 @@
           "gloss": "〔weak"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"i\">i</sup> Maar ziet toe, dat<sup class=\"note-marker\" data-note=\"23\">23</sup> deze uw macht niet enigerwijze<sup class=\"note-marker\" data-note=\"24\">24</sup> een aanstoot worde van hen, die zwak zijn.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"i\">i</sup> Maar ziet toe, dat<sup class=\"note-marker\" data-note=\"23\">23</sup> deze uw macht niet enigerwijze<sup class=\"note-marker\" data-note=\"24\">24</sup> een aanstoot wordt van hen, die zwak zijn.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"i\">i</sup> Maar ziet toe, dat<sup class=\"note-marker\" data-note=\"23\">23</sup> deze uw macht niet enigerwijze<sup class=\"note-marker\" data-note=\"24\">24</sup> een aanstoot worde dengenen, die zwak zijn.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"i\">i</sup> Maer siet toe dat <sup class=\"note-marker\" data-note=\"23\">23</sup> dese uwe macht niet eeniger wijse <sup class=\"note-marker\" data-note=\"24\">24</sup> een aenstoot en worde den genen die swack zijn.",
       "phraseDiff": [
         {
-          "old": "dengenen,",
-          "new": "van hen,",
-          "principe": "V397"
+          "old": "worde dengenen,",
+          "new": "wordt van hen,",
+          "principe": "V772"
         }
       ]
     },
