@@ -1540,7 +1540,7 @@
       "number": 15,
       "textSV1888": "Wanneer een man twee vrouwen heeft, een beminde, en een gehate; en de beminde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;",
       "text1637": "Wanneer een man twee vrouwen heeft, eene beminde, ende [18] eene gehaette, ende de beminde ende de gehaette hem sonen sullen gebaert hebben; ende de eerstgeboren soon der gehaette sal zijn.",
-      "text2026": "Wanneer een man twee vrouwen heeft, een beminde, en een gehate; en de beminde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;",
+      "text2026": "Wanneer een man twee vrouwen heeft, een geliefde, en een gehate; en de geliefde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;",
       "marginNotes": [
         {
           "marker": "18",
@@ -1642,15 +1642,27 @@
           "morph": "HRd/Aafsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer een man twee vrouwen heeft, een beminde, en<sup class=\"note-marker\" data-note=\"18\">18</sup> een gehate; en de beminde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer een man twee vrouwen heeft, een geliefde, en<sup class=\"note-marker\" data-note=\"18\">18</sup> een gehate; en de geliefde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;</i></span>",
       "textSV1888_html": "Wanneer een man twee vrouwen heeft, een beminde, en<sup class=\"note-marker\" data-note=\"18\">18</sup> een gehate; en de beminde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;",
-      "text1637_html": "Wanneer een man twee vrouwen heeft, eene beminde, ende <sup class=\"note-marker\" data-note=\"18\">18</sup> eene gehaette, ende de beminde ende de gehaette hem sonen sullen gebaert hebben; ende de eerstgeboren soon der gehaette sal zijn."
+      "text1637_html": "Wanneer een man twee vrouwen heeft, eene beminde, ende <sup class=\"note-marker\" data-note=\"18\">18</sup> eene gehaette, ende de beminde ende de gehaette hem sonen sullen gebaert hebben; ende de eerstgeboren soon der gehaette sal zijn.",
+      "phraseDiff": [
+        {
+          "old": "beminde,",
+          "new": "geliefde,",
+          "principe": "V785"
+        },
+        {
+          "old": "beminde",
+          "new": "geliefde",
+          "principe": "V785"
+        }
+      ]
     },
     {
       "number": 16,
       "textSV1888": "Zo zal het geschieden, ten dage als hij zijn zonen zal doen erven wat hij heeft, dat hij niet zal vermogen de eerstgeboorte te geven aan den zoon der beminde, voor het aangezicht van den zoon der gehate, die de eerstgeborene is.",
       "text1637": "So sal ’t geschieden, ten dage als hy sijne sonen sal doen erven dat hy heeft; dat hy niet sal vermogen [19] de eerstgeboorte te geven aen den sone der beminde, [20] voor ’t aengesicht vanden sone der gehaette, die d’ eerstgeboren is.",
-      "text2026": "Zo zal het gebeuren, op de dag als hij zijn zonen zal doen erven wat hij heeft, dat hij niet zal vermogen de eerstgeboorte te geven aan de zoon van de beminde, voor het aangezicht van de zoon van de gehate, die de eerstgeborene is.",
+      "text2026": "Zo zal het gebeuren, op de dag als hij zijn zonen zal doen erven wat hij heeft, dat hij niet zal vermogen de eerstgeboorte te geven aan de zoon van de geliefde, voor het aangezicht van de zoon van de gehate, die de eerstgeborene is.",
       "marginNotes": [
         {
           "marker": "19",
@@ -1769,7 +1781,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo zal het gebeuren, op de dag als hij zijn zonen zal doen erven wat hij heeft, dat hij niet zal vermogen<sup class=\"note-marker\" data-note=\"19\">19</sup> de eerstgeboorte te geven aan de zoon van de beminde,<sup class=\"note-marker\" data-note=\"20\">20</sup> voor het aangezicht van de zoon van de gehate, die de eerstgeborene is.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo zal het gebeuren, op de dag als hij zijn zonen zal doen erven wat hij heeft, dat hij niet zal vermogen<sup class=\"note-marker\" data-note=\"19\">19</sup> de eerstgeboorte te geven aan de zoon van de geliefde,<sup class=\"note-marker\" data-note=\"20\">20</sup> voor het aangezicht van de zoon van de gehate, die de eerstgeborene is.</i></span>",
       "textSV1888_html": "Zo zal het geschieden, ten dage als hij zijn zonen zal doen erven wat hij heeft, dat hij niet zal vermogen<sup class=\"note-marker\" data-note=\"19\">19</sup> de eerstgeboorte te geven aan den zoon der beminde,<sup class=\"note-marker\" data-note=\"20\">20</sup> voor het aangezicht van den zoon der gehate, die de eerstgeborene is.",
       "text1637_html": "So sal ’t geschieden, ten dage als hy sijne sonen sal doen erven dat hy heeft; dat hy niet sal vermogen <sup class=\"note-marker\" data-note=\"19\">19</sup> de eerstgeboorte te geven aen den sone der beminde, <sup class=\"note-marker\" data-note=\"20\">20</sup> voor ’t aengesicht vanden sone der gehaette, die d’ eerstgeboren is.",
       "phraseDiff": [
@@ -1784,9 +1796,9 @@
           "principe": "N1"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der beminde,",
+          "new": "van de geliefde,",
+          "principe": "V785"
         },
         {
           "old": "den",
