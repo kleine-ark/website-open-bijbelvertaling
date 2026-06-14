@@ -923,7 +923,7 @@
       "number": 9,
       "textSV1888": "Geloofd zij de HEERE, uw God, Die behagen in u heeft gehad, om u op den troon van Israël te zetten! Omdat de HEERE Israël in eeuwigheid bemint, daarom heeft Hij u tot koning gesteld, om recht en gerechtigheid te doen.",
       "text1637": "Gelooft zy de HEERE uwe Godt, die behagen in u heeft gehadt, om u op den throon Israëls te setten: om dat de HEERE Israël in eeuwicheyt bemint, daerom heeft hy u tot Coninck gestelt, [15] om recht, ende gerechticheyt te doen.",
-      "text2026": "Geloofd zij JAHWEH, uw God, Die behagen in u heeft gehad, om u op de troon van Israël te zetten! Omdat JAHWEH Israël in eeuwigheid bemint, daarom heeft Hij u tot koning gesteld, om recht en gerechtigheid te doen.",
+      "text2026": "Geloofd zij JAHWEH, uw God, Die behagen in u heeft gehad, om u op de troon van Israël te zetten! Omdat JAHWEH in eeuwigheid van Israël houdt, daarom heeft Hij u tot koning gesteld, om recht en gerechtigheid te doen.",
       "marginNotes": [
         {
           "marker": "15",
@@ -1040,7 +1040,7 @@
           "morph": "HC/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Geloofd zij JAHWEH, uw God, Die behagen in u heeft gehad, om u op de troon van Israël te zetten! Omdat JAHWEH Israël in eeuwigheid bemint, daarom heeft Hij u tot koning gesteld,<sup class=\"note-marker\" data-note=\"15\">15</sup> om recht en gerechtigheid te doen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Geloofd zij JAHWEH, uw God, Die behagen in u heeft gehad, om u op de troon van Israël te zetten! Omdat JAHWEH in eeuwigheid van Israël houdt, daarom heeft Hij u tot koning gesteld,<sup class=\"note-marker\" data-note=\"15\">15</sup> om recht en gerechtigheid te doen.</i></span>",
       "textSV1888_html": "Geloofd zij de HEERE, uw God, Die behagen in u heeft gehad, om u op den troon van Israël te zetten! Omdat de HEERE Israël in eeuwigheid bemint, daarom heeft Hij u tot koning gesteld,<sup class=\"note-marker\" data-note=\"15\">15</sup> om recht en gerechtigheid te doen.",
       "text1637_html": "Gelooft zy de HEERE uwe Godt, die behagen in u heeft gehadt, om u op den throon Israëls te setten: om dat de HEERE Israël in eeuwicheyt bemint, daerom heeft hy u tot Coninck gestelt, <sup class=\"note-marker\" data-note=\"15\">15</sup> om recht, ende gerechticheyt te doen.",
       "phraseDiff": [
@@ -1055,9 +1055,14 @@
           "principe": "N1"
         },
         {
-          "old": "de HEERE",
+          "old": "de HEERE Israël",
           "new": "JAHWEH",
-          "principe": "G1"
+          "principe": "V785"
+        },
+        {
+          "old": "bemint,",
+          "new": "van Israël houdt,",
+          "principe": "V785"
         }
       ]
     },
