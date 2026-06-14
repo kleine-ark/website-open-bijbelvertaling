@@ -1100,7 +1100,7 @@
       "number": 9,
       "textSV1888": "Het geschiedde nu, als zij overgekomen waren, dat Elia zeide tot Elisa: Begeer wat ik u doen zal, eer ik van bij u weggenomen worde. En Elisa zeide: Dat toch twee delen van uw geest op mij zijn!",
       "text1637": "Het geschiedde nu, als sy overgekomen waren, dat Elia seyde tot Elisa: Begeert wat ick u doen sal, eer ick van by u wechgenomen worde: ende Elisa seyde: Dat doch [13] twee deelen van uwen geest op my zijn.",
-      "text2026": "Het gebeurde nu, als zij overgekomen waren, dat Elia zei tot Elisa: Begeer wat ik u doen zal, voordat ik van bij u weggenomen worde. En Elisa zei: Dat toch twee delen van uw geest op mij zijn!",
+      "text2026": "Het gebeurde nu, als zij overgekomen waren, dat Elia zei tot Elisa: Begeer wat ik u doen zal, voordat ik van bij u weggenomen word. En Elisa zei: Dat toch twee delen van uw geest op mij zijn!",
       "marginNotes": [
         {
           "marker": "13",
@@ -1217,7 +1217,7 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "Het gebeurde nu, als zij overgekomen waren, dat Elia zei tot Elisa: <span class=\"direct-speech\"><i>Begeer wat ik u doen zal, voordat ik van bij u weggenomen worde. </i></span> En Elisa zei: <span class=\"direct-speech\"><i>Dat toch twee delen van uw geest op mij zijn!</i></span>",
+      "text2026_html": "Het gebeurde nu, als zij overgekomen waren, dat Elia zei tot Elisa: <span class=\"direct-speech\"><i>Begeer wat ik u doen zal, voordat ik van bij u weggenomen word. </i></span> En Elisa zei: <span class=\"direct-speech\"><i>Dat toch twee delen van uw geest op mij zijn!</i></span>",
       "textSV1888_html": "Het geschiedde nu, als zij overgekomen waren, dat Elia zeide tot Elisa: Begeer wat ik u doen zal, eer ik van bij u weggenomen worde. En Elisa zeide: Dat toch<sup class=\"note-marker\" data-note=\"13\">13</sup> twee delen van uw geest op mij zijn!",
       "text1637_html": "Het geschiedde nu, als sy overgekomen waren, dat Elia seyde tot Elisa: Begeert wat ick u doen sal, eer ick van by u wechgenomen worde: en<i>de</i> Elisa seyde: Dat doch <sup class=\"note-marker\" data-note=\"13\">13</sup> twee deele<i>n</i> van uwe<i>n</i> geest op my zijn.",
       "phraseDiff": [
@@ -1233,8 +1233,12 @@
         },
         {
           "old": "eer",
-          "new": "voordat",
-          "principe": null
+          "new": "voordat"
+        },
+        {
+          "old": "worde.",
+          "new": "word.",
+          "principe": "V772"
         },
         {
           "old": "zeide:",
@@ -1247,7 +1251,7 @@
       "number": 10,
       "textSV1888": "En hij zeide: Gij hebt een harde zaak begeerd; indien gij mij zult zien, als ik van bij u weggenomen worde, het zal u alzo geschieden; doch zo niet, het zal niet geschieden.",
       "text1637": "Ende hy seyde; Ghy hebt eene [14] harde sake begeert: [15] Indien ghy my [16] sult sien als ick van by u wechgenomen worde, ’t sal u alsoo geschieden: doch so niet, ’t en sal niet geschieden.",
-      "text2026": "En hij zei: U hebt een harde zaak begeerd; als u mij zult zien, als ik van bij u weggenomen worde, het zal u zo gebeuren; maar zo niet, het zal niet gebeuren.",
+      "text2026": "En hij zei: U hebt een harde zaak begeerd; als u mij zult zien, als ik van bij u weggenomen word, het zal u zo gebeuren; maar zo niet, het zal niet gebeuren.",
       "marginNotes": [
         {
           "marker": "14",
@@ -1348,7 +1352,7 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>U hebt een harde zaak begeerd; als u mij zult zien, als ik van bij u weggenomen worde, het zal u zo gebeuren; maar zo niet, het zal niet gebeuren.</i></span>",
+      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>U hebt een harde zaak begeerd; als u mij zult zien, als ik van bij u weggenomen word, het zal u zo gebeuren; maar zo niet, het zal niet gebeuren.</i></span>",
       "textSV1888_html": "En hij zeide: Gij hebt een<sup class=\"note-marker\" data-note=\"14\">14</sup> harde zaak begeerd;<sup class=\"note-marker\" data-note=\"15\">15</sup> indien gij mij<sup class=\"note-marker\" data-note=\"16\">16</sup> zult zien, als ik van bij u weggenomen worde, het zal u alzo geschieden; doch zo niet, het zal niet geschieden.",
       "text1637_html": "Ende hy seyde; Ghy hebt eene <sup class=\"note-marker\" data-note=\"14\">14</sup> harde sake begeert: <sup class=\"note-marker\" data-note=\"15\">15</sup> Indien ghy my <sup class=\"note-marker\" data-note=\"16\">16</sup> sult sien als ick van by u wechgenomen worde, ’t sal u alsoo geschieden: doch so niet, ’t en sal niet geschieden.",
       "phraseDiff": [
@@ -1361,6 +1365,11 @@
           "old": "indien gij",
           "new": "als u",
           "principe": "A1"
+        },
+        {
+          "old": "worde,",
+          "new": "word,",
+          "principe": "V772"
         },
         {
           "old": "alzo geschieden; doch",
