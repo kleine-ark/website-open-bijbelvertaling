@@ -500,6 +500,7 @@
                 <label><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"> Dyslexie-modus</label>
                 <label><input type="checkbox" id="toggle-citaten" checked onchange="document.body.classList.toggle('citaten-uit', !this.checked);localStorage.setItem('citaatopmaak', this.checked)"> Citaatopmaak <span class="hint">(cursief, « », rood = God, geel = duivel)</span></label>
                 <label><input type="checkbox" id="toggle-versnummers" checked onchange="Opties.state.versnummers=this.checked?'aan':'uit';Opties.applyVerseNumbersClass();Opties.save();"> Versnummers</label>
+                <label><input type="checkbox" id="toggle-hoofdstuknummers" checked onchange="document.body.classList.toggle('hoofdstuknummers-uit', !this.checked);localStorage.setItem('hoofdstuknummers', this.checked)"> Hoofdstuknummers</label>
                 <label><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"> Pericoop-kopjes <span class="hint">(tussenkopjes per gedeelte)</span></label>
                 <label><input type="checkbox" id="toggle-doorlopend" onchange="localStorage.setItem('doorlopend', this.checked); if(window.App&&window.Navigation&&Navigation.currentBook) App.renderChapter(Navigation.currentBook, Navigation.currentChapter);"> Doorlopend lezen <span class="hint">(scroll automatisch door hoofdstukken)</span></label>
             </div>
@@ -753,6 +754,12 @@
     if (localStorage.getItem('doorlopend') === 'true') {
         var cd = document.getElementById('toggle-doorlopend');
         if (cd) cd.checked = true;
+    }
+    // Hoofdstuknummers herstellen (standaard AAN; alleen uit als expliciet 'false')
+    if (localStorage.getItem('hoofdstuknummers') === 'false') {
+        document.body.classList.add('hoofdstuknummers-uit');
+        var ch = document.getElementById('toggle-hoofdstuknummers');
+        if (ch) ch.checked = false;
     }
 </script>
     <script src="js/sidebar.js"></script>
