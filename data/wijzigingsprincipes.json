@@ -6784,6 +6784,30 @@
       "nieuw": "houden van / geliefde / geliefd",
       "toelichting": "Het verouderde werkwoord 'beminnen' (= liefhebben, houden van) wordt 'houden van', correct vervoegd en met de juiste woordvolgorde (scheidbaar): 'hij bemint X' → 'hij houdt van X', 'beminnen X' → 'houden van X', 'beminde' als werkwoord → 'hield van'. In een bijzin gaat het werkwoord naar achteren: 'omdat hij X bemint' → 'omdat hij van X houdt'. WAARSCHUWING: waar 'beminde(n)' een zelfstandig naamwoord of bijvoeglijk is (= geliefde) → 'geliefde(n)'; het voltooid deelwoord 'bemind' (= geliefd) → 'geliefd'; het zelfstandig naamwoord 'beminnaars' (= liefhebbers) → 'liefhebbers'. Bij een plechtige liefdesuitspraak mag 'liefhebben' gekozen worden; standaard 'houden van'.",
       "regex": "\\b[Bb]emin(?:t|nen|nende|de|den|d|naars?)?\\b"
+    },
+    {
+      "id": "V786",
+      "categorie": "Verouderde woorden",
+      "oud": "schatting / schattingen",
+      "nieuw": "belasting / belastingen",
+      "toelichting": "Het verouderde 'schatting'/'schattingen' in de betekenis van belasting of tribuut dat aan een koning of keizer betaald wordt, wordt 'belasting'/'belastingen' (bv. de keizer schatting geven, oversten over de schattingen, onder schatting brengen). LET OP: dit geldt NIET voor 'schat'/'schatten' (= rijkdom) en NIET voor 'schatting' in de zin van een waardebepaling/inschatting (bv. de priesterlijke schatting in Leviticus 27, of de heffing voor de HEERE). Per vers in context beoordeeld.",
+      "regex": "\\bschatting(en)?\\b"
+    },
+    {
+      "id": "V787",
+      "categorie": "Verouderd werkwoord",
+      "oud": "kastijden / kastijdt / kastijdde / gekastijd / kastijding(en)",
+      "nieuw": "straffen / straft / strafte / gestraft / tuchtiging(en)",
+      "toelichting": "Het verouderde werkwoord 'kastijden' (= streng straffen, tuchtigen) wordt vervoegd vervangen door 'straffen': kastijden→straffen, kastijdt→straft, kastijdde→strafte, gekastijd(t)→gestraft, kastijdende→straffend. Het zelfstandig naamwoord 'kastijding(en)' wordt 'straf(fen)' of 'tuchtiging(en)' en 'kastijders' wordt 'tuchtmeesters', naar wat in de context natuurlijk past (bv. Hebreeën 12).",
+      "regex": "\\b[Kk]astij(?:den|dt|dde|dden|d|dende|ders|ding|dingen)?\\b|\\bgekastijdt?\\b"
+    },
+    {
+      "id": "V788",
+      "categorie": "Verouderde woorden",
+      "oud": "boze (mens)",
+      "nieuw": "slechte",
+      "toelichting": "'Boze' wordt 'slechte' UITSLUITEND waar het een slecht/goddeloos MENS aanduidt, met name 'boze dienaar/knecht' → 'slechte dienaar/knecht' (bv. Mt 18:32, 25:26) en 'boze mensen/mannen/vrouw' → 'slechte mensen/mannen/vrouw'. NIET gewijzigd: 'de boze' (= de satan/duivel), 'boze geesten', 'het boze' (= het kwade), 'boze dag(en)', 'boze hart', 'boze weg' en 'boos zijn' (= toornig). Bij twijfel blijft 'boze' staan.",
+      "regex": "\\bboze\\b"
     }
   ]
 }
