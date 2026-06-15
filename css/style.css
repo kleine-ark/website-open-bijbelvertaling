@@ -4218,6 +4218,8 @@ body.citaten-uit .angel-speaks i { color: inherit !important; font-style: normal
     line-height: 1.3;
 }
 body.pericopen-uit .pericope-heading { display: none; }
+/* Dyslexie-modus: pericoop-kopjes groter */
+body.dyslexia-mode .pericope-heading { font-size: 1.5em; line-height: 1.4; }
 
 /* Aangesproken vers (vanaf Onderwerpen): korte oplichtende markering */
 @keyframes verse-flash-anim {
