@@ -761,6 +761,10 @@ const App = {
         App._applyDropcap();
         // Doorlopend lezen: sentinel/observer beheren
         App._afterRenderContinuous(append, prepend);
+        // Visuele focus op het centrale vers (leeshulp)
+        App._setupVerseFocus();
+        App._focusedRow = null;
+        App._updateVerseFocus();
     },
 
     // Scroll naar een specifiek vers en selecteer/markeer het (bv. vanaf Onderwerpen)
@@ -956,6 +960,41 @@ const App = {
             Navigation.currentChapter = ch;
         }
         try { history.replaceState(null, '', `#${bookId}/${ch}`); } catch (e) {}
+    },
+
+    // Visuele focus op het vers dat ongeveer in het midden van het scherm staat
+    // (leeshulp, ook tijdens voorlezen). Werkt in normale en mobiele weergave.
+    _setupVerseFocus() {
+        if (App._verseFocusWired) return;
+        App._verseFocusWired = true;
+        let ticking = false;
+        const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => { ticking = false; App._updateVerseFocus(); });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        const sc = document.getElementById('content');
+        if (sc) sc.addEventListener('scroll', onScroll, { passive: true });
+    },
+
+    _updateVerseFocus() {
+        const rows = document.querySelectorAll('#verses-container .verse-row');
+        if (!rows.length) return;
+        const mid = (window.innerHeight || document.documentElement.clientHeight) / 2;
+        let best = null, bestDist = Infinity;
+        for (const r of rows) {
+            const rect = r.getBoundingClientRect();
+            if (rect.bottom < 0 || rect.top > (window.innerHeight || 0)) continue;
+            const c = (rect.top + rect.bottom) / 2;
+            const d = Math.abs(c - mid);
+            if (d < bestDist) { bestDist = d; best = r; }
+        }
+        if (best && best !== App._focusedRow) {
+            if (App._focusedRow) App._focusedRow.classList.remove('verse-focus');
+            best.classList.add('verse-focus');
+            App._focusedRow = best;
+        }
     },
 
     /* Zet de eerste ECHTE letter van het eerste vers in een <span class="dropcap">.

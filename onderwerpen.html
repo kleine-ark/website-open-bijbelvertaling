@@ -98,6 +98,12 @@
         const detail = document.getElementById('ond-detail');
         let TAGS = [];
         const BOOKORDER = {};
+        const BOOKNAMES = {};
+        function prettyRef(ref) {
+            const sp = ref.lastIndexOf(' ');
+            const book = ref.slice(0, sp);
+            return (BOOKNAMES[book] || (book.charAt(0).toUpperCase() + book.slice(1))) + ' ' + ref.slice(sp + 1);
+        }
 
         function refToHref(ref) {
             const sp = ref.lastIndexOf(' ');
@@ -168,7 +174,7 @@
                 const ster = (it.rang === 1) ? '<span class="ster">&#9733;</span> ' : '';
                 const note = it.notitie ? `<span class="vnote">${it.notitie}</span>` : '';
                 return `<li class="ond-vers">
-                    <div class="ond-vers-kop">${ster}<a href="${refToHref(it.ref)}">${it.ref}</a>${note}</div>
+                    <div class="ond-vers-kop">${ster}<a href="${refToHref(it.ref)}">${prettyRef(it.ref)}</a>${note}</div>
                     <div class="ond-vers-tekst osv-cite" data-ref="${it.ref}"></div>
                 </li>`;
             }).join('');
@@ -198,6 +204,7 @@
             try { if (window.getFlatBookOrder) flat = getFlatBookOrder('canoniek', bk); } catch (e) {}
             if (!flat || !flat.length) flat = (bk.books || []).map(x => x.id);
             flat.forEach((id, i) => { BOOKORDER[id] = i; });
+            (bk.books || []).forEach(x => { BOOKNAMES[x.id] = x.nameDutch || x.id; });
             init([...(a.tags || []), ...(b.tags || [])]);
         });
     })();

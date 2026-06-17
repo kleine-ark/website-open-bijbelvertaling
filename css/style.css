@@ -4228,6 +4228,15 @@ body.pericopen-uit .pericope-heading { display: none; }
 /* Dyslexie-modus: pericoop-kopjes groter */
 body.dyslexia-mode .pericope-heading { font-size: 1.5em; line-height: 1.4; }
 
+/* Vers in focus: het vers ongeveer in het midden van het scherm (leeshulp) */
+.verse-row.verse-focus .col-2026 {
+    background: rgba(203,164,73,0.13);
+    border-radius: 4px;
+    box-shadow: -3px 0 0 var(--gold, #cba449);
+    transition: background 0.25s ease;
+}
+:root[data-theme="donker"] .verse-row.verse-focus .col-2026 { background: rgba(203,164,73,0.18); }
+
 /* Aangesproken vers (vanaf Onderwerpen): korte oplichtende markering */
 @keyframes verse-flash-anim {
     0% { background: rgba(203,164,73,0.45); }
