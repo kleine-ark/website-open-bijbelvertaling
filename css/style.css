@@ -4121,15 +4121,16 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 /* === Versnummers uit → verzen vloeien als doorlopende tekst (dichter op elkaar) ===
    Alleen in de standaard "naast"-leesmodus; de "eronder"-layout (meerdere edities)
    blijft per vers gestapeld. */
+/* Zonder versnummers: elk vers tóch op een eigen regel (per vers nieuwe regel). */
 body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row {
-    display: inline;
-    padding: 0;
+    display: flex;
+    padding: 1px 24px;
 }
 body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row .col-2026 {
-    display: inline;
+    display: block;
 }
 body.hide-verse-numbers #content.reading-mode:not(.layout-eronder) .verse-row::after {
-    content: " ";
+    content: none;
 }
 
 /* Stem (Man/Vrouw) en snelheid (1×) staan nu in het opties-paneel → uit de speler. */
