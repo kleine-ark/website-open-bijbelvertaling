@@ -1141,7 +1141,7 @@
       "number": 9,
       "textSV1888": "Maar als sommigen verhard werden, en ongehoorzaam waren, kwaadsprekende van den weg des Heeren voor de menigte, week hij van hen, en scheidde de discipelen af, dagelijks handelende in de school van zekeren Tyrannus.",
       "text1637": "[d] Maer als sommige verhardt wierden, ende [16] ongehoorsaem waren, quaet sprekende van den [17] wegh [des Heeren] voor de menichte, weeck hy van haer, ende scheydde de Discipelen af, dagelijcks handelende in de schole van sekeren [18] Tyrannus.",
-      "text2026": "Maar als sommigen verhard werden, en ongehoorzaam waren, kwaadsprekende van de weg van de Heere voor de menigte, week hij van hen, en scheidde de discipelen af, dagelijks handelende in de school van zekeren Tyrannus.",
+      "text2026": "Maar als sommigen verhard werden, en ongehoorzaam waren, kwaadsprekende van de weg van de Heere voor de menigte, week hij van hen, en scheidde de discipelen af, dagelijks handelende in de school van een zekere Tyrannus.",
       "marginNotes": [
         {
           "marker": "d",
@@ -1330,13 +1330,15 @@
       "phraseDiff": [
         {
           "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "new": "de"
         },
         {
           "old": "des Heeren",
-          "new": "van de Heere",
-          "principe": "N3"
+          "new": "van de Heere"
+        },
+        {
+          "old": "zekeren",
+          "new": "een zekere"
         }
       ]
     },
@@ -1531,7 +1533,7 @@
       "number": 11,
       "textSV1888": "En God deed ongewone krachten door de handen van Paulus;",
       "text1637": "[e] Ende Godt dede ongewoonlijcke [22] krachten door [23] de handen Pauli:",
-      "text2026": "En God deed ongewone krachten door de handen van Paulus;",
+      "text2026": "En God deed buitengewone krachten door de handen van Paulus;",
       "marginNotes": [
         {
           "marker": "e",
@@ -1631,7 +1633,13 @@
       ],
       "text2026_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> En God deed ongewone<sup class=\"note-marker\" data-note=\"22\">22</sup> krachten door<sup class=\"note-marker\" data-note=\"23\">23</sup> de handen van Paulus;",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> En God deed ongewone<sup class=\"note-marker\" data-note=\"22\">22</sup> krachten door<sup class=\"note-marker\" data-note=\"23\">23</sup> de handen van Paulus;",
-      "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Ende Godt dede ongewoonlijcke <sup class=\"note-marker\" data-note=\"22\">22</sup> krachten door <sup class=\"note-marker\" data-note=\"23\">23</sup> de handen Pauli:"
+      "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Ende Godt dede ongewoonlijcke <sup class=\"note-marker\" data-note=\"22\">22</sup> krachten door <sup class=\"note-marker\" data-note=\"23\">23</sup> de handen Pauli:",
+      "phraseDiff": [
+        {
+          "old": "ongewone",
+          "new": "buitengewone"
+        }
+      ]
     },
     {
       "number": 12,
