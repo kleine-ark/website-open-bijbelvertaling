@@ -441,7 +441,7 @@
       "number": 4,
       "textSV1888": "Maar opdat ik u niet lang ophoude, ik bid u, dat gij ons, naar uw bescheidenheid, kortelijk hoort.",
       "text1637": "Maer op dat ick u niet lange op en houde, ick bidde [u], dat ghy ons, na uwe [5] bescheydenheyt, kortelick hoort.",
-      "text2026": "Maar opdat ik u niet lang ophoude, ik bid u, dat u ons, naar uw bescheidenheid, kortelijk hoort.",
+      "text2026": "Maar opdat ik u niet lang ophoude, ik bid u, dat u ons, naar uw welwillendheid, kortelijk hoort.",
       "marginNotes": [
         {
           "marker": "5",
@@ -549,8 +549,11 @@
       "phraseDiff": [
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "u"
+        },
+        {
+          "old": "bescheidenheid,",
+          "new": "welwillendheid,"
         }
       ]
     },
@@ -1994,7 +1997,7 @@
       "number": 16,
       "textSV1888": "En hierin oefen ik mijzelven, om altijd een onergerlijk geweten te hebben bij God en de mensen.",
       "text1637": "[d] Ende [23] hier in oeffene ick my selve, om altijt een onergerlijcke conscientie te hebben by Godt ende de menschen.",
-      "text2026": "En hierin oefen ik mijzelf, om altijd een onergerlijk geweten te hebben bij God en de mensen.",
+      "text2026": "En hierin oefen ik mijzelf, om altijd een zuiver geweten te hebben bij God en de mensen.",
       "marginNotes": [
         {
           "marker": "d",
@@ -2109,14 +2112,17 @@
           "gloss": "〔all"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup><span class=\"direct-speech\"><i> En<sup class=\"note-marker\" data-note=\"23\">23</sup> hierin oefen ik mijzelf, om altijd een onergerlijk geweten te hebben bij God en de mensen.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup><span class=\"direct-speech\"><i> En<sup class=\"note-marker\" data-note=\"23\">23</sup> hierin oefen ik mijzelf, om altijd een zuiver geweten te hebben bij God en de mensen.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> En<sup class=\"note-marker\" data-note=\"23\">23</sup> hierin oefen ik mijzelven, om altijd een onergerlijk geweten te hebben bij God en de mensen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> Ende <sup class=\"note-marker\" data-note=\"23\">23</sup> hier in oeffene ick my selve, om altijt een onergerlijcke conscientie te hebben by Godt ende de menschen.",
       "phraseDiff": [
         {
           "old": "mijzelven,",
-          "new": "mijzelf,",
-          "principe": "O13"
+          "new": "mijzelf,"
+        },
+        {
+          "old": "onergerlijk",
+          "new": "zuiver"
         }
       ]
     },
@@ -2917,7 +2923,7 @@
       "number": 23,
       "textSV1888": "En hij beval den hoofdman over honderd, dat Paulus zou bewaard worden, en verlichting hebben, en dat hij niemand van de zijnen zou beletten hem te dienen, of tot hem te komen.",
       "text1637": "Ende hy beval den hooftman over hondert dat Paulus soude bewaert worden, ende [31] verlichtinge hebben, [h] ende dat hy niemandt van [32] de sijne en soude beletten [hem] te dienen, ofte tot hem te komen.",
-      "text2026": "En hij beval de hoofdman over honderd, dat Paulus zou bewaard worden, en verlichting hebben, en dat hij niemand van de zijn zou beletten hem te dienen, of tot hem te komen.",
+      "text2026": "En hij beval de hoofdman over honderd, dat Paulus zou bewaard worden, en verlichting hebben, en dat hij niemand van de zijnen zou beletten hem te dienen, of tot hem te komen.",
       "marginNotes": [
         {
           "marker": "31",
@@ -3045,13 +3051,7 @@
       "phraseDiff": [
         {
           "old": "den",
-          "new": "de",
-          "principe": "N1"
-        },
-        {
-          "old": "zijnen",
-          "new": "zijn",
-          "principe": null
+          "new": "de"
         }
       ]
     },
