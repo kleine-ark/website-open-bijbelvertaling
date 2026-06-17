@@ -4254,6 +4254,22 @@ body.show-chapter-intro .chapter-intro-inline {
 }
 @media (max-width: 640px) { body.show-chapter-intro .chapter-intro-inline { margin: 4px 16px 14px; } }
 
+/* Boekinleiding inline in de tekstkolom (instelling, alleen bij hoofdstuk 1) */
+.book-intro-inline { display: none; }
+body.show-book-intro .book-intro-inline {
+    display: block;
+    font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
+    font-size: 0.97em;
+    line-height: 1.55;
+    color: var(--text-secondary, #5b5b5b);
+    margin: 6px 24px 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px dotted var(--border, #e0dccf);
+}
+.book-intro-inline .book-intro-label { font-weight: 700; color: var(--gold, #cba449); font-style: normal; }
+@media (max-width: 640px) { body.show-book-intro .book-intro-inline { margin: 6px 16px 14px; } }
+:root[data-theme="donker"] body.show-book-intro .book-intro-inline { color: var(--text-secondary, #aaa); }
+
 /* Doorlopend lezen: alleen vorige/volgende-knoppen verbergen, play-knop behouden */
 body.doorlopend-aan #chapter-footer .chf-prev,
 body.doorlopend-aan #chapter-footer .chf-next,

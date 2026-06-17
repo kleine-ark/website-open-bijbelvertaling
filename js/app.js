@@ -507,24 +507,10 @@ const App = {
         // AI-concept-banner tonen voor niet-geverifieerde hoofdstukken
         App._updateVerifiedBanner(bookId, chapterNum);
 
-        // Boekinleiding (alleen bij hoofdstuk 1)
+        // Boek- en hoofdstukinleiding worden nu INLINE in de tekstkolom getoond
+        // (zie hieronder), niet meer in een apart frame.
         const bookIntroEl = document.getElementById('book-intro');
-        if (chapterNum === 1 && book.bookIntro) {
-            const introText = book.bookIntro.text2026 || book.bookIntro.text1637 || '';
-            if (introText) {
-                bookIntroEl.innerHTML = '<span class="book-intro-label">Boekinleiding:</span>' + introText;
-                bookIntroEl.style.display = 'block';
-                bookIntroEl.classList.remove('expanded');
-                bookIntroEl.onclick = () => bookIntroEl.classList.toggle('expanded');
-            } else {
-                bookIntroEl.style.display = 'none';
-            }
-        } else {
-            bookIntroEl.style.display = 'none';
-        }
-
-        // Hoofdstukinleiding wordt nu INLINE in de tekstkolom getoond (zie hieronder),
-        // niet meer in een apart frame.
+        if (bookIntroEl) bookIntroEl.style.display = 'none';
         const introFrame = document.getElementById('chapter-intro');
         if (introFrame) introFrame.style.display = 'none';
         }  // einde if(!append): bovenstaande chrome alleen bij normaal renderen
@@ -556,6 +542,17 @@ const App = {
             sep.dataset.book = bookId;
             sep.dataset.chapter = chapterNum;
             sink.appendChild(sep);
+        }
+
+        // Boekinleiding inline in de tekstkolom (alleen bij hoofdstuk 1, onder de
+        // hoofdstukkop), zichtbaar via instelling (body.show-book-intro)
+        if (chapterNum === 1 && book.bookIntro && (book.bookIntro.text2026 || book.bookIntro.text1637)) {
+            const bIntro = document.createElement('div');
+            bIntro.className = 'book-intro-inline';
+            bIntro.dataset.book = bookId;
+            bIntro.innerHTML = '<span class="book-intro-label">Boekinleiding:</span> ' +
+                (book.bookIntro.text2026 || book.bookIntro.text1637);
+            sink.appendChild(bIntro);
         }
 
         // Hoofdstukinleiding inline in de tekstkolom (onder de hoofdstukkop),
