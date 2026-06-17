@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = '2026-06-15-navicons';
+const VERSION = '2026-06-17-html-networkfirst';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -107,9 +107,10 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // HTML: cache-first met background-refresh (snel, en HTML wijzigt minder vaak)
+    // HTML: network-first — altijd de nieuwste pagina als online (voorkomt dat
+    // mobiel een versie achterloopt met verouderde JS-structuur); cache = offline-fallback.
     if (path.endsWith('.html') || path === '/') {
-        event.respondWith(cacheFirstWithRefresh(req, SHELL_CACHE));
+        event.respondWith(networkFirst(req, SHELL_CACHE));
         return;
     }
 
