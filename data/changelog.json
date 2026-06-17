@@ -1,6 +1,20 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-06-17",
+      "versie": "v0.21.0",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Handelingen volledig vers-voor-vers nagekeken (alle 28 hoofdstukken). Totaal nu 356 hoofdstukken / 10.136 verzen definitief."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Boekinleiding nu inline in de tekstkolom (onder de hoofdstukkop), in normale en doorlopend-lezen-weergave. Desktop vorig/volgend-knoppen als ronde pijl-iconen (zoals mobiel). Service worker serveert HTML nu network-first (mobiel altijd de nieuwste versie). Christus-citaten in de Psalmen gemarkeerd."
+        }
+      ]
+    },
+    {
       "datum": "2026-06-14",
       "versie": "v0.20.1",
       "items": [
