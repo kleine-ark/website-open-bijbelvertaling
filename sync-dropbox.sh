@@ -8,5 +8,6 @@ rsync -av --delete \
     --exclude='.git' --exclude='node_modules' --exclude='.venv*' \
     --exclude='__pycache__' --exclude='scripts/' \
     --exclude='*.pyc' --exclude='.DS_Store' \
+    --exclude='src-tauri/target/' --exclude='src-tauri/gen/' --exclude='desktop/dist/' \
     "$SRC/" "$DST/" | tail -10
 echo "✅ Dropbox in sync met GitHub"

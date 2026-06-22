@@ -960,6 +960,11 @@ const App = {
             Navigation.currentChapter = ch;
         }
         try { history.replaceState(null, '', `#${bookId}/${ch}`); } catch (e) {}
+        // replaceState vuurt geen 'hashchange' → mobiele topbalk-knop zelf bijwerken,
+        // anders blijft die het oude hoofdstuk tonen tijdens doorlopend scrollen.
+        if (typeof MobileNav !== 'undefined' && MobileNav.syncFromState) {
+            try { MobileNav.syncFromState(); } catch (e) {}
+        }
     },
 
     // Visuele focus op het vers dat ongeveer in het midden van het scherm staat

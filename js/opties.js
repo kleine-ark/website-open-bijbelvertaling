@@ -200,3 +200,8 @@ const Opties = {
         }
     },
 };
+
+// Globaal beschikbaar maken: een top-level `const` komt niet op window terecht,
+// terwijl mobile-nav.js en app.js (boekvolgorde, doorlopend lezen) `window.Opties`
+// gebruiken. Zonder deze regel valt de boekvolgorde altijd terug op 'canoniek'.
+if (typeof window !== 'undefined') window.Opties = Opties;
