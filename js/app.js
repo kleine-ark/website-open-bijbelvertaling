@@ -68,7 +68,7 @@ const App = {
         johannes:   'all',
         handelingen:'all',
         markus:     [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
-        romeinen:   [1,2,3,4],
+        romeinen:   [1,2,3,4,5,6],
         '1johannes':'all',
         '2johannes':'all',
         '3johannes':'all',
@@ -232,17 +232,27 @@ const App = {
         };
         if (playBtn) playBtn.addEventListener('click', togglePlay);
         if (playMob) playMob.addEventListener('click', togglePlay);
+        const _curVoice = () => (window.OV_AUDIO && OV_AUDIO.getVoice) ? OV_AUDIO.getVoice() : 'v';
         audioEl.addEventListener('play', () => {
             if (playBtn) playBtn.classList.add('is-playing');
             if (playMob) playMob.classList.add('is-playing');
+            // Tijdsbestand laden voor exacte versmarkering tijdens het voorlezen
+            if (App._audioBookId != null) App._loadAudioTiming(App._audioBookId, App._audioChapter, _curVoice());
         });
         audioEl.addEventListener('pause', () => {
             if (playBtn) playBtn.classList.remove('is-playing');
             if (playMob) playMob.classList.remove('is-playing');
+            App._clearVerseFocus();
+        });
+        // Exacte versmarkering laten meelopen met de voorlezing
+        audioEl.addEventListener('timeupdate', () => {
+            if (audioEl.paused || App._audioBookId == null) return;
+            App._setAudioFocusByTime(App._audioBookId, App._audioChapter, _curVoice(), audioEl.currentTime);
         });
         // Einde hoofdstuk → automatisch doorspelen naar het volgende hoofdstuk
         // (navigeert ook over de boekgrens; _updateAudioPlayer start het fragment).
         audioEl.addEventListener('ended', () => {
+            App._clearVerseFocus();
             App._autoplayNext = true;
             if (typeof Navigation !== 'undefined' && Navigation.navigateRelative) {
                 Navigation.navigateRelative(1);
@@ -761,10 +771,10 @@ const App = {
         App._applyDropcap();
         // Doorlopend lezen: sentinel/observer beheren
         App._afterRenderContinuous(append, prepend);
-        // Visuele focus op het centrale vers (leeshulp)
-        App._setupVerseFocus();
-        App._focusedRow = null;
-        App._updateVerseFocus();
+        // Versmarkering wordt NIET meer op scroll gezet (gaf een storende "bracket"
+        // tijdens gewoon lezen). De markering verschijnt alleen tijdens het voorlezen,
+        // exact op het vers dat klinkt (zie audio timeupdate + _setAudioFocusByTime).
+        App._clearVerseFocus();
     },
 
     // Scroll naar een specifiek vers en selecteer/markeer het (bv. vanaf Onderwerpen)
@@ -967,38 +977,45 @@ const App = {
         }
     },
 
-    // Visuele focus op het vers dat ongeveer in het midden van het scherm staat
-    // (leeshulp, ook tijdens voorlezen). Werkt in normale en mobiele weergave.
-    _setupVerseFocus() {
-        if (App._verseFocusWired) return;
-        App._verseFocusWired = true;
-        let ticking = false;
-        const onScroll = () => {
-            if (ticking) return;
-            ticking = true;
-            requestAnimationFrame(() => { ticking = false; App._updateVerseFocus(); });
-        };
-        window.addEventListener('scroll', onScroll, { passive: true });
-        const sc = document.getElementById('content');
-        if (sc) sc.addEventListener('scroll', onScroll, { passive: true });
+    // === Versmarkering tijdens voorlezen ===
+    // De markering verschijnt ALLEEN tijdens audio-voorlezen en staat exact op het
+    // vers dat klinkt — op basis van een per-vers tijdsbestand
+    // (data/audio-timing/{boek}/{hfdst}-{m|v}.json: [{v,t}], t = starttijd in sec).
+    // Is er geen tijdsbestand, dan tonen we NIETS (liever geen markering dan een gok).
+    _clearVerseFocus() {
+        if (App._focusedRow) { App._focusedRow.classList.remove('verse-focus'); App._focusedRow = null; }
     },
 
-    _updateVerseFocus() {
-        const rows = document.querySelectorAll('#verses-container .verse-row');
-        if (!rows.length) return;
-        const mid = (window.innerHeight || document.documentElement.clientHeight) / 2;
-        let best = null, bestDist = Infinity;
-        for (const r of rows) {
-            const rect = r.getBoundingClientRect();
-            if (rect.bottom < 0 || rect.top > (window.innerHeight || 0)) continue;
-            const c = (rect.top + rect.bottom) / 2;
-            const d = Math.abs(c - mid);
-            if (d < bestDist) { bestDist = d; best = r; }
-        }
-        if (best && best !== App._focusedRow) {
+    async _loadAudioTiming(bookId, ch, voice) {
+        const key = `${bookId}/${ch}-${voice}`;
+        App._timingCache = App._timingCache || {};
+        if (key in App._timingCache) return App._timingCache[key];
+        let data = null;
+        try {
+            const r = await fetch(`data/audio-timing/${bookId}/${ch}-${voice}.json`);
+            if (r.ok) {
+                const j = await r.json();
+                const arr = Array.isArray(j) ? j : (j.verses || []);
+                data = arr.map(x => ({ v: x.v != null ? x.v : x.verse, t: x.t != null ? x.t : x.start }))
+                          .filter(x => x.v != null && x.t != null)
+                          .sort((a, b) => a.t - b.t);
+                if (!data.length) data = null;
+            }
+        } catch (e) { data = null; }
+        App._timingCache[key] = data;
+        return data;
+    },
+
+    _setAudioFocusByTime(bookId, ch, voice, t) {
+        const timing = App._timingCache && App._timingCache[`${bookId}/${ch}-${voice}`];
+        if (!timing) return;                 // geen exacte data → geen gok, geen markering
+        let cur = timing[0].v;
+        for (const seg of timing) { if (t >= seg.t) cur = seg.v; else break; }
+        const row = document.querySelector(`.verse-row[data-book="${bookId}"][data-chapter="${ch}"][data-verse="${cur}"]`);
+        if (row && row !== App._focusedRow) {
             if (App._focusedRow) App._focusedRow.classList.remove('verse-focus');
-            best.classList.add('verse-focus');
-            App._focusedRow = best;
+            row.classList.add('verse-focus');
+            App._focusedRow = row;
         }
     },
 
@@ -1008,36 +1025,38 @@ const App = {
     _applyDropcap() {
         const container = document.getElementById('verses-container');
         if (!container) return;
-        // Verwijder oude dropcap (bij hervertonen)
-        const old = container.querySelector('.dropcap');
-        if (old) old.replaceWith(...old.childNodes);
-        const firstRow = container.querySelector('.verse-row');
-        if (!firstRow) return;
-        const cell = firstRow.querySelector('.col-2026');
-        if (!cell) return;
-        // Loop door tekstnodes (in document-volgorde) en zoek de eerste letter.
-        const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT, {
-            acceptNode(node) {
-                // Sla note-markers (sup) over
-                if (node.parentElement && node.parentElement.closest('sup')) return NodeFilter.FILTER_REJECT;
-                return NodeFilter.FILTER_ACCEPT;
+        // Verwijder oude dropcaps (bij hervertonen)
+        container.querySelectorAll('.dropcap').forEach(d => d.replaceWith(...d.childNodes));
+        // Drop-cap op het EERSTE vers van ELK hoofdstuk (ook in doorlopend lezen,
+        // waar meerdere hoofdstukken na elkaar staan).
+        const firstVerseRows = container.querySelectorAll('.verse-row[data-verse="1"]');
+        const rows = firstVerseRows.length ? firstVerseRows : (container.querySelector('.verse-row') ? [container.querySelector('.verse-row')] : []);
+        rows.forEach(row => {
+            const cell = row.querySelector('.col-2026');
+            if (!cell) return;
+            // Loop door tekstnodes (in document-volgorde) en zoek de eerste letter.
+            const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT, {
+                acceptNode(node) {
+                    // Sla note-markers (sup) over
+                    if (node.parentElement && node.parentElement.closest('sup')) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+            let node;
+            while ((node = walker.nextNode())) {
+                const m = node.nodeValue.match(/[A-Za-zÀ-ÿ]/);
+                if (!m) continue;
+                const idx = node.nodeValue.indexOf(m[0]);
+                const after = node.splitText(idx);          // after begint met de letter
+                const letter = after.nodeValue[0];
+                after.splitText(1);                         // rest = na de letter
+                const span = document.createElement('span');
+                span.className = 'dropcap';
+                span.textContent = letter;
+                after.replaceWith(span);                     // vervang de losse letter-node
+                break;
             }
         });
-        let node;
-        while ((node = walker.nextNode())) {
-            const m = node.nodeValue.match(/[A-Za-zÀ-ÿ]/);
-            if (!m) continue;
-            const idx = node.nodeValue.indexOf(m[0]);
-            // Split: tekst vóór de letter blijft, letter wordt dropcap, rest erna blijft
-            const after = node.splitText(idx);          // after begint met de letter
-            const letter = after.nodeValue[0];
-            const rest = after.splitText(1);            // rest = na de letter
-            const span = document.createElement('span');
-            span.className = 'dropcap';
-            span.textContent = letter;
-            after.replaceWith(span);                     // vervang de losse letter-node
-            break;
-        }
     },
 
     updateProgress() {
