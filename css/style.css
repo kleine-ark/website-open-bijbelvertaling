@@ -347,12 +347,12 @@
 /* === Versierde initiaal (drop-cap) op eerste vers van een hoofdstuk ===
    Via <span class="dropcap"> (JS), niet ::first-letter — zo wordt bij een
    citaat de eerste LETTER vergroot en niet het aanhalingsteken. */
-#content.reading-mode .verse-row:first-of-type .col-2026 .dropcap {
+.col-2026 .dropcap {
     float: left;
     font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
-    font-size: 2.7em;
+    font-size: 2.9em;
     line-height: 0.72;
-    padding: 6px 9px 0 0;
+    padding: 4px 9px 0 0;
     margin-top: 3px;
     color: var(--gold);
     font-weight: 600;
@@ -361,9 +361,9 @@
 /* Begint het hoofdstuk met een citaat? Dan het openings-aanhalingsteken
    weglaten — de grote drop-cap-letter staat al vooraan; een « ná de hoofdletter
    ziet er gek uit. Sluit-aanhalingsteken (::after) blijft staan. */
-#content.reading-mode .verse-row:first-of-type .col-2026 .direct-speech::before,
-#content.reading-mode .verse-row:first-of-type .col-2026 .god-speaks::before,
-#content.reading-mode .verse-row:first-of-type .col-2026 .devil-speaks::before { content: none; }
+.verse-row[data-verse="1"] .col-2026 .direct-speech::before,
+.verse-row[data-verse="1"] .col-2026 .god-speaks::before,
+.verse-row[data-verse="1"] .col-2026 .devil-speaks::before { content: none; }
 
 /* === Leesmodus === */
 #content.reading-mode .column-headers { display: none; }
@@ -2881,15 +2881,28 @@ body.show-tags .verse-tag {
     gap: 14px;
     padding: 12px 18px;
     margin-top: 32px;
-    background: rgba(255,255,255,0.96);
-    border-top: 1px solid var(--border-light);
-    border-bottom: 2px solid var(--gold);
-    box-shadow: 0 -4px 14px rgba(20,46,66,0.08);
+    /* Transparante zwevende balk (zelfde weergave als de mobiele versie): geen
+       witte strook, alleen de zwevende cirkel-knoppen + player vóór de tekst. */
+    background: transparent;
+    border: none;
+    box-shadow: none;
     position: sticky;
     bottom: 0;
     z-index: 80;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    pointer-events: none;   /* lege strook vangt geen klikken; tekst blijft selecteerbaar */
+}
+#chapter-footer .chf-btn,
+#chapter-footer .chf-center { pointer-events: auto; }
+/* Verloop onderaan naar de paginakleur zodat de zwevende player leesbaar blijft
+   boven de doorlopende tekst (wit in licht, zwart in donker). */
+#chapter-footer::after {
+    content: '';
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: 140px;
+    background: linear-gradient(to bottom, transparent, var(--bg-page) 75%);
+    pointer-events: none;
+    z-index: -1;
 }
 .chf-btn {
     flex: 0 0 auto;
@@ -2905,6 +2918,7 @@ body.show-tags .verse-tag {
     justify-content: center;
     cursor: pointer;
     transition: all 0.15s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);   /* laat de cirkel zweven, zoals mobiel */
 }
 .chf-btn svg { width: 22px; height: 22px; }
 .chf-btn:hover { background: var(--gold); color: #fff; }
@@ -3887,8 +3901,13 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     color: var(--text-secondary) !important;
 }
 
-/* Chapter footer (audio etc.) */
-:root[data-theme="donker"] #chapter-footer,
+/* Chapter footer (audio etc.) — balk blijft transparant; alleen de knoppen
+   krijgen een donkere achtergrond. */
+:root[data-theme="donker"] #chapter-footer {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
 :root[data-theme="donker"] .chf-btn,
 :root[data-theme="donker"] .chf-play {
     background: var(--bg-surface) !important;

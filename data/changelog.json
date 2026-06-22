@@ -1,6 +1,32 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-06-22",
+      "versie": "v0.21.1",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Romeinen 5 en 6 volledig vers-voor-vers nagekeken (definitief). Totaal nu 358 hoofdstukken / 10.180 verzen definitief."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Desktop-app (Tauri) voor Windows en Linux — offline te lezen. Linux-release (AppImage + .deb) op GitHub."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Drop-cap (versierde initiaal) op de eerste letter van elk hoofdstuk, ook in doorlopend lezen. Vorig/volgend-hoofdstuk onderbalk nu transparant met zwevende ronde icoonknoppen (zoals mobiel)."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Mobiel: boekvolgorde-keuze werkt nu (Tenach/Orthodox/enz.); hoofdstuktitel loopt mee tijdens doorlopend scrollen. Versmarkering verschijnt alleen tijdens het voorlezen, niet meer tijdens gewoon scrollen."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Nieuwe vertaalprincipes V789–V794 (o.a. 'te meerder worden'→toenemen, 'Dat zij verre'→Volstrekt niet, 'wapenen'→wapens, telwoord 'een'→'één')."
+        }
+      ]
+    },
+    {
       "datum": "2026-06-17",
       "versie": "v0.21.0",
       "items": [
