@@ -1540,7 +1540,7 @@
       "number": 15,
       "textSV1888": "Wanneer een man twee vrouwen heeft, een beminde, en een gehate; en de beminde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;",
       "text1637": "Wanneer een man twee vrouwen heeft, eene beminde, ende [18] eene gehaette, ende de beminde ende de gehaette hem sonen sullen gebaert hebben; ende de eerstgeboren soon der gehaette sal zijn.",
-      "text2026": "Wanneer een man twee vrouwen heeft, een geliefde, en een gehate; en de geliefde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;",
+      "text2026": "Wanneer een man twee vrouwen heeft, één geliefde, en één gehate; en de geliefde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;",
       "marginNotes": [
         {
           "marker": "18",
@@ -1642,14 +1642,19 @@
           "morph": "HRd/Aafsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer een man twee vrouwen heeft, een geliefde, en<sup class=\"note-marker\" data-note=\"18\">18</sup> een gehate; en de geliefde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer een man twee vrouwen heeft, één geliefde, en<sup class=\"note-marker\" data-note=\"18\">18</sup> één gehate; en de geliefde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;</i></span>",
       "textSV1888_html": "Wanneer een man twee vrouwen heeft, een beminde, en<sup class=\"note-marker\" data-note=\"18\">18</sup> een gehate; en de beminde en de gehate hem zonen zullen gebaard hebben, en de eerstgeboren zoon van de gehate zal zijn;",
       "text1637_html": "Wanneer een man twee vrouwen heeft, eene beminde, ende <sup class=\"note-marker\" data-note=\"18\">18</sup> eene gehaette, ende de beminde ende de gehaette hem sonen sullen gebaert hebben; ende de eerstgeboren soon der gehaette sal zijn.",
       "phraseDiff": [
         {
-          "old": "beminde,",
-          "new": "geliefde,",
-          "principe": "V785"
+          "old": "een beminde,",
+          "new": "één geliefde,",
+          "principe": null
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         },
         {
           "old": "beminde",

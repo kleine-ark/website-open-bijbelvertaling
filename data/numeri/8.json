@@ -1118,7 +1118,7 @@
       "number": 12,
       "textSV1888": "En de Levieten zullen hun handen op het hoofd der varren leggen; daarna bereidt gij een ten zondoffer, en een ten brandoffer den HEERE, om over de Levieten verzoening te doen.",
       "text1637": "Ende de Leviten sullen hare handen op het hooft der varren leggen: daerna bereyt ghy eenen ten sond-offer, ende eenen ten brand-offer den HEERE, om over de Leviten versoeninge te doen.",
-      "text2026": "En de Levieten zullen hun handen op het hoofd van de stieren leggen; daarna bereidt u een ten zondoffer, en een ten brandoffer JAHWEH, om over de Levieten verzoening te doen.",
+      "text2026": "En de Levieten zullen hun handen op het hoofd van de stieren leggen; daarna bereidt u één ten zondoffer, en één ten brandoffer JAHWEH, om over de Levieten verzoening te doen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1212,7 +1212,7 @@
           "morph": "HTd/Ngmpa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En de Levieten zullen hun handen op het hoofd van de stieren leggen; daarna bereidt u een ten zondoffer, en een ten brandoffer JAHWEH, om over de Levieten verzoening te doen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En de Levieten zullen hun handen op het hoofd van de stieren leggen; daarna bereidt u één ten zondoffer, en één ten brandoffer JAHWEH, om over de Levieten verzoening te doen.</i></span>",
       "text1637_html": "Ende de Leviten sullen hare handen op het hooft der varren leggen: daerna bereyt ghy eenen ten sond-offer, ende eenen ten brand-offer den HEERE, om over de Leviten versoeninge te doen.",
       "phraseDiff": [
         {
@@ -1221,9 +1221,14 @@
           "principe": "N2"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "gij een",
+          "new": "u één",
+          "principe": null
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         },
         {
           "old": "den HEERE,",

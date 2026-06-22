@@ -1095,7 +1095,7 @@
       "number": 16,
       "textSV1888": "Al de getelden in het leger van Ruben waren honderd een en vijftig duizend vierhonderd en vijftig; naar hun heiren. En zij zullen de tweede optrekken.",
       "text1637": "Alle de getelde in 't leger van Ruben waren hondert duysent, ende een en vijftich duysent, ende vier hondert, ende vijftich nae hare heyren: ende sy sullen [11] de tweede optrecken.",
-      "text2026": "Al de getelden in het leger van Ruben waren honderd een en vijftig duizend vierhonderd en vijftig; naar hun heiren. En zij zullen de tweede optrekken.",
+      "text2026": "Al de getelden in het leger van Ruben waren honderd één en vijftig duizend vierhonderd en vijftig; naar hun heiren. En zij zullen de tweede optrekken.",
       "marginNotes": [
         {
           "marker": "11",
@@ -1182,9 +1182,16 @@
           "morph": "HVqi3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Al de getelden in het leger van Ruben waren honderd een en vijftig duizend vierhonderd en vijftig; naar hun heiren. En zij zullen<sup class=\"note-marker\" data-note=\"11\">11</sup> de tweede optrekken.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Al de getelden in het leger van Ruben waren honderd één en vijftig duizend vierhonderd en vijftig; naar hun heiren. En zij zullen<sup class=\"note-marker\" data-note=\"11\">11</sup> de tweede optrekken.</i></span>",
       "textSV1888_html": "Al de getelden in het leger van Ruben waren honderd een en vijftig duizend vierhonderd en vijftig; naar hun heiren. En zij zullen<sup class=\"note-marker\" data-note=\"11\">11</sup> de tweede optrekken.",
-      "text1637_html": "Alle de getelde in 't leger van Ruben waren hondert duysent, ende een en vijftich duysent, ende vier hondert, ende vijftich nae hare heyren: ende sy sullen <sup class=\"note-marker\" data-note=\"11\">11</sup> de tweede optrecken."
+      "text1637_html": "Alle de getelde in 't leger van Ruben waren hondert duysent, ende een en vijftich duysent, ende vier hondert, ende vijftich nae hare heyren: ende sy sullen <sup class=\"note-marker\" data-note=\"11\">11</sup> de tweede optrecken.",
+      "phraseDiff": [
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
+        }
+      ]
     },
     {
       "number": 17,
@@ -1983,7 +1990,7 @@
       "number": 28,
       "textSV1888": "Zijn heir nu, en zijn getelden waren een en veertig duizend en vijfhonderd.",
       "text1637": "Sijn heyr nu, ende hare getelde, waren een en veertich duysent, ende vijf hondert.",
-      "text2026": "Zijn leger nu, en zijn getelden waren een en veertig duizend en vijfhonderd.",
+      "text2026": "Zijn leger nu, en zijn getelden waren één en veertig duizend en vijfhonderd.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2022,13 +2029,18 @@
           "morph": "HAcbpa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zijn leger nu, en zijn getelden waren een en veertig duizend en vijfhonderd.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zijn leger nu, en zijn getelden waren één en veertig duizend en vijfhonderd.</i></span>",
       "text1637_html": "Sijn heyr nu, ende hare getelde, waren een en veertich duysent, ende vijf hondert.",
       "phraseDiff": [
         {
           "old": "heir",
           "new": "leger",
           "principe": "O2"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },

@@ -2,6 +2,20 @@
   "wijzigingen": [
     {
       "datum": "2026-06-22",
+      "versie": "v0.21.2",
+      "items": [
+        {
+          "type": "feature",
+          "beschrijving": "Telwoord 'een' → 'één' (met trema) bibel-breed doorgevoerd waar het nadrukkelijk '1' betekent — ~285 plaatsen, telkens bevestigd door de grondtekst (Hebreeuws echad / Grieks heis). Het lidwoord 'een' blijft ongemoeid. (principe V735)"
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Exacte versmarkering tijdens voorlezen: forced-alignment (whisper) genereert per hoofdstuk een tijdsbestand zodat de markering precies op het klinkende vers staat."
+        }
+      ]
+    },
+    {
+      "datum": "2026-06-22",
       "versie": "v0.21.1",
       "items": [
         {

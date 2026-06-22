@@ -2076,7 +2076,7 @@
       "number": 17,
       "textSV1888": "En de ene vrouw zeide: Och, mijn heer. Ik en deze vrouw wonen in een huis; en ik heb bij haar in dat huis gebaard.",
       "text1637": "Ende de eene vrouwe seyde, [29] Och mijn heer, ick, ende dese vrouwe woonen in een huys: ende ick hebbe by haer in dat huys gebaert.",
-      "text2026": "En de ene vrouw zei: Och, mijn heer. Ik en deze vrouw wonen in een huis; en ik heb bij haar in dat huis gebaard.",
+      "text2026": "En de ene vrouw zei: Och, mijn heer. Ik en deze vrouw wonen in één huis; en ik heb bij haar in dat huis gebaard.",
       "marginNotes": [
         {
           "marker": "29",
@@ -2158,7 +2158,7 @@
           "morph": "HRd/Ncmsa"
         }
       ],
-      "text2026_html": "En de ene vrouw zei: <span class=\"direct-speech\"><i>Och, mijn heer. Ik en deze vrouw wonen in een huis; en ik heb bij haar in dat huis gebaard.</i></span>",
+      "text2026_html": "En de ene vrouw zei: <span class=\"direct-speech\"><i>Och, mijn heer. Ik en deze vrouw wonen in één huis; en ik heb bij haar in dat huis gebaard.</i></span>",
       "textSV1888_html": "En de ene vrouw zeide:<sup class=\"note-marker\" data-note=\"29\">29</sup> Och, mijn heer. Ik en deze vrouw wonen in een huis; en ik heb bij haar in dat huis gebaard.",
       "text1637_html": "Ende de eene vrouwe seyde, <sup class=\"note-marker\" data-note=\"29\">29</sup> Och mijn heer, ick, ende dese vrouwe woonen in een huys: ende ick hebbe by haer in dat huys gebaert.",
       "phraseDiff": [
@@ -2166,6 +2166,11 @@
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },
@@ -2901,7 +2906,7 @@
       "number": 25,
       "textSV1888": "En de koning zeide: Doorsnijdt dat levende kind in tweeën, en geeft de ene een helft, en de andere een helft.",
       "text1637": "Ende de Coninck seyde, Doorsnijdt dat levende kint in tween: ende geeft de eene een helft, ende de andere een helft.",
-      "text2026": "En de koning zei: Doorsnijdt dat levende kind in tweeën, en geeft de ene een helft, en de andere een helft.",
+      "text2026": "En de koning zei: Doorsnijdt dat levende kind in tweeën, en geeft de ene één helft, en de andere één helft.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2975,13 +2980,23 @@
           "morph": "HR/Acfsa"
         }
       ],
-      "text2026_html": "En de koning zei: <span class=\"direct-speech\"><i>Doorsnijdt dat levende kind in tweeën, en geeft de ene een helft, en de andere een helft.</i></span>",
+      "text2026_html": "En de koning zei: <span class=\"direct-speech\"><i>Doorsnijdt dat levende kind in tweeën, en geeft de ene één helft, en de andere één helft.</i></span>",
       "text1637_html": "Ende de Coninck seyde, Doorsnijdt dat levende kint in tween: ende geeft de eene een helft, ende de andere een helft.",
       "phraseDiff": [
         {
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },

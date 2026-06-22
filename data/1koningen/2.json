@@ -1981,7 +1981,7 @@
       "number": 16,
       "textSV1888": "En nu begeer ik van u een enige begeerte; wijs mijn aangezicht niet af. En zij zeide tot hem: Spreek.",
       "text1637": "Ende nu begeere ick van u eene eenige begeerte, [33] en wijst mijn aengesichte niet af, ende sy seyde tot hem, Spreeckt.",
-      "text2026": "En nu begeer ik van u een enige begeerte; wijs mijn aangezicht niet af. En zij zei tot hem: Spreek.",
+      "text2026": "En nu begeer ik van u één enige begeerte; wijs mijn aangezicht niet af. En zij zei tot hem: Spreek.",
       "marginNotes": [
         {
           "marker": "33",
@@ -2058,10 +2058,15 @@
           "morph": "HVpv2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En nu begeer ik van u een enige begeerte; wijs mijn aangezicht niet af.</i></span> En zij zei tot hem: <span class=\"direct-speech\"><i>Spreek.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En nu begeer ik van u één enige begeerte; wijs mijn aangezicht niet af.</i></span> En zij zei tot hem: <span class=\"direct-speech\"><i>Spreek.</i></span>",
       "textSV1888_html": "En nu begeer ik van u een enige begeerte;<sup class=\"note-marker\" data-note=\"33\">33</sup> wijs mijn aangezicht niet af. En zij zeide tot hem: Spreek.",
       "text1637_html": "Ende nu begeere ick van u eene eenige begeerte, <sup class=\"note-marker\" data-note=\"33\">33</sup> en wijst mijn aengesichte niet af, ende sy seyde tot hem, Spreeckt.",
       "phraseDiff": [
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
+        },
         {
           "old": "zeide",
           "new": "zei",
@@ -2403,7 +2408,7 @@
       "number": 20,
       "textSV1888": "Toen zeide zij: Ik begeer van u een enige kleine begeerte, wijs mijn aangezicht niet af. En de koning zeide tot haar: Begeer, mijn moeder, want ik zal uw aangezicht niet afwijzen.",
       "text1637": "Doe seyde sy, Ick begeere van u een eenige [36] kleyne begeerte, en wijst mijn aengesicht niet af; ende de Coninck seyde tot haer, Begeert, mijn moeder, want ick en sal u aengesicht niet afwijsen.",
-      "text2026": "Toen zei zij: Ik begeer van u een enige kleine begeerte, wijs mijn aangezicht niet af. En de koning zei tot haar: Begeer, mijn moeder, want ik zal uw aangezicht niet afwijzen.",
+      "text2026": "Toen zei zij: Ik begeer van u één enige kleine begeerte, wijs mijn aangezicht niet af. En de koning zei tot haar: Begeer, mijn moeder, want ik zal uw aangezicht niet afwijzen.",
       "marginNotes": [
         {
           "marker": "36",
@@ -2520,7 +2525,7 @@
           "morph": "HNcbpc/Sp2fs"
         }
       ],
-      "text2026_html": "Toen zei zij: <span class=\"direct-speech\"><i>Ik begeer van u een enige kleine begeerte, wijs mijn aangezicht niet af.</i></span> En de koning zei tot haar: <span class=\"direct-speech\"><i>Begeer, mijn moeder, want ik zal uw aangezicht niet afwijzen.</i></span>",
+      "text2026_html": "Toen zei zij: <span class=\"direct-speech\"><i>Ik begeer van u één enige kleine begeerte, wijs mijn aangezicht niet af.</i></span> En de koning zei tot haar: <span class=\"direct-speech\"><i>Begeer, mijn moeder, want ik zal uw aangezicht niet afwijzen.</i></span>",
       "textSV1888_html": "Toen zeide zij: Ik begeer van u een enige<sup class=\"note-marker\" data-note=\"36\">36</sup> kleine begeerte, wijs mijn aangezicht niet af. En de koning zeide tot haar: Begeer, mijn moeder, want ik zal uw aangezicht niet afwijzen.",
       "text1637_html": "Doe seyde sy, Ick begeere van u een eenige <sup class=\"note-marker\" data-note=\"36\">36</sup> kleyne begeerte, en wijst mijn aengesicht niet af; ende de Coninck seyde tot haer, Begeert, mijn moeder, want ick en sal u aengesicht niet afwijsen.",
       "phraseDiff": [
@@ -2528,6 +2533,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         },
         {
           "old": "zeide",
