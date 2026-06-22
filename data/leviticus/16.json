@@ -572,7 +572,7 @@
       "number": 5,
       "textSV1888": "En aan de vergadering der kinderen Israëls zal hij nemen twee geitenbokken ten zondoffer, en een ram ten brandoffer.",
       "text1637": "Ende van de vergaderinge der kinderen Israëls sal hy nemen twee geyten bocken ten sond-offer: ende eenen ram ten brand-offer.",
-      "text2026": "En aan de vergadering van de kinderen van Israël zal hij nemen twee geitenbokken ten zondoffer, en een ram ten brandoffer.",
+      "text2026": "En aan de vergadering van de kinderen van Israël zal hij nemen twee geitenbokken ten zondoffer, en één ram ten brandoffer.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -636,7 +636,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En aan de vergadering van de kinderen van Israël zal hij nemen twee geitenbokken ten zondoffer, en een ram ten brandoffer.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En aan de vergadering van de kinderen van Israël zal hij nemen twee geitenbokken ten zondoffer, en één ram ten brandoffer.</i></span>",
       "text1637_html": "Ende van de vergaderinge der kinderen Israëls sal hy nemen twee geyten bocken ten sond-offer: ende eenen ram ten brand-offer.",
       "phraseDiff": [
         {
@@ -648,6 +648,11 @@
           "old": "Israëls",
           "new": "van Israël",
           "principe": null
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },
@@ -822,7 +827,7 @@
       "number": 8,
       "textSV1888": "En Aäron zal de loten over die twee bokken werpen: een lot voor den HEERE, en een lot voor den weggaanden bok.",
       "text1637": "Ende Aaron sal de loten over die twee bocken [11] werpen: een lot voor den HEERE, ende een lot voor [12] den wech-gaenden-bock.",
-      "text2026": "En Aäron zal de loten over die twee bokken werpen: een lot voor JAHWEH, en een lot voor de weggaanden bok.",
+      "text2026": "En Aäron zal de loten over die twee bokken werpen: één lot voor JAHWEH, en één lot voor de weggaanden bok.",
       "marginNotes": [
         {
           "marker": "11",
@@ -901,14 +906,24 @@
           "morph": "HR/Np"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En Aäron zal de loten over die twee bokken<sup class=\"note-marker\" data-note=\"11\">11</sup> werpen: een lot voor JAHWEH, en een lot voor<sup class=\"note-marker\" data-note=\"12\">12</sup> de weggaanden bok.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En Aäron zal de loten over die twee bokken<sup class=\"note-marker\" data-note=\"11\">11</sup> werpen: één lot voor JAHWEH, en één lot voor<sup class=\"note-marker\" data-note=\"12\">12</sup> de weggaanden bok.</i></span>",
       "textSV1888_html": "En Aäron zal de loten over die twee bokken<sup class=\"note-marker\" data-note=\"11\">11</sup> werpen: een lot voor den HEERE, en een lot voor<sup class=\"note-marker\" data-note=\"12\">12</sup> den weggaanden bok.",
       "text1637_html": "Ende Aaron sal de loten over die twee bocken <sup class=\"note-marker\" data-note=\"11\">11</sup> werpen: een lot voor den HEERE, ende een lot voor <sup class=\"note-marker\" data-note=\"12\">12</sup> den wech-gaenden-bock.",
       "phraseDiff": [
         {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
+        },
+        {
           "old": "den HEERE,",
           "new": "JAHWEH,",
           "principe": "N1"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         },
         {
           "old": "den",

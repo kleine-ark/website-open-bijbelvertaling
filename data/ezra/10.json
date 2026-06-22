@@ -1441,7 +1441,7 @@
       "number": 13,
       "textSV1888": "Maar des volks is veel, en het is een tijd van plasregen, dat men hier buiten niet staan kan; en het is geen werk van een dag noch van twee; want velen onzer hebben overtreden in deze zaak.",
       "text1637": "Maer des volcks is veel, ende ’t is een tijt van plasregen, datmen hier buyten [21] niet staen en kan: ende ’t en is geen werck van een dach nochte van twee, want [22] onser vele hebben overgetreden in dese sake.",
-      "text2026": "Maar van het volk is veel, en het is een tijd van plasregen, dat men hier buiten niet staan kan; en het is geen werk van een dag noch van twee; want velen onzer hebben overtreden in deze zaak.",
+      "text2026": "Maar van het volk is veel, en het is een tijd van plasregen, dat men hier buiten niet staan kan; en het is geen werk van één dag noch van twee; want velen onzer hebben overtreden in deze zaak.",
       "marginNotes": [
         {
           "marker": "21",
@@ -1560,7 +1560,7 @@
           "morph": "HTd/Pdxms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar van het volk is veel, en het is een tijd van plasregen, dat men hier buiten<sup class=\"note-marker\" data-note=\"21\">21</sup> niet staan kan; en het is geen werk van een dag noch van twee; want<sup class=\"note-marker\" data-note=\"22\">22</sup> velen onzer hebben overtreden in deze zaak.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar van het volk is veel, en het is een tijd van plasregen, dat men hier buiten<sup class=\"note-marker\" data-note=\"21\">21</sup> niet staan kan; en het is geen werk van één dag noch van twee; want<sup class=\"note-marker\" data-note=\"22\">22</sup> velen onzer hebben overtreden in deze zaak.</i></span>",
       "textSV1888_html": "Maar des volks is veel, en het is een tijd van plasregen, dat men hier buiten<sup class=\"note-marker\" data-note=\"21\">21</sup> niet staan kan; en het is geen werk van een dag noch van twee; want<sup class=\"note-marker\" data-note=\"22\">22</sup> velen onzer hebben overtreden in deze zaak.",
       "text1637_html": "Maer des volcks is veel, ende ’t is een tijt van plasregen, datmen hier buyten <sup class=\"note-marker\" data-note=\"21\">21</sup> niet staen en kan: ende ’t en is gee<i>n</i> werck van een dach nochte van twee, want <sup class=\"note-marker\" data-note=\"22\">22</sup> onser vele hebben overgetreden in dese sake.",
       "phraseDiff": [
@@ -1568,6 +1568,11 @@
           "old": "des volks",
           "new": "van het volk",
           "principe": "N3"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },

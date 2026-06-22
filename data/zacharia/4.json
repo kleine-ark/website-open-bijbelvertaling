@@ -309,7 +309,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En twee olijfbomen daarnevens, een aan de rechterzijde van het oliekruikje, en een tot daarvan linkerzijde.",
+      "text2026": "En twee olijfbomen daarnevens, één aan de rechterzijde van het oliekruikje, en één tot daarvan linkerzijde.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -362,13 +362,18 @@
       "hsv": "met twee olijfbomen ernaast, een aan de rechterkant van het olievaatje en een aan de linkerkant ervan.",
       "nbg51": "en twee olijfbomen steken boven hem uit, de ene rechts en de andere links van de oliehouder.",
       "textSV1888": "En twee olijfbomen daarnevens, een ter rechterzijde van het oliekruikje, en een tot deszelfs linkerzijde.",
-      "text2026_html": "<span class=\"direct-speech\"><i>En twee olijfbomen<sup class=\"note-marker\" data-note=\"7\">7</sup> daarnevens, een aan de rechterzijde van het oliekruikje, en een tot daarvan linkerzijde.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En twee olijfbomen<sup class=\"note-marker\" data-note=\"7\">7</sup> daarnevens, één aan de rechterzijde van het oliekruikje, en één tot daarvan linkerzijde.</i></span>",
       "textSV1888_html": "En twee olijfbomen<sup class=\"note-marker\" data-note=\"7\">7</sup> daarnevens, een ter rechterzijde van het oliekruikje, en een tot deszelfs linkerzijde.",
       "phraseDiff": [
         {
-          "old": "ter",
-          "new": "aan de",
+          "old": "een ter",
+          "new": "één aan de",
           "principe": null
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         },
         {
           "old": "deszelfs",

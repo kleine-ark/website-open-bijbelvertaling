@@ -1734,7 +1734,7 @@
       "number": 16,
       "textSV1888": "Dan zullen wij u onze dochteren geven, en uw dochteren zullen wij ons nemen, en wij zullen met u wonen, en wij zullen tot een volk zijn.",
       "text1637": "Dan sullen wy u onse dochteren geven, ende uwe dochteren sullen wy ons nemen, ende wy sullen met u woonen, ende wy sullen tot een volck zijn.",
-      "text2026": "Dan zullen wij u onze dochters geven, en uw dochters zullen wij ons nemen, en wij zullen met u wonen, en wij zullen tot een volk zijn.",
+      "text2026": "Dan zullen wij u onze dochters geven, en uw dochters zullen wij ons nemen, en wij zullen met u wonen, en wij zullen tot één volk zijn.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1803,7 +1803,7 @@
           "morph": "HAcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Dan zullen wij u onze dochters geven, en uw dochters zullen wij ons nemen, en wij zullen met u wonen, en wij zullen tot een volk zijn.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Dan zullen wij u onze dochters geven, en uw dochters zullen wij ons nemen, en wij zullen met u wonen, en wij zullen tot één volk zijn.</i></span>",
       "text1637_html": "Dan sullen wy u onse dochteren geven, ende uwe dochteren sullen wy ons nemen, ende wy sullen met u woonen, ende wy sullen tot een volck zijn.",
       "phraseDiff": [
         {
@@ -1815,6 +1815,11 @@
           "old": "dochteren",
           "new": "dochters",
           "principe": "V569"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },
@@ -2438,7 +2443,7 @@
       "number": 22,
       "textSV1888": "Doch hierin zullen deze mannen ons te wille zijn, dat zij met ons wonen, om tot een volk te zijn; als al wat mannelijk is onder ons besneden wordt, gelijk als zij besneden zijn.",
       "text1637": "Doch hier in sullen dese mannen ons te wille zijn, datse met ons woonen om tot een volck te zijn: als al wat manlick is onder ons besneden wort, gelijck als sy besneden zijn.",
-      "text2026": "Maar hierin zullen deze mannen ons te wille zijn, dat zij met ons wonen, om tot een volk te zijn; als al wat mannelijk is onder ons besneden wordt, zoals als zij besneden zijn.",
+      "text2026": "Maar hierin zullen deze mannen ons te wille zijn, dat zij met ons wonen, om tot één volk te zijn; als al wat mannelijk is onder ons besneden wordt, zoals als zij besneden zijn.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2527,13 +2532,18 @@
           "morph": "HVNrmpa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar hierin zullen deze mannen ons te wille zijn, dat zij met ons wonen, om tot een volk te zijn; als al wat mannelijk is onder ons besneden wordt, zoals als zij besneden zijn.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar hierin zullen deze mannen ons te wille zijn, dat zij met ons wonen, om tot één volk te zijn; als al wat mannelijk is onder ons besneden wordt, zoals als zij besneden zijn.</i></span>",
       "text1637_html": "Doch hier in sullen dese mannen ons te wille zijn, datse met ons woonen om tot een volck te zijn: als al wat manlick is onder ons besneden wort, gelijck als sy besneden zijn.",
       "phraseDiff": [
         {
           "old": "Doch",
           "new": "Maar",
           "principe": "V1"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         },
         {
           "old": "gelijk",

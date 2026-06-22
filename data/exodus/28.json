@@ -949,7 +949,7 @@
       "number": 10,
       "textSV1888": "Zes van hun namen op een steen, en de zes overige namen op den anderen steen, naar hun geboorten;",
       "text1637": "Sesse van hare namen op eenen steen, ende de ses overige namen op den anderen steen, nae hare geboorten:",
-      "text2026": "Zes van hun namen op een steen, en de zes overige namen op de anderen steen, naar hun geboorten;",
+      "text2026": "Zes van hun namen op één steen, en de zes overige namen op de anderen steen, naar hun geboorten;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1018,9 +1018,14 @@
           "morph": "HR/Ncfpc/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zes van hun namen op een steen, en de zes overige namen op de anderen steen, naar hun geboorten;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zes van hun namen op één steen, en de zes overige namen op de anderen steen, naar hun geboorten;</i></span>",
       "text1637_html": "Sesse van hare namen op eenen steen, ende de ses overige namen op den anderen steen, nae hare geboorten:",
       "phraseDiff": [
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
+        },
         {
           "old": "den",
           "new": "de",
@@ -1677,7 +1682,7 @@
       "number": 17,
       "textSV1888": "En gij zult vervullende stenen daarin vullen, vier rijen stenen, een rij van een Sardis, een Topaas en een Karbonkel; dit is de eerste rij.",
       "text1637": "Ende ghy sult vervullende steenen daer in vullen, vier rijgen steenen: [19] eene rijge van een [20] Sardis, een Topaz, ende een Carbonckel, dit is d’ eerste rijge.",
-      "text2026": "En u zult vervullende stenen daarin vullen, vier rijen stenen, een rij van een Sardis, een Topaas en een Karbonkel; dit is de eerste rij.",
+      "text2026": "En u zult vervullende stenen daarin vullen, vier rijen stenen, één rij van een Sardis, een Topaas en een Karbonkel; dit is de eerste rij.",
       "marginNotes": [
         {
           "marker": "21",
@@ -1761,7 +1766,7 @@
           "morph": "HTd/Acmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En u zult vervullende stenen daarin vullen, vier rijen stenen, een rij van een Sardis, een Topaas en een Karbonkel; dit is de eerste rij.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En u zult vervullende stenen daarin vullen, vier rijen stenen, één rij van een Sardis, een Topaas en een Karbonkel; dit is de eerste rij.</i></span>",
       "textSV1888_html": "En gij zult vervullende stenen daarin vullen, vier rijen stenen, een rij van een Sardis, een Topaas en een Karbonkel; dit is de eerste rij.",
       "text1637_html": "Ende ghy sult vervullende steenen daer in vullen, vier rijgen steenen: <sup class=\"note-marker\" data-note=\"19\">19</sup> eene rijge van een <sup class=\"note-marker\" data-note=\"20\">20</sup> Sardis, een Topaz, ende een Carbonckel, dit is d’ eerste rijge.",
       "phraseDiff": [
@@ -1769,6 +1774,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },

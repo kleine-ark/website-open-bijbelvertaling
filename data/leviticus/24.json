@@ -402,7 +402,7 @@
       "number": 5,
       "textSV1888": "Gij zult ook meelbloem nemen, en twaalf koeken daarvan bakken; van twee tienden zal een koek zijn.",
       "text1637": "Ghy sult oock meel-bloeme nemen, ende twaelf koecken daer van backen: van [8] twee tienden sal een koecke zijn.",
-      "text2026": "U zult ook meelbloem nemen, en twaalf koeken daarvan bakken; van twee tienden zal een koek zijn.",
+      "text2026": "U zult ook meelbloem nemen, en twaalf koeken daarvan bakken; van twee tienden zal één koek zijn.",
       "marginNotes": [
         {
           "marker": "8",
@@ -474,7 +474,7 @@
           "morph": "HTd/Acfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>U zult ook meelbloem nemen, en twaalf koeken daarvan bakken; van<sup class=\"note-marker\" data-note=\"8\">8</sup> twee tienden zal een koek zijn.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>U zult ook meelbloem nemen, en twaalf koeken daarvan bakken; van<sup class=\"note-marker\" data-note=\"8\">8</sup> twee tienden zal één koek zijn.</i></span>",
       "textSV1888_html": "Gij zult ook meelbloem nemen, en twaalf koeken daarvan bakken; van<sup class=\"note-marker\" data-note=\"8\">8</sup> twee tienden zal een koek zijn.",
       "text1637_html": "Ghy sult oock meel-bloeme nemen, ende twaelf koecken daer van backen: van <sup class=\"note-marker\" data-note=\"8\">8</sup> twee tienden sal een koecke zijn.",
       "phraseDiff": [
@@ -482,6 +482,11 @@
           "old": "Gij",
           "new": "U",
           "principe": "A1"
+        },
+        {
+          "old": "een",
+          "new": "één",
+          "principe": "V735"
         }
       ]
     },
