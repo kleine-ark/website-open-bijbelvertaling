@@ -55,10 +55,14 @@ def main():
                 ch_ver += 1; verses_ver += len(vs)
             for x in vs:
                 pds = x.get('phraseDiff') or []
-                diff_total += len(pds)
+                # Tel het AANTAL GEWIJZIGDE WOORDEN t.o.v. SV1888 (niet het aantal
+                # diff-segmenten): per segment het maximum van oud/nieuw aantal woorden.
                 for pd in pds:
+                    nw = max(len(str(pd.get('old', '')).split()),
+                             len(str(pd.get('new', '')).split())) or 1
+                    diff_total += nw
                     if pd.get('principe'):
-                        diff_via_principe += 1
+                        diff_via_principe += nw
 
     principes = len(json.load(open(os.path.join(DATA, 'wijzigingsprincipes.json'), encoding='utf-8'))['principes'])
 

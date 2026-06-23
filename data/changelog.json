@@ -2,6 +2,20 @@
   "wijzigingen": [
     {
       "datum": "2026-06-23",
+      "versie": "v0.21.4",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Voorlezen: harde koppeling tussen audio en scrollpositie in doorlopend lezen — de speler volgt nu exact het zichtbare hoofdstuk."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Statistiek 'tekstwijzigingen t.o.v. SV1888' telt nu het aantal gewijzigde woorden (i.p.v. diff-segmenten): 127.494."
+        }
+      ]
+    },
+    {
+      "datum": "2026-06-23",
       "versie": "v0.21.3",
       "items": [
         {
