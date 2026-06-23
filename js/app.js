@@ -975,6 +975,11 @@ const App = {
         if (typeof MobileNav !== 'undefined' && MobileNav.syncFromState) {
             try { MobileNav.syncFromState(); } catch (e) {}
         }
+        // Harde koppeling audio ↔ scrollpositie: de voorleesspeler volgt het
+        // hoofdstuk dat in beeld is. Alleen wanneer er NIET wordt afgespeeld —
+        // tijdens het voorlezen scrollt de tekst zelf mee, dan niet resetten.
+        const audioEl = document.getElementById('audio-el');
+        if (!audioEl || audioEl.paused) App._updateAudioPlayer(bookId, ch);
     },
 
     // === Versmarkering tijdens voorlezen ===
@@ -1226,3 +1231,6 @@ document.addEventListener('click', (e) => {
         hamburger.classList.remove('open');
     }
 });
+
+// Globaal beschikbaar maken (zoals window.Opties) — handig voor o.a. navigation.js en tests.
+if (typeof window !== 'undefined') window.App = App;
