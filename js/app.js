@@ -244,11 +244,6 @@ const App = {
             if (playMob) playMob.classList.remove('is-playing');
             App._clearVerseFocus();
         });
-        // Exacte versmarkering laten meelopen met de voorlezing
-        audioEl.addEventListener('timeupdate', () => {
-            if (audioEl.paused || App._audioBookId == null) return;
-            App._setAudioFocusByTime(App._audioBookId, App._audioChapter, _curVoice(), audioEl.currentTime);
-        });
         // Einde hoofdstuk → automatisch doorspelen naar het volgende hoofdstuk
         // (navigeert ook over de boekgrens; _updateAudioPlayer start het fragment).
         audioEl.addEventListener('ended', () => {
@@ -259,35 +254,22 @@ const App = {
             }
         });
 
-        // === Meescrollen met de voorlezing ===
-        // Geen vers-timestamps in de MP3 → positie schatten op tekstlengte per vers.
-        let scrollMap = null, lastScrollIdx = -1, userScrollAt = 0;
-        const buildScrollMap = () => {
-            const rows = Array.from(document.querySelectorAll('#content .verse-row'));
-            let cum = 0;
-            scrollMap = rows.map(r => {
-                const len = ((r.textContent || '').trim().length) || 1;
-                const start = cum; cum += len;
-                return { row: r, end: cum };
-            });
-            scrollMap._total = cum || 1;
-            lastScrollIdx = -1;
-        };
-        audioEl.addEventListener('play', buildScrollMap);
-        // Handmatig scrollen pauzeert het meescrollen ~6s (zodat je rustig kunt lezen)
-        ['wheel', 'touchmove'].forEach(ev =>
-            window.addEventListener(ev, () => { userScrollAt = Date.now(); }, { passive: true }));
+        // === Versmarkering + meescrollen met de voorlezing ===
+        // Strikt gekoppeld aan het SPELENDE hoofdstuk (App._audioBookId/_audioChapter):
+        // exact via het per-vers tijdsbestand, anders een schatting BINNEN dit
+        // hoofdstuk. Zo kan de markering nooit naar een ánder hoofdstuk wegspringen
+        // wanneer er meerdere hoofdstukken tegelijk geladen zijn (doorlopend lezen).
+        // Handmatig scrollen pauzeert het meescrollen ~6s.
+        App._userScrollAt = App._userScrollAt || 0;
+        if (!App._userScrollWired) {
+            App._userScrollWired = true;
+            ['wheel', 'touchmove'].forEach(ev =>
+                window.addEventListener(ev, () => { App._userScrollAt = Date.now(); }, { passive: true }));
+        }
         audioEl.addEventListener('timeupdate', () => {
-            if (audioEl.paused || !audioEl.duration || !scrollMap || !scrollMap.length) return;
-            if (Date.now() - userScrollAt < 6000) return;
-            const pos = (audioEl.currentTime / audioEl.duration) * scrollMap._total;
-            let idx = scrollMap.findIndex(v => pos < v.end);
-            if (idx < 0) idx = scrollMap.length - 1;
-            if (idx !== lastScrollIdx) {
-                lastScrollIdx = idx;
-                const row = scrollMap[idx].row;
-                if (row) row.scrollIntoView({ block: 'center', behavior: 'smooth' });
-            }
+            if (audioEl.paused || App._audioBookId == null) return;
+            App._followAudio(App._audioBookId, App._audioChapter, _curVoice(),
+                             audioEl.currentTime, audioEl.duration);
         });
 
         // Snelheid: 1× → 1.25× → 1.5× → 2× → 0.75× → 1× (gedeeld tussen desktop + mobile)
@@ -773,7 +755,7 @@ const App = {
         App._afterRenderContinuous(append, prepend);
         // Versmarkering wordt NIET meer op scroll gezet (gaf een storende "bracket"
         // tijdens gewoon lezen). De markering verschijnt alleen tijdens het voorlezen,
-        // exact op het vers dat klinkt (zie audio timeupdate + _setAudioFocusByTime).
+        // exact op het vers dat klinkt (zie audio timeupdate + _followAudio).
         App._clearVerseFocus();
     },
 
@@ -1011,16 +993,41 @@ const App = {
         return data;
     },
 
-    _setAudioFocusByTime(bookId, ch, voice, t) {
+    // Bepaal het versnummer dat NU klinkt, binnen het opgegeven (spelende) hoofdstuk.
+    // Exact via tijdsbestand; anders een schatting op tekstlengte BINNEN dit hoofdstuk.
+    _currentAudioVerse(bookId, ch, voice, t, duration) {
         const timing = App._timingCache && App._timingCache[`${bookId}/${ch}-${voice}`];
-        if (!timing) return;                 // geen exacte data → geen gok, geen markering
-        let cur = timing[0].v;
-        for (const seg of timing) { if (t >= seg.t) cur = seg.v; else break; }
-        const row = document.querySelector(`.verse-row[data-book="${bookId}"][data-chapter="${ch}"][data-verse="${cur}"]`);
-        if (row && row !== App._focusedRow) {
-            if (App._focusedRow) App._focusedRow.classList.remove('verse-focus');
-            row.classList.add('verse-focus');
-            App._focusedRow = row;
+        if (timing && timing.length) {
+            let cur = timing[0].v;
+            for (const seg of timing) { if (t >= seg.t) cur = seg.v; else break; }
+            return cur;
+        }
+        // Fallback (nog geen tijdsbestand): schat BINNEN dit hoofdstuk, nooit erbuiten.
+        if (!duration) return null;
+        const rows = Array.from(document.querySelectorAll(
+            `#verses-container .verse-row[data-book="${bookId}"][data-chapter="${ch}"]`));
+        if (!rows.length) return null;
+        let cum = 0;
+        const map = rows.map(r => { cum += ((r.textContent || '').trim().length) || 1; return { v: parseInt(r.dataset.verse, 10), end: cum }; });
+        const pos = (t / duration) * cum;
+        for (const m of map) { if (pos < m.end) return m.v; }
+        return map[map.length - 1].v;
+    },
+
+    // Markeer (en scroll naar) het vers dat klinkt — strikt binnen het spelende
+    // hoofdstuk, dus geen wegspringen naar een ander hoofdstuk in doorlopend lezen.
+    _followAudio(bookId, ch, voice, t, duration) {
+        const cur = App._currentAudioVerse(bookId, ch, voice, t, duration);
+        if (cur == null) return;
+        const row = document.querySelector(
+            `#verses-container .verse-row[data-book="${bookId}"][data-chapter="${ch}"][data-verse="${cur}"]`);
+        if (!row || row === App._focusedRow) return;
+        if (App._focusedRow) App._focusedRow.classList.remove('verse-focus');
+        row.classList.add('verse-focus');
+        App._focusedRow = row;
+        // Meescrollen, tenzij de gebruiker net handmatig scrolde (~6s rust).
+        if (!App._userScrollAt || (Date.now() - App._userScrollAt > 6000)) {
+            try { row.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (e) {}
         }
     },
 
