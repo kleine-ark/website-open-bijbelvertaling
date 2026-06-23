@@ -1,6 +1,24 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-06-23",
+      "versie": "v0.21.3",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "Romeinen volledig vers-voor-vers nagekeken (alle 16 hoofdstukken definitief). Citaties, half-gemoderniseerde zinsneden en archaïsche vormen gecorrigeerd."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Bijbel-brede AI-kwaliteitsronde: NT (1-2 Kor, Gal, Tess, Tim, Hebr, Petr, Openb) en Jesaja nagelopen op onlogische/half-gemoderniseerde zinsneden. 'zoals als'→'zoals', 'X Gods'→'van God', 'eensdeels'→'deels', 'Dat zij verre'→'Volstrekt niet' e.a. (nieuwe principes V789-V807)."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Doorlopend lezen: vorige/volgende-hoofdstukknoppen blijven zichtbaar (desktop + mobiel). AI-concept-waarschuwing ook op mobiel. Zoekscherm: OT/NT-selectie. Drop-cap per hoofdstuk."
+        }
+      ]
+    },
+    {
       "datum": "2026-06-22",
       "versie": "v0.21.2",
       "items": [

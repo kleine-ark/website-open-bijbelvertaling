@@ -68,7 +68,7 @@ const App = {
         johannes:   'all',
         handelingen:'all',
         markus:     [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
-        romeinen:   [1,2,3,4,5,6],
+        romeinen:   'all',
         '1johannes':'all',
         '2johannes':'all',
         '3johannes':'all',

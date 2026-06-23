@@ -4320,11 +4320,9 @@ body.show-book-intro .book-intro-inline {
 @media (max-width: 640px) { body.show-book-intro .book-intro-inline { margin: 6px 16px 14px; } }
 :root[data-theme="donker"] body.show-book-intro .book-intro-inline { color: var(--text-secondary, #aaa); }
 
-/* Doorlopend lezen (desktop): vorige/volgende-knoppen verbergen, play-knop behouden.
-   Mobiel: knoppen WEL tonen — ze navigeren relatief t.o.v. het hoofdstuk waar je
-   naartoe gescrold bent (Navigation.currentChapter wordt via de scroll-spy bijgewerkt). */
-body.doorlopend-aan #chapter-footer .chf-prev,
-body.doorlopend-aan #chapter-footer .chf-next { display: none !important; }
+/* Doorlopend lezen: vorige/volgende-hoofdstuk-knoppen BLIJVEN zichtbaar (desktop
+   én mobiel). Ze navigeren relatief t.o.v. het hoofdstuk waar je naartoe gescrold
+   bent (Navigation.currentChapter wordt via de scroll-spy bijgewerkt). */
 
 /* Doorlopend lezen: geen footer-strook — de player zweeft vóór de tekst */
 body.doorlopend-aan #chapter-footer {
