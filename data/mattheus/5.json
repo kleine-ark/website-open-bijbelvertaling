@@ -678,7 +678,7 @@
       "number": 9,
       "textSV1888": "Zalig zijn de vreedzamen; want zij zullen Gods kinderen genaamd worden.",
       "text1637": "Salich [zijn] de [8] vreedsame: Want sy sullen Gods kinderen [9] genaemt worden.",
-      "text2026": "Zalig zijn de vreedzamen; want zij zullen Gods kinderen genaamd worden.",
+      "text2026": "Zalig zijn de vreedzamen; want zij zullen Gods kinderen genoemd worden.",
       "marginNotes": [
         {
           "marker": "8",
@@ -745,9 +745,16 @@
           "gloss": "〔to call"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zalig zijn de<sup class=\"note-marker\" data-note=\"8\">8</sup> vreedzamen; want zij zullen Gods kinderen<sup class=\"note-marker\" data-note=\"9\">9</sup> genaamd worden.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zalig zijn de<sup class=\"note-marker\" data-note=\"8\">8</sup> vreedzamen; want zij zullen Gods kinderen<sup class=\"note-marker\" data-note=\"9\">9</sup> genoemd worden.</i></span>",
       "textSV1888_html": "Zalig zijn de<sup class=\"note-marker\" data-note=\"8\">8</sup> vreedzamen; want zij zullen Gods kinderen<sup class=\"note-marker\" data-note=\"9\">9</sup> genaamd worden.",
-      "text1637_html": "Salich [<i>zijn</i>] de <sup class=\"note-marker\" data-note=\"8\">8</sup> vreedsame: Want sy sullen Gods kinderen <sup class=\"note-marker\" data-note=\"9\">9</sup> genaemt worden."
+      "text1637_html": "Salich [<i>zijn</i>] de <sup class=\"note-marker\" data-note=\"8\">8</sup> vreedsame: Want sy sullen Gods kinderen <sup class=\"note-marker\" data-note=\"9\">9</sup> genaemt worden.",
+      "phraseDiff": [
+        {
+          "old": "genaamd",
+          "new": "genoemd",
+          "principe": "V795"
+        }
+      ]
     },
     {
       "number": 10,
@@ -2167,7 +2174,7 @@
       "number": 19,
       "textSV1888": "Zo wie dan een van deze minste geboden zal ontbonden, en de mensen alzo zal geleerd hebben, die zal de minste genaamd worden in het Koninkrijk der hemelen; maar zo wie dezelve zal gedaan en geleerd hebben, die zal groot genaamd worden in het Koninkrijk der hemelen.",
       "text1637": "[n] So wie dan een van dese minste geboden sal ontbonden, ende de menschen alsoo sal geleert hebben, [die] sal de [27] minste genaemt worden in’t Coninckrijcke der Hemelen: Maer so wie [de selve] sal gedaen ende geleert hebben, die sal groot genaemt worden in’t Coninckrijck der hemelen.",
-      "text2026": "Zo wie dan één van deze minste geboden zal ontbonden, en de mensen zo zal geleerd hebben, die zal de minste genaamd worden in het Koninkrijk van de hemelen; maar zo wie dezelfde zal gedaan en geleerd hebben, die zal groot genaamd worden in het Koninkrijk van de hemelen.",
+      "text2026": "Zo wie dan één van deze minste geboden zal ontbonden, en de mensen zo zal geleerd hebben, die zal de minste genoemd worden in het Koninkrijk van de hemelen; maar zo wie dezelfde zal gedaan en geleerd hebben, die zal groot genoemd worden in het Koninkrijk van de hemelen.",
       "marginNotes": [
         {
           "marker": "n",
@@ -2402,7 +2409,7 @@
           "gloss": "〔heaven"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"n\">n</sup><span class=\"god-speaks\"><i> Zo wie dan één van deze minste geboden zal ontbonden, en de mensen zo zal geleerd hebben, die zal de<sup class=\"note-marker\" data-note=\"27\">27</sup> minste genaamd worden in het Koninkrijk van de hemelen; maar zo wie dezelfde zal gedaan en geleerd hebben, die zal groot genaamd worden in het Koninkrijk van de hemelen.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"n\">n</sup><span class=\"god-speaks\"><i> Zo wie dan één van deze minste geboden zal ontbonden, en de mensen zo zal geleerd hebben, die zal de<sup class=\"note-marker\" data-note=\"27\">27</sup> minste genoemd worden in het Koninkrijk van de hemelen; maar zo wie dezelfde zal gedaan en geleerd hebben, die zal groot genoemd worden in het Koninkrijk van de hemelen.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"n\">n</sup> Zo wie dan een van deze minste geboden zal ontbonden, en de mensen alzo zal geleerd hebben, die zal de<sup class=\"note-marker\" data-note=\"27\">27</sup> minste genaamd worden in het Koninkrijk der hemelen; maar zo wie dezelve zal gedaan en geleerd hebben, die zal groot genaamd worden in het Koninkrijk der hemelen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"n\">n</sup> So wie dan een van dese minste geboden sal ontbonden, ende de menschen alsoo sal geleert hebben, [<i>die</i>] sal de <sup class=\"note-marker\" data-note=\"27\">27</sup> minste genaemt worden in’t Coninckrijcke der Hemelen: Maer so wie [<i>de selve</i>] sal gedaen ende geleert hebben, die sal groot genaemt worden in’t Coninckrijck der hemelen.",
       "phraseDiff": [
@@ -2417,6 +2424,11 @@
           "principe": "V42"
         },
         {
+          "old": "genaamd",
+          "new": "genoemd",
+          "principe": "V795"
+        },
+        {
           "old": "der",
           "new": "van de",
           "principe": "N2"
@@ -2425,6 +2437,11 @@
           "old": "dezelve",
           "new": "dezelfde",
           "principe": "O3"
+        },
+        {
+          "old": "genaamd",
+          "new": "genoemd",
+          "principe": "V795"
         },
         {
           "old": "der",
