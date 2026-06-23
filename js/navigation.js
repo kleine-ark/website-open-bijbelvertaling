@@ -147,7 +147,11 @@ const Navigation = {
         if (targetVerse && App.focusVerse) {
             App.focusVerse(bookId, chapter, targetVerse);
         } else {
+            // Naar boven uitlijnen — ook het werkelijke scroll-element (#content op
+            // mobiel), anders bleef de gekozen hoofdstuktekst halverwege ('gecentreerd').
             window.scrollTo(0, 0);
+            const sc = (App._getScroller && App._getScroller()) || document.getElementById('content');
+            if (sc && sc !== document.scrollingElement && sc !== document.documentElement) sc.scrollTop = 0;
         }
     },
 

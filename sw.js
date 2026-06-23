@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = '2026-06-22-een-een'
+const VERSION = '2026-06-23-rom78-mobiel'
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
