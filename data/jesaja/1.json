@@ -755,7 +755,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Van de voetzool af tot het hoofd toe is er niets geheels aan hetzelfde; maar wonden, en striemen, en etterbuilen, die niet uitgedrukt noch verbonden zijn, en geen derzelve is met olie verzacht.",
+      "text2026": "Van de voetzool af tot het hoofd toe is er niets geheels eraan; maar wonden, en striemen, en etterbuilen, die niet uitgedrukt noch verbonden zijn, en geen daarvan is met olie verzacht.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -852,14 +852,19 @@
       ],
       "hsv": "Vanaf de voetzool tot het hoofd toeis er geen gezonde plek aan:wonden en striemenen gapende wonden,niet uitgedrukt, niet verbonden,en niet met olie verzacht.",
       "nbg51": "van de voetzool af tot de schedel is er niets gaaf; wonden, striemen en verse kwetsuren, die niet uitgedrukt zijn noch verbonden noch met olie verzacht.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"21\">21</sup><span class=\"direct-speech\"><i> Van de voetzool af tot het hoofd toe is er niets geheels<sup class=\"note-marker\" data-note=\"22\">22</sup> aan hetzelfde; maar wonden, en<sup class=\"note-marker\" data-note=\"23\">23</sup> striemen, en<sup class=\"note-marker\" data-note=\"24\">24</sup> etterbuilen, die niet<sup class=\"note-marker\" data-note=\"25\">25</sup> uitgedrukt noch verbonden zijn, en geen derzelve is met olie verzacht.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"21\">21</sup><span class=\"direct-speech\"><i> Van de voetzool af tot het hoofd toe is er niets geheels<sup class=\"note-marker\" data-note=\"22\">22</sup> eraan; maar wonden, en<sup class=\"note-marker\" data-note=\"23\">23</sup> striemen, en<sup class=\"note-marker\" data-note=\"24\">24</sup> etterbuilen, die niet<sup class=\"note-marker\" data-note=\"25\">25</sup> uitgedrukt noch verbonden zijn, en geen daarvan is met olie verzacht.</i></span>",
       "textSV1888": "Van de voetzool af tot het hoofd toe is er niets geheels aan hetzelve; maar wonden, en striemen, en etterbuilen, die niet uitgedrukt noch verbonden zijn, en geen derzelve is met olie verzacht.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"21\">21</sup> Van de voetzool af tot het hoofd toe is er niets geheels<sup class=\"note-marker\" data-note=\"22\">22</sup> aan hetzelve; maar wonden, en<sup class=\"note-marker\" data-note=\"23\">23</sup> striemen, en<sup class=\"note-marker\" data-note=\"24\">24</sup> etterbuilen, die niet<sup class=\"note-marker\" data-note=\"25\">25</sup> uitgedrukt noch verbonden zijn, en geen derzelve is met olie verzacht.",
       "phraseDiff": [
         {
-          "old": "hetzelve;",
-          "new": "hetzelfde;",
-          "principe": "O4"
+          "old": "aan hetzelve;",
+          "new": "eraan;",
+          "principe": null
+        },
+        {
+          "old": "derzelve",
+          "new": "daarvan",
+          "principe": null
         }
       ]
     },
@@ -2832,7 +2837,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Daarom spreekt de Heere, JAHWEH van de legermachten, de Machtige Israëls: O wee! Ik zal Mij troosten van Mijn tegenstanders. Ik zal Mij wreken van Mijn vijanden.",
+      "text2026": "Daarom spreekt de Heere, JAHWEH van de legermachten, de Machtige van Israël: O wee! Ik zal Mij troosten van Mijn tegenstanders. Ik zal Mij wreken van Mijn vijanden.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -2899,7 +2904,7 @@
       ],
       "hsv": "Daarom spreekt de Heere,de HEERE van de legermachten,de Machtige van Israël:Wee u! ⓝIk zal troost halen bij Mijn tegenstanders,Ik zal Mij wreken op Mijn vijanden.",
       "nbg51": "Daarom luidt het woord van de Here, de Here der heerscharen, de Machtige Israëls: Wee, Ik zal wraak oefenen aan mijn tegenstanders en Ik wil Mij wreken op mijn vijanden;",
-      "text2026_html": "Daarom spreekt de Heere, JAHWEH van de legermachten, de Machtige Israëls: <span class=\"god-speaks\"><i>O wee! Ik zal Mij troosten van Mijn tegenstanders. Ik zal Mij wreken van Mijn vijanden.</i></span>",
+      "text2026_html": "Daarom spreekt de Heere, JAHWEH van de legermachten, de Machtige van Israël: <span class=\"god-speaks\"><i>O wee! Ik zal Mij troosten van Mijn tegenstanders. Ik zal Mij wreken van Mijn vijanden.</i></span>",
       "textSV1888": "Daarom spreekt de Heere, HEERE der heirscharen, de Machtige Israëls: O wee! Ik zal Mij troosten van Mijn wederpartijders. Ik zal Mij wreken van Mijn vijanden.",
       "textSV1888_html": "Daarom spreekt de Heere, HEERE der heirscharen, de Machtige Israëls: O wee!<sup class=\"note-marker\" data-note=\"78\">78</sup> Ik zal Mij troosten van Mijn wederpartijders.<sup class=\"note-marker\" data-note=\"o\">o</sup> Ik zal Mij wreken<sup class=\"note-marker\" data-note=\"79\">79</sup> van Mijn vijanden.",
       "phraseDiff": [
@@ -2907,6 +2912,11 @@
           "old": "HEERE der heirscharen,",
           "new": "JAHWEH van de legermachten,",
           "principe": "N2"
+        },
+        {
+          "old": "Israëls:",
+          "new": "van Israël:",
+          "principe": null
         },
         {
           "old": "wederpartijders.",
