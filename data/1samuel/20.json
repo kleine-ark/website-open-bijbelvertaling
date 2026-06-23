@@ -151,7 +151,7 @@
       "number": 2,
       "textSV1888": "Hij daarentegen zeide tot hem: Dat zij verre, gij zult niet sterven. Zie, mijn vader doet geen grote zaak, en geen kleine zaak, die hij voor mijn oor niet openbaart; waarom zou dan mijn vader deze zaak van mij verbergen? Dat is niet.",
       "text1637": "Hy daerentegen seyde tot hem: Dat zy verre, ghy en sult niet sterven, siet, [4] mijn vader en doet geen groote sake, noch geen cleyne sake, die hy [5] voor mijn oore niet en openbaert: waerom soude dan mijn vader dese sake [6] van my verbergen? dat en is niet.",
-      "text2026": "Hij daarentegen zei tot hem: Dat zij verre, u zult niet sterven. Zie, mijn vader doet geen grote zaak, en geen kleine zaak, die hij voor mijn oor niet openbaart; waarom zou dan mijn vader deze zaak van mij verbergen? Dat is niet.",
+      "text2026": "Hij daarentegen zei tot hem: Volstrekt niet, u zult niet sterven. Zie, mijn vader doet geen grote zaak, en geen kleine zaak, die hij voor mijn oor niet openbaart; waarom zou dan mijn vader deze zaak van mij verbergen? Dat is niet.",
       "marginNotes": [
         {
           "marker": "4",
@@ -312,7 +312,7 @@
           "morph": "HPdxfs"
         }
       ],
-      "text2026_html": "Hij daarentegen zei tot hem: <span class=\"direct-speech\"><i>Dat zij verre, u zult niet sterven. Zie, mijn vader doet geen grote zaak, en geen kleine zaak, die hij voor mijn oor niet openbaart; waarom zou dan mijn vader deze zaak van mij verbergen? Dat is niet.</i></span>",
+      "text2026_html": "Hij daarentegen zei tot hem: <span class=\"direct-speech\"><i>Volstrekt niet, u zult niet sterven. Zie, mijn vader doet geen grote zaak, en geen kleine zaak, die hij voor mijn oor niet openbaart; waarom zou dan mijn vader deze zaak van mij verbergen? Dat is niet.</i></span>",
       "textSV1888_html": "Hij daarentegen zeide tot hem: Dat zij verre, gij zult niet sterven. Zie,<sup class=\"note-marker\" data-note=\"4\">4</sup> mijn vader doet geen grote zaak, en geen kleine zaak, die hij<sup class=\"note-marker\" data-note=\"5\">5</sup> voor mijn oor niet openbaart; waarom zou dan mijn vader deze zaak<sup class=\"note-marker\" data-note=\"6\">6</sup> van mij verbergen? Dat is niet.",
       "text1637_html": "Hy daerentegen seyde tot hem: Dat zy verre, ghy en sult niet sterven, siet, <sup class=\"note-marker\" data-note=\"4\">4</sup> mijn vader en doet geen groote sake, noch geen cleyne sake, die hy <sup class=\"note-marker\" data-note=\"5\">5</sup> voor mijn oore niet en openbaert: waerom soude dan mijn vader dese sake <sup class=\"note-marker\" data-note=\"6\">6</sup> van my verbergen? dat en is niet.",
       "phraseDiff": [
@@ -322,9 +322,9 @@
           "principe": "W1"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "Dat zij verre, gij",
+          "new": "Volstrekt niet, u",
+          "principe": null
         }
       ]
     },
@@ -1204,7 +1204,7 @@
       "number": 9,
       "textSV1888": "Toen zeide Jonathan: Dat zij verre van u! Maar indien ik zekerlijk merkte, dat dit kwaad bij mijn vader ten volle besloten ware, dat het u zou overkomen, zou ik dat u dan niet te kennen geven?",
       "text1637": "Doe seyde Ionathan, [22] Dat sy verre van u, maer indien ick sekerlick merckte, dat dit quaet by mijnen vader ten vollen besloten ware, dat het u soude over-comen, en soude ick dat u dan niet te kennen geven?",
-      "text2026": "Toen zei Jonathan: Dat zij verre van u! Maar als ik zeker merkte, dat dit kwaad bij mijn vader ten volle besloten ware, dat het u zou overkomen, zou ik dat u dan niet te kennen geven?",
+      "text2026": "Toen zei Jonathan: Volstrekt niet van u! Maar als ik zeker merkte, dat dit kwaad bij mijn vader ten volle besloten ware, dat het u zou overkomen, zou ik dat u dan niet te kennen geven?",
       "marginNotes": [
         {
           "marker": "22",
@@ -1311,7 +1311,7 @@
           "morph": "HR/Sp2fs"
         }
       ],
-      "text2026_html": "Toen zei Jonathan: <span class=\"direct-speech\"><i>Dat zij verre van u! Maar als ik zeker merkte, dat dit kwaad bij mijn vader ten volle besloten ware, dat het u zou overkomen, zou ik dat u dan niet te kennen geven?</i></span>",
+      "text2026_html": "Toen zei Jonathan: <span class=\"direct-speech\"><i>Volstrekt niet van u! Maar als ik zeker merkte, dat dit kwaad bij mijn vader ten volle besloten ware, dat het u zou overkomen, zou ik dat u dan niet te kennen geven?</i></span>",
       "textSV1888_html": "Toen zeide Jonathan:<sup class=\"note-marker\" data-note=\"22\">22</sup> Dat zij verre van u! Maar indien ik zekerlijk merkte, dat dit kwaad bij mijn vader ten volle besloten ware, dat het u zou overkomen, zou ik dat u dan niet te kennen geven?",
       "text1637_html": "Doe seyde Ionathan, <sup class=\"note-marker\" data-note=\"22\">22</sup> Dat sy verre van u, maer indien ick sekerlick merckte, dat dit quaet by mijnen vader ten vollen besloten ware, dat het u soude over-comen, en soude ick dat u dan niet te kennen geven?",
       "phraseDiff": [
@@ -1319,6 +1319,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Dat zij verre",
+          "new": "Volstrekt niet",
+          "principe": "V793"
         },
         {
           "old": "indien",
