@@ -171,13 +171,40 @@
             if (selAll) selAll.addEventListener('click', (e) => {
                 e.preventDefault();
                 this.catEls.forEach(cb => { cb.checked = true; });
+                if (this._syncTests) this._syncTests();
                 this._render();
             });
             if (selNone) selNone.addEventListener('click', (e) => {
                 e.preventDefault();
                 this.catEls.forEach(cb => { cb.checked = false; });
+                if (this._syncTests) this._syncTests();
                 this._render();
             });
+
+            // OT/NT hoofd-checkboxes: in één keer alle categorieën van een testament aan/uit.
+            const TEST_CATS = {
+                ot: ['pentateuch', 'historisch', 'poetisch', 'grote_profeten', 'kleine_profeten', 'apocriefen'],
+                nt: ['evangelien', 'handelingen', 'brieven', 'openbaring'],
+            };
+            const testEls = overlay.querySelectorAll('.search-test-cb');
+            const syncTests = () => {
+                testEls.forEach(tc => {
+                    const ids = TEST_CATS[tc.dataset.test] || [];
+                    const cats = Array.from(this.catEls).filter(cb => ids.includes(cb.dataset.cat));
+                    const n = cats.filter(cb => cb.checked).length;
+                    tc.checked = cats.length > 0 && n === cats.length;
+                    tc.indeterminate = n > 0 && n < cats.length;
+                });
+            };
+            this._syncTests = syncTests;
+            testEls.forEach(tc => tc.addEventListener('change', () => {
+                const ids = TEST_CATS[tc.dataset.test] || [];
+                this.catEls.forEach(cb => { if (ids.includes(cb.dataset.cat)) cb.checked = tc.checked; });
+                tc.indeterminate = false;
+                this._render();
+            }));
+            this.catEls.forEach(cb => cb.addEventListener('change', syncTests));
+            syncTests();
 
             // Klik op resultaat: navigeer
             this.resultsEl.addEventListener('click', (e) => {
@@ -196,6 +223,10 @@
                     <div class="search-header">
                         <input type="text" id="search-input" placeholder="Zoek in Gods Woord..." autocomplete="off" autofocus>
                         <button class="search-close" aria-label="Sluiten" title="Sluiten">&times;</button>
+                    </div>
+                    <div class="search-testaments">
+                        <label class="search-test"><input type="checkbox" class="search-test-cb" data-test="ot" checked> Oude Testament</label>
+                        <label class="search-test"><input type="checkbox" class="search-test-cb" data-test="nt" checked> Nieuwe Testament</label>
                     </div>
                     <div class="search-categories">
                         ${cats}
