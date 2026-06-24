@@ -1205,7 +1205,7 @@
       "number": 10,
       "textSV1888": "Zo haastte de vrouw, en liep, en gaf het haar man te kennen; en zij zeide tot hem: Zie, die Man is mij verschenen, Welke op dien dag tot mij kwam.",
       "text1637": "So haestede de vrouwe, ende liep, ende gaf’t haren man te kennen: ende sy seyde tot hem; Siet die man is my verschenen, de welcke op dien dach tot my quam.",
-      "text2026": "Zo haastte de vrouw, en liep, en gaf het haar man te kennen; en zij zei tot hem: Zie, die Man is mij verschenen, Welke op die dag tot mij kwam.",
+      "text2026": "Zo haastte de vrouw, en liep, en gaf het haar man te kennen; en zij zei tot hem: Zie, die Man is mij verschenen, die op die dag tot mij kwam.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1284,13 +1284,18 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "Zo haastte de vrouw, en liep, en gaf het haar man te kennen; en zij zei tot hem: <span class=\"direct-speech\"><i>Zie, die Man is mij verschenen, Welke op die dag tot mij kwam.</i></span>",
+      "text2026_html": "Zo haastte de vrouw, en liep, en gaf het haar man te kennen; en zij zei tot hem: <span class=\"direct-speech\"><i>Zie, die Man is mij verschenen, die op die dag tot mij kwam.</i></span>",
       "text1637_html": "So haestede de vrouwe, ende liep, ende gaf’t haren man te kennen: ende sy seyde tot hem; Siet die man is my verschenen, de welcke op dien dach tot my quam.",
       "phraseDiff": [
         {
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Welke",
+          "new": "die",
+          "principe": "V808"
         },
         {
           "old": "dien",
