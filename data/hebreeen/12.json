@@ -1194,7 +1194,7 @@
       "number": 8,
       "textSV1888": "Maar indien gij zonder kastijding zijt, welke allen deelachtig zijn geworden, zo zijt gij dan bastaarden, en niet zonen.",
       "text1637": "Maer indien ghy sonder kastijdinge zijt, welcker [26] alle deelachtigh zijn geworden, so zijt ghy dan [27] bastaerden, ende niet sonen.",
-      "text2026": "Maar als u zonder vergelding bent, welke allen deelachtig zijn geworden, zo bent u dan bastaarden, en niet zonen.",
+      "text2026": "Maar als u zonder vergelding bent, die allen deelachtig zijn geworden, zo bent u dan bastaarden, en niet zonen.",
       "marginNotes": [
         {
           "marker": "27",
@@ -1296,7 +1296,7 @@
           "gloss": "〔to be"
         }
       ],
-      "text2026_html": "Maar als u zonder vergelding bent, welke allen deelachtig zijn geworden, zo bent u dan<sup class=\"note-marker\" data-note=\"27\">27</sup> bastaarden, en niet zonen.",
+      "text2026_html": "Maar als u zonder vergelding bent, die allen deelachtig zijn geworden, zo bent u dan<sup class=\"note-marker\" data-note=\"27\">27</sup> bastaarden, en niet zonen.",
       "textSV1888_html": "Maar indien gij zonder kastijding zijt, welke allen deelachtig zijn geworden, zo zijt gij dan<sup class=\"note-marker\" data-note=\"27\">27</sup> bastaarden, en niet zonen.",
       "text1637_html": "Maer indien ghy sonder kastijdinge zijt, welcker <sup class=\"note-marker\" data-note=\"26\">26</sup> alle deelachtigh zijn geworden, so zijt ghy dan <sup class=\"note-marker\" data-note=\"27\">27</sup> bastaerden, ende niet sonen.",
       "phraseDiff": [
@@ -1306,9 +1306,9 @@
           "principe": "A1"
         },
         {
-          "old": "kastijding zijt,",
-          "new": "vergelding bent,",
-          "principe": "V341"
+          "old": "kastijding zijt, welke",
+          "new": "vergelding bent, die",
+          "principe": null
         },
         {
           "old": "zijt gij",
@@ -3693,7 +3693,7 @@
       "number": 25,
       "textSV1888": "Ziet toe, dat gij Dien, Die spreekt, niet verwerpt; want indien dezen niet zijn ontvloden, die dengene verwierpen, welke op aarde Goddelijke antwoorden gaf, veelmeer zullen wij niet ontvlieden, zo wij ons van Dien afkeren, Die van de hemelen is;",
       "text1637": "[b] Siet toe dat ghy [64] dien die spreeckt niet en verwerpt: want indien dese niet en zijn [65] ontvloden, die den genen verwierpen [66] welcke op aerden Godtlicke antwoorden gaf, veel meer [en sullen] wy niet [ontvlieden], so wy ons van dien afkeeren [67] die van de hemelen [is]:",
-      "text2026": "Zie toe, dat u Die, Die spreekt, niet verwerpt; want als deze niet zijn ontvlucht, die dengene verwierpen, welke op aarde Goddelijke antwoorden gaf, veelmeer zullen wij niet ontvluchten, zo wij ons van Die afkeren, Die van de hemelen is;",
+      "text2026": "Zie toe, dat u Die, Die spreekt, niet verwerpt; want als deze niet zijn ontvlucht, die dengene verwierpen, die op aarde Goddelijke antwoorden gaf, veelmeer zullen wij niet ontvluchten, zo wij ons van Die afkeren, Die van de hemelen is;",
       "marginNotes": [
         {
           "marker": "64",
@@ -3871,7 +3871,7 @@
           "gloss": "〔to turn away"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Zie toe, dat u<sup class=\"note-marker\" data-note=\"64\">64</sup> Die, Die spreekt, niet verwerpt; want als deze niet zijn<sup class=\"note-marker\" data-note=\"65\">65</sup> ontvlucht, die dengene verwierpen,<sup class=\"note-marker\" data-note=\"66\">66</sup> welke op aarde Goddelijke antwoorden gaf, veelmeer zullen wij niet ontvluchten, zo wij ons van Die afkeren,<sup class=\"note-marker\" data-note=\"67\">67</sup> Die van de hemelen is;",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Zie toe, dat u<sup class=\"note-marker\" data-note=\"64\">64</sup> Die, Die spreekt, niet verwerpt; want als deze niet zijn<sup class=\"note-marker\" data-note=\"65\">65</sup> ontvlucht, die dengene verwierpen,<sup class=\"note-marker\" data-note=\"66\">66</sup> die op aarde Goddelijke antwoorden gaf, veelmeer zullen wij niet ontvluchten, zo wij ons van Die afkeren,<sup class=\"note-marker\" data-note=\"67\">67</sup> Die van de hemelen is;",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Ziet toe, dat gij<sup class=\"note-marker\" data-note=\"64\">64</sup> Dien, Die spreekt, niet verwerpt; want indien dezen niet zijn<sup class=\"note-marker\" data-note=\"65\">65</sup> ontvloden, die dengene verwierpen,<sup class=\"note-marker\" data-note=\"66\">66</sup> welke op aarde Goddelijke antwoorden gaf, veelmeer zullen wij niet ontvlieden, zo wij ons van Dien afkeren,<sup class=\"note-marker\" data-note=\"67\">67</sup> Die van de hemelen is;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Siet toe dat ghy <sup class=\"note-marker\" data-note=\"64\">64</sup> dien die spreeckt niet en verwerpt: want indien dese niet en zijn <sup class=\"note-marker\" data-note=\"65\">65</sup> ontvloden, die den genen verwierpen <sup class=\"note-marker\" data-note=\"66\">66</sup> welcke op aerden Godtlicke antwoorden gaf, veel meer [<i>en sullen</i>] wy niet [<i>ontvlieden</i>], so wy ons van dien afkeeren <sup class=\"note-marker\" data-note=\"67\">67</sup> die van de hemelen [<i>is</i>]:",
       "phraseDiff": [
@@ -3894,6 +3894,11 @@
           "old": "ontvloden,",
           "new": "ontvlucht,",
           "principe": "V339"
+        },
+        {
+          "old": "welke",
+          "new": "die",
+          "principe": "V808"
         },
         {
           "old": "ontvlieden,",
@@ -4111,7 +4116,7 @@
       "number": 27,
       "textSV1888": "En dit woord: Nog eenmaal, wijst aan de verandering der bewegelijke dingen, als welke gemaakt waren, opdat blijven zouden de dingen, die niet bewegelijk zijn.",
       "text1637": "Ende dit [woordt], Noch eenmael, wijst aen de veranderinge [73] der beweeghlicke dingen, als [74] welcke gemaeckt waren, op dat [75] blijven souden de dingen [76] die niet beweeghlick en zijn.",
-      "text2026": "En dit woord: Nog eenmaal, wijst aan de verandering van de bewegelijke dingen, als welke gemaakt waren, opdat blijven zouden de dingen, die niet bewegelijk zijn.",
+      "text2026": "En dit woord: Nog eenmaal, wijst aan de verandering van de bewegelijke dingen, als die gemaakt waren, opdat blijven zouden de dingen, die niet bewegelijk zijn.",
       "marginNotes": [
         {
           "marker": "73",
@@ -4240,7 +4245,7 @@
           "gloss": "〔to shake"
         }
       ],
-      "text2026_html": "En dit woord: Nog eenmaal, wijst aan de verandering<sup class=\"note-marker\" data-note=\"73\">73</sup> van de bewegelijke dingen, als<sup class=\"note-marker\" data-note=\"74\">74</sup> welke gemaakt waren, opdat<sup class=\"note-marker\" data-note=\"75\">75</sup> blijven zouden de dingen,<sup class=\"note-marker\" data-note=\"76\">76</sup> die niet bewegelijk zijn.",
+      "text2026_html": "En dit woord: Nog eenmaal, wijst aan de verandering<sup class=\"note-marker\" data-note=\"73\">73</sup> van de bewegelijke dingen, als<sup class=\"note-marker\" data-note=\"74\">74</sup> die gemaakt waren, opdat<sup class=\"note-marker\" data-note=\"75\">75</sup> blijven zouden de dingen,<sup class=\"note-marker\" data-note=\"76\">76</sup> die niet bewegelijk zijn.",
       "textSV1888_html": "En dit woord: Nog eenmaal, wijst aan de verandering<sup class=\"note-marker\" data-note=\"73\">73</sup> der bewegelijke dingen, als<sup class=\"note-marker\" data-note=\"74\">74</sup> welke gemaakt waren, opdat<sup class=\"note-marker\" data-note=\"75\">75</sup> blijven zouden de dingen,<sup class=\"note-marker\" data-note=\"76\">76</sup> die niet bewegelijk zijn.",
       "text1637_html": "Ende dit [<i>woordt</i>], Noch eenmael, wijst aen de veranderinge <sup class=\"note-marker\" data-note=\"73\">73</sup> der beweeghlicke dingen, als <sup class=\"note-marker\" data-note=\"74\">74</sup> welcke gemaeckt waren, op dat <sup class=\"note-marker\" data-note=\"75\">75</sup> blijven souden de dingen <sup class=\"note-marker\" data-note=\"76\">76</sup> die niet beweeghlick en zijn.",
       "phraseDiff": [
@@ -4248,6 +4253,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "welke",
+          "new": "die",
+          "principe": "V808"
         }
       ]
     },
