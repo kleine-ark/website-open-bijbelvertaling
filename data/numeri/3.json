@@ -2119,7 +2119,7 @@
       "number": 26,
       "textSV1888": "En de behangselen des voorhofs, en het deksel van de deur des voorhofs, welke bij den tabernakel en bij het altaar rondom zijn; mitsgaders de zelen, tot zijn gansen dienst.",
       "text1637": "Ende de behangselen des voorhofs, ende het decksel der deure des voorhofs, dewelcke by den Tabernakel, ende by den altaer rontomme zijn: mitsgaders sijne zeelen, tot sijnen gantschen dienst.",
-      "text2026": "En de behangselen van de voorhof, en het deksel van de deur van de voorhof, welke bij de tabernakel en bij het altaar rondom zijn; en ook de zelen, tot zijn ganse dienst.",
+      "text2026": "En de behangselen van de voorhof, en het deksel van de deur van de voorhof, die bij de tabernakel en bij het altaar rondom zijn; en ook de zelen, tot zijn ganse dienst.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2203,7 +2203,7 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En de behangselen van de voorhof, en het deksel van de deur van de voorhof, welke bij de tabernakel en bij het altaar rondom zijn; en ook de zelen, tot zijn ganse dienst.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En de behangselen van de voorhof, en het deksel van de deur van de voorhof, die bij de tabernakel en bij het altaar rondom zijn; en ook de zelen, tot zijn ganse dienst.</i></span>",
       "text1637_html": "Ende de behangselen des voorhofs, ende het decksel der deure des voorhofs, dewelcke by den Tabernakel, ende by den altaer rontomme zijn: mitsgaders sijne zeelen, tot sijnen gantschen dienst.",
       "phraseDiff": [
         {
@@ -2212,9 +2212,9 @@
           "principe": "N3"
         },
         {
-          "old": "des voorhofs,",
-          "new": "van de voorhof,",
-          "principe": "N3"
+          "old": "des voorhofs, welke",
+          "new": "van de voorhof, die",
+          "principe": null
         },
         {
           "old": "den",
@@ -3326,7 +3326,7 @@
       "number": 39,
       "textSV1888": "Alle getelden der Levieten, welke Mozes en Aäron, op het bevel des HEEREN, naar hun geslachten, geteld hebben, al wat mannelijk was, van een maand oud en daarboven, waren twee en twintig duizend.",
       "text1637": "Alle getelde der Leviten, dewelcke Mose ende Aaron, op het bevel des HEEREN, nae hare geslachten getelt hebben; al wat mannelick was van een maent out, ende daer boven; waren [32] twee en twintich duysent.",
-      "text2026": "Alle getelden van de Levieten, welke Mozes en Aäron, op het bevel van JAHWEH, naar hun geslachten, geteld hebben, al wat mannelijk was, van een maand oud en daarboven, waren twee en twintig duizend.",
+      "text2026": "Alle getelden van de Levieten, die Mozes en Aäron, op het bevel van JAHWEH, naar hun geslachten, geteld hebben, al wat mannelijk was, van een maand oud en daarboven, waren twee en twintig duizend.",
       "marginNotes": [
         {
           "marker": "32",
@@ -3433,7 +3433,7 @@
           "morph": "HAcbsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Alle getelden van de Levieten, welke Mozes en Aäron, op het bevel van JAHWEH, naar hun geslachten, geteld hebben, al wat mannelijk was, van een maand oud en daarboven, waren<sup class=\"note-marker\" data-note=\"32\">32</sup> twee en twintig duizend.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Alle getelden van de Levieten, die Mozes en Aäron, op het bevel van JAHWEH, naar hun geslachten, geteld hebben, al wat mannelijk was, van een maand oud en daarboven, waren<sup class=\"note-marker\" data-note=\"32\">32</sup> twee en twintig duizend.</i></span>",
       "textSV1888_html": "Alle getelden der Levieten, welke Mozes en Aäron, op het bevel des HEEREN, naar hun geslachten, geteld hebben, al wat mannelijk was, van een maand oud en daarboven, waren<sup class=\"note-marker\" data-note=\"32\">32</sup> twee en twintig duizend.",
       "text1637_html": "Alle getelde der Leviten, dewelcke Mose ende Aaron, op het bevel des HEEREN, nae hare geslachten getelt hebben; al wat mannelick was van een maent out, ende daer boven; waren <sup class=\"note-marker\" data-note=\"32\">32</sup> twee en twintich duysent.",
       "phraseDiff": [
@@ -3441,6 +3441,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "welke",
+          "new": "die",
+          "principe": "V808"
         },
         {
           "old": "des HEEREN,",

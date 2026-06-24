@@ -1299,7 +1299,7 @@
       "number": 13,
       "textSV1888": "Van daar reisden zij, en legerden zich aan deze zijde van de Arnon, welke in de woestijn is, uitgaande uit de landpalen der Amorieten; want de Arnon is de landpale van Moab, tussen Moab en tussen de Amorieten.",
       "text1637": "Van daer reysden sy, ende legerden haer [17] aen dese zijde van Arnon, welcke in de woestijne is, uytgaende uyt de lant-palen der Amoriten: [f] want Arnon is de lant-pale van Moab, tusschen Moab, ende tusschen de Amoriten,",
-      "text2026": "Van daar reisden zij, en legerden zich aan deze zijde van de Arnon, welke in de woestijn is, uitgaande uit het gebied van de Amorieten; want de Arnon is de landpale van Moab, tussen Moab en tussen de Amorieten.",
+      "text2026": "Van daar reisden zij, en legerden zich aan deze zijde van de Arnon, die in de woestijn is, uitgaande uit het gebied van de Amorieten; want de Arnon is de landpale van Moab, tussen Moab en tussen de Amorieten.",
       "marginNotes": [
         {
           "marker": "17",
@@ -1408,10 +1408,15 @@
           "morph": "HTd/Ngmsa"
         }
       ],
-      "text2026_html": "Van daar reisden zij, en legerden zich<sup class=\"note-marker\" data-note=\"17\">17</sup> aan deze zijde van de Arnon, welke in de woestijn is, uitgaande uit het gebied van de<sup class=\"note-marker\" data-note=\"f\">f</sup> Amorieten; want de Arnon is de landpale van Moab, tussen Moab en tussen de Amorieten.",
+      "text2026_html": "Van daar reisden zij, en legerden zich<sup class=\"note-marker\" data-note=\"17\">17</sup> aan deze zijde van de Arnon, die in de woestijn is, uitgaande uit het gebied van de<sup class=\"note-marker\" data-note=\"f\">f</sup> Amorieten; want de Arnon is de landpale van Moab, tussen Moab en tussen de Amorieten.",
       "textSV1888_html": "Van daar reisden zij, en legerden zich<sup class=\"note-marker\" data-note=\"17\">17</sup> aan deze zijde van de Arnon, welke in de woestijn is, uitgaande uit de landpalen der Amorieten;<sup class=\"note-marker\" data-note=\"f\">f</sup> want de Arnon is de landpale van Moab, tussen Moab en tussen de Amorieten.",
       "text1637_html": "Van daer reysden sy, ende legerden haer <sup class=\"note-marker\" data-note=\"17\">17</sup> aen dese zijde van Arnon, welcke in de woestijne is, uytgaende uyt de lant-palen der Amoriten: <sup class=\"note-marker\" data-note=\"f\">f</sup> want Arnon is de lant-pale van Moab, tusschen Moab, ende tusschen de Amoriten,",
       "phraseDiff": [
+        {
+          "old": "welke",
+          "new": "die",
+          "principe": "V808"
+        },
         {
           "old": "",
           "new": "het gebied van",
@@ -3094,7 +3099,7 @@
       "number": 30,
       "textSV1888": "En wij hebben hen nedergeveld! Hesbon is verloren tot Dibon toe; en wij hebben hen verwoest tot Nofat toe, welke tot Medeba toe reikt.",
       "text1637": "Ende wy hebbense [47] neder-gevelt: Hesbon is verloren tot [48] Dibon toe, ende wy hebbense verwoestet tot Nophah toe, welcke tot [49] Medeba toe [reyckt].",
-      "text2026": "En wij hebben hen neergeveld! Hesbon is verloren tot Dibon toe; en wij hebben hen verwoest tot Nofat toe, welke tot Medeba toe reikt.",
+      "text2026": "En wij hebben hen neergeveld! Hesbon is verloren tot Dibon toe; en wij hebben hen verwoest tot Nofat toe, die tot Medeba toe reikt.",
       "marginNotes": [
         {
           "marker": "48",
@@ -3175,7 +3180,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En wij hebben hen neergeveld! Hesbon is verloren tot<sup class=\"note-marker\" data-note=\"48\">48</sup> Dibon toe; en wij hebben hen verwoest tot Nofat toe, welke tot<sup class=\"note-marker\" data-note=\"49\">49</sup> Medeba toe reikt.",
+      "text2026_html": "En wij hebben hen neergeveld! Hesbon is verloren tot<sup class=\"note-marker\" data-note=\"48\">48</sup> Dibon toe; en wij hebben hen verwoest tot Nofat toe, die tot<sup class=\"note-marker\" data-note=\"49\">49</sup> Medeba toe reikt.",
       "textSV1888_html": "En wij hebben hen nedergeveld! Hesbon is verloren tot<sup class=\"note-marker\" data-note=\"48\">48</sup> Dibon toe; en wij hebben hen verwoest tot Nofat toe, welke tot<sup class=\"note-marker\" data-note=\"49\">49</sup> Medeba toe reikt.",
       "text1637_html": "Ende wy hebbense <sup class=\"note-marker\" data-note=\"47\">47</sup> neder-gevelt: Hesbon is verloren tot <sup class=\"note-marker\" data-note=\"48\">48</sup> Dibon toe, ende wy hebbense verwoestet tot Nophah toe, welcke tot <sup class=\"note-marker\" data-note=\"49\">49</sup> Medeba toe [reyckt].",
       "phraseDiff": [
@@ -3183,6 +3188,11 @@
           "old": "nedergeveld!",
           "new": "neergeveld!",
           "principe": "V458"
+        },
+        {
+          "old": "welke",
+          "new": "die",
+          "principe": "V808"
         }
       ]
     },
