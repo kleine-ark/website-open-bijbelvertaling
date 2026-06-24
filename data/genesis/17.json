@@ -1604,7 +1604,7 @@
       "number": 12,
       "textSV1888": "Een zoontje dan van acht dagen zal u besneden worden, al wat mannelijk is in uw geslachten: de ingeborene van het huis, en de gekochte met geld van allen vreemde, welke niet is van uw zaad;",
       "text1637": "Een [i] soonken dan van acht dagen sal u besneden worden, al wat manlick is in uwe geslachten: [21] d'ingeborene des huyses, ende [22] de gekochte met gelde van allen [23] vreemden, de welcke niet en is van uwen zade:",
-      "text2026": "Een zoontje dan van acht dagen zal u besneden worden, al wat mannelijk is in uw geslachten: de ingeborene van het huis, en de gekochte met geld van alle vreemde, welke niet is van uw zaad;",
+      "text2026": "Een zoontje dan van acht dagen zal u besneden worden, al wat mannelijk is in uw geslachten: de ingeborene van het huis, en de gekochte met geld van alle vreemde, die niet is van uw zaad;",
       "marginNotes": [
         {
           "marker": "i",
@@ -1772,7 +1772,7 @@
           "morph": "HPp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Een<sup class=\"note-marker\" data-note=\"i\">i</sup> zoontje dan van acht dagen zal u besneden worden, al wat mannelijk is in uw geslachten:<sup class=\"note-marker\" data-note=\"21\">21</sup> de ingeborene van het huis, en<sup class=\"note-marker\" data-note=\"22\">22</sup> de gekochte met geld van alle<sup class=\"note-marker\" data-note=\"23\">23</sup> vreemde, welke niet is van uw zaad;</span></i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Een<sup class=\"note-marker\" data-note=\"i\">i</sup> zoontje dan van acht dagen zal u besneden worden, al wat mannelijk is in uw geslachten:<sup class=\"note-marker\" data-note=\"21\">21</sup> de ingeborene van het huis, en<sup class=\"note-marker\" data-note=\"22\">22</sup> de gekochte met geld van alle<sup class=\"note-marker\" data-note=\"23\">23</sup> vreemde, die niet is van uw zaad;</span></i></span>",
       "textSV1888_html": "Een<sup class=\"note-marker\" data-note=\"i\">i</sup> zoontje dan van acht dagen zal u besneden worden, al wat mannelijk is in uw geslachten:<sup class=\"note-marker\" data-note=\"21\">21</sup> de ingeborene van het huis, en<sup class=\"note-marker\" data-note=\"22\">22</sup> de gekochte met geld van allen<sup class=\"note-marker\" data-note=\"23\">23</sup> vreemde, welke niet is van uw zaad;",
       "text1637_html": "Een <sup class=\"note-marker\" data-note=\"i\">i</sup> soonken dan van acht dagen sal u besneden worden, al wat manlick is in uwe geslachten: <sup class=\"note-marker\" data-note=\"21\">21</sup> d'ingeborene des huyses, ende <sup class=\"note-marker\" data-note=\"22\">22</sup> de gekochte met gelde van allen <sup class=\"note-marker\" data-note=\"23\">23</sup> vreemden, de welcke niet en is van uwen zade:",
       "phraseDiff": [
@@ -1780,6 +1780,11 @@
           "old": "allen",
           "new": "alle",
           "principe": null
+        },
+        {
+          "old": "welke",
+          "new": "die",
+          "principe": "V808"
         }
       ]
     },

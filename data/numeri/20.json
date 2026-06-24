@@ -1533,7 +1533,7 @@
       "number": 14,
       "textSV1888": "Daarna zond Mozes boden uit Kades tot den koning van Edom, welke zeiden: Alzo zegt uw broeder Israël: Gij weet al de moeite, die ons ontmoet is;",
       "text1637": "Daerna sondt Mose boden uyt Kades tot den Coninck van [22] Edom, [welcke seyden] [h] Alsoo seyt uw' [22] broeder Israël, Ghy weet al de moeyte [23] die ons ontmoett is:",
-      "text2026": "Daarna zond Mozes boden uit Kades tot de koning van Edom, welke zeiden: Zo zegt uw broer Israël: U weet al de moeite, die ons ontmoet is;",
+      "text2026": "Daarna zond Mozes boden uit Kades tot de koning van Edom, die zeiden: Zo zegt uw broer Israël: U weet al de moeite, die ons ontmoet is;",
       "marginNotes": [
         {
           "marker": "22",
@@ -1656,7 +1656,7 @@
           "morph": "HVqp3fs/Sp1cp"
         }
       ],
-      "text2026_html": "Daarna zond Mozes boden uit Kades tot de koning van Edom, welke zeiden: <span class=\"direct-speech\"><i>Zo zegt uw broer Israël: U weet al de moeite, die ons ontmoet is;</i></span>",
+      "text2026_html": "Daarna zond Mozes boden uit Kades tot de koning van Edom, die zeiden: <span class=\"direct-speech\"><i>Zo zegt uw broer Israël: U weet al de moeite, die ons ontmoet is;</i></span>",
       "textSV1888_html": "Daarna zond Mozes boden uit Kades tot den koning van<sup class=\"note-marker\" data-note=\"22\">22</sup> Edom,<sup class=\"note-marker\" data-note=\"h\">h</sup> welke zeiden: Alzo zegt uw broeder Israël: Gij weet al de moeite,<sup class=\"note-marker\" data-note=\"23\">23</sup> die ons ontmoet is;",
       "text1637_html": "Daerna sondt Mose bode<i>n</i> uyt Kades tot den Coninck van <sup class=\"note-marker\" data-note=\"22\">22</sup> Edom, [welcke seyde<i>n</i>] <sup class=\"note-marker\" data-note=\"h\">h</sup> Alsoo seyt uw' <sup class=\"note-marker\" data-note=\"22\">22</sup> broeder Israël, Ghy weet al de moeyte <sup class=\"note-marker\" data-note=\"23\">23</sup> die ons ontmoett is:",
       "phraseDiff": [
@@ -1664,6 +1664,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "welke",
+          "new": "die",
+          "principe": "V808"
         },
         {
           "old": "Alzo",

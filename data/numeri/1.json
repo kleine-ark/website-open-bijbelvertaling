@@ -1003,7 +1003,7 @@
       "number": 17,
       "textSV1888": "Toen namen Mozes en Aäron die mannen, welken met namen uitgedrukt zijn.",
       "text1637": "Doe namen Mose ende Aaron die mannen, welcke met namen uytgedruckt zijn.",
-      "text2026": "Toen namen Mozes en Aäron die mannen, welke met namen uitgedrukt zijn.",
+      "text2026": "Toen namen Mozes en Aäron die mannen, die met namen uitgedrukt zijn.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1052,13 +1052,13 @@
           "morph": "HR/Ncmpa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Toen namen Mozes en Aäron die mannen, welke met namen uitgedrukt zijn.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Toen namen Mozes en Aäron die mannen, die met namen uitgedrukt zijn.</i></span>",
       "text1637_html": "Doe namen Mose ende Aaron die mannen, welcke met namen uytgedruckt zijn.",
       "phraseDiff": [
         {
           "old": "welken",
-          "new": "welke",
-          "principe": "N6"
+          "new": "die",
+          "principe": "V808"
         }
       ]
     },
@@ -3219,7 +3219,7 @@
       "number": 44,
       "textSV1888": "Dezen zijn de getelden, welke Mozes geteld heeft, en Aäron, en de oversten van Israël; twaalf mannen waren zij, elk over het huis zijner vaderen.",
       "text1637": "Dese zijn de getelde, welcke Mose getelt heeft, ende Aaron, ende Overste Israëls: twaelf mannen [16] waren sy, elck een over het huys sijner vaderen.",
-      "text2026": "Deze zijn de getelden, welke Mozes geteld heeft, en Aäron, en de oversten van Israël; twaalf mannen waren zij, elk over het huis van zijn vaderen.",
+      "text2026": "Deze zijn de getelden, die Mozes geteld heeft, en Aäron, en de oversten van Israël; twaalf mannen waren zij, elk over het huis van zijn vaderen.",
       "marginNotes": [
         {
           "marker": "16",
@@ -3311,7 +3311,7 @@
           "morph": "HVqp3cp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Deze zijn de getelden, welke Mozes geteld heeft, en Aäron, en de oversten van Israël; twaalf mannen<sup class=\"note-marker\" data-note=\"16\">16</sup> waren zij, elk over het huis van zijn vaderen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Deze zijn de getelden, die Mozes geteld heeft, en Aäron, en de oversten van Israël; twaalf mannen<sup class=\"note-marker\" data-note=\"16\">16</sup> waren zij, elk over het huis van zijn vaderen.</i></span>",
       "textSV1888_html": "Dezen zijn de getelden, welke Mozes geteld heeft, en Aäron, en de oversten van Israël; twaalf mannen<sup class=\"note-marker\" data-note=\"16\">16</sup> waren zij, elk over het huis zijner vaderen.",
       "text1637_html": "Dese zijn de getelde, welcke Mose getelt heeft, ende Aaron, ende Overste Israëls: twaelf mannen <sup class=\"note-marker\" data-note=\"16\">16</sup> waren sy, elck een over het huys sijner vaderen.",
       "phraseDiff": [
@@ -3319,6 +3319,11 @@
           "old": "Dezen",
           "new": "Deze",
           "principe": null
+        },
+        {
+          "old": "welke",
+          "new": "die",
+          "principe": "V808"
         },
         {
           "old": "zijner",

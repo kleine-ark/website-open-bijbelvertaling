@@ -710,9 +710,9 @@
       "number": 10,
       "text1637": "Want ik heb gezien de gevangenis mijner zonen en dochteren, welke de Eeuwige over hen gebracht heeft.",
       "textSV1888": "Want ik heb gezien de gevangenis mijner zonen en dochteren, welke de Eeuwige over hen gebracht heeft.",
-      "text2026": "Want ik heb gezien de gevangenis van mijn zonen en dochters, welke de Eeuwige over hen gebracht heeft.",
+      "text2026": "Want ik heb gezien de gevangenis van mijn zonen en dochters, die de Eeuwige over hen gebracht heeft.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want ik heb gezien de gevangenis van mijn zonen en dochters, welke de Eeuwige over hen gebracht heeft.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want ik heb gezien de gevangenis van mijn zonen en dochters, die de Eeuwige over hen gebracht heeft.</i></span>",
       "phraseDiff": [
         {
           "old": "mijner",
@@ -720,9 +720,9 @@
           "principe": "N7"
         },
         {
-          "old": "dochteren,",
-          "new": "dochters,",
-          "principe": "V569"
+          "old": "dochteren, welke",
+          "new": "dochters, die",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -2565,9 +2565,9 @@
       "number": 32,
       "text1637": "Onzalig zijn de steden, welke uw kinderen gediend hebben; onzalig de stad, die uw kinderen ontvangen heeft.",
       "textSV1888": "Onzalig zijn de steden, welke uw kinderen gediend hebben; onzalig de stad, die uw kinderen ontvangen heeft.",
-      "text2026": "Onzalig zijn de steden, welke uw kinderen gediend hebben; onzalig de stad, die uw kinderen ontvangen heeft.",
+      "text2026": "Onzalig zijn de steden, die uw kinderen gediend hebben; onzalig de stad, die uw kinderen ontvangen heeft.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Onzalig zijn de steden, welke uw kinderen gediend hebben; onzalig de stad, die uw kinderen ontvangen heeft.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Onzalig zijn de steden, die uw kinderen gediend hebben; onzalig de stad, die uw kinderen ontvangen heeft.</i></span>",
       "grondtekst": [
         {
           "woord": "δειλαιος",
@@ -2624,6 +2624,13 @@
         {
           "woord": "σου",
           "lemma": "σοῦ"
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "welke",
+          "new": "die",
+          "principe": "V808"
         }
       ]
     },
