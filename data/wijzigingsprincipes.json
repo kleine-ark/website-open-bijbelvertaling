@@ -6960,6 +6960,22 @@
       "nieuw": "deels",
       "toelichting": "Verouderd 'eensdeels … anderdeels' → 'deels … deels' (of 'voor een deel').",
       "regex": "\\b(eensdeels|anderdeels)\\b"
+    },
+    {
+      "id": "V808",
+      "categorie": "Naamvallen",
+      "oud": "welke/welken (betrekkelijk vnw)",
+      "nieuw": "die / dat",
+      "toelichting": "Verouderd betrekkelijk voornaamwoord 'welke/welken' → 'die' (de-woord/persoon/meervoud) of 'dat' (onzijdig ev), waar dat zónder verdere zinswijziging kan. Niet bij vragend 'welke?' of 'welke van …'.",
+      "regex": "\\b[Ww]elken?\\b"
+    },
+    {
+      "id": "V809",
+      "categorie": "Verouderde woorden",
+      "oud": "gekruist (= gekruisigd)",
+      "nieuw": "gekruisigd",
+      "toelichting": "'gekruist' in de betekenis 'gekruisigd' (crucified) → 'gekruisigd'. Niet bij 'gekruiste armen/benen' (crossed).",
+      "regex": "\\bgekruist\\b"
     }
   ]
 }
