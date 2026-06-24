@@ -332,7 +332,7 @@
       "number": 3,
       "textSV1888": "Toen zwoer David verder, en zeide: Uw vader weet zeer wel, dat ik genade in uw ogen gevonden heb; daarom heeft hij gezegd: Dat Jonathan dit niet wete, opdat hij zich niet bekommere; en zekerlijk, zo waarachtig als de HEERE leeft, en uw ziel leeft, er is maar als een schrede tussen mij en tussen den dood!",
       "text1637": "Doe swoer David voorder, ende seyde, Uw’ vader [7] weet seer wel, dat ick genade in uwe oogen gevonden hebbe, daerom heeft hy [8] geseyt, Dat Ionathan dit niet en wete, [9] op dat hy sich niet en becommere: ende sekerlick, [soo warachtich als] de HEERE leeft, ende uwe ziele leeft, daer [10] en is maer als een schrede tusschen my ende tusschen de doot.",
-      "text2026": "Toen zwoer David verder, en zei: Uw vader weet zeer wel, dat ik genade in uw ogen gevonden heb; daarom heeft hij gezegd: Dat Jonathan dit niet wete, opdat hij zich niet bekommere; en zeker, zo waarachtig als JAHWEH leeft, en uw ziel leeft, er is maar als een schrede tussen mij en tussen de dood!",
+      "text2026": "Toen zwoer David verder, en zei: Uw vader weet zeer wel, dat ik genade in uw ogen gevonden heb; daarom heeft hij gezegd: Dat Jonathan dit niet wete, opdat hij zich geen zorgen maakt; en zeker, zo waarachtig als JAHWEH leeft, en uw ziel leeft, er is maar als een schrede tussen mij en tussen de dood!",
       "marginNotes": [
         {
           "marker": "7",
@@ -505,7 +505,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "Toen zwoer David verder, en zei: <span class=\"direct-speech\"><i>Uw vader weet zeer wel, dat ik genade in uw ogen gevonden heb; daarom heeft hij gezegd: Dat Jonathan dit niet wete, opdat hij zich niet bekommere; en zeker, zo waarachtig als JAHWEH leeft, en uw ziel leeft, er is maar als een schrede tussen mij en tussen de dood!</i></span>",
+      "text2026_html": "Toen zwoer David verder, en zei: <span class=\"direct-speech\"><i>Uw vader weet zeer wel, dat ik genade in uw ogen gevonden heb; daarom heeft hij gezegd: Dat Jonathan dit niet wete, opdat hij zich geen zorgen maakt; en zeker, zo waarachtig als JAHWEH leeft, en uw ziel leeft, er is maar als een schrede tussen mij en tussen de dood!</i></span>",
       "textSV1888_html": "Toen zwoer David verder, en zeide: Uw vader<sup class=\"note-marker\" data-note=\"7\">7</sup> weet zeer wel, dat ik genade in uw ogen gevonden heb; daarom heeft hij<sup class=\"note-marker\" data-note=\"8\">8</sup> gezegd: Dat Jonathan dit niet wete, opdat hij zich niet bekommere; en zekerlijk,<sup class=\"note-marker\" data-note=\"9\">9</sup> zo waarachtig als de HEERE leeft, en uw ziel leeft, er<sup class=\"note-marker\" data-note=\"10\">10</sup> is maar als een schrede tussen mij en tussen den dood!",
       "text1637_html": "Doe swoer David voorder, ende seyde, Uw’ vader <sup class=\"note-marker\" data-note=\"7\">7</sup> weet seer wel, dat ick genade in uwe oogen gevonden hebbe, daerom heeft hy <sup class=\"note-marker\" data-note=\"8\">8</sup> geseyt, Dat Ionathan dit niet en wete, <sup class=\"note-marker\" data-note=\"9\">9</sup> op dat hy sich niet en becommere: ende sekerlick, [soo warachtich als] de HEERE leeft, ende uwe ziele leeft, daer <sup class=\"note-marker\" data-note=\"10\">10</sup> en is maer als een schrede tusschen my ende tusschen de doot.",
       "phraseDiff": [
@@ -513,6 +513,11 @@
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
+        },
+        {
+          "old": "niet bekommere;",
+          "new": "geen zorgen maakt;",
+          "principe": null
         },
         {
           "old": "zekerlijk,",
@@ -2870,7 +2875,7 @@
       "number": 23,
       "textSV1888": "En aangaande de zaak, waarvan ik en gij gesproken hebben, zie, de HEERE zij tussen mij en tussen u, tot in eeuwigheid!",
       "text1637": "[b] Ende aengaende de sake daer van ick ende ghy gesproken hebben: siet, de HEERE zy [48] tusschen my, ende tusschen u tot in eeuwicheyt.",
-      "text2026": "En aangaande de zaak, waarvan ik en u gesproken hebben, zie, JAHWEH zij tussen mij en tussen u, tot in eeuwigheid!",
+      "text2026": "En voor wat betreft de zaak, waarvan ik en u gesproken hebben, zie, JAHWEH zij tussen mij en tussen u, tot in eeuwigheid!",
       "marginNotes": [
         {
           "marker": "b",
@@ -2944,10 +2949,15 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup><span class=\"direct-speech\"><i> En aangaande de zaak, waarvan ik en u gesproken hebben, zie, JAHWEH zij<sup class=\"note-marker\" data-note=\"48\">48</sup> tussen mij en tussen u, tot in eeuwigheid!</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup><span class=\"direct-speech\"><i> En voor wat betreft de zaak, waarvan ik en u gesproken hebben, zie, JAHWEH zij<sup class=\"note-marker\" data-note=\"48\">48</sup> tussen mij en tussen u, tot in eeuwigheid!</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> En aangaande de zaak, waarvan ik en gij gesproken hebben, zie, de HEERE zij<sup class=\"note-marker\" data-note=\"48\">48</sup> tussen mij en tussen u, tot in eeuwigheid!",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Ende aengaende de sake daer van ick ende ghy gesproken hebben: siet, de HEERE zy <sup class=\"note-marker\" data-note=\"48\">48</sup> tusschen my, ende tusschen u tot in eeuwicheyt.",
       "phraseDiff": [
+        {
+          "old": "aangaande",
+          "new": "voor wat betreft",
+          "principe": "V814"
+        },
         {
           "old": "gij",
           "new": "u",
@@ -4266,7 +4276,7 @@
       "number": 34,
       "textSV1888": "Daarom stond Jonathan van de tafel op in hittigheid des toorns; en hij at op den tweeden dag der nieuwe maan geen brood, want hij was bekommerd om David, omdat zijn vader hem gesmaad had.",
       "text1637": "Daerom stont Ionathan van de tafel op in hitticheyt des toorns: ende hy en att op den tweeden dach der nieuwe mane geen broot, want hy was bekommert om David, om dat sijn vader hem gesmadet hadde.",
-      "text2026": "Daarom stond Jonathan van de tafel op in hitte van de toorn; en hij at op de tweede dag van de nieuwe maan geen brood, want hij was bekommerd om David, omdat zijn vader hem gesmaad had.",
+      "text2026": "Daarom stond Jonathan van de tafel op in hitte van de toorn; en hij at op de tweede dag van de nieuwe maan geen brood, want hij maakte zich zorgen om David, omdat zijn vader hem gesmaad had.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4365,7 +4375,7 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "Daarom stond Jonathan van de tafel op in hitte van de toorn; en hij at op de tweede dag van de nieuwe maan geen brood, want hij was bekommerd om David, omdat zijn vader hem gesmaad had.",
+      "text2026_html": "Daarom stond Jonathan van de tafel op in hitte van de toorn; en hij at op de tweede dag van de nieuwe maan geen brood, want hij maakte zich zorgen om David, omdat zijn vader hem gesmaad had.",
       "text1637_html": "Daerom stont Ionathan van de tafel op in hitticheyt des toorns: ende hy en att op den tweeden dach der nieuwe mane geen broot, want hy was bekommert om David, om dat sijn vader hem gesmadet hadde.",
       "phraseDiff": [
         {
@@ -4382,6 +4392,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "was bekommerd",
+          "new": "maakte zich zorgen",
+          "principe": null
         }
       ]
     },
