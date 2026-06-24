@@ -1462,7 +1462,7 @@
       "number": 13,
       "textSV1888": "En van daar gaat de landpale door naar Luz, aan de zijde van Luz (welke is Beth-El), zuidwaarts; en deze landpale gaat af naar Atroth-Addar, aan den berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
       "text1637": "Ende van daer gaet de lantpale door nae Luz, aen de zijde van Luz, [11] (welcke is Beth-El) Zuydwaerts, ende dese lantpale gaet af nae Atroth Addar, aen den berch, die aen de Zuydzijde van ’t benedenste Beth-Horon is.",
-      "text2026": "En van daar gaat de landpale door naar Luz, aan de zijde van Luz (welke is Beth-El), naar het zuiden; en deze landpale gaat af naar Atroth-Addar, aan de berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
+      "text2026": "En van daar gaat de landpale door naar Luz, aan de zijde van Luz (die is Beth-El), naar het zuiden; en deze landpale gaat af naar Atroth-Addar, aan de berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
       "marginNotes": [
         {
           "marker": "11",
@@ -1584,10 +1584,15 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "En van daar gaat de landpale door naar Luz, aan de zijde van Luz<sup class=\"note-marker\" data-note=\"11\">11</sup> (welke is Beth-El), naar het zuiden; en deze landpale gaat af naar Atroth-Addar, aan de berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
+      "text2026_html": "En van daar gaat de landpale door naar Luz, aan de zijde van Luz<sup class=\"note-marker\" data-note=\"11\">11</sup> (die is Beth-El), naar het zuiden; en deze landpale gaat af naar Atroth-Addar, aan de berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
       "textSV1888_html": "En van daar gaat de landpale door naar Luz, aan de zijde van Luz<sup class=\"note-marker\" data-note=\"11\">11</sup> (welke is Beth-El), zuidwaarts; en deze landpale gaat af naar Atroth-Addar, aan den berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
       "text1637_html": "Ende van daer gaet de lantpale door nae Luz, ae<i>n</i> de zijde van Luz, <sup class=\"note-marker\" data-note=\"11\">11</sup> (welcke is Beth-El) Zuydwaerts, ende dese lantpale gaet af nae Atroth Addar, aen den berch, die aen de Zuydzijde van ’t benedenste Beth-Horon is.",
       "phraseDiff": [
+        {
+          "old": "(welke",
+          "new": "(die",
+          "principe": "V808"
+        },
         {
           "old": "zuidwaarts;",
           "new": "naar het zuiden;",
@@ -1604,7 +1609,7 @@
       "number": 14,
       "textSV1888": "En die landpale strekt en keert zich om, naar den westhoek zuidwaarts van den berg, die tegenover Beth-Horon zuidwaarts is, en haar uitgangen zijn aan Kirjath-Baäl (welke is Kirjath-Jearim), een stad der kinderen van Juda. Dit is de hoek ten westen.",
       "text1637": "Ende die lantpale streckt ende keert haer om nae den Westhoeck Zuydwaerts van den berch, die tegen over Beth-Horon Zuydwaerts is, ende hare uytgangen zijn aen Kiriath-Baal, (welcke is Kiriath-Iearim) eene stadt der kinderen Iuda: Dit is de hoeck ten Westen.",
-      "text2026": "En die landpale strekt en keert zich om, naar de westhoek naar het zuiden van de berg, die tegenover Beth-Horon naar het zuiden is, en haar uitgangen zijn aan Kirjath-Baäl (welke is Kirjath-Jearim), een stad van de kinderen van Juda. Dit is de hoek ten westen.",
+      "text2026": "En die landpale strekt en keert zich om, naar de westhoek naar het zuiden van de berg, die tegenover Beth-Horon naar het zuiden is, en haar uitgangen zijn aan Kirjath-Baäl (die is Kirjath-Jearim), een stad van de kinderen van Juda. Dit is de hoek ten westen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1748,7 +1753,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "En die landpale strekt en keert zich om, naar de westhoek naar het zuiden van de berg, die tegenover Beth-Horon naar het zuiden is, en haar uitgangen zijn aan Kirjath-Baäl (welke is Kirjath-Jearim), een stad van de kinderen van Juda. Dit is de hoek ten westen.",
+      "text2026_html": "En die landpale strekt en keert zich om, naar de westhoek naar het zuiden van de berg, die tegenover Beth-Horon naar het zuiden is, en haar uitgangen zijn aan Kirjath-Baäl (die is Kirjath-Jearim), een stad van de kinderen van Juda. Dit is de hoek ten westen.",
       "text1637_html": "Ende die lantpale streckt ende keert haer om nae den Westhoeck Zuydwaerts van den berch, die tegen over Beth-Horon Zuydwaerts is, ende hare uytgangen zijn aen Kiriath-Baal, (welcke is Kiriath-Iearim) eene stadt der kinderen Iuda: Dit is de hoeck ten Westen.",
       "phraseDiff": [
         {
@@ -1770,6 +1775,11 @@
           "old": "zuidwaarts",
           "new": "naar het zuiden",
           "principe": "V161"
+        },
+        {
+          "old": "(welke",
+          "new": "(die",
+          "principe": "V808"
         },
         {
           "old": "der",
@@ -2051,7 +2061,7 @@
       "number": 17,
       "textSV1888": "En strekt zich van het noorden, en gaat uit te En-Semes; van daar gaat zij uit naar Geliloth, welke is tegenover den opgang naar Adummim, en zij gaat af aan den steen van Bohan, den zoon van Ruben;",
       "text1637": "Ende streckt haer van Noorden, ende gaet uyt te En-Semes [13] van daer gaet sy uyt nae [14] Geliloth, welcke is tegen over den opganck nae Adummim: ende [d] sy gaet af aen den steen [15] Bohan des soons Ruben.",
-      "text2026": "En strekt zich van het noorden, en gaat uit te En-Semes; van daar gaat zij uit naar Geliloth, welke is tegenover de opgang naar Adummim, en zij gaat af aan de steen van Bohan, de zoon van Ruben;",
+      "text2026": "En strekt zich van het noorden, en gaat uit te En-Semes; van daar gaat zij uit naar Geliloth, die is tegenover de opgang naar Adummim, en zij gaat af aan de steen van Bohan, de zoon van Ruben;",
       "marginNotes": [
         {
           "marker": "13",
@@ -2169,10 +2179,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En strekt zich van het noorden, en gaat uit te En-Semes;<sup class=\"note-marker\" data-note=\"13\">13</sup> van daar gaat zij uit naar<sup class=\"note-marker\" data-note=\"14\">14</sup> Geliloth, welke is tegenover de opgang naar Adummim, en<sup class=\"note-marker\" data-note=\"d\">d</sup> zij gaat af aan de steen<sup class=\"note-marker\" data-note=\"15\">15</sup> van Bohan, de zoon van Ruben;",
+      "text2026_html": "En strekt zich van het noorden, en gaat uit te En-Semes;<sup class=\"note-marker\" data-note=\"13\">13</sup> van daar gaat zij uit naar<sup class=\"note-marker\" data-note=\"14\">14</sup> Geliloth, die is tegenover de opgang naar Adummim, en<sup class=\"note-marker\" data-note=\"d\">d</sup> zij gaat af aan de steen<sup class=\"note-marker\" data-note=\"15\">15</sup> van Bohan, de zoon van Ruben;",
       "textSV1888_html": "En strekt zich van het noorden, en gaat uit te En-Semes;<sup class=\"note-marker\" data-note=\"13\">13</sup> van daar gaat zij uit naar<sup class=\"note-marker\" data-note=\"14\">14</sup> Geliloth, welke is tegenover den opgang naar Adummim, en<sup class=\"note-marker\" data-note=\"d\">d</sup> zij gaat af aan den steen<sup class=\"note-marker\" data-note=\"15\">15</sup> van Bohan, den zoon van Ruben;",
       "text1637_html": "Ende streckt haer van Noorden, ende gaet uyt te En-Semes <sup class=\"note-marker\" data-note=\"13\">13</sup> van daer gaet sy uyt nae <sup class=\"note-marker\" data-note=\"14\">14</sup> Geliloth, welcke is tegen over den opganck nae Adummim: ende <sup class=\"note-marker\" data-note=\"d\">d</sup> sy gaet af aen den steen <sup class=\"note-marker\" data-note=\"15\">15</sup> Bohan des soons Ruben.",
       "phraseDiff": [
+        {
+          "old": "welke",
+          "new": "die",
+          "principe": "V808"
+        },
         {
           "old": "den",
           "new": "de",
