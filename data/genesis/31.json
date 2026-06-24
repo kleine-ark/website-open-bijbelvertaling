@@ -3764,7 +3764,7 @@
       "number": 29,
       "textSV1888": "Het ware in de macht mijner hand aan ulieden kwaad te doen; maar de God van ulieder vader heeft tot mij gisteren nacht gesproken, zeggende: Wacht u, van met Jakob te spreken, of goed, of kwaad.",
       "text1637": "Het ware inde macht mijner hant aen u lieden quaet te doen: maer u lieder vaders Godt heeft tot my gister nacht gesproken, seggende, Wacht u van met Iacob te spreken [48] ofte goet, ofte quaet.",
-      "text2026": "Het ware in de macht van mijn hand aan u kwaad te doen; maar de God van uw vader heeft tot mij gisteren nacht gesproken, zeggende: Wees op uw hoede van met Jakob te spreken, of goed, of kwaad.",
+      "text2026": "Het was in de macht van mijn hand aan u kwaad te doen; maar de God van uw vader heeft tot mij gisteren nacht gesproken, zeggende: Wees op uw hoede van met Jakob te spreken, of goed, of kwaad.",
       "marginNotes": [
         {
           "marker": "48",
@@ -3898,10 +3898,15 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Het ware in de macht van mijn hand aan u kwaad te doen; maar de God van uw vader heeft tot mij gisteren nacht gesproken, zeggende: Wees op uw hoede van met Jakob te spreken, of goed, of kwaad.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Het was in de macht van mijn hand aan u kwaad te doen; maar de God van uw vader heeft tot mij gisteren nacht gesproken, zeggende: Wees op uw hoede van met Jakob te spreken, of goed, of kwaad.</i></span>",
       "textSV1888_html": "Het ware in de macht mijner hand aan ulieden kwaad te doen; maar de God van ulieder vader heeft tot mij gisteren nacht gesproken, zeggende: Wacht u, van met Jakob te spreken,<sup class=\"note-marker\" data-note=\"48\">48</sup> of goed, of kwaad.",
       "text1637_html": "Het ware inde macht mijner hant aen u lieden quaet te doen: maer u lieder vaders Godt heeft tot my gister nacht gesproken, seggende, Wacht u van met Iacob te spreken <sup class=\"note-marker\" data-note=\"48\">48</sup> ofte goet, ofte quaet.",
       "phraseDiff": [
+        {
+          "old": "ware",
+          "new": "was",
+          "principe": "V818"
+        },
         {
           "old": "mijner",
           "new": "van mijn",
@@ -5099,7 +5104,7 @@
       "number": 39,
       "textSV1888": "Het verscheurde heb ik tot u niet gebracht; ik heb het geboet; gij hebt het van mijn hand geëist, het ware des daags gestolen, of des nachts gestolen.",
       "text1637": "'T verscheurde en heb' ick tot u niet gebracht, [61] ick hebbet geboet, ghy hebt het van mijne hant geeyscht; het ware des daechs gestolen, ofte des nachts gestolen.",
-      "text2026": "Het verscheurde heb ik tot u niet gebracht; ik heb het geboet; u hebt het van mijn hand geëist, het ware van de dag gestolen, of van de nacht gestolen.",
+      "text2026": "Het verscheurde heb ik tot u niet gebracht; ik heb het geboet; u hebt het van mijn hand geëist, het was van de dag gestolen, of van de nacht gestolen.",
       "marginNotes": [
         {
           "marker": "61",
@@ -5177,7 +5182,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Het verscheurde heb ik tot u niet gebracht;<sup class=\"note-marker\" data-note=\"61\">61</sup> ik heb het geboet; u hebt het van mijn hand geëist, het ware van de dag gestolen, of van de nacht gestolen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Het verscheurde heb ik tot u niet gebracht;<sup class=\"note-marker\" data-note=\"61\">61</sup> ik heb het geboet; u hebt het van mijn hand geëist, het was van de dag gestolen, of van de nacht gestolen.</i></span>",
       "textSV1888_html": "Het verscheurde heb ik tot u niet gebracht;<sup class=\"note-marker\" data-note=\"61\">61</sup> ik heb het geboet; gij hebt het van mijn hand geëist, het ware des daags gestolen, of des nachts gestolen.",
       "text1637_html": "'T verscheurde en heb' ick tot u niet gebracht, <sup class=\"note-marker\" data-note=\"61\">61</sup> ick hebbet geboet, ghy hebt het van mijne hant geeyscht; het ware des daechs gestolen, ofte des nachts gestolen.",
       "phraseDiff": [
@@ -5187,9 +5192,9 @@
           "principe": "A1"
         },
         {
-          "old": "des daags",
-          "new": "van de dag",
-          "principe": "N3"
+          "old": "ware des daags",
+          "new": "was van de dag",
+          "principe": null
         },
         {
           "old": "des nachts",
