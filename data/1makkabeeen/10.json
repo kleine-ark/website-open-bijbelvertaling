@@ -1318,14 +1318,19 @@
       "number": 16,
       "text1637": "Zo zeide hij: Zouden wij ook een zodanige man vinden? Laat ons dan nu hem tot een vriend maken, en tot onze bondgenoot.",
       "textSV1888": "Zo zeide hij: Zouden wij ook een zodanige man vinden? Laat ons dan nu hem tot een vriend maken, en tot onze bondgenoot.",
-      "text2026": "Zo zei hij: Zouden wij ook een zodanige man vinden? Laat ons dan nu hem tot een vriend maken, en tot onze bondgenoot.",
+      "text2026": "Zo zei hij: Zouden wij ook zo iemand vinden? Laat ons dan nu hem tot een vriend maken, en tot onze bondgenoot.",
       "marginNotes": [],
-      "text2026_html": "Zo zei hij: Zouden wij ook een zodanige man vinden? Laat ons dan nu hem tot een vriend maken, en tot onze bondgenoot.",
+      "text2026_html": "Zo zei hij: Zouden wij ook zo iemand vinden? Laat ons dan nu hem tot een vriend maken, en tot onze bondgenoot.",
       "phraseDiff": [
         {
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "een zodanige man",
+          "new": "zo iemand",
+          "principe": "V822"
         }
       ],
       "grondtekst": [
@@ -2753,9 +2758,9 @@
       "number": 32,
       "text1637": "Ik geef ook de macht van de burcht te Jeruzalem over, en geef die aan de hogepriester, dat hij daarin mag stellen zodanige mannen, als hijzelf zal verkiezen, om die te bewaren.",
       "textSV1888": "Ik geef ook de macht van de burcht te Jeruzalem over, en geef die aan de hogepriester, dat hij daarin mag stellen zodanige mannen, als hijzelf zal verkiezen, om die te bewaren.",
-      "text2026": "Ik geef ook de macht van de burcht te Jeruzalem over, en geef die aan de hogepriester, dat hij daarin mag stellen zodanige mannen, als hijzelf zal verkiezen, om die te bewaren.",
+      "text2026": "Ik geef ook de macht van de burcht te Jeruzalem over, en geef die aan de hogepriester, dat hij daarin mag stellen zulke mannen, als hijzelf zal verkiezen, om die te bewaren.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Ik geef ook de macht van de burcht te Jeruzalem over, en geef die aan de hogepriester, dat hij daarin mag stellen zodanige mannen, als hijzelf zal verkiezen, om die te bewaren.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Ik geef ook de macht van de burcht te Jeruzalem over, en geef die aan de hogepriester, dat hij daarin mag stellen zulke mannen, als hijzelf zal verkiezen, om die te bewaren.</i></span>",
       "grondtekst": [
         {
           "woord": "αφιημι",
@@ -2860,6 +2865,13 @@
         {
           "woord": "αυτος",
           "lemma": "αὐτός"
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "zodanige",
+          "new": "zulke",
+          "principe": null
         }
       ]
     },
