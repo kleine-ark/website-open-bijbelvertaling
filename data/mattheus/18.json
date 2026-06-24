@@ -684,7 +684,7 @@
       "number": 6,
       "textSV1888": "Maar zo wie een van deze kleinen, die in Mij geloven, ergert, het ware hem nutter, dat een molensteen aan zijn hals gehangen, en dat hij verzonken ware in de diepte der zee.",
       "text1637": "[e] Maer so wie eenen van dese kleynen, die in my gelooven, [6] ergert, het ware hem nutter dat een [7] meulensteen aen sijnen hals gehangen, ende dat hy versoncken ware in de diepte der zee.",
-      "text2026": "Maar zo wie één van deze kleinen, die in Mij geloven, ten val brengt, het ware hem beter, dat een molensteen aan zijn hals gehangen, en dat hij verzonken ware in de diepte van de zee.",
+      "text2026": "Maar zo wie één van deze kleinen, die in Mij geloven, ten val brengt, het was hem beter, dat een molensteen aan zijn hals gehangen, en dat hij verzonken was in de diepte van de zee.",
       "marginNotes": [
         {
           "marker": "e",
@@ -884,7 +884,7 @@
           "gloss": "〔sea"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar zo wie één van deze kleinen, die in Mij geloven,<sup class=\"note-marker\" data-note=\"6\">6</sup> ten val brengt, het ware hem beter, dat een<sup class=\"note-marker\" data-note=\"7\">7</sup> molensteen aan zijn hals gehangen, en dat hij verzonken ware in de diepte van de zee.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar zo wie één van deze kleinen, die in Mij geloven,<sup class=\"note-marker\" data-note=\"6\">6</sup> ten val brengt, het was hem beter, dat een<sup class=\"note-marker\" data-note=\"7\">7</sup> molensteen aan zijn hals gehangen, en dat hij verzonken was in de diepte van de zee.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Maar zo wie een van deze kleinen, die in Mij geloven,<sup class=\"note-marker\" data-note=\"6\">6</sup> ergert, het ware hem nutter, dat een<sup class=\"note-marker\" data-note=\"7\">7</sup> molensteen aan zijn hals gehangen, en dat hij verzonken ware in de diepte der zee.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Maer so wie eenen van dese kleynen, die in my gelooven, <sup class=\"note-marker\" data-note=\"6\">6</sup> ergert, het ware hem nutter dat een <sup class=\"note-marker\" data-note=\"7\">7</sup> meulensteen aen sijnen hals gehangen, ende dat hy versoncken ware in de diepte der zee.",
       "phraseDiff": [
@@ -899,9 +899,19 @@
           "principe": "V747"
         },
         {
+          "old": "ware",
+          "new": "was",
+          "principe": "V818"
+        },
+        {
           "old": "nutter,",
           "new": "beter,",
           "principe": "V713"
+        },
+        {
+          "old": "ware",
+          "new": "was",
+          "principe": "V818"
         },
         {
           "old": "der",
@@ -1839,7 +1849,7 @@
       "number": 12,
       "textSV1888": "Wat dunkt u, indien enig mens honderd schapen had, en een uit dezelve afgedwaald ware, zal hij niet de negen en negentig laten, en op de bergen heengaande, het afgedwaalde zoeken?",
       "text1637": "[l] Wat dunckt u, [12] indien eenich mensche hondert schapen hadde, ende een uyt de selve afgedwaelt ware, en sal hy niet de negen-en-tnegentich laten, ende op de bergen henen gaende het afgedwaelde soecken?",
-      "text2026": "Wat denkt u, als enig mens honderd schapen had, en een daaruit afgedwaald ware, zal hij niet de negen en negentig laten, en op de bergen heengaande, het afgedwaalde zoeken?",
+      "text2026": "Wat denkt u, als enig mens honderd schapen had, en een daaruit afgedwaald was, zal hij niet de negen en negentig laten, en op de bergen heengaande, het afgedwaalde zoeken?",
       "marginNotes": [
         {
           "marker": "l",
@@ -2020,7 +2030,7 @@
           "gloss": "〔to lead astray"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"l\">l</sup><span class=\"god-speaks\"><i> Wat denkt u,<sup class=\"note-marker\" data-note=\"12\">12</sup> als enig mens honderd schapen had, en een daaruit afgedwaald ware, zal hij niet de negen en negentig laten, en op de bergen heengaande, het afgedwaalde zoeken?</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"l\">l</sup><span class=\"god-speaks\"><i> Wat denkt u,<sup class=\"note-marker\" data-note=\"12\">12</sup> als enig mens honderd schapen had, en een daaruit afgedwaald was, zal hij niet de negen en negentig laten, en op de bergen heengaande, het afgedwaalde zoeken?</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"l\">l</sup> Wat dunkt u,<sup class=\"note-marker\" data-note=\"12\">12</sup> indien enig mens honderd schapen had, en een uit dezelve afgedwaald ware, zal hij niet de negen en negentig laten, en op de bergen heengaande, het afgedwaalde zoeken?",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"l\">l</sup> Wat dunckt u, <sup class=\"note-marker\" data-note=\"12\">12</sup> indien eenich mensche hondert schapen hadde, ende een uyt de selve afgedwaelt ware, en sal hy niet de negen-en-tnegentich laten, ende op de bergen henen gaende het afgedwaelde soecken?",
       "phraseDiff": [
@@ -2038,6 +2048,11 @@
           "old": "uit dezelve",
           "new": "daaruit",
           "principe": "O3"
+        },
+        {
+          "old": "ware,",
+          "new": "was,",
+          "principe": "V818"
         }
       ]
     },
