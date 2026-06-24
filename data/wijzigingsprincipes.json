@@ -7013,9 +7013,17 @@
       "id": "V814",
       "categorie": "Verouderde woorden",
       "oud": "Aangaande (vooropgeplaatst)",
-      "nieuw": "Wat betreft",
-      "toelichting": "Verouderd vooropgeplaatst voorzetsel 'Aangaande X' → 'Wat X betreft' / 'Wat betreft X'. Context-afhankelijk (AI).",
+      "nieuw": "Voor wat betreft",
+      "toelichting": "Verouderd vooropgeplaatst 'Aangaande X' → 'Voor wat betreft X'. Context-afhankelijk (AI).",
       "regex": "\\bAangaande\\b"
+    },
+    {
+      "id": "V815",
+      "categorie": "Verouderde woorden",
+      "oud": "bekommernis(sen)",
+      "nieuw": "zorgen",
+      "toelichting": "Verouderd 'bekommernis(sen)' → 'zorgen' / 'zorg'.",
+      "regex": "\\bbekommernis"
     }
   ]
 }
