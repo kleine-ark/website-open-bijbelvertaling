@@ -7,7 +7,7 @@ er nooit verschillende aantallen op verschillende pagina's staan.
 
 Gebruik:  python3 scripts/build_stats.py [versie] [datum]
 """
-import json, os, re, sys
+import json, os, re, sys, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'data')
@@ -37,13 +37,20 @@ def main():
     verified = parse_verified()
 
     ch_total = verses_total = ch_ver = verses_ver = books_full = diff_total = diff_via_principe = 0
+    verified_books = []   # weergavelabels van (deels) nagekeken boeken, in canonieke volgorde
+    by_test = {'OT': [0, 0], 'NT': [0, 0], 'AP': [0, 0]}   # testament -> [verzen_totaal, verzen_nagekeken]
     for b in books:
         bid = b['id']; chs = b.get('chaptersIncluded', [])
+        test = b.get('testament')
         ch_total += len(chs)
         v = verified.get(bid)
         full = v == 'all' or (isinstance(v, list) and len(chs) > 0 and len(v) >= len(chs))
         if full:
             books_full += 1
+            verified_books.append(b['nameDutch'])
+        elif isinstance(v, list) and len(v) > 0:
+            # gedeeltelijk nagekeken → naam + hoofdstukbereik (bv. "Genesis 1–20")
+            verified_books.append(f"{b['nameDutch']} {min(v)}–{max(v)}")
         for ch in chs:
             fp = os.path.join(DATA, bid, f'{ch}.json')
             if not os.path.exists(fp):
@@ -51,8 +58,13 @@ def main():
             d = json.load(open(fp, encoding='utf-8'))
             vs = [x for x in d.get('verses', []) if isinstance(x, dict)]
             verses_total += len(vs)
-            if v == 'all' or (isinstance(v, list) and ch in v):
+            if test in by_test:
+                by_test[test][0] += len(vs)
+            verified_ch = v == 'all' or (isinstance(v, list) and ch in v)
+            if verified_ch:
                 ch_ver += 1; verses_ver += len(vs)
+                if test in by_test:
+                    by_test[test][1] += len(vs)
             for x in vs:
                 pds = x.get('phraseDiff') or []
                 # Tel het AANTAL GEWIJZIGDE WOORDEN t.o.v. SV1888 (niet het aantal
@@ -85,7 +97,55 @@ def main():
         'changes_via_principe': diff_via_principe,
         'changes_via_principe_pct': pct(diff_via_principe, diff_total),
         'changes_los': diff_total - diff_via_principe,
+        'verified_books': verified_books,
+        'ot_verses_total': by_test['OT'][0],
+        'ot_verses_verified': by_test['OT'][1],
+        'ot_verses_verified_pct': pct(by_test['OT'][1], by_test['OT'][0]),
+        'nt_verses_total': by_test['NT'][0],
+        'nt_verses_verified': by_test['NT'][1],
+        'nt_verses_verified_pct': pct(by_test['NT'][1], by_test['NT'][0]),
+        'ap_verses_total': by_test['AP'][0],
+        'ap_verses_verified': by_test['AP'][1],
+        'ap_verses_verified_pct': pct(by_test['AP'][1], by_test['AP'][0]),
     }
+
+    # === Nakijksnelheid + verwachte einddatum (zelf-bijwerkend) ===
+    # data/review-history.json houdt per datum het aantal nagekeken verzen bij.
+    # Elke build voegt de stand van vandaag toe; de snelheid is de lineaire trend
+    # (kleinste-kwadraten) over de hele historie, de ETA de projectie naar 100%.
+    NL_M = ['', 'januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli',
+            'augustus', 'september', 'oktober', 'november', 'december']
+    hist_fp = os.path.join(DATA, 'review-history.json')
+    try:
+        hist = json.load(open(hist_fp, encoding='utf-8'))
+    except Exception:
+        hist = {}
+    today = datetime.date.today()
+    hist[today.isoformat()] = verses_ver
+    json.dump(hist, open(hist_fp, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+    open(hist_fp, 'a', encoding='utf-8').write('\n')
+
+    pts = sorted((datetime.date.fromisoformat(d), v) for d, v in hist.items())
+    if len(pts) >= 2:
+        x0 = pts[0][0].toordinal()
+        xs = [p[0].toordinal() - x0 for p in pts]
+        ys = [p[1] for p in pts]
+        n = len(xs); sx = sum(xs); sy = sum(ys)
+        sxx = sum(x * x for x in xs); sxy = sum(x * y for x, y in zip(xs, ys))
+        denom = n * sxx - sx * sx
+        slope = (n * sxy - sx * sy) / denom if denom else 0.0   # verzen/dag
+        remaining = verses_total - verses_ver
+        stats['review_verses_per_day'] = round(slope, 1)
+        stats['review_verses_per_week'] = round(slope * 7)
+        stats['review_remaining_verses'] = remaining
+        stats['review_since'] = f"{pts[0][0].day} {NL_M[pts[0][0].month]} {pts[0][0].year}"
+        if slope > 0:
+            eta = today + datetime.timedelta(days=remaining / slope)
+            stats['review_eta'] = f"{eta.day} {NL_M[eta.month]} {eta.year}"
+            stats['review_eta_month'] = f"{NL_M[eta.month]} {eta.year}"
+        else:
+            stats['review_eta'] = stats['review_eta_month'] = 'onbekend'
+
     out = os.path.join(DATA, 'stats.json')
     json.dump(stats, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
     open(out, 'a', encoding='utf-8').write('\n')

@@ -45,7 +45,7 @@
 <body>
 <script>if (window.self !== window.top) { document.body.classList.add('in-iframe'); document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('a[href]').forEach(function(a){ var h=a.getAttribute('href'); if(h && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('http') && !h.startsWith('javascript:')) a.target='_top'; }); }); }</script>
     <nav id="topnav">
-    <div class="topnav-brand">Open Staten Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.21.5</a></span></div>
+    <div class="topnav-brand">Open Staten Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.21.6</a></span></div>
     <div class="topnav-links" id="topnav-links">
         <a href="over-ov.html">Over OSV</a>
         <a href="index.html#johannes/1">Tekst</a>
@@ -78,6 +78,15 @@
         <div class="page" style="flex:1;">
             <h1>Changelog</h1>
             <p class="subtitle">Alle wijzigingen per versie</p>
+
+            <div class="review-tempo" style="border:1px solid #e5e1d8;border-left:4px solid #cba449;border-radius:0 8px 8px 0;background:#faf8f4;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.7;">
+                <div style="font-weight:700;color:#142e42;font-size:15px;margin-bottom:6px;">Nakijktempo <span style="font-weight:400;color:#666;">— eerste vers-voor-vers ronde</span></div>
+                <div>Voortgang: <strong><span data-stat="verses_verified">11.175</span></strong> / <span data-stat="verses_total">37.235</span> verzen handmatig nagekeken (<strong><span data-stat="verses_verified_pct" data-stat-suffix="%">30,0</span></strong>)</div>
+                <div>Tempo: ± <strong><span data-stat="review_verses_per_week">919</span></strong> verzen per week <span style="color:#666;">(sinds <span data-stat="review_since">7 juni 2026</span>)</span></div>
+                <div>Nog te gaan: <span data-stat="review_remaining_verses">26.060</span> verzen</div>
+                <div style="margin-top:6px;">Verwachte afronding bij dit tempo: <strong style="color:#142e42;"><span data-stat="review_eta">13 januari 2027</span></strong></div>
+                <div id="review-chart" style="margin-top:14px;"></div>
+            </div>
 
             <div id="changelog-container">Laden...</div>
         </div>
@@ -144,5 +153,6 @@
 <script src="js/firebase-config.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/stats-inject.js"></script>
+<script src="js/review-chart.js"></script>
 </body>
 </html>

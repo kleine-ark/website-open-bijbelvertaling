@@ -11,6 +11,12 @@
     function nl(n) {
         return (typeof n === 'number') ? n.toLocaleString('nl-NL') : n;
     }
+    function esc(s) {
+        return String(s).replace(/[&<>"]/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+        });
+    }
+    var BADGE_STYLE = 'display:inline-block;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;margin:0 8px 6px 0;';
     function apply(stats) {
         document.querySelectorAll('[data-stat]').forEach(function (el) {
             var key = el.getAttribute('data-stat');
@@ -21,6 +27,14 @@
             var suffix = el.getAttribute('data-stat-suffix');
             if (suffix) text += suffix;
             el.textContent = text;
+        });
+        // Lijsten (bv. de nagekeken-boeken-badges): <ul data-stat-list="verified_books">
+        document.querySelectorAll('[data-stat-list]').forEach(function (el) {
+            var key = el.getAttribute('data-stat-list');
+            if (!Array.isArray(stats[key])) return;
+            el.innerHTML = stats[key].map(function (name) {
+                return '<li style="' + BADGE_STYLE + '">✓ ' + esc(name) + '</li>';
+            }).join('');
         });
     }
     function init() {
