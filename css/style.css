@@ -2796,9 +2796,11 @@ body.show-tags .verse-tag {
 }
 .mp-body {
     flex: 1 1 auto;
+    min-height: 0;          /* sta krimpen toe zodat de lijst vanaf de bovenkant scrollt (mobiel-flex-fix) */
     overflow-y: auto;
     padding: 14px 12px 32px;
     -webkit-overflow-scrolling: touch;
+    align-content: start;   /* lange hoofdstuk-grids (Psalmen) bovenaan uitlijnen, niet centreren */
 }
 .mp-search {
     position: sticky;

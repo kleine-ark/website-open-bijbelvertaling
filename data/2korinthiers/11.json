@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Och, of gij mij een weinig verdroegt in de onwijsheid; ja ook, verdraagt mij!",
       "text1637": "OCh of ghy my een weynich verdroecht [1] in de onwijsheyt: [2] ja oock verdraeght my.",
-      "text2026": "Och, of u mij een weinig verdroegt in de onwijsheid; ja ook, verdraagt mij!",
+      "text2026": "Och, of u mij een weinig verdroeg in de onwijsheid; ja ook, verdraagt mij!",
       "marginNotes": [
         {
           "marker": "1",
@@ -84,7 +84,7 @@
           "gloss": "〔I/we"
         }
       ],
-      "text2026_html": "Och, of u mij een weinig verdroegt<sup class=\"note-marker\" data-note=\"1\">1</sup> in de onwijsheid;<sup class=\"note-marker\" data-note=\"2\">2</sup> ja ook, verdraagt mij!",
+      "text2026_html": "Och, of u mij een weinig verdroeg<sup class=\"note-marker\" data-note=\"1\">1</sup> in de onwijsheid;<sup class=\"note-marker\" data-note=\"2\">2</sup> ja ook, verdraagt mij!",
       "textSV1888_html": "Och, of gij mij een weinig verdroegt<sup class=\"note-marker\" data-note=\"1\">1</sup> in de onwijsheid;<sup class=\"note-marker\" data-note=\"2\">2</sup> ja ook, verdraagt mij!",
       "text1637_html": "OCh of ghy my een weynich verdroecht <sup class=\"note-marker\" data-note=\"1\">1</sup> in de onwijsheyt: <sup class=\"note-marker\" data-note=\"2\">2</sup> ja oock verdraeght my.",
       "phraseDiff": [
@@ -92,6 +92,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "verdroegt",
+          "new": "verdroeg",
+          "principe": "V855"
         }
       ]
     },
@@ -2732,7 +2737,7 @@
       "number": 21,
       "textSV1888": "Ik zeg dit naar oneer, gelijk of wij zwak waren geweest; maar waarin iemand stout is (ik spreek in onwijsheid), daarin ben ik ook stout.",
       "text1637": "Ick segge [dit] [38] na oneere, [39] gelijck of wy swack waren geweest: [h] maer waer in yemandt [40] stout is (ick spreke in onwijsheyt) [daer in] ben ick oock stout.",
-      "text2026": "Ik zeg dit naar oneer, zoals of wij zwak waren geweest; maar waarin iemand stout is (ik spreek in onwijsheid), daarin ben ik ook stout.",
+      "text2026": "Ik zeg dit naar oneer, zoals of wij zwak waren geweest; maar waarin iemand stoutmoedig is (ik spreek in onwijsheid), daarin ben ik ook stoutmoedig.",
       "marginNotes": [
         {
           "marker": "38",
@@ -2873,13 +2878,23 @@
           "gloss": "〔and I"
         }
       ],
-      "text2026_html": "Ik zeg<sup class=\"note-marker\" data-note=\"38\">38</sup> dit naar<sup class=\"note-marker\" data-note=\"39\">39</sup> oneer, zoals of wij zwak waren geweest;<sup class=\"note-marker\" data-note=\"h\">h</sup> maar waarin iemand<sup class=\"note-marker\" data-note=\"40\">40</sup> stout is (ik spreek in onwijsheid), daarin ben ik ook stout.",
+      "text2026_html": "Ik zeg<sup class=\"note-marker\" data-note=\"38\">38</sup> dit naar<sup class=\"note-marker\" data-note=\"39\">39</sup> oneer, zoals of wij zwak waren geweest;<sup class=\"note-marker\" data-note=\"h\">h</sup> maar waarin iemand<sup class=\"note-marker\" data-note=\"40\">40</sup> stoutmoedig is (ik spreek in onwijsheid), daarin ben ik ook stoutmoedig.",
       "textSV1888_html": "Ik zeg<sup class=\"note-marker\" data-note=\"38\">38</sup> dit naar<sup class=\"note-marker\" data-note=\"39\">39</sup> oneer, gelijk of wij zwak waren geweest;<sup class=\"note-marker\" data-note=\"h\">h</sup> maar waarin iemand<sup class=\"note-marker\" data-note=\"40\">40</sup> stout is (ik spreek in onwijsheid), daarin ben ik ook stout.",
       "text1637_html": "Ick segge [<i>dit</i>] <sup class=\"note-marker\" data-note=\"38\">38</sup> na oneere, <sup class=\"note-marker\" data-note=\"39\">39</sup> gelijck of wy swack waren geweest: <sup class=\"note-marker\" data-note=\"h\">h</sup> maer waer in yemandt <sup class=\"note-marker\" data-note=\"40\">40</sup> stout is (ick spreke in onwijsheyt) [<i>daer in</i>] ben ick oock stout.",
       "phraseDiff": [
         {
           "old": "gelijk",
           "new": "zoals",
+          "principe": null
+        },
+        {
+          "old": "stout",
+          "new": "stoutmoedig",
+          "principe": null
+        },
+        {
+          "old": "stout.",
+          "new": "stoutmoedig.",
           "principe": null
         }
       ]

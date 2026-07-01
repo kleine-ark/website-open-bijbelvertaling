@@ -7080,6 +7080,374 @@
       "nieuw": "zo / zulke / zo iemand",
       "toelichting": "Verouderd 'zodanig(e)' → context: 'zo' (bijwoord), 'zulke' (bij znw), 'zo iemand / zodanige persoon' (zelfst.). AI per situatie.",
       "regex": "\\bzodanig"
+    },
+    {
+      "id": "V823",
+      "categorie": "Verouderde woorden",
+      "oud": "onwetende",
+      "nieuw": "onwetend",
+      "toelichting": "Predicatief/bijwoordelijk 'onwetende' → 'onwetend' (bv. 'dat u onwetende bent' → 'onwetend bent'). NIET het zelfstandig naamwoord 'de onwetende' (= de onwetende persoon). AI per situatie.",
+      "regex": "\\bonwetende\\b"
+    },
+    {
+      "id": "V824",
+      "categorie": "Verouderde woorden",
+      "oud": "verkeren",
+      "nieuw": "verdraaien",
+      "toelichting": "Alleen in de betekenis 'verdraaien/perverteren' (het Evangelie, het recht, de gerechtigheid verdraaien). NIET 'verkeren' = (als vreemdeling) wonen/vertoeven, omgaan met, of 'veranderen in'. AI per situatie.",
+      "regex": "\\bverker"
+    },
+    {
+      "id": "V825",
+      "categorie": "Verouderde woorden",
+      "oud": "buiten",
+      "nieuw": "anders dan",
+      "toelichting": "Alleen in de betekenis 'behalve / in afwijking van' → 'anders dan' (bv. een evangelie 'buiten wat' → 'anders dan wat'). NIET 'buiten' = buitenshuis/buitenkant/zonder/uitgezonderd-plaats. AI per situatie, zeer voorzichtig.",
+      "regex": "\\bbuiten\\b"
+    },
+    {
+      "id": "V826",
+      "categorie": "Verouderde woorden",
+      "oud": "omgang",
+      "nieuw": "levenswandel",
+      "toelichting": "In de betekenis 'levenswijze, gedrag' (Lat. conversatio) → 'levenswandel'. NIET 'omgang' = sociale omgang/verkeer met personen, of geslachtsgemeenschap. AI per situatie.",
+      "regex": "\\bomgang\\b"
+    },
+    {
+      "id": "V827",
+      "categorie": "Verouderde woorden",
+      "oud": "uitnemend",
+      "nieuw": "uitermate",
+      "toelichting": "Als bijwoord van graad 'uitnemend (zeer)' → 'uitermate'. NIET het bijvoeglijke 'uitnemend' = voortreffelijk/uitmuntend. AI per situatie.",
+      "regex": "\\buitnemend"
+    },
+    {
+      "id": "V828",
+      "categorie": "Verouderde woorden",
+      "oud": "eer",
+      "nieuw": "voordat",
+      "toelichting": "Als tijdsvoegwoord 'eer' (= voordat) → 'voordat'. NIET het zelfstandig naamwoord 'eer' (= glorie, aanzien, 'de eer geven') en niet 'eerder/eertijds'. AI per situatie, zeer voorzichtig.",
+      "regex": "\\beer\\b"
+    },
+    {
+      "id": "V829",
+      "categorie": "Verouderde woorden",
+      "oud": "veinzen",
+      "nieuw": "huichelen",
+      "toelichting": "Werkwoord 'veinzen' en afleidingen (veinsde/veinsden/geveinsd/veinzing/veinzerij) → 'huichelen' (huichelde/huichelden/gehuicheld/huichelarij). Inclusief vervoegingen. AI per situatie.",
+      "regex": "\\bvein"
+    },
+    {
+      "id": "V830",
+      "categorie": "Verouderde woorden",
+      "oud": "beloftenis",
+      "nieuw": "belofte",
+      "toelichting": "Verouderd 'beloftenis(sen)' → 'belofte(n)'. Ondubbelzinnig.",
+      "regex": "\\bbeloftenis"
+    },
+    {
+      "id": "V831",
+      "categorie": "Verouderde woorden",
+      "oud": "tuchtmeester",
+      "nieuw": "leermeester",
+      "toelichting": "In de betekenis van de paidagogos/begeleider naar Christus (Gal 3:24-25) → 'leermeester'. NIET waar 'tuchtmeester' = kastijder/bestraffer (Hebr 12:9, Hosea 5:2). AI per situatie.",
+      "regex": "\\btuchtmeester"
+    },
+    {
+      "id": "V832",
+      "categorie": "Verouderde woorden",
+      "oud": "gesteld",
+      "nieuw": "bepaald",
+      "toelichting": "In de betekenis 'vastgesteld/bepaald' (bv. de bepaalde/vastgestelde tijd) → 'bepaald'. NIET 'gesteld' = geplaatst/aangesteld/gesteld zijn op. AI per situatie.",
+      "regex": "\\bgesteld\\b"
+    },
+    {
+      "id": "V833",
+      "categorie": "Verouderde woorden",
+      "oud": "maal",
+      "nieuw": "keer",
+      "toelichting": "Als telwoord van herhaling 'maal' (de eerste maal, driemaal) → 'keer'. NIET 'maal' = maaltijd/spijs of in eigennamen. AI per situatie.",
+      "regex": "\\bmaal\\b"
+    },
+    {
+      "id": "V834",
+      "categorie": "Verouderde woorden",
+      "oud": "naamt",
+      "nieuw": "nam",
+      "toelichting": "Verouderde tweede persoon 'naamt' (gij naamt) → 'nam' (u nam). Vervoeging van nemen.",
+      "regex": "\\bnaamt\\b"
+    },
+    {
+      "id": "V835",
+      "categorie": "Eigennamen",
+      "oud": "Sina",
+      "nieuw": "Sinai",
+      "toelichting": "Verouderde spelling van de berg 'Sina' → 'Sinai' (consistent met de rest van de Schrift).",
+      "regex": "\\bSina\\b"
+    },
+    {
+      "id": "V836",
+      "categorie": "Verouderde woorden",
+      "oud": "werkende",
+      "nieuw": "werkend",
+      "toelichting": "Verouderd onvoltooid deelwoord 'werkende' (predicatief/bijwoordelijk) → 'werkend'. NIET waar 'werkende' bijvoeglijk vóór een zelfstandig naamwoord staat. AI per situatie.",
+      "regex": "\\bwerkende\\b"
+    },
+    {
+      "id": "V837",
+      "categorie": "Verouderde woorden",
+      "oud": "bewegingen",
+      "nieuw": "hartstochten / gevoelens",
+      "toelichting": "'bewegingen' (innerlijke aandoeningen) → naar context: 'hartstochten' (zondige driften, bv. Gal. 5:24) of 'gevoelens'/'genegenheid' (innerlijke gevoelens, bv. 2 Kor. 7:15). NIET fysieke beweging/verroering. AI per situatie, incl. enkelvoud.",
+      "regex": "\\bbeweging"
+    },
+    {
+      "id": "V838",
+      "categorie": "Verouderde woorden",
+      "oud": "ingang",
+      "nieuw": "komst",
+      "toelichting": "In de betekenis 'het komen/de aankomst' (onze ingang tot u = onze komst bij u) → 'komst'. NIET 'ingang' = toegang/deur/begin (de ingang van de poort, met ingang van). AI per situatie.",
+      "regex": "\\bingang\\b"
+    },
+    {
+      "id": "V839",
+      "categorie": "Verouderde woorden",
+      "oud": "waarachtigen",
+      "nieuw": "waarachtige",
+      "toelichting": "Verouderde naamvals-/buigings-n 'waarachtigen' → 'waarachtige' (de waarachtige God). AI per situatie.",
+      "regex": "\\bwaarachtigen\\b"
+    },
+    {
+      "id": "V840",
+      "categorie": "Verouderde woorden",
+      "oud": "roems",
+      "nieuw": "roem",
+      "toelichting": "Verouderde genitief-s 'roems' → 'roem' (kroon van de roem; veel roem). Ondubbelzinnig.",
+      "regex": "\\broems\\b"
+    },
+    {
+      "id": "V841",
+      "categorie": "Verouderde woorden",
+      "oud": "vat",
+      "nieuw": "lichaam",
+      "toelichting": "In de overdrachtelijke betekenis 'vat' = het lichaam/de persoon (zwakkere vat, zijn vat bezitten) → 'lichaam'. NIET het letterlijke vat/kruik/ton/gereedschap, en NIET het werkwoord 'vatten' (begrijpen/grijpen). AI per situatie, zeer voorzichtig.",
+      "regex": "\\bvat\\b"
+    },
+    {
+      "id": "V842",
+      "categorie": "Verouderde woorden",
+      "oud": "archangel",
+      "nieuw": "aartsengel",
+      "toelichting": "Verouderd 'archangel' (incl. genitief 'archangels') → 'aartsengel'. Inclusief vervoegingen/buigingen.",
+      "regex": "\\barchangel"
+    },
+    {
+      "id": "V843",
+      "categorie": "Verouderde woorden",
+      "oud": "barensnood",
+      "nieuw": "barensweeën",
+      "toelichting": "Verouderd 'barensnood' → 'barensweeën' (de weeën van het baren). Let op enkelvoud→meervoud: controleer werkwoord-/lidwoordcongruentie per vers. AI per situatie.",
+      "regex": "\\bbarensnood\\b"
+    },
+    {
+      "id": "V844",
+      "categorie": "Verouderde woorden",
+      "oud": "billijk",
+      "nieuw": "behoorlijk",
+      "toelichting": "In de betekenis 'passend/gepast/behoorlijk' (zoals billijk is) → 'behoorlijk'. NIET 'billijk' = redelijk/rechtvaardig (billijke voorwaarden) of 'billijkheid' = recht/gerechtigheid. AI per situatie.",
+      "regex": "\\bbillijk"
+    },
+    {
+      "id": "V845",
+      "categorie": "Verouderde woorden",
+      "oud": "wast",
+      "nieuw": "groeit",
+      "toelichting": "Werkwoord 'wassen' = groeien ('wast', 'wies') → 'groeit'/'groeide'. NIET 'wassen' = reinigen (de voeten wassen) of het zelfstandig naamwoord 'was'. AI per situatie, incl. vervoegingen.",
+      "regex": "\\bwast\\b"
+    },
+    {
+      "id": "V846",
+      "categorie": "Verouderde woorden",
+      "oud": "stilheid",
+      "nieuw": "rust",
+      "toelichting": "Verouderd 'stilheid' → naar context 'rust'/'kalmte' (met rust werken) of 'stilte' (zwijgen, bv. in stilte leren). AI per situatie.",
+      "regex": "\\bstilheid\\b"
+    },
+    {
+      "id": "V847",
+      "categorie": "Verouderde woorden",
+      "oud": "groetenis",
+      "nieuw": "groet",
+      "toelichting": "Verouderd 'groetenis' → 'groet'. Ondubbelzinnig.",
+      "regex": "\\bgroetenis"
+    },
+    {
+      "id": "V848",
+      "categorie": "Verouderde woorden",
+      "oud": "iederen",
+      "nieuw": "iedere",
+      "toelichting": "Verouderde accusatiefvorm 'iederen' → 'iedere'. Ondubbelzinnig.",
+      "regex": "\\biederen\\b"
+    },
+    {
+      "id": "V849",
+      "categorie": "Verouderde woorden",
+      "oud": "aller",
+      "nieuw": "van alle",
+      "toelichting": "Verouderde genitief 'aller X' (= van alle X) → 'van alle X' (de God van alle vertroosting). NIET waar 'aller' onderdeel is van een vaste vorm of 'aller-' (overtreffende trap, bv. allerhoogste). AI per situatie.",
+      "regex": "\\baller\\b"
+    },
+    {
+      "id": "V850",
+      "categorie": "Verouderde woorden",
+      "oud": "neen",
+      "nieuw": "nee",
+      "toelichting": "Verouderd 'neen' → 'nee'. Ondubbelzinnig.",
+      "regex": "\\bneen\\b"
+    },
+    {
+      "id": "V851",
+      "categorie": "Verouderde woorden",
+      "oud": "aangenamen",
+      "nieuw": "aangename",
+      "toelichting": "Verouderde buigings-n 'aangenamen' → 'aangename' (de aangename tijd). Ondubbelzinnig.",
+      "regex": "\\baangenamen\\b"
+    },
+    {
+      "id": "V852",
+      "categorie": "Verouderde woorden",
+      "oud": "vrekheid",
+      "nieuw": "gierigheid",
+      "toelichting": "Verouderd 'vrekheid' → 'gierigheid'. Ondubbelzinnig.",
+      "regex": "\\bvrekheid\\b"
+    },
+    {
+      "id": "V853",
+      "categorie": "Verouderde woorden",
+      "oud": "spaarzamelijk",
+      "nieuw": "karig",
+      "toelichting": "Verouderd bijwoord 'spaarzamelijk' → 'karig' (karig zaaien/maaien). AI per situatie.",
+      "regex": "\\bspaarzamelijk\\b"
+    },
+    {
+      "id": "V854",
+      "categorie": "Verouderde woorden",
+      "oud": "blijmoedigen",
+      "nieuw": "blijmoedige",
+      "toelichting": "Verouderde buigings-n 'blijmoedigen' → 'blijmoedige' (een blijmoedige gever). Ondubbelzinnig.",
+      "regex": "\\bblijmoedigen\\b"
+    },
+    {
+      "id": "V855",
+      "categorie": "Verouderde woorden",
+      "oud": "verdroegt",
+      "nieuw": "verdroeg",
+      "toelichting": "Verouderde tweede persoon 'verdroegt' (gij verdroegt) → 'verdroeg' (u verdroeg). Vervoeging van verdragen.",
+      "regex": "\\bverdroegt\\b"
+    },
+    {
+      "id": "V856",
+      "categorie": "Verouderde woorden",
+      "oud": "lastig",
+      "nieuw": "tot last",
+      "toelichting": "In de uitdrukking 'iemand lastig zijn/vallen' (= tot last zijn, financieel belasten) → 'tot last'. NIET 'lastig' = moeilijk/zwaar (een lastige steen/vraag). AI per situatie.",
+      "regex": "\\blastig"
+    },
+    {
+      "id": "V857",
+      "categorie": "Verouderde woorden",
+      "oud": "Hope",
+      "nieuw": "Hoop",
+      "toelichting": "Verouderd 'hope/Hope' → 'hoop/Hoop' (Christus als onze Hoop). Hoofdletter behouden waar het een titel/naam voor Christus is. AI per situatie.",
+      "regex": "\\b[Hh]ope\\b"
+    },
+    {
+      "id": "V858",
+      "categorie": "Verouderde woorden",
+      "oud": "wettelijk",
+      "nieuw": "wettig",
+      "toelichting": "In de betekenis 'overeenkomstig de wet, op de juiste wijze' (de wet wettig gebruiken) → 'wettig'. AI per situatie.",
+      "regex": "\\bwettelijk"
+    },
+    {
+      "id": "V859",
+      "categorie": "Verouderde woorden",
+      "oud": "ongelovigheid",
+      "nieuw": "ongeloof",
+      "toelichting": "Verouderd 'ongelovigheid' → 'ongeloof'. Ondubbelzinnig.",
+      "regex": "\\bongelovigheid\\b"
+    },
+    {
+      "id": "V860",
+      "categorie": "Verouderde woorden",
+      "oud": "welke",
+      "nieuw": "wie",
+      "toelichting": "Betrekkelijk voornaamwoord 'welke' dat naar personen verwijst (van welke = van wie) → 'wie'. NIET 'welke' bij zaken (→ die) of vragend 'welke?'. AI per situatie.",
+      "regex": "\\bwelke\\b"
+    },
+    {
+      "id": "V861",
+      "categorie": "Verouderde woorden",
+      "oud": "onverderfelijken",
+      "nieuw": "onverderfelijke",
+      "toelichting": "Verouderde buigings-n 'onverderfelijken' → 'onverderfelijke'. Ondubbelzinnig.",
+      "regex": "\\bonverderfelijken\\b"
+    },
+    {
+      "id": "V862",
+      "categorie": "Verouderde woorden",
+      "oud": "wijzen",
+      "nieuw": "wijze",
+      "toelichting": "Bijvoeglijke buigings-n 'wijzen' (de alleen wijzen God → de alleen wijze God) → 'wijze'. NIET het zelfstandig naamwoord 'de wijzen' (= wijze mannen) of het werkwoord 'wijzen' (= aanwijzen). AI per situatie.",
+      "regex": "\\bwijzen\\b"
+    },
+    {
+      "id": "V863",
+      "categorie": "Verouderde woorden",
+      "oud": "stemmigheid",
+      "nieuw": "waardigheid",
+      "toelichting": "Verouderd 'stemmigheid' (ernst, deftigheid) → 'waardigheid'. AI per situatie.",
+      "regex": "\\bstemmigheid\\b"
+    },
+    {
+      "id": "V864",
+      "categorie": "Verouderde woorden",
+      "oud": "lasteressen",
+      "nieuw": "kwaadsprekers",
+      "toelichting": "Verouderd 'lasteressen' (vrouwelijke lasteraars) → 'kwaadsprekers'. Ondubbelzinnig.",
+      "regex": "\\blasteres"
+    },
+    {
+      "id": "V865",
+      "categorie": "Verouderde woorden",
+      "oud": "hardelijk",
+      "nieuw": "hard",
+      "toelichting": "Verouderd bijwoord 'hardelijk' → 'hard' (niet hard bestraffen). AI per situatie.",
+      "regex": "\\bhardelijk\\b"
+    },
+    {
+      "id": "V866",
+      "categorie": "Verouderde woorden",
+      "oud": "huwelijken",
+      "nieuw": "trouwen",
+      "toelichting": "Werkwoord 'huwelijken' (= in het huwelijk treden) → 'trouwen'. NIET het zelfstandig naamwoord 'huwelijken' (= de huwelijken/echtverbintenissen). AI per situatie.",
+      "regex": "\\bhuwelijken\\b"
+    },
+    {
+      "id": "V867",
+      "categorie": "Verouderde woorden",
+      "oud": "klapachtig",
+      "nieuw": "roddelachtig",
+      "toelichting": "Verouderd 'klapachtig' (praatziek, kwaadsprekend) → 'roddelachtig'. AI per situatie.",
+      "regex": "\\bklapachtig"
+    },
+    {
+      "id": "V868",
+      "categorie": "Verouderde woorden",
+      "oud": "krakelingen",
+      "nieuw": "ruzies",
+      "toelichting": "Verouderd 'krakeling/krakelingen' (twist, gekibbel) → 'ruzie/ruzies'. Incl. vervoegingen. AI per situatie.",
+      "regex": "\\bkrakeling"
     }
   ]
 }

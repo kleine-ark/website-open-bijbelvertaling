@@ -199,7 +199,7 @@
       "number": 2,
       "textSV1888": "Wij danken God altijd over u allen, uwer gedachtig zijnde in onze gebeden;",
       "text1637": "[b] Wy dancken Godt [5] altijdt over u alle, uwer gedachtich zijnde in onse gebeden:",
-      "text2026": "Wij danken God altijd over u allen, uw gedachtig zijnde in onze gebeden;",
+      "text2026": "Wij danken God altijd over u allen, wanneer we aan u denken in onze gebeden;",
       "marginNotes": [
         {
           "marker": "5",
@@ -302,14 +302,14 @@
           "gloss": "〔unceasingly"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Wij danken God<sup class=\"note-marker\" data-note=\"5\">5</sup> altijd over u allen, uw gedachtig zijnde in onze gebeden;",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Wij danken God<sup class=\"note-marker\" data-note=\"5\">5</sup> altijd over u allen, wanneer we aan u denken in onze gebeden;",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Wij danken God<sup class=\"note-marker\" data-note=\"5\">5</sup> altijd over u allen, uwer gedachtig zijnde in onze gebeden;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Wy dancken Godt <sup class=\"note-marker\" data-note=\"5\">5</sup> altijdt over u alle, uwer gedachtich zijnde in onse gebeden:",
       "phraseDiff": [
         {
-          "old": "uwer",
-          "new": "uw",
-          "principe": "N7"
+          "old": "uwer gedachtig zijnde",
+          "new": "wanneer we aan u denken",
+          "principe": null
         }
       ]
     },
@@ -1457,7 +1457,7 @@
       "number": 9,
       "textSV1888": "Want zijzelven verkondigen van ons, hoedanigen ingang wij tot u hebben, en hoe gij tot God bekeerd zijt van de afgoden, om den levenden en waarachtigen God te dienen;",
       "text1637": "Want [23] sy selve vercondigen van ons [24] hoedanigen inganck wy tot u hebben, ende hoe ghy tot Godt bekeert zijt [25] van den afgoden, om [26] den levendigen ende waerachtigen Godt te dienen:",
-      "text2026": "Want zijzelven verkondigen van ons, wat voor ingang wij tot u hebben, en hoe u tot God bekeerd bent van de afgoden, om de levenden en waarachtigen God te dienen;",
+      "text2026": "Want zijzelven verkondigen van ons, wat voor ingang wij tot u hebben, en hoe u tot God bekeerd bent van de afgoden, om de levenden en waarachtige God te dienen;",
       "marginNotes": [
         {
           "marker": "23",
@@ -1634,7 +1634,7 @@
           "gloss": "〔true"
         }
       ],
-      "text2026_html": "Want<sup class=\"note-marker\" data-note=\"23\">23</sup> zijzelven verkondigen van ons,<sup class=\"note-marker\" data-note=\"24\">24</sup> wat voor ingang wij tot u hebben, en hoe u tot God bekeerd bent<sup class=\"note-marker\" data-note=\"25\">25</sup> van de afgoden, om<sup class=\"note-marker\" data-note=\"26\">26</sup> de levenden en waarachtigen God te dienen;",
+      "text2026_html": "Want<sup class=\"note-marker\" data-note=\"23\">23</sup> zijzelven verkondigen van ons,<sup class=\"note-marker\" data-note=\"24\">24</sup> wat voor ingang wij tot u hebben, en hoe u tot God bekeerd bent<sup class=\"note-marker\" data-note=\"25\">25</sup> van de afgoden, om<sup class=\"note-marker\" data-note=\"26\">26</sup> de levenden en waarachtige God te dienen;",
       "textSV1888_html": "Want<sup class=\"note-marker\" data-note=\"23\">23</sup> zijzelven verkondigen van ons,<sup class=\"note-marker\" data-note=\"24\">24</sup> hoedanigen ingang wij tot u hebben, en hoe gij tot God bekeerd zijt<sup class=\"note-marker\" data-note=\"25\">25</sup> van de afgoden, om<sup class=\"note-marker\" data-note=\"26\">26</sup> den levenden en waarachtigen God te dienen;",
       "text1637_html": "Want <sup class=\"note-marker\" data-note=\"23\">23</sup> sy selve vercondigen van ons <sup class=\"note-marker\" data-note=\"24\">24</sup> hoedanigen inganck wy tot u hebben, ende hoe ghy tot Godt bekeert zijt <sup class=\"note-marker\" data-note=\"25\">25</sup> van den afgoden, om <sup class=\"note-marker\" data-note=\"26\">26</sup> den levendigen ende waerachtigen Godt te dienen:",
       "phraseDiff": [
@@ -1657,6 +1657,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "waarachtigen",
+          "new": "waarachtige",
+          "principe": "V839"
         }
       ]
     },

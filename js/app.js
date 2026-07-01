@@ -70,6 +70,11 @@ const App = {
         markus:     [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
         romeinen:   'all',
         '1korinthiers':'all',
+        '2korinthiers':'all',
+        galaten:    'all',
+        '1tessalonicensen':'all',
+        '2tessalonicensen':'all',
+        '1timotheus':'all',
         '1johannes':'all',
         '2johannes':'all',
         '3johannes':'all',
@@ -564,12 +569,21 @@ const App = {
             if (pericMap[verse.number]) {
                 const h = document.createElement('div');
                 h.className = 'pericope-heading';
-                h.textContent = pericMap[verse.number];
+                // Pas vertalingsopties (Godsnaam) ook op de kop toe, zodat de
+                // perikoopkopjes synchroon lopen met de tekst (JAHWEH/HEERE/…).
+                const pTitle = pericMap[verse.number];
+                if (typeof Opties !== 'undefined' && Opties.transformOV) {
+                    h.innerHTML = Opties.transformOV(pTitle, book.testament);
+                } else {
+                    h.textContent = pTitle;
+                }
                 sink.appendChild(h);
             }
             const row = document.createElement('div');
             row.className = 'verse-row';
-            row.dataset.status = verse.status || 'empty';
+            // Statuskleur volgt de enige bron (VERIFIED_CHAPTERS): een nagekeken hoofdstuk
+            // toont 'final' (groen), anders de redactionele status van het vers zelf.
+            row.dataset.status = App._isVerified(bookId, chapterNum) ? 'final' : (verse.status || 'empty');
             row.dataset.book = bookId;
             row.dataset.chapter = chapterNum;
             row.dataset.verse = verse.number;
@@ -602,7 +616,7 @@ const App = {
             // anders text2026 of textHerzien als platte tekst
             let openVertaling = verse.text2026_html || verse.text2026 || verse.textHerzien || '';
             // Pas vertalingsopties toe (Godsnaam etc.) — alleen tekst, niet HTML-tags
-            if (typeof Opties !== 'undefined') openVertaling = Opties.transformOV(openVertaling);
+            if (typeof Opties !== 'undefined') openVertaling = Opties.transformOV(openVertaling, book.testament);
 
             // Strong's nummers inline bij SV1888 en OV tekst
             let sv1888Text = verse.textSV1888_html || verse.textSV1888 || '';

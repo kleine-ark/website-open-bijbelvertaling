@@ -5,6 +5,7 @@ const Opties = {
 
     DEFAULTS: {
         godsnaam: 'ov',          // 'ov' (JAHWEH) | 'klassiek' (HEERE) | 'jehovah' (Jehovah) | 'jhwh' (יהוה)
+        heereNT: 'heere',        // NT-aanspreektitel (Kurios): 'heere' (OSV) | 'here' (Heere → Here)
         kolomLayout: 'naast',    // 'naast' (parallelle kolom) | 'eronder' (nieuwe regel onder OV2026)
         boekvolgorde: 'canoniek',// 'canoniek' | 'tenach' | 'chronologisch' | 'auteur' | 'lengte'
         versnummers: 'aan',      // 'aan' | 'uit'
@@ -120,9 +121,18 @@ const Opties = {
      * Werkt op zowel platte tekst als HTML — we doen alleen tekst-vervangingen
      * en blijven van HTML-tags af.
      */
-    transformOV(html) {
+    transformOV(html, testament) {
         if (!html) return html;
         let out = html;
+
+        // === Heere → Here (alleen NT; Kurios) ===
+        // In het NT is "Heere" de weergave van het Griekse κύριος (Kurios). Optioneel
+        // tonen we de modernere vorm "Here". Hoofdletter-"HEERE" (OT-Godsnaam) blijft ongemoeid.
+        if (testament === 'NT' && this.state.heereNT === 'here') {
+            out = this._replaceOutsideTags(out, [
+                [/\bHeere/g, 'Here'],   // vangt ook "Heeren" → "Heren"
+            ]);
+        }
 
         // === OT-Sheol: dodenrijk → hel (optioneel) ===
         if (this.state.otSheol === 'hel') {

@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Want gij weet zelven, broeders, onzen ingang tot u, dat die niet ijdel is geweest;",
       "text1637": "[a] WAnt ghy weet selve, broeders, onsen [1] inganck tot u, dat die niet [2] ydel en is geweest:",
-      "text2026": "Want u weet zelf, broeders, onze ingang tot u, dat die niet ijdel is geweest;",
+      "text2026": "Want u weet zelf, broeders, onze komst tot u, dat die niet tevergeefs is geweest;",
       "marginNotes": [
         {
           "marker": "1",
@@ -115,7 +115,7 @@
           "gloss": "〔to be"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Want u weet zelf, broeders, onze<sup class=\"note-marker\" data-note=\"1\">1</sup> ingang tot u, dat die niet<sup class=\"note-marker\" data-note=\"2\">2</sup> ijdel is geweest;",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Want u weet zelf, broeders, onze<sup class=\"note-marker\" data-note=\"1\">1</sup> komst tot u, dat die niet<sup class=\"note-marker\" data-note=\"2\">2</sup> tevergeefs is geweest;",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Want gij weet zelven, broeders, onzen<sup class=\"note-marker\" data-note=\"1\">1</sup> ingang tot u, dat die niet<sup class=\"note-marker\" data-note=\"2\">2</sup> ijdel is geweest;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> WAnt ghy weet selve, broeders, onsen <sup class=\"note-marker\" data-note=\"1\">1</sup> inganck tot u, dat die niet <sup class=\"note-marker\" data-note=\"2\">2</sup> ydel en is geweest:",
       "phraseDiff": [
@@ -130,9 +130,14 @@
           "principe": "V753"
         },
         {
-          "old": "onzen",
-          "new": "onze",
-          "principe": "N8"
+          "old": "onzen ingang",
+          "new": "onze komst",
+          "principe": null
+        },
+        {
+          "old": "ijdel",
+          "new": "tevergeefs",
+          "principe": null
         }
       ]
     },
@@ -140,7 +145,7 @@
       "number": 2,
       "textSV1888": "Maar, hoewel wij te voren geleden hadden, en ook ons smaadheid aangedaan was, gelijk gij weet, te Filippi, zo hebben wij nochtans vrijmoedigheid gebruikt in onzen God, om het Evangelie van God tot u te spreken in veel strijds.",
       "text1637": "Maer hoewel wy te voren geleden hadden, ende oock ons smaetheyt aengedaen was, gelijck ghy weet, [b] [3] te Philippis, so hebben wy [nochtans] vrymoedicheyt gebruyckt [4] in onsen Godt om het Euangelium Godts [c] tot u te spreken [5] in veel strijdts.",
-      "text2026": "Maar, hoewel wij te voren geleden hadden, en ook ons smaad aangedaan was, zoals u weet, te Filippi, zo hebben wij toch vrijmoedigheid gebruikt in onze God, om het Evangelie van God tot u te spreken in veel strijds.",
+      "text2026": "Maar, hoewel wij te voren geleden hadden, en ook ons smaad aangedaan was, zoals u weet, te Filippi, zo hebben wij toch vrijmoedigheid gebruikt in onze God, om het Evangelie van God tot u te spreken in veel strijd.",
       "marginNotes": [
         {
           "marker": "3",
@@ -318,7 +323,7 @@
           "gloss": "〔fight"
         }
       ],
-      "text2026_html": "Maar, hoewel wij te voren geleden hadden, en ook ons smaad aangedaan was, zoals u weet,<sup class=\"note-marker\" data-note=\"3\">3</sup><sup class=\"note-marker\" data-note=\"b\">b</sup> te Filippi, zo hebben wij toch vrijmoedigheid<sup class=\"note-marker\" data-note=\"4\">4</sup> gebruikt in onze God, om het Evangelie van<sup class=\"note-marker\" data-note=\"c\">c</sup> God tot u te spreken<sup class=\"note-marker\" data-note=\"5\">5</sup> in veel strijds.",
+      "text2026_html": "Maar, hoewel wij te voren geleden hadden, en ook ons smaad aangedaan was, zoals u weet,<sup class=\"note-marker\" data-note=\"3\">3</sup><sup class=\"note-marker\" data-note=\"b\">b</sup> te Filippi, zo hebben wij toch vrijmoedigheid<sup class=\"note-marker\" data-note=\"4\">4</sup> gebruikt in onze God, om het Evangelie van<sup class=\"note-marker\" data-note=\"c\">c</sup> God tot u te spreken<sup class=\"note-marker\" data-note=\"5\">5</sup> in veel strijd.",
       "textSV1888_html": "Maar, hoewel wij te voren geleden hadden, en ook ons smaadheid aangedaan was, gelijk gij weet,<sup class=\"note-marker\" data-note=\"3\">3</sup><sup class=\"note-marker\" data-note=\"b\">b</sup> te Filippi, zo hebben wij nochtans vrijmoedigheid<sup class=\"note-marker\" data-note=\"4\">4</sup> gebruikt in onzen God, om het Evangelie van<sup class=\"note-marker\" data-note=\"c\">c</sup> God tot u te spreken<sup class=\"note-marker\" data-note=\"5\">5</sup> in veel strijds.",
       "text1637_html": "Maer hoewel wy te voren geleden hadden, ende oock ons smaetheyt aengedaen was, gelijck ghy weet, <sup class=\"note-marker\" data-note=\"b\">b</sup> <sup class=\"note-marker\" data-note=\"3\">3</sup> te Philippis, so hebben wy [<i>nochtans</i>] vrymoedicheyt gebruyckt <sup class=\"note-marker\" data-note=\"4\">4</sup> in onsen Godt om het Euangelium Godts <sup class=\"note-marker\" data-note=\"c\">c</sup> tot u te spreken <sup class=\"note-marker\" data-note=\"5\">5</sup> in veel strijdts.",
       "phraseDiff": [
@@ -341,6 +346,11 @@
           "old": "onzen",
           "new": "onze",
           "principe": "N8"
+        },
+        {
+          "old": "strijds.",
+          "new": "strijd.",
+          "principe": null
         }
       ]
     },
@@ -3056,7 +3066,7 @@
       "number": 19,
       "textSV1888": "Want welke is onze hoop, of blijdschap, of kroon des roems? Zijt gij die ook niet voor onzen Heere Jezus Christus in Zijn toekomst?",
       "text1637": "[o] Want welcke is [46] onse hope, ofte blijdschap, ofte [47] croone des roems? [48] En zijt ghy die oock niet voor onsen Heere Iesu Christo in sijne toecomste?",
-      "text2026": "Want welke is onze hoop, of blijdschap, of kroon van de roems? Bent u die ook niet voor onze Heere Jezus Christus in Zijn toekomst?",
+      "text2026": "Want welke is onze hoop, of blijdschap, of kroon van de roem? Bent u die ook niet voor onze Heere Jezus Christus in Zijn toekomst?",
       "marginNotes": [
         {
           "marker": "46",
@@ -3221,19 +3231,14 @@
           "gloss": "〔coming"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"o\">o</sup> Want welke is<sup class=\"note-marker\" data-note=\"46\">46</sup> onze hoop, of blijdschap, of<sup class=\"note-marker\" data-note=\"47\">47</sup> kroon van de roems?<sup class=\"note-marker\" data-note=\"48\">48</sup> Bent u die ook niet voor onze Heere Jezus Christus in Zijn toekomst?",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"o\">o</sup> Want welke is<sup class=\"note-marker\" data-note=\"46\">46</sup> onze hoop, of blijdschap, of<sup class=\"note-marker\" data-note=\"47\">47</sup> kroon van de roem?<sup class=\"note-marker\" data-note=\"48\">48</sup> Bent u die ook niet voor onze Heere Jezus Christus in Zijn toekomst?",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"o\">o</sup> Want welke is<sup class=\"note-marker\" data-note=\"46\">46</sup> onze hoop, of blijdschap, of<sup class=\"note-marker\" data-note=\"47\">47</sup> kroon des roems?<sup class=\"note-marker\" data-note=\"48\">48</sup> Zijt gij die ook niet voor onzen Heere Jezus Christus in Zijn toekomst?",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"o\">o</sup> Want welcke is <sup class=\"note-marker\" data-note=\"46\">46</sup> onse hope, ofte blijdschap, ofte <sup class=\"note-marker\" data-note=\"47\">47</sup> croone des roems? <sup class=\"note-marker\" data-note=\"48\">48</sup> En zijt ghy die oock niet voor onsen Heere Iesu Christo in sijne toecomste?",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
-        },
-        {
-          "old": "Zijt gij",
-          "new": "Bent u",
-          "principe": "A1"
+          "old": "des roems? Zijt gij",
+          "new": "van de roem? Bent u",
+          "principe": null
         },
         {
           "old": "onzen",
