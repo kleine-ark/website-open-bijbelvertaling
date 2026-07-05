@@ -646,7 +646,7 @@
       "number": 7,
       "textSV1888": "Voorts zal u de landpale van het noorden deze zijn: van de grote zee af zult gij u den berg Hor aftekenen.",
       "text1637": "Voorts sal u de lantpale van 't Noorden dese zijn: van de groote Zee af sult ghy u den berch [14] Hor afteeckenen.",
-      "text2026": "Verder zal u de landpale van het noorden deze zijn: van de grote zee af zult u u de berg Hor aftekenen.",
+      "text2026": "Verder zal u de landpale van het noorden deze zijn: van de grote zee af zult u zich de berg Hor aftekenen.",
       "marginNotes": [
         {
           "marker": "14",
@@ -718,7 +718,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Verder zal u de landpale van het noorden deze zijn: van de grote zee af zult u u de berg<sup class=\"note-marker\" data-note=\"14\">14</sup> Hor aftekenen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Verder zal u de landpale van het noorden deze zijn: van de grote zee af zult u zich de berg<sup class=\"note-marker\" data-note=\"14\">14</sup> Hor aftekenen.</i></span>",
       "textSV1888_html": "Voorts zal u de landpale van het noorden deze zijn: van de grote zee af zult gij u den berg<sup class=\"note-marker\" data-note=\"14\">14</sup> Hor aftekenen.",
       "text1637_html": "Voorts sal u de lantpale van 't Noorden dese zijn: van de groote Zee af sult ghy u den berch <sup class=\"note-marker\" data-note=\"14\">14</sup> Hor afteeckenen.",
       "phraseDiff": [
@@ -734,8 +734,8 @@
         },
         {
           "old": "den",
-          "new": "u de",
-          "principe": "N1"
+          "new": "zich de",
+          "principe": null
         }
       ]
     },
@@ -903,7 +903,7 @@
       "number": 10,
       "textSV1888": "Voorts zult gij u tot een landpale tegen het oosten aftekenen van Hazar-enan naar Sefam.",
       "text1637": "Voorts sult ghy u tot eene lantpale tegen 't Oosten afteeckenen van Hazar-Enan, nae [17] Sepham.",
-      "text2026": "Verder zult u u tot een landpale tegen het oosten aftekenen van Hazar-enan naar Sefam.",
+      "text2026": "Verder zult u zich tot een landpale tegen het oosten aftekenen van Hazar-enan naar Sefam.",
       "marginNotes": [
         {
           "marker": "17",
@@ -950,7 +950,7 @@
           "morph": "HNp/Sd"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Verder zult u u tot een landpale tegen het oosten aftekenen van Hazar-enan naar<sup class=\"note-marker\" data-note=\"17\">17</sup> Sefam.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Verder zult u zich tot een landpale tegen het oosten aftekenen van Hazar-enan naar<sup class=\"note-marker\" data-note=\"17\">17</sup> Sefam.</i></span>",
       "textSV1888_html": "Voorts zult gij u tot een landpale tegen het oosten aftekenen van Hazar-enan naar<sup class=\"note-marker\" data-note=\"17\">17</sup> Sefam.",
       "text1637_html": "Voorts sult ghy u tot eene lantpale tegen 't Oosten afteeckenen van Hazar-Enan, nae <sup class=\"note-marker\" data-note=\"17\">17</sup> Sepham.",
       "phraseDiff": [
@@ -961,8 +961,13 @@
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "zich",
+          "principe": null
         }
       ]
     },

@@ -514,7 +514,7 @@
       "number": 5,
       "textSV1888": "Zo zult gij dien man of die vrouw, die ditzelve boze stuk gedaan hebben, tot uw poorten uitbrengen, dien man zeg ik, of die vrouw; en gij zult hen met stenen stenigen, dat zij sterven.",
       "text1637": "So sult ghy dien man, ofte die vrouwe, die dit selve boose [7] stuck gedaen hebben, tot uwe [8] poorten uytbrengen, dien man, [seg ick] ofte die vrouwe: ende ghy sultse met steenen steenigen, dat sy sterven.",
-      "text2026": "Zo zult u die man of die vrouw, die ditzelve boze stuk gedaan hebben, tot uw poorten uitbrengen, die man zeg ik, of die vrouw; en u zult hen met stenen stenigen, dat zij sterven.",
+      "text2026": "Zo zult u die man of die vrouw, die dit boze stuk gedaan hebben, tot uw poorten uitbrengen, die man zeg ik, of die vrouw; en u zult hen met stenen stenigen, dat zij sterven.",
       "marginNotes": [
         {
           "marker": "7",
@@ -653,7 +653,7 @@
           "morph": "HC/Vqq3cp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo zult u die man of die vrouw, die ditzelve boze<sup class=\"note-marker\" data-note=\"7\">7</sup> stuk gedaan hebben, tot uw<sup class=\"note-marker\" data-note=\"8\">8</sup> poorten uitbrengen, die man zeg ik, of die vrouw; en u zult hen met stenen stenigen, dat zij sterven.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo zult u die man of die vrouw, die dit boze<sup class=\"note-marker\" data-note=\"7\">7</sup> stuk gedaan hebben, tot uw<sup class=\"note-marker\" data-note=\"8\">8</sup> poorten uitbrengen, die man zeg ik, of die vrouw; en u zult hen met stenen stenigen, dat zij sterven.</i></span>",
       "textSV1888_html": "Zo zult gij dien man of die vrouw, die ditzelve boze<sup class=\"note-marker\" data-note=\"7\">7</sup> stuk gedaan hebben, tot uw<sup class=\"note-marker\" data-note=\"8\">8</sup> poorten uitbrengen, dien man zeg ik, of die vrouw; en gij zult hen met stenen stenigen, dat zij sterven.",
       "text1637_html": "So sult ghy dien man, ofte die vrouwe, die dit selve boose <sup class=\"note-marker\" data-note=\"7\">7</sup> stuck gedaen hebben, tot uwe <sup class=\"note-marker\" data-note=\"8\">8</sup> poorten uytbrengen, dien man, [seg ick] ofte die vrouwe: ende ghy sultse met steenen steenigen, dat sy sterven.",
       "phraseDiff": [
@@ -661,6 +661,11 @@
           "old": "gij dien",
           "new": "u die",
           "principe": "N4"
+        },
+        {
+          "old": "ditzelve",
+          "new": "dit",
+          "principe": "V803"
         },
         {
           "old": "dien",
@@ -804,7 +809,7 @@
       "number": 7,
       "textSV1888": "De hand der getuigen zal eerst tegen hem zijn, om hem te doden, en daarna de hand des gansen volks; zo zult gij het boze uit het midden van u wegdoen.",
       "text1637": "[d] De hant der getuygen sal eerst tegens hem zijn om hem te dooden, ende daer na de hant des gantschen volcx: so sult ghy het [11] boose uyt het midden van u wech doen.",
-      "text2026": "De hand van de getuigen zal eerst tegen hem zijn, om hem te doden, en daarna de hand van de ganse volks; zo zult u het boze uit het midden van u wegdoen.",
+      "text2026": "De hand van de getuigen zal eerst tegen hem zijn, om hem te doden, en daarna de hand van het hele volk; zo zult u het boze uit het midden van u wegdoen.",
       "marginNotes": [
         {
           "marker": "d",
@@ -888,7 +893,7 @@
           "morph": "HR/Ncmsc/Sp2ms"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup><span class=\"direct-speech\"><i> De hand van de getuigen zal eerst tegen hem zijn, om hem te doden, en daarna de hand van de ganse volks; zo zult u het<sup class=\"note-marker\" data-note=\"11\">11</sup> boze uit het midden van u wegdoen.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup><span class=\"direct-speech\"><i> De hand van de getuigen zal eerst tegen hem zijn, om hem te doden, en daarna de hand van het hele volk; zo zult u het<sup class=\"note-marker\" data-note=\"11\">11</sup> boze uit het midden van u wegdoen.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> De hand der getuigen zal eerst tegen hem zijn, om hem te doden, en daarna de hand des gansen volks; zo zult gij het<sup class=\"note-marker\" data-note=\"11\">11</sup> boze uit het midden van u wegdoen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> De hant der getuygen sal eerst tegens hem zijn om hem te dooden, ende daer na de hant des gantschen volcx: so sult ghy het <sup class=\"note-marker\" data-note=\"11\">11</sup> boose uyt het midden van u wech doen.",
       "phraseDiff": [
@@ -898,9 +903,9 @@
           "principe": "N2"
         },
         {
-          "old": "des gansen",
-          "new": "van de ganse",
-          "principe": "N3"
+          "old": "des gansen volks;",
+          "new": "van het hele volk;",
+          "principe": null
         },
         {
           "old": "gij",
@@ -1511,7 +1516,7 @@
       "number": 12,
       "textSV1888": "De man nu, die trotselijk handelen zal, dat hij niet hore naar den priester, dewelke staat, om aldaar den HEERE, uw God, te dienen, of naar den rechter, dezelve man zal sterven; en gij zult het boze uit Israël wegdoen.",
       "text1637": "De man nu, die [20] trotslick handelen sal, dat hy niet en hoore nae den Priester, dewelcke [21] staet om aldaer den HEERE uwen Godt te dienen, [22] ofte nae den Richter; deselve man sal sterven; ende ghy sult het [23] boose uyt Israël wech doen:",
-      "text2026": "De man nu, die trotselijk handelen zal, dat hij niet hore naar de priester, die staat, om daar JAHWEH, uw God, te dienen, of naar de rechter, dezelfde man zal sterven; en u zult het boze uit Israël wegdoen.",
+      "text2026": "De man nu, die trotselijk handelen zal, dat hij niet hore naar de priester, die staat, om daar JAHWEH, uw God, te dienen, of naar de rechter, die man zal sterven; en u zult het boze uit Israël wegdoen.",
       "marginNotes": [
         {
           "marker": "20",
@@ -1659,7 +1664,7 @@
           "morph": "HR/Np"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>De man nu, die<sup class=\"note-marker\" data-note=\"20\">20</sup> trotselijk handelen zal, dat hij niet hore naar de priester, die<sup class=\"note-marker\" data-note=\"21\">21</sup> staat, om daar JAHWEH, uw God, te dienen,<sup class=\"note-marker\" data-note=\"22\">22</sup> of naar de rechter, dezelfde man zal sterven; en u zult het<sup class=\"note-marker\" data-note=\"23\">23</sup> boze uit Israël wegdoen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>De man nu, die<sup class=\"note-marker\" data-note=\"20\">20</sup> trotselijk handelen zal, dat hij niet hore naar de priester, die<sup class=\"note-marker\" data-note=\"21\">21</sup> staat, om daar JAHWEH, uw God, te dienen,<sup class=\"note-marker\" data-note=\"22\">22</sup> of naar de rechter, die man zal sterven; en u zult het<sup class=\"note-marker\" data-note=\"23\">23</sup> boze uit Israël wegdoen.</i></span>",
       "textSV1888_html": "De man nu, die<sup class=\"note-marker\" data-note=\"20\">20</sup> trotselijk handelen zal, dat hij niet hore naar den priester, dewelke<sup class=\"note-marker\" data-note=\"21\">21</sup> staat, om aldaar den HEERE, uw God, te dienen,<sup class=\"note-marker\" data-note=\"22\">22</sup> of naar den rechter, dezelve man zal sterven; en gij zult het<sup class=\"note-marker\" data-note=\"23\">23</sup> boze uit Israël wegdoen.",
       "text1637_html": "De man nu, die <sup class=\"note-marker\" data-note=\"20\">20</sup> trotslick handelen sal, dat hy niet en hoore nae den Priester, dewelcke <sup class=\"note-marker\" data-note=\"21\">21</sup> staet om aldaer den HEERE uwen Godt te dienen, <sup class=\"note-marker\" data-note=\"22\">22</sup> ofte nae den Richter; deselve man sal sterven; ende ghy sult het <sup class=\"note-marker\" data-note=\"23\">23</sup> boose uyt Israël wech doen:",
       "phraseDiff": [
@@ -1685,8 +1690,8 @@
         },
         {
           "old": "dezelve",
-          "new": "dezelfde",
-          "principe": "O3"
+          "new": "die",
+          "principe": null
         },
         {
           "old": "gij",
@@ -1887,7 +1892,7 @@
       "number": 15,
       "textSV1888": "Zo zult gij ganselijk tot koning over u stellen, dien de HEERE, uw God, verkiezen zal; uit het midden uwer broederen zult gij een koning over u stellen; gij zult niet vermogen over u te zetten een vreemden man, die uw broeder niet zij.",
       "text1637": "So sult ghy [25] gantschelick tot Coninck over u stellen, dien de HEERE uwe Godt verkiesen sal: uyt het midden [26] uwer broederen, sult ghy eenen Coninck over u stellen; ghy en sult niet vermogen over u te setten eenen vreemden man, die uwe broeder niet en zy.",
-      "text2026": "Zo zult u geheel tot koning over u stellen, die JAHWEH, uw God, verkiezen zal; uit het midden uw broers zult u een koning over u stellen; u zult niet vermogen over u te zetten een vreemden man, die uw broer niet zij.",
+      "text2026": "Zo zult u geheel tot koning over u stellen, die JAHWEH, uw God, verkiezen zal; uit het midden van uw broers zult u een koning over u stellen; u zult niet vermogen over u te zetten een vreemde man, die uw broer niet zij.",
       "marginNotes": [
         {
           "marker": "25",
@@ -2026,7 +2031,7 @@
           "morph": "HPp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo zult u<sup class=\"note-marker\" data-note=\"25\">25</sup> geheel tot koning over u stellen, die JAHWEH, uw God, verkiezen zal; uit het midden<sup class=\"note-marker\" data-note=\"26\">26</sup> uw broers zult u een koning over u stellen; u zult niet vermogen over u te zetten een vreemden man, die uw broer niet zij.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo zult u<sup class=\"note-marker\" data-note=\"25\">25</sup> geheel tot koning over u stellen, die JAHWEH, uw God, verkiezen zal; uit het midden<sup class=\"note-marker\" data-note=\"26\">26</sup> van uw broers zult u een koning over u stellen; u zult niet vermogen over u te zetten een vreemde man, die uw broer niet zij.</i></span>",
       "textSV1888_html": "Zo zult gij<sup class=\"note-marker\" data-note=\"25\">25</sup> ganselijk tot koning over u stellen, dien de HEERE, uw God, verkiezen zal; uit het midden<sup class=\"note-marker\" data-note=\"26\">26</sup> uwer broederen zult gij een koning over u stellen; gij zult niet vermogen over u te zetten een vreemden man, die uw broeder niet zij.",
       "text1637_html": "So sult ghy <sup class=\"note-marker\" data-note=\"25\">25</sup> gantschelick tot Coninck over u stellen, dien de HEERE uwe Godt verkiesen sal: uyt het midden <sup class=\"note-marker\" data-note=\"26\">26</sup> uwer broederen, sult ghy eenen Coninck over u stellen; ghy en sult niet vermogen over u te setten eenen vreemden man, die uwe broeder niet en zy.",
       "phraseDiff": [
@@ -2042,8 +2047,8 @@
         },
         {
           "old": "uwer broederen",
-          "new": "uw broers",
-          "principe": "N7"
+          "new": "van uw broers",
+          "principe": null
         },
         {
           "old": "gij",
@@ -2054,6 +2059,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "vreemden",
+          "new": "vreemde",
+          "principe": null
         },
         {
           "old": "broeder",

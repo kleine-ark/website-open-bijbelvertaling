@@ -4006,7 +4006,7 @@
       "number": 34,
       "textSV1888": "En brengt uw kleinsten broeder tot mij; zo zal ik weten, dat gij geen verspieders zijt, maar dat gij vroom zijt; uw broeder zal ik u wedergeven, en gij zult in dit land handelen.",
       "text1637": "Ende brenget uwen kleynsten broeder tot my, so sal ick weten, dat ghy geen verspieders en zijt, maer dat ghy vroom zijt: uwe broeder sal ick u weder geven, ende ghy sult in dit lant [42] handelen.",
-      "text2026": "En brengt uw kleinste broer tot mij; zo zal ik weten, dat u geen spionnen bent, maar dat u vroom bent; uw broer zal ik u wedergeven, en u zult in dit land handelen.",
+      "text2026": "En brengt uw kleinste broer tot mij; zo zal ik weten, dat u geen spionnen bent, maar dat u vroom bent; uw broer zal ik u teruggeven, en u zult in dit land handelen.",
       "marginNotes": [
         {
           "marker": "42",
@@ -4118,7 +4118,7 @@
           "morph": "HVqi2mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En brengt uw kleinste broer tot mij; zo zal ik weten, dat u geen spionnen bent, maar dat u vroom bent; uw broer zal ik u wedergeven, en u zult in dit land<sup class=\"note-marker\" data-note=\"42\">42</sup> handelen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En brengt uw kleinste broer tot mij; zo zal ik weten, dat u geen spionnen bent, maar dat u vroom bent; uw broer zal ik u teruggeven, en u zult in dit land<sup class=\"note-marker\" data-note=\"42\">42</sup> handelen.</i></span>",
       "textSV1888_html": "En brengt uw kleinsten broeder tot mij; zo zal ik weten, dat gij geen verspieders zijt, maar dat gij vroom zijt; uw broeder zal ik u wedergeven, en gij zult in dit land<sup class=\"note-marker\" data-note=\"42\">42</sup> handelen.",
       "text1637_html": "Ende brenget uwen kleynsten broeder tot my, so sal ick weten, dat ghy geen verspieders en zijt, maer dat ghy vroom zijt: uwe broeder sal ick u weder geven, ende ghy sult in dit lant <sup class=\"note-marker\" data-note=\"42\">42</sup> handelen.",
       "phraseDiff": [
@@ -4151,6 +4151,11 @@
           "old": "broeder",
           "new": "broer",
           "principe": "O22a"
+        },
+        {
+          "old": "wedergeven,",
+          "new": "teruggeven,",
+          "principe": "V749"
         },
         {
           "old": "gij",
@@ -4439,7 +4444,7 @@
       "number": 37,
       "textSV1888": "Toen sprak Ruben tot zijn vader, zeggende: Dood twee mijner zonen, zo ik hem tot u niet wederbreng; geef hem in mijn hand, en ik zal hem weder tot u brengen!",
       "text1637": "Doe sprack Ruben tot sijnen vader, seggende; [45] Doodt [46] twee mijner sonen, so ick hem tot u niet weder en brenge: geeft hem in mijne hant, ende ick sal hem weder tot u brengen.",
-      "text2026": "Toen sprak Ruben tot zijn vader, zeggende: Dood twee van mijn zonen, zo ik hem tot u niet wederbreng; geef hem in mijn hand, en ik zal hem weer tot u brengen!",
+      "text2026": "Toen sprak Ruben tot zijn vader, zeggende: Dood twee van mijn zonen, zo ik hem tot u niet terugbreng; geef hem in mijn hand, en ik zal hem weer tot u brengen!",
       "marginNotes": [
         {
           "marker": "45",
@@ -4564,7 +4569,7 @@
           "morph": "HR/Sp2ms"
         }
       ],
-      "text2026_html": "Toen sprak Ruben tot zijn vader, zeggende: <span class=\"direct-speech\"><i>Dood twee van mijn zonen, zo ik hem tot u niet wederbreng; geef hem in mijn hand, en ik zal hem weer tot u brengen!</i></span>",
+      "text2026_html": "Toen sprak Ruben tot zijn vader, zeggende: <span class=\"direct-speech\"><i>Dood twee van mijn zonen, zo ik hem tot u niet terugbreng; geef hem in mijn hand, en ik zal hem weer tot u brengen!</i></span>",
       "textSV1888_html": "Toen sprak Ruben tot zijn vader, zeggende:<sup class=\"note-marker\" data-note=\"45\">45</sup> Dood<sup class=\"note-marker\" data-note=\"46\">46</sup> twee mijner zonen, zo ik hem tot u niet wederbreng; geef hem in mijn hand, en ik zal hem weder tot u brengen!",
       "text1637_html": "Doe sprack Ruben tot sijnen vader, seggende; <sup class=\"note-marker\" data-note=\"45\">45</sup> Doodt <sup class=\"note-marker\" data-note=\"46\">46</sup> twee mijner sonen, so ick hem tot u niet weder en brenge: geeft hem in mijne hant, ende ick sal hem weder tot u brengen.",
       "phraseDiff": [
@@ -4572,6 +4577,11 @@
           "old": "mijner",
           "new": "van mijn",
           "principe": "N7"
+        },
+        {
+          "old": "wederbreng;",
+          "new": "terugbreng;",
+          "principe": null
         },
         {
           "old": "weder",

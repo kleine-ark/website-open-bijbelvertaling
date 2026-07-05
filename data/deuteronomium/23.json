@@ -2401,7 +2401,7 @@
       "number": 24,
       "textSV1888": "Wanneer gij gaan zult in uws naasten wijngaard, zo zult gij druiven eten naar uw lust, tot uw verzadiging; maar in uw vat zult gij niets doen.",
       "text1637": "Wanneer ghy gaen sult in uwes naesten wijngaert, so sult ghy druyven [29] eten, [30] nae uwen lust tot uwer versadinge: maer in u vat en sult ghy niets doen.",
-      "text2026": "Wanneer u gaan zult in van uw naasten wijngaard, zo zult u druiven eten naar uw lust, tot uw verzadiging; maar in uw mand zult u niets doen.",
+      "text2026": "Wanneer u gaan zult in de wijngaard van uw naaste, zo zult u druiven eten naar uw lust, tot uw verzadiging; maar in uw mand zult u niets doen.",
       "marginNotes": [
         {
           "marker": "29",
@@ -2480,7 +2480,7 @@
           "morph": "HR/Ncmsc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer u gaan zult in van uw naasten wijngaard, zo zult u druiven<sup class=\"note-marker\" data-note=\"29\">29</sup> eten<sup class=\"note-marker\" data-note=\"30\">30</sup> naar uw lust, tot uw verzadiging; maar in uw mand zult u niets doen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer u gaan zult in de wijngaard van uw naaste, zo zult u druiven<sup class=\"note-marker\" data-note=\"29\">29</sup> eten<sup class=\"note-marker\" data-note=\"30\">30</sup> naar uw lust, tot uw verzadiging; maar in uw mand zult u niets doen.</i></span>",
       "textSV1888_html": "Wanneer gij gaan zult in uws naasten wijngaard, zo zult gij druiven<sup class=\"note-marker\" data-note=\"29\">29</sup> eten<sup class=\"note-marker\" data-note=\"30\">30</sup> naar uw lust, tot uw verzadiging; maar in uw vat zult gij niets doen.",
       "text1637_html": "Wanneer ghy gaen sult in uwes naesten wijngaert, so sult ghy druyven <sup class=\"note-marker\" data-note=\"29\">29</sup> eten, <sup class=\"note-marker\" data-note=\"30\">30</sup> nae uwen lust tot uwer versadinge: maer in u vat en sult ghy niets doen.",
       "phraseDiff": [
@@ -2490,9 +2490,9 @@
           "principe": "A1"
         },
         {
-          "old": "uws",
-          "new": "van uw",
-          "principe": "V200"
+          "old": "uws naasten wijngaard,",
+          "new": "de wijngaard van uw naaste,",
+          "principe": null
         },
         {
           "old": "gij",
@@ -2515,7 +2515,7 @@
       "number": 25,
       "textSV1888": "Wanneer gij zult gaan in uws naasten staande koren, zo zult gij de aren met uw hand afplukken; maar de sikkel zult gij aan uws naasten staande koren niet bewegen.",
       "text1637": "Wanneer ghy sult gaen in uwes naesten [e] staende koorn, so sult ghy de [31] aren met uwe hant afplucken: maer den sickel en sult ghy aen uwes naesten staende koorn niet [32] bewegen.",
-      "text2026": "Wanneer u zult gaan in van uw naasten staande koren, zo zult u de aren met uw hand afplukken; maar de sikkel zult u aan van uw naasten staande koren niet bewegen.",
+      "text2026": "Wanneer u zult gaan in het staande koren van uw naaste, zo zult u de aren met uw hand afplukken; maar de sikkel zult u aan het staande koren van uw naaste niet bewegen.",
       "marginNotes": [
         {
           "marker": "e",
@@ -2601,34 +2601,44 @@
           "morph": "HVqi2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer u zult gaan in van uw naasten<sup class=\"note-marker\" data-note=\"e\">e</sup> staande koren, zo zult u de<sup class=\"note-marker\" data-note=\"31\">31</sup> aren met uw hand afplukken; maar de sikkel zult u aan van uw naasten staande koren niet<sup class=\"note-marker\" data-note=\"32\">32</sup> bewegen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer u zult gaan in het staande koren van uw naaste<sup class=\"note-marker\" data-note=\"e\">e</sup>, zo zult u de<sup class=\"note-marker\" data-note=\"31\">31</sup> aren met uw hand afplukken; maar de sikkel zult u aan het staande koren van uw naaste niet<sup class=\"note-marker\" data-note=\"32\">32</sup> bewegen.</i></span>",
       "textSV1888_html": "Wanneer gij zult gaan in uws naasten<sup class=\"note-marker\" data-note=\"e\">e</sup> staande koren, zo zult gij de<sup class=\"note-marker\" data-note=\"31\">31</sup> aren met uw hand afplukken; maar de sikkel zult gij aan uws naasten staande koren niet<sup class=\"note-marker\" data-note=\"32\">32</sup> bewegen.",
       "text1637_html": "Wanneer ghy sult gaen in uwes naesten <sup class=\"note-marker\" data-note=\"e\">e</sup> staende koorn, so sult ghy de <sup class=\"note-marker\" data-note=\"31\">31</sup> aren met uwe hant afplucken: maer den sickel en sult ghy aen uwes naesten staende koorn niet <sup class=\"note-marker\" data-note=\"32\">32</sup> bewegen.",
       "phraseDiff": [
         {
           "old": "gij",
           "new": "u",
-          "principe": "A1"
+          "principe": null
         },
         {
-          "old": "uws",
-          "new": "van uw",
-          "principe": "V200"
+          "old": "uws naasten",
+          "new": "het",
+          "principe": null
+        },
+        {
+          "old": "koren,",
+          "new": "koren van uw naaste,",
+          "principe": null
         },
         {
           "old": "gij",
           "new": "u",
-          "principe": "A1"
+          "principe": null
         },
         {
           "old": "gij",
           "new": "u",
-          "principe": "A1"
+          "principe": null
         },
         {
-          "old": "uws",
-          "new": "van uw",
-          "principe": "V200"
+          "old": "uws naasten",
+          "new": "het",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "van uw naaste",
+          "principe": null
         }
       ]
     }

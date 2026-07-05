@@ -431,7 +431,7 @@
       "number": 5,
       "textSV1888": "Dan zullen de priesters, de kinderen van Levi, toetreden; want de HEERE, uw God, heeft hen verkoren, om Hem te dienen, en om in des HEEREN Naam te zegenen, en naar hun mond zal alle twist en alle plaag afgedaan worden.",
       "text1637": "Dan sullen de Priesters, de kinderen van Levi, toetreden; want de HEERE uwe Godt heeftse verkoren om hem te dienen, ende om [2] in des HEEREN name te segenen, ende [3] nae haren monde sal alle twist, ende alle plage [4] afgedaen worden.",
-      "text2026": "Dan zullen de priesters, de kinderen van Levi, toetreden; want JAHWEH, uw God, heeft hen gekozen, om Hem te dienen, en om in van JAHWEH Naam te zegenen, en naar hun mond zal alle twist en alle plaag afgedaan worden.",
+      "text2026": "Dan zullen de priesters, de kinderen van Levi, toetreden; want JAHWEH, uw God, heeft hen gekozen, om Hem te dienen, en om in de Naam van JAHWEH te zegenen, en naar hun mond zal alle twist en alle plaag afgedaan worden.",
       "marginNotes": [
         {
           "marker": "2",
@@ -557,7 +557,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Dan zullen de priesters, de kinderen van Levi, toetreden; want JAHWEH, uw God, heeft hen gekozen, om Hem te dienen, en om<sup class=\"note-marker\" data-note=\"2\">2</sup> in van JAHWEH Naam te zegenen, en<sup class=\"note-marker\" data-note=\"3\">3</sup> naar hun mond zal alle twist en alle plaag<sup class=\"note-marker\" data-note=\"4\">4</sup> afgedaan worden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Dan zullen de priesters, de kinderen van Levi, toetreden; want JAHWEH, uw God, heeft hen gekozen, om Hem te dienen, en om<sup class=\"note-marker\" data-note=\"2\">2</sup> in de Naam van JAHWEH te zegenen, en<sup class=\"note-marker\" data-note=\"3\">3</sup> naar hun mond zal alle twist en alle plaag<sup class=\"note-marker\" data-note=\"4\">4</sup> afgedaan worden.</i></span>",
       "textSV1888_html": "Dan zullen de priesters, de kinderen van Levi, toetreden; want de HEERE, uw God, heeft hen verkoren, om Hem te dienen, en om<sup class=\"note-marker\" data-note=\"2\">2</sup> in des HEEREN Naam te zegenen, en<sup class=\"note-marker\" data-note=\"3\">3</sup> naar hun mond zal alle twist en alle plaag<sup class=\"note-marker\" data-note=\"4\">4</sup> afgedaan worden.",
       "text1637_html": "Dan sullen de Priesters, de kinderen van Levi, toetreden; want de HEERE uwe Godt heeftse verkoren om hem te dienen, ende om <sup class=\"note-marker\" data-note=\"2\">2</sup> in des HEEREN name te segenen, ende <sup class=\"note-marker\" data-note=\"3\">3</sup> nae haren monde sal alle twist, ende alle plage <sup class=\"note-marker\" data-note=\"4\">4</sup> afgedaen worden.",
       "phraseDiff": [
@@ -573,8 +573,13 @@
         },
         {
           "old": "des HEEREN",
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
           "new": "van JAHWEH",
-          "principe": "N3"
+          "principe": null
         }
       ]
     },
@@ -964,7 +969,7 @@
       "number": 10,
       "textSV1888": "Wanneer gij zult uitgetogen zijn tot den strijd tegen uw vijanden; en de HEERE, uw God, hen zal gegeven hebben in uw hand, dat gij hun gevangenen gevankelijk wegvoert;",
       "text1637": "Wanneer ghy sult uytgetogen zijn tot den strijt tegens uwe vyanden: ende de HEERE uwe Godt salse gegeven hebben in uwe hant, dat ghy [9] hare gevangene gevancklick wechvoert:",
-      "text2026": "Wanneer u zult uitgetogen zijn tot de strijd tegen uw vijanden; en JAHWEH, uw God, hen zal gegeven hebben in uw hand, dat u hun gevangenen als gevangene wegvoert;",
+      "text2026": "Wanneer u zult uitgetrokken zijn tot de strijd tegen uw vijanden; en JAHWEH, uw God, hen zal gegeven hebben in uw hand, dat u hun gevangenen als gevangene wegvoert;",
       "marginNotes": [
         {
           "marker": "9",
@@ -1031,7 +1036,7 @@
           "morph": "HNcbsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer u zult uitgetogen zijn tot de strijd tegen uw vijanden; en JAHWEH, uw God, hen zal gegeven hebben in uw hand, dat u<sup class=\"note-marker\" data-note=\"9\">9</sup> hun gevangenen als gevangene wegvoert;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer u zult uitgetrokken zijn tot de strijd tegen uw vijanden; en JAHWEH, uw God, hen zal gegeven hebben in uw hand, dat u<sup class=\"note-marker\" data-note=\"9\">9</sup> hun gevangenen als gevangene wegvoert;</i></span>",
       "textSV1888_html": "Wanneer gij zult uitgetogen zijn tot den strijd tegen uw vijanden; en de HEERE, uw God, hen zal gegeven hebben in uw hand, dat gij<sup class=\"note-marker\" data-note=\"9\">9</sup> hun gevangenen gevankelijk wegvoert;",
       "text1637_html": "Wanneer ghy sult uytgetogen zijn tot den strijt tegens uwe vyanden: ende de HEERE uwe Godt salse gegeven hebben in uwe hant, dat ghy <sup class=\"note-marker\" data-note=\"9\">9</sup> hare gevangene gevancklick wechvoert:",
       "phraseDiff": [
@@ -1039,6 +1044,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "uitgetogen",
+          "new": "uitgetrokken",
+          "principe": "V431"
         },
         {
           "old": "den",

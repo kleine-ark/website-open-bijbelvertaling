@@ -722,7 +722,7 @@
       "number": 5,
       "textSV1888": "En die knecht zeide tot hem: Misschien zal die vrouw mij niet willen volgen in dit land; zal ik dan uw zoon moeten wederbrengen in het land, waar gij uitgetogen zijt?",
       "text1637": "[9] Ende die knecht seyde tot hem; Misschien sal die [10] vrouwe my niet willen [11] volgen in dit lant: sal ick dan uwen sone [12] moeten wederbrengen in het lant daer ghy uytgetogen zijt?",
-      "text2026": "En die knecht zei tot hem: Misschien zal die vrouw mij niet willen volgen in dit land; zal ik dan uw zoon moeten wederbrengen in het land, waar u uitgetogen bent?",
+      "text2026": "En die knecht zei tot hem: Misschien zal die vrouw mij niet willen volgen in dit land; zal ik dan uw zoon moeten terugbrengen in het land, waar u uitgetogen bent?",
       "marginNotes": [
         {
           "marker": "9",
@@ -886,7 +886,7 @@
           "morph": "HR/D"
         }
       ],
-      "text2026_html": "En die knecht zei tot hem: <span class=\"direct-speech\"><i>Misschien zal die vrouw mij niet willen volgen in dit land; zal ik dan uw zoon moeten wederbrengen in het land, waar u uitgetogen bent?</i></span>",
+      "text2026_html": "En die knecht zei tot hem: <span class=\"direct-speech\"><i>Misschien zal die vrouw mij niet willen volgen in dit land; zal ik dan uw zoon moeten terugbrengen in het land, waar u uitgetogen bent?</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"9\">9</sup> En die knecht zeide tot hem: Misschien zal die<sup class=\"note-marker\" data-note=\"10\">10</sup> vrouw mij niet willen<sup class=\"note-marker\" data-note=\"11\">11</sup> volgen in dit land; zal ik dan uw zoon<sup class=\"note-marker\" data-note=\"12\">12</sup> moeten wederbrengen in het land, waar gij uitgetogen zijt?",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"9\">9</sup> Ende die knecht seyde tot hem; Misschien sal die <sup class=\"note-marker\" data-note=\"10\">10</sup> vrouwe my niet wille<i>n</i> <sup class=\"note-marker\" data-note=\"11\">11</sup> volgen in dit lant: sal ick dan uwen sone <sup class=\"note-marker\" data-note=\"12\">12</sup> moeten wederbrengen in het lant daer ghy uytgetogen zijt?",
       "phraseDiff": [
@@ -894,6 +894,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "wederbrengen",
+          "new": "terugbrengen",
+          "principe": null
         },
         {
           "old": "gij",
@@ -5891,7 +5896,7 @@
       "number": 47,
       "textSV1888": "Toen vraagde ik haar, en zeide: Wiens dochter zijt gij? En zij zeide: De dochter van Bethuël, den zoon van Nahor, welken Milka hem gebaard heeft. Zo leide ik het voorhoofdsiersel op haar aangezicht, en de armringen aan haar handen;",
       "text1637": "Doe vraegde ick haer, ende seyde, Wiens dochter zijt ghy? ende sy seyde, De dochter Bethuels, des soons Nahors, welcke Milca hem gebaert heeft: so leyde ick het voorhooft-ciersel [54] op haer aengesichte, ende d'arm-ringen aen hare handen:",
-      "text2026": "Toen vraagde ik haar, en zei: Wiens dochter bent u? En zij zei: De dochter van Bethuël, de zoon van Nahor, die Milka hem gebaard heeft. Zo legde ik het voorhoofdsiersel op haar aangezicht, en de armringen aan haar handen;",
+      "text2026": "Toen vroeg ik haar, en zei: Wiens dochter bent u? En zij zei: De dochter van Bethuël, de zoon van Nahor, die Milka hem gebaard heeft. Zo legde ik het voorhoofdsiersel op haar aangezicht, en de armringen aan haar handen;",
       "marginNotes": [
         {
           "marker": "54",
@@ -6019,10 +6024,15 @@
           "morph": "HNcbdc/Sp3fs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Toen vraagde ik haar, en zei: Wiens dochter bent u? En zij zei: De dochter van Bethuël, de zoon van Nahor, die Milka hem gebaard heeft. Zo legde ik het voorhoofdsiersel op haar aangezicht, en de armringen aan haar handen;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Toen vroeg ik haar, en zei: Wiens dochter bent u? En zij zei: De dochter van Bethuël, de zoon van Nahor, die Milka hem gebaard heeft. Zo legde ik het voorhoofdsiersel op haar aangezicht, en de armringen aan haar handen;</i></span>",
       "textSV1888_html": "Toen vraagde ik haar, en zeide: Wiens dochter zijt gij? En zij zeide: De dochter van Bethuël, den zoon van Nahor, welken Milka hem gebaard heeft. Zo leide ik het voorhoofdsiersel<sup class=\"note-marker\" data-note=\"54\">54</sup> op haar aangezicht, en de armringen aan haar handen;",
       "text1637_html": "Doe vraegde ick haer, ende seyde, Wiens dochter zijt ghy? ende sy seyde, De dochter Bethuels, des soons Nahors, welcke Milca hem gebaert heeft: so leyde ick het voorhooft-ciersel <sup class=\"note-marker\" data-note=\"54\">54</sup> op haer aengesichte, ende d'arm-ringen aen hare handen:",
       "phraseDiff": [
+        {
+          "old": "vraagde",
+          "new": "vroeg",
+          "principe": null
+        },
         {
           "old": "zeide:",
           "new": "zei:",
