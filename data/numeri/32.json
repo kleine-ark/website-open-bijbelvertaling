@@ -1978,7 +1978,7 @@
       "number": 20,
       "textSV1888": "Toen zeide Mozes tot hen: Indien gij deze zaak doen zult, indien gij u voor het aangezicht des HEEREN zult toerusten ten strijde.",
       "text1637": "Doe seyde Mose tot hen; Indien ghy dese sake doen sult, indien ghy u voor het aengesichte des HEEREN sult [25] rusten ten strijde,",
-      "text2026": "Toen zei Mozes tot hen: Als u deze zaak doen zult, als u u voor het aangezicht van JAHWEH zult toerusten ten strijde.",
+      "text2026": "Toen zei Mozes tot hen: Als u deze zaak doen zult, als u zich voor het aangezicht van JAHWEH zult toerusten ten strijde.",
       "marginNotes": [
         {
           "marker": "25",
@@ -2055,7 +2055,7 @@
           "morph": "HRd/Ncfsa"
         }
       ],
-      "text2026_html": "Toen zei Mozes tot hen: <span class=\"direct-speech\"><i>Als u deze zaak doen zult, als u u voor het aangezicht van JAHWEH zult toerusten ten strijde.</i></span>",
+      "text2026_html": "Toen zei Mozes tot hen: <span class=\"direct-speech\"><i>Als u deze zaak doen zult, als u zich voor het aangezicht van JAHWEH zult toerusten ten strijde.</i></span>",
       "textSV1888_html": "Toen zeide Mozes tot hen: Indien gij deze zaak doen zult, indien gij u voor het aangezicht des HEEREN zult<sup class=\"note-marker\" data-note=\"25\">25</sup> toerusten ten strijde.",
       "text1637_html": "Doe seyde Mose tot hen; Indien ghy dese sake doen sult, indien ghy u voor het aengesichte des HEEREN sult <sup class=\"note-marker\" data-note=\"25\">25</sup> rusten ten strijde,",
       "phraseDiff": [
@@ -2071,8 +2071,13 @@
         },
         {
           "old": "indien gij",
-          "new": "als u",
-          "principe": "A1"
+          "new": "als",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "zich",
+          "principe": null
         },
         {
           "old": "des HEEREN",
@@ -3281,7 +3286,7 @@
       "number": 33,
       "textSV1888": "Alzo gaf Mozes hunlieden, den kinderen van Gad, en de kinderen van Ruben, en den halven stam van Manasse, den zoon van Jozef, het koninkrijk van Sihon, koning der Amorieten, en het koninkrijk van Og, koning van Bazan; het land met de steden van hetzelve in de landpalen, de steden des lands rondom.",
       "text1637": "[d] Also gaf Mose haerlieden, den kinderen Gads, ende den kinderen Rubens, ende den halven stam van Manasse, Iosephs sone, het Coninckrijck van Sihon, Coninck der Amoriten, ende het Coninckrijck van Og, Coninck van Basan: het lant met de steden van dien in de lant-palen, de steden des lants rontomme.",
-      "text2026": "Zo gaf Mozes hunlieden, de kinderen van Gad, en de kinderen van Ruben, en de halven stam van Manasse, de zoon van Jozef, het koninkrijk van Sihon, koning van de Amorieten, en het koninkrijk van Og, koning van Bazan; het land met de steden van hetzelfde in het gebied, de steden van het land rondom.",
+      "text2026": "Zo gaf Mozes hun, de kinderen van Gad, en de kinderen van Ruben, en de halve stam van Manasse, de zoon van Jozef, het koninkrijk van Sihon, koning van de Amorieten, en het koninkrijk van Og, koning van Bazan; het land met de steden daarvan in het gebied, de steden van het land rondom.",
       "marginNotes": [
         {
           "marker": "d",
@@ -3433,7 +3438,7 @@
           "morph": "HNcbsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> Zo gaf Mozes hunlieden, de kinderen van Gad, en de kinderen van Ruben, en de halven stam van Manasse, de zoon van Jozef, het koninkrijk van Sihon, koning van de Amorieten, en het koninkrijk van Og, koning van Bazan; het land met de steden van hetzelfde in het gebied, de steden van het land rondom.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> Zo gaf Mozes hun, de kinderen van Gad, en de kinderen van Ruben, en de halve stam van Manasse, de zoon van Jozef, het koninkrijk van Sihon, koning van de Amorieten, en het koninkrijk van Og, koning van Bazan; het land met de steden daarvan in het gebied, de steden van het land rondom.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> Alzo gaf Mozes hunlieden, den kinderen van Gad, en de kinderen van Ruben, en den halven stam van Manasse, den zoon van Jozef, het koninkrijk van Sihon, koning der Amorieten, en het koninkrijk van Og, koning van Bazan; het land met de steden van hetzelve in de landpalen, de steden des lands rondom.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> Also gaf Mose haerlieden, den kinderen Gads, ende den kinderen Rubens, ende den halven stam van Manasse, Iosephs sone, het Coninckrijck van Sihon, Coninck der Amoriten, ende het Coninckrijck van Og, Coninck van Basan: het lant met de steden van dien in de lant-palen, de steden des lants rontomme.",
       "phraseDiff": [
@@ -3443,14 +3448,14 @@
           "principe": "V42"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "hunlieden, den",
+          "new": "hun, de",
+          "principe": null
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den halven",
+          "new": "de halve",
+          "principe": null
         },
         {
           "old": "den",
@@ -3463,9 +3468,9 @@
           "principe": "N2"
         },
         {
-          "old": "hetzelve",
-          "new": "hetzelfde",
-          "principe": "O4"
+          "old": "van hetzelve",
+          "new": "daarvan",
+          "principe": null
         },
         {
           "old": "de landpalen,",

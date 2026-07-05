@@ -75,6 +75,7 @@ const App = {
         '1tessalonicensen':'all',
         '2tessalonicensen':'all',
         '1timotheus':'all',
+        '2timotheus':'all',
         '1johannes':'all',
         '2johannes':'all',
         '3johannes':'all',

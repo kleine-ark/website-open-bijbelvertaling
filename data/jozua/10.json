@@ -1061,7 +1061,7 @@
       "number": 9,
       "textSV1888": "Alzo kwam Jozua snellijk tot hen; den gansen nacht over was hij van Gilgal opgetrokken.",
       "text1637": "Also quam Iosua snellick tot haer: den gantschen nacht over was hy van Gilgal opgetrocken.",
-      "text2026": "Zo kwam Jozua snel tot hen; de ganse nacht over was hij van Gilgal opgetrokken.",
+      "text2026": "Zo kwam Jozua snel tot hen; de gehele nacht over was hij van Gilgal opgetrokken.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1110,7 +1110,7 @@
           "morph": "HTd/Np"
         }
       ],
-      "text2026_html": "Zo kwam Jozua snel tot hen; de ganse nacht over was hij van Gilgal opgetrokken.",
+      "text2026_html": "Zo kwam Jozua snel tot hen; de gehele nacht over was hij van Gilgal opgetrokken.",
       "text1637_html": "Also quam Iosua snellick tot haer: den gantschen nacht over was hy van Gilgal opgetrocken.",
       "phraseDiff": [
         {
@@ -1125,8 +1125,8 @@
         },
         {
           "old": "den gansen",
-          "new": "de ganse",
-          "principe": "N1"
+          "new": "de gehele",
+          "principe": null
         }
       ]
     },
@@ -2829,7 +2829,7 @@
       "number": 24,
       "textSV1888": "En het geschiedde, als zij die koningen uitgebracht hadden tot Jozua, zo riep Jozua al de mannen van Israël, en hij zeide tot de oversten des krijgsvolks, die met hem getogen waren: Treedt toe, zet uw voeten op de halzen dezer koningen. En zij traden toe, en zetten hun voeten op hun halzen.",
       "text1637": "Ende het geschiedde, als sy die Koningen uytgebracht hadden tot Iosua, so riep Iosua alle de mannen Israëls, en hy seyde tot de Overste des krijchsvolcx, die met hem getogen waren: Treedt toe, sett uwe voeten op de halsen deser Coningen: ende sy traden toe, ende setten hare voeten op hare halsen.",
-      "text2026": "En het gebeurde, als zij die koningen uitgebracht hadden tot Jozua, zo riep Jozua al de mannen van Israël, en hij zei tot de oversten van de oorlogsvolks, die met hem getogen waren: Treedt toe, zet uw voeten op de halzen van deze koningen. En zij traden toe, en zetten hun voeten op hun halzen.",
+      "text2026": "En het gebeurde, als zij die koningen uitgebracht hadden tot Jozua, zo riep Jozua al de mannen van Israël, en hij zei tot de oversten van het oorlogsvolk, die met hem getrokken waren: Treedt toe, zet uw voeten op de halzen van deze koningen. En zij traden toe, en zetten hun voeten op hun halzen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3003,7 +3003,7 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "En het gebeurde, als zij die koningen uitgebracht hadden tot Jozua, zo riep Jozua al de mannen van Israël, en hij zei tot de oversten van de oorlogsvolks, die met hem getogen waren: <span class=\"direct-speech\"><i>Treedt toe, zet uw voeten op de halzen van deze koningen.</i></span> En zij traden toe, en zetten hun voeten op hun halzen.",
+      "text2026_html": "En het gebeurde, als zij die koningen uitgebracht hadden tot Jozua, zo riep Jozua al de mannen van Israël, en hij zei tot de oversten van het oorlogsvolk, die met hem getrokken waren: <span class=\"direct-speech\"><i>Treedt toe, zet uw voeten op de halzen van deze koningen.</i></span> En zij traden toe, en zetten hun voeten op hun halzen.",
       "text1637_html": "En<i>de</i> het geschiedde, als sy die Koningen uytgebracht hadden tot Iosua, so riep Iosua alle de mannen Israëls, en hy seyde tot de Overste des krijchsvolcx, die met hem getogen waren: Treedt toe, sett uwe voeten op de halsen deser Coningen: ende sy traden toe, ende setten hare voeten op hare halsen.",
       "phraseDiff": [
         {
@@ -3018,8 +3018,13 @@
         },
         {
           "old": "des krijgsvolks,",
-          "new": "van de oorlogsvolks,",
-          "principe": "N3"
+          "new": "van het oorlogsvolk,",
+          "principe": null
+        },
+        {
+          "old": "getogen",
+          "new": "getrokken",
+          "principe": "V353"
         },
         {
           "old": "dezer",

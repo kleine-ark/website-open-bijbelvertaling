@@ -173,7 +173,7 @@
       "number": 2,
       "textSV1888": "Zo vergaderden zij zich samen, om tegen Jozua en tegen Israël te krijgen, eenmoediglijk.",
       "text1637": "So vergaderden sy hen t’samen om tegen Iosua, ende tegen Israël te krijgen, [5] eenmoedichlick.",
-      "text2026": "Zo verzamelden zij zich samen, om tegen Jozua en tegen Israël te krijgen, eenmoediglijk.",
+      "text2026": "Zo verzamelden zij zich samen, om tegen Jozua en tegen Israël eenmoedig te krijgen.",
       "marginNotes": [
         {
           "marker": "5",
@@ -230,14 +230,24 @@
           "morph": "HAcmsa"
         }
       ],
-      "text2026_html": "Zo verzamelden zij zich samen, om tegen Jozua en tegen Israël te krijgen,<sup class=\"note-marker\" data-note=\"5\">5</sup> eenmoediglijk.",
+      "text2026_html": "Zo verzamelden zij zich samen, om tegen Jozua en tegen Israël eenmoedig te krijgen<sup class=\"note-marker\" data-note=\"5\">5</sup>.",
       "textSV1888_html": "Zo vergaderden zij zich samen, om tegen Jozua en tegen Israël te krijgen,<sup class=\"note-marker\" data-note=\"5\">5</sup> eenmoediglijk.",
       "text1637_html": "So vergaderden sy hen t’samen om tegen Iosua, ende tegen Israël te krijgen, <sup class=\"note-marker\" data-note=\"5\">5</sup> eenmoedichlick.",
       "phraseDiff": [
         {
           "old": "vergaderden",
           "new": "verzamelden",
-          "principe": "V318"
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "eenmoedig",
+          "principe": null
+        },
+        {
+          "old": "krijgen, eenmoediglijk.",
+          "new": "krijgen.",
+          "principe": null
         }
       ]
     },
