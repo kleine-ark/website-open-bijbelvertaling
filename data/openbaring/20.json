@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En ik zag een engel afkomen uit den hemel, hebbende den sleutel des afgronds, en een grote keten in zijn hand;",
       "text1637": "[1] ENde ick sach [2] eenen Engel afkomen uyt den hemel, [a] hebbende [3] den sleutel des afgronts, ende [4] een groote keten in sijne handt:",
-      "text2026": "En ik zag een engel afkomen uit de hemel, hebbende de sleutel van de afgronds, en een grote keten in zijn hand;",
+      "text2026": "En ik zag een engel afkomen uit de hemel, hebbende de sleutel van de afgrond, en een grote keten in zijn hand;",
       "marginNotes": [
         {
           "marker": "1",
@@ -159,7 +159,7 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> En ik zag<sup class=\"note-marker\" data-note=\"2\">2</sup> een engel afkomen uit de hemel,<sup class=\"note-marker\" data-note=\"a\">a</sup> hebbende<sup class=\"note-marker\" data-note=\"3\">3</sup> de sleutel van de afgronds, en<sup class=\"note-marker\" data-note=\"4\">4</sup> een grote keten in zijn hand;",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> En ik zag<sup class=\"note-marker\" data-note=\"2\">2</sup> een engel afkomen uit de hemel,<sup class=\"note-marker\" data-note=\"a\">a</sup> hebbende<sup class=\"note-marker\" data-note=\"3\">3</sup> de sleutel van de afgrond, en<sup class=\"note-marker\" data-note=\"4\">4</sup> een grote keten in zijn hand;",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> En ik zag<sup class=\"note-marker\" data-note=\"2\">2</sup> een engel afkomen uit den hemel,<sup class=\"note-marker\" data-note=\"a\">a</sup> hebbende<sup class=\"note-marker\" data-note=\"3\">3</sup> den sleutel des afgronds, en<sup class=\"note-marker\" data-note=\"4\">4</sup> een grote keten in zijn hand;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> ENde ick sach <sup class=\"note-marker\" data-note=\"2\">2</sup> eenen Engel afkomen uyt den hemel, <sup class=\"note-marker\" data-note=\"a\">a</sup> hebbende <sup class=\"note-marker\" data-note=\"3\">3</sup> den sleutel des afgronts, ende <sup class=\"note-marker\" data-note=\"4\">4</sup> een groote keten in sijne handt:",
       "phraseDiff": [
@@ -174,9 +174,9 @@
           "principe": "N1"
         },
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des afgronds,",
+          "new": "van de afgrond,",
+          "principe": null
         }
       ]
     },
@@ -2036,7 +2036,7 @@
       "number": 10,
       "textSV1888": "En de duivel, die hen verleidde, werd geworpen in den poel des vuurs en sulfers, alwaar het beest en de valse profeet zijn; en zij zullen gepijnigd worden dag en nacht in alle eeuwigheid.",
       "text1637": "Ende de Duyvel die haer verleydde, [n] wierdt geworpen [30] in den poel des vyers ende sulphers, al waer [o] het Beest ende de valsche propheet is: ende sy sullen [p] gepijnight worden dagh ende nacht in alle eewicheyt.",
-      "text2026": "En de duivel, die hen verleidde, werd geworpen in de poel van het vuur en sulfers, alwaar het beest en de valse profeet zijn; en zij zullen gepijnigd worden dag en nacht in alle eeuwigheid.",
+      "text2026": "En de duivel, die hen verleidde, werd geworpen in de poel van het vuur en sulfer, waar het beest en de valse profeet zijn; en zij zullen gepijnigd worden dag en nacht in alle eeuwigheid.",
       "marginNotes": [
         {
           "marker": "n",
@@ -2255,7 +2255,7 @@
           "gloss": "〔an age"
         }
       ],
-      "text2026_html": "En de duivel, die hen verleidde,<sup class=\"note-marker\" data-note=\"n\">n</sup> werd geworpen<sup class=\"note-marker\" data-note=\"30\">30</sup> in de poel van het vuur en sulfers, alwaar<sup class=\"note-marker\" data-note=\"o\">o</sup> het beest en de valse profeet zijn; en zij zullen<sup class=\"note-marker\" data-note=\"p\">p</sup> gepijnigd worden dag en nacht in alle eeuwigheid.",
+      "text2026_html": "En de duivel, die hen verleidde,<sup class=\"note-marker\" data-note=\"n\">n</sup> werd geworpen<sup class=\"note-marker\" data-note=\"30\">30</sup> in de poel van het vuur en sulfer, waar<sup class=\"note-marker\" data-note=\"o\">o</sup> het beest en de valse profeet zijn; en zij zullen<sup class=\"note-marker\" data-note=\"p\">p</sup> gepijnigd worden dag en nacht in alle eeuwigheid.",
       "textSV1888_html": "En de duivel, die hen verleidde,<sup class=\"note-marker\" data-note=\"n\">n</sup> werd geworpen<sup class=\"note-marker\" data-note=\"30\">30</sup> in den poel des vuurs en sulfers, alwaar<sup class=\"note-marker\" data-note=\"o\">o</sup> het beest en de valse profeet zijn; en zij zullen<sup class=\"note-marker\" data-note=\"p\">p</sup> gepijnigd worden dag en nacht in alle eeuwigheid.",
       "text1637_html": "Ende de Duyvel die haer verleydde, <sup class=\"note-marker\" data-note=\"n\">n</sup> wierdt geworpen <sup class=\"note-marker\" data-note=\"30\">30</sup> in den poel des vyers ende sulphers, al waer <sup class=\"note-marker\" data-note=\"o\">o</sup> het Beest ende de valsche propheet is: ende sy sullen <sup class=\"note-marker\" data-note=\"p\">p</sup> gepijnight worden dagh ende nacht in alle eewicheyt.",
       "phraseDiff": [
@@ -2268,6 +2268,11 @@
           "old": "des vuurs",
           "new": "van het vuur",
           "principe": "N3"
+        },
+        {
+          "old": "sulfers, alwaar",
+          "new": "sulfer, waar",
+          "principe": null
         }
       ]
     },
@@ -2275,7 +2280,7 @@
       "number": 11,
       "textSV1888": "En ik zag een groten witten troon, en Dengene, Die daarop zat, van Wiens aangezicht de aarde en de hemel wegvloden, en geen plaats is voor die gevonden.",
       "text1637": "[31] Ende ick sach eenen grooten witten throon, ende den genen die daer op sat, van wiens [32] aengesichte de aerde ende de hemel [33] wech vloot, ende geen plaetse en is voor die gevonden.",
-      "text2026": "En ik zag een grote witten troon, en Dengene, Die daarop zat, van Wiens aangezicht de aarde en de hemel wegvloden, en geen plaats is voor die gevonden.",
+      "text2026": "En ik zag een grote witte troon, en Dengene, Die daarop zat, van Wiens aangezicht de aarde en de hemel wegvloden, en geen plaats is voor die gevonden.",
       "marginNotes": [
         {
           "marker": "31",
@@ -2451,13 +2456,13 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"31\">31</sup> En ik zag een grote witten troon, en Dengene, Die daarop zat, van Wiens<sup class=\"note-marker\" data-note=\"32\">32</sup> aangezicht de aarde en de hemel<sup class=\"note-marker\" data-note=\"33\">33</sup> wegvloden, en geen plaats is voor die gevonden.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"31\">31</sup> En ik zag een grote witte troon, en Dengene, Die daarop zat, van Wiens<sup class=\"note-marker\" data-note=\"32\">32</sup> aangezicht de aarde en de hemel<sup class=\"note-marker\" data-note=\"33\">33</sup> wegvloden, en geen plaats is voor die gevonden.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"31\">31</sup> En ik zag een groten witten troon, en Dengene, Die daarop zat, van Wiens<sup class=\"note-marker\" data-note=\"32\">32</sup> aangezicht de aarde en de hemel<sup class=\"note-marker\" data-note=\"33\">33</sup> wegvloden, en geen plaats is voor die gevonden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"31\">31</sup> Ende ick sach eenen grooten witten throon, ende den genen die daer op sat, van wiens <sup class=\"note-marker\" data-note=\"32\">32</sup> aengesichte de aerde ende de hemel <sup class=\"note-marker\" data-note=\"33\">33</sup> wech vloot, ende geen plaetse en is voor die gevonden.",
       "phraseDiff": [
         {
-          "old": "groten",
-          "new": "grote",
+          "old": "groten witten",
+          "new": "grote witte",
           "principe": null
         }
       ]
