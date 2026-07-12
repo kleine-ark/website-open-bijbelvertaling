@@ -152,7 +152,7 @@
       "number": 3,
       "textSV1888": "Dat zendt Hij rechtuit onder den gansen hemel, en Zijn licht over de einden der aarde.",
       "text1637": "[7] Dat sendt [8] hy recht uyt onder den gantschen hemel, ende [9] sijn licht over de [10] eynden der aerde.",
-      "text2026": "Dat zendt Hij rechtuit onder de ganse hemel, en Zijn licht over de einden van de aarde.",
+      "text2026": "Dat zendt Hij rechtuit onder de hele hemel, en Zijn licht over de einden van de aarde.",
       "marginNotes": [
         {
           "marker": "7",
@@ -225,14 +225,14 @@
           "morph": "HTd/Ncbsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup><span class=\"direct-speech\"><i> Dat zendt<sup class=\"note-marker\" data-note=\"8\">8</sup> Hij rechtuit onder de ganse hemel, en<sup class=\"note-marker\" data-note=\"9\">9</sup> Zijn licht over de<sup class=\"note-marker\" data-note=\"10\">10</sup> einden van de aarde.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup><span class=\"direct-speech\"><i> Dat zendt<sup class=\"note-marker\" data-note=\"8\">8</sup> Hij rechtuit onder de hele hemel, en<sup class=\"note-marker\" data-note=\"9\">9</sup> Zijn licht over de<sup class=\"note-marker\" data-note=\"10\">10</sup> einden van de aarde.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup> Dat zendt<sup class=\"note-marker\" data-note=\"8\">8</sup> Hij rechtuit onder den gansen hemel, en<sup class=\"note-marker\" data-note=\"9\">9</sup> Zijn licht over de<sup class=\"note-marker\" data-note=\"10\">10</sup> einden der aarde.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup> Dat sendt <sup class=\"note-marker\" data-note=\"8\">8</sup> hy recht uyt onder den gantschen hemel, ende <sup class=\"note-marker\" data-note=\"9\">9</sup> sijn licht over de <sup class=\"note-marker\" data-note=\"10\">10</sup> eynden der aerde.",
       "phraseDiff": [
         {
           "old": "den gansen",
-          "new": "de ganse",
-          "principe": "N1"
+          "new": "de hele",
+          "principe": null
         },
         {
           "old": "der",
@@ -1442,7 +1442,7 @@
       "number": 19,
       "textSV1888": "Onderricht ons, wat wij Hem zeggen zullen; want wij zullen niets ordentelijk voorstellen kunnen vanwege de duisternis.",
       "text1637": "Onderricht ons wat wy [53] hem seggen sullen: [want] wy en sullen niets [54] ordentelick voorstellen konnen van wegen [55] de duysternisse.",
-      "text2026": "Onderricht ons, wat wij Hem zeggen zullen; want wij zullen niets ordentelijk voorstellen kunnen vanwege de duisternis.",
+      "text2026": "Onderricht ons, wat wij Hem zeggen zullen; want wij zullen niets ordelijk voorstellen kunnen vanwege de duisternis.",
       "marginNotes": [
         {
           "marker": "53",
@@ -1508,9 +1508,16 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Onderricht ons, wat wij<sup class=\"note-marker\" data-note=\"53\">53</sup> Hem zeggen zullen; want wij zullen niets<sup class=\"note-marker\" data-note=\"54\">54</sup> ordentelijk voorstellen kunnen vanwege<sup class=\"note-marker\" data-note=\"55\">55</sup> de duisternis.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Onderricht ons, wat wij<sup class=\"note-marker\" data-note=\"53\">53</sup> Hem zeggen zullen; want wij zullen niets<sup class=\"note-marker\" data-note=\"54\">54</sup> ordelijk voorstellen kunnen vanwege<sup class=\"note-marker\" data-note=\"55\">55</sup> de duisternis.</i></span>",
       "textSV1888_html": "Onderricht ons, wat wij<sup class=\"note-marker\" data-note=\"53\">53</sup> Hem zeggen zullen; want wij zullen niets<sup class=\"note-marker\" data-note=\"54\">54</sup> ordentelijk voorstellen kunnen vanwege<sup class=\"note-marker\" data-note=\"55\">55</sup> de duisternis.",
-      "text1637_html": "Onderricht ons wat wy <sup class=\"note-marker\" data-note=\"53\">53</sup> hem seggen sullen: [want] wy en sullen niets <sup class=\"note-marker\" data-note=\"54\">54</sup> ordentelick voorstellen konnen van wegen <sup class=\"note-marker\" data-note=\"55\">55</sup> de duysternisse."
+      "text1637_html": "Onderricht ons wat wy <sup class=\"note-marker\" data-note=\"53\">53</sup> hem seggen sullen: [want] wy en sullen niets <sup class=\"note-marker\" data-note=\"54\">54</sup> ordentelick voorstellen konnen van wegen <sup class=\"note-marker\" data-note=\"55\">55</sup> de duysternisse.",
+      "phraseDiff": [
+        {
+          "old": "ordentelijk",
+          "new": "ordelijk",
+          "principe": "W?"
+        }
+      ]
     },
     {
       "number": 20,

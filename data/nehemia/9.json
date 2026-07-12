@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Voorts op den vier en twintigsten dag dezer maand verzamelden zich de kinderen Israëls met vasten en met zakken, en aarde was op hen.",
       "text1637": "VOorts op den vier-ende-twintichsten dach [1] deser maent, versamelden hen de kinderen Israëls met vasten, ende met [2] sacken ende [3] aerde was op hen.",
-      "text2026": "Verder op de vier en twintigsten dag van deze maand verzamelden zich de kinderen van Israël met vasten en met zakken, en aarde was op hen.",
+      "text2026": "Verder op de vier en twintigste dag van deze maand verzamelden zich de kinderen van Israël met vasten en met zakken, en aarde was op hen.",
       "marginNotes": [
         {
           "marker": "1",
@@ -91,7 +91,7 @@
           "morph": "HR/Sp3mp"
         }
       ],
-      "text2026_html": "Verder op de vier en twintigsten dag<sup class=\"note-marker\" data-note=\"1\">1</sup> van deze maand verzamelden zich de kinderen van Israël met vasten en met<sup class=\"note-marker\" data-note=\"2\">2</sup> zakken, en<sup class=\"note-marker\" data-note=\"3\">3</sup> aarde was op hen.",
+      "text2026_html": "Verder op de vier en twintigste dag<sup class=\"note-marker\" data-note=\"1\">1</sup> van deze maand verzamelden zich de kinderen van Israël met vasten en met<sup class=\"note-marker\" data-note=\"2\">2</sup> zakken, en<sup class=\"note-marker\" data-note=\"3\">3</sup> aarde was op hen.",
       "textSV1888_html": "Voorts op den vier en twintigsten dag<sup class=\"note-marker\" data-note=\"1\">1</sup> dezer maand verzamelden zich de kinderen Israëls met vasten en met<sup class=\"note-marker\" data-note=\"2\">2</sup> zakken, en<sup class=\"note-marker\" data-note=\"3\">3</sup> aarde was op hen.",
       "text1637_html": "VOorts op den vier-ende-twintichsten dach <sup class=\"note-marker\" data-note=\"1\">1</sup> deser maent, versamelden hen de kinderen Israëls met vasten, ende met <sup class=\"note-marker\" data-note=\"2\">2</sup> sacken ende <sup class=\"note-marker\" data-note=\"3\">3</sup> aerde was op hen.",
       "phraseDiff": [
@@ -104,6 +104,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "twintigsten",
+          "new": "twintigste",
+          "principe": null
         },
         {
           "old": "dezer",
@@ -1338,7 +1343,7 @@
       "number": 10,
       "textSV1888": "En Gij hebt tekenen en wonderen gedaan aan Farao, en aan al zijn knechten, en aan al het volk zijns lands; want Gij wist, dat zij trotselijk tegen hen handelden; en Gij hebt U een Naam gemaakt, als het is te dezen dage.",
       "text1637": "[g] Ende ghy hebt teeckenen ende wonderen [19] gedaen aen Pharao, ende aen alle sijne knechten, ende aen al ’tvolck sijns lants, want ghy wistet, dat sy trotslick tegen hen handelden: Ende ghy hebt u eenen name gemaeckt, als het is te desen dage.",
-      "text2026": "En U hebt tekenen en wonderen gedaan aan Farao, en aan al zijn knechten, en aan al het volk van zijn land; want U wist, dat zij trotselijk tegen hen handelden; en U hebt U een Naam gemaakt, als het is te deze dage.",
+      "text2026": "En U hebt tekenen en wonderen gedaan aan Farao, en aan al zijn knechten, en aan al het volk van zijn land; want U wist, dat zij trots tegen hen handelden; en U hebt U een Naam gemaakt, zoals het op deze dag is.",
       "marginNotes": [
         {
           "marker": "g",
@@ -1452,7 +1457,7 @@
           "morph": "HTd/Pdxms"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"direct-speech\"><i> En U hebt tekenen en wonderen<sup class=\"note-marker\" data-note=\"19\">19</sup> gedaan aan Farao, en aan al zijn knechten, en aan al het volk van zijn land; want U wist, dat zij trotselijk tegen hen handelden; en U hebt U een Naam gemaakt, als het is te deze dage.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"direct-speech\"><i> En U hebt tekenen en wonderen<sup class=\"note-marker\" data-note=\"19\">19</sup> gedaan aan Farao, en aan al zijn knechten, en aan al het volk van zijn land; want U wist, dat zij trots tegen hen handelden; en U hebt U een Naam gemaakt, zoals het op deze dag is.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> En Gij hebt tekenen en wonderen<sup class=\"note-marker\" data-note=\"19\">19</sup> gedaan aan Farao, en aan al zijn knechten, en aan al het volk zijns lands; want Gij wist, dat zij trotselijk tegen hen handelden; en Gij hebt U een Naam gemaakt, als het is te dezen dage.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> Ende ghy hebt teeckenen ende wonderen <sup class=\"note-marker\" data-note=\"19\">19</sup> gedaen aen Pharao, ende aen alle sijne knechten, ende aen al ’tvolck sijns lants, want ghy wistet, dat sy trotslick tegen hen handelden: Ende ghy hebt u eenen name gemaeckt, als het is te desen dage.",
       "phraseDiff": [
@@ -1472,14 +1477,24 @@
           "principe": "A1"
         },
         {
+          "old": "trotselijk",
+          "new": "trots",
+          "principe": null
+        },
+        {
           "old": "Gij",
           "new": "U",
           "principe": "A1"
         },
         {
-          "old": "dezen",
-          "new": "deze",
-          "principe": "N4"
+          "old": "als",
+          "new": "zoals",
+          "principe": null
+        },
+        {
+          "old": "is te dezen dage.",
+          "new": "op deze dag is.",
+          "principe": null
         }
       ]
     },
@@ -2142,7 +2157,7 @@
       "number": 16,
       "textSV1888": "Maar zij en onze vaders hebben trotselijk gehandeld, en zij hebben hun nek verhard, en niet gehoord naar Uw geboden;",
       "text1637": "Maer sy, ende onse vaders hebben trotselick gehandelt: ende sy hebben haren [25] necke verhardet, ende niet gehoort nae uwe geboden:",
-      "text2026": "Maar zij en onze vaders hebben trotselijk gehandeld, en zij hebben hun nek verhard, en niet gehoord naar Uw geboden;",
+      "text2026": "Maar zij en onze vaders hebben trots gehandeld, en zij hebben hun nek verhard, en niet gehoord naar Uw geboden;",
       "marginNotes": [
         {
           "marker": "25",
@@ -2204,9 +2219,16 @@
           "morph": "HNcfpc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar zij en onze vaders hebben trotselijk gehandeld, en zij hebben hun<sup class=\"note-marker\" data-note=\"25\">25</sup> nek verhard, en niet gehoord naar Uw geboden;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar zij en onze vaders hebben trots gehandeld, en zij hebben hun<sup class=\"note-marker\" data-note=\"25\">25</sup> nek verhard, en niet gehoord naar Uw geboden;</i></span>",
       "textSV1888_html": "Maar zij en onze vaders hebben trotselijk gehandeld, en zij hebben hun<sup class=\"note-marker\" data-note=\"25\">25</sup> nek verhard, en niet gehoord naar Uw geboden;",
-      "text1637_html": "Maer sy, ende onse vaders hebben trotselick gehandelt: ende sy hebben haren <sup class=\"note-marker\" data-note=\"25\">25</sup> necke verhardet, ende niet gehoort nae uwe geboden:"
+      "text1637_html": "Maer sy, ende onse vaders hebben trotselick gehandelt: ende sy hebben haren <sup class=\"note-marker\" data-note=\"25\">25</sup> necke verhardet, ende niet gehoort nae uwe geboden:",
+      "phraseDiff": [
+        {
+          "old": "trotselijk",
+          "new": "trots",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 17,
@@ -2820,7 +2842,7 @@
       "number": 21,
       "textSV1888": "Alzo hebt Gij hen veertig jaren onderhouden in de woestijn; zij hebben geen gebrek gehad; hun klederen zijn niet veroud, en hun voeten niet gezwollen.",
       "text1637": "[t] Also hebt ghyse veertich Iaer onderhouden inde woestijne, sy en hebben geen gebreck gehadt: hare kleederen en zijn niet veroudet, ende hare voeten niet geswollen.",
-      "text2026": "Zo hebt U hen veertig jaren onderhouden in de woestijn; zij hebben geen gebrek gehad; hun kleren zijn niet veroud, en hun voeten niet gezwollen.",
+      "text2026": "Zo hebt U hen veertig jaren onderhouden in de woestijn; zij hebben geen gebrek gehad; hun kleren zijn niet versleten, en hun voeten niet gezwollen.",
       "marginNotes": [
         {
           "marker": "t",
@@ -2892,7 +2914,7 @@
           "morph": "HVqp3cp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"t\">t</sup><span class=\"direct-speech\"><i> Zo hebt U hen veertig jaren onderhouden in de woestijn; zij hebben geen gebrek gehad; hun kleren zijn niet veroud, en hun voeten niet gezwollen.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"t\">t</sup><span class=\"direct-speech\"><i> Zo hebt U hen veertig jaren onderhouden in de woestijn; zij hebben geen gebrek gehad; hun kleren zijn niet versleten, en hun voeten niet gezwollen.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"t\">t</sup> Alzo hebt Gij hen veertig jaren onderhouden in de woestijn; zij hebben geen gebrek gehad; hun klederen zijn niet veroud, en hun voeten niet gezwollen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"t\">t</sup> Also hebt ghyse veertich Iaer onderhouden inde woestijne, sy en hebben geen gebreck gehadt: hare kleederen en zijn niet veroudet, ende hare voeten niet geswollen.",
       "phraseDiff": [
@@ -2910,6 +2932,11 @@
           "old": "klederen",
           "new": "kleren",
           "principe": "V68"
+        },
+        {
+          "old": "veroud,",
+          "new": "versleten,",
+          "principe": null
         }
       ]
     },
@@ -3934,7 +3961,7 @@
       "number": 29,
       "textSV1888": "En Gij hebt tegen hen betuigd, om hen te doen wederkeren tot Uw wet; maar zij hebben trotselijk gehandeld, en niet gehoord naar Uw geboden, en tegen Uw rechten, tegen dezelve hebben zij gezondigd, door dewelke een mens, die ze doet, leven zal; en zij hebben hun schouder teruggetogen, en hun nek verhard, en niet gehoord.",
       "text1637": "Ende ghy hebt tegen haer betuycht, om haer te doen wederkeeren tot uwe wet; Maer sy hebben trotslick gehandelt, ende niet gehoort nae uwe geboden, ende tegen uwe rechten, tegen de selve hebben sy gesondicht, [aa] door de welcke een mensche diese doet, leven sal: ende [37] sy hebben haren schouder te rugge getogen, ende haren [38] necke verhardet, ende niet gehoort.",
-      "text2026": "En U hebt tegen hen betuigd, om hen te doen terugkeren tot Uw wet; maar zij hebben trotselijk gehandeld, en niet gehoord naar Uw geboden, en tegen Uw rechten, daartegen hebben zij gezondigd, door die een mens, die ze doet, leven zal; en zij hebben hun schouder teruggetogen, en hun nek verhard, en niet gehoord.",
+      "text2026": "En U hebt tegen hen betuigd, om hen te doen terugkeren tot Uw wet; maar zij hebben trots gehandeld, en niet gehoord naar Uw geboden, en tegen Uw rechten, daartegen hebben zij gezondigd, waardoor een mens, die ze doet, leven zal; en zij hebben hun schouder teruggetrokken, en hun nek verhard, en niet gehoord.",
       "marginNotes": [
         {
           "marker": "b",
@@ -4085,7 +4112,7 @@
           "morph": "HVqp3cp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En U hebt tegen hen betuigd, om hen te doen terugkeren tot Uw wet; maar zij hebben trotselijk gehandeld, en niet gehoord naar Uw geboden, en tegen Uw rechten, daartegen hebben zij gezondigd, door die een mens, die ze doet, leven zal; en<sup class=\"note-marker\" data-note=\"37\">37</sup> zij hebben hun schouder teruggetogen, en hun<sup class=\"note-marker\" data-note=\"38\">38</sup> nek verhard, en niet gehoord.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En U hebt tegen hen betuigd, om hen te doen terugkeren tot Uw wet; maar zij hebben trots gehandeld, en niet gehoord naar Uw geboden, en tegen Uw rechten, daartegen hebben zij gezondigd, waardoor een mens, die ze doet, leven zal; en<sup class=\"note-marker\" data-note=\"37\">37</sup> zij hebben hun schouder teruggetrokken, en hun<sup class=\"note-marker\" data-note=\"38\">38</sup> nek verhard, en niet gehoord.</i></span>",
       "textSV1888_html": "En Gij hebt tegen hen betuigd, om hen te doen wederkeren tot Uw wet; maar zij hebben trotselijk gehandeld, en niet gehoord naar Uw geboden, en tegen Uw rechten, tegen dezelve hebben zij gezondigd, door dewelke een mens, die ze doet, leven zal; en<sup class=\"note-marker\" data-note=\"37\">37</sup> zij hebben hun schouder teruggetogen, en hun<sup class=\"note-marker\" data-note=\"38\">38</sup> nek verhard, en niet gehoord.",
       "text1637_html": "Ende ghy hebt tegen haer betuycht, om haer te doen wederkeeren tot uwe wet; Maer sy hebben trotslick gehandelt, ende niet gehoort nae uwe geboden, ende tegen uwe rechten, tegen de selve hebben sy gesondicht, <sup class=\"note-marker\" data-note=\"aa\">aa</sup> door de welcke een mensche diese doet, leven sal: ende <sup class=\"note-marker\" data-note=\"37\">37</sup> sy hebben haren schouder te rugge getogen, ende haren <sup class=\"note-marker\" data-note=\"38\">38</sup> necke verhardet, ende niet gehoort.",
       "phraseDiff": [
@@ -4100,14 +4127,24 @@
           "principe": null
         },
         {
+          "old": "trotselijk",
+          "new": "trots",
+          "principe": null
+        },
+        {
           "old": "tegen dezelve",
           "new": "daartegen",
           "principe": "O3"
         },
         {
-          "old": "dewelke",
-          "new": "die",
-          "principe": "V75"
+          "old": "door dewelke",
+          "new": "waardoor",
+          "principe": null
+        },
+        {
+          "old": "teruggetogen,",
+          "new": "teruggetrokken,",
+          "principe": "V353"
         }
       ]
     },
@@ -4115,7 +4152,7 @@
       "number": 30,
       "textSV1888": "Doch Gij vertoogt het vele jaren over hen, en betuigdet tegen hen door Uw Geest, door den dienst Uwer profeten, maar zij neigden het oor niet; daarom hebt Gij hen gegeven in de hand van de volken der landen.",
       "text1637": "Doch ghy [39] vertoocht het [40] vele jaren over hen, ende [bb] betuychdet tegen hen door uwen Geest, door [41] den dienst uwer Propheten, maer sy en neychden de oore niet: Daerom hebt ghyse gegeven in de hant van de volcken der landen.",
-      "text2026": "Maar U vertoogt het vele jaren over hen, en betuigde tegen hen door Uw Geest, door de dienst van Uw profeten, maar zij neigden het oor niet; daarom hebt U hen gegeven in de hand van de volken van de landen.",
+      "text2026": "Maar U verdroeg het vele jaren over hen, en betuigde tegen hen door Uw Geest, door de dienst van Uw profeten, maar zij neigden het oor niet; daarom hebt U hen gegeven in de hand van de volken van de landen.",
       "marginNotes": [
         {
           "marker": "39",
@@ -4223,14 +4260,14 @@
           "morph": "HTd/Ncbpa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar U<sup class=\"note-marker\" data-note=\"39\">39</sup> vertoogt het<sup class=\"note-marker\" data-note=\"40\">40</sup> vele jaren over hen, en betuigde tegen hen door Uw Geest, door<sup class=\"note-marker\" data-note=\"41\">41</sup> de dienst van Uw profeten, maar zij neigden het oor niet; daarom hebt U hen gegeven in de hand van de volken van de landen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar U<sup class=\"note-marker\" data-note=\"39\">39</sup> verdroeg het<sup class=\"note-marker\" data-note=\"40\">40</sup> vele jaren over hen, en betuigde tegen hen door Uw Geest, door<sup class=\"note-marker\" data-note=\"41\">41</sup> de dienst van Uw profeten, maar zij neigden het oor niet; daarom hebt U hen gegeven in de hand van de volken van de landen.</i></span>",
       "textSV1888_html": "Doch Gij<sup class=\"note-marker\" data-note=\"39\">39</sup> vertoogt het<sup class=\"note-marker\" data-note=\"40\">40</sup> vele jaren over hen, en betuigdet tegen hen door Uw Geest, door<sup class=\"note-marker\" data-note=\"41\">41</sup> den dienst Uwer profeten, maar zij neigden het oor niet; daarom hebt Gij hen gegeven in de hand van de volken der landen.",
       "text1637_html": "Doch ghy <sup class=\"note-marker\" data-note=\"39\">39</sup> vertoocht het <sup class=\"note-marker\" data-note=\"40\">40</sup> vele jaren over hen, ende <sup class=\"note-marker\" data-note=\"bb\">bb</sup> betuychdet tegen hen door uwen Geest, door <sup class=\"note-marker\" data-note=\"41\">41</sup> den dienst uwer Propheten, maer sy en neychden de oore niet: Daerom hebt ghyse gegeven in de hant van de volcken der landen.",
       "phraseDiff": [
         {
-          "old": "Doch Gij",
-          "new": "Maar U",
-          "principe": "A1"
+          "old": "Doch Gij vertoogt",
+          "new": "Maar U verdroeg",
+          "principe": null
         },
         {
           "old": "betuigdet",
@@ -5033,7 +5070,7 @@
       "number": 37,
       "textSV1888": "En het vermenigvuldigt zijn inkomste voor den koningen, die Gij over ons gesteld hebt, om onzer zonden wil; en zij heersen over onze lichamen en over onze beesten, naar hun welgevallen; alzo zijn wij in grote benauwdheid.",
       "text1637": "Ende [48] het vermenichvuldicht sijne incomste, voor de Coningen, die ghy over ons gestelt hebt, om onser sonden wille: ende sy heerschen over onse lichamen, ende over onse beesten, nae haer wel-gevallen; Also zijn wy in groote benautheyt.",
-      "text2026": "En het vermenigvuldigt zijn inkomste voor de koningen, die U over ons gesteld hebt, om onzer zonden wil; en zij heersen over onze lichamen en over onze beesten, naar hun welgevallen; zo zijn wij in grote benauwdheid.",
+      "text2026": "En het vermenigvuldigt zijn inkomste voor de koningen, die U over ons gesteld hebt, vanwege onze zonden; en zij heersen over onze lichamen en over onze beesten, naar hun welgevallen; zo zijn wij in grote benauwdheid.",
       "marginNotes": [
         {
           "marker": "48",
@@ -5120,7 +5157,7 @@
           "morph": "HPp1cp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En<sup class=\"note-marker\" data-note=\"48\">48</sup> het vermenigvuldigt zijn inkomste voor de koningen, die U over ons gesteld hebt, om onzer zonden wil; en zij heersen over onze lichamen en over onze beesten, naar hun welgevallen; zo zijn wij in grote benauwdheid.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En<sup class=\"note-marker\" data-note=\"48\">48</sup> het vermenigvuldigt zijn inkomste voor de koningen, die U over ons gesteld hebt, vanwege onze zonden; en zij heersen over onze lichamen en over onze beesten, naar hun welgevallen; zo zijn wij in grote benauwdheid.</i></span>",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"48\">48</sup> het vermenigvuldigt zijn inkomste voor den koningen, die Gij over ons gesteld hebt, om onzer zonden wil; en zij heersen over onze lichamen en over onze beesten, naar hun welgevallen; alzo zijn wij in grote benauwdheid.",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"48\">48</sup> het vermenichvuldicht sijne incomste, voor de Coningen, die ghy over ons gestelt hebt, om onser sonden wille: ende sy heerschen over onse lichamen, ende over onse beesten, nae haer wel-gevallen; Also zijn wy in groote benautheyt.",
       "phraseDiff": [
@@ -5133,6 +5170,11 @@
           "old": "Gij",
           "new": "U",
           "principe": "A1"
+        },
+        {
+          "old": "om onzer zonden wil;",
+          "new": "vanwege onze zonden;",
+          "principe": "V875"
         },
         {
           "old": "alzo",
