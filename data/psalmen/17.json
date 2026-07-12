@@ -710,7 +710,7 @@
       "number": 10,
       "textSV1888": "Met hun vet besluiten zij zich, met hun mond spreken zij hovaardelijk.",
       "text1637": "Met haer vette [19] besluyten sy [haer], met haren mont spreken sy [20] hoovaerdichlick.",
-      "text2026": "Met hun vet besluiten zij zich, met hun mond spreken zij hovaardelijk.",
+      "text2026": "Met hun vet besluiten zij zich, met hun mond spreken zij hoogmoedig.",
       "marginNotes": [
         {
           "marker": "19",
@@ -754,9 +754,16 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "Met hun vet<sup class=\"note-marker\" data-note=\"19\">19</sup> besluiten zij zich, met hun mond spreken zij<sup class=\"note-marker\" data-note=\"20\">20</sup> hovaardelijk.",
+      "text2026_html": "Met hun vet<sup class=\"note-marker\" data-note=\"19\">19</sup> besluiten zij zich, met hun mond spreken zij<sup class=\"note-marker\" data-note=\"20\">20</sup> hoogmoedig.",
       "textSV1888_html": "Met hun vet<sup class=\"note-marker\" data-note=\"19\">19</sup> besluiten zij zich, met hun mond spreken zij<sup class=\"note-marker\" data-note=\"20\">20</sup> hovaardelijk.",
-      "text1637_html": "Met haer vette <sup class=\"note-marker\" data-note=\"19\">19</sup> besluyten sy [haer], met haren mont spreken sy <sup class=\"note-marker\" data-note=\"20\">20</sup> hoovaerdichlick."
+      "text1637_html": "Met haer vette <sup class=\"note-marker\" data-note=\"19\">19</sup> besluyten sy [haer], met haren mont spreken sy <sup class=\"note-marker\" data-note=\"20\">20</sup> hoovaerdichlick.",
+      "phraseDiff": [
+        {
+          "old": "hovaardelijk.",
+          "new": "hoogmoedig.",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 11,
@@ -988,7 +995,7 @@
       "number": 14,
       "textSV1888": "Met Uw hand van de lieden, o HEERE! van de lieden, die van de wereld zijn, welker deel in dit leven is, welker buik Gij vervult met Uw verborgen schat; de kinderen worden verzadigd, en zij laten hun overschot hun kinderkens achter.",
       "text1637": "Met uwe hant van de lieden, ô HEERE, van de lieden, die van der werelt zijn, welcker [27] deel in dit leven is, welcker buyck ghy vervult met uwen [28] verborgenen [schat]; [29] De kinderen worden versadicht, ende sy laten haren [30] overschot haren [31] kinderkens achter.",
-      "text2026": "Met Uw hand van de mensen, o JAHWEH! van de mensen, die van de wereld zijn, welker deel in dit leven is, welker buik U vervult met Uw verborgen schat; de kinderen worden verzadigd, en zij laten hun overschot aan hun kinderen achter.",
+      "text2026": "Met Uw hand van de mensen, o JAHWEH! van de mensen, die van de wereld zijn, wier deel in dit leven is, wier buik U vervult met Uw verborgen schat; de kinderen worden verzadigd, en zij laten hun overschot aan hun kinderen achter.",
       "marginNotes": [
         {
           "marker": "27",
@@ -1103,7 +1110,7 @@
           "morph": "HR/Ncmpc/Sp3mp"
         }
       ],
-      "text2026_html": "Met Uw hand van de mensen, o JAHWEH! van de mensen, die van de wereld zijn, welker<sup class=\"note-marker\" data-note=\"27\">27</sup> deel in dit leven is, welker buik U vervult met Uw<sup class=\"note-marker\" data-note=\"28\">28</sup> verborgen schat;<sup class=\"note-marker\" data-note=\"29\">29</sup> de kinderen worden verzadigd, en zij laten hun<sup class=\"note-marker\" data-note=\"30\">30</sup> overschot aan hun<sup class=\"note-marker\" data-note=\"31\">31</sup> kinderen achter.",
+      "text2026_html": "Met Uw hand van de mensen, o JAHWEH! van de mensen, die van de wereld zijn, wier<sup class=\"note-marker\" data-note=\"27\">27</sup> deel in dit leven is, wier buik U vervult met Uw<sup class=\"note-marker\" data-note=\"28\">28</sup> verborgen schat;<sup class=\"note-marker\" data-note=\"29\">29</sup> de kinderen worden verzadigd, en zij laten hun<sup class=\"note-marker\" data-note=\"30\">30</sup> overschot aan hun<sup class=\"note-marker\" data-note=\"31\">31</sup> kinderen achter.",
       "textSV1888_html": "Met Uw hand van de lieden, o HEERE! van de lieden, die van de wereld zijn, welker<sup class=\"note-marker\" data-note=\"27\">27</sup> deel in dit leven is, welker buik Gij vervult met Uw<sup class=\"note-marker\" data-note=\"28\">28</sup> verborgen schat;<sup class=\"note-marker\" data-note=\"29\">29</sup> de kinderen worden verzadigd, en zij laten hun<sup class=\"note-marker\" data-note=\"30\">30</sup> overschot hun<sup class=\"note-marker\" data-note=\"31\">31</sup> kinderkens achter.",
       "text1637_html": "Met uwe hant van de lieden, ô HEERE, van de lieden, die van der werelt zijn, welcker <sup class=\"note-marker\" data-note=\"27\">27</sup> deel in dit leve<i>n</i> is, welcker buyck ghy vervult met uwen <sup class=\"note-marker\" data-note=\"28\">28</sup> verborgenen [schat]; <sup class=\"note-marker\" data-note=\"29\">29</sup> De kinderen worden versadicht, ende sy laten haren <sup class=\"note-marker\" data-note=\"30\">30</sup> overschot haren <sup class=\"note-marker\" data-note=\"31\">31</sup> kinderkens achter.",
       "phraseDiff": [
@@ -1121,6 +1128,16 @@
           "old": "lieden,",
           "new": "mensen,",
           "principe": "V10"
+        },
+        {
+          "old": "welker",
+          "new": "wier",
+          "principe": null
+        },
+        {
+          "old": "welker",
+          "new": "wier",
+          "principe": null
         },
         {
           "old": "Gij",

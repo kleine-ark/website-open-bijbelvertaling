@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Een psalm van David. Geeft den HEERE, gij kinderen der machtigen! geeft den HEERE eer en sterkte.",
       "text1637": "EEn Psalm Davids. Gevet den HEERE, ghy [1] kinderen der machtigen, [a] gevet den HEERE eere ende sterckte.",
-      "text2026": "Een psalm van David. Geeft JAHWEH, u kinderen van de machtigen! geeft JAHWEH eer en sterkte.",
+      "text2026": "Een psalm van David. Geef JAHWEH, u kinderen van de machtigen! geef JAHWEH eer en sterkte.",
       "marginNotes": [
         {
           "marker": "a",
@@ -74,14 +74,14 @@
           "morph": "HC/Ncmsa"
         }
       ],
-      "text2026_html": "Een psalm van David. Geeft JAHWEH, u kinderen van de machtigen!<sup class=\"note-marker\" data-note=\"1\">1</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> geeft JAHWEH eer en sterkte.",
+      "text2026_html": "Een psalm van David. Geef JAHWEH, u kinderen van de machtigen!<sup class=\"note-marker\" data-note=\"1\">1</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> geef JAHWEH eer en sterkte.",
       "textSV1888_html": "Een psalm van David. Geeft den HEERE, gij<sup class=\"note-marker\" data-note=\"1\">1</sup> kinderen der machtigen!<sup class=\"note-marker\" data-note=\"a\">a</sup> geeft den HEERE eer en sterkte.",
       "text1637_html": "EEn Psalm Davids. Gevet den HEERE, ghy <sup class=\"note-marker\" data-note=\"1\">1</sup> kinderen der machtigen, <sup class=\"note-marker\" data-note=\"a\">a</sup> gevet den HEERE eere ende sterckte.",
       "phraseDiff": [
         {
-          "old": "den HEERE, gij",
-          "new": "JAHWEH, u",
-          "principe": "N1"
+          "old": "Geeft den HEERE, gij",
+          "new": "Geef JAHWEH, u",
+          "principe": null
         },
         {
           "old": "der",
@@ -89,9 +89,9 @@
           "principe": "N2"
         },
         {
-          "old": "den HEERE",
-          "new": "JAHWEH",
-          "principe": "N1"
+          "old": "geeft den HEERE",
+          "new": "geef JAHWEH",
+          "principe": null
         }
       ]
     },
@@ -99,7 +99,7 @@
       "number": 2,
       "textSV1888": "Geeft den HEERE de eer Zijns Naams, aanbidt den HEERE in de heerlijkheid des heiligdoms.",
       "text1637": "Gevet den HEERE de eere sijns Naems; [2] aenbiddet den HEERE inde [3] heerlickheyt des heylichdoms.",
-      "text2026": "Geeft JAHWEH de eer van Zijn Naam, aanbidt JAHWEH in de heerlijkheid van het heiligdom.",
+      "text2026": "Geef JAHWEH de eer van Zijn Naam, aanbid JAHWEH in de heerlijkheid van het heiligdom.",
       "marginNotes": [
         {
           "marker": "2",
@@ -158,24 +158,19 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Geeft JAHWEH de eer van Zijn Naam, aanbidt JAHWEH in de heerlijkheid<sup class=\"note-marker\" data-note=\"2\">2</sup> van het<sup class=\"note-marker\" data-note=\"3\">3</sup> heiligdom.",
+      "text2026_html": "Geef JAHWEH de eer van Zijn Naam, aanbid JAHWEH in de heerlijkheid<sup class=\"note-marker\" data-note=\"2\">2</sup> van het<sup class=\"note-marker\" data-note=\"3\">3</sup> heiligdom.",
       "textSV1888_html": "Geeft den HEERE de eer Zijns Naams,<sup class=\"note-marker\" data-note=\"2\">2</sup> aanbidt den HEERE in<sup class=\"note-marker\" data-note=\"3\">3</sup> de heerlijkheid des heiligdoms.",
       "text1637_html": "Gevet den HEERE de eere sijns Naems; <sup class=\"note-marker\" data-note=\"2\">2</sup> aenbiddet den HEERE inde <sup class=\"note-marker\" data-note=\"3\">3</sup> heerlickheyt des heylichdoms.",
       "phraseDiff": [
         {
-          "old": "den HEERE",
-          "new": "JAHWEH",
-          "principe": "N1"
+          "old": "Geeft den HEERE",
+          "new": "Geef JAHWEH",
+          "principe": null
         },
         {
-          "old": "Zijns Naams,",
-          "new": "van Zijn Naam,",
-          "principe": "V201"
-        },
-        {
-          "old": "den HEERE",
-          "new": "JAHWEH",
-          "principe": "N1"
+          "old": "Zijns Naams, aanbidt den HEERE",
+          "new": "van Zijn Naam, aanbid JAHWEH",
+          "principe": null
         },
         {
           "old": "des heiligdoms.",

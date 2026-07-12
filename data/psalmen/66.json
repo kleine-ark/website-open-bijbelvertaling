@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Een lied, een psalm, voor den opperzangmeester. Juicht Gode, gij ganse aarde!",
       "text1637": "EEn [1] Liedt, een Psalm: voor den [2] Opper-sang-meester. Iuychet Gode, ghy gantsche [3] aerde.",
-      "text2026": "Een lied, een psalm, voor de opperzangmeester. Juicht voor God, u gehele aarde!",
+      "text2026": "Een lied, een psalm, voor de opperzangmeester. Juich voor God, u gehele aarde!",
       "marginNotes": [
         {
           "marker": "1",
@@ -66,7 +66,7 @@
           "morph": "HTd/Ncbsa"
         }
       ],
-      "text2026_html": "Een<sup class=\"note-marker\" data-note=\"1\">1</sup> lied, een psalm, voor de<sup class=\"note-marker\" data-note=\"2\">2</sup> opperzangmeester. Juicht voor God, u gehele<sup class=\"note-marker\" data-note=\"3\">3</sup> aarde!",
+      "text2026_html": "Een<sup class=\"note-marker\" data-note=\"1\">1</sup> lied, een psalm, voor de<sup class=\"note-marker\" data-note=\"2\">2</sup> opperzangmeester. Juich voor God, u gehele<sup class=\"note-marker\" data-note=\"3\">3</sup> aarde!",
       "textSV1888_html": "Een<sup class=\"note-marker\" data-note=\"1\">1</sup> lied, een psalm, voor den<sup class=\"note-marker\" data-note=\"2\">2</sup> opperzangmeester. Juicht Gode, gij ganse<sup class=\"note-marker\" data-note=\"3\">3</sup> aarde!",
       "text1637_html": "EEn <sup class=\"note-marker\" data-note=\"1\">1</sup> Liedt, een Psalm: voor den <sup class=\"note-marker\" data-note=\"2\">2</sup> Opper-sang-meester. Iuychet Gode, ghy gantsche <sup class=\"note-marker\" data-note=\"3\">3</sup> aerde.",
       "phraseDiff": [
@@ -76,9 +76,9 @@
           "principe": "N1"
         },
         {
-          "old": "Gode, gij ganse",
-          "new": "voor God, u gehele",
-          "principe": "A1"
+          "old": "Juicht Gode, gij ganse",
+          "new": "Juich voor God, u gehele",
+          "principe": null
         }
       ]
     },
@@ -86,7 +86,7 @@
       "number": 2,
       "textSV1888": "Psalmzingt de eer Zijns Naams; geeft eer Zijn lof.",
       "text1637": "Psalm-singet de eere sijns Naems: [4] gevet eere, sijnen lof.",
-      "text2026": "Psalmzingt de eer van Zijn Naam; geeft eer Zijn lof.",
+      "text2026": "Psalmzing de eer van Zijn Naam; geef eer Zijn lof.",
       "marginNotes": [
         {
           "marker": "4",
@@ -128,14 +128,19 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "Psalmzingt de eer van Zijn Naam;<sup class=\"note-marker\" data-note=\"4\">4</sup> geeft eer Zijn lof.",
+      "text2026_html": "Psalmzing de eer van Zijn Naam;<sup class=\"note-marker\" data-note=\"4\">4</sup> geef eer Zijn lof.",
       "textSV1888_html": "Psalmzingt de eer Zijns Naams;<sup class=\"note-marker\" data-note=\"4\">4</sup> geeft eer Zijn lof.",
       "text1637_html": "Psalm-singet de eere sijns Naems: <sup class=\"note-marker\" data-note=\"4\">4</sup> gevet eere, sijnen lof.",
       "phraseDiff": [
         {
-          "old": "Zijns Naams;",
-          "new": "van Zijn Naam;",
-          "principe": "V201"
+          "old": "Psalmzingt",
+          "new": "Psalmzing",
+          "principe": null
+        },
+        {
+          "old": "Zijns Naams; geeft",
+          "new": "van Zijn Naam; geef",
+          "principe": null
         }
       ]
     },
@@ -323,7 +328,7 @@
       "number": 5,
       "textSV1888": "Komt en ziet Gods daden; Hij is vreselijk van werking aan de mensenkinderen.",
       "text1637": "Komet ende siet Godts daden: hy is vreeslick van werckinge aen de menschen kinderen.",
-      "text2026": "Komt en ziet Gods daden; Hij is vreselijk van werking aan de mensenkinderen.",
+      "text2026": "Kom en zie Gods daden; Hij is vreselijk van werking aan de mensenkinderen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -372,8 +377,20 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Komt en ziet Gods daden; Hij is vreselijk van werking aan de mensenkinderen.",
-      "text1637_html": "Komet ende siet Godts daden: hy is vreeslick van werckinge aen de menschen kinderen."
+      "text2026_html": "Kom en zie Gods daden; Hij is vreselijk van werking aan de mensenkinderen.",
+      "text1637_html": "Komet ende siet Godts daden: hy is vreeslick van werckinge aen de menschen kinderen.",
+      "phraseDiff": [
+        {
+          "old": "Komt",
+          "new": "Kom",
+          "principe": null
+        },
+        {
+          "old": "ziet",
+          "new": "zie",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 6,
@@ -568,7 +585,7 @@
       "number": 8,
       "textSV1888": "Looft, gij volken! onzen God; en laat horen de stem Zijns roems.",
       "text1637": "[15] Lovet, ghy volcken, onsen Godt: ende latet hooren de stemme sijns roems.",
-      "text2026": "Looft, u volken! onze God; en laat horen de stem van Zijn roem.",
+      "text2026": "Loof, u volken! onze God; en laat horen de stem van Zijn roem.",
       "marginNotes": [
         {
           "marker": "15",
@@ -610,14 +627,14 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"15\">15</sup> Looft, u volken! onze God; en laat horen de stem van Zijn roem.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"15\">15</sup> Loof, u volken! onze God; en laat horen de stem van Zijn roem.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"15\">15</sup> Looft, gij volken! onzen God; en laat horen de stem Zijns roems.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"15\">15</sup> Lovet, ghy volcken, onsen Godt: ende latet hooren de stemme sijns roems.",
       "phraseDiff": [
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "Looft, gij",
+          "new": "Loof, u",
+          "principe": null
         },
         {
           "old": "onzen",
@@ -1114,7 +1131,7 @@
       "number": 16,
       "textSV1888": "Komt, hoort toe, o allen gij, die God vreest, en ik zal vertellen, wat Hij aan mijn ziel gedaan heeft.",
       "text1637": "Komt, hoort toe, o alle ghy die Godt vreest, ende ick sal vertellen wat hy aen mijne ziele gedaen heeft.",
-      "text2026": "Komt, hoort toe, o allen u, die God vreest, en ik zal vertellen, wat Hij aan mijn ziel gedaan heeft.",
+      "text2026": "Kom, hoor toe, o allen u, die God vrees, en ik zal vertellen, wat Hij aan mijn ziel gedaan heeft.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1163,13 +1180,23 @@
           "morph": "HR/Ncbsc/Sp1cs"
         }
       ],
-      "text2026_html": "Komt, hoort toe, o allen u, die God vreest, en ik zal vertellen, wat Hij aan mijn ziel gedaan heeft.",
+      "text2026_html": "Kom, hoor toe, o allen u, die God vrees, en ik zal vertellen, wat Hij aan mijn ziel gedaan heeft.",
       "text1637_html": "Komt, hoort toe, o alle ghy die Godt vreest, ende ick sal vertellen wat hy aen mijne ziele gedaen heeft.",
       "phraseDiff": [
+        {
+          "old": "Komt, hoort",
+          "new": "Kom, hoor",
+          "principe": null
+        },
         {
           "old": "gij,",
           "new": "u,",
           "principe": "A1"
+        },
+        {
+          "old": "vreest,",
+          "new": "vrees,",
+          "principe": null
         }
       ]
     },
@@ -1227,7 +1254,7 @@
       "number": 18,
       "textSV1888": "Had ik naar ongerechtigheid met mijn hart gezien, de Heere zou niet gehoord hebben.",
       "text1637": "Hadde ick [29] nae ongerechticheyt met mijn herte gesien, de Heere en soude [30] niet gehoort hebben.",
-      "text2026": "Had ik naar ongerechtigheid met mijn hart gezien, de Heer zou niet gehoord hebben.",
+      "text2026": "Had ik naar ongerechtigheid met mijn hart gezien, de Heere zou niet gehoord hebben.",
       "marginNotes": [
         {
           "marker": "29",
@@ -1281,16 +1308,10 @@
           "morph": "HNcmpc/Sp1cs"
         }
       ],
-      "text2026_html": "Had ik<sup class=\"note-marker\" data-note=\"29\">29</sup> naar ongerechtigheid met mijn hart gezien, de Heer zou<sup class=\"note-marker\" data-note=\"30\">30</sup> niet gehoord hebben.",
+      "text2026_html": "Had ik<sup class=\"note-marker\" data-note=\"29\">29</sup> naar ongerechtigheid met mijn hart gezien, de Heere zou<sup class=\"note-marker\" data-note=\"30\">30</sup> niet gehoord hebben.",
       "textSV1888_html": "Had ik<sup class=\"note-marker\" data-note=\"29\">29</sup> naar ongerechtigheid met mijn hart gezien, de Heere zou<sup class=\"note-marker\" data-note=\"30\">30</sup> niet gehoord hebben.",
       "text1637_html": "Hadde ick <sup class=\"note-marker\" data-note=\"29\">29</sup> nae ongerechticheyt met mijn herte gesien, de Heere en soude <sup class=\"note-marker\" data-note=\"30\">30</sup> niet gehoort hebben.",
-      "phraseDiff": [
-        {
-          "old": "Heere",
-          "new": "Heer",
-          "principe": null
-        }
-      ]
+      "phraseDiff": []
     },
     {
       "number": 19,

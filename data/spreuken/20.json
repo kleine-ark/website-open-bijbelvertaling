@@ -2471,7 +2471,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Van de jongemannen sieraad is hun kracht, en van de ouden heerlijkheid is de grijsheid.",
+      "text2026": "Het sieraad van de jongemannen is hun kracht, en de heerlijkheid van de ouden is de grijsheid.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -2509,18 +2509,28 @@
       "hsv": "Het sieraad van jonge mannen is hun kracht,en ⓘde glorie van de ouderen is de grijsheid.",
       "nbg51": "Der jongelingen sieraad is hun kracht,",
       "textSV1888": "Der jongelingen sieraad is hun kracht, en der ouden heerlijkheid is de grijsheid.",
-      "text2026_html": "Van de jongemannen sieraad is hun kracht, en<sup class=\"note-marker\" data-note=\"t\">t</sup> van de ouden<sup class=\"note-marker\" data-note=\"79\">79</sup> heerlijkheid is de grijsheid.",
+      "text2026_html": "Het sieraad van de jongemannen is hun kracht, en<sup class=\"note-marker\" data-note=\"t\">t</sup> de heerlijkheid van de ouden<sup class=\"note-marker\" data-note=\"79\">79</sup> is de grijsheid.",
       "textSV1888_html": "Der jongelingen sieraad is hun kracht, en<sup class=\"note-marker\" data-note=\"t\">t</sup> der ouden<sup class=\"note-marker\" data-note=\"79\">79</sup> heerlijkheid is de grijsheid.",
       "phraseDiff": [
         {
           "old": "Der jongelingen",
-          "new": "Van de jongemannen",
-          "principe": "V79"
+          "new": "Het",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "van de jongemannen",
+          "principe": null
         },
         {
           "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "new": "de heerlijkheid van de",
+          "principe": null
+        },
+        {
+          "old": "heerlijkheid",
+          "new": "",
+          "principe": null
         }
       ]
     },

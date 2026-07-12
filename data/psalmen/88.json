@@ -327,7 +327,7 @@
       "number": 5,
       "textSV1888": "Ik ben gerekend met degenen, die in de kuil nederdalen; ik ben geworden als een man, die krachteloos is;",
       "text1637": "Ick ben gerekent met de gene die in den kuyl nederdalen: ick ben geworden als een man die krachteloos is:",
-      "text2026": "Ik ben gerekend met degenen, die in de kuil nederdalen; ik ben geworden als een man, die krachteloos is;",
+      "text2026": "Ik ben gerekend met degenen, die in de kuil neerdalen; ik ben geworden als een man, die krachteloos is;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -371,8 +371,15 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Ik ben gerekend met degenen, die in de kuil nederdalen; ik ben geworden als een man, die krachteloos is;",
-      "text1637_html": "Ick ben gerekent met de gene die in den kuyl nederdalen: ick ben geworden als een man die krachteloos is:"
+      "text2026_html": "Ik ben gerekend met degenen, die in de kuil neerdalen; ik ben geworden als een man, die krachteloos is;",
+      "text1637_html": "Ick ben gerekent met de gene die in den kuyl nederdalen: ick ben geworden als een man die krachteloos is:",
+      "phraseDiff": [
+        {
+          "old": "nederdalen;",
+          "new": "neerdalen;",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 6,
@@ -534,7 +541,7 @@
       "number": 8,
       "textSV1888": "Uw grimmigheid ligt op mij; Gij hebt mij nedergedrukt met al Uw baren. Sela.",
       "text1637": "Uwe grimmicheyt [15] leyt op my: Ghy hebt [my] nedergedruckt [16] met alle uwe baren, Sela!",
-      "text2026": "Uw woede ligt op mij; U hebt mij nedergedrukt met al Uw baren. Sela.",
+      "text2026": "Uw woede ligt op mij; U hebt mij neergedrukt met al Uw baren. Sela.",
       "marginNotes": [
         {
           "marker": "15",
@@ -588,7 +595,7 @@
           "morph": "HTj"
         }
       ],
-      "text2026_html": "Uw woede<sup class=\"note-marker\" data-note=\"15\">15</sup> ligt op mij; U hebt mij<sup class=\"note-marker\" data-note=\"16\">16</sup> nedergedrukt met al Uw baren. Sela.",
+      "text2026_html": "Uw woede<sup class=\"note-marker\" data-note=\"15\">15</sup> ligt op mij; U hebt mij<sup class=\"note-marker\" data-note=\"16\">16</sup> neergedrukt met al Uw baren. Sela.",
       "textSV1888_html": "Uw grimmigheid<sup class=\"note-marker\" data-note=\"15\">15</sup> ligt op mij; Gij hebt mij<sup class=\"note-marker\" data-note=\"16\">16</sup> nedergedrukt met al Uw baren. Sela.",
       "text1637_html": "Uwe grimmicheyt <sup class=\"note-marker\" data-note=\"15\">15</sup> leyt op my: Ghy hebt [my] nedergedruckt <sup class=\"note-marker\" data-note=\"16\">16</sup> met alle uwe baren, Sela!",
       "phraseDiff": [
@@ -601,6 +608,11 @@
           "old": "Gij",
           "new": "U",
           "principe": "A1"
+        },
+        {
+          "old": "nedergedrukt",
+          "new": "neergedrukt",
+          "principe": null
         }
       ]
     },
