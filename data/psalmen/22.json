@@ -1388,7 +1388,7 @@
       "number": 21,
       "textSV1888": "Red mijn ziel van het zwaard, mijn eenzame van het geweld des honds.",
       "text1637": "Reddet mijne [29] ziele van den [30] sweerde; mijne [31] eensame van het [32] gewelt des honts.",
-      "text2026": "Red mijn ziel van het zwaard, mijn eenzame van het geweld van de honds.",
+      "text2026": "Red mijn ziel van het zwaard, mijn eenzame van het geweld van de hond.",
       "marginNotes": [
         {
           "marker": "29",
@@ -1451,14 +1451,14 @@
           "morph": "HAafsc/Sp1cs"
         }
       ],
-      "text2026_html": "Red mijn ziel van<sup class=\"note-marker\" data-note=\"29\">29</sup> het zwaard, mijn eenzame van het geweld van de<sup class=\"note-marker\" data-note=\"30\">30</sup> honds.<sup class=\"note-marker\" data-note=\"31\">31</sup><sup class=\"note-marker\" data-note=\"32\">32</sup>",
+      "text2026_html": "Red mijn ziel van<sup class=\"note-marker\" data-note=\"29\">29</sup> het zwaard, mijn eenzame van het geweld van de<sup class=\"note-marker\" data-note=\"30\">30</sup> hond.<sup class=\"note-marker\" data-note=\"31\">31</sup><sup class=\"note-marker\" data-note=\"32\">32</sup>",
       "textSV1888_html": "Red<sup class=\"note-marker\" data-note=\"29\">29</sup> mijn<sup class=\"note-marker\" data-note=\"30\">30</sup> ziel<sup class=\"note-marker\" data-note=\"31\">31</sup> van het<sup class=\"note-marker\" data-note=\"32\">32</sup> zwaard, mijn eenzame van het geweld des honds.",
       "text1637_html": "Reddet mijne <sup class=\"note-marker\" data-note=\"29\">29</sup> ziele van den <sup class=\"note-marker\" data-note=\"30\">30</sup> sweerde; mijne <sup class=\"note-marker\" data-note=\"31\">31</sup> eensame van het <sup class=\"note-marker\" data-note=\"32\">32</sup> gewelt des honts.",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des honds.",
+          "new": "van de hond.",
+          "principe": null
         }
       ]
     },
@@ -2134,7 +2134,7 @@
       "number": 30,
       "textSV1888": "Alle vetten op aarde zullen eten, en aanbidden; allen, die in het stof nederdalen, zullen voor Zijn aangezicht nederbukken; en die zijn ziel bij het leven niet kan houden.",
       "text1637": "Alle [46] vette op aerden sullen eten, ende aenbidden, alle die [47] in’t stof nederdalen sullen voor sijn aengesichte nederbucken; ende die sijne [48] ziele by’t leven niet en kan houden.",
-      "text2026": "Alle vetten op aarde zullen eten, en aanbidden; allen, die in het stof nederdalen, zullen voor Zijn aangezicht neerbuigen; en die zijn ziel bij het leven niet kan houden.",
+      "text2026": "Alle vetten op aarde zullen eten, en aanbidden; allen, die in het stof neerdalen, zullen voor Zijn aangezicht neerbuigen; en die zijn ziel bij het leven niet kan houden.",
       "marginNotes": [
         {
           "marker": "46",
@@ -2225,10 +2225,15 @@
           "morph": "HVpp3ms"
         }
       ],
-      "text2026_html": "Alle<sup class=\"note-marker\" data-note=\"46\">46</sup> vetten op aarde zullen eten, en aanbidden; allen, die<sup class=\"note-marker\" data-note=\"47\">47</sup> in het stof nederdalen, zullen voor Zijn aangezicht neerbuigen; en die zijn<sup class=\"note-marker\" data-note=\"48\">48</sup> ziel bij het leven niet kan houden.",
+      "text2026_html": "Alle<sup class=\"note-marker\" data-note=\"46\">46</sup> vetten op aarde zullen eten, en aanbidden; allen, die<sup class=\"note-marker\" data-note=\"47\">47</sup> in het stof neerdalen, zullen voor Zijn aangezicht neerbuigen; en die zijn<sup class=\"note-marker\" data-note=\"48\">48</sup> ziel bij het leven niet kan houden.",
       "textSV1888_html": "Alle<sup class=\"note-marker\" data-note=\"46\">46</sup> vetten op aarde zullen eten, en aanbidden; allen, die<sup class=\"note-marker\" data-note=\"47\">47</sup> in het stof nederdalen, zullen voor Zijn aangezicht nederbukken; en die zijn<sup class=\"note-marker\" data-note=\"48\">48</sup> ziel bij het leven niet kan houden.",
       "text1637_html": "Alle <sup class=\"note-marker\" data-note=\"46\">46</sup> vette op aerden sullen eten, ende aenbidden, alle die <sup class=\"note-marker\" data-note=\"47\">47</sup> in’t stof nederdalen sullen voor sijn aengesichte nederbucken; ende die sijne <sup class=\"note-marker\" data-note=\"48\">48</sup> ziele by’t leven niet en kan houden.",
       "phraseDiff": [
+        {
+          "old": "nederdalen,",
+          "new": "neerdalen,",
+          "principe": null
+        },
         {
           "old": "nederbukken;",
           "new": "neerbuigen;",

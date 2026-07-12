@@ -219,7 +219,7 @@
       "number": 4,
       "textSV1888": "Hunlieder afgoden zijn zilver en goud, het werk van des mensen handen;",
       "text1637": "Haerlieder [5] afgoden zijn silver ende gout, het werck van ’s menschen handen:",
-      "text2026": "Hun afgoden zijn zilver en goud, het werk van de mensen handen;",
+      "text2026": "Hun afgoden zijn zilver en goud, het werk van de mensenhanden;",
       "marginNotes": [
         {
           "marker": "5",
@@ -261,7 +261,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Hun<sup class=\"note-marker\" data-note=\"5\">5</sup> afgoden zijn zilver en goud, het werk van de mensen handen;",
+      "text2026_html": "Hun<sup class=\"note-marker\" data-note=\"5\">5</sup> afgoden zijn zilver en goud, het werk van de mensenhanden;",
       "textSV1888_html": "Hunlieder<sup class=\"note-marker\" data-note=\"5\">5</sup> afgoden zijn zilver en goud, het werk van des mensen handen;",
       "text1637_html": "Haerlieder <sup class=\"note-marker\" data-note=\"5\">5</sup> afgoden zijn silver ende gout, het werck van ’s menschen handen:",
       "phraseDiff": [
@@ -271,9 +271,9 @@
           "principe": "V329"
         },
         {
-          "old": "des",
-          "new": "de",
-          "principe": "N3"
+          "old": "des mensen handen;",
+          "new": "de mensenhanden;",
+          "principe": null
         }
       ]
     },
@@ -1066,7 +1066,7 @@
       "number": 17,
       "textSV1888": "De doden zullen den HEERE niet prijzen, noch die in de stilte nedergedaald zijn.",
       "text1637": "De [17] doode en sullen den HEERE niet prijsen, nochte [18] die in de stilte nedergedaelt zijn.",
-      "text2026": "De doden zullen JAHWEH niet prijzen, noch die in de stilte nedergedaald zijn.",
+      "text2026": "De doden zullen JAHWEH niet prijzen, noch die in de stilte neergedaald zijn.",
       "marginNotes": [
         {
           "marker": "17",
@@ -1125,7 +1125,7 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "De<sup class=\"note-marker\" data-note=\"17\">17</sup> doden zullen JAHWEH niet prijzen, noch<sup class=\"note-marker\" data-note=\"18\">18</sup> die in de stilte nedergedaald zijn.",
+      "text2026_html": "De<sup class=\"note-marker\" data-note=\"17\">17</sup> doden zullen JAHWEH niet prijzen, noch<sup class=\"note-marker\" data-note=\"18\">18</sup> die in de stilte neergedaald zijn.",
       "textSV1888_html": "De<sup class=\"note-marker\" data-note=\"17\">17</sup> doden zullen den HEERE niet prijzen, noch<sup class=\"note-marker\" data-note=\"18\">18</sup> die in de stilte nedergedaald zijn.",
       "text1637_html": "De <sup class=\"note-marker\" data-note=\"17\">17</sup> doode en sullen den HEERE niet prijsen, nochte <sup class=\"note-marker\" data-note=\"18\">18</sup> die in de stilte nedergedaelt zijn.",
       "phraseDiff": [
@@ -1133,6 +1133,11 @@
           "old": "den HEERE",
           "new": "JAHWEH",
           "principe": "N1"
+        },
+        {
+          "old": "nedergedaald",
+          "new": "neergedaald",
+          "principe": null
         }
       ]
     },

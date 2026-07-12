@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Hallelujah! Looft, gij knechten des HEEREN! looft den Naam des HEEREN.",
       "text1637": "HAlelu-Iah. Looft ghy knechten des HEEREN, Looft den Name des HEEREN.",
-      "text2026": "Hallelujah! Looft, u knechten van JAHWEH! looft de Naam van JAHWEH.",
+      "text2026": "Hallelujah! Loof, u knechten van JAHWEH! loof de Naam van JAHWEH.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -54,23 +54,18 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Hallelujah! Looft, u knechten van JAHWEH! looft de Naam van JAHWEH.",
+      "text2026_html": "Hallelujah! Loof, u knechten van JAHWEH! loof de Naam van JAHWEH.",
       "text1637_html": "HAlelu-Iah. Looft ghy knechten des HEEREN, Looft den Name des HEEREN.",
       "phraseDiff": [
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "Looft, gij",
+          "new": "Loof, u",
+          "principe": null
         },
         {
-          "old": "des HEEREN!",
-          "new": "van JAHWEH!",
-          "principe": "N3"
-        },
-        {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "des HEEREN! looft den",
+          "new": "van JAHWEH! loof de",
+          "principe": null
         },
         {
           "old": "des HEEREN.",
@@ -157,7 +152,7 @@
       "number": 3,
       "textSV1888": "Van den opgang der zon af tot haar nedergang, zij de Naam des HEEREN geloofd.",
       "text1637": "[b] Van [2] den opganck der Sonne af, [2] tot haren nederganck, zy de Name des HEEREN gelooft.",
-      "text2026": "Van de opgang van de zon af tot haar nedergang, zij de Naam van JAHWEH geloofd.",
+      "text2026": "Van de opgang van de zon af tot haar neergang, zij de Naam van JAHWEH geloofd.",
       "marginNotes": [
         {
           "marker": "b",
@@ -211,7 +206,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Van<sup class=\"note-marker\" data-note=\"2\">2</sup> de opgang van de zon af tot haar nedergang, zij de Naam van JAHWEH geloofd.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Van<sup class=\"note-marker\" data-note=\"2\">2</sup> de opgang van de zon af tot haar neergang, zij de Naam van JAHWEH geloofd.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Van<sup class=\"note-marker\" data-note=\"2\">2</sup> den opgang der zon af tot haar nedergang, zij de Naam des HEEREN geloofd.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Van <sup class=\"note-marker\" data-note=\"2\">2</sup> den opganck der Sonne af, <sup class=\"note-marker\" data-note=\"2\">2</sup> tot haren nederganck, zy de Name des HEEREN gelooft.",
       "phraseDiff": [
@@ -224,6 +219,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "nedergang,",
+          "new": "neergang,",
+          "principe": null
         },
         {
           "old": "des HEEREN",

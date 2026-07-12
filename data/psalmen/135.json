@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Hallelujah! Prijst den Naam des HEEREN, prijst Hem, gij knechten des HEEREN!",
       "text1637": "[1] HAlelu-Iah. Prijst den Name des HEEREN, prijst [hem] ghy knechten des HEEREN.",
-      "text2026": "Hallelujah! Prijst de Naam van JAHWEH, prijst Hem, u knechten van JAHWEH!",
+      "text2026": "Hallelujah! Prijs de Naam van JAHWEH, prijs Hem, u knechten van JAHWEH!",
       "marginNotes": [
         {
           "marker": "1",
@@ -62,19 +62,19 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> Hallelujah! Prijst de Naam van JAHWEH, prijst Hem, u knechten van JAHWEH!",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> Hallelujah! Prijs de Naam van JAHWEH, prijs Hem, u knechten van JAHWEH!",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> Hallelujah! Prijst den Naam des HEEREN, prijst Hem, gij knechten des HEEREN!",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> HAlelu-Iah. Prijst den Name des HEEREN, prijst [hem] ghy knechten des HEEREN.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "Prijst den",
+          "new": "Prijs de",
+          "principe": null
         },
         {
-          "old": "des HEEREN,",
-          "new": "van JAHWEH,",
-          "principe": "N3"
+          "old": "des HEEREN, prijst",
+          "new": "van JAHWEH, prijs",
+          "principe": null
         },
         {
           "old": "gij",
@@ -173,7 +173,7 @@
       "number": 3,
       "textSV1888": "Looft den HEERE, want de HEERE is goed; psalmzingt Zijn Naam, want Hij is liefelijk.",
       "text1637": "Looft den HEERE, want de HEERE is goet: psalm-singt sijnen Name, want [5] hy is lieflick.",
-      "text2026": "Looft JAHWEH, want JAHWEH is goed; psalmzingt Zijn Naam, want Hij is liefelijk.",
+      "text2026": "Loof JAHWEH, want JAHWEH is goed; psalmzing Zijn Naam, want Hij is liefelijk.",
       "marginNotes": [
         {
           "marker": "5",
@@ -230,19 +230,24 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "Looft JAHWEH, want JAHWEH is goed; psalmzingt Zijn Naam, want<sup class=\"note-marker\" data-note=\"5\">5</sup> Hij is liefelijk.",
+      "text2026_html": "Loof JAHWEH, want JAHWEH is goed; psalmzing Zijn Naam, want<sup class=\"note-marker\" data-note=\"5\">5</sup> Hij is liefelijk.",
       "textSV1888_html": "Looft den HEERE, want de HEERE is goed; psalmzingt Zijn Naam, want<sup class=\"note-marker\" data-note=\"5\">5</sup> Hij is liefelijk.",
       "text1637_html": "Looft den HEERE, want de HEERE is goet: psalm-singt sijnen Name, want <sup class=\"note-marker\" data-note=\"5\">5</sup> hy is lieflick.",
       "phraseDiff": [
         {
-          "old": "den HEERE,",
-          "new": "JAHWEH,",
-          "principe": "N1"
+          "old": "Looft den HEERE,",
+          "new": "Loof JAHWEH,",
+          "principe": null
         },
         {
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
+        },
+        {
+          "old": "psalmzingt",
+          "new": "psalmzing",
+          "principe": null
         }
       ]
     },
@@ -331,7 +336,7 @@
       "number": 5,
       "textSV1888": "Want ik weet, dat de HEERE groot is, en dat onze Heere boven alle goden is.",
       "text1637": "Want ick weet dat de HEERE groot is: ende dat onse Heere [8] boven alle [9] Goden is.",
-      "text2026": "Want ik weet, dat JAHWEH groot is, en dat onze Heer boven alle goden is.",
+      "text2026": "Want ik weet, dat JAHWEH groot is, en dat onze Heere boven alle goden is.",
       "marginNotes": [
         {
           "marker": "8",
@@ -395,7 +400,7 @@
           "morph": "HNcmpa"
         }
       ],
-      "text2026_html": "Want ik weet, dat JAHWEH groot is, en dat onze Heer<sup class=\"note-marker\" data-note=\"8\">8</sup> boven alle<sup class=\"note-marker\" data-note=\"9\">9</sup> goden is.",
+      "text2026_html": "Want ik weet, dat JAHWEH groot is, en dat onze Heere<sup class=\"note-marker\" data-note=\"8\">8</sup> boven alle<sup class=\"note-marker\" data-note=\"9\">9</sup> goden is.",
       "textSV1888_html": "Want ik weet, dat de HEERE groot is, en dat onze Heere<sup class=\"note-marker\" data-note=\"8\">8</sup> boven alle<sup class=\"note-marker\" data-note=\"9\">9</sup> goden is.",
       "text1637_html": "Want ick weet dat de HEERE groot is: ende dat onse Heere <sup class=\"note-marker\" data-note=\"8\">8</sup> boven alle <sup class=\"note-marker\" data-note=\"9\">9</sup> Goden is.",
       "phraseDiff": [
@@ -403,11 +408,6 @@
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
-        },
-        {
-          "old": "Heere",
-          "new": "Heer",
-          "principe": null
         }
       ]
     },

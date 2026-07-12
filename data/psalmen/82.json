@@ -189,7 +189,7 @@
       "number": 3,
       "textSV1888": "Doet recht den arme en den wees; rechtvaardigt den verdrukte en den arme.",
       "text1637": "[8] Doet recht den armen, ende den weese: [9] rechtveerdicht den verdruckten, ende den armen.",
-      "text2026": "Doet recht de arme en de wees; rechtvaardigt de verdrukte en de arme.",
+      "text2026": "Doe recht de arme en de wees; rechtvaardig de verdrukte en de arme.",
       "marginNotes": [
         {
           "marker": "8",
@@ -238,14 +238,14 @@
           "morph": "HVhv2mp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"8\">8</sup><span class=\"god-speaks\"><i> Doet recht de arme en de wees;<sup class=\"note-marker\" data-note=\"9\">9</sup> rechtvaardigt de verdrukte en de arme.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"8\">8</sup><span class=\"god-speaks\"><i> Doe recht de arme en de wees;<sup class=\"note-marker\" data-note=\"9\">9</sup> rechtvaardig de verdrukte en de arme.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"8\">8</sup> Doet recht den arme en den wees;<sup class=\"note-marker\" data-note=\"9\">9</sup> rechtvaardigt den verdrukte en den arme.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"8\">8</sup> Doet recht den armen, ende den weese: <sup class=\"note-marker\" data-note=\"9\">9</sup> rechtveerdicht den verdruckten, ende den armen.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "Doet",
+          "new": "Doe",
+          "principe": null
         },
         {
           "old": "den",
@@ -256,6 +256,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "rechtvaardigt den",
+          "new": "rechtvaardig de",
+          "principe": null
         },
         {
           "old": "den",
@@ -268,7 +273,7 @@
       "number": 4,
       "textSV1888": "Verlost den arme en den behoeftige, rukt hem uit der goddelozen hand.",
       "text1637": "[a] Verlost den armen ende den behoeftigen, ruckt [hem] uyt [10] der godtloosen hant.",
-      "text2026": "Verlost de arme en de behoeftige, rukt hem uit van de goddelozen hand.",
+      "text2026": "Verlos de arme en de behoeftige, ruk hem uit van de goddelozen hand.",
       "marginNotes": [
         {
           "marker": "a",
@@ -317,19 +322,24 @@
           "morph": "HVhv2mp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"god-speaks\"><i> Verlost de arme en de behoeftige, rukt hem<sup class=\"note-marker\" data-note=\"10\">10</sup> uit van de goddelozen hand.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"god-speaks\"><i> Verlos de arme en de behoeftige, ruk hem<sup class=\"note-marker\" data-note=\"10\">10</sup> uit van de goddelozen hand.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Verlost den arme en den behoeftige, rukt hem<sup class=\"note-marker\" data-note=\"10\">10</sup> uit der goddelozen hand.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Verlost den armen en<i>de</i> den behoeftigen, ruckt [hem] uyt <sup class=\"note-marker\" data-note=\"10\">10</sup> der godtloosen hant.",
       "phraseDiff": [
+        {
+          "old": "Verlost den",
+          "new": "Verlos de",
+          "principe": null
+        },
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "rukt",
+          "new": "ruk",
+          "principe": null
         },
         {
           "old": "der",

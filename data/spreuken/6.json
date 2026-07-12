@@ -642,7 +642,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Hoe lang zult u, luiaard, nederliggen? Wanneer zult u van uw slaap opstaan?",
+      "text2026": "Hoe lang zult u, luiaard, neerliggen? Wanneer zult u van uw slaap opstaan?",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -685,13 +685,18 @@
       "hsv": "Hoelang, ⓝluiaard, blijft u liggen?Wanneer staat u op uit uw slaap?",
       "nbg51": "Hoelang, luiaard, zult gij neerliggen,",
       "textSV1888": "Hoe lang zult gij, luiaard, nederliggen? Wanneer zult gij van uw slaap opstaan?",
-      "text2026_html": "Hoe lang zult u,<sup class=\"note-marker\" data-note=\"a\">a</sup> luiaard, nederliggen? Wanneer zult u van uw slaap opstaan?",
+      "text2026_html": "Hoe lang zult u,<sup class=\"note-marker\" data-note=\"a\">a</sup> luiaard, neerliggen? Wanneer zult u van uw slaap opstaan?",
       "textSV1888_html": "Hoe lang zult gij,<sup class=\"note-marker\" data-note=\"a\">a</sup> luiaard, nederliggen? Wanneer zult gij van uw slaap opstaan?",
       "phraseDiff": [
         {
           "old": "gij,",
           "new": "u,",
           "principe": "A1"
+        },
+        {
+          "old": "nederliggen?",
+          "new": "neerliggen?",
+          "principe": null
         },
         {
           "old": "gij",
@@ -715,7 +720,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Een weinig slapens, een weinig sluimerens, een weinig handvouwens, al nederliggende;",
+      "text2026": "Een weinig slapens, een weinig sluimerens, een weinig handvouwens, al neerliggende;",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -763,8 +768,15 @@
       "hsv": "Een beetje slapen, een beetje sluimeren,een beetje liggen met gevouwen handen!",
       "nbg51": "Nog even slapen, nog even sluimeren,",
       "textSV1888": "Een weinig slapens, een weinig sluimerens, een weinig handvouwens, al nederliggende;",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"14\">14</sup> Een weinig slapens, een weinig sluimerens, een weinig handvouwens, al nederliggende;",
-      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"14\">14</sup> Een weinig slapens, een weinig sluimerens, een weinig handvouwens, al nederliggende;"
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"14\">14</sup> Een weinig slapens, een weinig sluimerens, een weinig handvouwens, al neerliggende;",
+      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"14\">14</sup> Een weinig slapens, een weinig sluimerens, een weinig handvouwens, al nederliggende;",
+      "phraseDiff": [
+        {
+          "old": "nederliggende;",
+          "new": "neerliggende;",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 11,
@@ -1677,7 +1689,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Als u wandelt, zal dat u geleiden; als u nederligt, zal het over u de wacht houden; als u wakker wordt, zal hetzelfde met u spreken.",
+      "text2026": "Als u wandelt, zal dat u geleiden; als u neerligt, zal het over u de wacht houden; als u wakker wordt, zal het met u spreken.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -1730,7 +1742,7 @@
       "hsv": "Als je op weg gaat, zal ⓢhet je leiden,als je neerligt, over je waken,als je ontwaakt, zal dat tot je spreken.",
       "nbg51": "Als gij op weg zijt, moge het u leiden;",
       "textSV1888": "Als gij wandelt, zal dat u geleiden; als gij nederligt, zal het over u de wacht houden; als gij wakker wordt, zal hetzelve met u spreken.",
-      "text2026_html": "Als u wandelt, zal<sup class=\"note-marker\" data-note=\"39\">39</sup><sup class=\"note-marker\" data-note=\"f\">f</sup> dat u geleiden; als u nederligt, zal het over u de wacht houden; als u wakker wordt, zal hetzelfde<sup class=\"note-marker\" data-note=\"40\">40</sup> met u spreken.",
+      "text2026_html": "Als u wandelt, zal<sup class=\"note-marker\" data-note=\"39\">39</sup><sup class=\"note-marker\" data-note=\"f\">f</sup> dat u geleiden; als u neerligt, zal het over u de wacht houden; als u wakker wordt, zal het<sup class=\"note-marker\" data-note=\"40\">40</sup> met u spreken.",
       "textSV1888_html": "Als gij wandelt, zal<sup class=\"note-marker\" data-note=\"39\">39</sup><sup class=\"note-marker\" data-note=\"f\">f</sup> dat u geleiden; als gij nederligt, zal het over u de wacht houden; als gij wakker wordt, zal hetzelve<sup class=\"note-marker\" data-note=\"40\">40</sup> met u spreken.",
       "phraseDiff": [
         {
@@ -1739,9 +1751,9 @@
           "principe": "A1"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "gij nederligt,",
+          "new": "u neerligt,",
+          "principe": null
         },
         {
           "old": "gij",
@@ -1750,8 +1762,8 @@
         },
         {
           "old": "hetzelve",
-          "new": "hetzelfde",
-          "principe": "O4"
+          "new": "het",
+          "principe": null
         }
       ]
     },
