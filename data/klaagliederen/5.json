@@ -918,7 +918,7 @@
       "number": 15,
       "textSV1888": "De vreugde onzes harten houdt op, onze rei is in treurigheid veranderd.",
       "text1637": "Onses herten vreucht [31] houdt op, [32] onsen rey is in treuricheyt verandert.",
-      "text2026": "De vreugde onzes harten houdt op, onze rei is in treurigheid veranderd.",
+      "text2026": "De vreugde van ons hart houdt op, onze rei is in treurigheid veranderd.",
       "marginNotes": [
         {
           "marker": "31",
@@ -967,15 +967,22 @@
           "morph": "HNcmsc/Sp1cp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>De vreugde onzes<sup class=\"note-marker\" data-note=\"31\">31</sup> harten houdt op,<sup class=\"note-marker\" data-note=\"32\">32</sup> onze rei is in treurigheid veranderd.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>De vreugde van ons<sup class=\"note-marker\" data-note=\"31\">31</sup> hart houdt op,<sup class=\"note-marker\" data-note=\"32\">32</sup> onze rei is in treurigheid veranderd.</i></span>",
       "textSV1888_html": "De vreugde onzes<sup class=\"note-marker\" data-note=\"31\">31</sup> harten houdt op,<sup class=\"note-marker\" data-note=\"32\">32</sup> onze rei is in treurigheid veranderd.",
-      "text1637_html": "Onses herten vreucht <sup class=\"note-marker\" data-note=\"31\">31</sup> houdt op, <sup class=\"note-marker\" data-note=\"32\">32</sup> onsen rey is in treuricheyt verandert."
+      "text1637_html": "Onses herten vreucht <sup class=\"note-marker\" data-note=\"31\">31</sup> houdt op, <sup class=\"note-marker\" data-note=\"32\">32</sup> onsen rey is in treuricheyt verandert.",
+      "phraseDiff": [
+        {
+          "old": "onzes harten",
+          "new": "van ons hart",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 16,
       "textSV1888": "De kroon onzes hoofds is afgevallen; o wee nu onzer, dat wij zo gezondigd hebben!",
       "text1637": "[33] De kroone onses hoofts is afgevallen, ô wee nu onser, dat wy [soo] gesondicht hebben.",
-      "text2026": "De kroon van ons hoofd is afgevallen; o wee nu onzer, dat wij zo gezondigd hebben!",
+      "text2026": "De kroon van ons hoofd is afgevallen; o wee nu over ons, dat wij zo gezondigd hebben!",
       "marginNotes": [
         {
           "marker": "33",
@@ -1027,7 +1034,7 @@
           "morph": "HVqp1cp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup><span class=\"direct-speech\"><i> De kroon van ons hoofd is afgevallen; o wee nu onzer, dat wij zo gezondigd hebben!</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup><span class=\"direct-speech\"><i> De kroon van ons hoofd is afgevallen; o wee nu over ons, dat wij zo gezondigd hebben!</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> De kroon onzes hoofds is afgevallen; o wee nu onzer, dat wij zo gezondigd hebben!",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> De kroone onses hoofts is afgevallen, ô wee nu onser, dat wy [soo] gesondicht hebben.",
       "phraseDiff": [
@@ -1035,6 +1042,11 @@
           "old": "onzes hoofds",
           "new": "van ons hoofd",
           "principe": "V398"
+        },
+        {
+          "old": "onzer,",
+          "new": "over ons,",
+          "principe": null
         }
       ]
     },
@@ -1257,7 +1269,7 @@
       "number": 20,
       "textSV1888": "Waarom zoudt Gij ons steeds vergeten? Waarom zoudt Gij ons zo langen tijd verlaten?",
       "text1637": "Waerom soudt ghy ons [40] steets [41] vergeten? [42] [waerom] soudt ghy ons [43] [soo] langen tijt verlaten?",
-      "text2026": "Waarom zou U ons steeds vergeten? Waarom zou U ons zo langen tijd verlaten?",
+      "text2026": "Waarom zou U ons steeds vergeten? Waarom zou U ons zo lange tijd verlaten?",
       "marginNotes": [
         {
           "marker": "40",
@@ -1320,7 +1332,7 @@
           "morph": "HNcmpa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Waarom zou U ons<sup class=\"note-marker\" data-note=\"40\">40</sup> steeds<sup class=\"note-marker\" data-note=\"41\">41</sup> vergeten?<sup class=\"note-marker\" data-note=\"42\">42</sup> Waarom zou U ons<sup class=\"note-marker\" data-note=\"43\">43</sup> zo langen tijd verlaten?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Waarom zou U ons<sup class=\"note-marker\" data-note=\"40\">40</sup> steeds<sup class=\"note-marker\" data-note=\"41\">41</sup> vergeten?<sup class=\"note-marker\" data-note=\"42\">42</sup> Waarom zou U ons<sup class=\"note-marker\" data-note=\"43\">43</sup> zo lange tijd verlaten?</i></span>",
       "textSV1888_html": "Waarom zoudt Gij ons<sup class=\"note-marker\" data-note=\"40\">40</sup> steeds<sup class=\"note-marker\" data-note=\"41\">41</sup> vergeten?<sup class=\"note-marker\" data-note=\"42\">42</sup> Waarom zoudt Gij ons<sup class=\"note-marker\" data-note=\"43\">43</sup> zo langen tijd verlaten?",
       "text1637_html": "Waerom soudt ghy ons <sup class=\"note-marker\" data-note=\"40\">40</sup> steets <sup class=\"note-marker\" data-note=\"41\">41</sup> vergeten? <sup class=\"note-marker\" data-note=\"42\">42</sup> [waerom] soudt ghy ons <sup class=\"note-marker\" data-note=\"43\">43</sup> [soo] langen tijt verlaten?",
       "phraseDiff": [
@@ -1333,6 +1345,11 @@
           "old": "zoudt Gij",
           "new": "zou U",
           "principe": "A1"
+        },
+        {
+          "old": "langen",
+          "new": "lange",
+          "principe": null
         }
       ]
     },

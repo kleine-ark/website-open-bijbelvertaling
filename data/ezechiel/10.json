@@ -1616,7 +1616,7 @@
       "number": 13,
       "textSV1888": "Aangaande de raderen, elkeen derzelve werd voor mijn oren genoemd Galgal.",
       "text1637": "Aengaende de raderen, elck een der selver wiert [54] voor mijne ooren genaemt, Galgal.",
-      "text2026": "Voor wat betreft de raderen, elk derzelve werd voor mijn oren genoemd Galgal.",
+      "text2026": "Voor wat betreft de raderen, elk daarvan werd voor mijn oren genoemd Galgal.",
       "marginNotes": [
         {
           "marker": "54",
@@ -1653,7 +1653,7 @@
           "morph": "HR/Ncfdc/Sp1cs"
         }
       ],
-      "text2026_html": "Voor wat betreft de raderen, elk derzelve werd<sup class=\"note-marker\" data-note=\"54\">54</sup> voor mijn oren genoemd Galgal.",
+      "text2026_html": "Voor wat betreft de raderen, elk daarvan werd<sup class=\"note-marker\" data-note=\"54\">54</sup> voor mijn oren genoemd Galgal.",
       "textSV1888_html": "Aangaande de raderen, elkeen derzelve werd<sup class=\"note-marker\" data-note=\"54\">54</sup> voor mijn oren genoemd Galgal.",
       "text1637_html": "Aengaende de raderen, elck een der selver wiert <sup class=\"note-marker\" data-note=\"54\">54</sup> voor mijne ooren genaemt, Galgal.",
       "phraseDiff": [
@@ -1663,9 +1663,9 @@
           "principe": "V814"
         },
         {
-          "old": "elkeen",
-          "new": "elk",
-          "principe": "V507"
+          "old": "elkeen derzelve",
+          "new": "elk daarvan",
+          "principe": null
         }
       ]
     },
@@ -1879,7 +1879,7 @@
       "number": 16,
       "textSV1888": "En als de cherubs gingen, zo gingen die raderen nevens dezelven; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich diezelve raderen ook niet om van bij hen.",
       "text1637": "[b] Ende als de Cherubim gingen, so gingen die raderen nevens de selve: ende als de Cherubim hare vleugelen ophieven, om sich vander aerde om hooge te heffen, so en keerden haer die selve raderen oock niet om, van by hen.",
-      "text2026": "En als de cherubs gingen, zo gingen die raderen naast dezelven; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich diezelve raderen ook niet om van bij hen.",
+      "text2026": "En als de cherubs gingen, zo gingen die raderen naast die; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich die raderen ook niet om van bij hen.",
       "marginNotes": [
         {
           "marker": "b",
@@ -1981,14 +1981,19 @@
           "morph": "HR/R/Sp3mp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> En als de cherubs gingen, zo gingen die raderen naast dezelven; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich diezelve raderen ook niet om van bij hen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> En als de cherubs gingen, zo gingen die raderen naast die; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich die raderen ook niet om van bij hen.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> En als de cherubs gingen, zo gingen die raderen nevens dezelven; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich diezelve raderen ook niet om van bij hen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Ende als de Cherubim gingen, so gingen die raderen nevens de selve: ende als de Cherubim hare vleugelen ophieven, om sich vander aerde om hooge te heffen, so en keerden haer die selve raderen oock niet om, van by hen.",
       "phraseDiff": [
         {
-          "old": "nevens",
-          "new": "naast",
-          "principe": "V19"
+          "old": "nevens dezelven;",
+          "new": "naast die;",
+          "principe": null
+        },
+        {
+          "old": "diezelve",
+          "new": "die",
+          "principe": null
         }
       ]
     },

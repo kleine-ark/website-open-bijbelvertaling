@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Alzo zegt de HEERE: Bewaart het recht, en doet gerechtigheid; want Mijn heil is nabij om te komen, en Mijn gerechtigheid om geopenbaard te worden.",
       "text1637": "ALsoo seyt de HEERE, Bewaert [1] het recht, ende doet [1] gerechticheyt: [2] want [3] mijn heyl is nae by om te komen, ende [4] mijne gerechticheyt, om geopenbaert te worden.",
-      "text2026": "Zo zegt JAHWEH: Bewaart het recht, en doet gerechtigheid; want Mijn heil is nabij om te komen, en Mijn gerechtigheid om geopenbaard te worden.",
+      "text2026": "Zo zegt JAHWEH: Bewaar het recht, en doe gerechtigheid; want Mijn heil is nabij om te komen, en Mijn gerechtigheid om geopenbaard te worden.",
       "marginNotes": [
         {
           "marker": "1",
@@ -110,7 +110,7 @@
           "morph": "HR/VNc"
         }
       ],
-      "text2026_html": "Zo zegt JAHWEH: <span class=\"god-speaks\"><i>Bewaart het recht, en doet gerechtigheid; want Mijn heil is nabij om te komen, en Mijn gerechtigheid om geopenbaard te worden.</i></span>",
+      "text2026_html": "Zo zegt JAHWEH: <span class=\"god-speaks\"><i>Bewaar het recht, en doe gerechtigheid; want Mijn heil is nabij om te komen, en Mijn gerechtigheid om geopenbaard te worden.</i></span>",
       "textSV1888_html": "Alzo zegt de HEERE: Bewaart<sup class=\"note-marker\" data-note=\"1\">1</sup> het recht, en doet gerechtigheid;<sup class=\"note-marker\" data-note=\"2\">2</sup> want<sup class=\"note-marker\" data-note=\"3\">3</sup> Mijn heil is nabij om te komen, en<sup class=\"note-marker\" data-note=\"4\">4</sup> Mijn gerechtigheid om geopenbaard te worden.",
       "text1637_html": "ALsoo seyt de HEERE, Bewaert <sup class=\"note-marker\" data-note=\"1\">1</sup> het recht, ende doet <sup class=\"note-marker\" data-note=\"1\">1</sup> gerechticheyt: <sup class=\"note-marker\" data-note=\"2\">2</sup> want <sup class=\"note-marker\" data-note=\"3\">3</sup> mijn heyl is nae by om te komen, ende <sup class=\"note-marker\" data-note=\"4\">4</sup> mijne gerechticheyt, om geopenbaert te worden.",
       "phraseDiff": [
@@ -120,9 +120,14 @@
           "principe": "V42"
         },
         {
-          "old": "de HEERE:",
-          "new": "JAHWEH:",
-          "principe": "G1"
+          "old": "de HEERE: Bewaart",
+          "new": "JAHWEH: Bewaar",
+          "principe": null
+        },
+        {
+          "old": "doet",
+          "new": "doe",
+          "principe": "W"
         }
       ]
     },
@@ -1450,7 +1455,7 @@
       "number": 12,
       "textSV1888": "Komt herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterken drank zuipen; en de dag van morgen zal zijn als deze, ja, groter, veel treffelijker.",
       "text1637": "Comt herwaerts, [seggen sy] [38] ick sal wijn halen, ende wy sullen stercken dranck suypen: [39] ende, [40] de dach van morgen sal zijn als dese, [41] [ja] grooter, veel treffelicker.",
-      "text2026": "Komt herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterke drank zuipen; en de dag van morgen zal zijn als deze, ja, groter, veel treffelijker.",
+      "text2026": "Kom herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterke drank zuipen; en de dag van morgen zal zijn als deze, ja, groter, veel treffelijker.",
       "marginNotes": [
         {
           "marker": "40",
@@ -1543,10 +1548,15 @@
           "morph": "HD"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Komt herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterke drank zuipen; en<sup class=\"note-marker\" data-note=\"40\">40</sup> de dag van morgen zal zijn als deze,<sup class=\"note-marker\" data-note=\"41\">41</sup> ja, groter, veel treffelijker.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Kom herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterke drank zuipen; en<sup class=\"note-marker\" data-note=\"40\">40</sup> de dag van morgen zal zijn als deze,<sup class=\"note-marker\" data-note=\"41\">41</sup> ja, groter, veel treffelijker.</i></span>",
       "textSV1888_html": "Komt herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterken drank zuipen; en<sup class=\"note-marker\" data-note=\"40\">40</sup> de dag van morgen zal zijn als deze,<sup class=\"note-marker\" data-note=\"41\">41</sup> ja, groter, veel treffelijker.",
       "text1637_html": "Comt herwaerts, [seggen sy] <sup class=\"note-marker\" data-note=\"38\">38</sup> ick sal wijn halen, ende wy sullen stercken dranck suypen: <sup class=\"note-marker\" data-note=\"39\">39</sup> ende, <sup class=\"note-marker\" data-note=\"40\">40</sup> de dach van morgen sal zijn als dese, <sup class=\"note-marker\" data-note=\"41\">41</sup> [ja] grooter, veel treffelicker.",
       "phraseDiff": [
+        {
+          "old": "Komt",
+          "new": "Kom",
+          "principe": "W"
+        },
         {
           "old": "sterken",
           "new": "sterke",

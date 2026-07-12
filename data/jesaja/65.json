@@ -1535,7 +1535,7 @@
       "number": 13,
       "textSV1888": "Daarom zegt de Heere HEERE alzo: Ziet, Mijn knechten zullen eten, doch gijlieden zult hongeren; ziet, Mijn knechten zullen drinken, doch gijlieden zult dorsten; ziet, Mijn knechten zullen blijde zijn, doch gijlieden zult beschaamd zijn.",
       "text1637": "Daerom seyt de Heere HEERE alsoo, Siet mijne knechten [52] sullen eten, doch ghy lieden sult hongeren: siet, mijne knechten [52] sullen drincken, doch ghy-lieden sult dorsten: siet, mijne knechten sullen blyde zijn, doch ghylieden sult beschaemt zijn:",
-      "text2026": "Daarom zegt de Adonai JAHWEH zo: Zie, Mijn knechten zullen eten, maar u zult hongeren; ziet, Mijn knechten zullen drinken, maar u zult dorsten; ziet, Mijn knechten zullen blij zijn, maar u zult beschaamd zijn.",
+      "text2026": "Daarom zegt de Adonai JAHWEH zo: Zie, Mijn knechten zullen eten, maar u zult hongeren; zie, Mijn knechten zullen drinken, maar u zult dorsten; zie, Mijn knechten zullen blij zijn, maar u zult beschaamd zijn.",
       "marginNotes": [
         {
           "marker": "52",
@@ -1654,7 +1654,7 @@
           "morph": "HVqi2mp"
         }
       ],
-      "text2026_html": "Daarom zegt de Adonai JAHWEH zo: <span class=\"god-speaks\"><i>Zie, Mijn knechten zullen eten, maar u zult hongeren; ziet, Mijn knechten zullen drinken, maar u zult dorsten; ziet, Mijn knechten zullen blij zijn, maar u zult beschaamd zijn.</i></span>",
+      "text2026_html": "Daarom zegt de Adonai JAHWEH zo: <span class=\"god-speaks\"><i>Zie, Mijn knechten zullen eten, maar u zult hongeren; zie, Mijn knechten zullen drinken, maar u zult dorsten; zie, Mijn knechten zullen blij zijn, maar u zult beschaamd zijn.</i></span>",
       "textSV1888_html": "Daarom zegt de Heere HEERE alzo: Ziet, Mijn knechten<sup class=\"note-marker\" data-note=\"52\">52</sup> zullen eten, doch gijlieden zult hongeren; ziet, Mijn knechten zullen drinken, doch gijlieden zult dorsten; ziet, Mijn knechten zullen blijde zijn, doch gijlieden zult beschaamd zijn.",
       "text1637_html": "Daerom seyt de Heere HEERE alsoo, Siet mijne knechten <sup class=\"note-marker\" data-note=\"52\">52</sup> sullen eten, doch ghy lieden sult hongeren: siet, mijne knechten <sup class=\"note-marker\" data-note=\"52\">52</sup> sullen drincken, doch ghy-lieden sult dorsten: siet, mijne knechten sullen blyde zijn, doch ghylieden sult beschaemt zijn:",
       "phraseDiff": [
@@ -1669,9 +1669,19 @@
           "principe": "A2"
         },
         {
+          "old": "ziet,",
+          "new": "zie,",
+          "principe": "W"
+        },
+        {
           "old": "doch gijlieden",
           "new": "maar u",
           "principe": "A2"
+        },
+        {
+          "old": "ziet,",
+          "new": "zie,",
+          "principe": "W"
         },
         {
           "old": "blijde",
@@ -2183,7 +2193,7 @@
       "number": 18,
       "textSV1888": "Maar weest gijlieden vrolijk, en verheugt u tot in der eeuwigheid in hetgeen Ik schep; want ziet, Ik schep Jeruzalem een verheuging, en haar volk een vrolijkheid.",
       "text1637": "Maer weest ghy-lieden vrolick, ende verheucht u tot inder eeuwicheyt [64] [in] 't gene dat ick scheppe: want siet, [65] ick scheppe Ierusalem eene verheuginge, ende [66] haer volck eene vrolickheyt.",
-      "text2026": "Maar wees u vrolijk, en verheugt u tot in de eeuwigheid in wat Ik schep; want zie, Ik schep Jeruzalem een verheuging, en haar volk een vrolijkheid.",
+      "text2026": "Maar wees u vrolijk, en verheug u tot in de eeuwigheid in wat Ik schep; want zie, Ik schep Jeruzalem een verheuging, en haar volk een vrolijkheid.",
       "marginNotes": [
         {
           "marker": "66",
@@ -2294,7 +2304,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar wees u vrolijk, en verheugt u tot in de eeuwigheid in wat Ik schep; want zie, Ik schep Jeruzalem een verheuging, en<sup class=\"note-marker\" data-note=\"66\">66</sup> haar volk een vrolijkheid.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar wees u vrolijk, en verheug u tot in de eeuwigheid in wat Ik schep; want zie, Ik schep Jeruzalem een verheuging, en<sup class=\"note-marker\" data-note=\"66\">66</sup> haar volk een vrolijkheid.</i></span>",
       "textSV1888_html": "Maar weest gijlieden vrolijk, en verheugt u tot in der eeuwigheid in hetgeen Ik schep; want ziet, Ik schep Jeruzalem een verheuging, en<sup class=\"note-marker\" data-note=\"66\">66</sup> haar volk een vrolijkheid.",
       "text1637_html": "Maer weest ghy-lieden vrolick, en<i>de</i> verheucht u tot inder eeuwicheyt <sup class=\"note-marker\" data-note=\"64\">64</sup> [in] 't gene dat ick scheppe: wa<i>n</i>t siet, <sup class=\"note-marker\" data-note=\"65\">65</sup> ick scheppe Ierusalem eene verheuginge, en<i>de</i> <sup class=\"note-marker\" data-note=\"66\">66</sup> haer volck eene vrolickheyt.",
       "phraseDiff": [
@@ -2302,6 +2312,11 @@
           "old": "weest gijlieden",
           "new": "wees u",
           "principe": "A2"
+        },
+        {
+          "old": "verheugt",
+          "new": "verheug",
+          "principe": "W"
         },
         {
           "old": "der",
@@ -3007,7 +3022,7 @@
       "number": 25,
       "textSV1888": "De wolf en het lam zullen te zamen weiden, en de leeuw zal stro eten als een rund, en stof zal de spijze der slang zijn; zij zullen geen kwaad doen noch verderven op Mijn gansen heiligen berg, zegt de HEERE.",
       "text1637": "[86] De wolf ende 'tlam sullen [87] t'samen weyden, ende [88] de Leeuw sal stroo eten, als een runt, ende [89] stof sal de [90] spijse der slange zijn: sy en sullen geen quaet doen noch verderven op mijnen gantschen Heyligen berch, seyt de HEERE.",
-      "text2026": "De wolf en het lam zullen samen weiden, en de leeuw zal stro eten als een rund, en stof zal de voedsel van de slang zijn; zij zullen geen kwaad doen noch verderven op Mijn gansen heilige berg, zegt JAHWEH.",
+      "text2026": "De wolf en het lam zullen samen weiden, en de leeuw zal stro eten als een rund, en stof zal de voedsel van de slang zijn; zij zullen geen kwaad doen noch verderven op Mijn hele heilige berg, zegt JAHWEH.",
       "marginNotes": [
         {
           "marker": "89",
@@ -3147,7 +3162,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>De wolf en het lam zullen samen weiden, en de leeuw zal stro eten als een rund, en<sup class=\"note-marker\" data-note=\"89\">89</sup> stof zal de<sup class=\"note-marker\" data-note=\"90\">90</sup> voedsel van de slang zijn; zij zullen geen kwaad doen noch verderven op Mijn gansen heilige berg, zegt JAHWEH.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>De wolf en het lam zullen samen weiden, en de leeuw zal stro eten als een rund, en<sup class=\"note-marker\" data-note=\"89\">89</sup> stof zal de<sup class=\"note-marker\" data-note=\"90\">90</sup> voedsel van de slang zijn; zij zullen geen kwaad doen noch verderven op Mijn hele heilige berg, zegt JAHWEH.</i></span>",
       "textSV1888_html": "De wolf en het lam zullen te zamen weiden, en de leeuw zal stro eten als een rund, en<sup class=\"note-marker\" data-note=\"89\">89</sup> stof zal de<sup class=\"note-marker\" data-note=\"90\">90</sup> spijze der slang zijn; zij zullen geen kwaad doen noch verderven op Mijn gansen heiligen berg, zegt de HEERE.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"86\">86</sup> De wolf ende 'tlam sullen <sup class=\"note-marker\" data-note=\"87\">87</sup> t'samen weyden, ende <sup class=\"note-marker\" data-note=\"88\">88</sup> de Leeuw sal stroo eten, als een runt, ende <sup class=\"note-marker\" data-note=\"89\">89</sup> stof sal de <sup class=\"note-marker\" data-note=\"90\">90</sup> spijse der slange zijn: sy en sullen geen quaet doen noch verderven op mijnen gantschen Heyligen berch, seyt de HEERE.",
       "phraseDiff": [
@@ -3162,8 +3177,8 @@
           "principe": "N2"
         },
         {
-          "old": "heiligen",
-          "new": "heilige",
+          "old": "gansen heiligen",
+          "new": "hele heilige",
           "principe": null
         },
         {
