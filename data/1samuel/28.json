@@ -767,7 +767,7 @@
       "number": 7,
       "textSV1888": "Toen zeide Saul tot zijn knechten: Zoekt mij een vrouw, die een waarzeggenden geest heeft, dat ik tot haar ga, en door haar onderzoeke. Zijn knechten nu zeiden tot hem: Zie, te Endor is een vrouw, die een waarzeggenden geest heeft.",
       "text1637": "Doe seyde Saul tot sijne knechten, Soeckt my eene vrouwe, die eenen waerseggenden geest heeft, dat ick tot haer gae, ende door haer ondersoecke: sijne knechten nu seyden tot hem, Siet, te [17] Endor is eene vrouwe, die eenen waerseggenden geest heeft.",
-      "text2026": "Toen zei Saul tot zijn knechten: Zoekt mij een vrouw, die een waarzeggende geest heeft, dat ik tot haar ga, en door haar onderzoeke. Zijn knechten nu zeiden tot hem: Zie, te Endor is een vrouw, die een waarzeggende geest heeft.",
+      "text2026": "Toen zei Saul tot zijn knechten: Zoek mij een vrouw, die een waarzeggende geest heeft, dat ik tot haar ga, en door haar onderzoeke. Zijn knechten nu zeiden tot hem: Zie, te Endor is een vrouw, die een waarzeggende geest heeft.",
       "marginNotes": [
         {
           "marker": "17",
@@ -884,7 +884,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Toen zei Saul tot zijn knechten: <span class=\"direct-speech\"><i>Zoekt mij een vrouw, die een waarzeggende geest heeft, dat ik tot haar ga, en door haar onderzoeke.</i></span> Zijn knechten nu zeiden tot hem: <span class=\"direct-speech\"><i>Zie, te Endor is een vrouw, die een waarzeggende geest heeft.</i></span>",
+      "text2026_html": "Toen zei Saul tot zijn knechten: <span class=\"direct-speech\"><i>Zoek mij een vrouw, die een waarzeggende geest heeft, dat ik tot haar ga, en door haar onderzoeke.</i></span> Zijn knechten nu zeiden tot hem: <span class=\"direct-speech\"><i>Zie, te Endor is een vrouw, die een waarzeggende geest heeft.</i></span>",
       "textSV1888_html": "Toen zeide Saul tot zijn knechten: Zoekt mij een vrouw, die een waarzeggenden geest heeft, dat ik tot haar ga, en door haar onderzoeke. Zijn knechten nu zeiden tot hem: Zie, te<sup class=\"note-marker\" data-note=\"17\">17</sup> Endor is een vrouw, die een waarzeggenden geest heeft.",
       "text1637_html": "Doe seyde Saul tot sijne knechten, Soeckt my eene vrouwe, die eenen waerseggenden geest heeft, dat ick tot haer gae, ende door haer ondersoecke: sijne knechten nu seyden tot hem, Siet, te <sup class=\"note-marker\" data-note=\"17\">17</sup> Endor is eene vrouwe, die eenen waerseggenden geest heeft.",
       "phraseDiff": [
@@ -892,6 +892,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Zoekt",
+          "new": "Zoek",
+          "principe": null
         },
         {
           "old": "waarzeggenden",
@@ -2253,7 +2258,7 @@
       "number": 18,
       "textSV1888": "Gelijk als gij naar de stem des HEEREN niet gehoord hebt, en de hittigheid Zijns toorns niet uitgericht hebt tegen Amalek; daarom heeft de HEERE u deze zaak gedaan te dezen dage.",
       "text1637": "Gelijck als ghy nae de stemme des HEEREN niet gehoort en hebt, ende de hitticheyt sijnes toorns niet [37] uytgericht en hebt tegen Amalek: daerom heeft u de HEERE dese sake gedaen [38] te desen dage.",
-      "text2026": "Zoals u naar de stem van JAHWEH niet gehoord hebt, en de hitte van Zijn toorn niet uitgericht hebt tegen Amalek; daarom heeft JAHWEH u deze zaak gedaan te deze dage.",
+      "text2026": "Zoals u naar de stem van JAHWEH niet gehoord hebt, en de hitte van Zijn toorn niet uitgericht hebt tegen Amalek; daarom heeft JAHWEH u deze zaak gedaan op deze dag.",
       "marginNotes": [
         {
           "marker": "37",
@@ -2367,7 +2372,7 @@
           "morph": "HTd/Pdxms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zoals u naar de stem van JAHWEH niet gehoord hebt, en de hitte van Zijn toorn niet<sup class=\"note-marker\" data-note=\"37\">37</sup> uitgericht hebt tegen Amalek; daarom heeft JAHWEH u deze zaak gedaan<sup class=\"note-marker\" data-note=\"38\">38</sup> te deze dage.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zoals u naar de stem van JAHWEH niet gehoord hebt, en de hitte van Zijn toorn niet<sup class=\"note-marker\" data-note=\"37\">37</sup> uitgericht hebt tegen Amalek; daarom heeft JAHWEH u deze zaak gedaan<sup class=\"note-marker\" data-note=\"38\">38</sup> op deze dag.</i></span>",
       "textSV1888_html": "Gelijk als gij naar de stem des HEEREN niet gehoord hebt, en de hittigheid Zijns toorns niet<sup class=\"note-marker\" data-note=\"37\">37</sup> uitgericht hebt tegen Amalek; daarom heeft de HEERE u deze zaak<sup class=\"note-marker\" data-note=\"38\">38</sup> gedaan te dezen dage.",
       "text1637_html": "Gelijck als ghy nae de stemme des HEEREN niet gehoort en hebt, ende de hitticheyt sijnes toorns niet <sup class=\"note-marker\" data-note=\"37\">37</sup> uytgericht en hebt tegen Amalek: daerom heeft u de HEERE dese sake gedae<i>n</i> <sup class=\"note-marker\" data-note=\"38\">38</sup> te desen dage.",
       "phraseDiff": [
@@ -2392,9 +2397,9 @@
           "principe": "G1"
         },
         {
-          "old": "dezen",
-          "new": "deze",
-          "principe": "N4"
+          "old": "te dezen dage.",
+          "new": "op deze dag.",
+          "principe": null
         }
       ]
     },
