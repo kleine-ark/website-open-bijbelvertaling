@@ -903,14 +903,19 @@
       "number": 13,
       "text1637": "Is zij maagd, dat zij niet misschien ontreinigd, en in haars vaders huis zwanger worde, en hebbende een man, dat zij niet misschien overtrede, en getrouwd zijnde, niet misschien onvruchtbaar zij.",
       "textSV1888": "Is zij maagd, dat zij niet misschien ontreinigd, en in haars vaders huis zwanger worde, en hebbende een man, dat zij niet misschien overtrede, en getrouwd zijnde, niet misschien onvruchtbaar zij.",
-      "text2026": "Is zij maagd, dat zij niet misschien ontreinigd, en in van haar vader huis zwanger wordt, en hebbende een man, dat zij niet misschien overtrede, en getrouwd zijnde, niet misschien onvruchtbaar zij.",
+      "text2026": "Is zij maagd, dat zij niet misschien ontreinigd, en in het huis van haar vader zwanger wordt, en hebbende een man, dat zij niet misschien overtrede, en getrouwd zijnde, niet misschien onvruchtbaar zij.",
       "marginNotes": [],
-      "text2026_html": "Is zij maagd, dat zij niet misschien ontreinigd, en in van haar vader huis zwanger wordt, en hebbende een man, dat zij niet misschien overtrede, en getrouwd zijnde, niet misschien onvruchtbaar zij.",
+      "text2026_html": "Is zij maagd, dat zij niet misschien ontreinigd, en in het huis van haar vader zwanger wordt, en hebbende een man, dat zij niet misschien overtrede, en getrouwd zijnde, niet misschien onvruchtbaar zij.",
       "phraseDiff": [
         {
           "old": "haars vaders",
+          "new": "het",
+          "principe": null
+        },
+        {
+          "old": "",
           "new": "van haar vader",
-          "principe": "V207"
+          "principe": null
         },
         {
           "old": "worde,",
@@ -1648,9 +1653,9 @@
       "number": 22,
       "text1637": "De afgrond en het hart onderzoekt hij, en is bedacht op de boze aanslagen derzelve.",
       "textSV1888": "De afgrond en het hart onderzoekt hij, en is bedacht op de boze aanslagen derzelve.",
-      "text2026": "De afgrond en het hart onderzoekt hij, en is bedacht op de boze aanslagen derzelve.",
+      "text2026": "De afgrond en het hart onderzoekt hij, en is bedacht op de boze aanslagen daarvan.",
       "marginNotes": [],
-      "text2026_html": "De afgrond en het hart onderzoekt hij, en is bedacht op de boze aanslagen derzelve.",
+      "text2026_html": "De afgrond en het hart onderzoekt hij, en is bedacht op de boze aanslagen daarvan.",
       "grondtekst": [
         {
           "woord": "ως.1",
@@ -1695,6 +1700,13 @@
         {
           "woord": "θεωρεω",
           "lemma": "θεωρέω"
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "derzelve.",
+          "new": "daarvan.",
+          "principe": "N4"
         }
       ]
     },

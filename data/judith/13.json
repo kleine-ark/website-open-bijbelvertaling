@@ -2841,10 +2841,17 @@
       "number": 21,
       "text1637": "En al het volk ontzette zich zeer, en zich nederbuigende, aanbaden zij God.",
       "textSV1888": "En al het volk ontzette zich zeer, en zich nederbuigende, aanbaden zij God.",
-      "text2026": "En al het volk ontzette zich zeer, en zich nederbuigende, aanbaden zij God.",
+      "text2026": "En al het volk ontzette zich zeer, en zich neerbuigende, aanbaden zij God.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>En al het volk ontzette zich zeer, en zich nederbuigende, aanbaden zij God.</i></span>",
-      "grondtekst": null
+      "text2026_html": "<span class=\"direct-speech\"><i>En al het volk ontzette zich zeer, en zich neerbuigende, aanbaden zij God.</i></span>",
+      "grondtekst": null,
+      "phraseDiff": [
+        {
+          "old": "nederbuigende,",
+          "new": "neerbuigende,",
+          "principe": "V"
+        }
+      ]
     },
     {
       "number": 22,
@@ -2897,9 +2904,9 @@
       "number": 24,
       "text1637": "En geloofd zij de Here God, die de hemel en de aarde geschapen heeft, die u geleid heeft tot verwonding des hoofds van de overste onzer vijanden.",
       "textSV1888": "En geloofd zij de Here God, die de hemel en de aarde geschapen heeft, die u geleid heeft tot verwonding des hoofds van de overste onzer vijanden.",
-      "text2026": "En geloofd zij JAHWEH God, die de hemel en de aarde geschapen heeft, die u geleid heeft tot verwonding van het hoofd van de overste onzer vijanden.",
+      "text2026": "En geloofd zij JAHWEH God, die de hemel en de aarde geschapen heeft, die u geleid heeft tot verwonding van het hoofd van de overste van onze vijanden.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>En geloofd zij JAHWEH God, die de hemel en de aarde geschapen heeft, die u geleid heeft tot verwonding van het hoofd van de overste onzer vijanden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En geloofd zij JAHWEH God, die de hemel en de aarde geschapen heeft, die u geleid heeft tot verwonding van het hoofd van de overste van onze vijanden.</i></span>",
       "phraseDiff": [
         {
           "old": "de Here",
@@ -2910,6 +2917,11 @@
           "old": "des hoofds",
           "new": "van het hoofd",
           "principe": "N3"
+        },
+        {
+          "old": "onzer",
+          "new": "van onze",
+          "principe": "N7"
         }
       ],
       "grondtekst": null
