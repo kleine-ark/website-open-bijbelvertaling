@@ -1083,7 +1083,7 @@
       "number": 10,
       "textSV1888": "Zo zou hij, die ook een dapper man is, wiens hart is als een leeuwenhart, te enen male smelten; want gans Israël weet, dat uw vader een held is, en het dappere mannen zijn, die met hem zijn.",
       "text1637": "So soude hy, die oock een [16] dapper man is, wiens herte is als een leewen herte, [17] teenemael smelten: want gantsch Israël weet, dat uwe vader een helt is, ende het dappere mannen zijn, die met hem zijn.",
-      "text2026": "Zo zou hij, die ook een dapper man is, wiens hart is als een leeuwenhart, te enen reiszak smelten; want geheel Israël weet, dat uw vader een held is, en het dappere mannen zijn, die met hem zijn.",
+      "text2026": "Zo zou hij, die ook een dapper man is, wiens hart is als een leeuwenhart, te enen male smelten; want geheel Israël weet, dat uw vader een held is, en het dappere mannen zijn, die met hem zijn.",
       "marginNotes": [
         {
           "marker": "16",
@@ -1207,15 +1207,10 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo zou hij, die ook een<sup class=\"note-marker\" data-note=\"16\">16</sup> dapper man is, wiens hart is als een leeuwenhart, te<sup class=\"note-marker\" data-note=\"17\">17</sup> enen reiszak smelten; want geheel Israël weet, dat uw vader een held is, en het dappere mannen zijn, die met hem zijn.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo zou hij, die ook een<sup class=\"note-marker\" data-note=\"16\">16</sup> dapper man is, wiens hart is als een leeuwenhart, te<sup class=\"note-marker\" data-note=\"17\">17</sup> enen male smelten; want geheel Israël weet, dat uw vader een held is, en het dappere mannen zijn, die met hem zijn.</i></span>",
       "textSV1888_html": "Zo zou hij, die ook een<sup class=\"note-marker\" data-note=\"16\">16</sup> dapper man is, wiens hart is als een leeuwenhart, te<sup class=\"note-marker\" data-note=\"17\">17</sup> enen male smelten; want gans Israël weet, dat uw vader een held is, en het dappere mannen zijn, die met hem zijn.",
       "text1637_html": "So soude hy, die oock een <sup class=\"note-marker\" data-note=\"16\">16</sup> dapper man is, wiens herte is als een leewe<i>n</i> herte, <sup class=\"note-marker\" data-note=\"17\">17</sup> teenemael smelten: want gantsch Israël weet, dat uwe vader een helt is, ende het dappere mannen zijn, die met hem zijn.",
       "phraseDiff": [
-        {
-          "old": "male",
-          "new": "reiszak",
-          "principe": "V760"
-        },
         {
           "old": "gans",
           "new": "geheel",
@@ -1525,7 +1520,7 @@
       "number": 13,
       "textSV1888": "En indien hij zich in een stad zal begeven, zo zal gans Israël koorden tot dezelve stad aandragen, en wij zullen ze tot in de beek nedertrekken, totdat ook niet een steentje aldaar gevonden worde.",
       "text1637": "Ende indien hy sich in eene stadt sal begeven, so sal gantsch Israël koorden tot de selve stadt aendragen, ende wy sullense tot in de [22] beke nedertrecken, tot dat oock niet een steenken aldaer [23] gevonden en worde.",
-      "text2026": "En als hij zich in een stad zal begeven, zo zal geheel Israël koorden daartoe stad aandragen, en wij zullen ze tot in de beek nedertrekken, totdat ook niet één steentje daar gevonden worde.",
+      "text2026": "En als hij zich in een stad zal begeven, zo zal geheel Israël koorden tot die stad aandragen, en wij zullen ze tot in de beek neertrekken, totdat ook niet één steentje daar gevonden worde.",
       "marginNotes": [
         {
           "marker": "22",
@@ -1654,7 +1649,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En als hij zich in een stad zal begeven, zo zal geheel Israël koorden daartoe stad aandragen, en wij zullen ze tot in de<sup class=\"note-marker\" data-note=\"22\">22</sup> beek nedertrekken, totdat ook niet één steentje daar<sup class=\"note-marker\" data-note=\"23\">23</sup> gevonden worde.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En als hij zich in een stad zal begeven, zo zal geheel Israël koorden tot die stad aandragen, en wij zullen ze tot in de<sup class=\"note-marker\" data-note=\"22\">22</sup> beek neertrekken, totdat ook niet één steentje daar<sup class=\"note-marker\" data-note=\"23\">23</sup> gevonden worde.</i></span>",
       "textSV1888_html": "En indien hij zich in een stad zal begeven, zo zal gans Israël koorden tot dezelve stad aandragen, en wij zullen ze tot in de<sup class=\"note-marker\" data-note=\"22\">22</sup> beek nedertrekken, totdat ook niet een steentje aldaar<sup class=\"note-marker\" data-note=\"23\">23</sup> gevonden worde.",
       "text1637_html": "Ende indien hy sich in eene stadt sal begeven, so sal gantsch Israël koorden tot de selve stadt aendragen, en<i>de</i> wy sullense tot in de <sup class=\"note-marker\" data-note=\"22\">22</sup> beke nedertrecken, tot dat oock niet een steenken aldaer <sup class=\"note-marker\" data-note=\"23\">23</sup> gevonden en worde.",
       "phraseDiff": [
@@ -1669,9 +1664,14 @@
           "principe": "V414"
         },
         {
-          "old": "tot dezelve",
-          "new": "daartoe",
-          "principe": "O3"
+          "old": "dezelve",
+          "new": "die",
+          "principe": null
+        },
+        {
+          "old": "nedertrekken,",
+          "new": "neertrekken,",
+          "principe": "V354"
         },
         {
           "old": "een",

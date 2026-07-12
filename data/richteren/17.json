@@ -241,7 +241,7 @@
       "number": 3,
       "textSV1888": "Alzo gaf hij aan zijn moeder de duizend en honderd zilverlingen weder. Doch zijn moeder zeide: Ik heb dat geld den HEERE ganselijk geheiligd van mijn hand, voor mijn zoon, om een gesneden beeld en een gegoten beeld te maken; zo zal ik het u nu wedergeven.",
       "text1637": "Also gaf hy sijner moeder de duysent ende hondert silverlingen weder: doch sijne moeder seyde; Ick heb dat gelt [7] den HEERE gantschlick geheyligt van mijner hant, voor [8] mijnen sone, om een gesneden beelt [9] ende een gegoten beelt te maken; so sal ick het u nu wedergeven.",
-      "text2026": "Zo gaf hij aan zijn moeder de duizend en honderd zilverlingen weer. Maar zijn moeder zei: Ik heb dat geld JAHWEH geheel geheiligd van mijn hand, voor mijn zoon, om een gesneden beeld en een gegoten beeld te maken; zo zal ik het u nu wedergeven.",
+      "text2026": "Zo gaf hij aan zijn moeder de duizend en honderd zilverlingen weer. Maar zijn moeder zei: Ik heb dat geld JAHWEH geheel geheiligd van mijn hand, voor mijn zoon, om een gesneden beeld en een gegoten beeld te maken; zo zal ik het u nu teruggeven.",
       "marginNotes": [
         {
           "marker": "7",
@@ -372,7 +372,7 @@
           "morph": "HR/Sp2fs"
         }
       ],
-      "text2026_html": "Zo gaf hij aan zijn moeder de duizend en honderd zilverlingen weer. Maar zijn moeder zei: <span class=\"direct-speech\"><i>Ik heb dat geld JAHWEH geheel geheiligd van mijn hand, voor mijn zoon, om een gesneden beeld en een gegoten beeld te maken; zo zal ik het u nu wedergeven.</i></span>",
+      "text2026_html": "Zo gaf hij aan zijn moeder de duizend en honderd zilverlingen weer. Maar zijn moeder zei: <span class=\"direct-speech\"><i>Ik heb dat geld JAHWEH geheel geheiligd van mijn hand, voor mijn zoon, om een gesneden beeld en een gegoten beeld te maken; zo zal ik het u nu teruggeven.</i></span>",
       "textSV1888_html": "Alzo gaf hij aan zijn moeder de duizend en honderd zilverlingen weder. Doch zijn moeder zeide: Ik heb dat geld<sup class=\"note-marker\" data-note=\"7\">7</sup> den HEERE ganselijk geheiligd van mijn hand, voor<sup class=\"note-marker\" data-note=\"8\">8</sup> mijn zoon, om een gesneden beeld<sup class=\"note-marker\" data-note=\"9\">9</sup> en een gegoten beeld te maken; zo zal ik het u nu wedergeven.",
       "text1637_html": "Also gaf hy sijner moeder de duysent ende hondert silverlingen weder: doch sijne moeder seyde; Ick heb dat gelt <sup class=\"note-marker\" data-note=\"7\">7</sup> den HEERE gantschlick geheyligt van mijner hant, voor <sup class=\"note-marker\" data-note=\"8\">8</sup> mijnen sone, om een gesneden beelt <sup class=\"note-marker\" data-note=\"9\">9</sup> ende een gegoten beelt te maken; so sal ick het u nu wedergeven.",
       "phraseDiff": [
@@ -395,6 +395,11 @@
           "old": "den HEERE ganselijk",
           "new": "JAHWEH geheel",
           "principe": "N1"
+        },
+        {
+          "old": "wedergeven.",
+          "new": "teruggeven.",
+          "principe": "W2"
         }
       ]
     },
@@ -654,7 +659,7 @@
       "number": 6,
       "textSV1888": "In diezelve dagen was er geen koning in Israël; een iegelijk deed, wat recht was in zijn ogen.",
       "text1637": "[a] In die selve dagen en wasser geen [16] Koninck in Israël: een yegelick dede, wat recht was in sijne oogen.",
-      "text2026": "In diezelve dagen was er geen koning in Israël; ieder deed, wat recht was in zijn ogen.",
+      "text2026": "In die dagen was er geen koning in Israël; ieder deed, wat recht was in zijn ogen.",
       "marginNotes": [
         {
           "marker": "a",
@@ -718,10 +723,15 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> In diezelve dagen was er geen<sup class=\"note-marker\" data-note=\"16\">16</sup> koning in Israël; ieder deed, wat recht was in zijn ogen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> In die dagen was er geen<sup class=\"note-marker\" data-note=\"16\">16</sup> koning in Israël; ieder deed, wat recht was in zijn ogen.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> In diezelve dagen was er geen<sup class=\"note-marker\" data-note=\"16\">16</sup> koning in Israël; een iegelijk deed, wat recht was in zijn ogen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> In die selve dagen en wasser geen <sup class=\"note-marker\" data-note=\"16\">16</sup> Koninck in Israël: een yegelick dede, wat recht was in sijne oogen.",
       "phraseDiff": [
+        {
+          "old": "diezelve",
+          "new": "die",
+          "principe": "O3"
+        },
         {
           "old": "een iegelijk",
           "new": "ieder",
