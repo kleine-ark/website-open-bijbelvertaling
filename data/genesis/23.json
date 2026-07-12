@@ -584,7 +584,7 @@
       "number": 6,
       "textSV1888": "Hoor ons, mijn heer! gij zijt een vorst Gods in het midden van ons; begraaf uw dode in de keure onzer graven; niemand van ons zal zijn graf voor u weren, dat gij uw dode niet zoudt begraven.",
       "text1637": "Hoort ons, mijn heere; Ghy zijt [8] een Vorst Godts in 't midden van ons; begraeft uwen dooden inde [9] keure onser graven; niemant van ons sal sijn graf voor u weeren, dat ghy uwen dooden niet en soudt begraven.",
-      "text2026": "Hoor ons, mijn heer! u bent een vorst Gods in het midden van ons; begraaf uw dode in de keure onzer graven; niemand van ons zal zijn graf voor u weren, dat u uw dode niet zou begraven.",
+      "text2026": "Hoor ons, mijn heer! u bent een vorst Gods in het midden van ons; begraaf uw dode in de keur van onze graven; niemand van ons zal zijn graf voor u weren, dat u uw dode niet zou begraven.",
       "marginNotes": [
         {
           "marker": "8",
@@ -743,7 +743,7 @@
           "morph": "HVqrmsc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Hoor ons, mijn heer! u bent<sup class=\"note-marker\" data-note=\"8\">8</sup> een vorst Gods in het midden van ons; begraaf uw dode in<sup class=\"note-marker\" data-note=\"9\">9</sup> de keure onzer graven; niemand van ons zal zijn graf voor u weren, dat u uw dode niet zou begraven.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Hoor ons, mijn heer! u bent<sup class=\"note-marker\" data-note=\"8\">8</sup> een vorst Gods in het midden van ons; begraaf uw dode in<sup class=\"note-marker\" data-note=\"9\">9</sup> de keur van onze graven; niemand van ons zal zijn graf voor u weren, dat u uw dode niet zou begraven.</i></span>",
       "textSV1888_html": "Hoor ons, mijn heer! gij zijt<sup class=\"note-marker\" data-note=\"8\">8</sup> een vorst Gods in het midden van ons; begraaf uw dode in<sup class=\"note-marker\" data-note=\"9\">9</sup> de keure onzer graven; niemand van ons zal zijn graf voor u weren, dat gij uw dode niet zoudt begraven.",
       "text1637_html": "Hoort ons, mijn heere; Ghy zijt <sup class=\"note-marker\" data-note=\"8\">8</sup> een Vorst Godts in 't midde<i>n</i> van ons; begraeft uwen dooden inde <sup class=\"note-marker\" data-note=\"9\">9</sup> keure onser graven; niemant van ons sal sijn graf voor u weeren, dat ghy uwen dooden niet en soudt begraven.",
       "phraseDiff": [
@@ -751,6 +751,11 @@
           "old": "gij zijt",
           "new": "u bent",
           "principe": "A1"
+        },
+        {
+          "old": "keure onzer",
+          "new": "keur van onze",
+          "principe": null
         },
         {
           "old": "gij",

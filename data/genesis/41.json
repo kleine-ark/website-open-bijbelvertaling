@@ -4133,7 +4133,7 @@
       "number": 38,
       "textSV1888": "Zo zeide Farao tot zijn knechten: Zouden wij wel een man vinden als dezen, in welken Gods Geest is?",
       "text1637": "[e] So seyde Pharao tot sijne knechten: Souden wy wel eenen man vinden als desen, inden welcken [49] Godts geest zy?",
-      "text2026": "Zo zei Farao tot zijn knechten: Zouden wij wel een man vinden als deze, in welke Gods Geest is?",
+      "text2026": "Zo zei Farao tot zijn knechten: Zouden wij wel een man vinden als deze, in wie Gods Geest is?",
       "marginNotes": [
         {
           "marker": "e",
@@ -4213,7 +4213,7 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "Zo zei Farao tot zijn knechten: <span class=\"direct-speech\"><i>Zouden wij wel een man vinden als deze, in welke Gods Geest is?</i></span>",
+      "text2026_html": "Zo zei Farao tot zijn knechten: <span class=\"direct-speech\"><i>Zouden wij wel een man vinden als deze, in wie Gods Geest is?</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Zo zeide Farao tot zijn knechten: Zouden wij wel een man vinden als dezen, in welken<sup class=\"note-marker\" data-note=\"49\">49</sup> Gods Geest is?",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> So seyde Pharao tot sijne knechten: Souden wy wel eenen man vinden als desen, inden welcke<i>n</i> <sup class=\"note-marker\" data-note=\"49\">49</sup> Godts geest zy?",
       "phraseDiff": [
@@ -4229,8 +4229,8 @@
         },
         {
           "old": "welken",
-          "new": "welke",
-          "principe": "N6"
+          "new": "wie",
+          "principe": null
         }
       ]
     },
@@ -6395,7 +6395,7 @@
       "number": 55,
       "textSV1888": "Als nu gans Egypteland hongerde, riep het volk tot Farao om brood; en Farao zeide tot alle Egyptenaren: Gaat tot Jozef, doet wat hij u zegt.",
       "text1637": "Als nu gantsch Egyptenlant [78] hongerde, riep het volck tot Pharao om broot: ende Pharao seyde tot alle Egyptenaren; Gaet tot Ioseph, doet wat hy u seyt.",
-      "text2026": "Als nu geheel Egypteland hongerde, riep het volk tot Farao om brood; en Farao zei tot alle Egyptenaren: Gaat tot Jozef, doet wat hij u zegt.",
+      "text2026": "Als nu geheel Egypteland hongerde, riep het volk tot Farao om brood; en Farao zei tot alle Egyptenaren: Ga tot Jozef, doe wat hij u zegt.",
       "marginNotes": [
         {
           "marker": "78",
@@ -6513,7 +6513,7 @@
           "morph": "HVqi2mp"
         }
       ],
-      "text2026_html": "Als nu geheel Egypteland hongerde, riep het volk tot Farao om brood; en Farao zei tot alle Egyptenaren: <span class=\"direct-speech\"><i>Gaat tot Jozef, doet wat hij u zegt.</i></span>",
+      "text2026_html": "Als nu geheel Egypteland hongerde, riep het volk tot Farao om brood; en Farao zei tot alle Egyptenaren: <span class=\"direct-speech\"><i>Ga tot Jozef, doe wat hij u zegt.</i></span>",
       "textSV1888_html": "Als nu gans Egypteland<sup class=\"note-marker\" data-note=\"78\">78</sup> hongerde, riep het volk tot Farao om brood; en Farao zeide tot alle Egyptenaren: Gaat tot Jozef, doet wat hij u zegt.",
       "text1637_html": "Als nu gantsch Egyptenlant <sup class=\"note-marker\" data-note=\"78\">78</sup> hongerde, riep het volck tot Pharao om broot: ende Pharao seyde tot alle Egyptenaren; Gaet tot Ioseph, doet wat hy u seyt.",
       "phraseDiff": [
@@ -6526,6 +6526,16 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Gaat",
+          "new": "Ga",
+          "principe": null
+        },
+        {
+          "old": "doet",
+          "new": "doe",
+          "principe": null
         }
       ]
     },

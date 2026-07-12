@@ -130,7 +130,7 @@
       "number": 2,
       "textSV1888": "Komt samen en hoort, gij, zonen van Jakob! en hoort naar Israël, uw vader.",
       "text1637": "Komet te samen, ende hooret, ghy sonen Iacobs: ende hooret nae Israël, uwen vader.",
-      "text2026": "Komt samen en hoort, u, zonen van Jakob! en hoort naar Israël, uw vader.",
+      "text2026": "Kom samen en hoor, u, zonen van Jakob! en hoor naar Israël, uw vader.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -174,13 +174,23 @@
           "morph": "HNcmsc/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Komt samen en hoort, u, zonen van Jakob! en hoort naar Israël, uw vader.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Kom samen en hoor, u, zonen van Jakob! en hoor naar Israël, uw vader.</i></span>",
       "text1637_html": "Komet te samen, ende hooret, ghy sonen Iacobs: ende hooret nae Israël, uwen vader.",
       "phraseDiff": [
         {
-          "old": "gij,",
-          "new": "u,",
-          "principe": "A1"
+          "old": "Komt",
+          "new": "Kom",
+          "principe": null
+        },
+        {
+          "old": "hoort, gij,",
+          "new": "hoor, u,",
+          "principe": null
+        },
+        {
+          "old": "hoort",
+          "new": "hoor",
+          "principe": null
         }
       ]
     },
@@ -976,7 +986,7 @@
       "number": 8,
       "textSV1888": "Juda! gij zijt het, u zullen uw broeders loven; uw hand zal zijn op den nek uwer vijanden; voor u zullen zich uws vaders zonen nederbuigen.",
       "text1637": "Iuda, ghy zijt het, u sullen uwe broeders loven, [16] uwe hant sal zijn op den necke uwer vyanden: voor [17] u sullen haer uwes vaders sonen nederbuygen.",
-      "text2026": "Juda! u bent het, u zullen uw broers loven; uw hand zal zijn op de nek van uw vijanden; voor u zullen zich van uw vader zonen nederbuigen.",
+      "text2026": "Juda! u bent het, u zullen uw broers loven; uw hand zal zijn op de nek van uw vijanden; voor u zullen zich de zonen van uw vader neerbuigen.",
       "marginNotes": [
         {
           "marker": "16",
@@ -1070,7 +1080,7 @@
           "morph": "HNcmsc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Juda! u bent het, u zullen uw broers loven;<sup class=\"note-marker\" data-note=\"16\">16</sup> uw hand zal zijn op de nek van uw vijanden; voor<sup class=\"note-marker\" data-note=\"17\">17</sup> u zullen zich van uw vader zonen nederbuigen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Juda! u bent het, u zullen uw broers loven;<sup class=\"note-marker\" data-note=\"16\">16</sup> uw hand zal zijn op de nek van uw vijanden; voor<sup class=\"note-marker\" data-note=\"17\">17</sup> u zullen zich de zonen van uw vader neerbuigen.</i></span>",
       "textSV1888_html": "Juda! gij zijt het, u zullen uw broeders loven;<sup class=\"note-marker\" data-note=\"16\">16</sup> uw hand zal zijn op den nek uwer vijanden; voor<sup class=\"note-marker\" data-note=\"17\">17</sup> u zullen zich uws vaders zonen nederbuigen.",
       "text1637_html": "Iuda, ghy zijt het, u sullen uwe broeders loven, <sup class=\"note-marker\" data-note=\"16\">16</sup> uwe hant sal zijn op den necke uwer vyanden: voor <sup class=\"note-marker\" data-note=\"17\">17</sup> u sullen haer uwes vaders sonen nederbuygen.",
       "phraseDiff": [
@@ -1096,8 +1106,13 @@
         },
         {
           "old": "uws vaders",
-          "new": "van uw vader",
-          "principe": "V200"
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "nederbuigen.",
+          "new": "van uw vader neerbuigen.",
+          "principe": null
         }
       ]
     },
@@ -1571,7 +1586,7 @@
       "number": 11,
       "textSV1888": "Hij bindt zijn jongen ezel aan den wijnstok, en het veulen zijner ezelin aan den edelsten wijnstok; hij wast zijn kleed in den wijn, en zijn mantel in wijndruivenbloed.",
       "text1637": "Hy [26] bindt sijnen jongen esel aen den wijnstock, ende 't veulen sijner eselinne aen den edelsten wijnstock: hy wascht sijn kleet in den wijn, ende sijnen [27] mantel in wijndruyven [28] bloet.",
-      "text2026": "Hij bindt zijn jonge ezel aan de wijnstok, en het veulen van zijn ezelin aan de edelsten wijnstok; hij wast zijn kleed in de wijn, en zijn mantel in wijndruivenbloed.",
+      "text2026": "Hij bindt zijn jonge ezel aan de wijnstok, en het veulen van zijn ezelin aan de edelste wijnstok; hij wast zijn kleed in de wijn, en zijn mantel in wijndruivenbloed.",
       "marginNotes": [
         {
           "marker": "26",
@@ -1689,7 +1704,7 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Hij<sup class=\"note-marker\" data-note=\"26\">26</sup> bindt zijn jonge ezel aan de wijnstok, en het veulen van zijn ezelin aan de edelsten wijnstok; hij wast zijn kleed in de wijn, en zijn<sup class=\"note-marker\" data-note=\"27\">27</sup> mantel in wijndruivenbloed.<sup class=\"note-marker\" data-note=\"28\">28</sup></i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Hij<sup class=\"note-marker\" data-note=\"26\">26</sup> bindt zijn jonge ezel aan de wijnstok, en het veulen van zijn ezelin aan de edelste wijnstok; hij wast zijn kleed in de wijn, en zijn<sup class=\"note-marker\" data-note=\"27\">27</sup> mantel in wijndruivenbloed.<sup class=\"note-marker\" data-note=\"28\">28</sup></i></span>",
       "textSV1888_html": "Hij<sup class=\"note-marker\" data-note=\"26\">26</sup> bindt zijn jongen ezel aan den wijnstok, en het veulen zijner ezelin aan den edelsten wijnstok; hij wast zijn kleed in den wijn, en zijn<sup class=\"note-marker\" data-note=\"27\">27</sup> mantel in wijndruivenbloed.<sup class=\"note-marker\" data-note=\"28\">28</sup>",
       "text1637_html": "Hy <sup class=\"note-marker\" data-note=\"26\">26</sup> bindt sijnen jongen esel aen den wijnstock, ende 't veulen sijner eselinne aen den edelsten wijnstock: hy wascht sijn kleet in den wijn, ende sijnen <sup class=\"note-marker\" data-note=\"27\">27</sup> mantel in wijndruyven <sup class=\"note-marker\" data-note=\"28\">28</sup> bloet.",
       "phraseDiff": [
@@ -1709,9 +1724,9 @@
           "principe": "N7"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den edelsten",
+          "new": "de edelste",
+          "principe": null
         },
         {
           "old": "den",
@@ -1914,7 +1929,7 @@
       "number": 14,
       "textSV1888": "Issaschar is een sterk gebeende ezel, nederliggende tussen twee pakken.",
       "text1637": "[33] Issaschar is [34] een sterck gebeent Esel, neder liggende tusschen twee packen.",
-      "text2026": "Issaschar is een sterk gebeende ezel, nederliggende tussen twee pakken.",
+      "text2026": "Issaschar is een sterk gebeende ezel, neerliggende tussen twee pakken.",
       "marginNotes": [
         {
           "marker": "33",
@@ -1983,9 +1998,16 @@
           "morph": "HTd/Ncmda"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup><span class=\"direct-speech\"><i> Issaschar is<sup class=\"note-marker\" data-note=\"34\">34</sup> een sterk gebeende ezel, nederliggende tussen twee pakken.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup><span class=\"direct-speech\"><i> Issaschar is<sup class=\"note-marker\" data-note=\"34\">34</sup> een sterk gebeende ezel, neerliggende tussen twee pakken.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> Issaschar is<sup class=\"note-marker\" data-note=\"34\">34</sup> een sterk gebeende ezel, nederliggende tussen twee pakken.",
-      "text1637_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> Issaschar is <sup class=\"note-marker\" data-note=\"34\">34</sup> een sterck gebeent Esel, neder liggende tusschen twee packen."
+      "text1637_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> Issaschar is <sup class=\"note-marker\" data-note=\"34\">34</sup> een sterck gebeent Esel, neder liggende tusschen twee packen.",
+      "phraseDiff": [
+        {
+          "old": "nederliggende",
+          "new": "neerliggende",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 15,

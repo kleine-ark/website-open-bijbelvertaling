@@ -795,7 +795,7 @@
       "number": 8,
       "textSV1888": "Zie, het geld, dat wij in den mond onzer zakken vonden, hebben wij tot u uit het land Kanaän wedergebracht; hoe zouden wij dan uit het huis uws heren zilver of goud stelen?",
       "text1637": "Siet het gelt, dat wy inden mont onser sacken vonden, hebben wy tot u uyt den lande Canaan weder gebracht: hoe souden wy dan uyt uwes heeren huys silver ofte gout stelen?",
-      "text2026": "Zie, het geld, dat wij in de mond onzer zakken vonden, hebben wij tot u uit het land Kanaän teruggebracht; hoe zouden wij dan uit het huis van uw heren zilver of goud stelen?",
+      "text2026": "Zie, het geld, dat wij in de mond van onze zakken vonden, hebben wij tot u uit het land Kanaän teruggebracht; hoe zouden wij dan uit het huis van uw heer zilver of goud stelen?",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -884,7 +884,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zie, het geld, dat wij in de mond onzer zakken vonden, hebben wij tot u uit het land Kanaän teruggebracht; hoe zouden wij dan uit het huis van uw heren zilver of goud stelen?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zie, het geld, dat wij in de mond van onze zakken vonden, hebben wij tot u uit het land Kanaän teruggebracht; hoe zouden wij dan uit het huis van uw heer zilver of goud stelen?</i></span>",
       "text1637_html": "Siet het gelt, dat wy inden mont onser sacken vonden, hebben wy tot u uyt den lande Canaan weder gebracht: hoe souden wy dan uyt uwes heeren huys silver ofte gout stelen?",
       "phraseDiff": [
         {
@@ -893,14 +893,19 @@
           "principe": "N1"
         },
         {
+          "old": "onzer",
+          "new": "van onze",
+          "principe": null
+        },
+        {
           "old": "wedergebracht;",
           "new": "teruggebracht;",
           "principe": "V749"
         },
         {
-          "old": "uws",
-          "new": "van uw",
-          "principe": "V200"
+          "old": "uws heren",
+          "new": "van uw heer",
+          "principe": null
         }
       ]
     },
@@ -2508,7 +2513,7 @@
       "number": 21,
       "textSV1888": "Toen zeidet gij tot uw knechten: Brengt hem af tot mij, dat ik mijn oog op hem sla.",
       "text1637": "Doe seydet ghy tot uwe knechten, [a] Brenget hem af tot my: dat ick mijn ooge op hem [27] slae:",
-      "text2026": "Toen zei u tot uw knechten: Brengt hem af tot mij, dat ik mijn oog op hem sla.",
+      "text2026": "Toen zei u tot uw knechten: Breng hem af tot mij, dat ik mijn oog op hem sla.",
       "marginNotes": [
         {
           "marker": "a",
@@ -2589,13 +2594,18 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Toen zei u tot uw knechten:<sup class=\"note-marker\" data-note=\"a\">a</sup> Brengt hem af tot mij, dat ik mijn oog op hem<sup class=\"note-marker\" data-note=\"27\">27</sup> sla.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Toen zei u tot uw knechten:<sup class=\"note-marker\" data-note=\"a\">a</sup> Breng hem af tot mij, dat ik mijn oog op hem<sup class=\"note-marker\" data-note=\"27\">27</sup> sla.</i></span>",
       "textSV1888_html": "Toen zeidet gij tot uw knechten:<sup class=\"note-marker\" data-note=\"a\">a</sup> Brengt hem af tot mij, dat ik mijn oog op hem<sup class=\"note-marker\" data-note=\"27\">27</sup> sla.",
       "text1637_html": "Doe seydet ghy tot uwe knechten, <sup class=\"note-marker\" data-note=\"a\">a</sup> Brenget hem af tot my: dat ick mijn ooge op hem <sup class=\"note-marker\" data-note=\"27\">27</sup> slae:",
       "phraseDiff": [
         {
           "old": "zeidet gij",
           "new": "zei u",
+          "principe": null
+        },
+        {
+          "old": "Brengt",
+          "new": "Breng",
           "principe": null
         }
       ]
@@ -2918,7 +2928,7 @@
       "number": 25,
       "textSV1888": "En dat onze vader gezegd heeft: Keert weder, koopt ons een weinig spijze;",
       "text1637": "Ende dat onse vader geseyt heeft; Keert weder, koopet ons een weynich spijse:",
-      "text2026": "En dat onze vader gezegd heeft: Keert weer, koopt ons een weinig voedsel;",
+      "text2026": "En dat onze vader gezegd heeft: Keer weer, koop ons een weinig voedsel;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2957,13 +2967,13 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En dat onze vader gezegd heeft: Keert weer, koopt ons een weinig voedsel;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En dat onze vader gezegd heeft: Keer weer, koop ons een weinig voedsel;</i></span>",
       "text1637_html": "Ende dat onse vader geseyt heeft; Keert weder, koopet ons een weynich spijse:",
       "phraseDiff": [
         {
-          "old": "weder,",
-          "new": "weer,",
-          "principe": "V66"
+          "old": "Keert weder, koopt",
+          "new": "Keer weer, koop",
+          "principe": null
         },
         {
           "old": "spijze;",
@@ -3314,7 +3324,7 @@
       "number": 29,
       "textSV1888": "Indien gij nu dezen ook van mijn aangezicht wegneemt, en hem een verderf ontmoette, zo zoudt gij mijn grauwe haren met jammer ten grave doen nederdalen!",
       "text1637": "Indien ghy nu desen oock van mijn aengesichte wech nemet, ende hem een verderf ontmoetede: [d] so soudt ghy mijne grauwe hayren met jammer [34] ten grave doen nederdalen.",
-      "text2026": "Als u nu deze ook van mijn aangezicht wegneemt, en hem een verderf ontmoette, zo zou u mijn grauwe haar met jammer naar het graf doen nederdalen!",
+      "text2026": "Als u nu deze ook van mijn aangezicht wegneemt, en hem een verderf ontmoette, zo zou u mijn grauwe haren met jammer naar het graf doen neerdalen!",
       "marginNotes": [
         {
           "marker": "d",
@@ -3438,7 +3448,7 @@
           "morph": "HNp/Sd"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Als u nu deze ook van mijn aangezicht wegneemt, en hem een verderf ontmoette,<sup class=\"note-marker\" data-note=\"d\">d</sup> zo zou u mijn grauwe haar met jammer<sup class=\"note-marker\" data-note=\"34\">34</sup> naar het graf doen nederdalen!</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Als u nu deze ook van mijn aangezicht wegneemt, en hem een verderf ontmoette,<sup class=\"note-marker\" data-note=\"d\">d</sup> zo zou u mijn grauwe haren met jammer<sup class=\"note-marker\" data-note=\"34\">34</sup> naar het graf doen neerdalen!</i></span>",
       "textSV1888_html": "Indien gij nu dezen ook van mijn aangezicht wegneemt, en hem een verderf ontmoette,<sup class=\"note-marker\" data-note=\"d\">d</sup> zo zoudt gij mijn grauwe haren met jammer<sup class=\"note-marker\" data-note=\"34\">34</sup> ten grave doen nederdalen!",
       "text1637_html": "Indien ghy nu desen oock van mijn aengesichte wech nemet, ende hem een verderf ontmoetede: <sup class=\"note-marker\" data-note=\"d\">d</sup> so soudt ghy mijne grauwe hayren met jammer <sup class=\"note-marker\" data-note=\"34\">34</sup> ten grave doen nederdalen.",
       "phraseDiff": [
@@ -3458,13 +3468,13 @@
           "principe": "A1"
         },
         {
-          "old": "haren",
-          "new": "haar",
+          "old": "ten grave",
+          "new": "naar het graf",
           "principe": null
         },
         {
-          "old": "ten grave",
-          "new": "naar het graf",
+          "old": "nederdalen!",
+          "new": "neerdalen!",
           "principe": null
         }
       ]
@@ -3560,7 +3570,7 @@
       "number": 31,
       "textSV1888": "Zo zal het geschieden, als hij ziet, dat de jongeling er niet is, dat hij sterven zal; en uw knechten zullen de grauwe haren van uw knecht, onzen vader, met droefenis ten grave doen nederdalen.",
       "text1637": "So sal het geschieden, als hy siet, dat de jongelinck daer niet en is, dat hy sterven sal: ende uwe knechten sullen de grauwe hayren uwes knechts, onses vaders, met droeffenisse ten grave doen nederdalen.",
-      "text2026": "Zo zal het gebeuren, als hij ziet, dat de jongeling er niet is, dat hij sterven zal; en uw knechten zullen de grauwe haar van uw knecht, onze vader, met droefenis naar het graf doen nederdalen.",
+      "text2026": "Zo zal het gebeuren, als hij ziet, dat de jongeling er niet is, dat hij sterven zal; en uw knechten zullen de grauwe haren van uw knecht, onze vader, met droefenis naar het graf doen neerdalen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3634,18 +3644,13 @@
           "morph": "HNp/Sd"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo zal het gebeuren, als hij ziet, dat de jongeling er niet is, dat hij sterven zal; en uw knechten zullen de grauwe haar van uw knecht, onze vader, met droefenis naar het graf doen nederdalen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo zal het gebeuren, als hij ziet, dat de jongeling er niet is, dat hij sterven zal; en uw knechten zullen de grauwe haren van uw knecht, onze vader, met droefenis naar het graf doen neerdalen.</i></span>",
       "text1637_html": "So sal het geschieden, als hy siet, dat de jongelinck daer niet en is, dat hy sterven sal: ende uwe knechten sullen de grauwe hayren uwes knechts, onses vaders, met droeffenisse ten grave doen nederdalen.",
       "phraseDiff": [
         {
           "old": "geschieden,",
           "new": "gebeuren,",
           "principe": "V40"
-        },
-        {
-          "old": "haren",
-          "new": "haar",
-          "principe": null
         },
         {
           "old": "onzen",
@@ -3655,6 +3660,11 @@
         {
           "old": "ten grave",
           "new": "naar het graf",
+          "principe": null
+        },
+        {
+          "old": "nederdalen.",
+          "new": "neerdalen.",
           "principe": null
         }
       ]

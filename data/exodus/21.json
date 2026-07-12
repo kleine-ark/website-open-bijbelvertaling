@@ -3135,7 +3135,7 @@
       "number": 34,
       "textSV1888": "De heer des kuils zal het vergelden; hij zal aan deszelfs heer het geld wederkeren; doch dat dode zal zijns wezen.",
       "text1637": "De heere des kuyls salt vergelden, hy sal den heere des selven [60] ’t gelt wederkeeren: doch dat doode sal [61] sijne wesen.",
-      "text2026": "De heer van de kuils zal het vergelden; hij zal aan daarvan heer het geld terugkeren; maar dat dode zal van zijn wezen.",
+      "text2026": "De heer van de kuil zal het vergelden; hij zal aan de heer daarvan het geld terugkeren; maar het dode zal van hem wezen.",
       "marginNotes": [
         {
           "marker": "60",
@@ -3199,29 +3199,34 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>De heer van de kuils zal het vergelden; hij zal aan daarvan heer<sup class=\"note-marker\" data-note=\"60\">60</sup> het geld terugkeren; maar dat dode zal<sup class=\"note-marker\" data-note=\"61\">61</sup> van zijn wezen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>De heer van de kuil zal het vergelden; hij zal aan de heer daarvan<sup class=\"note-marker\" data-note=\"60\">60</sup> het geld terugkeren; maar het dode zal<sup class=\"note-marker\" data-note=\"61\">61</sup> van hem wezen.</i></span>",
       "textSV1888_html": "De heer des kuils zal het vergelden; hij zal aan deszelfs heer<sup class=\"note-marker\" data-note=\"60\">60</sup> het geld wederkeren; doch dat dode zal<sup class=\"note-marker\" data-note=\"61\">61</sup> zijns wezen.",
       "text1637_html": "De heere des kuyls salt vergelden, hy sal den heere des selven <sup class=\"note-marker\" data-note=\"60\">60</sup> ’t gelt wederkeeren: doch dat doode sal <sup class=\"note-marker\" data-note=\"61\">61</sup> sijne wesen.",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des kuils",
+          "new": "van de kuil",
+          "principe": null
         },
         {
           "old": "deszelfs",
-          "new": "daarvan",
-          "principe": "V110"
+          "new": "de",
+          "principe": null
         },
         {
-          "old": "wederkeren; doch",
-          "new": "terugkeren; maar",
-          "principe": "V1"
+          "old": "",
+          "new": "daarvan",
+          "principe": null
+        },
+        {
+          "old": "wederkeren; doch dat",
+          "new": "terugkeren; maar het",
+          "principe": null
         },
         {
           "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
+          "new": "van hem",
+          "principe": null
         }
       ]
     },
@@ -3352,7 +3357,7 @@
       "number": 36,
       "textSV1888": "Of is het kennelijk geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij in alle manier os voor os vergelden; doch de dode zal zijns wezen.",
       "text1637": "Ofte ist kennelick geweest, dat dien osse van te vooren stootich was, ende sijn heere en heeft hem niet bewaert: so sal hy [62] in aller maniere osse voor osse vergelden, doch de doode sal [63] sijne wesen.",
-      "text2026": "Of is het kennelijk geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij in alle manier os voor os vergelden; maar de dode zal van zijn wezen.",
+      "text2026": "Of is het kennelijk geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij in alle manier os voor os vergelden; maar de dode zal van hem wezen.",
       "marginNotes": [
         {
           "marker": "62",
@@ -3466,7 +3471,7 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Of is het kennelijk geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij<sup class=\"note-marker\" data-note=\"62\">62</sup> in alle manier os voor os vergelden; maar de dode zal<sup class=\"note-marker\" data-note=\"63\">63</sup> van zijn wezen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Of is het kennelijk geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij<sup class=\"note-marker\" data-note=\"62\">62</sup> in alle manier os voor os vergelden; maar de dode zal<sup class=\"note-marker\" data-note=\"63\">63</sup> van hem wezen.</i></span>",
       "textSV1888_html": "Of is het kennelijk geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij<sup class=\"note-marker\" data-note=\"62\">62</sup> in alle manier os voor os vergelden; doch de dode zal<sup class=\"note-marker\" data-note=\"63\">63</sup> zijns wezen.",
       "text1637_html": "Ofte ist kennelick geweest, dat dien osse van te vooren stootich was, ende sijn heere en heeft hem niet bewaert: so sal hy <sup class=\"note-marker\" data-note=\"62\">62</sup> in aller maniere osse voor osse vergelden, doch de doode sal <sup class=\"note-marker\" data-note=\"63\">63</sup> sijne wesen.",
       "phraseDiff": [
@@ -3477,8 +3482,8 @@
         },
         {
           "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
+          "new": "van hem",
+          "principe": null
         }
       ]
     }

@@ -533,7 +533,7 @@
       "number": 5,
       "textSV1888": "Nu dan, uw twee zonen, die u in Egypteland geboren waren, eer ik in Egypte tot u gekomen ben, zijn mijne; Efraïm en Manasse zullen mijne zijn, als Ruben en Simeon.",
       "text1637": "Nu dan, uwe twee sonen, [d] die u in Egyptenlant geboren waren, eer ick in Egypten tot u gekomen ben, [7] zijn mijne: [8] Ephraim ende Manasse sullen mijne zijn, als Ruben, ende Simeon.",
-      "text2026": "Nu dan, uw twee zonen, die u in Egypteland geboren waren, voordat ik in Egypte tot u gekomen ben, zijn mijne; Efraïm en Manasse zullen mijne zijn, als Ruben en Simeon.",
+      "text2026": "Nu dan, uw twee zonen, die u in Egypteland geboren waren, voordat ik in Egypte tot u gekomen ben, zijn van mij; Efraïm en Manasse zullen van mij zijn, als Ruben en Simeon.",
       "marginNotes": [
         {
           "marker": "d",
@@ -748,13 +748,23 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Nu dan, uw twee zonen,<sup class=\"note-marker\" data-note=\"d\">d</sup> die u in Egypteland geboren waren, voordat ik in Egypte tot u gekomen ben,<sup class=\"note-marker\" data-note=\"7\">7</sup> zijn mijne;<sup class=\"note-marker\" data-note=\"8\">8</sup> Efraïm en Manasse zullen mijne zijn, als Ruben en Simeon.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Nu dan, uw twee zonen,<sup class=\"note-marker\" data-note=\"d\">d</sup> die u in Egypteland geboren waren, voordat ik in Egypte tot u gekomen ben,<sup class=\"note-marker\" data-note=\"7\">7</sup> zijn van mij;<sup class=\"note-marker\" data-note=\"8\">8</sup> Efraïm en Manasse zullen van mij zijn, als Ruben en Simeon.</i></span>",
       "textSV1888_html": "Nu dan, uw twee zonen,<sup class=\"note-marker\" data-note=\"d\">d</sup> die u in Egypteland geboren waren, eer ik in Egypte tot u gekomen ben,<sup class=\"note-marker\" data-note=\"7\">7</sup> zijn mijne;<sup class=\"note-marker\" data-note=\"8\">8</sup> Efraïm en Manasse zullen mijne zijn, als Ruben en Simeon.",
       "text1637_html": "Nu dan, uwe twee sonen, <sup class=\"note-marker\" data-note=\"d\">d</sup> die u in Egyptenlant geboren waren, eer ick in Egypten tot u gekomen ben, <sup class=\"note-marker\" data-note=\"7\">7</sup> zijn mijne: <sup class=\"note-marker\" data-note=\"8\">8</sup> Ephraim ende Manasse sullen mijne zijn, als Ruben, ende Simeon.",
       "phraseDiff": [
         {
           "old": "eer",
           "new": "voordat",
+          "principe": null
+        },
+        {
+          "old": "mijne;",
+          "new": "van mij;",
+          "principe": null
+        },
+        {
+          "old": "mijne",
+          "new": "van mij",
           "principe": null
         }
       ]
@@ -763,7 +773,7 @@
       "number": 6,
       "textSV1888": "Maar uw geslacht, dat gij na hen zult gewinnen, zullen uwe zijn; zij zullen naar hunner broederen naam genoemd worden in hun erfdeel.",
       "text1637": "Maer [9] u geslachte, dat ghy na hen sult gewinnen, [10] sullen uwe zijn: [11] sy sullen nae harer broederen naem genoemt werden in haer erfdeel.",
-      "text2026": "Maar uw geslacht, dat u na hen zult winnen, zullen uwe zijn; zij zullen naar hun broers naam genoemd worden in hun erfdeel.",
+      "text2026": "Maar uw geslacht, dat u na hen zult winnen, zullen van u zijn; zij zullen naar de naam van hun broers genoemd worden in hun erfdeel.",
       "marginNotes": [
         {
           "marker": "9",
@@ -868,7 +878,7 @@
           "morph": "HR/Ncfsc/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar<sup class=\"note-marker\" data-note=\"9\">9</sup> uw geslacht, dat u na hen zult winnen,<sup class=\"note-marker\" data-note=\"10\">10</sup> zullen uwe zijn;<sup class=\"note-marker\" data-note=\"11\">11</sup> zij zullen naar hun broers naam genoemd worden in hun erfdeel.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar<sup class=\"note-marker\" data-note=\"9\">9</sup> uw geslacht, dat u na hen zult winnen,<sup class=\"note-marker\" data-note=\"10\">10</sup> zullen van u zijn;<sup class=\"note-marker\" data-note=\"11\">11</sup> zij zullen naar de naam van hun broers genoemd worden in hun erfdeel.</i></span>",
       "textSV1888_html": "Maar<sup class=\"note-marker\" data-note=\"9\">9</sup> uw geslacht, dat gij na hen zult gewinnen,<sup class=\"note-marker\" data-note=\"10\">10</sup> zullen uwe zijn;<sup class=\"note-marker\" data-note=\"11\">11</sup> zij zullen naar hunner broederen naam genoemd worden in hun erfdeel.",
       "text1637_html": "Maer <sup class=\"note-marker\" data-note=\"9\">9</sup> u geslachte, dat ghy na hen sult gewinnen, <sup class=\"note-marker\" data-note=\"10\">10</sup> sullen uwe zijn: <sup class=\"note-marker\" data-note=\"11\">11</sup> sy sullen nae harer broederen naem genoemt werden in haer erfdeel.",
       "phraseDiff": [
@@ -883,9 +893,19 @@
           "principe": "V624"
         },
         {
+          "old": "uwe",
+          "new": "van u",
+          "principe": null
+        },
+        {
           "old": "hunner broederen",
-          "new": "hun broers",
-          "principe": "N7"
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "van hun broers",
+          "principe": null
         }
       ]
     },

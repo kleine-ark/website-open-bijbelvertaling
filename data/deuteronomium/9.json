@@ -146,7 +146,7 @@
       "number": 2,
       "textSV1888": "Een groot en lang volk, kinderen der Enakieten; die gij kent, en van welke gij gehoord hebt: Wie zou bestaan voor het aangezicht der kinderen van Enak?",
       "text1637": "Een groot ende lanck volck, kinderen der [4] Enakim: die ghy kent, ende [van welcken] ghy [a] gehoort hebt: [5] Wie soude bestaen voor ’t aengesichte der kinderen Enaks?",
-      "text2026": "Een groot en lang volk, kinderen van de Enakieten; die u kent, en van welke u gehoord hebt: Wie zou bestaan voor het aangezicht van de kinderen van Enak?",
+      "text2026": "Een groot en lang volk, kinderen van de Enakieten; die u kent, en waarvan u gehoord hebt: Wie zou bestaan voor het aangezicht van de kinderen van Enak?",
       "marginNotes": [
         {
           "marker": "4",
@@ -247,7 +247,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Een groot en lang volk, kinderen van<sup class=\"note-marker\" data-note=\"4\">4</sup> de Enakieten; die u kent, en van<sup class=\"note-marker\" data-note=\"a\">a</sup> welke u gehoord hebt:<sup class=\"note-marker\" data-note=\"5\">5</sup> Wie zou bestaan voor het aangezicht van de kinderen van Enak?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Een groot en lang volk, kinderen van<sup class=\"note-marker\" data-note=\"4\">4</sup> de Enakieten; die u kent, en waarvan<sup class=\"note-marker\" data-note=\"a\">a</sup> u gehoord hebt:<sup class=\"note-marker\" data-note=\"5\">5</sup> Wie zou bestaan voor het aangezicht van de kinderen van Enak?</i></span>",
       "textSV1888_html": "Een groot en lang volk, kinderen der<sup class=\"note-marker\" data-note=\"4\">4</sup> Enakieten; die gij kent, en van<sup class=\"note-marker\" data-note=\"a\">a</sup> welke gij gehoord hebt:<sup class=\"note-marker\" data-note=\"5\">5</sup> Wie zou bestaan voor het aangezicht der kinderen van Enak?",
       "text1637_html": "Een groot ende lanck volck, kinderen der <sup class=\"note-marker\" data-note=\"4\">4</sup> Enakim: die ghy kent, ende [van welcken] ghy <sup class=\"note-marker\" data-note=\"a\">a</sup> gehoort hebt: <sup class=\"note-marker\" data-note=\"5\">5</sup> Wie soude bestaen voor ’t aengesichte der kinderen Enaks?",
       "phraseDiff": [
@@ -262,9 +262,9 @@
           "principe": "A1"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "van welke gij",
+          "new": "waarvan u",
+          "principe": null
         },
         {
           "old": "der",
@@ -3345,7 +3345,7 @@
       "number": 26,
       "textSV1888": "En ik bad tot den HEERE, en zeide: Heere, HEERE, verderf Uw volk en Uw erfdeel niet, dat Gij door Uw grootheid verlost hebt; dat Gij uit Egypte door een sterke hand hebt uitgevoerd.",
       "text1637": "Ende ick badt tot den HEERE, ende seyde, [p] Heere, HEERE, en verderft u volck ende u erfdeel niet, dat ghy door uwe [30] grootheyt verlost hebt: dat ghy uyt Egypten door eene stercke hant hebt uytgevoert.",
-      "text2026": "En ik bad tot JAHWEH, en zei: Heer, JAHWEH, verderf Uw volk en Uw erfdeel niet, dat U door Uw grootheid verlost hebt; dat U uit Egypte door een sterke hand hebt uitgevoerd.",
+      "text2026": "En ik bad tot JAHWEH, en zei: Heere, JAHWEH, verderf Uw volk en Uw erfdeel niet, dat U door Uw grootheid verlost hebt; dat U uit Egypte door een sterke hand hebt uitgevoerd.",
       "marginNotes": [
         {
           "marker": "p",
@@ -3454,7 +3454,7 @@
           "morph": "HAafsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En ik bad tot JAHWEH, en zei: Heer, JAHWEH, verderf Uw volk en Uw erfdeel niet, dat U door Uw grootheid verlost hebt; dat U uit Egypte door een sterke hand hebt uitgevoerd.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En ik bad tot JAHWEH, en zei: Heere, JAHWEH, verderf Uw volk en Uw erfdeel niet, dat U door Uw grootheid verlost hebt; dat U uit Egypte door een sterke hand hebt uitgevoerd.</i></span>",
       "textSV1888_html": "En ik bad tot den HEERE, en zeide:<sup class=\"note-marker\" data-note=\"p\">p</sup> Heere, HEERE, verderf Uw volk en Uw erfdeel niet, dat Gij door Uw<sup class=\"note-marker\" data-note=\"30\">30</sup> grootheid verlost hebt; dat Gij uit Egypte door een sterke hand hebt uitgevoerd.",
       "text1637_html": "Ende ick badt tot den HEERE, ende seyde, <sup class=\"note-marker\" data-note=\"p\">p</sup> Heere, HEERE, en verderft u volck ende u erfdeel niet, dat ghy door uwe <sup class=\"note-marker\" data-note=\"30\">30</sup> grootheyt verlost hebt: dat ghy uyt Egypten door eene stercke hant hebt uytgevoert.",
       "phraseDiff": [
@@ -3464,9 +3464,14 @@
           "principe": "N1"
         },
         {
-          "old": "zeide: Heere, HEERE,",
-          "new": "zei: Heer, JAHWEH,",
-          "principe": "W1"
+          "old": "zeide:",
+          "new": "zei:",
+          "principe": null
+        },
+        {
+          "old": "HEERE,",
+          "new": "JAHWEH,",
+          "principe": null
         },
         {
           "old": "Gij",
