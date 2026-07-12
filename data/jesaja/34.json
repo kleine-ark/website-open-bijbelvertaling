@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Nadert, gij heidenen, om te horen, en gij volken! luistert toe; de aarde hore, en haar volheid, de wereld en al wat daaruit voortkomt.",
       "text1637": "NAedert ghy heydenen, om te hooren, ende ghy volckeren luystert toe: de aerde hoore, ende [1] hare volheyt; de werelt, ende [2] alles wat daer uyt voortkomt.",
-      "text2026": "Nadert, u heidenen, om te horen, en u volken! luistert toe; de aarde hore, en haar volheid, de wereld en al wat daaruit voortkomt.",
+      "text2026": "Nader, u heidenen, om te horen, en u volken! luister toe; de aarde hore, en haar volheid, de wereld en al wat daaruit voortkomt.",
       "marginNotes": [
         {
           "marker": "1",
@@ -79,19 +79,24 @@
           "morph": "HNcmpc/Sp3fs"
         }
       ],
-      "text2026_html": "Nadert, u heidenen, om te horen, en u volken! luistert toe; de aarde hore, en<sup class=\"note-marker\" data-note=\"1\">1</sup> haar volheid, de wereld en<sup class=\"note-marker\" data-note=\"2\">2</sup> al wat daaruit voortkomt.",
+      "text2026_html": "Nader, u heidenen, om te horen, en u volken! luister toe; de aarde hore, en<sup class=\"note-marker\" data-note=\"1\">1</sup> haar volheid, de wereld en<sup class=\"note-marker\" data-note=\"2\">2</sup> al wat daaruit voortkomt.",
       "textSV1888_html": "Nadert, gij heidenen, om te horen, en gij volken! luistert toe; de aarde hore, en<sup class=\"note-marker\" data-note=\"1\">1</sup> haar volheid, de wereld en<sup class=\"note-marker\" data-note=\"2\">2</sup> al wat daaruit voortkomt.",
       "text1637_html": "NAedert ghy heydene<i>n</i>, om te hooren, ende ghy volckeren luystert toe: de aerde hoore, ende <sup class=\"note-marker\" data-note=\"1\">1</sup> hare volheyt; de werelt, ende <sup class=\"note-marker\" data-note=\"2\">2</sup> alles wat daer uyt voortkomt.",
       "phraseDiff": [
+        {
+          "old": "Nadert, gij",
+          "new": "Nader, u",
+          "principe": null
+        },
         {
           "old": "gij",
           "new": "u",
           "principe": "A1"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "luistert",
+          "new": "luister",
+          "principe": "W"
         }
       ]
     },
@@ -441,7 +446,7 @@
       "number": 5,
       "textSV1888": "Want Mijn zwaard is dronken geworden in den hemel; ziet, het zal ten oordeel nederdalen op Edom, en op het volk, hetwelk Ik verbannen heb.",
       "text1637": "[13] Want mijn sweert [14] is droncken geworden in den hemel: siet het sal [15] ten oordeele neder-dalen [16] op Edom, ende op het volck [17] 't welck ick verbannen hebbe.",
-      "text2026": "Want Mijn zwaard is dronken geworden in de hemel; ziet, het zal tot het oordeel nederdalen op Edom, en op het volk, dat Ik verbannen heb.",
+      "text2026": "Want Mijn zwaard is dronken geworden in de hemel; ziet, het zal tot het oordeel neerdalen op Edom, en op het volk, dat Ik verbannen heb.",
       "marginNotes": [
         {
           "marker": "14",
@@ -541,7 +546,7 @@
           "morph": "HR/Ncmsa"
         }
       ],
-      "text2026_html": "Want Mijn zwaard<sup class=\"note-marker\" data-note=\"14\">14</sup> is dronken geworden in de hemel; ziet, het zal<sup class=\"note-marker\" data-note=\"15\">15</sup> tot het oordeel nederdalen<sup class=\"note-marker\" data-note=\"16\">16</sup> op Edom, en op het volk,<sup class=\"note-marker\" data-note=\"17\">17</sup> dat Ik verbannen heb.",
+      "text2026_html": "Want Mijn zwaard<sup class=\"note-marker\" data-note=\"14\">14</sup> is dronken geworden in de hemel; ziet, het zal<sup class=\"note-marker\" data-note=\"15\">15</sup> tot het oordeel neerdalen<sup class=\"note-marker\" data-note=\"16\">16</sup> op Edom, en op het volk,<sup class=\"note-marker\" data-note=\"17\">17</sup> dat Ik verbannen heb.",
       "textSV1888_html": "Want Mijn zwaard<sup class=\"note-marker\" data-note=\"14\">14</sup> is dronken geworden in den hemel; ziet, het zal<sup class=\"note-marker\" data-note=\"15\">15</sup> ten oordeel nederdalen<sup class=\"note-marker\" data-note=\"16\">16</sup> op Edom, en op het volk,<sup class=\"note-marker\" data-note=\"17\">17</sup> hetwelk Ik verbannen heb.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"13\">13</sup> Want mijn sweert <sup class=\"note-marker\" data-note=\"14\">14</sup> is droncken geworden in den hemel: siet het sal <sup class=\"note-marker\" data-note=\"15\">15</sup> ten oordeele neder-dalen <sup class=\"note-marker\" data-note=\"16\">16</sup> op Edom, ende op het volck <sup class=\"note-marker\" data-note=\"17\">17</sup> 't welck ick verbannen hebbe.",
       "phraseDiff": [
@@ -554,6 +559,11 @@
           "old": "ten",
           "new": "tot het",
           "principe": null
+        },
+        {
+          "old": "nederdalen",
+          "new": "neerdalen",
+          "principe": "V"
         },
         {
           "old": "hetwelk",
@@ -1512,7 +1522,7 @@
       "number": 14,
       "textSV1888": "En de wilde dieren der woestijnen zullen de wilde dieren der eilanden daar ontmoeten, en de duivel zal zijn metgezel toeroepen; ook zal het nachtgedierte zich aldaar nederzetten, en het zal een rustplaats voor zich vinden.",
       "text1637": "Ende [49] de wilde dieren der woestijnen sullen [49] de wilde dieren der Eylanden [daer] ontmoeten, ende [50] de duyvel sal sijnen metgeselle toeroepen: oock sal [51] het nacht gedierte sich aldaer nedersetten, ende 't sal een rustplaetse voor sich vinden.",
-      "text2026": "En de wilde dieren van de woestijnen zullen de wilde dieren van de eilanden daar ontmoeten, en de duivel zal zijn metgezel toeroepen; ook zal het nachtgedierte zich daar nederzetten, en het zal een rustplaats voor zich vinden.",
+      "text2026": "En de wilde dieren van de woestijnen zullen de wilde dieren van de eilanden daar ontmoeten, en de duivel zal zijn metgezel toeroepen; ook zal het nachtgedierte zich daar neerzetten, en het zal een rustplaats voor zich vinden.",
       "marginNotes": [
         {
           "marker": "50",
@@ -1620,7 +1630,7 @@
           "morph": "HNcbsa"
         }
       ],
-      "text2026_html": "En de wilde dieren van de woestijnen zullen de wilde dieren van de eilanden daar ontmoeten, en<sup class=\"note-marker\" data-note=\"50\">50</sup> de duivel zal zijn metgezel toeroepen; ook zal<sup class=\"note-marker\" data-note=\"51\">51</sup> het nachtgedierte zich daar nederzetten, en het zal een rustplaats voor zich vinden.",
+      "text2026_html": "En de wilde dieren van de woestijnen zullen de wilde dieren van de eilanden daar ontmoeten, en<sup class=\"note-marker\" data-note=\"50\">50</sup> de duivel zal zijn metgezel toeroepen; ook zal<sup class=\"note-marker\" data-note=\"51\">51</sup> het nachtgedierte zich daar neerzetten, en het zal een rustplaats voor zich vinden.",
       "textSV1888_html": "En de wilde dieren der woestijnen zullen de wilde dieren der eilanden daar ontmoeten, en<sup class=\"note-marker\" data-note=\"50\">50</sup> de duivel zal zijn metgezel toeroepen; ook zal<sup class=\"note-marker\" data-note=\"51\">51</sup> het nachtgedierte zich aldaar nederzetten, en het zal een rustplaats voor zich vinden.",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"49\">49</sup> de wilde dieren der woestijnen sullen <sup class=\"note-marker\" data-note=\"49\">49</sup> de wilde dieren der Eylanden [daer] ontmoeten, ende <sup class=\"note-marker\" data-note=\"50\">50</sup> de duyvel sal sijnen metgeselle toeroepen: oock sal <sup class=\"note-marker\" data-note=\"51\">51</sup> het nacht gedierte sich aldaer nedersetten, ende 't sal een rustplaetse voor sich vinden.",
       "phraseDiff": [
@@ -1635,9 +1645,9 @@
           "principe": "N2"
         },
         {
-          "old": "aldaar",
-          "new": "daar",
-          "principe": "V36"
+          "old": "aldaar nederzetten,",
+          "new": "daar neerzetten,",
+          "principe": null
         }
       ]
     },
@@ -1770,7 +1780,7 @@
       "number": 16,
       "textSV1888": "Zoekt in het boek des HEEREN, en leest; niet een van dezen zal er feilen, het een noch het ander zal men missen; want mijn mond zelf heeft het geboden, en Zijn Geest Zelf zal ze samenbrengen.",
       "text1637": "Soeckt [57] in het boeck des HEEREN, ende leest: [58] niet een van dese en salder feylen, [59] 't eene noch 't ander en sal men missen: want [60] mijn mont selve heeftet geboden, ende [61] sijn Geest selve [62] salse te samen brengen.",
-      "text2026": "Zoekt in het boek van JAHWEH, en leest; niet één van deze zal er falen, het een noch het ander zal men missen; want mijn mond zelf heeft het geboden, en Zijn Geest Zelf zal ze samenbrengen.",
+      "text2026": "Zoek in het boek van JAHWEH, en leest; niet één van deze zal er falen, het een noch het ander zal men missen; want mijn mond zelf heeft het geboden, en Zijn Geest Zelf zal ze samenbrengen.",
       "marginNotes": [
         {
           "marker": "59",
@@ -1917,10 +1927,15 @@
           "morph": "HVpp3ms/Sn"
         }
       ],
-      "text2026_html": "Zoekt in het boek van JAHWEH, en leest; niet één van deze zal er falen,<sup class=\"note-marker\" data-note=\"59\">59</sup> het een noch het ander zal men missen; want<sup class=\"note-marker\" data-note=\"60\">60</sup> mijn mond zelf heeft het geboden, en<sup class=\"note-marker\" data-note=\"61\">61</sup> Zijn Geest Zelf<sup class=\"note-marker\" data-note=\"62\">62</sup> zal ze samenbrengen.",
+      "text2026_html": "Zoek in het boek van JAHWEH, en leest; niet één van deze zal er falen,<sup class=\"note-marker\" data-note=\"59\">59</sup> het een noch het ander zal men missen; want<sup class=\"note-marker\" data-note=\"60\">60</sup> mijn mond zelf heeft het geboden, en<sup class=\"note-marker\" data-note=\"61\">61</sup> Zijn Geest Zelf<sup class=\"note-marker\" data-note=\"62\">62</sup> zal ze samenbrengen.",
       "textSV1888_html": "Zoekt in het boek des HEEREN, en leest; niet een van dezen zal er feilen,<sup class=\"note-marker\" data-note=\"59\">59</sup> het een noch het ander zal men missen; want<sup class=\"note-marker\" data-note=\"60\">60</sup> mijn mond zelf heeft het geboden, en<sup class=\"note-marker\" data-note=\"61\">61</sup> Zijn Geest Zelf<sup class=\"note-marker\" data-note=\"62\">62</sup> zal ze samenbrengen.",
       "text1637_html": "Soeckt <sup class=\"note-marker\" data-note=\"57\">57</sup> in het boeck des HEEREN, ende leest: <sup class=\"note-marker\" data-note=\"58\">58</sup> niet een van dese en salder feylen, <sup class=\"note-marker\" data-note=\"59\">59</sup> 't eene noch 't ander en sal men missen: want <sup class=\"note-marker\" data-note=\"60\">60</sup> mijn mont selve heeftet geboden, ende <sup class=\"note-marker\" data-note=\"61\">61</sup> sijn Geest selve <sup class=\"note-marker\" data-note=\"62\">62</sup> salse te samen brengen.",
       "phraseDiff": [
+        {
+          "old": "Zoekt",
+          "new": "Zoek",
+          "principe": "W"
+        },
         {
           "old": "des HEEREN,",
           "new": "van JAHWEH,",

@@ -1236,7 +1236,7 @@
       "number": 10,
       "textSV1888": "Gaat door, gaat door, door de poorten, bereidt den weg des volks; verhoogt, verhoogt een baan, ruimt de stenen weg, steekt een banier omhoog tot de volken!",
       "text1637": "[b] Gaet door, gaet door, door de poorten, [38] bereydt den wech des volcks: verhoocht, verhoocht [39] een bane, [40] ruymt de steenen wech, [41] steeckt een baniere om hooge tot de volckeren.",
-      "text2026": "Gaat door, gaat door, door de poorten, bereidt de weg van het volk; verhoogt, verhoogt een baan, ruimt de stenen weg, steekt een banier omhoog tot de volken!",
+      "text2026": "Ga door, ga door, door de poorten, bereid de weg van het volk; verhoog, verhoog een baan, ruim de stenen weg, steek een banier omhoog tot de volken!",
       "marginNotes": [
         {
           "marker": "b",
@@ -1351,19 +1351,39 @@
           "morph": "HTd/Ncmpa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> <span class=\"god-speaks\"><i>Gaat door, gaat door, door de poorten,<sup class=\"note-marker\" data-note=\"38\">38</sup> bereidt de weg van het volk; verhoogt,<sup class=\"note-marker\" data-note=\"39\">39</sup> verhoogt een baan,<sup class=\"note-marker\" data-note=\"40\">40</sup> ruimt de stenen weg,<sup class=\"note-marker\" data-note=\"41\">41</sup> steekt een banier omhoog tot de volken!</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> <span class=\"god-speaks\"><i>Ga door, ga door, door de poorten,<sup class=\"note-marker\" data-note=\"38\">38</sup> bereid de weg van het volk; verhoog,<sup class=\"note-marker\" data-note=\"39\">39</sup> verhoog een baan,<sup class=\"note-marker\" data-note=\"40\">40</sup> ruim de stenen weg,<sup class=\"note-marker\" data-note=\"41\">41</sup> steek een banier omhoog tot de volken!</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Gaat door, gaat door, door de poorten,<sup class=\"note-marker\" data-note=\"38\">38</sup> bereidt den weg des volks; verhoogt, verhoogt<sup class=\"note-marker\" data-note=\"39\">39</sup> een baan,<sup class=\"note-marker\" data-note=\"40\">40</sup> ruimt de stenen weg,<sup class=\"note-marker\" data-note=\"41\">41</sup> steekt een banier omhoog tot de volken!",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Gaet door, gaet door, door de poorten, <sup class=\"note-marker\" data-note=\"38\">38</sup> bereydt den wech des volcks: verhoocht, verhoocht <sup class=\"note-marker\" data-note=\"39\">39</sup> een bane, <sup class=\"note-marker\" data-note=\"40\">40</sup> ruymt de steenen wech, <sup class=\"note-marker\" data-note=\"41\">41</sup> steeckt een baniere om hooge tot de volckeren.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "Gaat",
+          "new": "Ga",
+          "principe": "W"
         },
         {
-          "old": "des volks;",
-          "new": "van het volk;",
-          "principe": "N3"
+          "old": "gaat",
+          "new": "ga",
+          "principe": "W"
+        },
+        {
+          "old": "bereidt den",
+          "new": "bereid de",
+          "principe": null
+        },
+        {
+          "old": "des volks; verhoogt, verhoogt",
+          "new": "van het volk; verhoog, verhoog",
+          "principe": null
+        },
+        {
+          "old": "ruimt",
+          "new": "ruim",
+          "principe": "W"
+        },
+        {
+          "old": "steekt",
+          "new": "steek",
+          "principe": "W"
         }
       ]
     },
