@@ -3021,7 +3021,7 @@
       "number": 29,
       "textSV1888": "Volken zullen u dienen, en natiën zullen zich voor u nederbuigen; wees heer over uw broederen, en de zonen uwer moeder zullen zich voor u nederbuigen! Vervloekt moet hij zijn, wie u vervloekt; en wie u zegent, zij gezegend!",
       "text1637": "[38] Volcken sullen u dienen, ende natien sullen haer voor u neder buygen: [39] weest heere over uwe broederen, ende uwes moeders sonen sullen hen voor u neder buygen: [b] vervloeckt moet hy zijn, so wie u vervloeckt; [40] ende so wie u segent, zy gesegent.",
-      "text2026": "Volken zullen u dienen, en natiën zullen zich voor u nederbuigen; wees heer over uw broers, en de zonen van uw moeder zullen zich voor u nederbuigen! Vervloekt moet hij zijn, wie u vervloekt; en wie u zegent, zij gezegend!",
+      "text2026": "Volken zullen u dienen, en natiën zullen zich voor u neerbuigen; wees heer over uw broers, en de zonen van uw moeder zullen zich voor u neerbuigen! Vervloekt moet hij zijn, wie u vervloekt; en wie u zegent, zij gezegend!",
       "marginNotes": [
         {
           "marker": "38",
@@ -3170,10 +3170,15 @@
           "morph": "HVqsmsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"38\">38</sup><span class=\"direct-speech\"><i> Volken zullen u dienen, en natiën zullen zich voor u nederbuigen;<sup class=\"note-marker\" data-note=\"39\">39</sup> wees heer over uw broers, en de zonen van uw moeder zullen zich voor u nederbuigen!<sup class=\"note-marker\" data-note=\"b\">b</sup> Vervloekt moet hij zijn, wie u vervloekt;<sup class=\"note-marker\" data-note=\"40\">40</sup> en wie u zegent, zij gezegend!</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"38\">38</sup><span class=\"direct-speech\"><i> Volken zullen u dienen, en natiën zullen zich voor u neerbuigen;<sup class=\"note-marker\" data-note=\"39\">39</sup> wees heer over uw broers, en de zonen van uw moeder zullen zich voor u neerbuigen!<sup class=\"note-marker\" data-note=\"b\">b</sup> Vervloekt moet hij zijn, wie u vervloekt;<sup class=\"note-marker\" data-note=\"40\">40</sup> en wie u zegent, zij gezegend!</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"38\">38</sup> Volken zullen u dienen, en natiën zullen zich voor u nederbuigen;<sup class=\"note-marker\" data-note=\"39\">39</sup> wees heer over uw broederen, en de zonen uwer moeder zullen zich voor u nederbuigen!<sup class=\"note-marker\" data-note=\"b\">b</sup> Vervloekt moet hij zijn, wie u vervloekt;<sup class=\"note-marker\" data-note=\"40\">40</sup> en wie u zegent, zij gezegend!",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"38\">38</sup> Volcken sullen u dienen, ende natien sullen haer voor u neder buygen: <sup class=\"note-marker\" data-note=\"39\">39</sup> weest heere over uwe broederen, ende uwes moeders sone<i>n</i> sulle<i>n</i> hen voor u neder buygen: <sup class=\"note-marker\" data-note=\"b\">b</sup> vervloeckt moet hy zijn, so wie u vervloeckt; <sup class=\"note-marker\" data-note=\"40\">40</sup> ende so wie u segent, zy gesegent.",
       "phraseDiff": [
+        {
+          "old": "nederbuigen;",
+          "new": "neerbuigen;",
+          "principe": null
+        },
         {
           "old": "broederen,",
           "new": "broers,",
@@ -3183,6 +3188,11 @@
           "old": "uwer",
           "new": "van uw",
           "principe": "N7"
+        },
+        {
+          "old": "nederbuigen!",
+          "new": "neerbuigen!",
+          "principe": null
         }
       ]
     },

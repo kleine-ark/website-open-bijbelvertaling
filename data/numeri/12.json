@@ -971,7 +971,7 @@
       "number": 11,
       "textSV1888": "Daarom zeide Aäron tot Mozes: Och, mijn heer! leg toch niet op ons de zonde, waarmede wij zottelijk gedaan, en waarmede wij gezondigd hebben!",
       "text1637": "Daerom seyde Aaron tot Mose; Och mijn heere, en legt doch niet op ons de sonde, daer mede wy sottelick gedaen, ende daer mede wy gesondiget hebben.",
-      "text2026": "Daarom zei Aäron tot Mozes: Och, mijn heer! leg toch niet op ons de zonde, waarmee wij zottelijk gedaan, en waarmee wij gezondigd hebben!",
+      "text2026": "Daarom zei Aäron tot Mozes: Och, mijn heer! leg toch niet op ons de zonde, waarmee wij dwaas gehandeld, en waarmee wij gezondigd hebben!",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1050,7 +1050,7 @@
           "morph": "HVqp1cp"
         }
       ],
-      "text2026_html": "Daarom zei Aäron tot Mozes: <span class=\"direct-speech\"><i>Och, mijn heer! leg toch niet op ons de zonde, waarmee wij zottelijk gedaan, en waarmee wij gezondigd hebben!</i></span>",
+      "text2026_html": "Daarom zei Aäron tot Mozes: <span class=\"direct-speech\"><i>Och, mijn heer! leg toch niet op ons de zonde, waarmee wij dwaas gehandeld, en waarmee wij gezondigd hebben!</i></span>",
       "text1637_html": "Daerom seyde Aaron tot Mose; Och mijn heere, en legt doch niet op ons de sonde, daer mede wy sottelick gedaen, ende daer mede wy gesondiget hebben.",
       "phraseDiff": [
         {
@@ -1064,6 +1064,11 @@
           "principe": "V479"
         },
         {
+          "old": "zottelijk gedaan,",
+          "new": "dwaas gehandeld,",
+          "principe": null
+        },
+        {
           "old": "waarmede",
           "new": "waarmee",
           "principe": "V479"
@@ -1074,7 +1079,7 @@
       "number": 12,
       "textSV1888": "Laat zij toch niet zijn als een dode, van wiens vlees, als hij uit zijns moeders lijf uitgaat, de helft wel verteerd is!",
       "text1637": "Laetse doch niet zijn, als een [13] doode, van wiens vleesch, als hy uyt sijns moeders lijf uytgaet, de helft wel verteert is:",
-      "text2026": "Laat zij toch niet zijn als een dode, van wiens vlees, als hij uit van zijn moeder lijf uitgaat, de helft wel verteerd is!",
+      "text2026": "Laat zij toch niet zijn als een dode, van wiens vlees, als hij uit het lijf van zijn moeder uitgaat, de helft wel verteerd is!",
       "marginNotes": [
         {
           "marker": "13",
@@ -1141,14 +1146,19 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Laat zij toch niet zijn als een<sup class=\"note-marker\" data-note=\"13\">13</sup> dode, van wiens vlees, als hij uit van zijn moeder lijf uitgaat, de helft wel verteerd is!</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Laat zij toch niet zijn als een<sup class=\"note-marker\" data-note=\"13\">13</sup> dode, van wiens vlees, als hij uit het lijf van zijn moeder uitgaat, de helft wel verteerd is!</i></span>",
       "textSV1888_html": "Laat zij toch niet zijn als een<sup class=\"note-marker\" data-note=\"13\">13</sup> dode, van wiens vlees, als hij uit zijns moeders lijf uitgaat, de helft wel verteerd is!",
       "text1637_html": "Laetse doch niet zijn, als een <sup class=\"note-marker\" data-note=\"13\">13</sup> doode, van wiens vleesch, als hy uyt sijns moeders lijf uytgaet, de helft wel verteert is:",
       "phraseDiff": [
         {
           "old": "zijns moeders",
+          "new": "het",
+          "principe": null
+        },
+        {
+          "old": "",
           "new": "van zijn moeder",
-          "principe": "V201"
+          "principe": null
         }
       ]
     },

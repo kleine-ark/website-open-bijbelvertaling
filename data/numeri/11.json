@@ -2396,7 +2396,7 @@
       "number": 21,
       "textSV1888": "En Mozes zeide: Zeshonderd duizend te voet is dit volk, in welks midden ik ben; en Gij hebt gezegd: Ik zal hun vlees geven, en zij zullen een gehele maand eten!",
       "text1637": "Ende Mose seyde; [31] Ses hondert duysent te voete is dit volck, in wiens midden ick ben: ende ghy hebt geseyt; Ick sal hen vleesch geven, ende sy sullen [32] een geheele maent eten.",
-      "text2026": "En Mozes zei: Zeshonderd duizend te voet is dit volk, in wier midden ik ben; en U hebt gezegd: Ik zal hun vlees geven, en zij zullen een hele maand eten!",
+      "text2026": "En Mozes zei: Zeshonderd duizend te voet is dit volk, in het midden waarvan ik ben; en U hebt gezegd: Ik zal hun vlees geven, en zij zullen een hele maand eten!",
       "marginNotes": [
         {
           "marker": "31",
@@ -2505,7 +2505,7 @@
           "morph": "HNcmpa"
         }
       ],
-      "text2026_html": "En Mozes zei: <span class=\"direct-speech\"><i>Zeshonderd duizend te voet is dit volk, in wier midden ik ben; en U hebt gezegd: Ik zal hun vlees geven, en zij zullen een hele maand eten!</i></span>",
+      "text2026_html": "En Mozes zei: <span class=\"direct-speech\"><i>Zeshonderd duizend te voet is dit volk, in het midden waarvan ik ben; en U hebt gezegd: Ik zal hun vlees geven, en zij zullen een hele maand eten!</i></span>",
       "textSV1888_html": "En Mozes zeide:<sup class=\"note-marker\" data-note=\"31\">31</sup> Zeshonderd duizend te voet is dit volk, in welks midden ik ben; en Gij hebt gezegd: Ik zal hun vlees geven, en zij zullen<sup class=\"note-marker\" data-note=\"32\">32</sup> een gehele maand eten!",
       "text1637_html": "Ende Mose seyde; <sup class=\"note-marker\" data-note=\"31\">31</sup> Ses hondert duysent te voete is dit volck, in wiens midden ick ben: ende ghy hebt geseyt; Ick sal hen vleesch geven, ende sy sullen <sup class=\"note-marker\" data-note=\"32\">32</sup> een geheele maent eten.",
       "phraseDiff": [
@@ -2516,8 +2516,13 @@
         },
         {
           "old": "welks",
-          "new": "wier",
-          "principe": "V211"
+          "new": "het",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "waarvan",
+          "principe": null
         },
         {
           "old": "Gij",

@@ -169,7 +169,7 @@
       "number": 3,
       "textSV1888": "Dit zijn de namen der zonen van Aäron, der priesteren, die gezalfd waren, welker hand men gevuld had, om het priesterambt te bedienen.",
       "text1637": "Dit zijn de namen der sonen Aarons, der Priesteren, die gesalft waren: [2] welc-ker hant men gevult hadde, om het Priester-ampt te bedienen.",
-      "text2026": "Dit zijn de namen van de zonen van Aäron, van de priesters, die gezalfd waren, welker hand men gevuld had, om het priesterambt te bedienen.",
+      "text2026": "Dit zijn de namen van de zonen van Aäron, van de priesters, die gezalfd waren, wier hand men gevuld had, om het priesterambt te bedienen.",
       "marginNotes": [
         {
           "marker": "2",
@@ -231,7 +231,7 @@
           "morph": "HR/Vpc"
         }
       ],
-      "text2026_html": "Dit zijn de namen van de zonen van Aäron, van de priesters, die gezalfd waren,<sup class=\"note-marker\" data-note=\"2\">2</sup> welker hand men gevuld had, om het priesterambt te bedienen.",
+      "text2026_html": "Dit zijn de namen van de zonen van Aäron, van de priesters, die gezalfd waren,<sup class=\"note-marker\" data-note=\"2\">2</sup> wier hand men gevuld had, om het priesterambt te bedienen.",
       "textSV1888_html": "Dit zijn de namen der zonen van Aäron, der priesteren, die gezalfd waren,<sup class=\"note-marker\" data-note=\"2\">2</sup> welker hand men gevuld had, om het priesterambt te bedienen.",
       "text1637_html": "Dit zijn de namen der sonen Aarons, der Priesteren, die gesalft waren: <sup class=\"note-marker\" data-note=\"2\">2</sup> welc-ker hant men gevult hadde, om het Priester-ampt te bedienen.",
       "phraseDiff": [
@@ -244,6 +244,11 @@
           "old": "der priesteren,",
           "new": "van de priesters,",
           "principe": "N2"
+        },
+        {
+          "old": "welker",
+          "new": "wier",
+          "principe": "V212"
         }
       ]
     },
