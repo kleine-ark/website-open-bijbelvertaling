@@ -383,7 +383,7 @@
       "number": 4,
       "textSV1888": "Doch zij vreesden gans zeer, en zeiden: Ziet, twee koningen bestonden niet voor zijn aangezicht, hoe zouden wij dan bestaan?",
       "text1637": "Doch sy vreesden [10] gantsch seer, ende seyden; Siet, [11] twee Coningen en bestonden niet voor sijn aengesichte: hoe souden wy dan bestaen?",
-      "text2026": "Maar zij vreesden geheel zeer, en zeiden: Zie, twee koningen bestonden niet voor zijn aangezicht, hoe zouden wij dan bestaan?",
+      "text2026": "Maar zij vreesden heel erg, en zeiden: Zie, twee koningen bestonden niet voor zijn aangezicht, hoe zouden wij dan bestaan?",
       "marginNotes": [
         {
           "marker": "10",
@@ -467,7 +467,7 @@
           "morph": "HPp1cp"
         }
       ],
-      "text2026_html": "Maar zij vreesden<sup class=\"note-marker\" data-note=\"10\">10</sup> geheel zeer, en zeiden: Zie,<sup class=\"note-marker\" data-note=\"11\">11</sup> twee koningen bestonden niet voor zijn aangezicht, hoe zouden wij dan bestaan?",
+      "text2026_html": "Maar zij vreesden<sup class=\"note-marker\" data-note=\"10\">10</sup> heel erg, en zeiden: Zie,<sup class=\"note-marker\" data-note=\"11\">11</sup> twee koningen bestonden niet voor zijn aangezicht, hoe zouden wij dan bestaan?",
       "textSV1888_html": "Doch zij vreesden<sup class=\"note-marker\" data-note=\"10\">10</sup> gans zeer, en zeiden: Ziet,<sup class=\"note-marker\" data-note=\"11\">11</sup> twee koningen bestonden niet voor zijn aangezicht, hoe zouden wij dan bestaan?",
       "text1637_html": "Doch sy vreesden <sup class=\"note-marker\" data-note=\"10\">10</sup> gantsch seer, ende seyden; Siet, <sup class=\"note-marker\" data-note=\"11\">11</sup> twee Coningen en bestonden niet voor sijn aengesichte: hoe souden wy dan bestaen?",
       "phraseDiff": [
@@ -477,9 +477,9 @@
           "principe": "V1"
         },
         {
-          "old": "gans",
-          "new": "geheel",
-          "principe": "V414"
+          "old": "gans zeer,",
+          "new": "heel erg,",
+          "principe": null
         },
         {
           "old": "Ziet,",
@@ -635,7 +635,7 @@
       "number": 6,
       "textSV1888": "Toen schreef hij ten tweeden male tot hen een brief, zeggende: Zo gij mijn zijt, en gij naar mijn stem hoort, neemt de hoofden van de mannen, de zonen uws heren, en komt tot mij morgen omtrent dezen tijd naar Jizreël. (De zonen nu de konings, zeventig mannen, waren bij de groten stad, die hen opvoedden.)",
       "text1637": "Doe schreef hy ten tweeden mael tot hen eenen brief, seggende; So ghy mijne zijt, ende ghy nae mijne stemme hooret, nemet de hoofden vande [12] mannen, de sonen uwes heeren, ende komet tot my morgen ontrent dese tijt nae Iizreël: (de sonen nu des Conincks, tseventich mannen, waren by de [13] Groote der stadt, diese [14] opvoedden.)",
-      "text2026": "Toen schreef hij voor de tweede keer tot hen een brief, zeggende: Zo u mijn bent, en u naar mijn stem hoort, neemt de hoofden van de mannen, de zonen van uw heren, en komt tot mij morgen ongeveer deze tijd naar Jizreël. (De zonen nu de konings, zeventig mannen, waren bij de grote stad, die hen opvoedden.)",
+      "text2026": "Toen schreef hij voor de tweede keer tot hen een brief, zeggende: Zo u mijn bent, en u naar mijn stem hoort, neemt de hoofden van de mannen, de zonen van uw heren, en komt tot mij morgen ongeveer deze tijd naar Jizreël. (De zonen nu van de koning, zeventig mannen, waren bij de grote stad, die hen opvoedden.)",
       "marginNotes": [
         {
           "marker": "12",
@@ -816,7 +816,7 @@
           "morph": "HTo/Sp3mp"
         }
       ],
-      "text2026_html": "Toen schreef hij voor de tweede keer tot hen een brief, zeggende: <span class=\"direct-speech\"><i>Zo u mijn bent, en u naar mijn stem hoort, neemt de hoofden van de mannen, de zonen van uw heren, en komt tot mij morgen ongeveer deze tijd naar Jizreël. (De zonen nu de konings, zeventig mannen, waren bij de grote stad, die hen opvoedden.)</i></span>",
+      "text2026_html": "Toen schreef hij voor de tweede keer tot hen een brief, zeggende: <span class=\"direct-speech\"><i>Zo u mijn bent, en u naar mijn stem hoort, neemt de hoofden van de mannen, de zonen van uw heren, en komt tot mij morgen ongeveer deze tijd naar Jizreël. (De zonen nu van de koning, zeventig mannen, waren bij de grote stad, die hen opvoedden.)</i></span>",
       "textSV1888_html": "Toen schreef hij ten tweeden male tot hen een brief, zeggende: Zo gij mijn zijt, en gij naar mijn stem hoort, neemt de hoofden van<sup class=\"note-marker\" data-note=\"12\">12</sup> de mannen, de zonen uws heren, en komt tot mij morgen omtrent dezen tijd naar Jizreël. (De zonen nu de konings, zeventig mannen, waren bij de<sup class=\"note-marker\" data-note=\"13\">13</sup> groten stad, die hen<sup class=\"note-marker\" data-note=\"14\">14</sup> opvoedden.)",
       "text1637_html": "Doe schreef hy ten tweeden mael tot hen eenen brief, seggende; So ghy mijne zijt, ende ghy nae mijne stemme hooret, nemet de hoofden vande <sup class=\"note-marker\" data-note=\"12\">12</sup> mannen, de sonen uwes heeren, ende komet tot my morgen ontrent dese tijt nae Iizreël: (de sonen nu des Conincks, tseventich mannen, waren by de <sup class=\"note-marker\" data-note=\"13\">13</sup> Groote der stadt, diese <sup class=\"note-marker\" data-note=\"14\">14</sup> opvoedden.)",
       "phraseDiff": [
@@ -849,6 +849,16 @@
           "old": "omtrent dezen",
           "new": "ongeveer deze",
           "principe": "N4"
+        },
+        {
+          "old": "",
+          "new": "van",
+          "principe": null
+        },
+        {
+          "old": "konings,",
+          "new": "koning,",
+          "principe": null
         },
         {
           "old": "groten",
@@ -3122,7 +3132,7 @@
       "number": 24,
       "textSV1888": "Toen zij nu inkwamen, om slachtofferen en brandofferen te doen, bestelde zich Jehu daarbuiten tachtig mannen, en hij zeide: Zo iemand van de mannen, die ik in uw handen gebracht heb, ontkomt, zijn ziel zal voor deszelfs ziel zijn.",
       "text1637": "Doe sy nu inquamen, om slacht-offeren, ende brand-offeren te doen, bestelde sich Iehu daer buyten tachtentich mannen, ende seyde; So yemant vande mannen, die ick in uwe handen gebracht hebbe, ontkomt, [46] sijne ziele sal voor [47] des selven ziele zijn.",
-      "text2026": "Toen zij nu inkwamen, om slachtofferen en brandofferen te doen, bestelde zich Jehu daarbuiten tachtig mannen, en hij zei: Zo iemand van de mannen, die ik in uw handen gebracht heb, ontkomt, zijn ziel zal voor daarvan ziel zijn.",
+      "text2026": "Toen zij nu inkwamen, om slachtofferen en brandofferen te doen, bestelde zich Jehu daarbuiten tachtig mannen, en hij zei: Zo iemand van de mannen, die ik in uw handen gebracht heb, ontkomt, zijn ziel zal voor diens ziel zijn.",
       "marginNotes": [
         {
           "marker": "46",
@@ -3261,7 +3271,7 @@
           "morph": "HNcbsc/Sp3ms"
         }
       ],
-      "text2026_html": "Toen zij nu inkwamen, om slachtofferen en brandofferen te doen, bestelde zich Jehu daarbuiten tachtig mannen, en hij zei: <span class=\"direct-speech\"><i>Zo iemand van de mannen, die ik in uw handen gebracht heb, ontkomt, zijn ziel zal voor daarvan ziel zijn.</i></span>",
+      "text2026_html": "Toen zij nu inkwamen, om slachtofferen en brandofferen te doen, bestelde zich Jehu daarbuiten tachtig mannen, en hij zei: <span class=\"direct-speech\"><i>Zo iemand van de mannen, die ik in uw handen gebracht heb, ontkomt, zijn ziel zal voor diens ziel zijn.</i></span>",
       "textSV1888_html": "Toen zij nu inkwamen, om slachtofferen en brandofferen te doen, bestelde zich Jehu daarbuiten tachtig mannen, en hij zeide: Zo iemand van de mannen, die ik in uw handen gebracht heb, ontkomt,<sup class=\"note-marker\" data-note=\"46\">46</sup> zijn ziel zal voor<sup class=\"note-marker\" data-note=\"47\">47</sup> deszelfs ziel zijn.",
       "text1637_html": "Doe sy nu inquamen, om slacht-offeren, ende brand-offeren te doen, bestelde sich Iehu daer buyten tachtentich mannen, ende seyde; So yemant vande mannen, die ick in uwe handen gebracht hebbe, ontkomt, <sup class=\"note-marker\" data-note=\"46\">46</sup> sijne ziele sal voor <sup class=\"note-marker\" data-note=\"47\">47</sup> des selven ziele zijn.",
       "phraseDiff": [
@@ -3272,8 +3282,8 @@
         },
         {
           "old": "deszelfs",
-          "new": "daarvan",
-          "principe": "V110"
+          "new": "diens",
+          "principe": null
         }
       ]
     },
@@ -4072,7 +4082,7 @@
       "number": 32,
       "textSV1888": "In die dagen begon de HEERE Israël af te korten, want Hazaël sloeg ze in alle landpalen van Israël:",
       "text1637": "In die dagen begon de HEERE Israël [57] af te korten: want [58] Hazaël sloechse in alle landt-palen Israëls;",
-      "text2026": "In die dagen begon JAHWEH Israël af te korte, want Hazaël sloeg ze in alle gebied van Israël:",
+      "text2026": "In die dagen begon JAHWEH Israël af te korten, want Hazaël sloeg ze in alle gebied van Israël:",
       "marginNotes": [
         {
           "marker": "57",
@@ -4146,7 +4156,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "In die dagen begon JAHWEH Israël<sup class=\"note-marker\" data-note=\"57\">57</sup> af te korte, want<sup class=\"note-marker\" data-note=\"58\">58</sup> Hazaël sloeg ze in alle gebied van Israël:",
+      "text2026_html": "In die dagen begon JAHWEH Israël<sup class=\"note-marker\" data-note=\"57\">57</sup> af te korten, want<sup class=\"note-marker\" data-note=\"58\">58</sup> Hazaël sloeg ze in alle gebied van Israël:",
       "textSV1888_html": "In die dagen begon de HEERE Israël<sup class=\"note-marker\" data-note=\"57\">57</sup> af te korten, want<sup class=\"note-marker\" data-note=\"58\">58</sup> Hazaël sloeg ze in alle landpalen van Israël:",
       "text1637_html": "In die dagen begon de HEERE Israël <sup class=\"note-marker\" data-note=\"57\">57</sup> af te korten: want <sup class=\"note-marker\" data-note=\"58\">58</sup> Hazaël sloechse in alle landt-palen Israëls;",
       "phraseDiff": [
@@ -4154,11 +4164,6 @@
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
-        },
-        {
-          "old": "korten,",
-          "new": "korte,",
-          "principe": "O19"
         },
         {
           "old": "landpalen",

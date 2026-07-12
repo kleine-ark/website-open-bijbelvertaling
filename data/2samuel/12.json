@@ -851,7 +851,7 @@
       "number": 8,
       "textSV1888": "En Ik heb u uws heren huis gegeven, daartoe uws heren vrouwen in uw schoot, ja, Ik heb u het huis van Israël en Juda gegeven; en indien het weinig is, Ik zou u alzulks en alzulks daartoe doen.",
       "text1637": "Ende ick heb u uwes [7] heeren huys [8] gegeven, daer toe uwes heeren wijven in uwen [9] schoot, ja ick heb u het [10] huys Israëls ende Iuda gegeven: ende [11] indien’t weynich is, ick soude u alsulx ende alsulx daer toe doen.",
-      "text2026": "En Ik heb u van uw heren huis gegeven, daartoe van uw heren vrouwen in uw schoot, ja, Ik heb u het huis van Israël en Juda gegeven; en als het weinig is, Ik zou u zoveel en nog meer daartoe doen.",
+      "text2026": "En Ik heb u het huis van uw heer gegeven, daartoe de vrouwen van uw heer in uw schoot, ja, Ik heb u het huis van Israël en Juda gegeven; en als het weinig is, Ik zou u zoveel en nog meer daartoe doen.",
       "marginNotes": [
         {
           "marker": "7",
@@ -996,34 +996,44 @@
           "morph": "HC/R/Pp3fp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En Ik heb u van uw<sup class=\"note-marker\" data-note=\"7\">7</sup> heren huis<sup class=\"note-marker\" data-note=\"8\">8</sup> gegeven, daartoe van uw heren vrouwen in uw<sup class=\"note-marker\" data-note=\"9\">9</sup> schoot, ja, Ik heb u het<sup class=\"note-marker\" data-note=\"10\">10</sup> huis van Israël en Juda gegeven; en<sup class=\"note-marker\" data-note=\"11\">11</sup> als het weinig is, Ik zou u zoveel en nog meer daartoe doen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En Ik heb u het huis<sup class=\"note-marker\" data-note=\"8\">8</sup> van uw<sup class=\"note-marker\" data-note=\"7\">7</sup> heer gegeven, daartoe de vrouwen van uw heer in uw<sup class=\"note-marker\" data-note=\"9\">9</sup> schoot, ja, Ik heb u het<sup class=\"note-marker\" data-note=\"10\">10</sup> huis van Israël en Juda gegeven; en<sup class=\"note-marker\" data-note=\"11\">11</sup> als het weinig is, Ik zou u zoveel en nog meer daartoe doen.</i></span>",
       "textSV1888_html": "En Ik heb u uws<sup class=\"note-marker\" data-note=\"7\">7</sup> heren huis<sup class=\"note-marker\" data-note=\"8\">8</sup> gegeven, daartoe uws heren vrouwen in uw<sup class=\"note-marker\" data-note=\"9\">9</sup> schoot, ja, Ik heb u het<sup class=\"note-marker\" data-note=\"10\">10</sup> huis van Israël en Juda gegeven; en<sup class=\"note-marker\" data-note=\"11\">11</sup> indien het weinig is, Ik zou u alzulks en alzulks daartoe doen.",
       "text1637_html": "En<i>de</i> ick heb u uwes <sup class=\"note-marker\" data-note=\"7\">7</sup> heeren huys <sup class=\"note-marker\" data-note=\"8\">8</sup> gegeven, daer toe uwes heeren wijven in uwe<i>n</i> <sup class=\"note-marker\" data-note=\"9\">9</sup> schoot, ja ick heb u het <sup class=\"note-marker\" data-note=\"10\">10</sup> huys Israëls ende Iuda gegeven: en<i>de</i> <sup class=\"note-marker\" data-note=\"11\">11</sup> indien’t weynich is, ick soude u alsulx ende alsulx daer toe doen.",
       "phraseDiff": [
         {
-          "old": "uws",
-          "new": "van uw",
-          "principe": "V200"
+          "old": "uws heren",
+          "new": "het",
+          "principe": null
         },
         {
-          "old": "uws",
-          "new": "van uw",
-          "principe": "V200"
+          "old": "",
+          "new": "van uw heer",
+          "principe": null
+        },
+        {
+          "old": "uws heren",
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "van uw heer",
+          "principe": null
         },
         {
           "old": "indien",
           "new": "als",
-          "principe": "V41"
+          "principe": null
         },
         {
           "old": "alzulks",
           "new": "zoveel",
-          "principe": "V564"
+          "principe": null
         },
         {
           "old": "alzulks",
           "new": "nog meer",
-          "principe": "V564"
+          "principe": null
         }
       ]
     },

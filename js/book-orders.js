@@ -147,6 +147,16 @@ const BookOrders = {
     },
 };
 
+// === Ethiopisch (Tewahedo) — canoniek + de extra boeken van de Ethiopisch-Orthodoxe canon ===
+// Deze 'ethiopic'-boeken (Henoch, Jubileeën, 1-3 Meqabyan, 4 Baruch) zijn STANDAARD verborgen
+// en verschijnen alleen wanneer deze volgorde gekozen is (zie getBookOrderGroups/getFlatBookOrder).
+BookOrders.ethiopisch = {
+    label: 'Ethiopisch (Tewahedo)',
+    groups: Object.assign({}, BookOrders.canoniek.groups, {
+        'Ethiopische toevoegingen (Tewahedo)': ['henoch', 'jubileeen', '1meqabyan', '2meqabyan', '3meqabyan', '4baruch'],
+    }),
+};
+
 /**
  * Geef de groepen voor een gegeven ordering.
  * Voor dynamische orderings (lengte) wordt het manifest gebruikt.
@@ -167,7 +177,7 @@ function getBookOrderGroups(mode, manifest) {
             'Kort (4–9 hfdst)': [],
             'Zeer kort (1–3 hfdst)': [],
         };
-        const sorted = [...manifest.books].sort((a, b) => (b.totalChapters || 0) - (a.totalChapters || 0));
+        const sorted = [...manifest.books].filter(b => !b.ethiopic).sort((a, b) => (b.totalChapters || 0) - (a.totalChapters || 0));
         for (const b of sorted) {
             const n = b.totalChapters || (b.chaptersIncluded ? b.chaptersIncluded.length : 0);
             if (n >= 40) buckets['Zeer lang (≥40 hfdst)'].push(b.id);
@@ -199,9 +209,10 @@ function getFlatBookOrder(mode, manifest) {
             }
         }
     }
-    // Voeg ontbrekende toe in manifest-volgorde
+    // Voeg ontbrekende toe in manifest-volgorde — behalve Ethiopische boeken buiten de ethiopisch-volgorde
     for (const b of manifest.books) {
         if (!seen.has(b.id)) {
+            if (b.ethiopic && mode !== 'ethiopisch') continue;
             ordered.push(b.id);
             seen.add(b.id);
         }

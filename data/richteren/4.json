@@ -1460,7 +1460,7 @@
       "number": 12,
       "textSV1888": "Toen boodschapten zij Sisera, dat Barak, de zoon van Abinoam, op den berg Thabor getogen was.",
       "text1637": "Doe bootschapten sy Sisera, dat Barak, Abinoams sone, op den berch Thabor getogen was.",
-      "text2026": "Toen boodschapten zij Sisera, dat Barak, de zoon van Abinoam, op de berg Thabor getogen was.",
+      "text2026": "Toen boodschapten zij Sisera, dat Barak, de zoon van Abinoam, op de berg Thabor getrokken was.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1509,13 +1509,18 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Toen boodschapten zij Sisera, dat Barak, de zoon van Abinoam, op de berg Thabor getogen was.",
+      "text2026_html": "Toen boodschapten zij Sisera, dat Barak, de zoon van Abinoam, op de berg Thabor getrokken was.",
       "text1637_html": "Doe bootschapten sy Sisera, dat Barak, Abinoams sone, op den berch Thabor getogen was.",
       "phraseDiff": [
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "getogen",
+          "new": "getrokken",
+          "principe": "V353"
         }
       ]
     },
@@ -1655,7 +1660,7 @@
       "number": 14,
       "textSV1888": "Debora dan zeide tot Barak: Maak u op; want dit is de dag, in welken de HEERE Sisera in uw hand gegeven heeft; is de HEERE niet voor uw aangezicht henen uitgetogen? Zo trok Barak van den berg Thabor af, en tien duizend man achter hem.",
       "text1637": "Debora dan seyde tot Barak; Maeckt u op, want dit is de dach, in welcken de HEERE Sisera in uwe hant gegeven heeft; [26] is de HEERE niet [27] voor u aengesichte henen uytgetogen? So trock Barak van den berch Thabor af, ende tien duysent man achter hem.",
-      "text2026": "Debora dan zei tot Barak: Maak u op; want dit is de dag, in welke JAHWEH Sisera in uw hand gegeven heeft; is JAHWEH niet voor uw aangezicht heen uitgetogen? Zo trok Barak van de berg Thabor af, en tien duizend man achter hem.",
+      "text2026": "Debora dan zei tot Barak: Maak u op; want dit is de dag, waarop JAHWEH Sisera in uw hand gegeven heeft; is JAHWEH niet voor uw aangezicht heen uitgetrokken? Zo trok Barak van de berg Thabor af, en tien duizend man achter hem.",
       "marginNotes": [
         {
           "marker": "26",
@@ -1804,7 +1809,7 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "Debora dan zei tot Barak: <span class=\"direct-speech\"><i>Maak u op; want dit is de dag, in welke JAHWEH Sisera in uw hand gegeven heeft; is JAHWEH niet voor uw aangezicht heen uitgetogen?</i></span> Zo trok Barak van de berg Thabor af, en tien duizend man achter hem.",
+      "text2026_html": "Debora dan zei tot Barak: <span class=\"direct-speech\"><i>Maak u op; want dit is de dag, waarop JAHWEH Sisera in uw hand gegeven heeft; is JAHWEH niet voor uw aangezicht heen uitgetrokken?</i></span> Zo trok Barak van de berg Thabor af, en tien duizend man achter hem.",
       "textSV1888_html": "Debora dan zeide tot Barak: Maak u op; want dit is de dag, in welken de HEERE Sisera in uw hand gegeven heeft;<sup class=\"note-marker\" data-note=\"26\">26</sup> is de HEERE niet<sup class=\"note-marker\" data-note=\"27\">27</sup> voor uw aangezicht henen uitgetogen? Zo trok Barak van den berg Thabor af, en tien duizend man achter hem.",
       "text1637_html": "Debora dan seyde tot Barak; Maeckt u op, want dit is de dach, in welcken de HEERE Sisera in uwe hant gegeven heeft; <sup class=\"note-marker\" data-note=\"26\">26</sup> is de HEERE niet <sup class=\"note-marker\" data-note=\"27\">27</sup> voor u aengesichte henen uytgetogen? So trock Barak van den berch Thabor af, ende tien duysent man achter hem.",
       "phraseDiff": [
@@ -1814,9 +1819,9 @@
           "principe": "W1"
         },
         {
-          "old": "welken de HEERE",
-          "new": "welke JAHWEH",
-          "principe": "N6"
+          "old": "in welken de HEERE",
+          "new": "waarop JAHWEH",
+          "principe": null
         },
         {
           "old": "de HEERE",
@@ -1824,9 +1829,9 @@
           "principe": "G1"
         },
         {
-          "old": "henen",
-          "new": "heen",
-          "principe": "V67"
+          "old": "henen uitgetogen?",
+          "new": "heen uitgetrokken?",
+          "principe": null
         },
         {
           "old": "den",

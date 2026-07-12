@@ -3840,7 +3840,7 @@
       "number": 31,
       "textSV1888": "De koning nu van Syrië had geboden aan de oversten der wagenen, van welke hij twee en dertig had, zeggende: Gij zult noch kleinen noch groten bestrijden, maar den koning van Israël alleen.",
       "text1637": "De Coninck nu van Syrien hadde geboden de Overste der wagenen, welcker [60] hy twee en dertich hadde, seggende; Ghy en sult noch [61] kleynen, noch grooten bestrijden, maer den Coninck Israëls alleen.",
-      "text2026": "De koning nu van Syrië had geboden aan de oversten van de wagens, van welke hij twee en dertig had, zeggende: U zult noch kleinen noch grote bestrijden, maar de koning van Israël alleen.",
+      "text2026": "De koning nu van Syrië had geboden aan de oversten van de wagens, waarvan hij er twee en dertig had, zeggende: U zult noch kleinen noch grote bestrijden, maar de koning van Israël alleen.",
       "marginNotes": [
         {
           "marker": "60",
@@ -3974,14 +3974,24 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "De koning nu van Syrië had geboden aan de oversten van de wagens, van welke hij twee en dertig had, zeggende: <span class=\"direct-speech\"><i>U zult noch kleinen noch grote bestrijden, maar de koning van Israël alleen.</i></span>",
+      "text2026_html": "De koning nu van Syrië had geboden aan de oversten van de wagens, waarvan hij er twee en dertig had, zeggende: <span class=\"direct-speech\"><i>U zult noch kleinen noch grote bestrijden, maar de koning van Israël alleen.</i></span>",
       "textSV1888_html": "De koning nu van Syrië had geboden aan de oversten der wagenen, van<sup class=\"note-marker\" data-note=\"60\">60</sup> welke hij twee en dertig had, zeggende: Gij zult noch<sup class=\"note-marker\" data-note=\"61\">61</sup> kleinen noch groten bestrijden, maar den koning van Israël alleen.",
       "text1637_html": "De Coninck nu van Syrien hadde geboden de Overste der wagenen, welcker <sup class=\"note-marker\" data-note=\"60\">60</sup> hy twee en dertich hadde, seggende; Ghy en sult noch <sup class=\"note-marker\" data-note=\"61\">61</sup> kleynen, noch grooten bestrijden, maer den Coninck Israëls alleen.",
       "phraseDiff": [
         {
           "old": "der wagenen,",
-          "new": "van de wagens,",
-          "principe": "N2"
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "welke",
+          "new": "de wagens, waarvan",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "er",
+          "principe": null
         },
         {
           "old": "Gij",
@@ -4710,7 +4720,7 @@
       "number": 38,
       "textSV1888": "Als men nu den wagen in den vijver van Samaria spoelde, lekten de honden zijn bloed, waar de hoeren wiesen, naar het woord des HEEREN, dat Hij gesproken had.",
       "text1637": "Alsmen nu den wagen in den viver van Samaria spoelde, leckten de honden sijn bloet, [75] daer de hoeren wiesschen; [76] nae het woort des HEEREN dat hy gesproken hadde.",
-      "text2026": "Als men nu de wagen in de vijver van Samaria spoelde, lekten de honden zijn bloed, waar de hoeren wiesen, naar het woord van JAHWEH, dat Hij gesproken had.",
+      "text2026": "Als men nu de wagen in de vijver van Samaria spoelde, lekten de honden zijn bloed, waar de hoeren zich wasten, naar het woord van JAHWEH, dat Hij gesproken had.",
       "marginNotes": [
         {
           "marker": "75",
@@ -4809,7 +4819,7 @@
           "morph": "HVpp3ms"
         }
       ],
-      "text2026_html": "Als men nu de wagen in de vijver van Samaria spoelde, lekten de honden zijn bloed,<sup class=\"note-marker\" data-note=\"75\">75</sup> waar de hoeren wiesen,<sup class=\"note-marker\" data-note=\"76\">76</sup> naar het woord van JAHWEH, dat Hij gesproken had.",
+      "text2026_html": "Als men nu de wagen in de vijver van Samaria spoelde, lekten de honden zijn bloed,<sup class=\"note-marker\" data-note=\"75\">75</sup> waar de hoeren zich wasten,<sup class=\"note-marker\" data-note=\"76\">76</sup> naar het woord van JAHWEH, dat Hij gesproken had.",
       "textSV1888_html": "Als men nu den wagen in den vijver van Samaria spoelde, lekten de honden zijn bloed,<sup class=\"note-marker\" data-note=\"75\">75</sup> waar de hoeren wiesen,<sup class=\"note-marker\" data-note=\"76\">76</sup> naar het woord des HEEREN, dat Hij gesproken had.",
       "text1637_html": "Alsmen nu den wagen in den viver van Samaria spoelde, leckten de honden sijn bloet, <sup class=\"note-marker\" data-note=\"75\">75</sup> daer de hoeren wiesschen; <sup class=\"note-marker\" data-note=\"76\">76</sup> nae het woort des HEEREN dat hy gesproken hadde.",
       "phraseDiff": [
@@ -4822,6 +4832,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "wiesen,",
+          "new": "zich wasten,",
+          "principe": null
         },
         {
           "old": "des HEEREN,",

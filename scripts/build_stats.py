@@ -40,6 +40,8 @@ def main():
     verified_books = []   # weergavelabels van (deels) nagekeken boeken, in canonieke volgorde
     by_test = {'OT': [0, 0], 'NT': [0, 0], 'AP': [0, 0]}   # testament -> [verzen_totaal, verzen_nagekeken]
     for b in books:
+        if b.get('ethiopic'):
+            continue   # Ethiopische stub-boeken tellen niet mee in de statistieken (nog geen tekst)
         bid = b['id']; chs = b.get('chaptersIncluded', [])
         test = b.get('testament')
         ch_total += len(chs)
@@ -84,7 +86,7 @@ def main():
     stats = {
         'version': version,
         'date': datum,
-        'books_total': len(books),
+        'books_total': len([b for b in books if not b.get('ethiopic')]),
         'books_verified': books_full,
         'chapters_total': ch_total,
         'chapters_verified': ch_ver,

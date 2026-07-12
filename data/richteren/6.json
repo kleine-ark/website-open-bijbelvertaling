@@ -988,7 +988,7 @@
       "number": 10,
       "textSV1888": "En Ik zeide tot ulieden: Ik ben de HEERE, uw God; vreest de goden der Amorieten niet, in welker land gij woont; maar gij zijt Mijner stem niet gehoorzaam geweest.",
       "text1637": "Ende ick seyde tot ulieden; Ick ben de HEERE uwe Godt, En [a] vreest de Goden der Amoriten niet, in welcker lant ghy woont: maer ghy en zijt mijner stemme niet gehoorsaem geweest.",
-      "text2026": "En Ik zei tot u: Ik ben JAHWEH, uw God; vreest de goden van de Amorieten niet, in welker land u woont; maar u bent Van mijn stem niet gehoorzaam geweest.",
+      "text2026": "En Ik zei tot u: Ik ben JAHWEH, uw God; vreest de goden van de Amorieten niet, in wier land u woont; maar u bent Mijn stem niet gehoorzaam geweest.",
       "marginNotes": [
         {
           "marker": "a",
@@ -1085,7 +1085,7 @@
           "morph": "HR/Ncmsc/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En Ik zei tot u: Ik ben JAHWEH, uw God; vreest de goden van de Amorieten niet, in welker land u woont; maar u bent Van mijn stem niet gehoorzaam geweest.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En Ik zei tot u: Ik ben JAHWEH, uw God; vreest de goden van de Amorieten niet, in wier land u woont; maar u bent Mijn stem niet gehoorzaam geweest.</i></span>",
       "textSV1888_html": "En Ik zeide tot ulieden: Ik ben de HEERE, uw God; vreest<sup class=\"note-marker\" data-note=\"a\">a</sup> de goden der Amorieten niet, in welker land gij woont; maar gij zijt Mijner stem niet gehoorzaam geweest.",
       "text1637_html": "Ende ick seyde tot ulieden; Ick ben de HEERE uwe Godt, En <sup class=\"note-marker\" data-note=\"a\">a</sup> vreest de Goden der Amoriten niet, in welcker lant ghy woont: maer ghy en zijt mijner stemme niet gehoorsaem geweest.",
       "phraseDiff": [
@@ -1110,14 +1110,19 @@
           "principe": "N2"
         },
         {
+          "old": "welker",
+          "new": "wier",
+          "principe": "V212"
+        },
+        {
           "old": "gij",
           "new": "u",
           "principe": "A1"
         },
         {
           "old": "gij zijt Mijner",
-          "new": "u bent Van mijn",
-          "principe": "N7"
+          "new": "u bent Mijn",
+          "principe": null
         }
       ]
     },
@@ -3504,7 +3509,7 @@
       "number": 28,
       "textSV1888": "Als nu de mannen van die stad des morgens vroeg opstonden, ziet, zo was het altaar van Baäl omgeworpen, en de haag, die daarbij was, afgehouwen, en die tweede var was op het gebouwde altaar geofferd.",
       "text1637": "Als nu de mannen van die stadt des morgens vroech opstonden; siet so was des Baals altaer om geworpen, ende de hage, die daer by was, afgehouwen: ende die tweede varre was op den gebouwden altaer geoffert.",
-      "text2026": "Als nu de mannen van die stad 's morgens vroeg opstonden, ziet, zo was het altaar van Baäl omgeworpen, en de haag, die daarbij was, afgehouwen, en die tweede stier was op het gebouwde altaar geofferd.",
+      "text2026": "Als nu de mannen van die stad 's morgens vroeg opstonden, zie, zo was het altaar van Baäl omgeworpen, en de haag, die daarbij was, afgehouwen, en die tweede stier was op het gebouwde altaar geofferd.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3603,13 +3608,18 @@
           "morph": "HTd/Vqsmsa"
         }
       ],
-      "text2026_html": "Als nu de mannen van die stad 's morgens vroeg opstonden, ziet, zo was het altaar van Baäl omgeworpen, en de haag, die daarbij was, afgehouwen, en die tweede stier was op het gebouwde altaar geofferd.",
+      "text2026_html": "Als nu de mannen van die stad 's morgens vroeg opstonden, zie, zo was het altaar van Baäl omgeworpen, en de haag, die daarbij was, afgehouwen, en die tweede stier was op het gebouwde altaar geofferd.",
       "text1637_html": "Als nu de mannen van die stadt des morgens vroech opstonden; siet so was des Baals altaer om geworpen, ende de hage, die daer by was, afgehouwen: ende die tweede varre was op den gebouwden altaer geoffert.",
       "phraseDiff": [
         {
           "old": "des",
           "new": "'s",
           "principe": "N3"
+        },
+        {
+          "old": "ziet,",
+          "new": "zie,",
+          "principe": "V198"
         },
         {
           "old": "var",

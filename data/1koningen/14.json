@@ -3509,7 +3509,7 @@
       "number": 28,
       "textSV1888": "En het geschiedde, zo wanneer de koning in het huis des HEEREN ging, dat de trawanten dezelve droegen, en die wederbrachten in der trawanten wachtkamer.",
       "text1637": "Ende het geschiedde, so wanneer de Coninck in het Huys des HEEREN ginck, [dat] de trauwanten [57] de selve droegen; ende die wederbrachten in der trauwanten [58] wacht-kamer.",
-      "text2026": "En het gebeurde, zo wanneer de koning in het huis van JAHWEH ging, dat de trawanten die droegen, en die wederbrachten in van de trawanten wachtkamer.",
+      "text2026": "En het gebeurde, zo wanneer de koning in het huis van JAHWEH ging, dat de trawanten die droegen, en die terugbrachten in de wachtkamer van de trawanten.",
       "marginNotes": [
         {
           "marker": "57",
@@ -3588,7 +3588,7 @@
           "morph": "HTd/Vqrmpa"
         }
       ],
-      "text2026_html": "En het gebeurde, zo wanneer de koning in het huis van JAHWEH ging, dat de trawanten<sup class=\"note-marker\" data-note=\"57\">57</sup> die droegen, en die wederbrachten in van de<sup class=\"note-marker\" data-note=\"58\">58</sup> trawanten wachtkamer.",
+      "text2026_html": "En het gebeurde, zo wanneer de koning in het huis van JAHWEH ging, dat de trawanten<sup class=\"note-marker\" data-note=\"57\">57</sup> die droegen, en die terugbrachten in de wachtkamer van de<sup class=\"note-marker\" data-note=\"58\">58</sup> trawanten.",
       "textSV1888_html": "En het geschiedde, zo wanneer de koning in het huis des HEEREN ging, dat de trawanten<sup class=\"note-marker\" data-note=\"57\">57</sup> dezelve droegen, en die wederbrachten in der trawanten<sup class=\"note-marker\" data-note=\"58\">58</sup> wachtkamer.",
       "text1637_html": "Ende het geschiedde, so wanneer de Coninck in het Huys des HEEREN ginck, [dat] de trauwanten <sup class=\"note-marker\" data-note=\"57\">57</sup> de selve droegen; ende die wederbrachten in der trauwanten <sup class=\"note-marker\" data-note=\"58\">58</sup> wacht-kamer.",
       "phraseDiff": [
@@ -3608,9 +3608,14 @@
           "principe": "O3"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "wederbrachten",
+          "new": "terugbrachten",
+          "principe": null
+        },
+        {
+          "old": "der trawanten wachtkamer.",
+          "new": "de wachtkamer van de trawanten.",
+          "principe": null
         }
       ]
     },
