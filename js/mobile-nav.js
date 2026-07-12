@@ -161,7 +161,7 @@ const MobileNav = {
         const orderSel = document.createElement('select');
         orderSel.className = 'mp-order';
         orderSel.setAttribute('aria-label', 'Boekvolgorde');
-        [['canoniek','Canoniek (SV / westers)'],['tenach','Joodse Tenach (TNK)'],['orthodox','Orthodox (Septuaginta)'],['chronologisch','Chronologisch (gebeurtenissen)'],['schrijftijd','Vermoedelijke schrijftijd'],['auteur','Op auteur'],['lengte','Op lengte']].forEach(([v,t]) => {
+        [['canoniek','Canoniek (SV / westers)'],['tenach','Joodse Tenach (TNK)'],['orthodox','Orthodox (Septuaginta)'],['ethiopisch','Ethiopisch (Tewahedo)'],['chronologisch','Chronologisch (gebeurtenissen)'],['schrijftijd','Vermoedelijke schrijftijd'],['auteur','Op auteur']].forEach(([v,t]) => {
             const o = document.createElement('option');
             o.value = v; o.textContent = 'Volgorde: ' + t;
             if (v === mode) o.selected = true;
@@ -295,9 +295,9 @@ const MobileNav = {
             }
             sel.appendChild(og);
         }
-        // Eventuele ontbrekende boeken
+        // Eventuele ontbrekende boeken (Ethiopische stub-boeken hier altijd verbergen)
         const assigned = new Set(Object.values(bookOrder).flat());
-        const rest = manifest.books.filter(b => !assigned.has(b.id));
+        const rest = manifest.books.filter(b => !assigned.has(b.id) && !b.ethiopic);
         if (rest.length > 0) {
             const og = document.createElement('optgroup');
             og.label = 'Overig';

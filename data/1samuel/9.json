@@ -2091,7 +2091,7 @@
       "number": 16,
       "textSV1888": "Morgen omtrent dezen tijd zal Ik tot u zenden een man uit het land van Benjamin, dien zult gij ten voorganger zalven over Mijn volk Israël; en hij zal Mijn volk verlossen uit der Filistijnen hand, want Ik heb Mijn volk aangezien, dewijl deszelfs geroep tot Mij gekomen is.",
       "text1637": "Morgen ontrent deser tijt sal ick [31] tot u senden eenen man uyt den lande Benjamins, dien sult ghy ten Voorganger salven over mijn volck Israël, ende hy sal mijn volck verlossen uyt der Philistijnen hant, want ick hebbe mijn volck aengesien, dewijle des selven geroep tot my gekomen is.",
-      "text2026": "Morgen ongeveer deze tijd zal Ik tot u zenden een man uit het land van Benjamin, die zult u ten voorganger zalven over Mijn volk Israël; en hij zal Mijn volk verlossen uit van de Filistijnen hand, want Ik heb Mijn volk aangezien, omdat daarvan geroep tot Mij gekomen is.",
+      "text2026": "Morgen ongeveer deze tijd zal Ik tot u zenden een man uit het land van Benjamin, die zult u ten voorganger zalven over Mijn volk Israël; en hij zal Mijn volk verlossen uit de hand van de Filistijnen, want Ik heb Mijn volk aangezien, omdat het geroep daarvan tot Mij gekomen is.",
       "marginNotes": [
         {
           "marker": "31",
@@ -2228,7 +2228,7 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Morgen ongeveer deze tijd zal Ik<sup class=\"note-marker\" data-note=\"31\">31</sup> tot u zenden een man uit het land van Benjamin, die zult u ten voorganger zalven over Mijn volk Israël; en hij zal Mijn volk verlossen uit van de Filistijnen hand, want Ik heb Mijn volk aangezien, omdat daarvan geroep tot Mij gekomen is.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Morgen ongeveer deze tijd zal Ik<sup class=\"note-marker\" data-note=\"31\">31</sup> tot u zenden een man uit het land van Benjamin, die zult u ten voorganger zalven over Mijn volk Israël; en hij zal Mijn volk verlossen uit de hand van de Filistijnen, want Ik heb Mijn volk aangezien, omdat het geroep daarvan tot Mij gekomen is.</i></span>",
       "textSV1888_html": "Morgen omtrent dezen tijd zal Ik<sup class=\"note-marker\" data-note=\"31\">31</sup> tot u zenden een man uit het land van Benjamin, dien zult gij ten voorganger zalven over Mijn volk Israël; en hij zal Mijn volk verlossen uit der Filistijnen hand, want Ik heb Mijn volk aangezien, dewijl deszelfs geroep tot Mij gekomen is.",
       "text1637_html": "Morgen ontrent deser tijt sal ick <sup class=\"note-marker\" data-note=\"31\">31</sup> tot u senden eenen man uyt den lande Benjamins, dien sult ghy ten Voorganger salven over mijn volck Israël, ende hy sal mijn volck verlossen uyt der Philistijnen hant, want ick hebbe mijn volck aengesien, dewijle des selven geroep tot my gekomen is.",
       "phraseDiff": [
@@ -2248,14 +2248,19 @@
           "principe": "A1"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der Filistijnen hand,",
+          "new": "de hand van de Filistijnen,",
+          "principe": null
         },
         {
           "old": "dewijl deszelfs",
-          "new": "omdat daarvan",
-          "principe": "V2"
+          "new": "omdat het",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "daarvan",
+          "principe": null
         }
       ]
     },
@@ -2263,7 +2268,7 @@
       "number": 17,
       "textSV1888": "Toen Samuël Saul aanzag, zo antwoordde hem de HEERE: Zie, dit is de man, van welken Ik u gezegd heb: Deze zal over Mijn volk heersen.",
       "text1637": "Doe Samuel Saul aensach; [32] so antwoordde hem de HEERE, Siet dit is de man, van welcken ick u geseyt hebbe, dese sal over mijn volck [33] heerschen.",
-      "text2026": "Toen Samuël Saul aanzag, zo antwoordde hem JAHWEH: Zie, dit is de man, van welke Ik u gezegd heb: Deze zal over Mijn volk heersen.",
+      "text2026": "Toen Samuël Saul aanzag, zo antwoordde hem JAHWEH: Zie, dit is de man, over wie Ik u gezegd heb: Deze zal over Mijn volk heersen.",
       "marginNotes": [
         {
           "marker": "32",
@@ -2352,7 +2357,7 @@
           "morph": "HR/Ncmsc/Sp1cs"
         }
       ],
-      "text2026_html": "Toen Samuël Saul aanzag, zo antwoordde hem JAHWEH: <span class=\"god-speaks\"><i>Zie, dit is de man, van welke Ik u gezegd heb: Deze zal over Mijn volk heersen.</i></span>",
+      "text2026_html": "Toen Samuël Saul aanzag, zo antwoordde hem JAHWEH: <span class=\"god-speaks\"><i>Zie, dit is de man, over wie Ik u gezegd heb: Deze zal over Mijn volk heersen.</i></span>",
       "textSV1888_html": "Toen Samuël Saul aanzag,<sup class=\"note-marker\" data-note=\"32\">32</sup> zo antwoordde hem de HEERE: Zie, dit is de man, van welken Ik u gezegd heb: Deze zal over Mijn volk<sup class=\"note-marker\" data-note=\"33\">33</sup> heersen.",
       "text1637_html": "Doe Samuel Saul aensach; <sup class=\"note-marker\" data-note=\"32\">32</sup> so antwoordde hem de HEERE, Siet dit is de man, van welcken ick u geseyt hebbe, dese sal over mijn volck <sup class=\"note-marker\" data-note=\"33\">33</sup> heerschen.",
       "phraseDiff": [
@@ -2362,9 +2367,9 @@
           "principe": "G1"
         },
         {
-          "old": "welken",
-          "new": "welke",
-          "principe": "N6"
+          "old": "van welken",
+          "new": "over wie",
+          "principe": null
         }
       ]
     },
@@ -3440,7 +3445,7 @@
       "number": 26,
       "textSV1888": "En zij stonden vroeg op; en het geschiedde, omtrent den opgang des dageraads, zo riep Samuël Saul op het dak, zeggende: Sta op, dat ik u gaan late. Toen stond Saul op, en zij beiden gingen uit, hij en Samuël, naar buiten.",
       "text1637": "Ende sy stonden vroech op: ende ’t geschiedde, ontrent den opganck des dageraets, [49] so riep Samuel Saul op het dack, seggende, Staet op, dat ick u gaen late: doe stond Saul op, ende sy beyde gingen uyt, hy ende Samuel, nae buyten.",
-      "text2026": "En zij stonden vroeg op; en het gebeurde, ongeveer de opgang van de dageraads, zo riep Samuël Saul op het dak, zeggende: Sta op, dat ik u gaan late. Toen stond Saul op, en zij beiden gingen uit, hij en Samuël, naar buiten.",
+      "text2026": "En zij stonden vroeg op; en het gebeurde, ongeveer de opgang van de dageraad, zo riep Samuël Saul op het dak, zeggende: Sta op, dat ik u gaan late. Toen stond Saul op, en zij beiden gingen uit, hij en Samuël, naar buiten.",
       "marginNotes": [
         {
           "marker": "49",
@@ -3547,7 +3552,7 @@
           "morph": "HTd/Ncmsa/Sd"
         }
       ],
-      "text2026_html": "En zij stonden vroeg op; en het gebeurde, ongeveer de opgang van de dageraads, zo riep Samuël Saul op het dak, zeggende: <span class=\"direct-speech\"><i>Sta op, dat ik u gaan late.</i></span> Toen stond Saul op, en zij beiden gingen uit, hij en Samuël, naar buiten.",
+      "text2026_html": "En zij stonden vroeg op; en het gebeurde, ongeveer de opgang van de dageraad, zo riep Samuël Saul op het dak, zeggende: <span class=\"direct-speech\"><i>Sta op, dat ik u gaan late.</i></span> Toen stond Saul op, en zij beiden gingen uit, hij en Samuël, naar buiten.",
       "textSV1888_html": "En zij stonden vroeg op; en het geschiedde, omtrent den opgang des dageraads,<sup class=\"note-marker\" data-note=\"49\">49</sup> zo riep Samuël Saul op het dak, zeggende: Sta op, dat ik u gaan late. Toen stond Saul op, en zij beiden gingen uit, hij en Samuël, naar buiten.",
       "text1637_html": "Ende sy stonden vroech op: ende ’t geschiedde, ontrent den opganck des dageraets, <sup class=\"note-marker\" data-note=\"49\">49</sup> so riep Samuel Saul op het dack, seggende, Staet op, dat ick u gaen late: doe stond Saul op, ende sy beyde gingen uyt, hy ende Samuel, nae buyten.",
       "phraseDiff": [
@@ -3557,9 +3562,9 @@
           "principe": "N1"
         },
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des dageraads,",
+          "new": "van de dageraad,",
+          "principe": null
         }
       ]
     },

@@ -62,7 +62,7 @@ const Navigation = {
         }
         // Eventuele ontbrekende boeken
         const assignedIds = new Set(Object.values(bookOrder).flat());
-        const unassigned = manifest.books.filter(b => !assignedIds.has(b.id));
+        const unassigned = manifest.books.filter(b => !assignedIds.has(b.id) && !(b.ethiopic && mode !== 'ethiopisch'));
         if (unassigned.length > 0) addGroup('Overig', unassigned);
     },
 
