@@ -644,11 +644,14 @@ const App = {
                     const subText = strongs || w.lemma || '';
                     const dataAttr = strongs ? ` data-strongs="${strongs}"` : '';
                     const subHtml = subText ? `<br><span class="strongs-sub">${subText}</span>` : '';
+                    const attr = v => String(v == null ? '' : v).replace(/"/g, '&quot;');
                     // Ge'ez heeft geen Strong's → klikbaar via geez-word (zie js/geez-lexicon.js)
                     if (isGeez) {
-                        const wEsc = String(w.woord).replace(/"/g, '&quot;');
-                        const trEsc = String(translit).replace(/"/g, '&quot;');
-                        return `<span class="strongs-word geez-word" data-geez="${wEsc}" data-translit="${trEsc}">${w.woord}</span>`;
+                        return `<span class="strongs-word geez-word" data-geez="${attr(w.woord)}" data-translit="${attr(translit)}" data-betekenis="${attr(w.betekenis)}">${w.woord}</span>`;
+                    }
+                    // Latijn (4 Ezra) heeft geen Strong's → klikbaar via latin-word
+                    if (bookId === '4ezra') {
+                        return `<span class="strongs-word latin-word" data-lemma="${attr(w.lemma)}" data-betekenis="${attr(w.betekenis)}">${w.woord}</span>`;
                     }
                     return `<span class="strongs-word"${dataAttr} data-transliteratie="${translit}" data-gloss="${gloss}">${w.woord}${subHtml}</span>`;
                 }).join(' ');
