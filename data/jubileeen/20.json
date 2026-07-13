@@ -1,59 +1,841 @@
 {
- "number": 20,
- "chapterIntro": {
-  "text1637": "",
-  "text2026": ""
- },
- "verses": [
-  {
-   "number": 1,
-   "text1637": "",
-   "text2026": "En in het tweeënveertigste jubeljaar, in het eerste jaar van de zevende week, riep Abraham Ismaël en zijn twaalf zonen, en Izak en zijn twee zonen, en de zes zonen van Ketura en hun kinderen. 2 En hij gebood hun dat zij de weg van God zouden houden, om gerechtigheid te doen, en dat de een de ander, zijn naaste, zou liefhebben, en dat zij evenzo zouden zijn te midden van allen, dat de een jegens de ander zou wandelen, om recht en gerechtigheid te doen op de aarde. 3 Dat zij hun zonen zouden besnijden naar het verbond dat Hij met hen gemaakt had, en dat zij niet zouden afwijken ter rechter- of ter linkerhand van al de wegen die God ons geboden heeft, en dat wij ons zouden wachten voor alle hoererij en onreinheid, en dat wij uit ons midden alle onreinheid en hoererij zouden wegdoen."
+  "number": 20,
+  "chapterIntro": {
+    "text1637": "",
+    "text2026": ""
   },
-  {
-   "number": 4,
-   "text1637": "",
-   "text2026": "En zo een vrouw onder u hoereert, of een meisje, verbrandt haar met vuur; en laten zij niet hoereren achter hun ogen en hun hart aan, om zich vrouwen te nemen uit de dochters van Kanaän, want het zaad van Kanaän zal uit het land uitgeroeid worden."
-  },
-  {
-   "number": 5,
-   "text1637": "",
-   "text2026": "En hij vertelde hun het oordeel van de reuzen en het oordeel van Sodom, hoe zij geoordeeld werden vanwege hun boosheid, vanwege hoererij en onreinheid en bederf onder elkander; door hoererij stierven zij."
-  },
-  {
-   "number": 6,
-   "text1637": "",
-   "text2026": "En ook u, wacht u voor alle hoererij en onreinheid en voor alle bezoedeling der zonde, opdat u onze naam niet tot een vloek maakt, en heel uw leven tot een aanfluiting, en al uw zonen tot verderf door het zwaard, en u vervloekt wordt gelijk Sodom, en heel uw overblijfsel gelijk de zonen van Gomorra."
-  },
-  {
-   "number": 7,
-   "text1637": "",
-   "text2026": "Ik betuig u, mijn zonen: hebt de God des hemels lief, en hangt al Zijn geboden aan, en wandelt niet achter hun afgoden en achter hun onreinheid."
-  },
-  {
-   "number": 8,
-   "text1637": "",
-   "text2026": "En maakt voor u geen gegoten goden en gesneden beelden, want het is ijdelheid."
-  },
-  {
-   "number": 9,
-   "text1637": "",
-   "text2026": "Maar aanbidt de allerhoogste God, en buigt u voor Hem gedurig neer, en verwacht Zijn aangezicht te aller tijd, en doet gerechtigheid en oprechtheid voor Zijn aangezicht, opdat Hij welbehagen in u heeft en u Zijn barmhartigheid geeft en voor u regen doet neerdalen, des morgens en des avonds."
-  },
-  {
-   "number": 10,
-   "text1637": "",
-   "text2026": "En u zult tot een zegen zijn op de aarde, en al de heidenen der aarde zullen behagen in u hebben."
-  },
-  {
-   "number": 11,
-   "text1637": "",
-   "text2026": "En hij gaf aan Ismaël en aan zijn zonen en aan de zonen van Ketura geschenken, en zond hen weg van Izak zijn zoon; en al het zijne gaf hij aan Izak zijn zoon. 12 En Ismaël en zijn zonen, en de zonen van Ketura en hun kinderen, gingen tezamen, en woonden van Paran af tot aan de ingang van Babel, in heel het land dat naar het oosten is, tegenover de woestijn."
-  },
-  {
-   "number": 13,
-   "text1637": "",
-   "text2026": "En dezen vermengden zich met genen, en hun naam werd genoemd: Arabieren en Ismaëlieten."
-  }
- ]
+  "verses": [
+    {
+      "number": 1,
+      "text1637": "",
+      "text2026": "En in het tweeënveertigste jubeljaar, in het eerste jaar van de zevende week, riep Abraham Ismaël en zijn twaalf zonen, en Izak en zijn twee zonen, en de zes zonen van Ketura en hun kinderen. 2 En hij gebood hun dat zij de weg van God zouden houden, om gerechtigheid te doen, en dat de een de ander, zijn naaste, zou liefhebben, en dat zij evenzo zouden zijn te midden van allen, dat de een jegens de ander zou wandelen, om recht en gerechtigheid te doen op de aarde. 3 Dat zij hun zonen zouden besnijden naar het verbond dat Hij met hen gemaakt had, en dat zij niet zouden afwijken ter rechter- of ter linkerhand van al de wegen die God ons geboden heeft, en dat wij ons zouden wachten voor alle hoererij en onreinheid, en dat wij uit ons midden alle onreinheid en hoererij zouden wegdoen.",
+      "grondtekst": [
+        {
+          "woord": "20:1"
+        },
+        {
+          "woord": "ወበአርብዓ"
+        },
+        {
+          "woord": "ወክልኤቱ"
+        },
+        {
+          "woord": "ኢዮቤልዉ"
+        },
+        {
+          "woord": "በዓመት"
+        },
+        {
+          "woord": "ቀዳሚ"
+        },
+        {
+          "woord": "ዘሱባዔ"
+        },
+        {
+          "woord": "ሳብዕ"
+        },
+        {
+          "woord": "ጸውዐ"
+        },
+        {
+          "woord": "አብርሃም"
+        },
+        {
+          "woord": "ይስማዔልሃ"
+        },
+        {
+          "woord": "ወዐሠርተ"
+        },
+        {
+          "woord": "ወክልኤተ"
+        },
+        {
+          "woord": "ደቂቆ"
+        },
+        {
+          "woord": "ወይስሐቅሃ"
+        },
+        {
+          "woord": "ወክልኤሆሙ"
+        },
+        {
+          "woord": "ደቂቆ"
+        },
+        {
+          "woord": "ወስድስተ"
+        },
+        {
+          "woord": "ደቂቀ"
+        },
+        {
+          "woord": "ኬጡራ"
+        },
+        {
+          "woord": "ወውሉዶሙ"
+        },
+        {
+          "woord": "2"
+        },
+        {
+          "woord": "ወአዘዞሙ"
+        },
+        {
+          "woord": "ከመ"
+        },
+        {
+          "woord": "ይዕቀቡ"
+        },
+        {
+          "woord": "ፍኖተ"
+        },
+        {
+          "woord": "እግዚአብሔር"
+        },
+        {
+          "woord": "ከመ"
+        },
+        {
+          "woord": "ይግበሩ"
+        },
+        {
+          "woord": "ጽድቀ"
+        },
+        {
+          "woord": "ወያፍቅር"
+        },
+        {
+          "woord": "አሐዱ"
+        },
+        {
+          "woord": "አሐዱ"
+        },
+        {
+          "woord": "ቢጾ"
+        },
+        {
+          "woord": "ወከመ"
+        },
+        {
+          "woord": "ይኩኑ"
+        },
+        {
+          "woord": "ከማሁ"
+        },
+        {
+          "woord": "በውስተ"
+        },
+        {
+          "woord": "ኵሉ"
+        },
+        {
+          "woord": "ፀብእ"
+        },
+        {
+          "woord": "ከመ"
+        },
+        {
+          "woord": "ይሖሩ"
+        },
+        {
+          "woord": "ዲበ"
+        },
+        {
+          "woord": "አሐዱ"
+        },
+        {
+          "woord": "ላዕሌሆሙ"
+        },
+        {
+          "woord": "ወለገቢረ"
+        },
+        {
+          "woord": "ፍትሕ"
+        },
+        {
+          "woord": "ወጽድቅ"
+        },
+        {
+          "woord": "በዲበ"
+        },
+        {
+          "woord": "ምድር"
+        },
+        {
+          "woord": "3"
+        },
+        {
+          "woord": "ከመ"
+        },
+        {
+          "woord": "ይክስቡ"
+        },
+        {
+          "woord": "ውሉዶሙ"
+        },
+        {
+          "woord": "በኪዳን"
+        },
+        {
+          "woord": "እንተ"
+        },
+        {
+          "woord": "ተካየደ"
+        },
+        {
+          "woord": "ምስሌሆሙ"
+        },
+        {
+          "woord": "ወከመ"
+        },
+        {
+          "woord": "ኢይትዐደዉ"
+        },
+        {
+          "woord": "የማነ"
+        },
+        {
+          "woord": "ወፀጋመ"
+        },
+        {
+          "woord": "እምኵሎን"
+        },
+        {
+          "woord": "ፍናዌ"
+        },
+        {
+          "woord": "ዘአዘዘነ"
+        },
+        {
+          "woord": "እግዚአብሔር"
+        },
+        {
+          "woord": "ወከመ"
+        },
+        {
+          "woord": "ንትዐቀብ"
+        },
+        {
+          "woord": "እምኵሉ"
+        },
+        {
+          "woord": "ዝሙት"
+        },
+        {
+          "woord": "ወርኵስ"
+        },
+        {
+          "woord": "ወከመ"
+        },
+        {
+          "woord": "ንኅድግ"
+        },
+        {
+          "woord": "እማእከሌነ"
+        },
+        {
+          "woord": "ኵሎ"
+        },
+        {
+          "woord": "ርኵሰ"
+        },
+        {
+          "woord": "ወዝሙተ"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "text1637": "",
+      "text2026": "En zo een vrouw onder u hoereert, of een meisje, verbrandt haar met vuur; en laten zij niet hoereren achter hun ogen en hun hart aan, om zich vrouwen te nemen uit de dochters van Kanaän, want het zaad van Kanaän zal uit het land uitgeroeid worden.",
+      "grondtekst": [
+        {
+          "woord": "20:4"
+        },
+        {
+          "woord": "ወእመ"
+        },
+        {
+          "woord": "ዘመወት"
+        },
+        {
+          "woord": "ለክሙ"
+        },
+        {
+          "woord": "ኵላ"
+        },
+        {
+          "woord": "ብእሲት"
+        },
+        {
+          "woord": "ወእመኒ"
+        },
+        {
+          "woord": "ወለት"
+        },
+        {
+          "woord": "አውዕይዋ"
+        },
+        {
+          "woord": "በእሳት"
+        },
+        {
+          "woord": "ወኢይዘምዋ"
+        },
+        {
+          "woord": "ድኅረ"
+        },
+        {
+          "woord": "አዕይንቲሆን"
+        },
+        {
+          "woord": "ወልቦንሂ"
+        },
+        {
+          "woord": "ከመ"
+        },
+        {
+          "woord": "ይንሥኡ"
+        },
+        {
+          "woord": "ሎሙ"
+        },
+        {
+          "woord": "ብእሲተ"
+        },
+        {
+          "woord": "እምነ"
+        },
+        {
+          "woord": "አዋልደ"
+        },
+        {
+          "woord": "ከናአን"
+        },
+        {
+          "woord": "እስመ"
+        },
+        {
+          "woord": "ይሤሮ"
+        },
+        {
+          "woord": "ዘርአ"
+        },
+        {
+          "woord": "ከናአን"
+        },
+        {
+          "woord": "እምድር"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "text1637": "",
+      "text2026": "En hij vertelde hun het oordeel van de reuzen en het oordeel van Sodom, hoe zij geoordeeld werden vanwege hun boosheid, vanwege hoererij en onreinheid en bederf onder elkander; door hoererij stierven zij.",
+      "grondtekst": [
+        {
+          "woord": "20:5"
+        },
+        {
+          "woord": "ወነገሮሙ"
+        },
+        {
+          "woord": "ኵነኔሆሙ"
+        },
+        {
+          "woord": "ለረዐይት"
+        },
+        {
+          "woord": "ወኵነኔ"
+        },
+        {
+          "woord": "ሰዶም"
+        },
+        {
+          "woord": "ከመ"
+        },
+        {
+          "woord": "ተኰነኑ"
+        },
+        {
+          "woord": "በእንተ"
+        },
+        {
+          "woord": "እከዮሙ"
+        },
+        {
+          "woord": "በእንተ"
+        },
+        {
+          "woord": "ዝሙት"
+        },
+        {
+          "woord": "ወርኵስ"
+        },
+        {
+          "woord": "ወሙስና"
+        },
+        {
+          "woord": "በበይናቲሆሙ"
+        },
+        {
+          "woord": "በዝሙት"
+        },
+        {
+          "woord": "ሞቱ"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "text1637": "",
+      "text2026": "En ook u, wacht u voor alle hoererij en onreinheid en voor alle bezoedeling der zonde, opdat u onze naam niet tot een vloek maakt, en heel uw leven tot een aanfluiting, en al uw zonen tot verderf door het zwaard, en u vervloekt wordt gelijk Sodom, en heel uw overblijfsel gelijk de zonen van Gomorra.",
+      "grondtekst": [
+        {
+          "woord": "20:6"
+        },
+        {
+          "woord": "ወአንትሙኒ"
+        },
+        {
+          "woord": "ተዐቀቡ"
+        },
+        {
+          "woord": "እምኵሉ"
+        },
+        {
+          "woord": "ዝሙት"
+        },
+        {
+          "woord": "ወርኵስ"
+        },
+        {
+          "woord": "ወእምኵሉ"
+        },
+        {
+          "woord": "ግማኔ"
+        },
+        {
+          "woord": "ኀጢአት"
+        },
+        {
+          "woord": "ከመ"
+        },
+        {
+          "woord": "ኢተሀቡ"
+        },
+        {
+          "woord": "ስመነ"
+        },
+        {
+          "woord": "ለመርገም"
+        },
+        {
+          "woord": "ወኵሎ"
+        },
+        {
+          "woord": "ሕይወተክሙ"
+        },
+        {
+          "woord": "ለትምክሕት"
+        },
+        {
+          "woord": "ወኵሎ"
+        },
+        {
+          "woord": "ውሉደክሙ"
+        },
+        {
+          "woord": "ለሙስና"
+        },
+        {
+          "woord": "በሰይፍ"
+        },
+        {
+          "woord": "ወትከውኑ"
+        },
+        {
+          "woord": "ርጉማነ"
+        },
+        {
+          "woord": "ከመ"
+        },
+        {
+          "woord": "ሰዶም"
+        },
+        {
+          "woord": "ወኵሉ"
+        },
+        {
+          "woord": "ተረፍክሙ"
+        },
+        {
+          "woord": "ከመ"
+        },
+        {
+          "woord": "ውሉደ"
+        },
+        {
+          "woord": "ገሞራ"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "text1637": "",
+      "text2026": "Ik betuig u, mijn zonen: hebt de God des hemels lief, en hangt al Zijn geboden aan, en wandelt niet achter hun afgoden en achter hun onreinheid.",
+      "grondtekst": [
+        {
+          "woord": "20:7"
+        },
+        {
+          "woord": "አነ"
+        },
+        {
+          "woord": "አሰምዕ"
+        },
+        {
+          "woord": "ለክሙ"
+        },
+        {
+          "woord": "ውሉድየ"
+        },
+        {
+          "woord": "አፍቅርዎ"
+        },
+        {
+          "woord": "ለአምላከ"
+        },
+        {
+          "woord": "ሰማይ"
+        },
+        {
+          "woord": "ወተፀመዱ"
+        },
+        {
+          "woord": "ኵሎ"
+        },
+        {
+          "woord": "ትእዛዞ"
+        },
+        {
+          "woord": "ወኢትሖሩ"
+        },
+        {
+          "woord": "ድኅረ"
+        },
+        {
+          "woord": "ጣዖቶሙ"
+        },
+        {
+          "woord": "ወድኅረ"
+        },
+        {
+          "woord": "ርኵሶሙ"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "text1637": "",
+      "text2026": "En maakt voor u geen gegoten goden en gesneden beelden, want het is ijdelheid.",
+      "grondtekst": [
+        {
+          "woord": "20:8"
+        },
+        {
+          "woord": "ወአማልክተ"
+        },
+        {
+          "woord": "ስብኮ"
+        },
+        {
+          "woord": "ኢትግበሩ"
+        },
+        {
+          "woord": "ለክሙ"
+        },
+        {
+          "woord": "ወግልፈዋተ"
+        },
+        {
+          "woord": "እስመ"
+        },
+        {
+          "woord": "ከንቱ"
+        },
+        {
+          "woord": "ውእቱ"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "text1637": "",
+      "text2026": "Maar aanbidt de allerhoogste God, en buigt u voor Hem gedurig neer, en verwacht Zijn aangezicht te aller tijd, en doet gerechtigheid en oprechtheid voor Zijn aangezicht, opdat Hij welbehagen in u heeft en u Zijn barmhartigheid geeft en voor u regen doet neerdalen, des morgens en des avonds.",
+      "grondtekst": [
+        {
+          "woord": "20:9"
+        },
+        {
+          "woord": "አላ"
+        },
+        {
+          "woord": "አምልኩ"
+        },
+        {
+          "woord": "አምላከ"
+        },
+        {
+          "woord": "ልዑለ"
+        },
+        {
+          "woord": "ወስግዱ"
+        },
+        {
+          "woord": "ሎቱ"
+        },
+        {
+          "woord": "ወትረ"
+        },
+        {
+          "woord": "ወተሰፈዉ"
+        },
+        {
+          "woord": "ገጸ"
+        },
+        {
+          "woord": "ዚአሁ"
+        },
+        {
+          "woord": "በኵሉ"
+        },
+        {
+          "woord": "ጊዜ"
+        },
+        {
+          "woord": "ወግብሩ"
+        },
+        {
+          "woord": "ጽድቀ"
+        },
+        {
+          "woord": "ወርትዐ"
+        },
+        {
+          "woord": "በቅድሜሁ"
+        },
+        {
+          "woord": "ከመ"
+        },
+        {
+          "woord": "ይፍተው"
+        },
+        {
+          "woord": "ላዕሌክሙ"
+        },
+        {
+          "woord": "ወየሀብክሙ"
+        },
+        {
+          "woord": "ምሕረቶ"
+        },
+        {
+          "woord": "ወያውርድ"
+        },
+        {
+          "woord": "ለክሙ"
+        },
+        {
+          "woord": "ዝናመ"
+        },
+        {
+          "woord": "ነግህ"
+        },
+        {
+          "woord": "ወሰርክ"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "text1637": "",
+      "text2026": "En u zult tot een zegen zijn op de aarde, en al de heidenen der aarde zullen behagen in u hebben.",
+      "grondtekst": [
+        {
+          "woord": "20:10"
+        },
+        {
+          "woord": "ወትከውን"
+        },
+        {
+          "woord": "ለበረከት"
+        },
+        {
+          "woord": "በዲበ"
+        },
+        {
+          "woord": "ምድር"
+        },
+        {
+          "woord": "ወይፈትዉክሙ"
+        },
+        {
+          "woord": "ኵሎሙ"
+        },
+        {
+          "woord": "አሕዛበ"
+        },
+        {
+          "woord": "ምድር"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "text1637": "",
+      "text2026": "En hij gaf aan Ismaël en aan zijn zonen en aan de zonen van Ketura geschenken, en zond hen weg van Izak zijn zoon; en al het zijne gaf hij aan Izak zijn zoon. 12 En Ismaël en zijn zonen, en de zonen van Ketura en hun kinderen, gingen tezamen, en woonden van Paran af tot aan de ingang van Babel, in heel het land dat naar het oosten is, tegenover de woestijn.",
+      "grondtekst": [
+        {
+          "woord": "20:11"
+        },
+        {
+          "woord": "ወወሀቦ"
+        },
+        {
+          "woord": "ለይስማዔል"
+        },
+        {
+          "woord": "ወለውሉዱ"
+        },
+        {
+          "woord": "ወለውሉደ"
+        },
+        {
+          "woord": "ኬጡራ"
+        },
+        {
+          "woord": "ሀብተ"
+        },
+        {
+          "woord": "ወፈነዎሙ"
+        },
+        {
+          "woord": "እምይስሐቅ"
+        },
+        {
+          "woord": "ወልዱ"
+        },
+        {
+          "woord": "ወኵሎ"
+        },
+        {
+          "woord": "ወሀቦ"
+        },
+        {
+          "woord": "ለይስሐቅ"
+        },
+        {
+          "woord": "ወልዱ"
+        },
+        {
+          "woord": "12"
+        },
+        {
+          "woord": "ወሖረ"
+        },
+        {
+          "woord": "ይስማዔል"
+        },
+        {
+          "woord": "ወውሉዱ"
+        },
+        {
+          "woord": "ወውሉደ"
+        },
+        {
+          "woord": "ኬጡራ"
+        },
+        {
+          "woord": "ወውሉዶሙ"
+        },
+        {
+          "woord": "ኅቡረ"
+        },
+        {
+          "woord": "ወኀደሩ"
+        },
+        {
+          "woord": "እምፋርሞን"
+        },
+        {
+          "woord": "እስከ"
+        },
+        {
+          "woord": "ምብዋአ"
+        },
+        {
+          "woord": "ባቢሎን"
+        },
+        {
+          "woord": "ውስተ"
+        },
+        {
+          "woord": "ኵሉ"
+        },
+        {
+          "woord": "ምድር"
+        },
+        {
+          "woord": "እንተ"
+        },
+        {
+          "woord": "ገጸ"
+        },
+        {
+          "woord": "ጽባሕ"
+        },
+        {
+          "woord": "አንጻረ"
+        },
+        {
+          "woord": "ገዳም"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "text1637": "",
+      "text2026": "En dezen vermengden zich met genen, en hun naam werd genoemd: Arabieren en Ismaëlieten.",
+      "grondtekst": [
+        {
+          "woord": "20:13"
+        },
+        {
+          "woord": "ወተደመሩ"
+        },
+        {
+          "woord": "እሉ"
+        },
+        {
+          "woord": "ምስለ"
+        },
+        {
+          "woord": "እሉ"
+        },
+        {
+          "woord": "ወተጸውዐ"
+        },
+        {
+          "woord": "ስሞሙ"
+        },
+        {
+          "woord": "ዐረብ"
+        },
+        {
+          "woord": "ወእስማዔላዊያን"
+        }
+      ]
+    }
+  ]
 }

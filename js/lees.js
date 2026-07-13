@@ -22,6 +22,7 @@ const Lees = {
         'Algemene brieven': ['hebreeen', 'jakobus', '1petrus', '2petrus', '1johannes', '2johannes', '3johannes', 'judas'],
         'Openbaring': ['openbaring'],
         'Apocriefen': ['tobit', 'judith', 'estherapocrief', 'boekderwijsheid', 'jezussirach', 'baruch', 'gebedvanazaria', 'gezangindevuuroven', 'susanna', 'belenddedraak', '1makkabeeen', '2makkabeeen', '3makkabeeen', '3ezra', '4ezra', 'gebedvanmanasse'],
+        'Ethiopische boeken (buiten de canon)': ['henoch', 'jubileeen', '1meqabyan', '2meqabyan', '3meqabyan', '4baruch'],
     },
 
     async init() {
@@ -96,6 +97,8 @@ const Lees = {
 
         // AI-concept-banner tonen voor niet-geverifieerde hoofdstukken
         this._updateVerifiedBanner(bookId, chapter);
+        // Waarschuwing voor Ethiopische (buiten-canonieke) boeken
+        this._updateEthiopicBanner(book);
 
         // Scroll to top
         window.scrollTo(0, 0);
@@ -174,6 +177,23 @@ const Lees = {
             banner.id = 'ai-concept-banner';
             banner.className = 'ai-concept-banner';
             banner.innerHTML = '<strong>⚠ Let op:</strong> AI-wijzigingen. Concept. Nog geen menselijke controle plaatsgevonden — kans op nog niet opgeloste onjuistheden.';
+            const versesEl = document.getElementById('verses');
+            if (versesEl && versesEl.parentNode) versesEl.parentNode.insertBefore(banner, versesEl);
+        }
+        banner.style.display = 'block';
+    },
+
+    _updateEthiopicBanner(book) {
+        const isEth = book && (book.testament === 'ET' || (window.ETHIOPIC_BOOKS && window.ETHIOPIC_BOOKS.includes(book.id)));
+        let banner = document.getElementById('ethiopic-banner');
+        if (!isEth) { if (banner) banner.style.display = 'none'; return; }
+        if (!banner) {
+            banner = document.createElement('div');
+            banner.id = 'ethiopic-banner';
+            banner.className = 'ethiopic-banner';
+            banner.innerHTML = '<strong>⚠ Buiten-canoniek boek (Ethiopisch-orthodoxe traditie).</strong> ' +
+                'Dit boek hoort niet tot de Statenvertaling-canon. De vertaling is in bewerking en ' +
+                'de Ge’ez-grondtekst wordt slechts gedeeltelijk (per beschikbaar hoofdstuk) getoond.';
             const versesEl = document.getElementById('verses');
             if (versesEl && versesEl.parentNode) versesEl.parentNode.insertBefore(banner, versesEl);
         }
@@ -888,6 +908,13 @@ const Lees = {
             label.className = 'book-group-label';
             label.textContent = groupName;
             group.appendChild(label);
+
+            // Ethiopische boeken: aparte, standaard ingeklapte (klikbare) kop
+            if (groupName === 'Ethiopische boeken (buiten de canon)') {
+                group.classList.add('book-group-collapsible', 'collapsed');
+                label.style.cursor = 'pointer';
+                label.addEventListener('click', () => group.classList.toggle('collapsed'));
+            }
 
             const items = document.createElement('div');
             items.className = 'book-group-items';
