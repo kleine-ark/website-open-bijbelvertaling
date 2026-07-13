@@ -3221,9 +3221,9 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     font-family: 'EB Garamond', 'Cardo', 'Times New Roman', serif;
     font-style: italic;
 }
-/* Ge'ez-woorden: klikbaar (lexicon-popup, js/geez-lexicon.js) */
-.geez-word { cursor: pointer; border-radius: 3px; transition: background 0.15s; }
-.geez-word:hover { background: rgba(124, 58, 237, 0.14); }
+/* Ge'ez- en Latijnse woorden: klikbaar (lexicon-popup, js/geez-lexicon.js) */
+.geez-word, .latin-word { cursor: pointer; border-radius: 3px; transition: background 0.15s; }
+.geez-word:hover, .latin-word:hover { background: rgba(124, 58, 237, 0.14); }
 .geez-lex-popup {
     position: absolute; z-index: 1000; max-width: 300px;
     background: #fff; border: 1px solid #d6c9f0; border-top: 3px solid #7c3aed;
@@ -3231,12 +3231,12 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     padding: 12px 14px; font-family: var(--font-body);
 }
 .geez-lex-popup .geez-lex-word { font-size: 22px; color: #2a1a0a; margin-bottom: 2px; direction: ltr; }
-.geez-lex-popup .geez-lex-translit { font-style: italic; color: #6b5d3f; font-size: 14px; margin-bottom: 8px; }
-.geez-lex-popup .geez-lex-links { display: flex; flex-direction: column; gap: 4px; }
-.geez-lex-popup .geez-lex-links a { color: #5b21b6; font-size: 13px; text-decoration: none; }
-.geez-lex-popup .geez-lex-links a:hover { text-decoration: underline; }
+.geez-lex-popup .geez-lex-translit { font-style: italic; color: #6b5d3f; font-size: 14px; margin-bottom: 6px; }
+.geez-lex-popup .geez-lex-betekenis { color: #2c2c2c; font-size: 14px; line-height: 1.45; }
+.geez-lex-popup .geez-lex-empty { color: #999; font-size: 12.5px; font-style: italic; }
 body.dark .geez-lex-popup { background: #23233b; border-color: #4c1d95; }
 body.dark .geez-lex-popup .geez-lex-word { color: #e0e0e0; }
+body.dark .geez-lex-popup .geez-lex-betekenis { color: #d8d8d8; }
 
 /* ===========================================================================
    Bijbel-zoek-overlay (js/search.js) — werkt op zowel index.html als lees.html

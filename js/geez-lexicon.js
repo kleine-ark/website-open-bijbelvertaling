@@ -44,36 +44,55 @@
     let popupEl = null;
     function closePopup() { if (popupEl) { popupEl.remove(); popupEl = null; } }
 
+    function place(anchorEl) {
+        const r = anchorEl.getBoundingClientRect();
+        popupEl.style.top = (r.bottom + window.scrollY + 6) + 'px';
+        popupEl.style.left = Math.min(r.left + window.scrollX, window.scrollX + window.innerWidth - popupEl.offsetWidth - 12) + 'px';
+    }
+    function esc(s) { return String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
     function showPopup(word, anchorEl) {
         closePopup();
-        // Voorkeur: vooraf-berekende transliteratie uit de data (data-translit);
-        // anders de client-side benadering.
-        const tr = (anchorEl && anchorEl.dataset && anchorEl.dataset.translit) || transliterate(word);
-        const q = encodeURIComponent(word);
+        const ds = (anchorEl && anchorEl.dataset) || {};
+        const tr = ds.translit || transliterate(word);
+        const bet = ds.betekenis || '';
         popupEl = document.createElement('div');
         popupEl.className = 'geez-lex-popup';
         popupEl.innerHTML =
-            `<div class="geez-lex-word" lang="gez">${word}</div>` +
-            (tr ? `<div class="geez-lex-translit">${tr}</div>` : '') +
-            `<div class="geez-lex-links">` +
-              `<a href="https://en.wiktionary.org/w/index.php?search=${q}" target="_blank" rel="noopener">Zoek in Wiktionary ↗</a>` +
-              `<a href="https://betamasaheft.eu/Dillmann/" target="_blank" rel="noopener">Dillmann-lexicon (Beta maṣāḥǝft) ↗</a>` +
-            `</div>`;
+            `<div class="geez-lex-word" lang="gez">${esc(word)}</div>` +
+            (tr ? `<div class="geez-lex-translit">${esc(tr)}</div>` : '') +
+            (bet ? `<div class="geez-lex-betekenis">${esc(bet)}</div>`
+                 : `<div class="geez-lex-empty">betekenis nog niet beschikbaar</div>`);
         document.body.appendChild(popupEl);
-        // Positioneer onder het woord
-        const r = anchorEl.getBoundingClientRect();
-        const top = r.bottom + window.scrollY + 6;
-        let left = r.left + window.scrollX;
-        popupEl.style.top = top + 'px';
-        popupEl.style.left = Math.min(left, window.scrollX + window.innerWidth - popupEl.offsetWidth - 12) + 'px';
+        place(anchorEl);
     }
 
-    // Globale klik-afhandeling: klik op een Ge'ez-woord toont de popup; klik elders sluit.
+    function showLatinPopup(word, anchorEl) {
+        closePopup();
+        const ds = (anchorEl && anchorEl.dataset) || {};
+        const lemma = ds.lemma || '';
+        const bet = ds.betekenis || '';
+        popupEl = document.createElement('div');
+        popupEl.className = 'geez-lex-popup';
+        popupEl.innerHTML =
+            `<div class="geez-lex-word" lang="la">${esc(word)}</div>` +
+            (lemma ? `<div class="geez-lex-translit">${esc(lemma)}</div>` : '') +
+            (bet ? `<div class="geez-lex-betekenis">${esc(bet)}</div>`
+                 : `<div class="geez-lex-empty">betekenis nog niet beschikbaar</div>`);
+        document.body.appendChild(popupEl);
+        place(anchorEl);
+    }
+
+    // Globale klik-afhandeling: klik op een Ge'ez- of Latijns woord toont de popup; klik elders sluit.
     document.addEventListener('click', function (e) {
-        const w = e.target.closest && e.target.closest('.geez-word');
-        if (w) {
+        const gw = e.target.closest && e.target.closest('.geez-word');
+        const lw = e.target.closest && e.target.closest('.latin-word');
+        if (gw) {
             e.stopPropagation();
-            showPopup(w.dataset.geez || w.textContent, w);
+            showPopup(gw.dataset.geez || gw.textContent, gw);
+        } else if (lw) {
+            e.stopPropagation();
+            showLatinPopup(lw.textContent, lw);
         } else if (popupEl && !(e.target.closest && e.target.closest('.geez-lex-popup'))) {
             closePopup();
         }
