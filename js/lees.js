@@ -99,6 +99,8 @@ const Lees = {
         this._updateVerifiedBanner(bookId, chapter);
         // Waarschuwing voor Ethiopische (buiten-canonieke) boeken
         this._updateEthiopicBanner(book);
+        // Datering (schrijftijd + oudste handschrift) bovenin
+        this._updateDatingBox(book);
 
         // Scroll to top
         window.scrollTo(0, 0);
@@ -181,6 +183,29 @@ const Lees = {
             if (versesEl && versesEl.parentNode) versesEl.parentNode.insertBefore(banner, versesEl);
         }
         banner.style.display = 'block';
+    },
+
+    async _updateDatingBox(book) {
+        if (this._bookDating === undefined) {
+            this._bookDating = null;
+            try { this._bookDating = await this.fetchJSON('/data/book-dating.json'); }
+            catch (e) { this._bookDating = {}; }
+        }
+        const d = this._bookDating && this._bookDating[book.id];
+        let box = document.getElementById('book-dating');
+        if (!d) { if (box) box.style.display = 'none'; return; }
+        if (!box) {
+            box = document.createElement('div');
+            box.id = 'book-dating';
+            box.className = 'book-dating';
+            const heading = document.getElementById('chapter-heading');
+            if (heading && heading.parentNode) heading.parentNode.insertBefore(box, heading.nextSibling);
+        }
+        const parts = [];
+        if (d.schrijftijd) parts.push(`<span class="dating-label">Vermoedelijke schrijftijd:</span> ${d.schrijftijd}`);
+        if (d.oudsteHandschrift) parts.push(`<span class="dating-label">Oudste handschrift:</span> ${d.oudsteHandschrift}`);
+        box.innerHTML = '📜 ' + parts.join(' &nbsp;·&nbsp; ');
+        box.style.display = parts.length ? 'block' : 'none';
     },
 
     _updateEthiopicBanner(book) {

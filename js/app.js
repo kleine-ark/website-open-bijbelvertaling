@@ -119,6 +119,29 @@ const App = {
         banner.style.display = 'block';
     },
 
+    async _updateDatingBox(book) {
+        if (App._bookDating === undefined) {
+            App._bookDating = null;
+            try { App._bookDating = await (await fetch('data/book-dating.json')).json(); }
+            catch (e) { App._bookDating = {}; }
+        }
+        const d = App._bookDating && App._bookDating[book.id];
+        let box = document.getElementById('book-dating');
+        if (!d) { if (box) box.style.display = 'none'; return; }
+        if (!box) {
+            box = document.createElement('div');
+            box.id = 'book-dating';
+            box.className = 'book-dating';
+            const container = document.getElementById('verses-container');
+            if (container && container.parentNode) container.parentNode.insertBefore(box, container);
+        }
+        const parts = [];
+        if (d.schrijftijd) parts.push(`<span class="dating-label">Vermoedelijke schrijftijd:</span> ${d.schrijftijd}`);
+        if (d.oudsteHandschrift) parts.push(`<span class="dating-label">Oudste handschrift:</span> ${d.oudsteHandschrift}`);
+        box.innerHTML = '📜 ' + parts.join(' &nbsp;·&nbsp; ');
+        box.style.display = parts.length ? 'block' : 'none';
+    },
+
     _updateEthiopicBanner(book) {
         const isEth = book && (book.testament === 'ET' || (window.ETHIOPIC_BOOKS && window.ETHIOPIC_BOOKS.includes(book.id)));
         let banner = document.getElementById('ethiopic-banner');
@@ -523,6 +546,7 @@ const App = {
         // AI-concept-banner tonen voor niet-geverifieerde hoofdstukken
         App._updateVerifiedBanner(bookId, chapterNum);
         App._updateEthiopicBanner(book);
+        App._updateDatingBox(book);
 
         // Boek- en hoofdstukinleiding worden nu INLINE in de tekstkolom getoond
         // (zie hieronder), niet meer in een apart frame.

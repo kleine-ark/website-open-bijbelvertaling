@@ -716,3 +716,13 @@ body.dark #chapter-buttons button.unverified {
 .book-group-collapsible .book-group-label::before { content: '▸ '; font-size: 11px; opacity: 0.6; }
 .book-group-collapsible:not(.collapsed) .book-group-label::before { content: '▾ '; }
 .book-group-collapsible.collapsed .book-group-items { display: none; }
+
+/* Boek-datering (schrijftijd + oudste handschrift) bovenin */
+.book-dating {
+    font-family: var(--font-ui, 'Fira Sans', sans-serif);
+    font-size: 12.5px; line-height: 1.5;
+    color: var(--text-muted, #777);
+    background: var(--nav-bg, #f5f2ed);
+    border-radius: 6px; padding: 8px 12px; margin: 4px 0 16px;
+}
+.book-dating .dating-label { font-weight: 600; color: var(--accent, #b8860b); }
