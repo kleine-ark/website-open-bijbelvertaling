@@ -3208,6 +3208,12 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     text-align: left;
     font-family: 'Noto Sans Ethiopic', 'Abyssinica SIL', serif;
 }
+/* Griekse grondtekst (NT + apocriefen/LXX) is links-naar-rechts */
+.col-hebrew .hebrew-text[lang="grc"] {
+    direction: ltr;
+    text-align: left;
+    font-family: 'SBL Greek', 'Cardo', 'Times New Roman', serif;
+}
 
 /* ===========================================================================
    Bijbel-zoek-overlay (js/search.js) — werkt op zowel index.html als lees.html

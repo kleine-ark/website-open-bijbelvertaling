@@ -645,9 +645,11 @@ const App = {
                     const subHtml = subText ? `<br><span class="strongs-sub">${subText}</span>` : '';
                     return `<span class="strongs-word"${dataAttr} data-transliteratie="${translit}" data-gloss="${gloss}">${w.woord}${subHtml}</span>`;
                 }).join(' ');
-                // Ge'ez (Ethiopische boeken) is links-naar-rechts i.p.v. RTL
-                const gezAttr = book.testament === 'ET' ? ' lang="gez"' : '';
-                hebrewHtml = `<span class="hebrew-text"${gezAttr}>${words}</span>`;
+                // Schrift-richting per grondtekst: Hebreeuws (OT) = RTL; Grieks (NT +
+                // apocriefen) en Ge'ez (Ethiopisch) = LTR.
+                const t = book.testament;
+                const langAttr = t === 'ET' ? ' lang="gez"' : ((t === 'NT' || t === 'AP') ? ' lang="grc"' : '');
+                hebrewHtml = `<span class="hebrew-text"${langAttr}>${words}</span>`;
                 if (verse.hebrewMeaning) {
                     hebrewHtml += `<span class="hebrew-meaning">${verse.hebrewMeaning}</span>`;
                 }
