@@ -3214,6 +3214,13 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     text-align: left;
     font-family: 'SBL Greek', 'Cardo', 'Times New Roman', serif;
 }
+/* Latijnse grondtekst (4 Ezra) — links-naar-rechts, gewone serif */
+.col-hebrew .hebrew-text[lang="la"] {
+    direction: ltr;
+    text-align: left;
+    font-family: 'EB Garamond', 'Cardo', 'Times New Roman', serif;
+    font-style: italic;
+}
 /* Ge'ez-woorden: klikbaar (lexicon-popup, js/geez-lexicon.js) */
 .geez-word { cursor: pointer; border-radius: 3px; transition: background 0.15s; }
 .geez-word:hover { background: rgba(124, 58, 237, 0.14); }

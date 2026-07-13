@@ -652,10 +652,13 @@ const App = {
                     }
                     return `<span class="strongs-word"${dataAttr} data-transliteratie="${translit}" data-gloss="${gloss}">${w.woord}${subHtml}</span>`;
                 }).join(' ');
-                // Schrift-richting per grondtekst: Hebreeuws (OT) = RTL; Grieks (NT +
-                // apocriefen) en Ge'ez (Ethiopisch) = LTR.
+                // Schrift-richting/taal per grondtekst: Hebreeuws (OT) = RTL; Grieks
+                // (NT + apocriefen) en Ge'ez (Ethiopisch) = LTR; 4 Ezra = Latijn.
                 const t = book.testament;
-                const langAttr = t === 'ET' ? ' lang="gez"' : ((t === 'NT' || t === 'AP') ? ' lang="grc"' : '');
+                let langAttr = '';
+                if (bookId === '4ezra') langAttr = ' lang="la"';
+                else if (t === 'ET') langAttr = ' lang="gez"';
+                else if (t === 'NT' || t === 'AP') langAttr = ' lang="grc"';
                 hebrewHtml = `<span class="hebrew-text"${langAttr}>${words}</span>`;
                 if (verse.hebrewMeaning) {
                     hebrewHtml += `<span class="hebrew-meaning">${verse.hebrewMeaning}</span>`;
