@@ -119,6 +119,23 @@ const App = {
         banner.style.display = 'block';
     },
 
+    _updateEthiopicBanner(book) {
+        const isEth = book && (book.testament === 'ET' || (window.ETHIOPIC_BOOKS && window.ETHIOPIC_BOOKS.includes(book.id)));
+        let banner = document.getElementById('ethiopic-banner');
+        if (!isEth) { if (banner) banner.style.display = 'none'; return; }
+        if (!banner) {
+            banner = document.createElement('div');
+            banner.id = 'ethiopic-banner';
+            banner.className = 'ethiopic-banner';
+            banner.innerHTML = '<strong>⚠ Buiten-canoniek boek (Ethiopisch-orthodoxe traditie).</strong> ' +
+                'Dit boek hoort niet tot de Statenvertaling-canon. De vertaling is in bewerking en ' +
+                'de Ge’ez-grondtekst wordt slechts gedeeltelijk (per beschikbaar hoofdstuk) getoond.';
+            const container = document.getElementById('verses-container');
+            if (container && container.parentNode) container.parentNode.insertBefore(banner, container);
+        }
+        banner.style.display = 'block';
+    },
+
     _updateAudioPlayer(bookId, chapter) {
         const playBtn = document.getElementById('audio-play-big');
         const playMob = document.getElementById('audio-play-mobile');
@@ -505,6 +522,7 @@ const App = {
         App._updateAudioPlayer(bookId, chapterNum);
         // AI-concept-banner tonen voor niet-geverifieerde hoofdstukken
         App._updateVerifiedBanner(bookId, chapterNum);
+        App._updateEthiopicBanner(book);
 
         // Boek- en hoofdstukinleiding worden nu INLINE in de tekstkolom getoond
         // (zie hieronder), niet meer in een apart frame.
@@ -603,7 +621,9 @@ const App = {
                     const subHtml = subText ? `<br><span class="strongs-sub">${subText}</span>` : '';
                     return `<span class="strongs-word"${dataAttr} data-transliteratie="${translit}" data-gloss="${gloss}">${w.woord}${subHtml}</span>`;
                 }).join(' ');
-                hebrewHtml = `<span class="hebrew-text">${words}</span>`;
+                // Ge'ez (Ethiopische boeken) is links-naar-rechts i.p.v. RTL
+                const gezAttr = book.testament === 'ET' ? ' lang="gez"' : '';
+                hebrewHtml = `<span class="hebrew-text"${gezAttr}>${words}</span>`;
                 if (verse.hebrewMeaning) {
                     hebrewHtml += `<span class="hebrew-meaning">${verse.hebrewMeaning}</span>`;
                 }

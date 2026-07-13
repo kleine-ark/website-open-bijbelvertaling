@@ -147,14 +147,18 @@ const BookOrders = {
     },
 };
 
-// === Ethiopisch (Tewahedo) — canoniek + de extra boeken van de Ethiopisch-Orthodoxe canon ===
-// Deze 'ethiopic'-boeken (Henoch, Jubileeën, 1-3 Meqabyan, 4 Baruch) zijn STANDAARD verborgen
-// en verschijnen alleen wanneer deze volgorde gekozen is (zie getBookOrderGroups/getFlatBookOrder).
+// === Ethiopische (Tewahedo) toevoegingen ===
+// De extra boeken van de Ethiopisch-Orthodoxe canon (Henoch, Jubileeën, 1-3 Meqabyan, 4 Baruch).
+// Deze worden in ELKE volgorde getoond als aparte groep direct ná de apocriefen (zie
+// getBookOrderGroups) — standaard ingeklapt in de zijbalk (zie Sidebar.renderTree).
+const ETHIOPIC_BOOKS = ['henoch', 'jubileeen', '1meqabyan', '2meqabyan', '3meqabyan', '4baruch'];
+const ETHIOPIC_GROUP_LABEL = 'Ethiopische boeken (buiten de canon)';
+
+// Aparte 'ethiopisch'-volgorde blijft bestaan (canonieke ordening; de groep wordt
+// automatisch toegevoegd door getBookOrderGroups, dus hier niet nogmaals opnemen).
 BookOrders.ethiopisch = {
     label: 'Ethiopisch (Tewahedo)',
-    groups: Object.assign({}, BookOrders.canoniek.groups, {
-        'Ethiopische toevoegingen (Tewahedo)': ['henoch', 'jubileeen', '1meqabyan', '2meqabyan', '3meqabyan', '4baruch'],
-    }),
+    groups: Object.assign({}, BookOrders.canoniek.groups),
 };
 
 /**
@@ -165,6 +169,26 @@ BookOrders.ethiopisch = {
  * @param {object} manifest - { books: [...] } met chaptersIncluded per boek
  * @returns {Object<string, string[]>}  groepen → array van book-ids
  */
+// Voeg de Ethiopische-boeken-groep in, direct ná de laatste groep die een
+// apocrief boek bevat (1 Makkabeeën komt in elke apocrifen-groep voor). Bestaat
+// de groep al, of ontbreken de boeken in het manifest, dan gebeurt er niets.
+function withEthiopic(groups, manifest) {
+    const present = new Set((manifest && manifest.books ? manifest.books : []).map(b => b.id));
+    const eth = ETHIOPIC_BOOKS.filter(id => present.has(id));
+    if (eth.length === 0) return groups;
+    const keys = Object.keys(groups);
+    if (keys.some(k => groups[k].some(id => ETHIOPIC_BOOKS.includes(id)))) return groups; // al aanwezig
+    let insertAfter = -1;
+    keys.forEach((k, i) => { if (groups[k].includes('1makkabeeen')) insertAfter = i; });
+    const out = {};
+    keys.forEach((k, i) => {
+        out[k] = groups[k];
+        if (i === insertAfter) out[ETHIOPIC_GROUP_LABEL] = eth;
+    });
+    if (insertAfter === -1) out[ETHIOPIC_GROUP_LABEL] = eth; // geen apocriefen-groep → achteraan
+    return out;
+}
+
 function getBookOrderGroups(mode, manifest) {
     const ordering = BookOrders[mode] || BookOrders.canoniek;
 
@@ -186,10 +210,10 @@ function getBookOrderGroups(mode, manifest) {
             else if (n >= 4) buckets['Kort (4–9 hfdst)'].push(b.id);
             else buckets['Zeer kort (1–3 hfdst)'].push(b.id);
         }
-        return buckets;
+        return withEthiopic(buckets, manifest);
     }
 
-    return ordering.groups;
+    return withEthiopic(ordering.groups, manifest);
 }
 
 /**
@@ -225,4 +249,6 @@ if (typeof window !== 'undefined') {
     window.BookOrders = BookOrders;
     window.getBookOrderGroups = getBookOrderGroups;
     window.getFlatBookOrder = getFlatBookOrder;
+    window.ETHIOPIC_GROUP_LABEL = ETHIOPIC_GROUP_LABEL;
+    window.ETHIOPIC_BOOKS = ETHIOPIC_BOOKS;
 }

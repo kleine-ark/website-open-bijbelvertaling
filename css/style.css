@@ -3190,6 +3190,25 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 }
 .ai-concept-banner strong { color: #92400e; }
 
+.ethiopic-banner {
+    background: #ede9fe;
+    border-left: 4px solid #7c3aed;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin: 12px 0 18px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.55;
+    color: #4c1d95;
+}
+.ethiopic-banner strong { color: #5b21b6; }
+/* Ge'ez-grondtekst is links-naar-rechts (anders dan Hebreeuws RTL) */
+.col-hebrew .hebrew-text[lang="gez"] {
+    direction: ltr;
+    text-align: left;
+    font-family: 'Noto Sans Ethiopic', 'Abyssinica SIL', serif;
+}
+
 /* ===========================================================================
    Bijbel-zoek-overlay (js/search.js) — werkt op zowel index.html als lees.html
    =========================================================================== */

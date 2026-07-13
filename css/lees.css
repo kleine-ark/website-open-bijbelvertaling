@@ -447,6 +447,19 @@ body.dark .icon-sun { display: none; }
 }
 .ai-concept-banner strong { color: #92400e; }
 
+.ethiopic-banner {
+    background: #ede9fe;
+    border-left: 4px solid #7c3aed;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin: 12px 0 18px;
+    font-family: var(--font-body, 'Fira Sans', sans-serif);
+    font-size: 13px;
+    line-height: 1.55;
+    color: #4c1d95;
+}
+.ethiopic-banner strong { color: #5b21b6; }
+
 /* ===========================================================================
    Bijbel-zoek-overlay (js/search.js) — gedeeld met index.html
    =========================================================================== */
@@ -698,3 +711,8 @@ body.dark #chapter-buttons button.unverified {
     .copy-toolbar button { padding: 7px 10px; font-size: 13px; }
     .copy-toolbar #vers-share svg { width: 14px; height: 14px; }
 }
+
+/* Inklapbare book-groep in de book-selector-overlay (Ethiopische boeken) */
+.book-group-collapsible .book-group-label::before { content: '▸ '; font-size: 11px; opacity: 0.6; }
+.book-group-collapsible:not(.collapsed) .book-group-label::before { content: '▾ '; }
+.book-group-collapsible.collapsed .book-group-items { display: none; }

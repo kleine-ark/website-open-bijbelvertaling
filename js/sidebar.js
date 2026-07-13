@@ -201,6 +201,10 @@ const Sidebar = {
 
             const groupEl = document.createElement('div');
             groupEl.className = 'tree-group';
+            // Ethiopische boeken (buiten de canon): standaard ingeklapt
+            if (group.label === (window.ETHIOPIC_GROUP_LABEL || 'Ethiopische boeken (buiten de canon)')) {
+                groupEl.classList.add('collapsed');
+            }
 
             const labelEl = document.createElement('div');
             labelEl.className = 'tree-group-label';
