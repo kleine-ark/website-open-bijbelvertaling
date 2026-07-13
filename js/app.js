@@ -634,6 +634,7 @@ const App = {
             // Hebreeuws/Grieks kolom — klikbare woorden met Strong's
             const showStrongs = document.getElementById('toggle-strongs') && document.getElementById('toggle-strongs').checked;
             let hebrewHtml;
+            const isGeez = book.testament === 'ET';
             if (verse.grondtekst && verse.grondtekst.length > 0) {
                 const words = verse.grondtekst.map(w => {
                     const translit = w.transliteratie || '';
@@ -643,6 +644,12 @@ const App = {
                     const subText = strongs || w.lemma || '';
                     const dataAttr = strongs ? ` data-strongs="${strongs}"` : '';
                     const subHtml = subText ? `<br><span class="strongs-sub">${subText}</span>` : '';
+                    // Ge'ez heeft geen Strong's → klikbaar via geez-word (zie js/geez-lexicon.js)
+                    if (isGeez) {
+                        const wEsc = String(w.woord).replace(/"/g, '&quot;');
+                        const trEsc = String(translit).replace(/"/g, '&quot;');
+                        return `<span class="strongs-word geez-word" data-geez="${wEsc}" data-translit="${trEsc}">${w.woord}</span>`;
+                    }
                     return `<span class="strongs-word"${dataAttr} data-transliteratie="${translit}" data-gloss="${gloss}">${w.woord}${subHtml}</span>`;
                 }).join(' ');
                 // Schrift-richting per grondtekst: Hebreeuws (OT) = RTL; Grieks (NT +
