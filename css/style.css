@@ -4420,3 +4420,7 @@ body.doorlopend-aan #chapter-footer::after {
     border-radius: 6px; padding: 8px 12px; margin: 4px 0 14px;
 }
 .book-dating .dating-label { font-weight: 600; color: #9a7b1e; }
+
+/* Klikbare 'oudste handschrift' in de datering-box -> grondteksten.html */
+.book-dating .dating-link { color: #9a7b1e; text-decoration: none; border-bottom: 1px dotted #c9a94a; }
+.book-dating .dating-link:hover { color: #7a610f; border-bottom-style: solid; }

@@ -726,3 +726,7 @@ body.dark #chapter-buttons button.unverified {
     border-radius: 6px; padding: 8px 12px; margin: 4px 0 16px;
 }
 .book-dating .dating-label { font-weight: 600; color: var(--accent, #b8860b); }
+
+/* Klikbare 'oudste handschrift' in de datering-box -> grondteksten.html */
+.book-dating .dating-link { color: var(--accent, #b8860b); text-decoration: none; border-bottom: 1px dotted var(--accent, #b8860b); }
+.book-dating .dating-link:hover { border-bottom-style: solid; }
