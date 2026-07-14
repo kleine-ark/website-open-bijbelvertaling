@@ -7560,6 +7560,22 @@
       "nieuw": "passen",
       "toelichting": "'betamen' (het betaamde Hem) → 'passen' (het paste Hem): verouderd werkwoord voor 'gepast/behoorlijk zijn'.",
       "regex": "\\bbetaam"
+    },
+    {
+      "id": "V883",
+      "categorie": "Eigennamen",
+      "oud": "Enoch",
+      "nieuw": "Henoch",
+      "toelichting": "Naam van de aartsvader consequent Nederlands: 'Enoch' -> 'Henoch'.",
+      "regex": "\\bEnoch\\b"
+    },
+    {
+      "id": "V884",
+      "categorie": "Verouderde woorden",
+      "oud": "zelve",
+      "nieuw": "zelf",
+      "toelichting": "Nadrukkelijk 'zelve' (bv. 'Sara zelve', 'hij zelve') -> 'zelf'. NIET de aanwijzende 'dezelve/derzelve' (die zijn al vervangen door daarvan/die).",
+      "regex": "(?<![A-Za-z])[Zz]elve\\b"
     }
   ]
 }
