@@ -4037,8 +4037,8 @@
       "id": "V436",
       "categorie": "Naamvallen",
       "oud": "om X[s] wil (omwille-van constructie)",
-      "nieuw": "vanwege X",
-      "toelichting": "Verouderde constructie 'om [genitief]s wil' = omwille van X. Modern Nederlands gebruikt 'vanwege X'. Werkt op eigennamen (om Davids wil → vanwege David), bezittelijke voornaamwoorden (om Uws tempels wil → vanwege Uw tempel), en pronominaal (om diens wil → vanwege die).",
+      "nieuw": "omwille van X (DOEL) / omwille van (DOEL) / vanwege (OORZAAK) X (OORZAAK)",
+      "toelichting": "Verouderde constructie 'om [genitief]s wil' = omwille van X. Modern Nederlands gebruikt 'vanwege X'. Werkt op eigennamen (om Davids wil → vanwege David), bezittelijke voornaamwoorden (om Uws tempels wil → vanwege Uw tempel), en pronominaal (om diens wil → vanwege die). LET OP CONTEXT: het SV-idioom 'om ... wil' = 'for the sake of' en is meestal DOEL/belang → dan 'omwille van X' (NIET 'vanwege'), bv. 'omwille van Zijn Naam', 'omwille van David', 'omwille van het Evangelie'. Alleen 'vanwege X' wanneer het de feitelijke OORZAAK/reden is (test: past 'wegens/doordat'?), bv. straf 'vanwege onze zonden'. NIET blind causaal toepassen.",
       "regex": "\\b[Oo]m ([A-Z][a-z]+|[a-z]+|Uws [A-Za-z]+|diens|dies|[Ww]iens)s? wil\\b"
     },
     {
@@ -5309,8 +5309,8 @@
       "id": "V601",
       "categorie": "Verouderde woorden",
       "oud": "omwille van",
-      "nieuw": "vanwege",
-      "toelichting": "Verouderde voorzetsel-uitdrukking 'omwille van'. Modern Nederlands: 'vanwege' (slankst) of 'om ... wil' (formeler).",
+      "nieuw": "omwille van (DOEL) / vanwege (OORZAAK)",
+      "toelichting": "Verouderde voorzetsel-uitdrukking 'omwille van'. Modern Nederlands: 'vanwege' (slankst) of 'om ... wil' (formeler). LET OP CONTEXT: het SV-idioom 'om ... wil' = 'for the sake of' en is meestal DOEL/belang → dan 'omwille van X' (NIET 'vanwege'), bv. 'omwille van Zijn Naam', 'omwille van David', 'omwille van het Evangelie'. Alleen 'vanwege X' wanneer het de feitelijke OORZAAK/reden is (test: past 'wegens/doordat'?), bv. straf 'vanwege onze zonden'. NIET blind causaal toepassen.",
       "regex": "\\b[Oo]mwille van\\b"
     },
     {
