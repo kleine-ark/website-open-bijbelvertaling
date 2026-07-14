@@ -7576,6 +7576,14 @@
       "nieuw": "zelf",
       "toelichting": "Nadrukkelijk 'zelve' (bv. 'Sara zelve', 'hij zelve') -> 'zelf'. NIET de aanwijzende 'dezelve/derzelve' (die zijn al vervangen door daarvan/die).",
       "regex": "(?<![A-Za-z])[Zz]elve\\b"
+    },
+    {
+      "id": "V885",
+      "categorie": "Verouderde woorden",
+      "oud": "herbergzaamheid",
+      "nieuw": "gastvrijheid",
+      "toelichting": "Verouderd 'herbergzaamheid'/'herbergzaam' -> 'gastvrijheid'/'gastvrij'.",
+      "regex": "\\bherbergzaam"
     }
   ]
 }

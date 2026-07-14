@@ -1,6 +1,32 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-07-14",
+      "versie": "v0.22.0",
+      "items": [
+        {
+          "type": "feature",
+          "beschrijving": "Hebreeën volledig vers-voor-vers nagekeken (alle 13 hoofdstukken definitief). Citaties bijgewerkt (o.a. aanhalingsformule 'zegt/spreekt de Heere' buiten de citatie in het Jeremia- en Deut.-citaat), en gemoderniseerd (o.a. Enoch→Henoch, herbergzaamheid→gastvrijheid, 'van de ware tabernakel', 'van het loon')."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Grondtekst-kolom uitgebreid: Griekse Septuaginta met Strong's voor de apocriefen (activeert de lexicon-popup), Latijnse Vulgaat voor 4 Ezra, en Ge'ez voor de Ethiopische boeken (Henoch, Jubileeën, Meqabyan). Klik op een Latijns of Ge'ez-woord voor de Nederlandse betekenis."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Boek-datering bovenin elk boek: vermoedelijke schrijftijd + oudste bekende handschrift, klikbaar naar de handschrift-pagina."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Het SV-idioom 'om … wil' consistent gemaakt: doel/belang → 'omwille van' (bv. 'omwille van Zijn Naam'), oorzaak/reden → 'vanwege' (bv. 'vanwege onze zonden')."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Markeerkleur (highlight) werkte niet meer in de analyse-weergave — hersteld."
+        }
+      ]
+    },
+    {
       "datum": "2026-06-29",
       "versie": "v0.21.6",
       "items": [
