@@ -2389,10 +2389,10 @@ body.dyslexia-mode .verses-table tr:nth-child(even) td {
 :root[data-theme="donker"] .hl-color-btn.hl-clear { color: #fff; border-color: rgba(255,255,255,0.55); background: transparent !important; }
 
 /* === Verse-highlights — arcering met kleurkeuze === */
-.verse-row.hl-verse-magenta    .col-2026 { background: rgba(255, 0, 255, 0.25); border-radius: 3px; }
-.verse-row.hl-verse-lichtblauw .col-2026 { background: rgba(135, 206, 235, 0.4);  border-radius: 3px; }
-.verse-row.hl-verse-lichtgroen .col-2026 { background: rgba(144, 238, 144, 0.4);  border-radius: 3px; }
-.verse-row.hl-verse-lichtgeel  .col-2026 { background: rgba(255, 255, 0, 0.35);   border-radius: 3px; }
+.verse-row.hl-verse-magenta    .col-2026 { background: rgba(255, 0, 255, 0.25) !important; border-radius: 3px; }
+.verse-row.hl-verse-lichtblauw .col-2026 { background: rgba(135, 206, 235, 0.4) !important;  border-radius: 3px; }
+.verse-row.hl-verse-lichtgroen .col-2026 { background: rgba(144, 238, 144, 0.4) !important;  border-radius: 3px; }
+.verse-row.hl-verse-lichtgeel  .col-2026 { background: rgba(255, 255, 0, 0.35) !important;   border-radius: 3px; }
 
 /* === Word-highlights — arcering === */
 mark.hl-word {
@@ -2409,10 +2409,10 @@ mark.hl-word-lichtblauw { background: rgba(135, 206, 235, 0.4); }
 mark.hl-word-lichtgroen { background: rgba(144, 238, 144, 0.4); }
 mark.hl-word-lichtgeel  { background: rgba(255, 255, 0, 0.35); }
 /* In donker thema iets meer alpha zodat de kleur niet te flauw wordt */
-:root[data-theme="donker"] .verse-row.hl-verse-magenta    .col-2026 { background: rgba(255, 77, 255, 0.30); }
-:root[data-theme="donker"] .verse-row.hl-verse-lichtblauw .col-2026 { background: rgba(96, 165, 250, 0.32); }
-:root[data-theme="donker"] .verse-row.hl-verse-lichtgroen .col-2026 { background: rgba(74, 222, 128, 0.30); }
-:root[data-theme="donker"] .verse-row.hl-verse-lichtgeel  .col-2026 { background: rgba(250, 204, 21, 0.28); }
+:root[data-theme="donker"] .verse-row.hl-verse-magenta    .col-2026 { background: rgba(255, 77, 255, 0.30) !important; }
+:root[data-theme="donker"] .verse-row.hl-verse-lichtblauw .col-2026 { background: rgba(96, 165, 250, 0.32) !important; }
+:root[data-theme="donker"] .verse-row.hl-verse-lichtgroen .col-2026 { background: rgba(74, 222, 128, 0.30) !important; }
+:root[data-theme="donker"] .verse-row.hl-verse-lichtgeel  .col-2026 { background: rgba(250, 204, 21, 0.28) !important; }
 :root[data-theme="donker"] mark.hl-word-magenta    { background: rgba(255, 77, 255, 0.32); }
 :root[data-theme="donker"] mark.hl-word-lichtblauw { background: rgba(96, 165, 250, 0.35); }
 :root[data-theme="donker"] mark.hl-word-lichtgroen { background: rgba(74, 222, 128, 0.32); }
