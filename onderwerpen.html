@@ -124,6 +124,9 @@
             return (tag.verzen || [])
                 .map(it => typeof it === 'string' ? { ref: it, rang: 3 } : it)
                 .sort((a, b) => {
+                    // Eerst op rang (1 = sleuteltekst, bovenaan), dan op canonieke volgorde.
+                    const ra = a.rang || 3, rb = b.rang || 3;
+                    if (ra !== rb) return ra - rb;
                     const ka = refKey(a.ref), kb = refKey(b.ref);
                     return ka[0] - kb[0] || ka[1] - kb[1] || ka[2] - kb[2];
                 });
