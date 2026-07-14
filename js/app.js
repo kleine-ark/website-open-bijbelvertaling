@@ -93,6 +93,7 @@ const App = {
         kolossenzen:'all',
         mattheus:   'all',
         lukas:      'all',
+        hebreeen:   'all',
     },
 
     _isVerified(bookId, chapter) {
