@@ -147,6 +147,7 @@ const Lees = {
         mattheus:   'all',
         lukas:      'all',
         hebreeen:   'all',
+        '2petrus':  'all',
     },
 
     _isVerified(bookId, chapter) {
