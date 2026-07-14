@@ -87,6 +87,7 @@
         }
         .ms-table .ms-links { font-size: 12px; }
         .ms-table .ms-links a { display: inline-block; margin-right: 6px; }
+        .ms-table tr.ms-row-highlight td { background: rgba(203,164,73,0.30) !important; transition: background 0.4s; }
 
         .codex-card {
             background: #fff; border: 1px solid var(--border);
@@ -578,5 +579,27 @@
 <script src="js/firebase-config.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/stats-inject.js"></script>
+<script>
+/* Diep-link vanuit de datering-box (index/lees ?boek=<id>): scroll naar en
+   markeer de handschrift-rij van het betreffende boek. */
+(function () {
+    var m = location.search.match(/[?&]boek=([^&]+)/);
+    if (!m) return;
+    var bookId = decodeURIComponent(m[1]);
+    function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, ''); }
+    fetch('data/books.json').then(function (r) { return r.json(); }).then(function (data) {
+        var book = (data.books || []).find(function (b) { return b.id === bookId; });
+        if (!book) return;
+        var target = norm(book.nameDutch);
+        var cells = document.querySelectorAll('.ms-table .book-name');
+        var row = null;
+        cells.forEach(function (c) { if (!row && norm(c.textContent) === target) row = c.closest('tr'); });
+        if (!row) return;
+        row.classList.add('ms-row-highlight');
+        row.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        setTimeout(function () { row.classList.remove('ms-row-highlight'); }, 4000);
+    }).catch(function () {});
+})();
+</script>
 </body>
 </html>
