@@ -139,6 +139,16 @@
             font-family: 'Fira Sans', sans-serif;
         }
         .codex-card p { margin: 4px 0; font-size: 13px; line-height: 1.6; }
+        .ms-facts {
+            list-style: none; margin: 8px 0 2px; padding: 8px 10px;
+            background: rgba(146,182,180,0.10); border-radius: 5px;
+            font-size: 12.5px; line-height: 1.55;
+        }
+        .ms-facts li { margin: 2px 0; }
+        .ms-facts li strong { color: var(--navy); font-family: 'Fira Sans', sans-serif; }
+        .ms-facts .ms-bewijs a { color: var(--teal); }
+        :root[data-theme="donker"] .ms-facts { background: rgba(255,255,255,0.05); }
+        :root[data-theme="donker"] .ms-facts li strong { color: var(--text-primary); }
 
         .legend {
             display: flex; flex-wrap: wrap; gap: 12px;
@@ -387,6 +397,12 @@
                 <tr><td class="book-name">1 Makkabeeën</td><td class="lang">Grieks (vert. uit Hebr., origineel verloren)</td><td class="ms-frag">—</td><td class="ms-complete">Codex Sinaiticus, Alexandrinus, Venetus (Vat. mist Mak.)</td><td class="ms-date">4e eeuw (Sinaiticus)</td><td class="ms-count">~8 LXX-handschriften</td><td class="ms-links"><a href="https://www.codexsinaiticus.org/" target="_blank">Sinaiticus</a></td></tr>
                 <tr><td class="book-name">2 Makkabeeën</td><td class="lang">Grieks (oorspr.)</td><td class="ms-frag">—</td><td class="ms-complete">Codex Alexandrinus, Venetus (Vat. mist Mak.)</td><td class="ms-date">5e eeuw</td><td class="ms-count">~8 LXX-handschriften</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/2_Maccabees" target="_blank">Wiki</a></td></tr>
                 <tr><td class="book-name">3 Makkabeeën</td><td class="lang">Grieks (oorspr.)</td><td class="ms-frag">—</td><td class="ms-complete">Codex Alexandrinus, Venetus (niet in Vulgaat noch SV-canonieke apocr. lijst, wel in OV)</td><td class="ms-date">5e eeuw</td><td class="ms-count">~6 LXX-handschriften</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/3_Maccabees" target="_blank">Wiki</a></td></tr>
+                <!-- Ethiopische (Ge'ez) boeken -->
+                <tr><td class="book-name">Henoch</td><td class="lang">Ge'ez (Aram./Hebr. origineel)</td><td class="ms-frag">4QHen<sup>a-g</sup>, 4QHenastr (Aramees, DSS); Griekse fragmenten (Akhmim, Syncellus)</td><td class="ms-complete">Ethiopische mss. (o.a. Bodleian, Kebrān; 15e–18e eeuw)</td><td class="ms-date">~200 v.Chr. (4QHenoch)</td><td class="ms-count">~11 Aramese DSS + Ge'ez</td><td class="ms-links"><a href="https://nl.wikipedia.org/wiki/Boek_van_Henoch" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">Jubileeën</td><td class="lang">Ge'ez (Hebr. origineel)</td><td class="ms-frag">4QJub<sup>a-h</sup>, 1QJub, 2QJub, 11QJub (Hebreeuws, DSS)</td><td class="ms-complete">Ethiopische mss. (15e–16e eeuw)</td><td class="ms-date">~100 v.Chr. (DSS)</td><td class="ms-count">~15 Hebr. DSS + Ge'ez</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Book_of_Jubilees" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">1 Meqabyan</td><td class="lang">Ge'ez (oorspr.)</td><td class="ms-frag">— <span class="ms-sub">(alleen Ge'ez)</span></td><td class="ms-complete">Ethiopische mss. (late middeleeuwen)</td><td class="ms-date">Ge'ez-canon</td><td class="ms-count">Ethiopische traditie</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Meqabyan" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">2 Meqabyan</td><td class="lang">Ge'ez (oorspr.)</td><td class="ms-frag">— <span class="ms-sub">(alleen Ge'ez)</span></td><td class="ms-complete">Ethiopische mss. (late middeleeuwen)</td><td class="ms-date">Ge'ez-canon</td><td class="ms-count">Ethiopische traditie</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Meqabyan" target="_blank">Wiki</a></td></tr>
+                <tr><td class="book-name">3 Meqabyan</td><td class="lang">Ge'ez (oorspr.)</td><td class="ms-frag">— <span class="ms-sub">(alleen Ge'ez)</span></td><td class="ms-complete">Ethiopische mss. (late middeleeuwen)</td><td class="ms-date">Ge'ez-canon</td><td class="ms-count">Ethiopische traditie</td><td class="ms-links"><a href="https://en.wikipedia.org/wiki/Meqabyan" target="_blank">Wiki</a></td></tr>
             </tbody>
         </table></div>
 
@@ -471,6 +487,10 @@
             <a href="https://en.wikipedia.org/wiki/Biblia_Hebraica_Stuttgartensia" target="_blank">BHS</a> (1977)
             en de <a href="https://en.wikipedia.org/wiki/Biblia_Hebraica_Quinta" target="_blank">BHQ</a> (sinds 2004).
             Online: <a href="https://archive.org/details/Leningrad_Codex" target="_blank">Internet Archive (facsimile)</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Russische Nationale Bibliotheek, Sint-Petersburg</li>
+                <li><strong>Ontdekt/verworven:</strong> verworven door <a href="https://en.wikipedia.org/wiki/Abraham_Firkovich" target="_blank" rel="noopener">Abraham Firkovich</a> (1838), Caïro</li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Aleppo_Codex_(Deut).jpg" target="_blank" rel="noopener"><img src="img/handschriften/aleppo.jpg" alt="Folio met Deuteronomium, Aleppo Codex (ca. 930)" loading="lazy"></a><figcaption>Folio met Deuteronomium, Aleppo Codex (ca. 930) · <a href="https://commons.wikimedia.org/wiki/File:Aleppo_Codex_(Deut).jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -480,6 +500,10 @@
             vocalisatie). Oorspronkelijk de volledige Hebreeuwse Bijbel; tijdens de pogrom van Aleppo (1947)
             ging ca. 40% verloren (waaronder vrijwel de hele Tora). Gebruikt door Maimonides als referentie.
             Online: <a href="https://www.aleppocodex.org/" target="_blank">aleppocodex.org</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Israël Museum, Jeruzalem</li>
+                <li><strong>Ontdekt/verworven:</strong> in 1957 door kaashandelaar Murad Faham vanuit Aleppo naar Israël gesmokkeld</li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Great_Isaiah_Scroll.jpg" target="_blank" rel="noopener"><img src="img/handschriften/dss.jpg" alt="De Grote Jesajarol (1QIsaᵃ), Qumran" loading="lazy"></a><figcaption>De Grote Jesajarol (1QIsaᵃ), Qumran · <a href="https://commons.wikimedia.org/wiki/File:Great_Isaiah_Scroll.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -489,6 +513,11 @@
             OT-boeken (behalve Esther) — circa 1.000 jaar ouder dan de Masoretische codices. Bevestigen de
             opmerkelijke stabiliteit van de Hebreeuwse tekstoverlevering. Online:
             <a href="https://www.deadseascrolls.org.il/" target="_blank">Leon Levy Dead Sea Scrolls Digital Library</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Israël Museum (Heiligdom van het Boek), Jeruzalem</li>
+                <li><strong>Ontdekt/verworven:</strong> gevonden door een bedoeïenenherder (<a href="https://nl.wikipedia.org/wiki/Dode-Zeerollen" target="_blank" rel="noopener">Dode Zeerollen</a>) in 1947, Qumran</li>
+                <li class="ms-bewijs"><strong>Bewijs:</strong> <a href="https://www.livescience.com/57798-dead-sea-scrolls-turn-70.html" target="_blank" rel="noopener">Live Science — “70 Years After Dead Sea Scrolls Were Found” (2017)</a></li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Cairo_Genizah_Fragment.jpg" target="_blank" rel="noopener"><img src="img/handschriften/geniza.jpg" alt="Hebreeuws fragment uit de Cairo Geniza" loading="lazy"></a><figcaption>Hebreeuws fragment uit de Cairo Geniza · <a href="https://commons.wikimedia.org/wiki/File:Cairo_Genizah_Fragment.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -498,6 +527,10 @@
             ~300.000 joodse manuscripten waaronder de oudste Hebreeuwse fragmenten van Jezus Sirach en
             verschillende OT-tekstgetuigen. Online:
             <a href="https://cudl.lib.cam.ac.uk/collections/genizah/1" target="_blank">Cambridge Digital Library</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Universiteitsbibliotheek van Cambridge e.a.</li>
+                <li><strong>Ontdekt/verworven:</strong> ontsloten door <a href="https://en.wikipedia.org/wiki/Solomon_Schechter" target="_blank" rel="noopener">Solomon Schechter</a> (1896–97), Ben Ezra-synagoge, Caïro</li>
+            </ul>
         </div>
 
         <h3>Griekse Bijbel (LXX + NT)</h3>
@@ -509,6 +542,11 @@
             de LXX (incl. apocriefen) plus Barnabas en de <em>Herder van Hermas</em>. Ontdekt door
             Tischendorf in 1844 op de Sinaï. Online digitaal hersamengesteld:
             <a href="https://www.codexsinaiticus.org/" target="_blank">codexsinaiticus.org</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> British Library, Londen (+ Leipzig, Sinaï, Sint-Petersburg)</li>
+                <li><strong>Ontdekt/verworven:</strong> ontdekt door <a href="https://nl.wikipedia.org/wiki/Konstantin_von_Tischendorf" target="_blank" rel="noopener">Konstantin von Tischendorf</a> (1844/1859), Katharinaklooster, Sinaï</li>
+                <li class="ms-bewijs"><strong>Bewijs:</strong> <a href="https://edition.cnn.com/2009/WORLD/europe/07/06/ancient.bible.online/index.html" target="_blank" rel="noopener">CNN — “Oldest known Bible goes online” (2009)</a></li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Codex_Vaticanus_B,_2Thess._3,11-18,_Hebr._1,1-2,2.jpg" target="_blank" rel="noopener"><img src="img/handschriften/vaticanus.jpg" alt="2 Thess.–Hebr., Codex Vaticanus (4e eeuw)" loading="lazy"></a><figcaption>2 Thess.–Hebr., Codex Vaticanus (4e eeuw) · <a href="https://commons.wikimedia.org/wiki/File:Codex_Vaticanus_B,_2Thess._3,11-18,_Hebr._1,1-2,2.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -517,6 +555,10 @@
             <p>Mogelijk de oudste volledige Griekse Bijbel. Mist Hebr. 9:14–13:25, Pastoraalbrieven, Filemon
             en Openbaring. Door velen als de tekstkritisch hoogwaardigste majuskel beschouwd. Online:
             <a href="https://digi.vatlib.it/view/MSS_Vat.gr.1209" target="_blank">DigiVatLib (facsimile)</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Vaticaanse Bibliotheek, Vaticaanstad</li>
+                <li><strong>Ontdekt/verworven:</strong> geen bekende ontdekker; al vermeld in de Vaticaanse catalogus van 1475</li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Codex_Alexandrinus_f41v_-_Luke.jpg" target="_blank" rel="noopener"><img src="img/handschriften/alexandrinus.jpg" alt="Slot van Lukas (f. 41v), Codex Alexandrinus" loading="lazy"></a><figcaption>Slot van Lukas (f. 41v), Codex Alexandrinus · <a href="https://commons.wikimedia.org/wiki/File:Codex_Alexandrinus_f41v_-_Luke.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -526,6 +568,10 @@
             van Mt., Joh. en 2 Kor.). Plus 1 &amp; 2 Clemens. Geschenk van patriarch Cyrillus Lucaris aan
             koning Karel I in 1627. Online:
             <a href="https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_d_viii" target="_blank">British Library</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> British Library, Londen</li>
+                <li><strong>Ontdekt/verworven:</strong> in 1627 door patriarch <a href="https://en.wikipedia.org/wiki/Cyril_Lucaris" target="_blank" rel="noopener">Cyrillus Lucaris</a> aan koning Karel I geschonken, via Constantinopel</li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Codex_Bezae_0205.JPG" target="_blank" rel="noopener"><img src="img/handschriften/bezae.jpg" alt="Johannes 3, Codex Bezae Cantabrigiensis" loading="lazy"></a><figcaption>Johannes 3, Codex Bezae Cantabrigiensis · <a href="https://commons.wikimedia.org/wiki/File:Codex_Bezae_0205.JPG" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -535,6 +581,10 @@
             <em>Westerse tekst</em>, met opvallende uitbreidingen in Handelingen (~10% langer dan
             Sinaiticus/Vaticanus). Door Theodorus Beza geschonken aan Cambridge in 1581. Online:
             <a href="https://cudl.lib.cam.ac.uk/view/MS-NN-00002-00041" target="_blank">Cambridge Digital Library</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Universiteitsbibliotheek van Cambridge</li>
+                <li><strong>Ontdekt/verworven:</strong> in 1581 door <a href="https://nl.wikipedia.org/wiki/Theodorus_Beza" target="_blank" rel="noopener">Theodorus Beza</a> aan Cambridge geschonken; eerder klooster te Lyon</li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Codex_Ephraemi_Rescriptus_fol_138r.jpg" target="_blank" rel="noopener"><img src="img/handschriften/ephraemi.jpg" alt="Folio 138r, Codex Ephraemi (palimpsest)" loading="lazy"></a><figcaption>Folio 138r, Codex Ephraemi (palimpsest) · <a href="https://commons.wikimedia.org/wiki/File:Codex_Ephraemi_Rescriptus_fol_138r.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -545,6 +595,10 @@
             (alle boeken behalve 2 Tess. en 2 Joh.) en delen van de LXX. In 1834–1845 leesbaar gemaakt
             door Tischendorf. Wikipedia:
             <a href="https://en.wikipedia.org/wiki/Codex_Ephraemi_Rescriptus" target="_blank">Codex Ephraemi Rescriptus</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Bibliothèque nationale de France, Parijs</li>
+                <li><strong>Ontdekt/verworven:</strong> palimpsest ontcijferd door <a href="https://nl.wikipedia.org/wiki/Konstantin_von_Tischendorf" target="_blank" rel="noopener">Konstantin von Tischendorf</a> (1840–43), Parijs</li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Washington_Manuscript_III_-_The_Four_Gospels_(Codex_Washingtonensis).jpg" target="_blank" rel="noopener"><img src="img/handschriften/washingtonianus.jpg" alt="Bladzijde uit de Freer-evangeliën" loading="lazy"></a><figcaption>Bladzijde uit de Freer-evangeliën · <a href="https://commons.wikimedia.org/wiki/File:Washington_Manuscript_III_-_The_Four_Gospels_(Codex_Washingtonensis).jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -554,6 +608,10 @@
             (Mt., Joh., Lk., Mk.). Tekstkritisch bijzonder vanwege gemengd karakter — bijna elk evangelie
             vertegenwoordigt een andere tekstfamilie. Bevat het unieke 'Freer-logion' na Mk. 16:14.
             Wikipedia: <a href="https://en.wikipedia.org/wiki/Codex_Washingtonianus" target="_blank">Codex Washingtonianus</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Smithsonian, Freer Gallery of Art, Washington D.C.</li>
+                <li><strong>Ontdekt/verworven:</strong> in 1906 gekocht door <a href="https://en.wikipedia.org/wiki/Charles_Lang_Freer" target="_blank" rel="noopener">Charles Lang Freer</a>, Gizeh (Egypte)</li>
+            </ul>
         </div>
 
         <h3>Overige tekstgetuigen</h3>
@@ -566,6 +624,20 @@
             Masoretische Tekst, waarvan ~1.900 ook door de LXX worden gedeeld — een belangrijke
             tekstkritische getuige van een vroege (proto-samaritaanse) tekstfamilie. Wikipedia:
             <a href="https://en.wikipedia.org/wiki/Samaritan_Pentateuch" target="_blank">Samaritan Pentateuch</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Samaritaanse gemeenschap, Nablus</li>
+                <li><strong>Ontdekt/verworven:</strong> altijd bewaard binnen de Samaritaanse gemeenschap; westers bekend sinds 1616 (Pietro della Valle)</li>
+            </ul>
+        </div>
+        <div class="codex-card">
+            <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Codex_Sangermanensis_f36r.jpeg" target="_blank" rel="noopener"><img src="img/handschriften/sangermanensis.jpg" alt="Folio 36r, Codex Sangermanensis (Vulgaat met 4 Ezra)" loading="lazy"></a><figcaption>Folio 36r, Codex Sangermanensis (Vulgaat met 4 Ezra) · <a href="https://commons.wikimedia.org/wiki/File:Codex_Sangermanensis_f36r.jpeg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
+            <h4>Codex Sangermanensis</h4>
+            <div class="meta">9e eeuw · Bibliothèque nationale de France, Parijs</div>
+            <p>Latijnse Vulgaat-codex, belangrijk als tekstgetuige van <em>4 Ezra</em> (2 Esdras) — een apocrief boek waarvan het Griekse en Hebreeuwse origineel verloren zijn gegaan.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Bibliothèque nationale de France, Parijs</li>
+                <li><strong>Ontdekt/verworven:</strong> genoemd naar de abdij van Saint-Germain-des-Prés te Parijs, waar de codex bewaard werd</li>
+            </ul>
         </div>
 
         <h3>NT-papyri (vroegste getuigen)</h3>
@@ -576,6 +648,10 @@
             <p>Het oudste bewaarde fragment van het Nieuwe Testament. Klein perkament-codex-fragment
             (8,9 × 6 cm) met aan recto Joh. 18:31–33 en aan verso Joh. 18:37–38. Wikipedia:
             <a href="https://en.wikipedia.org/wiki/Papyrus_52" target="_blank">Papyrus 52</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> John Rylands Library, Manchester</li>
+                <li><strong>Ontdekt/verworven:</strong> in 1920 in Egypte verworven, in 1934 herkend door <a href="https://en.wikipedia.org/wiki/Colin_H._Roberts" target="_blank" rel="noopener">Colin H. Roberts</a></li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Papyrus66.jpg" target="_blank" rel="noopener"><img src="img/handschriften/p66.jpg" alt="Bladzijde uit Papyrus 66 (Bodmer II)" loading="lazy"></a><figcaption>Bladzijde uit Papyrus 66 (Bodmer II) · <a href="https://commons.wikimedia.org/wiki/File:Papyrus66.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -584,6 +660,10 @@
             <p>Bijna-volledig Johannes-evangelie (Joh. 1:1 – 14:26 + fragmenten tot 21:9). Bevat talrijke
             correcties — waardevol voor scribale studie. Wikipedia:
             <a href="https://en.wikipedia.org/wiki/Papyrus_66" target="_blank">Papyrus 66</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Bibliotheca Bodmeriana, Cologny (Genève)</li>
+                <li><strong>Ontdekt/verworven:</strong> in 1952 bij Dishna (Egypte) gevonden, verworven door <a href="https://en.wikipedia.org/wiki/Martin_Bodmer" target="_blank" rel="noopener">Martin Bodmer</a></li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Vatican,_Apostolic_Library_Ms_Hanna_Papyrus_1_-_Papyrus_Bodmer_XIV%E2%80%93XV_(Papyrus_75)_fol_1B9r_Luke_14,_3-14.jpg" target="_blank" rel="noopener"><img src="img/handschriften/p75.jpg" alt="Papyrus 75, Lukas 14 (Bodmer XIV-XV)" loading="lazy"></a><figcaption>Papyrus 75, Lukas 14 (Bodmer XIV-XV) · <a href="https://commons.wikimedia.org/wiki/File:Vatican,_Apostolic_Library_Ms_Hanna_Papyrus_1_-_Papyrus_Bodmer_XIV%E2%80%93XV_(Papyrus_75)_fol_1B9r_Luke_14,_3-14.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -593,6 +673,10 @@
             van fundamenteel belang: tekst bijna identiek aan Codex Vaticanus, wat aantoont dat de
             Alexandrijnse tekstvorm teruggaat tot vóór 200 AD. Wikipedia:
             <a href="https://en.wikipedia.org/wiki/Papyrus_75" target="_blank">Papyrus 75</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Vaticaanse Bibliotheek, Vaticaanstad</li>
+                <li><strong>Ontdekt/verworven:</strong> onderdeel van de Bodmer-papyri (<a href="https://en.wikipedia.org/wiki/Martin_Bodmer" target="_blank" rel="noopener">Martin Bodmer</a>, 1952), Dishna; in 2007 naar het Vaticaan</li>
+            </ul>
         </div>
         <div class="codex-card">
             <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:P46.jpg" target="_blank" rel="noopener"><img src="img/handschriften/p46.jpg" alt="Papyrus 46 (Chester Beatty II), Paulus" loading="lazy"></a><figcaption>Papyrus 46 (Chester Beatty II), Paulus · <a href="https://commons.wikimedia.org/wiki/File:P46.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
@@ -602,9 +686,69 @@
             Hebreeën (!), 1–2 Korintiërs, Efeziërs, Galaten, Filippenzen, Kolossenzen, 1 Tess. — bewijst
             een vroege Alexandrijnse tekstvorm van Paulus. Wikipedia:
             <a href="https://en.wikipedia.org/wiki/Papyrus_46" target="_blank">Papyrus 46</a>.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Chester Beatty Library, Dublin (+ Univ. of Michigan)</li>
+                <li><strong>Ontdekt/verworven:</strong> ca. 1930–31 in Egypte verworven door <a href="https://en.wikipedia.org/wiki/Alfred_Chester_Beatty" target="_blank" rel="noopener">Alfred Chester Beatty</a>; bekendgemaakt in 1931</li>
+            </ul>
+        </div>
+        <div class="codex-card">
+            <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:P._Chester_Beatty_I,_folio_13-14,_recto.jpg" target="_blank" rel="noopener"><img src="img/handschriften/p45.jpg" alt="Papyrus 45 (Chester Beatty I), evangeliën" loading="lazy"></a><figcaption>Papyrus 45 (Chester Beatty I), evangeliën · <a href="https://commons.wikimedia.org/wiki/File:P._Chester_Beatty_I,_folio_13-14,_recto.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
+            <h4>P45— Chester Beatty I</h4>
+            <div class="meta">~250 AD · Chester Beatty Library, Dublin</div>
+            <p>Oudste handschrift dat de vier evangeliën én Handelingen in één codex samenbrengt. Bevat delen van Mattheüs, Markus, Lukas, Johannes en Handelingen.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Chester Beatty Library, Dublin</li>
+                <li><strong>Ontdekt/verworven:</strong> ca. 1930–31 in Egypte verworven door <a href="https://en.wikipedia.org/wiki/Alfred_Chester_Beatty" target="_blank" rel="noopener">Alfred Chester Beatty</a>; bekendgemaakt in 1931</li>
+            </ul>
+        </div>
+        <div class="codex-card">
+            <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Papyrus_47_Rev_13,16-14.4.jpg" target="_blank" rel="noopener"><img src="img/handschriften/p47.jpg" alt="Papyrus 47 (Chester Beatty III), Openbaring 13-14" loading="lazy"></a><figcaption>Papyrus 47 (Chester Beatty III), Openbaring 13-14 · <a href="https://commons.wikimedia.org/wiki/File:Papyrus_47_Rev_13,16-14.4.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
+            <h4>P47— Chester Beatty III</h4>
+            <div class="meta">~250 AD · Chester Beatty Library, Dublin</div>
+            <p>Oudste substantiële handschrift van het boek Openbaring; bevat Op. 9:10–17:2.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Chester Beatty Library, Dublin</li>
+                <li><strong>Ontdekt/verworven:</strong> ca. 1930–31 in Egypte verworven door <a href="https://en.wikipedia.org/wiki/Alfred_Chester_Beatty" target="_blank" rel="noopener">Alfred Chester Beatty</a></li>
+            </ul>
+        </div>
+        <div class="codex-card">
+            <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Papyrus_Bodmer_VIII.jpg" target="_blank" rel="noopener"><img src="img/handschriften/p72.jpg" alt="Papyrus 72 (Bodmer VIII), brieven van Petrus en Judas" loading="lazy"></a><figcaption>Papyrus 72 (Bodmer VIII), brieven van Petrus en Judas · <a href="https://commons.wikimedia.org/wiki/File:Papyrus_Bodmer_VIII.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
+            <h4>P72— Bodmer VII–VIII</h4>
+            <div class="meta">~300 AD · Vaticaanse Bibliotheek, Vaticaanstad</div>
+            <p>Oudste bekende tekst van 1 en 2 Petrus en Judas, in één codex samengebracht met andere vroegchristelijke geschriften.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Vaticaanse Bibliotheek, Vaticaanstad</li>
+                <li><strong>Ontdekt/verworven:</strong> onderdeel van de Bodmer-papyri (<a href="https://en.wikipedia.org/wiki/Martin_Bodmer" target="_blank" rel="noopener">Martin Bodmer</a>, 1952), gevonden bij Dishna (Egypte)</li>
+            </ul>
         </div>
 
-        <h2 id="verder">6. Verder lezen</h2>
+        <h3>Ethiopische (Ge'ez) traditie</h3>
+        <p>Enkele bijbelboeken zijn vooral of uitsluitend bewaard gebleven in het
+        <em>Ge'ez</em>, de klassieke taal van de Ethiopisch-Orthodoxe Kerk — waaronder Henoch,
+        Jubileeën en de Meqabyan-boeken.</p>
+        <div class="codex-card">
+            <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:Illumination-from-Abba-Garima-gospel.jpg" target="_blank" rel="noopener"><img src="img/handschriften/garima.jpg" alt="Verluchte pagina uit de Abba Garima-evangeliën (oudste Ge'ez-handschrift)" loading="lazy"></a><figcaption>Verluchte pagina uit de Abba Garima-evangeliën (oudste Ge'ez-handschrift) · <a href="https://commons.wikimedia.org/wiki/File:Illumination-from-Abba-Garima-gospel.jpg" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
+            <h4>Garima-evangeliën(Abba Garima)</h4>
+            <div class="meta">330–650 AD · Abba Garima-klooster, Ethiopië</div>
+            <p>De oudste bewaarde Ethiopische (Ge'ez) evangeliën én tevens 's werelds oudste geïllustreerde christelijke handschrift. Geschreven op dik geitenperkament; koolstofdatering (Oxford, 2010) plaatst het rond 330–650 n.Chr.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Abba Garima-klooster, bij Adwa (Tigray), Ethiopië</li>
+                <li><strong>Ontdekt/verworven:</strong> eeuwenlang in het klooster bewaard; in 2010 in Oxford koolstofgedateerd op 330–650 n.Chr.</li>
+                <li class="ms-bewijs"><strong>Bewijs:</strong> <a href="https://www.medievalists.net/2010/07/garima-gospels-found-to-be-oldest-surviving-christian-illustrated-manuscripts/" target="_blank" rel="noopener">Medievalists.net — “Garima Gospels found to be oldest surviving Christian illustrated manuscripts” (2010)</a></li>
+            </ul>
+        </div>
+        <div class="codex-card">
+            <figure class="codex-photo"><a href="https://commons.wikimedia.org/wiki/File:BL_Or_485_f._102r.png" target="_blank" rel="noopener"><img src="img/handschriften/ethenoch.png" alt="Folio uit een Ge'ez-handschrift van het boek Henoch (BL Or. 485)" loading="lazy"></a><figcaption>Folio uit een Ge'ez-handschrift van het boek Henoch (BL Or. 485) · <a href="https://commons.wikimedia.org/wiki/File:BL_Or_485_f._102r.png" target="_blank" rel="noopener">Wikimedia</a> (publiek domein)</figcaption></figure>
+            <h4>Ethiopische Henoch(Mäṣḥafä Henok)</h4>
+            <div class="meta">handschriften 15e–18e eeuw · o.a. Bodleian Library, Oxford</div>
+            <p>Het boek Henoch (1 Henoch) is volledig alléén in het Ge'ez overgeleverd; de Ethiopische kerk rekent het tot de canon. Aramese fragmenten uit Qumran (4QHenoch, ~200 v.Chr.) zijn de oudste getuigen.</p>
+            <ul class="ms-facts">
+                <li><strong>Bevindt zich:</strong> Bodleian Library (Oxford) &amp; Bibliothèque nationale de France (Parijs)</li>
+                <li><strong>Ontdekt/verworven:</strong> in 1773 door de Schotse ontdekkingsreiziger <a href="https://nl.wikipedia.org/wiki/James_Bruce_(ontdekkingsreiziger)" target="_blank" rel="noopener">James Bruce</a> vanuit Ethiopië naar Europa gebracht</li>
+            </ul>
+        </div>
+
+                <h2 id="verder">6. Verder lezen</h2>
         <ul>
             <li><a href="https://ntvmr.uni-muenster.de/" target="_blank">INTF — New Testament Virtual Manuscript Room</a> (Münster) — alle ~5.800 NT-handschriften, met afbeeldingen en transcripties.</li>
             <li><a href="https://www.csntm.org/" target="_blank">CSNTM — Center for the Study of New Testament Manuscripts</a> (Dallas) — hoogwaardige digitale foto's van NT-handschriften.</li>
