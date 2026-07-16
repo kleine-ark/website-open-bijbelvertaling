@@ -4424,3 +4424,31 @@ body.doorlopend-aan #chapter-footer::after {
 /* Klikbare 'oudste handschrift' in de datering-box -> grondteksten.html */
 .book-dating .dating-link { color: #9a7b1e; text-decoration: none; border-bottom: 1px dotted #c9a94a; }
 .book-dating .dating-link:hover { color: #7a610f; border-bottom-style: solid; }
+
+/* === Chunk-audio: voorlees-instellingen (godsnaam/kopjes/intro) === */
+.audio-settings-btn {
+    background: none; border: none; cursor: pointer; font-size: 18px;
+    color: inherit; opacity: 0.75; padding: 4px 6px; line-height: 1;
+}
+.audio-settings-btn:hover { opacity: 1; }
+.audio-settings-btn.hidden { display: none; }
+.audio-settings-panel {
+    position: absolute; bottom: 52px; right: 12px; z-index: 60;
+    background: var(--bg-surface, #fff); color: var(--text-primary, #222);
+    border: 1px solid var(--border-default, #d8d2c6); border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18); padding: 12px 14px; width: 250px;
+    font-family: 'Fira Sans', sans-serif; font-size: 13px;
+}
+.audio-settings-panel .asp-row { margin-bottom: 10px; }
+.audio-settings-panel .asp-label { display: block; font-weight: 600; margin-bottom: 5px; color: var(--navy, #142e42); }
+.audio-settings-panel .asp-seg { display: flex; gap: 4px; }
+.audio-settings-panel .asp-seg button {
+    flex: 1; padding: 5px 4px; border: 1px solid var(--border-default, #d8d2c6);
+    background: transparent; color: inherit; border-radius: 5px; cursor: pointer; font-size: 12px;
+}
+.audio-settings-panel .asp-seg button.on {
+    background: var(--gold, #cba449); color: #fff; border-color: var(--gold, #cba449); font-weight: 600;
+}
+.audio-settings-panel .asp-check { display: flex; align-items: center; gap: 7px; margin: 7px 0 0; cursor: pointer; }
+.audio-settings-panel .asp-check input { margin: 0; }
+:root[data-theme="donker"] .audio-settings-panel .asp-label { color: var(--text-primary); }

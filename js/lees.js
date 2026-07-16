@@ -255,6 +255,88 @@ const Lees = {
             voiceBtn.classList.remove('hidden');
             voiceBtn.textContent = ov.label();
         }
+
+        // Probeer chunk-audio (optionele godsnaam/kopjes/intro). Geen manifest → losse MP3 blijft.
+        this._setupChunks(bookId, chapter);
+    },
+
+    // Laad een chunk-manifest en stuur de speler daarmee aan. Geen manifest →
+    // niets doen (de losse-MP3-bron in updateAudioPlayer blijft actief).
+    async _setupChunks(bookId, chapter) {
+        if (this._chunkCtl) { try { this._chunkCtl.destroy(); } catch (e) {} this._chunkCtl = null; }
+        this._updateChunkSettingsUI(false);
+        if (!window.ChunkedAudio || !window.OV_AUDIO) return;
+        const voice = OV_AUDIO.getVoice ? OV_AUDIO.getVoice() : 'm';
+        const manifest = await ChunkedAudio.load(bookId, chapter, voice);
+        // Hoofdstuk kan intussen gewisseld zijn → verouderde load negeren.
+        if (!manifest || this._audioBookId !== bookId || this._audioChapter !== chapter) return;
+        const audioEl = document.getElementById('audio-el');
+        if (!audioEl) return;
+        const settings = ChunkedAudio.defaultSettings();
+        this._chunkCtl = ChunkedAudio.createController(audioEl, manifest, settings, {
+            onVerse: (n) => { this._highlightAudioVerse && this._highlightAudioVerse(n); }
+        });
+        this._updateChunkSettingsUI(true);
+    },
+
+    // Injecteer (eenmalig) een tandwiel-knop + paneel naast de stem-knop, en
+    // toon/verberg het al naar gelang er chunk-audio beschikbaar is.
+    _updateChunkSettingsUI(available) {
+        const voiceBtn = document.getElementById('audio-voice');
+        let btn = document.getElementById('audio-settings-btn');
+        if (!available) { if (btn) btn.classList.add('hidden'); this._closeChunkPanel && this._closeChunkPanel(); return; }
+        if (!btn) {
+            btn = document.createElement('button');
+            btn.id = 'audio-settings-btn';
+            btn.className = 'audio-settings-btn';
+            btn.type = 'button';
+            btn.title = 'Voorlees-instellingen (godsnaam, kopjes)';
+            btn.setAttribute('aria-label', 'Voorlees-instellingen');
+            btn.textContent = '⚙';
+            if (voiceBtn && voiceBtn.parentNode) voiceBtn.parentNode.insertBefore(btn, voiceBtn.nextSibling);
+            else document.body.appendChild(btn);
+            btn.addEventListener('click', (e) => { e.stopPropagation(); this._toggleChunkPanel(); });
+        }
+        btn.classList.remove('hidden');
+    },
+
+    _toggleChunkPanel() {
+        let panel = document.getElementById('audio-settings-panel');
+        if (panel) { this._closeChunkPanel(); return; }
+        const s = ChunkedAudio.defaultSettings();
+        panel = document.createElement('div');
+        panel.id = 'audio-settings-panel';
+        panel.className = 'audio-settings-panel';
+        panel.innerHTML =
+            '<div class="asp-row"><span class="asp-label">Godsnaam voorlezen</span>' +
+            '<div class="asp-seg" role="group">' +
+              ['heere', 'jahweh', 'jehova'].map(k =>
+                `<button type="button" data-god="${k}" class="${s.divineName === k ? 'on' : ''}">${k === 'heere' ? 'HEERE' : (k === 'jahweh' ? 'JAHWEH' : 'Jehova')}</button>`).join('') +
+            '</div></div>' +
+            `<label class="asp-check"><input type="checkbox" data-opt="headings" ${s.headings ? 'checked' : ''}> Kopjes voorlezen</label>` +
+            `<label class="asp-check"><input type="checkbox" data-opt="announce" ${s.announce ? 'checked' : ''}> Boeknaam + hoofdstuk aankondigen</label>`;
+        const btn = document.getElementById('audio-settings-btn');
+        (btn && btn.parentNode ? btn.parentNode : document.body).appendChild(panel);
+
+        panel.querySelectorAll('[data-god]').forEach(b => b.addEventListener('click', () => {
+            const cur = ChunkedAudio.defaultSettings();
+            cur.divineName = b.getAttribute('data-god');
+            panel.querySelectorAll('[data-god]').forEach(x => x.classList.toggle('on', x === b));
+            this._applyChunkSettings(cur);
+        }));
+        panel.querySelectorAll('[data-opt]').forEach(cbx => cbx.addEventListener('change', () => {
+            const cur = ChunkedAudio.defaultSettings();
+            cur[cbx.getAttribute('data-opt')] = cbx.checked;
+            this._applyChunkSettings(cur);
+        }));
+        this._closeChunkPanel = () => { const p = document.getElementById('audio-settings-panel'); if (p) p.remove(); document.removeEventListener('click', this._chunkPanelOutside); };
+        this._chunkPanelOutside = (ev) => { const p = document.getElementById('audio-settings-panel'); if (p && !p.contains(ev.target) && ev.target.id !== 'audio-settings-btn') this._closeChunkPanel(); };
+        setTimeout(() => document.addEventListener('click', this._chunkPanelOutside), 0);
+    },
+
+    _applyChunkSettings(settings) {
+        ChunkedAudio.saveSettings(settings);
+        if (this._chunkCtl) this._chunkCtl.setSettings(settings);
     },
 
     setupAudioPlayer() {
@@ -282,9 +364,22 @@ const Lees = {
                 const ov = window.OV_AUDIO;
                 if (!ov || this._audioBookId == null) return;
                 const wasPlaying = !audioEl.paused;
-                const pos = audioEl.currentTime || 0;
                 ov.toggleVoice();
                 voiceBtn.textContent = ov.label();
+
+                // Chunk-modus: manifest voor de nieuwe stem herladen, plek behouden.
+                if (this._chunkCtl) {
+                    const verse = this._chunkCtl.currentVerse();
+                    this._setupChunks(this._audioBookId, this._audioChapter).then(() => {
+                        if (this._chunkCtl) {
+                            if (verse != null) this._chunkCtl.seekToVerse(verse);
+                            if (wasPlaying) this._chunkCtl.play();
+                        }
+                    });
+                    return;
+                }
+
+                const pos = audioEl.currentTime || 0;
                 audioEl.src = ov.src(this._audioBookId, this._audioChapter);
                 audioEl.addEventListener('loadedmetadata', function once() {
                     audioEl.removeEventListener('loadedmetadata', once);
