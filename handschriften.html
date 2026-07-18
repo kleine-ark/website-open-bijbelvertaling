@@ -47,6 +47,36 @@
         :root[data-theme="donker"] .ms-facts li strong { color: var(--text-primary); }
         :root[data-theme="donker"] h1, :root[data-theme="donker"] h2 { color: var(--text-primary); }
         :root[data-theme="donker"] p, :root[data-theme="donker"] li { color: var(--text-primary); }
+
+        /* Samenvatting bovenaan: oudste fragment + oudste volledige versie */
+        .ms-summary { display: flex; flex-wrap: wrap; gap: 12px; margin: 6px 0 18px; }
+        .ms-summary .sum-card { flex: 1 1 240px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; background: #fff; }
+        .ms-summary .sum-card.frag { border-left: 4px solid #16a34a; }
+        .ms-summary .sum-card.vol { border-left: 4px solid var(--gold); }
+        .ms-summary .sum-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--teal); font-family: 'Fira Sans', sans-serif; }
+        .ms-summary .sum-name { font-size: 15px; font-weight: 600; color: var(--navy); font-family: 'Fira Sans', sans-serif; margin: 2px 0; }
+        .ms-summary .sum-meta { font-size: 12px; color: #666; }
+        .ms-summary .sum-card a { color: inherit; }
+        :root[data-theme="donker"] .ms-summary .sum-card { background: var(--bg-surface); border-color: var(--border-default); }
+        :root[data-theme="donker"] .ms-summary .sum-name { color: var(--text-primary); }
+
+        /* Fragment-tekst: Grieks + Nederlands */
+        .frag-verse { margin: 10px 0; padding: 8px 12px; border-left: 3px solid var(--border); }
+        .frag-num { font-weight: 700; color: var(--gold); font-family: 'Fira Sans', sans-serif; margin-right: 6px; }
+        .frag-grc { font-size: 17px; line-height: 1.7; color: var(--navy); font-family: 'EB Garamond', serif; }
+        .frag-nl { font-size: 14px; line-height: 1.6; color: #444; margin-top: 3px; }
+        :root[data-theme="donker"] .frag-grc { color: #e8e2d0; }
+        :root[data-theme="donker"] .frag-nl { color: var(--text-secondary); }
+
+        /* Persoon-link + popup */
+        .persoon-link { color: var(--teal); border-bottom: 1px dotted var(--teal); cursor: pointer; }
+        .persoon-link:hover { color: var(--gold); }
+        .persoon-popup { position: fixed; z-index: 200; max-width: 320px; background: var(--bg-surface, #fff); color: var(--text-primary, #222);
+            border: 1px solid var(--border-default, #d8d2c6); border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); padding: 12px 14px; font-size: 13px; line-height: 1.55; }
+        .persoon-popup h5 { margin: 0 0 2px; font-size: 14px; color: var(--navy); font-family: 'Fira Sans', sans-serif; }
+        .persoon-popup .pp-jaren { font-size: 12px; color: var(--teal); margin-bottom: 6px; }
+        .persoon-popup .pp-more { margin-top: 8px; font-size: 12px; }
+        :root[data-theme="donker"] .persoon-popup h5 { color: var(--text-primary); }
     </style>
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
@@ -90,9 +120,21 @@
     function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
     function q(name) { var m = location.search.match(new RegExp('[?&]' + name + '=([^&]+)')); return m ? decodeURIComponent(m[1]) : null; }
 
+    var PERSONEN = {};
+
+    // Ontdekker als interne link (opent een beknopte bio-popup) i.p.v. een externe link.
+    function personLink(ms) {
+        var g = ms.gevonden || {};
+        if (!g.wie) return null;
+        if (ms.persoon && PERSONEN[ms.persoon]) {
+            return '<a class="persoon-link" data-persoon="' + esc(ms.persoon) + '" role="button" tabindex="0">' + esc(g.wie) + '</a>';
+        }
+        return esc(g.wie);
+    }
+
     function card(ms, isOudste) {
         var g = ms.gevonden || {};
-        var wie = g.wie ? (ms.persoonWiki ? '<a href="' + esc(ms.persoonWiki) + '" target="_blank" rel="noopener">' + esc(g.wie) + '</a>' : esc(g.wie)) : null;
+        var wie = personLink(ms);
         var vind = wie ? ('door ' + wie + (g.jaar ? ' (' + esc(g.jaar) + ')' : '') + (g.plaats ? ', ' + esc(g.plaats) : ''))
                        : (g.hoe ? '' : (g.jaar ? esc(g.jaar) : '—'));
         var facts = '<ul class="ms-facts">';
@@ -111,12 +153,70 @@
             '<p>' + esc(ms.beschrijving || '') + '</p>' + facts + '</div>';
     }
 
+    function sumCard(label, ms, cls) {
+        return '<div class="sum-card ' + cls + '"><div class="sum-label">' + esc(label) + '</div>' +
+            '<div class="sum-name">' + esc(ms.naam) + (ms.bijnaam ? ' <span style="font-weight:400;color:var(--teal);font-size:12px;">' + esc(ms.bijnaam) + '</span>' : '') + '</div>' +
+            '<div class="sum-meta">' + esc(ms.datering || '') + (ms.bevat ? ' · ' + esc(ms.bevat) : '') + '</div></div>';
+    }
+
+    // Beknopte bio-popup (intern) met één externe link.
+    function closePopup() { var p = document.getElementById('persoon-popup'); if (p) p.remove(); document.removeEventListener('click', outside, true); }
+    function outside(e) { var p = document.getElementById('persoon-popup'); if (p && !p.contains(e.target) && !(e.target.classList && e.target.classList.contains('persoon-link'))) closePopup(); }
+    function showPopup(link) {
+        closePopup();
+        var pid = link.getAttribute('data-persoon'); var per = PERSONEN[pid]; if (!per) return;
+        var pop = document.createElement('div');
+        pop.id = 'persoon-popup'; pop.className = 'persoon-popup';
+        pop.innerHTML = '<h5>' + esc(per.naam) + '</h5>' + (per.jaren ? '<div class="pp-jaren">' + esc(per.jaren) + '</div>' : '') +
+            '<div>' + esc(per.bio) + '</div>' +
+            (per.wikipedia ? '<div class="pp-more">Meer: <a href="' + esc(per.wikipedia) + '" target="_blank" rel="noopener">Wikipedia →</a></div>' : '');
+        document.body.appendChild(pop);
+        var r = link.getBoundingClientRect();
+        var top = r.bottom + 6, left = Math.min(r.left, window.innerWidth - pop.offsetWidth - 12);
+        if (top + pop.offsetHeight > window.innerHeight - 8) top = Math.max(8, r.top - pop.offsetHeight - 6);
+        pop.style.top = top + 'px'; pop.style.left = Math.max(8, left) + 'px';
+        setTimeout(function () { document.addEventListener('click', outside, true); }, 0);
+    }
+    document.addEventListener('click', function (e) {
+        var l = e.target.closest ? e.target.closest('.persoon-link') : null;
+        if (l) { e.preventDefault(); e.stopPropagation(); showPopup(l); }
+    });
+
+    // Render de Griekse grondtekst + Nederlandse vertaling van een fragment.
+    function renderFragmentText(ms) {
+        var tf = ms.tekstfragment; if (!tf) return;
+        var container = document.getElementById('fragment-tekst'); if (!container) return;
+        var chs = {}; (tf.blokken || []).forEach(function (b) { chs[b.hoofdstuk] = true; });
+        var jobs = Object.keys(chs).map(function (ch) {
+            return fetch('data/' + tf.boek + '/' + ch + '.json').then(function (r) { return r.json(); }).then(function (d) { return { ch: ch, d: d }; });
+        });
+        Promise.all(jobs).then(function (loaded) {
+            var byCh = {}; loaded.forEach(function (x) { byCh[x.ch] = x.d; });
+            var h = '<h2>Tekst van dit fragment</h2>' +
+                '<p style="font-size:13px;color:var(--teal);">De Griekse grondtekst en de Nederlandse vertaling van ' + esc(tf.verwijzing) + '.</p>';
+            (tf.blokken || []).forEach(function (b) {
+                var d = byCh[b.hoofdstuk]; if (!d) return;
+                h += '<h3 style="color:var(--teal);font-size:15px;margin:16px 0 4px;">' + esc(b.label) + '</h3>';
+                b.nummers.forEach(function (n) {
+                    var v = (d.verses || []).find(function (x) { return x.number === n; }); if (!v) return;
+                    var grc = (v.grondtekst || []).map(function (w) { return w.woord; }).join(' ');
+                    h += '<div class="frag-verse"><span class="frag-num">' + n + '</span>' +
+                        (grc ? '<span class="frag-grc" lang="grc">' + esc(grc) + '</span>' : '') +
+                        '<div class="frag-nl">' + esc(v.text2026 || '') + '</div></div>';
+                });
+            });
+            if (tf.verschillen) h += '<div class="principle-box" style="background:rgba(203,164,73,0.08);margin-top:14px;"><strong>Wat verschilt er van de tekst die wij kennen?</strong> ' + esc(tf.verschillen) + '</div>';
+            container.innerHTML = h;
+        }).catch(function (e) { console.error(e); });
+    }
+
     Promise.all([
         fetch('data/manuscripts.json').then(function (r) { return r.json(); }),
         fetch('data/books.json').then(function (r) { return r.json(); }).catch(function () { return { books: [] }; }),
         fetch('data/book-dating.json').then(function (r) { return r.json(); }).catch(function () { return {}; })
     ]).then(function (res) {
         var data = res[0], books = res[1], dating = res[2];
+        PERSONEN = data.personen || {};
         var el = document.getElementById('ms-page');
         var boekId = q('boek');
         var M = data.manuscripten || {}, B = data.boeken || {};
@@ -169,11 +269,17 @@
             if (d.oudsteHandschrift) parts.push('Oudste handschrift: ' + esc(d.oudsteHandschrift));
             if (parts.length) html += '<div class="dating-line">📜 ' + parts.join(' &nbsp;·&nbsp; ') + '</div>';
         }
+        var oudste = boek.oudsteFragment;
+        var oudsteVol = boek.oudsteVolledig || (boek.volledig && boek.volledig[0]);
+        var sum = '';
+        if (oudste && M[oudste]) sum += sumCard('Oudste fragment', M[oudste], 'frag');
+        if (oudsteVol && M[oudsteVol]) sum += sumCard('Oudste volledige versie', M[oudsteVol], 'vol');
+        if (sum) html += '<div class="ms-summary">' + sum + '</div>';
+
         if (boek.intro) html += '<div class="principle-box">' + esc(boek.intro) + '</div>';
 
-        var oudste = boek.oudsteFragment;
         if (oudste && M[oudste]) {
-            html += '<h2>Oudste bewaarde tekst</h2>' + card(M[oudste], true);
+            html += '<h2>Oudste bewaarde tekst</h2>' + card(M[oudste], true) + '<div id="fragment-tekst"></div>';
         }
         var frags = (boek.fragmenten || []).filter(function (id) { return id !== oudste && M[id]; });
         if (frags.length) {
@@ -196,6 +302,7 @@
 
         el.innerHTML = html;
         document.title = 'Handschriften van ' + naam + ' — Open Staten Vertaling';
+        if (oudste && M[oudste]) renderFragmentText(M[oudste]);
     }).catch(function (e) {
         document.getElementById('ms-page').innerHTML = '<p style="color:#c0392b">Kon de handschrift-gegevens niet laden.</p>';
         console.error(e);

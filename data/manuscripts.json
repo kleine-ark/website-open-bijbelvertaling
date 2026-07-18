@@ -19,7 +19,32 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Manchester,_John_Rylands_Library_Ms_Greek_P_457_(Papyrus_52)_recto_John_18,_31-33.jpg",
    "licentie": "publiek domein",
    "bijschrift": "Papyrus 52 (recto), Johannes 18:31-33",
-   "beschrijving": "Het oudste bewaarde fragment van het Nieuwe Testament — een klein papyrus-codexblaadje (8,9 × 6 cm). Dat er rond 125 n.Chr. al een codex van Johannes in Egypte circuleerde, plaatst het evangelie zeer dicht bij zijn oorspronkelijke ontstaan."
+   "beschrijving": "Het oudste bewaarde fragment van het Nieuwe Testament — een klein papyrus-codexblaadje (8,9 × 6 cm). Dat er rond 125 n.Chr. al een codex van Johannes in Egypte circuleerde, plaatst het evangelie zeer dicht bij zijn oorspronkelijke ontstaan.",
+   "tekstfragment": {
+    "boek": "johannes",
+    "verwijzing": "Johannes 18:31-33 (recto) · 18:37-38 (verso)",
+    "blokken": [
+     {
+      "label": "Recto — Johannes 18:31-33",
+      "hoofdstuk": 18,
+      "nummers": [
+       31,
+       32,
+       33
+      ]
+     },
+     {
+      "label": "Verso — Johannes 18:37-38",
+      "hoofdstuk": 18,
+      "nummers": [
+       37,
+       38
+      ]
+     }
+    ],
+    "verschillen": "Het fragment is zo klein dat er per regel maar enkele woorden bewaard zijn. Waar de tekst leesbaar is, komt hij volledig overeen met de veel latere handschriften (Sinaiticus, Vaticanus): er zijn géén betekenisvolle tekstvarianten. Dat is opmerkelijk — het oudste stukje van het Nieuwe Testament bevestigt de overgeleverde tekst zoals wij die kennen."
+   },
+   "persoon": "roberts"
   },
   "p66": {
    "naam": "Papyrus 66",
@@ -40,7 +65,8 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Papyrus66.jpg",
    "licentie": "publiek domein",
    "bijschrift": "Bladzijde uit Papyrus 66 (Bodmer II)",
-   "beschrijving": "Een bijna volledig Johannesevangelie (Joh. 1:1–14:26 plus fragmenten tot 21:9). Bevat talrijke correcties van de schrijver zelf — waardevol voor de studie van hoe kopiisten werkten."
+   "beschrijving": "Een bijna volledig Johannesevangelie (Joh. 1:1–14:26 plus fragmenten tot 21:9). Bevat talrijke correcties van de schrijver zelf — waardevol voor de studie van hoe kopiisten werkten.",
+   "persoon": "bodmer"
   },
   "p75": {
    "naam": "Papyrus 75",
@@ -61,7 +87,8 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Vatican,_Apostolic_Library_Ms_Hanna_Papyrus_1_-_Papyrus_Bodmer_XIV%E2%80%93XV_(Papyrus_75)_fol_1B9r_Luke_14,_3-14.jpg",
    "licentie": "publiek domein",
    "bijschrift": "Papyrus 75, folio met Lukas 14 (Bodmer XIV-XV)",
-   "beschrijving": "Tekstkritisch van fundamenteel belang: de tekst is bijna identiek aan die van de Codex Vaticanus, wat aantoont dat de Alexandrijnse tekstvorm al vóór 200 n.Chr. bestond."
+   "beschrijving": "Tekstkritisch van fundamenteel belang: de tekst is bijna identiek aan die van de Codex Vaticanus, wat aantoont dat de Alexandrijnse tekstvorm al vóór 200 n.Chr. bestond.",
+   "persoon": "bodmer"
   },
   "sinaiticus": {
    "naam": "Codex Sinaiticus",
@@ -86,7 +113,8 @@
    "bewijs": {
     "tekst": "CNN — “Oldest known Bible goes online” (2009)",
     "url": "https://edition.cnn.com/2009/WORLD/europe/07/06/ancient.bible.online/index.html"
-   }
+   },
+   "persoon": "tischendorf"
   },
   "vaticanus": {
    "naam": "Codex Vaticanus",
@@ -124,7 +152,28 @@
     "vaticanus"
    ],
    "tekstgetuigen": "± 30 papyri + alle grote majuskels (Sinaiticus, Vaticanus, Alexandrinus, Bezae, Washingtonianus)",
-   "leesInReader": "johannes"
+   "leesInReader": "johannes",
+   "oudsteVolledig": "sinaiticus"
+  }
+ },
+ "personen": {
+  "roberts": {
+   "naam": "Colin H. Roberts",
+   "jaren": "1909–1990",
+   "bio": "Brits papyroloog en classicus, verbonden aan de universiteit van Oxford. In 1934 herkende hij een onooglijk papyrusstukje in de John Rylands Library als het oudste bekende fragment van het Nieuwe Testament (Papyrus 52). Hij bezorgde talrijke wetenschappelijke papyrus-edities.",
+   "wikipedia": "https://en.wikipedia.org/wiki/Colin_H._Roberts"
+  },
+  "bodmer": {
+   "naam": "Martin Bodmer",
+   "jaren": "1899–1971",
+   "bio": "Zwitsers verzamelaar en mecenas te Genève, oprichter van de Bibliotheca Bodmeriana. In de jaren 1950 verwierf hij de naar hem genoemde Bodmer-papyri — een vondst uit Egypte met enkele van de oudste bewaarde Bijbelteksten, waaronder Papyrus 66, 72 en 75.",
+   "wikipedia": "https://en.wikipedia.org/wiki/Martin_Bodmer"
+  },
+  "tischendorf": {
+   "naam": "Konstantin von Tischendorf",
+   "jaren": "1815–1874",
+   "bio": "Duits Bijbelgeleerde en tekstcriticus. In het Katharinaklooster op de Sinaï ontdekte hij de Codex Sinaiticus (eerste bladen 1844, het grootste deel 1859), een van de oudste volledige Griekse Bijbels. Hij gaf vele kritische edities van de Griekse tekst uit.",
+   "wikipedia": "https://nl.wikipedia.org/wiki/Konstantin_von_Tischendorf"
   }
  }
 }
