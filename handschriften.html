@@ -77,6 +77,14 @@
         .persoon-popup .pp-jaren { font-size: 12px; color: var(--teal); margin-bottom: 6px; }
         .persoon-popup .pp-more { margin-top: 8px; font-size: 12px; }
         :root[data-theme="donker"] .persoon-popup h5 { color: var(--text-primary); }
+
+        /* Index van alle handschriften */
+        .ms-index { list-style: none; padding-left: 0; margin: 8px 0 18px; }
+        .ms-index li { padding: 8px 12px; margin: 5px 0; background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 0 5px 5px 0; }
+        .ms-index li a { font-weight: 600; font-family: 'Fira Sans', sans-serif; }
+        .ms-index .mini-bij { color: var(--teal); font-size: 12px; margin-left: 6px; }
+        .ms-index .mini-meta { display: block; font-size: 12px; color: #777; margin-top: 1px; }
+        :root[data-theme="donker"] .ms-index li { background: var(--bg-surface); border-color: var(--border-default); }
     </style>
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
@@ -106,7 +114,7 @@
         <a href="statistieken.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Statistieken</a>
         <a href="begrippen.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Begrippen</a>
         <a href="grondteksten.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Grondteksten</a>
-        <a href="handschriften.html?boek=johannes" style="display:block;padding:8px 20px 8px 32px;color:#142e42;text-decoration:none;font-weight:600;border-left:3px solid #cba449;background:rgba(203,164,73,0.08);">↳ Handschriften per boek</a>
+        <a href="handschriften.html" style="display:block;padding:8px 20px 8px 32px;color:#142e42;text-decoration:none;font-weight:600;border-left:3px solid #cba449;background:rgba(203,164,73,0.08);">↳ Alle handschriften</a>
         <a href="changelog.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Changelog</a>
     </nav>
 
@@ -121,6 +129,8 @@
     function q(name) { var m = location.search.match(new RegExp('[?&]' + name + '=([^&]+)')); return m ? decodeURIComponent(m[1]) : null; }
 
     var PERSONEN = {};
+    var MANS = {}, BOEKEN = {}, BOOKS = [], DATING = {};
+    function bkName(id) { var b = BOOKS.find(function (x) { return x.id === id; }); return b ? b.nameDutch : id; }
 
     // Ontdekker als interne link (opent een beknopte bio-popup) i.p.v. een externe link.
     function personLink(ms) {
@@ -210,6 +220,68 @@
         }).catch(function (e) { console.error(e); });
     }
 
+    // === Detailpagina van één handschrift (?ms=<id>) ===
+    function renderMsDetail(id) {
+        var el = document.getElementById('ms-page');
+        var ms = MANS[id];
+        if (!ms) { el.innerHTML = '<h1>Onbekend handschrift</h1><p><a href="handschriften.html">← Alle handschriften</a></p>'; return; }
+        var getuigeVoor = [];
+        Object.keys(BOEKEN).forEach(function (bid) {
+            var bk = BOEKEN[bid];
+            var volFirst = bk.oudsteVolledig || (bk.volledig && bk.volledig[0]);
+            if (bk.oudsteFragment === id) getuigeVoor.push({ bid: bid, rol: 'oudste bewaarde tekst' });
+            else if (volFirst === id) getuigeVoor.push({ bid: bid, rol: 'oudste volledige versie' });
+            else if ((bk.fragmenten || []).indexOf(id) >= 0 || (bk.volledig || []).indexOf(id) >= 0) getuigeVoor.push({ bid: bid, rol: 'tekstgetuige' });
+        });
+        var h = '<p style="font-size:13px;"><a href="handschriften.html">← Alle handschriften</a></p>';
+        h += '<h1>' + esc(ms.naam) + '</h1>';
+        h += '<p class="subtitle">' + esc(ms.bijnaam || '') + (ms.siglum ? ' · ' + esc(ms.siglum) : '') + '</p>';
+        h += card(ms, false);
+        if (getuigeVoor.length) {
+            h += '<h2>Voor welke bijbelboeken</h2><ul>';
+            getuigeVoor.forEach(function (g) { h += '<li><a href="handschriften.html?boek=' + encodeURIComponent(g.bid) + '">' + esc(bkName(g.bid)) + '</a> — ' + esc(g.rol) + '</li>'; });
+            h += '</ul>';
+        }
+        if (ms.tekstfragment) h += '<div id="fragment-tekst"></div>';
+        if (ms.varianten && ms.varianten.length) {
+            h += '<h2>Tekstvarianten</h2><div class="ms-table-wrap"><table class="ms-table"><thead><tr><th>Plaats</th><th>Lezing van dit handschrift</th><th>Gangbare tekst</th><th>Toelichting</th></tr></thead><tbody>';
+            ms.varianten.forEach(function (v) {
+                h += '<tr><td>' + esc(v.verwijzing || '') + '</td><td lang="grc">' + esc(v.lezing || '') + '</td><td lang="grc">' + esc(v.standaard || '') + '</td><td>' + esc(v.toelichting || '') + '</td></tr>';
+            });
+            h += '</tbody></table></div>';
+        }
+        h += '<h2>Bronvermelding</h2><p style="font-size:12.5px;color:var(--teal);">Foto van <a href="' + esc(ms.commons || 'https://commons.wikimedia.org/') + '" target="_blank" rel="noopener">Wikimedia Commons</a> (' + esc(ms.licentie || 'bron') + '). Datering en toeschrijving volgen de gangbare tekstkritische literatuur.</p>';
+        el.innerHTML = h;
+        document.title = ms.naam + ' — Handschriften — Open Staten Vertaling';
+        if (ms.tekstfragment) renderFragmentText(ms);
+    }
+
+    // === Index van alle handschriften ===
+    function renderIndex() {
+        var el = document.getElementById('ms-page');
+        var ids = Object.keys(MANS);
+        function mini(list) {
+            return '<ul class="ms-index">' + list.map(function (id) {
+                var m = MANS[id];
+                return '<li><a href="handschriften.html?ms=' + encodeURIComponent(id) + '">' + esc(m.naam) + '</a>' +
+                    (m.bijnaam ? ' <span class="mini-bij">' + esc(m.bijnaam) + '</span>' : '') +
+                    '<span class="mini-meta">' + esc(m.datering || '') + (m.bevat ? ' · ' + esc(m.bevat) : (m.bewaarplaats ? ' · ' + esc(m.bewaarplaats) : '')) + '</span></li>';
+            }).join('') + '</ul>';
+        }
+        var frags = ids.filter(function (id) { return MANS[id].type === 'fragment'; });
+        var vols = ids.filter(function (id) { return MANS[id].type === 'volledig'; });
+        var rest = ids.filter(function (id) { return frags.indexOf(id) < 0 && vols.indexOf(id) < 0; });
+        var h = '<h1>Handschriften</h1><p class="subtitle">de centrale opslag van bijbelhandschriften — tekst, vindgeschiedenis, citaties en varianten</p>';
+        h += '<div class="principle-box">Elk handschrift heeft een eigen pagina met foto/scan, datering, vindgeschiedenis, dekking en (waar bekend) de tekst met tekstvarianten. Deze gegevens staan los van de leesweergave. Per bijbelboek is er ook een <a href="handschriften.html?boek=johannes">boekpagina</a> en het <a href="grondteksten.html#codices">codex-overzicht</a>.</div>';
+        if (frags.length) h += '<h2>Fragmenten &amp; papyri</h2>' + mini(frags);
+        if (vols.length) h += '<h2>Volledige handschriften (codices)</h2>' + mini(vols);
+        if (rest.length) h += '<h2>Overige</h2>' + mini(rest);
+        var boeken = Object.keys(BOEKEN);
+        if (boeken.length) h += '<h2>Per bijbelboek</h2><p>' + boeken.map(function (bid) { return '<a href="handschriften.html?boek=' + encodeURIComponent(bid) + '">' + esc(bkName(bid)) + '</a>'; }).join(' &nbsp;·&nbsp; ') + '</p>';
+        el.innerHTML = h;
+        document.title = 'Handschriften — Open Staten Vertaling';
+    }
+
     Promise.all([
         fetch('data/manuscripts.json').then(function (r) { return r.json(); }),
         fetch('data/books.json').then(function (r) { return r.json(); }).catch(function () { return { books: [] }; }),
@@ -217,25 +289,21 @@
     ]).then(function (res) {
         var data = res[0], books = res[1], dating = res[2];
         PERSONEN = data.personen || {};
+        MANS = data.manuscripten || {}; BOEKEN = data.boeken || {}; BOOKS = (books.books || []); DATING = dating || {};
         var el = document.getElementById('ms-page');
+
+        // Detailpagina van één handschrift
+        var msId = q('ms');
+        if (msId) { renderMsDetail(msId); return; }
+
         var boekId = q('boek');
-        var M = data.manuscripten || {}, B = data.boeken || {};
-        var beschikbaar = Object.keys(B);
+        // Geen boek gekozen → index van alle handschriften
+        if (!boekId) { renderIndex(); return; }
 
-        var bkLookup = function (id) { return (books.books || []).find(function (b) { return b.id === id; }); };
-
-        // Geen/onbekend boek → keuzepagina
-        if (!boekId || !bkLookup(boekId)) {
-            el.innerHTML = '<h1>Handschriften per bijbelboek</h1>' +
-                '<p class="subtitle">Kies een boek</p>' +
-                '<div class="principle-box">Uitgebreide handschrift-pagina beschikbaar voor: ' +
-                (beschikbaar.length ? beschikbaar.map(function (id) {
-                    var bk = bkLookup(id);
-                    return '<a href="handschriften.html?boek=' + encodeURIComponent(id) + '">' + esc(bk ? bk.nameDutch : id) + '</a>';
-                }).join(' · ') : 'nog geen') +
-                '.</div><p>Zie ook het volledige <a href="grondteksten.html#codices">overzicht van codices</a> en de <a href="grondteksten.html">grondteksten per boek</a>.</p>';
-            return;
-        }
+        var M = MANS, B = BOEKEN;
+        var bkLookup = function (id) { return BOOKS.find(function (b) { return b.id === id; }); };
+        // Onbekend boek → index
+        if (!bkLookup(boekId)) { renderIndex(); return; }
 
         // Boek bestaat maar heeft (nog) geen uitgebreide handschrift-data → minimale pagina
         if (!B[boekId]) {
