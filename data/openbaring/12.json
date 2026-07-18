@@ -1125,7 +1125,7 @@
       "number": 7,
       "textSV1888": "En er werd krijg in den hemel: Michaël en zijn engelen krijgden tegen den draak, en de draak krijgde ook en zijn engelen.",
       "text1637": "Ende [18] daer wierdt crijgh in den hemel: [19] Michaël ende sijne Engelen krijghden teghen den Draeck, ende de Draeck crijghde [oock] ende sijne Engelen:",
-      "text2026": "En er werd strijd in de hemel: Michaël en zijn engelen krijgden tegen de draak, en de draak krijgde ook en zijn engelen.",
+      "text2026": "En er werd strijd in de hemel: Michaël en zijn engelen streden tegen de draak, en de draak streed ook en zijn engelen.",
       "marginNotes": [
         {
           "marker": "18",
@@ -1294,7 +1294,7 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "En<sup class=\"note-marker\" data-note=\"18\">18</sup> er werd strijd in de hemel:<sup class=\"note-marker\" data-note=\"19\">19</sup> Michaël en zijn engelen krijgden tegen de draak, en de draak krijgde ook en zijn engelen.",
+      "text2026_html": "En<sup class=\"note-marker\" data-note=\"18\">18</sup> er werd strijd in de hemel:<sup class=\"note-marker\" data-note=\"19\">19</sup> Michaël en zijn engelen streden tegen de draak, en de draak streed ook en zijn engelen.",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"18\">18</sup> er werd krijg in den hemel:<sup class=\"note-marker\" data-note=\"19\">19</sup> Michaël en zijn engelen krijgden tegen den draak, en de draak krijgde ook en zijn engelen.",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"18\">18</sup> daer wierdt crijgh in den hemel: <sup class=\"note-marker\" data-note=\"19\">19</sup> Michaël ende sijne Engelen krijghden teghen den Draeck, ende de Draeck crijghde [<i>oock</i>] ende sijne Engelen:",
       "phraseDiff": [
@@ -1309,9 +1309,19 @@
           "principe": "N1"
         },
         {
+          "old": "krijgden",
+          "new": "streden",
+          "principe": null
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "krijgde",
+          "new": "streed",
+          "principe": null
         }
       ]
     },
@@ -2438,7 +2448,7 @@
       "number": 13,
       "textSV1888": "En toen de draak zag, dat hij op de aarde geworpen was, zo heeft hij de vrouw vervolgd, die het manneken gebaard had.",
       "text1637": "[30] Ende doe de Draeck sach dat hy op de aerde geworpen was, so heeft hy de Vrouwe vervolght die het Manneken gebaert hadde.",
-      "text2026": "En toen de draak zag, dat hij op de aarde geworpen was, zo heeft hij de vrouw vervolgd, die het manneken gebaard had.",
+      "text2026": "En toen de draak zag, dat hij op de aarde geworpen was, zo heeft hij de vrouw vervolgd, die het mannetje gebaard had.",
       "marginNotes": [
         {
           "marker": "30",
@@ -2552,9 +2562,16 @@
           "gloss": "〔male"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"30\">30</sup> En toen de draak zag, dat hij op de aarde geworpen was, zo heeft hij de vrouw vervolgd, die het manneken gebaard had.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"30\">30</sup> En toen de draak zag, dat hij op de aarde geworpen was, zo heeft hij de vrouw vervolgd, die het mannetje gebaard had.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"30\">30</sup> En toen de draak zag, dat hij op de aarde geworpen was, zo heeft hij de vrouw vervolgd, die het manneken gebaard had.",
-      "text1637_html": "<sup class=\"note-marker\" data-note=\"30\">30</sup> Ende doe de Draeck sach dat hy op de aerde geworpen was, so heeft hy de Vrouwe vervolght die het Manneken gebaert hadde."
+      "text1637_html": "<sup class=\"note-marker\" data-note=\"30\">30</sup> Ende doe de Draeck sach dat hy op de aerde geworpen was, so heeft hy de Vrouwe vervolght die het Manneken gebaert hadde.",
+      "phraseDiff": [
+        {
+          "old": "manneken",
+          "new": "mannetje",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 14,
