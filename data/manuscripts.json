@@ -44,7 +44,8 @@
     ],
     "verschillen": "Het fragment is zo klein dat er per regel maar enkele woorden bewaard zijn. Waar de tekst leesbaar is, komt hij volledig overeen met de veel latere handschriften (Sinaiticus, Vaticanus): er zijn géén betekenisvolle tekstvarianten. Dat is opmerkelijk — het oudste stukje van het Nieuwe Testament bevestigt de overgeleverde tekst zoals wij die kennen."
    },
-   "persoon": "roberts"
+   "persoon": "roberts",
+   "varianten": []
   },
   "p66": {
    "naam": "Papyrus 66",
@@ -66,7 +67,15 @@
    "licentie": "publiek domein",
    "bijschrift": "Bladzijde uit Papyrus 66 (Bodmer II)",
    "beschrijving": "Een bijna volledig Johannesevangelie (Joh. 1:1–14:26 plus fragmenten tot 21:9). Bevat talrijke correcties van de schrijver zelf — waardevol voor de studie van hoe kopiisten werkten.",
-   "persoon": "bodmer"
+   "persoon": "bodmer",
+   "varianten": [
+    {
+     "verwijzing": "Johannes 7:53–8:11",
+     "lezing": "— (ontbreekt)",
+     "standaard": "de geschiedenis van de overspelige vrouw",
+     "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
+    }
+   ]
   },
   "p75": {
    "naam": "Papyrus 75",
@@ -88,7 +97,15 @@
    "licentie": "publiek domein",
    "bijschrift": "Papyrus 75, folio met Lukas 14 (Bodmer XIV-XV)",
    "beschrijving": "Tekstkritisch van fundamenteel belang: de tekst is bijna identiek aan die van de Codex Vaticanus, wat aantoont dat de Alexandrijnse tekstvorm al vóór 200 n.Chr. bestond.",
-   "persoon": "bodmer"
+   "persoon": "bodmer",
+   "varianten": [
+    {
+     "verwijzing": "Johannes 7:53–8:11",
+     "lezing": "— (ontbreekt)",
+     "standaard": "de geschiedenis van de overspelige vrouw",
+     "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
+    }
+   ]
   },
   "sinaiticus": {
    "naam": "Codex Sinaiticus",
@@ -114,7 +131,15 @@
     "tekst": "CNN — “Oldest known Bible goes online” (2009)",
     "url": "https://edition.cnn.com/2009/WORLD/europe/07/06/ancient.bible.online/index.html"
    },
-   "persoon": "tischendorf"
+   "persoon": "tischendorf",
+   "varianten": [
+    {
+     "verwijzing": "Johannes 7:53–8:11",
+     "lezing": "— (ontbreekt)",
+     "standaard": "de geschiedenis van de overspelige vrouw",
+     "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
+    }
+   ]
   },
   "vaticanus": {
    "naam": "Codex Vaticanus",
@@ -135,7 +160,15 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Codex_Vaticanus_B,_2Thess._3,11-18,_Hebr._1,1-2,2.jpg",
    "licentie": "publiek domein",
    "bijschrift": "Folio uit de Codex Vaticanus (4e eeuw)",
-   "beschrijving": "Mogelijk de oudste volledige Griekse Bijbel, door velen als tekstkritisch hoogwaardigste getuige beschouwd. Bevat het complete Johannesevangelie."
+   "beschrijving": "Mogelijk de oudste volledige Griekse Bijbel, door velen als tekstkritisch hoogwaardigste getuige beschouwd. Bevat het complete Johannesevangelie.",
+   "varianten": [
+    {
+     "verwijzing": "Johannes 7:53–8:11",
+     "lezing": "— (ontbreekt)",
+     "standaard": "de geschiedenis van de overspelige vrouw",
+     "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
+    }
+   ]
   }
  },
  "boeken": {
