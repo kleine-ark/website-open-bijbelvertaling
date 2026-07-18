@@ -141,7 +141,7 @@ const App = {
         }
         const parts = [];
         if (d.schrijftijd) parts.push(`<span class="dating-label">Vermoedelijke schrijftijd:</span> ${d.schrijftijd}`);
-        if (d.oudsteHandschrift) parts.push(`<span class="dating-label">Oudste handschrift:</span> <a class="dating-link" href="grondteksten.html?boek=${encodeURIComponent(book.id)}" title="Meer over de handschriften van dit boek">${d.oudsteHandschrift} ›</a>`);
+        if (d.oudsteHandschrift) parts.push(`<span class="dating-label">Oudste handschrift:</span> <a class="dating-link" href="handschriften.html?boek=${encodeURIComponent(book.id)}" title="Handschriften van dit boek: oudste fragment, vindgeschiedenis en scans">${d.oudsteHandschrift} ›</a>`);
         box.innerHTML = '📜 ' + parts.join(' &nbsp;·&nbsp; ');
         box.style.display = parts.length ? 'block' : 'none';
     },

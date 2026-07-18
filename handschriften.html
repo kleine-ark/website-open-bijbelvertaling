@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#142e42">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handschriften per bijbelboek — Open Staten Vertaling</title>
+    <meta name="description" content="Per bijbelboek: het oudste bewaarde handschrift/fragment, wie het vond, waar het zich bevindt, met foto's van de originele scans en bronvermelding.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { display: block; background: #f8f6f2; }
+        .page { max-width: 1000px; padding: 30px 24px 80px; font-family: var(--font-body); }
+        .page h1 { font-family: var(--font-cursive); font-size: 36px; color: var(--navy); font-weight: 400; margin-bottom: 4px; }
+        .page .subtitle { color: var(--teal); font-size: 14px; margin-bottom: 20px; }
+        .page h2 { color: var(--navy); font-family: var(--font-cursive); font-size: 26px; font-weight: 400; margin: 32px 0 10px; border-bottom: 2px solid var(--gold); padding-bottom: 6px; }
+        .page p, .page li { line-height: 1.7; margin-bottom: 6px; }
+        .page a { color: var(--teal); text-decoration: none; }
+        .page a:hover { color: var(--gold); text-decoration: underline; }
+        .principle-box { background: rgba(146,182,180,0.12); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 11px 15px; margin: 10px 0; border-radius: 0 4px 4px 0; }
+        .dating-line { font-size: 13px; color: var(--teal); margin: 4px 0 16px; }
+
+        .codex-card { background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 0 6px 6px 0; padding: 12px 16px; margin: 12px 0; overflow: hidden; }
+        .codex-card.oudste { border-left-color: #16a34a; background: #f6fdf9; }
+        .codex-badge { display: inline-block; font-size: 11px; font-weight: 600; color: #fff; background: #16a34a; border-radius: 10px; padding: 1px 9px; margin-bottom: 6px; font-family: 'Fira Sans', sans-serif; }
+        .codex-photo { float: right; width: 175px; margin: 2px 0 8px 16px; text-align: center; }
+        .codex-photo img { width: 175px; height: auto; display: block; border: 1px solid var(--border); border-radius: 4px; background: #f4f1e8; }
+        .codex-photo figcaption { font-size: 10px; color: var(--teal); margin-top: 3px; line-height: 1.35; font-family: 'Fira Sans', sans-serif; }
+        @media (max-width: 600px) { .codex-photo { float: none; width: 100%; margin: 0 0 10px; } .codex-photo img { width: 100%; } }
+        .codex-card h4 { margin: 0 0 4px; color: var(--navy); font-family: 'Fira Sans', sans-serif; font-size: 16px; }
+        .codex-card h4 .bijnaam { font-weight: 400; color: var(--teal); font-size: 13px; }
+        .codex-card .meta { font-size: 12px; color: var(--teal); margin-bottom: 6px; font-family: 'Fira Sans', sans-serif; }
+        .codex-card p { margin: 4px 0; font-size: 13px; line-height: 1.6; }
+        .ms-facts { list-style: none; margin: 8px 0 2px; padding: 8px 10px; background: rgba(146,182,180,0.10); border-radius: 5px; font-size: 12.5px; line-height: 1.55; }
+        .ms-facts li { margin: 2px 0; }
+        .ms-facts li strong { color: var(--navy); font-family: 'Fira Sans', sans-serif; }
+        .ms-facts .ms-bewijs a { color: var(--teal); }
+
+        :root[data-theme="donker"] body { background: var(--bg-page); color: var(--text-primary); }
+        :root[data-theme="donker"] .codex-card { background: var(--bg-surface) !important; border-color: var(--border-default) !important; color: var(--text-primary); }
+        :root[data-theme="donker"] .codex-card.oudste { background: rgba(22,163,74,0.10) !important; }
+        :root[data-theme="donker"] .codex-card h4 { color: var(--text-primary); }
+        :root[data-theme="donker"] .codex-card .meta, :root[data-theme="donker"] .codex-card p { color: var(--text-secondary); }
+        :root[data-theme="donker"] .ms-facts { background: rgba(255,255,255,0.05); }
+        :root[data-theme="donker"] .ms-facts li strong { color: var(--text-primary); }
+        :root[data-theme="donker"] h1, :root[data-theme="donker"] h2 { color: var(--text-primary); }
+        :root[data-theme="donker"] p, :root[data-theme="donker"] li { color: var(--text-primary); }
+    </style>
+    <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<script>if (window.self !== window.top) { document.body.classList.add('in-iframe'); document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('a[href]').forEach(function(a){ var h=a.getAttribute('href'); if(h && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('http') && !h.startsWith('javascript:')) a.target='_top'; }); }); }</script>
+<nav id="topnav">
+    <div class="topnav-brand">Open Staten Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.22.1</a></span></div>
+    <div class="topnav-links" id="topnav-links">
+        <a href="over-ov.html">Over OSV</a>
+        <a href="index.html#johannes/1">Tekst</a>
+        <a href="onderwerpen.html">Onderwerpen</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="contact.html">Over ons</a>
+    </div>
+    <input type="search" id="topnav-search-input" class="topnav-search-input" placeholder="Zoek in Gods Woord… (Ctrl+K)" autocomplete="off" aria-label="Zoeken in Gods Woord" onkeydown="if(event.key===&#39;Enter&#39;){var q=this.value.trim();if(q){location.href=&#39;index.html?q=&#39;+encodeURIComponent(q);}}">
+    <button class="topnav-theme" id="topnav-theme-toggle" title="Thema: licht/donker" aria-label="Wissel thema"><svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    <div id="auth-slot" class="topnav-auth"></div>
+    <button class="topnav-hamburger" id="topnav-hamburger" onclick="document.getElementById(&#39;topnav-links&#39;).classList.toggle(&#39;open&#39;);this.classList.toggle(&#39;open&#39;)" title="Menu" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+<div style="display:flex;min-height:calc(100vh - 52px);">
+    <nav style="width:220px;min-width:220px;background:#f5f2ed;border-right:1px solid #e5e1d8;padding:20px 0;font-family:'Fira Sans',sans-serif;font-size:14px;">
+        <div style="padding:0 16px 12px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;">Documentatie</div>
+        <a href="uitgangspunten.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Uitgangspunten &amp; techniek</a>
+        <a href="principes.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Wijzigingsprincipes</a>
+        <a href="statistieken.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Statistieken</a>
+        <a href="begrippen.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Begrippen</a>
+        <a href="grondteksten.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Grondteksten</a>
+        <a href="handschriften.html?boek=johannes" style="display:block;padding:8px 20px 8px 32px;color:#142e42;text-decoration:none;font-weight:600;border-left:3px solid #cba449;background:rgba(203,164,73,0.08);">↳ Handschriften per boek</a>
+        <a href="changelog.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Changelog</a>
+    </nav>
+
+    <div class="page" id="ms-page" style="flex:1;">
+        <p style="color:var(--teal);">Bezig met laden…</p>
+    </div>
+</div>
+<script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);}catch(e){console.error(e);}});})();</script>
+<script>
+(function () {
+    function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
+    function q(name) { var m = location.search.match(new RegExp('[?&]' + name + '=([^&]+)')); return m ? decodeURIComponent(m[1]) : null; }
+
+    function card(ms, isOudste) {
+        var g = ms.gevonden || {};
+        var wie = g.wie ? (ms.persoonWiki ? '<a href="' + esc(ms.persoonWiki) + '" target="_blank" rel="noopener">' + esc(g.wie) + '</a>' : esc(g.wie)) : null;
+        var vind = wie ? ('door ' + wie + (g.jaar ? ' (' + esc(g.jaar) + ')' : '') + (g.plaats ? ', ' + esc(g.plaats) : ''))
+                       : (g.hoe ? '' : (g.jaar ? esc(g.jaar) : '—'));
+        var facts = '<ul class="ms-facts">';
+        facts += '<li><strong>Bevindt zich:</strong> ' + esc(ms.bewaarplaats || '—') + '</li>';
+        if (ms.bevat) facts += '<li><strong>Bevat:</strong> ' + esc(ms.bevat) + '</li>';
+        facts += '<li><strong>Gevonden/verworven:</strong> ' + (vind ? vind + '. ' : '') + esc(g.hoe || '') + '</li>';
+        if (ms.bewijs && ms.bewijs.url) facts += '<li class="ms-bewijs"><strong>Bewijs:</strong> <a href="' + esc(ms.bewijs.url) + '" target="_blank" rel="noopener">' + esc(ms.bewijs.tekst) + '</a></li>';
+        facts += '</ul>';
+        var fig = ms.afbeelding ? ('<figure class="codex-photo"><a href="' + esc(ms.commons) + '" target="_blank" rel="noopener">' +
+            '<img src="' + esc(ms.afbeelding) + '" alt="' + esc(ms.bijschrift || ms.naam) + '" loading="lazy"></a>' +
+            '<figcaption>' + esc(ms.bijschrift || '') + '<br><a href="' + esc(ms.commons) + '" target="_blank" rel="noopener">Wikimedia</a> (' + esc(ms.licentie || 'bron') + ')</figcaption></figure>') : '';
+        return '<div class="codex-card' + (isOudste ? ' oudste' : '') + '">' + fig +
+            (isOudste ? '<span class="codex-badge">Oudste bewaarde tekst</span><br>' : '') +
+            '<h4>' + esc(ms.naam) + (ms.bijnaam ? ' <span class="bijnaam">' + esc(ms.bijnaam) + '</span>' : '') + '</h4>' +
+            '<div class="meta">' + esc(ms.datering || '') + (ms.bewaarplaats ? ' · ' + esc(ms.bewaarplaats) : '') + '</div>' +
+            '<p>' + esc(ms.beschrijving || '') + '</p>' + facts + '</div>';
+    }
+
+    Promise.all([
+        fetch('data/manuscripts.json').then(function (r) { return r.json(); }),
+        fetch('data/books.json').then(function (r) { return r.json(); }).catch(function () { return { books: [] }; }),
+        fetch('data/book-dating.json').then(function (r) { return r.json(); }).catch(function () { return {}; })
+    ]).then(function (res) {
+        var data = res[0], books = res[1], dating = res[2];
+        var el = document.getElementById('ms-page');
+        var boekId = q('boek');
+        var M = data.manuscripten || {}, B = data.boeken || {};
+        var beschikbaar = Object.keys(B);
+
+        var bkLookup = function (id) { return (books.books || []).find(function (b) { return b.id === id; }); };
+
+        // Geen/onbekend boek → keuzepagina
+        if (!boekId || !bkLookup(boekId)) {
+            el.innerHTML = '<h1>Handschriften per bijbelboek</h1>' +
+                '<p class="subtitle">Kies een boek</p>' +
+                '<div class="principle-box">Uitgebreide handschrift-pagina beschikbaar voor: ' +
+                (beschikbaar.length ? beschikbaar.map(function (id) {
+                    var bk = bkLookup(id);
+                    return '<a href="handschriften.html?boek=' + encodeURIComponent(id) + '">' + esc(bk ? bk.nameDutch : id) + '</a>';
+                }).join(' · ') : 'nog geen') +
+                '.</div><p>Zie ook het volledige <a href="grondteksten.html#codices">overzicht van codices</a> en de <a href="grondteksten.html">grondteksten per boek</a>.</p>';
+            return;
+        }
+
+        // Boek bestaat maar heeft (nog) geen uitgebreide handschrift-data → minimale pagina
+        if (!B[boekId]) {
+            var bk0 = bkLookup(boekId), d0 = dating && dating[boekId];
+            var h = '<h1>Handschriften van ' + esc(bk0.nameDutch) + '</h1>';
+            if (d0) {
+                var pp = [];
+                if (d0.schrijftijd) pp.push('Vermoedelijke schrijftijd: ' + esc(d0.schrijftijd));
+                if (d0.oudsteHandschrift) pp.push('Oudste handschrift: ' + esc(d0.oudsteHandschrift));
+                if (pp.length) h += '<div class="dating-line">📜 ' + pp.join(' &nbsp;·&nbsp; ') + '</div>';
+            }
+            h += '<div class="principle-box">Voor dit boek is nog geen uitgebreide handschrift-pagina met foto’s gemaakt. ' +
+                'De belangrijkste tekstgetuigen staan wel in de <a href="grondteksten.html?boek=' + encodeURIComponent(boekId) + '">grondtekst-tabel</a>, ' +
+                'en de codices met foto’s in het <a href="grondteksten.html#codices">codex-overzicht</a>.</div>';
+            h += '<p>→ Lees ' + esc(bk0.nameDutch) + ' in de tekst: <a href="index.html#' + encodeURIComponent(boekId) + '/1">' + esc(bk0.nameDutch) + ' 1</a></p>';
+            el.innerHTML = h;
+            document.title = 'Handschriften van ' + bk0.nameDutch + ' — Open Staten Vertaling';
+            return;
+        }
+
+        var boek = B[boekId];
+        var bk = (books.books || []).find(function (b) { return b.id === boekId; });
+        var naam = bk ? bk.nameDutch : boekId;
+        var d = dating && dating[boekId];
+
+        var html = '<h1>Handschriften van ' + esc(naam) + '</h1>';
+        html += '<p class="subtitle">het oudste fragment, de vindgeschiedenis en de originele scans</p>';
+        if (d) {
+            var parts = [];
+            if (d.schrijftijd) parts.push('Vermoedelijke schrijftijd: ' + esc(d.schrijftijd));
+            if (d.oudsteHandschrift) parts.push('Oudste handschrift: ' + esc(d.oudsteHandschrift));
+            if (parts.length) html += '<div class="dating-line">📜 ' + parts.join(' &nbsp;·&nbsp; ') + '</div>';
+        }
+        if (boek.intro) html += '<div class="principle-box">' + esc(boek.intro) + '</div>';
+
+        var oudste = boek.oudsteFragment;
+        if (oudste && M[oudste]) {
+            html += '<h2>Oudste bewaarde tekst</h2>' + card(M[oudste], true);
+        }
+        var frags = (boek.fragmenten || []).filter(function (id) { return id !== oudste && M[id]; });
+        if (frags.length) {
+            html += '<h2>Andere vroege fragmenten</h2>';
+            frags.forEach(function (id) { html += card(M[id], false); });
+        }
+        var vol = (boek.volledig || []).filter(function (id) { return M[id]; });
+        if (vol.length) {
+            html += '<h2>Volledige handschriften</h2>';
+            vol.forEach(function (id) { html += card(M[id], false); });
+        }
+        if (boek.tekstgetuigen) html += '<p style="font-size:13px;color:var(--teal);"><strong>Tekstgetuigen totaal:</strong> ' + esc(boek.tekstgetuigen) + '</p>';
+
+        html += '<h2>Bronvermelding</h2>' +
+            '<p style="font-size:12.5px;color:var(--teal);">De foto’s van de handschriften komen van ' +
+            '<a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a> en behoren tot het publieke domein; klik op een foto voor de bronpagina en de hoge-resolutie scan. ' +
+            'Datering en toeschrijving volgen de gangbare tekstkritische literatuur (o.a. Aland, Metzger). ' +
+            'Zie ook het <a href="grondteksten.html#codices">codex-overzicht</a> en de <a href="grondteksten.html?boek=' + encodeURIComponent(boekId) + '">grondtekst-tabel</a>.</p>';
+        html += '<p style="margin-top:14px;">→ Lees ' + esc(naam) + ' in de tekst: <a href="index.html#' + encodeURIComponent(boek.leesInReader || boekId) + '/1">' + esc(naam) + ' 1</a></p>';
+
+        el.innerHTML = html;
+        document.title = 'Handschriften van ' + naam + ' — Open Staten Vertaling';
+    }).catch(function (e) {
+        document.getElementById('ms-page').innerHTML = '<p style="color:#c0392b">Kon de handschrift-gegevens niet laden.</p>';
+        console.error(e);
+    });
+})();
+</script>
+<script src="js/firebase-config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/stats-inject.js"></script>
+</body>
+</html>
