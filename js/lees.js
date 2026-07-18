@@ -197,7 +197,6 @@ const Lees = {
         }
         const d = this._bookDating && this._bookDating[book.id];
         let box = document.getElementById('book-dating');
-        if (!d) { if (box) box.style.display = 'none'; return; }
         if (!box) {
             box = document.createElement('div');
             box.id = 'book-dating';
@@ -206,10 +205,11 @@ const Lees = {
             if (heading && heading.parentNode) heading.parentNode.insertBefore(box, heading.nextSibling);
         }
         const parts = [];
-        if (d.schrijftijd) parts.push(`<span class="dating-label">Vermoedelijke schrijftijd:</span> ${d.schrijftijd}`);
-        if (d.oudsteHandschrift) parts.push(`<span class="dating-label">Oudste handschrift:</span> <a class="dating-link" href="handschriften.html?boek=${encodeURIComponent(book.id)}" title="Handschriften van dit boek: oudste fragment, vindgeschiedenis en scans">${d.oudsteHandschrift} ›</a>`);
+        if (d && d.schrijftijd) parts.push(`<span class="dating-label">Vermoedelijke schrijftijd:</span> ${d.schrijftijd}`);
+        if (d && d.oudsteHandschrift) parts.push(`<span class="dating-label">Oudste handschrift:</span> ${d.oudsteHandschrift}`);
+        parts.push(`<a class="dating-link" href="handschriften.html?boek=${encodeURIComponent(book.id)}" title="Handschriften van dit boek: oudste fragment, vindgeschiedenis en scans">📖 Handschriften van dit boek ›</a>`);
         box.innerHTML = '📜 ' + parts.join(' &nbsp;·&nbsp; ');
-        box.style.display = parts.length ? 'block' : 'none';
+        box.style.display = 'block';
     },
 
     _updateEthiopicBanner(book) {
