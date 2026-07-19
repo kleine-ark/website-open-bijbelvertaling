@@ -16,6 +16,14 @@
         .page .intro { line-height: 1.7; margin-bottom: 22px; color: #444; max-width: 640px; }
         .ond-zoek { width: 100%; max-width: 380px; padding: 10px 16px; border: 1px solid #d8d2c4; border-radius: 22px; font-size: 15px; margin-bottom: 30px; background: #fff; transition: border-color .15s, box-shadow .15s; }
         .ond-zoek:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(203,164,73,0.15); }
+        .ond-sections { display: block; }
+        .ond-jump { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 34px; }
+        .ond-jump-label { color: #999; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; font-size: 11px; margin-right: 2px; }
+        .ond-jump a { color: var(--navy); background: var(--bg-surface-alt, #f5f2ed); border: 1px solid #e7e1d4; border-radius: 20px; padding: 5px 14px; font-size: 13px; text-decoration: none; transition: background .15s, color .15s, border-color .15s; }
+        .ond-jump a:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+        .ond-sectie { margin: 0 0 42px; scroll-margin-top: 84px; }
+        .ond-cat-titel { display: flex; align-items: center; gap: 11px; font-family: var(--font-cursive); font-weight: 400; font-size: 27px; color: var(--navy); margin: 0 0 18px; padding-bottom: 9px; border-bottom: 1px solid #e8e2d5; }
+        .ond-cat-count { display: inline-flex; align-items: center; justify-content: center; min-width: 23px; height: 21px; padding: 0 8px; border-radius: 11px; background: var(--gold); color: #fff; font-family: var(--font-body); font-size: 11.5px; font-weight: 600; }
         .ond-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(272px, 1fr)); gap: 20px; }
         .ond-card { position: relative; overflow: hidden; background: #fff; border: 1px solid #e5e1d8; border-radius: 12px; padding: 22px 22px 18px; box-shadow: 0 1px 3px rgba(20,46,66,0.05); text-align: left; width: 100%; font: inherit; cursor: pointer; transition: box-shadow .18s, transform .12s, border-color .18s; display: flex; flex-direction: column; }
         .ond-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--kleur, var(--gold)); opacity: .92; }
@@ -71,6 +79,9 @@
         :root[data-theme="donker"] .ond-zoek:focus { border-color: var(--gold); }
         :root[data-theme="donker"] .ond-verzen a { background: var(--bg-surface-alt, #1c1c1c); color: var(--text-primary); border-color: #333; }
         :root[data-theme="donker"] .ond-zoek { background: var(--bg-surface); color: var(--text-primary); border-color: #333; }
+        :root[data-theme="donker"] .ond-jump a { background: var(--bg-surface-alt, #1c1c1c); color: var(--text-primary); border-color: #333; }
+        :root[data-theme="donker"] .ond-jump a:hover { background: var(--gold); color: #1a1d24; border-color: var(--gold); }
+        :root[data-theme="donker"] .ond-cat-titel { color: var(--text-primary); border-color: #2a2a2a; }
     </style>
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
@@ -96,7 +107,7 @@
         <h1>Onderwerpen</h1>
         <p class="intro">Bijbelgedeelten geordend op thema. Klik op een vers om het in de tekst te openen. Een <span style="color:var(--gold);">&#9733;</span> markeert een sleuteltekst. &nbsp;<a href="insluiten.html" style="color:var(--gold);">Een citaat insluiten op je eigen site →</a></p>
         <input type="search" class="ond-zoek" id="ond-zoek" placeholder="Filter op onderwerp…" aria-label="Filter op onderwerp">
-        <div class="ond-grid" id="ond-grid"><p class="ond-empty">Onderwerpen laden…</p></div>
+        <div class="ond-sections" id="ond-grid"><p class="ond-empty">Onderwerpen laden…</p></div>
 
         <!-- Detailweergave van één onderwerp -->
         <div id="ond-detail" style="display:none;">
@@ -163,20 +174,45 @@
             }, { rootMargin: '400px' });
             root.querySelectorAll('.ond-vers-tekst[data-ref]').forEach(el => _io.observe(el));
         }
+        // Onderwerpen geordend in rubrieken (zoals de wiki van de kleine ark)
+        const CATEGORIEEN = [
+            { id: 'spreken', label: 'Wie spreekt er in de Bijbel?', ids: ['vader-spreekt', 'zoon-spreekt', 'geest-spreekt'] },
+            { id: 'kern', label: "Kernthema's van het geloof", ids: ['schepping', 'zonde', 'bekering', 'geloof', 'verbond', 'gods-leiding'] },
+            { id: 'jezus', label: 'Wie is Jezus Christus?', ids: ['karakter-jezus', 'jezus-is-god'] },
+            { id: 'gemeente', label: 'Gebed & gemeente', ids: ['gebed', 'gebedshouding', 'tucht-gemeente', 'evangelisatie'] },
+            { id: 'vragen', label: 'Vragen & moeilijke onderwerpen', ids: ['apostelen-vandaag', 'misbruik-verkrachting-en-incest'] }
+        ];
+        function kaartHTML(tag) {
+            const n = (tag.verzen || []).length;
+            return `<button class="ond-card" data-id="${tag.id}" data-naam="${(tag.naam || '').toLowerCase()}" style="--kleur:${tag.kleur || '#999'}">
+                    <h2><span class="ond-dot"></span>${tag.naam || ''}</h2>
+                    ${tag.beschrijving ? `<p class="beschr">${tag.beschrijving}</p>` : ''}
+                    <div class="count"><span class="count-num">${n}</span> vers${n === 1 ? '' : 'en'}<span class="count-arrow">&rsaquo;</span></div>
+                </button>`;
+        }
         function toonGrid() {
             detail.style.display = 'none';
             grid.style.display = '';
             zoek.style.display = '';
             if (!TAGS.length) { grid.innerHTML = '<p class="ond-empty">Nog geen onderwerpen.</p>'; return; }
-            const sorted = [...TAGS].sort((a, b) => (b.verzen ? b.verzen.length : 0) - (a.verzen ? a.verzen.length : 0));
-            grid.innerHTML = sorted.map(tag => {
-                const n = (tag.verzen || []).length;
-                return `<button class="ond-card" data-id="${tag.id}" data-naam="${(tag.naam || '').toLowerCase()}" style="--kleur:${tag.kleur || '#999'}">
-                    <h2><span class="ond-dot"></span>${tag.naam || ''}</h2>
-                    ${tag.beschrijving ? `<p class="beschr">${tag.beschrijving}</p>` : ''}
-                    <div class="count"><span class="count-num">${n}</span> vers${n === 1 ? '' : 'en'}<span class="count-arrow">&rsaquo;</span></div>
-                </button>`;
-            }).join('');
+            const byId = {}; TAGS.forEach(t => byId[t.id] = t);
+            const gebruikt = new Set();
+            const secties = CATEGORIEEN.map(cat => {
+                const tags = cat.ids.map(id => byId[id]).filter(Boolean);
+                tags.forEach(t => gebruikt.add(t.id));
+                return { id: cat.id, label: cat.label, tags: tags };
+            });
+            const rest = TAGS.filter(t => !gebruikt.has(t.id))
+                .sort((a, b) => (b.verzen ? b.verzen.length : 0) - (a.verzen ? a.verzen.length : 0));
+            if (rest.length) secties.push({ id: 'overig', label: 'Overige onderwerpen', tags: rest });
+            const zichtbaar = secties.filter(s => s.tags.length);
+            const nav = `<nav class="ond-jump"><span class="ond-jump-label">Ga direct naar</span>${zichtbaar.map(s => `<a href="#cat-${s.id}">${s.label}</a>`).join('')}</nav>`;
+            const secHTML = zichtbaar.map(s =>
+                `<section class="ond-sectie" id="cat-${s.id}">
+                    <h2 class="ond-cat-titel">${s.label}<span class="ond-cat-count">${s.tags.length}</span></h2>
+                    <div class="ond-grid">${s.tags.map(kaartHTML).join('')}</div>
+                </section>`).join('');
+            grid.innerHTML = nav + secHTML;
             grid.querySelectorAll('.ond-card').forEach(c =>
                 c.addEventListener('click', () => toonDetail(c.dataset.id)));
         }
@@ -269,6 +305,13 @@
             document.querySelectorAll('.ond-card').forEach(c => {
                 c.style.display = (!q || c.dataset.naam.includes(q)) ? '' : 'none';
             });
+            // Lege rubrieken (en tijdens filteren de sprong-navigatie) verbergen
+            document.querySelectorAll('.ond-sectie').forEach(sec => {
+                const zichtbaar = [...sec.querySelectorAll('.ond-card')].some(c => c.style.display !== 'none');
+                sec.style.display = zichtbaar ? '' : 'none';
+            });
+            const nav = document.querySelector('.ond-jump');
+            if (nav) nav.style.display = q ? 'none' : '';
         });
         function init(tags) {
             TAGS = tags || [];
