@@ -206,7 +206,9 @@ const Lees = {
         }
         const parts = [];
         if (d && d.schrijftijd) parts.push(`<span class="dating-label">Vermoedelijke schrijftijd:</span> ${d.schrijftijd}`);
-        if (d && d.oudsteHandschrift) parts.push(`<span class="dating-label">Oudste handschrift:</span> ${d.oudsteHandschrift}`);
+        // Alleen het jaartal van het oudste handschrift tonen (geen siglum/nummer); details staan op de handschriftenpagina.
+        const oudsteJaar = d && (d.oudsteDatum || d.oudsteHandschrift);
+        if (oudsteJaar) parts.push(`<span class="dating-label">Oudste handschrift:</span> ${String(oudsteJaar).split(' (')[0]}`);
         parts.push(`<a class="dating-link" href="handschriften.html?boek=${encodeURIComponent(book.id)}" title="Handschriften van dit boek: oudste fragment, vindgeschiedenis en scans">📖 Handschriften van dit boek ›</a>`);
         box.innerHTML = '📜 ' + parts.join(' &nbsp;·&nbsp; ');
         box.style.display = 'block';
