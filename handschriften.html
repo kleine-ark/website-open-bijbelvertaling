@@ -7,8 +7,8 @@
     <meta name="theme-color" content="#142e42">
     <link rel="apple-touch-icon" href="/icons/icon-192.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handschriften per bijbelboek — Open Staten Vertaling</title>
-    <meta name="description" content="Per bijbelboek: het oudste bewaarde handschrift/fragment, wie het vond, waar het zich bevindt, met foto's van de originele scans en bronvermelding.">
+    <title>Handschriften per boek — Open Staten Vertaling</title>
+    <meta name="description" content="Per boek uit Gods Woord: het oudste bewaarde handschrift/fragment, wie het vond, waar het zich bevindt, met foto's van de originele scans en bronvermelding.">
     <link rel="stylesheet" href="css/style.css">
     <style>
         body { display: block; background: #f8f6f2; }
@@ -252,7 +252,7 @@
         h += '<p class="subtitle">' + esc(ms.bijnaam || '') + (ms.siglum ? ' · ' + esc(ms.siglum) : '') + '</p>';
         h += card(ms, false);
         if (getuigeVoor.length) {
-            h += '<h2>Voor welke bijbelboeken</h2><ul>';
+            h += '<h2>Voor welke boeken</h2><ul>';
             getuigeVoor.forEach(function (g) { h += '<li><a href="handschriften.html?boek=' + encodeURIComponent(g.bid) + '">' + esc(bkName(g.bid)) + '</a> — ' + esc(g.rol) + '</li>'; });
             h += '</ul>';
         }
@@ -285,13 +285,13 @@
         var frags = ids.filter(function (id) { return MANS[id].type === 'fragment'; });
         var vols = ids.filter(function (id) { return MANS[id].type === 'volledig'; });
         var rest = ids.filter(function (id) { return frags.indexOf(id) < 0 && vols.indexOf(id) < 0; });
-        var h = '<h1>Handschriften</h1><p class="subtitle">de centrale opslag van bijbelhandschriften — tekst, vindgeschiedenis, citaties en varianten</p>';
-        h += '<div class="principle-box">Elk handschrift heeft een eigen pagina met foto/scan, datering, vindgeschiedenis, dekking en (waar bekend) de tekst met tekstvarianten. Deze gegevens staan los van de leesweergave. Per bijbelboek is er ook een <a href="handschriften.html?boek=johannes">boekpagina</a> en het <a href="grondteksten.html#codices">codex-overzicht</a>.</div>';
+        var h = '<h1>Handschriften</h1><p class="subtitle">de centrale opslag van handschriften van Gods Woord — tekst, vindgeschiedenis, citaties en varianten</p>';
+        h += '<div class="principle-box">Elk handschrift heeft een eigen pagina met foto/scan, datering, vindgeschiedenis, dekking en (waar bekend) de tekst met tekstvarianten. Deze gegevens staan los van de leesweergave. Per boek is er ook een <a href="handschriften.html?boek=johannes">boekpagina</a> en het <a href="grondteksten.html#codices">codex-overzicht</a>.</div>';
         if (frags.length) h += '<h2>Fragmenten &amp; papyri</h2>' + mini(frags);
         if (vols.length) h += '<h2>Volledige handschriften (codices)</h2>' + mini(vols);
         if (rest.length) h += '<h2>Overige</h2>' + mini(rest);
         var boeken = Object.keys(BOEKEN);
-        if (boeken.length) h += '<h2>Per bijbelboek</h2><p>' + boeken.map(function (bid) { return '<a href="handschriften.html?boek=' + encodeURIComponent(bid) + '">' + esc(bkName(bid)) + '</a>'; }).join(' &nbsp;·&nbsp; ') + '</p>';
+        if (boeken.length) h += '<h2>Per boek</h2><p>' + boeken.map(function (bid) { return '<a href="handschriften.html?boek=' + encodeURIComponent(bid) + '">' + esc(bkName(bid)) + '</a>'; }).join(' &nbsp;·&nbsp; ') + '</p>';
         el.innerHTML = h;
         document.title = 'Handschriften — Open Staten Vertaling';
     }
