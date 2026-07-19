@@ -14,10 +14,12 @@
         .page { max-width: 900px; margin: 0 auto; padding: 50px 24px 90px; font-family: var(--font-body); }
         .page h1 { font-family: var(--font-cursive); font-size: 38px; color: var(--navy); font-weight: 400; margin-bottom: 8px; }
         .page .intro { line-height: 1.7; margin-bottom: 22px; color: #444; max-width: 640px; }
-        .ond-zoek { width: 100%; max-width: 360px; padding: 9px 14px; border: 1px solid #d8d2c4; border-radius: 8px; font-size: 15px; margin-bottom: 26px; }
-        .ond-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
-        .ond-card { background: #fff; border: 1px solid #e5e1d8; border-radius: 10px; padding: 18px 20px; box-shadow: 0 1px 4px rgba(20,46,66,0.05); text-align: left; width: 100%; font: inherit; cursor: pointer; transition: box-shadow .15s, transform .1s; }
-        .ond-card:hover { box-shadow: 0 4px 14px rgba(20,46,66,0.12); transform: translateY(-1px); }
+        .ond-zoek { width: 100%; max-width: 380px; padding: 10px 16px; border: 1px solid #d8d2c4; border-radius: 22px; font-size: 15px; margin-bottom: 30px; background: #fff; transition: border-color .15s, box-shadow .15s; }
+        .ond-zoek:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(203,164,73,0.15); }
+        .ond-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(272px, 1fr)); gap: 20px; }
+        .ond-card { position: relative; overflow: hidden; background: #fff; border: 1px solid #e5e1d8; border-radius: 12px; padding: 22px 22px 18px; box-shadow: 0 1px 3px rgba(20,46,66,0.05); text-align: left; width: 100%; font: inherit; cursor: pointer; transition: box-shadow .18s, transform .12s, border-color .18s; display: flex; flex-direction: column; }
+        .ond-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--kleur, var(--gold)); opacity: .92; }
+        .ond-card:hover { box-shadow: 0 9px 24px rgba(20,46,66,0.14); transform: translateY(-2px); border-color: #dcd6c8; }
         /* Detailweergave */
         .ond-terug { background: none; border: none; color: var(--gold); font-size: 14px; cursor: pointer; padding: 0 0 14px; font-weight: 600; }
         #ond-detail h2 { font-size: 24px; color: var(--navy); display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 600; }
@@ -43,10 +45,13 @@
         :root[data-theme="donker"] #ond-detail h2 { color: var(--text-primary); }
         :root[data-theme="donker"] .beschr-detail { color: var(--text-secondary, #aaa); }
         :root[data-theme="donker"] .ond-verzen-lijst a { color: var(--text-primary); }
-        .ond-card h2 { font-size: 18px; color: var(--navy); margin: 0 0 6px; display: flex; align-items: center; gap: 9px; font-weight: 600; }
-        .ond-dot { width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0; }
-        .ond-card .beschr { font-size: 13.5px; color: #666; line-height: 1.55; margin: 0 0 12px; }
-        .ond-card .count { font-size: 12px; color: #999; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+        .ond-card h2 { font-size: 17.5px; color: var(--navy); margin: 3px 0 9px; display: flex; align-items: center; gap: 10px; font-weight: 600; line-height: 1.32; }
+        .ond-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; background: var(--kleur, #999); box-shadow: 0 0 0 3px color-mix(in srgb, var(--kleur, #999) 20%, transparent); }
+        .ond-card .beschr { font-size: 13.5px; color: #666; line-height: 1.55; margin: 0 0 15px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .ond-card .count { margin-top: auto; display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; color: var(--teal); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .ond-card .count-num { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 22px; padding: 0 7px; border-radius: 11px; background: var(--bg-surface-alt, #f5f2ed); color: var(--navy); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+        .ond-card .count-arrow { margin-left: auto; color: var(--gold); font-size: 17px; transition: transform .18s; }
+        .ond-card:hover .count-arrow { transform: translateX(3px); }
         .ond-verzen { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
         .ond-verzen a { display: inline-block; font-size: 13px; color: var(--navy); background: var(--bg-surface-alt, #f5f2ed); border: 1px solid #e7e1d4; border-radius: 6px; padding: 3px 9px; text-decoration: none; }
         .ond-verzen a:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
@@ -60,6 +65,8 @@
         :root[data-theme="donker"] .ond-card { background: var(--bg-surface) !important; border-color: var(--border-default, #333) !important; }
         :root[data-theme="donker"] .ond-card h2 { color: var(--text-primary); }
         :root[data-theme="donker"] .ond-card .beschr { color: var(--text-secondary, #aaa); }
+        :root[data-theme="donker"] .ond-card .count-num { background: var(--bg-surface-alt, #1c1c1c); color: var(--text-primary); }
+        :root[data-theme="donker"] .ond-zoek:focus { border-color: var(--gold); }
         :root[data-theme="donker"] .ond-verzen a { background: var(--bg-surface-alt, #1c1c1c); color: var(--text-primary); border-color: #333; }
         :root[data-theme="donker"] .ond-zoek { background: var(--bg-surface); color: var(--text-primary); border-color: #333; }
     </style>
@@ -162,10 +169,10 @@
             const sorted = [...TAGS].sort((a, b) => (b.verzen ? b.verzen.length : 0) - (a.verzen ? a.verzen.length : 0));
             grid.innerHTML = sorted.map(tag => {
                 const n = (tag.verzen || []).length;
-                return `<button class="ond-card" data-id="${tag.id}" data-naam="${(tag.naam || '').toLowerCase()}">
-                    <h2><span class="ond-dot" style="background:${tag.kleur || '#999'}"></span>${tag.naam || ''}</h2>
+                return `<button class="ond-card" data-id="${tag.id}" data-naam="${(tag.naam || '').toLowerCase()}" style="--kleur:${tag.kleur || '#999'}">
+                    <h2><span class="ond-dot"></span>${tag.naam || ''}</h2>
                     ${tag.beschrijving ? `<p class="beschr">${tag.beschrijving}</p>` : ''}
-                    <div class="count">${n} vers${n === 1 ? '' : 'en'} &rsaquo;</div>
+                    <div class="count"><span class="count-num">${n}</span> vers${n === 1 ? '' : 'en'}<span class="count-arrow">&rsaquo;</span></div>
                 </button>`;
             }).join('');
             grid.querySelectorAll('.ond-card').forEach(c =>
