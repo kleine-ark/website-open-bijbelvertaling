@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#142e42">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografische aanduidingen — Open Staten Vertaling</title>
+    <meta name="description" content="Landen, streken, steden, bergen en rivieren die in Gods Woord voorkomen — met verwijzingen en een interactieve kaart.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { display: block; background: #f8f6f2; }
+        .page { max-width: 900px; padding: 30px 24px 80px; font-family: var(--font-body); }
+        .page h1 { font-family: var(--font-cursive); font-size: 36px; color: var(--navy); font-weight: 400; margin-bottom: 4px; }
+        .page .subtitle { color: var(--teal); font-size: 14px; margin-bottom: 18px; }
+        .page h2 { color: var(--navy); font-family: var(--font-cursive); font-size: 26px; font-weight: 400; margin: 32px 0 10px; border-bottom: 2px solid var(--gold); padding-bottom: 6px; }
+        .kaart-cta { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; padding: 9px 18px; border-radius: 22px; font-size: 14px; font-weight: 600; margin: 6px 0 8px; }
+        .kaart-cta:hover { background: var(--gold); }
+        .geo-lijst { list-style: none; padding: 0; margin: 0; }
+        .geo-item { padding: 11px 0; border-bottom: 1px solid #e8e2d5; }
+        .geo-naam { font-family: var(--font-serif); font-size: 18px; color: var(--navy); font-weight: 600; }
+        .geo-badge { display: inline-block; font-size: 10.5px; padding: 1px 7px; border-radius: 10px; text-transform: uppercase; letter-spacing: .04em; font-weight: 600; margin-left: 7px; vertical-align: middle; }
+        .z-zeker { background: rgba(92,184,92,.18); color: #3d7a3d; }
+        .z-waarschijnlijk { background: rgba(203,164,73,.20); color: #8a6d1f; }
+        .z-onzeker { background: rgba(150,150,150,.20); color: #666; }
+        .geo-modern { color: #777; font-size: 13px; }
+        .geo-toel { color: #555; font-size: 13.5px; line-height: 1.5; margin: 3px 0; }
+        .geo-refs a { color: var(--gold); text-decoration: none; font-size: 13px; margin-right: 9px; }
+        .geo-refs a:hover { text-decoration: underline; }
+        :root[data-theme="donker"] body { background: var(--bg-page); color: var(--text-primary); }
+        :root[data-theme="donker"] .page h1, :root[data-theme="donker"] .page h2 { color: var(--text-primary); }
+        :root[data-theme="donker"] .geo-naam { color: var(--text-primary); }
+        :root[data-theme="donker"] .geo-item { border-color: #2a2a2a; }
+        :root[data-theme="donker"] .geo-toel { color: var(--text-secondary, #bbb); }
+        @media all {
+            body.in-iframe #topnav { display: none !important; }
+            body.in-iframe nav[style*="width:220px"] { display: none !important; }
+            body.in-iframe div[style*="display:flex;min-height"] { display: block !important; }
+            body.in-iframe { min-height: auto; }
+        }
+    </style>
+    <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<script>if (window.self !== window.top) { document.body.classList.add('in-iframe'); document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('a[href]').forEach(function(a){ var h=a.getAttribute('href'); if(h && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('http') && !h.startsWith('javascript:')) a.target='_top'; }); }); }</script>
+<nav id="topnav">
+    <div class="topnav-brand">Open Staten Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.21.6</a></span></div>
+    <div class="topnav-links" id="topnav-links">
+        <a href="over-ov.html">Over OSV</a>
+        <a href="index.html#johannes/1">Tekst</a>
+        <a href="onderwerpen.html">Onderwerpen</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="contact.html">Over ons</a>
+    </div>
+    <button class="topnav-theme" id="topnav-theme-toggle" title="Thema: licht/donker" aria-label="Wissel thema"><svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    <button class="topnav-hamburger" id="topnav-hamburger" onclick="document.getElementById('topnav-links').classList.toggle('open');this.classList.toggle('open')" title="Menu" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+<div style="display:flex;min-height:calc(100vh - 52px);">
+    <nav style="width:220px;min-width:220px;background:#f5f2ed;border-right:1px solid #e5e1d8;padding:20px 0;font-family:'Fira Sans',sans-serif;font-size:14px;">
+        <div style="padding:0 16px 12px;font-size:11px;font-weight:600;color:#cba449;text-transform:uppercase;letter-spacing:0.08em;">Documentatie</div>
+        <a href="uitgangspunten.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Uitgangspunten &amp; techniek</a>
+        <a href="principes.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Wijzigingsprincipes</a>
+        <a href="begrippen.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Begrippen</a>
+        <a href="grondteksten.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Grondteksten</a>
+        <a href="geografie.html" style="display:block;padding:8px 20px;color:#142e42;text-decoration:none;font-weight:600;border-left:3px solid #cba449;background:rgba(203,164,73,0.08);">Geografische aanduidingen</a>
+        <a href="changelog.html" style="display:block;padding:8px 20px;color:#333;text-decoration:none;border-left:3px solid transparent;">Changelog</a>
+    </nav>
+
+    <div class="page" style="flex:1;">
+        <h1>Geografische aanduidingen</h1>
+        <p class="subtitle">Landen, streken, steden, bergen en wateren die in Gods Woord voorkomen</p>
+        <a class="kaart-cta" href="kaart.html">🗺 Bekijk op de interactieve kaart →</a>
+        <p style="font-size:13.5px;color:#555;max-width:640px;line-height:1.6;">Deze lijst wordt stap voor stap opgebouwd. In de eerste fase staan vooral plaatsen waarvan de moderne locatie <strong>zeker</strong> is (wetenschappelijke consensus). Minder zekere identificaties worden als zodanig gemarkeerd.</p>
+        <div id="geo-inhoud"><p style="color:#999;">Laden…</p></div>
+    </div>
+</div>
+
+    <script src="js/book-orders.js"></script>
+    <script>
+    (function () {
+        var BOOKNAMES = {};
+        function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
+        function prettyRef(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); return (BOOKNAMES[b] || (b.charAt(0).toUpperCase() + b.slice(1))) + ' ' + ref.slice(sp + 1); }
+        function refHref(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); var cv = ref.slice(sp + 1).split(':'); return 'index.html#' + b + '/' + cv[0] + '/' + (cv[1] || ''); }
+        var GROEPEN = [
+            { titel: 'Steden & dorpen', types: ['stad', 'dorp'] },
+            { titel: 'Landen, streken & regio’s', types: ['land', 'streek', 'regio'] },
+            { titel: 'Bergen', types: ['berg'] },
+            { titel: 'Rivieren, zeeën & meren', types: ['rivier', 'zee', 'meer'] },
+            { titel: 'Eilanden', types: ['eiland'] }
+        ];
+        var ZEKER_LABEL = { zeker: 'zeker', waarschijnlijk: 'waarschijnlijk', onzeker: 'onzeker' };
+
+        function itemHTML(p) {
+            var refs = (p.verwijzingen || []).map(function (r) { return '<a href="' + refHref(r) + '">' + esc(prettyRef(r)) + '</a>'; }).join('');
+            var z = p.zekerheid || 'onzeker';
+            return '<li class="geo-item"><span class="geo-naam">' + esc(p.naam || '') + '</span>' +
+                '<span class="geo-badge z-' + esc(z) + '">' + esc(ZEKER_LABEL[z] || z) + '</span>' +
+                (p.moderneNaam ? ' <span class="geo-modern">— nu: ' + esc(p.moderneNaam) + '</span>' : '') +
+                (p.toelichting ? '<div class="geo-toel">' + esc(p.toelichting) + '</div>' : '') +
+                (refs ? '<div class="geo-refs">' + refs + '</div>' : '') + '</li>';
+        }
+
+        Promise.all([
+            fetch('data/geografie.geojson').then(function (r) { return r.json(); }),
+            fetch('data/books.json').then(function (r) { return r.json(); }).catch(function () { return { books: [] }; })
+        ]).then(function (res) {
+            (res[1].books || []).forEach(function (b) { BOOKNAMES[b.id] = b.nameDutch || b.id; });
+            var props = (res[0].features || []).map(function (f) { return f.properties; });
+            var totaal = props.length, zeker = props.filter(function (p) { return p.zekerheid === 'zeker'; }).length;
+            var html = '<p style="font-size:13px;color:var(--teal);font-weight:600;">' + totaal + ' plaatsen — waarvan ' + zeker + ' met zekere locatie.</p>';
+            GROEPEN.forEach(function (g) {
+                var items = props.filter(function (p) { return g.types.indexOf(p.type) >= 0; })
+                    .sort(function (a, b) { return (a.naam || '').localeCompare(b.naam || '', 'nl'); });
+                if (!items.length) return;
+                html += '<h2>' + esc(g.titel) + ' <span style="font-family:var(--font-body);font-size:14px;color:var(--teal);">(' + items.length + ')</span></h2>';
+                html += '<ul class="geo-lijst">' + items.map(itemHTML).join('') + '</ul>';
+            });
+            document.getElementById('geo-inhoud').innerHTML = html;
+        }).catch(function (e) { document.getElementById('geo-inhoud').innerHTML = '<p style="color:#c0392b">Kon de gegevens niet laden.</p>'; console.error(e); });
+    })();
+    </script>
+    <script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);if(window.parent&&window.parent.WikiSyncIframeTheme)window.parent.WikiSyncIframeTheme();}catch(e){console.error(e);}});})();</script>
+</body>
+</html>
