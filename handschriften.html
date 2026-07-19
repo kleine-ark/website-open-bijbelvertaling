@@ -45,6 +45,21 @@
         .ms-table th, .ms-table td { border: 1px solid var(--border); padding: 6px 9px; text-align: left; vertical-align: top; }
         .ms-table th { background: rgba(146,182,180,0.16); color: var(--navy); font-family: 'Fira Sans', sans-serif; font-weight: 600; }
         .ms-table td[lang="grc"] { font-size: 14px; }
+        .ms-lees-cta { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin: 4px 0 10px; }
+        .ms-lees-cta:hover { background: var(--gold); }
+        .ms-vergelijk { display: flex; flex-direction: column; gap: 14px; margin: 8px 0 6px; }
+        .vgl-blok { border: 1px solid var(--border); border-radius: 7px; overflow: hidden; }
+        .vgl-kop { background: rgba(146,182,180,0.16); padding: 8px 12px; font-family: 'Fira Sans', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--navy); }
+        .vgl-cols { display: grid; grid-template-columns: 1fr 1fr; }
+        .vgl-col { padding: 11px 13px; font-size: 13.5px; line-height: 1.5; }
+        .vgl-col.vgl-sv { border-right: 1px solid var(--border); }
+        .vgl-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; margin-bottom: 5px; }
+        .vgl-sv .vgl-label { color: var(--gold); }
+        .vgl-sin .vgl-label { color: var(--teal); }
+        .vgl-toel { padding: 9px 13px; font-size: 12.5px; color: var(--teal); border-top: 1px solid var(--border); background: rgba(146,182,180,0.05); }
+        @media (max-width: 620px) { .vgl-cols { grid-template-columns: 1fr; } .vgl-col.vgl-sv { border-right: none; border-bottom: 1px solid var(--border); } }
+        :root[data-theme="donker"] .vgl-blok, :root[data-theme="donker"] .vgl-col.vgl-sv, :root[data-theme="donker"] .vgl-toel { border-color: var(--border-default); }
+        :root[data-theme="donker"] .vgl-kop { background: rgba(255,255,255,0.06); color: var(--text-primary); }
         .var-getuigen { color: var(--teal); font-size: 11.5px; }
         .var-getuigen a { color: var(--teal); }
         :root[data-theme="donker"] .ms-table th { background: rgba(255,255,255,0.07); color: var(--text-primary); }
@@ -391,6 +406,29 @@
                 html += '<tr><td>' + esc(v.verwijzing || '') + '</td><td>' + esc(v.onderwerp || '') + '</td><td>' + esc(v.osv || '') + '</td><td>' + oudsteCel + '</td><td>' + esc(v.toelichting || '') + '</td></tr>';
             });
             html += '</tbody></table></div>';
+        }
+
+        // Codex Sinaiticus lezen + de verschillen naast de Statenvertaling
+        if (M.sinaiticus && boek.varianten && boek.varianten.length) {
+            var sinVars = boek.varianten.filter(function (v) { return (v.getuigen || []).indexOf('sinaiticus') >= 0; });
+            if (sinVars.length) {
+                html += '<h2>Codex Sinaiticus naast de Statenvertaling</h2>';
+                html += '<p style="font-size:13px;color:var(--teal);">Codex Sinaiticus (א, ±350 n.Chr.) bevat het volledige Johannesevangelie. Hieronder staan de belangrijkste plaatsen waar deze oudste getuige verschilt van de Statenvertaling, naast elkaar.</p>';
+                if (boek.codexSinaiticusUrl) {
+                    html += '<a class="ms-lees-cta" href="' + esc(boek.codexSinaiticusUrl) + '" target="_blank" rel="noopener">📖 Lees ' + esc(naam) + ' in Codex Sinaiticus (origineel) →</a>';
+                }
+                html += '<div class="ms-vergelijk">';
+                sinVars.forEach(function (v) {
+                    html += '<div class="vgl-blok"><div class="vgl-kop">' + esc(v.verwijzing || '') + (v.onderwerp ? ' — ' + esc(v.onderwerp) : '') + '</div>' +
+                        '<div class="vgl-cols">' +
+                        '<div class="vgl-col vgl-sv"><div class="vgl-label">Statenvertaling</div>' + esc(v.osv || '') + '</div>' +
+                        '<div class="vgl-col vgl-sin"><div class="vgl-label">Codex Sinaiticus (א)</div>' + esc(v.oudste || '') + '</div>' +
+                        '</div>' +
+                        (v.toelichting ? '<div class="vgl-toel">' + esc(v.toelichting) + '</div>' : '') +
+                        '</div>';
+                });
+                html += '</div>';
+            }
         }
 
         html += '<h2>Bronvermelding</h2>' +
