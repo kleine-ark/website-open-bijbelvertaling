@@ -37,6 +37,18 @@
         .ms-facts li { margin: 2px 0; }
         .ms-facts li strong { color: var(--navy); font-family: 'Fira Sans', sans-serif; }
         .ms-facts .ms-bewijs a { color: var(--teal); }
+        .ms-detail-link { margin: 8px 0 0; }
+        .ms-detail-link a { font-size: 12.5px; color: var(--gold); font-family: 'Fira Sans', sans-serif; text-decoration: none; }
+        .ms-detail-link a:hover { text-decoration: underline; }
+        .ms-table-wrap { overflow-x: auto; margin: 10px 0 6px; }
+        .ms-table { border-collapse: collapse; width: 100%; font-size: 12.5px; line-height: 1.5; }
+        .ms-table th, .ms-table td { border: 1px solid var(--border); padding: 6px 9px; text-align: left; vertical-align: top; }
+        .ms-table th { background: rgba(146,182,180,0.16); color: var(--navy); font-family: 'Fira Sans', sans-serif; font-weight: 600; }
+        .ms-table td[lang="grc"] { font-size: 14px; }
+        .var-getuigen { color: var(--teal); font-size: 11.5px; }
+        .var-getuigen a { color: var(--teal); }
+        :root[data-theme="donker"] .ms-table th { background: rgba(255,255,255,0.07); color: var(--text-primary); }
+        :root[data-theme="donker"] .ms-table th, :root[data-theme="donker"] .ms-table td { border-color: var(--border-default); }
 
         :root[data-theme="donker"] body { background: var(--bg-page); color: var(--text-primary); }
         :root[data-theme="donker"] .codex-card { background: var(--bg-surface) !important; border-color: var(--border-default) !important; color: var(--text-primary); }
@@ -142,7 +154,7 @@
         return esc(g.wie);
     }
 
-    function card(ms, isOudste) {
+    function card(ms, isOudste, withLink) {
         var g = ms.gevonden || {};
         var wie = personLink(ms);
         var vind = wie ? ('door ' + wie + (g.jaar ? ' (' + esc(g.jaar) + ')' : '') + (g.plaats ? ', ' + esc(g.plaats) : ''))
@@ -160,7 +172,9 @@
             (isOudste ? '<span class="codex-badge">Oudste bewaarde tekst</span><br>' : '') +
             '<h4>' + esc(ms.naam) + (ms.bijnaam ? ' <span class="bijnaam">' + esc(ms.bijnaam) + '</span>' : '') + '</h4>' +
             '<div class="meta">' + esc(ms.datering || '') + (ms.bewaarplaats ? ' · ' + esc(ms.bewaarplaats) : '') + '</div>' +
-            '<p>' + esc(ms.beschrijving || '') + '</p>' + facts + '</div>';
+            '<p>' + esc(ms.beschrijving || '') + '</p>' + facts +
+            (withLink && ms.id ? '<p class="ms-detail-link"><a href="handschriften.html?ms=' + encodeURIComponent(ms.id) + '">Volledige gegevens, tekst &amp; tekstvarianten ›</a></p>' : '') +
+            '</div>';
     }
 
     function sumCard(label, ms, cls) {
@@ -290,6 +304,7 @@
         var data = res[0], books = res[1], dating = res[2];
         PERSONEN = data.personen || {};
         MANS = data.manuscripten || {}; BOEKEN = data.boeken || {}; BOOKS = (books.books || []); DATING = dating || {};
+        Object.keys(MANS).forEach(function (k) { if (MANS[k] && !MANS[k].id) MANS[k].id = k; });
         var el = document.getElementById('ms-page');
 
         // Detailpagina van één handschrift
@@ -312,7 +327,8 @@
             if (d0) {
                 var pp = [];
                 if (d0.schrijftijd) pp.push('Vermoedelijke schrijftijd: ' + esc(d0.schrijftijd));
-                if (d0.oudsteHandschrift) pp.push('Oudste handschrift: ' + esc(d0.oudsteHandschrift));
+                var oj0 = d0.oudsteDatum || d0.oudsteHandschrift;
+                if (oj0) pp.push('Oudste handschrift: ' + esc(String(oj0).split(' (')[0]));
                 if (pp.length) h += '<div class="dating-line">📜 ' + pp.join(' &nbsp;·&nbsp; ') + '</div>';
             }
             h += '<div class="principle-box">Voor dit boek is nog geen uitgebreide handschrift-pagina met foto’s gemaakt. ' +
@@ -334,7 +350,8 @@
         if (d) {
             var parts = [];
             if (d.schrijftijd) parts.push('Vermoedelijke schrijftijd: ' + esc(d.schrijftijd));
-            if (d.oudsteHandschrift) parts.push('Oudste handschrift: ' + esc(d.oudsteHandschrift));
+            var oudsteJaar = d.oudsteDatum || d.oudsteHandschrift;
+            if (oudsteJaar) parts.push('Oudste handschrift: ' + esc(String(oudsteJaar).split(' (')[0]));
             if (parts.length) html += '<div class="dating-line">📜 ' + parts.join(' &nbsp;·&nbsp; ') + '</div>';
         }
         var oudste = boek.oudsteFragment;
@@ -347,19 +364,34 @@
         if (boek.intro) html += '<div class="principle-box">' + esc(boek.intro) + '</div>';
 
         if (oudste && M[oudste]) {
-            html += '<h2>Oudste bewaarde tekst</h2>' + card(M[oudste], true) + '<div id="fragment-tekst"></div>';
+            html += '<h2>Oudste bewaarde tekst</h2>' + card(M[oudste], true, true) + '<div id="fragment-tekst"></div>';
         }
         var frags = (boek.fragmenten || []).filter(function (id) { return id !== oudste && M[id]; });
         if (frags.length) {
             html += '<h2>Andere vroege fragmenten</h2>';
-            frags.forEach(function (id) { html += card(M[id], false); });
+            frags.forEach(function (id) { html += card(M[id], false, true); });
         }
         var vol = (boek.volledig || []).filter(function (id) { return M[id]; });
         if (vol.length) {
             html += '<h2>Volledige handschriften</h2>';
-            vol.forEach(function (id) { html += card(M[id], false); });
+            vol.forEach(function (id) { html += card(M[id], false, true); });
         }
         if (boek.tekstgetuigen) html += '<p style="font-size:13px;color:var(--teal);"><strong>Tekstgetuigen totaal:</strong> ' + esc(boek.tekstgetuigen) + '</p>';
+
+        // Belangrijke tekstverschillen tussen de Statenvertaling en de oudste handschriften van dit boek
+        if (boek.varianten && boek.varianten.length) {
+            html += '<h2>Tekstvarianten in ' + esc(naam) + '</h2>';
+            html += '<p style="font-size:13px;color:var(--teal);">Waar de Statenvertaling (op basis van de latere Textus Receptus) afwijkt van de oudste bewaarde handschriften.</p>';
+            html += '<div class="ms-table-wrap"><table class="ms-table"><thead><tr><th>Plaats</th><th>Onderwerp</th><th>Statenvertaling</th><th>Oudste handschriften</th><th>Toelichting</th></tr></thead><tbody>';
+            boek.varianten.forEach(function (v) {
+                var getuigen = (v.getuigen || []).map(function (id) {
+                    return M[id] ? '<a href="handschriften.html?ms=' + encodeURIComponent(id) + '">' + esc(M[id].naam) + '</a>' : esc(id);
+                }).join(', ');
+                var oudsteCel = esc(v.oudste || '') + (getuigen ? '<br><span class="var-getuigen">Getuigen: ' + getuigen + '</span>' : '');
+                html += '<tr><td>' + esc(v.verwijzing || '') + '</td><td>' + esc(v.onderwerp || '') + '</td><td>' + esc(v.osv || '') + '</td><td>' + oudsteCel + '</td><td>' + esc(v.toelichting || '') + '</td></tr>';
+            });
+            html += '</tbody></table></div>';
+        }
 
         html += '<h2>Bronvermelding</h2>' +
             '<p style="font-size:12.5px;color:var(--teal);">De foto’s van de handschriften komen van ' +
