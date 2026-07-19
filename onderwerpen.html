@@ -28,9 +28,16 @@
         .ond-vers-kop a { color: var(--gold); text-decoration: none; }
         .ond-vers-kop a:hover { text-decoration: underline; }
         .ond-vers-kop .ster { color: var(--gold); }
-        .ond-vers-tekst { font-family: var(--font-serif, 'EB Garamond', Georgia, serif); font-size: 1.02em; line-height: 1.6; color: #222; min-height: 1.4em; }
+        .ond-vers-tekst { font-family: var(--font-serif, 'EB Garamond', Georgia, serif); font-size: 1.02em; line-height: 1.6; color: #222; min-height: 1.4em; cursor: pointer; }
         .ond-vers-tekst .osv-bron { display: none; }
+        .ond-vers-tekst .osv-vers.focus-vers { background: rgba(212,160,23,0.15); border-radius: 3px; padding: 0 2px; box-shadow: 0 0 0 1px rgba(212,160,23,0.25); }
+        .ond-vers-tekst .osv-vers { transition: background .15s; }
+        .ond-vers-tekst:hover .osv-vers.focus-vers { background: rgba(212,160,23,0.22); }
         .ond-vers .vnote { font-style: italic; color: #888; font-weight: 400; }
+        .ctx-btn { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin-left: 6px; padding: 0; border: 1px solid var(--gold); background: transparent; color: var(--gold); border-radius: 50%; font-size: 15px; line-height: 1; cursor: pointer; vertical-align: middle; font-family: system-ui, sans-serif; }
+        .ctx-btn:hover { background: var(--gold); color: #fff; }
+        :root[data-theme="donker"] .ctx-btn { border-color: var(--gold); color: var(--gold); }
+        :root[data-theme="donker"] .ond-vers-tekst .osv-vers.focus-vers { background: rgba(212,160,23,0.22); }
         :root[data-theme="donker"] .ond-vers { border-color: #2a2a2a; }
         :root[data-theme="donker"] .ond-vers-tekst { color: var(--text-primary); }
         :root[data-theme="donker"] #ond-detail h2 { color: var(--text-primary); }
@@ -179,14 +186,70 @@
             lijst.innerHTML = verzen.map(it => {
                 const ster = (it.rang === 1) ? '<span class="ster">&#9733;</span> ' : '';
                 const note = it.notitie ? `<span class="vnote">${it.notitie}</span>` : '';
-                return `<li class="ond-vers">
-                    <div class="ond-vers-kop">${ster}<a href="${refToHref(it.ref)}">${prettyRef(it.ref)}</a>${note}</div>
-                    <div class="ond-vers-tekst osv-cite" data-ref="${it.ref}"></div>
+                return `<li class="ond-vers" data-ref="${it.ref}" data-lvl="0">
+                    <div class="ond-vers-kop">${ster}<a href="${refToHref(it.ref)}">${prettyRef(it.ref)}</a>${note}<button type="button" class="ctx-btn ctx-min" title="Minder verzen tonen" aria-label="Minder context" hidden>&minus;</button><button type="button" class="ctx-btn ctx-plus" title="Toon 2 verzen ervoor en erna" aria-label="Meer context eromheen">+</button></div>
+                    <div class="ond-vers-tekst osv-cite" data-ref="${it.ref}" title="Klik om naar deze tekst in de bijbel te gaan"></div>
                 </li>`;
             }).join('');
             observeTeksten(lijst);
+            bindLijstInteractie(lijst);
             window.scrollTo(0, 0);
             location.hash = 'tag=' + encodeURIComponent(id);
+        }
+
+        // Referentie "boek h:v" ontleden naar losse delen
+        function refParts(ref) {
+            const sp = ref.lastIndexOf(' ');
+            const book = ref.slice(0, sp);
+            const cv = ref.slice(sp + 1).split(':');
+            return { book: book, ch: parseInt(cv[0], 10) || 1, v: parseInt(cv[1], 10) || 1 };
+        }
+        // Toon het vers met `2 × niveau` verzen ervoor en erna (binnen het hoofdstuk)
+        function renderContext(li) {
+            if (!window.OSV) return;
+            const ref = li.dataset.ref;
+            const lvl = parseInt(li.dataset.lvl, 10) || 0;
+            const tekst = li.querySelector('.ond-vers-tekst');
+            const p = refParts(ref);
+            const span = 2 * lvl;
+            const from = Math.max(1, p.v - span), to = p.v + span;
+            const rangeRef = span === 0 ? `${p.book} ${p.ch}:${p.v}` : `${p.book} ${p.ch}:${from}-${to}`;
+            OSV.cite(rangeRef, { link: false }).then(r => {
+                tekst.innerHTML = r.html;
+                tekst.querySelectorAll('.osv-vers').forEach(vs => {
+                    const num = vs.querySelector('.osv-num');
+                    const n = num ? parseInt(num.textContent, 10) : p.v;
+                    vs.dataset.vnum = n;
+                    if (n === p.v) vs.classList.add('focus-vers');
+                });
+                const min = li.querySelector('.ctx-min');
+                if (min) min.hidden = lvl <= 0;
+            }).catch(() => {});
+        }
+        // Delegatie: +/- knoppen (context) en klik op verstekst (naar bijbel springen)
+        function bindLijstInteractie(lijst) {
+            if (lijst._interactieGebonden) return;
+            lijst._interactieGebonden = true;
+            lijst.addEventListener('click', e => {
+                const btn = e.target.closest('.ctx-btn');
+                if (btn) {
+                    const li = btn.closest('.ond-vers');
+                    let lvl = parseInt(li.dataset.lvl, 10) || 0;
+                    lvl += btn.classList.contains('ctx-plus') ? 1 : -1;
+                    if (lvl < 0) lvl = 0;
+                    li.dataset.lvl = lvl;
+                    renderContext(li);
+                    return;
+                }
+                const tekstEl = e.target.closest('.ond-vers-tekst');
+                if (tekstEl) {
+                    const li = tekstEl.closest('.ond-vers');
+                    const p = refParts(li.dataset.ref);
+                    const vs = e.target.closest('.osv-vers');
+                    const n = (vs && vs.dataset.vnum) ? parseInt(vs.dataset.vnum, 10) : p.v;
+                    window.location.href = `index.html#${p.book}/${p.ch}/${n}`;
+                }
+            });
         }
         document.getElementById('ond-terug').addEventListener('click', () => { location.hash = ''; toonGrid(); });
         zoek.addEventListener('input', function () {
