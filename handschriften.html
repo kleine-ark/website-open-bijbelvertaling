@@ -341,7 +341,7 @@
             var h = '<h1>Handschriften van ' + esc(bk0.nameDutch) + '</h1>';
             if (d0) {
                 var pp = [];
-                if (d0.schrijftijd) pp.push('Vermoedelijke schrijftijd: ' + esc(d0.schrijftijd));
+                if (d0.schrijftijdKort || d0.schrijftijd) pp.push('Vermoedelijke schrijftijd: ' + esc(d0.schrijftijdKort || d0.schrijftijd));
                 var oj0 = d0.oudsteDatum || d0.oudsteHandschrift;
                 if (oj0) pp.push('Oudste handschrift: ' + esc(String(oj0).split(' (')[0]));
                 if (pp.length) h += '<div class="dating-line">📜 ' + pp.join(' &nbsp;·&nbsp; ') + '</div>';
@@ -364,7 +364,7 @@
         html += '<p class="subtitle">het oudste fragment, de vindgeschiedenis en de originele scans</p>';
         if (d) {
             var parts = [];
-            if (d.schrijftijd) parts.push('Vermoedelijke schrijftijd: ' + esc(d.schrijftijd));
+            if (d.schrijftijdKort || d.schrijftijd) parts.push('Vermoedelijke schrijftijd: ' + esc(d.schrijftijdKort || d.schrijftijd));
             var oudsteJaar = d.oudsteDatum || d.oudsteHandschrift;
             if (oudsteJaar) parts.push('Oudste handschrift: ' + esc(String(oudsteJaar).split(' (')[0]));
             if (parts.length) html += '<div class="dating-line">📜 ' + parts.join(' &nbsp;·&nbsp; ') + '</div>';

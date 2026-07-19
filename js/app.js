@@ -139,7 +139,7 @@ const App = {
             if (container && container.parentNode) container.parentNode.insertBefore(box, container);
         }
         const parts = [];
-        if (d && d.schrijftijd) parts.push(`<span class="dating-label">Vermoedelijke schrijftijd:</span> ${d.schrijftijd}`);
+        if (d && (d.schrijftijdKort || d.schrijftijd)) parts.push(`<span class="dating-label">Vermoedelijke schrijftijd:</span> ${d.schrijftijdKort || d.schrijftijd}`);
         // Alleen het jaartal van het oudste handschrift tonen (geen siglum/nummer); details staan op de handschriftenpagina.
         const oudsteJaar = d && (d.oudsteDatum || d.oudsteHandschrift);
         if (oudsteJaar) parts.push(`<span class="dating-label">Oudste handschrift:</span> ${String(oudsteJaar).split(' (')[0]}`);
