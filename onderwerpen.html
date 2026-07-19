@@ -105,7 +105,7 @@
 
     <div class="page">
         <h1>Onderwerpen</h1>
-        <p class="intro">Bijbelgedeelten geordend op thema. Klik op een vers om het in de tekst te openen. Een <span style="color:var(--gold);">&#9733;</span> markeert een sleuteltekst. &nbsp;<a href="insluiten.html" style="color:var(--gold);">Een citaat insluiten op je eigen site →</a></p>
+        <p class="intro">Gedeelten uit Gods Woord, geordend op thema. Klik op een vers om het in de tekst te openen. Een <span style="color:var(--gold);">&#9733;</span> markeert een sleuteltekst. &nbsp;<a href="insluiten.html" style="color:var(--gold);">Een citaat insluiten op je eigen site →</a></p>
         <input type="search" class="ond-zoek" id="ond-zoek" placeholder="Filter op onderwerp…" aria-label="Filter op onderwerp">
         <div class="ond-sections" id="ond-grid"><p class="ond-empty">Onderwerpen laden…</p></div>
 
@@ -176,7 +176,7 @@
         }
         // Onderwerpen geordend in rubrieken (zoals de wiki van de kleine ark)
         const CATEGORIEEN = [
-            { id: 'spreken', label: 'Wie spreekt er in de Bijbel?', ids: ['vader-spreekt', 'zoon-spreekt', 'geest-spreekt'] },
+            { id: 'spreken', label: 'Wie spreekt er in Gods Woord?', ids: ['vader-spreekt', 'zoon-spreekt', 'geest-spreekt'] },
             { id: 'kern', label: "Kernthema's van het geloof", ids: ['schepping', 'zonde', 'bekering', 'geloof', 'verbond', 'gods-leiding'] },
             { id: 'jezus', label: 'Wie is Jezus Christus?', ids: ['karakter-jezus', 'jezus-is-god'] },
             { id: 'gemeente', label: 'Gebed & gemeente', ids: ['gebed', 'gebedshouding', 'tucht-gemeente', 'evangelisatie'] },
@@ -233,7 +233,7 @@
                 const note = it.notitie ? `<span class="vnote">${it.notitie}</span>` : '';
                 return `<li class="ond-vers" data-ref="${it.ref}" data-lvl="0">
                     <div class="ond-vers-kop">${ster}<a href="${refToHref(it.ref)}">${prettyRef(it.ref)}</a>${note}<button type="button" class="ctx-btn ctx-min" title="Minder verzen tonen" aria-label="Minder context" hidden>&minus;</button><button type="button" class="ctx-btn ctx-plus" title="Toon 2 verzen ervoor en erna" aria-label="Meer context eromheen">+</button></div>
-                    <div class="ond-vers-tekst osv-cite" data-ref="${it.ref}" title="Klik om naar deze tekst in de bijbel te gaan"></div>
+                    <div class="ond-vers-tekst osv-cite" data-ref="${it.ref}" title="Klik om naar deze tekst in Gods Woord te gaan"></div>
                 </li>`;
             }).join('');
             observeTeksten(lijst);
@@ -274,7 +274,7 @@
                 if (min) min.hidden = lvl <= 0;
             }).catch(() => {});
         }
-        // Delegatie: +/- knoppen (context) en klik op verstekst (naar bijbel springen)
+        // Delegatie: +/- knoppen (context) en klik op verstekst (naar Gods Woord springen)
         function bindLijstInteractie(lijst) {
             if (lijst._interactieGebonden) return;
             lijst._interactieGebonden = true;
