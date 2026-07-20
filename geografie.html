@@ -25,6 +25,7 @@
         .z-zeker { background: rgba(92,184,92,.18); color: #3d7a3d; }
         .z-waarschijnlijk { background: rgba(203,164,73,.20); color: #8a6d1f; }
         .z-onzeker { background: rgba(150,150,150,.20); color: #666; }
+        .z-concept { background: rgba(203,164,73,.18); color: #8a6d1f; }
         .geo-modern { color: #777; font-size: 13px; }
         .geo-toel { color: #555; font-size: 13.5px; line-height: 1.5; margin: 3px 0; }
         .geo-refs a { color: var(--gold); text-decoration: none; font-size: 13px; margin-right: 9px; }
@@ -95,7 +96,7 @@
             { titel: 'Rivieren, zeeën & meren', types: ['rivier', 'zee', 'meer'] },
             { titel: 'Eilanden', types: ['eiland'] }
         ];
-        var ZEKER_LABEL = { zeker: 'zeker', waarschijnlijk: 'waarschijnlijk', onzeker: 'onzeker' };
+        var ZEKER_LABEL = { zeker: 'zeker', waarschijnlijk: 'waarschijnlijk', onzeker: 'onzeker', concept: 'concept — nog niet gecontroleerd' };
 
         function itemHTML(p) {
             var refs = (p.verwijzingen || []).map(function (r) { return '<a href="' + refHref(r) + '">' + esc(prettyRef(r)) + '</a>'; }).join('');
@@ -109,12 +110,14 @@
 
         Promise.all([
             fetch('data/geografie.geojson').then(function (r) { return r.json(); }),
-            fetch('data/books.json').then(function (r) { return r.json(); }).catch(function () { return { books: [] }; })
+            fetch('data/books.json').then(function (r) { return r.json(); }).catch(function () { return { books: [] }; }),
+            fetch('data/geografie-concept.json').then(function (r) { return r.json(); }).catch(function () { return { plaatsen: [] }; })
         ]).then(function (res) {
             (res[1].books || []).forEach(function (b) { BOOKNAMES[b.id] = b.nameDutch || b.id; });
             var props = (res[0].features || []).map(function (f) { return f.properties; });
             var totaal = props.length, zeker = props.filter(function (p) { return p.zekerheid === 'zeker'; }).length;
-            var html = '<p style="font-size:13px;color:var(--teal);font-weight:600;">' + totaal + ' plaatsen — waarvan ' + zeker + ' met zekere locatie.</p>';
+            var concept = (res[2].plaatsen || []).map(function (p) { var q = {}; for (var k in p) q[k] = p[k]; q.zekerheid = 'concept'; return q; });
+            var html = '<p style="font-size:13px;color:var(--teal);font-weight:600;">' + totaal + ' plaatsen op de kaart (waarvan ' + zeker + ' met zekere locatie) + ' + concept.length + ' in concept.</p>';
             GROEPEN.forEach(function (g) {
                 var items = props.filter(function (p) { return g.types.indexOf(p.type) >= 0; })
                     .sort(function (a, b) { return (a.naam || '').localeCompare(b.naam || '', 'nl'); });
@@ -122,6 +125,12 @@
                 html += '<h2>' + esc(g.titel) + ' <span style="font-family:var(--font-body);font-size:14px;color:var(--teal);">(' + items.length + ')</span></h2>';
                 html += '<ul class="geo-lijst">' + items.map(itemHTML).join('') + '</ul>';
             });
+            if (concept.length) {
+                html += '<h2 style="margin-top:40px;">Nog te controleren — concept <span style="font-family:var(--font-body);font-size:14px;color:var(--teal);">(' + concept.length + ')</span></h2>';
+                html += '<p style="font-size:13px;color:#8a6d1f;background:rgba(203,164,73,0.12);border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 4px 4px 0;max-width:640px;">Deze plaatsen zijn geïnventariseerd uit Gods Woord (met verwijzingen) maar <strong>nog niet gecontroleerd</strong> en nog niet op de kaart geplaatst. De locatie-authenticatie volgt in een volgende fase.</p>';
+                concept.sort(function (a, b) { return (a.naam || '').localeCompare(b.naam || '', 'nl'); });
+                html += '<ul class="geo-lijst">' + concept.map(itemHTML).join('') + '</ul>';
+            }
             document.getElementById('geo-inhoud').innerHTML = html;
         }).catch(function (e) { document.getElementById('geo-inhoud').innerHTML = '<p style="color:#c0392b">Kon de gegevens niet laden.</p>'; console.error(e); });
     })();
