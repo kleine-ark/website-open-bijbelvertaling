@@ -1,5 +1,15 @@
 /* Lokale fonts — gehost in /fonts/, geen externe afhankelijkheid (Google Fonts).
-   Subsets: latin (geen full Unicode-range om bestandsgrootte beperkt te houden). */
+   Subsets: latin (geen full Unicode-range om bestandsgrootte beperkt te houden).
+   Uitzondering: Noto Sans Ethiopic bevat het Ethiopisch (Ge'ez) blok, zodat de
+   Ge'ez-grondtekst overal leesbaar is — ook op computers zonder Ethiopisch systeemfont. */
+
+@font-face {
+    font-family: 'Noto Sans Ethiopic';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('/fonts/noto-sans-ethiopic-400.woff2') format('woff2');
+}
 
 @font-face {
     font-family: 'Allura';
