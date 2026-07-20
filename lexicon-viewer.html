@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#142e42">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexicon — Open Staten Vertaling</title>
+    <meta name="description" content="Doorzoekbaar lexicon bij de grondtekst: Hebreeuws, Aramees, Grieks, Latijn en Ge'ez — met aanklikbare tekstverwijzingen.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { display: block; margin: 0; background: var(--bg-page, #f8f6f2); }
+        .lex-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 20px 0; background: var(--bg-surface, #fff); border-bottom: 1px solid var(--border, #d4d0c8); }
+        .lex-tab { padding: 8px 15px; border: 1px solid var(--border, #d4d0c8); border-bottom: none; border-radius: 6px 6px 0 0; background: transparent; color: var(--navy); font: 600 13.5px var(--font-body); cursor: pointer; }
+        .lex-tab.active { background: var(--gold); color: #fff; border-color: var(--gold); }
+        .lex-shell { display: flex; height: calc(100vh - 52px - 46px); }
+        .lex-toc { width: 320px; min-width: 260px; border-right: 1px solid var(--border, #d4d0c8); display: flex; flex-direction: column; background: #faf8f3; }
+        .lex-toc-search { padding: 12px; border-bottom: 1px solid var(--border, #e5e1d8); }
+        .lex-toc-search input { width: 100%; padding: 8px 12px; border: 1px solid #d8d2c4; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
+        .lex-toc-hint { font-size: 11.5px; color: var(--teal); padding: 6px 12px 0; }
+        .lex-toc-list { flex: 1; overflow-y: auto; padding: 4px 0 20px; }
+        .lex-toc-item { display: flex; gap: 8px; align-items: baseline; padding: 7px 12px; cursor: pointer; border-left: 3px solid transparent; }
+        .lex-toc-item:hover { background: rgba(203,164,73,0.10); }
+        .lex-toc-item.active { background: rgba(203,164,73,0.16); border-left-color: var(--gold); }
+        .lex-toc-strong { font: 600 11px var(--font-body); color: var(--teal); min-width: 46px; }
+        .lex-toc-woord { font-size: 17px; color: var(--navy); }
+        .lex-toc-gloss { font-size: 12.5px; color: #777; margin-left: auto; text-align: right; max-width: 46%; }
+        .lex-content { flex: 1; overflow-y: auto; padding: 26px 34px 80px; }
+        .lex-content .placeholder { color: #999; font-size: 15px; margin-top: 40px; }
+        .lex-entry-head { display: flex; align-items: baseline; gap: 14px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 6px; flex-wrap: wrap; }
+        .lex-entry-strong { font: 600 13px var(--font-body); color: #fff; background: var(--teal); border-radius: 10px; padding: 2px 10px; }
+        .lex-entry-woord { font-size: 34px; color: var(--navy); }
+        .lex-entry-gloss { font-size: 17px; color: var(--gold); font-style: italic; }
+        .lex-def { font-size: 14.5px; line-height: 1.7; color: #333; margin-top: 14px; }
+        .lex-def heb, .lex-def [lang="he"], .lex-def .hebrew { font-size: 19px; }
+        .lex-def .greek, .lex-def [lang="grc"] { font-size: 17px; }
+        .lex-def sup { color: var(--teal); font-size: 10px; }
+        .lex-ref { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); white-space: nowrap; }
+        .lex-ref:hover { color: var(--navy); background: rgba(203,164,73,0.14); }
+        .lex-verw { margin-top: 16px; font-size: 13px; color: var(--teal); }
+        .lex-verw a { color: var(--gold); text-decoration: none; margin-right: 8px; border-bottom: 1px dotted var(--gold); }
+        .lex-src { margin-top: 26px; font-size: 12px; color: #999; border-top: 1px solid var(--border, #e5e1d8); padding-top: 10px; }
+        .lex-src a { color: var(--teal); }
+        .lex-concept { display: inline-block; font-size: 11px; background: rgba(203,164,73,0.18); color: #8a6d1f; border-radius: 10px; padding: 1px 9px; margin-left: 6px; }
+        @media (max-width: 760px) {
+            .lex-shell { flex-direction: column; height: auto; }
+            .lex-toc { width: 100%; max-height: 40vh; border-right: none; border-bottom: 1px solid var(--border); }
+            .lex-content { padding: 20px; }
+        }
+        :root[data-theme="donker"] body { background: var(--bg-page); }
+        :root[data-theme="donker"] .lex-tabs, :root[data-theme="donker"] .lex-toc { background: var(--bg-surface); border-color: var(--border-default); }
+        :root[data-theme="donker"] .lex-tab { color: var(--text-primary); border-color: var(--border-default); }
+        :root[data-theme="donker"] .lex-toc-woord, :root[data-theme="donker"] .lex-entry-woord { color: var(--text-primary); }
+        :root[data-theme="donker"] .lex-def { color: var(--text-secondary, #cfcfcf); }
+        :root[data-theme="donker"] .lex-toc-search input { background: var(--bg-surface-alt); color: var(--text-primary); border-color: #333; }
+    </style>
+    <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+    <nav id="topnav">
+    <div class="topnav-brand">Open Staten Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.21.6</a></span></div>
+    <div class="topnav-links" id="topnav-links">
+        <a href="over-ov.html">Over OSV</a>
+        <a href="index.html#johannes/1">Tekst</a>
+        <a href="onderwerpen.html">Onderwerpen</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="lexicon.html" class="active">Lexicon</a>
+        <a href="kaart.html">Kaart</a>
+        <a href="contact.html">Over ons</a>
+    </div>
+    <button class="topnav-theme" id="topnav-theme-toggle" title="Thema: licht/donker" aria-label="Wissel thema"><svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    <button class="topnav-hamburger" id="topnav-hamburger" onclick="document.getElementById('topnav-links').classList.toggle('open');this.classList.toggle('open')" title="Menu" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="lex-tabs" id="lex-tabs"></div>
+<div class="lex-shell">
+    <div class="lex-toc">
+        <div class="lex-toc-search">
+            <input type="search" id="lex-zoek" placeholder="Zoek op betekenis, woord of nummer…" autocomplete="off">
+            <div class="lex-toc-hint" id="lex-hint">Laden…</div>
+        </div>
+        <div class="lex-toc-list" id="lex-list"></div>
+    </div>
+    <div class="lex-content" id="lex-content">
+        <p class="placeholder">Kies links een woord om de betekenis en de tekstverwijzingen te zien.</p>
+    </div>
+</div>
+
+<script src="js/book-orders.js"></script>
+<script>
+(function () {
+    'use strict';
+    // Taal-configuratie
+    var TALEN = [
+        { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>' },
+        { id: 'grieks', label: 'Grieks', src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', abbr: true, bron: 'Abbott-Smith, Manual Greek Lexicon (1922), publiek domein — <a href="https://github.com/translatable-exegetical-tools/Abbott-Smith" target="_blank" rel="noopener">Abbott-Smith</a>' },
+        { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', bron: '4 Ezra (Vulgaat-traditie) — grondtekst-glossen' },
+        { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', bron: 'Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)' }
+    ];
+
+    // Boek-afkortingen (BDB / Abbott-Smith, Engels) -> onze boek-id
+    var ABBR = {
+        Gen:'genesis', Exod:'exodus', Ex:'exodus', Lev:'leviticus', Num:'numeri', Deut:'deuteronomium', Dt:'deuteronomium',
+        Josh:'jozua', Jos:'jozua', Judg:'richteren', Jdg:'richteren', Ruth:'ruth',
+        '1Sam':'1samuel', '2Sam':'2samuel', '1Kin':'1koningen', '1Kgs':'1koningen', '2Kin':'2koningen', '2Kgs':'2koningen',
+        '1Chr':'1kronieken', '2Chr':'2kronieken', Ezra:'ezra', Neh:'nehemia', Esth:'esther', Est:'esther',
+        Job:'job', Ps:'psalmen', Psa:'psalmen', Prov:'spreuken', Pr:'spreuken', Eccl:'prediker', Qoh:'prediker',
+        Song:'hooglied', Cant:'hooglied', Isa:'jesaja', Jer:'jeremia', Lam:'klaagliederen', Ezek:'ezechiel', Eze:'ezechiel',
+        Dan:'daniel', Hos:'hosea', Joel:'joel', Amos:'amos', Am:'amos', Obad:'obadja', Ob:'obadja', Jonah:'jona', Jon:'jona',
+        Mic:'micha', Nah:'nahum', Hab:'habakuk', Zeph:'zefanja', Zep:'zefanja', Hag:'haggai', Zech:'zacharia', Zec:'zacharia', Mal:'maleachi',
+        Matt:'mattheus', Mt:'mattheus', Mark:'markus', Mk:'markus', Luke:'lukas', Lk:'lukas', John:'johannes', Jn:'johannes',
+        Acts:'handelingen', Rom:'romeinen', '1Cor':'1korinthiers', '2Cor':'2korinthiers', Gal:'galaten', Eph:'efeziers',
+        Phil:'filippenzen', Col:'kolossenzen', '1Thess':'1tessalonicensen', '1Th':'1tessalonicensen', '2Thess':'2tessalonicensen', '2Th':'2tessalonicensen',
+        '1Tim':'1timotheus', '2Tim':'2timotheus', Titus:'titus', Tit:'titus', Phlm:'filemon', Heb:'hebreeen',
+        Jas:'jakobus', '1Pet':'1petrus', '2Pet':'2petrus', '1John':'1johannes', '1Jn':'1johannes', '2John':'2johannes', '3John':'3johannes', Jude:'judas', Rev:'openbaring',
+        Tob:'tobit', Jth:'judith', Jdt:'judith', '1Macc':'1makkabeeen', '2Macc':'2makkabeeen', Sir:'jezussirach', Ecclus:'jezussirach', Wis:'boekderwijsheid', Bar:'baruch'
+    };
+    var abbrKeys = Object.keys(ABBR).sort(function (a, b) { return b.length - a.length; });
+    var abbrRe = new RegExp('\\b(' + abbrKeys.map(function (k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')\\s?(\\d+):(\\d+)', 'g');
+
+    function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
+    // Linkify Engelse afkorting-verwijzingen in BDB/Abbott-definities
+    function linkifyAbbr(html) {
+        // niet binnen tags vervangen: split op tags
+        return html.replace(/>([^<]+)</g, function (m, txt) {
+            return '>' + txt.replace(abbrRe, function (mm, ab, ch, vs) {
+                var b = ABBR[ab]; if (!b) return mm;
+                return '<a class="lex-ref" target="_top" href="index.html#' + b + '/' + ch + '/' + vs + '">' + mm + '</a>';
+            }) + '<';
+        });
+    }
+    var BOOKNAMES = {};
+    function prettyRef(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); return (BOOKNAMES[b] || b) + ' ' + ref.slice(sp + 1); }
+    function refHref(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); var cv = ref.slice(sp + 1).split(':'); return 'index.html#' + b + '/' + cv[0] + '/' + (cv[1] || ''); }
+
+    var cur = null, entries = [], loaded = {};
+    var listEl = document.getElementById('lex-list'), contentEl = document.getElementById('lex-content'), hintEl = document.getElementById('lex-hint');
+
+    function loadScript(src) { return new Promise(function (res, rej) { var s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s); }); }
+
+    function toEntries(taal) {
+        if (taal.global) {
+            var obj = window[taal.global] || {};
+            return Object.keys(obj).map(function (k) { return { key: k, woord: obj[k].woord, gloss: obj[k].gloss, def: obj[k].definitie || obj[k].vorm || '', abbr: true }; });
+        }
+        // JSON (latijn/geez)
+        return (taal._data.woorden || []).map(function (w, i) {
+            return { key: w.lemma || w.woord || ('#' + i), woord: w.woord || (w.vormen && w.vormen[0]) || w.lemma, gloss: w.betekenis, verw: w.verwijzingen || [], forms: w.vormen };
+        });
+    }
+
+    function filter(q) {
+        q = (q || '').toLowerCase().trim();
+        var r = entries;
+        if (q) r = entries.filter(function (e) {
+            return (e.gloss || '').toLowerCase().indexOf(q) >= 0 || (e.woord || '').toLowerCase().indexOf(q) >= 0 ||
+                (e.key || '').toLowerCase().indexOf(q) >= 0;
+        });
+        hintEl.textContent = r.length.toLocaleString('nl-NL') + ' woorden' + (r.length > 300 ? ' — toont eerste 300' : '');
+        var slice = r.slice(0, 300);
+        listEl.innerHTML = slice.map(function (e, i) {
+            return '<div class="lex-toc-item" data-i="' + entries.indexOf(e) + '"><span class="lex-toc-strong">' + esc(e.key) + '</span>' +
+                '<span class="lex-toc-woord" lang="' + langAttr() + '">' + esc(e.woord || '') + '</span>' +
+                '<span class="lex-toc-gloss">' + esc(e.gloss || '') + '</span></div>';
+        }).join('') || '<div style="padding:14px;color:#999;">Geen resultaten.</div>';
+    }
+    function langAttr() { return cur.id === 'grieks' ? 'grc' : cur.id === 'geez' ? 'gez' : cur.id === 'latijn' ? 'la' : 'he'; }
+
+    function showEntry(e) {
+        [].forEach.call(listEl.querySelectorAll('.lex-toc-item'), function (n) { n.classList.toggle('active', +n.dataset.i === entries.indexOf(e)); });
+        var h = '<div class="lex-entry-head"><span class="lex-entry-strong">' + esc(e.key) + '</span>' +
+            '<span class="lex-entry-woord" lang="' + langAttr() + '">' + esc(e.woord || '') + '</span>' +
+            (e.gloss ? '<span class="lex-entry-gloss">' + esc(e.gloss) + '</span>' : '') +
+            '<span class="lex-concept" title="De Nederlandse vertaling van de volledige definitie volgt nog">Definitie nog niet vertaald</span></div>';
+        if (e.def) {
+            h += '<div class="lex-def">' + (cur.abbr ? linkifyAbbr(e.def) : esc(e.def)) + '</div>';
+        }
+        if (e.verw && e.verw.length) {
+            h += '<div class="lex-verw"><strong>Voorkomens:</strong> ' + e.verw.map(function (r) {
+                return '<a target="_top" href="' + refHref(r) + '">' + esc(prettyRef(r)) + '</a>';
+            }).join('') + '</div>';
+        }
+        h += '<div class="lex-src">Bron: ' + cur.bron + '. Tekstverwijzingen zijn aanklikbaar en openen de tekst.</div>';
+        contentEl.innerHTML = h;
+        contentEl.scrollTop = 0;
+    }
+
+    listEl.addEventListener('click', function (e) {
+        var it = e.target.closest('.lex-toc-item'); if (!it) return;
+        showEntry(entries[+it.dataset.i]);
+    });
+    document.getElementById('lex-zoek').addEventListener('input', function () { filter(this.value); });
+
+    function selectTaal(taal) {
+        cur = taal;
+        [].forEach.call(document.querySelectorAll('.lex-tab'), function (b) { b.classList.toggle('active', b.dataset.id === taal.id); });
+        contentEl.innerHTML = '<p class="placeholder">Kies links een woord…</p>';
+        hintEl.textContent = 'Laden…'; listEl.innerHTML = '';
+        var ready = loaded[taal.id] ? Promise.resolve() :
+            (taal.src ? loadScript(taal.src) : fetch(taal.json).then(function (r) { return r.json(); }).then(function (d) { taal._data = d; }));
+        ready.then(function () {
+            loaded[taal.id] = true;
+            entries = toEntries(taal);
+            document.getElementById('lex-zoek').value = '';
+            filter('');
+            history.replaceState(null, '', '?taal=' + taal.id);
+        }).catch(function (err) { hintEl.textContent = 'Kon lexicon niet laden.'; console.error(err); });
+    }
+
+    // Tabs bouwen
+    var tabsEl = document.getElementById('lex-tabs');
+    tabsEl.innerHTML = TALEN.map(function (t) { return '<button class="lex-tab" data-id="' + t.id + '">' + t.label + '</button>'; }).join('');
+    [].forEach.call(tabsEl.querySelectorAll('.lex-tab'), function (b) {
+        b.addEventListener('click', function () { selectTaal(TALEN.filter(function (t) { return t.id === b.dataset.id; })[0]); });
+    });
+
+    fetch('data/books.json').then(function (r) { return r.json(); }).then(function (d) {
+        (d.books || []).forEach(function (b) { BOOKNAMES[b.id] = b.nameDutch || b.id; });
+    }).finally(function () {
+        var q = (location.search.match(/taal=(\w+)/) || [])[1];
+        var start = TALEN.filter(function (t) { return t.id === q; })[0] || TALEN[0];
+        selectTaal(start);
+    });
+})();
+</script>
+<script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);}catch(e){}});})();</script>
+</body>
+</html>
