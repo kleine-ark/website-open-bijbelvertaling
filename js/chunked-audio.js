@@ -74,83 +74,225 @@
         return t;
     }
 
-    /* Controller die één <audio>-element door de afspeellijst stuurt.
+    /* Controller die de losse segmenten GAPLOOS afspeelt via de Web Audio API.
+     *
+     * Waarom Web Audio i.p.v. één <audio>-element dat per clip van src wisselt:
+     * een hoofdstuk bestaat uit tientallen minuscule Opus-clipjes; bij het
+     * sequentieel omwisselen van audioEl.src racen de load()/play()-aanroepen en
+     * slaat de browser hele verzen over. Met vooraf gedecodeerde AudioBuffers die
+     * we sample-nauwkeurig achter elkaar plannen (source.start(t)) is er geen
+     * naad en wordt niets overgeslagen.
+     *
+     * Om lees.js/app.js ONGEWIJZIGD te laten (die audioEl.play()/pause()/paused
+     * gebruiken en op de 'play'/'pause'-events de knop bijwerken) virtualiseren we
+     * die op dit ene element: ze sturen voortaan de Web Audio-engine aan.
+     *
      * callbacks: { onVerse(n), onPlay(), onPause(), onEnded(), onTime(elapsed,total) } */
     function createController(audioEl, manifest, settings, callbacks) {
         var cb = callbacks || {};
         var s = settings || defaultSettings();
         var bookId = manifest.book, chapter = manifest.chapter, voice = manifest.voice;
         var playlist = buildPlaylist(manifest, s);
-        var idx = 0;
         var destroyed = false;
-        var priorDur = 0; // som van dur van reeds afgespeelde segmenten
 
-        function srcFor(item) { return segUrl(bookId, chapter, voice, item.src); }
+        var AC = window.AudioContext || window.webkitAudioContext;
+        var ctx = null;
+        var buffers = [];        // AudioBuffer per playlist-item (null bij decode-fout)
+        var segStart = [];       // cumulatieve starttijd per item (sec)
+        var total = 0;
+        var sources = [];        // actief geplande bronnen
+        var wantPlay = false;    // gebruikersintentie (stuurt knop/paused)
+        var playing = false;     // daadwerkelijk gepland
+        var pausedPos = 0;       // positie (sec) waar we stilstaan
+        var startCtxTime = 0;    // ctx.currentTime bij laatste (her)planning
+        var startPos = 0;        // playlist-positie bij laatste (her)planning
+        var tick = null;
+        var lastVerse = null;
+        var decodedFor = null;   // playlist waarvoor buffers/segStart gelden
 
-        function loadIndex(i, autoplay) {
-            if (i < 0 || i >= playlist.length) return;
-            idx = i;
-            priorDur = 0;
-            for (var k = 0; k < i; k++) priorDur += (playlist[k].dur || 0);
-            var item = playlist[i];
-            audioEl.src = srcFor(item);
-            audioEl.load();
-            if (item.type === 'verse' && cb.onVerse) cb.onVerse(item.verse);
-            if (autoplay) audioEl.play().catch(function () {});
+        // --- audioEl virtualiseren zodat bestaande aanroepers blijven werken ---
+        var pausedDesc = Object.getOwnPropertyDescriptor(HTMLMediaElement.prototype, 'paused');
+        audioEl.play = function () { ctlPlay(); return Promise.resolve(); };
+        audioEl.pause = function () { ctlPause(); };
+        Object.defineProperty(audioEl, 'paused', {
+            configurable: true, get: function () { return !wantPlay; }
+        });
+
+        function rebuildTiming() {
+            segStart = []; var t = 0;
+            for (var i = 0; i < playlist.length; i++) { segStart[i] = t; t += (playlist[i].dur || 0); }
+            total = t;
+        }
+        rebuildTiming();
+        emitVerse(0);
+
+        function ensureCtx() {
+            if (!ctx) ctx = new AC();
+            if (ctx.state === 'suspended' && ctx.resume) ctx.resume();
+            return ctx;
         }
 
-        function onEnded() {
-            if (destroyed) return;
-            if (idx < playlist.length - 1) loadIndex(idx + 1, true);
-            else if (cb.onEnded) cb.onEnded();
+        function fetchDecode(src) {
+            return fetch(segUrl(bookId, chapter, voice, src))
+                .then(function (r) { return r.arrayBuffer(); })
+                .then(function (ab) {
+                    return new Promise(function (res, rej) { ctx.decodeAudioData(ab, res, rej); });
+                });
         }
-        function onTime() {
-            if (cb.onTime) cb.onTime(priorDur + (audioEl.currentTime || 0), totalDuration(playlist));
+
+        // Decodeer alle segmenten van de huidige playlist (idempotent per playlist).
+        function decodeAll() {
+            if (decodedFor === playlist) return Promise.resolve();
+            ensureCtx();
+            var pl = playlist;
+            return Promise.all(pl.map(function (it) {
+                return fetchDecode(it.src).catch(function (e) {
+                    if (window.console) console.warn('chunk-audio decode faalt:', it.src, e);
+                    return null;
+                });
+            })).then(function (bufs) {
+                if (destroyed || playlist !== pl) return;
+                buffers = bufs;
+                segStart = []; var t = 0;
+                for (var i = 0; i < bufs.length; i++) {
+                    segStart[i] = t;
+                    t += (bufs[i] ? bufs[i].duration : (pl[i].dur || 0));
+                }
+                total = t;
+                decodedFor = pl;
+            });
         }
-        function onPlay() { if (cb.onPlay) cb.onPlay(); }
-        function onPause() { if (cb.onPause) cb.onPause(); }
 
-        audioEl.addEventListener('ended', onEnded);
-        audioEl.addEventListener('timeupdate', onTime);
-        audioEl.addEventListener('play', onPlay);
-        audioEl.addEventListener('pause', onPause);
+        function stopSources() {
+            for (var i = 0; i < sources.length; i++) { try { sources[i].stop(); } catch (e) {} }
+            sources = [];
+        }
 
-        loadIndex(0, false);
+        function segIndexAt(pos) {
+            for (var i = 0; i < segStart.length; i++) {
+                var end = (i + 1 < segStart.length) ? segStart[i + 1] : total;
+                if (pos < end) return i;
+            }
+            return Math.max(0, segStart.length - 1);
+        }
+
+        function curPos() { return playing ? (startPos + (ctx.currentTime - startCtxTime)) : pausedPos; }
+
+        function emitVerse(i) {
+            var it = playlist[i];
+            if (it && it.type === 'verse' && it.verse !== lastVerse) {
+                lastVerse = it.verse;
+                if (cb.onVerse) cb.onVerse(it.verse);
+            }
+        }
+
+        function startTick() {
+            if (tick) return;
+            tick = setInterval(function () {
+                if (!playing) return;
+                var pos = curPos();
+                if (pos >= total - 0.02) { finish(); return; }
+                emitVerse(segIndexAt(pos));
+                if (cb.onTime) cb.onTime(pos, total);
+            }, 200);
+        }
+        function stopTick() { if (tick) { clearInterval(tick); tick = null; } }
+
+        // Plan alle segmenten vanaf positie `pos` gaploos achter elkaar.
+        function scheduleFrom(pos) {
+            stopSources();
+            if (!buffers.length || pos >= total) { if (pos >= total) finish(); return; }
+            var i0 = segIndexAt(pos);
+            var off0 = pos - segStart[i0];
+            var base = ctx.currentTime + 0.08;
+            for (var i = i0; i < buffers.length; i++) {
+                var buf = buffers[i];
+                if (!buf) continue;
+                var src = ctx.createBufferSource();
+                src.buffer = buf;
+                src.connect(ctx.destination);
+                try { src.start(base + (segStart[i] - pos), i === i0 ? off0 : 0); } catch (e) {}
+                sources.push(src);
+            }
+            startCtxTime = base; startPos = pos; playing = true;
+            lastVerse = null; emitVerse(i0);
+            startTick();
+        }
+
+        function finish() {
+            stopSources(); stopTick();
+            wantPlay = false; playing = false; pausedPos = 0; lastVerse = null;
+            audioEl.dispatchEvent(new Event('pause'));
+            if (cb.onEnded) cb.onEnded();
+        }
+
+        function ctlPlay() {
+            if (destroyed || wantPlay) return;
+            wantPlay = true;
+            ensureCtx();
+            audioEl.dispatchEvent(new Event('play'));
+            decodeAll().then(function () {
+                if (destroyed || !wantPlay || playing) return;
+                scheduleFrom(pausedPos >= total ? 0 : pausedPos);
+            });
+        }
+        function ctlPause() {
+            if (!wantPlay) return;
+            if (playing) pausedPos = curPos();
+            stopSources(); stopTick();
+            wantPlay = false; playing = false;
+            audioEl.dispatchEvent(new Event('pause'));
+        }
 
         return {
-            play: function () { audioEl.play().catch(function () {}); },
-            pause: function () { audioEl.pause(); },
-            isPlaying: function () { return !audioEl.paused; },
-            currentVerse: function () { var it = playlist[idx]; return it ? it.verse : null; },
+            play: ctlPlay,
+            pause: ctlPause,
+            isPlaying: function () { return wantPlay; },
+            currentVerse: function () { var it = playlist[segIndexAt(curPos())]; return it ? it.verse : null; },
             /* Spring naar het segment dat vers N voorleest. */
             seekToVerse: function (n) {
                 for (var i = 0; i < playlist.length; i++) {
-                    if (playlist[i].type === 'verse' && playlist[i].verse === n) { loadIndex(i, !audioEl.paused); return true; }
+                    if (playlist[i].type === 'verse' && playlist[i].verse === n) {
+                        var pos = segStart[i] || 0;
+                        if (wantPlay && decodedFor === playlist) scheduleFrom(pos);
+                        else { pausedPos = pos; lastVerse = null; emitVerse(i); }
+                        return true;
+                    }
                 }
                 return false;
             },
             /* Pas instellingen toe (godsnaam/kopjes/intro) zonder de plek te verliezen. */
             setSettings: function (newSettings) {
-                var curVerse = (playlist[idx] && playlist[idx].verse) || null;
-                var wasPlaying = !audioEl.paused;
+                var curVerse = this.currentVerse();
+                var wasPlaying = wantPlay;
                 s = newSettings; saveSettings(s);
+                stopSources(); stopTick(); playing = false;
                 playlist = buildPlaylist(manifest, s);
+                buffers = []; decodedFor = null; lastVerse = null;
+                rebuildTiming();
                 var target = 0;
                 if (curVerse != null) {
                     for (var i = 0; i < playlist.length; i++) {
                         if (playlist[i].type === 'verse' && playlist[i].verse >= curVerse) { target = i; break; }
                     }
                 }
-                loadIndex(target, wasPlaying);
+                var pos = segStart[target] || 0;
+                if (wasPlaying) {
+                    wantPlay = true; ensureCtx();
+                    decodeAll().then(function () { if (!destroyed && wantPlay && !playing) scheduleFrom(pos); });
+                } else {
+                    wantPlay = false; pausedPos = pos; emitVerse(target);
+                }
             },
             playlist: function () { return playlist.slice(); },
-            totalDuration: function () { return totalDuration(playlist); },
+            totalDuration: function () { return total; },
             destroy: function () {
                 destroyed = true;
-                audioEl.removeEventListener('ended', onEnded);
-                audioEl.removeEventListener('timeupdate', onTime);
-                audioEl.removeEventListener('play', onPlay);
-                audioEl.removeEventListener('pause', onPause);
+                stopSources(); stopTick();
+                delete audioEl.play; delete audioEl.pause;
+                if (pausedDesc) Object.defineProperty(audioEl, 'paused', pausedDesc);
+                else try { delete audioEl.paused; } catch (e) {}
+                if (ctx && ctx.close) { try { ctx.close(); } catch (e) {} }
             }
         };
     }
