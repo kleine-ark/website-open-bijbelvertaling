@@ -93,8 +93,8 @@
     'use strict';
     // Taal-configuratie
     var TALEN = [
-        { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>' },
-        { id: 'grieks', label: 'Grieks', src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', abbr: true, bron: 'Abbott-Smith, Manual Greek Lexicon (1922), publiek domein — <a href="https://github.com/translatable-exegetical-tools/Abbott-Smith" target="_blank" rel="noopener">Abbott-Smith</a>' },
+        { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', nlJson: 'data/lexicon-nl/bdb-nl.json', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>. Nederlandse vertaling automatisch, in bewerking.' },
+        { id: 'grieks', label: 'Grieks', src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', abbr: true, bron: 'Abbott-Smith, Manual Greek Lexicon (1922), publiek domein — <a href="https://github.com/translatable-exegetical-tools/Abbott-Smith" target="_blank" rel="noopener">Abbott-Smith</a>. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', bron: '4 Ezra (Vulgaat-traditie) — grondtekst-glossen' },
         { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', bron: 'Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)' }
     ];
@@ -117,20 +117,34 @@
         Tob:'tobit', Jth:'judith', Jdt:'judith', '1Macc':'1makkabeeen', '2Macc':'2makkabeeen', Sir:'jezussirach', Ecclus:'jezussirach', Wis:'boekderwijsheid', Bar:'baruch'
     };
     var abbrKeys = Object.keys(ABBR).sort(function (a, b) { return b.length - a.length; });
-    var abbrRe = new RegExp('\\b(' + abbrKeys.map(function (k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')\\s?(\\d+):(\\d+)', 'g');
+    var abbrAlt = abbrKeys.map(function (k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|');
+    // Optionele boek-afkorting gevolgd door hoofdstuk:vers (met optioneel bereik).
+    // Zonder boek = "kale" verwijzing (bv. 15:20) die het laatstgenoemde boek erft.
+    var refRe = new RegExp('(?:\\b(' + abbrAlt + ')\\s?)?(\\d+):(\\d+)((?:[-–]\\d+)?)', 'g');
 
     function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
-    // Linkify Engelse afkorting-verwijzingen in BDB/Abbott-definities
+    var BOOKNAMES = {}, CHAPTERCOUNT = {};
+    function bookName(id) { return BOOKNAMES[id] || id; }
+    // Linkify verwijzingen in BDB/Abbott-definities: toon Nederlandse boeknaam,
+    // en link ook kale vervolg-verwijzingen (die het vorige boek erven).
     function linkifyAbbr(html) {
-        // niet binnen tags vervangen: split op tags
+        var lastBook = null;
         return html.replace(/>([^<]+)</g, function (m, txt) {
-            return '>' + txt.replace(abbrRe, function (mm, ab, ch, vs) {
-                var b = ABBR[ab]; if (!b) return mm;
-                return '<a class="lex-ref" target="_top" href="index.html#' + b + '/' + ch + '/' + vs + '">' + mm + '</a>';
-            }) + '<';
+            var out = txt.replace(refRe, function (mm, ab, ch, vs, rng) {
+                var book = null;
+                if (ab && ABBR[ab]) { book = ABBR[ab]; lastBook = book; }
+                if (!book) {
+                    book = lastBook;               // kale verwijzing erft vorig boek
+                    if (!book) return mm;          // nog geen boek-context: geen link
+                    // alleen linken als het hoofdstuk in dat boek bestaat (voorkomt bv. "37:35" -> Spreuken)
+                    if (CHAPTERCOUNT[book] && +ch > CHAPTERCOUNT[book]) return mm;
+                }
+                var disp = (ab && ABBR[ab] ? bookName(book) + ' ' : '') + ch + ':' + vs + (rng || '');
+                return '<a class="lex-ref" target="_top" href="index.html#' + book + '/' + ch + '/' + vs + '">' + disp + '</a>';
+            });
+            return '>' + out + '<';
         });
     }
-    var BOOKNAMES = {};
     function prettyRef(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); return (BOOKNAMES[b] || b) + ' ' + ref.slice(sp + 1); }
     function refHref(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); var cv = ref.slice(sp + 1).split(':'); return 'index.html#' + b + '/' + cv[0] + '/' + (cv[1] || ''); }
 
@@ -142,7 +156,16 @@
     function toEntries(taal) {
         if (taal.global) {
             var obj = window[taal.global] || {};
-            return Object.keys(obj).map(function (k) { return { key: k, woord: obj[k].woord, gloss: obj[k].gloss, def: obj[k].definitie || obj[k].vorm || '', abbr: true }; });
+            var nl = taal._nl || {};
+            return Object.keys(obj).map(function (k) {
+                var t = nl[k] || {};
+                var def = t.definitieNl || obj[k].definitie || t.vormNl || obj[k].vorm || '';
+                return { key: k, woord: obj[k].woord,
+                    gloss: t.glossNl || obj[k].gloss,
+                    def: def,
+                    nl: !!(t.definitieNl || t.glossNl),
+                    abbr: true };
+            });
         }
         // JSON (latijn/geez)
         return (taal._data.woorden || []).map(function (w, i) {
@@ -172,7 +195,7 @@
         var h = '<div class="lex-entry-head"><span class="lex-entry-strong">' + esc(e.key) + '</span>' +
             '<span class="lex-entry-woord" lang="' + langAttr() + '">' + esc(e.woord || '') + '</span>' +
             (e.gloss ? '<span class="lex-entry-gloss">' + esc(e.gloss) + '</span>' : '') +
-            '<span class="lex-concept" title="De Nederlandse vertaling van de volledige definitie volgt nog">Definitie nog niet vertaald</span></div>';
+            (cur.abbr && !e.nl ? '<span class="lex-concept" title="De Nederlandse vertaling van de volledige definitie volgt nog">Definitie nog niet vertaald</span>' : '') + '</div>';
         if (e.def) {
             h += '<div class="lex-def">' + (cur.abbr ? linkifyAbbr(e.def) : esc(e.def)) + '</div>';
         }
@@ -198,7 +221,12 @@
         contentEl.innerHTML = '<p class="placeholder">Kies links een woord…</p>';
         hintEl.textContent = 'Laden…'; listEl.innerHTML = '';
         var ready = loaded[taal.id] ? Promise.resolve() :
-            (taal.src ? loadScript(taal.src) : fetch(taal.json).then(function (r) { return r.json(); }).then(function (d) { taal._data = d; }));
+            Promise.resolve()
+                .then(function () { return taal.src ? loadScript(taal.src) : fetch(taal.json).then(function (r) { return r.json(); }).then(function (d) { taal._data = d; }); })
+                .then(function () {
+                    if (!taal.nlJson) return;
+                    return fetch(taal.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._nl = d; }).catch(function () { taal._nl = {}; });
+                });
         ready.then(function () {
             loaded[taal.id] = true;
             entries = toEntries(taal);
@@ -216,7 +244,7 @@
     });
 
     fetch('data/books.json').then(function (r) { return r.json(); }).then(function (d) {
-        (d.books || []).forEach(function (b) { BOOKNAMES[b.id] = b.nameDutch || b.id; });
+        (d.books || []).forEach(function (b) { BOOKNAMES[b.id] = b.nameDutch || b.id; CHAPTERCOUNT[b.id] = b.totalChapters || 0; });
     }).finally(function () {
         var q = (location.search.match(/taal=(\w+)/) || [])[1];
         var start = TALEN.filter(function (t) { return t.id === q; })[0] || TALEN[0];
