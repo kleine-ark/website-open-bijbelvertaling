@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — Leesversie */
+/* Open Vertaling — Leesversie */
 
 const Lees = {
     manifest: null,
@@ -682,11 +682,11 @@ const Lees = {
         const data = this._getSelectionData();
         if (!data) return;
         const text = data.ref
-            ? `${data.plain}\n\n— ${data.ref} (Open Staten Vertaling)`
+            ? `${data.plain}\n\n— ${data.ref} (Open Vertaling)`
             : data.plain;
         if (navigator.share) {
             try {
-                await navigator.share({ title: data.ref || 'Open Staten Vertaling', text, url: location.href });
+                await navigator.share({ title: data.ref || 'Open Vertaling', text, url: location.href });
                 return;
             } catch (e) { if (e.name === 'AbortError') return; }
         }
@@ -729,7 +729,7 @@ const Lees = {
             ctx.fillText(`— ${data.ref}`, PAD, y); y += 38;
         }
         ctx.font = '18px "Fira Sans", sans-serif'; ctx.fillStyle = '#999';
-        ctx.fillText('Open Staten Vertaling · openvertaling.nl', PAD, y); y += 30;
+        ctx.fillText('Open Vertaling · openvertaling.nl', PAD, y); y += 30;
 
         const finalH = Math.max(y + PAD, 400);
         const tmp = document.createElement('canvas');
@@ -878,7 +878,7 @@ const Lees = {
             return `${num} ${clone.textContent.trim()}`;
         }).join('\n');
         const ref = this._buildRef();
-        const fullText = `${text}\n\n— ${ref} (Open Staten Vertaling)`;
+        const fullText = `${text}\n\n— ${ref} (Open Vertaling)`;
         if (navigator.share) {
             try {
                 await navigator.share({ title: ref, text: fullText, url: location.href });
@@ -976,7 +976,7 @@ const Lees = {
         y += 38;
         ctx.font = '18px "Fira Sans", sans-serif';
         ctx.fillStyle = '#999';
-        ctx.fillText('Open Staten Vertaling · openvertaling.nl', PAD, y);
+        ctx.fillText('Open Vertaling · openvertaling.nl', PAD, y);
         y += 30;
 
         // Trim canvas naar werkelijke hoogte

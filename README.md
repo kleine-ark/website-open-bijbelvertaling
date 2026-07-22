@@ -1,4 +1,4 @@
-# Open Staten Vertaling (OSV)
+# Open Vertaling (OSV)
 
 Een vrij beschikbare **herziening van de Statenvertaling** (1637/1888) — leesbaar
 hedendaags Nederlands, maar zo dicht mogelijk bij de oorspronkelijke Statenvertaling.
@@ -7,9 +7,9 @@ hedendaags Nederlands, maar zo dicht mogelijk bij de oorspronkelijke Statenverta
 
 ---
 
-## Wat is de Open Staten Vertaling?
+## Wat is de Open Vertaling?
 
-De Open Staten Vertaling is een herziening van de Statenvertaling uit 1637 (op basis
+De Open Vertaling is een herziening van de Statenvertaling uit 1637 (op basis
 van de uitgave van 1888). Het doel: een vertaling die **zoveel mogelijk gelijk blijft
 aan de oorspronkelijke Statenvertaling**, maar leesbaar is voor nieuwe gelovigen,
 doordat onbekende 17e‑eeuwse woorden en zinsconstructies vervangen zijn.

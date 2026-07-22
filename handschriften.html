@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#142e42">
     <link rel="apple-touch-icon" href="/icons/icon-192.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handschriften per boek — Open Staten Vertaling</title>
+    <title>Handschriften per boek — Open Vertaling</title>
     <meta name="description" content="Per boek uit Gods Woord: het oudste bewaarde handschrift/fragment, wie het vond, waar het zich bevindt, met foto's van de originele scans en bronvermelding.">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -118,7 +118,7 @@
 <body>
 <script>if (window.self !== window.top) { document.body.classList.add('in-iframe'); document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('a[href]').forEach(function(a){ var h=a.getAttribute('href'); if(h && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('http') && !h.startsWith('javascript:')) a.target='_top'; }); }); }</script>
 <nav id="topnav">
-    <div class="topnav-brand">Open Staten Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.22.1</a></span></div>
+    <div class="topnav-brand">Open Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.22.1</a></span></div>
     <div class="topnav-links" id="topnav-links">
         <a href="over-ov.html">Over OSV</a>
         <a href="index.html#johannes/1">Tekst</a>
@@ -283,7 +283,7 @@
         }
         h += '<h2>Bronvermelding</h2><p style="font-size:12.5px;color:var(--teal);">Foto van <a href="' + esc(ms.commons || 'https://commons.wikimedia.org/') + '" target="_blank" rel="noopener">Wikimedia Commons</a> (' + esc(ms.licentie || 'bron') + '). Datering en toeschrijving volgen de gangbare tekstkritische literatuur.</p>';
         el.innerHTML = h;
-        document.title = ms.naam + ' — Handschriften — Open Staten Vertaling';
+        document.title = ms.naam + ' — Handschriften — Open Vertaling';
         if (ms.tekstfragment) renderFragmentText(ms);
     }
 
@@ -310,7 +310,7 @@
         var boeken = Object.keys(BOEKEN);
         if (boeken.length) h += '<h2>Per boek</h2><p>' + boeken.map(function (bid) { return '<a href="handschriften.html?boek=' + encodeURIComponent(bid) + '">' + esc(bkName(bid)) + '</a>'; }).join(' &nbsp;·&nbsp; ') + '</p>';
         el.innerHTML = h;
-        document.title = 'Handschriften — Open Staten Vertaling';
+        document.title = 'Handschriften — Open Vertaling';
     }
 
     Promise.all([
@@ -353,7 +353,7 @@
                 'en de codices met foto’s in het <a href="grondteksten.html#codices">codex-overzicht</a>.</div>';
             h += '<p>→ Lees ' + esc(bk0.nameDutch) + ' in de tekst: <a href="index.html#' + encodeURIComponent(boekId) + '/1">' + esc(bk0.nameDutch) + ' 1</a></p>';
             el.innerHTML = h;
-            document.title = 'Handschriften van ' + bk0.nameDutch + ' — Open Staten Vertaling';
+            document.title = 'Handschriften van ' + bk0.nameDutch + ' — Open Vertaling';
             return;
         }
 
@@ -441,7 +441,7 @@
         html += '<p style="margin-top:14px;">→ Lees ' + esc(naam) + ' in de tekst: <a href="index.html#' + encodeURIComponent(boek.leesInReader || boekId) + '/1">' + esc(naam) + ' 1</a></p>';
 
         el.innerHTML = html;
-        document.title = 'Handschriften van ' + naam + ' — Open Staten Vertaling';
+        document.title = 'Handschriften van ' + naam + ' — Open Vertaling';
         if (oudste && M[oudste]) renderFragmentText(M[oudste]);
     }).catch(function (e) {
         document.getElementById('ms-page').innerHTML = '<p style="color:#c0392b">Kon de handschrift-gegevens niet laden.</p>';

@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — chunk-audio speler
+/* Open Vertaling — chunk-audio speler
  * ------------------------------------------------------------------
  * Speelt een hoofdstuk af uit LOSSE audio-segmenten (chunks) op basis van een
  * manifest, zodat godsnaam (HEERE/JAHWEH/Jehova), kopjes en de boekaankondiging

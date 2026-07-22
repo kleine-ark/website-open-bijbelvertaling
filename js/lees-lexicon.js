@@ -1,4 +1,4 @@
-/* Open Staten Vertaling Leesversie — Lexicon & Strong's */
+/* Open Vertaling Leesversie — Lexicon & Strong's */
 
 const LeesLexicon = {
     hebrewLoaded: false,

@@ -1,6 +1,6 @@
 /* ============================================================================
  * OSV Citaat-bibliotheek  (embed.js)
- * Embed citaten uit de Open Staten Vertaling op deze én op andere websites.
+ * Embed citaten uit de Open Vertaling op deze én op andere websites.
  *
  * ÉÉN BRON: de tekst wordt live van openvertaling.nl geladen — er wordt geen
  * kopie gemaakt. Wijzigt de OSV, dan wijzigt het citaat overal mee. De bron
@@ -139,7 +139,7 @@
       var url = SITE + '/index.html#' + p.book + '/' + p.chapter;
       var linkHtml = showLink
         ? '<a class="osv-bron" href="' + url + '" target="_blank" rel="noopener">— ' + label +
-          ' <span class="osv-merk">(Open Staten Vertaling)</span></a>'
+          ' <span class="osv-merk">(Open Vertaling)</span></a>'
         : '';
       var html = '<span class="osv-tekst">' + parts.join(' ') + '</span>' + linkHtml;
 

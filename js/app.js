@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — Hoofdapplicatie */
+/* Open Vertaling — Hoofdapplicatie */
 
 const App = {
     // Alle kolom-keys in volgorde (num is altijd zichtbaar)
@@ -681,7 +681,7 @@ const App = {
                 hebrewHtml = '<span style="color:#bbb;font-style:italic;direction:ltr;font-size:12px">—</span>';
             }
 
-            // Open Staten Vertaling: gebruik text2026_html (met inline nootcijfers) als die er is,
+            // Open Vertaling: gebruik text2026_html (met inline nootcijfers) als die er is,
             // anders text2026 of textHerzien als platte tekst
             let openVertaling = verse.text2026_html || verse.text2026 || verse.textHerzien || '';
             // Pas vertalingsopties toe (Godsnaam etc.) — alleen tekst, niet HTML-tags

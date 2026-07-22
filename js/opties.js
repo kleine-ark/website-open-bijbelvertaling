@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — Vertalingsopties (parametrische rendering) */
+/* Open Vertaling — Vertalingsopties (parametrische rendering) */
 
 const Opties = {
     STORAGE_KEY: 'sv2026_vertaalopties',

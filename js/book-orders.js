@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — Boek-orderings
+/* Open Vertaling — Boek-orderings
  *
  * Centrale definitie van alle ondersteunde boek-orderings.
  * Elke ordering is een object met groep-labels als keys en book-id arrays als values.

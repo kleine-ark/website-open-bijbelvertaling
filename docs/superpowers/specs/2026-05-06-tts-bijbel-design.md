@@ -5,7 +5,7 @@
 
 ## Doel
 
-Voor elk hoofdstuk in de Open Staten Vertaling een MP3-bestand genereren van de
+Voor elk hoofdstuk in de Open Vertaling een MP3-bestand genereren van de
 voorgelezen bijbeltekst. Eenmalig genereren, opslaan op de server, afspelen
 via de bestaande audio-speler (`js/lees.js`) op `audio/{book}/{ch}.mp3`.
 
