@@ -215,7 +215,19 @@
     });
     document.getElementById('lex-zoek').addEventListener('input', function () { filter(this.value); });
 
-    function selectTaal(taal) {
+    function openKey(key) {
+        var e = entries.filter(function (x) { return x.key === key; })[0];
+        if (!e) return false;
+        // toon zoekterm zodat het item in de lijst zichtbaar is
+        var zoek = document.getElementById('lex-zoek');
+        zoek.value = key; filter(key);
+        showEntry(e);
+        var it = listEl.querySelector('.lex-toc-item[data-i="' + entries.indexOf(e) + '"]');
+        if (it) it.scrollIntoView({ block: 'center' });
+        return true;
+    }
+
+    function selectTaal(taal, wantKey) {
         cur = taal;
         [].forEach.call(document.querySelectorAll('.lex-tab'), function (b) { b.classList.toggle('active', b.dataset.id === taal.id); });
         contentEl.innerHTML = '<p class="placeholder">Kies links een woord…</p>';
@@ -232,7 +244,8 @@
             entries = toEntries(taal);
             document.getElementById('lex-zoek').value = '';
             filter('');
-            history.replaceState(null, '', '?taal=' + taal.id);
+            var opened = wantKey ? openKey(wantKey) : false;
+            history.replaceState(null, '', '?taal=' + taal.id + (opened ? '&entry=' + encodeURIComponent(wantKey) : ''));
         }).catch(function (err) { hintEl.textContent = 'Kon lexicon niet laden.'; console.error(err); });
     }
 
@@ -247,8 +260,11 @@
         (d.books || []).forEach(function (b) { BOOKNAMES[b.id] = b.nameDutch || b.id; CHAPTERCOUNT[b.id] = b.totalChapters || 0; });
     }).finally(function () {
         var q = (location.search.match(/taal=(\w+)/) || [])[1];
+        var entryParam = (location.search.match(/entry=([HG]\d+)/) || [])[1];
+        // Als een Strong-entry gevraagd is, kies automatisch de juiste taal
+        if (entryParam && !q) q = entryParam.charAt(0) === 'H' ? 'hebreeuws' : 'grieks';
         var start = TALEN.filter(function (t) { return t.id === q; })[0] || TALEN[0];
-        selectTaal(start);
+        selectTaal(start, entryParam);
     });
 })();
 </script>

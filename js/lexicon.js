@@ -6,6 +6,18 @@ const Lexicon = {
     hoverTooltip: null,
     hoverTimeout: null,
 
+    // Nederlandse vertaal-overlay (glossNl/definitieNl), lui geladen per taal
+    _nl: { hebrew: null, greek: null },
+    async ensureNl(lang) {
+        if (this._nl[lang]) return this._nl[lang];
+        const url = lang === 'hebrew' ? '/data/lexicon-nl/bdb-nl.json' : '/data/lexicon-nl/abbott-nl.json';
+        try {
+            const r = await fetch(url);
+            this._nl[lang] = r.ok ? await r.json() : {};
+        } catch (e) { this._nl[lang] = {}; }
+        return this._nl[lang];
+    },
+
     init() {
         // Klik: toon uitgebreide lexicon-entry
         document.addEventListener('click', (e) => {
@@ -116,13 +128,17 @@ const Lexicon = {
 
         if (!entry) return;
 
+        // Nederlandse overlay (valt terug op Engels zolang nog niet vertaald)
+        const nl = await this.ensureNl(strongs.startsWith('H') ? 'hebrew' : 'greek');
+        const t = nl[strongs] || {};
+
         const tooltip = document.createElement('div');
         tooltip.className = 'lexicon-tooltip';
 
-        const gloss = entry.gloss || '';
+        const gloss = t.glossNl || entry.gloss || '';
         const woord = entry.woord || '';
-        // Korte definitie: neem eerste 300 tekens
-        let definitie = entry.definitie || '';
+        // Korte definitie: neem eerste 400 tekens (Nederlands indien beschikbaar)
+        let definitie = t.definitieNl || entry.definitie || '';
         if (definitie.length > 400) {
             definitie = definitie.substring(0, 400) + '...';
         }
@@ -136,7 +152,7 @@ const Lexicon = {
             <div class="lexicon-gloss">${gloss}</div>
             <div class="lexicon-def">${definitie}</div>
             <div style="margin-top:8px;border-top:1px solid #eee;padding-top:6px;">
-                <a href="#" style="color:var(--gold);font-size:12px;text-decoration:none;" onclick="event.preventDefault();document.getElementById('lexicon-modal').style.display='flex';document.getElementById('lexicon-search').value='${strongs}';document.getElementById('lexicon-search').dispatchEvent(new Event('input'));document.getElementById('lexicon-lang').value='${strongs.startsWith('H')?'hebrew':'greek'}';return false;">→ Open in lexicon</a>
+                <a href="lexicon-viewer.html?entry=${strongs}" target="_blank" rel="noopener" style="color:var(--gold);font-size:12px;text-decoration:none;">→ Open in lexicon</a>
             </div>
         `;
 
@@ -183,9 +199,12 @@ const Lexicon = {
 
         if (!entry) return;
 
-        const gloss = entry.gloss || '';
+        const nl = await this.ensureNl(strongs.startsWith('H') ? 'hebrew' : 'greek');
+        const t = nl[strongs] || {};
+
+        const gloss = t.glossNl || entry.gloss || '';
         const woord = entry.woord || '';
-        let definitie = entry.definitie || '';
+        let definitie = t.definitieNl || entry.definitie || '';
         if (definitie.length > 400) definitie = definitie.substring(0, 400) + '...';
 
         const tooltip = document.createElement('div');
@@ -199,7 +218,7 @@ const Lexicon = {
             <div class="lexicon-gloss">${gloss}</div>
             <div class="lexicon-def">${definitie}</div>
             <div style="margin-top:8px;border-top:1px solid #eee;padding-top:6px;">
-                <a href="#" style="color:var(--gold);font-size:12px;text-decoration:none;" onclick="event.preventDefault();document.getElementById('lexicon-modal').style.display='flex';document.getElementById('lexicon-search').value='${strongs}';document.getElementById('lexicon-search').dispatchEvent(new Event('input'));document.getElementById('lexicon-lang').value='${strongs.startsWith('H')?'hebrew':'greek'}';return false;">→ Open in lexicon</a>
+                <a href="lexicon-viewer.html?entry=${strongs}" target="_blank" rel="noopener" style="color:var(--gold);font-size:12px;text-decoration:none;">→ Open in lexicon</a>
             </div>
         `;
 
