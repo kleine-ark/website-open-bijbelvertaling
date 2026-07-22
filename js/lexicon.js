@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — Lexicon tooltip integratie */
+/* Open Vertaling — Lexicon tooltip integratie */
 
 const Lexicon = {
     currentTooltip: null,

@@ -1,4 +1,4 @@
-# Desktop-app (Tauri) — Open Staten Vertaling
+# Desktop-app (Tauri) — Open Vertaling
 
 De website wordt met [Tauri 2](https://tauri.app) verpakt tot een **offline
 desktop-app** voor **Windows** en **Linux**. De volledige bijbeltekst, grondtekst,

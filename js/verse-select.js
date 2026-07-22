@@ -374,7 +374,7 @@ const VerseSelect = {
     async share() {
         const data = this._buildRefAndText();
         if (!data) return;
-        const text = `${data.plain}\n\n— ${data.ref} (Open Staten Vertaling)`;
+        const text = `${data.plain}\n\n— ${data.ref} (Open Vertaling)`;
         if (navigator.share) {
             try { await navigator.share({ title: data.ref, text, url: location.href }); return; }
             catch (e) { if (e.name === 'AbortError') return; }
@@ -456,7 +456,7 @@ const VerseSelect = {
         ctx.font = 'italic 26px Georgia, serif'; ctx.fillStyle = '#5a7a8a';
         ctx.fillText(`— ${data.ref}`, PAD, y); y += 38;
         ctx.font = '18px "Fira Sans", sans-serif'; ctx.fillStyle = '#999';
-        ctx.fillText('Open Staten Vertaling · openvertaling.nl', PAD, y); y += 30;
+        ctx.fillText('Open Vertaling · openvertaling.nl', PAD, y); y += 30;
         const finalH = Math.max(y + PAD, 400);
         const tmp = document.createElement('canvas'); tmp.width = W; tmp.height = finalH;
         tmp.getContext('2d').drawImage(canvas, 0, 0);

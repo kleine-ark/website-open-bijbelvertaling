@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — AUDIO_AVAILABLE + stem-keuze
+/* Open Vertaling — AUDIO_AVAILABLE + stem-keuze
  * GENEREER-OUTPUT. Higgs Audio v3, man + vrouw. Alleen hoofdstukken met beide
  * stemmen daadwerkelijk op de server (consistent met wat afspeelbaar is).
  */

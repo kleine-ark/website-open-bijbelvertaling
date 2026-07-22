@@ -1,4 +1,4 @@
-# Open Staten Vertaling — Chunked audio (optionele godsnaam & kopjes)
+# Open Vertaling — Chunked audio (optionele godsnaam & kopjes)
 
 **Datum:** 2026-07-15
 **Status:** ontwerp

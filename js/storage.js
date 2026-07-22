@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — localStorage persistentie */
+/* Open Vertaling — localStorage persistentie */
 
 const Storage = {
     PREFIX: 'sv2026_',

@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — Bijbelverwijzingen klikbaar maken */
+/* Open Vertaling — Bijbelverwijzingen klikbaar maken */
 
 const References = {
     // Mapping van afkortingen naar boek-ID (webapp) en volledige naam

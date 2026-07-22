@@ -1,6 +1,6 @@
 ---
 name: geez-vertalen
-description: Gebruik wanneer een boek of hoofdstuk uit het Ge'ez (klassiek Ethiopisch) naar het Nederlands vertaald moet worden voor de Open Staten Vertaling — bijv. Henoch, Jubileeën of andere Ethiopische boeken uit de map ethiopische-boeken/.
+description: Gebruik wanneer een boek of hoofdstuk uit het Ge'ez (klassiek Ethiopisch) naar het Nederlands vertaald moet worden voor de Open Vertaling — bijv. Henoch, Jubileeën of andere Ethiopische boeken uit de map ethiopische-boeken/.
 ---
 
 # Ge'ez vertalen naar OSV-Nederlands

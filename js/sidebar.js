@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — Sidebar boomnavigatie */
+/* Open Vertaling — Sidebar boomnavigatie */
 
 const Sidebar = {
     init() {

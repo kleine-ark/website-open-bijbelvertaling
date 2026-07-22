@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — Ge'ez-lexicon (Ethiopische boeken)
+/* Open Vertaling — Ge'ez-lexicon (Ethiopische boeken)
  *
  * Ge'ez (Ethiopisch/Fidäl) heeft geen Strong's-nummers, dus de gewone Strong's-
  * lexiconpopup werkt er niet voor. Deze module maakt Ge'ez-grondtekstwoorden

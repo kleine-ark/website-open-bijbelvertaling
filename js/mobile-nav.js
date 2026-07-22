@@ -1,4 +1,4 @@
-/* Open Staten Vertaling — Mobiele navigatie (≤768px)
+/* Open Vertaling — Mobiele navigatie (≤768px)
  *
  * Vervangt de sidebar-driehoekjes op mobiel door:
  *   - boek-dropdown (links)  → kies boek (gegroepeerd OT/NT/Apocrief)
