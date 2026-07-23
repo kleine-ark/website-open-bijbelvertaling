@@ -11,9 +11,13 @@ const Opties = {
         versnummers: 'aan',      // 'aan' | 'uit'
         otSheol: 'dodenrijk',    // 'dodenrijk' (OT-context, modern) | 'hel' (SV-traditioneel)
         thema: 'auto',           // 'auto' (systeem) | 'licht' | 'donker'
+        arabischeNamen: 'uit',   // 'uit' (Nederlandse namen) | 'aan' (Musa, Ibrahim, Isa …) — alleen OV-tekst
     },
 
     state: {},
+
+    // Vervang-paren voor Arabische namen ([regex, translit]); lui geladen uit data/namen-arabisch.json
+    _arNamen: null,
 
     init() {
         const saved = localStorage.getItem(this.STORAGE_KEY);
@@ -40,6 +44,9 @@ const Opties = {
         this.applyLayoutClass();
         this.applyVerseNumbersClass();
         this.applyThemeClass();
+
+        // Arabische namen lui laden (en, indien al ingeschakeld, hoofdstuk herrenderen)
+        this.loadArabischeNamen();
 
         // Versnummers-checkbox (in 'Pagina & leeshulp') synchroniseren met state
         const vnCb = document.getElementById('toggle-versnummers');
@@ -175,7 +182,40 @@ const Opties = {
         }
         // 'ov': geen transformatie
 
+        // === Arabische (islamitische) namen (optioneel) ===
+        // Vervangt gevestigde bijbelse figuren/begrippen door hun Arabische naamvorm.
+        // Alleen op de OV-tekst; historische kolommen blijven ongemoeid.
+        if (this.state.arabischeNamen === 'aan' && this._arNamen) {
+            out = this._replaceOutsideTags(out, this._arNamen);
+        }
+
         return out;
+    },
+
+    /** Laad de Arabische-namen-tabel en bouw vervang-paren (whole-word). */
+    loadArabischeNamen() {
+        fetch('data/namen-arabisch.json')
+            .then(r => (r.ok ? r.json() : null))
+            .then(d => {
+                if (!d || !Array.isArray(d.namen)) return;
+                const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const pairs = [];
+                d.namen.forEach(n => {
+                    if (!n.translit) return;
+                    [n.nl].concat(n.varianten || []).forEach(f => {
+                        if (f) pairs.push([new RegExp('\\b' + esc(f) + '\\b', 'g'), n.translit]);
+                    });
+                });
+                this._arNamen = pairs;
+                // Als de optie al aan stond: alleen her-renderen als er al een hoofdstuk staat.
+                // NOOIT location.reload() hier (zou een herlaad-lus bij het opstarten geven).
+                if (this.state.arabischeNamen === 'aan' &&
+                    typeof Navigation !== 'undefined' && Navigation.currentBook && Navigation.currentChapter &&
+                    typeof App !== 'undefined' && App.renderChapter) {
+                    App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
+                }
+            })
+            .catch(() => {});
     },
 
     /**
