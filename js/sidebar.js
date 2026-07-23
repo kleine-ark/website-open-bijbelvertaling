@@ -201,10 +201,6 @@ const Sidebar = {
 
             const groupEl = document.createElement('div');
             groupEl.className = 'tree-group';
-            // Ethiopische boeken (buiten de canon): standaard ingeklapt
-            if (group.label === (window.ETHIOPIC_GROUP_LABEL || 'Ethiopische boeken (buiten de canon)')) {
-                groupEl.classList.add('collapsed');
-            }
 
             const labelEl = document.createElement('div');
             labelEl.className = 'tree-group-label';
@@ -217,7 +213,17 @@ const Sidebar = {
             const booksContainer = document.createElement('div');
             booksContainer.className = 'tree-books';
 
+            const ethSet = new Set(window.ETHIOPIC_BOOKS || []);
+            let ethHeaderDone = false;
             for (const book of books) {
+                // Sub-kop vóór het eerste Ethiopische boek (subcategorie binnen Apocriefen)
+                if (!ethHeaderDone && ethSet.has(book.id)) {
+                    const sub = document.createElement('div');
+                    sub.className = 'tree-subgroup-label';
+                    sub.textContent = window.ETHIOPIC_GROUP_LABEL || 'Ethiopische boeken (buiten de canon)';
+                    booksContainer.appendChild(sub);
+                    ethHeaderDone = true;
+                }
                 const bookEl = document.createElement('div');
                 bookEl.className = 'tree-book collapsed'; // standaard ingeklapt
                 bookEl.dataset.name = book.nameDutch;

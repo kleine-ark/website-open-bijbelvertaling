@@ -178,14 +178,14 @@ function withEthiopic(groups, manifest) {
     if (eth.length === 0) return groups;
     const keys = Object.keys(groups);
     if (keys.some(k => groups[k].some(id => ETHIOPIC_BOOKS.includes(id)))) return groups; // al aanwezig
-    let insertAfter = -1;
-    keys.forEach((k, i) => { if (groups[k].includes('1makkabeeen')) insertAfter = i; });
+    // Hang de Ethiopische boeken als subcategorie ACHTER de apocriefen (groep met 1 Makkabeeën),
+    // binnen diezelfde groep — dus geen eigen top-categorie meer. De zijbalk toont er een sub-kop.
+    const apoKey = keys.find(k => groups[k].includes('1makkabeeen'));
     const out = {};
-    keys.forEach((k, i) => {
-        out[k] = groups[k];
-        if (i === insertAfter) out[ETHIOPIC_GROUP_LABEL] = eth;
+    keys.forEach(k => {
+        out[k] = (k === apoKey) ? groups[k].concat(eth) : groups[k]; // concat = kopie, muteert bron-array niet
     });
-    if (insertAfter === -1) out[ETHIOPIC_GROUP_LABEL] = eth; // geen apocriefen-groep → achteraan
+    if (!apoKey) out[ETHIOPIC_GROUP_LABEL] = eth; // geen apocriefen-groep → dan toch eigen groep achteraan
     return out;
 }
 
