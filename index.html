@@ -21,7 +21,7 @@
     <nav id="topnav">
     <div class="topnav-brand">Open Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.21.6</a></span></div>
     <div class="topnav-links" id="topnav-links">
-        <a href="over-ov.html">Over OSV</a>
+        <a href="over-ov.html">Over OV</a>
         <a href="index.html#johannes/1">Tekst</a>
         <a href="onderwerpen.html">Onderwerpen</a>
         <a href="wiki.html">Wiki</a>
@@ -113,7 +113,7 @@
                     this.setAttribute('aria-pressed', on);
                     this.classList.toggle('is-on', on);
                     const cb = document.querySelector('input[data-toggle-col=diff]'); if (cb) { cb.checked = on; cb.dispatchEvent(new Event('change',{bubbles:true})); }
-                ">Verschillen SV-OSV</button>
+                ">Verschillen SV-OV</button>
             </div>
         </div>
         <div id="book-intro"></div>
@@ -127,10 +127,10 @@
             <div data-col="margin1637">KT 1637</div>
             <div data-col="sv1888">SV 1888</div>
             <div data-col="marginSV1888">KT 1888</div>
-            <div data-col="2026">OSV</div>
+            <div data-col="2026">OV</div>
             <div data-col="margin2026">OSV KT</div>
             <div data-col="hebrew">Hebr/Grieks/Aram/Lat/Ge'ez</div>
-            <div data-col="diff">Verschillen SV-OSV</div>
+            <div data-col="diff">Verschillen SV-OV</div>
             <div data-col="noteDiff">Verschillen KT SV-OSV</div>
         </div>
 
@@ -521,20 +521,25 @@
             <div class="opt-section">Theologisch</div>
             <div class="opt-group">
                 <div class="opt-group-label">Godsnaam (OT)</div>
-                <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="ov"> JAHWEH / God JAHWEH <span class="hint">(OSV)</span></label>
+                <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="ov"> JAHWEH / God JAHWEH <span class="hint">(OV)</span></label>
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="klassiek"> HEERE / de HEERE God <span class="hint">(SV)</span></label>
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jehovah"> Jehovah / God Jehovah <span class="hint">(klassiek lat.)</span></label>
                 <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jhwh"> יהוה / God יהוה <span class="hint">(Hebr.)</span></label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Aanspreektitel (NT)</div>
-                <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="heere"> Heere <span class="hint">(OSV)</span></label>
+                <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="heere"> Heere <span class="hint">(OV)</span></label>
                 <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="here"> Here <span class="hint">(Kurios — NBG-stijl)</span></label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Sheol (OT)</div>
-                <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="dodenrijk"> Dodenrijk <span class="hint">(OSV, modern)</span></label>
+                <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="dodenrijk"> Dodenrijk <span class="hint">(OV, modern)</span></label>
                 <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="hel"> Hel <span class="hint">(SV-traditioneel)</span></label>
+            </div>
+            <div class="opt-group">
+                <div class="opt-group-label">Namen van personen</div>
+                <label><input type="radio" name="opt-arabischeNamen" data-optie="arabischeNamen" value="uit"> Nederlands <span class="hint">(standaard)</span></label>
+                <label><input type="radio" name="opt-arabischeNamen" data-optie="arabischeNamen" value="aan"> Arabisch <span class="hint">(Musa, Ibrahim, Isa …)</span></label>
             </div>
 
             <!-- ===== 3. VERTALING &amp; BRONNEN ===== -->
@@ -543,7 +548,7 @@
                 <div class="opt-group-label">Tekstedities</div>
                 <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
                 <label><input type="checkbox" data-toggle-col="sv1888"> SV 1888</label>
-                <label><input type="checkbox" data-toggle-col="2026" checked> OSV</label>
+                <label><input type="checkbox" data-toggle-col="2026" checked> OV</label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Kanttekeningen</div>
@@ -555,7 +560,7 @@
             <div class="opt-group">
                 <div class="opt-group-label">Analyse</div>
                 <label><input type="checkbox" data-toggle-col="hebrew"> Hebr/Grieks/Aram/Lat/Ge'ez</label>
-                <label><input type="checkbox" data-toggle-col="diff"> Verschillen SV-OSV</label>
+                <label><input type="checkbox" data-toggle-col="diff"> Verschillen SV-OV</label>
                 <label><input type="checkbox" data-toggle-col="noteDiff"> Verschillen KT SV-OSV</label>
                 <label><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"> Tags</label>
             </div>
