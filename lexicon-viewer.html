@@ -43,6 +43,10 @@
         .lex-src { margin-top: 26px; font-size: 12px; color: #999; border-top: 1px solid var(--border, #e5e1d8); padding-top: 10px; }
         .lex-src a { color: var(--teal); }
         .lex-concept { display: inline-block; font-size: 11px; background: rgba(203,164,73,0.18); color: #8a6d1f; border-radius: 10px; padding: 1px 9px; margin-left: 6px; }
+        .lex-orig-toggle { margin-left: auto; align-self: center; font: 600 12px var(--font-body); color: var(--teal); background: transparent; border: 1px solid var(--border, #d4d0c8); border-radius: 14px; padding: 3px 12px; cursor: pointer; white-space: nowrap; }
+        .lex-orig-toggle:hover { background: rgba(203,164,73,0.12); color: var(--navy); border-color: var(--gold); }
+        .lex-def[lang="en"] { }
+        :root[data-theme="donker"] .lex-orig-toggle { color: var(--text-secondary); border-color: var(--border-default); }
         @media (max-width: 760px) {
             .lex-shell { flex-direction: column; height: auto; }
             .lex-toc { width: 100%; max-height: 40vh; border-right: none; border-bottom: 1px solid var(--border); }
@@ -65,7 +69,7 @@
         <a href="index.html#johannes/1">Tekst</a>
         <a href="onderwerpen.html">Onderwerpen</a>
         <a href="wiki.html">Wiki</a>
-        <a href="lexicon.html" class="active">Lexicon</a>
+        <a href="lexicon-viewer.html?taal=hebreeuws" class="active">Lexicon</a>
         <a href="kaart.html">Kaart</a>
         <a href="contact.html">Over ons</a>
     </div>
@@ -149,6 +153,7 @@
     function refHref(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); var cv = ref.slice(sp + 1).split(':'); return 'index.html#' + b + '/' + cv[0] + '/' + (cv[1] || ''); }
 
     var cur = null, entries = [], loaded = {};
+    var showOrig = false, currentEntry = null;   // 'originele Engelse versie' tonen i.p.v. NL
     var listEl = document.getElementById('lex-list'), contentEl = document.getElementById('lex-content'), hintEl = document.getElementById('lex-hint');
 
     function loadScript(src) { return new Promise(function (res, rej) { var s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s); }); }
@@ -159,10 +164,13 @@
             var nl = taal._nl || {};
             return Object.keys(obj).map(function (k) {
                 var t = nl[k] || {};
-                var def = t.definitieNl || obj[k].definitie || t.vormNl || obj[k].vorm || '';
+                var defEn = obj[k].definitie || obj[k].vorm || '';
+                var def = t.definitieNl || t.vormNl || defEn;
                 return { key: k, woord: obj[k].woord,
                     gloss: t.glossNl || obj[k].gloss,
+                    glossEn: obj[k].gloss,
                     def: def,
+                    defEn: defEn,          // originele Engelse definitie (BDB/Abbott)
                     nl: !!(t.definitieNl || t.glossNl),
                     abbr: true };
             });
@@ -191,13 +199,21 @@
     function langAttr() { return cur.id === 'grieks' ? 'grc' : cur.id === 'geez' ? 'gez' : cur.id === 'latijn' ? 'la' : 'he'; }
 
     function showEntry(e) {
+        currentEntry = e;
         [].forEach.call(listEl.querySelectorAll('.lex-toc-item'), function (n) { n.classList.toggle('active', +n.dataset.i === entries.indexOf(e)); });
+        // Kan er tussen NL en origineel Engels geschakeld worden? (alleen bij vertaalde BDB/Abbott-entries)
+        var heeftEngels = !!(e.defEn && e.nl);
+        var origineel = showOrig && heeftEngels;
+        var gloss = origineel ? (e.glossEn || e.gloss) : e.gloss;
+        var def = origineel ? e.defEn : e.def;
         var h = '<div class="lex-entry-head"><span class="lex-entry-strong">' + esc(e.key) + '</span>' +
             '<span class="lex-entry-woord" lang="' + langAttr() + '">' + esc(e.woord || '') + '</span>' +
-            (e.gloss ? '<span class="lex-entry-gloss">' + esc(e.gloss) + '</span>' : '') +
-            (cur.abbr && !e.nl ? '<span class="lex-concept" title="De Nederlandse vertaling van de volledige definitie volgt nog">Definitie nog niet vertaald</span>' : '') + '</div>';
-        if (e.def) {
-            h += '<div class="lex-def">' + (cur.abbr ? linkifyAbbr(e.def) : esc(e.def)) + '</div>';
+            (gloss ? '<span class="lex-entry-gloss">' + esc(gloss) + '</span>' : '') +
+            (cur.abbr && !e.nl ? '<span class="lex-concept" title="De Nederlandse vertaling van de volledige definitie volgt nog">Definitie nog niet vertaald</span>' : '') +
+            (heeftEngels ? '<button class="lex-orig-toggle" id="lex-orig-toggle">' + (origineel ? '← Nederlandse versie' : 'Originele Engelse versie →') + '</button>' : '') +
+            '</div>';
+        if (def) {
+            h += '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + (cur.abbr ? linkifyAbbr(def) : esc(def)) + '</div>';
         }
         if (e.verw && e.verw.length) {
             h += '<div class="lex-verw"><strong>Voorkomens:</strong> ' + e.verw.map(function (r) {
@@ -212,6 +228,13 @@
     listEl.addEventListener('click', function (e) {
         var it = e.target.closest('.lex-toc-item'); if (!it) return;
         showEntry(entries[+it.dataset.i]);
+    });
+    // Schakel tussen Nederlandse vertaling en originele Engelse versie
+    contentEl.addEventListener('click', function (ev) {
+        if (ev.target && ev.target.id === 'lex-orig-toggle') {
+            showOrig = !showOrig;
+            if (currentEntry) showEntry(currentEntry);
+        }
     });
     document.getElementById('lex-zoek').addEventListener('input', function () { filter(this.value); });
 
