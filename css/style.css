@@ -1067,6 +1067,19 @@ body.drawer-open #mobile-backdrop { display: block; }
 .tree-group.collapsed .arrow { transform: rotate(-90deg); }
 .tree-group.collapsed .tree-books { display: none; }
 
+/* Subcategorie binnen een groep (bv. Ethiopische boeken onder de Apocriefen) */
+.tree-subgroup-label {
+    padding: 6px 16px 4px 24px;
+    margin-top: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--teal, #7a9a9a);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
 /* Boeken */
 .tree-book {
     margin-bottom: 1px;
