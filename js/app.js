@@ -686,6 +686,8 @@ const App = {
             let openVertaling = verse.text2026_html || verse.text2026 || verse.textHerzien || '';
             // Pas vertalingsopties toe (Godsnaam etc.) — alleen tekst, niet HTML-tags
             if (typeof Opties !== 'undefined') openVertaling = Opties.transformOV(openVertaling, book.testament);
+            // Optioneel: geografische locaties markeren (nu Genesis)
+            if (typeof Opties !== 'undefined' && Opties.markeerGeo) openVertaling = Opties.markeerGeo(openVertaling, bookId, chapterNum, verse.number);
 
             // Strong's nummers inline bij SV1888 en OV tekst
             let sv1888Text = verse.textSV1888_html || verse.textSV1888 || '';

@@ -1067,6 +1067,17 @@ body.drawer-open #mobile-backdrop { display: block; }
 .tree-group.collapsed .arrow { transform: rotate(-90deg); }
 .tree-group.collapsed .tree-books { display: none; }
 
+/* Geografische locaties gemarkeerd in de leestekst (optioneel) */
+.geo-locatie {
+    border-bottom: 1px dotted var(--teal, #2a7d7d);
+    cursor: pointer;
+    background: rgba(42,125,125,0.07);
+    border-radius: 2px;
+    padding: 0 1px;
+}
+.geo-locatie:hover { background: rgba(42,125,125,0.18); color: var(--navy); }
+:root[data-theme="donker"] .geo-locatie { border-bottom-color: #6fb3b3; background: rgba(111,179,179,0.12); }
+
 /* Subcategorie binnen een groep (bv. Ethiopische boeken onder de Apocriefen) */
 .tree-subgroup-label {
     padding: 6px 16px 4px 24px;
