@@ -50,6 +50,9 @@
         .lex-def[lang="en"] { }
         .lex-lexlabel { margin-top: 20px; font: 600 12px var(--font-body); color: var(--teal); text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border, #e5e1d8); padding-bottom: 3px; }
         .lex-lexlabel .lex-concept { text-transform: none; letter-spacing: 0; }
+        .lex-xref { color: var(--navy); cursor: pointer; border-bottom: 1px dashed var(--teal); }
+        .lex-xref:hover { background: rgba(42,125,125,0.14); }
+        :root[data-theme="donker"] .lex-xref { color: var(--text-primary); border-bottom-color: #6fb3b3; }
         :root[data-theme="donker"] .lex-orig-toggle { color: var(--text-secondary); border-color: var(--border-default); }
         @media (max-width: 760px) {
             .lex-shell { flex-direction: column; height: auto; }
@@ -152,6 +155,22 @@
         });
     }
 
+    // Onderlinge links: Griekse/Hebreeuwse woorden in een definitie die zelf een lemma zijn,
+    // klikbaar maken naar dat lemma (cur._hw = kop-woord -> Strong-nummer).
+    var XREF_RE = { grieks: /[Ͱ-Ͽἀ-῿]{4,}/g, hebreeuws: /[֐-׿]{3,}/g };
+    // Basisvorm: strip accenten/spiritus (Grieks) en niqqud/cantillatie (Hebreeuws) — accent-ongevoelig matchen
+    function baseForm(w) { return w.normalize('NFD').replace(/[̀-ͯ҃-҉֑-ׇ᪰-᫿᷀-᷿]/g, '').toLowerCase(); }
+    function linkifyXref(html, selfKey) {
+        if (!cur || !cur._hw) return html;
+        var re = XREF_RE[cur.id]; if (!re) return html;
+        return html.replace(/>([^<]+)</g, function (m, txt) {
+            return '>' + txt.replace(re, function (w) {
+                var k = cur._hw[baseForm(w)];
+                return (k && k !== selfKey) ? '<a class="lex-xref" data-key="' + k + '">' + w + '</a>' : w;
+            }) + '<';
+        });
+    }
+
     // Linkify verwijzingen in BDB/Abbott-definities: toon Nederlandse boeknaam,
     // en link ook kale vervolg-verwijzingen (die het vorige boek erven).
     function linkifyAbbr(html) {
@@ -248,12 +267,12 @@
         if (e.ab) {
             // Twee lexicons gecombineerd (TBESG + Abbott-Smith), elk gelabeld
             if (def) h += '<div class="lex-lexlabel">' + esc(cur.lex1label || 'Lexicon 1') + '</div>' +
-                '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + linkifyTbesg(def) + '</div>';
+                '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + linkifyXref(linkifyTbesg(def), e.key) + '</div>';
             var abDef = origineel ? e.ab.defEn : e.ab.def;
             if (abDef) h += '<div class="lex-lexlabel">' + esc(cur.lex2.label) + (e.ab.nl ? '' : ' <span class="lex-concept" title="Nederlandse vertaling volgt">nog niet vertaald</span>') + '</div>' +
-                '<div class="lex-def"' + ((origineel || !e.ab.nl) ? ' lang="en"' : '') + '>' + linkifyAbbr(abDef) + '</div>';
+                '<div class="lex-def"' + ((origineel || !e.ab.nl) ? ' lang="en"' : '') + '>' + linkifyXref(linkifyAbbr(abDef), e.key) + '</div>';
         } else if (def) {
-            h += '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + (cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def)) + '</div>';
+            h += '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + linkifyXref(cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def), e.key) + '</div>';
         }
         if (e.verw && e.verw.length) {
             h += '<div class="lex-verw"><strong>Voorkomens:</strong> ' + e.verw.map(function (r) {
@@ -284,7 +303,11 @@
         if (ev.target && ev.target.id === 'lex-orig-toggle') {
             showOrig = !showOrig;
             if (currentEntry) showEntry(currentEntry);
+            return;
         }
+        // Onderlinge link: spring naar het aangeklikte lemma
+        var xr = ev.target.closest && ev.target.closest('.lex-xref');
+        if (xr && xr.dataset.key) { ev.preventDefault(); openKey(xr.dataset.key); }
     });
     document.getElementById('lex-zoek').addEventListener('input', function () { filter(this.value); });
 
@@ -325,6 +348,20 @@
         ready.then(function () {
             loaded[taal.id] = true;
             entries = toEntries(taal);
+            // Kop-woord -> Strong-nummer index voor onderlinge links (Grieks/Hebreeuws)
+            if (taal.abbr && !taal._hw && window[taal.global]) {
+                var obj = window[taal.global], hw = {}, wre = XREF_RE[taal.id];
+                if (wre) Object.keys(obj).forEach(function (k) {
+                    (obj[k].woord || '').split(/[,\s]+/).forEach(function (p) {
+                        p = p.trim();
+                        if (p && new RegExp('^' + wre.source + '$').test(p)) {
+                            var bf = baseForm(p);
+                            if (bf && !(bf in hw)) hw[bf] = k;
+                        }
+                    });
+                });
+                taal._hw = hw;
+            }
             document.getElementById('lex-zoek').value = '';
             filter('');
             var opened = wantKey ? openKey(wantKey) : false;
