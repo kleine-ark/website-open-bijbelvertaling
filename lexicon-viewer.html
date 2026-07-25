@@ -87,8 +87,8 @@
     'use strict';
     // Taal-configuratie
     var TALEN = [
-        { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', nlJson: 'data/lexicon-nl/bdb-nl.json', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>. Nederlandse vertaling automatisch, in bewerking.' },
-        { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', abbr: true, reftags: true, bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
+        { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', nlJson: 'data/lexicon-nl/bdb-nl.json', refsJson: 'data/lexicon-nl/strong-refs-he.json', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>. Nederlandse vertaling automatisch, in bewerking.' },
+        { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true, bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', bron: '4 Ezra (Vulgaat-traditie) — grondtekst-glossen' },
         { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', bron: 'Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)' }
     ];
@@ -240,6 +240,16 @@
                 return '<a target="_top" href="' + refHref(r) + '">' + esc(prettyRef(r)) + '</a>';
             }).join('') + '</div>';
         }
+        // Voorkomens uit de Strong-getagde grondtekst (BDB/TBESG)
+        if (cur.abbr && cur._refs) {
+            var refs = cur._refs[e.key] || [];
+            if (refs.length) {
+                var cap = 250, shown = refs.slice(0, cap);
+                h += '<div class="lex-verw"><strong>Voorkomens (' + refs.length + '):</strong> ' +
+                    shown.map(function (r) { return '<a target="_top" href="' + refHref(r) + '">' + esc(prettyRef(r)) + '</a>'; }).join('') +
+                    (refs.length > cap ? ' <span style="color:#999;">… en nog ' + (refs.length - cap) + ' meer</span>' : '') + '</div>';
+            }
+        }
         h += '<div class="lex-src">Bron: ' + cur.bron + '. Tekstverwijzingen zijn aanklikbaar en openen de tekst.</div>';
         contentEl.innerHTML = h;
         contentEl.scrollTop = 0;
@@ -281,6 +291,10 @@
                 .then(function () {
                     if (!taal.nlJson) return;
                     return fetch(taal.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._nl = d; }).catch(function () { taal._nl = {}; });
+                })
+                .then(function () {
+                    if (!taal.refsJson) return;
+                    return fetch(taal.refsJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._refs = d; }).catch(function () { taal._refs = {}; });
                 });
         ready.then(function () {
             loaded[taal.id] = true;
