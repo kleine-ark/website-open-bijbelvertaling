@@ -12,12 +12,14 @@ const Opties = {
         otSheol: 'dodenrijk',    // 'dodenrijk' (OT-context, modern) | 'hel' (SV-traditioneel)
         thema: 'auto',           // 'auto' (systeem) | 'licht' | 'donker'
         arabischeNamen: 'uit',   // 'uit' (Nederlandse namen) | 'aan' (Musa, Ibrahim, Isa …) — alleen OV-tekst
+        geoMarkeren: 'uit',      // 'uit' | 'aan' — geografische locaties in de tekst markeren (nu: Genesis)
     },
 
     state: {},
 
     // Vervang-paren voor Arabische namen ([regex, translit]); lui geladen uit data/namen-arabisch.json
     _arNamen: null,
+    _geoData: null,          // { namen:{naam:{type}}, verzen:{"ch:vs":[substrings]} } per boek (nu genesis)
 
     init() {
         const saved = localStorage.getItem(this.STORAGE_KEY);
@@ -47,6 +49,13 @@ const Opties = {
 
         // Arabische namen lui laden (en, indien al ingeschakeld, hoofdstuk herrenderen)
         this.loadArabischeNamen();
+        this.loadGeoData();
+
+        // Klik op een gemarkeerde geografische locatie -> geografie-pagina (later: kaart/geodata)
+        document.addEventListener('click', function (e) {
+            var geo = e.target.closest && e.target.closest('.geo-locatie');
+            if (geo) { window.location.href = 'geografie.html'; }
+        });
 
         // Versnummers-checkbox (in 'Pagina & leeshulp') synchroniseren met state
         const vnCb = document.getElementById('toggle-versnummers');
@@ -216,6 +225,43 @@ const Opties = {
                 }
             })
             .catch(() => {});
+    },
+
+    /** Laad de geografische-locatie-data (nu Genesis). */
+    loadGeoData() {
+        fetch('data/genesis-geo.json')
+            .then(r => (r.ok ? r.json() : null))
+            .then(d => {
+                if (!d || !d.verzen) return;
+                this._geoData = d;
+                if (this.state.geoMarkeren === 'aan' &&
+                    typeof Navigation !== 'undefined' && Navigation.currentBook && Navigation.currentChapter &&
+                    typeof App !== 'undefined' && App.renderChapter) {
+                    App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
+                }
+            })
+            .catch(() => {});
+    },
+
+    /** Markeer geografische locaties in een OV-vers (buiten HTML-tags). */
+    markeerGeo(html, book, ch, vnum) {
+        if (this.state.geoMarkeren !== 'aan' || book !== 'genesis' || !this._geoData) return html;
+        var locs = this._geoData.verzen[ch + ':' + vnum];
+        if (!locs || !locs.length) return html;
+        var namen = this._geoData.namen || {};
+        var esc = function (s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); };
+        var uniq = Object.keys(locs.reduce(function (a, l) { a[l] = 1; return a; }, {}))
+            .sort(function (a, b) { return b.length - a.length; });
+        var re = new RegExp('(' + uniq.map(esc).join('|') + ')', 'g');
+        var tokenRegex = /(<[^>]+>)|([^<]+)/g, result = '', m;
+        while ((m = tokenRegex.exec(html)) !== null) {
+            if (m[1]) { result += m[1]; continue; }
+            result += m[2].replace(re, function (mm) {
+                var type = (namen[mm] && namen[mm].type) ? ' — ' + namen[mm].type : '';
+                return '<span class="geo-locatie" data-geo="' + mm.replace(/"/g, '') + '" title="Geografische locatie' + type + '">' + mm + '</span>';
+            });
+        }
+        return result;
     },
 
     /**
