@@ -100,7 +100,7 @@
     // Taal-configuratie
     var TALEN = [
         { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', nlJson: 'data/lexicon-nl/bdb-nl.json', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>. Nederlandse vertaling automatisch, in bewerking.' },
-        { id: 'grieks', label: 'Grieks', src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', abbr: true, bron: 'Abbott-Smith, Manual Greek Lexicon (1922), publiek domein — <a href="https://github.com/translatable-exegetical-tools/Abbott-Smith" target="_blank" rel="noopener">Abbott-Smith</a>. Nederlandse vertaling automatisch, in bewerking.' },
+        { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', abbr: true, reftags: true, bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', bron: '4 Ezra (Vulgaat-traditie) — grondtekst-glossen' },
         { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', bron: 'Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)' }
     ];
@@ -131,6 +131,36 @@
     function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
     var BOOKNAMES = {}, CHAPTERCOUNT = {};
     function bookName(id) { return BOOKNAMES[id] || id; }
+
+    // TBESG (Grieks) gebruikt gestructureerde <ref='Luk.4.34.'>…</ref>-tags met eigen boek-codes.
+    var TBESG_BOOK = {
+        Gen:'genesis', Exo:'exodus', Lev:'leviticus', Num:'numeri', Deu:'deuteronomium', Jos:'jozua',
+        Jdg:'richteren', Rut:'ruth', '1Sa':'1samuel', '2Sa':'2samuel', '1Ki':'1koningen', '2Ki':'2koningen',
+        '3Ki':'1koningen', '4Ki':'2koningen', '1Ch':'1kronieken', '2Ch':'2kronieken', Ezr:'ezra', Neh:'nehemia',
+        Est:'esther', Job:'job', Psa:'psalmen', Pro:'spreuken', Ecc:'prediker', Sng:'hooglied', Isa:'jesaja',
+        Jer:'jeremia', Lam:'klaagliederen', Ezk:'ezechiel', Dan:'daniel', Hos:'hosea', Jol:'joel', Amo:'amos',
+        Oba:'obadja', Jon:'jona', Mic:'micha', Nam:'nahum', Hab:'habakuk', Zep:'zefanja', Hag:'haggai',
+        Zec:'zacharia', Mal:'maleachi',
+        Mat:'mattheus', Matt:'mattheus', Mrk:'markus', Mark:'markus', Luk:'lukas', Luke:'lukas', Jhn:'johannes',
+        John:'johannes', Act:'handelingen', Acts:'handelingen', Rom:'romeinen', '1Co':'1korinthiers',
+        '1Cor':'1korinthiers', '2Co':'2korinthiers', Gal:'galaten', Eph:'efeziers', Php:'filippenzen',
+        Phil:'filippenzen', Col:'kolossenzen', '1Th':'1tessalonicensen', '2Th':'2tessalonicensen',
+        '1Ti':'1timotheus', '1Tim':'1timotheus', Tim:'1timotheus', '2Ti':'2timotheus', Tit:'titus',
+        Heb:'hebreeen', Jas:'jakobus', '1Pe':'1petrus', '1Pet':'1petrus', '2Pe':'2petrus', '1Jn':'1johannes',
+        '1Jo':'1johannes', '2Jn':'2johannes', '3Jn':'3johannes', Jude:'judas', Rev:'openbaring',
+        '1Es':'3ezra', '2Es':'4ezra', Tob:'tobit', Jdt:'judith', Wis:'boekderwijsheid', Sir:'jezussirach',
+        Bar:'baruch', '1Ma':'1makkabeeen', '1Mac':'1makkabeeen', '2Ma':'2makkabeeen', '2Mac':'2makkabeeen',
+        '3Ma':'3makkabeeen', '3Mac':'3makkabeeen', Man:'gebedvanmanasse', Sus:'susanna', Bel:'belenddedraak'
+    };
+    function linkifyTbesg(html) {
+        return html.replace(/<ref='([^']+)'>([^<]*)<\/ref>/g, function (m, attr, txt) {
+            var parts = attr.replace(/\.$/, '').split('.');
+            var b = TBESG_BOOK[parts[0]];
+            if (!b || !parts[1]) return txt || '';       // onbekende boek-code: alleen de tekst tonen
+            return '<a class="lex-ref" target="_top" href="index.html#' + b + '/' + parts[1] + '/' + (parts[2] || '') + '">' + (txt || (bookName(b) + ' ' + parts[1] + ':' + (parts[2] || ''))) + '</a>';
+        });
+    }
+
     // Linkify verwijzingen in BDB/Abbott-definities: toon Nederlandse boeknaam,
     // en link ook kale vervolg-verwijzingen (die het vorige boek erven).
     function linkifyAbbr(html) {
@@ -215,7 +245,7 @@
             (heeftEngels ? '<button class="lex-orig-toggle" id="lex-orig-toggle">' + (origineel ? '← Nederlandse versie' : 'Originele Engelse versie →') + '</button>' : '') +
             '</div>';
         if (def) {
-            h += '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + (cur.abbr ? linkifyAbbr(def) : esc(def)) + '</div>';
+            h += '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + (cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def)) + '</div>';
         }
         if (e.verw && e.verw.length) {
             h += '<div class="lex-verw"><strong>Voorkomens:</strong> ' + e.verw.map(function (r) {
