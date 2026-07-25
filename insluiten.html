@@ -37,19 +37,8 @@
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
-    <nav id="topnav">
-    <div class="topnav-brand">Open Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.21.6</a></span></div>
-    <div class="topnav-links" id="topnav-links">
-        <a href="over-ov.html">Over OV</a>
-        <a href="index.html#johannes/1">Tekst</a>
-        <a href="onderwerpen.html">Onderwerpen</a>
-        <a href="wiki.html">Wiki</a>
-        <a href="lexicon-viewer.html?taal=hebreeuws">Lexicon</a>
-        <a href="kaart.html">Kaart</a>
-        <a href="contact.html">Over ons</a>
-    </div>
-    <button class="topnav-hamburger" id="topnav-hamburger" onclick="document.getElementById('topnav-links').classList.toggle('open');this.classList.toggle('open')" title="Menu" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
+    <nav id="topnav"></nav>
+    <script src="js/topnav.js"></script>
 
     <div class="page">
         <h1>Citaat insluiten</h1>
