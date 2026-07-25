@@ -138,7 +138,7 @@ const Lexicon = {
         const gloss = t.glossNl || entry.gloss || '';
         const woord = entry.woord || '';
         // Korte definitie: neem eerste 400 tekens (Nederlands indien beschikbaar)
-        let definitie = t.definitieNl || entry.definitie || '';
+        let definitie = t.samenvattingNl || t.definitieNl || entry.definitie || '';
         if (definitie.length > 400) {
             definitie = definitie.substring(0, 400) + '...';
         }
@@ -204,7 +204,7 @@ const Lexicon = {
 
         const gloss = t.glossNl || entry.gloss || '';
         const woord = entry.woord || '';
-        let definitie = t.definitieNl || entry.definitie || '';
+        let definitie = t.samenvattingNl || t.definitieNl || entry.definitie || '';
         if (definitie.length > 400) definitie = definitie.substring(0, 400) + '...';
 
         const tooltip = document.createElement('div');
