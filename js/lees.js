@@ -121,6 +121,8 @@ const Lees = {
         hosea:      'all',
         maleachi:   'all',
         haggai:     'all',
+        zefanja:    'all',
+        habakuk:    'all',
         johannes:   'all',
         handelingen:'all',
         markus:     [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
