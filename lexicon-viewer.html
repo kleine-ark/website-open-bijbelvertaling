@@ -48,6 +48,8 @@
         .lex-orig-toggle { margin-left: auto; align-self: center; font: 600 12px var(--font-body); color: var(--teal); background: transparent; border: 1px solid var(--border, #d4d0c8); border-radius: 14px; padding: 3px 12px; cursor: pointer; white-space: nowrap; }
         .lex-orig-toggle:hover { background: rgba(203,164,73,0.12); color: var(--navy); border-color: var(--gold); }
         .lex-def[lang="en"] { }
+        .lex-lexlabel { margin-top: 20px; font: 600 12px var(--font-body); color: var(--teal); text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border, #e5e1d8); padding-bottom: 3px; }
+        .lex-lexlabel .lex-concept { text-transform: none; letter-spacing: 0; }
         :root[data-theme="donker"] .lex-orig-toggle { color: var(--text-secondary); border-color: var(--border-default); }
         @media (max-width: 760px) {
             .lex-shell { flex-direction: column; height: auto; }
@@ -88,7 +90,8 @@
     // Taal-configuratie
     var TALEN = [
         { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', nlJson: 'data/lexicon-nl/bdb-nl.json', refsJson: 'data/lexicon-nl/strong-refs-he.json', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>. Nederlandse vertaling automatisch, in bewerking.' },
-        { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true, bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
+        { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true,
+          lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', label: 'Abbott-Smith (1922)' }, lex1label: 'TBESG', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', bron: '4 Ezra (Vulgaat-traditie) — grondtekst-glossen' },
         { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', bron: 'Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)' }
     ];
@@ -186,13 +189,23 @@
                 var t = nl[k] || {};
                 var defEn = obj[k].definitie || obj[k].vorm || '';
                 var def = t.definitieNl || t.vormNl || defEn;
-                return { key: k, woord: obj[k].woord,
+                var e = { key: k, woord: obj[k].woord,
                     gloss: t.glossNl || obj[k].gloss,
                     glossEn: obj[k].gloss,
                     def: def,
                     defEn: defEn,          // originele Engelse definitie (BDB/Abbott)
                     nl: !!(t.definitieNl || t.glossNl),
                     abbr: true };
+                // Tweede lexicon (bv. Abbott-Smith naast TBESG) per zelfde Strong-nummer
+                if (taal.lex2) {
+                    var ab = (window[taal.lex2.global] || {})[k];
+                    if (ab) {
+                        var abNl = (taal.lex2._nl || {})[k] || {};
+                        var abEn = ab.definitie || ab.vorm || '';
+                        e.ab = { gloss: abNl.glossNl || ab.gloss, def: abNl.definitieNl || abEn, defEn: abEn, nl: !!(abNl.definitieNl || abNl.glossNl) };
+                    }
+                }
+                return e;
             });
         }
         // JSON (latijn/geez)
@@ -232,7 +245,14 @@
             (cur.abbr && !e.nl ? '<span class="lex-concept" title="De Nederlandse vertaling van de volledige definitie volgt nog">Definitie nog niet vertaald</span>' : '') +
             (heeftEngels ? '<button class="lex-orig-toggle" id="lex-orig-toggle">' + (origineel ? '← Nederlandse versie' : 'Originele Engelse versie →') + '</button>' : '') +
             '</div>';
-        if (def) {
+        if (e.ab) {
+            // Twee lexicons gecombineerd (TBESG + Abbott-Smith), elk gelabeld
+            if (def) h += '<div class="lex-lexlabel">' + esc(cur.lex1label || 'Lexicon 1') + '</div>' +
+                '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + linkifyTbesg(def) + '</div>';
+            var abDef = origineel ? e.ab.defEn : e.ab.def;
+            if (abDef) h += '<div class="lex-lexlabel">' + esc(cur.lex2.label) + (e.ab.nl ? '' : ' <span class="lex-concept" title="Nederlandse vertaling volgt">nog niet vertaald</span>') + '</div>' +
+                '<div class="lex-def"' + ((origineel || !e.ab.nl) ? ' lang="en"' : '') + '>' + linkifyAbbr(abDef) + '</div>';
+        } else if (def) {
             h += '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + (cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def)) + '</div>';
         }
         if (e.verw && e.verw.length) {
@@ -295,6 +315,12 @@
                 .then(function () {
                     if (!taal.refsJson) return;
                     return fetch(taal.refsJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._refs = d; }).catch(function () { taal._refs = {}; });
+                })
+                .then(function () {
+                    if (!taal.lex2) return;
+                    return loadScript(taal.lex2.src).then(function () {
+                        return fetch(taal.lex2.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal.lex2._nl = d; }).catch(function () { taal.lex2._nl = {}; });
+                    });
                 });
         ready.then(function () {
             loaded[taal.id] = true;
