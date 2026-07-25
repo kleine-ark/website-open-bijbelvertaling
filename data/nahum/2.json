@@ -170,7 +170,7 @@
       "number": 2,
       "textSV1888": "Want de HEERE heeft de hovaardij Jakobs afgewend, gelijk de hovaardij Israëls; want de ledigmakers hebben ze ledig gemaakt, en zij hebben hun wijnranken verdorven.",
       "text1637": "Want [6] de HEERE heeft de hoovaerdye Iacobs afgewendt, gelijck de hoovaerdye Israëls, want [7] de [a] ledich-makers [8] hebbense ledich gemaeckt, ende sy hebben [9] hare wijn-rancken verdorven.",
-      "text2026": "Want JAHWEH heeft de hoogmoed Jakobs afgewend, gelijk de hoogmoed Israëls; want de ledigmakers hebben ze leeg gemaakt, en zij hebben hun wijnranken verdorven.",
+      "text2026": "Want JAHWEH heeft de hoogmoed Jakobs afgewend, gelijk de hoogmoed Israëls; want de plunderaars hebben ze leeg gemaakt, en zij hebben hun wijnranken verdorven.",
       "marginNotes": [
         {
           "marker": "6",
@@ -275,7 +275,7 @@
           "morph": "HD"
         }
       ],
-      "text2026_html": "Want<sup class=\"note-marker\" data-note=\"6\">6</sup> JAHWEH heeft de hoogmoed Jakobs afgewend, gelijk de hoogmoed Israëls; want<sup class=\"note-marker\" data-note=\"7\">7</sup> de<sup class=\"note-marker\" data-note=\"a\">a</sup> ledigmakers<sup class=\"note-marker\" data-note=\"8\">8</sup> hebben ze leeg gemaakt, en zij hebben<sup class=\"note-marker\" data-note=\"9\">9</sup> hun wijnranken verdorven.",
+      "text2026_html": "Want<sup class=\"note-marker\" data-note=\"6\">6</sup> JAHWEH heeft de hoogmoed Jakobs afgewend, gelijk de hoogmoed Israëls; want<sup class=\"note-marker\" data-note=\"7\">7</sup> de<sup class=\"note-marker\" data-note=\"a\">a</sup> plunderaars<sup class=\"note-marker\" data-note=\"8\">8</sup> hebben ze leeg gemaakt, en zij hebben<sup class=\"note-marker\" data-note=\"9\">9</sup> hun wijnranken verdorven.",
       "textSV1888_html": "Want<sup class=\"note-marker\" data-note=\"6\">6</sup> de HEERE heeft de hovaardij Jakobs afgewend, gelijk de hovaardij Israëls; want<sup class=\"note-marker\" data-note=\"7\">7</sup> de<sup class=\"note-marker\" data-note=\"a\">a</sup> ledigmakers<sup class=\"note-marker\" data-note=\"8\">8</sup> hebben ze ledig gemaakt, en zij hebben<sup class=\"note-marker\" data-note=\"9\">9</sup> hun wijnranken verdorven.",
       "text1637_html": "Want <sup class=\"note-marker\" data-note=\"6\">6</sup> de HEERE heeft de hoovaerdye Iacobs afgewendt, gelijck de hoovaerdye Israëls, want <sup class=\"note-marker\" data-note=\"7\">7</sup> de <sup class=\"note-marker\" data-note=\"a\">a</sup> ledich-makers <sup class=\"note-marker\" data-note=\"8\">8</sup> hebbense ledich gemaeckt, ende sy hebben <sup class=\"note-marker\" data-note=\"9\">9</sup> hare wijn-rancken verdorven.",
       "phraseDiff": [
@@ -293,6 +293,11 @@
           "old": "hovaardij",
           "new": "hoogmoed",
           "principe": "V334"
+        },
+        {
+          "old": "ledigmakers",
+          "new": "plunderaars",
+          "principe": "V904"
         },
         {
           "old": "ledig",
@@ -967,7 +972,7 @@
       "number": 9,
       "textSV1888": "Rooft zilver, rooft goud, want er is geen einde des voorraads, der heerlijkheid van allerlei gewenste vaten.",
       "text1637": "[41] Roovet silver, roovet gout, want daer en is geen eynde des [42] voorraets, der heerlickheyt [43] van allerley gewenschte vaten.",
-      "text2026": "Rooft zilver, rooft goud, want er is geen einde van de voorraads, van de heerlijkheid van allerlei gewenste voorwerpen.",
+      "text2026": "Rooft zilver, rooft goud, want er is geen einde van de voorraad, van de heerlijkheid van allerlei gewenste voorwerpen.",
       "marginNotes": [
         {
           "marker": "41",
@@ -1048,19 +1053,14 @@
           "morph": "HVhrmsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"41\">41</sup> Rooft zilver, rooft goud, want er is geen einde<sup class=\"note-marker\" data-note=\"42\">42</sup><sup class=\"note-marker\" data-note=\"43\">43</sup> van de voorraads, van de heerlijkheid van allerlei gewenste voorwerpen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"41\">41</sup> Rooft zilver, rooft goud, want er is geen einde<sup class=\"note-marker\" data-note=\"42\">42</sup><sup class=\"note-marker\" data-note=\"43\">43</sup> van de voorraad, van de heerlijkheid van allerlei gewenste voorwerpen.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"41\">41</sup> Rooft zilver, rooft goud, want er is geen einde des<sup class=\"note-marker\" data-note=\"42\">42</sup> voorraads, der heerlijkheid<sup class=\"note-marker\" data-note=\"43\">43</sup> van allerlei gewenste vaten.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"41\">41</sup> Roovet silver, roovet gout, want daer en is geen eynde des <sup class=\"note-marker\" data-note=\"42\">42</sup> voorraets, der heerlickheyt <sup class=\"note-marker\" data-note=\"43\">43</sup> van allerley gewenschte vaten.",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
-        },
-        {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "des voorraads, der",
+          "new": "van de voorraad, van de",
+          "principe": null
         },
         {
           "old": "vaten.",
