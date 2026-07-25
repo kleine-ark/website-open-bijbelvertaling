@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = '2026-07-23-vastgestelde-tijd'
+const VERSION = '2026-07-25-tbesg-grieks'
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -87,7 +87,7 @@ self.addEventListener('fetch', (event) => {
     const path = url.pathname;
 
     // Lexicon (grote JS)
-    if (path.endsWith('/js/hebreeuws-woordenboek.js') || path.endsWith('/js/grieks-woordenboek.js')) {
+    if (path.endsWith('/js/hebreeuws-woordenboek.js') || path.endsWith('/js/grieks-woordenboek.js') || path.endsWith('/js/grieks-tbesg.js')) {
         event.respondWith(cacheFirst(req, LEXICON_CACHE));
         return;
     }
