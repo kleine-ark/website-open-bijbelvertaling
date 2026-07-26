@@ -4481,3 +4481,57 @@ body.doorlopend-aan #chapter-footer::after {
 .audio-settings-panel .asp-check { display: flex; align-items: center; gap: 7px; margin: 7px 0 0; cursor: pointer; }
 .audio-settings-panel .asp-check input { margin: 0; }
 :root[data-theme="donker"] .audio-settings-panel .asp-label { color: var(--text-primary); }
+
+/* ── Mobiele weergave: documentatie-layout (zijbalk + inhoud) ──────────────
+   Doc-pagina's (grondteksten, statistieken, principes, uitgangspunten, …)
+   gebruiken een vaste 220px-zijbalk naast .page. Op smalle schermen stapelen
+   we die: de zijbalk wordt een compacte, horizontaal-wrappende linkbalk
+   bovenaan. .page krijgt min-width:0 zodat brede tabellen binnen hun
+   .ms-table-wrap (overflow-x:auto) scrollen i.p.v. de pagina te verbreden
+   (een flex-item heeft standaard min-width:auto = min-content). */
+.page { min-width: 0; }
+@media (max-width: 820px) {
+  .doc-shell { flex-direction: column; }
+  .doc-sidebar {
+    width: 100% !important;
+    min-width: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid #e5e1d8 !important;
+    padding: 8px 10px !important;
+    box-sizing: border-box;
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px 3px;
+  }
+  .doc-sidebar > a {
+    display: inline-block !important;
+    padding: 6px 10px !important;
+    border-left: none !important;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+  .doc-sidebar > div {            /* sectiekopjes 'Documentatie' / 'Lexicons' */
+    width: 100%;
+    padding: 8px 6px 2px !important;
+    margin: 0 !important;
+  }
+}
+:root[data-theme="donker"] .doc-sidebar { border-bottom-color: var(--border-default) !important; }
+
+/* ── Mobiele weergave: doc-content die niet meekromp ──────────────────────────
+   Een brede tabel (bv. .book-table, 9 kolommen) rekt anders de héle
+   layout-viewport op tot ~728px, waardoor de kolom-grid en cards buiten beeld
+   vallen. Een harde max-width:100vw op de content-kolom kapt dat af: de reeds
+   in overflow-x:auto-wrappers zittende tabellen scrollen dan binnen de
+   schermbreedte i.p.v. de pagina te verbreden. */
+.stats-page { min-width: 0; }               /* zelfde flex-item-fix als .page */
+@media (max-width: 820px) {
+  .doc-shell > .page,
+  .doc-shell > .stats-page { max-width: 100vw !important; min-width: 0 !important; }
+  .stat-grid { grid-template-columns: 1fr !important; }        /* vaste kolom-grid -> 1 kolom */
+  /* tabellen zonder eigen scroll-wrapper alsnog laten scrollen */
+  .page > table, .stats-page > table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+  /* form-controls (bv. lange <select>-opties) niet breder dan het scherm */
+  .page select, .page input, .stats-page select, .stats-page input { max-width: 100%; }
+}

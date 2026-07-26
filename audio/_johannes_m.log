@@ -1,0 +1,2180 @@
+########## STEM m ##########
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[server] 
+[server] Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  6.89it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/scripts/tts/generate_chunks.py", line 236, in <module>
+    main()
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/scripts/tts/generate_chunks.py", line 224, in main
+    generate_chapter(args.book, ch, args.voice, ref_audio, ref_text, args.force)
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/scripts/tts/generate_chunks.py", line 184, in generate_chapter
+    d = synth(raw, outdir / f, ref_audio, ref_text)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/scripts/tts/generate_chunks.py", line 117, in synth
+    resp.raise_for_status()
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:8765/v1/audio/speech
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+  v18 (9.01s)
+  h19 kopje (2.85s)
+  v19 (9.93s)
+  v20 (5.61s)
+  v21 (10.61s)
+  v22 (9.61s)
+  v23 (10.13s)
+  v24 (2.77s)
+  v25 (9.45s)
+  v26 (7.37s)
+########## STEM m ##########
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.serve.launcher:Port 8765 is already in use on 127.0.0.1.
+[server] WARNING:sglang_omni.serve.launcher:Using port 45033 instead.
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[server] 
+[server] Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 14.04it/s]
+[server] 
+[server] 
+[server]   0%|          | 0/6 [00:00<?, ?it/s]
+[server] Capturing batches (bs=16 avail_mem=1.05 GB):   0%|          | 0/6 [00:00<?, ?it/s]WARNING:sglang.jit_kernel.norm:Failed to load JIT QK-Norm kernel: ninja exited with status 127
+[server] stdout:
+[server] [1/2] .venv-higgs-v3/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc  --generate-dependencies-with-compile --dependency-output cuda_0.o.d -Xcompiler -fPIC -std=c++17 -O2 -gencode=arch=compute_120,code=sm_120 -std=c++20 -O3 --expt-relaxed-constexpr -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/tvm_ffi/include -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/tvm_ffi/include -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/sglang/jit_kernel/include -c /home/maarten/.cache/tvm-ffi/sgl_kernel_jit_qknorm_128_true_bf16_t_a67305d3b35e5b41/cuda.cu -o cuda_0.o
+[server] FAILED: [code=127] cuda_0.o
+[server] .venv-higgs-v3/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc  --generate-dependencies-with-compile --dependency-output cuda_0.o.d -Xcompiler -fPIC -std=c++17 -O2 -gencode=arch=compute_120,code=sm_120 -std=c++20 -O3 --expt-relaxed-constexpr -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/tvm_ffi/include -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/tvm_ffi/include -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/sglang/jit_kernel/include -c /home/maarten/.cache/tvm-ffi/sgl_kernel_jit_qknorm_128_true_bf16_t_a67305d3b35e5b41/cuda.cu -o cuda_0.o
+[server] /bin/sh: 1: .venv-higgs-v3/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc: not found
+[server] ninja: build stopped: subcommand failed.
+[server] 
+[server] WARNING:sglang.jit_kernel.kvcache:Failed to load JIT KV-Cache kernel with row_bytes=2048: ninja exited with status 127
+[server] stdout:
+[server] [1/2] .venv-higgs-v3/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc  --generate-dependencies-with-compile --dependency-output cuda_0.o.d -Xcompiler -fPIC -std=c++17 -O2 -gencode=arch=compute_120,code=sm_120 -std=c++20 -O3 --expt-relaxed-constexpr -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/tvm_ffi/include -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/tvm_ffi/include -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/sglang/jit_kernel/include -c /home/maarten/.cache/tvm-ffi/sgl_kernel_jit_kvcache_2048_true_ab925559259c8ad1/cuda.cu -o cuda_0.o
+[server] FAILED: [code=127] cuda_0.o
+[server] .venv-higgs-v3/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc  --generate-dependencies-with-compile --dependency-output cuda_0.o.d -Xcompiler -fPIC -std=c++17 -O2 -gencode=arch=compute_120,code=sm_120 -std=c++20 -O3 --expt-relaxed-constexpr -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/tvm_ffi/include -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/tvm_ffi/include -I/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/sglang/jit_kernel/include -c /home/maarten/.cache/tvm-ffi/sgl_kernel_jit_kvcache_2048_true_ab925559259c8ad1/cuda.cu -o cuda_0.o
+[server] /bin/sh: 1: .venv-higgs-v3/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc: not found
+[server] ninja: build stopped: subcommand failed.
+[server] 
+[server] 
+[server] Capturing batches (bs=16 avail_mem=1.05 GB):  17%|█▋        | 1/6 [00:00<00:01,  3.15it/s]
+[server] Capturing batches (bs=12 avail_mem=0.99 GB):  17%|█▋        | 1/6 [00:00<00:01,  3.15it/s]
+[server] Capturing batches (bs=8 avail_mem=0.97 GB):  17%|█▋        | 1/6 [00:00<00:01,  3.15it/s]
+[server] Capturing batches (bs=4 avail_mem=0.95 GB):  17%|█▋        | 1/6 [00:00<00:01,  3.15it/s]
+[server] Capturing batches (bs=4 avail_mem=0.95 GB):  67%|██████▋   | 4/6 [00:00<00:00, 10.81it/s]
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[server] 
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[server] 
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[server] 
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+  v18 (9.01s)
+  h19 kopje (2.85s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+  v18 (9.01s)
+  h19 kopje (2.85s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+  v18 (9.01s)
+  h19 kopje (2.85s)
+  v19 (9.93s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+  v18 (9.01s)
+  h19 kopje (2.85s)
+  v19 (9.93s)
+  v20 (5.61s)
+[sup] johannes/m: 0/21
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+  v18 (9.01s)
+  h19 kopje (2.85s)
+  v19 (9.93s)
+  v20 (5.61s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[server] 
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+  v18 (9.01s)
+  h19 kopje (2.85s)
+  v19 (9.93s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+  v18 (9.01s)
+  h19 kopje (2.85s)
+  v19 (9.93s)
+  v20 (5.61s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[server] 
+[server] Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 16.74it/s]
+[server] 
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[server] 
+[server] Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 109.00it/s]
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+########## STEM m ##########
+[sup] johannes/m: 0/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Server luistert op poort.
+
+=== johannes 1 stem m (52 verzen) ===
+  intro (2.57s)
+  h1 kopje (2.05s)
+  v1 (5.17s)
+  v2 (2.53s)
+  v3 (7.01s)
+  v4 (5.17s)
+  v5 (5.13s)
+  v6 (4.73s)
+  v7 (7.49s)
+  v8 (6.13s)
+  v9 (5.77s)
+  v10 (6.49s)
+  v11 (5.45s)
+  v12 (8.29s)
+  v13 (7.57s)
+  v14 (13.13s)
+  v15 (11.97s)
+  v16 (5.25s)
+  v17 (6.65s)
+  v18 (9.01s)
+  h19 kopje (2.85s)
+  v19 (9.93s)
+  v20 (5.61s)
+  v21 (10.61s)
+  v22 (9.61s)
+  v23 (10.13s)
+  v24 (2.77s)
+  v25 (9.45s)
+  v26 (7.37s)
+  v27 (9.33s)
+  v28 (6.57s)
+  h29 kopje (1.57s)
+  v29 (8.85s)
+  v30 (8.45s)
+  v31 (8.53s)
+  v32 (8.09s)
+  v33 (14.65s)
+  v34 (4.81s)
+  h35 kopje (2.01s)
+  v35 (4.53s)
+  v36 (6.61s)
+  v37 (4.93s)
+  v38 (4.85s)
+  v39 (9.29s)
+  v40 (11.13s)
+  v41 (8.81s)
+  v42 (10.21s)
+  h43 kopje (1.69s)
+  v43 (13.69s)
+  v44 (7.41s)
+  v45 (6.01s)
+  v46 (13.93s)
+  v47 (8.33s)
+  v48 (9.13s)
+  v49 (10.61s)
+  v50 (8.21s)
+  v51 (10.65s)
+  v52 (14.53s)
+  manifest.json (58 segmenten)
+
+=== johannes 2 stem m (25 verzen) ===
+  intro (3.09s)
+  h1 kopje (2.65s)
+  v1 (6.69s)
+  v2 (5.25s)
+  v3 (6.37s)
+  v4 (6.49s)
+  v5 (5.45s)
+  v6 (8.21s)
+  v7 (6.65s)
+  v8 (6.01s)
+  v9 (15.17s)
+  v10 (10.69s)
+  v11 (10.65s)
+  v12 (9.93s)
+  h13 kopje (1.61s)
+  v13 (5.41s)
+  v14 (7.53s)
+  v15 (12.17s)
+  v16 (10.05s)
+  v17 (7.17s)
+  v18 (6.73s)
+  v19 (7.13s)
+  v20 (9.57s)
+  v21 (3.57s)
+  v22 (12.33s)
+  h23 kopje (1.81s)
+  v23 (9.57s)
+  v24 (5.49s)
+  v25 (8.01s)
+  manifest.json (29 segmenten)
+
+=== johannes 3 stem m (36 verzen) ===
+  intro (2.73s)
+  h1 kopje (1.21s)
+  v1 (6.49s)
+  v2 (13.89s)
+  v3 (10.73s)
+  v4 (10.93s)
+  v5 (11.45s)
+  v6 (6.97s)
+  v7 (5.45s)
+  v8 (12.85s)
+  v9 (5.29s)
+  v10 (6.81s)
+  v11 (9.97s)
+  v12 (7.05s)
+  v13 (9.37s)
+  v14 (7.33s)
+  v15 (6.21s)
+  h16 kopje (1.89s)
+  v16 (11.57s)
+  v17 (9.45s)
+  v18 (10.81s)
+  v19 (10.01s)
+  v20 (7.73s)
+  v21 (7.61s)
+  h22 kopje (2.97s)
+  v22 (7.49s)
+  v23 (8.45s)
+  v24 (3.45s)
+  v25 (6.21s)
+  v26 (11.89s)
+  v27 (7.93s)
+  v28 (7.73s)
+  v29 (13.81s)
+  v30 (2.57s)
+  v31 (12.45s)
+  v32 (6.85s)
+  v33 (6.09s)
+  v34 (7.57s)
+  v35 (4.85s)
+  v36 (11.05s)
+  manifest.json (40 segmenten)
+
+=== johannes 4 stem m (54 verzen) ===
+  intro (2.85s)
+  h1 kopje (2.13s)
+  v1 (7.81s)
+  v2 (3.65s)
+  v3 (4.45s)
+  v4 (2.81s)
+  v5 (8.13s)
+  v6 (11.05s)
+  v7 (7.25s)
+  v8 (5.57s)
+  v9 (12.69s)
+  v10 (13.89s)
+  v11 (8.73s)
+  v12 (9.73s)
+  v13 (7.21s)
+  v14 (16.37s)
+  v15 (8.61s)
+  v16 (4.45s)
+  v17 (7.33s)
+  v18 (6.85s)
+  v19 (5.09s)
+  v20 (8.89s)
+  v21 (11.25s)
+  v22 (7.53s)
+  v23 (11.93s)
+  v24 (6.41s)
+  v25 (10.73s)
+  v26 (4.05s)
+  h27 kopje (2.25s)
+  v27 (11.41s)
+  v28 (5.81s)
+  v29 (7.29s)
+  v30 (3.33s)
+  v31 (5.01s)
+  v32 (4.93s)
+  v33 (5.13s)
+  v34 (9.13s)
+  v35 (13.33s)
+  v36 (10.29s)
+  v37 (7.33s)
+  v38 (9.65s)
+  h39 kopje (1.97s)
+  v39 (10.21s)
+  v40 (8.57s)
+  v41 (3.73s)
+  v42 (12.53s)
+  h43 kopje (2.57s)
+  v43 (5.17s)
+  v44 (6.45s)
+  v45 (12.25s)
+  v46 (14.01s)
+  v47 (13.29s)
+  v48 (7.13s)
+  v49 (6.37s)
+  v50 (9.57s)
+  v51 (7.97s)
+  v52 (10.33s)
+  v53 (11.17s)
+  v54 (6.77s)
+  manifest.json (59 segmenten)
+
+=== johannes 5 stem m (47 verzen) ===
+  intro (2.69s)
+  h1 kopje (2.57s)
+  v1 (5.13s)
+  v2 (8.69s)
+  v3 (8.33s)
+  v4 (13.93s)
+  v5 (4.65s)
+  v6 (9.45s)
+  v7 (11.53s)
+  v8 (5.01s)
+  v9 (7.37s)
+  v10 (7.85s)
+  v11 (7.37s)
+  v12 (6.81s)
+  v13 (9.09s)
+  v14 (10.65s)
+  v15 (7.13s)
+  h16 kopje (1.81s)
+  v16 (8.09s)
+  v17 (5.65s)
+  v18 (12.29s)
+  v19 (14.17s)
+  v20 (10.69s)
+  v21 (7.33s)
+  v22 (5.49s)
+  v23 (9.85s)
+  v24 (15.05s)
+  v25 (11.13s)
+  v26 (8.41s)
+  v27 (6.97s)
+  v28 (8.33s)
+  v29 (10.09s)
+  v30 (11.77s)
+  h31 kopje (2.33s)
+  v31 (5.21s)
+  v32 (8.53s)
+  v33 (5.29s)
+  v34 (6.77s)
+  v35 (8.13s)
+  v36 (16.17s)
+  v37 (10.25s)
+  v38 (6.69s)
+  v39 (8.85s)
+  v40 (3.93s)
+  v41 (2.25s)
+  v42 (5.85s)
+  v43 (8.85s)
+  v44 (8.53s)
+  v45 (8.61s)
+  v46 (6.93s)
+  v47 (4.81s)
+  manifest.json (51 segmenten)
+
+=== johannes 6 stem m (71 verzen) ===
+  intro (3.05s)
+  h1 kopje (2.49s)
+  v1 (6.53s)
+  v2 (7.05s)
+  v3 (4.65s)
+  v4 (4.33s)
+  v5 (12.65s)
+  v6 (6.13s)
+  v7 (8.85s)
+  v8 (6.29s)
+  v9 (7.85s)
+  v10 (11.25s)
+  v11 (12.81s)
+  v12 (8.65s)
+  v13 (11.01s)
+  v14 (9.69s)
+  v15 (11.61s)
+  h16 kopje (2.33s)
+  v16 (4.73s)
+  v17 (9.21s)
+  v18 (3.93s)
+  v19 (12.25s)
+  v20 (4.09s)
+  v21 (6.69s)
+  h22 kopje (1.73s)
+  v22 (18.25s)
+  v23 (9.41s)
+  v24 (10.65s)
+  v25 (7.09s)
+  v26 (12.69s)
+  v27 (13.17s)
+  v28 (5.73s)
+  v29 (8.13s)
+  v30 (7.45s)
+  v31 (8.41s)
+  v32 (11.57s)
+  v33 (6.57s)
+  v34 (5.01s)
+  v35 (11.81s)
+  v36 (5.57s)
+  v37 (7.77s)
+  v38 (9.33s)
+  v39 (11.01s)
+  v40 (14.61s)
+  v41 (7.77s)
+  v42 (11.41s)
+  v43 (4.89s)
+  v44 (9.89s)
+  v45 (11.65s)
+  v46 (6.85s)
+  v47 (6.25s)
+  v48 (2.05s)
+  v49 (4.65s)
+  v50 (6.73s)
+  v51 (17.33s)
+  v52 (6.49s)
+  v53 (11.73s)
+  v54 (9.01s)
+  v55 (5.05s)
+  v56 (6.97s)
+  v57 (8.01s)
+  v58 (12.61s)
+  v59 (5.57s)
+  h60 kopje (2.05s)
+  v60 (7.01s)
+  v61 (8.21s)
+  v62 (6.45s)
+  v63 (10.37s)
+  v64 (10.81s)
+  v65 (8.69s)
+  v66 (5.65s)
+  v67 (4.13s)
+  v68 (9.17s)
+  v69 (6.45s)
+  v70 (6.69s)
+  v71 (8.89s)
+  manifest.json (76 segmenten)
+
+=== johannes 7 stem m (53 verzen) ===
+  intro (3.09s)
+  h1 kopje (2.77s)
+  v1 (8.61s)
+  v2 (5.21s)
+  v3 (11.01s)
+  v4 (10.69s)
+  v5 (3.53s)
+  v6 (6.53s)
+  v7 (9.01s)
+  v8 (7.21s)
+  v9 (4.93s)
+  v10 (8.17s)
+  v11 (5.13s)
+  v12 (10.13s)
+  v13 (5.21s)
+  h14 kopje (1.97s)
+  v14 (6.37s)
+  v15 (6.89s)
+  v16 (7.65s)
+  v17 (8.41s)
+  v18 (11.53s)
+  v19 (7.05s)
+  v20 (5.45s)
+  v21 (5.85s)
+  v22 (9.93s)
+  v23 (11.37s)
+  v24 (5.01s)
+  v25 (5.57s)
+  v26 (10.73s)
+  v27 (9.29s)
+  v28 (15.65s)
+  v29 (6.73s)
+  v30 (6.65s)
+  v31 (10.25s)
+  v32 (10.29s)
+  v33 (8.13s)
+  v34 (5.77s)
+  v35 (10.05s)
+  v36 (9.93s)
+  h37 kopje (2.17s)
+  v37 (10.73s)
+  v38 (7.21s)
+  v39 (10.73s)
+  h40 kopje (1.53s)
+  v40 (6.41s)
+  v41 (7.09s)
+  v42 (8.25s)
+  v43 (4.65s)
+  v44 (4.97s)
+  v45 (7.45s)
+  v46 (6.01s)
+  v47 (4.05s)
+  v48 (5.21s)
+  v49 (4.25s)
+  v50 (5.97s)
+  v51 (7.81s)
+  v52 (10.17s)
+  v53 (2.49s)
+  manifest.json (58 segmenten)
+
+=== johannes 8 stem m (59 verzen) ===
+  intro (3.69s)
+  h1 kopje (1.73s)
+  v1 (3.05s)
+  v2 (9.05s)
+  v3 (6.97s)
+  v4 (9.37s)
+  v5 (7.37s)
+  v6 (11.21s)
+  v7 (9.53s)
+  v8 (3.61s)
+  v9 (14.29s)
+  v10 (11.33s)
+  v11 (9.17s)
+  h12 kopje (1.57s)
+  v12 (10.41s)
+  v13 (7.25s)
+  v14 (16.77s)
+  v15 (3.49s)
+  v16 (10.69s)
+  v17 (5.65s)
+  v18 (6.89s)
+  v19 (12.61s)
+  v20 (9.73s)
+  v21 (10.25s)
+  v22 (7.77s)
+  v23 (8.93s)
+  v24 (10.09s)
+  v25 (7.37s)
+  v26 (11.81s)
+  v27 (3.81s)
+  v28 (16.13s)
+  v29 (9.45s)
+  v30 (4.01s)
+  h31 kopje (2.09s)
+  v31 (8.49s)
+  v32 (4.17s)
+  v33 (8.29s)
+  v34 (9.17s)
+  v35 (5.25s)
+  v36 (5.13s)
+  v37 (8.33s)
+  v38 (6.77s)
+  v39 (10.85s)
+  v40 (9.25s)
+  v41 (9.73s)
+  v42 (14.73s)
+  v43 (5.53s)
+  v44 (19.97s)
+  v45 (4.29s)
+  v46 (6.53s)
+  v47 (6.61s)
+  h48 kopje (2.17s)
+  v48 (7.61s)
+  v49 (7.61s)
+  v50 (6.49s)
+  v51 (9.33s)
+  v52 (15.37s)
+  v53 (8.85s)
+  v54 (10.77s)
+  v55 (12.33s)
+  v56 (10.05s)
+  v57 (6.01s)
+  v58 (6.49s)
+  v59 (11.37s)
+  manifest.json (64 segmenten)
+
+=== johannes 9 stem m (41 verzen) ===
+  intro (2.85s)
+  h1 kopje (2.13s)
+  v1 (4.85s)
+  v2 (9.45s)
+  v3 (10.77s)
+  v4 (9.17s)
+  v5 (4.29s)
+  v6 (8.89s)
+  v7 (11.05s)
+  v8 (9.13s)
+  v9 (6.97s)
+  v10 (3.77s)
+  v11 (15.89s)
+  v12 (5.45s)
+  h13 kopje (1.81s)
+  v13 (5.89s)
+  v14 (5.29s)
+  v15 (11.29s)
+  v16 (13.73s)
+  v17 (11.29s)
+  v18 (10.97s)
+  v19 (7.81s)
+  v20 (7.77s)
+  v21 (10.97s)
+  v22 (13.01s)
+  v23 (5.29s)
+  v24 (11.45s)
+  v25 (8.41s)
+  v26 (6.09s)
+  v27 (9.57s)
+  v28 (7.81s)
+  v29 (6.57s)
+  v30 (10.49s)
+  v31 (8.69s)
+  v32 (6.85s)
+  v33 (3.81s)
+  v34 (8.41s)
+  h35 kopje (1.65s)
+  v35 (8.53s)
+  v36 (5.69s)
+  v37 (5.93s)
+  v38 (4.21s)
+  v39 (10.61s)
+  v40 (7.53s)
+  v41 (9.97s)
+  manifest.json (45 segmenten)
+
+=== johannes 10 stem m (42 verzen) ===
+  intro (3.25s)
+  h1 kopje (1.29s)
+  v1 (9.97s)
+  v2 (3.57s)
+  v3 (8.05s)
+  v4 (8.21s)
+  v5 (8.33s)
+  v6 (7.09s)
+  v7 (7.01s)
+  v8 (8.13s)
+  v9 (9.21s)
+  v10 (10.73s)
+  v11 (5.29s)
+  v12 (13.17s)
+  v13 (6.73s)
+  v14 (5.65s)
+  v15 (6.89s)
+  v16 (11.85s)
+  v17 (6.69s)
+  v18 (14.57s)
+  v19 (4.49s)
+  v20 (6.41s)
+  v21 (6.97s)
+  h22 kopje (2.01s)
+  v22 (5.41s)
+  v23 (4.29s)
+  v24 (9.25s)
+  v25 (10.45s)
+  v26 (6.29s)
+  v27 (4.93s)
+  v28 (10.05s)
+  v29 (8.53s)
+  v30 (2.61s)
+  v31 (4.53s)
+  v32 (7.81s)
+  v33 (11.81s)
+  v34 (6.45s)
+  v35 (7.85s)
+  v36 (10.41s)
+  v37 (4.49s)
+  v38 (11.65s)
+  v39 (4.93s)
+  h40 kopje (2.25s)
+  v40 (7.33s)
+  v41 (8.89s)
+  v42 (2.57s)
+  manifest.json (46 segmenten)
+
+=== johannes 11 stem m (57 verzen) ===
+  intro (2.69s)
+  h1 kopje (2.49s)
+  v1 (8.05s)
+  v2 (9.33s)
+  v3 (6.85s)
+  v4 (10.49s)
+  v5 (4.85s)
+  v6 (7.21s)
+  v7 (5.33s)
+  v8 (8.25s)
+  v9 (9.93s)
+  v10 (5.97s)
+  v11 (9.25s)
+  v12 (5.97s)
+  v13 (6.93s)
+  v14 (4.61s)
+  v15 (8.17s)
+  v16 (8.65s)
+  h17 kopje (2.73s)
+  v17 (6.01s)
+  v18 (5.45s)
+  v19 (6.77s)
+  v20 (8.05s)
+  v21 (7.61s)
+  v22 (7.65s)
+  v23 (3.85s)
+  v24 (6.77s)
+  v25 (8.25s)
+  v26 (7.73s)
+  v27 (8.57s)
+  v28 (9.33s)
+  v29 (5.29s)
+  v30 (7.33s)
+  v31 (14.13s)
+  v32 (12.37s)
+  v33 (9.81s)
+  v34 (6.97s)
+  v35 (1.53s)
+  v36 (3.81s)
+  v37 (8.37s)
+  h38 kopje (1.69s)
+  v38 (9.65s)
+  v39 (11.81s)
+  v40 (8.01s)
+  v41 (11.37s)
+  v42 (12.53s)
+  v43 (5.97s)
+  v44 (12.85s)
+  h45 kopje (2.37s)
+  v45 (8.97s)
+  v46 (6.21s)
+  v47 (10.13s)
+  v48 (9.89s)
+  v49 (8.05s)
+  v50 (8.25s)
+  v51 (9.13s)
+  v52 (7.57s)
+  v53 (6.17s)
+  v54 (10.97s)
+  v55 (9.45s)
+  v56 (9.69s)
+  v57 (11.17s)
+  manifest.json (62 segmenten)
+
+=== johannes 12 stem m (50 verzen) ===
+  intro (2.69s)
+  h1 kopje (1.33s)
+  v1 (10.49s)
+  v2 (8.69s)
+  v3 (15.85s)
+  v4 (7.37s)
+  v5 (5.97s)
+  v6 (9.89s)
+  v7 (7.77s)
+  v8 (4.65s)
+  v9 (12.73s)
+  v10 (4.81s)
+  v11 (5.57s)
+  h12 kopje (1.93s)
+  v12 (8.01s)
+  v13 (13.21s)
+  v14 (5.37s)
+  v15 (7.25s)
+  v16 (11.77s)
+  v17 (8.05s)
+  v18 (6.77s)
+  v19 (8.33s)
+  h20 kopje (2.21s)
+  v20 (6.81s)
+  v21 (9.41s)
+  v22 (6.41s)
+  v23 (7.21s)
+  v24 (12.49s)
+  v25 (8.21s)
+  v26 (10.17s)
+  v27 (9.97s)
+  v28 (9.77s)
+  v29 (11.33s)
+  v30 (6.89s)
+  v31 (6.61s)
+  v32 (5.97s)
+  v33 (4.65s)
+  v34 (13.37s)
+  v35 (14.49s)
+  v36 (11.69s)
+  h37 kopje (1.97s)
+  v37 (5.73s)
+  v38 (12.21s)
+  v39 (5.33s)
+  v40 (11.45s)
+  v41 (5.05s)
+  v42 (10.09s)
+  v43 (4.41s)
+  h44 kopje (1.65s)
+  v44 (8.97s)
+  v45 (4.85s)
+  v46 (7.93s)
+  v47 (13.13s)
+  v48 (12.09s)
+  v49 (10.49s)
+  v50 (10.41s)
+  manifest.json (56 segmenten)
+
+=== johannes 13 stem m (38 verzen) ===
+  intro (2.57s)
+  h1 kopje (1.21s)
+  v1 (16.57s)
+  v2 (9.33s)
+  v3 (9.33s)
+  v4 (7.45s)
+  v5 (9.73s)
+  v6 (7.33s)
+  v7 (7.53s)
+  v8 (10.49s)
+  v9 (7.29s)
+  v10 (10.65s)
+  v11 (6.77s)
+  v12 (9.89s)
+  v13 (5.41s)
+  v14 (8.77s)
+  v15 (6.65s)
+  v16 (10.17s)
+  v17 (4.57s)
+  v18 (13.29s)
+  v19 (9.57s)
+  v20 (12.05s)
+  h21 kopje (2.13s)
+  v21 (12.65s)
+  v22 (5.25s)
+  v23 (6.49s)
+  v24 (7.05s)
+  v25 (6.49s)
+  v26 (14.37s)
+  v27 (8.09s)
+  v28 (5.77s)
+  v29 (11.21s)
+  v30 (5.89s)
+  h31 kopje (2.13s)
+  v31 (8.21s)
+  v32 (8.09s)
+  v33 (12.21s)
+  v34 (8.25s)
+  v35 (6.89s)
+  v36 (12.09s)
+  v37 (6.97s)
+  v38 (12.33s)
+  manifest.json (42 segmenten)
+
+=== johannes 14 stem m (31 verzen) ===
+  intro (2.57s)
+  h1 kopje (1.41s)
+  v1 (4.97s)
+  v2 (8.25s)
+  v3 (10.69s)
+  v4 (3.33s)
+  v5 (6.85s)
+  v6 (8.93s)
+  v7 (7.81s)
+  v8 (5.41s)
+  v9 (12.53s)
+  v10 (14.21s)
+  v11 (9.09s)
+  v12 (11.61s)
+  v13 (7.53s)
+  v14 (4.21s)
+  h15 kopje (1.85s)
+  v15 (3.21s)
+  v16 (8.45s)
+  v17 (12.93s)
+  v18 (3.25s)
+  v19 (7.81s)
+  v20 (7.29s)
+  v21 (15.13s)
+  v22 (9.97s)
+  v23 (13.09s)
+  v24 (9.89s)
+  v25 (4.45s)
+  v26 (11.25s)
+  v27 (11.73s)
+  v28 (15.89s)
+  v29 (8.41s)
+  v30 (7.33s)
+  v31 (10.69s)
+  manifest.json (34 segmenten)
+
+=== johannes 15 stem m (27 verzen) ===
+  intro (2.65s)
+  h1 kopje (1.77s)
+  v1 (4.37s)
+  v2 (10.01s)
+  v3 (4.81s)
+  v4 (12.85s)
+  v5 (9.77s)
+  v6 (11.37s)
+  v7 (7.89s)
+  v8 (6.45s)
+  v9 (7.77s)
+  v10 (9.69s)
+  v11 (7.65s)
+  v12 (5.65s)
+  v13 (5.65s)
+  v14 (4.37s)
+  v15 (13.65s)
+  v16 (15.85s)
+  v17 (3.65s)
+  h18 kopje (1.57s)
+  v18 (5.77s)
+  v19 (11.93s)
+  v20 (14.97s)
+  v21 (7.17s)
+  v22 (8.65s)
+  v23 (3.25s)
+  v24 (11.69s)
+  v25 (8.53s)
+  v26 (11.73s)
+  v27 (5.09s)
+  manifest.json (30 segmenten)
+
+=== johannes 16 stem m (33 verzen) ===
+  intro (2.37s)
+  h1 kopje (2.13s)
+  v1 (4.85s)
+  v2 (9.53s)
+  v3 (7.01s)
+  v4 (14.57s)
+  v5 (8.01s)
+  v6 (5.97s)
+  v7 (14.13s)
+  v8 (7.65s)
+  v9 (3.57s)
+  v10 (6.73s)
+  v11 (5.41s)
+  v12 (4.85s)
+  v13 (17.09s)
+  v14 (6.01s)
+  v15 (8.61s)
+  h16 kopje (2.21s)
+  v16 (9.17s)
+  v17 (16.45s)
+  v18 (7.65s)
+  v19 (14.21s)
+  v20 (13.73s)
+  v21 (14.33s)
+  v22 (10.09s)
+  v23 (11.25s)
+  v24 (7.93s)
+  h25 kopje (1.65s)
+  v25 (12.17s)
+  v26 (6.01s)
+  v27 (8.21s)
+  v28 (7.77s)
+  v29 (6.89s)
+  v30 (11.01s)
+  v31 (3.09s)
+  v32 (14.53s)
+  v33 (12.17s)
+  manifest.json (37 segmenten)
+
+=== johannes 17 stem m (26 verzen) ===
+  intro (3.05s)
+  h1 kopje (1.85s)
+  v1 (12.13s)
+  v2 (8.49s)
+  v3 (8.65s)
+  v4 (6.73s)
+  v5 (8.69s)
+  h6 kopje (2.05s)
+  v6 (12.69s)
+  v7 (5.49s)
+  v8 (14.37s)
+  v9 (7.41s)
+  v10 (6.05s)
+  v11 (14.41s)
+  v12 (14.09s)
+  v13 (8.25s)
+  v14 (10.05s)
+  v15 (6.21s)
+  v16 (5.01s)
+  v17 (4.41s)
+  v18 (5.33s)
+  v19 (6.85s)
+  h20 kopje (2.05s)
+  v20 (7.25s)
+  v21 (13.73s)
+  v22 (8.85s)
+  v23 (13.21s)
+  v24 (16.57s)
+  v25 (9.33s)
+  v26 (11.17s)
+  manifest.json (30 segmenten)
+
+=== johannes 18 stem m (40 verzen) ===
+  intro (2.13s)
+  h1 kopje (2.13s)
+  v1 (10.05s)
+  v2 (8.81s)
+  v3 (11.65s)
+  v4 (8.01s)
+  v5 (10.37s)
+  v6 (5.89s)
+  v7 (7.13s)
+  v8 (7.69s)
+  v9 (9.53s)
+  v10 (12.77s)
+  v11 (9.61s)
+  h12 kopje (3.89s)
+  v12 (8.37s)
+  v13 (8.25s)
+  v14 (7.53s)
+  v15 (11.29s)
+  v16 (11.45s)
+  v17 (10.09s)
+  v18 (11.49s)
+  v19 (5.57s)
+  v20 (14.01s)
+  v21 (10.49s)
+  v22 (10.33s)
+  v23 (8.53s)
+  v24 (5.25s)
+  v25 (10.57s)
+  v26 (10.21s)
+  v27 (4.57s)
+  h28 kopje (1.13s)
+  v28 (13.69s)
+  v29 (6.65s)
+  v30 (8.29s)
+  v31 (10.09s)
+  v32 (8.09s)
+  v33 (7.25s)
+  v34 (5.97s)
+  v35 (8.89s)
+  v36 (16.09s)
+  v37 (20.13s)
+  v38 (10.73s)
+  v39 (8.37s)
+  v40 (7.97s)
+  manifest.json (44 segmenten)
+
+=== johannes 19 stem m (42 verzen) ===
+  intro (2.93s)
+  h1 kopje (2.09s)
+  v1 (3.85s)
+  v2 (8.57s)
+  v3 (8.05s)
+  v4 (10.29s)
+  v5 (8.65s)
+  v6 (14.69s)
+  v7 (9.61s)
+  v8 (4.09s)
+  v9 (8.09s)
+  v10 (8.81s)
+  v11 (10.97s)
+  v12 (14.97s)
+  v13 (13.53s)
+  v14 (8.33s)
+  v15 (12.93s)
+  h16 kopje (1.45s)
+  v16 (8.05s)
+  v17 (10.65s)
+  v18 (7.65s)
+  v19 (10.33s)
+Traceback (most recent call last):
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1457, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/urllib3/util/retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='127.0.0.1', port=8765): Read timed out. (read timeout=120)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/scripts/tts/generate_chunks.py", line 236, in <module>
+    main()
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/scripts/tts/generate_chunks.py", line 224, in main
+    generate_chapter(args.book, ch, args.voice, ref_audio, ref_text, args.force)
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/scripts/tts/generate_chunks.py", line 184, in generate_chapter
+    d = synth(raw, outdir / f, ref_audio, ref_text)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/scripts/tts/generate_chunks.py", line 115, in synth
+    resp = requests.post(url, json=payload, headers={"Content-Type": "application/json"},
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/requests/api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/requests/adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='127.0.0.1', port=8765): Read timed out. (read timeout=120)
+[sup] johannes/m: 18/21
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[server] 
+[server] Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  6.26it/s]
+[server] 
+Server luistert op poort.
+  overslaan (up-to-date): johannes 1 m
+  overslaan (up-to-date): johannes 2 m
+  overslaan (up-to-date): johannes 3 m
+  overslaan (up-to-date): johannes 4 m
+  overslaan (up-to-date): johannes 5 m
+  overslaan (up-to-date): johannes 6 m
+  overslaan (up-to-date): johannes 7 m
+  overslaan (up-to-date): johannes 8 m
+  overslaan (up-to-date): johannes 9 m
+  overslaan (up-to-date): johannes 10 m
+  overslaan (up-to-date): johannes 11 m
+  overslaan (up-to-date): johannes 12 m
+  overslaan (up-to-date): johannes 13 m
+  overslaan (up-to-date): johannes 14 m
+  overslaan (up-to-date): johannes 15 m
+  overslaan (up-to-date): johannes 16 m
+  overslaan (up-to-date): johannes 17 m
+  overslaan (up-to-date): johannes 18 m
+
+=== johannes 19 stem m (42 verzen) ===
+  intro (3.37s)
+  h1 kopje (2.09s)
+  v1 (3.81s)
+  v2 (8.29s)
+  v3 (7.49s)
+  v4 (10.05s)
+  v5 (9.25s)
+  v6 (14.45s)
+  v7 (8.21s)
+  v8 (4.05s)
+  v9 (7.77s)
+  v10 (9.81s)
+  v11 (11.49s)
+  v12 (14.01s)
+  v13 (11.89s)
+  v14 (8.25s)
+  v15 (13.89s)
+  h16 kopje (1.21s)
+  v16 (7.81s)
+  v17 (11.25s)
+  v18 (7.37s)
+  v19 (9.93s)
+  v20 (12.49s)
+  v21 (10.89s)
+  v22 (4.45s)
+  v23 (15.13s)
+  v24 (18.77s)
+  h25 kopje (1.69s)
+  v25 (9.21s)
+  v26 (10.41s)
+  v27 (8.49s)
+  v28 (9.33s)
+  v29 (9.13s)
+  v30 (8.37s)
+  v31 (14.05s)
+  v32 (8.05s)
+  v33 (7.21s)
+  v34 (7.65s)
+  v35 (11.09s)
+  v36 (6.89s)
+  v37 (6.09s)
+  h38 kopje (1.81s)
+  v38 (16.41s)
+  v39 (11.33s)
+  v40 (9.49s)
+  v41 (10.37s)
+  v42 (6.57s)
+  manifest.json (47 segmenten)
+
+=== johannes 20 stem m (31 verzen) ===
+  intro (3.13s)
+  h1 kopje (1.57s)
+  v1 (9.65s)
+  v2 (13.41s)
+  v3 (5.29s)
+  v4 (8.37s)
+  v5 (5.13s)
+  v6 (6.13s)
+  v7 (9.41s)
+  v8 (7.05s)
+  v9 (4.65s)
+  v10 (3.09s)
+  h11 kopje (2.97s)
+  v11 (7.61s)
+  v12 (9.05s)
+  v13 (10.93s)
+  v14 (8.33s)
+  v15 (17.21s)
+  v16 (8.25s)
+  v17 (15.45s)
+  v18 (8.01s)
+  h19 kopje (2.21s)
+  v19 (14.77s)
+  v20 (9.57s)
+  v21 (7.85s)
+  v22 (6.77s)
+  v23 (8.17s)
+  h24 kopje (2.17s)
+  v24 (7.29s)
+  v25 (17.89s)
+  v26 (11.93s)
+  v27 (11.93s)
+  v28 (5.01s)
+  v29 (11.41s)
+  h30 kopje (1.69s)
+  v30 (8.61s)
+  v31 (12.29s)
+  manifest.json (37 segmenten)
+
+=== johannes 21 stem m (25 verzen) ===
+  intro (3.37s)
+  h1 kopje (1.61s)
+  v1 (9.05s)
+  v2 (12.53s)
+  v3 (12.89s)
+  v4 (7.81s)
+  v5 (6.93s)
+  v6 (11.61s)
+  v7 (15.73s)
+  v8 (9.81s)
+  v9 (6.97s)
+  v10 (5.05s)
+  v11 (11.21s)
+  v12 (11.69s)
+  v13 (5.81s)
+  v14 (8.21s)
+  h15 kopje (2.21s)
+  v15 (17.01s)
+  v16 (15.33s)
+  v17 (20.45s)
+  v18 (17.57s)
+  v19 (10.29s)
+  h20 kopje (1.89s)
+  v20 (13.89s)
+  v21 (5.73s)
+  v22 (7.77s)
+  v23 (16.33s)
+  v24 (10.53s)
+  v25 (14.37s)
+  manifest.json (29 segmenten)
+
+Klaar.
+[sup] johannes/m: 21/21
+[sup] m KLAAR

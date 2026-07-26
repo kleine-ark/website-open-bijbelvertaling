@@ -1,0 +1,47 @@
+Server starten: /home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/bin/sgl-omni serve --model-path bosonai/higgs-audio-v3-tts-4b --port 8765 --host 127.0.0.1 --model-name higgs-audio-v3-tts
+Wachten op server (max 360s)...
+[server] WARNING:sglang_omni.models.higgs_tts._vendored.higgs_audio_v2_tokenizer_hf:Could not determine semantic model type from config architecture. Defaulting to `HubertConfig`.
+[server] WARNING:sglang.srt.models.registry:Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/maarten/Documents/GitHub/website-open-bijbelvertaling/.venv-higgs-v3/lib/python3.12/site-packages/transformers/__init__.py)
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[server] 
+[server] Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[server] 
+Server luistert op poort.
+
+=== genesis 2 stem v (25 verzen) ===
+  intro (2.21s)
+  h1 kopje (2.62s)
+  v1 (3.74s)
+  v2 (9.17s)
+  v3 (9.17s)
+  h4 kopje (1.73s)
+  v4 (godsnaam) ov=7.85 klassiek=7.78 jehovah=8.54 jhwh=8.02
+  v5 (godsnaam) ov=12.29 klassiek=13.18 jehovah=14.06 jhwh=13.37
+  v6 (4.46s)
+  v7 (godsnaam) ov=8.98 klassiek=8.9 jehovah=9.34 jhwh=9.05
+  v8 (godsnaam) ov=7.06 klassiek=6.7 jehovah=6.94 jhwh=7.01
+  v9 (godsnaam) ov=11.86 klassiek=12.7 jehovah=13.34 jhwh=12.22
+  v10 (7.06s)
+  v11 (7.66s)
+  v12 (5.86s)
+  v13 (5.74s)
+  v14 (7.18s)
+  v15 (godsnaam) ov=6.22 klassiek=6.58 jehovah=6.05 jhwh=6.58
+  v16 (godsnaam) ov=5.45 klassiek=5.78 jehovah=5.21 jhwh=5.5
+  v17 (9.1s)
+  h18 kopje (1.78s)
+  v18 (godsnaam) ov=8.38 klassiek=8.14 jehovah=7.97 jhwh=8.74
+  v19 (godsnaam) ov=14.93 klassiek=15.17 jehovah=15.05 jhwh=15.65
+  v20 (11.5s)
+  v21 (godsnaam) ov=7.82 klassiek=8.21 jehovah=8.02 jhwh=8.42
+  v22 (godsnaam) ov=6.62 klassiek=6.34 jehovah=6.98 jhwh=6.26
+  v23 (8.42s)
+  v24 (6.46s)
+  v25 (4.66s)
+  manifest.json (29 segmenten)
+
+Klaar.
+===== PILOT gen2/v KLAAR =====

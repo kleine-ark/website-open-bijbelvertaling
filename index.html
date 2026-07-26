@@ -8,13 +8,78 @@
     <meta name="theme-color" content="#142e42">
     <link rel="apple-touch-icon" href="/icons/icon-192.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Open Vertaling</title>
+    <title>Open Vertaling — de Bijbel in leesbaar hedendaags Nederlands</title>
+    <!-- SEO:start (auto — seo_build.py) -->
+    <meta name="description" content="Lees de Bijbel gratis online: een vrije, leesbare herziening van de Statenvertaling (1637/1888) in hedendaags Nederlands — met grondtekst, kaart en Bijbels woordenboek.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://openvertaling.nl/">
+    <meta name="author" content="Open Vertaling — de kleine ark">
+    <meta name="theme-color" content="#142e42">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Open Vertaling">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:title" content="Open Vertaling — de Bijbel in leesbaar hedendaags Nederlands">
+    <meta property="og:description" content="Lees de Bijbel gratis online: een vrije, leesbare herziening van de Statenvertaling (1637/1888) in hedendaags Nederlands — met grondtekst, kaart en Bijbels woordenboek.">
+    <meta property="og:url" content="https://openvertaling.nl/">
+    <meta property="og:image" content="https://openvertaling.nl/icons/icon-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Open Vertaling — de Bijbel in leesbaar hedendaags Nederlands">
+    <meta name="twitter:description" content="Lees de Bijbel gratis online: een vrije, leesbare herziening van de Statenvertaling (1637/1888) in hedendaags Nederlands — met grondtekst, kaart en Bijbels woordenboek.">
+    <meta name="twitter:image" content="https://openvertaling.nl/icons/icon-512.png">
+    <!-- SEO:end -->
+
+
+
     <!-- Thema vroeg zetten om flash-of-light te voorkomen bij donker thema. -->
     <script>(function(){try{var s=localStorage.getItem('sv2026_vertaalopties');var t=s?(JSON.parse(s).thema||'auto'):'auto';if(t==='auto'){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'donker':'licht';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
     <!-- Auto-open Search bij ?q=... van andere pagina's -->
     <script>window.addEventListener('load',function(){try{var p=new URLSearchParams(location.search);var q=p.get('q');if(q&&typeof Search!=='undefined'){setTimeout(function(){Search.open(q);},200);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}});</script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/print.css" media="print">
+
+    <!-- JSONLD:start (auto) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://openvertaling.nl/#website",
+          "url": "https://openvertaling.nl/",
+          "name": "Open Vertaling",
+          "alternateName": "Open Vertaling — de kleine ark",
+          "description": "Een vrije, leesbare Bijbelvertaling: herziening van de Statenvertaling (1637/1888) in hedendaags Nederlands, met grondtekst, kaart en Bijbels woordenboek.",
+          "inLanguage": "nl-NL",
+          "publisher": { "@id": "https://openvertaling.nl/#org" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": { "@type": "EntryPoint", "urlTemplate": "https://openvertaling.nl/index.html?q={search_term_string}" },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://openvertaling.nl/#org",
+          "name": "Open Vertaling — de kleine ark",
+          "url": "https://openvertaling.nl/",
+          "logo": "https://openvertaling.nl/icons/icon-512.png"
+        },
+        {
+          "@type": "Book",
+          "@id": "https://openvertaling.nl/#book",
+          "name": "Open Vertaling",
+          "bookFormat": "https://schema.org/EBook",
+          "inLanguage": "nl-NL",
+          "isBasedOn": "Statenvertaling (1637/1888)",
+          "genre": "Bijbel",
+          "author": { "@id": "https://openvertaling.nl/#org" },
+          "isAccessibleForFree": true,
+          "url": "https://openvertaling.nl/"
+        }
+      ]
+    }
+    </script>
+    <!-- JSONLD:end -->
 </head>
 <body>
     <!-- Top navigatie -->
