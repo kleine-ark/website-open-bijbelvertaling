@@ -109,13 +109,24 @@
         :root[data-theme="donker"] .ms-summary .sum-card { background: var(--bg-surface); border-color: var(--border-default); }
         :root[data-theme="donker"] .ms-summary .sum-name { color: var(--text-primary); }
 
-        /* Fragment-tekst: Grieks + Nederlands */
-        .frag-verse { margin: 10px 0; padding: 8px 12px; border-left: 3px solid var(--border); }
-        .frag-num { font-weight: 700; color: var(--gold); font-family: 'Fira Sans', sans-serif; margin-right: 6px; }
-        .frag-grc { font-size: 17px; line-height: 1.7; color: var(--navy); font-family: 'EB Garamond', serif; }
+        /* Fragment-tekst: grondtekst (Hebreeuws/Grieks) + Nederlands */
+        .frag-tekst:not(:empty) { margin: 6px 0 22px; }
+        .frag-kop { color: var(--navy); font-size: 16px; margin: 10px 0 2px; }
+        .frag-verse { margin: 10px 0; padding: 8px 12px; border-left: 3px solid var(--gold); background: rgba(203,164,73,0.05); border-radius: 0 4px 4px 0; }
+        .frag-num { display: inline-block; font-weight: 700; color: var(--gold); font-family: 'Fira Sans', sans-serif; font-size: 12px; margin-bottom: 3px; }
+        .frag-grc, .frag-src { font-size: 17px; line-height: 1.7; color: var(--navy); font-family: 'EB Garamond', serif; }
+        .frag-src[lang="he"] { font-size: 23px; line-height: 2; text-align: right; }
         .frag-nl { font-size: 14px; line-height: 1.6; color: #444; margin-top: 3px; }
-        :root[data-theme="donker"] .frag-grc { color: #e8e2d0; }
+        :root[data-theme="donker"] .frag-grc, :root[data-theme="donker"] .frag-src { color: #e8e2d0; }
         :root[data-theme="donker"] .frag-nl { color: var(--text-secondary); }
+        /* Scan vergroten (lightbox) */
+        .codex-scan { cursor: zoom-in; }
+        .scan-hint { color: var(--gold); font-weight: 600; }
+        #scan-lightbox { position: fixed; inset: 0; z-index: 9000; background: rgba(10,10,10,0.92); display: none; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+        #scan-lightbox.open { display: flex; }
+        #scan-lightbox img { max-width: 96vw; max-height: 88vh; box-shadow: 0 6px 40px rgba(0,0,0,0.6); border-radius: 4px; }
+        #scan-lightbox .sl-cap { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; color: #eee; font-size: 13px; padding: 0 20px; }
+        #scan-lightbox .sl-close { position: absolute; top: 14px; right: 20px; color: #fff; font-size: 30px; line-height: 1; cursor: pointer; background: none; border: none; }
 
         /* Persoon-link + popup */
         .persoon-link { color: var(--teal); border-bottom: 1px dotted var(--teal); cursor: pointer; }
@@ -188,9 +199,9 @@
         facts += '<li><strong>Gevonden/verworven:</strong> ' + (vind ? vind + '. ' : '') + esc(g.hoe || '') + '</li>';
         if (ms.bewijs && ms.bewijs.url) facts += '<li class="ms-bewijs"><strong>Bewijs:</strong> <a href="' + esc(ms.bewijs.url) + '" target="_blank" rel="noopener">' + esc(ms.bewijs.tekst) + '</a></li>';
         facts += '</ul>';
-        var fig = ms.afbeelding ? ('<figure class="codex-photo"><a href="' + esc(ms.commons) + '" target="_blank" rel="noopener">' +
-            '<img src="' + esc(ms.afbeelding) + '" alt="' + esc(ms.bijschrift || ms.naam) + '" loading="lazy"></a>' +
-            '<figcaption>' + esc(ms.bijschrift || '') + '<br><a href="' + esc(ms.commons) + '" target="_blank" rel="noopener">Wikimedia</a> (' + esc(ms.licentie || 'bron') + ')</figcaption></figure>') : '';
+        var fig = ms.afbeelding ? ('<figure class="codex-photo">' +
+            '<img class="codex-scan" src="' + esc(ms.afbeelding) + '" alt="' + esc(ms.bijschrift || ms.naam) + '" title="Klik om de scan te vergroten" loading="lazy">' +
+            '<figcaption>' + esc(ms.bijschrift || '') + '<br><span class="scan-hint">🔍 klik om te vergroten</span> · <a href="' + esc(ms.commons) + '" target="_blank" rel="noopener">Wikimedia</a> (' + esc(ms.licentie || 'bron') + ')</figcaption></figure>') : '';
         return '<div class="codex-card' + (isOudste ? ' oudste' : '') + '">' + fig +
             (isOudste ? '<span class="codex-badge">Oudste bewaarde tekst</span><br>' : '') +
             '<h4>' + esc(ms.naam) + (ms.bijnaam ? ' <span class="bijnaam">' + esc(ms.bijnaam) + '</span>' : '') + '</h4>' +
@@ -229,30 +240,48 @@
         if (l) { e.preventDefault(); e.stopPropagation(); showPopup(l); }
     });
 
-    // Render de Griekse grondtekst + Nederlandse vertaling van een fragment.
-    function renderFragmentText(ms) {
+    // Scan-lightbox: klik op een handschrift-scan om 'm groot te bekijken.
+    var lb = document.createElement('div');
+    lb.id = 'scan-lightbox';
+    lb.innerHTML = '<button class="sl-close" aria-label="Sluiten">×</button><img alt=""><div class="sl-cap"></div>';
+    document.body.appendChild(lb);
+    function closeLb() { lb.classList.remove('open'); }
+    lb.addEventListener('click', closeLb);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+    document.addEventListener('click', function (e) {
+        var img = e.target.closest ? e.target.closest('.codex-scan') : null;
+        if (!img) return;
+        lb.querySelector('img').src = img.getAttribute('src');
+        lb.querySelector('.sl-cap').textContent = img.getAttribute('alt') || '';
+        lb.classList.add('open');
+    });
+
+    // Render de grondtekst (Hebreeuws/Grieks) + Nederlandse vertaling van een fragment.
+    function renderFragmentText(ms, containerId) {
         var tf = ms.tekstfragment; if (!tf) return;
-        var container = document.getElementById('fragment-tekst'); if (!container) return;
+        var container = document.getElementById(containerId || 'fragment-tekst'); if (!container) return;
+        var lang = tf.lang || 'grc';
+        var isHeb = lang === 'he';
+        var taalNaam = isHeb ? 'Hebreeuwse' : lang === 'grc' ? 'Griekse' : lang === 'la' ? 'Latijnse' : '';
         var chs = {}; (tf.blokken || []).forEach(function (b) { chs[b.hoofdstuk] = true; });
         var jobs = Object.keys(chs).map(function (ch) {
             return fetch('data/' + tf.boek + '/' + ch + '.json').then(function (r) { return r.json(); }).then(function (d) { return { ch: ch, d: d }; });
         });
         Promise.all(jobs).then(function (loaded) {
             var byCh = {}; loaded.forEach(function (x) { byCh[x.ch] = x.d; });
-            var h = '<h2>Tekst van dit fragment</h2>' +
-                '<p style="font-size:13px;color:var(--teal);">De Griekse grondtekst en de Nederlandse vertaling van ' + esc(tf.verwijzing) + '.</p>';
+            var h = '<h3 class="frag-kop">📜 Lees de tekst van dit handschrift — ' + esc(tf.verwijzing) + '</h3>' +
+                '<p style="font-size:13px;color:var(--teal);">De ' + taalNaam + ' grondtekst en de Nederlandse vertaling, vers voor vers.</p>';
             (tf.blokken || []).forEach(function (b) {
                 var d = byCh[b.hoofdstuk]; if (!d) return;
-                h += '<h3 style="color:var(--teal);font-size:15px;margin:16px 0 4px;">' + esc(b.label) + '</h3>';
                 b.nummers.forEach(function (n) {
                     var v = (d.verses || []).find(function (x) { return x.number === n; }); if (!v) return;
-                    var grc = (v.grondtekst || []).map(function (w) { return w.woord; }).join(' ');
-                    h += '<div class="frag-verse"><span class="frag-num">' + n + '</span>' +
-                        (grc ? '<span class="frag-grc" lang="grc">' + esc(grc) + '</span>' : '') +
+                    var src = (v.grondtekst || []).map(function (w) { return w.woord; }).join(' ');
+                    h += '<div class="frag-verse"><span class="frag-num">' + esc(b.label) + ' : ' + n + '</span>' +
+                        (src ? '<div class="frag-src" lang="' + lang + '"' + (isHeb ? ' dir="rtl"' : '') + '>' + esc(src) + '</div>' : '') +
                         '<div class="frag-nl">' + esc(v.text2026 || '') + '</div></div>';
                 });
             });
-            if (tf.verschillen) h += '<div class="principle-box" style="background:rgba(203,164,73,0.08);margin-top:14px;"><strong>Wat verschilt er van de tekst die wij kennen?</strong> ' + esc(tf.verschillen) + '</div>';
+            if (tf.verschillen) h += '<div class="principle-box" style="background:rgba(203,164,73,0.08);margin-top:12px;"><strong>Over dit handschrift:</strong> ' + esc(tf.verschillen) + '</div>';
             container.innerHTML = h;
         }).catch(function (e) { console.error(e); });
     }
@@ -387,12 +416,12 @@
         if (boek.intro) html += '<div class="principle-box">' + esc(boek.intro) + '</div>';
 
         if (oudste && M[oudste]) {
-            html += '<h2>Oudste bewaarde tekst</h2>' + card(M[oudste], true, true) + '<div id="fragment-tekst"></div>';
+            html += '<h2>Oudste bewaarde tekst</h2>' + card(M[oudste], true, true) + '<div class="frag-tekst" id="fragment-tekst-' + esc(oudste) + '"></div>';
         }
         var frags = (boek.fragmenten || []).filter(function (id) { return id !== oudste && M[id]; });
         if (frags.length) {
             html += '<h2>Andere vroege fragmenten</h2>';
-            frags.forEach(function (id) { html += card(M[id], false, true); });
+            frags.forEach(function (id) { html += card(M[id], false, true) + '<div class="frag-tekst" id="fragment-tekst-' + esc(id) + '"></div>'; });
         }
         var vol = (boek.volledig || []).filter(function (id) { return M[id]; });
         if (vol.length) {
@@ -401,42 +430,17 @@
         }
         if (boek.tekstgetuigen) html += '<p style="font-size:13px;color:var(--teal);"><strong>Tekstgetuigen totaal:</strong> ' + esc(boek.tekstgetuigen) + '</p>';
 
-        // Belangrijke tekstverschillen tussen de Statenvertaling en de oudste handschriften van dit boek
-        if (boek.varianten && boek.varianten.length) {
-            html += '<h2>Tekstvarianten in ' + esc(naam) + '</h2>';
-            html += '<p style="font-size:13px;color:var(--teal);">Waar de Statenvertaling (op basis van de latere Textus Receptus) afwijkt van de oudste bewaarde handschriften.</p>';
-            html += '<div class="ms-table-wrap"><table class="ms-table"><thead><tr><th>Plaats</th><th>Onderwerp</th><th>Statenvertaling</th><th>Oudste handschriften</th><th>Toelichting</th></tr></thead><tbody>';
-            boek.varianten.forEach(function (v) {
-                var getuigen = (v.getuigen || []).map(function (id) {
-                    return M[id] ? '<a href="handschriften.html?ms=' + encodeURIComponent(id) + '">' + esc(M[id].naam) + '</a>' : esc(id);
-                }).join(', ');
-                var oudsteCel = esc(v.oudste || '') + (getuigen ? '<br><span class="var-getuigen">Getuigen: ' + getuigen + '</span>' : '');
-                html += '<tr><td>' + esc(v.verwijzing || '') + '</td><td>' + esc(v.onderwerp || '') + '</td><td>' + esc(v.osv || '') + '</td><td>' + oudsteCel + '</td><td>' + esc(v.toelichting || '') + '</td></tr>';
+        // Optioneel: feitenoverzicht van specifieke hoofdstukken (bv. de Ismaël-hoofdstukken in Genesis)
+        if (boek.ismaelHoofdstukken) {
+            var ih = boek.ismaelHoofdstukken;
+            html += '<h2>' + esc(ih.titel) + '</h2>';
+            html += '<p style="font-size:13px;color:var(--teal);">' + esc(ih.intro) + '</p>';
+            html += '<div class="ms-table-wrap"><table class="ms-table"><thead><tr><th>Hoofdstuk</th><th>Onderwerp</th><th>Oudste bewaarde handschrift</th></tr></thead><tbody>';
+            (ih.rijen || []).forEach(function (r) {
+                html += '<tr><td><strong>' + esc(r.h) + '</strong></td><td>' + esc(r.onderwerp) + '</td><td>' + esc(r.oudste) + '</td></tr>';
             });
             html += '</tbody></table></div>';
-        }
-
-        // Codex Sinaiticus lezen + de verschillen naast de Statenvertaling
-        if (M.sinaiticus && boek.varianten && boek.varianten.length) {
-            var sinVars = boek.varianten.filter(function (v) { return (v.getuigen || []).indexOf('sinaiticus') >= 0; });
-            if (sinVars.length) {
-                html += '<h2>Codex Sinaiticus naast de Statenvertaling</h2>';
-                html += '<p style="font-size:13px;color:var(--teal);">Codex Sinaiticus (א, ±350 n.Chr.) bevat het volledige Johannesevangelie. Hieronder staan de belangrijkste plaatsen waar deze oudste getuige verschilt van de Statenvertaling, naast elkaar.</p>';
-                if (boek.codexSinaiticusUrl) {
-                    html += '<a class="ms-lees-cta" href="' + esc(boek.codexSinaiticusUrl) + '" target="_blank" rel="noopener">📖 Lees ' + esc(naam) + ' in Codex Sinaiticus (origineel) →</a>';
-                }
-                html += '<div class="ms-vergelijk">';
-                sinVars.forEach(function (v) {
-                    html += '<div class="vgl-blok"><div class="vgl-kop">' + esc(v.verwijzing || '') + (v.onderwerp ? ' — ' + esc(v.onderwerp) : '') + '</div>' +
-                        '<div class="vgl-cols">' +
-                        '<div class="vgl-col vgl-sv"><div class="vgl-label">Statenvertaling</div>' + esc(v.osv || '') + '</div>' +
-                        '<div class="vgl-col vgl-sin"><div class="vgl-label">Codex Sinaiticus (א)</div>' + esc(v.oudste || '') + '</div>' +
-                        '</div>' +
-                        (v.toelichting ? '<div class="vgl-toel">' + esc(v.toelichting) + '</div>' : '') +
-                        '</div>';
-                });
-                html += '</div>';
-            }
+            if (ih.bron) html += '<p style="font-size:11.5px;color:#999;">' + esc(ih.bron) + '</p>';
         }
 
         html += '<h2>Bronvermelding</h2>' +
@@ -448,7 +452,8 @@
 
         el.innerHTML = html;
         document.title = 'Handschriften van ' + naam + ' — Open Vertaling';
-        if (oudste && M[oudste]) renderFragmentText(M[oudste]);
+        if (oudste && M[oudste]) renderFragmentText(M[oudste], 'fragment-tekst-' + oudste);
+        frags.forEach(function (id) { if (M[id].tekstfragment) renderFragmentText(M[id], 'fragment-tekst-' + id); });
     }).catch(function (e) {
         document.getElementById('ms-page').innerHTML = '<p style="color:#c0392b">Kon de handschrift-gegevens niet laden.</p>';
         console.error(e);
