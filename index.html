@@ -556,7 +556,7 @@
                 <label><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"> Boekinleiding</label>
                 <label><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"> Hoofdstukinleiding</label>
                 <label><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"> Dyslexie-modus</label>
-                <label><input type="checkbox" id="toggle-citaten" checked onchange="document.body.classList.toggle('citaten-uit', !this.checked);localStorage.setItem('citaatopmaak', this.checked)"> Citaatopmaak <span class="hint">(cursief, « », rood = God, geel = duivel)</span></label>
+                <label><input type="checkbox" id="toggle-citaten" onchange="document.body.classList.toggle('citaten-uit', !this.checked);localStorage.setItem('citaatopmaak', this.checked)"> Citaatopmaak <span class="hint">(cursief, « », rood = God, geel = duivel)</span></label>
                 <label><input type="checkbox" id="toggle-versnummers" checked onchange="Opties.state.versnummers=this.checked?'aan':'uit';Opties.applyVerseNumbersClass();Opties.save();"> Versnummers</label>
                 <label><input type="checkbox" id="toggle-hoofdstuknummers" checked onchange="document.body.classList.toggle('hoofdstuknummers-uit', !this.checked);localStorage.setItem('hoofdstuknummers', this.checked)"> Hoofdstuknummers</label>
                 <label><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"> Pericoop-kopjes <span class="hint">(tussenkopjes per gedeelte)</span></label>
@@ -812,11 +812,14 @@
         var cb = document.getElementById('toggle-dyslexia');
         if (cb) cb.checked = true;
     }
-    // Citaatopmaak herstellen (standaard AAN; alleen uitzetten als expliciet 'false')
-    if (localStorage.getItem('citaatopmaak') === 'false') {
-        document.body.classList.add('citaten-uit');
+    // Citaatopmaak (standaard UIT; alleen aan als de gebruiker expliciet 'true' koos)
+    if (localStorage.getItem('citaatopmaak') === 'true') {
         var cc = document.getElementById('toggle-citaten');
-        if (cc) cc.checked = false;
+        if (cc) cc.checked = true;
+    } else {
+        document.body.classList.add('citaten-uit');
+        var cc0 = document.getElementById('toggle-citaten');
+        if (cc0) cc0.checked = false;
     }
     // Pericoop-kopjes herstellen (standaard AAN; alleen uit als expliciet 'false')
     if (localStorage.getItem('pericopen') === 'false') {
