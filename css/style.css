@@ -4568,3 +4568,10 @@ body.doorlopend-aan #chapter-footer::after {
   /* form-controls (bv. lange <select>-opties) niet breder dan het scherm */
   .page select, .page input, .stats-page select, .stats-page input { max-width: 100%; }
 }
+
+/* Reader-optie: oudste handschrift per vers */
+.hs-vers-tag { display: none; font-size: 11px; color: var(--text-muted, #999); margin: 2px 0 0 2px; line-height: 1.4; font-family: var(--font-body); }
+body.hs-per-vers-aan .hs-vers-tag { display: block; }
+.hs-vers-orig { color: var(--teal); }
+.hs-vers-alle { color: var(--text-muted, #999); }
+:root[data-theme="donker"] .hs-vers-orig { color: var(--teal-light); }
