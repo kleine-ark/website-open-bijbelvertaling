@@ -189,7 +189,26 @@
    "licentie": "publiek domein",
    "bijschrift": "Fragment van een Dode Zee-rol uit Qumran.",
    "beschrijving": "De Dode Zee-rollen (±250 v.Chr.–70 n.Chr.) bevatten de oudste bekende afschriften van Genesis. Ze bevestigden dat de Hebreeuwse tekst over meer dan duizend jaar opmerkelijk stabiel is overgeleverd.",
-   "persoonWiki": "https://nl.wikipedia.org/wiki/Dode_Zee-rollen"
+   "persoonWiki": "https://nl.wikipedia.org/wiki/Dode_Zee-rollen",
+   "tekstfragment": {
+    "boek": "genesis",
+    "lang": "he",
+    "verwijzing": "Genesis 1:1-5 (de schepping)",
+    "blokken": [
+     {
+      "hoofdstuk": 1,
+      "label": "Genesis 1",
+      "nummers": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    ],
+    "verschillen": "4QGenᵇ bewaart o.a. Genesis 1:1-28. De tekst is vrijwel identiek aan de masoretische tekst die ruim duizend jaar later is overgeleverd — een sterk bewijs voor de stabiele overlevering."
+   }
   },
   "leningradensis": {
    "naam": "Codex Leningradensis",
@@ -493,6 +512,45 @@
    "licentie": "publiek domein",
    "bijschrift": "Ge'ez-handschrift (Ethiopisch).",
    "beschrijving": "De Ethiopische Ge'ez-handschriften bewaren de volledige tekst van boeken die elders alleen in fragmenten voortleven."
+  },
+  "8qgen": {
+   "naam": "8QGen (Qumran, grot 8)",
+   "bijnaam": "Dode Zee-rol — Genesis 17",
+   "siglum": "8Q1",
+   "datering": "± 1e eeuw n.Chr. (Herodiaans schrift)",
+   "type": "fragment",
+   "bevat": "Genesis 17:12-13, 15, 18-19 en 18:20-25 — inclusief de verzen over Ismaël",
+   "bewaarplaats": "Israel Antiquities Authority, Jeruzalem",
+   "gevonden": {
+    "wie": "Archeologische opgraving (grot 8)",
+    "jaar": "1957",
+    "plaats": "Qumran, grot 8",
+    "hoe": "Grot 8 bij Qumran werd in 1957 opgegraven en leverde enkele fragmenten op, waaronder dit Genesis-fragment in Herodiaans schrift. Het bewaart juist een deel van Genesis 17 — het verbondshoofdstuk waarin Abraham voor Ismaël pleit."
+   },
+   "afbeelding": "img/handschriften/dss.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/Category:Dead_Sea_Scrolls",
+   "licentie": "publiek domein",
+   "bijschrift": "Dode Zee-rol uit Qumran (illustratief; scan van 8Q1 zelf is schaars).",
+   "beschrijving": "Het oudste Hebreeuwse handschrift dat een deel van Genesis 17 bewaart — met precies Abrahams gebed voor Ismaël (17:18) en Gods antwoord (17:19), ruim duizend jaar ouder dan de Codex Leningradensis.",
+   "tekstfragment": {
+    "boek": "genesis",
+    "lang": "he",
+    "verwijzing": "Genesis 17:15-20 (de belofte rond Ismaël)",
+    "blokken": [
+     {
+      "hoofdstuk": 17,
+      "label": "Genesis 17",
+      "nummers": [
+       15,
+       17,
+       18,
+       19,
+       20
+      ]
+     }
+    ],
+    "verschillen": "8QGen bewaart concreet Genesis 17:12-13, 15 en 18-19 (Herodiaans schrift, ±1e eeuw n.Chr.). Vers 18 is Abrahams gebed 'Och, dat Ismaël mocht leven voor Uw aangezicht!' en vers 19 Gods antwoord over Izaäk; de tekst stemt overeen met de latere masoretische tekst."
+   }
   }
  },
  "boeken": {
@@ -511,53 +569,14 @@
    "tekstgetuigen": "± 30 papyri + alle grote majuskels (Sinaiticus, Vaticanus, Alexandrinus, Bezae, Washingtonianus)",
    "leesInReader": "johannes",
    "oudsteVolledig": "sinaiticus",
-   "varianten": [
-    {
-     "verwijzing": "Johannes 7:53–8:11",
-     "onderwerp": "De overspelige vrouw (Pericope Adulterae)",
-     "osv": "De Statenvertaling neemt de hele geschiedenis van de overspelige vrouw op, zoals ze in de latere Byzantijnse tekst (de Textus Receptus) staat.",
-     "oudste": "Ontbreekt volledig.",
-     "getuigen": [
-      "p66",
-      "p75",
-      "sinaiticus",
-      "vaticanus"
-     ],
-     "toelichting": "De passage ontbreekt in álle oudste getuigen van Johannes (P66, P75, Sinaiticus, Vaticanus) en duikt pas later op, o.a. in de Codex Bezae. Veel tekstcritici zien haar daarom als een latere invoeging; de inhoud zelf wordt vaak als oud en waardevol beschouwd."
-    },
-    {
-     "verwijzing": "Johannes 1:18",
-     "onderwerp": "“de eniggeboren Zoon” of “de eniggeboren God”",
-     "osv": "“Niemand heeft ooit God gezien; de eniggeboren Zoon…” — de Statenvertaling volgt hier de gangbare tekst met “Zoon” (Grieks: ὁ μονογενὴς υἱός).",
-     "oudste": "“de eniggeboren God” (Grieks: μονογενὴς θεός).",
-     "getuigen": [
-      "p66",
-      "p75",
-      "sinaiticus"
-     ],
-     "toelichting": "De oudste papyri (P66, P75) en de Sinaiticus lezen hier θεός (God) in plaats van υἱός (Zoon). Beide lezingen belijden Christus’ unieke band met de Vader; het verschil raakt niet aan de leer, wel aan de exacte woordkeus."
-    },
-    {
-     "verwijzing": "Johannes 5:3b–4",
-     "onderwerp": "De engel die het water van Bethesda beroerde",
-     "osv": "“…wachtende op de roering van het water. Want een engel daalde neder op zekeren tijd in dat badwater, en beroerde het water…” — de Statenvertaling neemt de verklaring over de engel op.",
-     "oudste": "Ontbreekt (het slot van vers 3 en heel vers 4).",
-     "getuigen": [
-      "p66",
-      "p75",
-      "sinaiticus",
-      "vaticanus"
-     ],
-     "toelichting": "De zin over de engel die het water in beweging bracht, ontbreekt in de oudste handschriften (P66, P75, Sinaiticus, Vaticanus). Ze lijkt een vroege verklarende kanttekening te zijn die later in de tekst is opgenomen."
-    }
-   ],
    "codexSinaiticusUrl": "https://www.codexsinaiticus.org/en/manuscript.aspx?book=36"
   },
   "genesis": {
    "intro": "Genesis is het eerste boek van de Thora en van de hele Bijbel. De Hebreeuwse tekst is met bijzondere zorg overgeleverd: de Dode Zee-rollen (vanaf de 1e eeuw v.Chr.) leveren de oudste fragmenten, terwijl de Codex Leningradensis (1008 n.Chr.) het oudste volledige handschrift is en de basis vormt voor vrijwel alle moderne uitgaven. Daarnaast bestaat Genesis vroeg in Griekse vertaling (de Septuaginta) en in de Samaritaanse Pentateuch, die op enkele plaatsen van de masoretische tekst afwijken.",
    "oudsteFragment": "dss_gen",
    "fragmenten": [
-    "dss_gen"
+    "dss_gen",
+    "8qgen"
    ],
    "volledig": [
     "leningradensis",
@@ -566,32 +585,33 @@
    "tekstgetuigen": "Dode Zee-rollen (meerdere Genesis-handschriften), de masoretische codices (Leningradensis, Aleppo), de Samaritaanse Pentateuch en de Griekse Septuaginta.",
    "leesInReader": "genesis",
    "oudsteVolledig": "leningradensis",
-   "varianten": [
-    {
-     "verwijzing": "Genesis 4:8",
-     "onderwerp": "Kaïns woorden tegen Abel",
-     "osv": "“En Kaïn sprak met zijn broeder Habel…” — de Statenvertaling volgt de masoretische tekst, waarin niet staat wát Kaïn zei.",
-     "oudste": "“Laat ons naar het veld gaan.”",
-     "getuigen": [
-      "Septuaginta",
-      "Samaritaanse Pentateuch",
-      "Peshitta"
-     ],
-     "toelichting": "De masoretische tekst vermeldt niet wat Kaïn tegen Abel zei; de Septuaginta, de Samaritaanse Pentateuch en de Peshitta hebben hier de zin ‘Laat ons naar het veld gaan’. Veel moderne vertalingen nemen die woorden op; de inhoud verandert de geschiedenis niet wezenlijk."
-    },
-    {
-     "verwijzing": "Genesis 5 en 11",
-     "onderwerp": "De levensjaren in de geslachtsregisters",
-     "osv": "De Statenvertaling volgt de masoretische getallen (bijv. Adam 130 jaar bij de geboorte van Set).",
-     "oudste": "Afwijkende getallen in de Septuaginta en de Samaritaanse Pentateuch.",
-     "getuigen": [
-      "Septuaginta",
-      "Samaritaanse Pentateuch",
-      "leningradensis"
-     ],
-     "toelichting": "De leeftijden in de geslachtslijsten van Genesis 5 en 11 verschillen tussen de masoretische tekst, de Septuaginta en de Samaritaanse Pentateuch. Daardoor lopen berekeningen van de tijd tussen schepping en Abraham uiteen. Het gaat om overleveringsverschillen in de getallen, niet om de kern van het verhaal."
-    }
-   ]
+   "ismaelHoofdstukken": {
+    "titel": "De hoofdstukken over Ismaël",
+    "intro": "Genesis 16, 17, 21 en 25 gaan over Hagar en Ismaël. Van deze vier is alleen Genesis 17 onder de Dode Zee-rollen bewaard.",
+    "rijen": [
+     {
+      "h": "Genesis 16",
+      "onderwerp": "Hagar vlucht; geboorte en naamgeving van Ismaël",
+      "oudste": "Geen Qumran-fragment bewaard. Oudste getuigen: de Griekse Septuaginta (Codex Vaticanus/Alexandrinus, 4e–5e eeuw) en de Samaritaanse Pentateuch; volledig Hebreeuws pas in de Codex Leningradensis (1008)."
+     },
+     {
+      "h": "Genesis 17",
+      "onderwerp": "Het verbond; Abraham pleit voor Ismaël (17:18); Gods zegen over Ismaël (17:20); besnijdenis",
+      "oudste": "8QGen (8Q1), Herodiaans schrift, ±1e eeuw n.Chr., bewaart Genesis 17:12-13, 15 en 18-19 — inclusief Abrahams gebed voor Ismaël en Gods antwoord. Ruim duizend jaar ouder dan de Codex Leningradensis."
+     },
+     {
+      "h": "Genesis 21",
+      "onderwerp": "Hagar en Ismaël weggezonden; Gods belofte Ismaël tot een groot volk te maken (21:13,18)",
+      "oudste": "Geen Qumran-fragment bewaard. Oudste getuigen: de Griekse Septuaginta (4e–5e eeuw), de Samaritaanse Pentateuch; volledig Hebreeuws in de Codex Leningradensis (1008)."
+     },
+     {
+      "h": "Genesis 25",
+      "onderwerp": "De twaalf zonen van Ismaël (25:12-16); dood van Ismaël (25:17); Izaäk en Ismaël begraven Abraham (25:9)",
+      "oudste": "Geen Qumran-fragment bewaard. Oudste getuigen: de Griekse Septuaginta (4e–5e eeuw), de Samaritaanse Pentateuch; volledig Hebreeuws in de Codex Leningradensis (1008)."
+     }
+    ],
+    "bron": "Overzicht op basis van de gangbare edities (o.a. Sidnie White Crawford, 'Genesis in the Dead Sea Scrolls'; Ulrich, 'The Biblical Qumran Scrolls'). 8QGen-inhoud: DJD III."
+   }
   },
   "mattheus": {
    "intro": "Van het Mattheüsevangelie zijn zeer vroege fragmenten bewaard; Papyrus 45 (± 250 n.Chr.) bundelt de vier evangeliën en Handelingen. De volledige tekst staat in de 4e-eeuwse codices Sinaïticus en Vaticanus.",
@@ -623,20 +643,7 @@
    ],
    "oudsteVolledig": "sinaiticus",
    "tekstgetuigen": "± 30 papyri en de grote 4e–5e-eeuwse codices (Sinaïticus, Vaticanus, Alexandrinus, Bezae)",
-   "leesInReader": "markus",
-   "varianten": [
-    {
-     "verwijzing": "Markus 16:9–20",
-     "onderwerp": "Het langere slot van Markus",
-     "osv": "De Statenvertaling neemt de verzen 9–20 (de verschijningen na de opstanding en de hemelvaart) volledig op.",
-     "oudste": "Ontbreekt; het evangelie eindigt bij 16:8.",
-     "getuigen": [
-      "sinaiticus",
-      "vaticanus"
-     ],
-     "toelichting": "De oudste handschriften (Sinaïticus, Vaticanus) eindigen Markus bij 16:8. Het langere slot (16:9–20) ontbreekt daar of is als toevoeging gemarkeerd. Andere handschriften (o.a. Washingtonianus) hebben het wel; de inhoud sluit aan bij de andere evangeliën."
-    }
-   ]
+   "leesInReader": "markus"
   },
   "lukas": {
    "intro": "Van het Lukasevangelie is Papyrus 75 (± 200 n.Chr.) een uitzonderlijk vroege en betrouwbare getuige, samen met Papyrus 45. De volledige tekst staat in de Sinaïticus en Vaticanus.",
@@ -667,21 +674,7 @@
    ],
    "oudsteVolledig": "sinaiticus",
    "tekstgetuigen": "± 30 papyri en de grote 4e–5e-eeuwse codices (Sinaïticus, Vaticanus, Alexandrinus, Bezae)",
-   "leesInReader": "handelingen",
-   "varianten": [
-    {
-     "verwijzing": "Handelingen 8:37",
-     "onderwerp": "De geloofsbelijdenis van de kamerling",
-     "osv": "De Statenvertaling neemt vers 37 op: “…Indien gij van ganser harte gelooft…”",
-     "oudste": "Ontbreekt.",
-     "getuigen": [
-      "p45",
-      "sinaiticus",
-      "vaticanus"
-     ],
-     "toelichting": "De belijdenis van de Ethiopische kamerling (vers 37) ontbreekt in de oudste handschriften en duikt pas later op. Ze verwoordt een vroege doopbelijdenis en werd waarschijnlijk in de marge toegevoegd en later in de tekst opgenomen."
-    }
-   ]
+   "leesInReader": "handelingen"
   },
   "romeinen": {
    "intro": "De brief aan de Romeinen is een van de brieven van Paulus. Het oudste uitgebreide handschrift van Paulus’ brieven is Papyrus 46 (± 200 n.Chr.) In P46 volgt Hebreeën opvallend meteen na Romeinen. Daarnaast getuigen de grote 4e-eeuwse codices Sinaïticus en Vaticanus van de volledige tekst.",
@@ -935,21 +928,7 @@
    ],
    "oudsteVolledig": "sinaiticus",
    "tekstgetuigen": "De grote majuskels (Sinaïticus, Vaticanus, Alexandrinus)",
-   "leesInReader": "1johannes",
-   "varianten": [
-    {
-     "verwijzing": "1 Johannes 5:7–8",
-     "onderwerp": "Het ‘Comma Johanneum’ (de drie getuigen in de hemel)",
-     "osv": "De Statenvertaling heeft: “…de Vader, het Woord en de Heilige Geest; en deze drie zijn één.”",
-     "oudste": "Ontbreekt volledig.",
-     "getuigen": [
-      "sinaiticus",
-      "vaticanus",
-      "alexandrinus"
-     ],
-     "toelichting": "De uitdrukkelijke drie-eenheidsformule ontbreekt in álle oudste Griekse handschriften en verscheen pas laat, via de Latijnse traditie, in de gedrukte Griekse tekst (en zo in de Statenvertaling). De leer van de Drie-eenheid rust op vele andere plaatsen; dit specifieke vers is tekstkritisch onzeker."
-    }
-   ]
+   "leesInReader": "1johannes"
   },
   "2johannes": {
    "intro": "De korte tweede brief van Johannes is bewaard in de grote 4e-eeuwse codices.",
