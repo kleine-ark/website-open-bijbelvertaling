@@ -88,6 +88,10 @@
         /* Witregel tussen de genummerde betekenissen (BDB gebruikt <p><b>1</b>… per betekenis) */
         .lex-def p { margin: 0.85em 0 0; }
         .lex-def p:first-child { margin-top: 0; }
+        .lex-refs-toggle { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--teal); margin-top: 8px; cursor: pointer; }
+        .lex-refs-toggle input { margin: 0; }
+        body.lex-geen-verwijzingen .lex-ref { display: none; }
+        body.lex-geen-verwijzingen .lex-verw { display: none; }
         .lex-ref { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); white-space: nowrap; }
         .lex-ref:hover { color: var(--navy); background: rgba(203,164,73,0.14); }
         .lex-verw { margin-top: 16px; font-size: 13px; color: var(--teal); }
@@ -128,6 +132,7 @@
         <div class="lex-toc-search">
             <input type="search" id="lex-zoek" placeholder="Zoek op betekenis, woord of nummer…" autocomplete="off">
             <div class="lex-toc-hint" id="lex-hint">Laden…</div>
+            <label class="lex-refs-toggle"><input type="checkbox" id="lex-refs-toggle" checked> Verwijsteksten tonen</label>
         </div>
         <div class="lex-toc-list" id="lex-list"></div>
     </div>
@@ -168,6 +173,35 @@
         Jas:'jakobus', '1Pet':'1petrus', '2Pet':'2petrus', '1John':'1johannes', '1Jn':'1johannes', '2John':'2johannes', '3John':'3johannes', Jude:'judas', Rev:'openbaring',
         Tob:'tobit', Jth:'judith', Jdt:'judith', '1Macc':'1makkabeeen', '2Macc':'2makkabeeen', Sir:'jezussirach', Ecclus:'jezussirach', Wis:'boekderwijsheid', Bar:'baruch'
     };
+    // Volledige boeknamen (Engels + Nederlands) + gespatieerde nummers als aliassen,
+    // zodat bv. "Hosea 11:1" of "1 Kings 2:1" ook correct herkend en gelinkt worden.
+    (function () {
+        var extra = {
+            Genesis:'genesis', Exodus:'exodus', Leviticus:'leviticus', Numbers:'numeri', Deuteronomy:'deuteronomium',
+            Joshua:'jozua', Judges:'richteren', Ruth:'ruth', Ezra:'ezra', Nehemiah:'nehemia', Esther:'esther',
+            Job:'job', Psalm:'psalmen', Psalms:'psalmen', Proverbs:'spreuken', Ecclesiastes:'prediker',
+            Isaiah:'jesaja', Jeremiah:'jeremia', Lamentations:'klaagliederen', Ezekiel:'ezechiel', Daniel:'daniel',
+            Hosea:'hosea', Joel:'joel', Amos:'amos', Obadiah:'obadja', Jonah:'jona', Micah:'micha', Nahum:'nahum',
+            Habakkuk:'habakuk', Zephaniah:'zefanja', Haggai:'haggai', Zechariah:'zacharia', Malachi:'maleachi',
+            Matthew:'mattheus', Mark:'markus', Luke:'lukas', John:'johannes', Acts:'handelingen', Romans:'romeinen',
+            Galatians:'galaten', Ephesians:'efeziers', Philippians:'filippenzen', Colossians:'kolossenzen',
+            Titus:'titus', Philemon:'filemon', Hebrews:'hebreeen', James:'jakobus', Jude:'judas', Revelation:'openbaring',
+            Corinthians:'1korinthiers',
+            // gespatieerde/afgekorte numerieke boeken (Engels)
+            '1 Samuel':'1samuel','2 Samuel':'2samuel','1 Kings':'1koningen','2 Kings':'2koningen',
+            '1 Chronicles':'1kronieken','2 Chronicles':'2kronieken','1 Sam':'1samuel','2 Sam':'2samuel',
+            '1 Kin':'1koningen','2 Kin':'2koningen','1 Kgs':'1koningen','2 Kgs':'2koningen','1 Chr':'1kronieken','2 Chr':'2kronieken',
+            '1 Corinthians':'1korinthiers','2 Corinthians':'2korinthiers','1 Cor':'1korinthiers','2 Cor':'2korinthiers',
+            '1 Thess':'1tessalonicensen','2 Thess':'2tessalonicensen','1 Tim':'1timotheus','2 Tim':'2timotheus',
+            '1 Peter':'1petrus','2 Peter':'2petrus','1 John':'1johannes','2 John':'2johannes','3 John':'3johannes',
+            // volledige Nederlandse namen (mochten die in de tekst staan)
+            Genese:'genesis', Numeri:'numeri', Deuteronomium:'deuteronomium', Jozua:'jozua', Richteren:'richteren',
+            Psalmen:'psalmen', Spreuken:'spreuken', Prediker:'prediker', Hooglied:'hooglied', Jesaja:'jesaja',
+            Jeremia:'jeremia', Klaagliederen:'klaagliederen', Ezechiël:'ezechiel', Daniël:'daniel', Obadja:'obadja',
+            Jona:'jona', Micha:'micha', Zefanja:'zefanja', Zacharia:'zacharia', Maleachi:'maleachi', Prediker2:'prediker'
+        };
+        for (var k in extra) if (!ABBR[k]) ABBR[k] = extra[k];
+    })();
     var abbrKeys = Object.keys(ABBR).sort(function (a, b) { return b.length - a.length; });
     var abbrAlt = abbrKeys.map(function (k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|');
     // Optionele boek-afkorting gevolgd door hoofdstuk:vers (met optioneel bereik).
@@ -237,7 +271,8 @@
                     // alleen linken als het hoofdstuk in dat boek bestaat (voorkomt bv. "37:35" -> Spreuken)
                     if (CHAPTERCOUNT[book] && +ch > CHAPTERCOUNT[book]) return mm;
                 }
-                var disp = (ab && ABBR[ab] ? bookName(book) + ' ' : '') + ch + ':' + vs + (rng || '');
+                // Elke verwijzing als volledige tekst: altijd de volle boeknaam tonen.
+                var disp = bookName(book) + ' ' + ch + ':' + vs + (rng || '');
                 return '<a class="lex-ref" target="_top" href="index.html#' + book + '/' + ch + '/' + vs + '">' + disp + '</a>';
             });
             return '>' + out + '<';
@@ -367,6 +402,15 @@
         if (xr && xr.dataset.key) { ev.preventDefault(); openKey(xr.dataset.key); }
     });
     document.getElementById('lex-zoek').addEventListener('input', function () { filter(this.value); });
+    // Verwijsteksten (Bijbelverwijzingen + Voorkomens) parametrisch aan/uit
+    (function () {
+        var rt = document.getElementById('lex-refs-toggle'); if (!rt) return;
+        if (localStorage.getItem('lexRefs') === '0') { rt.checked = false; document.body.classList.add('lex-geen-verwijzingen'); }
+        rt.addEventListener('change', function () {
+            document.body.classList.toggle('lex-geen-verwijzingen', !this.checked);
+            localStorage.setItem('lexRefs', this.checked ? '1' : '0');
+        });
+    })();
 
     function openKey(key) {
         var e = entries.filter(function (x) { return x.key === key; })[0];
