@@ -45,4 +45,10 @@
         }
         document.head.appendChild(s);
     });
+
+    // Mobiele zoomregeling (zweefknop −/+) — self-contained, op elke pagina.
+    if (!document.querySelector('script[src$="zoom.js"]')) {
+        var zs = document.createElement('script'); zs.src = 'js/zoom.js'; zs.async = false;
+        document.head.appendChild(zs);
+    }
 })();
