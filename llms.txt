@@ -70,6 +70,13 @@ De Open Vertaling is samengesteld uit de volgende bronnen (elk met eigen licenti
 
 Bij gebruik of citaat graag verwijzen naar: "Open Vertaling (openvertaling.nl), een herziening van de Statenvertaling in hedendaags Nederlands." De Bijbeltekst is een vrije herziening en niet-commercieel beschikbaar. Grondtekst-lexicons en Ge'ez-materiaal kennen eigen bronlicenties (zie de sectie Bronnen); neem bij hergebruik daarvan de betreffende licentie in acht.
 
+## Voor AI's & ontwikkelaars
+
+- [Voor AI's & ontwikkelaars](https://openvertaling.nl/voor-ai.html): hoe je de Open Vertaling leest, gebruikt en correct citeert, met data-API en boekenindex.
+- [Boekenindex (JSON)](https://openvertaling.nl/data/books-index.json): alle 88 Bijbelboeken met data-id, testament en aantal hoofdstukken.
+- Tekst per hoofdstuk (JSON): https://openvertaling.nl/data/{boek-id}/{hoofdstuk}.json — velden o.a. text2026 (moderne tekst), textSV1888 (Statenvertaling 1888), phraseDiff (verschillen), grondtekst (Strong's + morfologie).
+- Citeren: "Johannes 3:16 — Open Vertaling, https://openvertaling.nl" (herziening van de Statenvertaling, niet-commercieel vrij te citeren).
+
 ## Optional
 
 - [Contact / over ons](https://openvertaling.nl/contact.html)
