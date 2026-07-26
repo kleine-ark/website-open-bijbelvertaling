@@ -47,7 +47,21 @@
    "persoon": "roberts",
    "varianten": [],
    "jaar": 125,
-   "taal": "grc"
+   "taal": "grc",
+   "ranges": [
+    [
+     18,
+     31,
+     18,
+     33
+    ],
+    [
+     18,
+     37,
+     18,
+     38
+    ]
+   ]
   },
   "p66": {
    "naam": "Papyrus 66",
@@ -220,7 +234,33 @@
     "verschillen": "4QGenᵇ bewaart o.a. Genesis 1:1-28. De tekst is vrijwel identiek aan de masoretische tekst die ruim duizend jaar later is overgeleverd — een sterk bewijs voor de stabiele overlevering."
    },
    "jaar": -50,
-   "taal": "he"
+   "taal": "he",
+   "ranges": [
+    [
+     1,
+     1,
+     1,
+     28
+    ],
+    [
+     2,
+     14,
+     2,
+     19
+    ],
+    [
+     4,
+     2,
+     4,
+     11
+    ],
+    [
+     5,
+     13,
+     5,
+     13
+    ]
+   ]
   },
   "leningradensis": {
    "naam": "Codex Leningradensis",
@@ -594,7 +634,63 @@
     "verschillen": "8QGen bewaart concreet Genesis 17:12-13, 15 en 18-19 (Herodiaans schrift, ±1e eeuw n.Chr.). Vers 18 is Abrahams gebed 'Och, dat Ismaël mocht leven voor Uw aangezicht!' en vers 19 Gods antwoord over Izaäk; de tekst stemt overeen met de latere masoretische tekst."
    },
    "jaar": 50,
-   "taal": "he"
+   "taal": "he",
+   "ranges": [
+    [
+     17,
+     12,
+     17,
+     13
+    ],
+    [
+     17,
+     15,
+     17,
+     15
+    ],
+    [
+     17,
+     18,
+     17,
+     19
+    ],
+    [
+     18,
+     20,
+     18,
+     25
+    ]
+   ]
+  },
+  "isaiah_scroll": {
+   "naam": "Grote Jesaja-rol",
+   "bijnaam": "1QIsaᵃ (Qumran, grot 1)",
+   "siglum": "1QIsaᵃ",
+   "datering": "± 125 v.Chr.",
+   "jaar": -125,
+   "taal": "he",
+   "type": "vrijwel volledige boekrol",
+   "bevat": "Vrijwel het volledige boek Jesaja (hoofdstukken 1–66)",
+   "bewaarplaats": "Israel Museum (Shrine of the Book), Jeruzalem",
+   "gevonden": {
+    "wie": "Bedoeïenenherders",
+    "jaar": "1947",
+    "plaats": "Qumran, grot 1",
+    "hoe": "Een van de eerste en beroemdste Dode Zee-rollen (1947), een vrijwel complete Jesaja-rol, ruim duizend jaar ouder dan de masoretische codices en er opmerkelijk mee overeenstemmend."
+   },
+   "afbeelding": "img/handschriften/dss.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/Category:Great_Isaiah_Scroll",
+   "licentie": "publiek domein",
+   "bijschrift": "De Grote Jesaja-rol (1QIsaᵃ, ±125 v.Chr.).",
+   "beschrijving": "Het oudste vrijwel volledige handschrift van een bijbelboek — heel Jesaja, ~1000 jaar ouder dan de Codex Leningradensis.",
+   "ranges": [
+    [
+     1,
+     1,
+     66,
+     24
+    ]
+   ]
   }
  },
  "boeken": {
@@ -624,7 +720,7 @@
    ],
    "volledig": [
     "leningradensis",
-    "aleppo"
+    "samaritanus"
    ],
    "tekstgetuigen": "Dode Zee-rollen (meerdere Genesis-handschriften), de masoretische codices (Leningradensis, Aleppo), de Samaritaanse Pentateuch en de Griekse Septuaginta.",
    "leesInReader": "genesis",
@@ -1303,6 +1399,7 @@
   "jesaja": {
    "intro": "Van Jesaja is de beroemde Grote Jesaja-rol (1QIsaᵃ, ± 125 v.Chr.) bewaard — een vrijwel volledige boekrol uit Qumran, ruim duizend jaar ouder dan de masoretische codices en er opmerkelijk mee overeenstemmend. Het oudste volledige codex-handschrift is de Codex Leningradensis (1008).",
    "fragmenten": [
+    "isaiah_scroll",
     "dss"
    ],
    "volledig": [
@@ -1312,7 +1409,7 @@
    "oudsteVolledig": "leningradensis",
    "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
    "leesInReader": "jesaja",
-   "oudsteFragment": "dss"
+   "oudsteFragment": "isaiah_scroll"
   },
   "jeremia": {
    "intro": "Jeremia is bewaard in de Dode Zee-rollen (die soms een kortere tekst hebben, dicht bij de Septuaginta) en in de masoretische codices.",

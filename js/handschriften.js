@@ -6,6 +6,29 @@
     var _HEB = {genesis:1,exodus:1,leviticus:1,numeri:1,deuteronomium:1,jozua:1,richteren:1,ruth:1,'1samuel':1,'2samuel':1,'1koningen':1,'2koningen':1,'1kronieken':1,'2kronieken':1,ezra:1,nehemia:1,esther:1,job:1,psalmen:1,spreuken:1,prediker:1,hooglied:1,jesaja:1,jeremia:1,klaagliederen:1,ezechiel:1,daniel:1,hosea:1,joel:1,amos:1,obadja:1,jona:1,micha:1,nahum:1,habakuk:1,zefanja:1,haggai:1,zacharia:1,maleachi:1};
     var _GEZ = {henoch:1,jubileeen:1,'4baruch':1,'1meqabyan':1,'2meqabyan':1,'3meqabyan':1};
     var _AUTEUR = {"genesis": "Mozes (traditioneel)", "exodus": "Mozes (traditioneel)", "leviticus": "Mozes (traditioneel)", "numeri": "Mozes (traditioneel)", "deuteronomium": "Mozes (traditioneel)", "jozua": "Anoniem (deuteronomistische geschiedschrijving)", "richteren": "Anoniem (deuteronomistische geschiedschrijving)", "ruth": "Anoniem (deuteronomistische geschiedschrijving)", "1samuel": "Anoniem (deuteronomistische geschiedschrijving)", "2samuel": "Anoniem (deuteronomistische geschiedschrijving)", "1koningen": "Anoniem (deuteronomistische geschiedschrijving)", "2koningen": "Anoniem (deuteronomistische geschiedschrijving)", "1kronieken": "De Kroniekschrijver", "2kronieken": "De Kroniekschrijver", "ezra": "De Kroniekschrijver", "nehemia": "De Kroniekschrijver", "esther": "Anoniem", "job": "Anoniem", "psalmen": "David en andere psalmisten", "spreuken": "Salomo (traditioneel)", "hooglied": "Salomo (traditioneel)", "prediker": "Salomo — 'de Prediker' (traditioneel)", "klaagliederen": "Jeremia (traditioneel)", "jesaja": "De profeet Jesaja", "jeremia": "De profeet Jeremia", "ezechiel": "De profeet Ezechiël", "daniel": "De profeet Daniël", "hosea": "De profeet Hosea", "joel": "De profeet Joël", "amos": "De profeet Amos", "obadja": "De profeet Obadja", "jona": "De profeet Jona", "micha": "De profeet Micha", "nahum": "De profeet Nahum", "habakuk": "De profeet Habakuk", "zefanja": "De profeet Zefanja", "haggai": "De profeet Haggaï", "zacharia": "De profeet Zacharia", "maleachi": "De profeet Maleachi", "mattheus": "De apostel Mattheüs (traditioneel)", "markus": "Johannes Markus (traditioneel)", "lukas": "Lukas", "handelingen": "Lukas", "johannes": "De apostel Johannes (traditioneel)", "romeinen": "De apostel Paulus", "1korinthiers": "De apostel Paulus", "2korinthiers": "De apostel Paulus", "galaten": "De apostel Paulus", "efeziers": "De apostel Paulus", "filippenzen": "De apostel Paulus", "kolossenzen": "De apostel Paulus", "1tessalonicensen": "De apostel Paulus", "2tessalonicensen": "De apostel Paulus", "1timotheus": "De apostel Paulus", "2timotheus": "De apostel Paulus", "titus": "De apostel Paulus", "filemon": "De apostel Paulus", "hebreeen": "Anoniem", "jakobus": "Jakobus", "1petrus": "De apostel Petrus (traditioneel)", "2petrus": "De apostel Petrus (traditioneel)", "1johannes": "De apostel Johannes (traditioneel)", "2johannes": "De apostel Johannes (traditioneel)", "3johannes": "De apostel Johannes (traditioneel)", "judas": "Judas", "openbaring": "De apostel Johannes (traditioneel)", "3ezra": "Anoniem / traditioneel toegeschreven", "4ezra": "Anoniem / traditioneel toegeschreven", "tobit": "Anoniem / traditioneel toegeschreven", "judith": "Anoniem / traditioneel toegeschreven", "boekderwijsheid": "Anoniem / traditioneel toegeschreven", "jezussirach": "Anoniem / traditioneel toegeschreven", "baruch": "Anoniem / traditioneel toegeschreven", "estherapocrief": "Anoniem / traditioneel toegeschreven", "gebedvanazaria": "Anoniem / traditioneel toegeschreven", "gezangindevuuroven": "Anoniem / traditioneel toegeschreven", "susanna": "Anoniem / traditioneel toegeschreven", "belenddedraak": "Anoniem / traditioneel toegeschreven", "gebedvanmanasse": "Anoniem / traditioneel toegeschreven", "1makkabeeen": "Anoniem / traditioneel toegeschreven", "2makkabeeen": "Anoniem / traditioneel toegeschreven", "3makkabeeen": "Anoniem / traditioneel toegeschreven", "henoch": "Toegeschreven aan Henoch (pseudepigraaf)", "jubileeen": "Anoniem (2e eeuw v.Chr.)", "4baruch": "Anoniem", "1meqabyan": "Anoniem (Ethiopische traditie)", "2meqabyan": "Anoniem (Ethiopische traditie)", "3meqabyan": "Anoniem (Ethiopische traditie)"};
+
+    function jaarLabel(y){ return y<0 ? Math.abs(y)+' v.Chr.' : y+' n.Chr.'; }
+    function renderVerseWitnesses(boekId){
+        var el=document.getElementById('verse-witnesses'); if(!el) return;
+        fetch('data/verse-witnesses.json').then(function(r){return r.json();}).then(function(vw){
+            var e=(vw.boeken||{})[boekId]; if(!e||!e.origineel){el.style.display='none';return;}
+            var h='<p style="font-size:13px;color:var(--teal);">Voor elk vers: het oudste handschrift in de oorspronkelijke taal, en het oudste \u00fcberhaupt (inclusief de Griekse Septuaginta).</p>';
+            h+='<div class="vw-default"><div><span class="vw-lbl">Origineel (Hebreeuws/Grieks)</span><br><strong>'+esc(e.origineel.naam)+'</strong> \u2014 '+esc(jaarLabel(e.origineel.jaar))+'</div>';
+            if(e.alle && (e.alle.ms!==e.origineel.ms)) h+='<div><span class="vw-lbl">Oudste \u00fcberhaupt</span><br><strong>'+esc(e.alle.naam)+'</strong> \u2014 '+esc(jaarLabel(e.alle.jaar))+'</div>';
+            h+='</div>';
+            h+='<p class="vw-note">Dit geldt voor (vrijwel) alle verzen van dit boek. De volledige codices dekken het hele boek; waar een ouder fragment bewaard is, staat dat hieronder.</p>';
+            var exk=Object.keys(e.uitzonderingen||{});
+            if(exk.length){
+                var grp={};
+                exk.forEach(function(k){var o=e.uitzonderingen[k].origineel||e.uitzonderingen[k].alle;if(!o)return;if(!grp[o.ms])grp[o.ms]={naam:o.naam,jaar:o.jaar,verzen:[]};grp[o.ms].verzen.push(k);});
+                var ids=Object.keys(grp).sort(function(a,b){return grp[a].jaar-grp[b].jaar;});
+                h+='<h3 class="vw-h3">Ouder bewaard \u2014 specifieke verzen</h3><ul class="vw-list">';
+                ids.forEach(function(m){var g=grp[m];h+='<li><strong>'+esc(g.naam)+'</strong> ('+esc(jaarLabel(g.jaar))+'): '+g.verzen.map(esc).join(', ')+'</li>';});
+                h+='</ul>';
+            }
+            el.innerHTML=h;
+        }).catch(function(){el.style.display='none';});
+    }
     function grondtaal(bid){ if(_HEB[bid])return 'he'; if(_GEZ[bid])return 'gez'; if(bid==='4ezra')return 'la'; return 'grc'; }
     // Toon hoofdstuk 1 (eerste verzen) in de grondtekst + vertaling, als geen fragment dat al doet.
     function renderDefaultGrondtekst(boekId, lang, containerId){
@@ -306,6 +329,7 @@
             html += '<h2>Lees de grondtekst — ' + esc(naam) + ' 1</h2>';
             html += '<div class="frag-tekst" id="fragment-tekst-default"></div>';
         }
+        html += '<h2>Oudste handschrift per vers</h2><div id="verse-witnesses"><p style="color:var(--teal);font-size:13px;">Laden\u2026</p></div>';
         html += '<h2>Bronvermelding</h2>' +
             '<p style="font-size:12.5px;color:var(--teal);">De foto’s van de handschriften komen van ' +
             '<a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a> en behoren tot het publieke domein; klik op een foto voor de bronpagina en de hoge-resolutie scan. ' +
@@ -318,6 +342,7 @@
         if (oudste && M[oudste]) renderFragmentText(M[oudste], 'fragment-tekst-' + oudste);
         frags.forEach(function (id) { if (M[id].tekstfragment) renderFragmentText(M[id], 'fragment-tekst-' + id); });
         if (!_anyFrag) renderDefaultGrondtekst(boekId, grondtaal(boekId), 'fragment-tekst-default');
+        renderVerseWitnesses(boekId);
     }).catch(function (e) {
         document.getElementById('ms-page').innerHTML = '<p style="color:#c0392b">Kon de handschrift-gegevens niet laden.</p>';
         console.error(e);
