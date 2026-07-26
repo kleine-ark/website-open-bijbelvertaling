@@ -4477,6 +4477,15 @@ body.doorlopend-aan #chapter-footer::after {
 /* Klikbare 'oudste handschrift' in de datering-box -> grondteksten.html */
 .book-dating .dating-link { color: #9a7b1e; text-decoration: none; border-bottom: 1px dotted #c9a94a; }
 .book-dating .dating-link:hover { color: #7a610f; border-bottom-style: solid; }
+/* Donker thema: het schrijftijd-blok bleef licht -> donkere variant */
+:root[data-theme="donker"] .book-dating {
+    color: var(--text-secondary);
+    background: var(--bg-surface-alt);
+    border-color: var(--border-default);
+}
+:root[data-theme="donker"] .book-dating .dating-label,
+:root[data-theme="donker"] .book-dating .dating-link { color: var(--gold); }
+:root[data-theme="donker"] .book-dating .dating-link { border-bottom-color: rgba(214,177,90,0.5); }
 
 /* === Chunk-audio: voorlees-instellingen (godsnaam/kopjes/intro) === */
 .audio-settings-btn {
