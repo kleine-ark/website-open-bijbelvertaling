@@ -3115,6 +3115,30 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     vertical-align: baseline;
     font-size: 13px;
 }
+/* 'Eronder'-layout: versnummer inline als kleine superscript VÓÓR de verstekst
+   i.p.v. een volle-breedte blok erboven — veel kleinere regelafstand, zoals in
+   een gedrukte Bijbel. Hogere specificiteit + latere plaatsing dan de grid-regel
+   hierboven, dus dit wint. */
+#content.reading-mode.layout-eronder .verse-row {
+    margin-bottom: 2px !important;
+}
+#content.reading-mode.layout-eronder .verse-row .verse-num {
+    display: inline !important;
+    float: none !important;
+    width: auto !important;
+    text-align: left !important;
+    vertical-align: super;
+    font-size: 0.62em;
+    font-weight: 700;
+    color: var(--gold);
+    padding: 0 !important;
+    margin-right: 3px;
+}
+/* De gekleurde thema-tag niet inline meeslepen in deze compacte modus */
+#content.reading-mode.layout-eronder .verse-row .verse-num .verse-tag { display: none !important; }
+/* Vers 1 heeft al de sierletter (drop-cap) als markering; het inline nummer '1'
+   zou tussen de drop-cap en de rest van het eerste woord vallen (I¹n) → verbergen. */
+#content.reading-mode.layout-eronder .verse-row[data-verse="1"] .verse-num { display: none !important; }
 /* Cellen die niet zichtbaar moeten zijn — hide via grid (display: none) blijft werken */
 #content.reading-mode.hide-sv1888 .col-sv1888,
 #content.reading-mode.hide-1637 .col-1637,
