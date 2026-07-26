@@ -393,6 +393,46 @@
    "licentie": "publiek domein",
    "bijschrift": "Pagina uit de Codex Washingtonianus (±400).",
    "beschrijving": "Een vroege evangeliëncodex met een opvallende eigen lezing aan het slot van Markus."
+  },
+  "dss": {
+   "naam": "Dode Zee-rollen",
+   "bijnaam": "Qumran-handschriften",
+   "siglum": "DSS",
+   "datering": "± 250 v.Chr.–70 n.Chr.",
+   "type": "rollen/fragmenten",
+   "bevat": "Fragmenten van bijna alle boeken van het Oude Testament (behalve Esther)",
+   "bewaarplaats": "Israel Antiquities Authority / Shrine of the Book, Jeruzalem",
+   "gevonden": {
+    "wie": "Bedoeïenenherders; wetenschappelijk onderzocht door o.a. Roland de Vaux",
+    "jaar": "1947–1956",
+    "plaats": "Qumran, grotten bij de Dode Zee",
+    "hoe": "Vanaf 1947 vonden Bedoeïenenherders rollen in kruiken in grotten bij Qumran; latere opgravingen (tot 1956) brachten duizenden fragmenten aan het licht — de oudste bijbelhandschriften, ruim duizend jaar ouder dan de masoretische codices."
+   },
+   "afbeelding": "img/handschriften/dss.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/Category:Dead_Sea_Scrolls",
+   "licentie": "publiek domein",
+   "bijschrift": "Fragment van een Dode Zee-rol uit Qumran.",
+   "beschrijving": "De oudste bekende afschriften van de meeste OT-boeken; ze bevestigen de opmerkelijk stabiele overlevering van de Hebreeuwse tekst."
+  },
+  "samaritanus": {
+   "naam": "Samaritaanse Pentateuch",
+   "bijnaam": "Abisha-rol e.a.",
+   "siglum": "𝕾",
+   "datering": "middeleeuwse afschriften van een oude teksttraditie",
+   "type": "Thora-handschrift",
+   "bevat": "De vijf boeken van Mozes (Thora) in de Samaritaanse tekstvorm",
+   "bewaarplaats": "Samaritaanse gemeenschap, Nablus (en diverse bibliotheken)",
+   "gevonden": {
+    "wie": "Bewaard door de Samaritaanse gemeenschap",
+    "jaar": "—",
+    "plaats": "Nablus (Sichem)",
+    "hoe": "De Samaritanen bewaren een eigen tekstvorm van de Thora, die op honderden plaatsen afwijkt van de masoretische tekst; sommige lezingen komen overeen met de Septuaginta en de Dode Zee-rollen."
+   },
+   "afbeelding": "img/handschriften/samaritanus.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/Category:Samaritan_Pentateuch",
+   "licentie": "publiek domein",
+   "bijschrift": "Samaritaanse Pentateuch.",
+   "beschrijving": "Een onafhankelijke getuige van de Thora-tekst, waardevol bij tekstvergelijking met de masoretische tekst en de Septuaginta."
   }
  },
  "boeken": {
@@ -888,6 +928,532 @@
    "oudsteVolledig": "sinaiticus",
    "tekstgetuigen": "Papyrus 47 (±250), Sinaïticus en Alexandrinus (Openbaring ontbreekt in de Vaticanus)",
    "leesInReader": "openbaring"
+  },
+  "exodus": {
+   "intro": "Exodus behoort tot de Thora. De oudste fragmenten komen uit de Dode Zee-rollen; het oudste volledige handschrift is de Codex Leningradensis (1008). De Aleppo Codex verloor in 1947 vrijwel de hele Thora, maar de Samaritaanse Pentateuch biedt een onafhankelijke getuige.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "samaritanus"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, Codex Leningradensis, Samaritaanse Pentateuch en de Septuaginta",
+   "leesInReader": "exodus",
+   "oudsteFragment": "dss"
+  },
+  "leviticus": {
+   "intro": "Leviticus behoort tot de Thora. De oudste fragmenten komen uit de Dode Zee-rollen; het oudste volledige handschrift is de Codex Leningradensis (1008). De Aleppo Codex verloor in 1947 vrijwel de hele Thora, maar de Samaritaanse Pentateuch biedt een onafhankelijke getuige.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "samaritanus"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, Codex Leningradensis, Samaritaanse Pentateuch en de Septuaginta",
+   "leesInReader": "leviticus",
+   "oudsteFragment": "dss"
+  },
+  "numeri": {
+   "intro": "Numeri behoort tot de Thora. De oudste fragmenten komen uit de Dode Zee-rollen; het oudste volledige handschrift is de Codex Leningradensis (1008). De Aleppo Codex verloor in 1947 vrijwel de hele Thora, maar de Samaritaanse Pentateuch biedt een onafhankelijke getuige.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "samaritanus"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, Codex Leningradensis, Samaritaanse Pentateuch en de Septuaginta",
+   "leesInReader": "numeri",
+   "oudsteFragment": "dss"
+  },
+  "deuteronomium": {
+   "intro": "Deuteronomium behoort tot de Thora. De oudste fragmenten komen uit de Dode Zee-rollen; het oudste volledige handschrift is de Codex Leningradensis (1008). De Aleppo Codex verloor in 1947 vrijwel de hele Thora, maar de Samaritaanse Pentateuch biedt een onafhankelijke getuige.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "samaritanus"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, Codex Leningradensis, Samaritaanse Pentateuch en de Septuaginta",
+   "leesInReader": "deuteronomium",
+   "oudsteFragment": "dss"
+  },
+  "jozua": {
+   "intro": "Jozua is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "jozua",
+   "oudsteFragment": "dss"
+  },
+  "richteren": {
+   "intro": "Richteren is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "richteren",
+   "oudsteFragment": "dss"
+  },
+  "ruth": {
+   "intro": "Ruth is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "ruth",
+   "oudsteFragment": "dss"
+  },
+  "1samuel": {
+   "intro": "1 Samuël is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "1samuel",
+   "oudsteFragment": "dss"
+  },
+  "2samuel": {
+   "intro": "2 Samuël is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "2samuel",
+   "oudsteFragment": "dss"
+  },
+  "1koningen": {
+   "intro": "1 Koningen is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "1koningen",
+   "oudsteFragment": "dss"
+  },
+  "2koningen": {
+   "intro": "2 Koningen is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "2koningen",
+   "oudsteFragment": "dss"
+  },
+  "1kronieken": {
+   "intro": "1 Kronieken is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "1kronieken",
+   "oudsteFragment": "dss"
+  },
+  "2kronieken": {
+   "intro": "2 Kronieken is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "2kronieken",
+   "oudsteFragment": "dss"
+  },
+  "ezra": {
+   "intro": "Ezra is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "ezra",
+   "oudsteFragment": "dss"
+  },
+  "nehemia": {
+   "intro": "Nehemia is niet onder de Dode Zee-rollen aangetroffen; de oudste bewaarde tekst staat in de masoretische codices (Leningradensis, Aleppo).",
+   "fragmenten": [],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "De masoretische codices (Leningradensis, Aleppo) en de Septuaginta",
+   "leesInReader": "nehemia"
+  },
+  "esther": {
+   "intro": "Esther is als enige boek van het Oude Testament níét onder de Dode Zee-rollen gevonden. De oudste bewaarde tekst staat in de masoretische codices.",
+   "fragmenten": [],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "De masoretische codices (Leningradensis, Aleppo) en de Griekse tekst",
+   "leesInReader": "esther"
+  },
+  "job": {
+   "intro": "Job is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "job",
+   "oudsteFragment": "dss"
+  },
+  "psalmen": {
+   "intro": "Van de Psalmen zijn veel Dode Zee-rollen bewaard (o.a. de grote Psalmenrol 11QPsᵃ); het oudste volledige handschrift is de Codex Leningradensis (1008).",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "psalmen",
+   "oudsteFragment": "dss"
+  },
+  "spreuken": {
+   "intro": "Spreuken is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "spreuken",
+   "oudsteFragment": "dss"
+  },
+  "prediker": {
+   "intro": "Prediker is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "prediker",
+   "oudsteFragment": "dss"
+  },
+  "hooglied": {
+   "intro": "Hooglied is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "hooglied",
+   "oudsteFragment": "dss"
+  },
+  "jesaja": {
+   "intro": "Van Jesaja is de beroemde Grote Jesaja-rol (1QIsaᵃ, ± 125 v.Chr.) bewaard — een vrijwel volledige boekrol uit Qumran, ruim duizend jaar ouder dan de masoretische codices en er opmerkelijk mee overeenstemmend. Het oudste volledige codex-handschrift is de Codex Leningradensis (1008).",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "jesaja",
+   "oudsteFragment": "dss"
+  },
+  "jeremia": {
+   "intro": "Jeremia is bewaard in de Dode Zee-rollen (die soms een kortere tekst hebben, dicht bij de Septuaginta) en in de masoretische codices.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "jeremia",
+   "oudsteFragment": "dss"
+  },
+  "klaagliederen": {
+   "intro": "Klaagliederen is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "klaagliederen",
+   "oudsteFragment": "dss"
+  },
+  "ezechiel": {
+   "intro": "Ezechiël is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "ezechiel",
+   "oudsteFragment": "dss"
+  },
+  "daniel": {
+   "intro": "Daniël is bewaard in meerdere Dode Zee-rollen; het boek is deels in het Hebreeuws en deels in het Aramees geschreven. De masoretische codices geven de volledige tekst.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "daniel",
+   "oudsteFragment": "dss"
+  },
+  "hosea": {
+   "intro": "Hosea is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "hosea",
+   "oudsteFragment": "dss"
+  },
+  "joel": {
+   "intro": "Joël is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "joel",
+   "oudsteFragment": "dss"
+  },
+  "amos": {
+   "intro": "Amos is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "amos",
+   "oudsteFragment": "dss"
+  },
+  "obadja": {
+   "intro": "Obadja is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "obadja",
+   "oudsteFragment": "dss"
+  },
+  "jona": {
+   "intro": "Jona is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "jona",
+   "oudsteFragment": "dss"
+  },
+  "micha": {
+   "intro": "Micha is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "micha",
+   "oudsteFragment": "dss"
+  },
+  "nahum": {
+   "intro": "Nahum is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "nahum",
+   "oudsteFragment": "dss"
+  },
+  "habakuk": {
+   "intro": "Van Habakuk is naast bijbelrollen ook een beroemd Qumran-commentaar (Pesher Habakuk, 1QpHab) bewaard. De volledige tekst staat in de masoretische codices.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "habakuk",
+   "oudsteFragment": "dss"
+  },
+  "zefanja": {
+   "intro": "Zefanja is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "zefanja",
+   "oudsteFragment": "dss"
+  },
+  "haggai": {
+   "intro": "Haggaï is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "haggai",
+   "oudsteFragment": "dss"
+  },
+  "zacharia": {
+   "intro": "Zacharia is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "zacharia",
+   "oudsteFragment": "dss"
+  },
+  "maleachi": {
+   "intro": "Maleachi is bewaard in de Dode Zee-rollen (oudste fragmenten) en volledig in de masoretische codices, met de Codex Leningradensis (1008) als oudste volledige handschrift.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "oudsteVolledig": "leningradensis",
+   "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
+   "leesInReader": "maleachi",
+   "oudsteFragment": "dss"
   }
  },
  "personen": {
