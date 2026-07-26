@@ -96,9 +96,17 @@
 
         var vectorSource = new ol.source.Vector();
         var vectorLayer = new ol.layer.Vector({ source: vectorSource, style: function (f) { return markerStyle(f, false); } });
+        // OSM-achtergrond in grijswaarden (alleen de tegels, niet de markers)
+        var osmLayer = new ol.layer.Tile({ source: new ol.source.OSM() });
+        osmLayer.on('prerender', function (evt) {
+            if (evt.context) { evt.context.filter = 'grayscale(1)'; }
+        });
+        osmLayer.on('postrender', function (evt) {
+            if (evt.context) { evt.context.filter = 'none'; }
+        });
         var map = new ol.Map({
             target: 'map',
-            layers: [ new ol.layer.Tile({ source: new ol.source.OSM() }), vectorLayer ],
+            layers: [ osmLayer, vectorLayer ],
             view: new ol.View({ center: ol.proj.fromLonLat([32, 33]), zoom: 5 })
         });
 
