@@ -60,6 +60,16 @@
         .lex-def heb, .lex-def [lang="he"], .lex-def .hebrew { font-size: 19px; }
         .lex-def .greek, .lex-def [lang="grc"] { font-size: 17px; }
         .lex-def sup { color: var(--teal); font-size: 10px; }
+        /* Dillmann (Ge'ez–Latijn) opmaak */
+        .lex-def gez { font-size: 19px; }
+        .lex-def .dl-tr { font-style: italic; color: var(--navy); }
+        .lex-def .dl-n { color: var(--gold); font-weight: 700; margin: 0 2px 0 4px; }
+        .lex-def .dl-gram { color: var(--teal); }
+        .lex-def .dl-lbl { color: #8a8a8a; font-style: italic; }
+        .lex-def .dl-ref { color: var(--teal); }
+        .lex-def .dl-bibl { color: #9a9a9a; font-size: 0.9em; }
+        .lex-def abbr { text-decoration: none; border-bottom: 1px dotted #bbb; cursor: help; }
+        :root[data-theme="donker"] .lex-def .dl-tr { color: var(--text-primary); }
         /* Witregel tussen de genummerde betekenissen (BDB gebruikt <p><b>1</b>… per betekenis) */
         .lex-def p { margin: 0.85em 0 0; }
         .lex-def p:first-child { margin-top: 0; }
@@ -121,7 +131,8 @@
         { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true,
           lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', label: 'Abbott-Smith (1922)' }, lex1label: 'TBESG', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', bron: '4 Ezra (Vulgaat-traditie) — grondtekst-glossen' },
-        { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', bron: 'Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)' }
+        { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', bron: 'Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)' },
+        { id: 'geez-dillmann', label: "Ge'ez — Dillmann", json: 'data/lexicon-dillmann.json', html: true, bron: 'Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0). Definities in het Latijn; Nederlandse vertaling volgt.' }
     ];
 
     // Boek-afkortingen (BDB / Abbott-Smith, Engels) -> onze boek-id
@@ -252,9 +263,12 @@
                 return e;
             });
         }
-        // JSON (latijn/geez)
+        // JSON (latijn/geez/dillmann)
         return (taal._data.woorden || []).map(function (w, i) {
-            return { key: w.lemma || w.woord || ('#' + i), woord: w.woord || (w.vormen && w.vormen[0]) || w.lemma, gloss: w.betekenis, verw: w.verwijzingen || [], forms: w.vormen };
+            var key = w.lemma || w.woord;
+            if (w.n != null && !w.lemma) key = 'DiL ' + w.n;   // Dillmann: toon entry-nummer
+            return { key: String(key || ('#' + i)), woord: w.woord || (w.vormen && w.vormen[0]) || w.lemma, gloss: w.betekenis,
+                def: w.definitie, defHtml: !!taal.html, verw: w.verwijzingen || [], forms: w.vormen };
         });
     }
 
@@ -273,7 +287,7 @@
                 '<span class="lex-toc-gloss">' + esc(e.gloss || '') + '</span></div>';
         }).join('') || '<div style="padding:14px;color:#999;">Geen resultaten.</div>';
     }
-    function langAttr() { return cur.id === 'grieks' ? 'grc' : cur.id === 'geez' ? 'gez' : cur.id === 'latijn' ? 'la' : 'he'; }
+    function langAttr() { return cur.id === 'grieks' ? 'grc' : (cur.id === 'geez' || cur.id === 'geez-dillmann') ? 'gez' : cur.id === 'latijn' ? 'la' : 'he'; }
 
     function showEntry(e) {
         currentEntry = e;
@@ -297,7 +311,9 @@
             if (abDef) h += '<div class="lex-lexlabel">' + esc(cur.lex2.label) + (e.ab.nl ? '' : ' <span class="lex-concept" title="Nederlandse vertaling volgt">nog niet vertaald</span>') + '</div>' +
                 '<div class="lex-def"' + ((origineel || !e.ab.nl) ? ' lang="en"' : '') + '>' + linkifyXref(linkifyAbbr(abDef), e.key) + '</div>';
         } else if (def) {
-            h += '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + linkifyXref(cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def), e.key) + '</div>';
+            // Dillmann levert al opgemaakte (Latijnse) HTML; anders escapen/linkifyen.
+            var body = e.defHtml ? def : linkifyXref(cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def), e.key);
+            h += '<div class="lex-def"' + (e.defHtml ? ' lang="la"' : (origineel ? ' lang="en"' : '')) + '>' + body + '</div>';
         }
         if (e.verw && e.verw.length) {
             h += '<div class="lex-verw"><strong>Voorkomens:</strong> ' + e.verw.map(function (r) {
@@ -404,7 +420,7 @@
     fetch('data/books.json').then(function (r) { return r.json(); }).then(function (d) {
         (d.books || []).forEach(function (b) { BOOKNAMES[b.id] = b.nameDutch || b.id; CHAPTERCOUNT[b.id] = b.totalChapters || 0; });
     }).finally(function () {
-        var q = (location.search.match(/taal=(\w+)/) || [])[1];
+        var q = (location.search.match(/taal=([\w-]+)/) || [])[1];
         var entryParam = (location.search.match(/entry=([HG]\d+)/) || [])[1];
         // Als een Strong-entry gevraagd is, kies automatisch de juiste taal
         if (entryParam && !q) q = entryParam.charAt(0) === 'H' ? 'hebreeuws' : 'grieks';
