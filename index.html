@@ -561,6 +561,7 @@
                 <label><input type="checkbox" id="toggle-hoofdstuknummers" checked onchange="document.body.classList.toggle('hoofdstuknummers-uit', !this.checked);localStorage.setItem('hoofdstuknummers', this.checked)"> Hoofdstuknummers</label>
                 <label><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"> Pericoop-kopjes <span class="hint">(tussenkopjes per gedeelte)</span></label>
                 <label><input type="checkbox" id="toggle-doorlopend" onchange="localStorage.setItem('doorlopend', this.checked); document.body.classList.toggle('doorlopend-aan', this.checked); if (typeof App !== 'undefined' && typeof Navigation !== 'undefined' && Navigation.currentBook) { App.renderChapter(Navigation.currentBook, Navigation.currentChapter); }"> Doorlopend lezen <span class="hint">(scroll automatisch door hoofdstukken)</span></label>
+                <label><input type="checkbox" id="toggle-hs-vers"> Oudste handschrift per vers <span class="hint">(oorspronkelijke taal + oudste überhaupt)</span></label>
             </div>
             <div class="opt-group">
                 <div class="opt-group-label">Layout extra kolommen</div>
@@ -851,6 +852,7 @@
     <script src="js/opties.js"></script>
     <script src="js/audio-available.js"></script>
     <script src="js/chunked-audio.js"></script>
+    <script src="js/verse-witness-reader.js"></script>
     <script src="js/app.js"></script>
     <script src="js/search.js"></script>
     <script>
