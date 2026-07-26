@@ -15,15 +15,23 @@
         return { orig: ex.origineel || e.origineel, alle: ex.alle || e.alle };
     }
 
+    function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
+    function kort(naam) { return naam.replace(/^Codex\s+/, '').replace(/\s*\(Septuaginta\)/, ' (LXX)'); }
     function annotateRow(row) {
         if (row.querySelector(':scope > .hs-vers-tag')) return;
         var book = row.getAttribute('data-book'), ch = row.getAttribute('data-chapter'), v = row.getAttribute('data-verse');
         if (!book || !ch || !v) return;
         var w = witnessFor(book, ch, v); if (!w) return;
-        var html = '<span class="hs-vers-orig" title="Oudste handschrift in de oorspronkelijke taal">📜 ' + w.orig.naam + ' (' + jaarLabel(w.orig.jaar) + ')</span>';
-        if (w.alle && w.alle.ms !== w.orig.ms) {
-            html += '<span class="hs-vers-alle" title="Oudste handschrift überhaupt, incl. Septuaginta"> · oudste: ' + w.alle.naam + ' (' + jaarLabel(w.alle.jaar) + ')</span>';
-        }
+        var diff = w.alle && w.alle.ms !== w.orig.ms;
+        // Compacte titel met beide (origineel + oudste überhaupt).
+        var titel = 'Oudste in de oorspronkelijke taal: ' + w.orig.naam + ' (' + jaarLabel(w.orig.jaar) + ')' +
+            (diff ? '. Oudste überhaupt (incl. Septuaginta): ' + w.alle.naam + ' (' + jaarLabel(w.alle.jaar) + ')' : '') +
+            '. Klik voor de foto en toelichting.';
+        var html = '<span class="hs-vw-kop">Oudste handschrift</span>' +
+            '<a class="hs-vw-link" target="_top" href="handschriften.html?ms=' + encodeURIComponent(w.orig.ms) + '" title="' + esc(titel) + '">' +
+            '<span class="hs-vw-naam">' + esc(kort(w.orig.naam)) + '</span><span class="hs-vw-jaar">' + jaarLabel(w.orig.jaar) + '</span></a>';
+        if (diff) html += '<a class="hs-vw-link hs-vw-alle" target="_top" href="handschriften.html?ms=' + encodeURIComponent(w.alle.ms) + '" title="' + esc(titel) + '">' +
+            '<span class="hs-vw-jaar">oudste: ' + esc(kort(w.alle.naam)) + ' ' + jaarLabel(w.alle.jaar) + '</span></a>';
         var tag = document.createElement('div');
         tag.className = 'hs-vers-tag';
         tag.innerHTML = html;
