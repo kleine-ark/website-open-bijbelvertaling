@@ -6,7 +6,7 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#142e42">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lexicon — Open Vertaling</title>
+    <title>Woordenboek — Open Vertaling</title>
     <meta name="description" content="Doorzoekbaar lexicon bij de grondtekst: Hebreeuws, Aramees, Grieks, Latijn en Ge'ez — met aanklikbare tekstverwijzingen.">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -38,6 +38,9 @@
         .lex-def heb, .lex-def [lang="he"], .lex-def .hebrew { font-size: 19px; }
         .lex-def .greek, .lex-def [lang="grc"] { font-size: 17px; }
         .lex-def sup { color: var(--teal); font-size: 10px; }
+        /* Witregel tussen de genummerde betekenissen (BDB gebruikt <p><b>1</b>… per betekenis) */
+        .lex-def p { margin: 0.85em 0 0; }
+        .lex-def p:first-child { margin-top: 0; }
         .lex-ref { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); white-space: nowrap; }
         .lex-ref:hover { color: var(--navy); background: rgba(203,164,73,0.14); }
         .lex-verw { margin-top: 16px; font-size: 13px; color: var(--teal); }
