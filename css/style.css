@@ -4569,9 +4569,25 @@ body.doorlopend-aan #chapter-footer::after {
   .page select, .page input, .stats-page select, .stats-page input { max-width: 100%; }
 }
 
-/* Reader-optie: oudste handschrift per vers */
-.hs-vers-tag { display: none; font-size: 11px; color: var(--text-muted, #999); margin: 2px 0 0 2px; line-height: 1.4; font-family: var(--font-body); }
-body.hs-per-vers-aan .hs-vers-tag { display: block; }
-.hs-vers-orig { color: var(--teal); }
-.hs-vers-alle { color: var(--text-muted, #999); }
-:root[data-theme="donker"] .hs-vers-orig { color: var(--teal-light); }
+/* Reader-optie: oudste handschrift per vers — vaste rechter kolom naast de verstekst.
+   Absolute positionering, want de vers-rij is op desktop een grid (float werkt daar niet). */
+.hs-vers-tag { display: none; }
+body.hs-per-vers-aan #content .verse-row { position: relative; padding-right: 190px; min-height: 4.6em; }
+body.hs-per-vers-aan .hs-vers-tag {
+    display: block; position: absolute; top: 2px; right: 8px; width: 165px;
+    padding: 5px 9px; box-sizing: border-box;
+    border-left: 2px solid var(--gold); background: rgba(203,164,73,0.06);
+    border-radius: 0 5px 5px 0; font-size: 10.5px; line-height: 1.3; font-family: var(--font-body);
+}
+.hs-vw-kop { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gold); font-weight: 600; margin-bottom: 2px; }
+.hs-vw-link { display: block; text-decoration: none; color: var(--teal); margin-top: 2px; }
+.hs-vw-link:hover .hs-vw-naam { color: var(--gold); text-decoration: underline; }
+.hs-vw-naam { font-weight: 600; color: var(--navy); margin-right: 4px; }
+.hs-vw-jaar { color: var(--text-muted, #999); }
+.hs-vw-alle .hs-vw-jaar { font-size: 10px; }
+@media (max-width: 760px) {
+    body.hs-per-vers-aan #content .verse-row { padding-right: 0; }
+    body.hs-per-vers-aan .hs-vers-tag { position: static; width: auto; margin: 4px 0 8px; border-left-width: 3px; }
+}
+:root[data-theme="donker"] .hs-vw-naam { color: var(--text-primary); }
+:root[data-theme="donker"] .hs-vw-link { color: var(--teal-light); }
