@@ -433,6 +433,66 @@
    "licentie": "publiek domein",
    "bijschrift": "Samaritaanse Pentateuch.",
    "beschrijving": "Een onafhankelijke getuige van de Thora-tekst, waardevol bij tekstvergelijking met de masoretische tekst en de Septuaginta."
+  },
+  "geniza": {
+   "naam": "Cairo Geniza",
+   "bijnaam": "Taylor-Schechter-collectie",
+   "siglum": "Geniza",
+   "datering": "10e–13e eeuw (afschriften van oudere tekst)",
+   "type": "fragmenten",
+   "bevat": "O.a. Hebreeuwse fragmenten van Jezus Sirach",
+   "bewaarplaats": "University Library, Cambridge (en andere collecties)",
+   "gevonden": {
+    "wie": "Solomon Schechter",
+    "jaar": "1896–1897",
+    "plaats": "Ben Ezra-synagoge, Caïro",
+    "hoe": "In een geniza (opslagruimte voor versleten geschriften) van de Ben Ezra-synagoge in Caïro werden honderdduizenden fragmenten bewaard. Solomon Schechter bracht in 1896–97 een groot deel naar Cambridge; hiertussen kwamen Hebreeuwse fragmenten van Sirach tevoorschijn."
+   },
+   "afbeelding": "img/handschriften/geniza.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/Category:Cairo_Geniza",
+   "licentie": "publiek domein",
+   "bijschrift": "Fragment uit de Cairo Geniza.",
+   "beschrijving": "Bevestigde dat Jezus Sirach oorspronkelijk in het Hebreeuws is geschreven; belangrijke aanvulling op de Griekse tekst."
+  },
+  "sangermanensis": {
+   "naam": "Codex Sangermanensis",
+   "bijnaam": "Latijnse Ezra-codex",
+   "siglum": "S (Latijn)",
+   "datering": "9e eeuw",
+   "type": "Latijnse codex",
+   "bevat": "Latijnse bijbeltekst; belangrijkste getuige van 4 Ezra (incl. het lang ontbrekende fragment)",
+   "bewaarplaats": "Bibliothèque nationale de France, Parijs",
+   "gevonden": {
+    "wie": "Afkomstig uit de abdij Saint-Germain-des-Prés",
+    "jaar": "9e eeuw",
+    "plaats": "Parijs",
+    "hoe": "Van 4 Ezra is de Griekse tekst niet bewaard; het boek leeft voort in het Latijn (Vulgaat-traditie), Syrisch en Ge'ez. De 9e-eeuwse Codex Sangermanensis is de belangrijkste Latijnse getuige en bevatte het lang verloren gewaande gedeelte van hoofdstuk 7."
+   },
+   "afbeelding": "img/handschriften/sangermanensis.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/Category:Codex_Sangermanensis",
+   "licentie": "publiek domein",
+   "bijschrift": "Pagina uit een Latijnse Sangermanensis-codex.",
+   "beschrijving": "De voornaamste Latijnse getuige van 4 Ezra."
+  },
+  "ethenoch": {
+   "naam": "Ethiopische Ge'ez-handschriften",
+   "bijnaam": "Ethiopische (Ge'ez) traditie",
+   "siglum": "Eth",
+   "datering": "15e–18e eeuw (afschriften van een veel oudere vertaling)",
+   "type": "Ge'ez-codices",
+   "bevat": "De volledige tekst van o.a. Henoch, Jubileeën en de Meqabyan-boeken",
+   "bewaarplaats": "Ethiopische kloosters en o.a. British Library, Bibliothèque nationale de France",
+   "gevonden": {
+    "wie": "Bewaard door de Ethiopisch-Orthodoxe Kerk",
+    "jaar": "—",
+    "plaats": "Ethiopië",
+    "hoe": "Verschillende boeken (Henoch, Jubileeën, Meqabyan) zijn volledig alleen in het Ge'ez (klassiek Ethiopisch) overgeleverd, in handschriften van de Ethiopisch-Orthodoxe Tewahedo-kerk. Ze gaan terug op een vroege vertaling, terwijl van sommige boeken oudere Aramese of Griekse fragmenten bestaan."
+   },
+   "afbeelding": "img/handschriften/ethenoch.png",
+   "commons": "https://commons.wikimedia.org/wiki/Category:Book_of_Enoch",
+   "licentie": "publiek domein",
+   "bijschrift": "Ge'ez-handschrift (Ethiopisch).",
+   "beschrijving": "De Ethiopische Ge'ez-handschriften bewaren de volledige tekst van boeken die elders alleen in fragmenten voortleven."
   }
  },
  "boeken": {
@@ -1454,6 +1514,265 @@
    "tekstgetuigen": "Dode Zee-rollen, de masoretische codices (Leningradensis, Aleppo) en de Griekse Septuaginta",
    "leesInReader": "maleachi",
    "oudsteFragment": "dss"
+  },
+  "tobit": {
+   "intro": "Van Tobit zijn Aramese en Hebreeuwse fragmenten onder de Dode Zee-rollen gevonden (4Q196–200); de volledige tekst staat in de Griekse Septuaginta-codices.",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "vaticanus",
+    "sinaiticus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "Dode Zee-rollen (4Q196–200) en de Griekse Septuaginta-codices",
+   "leesInReader": "tobit",
+   "oudsteFragment": "dss"
+  },
+  "judith": {
+   "intro": "Judith is bewaard in de Griekse Septuaginta; de oudste volledige getuigen zijn de grote 4e-eeuwse codices.",
+   "fragmenten": [],
+   "volledig": [
+    "vaticanus",
+    "sinaiticus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "De Griekse Septuaginta-codices (Vaticanus, Sinaïticus, Alexandrinus)",
+   "leesInReader": "judith"
+  },
+  "boekderwijsheid": {
+   "intro": "Het Boek der Wijsheid is in het Grieks geschreven en bewaard in de Septuaginta-codices.",
+   "fragmenten": [],
+   "volledig": [
+    "vaticanus",
+    "sinaiticus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "De Griekse Septuaginta-codices (Vaticanus, Sinaïticus, Alexandrinus)",
+   "leesInReader": "boekderwijsheid"
+  },
+  "jezussirach": {
+   "intro": "Van Jezus Sirach zijn Hebreeuwse fragmenten gevonden bij Qumran en Masada, en later in de Cairo Geniza — een bevestiging dat het boek oorspronkelijk Hebreeuws was. De volledige tekst staat in de Griekse Septuaginta.",
+   "fragmenten": [
+    "dss",
+    "geniza"
+   ],
+   "volledig": [
+    "vaticanus",
+    "sinaiticus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "Hebreeuwse fragmenten (Qumran, Masada, Cairo Geniza) en de Griekse Septuaginta",
+   "leesInReader": "jezussirach",
+   "oudsteFragment": "dss"
+  },
+  "baruch": {
+   "intro": "Baruch is bewaard in de Griekse Septuaginta-codices.",
+   "fragmenten": [],
+   "volledig": [
+    "vaticanus",
+    "sinaiticus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "De Griekse Septuaginta-codices (Vaticanus, Sinaïticus, Alexandrinus)",
+   "leesInReader": "baruch"
+  },
+  "3ezra": {
+   "intro": "3 Ezra (1 Esdras) is een Griekse bewerking, bewaard in de Septuaginta-codices Vaticanus en Alexandrinus.",
+   "fragmenten": [],
+   "volledig": [
+    "vaticanus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "De Griekse Septuaginta-codices (Vaticanus, Sinaïticus, Alexandrinus)",
+   "leesInReader": "3ezra"
+  },
+  "4ezra": {
+   "intro": "Van 4 Ezra (2 Esdras) is de oorspronkelijke Griekse tekst niet bewaard; het boek leeft voort in het Latijn, Syrisch en Ge'ez. De belangrijkste Latijnse getuige is de 9e-eeuwse Codex Sangermanensis.",
+   "oudsteFragment": "sangermanensis",
+   "fragmenten": [
+    "sangermanensis"
+   ],
+   "volledig": [
+    "sangermanensis"
+   ],
+   "oudsteVolledig": "sangermanensis",
+   "tekstgetuigen": "Latijnse (Sangermanensis), Syrische en Ge'ez-getuigen; het Grieks is verloren",
+   "leesInReader": "4ezra"
+  },
+  "estherapocrief": {
+   "intro": "De Griekse toevoegingen op Esther staan in de Septuaginta-codices, niet in de Hebreeuwse tekst.",
+   "fragmenten": [],
+   "volledig": [
+    "vaticanus",
+    "sinaiticus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "De Griekse Septuaginta-codices (Vaticanus, Sinaïticus, Alexandrinus)",
+   "leesInReader": "estherapocrief"
+  },
+  "gebedvanazaria": {
+   "intro": "Het gebed van Azarja (een Griekse toevoeging op Daniël 3) staat in de Septuaginta-codices.",
+   "fragmenten": [],
+   "volledig": [
+    "vaticanus",
+    "sinaiticus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "De Griekse Septuaginta-codices (Vaticanus, Sinaïticus, Alexandrinus)",
+   "leesInReader": "gebedvanazaria"
+  },
+  "gezangindevuuroven": {
+   "intro": "De lofzang van de drie mannen in de vuuroven (Griekse toevoeging op Daniël 3) staat in de Septuaginta-codices.",
+   "fragmenten": [],
+   "volledig": [
+    "vaticanus",
+    "sinaiticus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "De Griekse Septuaginta-codices (Vaticanus, Sinaïticus, Alexandrinus)",
+   "leesInReader": "gezangindevuuroven"
+  },
+  "susanna": {
+   "intro": "Susanna (een Griekse toevoeging op Daniël) staat in de Septuaginta-codices.",
+   "fragmenten": [],
+   "volledig": [
+    "vaticanus",
+    "sinaiticus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "De Griekse Septuaginta-codices (Vaticanus, Sinaïticus, Alexandrinus)",
+   "leesInReader": "susanna"
+  },
+  "belenddedraak": {
+   "intro": "Bel en de draak (een Griekse toevoeging op Daniël) staat in de Septuaginta-codices.",
+   "fragmenten": [],
+   "volledig": [
+    "vaticanus",
+    "sinaiticus",
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "vaticanus",
+   "tekstgetuigen": "De Griekse Septuaginta-codices (Vaticanus, Sinaïticus, Alexandrinus)",
+   "leesInReader": "belenddedraak"
+  },
+  "gebedvanmanasse": {
+   "intro": "Het gebed van Manasse is een korte Griekse boetpsalm, bewaard als een van de Oden bij de Codex Alexandrinus.",
+   "fragmenten": [],
+   "volledig": [
+    "alexandrinus",
+    "sinaiticus"
+   ],
+   "oudsteVolledig": "alexandrinus",
+   "tekstgetuigen": "De Griekse Septuaginta-codices (Vaticanus, Sinaïticus, Alexandrinus)",
+   "leesInReader": "gebedvanmanasse"
+  },
+  "1makkabeeen": {
+   "intro": "1 Makkabeeën is in het Grieks bewaard in de Codices Alexandrinus en Sinaïticus; de Vaticanus bevat de Makkabeeënboeken niet.",
+   "fragmenten": [],
+   "volledig": [
+    "alexandrinus",
+    "sinaiticus"
+   ],
+   "oudsteVolledig": "alexandrinus",
+   "tekstgetuigen": "Codices Alexandrinus en Sinaïticus (niet in de Vaticanus)",
+   "leesInReader": "1makkabeeen"
+  },
+  "2makkabeeen": {
+   "intro": "2 Makkabeeën is in het Grieks bewaard, vooral in de Codex Alexandrinus; de Vaticanus bevat de Makkabeeënboeken niet.",
+   "fragmenten": [],
+   "volledig": [
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "alexandrinus",
+   "tekstgetuigen": "Codex Alexandrinus (niet in de Vaticanus)",
+   "leesInReader": "2makkabeeen"
+  },
+  "3makkabeeen": {
+   "intro": "3 Makkabeeën is in het Grieks bewaard in de Codex Alexandrinus; het ontbreekt in de Vaticanus.",
+   "fragmenten": [],
+   "volledig": [
+    "alexandrinus"
+   ],
+   "oudsteVolledig": "alexandrinus",
+   "tekstgetuigen": "Codex Alexandrinus (niet in de Vaticanus)",
+   "leesInReader": "3makkabeeen"
+  },
+  "henoch": {
+   "intro": "Van het boek Henoch (1 Henoch) zijn Aramese fragmenten gevonden onder de Dode Zee-rollen (4QEnoch) en enkele Griekse fragmenten; de volledige tekst is alleen in het Ge'ez (Ethiopisch) bewaard. Zie ook de aparte pagina over de handschriften van Henoch.",
+   "oudsteFragment": "dss",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "ethenoch"
+   ],
+   "oudsteVolledig": "ethenoch",
+   "tekstgetuigen": "Aramese Qumran-fragmenten (4QEnoch), Griekse fragmenten en de volledige Ge'ez-handschriften",
+   "leesInReader": "henoch"
+  },
+  "jubileeen": {
+   "intro": "Van het boek Jubileeën zijn Hebreeuwse fragmenten gevonden onder de Dode Zee-rollen (4Q216 e.a.); de volledige tekst is alleen in het Ge'ez bewaard.",
+   "oudsteFragment": "dss",
+   "fragmenten": [
+    "dss"
+   ],
+   "volledig": [
+    "ethenoch"
+   ],
+   "oudsteVolledig": "ethenoch",
+   "tekstgetuigen": "Hebreeuwse Qumran-fragmenten (4Q216 e.a.) en de volledige Ge'ez-handschriften",
+   "leesInReader": "jubileeen"
+  },
+  "4baruch": {
+   "intro": "4 Baruch (Paraleipomena Jeremiou) is bewaard in Griekse handschriften en volledig in de Ethiopische (Ge'ez) traditie.",
+   "fragmenten": [],
+   "volledig": [
+    "ethenoch"
+   ],
+   "oudsteVolledig": "ethenoch",
+   "tekstgetuigen": "Griekse handschriften en de Ge'ez-traditie",
+   "leesInReader": "4baruch"
+  },
+  "1meqabyan": {
+   "intro": "1 Meqabyan is een Ethiopisch boek dat alleen in het Ge'ez is overgeleverd, in handschriften van de Ethiopisch-Orthodoxe Tewahedo-kerk (niet te verwarren met de Griekse Makkabeeën).",
+   "fragmenten": [],
+   "volledig": [
+    "ethenoch"
+   ],
+   "oudsteVolledig": "ethenoch",
+   "tekstgetuigen": "Ethiopische Ge'ez-handschriften",
+   "leesInReader": "1meqabyan"
+  },
+  "2meqabyan": {
+   "intro": "2 Meqabyan is, net als de andere Meqabyan-boeken, alleen in het Ge'ez overgeleverd binnen de Ethiopisch-Orthodoxe traditie.",
+   "fragmenten": [],
+   "volledig": [
+    "ethenoch"
+   ],
+   "oudsteVolledig": "ethenoch",
+   "tekstgetuigen": "Ethiopische Ge'ez-handschriften",
+   "leesInReader": "2meqabyan"
+  },
+  "3meqabyan": {
+   "intro": "3 Meqabyan is alleen in het Ge'ez overgeleverd binnen de Ethiopisch-Orthodoxe traditie.",
+   "fragmenten": [],
+   "volledig": [
+    "ethenoch"
+   ],
+   "oudsteVolledig": "ethenoch",
+   "tekstgetuigen": "Ethiopische Ge'ez-handschriften",
+   "leesInReader": "3meqabyan"
   }
  },
  "personen": {
