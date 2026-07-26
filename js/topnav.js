@@ -13,7 +13,7 @@
             '<a href="index.html#johannes/1">Tekst</a>' +
             '<a href="onderwerpen.html">Onderwerpen</a>' +
             '<a href="wiki.html">Wiki</a>' +
-            '<a href="lexicon-viewer.html?taal=hebreeuws">Lexicon</a>' +
+            '<a href="lexicon-viewer.html?taal=hebreeuws">Woordenboek</a>' +
             '<a href="kaart.html">Kaart</a>' +
             '<a href="contact.html">Over ons</a>' +
         '</div>' +
@@ -32,4 +32,17 @@
             links[i].classList.add('active');
         }
     }
+
+    // Inlog-UI (auth-slot) vullen: laad de auth-scripts indien nog niet aanwezig,
+    // in volgorde (config vóór auth), zodat de login-knop overal verschijnt en de balk niet verspringt.
+    ['js/firebase-config.js', 'js/auth.js'].forEach(function (src) {
+        var name = src.split('/').pop();
+        if (document.querySelector('script[src$="' + name + '"]')) return;
+        var s = document.createElement('script'); s.src = src; s.async = false;
+        if (name === 'auth.js') {
+            // auth.js init't normaal op DOMContentLoaded; dat is bij dynamisch laden al voorbij → zelf init'en.
+            s.onload = function () { if (window.Auth && document.readyState !== 'loading') window.Auth.init(); };
+        }
+        document.head.appendChild(s);
+    });
 })();
