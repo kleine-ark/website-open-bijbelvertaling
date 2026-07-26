@@ -1,253 +1,356 @@
 {
-  "manuscripten": {
-    "p52": {
-      "naam": "Papyrus 52",
-      "bijnaam": "Rylands-fragment (P52)",
-      "siglum": "𝔓52",
-      "datering": "± 125 n.Chr.",
-      "type": "fragment",
-      "bevat": "Johannes 18:31-33 (recto) en 18:37-38 (verso)",
-      "bewaarplaats": "John Rylands Library, Manchester",
-      "gevonden": {
-        "wie": "Colin H. Roberts",
-        "jaar": "1934",
-        "plaats": "Egypte (in 1920 aangekocht)",
-        "hoe": "In 1920 door Bernard Grenfell in Egypte gekocht; het bleef onopgemerkt in de Rylands-collectie tot Colin H. Roberts het in 1934 herkende als tekst uit het Johannesevangelie."
-      },
-      "persoonWiki": "https://en.wikipedia.org/wiki/Colin_H._Roberts",
-      "afbeelding": "img/handschriften/p52.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Manchester,_John_Rylands_Library_Ms_Greek_P_457_(Papyrus_52)_recto_John_18,_31-33.jpg",
-      "licentie": "publiek domein",
-      "bijschrift": "Papyrus 52 (recto), Johannes 18:31-33",
-      "beschrijving": "Het oudste bewaarde fragment van het Nieuwe Testament — een klein papyrus-codexblaadje (8,9 × 6 cm). Dat er rond 125 n.Chr. al een codex van Johannes in Egypte circuleerde, plaatst het evangelie zeer dicht bij zijn oorspronkelijke ontstaan.",
-      "tekstfragment": {
-        "boek": "johannes",
-        "verwijzing": "Johannes 18:31-33 (recto) · 18:37-38 (verso)",
-        "blokken": [
-          {
-            "label": "Recto — Johannes 18:31-33",
-            "hoofdstuk": 18,
-            "nummers": [
-              31,
-              32,
-              33
-            ]
-          },
-          {
-            "label": "Verso — Johannes 18:37-38",
-            "hoofdstuk": 18,
-            "nummers": [
-              37,
-              38
-            ]
-          }
-        ],
-        "verschillen": "Het fragment is zo klein dat er per regel maar enkele woorden bewaard zijn. Waar de tekst leesbaar is, komt hij volledig overeen met de veel latere handschriften (Sinaiticus, Vaticanus): er zijn géén betekenisvolle tekstvarianten. Dat is opmerkelijk — het oudste stukje van het Nieuwe Testament bevestigt de overgeleverde tekst zoals wij die kennen."
-      },
-      "persoon": "roberts",
-      "varianten": []
-    },
-    "p66": {
-      "naam": "Papyrus 66",
-      "bijnaam": "Bodmer II (P66)",
-      "siglum": "𝔓66",
-      "datering": "± 200 n.Chr.",
-      "type": "fragment",
-      "bevat": "Johannes 1:1 – 14:26, met fragmenten tot 21:9",
-      "bewaarplaats": "Bibliotheca Bodmeriana, Cologny (Genève)",
-      "gevonden": {
-        "wie": "Martin Bodmer",
-        "jaar": "1952",
-        "plaats": "Pabau bij Dishna, Egypte",
-        "hoe": "Onderdeel van de Bodmer-papyri, in 1952 bij Dishna gevonden en via de handel verworven door verzamelaar Martin Bodmer."
-      },
-      "persoonWiki": "https://en.wikipedia.org/wiki/Martin_Bodmer",
-      "afbeelding": "img/handschriften/p66.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Papyrus66.jpg",
-      "licentie": "publiek domein",
-      "bijschrift": "Bladzijde uit Papyrus 66 (Bodmer II)",
-      "beschrijving": "Een bijna volledig Johannesevangelie (Joh. 1:1–14:26 plus fragmenten tot 21:9). Bevat talrijke correcties van de schrijver zelf — waardevol voor de studie van hoe kopiisten werkten.",
-      "persoon": "bodmer",
-      "varianten": [
-        {
-          "verwijzing": "Johannes 7:53–8:11",
-          "lezing": "— (ontbreekt)",
-          "standaard": "de geschiedenis van de overspelige vrouw",
-          "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
-        }
+ "manuscripten": {
+  "p52": {
+   "naam": "Papyrus 52",
+   "bijnaam": "Rylands-fragment (P52)",
+   "siglum": "𝔓52",
+   "datering": "± 125 n.Chr.",
+   "type": "fragment",
+   "bevat": "Johannes 18:31-33 (recto) en 18:37-38 (verso)",
+   "bewaarplaats": "John Rylands Library, Manchester",
+   "gevonden": {
+    "wie": "Colin H. Roberts",
+    "jaar": "1934",
+    "plaats": "Egypte (in 1920 aangekocht)",
+    "hoe": "In 1920 door Bernard Grenfell in Egypte gekocht; het bleef onopgemerkt in de Rylands-collectie tot Colin H. Roberts het in 1934 herkende als tekst uit het Johannesevangelie."
+   },
+   "persoonWiki": "https://en.wikipedia.org/wiki/Colin_H._Roberts",
+   "afbeelding": "img/handschriften/p52.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/File:Manchester,_John_Rylands_Library_Ms_Greek_P_457_(Papyrus_52)_recto_John_18,_31-33.jpg",
+   "licentie": "publiek domein",
+   "bijschrift": "Papyrus 52 (recto), Johannes 18:31-33",
+   "beschrijving": "Het oudste bewaarde fragment van het Nieuwe Testament — een klein papyrus-codexblaadje (8,9 × 6 cm). Dat er rond 125 n.Chr. al een codex van Johannes in Egypte circuleerde, plaatst het evangelie zeer dicht bij zijn oorspronkelijke ontstaan.",
+   "tekstfragment": {
+    "boek": "johannes",
+    "verwijzing": "Johannes 18:31-33 (recto) · 18:37-38 (verso)",
+    "blokken": [
+     {
+      "label": "Recto — Johannes 18:31-33",
+      "hoofdstuk": 18,
+      "nummers": [
+       31,
+       32,
+       33
       ]
-    },
-    "p75": {
-      "naam": "Papyrus 75",
-      "bijnaam": "Bodmer XIV-XV (P75)",
-      "siglum": "𝔓75",
-      "datering": "± 175–225 n.Chr.",
-      "type": "fragment",
-      "bevat": "Grote delen van Lukas (3:18–24:53) en Johannes (1:1–15:8)",
-      "bewaarplaats": "Vaticaanse Bibliotheek, Vaticaanstad",
-      "gevonden": {
-        "wie": "Martin Bodmer",
-        "jaar": "1952",
-        "plaats": "Pabau bij Dishna, Egypte",
-        "hoe": "Onderdeel van de Bodmer-papyri (Dishna, 1952); in 2007 door de Vaticaanse Bibliotheek aangekocht."
-      },
-      "persoonWiki": "https://en.wikipedia.org/wiki/Martin_Bodmer",
-      "afbeelding": "img/handschriften/p75.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Vatican,_Apostolic_Library_Ms_Hanna_Papyrus_1_-_Papyrus_Bodmer_XIV%E2%80%93XV_(Papyrus_75)_fol_1B9r_Luke_14,_3-14.jpg",
-      "licentie": "publiek domein",
-      "bijschrift": "Papyrus 75, folio met Lukas 14 (Bodmer XIV-XV)",
-      "beschrijving": "Tekstkritisch van fundamenteel belang: de tekst is bijna identiek aan die van de Codex Vaticanus, wat aantoont dat de Alexandrijnse tekstvorm al vóór 200 n.Chr. bestond.",
-      "persoon": "bodmer",
-      "varianten": [
-        {
-          "verwijzing": "Johannes 7:53–8:11",
-          "lezing": "— (ontbreekt)",
-          "standaard": "de geschiedenis van de overspelige vrouw",
-          "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
-        }
+     },
+     {
+      "label": "Verso — Johannes 18:37-38",
+      "hoofdstuk": 18,
+      "nummers": [
+       37,
+       38
       ]
-    },
-    "sinaiticus": {
-      "naam": "Codex Sinaiticus",
-      "bijnaam": "א (01)",
-      "siglum": "א",
-      "datering": "4e eeuw (± 330–360 n.Chr.)",
-      "type": "volledig",
-      "bevat": "Het volledige Johannesevangelie (en het hele NT)",
-      "bewaarplaats": "British Library, Londen (+ Leipzig, Sint-Petersburg, Sinaï)",
-      "gevonden": {
-        "wie": "Konstantin von Tischendorf",
-        "jaar": "1844/1859",
-        "plaats": "Katharinaklooster, Sinaï, Egypte",
-        "hoe": "De Duitse Bijbelgeleerde Konstantin von Tischendorf vond in 1844 de eerste bladen in het Katharinaklooster op de Sinaï en verwierf in 1859 het grootste deel."
-      },
-      "persoonWiki": "https://nl.wikipedia.org/wiki/Konstantin_von_Tischendorf",
-      "afbeelding": "img/handschriften/sinaiticus.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Codex_Sinaiticus_Matthew_6,4-32.JPG",
-      "licentie": "publiek domein",
-      "bijschrift": "Folio uit de Codex Sinaiticus (4e eeuw)",
-      "beschrijving": "Een van de twee oudste volledige Griekse Bijbels, met het complete Johannesevangelie. Online digitaal hersamengesteld op codexsinaiticus.org.",
-      "bewijs": {
-        "tekst": "CNN — “Oldest known Bible goes online” (2009)",
-        "url": "https://edition.cnn.com/2009/WORLD/europe/07/06/ancient.bible.online/index.html"
-      },
-      "persoon": "tischendorf",
-      "varianten": [
-        {
-          "verwijzing": "Johannes 7:53–8:11",
-          "lezing": "— (ontbreekt)",
-          "standaard": "de geschiedenis van de overspelige vrouw",
-          "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
-        }
-      ]
-    },
-    "vaticanus": {
-      "naam": "Codex Vaticanus",
-      "bijnaam": "B (03)",
-      "siglum": "B",
-      "datering": "4e eeuw (± 325–350 n.Chr.)",
-      "type": "volledig",
-      "bevat": "Het volledige Johannesevangelie (en vrijwel het hele NT)",
-      "bewaarplaats": "Vaticaanse Bibliotheek, Vaticaanstad",
-      "gevonden": {
-        "wie": null,
-        "jaar": "1475",
-        "plaats": "Rome, Italië",
-        "hoe": "Heeft geen bekende ontdekker; de codex staat al vermeld in de eerste catalogus van de Vaticaanse Bibliotheek uit 1475 en behoort tot de oudste bezittingen ervan."
-      },
-      "persoonWiki": null,
-      "afbeelding": "img/handschriften/vaticanus.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Codex_Vaticanus_B,_2Thess._3,11-18,_Hebr._1,1-2,2.jpg",
-      "licentie": "publiek domein",
-      "bijschrift": "Folio uit de Codex Vaticanus (4e eeuw)",
-      "beschrijving": "Mogelijk de oudste volledige Griekse Bijbel, door velen als tekstkritisch hoogwaardigste getuige beschouwd. Bevat het complete Johannesevangelie.",
-      "varianten": [
-        {
-          "verwijzing": "Johannes 7:53–8:11",
-          "lezing": "— (ontbreekt)",
-          "standaard": "de geschiedenis van de overspelige vrouw",
-          "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
-        }
-      ]
-    }
+     }
+    ],
+    "verschillen": "Het fragment is zo klein dat er per regel maar enkele woorden bewaard zijn. Waar de tekst leesbaar is, komt hij volledig overeen met de veel latere handschriften (Sinaiticus, Vaticanus): er zijn géén betekenisvolle tekstvarianten. Dat is opmerkelijk — het oudste stukje van het Nieuwe Testament bevestigt de overgeleverde tekst zoals wij die kennen."
+   },
+   "persoon": "roberts",
+   "varianten": []
   },
-  "boeken": {
-    "johannes": {
-      "intro": "Het Johannesevangelie is uitzonderlijk vroeg en goed overgeleverd. Het oudste bewaarde stukje Nieuwe Testament — Papyrus 52 — is juist een fragment van Johannes, en dateert van rond 125 n.Chr., nauwelijks een generatie na het ontstaan van het evangelie. Daarnaast zijn er zeer vroege, bijna volledige papyri (P66, P75) en de complete 4e-eeuwse codices.",
-      "oudsteFragment": "p52",
-      "fragmenten": [
-        "p52",
-        "p66",
-        "p75"
-      ],
-      "volledig": [
-        "sinaiticus",
-        "vaticanus"
-      ],
-      "tekstgetuigen": "± 30 papyri + alle grote majuskels (Sinaiticus, Vaticanus, Alexandrinus, Bezae, Washingtonianus)",
-      "leesInReader": "johannes",
-      "oudsteVolledig": "sinaiticus",
-      "varianten": [
-        {
-          "verwijzing": "Johannes 7:53–8:11",
-          "onderwerp": "De overspelige vrouw (Pericope Adulterae)",
-          "osv": "De Statenvertaling neemt de hele geschiedenis van de overspelige vrouw op, zoals ze in de latere Byzantijnse tekst (de Textus Receptus) staat.",
-          "oudste": "Ontbreekt volledig.",
-          "getuigen": [
-            "p66",
-            "p75",
-            "sinaiticus",
-            "vaticanus"
-          ],
-          "toelichting": "De passage ontbreekt in álle oudste getuigen van Johannes (P66, P75, Sinaiticus, Vaticanus) en duikt pas later op, o.a. in de Codex Bezae. Veel tekstcritici zien haar daarom als een latere invoeging; de inhoud zelf wordt vaak als oud en waardevol beschouwd."
-        },
-        {
-          "verwijzing": "Johannes 1:18",
-          "onderwerp": "“de eniggeboren Zoon” of “de eniggeboren God”",
-          "osv": "“Niemand heeft ooit God gezien; de eniggeboren Zoon…” — de Statenvertaling volgt hier de gangbare tekst met “Zoon” (Grieks: ὁ μονογενὴς υἱός).",
-          "oudste": "“de eniggeboren God” (Grieks: μονογενὴς θεός).",
-          "getuigen": [
-            "p66",
-            "p75",
-            "sinaiticus"
-          ],
-          "toelichting": "De oudste papyri (P66, P75) en de Sinaiticus lezen hier θεός (God) in plaats van υἱός (Zoon). Beide lezingen belijden Christus’ unieke band met de Vader; het verschil raakt niet aan de leer, wel aan de exacte woordkeus."
-        },
-        {
-          "verwijzing": "Johannes 5:3b–4",
-          "onderwerp": "De engel die het water van Bethesda beroerde",
-          "osv": "“…wachtende op de roering van het water. Want een engel daalde neder op zekeren tijd in dat badwater, en beroerde het water…” — de Statenvertaling neemt de verklaring over de engel op.",
-          "oudste": "Ontbreekt (het slot van vers 3 en heel vers 4).",
-          "getuigen": [
-            "p66",
-            "p75",
-            "sinaiticus",
-            "vaticanus"
-          ],
-          "toelichting": "De zin over de engel die het water in beweging bracht, ontbreekt in de oudste handschriften (P66, P75, Sinaiticus, Vaticanus). Ze lijkt een vroege verklarende kanttekening te zijn die later in de tekst is opgenomen."
-        }
-      ],
-      "codexSinaiticusUrl": "https://www.codexsinaiticus.org/en/manuscript.aspx?book=36"
+  "p66": {
+   "naam": "Papyrus 66",
+   "bijnaam": "Bodmer II (P66)",
+   "siglum": "𝔓66",
+   "datering": "± 200 n.Chr.",
+   "type": "fragment",
+   "bevat": "Johannes 1:1 – 14:26, met fragmenten tot 21:9",
+   "bewaarplaats": "Bibliotheca Bodmeriana, Cologny (Genève)",
+   "gevonden": {
+    "wie": "Martin Bodmer",
+    "jaar": "1952",
+    "plaats": "Pabau bij Dishna, Egypte",
+    "hoe": "Onderdeel van de Bodmer-papyri, in 1952 bij Dishna gevonden en via de handel verworven door verzamelaar Martin Bodmer."
+   },
+   "persoonWiki": "https://en.wikipedia.org/wiki/Martin_Bodmer",
+   "afbeelding": "img/handschriften/p66.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/File:Papyrus66.jpg",
+   "licentie": "publiek domein",
+   "bijschrift": "Bladzijde uit Papyrus 66 (Bodmer II)",
+   "beschrijving": "Een bijna volledig Johannesevangelie (Joh. 1:1–14:26 plus fragmenten tot 21:9). Bevat talrijke correcties van de schrijver zelf — waardevol voor de studie van hoe kopiisten werkten.",
+   "persoon": "bodmer",
+   "varianten": [
+    {
+     "verwijzing": "Johannes 7:53–8:11",
+     "lezing": "— (ontbreekt)",
+     "standaard": "de geschiedenis van de overspelige vrouw",
+     "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
     }
+   ]
   },
-  "personen": {
-    "roberts": {
-      "naam": "Colin H. Roberts",
-      "jaren": "1909–1990",
-      "bio": "Brits papyroloog en classicus, verbonden aan de universiteit van Oxford. In 1934 herkende hij een onooglijk papyrusstukje in de John Rylands Library als het oudste bekende fragment van het Nieuwe Testament (Papyrus 52). Hij bezorgde talrijke wetenschappelijke papyrus-edities.",
-      "wikipedia": "https://en.wikipedia.org/wiki/Colin_H._Roberts"
-    },
-    "bodmer": {
-      "naam": "Martin Bodmer",
-      "jaren": "1899–1971",
-      "bio": "Zwitsers verzamelaar en mecenas te Genève, oprichter van de Bibliotheca Bodmeriana. In de jaren 1950 verwierf hij de naar hem genoemde Bodmer-papyri — een vondst uit Egypte met enkele van de oudste bewaarde Bijbelteksten, waaronder Papyrus 66, 72 en 75.",
-      "wikipedia": "https://en.wikipedia.org/wiki/Martin_Bodmer"
-    },
-    "tischendorf": {
-      "naam": "Konstantin von Tischendorf",
-      "jaren": "1815–1874",
-      "bio": "Duits Bijbelgeleerde en tekstcriticus. In het Katharinaklooster op de Sinaï ontdekte hij de Codex Sinaiticus (eerste bladen 1844, het grootste deel 1859), een van de oudste volledige Griekse Bijbels. Hij gaf vele kritische edities van de Griekse tekst uit.",
-      "wikipedia": "https://nl.wikipedia.org/wiki/Konstantin_von_Tischendorf"
+  "p75": {
+   "naam": "Papyrus 75",
+   "bijnaam": "Bodmer XIV-XV (P75)",
+   "siglum": "𝔓75",
+   "datering": "± 175–225 n.Chr.",
+   "type": "fragment",
+   "bevat": "Grote delen van Lukas (3:18–24:53) en Johannes (1:1–15:8)",
+   "bewaarplaats": "Vaticaanse Bibliotheek, Vaticaanstad",
+   "gevonden": {
+    "wie": "Martin Bodmer",
+    "jaar": "1952",
+    "plaats": "Pabau bij Dishna, Egypte",
+    "hoe": "Onderdeel van de Bodmer-papyri (Dishna, 1952); in 2007 door de Vaticaanse Bibliotheek aangekocht."
+   },
+   "persoonWiki": "https://en.wikipedia.org/wiki/Martin_Bodmer",
+   "afbeelding": "img/handschriften/p75.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/File:Vatican,_Apostolic_Library_Ms_Hanna_Papyrus_1_-_Papyrus_Bodmer_XIV%E2%80%93XV_(Papyrus_75)_fol_1B9r_Luke_14,_3-14.jpg",
+   "licentie": "publiek domein",
+   "bijschrift": "Papyrus 75, folio met Lukas 14 (Bodmer XIV-XV)",
+   "beschrijving": "Tekstkritisch van fundamenteel belang: de tekst is bijna identiek aan die van de Codex Vaticanus, wat aantoont dat de Alexandrijnse tekstvorm al vóór 200 n.Chr. bestond.",
+   "persoon": "bodmer",
+   "varianten": [
+    {
+     "verwijzing": "Johannes 7:53–8:11",
+     "lezing": "— (ontbreekt)",
+     "standaard": "de geschiedenis van de overspelige vrouw",
+     "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
     }
+   ]
+  },
+  "sinaiticus": {
+   "naam": "Codex Sinaiticus",
+   "bijnaam": "א (01)",
+   "siglum": "א",
+   "datering": "4e eeuw (± 330–360 n.Chr.)",
+   "type": "volledig",
+   "bevat": "Het volledige Johannesevangelie (en het hele NT)",
+   "bewaarplaats": "British Library, Londen (+ Leipzig, Sint-Petersburg, Sinaï)",
+   "gevonden": {
+    "wie": "Konstantin von Tischendorf",
+    "jaar": "1844/1859",
+    "plaats": "Katharinaklooster, Sinaï, Egypte",
+    "hoe": "De Duitse Bijbelgeleerde Konstantin von Tischendorf vond in 1844 de eerste bladen in het Katharinaklooster op de Sinaï en verwierf in 1859 het grootste deel."
+   },
+   "persoonWiki": "https://nl.wikipedia.org/wiki/Konstantin_von_Tischendorf",
+   "afbeelding": "img/handschriften/sinaiticus.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/File:Codex_Sinaiticus_Matthew_6,4-32.JPG",
+   "licentie": "publiek domein",
+   "bijschrift": "Folio uit de Codex Sinaiticus (4e eeuw)",
+   "beschrijving": "Een van de twee oudste volledige Griekse Bijbels, met het complete Johannesevangelie. Online digitaal hersamengesteld op codexsinaiticus.org.",
+   "bewijs": {
+    "tekst": "CNN — “Oldest known Bible goes online” (2009)",
+    "url": "https://edition.cnn.com/2009/WORLD/europe/07/06/ancient.bible.online/index.html"
+   },
+   "persoon": "tischendorf",
+   "varianten": [
+    {
+     "verwijzing": "Johannes 7:53–8:11",
+     "lezing": "— (ontbreekt)",
+     "standaard": "de geschiedenis van de overspelige vrouw",
+     "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
+    }
+   ]
+  },
+  "vaticanus": {
+   "naam": "Codex Vaticanus",
+   "bijnaam": "B (03)",
+   "siglum": "B",
+   "datering": "4e eeuw (± 325–350 n.Chr.)",
+   "type": "volledig",
+   "bevat": "Het volledige Johannesevangelie (en vrijwel het hele NT)",
+   "bewaarplaats": "Vaticaanse Bibliotheek, Vaticaanstad",
+   "gevonden": {
+    "wie": null,
+    "jaar": "1475",
+    "plaats": "Rome, Italië",
+    "hoe": "Heeft geen bekende ontdekker; de codex staat al vermeld in de eerste catalogus van de Vaticaanse Bibliotheek uit 1475 en behoort tot de oudste bezittingen ervan."
+   },
+   "persoonWiki": null,
+   "afbeelding": "img/handschriften/vaticanus.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/File:Codex_Vaticanus_B,_2Thess._3,11-18,_Hebr._1,1-2,2.jpg",
+   "licentie": "publiek domein",
+   "bijschrift": "Folio uit de Codex Vaticanus (4e eeuw)",
+   "beschrijving": "Mogelijk de oudste volledige Griekse Bijbel, door velen als tekstkritisch hoogwaardigste getuige beschouwd. Bevat het complete Johannesevangelie.",
+   "varianten": [
+    {
+     "verwijzing": "Johannes 7:53–8:11",
+     "lezing": "— (ontbreekt)",
+     "standaard": "de geschiedenis van de overspelige vrouw",
+     "toelichting": "Deze bekende passage ontbreekt in dit handschrift, evenals in de andere oudste getuigen (P66, P75, Sinaiticus, Vaticanus). Ze duikt pas later op (o.a. in de Codex Bezae). Veel tekstcritici zien haar daarom als een latere invoeging in het Johannesevangelie, al wordt de inhoud vaak als oud en authentiek beschouwd."
+    }
+   ]
+  },
+  "dss_gen": {
+   "naam": "Dode Zee-rollen — Genesis",
+   "bijnaam": "4QGenᵇ (Qumran, grot 4)",
+   "siglum": "4Q2",
+   "datering": "± 50 v.Chr. (1e eeuw v.Chr.)",
+   "type": "fragment",
+   "bevat": "Fragmenten van Genesis (o.a. hoofdstukken 1–5); in totaal zijn in Qumran meerdere Genesis-handschriften gevonden.",
+   "bewaarplaats": "Israel Antiquities Authority / Shrine of the Book, Jeruzalem",
+   "gevonden": {
+    "wie": "Bedoeïenenherders (Ta’amireh); wetenschappelijk onderzocht door o.a. Roland de Vaux",
+    "jaar": "1947–1956",
+    "plaats": "Qumran, grotten bij de Dode Zee",
+    "hoe": "Vanaf 1947 vonden Bedoeïenenherders de eerste rollen in kruiken in een grot bij Qumran. Latere opgravingen (grotten 2–11, tot 1956) brachten duizenden fragmenten aan het licht, waaronder meerdere Genesis-handschriften — ruim duizend jaar ouder dan de tot dan toe oudste Hebreeuwse bijbelteksten."
+   },
+   "afbeelding": "img/handschriften/dss.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/Category:Dead_Sea_Scrolls",
+   "licentie": "publiek domein",
+   "bijschrift": "Fragment van een Dode Zee-rol uit Qumran.",
+   "beschrijving": "De Dode Zee-rollen (±250 v.Chr.–70 n.Chr.) bevatten de oudste bekende afschriften van Genesis. Ze bevestigden dat de Hebreeuwse tekst over meer dan duizend jaar opmerkelijk stabiel is overgeleverd.",
+   "persoonWiki": "https://nl.wikipedia.org/wiki/Dode_Zee-rollen"
+  },
+  "leningradensis": {
+   "naam": "Codex Leningradensis",
+   "bijnaam": "Codex L (B19A)",
+   "siglum": "L",
+   "datering": "1008 n.Chr.",
+   "type": "volledige codex",
+   "bevat": "De volledige Hebreeuwse Bijbel (Tenach), inclusief heel Genesis.",
+   "bewaarplaats": "Russische Nationale Bibliotheek, Sint-Petersburg",
+   "gevonden": {
+    "wie": "Geschreven door Samuel ben Jacob; later verworven via de collectie van Abraham Firkovich",
+    "jaar": "geschreven 1008; 19e eeuw naar Sint-Petersburg",
+    "plaats": "Caïro (Egypte) → Sint-Petersburg",
+    "hoe": "De codex werd rond 1008 in Caïro geschreven volgens de masoretische traditie van de Ben-Asjer-familie. Via de 19e-eeuwse verzamelaar Abraham Firkovich kwam hij in Sint-Petersburg terecht."
+   },
+   "afbeelding": "img/handschriften/leningradensis.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/Category:Leningrad_Codex",
+   "licentie": "publiek domein",
+   "bijschrift": "Siermpagina van de Codex Leningradensis (1008).",
+   "beschrijving": "Het oudste volledige handschrift van de Hebreeuwse Bijbel. Vrijwel alle moderne wetenschappelijke uitgaven (BHS, BHQ) — en daarmee de Hebreeuwse grondtekst achter het Oude Testament — gaan terug op deze codex.",
+   "persoonWiki": "https://nl.wikipedia.org/wiki/Codex_Leningradensis"
+  },
+  "aleppo": {
+   "naam": "Aleppo Codex",
+   "bijnaam": "Keter Aram Tsova",
+   "siglum": "A",
+   "datering": "± 930 n.Chr.",
+   "type": "codex (deels verloren)",
+   "bevat": "Oorspronkelijk de hele Tenach; het grootste deel van de Thora (waaronder vrijwel heel Genesis) ging in 1947 verloren.",
+   "bewaarplaats": "Israel Museum (Shrine of the Book), Jeruzalem",
+   "gevonden": {
+    "wie": "Eeuwenlang bewaard door de Joodse gemeenschap van Aleppo",
+    "jaar": "± 930; beschadigd 1947",
+    "plaats": "Tiberias → Aleppo (Syrië) → Jeruzalem",
+    "hoe": "Rond 930 in Tiberias voltooid (vocalisatie door Aäron ben Asjer) en eeuwenlang in Aleppo bewaard als ‘de Kroon’. Bij anti-Joodse rellen in 1947 raakte de codex beschadigd; een groot deel van de Thora, waaronder vrijwel heel Genesis, ging verloren."
+   },
+   "afbeelding": "img/handschriften/aleppo.jpg",
+   "commons": "https://commons.wikimedia.org/wiki/Category:Aleppo_Codex",
+   "licentie": "publiek domein",
+   "bijschrift": "Pagina uit de Aleppo Codex (±930).",
+   "beschrijving": "Het meest gezaghebbende masoretische handschrift, maar voor Genesis grotendeels verloren; de Codex Leningradensis vult die leemte.",
+   "persoonWiki": "https://nl.wikipedia.org/wiki/Aleppo_Codex"
   }
+ },
+ "boeken": {
+  "johannes": {
+   "intro": "Het Johannesevangelie is uitzonderlijk vroeg en goed overgeleverd. Het oudste bewaarde stukje Nieuwe Testament — Papyrus 52 — is juist een fragment van Johannes, en dateert van rond 125 n.Chr., nauwelijks een generatie na het ontstaan van het evangelie. Daarnaast zijn er zeer vroege, bijna volledige papyri (P66, P75) en de complete 4e-eeuwse codices.",
+   "oudsteFragment": "p52",
+   "fragmenten": [
+    "p52",
+    "p66",
+    "p75"
+   ],
+   "volledig": [
+    "sinaiticus",
+    "vaticanus"
+   ],
+   "tekstgetuigen": "± 30 papyri + alle grote majuskels (Sinaiticus, Vaticanus, Alexandrinus, Bezae, Washingtonianus)",
+   "leesInReader": "johannes",
+   "oudsteVolledig": "sinaiticus",
+   "varianten": [
+    {
+     "verwijzing": "Johannes 7:53–8:11",
+     "onderwerp": "De overspelige vrouw (Pericope Adulterae)",
+     "osv": "De Statenvertaling neemt de hele geschiedenis van de overspelige vrouw op, zoals ze in de latere Byzantijnse tekst (de Textus Receptus) staat.",
+     "oudste": "Ontbreekt volledig.",
+     "getuigen": [
+      "p66",
+      "p75",
+      "sinaiticus",
+      "vaticanus"
+     ],
+     "toelichting": "De passage ontbreekt in álle oudste getuigen van Johannes (P66, P75, Sinaiticus, Vaticanus) en duikt pas later op, o.a. in de Codex Bezae. Veel tekstcritici zien haar daarom als een latere invoeging; de inhoud zelf wordt vaak als oud en waardevol beschouwd."
+    },
+    {
+     "verwijzing": "Johannes 1:18",
+     "onderwerp": "“de eniggeboren Zoon” of “de eniggeboren God”",
+     "osv": "“Niemand heeft ooit God gezien; de eniggeboren Zoon…” — de Statenvertaling volgt hier de gangbare tekst met “Zoon” (Grieks: ὁ μονογενὴς υἱός).",
+     "oudste": "“de eniggeboren God” (Grieks: μονογενὴς θεός).",
+     "getuigen": [
+      "p66",
+      "p75",
+      "sinaiticus"
+     ],
+     "toelichting": "De oudste papyri (P66, P75) en de Sinaiticus lezen hier θεός (God) in plaats van υἱός (Zoon). Beide lezingen belijden Christus’ unieke band met de Vader; het verschil raakt niet aan de leer, wel aan de exacte woordkeus."
+    },
+    {
+     "verwijzing": "Johannes 5:3b–4",
+     "onderwerp": "De engel die het water van Bethesda beroerde",
+     "osv": "“…wachtende op de roering van het water. Want een engel daalde neder op zekeren tijd in dat badwater, en beroerde het water…” — de Statenvertaling neemt de verklaring over de engel op.",
+     "oudste": "Ontbreekt (het slot van vers 3 en heel vers 4).",
+     "getuigen": [
+      "p66",
+      "p75",
+      "sinaiticus",
+      "vaticanus"
+     ],
+     "toelichting": "De zin over de engel die het water in beweging bracht, ontbreekt in de oudste handschriften (P66, P75, Sinaiticus, Vaticanus). Ze lijkt een vroege verklarende kanttekening te zijn die later in de tekst is opgenomen."
+    }
+   ],
+   "codexSinaiticusUrl": "https://www.codexsinaiticus.org/en/manuscript.aspx?book=36"
+  },
+  "genesis": {
+   "intro": "Genesis is het eerste boek van de Thora en van de hele Bijbel. De Hebreeuwse tekst is met bijzondere zorg overgeleverd: de Dode Zee-rollen (vanaf de 1e eeuw v.Chr.) leveren de oudste fragmenten, terwijl de Codex Leningradensis (1008 n.Chr.) het oudste volledige handschrift is en de basis vormt voor vrijwel alle moderne uitgaven. Daarnaast bestaat Genesis vroeg in Griekse vertaling (de Septuaginta) en in de Samaritaanse Pentateuch, die op enkele plaatsen van de masoretische tekst afwijken.",
+   "oudsteFragment": "dss_gen",
+   "fragmenten": [
+    "dss_gen"
+   ],
+   "volledig": [
+    "leningradensis",
+    "aleppo"
+   ],
+   "tekstgetuigen": "Dode Zee-rollen (meerdere Genesis-handschriften), de masoretische codices (Leningradensis, Aleppo), de Samaritaanse Pentateuch en de Griekse Septuaginta.",
+   "leesInReader": "genesis",
+   "oudsteVolledig": "leningradensis",
+   "varianten": [
+    {
+     "verwijzing": "Genesis 4:8",
+     "onderwerp": "Kaïns woorden tegen Abel",
+     "osv": "“En Kaïn sprak met zijn broeder Habel…” — de Statenvertaling volgt de masoretische tekst, waarin niet staat wát Kaïn zei.",
+     "oudste": "“Laat ons naar het veld gaan.”",
+     "getuigen": [
+      "Septuaginta",
+      "Samaritaanse Pentateuch",
+      "Peshitta"
+     ],
+     "toelichting": "De masoretische tekst vermeldt niet wat Kaïn tegen Abel zei; de Septuaginta, de Samaritaanse Pentateuch en de Peshitta hebben hier de zin ‘Laat ons naar het veld gaan’. Veel moderne vertalingen nemen die woorden op; de inhoud verandert de geschiedenis niet wezenlijk."
+    },
+    {
+     "verwijzing": "Genesis 5 en 11",
+     "onderwerp": "De levensjaren in de geslachtsregisters",
+     "osv": "De Statenvertaling volgt de masoretische getallen (bijv. Adam 130 jaar bij de geboorte van Set).",
+     "oudste": "Afwijkende getallen in de Septuaginta en de Samaritaanse Pentateuch.",
+     "getuigen": [
+      "Septuaginta",
+      "Samaritaanse Pentateuch",
+      "leningradensis"
+     ],
+     "toelichting": "De leeftijden in de geslachtslijsten van Genesis 5 en 11 verschillen tussen de masoretische tekst, de Septuaginta en de Samaritaanse Pentateuch. Daardoor lopen berekeningen van de tijd tussen schepping en Abraham uiteen. Het gaat om overleveringsverschillen in de getallen, niet om de kern van het verhaal."
+    }
+   ]
+  }
+ },
+ "personen": {
+  "roberts": {
+   "naam": "Colin H. Roberts",
+   "jaren": "1909–1990",
+   "bio": "Brits papyroloog en classicus, verbonden aan de universiteit van Oxford. In 1934 herkende hij een onooglijk papyrusstukje in de John Rylands Library als het oudste bekende fragment van het Nieuwe Testament (Papyrus 52). Hij bezorgde talrijke wetenschappelijke papyrus-edities.",
+   "wikipedia": "https://en.wikipedia.org/wiki/Colin_H._Roberts"
+  },
+  "bodmer": {
+   "naam": "Martin Bodmer",
+   "jaren": "1899–1971",
+   "bio": "Zwitsers verzamelaar en mecenas te Genève, oprichter van de Bibliotheca Bodmeriana. In de jaren 1950 verwierf hij de naar hem genoemde Bodmer-papyri — een vondst uit Egypte met enkele van de oudste bewaarde Bijbelteksten, waaronder Papyrus 66, 72 en 75.",
+   "wikipedia": "https://en.wikipedia.org/wiki/Martin_Bodmer"
+  },
+  "tischendorf": {
+   "naam": "Konstantin von Tischendorf",
+   "jaren": "1815–1874",
+   "bio": "Duits Bijbelgeleerde en tekstcriticus. In het Katharinaklooster op de Sinaï ontdekte hij de Codex Sinaiticus (eerste bladen 1844, het grootste deel 1859), een van de oudste volledige Griekse Bijbels. Hij gaf vele kritische edities van de Griekse tekst uit.",
+   "wikipedia": "https://nl.wikipedia.org/wiki/Konstantin_von_Tischendorf"
+  }
+ }
 }
