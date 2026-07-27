@@ -155,7 +155,7 @@
         { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', nlJson: 'data/lexicon-nl/bdb-nl.json', refsJson: 'data/lexicon-nl/strong-refs-he.json', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true,
           lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', label: 'Abbott-Smith (1922)', infoUrl: 'woordenboeken.html#abbott-smith' }, lex1label: 'TBESG (2018)', lex1url: 'woordenboeken.html#tbesg', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
-        { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', bron: '4 Ezra (Vulgaat-traditie) — grondtekst-glossen' },
+        { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', json2: 'data/lexicon-lewis-short.json', bron: 'Grondtekst-glossen: 4 Ezra (Vulgaat-traditie). Woordenboek: Lewis & Short, A Latin Dictionary (1879), publiek domein.' },
         { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', json2: 'data/lexicon-dillmann.json', bron: 'Grondtekst-glossen: Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA). Woordenboek: Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0); definities in het Latijn, Nederlandse vertaling volgt.' }
     ];
 
@@ -324,9 +324,15 @@
         return (taal._data.woorden || []).map(function (w, i) {
             var key = w.lemma || w.woord;
             if (w.n != null && !w.lemma) key = 'DiL ' + w.n;   // Dillmann: toon entry-nummer
-            var isDillmann = !!(w._html || w.n != null);
+            var isSecond = !!w._html;   // afkomstig uit de tweede bron (json2)
+            var bron = null;
+            if (taal.json2) {
+                if (cur && cur.id === 'geez') bron = isSecond ? 'Dillmann' : 'Grondtekst-gloss';
+                else if (cur && cur.id === 'latijn') bron = isSecond ? 'Lewis-Short' : 'Grondtekst-gloss';
+                else bron = isSecond ? 'woordenboek' : 'Grondtekst-gloss';
+            }
             return { key: String(key || ('#' + i)), woord: w.woord || (w.vormen && w.vormen[0]) || w.lemma, gloss: w.betekenis,
-                def: w.definitie, defHtml: !!(taal.html || w._html), bron: isDillmann ? 'Dillmann' : (taal.json2 ? 'Grondtekst-gloss' : null),
+                def: w.definitie, defHtml: !!(taal.html || w._html), bron: bron,
                 verw: w.verwijzingen || [], forms: w.vormen };
         });
     }
@@ -394,11 +400,11 @@
                     (refs.length > cap ? ' <span style="color:#999;">… en nog ' + (refs.length - cap) + ' meer</span>' : '') + '</div>';
             }
         }
-        var bronTxt = e.bron === 'Dillmann'
-            ? 'Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0). Definitie in het Latijn; Nederlandse vertaling volgt'
-            : (e.bron === 'Grondtekst-gloss'
-                ? 'Grondtekst-gloss bij de Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)'
-                : cur.bron);
+        var bronTxt;
+        if (e.bron === 'Dillmann') bronTxt = 'Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0). Definitie in het Latijn; Nederlandse vertaling volgt';
+        else if (e.bron === 'Lewis-Short') bronTxt = 'Lewis & Short, A Latin Dictionary (1879), publiek domein. Definitie in het Engels; Nederlandse vertaling volgt';
+        else if (e.bron === 'Grondtekst-gloss') bronTxt = (cur.id === 'latijn' ? 'Grondtekst-gloss bij 4 Ezra (Vulgaat-traditie)' : 'Grondtekst-gloss bij de Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)');
+        else bronTxt = cur.bron;
         h += '<div class="lex-src">Bron: ' + bronTxt + '. Tekstverwijzingen zijn aanklikbaar en openen de tekst.</div>';
         contentEl.innerHTML = h;
         contentEl.scrollTop = 0;
