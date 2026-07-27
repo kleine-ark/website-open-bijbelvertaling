@@ -4,6 +4,11 @@
  * andere features blijven werken (localStorage-mode).
  */
 
+(function () {
+// Guard: sommige pagina's laden auth.js statisch, topnav.js injecteert het ook
+// dynamisch. Zonder deze check gaf dat "Identifier 'Auth' has already been declared"
+// (en op Safari/WebKit kan zo'n dubbele const de scriptuitvoering stoppen).
+if (window.Auth) return;
 const Auth = {
     app: null,
     auth: null,
@@ -160,3 +165,4 @@ const Auth = {
 
 document.addEventListener('DOMContentLoaded', () => Auth.init());
 window.Auth = Auth;
+})();
