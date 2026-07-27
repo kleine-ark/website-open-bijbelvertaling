@@ -7848,6 +7848,30 @@
    "nieuw": "veehouders",
    "toelichting": "Verouderd 'veeherder(en)' -> 'veehouder(s)'.",
    "regex": "\\bveeherder\\w*\\b"
+  },
+  {
+   "id": "V921",
+   "categorie": "Naamvallen",
+   "oud": "Israëls",
+   "nieuw": "van Israël",
+   "toelichting": "Genitief-s in 'jonkvrouw Israëls' e.d. -> 'van Israël' (alleen waar het een bezits-genitief is).",
+   "regex": "\\bIsraëls\\b"
+  },
+  {
+   "id": "V922",
+   "categorie": "Verouderde woorden",
+   "oud": "reten",
+   "nieuw": "scheuren",
+   "toelichting": "Verouderd 'reten' (scheuren/kieren) -> 'scheuren'.",
+   "regex": "\\breten\\b"
+  },
+  {
+   "id": "V923",
+   "categorie": "Verouderde woorden",
+   "oud": "Te die dage",
+   "nieuw": "Op die dag",
+   "toelichting": "Verouderd 'te/ter die dage' -> 'op die dag'.",
+   "regex": "[Tt]e die dage"
   }
  ]
 }
