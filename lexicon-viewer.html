@@ -498,7 +498,14 @@
             document.getElementById('lex-zoek').value = '';
             filter('');
             var opened = wantKey ? openKey(wantKey) : false;
-            // Nog geen woord gekozen? Toon de taal-landingspagina (uitleg + alfabet).
+            // Zoekterm uit de URL (?zoek=…) voorinvullen (bv. vanuit de reader-popup).
+            var zoekTerm = (location.search.match(/[?&]zoek=([^&]+)/) || [])[1];
+            if (!opened && zoekTerm) {
+                zoekTerm = decodeURIComponent(zoekTerm);
+                var zk = document.getElementById('lex-zoek'); zk.value = zoekTerm; filter(zoekTerm);
+                opened = true;   // geen landingspagina tonen als er gezocht wordt
+            }
+            // Nog geen woord/zoekterm? Toon de taal-landingspagina (uitleg + alfabet).
             if (!opened && window.LEX_LANDING && window.LEX_LANDING[cur.id]) contentEl.innerHTML = window.LEX_LANDING[cur.id];
             history.replaceState(null, '', '?taal=' + taal.id + (opened ? '&entry=' + encodeURIComponent(wantKey) : ''));
         }).catch(function (err) { hintEl.textContent = 'Kon lexicon niet laden.'; console.error(err); });
