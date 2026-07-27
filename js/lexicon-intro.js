@@ -89,8 +89,10 @@
         latijn:
             '<div class="lex-landing"><h2>Latijn — de taal van de Vulgaat</h2>' +
             '<p>Enkele boeken zijn niet in het Grieks bewaard gebleven maar in het <strong>Latijn</strong>, via de <em>Vulgaat</em> — de gezaghebbende Latijnse Bijbelvertaling die Hiëronymus rond 400 n.Chr. maakte. Het bekendste voorbeeld is <strong>4 Ezra</strong>, waarvan de oorspronkelijke Griekse tekst verloren is; de Latijnse traditie is daar de belangrijkste getuige.</p>' +
-            '<h3>Over deze woordenlijst</h3>' +
-            '<p>Hier staan <strong>grondtekst-glossen</strong>: per Latijns woord uit de tekst de vorm en een Nederlandse betekenis, zodat je woord voor woord kunt meelezen. Het is geen volledig woordenboek maar een hulp bij de tekst; de Nederlandse betekenissen zijn met AI-hulp samengesteld en nagekeken.</p>' +
-            '<p class="lex-landing-hint">Kies links een woord om de betekenis te zien.</p></div>'
+            '<h3>Twee bronnen in één tabblad</h3>' +
+            '<p>Ten eerste de <strong>grondtekst-glossen</strong>: per Latijns woord uit de tekst (o.a. 4 Ezra) de vorm en een Nederlandse betekenis, zodat je woord voor woord kunt meelezen. Ten tweede een volledig <strong>Latijns woordenboek</strong>.</p>' +
+            '<h3>Over het woordenboek — Lewis &amp; Short (1879)</h3>' +
+            '<p>Het klassieke <strong>A Latin Dictionary</strong> van Charlton T. Lewis en Charles Short (1879) is tot vandaag een van de meest gebruikte Latijnse woordenboeken, met ruim 37.000 lemmas. De definities staan in het <strong>Engels</strong>; een Nederlandse vertaling volgt. Het woordenboek is <strong>publiek domein</strong>. Zie de pagina <a href="woordenboeken.html">De woordenboeken</a> voor de volledige bronvermelding.</p>' +
+            '<p class="lex-landing-hint">Kies links een woord om de betekenis te zien, of zoek op een Latijns woord.</p></div>'
     };
 })();
