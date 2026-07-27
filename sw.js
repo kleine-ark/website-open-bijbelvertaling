@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = '2026-07-45-zef-hab'
+const VERSION = '2026-07-46-zef-hab'
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -33,6 +33,8 @@ const PRECACHE_URLS = [
     '/fonts/eb-garamond-500.woff2',
     '/fonts/eb-garamond-600.woff2',
     '/fonts/eb-garamond-700.woff2',
+    '/fonts/noto-serif-hebrew.woff2',
+    '/css/fonts.css',
     '/js/sidebar.js',
     '/js/app.js',
     '/js/opties.js',
