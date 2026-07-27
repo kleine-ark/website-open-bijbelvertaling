@@ -46,6 +46,7 @@
         .change-list li { padding: 6px 0; border-bottom: 1px solid #f0ede8; font-size: 14px; line-height: 1.6; }
         .change-type { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 3px; margin-right: 6px; text-transform: uppercase; }
         .type-principe { background: #ede9fe; color: #5b21b6; }
+        .type-feature { background: #dcfce7; color: #166534; }
         .type-fix { background: #fef3c7; color: #92400e; }
         .type-systeem { background: #dbeafe; color: #1e40af; }
         .type-bulk { background: #d1fae5; color: #065f46; }
@@ -109,11 +110,11 @@
 
         const typeLabels = {
             'principe': 'Principe', 'fix': 'Fix', 'systeem': 'Systeem',
-            'bulk': 'Bulk', 'uitzondering': 'Uitzondering'
+            'bulk': 'Bulk', 'uitzondering': 'Uitzondering', 'feature': 'Nieuw'
         };
         const typeClass = {
             'principe': 'type-principe', 'fix': 'type-fix', 'systeem': 'type-systeem',
-            'bulk': 'type-bulk', 'uitzondering': 'type-uitzondering'
+            'bulk': 'type-bulk', 'uitzondering': 'type-uitzondering', 'feature': 'type-feature'
         };
 
         // Groepeer per versie (data/changelog.json heeft nieuwste bovenaan)
