@@ -350,8 +350,10 @@
         }
         // JSON (latijn/geez/dillmann)
         return (taal._data.woorden || []).map(function (w, i) {
-            var key = w.lemma || w.woord;
-            if (w.n != null && !w.lemma) key = 'DiL ' + w.n;   // Dillmann: toon entry-nummer
+            // Badge = OV-strongs-nummer, net als H####/G#### bij Hebreeuws/Grieks,
+            // en identiek aan wat in de grondtekst onder het woord staat.
+            var key = w.ovl || w.lemma || w.woord;             // Latijn: OVL-nummer
+            if (w.n != null && !w.lemma) key = 'OVG' + w.n;    // Ge'ez/Dillmann: OVG-nummer
             var isSecond = !!w._html;   // afkomstig uit de tweede bron (json2)
             var bron = null;
             if (taal.json2) {

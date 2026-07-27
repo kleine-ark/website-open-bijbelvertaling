@@ -74,7 +74,7 @@
     function geezLexLink(strongs, word) {
         if (strongs && /^OVG(\d+)/.test(strongs)) {
             var n = parseInt(strongs.replace(/^OVG0*/, ''), 10);
-            return `<a class="geez-lex-link" target="_top" href="lexicon-viewer.html?taal=geez&zoek=${encodeURIComponent('DiL ' + n)}">In het woordenboek (Dillmann) →</a>`;
+            return `<a class="geez-lex-link" target="_top" href="lexicon-viewer.html?taal=geez&zoek=${encodeURIComponent('OVG' + n)}">In het woordenboek (Dillmann) →</a>`;
         }
         return `<a class="geez-lex-link" target="_top" href="lexicon-viewer.html?taal=geez&zoek=${encodeURIComponent(word)}">In het woordenboek opzoeken →</a>`;
     }
