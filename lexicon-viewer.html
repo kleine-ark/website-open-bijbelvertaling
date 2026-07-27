@@ -70,6 +70,7 @@
         .lex-entry-head { display: flex; align-items: baseline; gap: 14px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 6px; flex-wrap: wrap; }
         .lex-entry-strong { font: 600 13px var(--font-body); color: #fff; background: var(--teal); border-radius: 10px; padding: 2px 10px; }
         .lex-entry-woord { font-size: 34px; color: var(--navy); }
+        .lex-entry-translit { font-size: 16px; color: var(--teal); font-style: italic; }
         .lex-entry-gloss { font-size: 17px; color: var(--gold); font-style: italic; }
         .lex-def { font-size: 14.5px; line-height: 1.7; color: #333; margin-top: 14px; }
         .lex-def heb, .lex-def [lang="he"], .lex-def .hebrew { font-size: 19px; }
@@ -300,6 +301,7 @@
                 var defEn = obj[k].definitie || obj[k].vorm || '';
                 var def = t.definitieNl || t.vormNl || defEn;
                 var e = { key: k, woord: obj[k].woord,
+                    translit: obj[k].translit || obj[k].transliteratie || '',   // gelatiniseerde vorm (bv. 'agapaō')
                     gloss: t.glossNl || obj[k].gloss,
                     glossEn: obj[k].gloss,
                     def: def,
@@ -354,6 +356,7 @@
         var def = origineel ? e.defEn : e.def;
         var h = '<div class="lex-entry-head"><span class="lex-entry-strong">' + esc(e.key) + '</span>' +
             '<span class="lex-entry-woord" lang="' + langAttr() + '">' + esc(e.woord || '') + '</span>' +
+            (e.translit ? '<span class="lex-entry-translit" title="Gelatiniseerde (getranslitereerde) uitspraak">' + esc(e.translit) + '</span>' : '') +
             (gloss ? '<span class="lex-entry-gloss">' + esc(gloss) + '</span>' : '') +
             (cur.abbr && !e.nl ? '<span class="lex-concept" title="De Nederlandse vertaling van de volledige definitie volgt nog">Definitie nog niet vertaald</span>' : '') +
             (heeftEngels ? '<button class="lex-orig-toggle" id="lex-orig-toggle">' + (origineel ? '← Nederlandse versie' : 'Originele Engelse versie →') + '</button>' : '') +
