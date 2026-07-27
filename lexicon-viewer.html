@@ -117,6 +117,8 @@
         .lex-def[lang="en"] { }
         .lex-lexlabel { margin-top: 20px; font: 600 12px var(--font-body); color: var(--teal); text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border, #e5e1d8); padding-bottom: 3px; }
         .lex-lexlabel .lex-concept { text-transform: none; letter-spacing: 0; }
+        .lex-akk { color: #8a6d1f; text-decoration: none; border-bottom: 1px dotted #b8935a; }
+        .lex-akk:hover { color: var(--gold); background: rgba(203,164,73,0.12); }
         .lex-lexlabel-link { color: var(--teal); text-decoration: none; border-bottom: 1px dotted var(--teal); }
         .lex-lexlabel-link:hover { color: var(--gold); border-bottom-color: var(--gold); }
         .lex-xref { color: var(--navy); cursor: pointer; border-bottom: 1px dashed var(--teal); }
@@ -169,6 +171,7 @@
         { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', nlJson: 'data/lexicon-nl/bdb-nl.json', refsJson: 'data/lexicon-nl/strong-refs-he.json', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true,
           lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', label: 'Abbott-Smith (1922)', infoUrl: 'woordenboeken.html#abbott-smith' }, lex1label: 'TBESG (2018)', lex1url: 'woordenboeken.html#tbesg', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
+        { id: 'akkadisch', label: 'Akkadisch', json: 'data/lexicon-akkadisch.json', bron: 'ORACC — Open Richly Annotated Cuneiform Corpus (SAAo, RINAP, RIBo); Neo-Assyrisch/Babylonisch Akkadisch (CC0, publiek domein).' },
         { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', json2: 'data/lexicon-lewis-short.json', bron: 'Grondtekst-glossen: 4 Ezra (Vulgaat-traditie). Woordenboek: Lewis & Short, A Latin Dictionary (1879), publiek domein.' },
         { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', json2: 'data/lexicon-dillmann.json', bron: 'Grondtekst-glossen: Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA). Woordenboek: Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0); definities in het Latijn, Nederlandse vertaling volgt.' }
     ];
@@ -297,6 +300,16 @@
             return '>' + out + '<';
         });
     }
+    // Maak de Assyrische (Akkadische) cognaat in een BDB-definitie aanklikbaar naar het Akkadisch-tabblad.
+    function linkifyAkkadisch(html) {
+        return html.replace(/(Assyrisch|Assyrian)\s+(<i>)?(<i>)?([A-Za-zāēīōûôêîâáéíóúʾʿḫṣṭš-]{3,})(<\/i>)?(<\/i>)?/g,
+            function (m, lbl, i1, i2, woord, e1, e2) {
+                var zoek = woord.replace(/[ʾʿ]/g, '');
+                return lbl + ' ' + (i1 || '') + (i2 || '') +
+                    '<a class="lex-akk" target="_top" href="lexicon-viewer.html?taal=akkadisch&zoek=' + encodeURIComponent(zoek) + '" title="Akkadisch woordenboek (ORACC)">' + woord + '</a>' +
+                    (e1 || '') + (e2 || '');
+            });
+    }
     function prettyRef(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); return (BOOKNAMES[b] || b) + ' ' + ref.slice(sp + 1); }
     function refHref(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); var cv = ref.slice(sp + 1).split(':'); return 'index.html#' + b + '/' + cv[0] + '/' + (cv[1] || ''); }
 
@@ -366,7 +379,7 @@
                 '<span class="lex-toc-gloss">' + esc(e.gloss || '') + '</span></div>';
         }).join('') || '<div style="padding:14px;color:#999;">Geen resultaten.</div>';
     }
-    function langAttr() { return cur.id === 'grieks' ? 'grc' : (cur.id === 'geez' || cur.id === 'geez-dillmann') ? 'gez' : cur.id === 'latijn' ? 'la' : 'he'; }
+    function langAttr() { return cur.id === 'grieks' ? 'grc' : (cur.id === 'geez' || cur.id === 'geez-dillmann') ? 'gez' : cur.id === 'latijn' ? 'la' : cur.id === 'akkadisch' ? 'akk' : 'he'; }
 
     function showEntry(e) {
         currentEntry = e;
@@ -397,6 +410,7 @@
         } else if (def) {
             // Dillmann levert al opgemaakte (Latijnse) HTML; anders escapen/linkifyen.
             var body = e.defHtml ? def : linkifyXref(cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def), e.key);
+            if (cur.id === 'hebreeuws') body = linkifyAkkadisch(body);   // Assyrische cognaat -> Akkadisch woordenboek
             h += '<div class="lex-def"' + (e.defHtml ? ' lang="la"' : (origineel ? ' lang="en"' : '')) + '>' + body + '</div>';
         }
         if (e.verw && e.verw.length) {
