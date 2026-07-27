@@ -86,6 +86,16 @@
         .lex-fidal .la-note { color: #666; font-size: 12px; text-align: left; white-space: nowrap; }
         .lex-fidal .lf-c { font-size: 20px; color: var(--navy); }
         :root[data-theme="donker"] .lex-fidal .lf-c { color: var(--text-primary); }
+        /* Verwijstekst-popup: verstekst tonen bij een Bijbelverwijzing, met doorklik */
+        .lex-verw-popup { position: absolute; z-index: 100; width: 340px; max-width: 90vw; background: var(--bg-surface, #fff); border: 1px solid var(--border, #d4d0c8); border-radius: 10px; box-shadow: 0 8px 28px rgba(0,0,0,0.18); padding: 14px 16px; }
+        .lex-verw-popup .lvp-titel { font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+        .lex-verw-popup .lvp-tekst { font-size: 14px; line-height: 1.6; color: #444; max-height: 240px; overflow-y: auto; }
+        .lex-verw-popup .lvp-link { display: inline-block; margin-top: 10px; color: var(--teal); font-size: 13px; text-decoration: none; font-weight: 600; }
+        .lex-verw-popup .lvp-link:hover { text-decoration: underline; }
+        .lex-reflink { cursor: pointer; }
+        :root[data-theme="donker"] .lex-verw-popup { background: var(--bg-surface); border-color: var(--border-default); }
+        :root[data-theme="donker"] .lex-verw-popup .lvp-tekst { color: var(--text-secondary); }
+        :root[data-theme="donker"] .lex-verw-popup .lvp-titel { color: var(--text-primary); }
         :root[data-theme="donker"] .lex-landing h2, :root[data-theme="donker"] .lex-alfabet .la-let { color: var(--text-primary); }
         :root[data-theme="donker"] .lex-landing p, :root[data-theme="donker"] .lex-landing ul, :root[data-theme="donker"] .lex-alfabet td { color: var(--text-secondary); }
         .lex-entry-head { display: flex; align-items: baseline; gap: 14px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 6px; flex-wrap: wrap; }
@@ -467,7 +477,7 @@
         }
         if (e.verw && e.verw.length) {
             h += '<div class="lex-verw"><strong>Voorkomens:</strong> ' + e.verw.map(function (r) {
-                return '<a target="_top" href="' + refHref(r) + '">' + esc(prettyRef(r)) + '</a>';
+                return '<a class="lex-reflink" data-ref="' + esc(r) + '" target="_top" href="' + refHref(r) + '">' + esc(prettyRef(r)) + '</a>';
             }).join('') + '</div>';
         }
         // Voorkomens uit de Strong-getagde grondtekst (BDB/TBESG)
@@ -476,7 +486,7 @@
             if (refs.length) {
                 var cap = 250, shown = refs.slice(0, cap);
                 h += '<div class="lex-verw"><strong>Voorkomens (' + refs.length + '):</strong> ' +
-                    shown.map(function (r) { return '<a target="_top" href="' + refHref(r) + '">' + esc(prettyRef(r)) + '</a>'; }).join('') +
+                    shown.map(function (r) { return '<a class="lex-reflink" data-ref="' + esc(r) + '" target="_top" href="' + refHref(r) + '">' + esc(prettyRef(r)) + '</a>'; }).join('') +
                     (refs.length > cap ? ' <span style="color:#999;">… en nog ' + (refs.length - cap) + ' meer</span>' : '') + '</div>';
             }
         }
@@ -507,6 +517,36 @@
     });
     document.getElementById('lex-zoek').addEventListener('input', function () { filter(this.value); });
     (function () { var bf = document.getElementById('lex-bron-filter'); if (bf) bf.addEventListener('change', function () { bronFilter = this.value; filter(document.getElementById('lex-zoek').value); }); })();
+
+    // Verwijstekst-popup: klik op een Bijbelverwijzing toont eerst de verstekst,
+    // met een doorklik-link naar de volledige tekst op de site.
+    (function () {
+        var pop = null;
+        function closePop() { if (pop) { pop.remove(); pop = null; } }
+        document.addEventListener('click', function (e) {
+            var a = e.target.closest && e.target.closest('.lex-reflink');
+            if (!a) { if (pop && !(e.target.closest && e.target.closest('.lex-verw-popup'))) closePop(); return; }
+            e.preventDefault();
+            var ref = a.getAttribute('data-ref'); if (!ref) return;
+            var sp = ref.lastIndexOf(' '), bk = ref.slice(0, sp), cv = ref.slice(sp + 1).split(':');
+            var ch = cv[0], vs = parseInt(cv[1] || '1', 10);
+            closePop();
+            pop = document.createElement('div'); pop.className = 'lex-verw-popup';
+            pop.innerHTML = '<div class="lvp-titel">' + esc(prettyRef(ref)) + '</div>' +
+                '<div class="lvp-tekst">Laden…</div>' +
+                '<a class="lvp-link" target="_top" href="' + a.getAttribute('href') + '">Lees in de volledige tekst →</a>';
+            document.body.appendChild(pop);
+            var r = a.getBoundingClientRect();
+            pop.style.top = (window.scrollY + r.bottom + 6) + 'px';
+            pop.style.left = Math.max(8, Math.min(window.scrollX + r.left, window.scrollX + window.innerWidth - 356)) + 'px';
+            fetch('data/' + bk + '/' + ch + '.json').then(function (x) { return x.json(); }).then(function (d) {
+                var v = (d.verses || []).filter(function (y) { return y.number === vs; })[0];
+                var t = pop && pop.querySelector('.lvp-tekst');
+                if (t) t.textContent = v ? (v.text2026 || '(geen tekst)') : 'Vers niet gevonden.';
+            }).catch(function () { var t = pop && pop.querySelector('.lvp-tekst'); if (t) t.textContent = 'Kon de tekst niet laden.'; });
+        });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePop(); });
+    })();
     // Woordenlijst (TOC) in-/uitklappen
     (function () {
         var tg = document.getElementById('lex-toc-toggle'), shell = document.querySelector('.lex-shell');
