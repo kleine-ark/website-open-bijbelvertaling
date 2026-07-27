@@ -86,6 +86,14 @@
             '<h3>Over het woordenboek — Dillmann (1865)</h3>' +
             '<p>Het klassieke <strong>Lexicon linguae aethiopicae</strong> van August Dillmann (1823–1894) is het standaardwoordenboek van het Ge’ez, met ruim 13.000 lemmas. De definities staan in het <strong>Latijn</strong> — de wetenschapstaal van die tijd; een Nederlandse vertaling volgt. De digitale editie is verzorgd door het TraCES-project en Beta maṣāḥǝft (Universiteit Hamburg) en is beschikbaar onder <strong>CC BY-NC-SA 4.0</strong>. Zie de pagina <a href="woordenboeken.html#dillmann">De woordenboeken</a> voor de volledige bronvermelding.</p>' +
             '<p class="lex-landing-hint">Kies links een woord om de betekenis en de tekstverwijzingen te zien, of zoek op een Ge’ez-woord.</p></div>',
+        akkadisch:
+            '<div class="lex-landing"><h2>Akkadisch — de taal van Assyrië en Babylonië</h2>' +
+            '<p>Akkadisch (met de dialecten <strong>Assyrisch</strong> en <strong>Babylonisch</strong>) is een Semitische taal die in Mesopotamië werd geschreven in <strong>spijkerschrift</strong>, van het derde millennium v.Chr. tot rond het begin van de jaartelling. Het is nauw verwant aan het Hebreeuws en Aramees, en werpt licht op de betekenis van veel Hebreeuwse woorden.</p>' +
+            '<h3>Waarom staat dit in een Bijbelwoordenboek?</h3>' +
+            '<p>Bij veel Hebreeuwse woorden noemt het woordenboek van Brown-Driver-Briggs de <strong>Akkadische cognaat</strong> — een verwant woord dat helpt de betekenis vast te stellen. In het Hebreeuwse tabblad zijn die Assyrische vormen aanklikbaar; ze verwijzen hierheen.</p>' +
+            '<h3>Over deze bron</h3>' +
+            '<p>De Akkadische lemma\'s komen uit <strong>ORACC</strong> (Open Richly Annotated Cuneiform Corpus): de corpora SAAo (State Archives of Assyria), RINAP en RIBo (koninklijke inscripties). De definities zijn in het Engels; een Nederlandse vertaling kan later volgen. Licentie: <strong>CC0 (publiek domein)</strong>. Zie <a href="woordenboeken.html">De woordenboeken</a>.</p>' +
+            '<p class="lex-landing-hint">Zoek links op een Akkadisch woord (in transliteratie, bv. \'ummu\', \'amtu\').</p></div>',
         latijn:
             '<div class="lex-landing"><h2>Latijn — de taal van de Vulgaat</h2>' +
             '<p>Enkele boeken zijn niet in het Grieks bewaard gebleven maar in het <strong>Latijn</strong>, via de <em>Vulgaat</em> — de gezaghebbende Latijnse Bijbelvertaling die Hiëronymus rond 400 n.Chr. maakte. Het bekendste voorbeeld is <strong>4 Ezra</strong>, waarvan de oorspronkelijke Griekse tekst verloren is; de Latijnse traditie is daar de belangrijkste getuige.</p>' +
