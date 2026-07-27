@@ -62,7 +62,8 @@
             `<div class="geez-lex-word" lang="gez">${esc(word)}</div>` +
             (tr ? `<div class="geez-lex-translit">${esc(tr)}</div>` : '') +
             (bet ? `<div class="geez-lex-betekenis">${esc(bet)}</div>`
-                 : `<div class="geez-lex-empty">betekenis nog niet beschikbaar</div>`);
+                 : `<div class="geez-lex-empty">betekenis nog niet beschikbaar</div>`) +
+            `<a class="geez-lex-link" target="_top" href="lexicon-viewer.html?taal=geez&zoek=${encodeURIComponent(word)}">In het woordenboek opzoeken →</a>`;
         document.body.appendChild(popupEl);
         place(anchorEl);
     }
@@ -78,7 +79,8 @@
             `<div class="geez-lex-word" lang="la">${esc(word)}</div>` +
             (lemma ? `<div class="geez-lex-translit">${esc(lemma)}</div>` : '') +
             (bet ? `<div class="geez-lex-betekenis">${esc(bet)}</div>`
-                 : `<div class="geez-lex-empty">betekenis nog niet beschikbaar</div>`);
+                 : `<div class="geez-lex-empty">betekenis nog niet beschikbaar</div>`) +
+            `<a class="geez-lex-link" target="_top" href="lexicon-viewer.html?taal=latijn&zoek=${encodeURIComponent(lemma || word)}">In het woordenboek opzoeken →</a>`;
         document.body.appendChild(popupEl);
         place(anchorEl);
     }
