@@ -1498,7 +1498,7 @@
    "number": 13,
    "textSV1888": "Ziet, Ik zal uw plaatsen drukken, gelijk als een wagen drukt, die vol garven is.",
    "text1637": "Siet, Ick sal [33] uwe plaetsen drucken: gelijck als een wagen druckt, die vol garven is.",
-   "text2026": "Ziet, Ik zal uw plaatsen drukken, gelijk als een wagen drukt, die vol garven is.",
+   "text2026": "Ziet, Ik zal uw plaatsen drukken, gelijk als een wagen drukt, die vol graanschoven is.",
    "marginNotes": [
     {
      "marker": "33",
@@ -1560,10 +1560,16 @@
      "morph": "HNcmsa"
     }
    ],
-   "text2026_html": "<span class=\"god-speaks\"><i>Ziet, Ik zal<sup class=\"note-marker\" data-note=\"33\">33</sup> uw plaatsen drukken, gelijk als een wagen drukt, die vol garven is.</i></span>",
+   "text2026_html": "<span class=\"god-speaks\"><i>Ziet, Ik zal<sup class=\"note-marker\" data-note=\"33\">33</sup> uw plaatsen drukken, gelijk als een wagen drukt, die vol graanschoven is.</i></span>",
    "textSV1888_html": "Ziet, Ik zal<sup class=\"note-marker\" data-note=\"33\">33</sup> uw plaatsen drukken, gelijk als een wagen drukt, die vol garven is.",
    "text1637_html": "Siet, Ick sal <sup class=\"note-marker\" data-note=\"33\">33</sup> uwe plaetsen drucken: gelijck als een wagen druckt, die vol garven is.",
-   "phraseDiff": []
+   "phraseDiff": [
+    {
+     "old": "garven",
+     "new": "graanschoven",
+     "principe": "V915"
+    }
+   ]
   },
   {
    "number": 14,
@@ -1757,7 +1763,7 @@
    "number": 16,
    "textSV1888": "En de kloekhartigste onder de helden zal te dien dage naakt heenvlieden, spreekt de HEERE.",
    "text1637": "Ende de [38] kloeck-hertichste onder de helden, sal te dien dage [39] naeckt henen vlieden, spreeckt de HEERE.",
-   "text2026": "En de kloekhartigste onder de helden zal op die dag naakt heenvluchten, spreekt JAHWEH.",
+   "text2026": "En de moedigste onder de helden zal op die dag naakt heenvluchten, spreekt JAHWEH.",
    "marginNotes": [
     {
      "marker": "38",
@@ -1821,7 +1827,7 @@
      "morph": "HNp"
     }
    ],
-   "text2026_html": "<span class=\"god-speaks\"><i>En de<sup class=\"note-marker\" data-note=\"38\">38</sup> kloekhartigste onder de helden zal op die dag<sup class=\"note-marker\" data-note=\"39\">39</sup> naakt heenvluchten, spreekt JAHWEH.</i></span>",
+   "text2026_html": "<span class=\"god-speaks\"><i>En de<sup class=\"note-marker\" data-note=\"38\">38</sup> moedigste onder de helden zal op die dag<sup class=\"note-marker\" data-note=\"39\">39</sup> naakt heenvluchten, spreekt JAHWEH.</i></span>",
    "textSV1888_html": "En de<sup class=\"note-marker\" data-note=\"38\">38</sup> kloekhartigste onder de helden zal te dien dage<sup class=\"note-marker\" data-note=\"39\">39</sup> naakt heenvlieden, spreekt de HEERE.",
    "text1637_html": "Ende de <sup class=\"note-marker\" data-note=\"38\">38</sup> kloeck-hertichste onder de helden, sal te dien dage <sup class=\"note-marker\" data-note=\"39\">39</sup> naeckt henen vlieden, spreeckt de HEERE.",
    "phraseDiff": [
@@ -1839,6 +1845,11 @@
      "old": "de HEERE.",
      "new": "JAHWEH.",
      "principe": "G1"
+    },
+    {
+     "old": "kloekhartigste",
+     "new": "moedigste",
+     "principe": "V917"
     }
    ]
   }
