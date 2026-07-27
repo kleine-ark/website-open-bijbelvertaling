@@ -11,6 +11,17 @@
     src: url('/fonts/noto-sans-ethiopic-400.woff2') format('woff2');
 }
 
+/* Hebreeuws — zelf gehost zodat de grondtekst (incl. nikud + teamim/cantillatie)
+   overal rendert, ook op iPad/iOS waar systeem-serif de Hebreeuwse glyphs kan missen.
+   Variabele font, gewicht 400–700. Noto Serif Hebrew, SIL Open Font License. */
+@font-face {
+    font-family: 'Noto Serif Hebrew';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('/fonts/noto-serif-hebrew.woff2') format('woff2');
+}
+
 @font-face {
     font-family: 'Allura';
     font-style: normal;

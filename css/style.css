@@ -1550,7 +1550,7 @@ body.hide-verse-numbers .verse-num::after {
     line-height: 1.8;
 }
 .col-hebrew .hebrew-text {
-    font-family: 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif;
+    font-family: 'Noto Serif Hebrew', 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif;
     font-size: 17px;
     color: #2a1a0a;
 }
@@ -3260,6 +3260,11 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
    (klikbare woorden, lexicon-popup, andere pagina's), zodat het altijd leesbaar is. */
 [lang="gez"], .geez-word, .geez-lex-popup [lang="gez"], .geez-translit + .geez-orig, .geez-orig {
     font-family: 'Noto Sans Ethiopic', 'Abyssinica SIL', serif;
+}
+/* Hebreeuws overal (grondtekst, klikbare woorden, lexicon-popup, woordenboek),
+   zelf-gehoste font zodat het ook op iPad/iOS altijd rendert. */
+[lang="he"], .hebrew, .lex-def heb, .lex-def [lang="he"], .lex-def .hebrew {
+    font-family: 'Noto Serif Hebrew', 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif;
 }
 /* Griekse grondtekst (NT + apocriefen/LXX) is links-naar-rechts */
 .col-hebrew .hebrew-text[lang="grc"] {
