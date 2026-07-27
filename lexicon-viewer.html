@@ -366,10 +366,13 @@
 
     function filter(q) {
         q = (q || '').toLowerCase().trim();
+        var qb = baseForm(q); // diakriet-loze vorm, zodat 'logos' ook 'lógos' vindt
         var r = entries;
         if (q) r = entries.filter(function (e) {
             return (e.gloss || '').toLowerCase().indexOf(q) >= 0 || (e.woord || '').toLowerCase().indexOf(q) >= 0 ||
-                (e.key || '').toLowerCase().indexOf(q) >= 0;
+                (e.key || '').toLowerCase().indexOf(q) >= 0 ||
+                // gelatiniseerde/getranslitereerde vorm (bv. Grieks 'logos', 'agapaō')
+                (e.translit ? baseForm(e.translit).indexOf(qb) >= 0 : false);
         });
         hintEl.textContent = r.length.toLocaleString('nl-NL') + ' woorden' + (r.length > 300 ? ' — toont eerste 300' : '');
         var slice = r.slice(0, 300);
