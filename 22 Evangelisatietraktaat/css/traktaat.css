@@ -1,0 +1,84 @@
+/* Sobere basisopmaak: alleen wat de structuur nodig heeft.
+ * De verdere vormgeving wordt hier handmatig uitgewerkt.
+ */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    display: flex;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #2b2b2b;
+    background: #f6f3ec;
+}
+
+#zijbalk {
+    width: 16rem;
+    flex: 0 0 16rem;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 1.5rem 1rem;
+    background: #efe9dc;
+    border-right: 1px solid #ddd4c0;
+}
+
+#zijbalk h1 { font-size: 1.2rem; margin: 0 0 1rem; }
+
+#inhoudsopgave a {
+    display: block;
+    padding: 0.15rem 0;
+    font-size: 0.9rem;
+    color: #4a3f2f;
+    text-decoration: none;
+}
+
+#inhoudsopgave a:hover { text-decoration: underline; }
+
+#boekje { flex: 1; padding: 2rem; max-width: 78rem; }
+
+.spread {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    padding: 2rem 0 3rem;
+    border-bottom: 1px solid #e2dac6;
+    align-items: start;
+}
+
+.pagina.tekst { max-width: 34rem; }
+
+.pagina.beeld {
+    position: sticky;
+    top: 2rem;
+}
+
+.spread h2 { font-size: 1.4rem; margin: 0 0 1rem; }
+.spread h2 a { color: inherit; text-decoration: none; border-bottom: 1px dotted #b5a88c; }
+.spread h2 a:hover { border-bottom-style: solid; }
+
+.vers { margin: 0 0 0.6rem; line-height: 1.6; }
+.versnr { font-size: 0.75rem; vertical-align: super; color: #8a7a5e; margin-right: 0.15rem; }
+
+.laden, .fout { color: #8a7a5e; font-style: italic; }
+.fout button { margin-left: 0.5rem; font: inherit; cursor: pointer; }
+
+.illustratie { margin: 0 0 1rem; }
+.illustratie img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: #e6dfcd; }
+.illustratie figcaption { font-size: 0.8rem; color: #8a7a5e; padding-top: 0.3rem; }
+.illustratie.ontbreekt img { display: none; }
+.illustratie.ontbreekt {
+    aspect-ratio: 4 / 3;
+    border: 1px dashed #c9bfa5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uitleg { line-height: 1.6; }
+.uitleg.leeg { color: #a2957a; font-style: italic; }
+
+@media (max-width: 60rem) {
+    body { display: block; }
+    #zijbalk { width: auto; height: auto; border-right: none; border-bottom: 1px solid #ddd4c0; }
+    .spread { grid-template-columns: 1fr; }
+    .pagina.beeld { position: static; }
+}
