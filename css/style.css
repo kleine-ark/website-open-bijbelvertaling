@@ -4595,3 +4595,11 @@ body.hs-per-vers-aan .hs-vers-tag {
 /* Link in de Ge'ez/Latijn-woordpopup naar het woordenboek */
 .geez-lex-link { display: block; margin-top: 8px; padding-top: 6px; border-top: 1px solid rgba(203,164,73,0.3); font-size: 12px; color: var(--teal); text-decoration: none; }
 .geez-lex-link:hover { color: var(--gold); }
+
+/* Citaatopmaak iets minder cursief: mildere schuinstand i.p.v. de sterk
+   calligrafische Garamond-italic (verzoek: 'iets minder cursief'). */
+span.direct-speech, span.direct-speech i,
+span.god-speaks, span.god-speaks i,
+span.devil-speaks, span.devil-speaks i {
+    font-style: oblique 8deg !important;
+}
