@@ -54,6 +54,12 @@
             '<li>De klinkers (de puntjes en streepjes onder en boven de letters) zijn later toegevoegd door de <em>masoreten</em> om de uitspraak vast te leggen.</li>' +
             '<li>Vijf letters hebben een aparte <strong>slotvorm</strong> aan het einde van een woord (ך ם ן ף ץ).</li>' +
             '<li>Elke letter heeft ook een <strong>getalswaarde</strong> — zo kon men met letters tellen.</li></ul>' +
+            '<h3>Hebreeuws én Aramees — wat is het verschil?</h3>' +
+            '<p><strong>Hebreeuws</strong> en <strong>Aramees</strong> zijn twee nauw verwante Semitische talen — ongeveer zo verwant als Nederlands en Duits. Ze delen hetzelfde schrift (dezelfde 22 medeklinkers, van rechts naar links) en veel woorden lijken op elkaar, maar de grammatica en een deel van de woordenschat verschillen.</p>' +
+            '<ul><li><strong>Hebreeuws</strong> is de taal van verreweg het grootste deel van het Oude Testament — de taal van Mozes, de profeten en de psalmen.</li>' +
+            '<li><strong>Aramees</strong> was in het Nabije Oosten eeuwenlang de gangbare omgangs- en handelstaal. Na de Babylonische ballingschap werd het ook onder de Joden veel gesproken; het was vermoedelijk de dagelijkse taal van Jezus.</li>' +
+            '<li>Enkele gedeelten van het Oude Testament zijn dan ook in het <strong>Aramees</strong> geschreven: grote delen van <em>Daniël</em> (2:4–7:28) en <em>Ezra</em> (4:8–6:18; 7:12–26), plus een enkel vers elders (Jeremia 10:11; twee woorden in Genesis 31:47).</li></ul>' +
+            '<p>Omdat de talen zo dicht bij elkaar liggen en hetzelfde woordenboek (Brown-Driver-Briggs) ze samen behandelt, staan Hebreeuws en Aramees hier in één tabblad.</p>' +
             '<h3>Het Hebreeuwse alfabet</h3>' + alfabet(HEB, 'he') +
             '<h3>Over dit woordenboek — Brown-Driver-Briggs</h3>' +
             '<p>De Hebreeuwse en Aramese woorden komen uit het <strong>Brown-Driver-Briggs</strong> (BDB), voluit <em>A Hebrew and English Lexicon of the Old Testament</em> (1906). Het is het klassieke standaardwoordenboek van het Bijbels Hebreeuws, samengesteld door Francis Brown, Samuel Rolles Driver en Charles Augustus Briggs. BDB ordent de woorden per <strong>stam</strong> (de drie medeklinkers die de kern van een woord vormen) en geeft per woord uitvoerige betekenissen met de bijbehorende tekstplaatsen. Het is tot op vandaag een van de meest geraadpleegde Hebreeuwse lexicons.</p>' +
