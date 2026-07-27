@@ -46,6 +46,28 @@
         return h + '</tbody></table>';
     }
 
+    // Ge'ez-schrift (fidäl): abugida — 26 medeklinkers × 7 klinkerorden (ä, u, i, a, e, ə, o).
+    // De 7 vormen van een medeklinker staan in Unicode aaneengesloten vanaf het grondteken.
+    var GEZ_CONS = [
+        [0x1200, 'Hoy', 'h'], [0x1208, 'Läwe', 'l'], [0x1210, 'Ḥäwt', 'ḥ'], [0x1218, 'May', 'm'], [0x1220, 'Śäwt', 'ś'],
+        [0x1228, 'Rəʾs', 'r'], [0x1230, 'Sat', 's'], [0x1240, 'Qaf', 'q'], [0x1260, 'Bet', 'b'], [0x1270, 'Täwe', 't'],
+        [0x1280, 'Ḫarm', 'ḫ'], [0x1290, 'Nähas', 'n'], [0x12A0, 'ʾAlf', 'ʼ'], [0x12A8, 'Kaf', 'k'], [0x12C8, 'Wäwe', 'w'],
+        [0x12D0, 'ʿÄyn', 'ʽ'], [0x12D8, 'Zäy', 'z'], [0x12E8, 'Yämän', 'j'], [0x12F0, 'Dänt', 'd'], [0x1308, 'Gäml', 'g'],
+        [0x1320, 'Ṭäyt', 'ṭ'], [0x1330, 'P̣äyt', 'p̣'], [0x1338, 'Ṣädäy', 'ṣ'], [0x1340, 'Ṣ́äppä', 'ḍ'], [0x1348, 'Af', 'f'], [0x1350, 'Psa', 'p']
+    ];
+    function fidal() {
+        var ord = ['ä', 'u', 'i', 'a', 'e', 'ə', 'o'];
+        var h = '<div class="lex-fidal-wrap"><table class="lex-fidal"><thead><tr><th>Naam</th><th>Klank</th>';
+        ord.forEach(function (o) { h += '<th>' + o + '</th>'; });
+        h += '</tr></thead><tbody>';
+        GEZ_CONS.forEach(function (c) {
+            h += '<tr><td class="la-note">' + c[1] + '</td><td>' + c[2] + '</td>';
+            for (var i = 0; i < 7; i++) h += '<td class="lf-c" lang="gez">' + String.fromCharCode(c[0] + i) + '</td>';
+            h += '</tr>';
+        });
+        return h + '</tbody></table></div>';
+    }
+
     window.LEX_LANDING = {
         hebreeuws:
             '<div class="lex-landing"><h2>Hebreeuws &amp; Aramees — de taal van het Oude Testament</h2>' +
@@ -81,8 +103,11 @@
             '<p>Ge’ez (klassiek Ethiopisch) is de taal waarin o.a. de boeken Henoch, Jubileeën en de Meqabyan-boeken volledig zijn overgeleverd, binnen de Ethiopisch-Orthodoxe traditie.</p>' +
             '<ul><li>Ge’ez gebruikt een eigen schrift (de <em>fidäl</em>): een <strong>abugida</strong> waarin elk teken een medeklinker + klinker weergeeft (ruim 200 tekens), in plaats van een los alfabet.</li>' +
             '<li>Het wordt van links naar rechts geschreven.</li></ul>' +
+            '<h3>Het Ge’ez-schrift (fidäl)</h3>' +
+            '<p>Elke <strong>rij</strong> is een medeklinker, elke <strong>kolom</strong> een klinker (‑ä, ‑u, ‑i, ‑a, ‑e, ‑ə, ‑o). Het grondteken (eerste kolom) draagt de klinker <em>ä</em>; door kleine wijzigingen aan dat teken ontstaan de overige klinkers.</p>' +
+            fidal() +
             '<h3>Twee bronnen in één tabblad</h3>' +
-            '<p>Dit tabblad combineert twee dingen. Ten eerste de <strong>grondtekst-glossen</strong>: per Ge’ez-woord uit de Ethiopische boeken een korte Nederlandse betekenis en de tekstplaatsen waar het voorkomt (bron: Beta maṣāḥǝft). Ten tweede het volledige <strong>woordenboek van Dillmann</strong> (die lemmas herken je aan het nummer <em>DiL&nbsp;…</em>).</p>' +
+            '<p>Dit tabblad combineert twee dingen. Ten eerste de <strong>grondtekst-glossen</strong>: per Ge’ez-woord uit de Ethiopische boeken een korte Nederlandse betekenis en de tekstplaatsen waar het voorkomt (bron: Beta maṣāḥǝft). Ten tweede het volledige <strong>woordenboek van Dillmann</strong> (die lemmas herken je aan het OV-nummer <em>OVG&nbsp;…</em>).</p>' +
             '<h3>Over het woordenboek — Dillmann (1865)</h3>' +
             '<p>Het klassieke <strong>Lexicon linguae aethiopicae</strong> van August Dillmann (1823–1894) is het standaardwoordenboek van het Ge’ez, met ruim 13.000 lemmas. De definities staan in het <strong>Latijn</strong> — de wetenschapstaal van die tijd; een Nederlandse vertaling volgt. De digitale editie is verzorgd door het TraCES-project en Beta maṣāḥǝft (Universiteit Hamburg) en is beschikbaar onder <strong>CC BY-NC-SA 4.0</strong>. Zie de pagina <a href="woordenboeken.html#dillmann">De woordenboeken</a> voor de volledige bronvermelding.</p>' +
             '<p class="lex-landing-hint">Kies links een woord om de betekenis en de tekstverwijzingen te zien, of zoek op een Ge’ez-woord.</p></div>',
