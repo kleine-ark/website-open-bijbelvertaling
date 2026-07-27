@@ -104,6 +104,8 @@
         .lex-def[lang="en"] { }
         .lex-lexlabel { margin-top: 20px; font: 600 12px var(--font-body); color: var(--teal); text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border, #e5e1d8); padding-bottom: 3px; }
         .lex-lexlabel .lex-concept { text-transform: none; letter-spacing: 0; }
+        .lex-lexlabel-link { color: var(--teal); text-decoration: none; border-bottom: 1px dotted var(--teal); }
+        .lex-lexlabel-link:hover { color: var(--gold); border-bottom-color: var(--gold); }
         .lex-xref { color: var(--navy); cursor: pointer; border-bottom: 1px dashed var(--teal); }
         .lex-xref:hover { background: rgba(42,125,125,0.14); }
         :root[data-theme="donker"] .lex-xref { color: var(--text-primary); border-bottom-color: #6fb3b3; }
@@ -150,7 +152,7 @@
     var TALEN = [
         { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', nlJson: 'data/lexicon-nl/bdb-nl.json', refsJson: 'data/lexicon-nl/strong-refs-he.json', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true,
-          lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', label: 'Abbott-Smith (1922)' }, lex1label: 'TBESG', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
+          lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', label: 'Abbott-Smith (1922)', infoUrl: 'woordenboeken.html#abbott-smith' }, lex1label: 'TBESG (2018)', lex1url: 'woordenboeken.html#tbesg', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', bron: '4 Ezra (Vulgaat-traditie) — grondtekst-glossen' },
         { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', bron: 'Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)' },
         { id: 'geez-dillmann', label: "Ge'ez — Dillmann", json: 'data/lexicon-dillmann.json', html: true, bron: 'Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0). Definities in het Latijn; Nederlandse vertaling volgt.' }
@@ -237,7 +239,9 @@
             var parts = attr.replace(/\.$/, '').split('.');
             var b = TBESG_BOOK[parts[0]];
             if (!b || !parts[1]) return txt || '';       // onbekende boek-code: alleen de tekst tonen
-            return '<a class="lex-ref" target="_top" href="index.html#' + b + '/' + parts[1] + '/' + (parts[2] || '') + '">' + (txt || (bookName(b) + ' ' + parts[1] + ':' + (parts[2] || ''))) + '</a>';
+            // Altijd de volledige Nederlandse boeknaam tonen (bv. "Act. 20:32" -> "Handelingen 20:32").
+            var disp = bookName(b) + ' ' + parts[1] + ':' + (parts[2] || '');
+            return '<a class="lex-ref" target="_top" href="index.html#' + b + '/' + parts[1] + '/' + (parts[2] || '') + '">' + disp + '</a>';
         });
     }
 
@@ -354,12 +358,16 @@
             (cur.abbr && !e.nl ? '<span class="lex-concept" title="De Nederlandse vertaling van de volledige definitie volgt nog">Definitie nog niet vertaald</span>' : '') +
             (heeftEngels ? '<button class="lex-orig-toggle" id="lex-orig-toggle">' + (origineel ? '← Nederlandse versie' : 'Originele Engelse versie →') + '</button>' : '') +
             '</div>';
+        // Lexicon-label als link naar de bronpagina (over dat woordenboek + bronvermelding)
+        function lexLabelLink(label, url) {
+            return url ? '<a class="lex-lexlabel-link" href="' + url + '" title="Over dit woordenboek en de bronvermelding">' + esc(label) + '</a>' : esc(label);
+        }
         if (e.ab) {
-            // Twee lexicons gecombineerd (TBESG + Abbott-Smith), elk gelabeld
-            if (def) h += '<div class="lex-lexlabel">' + esc(cur.lex1label || 'Lexicon 1') + '</div>' +
+            // Twee lexicons gecombineerd (TBESG + Abbott-Smith), elk gelabeld met link naar de bronpagina
+            if (def) h += '<div class="lex-lexlabel">' + lexLabelLink(cur.lex1label || 'Lexicon 1', cur.lex1url) + '</div>' +
                 '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + linkifyXref(linkifyTbesg(def), e.key) + '</div>';
             var abDef = origineel ? e.ab.defEn : e.ab.def;
-            if (abDef) h += '<div class="lex-lexlabel">' + esc(cur.lex2.label) + (e.ab.nl ? '' : ' <span class="lex-concept" title="Nederlandse vertaling volgt">nog niet vertaald</span>') + '</div>' +
+            if (abDef) h += '<div class="lex-lexlabel">' + lexLabelLink(cur.lex2.label, cur.lex2.infoUrl) + (e.ab.nl ? '' : ' <span class="lex-concept" title="Nederlandse vertaling volgt">nog niet vertaald</span>') + '</div>' +
                 '<div class="lex-def"' + ((origineel || !e.ab.nl) ? ' lang="en"' : '') + '>' + linkifyXref(linkifyAbbr(abDef), e.key) + '</div>';
         } else if (def) {
             // Dillmann levert al opgemaakte (Latijnse) HTML; anders escapen/linkifyen.
