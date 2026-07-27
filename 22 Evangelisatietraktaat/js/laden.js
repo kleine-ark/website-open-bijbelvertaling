@@ -17,6 +17,9 @@ export async function laadPassage(fetchFn, config, passage) {
             return { ok: false, fout: `Ophalen mislukt (${antwoord.status})` };
         }
         const hoofdstuk = await antwoord.json();
+        if (!Array.isArray(hoofdstuk.verses)) {
+            return { ok: false, fout: 'Ophalen mislukt: antwoord bevat geen verzen' };
+        }
         return { ok: true, verzen: verzenInBereik(hoofdstuk.verses, passage.verzen) };
     } catch (e) {
         return { ok: false, fout: `Ophalen mislukt: ${e.message}` };
