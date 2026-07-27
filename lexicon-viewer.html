@@ -110,6 +110,9 @@
         /* Witregel tussen de genummerde betekenissen (BDB gebruikt <p><b>1</b>… per betekenis) */
         .lex-def p { margin: 0.85em 0 0; }
         .lex-def p:first-child { margin-top: 0; }
+        .lex-bron-filter { font-size: 12px; color: var(--teal); border: 1px solid var(--border, #d4d0c8); border-radius: 6px; padding: 3px 7px; background: var(--bg-surface, #fff); margin-bottom: 9px; flex: 0 0 auto; }
+        :root[data-theme="donker"] .lex-bron-filter { background: var(--bg-surface-alt); color: var(--text-primary); border-color: #333; }
+        .lex-geenart { color: #888; }
         .lex-refs-toggle { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--teal); cursor: pointer; white-space: nowrap; padding-bottom: 10px; flex: 0 0 auto; }
         .lex-refs-toggle input { margin: 0; }
         body.lex-geen-verwijzingen .lex-ref { display: none; }
@@ -155,6 +158,11 @@
 
 <div class="lex-topbar">
     <div class="lex-tabs" id="lex-tabs"></div>
+    <select id="lex-bron-filter" class="lex-bron-filter" title="Filter op bron" style="display:none">
+        <option value="">Alle bronnen</option>
+        <option value="dict">Alleen woordenboek</option>
+        <option value="gloss">Alleen grondtekst-glossen</option>
+    </select>
     <label class="lex-refs-toggle" title="Toon of verberg de Bijbelverwijzingen in de definities"><input type="checkbox" id="lex-refs-toggle" checked> Verwijsteksten tonen</label>
 </div>
 <div class="lex-shell">
@@ -325,6 +333,7 @@
 
     var cur = null, entries = [], loaded = {};
     var showOrig = false, currentEntry = null;   // 'originele Engelse versie' tonen i.p.v. NL
+    var bronFilter = '';   // '' | 'dict' | 'gloss' — bronfilter voor Latijn/Ge'ez
     var listEl = document.getElementById('lex-list'), contentEl = document.getElementById('lex-content'), hintEl = document.getElementById('lex-hint');
 
     function loadScript(src) { return new Promise(function (res, rej) { var s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s); }); }
@@ -380,11 +389,16 @@
         q = (q || '').toLowerCase().trim();
         var qb = baseForm(q); // diakriet-loze vorm, zodat 'logos' ook 'lógos' vindt
         var r = entries;
-        if (q) r = entries.filter(function (e) {
+        if (q) r = r.filter(function (e) {
             return (e.gloss || '').toLowerCase().indexOf(q) >= 0 || (e.woord || '').toLowerCase().indexOf(q) >= 0 ||
                 (e.key || '').toLowerCase().indexOf(q) >= 0 ||
                 // gelatiniseerde/getranslitereerde vorm (bv. Grieks 'logos', 'agapaō')
                 (e.translit ? baseForm(e.translit).indexOf(qb) >= 0 : false);
+        });
+        // Bronfilter (Latijn/Ge'ez): alleen woordenboek (Dillmann/Lewis&Short) of alleen grondtekst-glossen
+        if (bronFilter) r = r.filter(function (e) {
+            var isDict = e.bron === 'Dillmann' || e.bron === 'Lewis-Short';
+            return bronFilter === 'dict' ? isDict : !isDict;
         });
         hintEl.textContent = r.length.toLocaleString('nl-NL') + ' woorden' + (r.length > 300 ? ' — toont eerste 300' : '');
         var slice = r.slice(0, 300);
@@ -396,6 +410,19 @@
     }
     function langAttr() { return cur.id === 'grieks' ? 'grc' : (cur.id === 'geez' || cur.id === 'geez-dillmann') ? 'gez' : cur.id === 'latijn' ? 'la' : cur.id === 'akkadisch' ? 'akk' : 'he'; }
 
+    // Bij een grondtekst-gloss (Latijn/Ge'ez) zonder eigen artikel: zoek het
+    // bijbehorende woordenboekartikel op — Ge'ez via de gedeelde OVG-key (Dillmann),
+    // Latijn via het genormaliseerde lemma (Lewis & Short). Zo krijgt bv. 'filius' toch uitleg.
+    function findArticle(e) {
+        if (cur.id === 'geez') return entries.filter(function (x) { return x !== e && x.bron === 'Dillmann' && x.key === e.key && x.def; })[0];
+        if (cur.id === 'latijn') {
+            var bf = baseForm(e.woord || e.key || '');
+            if (!bf) return null;
+            return entries.filter(function (x) { return x.bron === 'Lewis-Short' && x.def && baseForm(x.woord || '') === bf; })[0];
+        }
+        return null;
+    }
+
     function showEntry(e) {
         currentEntry = e;
         [].forEach.call(listEl.querySelectorAll('.lex-toc-item'), function (n) { n.classList.toggle('active', +n.dataset.i === entries.indexOf(e)); });
@@ -404,6 +431,12 @@
         var origineel = showOrig && heeftEngels;
         var gloss = origineel ? (e.glossEn || e.gloss) : e.gloss;
         var def = origineel ? e.defEn : e.def;
+        // Grondtekst-gloss zonder eigen artikel -> haal het woordenboekartikel erbij
+        var defHtml0 = e.defHtml, artLabel = null;
+        if (!def && !e.ab && (cur.id === 'latijn' || cur.id === 'geez')) {
+            var art = findArticle(e);
+            if (art && art.def) { def = art.def; defHtml0 = art.defHtml; artLabel = (cur.id === 'latijn') ? 'Lewis & Short (1879)' : 'Dillmann (1865)'; }
+        }
         var h = '<div class="lex-entry-head"><span class="lex-entry-strong">' + esc(e.key) + '</span>' +
             '<span class="lex-entry-woord" lang="' + langAttr() + '">' + esc(e.woord || '') + '</span>' +
             (e.translit ? '<span class="lex-entry-translit" title="Gelatiniseerde (getranslitereerde) uitspraak">' + esc(e.translit) + '</span>' : '') +
@@ -424,9 +457,13 @@
                 '<div class="lex-def"' + ((origineel || !e.ab.nl) ? ' lang="en"' : '') + '>' + linkifyXref(linkifyAbbr(abDef), e.key) + '</div>';
         } else if (def) {
             // Dillmann levert al opgemaakte (Latijnse) HTML; anders escapen/linkifyen.
-            var body = e.defHtml ? def : linkifyXref(cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def), e.key);
+            var body = defHtml0 ? def : linkifyXref(cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def), e.key);
             if (cur.id === 'hebreeuws') body = linkifyAkkadisch(body);   // Assyrische cognaat -> Akkadisch woordenboek
-            h += '<div class="lex-def"' + (e.defHtml ? ' lang="la"' : (origineel ? ' lang="en"' : '')) + '>' + body + '</div>';
+            if (artLabel) h += '<div class="lex-lexlabel">' + esc(artLabel) + '</div>';
+            h += '<div class="lex-def"' + (defHtml0 ? ' lang="la"' : (origineel ? ' lang="en"' : '')) + '>' + body + '</div>';
+        } else if (cur.id === 'latijn' || cur.id === 'geez') {
+            h += '<div class="lex-def lex-geenart"><em>Geen woordenboekartikel gevonden — dit is een grondtekst-gloss, vaak een eigennaam of een eenvoudige vorm die niet als apart lemma in ' +
+                (cur.id === 'latijn' ? 'Lewis &amp; Short' : 'Dillmann') + ' staat.</em></div>';
         }
         if (e.verw && e.verw.length) {
             h += '<div class="lex-verw"><strong>Voorkomens:</strong> ' + e.verw.map(function (r) {
@@ -469,6 +506,7 @@
         if (xr && xr.dataset.key) { ev.preventDefault(); openKey(xr.dataset.key); }
     });
     document.getElementById('lex-zoek').addEventListener('input', function () { filter(this.value); });
+    (function () { var bf = document.getElementById('lex-bron-filter'); if (bf) bf.addEventListener('change', function () { bronFilter = this.value; filter(document.getElementById('lex-zoek').value); }); })();
     // Woordenlijst (TOC) in-/uitklappen
     (function () {
         var tg = document.getElementById('lex-toc-toggle'), shell = document.querySelector('.lex-shell');
@@ -504,6 +542,9 @@
     function selectTaal(taal, wantKey) {
         cur = taal;
         [].forEach.call(document.querySelectorAll('.lex-tab'), function (b) { b.classList.toggle('active', b.dataset.id === taal.id); });
+        // Bronfilter alleen bij tabbladen met twee bronnen (Latijn = gloss+Lewis&Short, Ge'ez = gloss+Dillmann)
+        var bfEl = document.getElementById('lex-bron-filter');
+        if (bfEl) { bronFilter = ''; bfEl.value = ''; bfEl.style.display = taal.json2 ? '' : 'none'; }
         var zoekTerm = (location.search.match(/[?&]zoek=([^&]+)/) || [])[1];
         if (zoekTerm) zoekTerm = decodeURIComponent(zoekTerm);
         // Meteen iets tonen: de landingspagina (uitleg + alfabet) verschijnt direct
