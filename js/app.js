@@ -658,13 +658,15 @@ const App = {
                     const dataAttr = strongs ? ` data-strongs="${strongs}"` : '';
                     const subHtml = subText ? `<br><span class="strongs-sub">${subText}</span>` : '';
                     const attr = v => String(v == null ? '' : v).replace(/"/g, '&quot;');
-                    // Ge'ez heeft geen Strong's → klikbaar via geez-word (zie js/geez-lexicon.js)
+                    // Ge'ez heeft geen Strong's → eigen OV-strongs (OVG, uit Dillmann); klikbaar via geez-word
                     if (isGeez) {
-                        return `<span class="strongs-word geez-word" data-geez="${attr(w.woord)}" data-translit="${attr(translit)}" data-betekenis="${attr(w.betekenis)}">${w.woord}</span>`;
+                        const ovg = w.strongs ? `<br><span class="strongs-sub ov-strongs">${attr(w.strongs)}</span>` : '';
+                        return `<span class="strongs-word geez-word" data-geez="${attr(w.woord)}" data-translit="${attr(translit)}" data-betekenis="${attr(w.betekenis)}" data-strongs="${attr(w.strongs || '')}">${w.woord}${ovg}</span>`;
                     }
-                    // Latijn (4 Ezra) heeft geen Strong's → klikbaar via latin-word
+                    // Latijn (4 Ezra) heeft geen Strong's → eigen OV-strongs (OVL, uit Lewis & Short)
                     if (bookId === '4ezra') {
-                        return `<span class="strongs-word latin-word" data-lemma="${attr(w.lemma)}" data-betekenis="${attr(w.betekenis)}">${w.woord}</span>`;
+                        const ovl = w.strongs ? `<br><span class="strongs-sub ov-strongs">${attr(w.strongs)}</span>` : '';
+                        return `<span class="strongs-word latin-word" data-lemma="${attr(w.lemma)}" data-betekenis="${attr(w.betekenis)}" data-strongs="${attr(w.strongs || '')}">${w.woord}${ovl}</span>`;
                     }
                     return `<span class="strongs-word"${dataAttr} data-transliteratie="${translit}" data-gloss="${gloss}">${w.woord}${subHtml}</span>`;
                 }).join(' ');

@@ -4603,3 +4603,7 @@ span.god-speaks, span.god-speaks i,
 span.devil-speaks, span.devil-speaks i {
     font-style: oblique 8deg !important;
 }
+
+/* OV-strongs-nummers (eigen nummering Ge'ez/Latijn, geen echte Strong's) */
+.strongs-sub.ov-strongs { color: var(--gold); font-style: italic; }
+.geez-lex-strongs { font-size: 11px; color: var(--gold); font-style: italic; margin-top: 4px; }
