@@ -495,43 +495,19 @@
     function selectTaal(taal, wantKey) {
         cur = taal;
         [].forEach.call(document.querySelectorAll('.lex-tab'), function (b) { b.classList.toggle('active', b.dataset.id === taal.id); });
-        contentEl.innerHTML = '<p class="placeholder">Kies links een woord…</p>';
+        var zoekTerm = (location.search.match(/[?&]zoek=([^&]+)/) || [])[1];
+        if (zoekTerm) zoekTerm = decodeURIComponent(zoekTerm);
+        // Meteen iets tonen: de landingspagina (uitleg + alfabet) verschijnt direct
+        // — óók terwijl de (soms grote) woordenlijst nog laadt. Behalve als er meteen
+        // een specifiek woord geopend moet worden.
+        if (!wantKey && !zoekTerm && window.LEX_LANDING && window.LEX_LANDING[taal.id])
+            contentEl.innerHTML = window.LEX_LANDING[taal.id];
+        else
+            contentEl.innerHTML = '<p class="placeholder">Kies links een woord…</p>';
         hintEl.textContent = 'Laden…'; listEl.innerHTML = '';
-        var ready = loaded[taal.id] ? Promise.resolve() :
-            Promise.resolve()
-                .then(function () {
-                    if (taal.src) return loadScript(taal.src);
-                    if (taal.json2) {
-                        // Twee JSON-bronnen in één tab (bv. Ge'ez: grondtekst-glossen + Dillmann-woordenboek)
-                        return Promise.all([
-                            fetch(taal.json).then(function (r) { return r.json(); }),
-                            fetch(taal.json2).then(function (r) { return r.json(); })
-                        ]).then(function (arr) {
-                            var w1 = (arr[0].woorden || []);
-                            var w2 = (arr[1].woorden || []).map(function (w) { var c = {}; for (var k in w) c[k] = w[k]; c._html = true; return c; });
-                            taal._data = { woorden: w1.concat(w2) };
-                        });
-                    }
-                    return fetch(taal.json).then(function (r) { return r.json(); }).then(function (d) { taal._data = d; });
-                })
-                .then(function () {
-                    if (!taal.nlJson) return;
-                    return fetch(taal.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._nl = d; }).catch(function () { taal._nl = {}; });
-                })
-                .then(function () {
-                    if (!taal.refsJson) return;
-                    return fetch(taal.refsJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._refs = d; }).catch(function () { taal._refs = {}; });
-                })
-                .then(function () {
-                    if (!taal.lex2) return;
-                    return loadScript(taal.lex2.src).then(function () {
-                        return fetch(taal.lex2.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal.lex2._nl = d; }).catch(function () { taal.lex2._nl = {}; });
-                    });
-                });
-        ready.then(function () {
-            loaded[taal.id] = true;
-            entries = toEntries(taal);
-            // Kop-woord -> Strong-nummer index voor onderlinge links (Grieks/Hebreeuws)
+
+        // Kop-woord -> Strong-nummer index voor onderlinge links (Grieks/Hebreeuws)
+        function buildHw() {
             if (taal.abbr && !taal._hw && window[taal.global]) {
                 var obj = window[taal.global], hw = {}, wre = XREF_RE[taal.id];
                 if (wre) Object.keys(obj).forEach(function (k) {
@@ -545,19 +521,50 @@
                 });
                 taal._hw = hw;
             }
-            document.getElementById('lex-zoek').value = '';
-            filter('');
+        }
+        function renderList() { buildHw(); entries = toEntries(taal); var zk = document.getElementById('lex-zoek'); filter(zk ? zk.value : ''); }
+        function tryOpen() {
             var opened = wantKey ? openKey(wantKey) : false;
-            // Zoekterm uit de URL (?zoek=…) voorinvullen (bv. vanuit de reader-popup).
-            var zoekTerm = (location.search.match(/[?&]zoek=([^&]+)/) || [])[1];
             if (!opened && zoekTerm) {
-                zoekTerm = decodeURIComponent(zoekTerm);
-                var zk = document.getElementById('lex-zoek'); zk.value = zoekTerm; filter(zoekTerm);
-                opened = true;   // geen landingspagina tonen als er gezocht wordt
+                var zk = document.getElementById('lex-zoek'); zk.value = zoekTerm; filter(zoekTerm); opened = true;
             }
-            // Nog geen woord/zoekterm? Toon de taal-landingspagina (uitleg + alfabet).
-            if (!opened && window.LEX_LANDING && window.LEX_LANDING[cur.id]) contentEl.innerHTML = window.LEX_LANDING[cur.id];
-            history.replaceState(null, '', '?taal=' + taal.id + (opened ? '&entry=' + encodeURIComponent(wantKey) : ''));
+            if (!opened && window.LEX_LANDING && window.LEX_LANDING[cur.id]
+                && !(document.getElementById('lex-zoek') && document.getElementById('lex-zoek').value))
+                contentEl.innerHTML = window.LEX_LANDING[cur.id];
+            history.replaceState(null, '', '?taal=' + taal.id + (opened && wantKey ? '&entry=' + encodeURIComponent(wantKey) : ''));
+            return opened;
+        }
+
+        if (loaded[taal.id]) { renderList(); tryOpen(); return; }
+
+        // Fase 1 — alleen de minimale data (klein bestand) zodat de lijst direct verschijnt.
+        Promise.resolve().then(function () {
+            if (taal.src) return loadScript(taal.src);
+            return fetch(taal.json).then(function (r) { return r.json(); }).then(function (d) {
+                taal._data = taal.json2 ? { woorden: (d.woorden || []).slice() } : d;
+            });
+        }).then(function () {
+            if (!taal.nlJson) return;
+            return fetch(taal.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._nl = d; }).catch(function () { taal._nl = {}; });
+        }).then(function () {
+            renderList();          // lijst is er nu al — geen wachten op het zware woordenboek
+            tryOpen();
+            // Fase 2 — zware tweede bron (Dillmann 21MB / Lewis&Short) + refs + lex2 op de achtergrond.
+            var bg = [];
+            if (taal.json2) bg.push(fetch(taal.json2).then(function (r) { return r.json(); }).then(function (d) {
+                var w2 = (d.woorden || []).map(function (w) { var c = {}; for (var k in w) c[k] = w[k]; c._html = true; return c; });
+                taal._data = { woorden: (taal._data.woorden || []).concat(w2) };
+            }));
+            if (taal.refsJson) bg.push(fetch(taal.refsJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._refs = d; }).catch(function () { taal._refs = {}; }));
+            if (taal.lex2) bg.push(loadScript(taal.lex2.src).then(function () {
+                return fetch(taal.lex2.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal.lex2._nl = d; }).catch(function () { taal.lex2._nl = {}; });
+            }));
+            if (!bg.length) { loaded[taal.id] = true; return; }
+            Promise.all(bg).then(function () {
+                loaded[taal.id] = true;
+                renderList();      // herrenderen mét het volledige woordenboek
+                if (wantKey || zoekTerm) tryOpen();   // bv. een Dillmann-entry die pas nu geladen is
+            }).catch(function (err) { console.error(err); loaded[taal.id] = true; });
         }).catch(function (err) { hintEl.textContent = 'Kon lexicon niet laden.'; console.error(err); });
     }
 
