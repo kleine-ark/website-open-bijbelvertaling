@@ -7872,6 +7872,46 @@
    "nieuw": "Op die dag",
    "toelichting": "Verouderd 'te/ter die dage' -> 'op die dag'.",
    "regex": "[Tt]e die dage"
+  },
+  {
+   "id": "V924",
+   "categorie": "Werkwoordsvormen",
+   "oud": "vreze",
+   "nieuw": "vrees",
+   "toelichting": "'ik vreze' -> 'ik vrees' (werkwoordsvorm); niet de zelfstandige 'vreze' (=vrees/ontzag) blind vervangen.",
+   "regex": "\\bvreze\\b"
+  },
+  {
+   "id": "V925",
+   "categorie": "Naamvallen",
+   "oud": "bozen weg",
+   "nieuw": "boze weg",
+   "toelichting": "Verbogen 'bozen weg' -> 'boze weg'.",
+   "regex": "\\bbozen weg\\b"
+  },
+  {
+   "id": "V926",
+   "categorie": "Verouderde woorden",
+   "oud": "billijk",
+   "nieuw": "terecht",
+   "toelichting": "'billijk' (in de zin van terecht/gepast) -> 'terecht'; niet blind in alle contexten.",
+   "regex": "\\bbillijk\\b"
+  },
+  {
+   "id": "V927",
+   "categorie": "Verouderde woorden",
+   "oud": "verdek",
+   "nieuw": "afdek",
+   "toelichting": "Verouderd 'verdek(ken)' -> 'afdek(ken)'.",
+   "regex": "\\bverdek\\w*\\b"
+  },
+  {
+   "id": "V928",
+   "categorie": "Verouderde woorden",
+   "oud": "verschoont",
+   "nieuw": "ontziet",
+   "toelichting": "'verschonen' (sparen/ontzien) -> 'ontzien'.",
+   "regex": "\\bverschoon\\w*\\b"
   }
  ]
 }
