@@ -55,6 +55,9 @@
             '<li>Vijf letters hebben een aparte <strong>slotvorm</strong> aan het einde van een woord (ך ם ן ף ץ).</li>' +
             '<li>Elke letter heeft ook een <strong>getalswaarde</strong> — zo kon men met letters tellen.</li></ul>' +
             '<h3>Het Hebreeuwse alfabet</h3>' + alfabet(HEB, 'he') +
+            '<h3>Over dit woordenboek — Brown-Driver-Briggs</h3>' +
+            '<p>De Hebreeuwse en Aramese woorden komen uit het <strong>Brown-Driver-Briggs</strong> (BDB), voluit <em>A Hebrew and English Lexicon of the Old Testament</em> (1906). Het is het klassieke standaardwoordenboek van het Bijbels Hebreeuws, samengesteld door Francis Brown, Samuel Rolles Driver en Charles Augustus Briggs. BDB ordent de woorden per <strong>stam</strong> (de drie medeklinkers die de kern van een woord vormen) en geeft per woord uitvoerige betekenissen met de bijbehorende tekstplaatsen. Het is tot op vandaag een van de meest geraadpleegde Hebreeuwse lexicons.</p>' +
+            '<p>De Engelse definities worden op deze site naar het Nederlands vertaald (in bewerking). BDB is <strong>publiek domein</strong>. Zie de pagina <a href="woordenboeken.html#bdb">De woordenboeken</a> voor de volledige bronvermelding.</p>' +
             '<p class="lex-landing-hint">Kies links een woord om de betekenis, de grondvorm en de tekstverwijzingen te zien.</p></div>',
         grieks:
             '<div class="lex-landing"><h2>Grieks — de taal van het Nieuwe Testament</h2>' +
@@ -63,20 +66,25 @@
             '<li>De sigma heeft een aparte vorm (ς) aan het einde van een woord.</li>' +
             '<li>Accenten en spiritus (de tekentjes boven klinkers) geven klemtoon en een h-klank aan.</li></ul>' +
             '<h3>Het Griekse alfabet</h3>' + alfabet(GRC, 'grc') +
+            '<h3>Over deze woordenboeken — TBESG &amp; Abbott-Smith</h3>' +
+            '<p>De Griekse woorden worden hier uit <strong>twee woordenboeken</strong> naast elkaar getoond. <strong>TBESG</strong> (Translators Brief lexicon of Extended Strongs for Greek, 2018) is een modern, beknopt lexicon van Tyndale House (Cambridge) dat aan elk Strong-nummer een betekenis koppelt; het bouwt voort op het klassieke <strong>Abbott-Smith</strong> (<em>A Manual Greek Lexicon of the New Testament</em>, 1922). Zo zie je een moderne én een klassieke omschrijving van hetzelfde woord.</p>' +
+            '<p>De definities worden naar het Nederlands vertaald (in bewerking). TBESG is beschikbaar onder <strong>CC BY 4.0</strong>, Abbott-Smith is <strong>publiek domein</strong>. Zie de pagina <a href="woordenboeken.html#tbesg">De woordenboeken</a> voor de volledige bronvermelding.</p>' +
             '<p class="lex-landing-hint">Kies links een woord om de betekenis en de tekstverwijzingen te zien.</p></div>',
         geez:
             '<div class="lex-landing"><h2>Ge’ez — klassiek Ethiopisch</h2>' +
             '<p>Ge’ez (klassiek Ethiopisch) is de taal waarin o.a. de boeken Henoch, Jubileeën en de Meqabyan-boeken volledig zijn overgeleverd, binnen de Ethiopisch-Orthodoxe traditie.</p>' +
             '<ul><li>Ge’ez gebruikt een eigen schrift (de <em>fidäl</em>): een <strong>abugida</strong> waarin elk teken een medeklinker + klinker weergeeft (ruim 200 tekens), in plaats van een los alfabet.</li>' +
             '<li>Het wordt van links naar rechts geschreven.</li></ul>' +
-            '<p class="lex-landing-hint">Kies links een woord om de betekenis en de tekstverwijzingen te zien.</p></div>',
-        'geez-dillmann':
-            '<div class="lex-landing"><h2>Dillmann — het Ge’ez-woordenboek (1865)</h2>' +
-            '<p>Dit is het klassieke <strong>Lexicon linguae aethiopicae</strong> van August Dillmann (1865): het standaardwoordenboek van het Ge’ez, met ruim 13.000 lemmas. De definities staan in het <strong>Latijn</strong> (de wetenschapstaal van die tijd); een Nederlandse vertaling volgt.</p>' +
-            '<p class="lex-landing-hint">Zoek links op een Ge’ez-woord of blader door de lemmas.</p></div>',
+            '<h3>Twee bronnen in één tabblad</h3>' +
+            '<p>Dit tabblad combineert twee dingen. Ten eerste de <strong>grondtekst-glossen</strong>: per Ge’ez-woord uit de Ethiopische boeken een korte Nederlandse betekenis en de tekstplaatsen waar het voorkomt (bron: Beta maṣāḥǝft). Ten tweede het volledige <strong>woordenboek van Dillmann</strong> (die lemmas herken je aan het nummer <em>DiL&nbsp;…</em>).</p>' +
+            '<h3>Over het woordenboek — Dillmann (1865)</h3>' +
+            '<p>Het klassieke <strong>Lexicon linguae aethiopicae</strong> van August Dillmann (1823–1894) is het standaardwoordenboek van het Ge’ez, met ruim 13.000 lemmas. De definities staan in het <strong>Latijn</strong> — de wetenschapstaal van die tijd; een Nederlandse vertaling volgt. De digitale editie is verzorgd door het TraCES-project en Beta maṣāḥǝft (Universiteit Hamburg) en is beschikbaar onder <strong>CC BY-NC-SA 4.0</strong>. Zie de pagina <a href="woordenboeken.html#dillmann">De woordenboeken</a> voor de volledige bronvermelding.</p>' +
+            '<p class="lex-landing-hint">Kies links een woord om de betekenis en de tekstverwijzingen te zien, of zoek op een Ge’ez-woord.</p></div>',
         latijn:
-            '<div class="lex-landing"><h2>Latijn</h2>' +
-            '<p>Latijnse grondtekst-glossen, o.a. bij 4 Ezra, dat niet in het Grieks maar in de Latijnse (Vulgaat-)traditie is bewaard.</p>' +
+            '<div class="lex-landing"><h2>Latijn — de taal van de Vulgaat</h2>' +
+            '<p>Enkele boeken zijn niet in het Grieks bewaard gebleven maar in het <strong>Latijn</strong>, via de <em>Vulgaat</em> — de gezaghebbende Latijnse Bijbelvertaling die Hiëronymus rond 400 n.Chr. maakte. Het bekendste voorbeeld is <strong>4 Ezra</strong>, waarvan de oorspronkelijke Griekse tekst verloren is; de Latijnse traditie is daar de belangrijkste getuige.</p>' +
+            '<h3>Over deze woordenlijst</h3>' +
+            '<p>Hier staan <strong>grondtekst-glossen</strong>: per Latijns woord uit de tekst de vorm en een Nederlandse betekenis, zodat je woord voor woord kunt meelezen. Het is geen volledig woordenboek maar een hulp bij de tekst; de Nederlandse betekenissen zijn met AI-hulp samengesteld en nagekeken.</p>' +
             '<p class="lex-landing-hint">Kies links een woord om de betekenis te zien.</p></div>'
     };
 })();

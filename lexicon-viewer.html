@@ -155,8 +155,7 @@
         { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true,
           lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', label: 'Abbott-Smith (1922)', infoUrl: 'woordenboeken.html#abbott-smith' }, lex1label: 'TBESG (2018)', lex1url: 'woordenboeken.html#tbesg', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', bron: '4 Ezra (Vulgaat-traditie) — grondtekst-glossen' },
-        { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', bron: 'Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)' },
-        { id: 'geez-dillmann', label: "Ge'ez — Dillmann", json: 'data/lexicon-dillmann.json', html: true, bron: 'Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0). Definities in het Latijn; Nederlandse vertaling volgt.' }
+        { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', json2: 'data/lexicon-dillmann.json', bron: 'Grondtekst-glossen: Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA). Woordenboek: Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0); definities in het Latijn, Nederlandse vertaling volgt.' }
     ];
 
     // Boek-afkortingen (BDB / Abbott-Smith, Engels) -> onze boek-id
@@ -324,8 +323,10 @@
         return (taal._data.woorden || []).map(function (w, i) {
             var key = w.lemma || w.woord;
             if (w.n != null && !w.lemma) key = 'DiL ' + w.n;   // Dillmann: toon entry-nummer
+            var isDillmann = !!(w._html || w.n != null);
             return { key: String(key || ('#' + i)), woord: w.woord || (w.vormen && w.vormen[0]) || w.lemma, gloss: w.betekenis,
-                def: w.definitie, defHtml: !!taal.html, verw: w.verwijzingen || [], forms: w.vormen };
+                def: w.definitie, defHtml: !!(taal.html || w._html), bron: isDillmann ? 'Dillmann' : (taal.json2 ? 'Grondtekst-gloss' : null),
+                verw: w.verwijzingen || [], forms: w.vormen };
         });
     }
 
@@ -392,7 +393,12 @@
                     (refs.length > cap ? ' <span style="color:#999;">… en nog ' + (refs.length - cap) + ' meer</span>' : '') + '</div>';
             }
         }
-        h += '<div class="lex-src">Bron: ' + cur.bron + '. Tekstverwijzingen zijn aanklikbaar en openen de tekst.</div>';
+        var bronTxt = e.bron === 'Dillmann'
+            ? 'Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0). Definitie in het Latijn; Nederlandse vertaling volgt'
+            : (e.bron === 'Grondtekst-gloss'
+                ? 'Grondtekst-gloss bij de Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)'
+                : cur.bron);
+        h += '<div class="lex-src">Bron: ' + bronTxt + '. Tekstverwijzingen zijn aanklikbaar en openen de tekst.</div>';
         contentEl.innerHTML = h;
         contentEl.scrollTop = 0;
     }
@@ -442,7 +448,21 @@
         hintEl.textContent = 'Laden…'; listEl.innerHTML = '';
         var ready = loaded[taal.id] ? Promise.resolve() :
             Promise.resolve()
-                .then(function () { return taal.src ? loadScript(taal.src) : fetch(taal.json).then(function (r) { return r.json(); }).then(function (d) { taal._data = d; }); })
+                .then(function () {
+                    if (taal.src) return loadScript(taal.src);
+                    if (taal.json2) {
+                        // Twee JSON-bronnen in één tab (bv. Ge'ez: grondtekst-glossen + Dillmann-woordenboek)
+                        return Promise.all([
+                            fetch(taal.json).then(function (r) { return r.json(); }),
+                            fetch(taal.json2).then(function (r) { return r.json(); })
+                        ]).then(function (arr) {
+                            var w1 = (arr[0].woorden || []);
+                            var w2 = (arr[1].woorden || []).map(function (w) { var c = {}; for (var k in w) c[k] = w[k]; c._html = true; return c; });
+                            taal._data = { woorden: w1.concat(w2) };
+                        });
+                    }
+                    return fetch(taal.json).then(function (r) { return r.json(); }).then(function (d) { taal._data = d; });
+                })
                 .then(function () {
                     if (!taal.nlJson) return;
                     return fetch(taal.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._nl = d; }).catch(function () { taal._nl = {}; });
