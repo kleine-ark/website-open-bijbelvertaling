@@ -53,3 +53,10 @@ test('laadPassage meldt een netwerkfout', async () => {
     assert.equal(uit.ok, false);
     assert.match(uit.fout, /offline/);
 });
+
+test('laadPassage meldt een fout als het antwoord geen verzen bevat', async () => {
+    const fetchFn = nepFetch({ ok: true, json: async () => ({ boodschap: 'geen hoofdstuk' }) });
+    const uit = await laadPassage(fetchFn, config, { boek: 'genesis', hoofdstuk: 1 });
+    assert.equal(uit.ok, false);
+    assert.match(uit.fout, /verzen/i);
+});
