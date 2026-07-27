@@ -30,10 +30,21 @@
 
 
 
+
     <link rel="stylesheet" href="css/style.css">
     <style>
         body { display: block; margin: 0; background: var(--bg-page, #f8f6f2); }
+        .lex-topbar { display: flex; align-items: flex-end; gap: 12px; background: var(--bg-surface, #fff); border-bottom: 1px solid var(--border, #d4d0c8); padding-right: 20px; }
+        .lex-topbar .lex-tabs { flex: 1 1 auto; border-bottom: none; }
         .lex-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 20px 0; background: var(--bg-surface, #fff); border-bottom: 1px solid var(--border, #d4d0c8); }
+        /* Inklapbare woordenlijst (TOC) */
+        .lex-toc { transition: width 0.2s, min-width 0.2s; }
+        .lex-shell.toc-in .lex-toc { width: 0 !important; min-width: 0 !important; overflow: hidden; border-right: none; }
+        .lex-toc-toggle { align-self: stretch; width: 18px; border: none; border-right: 1px solid var(--border, #d4d0c8); background: #faf8f3; color: var(--teal); cursor: pointer; font-size: 15px; padding: 0; flex: 0 0 auto; }
+        .lex-toc-toggle:hover { background: rgba(203,164,73,0.12); color: var(--navy); }
+        .lex-shell.toc-in .lex-toc-toggle { transform: scaleX(-1); }
+        :root[data-theme="donker"] .lex-toc-toggle { background: var(--bg-surface-alt); border-right-color: var(--border-default); }
+        :root[data-theme="donker"] .lex-topbar { background: var(--bg-surface); border-bottom-color: var(--border-default); }
         .lex-tab { padding: 8px 15px; border: 1px solid var(--border, #d4d0c8); border-bottom: none; border-radius: 6px 6px 0 0; background: transparent; color: var(--navy); font: 600 13.5px var(--font-body); cursor: pointer; }
         .lex-tab.active { background: var(--gold); color: #fff; border-color: var(--gold); }
         .lex-shell { display: flex; height: calc(100vh - 52px - 46px); }
@@ -89,7 +100,7 @@
         /* Witregel tussen de genummerde betekenissen (BDB gebruikt <p><b>1</b>… per betekenis) */
         .lex-def p { margin: 0.85em 0 0; }
         .lex-def p:first-child { margin-top: 0; }
-        .lex-refs-toggle { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--teal); margin-top: 8px; cursor: pointer; }
+        .lex-refs-toggle { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--teal); cursor: pointer; white-space: nowrap; padding-bottom: 10px; flex: 0 0 auto; }
         .lex-refs-toggle input { margin: 0; }
         body.lex-geen-verwijzingen .lex-ref { display: none; }
         body.lex-geen-verwijzingen .lex-verw { display: none; }
@@ -130,16 +141,19 @@
     <nav id="topnav"></nav>
     <script src="js/topnav.js"></script>
 
-<div class="lex-tabs" id="lex-tabs"></div>
+<div class="lex-topbar">
+    <div class="lex-tabs" id="lex-tabs"></div>
+    <label class="lex-refs-toggle" title="Toon of verberg de Bijbelverwijzingen in de definities"><input type="checkbox" id="lex-refs-toggle" checked> Verwijsteksten tonen</label>
+</div>
 <div class="lex-shell">
-    <div class="lex-toc">
+    <div class="lex-toc" id="lex-toc">
         <div class="lex-toc-search">
             <input type="search" id="lex-zoek" placeholder="Zoek op betekenis, woord of nummer…" autocomplete="off">
             <div class="lex-toc-hint" id="lex-hint">Laden…</div>
-            <label class="lex-refs-toggle"><input type="checkbox" id="lex-refs-toggle" checked> Verwijsteksten tonen</label>
         </div>
         <div class="lex-toc-list" id="lex-list"></div>
     </div>
+    <button class="lex-toc-toggle" id="lex-toc-toggle" title="Woordenlijst in-/uitklappen" aria-label="Woordenlijst in-/uitklappen">‹</button>
     <div class="lex-content" id="lex-content">
         <p class="placeholder">Kies links een woord om de betekenis en de tekstverwijzingen te zien.</p>
     </div>
@@ -426,6 +440,16 @@
         if (xr && xr.dataset.key) { ev.preventDefault(); openKey(xr.dataset.key); }
     });
     document.getElementById('lex-zoek').addEventListener('input', function () { filter(this.value); });
+    // Woordenlijst (TOC) in-/uitklappen
+    (function () {
+        var tg = document.getElementById('lex-toc-toggle'), shell = document.querySelector('.lex-shell');
+        if (!tg || !shell) return;
+        if (localStorage.getItem('lexTocIn') === '1') shell.classList.add('toc-in');
+        tg.addEventListener('click', function () {
+            shell.classList.toggle('toc-in');
+            localStorage.setItem('lexTocIn', shell.classList.contains('toc-in') ? '1' : '0');
+        });
+    })();
     // Verwijsteksten (Bijbelverwijzingen + Voorkomens) parametrisch aan/uit
     (function () {
         var rt = document.getElementById('lex-refs-toggle'); if (!rt) return;
