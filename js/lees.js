@@ -227,18 +227,23 @@ const Lees = {
 
     _updateEthiopicBanner(book) {
         const isEth = book && (book.testament === 'ET' || (window.ETHIOPIC_BOOKS && window.ETHIOPIC_BOOKS.includes(book.id)));
+        const isApoc = book && book.testament === 'AP';
         let banner = document.getElementById('ethiopic-banner');
-        if (!isEth) { if (banner) banner.style.display = 'none'; return; }
+        if (!isEth && !isApoc) { if (banner) banner.style.display = 'none'; return; }
         if (!banner) {
             banner = document.createElement('div');
             banner.id = 'ethiopic-banner';
             banner.className = 'ethiopic-banner';
-            banner.innerHTML = '<strong>⚠ Buiten-canoniek boek (Ethiopisch-orthodoxe traditie).</strong> ' +
-                'Dit boek hoort niet tot de Statenvertaling-canon. De vertaling is in bewerking en ' +
-                'de Ge’ez-grondtekst wordt slechts gedeeltelijk (per beschikbaar hoofdstuk) getoond.';
             const versesEl = document.getElementById('verses');
             if (versesEl && versesEl.parentNode) versesEl.parentNode.insertBefore(banner, versesEl);
         }
+        banner.innerHTML = isEth
+            ? '<strong>⚠ Buiten-canoniek boek (Ethiopisch-orthodoxe traditie).</strong> ' +
+              'Dit boek is géén onderdeel van de canon van Gods Woord en hoort niet tot de Statenvertaling-canon. ' +
+              'De vertaling is in bewerking en de Ge’ez-grondtekst wordt slechts gedeeltelijk (per beschikbaar hoofdstuk) getoond.'
+            : '<strong>⚠ Apocrief boek — geen onderdeel van de canon van Gods Woord.</strong> ' +
+              'Dit boek behoort tot de apocriefe (deuterocanonieke) geschriften en maakt geen deel uit van de 66 boeken ' +
+              'van de protestantse canon. Het wordt hier opgenomen ter informatie en studie, niet als gezaghebbend Woord van God.';
         banner.style.display = 'block';
     },
 
