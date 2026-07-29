@@ -123,6 +123,7 @@
         .lex-bron-filter { font-size: 12px; color: var(--teal); border: 1px solid var(--border, #d4d0c8); border-radius: 6px; padding: 3px 7px; background: var(--bg-surface, #fff); margin-bottom: 9px; flex: 0 0 auto; }
         :root[data-theme="donker"] .lex-bron-filter { background: var(--bg-surface-alt); color: var(--text-primary); border-color: #333; }
         .lex-geenart { color: #888; }
+        .dl-ref-txt { color: var(--teal); white-space: nowrap; }
         .lex-refs-toggle { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--teal); cursor: pointer; white-space: nowrap; padding-bottom: 10px; flex: 0 0 auto; }
         .lex-refs-toggle input { margin: 0; }
         body.lex-geen-verwijzingen .lex-ref { display: none; }
@@ -201,7 +202,7 @@
           lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', label: 'Abbott-Smith (1922)', infoUrl: 'woordenboeken.html#abbott-smith' }, lex1label: 'TBESG (2018)', lex1url: 'woordenboeken.html#tbesg', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'akkadisch', label: 'Akkadisch', json: 'data/lexicon-akkadisch.json', bron: 'ORACC — Open Richly Annotated Cuneiform Corpus (SAAo, RINAP, RIBo); Neo-Assyrisch/Babylonisch Akkadisch (CC0, publiek domein).' },
         { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', json2: 'data/lexicon-lewis-short.json', bron: 'Grondtekst-glossen: 4 Ezra (Vulgaat-traditie). Woordenboek: Lewis & Short, A Latin Dictionary (1879), publiek domein.' },
-        { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', json2: 'data/lexicon-dillmann.json', bron: 'Grondtekst-glossen: Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA). Woordenboek: Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0); definities in het Latijn, Nederlandse vertaling volgt.' }
+        { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', json2: 'data/lexicon-dillmann.json', dnlJson: 'data/lexicon-nl/dillmann-nl.json', bron: 'Grondtekst-glossen: Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA). Woordenboek: Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0); definities in het Latijn, Nederlandse vertaling volgt.' }
     ];
 
     // Boek-afkortingen (BDB / Abbott-Smith, Engels) -> onze boek-id
@@ -389,8 +390,13 @@
                 else if (cur && cur.id === 'latijn') bron = isSecond ? 'Lewis-Short' : 'Grondtekst-gloss';
                 else bron = isSecond ? 'woordenboek' : 'Grondtekst-gloss';
             }
-            return { key: String(key || ('#' + i)), woord: w.woord || (w.vormen && w.vormen[0]) || w.lemma, gloss: w.betekenis,
-                def: w.definitie, defHtml: !!(taal.html || w._html), bron: bron,
+            // Nederlandse Dillmann-vertaling (overlay per entry-nummer), indien beschikbaar
+            var dnl = (bron === 'Dillmann' && w.n != null && taal._dnl) ? taal._dnl[String(w.n)] : null;
+            var hasNl = !!(dnl && dnl.definitieNl);
+            return { key: String(key || ('#' + i)), woord: w.woord || (w.vormen && w.vormen[0]) || w.lemma,
+                gloss: (dnl && dnl.glossNl) || w.betekenis,
+                def: hasNl ? dnl.definitieNl : w.definitie, defEn: w.definitie,
+                defHtml: !!(taal.html || w._html), defNl: hasNl, bron: bron,
                 verw: w.verwijzingen || [], forms: w.vormen };
         });
     }
@@ -436,8 +442,8 @@
     function showEntry(e) {
         currentEntry = e;
         [].forEach.call(listEl.querySelectorAll('.lex-toc-item'), function (n) { n.classList.toggle('active', +n.dataset.i === entries.indexOf(e)); });
-        // Kan er tussen NL en origineel Engels geschakeld worden? (alleen bij vertaalde BDB/Abbott-entries)
-        var heeftEngels = !!(e.defEn && e.nl);
+        // Kan er tussen NL en origineel geschakeld worden? (vertaalde BDB/Abbott, of vertaalde Dillmann-entry)
+        var heeftEngels = !!(e.defEn && (e.nl || e.defNl));
         var origineel = showOrig && heeftEngels;
         var gloss = origineel ? (e.glossEn || e.gloss) : e.gloss;
         var def = origineel ? e.defEn : e.def;
@@ -452,7 +458,7 @@
             (e.translit ? '<span class="lex-entry-translit" title="Gelatiniseerde (getranslitereerde) uitspraak">' + esc(e.translit) + '</span>' : '') +
             (gloss ? '<span class="lex-entry-gloss">' + esc(gloss) + '</span>' : '') +
             (cur.abbr && !e.nl ? '<span class="lex-concept" title="De Nederlandse vertaling van de volledige definitie volgt nog">Definitie nog niet vertaald</span>' : '') +
-            (heeftEngels ? '<button class="lex-orig-toggle" id="lex-orig-toggle">' + (origineel ? '← Nederlandse versie' : 'Originele Engelse versie →') + '</button>' : '') +
+            (heeftEngels ? '<button class="lex-orig-toggle" id="lex-orig-toggle">' + (origineel ? '← Nederlandse versie' : ('Originele ' + (cur.id === 'geez' ? 'Latijnse' : 'Engelse') + ' versie →')) + '</button>' : '') +
             '</div>';
         // Lexicon-label als link naar de bronpagina (over dat woordenboek + bronvermelding)
         function lexLabelLink(label, url) {
@@ -470,7 +476,9 @@
             var body = defHtml0 ? def : linkifyXref(cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def), e.key);
             if (cur.id === 'hebreeuws') body = linkifyAkkadisch(body);   // Assyrische cognaat -> Akkadisch woordenboek
             if (artLabel) h += '<div class="lex-lexlabel">' + esc(artLabel) + '</div>';
-            h += '<div class="lex-def"' + (defHtml0 ? ' lang="la"' : (origineel ? ' lang="en"' : '')) + '>' + body + '</div>';
+            // Latijn getoond wanneer origineel óf een nog-niet-vertaalde Dillmann-entry; NL-vertaling krijgt geen lang="la"
+            var latijnShown = defHtml0 && (origineel || !e.defNl);
+            h += '<div class="lex-def"' + (latijnShown ? ' lang="la"' : (origineel ? ' lang="en"' : '')) + '>' + body + '</div>';
         } else if (cur.id === 'latijn' || cur.id === 'geez') {
             h += '<div class="lex-def lex-geenart"><em>Geen woordenboekartikel gevonden — dit is een grondtekst-gloss, vaak een eigennaam of een eenvoudige vorm die niet als apart lemma in ' +
                 (cur.id === 'latijn' ? 'Lewis &amp; Short' : 'Dillmann') + ' staat.</em></div>';
@@ -646,6 +654,7 @@
                 taal._data = { woorden: (taal._data.woorden || []).concat(w2) };
             }));
             if (taal.refsJson) bg.push(fetch(taal.refsJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._refs = d; }).catch(function () { taal._refs = {}; }));
+            if (taal.dnlJson) bg.push(fetch(taal.dnlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._dnl = d; }).catch(function () { taal._dnl = {}; }));
             if (taal.lex2) bg.push(loadScript(taal.lex2.src).then(function () {
                 return fetch(taal.lex2.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal.lex2._nl = d; }).catch(function () { taal.lex2._nl = {}; });
             }));
