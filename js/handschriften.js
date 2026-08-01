@@ -201,6 +201,24 @@
         h += '<h1>' + esc(ms.naam) + '</h1>';
         h += '<p class="subtitle">' + esc(ms.bijnaam || '') + (ms.siglum ? ' · ' + esc(ms.siglum) : '') + '</p>';
         h += card(ms, false);
+        // Externe hoge-resolutie scan (bv. Dode Zee-rollen bij de IAA — auteursrechtelijk beschermd, dus linken)
+        if (ms.scanExtern && ms.scanExtern.url) {
+            h += '<p class="ms-scan-extern"><a class="scan-extern-btn" href="' + esc(ms.scanExtern.url) + '" target="_blank" rel="noopener">' + esc(ms.scanExtern.label || 'Bekijk de scan') + '</a></p>';
+        }
+        // Handschrift inline te bekijken. Internet Archive BookReader (embed.id) of
+        // een externe viewer via volledige URL (embed.url), bv. de IAA-scanpagina.
+        if (ms.embed && (ms.embed.id || ms.embed.url)) {
+            var embedSrc = ms.embed.url ? ms.embed.url : 'https://archive.org/embed/' + encodeURIComponent(ms.embed.id);
+            h += '<h2>' + esc(ms.embed.kop || 'Bekijk het volledige handschrift') + '</h2>';
+            if (ms.embed.toelichting) h += '<p style="font-size:13px;color:var(--teal);">' + esc(ms.embed.toelichting) + '</p>';
+            h += '<div class="ms-embed"><iframe src="' + esc(embedSrc) + '" width="100%" height="640" frameborder="0" allowfullscreen loading="lazy" title="' + esc(ms.embed.label || ms.naam) + '"></iframe></div>';
+            if (ms.embed.url) h += '<p style="font-size:12px;color:#999;">Kun je de viewer niet zien? <a href="' + esc(ms.embed.url) + '" target="_blank" rel="noopener">Open de scan rechtstreeks →</a></p>';
+        }
+        if (ms.download && ms.download.length) {
+            h += '<p class="ms-download">' + ms.download.map(function (dl) {
+                return '⬇ <a href="' + esc(dl.url) + '" target="_blank" rel="noopener">' + esc(dl.label) + '</a>';
+            }).join('<br>') + '</p>';
+        }
         if (getuigeVoor.length) {
             h += '<h2>Voor welke boeken</h2><ul>';
             getuigeVoor.forEach(function (g) { h += '<li><a href="handschriften/' + encodeURIComponent(g.bid) + '.html' + '">' + esc(bkName(g.bid)) + '</a> — ' + esc(g.rol) + '</li>'; });
