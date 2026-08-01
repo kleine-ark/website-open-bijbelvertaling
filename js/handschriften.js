@@ -229,7 +229,8 @@
             if (trLinks.length) h += '<p class="ms-download">' + trLinks.join('<br>') + '</p>';
         }
         if (getuigeVoor.length) {
-            h += '<h2>Voor welke boeken</h2><ul>';
+            h += '<h2>Voor welke boeken</h2>';
+            h += '<p style="font-size:12.5px;color:var(--teal);">Dit zijn de boeken waarvoor dit handschrift in onze gegevens een belangrijke tekstgetuige is. Zie <strong>“Bevat”</strong> hierboven voor de volledige inhoud van het handschrift zelf. <em>Oudste volledige versie</em> = het oudste handschrift dat het <strong>hele</strong> boek bevat; <em>oudste bewaarde tekst</em> = het oudste (soms fragmentarische) handschrift met (een deel van) de tekst.</p><ul>';
             getuigeVoor.forEach(function (g) { h += '<li><a href="handschriften/' + encodeURIComponent(g.bid) + '.html' + '">' + esc(bkName(g.bid)) + '</a> — ' + esc(g.rol) + '</li>'; });
             h += '</ul>';
         }
