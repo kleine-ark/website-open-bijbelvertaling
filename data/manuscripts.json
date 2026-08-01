@@ -257,7 +257,7 @@
    "tekstfragment": {
     "boek": "genesis",
     "lang": "he",
-    "verwijzing": "Genesis 1:1-5 (de schepping)",
+    "verwijzing": "Genesis 1:1-28 (het scheppingsverhaal)",
     "blokken": [
      {
       "hoofdstuk": 1,
@@ -267,11 +267,47 @@
        2,
        3,
        4,
-       5
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28
       ]
      }
     ],
-    "verschillen": "4QGenᵇ bewaart o.a. Genesis 1:1-28. De tekst is vrijwel identiek aan de masoretische tekst die ruim duizend jaar later is overgeleverd — een sterk bewijs voor de stabiele overlevering."
+    "toelichting": "4QGenᵇ (4Q2) bewaart o.a. Genesis 1:1-28. De hieronder getoonde Hebreeuwse tekst volgt de masoretische tekst; volgens de wetenschappelijke editie (Davila, DJD XII) is de tekst van dit fragment daaraan — op de hieronder genoemde punten na — identiek. Wat níét bewaard is, is met behulp van de masoretische tekst aangevuld.",
+    "varianten": [
+     {
+      "verwijzing": "Genesis 1:15",
+      "soort": "spelling",
+      "toelichting": "Kleine spellingsvariant (plene/defectief) die de betekenis niet verandert."
+     },
+     {
+      "verwijzing": "Genesis 1:5,8,19,23",
+      "soort": "tekstindeling",
+      "toelichting": "De alinea-indeling (parasha) wordt in 4QGenᵇ aangegeven door de regel blanco te laten, in plaats van met de masoretische ־פ־/־ס־-markering. Dit betreft de opmaak, niet de tekst zelf."
+     }
+    ],
+    "bron": "Transcriptie/collatie naar J. R. Davila, in: E. Ulrich e.a., <i>Qumran Cave 4.VII: Genesis to Numbers</i> (DJD XII, 1994); zie ook E. Ulrich, <i>The Biblical Qumran Scrolls</i> (2010). Beeld: Leon Levy Dead Sea Scrolls Digital Library."
    },
    "jaar": -50,
    "taal": "he",
@@ -787,21 +823,40 @@
    "tekstfragment": {
     "boek": "genesis",
     "lang": "he",
-    "verwijzing": "Genesis 17:15-20 (de belofte rond Ismaël)",
+    "verwijzing": "Genesis 17:12-19 en 18:20-25 (het verbond en Abrahams voorbede)",
     "blokken": [
      {
       "hoofdstuk": 17,
       "label": "Genesis 17",
       "nummers": [
+       12,
+       13,
        15,
-       17,
        18,
-       19,
-       20
+       19
+      ]
+     },
+     {
+      "hoofdstuk": 18,
+      "label": "Genesis 18",
+      "nummers": [
+       20,
+       21,
+       22,
+       24,
+       25
       ]
      }
     ],
-    "verschillen": "8QGen bewaart concreet Genesis 17:12-13, 15 en 18-19 (Herodiaans schrift, ±1e eeuw n.Chr.). Vers 18 is Abrahams gebed 'Och, dat Ismaël mocht leven voor Uw aangezicht!' en vers 19 Gods antwoord over Izaäk; de tekst stemt overeen met de latere masoretische tekst."
+    "toelichting": "8QGen (8Q1, Herodiaans schrift, ± 30 v.Chr.–68 n.Chr.) bewaart fragmentarisch Genesis 17:12-13, 15, 18-19 en 18:20-22, 24-25 — inclusief Abrahams gebed “Och, dat Ismaël mocht leven voor Uw aangezicht!” (17:18). De getoonde Hebreeuwse tekst volgt de masoretische tekst, waarmee het fragment (op kleine spellingsverschillen na) overeenstemt.",
+    "varianten": [
+     {
+      "verwijzing": "diverse",
+      "soort": "spelling",
+      "toelichting": "Enkele orthografische (plene/defectief) verschillen zonder gevolg voor de betekenis."
+     }
+    ],
+    "bron": "Transcriptie naar M. Baillet e.a., <i>Les ‘Petites Grottes’ de Qumrân</i> (DJD III, 1962); zie ook E. Ulrich, <i>The Biblical Qumran Scrolls</i> (2010). Beeld: Leon Levy Dead Sea Scrolls Digital Library."
    },
    "jaar": 50,
    "taal": "he",

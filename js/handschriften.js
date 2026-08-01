@@ -157,8 +157,9 @@
         });
         Promise.all(jobs).then(function (loaded) {
             var byCh = {}; loaded.forEach(function (x) { byCh[x.ch] = x.d; });
-            var h = '<h3 class="frag-kop">📜 Lees de tekst van dit handschrift — ' + esc(tf.verwijzing) + '</h3>' +
+            var h = '<h3 class="frag-kop">📜 Getranscribeerde tekst van dit handschrift — ' + esc(tf.verwijzing) + '</h3>' +
                 '<p style="font-size:13px;color:var(--teal);">De ' + taalNaam + ' grondtekst en de Nederlandse vertaling, vers voor vers.</p>';
+            if (tf.toelichting) h += '<div class="frag-toelichting">' + tf.toelichting + '</div>';
             (tf.blokken || []).forEach(function (b) {
                 var d = byCh[b.hoofdstuk]; if (!d) return;
                 b.nummers.forEach(function (n) {
@@ -169,7 +170,16 @@
                         '<div class="frag-nl">' + esc(v.text2026 || '') + '</div></div>';
                 });
             });
+            if (tf.varianten && tf.varianten.length) {
+                h += '<div class="frag-varianten"><h4>Tekstvarianten t.o.v. de masoretische tekst</h4>' +
+                    '<table class="ms-table"><thead><tr><th>Plaats</th><th>Soort</th><th>Toelichting</th></tr></thead><tbody>';
+                tf.varianten.forEach(function (va) {
+                    h += '<tr><td>' + esc(va.verwijzing || '') + '</td><td>' + esc(va.soort || '') + '</td><td>' + esc(va.toelichting || '') + '</td></tr>';
+                });
+                h += '</tbody></table></div>';
+            }
             if (tf.verschillen) h += '<div class="principle-box" style="background:rgba(203,164,73,0.08);margin-top:12px;"><strong>Over dit handschrift:</strong> ' + esc(tf.verschillen) + '</div>';
+            if (tf.bron) h += '<p class="frag-bron">Bron van de transcriptie: ' + tf.bron + '</p>';
             container.innerHTML = h;
         }).catch(function (e) { console.error(e); });
     }
