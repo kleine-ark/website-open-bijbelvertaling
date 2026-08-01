@@ -9,5 +9,6 @@ rsync -av --delete \
     --exclude='__pycache__' --exclude='scripts/' \
     --exclude='*.pyc' --exclude='.DS_Store' \
     --exclude='src-tauri/target/' --exclude='src-tauri/gen/' --exclude='desktop/dist/' \
+    --exclude='facsimiles/' \
     "$SRC/" "$DST/" | tail -10
 echo "✅ Dropbox in sync met GitHub"
