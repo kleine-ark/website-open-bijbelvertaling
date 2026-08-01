@@ -251,7 +251,7 @@
    "afbeelding": "img/handschriften/dss.jpg",
    "commons": "https://commons.wikimedia.org/wiki/Category:Dead_Sea_Scrolls",
    "licentie": "publiek domein",
-   "bijschrift": "Fragment van een Dode Zee-rol uit Qumran.",
+   "bijschrift": "Illustratieve Qumran-rol. De echte hoge-resolutie scans van 4QGenᵇ staan bij de IAA (zie de links hieronder — auteursrecht Israëlische Oudheidsdienst).",
    "beschrijving": "De Dode Zee-rollen (±250 v.Chr.–70 n.Chr.) bevatten de oudste bekende afschriften van Genesis. Ze bevestigden dat de Hebreeuwse tekst over meer dan duizend jaar opmerkelijk stabiel is overgeleverd.",
    "persoonWiki": "https://nl.wikipedia.org/wiki/Dode_Zee-rollen",
    "tekstfragment": {
@@ -339,8 +339,29 @@
    ],
    "digitaal": [
     {
-     "label": "Leon Levy Dead Sea Scrolls Digital Library — 4Q Genesis (4Q2)",
+     "label": "IAA / Leon Levy — hoge-resolutie scan van het 4QGenᵇ-fragment (plaat B-280446, opname 1956)",
+     "url": "https://www.deadseascrolls.org.il/explore-the-archive/image/B-280446"
+    },
+    {
+     "label": "Leon Levy Dead Sea Scrolls Digital Library — 4Q Genesis (4Q2), alle platen",
      "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q2-1"
+    }
+   ],
+   "scanExtern": {
+    "label": "📷 Bekijk de scan van 4QGenᵇ bij de IAA (plaat B-280446)",
+    "url": "https://www.deadseascrolls.org.il/explore-the-archive/image/B-280446"
+   },
+   "embed": {
+    "type": "iframe",
+    "url": "https://www.deadseascrolls.org.il/explore-the-archive/image/B-280446",
+    "kop": "Bekijk de scan van 4QGenᵇ",
+    "label": "4QGenᵇ (4Q2), plaat B-280446 — IAA / Leon Levy Digital Library",
+    "toelichting": "De hoge-resolutie scan wordt geleverd door de Israëlische Oudheidsdienst (IAA), Leon Levy Dead Sea Scrolls Digital Library (auteursrecht IAA). Hieronder ingesloten vanaf hun server."
+   },
+   "download": [
+    {
+     "label": "Download de getranscribeerde tekst van 4QGenᵇ (Genesis 1:1-28, Hebreeuws + Nederlands)",
+     "url": "downloads/4QGenb-Genesis1-transcriptie.txt"
     }
    ]
   },
@@ -615,6 +636,18 @@
     {
      "label": "British Library — gedigitaliseerd NT-deel (Royal MS 1 D. viii)",
      "url": "https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_d_viii"
+    }
+   ],
+   "embed": {
+    "type": "archive",
+    "id": "codex-alexandrinus",
+    "label": "Volledige Codex Alexandrinus — British Museum-facsimile (4 delen incl. Griekse OT/Genesis)",
+    "toelichting": "Deze facsimile is publiek domein (British Museum, 1879–1909). Bekijk hem hieronder pagina voor pagina, of download het volledige werk."
+   },
+   "download": [
+    {
+     "label": "Download de volledige facsimile (Internet Archive: PDF & scans)",
+     "url": "https://archive.org/details/codex-alexandrinus"
     }
    ]
   },
@@ -891,7 +924,11 @@
      "label": "Leon Levy Dead Sea Scrolls Digital Library — 8Q Genesis (8Q1)",
      "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/8Q1-1"
     }
-   ]
+   ],
+   "scanExtern": {
+    "label": "📷 Bekijk 8QGen (8Q1) bij de Leon Levy Digital Library",
+    "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/8Q1-1"
+   }
   },
   "isaiah_scroll": {
    "naam": "Grote Jesaja-rol",
