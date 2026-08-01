@@ -173,7 +173,7 @@
    "siglum": "א",
    "datering": "4e eeuw (± 330–360 n.Chr.)",
    "type": "volledig",
-   "bevat": "Het volledige Johannesevangelie (en het hele NT)",
+   "bevat": "Het volledige Nieuwe Testament (plus de Brief van Barnabas en de Herder van Hermas) en delen van het Oude Testament in de Septuaginta. Van Genesis is het meeste verloren gegaan; alleen fragmenten zijn bewaard. Genesis 1 is dus níét bewaard.",
    "bewaarplaats": "British Library, Londen (+ Leipzig, Sint-Petersburg, Sinaï)",
    "gevonden": {
     "wie": "Konstantin von Tischendorf",
@@ -209,7 +209,7 @@
    "siglum": "B",
    "datering": "4e eeuw (± 325–350 n.Chr.)",
    "type": "volledig",
-   "bevat": "Het volledige Johannesevangelie (en vrijwel het hele NT)",
+   "bevat": "Het grootste deel van de Griekse Bijbel: het Oude Testament in de Septuaginta én het Nieuwe Testament. Belangrijke leemten: in het OT ontbreekt Genesis 1:1–46:28 (en een deel van de Psalmen); in het NT ontbreken 1–2 Timotheüs, Titus, Filemon en Openbaring, en breekt de tekst af in Hebreeën 9:14. Genesis 1 is dus níét bewaard.",
    "bewaarplaats": "Vaticaanse Bibliotheek, Vaticaanstad",
    "gevonden": {
     "wie": null,
@@ -540,7 +540,7 @@
    "siglum": "A",
    "datering": "± 400–440 n.Chr. (5e eeuw)",
    "type": "volledige codex",
-   "bevat": "Vrijwel de hele Griekse Bijbel (Septuaginta + Nieuwe Testament), inclusief Openbaring",
+   "bevat": "Vrijwel de hele Griekse Bijbel: het Oude Testament in de Septuaginta-vertaling (inclusief de apocriefe/deuterocanonieke boeken zoals Tobit, Judit, 1–4 Makkabeeën, Wijsheid en Sirach) én het volledige Nieuwe Testament met Openbaring; ook 1–2 Clemens. Genesis is aanwezig (met kleine leemten in Gen. 14–16).",
    "bewaarplaats": "British Library, Londen",
    "gevonden": {
     "wie": "Geschonken door patriarch Cyrillus Lucaris aan koning Karel I",
@@ -552,9 +552,13 @@
    "commons": "https://commons.wikimedia.org/wiki/Category:Codex_Alexandrinus",
    "licentie": "publiek domein",
    "bijschrift": "Pagina uit de Codex Alexandrinus (5e eeuw).",
-   "beschrijving": "Een van de oudste vrijwel volledige Griekse bijbels; belangrijke getuige, ook voor Openbaring dat in de Vaticanus ontbreekt.",
+   "beschrijving": "Een van de drie grote 5e-eeuwse bijbelcodices en een van de oudste vrijwel volledige Griekse bijbels. Belangrijke getuige van de Septuaginta én van het Nieuwe Testament — met name voor Openbaring, dat in de Codex Vaticanus ontbreekt. Voor de eerste hoofdstukken van Genesis is de Alexandrinus de oudste bewaarde Griekse getuige, omdat de oudere Vaticanus en Sinaïticus juist dáár grote leemten hebben.",
    "jaar": 420,
-   "taal": "grc"
+   "taal": "grc",
+   "betrokkenen": [
+    "cyril_lucaris",
+    "karel_i"
+   ]
   },
   "bezae": {
    "naam": "Codex Bezae",
@@ -2051,6 +2055,16 @@
    "jaren": "1815–1874",
    "bio": "Duits Bijbelgeleerde en tekstcriticus. In het Katharinaklooster op de Sinaï ontdekte hij de Codex Sinaiticus (eerste bladen 1844, het grootste deel 1859), een van de oudste volledige Griekse Bijbels. Hij gaf vele kritische edities van de Griekse tekst uit.",
    "wikipedia": "https://nl.wikipedia.org/wiki/Konstantin_von_Tischendorf"
+  },
+  "cyril_lucaris": {
+   "naam": "Cyrillus Lucaris",
+   "jaren": "1572–1638",
+   "bio": "Grieks-orthodox theoloog, patriarch van Alexandrië en later oecumenisch patriarch van Constantinopel. Hij schonk de Codex Alexandrinus in 1627 aan de Engelse koning Karel I; het handschrift was afkomstig uit de patriarchale bibliotheek van Alexandrië. Lucaris stond bekend om zijn contacten met de protestantse Reformatie en zijn pogingen de oosterse kerk te hervormen."
+  },
+  "karel_i": {
+   "naam": "Karel I van Engeland",
+   "jaren": "1600–1649",
+   "bio": "Koning van Engeland, Schotland en Ierland (1625–1649). Ontving in 1627 de Codex Alexandrinus als geschenk van patriarch Cyrillus Lucaris. De codex kwam zo in de koninklijke bibliotheek terecht en wordt sinds 1757 bewaard in wat nu de British Library is."
   }
  }
 }
