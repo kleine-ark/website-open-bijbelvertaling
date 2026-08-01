@@ -81,9 +81,13 @@
         var fig = ms.afbeelding ? ('<figure class="codex-photo">' +
             '<img class="codex-scan" src="' + esc(ms.afbeelding) + '" alt="' + esc(ms.bijschrift || ms.naam) + '" title="Klik om de scan te vergroten" loading="lazy">' +
             '<figcaption>' + esc(ms.bijschrift || '') + '<br><span class="scan-hint">🔍 klik om te vergroten</span> · <a href="' + esc(ms.commons) + '" target="_blank" rel="noopener">Wikimedia</a> (' + esc(ms.licentie || 'bron') + ')</figcaption></figure>') : '';
+        // Handschrift-naam is altijd een link naar de eigen detailpagina.
+        var naamHtml = ms.id
+            ? '<a href="handschriften.html?ms=' + encodeURIComponent(ms.id) + '">' + esc(ms.naam) + '</a>'
+            : esc(ms.naam);
         return '<div class="codex-card' + (isOudste ? ' oudste' : '') + '">' + fig +
             (isOudste ? '<span class="codex-badge">Oudste bewaarde tekst</span><br>' : '') +
-            '<h4>' + esc(ms.naam) + (ms.bijnaam ? ' <span class="bijnaam">' + esc(ms.bijnaam) + '</span>' : '') + '</h4>' +
+            '<h4>' + naamHtml + (ms.bijnaam ? ' <span class="bijnaam">' + esc(ms.bijnaam) + '</span>' : '') + '</h4>' +
             '<div class="meta">' + esc(ms.datering || '') + (ms.bewaarplaats ? ' · ' + esc(ms.bewaarplaats) : '') + '</div>' +
             '<p>' + esc(ms.beschrijving || '') + '</p>' + facts +
             (withLink && ms.id ? '<p class="ms-detail-link"><a href="handschriften.html?ms=' + encodeURIComponent(ms.id) + '">Volledige gegevens, tekst &amp; tekstvarianten ›</a></p>' : '') +
@@ -91,8 +95,9 @@
     }
 
     function sumCard(label, ms, cls) {
+        var naamHtml = ms.id ? '<a href="handschriften.html?ms=' + encodeURIComponent(ms.id) + '">' + esc(ms.naam) + '</a>' : esc(ms.naam);
         return '<div class="sum-card ' + cls + '"><div class="sum-label">' + esc(label) + '</div>' +
-            '<div class="sum-name">' + esc(ms.naam) + (ms.bijnaam ? ' <span style="font-weight:400;color:var(--teal);font-size:12px;">' + esc(ms.bijnaam) + '</span>' : '') + '</div>' +
+            '<div class="sum-name">' + naamHtml + (ms.bijnaam ? ' <span style="font-weight:400;color:var(--teal);font-size:12px;">' + esc(ms.bijnaam) + '</span>' : '') + '</div>' +
             '<div class="sum-meta">' + esc(ms.datering || '') + (ms.bevat ? ' · ' + esc(ms.bevat) : '') + '</div></div>';
     }
 
