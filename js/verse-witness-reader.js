@@ -23,15 +23,24 @@
         if (!book || !ch || !v) return;
         var w = witnessFor(book, ch, v); if (!w) return;
         var diff = w.alle && w.alle.ms !== w.orig.ms;
-        // Compacte titel met beide (origineel + oudste überhaupt).
-        var titel = 'Oudste in de oorspronkelijke taal: ' + w.orig.naam + ' (' + jaarLabel(w.orig.jaar) + ')' +
-            (diff ? '. Oudste überhaupt (incl. Septuaginta): ' + w.alle.naam + ' (' + jaarLabel(w.alle.jaar) + ')' : '') +
-            '. Klik voor de foto en toelichting.';
-        var html = '<span class="hs-vw-kop">Oudste handschrift</span>' +
-            '<a class="hs-vw-link" target="_top" href="handschriften.html?ms=' + encodeURIComponent(w.orig.ms) + '" title="' + esc(titel) + '">' +
-            '<span class="hs-vw-naam">' + esc(kort(w.orig.naam)) + '</span><span class="hs-vw-jaar">' + jaarLabel(w.orig.jaar) + '</span></a>';
-        if (diff) html += '<a class="hs-vw-link hs-vw-alle" target="_top" href="handschriften.html?ms=' + encodeURIComponent(w.alle.ms) + '" title="' + esc(titel) + '">' +
-            '<span class="hs-vw-jaar">oudste: ' + esc(kort(w.alle.naam)) + ' ' + jaarLabel(w.alle.jaar) + '</span></a>';
+        // Als een oudere getuige in een andere taal bestaat (meestal de Griekse Septuaginta),
+        // is dát de oudste bewaarde tekst — die tonen we bovenaan, met de oudste in de
+        // oorspronkelijke taal (Hebreeuws) eronder. Zo lijkt bv. de Codex Leningradensis
+        // (1008) niet ten onrechte 'de oudste' terwijl de Septuaginta ouder is.
+        var titel = 'Oudste bewaarde tekst' + (diff ? ' (incl. Septuaginta): ' + w.alle.naam + ' (' + jaarLabel(w.alle.jaar) + '). ' : ': ') +
+            'Oudste in de oorspronkelijke taal: ' + w.orig.naam + ' (' + jaarLabel(w.orig.jaar) + '). Klik voor de foto en toelichting.';
+        var html;
+        if (diff) {
+            html = '<span class="hs-vw-kop">Oudste bewaarde tekst</span>' +
+                '<a class="hs-vw-link" target="_top" href="handschriften.html?ms=' + encodeURIComponent(w.alle.ms) + '" title="' + esc(titel) + '">' +
+                '<span class="hs-vw-naam">' + esc(kort(w.alle.naam)) + '</span><span class="hs-vw-jaar">' + jaarLabel(w.alle.jaar) + '</span></a>' +
+                '<a class="hs-vw-link hs-vw-alle" target="_top" href="handschriften.html?ms=' + encodeURIComponent(w.orig.ms) + '" title="' + esc(titel) + '">' +
+                '<span class="hs-vw-jaar">oudste Hebreeuws: ' + esc(kort(w.orig.naam)) + ' ' + jaarLabel(w.orig.jaar) + '</span></a>';
+        } else {
+            html = '<span class="hs-vw-kop">Oudste handschrift</span>' +
+                '<a class="hs-vw-link" target="_top" href="handschriften.html?ms=' + encodeURIComponent(w.orig.ms) + '" title="' + esc(titel) + '">' +
+                '<span class="hs-vw-naam">' + esc(kort(w.orig.naam)) + '</span><span class="hs-vw-jaar">' + jaarLabel(w.orig.jaar) + '</span></a>';
+        }
         var tag = document.createElement('div');
         tag.className = 'hs-vers-tag';
         tag.innerHTML = html;

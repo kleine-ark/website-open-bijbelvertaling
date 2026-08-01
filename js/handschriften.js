@@ -187,6 +187,18 @@
             getuigeVoor.forEach(function (g) { h += '<li><a href="handschriften/' + encodeURIComponent(g.bid) + '.html' + '">' + esc(bkName(g.bid)) + '</a> — ' + esc(g.rol) + '</li>'; });
             h += '</ul>';
         }
+        // Betrokken personen (klikbaar naar korte biografie-popup)
+        var betrok = (ms.betrokkenen || []).filter(function (pid) { return PERSONEN[pid]; });
+        if (betrok.length) {
+            h += '<h2>Betrokken personen</h2><ul class="ms-personen">';
+            betrok.forEach(function (pid) {
+                var per = PERSONEN[pid];
+                h += '<li><a class="persoon-link" data-persoon="' + esc(pid) + '" role="button" tabindex="0">' + esc(per.naam) + '</a>' +
+                    (per.jaren ? ' <span class="mini-meta">(' + esc(per.jaren) + ')</span>' : '') +
+                    (per.bio ? ' — ' + esc(per.bio.split('. ')[0]) + '.' : '') + '</li>';
+            });
+            h += '</ul>';
+        }
         if (ms.tekstfragment) h += '<div id="fragment-tekst"></div>';
         if (ms.varianten && ms.varianten.length) {
             h += '<h2>Tekstvarianten</h2><div class="ms-table-wrap"><table class="ms-table"><thead><tr><th>Plaats</th><th>Lezing van dit handschrift</th><th>Gangbare tekst</th><th>Toelichting</th></tr></thead><tbody>';
