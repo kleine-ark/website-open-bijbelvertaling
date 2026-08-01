@@ -77,6 +77,10 @@
         if (ms.bevat) facts += '<li><strong>Bevat:</strong> ' + esc(ms.bevat) + '</li>';
         facts += '<li><strong>Gevonden/verworven:</strong> ' + (vind ? vind + '. ' : '') + esc(g.hoe || '') + '</li>';
         if (ms.bewijs && ms.bewijs.url) facts += '<li class="ms-bewijs"><strong>Bewijs:</strong> <a href="' + esc(ms.bewijs.url) + '" target="_blank" rel="noopener">' + esc(ms.bewijs.tekst) + '</a></li>';
+        if (ms.digitaal && ms.digitaal.length) {
+            facts += '<li class="ms-digitaal"><strong>Online te bekijken:</strong> ' +
+                ms.digitaal.map(function (dgl) { return '<a href="' + esc(dgl.url) + '" target="_blank" rel="noopener">' + esc(dgl.label) + '</a>'; }).join(' &nbsp;·&nbsp; ') + '</li>';
+        }
         facts += '</ul>';
         var fig = ms.afbeelding ? ('<figure class="codex-photo">' +
             '<img class="codex-scan" src="' + esc(ms.afbeelding) + '" alt="' + esc(ms.bijschrift || ms.naam) + '" title="Klik om de scan te vergroten" loading="lazy">' +
