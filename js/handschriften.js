@@ -219,6 +219,15 @@
                 return '⬇ <a href="' + esc(dl.url) + '" target="_blank" rel="noopener">' + esc(dl.label) + '</a>';
             }).join('<br>') + '</p>';
         }
+        // Transcriptie (getranscribeerde tekst van het handschrift)
+        if (ms.transcriptie) {
+            var tr = ms.transcriptie;
+            h += '<h2>Transcriptie</h2>';
+            if (tr.toelichting) h += '<p style="font-size:13px;color:var(--teal);">' + esc(tr.toelichting) + '</p>';
+            var trLinks = (tr.online || []).map(function (l) { return '🔗 <a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + '</a>'; })
+                .concat((tr.lokaal || []).map(function (l) { return '⬇ <a href="' + esc(l.url) + '">' + esc(l.label) + '</a>'; }));
+            if (trLinks.length) h += '<p class="ms-download">' + trLinks.join('<br>') + '</p>';
+        }
         if (getuigeVoor.length) {
             h += '<h2>Voor welke boeken</h2><ul>';
             getuigeVoor.forEach(function (g) { h += '<li><a href="handschriften/' + encodeURIComponent(g.bid) + '.html' + '">' + esc(bkName(g.bid)) + '</a> — ' + esc(g.rol) + '</li>'; });
