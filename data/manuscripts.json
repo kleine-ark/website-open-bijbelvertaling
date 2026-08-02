@@ -173,7 +173,7 @@
    "siglum": "א",
    "datering": "4e eeuw (± 330–360 n.Chr.)",
    "type": "volledig",
-   "bevat": "Het volledige Nieuwe Testament (plus de Brief van Barnabas en de Herder van Hermas) en delen van het Oude Testament in de Septuaginta. Van Genesis is het meeste verloren gegaan; alleen fragmenten zijn bewaard. Genesis 1 is dus níét bewaard.",
+   "bevat": "Het volledige Nieuwe Testament (plus de Brief van Barnabas en de Herder van Hermas), en aanzienlijke delen van het Oude Testament in de Septuaginta — o.a. gedeelten van Genesis en Numeri, 1 Kronieken, Ezra-Nehemia, Esther, Tobit, Judit, 1 en 4 Makkabeeën, Psalmen, Spreuken, Prediker, Hooglied, Job, Wijsheid, Sirach, Jesaja, Jeremia, Klaagliederen en de Kleine Profeten. Veel van de Pentateuch (waaronder vrijwel heel Genesis) is echter verloren gegaan; 2 en 3 Makkabeeën en Baruch ontbreken.",
    "bewaarplaats": "British Library, Londen (+ Leipzig, Sint-Petersburg, Sinaï)",
    "gevonden": {
     "wie": "Konstantin von Tischendorf",
@@ -201,7 +201,114 @@
     }
    ],
    "jaar": 350,
-   "taal": "grc"
+   "taal": "grc",
+   "digitaal": [
+    {
+     "label": "Codex Sinaiticus Project — volledig gedigitaliseerd (transcriptie + scans)",
+     "url": "https://www.codexsinaiticus.org/en/manuscript.aspx"
+    },
+    {
+     "label": "British Library — Codex Sinaiticus",
+     "url": "https://www.bl.uk/collection-items/codex-sinaiticus"
+    }
+   ],
+   "embed": {
+    "type": "iframe",
+    "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+    "kop": "Bekijk de Codex Sinaïticus (scans + transcriptie)",
+    "label": "Codex Sinaiticus Project",
+    "toelichting": "De volledige codex is gedigitaliseerd door het Codex Sinaiticus Project (British Library, Universiteit Leipzig, Katharinaklooster en de Nationale Bibliotheek van Rusland) — met hoge-resolutie scans én transcriptie. Hieronder ingesloten vanaf codexsinaiticus.org."
+   },
+   "betrokkenen": [
+    "tischendorf",
+    "alexander_ii"
+   ],
+   "transcriptie": {
+    "toelichting": "De volledige tekst van Codex Sinaïticus is getranscribeerd door het Codex Sinaiticus Project en online doorzoekbaar naast de scans.",
+    "online": [
+     {
+      "label": "Transcriptie + scans — Codex Sinaiticus Project",
+      "url": "https://www.codexsinaiticus.org/en/manuscript.aspx"
+     }
+    ]
+   },
+   "geschiedenis": [
+    {
+     "periode": "4e eeuw (± 330–360)",
+     "plaats": "onbekend (mogelijk Caesarea, Rome of Egypte)",
+     "tekst": "Vervaardigd in de 4e eeuw; de exacte plaats van ontstaan is onzeker. Een van de twee oudste vrijwel volledige Griekse bijbels.",
+     "personen": [],
+     "bewijs": {
+      "tekst": "Paleografische datering (Codex Sinaiticus Project)",
+      "url": "https://www.codexsinaiticus.org/en/"
+     }
+    },
+    {
+     "periode": "middeleeuwen – 1844",
+     "plaats": "Katharinaklooster, Sinaï (Egypte)",
+     "tekst": "De codex werd eeuwenlang bewaard in het Katharinaklooster aan de voet van de berg Sinaï.",
+     "personen": [],
+     "bewijs": {
+      "tekst": "Herkomstgeschiedenis, Codex Sinaiticus Project",
+      "url": "https://www.codexsinaiticus.org/en/project/history.aspx"
+     }
+    },
+    {
+     "periode": "1844",
+     "plaats": "Sinaï → Leipzig",
+     "tekst": "Constantin von Tischendorf ontdekte 43 bladen, die hij naar Leipzig bracht (bekend als de Codex Frederico-Augustanus).",
+     "personen": [
+      "tischendorf"
+     ],
+     "bewijs": {
+      "tekst": "Tischendorf, reisverslagen; Universiteitsbibliotheek Leipzig",
+      "url": "https://www.codexsinaiticus.org/en/project/history.aspx"
+     }
+    },
+    {
+     "periode": "1859",
+     "plaats": "Sinaï → Sint-Petersburg",
+     "tekst": "Tischendorf verwierf het hoofddeel van de codex en bracht het naar Rusland; het werd aangeboden aan tsaar Alexander II en bewaard in de Keizerlijke Bibliotheek te Sint-Petersburg.",
+     "personen": [
+      "tischendorf",
+      "alexander_ii"
+     ],
+     "bewijs": {
+      "tekst": "Historische bronnen; Nationale Bibliotheek van Rusland",
+      "url": "https://en.wikipedia.org/wiki/Codex_Sinaiticus#History"
+     }
+    },
+    {
+     "periode": "1933",
+     "plaats": "Sint-Petersburg → Londen",
+     "tekst": "De Sovjet-Unie verkocht het hoofddeel voor £100.000 aan het British Museum, gefinancierd door een publieke inzameling.",
+     "personen": [],
+     "bewijs": {
+      "tekst": "British Library — verwervingsgeschiedenis (1933)",
+      "url": "https://www.bl.uk/collection-items/codex-sinaiticus"
+     }
+    },
+    {
+     "periode": "1975",
+     "plaats": "Katharinaklooster, Sinaï",
+     "tekst": "Bij restauratiewerk werden in het klooster nog meer bladen ontdekt (de “New Finds”).",
+     "personen": [],
+     "bewijs": {
+      "tekst": "Codex Sinaiticus Project — New Finds",
+      "url": "https://www.codexsinaiticus.org/en/project/history.aspx"
+     }
+    },
+    {
+     "periode": "heden",
+     "plaats": "verdeeld over vier instellingen",
+     "tekst": "De codex is nu verdeeld over de British Library (Londen, hoofddeel), de Universiteitsbibliotheek Leipzig, het Katharinaklooster (Sinaï) en de Nationale Bibliotheek van Rusland (Sint-Petersburg). Digitaal is hij weer als geheel te bekijken.",
+     "personen": [],
+     "bewijs": {
+      "tekst": "Codex Sinaiticus Project (samenwerking van de vier instellingen)",
+      "url": "https://www.codexsinaiticus.org/en/"
+     }
+    }
+   ]
   },
   "vaticanus": {
    "naam": "Codex Vaticanus",
@@ -391,6 +498,96 @@
     {
      "label": "Internet Archive — volledige kleurenfacsimile",
      "url": "https://archive.org/details/Leningrad_Codex"
+    },
+    {
+     "label": "Westminster Leningrad Codex (WLC) — elektronische transcriptie, Tanach.us",
+     "url": "https://www.tanach.us/"
+    }
+   ],
+   "embed": {
+    "type": "archive",
+    "id": "Leningrad_Codex",
+    "kop": "Bekijk de volledige Codex Leningradensis",
+    "label": "Codex Leningradensis — facsimile (Internet Archive)",
+    "toelichting": "De volledige kleurenfacsimile, pagina voor pagina te bekijken (Internet Archive, publiek domein)."
+   },
+   "download": [
+    {
+     "label": "Download de facsimile (Internet Archive)",
+     "url": "https://archive.org/details/Leningrad_Codex"
+    }
+   ],
+   "transcriptie": {
+    "toelichting": "De volledige Hebreeuwse tekst van de Codex Leningradensis is als elektronische editie beschikbaar: de Westminster Leningrad Codex (WLC), de standaard digitale weergave van de masoretische tekst en de basis van vrijwel alle moderne wetenschappelijke uitgaven (BHS/BHQ).",
+    "online": [
+     {
+      "label": "Westminster Leningrad Codex (WLC) — Tanach.us",
+      "url": "https://www.tanach.us/"
+     },
+     {
+      "label": "WLC bij Sefaria",
+      "url": "https://www.sefaria.org/"
+     }
+    ]
+   },
+   "betrokkenen": [
+    "samuel_ben_jacob",
+    "firkovich"
+   ],
+   "geschiedenis": [
+    {
+     "periode": "1008 n.Chr. (of 1009)",
+     "plaats": "Caïro, Egypte",
+     "tekst": "Geschreven en gevocaliseerd door de schrijver Samuel ben Jacob, volgens de masoretische traditie van de Ben Asjer-school. Het jaartal staat in het colofon van de codex.",
+     "personen": [
+      "samuel_ben_jacob"
+     ],
+     "bewijs": {
+      "tekst": "Colofon (jaaropgave) in de codex zelf",
+      "url": "https://en.wikipedia.org/wiki/Leningrad_Codex"
+     }
+    },
+    {
+     "periode": "middeleeuwen",
+     "plaats": "Nabije Oosten (o.a. Damascus)",
+     "tekst": "De codex werd in de eeuwen daarna in het Nabije Oosten bewaard; een deel van de vroege geschiedenis is via aantekeningen te reconstrueren.",
+     "personen": [],
+     "bewijs": {
+      "tekst": "Eigendoms- en verkoopaantekeningen in het handschrift",
+      "url": "https://en.wikipedia.org/wiki/Leningrad_Codex"
+     }
+    },
+    {
+     "periode": "19e eeuw",
+     "plaats": "Nabije Oosten → Krim",
+     "tekst": "De codex werd verworven door de verzamelaar Abraham Firkovich, die hem naar de Krim (Rusland) bracht.",
+     "personen": [
+      "firkovich"
+     ],
+     "bewijs": {
+      "tekst": "Firkovich-collectie, herkomstgeschiedenis",
+      "url": "https://en.wikipedia.org/wiki/Abraham_Firkovich"
+     }
+    },
+    {
+     "periode": "sinds 1863",
+     "plaats": "Sint-Petersburg (Leningrad), Rusland",
+     "tekst": "De codex kwam in de Keizerlijke Openbare Bibliotheek in Sint-Petersburg terecht (in de Sovjettijd Leningrad — vandaar de naam). Signatuur: Firkovich B 19 A.",
+     "personen": [],
+     "bewijs": {
+      "tekst": "Russische Nationale Bibliotheek — Firkovich B 19 A",
+      "url": "https://en.wikipedia.org/wiki/Leningrad_Codex"
+     }
+    },
+    {
+     "periode": "heden",
+     "plaats": "Russische Nationale Bibliotheek, Sint-Petersburg",
+     "tekst": "De codex wordt nog steeds daar bewaard en is het oudste volledige handschrift van de complete Hebreeuwse Bijbel; hij vormt de basis van BHS en BHQ.",
+     "personen": [],
+     "bewijs": {
+      "tekst": "Basis van Biblia Hebraica Stuttgartensia (BHS) en Quinta (BHQ)",
+      "url": "https://en.wikipedia.org/wiki/Biblia_Hebraica_Stuttgartensia"
+     }
     }
    ]
   },
@@ -626,7 +823,10 @@
    "taal": "grc",
    "betrokkenen": [
     "cyril_lucaris",
-    "karel_i"
+    "thomas_roe",
+    "jacobus_i",
+    "karel_i",
+    "george_ii"
    ],
    "digitaal": [
     {
@@ -668,7 +868,90 @@
       "url": "facsimiles/CodexAlexandrinus-transcriptie-NT/"
      }
     ]
-   }
+   },
+   "geschiedenis": [
+    {
+     "periode": "5e eeuw (± 400–440)",
+     "plaats": "Egypte (vermoedelijk Alexandrië)",
+     "tekst": "Vervaardigd, waarschijnlijk in Egypte. De naam “Alexandrinus” verwijst naar Alexandrië, waar het handschrift het langst aantoonbaar bewaard is gebleven.",
+     "personen": [],
+     "bewijs": {
+      "tekst": "Paleografische datering; latere Arabische aantekeningen in de codex koppelen hem aan Alexandrië",
+      "url": "https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_d_viii"
+     }
+    },
+    {
+     "periode": "vóór 1621",
+     "plaats": "Patriarchale Bibliotheek van Alexandrië",
+     "tekst": "De codex behoorde tot de bibliotheek van het patriarchaat van Alexandrië. Een Arabische aantekening in het handschrift vermeldt dit bezit.",
+     "personen": [],
+     "bewijs": {
+      "tekst": "Arabische bezitsaantekening in de codex (folio 1)",
+      "url": "https://en.wikipedia.org/wiki/Codex_Alexandrinus#History"
+     }
+    },
+    {
+     "periode": "± 1621",
+     "plaats": "Constantinopel",
+     "tekst": "Cyrillus Lucaris, van patriarch van Alexandrië benoemd tot oecumenisch patriarch van Constantinopel, nam de codex mee naar Constantinopel.",
+     "personen": [
+      "cyril_lucaris"
+     ],
+     "bewijs": {
+      "tekst": "Historische bronnen over Lucaris’ overplaatsing naar Constantinopel",
+      "url": "https://en.wikipedia.org/wiki/Cyril_Lucaris"
+     }
+    },
+    {
+     "periode": "1624–1627",
+     "plaats": "Constantinopel → Londen",
+     "tekst": "Lucaris gaf de codex mee aan de Engelse ambassadeur Sir Thomas Roe als geschenk voor koning Jacobus I. Deze overleed in 1625; de codex werd in 1627 aan diens zoon Karel I overhandigd.",
+     "personen": [
+      "cyril_lucaris",
+      "thomas_roe",
+      "jacobus_i",
+      "karel_i"
+     ],
+     "bewijs": {
+      "tekst": "Correspondentie van Sir Thomas Roe; koninklijke archieven",
+      "url": "https://en.wikipedia.org/wiki/Codex_Alexandrinus#History"
+     }
+    },
+    {
+     "periode": "1627–1757",
+     "plaats": "Koninklijke Bibliotheek, Londen",
+     "tekst": "De codex maakte deel uit van de Royal Library (Old Royal Library) van de Engelse koningen.",
+     "personen": [
+      "karel_i"
+     ],
+     "bewijs": {
+      "tekst": "Catalogi van de Royal Library",
+      "url": "https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_d_viii"
+     }
+    },
+    {
+     "periode": "1757",
+     "plaats": "British Museum, Londen",
+     "tekst": "Koning George II schonk de Old Royal Library, inclusief de Codex Alexandrinus, aan het nieuw opgerichte British Museum.",
+     "personen": [
+      "george_ii"
+     ],
+     "bewijs": {
+      "tekst": "Schenkingsakte van de Royal Library aan het British Museum (1757)",
+      "url": "https://en.wikipedia.org/wiki/Royal_Library,_British_Museum"
+     }
+    },
+    {
+     "periode": "sinds 1973",
+     "plaats": "British Library, Londen",
+     "tekst": "Bij de oprichting van de British Library (British Library Act 1972) ging de codex over van het British Museum naar de British Library, waar hij nu bewaard wordt (Royal MS 1 D. v–viii).",
+     "personen": [],
+     "bewijs": {
+      "tekst": "British Library — catalogusrecord Royal MS 1 D. viii",
+      "url": "https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_d_viii"
+     }
+    }
+   ]
   },
   "bezae": {
    "naam": "Codex Bezae",
@@ -2002,7 +2285,6 @@
    "fragmenten": [],
    "volledig": [
     "vaticanus",
-    "sinaiticus",
     "alexandrinus"
    ],
    "oudsteVolledig": "vaticanus",
@@ -2229,6 +2511,36 @@
    "naam": "Karel I van Engeland",
    "jaren": "1600–1649",
    "bio": "Koning van Engeland, Schotland en Ierland (1625–1649). Ontving in 1627 de Codex Alexandrinus als geschenk van patriarch Cyrillus Lucaris. De codex kwam zo in de koninklijke bibliotheek terecht en wordt sinds 1757 bewaard in wat nu de British Library is."
+  },
+  "thomas_roe": {
+   "naam": "Sir Thomas Roe",
+   "jaren": "1581–1644",
+   "bio": "Engels diplomaat en ambassadeur bij het Ottomaanse hof in Constantinopel. Hij was de tussenpersoon aan wie patriarch Cyrillus Lucaris de Codex Alexandrinus meegaf als geschenk voor de Engelse koning."
+  },
+  "jacobus_i": {
+   "naam": "Jacobus I van Engeland",
+   "jaren": "1566–1625",
+   "bio": "Koning van Engeland (1603–1625; als Jacobus VI koning van Schotland). Het geschenk van de Codex Alexandrinus was oorspronkelijk voor hem bedoeld, maar hij overleed (maart 1625) voordat de codex Engeland bereikte; hij ging naar zijn zoon Karel I."
+  },
+  "george_ii": {
+   "naam": "George II van Groot-Brittannië",
+   "jaren": "1683–1760",
+   "bio": "Koning van Groot-Brittannië (1727–1760). Schonk in 1757 de koninklijke bibliotheek (Old Royal Library), inclusief de Codex Alexandrinus, aan het pas opgerichte British Museum."
+  },
+  "alexander_ii": {
+   "naam": "Tsaar Alexander II van Rusland",
+   "jaren": "1818–1881",
+   "bio": "Keizer van Rusland (1855–1881). Als beschermheer van de oosterse christenheid ontving hij in 1859 het hoofddeel van de Codex Sinaïticus, dat Constantin von Tischendorf uit het Katharinaklooster meebracht; het werd in Sint-Petersburg bewaard."
+  },
+  "samuel_ben_jacob": {
+   "naam": "Samuel ben Jacob",
+   "jaren": "actief ± 1000 n.Chr.",
+   "bio": "Joodse schrijver (soferim) in Caïro die de Codex Leningradensis rond 1008 n.Chr. kopieerde en van masoretische vocalisatie en aantekeningen voorzag, naar de traditie van de Ben Asjer-school."
+  },
+  "firkovich": {
+   "naam": "Abraham Firkovich",
+   "jaren": "1787–1874",
+   "bio": "Karaïtisch geleerde en handschriftenverzamelaar op de Krim. Hij verwierf in de 19e eeuw grote collecties Hebreeuwse handschriften uit het Nabije Oosten, waaronder de Codex Leningradensis, die zo in de Keizerlijke (nu Russische Nationale) Bibliotheek in Sint-Petersburg terechtkwam."
   }
  }
 }
