@@ -2112,6 +2112,20 @@ body.citaten-uit .devil-speaks::after { content: none !important; }
         font-size: 14px;
         line-height: 1.7;
     }
+    /* Arabische paralleltekst (Van Dyck) onder een vers */
+    .verse-arabisch {
+        direction: rtl; text-align: right;
+        font-family: 'Amiri', 'Scheherazade New', 'Noto Naskh Arabic', 'Times New Roman', serif;
+        font-size: 19px; line-height: 2; color: var(--teal, #2a7d7d);
+        margin: 4px 0 2px; padding: 2px 4px;
+        border-right: 3px solid var(--gold, #cba449);
+    }
+    :root[data-theme="donker"] .verse-arabisch { color: var(--text-secondary, #cdd6d6); }
+    #arabisch-toggle {
+        font-size: 20px; line-height: 1; background: none; border: none; cursor: pointer;
+        color: inherit; opacity: 0.6; padding: 4px 8px;
+    }
+    #arabisch-toggle.on { opacity: 1; color: var(--gold, #cba449); }
 
     /* Kanttekeningen */
     .note-text {
