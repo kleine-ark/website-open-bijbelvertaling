@@ -428,6 +428,7 @@ const Lees = {
     },
 
     async renderChapter(book, chapterNum) {
+        this._bookObj = book;   // bewaren voor o.a. de Arabisch-toggle-herrender
         // Verzen zitten in een apart per-hoofdstuk-bestand (post chapter-split)
         let chapter = book.chapters.find(c => c.number === chapterNum);
         if (chapter && (!chapter.verses || chapter.verses.length === 0)) {
@@ -481,6 +482,20 @@ const Lees = {
             chIntroEl.style.display = 'none';
         }
 
+        // Arabische vertaling (Van Dyck) — optioneel, geladen per boek en gecached
+        let arab = null;
+        if (localStorage.getItem('toonArabisch') === '1') {
+            try {
+                this._arabischCache = this._arabischCache || {};
+                const bid = book.id || this.currentBook;
+                if (!(bid in this._arabischCache)) {
+                    this._arabischCache[bid] = await fetch('data/arabisch/' + bid + '.json').then(r => r.ok ? r.json() : null).catch(() => null);
+                }
+                const ad = this._arabischCache[bid];
+                arab = ad ? (ad[String(chapterNum)] || null) : null;
+            } catch (e) { arab = null; }
+        }
+
         // Verses
         const versesEl = document.getElementById('verses');
         versesEl.innerHTML = '';
@@ -502,6 +517,16 @@ const Lees = {
             // Add Strong's word wrapping
             textNode.innerHTML = this.wrapWordsWithStrongs(html, verse.grondtekst);
             span.appendChild(textNode);
+
+            // Arabische paralleltekst (Van Dyck) onder het vers, rechts-naar-links
+            if (arab && arab[String(verse.number)]) {
+                const ar = document.createElement('div');
+                ar.className = 'verse-arabisch';
+                ar.setAttribute('lang', 'ar');
+                ar.setAttribute('dir', 'rtl');
+                ar.textContent = arab[String(verse.number)];
+                span.appendChild(ar);
+            }
 
             // Versnummer-klik = navigatie/note-popup behavior (bestaande gedrag)
             num.addEventListener('click', (e) => {
@@ -1176,6 +1201,17 @@ const Lees = {
 
         // Dark mode
         document.getElementById('dark-mode-toggle').addEventListener('click', () => this.toggleDarkMode());
+        (function (self) {
+            var ab = document.getElementById('arabisch-toggle');
+            if (!ab) return;
+            if (localStorage.getItem('toonArabisch') === '1') ab.classList.add('on');
+            ab.addEventListener('click', function () {
+                var on = localStorage.getItem('toonArabisch') === '1';
+                localStorage.setItem('toonArabisch', on ? '0' : '1');
+                ab.classList.toggle('on', !on);
+                if (self._bookObj && self.currentChapter) self.renderChapter(self._bookObj, self.currentChapter);
+            });
+        })(this);
 
         // Search wordt nu door js/search.js (Search-module) afgehandeld.
         // De #lees-search-trigger input opent de overlay; verdere logica zit
