@@ -1,6 +1,11 @@
 /* Open Vertaling — Leesversie */
 
 const Lees = {
+    // Parallelle vertalingen (optioneel te tonen onder elk vers)
+    PARALLEL: [
+        { key: 'arabisch', dir: 'arabisch', label: 'ع', lang: 'ar', rtl: true, ls: 'toonArabisch', btn: 'arabisch-toggle' },
+        { key: 'kjv', dir: 'kjv', label: 'KJV', lang: 'en', rtl: false, ls: 'toonKJV', btn: 'kjv-toggle' },
+    ],
     manifest: null,
     bookCache: {},
     currentBook: null,
@@ -482,18 +487,21 @@ const Lees = {
             chIntroEl.style.display = 'none';
         }
 
-        // Arabische vertaling (Van Dyck) — optioneel, geladen per boek en gecached
-        let arab = null;
-        if (localStorage.getItem('toonArabisch') === '1') {
+        // Parallelle vertalingen (optioneel, per boek geladen en gecached)
+        const bidP = book.id || this.currentBook;
+        const parallels = [];
+        this._parCache = this._parCache || {};
+        for (const cfg of Lees.PARALLEL) {
+            if (localStorage.getItem(cfg.ls) !== '1') continue;
             try {
-                this._arabischCache = this._arabischCache || {};
-                const bid = book.id || this.currentBook;
-                if (!(bid in this._arabischCache)) {
-                    this._arabischCache[bid] = await fetch('data/arabisch/' + bid + '.json').then(r => r.ok ? r.json() : null).catch(() => null);
+                const ck = cfg.dir + '/' + bidP;
+                if (!(ck in this._parCache)) {
+                    this._parCache[ck] = await fetch('data/' + cfg.dir + '/' + bidP + '.json').then(r => r.ok ? r.json() : null).catch(() => null);
                 }
-                const ad = this._arabischCache[bid];
-                arab = ad ? (ad[String(chapterNum)] || null) : null;
-            } catch (e) { arab = null; }
+                const data = this._parCache[ck];
+                const chData = data ? (data[String(chapterNum)] || null) : null;
+                if (chData) parallels.push({ cfg, chData });
+            } catch (e) { /* skip */ }
         }
 
         // Verses
@@ -518,14 +526,16 @@ const Lees = {
             textNode.innerHTML = this.wrapWordsWithStrongs(html, verse.grondtekst);
             span.appendChild(textNode);
 
-            // Arabische paralleltekst (Van Dyck) onder het vers, rechts-naar-links
-            if (arab && arab[String(verse.number)]) {
-                const ar = document.createElement('div');
-                ar.className = 'verse-arabisch';
-                ar.setAttribute('lang', 'ar');
-                ar.setAttribute('dir', 'rtl');
-                ar.textContent = arab[String(verse.number)];
-                span.appendChild(ar);
+            // Parallelle vertalingen onder het vers
+            for (const par of parallels) {
+                const t = par.chData[String(verse.number)];
+                if (!t) continue;
+                const pl = document.createElement('div');
+                pl.className = 'verse-parallel verse-' + par.cfg.key;
+                pl.setAttribute('lang', par.cfg.lang);
+                if (par.cfg.rtl) pl.setAttribute('dir', 'rtl');
+                pl.textContent = t;
+                span.appendChild(pl);
             }
 
             // Versnummer-klik = navigatie/note-popup behavior (bestaande gedrag)
@@ -1202,14 +1212,16 @@ const Lees = {
         // Dark mode
         document.getElementById('dark-mode-toggle').addEventListener('click', () => this.toggleDarkMode());
         (function (self) {
-            var ab = document.getElementById('arabisch-toggle');
-            if (!ab) return;
-            if (localStorage.getItem('toonArabisch') === '1') ab.classList.add('on');
-            ab.addEventListener('click', function () {
-                var on = localStorage.getItem('toonArabisch') === '1';
-                localStorage.setItem('toonArabisch', on ? '0' : '1');
-                ab.classList.toggle('on', !on);
-                if (self._bookObj && self.currentChapter) self.renderChapter(self._bookObj, self.currentChapter);
+            Lees.PARALLEL.forEach(function (cfg) {
+                var btn = document.getElementById(cfg.btn);
+                if (!btn) return;
+                if (localStorage.getItem(cfg.ls) === '1') btn.classList.add('on');
+                btn.addEventListener('click', function () {
+                    var on = localStorage.getItem(cfg.ls) === '1';
+                    localStorage.setItem(cfg.ls, on ? '0' : '1');
+                    btn.classList.toggle('on', !on);
+                    if (self._bookObj && self.currentChapter) self.renderChapter(self._bookObj, self.currentChapter);
+                });
             });
         })(this);
 
