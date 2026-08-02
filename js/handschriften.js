@@ -246,6 +246,21 @@
             });
             h += '</ul>';
         }
+        // Geschiedenis / herkomst (provenance-tijdlijn) met personen- en bewijs-links
+        if (ms.geschiedenis && ms.geschiedenis.length) {
+            h += '<h2>Geschiedenis &amp; herkomst</h2><ol class="ms-timeline">';
+            ms.geschiedenis.forEach(function (g) {
+                var pers = (g.personen || []).filter(function (pid) { return PERSONEN[pid]; })
+                    .map(function (pid) { return '<a class="persoon-link" data-persoon="' + esc(pid) + '" role="button" tabindex="0">' + esc(PERSONEN[pid].naam) + '</a>'; });
+                h += '<li class="tl-item"><div class="tl-periode">' + esc(g.periode || '') + '</div>' +
+                    '<div class="tl-body"><div class="tl-plaats">' + esc(g.plaats || '') + '</div>' +
+                    '<div class="tl-tekst">' + esc(g.tekst || '') + '</div>' +
+                    (pers.length ? '<div class="tl-personen">Betrokken: ' + pers.join(', ') + '</div>' : '') +
+                    (g.bewijs && g.bewijs.tekst ? '<div class="tl-bewijs">📎 Bewijs: ' + (g.bewijs.url ? '<a href="' + esc(g.bewijs.url) + '" target="_blank" rel="noopener">' + esc(g.bewijs.tekst) + '</a>' : esc(g.bewijs.tekst)) + '</div>' : '') +
+                    '</div></li>';
+            });
+            h += '</ol>';
+        }
         if (ms.tekstfragment) h += '<div id="fragment-tekst"></div>';
         if (ms.varianten && ms.varianten.length) {
             h += '<h2>Tekstvarianten</h2><div class="ms-table-wrap"><table class="ms-table"><thead><tr><th>Plaats</th><th>Lezing van dit handschrift</th><th>Gangbare tekst</th><th>Toelichting</th></tr></thead><tbody>';
