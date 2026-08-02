@@ -391,12 +391,14 @@
                 else if (cur && cur.id === 'latijn') bron = isSecond ? 'Lewis-Short' : 'Grondtekst-gloss';
                 else bron = isSecond ? 'woordenboek' : 'Grondtekst-gloss';
             }
-            // Nederlandse Dillmann-vertaling (overlay per entry-nummer), indien beschikbaar
+            // Nederlandse vertaling: Dillmann via overlay per entry-nummer; Lewis & Short (Latijn)
+            // via een ingebakken definitieNl in het bronbestand.
             var dnl = (bron === 'Dillmann' && w.n != null && taal._dnl) ? taal._dnl[String(w.n)] : null;
-            var hasNl = !!(dnl && dnl.definitieNl);
+            var eff = dnl || (w.definitieNl ? { definitieNl: w.definitieNl, glossNl: w.betekenisNl } : null);
+            var hasNl = !!(eff && eff.definitieNl);
             return { key: String(key || ('#' + i)), woord: w.woord || (w.vormen && w.vormen[0]) || w.lemma,
-                gloss: (dnl && dnl.glossNl) || w.betekenis,
-                def: hasNl ? dnl.definitieNl : w.definitie, defEn: w.definitie,
+                gloss: (eff && eff.glossNl) || w.betekenis,
+                def: hasNl ? eff.definitieNl : w.definitie, defEn: w.definitie,
                 defHtml: !!(taal.html || w._html), defNl: hasNl, bron: bron,
                 verw: w.verwijzingen || [], forms: w.vormen };
         });
