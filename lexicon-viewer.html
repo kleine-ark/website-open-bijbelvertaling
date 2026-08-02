@@ -61,6 +61,7 @@
         .lex-toc-item.active { background: rgba(203,164,73,0.16); border-left-color: var(--gold); }
         .lex-toc-strong { font: 600 11px var(--font-body); color: var(--teal); min-width: 46px; }
         .lex-toc-woord { font-size: 17px; color: var(--navy); }
+        .lex-toc-translit { font-size: 12.5px; color: var(--teal); font-style: italic; }
         .lex-toc-gloss { font-size: 12.5px; color: #777; margin-left: auto; text-align: right; max-width: 46%; }
         .lex-content { flex: 1; overflow-y: auto; padding: 26px 34px 80px; }
         .lex-content .placeholder { color: #999; font-size: 15px; margin-top: 40px; }
@@ -201,8 +202,8 @@
         { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true,
           lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', label: 'Abbott-Smith (1922)', infoUrl: 'woordenboeken.html#abbott-smith' }, lex1label: 'TBESG (2018)', lex1url: 'woordenboeken.html#tbesg', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'akkadisch', label: 'Akkadisch', json: 'data/lexicon-akkadisch.json', bron: 'ORACC — Open Richly Annotated Cuneiform Corpus (SAAo, RINAP, RIBo); Neo-Assyrisch/Babylonisch Akkadisch (CC0, publiek domein).' },
-        { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', json2: 'data/lexicon-lewis-short.json', bron: 'Grondtekst-glossen: 4 Ezra (Vulgaat-traditie). Woordenboek: Lewis & Short, A Latin Dictionary (1879), publiek domein.' },
-        { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', json2: 'data/lexicon-dillmann.json', dnlJson: 'data/lexicon-nl/dillmann-nl.json', bron: 'Grondtekst-glossen: Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA). Woordenboek: Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0); definities in het Latijn, Nederlandse vertaling volgt.' }
+        { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', json2: 'data/lexicon-lewis-short-4ezra.json', bron: 'Grondtekst-glossen: 4 Ezra (Vulgaat-traditie). Woordenboek: Lewis & Short, A Latin Dictionary (1879), publiek domein — beperkt tot de woorden die in 4 Ezra voorkomen.' },
+        { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', json2: 'data/lexicon-dillmann-geez.json', dnlJson: 'data/lexicon-nl/dillmann-nl.json', bron: 'Grondtekst-glossen: Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA). Woordenboek: Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0) — beperkt tot de woorden die in de Ethiopische boeken voorkomen; definities in het Latijn, Nederlandse vertaling volgt.' }
     ];
 
     // Boek-afkortingen (BDB / Abbott-Smith, Engels) -> onze boek-id
@@ -420,7 +421,8 @@
         var slice = r.slice(0, 300);
         listEl.innerHTML = slice.map(function (e, i) {
             return '<div class="lex-toc-item" data-i="' + entries.indexOf(e) + '"><span class="lex-toc-strong">' + esc(e.key) + '</span>' +
-                '<span class="lex-toc-woord" lang="' + langAttr() + '">' + esc(e.woord || '') + '</span>' +
+                '<span class="lex-toc-woord" lang="' + langAttr() + '">' + esc(e.woord || '') +
+                (e.translit ? ' <span class="lex-toc-translit">' + esc(e.translit) + '</span>' : '') + '</span>' +
                 '<span class="lex-toc-gloss">' + esc(e.gloss || '') + '</span></div>';
         }).join('') || '<div style="padding:14px;color:#999;">Geen resultaten.</div>';
     }
