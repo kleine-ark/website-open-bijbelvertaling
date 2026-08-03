@@ -156,14 +156,28 @@ const References = {
         // waarbij "89:12" na "Ps." onbedoeld aan laatste boek werd gekoppeld)
         let lastBookId = currentBookId || '';
         // Combinerende regex: óf volledige boek-ref, óf verkorte "ch:vs"
-        // verkorte vorm vereist voorafgaand komma (lookbehind) en niet binnen HTML-tag
+        // verkorte vorm vereist voorafgaand komma en niet binnen HTML-tag.
+        //
+        // Die komma wordt meegevangen in groep `sep` en hieronder ongewijzigd
+        // teruggezet — bewust géén lookbehind, want Safari kent (?<=...) pas
+        // vanaf 16.4. Op iPadOS 15.4–16.3 gooide new RegExp() anders een
+        // SyntaxError midden in de verzen-renderlus, waardoor het hele
+        // hoofdstuk onzichtbaar bleef.
         const fullRefSrc = this.REF_REGEX.source;
-        const combinedRegex = new RegExp(
-            fullRefSrc + '|(?<=,\\s*)(\\d+):(\\d+(?:[,-]\\d+)*)(?![^<]*>)',
-            'gi'
-        );
+        let combinedRegex;
+        try {
+            combinedRegex = new RegExp(
+                fullRefSrc + '|(,\\s*)(\\d+):(\\d+(?:[,-]\\d+)*)(?![^<]*>)',
+                'gi'
+            );
+        } catch (e) {
+            // Vangnet: kan de browser deze regex niet bouwen, dan liever tekst
+            // zónder verwijzingslinks dan een afgebroken render en lege pagina.
+            console.warn('References.linkify: verwijzings-regex niet ondersteund — verwijzingen blijven platte tekst', e);
+            return result;
+        }
 
-        result = result.replace(combinedRegex, (match, bookAbbr, chapter, verses, shortCh, shortVs) => {
+        result = result.replace(combinedRegex, (match, bookAbbr, chapter, verses, sep, shortCh, shortVs) => {
             // Volledige boek-ref?
             if (bookAbbr) {
                 const key = bookAbbr.toLowerCase().replace(/\.$/, '').replace(/\s+/g, ' ');
@@ -179,11 +193,14 @@ const References = {
             }
             // Verkorte ref (ch:vs zonder boek)
             if (shortCh) {
+                const scheider = sep || '';
                 if (!lastBookId) return match;
                 const ch = parseInt(shortCh);
                 const vs = shortVs ? parseInt(shortVs) : null;
                 const hash = `#${lastBookId}/${ch}`;
-                return `<a class="ref-link" href="${hash}" data-ref-book="${lastBookId}" data-ref-ch="${ch}"${vs ? ` data-ref-vs="${vs}"` : ''} title="${lastBookId} ${match}">${match}</a>`;
+                // `match` bevat nu ook de voorafgaande komma; die hoort buiten de link.
+                const ref = match.slice(scheider.length);
+                return `${scheider}<a class="ref-link" href="${hash}" data-ref-book="${lastBookId}" data-ref-ch="${ch}"${vs ? ` data-ref-vs="${vs}"` : ''} title="${lastBookId} ${ref}">${ref}</a>`;
             }
             return match;
         });
