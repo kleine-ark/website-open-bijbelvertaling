@@ -2493,7 +2493,7 @@
    "number": 17,
    "textSV1888": "En dit werd allen bekend, beiden Joden en Grieken, die te Efeze woonden; en er viel een vreze over hen allen, en de Naam van den Heere Jezus werd groot gemaakt.",
    "text1637": "Ende dit wiert allen bekent, beyde Ioden ende Griecken, die te Ephesen woonden: ende daer viel een vreese over haer alle, ende de naem des Heeren Iesu wierdt groot gemaeckt.",
-   "text2026": "En dit werd allen bekend, zowel Joden als Grieken, die te Efeze woonden; en er viel een vreze over hen allen, en de Naam van de Heere Jezus werd groot gemaakt.",
+   "text2026": "En dit werd allen bekend, zowel Joden als Grieken, die te Efeze woonden; en er viel een vrees over hen allen, en de Naam van de Heere Jezus werd groot gemaakt.",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -2653,7 +2653,7 @@
      "gloss": "〔Jesus/Joshua"
     }
    ],
-   "text2026_html": "En dit werd allen bekend, zowel Joden als Grieken, die te Efeze woonden; en er viel een vreze over hen allen, en de Naam van de Heere Jezus werd groot gemaakt.",
+   "text2026_html": "En dit werd allen bekend, zowel Joden als Grieken, die te Efeze woonden; en er viel een vrees over hen allen, en de Naam van de Heere Jezus werd groot gemaakt.",
    "text1637_html": "Ende dit wiert allen bekent, beyde Ioden en<i>de</i> Griecken, die te Ephesen woonden: ende daer viel een vreese over haer alle, ende de naem des Heeren Iesu wierdt groot gemaeckt.",
    "phraseDiff": [
     {
@@ -2665,6 +2665,11 @@
      "old": "en",
      "new": "als",
      "principe": null
+    },
+    {
+     "old": "vreze",
+     "new": "vrees",
+     "principe": "V991"
     },
     {
      "old": "den",
@@ -6059,7 +6064,7 @@
    "number": 40,
    "textSV1888": "Want wij staan in gevaar, dat wij van oproer zullen verklaagd worden om den dag van heden, alzo er geen oorzaak is, waardoor wij reden zullen kunnen geven van dezen oploop.",
    "text1637": "Want wy staen in gevaer dat wy van oproer sullen [76] verklaeght worden, [77] om [den dagh] van huyden, also daer geen oorsaecke en is, waer door wy reden sullen konnen geven van desen oploop. Ende dit geseght hebbende, liet hy de vergaderinge gaen.",
-   "text2026": "Want wij staan in gevaar, dat wij van oproer zullen aangeklaagd worden om de dag van heden, zo er geen oorzaak is, waardoor wij reden zullen kunnen geven van deze oploop.",
+   "text2026": "Want wij staan in gevaar, dat wij van oproer zullen aangeklaagd worden om de dag van vandaag, zo er geen oorzaak is, waardoor wij reden zullen kunnen geven van deze oploop.",
    "marginNotes": [
     {
      "marker": "76",
@@ -6240,7 +6245,7 @@
      "gloss": "〔assembly"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>Want wij staan in gevaar, dat wij van oproer zullen<sup class=\"note-marker\" data-note=\"76\">76</sup> aangeklaagd worden<sup class=\"note-marker\" data-note=\"77\">77</sup> om de dag van heden, zo er geen oorzaak is, waardoor wij reden zullen kunnen geven van deze oploop.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>Want wij staan in gevaar, dat wij van oproer zullen<sup class=\"note-marker\" data-note=\"76\">76</sup> aangeklaagd worden<sup class=\"note-marker\" data-note=\"77\">77</sup> om de dag van vandaag, zo er geen oorzaak is, waardoor wij reden zullen kunnen geven van deze oploop.</i></span>",
    "textSV1888_html": "Want wij staan in gevaar, dat wij van oproer zullen<sup class=\"note-marker\" data-note=\"76\">76</sup> verklaagd worden<sup class=\"note-marker\" data-note=\"77\">77</sup> om den dag van heden, alzo er geen oorzaak is, waardoor wij reden zullen kunnen geven van dezen oploop.",
    "text1637_html": "Want wy staen in gevaer dat wy van oproer sullen <sup class=\"note-marker\" data-note=\"76\">76</sup> verklaeght worden, <sup class=\"note-marker\" data-note=\"77\">77</sup> om [<i>den dagh</i>] van huyden, also daer geen oorsaecke en is, waer door wy reden sullen konnen geven van desen oploop. Ende dit geseght hebbende, liet hy de vergaderinge gaen.",
    "phraseDiff": [
@@ -6255,9 +6260,9 @@
      "principe": "N1"
     },
     {
-     "old": "alzo",
-     "new": "zo",
-     "principe": "V42"
+     "old": "heden, alzo",
+     "new": "vandaag, zo",
+     "principe": "V986"
     },
     {
      "old": "dezen",

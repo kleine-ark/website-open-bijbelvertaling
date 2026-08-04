@@ -769,7 +769,7 @@
       "number": 7,
       "textSV1888": "Maar indien dezen man zijns broeders vrouw niet bevallen zal te nemen, zo zal zijn broeders vrouw opgaan naar de poort tot de oudsten, en zeggen: Mijns mans broeder weigert zijn broeder een naam te verwekken in Israël; hij wil mij den plicht van eens mans broeders niet doen.",
       "text1637": "Maer indien desen man sijns broeders vrouwe niet bevallen en sal te nemen; so sal sijns broeders vrouwe opgaen nae de [20] poorte tot de Outsten, ende seggen; [d] Mijn mans broeder weygert sijnen broeder eenen name te verwecken in Israël, hy en wil my den plicht van eens mans broeder niet doen.",
-      "text2026": "Maar als deze man van zijn broer vrouw niet bevallen zal te nemen, zo zal zijn broers vrouw opgaan naar de poort tot de oudsten, en zeggen: De broer van mijn man weigert zijn broer een naam te verwekken in Israël; hij wil mij de plicht van de broer van een man niet doen.",
+      "text2026": "Maar als deze man de vrouw van zijn broer niet bevallen zal te nemen, zo zal zijn broers vrouw opgaan naar de poort tot de oudsten, en zeggen: De broer van mijn man weigert zijn broer een naam te verwekken in Israël; hij wil mij de plicht van de broer van een man niet doen.",
       "marginNotes": [
         {
           "marker": "20",
@@ -898,7 +898,7 @@
           "morph": "HVpc/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar als deze man van zijn broer vrouw niet bevallen zal te nemen, zo zal zijn broers vrouw opgaan naar de<sup class=\"note-marker\" data-note=\"20\">20</sup> poort tot de oudsten, en zeggen:<sup class=\"note-marker\" data-note=\"d\">d</sup> De broer van mijn man weigert zijn broer een naam te verwekken in Israël; hij wil mij de plicht van de broer van een man niet doen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar als deze man de vrouw van zijn broer niet bevallen zal te nemen, zo zal zijn broers vrouw opgaan naar de<sup class=\"note-marker\" data-note=\"20\">20</sup> poort tot de oudsten, en zeggen:<sup class=\"note-marker\" data-note=\"d\">d</sup> De broer van mijn man weigert zijn broer een naam te verwekken in Israël; hij wil mij de plicht van de broer van een man niet doen.</i></span>",
       "textSV1888_html": "Maar indien dezen man zijns broeders vrouw niet bevallen zal te nemen, zo zal zijn broeders vrouw opgaan naar de<sup class=\"note-marker\" data-note=\"20\">20</sup> poort tot de oudsten, en zeggen:<sup class=\"note-marker\" data-note=\"d\">d</sup> Mijns mans broeder weigert zijn broeder een naam te verwekken in Israël; hij wil mij den plicht van eens mans broeders niet doen.",
       "text1637_html": "Maer indien desen man sijns broeders vrouwe niet bevallen en sal te nemen; so sal sijns broeders vrouwe opgaen nae de <sup class=\"note-marker\" data-note=\"20\">20</sup> poorte tot de Outste<i>n</i>, ende seggen; <sup class=\"note-marker\" data-note=\"d\">d</sup> Mijn mans broeder weygert sijnen broeder eenen name te verwecken in Israël, hy en wil my den plicht van eens mans broeder niet doen.",
       "phraseDiff": [
@@ -909,8 +909,13 @@
         },
         {
           "old": "zijns broeders",
+          "new": "de",
+          "principe": "N22"
+        },
+        {
+          "old": "",
           "new": "van zijn broer",
-          "principe": "V201"
+          "principe": "N22"
         },
         {
           "old": "broeders",

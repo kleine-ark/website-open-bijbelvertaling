@@ -71,7 +71,7 @@
       "number": 2,
       "textSV1888": "De naam van zijn eerstgeborenen zoon nu was Joël, en de naam van zijn tweeden was Abia; zij waren richters te Ber-seba.",
       "text1637": "Sijnes eerstgeborenen soons name nu was [2] Ioël, ende de name sijnes tweeden was Abia, sy waren Richters te [3] Berseba.",
-      "text2026": "De naam van zijn eerstgeborenen zoon nu was Joël, en de naam van zijn tweede was Abia; zij waren richters te Ber-seba.",
+      "text2026": "De naam van zijn eerstgeboren zoon nu was Joël, en de naam van zijn tweede was Abia; zij waren richters te Ber-seba.",
       "marginNotes": [
         {
           "marker": "2",
@@ -145,10 +145,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "De naam van zijn eerstgeborenen zoon nu was<sup class=\"note-marker\" data-note=\"2\">2</sup> Joël, en de naam van zijn tweede was Abia; zij waren richters te<sup class=\"note-marker\" data-note=\"3\">3</sup> Ber-seba.",
+      "text2026_html": "De naam van zijn eerstgeboren zoon nu was<sup class=\"note-marker\" data-note=\"2\">2</sup> Joël, en de naam van zijn tweede was Abia; zij waren richters te<sup class=\"note-marker\" data-note=\"3\">3</sup> Ber-seba.",
       "textSV1888_html": "De naam van zijn eerstgeborenen zoon nu was<sup class=\"note-marker\" data-note=\"2\">2</sup> Joël, en de naam van zijn tweeden was Abia; zij waren richters te<sup class=\"note-marker\" data-note=\"3\">3</sup> Ber-seba.",
       "text1637_html": "Sijnes eerstgeborenen soons name nu was <sup class=\"note-marker\" data-note=\"2\">2</sup> Ioël, ende de name sijnes tweeden was Abia, sy waren Richters te <sup class=\"note-marker\" data-note=\"3\">3</sup> Berseba.",
       "phraseDiff": [
+        {
+          "old": "eerstgeborenen",
+          "new": "eerstgeboren",
+          "principe": "O23"
+        },
         {
           "old": "tweeden",
           "new": "tweede",
@@ -1469,7 +1474,7 @@
       "number": 16,
       "textSV1888": "En hij zal uw knechten, en uw dienstmaagden, en uw beste jongelingen, en uw ezelen nemen, en hij zal zijn werk daarmede doen.",
       "text1637": "Ende hy sal uwe knechten, ende uwe dienstmaechden, ende uwe beste jongelingen, ende uwe eselen nemen: ende hy sal sijn werck daer mede doen.",
-      "text2026": "En hij zal uw knechten, en uw dienaressen, en uw beste jongemannen, en uw ezelen nemen, en hij zal zijn werk daarmede doen.",
+      "text2026": "En hij zal uw knechten, en uw dienaressen, en uw beste jongemannen, en uw ezels nemen, en hij zal zijn werk daarmede doen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1533,7 +1538,7 @@
           "morph": "HR/Ncfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En hij zal uw knechten, en uw dienaressen, en uw beste jongemannen, en uw ezelen nemen, en hij zal zijn werk daarmede doen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En hij zal uw knechten, en uw dienaressen, en uw beste jongemannen, en uw ezels nemen, en hij zal zijn werk daarmede doen.</i></span>",
       "text1637_html": "Ende hy sal uwe knechten, ende uwe dienstmaechden, ende uwe beste jongelingen, ende uwe eselen nemen: ende hy sal sijn werck daer mede doen.",
       "phraseDiff": [
         {
@@ -1545,6 +1550,11 @@
           "old": "jongelingen,",
           "new": "jongemannen,",
           "principe": "V79"
+        },
+        {
+          "old": "ezelen",
+          "new": "ezels",
+          "principe": "V974"
         }
       ]
     },

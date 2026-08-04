@@ -234,7 +234,7 @@
       "number": 3,
       "textSV1888": "Toen zeide Farao tot zijn broederen: Wat is uw hantering? En zij zeiden tot Farao: Uw knechten zijn schaapherders, zo wij als onze vaders.",
       "text1637": "Doe seyde Pharao tot [2] sijne broederen: Wat is uwe hanteringe? ende sy seyden tot Pharao; [b] Uwe knechten [3] zijn schaepherders, soo wy, als onse vaders.",
-      "text2026": "Toen zei Farao tot zijn broers: Wat is uw hantering? En zij zeiden tot Farao: Uw knechten zijn schaapherders, zo wij als onze vaders.",
+      "text2026": "Toen zei Farao tot zijn broers: Wat is uw beroep? En zij zeiden tot Farao: Uw knechten zijn schaapherders, zo wij als onze vaders.",
       "marginNotes": [
         {
           "marker": "2",
@@ -368,7 +368,7 @@
           "morph": "HNcmpc/Sp1cp"
         }
       ],
-      "text2026_html": "Toen zei Farao tot zijn broers: Wat is uw hantering? En zij zeiden tot Farao: <span class=\"direct-speech\"><i>Uw knechten zijn schaapherders, zo wij als onze vaders.</i></span>",
+      "text2026_html": "Toen zei Farao tot zijn broers: Wat is uw beroep? En zij zeiden tot Farao: <span class=\"direct-speech\"><i>Uw knechten zijn schaapherders, zo wij als onze vaders.</i></span>",
       "textSV1888_html": "Toen zeide Farao tot<sup class=\"note-marker\" data-note=\"2\">2</sup> zijn broederen: Wat is uw hantering? En zij zeiden tot Farao:<sup class=\"note-marker\" data-note=\"b\">b</sup> Uw knechten<sup class=\"note-marker\" data-note=\"3\">3</sup> zijn schaapherders, zo wij als onze vaders.",
       "text1637_html": "Doe seyde Pharao tot <sup class=\"note-marker\" data-note=\"2\">2</sup> sijne broederen: Wat is uwe hanteringe? ende sy seyden tot Pharao; <sup class=\"note-marker\" data-note=\"b\">b</sup> Uwe knechten <sup class=\"note-marker\" data-note=\"3\">3</sup> zijn schaepherders, soo wy, als onse vaders.",
       "phraseDiff": [
@@ -381,6 +381,11 @@
           "old": "broederen:",
           "new": "broers:",
           "principe": "O22b"
+        },
+        {
+          "old": "hantering?",
+          "new": "beroep?",
+          "principe": "V976"
         }
       ]
     },
@@ -1126,7 +1131,7 @@
       "number": 9,
       "textSV1888": "En Jakob zeide tot Farao: De dagen der jaren mijner vreemdelingschappen zijn honderd en dertig jaren; weinig en kwaad zijn de dagen der jaren mijns levens geweest, en hebben niet bereikt de dagen van de jaren des levens mijner vaderen, in de dagen hunner vreemdelingschappen.",
       "text1637": "Ende Iacob seyde tot Pharao; [9] De dagen der jaren [c] mijner vreemdelinckschappen zijn hondert, ende dertich jaren: weynich ende [10] quaet zijn de dagen der jaren mijnes levens geweest, ende [11] en hebben niet bereyckt de dagen vande jaren des levens mijner vaderen inde dagen harer vreemdelinckschappen.",
-      "text2026": "En Jakob zei tot Farao: De dagen van de jaren van mijn vreemdelingschappen zijn honderd en dertig jaren; weinig en kwaad zijn de dagen van de jaren van mijn leven geweest, en hebben niet bereikt de dagen van de jaren van het leven van mijn vaderen, in de dagen van hun vreemdelingschappen.",
+      "text2026": "En Jakob zei tot Farao: De dagen van de jaren dat ik vreemdeling was zijn honderd en dertig jaren; weinig en kwaad zijn de dagen van de jaren van mijn leven geweest, en hebben niet bereikt de dagen van de jaren van het leven van mijn vaderen, in de dagen dat zij vreemdeling waren.",
       "marginNotes": [
         {
           "marker": "9",
@@ -1314,7 +1319,7 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "En Jakob zei tot Farao: <span class=\"direct-speech\"><i>De dagen van de jaren van mijn vreemdelingschappen zijn honderd en dertig jaren; weinig en kwaad zijn de dagen van de jaren van mijn leven geweest, en hebben niet bereikt de dagen van de jaren van het leven van mijn vaderen, in de dagen van hun vreemdelingschappen.</i></span>",
+      "text2026_html": "En Jakob zei tot Farao: <span class=\"direct-speech\"><i>De dagen van de jaren dat ik vreemdeling was zijn honderd en dertig jaren; weinig en kwaad zijn de dagen van de jaren van mijn leven geweest, en hebben niet bereikt de dagen van de jaren van het leven van mijn vaderen, in de dagen dat zij vreemdeling waren.</i></span>",
       "textSV1888_html": "En Jakob zeide tot Farao:<sup class=\"note-marker\" data-note=\"9\">9</sup> De dagen der jaren<sup class=\"note-marker\" data-note=\"c\">c</sup> mijner vreemdelingschappen zijn honderd en dertig jaren; weinig en<sup class=\"note-marker\" data-note=\"10\">10</sup> kwaad zijn de dagen der jaren mijns levens geweest, en<sup class=\"note-marker\" data-note=\"11\">11</sup> hebben niet bereikt de dagen van de jaren des levens mijner vaderen, in de dagen hunner vreemdelingschappen.",
       "text1637_html": "Ende Iacob seyde tot Pharao; <sup class=\"note-marker\" data-note=\"9\">9</sup> De dagen der jaren <sup class=\"note-marker\" data-note=\"c\">c</sup> mijner vreemdelinckschappen zijn hondert, ende dertich jaren: weynich ende <sup class=\"note-marker\" data-note=\"10\">10</sup> quaet zijn de dagen der jaren mijnes levens geweest, ende <sup class=\"note-marker\" data-note=\"11\">11</sup> en hebben niet bereyckt de dagen vande jaren des levens mijner vaderen inde dagen harer vreemdelinckschappen.",
       "phraseDiff": [
@@ -1329,9 +1334,9 @@
           "principe": "N2"
         },
         {
-          "old": "mijner",
-          "new": "van mijn",
-          "principe": "N7"
+          "old": "mijner vreemdelingschappen",
+          "new": "dat ik vreemdeling was",
+          "principe": "V981"
         },
         {
           "old": "der",
@@ -1349,9 +1354,9 @@
           "principe": "N3"
         },
         {
-          "old": "hunner",
-          "new": "van hun",
-          "principe": "N7"
+          "old": "hunner vreemdelingschappen.",
+          "new": "dat zij vreemdeling waren.",
+          "principe": "V981"
         }
       ]
     },
@@ -3159,7 +3164,7 @@
       "number": 23,
       "textSV1888": "Toen zeide Jozef tot het volk: Ziet, ik heb heden u en uw land gekocht voor Farao; ziet, daar is zaad voor u, opdat gij het land bezaait.",
       "text1637": "Doe seyde Ioseph tot het volck; Siet ick hebbe heden u, ende u lant gekocht voor Pharao: siet daer is zaet voor u, [30] op dat ghy het lant bezaeyt.",
-      "text2026": "Toen zei Jozef tot het volk: Ziet, ik heb heden u en uw land gekocht voor Farao; ziet, daar is zaad voor u, opdat u het land bezaait.",
+      "text2026": "Toen zei Jozef tot het volk: Ziet, ik heb vandaag u en uw land gekocht voor Farao; ziet, daar is zaad voor u, opdat u het land bezaait.",
       "marginNotes": [
         {
           "marker": "30",
@@ -3270,7 +3275,7 @@
           "morph": "HTd/Ncfsa"
         }
       ],
-      "text2026_html": "Toen zei Jozef tot het volk: <span class=\"direct-speech\"><i>Ziet, ik heb heden u en uw land gekocht voor Farao; ziet, daar is zaad voor u, opdat u het land bezaait.</i></span>",
+      "text2026_html": "Toen zei Jozef tot het volk: <span class=\"direct-speech\"><i>Ziet, ik heb vandaag u en uw land gekocht voor Farao; ziet, daar is zaad voor u, opdat u het land bezaait.</i></span>",
       "textSV1888_html": "Toen zeide Jozef tot het volk: Ziet, ik heb heden u en uw land gekocht voor Farao; ziet, daar is zaad voor u,<sup class=\"note-marker\" data-note=\"30\">30</sup> opdat gij het land bezaait.",
       "text1637_html": "Doe seyde Ioseph tot het volck; Siet ick hebbe heden u, ende u lant gekocht voor Pharao: siet daer is zaet voor u, <sup class=\"note-marker\" data-note=\"30\">30</sup> op dat ghy het lant bezaeyt.",
       "phraseDiff": [
@@ -3278,6 +3283,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         },
         {
           "old": "gij",

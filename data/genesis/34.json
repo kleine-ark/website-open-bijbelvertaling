@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En Dina, de dochter van Lea, die zij Jakob gebaard had, ging uit, om de dochteren van dat land te bezien.",
       "text1637": "ENde [a] Dina de dochter van Lea, die sy Iacob gebaert hadde, [1] ginck uyt [2] om de dochteren van dien lande te besien.",
-      "text2026": "En Dina, de dochter van Lea, die zij Jakob gebaard had, ging uit, om de dochters van dat land te bezien.",
+      "text2026": "En Dina, de dochter van Lea, die zij Jakob gebaard had, ging uit, om de dochters van dat land te bekijken.",
       "marginNotes": [
         {
           "marker": "a",
@@ -97,7 +97,7 @@
           "morph": "HTd/Ncbsa"
         }
       ],
-      "text2026_html": "En<sup class=\"note-marker\" data-note=\"a\">a</sup> Dina, de dochter van Lea, die zij Jakob gebaard had,<sup class=\"note-marker\" data-note=\"1\">1</sup> ging uit,<sup class=\"note-marker\" data-note=\"2\">2</sup> om de dochters van dat land te bezien.",
+      "text2026_html": "En<sup class=\"note-marker\" data-note=\"a\">a</sup> Dina, de dochter van Lea, die zij Jakob gebaard had,<sup class=\"note-marker\" data-note=\"1\">1</sup> ging uit,<sup class=\"note-marker\" data-note=\"2\">2</sup> om de dochters van dat land te bekijken.",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"a\">a</sup> Dina, de dochter van Lea, die zij Jakob gebaard had,<sup class=\"note-marker\" data-note=\"1\">1</sup> ging uit,<sup class=\"note-marker\" data-note=\"2\">2</sup> om de dochteren van dat land te bezien.",
       "text1637_html": "ENde <sup class=\"note-marker\" data-note=\"a\">a</sup> Dina de dochter van Lea, die sy Iacob gebaert hadde, <sup class=\"note-marker\" data-note=\"1\">1</sup> ginck uyt <sup class=\"note-marker\" data-note=\"2\">2</sup> om de dochteren van dien lande te besien.",
       "phraseDiff": [
@@ -105,6 +105,11 @@
           "old": "dochteren",
           "new": "dochters",
           "principe": "V569"
+        },
+        {
+          "old": "bezien.",
+          "new": "bekijken.",
+          "principe": "V967"
         }
       ]
     },
@@ -817,7 +822,7 @@
       "number": 8,
       "textSV1888": "Toen sprak Hemor met hen, zeggende: Mijns zoons Sichems ziel is verliefd op ulieder dochter; geeft hem haar toch tot een vrouw.",
       "text1637": "Doe sprack Hemor met hen, seggende: Mijnes soons Sichems ziele is verlieft op u lieder dochter: geeft se hem doch tot eene vrouwe.",
-      "text2026": "Toen sprak Hemor met hen, zeggende: van Mijn zoon Sichems ziel is verliefd op uw dochter; geeft hem haar toch tot een vrouw.",
+      "text2026": "Toen sprak Hemor met hen, zeggende: De ziel van mijn zoon Sichem is verliefd op uw dochter; geeft hem haar toch tot een vrouw.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -891,13 +896,18 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "Toen sprak Hemor met hen, zeggende: <span class=\"direct-speech\"><i>van Mijn zoon Sichems ziel is verliefd op uw dochter; geeft hem haar toch tot een vrouw.</i></span>",
+      "text2026_html": "Toen sprak Hemor met hen, zeggende: <span class=\"direct-speech\"><i>De ziel van mijn zoon Sichem is verliefd op uw dochter; geeft hem haar toch tot een vrouw.</i></span>",
       "text1637_html": "Doe sprack Hemor met hen, seggende: Mijnes soons Sichems ziele is verlieft op u lieder dochter: geeft se hem doch tot eene vrouwe.",
       "phraseDiff": [
         {
-          "old": "Mijns zoons",
-          "new": "van Mijn zoon",
-          "principe": "V213"
+          "old": "Mijns zoons Sichems",
+          "new": "De",
+          "principe": "N22"
+        },
+        {
+          "old": "",
+          "new": "van mijn zoon Sichem",
+          "principe": "N22"
         },
         {
           "old": "ulieder",
@@ -2164,7 +2174,7 @@
       "number": 20,
       "textSV1888": "Zo kwam Hemor en Sichem, zijn zoon, tot hunner stadspoort; en zij spraken tot de mannen hunner stad, zeggende:",
       "text1637": "So quam Hemor ende Sichem sijn sone [29] tot harer stadts poorte: ende sy spraken tot de mannen harer stadt, seggende:",
-      "text2026": "Zo kwam Hemor en Sichem, zijn zoon, tot van hun stadspoort; en zij spraken tot de mannen van hun stad, zeggende:",
+      "text2026": "Zo kwam Hemor en Sichem, zijn zoon, in hun stadspoort; en zij spraken tot de mannen van hun stad, zeggende:",
       "marginNotes": [
         {
           "marker": "29",
@@ -2262,14 +2272,14 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "Zo kwam Hemor en Sichem, zijn zoon,<sup class=\"note-marker\" data-note=\"29\">29</sup> tot van hun stadspoort; en zij spraken tot de mannen van hun stad, zeggende:",
+      "text2026_html": "Zo kwam Hemor en Sichem, zijn zoon,<sup class=\"note-marker\" data-note=\"29\">29</sup> in hun stadspoort; en zij spraken tot de mannen van hun stad, zeggende:",
       "textSV1888_html": "Zo kwam Hemor en Sichem, zijn zoon,<sup class=\"note-marker\" data-note=\"29\">29</sup> tot hunner stadspoort; en zij spraken tot de mannen hunner stad, zeggende:",
       "text1637_html": "So quam Hemor ende Sichem sijn sone <sup class=\"note-marker\" data-note=\"29\">29</sup> tot harer stadts poorte: ende sy spraken tot de mannen harer stadt, seggende:",
       "phraseDiff": [
         {
-          "old": "hunner",
-          "new": "van hun",
-          "principe": "N7"
+          "old": "tot hunner",
+          "new": "in hun",
+          "principe": "N22"
         },
         {
           "old": "hunner",
@@ -2663,7 +2673,7 @@
       "number": 24,
       "textSV1888": "En zij hoorden naar Hemor, en naar Sichem, zijn zoon, allen, die ter zijner stadspoort uitgingen; en zij werden besneden, al wat mannelijk was, allen, die ter zijner stadspoort uitgingen.",
       "text1637": "[33] Ende sy hoorden nae Hemor ende nae Sichem sijnen sone, alle die te sijner [34] stadts poorte uyt gingen: ende sy werden besneden, al wat manlick was, alle die te sijner stadts poorte uyt gingen.",
-      "text2026": "En zij hoorden naar Hemor, en naar Sichem, zijn zoon, alle, die ter van zijn stadspoort uitgingen; en zij werden besneden, al wat mannelijk was, alle, die ter van zijn stadspoort uitgingen.",
+      "text2026": "En zij hoorden naar Hemor, en naar Sichem, zijn zoon, allen, die door zijn stadspoort uitgingen; en zij werden besneden, al wat mannelijk was, allen, die door zijn stadspoort uitgingen.",
       "marginNotes": [
         {
           "marker": "33",
@@ -2785,29 +2795,19 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> En zij hoorden naar Hemor, en naar Sichem, zijn zoon, alle, die ter van<sup class=\"note-marker\" data-note=\"34\">34</sup> zijn stadspoort uitgingen; en zij werden besneden, al wat mannelijk was, alle, die ter van zijn stadspoort uitgingen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> En zij hoorden naar Hemor, en naar Sichem, zijn zoon, allen, die door<sup class=\"note-marker\" data-note=\"34\">34</sup> zijn stadspoort uitgingen; en zij werden besneden, al wat mannelijk was, allen, die door zijn stadspoort uitgingen.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> En zij hoorden naar Hemor, en naar Sichem, zijn zoon, allen, die ter<sup class=\"note-marker\" data-note=\"34\">34</sup> zijner stadspoort uitgingen; en zij werden besneden, al wat mannelijk was, allen, die ter zijner stadspoort uitgingen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"33\">33</sup> En<i>de</i> sy hoorden nae Hemor en<i>de</i> nae Sichem sijne<i>n</i> sone, alle die te sijner <sup class=\"note-marker\" data-note=\"34\">34</sup> stadts poorte uyt gingen: ende sy werden besneden, al wat manlick was, alle die te sijner stadts poorte uyt gingen.",
       "phraseDiff": [
         {
-          "old": "allen,",
-          "new": "alle,",
-          "principe": null
+          "old": "ter zijner",
+          "new": "door zijn",
+          "principe": "N22"
         },
         {
-          "old": "zijner",
-          "new": "van zijn",
-          "principe": "N7"
-        },
-        {
-          "old": "allen,",
-          "new": "alle,",
-          "principe": null
-        },
-        {
-          "old": "zijner",
-          "new": "van zijn",
-          "principe": "N7"
+          "old": "ter zijner",
+          "new": "door zijn",
+          "principe": "N22"
         }
       ]
     },
@@ -3256,7 +3256,7 @@
       "number": 28,
       "textSV1888": "Hun schapen, en hun runderen, en hun ezelen, en hetgeen dat in de stad, en hetgeen dat in het veld was, namen zij.",
       "text1637": "Hare schapen, ende hare runderen, ende hare eselen, ende 'tgene, dat inde stadt, ende 'tgene dat in het velt was, namen sy.",
-      "text2026": "Hun schapen, en hun runderen, en hun ezelen, en wat dat in de stad, en wat dat in het veld was, namen zij.",
+      "text2026": "Hun schapen, en hun runderen, en hun ezels, en wat dat in de stad, en wat dat in het veld was, namen zij.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3325,9 +3325,14 @@
           "morph": "HVqp3cp"
         }
       ],
-      "text2026_html": "Hun schapen, en hun runderen, en hun ezelen, en wat dat in de stad, en wat dat in het veld was, namen zij.",
+      "text2026_html": "Hun schapen, en hun runderen, en hun ezels, en wat dat in de stad, en wat dat in het veld was, namen zij.",
       "text1637_html": "Hare schapen, ende hare runderen, ende hare eselen, ende 'tgene, dat inde stadt, ende 'tgene dat in het velt was, namen sy.",
       "phraseDiff": [
+        {
+          "old": "ezelen,",
+          "new": "ezels,",
+          "principe": "V974"
+        },
         {
           "old": "hetgeen",
           "new": "wat",
@@ -3437,7 +3442,7 @@
       "number": 30,
       "textSV1888": "Toen zeide Jakob tot Simeon en tot Levi: Gij hebt mij beroerd, mits mij stinkende te maken onder de inwoners dezes lands, onder de Kanaänieten, en onder de Ferezieten; en ik ben weinig volks in getal; zo zij zich tegen mij verzamelen, zo zullen zij mij slaan, en ik zal verdelgd worden, ik en mijn huis.",
       "text1637": "[41] Doe seyde Iacob tot Simeon ende tot Levi; Ghy hebt [42] my beroert, mits [43] my stinckende te maken onder de [44] inwoonders deses lants, onder de [45] Canaaniten, ende onder de Pheresiten: ende ick ben [46] weynich volcx in getale; so sy hen tegens my versamelen, so sullen sy my slaen, ende ick sal verdelgt worden, ick, ende mijn huys.",
-      "text2026": "Toen zei Jakob tot Simeon en tot Levi: U hebt mij beroerd, mits mij stinkende te maken onder de inwoners van deze land, onder de Kanaänieten, en onder de Ferezieten; en ik ben weinig volks in getal; zo zij zich tegen mij verzamelen, zo zullen zij mij slaan, en ik zal vernietigd worden, ik en mijn huis.",
+      "text2026": "Toen zei Jakob tot Simeon en tot Levi: U hebt mij in het ongeluk gestort, mits mij in kwade reuk te brengen onder de inwoners van dit land, onder de Kanaänieten, en onder de Ferezieten; en ik ben weinig volk in getal; zo zij zich tegen mij verzamelen, zo zullen zij mij slaan, en ik zal vernietigd worden, ik en mijn huis.",
       "marginNotes": [
         {
           "marker": "41",
@@ -3710,7 +3715,7 @@
           "morph": "HC/Ncmsc/Sp1cs"
         }
       ],
-      "text2026_html": "Toen zei Jakob tot Simeon en tot Levi: <span class=\"direct-speech\"><i>U hebt mij beroerd, mits mij stinkende te maken onder de inwoners van deze land, onder de Kanaänieten, en onder de Ferezieten; en ik ben weinig volks in getal; zo zij zich tegen mij verzamelen, zo zullen zij mij slaan, en ik zal vernietigd worden, ik en mijn huis.</i></span>",
+      "text2026_html": "Toen zei Jakob tot Simeon en tot Levi: <span class=\"direct-speech\"><i>U hebt mij in het ongeluk gestort, mits mij in kwade reuk te brengen onder de inwoners van dit land, onder de Kanaänieten, en onder de Ferezieten; en ik ben weinig volk in getal; zo zij zich tegen mij verzamelen, zo zullen zij mij slaan, en ik zal vernietigd worden, ik en mijn huis.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"41\">41</sup> Toen zeide Jakob tot Simeon en tot Levi: Gij hebt<sup class=\"note-marker\" data-note=\"42\">42</sup> mij beroerd, mits<sup class=\"note-marker\" data-note=\"43\">43</sup> mij stinkende te maken onder de<sup class=\"note-marker\" data-note=\"44\">44</sup> inwoners dezes lands, onder de<sup class=\"note-marker\" data-note=\"45\">45</sup> Kanaänieten, en onder de Ferezieten; en ik ben<sup class=\"note-marker\" data-note=\"46\">46</sup> weinig volks in getal; zo zij zich tegen mij verzamelen, zo zullen zij mij slaan, en ik zal verdelgd worden, ik en mijn huis.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"41\">41</sup> Doe seyde Iacob tot Simeon ende tot Levi; Ghy hebt <sup class=\"note-marker\" data-note=\"42\">42</sup> my beroert, mits <sup class=\"note-marker\" data-note=\"43\">43</sup> my stinckende te maken onder de <sup class=\"note-marker\" data-note=\"44\">44</sup> inwoonders deses lants, onder de <sup class=\"note-marker\" data-note=\"45\">45</sup> Canaaniten, ende onder de Pheresiten: ende ick ben <sup class=\"note-marker\" data-note=\"46\">46</sup> weynich volcx in getale; so sy hen tegens my versamelen, so sullen sy my slaen, ende ick sal verdelgt worden, ick, ende mijn huys.",
       "phraseDiff": [
@@ -3725,9 +3730,29 @@
           "principe": "A1"
         },
         {
+          "old": "beroerd,",
+          "new": "in het ongeluk gestort,",
+          "principe": "V985"
+        },
+        {
+          "old": "stinkende",
+          "new": "in kwade reuk",
+          "principe": "V984"
+        },
+        {
+          "old": "maken",
+          "new": "brengen",
+          "principe": "V984"
+        },
+        {
           "old": "dezes lands,",
-          "new": "van deze land,",
-          "principe": "N5"
+          "new": "van dit land,",
+          "principe": "N22"
+        },
+        {
+          "old": "volks",
+          "new": "volk",
+          "principe": "V982"
         },
         {
           "old": "verdelgd",

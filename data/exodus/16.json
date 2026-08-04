@@ -3096,7 +3096,7 @@
       "number": 25,
       "textSV1888": "Toen zeide Mozes: Eet dat heden, want het is heden de sabbat des HEEREN; gij zult het heden op het veld niet vinden.",
       "text1637": "Doe seyde Mose, Etet dat [40] heden, want [41] het is heden de Sabbath des HEEREN: ghy en sult het heden op den velde niet vinden.",
-      "text2026": "Toen zei Mozes: Eet dat heden, want het is heden de sabbat van JAHWEH; u zult het heden op het veld niet vinden.",
+      "text2026": "Toen zei Mozes: Eet dat vandaag, want het is vandaag de sabbat van JAHWEH; u zult het vandaag op het veld niet vinden.",
       "marginNotes": [
         {
           "marker": "40",
@@ -3175,7 +3175,7 @@
           "morph": "HRd/Ncmsa"
         }
       ],
-      "text2026_html": "Toen zei Mozes: <span class=\"direct-speech\"><i>Eet dat heden, want het is heden de sabbat van JAHWEH; u zult het heden op het veld niet vinden.</i></span>",
+      "text2026_html": "Toen zei Mozes: <span class=\"direct-speech\"><i>Eet dat vandaag, want het is vandaag de sabbat van JAHWEH; u zult het vandaag op het veld niet vinden.</i></span>",
       "textSV1888_html": "Toen zeide Mozes: Eet dat<sup class=\"note-marker\" data-note=\"40\">40</sup> heden, want<sup class=\"note-marker\" data-note=\"41\">41</sup> het is heden de sabbat des HEEREN; gij zult het heden op het veld niet vinden.",
       "text1637_html": "Doe seyde Mose, Etet dat <sup class=\"note-marker\" data-note=\"40\">40</sup> heden, want <sup class=\"note-marker\" data-note=\"41\">41</sup> het is heden de Sabbath des HEEREN: ghy en sult het heden op den velde niet vinden.",
       "phraseDiff": [
@@ -3185,9 +3185,24 @@
           "principe": "W1"
         },
         {
+          "old": "heden,",
+          "new": "vandaag,",
+          "principe": "V986"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
+        },
+        {
           "old": "des HEEREN; gij",
           "new": "van JAHWEH; u",
           "principe": "N3"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         }
       ]
     },

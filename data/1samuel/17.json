@@ -915,7 +915,7 @@
       "number": 10,
       "textSV1888": "Verder zeide de Filistijn: Ik heb heden de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij te zamen strijden!",
       "text1637": "[11] Voorder seyde de Philistijn, [12] Ick hebbe heden de slachordens Israëls gehoont, [seggende], Geeft my eenen man, dat wy t’ samen strijden.",
-      "text2026": "Verder zei de Filistijn: Ik heb heden de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij samen strijden!",
+      "text2026": "Verder zei de Filistijn: Ik heb vandaag de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij samen strijden!",
       "marginNotes": [
         {
           "marker": "11",
@@ -1004,7 +1004,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Verder zei de Filistijn: <span class=\"direct-speech\"><i>Ik heb heden de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij samen strijden!</i></span>",
+      "text2026_html": "Verder zei de Filistijn: <span class=\"direct-speech\"><i>Ik heb vandaag de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij samen strijden!</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"11\">11</sup> Verder zeide de Filistijn:<sup class=\"note-marker\" data-note=\"12\">12</sup> Ik heb heden de slagorden van Israël gehoond, zeggende: Geeft mij een man, dat wij te zamen strijden!",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"11\">11</sup> Voorder seyde de Philistijn, <sup class=\"note-marker\" data-note=\"12\">12</sup> Ick hebbe heden de slachordens Israëls gehoont, [seggende], Geeft my eenen man, dat wy t’ samen strijden.",
       "phraseDiff": [
@@ -1012,6 +1012,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         },
         {
           "old": "te zamen",
@@ -1434,7 +1439,7 @@
       "number": 15,
       "textSV1888": "Doch David ging henen, en kwam weder van Saul, om zijns vaders schapen te weiden te Bethlehem.",
       "text1637": "[16] Doch David ginck henen, ende quam weder [17] van Saul, om sijnes vaders [a] schapen te weyden te Bethlehem.",
-      "text2026": "Maar David ging heen, en kwam weer van Saul, om van zijn vader schapen te weiden te Bethlehem.",
+      "text2026": "Maar David ging heen, en kwam weer van Saul, om de schapen van zijn vader te weiden te Bethlehem.",
       "marginNotes": [
         {
           "marker": "16",
@@ -1515,7 +1520,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup> Maar David ging heen, en kwam weer<sup class=\"note-marker\" data-note=\"17\">17</sup> van Saul, om van zijn vader<sup class=\"note-marker\" data-note=\"a\">a</sup> schapen te weiden te Bethlehem.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup> Maar David ging heen, en kwam weer<sup class=\"note-marker\" data-note=\"17\">17</sup> van Saul, om de schapen van zijn vader<sup class=\"note-marker\" data-note=\"a\">a</sup> te weiden te Bethlehem.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup> Doch David ging henen, en kwam weder<sup class=\"note-marker\" data-note=\"17\">17</sup> van Saul, om zijns vaders<sup class=\"note-marker\" data-note=\"a\">a</sup> schapen te weiden te Bethlehem.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup> Doch David ginck henen, ende quam weder <sup class=\"note-marker\" data-note=\"17\">17</sup> van Saul, om sijnes vaders <sup class=\"note-marker\" data-note=\"a\">a</sup> schapen te weyden te Bethlehem.",
       "phraseDiff": [
@@ -1536,8 +1541,13 @@
         },
         {
           "old": "zijns vaders",
+          "new": "de",
+          "principe": "N22"
+        },
+        {
+          "old": "",
           "new": "van zijn vader",
-          "principe": "V201"
+          "principe": "N22"
         }
       ]
     },

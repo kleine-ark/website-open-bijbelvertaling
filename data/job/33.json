@@ -995,7 +995,7 @@
       "number": 15,
       "textSV1888": "In den droom, door het gezicht des nachts, als een diepe slaap op de lieden valt, in de sluimering op het leger;",
       "text1637": "[27] In den droom, [door] het gesichte des nachts, als een diepen slaep op de lieden valt; in de sluymeringe op den leger:",
-      "text2026": "In de droom, door het visioen in de nacht, als een diepe slaap op de mensen valt, in de sluimering op het leger;",
+      "text2026": "In de droom, door het visioen in de nacht, als een diepe slaap op de mensen valt, in de sluimering op het bed;",
       "marginNotes": [
         {
           "marker": "26",
@@ -1057,7 +1057,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>In de droom, door het visioen in de nacht, als een diepe slaap op de mensen valt, in de sluimering op het leger;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>In de droom, door het visioen in de nacht, als een diepe slaap op de mensen valt, in de sluimering op het bed;</i></span>",
       "textSV1888_html": "In den droom, door het gezicht des nachts, als een diepe slaap op de lieden valt, in de sluimering op het leger;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"27\">27</sup> In den droom, [door] het gesichte des nachts, als een diepen slaep op de lieden valt; in de sluymeringe op den leger:",
       "phraseDiff": [
@@ -1075,6 +1075,11 @@
           "old": "lieden",
           "new": "mensen",
           "principe": "V10"
+        },
+        {
+          "old": "leger;",
+          "new": "bed;",
+          "principe": "V989"
         }
       ]
     },
@@ -1294,7 +1299,7 @@
       "number": 19,
       "textSV1888": "Ook wordt hij gestraft met smart op zijn leger, en de sterke menigte zijner beenderen;",
       "text1637": "[35] Oock wort hy gestraft met smerte op sijn leger: ende de [36] stercke menichte sijner beenderen:",
-      "text2026": "Ook wordt hij gestraft met smart op zijn leger, en de sterke menigte van zijn beenderen;",
+      "text2026": "Ook wordt hij gestraft met smart op zijn bed, en de sterke menigte van zijn beenderen;",
       "marginNotes": [
         {
           "marker": "34",
@@ -1348,10 +1353,15 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"35\">35</sup><span class=\"direct-speech\"><i> Ook wordt hij gestraft met smart op zijn leger, en de sterke menigte van zijn beenderen;</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"35\">35</sup><span class=\"direct-speech\"><i> Ook wordt hij gestraft met smart op zijn bed, en de sterke menigte van zijn beenderen;</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"35\">35</sup> Ook wordt hij gestraft met smart op zijn leger, en de sterke menigte zijner beenderen;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"35\">35</sup> Oock wort hy gestraft met smerte op sijn leger: ende de <sup class=\"note-marker\" data-note=\"36\">36</sup> stercke menichte sijner beenderen:",
       "phraseDiff": [
+        {
+          "old": "leger,",
+          "new": "bed,",
+          "principe": "V989"
+        },
         {
           "old": "zijner",
           "new": "van zijn",

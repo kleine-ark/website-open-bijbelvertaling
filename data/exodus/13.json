@@ -330,7 +330,7 @@
       "number": 4,
       "textSV1888": "Heden gaat gijlieden uit, in de maand Abib.",
       "text1637": "[b] Heden gaet ghy-lieden uyt [6] in de maent Abib.",
-      "text2026": "Heden gaat u uit, in de maand Abib.",
+      "text2026": "Vandaag gaat u uit, in de maand Abib.",
       "marginNotes": [
         {
           "marker": "b",
@@ -374,10 +374,15 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup><span class=\"direct-speech\"><i> Heden gaat u uit,<sup class=\"note-marker\" data-note=\"6\">6</sup> in de maand Abib.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup><span class=\"direct-speech\"><i> Vandaag gaat u uit,<sup class=\"note-marker\" data-note=\"6\">6</sup> in de maand Abib.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Heden gaat gijlieden uit,<sup class=\"note-marker\" data-note=\"6\">6</sup> in de maand Abib.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Heden gaet ghy-lieden uyt <sup class=\"note-marker\" data-note=\"6\">6</sup> in de maent Abib.",
       "phraseDiff": [
+        {
+          "old": "Heden",
+          "new": "Vandaag",
+          "principe": "V986"
+        },
         {
           "old": "gijlieden",
           "new": "u",

@@ -2957,7 +2957,7 @@
       "number": 28,
       "textSV1888": "Verder zeide de koning tot haar: Wat is u? En zij zeide: Deze vrouw heeft tot mij gezegd: Geef uw zoon, dat wij hem heden eten, en morgen zullen wij mijn zoon eten.",
       "text1637": "Voorder seyde de Coninck tot haer; Wat is u? ende sy seyde: Dese vrouwe heeft tot my geseyt; Geeft uwen sone, dat wy hem heden eten, ende morgen sullen wy mijnen sone eten.",
-      "text2026": "Verder zei de koning tot haar: Wat is u? En zij zei: Deze vrouw heeft tot mij gezegd: Geef uw zoon, dat wij hem heden eten, en morgen zullen wij mijn zoon eten.",
+      "text2026": "Verder zei de koning tot haar: Wat is u? En zij zei: Deze vrouw heeft tot mij gezegd: Geef uw zoon, dat wij hem vandaag eten, en morgen zullen wij mijn zoon eten.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3056,7 +3056,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Verder zei de koning tot haar: Wat is u? En zij zei: <span class=\"direct-speech\"><i>Deze vrouw heeft tot mij gezegd: Geef uw zoon, dat wij hem heden eten, en morgen zullen wij mijn zoon eten.</i></span>",
+      "text2026_html": "Verder zei de koning tot haar: Wat is u? En zij zei: <span class=\"direct-speech\"><i>Deze vrouw heeft tot mij gezegd: Geef uw zoon, dat wij hem vandaag eten, en morgen zullen wij mijn zoon eten.</i></span>",
       "text1637_html": "Voorder seyde de Coninck tot haer; Wat is u? ende sy seyde: Dese vrouwe heeft tot my geseyt; Geeft uwen sone, dat wy hem heden eten, ende morgen sullen wy mijnen sone eten.",
       "phraseDiff": [
         {
@@ -3068,6 +3068,11 @@
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         }
       ]
     },
@@ -3336,7 +3341,7 @@
       "number": 31,
       "textSV1888": "En hij zeide: Zo doe mij God, en doe zo daartoe, indien het hoofd van Elisa den zoon van Safat, heden op hem zal blijven staan!",
       "text1637": "Ende hy seyde; [c] [34] Soo doe my Godt, ende doe soo daer toe, [35] indien het hooft Elisa des soons Saphats heden op hem sal blijven staen!",
-      "text2026": "En hij zei: Zo doe mij God, en doe zo daartoe, als het hoofd van Elisa de zoon van Safat, heden op hem zal blijven staan!",
+      "text2026": "En hij zei: Zo doe mij God, en doe zo daartoe, als het hoofd van Elisa de zoon van Safat, vandaag op hem zal blijven staan!",
       "marginNotes": [
         {
           "marker": "c",
@@ -3437,7 +3442,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>Zo doe mij God, en doe zo daartoe, als het hoofd van Elisa de zoon van Safat, heden op hem zal blijven staan!</i></span>",
+      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>Zo doe mij God, en doe zo daartoe, als het hoofd van Elisa de zoon van Safat, vandaag op hem zal blijven staan!</i></span>",
       "textSV1888_html": "En hij zeide:<sup class=\"note-marker\" data-note=\"34\">34</sup><sup class=\"note-marker\" data-note=\"c\">c</sup> Zo doe mij God, en doe zo daartoe,<sup class=\"note-marker\" data-note=\"35\">35</sup> indien het hoofd van Elisa den zoon van Safat, heden op hem zal blijven staan!",
       "text1637_html": "Ende hy seyde; <sup class=\"note-marker\" data-note=\"c\">c</sup> <sup class=\"note-marker\" data-note=\"34\">34</sup> Soo doe my Godt, ende doe soo daer toe, <sup class=\"note-marker\" data-note=\"35\">35</sup> indien het hooft Elisa des soons Saphats heden op hem sal blijven staen!",
       "phraseDiff": [
@@ -3455,6 +3460,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         }
       ]
     },

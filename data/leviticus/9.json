@@ -314,7 +314,7 @@
       "number": 4,
       "textSV1888": "Ook een os en ram ten dankoffer, om voor het aangezicht des HEEREN te offeren; en spijsoffer met olie gemengd; want heden zal de HEERE u verschijnen.",
       "text1637": "Oock eenen os, ende ram ten danckoffer, om voor het aengesicht des HEEREN te offeren: ende spijs-offer met olie gemengt; want heden [7] sal de HEERE u verschijnen.",
-      "text2026": "Ook een os en ram ten dankoffer, om voor het aangezicht van JAHWEH te offeren; en spijsoffer met olie gemengd; want heden zal JAHWEH u verschijnen.",
+      "text2026": "Ook een os en ram ten dankoffer, om voor het aangezicht van JAHWEH te offeren; en spijsoffer met olie gemengd; want vandaag zal JAHWEH u verschijnen.",
       "marginNotes": [
         {
           "marker": "7",
@@ -396,7 +396,7 @@
           "morph": "HR/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Ook een os en ram ten dankoffer, om voor het aangezicht van JAHWEH te offeren; en spijsoffer met olie gemengd; want heden<sup class=\"note-marker\" data-note=\"7\">7</sup> zal JAHWEH u verschijnen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Ook een os en ram ten dankoffer, om voor het aangezicht van JAHWEH te offeren; en spijsoffer met olie gemengd; want vandaag<sup class=\"note-marker\" data-note=\"7\">7</sup> zal JAHWEH u verschijnen.</i></span>",
       "textSV1888_html": "Ook een os en ram ten dankoffer, om voor het aangezicht des HEEREN te offeren; en spijsoffer met olie gemengd; want heden<sup class=\"note-marker\" data-note=\"7\">7</sup> zal de HEERE u verschijnen.",
       "text1637_html": "Oock eenen os, ende ram ten danckoffer, om voor het aengesicht des HEEREN te offeren: ende spijs-offer met olie gemengt; want heden <sup class=\"note-marker\" data-note=\"7\">7</sup> sal de HEERE u verschijnen.",
       "phraseDiff": [
@@ -404,6 +404,11 @@
           "old": "des HEEREN",
           "new": "van JAHWEH",
           "principe": "N3"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         },
         {
           "old": "de HEERE",
@@ -1336,7 +1341,7 @@
       "number": 14,
       "textSV1888": "En hij wies het ingewand en de schenkelen; en hij stak ze aan op het brandoffer, op het altaar.",
       "text1637": "Ende hy wiesch het ingewant, ende de schenckelen: ende hy stackse aen op het brand-offer, op den altaer.",
-      "text2026": "En hij wies het binnenste en de schenkelen; en hij stak ze aan op het brandoffer, op het altaar.",
+      "text2026": "En hij waste het binnenste en de schenkelen; en hij stak ze aan op het brandoffer, op het altaar.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1385,9 +1390,14 @@
           "morph": "HTd/Ncmsa/Sd"
         }
       ],
-      "text2026_html": "En hij wies het binnenste en de schenkelen; en hij stak ze aan op het brandoffer, op het altaar.",
+      "text2026_html": "En hij waste het binnenste en de schenkelen; en hij stak ze aan op het brandoffer, op het altaar.",
       "text1637_html": "Ende hy wiesch het ingewant, ende de schenckelen: ende hy stackse aen op het brand-offer, op den altaer.",
       "phraseDiff": [
+        {
+          "old": "wies",
+          "new": "waste",
+          "principe": "V973"
+        },
         {
           "old": "ingewand",
           "new": "binnenste",

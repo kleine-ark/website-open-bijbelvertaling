@@ -2307,7 +2307,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Zo die tot van zijn naasten huisvrouw ingaat; al wie haar aanroert, zal niet onschuldig gehouden worden.",
+      "text2026": "Zo die tot de huisvrouw van zijn naaste ingaat; al wie haar aanroert, zal niet onschuldig gehouden worden.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -2365,7 +2365,7 @@
       "hsv": "Zo ook wie naar de vrouw van zijn naaste gaat:al wie haar aanraakt, zal niet voor onschuldig gehouden worden.",
       "nbg51": "Aldus hij, die tot de vrouw van zijn naaste komt;",
       "textSV1888": "Alzo die tot zijns naasten huisvrouw ingaat; al wie haar aanroert, zal niet onschuldig gehouden worden.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"55\">55</sup> Zo die<sup class=\"note-marker\" data-note=\"56\">56</sup> tot van zijn naasten huisvrouw ingaat; al wie<sup class=\"note-marker\" data-note=\"57\">57</sup> haar aanroert, zal niet<sup class=\"note-marker\" data-note=\"58\">58</sup> onschuldig gehouden worden.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"55\">55</sup> Zo die<sup class=\"note-marker\" data-note=\"56\">56</sup> tot de huisvrouw van zijn naaste ingaat; al wie<sup class=\"note-marker\" data-note=\"57\">57</sup> haar aanroert, zal niet<sup class=\"note-marker\" data-note=\"58\">58</sup> onschuldig gehouden worden.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"55\">55</sup> Alzo die<sup class=\"note-marker\" data-note=\"56\">56</sup> tot zijns naasten huisvrouw ingaat; al wie<sup class=\"note-marker\" data-note=\"57\">57</sup> haar aanroert, zal niet<sup class=\"note-marker\" data-note=\"58\">58</sup> onschuldig gehouden worden.",
       "phraseDiff": [
         {
@@ -2374,9 +2374,14 @@
           "principe": "V42"
         },
         {
-          "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
+          "old": "zijns naasten",
+          "new": "de",
+          "principe": "N22"
+        },
+        {
+          "old": "",
+          "new": "van zijn naaste",
+          "principe": "N22"
         }
       ]
     },

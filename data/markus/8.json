@@ -2283,7 +2283,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En gedenkt u niet, toen Ik de vijf broden brak onder de vijf duizend mannen, hoeveel volle korven met stukken brood u opnam? Zij zeggen Hem: Twaalf.",
+      "text2026": "En gedenkt u niet, toen Ik de vijf broden brak onder de vijf duizend mannen, hoeveel volle manden met stukken brood u opnam? Zij zeggen Hem: Twaalf.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -2386,7 +2386,7 @@
       ],
       "hsv": "En herinnert u zich niet, ⓓtoen Ik de vijf broden brak voor de vijfduizend mannen, hoeveel volle manden met stukken brood u opraapte? Zij zeiden tegen Hem: Twaalf.",
       "nbg51": "En herinnert gij u niet, toen Ik de vijf broden brak voor de vijfduizend, hoeveel manden vol brokken gij hebt opgeraapt? En zij zeiden tot Hem: Twaalf.",
-      "text2026_html": "<span class=\"god-speaks\"><i>En gedenkt u niet,<sup class=\"note-marker\" data-note=\"g\">g</sup> toen Ik de vijf broden brak onder de vijf duizend mannen, hoeveel volle korven met stukken brood u opnam? Zij zeggen Hem: Twaalf.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En gedenkt u niet,<sup class=\"note-marker\" data-note=\"g\">g</sup> toen Ik de vijf broden brak onder de vijf duizend mannen, hoeveel volle manden met stukken brood u opnam? Zij zeggen Hem: Twaalf.</i></span>",
       "textSV1888": "En gedenkt gij niet, toen Ik de vijf broden brak onder de vijf duizend mannen, hoeveel volle korven met brokken gij opnaamt? Zij zeggen Hem: Twaalf.",
       "textSV1888_html": "En gedenkt gij niet,<sup class=\"note-marker\" data-note=\"g\">g</sup> toen Ik de vijf broden brak onder de vijf duizend mannen, hoeveel volle korven met brokken gij opnaamt? Zij zeggen Hem: Twaalf.",
       "phraseDiff": [
@@ -2394,6 +2394,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "korven",
+          "new": "manden",
+          "principe": "V979"
         },
         {
           "old": "brokken gij opnaamt?",
@@ -4829,7 +4834,7 @@
       "text1637_html": "Want wat soude het den mensche baten, soo hy de geheele werelt wonne, ende sijner ziele schade leede.",
       "marginNotes": [],
       "textHerzien": "",
-      "text2026": "Want wat zou het de mens baten zo hij de hele wereld won, en van zijn ziele schade leed?",
+      "text2026": "Want wat zou het de mens baten zo hij de hele wereld won, en schade leed aan zijn ziel?",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -4914,7 +4919,7 @@
       ],
       "hsv": "Want wat zal het een mens baten als hij heel de wereld wint en aan zijn ziel schade lijdt?",
       "nbg51": "Want wat baat het een mens de gehele wereld te winnen en aan zijn ziel schade te lijden?",
-      "text2026_html": "<span class=\"god-speaks\"><i>Want wat zou het de mens baten zo hij de hele wereld won, en van zijn ziele schade leed?</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Want wat zou het de mens baten zo hij de hele wereld won, en schade leed aan zijn ziel?</i></span>",
       "textSV1888": "Want wat zou het den mens baten zo hij de gehele wereld won, en zijner ziele schade leed?",
       "phraseDiff": [
         {
@@ -4928,9 +4933,14 @@
           "principe": "V391"
         },
         {
-          "old": "zijner",
-          "new": "van zijn",
-          "principe": "N7"
+          "old": "zijner ziele",
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "leed?",
+          "new": "leed aan zijn ziel?",
+          "principe": "N22"
         }
       ]
     },

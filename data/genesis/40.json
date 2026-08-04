@@ -752,7 +752,7 @@
       "number": 7,
       "textSV1888": "Toen vraagde hij de hovelingen van Farao, die bij hem waren in hechtenis van het huis zijns heren, zeggende: Waarom zijn uw aangezichten heden kwalijk gesteld?",
       "text1637": "Doe vraegde hy de hovelingen van Pharao die by hem waren in [10] hechtenisse van het huys sijnes heeren, seggende; Waerom zijn uwe aengesichten heden [11] qualick gestelt?",
-      "text2026": "Toen vroeg hij de hovelingen van Farao, die bij hem waren in hechtenis van het huis van zijn heren, zeggende: Waarom zijn uw aangezichten heden kwalijk gesteld?",
+      "text2026": "Toen vroeg hij de hovelingen van Farao, die bij hem waren in hechtenis van het huis van zijn heer, zeggende: Waarom zijn uw gezichten vandaag treurig?",
       "marginNotes": [
         {
           "marker": "10",
@@ -893,7 +893,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "Toen vroeg hij de hovelingen van Farao, die bij hem waren in hechtenis van het huis van zijn heren, zeggende: <span class=\"direct-speech\"><i>Waarom zijn uw aangezichten heden kwalijk gesteld?</i></span>",
+      "text2026_html": "Toen vroeg hij de hovelingen van Farao, die bij hem waren in hechtenis van het huis van zijn heer, zeggende: <span class=\"direct-speech\"><i>Waarom zijn uw gezichten vandaag treurig?</i></span>",
       "textSV1888_html": "Toen vraagde hij de hovelingen van Farao, die bij hem waren in<sup class=\"note-marker\" data-note=\"10\">10</sup> hechtenis van het huis zijns heren, zeggende: Waarom zijn uw aangezichten heden<sup class=\"note-marker\" data-note=\"11\">11</sup> kwalijk gesteld?",
       "text1637_html": "Doe vraegde hy de hovelingen van Pharao die by hem waren in <sup class=\"note-marker\" data-note=\"10\">10</sup> hechtenisse van het huys sijnes heeren, seggende; Waerom zijn uwe aengesichten heden <sup class=\"note-marker\" data-note=\"11\">11</sup> qualick gestelt?",
       "phraseDiff": [
@@ -903,9 +903,14 @@
           "principe": null
         },
         {
-          "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
+          "old": "zijns heren,",
+          "new": "van zijn heer,",
+          "principe": "N23"
+        },
+        {
+          "old": "aangezichten heden kwalijk gesteld?",
+          "new": "gezichten vandaag treurig?",
+          "principe": "V983"
         }
       ]
     },
@@ -1696,7 +1701,7 @@
       "number": 14,
       "textSV1888": "Doch gedenk mijner bij uzelven, wanneer het u wel gaan zal, en doe toch weldadigheid aan mij, en doe van mij melding bij Farao, en maak, dat ik uit dit huis kome.",
       "text1637": "Doch gedenckt mijner [20] by u selven, wanneer het u wel gaen sal, ende doet doch weldadicheyt aen my, ende doet mijner meldinge by Pharao, ende maeckt dat ick uyt dit huys kome.",
-      "text2026": "Maar gedenk van mijn bij uzelf, wanneer het u wel gaan zal, en doe toch goedertierenheid aan mij, en doe van mij melding bij Farao, en maak, dat ik uit dit huis kome.",
+      "text2026": "Maar gedenk aan mij bij uzelf, wanneer het u wel gaan zal, en doe toch goedertierenheid aan mij, en doe van mij melding bij Farao, en maak, dat ik uit dit huis kome.",
       "marginNotes": [
         {
           "marker": "20",
@@ -1798,7 +1803,7 @@
           "morph": "HTd/Pdxms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar gedenk<sup class=\"note-marker\" data-note=\"20\">20</sup> van mijn bij uzelf, wanneer het u wel gaan zal, en doe toch goedertierenheid aan mij, en doe van mij melding bij Farao, en maak, dat ik uit dit huis kome.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar gedenk<sup class=\"note-marker\" data-note=\"20\">20</sup> aan mij bij uzelf, wanneer het u wel gaan zal, en doe toch goedertierenheid aan mij, en doe van mij melding bij Farao, en maak, dat ik uit dit huis kome.</i></span>",
       "textSV1888_html": "Doch gedenk mijner<sup class=\"note-marker\" data-note=\"20\">20</sup> bij uzelven, wanneer het u wel gaan zal, en doe toch weldadigheid aan mij, en doe van mij melding bij Farao, en maak, dat ik uit dit huis kome.",
       "text1637_html": "Doch gedenckt mijner <sup class=\"note-marker\" data-note=\"20\">20</sup> by u selven, wanneer het u wel gaen sal, ende doet doch weldadicheyt aen my, ende doet mijner meldinge by Pharao, ende maeckt dat ick uyt dit huys kome.",
       "phraseDiff": [
@@ -1809,13 +1814,13 @@
         },
         {
           "old": "mijner",
-          "new": "van mijn",
-          "principe": "N7"
+          "new": "aan mij",
+          "principe": "N24"
         },
         {
           "old": "uzelven,",
           "new": "uzelf,",
-          "principe": null
+          "principe": "N24"
         },
         {
           "old": "weldadigheid",
@@ -1828,7 +1833,7 @@
       "number": 15,
       "textSV1888": "Want ik ben diefelijk ontstolen uit het land der Hebreën; en ook heb ik hier niets gedaan, dat zij mij in dezen kuil gezet hebben.",
       "text1637": "Want [21] ick ben dieflick ontstolen uyt der [22] Hebreen lant: ende oock en hebbe ick hier niets gedaen, dat sy my in desen kuyl geset hebben.",
-      "text2026": "Want ik ben diefelijk ontstolen uit het land van de Hebreën; en ook heb ik hier niets gedaan, dat zij mij in deze kuil gezet hebben.",
+      "text2026": "Want ik ben met geweld ontstolen uit het land van de Hebreën; en ook heb ik hier niets gedaan, dat zij mij in deze kuil gezet hebben.",
       "marginNotes": [
         {
           "marker": "21",
@@ -1927,10 +1932,15 @@
           "morph": "HRd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want<sup class=\"note-marker\" data-note=\"21\">21</sup> ik ben diefelijk ontstolen uit het<sup class=\"note-marker\" data-note=\"22\">22</sup> land van de Hebreën; en ook heb ik hier niets gedaan, dat zij mij in deze kuil gezet hebben.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want<sup class=\"note-marker\" data-note=\"21\">21</sup> ik ben met geweld ontstolen uit het<sup class=\"note-marker\" data-note=\"22\">22</sup> land van de Hebreën; en ook heb ik hier niets gedaan, dat zij mij in deze kuil gezet hebben.</i></span>",
       "textSV1888_html": "Want<sup class=\"note-marker\" data-note=\"21\">21</sup> ik ben diefelijk ontstolen uit het land der<sup class=\"note-marker\" data-note=\"22\">22</sup> Hebreën; en ook heb ik hier niets gedaan, dat zij mij in dezen kuil gezet hebben.",
       "text1637_html": "Want <sup class=\"note-marker\" data-note=\"21\">21</sup> ick ben dieflick ontstolen uyt der <sup class=\"note-marker\" data-note=\"22\">22</sup> Hebreen lant: ende oock en hebbe ick hier niets gedaen, dat sy my in desen kuyl geset hebben.",
       "phraseDiff": [
+        {
+          "old": "diefelijk",
+          "new": "met geweld",
+          "principe": "V978"
+        },
         {
           "old": "der",
           "new": "van de",
@@ -1947,7 +1957,7 @@
       "number": 16,
       "textSV1888": "Toen de overste der bakkers zag, dat hij een goede uitlegging gedaan had, zo zeide hij tot Jozef: Ik was ook in mijn droom, en zie, drie getraliede korven waren op mijn hoofd.",
       "text1637": "Doe de overste der Backeren sach, [23] dat hy eene goede uytlegginge gedaen hadde: so seyde hy tot Ioseph: [24] Ick was oock in mijnen droom, ende siet, drye [25] getralyde korven waren op mijn hooft;",
-      "text2026": "Toen de overste van de bakkers zag, dat hij een goede uitlegging gedaan had, zo zei hij tot Jozef: Ik was ook in mijn droom, en zie, drie getraliede korven waren op mijn hoofd.",
+      "text2026": "Toen de overste van de bakkers zag, dat hij een goede uitlegging gedaan had, zo zei hij tot Jozef: Ik was ook in mijn droom, en zie, drie getraliede manden waren op mijn hoofd.",
       "marginNotes": [
         {
           "marker": "23",
@@ -2079,7 +2089,7 @@
           "morph": "HNcmsc/Sp1cs"
         }
       ],
-      "text2026_html": "Toen de overste van de bakkers zag, dat hij een goede uitlegging gedaan had, zo zei hij tot Jozef: <span class=\"direct-speech\"><i>Ik was ook in mijn droom, en zie, drie getraliede korven waren op mijn hoofd.</i></span>",
+      "text2026_html": "Toen de overste van de bakkers zag, dat hij een goede uitlegging gedaan had, zo zei hij tot Jozef: <span class=\"direct-speech\"><i>Ik was ook in mijn droom, en zie, drie getraliede manden waren op mijn hoofd.</i></span>",
       "textSV1888_html": "Toen de overste der bakkers zag,<sup class=\"note-marker\" data-note=\"23\">23</sup> dat hij een goede uitlegging gedaan had, zo zeide hij tot Jozef:<sup class=\"note-marker\" data-note=\"24\">24</sup> Ik was ook in mijn droom, en zie, drie<sup class=\"note-marker\" data-note=\"25\">25</sup> getraliede korven waren op mijn hoofd.",
       "text1637_html": "Doe de overste der Backeren sach, <sup class=\"note-marker\" data-note=\"23\">23</sup> dat hy eene goede uytlegginge gedaen hadde: so seyde hy tot Ioseph: <sup class=\"note-marker\" data-note=\"24\">24</sup> Ick was oock in mijnen droom, ende siet, drye <sup class=\"note-marker\" data-note=\"25\">25</sup> getralyde korven waren op mijn hooft;",
       "phraseDiff": [
@@ -2092,6 +2102,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "korven",
+          "new": "manden",
+          "principe": "V979"
         }
       ]
     },
@@ -2099,7 +2114,7 @@
       "number": 17,
       "textSV1888": "En in den oppersten korf was van alle spijze van Farao, die bakkerswerk is; en het gevogelte at dezelve uit den korf, van boven mijn hoofd.",
       "text1637": "Ende in den oppersten korf was van [26] alle spijse van Pharao, die Backers-werck is; ende het gevogelte at de selve uyt den korf van boven mijn hooft.",
-      "text2026": "En in de oppersten korf was van alle voedsel van Farao, die bakkerswerk is; en het gevogelte at die uit de korf, van boven mijn hoofd.",
+      "text2026": "En in de bovenste mand was van alle voedsel van Farao, die bakkerswerk is; en het gevogelte at die uit de mand, van boven mijn hoofd.",
       "marginNotes": [
         {
           "marker": "26",
@@ -2181,14 +2196,14 @@
           "morph": "HNcmsc/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En in de oppersten korf was van<sup class=\"note-marker\" data-note=\"26\">26</sup> alle voedsel van Farao, die bakkerswerk is; en het gevogelte at die uit de korf, van boven mijn hoofd.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En in de bovenste mand was van<sup class=\"note-marker\" data-note=\"26\">26</sup> alle voedsel van Farao, die bakkerswerk is; en het gevogelte at die uit de mand, van boven mijn hoofd.</i></span>",
       "textSV1888_html": "En in den oppersten korf was van<sup class=\"note-marker\" data-note=\"26\">26</sup> alle spijze van Farao, die bakkerswerk is; en het gevogelte at dezelve uit den korf, van boven mijn hoofd.",
       "text1637_html": "Ende in den oppersten korf was van <sup class=\"note-marker\" data-note=\"26\">26</sup> alle spijse van Pharao, die Backers-werck is; ende het gevogelte at de selve uyt den korf van boven mijn hooft.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den oppersten korf",
+          "new": "de bovenste mand",
+          "principe": "V979"
         },
         {
           "old": "spijze",
@@ -2201,9 +2216,9 @@
           "principe": "O3"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den korf,",
+          "new": "de mand,",
+          "principe": "V979"
         }
       ]
     },
@@ -2211,7 +2226,7 @@
       "number": 18,
       "textSV1888": "Toen antwoordde Jozef, en zeide: Dit is zijn uitlegging: de drie korven zijn drie dagen.",
       "text1637": "Doe antwoordde Ioseph, ende seyde: Dit is sijne uytlegginge; De drye korven [27] zijn drye dagen;",
-      "text2026": "Toen antwoordde Jozef, en zei: Dit is zijn uitlegging: de drie korven zijn drie dagen.",
+      "text2026": "Toen antwoordde Jozef, en zei: Dit is zijn uitlegging: de drie manden zijn drie dagen.",
       "marginNotes": [
         {
           "marker": "27",
@@ -2279,7 +2294,7 @@
           "morph": "HPp3mp"
         }
       ],
-      "text2026_html": "Toen antwoordde Jozef, en zei: <span class=\"direct-speech\"><i>Dit is zijn uitlegging: de drie korven zijn drie dagen.</i></span>",
+      "text2026_html": "Toen antwoordde Jozef, en zei: <span class=\"direct-speech\"><i>Dit is zijn uitlegging: de drie manden zijn drie dagen.</i></span>",
       "textSV1888_html": "Toen antwoordde Jozef, en zeide: Dit is zijn uitlegging: de drie korven<sup class=\"note-marker\" data-note=\"27\">27</sup> zijn drie dagen.",
       "text1637_html": "Doe antwoordde Ioseph, ende seyde: Dit is sijne uytlegginge; De drye korven <sup class=\"note-marker\" data-note=\"27\">27</sup> zijn drye dagen;",
       "phraseDiff": [
@@ -2287,6 +2302,11 @@
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
+        },
+        {
+          "old": "korven",
+          "new": "manden",
+          "principe": "V979"
         }
       ]
     },

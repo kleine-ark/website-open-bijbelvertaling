@@ -1498,7 +1498,7 @@
       "number": 10,
       "textSV1888": "En die knecht nam tien kemelen van zijns heren kemelen, en toog heen; en al het goed zijns heren was in zijn hand; en hij maakte zich op, en toog heen naar Mesopotamië, naar de stad van Nahor.",
       "text1637": "Ende die knecht nam tien kemelen van sijnes heeren kemelen, ende tooch henen, ende [15] al het goet sijnes heeren was in sijne hant: ende hy maeckte sich op, ende tooch henen nae [16] Mesopotamien, nae de [17] stadt Nahors.",
-      "text2026": "En die knecht nam tien kamelen van zijn heren kamelen, en trok heen; en al het goed van zijn heren was in zijn hand; en hij maakte zich op, en trok heen naar Mesopotamië, naar de stad van Nahor.",
+      "text2026": "En die knecht nam tien kamelen van de kamelen van zijn heer, en trok heen; en al het goed van zijn heer was in zijn hand; en hij maakte zich op, en trok heen naar Mesopotamië, naar de stad van Nahor.",
       "marginNotes": [
         {
           "marker": "15",
@@ -1669,7 +1669,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En die knecht nam tien kamelen van zijn heren kamelen, en trok heen; en<sup class=\"note-marker\" data-note=\"15\">15</sup> al het goed van zijn heren was in zijn hand; en hij maakte zich op, en trok heen naar<sup class=\"note-marker\" data-note=\"16\">16</sup> Mesopotamië, naar de<sup class=\"note-marker\" data-note=\"17\">17</sup> stad van Nahor.",
+      "text2026_html": "En die knecht nam tien kamelen van de kamelen van zijn heer, en trok heen; en<sup class=\"note-marker\" data-note=\"15\">15</sup> al het goed van zijn heer was in zijn hand; en hij maakte zich op, en trok heen naar<sup class=\"note-marker\" data-note=\"16\">16</sup> Mesopotamië, naar de<sup class=\"note-marker\" data-note=\"17\">17</sup> stad van Nahor.",
       "textSV1888_html": "En die knecht nam tien kemelen van zijns heren kemelen, en toog heen; en<sup class=\"note-marker\" data-note=\"15\">15</sup> al het goed zijns heren was in zijn hand; en hij maakte zich op, en toog heen naar<sup class=\"note-marker\" data-note=\"16\">16</sup> Mesopotamië, naar de<sup class=\"note-marker\" data-note=\"17\">17</sup> stad van Nahor.",
       "text1637_html": "Ende die knecht nam tien kemelen van sijnes heeren kemelen, ende tooch henen, ende <sup class=\"note-marker\" data-note=\"15\">15</sup> al het goet sijnes heeren was in sijne hant: ende hy maeckte sich op, ende tooch henen nae <sup class=\"note-marker\" data-note=\"16\">16</sup> Mesopotamien, nae de <sup class=\"note-marker\" data-note=\"17\">17</sup> stadt Nahors.",
       "phraseDiff": [
@@ -1679,14 +1679,9 @@
           "principe": "V722"
         },
         {
-          "old": "zijns",
-          "new": "zijn",
-          "principe": "V201"
-        },
-        {
-          "old": "kemelen,",
-          "new": "kamelen,",
-          "principe": "V722"
+          "old": "zijns heren kemelen,",
+          "new": "de kamelen van zijn heer,",
+          "principe": "N22"
         },
         {
           "old": "toog",
@@ -1694,9 +1689,9 @@
           "principe": "V353"
         },
         {
-          "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
+          "old": "zijns heren",
+          "new": "van zijn heer",
+          "principe": "N22"
         },
         {
           "old": "toog",
@@ -1801,7 +1796,7 @@
       "number": 12,
       "textSV1888": "En hij zeide: HEERE! God van mijn heer Abraham! doe haar mij toch heden ontmoeten, en doe weldadigheid bij Abraham, mijn heer.",
       "text1637": "Ende hy seyde, HEERE, Godt mijnes heeren Abrahams, [19] doet[se] [20] my doch heden ontmoeten, ende doet weldadicheyt by Abraham mijnen heere.",
-      "text2026": "En hij zei: JAHWEH! God van mijn heer Abraham! doe haar mij toch heden ontmoeten, en doe goedertierenheid bij Abraham, mijn heer.",
+      "text2026": "En hij zei: JAHWEH! God van mijn heer Abraham! doe haar mij toch vandaag ontmoeten, en doe goedertierenheid bij Abraham, mijn heer.",
       "marginNotes": [
         {
           "marker": "19",
@@ -1890,7 +1885,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>JAHWEH! God van mijn heer Abraham! doe haar mij toch heden ontmoeten, en doe goedertierenheid bij Abraham, mijn heer.</i></span>",
+      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>JAHWEH! God van mijn heer Abraham! doe haar mij toch vandaag ontmoeten, en doe goedertierenheid bij Abraham, mijn heer.</i></span>",
       "textSV1888_html": "En hij zeide: HEERE! God van mijn heer<sup class=\"note-marker\" data-note=\"19\">19</sup> Abraham! doe<sup class=\"note-marker\" data-note=\"20\">20</sup> haar mij toch heden ontmoeten, en doe weldadigheid bij Abraham, mijn heer.",
       "text1637_html": "Ende hy seyde, HEERE, Godt mijnes heeren Abrahams, <sup class=\"note-marker\" data-note=\"19\">19</sup> doet[se] <sup class=\"note-marker\" data-note=\"20\">20</sup> my doch heden ontmoeten, ende doet weldadicheyt by Abraham mijnen heere.",
       "phraseDiff": [
@@ -1898,6 +1893,11 @@
           "old": "zeide: HEERE!",
           "new": "zei: JAHWEH!",
           "principe": "W1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         },
         {
           "old": "weldadigheid",
@@ -4592,7 +4592,7 @@
       "number": 35,
       "textSV1888": "En de HEERE heeft mijn heer zeer gezegend, zodat hij groot geworden is; en Hij heeft hem gegeven schapen, en runderen, en zilver, en goud, en knechten, en maagden, en kemelen, en ezelen.",
       "text1637": "Ende de HEERE heeft mijnen heere seer gesegent, so dat hy [47] groot geworden is: ende hy heeft hem gegeven schapen, ende runderen, ende silver ende gout, ende knechten, ende maechden, ende kemelen, ende ezelen.",
-      "text2026": "En JAHWEH heeft mijn heer zeer gezegend, zodat hij groot geworden is; en Hij heeft hem gegeven schapen, en runderen, en zilver, en goud, en knechten, en maagden, en kamelen, en ezelen.",
+      "text2026": "En JAHWEH heeft mijn heer zeer gezegend, zodat hij groot geworden is; en Hij heeft hem gegeven schapen, en runderen, en zilver, en goud, en knechten, en maagden, en kamelen, en ezels.",
       "marginNotes": [
         {
           "marker": "47",
@@ -4694,7 +4694,7 @@
           "morph": "HC/Ncbpa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En JAHWEH heeft mijn heer zeer gezegend, zodat hij<sup class=\"note-marker\" data-note=\"47\">47</sup> groot geworden is; en Hij heeft hem gegeven schapen, en runderen, en zilver, en goud, en knechten, en maagden, en kamelen, en ezelen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En JAHWEH heeft mijn heer zeer gezegend, zodat hij<sup class=\"note-marker\" data-note=\"47\">47</sup> groot geworden is; en Hij heeft hem gegeven schapen, en runderen, en zilver, en goud, en knechten, en maagden, en kamelen, en ezels.</i></span>",
       "textSV1888_html": "En de HEERE heeft mijn heer zeer gezegend, zodat hij<sup class=\"note-marker\" data-note=\"47\">47</sup> groot geworden is; en Hij heeft hem gegeven schapen, en runderen, en zilver, en goud, en knechten, en maagden, en kemelen, en ezelen.",
       "text1637_html": "Ende de HEERE heeft mijnen heere seer gesegent, so dat hy <sup class=\"note-marker\" data-note=\"47\">47</sup> groot geworden is: ende hy heeft hem gegeve<i>n</i> schapen, ende runderen, ende silver ende gout, ende knechten, ende maechden, ende kemelen, ende ezelen.",
       "phraseDiff": [
@@ -4707,6 +4707,11 @@
           "old": "kemelen,",
           "new": "kamelen,",
           "principe": "V722"
+        },
+        {
+          "old": "ezelen.",
+          "new": "ezels.",
+          "principe": "V974"
         }
       ]
     },
@@ -5400,7 +5405,7 @@
       "number": 42,
       "textSV1888": "En ik kwam heden aan de fontein; en ik zeide: O, HEERE! God van mijn heer Abraham! zo Gij nu mijn weg voorspoedig maken zult, op welke ik ga;",
       "text1637": "Ende ick quam heden aen de fonteyne; ende ick seyde, O HEERE, Godt mijnes Heeren Abrahams, So ghy nu mijnen wech voorspoedich maken sult, op den welcken ick gae:",
-      "text2026": "En ik kwam heden aan de fontein; en ik zei: O, JAHWEH! God van mijn heer Abraham! zo U nu mijn weg voorspoedig maken zult, waarop ik ga;",
+      "text2026": "En ik kwam vandaag aan de fontein; en ik zei: O, JAHWEH! God van mijn heer Abraham! zo U nu mijn weg voorspoedig maken zult, waarop ik ga;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -5494,9 +5499,14 @@
           "morph": "HR/Sp3fs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En ik kwam heden aan de fontein; en ik zei: O, JAHWEH! God van mijn heer Abraham! zo U nu mijn weg voorspoedig maken zult, waarop ik ga;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En ik kwam vandaag aan de fontein; en ik zei: O, JAHWEH! God van mijn heer Abraham! zo U nu mijn weg voorspoedig maken zult, waarop ik ga;</i></span>",
       "text1637_html": "Ende ick quam heden aen de fonteyne; ende ick seyde, O HEERE, Godt mijnes Heeren Abrahams, So ghy nu mijnen wech voorspoedich maken sult, op den welcken ick gae:",
       "phraseDiff": [
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
+        },
         {
           "old": "zeide:",
           "new": "zei:",
@@ -6664,7 +6674,7 @@
       "number": 51,
       "textSV1888": "Zie, Rebekka is voor uw aangezicht; neem haar en trek henen; zij zij de vrouw van den zoon uws heren, gelijk de HEERE gesproken heeft!",
       "text1637": "Siet Rebecca is voor u aengesichte, [64] neemtse ende treckt henen; sy zy uwes Heeren soons vrouwe, gelijck de HEERE gesproken heeft.",
-      "text2026": "Zie, Rebekka is voor uw aangezicht; neem haar en trek heen; zij zij de vrouw van de zoon van uw heren, zoals JAHWEH gesproken heeft!",
+      "text2026": "Zie, Rebekka is voor uw aangezicht; neem haar en trek heen; zij zij de vrouw van de zoon van uw heer, zoals JAHWEH gesproken heeft!",
       "marginNotes": [
         {
           "marker": "64",
@@ -6762,7 +6772,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zie, Rebekka is voor uw aangezicht;<sup class=\"note-marker\" data-note=\"64\">64</sup> neem haar en trek heen; zij zij de vrouw van de zoon van uw heren, zoals JAHWEH gesproken heeft!</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zie, Rebekka is voor uw aangezicht;<sup class=\"note-marker\" data-note=\"64\">64</sup> neem haar en trek heen; zij zij de vrouw van de zoon van uw heer, zoals JAHWEH gesproken heeft!</i></span>",
       "textSV1888_html": "Zie, Rebekka is voor uw aangezicht;<sup class=\"note-marker\" data-note=\"64\">64</sup> neem haar en trek henen; zij zij de vrouw van den zoon uws heren, gelijk de HEERE gesproken heeft!",
       "text1637_html": "Siet Rebecca is voor u aengesichte, <sup class=\"note-marker\" data-note=\"64\">64</sup> neemtse ende treckt henen; sy zy uwes Heeren soons vrouwe, gelijck de HEERE gesproken heeft.",
       "phraseDiff": [
@@ -6777,14 +6787,9 @@
           "principe": "N1"
         },
         {
-          "old": "uws",
-          "new": "van uw",
-          "principe": "V200"
-        },
-        {
-          "old": "gelijk de HEERE",
-          "new": "zoals JAHWEH",
-          "principe": "G1"
+          "old": "uws heren, gelijk de HEERE",
+          "new": "van uw heer, zoals JAHWEH",
+          "principe": null
         }
       ]
     },
@@ -7703,7 +7708,7 @@
       "number": 61,
       "textSV1888": "En Rebekka maakte zich op met haar jonge dochteren, en zij reden op kemelen, en volgden den man; en die knecht nam Rebekka, en toog heen.",
       "text1637": "Ende Rebecca maeckte haer op, met hare [76] jonge dochteren, ende sy reden op kemelen, ende volgden den man: ende [77] die knecht nam Rebecca, ende tooch henen.",
-      "text2026": "En Rebekka maakte zich op met haar jonge dochters, en zij reden op kamelen, en volgden de man; en die knecht nam Rebekka, en trok heen.",
+      "text2026": "En Rebekka maakte zich op met haar meisjes, en zij reden op kamelen, en volgden de man; en die knecht nam Rebekka, en trok heen.",
       "marginNotes": [
         {
           "marker": "76",
@@ -7792,14 +7797,14 @@
           "morph": "HC/Vqw3ms"
         }
       ],
-      "text2026_html": "En Rebekka maakte zich op met haar<sup class=\"note-marker\" data-note=\"76\">76</sup> jonge dochters, en zij reden op kamelen, en volgden de man; en<sup class=\"note-marker\" data-note=\"77\">77</sup> die knecht nam Rebekka, en trok heen.",
+      "text2026_html": "En Rebekka maakte zich op met haar<sup class=\"note-marker\" data-note=\"76\">76</sup> meisjes, en zij reden op kamelen, en volgden de man; en<sup class=\"note-marker\" data-note=\"77\">77</sup> die knecht nam Rebekka, en trok heen.",
       "textSV1888_html": "En Rebekka maakte zich op met haar<sup class=\"note-marker\" data-note=\"76\">76</sup> jonge dochteren, en zij reden op kemelen, en volgden den man; en<sup class=\"note-marker\" data-note=\"77\">77</sup> die knecht nam Rebekka, en toog heen.",
       "text1637_html": "Ende Rebecca maeckte haer op, met hare <sup class=\"note-marker\" data-note=\"76\">76</sup> jonge dochteren, ende sy reden op kemelen, ende volgden den man: ende <sup class=\"note-marker\" data-note=\"77\">77</sup> die knecht nam Rebecca, ende tooch henen.",
       "phraseDiff": [
         {
-          "old": "dochteren,",
-          "new": "dochters,",
-          "principe": "V569"
+          "old": "jonge dochteren,",
+          "new": "meisjes,",
+          "principe": "V968"
         },
         {
           "old": "kemelen,",

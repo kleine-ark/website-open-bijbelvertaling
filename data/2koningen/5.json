@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Naäman nu, de krijgsoverste van den koning van Syrië, was een groot man voor het aangezicht zijns heren, en van hoog aanzien; want door hem had de HEERE den Syriërs verlossing gegeven; zo was deze man een strijdbaar held, doch melaats.",
       "text1637": "Naaman nu de Krijchs-overste des Conincks van Syrien was een [1] groot man voor het aengesicht sijns [2] heeren, [3] ende van hoogen aensien: want door hem hadde de HEERE den Syriers [4] verlossinge gegeven: so was dese man een strijtbaer helt, [doch] melaetsch.",
-      "text2026": "Naäman nu, de oorlogsoverste van de koning van Syrië, was een groot man voor het aangezicht van zijn heren, en van hoog aanzien; want door hem had JAHWEH de Syriërs verlossing gegeven; zo was deze man een strijdbaar held, maar melaats.",
+      "text2026": "Naäman nu, de oorlogsoverste van de koning van Syrië, was een groot man voor het aangezicht van zijn heer, en van hoog aanzien; want door hem had JAHWEH de Syriërs verlossing gegeven; zo was deze man een strijdbaar held, maar melaats.",
       "marginNotes": [
         {
           "marker": "1",
@@ -153,7 +153,7 @@
           "morph": "HVPsmsa"
         }
       ],
-      "text2026_html": "Naäman nu, de oorlogsoverste van de koning van Syrië, was een<sup class=\"note-marker\" data-note=\"1\">1</sup> groot man voor het aangezicht van zijn<sup class=\"note-marker\" data-note=\"2\">2</sup> heren,<sup class=\"note-marker\" data-note=\"3\">3</sup> en van hoog aanzien; want door hem had JAHWEH de Syriërs verlossing<sup class=\"note-marker\" data-note=\"4\">4</sup> gegeven; zo was deze man een strijdbaar held, maar melaats.",
+      "text2026_html": "Naäman nu, de oorlogsoverste van de koning van Syrië, was een<sup class=\"note-marker\" data-note=\"1\">1</sup> groot man voor het aangezicht van zijn<sup class=\"note-marker\" data-note=\"2\">2</sup> heer,<sup class=\"note-marker\" data-note=\"3\">3</sup> en van hoog aanzien; want door hem had JAHWEH de Syriërs verlossing<sup class=\"note-marker\" data-note=\"4\">4</sup> gegeven; zo was deze man een strijdbaar held, maar melaats.",
       "textSV1888_html": "Naäman nu, de krijgsoverste van den koning van Syrië, was een<sup class=\"note-marker\" data-note=\"1\">1</sup> groot man voor het aangezicht zijns<sup class=\"note-marker\" data-note=\"2\">2</sup> heren,<sup class=\"note-marker\" data-note=\"3\">3</sup> en van hoog aanzien; want door hem had de HEERE den Syriërs<sup class=\"note-marker\" data-note=\"4\">4</sup> verlossing gegeven; zo was deze man een strijdbaar held, doch melaats.",
       "text1637_html": "Naaman nu de Krijchs-overste des Conincks van Syrien was een <sup class=\"note-marker\" data-note=\"1\">1</sup> groot man voor het aengesicht sijns <sup class=\"note-marker\" data-note=\"2\">2</sup> heeren, <sup class=\"note-marker\" data-note=\"3\">3</sup> ende van hoogen aensien: want door hem hadde de HEERE den Syriers <sup class=\"note-marker\" data-note=\"4\">4</sup> verlossinge gegeven: so was dese man een strijtbaer helt, [doch] melaetsch.",
       "phraseDiff": [
@@ -168,9 +168,9 @@
           "principe": "N1"
         },
         {
-          "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
+          "old": "zijns heren,",
+          "new": "van zijn heer,",
+          "principe": "N23"
         },
         {
           "old": "",
@@ -416,7 +416,7 @@
       "number": 4,
       "textSV1888": "Toen ging hij in en gaf het zijn heer te kennen, zeggende: Zo en zo heeft de jonge dochter gesproken, die uit het land van Israël is.",
       "text1637": "Doe ginck [9] hy [10] in, ende gaft sijnen heere te kennen, seggende: Soo ende soo heeft de jonge dochter gesproken, die uyt den lande Israëls is.",
-      "text2026": "Toen ging hij in en gaf het zijn heer te kennen, zeggende: Zo en zo heeft het meisje gesproken, die uit het land van Israël is.",
+      "text2026": "Toen ging hij in en gaf het zijn heer te kennen, zeggende: Zo en zo heeft het meisje gesproken, dat uit het land van Israël is.",
       "marginNotes": [
         {
           "marker": "9",
@@ -490,14 +490,19 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Toen ging hij in en gaf het zijn heer te kennen, zeggende: <span class=\"direct-speech\"><i>Zo en zo heeft het meisje gesproken, die uit het land van Israël is.</i></span>",
+      "text2026_html": "Toen ging hij in en gaf het zijn heer te kennen, zeggende: <span class=\"direct-speech\"><i>Zo en zo heeft het meisje gesproken, dat uit het land van Israël is.</i></span>",
       "textSV1888_html": "Toen ging<sup class=\"note-marker\" data-note=\"9\">9</sup> hij<sup class=\"note-marker\" data-note=\"10\">10</sup> in en gaf het zijn heer te kennen, zeggende: Zo en zo heeft de jonge dochter gesproken, die uit het land van Israël is.",
       "text1637_html": "Doe ginck <sup class=\"note-marker\" data-note=\"9\">9</sup> hy <sup class=\"note-marker\" data-note=\"10\">10</sup> in, ende gaft sijnen heere te kennen, seggende: Soo ende soo heeft de jonge dochter gesproken, die uyt den lande Israëls is.",
       "phraseDiff": [
         {
-          "old": "jonge dochter",
-          "new": "meisje",
-          "principe": "V943"
+          "old": "de jonge dochter",
+          "new": "het meisje",
+          "principe": "O24"
+        },
+        {
+          "old": "die",
+          "new": "dat",
+          "principe": "O24"
         }
       ]
     },

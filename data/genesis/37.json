@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En Jakob woonde in het land der vreemdelingschappen zijns vaders, in het land Kanaän.",
       "text1637": "ENde Iacob woonde in 't [a] lant [1] der vreemdelinckschappen sijns vaders; in 't lant Canaan.",
-      "text2026": "En Jakob woonde in het land van de vreemdelingschappen van zijn vader, in het land Kanaän.",
+      "text2026": "En Jakob woonde in het land waar zijn vader vreemdeling was, in het land Kanaän.",
       "marginNotes": [
         {
           "marker": "a",
@@ -83,19 +83,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En Jakob woonde in het<sup class=\"note-marker\" data-note=\"a\">a</sup> land<sup class=\"note-marker\" data-note=\"1\">1</sup> van de vreemdelingschappen van zijn vader, in het land Kanaän.",
+      "text2026_html": "En Jakob woonde in het<sup class=\"note-marker\" data-note=\"a\">a</sup> land<sup class=\"note-marker\" data-note=\"1\">1</sup> waar zijn vader vreemdeling was, in het land Kanaän.",
       "textSV1888_html": "En Jakob woonde in het<sup class=\"note-marker\" data-note=\"a\">a</sup> land<sup class=\"note-marker\" data-note=\"1\">1</sup> der vreemdelingschappen zijns vaders, in het land Kanaän.",
       "text1637_html": "ENde Iacob woonde in 't <sup class=\"note-marker\" data-note=\"a\">a</sup> lant <sup class=\"note-marker\" data-note=\"1\">1</sup> der vreemdelinckschappe<i>n</i> sijns vaders; in 't lant Canaan.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
-        },
-        {
-          "old": "zijns vaders,",
-          "new": "van zijn vader,",
-          "principe": "V201"
+          "old": "der vreemdelingschappen zijns vaders,",
+          "new": "waar zijn vader vreemdeling was,",
+          "principe": "V981"
         }
       ]
     },
@@ -441,7 +436,7 @@
       "number": 4,
       "textSV1888": "Als nu zijn broeders zagen, dat hun vader hem boven al zijn broederen liefhad, haatten zij hem, en konden hem niet vredelijk toespreken.",
       "text1637": "Als nu sijne broeders sagen, dat haren vader hem boven alle sijne broederen lief hadde, [b] hateden sy hem: ende en konden hem niet [6] vredelick toespreken.",
-      "text2026": "Als nu zijn broers zagen, dat hun vader hem boven al zijn broers liefhad, haatten zij hem, en konden hem niet vredelijk toespreken.",
+      "text2026": "Als nu zijn broers zagen, dat hun vader hem boven al zijn broers liefhad, haatten zij hem, en konden hem niet vriendelijk toespreken.",
       "marginNotes": [
         {
           "marker": "b",
@@ -530,7 +525,7 @@
           "morph": "HR/Ncmsa"
         }
       ],
-      "text2026_html": "Als nu zijn broers zagen, dat hun vader hem boven al zijn broers liefhad,<sup class=\"note-marker\" data-note=\"b\">b</sup> haatten zij hem, en konden hem niet<sup class=\"note-marker\" data-note=\"6\">6</sup> vredelijk toespreken.",
+      "text2026_html": "Als nu zijn broers zagen, dat hun vader hem boven al zijn broers liefhad,<sup class=\"note-marker\" data-note=\"b\">b</sup> haatten zij hem, en konden hem niet<sup class=\"note-marker\" data-note=\"6\">6</sup> vriendelijk toespreken.",
       "textSV1888_html": "Als nu zijn broeders zagen, dat hun vader hem boven al zijn broederen liefhad,<sup class=\"note-marker\" data-note=\"b\">b</sup> haatten zij hem, en konden hem niet<sup class=\"note-marker\" data-note=\"6\">6</sup> vredelijk toespreken.",
       "text1637_html": "Als nu sijne broeders sagen, dat haren vader hem boven alle sijne broederen lief hadde, <sup class=\"note-marker\" data-note=\"b\">b</sup> hateden sy hem: ende en konden hem niet <sup class=\"note-marker\" data-note=\"6\">6</sup> vredelick toespreken.",
       "phraseDiff": [
@@ -543,6 +538,11 @@
           "old": "broederen",
           "new": "broers",
           "principe": "O22b"
+        },
+        {
+          "old": "vredelijk",
+          "new": "vriendelijk",
+          "principe": "V970"
         }
       ]
     },
@@ -2133,7 +2133,7 @@
           "morph": "HR/Np"
         }
       ],
-      "text2026_html": "Zo zei die man: <span class=\"direct-speech\"><i>Zij zijn van hier gereisd; want ik hoorde hen zeggen: Laat ons naar Dothan gaan. Jozef dan ging zijn broers na, en vond hen te Dothan.</i></span>",
+      "text2026_html": "Zo zei die man: <span class=\"direct-speech\"><i>Zij zijn van hier gereisd; want ik hoorde hen zeggen: <span class=\"direct-speech\"><i>Laat ons naar Dothan gaan.</i></span></i></span> Jozef dan ging zijn broers na, en vond hen te Dothan.",
       "textSV1888_html": "Zo zeide die man: Zij zijn van hier gereisd; want ik hoorde hen zeggen: Laat ons naar<sup class=\"note-marker\" data-note=\"21\">21</sup> Dothan gaan. Jozef dan ging zijn broederen na, en vond hen te Dothan.",
       "text1637_html": "So seyde die man; Sy zijn van hier gereyst, want ick hoordese seggen, Laet ons nae <sup class=\"note-marker\" data-note=\"21\">21</sup> Dothan gaen: Ioseph dan ginck sijnen broederen nae, ende vondtse te Dothan.",
       "phraseDiff": [
@@ -2330,7 +2330,7 @@
       "number": 20,
       "textSV1888": "Nu komt dan, en laat ons hem doodslaan, en hem in een dezer kuilen werpen; en wij zullen zeggen: een boos dier heeft hem opgegeten; zo zullen wij zien, wat van zijn dromen worden zal.",
       "text1637": "Nu comt dan, ende laet ons hem dootslaen, ende hem in eene deser kuylen werpen; ende wy [26] sullen seggen, Een boos dier heeft hem opgegeten: so sullen wy sien, [27] wat van sijne droomen worden sal.",
-      "text2026": "Nu komt dan, en laat ons hem doodslaan, en hem in één van deze kuilen werpen; en wij zullen zeggen: een boos van die heeft hem opgegeten; zo zullen wij zien, wat van zijn dromen worden zal.",
+      "text2026": "Nu komt dan, en laat ons hem doodslaan, en hem in één van deze kuilen werpen; en wij zullen zeggen: een boos dier heeft hem opgegeten; zo zullen wij zien, wat van zijn dromen worden zal.",
       "marginNotes": [
         {
           "marker": "26",
@@ -2425,7 +2425,7 @@
           "morph": "HNcmpc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Nu komt dan, en laat ons hem doodslaan, en hem in één van deze kuilen werpen; en wij<sup class=\"note-marker\" data-note=\"26\">26</sup> zullen zeggen: een boos van die heeft hem opgegeten; zo zullen wij zien,<sup class=\"note-marker\" data-note=\"27\">27</sup> wat van zijn dromen worden zal.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Nu komt dan, en laat ons hem doodslaan, en hem in één van deze kuilen werpen; en wij<sup class=\"note-marker\" data-note=\"26\">26</sup> zullen zeggen: een boos dier heeft hem opgegeten; zo zullen wij zien,<sup class=\"note-marker\" data-note=\"27\">27</sup> wat van zijn dromen worden zal.</i></span>",
       "textSV1888_html": "Nu komt dan, en laat ons hem doodslaan, en hem in een dezer kuilen werpen; en wij<sup class=\"note-marker\" data-note=\"26\">26</sup> zullen zeggen: een boos dier heeft hem opgegeten; zo zullen wij zien,<sup class=\"note-marker\" data-note=\"27\">27</sup> wat van zijn dromen worden zal.",
       "text1637_html": "Nu comt dan, ende laet ons hem dootslaen, ende hem in eene deser kuylen werpen; ende wy <sup class=\"note-marker\" data-note=\"26\">26</sup> sullen seggen, Een boos dier heeft hem opgegeten: so sullen wy sien, <sup class=\"note-marker\" data-note=\"27\">27</sup> wat van sijne droomen worden sal.",
       "phraseDiff": [
@@ -2433,11 +2433,6 @@
           "old": "een dezer",
           "new": "één van deze",
           "principe": "N5"
-        },
-        {
-          "old": "dier",
-          "new": "van die",
-          "principe": null
         }
       ]
     },
@@ -2713,7 +2708,7 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Ook zei Ruben tot hen: Vergiet geen bloed; werpt hem in deze kuil die in de woestijn is, en legt de hand niet aan hem; opdat hij hem uit hun hand verloste, om hem tot zijn vader weer te brengen.</i></span>",
+      "text2026_html": "Ook zei Ruben tot hen: <span class=\"direct-speech\"><i>Vergiet geen bloed; werpt hem in deze kuil die in de woestijn is, en legt de hand niet aan hem;</i></span> opdat hij hem uit hun hand verloste, om hem tot zijn vader weer te brengen.",
       "textSV1888_html": "Ook zeide Ruben tot hen: Vergiet geen bloed; werpt hem in dezen kuil die in de woestijn is,<sup class=\"note-marker\" data-note=\"31\">31</sup> en legt de hand niet aan hem; opdat hij hem uit hun hand verloste, om hem tot zijn vader weder te brengen.",
       "text1637_html": "Oock seyde Ruben tot hen; Vergietet geen bloet, werpet hem in desen kuyl, die inde woestijne is <sup class=\"note-marker\" data-note=\"31\">31</sup> en<i>de</i> en legget de hant niet aen hem: op dat hy hem uyt harer hant verloste, om hem tot sijnen vader weder te brengen.",
       "phraseDiff": [
@@ -3292,7 +3287,7 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "Toen zei Juda tot zijn broers: Wat winst zal het zijn, dat wij onze broer doodslaan, en zijn bloed verbergen?",
+      "text2026_html": "Toen zei Juda tot zijn broers: <span class=\"direct-speech\"><i>Wat winst zal het zijn, dat wij onze broer doodslaan, en zijn bloed verbergen?</i></span>",
       "textSV1888_html": "Toen zeide Juda tot zijn broederen: Wat gewin zal het zijn, dat wij onzen broeder doodslaan, en zijn<sup class=\"note-marker\" data-note=\"41\">41</sup> bloed verbergen?",
       "text1637_html": "Doe seyde Iuda tot sijne broederen; Wat gewin sal't zijn dat wy onsen broeder dootslaen, ende zijn <sup class=\"note-marker\" data-note=\"41\">41</sup> bloet verbergen?",
       "phraseDiff": [
@@ -3409,7 +3404,7 @@
           "morph": "HNcmpc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Komt, en laat ons hem aan deze Ismaëlieten verkopen, en<sup class=\"note-marker\" data-note=\"42\">42</sup> onze hand zij niet aan hem; want hij is onze broer, ons vlees, en zijn broers hoorden hem.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Komt, en laat ons hem aan deze Ismaëlieten verkopen, en<sup class=\"note-marker\" data-note=\"42\">42</sup> onze hand zij niet aan hem; want hij is onze broer, ons vlees,</i></span> en zijn broers hoorden hem.",
       "textSV1888_html": "Komt, en laat ons hem aan deze Ismaëlieten verkopen, en<sup class=\"note-marker\" data-note=\"42\">42</sup> onze hand zij niet aan hem; want hij is onze broeder, ons vlees, en zijn broederen hoorden hem.",
       "text1637_html": "Comt, ende laet ons hem desen Ismaëliten verkoopen, en<i>de</i> <sup class=\"note-marker\" data-note=\"42\">42</sup> onse hant en zy niet aen hem; want hy is onse broeder, ons vleesch: ende sijne broeders hoorden [hem].",
       "phraseDiff": [
@@ -3920,7 +3915,7 @@
       "number": 32,
       "textSV1888": "En zij zonden den veelvervigen rok, en deden hem tot hun vader brengen, en zeiden: Dezen hebben wij gevonden; beken toch, of deze uws zoons rok zij, of niet.",
       "text1637": "Ende sy sonden den veelverwigen rock, ende deden hem tot haren vader brengen; ende seyden: Desen hebben wy gevonden; bekent doch, of dese uwes soons rock zy, ofte niet.",
-      "text2026": "En zij zonden de veelvervigen rok, en deden hem tot hun vader brengen, en zeiden: Deze hebben wij gevonden; beken toch, of deze van uw zoon rok zij, of niet.",
+      "text2026": "En zij zonden de veelvervigen rok, en deden hem tot hun vader brengen, en zeiden: Deze hebben wij gevonden; beken toch, of dit de rok van uw zoon is, of niet.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4009,7 +4004,7 @@
           "morph": "HTn"
         }
       ],
-      "text2026_html": "En zij zonden de veelvervigen rok, en deden hem tot hun vader brengen, en zeiden: <span class=\"direct-speech\"><i>Deze hebben wij gevonden; beken toch, of deze van uw zoon rok zij, of niet.</i></span>",
+      "text2026_html": "En zij zonden de veelvervigen rok, en deden hem tot hun vader brengen, en zeiden: <span class=\"direct-speech\"><i>Deze hebben wij gevonden; beken toch, of dit de rok van uw zoon is, of niet.</i></span>",
       "text1637_html": "Ende sy sonden den veelverwigen rock, ende deden hem tot haren vader brengen; ende seyden: Desen hebben wy gevonden; bekent doch, of dese uwes soons rock zy, ofte niet.",
       "phraseDiff": [
         {
@@ -4023,9 +4018,14 @@
           "principe": null
         },
         {
-          "old": "uws zoons",
-          "new": "van uw zoon",
-          "principe": "V200"
+          "old": "deze uws zoons",
+          "new": "dit de",
+          "principe": "N22"
+        },
+        {
+          "old": "zij,",
+          "new": "van uw zoon is,",
+          "principe": "N22"
         }
       ]
     },
@@ -4033,7 +4033,7 @@
       "number": 33,
       "textSV1888": "En hij bekende hem, en zeide: Het is mijns zoons rok! een boos dier heeft hem opgegeten! voorzeker is Jozef verscheurd!",
       "text1637": "Ende hy bekende hem, ende seyde; 'Tis mijns soons rock; [f] een boos dier heeft hem opgegeten: [50] voorseker is Ioseph verscheurt.",
-      "text2026": "En hij bekende hem, en zei: Het is van mijn zoon rok! een boos van die heeft hem opgegeten! voorzeker is Jozef verscheurd!",
+      "text2026": "En hij bekende hem, en zei: Het is de rok van mijn zoon! een boos dier heeft hem opgegeten! voorzeker is Jozef verscheurd!",
       "marginNotes": [
         {
           "marker": "f",
@@ -4150,7 +4150,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En hij bekende hem, en zei: <span class=\"direct-speech\"><i>Het is van mijn zoon rok! een boos van die heeft hem opgegeten! voorzeker is Jozef verscheurd!</i></span>",
+      "text2026_html": "En hij bekende hem, en zei: <span class=\"direct-speech\"><i>Het is de rok van mijn zoon! een boos dier heeft hem opgegeten! voorzeker is Jozef verscheurd!</i></span>",
       "textSV1888_html": "En hij bekende hem, en zeide: Het is mijns zoons rok!<sup class=\"note-marker\" data-note=\"f\">f</sup> een boos dier heeft hem opgegeten!<sup class=\"note-marker\" data-note=\"50\">50</sup> voorzeker is Jozef verscheurd!",
       "text1637_html": "Ende hy bekende hem, ende seyde; 'Tis mijns soons rock; <sup class=\"note-marker\" data-note=\"f\">f</sup> een boos dier heeft hem opgegeten: <sup class=\"note-marker\" data-note=\"50\">50</sup> voorseker is Ioseph verscheurt.",
       "phraseDiff": [
@@ -4160,14 +4160,9 @@
           "principe": "W1"
         },
         {
-          "old": "mijns zoons",
-          "new": "van mijn zoon",
-          "principe": "V213"
-        },
-        {
-          "old": "dier",
-          "new": "van die",
-          "principe": null
+          "old": "mijns zoons rok!",
+          "new": "de rok van mijn zoon!",
+          "principe": "N22"
         }
       ]
     },
@@ -4701,7 +4696,7 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "En al zijn zonen, en al zijn dochters maakten zich op, om hem te troosten; maar hij weigerde zich te laten troosten, en zei: <span class=\"direct-speech\"><i>Want ik zal, rouw bedrijvende, tot mijn zoon in het graf neerdalen. Zo beweende hem zijn vader.</i></span>",
+      "text2026_html": "En al zijn zonen, en al zijn dochters maakten zich op, om hem te troosten; maar hij weigerde zich te laten troosten, en zei: <span class=\"direct-speech\"><i>Want ik zal, rouw bedrijvende, tot mijn zoon in het graf neerdalen.</i></span> Zo beweende hem zijn vader.",
       "textSV1888_html": "En al zijn zonen, en al<sup class=\"note-marker\" data-note=\"55\">55</sup> zijn dochteren maakten zich op, om hem te troosten;<sup class=\"note-marker\" data-note=\"56\">56</sup> maar hij weigerde zich te laten troosten, en zeide:<sup class=\"note-marker\" data-note=\"g\">g</sup> Want ik zal, rouw<sup class=\"note-marker\" data-note=\"57\">57</sup> bedrijvende, tot mijn zoon in het<sup class=\"note-marker\" data-note=\"58\">58</sup> graf nederdalen. Alzo beweende hem zijn vader.",
       "text1637_html": "Ende alle sijne sonen, ende alle <sup class=\"note-marker\" data-note=\"55\">55</sup> sijne dochteren maeckten sich op om hem te troosten: <sup class=\"note-marker\" data-note=\"56\">56</sup> maer hy weygerde hem te laten troosten, ende seyde; <sup class=\"note-marker\" data-note=\"g\">g</sup> Want ick sal rouwbedrijvende <sup class=\"note-marker\" data-note=\"57\">57</sup> tot mijnen sone in 't <sup class=\"note-marker\" data-note=\"58\">58</sup> graf nederdalen: also beweende hem sijn vader.",
       "phraseDiff": [
