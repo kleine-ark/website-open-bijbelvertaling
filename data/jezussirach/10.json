@@ -835,9 +835,9 @@
       "number": 11,
       "text1637": "De medicijnmeester houdt een lange ziekte af, en heden is iemand koning, en morgen zal hij sterven.",
       "textSV1888": "De medicijnmeester houdt een lange ziekte af, en heden is iemand koning, en morgen zal hij sterven.",
-      "text2026": "De dokter houdt een lange ziekte af, en heden is iemand koning, en morgen zal hij sterven.",
+      "text2026": "De dokter houdt een lange ziekte af, en vandaag is iemand koning, en morgen zal hij sterven.",
       "marginNotes": [],
-      "text2026_html": "De dokter houdt een lange ziekte af, en heden is iemand koning, en morgen zal hij sterven.",
+      "text2026_html": "De dokter houdt een lange ziekte af, en vandaag is iemand koning, en morgen zal hij sterven.",
       "grondtekst": [
         {
           "woord": "ἐν",
@@ -900,6 +900,11 @@
           "old": "medicijnmeester",
           "new": "dokter",
           "principe": "V680"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         }
       ]
     },

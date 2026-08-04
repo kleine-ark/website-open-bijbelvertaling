@@ -2105,7 +2105,7 @@
       "number": 16,
       "textSV1888": "Alzo spreekt de ganse gemeente des HEEREN: Wat overtreding is dit, waarmede gijlieden overtreden hebt tegen den God van Israël, heden afkerende van achter den HEERE, mits dat gij een altaar voor u gebouwd hebt, om heden tegen den HEERE wederspannig te zijn?",
       "text1637": "Aldus spreeckt de gantsche gemeynte des HEEREN; Wat overtredinge is dit daer mede ghylieden overtreden hebt tegen den Godt Israëls, heden afkeerende [11] van achter den HEERE, mits dat ghy eenen Altaer voor u gebouwt hebt, om heden tegen den HEERE wederspannich te zijn?",
-      "text2026": "Zo spreekt de hele gemeente van JAHWEH: Wat overtreding is dit, waarmee u overtreden hebt tegen de God van Israël, heden afkerende van achter JAHWEH, mits dat u een altaar voor u gebouwd hebt, om heden tegen JAHWEH opstandig te zijn?",
+      "text2026": "Zo spreekt de hele gemeente van JAHWEH: Wat overtreding is dit, waarmee u overtreden hebt tegen de God van Israël, vandaag afkerende van achter JAHWEH, mits dat u een altaar voor u gebouwd hebt, om vandaag tegen JAHWEH opstandig te zijn?",
       "marginNotes": [
         {
           "marker": "11",
@@ -2227,7 +2227,7 @@
           "morph": "HR/Np"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo spreekt de hele gemeente van JAHWEH: Wat overtreding is dit, waarmee u overtreden hebt tegen de God van Israël, heden afkerende van achter JAHWEH, mits dat u een altaar voor u gebouwd hebt, om heden tegen JAHWEH opstandig te zijn?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo spreekt de hele gemeente van JAHWEH: Wat overtreding is dit, waarmee u overtreden hebt tegen de God van Israël, vandaag afkerende van achter JAHWEH, mits dat u een altaar voor u gebouwd hebt, om vandaag tegen JAHWEH opstandig te zijn?</i></span>",
       "textSV1888_html": "Alzo spreekt de ganse gemeente des HEEREN: Wat overtreding is dit, waarmede gijlieden overtreden hebt tegen den God van Israël, heden afkerende<sup class=\"note-marker\" data-note=\"11\">11</sup> van achter den HEERE, mits dat gij een altaar voor u gebouwd hebt, om heden tegen den HEERE wederspannig te zijn?",
       "text1637_html": "Aldus spreeckt de gantsche gemeynte des HEEREN; Wat overtredinge is dit daer mede ghylieden overtreden hebt tegen den Godt Israëls, heden afkeerende <sup class=\"note-marker\" data-note=\"11\">11</sup> van achter den HEERE, mits dat ghy eenen Altaer voor u gebouwt hebt, om heden tegen den HEERE wederspannich te zijn?",
       "phraseDiff": [
@@ -2257,6 +2257,11 @@
           "principe": "N1"
         },
         {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
+        },
+        {
           "old": "den HEERE,",
           "new": "JAHWEH,",
           "principe": "N1"
@@ -2265,6 +2270,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         },
         {
           "old": "den HEERE wederspannig",
@@ -2394,7 +2404,7 @@
       "number": 18,
       "textSV1888": "Dewijl gij u heden van achter den HEERE afkeert, het zal dan geschieden, als gij heden wederspannig zijt tegen den HEERE, zo zal Hij Zich morgen grotelijks vertoornen tegen de ganse gemeente van Israël.",
       "text1637": "Dewijle ghy u heden van achter den HEERE af-keert: ’t sal dan geschieden, als ghy heden wederspannich zijt tegen den HEERE, so sal hy sich [12] morgen grootelicx vertoornen tegen de gantsche gemeynte Israëls.",
-      "text2026": "Omdat u u heden van achter JAHWEH afkeert, het zal dan gebeuren, als u heden opstandig bent tegen JAHWEH, zo zal Hij Zich morgen enorm vertoornen tegen de hele gemeente van Israël.",
+      "text2026": "Omdat u u vandaag van achter JAHWEH afkeert, het zal dan gebeuren, als u vandaag opstandig bent tegen JAHWEH, zo zal Hij Zich morgen enorm vertoornen tegen de hele gemeente van Israël.",
       "marginNotes": [
         {
           "marker": "12",
@@ -2486,14 +2496,19 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Omdat u u heden van achter JAHWEH afkeert, het zal dan gebeuren, als u heden opstandig bent tegen JAHWEH, zo zal Hij Zich<sup class=\"note-marker\" data-note=\"12\">12</sup> morgen enorm vertoornen tegen de hele gemeente van Israël.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Omdat u u vandaag van achter JAHWEH afkeert, het zal dan gebeuren, als u vandaag opstandig bent tegen JAHWEH, zo zal Hij Zich<sup class=\"note-marker\" data-note=\"12\">12</sup> morgen enorm vertoornen tegen de hele gemeente van Israël.</i></span>",
       "textSV1888_html": "Dewijl gij u heden van achter den HEERE afkeert, het zal dan geschieden, als gij heden wederspannig zijt tegen den HEERE, zo zal Hij Zich<sup class=\"note-marker\" data-note=\"12\">12</sup> morgen grotelijks vertoornen tegen de ganse gemeente van Israël.",
       "text1637_html": "Dewijle ghy u heden van achter den HEERE af-keert: ’t sal dan geschieden, als ghy heden wederspannich zijt tegen den HEERE, so sal hy sich <sup class=\"note-marker\" data-note=\"12\">12</sup> morgen grootelicx vertoornen tegen de gantsche gemeynte Israëls.",
       "phraseDiff": [
         {
           "old": "Dewijl gij",
-          "new": "Omdat u",
-          "principe": "A1"
+          "new": "Omdat",
+          "principe": null
+        },
+        {
+          "old": "heden",
+          "new": "u vandaag",
+          "principe": "V986"
         },
         {
           "old": "den HEERE",
@@ -2506,14 +2521,9 @@
           "principe": "V40"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
-        },
-        {
-          "old": "wederspannig zijt",
-          "new": "opstandig bent",
-          "principe": "V455"
+          "old": "gij heden wederspannig zijt",
+          "new": "u vandaag opstandig bent",
+          "principe": "V986"
         },
         {
           "old": "den HEERE,",
@@ -3038,7 +3048,7 @@
       "number": 22,
       "textSV1888": "De God der goden, de HEERE, de God der goden, de HEERE, Die weet het; Israël zelf zal het ook weten! Is het door wederspannigheid, of is het door overtreding tegen den HEERE, zo behoudt ons heden niet;",
       "text1637": "[e[f]] [24] De Godt der goden, de HEERE, de Godt der goden, de HEERE, die weet het, Israël selfs sal het oock weten: ist door wederspannicheyt, of ist door overtredinge tegens den HEERE, [25] so en behoudt ons heden iet.",
-      "text2026": "De God van de goden, JAHWEH, de God van de goden, JAHWEH, Die weet het; Israël zelf zal het ook weten! Is het door opstandigheid, of is het door overtreding tegen JAHWEH, zo behoudt ons heden niet;",
+      "text2026": "De God van de goden, JAHWEH, de God van de goden, JAHWEH, Die weet het; Israël zelf zal het ook weten! Is het door opstandigheid, of is het door overtreding tegen JAHWEH, zo behoudt ons vandaag niet;",
       "marginNotes": [
         {
           "marker": "f",
@@ -3164,7 +3174,7 @@
           "morph": "HTd/Pdxms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>De<sup class=\"note-marker\" data-note=\"24\">24</sup> God van de goden, JAHWEH, de God van de goden, JAHWEH, Die weet het; Israël zelf zal het ook weten! Is het door opstandigheid, of is het door overtreding tegen JAHWEH,<sup class=\"note-marker\" data-note=\"25\">25</sup> zo behoudt ons heden niet;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>De<sup class=\"note-marker\" data-note=\"24\">24</sup> God van de goden, JAHWEH, de God van de goden, JAHWEH, Die weet het; Israël zelf zal het ook weten! Is het door opstandigheid, of is het door overtreding tegen JAHWEH,<sup class=\"note-marker\" data-note=\"25\">25</sup> zo behoudt ons vandaag niet;</i></span>",
       "textSV1888_html": "De<sup class=\"note-marker\" data-note=\"24\">24</sup> God der goden, de HEERE, de God der goden, de HEERE, Die weet het; Israël zelf zal het ook weten! Is het door wederspannigheid, of is het door overtreding tegen den HEERE,<sup class=\"note-marker\" data-note=\"25\">25</sup> zo behoudt ons heden niet;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"e[f]\">e[f]</sup> <sup class=\"note-marker\" data-note=\"24\">24</sup> De Godt der goden, de HEERE, de Godt der goden, de HEERE, die weet het, Israël selfs sal het oock weten: ist door wederspannicheyt, of ist door overtredinge tegens den HEERE, <sup class=\"note-marker\" data-note=\"25\">25</sup> so en behoudt ons heden iet.",
       "phraseDiff": [
@@ -3197,6 +3207,11 @@
           "old": "den HEERE,",
           "new": "JAHWEH,",
           "principe": "N1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         }
       ]
     },
@@ -4338,7 +4353,7 @@
       "number": 31,
       "textSV1888": "En Pinehas, de zoon van den priester Eleazar, zeide tot de kinderen van Ruben, en tot de kinderen van Gad, en tot de kinderen van Manasse: Heden weten wij, dat de HEERE in het midden van ons is, dewijl gij deze overtreding tegen den HEERE niet begaan hebt; toen hebt gijlieden de kinderen Israëls verlost uit de hand des HEEREN.",
       "text1637": "Ende Pinehas de sone des Priesters Eleazars seyde tot de kinderen Rubens, ende tot de kinderen Gads, ende tot de kinderen Manasse, Heden weten wy, [34] dat de HEERE in’t midden van ons is, dewijle ghy dese overredinge tegen den HEERE niet begaen en hebt: Doe [35] hebt ghylieden de kinderen Israëls verlost uyt de hant des HEEREN.",
-      "text2026": "En Pinehas, de zoon van de priester Eleazar, zei tot de kinderen van Ruben, en tot de kinderen van Gad, en tot de kinderen van Manasse: Heden weten wij, dat JAHWEH in het midden van ons is, omdat u deze overtreding tegen JAHWEH niet begaan hebt; toen hebt u de kinderen van Israël verlost uit de hand van JAHWEH.",
+      "text2026": "En Pinehas, de zoon van de priester Eleazar, zei tot de kinderen van Ruben, en tot de kinderen van Gad, en tot de kinderen van Manasse: Vandaag weten wij, dat JAHWEH in het midden van ons is, omdat u deze overtreding tegen JAHWEH niet begaan hebt; toen hebt u de kinderen van Israël verlost uit de hand van JAHWEH.",
       "marginNotes": [
         {
           "marker": "34",
@@ -4517,7 +4532,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En Pinehas, de zoon van de priester Eleazar, zei tot de kinderen van Ruben, en tot de kinderen van Gad, en tot de kinderen van Manasse: <span class=\"direct-speech\"><i>Heden weten wij,<sup class=\"note-marker\" data-note=\"34\">34</sup> dat JAHWEH in het midden van ons is, omdat u deze overtreding tegen JAHWEH niet begaan hebt; toen<sup class=\"note-marker\" data-note=\"35\">35</sup> hebt u de kinderen van Israël verlost uit de hand van JAHWEH.</i></span>",
+      "text2026_html": "En Pinehas, de zoon van de priester Eleazar, zei tot de kinderen van Ruben, en tot de kinderen van Gad, en tot de kinderen van Manasse: <span class=\"direct-speech\"><i>Vandaag weten wij,<sup class=\"note-marker\" data-note=\"34\">34</sup> dat JAHWEH in het midden van ons is, omdat u deze overtreding tegen JAHWEH niet begaan hebt; toen<sup class=\"note-marker\" data-note=\"35\">35</sup> hebt u de kinderen van Israël verlost uit de hand van JAHWEH.</i></span>",
       "textSV1888_html": "En Pinehas, de zoon van den priester Eleazar, zeide tot de kinderen van Ruben, en tot de kinderen van Gad, en tot de kinderen van Manasse: Heden weten wij,<sup class=\"note-marker\" data-note=\"34\">34</sup> dat de HEERE in het midden van ons is, dewijl gij deze overtreding tegen den HEERE niet begaan hebt; toen<sup class=\"note-marker\" data-note=\"35\">35</sup> hebt gijlieden de kinderen Israëls verlost uit de hand des HEEREN.",
       "text1637_html": "Ende Pinehas de sone des Priesters Eleazars seyde tot de kinderen Rubens, ende tot de kinderen Gads, ende tot de kinderen Manasse, Heden weten wy, <sup class=\"note-marker\" data-note=\"34\">34</sup> dat de HEERE in’t midden van ons is, dewijle ghy dese overredinge tegen den HEERE niet begaen en hebt: Doe <sup class=\"note-marker\" data-note=\"35\">35</sup> hebt ghylieden de kinderen Israëls verlost uyt de hant des HEEREN.",
       "phraseDiff": [
@@ -4530,6 +4545,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Heden",
+          "new": "Vandaag",
+          "principe": "V986"
         },
         {
           "old": "de HEERE",

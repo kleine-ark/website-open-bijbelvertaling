@@ -345,7 +345,7 @@
       "number": 3,
       "textSV1888": "Toen zeide hij: Ga, eis voor u vaten van buiten, van al uw naburen ledige vaten; maak er niet weinig te hebben.",
       "text1637": "Doe seyde hy, Gaet, eyscht voor u vaten van buyten, van alle uwe nabueren ledige vaten; maeckter niet [5] weynich te hebben.",
-      "text2026": "Toen zei hij: Ga, eis voor u kruiken van buiten, van al uw buren ledige kruiken; maak er niet weinig te hebben.",
+      "text2026": "Toen zei hij: Ga, eis voor u kruiken van buiten, van al uw buren lege kruiken; maak er niet weinig te hebben.",
       "marginNotes": [
         {
           "marker": "5",
@@ -427,7 +427,7 @@
           "morph": "HVhj2fs"
         }
       ],
-      "text2026_html": "Toen zei hij: Ga, eis voor u kruiken van buiten, van al uw buren ledige kruiken; maak er niet weinig te hebben.",
+      "text2026_html": "Toen zei hij: Ga, eis voor u kruiken van buiten, van al uw buren lege kruiken; maak er niet weinig te hebben.",
       "textSV1888_html": "Toen zeide hij: Ga, eis voor u vaten van buiten, van al uw naburen ledige vaten; maak er niet<sup class=\"note-marker\" data-note=\"5\">5</sup> weinig te hebben.",
       "text1637_html": "Doe seyde hy, Gaet, eyscht voor u vaten van buyten, van alle uwe nabueren ledige vaten; maeckter niet <sup class=\"note-marker\" data-note=\"5\">5</sup> weynich te hebben.",
       "phraseDiff": [
@@ -442,14 +442,9 @@
           "principe": null
         },
         {
-          "old": "naburen",
-          "new": "buren",
-          "principe": "V283"
-        },
-        {
-          "old": "vaten;",
-          "new": "kruiken;",
-          "principe": null
+          "old": "naburen ledige vaten;",
+          "new": "buren lege kruiken;",
+          "principe": "V972"
         }
       ]
     },
@@ -2475,7 +2470,7 @@
       "number": 23,
       "textSV1888": "En hij zeide: Waarom gaat gij heden tot hem? Het is geen nieuwe maan, noch sabbat. En zij zeide: Het zal wel zijn.",
       "text1637": "Ende hy seyde, Waerom gaet ghy heden tot hem? ten is [34] geene nieuwe Mane, nochte Sabbath, ende sy seyde; [35] ’Tsal wel zijn.",
-      "text2026": "En hij zei: Waarom gaat u heden tot hem? Het is geen nieuwe maan, noch sabbat. En zij zei: Het zal wel zijn.",
+      "text2026": "En hij zei: Waarom gaat u vandaag tot hem? Het is geen nieuwe maan, noch sabbat. En zij zei: Het zal wel zijn.",
       "marginNotes": [
         {
           "marker": "34",
@@ -2554,7 +2549,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>Waarom gaat u heden tot hem? Het is geen nieuwe maan, noch sabbat.</i></span> En zij zei: <span class=\"direct-speech\"><i>Het zal wel zijn.</i></span>",
+      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>Waarom gaat u vandaag tot hem? Het is geen nieuwe maan, noch sabbat.</i></span> En zij zei: <span class=\"direct-speech\"><i>Het zal wel zijn.</i></span>",
       "textSV1888_html": "En hij zeide: Waarom gaat gij heden tot hem? Het is<sup class=\"note-marker\" data-note=\"34\">34</sup> geen nieuwe maan, noch sabbat. En zij zeide:<sup class=\"note-marker\" data-note=\"35\">35</sup> Het zal wel zijn.",
       "text1637_html": "Ende hy seyde, Waerom gaet ghy heden tot hem? ten is <sup class=\"note-marker\" data-note=\"34\">34</sup> geene nieuwe Mane, nochte Sabbath, ende sy seyde; <sup class=\"note-marker\" data-note=\"35\">35</sup> ’Tsal wel zijn.",
       "phraseDiff": [
@@ -2564,9 +2559,9 @@
           "principe": "W1"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "gij heden",
+          "new": "u vandaag",
+          "principe": "V986"
         },
         {
           "old": "zeide:",

@@ -1005,7 +1005,7 @@
       "number": 9,
       "textSV1888": "En ziet, een engel des Heeren stond bij hen, en de heerlijkheid des Heeren omscheen hen, en zij vreesden met grote vreze.",
       "text1637": "Ende siet een Engel des Heeren [12] stont by haer, ende de [13] heerlickheyt des Heeren omscheense, ende sy vreesden met groote vreese.",
-      "text2026": "En ziet, een engel van de Heere stond bij hen, en de heerlijkheid van de Heere omscheen hen, en zij vreesden met grote vreze.",
+      "text2026": "En ziet, een engel van de Heere stond bij hen, en de heerlijkheid van de Heere omscheen hen, en zij vreesden met grote vrees.",
       "marginNotes": [
         {
           "marker": "12",
@@ -1108,7 +1108,7 @@
           "gloss": "〔great"
         }
       ],
-      "text2026_html": "En ziet, een engel van de<sup class=\"note-marker\" data-note=\"12\">12</sup> Heere stond bij hen, en de<sup class=\"note-marker\" data-note=\"13\">13</sup> heerlijkheid van de Heere omscheen hen, en zij vreesden met grote vreze.",
+      "text2026_html": "En ziet, een engel van de<sup class=\"note-marker\" data-note=\"12\">12</sup> Heere stond bij hen, en de<sup class=\"note-marker\" data-note=\"13\">13</sup> heerlijkheid van de Heere omscheen hen, en zij vreesden met grote vrees.",
       "textSV1888_html": "En ziet, een engel des Heeren<sup class=\"note-marker\" data-note=\"12\">12</sup> stond bij hen, en de<sup class=\"note-marker\" data-note=\"13\">13</sup> heerlijkheid des Heeren omscheen hen, en zij vreesden met grote vreze.",
       "text1637_html": "Ende siet een Engel des Heeren <sup class=\"note-marker\" data-note=\"12\">12</sup> stont by haer, ende de <sup class=\"note-marker\" data-note=\"13\">13</sup> heerlickheyt des Heeren omscheense, ende sy vreesden met groote vreese.",
       "phraseDiff": [
@@ -1121,6 +1121,11 @@
           "old": "des Heeren",
           "new": "van de Heere",
           "principe": "N3"
+        },
+        {
+          "old": "vreze.",
+          "new": "vrees.",
+          "principe": "V991"
         }
       ]
     },
@@ -1275,7 +1280,7 @@
       "number": 11,
       "textSV1888": "Namelijk dat u heden geboren is de Zaligmaker, welke is Christus, de Heere, in de stad Davids.",
       "text1637": "[Namelick] dat u heden geboren is de Salichmaker, welcke is [16] Christus de Heere, in de stadt Davids.",
-      "text2026": "Namelijk dat u heden geboren is de Zaligmaker, die is Christus, de Heere, in de stad van David.",
+      "text2026": "Namelijk dat u vandaag geboren is de Zaligmaker, die is Christus, de Heere, in de stad van David.",
       "marginNotes": [
         {
           "marker": "16",
@@ -1359,10 +1364,15 @@
           "gloss": "〔David"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Namelijk dat u heden geboren is de Zaligmaker, die is<sup class=\"note-marker\" data-note=\"16\">16</sup> Christus, de Heere, in de stad van David.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Namelijk dat u vandaag geboren is de Zaligmaker, die is<sup class=\"note-marker\" data-note=\"16\">16</sup> Christus, de Heere, in de stad van David.</i></span>",
       "textSV1888_html": "Namelijk dat u heden geboren is de Zaligmaker, welke is<sup class=\"note-marker\" data-note=\"16\">16</sup> Christus, de Heere, in de stad Davids.",
       "text1637_html": "[<i>Namelick</i>] dat u heden geboren is de Salichmaker, welcke is <sup class=\"note-marker\" data-note=\"16\">16</sup> Christus de Heere, in de stadt Davids.",
       "phraseDiff": [
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
+        },
         {
           "old": "welke",
           "new": "die",

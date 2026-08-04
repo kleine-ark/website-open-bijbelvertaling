@@ -1200,7 +1200,7 @@
       "number": 11,
       "textSV1888": "En als Jehu uitging tot de knechten zijns heren, zeide men tot hem: Is het al wel? Waarom is deze onzinnige tot u gekomen? En hij zeide tot hen: Gij kent den man en zijn spraak.",
       "text1637": "Ende als Iehu uyt-ginck tot de knechten sijns heeren, seyde men tot hem; [20] Is ’t al wel? waerom is dese [21] onsinnige tot u gekomen? ende hy seyde tot hen; [22] Ghy kent den man, ende sijne sprake.",
-      "text2026": "En als Jehu uitging tot de knechten van zijn heren, zei men tot hem: Is het al wel? Waarom is deze krankzinnige tot u gekomen? En hij zei tot hen: U kent de man en zijn spraak.",
+      "text2026": "En als Jehu uitging tot de knechten van zijn heer, zei men tot hem: Is het al wel? Waarom is deze krankzinnige tot u gekomen? En hij zei tot hen: U kent de man en zijn spraak.",
       "marginNotes": [
         {
           "marker": "20",
@@ -1331,19 +1331,14 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "En als Jehu uitging tot de knechten van zijn heren, zei men tot hem: Is het al wel? Waarom is deze krankzinnige tot u gekomen? En hij zei tot hen: <span class=\"direct-speech\"><i>U kent de man en zijn spraak.</i></span>",
+      "text2026_html": "En als Jehu uitging tot de knechten van zijn heer, zei men tot hem: Is het al wel? Waarom is deze krankzinnige tot u gekomen? En hij zei tot hen: <span class=\"direct-speech\"><i>U kent de man en zijn spraak.</i></span>",
       "textSV1888_html": "En als Jehu uitging tot de knechten zijns heren, zeide men tot hem:<sup class=\"note-marker\" data-note=\"20\">20</sup> Is het al wel? Waarom is deze<sup class=\"note-marker\" data-note=\"21\">21</sup> onzinnige tot u gekomen? En hij zeide tot hen:<sup class=\"note-marker\" data-note=\"22\">22</sup> Gij kent den man en zijn spraak.",
       "text1637_html": "Ende als Iehu uyt-ginck tot de knechten sijns heeren, seyde men tot hem; <sup class=\"note-marker\" data-note=\"20\">20</sup> Is ’t al wel? waerom is dese <sup class=\"note-marker\" data-note=\"21\">21</sup> onsinnige tot u gekomen? ende hy seyde tot hen; <sup class=\"note-marker\" data-note=\"22\">22</sup> Ghy kent den man, ende sijne sprake.",
       "phraseDiff": [
         {
-          "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
-        },
-        {
-          "old": "zeide",
-          "new": "zei",
-          "principe": "W1"
+          "old": "zijns heren, zeide",
+          "new": "van zijn heer, zei",
+          "principe": null
         },
         {
           "old": "onzinnige",
@@ -1966,7 +1961,7 @@
       "number": 16,
       "textSV1888": "Toen reed Jehu, en toog naar Jizreël; want Joram lag aldaar; en Ahazia, de koning van Juda, was afgekomen, om Joram te bezien.",
       "text1637": "Doe reedt Iehu, ende tooch nae Iizreël; want Ioram [32] lach aldaer: ende Ahazia de Coninck van Iuda was afgekomen, om Ioram te besien.",
-      "text2026": "Toen reed Jehu, en trok naar Jizreël; want Joram lag daar; en Ahazia, de koning van Juda, was afgekomen, om Joram te bezien.",
+      "text2026": "Toen reed Jehu, en trok naar Jizreël; want Joram lag daar; en Ahazia, de koning van Juda, was afgekomen, om Joram te bekijken.",
       "marginNotes": [
         {
           "marker": "32",
@@ -2053,7 +2048,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Toen reed Jehu, en trok naar Jizreël; want Joram<sup class=\"note-marker\" data-note=\"32\">32</sup> lag daar; en Ahazia, de koning van Juda, was afgekomen, om Joram te bezien.",
+      "text2026_html": "Toen reed Jehu, en trok naar Jizreël; want Joram<sup class=\"note-marker\" data-note=\"32\">32</sup> lag daar; en Ahazia, de koning van Juda, was afgekomen, om Joram te bekijken.",
       "textSV1888_html": "Toen reed Jehu, en toog naar Jizreël; want Joram<sup class=\"note-marker\" data-note=\"32\">32</sup> lag aldaar; en Ahazia, de koning van Juda, was afgekomen, om Joram te bezien.",
       "text1637_html": "Doe reedt Iehu, ende tooch nae Iizreël; want Ioram <sup class=\"note-marker\" data-note=\"32\">32</sup> lach aldaer: ende Ahazia de Coninck van Iuda was afgekomen, om Ioram te besien.",
       "phraseDiff": [
@@ -2066,6 +2061,11 @@
           "old": "aldaar;",
           "new": "daar;",
           "principe": "V36"
+        },
+        {
+          "old": "bezien.",
+          "new": "bekijken.",
+          "principe": "V967"
         }
       ]
     },

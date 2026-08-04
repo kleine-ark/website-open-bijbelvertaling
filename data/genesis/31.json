@@ -802,7 +802,7 @@
       "number": 7,
       "textSV1888": "Maar uw vader heeft bedriegelijk met mij gehandeld, en heeft mijn loon tien malen veranderd; doch God heeft hem niet toegelaten, om mij kwaad te doen.",
       "text1637": "Maer uw' vader [9] heeft bedriechlick met my gehandelt, ende heeft mijnen loon [10] tienmalen verandert: doch Godt en heeft hem niet toegelaten om aen my quaet te doen.",
-      "text2026": "Maar uw vader heeft bedriegelijk met mij gehandeld, en heeft mijn loon tien malen veranderd; maar God heeft hem niet toegelaten, om mij kwaad te doen.",
+      "text2026": "Maar uw vader heeft bedriegelijk met mij gehandeld, en heeft mijn loon tien keer veranderd; maar God heeft hem niet toegelaten, om mij kwaad te doen.",
       "marginNotes": [
         {
           "marker": "9",
@@ -928,10 +928,15 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar uw vader<sup class=\"note-marker\" data-note=\"9\">9</sup> heeft bedriegelijk met mij gehandeld, en heeft mijn loon<sup class=\"note-marker\" data-note=\"10\">10</sup> tien malen veranderd; maar God heeft hem niet toegelaten, om mij kwaad te doen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar uw vader<sup class=\"note-marker\" data-note=\"9\">9</sup> heeft bedriegelijk met mij gehandeld, en heeft mijn loon<sup class=\"note-marker\" data-note=\"10\">10</sup> tien keer veranderd; maar God heeft hem niet toegelaten, om mij kwaad te doen.</i></span>",
       "textSV1888_html": "Maar uw vader<sup class=\"note-marker\" data-note=\"9\">9</sup> heeft bedriegelijk met mij gehandeld, en heeft mijn loon<sup class=\"note-marker\" data-note=\"10\">10</sup> tien malen veranderd; doch God heeft hem niet toegelaten, om mij kwaad te doen.",
       "text1637_html": "Maer uw' vader <sup class=\"note-marker\" data-note=\"9\">9</sup> heeft bedriechlick met my gehandelt, ende heeft mijnen loon <sup class=\"note-marker\" data-note=\"10\">10</sup> tienmalen verandert: doch Godt en heeft hem niet toegelate<i>n</i> om aen my quaet te doe<i>n</i>.",
       "phraseDiff": [
+        {
+          "old": "malen",
+          "new": "keer",
+          "principe": "V962"
+        },
         {
           "old": "doch",
           "new": "maar",
@@ -5275,7 +5280,7 @@
       "number": 41,
       "textSV1888": "Ik ben nu twintig jaren in uw huis geweest; ik heb u veertien jaren gediend om uw beide dochteren, en zes jaren om uw kudde; en gij hebt mijn loon tien malen veranderd.",
       "text1637": "[63] Ick ben nu twintich jaren in uwen huyse geweest; ick hebbe u veertien jaren gedient om uwe beyde dochteren, ende ses jaren [64] om uwe cudde: ende [65] ghy hebt mijnen loon tien malen verandert.",
-      "text2026": "Ik ben nu twintig jaren in uw huis geweest; ik heb u veertien jaren gediend om uw beide dochters, en zes jaren om uw kudde; en u hebt mijn loon tien malen veranderd.",
+      "text2026": "Ik ben nu twintig jaren in uw huis geweest; ik heb u veertien jaren gediend om uw beide dochters, en zes jaren om uw kudde; en u hebt mijn loon tien keer veranderd.",
       "marginNotes": [
         {
           "marker": "63",
@@ -5412,7 +5417,7 @@
           "morph": "HNcmpa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"63\">63</sup><span class=\"direct-speech\"><i> Ik ben nu twintig jaren in uw huis geweest; ik heb u veertien jaren gediend om uw beide dochters, en zes jaren<sup class=\"note-marker\" data-note=\"64\">64</sup> om uw kudde; en<sup class=\"note-marker\" data-note=\"65\">65</sup> u hebt mijn loon tien malen veranderd.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"63\">63</sup><span class=\"direct-speech\"><i> Ik ben nu twintig jaren in uw huis geweest; ik heb u veertien jaren gediend om uw beide dochters, en zes jaren<sup class=\"note-marker\" data-note=\"64\">64</sup> om uw kudde; en<sup class=\"note-marker\" data-note=\"65\">65</sup> u hebt mijn loon tien keer veranderd.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"63\">63</sup> Ik ben nu twintig jaren in uw huis geweest; ik heb u veertien jaren gediend om uw beide dochteren, en zes jaren<sup class=\"note-marker\" data-note=\"64\">64</sup> om uw kudde; en<sup class=\"note-marker\" data-note=\"65\">65</sup> gij hebt mijn loon tien malen veranderd.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"63\">63</sup> Ick ben nu twintich jaren in uwe<i>n</i> huyse geweest; ick hebbe u veertien jaren gedient om uwe beyde dochteren, ende ses jaren <sup class=\"note-marker\" data-note=\"64\">64</sup> om uwe cudde: ende <sup class=\"note-marker\" data-note=\"65\">65</sup> ghy hebt mijnen loon tien malen verandert.",
       "phraseDiff": [
@@ -5425,6 +5430,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "malen",
+          "new": "keer",
+          "principe": "V962"
         }
       ]
     },
@@ -5688,7 +5698,7 @@
       "number": 43,
       "textSV1888": "Toen antwoordde Laban en zeide tot Jakob: Deze dochters zijn mijn dochters, en deze zonen zijn mijn zonen, en deze kudde is mijn kudde, ja, al wat gij ziet, dat is mijn; en wat zoude ik aan deze mijn dochteren heden doen? of aan haar zonen, die zij gebaard hebben?",
       "text1637": "Doe antwoordde Laban, ende seyde tot Iacob; Dese dochters zijn mijne dochters, ende dese sonen zijn mijne sonen, ende dese cudde is mijne cudde, ja al wat ghy siet dat is mijn: ende [68] wat soude ick dese mijne dochteren heden doen? ofte hare [69] sonen, die sy gebaert hebben?",
-      "text2026": "Toen antwoordde Laban en zei tot Jakob: Deze dochters zijn mijn dochters, en deze zonen zijn mijn zonen, en deze kudde is mijn kudde, ja, al wat u ziet, dat is van mij; en wat zou ik aan deze mijn dochters heden doen? of aan haar zonen, die zij gebaard hebben?",
+      "text2026": "Toen antwoordde Laban en zei tot Jakob: Deze dochters zijn mijn dochters, en deze zonen zijn mijn zonen, en deze kudde is mijn kudde, ja, al wat u ziet, dat is van mij; en wat zou ik aan deze mijn dochters vandaag doen? of aan haar zonen, die zij gebaard hebben?",
       "marginNotes": [
         {
           "marker": "68",
@@ -5847,7 +5857,7 @@
           "morph": "HVqp3cp"
         }
       ],
-      "text2026_html": "Toen antwoordde Laban en zei tot Jakob: <span class=\"direct-speech\"><i>Deze dochters zijn mijn dochters, en deze zonen zijn mijn zonen, en deze kudde is mijn kudde, ja, al wat u ziet, dat is van mij; en wat zou ik aan deze mijn dochters heden doen? of aan haar zonen, die zij gebaard hebben?</i></span>",
+      "text2026_html": "Toen antwoordde Laban en zei tot Jakob: <span class=\"direct-speech\"><i>Deze dochters zijn mijn dochters, en deze zonen zijn mijn zonen, en deze kudde is mijn kudde, ja, al wat u ziet, dat is van mij; en wat zou ik aan deze mijn dochters vandaag doen? of aan haar zonen, die zij gebaard hebben?</i></span>",
       "textSV1888_html": "Toen antwoordde Laban en zeide tot Jakob: Deze dochters zijn mijn dochters, en deze zonen zijn mijn zonen, en deze kudde is mijn kudde, ja, al wat gij ziet, dat is mijn; en<sup class=\"note-marker\" data-note=\"68\">68</sup> wat zoude ik aan deze mijn dochteren heden doen? of aan<sup class=\"note-marker\" data-note=\"69\">69</sup> haar zonen, die zij gebaard hebben?",
       "text1637_html": "Doe antwoordde Laban, ende seyde tot Iacob; Dese dochters zijn mijne dochters, ende dese sonen zijn mijne sonen, ende dese cudde is mijne cudde, ja al wat ghy siet dat is mijn: ende <sup class=\"note-marker\" data-note=\"68\">68</sup> wat soude ick dese mijne dochteren heden doen? ofte hare <sup class=\"note-marker\" data-note=\"69\">69</sup> sonen, die sy gebaert hebben?",
       "phraseDiff": [
@@ -5872,9 +5882,9 @@
           "principe": "V50"
         },
         {
-          "old": "dochteren",
-          "new": "dochters",
-          "principe": "V569"
+          "old": "dochteren heden",
+          "new": "dochters vandaag",
+          "principe": "V986"
         }
       ]
     },
@@ -6247,7 +6257,7 @@
       "number": 48,
       "textSV1888": "Toen zeide Laban: Deze hoop zij heden een getuige tussen mij en tussen u! Daarom noemde men zijn naam Gilead,",
       "text1637": "Doe seyde Laban; Dese hoop zy heden een getuyge tusschen my, ende tusschen u: daerom noemde men sijnen name [76] Gilead;",
-      "text2026": "Toen zei Laban: Deze hoop zij heden een getuige tussen mij en tussen u! Daarom noemde men zijn naam Gilead,",
+      "text2026": "Toen zei Laban: Deze hoop zij vandaag een getuige tussen mij en tussen u! Daarom noemde men zijn naam Gilead,",
       "marginNotes": [
         {
           "marker": "76",
@@ -6324,7 +6334,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Toen zei Laban: <span class=\"direct-speech\"><i>Deze hoop zij heden een getuige tussen mij en tussen u!</i></span> Daarom noemde men zijn naam Gilead,",
+      "text2026_html": "Toen zei Laban: <span class=\"direct-speech\"><i>Deze hoop zij vandaag een getuige tussen mij en tussen u!</i></span> Daarom noemde men zijn naam Gilead,",
       "textSV1888_html": "Toen zeide Laban: Deze hoop zij heden een getuige tussen mij en tussen u! Daarom noemde men zijn naam<sup class=\"note-marker\" data-note=\"76\">76</sup> Gilead,",
       "text1637_html": "Doe seyde Laban; Dese hoop zy heden een getuyge tussche<i>n</i> my, ende tussche<i>n</i> u: daerom noemde men sijnen name <sup class=\"note-marker\" data-note=\"76\">76</sup> Gilead;",
       "phraseDiff": [
@@ -6332,6 +6342,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         }
       ]
     },
@@ -6339,7 +6354,7 @@
       "number": 49,
       "textSV1888": "En Mizpa; omdat hij zeide: Dat de HEERE opzicht neme tussen mij en tussen u, wanneer wij de een van den ander zullen verborgen zijn!",
       "text1637": "Ende [77] Mizpa; om dat hy seyde, Dat de HEERE opsicht neme tusschen my, ende tusschen u: wanneer wy [78] d'een van d'ander sullen verborgen zijn.",
-      "text2026": "En Mizpa; omdat hij zei: Dat JAHWEH opzicht neme tussen mij en tussen u, wanneer wij de één van de ander zullen verborgen zijn!",
+      "text2026": "En Mizpa; omdat hij zei: Dat JAHWEH de wacht neme tussen mij en tussen u, wanneer wij de één van de ander zullen verborgen zijn!",
       "marginNotes": [
         {
           "marker": "77",
@@ -6419,7 +6434,7 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En Mizpa; omdat hij zei: Dat JAHWEH opzicht neme tussen mij en tussen u, wanneer wij de één van de ander zullen verborgen zijn!</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En Mizpa; omdat hij zei: Dat JAHWEH de wacht neme tussen mij en tussen u, wanneer wij de één van de ander zullen verborgen zijn!</i></span>",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"77\">77</sup> Mizpa; omdat hij zeide: Dat de HEERE opzicht neme tussen mij en tussen u, wanneer wij<sup class=\"note-marker\" data-note=\"78\">78</sup> de een van den ander zullen verborgen zijn!",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"77\">77</sup> Mizpa; om dat hy seyde, Dat de HEERE opsicht neme tusschen my, ende tusschen u: wanneer wy <sup class=\"note-marker\" data-note=\"78\">78</sup> d'een van d'ander sullen verborgen zijn.",
       "phraseDiff": [
@@ -6429,9 +6444,14 @@
           "principe": "W1"
         },
         {
-          "old": "de HEERE",
+          "old": "",
           "new": "JAHWEH",
-          "principe": "G1"
+          "principe": "V963"
+        },
+        {
+          "old": "HEERE opzicht",
+          "new": "wacht",
+          "principe": "V963"
         },
         {
           "old": "een",
@@ -6653,7 +6673,7 @@
           "morph": "HC/R/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Laban zei verder tot Jakob: Zie, daar is deze zelfde hoop, en zie, daar is dit opgericht teken, dat ik opgeworpen heb tussen mij en tussen u;</i></span>",
+      "text2026_html": "Laban zei verder tot Jakob: <span class=\"direct-speech\"><i>Zie, daar is deze zelfde hoop, en zie, daar is dit opgericht teken, dat ik opgeworpen heb tussen mij en tussen u;</i></span>",
       "text1637_html": "Laban seyde voorder tot Iacob: Siet daer is dese selve hoop, ende siet, daer is dit opgerecht teecken, 'twelcke ick opgeworpen hebbe tusschen my ende tusschen u:",
       "phraseDiff": [
         {

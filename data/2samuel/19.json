@@ -448,7 +448,7 @@
       "number": 5,
       "textSV1888": "Toen kwam Joab tot den koning in het huis, en zeide: Gij hebt heden beschaamd het aangezicht van al uw knechten, die uw ziel, en de ziel uwer zonen en uwer dochteren, en de ziel uwer vrouwen, en de ziel uwer bijwijven heden hebben bevrijd;",
       "text1637": "Doe quam Ioab tot den Coninck in’t huys, ende seyde; Ghy hebt heden beschaemt het aengesichte aller uwer knechten, die uwe [7] ziele, ende de ziele uwer sonen ende uwer dochteren, ende de ziele uwer wijven, ende de ziele uwer bywijven heden hebben bevrijt:",
-      "text2026": "Toen kwam Joab tot de koning in het huis, en zei: U hebt heden beschaamd het aangezicht van al uw knechten, die uw ziel, en de ziel van uw zonen en van uw dochters, en de ziel van uw vrouwen, en de ziel van uw bijvrouwen heden hebben bevrijd;",
+      "text2026": "Toen kwam Joab tot de koning in het huis, en zei: U hebt vandaag beschaamd het aangezicht van al uw knechten, die uw ziel, en de ziel van uw zonen en van uw dochters, en de ziel van uw vrouwen, en de ziel van uw bijvrouwen vandaag hebben bevrijd;",
       "marginNotes": [
         {
           "marker": "7",
@@ -525,7 +525,7 @@
           "morph": "HNcmsc/Sp1cs"
         }
       ],
-      "text2026_html": "Toen kwam Joab tot de koning in het huis, en zei: <span class=\"direct-speech\"><i>U hebt heden beschaamd het aangezicht van al uw knechten, die uw ziel, en de ziel van uw zonen en van uw dochters, en de ziel van uw vrouwen, en de ziel van uw bijvrouwen heden hebben bevrijd;</i></span>",
+      "text2026_html": "Toen kwam Joab tot de koning in het huis, en zei: <span class=\"direct-speech\"><i>U hebt vandaag beschaamd het aangezicht van al uw knechten, die uw ziel, en de ziel van uw zonen en van uw dochters, en de ziel van uw vrouwen, en de ziel van uw bijvrouwen vandaag hebben bevrijd;</i></span>",
       "textSV1888_html": "Toen kwam Joab tot den koning in het huis, en zeide: Gij hebt heden beschaamd het aangezicht van al uw knechten, die uw<sup class=\"note-marker\" data-note=\"7\">7</sup> ziel, en de ziel uwer zonen en uwer dochteren, en de ziel uwer vrouwen, en de ziel uwer bijwijven heden hebben bevrijd;",
       "text1637_html": "Doe quam Ioab tot den Coninck in’t huys, en<i>de</i> seyde; Ghy hebt heden beschaemt het aengesichte aller uwer knechten, die uwe <sup class=\"note-marker\" data-note=\"7\">7</sup> ziele, en<i>de</i> de ziele uwer sonen en<i>de</i> uwer dochteren, ende de ziele uwer wijven, en<i>de</i> de ziele uwer bywijven heden hebben bevrijt:",
       "phraseDiff": [
@@ -538,6 +538,11 @@
           "old": "zeide: Gij",
           "new": "zei: U",
           "principe": "A1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         },
         {
           "old": "uwer",
@@ -555,9 +560,9 @@
           "principe": "N7"
         },
         {
-          "old": "uwer bijwijven",
-          "new": "van uw bijvrouwen",
-          "principe": null
+          "old": "uwer bijwijven heden",
+          "new": "van uw bijvrouwen vandaag",
+          "principe": "V986"
         }
       ]
     },
@@ -565,7 +570,7 @@
       "number": 6,
       "textSV1888": "Liefhebbende die u haten, en hatende die u liefhebben; want gij geeft heden te kennen, dat oversten en knechten bij u niets zijn; want ik merk heden, dat zo Absalom leefde, en wij heden allen dood waren, dat het alsdan recht zou zijn in uw ogen.",
       "text1637": "Liefhebbende die u haten, ende hatende die u lief hebben: want ghy geeft heden te kennen, dat Overste ende knechten by u niets en zijn; want ick mercke heden, dat, so Absalom leefde, ende wy heden alle doot waren, dat het alsdan recht soude zijn in uwe oogen.",
-      "text2026": "Liefhebbende die u haten, en hatende die u liefhebben; want u geeft heden te kennen, dat oversten en knechten bij u niets zijn; want ik merk heden, dat zo Absalom leefde, en wij heden allen dood waren, dat het dan recht zou zijn in uw ogen.",
+      "text2026": "Liefhebbende die u haten, en hatende die u liefhebben; want u geeft vandaag te kennen, dat oversten en knechten bij u niets zijn; want ik merk vandaag, dat zo Absalom leefde, en wij vandaag allen dood waren, dat het dan recht zou zijn in uw ogen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -689,13 +694,28 @@
           "morph": "HNcfpc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Liefhebbende die u haten, en hatende die u liefhebben; want u geeft heden te kennen, dat oversten en knechten bij u niets zijn; want ik merk heden, dat zo Absalom leefde, en wij heden allen dood waren, dat het dan recht zou zijn in uw ogen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Liefhebbende die u haten, en hatende die u liefhebben; want u geeft vandaag te kennen, dat oversten en knechten bij u niets zijn; want ik merk vandaag, dat zo Absalom leefde, en wij vandaag allen dood waren, dat het dan recht zou zijn in uw ogen.</i></span>",
       "text1637_html": "Liefhebbende die u haten, ende hatende die u lief hebben: want ghy geeft heden te kennen, dat Overste ende knechten by u niets en zijn; want ick mercke heden, dat, so Absalom leefde, ende wy heden alle doot waren, dat het alsdan recht soude zijn in uwe oogen.",
       "phraseDiff": [
         {
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
+        },
+        {
+          "old": "heden,",
+          "new": "vandaag,",
+          "principe": "V986"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         },
         {
           "old": "alsdan",
@@ -2638,7 +2658,7 @@
       "number": 20,
       "textSV1888": "Want uw knecht weet het zekerlijk, ik heb gezondigd; doch zie, ik ben heden gekomen, de eerste van het ganse huis van Jozef, om mijn heer den koning tegemoet af te komen.",
       "text1637": "Want [37] uwe knecht weet [het] sekerlick, ick hebbe gesondicht: doch siet, ick ben heden gekomen, de eerste van den gantschen huyse [38] Iosephs, om mijnen heere den Coninck te gemoete af te komen.",
-      "text2026": "Want uw knecht weet het zeker, ik heb gezondigd; maar zie, ik ben heden gekomen, de eerste van het hele huis van Jozef, om mijn heer de koning tegemoet af te komen.",
+      "text2026": "Want uw knecht weet het zeker, ik heb gezondigd; maar zie, ik ben vandaag gekomen, de eerste van het hele huis van Jozef, om mijn heer de koning tegemoet af te komen.",
       "marginNotes": [
         {
           "marker": "37",
@@ -2777,7 +2797,7 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want<sup class=\"note-marker\" data-note=\"37\">37</sup> uw knecht weet het zeker, ik heb gezondigd; maar zie, ik ben heden gekomen, de eerste van het hele huis van Jozef, om mijn heer de koning<sup class=\"note-marker\" data-note=\"38\">38</sup> tegemoet af te komen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want<sup class=\"note-marker\" data-note=\"37\">37</sup> uw knecht weet het zeker, ik heb gezondigd; maar zie, ik ben vandaag gekomen, de eerste van het hele huis van Jozef, om mijn heer de koning<sup class=\"note-marker\" data-note=\"38\">38</sup> tegemoet af te komen.</i></span>",
       "textSV1888_html": "Want<sup class=\"note-marker\" data-note=\"37\">37</sup> uw knecht weet het zekerlijk, ik heb gezondigd; doch zie, ik ben heden gekomen, de eerste van het ganse huis van Jozef, om mijn heer den koning<sup class=\"note-marker\" data-note=\"38\">38</sup> tegemoet af te komen.",
       "text1637_html": "Want <sup class=\"note-marker\" data-note=\"37\">37</sup> uwe knecht weet [het] sekerlick, ick hebbe gesondicht: doch siet, ick ben heden gekome<i>n</i>, de eerste van den gantschen huyse <sup class=\"note-marker\" data-note=\"38\">38</sup> Iosephs, om mijnen heere den Coninck te gemoete af te komen.",
       "phraseDiff": [
@@ -2790,6 +2810,11 @@
           "old": "doch",
           "new": "maar",
           "principe": "V1"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         },
         {
           "old": "ganse",
@@ -2936,7 +2961,7 @@
       "number": 22,
       "textSV1888": "Maar David zeide: Wat heb ik met ulieden te doen, gij zonen van Zeruja! Dat gij mij heden ten satan zoudt zijn? Zou heden iemand gedood worden in Israël? Want weet ik niet, dat ik heden koning geworden ben over Israël?",
       "text1637": "Maer David seyde; [41] Wat heb ick met ulieden te doen, ghy sonen van Zeruja, dat ghy my heden ten [42] Sathan soudet zijn? soude heden yemant [43] gedoodt worden in Israël? want en weet ick niet, dat ick [44] heden Coninck geworden ben over Israël?",
-      "text2026": "Maar David zei: Wat heb ik met u te doen, u zonen van Zeruja! Dat u mij heden ten satan zou zijn? Zou heden iemand gedood worden in Israël? Want weet ik niet, dat ik heden koning geworden ben over Israël?",
+      "text2026": "Maar David zei: Wat heb ik met u te doen, u zonen van Zeruja! Dat u mij vandaag ten satan zou zijn? Zou vandaag iemand gedood worden in Israël? Want weet ik niet, dat ik vandaag koning geworden ben over Israël?",
       "marginNotes": [
         {
           "marker": "41",
@@ -3044,7 +3069,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Maar David zei: <span class=\"direct-speech\"><i>Wat heb ik met u te doen, u zonen van Zeruja! Dat u mij heden ten satan zou zijn? Zou heden iemand gedood worden in Israël? Want weet ik niet, dat ik heden koning geworden ben over Israël?</i></span>",
+      "text2026_html": "Maar David zei: <span class=\"direct-speech\"><i>Wat heb ik met u te doen, u zonen van Zeruja! Dat u mij vandaag ten satan zou zijn? Zou vandaag iemand gedood worden in Israël? Want weet ik niet, dat ik vandaag koning geworden ben over Israël?</i></span>",
       "textSV1888_html": "Maar David zeide:<sup class=\"note-marker\" data-note=\"41\">41</sup> Wat heb ik met ulieden te doen, gij zonen van Zeruja! Dat gij mij heden ten<sup class=\"note-marker\" data-note=\"42\">42</sup> satan zoudt zijn? Zou heden iemand<sup class=\"note-marker\" data-note=\"43\">43</sup> gedood worden in Israël? Want weet ik niet, dat ik<sup class=\"note-marker\" data-note=\"44\">44</sup> heden koning geworden ben over Israël?",
       "text1637_html": "Maer David seyde; <sup class=\"note-marker\" data-note=\"41\">41</sup> Wat heb ick met ulieden te doen, ghy sone<i>n</i> van Zeruja, dat ghy my hede<i>n</i> ten <sup class=\"note-marker\" data-note=\"42\">42</sup> Sathan soudet zijn? soude heden yemant <sup class=\"note-marker\" data-note=\"43\">43</sup> gedoodt worden in Israël? want en weet ick niet, dat ick <sup class=\"note-marker\" data-note=\"44\">44</sup> heden Coninck geworden ben over Israël?",
       "phraseDiff": [
@@ -3069,9 +3094,24 @@
           "principe": "A1"
         },
         {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
+        },
+        {
           "old": "zoudt",
           "new": "zou",
           "principe": "V202"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         }
       ]
     },
@@ -4599,7 +4639,7 @@
       "number": 35,
       "textSV1888": "Ik ben heden tachtig jaren oud; zou ik kunnen onderscheiden tussen goed en kwaad? Zou uw knecht kunnen smaken, wat ik eet en wat ik drink? Zoude ik meer kunnen horen naar de stem der zangers en zangeressen? En waarom zou uw knecht mijn heer den koning verder tot een last zijn?",
       "text1637": "Ick ben heden [64] tachtentich jaer out; [65] soud’ ick konnen onderscheyden tusschen goet ende quaet? soude uwe knecht konnen smaken, wat ick ete, ende wat ick drincke? soud’ ick meer konnen hooren nae de stemme der Sangers ende Sangerssen? ende waerom soud’ uwe knecht mijnen heere den Coninck voorder tot eenen last zijn?",
-      "text2026": "Ik ben heden tachtig jaren oud; zou ik kunnen onderscheiden tussen goed en kwaad? Zou uw knecht kunnen smaken, wat ik eet en wat ik drink? Zou ik meer kunnen horen naar de stem van de zangers en zangeressen? En waarom zou uw knecht mijn heer de koning verder tot een last zijn?",
+      "text2026": "Ik ben vandaag tachtig jaren oud; zou ik kunnen onderscheiden tussen goed en kwaad? Zou uw knecht kunnen smaken, wat ik eet en wat ik drink? Zou ik meer kunnen horen naar de stem van de zangers en zangeressen? En waarom zou uw knecht mijn heer de koning verder tot een last zijn?",
       "marginNotes": [
         {
           "marker": "64",
@@ -4683,10 +4723,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Ik ben heden<sup class=\"note-marker\" data-note=\"64\">64</sup> tachtig jaren oud;<sup class=\"note-marker\" data-note=\"65\">65</sup> zou ik kunnen onderscheiden tussen goed en kwaad? Zou uw knecht kunnen smaken, wat ik eet en wat ik drink? Zou ik meer kunnen horen naar de stem van de zangers en zangeressen? En waarom zou uw knecht mijn heer de koning verder tot een last zijn?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Ik ben vandaag<sup class=\"note-marker\" data-note=\"64\">64</sup> tachtig jaren oud;<sup class=\"note-marker\" data-note=\"65\">65</sup> zou ik kunnen onderscheiden tussen goed en kwaad? Zou uw knecht kunnen smaken, wat ik eet en wat ik drink? Zou ik meer kunnen horen naar de stem van de zangers en zangeressen? En waarom zou uw knecht mijn heer de koning verder tot een last zijn?</i></span>",
       "textSV1888_html": "Ik ben heden<sup class=\"note-marker\" data-note=\"64\">64</sup> tachtig jaren oud;<sup class=\"note-marker\" data-note=\"65\">65</sup> zou ik kunnen onderscheiden tussen goed en kwaad? Zou uw knecht kunnen smaken, wat ik eet en wat ik drink? Zoude ik meer kunnen horen naar de stem der zangers en zangeressen? En waarom zou uw knecht mijn heer den koning verder tot een last zijn?",
       "text1637_html": "Ick ben heden <sup class=\"note-marker\" data-note=\"64\">64</sup> tachtentich jaer out; <sup class=\"note-marker\" data-note=\"65\">65</sup> soud’ ick konnen onderscheyden tusschen goet ende quaet? soude uwe knecht konnen smaken, wat ick ete, ende wat ick drincke? soud’ ick meer konnen hooren nae de stemme der Sangers ende Sangerssen? ende waerom soud’ uwe knecht mijnen heere den Coninck voorder tot eenen last zijn?",
       "phraseDiff": [
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
+        },
         {
           "old": "Zoude",
           "new": "Zou",

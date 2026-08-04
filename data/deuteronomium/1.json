@@ -1151,7 +1151,7 @@
       "number": 10,
       "textSV1888": "De HEERE, uw God, heeft u vermenigvuldigd, en ziet, gij zijt heden als de sterren des hemels in menigte.",
       "text1637": "De HEERE uwe Godt heeft u vermenichvuldicht: ende siet, ghy zijt heden [27] als de sterre des hemels in menichte.",
-      "text2026": "JAHWEH, uw God, heeft u vermenigvuldigd, en zie, u bent heden als de sterren van de hemel in menigte.",
+      "text2026": "JAHWEH, uw God, heeft u vermenigvuldigd, en zie, u bent vandaag als de sterren van de hemel in menigte.",
       "marginNotes": [
         {
           "marker": "27",
@@ -1208,7 +1208,7 @@
           "morph": "HR/Ncbsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>JAHWEH, uw God, heeft u vermenigvuldigd, en zie, u bent heden<sup class=\"note-marker\" data-note=\"27\">27</sup> als de sterren van de hemel in menigte.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>JAHWEH, uw God, heeft u vermenigvuldigd, en zie, u bent vandaag<sup class=\"note-marker\" data-note=\"27\">27</sup> als de sterren van de hemel in menigte.</i></span>",
       "textSV1888_html": "De HEERE, uw God, heeft u vermenigvuldigd, en ziet, gij zijt heden<sup class=\"note-marker\" data-note=\"27\">27</sup> als de sterren des hemels in menigte.",
       "text1637_html": "De HEERE uwe Godt heeft u vermenichvuldicht: ende siet, ghy zijt heden <sup class=\"note-marker\" data-note=\"27\">27</sup> als de sterre des hemels in menichte.",
       "phraseDiff": [
@@ -1218,9 +1218,9 @@
           "principe": "G1"
         },
         {
-          "old": "ziet, gij zijt",
-          "new": "zie, u bent",
-          "principe": "A1"
+          "old": "ziet, gij zijt heden",
+          "new": "zie, u bent vandaag",
+          "principe": "V986"
         },
         {
           "old": "des hemels",
@@ -4329,7 +4329,7 @@
       "number": 39,
       "textSV1888": "En uw kinderkens, waarvan gij zeidet: Zij zullen tot een roof zijn; en uw kinderen, die heden noch goed noch kwaad weten, die zullen daarin komen, en dien zal Ik het geven, en die zullen het erfelijk bezitten.",
       "text1637": "Ende uwe kinderkens, daer ghy van seydet; sy sullen tot eenen roof zijn, ende uwe kinderen, die heden [66] noch goet noch quaet en weten, die sullen daer in komen: ende dien sal ick het geven, ende die sullen ’t erflick besitten.",
-      "text2026": "En uw kinderen, waarvan u zei: Zij zullen tot een roof zijn; en uw kinderen, die heden noch goed noch kwaad weten, die zullen daarin komen, en die zal Ik het geven, en die zullen het erfelijk bezitten.",
+      "text2026": "En uw kinderen, waarvan u zei: Zij zullen tot een roof zijn; en uw kinderen, die vandaag noch goed noch kwaad weten, die zullen daarin komen, en die zal Ik het geven, en die zullen het erfelijk bezitten.",
       "marginNotes": [
         {
           "marker": "66",
@@ -4436,7 +4436,7 @@
           "morph": "HVqi3mp/Sp3fs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En uw kinderen, waarvan u zei: Zij zullen tot een roof zijn; en uw kinderen, die heden<sup class=\"note-marker\" data-note=\"66\">66</sup> noch goed noch kwaad weten, die zullen daarin komen, en die zal Ik het geven, en die zullen het erfelijk bezitten.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En uw kinderen, waarvan u zei: Zij zullen tot een roof zijn; en uw kinderen, die vandaag<sup class=\"note-marker\" data-note=\"66\">66</sup> noch goed noch kwaad weten, die zullen daarin komen, en die zal Ik het geven, en die zullen het erfelijk bezitten.</i></span>",
       "textSV1888_html": "En uw kinderkens, waarvan gij zeidet: Zij zullen tot een roof zijn; en uw kinderen, die heden<sup class=\"note-marker\" data-note=\"66\">66</sup> noch goed noch kwaad weten, die zullen daarin komen, en dien zal Ik het geven, en die zullen het erfelijk bezitten.",
       "text1637_html": "Ende uwe kinderkens, daer ghy van seydet; sy sullen tot eenen roof zijn, ende uwe kinderen, die heden <sup class=\"note-marker\" data-note=\"66\">66</sup> noch goet noch quaet en weten, die sullen daer in komen: ende dien sal ick het geven, ende die sullen ’t erflick besitten.",
       "phraseDiff": [
@@ -4449,6 +4449,11 @@
           "old": "gij zeidet:",
           "new": "u zei:",
           "principe": null
+        },
+        {
+          "old": "heden",
+          "new": "vandaag",
+          "principe": "V986"
         },
         {
           "old": "dien",

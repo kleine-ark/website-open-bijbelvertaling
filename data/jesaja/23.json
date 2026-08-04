@@ -356,7 +356,7 @@
       "number": 4,
       "textSV1888": "Word beschaamd, o Sidon! want de zee spreekt, ja, de sterkte der zee, zeggende: Ik heb geen barensnood gehad, ik heb ook niet gebaard, en ik heb geen jongelingen groot gemaakt, en geen jonge dochters opgebracht.",
       "text1637": "Wordet beschaemt, [18] ô Zidon, want [19] de Zee spreeckt, [ja] [20] de sterckte der zee, seggende, [21] Ick en hebbe geenen barens noot gehadt, ick en hebbe oock niet gebaert, noch ick en hebbe geen jongelingen [22] groot gemaeckt, [noch] geene jonge dochters opgebracht.",
-      "text2026": "Word beschaamd, o Sidon! want de zee spreekt, ja, de sterkte van de zee, zeggende: Ik heb geen barensnood gehad, ik heb ook niet gebaard, en ik heb geen jongemannen groot gemaakt, en geen jonge dochters opgebracht.",
+      "text2026": "Word beschaamd, o Sidon! want de zee spreekt, ja, de sterkte van de zee, zeggende: Ik heb geen barensnood gehad, ik heb ook niet gebaard, en ik heb geen jongemannen groot gemaakt, en geen meisjes opgebracht.",
       "marginNotes": [
         {
           "marker": "18",
@@ -481,7 +481,7 @@
           "morph": "HNcfpa"
         }
       ],
-      "text2026_html": "Word beschaamd, o Sidon! want de zee spreekt, ja, de sterkte van de zee, zeggende: <span class=\"direct-speech\"><i>Ik heb geen barensnood gehad, ik heb ook niet gebaard, en ik heb geen jongemannen groot gemaakt, en geen jonge dochters opgebracht.</i></span>",
+      "text2026_html": "Word beschaamd, o Sidon! want de zee spreekt, ja, de sterkte van de zee, zeggende: <span class=\"direct-speech\"><i>Ik heb geen barensnood gehad, ik heb ook niet gebaard, en ik heb geen jongemannen groot gemaakt, en geen meisjes opgebracht.</i></span>",
       "textSV1888_html": "Word beschaamd,<sup class=\"note-marker\" data-note=\"18\">18</sup> o Sidon! want<sup class=\"note-marker\" data-note=\"19\">19</sup> de zee spreekt,<sup class=\"note-marker\" data-note=\"20\">20</sup> ja, de sterkte der zee, zeggende:<sup class=\"note-marker\" data-note=\"21\">21</sup> Ik heb geen barensnood gehad, ik heb ook niet gebaard, en ik heb geen jongelingen<sup class=\"note-marker\" data-note=\"22\">22</sup> groot gemaakt, en geen jonge dochters opgebracht.",
       "text1637_html": "Wordet beschaemt, <sup class=\"note-marker\" data-note=\"18\">18</sup> ô Zidon, want <sup class=\"note-marker\" data-note=\"19\">19</sup> de Zee spreeckt, [ja] <sup class=\"note-marker\" data-note=\"20\">20</sup> de sterckte der zee, seggende, <sup class=\"note-marker\" data-note=\"21\">21</sup> Ick en hebbe geenen barens noot gehadt, ick en hebbe oock niet gebaert, noch ick en hebbe geen jongelingen <sup class=\"note-marker\" data-note=\"22\">22</sup> groot gemaeckt, [noch] geene jonge dochters opgebracht.",
       "phraseDiff": [
@@ -494,6 +494,11 @@
           "old": "jongelingen",
           "new": "jongemannen",
           "principe": "V79"
+        },
+        {
+          "old": "jonge dochters",
+          "new": "meisjes",
+          "principe": "V968"
         }
       ]
     },
@@ -635,7 +640,7 @@
       "number": 7,
       "textSV1888": "Is dit uw vrolijk huppelende stad? welker oudheid wel van oude dagen af is; maar haar eigen voeten zullen haar verre wegdragen, om in vreemdelingschap te verkeren.",
       "text1637": "[28] Is dit uwe vrolick-huppelende [stadt]? welcker outheyt [wel] van oude dagen af is, [maer] hare eygene voeten sullense verre wech dragen, [29] om in vreemdelinckschap te verkeeren.",
-      "text2026": "Is dit uw vrolijk huppelende stad? waarvan de oudheid wel van oude dagen af is; maar haar eigen voeten zullen haar verre wegdragen, om in vreemdelingschap te verkeren.",
+      "text2026": "Is dit uw vrolijk huppelende stad? waarvan de oudheid wel van oude dagen af is; maar haar eigen voeten zullen haar verre wegdragen, om als vreemdeling te verkeren.",
       "marginNotes": [
         {
           "marker": "28",
@@ -704,7 +709,7 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"28\">28</sup> Is dit uw vrolijk huppelende stad? waarvan de oudheid wel van oude dagen af is; maar haar eigen voeten zullen haar verre wegdragen,<sup class=\"note-marker\" data-note=\"29\">29</sup> om in vreemdelingschap te verkeren.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"28\">28</sup> Is dit uw vrolijk huppelende stad? waarvan de oudheid wel van oude dagen af is; maar haar eigen voeten zullen haar verre wegdragen,<sup class=\"note-marker\" data-note=\"29\">29</sup> om als vreemdeling te verkeren.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"28\">28</sup> Is dit uw vrolijk huppelende stad? welker oudheid wel van oude dagen af is; maar haar eigen voeten zullen haar verre wegdragen,<sup class=\"note-marker\" data-note=\"29\">29</sup> om in vreemdelingschap te verkeren.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"28\">28</sup> Is dit uwe vrolick-huppelende [stadt]? welcker outheyt [wel] va<i>n</i> oude dagen af is, [maer] hare eygene voeten sullense verre wech dragen, <sup class=\"note-marker\" data-note=\"29\">29</sup> om in vreemdelinckschap te verkeeren.",
       "phraseDiff": [
@@ -712,6 +717,11 @@
           "old": "welker",
           "new": "waarvan de",
           "principe": "V212"
+        },
+        {
+          "old": "in vreemdelingschap",
+          "new": "als vreemdeling",
+          "principe": "V981"
         }
       ]
     },

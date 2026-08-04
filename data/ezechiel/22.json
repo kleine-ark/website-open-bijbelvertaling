@@ -1022,7 +1022,7 @@
       "number": 11,
       "textSV1888": "Daartoe heeft de een gruwel gedaan met zijns naasten huisvrouw, en een ander heeft zijns zoons vrouw met schandelijkheid verontreinigd; nog een ander heeft in u zijn zuster, zijns vaders dochter; verkracht.",
       "text1637": "Daertoe heeft de een [h] grouwel gedaen met sijns naestens [i] huysvrouwe, ende een ander heeft sijns [k] soons vrouwe met schendelickheyt verontreynicht: noch een ander heeft in u sijne suster, sijns [l] vaders dochter, vercracht.",
-      "text2026": "Daartoe heeft de één gruwel gedaan met van zijn naasten huisvrouw, en een ander heeft van zijn zoon vrouw met schandelijkheid verontreinigd; nog een ander heeft in u zijn zus, van zijn vader dochter; verkracht.",
+      "text2026": "Daartoe heeft de één gruwel gedaan met de huisvrouw van zijn naaste, en een ander heeft de vrouw van zijn zoon met schandelijkheid verontreinigd; nog een ander heeft in u zijn zus, de dochter van zijn vader; verkracht.",
       "marginNotes": [
         {
           "marker": "h",
@@ -1138,7 +1138,7 @@
           "morph": "HR/Sp2fs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Daartoe heeft de één<sup class=\"note-marker\" data-note=\"h\">h</sup> gruwel gedaan met van zijn naasten<sup class=\"note-marker\" data-note=\"i\">i</sup> huisvrouw, en een ander heeft van zijn<sup class=\"note-marker\" data-note=\"k\">k</sup> zoon vrouw met schandelijkheid verontreinigd; nog een ander heeft in u zijn zus, van zijn vader dochter; verkracht.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Daartoe heeft de één<sup class=\"note-marker\" data-note=\"h\">h</sup> gruwel gedaan met de huisvrouw van zijn naaste<sup class=\"note-marker\" data-note=\"i\">i</sup>, en een ander heeft de vrouw van zijn<sup class=\"note-marker\" data-note=\"k\">k</sup> zoon met schandelijkheid verontreinigd; nog een ander heeft in u zijn zus, de dochter van zijn vader; verkracht.</i></span>",
       "textSV1888_html": "Daartoe heeft de een<sup class=\"note-marker\" data-note=\"h\">h</sup> gruwel gedaan met zijns naasten<sup class=\"note-marker\" data-note=\"i\">i</sup> huisvrouw, en een ander heeft zijns<sup class=\"note-marker\" data-note=\"k\">k</sup> zoons vrouw met schandelijkheid verontreinigd; nog een ander heeft in u zijn zuster, zijns vaders dochter; verkracht.",
       "text1637_html": "Daertoe heeft de een <sup class=\"note-marker\" data-note=\"h\">h</sup> grouwel gedaen met sijns naestens <sup class=\"note-marker\" data-note=\"i\">i</sup> huysvrouwe, ende een ander heeft sijns <sup class=\"note-marker\" data-note=\"k\">k</sup> soons vrouwe met schendelickheyt verontreynicht: noch een ander heeft in u sijne suster, sijns <sup class=\"note-marker\" data-note=\"l\">l</sup> vaders dochter, vercracht.",
       "phraseDiff": [
@@ -1148,19 +1148,24 @@
           "principe": "V735"
         },
         {
-          "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
+          "old": "zijns naasten huisvrouw,",
+          "new": "de huisvrouw van zijn naaste,",
+          "principe": "N22"
         },
         {
           "old": "zijns zoons",
-          "new": "van zijn zoon",
-          "principe": "V201"
+          "new": "de",
+          "principe": "N22"
         },
         {
-          "old": "zuster, zijns vaders",
-          "new": "zus, van zijn vader",
-          "principe": "O22c"
+          "old": "",
+          "new": "van zijn zoon",
+          "principe": "N22"
+        },
+        {
+          "old": "zuster, zijns vaders dochter;",
+          "new": "zus, de dochter van zijn vader;",
+          "principe": "N22"
         }
       ]
     },

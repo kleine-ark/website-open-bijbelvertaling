@@ -1419,7 +1419,7 @@
       "number": 15,
       "textSV1888": "Gij zult de schaamte uwer schoondochter niet ontdekken; zij is uws zoons huisvrouw; gij zult haar schaamte niet ontdekken.",
       "text1637": "Ghy [f] en sult de schaemte uwer schoon-dochter niet ontdecken: [21] sy is uwes soons huysvrouwe, ghy en sult hare schaemte niet ontdecken.",
-      "text2026": "U zult de schaamte van uw schoondochter niet ontdekken; zij is van uw zoon huisvrouw; u zult haar schaamte niet ontdekken.",
+      "text2026": "U zult de schaamte van uw schoondochter niet ontdekken; zij is de huisvrouw van uw zoon; u zult haar schaamte niet ontdekken.",
       "marginNotes": [
         {
           "marker": "f",
@@ -1488,7 +1488,7 @@
           "morph": "HNcfsc/Sp3fs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>U<sup class=\"note-marker\" data-note=\"f\">f</sup> zult de schaamte van uw schoondochter niet ontdekken;<sup class=\"note-marker\" data-note=\"21\">21</sup> zij is van uw zoon huisvrouw; u zult haar schaamte niet ontdekken.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>U<sup class=\"note-marker\" data-note=\"f\">f</sup> zult de schaamte van uw schoondochter niet ontdekken;<sup class=\"note-marker\" data-note=\"21\">21</sup> zij is de huisvrouw van uw zoon; u zult haar schaamte niet ontdekken.</i></span>",
       "textSV1888_html": "Gij<sup class=\"note-marker\" data-note=\"f\">f</sup> zult de schaamte uwer schoondochter niet ontdekken;<sup class=\"note-marker\" data-note=\"21\">21</sup> zij is uws zoons huisvrouw; gij zult haar schaamte niet ontdekken.",
       "text1637_html": "Ghy <sup class=\"note-marker\" data-note=\"f\">f</sup> en sult de schaemte uwer schoon-dochter niet ontdecken: <sup class=\"note-marker\" data-note=\"21\">21</sup> sy is uwes soons huysvrouwe, ghy en sult hare schaemte niet ontdecken.",
       "phraseDiff": [
@@ -1503,14 +1503,9 @@
           "principe": "N7"
         },
         {
-          "old": "uws zoons",
-          "new": "van uw zoon",
-          "principe": "V200"
-        },
-        {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "uws zoons huisvrouw; gij",
+          "new": "de huisvrouw van uw zoon; u",
+          "principe": null
         }
       ]
     },
@@ -1943,7 +1938,7 @@
       "number": 20,
       "textSV1888": "En gij zult niet liggen bij uws naasten huisvrouw ter bezading, om met haar onrein te worden.",
       "text1637": "[k] [29] Ende ghy en sult niet liggen by uwes naesten huysvrouwe ter bezadinge, om met haer onreyn te worden.",
-      "text2026": "En u zult niet liggen bij van uw naasten huisvrouw ter bezading, om met haar onrein te worden.",
+      "text2026": "En u zult niet liggen bij de huisvrouw van uw naaste ter bezading, om met haar onrein te worden.",
       "marginNotes": [
         {
           "marker": "k",
@@ -2007,7 +2002,7 @@
           "morph": "HR/Sp3fs"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"29\">29</sup><sup class=\"note-marker\" data-note=\"k\">k</sup><span class=\"god-speaks\"><i> En u zult niet liggen bij van uw naasten huisvrouw ter bezading, om met haar onrein te worden.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"29\">29</sup><sup class=\"note-marker\" data-note=\"k\">k</sup><span class=\"god-speaks\"><i> En u zult niet liggen bij de huisvrouw van uw naaste ter bezading, om met haar onrein te worden.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"29\">29</sup><sup class=\"note-marker\" data-note=\"k\">k</sup> En gij zult niet liggen bij uws naasten huisvrouw ter bezading, om met haar onrein te worden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"k\">k</sup> <sup class=\"note-marker\" data-note=\"29\">29</sup> Ende ghy en sult niet liggen by uwes naesten huysvrouwe ter bezadinge, om met haer onreyn te worden.",
       "phraseDiff": [
@@ -2017,9 +2012,14 @@
           "principe": "A1"
         },
         {
-          "old": "uws",
-          "new": "van uw",
-          "principe": "V200"
+          "old": "uws naasten",
+          "new": "de",
+          "principe": "N22"
+        },
+        {
+          "old": "",
+          "new": "van uw naaste",
+          "principe": "N22"
         }
       ]
     },
