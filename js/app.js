@@ -679,6 +679,8 @@ const App = {
             if (typeof Opties !== 'undefined') openVertaling = Opties.transformOV(openVertaling, book.testament);
             // Optioneel: geografische locaties markeren (nu Genesis)
             if (typeof Opties !== 'undefined' && Opties.markeerGeo) openVertaling = Opties.markeerGeo(openVertaling, bookId, chapterNum, verse.number);
+            // Optioneel: Bijbelse maten vervangen door metrisch of imperiaal
+            if (typeof Opties !== 'undefined' && Opties.rekenMaten) openVertaling = Opties.rekenMaten(openVertaling, bookId, chapterNum, verse.number);
 
             // Strong's nummers inline bij SV1888 en OV tekst
             let sv1888Text = verse.textSV1888_html || verse.textSV1888 || '';

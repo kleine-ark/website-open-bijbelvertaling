@@ -1,0 +1,908 @@
+{
+  "titel": "Bijbelse maten, inhoudsmaten en gewichten",
+  "toelichting": "Rekenwaarden voor de leesoptie 'moderne omrekening'. De omrekening komt náást de tekst te staan: de Bijbelse eenheid blijft altijd zichtbaar. Alle waarden en hun onzekerheidsmarges zijn verantwoord op maateenheden.html; dat is de bron van waarheid. Munten en tijdsaanduidingen zijn bewust NIET opgenomen — de zilverwaarde van een munt zegt weinig over de koopkracht, en de Bijbelse uren zijn seizoensuren.",
+  "bron": "maateenheden.html",
+
+  "opties": {
+    "alleenKleineLetter": true,
+    "geenKoppelteken": true,
+    "stofadjectieven": { "zilveren": "zilver", "gouden": "goud", "koperen": "koper", "ijzeren": "ijzer" }
+  },
+
+  "getallen": {
+    "een": 1, "één": 1, "ene": 1, "twee": 2, "drie": 3, "vier": 4, "vijf": 5,
+    "zes": 6, "zeven": 7, "acht": 8, "negen": 9, "tien": 10, "elf": 11,
+    "twaalf": 12, "dertien": 13, "veertien": 14, "vijftien": 15, "zestien": 16,
+    "zeventien": 17, "achttien": 18, "negentien": 19, "twintig": 20,
+    "dertig": 30, "veertig": 40, "vijftig": 50, "zestig": 60, "zeventig": 70,
+    "tachtig": 80, "negentig": 90, "honderd": 100, "duizend": 1000,
+    "anderhalf": 1.5, "anderhalve": 1.5, "anderhalven": 1.5
+  },
+  "koppels": ["en", "ën"],
+  "malen": ["maal"],
+  "alternatieven": ["of"],
+  "halven": ["halve", "halven", "half"],
+  "breuken": {
+    "helft": 0.5, "vierendeel": 0.25, "tweede": 0.5, "derde": 0.3333333,
+    "vierde": 0.25, "vijfde": 0.2, "zesde": 0.1666667, "zevende": 0.1428571,
+    "achtste": 0.125, "negende": 0.1111111, "tiende": 0.1, "twintigste": 0.05
+  },
+
+  "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": [
+    {
+      "id": "el",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["ellen", "elle", "el"],
+      "enkelvoud": "el",
+      "waarde": 0.445,
+      "volgtNiet": "^\\s+en een handbreed",
+      "uitleg": "de el ≈ 44,5 cm — elleboog tot vingertop; schattingen lopen van 42,8 tot 52,5 cm",
+      "context": [
+        {
+          "verzen": ["ezechiel 40-48"],
+          "waarde": 0.518,
+          "uitleg": "lange el ≈ 52 cm — Ezechiël meet met “een el en een handbreed” (Ezechiël 40:5 en 43:13), zeven handbreedten in plaats van zes"
+        },
+        {
+          "verzen": ["2kronieken 3:3"],
+          "waarde": 0.445,
+          "uitleg": "de el ≈ 44,5 cm — maar 2 Kronieken 3:3 meet “naar de eerste mate”, een oudere standaard waarvan de lengte onbekend is"
+        }
+      ]
+    },
+    {
+      "id": "span",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["span"],
+      "enkelvoud": "span",
+      "waarde": 0.23,
+      "uitleg": "de span ≈ 23 cm — een halve el, de gespreide hand van duim tot pink"
+    },
+    {
+      "id": "handbreed",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["handbreedten", "handbreedte", "handbreed", "hand breed"],
+      "enkelvoud": "handbreed",
+      "waarde": 0.074,
+      "voorafNiet": "\\bel\\s+en\\s*$",
+      "uitleg": "de handbreed ≈ 7,4 cm — een zesde el, de breedte van vier vingers"
+    },
+    {
+      "id": "vinger",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["vingeren", "vingers", "vinger"],
+      "enkelvoud": "vinger",
+      "waarde": 0.019,
+      "alleenIn": ["jeremia 52:21"],
+      "uitleg": "de vinger ≈ 1,9 cm — een kwart handbreed, de kleinste lengtemaat"
+    },
+    {
+      "id": "riet",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["rieten", "riet"],
+      "enkelvoud": "riet",
+      "waarde": 2.67,
+      "alleenIn": ["ezechiel 40-48"],
+      "uitleg": "het riet = zes ellen ≈ 2,7 m — de meetstok van de landmeter",
+      "context": [
+        {
+          "verzen": ["ezechiel 40-48"],
+          "waarde": 3.108,
+          "uitleg": "het riet = zes lange ellen ≈ 3,1 m — Ezechiël meet met de lange el van “een el en een handbreed” (40:5)"
+        }
+      ]
+    },
+    {
+      "id": "vadem",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["vademen", "vadem"],
+      "enkelvoud": "vadem",
+      "waarde": 1.8,
+      "uitleg": "de vadem ≈ 1,80 m — de spanwijdte van beide armen, gebruikt om diepte te peilen"
+    },
+    {
+      "id": "schrede",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["schrede"],
+      "enkelvoud": "schrede",
+      "waarde": 0.8,
+      "uitleg": "de schrede ≈ 0,8 m — één stap (schattingen 0,75 tot 0,90 m)"
+    },
+    {
+      "id": "stadie",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["stadiën", "stadien", "stadie"],
+      "enkelvoud": "stadie",
+      "waarde": 185,
+      "uitleg": "de stadie ≈ 185 m — omstreden: Attisch-Romeins 184,8 m, Olympisch 192 m, Ptolemeïsch ± 157 m"
+    },
+    {
+      "id": "mijl",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["mijlen", "mijl"],
+      "enkelvoud": "mijl",
+      "waarde": 1478,
+      "uitleg": "de Romeinse mijl = 1478 m — duizend dubbele passen"
+    },
+    {
+      "id": "sabbatsreis",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["sabbatsreize", "sabbatsreis"],
+      "enkelvoud": "sabbatsreis",
+      "waarde": 890,
+      "uitleg": "de sabbatsreis ≈ 890 m — tweeduizend el, de afstand die men op sabbat mocht afleggen (rabbijnse regel)"
+    },
+
+    {
+      "id": "efa",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["efa"],
+      "enkelvoud": "efa",
+      "waarde": 22,
+      "uitleg": "de efa ≈ 22 L — de standaardmaat voor graan; oudere handboeken komen op 39 tot 45 L"
+    },
+    {
+      "id": "bath",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["bathen", "bath"],
+      "enkelvoud": "bath",
+      "waarde": 22,
+      "uitleg": "de bath ≈ 22 L — dezelfde inhoud als de efa, maar voor vloeistoffen (Ezechiël 45:11)"
+    },
+    {
+      "id": "homer",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["homers", "homeren", "homer"],
+      "enkelvoud": "homer",
+      "waarde": 220,
+      "uitleg": "de homer ≈ 220 L — tien efa, een ezelslast. Let op: niet te verwarren met de gomer van ± 2,2 L, honderd keer zo klein"
+    },
+    {
+      "id": "kor",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["kor"],
+      "enkelvoud": "kor",
+      "waarde": 220,
+      "uitleg": "de kor ≈ 220 L — gelijk aan de homer, tien efa"
+    },
+    {
+      "id": "maat",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["maten", "maat"],
+      "enkelvoud": "maat",
+      "waarde": 7.3,
+      "volgtOp": "^(?:[,;]?\\s+[a-zà-öø-ÿ]+){0,2}[,;]?\\s+(?:meel|meels|meelbloem|gerst|koren|tarwe|zaads|zaad|olijven|weit)\\b",
+      "uitleg": "de maat (sea) ≈ 7,3 L — een derde efa. Alleen omgerekend waar er een graansoort of vrucht op volgt; elders betekent “maat” gewoon afmeting of mate"
+    },
+    {
+      "id": "hin",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["hin"],
+      "enkelvoud": "hin",
+      "waarde": 3.7,
+      "uitleg": "de hin ≈ 3,7 L — een zesde bath, de maat voor olie en wijn bij de offers"
+    },
+    {
+      "id": "gomer",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["gomers", "gomer"],
+      "enkelvoud": "gomer",
+      "waarde": 2.2,
+      "uitleg": "de gomer ≈ 2,2 L — een tiende efa, de dagelijkse portie manna. Let op: niet te verwarren met de homer van ± 220 L"
+    },
+    {
+      "id": "kab",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["kab"],
+      "enkelvoud": "kab",
+      "waarde": 1.2,
+      "uitleg": "de kab ≈ 1,2 L — komt één keer voor, tijdens de hongersnood in Samaria"
+    },
+    {
+      "id": "log",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["log"],
+      "enkelvoud": "log",
+      "waarde": 0.3,
+      "uitleg": "de log ≈ 0,3 L — de kleinste inhoudsmaat, alleen bij het reinigingsoffer"
+    },
+    {
+      "id": "metreet",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["metreten", "metreet"],
+      "enkelvoud": "metreet",
+      "waarde": 39,
+      "uitleg": "de metreet ≈ 39 L — Griekse maat"
+    },
+    {
+      "id": "korenmaat",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["korenmaten", "korenmaat"],
+      "enkelvoud": "korenmaat",
+      "waarde": 8.8,
+      "uitleg": "de korenmaat ≈ 8,8 L — de Romeinse modius"
+    },
+    {
+      "id": "maatje",
+      "categorie": "inhoud",
+      "grondEenheid": "L",
+      "vormen": ["maatjes", "maatje"],
+      "enkelvoud": "maatje",
+      "waarde": 1.1,
+      "uitleg": "het maatje ≈ 1,1 L — een dagrantsoen graan voor één persoon"
+    },
+
+    {
+      "id": "sikkel",
+      "categorie": "gewicht",
+      "grondEenheid": "g",
+      "vormen": ["sikkelen", "sikkels", "sikkel"],
+      "enkelvoud": "sikkel",
+      "waarde": 11.4,
+      "uitleg": "de sikkel ≈ 11,4 g — afgeleid uit opgegraven Judese gewichten (11,0 tot 11,7 g)",
+      "ijkFrase": {
+        "patroon": "^\\s+van het heiligdom\\b",
+        "voorvoegsel": "ijkmaat: ",
+        "uitleg": "“de sikkel van het heiligdom” is de officiële tempelstandaard van ± 11,4 g. Hier gaat het niet om een hoeveelheid maar om de norm waarnaar gewogen wordt; de Bijbel noemt hem 25 keer"
+      }
+    },
+    {
+      "id": "talent",
+      "categorie": "gewicht",
+      "grondEenheid": "g",
+      "vormen": ["talenten", "talent"],
+      "enkelvoud": "talent",
+      "waarde": 34000,
+      "uitleg": "het talent ≈ 34 kg — drieduizend sikkel",
+      "context": [
+        {
+          "verzen": ["openbaring 16:21"],
+          "waarde": 26000,
+          "slokOp": "^\\s+pond\\b",
+          "uitleg": "het Griekse talent ≈ 26 kg — in het Nieuwe Testament lichter dan het Oudtestamentische talent van ± 34 kg"
+        }
+      ]
+    },
+    {
+      "id": "gera",
+      "categorie": "gewicht",
+      "grondEenheid": "g",
+      "vormen": ["gera"],
+      "enkelvoud": "gera",
+      "waarde": 0.57,
+      "uitleg": "de gera ≈ 0,57 g — een twintigste sikkel, de kleinste gewichtseenheid"
+    },
+    {
+      "id": "beka",
+      "categorie": "gewicht",
+      "grondEenheid": "g",
+      "vormen": ["beka"],
+      "enkelvoud": "beka",
+      "waarde": 5.7,
+      "uitleg": "de beka ≈ 5,7 g — een halve sikkel; gevonden beka-gewichten wegen 5,6 tot 6,0 g"
+    },
+    {
+      "id": "pond",
+      "categorie": "gewicht",
+      "grondEenheid": "g",
+      "vormen": ["ponden", "pond"],
+      "enkelvoud": "pond",
+      "waarde": 570,
+      "uitleg": "het pond (maneh) ≈ 570 g — in het Oude Testament en de apocriefen",
+      "context": [
+        {
+          "verzen": ["johannes 12", "johannes 19"],
+          "waarde": 327,
+          "uitleg": "het pond (Romeinse litra) ≈ 327 g — het Nieuwtestamentische gewichtspond"
+        }
+      ]
+    }
+  ],
+
+  "uitzonderingen": [
+    {
+      "reden": "persoonsnaam Efa, geen inhoudsmaat",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["efa"],
+      "verzen": ["genesis 25:4", "1kronieken 1:33", "1kronieken 2:46", "1kronieken 2:47"]
+    },
+    {
+      "reden": "persoonsnaam Gomer, geen inhoudsmaat",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["gomer"],
+      "verzen": ["genesis 10:2-3", "1kronieken 1:5-6", "hosea 1:3", "ezechiel 38:6", "jubileeen 7:19", "jubileeen 9:8"]
+    },
+    {
+      "reden": "persoonsnaam Gera, geen gewicht",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["gera"],
+      "verzen": ["genesis 46:21", "richteren 3:15", "2samuel 16:5", "2samuel 19:16", "2samuel 19:18", "1koningen 2:8", "1kronieken 8:3", "1kronieken 8:5", "1kronieken 8:7"]
+    },
+    {
+      "reden": "plaatsnaam Bath-sua / Bath-rabbim, geen inhoudsmaat",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["bath"],
+      "verzen": ["1kronieken 3:5", "hooglied 7:4"]
+    },
+    {
+      "reden": "de sikkel als oogstwerktuig (snoeimes, zicht), geen gewicht",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["sikkel"],
+      "verzen": ["deuteronomium 16:9", "deuteronomium 23:25", "jesaja 2:4", "joel 3:10", "joel 3:13", "micha 4:3", "jeremia 50:16", "markus 4:29", "openbaring 14:14-19"]
+    },
+    {
+      "reden": "het vers omschrijft de eenheid zelf — omrekenen zou de definitie onleesbaar maken",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["*"],
+      "verzen": ["exodus 16:36", "exodus 30:13", "exodus 38:26", "leviticus 27:25", "numeri 3:47", "numeri 18:16", "ezechiel 45:11-14"]
+    },
+    {
+      "reden": "gebod over eerlijke maten en gewichten — het gaat om de norm, niet om een hoeveelheid",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["*"],
+      "verzen": ["leviticus 19:35-36", "deuteronomium 25:14-15", "spreuken 20:10", "micha 6:10", "amos 8:5", "ezechiel 45:10"]
+    },
+    {
+      "reden": "de korenmaat is hier een vóórwerp (de kap waaronder je geen lamp zet), geen hoeveelheid",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["korenmaat"],
+      "verzen": ["mattheus 5:15", "markus 4:21", "lukas 11:33"]
+    },
+    {
+      "reden": "de efa is hier een vóórwerp — de mand uit het visioen van Zacharia",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["efa"],
+      "verzen": ["zacharia 5:6-10"]
+    },
+    {
+      "reden": "de gomer is hier een vóórwerp — de gedenkkruik met manna",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["gomer"],
+      "verzen": ["exodus 16:32-33"]
+    },
+    {
+      "reden": "geldbedrag (Grieks talent als muntsom), en munten vallen buiten deze optie",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["talent"],
+      "verzen": ["mattheus 18:23-35", "mattheus 25:14-30"]
+    },
+    {
+      "reden": "geldbedrag (het pond van de gelijkenis is de Griekse mna), en munten vallen buiten deze optie",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["pond"],
+      "verzen": ["lukas 19:11-27"]
+    },
+    {
+      "reden": "“een talent pond zwaar” — het talent draagt hier het gewicht, het pond is geen aparte hoeveelheid",
+      "stelsels": {
+    "metrisch": {
+      "m": [
+        { "tot": 1, "factor": 100, "naam": "cm" },
+        { "tot": 1000, "factor": 1, "naam": "meter" },
+        { "factor": 0.001, "naam": "km" }
+      ],
+      "L": [
+        { "tot": 1, "factor": 1000, "naam": "ml", "stap": 10 },
+        { "tot": 1000, "factor": 1, "naam": "liter" },
+        { "factor": 0.001, "naam": "m\u00b3" }
+      ],
+      "g": [
+        { "tot": 1000, "factor": 1, "naam": "gram" },
+        { "tot": 1000000, "factor": 0.001, "naam": "kilo" },
+        { "factor": 0.000001, "naam": "ton" }
+      ]
+    },
+    "imperiaal": {
+      "m": [
+        { "tot": 0.6096, "factor": 39.370079, "naam": "duim" },
+        { "tot": 91.44, "factor": 3.2808399, "naam": "voet" },
+        { "tot": 804.672, "factor": 1.0936133, "naam": "yard" },
+        { "factor": 0.000621371, "naam": "Engelse mijl" }
+      ],
+      "L": [
+        { "tot": 1.8927, "factor": 2.1133764, "naam": "pint", "stap": 10 },
+        { "factor": 0.26417205, "naam": "gallon" }
+      ],
+      "g": [
+        { "tot": 453.59237, "factor": 0.035273962, "naam": "ounce" },
+        { "tot": 907184.74, "factor": 0.0022046226, "naam": "Engelse pond" },
+        { "factor": 0.0000011023113, "naam": "Engelse ton" }
+      ]
+    }
+  },
+
+  "eenheden": ["pond"],
+      "verzen": ["openbaring 16:21"]
+    }
+  ]
+}

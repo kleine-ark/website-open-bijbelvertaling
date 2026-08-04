@@ -1078,6 +1078,21 @@ body.drawer-open #mobile-backdrop { display: block; }
 .geo-locatie:hover { background: rgba(42,125,125,0.18); color: var(--navy); }
 :root[data-theme="donker"] .geo-locatie { border-bottom-color: #6fb3b3; background: rgba(111,179,179,0.12); }
 
+/* Naar een modern stelsel omgerekende maat (optie 'Maten en gewichten').
+   De omgerekende maat vervángt de Bijbelse in de lopende tekst, dus hij leest
+   als gewone tekst; alleen een fijne stippellijn verraadt dat er iets vervangen
+   is. Het origineel staat in het title-attribuut. */
+.maat-omgerekend {
+    border-bottom: 1px dotted rgba(42,125,125,0.55);
+    cursor: help;
+}
+.maat-omgerekend:hover { background: rgba(42,125,125,0.10); border-radius: 2px; }
+:root[data-theme="donker"] .maat-omgerekend { border-bottom-color: rgba(127,192,192,0.55); }
+/* "de sikkel van het heiligdom": ijkmaat, geen hoeveelheid — tekst blijft staan */
+.maat-ijk { border-bottom: 1px dotted rgba(42,125,125,0.35); cursor: help; }
+:root[data-theme="donker"] .maat-ijk { border-bottom-color: rgba(127,192,192,0.35); }
+@media print { .maat-omgerekend, .maat-ijk { border-bottom: none; } }
+
 /* Subcategorie binnen een groep (bv. Ethiopische boeken onder de Apocriefen) */
 .tree-subgroup-label {
     padding: 6px 16px 4px 24px;
