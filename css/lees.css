@@ -10,6 +10,7 @@
     --accent: #cba449;
     --link: #2563a8;
     --god-speaks: #c0392b;
+    --citaat-genest: #9a6b00;
     --note-marker: #2563a8;
     --border: #e5e1d8;
     --header-bg: #fff;
@@ -27,6 +28,7 @@ body.dark {
     --text: #e0e0e0;
     --text-muted: #666;
     --god-speaks: #e74c3c;
+    --citaat-genest: #e3b341;
     --note-marker: #5b9bd5;
     --border: #2d2d44;
     --header-bg: #16162b;
@@ -222,6 +224,9 @@ body.dark .icon-sun { display: none; }
 }
 .god-speaks { color: var(--god-speaks); font-style: italic; }
 .direct-speech { font-style: italic; }
+/* Citaat binnen een citaat: geel, zodat de lagen uit elkaar te houden zijn. */
+.direct-speech .direct-speech, .direct-speech .god-speaks,
+.god-speaks .direct-speech,    .god-speaks .god-speaks { color: var(--citaat-genest); }
 .note-marker {
     font-size: 0.6em; font-weight: 700;
     color: var(--note-marker); vertical-align: super;
