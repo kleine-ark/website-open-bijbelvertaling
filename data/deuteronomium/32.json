@@ -2285,7 +2285,7 @@
       "number": 25,
       "textSV1888": "Van buiten zal het zwaard beroven, en uit de binnenkameren de verschrikking; ook den jongeling, ook de jonge dochter, het zuigende kind met den grijzen man.",
       "text1637": "Van buyten sal ’t sweert [51] berooven, ende uyt de binnen-kameren de verschrickinge: oock den jongelinck, oock de jonge dochter, het suygende kint met den [52] grijsen man.",
-      "text2026": "Van buiten zal het zwaard beroven, en uit de binnenkameren de verschrikking; ook de jongeling, ook de jonge dochter, het zuigende kind met de grijzen man.",
+      "text2026": "Van buiten zal het zwaard beroven, en uit de binnenkameren de verschrikking; ook de jongeling, ook het meisje, het zuigende kind met de grijzen man.",
       "marginNotes": [
         {
           "marker": "51",
@@ -2369,7 +2369,7 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Van buiten zal het zwaard<sup class=\"note-marker\" data-note=\"51\">51</sup> beroven, en uit de binnenkameren de verschrikking; ook de jongeling, ook de jonge dochter, het zuigende kind met de<sup class=\"note-marker\" data-note=\"52\">52</sup> grijzen man.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Van buiten zal het zwaard<sup class=\"note-marker\" data-note=\"51\">51</sup> beroven, en uit de binnenkameren de verschrikking; ook de jongeling, ook het meisje, het zuigende kind met de<sup class=\"note-marker\" data-note=\"52\">52</sup> grijzen man.</i></span>",
       "textSV1888_html": "Van buiten zal het zwaard<sup class=\"note-marker\" data-note=\"51\">51</sup> beroven, en uit de binnenkameren de verschrikking; ook den jongeling, ook de jonge dochter, het zuigende kind met den<sup class=\"note-marker\" data-note=\"52\">52</sup> grijzen man.",
       "text1637_html": "Van buyten sal ’t sweert <sup class=\"note-marker\" data-note=\"51\">51</sup> berooven, ende uyt de binnen-kameren de verschrickinge: oock den jongelinck, oock de jonge dochter, het suygende kint met den <sup class=\"note-marker\" data-note=\"52\">52</sup> grijsen man.",
       "phraseDiff": [
@@ -2377,6 +2377,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "jonge dochter,",
+          "new": "meisje,",
+          "principe": "V943"
         },
         {
           "old": "den",
@@ -4739,7 +4744,7 @@
       "number": 50,
       "textSV1888": "En sterf op dien berg, waarheen gij opklimmen zult, en word vergaderd tot uw volken; gelijk als uw broeder Aäron stierf op den berg Hor, en werd tot zijn volken vergaderd.",
       "text1637": "Ende sterft op dien berch, daer ghy henen opklimmen sult, ende wort [94] vergadert tot uwe volcken: gelijck als uwe [h] broeder Aaron sterf op den berch Hor, ende wert tot sijne volcken vergadert.",
-      "text2026": "En sterf op die berg, waarheen u opklimmen zult, en word verzameld tot uw volken; zoals uw broer Aäron stierf op de berg Hor, en werd tot zijn volken verzameld.",
+      "text2026": "En sterf op die berg, waarheen u opklimmen zult, en word verzameld tot uw volken; zoals uw broer Aäron stierf op de berg Hor, en werd met zijn voorgeslacht verenigd.",
       "marginNotes": [
         {
           "marker": "94",
@@ -4848,7 +4853,7 @@
           "morph": "HNcmpc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En sterf<sup class=\"note-marker\" data-note=\"94\">94</sup><sup class=\"note-marker\" data-note=\"h\">h</sup> op die berg, waarheen u opklimmen zult, en word verzameld tot uw volken; zoals uw broer Aäron stierf op de berg Hor, en werd tot zijn volken verzameld.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En sterf<sup class=\"note-marker\" data-note=\"94\">94</sup><sup class=\"note-marker\" data-note=\"h\">h</sup> op die berg, waarheen u opklimmen zult, en word verzameld tot uw volken; zoals uw broer Aäron stierf op de berg Hor, en werd met zijn voorgeslacht verenigd.</i></span>",
       "textSV1888_html": "En sterf op dien berg, waarheen gij opklimmen zult, en word<sup class=\"note-marker\" data-note=\"94\">94</sup> vergaderd tot uw volken; gelijk als uw<sup class=\"note-marker\" data-note=\"h\">h</sup> broeder Aäron stierf op den berg Hor, en werd tot zijn volken vergaderd.",
       "text1637_html": "Ende sterft op dien berch, daer ghy henen opklimmen sult, ende wort <sup class=\"note-marker\" data-note=\"94\">94</sup> vergadert tot uwe volcken: gelijck als uwe <sup class=\"note-marker\" data-note=\"h\">h</sup> broeder Aaron sterf op den berch Hor, ende wert tot sijne volcken vergadert.",
       "phraseDiff": [
@@ -4883,9 +4888,14 @@
           "principe": "N1"
         },
         {
-          "old": "vergaderd.",
-          "new": "verzameld.",
-          "principe": "V318"
+          "old": "tot",
+          "new": "met",
+          "principe": null
+        },
+        {
+          "old": "volken vergaderd.",
+          "new": "voorgeslacht verenigd.",
+          "principe": null
         }
       ]
     },

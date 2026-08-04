@@ -562,7 +562,7 @@
       "number": 9,
       "textSV1888": "Uw hand zal al Uw vijanden vinden; Uw rechterhand zal Uw haters vinden.",
       "text1637": "Uwe hant sal [10] alle uwe vyanden [11] vinden; uwe rechter-hant sal uwe haters vinden.",
-      "text2026": "Uw hand zal al Uw vijanden vinden; Uw rechterhand zal Uw haters vinden.",
+      "text2026": "Uw hand zal al Uw vijanden vinden; Uw rechterhand zal Uw vijanden vinden.",
       "marginNotes": [
         {
           "marker": "10",
@@ -616,9 +616,16 @@
           "morph": "HVqrmpc/Sp2ms"
         }
       ],
-      "text2026_html": "Uw hand zal<sup class=\"note-marker\" data-note=\"10\">10</sup> al Uw vijanden<sup class=\"note-marker\" data-note=\"11\">11</sup> vinden; Uw rechterhand zal Uw haters vinden.",
+      "text2026_html": "Uw hand zal<sup class=\"note-marker\" data-note=\"10\">10</sup> al Uw vijanden<sup class=\"note-marker\" data-note=\"11\">11</sup> vinden; Uw rechterhand zal Uw vijanden vinden.",
       "textSV1888_html": "Uw hand zal<sup class=\"note-marker\" data-note=\"10\">10</sup> al Uw vijanden<sup class=\"note-marker\" data-note=\"11\">11</sup> vinden; Uw rechterhand zal Uw haters vinden.",
-      "text1637_html": "Uwe hant sal <sup class=\"note-marker\" data-note=\"10\">10</sup> alle uwe vyanden <sup class=\"note-marker\" data-note=\"11\">11</sup> vinden; uwe rechter-hant sal uwe haters vinden."
+      "text1637_html": "Uwe hant sal <sup class=\"note-marker\" data-note=\"10\">10</sup> alle uwe vyanden <sup class=\"note-marker\" data-note=\"11\">11</sup> vinden; uwe rechter-hant sal uwe haters vinden.",
+      "phraseDiff": [
+        {
+          "old": "haters",
+          "new": "vijanden",
+          "principe": "V945"
+        }
+      ]
     },
     {
       "number": 10,

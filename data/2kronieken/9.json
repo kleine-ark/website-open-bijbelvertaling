@@ -1711,7 +1711,7 @@
    "number": 15,
    "textSV1888": "Daartoe maakte de koning Salomo tweehonderd rondassen van geslagen goud; zeshonderd sikkelen van geslagen goud liet hij opwegen tot elke rondas.",
    "text1637": "Daer toe maeckte de Coninck Salomo twee hondert rondassen van geslagen gout: ses hondert [19] [sikelen] van geslagen gout liet hy op-wegen tot elcke rondasse.",
-   "text2026": "Daartoe maakte de koning Salomo tweehonderd rondassen van geslagen goud; zeshonderd sikkelen van geslagen goud liet hij opwegen tot elke rondas.",
+   "text2026": "Daartoe maakte de koning Salomo tweehonderd rondassen van geslagen goud; zeshonderd sikkels van geslagen goud liet hij opwegen tot elke rondas.",
    "marginNotes": [
     {
      "marker": "19",
@@ -1798,15 +1798,22 @@
      "morph": "HTd/Acfsa"
     }
    ],
-   "text2026_html": "Daartoe maakte de koning Salomo tweehonderd rondassen van geslagen goud; zeshonderd sikkelen<sup class=\"note-marker\" data-note=\"19\">19</sup> van geslagen goud liet hij opwegen tot elke rondas.",
+   "text2026_html": "Daartoe maakte de koning Salomo tweehonderd rondassen van geslagen goud; zeshonderd sikkels<sup class=\"note-marker\" data-note=\"19\">19</sup> van geslagen goud liet hij opwegen tot elke rondas.",
    "textSV1888_html": "Daartoe maakte de koning Salomo tweehonderd rondassen van geslagen goud; zeshonderd sikkelen<sup class=\"note-marker\" data-note=\"19\">19</sup> van geslagen goud liet hij opwegen tot elke rondas.",
-   "text1637_html": "Daer toe maeckte de Coninck Salomo twee hondert rondassen van geslagen gout: ses hondert <sup class=\"note-marker\" data-note=\"19\">19</sup> [sikelen] van geslagen gout liet hy op-wegen tot elcke rondasse."
+   "text1637_html": "Daer toe maeckte de Coninck Salomo twee hondert rondassen van geslagen gout: ses hondert <sup class=\"note-marker\" data-note=\"19\">19</sup> [sikelen] van geslagen gout liet hy op-wegen tot elcke rondasse.",
+   "phraseDiff": [
+    {
+     "old": "sikkelen",
+     "new": "sikkels",
+     "principe": "V941"
+    }
+   ]
   },
   {
    "number": 16,
    "textSV1888": "Insgelijks driehonderd schilden van geslagen goud; driehonderd sikkelen gouds liet hij opwegen tot elk schild; en de koning leide ze in het huis des wouds van den Libanon.",
    "text1637": "Insgelijcks drie hondert schilden van geslagen gout; [20] drie hondert [sikelen] gouts liet hy opwegen tot elcken schilt: ende de Coninck leydese in [21] het huys des wouts Libanons.",
-   "text2026": "Ook driehonderd schilden van geslagen goud; driehonderd sikkelen gouds liet hij opwegen tot elk schild; en de koning legde ze in het huis van de woud van de Libanon.",
+   "text2026": "Ook driehonderd schilden van geslagen goud; driehonderd sikkels goud liet hij opwegen tot elk schild; en de koning legde ze in het huis van de woud van de Libanon.",
    "marginNotes": [
     {
      "marker": "20",
@@ -1910,7 +1917,7 @@
      "morph": "HTd/Np"
     }
    ],
-   "text2026_html": "Ook driehonderd schilden van geslagen goud;<sup class=\"note-marker\" data-note=\"20\">20</sup> driehonderd sikkelen gouds liet hij opwegen tot elk schild; en de koning legde ze in<sup class=\"note-marker\" data-note=\"21\">21</sup> het huis van de woud van de Libanon.",
+   "text2026_html": "Ook driehonderd schilden van geslagen goud;<sup class=\"note-marker\" data-note=\"20\">20</sup> driehonderd sikkels goud liet hij opwegen tot elk schild; en de koning legde ze in<sup class=\"note-marker\" data-note=\"21\">21</sup> het huis van de woud van de Libanon.",
    "textSV1888_html": "Insgelijks driehonderd schilden van geslagen goud;<sup class=\"note-marker\" data-note=\"20\">20</sup> driehonderd sikkelen gouds liet hij opwegen tot elk schild; en de koning leide ze in<sup class=\"note-marker\" data-note=\"21\">21</sup> het huis des wouds van den Libanon.",
    "text1637_html": "Insgelijcks drie hondert schilden van geslagen gout; <sup class=\"note-marker\" data-note=\"20\">20</sup> drie hondert [sikelen] gouts liet hy opwege<i>n</i> tot elcken schilt: ende de Coninck leydese in <sup class=\"note-marker\" data-note=\"21\">21</sup> het huys des wouts Libanons.",
    "phraseDiff": [
@@ -1918,6 +1925,11 @@
      "old": "Insgelijks",
      "new": "Ook",
      "principe": "V653"
+    },
+    {
+     "old": "sikkelen gouds",
+     "new": "sikkels goud",
+     "principe": null
     },
     {
      "old": "leide",
