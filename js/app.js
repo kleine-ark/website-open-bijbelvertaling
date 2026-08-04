@@ -430,6 +430,10 @@ const App = {
     },
 
     async init() {
+        // Eerst de nagekeken-lijst, want sidebar.js, mobile-nav.js en de
+        // hoofdstukknoppen lezen die synchroon. Renderen ze eerder, dan lijkt
+        // alles concept te zijn.
+        await App._laadVerified();
         Navigation.init();
         Editor.init();
         Lexicon.init();

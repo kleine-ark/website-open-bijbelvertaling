@@ -31,6 +31,7 @@ const Lees = {
     },
 
     async init() {
+        await Lees._laadVerified();   // vóór het renderen van de boekenlijst
         this.manifest = await this.fetchJSON('/data/books.json');
         this.buildBookById();
         this.setupEventListeners();
