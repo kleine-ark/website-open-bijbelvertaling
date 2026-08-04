@@ -120,52 +120,18 @@ const Lees = {
     // AUDIO_AVAILABLE leeft in js/audio-available.js (window.AUDIO_AVAILABLE) —
     // niet hier definieren. Wordt door de TTS-rollout-script bijgewerkt.
 
-    VERIFIED_CHAPTERS: {
-        genesis:    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
-        psalmen:    'all',
-        hosea:      'all',
-        maleachi:   'all',
-        haggai:     'all',
-        zefanja:    'all',
-        habakuk:    'all',
-        joel:       'all',
-        obadja:     'all',
-        amos:       'all',
-        jona:       'all',
-        nahum:      'all',
-        micha:      'all',
-        johannes:   'all',
-        handelingen:'all',
-        markus:     [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
-        romeinen:   'all',
-        '1korinthiers':'all',
-        '2korinthiers':'all',
-        galaten:    'all',
-        '1tessalonicensen':'all',
-        '2tessalonicensen':'all',
-        '1timotheus':'all',
-        '2timotheus':'all',
-        '1johannes':'all',
-        '2johannes':'all',
-        '3johannes':'all',
-        efeziers:   'all',
-        gebedvanmanasse:'all',
-        filemon:    'all',
-        judas:      'all',
-        baruch:     'all',
-        jakobus:    'all',
-        '1makkabeeen': 'all',
-        susanna:    'all',
-        ezra:       'all',
-        filippenzen:'all',
-        titus:      'all',
-        kolossenzen:'all',
-        mattheus:   'all',
-        lukas:      'all',
-        hebreeen:   'all',
-        '1petrus':  'all',
-        '2petrus':  'all',
-        openbaring: 'all',
+    // Zie app.js: één gedeelde bron in data/verified-chapters.json.
+    VERIFIED_CHAPTERS: {},
+    _verifiedGeladen: null,
+
+    _laadVerified() {
+        if (!Lees._verifiedGeladen) {
+            Lees._verifiedGeladen = fetch('data/verified-chapters.json')
+                .then(r => (r.ok ? r.json() : {}))
+                .then(d => { Lees.VERIFIED_CHAPTERS = d || {}; })
+                .catch(() => { Lees.VERIFIED_CHAPTERS = {}; });
+        }
+        return Lees._verifiedGeladen;
     },
 
     _isVerified(bookId, chapter) {
@@ -433,6 +399,7 @@ const Lees = {
     },
 
     async renderChapter(book, chapterNum) {
+        await Lees._laadVerified();
         this._bookObj = book;   // bewaren voor o.a. de Arabisch-toggle-herrender
         // Verzen zitten in een apart per-hoofdstuk-bestand (post chapter-split)
         let chapter = book.chapters.find(c => c.number === chapterNum);

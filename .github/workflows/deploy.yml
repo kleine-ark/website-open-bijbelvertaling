@@ -22,6 +22,10 @@ jobs:
       deploy_user: ${{ vars.DEPLOY_USER }}
       deploy_path: /var/www/openvertaling.nl/site
       deploy_source: .
+      # Bouwt downloads/ (EPUB + brondata-zip + index.json) tijdens de deploy,
+      # zodat de uitgaven altijd gelijk lopen met de tekst en er geen binaire
+      # bestanden in git terechtkomen.
+      build_command: python scripts/build_downloads.py
       rsync_excludes: |
         .git/
         .github/

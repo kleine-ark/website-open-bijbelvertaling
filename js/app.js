@@ -62,52 +62,23 @@ const App = {
 
     // Hoofdstukken die handmatig vers-voor-vers zijn nagelopen.
     // Voor andere hoofdstukken: AI-concept-banner tonen.
-    VERIFIED_CHAPTERS: {
-        genesis:    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
-        psalmen:    'all',
-        hosea:      'all',
-        maleachi:   'all',
-        haggai:     'all',
-        zefanja:    'all',
-        habakuk:    'all',
-        joel:       'all',
-        obadja:     'all',
-        amos:       'all',
-        jona:       'all',
-        nahum:      'all',
-        micha:      'all',
-        johannes:   'all',
-        handelingen:'all',
-        markus:     [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
-        romeinen:   'all',
-        '1korinthiers':'all',
-        '2korinthiers':'all',
-        galaten:    'all',
-        '1tessalonicensen':'all',
-        '2tessalonicensen':'all',
-        '1timotheus':'all',
-        '2timotheus':'all',
-        '1johannes':'all',
-        '2johannes':'all',
-        '3johannes':'all',
-        efeziers:   'all',
-        gebedvanmanasse:'all',
-        filemon:    'all',
-        judas:      'all',
-        baruch:     'all',
-        jakobus:    'all',
-        '1makkabeeen': 'all',
-        susanna:    'all',
-        ezra:       'all',
-        filippenzen:'all',
-        titus:      'all',
-        kolossenzen:'all',
-        mattheus:   'all',
-        lukas:      'all',
-        hebreeen:   'all',
-        '1petrus':  'all',
-        '2petrus':  'all',
-        openbaring: 'all',
+    // Nagekeken hoofdstukken staan in data/verified-chapters.json, zodat app.js,
+    // lees.js en de bouwscripts allemaal uit dezelfde bron putten. Stond eerder
+    // als kopie in twee JS-bestanden, wat vroeg of laat uit elkaar loopt.
+    VERIFIED_CHAPTERS: {},
+    _verifiedGeladen: null,
+
+    /** Laad de nagekeken-lijst eenmalig. Faalt dit, dan geldt alles als NIET
+     *  nagekeken, zodat de waarschuwingsbanner verschijnt. Nooit andersom: een
+     *  storing mag geen onnagekeken tekst zonder waarschuwing tonen. */
+    _laadVerified() {
+        if (!App._verifiedGeladen) {
+            App._verifiedGeladen = fetch('data/verified-chapters.json')
+                .then(r => (r.ok ? r.json() : {}))
+                .then(d => { App.VERIFIED_CHAPTERS = d || {}; })
+                .catch(() => { App.VERIFIED_CHAPTERS = {}; });
+        }
+        return App._verifiedGeladen;
     },
 
     _isVerified(bookId, chapter) {
@@ -533,6 +504,7 @@ const App = {
     },
 
     async renderChapter(bookId, chapterNum, opts = {}) {
+        await App._laadVerified();   // banner mag niet op verouderde info draaien
         const append = !!opts.append;    // doorlopend-lezen: hoofdstuk onderaan toevoegen
         const prepend = !!opts.prepend;  // doorlopend-lezen: hoofdstuk bovenaan toevoegen
         // Manifest (klein) + chapter (klein) parallel
