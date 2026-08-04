@@ -30,7 +30,7 @@ MAIN = [
     ("/lexicon.html", "0.4", "monthly"),
     ("/voor-ai.html", "0.5", "monthly"),
     ("/handschriften-henoch.html", "0.4", "monthly"),
-    ("/contact.html", "0.3", "yearly"),
+    ("/over-ov.html#over-ons", "0.3", "yearly"),
     ("/woordenboeken.html", "0.5", "monthly"),
 ]
 
