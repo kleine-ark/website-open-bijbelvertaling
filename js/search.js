@@ -296,10 +296,40 @@
             });
         },
 
+        /* De pagina eronder mag niet meescrollen zolang de overlay open staat.
+           overflow:hidden op body is daarvoor niet genoeg — iOS Safari negeert
+           dat en scrollt gewoon door. Vandaar position:fixed met de scrollpositie
+           bewaard in een negatieve top, die bij het sluiten wordt teruggezet. */
+        _vergrendelScroll() {
+            const b = document.body;
+            if (b.dataset.ovScrollLock !== undefined) return;   // al vergrendeld
+            const y = window.pageYOffset || document.documentElement.scrollTop || 0;
+            b.dataset.ovScrollLock = String(y);
+            b.style.position = 'fixed';
+            b.style.top = (-y) + 'px';
+            b.style.left = '0';
+            b.style.right = '0';
+            b.style.width = '100%';
+        },
+
+        _ontgrendelScroll() {
+            const b = document.body;
+            const y = b.dataset.ovScrollLock;
+            if (y === undefined) return;
+            delete b.dataset.ovScrollLock;
+            b.style.position = '';
+            b.style.top = '';
+            b.style.left = '';
+            b.style.right = '';
+            b.style.width = '';
+            window.scrollTo(0, parseInt(y, 10) || 0);
+        },
+
         open(prefillQuery) {
             if (!this.rootEl) return;
             this.rootEl.classList.remove('hidden');
             this.rootEl.setAttribute('aria-hidden', 'false');
+            this._vergrendelScroll();
             if (prefillQuery && this.inputEl) {
                 this.inputEl.value = prefillQuery;
             }
@@ -322,6 +352,7 @@
             if (!this.rootEl) return;
             this.rootEl.classList.add('hidden');
             this.rootEl.setAttribute('aria-hidden', 'true');
+            this._ontgrendelScroll();
         },
 
         _renderPlaceholder(msg) {
