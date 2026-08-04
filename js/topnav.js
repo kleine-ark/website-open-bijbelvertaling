@@ -51,4 +51,12 @@
         var zs = document.createElement('script'); zs.src = 'js/zoom.js'; zs.async = false;
         document.head.appendChild(zs);
     }
+
+    // Scherm aan houden — alleen waar daadwerkelijk gelezen wordt, niet op
+    // contact- of overzichtspagina's waar niemand lang blijft.
+    var leespagina = (page === 'index.html' || page === 'lees.html' || page === '');
+    if (leespagina && !document.querySelector('script[src$="wake-lock.js"]')) {
+        var ws = document.createElement('script'); ws.src = 'js/wake-lock.js'; ws.async = false;
+        document.head.appendChild(ws);
+    }
 })();
