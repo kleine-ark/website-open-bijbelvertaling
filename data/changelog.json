@@ -1,6 +1,60 @@
 {
  "wijzigingen": [
   {
+   "versie": "v0.24.0",
+   "datum": "2026-08-04",
+   "items": [
+    {
+     "type": "feature",
+     "beschrijving": "Downloads: de vertaling is nu te downloaden als EPUB voor e-reader en tablet (alleen nagekeken hoofdstukken) en als ZIP met de complete brondata. Beide CC0. Te vinden onder Wiki."
+    },
+    {
+     "type": "feature",
+     "beschrijving": "Nieuwe pagina over Bijbelse maten, gewichten en munten: 34 eenheden met hun moderne equivalent, de spreiding tussen bronnen en de valkuilen (de langere el in Ezechiel, gomer tegenover homer, drie soorten sikkel)."
+    },
+    {
+     "type": "feature",
+     "beschrijving": "Nieuwe leesoptie: Jezus weergeven als Yeshua, de Hebreeuwse naamvorm."
+    },
+    {
+     "type": "bulk",
+     "beschrijving": "Genitief hersteld waar 'des' bij de herziening 'van de' werd maar de naamvalsuitgang bleef staan: 'van de eeuwige Gods' is nu 'van de eeuwige God'. 288 plaatsen in 52 boeken, waarbij ook het lidwoord meeging bij onzijdige woorden ('van de vets' werd 'van het vet'). Principes N13 tot en met N15."
+    },
+    {
+     "type": "bulk",
+     "beschrijving": "Genesis 21 tot en met 28 herzien; veertig nieuwe wijzigingsprincipes, toegepast op de hele Bijbel. Onder meer sikkelen naar sikkels, bijwijf naar bijvrouw, weldadigheid naar goedertierenheid, hoofdpeluw naar hoofdkussen en wildbraad naar stuk wild."
+    },
+    {
+     "type": "fix",
+     "beschrijving": "Genesis 22:15 luidde 'ten tweede reiszak van de hemel'. 'Male' is daar de oude vorm van 'maal, keer' en geen reistas."
+    },
+    {
+     "type": "fix",
+     "beschrijving": "Genesis 26:8: 'jokken' betekende stoeien of liefkozen, niet liegen. En 'wassen' was te vaak 'groeien' geworden, waardoor Genesis 24:32 sprak van water om de voeten te groeien."
+    },
+    {
+     "type": "fix",
+     "beschrijving": "De Bijbeltekst bleef onzichtbaar op iPads met iPadOS 15.4 tot en met 16.3. Een RegExp-lookbehind in de verwijzings-regex brak de hele hoofdstuk-render af; Safari kent die pas vanaf 16.4."
+    },
+    {
+     "type": "fix",
+     "beschrijving": "Mobiel: de zoomknop lag over de knoppen voor vorig en volgend hoofdstuk, en zoomen liet de weergave naar een ander vers verspringen. Beide opgelost."
+    },
+    {
+     "type": "fix",
+     "beschrijving": "Mobiel: de pagina scrolde door achter de zoekbalk. Het scherm blijft nu ook aan tijdens het lezen (vanaf iPadOS 16.4)."
+    },
+    {
+     "type": "systeem",
+     "beschrijving": "Een citaat binnen een citaat wordt geel weergegeven, zodat de lagen uit elkaar te houden zijn. Komt 73 keer voor."
+    },
+    {
+     "type": "systeem",
+     "beschrijving": "De lijst met nagekeken hoofdstukken staat nu op een plek (data/verified-chapters.json) in plaats van als kopie in twee JS-bestanden. De pagina Over ons is samengevoegd met Over de Open Vertaling."
+    }
+   ]
+  },
+  {
    "versie": "v0.23.0",
    "datum": "2026-07-27",
    "items": [
