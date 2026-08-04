@@ -3088,7 +3088,7 @@
       "number": 35,
       "textSV1888": "Het geschiedde nu in het optrekken van de ark, dat Mozes zeide: Sta op, HEERE! en laat Uw vijanden verstrooid worden, en Uw haters van Uw aangezicht vlieden!",
       "text1637": "Het geschiedde nu in 't optrecken van de Arke, dat Mose seyde: [b[f]] Staet op HEERE, ende [39] laet uwe vyanden verstroyt werden, ende uwe haters van u aengesichte vlieden.",
-      "text2026": "Het geschiedde nu in het optrekken van de ark, dat Mozes zei: Sta op, JAHWEH! en laat Uw vijanden verstrooid worden, en Uw haters van Uw aangezicht vluchten!",
+      "text2026": "Het geschiedde nu in het optrekken van de ark, dat Mozes zei: Sta op, JAHWEH! en laat Uw vijanden verstrooid worden, en Uw vijanden van Uw aangezicht vluchten!",
       "marginNotes": [
         {
           "marker": "d",
@@ -3167,7 +3167,7 @@
           "morph": "HR/Ncbpc/Sp2ms"
         }
       ],
-      "text2026_html": "Het geschiedde nu in het optrekken van de ark, dat Mozes zei: <span class=\"direct-speech\"><i>Sta op, JAHWEH! en laat Uw vijanden verstrooid worden, en Uw haters van Uw aangezicht vluchten!</i></span>",
+      "text2026_html": "Het geschiedde nu in het optrekken van de ark, dat Mozes zei: <span class=\"direct-speech\"><i>Sta op, JAHWEH! en laat Uw vijanden verstrooid worden, en Uw vijanden van Uw aangezicht vluchten!</i></span>",
       "textSV1888_html": "Het geschiedde nu in het optrekken van de ark, dat Mozes zeide: Sta op, HEERE! en laat Uw vijanden verstrooid worden, en Uw haters van Uw aangezicht vlieden!",
       "text1637_html": "Het geschiedde nu in 't optrecken van de Arke, dat Mose seyde: <sup class=\"note-marker\" data-note=\"b[f]\">b[f]</sup> Staet op HEERE, ende <sup class=\"note-marker\" data-note=\"39\">39</sup> laet uwe vyanden verstroyt werden, ende uwe haters van u aengesichte vlieden.",
       "phraseDiff": [
@@ -3180,6 +3180,11 @@
           "old": "HEERE!",
           "new": "JAHWEH!",
           "principe": null
+        },
+        {
+          "old": "haters",
+          "new": "vijanden",
+          "principe": "V945"
         },
         {
           "old": "vlieden!",

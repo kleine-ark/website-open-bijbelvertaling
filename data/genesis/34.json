@@ -240,7 +240,7 @@
       "number": 3,
       "textSV1888": "En zijn ziel kleefde aan Dina, Jakobs dochter; en hij had de jonge dochter lief, en sprak naar het hart van de jonge dochter.",
       "text1637": "Ende [5] sijne ziele kleefde aen Dina, Iacobs dochter; ende hy hadde de jonge dochter lief, ende sprack [6] nae het herte van de jonge dochter.",
-      "text2026": "En zijn ziel kleefde aan Dina, Jakobs dochter; en hij had de jonge dochter lief, en sprak naar het hart van de jonge dochter.",
+      "text2026": "En zijn ziel kleefde aan Dina, Jakobs dochter; en hij had het meisje lief, en sprak naar het hart van het meisje.",
       "marginNotes": [
         {
           "marker": "5",
@@ -325,9 +325,21 @@
           "morph": "HTd/Ncfsa"
         }
       ],
-      "text2026_html": "En<sup class=\"note-marker\" data-note=\"5\">5</sup> zijn ziel kleefde aan Dina, Jakobs dochter; en hij had de jonge dochter lief, en sprak<sup class=\"note-marker\" data-note=\"6\">6</sup> naar het hart van de jonge dochter.",
+      "text2026_html": "En<sup class=\"note-marker\" data-note=\"5\">5</sup> zijn ziel kleefde aan Dina, Jakobs dochter; en hij had het meisje lief, en sprak<sup class=\"note-marker\" data-note=\"6\">6</sup> naar het hart van het meisje.",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"5\">5</sup> zijn ziel kleefde aan Dina, Jakobs dochter; en hij had de jonge dochter lief, en sprak<sup class=\"note-marker\" data-note=\"6\">6</sup> naar het hart van de jonge dochter.",
-      "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"5\">5</sup> sijne ziele kleefde aen Dina, Iacobs dochter; ende hy hadde de jonge dochter lief, ende sprack <sup class=\"note-marker\" data-note=\"6\">6</sup> nae het herte van de jonge dochter."
+      "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"5\">5</sup> sijne ziele kleefde aen Dina, Iacobs dochter; ende hy hadde de jonge dochter lief, ende sprack <sup class=\"note-marker\" data-note=\"6\">6</sup> nae het herte van de jonge dochter.",
+      "phraseDiff": [
+        {
+          "old": "jonge dochter",
+          "new": "meisje",
+          "principe": "V943"
+        },
+        {
+          "old": "jonge dochter.",
+          "new": "meisje.",
+          "principe": "V943"
+        }
+      ]
     },
     {
       "number": 4,
@@ -1236,7 +1248,7 @@
       "number": 12,
       "textSV1888": "Vergroot zeer over mij den bruidschat en het geschenk; en ik zal geven, gelijk als gij tot mij zult zeggen; geef mij slechts de jonge dochter tot een vrouw.",
       "text1637": "[19] Vergroot seer over my [20] den bruytschat, ende 't geschenck, ende ick sal geven gelijck als ghy tot my sult seggen, geeft my slechs de jonge dochter tot eene vrouwe.",
-      "text2026": "Vergroot zeer over mij de bruidschat en het geschenk; en ik zal geven, zoals u tot mij zult zeggen; geef mij slechts de jonge dochter tot een vrouw.",
+      "text2026": "Vergroot zeer over mij de bruidschat en het geschenk; en ik zal geven, zoals u tot mij zult zeggen; geef mij slechts het meisje tot een vrouw.",
       "marginNotes": [
         {
           "marker": "19",
@@ -1373,7 +1385,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"19\">19</sup><span class=\"direct-speech\"><i> Vergroot zeer over mij<sup class=\"note-marker\" data-note=\"20\">20</sup> de bruidschat en het geschenk; en ik zal geven, zoals u tot mij zult zeggen; geef mij slechts de jonge dochter tot een vrouw.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"19\">19</sup><span class=\"direct-speech\"><i> Vergroot zeer over mij<sup class=\"note-marker\" data-note=\"20\">20</sup> de bruidschat en het geschenk; en ik zal geven, zoals u tot mij zult zeggen; geef mij slechts het meisje tot een vrouw.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"19\">19</sup> Vergroot zeer over mij<sup class=\"note-marker\" data-note=\"20\">20</sup> den bruidschat en het geschenk; en ik zal geven, gelijk als gij tot mij zult zeggen; geef mij slechts de jonge dochter tot een vrouw.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"19\">19</sup> Vergroot seer over my <sup class=\"note-marker\" data-note=\"20\">20</sup> den bruytschat, ende 't geschenck, ende ick sal geven gelijck als ghy tot my sult seggen, geeft my slechs de jonge dochter tot eene vrouwe.",
       "phraseDiff": [
@@ -1386,6 +1398,11 @@
           "old": "gelijk als gij",
           "new": "zoals u",
           "principe": null
+        },
+        {
+          "old": "jonge dochter",
+          "new": "meisje",
+          "principe": "V943"
         }
       ]
     },

@@ -807,7 +807,7 @@
       "number": 8,
       "textSV1888": "En Abraham gaf den geest en stierf, in goeden ouderdom, oud en des levens zat, en hij werd tot zijn volken verzameld.",
       "text1637": "Ende Abraham gaf den geest, ende sterf [c] in goeden [14] ouderdom, out, ende [des levens] [15] sat: ende hy [16] wert tot sijne volcken versamelt.",
-      "text2026": "En Abraham gaf de geest en stierf, in goeden ouderdom, oud en van het leven zat, en hij werd tot zijn volken verzameld.",
+      "text2026": "En Abraham gaf de geest en stierf, in goeden ouderdom, oud en van het leven zat, en hij werd met zijn voorgeslacht verenigd.",
       "marginNotes": [
         {
           "marker": "c",
@@ -978,7 +978,7 @@
           "morph": "HNcmpc/Sp3ms"
         }
       ],
-      "text2026_html": "En Abraham gaf de geest en stierf,<sup class=\"note-marker\" data-note=\"c\">c</sup> in goeden<sup class=\"note-marker\" data-note=\"14\">14</sup> ouderdom, oud en<sup class=\"note-marker\" data-note=\"15\">15</sup> van het leven zat, en hij<sup class=\"note-marker\" data-note=\"16\">16</sup> werd tot zijn volken verzameld.",
+      "text2026_html": "En Abraham gaf de geest en stierf,<sup class=\"note-marker\" data-note=\"c\">c</sup> in goeden<sup class=\"note-marker\" data-note=\"14\">14</sup> ouderdom, oud en<sup class=\"note-marker\" data-note=\"15\">15</sup> van het leven zat, en hij<sup class=\"note-marker\" data-note=\"16\">16</sup> werd met zijn voorgeslacht verenigd.",
       "textSV1888_html": "En Abraham gaf den geest en stierf,<sup class=\"note-marker\" data-note=\"c\">c</sup> in goeden<sup class=\"note-marker\" data-note=\"14\">14</sup> ouderdom, oud en<sup class=\"note-marker\" data-note=\"15\">15</sup> des levens zat, en hij<sup class=\"note-marker\" data-note=\"16\">16</sup> werd tot zijn volken verzameld.",
       "text1637_html": "Ende Abraham gaf den geest, ende sterf <sup class=\"note-marker\" data-note=\"c\">c</sup> in goeden <sup class=\"note-marker\" data-note=\"14\">14</sup> ouderdom, out, ende [des levens] <sup class=\"note-marker\" data-note=\"15\">15</sup> sat: ende hy <sup class=\"note-marker\" data-note=\"16\">16</sup> wert tot sijne volcken versamelt.",
       "phraseDiff": [
@@ -991,6 +991,16 @@
           "old": "des levens",
           "new": "van het leven",
           "principe": "N3"
+        },
+        {
+          "old": "tot",
+          "new": "met",
+          "principe": null
+        },
+        {
+          "old": "volken verzameld.",
+          "new": "voorgeslacht verenigd.",
+          "principe": null
         }
       ]
     },
@@ -1765,7 +1775,7 @@
       "number": 16,
       "textSV1888": "Deze zijn de zonen van Ismaël, en dit zijn hun namen, in hun dorpen en paleizen, twaalf vorsten naar hun volken.",
       "text1637": "Dit zijn de sonen Ismaëls, ende dit zijn hare namen in hare dorpen, ende Paleysen, [29] twaelf Vorsten nae hare volckeren.",
-      "text2026": "Deze zijn de zonen van Ismaël, en dit zijn hun namen, in hun dorpen en paleizen, twaalf vorsten naar van hun volk.",
+      "text2026": "Deze zijn de zonen van Ismaël, en dit zijn hun namen, in hun dorpen en paleizen, twaalf vorsten naar hun volken.",
       "marginNotes": [
         {
           "marker": "29",
@@ -1843,21 +1853,10 @@
           "morph": "HR/Ncfpc/Sp3mp"
         }
       ],
-      "text2026_html": "Deze zijn de zonen van Ismaël, en dit zijn hun namen, in hun dorpen en paleizen,<sup class=\"note-marker\" data-note=\"29\">29</sup> twaalf vorsten naar van hun volk.",
+      "text2026_html": "Deze zijn de zonen van Ismaël, en dit zijn hun namen, in hun dorpen en paleizen,<sup class=\"note-marker\" data-note=\"29\">29</sup> twaalf vorsten naar hun volken.",
       "textSV1888_html": "Deze zijn de zonen van Ismaël, en dit zijn hun namen, in hun dorpen en paleizen,<sup class=\"note-marker\" data-note=\"29\">29</sup> twaalf vorsten naar hun volken.",
       "text1637_html": "Dit zijn de sonen Ismaëls, ende dit zijn hare namen in hare dorpen, ende Paleysen, <sup class=\"note-marker\" data-note=\"29\">29</sup> twaelf Vorsten nae hare volckere<i>n</i>.",
-      "phraseDiff": [
-        {
-          "old": "",
-          "new": "van",
-          "principe": null
-        },
-        {
-          "old": "volken.",
-          "new": "volk.",
-          "principe": null
-        }
-      ]
+      "phraseDiff": []
     },
     {
       "number": 17,
@@ -3348,7 +3347,7 @@
       "number": 28,
       "textSV1888": "En Izak had Ezau lief; want het wildbraad was naar zijn mond; maar Rebekka had Jakob lief.",
       "text1637": "Ende Isaac hadde Esau lief; want [59] het wiltbraedt [60] was nae sijnen mont: maer Rebecca hadde Iacob lief.",
-      "text2026": "En Izak had Ezau lief; want het wildbraad was naar zijn mond; maar Rebekka had Jakob lief.",
+      "text2026": "En Izak had Ezau lief; want het stuk wild was naar zijn mond; maar Rebekka had Jakob lief.",
       "marginNotes": [
         {
           "marker": "59",
@@ -3432,15 +3431,22 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En Izak had Ezau lief; want<sup class=\"note-marker\" data-note=\"59\">59</sup> het wildbraad<sup class=\"note-marker\" data-note=\"60\">60</sup> was naar zijn mond; maar Rebekka had Jakob lief.",
+      "text2026_html": "En Izak had Ezau lief; want<sup class=\"note-marker\" data-note=\"59\">59</sup> het stuk wild<sup class=\"note-marker\" data-note=\"60\">60</sup> was naar zijn mond; maar Rebekka had Jakob lief.",
       "textSV1888_html": "En Izak had Ezau lief; want<sup class=\"note-marker\" data-note=\"59\">59</sup> het wildbraad<sup class=\"note-marker\" data-note=\"60\">60</sup> was naar zijn mond; maar Rebekka had Jakob lief.",
-      "text1637_html": "Ende Isaac hadde Esau lief; want <sup class=\"note-marker\" data-note=\"59\">59</sup> het wiltbraedt <sup class=\"note-marker\" data-note=\"60\">60</sup> was nae sijnen mont: maer Rebecca hadde Iacob lief."
+      "text1637_html": "Ende Isaac hadde Esau lief; want <sup class=\"note-marker\" data-note=\"59\">59</sup> het wiltbraedt <sup class=\"note-marker\" data-note=\"60\">60</sup> was nae sijnen mont: maer Rebecca hadde Iacob lief.",
+      "phraseDiff": [
+        {
+          "old": "wildbraad",
+          "new": "stuk wild",
+          "principe": "V952"
+        }
+      ]
     },
     {
       "number": 29,
       "textSV1888": "En Jakob had een kooksel gekookt; en Ezau kwam uit het veld, en was moede.",
       "text1637": "Ende Iacob hadde [61] een koocksel gekoockt: ende Esau quam uyt het velt, ende was moede.",
-      "text2026": "En Jakob had een kooksel gekookt; en Ezau kwam uit het veld, en was moe.",
+      "text2026": "En Jakob had een soep gekookt; en Ezau kwam uit het veld, en was moe.",
       "marginNotes": [
         {
           "marker": "61",
@@ -3497,10 +3503,15 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "En Jakob had<sup class=\"note-marker\" data-note=\"61\">61</sup> een kooksel gekookt; en Ezau kwam uit het veld, en was moe.",
+      "text2026_html": "En Jakob had<sup class=\"note-marker\" data-note=\"61\">61</sup> een soep gekookt; en Ezau kwam uit het veld, en was moe.",
       "textSV1888_html": "En Jakob had<sup class=\"note-marker\" data-note=\"61\">61</sup> een kooksel gekookt; en Ezau kwam uit het veld, en was moede.",
       "text1637_html": "Ende Iacob hadde <sup class=\"note-marker\" data-note=\"61\">61</sup> een koocksel gekoockt: ende Esau quam uyt het velt, ende was moede.",
       "phraseDiff": [
+        {
+          "old": "kooksel",
+          "new": "soep",
+          "principe": "V949"
+        },
         {
           "old": "moede.",
           "new": "moe.",
@@ -3512,7 +3523,7 @@
       "number": 30,
       "textSV1888": "En Ezau zeide tot Jakob: Laat mij toch slorpen van dat rode, dat rode daar, want ik ben moede; daarom heeft men zijn naam genoemd Edom.",
       "text1637": "Ende Esau seyde tot Iacob; Laet my doch slorpen van [62] dat roode, dat roode daer; want ick ben moede: daerom heeft men sijnen name genoemt, [63] Edom.",
-      "text2026": "En Ezau zei tot Jakob: Laat mij toch slorpen van dat rode, dat rode daar, want ik ben moe; daarom heeft men zijn naam genoemd Edom.",
+      "text2026": "En Ezau zei tot Jakob: Laat mij toch slurpen van dat rode, dat rode daar, want ik ben moe; daarom heeft men zijn naam genoemd Edom.",
       "marginNotes": [
         {
           "marker": "62",
@@ -3645,7 +3656,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En Ezau zei tot Jakob: <span class=\"direct-speech\"><i>Laat mij toch slorpen van dat rode, dat rode daar, want ik ben moe; daarom heeft men zijn naam genoemd Edom.</i></span>",
+      "text2026_html": "En Ezau zei tot Jakob: <span class=\"direct-speech\"><i>Laat mij toch slurpen van dat rode, dat rode daar, want ik ben moe; daarom heeft men zijn naam genoemd Edom.</i></span>",
       "textSV1888_html": "En Ezau zeide tot Jakob: Laat mij toch slorpen van<sup class=\"note-marker\" data-note=\"62\">62</sup> dat rode, dat rode daar, want ik ben moede; daarom heeft men zijn naam genoemd<sup class=\"note-marker\" data-note=\"63\">63</sup> Edom.",
       "text1637_html": "Ende Esau seyde tot Iacob; Laet my doch slorpen van <sup class=\"note-marker\" data-note=\"62\">62</sup> dat roode, dat roode daer; want ick ben moede: daerom heeft men sijnen name genoemt, <sup class=\"note-marker\" data-note=\"63\">63</sup> Edom.",
       "phraseDiff": [
@@ -3653,6 +3664,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "slorpen",
+          "new": "slurpen",
+          "principe": "V950"
         },
         {
           "old": "moede;",
