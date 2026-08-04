@@ -12,6 +12,7 @@ const Opties = {
         otSheol: 'dodenrijk',    // 'dodenrijk' (OT-context, modern) | 'hel' (SV-traditioneel)
         thema: 'auto',           // 'auto' (systeem) | 'licht' | 'donker'
         arabischeNamen: 'uit',   // 'uit' (Nederlandse namen) | 'aan' (Musa, Ibrahim, Isa …) — alleen OV-tekst
+        jezusYeshua: 'uit',      // 'uit' (Jezus) | 'aan' (Yeshua) — de Hebreeuwse naamvorm
         geoMarkeren: 'uit',      // 'uit' | 'aan' — geografische locaties in de tekst markeren (nu: Genesis)
     },
 
@@ -78,6 +79,14 @@ const Opties = {
         // Listen to changes
         document.querySelectorAll('[data-optie]').forEach(input => {
             input.addEventListener('change', () => {
+                // Een checkbox moet ook op uitvinken reageren; radio's en selects
+                // vuren alleen bij de nieuwe keuze.
+                if (input.type === 'checkbox') {
+                    this.state[input.dataset.optie] = input.checked ? input.value : 'uit';
+                    this.save();
+                    this.applyToCurrentChapter();
+                    return;
+                }
                 if (input.tagName === 'SELECT' || input.checked) {
                     this.state[input.dataset.optie] = input.value;
                     this.save();
@@ -190,6 +199,15 @@ const Opties = {
             ]);
         }
         // 'ov': geen transformatie
+
+        // === Jezus → Yeshua (optioneel) ===
+        // De Hebreeuwse vorm van de naam. "Jezus Sirach" blijft ongemoeid: dat
+        // is Ben Sira, een andere persoon, en de boektitel hoort niet te wijzigen.
+        if (this.state.jezusYeshua === 'aan') {
+            out = this._replaceOutsideTags(out, [
+                [/\bJezus\b(?! Sirach)/g, 'Yeshua'],
+            ]);
+        }
 
         // === Arabische (islamitische) namen (optioneel) ===
         // Vervangt gevestigde bijbelse figuren/begrippen door hun Arabische naamvorm.
