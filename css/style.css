@@ -3326,6 +3326,10 @@ body.dark .geez-lex-popup .geez-lex-betekenis { color: #d8d8d8; }
     justify-content: center;
     padding: 60px 16px 24px;
     overflow-y: auto;
+    /* Scroll niet doorgeven aan de pagina eronder zodra deze laag op zijn
+       eind zit. Aanvulling op de scroll-lock in search.js, niet de hoofdmoot:
+       Safari kent dit pas vanaf 16. */
+    overscroll-behavior: contain;
 }
 .search-overlay.hidden { display: none; }
 .search-overlay .search-panel {
