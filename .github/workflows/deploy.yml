@@ -25,5 +25,6 @@ jobs:
       rsync_excludes: |
         .git/
         .github/
+        .claude/
     secrets:
       deploy_ssh_key: ${{ secrets.DEPLOY_SSH_KEY }}
