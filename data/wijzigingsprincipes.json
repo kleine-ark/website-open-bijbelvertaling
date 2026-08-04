@@ -8040,6 +8040,22 @@
    "nieuw": "een beetje water",
    "toelichting": "Partitieve genitief na een hoeveelheidsaanduiding; modern Nederlands gebruikt de gewone naamval.",
    "regex": "\\been weinig waters\\b"
+  },
+  {
+   "id": "N14",
+   "categorie": "Naamvallen",
+   "oud": "des <znw>es",
+   "nieuw": "van de/het <znw>",
+   "toelichting": "Dubbele genitief op -es ('des angstes', 'des gerstenoogstes'). De hele uitgang vervalt; het lidwoord volgt het geslacht van het woord.",
+   "regex": "\bvan de \\w+es\b"
+  },
+  {
+   "id": "N15",
+   "categorie": "Naamvallen",
+   "oud": "des <bnw>en <znw>s",
+   "nieuw": "van de/het <bnw>e <znw>",
+   "toelichting": "Het bijvoeglijk naamwoord hield zijn oude genitief-uitgang -en toen 'des' verdween ('van de almachtigen Gods'). Zowel de uitgang van het bijvoeglijk naamwoord als de genitief-s van het zelfstandig naamwoord vervalt.",
+   "regex": "\bvan de \\w+en \\w+s\b"
   }
  ]
 }
