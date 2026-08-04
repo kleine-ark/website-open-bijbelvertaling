@@ -1,0 +1,50 @@
+rules_version = '2';
+
+// Beveiligingsregels voor Firestore (project open-vertaling).
+//
+// Deze regels stonden alleen in de Firebase Console en waren daardoor niet
+// terug te vinden of te herleiden. Nu staan ze in de repo. Let op: dit
+// bestand doet uit zichzelf niets — het moet in de Console geplakt worden,
+// of uitgerold met `firebase deploy --only firestore:rules`.
+//
+// Uitgangspunt: zo min mogelijk toestaan. Feedback mag alleen aangemaakt
+// worden, nooit gelezen of gewijzigd vanuit de browser; wie meekijkt in de
+// site kan dus niet de meldingen van anderen ophalen.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Persoonlijke instellingen, markeringen en cloud-opties.
+    // Alleen de eigenaar zelf, herkend aan zijn uid.
+    match /users/{uid}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Feedback op de vertaling. Aanmaken mag voor iedereen die is ingelogd;
+    // lezen, wijzigen en verwijderen gaan uitsluitend via de Console.
+    match /feedback/{id} {
+      allow create: if request.auth != null
+                    // Je mag geen melding op naam van een ander plaatsen.
+                    && request.resource.data.user.uid == request.auth.uid
+                    // Suggestie moet er zijn en binnen de perken blijven.
+                    && request.resource.data.suggestion is string
+                    && request.resource.data.suggestion.size() > 0
+                    && request.resource.data.suggestion.size() <= 5000
+                    // Geselecteerde tekst mag leeg zijn maar niet eindeloos.
+                    && request.resource.data.selected is string
+                    && request.resource.data.selected.size() <= 5000
+                    // Alleen de velden die de feedbacktool zelf verstuurt.
+                    && request.resource.data.keys().hasOnly([
+                         'user', 'ref', 'book', 'chapter', 'verse',
+                         'selected', 'suggestion', 'datum', 'userAgent', 'createdAt'
+                       ]);
+
+      allow read, update, delete: if false;
+    }
+
+    // Alles wat hier niet expliciet genoemd is, is dicht.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

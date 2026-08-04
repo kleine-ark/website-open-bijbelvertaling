@@ -102,7 +102,47 @@ const Feedback = {
         m.querySelector('.fb-status').textContent = '';
         m.querySelector('.fb-send').disabled = false;
         m.classList.remove('hidden');
+        this._toonLoginStatus();
         setTimeout(() => m.querySelector('#fb-suggestion').focus(), 30);
+    },
+
+    /* Zonder login komt de melding nergens aan: Firestore weigert het schrijven
+       (permission-denied) en er is geen server-endpoint op een statische site.
+       Vraag dus vooraf om inloggen, in plaats van pas na het verzenden te
+       melden dat het mislukt is. */
+    _toonLoginStatus() {
+        var m = this.modal;
+        if (!m) return;
+        var status = m.querySelector('.fb-status');
+        var send = m.querySelector('.fb-send');
+        var ingelogd = !!(window.Auth && window.Auth.currentUser);
+
+        if (ingelogd) {
+            send.disabled = false;
+            status.textContent = '';
+            return;
+        }
+        send.disabled = true;
+        status.innerHTML = 'Log eerst in, dan komt uw suggestie bij ons terecht. ' +
+            '<button type="button" class="fb-login" style="background:var(--navy,#142e42);' +
+            'color:#fff;border:2px solid var(--gold,#cba449);border-radius:5px;' +
+            'padding:5px 14px;font:inherit;font-weight:600;cursor:pointer;margin-left:6px;">' +
+            'Inloggen met Google</button>';
+        var knop = status.querySelector('.fb-login');
+        if (knop) {
+            knop.addEventListener('click', function () {
+                status.textContent = 'Bezig met inloggen…';
+                if (window.Auth && window.Auth.login) window.Auth.login();
+            });
+        }
+        // Na een geslaagde login (ook na de redirect op mobiel) de knop vrijgeven.
+        if (window.Auth && window.Auth.onChange && !this._loginGekoppeld) {
+            this._loginGekoppeld = true;
+            var zelf = this;
+            window.Auth.onChange(function () {
+                if (zelf.modal && !zelf.modal.classList.contains('hidden')) zelf._toonLoginStatus();
+            });
+        }
     },
 
     close() {
@@ -154,6 +194,10 @@ const Feedback = {
                     return 'firestore-ok';
                 } catch (e) {
                     console.warn('[Feedback] Firestore failed:', e);
+                    // permission-denied betekent dat de beveiligingsregels het
+                    // schrijven blokkeren, niet dat de verbinding stuk is. Zie
+                    // firestore.rules in de repo; die moet in de Console staan.
+                    if (e && e.code === 'permission-denied') return 'firestore-geweigerd';
                     return 'firestore-fail';
                 }
             })());
