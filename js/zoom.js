@@ -29,6 +29,60 @@
         document.documentElement.style.zoom = (z === 1 ? '' : z);
     }
 
+    /* --- Leespositie vasthouden bij zoomen ---------------------------------
+       Schalen verandert de regelhoogte, waardoor dezelfde scrollpositie in
+       pixels ineens een ander vers aanwijst. We onthouden daarom welk vers
+       bovenaan staat en zetten dat na het schalen terug op dezelfde hoogte.
+       Werkt op beide leesweergaven: app.js zet data-verse op .verse-row,
+       lees.js op .verse-span. */
+
+    function scrollHouder(el) {
+        var p = el && el.parentElement;
+        while (p && p !== document.body) {
+            var s = getComputedStyle(p);
+            if (/(auto|scroll)/.test(s.overflowY) && p.scrollHeight > p.clientHeight) return p;
+            p = p.parentElement;
+        }
+        return document.scrollingElement || document.documentElement;
+    }
+
+    function leesAnker() {
+        var elems = document.querySelectorAll('[data-verse]');
+        for (var i = 0; i < elems.length; i++) {
+            var r = elems[i].getBoundingClientRect();
+            if (r.height > 0 && r.bottom > 0) return { el: elems[i], top: r.top };
+        }
+        return null;
+    }
+
+    function herstelAnker(anker) {
+        if (!anker || !anker.el || !anker.el.isConnected) return;
+        var verschil = anker.el.getBoundingClientRect().top - anker.top;
+        if (Math.abs(verschil) < 1) return;
+        scrollHouder(anker.el).scrollTop += verschil;
+    }
+
+    /* --- Plaatsing --------------------------------------------------------
+       De vaste voetbalk op mobiel (#mobile-footer-nav, 72 px hoog) bevat de
+       knoppen voor vorig/volgend hoofdstuk en de afspeelknop. De zweefknop
+       stond daar bovenop. Naar rechts schuiven helpt niet — de vrije gaten in
+       die balk zijn smaller dan de zweefknop — dus zetten we hem erbovenop. */
+
+    function positioneer() {
+        var wrap = document.getElementById('ov-zoom');
+        if (!wrap) return;
+        var ruimte = 12;
+        var balk = document.getElementById('mobile-footer-nav');
+        if (balk) {
+            var st = getComputedStyle(balk);
+            if (st.display !== 'none' && st.visibility !== 'hidden' && st.position === 'fixed') {
+                var r = balk.getBoundingClientRect();
+                if (r.height > 0 && r.bottom >= window.innerHeight - 2) ruimte = Math.round(r.height) + 12;
+            }
+        }
+        wrap.style.bottom = ruimte + 'px';
+    }
+
     // Pas de opgeslagen zoom meteen toe (ook op desktop, zodat de keuze consistent is).
     apply(STEPS[idx]);
 
@@ -45,16 +99,40 @@
         document.body.appendChild(wrap);
 
         var lbl = wrap.querySelector('#ov-zoom-lbl');
-        function refresh() {
+
+        function refresh(bewaarPositie) {
+            var anker = bewaarPositie ? leesAnker() : null;
             lbl.textContent = Math.round(STEPS[idx] * 100) + '%';
             apply(STEPS[idx]);
             if (STEPS[idx] === 1) localStorage.removeItem(KEY);
             else localStorage.setItem(KEY, STEPS[idx]);
+            positioneer();
+            // herstelAnker leest getBoundingClientRect(), wat de layout meteen
+            // laat herberekenen — geen requestAnimationFrame nodig. Dat is ook
+            // beter: rAF vuurt niet op een achtergrondtab, waardoor de
+            // leespositie daar zou blijven hangen.
+            if (anker) herstelAnker(anker);
         }
-        wrap.querySelector('#ov-zoom-out').addEventListener('click', function () { idx = clampIndex(idx - 1); refresh(); });
-        wrap.querySelector('#ov-zoom-in').addEventListener('click', function () { idx = clampIndex(idx + 1); refresh(); });
-        lbl.addEventListener('click', function () { idx = 2; refresh(); });
-        refresh();
+
+        wrap.querySelector('#ov-zoom-out').addEventListener('click', function () { idx = clampIndex(idx - 1); refresh(true); });
+        wrap.querySelector('#ov-zoom-in').addEventListener('click', function () { idx = clampIndex(idx + 1); refresh(true); });
+        lbl.addEventListener('click', function () { idx = 2; refresh(true); });
+        refresh(false);   // bij het opstarten is er nog geen leespositie om te bewaren
+
+        // De voetbalk komt soms pas later in de DOM en verandert van hoogte
+        // zodra de audiospeler verschijnt — dus opnieuw plaatsen bij elke wijziging.
+        function koppelBalk() {
+            positioneer();
+            var balk = document.getElementById('mobile-footer-nav');
+            if (balk && window.ResizeObserver && !balk._ovZoomWatch) {
+                balk._ovZoomWatch = new ResizeObserver(positioneer);
+                balk._ovZoomWatch.observe(balk);
+            }
+        }
+        window.addEventListener('resize', positioneer);
+        window.addEventListener('orientationchange', positioneer);
+        window.addEventListener('load', koppelBalk);
+        koppelBalk();
     }
 
     // Styles injecteren (self-contained, geen extra bestand)
