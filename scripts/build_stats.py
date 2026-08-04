@@ -14,20 +14,16 @@ DATA = os.path.join(ROOT, 'data')
 SKIP = {'speech-v2', 'speech', 'audio', 'tts'}
 
 def parse_verified():
-    appjs = open(os.path.join(ROOT, 'js', 'app.js'), encoding='utf-8').read()
-    m = re.search(r'VERIFIED_CHAPTERS:\s*\{(.*?)\n    \},', appjs, re.S)
-    block = m.group(1)
-    verified = {}
-    for line in block.splitlines():
-        lm = re.match(r"\s*'?([a-z0-9]+)'?\s*:\s*(.+?),?\s*$", line)
-        if not lm:
-            continue
-        key, val = lm.group(1), lm.group(2).strip().rstrip(',')
-        if "'all'" in val:
-            verified[key] = 'all'
-        elif val.startswith('['):
-            verified[key] = [int(n) for n in re.findall(r'\d+', val)]
-    return verified
+    """Nagekeken hoofdstukken uit data/verified-chapters.json.
+
+    Stond eerder als JS-object in app.js en werd hier met een regex uitgelezen.
+    Dat brak zodra de opmaak daar veranderde, en de lijst stond bovendien
+    dubbel (ook in lees.js). Nu leest iedereen — app.js, lees.js, dit script
+    en build_downloads.py — dezelfde JSON.
+    """
+    pad = os.path.join(DATA, 'verified-chapters.json')
+    with open(pad, encoding='utf-8') as fh:
+        return json.load(fh)
 
 def main():
     version = sys.argv[1] if len(sys.argv) > 1 else 'v0.17.0'

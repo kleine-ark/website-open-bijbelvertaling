@@ -37,3 +37,9 @@ node_modules/
 data/lexicon-nl/_batches/
 data/lexicon-nl/parts/
 PROMPTS.md
+
+# Downloads worden tijdens de deploy gebouwd (scripts/build_downloads.py),
+# niet in git bewaard. De losse transcriptie in downloads/ blijft wel staan.
+downloads/*.zip
+downloads/*.epub
+downloads/index.json

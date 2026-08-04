@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#142e42">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Downloads — Open Vertaling</title>
+    <meta name="description" content="Download de Open Vertaling: een leesuitgave als EPUB voor e-reader en tablet, en de complete brondata als ZIP. Vrij te gebruiken, CC0 / publiek domein.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://openvertaling.nl/downloads.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Open Vertaling">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:title" content="Downloads — Open Vertaling">
+    <meta property="og:description" content="De Open Vertaling als EPUB voor je e-reader, en de complete brondata als ZIP. CC0 / publiek domein.">
+    <meta property="og:url" content="https://openvertaling.nl/downloads.html">
+    <meta property="og:image" content="https://openvertaling.nl/icons/icon-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <style>
+        .page { max-width: 780px; }
+        .dl-lead { font-size: 16px; color: var(--text-secondary, #555); border-left: 3px solid var(--gold); padding: 8px 16px; background: rgba(203,164,73,0.06); border-radius: 0 6px 6px 0; margin: 12px 0 26px; }
+        .dl-kaart { border: 1px solid var(--border, #e5e1d8); border-radius: 10px; padding: 18px 20px; margin: 0 0 16px; background: var(--bg-surface, #fff); }
+        .dl-kop { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+        .dl-naam { font-family: var(--font-cursive); font-size: 22px; color: var(--navy); }
+        .dl-meta { font-size: 12px; color: #888; white-space: nowrap; font-variant-numeric: tabular-nums; }
+        .dl-oms { font-size: 14.5px; line-height: 1.6; color: #444; margin: 0 0 14px; }
+        .dl-knop { display: inline-block; background: var(--navy, #142e42); color: #fff; text-decoration: none; font-family: var(--font-ui, inherit); font-weight: 600; font-size: 14px; padding: 9px 20px; border-radius: 6px; border: 2px solid var(--gold); }
+        .dl-knop:hover { background: var(--gold); color: var(--navy); }
+        .dl-licentie { border-left: 3px solid var(--teal, #92b6b4); background: rgba(146,182,180,0.10); padding: 10px 16px; border-radius: 0 6px 6px 0; margin: 22px 0; font-size: 14.5px; }
+        .dl-laden { color: #888; font-style: italic; }
+        :root[data-theme="donker"] .dl-oms { color: var(--text-secondary); }
+        :root[data-theme="donker"] .dl-kaart { background: var(--bg-surface-alt); }
+        @media (max-width: 620px) { .dl-meta { white-space: normal; } }
+    </style>
+    <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+    <nav id="topnav"></nav>
+    <script src="js/topnav.js"></script>
+
+    <div class="page">
+        <h1>Downloads</h1>
+        <p class="subtitle">De vertaling meenemen naar je e-reader, of de data zelf gebruiken.</p>
+
+        <div class="dl-lead">
+            Alles op deze pagina is vrij te gebruiken. De omvang en datum hieronder worden bij elke
+            publicatie opnieuw bepaald, dus wat je downloadt loopt gelijk met wat er op de site staat.
+        </div>
+
+        <div id="dl-uitgaven">
+            <p class="dl-laden">Bezig met laden…</p>
+        </div>
+
+        <div class="dl-licentie">
+            <strong>CC0 / publiek domein.</strong> U mag deze tekst vrij gebruiken, kopiëren, bewerken
+            en verspreiden, voor elk doel, zonder toestemming en zonder bronvermelding. De
+            onderliggende bronnen — de Statenvertaling van 1637 en 1888, de grondteksten en de
+            woordenboeken — zijn eveneens publiek domein; zie de
+            <a href="bronnen.html">verantwoording</a>.
+        </div>
+
+        <h2 style="margin-top:30px">Waarom staat niet alles in de EPUB?</h2>
+        <p style="font-size:14.5px;line-height:1.7;color:#555">
+            De vertaling is nog in bewerking. In de EPUB staan alleen hoofdstukken die vers voor vers
+            zijn nagekeken, zodat u niet ongemerkt ruwe tekst leest. Van boeken die nog niet af zijn
+            worden alleen de nagekeken hoofdstukken opgenomen, met een aantekening erbij. De uitgave
+            groeit dus vanzelf mee. Wilt u wél alles, inclusief wat nog niet is nagekeken, neem dan de
+            brondata — of lees online, waar onnagekeken hoofdstukken een waarschuwing tonen.
+            De actuele stand staat op de <a href="statistieken.html">statistiekenpagina</a>.
+        </p>
+    </div>
+
+<script>
+(function () {
+    var doel = document.getElementById('dl-uitgaven');
+
+    function omvang(bytes) {
+        if (bytes >= 1048576) return (bytes / 1048576).toFixed(1).replace('.', ',') + ' MB';
+        if (bytes >= 1024) return Math.round(bytes / 1024) + ' kB';
+        return bytes + ' B';
+    }
+
+    function datumNL(iso) {
+        var maanden = ['januari','februari','maart','april','mei','juni',
+                       'juli','augustus','september','oktober','november','december'];
+        var d = String(iso || '').split('-');
+        if (d.length !== 3) return iso || '';
+        return parseInt(d[2], 10) + ' ' + maanden[parseInt(d[1], 10) - 1] + ' ' + d[0];
+    }
+
+    function esc(s) {
+        return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+        });
+    }
+
+    // Omvang en datum komen uit downloads/index.json, dat bij elke publicatie
+    // opnieuw wordt geschreven. Zo verouderen die gegevens niet in de HTML.
+    fetch('downloads/index.json', { cache: 'no-cache' })
+        .then(function (r) { if (!r.ok) throw new Error('niet gevonden'); return r.json(); })
+        .then(function (d) {
+            var uit = d.uitgaven || [];
+            if (!uit.length) throw new Error('geen uitgaven');
+            doel.innerHTML = uit.map(function (u) {
+                return '<div class="dl-kaart">' +
+                    '<div class="dl-kop"><span class="dl-naam">' + esc(u.naam) + '</span>' +
+                    '<span class="dl-meta">' + omvang(u.bytes) + ' · ' + esc(datumNL(u.datum)) + '</span></div>' +
+                    '<p class="dl-oms">' + esc(u.omschrijving) + '</p>' +
+                    '<a class="dl-knop" href="downloads/' + esc(u.bestand) + '" download>Downloaden</a>' +
+                    '</div>';
+            }).join('') +
+            (d.versie ? '<p style="font-size:12.5px;color:#888">Gebouwd uit versie ' + esc(d.versie) +
+                        ' op ' + esc(datumNL(d.gebouwd)) + '.</p>' : '');
+        })
+        .catch(function () {
+            doel.innerHTML = '<p class="dl-laden">De downloads konden niet worden opgehaald. ' +
+                'Probeer het later opnieuw, of bekijk de bronbestanden op ' +
+                '<a href="https://github.com/kleine-ark/website-open-bijbelvertaling">GitHub</a>.</p>';
+        });
+})();
+</script>
+</body>
+</html>
