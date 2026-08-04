@@ -205,6 +205,9 @@ const Opties = {
         // is Ben Sira, een andere persoon, en de boektitel hoort niet te wijzigen.
         if (this.state.jezusYeshua === 'aan') {
             out = this._replaceOutsideTags(out, [
+                // De Statenvertaling zet de naam in hoofdletters waar hij
+                // gegeven wordt (Mattheüs 1:21, 1:25). Die vorm blijft behouden.
+                [/\bJEZUS\b/g, 'YESHUA'],
                 [/\bJezus\b(?! Sirach)/g, 'Yeshua'],
             ]);
         }
