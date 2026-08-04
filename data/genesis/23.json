@@ -277,7 +277,7 @@
       "number": 3,
       "textSV1888": "Daarna stond Abraham op van het aangezicht van zijner dode, en hij sprak tot de zonen Heths, zeggende:",
       "text1637": "Daer na stont Abraham [5] op van het aengesichte sijns dooden: ende hy sprack tot de [6] sonen Heths, seggende;",
-      "text2026": "Daarna stond Abraham op van het aangezicht van zijn dode, en hij sprak tot de zonen Heths, zeggende:",
+      "text2026": "Daarna stond Abraham op van het aangezicht van zijn dode, en hij sprak tot de zonen van Heth, zeggende:",
       "marginNotes": [
         {
           "marker": "5",
@@ -372,7 +372,7 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "Daarna stond Abraham<sup class=\"note-marker\" data-note=\"5\">5</sup> op van het aangezicht van zijn dode, en hij sprak tot de<sup class=\"note-marker\" data-note=\"6\">6</sup> zonen Heths, zeggende:",
+      "text2026_html": "Daarna stond Abraham<sup class=\"note-marker\" data-note=\"5\">5</sup> op van het aangezicht van zijn dode, en hij sprak tot de<sup class=\"note-marker\" data-note=\"6\">6</sup> zonen van Heth, zeggende:",
       "textSV1888_html": "Daarna stond Abraham<sup class=\"note-marker\" data-note=\"5\">5</sup> op van het aangezicht van zijner dode, en hij sprak tot de<sup class=\"note-marker\" data-note=\"6\">6</sup> zonen Heths, zeggende:",
       "text1637_html": "Daer na stont Abraham <sup class=\"note-marker\" data-note=\"5\">5</sup> op van het aengesichte sijns dooden: ende hy sprack tot de <sup class=\"note-marker\" data-note=\"6\">6</sup> sonen Heths, seggende;",
       "phraseDiff": [
@@ -380,6 +380,11 @@
           "old": "zijner",
           "new": "zijn",
           "principe": "N7"
+        },
+        {
+          "old": "Heths,",
+          "new": "van Heth,",
+          "principe": "N9"
         }
       ]
     },
@@ -584,7 +589,7 @@
       "number": 6,
       "textSV1888": "Hoor ons, mijn heer! gij zijt een vorst Gods in het midden van ons; begraaf uw dode in de keure onzer graven; niemand van ons zal zijn graf voor u weren, dat gij uw dode niet zoudt begraven.",
       "text1637": "Hoort ons, mijn heere; Ghy zijt [8] een Vorst Godts in 't midden van ons; begraeft uwen dooden inde [9] keure onser graven; niemant van ons sal sijn graf voor u weeren, dat ghy uwen dooden niet en soudt begraven.",
-      "text2026": "Hoor ons, mijn heer! u bent een vorst Gods in het midden van ons; begraaf uw dode in de keur van onze graven; niemand van ons zal zijn graf voor u weren, dat u uw dode niet zou begraven.",
+      "text2026": "Hoor ons, mijn heer! u bent een vorst van God in het midden van ons; begraaf uw dode in het beste van onze graven; niemand van ons zal zijn graf voor u weren, dat u uw dode niet zou begraven.",
       "marginNotes": [
         {
           "marker": "8",
@@ -743,7 +748,7 @@
           "morph": "HVqrmsc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Hoor ons, mijn heer! u bent<sup class=\"note-marker\" data-note=\"8\">8</sup> een vorst Gods in het midden van ons; begraaf uw dode in<sup class=\"note-marker\" data-note=\"9\">9</sup> de keur van onze graven; niemand van ons zal zijn graf voor u weren, dat u uw dode niet zou begraven.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Hoor ons, mijn heer! u bent<sup class=\"note-marker\" data-note=\"8\">8</sup> een vorst van God in het midden van ons; begraaf uw dode in<sup class=\"note-marker\" data-note=\"9\">9</sup> het beste van onze graven; niemand van ons zal zijn graf voor u weren, dat u uw dode niet zou begraven.</i></span>",
       "textSV1888_html": "Hoor ons, mijn heer! gij zijt<sup class=\"note-marker\" data-note=\"8\">8</sup> een vorst Gods in het midden van ons; begraaf uw dode in<sup class=\"note-marker\" data-note=\"9\">9</sup> de keure onzer graven; niemand van ons zal zijn graf voor u weren, dat gij uw dode niet zoudt begraven.",
       "text1637_html": "Hoort ons, mijn heere; Ghy zijt <sup class=\"note-marker\" data-note=\"8\">8</sup> een Vorst Godts in 't midde<i>n</i> van ons; begraeft uwen dooden inde <sup class=\"note-marker\" data-note=\"9\">9</sup> keure onser graven; niemant van ons sal sijn graf voor u weeren, dat ghy uwen dooden niet en soudt begraven.",
       "phraseDiff": [
@@ -753,9 +758,14 @@
           "principe": "A1"
         },
         {
-          "old": "keure onzer",
-          "new": "keur van onze",
-          "principe": null
+          "old": "Gods",
+          "new": "van God",
+          "principe": "N10"
+        },
+        {
+          "old": "de keure onzer",
+          "new": "het beste van onze",
+          "principe": "V936"
         },
         {
           "old": "gij",

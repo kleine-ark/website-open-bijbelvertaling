@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Abraham nu was oud en wel bedaagd; en de HEERE had Abraham in alles gezegend.",
       "text1637": "ABraham nu was [1] out [ende] [2] wel bedaecht: ende de HEERE hadde Abraham in alles [3] gesegent.",
-      "text2026": "Abraham nu was oud en wel bedaagd; en JAHWEH had Abraham in alles gezegend.",
+      "text2026": "Abraham nu was oud en op dagen gekomen; en JAHWEH had Abraham in alles gezegend.",
       "marginNotes": [
         {
           "marker": "1",
@@ -100,10 +100,15 @@
           "morph": "HRd/Ncmsa"
         }
       ],
-      "text2026_html": "Abraham nu was<sup class=\"note-marker\" data-note=\"1\">1</sup> oud<sup class=\"note-marker\" data-note=\"2\">2</sup> en wel bedaagd; en JAHWEH had Abraham in alles<sup class=\"note-marker\" data-note=\"3\">3</sup> gezegend.",
+      "text2026_html": "Abraham nu was<sup class=\"note-marker\" data-note=\"1\">1</sup> oud<sup class=\"note-marker\" data-note=\"2\">2</sup> en op dagen gekomen; en JAHWEH had Abraham in alles<sup class=\"note-marker\" data-note=\"3\">3</sup> gezegend.",
       "textSV1888_html": "Abraham nu was<sup class=\"note-marker\" data-note=\"1\">1</sup> oud<sup class=\"note-marker\" data-note=\"2\">2</sup> en wel bedaagd; en de HEERE had Abraham in alles<sup class=\"note-marker\" data-note=\"3\">3</sup> gezegend.",
       "text1637_html": "ABraham nu was <sup class=\"note-marker\" data-note=\"1\">1</sup> out [en<i>de</i>] <sup class=\"note-marker\" data-note=\"2\">2</sup> wel bedaecht: ende de HEERE hadde Abraham in alles <sup class=\"note-marker\" data-note=\"3\">3</sup> gesegent.",
       "phraseDiff": [
+        {
+          "old": "wel bedaagd;",
+          "new": "op dagen gekomen;",
+          "principe": "V934"
+        },
         {
           "old": "de HEERE",
           "new": "JAHWEH",
@@ -2435,7 +2440,7 @@
       "number": 17,
       "textSV1888": "Toen liep die knecht haar tegemoet, en hij zeide: Laat mij toch een weinig waters uit uw kruik drinken.",
       "text1637": "Doe liep die knecht haer te gemoete, ende hy seyde; Laet my doch een weynich waters uyt uwe cruycke drincken.",
-      "text2026": "Toen liep die knecht haar tegemoet, en hij zei: Laat mij toch een weinig waters uit uw kruik drinken.",
+      "text2026": "Toen liep die knecht haar tegemoet, en hij zei: Laat mij toch een beetje water uit uw kruik drinken.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2484,13 +2489,18 @@
           "morph": "HR/Ncfsc/Sp3fs"
         }
       ],
-      "text2026_html": "Toen liep die knecht haar tegemoet, en hij zei: <span class=\"direct-speech\"><i>Laat mij toch een weinig waters uit uw kruik drinken.</i></span>",
+      "text2026_html": "Toen liep die knecht haar tegemoet, en hij zei: <span class=\"direct-speech\"><i>Laat mij toch een beetje water uit uw kruik drinken.</i></span>",
       "text1637_html": "Doe liep die knecht haer te gemoete, en<i>de</i> hy seyde; Laet my doch een weynich waters uyt uwe cruycke drincken.",
       "phraseDiff": [
         {
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
+        },
+        {
+          "old": "weinig waters",
+          "new": "beetje water",
+          "principe": "N12"
         }
       ]
     },
