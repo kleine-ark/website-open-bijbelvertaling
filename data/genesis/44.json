@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En hij gebood dengene, die over zijn huis was, zeggende: Vul de zakken dezer mannen met spijze, naar dat zij zullen kunnen dragen, en leg ieders mans geld in den mond van zijn zak;",
       "text1637": "ENde [1] hy geboodt den genen, die over sijn huys was, seggende; Vult de sacken deser mannen met spijse, nae dat sy sullen kunnen dragen, ende legt yeder mans gelt inden mont van sijnen sack:",
-      "text2026": "En hij gebood dengene, die over zijn huis was, zeggende: Vul de zakken van deze mannen met voedsel, naar dat zij zullen kunnen dragen, en leg ieders mans geld in de mond van zijn zak;",
+      "text2026": "En hij gebood dengene, die over zijn huis was, zeggende: Vul de zakken van deze mannen met voedsel, naar dat zij zullen kunnen dragen, en leg ieders geld boven in zijn zak;",
       "marginNotes": [
         {
           "marker": "1",
@@ -112,7 +112,7 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "En hij gebood dengene, die over zijn huis was, zeggende: <span class=\"direct-speech\"><i>Vul de zakken van deze mannen met voedsel, naar dat zij zullen kunnen dragen, en leg ieders mans geld in de mond van zijn zak;</i></span>",
+      "text2026_html": "En hij gebood dengene, die over zijn huis was, zeggende: <span class=\"direct-speech\"><i>Vul de zakken van deze mannen met voedsel, naar dat zij zullen kunnen dragen, en leg ieders geld boven in zijn zak;</i></span>",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"1\">1</sup> hij gebood dengene, die over zijn huis was, zeggende: Vul de zakken dezer mannen met spijze, naar dat zij zullen kunnen dragen, en leg ieders mans geld in den mond van zijn zak;",
       "text1637_html": "ENde <sup class=\"note-marker\" data-note=\"1\">1</sup> hy geboodt den genen, die over sijn huys was, seggende; Vult de sacken deser mannen met spijse, nae dat sy sullen kunnen dragen, ende legt yeder mans gelt inden mont van sijnen sack:",
       "phraseDiff": [
@@ -127,9 +127,19 @@
           "principe": "V49"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "mans",
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "boven",
+          "principe": null
+        },
+        {
+          "old": "den mond van",
+          "new": "",
+          "principe": null
         }
       ]
     },
@@ -2928,7 +2938,7 @@
       "number": 25,
       "textSV1888": "En dat onze vader gezegd heeft: Keert weder, koopt ons een weinig spijze;",
       "text1637": "Ende dat onse vader geseyt heeft; Keert weder, koopet ons een weynich spijse:",
-      "text2026": "En dat onze vader gezegd heeft: Keer weer, koop ons een weinig voedsel;",
+      "text2026": "En dat onze vader gezegd heeft: Keer weer, koop ons wat voedsel;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2967,7 +2977,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En dat onze vader gezegd heeft: Keer weer, koop ons een weinig voedsel;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En dat onze vader gezegd heeft: Keer weer, koop ons wat voedsel;</i></span>",
       "text1637_html": "Ende dat onse vader geseyt heeft; Keert weder, koopet ons een weynich spijse:",
       "phraseDiff": [
         {
@@ -2976,9 +2986,9 @@
           "principe": null
         },
         {
-          "old": "spijze;",
-          "new": "voedsel;",
-          "principe": "V49"
+          "old": "een weinig spijze;",
+          "new": "wat voedsel;",
+          "principe": null
         }
       ]
     },
