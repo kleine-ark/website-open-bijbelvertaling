@@ -559,7 +559,7 @@
       "number": 6,
       "textSV1888": "Maar aan de zonen der bijwijven, die Abraham had, gaf Abraham geschenken; en zond hen weg van zijn zoon Izak, terwijl hij nog leefde, oostwaarts naar het land van het Oosten.",
       "text1637": "Maer den sonen der [11] bywijven, die Abraham hadde, gaf Abraham geschencken: ende sondtse wech van sijnen sone Isaac, terwijle hy noch leefde, Oostwaerts nae [12] 't lant van Oosten.",
-      "text2026": "Maar aan de zonen van de bijwijven, die Abraham had, gaf Abraham geschenken; en zond hen weg van zijn zoon Izak, terwijl hij nog leefde, naar het oosten naar het land van het Oosten.",
+      "text2026": "Maar aan de zonen van de bijvrouwen, die Abraham had, gaf Abraham geschenken; en zond hen weg van zijn zoon Izak, terwijl hij nog leefde, naar het oosten naar het land van het Oosten.",
       "marginNotes": [
         {
           "marker": "11",
@@ -663,14 +663,14 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Maar aan de zonen van<sup class=\"note-marker\" data-note=\"11\">11</sup> de bijwijven, die Abraham had, gaf Abraham geschenken; en zond hen weg van zijn zoon Izak, terwijl hij nog leefde, naar het oosten naar<sup class=\"note-marker\" data-note=\"12\">12</sup> het land van het Oosten.",
+      "text2026_html": "Maar aan de zonen van<sup class=\"note-marker\" data-note=\"11\">11</sup> de bijvrouwen, die Abraham had, gaf Abraham geschenken; en zond hen weg van zijn zoon Izak, terwijl hij nog leefde, naar het oosten naar<sup class=\"note-marker\" data-note=\"12\">12</sup> het land van het Oosten.",
       "textSV1888_html": "Maar aan de zonen der<sup class=\"note-marker\" data-note=\"11\">11</sup> bijwijven, die Abraham had, gaf Abraham geschenken; en zond hen weg van zijn zoon Izak, terwijl hij nog leefde, oostwaarts naar<sup class=\"note-marker\" data-note=\"12\">12</sup> het land van het Oosten.",
       "text1637_html": "Maer den sonen der <sup class=\"note-marker\" data-note=\"11\">11</sup> bywijven, die Abraham hadde, gaf Abraham geschencken: ende sondtse wech van sijnen sone Isaac, terwijle hy noch leefde, Oostwaerts nae <sup class=\"note-marker\" data-note=\"12\">12</sup> 't lant van Oosten.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der bijwijven,",
+          "new": "van de bijvrouwen,",
+          "principe": null
         },
         {
           "old": "oostwaarts",
@@ -1161,7 +1161,7 @@
       "number": 10,
       "textSV1888": "In den akker, dien Abraham van de zonen Heths gekocht had, daar is Abraham begraven, en Sara, zijn huisvrouw.",
       "text1637": "[In] den acker, dien Abraham van Hets sonen gekocht hadde: [18] Daer is Abraham begraven, ende Sara sijne huysvrouwe.",
-      "text2026": "In de akker, die Abraham van de zonen Heths gekocht had, daar is Abraham begraven, en Sara, zijn huisvrouw.",
+      "text2026": "In de akker, die Abraham van de zonen van Heth gekocht had, daar is Abraham begraven, en Sara, zijn huisvrouw.",
       "marginNotes": [
         {
           "marker": "18",
@@ -1247,7 +1247,7 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "In de akker, die Abraham van de zonen Heths gekocht had,<sup class=\"note-marker\" data-note=\"18\">18</sup> daar is Abraham begraven, en Sara, zijn huisvrouw.",
+      "text2026_html": "In de akker, die Abraham van de zonen van Heth gekocht had,<sup class=\"note-marker\" data-note=\"18\">18</sup> daar is Abraham begraven, en Sara, zijn huisvrouw.",
       "textSV1888_html": "In den akker, dien Abraham van de zonen Heths gekocht had,<sup class=\"note-marker\" data-note=\"18\">18</sup> daar is Abraham begraven, en Sara, zijn huisvrouw.",
       "text1637_html": "[In] den acker, dien Abraham van Hets sonen gekocht hadde: <sup class=\"note-marker\" data-note=\"18\">18</sup> Daer is Abraham begraven, ende Sara sijne huysvrouwe.",
       "phraseDiff": [
@@ -1260,6 +1260,11 @@
           "old": "dien",
           "new": "die",
           "principe": "N4"
+        },
+        {
+          "old": "Heths",
+          "new": "van Heth",
+          "principe": null
         }
       ]
     },

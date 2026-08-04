@@ -2167,7 +2167,7 @@
       "number": 17,
       "textSV1888": "Maar Absalom zeide tot Husai: Is dit uw weldadigheid aan uw vriend? Waarom zijt gij niet met uw vriend getogen?",
       "text1637": "Maer Absalom seyde tot Husai: Is dit uwe weldadicheyt aen uwen vrient? waerom en zijt ghy niet met uwen vrient getogen?",
-      "text2026": "Maar Absalom zei tot Husai: Is dit uw weldadigheid aan uw vriend? Waarom bent u niet met uw vriend getrokken?",
+      "text2026": "Maar Absalom zei tot Husai: Is dit uw goedertierenheid aan uw vriend? Waarom bent u niet met uw vriend getrokken?",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2236,13 +2236,18 @@
           "morph": "HNcmsc/Sp2ms"
         }
       ],
-      "text2026_html": "Maar Absalom zei tot Husai: <span class=\"direct-speech\"><i>Is dit uw weldadigheid aan uw vriend? Waarom bent u niet met uw vriend getrokken?</i></span>",
+      "text2026_html": "Maar Absalom zei tot Husai: <span class=\"direct-speech\"><i>Is dit uw goedertierenheid aan uw vriend? Waarom bent u niet met uw vriend getrokken?</i></span>",
       "text1637_html": "Maer Absalom seyde tot Husai: Is dit uwe weldadicheyt aen uwen vrient? waerom en zijt ghy niet met uwen vrient getogen?",
       "phraseDiff": [
         {
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "weldadigheid",
+          "new": "goedertierenheid",
+          "principe": "V937"
         },
         {
           "old": "zijt gij",
@@ -2558,7 +2563,7 @@
       "number": 21,
       "textSV1888": "En Achitofel zeide tot Absalom: Ga in tot de bijwijven uws vaders, die hij gelaten heeft om het huis te bewaren; zo zal gans Israël horen, dat gij bij uw vader stinkende zijt geworden, en de handen van allen, die met u zijn, zullen gesterkt worden.",
       "text1637": "Ende Achitophel seyde tot Absalom; [40] Gaet in tot de by-wijven uwes Vaders, die hy gelaten heeft om het huys te bewaren: so sal gantsch Israël [41] hooren, dat ghy by uwen vader [42] stinckende zijt geworden, ende de handen van alle, die met u zijn, sullen [43] gesterckt worden.",
-      "text2026": "En Achitofel zei tot Absalom: Ga in tot de bijwijven van uw vader, die hij gelaten heeft om het huis te bewaren; zo zal geheel Israël horen, dat u bij uw vader stinkende bent geworden, en de handen van allen, die met u zijn, zullen gesterkt worden.",
+      "text2026": "En Achitofel zei tot Absalom: Ga in tot de bijvrouwen van uw vader, die hij gelaten heeft om het huis te bewaren; zo zal geheel Israël horen, dat u bij uw vader stinkende bent geworden, en de handen van allen, die met u zijn, zullen gesterkt worden.",
       "marginNotes": [
         {
           "marker": "40",
@@ -2711,7 +2716,7 @@
           "morph": "HR/Sp2fs"
         }
       ],
-      "text2026_html": "En Achitofel zei tot Absalom: <span class=\"direct-speech\"><i>Ga in tot de bijwijven van uw vader, die hij gelaten heeft om het huis te bewaren; zo zal geheel Israël horen, dat u bij uw vader stinkende bent geworden, en de handen van allen, die met u zijn, zullen gesterkt worden.</i></span>",
+      "text2026_html": "En Achitofel zei tot Absalom: <span class=\"direct-speech\"><i>Ga in tot de bijvrouwen van uw vader, die hij gelaten heeft om het huis te bewaren; zo zal geheel Israël horen, dat u bij uw vader stinkende bent geworden, en de handen van allen, die met u zijn, zullen gesterkt worden.</i></span>",
       "textSV1888_html": "En Achitofel zeide tot Absalom:<sup class=\"note-marker\" data-note=\"40\">40</sup> Ga in tot de bijwijven uws vaders, die hij gelaten heeft om het huis te bewaren; zo zal gans Israël<sup class=\"note-marker\" data-note=\"41\">41</sup> horen, dat gij bij uw vader<sup class=\"note-marker\" data-note=\"42\">42</sup> stinkende zijt geworden, en de handen van allen, die met u zijn, zullen<sup class=\"note-marker\" data-note=\"43\">43</sup> gesterkt worden.",
       "text1637_html": "En<i>de</i> Achitophel seyde tot Absalom; <sup class=\"note-marker\" data-note=\"40\">40</sup> Gaet in tot de by-wijven uwes Vaders, die hy gelaten heeft om het huys te bewaren: so sal gantsch Israël <sup class=\"note-marker\" data-note=\"41\">41</sup> hooren, dat ghy by uwen vader <sup class=\"note-marker\" data-note=\"42\">42</sup> stinckende zijt geworden, ende de handen van alle, die met u zijn, sullen <sup class=\"note-marker\" data-note=\"43\">43</sup> gesterckt worden.",
       "phraseDiff": [
@@ -2721,9 +2726,9 @@
           "principe": "W1"
         },
         {
-          "old": "uws vaders,",
-          "new": "van uw vader,",
-          "principe": "V200"
+          "old": "bijwijven uws vaders,",
+          "new": "bijvrouwen van uw vader,",
+          "principe": null
         },
         {
           "old": "gans",
@@ -2746,7 +2751,7 @@
       "number": 22,
       "textSV1888": "Zo spanden zij Absalom een tent op het dak; en Absalom ging in tot de bijwijven zijns vaders, voor de ogen van het ganse Israël.",
       "text1637": "So spanden sy Absalom eene tente op het [44] dack: Ende Absalom ginck in tot de bywijven sijns vaders, voor [45] de oogen des gantschen Israëls.",
-      "text2026": "Zo spanden zij Absalom een tent op het dak; en Absalom ging in tot de bijwijven van zijn vader, voor de ogen van het hele Israël.",
+      "text2026": "Zo spanden zij Absalom een tent op het dak; en Absalom ging in tot de bijvrouwen van zijn vader, voor de ogen van het hele Israël.",
       "marginNotes": [
         {
           "marker": "44",
@@ -2830,14 +2835,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Zo spanden zij Absalom een tent op het<sup class=\"note-marker\" data-note=\"44\">44</sup> dak; en Absalom ging in tot de bijwijven van zijn vader, voor<sup class=\"note-marker\" data-note=\"45\">45</sup> de ogen van het hele Israël.",
+      "text2026_html": "Zo spanden zij Absalom een tent op het<sup class=\"note-marker\" data-note=\"44\">44</sup> dak; en Absalom ging in tot de bijvrouwen van zijn vader, voor<sup class=\"note-marker\" data-note=\"45\">45</sup> de ogen van het hele Israël.",
       "textSV1888_html": "Zo spanden zij Absalom een tent op het<sup class=\"note-marker\" data-note=\"44\">44</sup> dak; en Absalom ging in tot de bijwijven zijns vaders, voor<sup class=\"note-marker\" data-note=\"45\">45</sup> de ogen van het ganse Israël.",
       "text1637_html": "So spanden sy Absalom eene tente op het <sup class=\"note-marker\" data-note=\"44\">44</sup> dack: Ende Absalom ginck in tot de bywijven sijns vaders, voor <sup class=\"note-marker\" data-note=\"45\">45</sup> de oogen des gantschen Israëls.",
       "phraseDiff": [
         {
-          "old": "zijns vaders,",
-          "new": "van zijn vader,",
-          "principe": "V201"
+          "old": "bijwijven zijns vaders,",
+          "new": "bijvrouwen van zijn vader,",
+          "principe": null
         },
         {
           "old": "ganse",

@@ -1346,7 +1346,7 @@
       "number": 8,
       "textSV1888": "Toen stond Abimelech des morgens vroeg op, en riep al zijn knechten, en sprak al deze woorden voor hun oren. En die mannen vreesden zeer.",
       "text1637": "Doe stont Abimelech 's morgens vroech op, ende riep alle sijne [21] knechten, ende sprack alle dese [22] woorden [23] voor haren ooren: ende die mannen [24] vreesden seer.",
-      "text2026": "Toen stond Abimelech van de morgen vroeg op, en riep al zijn knechten, en sprak al deze woorden voor hun oren. En die mannen vreesden zeer.",
+      "text2026": "Toen stond Abimelech vroeg in de morgen op, en riep al zijn knechten, en sprak al deze woorden voor hun oren. En die mannen vreesden zeer.",
       "marginNotes": [
         {
           "marker": "21",
@@ -1510,14 +1510,19 @@
           "morph": "HD"
         }
       ],
-      "text2026_html": "Toen stond Abimelech van de morgen vroeg op, en riep al zijn<sup class=\"note-marker\" data-note=\"21\">21</sup> knechten, en sprak al deze<sup class=\"note-marker\" data-note=\"22\">22</sup> woorden<sup class=\"note-marker\" data-note=\"23\">23</sup> voor hun oren. En die mannen<sup class=\"note-marker\" data-note=\"24\">24</sup> vreesden zeer.",
+      "text2026_html": "Toen stond Abimelech vroeg in de morgen op, en riep al zijn<sup class=\"note-marker\" data-note=\"21\">21</sup> knechten, en sprak al deze<sup class=\"note-marker\" data-note=\"22\">22</sup> woorden<sup class=\"note-marker\" data-note=\"23\">23</sup> voor hun oren. En die mannen<sup class=\"note-marker\" data-note=\"24\">24</sup> vreesden zeer.",
       "textSV1888_html": "Toen stond Abimelech des morgens vroeg op, en riep al zijn<sup class=\"note-marker\" data-note=\"21\">21</sup> knechten, en sprak al deze<sup class=\"note-marker\" data-note=\"22\">22</sup> woorden<sup class=\"note-marker\" data-note=\"23\">23</sup> voor hun oren. En die mannen<sup class=\"note-marker\" data-note=\"24\">24</sup> vreesden zeer.",
       "text1637_html": "Doe stont Abimelech 's morgens vroech op, ende riep alle sijne <sup class=\"note-marker\" data-note=\"21\">21</sup> knechten, ende sprack alle dese <sup class=\"note-marker\" data-note=\"22\">22</sup> woorden <sup class=\"note-marker\" data-note=\"23\">23</sup> voor haren ooren: en<i>de</i> die mannen <sup class=\"note-marker\" data-note=\"24\">24</sup> vreesden seer.",
       "phraseDiff": [
         {
           "old": "des morgens",
-          "new": "van de morgen",
-          "principe": "N3"
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "in de morgen",
+          "principe": null
         }
       ]
     },
@@ -2227,7 +2232,7 @@
       "number": 13,
       "textSV1888": "En het is geschied, als God mij uit mijns vaders huis deed dwalen, zo sprak ik tot haar: Dit zij uw weldadigheid, die gij bij mij doen zult; aan alle plaatsen waar wij komen zullen, zeg van mij: Hij is mijn broeder!",
       "text1637": "Ende het is geschiet, als my Godt uyt mijnes vaders huys [32] dede dwalen, so sprack ick tot haer: Dit zy uwe weldadicheyt, die ghy by my doen sult; [33] aen alle plaetse daer wy komen sullen, [b] segt van my, Hy is mijn broeder.",
-      "text2026": "En het is geschied, als God mij uit het huis van mijn vader deed dwalen, zo sprak ik tot haar: Dit zij uw weldadigheid, die u bij mij doen zult; aan alle plaatsen waar wij komen zullen, zeg van mij: Hij is mijn broer!",
+      "text2026": "En het is geschied, als God mij uit het huis van mijn vader deed dwalen, zo sprak ik tot haar: Dit zij uw goedertierenheid, die u bij mij doen zult; aan alle plaatsen waar wij komen zullen, zeg van mij: Hij is mijn broer!",
       "marginNotes": [
         {
           "marker": "32",
@@ -2443,7 +2448,7 @@
           "morph": "HPp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En het is geschied, als God mij uit het huis van mijn vader deed dwalen, zo sprak ik tot haar: Dit zij uw weldadigheid, die u bij mij doen zult; aan alle plaatsen waar wij komen zullen, zeg van mij: Hij is mijn broer!</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En het is geschied, als God mij uit het huis van mijn vader deed dwalen, zo sprak ik tot haar: Dit zij uw goedertierenheid, die u bij mij doen zult; aan alle plaatsen waar wij komen zullen, zeg van mij: Hij is mijn broer!</i></span>",
       "textSV1888_html": "En het is geschied, als God mij uit mijns vaders huis<sup class=\"note-marker\" data-note=\"32\">32</sup> deed dwalen, zo sprak ik tot haar: Dit zij uw weldadigheid, die gij bij mij doen zult;<sup class=\"note-marker\" data-note=\"33\">33</sup> aan alle plaatsen waar wij komen zullen,<sup class=\"note-marker\" data-note=\"b\">b</sup> zeg van mij: Hij is mijn broeder!",
       "text1637_html": "Ende het is geschiet, als my Godt uyt mijnes vaders huys <sup class=\"note-marker\" data-note=\"32\">32</sup> dede dwalen, so sprack ick tot haer: Dit zy uwe weldadicheyt, die ghy by my doen sult; <sup class=\"note-marker\" data-note=\"33\">33</sup> aen alle plaetse daer wy komen sullen, <sup class=\"note-marker\" data-note=\"b\">b</sup> segt van my, Hy is mijn broeder.",
       "phraseDiff": [
@@ -2456,6 +2461,11 @@
           "old": "",
           "new": "van mijn vader",
           "principe": null
+        },
+        {
+          "old": "weldadigheid,",
+          "new": "goedertierenheid,",
+          "principe": "V937"
         },
         {
           "old": "gij",
