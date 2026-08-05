@@ -16,12 +16,22 @@ const Feedback = {
        bevestiging een sleutel van de vorm /ajax/a1b2c3…; vervang die hier,
        dan staat het mailadres niet meer in de broncode en kunnen spambots
        het niet oogsten. */
-    /* Voorkeursweg: een Google Apps Script dat de melding in een spreadsheet
-       zet én een mail stuurt. Dan is er een lijst om te sorteren en af te
-       vinken, en kan scripts/lees_opmerkingen.py ze automatisch ophalen.
-       Zolang dit leeg is gaat alles via FormSubmit, dat alleen mailt.
-       Instellen staat in docs/opmerkingen-in-google-sheet.md. */
-    SHEET_ENDPOINT: 'https://script.google.com/macros/s/AKfycbyQ7H7Z1KdQ_Zin_W0ktV2qemlZIhQF-XLEsFRpGfHqD8Oup9AlZ379FT0RTsBIoITL/exec',
+    /* De melding gaat naar een Google Formulier, dat uit zichzelf naar een
+       spreadsheet schrijft. Geen script om te implementeren, geen versies,
+       geen rechten om goed te zetten — dat was met Apps Script juist de
+       hindernis. De veldnummers komen uit het formulier zelf.
+
+       Het antwoord is niet te lezen (Google staat geen CORS toe op
+       formResponse), vandaar no-cors: het verzoek vertrekt en de rij komt
+       binnen, maar we horen niet of het lukte. De bevestiging aan de lezer
+       hangt daarom aan de mailweg hieronder, die wel antwoordt. */
+    FORMULIER: 'https://docs.google.com/forms/d/e/1FAIpQLSc7XXjzq7eA-QtJoAcJaXX5tlVodKhQ54JMdCQ6_SvkxMccWA/formResponse',
+    FORMULIER_VELDEN: {
+        vers:      'entry.1027694877',
+        selectie:  'entry.644152872',
+        suggestie: 'entry.758123662',
+        van:       'entry.745198439'
+    },
     FORM_ENDPOINT: 'https://formsubmit.co/ajax/maartenvroegindeweij@gmail.com',
     MAIL_TERUGVAL: 'maartenvroegindeweij@gmail.com',
     modal: null,
@@ -165,28 +175,18 @@ const Feedback = {
         // de mail terecht.
         let ok = false;
 
-        // De spreadsheet krijgt de melding altijd, maar het antwoord is niet te
-        // lezen: Apps Script beantwoordt met een omleiding naar een ander domein
-        // en die draagt geen CORS-toestemming. Vandaar no-cors — het verzoek
-        // gaat eruit en het script draait, we horen alleen niet of het lukte.
-        // De bevestiging aan de lezer hangt daarom aan de mailweg hieronder,
-        // die wél een leesbaar antwoord geeft.
-        if (this.SHEET_ENDPOINT) {
+        // Eerst de spreadsheet, via het formulier.
+        if (this.FORMULIER) {
             try {
-                await fetch(this.SHEET_ENDPOINT, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                    body: JSON.stringify({
-                        ref: payload.ref,
-                        selected: payload.selected,
-                        suggestion: payload.suggestion,
-                        van: payload.user.name || 'anoniem',
-                        userAgent: payload.userAgent
-                    })
-                });
+                var v = this.FORMULIER_VELDEN;
+                var velden = new URLSearchParams();
+                velden.append(v.vers, payload.ref || '');
+                velden.append(v.selectie, payload.selected || '');
+                velden.append(v.suggestie, payload.suggestion || '');
+                velden.append(v.van, payload.user.name || 'anoniem');
+                await fetch(this.FORMULIER, { method: 'POST', mode: 'no-cors', body: velden });
             } catch (e) {
-                console.warn('[Feedback] spreadsheet onbereikbaar:', e);
+                console.warn('[Feedback] formulier onbereikbaar:', e);
             }
         }
 
