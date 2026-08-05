@@ -226,7 +226,9 @@ body.dark .icon-sun { display: none; }
 .direct-speech { font-style: italic; }
 /* Citaat binnen een citaat: geel, zodat de lagen uit elkaar te houden zijn. */
 .direct-speech .direct-speech, .direct-speech .god-speaks,
-.god-speaks .direct-speech,    .god-speaks .god-speaks { color: var(--citaat-genest); }
+.god-speaks .direct-speech,    .god-speaks .god-speaks,
+.angel-speaks .direct-speech,  .angel-speaks .god-speaks,
+.devil-speaks .direct-speech,  .devil-speaks .god-speaks { color: var(--citaat-genest); }
 .note-marker {
     font-size: 0.6em; font-weight: 700;
     color: var(--note-marker); vertical-align: super;
