@@ -21,6 +21,35 @@ Generatie-script: `scripts/tts/run_xtts.py` (voice-cloned XTTS-v2 in `.venv-xtts
 
 Het script bevat een Blackwell-patch voor RTX 5070 (sm_120). Niet weghalen tenzij je een PyTorch-build met native sm_120 nvrtc-support hebt.
 
+## Wijzigingsprincipes — vervang alleen in de eerste linie
+
+**Een principe werkt éénmalig, vanuit de Statenvertaling-1888 als basis. Wat een
+principe heeft opgeleverd mag nooit door een tweede principe worden aangepakt.**
+
+Voorbeeld. Stel er zijn twee principes:
+
+- `leger` → `bed`
+- `legermacht` → `leger`
+
+Dan mag de `leger` die uit `legermacht` is ontstaan **nooit** alsnog `bed`
+worden. Hij is al vervangen en is daarmee klaar.
+
+Wat dit voor een sweep betekent:
+
+- Bepaal wélke plaatsen in aanmerking komen door te kijken naar **`textSV1888`**,
+  niet naar `text2026`. Die laatste bevat immers al eerdere vervangingen.
+- Pas de wijziging vervolgens toe op `text2026` en `text2026_html`.
+- Draai nooit een sweep die zijn eigen uitvoer opnieuw als invoer kan zien.
+
+Zonder deze regel hangt de uitkomst af van de volgorde waarin sweeps toevallig
+draaien, en gaan principes elkaar terugdraaien. Dat is eerder gebeurd: `V139`
+(vroedvrouw → verloskundige) en `V969` (het omgekeerde) hieven elkaar op tot
+`V969` werd verwijderd.
+
+Bij het toevoegen van een principe: controleer of de **uitkomst** ervan niet het
+**bronwoord** van een ander principe is. Het script
+`scripts/audit_principes.py` doet die controle.
+
 ## Werkstijl
 
 - **Pull voor edit**: `git pull --rebase` of `git fetch && git rebase` voordat je begint, anders krijg je merge-conflicten met de andere sessie die ook op `main` werkt.
