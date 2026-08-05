@@ -165,11 +165,17 @@ const Feedback = {
         // de mail terecht.
         let ok = false;
 
-        // Eerst de spreadsheet, als die is ingesteld.
+        // De spreadsheet krijgt de melding altijd, maar het antwoord is niet te
+        // lezen: Apps Script beantwoordt met een omleiding naar een ander domein
+        // en die draagt geen CORS-toestemming. Vandaar no-cors — het verzoek
+        // gaat eruit en het script draait, we horen alleen niet of het lukte.
+        // De bevestiging aan de lezer hangt daarom aan de mailweg hieronder,
+        // die wél een leesbaar antwoord geeft.
         if (this.SHEET_ENDPOINT) {
             try {
-                const r = await fetch(this.SHEET_ENDPOINT, {
+                await fetch(this.SHEET_ENDPOINT, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                     body: JSON.stringify({
                         ref: payload.ref,
@@ -179,16 +185,13 @@ const Feedback = {
                         userAgent: payload.userAgent
                     })
                 });
-                const j = await r.json().catch(() => ({}));
-                ok = r.ok && j.ok === true;
-                if (!ok) console.warn('[Feedback] spreadsheet antwoordde:', r.status, j);
             } catch (e) {
                 console.warn('[Feedback] spreadsheet onbereikbaar:', e);
             }
         }
 
-        // Anders, of als dat niet lukte, de mailweg.
-        if (!ok) try {
+        // De mailweg bepaalt wat de lezer te zien krijgt.
+        try {
             const r = await fetch(this.FORM_ENDPOINT, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
