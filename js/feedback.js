@@ -1,30 +1,26 @@
 /* Feedback-tool — de lezer selecteert tekst, klikt 💬 in het zwevende palet,
- * vult een suggestie in en verstuurt. De melding gaat rechtstreeks per mail.
+ * vult een suggestie in en verstuurt.
  *
  * Geen inloggen vereist: dat is een drempel die alleen maar minder feedback
  * oplevert. Wie wél is ingelogd stuurt zijn naam automatisch mee.
  */
 
 const Feedback = {
-    /* Meldingen gaan rechtstreeks per mail via FormSubmit. Bewust geen
+    /* De melding gaat naar een Google Formulier, dat uit zichzelf naar zijn
+       gekoppelde spreadsheet schrijft. Bewust geen Apps Script: dat moet apart
+       geïmplementeerd worden, met eigen rechten, opnieuw bij elke wijziging —
+       en als daar iets misgaat is er niets aan te zien. Bewust ook geen
        Firestore: dat vroeg inloggen van de bezoeker én beveiligingsregels in
-       de Firebase Console, terwijl het doel simpelweg is dat de melding
-       aankomt. Inloggen blijft wel bestaan voor persoonlijke instellingen en
-       markeringen; wie is ingelogd stuurt zijn naam automatisch mee.
+       de console, terwijl het doel simpelweg is dat de melding aankomt.
+       Inloggen blijft wel bestaan voor persoonlijke instellingen en
+       markeringen.
 
-       Het adres staat hier nog voluit. FormSubmit geeft na de eerste
-       bevestiging een sleutel van de vorm /ajax/a1b2c3…; vervang die hier,
-       dan staat het mailadres niet meer in de broncode en kunnen spambots
-       het niet oogsten. */
-    /* De melding gaat naar een Google Formulier, dat uit zichzelf naar een
-       spreadsheet schrijft. Geen script om te implementeren, geen versies,
-       geen rechten om goed te zetten — dat was met Apps Script juist de
-       hindernis. De veldnummers komen uit het formulier zelf.
+       De veldnummers komen uit het formulier zelf; scripts/formulier_velden.py
+       leest ze eruit. Zie docs/opmerkingen-in-google-sheet.md.
 
-       Het antwoord is niet te lezen (Google staat geen CORS toe op
-       formResponse), vandaar no-cors: het verzoek vertrekt en de rij komt
-       binnen, maar we horen niet of het lukte. De bevestiging aan de lezer
-       hangt daarom aan de mailweg hieronder, die wel antwoordt. */
+       Het mailadres van een inzender gaat hier bewust niet heen: de sheet is
+       als CSV gepubliceerd en dus openbaar. Alleen de naam die iemand zelf
+       invulde gaat mee. */
     FORMULIER: 'https://docs.google.com/forms/d/e/1FAIpQLSc7XXjzq7eA-QtJoAcJaXX5tlVodKhQ54JMdCQ6_SvkxMccWA/formResponse',
     FORMULIER_VELDEN: {
         vers:      'entry.1027694877',
@@ -32,7 +28,8 @@ const Feedback = {
         suggestie: 'entry.758123662',
         van:       'entry.745198439'
     },
-    FORM_ENDPOINT: 'https://formsubmit.co/ajax/maartenvroegindeweij@gmail.com',
+    // Terugval als het formulier onbereikbaar is — geen tweede verzendweg,
+    // maar de enige uitweg die de lezer zelf nog heeft.
     MAIL_TERUGVAL: 'maartenvroegindeweij@gmail.com',
     modal: null,
     pending: null,  // { bookId, ch, vs, text }
@@ -170,46 +167,24 @@ const Feedback = {
             userAgent: navigator.userAgent
         };
 
-        // Eén verzendweg: rechtstreeks per mail. De veldnamen met een
-        // onderstreep zijn instellingen van FormSubmit zelf en komen niet in
-        // de mail terecht.
+        // Eén verzendweg: het Google Formulier, dat naar zijn eigen
+        // spreadsheet schrijft.
+        //
+        // Wat we van no-cors terugkrijgen is een leeg antwoord — de status is
+        // niet uit te lezen. Wat het wél zegt: als fetch niet afketst, is het
+        // verzoek de deur uit. Dat is precies de fout die de lezer kan
+        // verhelpen (geen verbinding); een fout aan Google's kant kan hij toch
+        // niet oplossen. Daarom hangt de bevestiging aan het afketsen.
         let ok = false;
-
-        // Eerst de spreadsheet, via het formulier.
-        if (this.FORMULIER) {
-            try {
-                var v = this.FORMULIER_VELDEN;
-                var velden = new URLSearchParams();
-                velden.append(v.vers, payload.ref || '');
-                velden.append(v.selectie, payload.selected || '');
-                velden.append(v.suggestie, payload.suggestion || '');
-                velden.append(v.van, payload.user.name || 'anoniem');
-                await fetch(this.FORMULIER, { method: 'POST', mode: 'no-cors', body: velden });
-            } catch (e) {
-                console.warn('[Feedback] formulier onbereikbaar:', e);
-            }
-        }
-
-        // De mailweg bepaalt wat de lezer te zien krijgt.
         try {
-            const r = await fetch(this.FORM_ENDPOINT, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({
-                    _subject: `Opmerking bij ${payload.ref}`,
-                    _template: 'table',
-                    _captcha: 'false',
-                    Vers: payload.ref,
-                    'Geselecteerde tekst': payload.selected || '(geen selectie)',
-                    Suggestie: payload.suggestion,
-                    Van: payload.user.name + (payload.user.email ? ' <' + payload.user.email + '>' : ''),
-                    Datum: payload.datum,
-                    Browser: payload.userAgent
-                })
-            });
-            const j = await r.json().catch(() => ({}));
-            ok = r.ok && String(j.success) === 'true';
-            if (!ok) console.warn('[Feedback] FormSubmit antwoordde:', r.status, j);
+            const v = this.FORMULIER_VELDEN;
+            const velden = new URLSearchParams();
+            velden.append(v.vers, payload.ref || '');
+            velden.append(v.selectie, payload.selected || '');
+            velden.append(v.suggestie, payload.suggestion || '');
+            velden.append(v.van, payload.user.name || 'anoniem');
+            await fetch(this.FORMULIER, { method: 'POST', mode: 'no-cors', body: velden });
+            ok = true;
         } catch (e) {
             console.warn('[Feedback] versturen mislukt:', e);
         }
