@@ -142,6 +142,29 @@
         .lex-def[lang="en"] { }
         .lex-lexlabel { margin-top: 20px; font: 600 12px var(--font-body); color: var(--teal); text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border, #e5e1d8); padding-bottom: 3px; }
         .lex-lexlabel .lex-concept { text-transform: none; letter-spacing: 0; }
+        /* Verrijkte grondtekst-gloss (Latijn): woordsoort, stamvormen, betekenissen */
+        .lex-verrijking { margin-top: 18px; border-left: 3px solid var(--gold); padding: 2px 0 2px 14px; }
+        .lex-vr-kop { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+        .lex-vr-ws { font: 600 11px var(--font-body); color: var(--teal); text-transform: uppercase; letter-spacing: 0.06em; }
+        .lex-vr-stam { font-size: 15.5px; color: var(--navy); font-style: italic; }
+        .lex-vr-vorm { font-size: 13.5px; line-height: 1.6; color: #555; margin-bottom: 6px; }
+        .lex-vr-vorm strong { color: var(--teal); font-weight: 600; }
+        .lex-vr-vorm [lang="la"] { font-style: italic; color: var(--navy); }
+        .lex-vr-bet { margin: 8px 0 8px 20px; padding: 0; font-size: 14.5px; line-height: 1.65; color: #333; }
+        .lex-vr-bet li { margin-bottom: 2px; }
+        .lex-vr-bet li::marker { color: var(--gold); font-weight: 600; }
+        .lex-vr-toel { font-size: 13.5px; line-height: 1.65; color: #555; margin: 8px 0 0; }
+        .lex-vr-verwant { font-size: 13px; color: #666; margin-top: 8px; }
+        .lex-vr-verwant strong { color: var(--teal); font-weight: 600; }
+        .lex-vr-link { color: var(--teal); cursor: pointer; font-style: italic; border-bottom: 1px dotted var(--teal); }
+        .lex-vr-link:hover { color: var(--gold); border-bottom-color: var(--gold); }
+        .lex-vr-herkomst { font-size: 11.5px; color: #999; margin-top: 9px; font-style: italic; }
+        :root[data-theme="donker"] .lex-verrijking { border-left-color: var(--gold); }
+        :root[data-theme="donker"] .lex-vr-stam, :root[data-theme="donker"] .lex-vr-vorm [lang="la"] { color: var(--text-primary); }
+        :root[data-theme="donker"] .lex-vr-bet { color: var(--text-secondary); }
+        :root[data-theme="donker"] .lex-vr-vorm, :root[data-theme="donker"] .lex-vr-toel,
+        :root[data-theme="donker"] .lex-vr-verwant { color: var(--text-secondary); }
+        :root[data-theme="donker"] .lex-vr-herkomst { color: #8a8a8a; }
         .lex-akk { color: #8a6d1f; text-decoration: none; border-bottom: 1px dotted #b8935a; }
         .lex-akk:hover { color: var(--gold); background: rgba(203,164,73,0.12); }
         .lex-lexlabel-link { color: var(--teal); text-decoration: none; border-bottom: 1px dotted var(--teal); }
@@ -400,7 +423,14 @@
                 gloss: (eff && eff.glossNl) || w.betekenis,
                 def: hasNl ? eff.definitieNl : w.definitie, defEn: w.definitie,
                 defHtml: !!(taal.html || w._html), defNl: hasNl, bron: bron,
-                verw: w.verwijzingen || [], forms: w.vormen };
+                verw: w.verwijzingen || [], forms: w.vormen,
+                // Verrijking van de Latijnse grondtekst-glossen (scripts/verrijk_lexicon_latijn.py):
+                // woordsoort, stamvormen, genummerde betekenissen, vormanalyse en toelichting.
+                woordsoort: w.woordsoort, stamvormen: w.stamvormen,
+                betekenissen: w.betekenissen, vormanalyse: w.vormanalyse,
+                stamwoord: w.stamwoord, toelichting: w.toelichting,
+                verwant: w.verwant, homoniem: w.homoniem,
+                herkomst: w.bron, verrijkt: w.verrijkt !== false && !!w.woordsoort };
         });
     }
 
@@ -436,11 +466,78 @@
     function findArticle(e) {
         if (cur.id === 'geez') return entries.filter(function (x) { return x !== e && x.bron === 'Dillmann' && x.key === e.key && x.def; })[0];
         if (cur.id === 'latijn') {
-            var bf = baseForm(e.woord || e.key || '');
-            if (!bf) return null;
-            return entries.filter(function (x) { return x.bron === 'Lewis-Short' && x.def && baseForm(x.woord || '') === bf; })[0];
+            // Eerst het stamwoord uit de verrijking (zo vindt ook 'filiorum' het
+            // artikel bij 'filius'), anders de tekstvorm zelf.
+            var kandidaten = [];
+            if (e.stamwoord) kandidaten.push(baseForm(e.stamwoord));
+            if (e.stamvormen) kandidaten.push(baseForm(e.stamvormen.split(',')[0].trim()));
+            kandidaten.push(baseForm(e.woord || e.key || ''));
+            for (var i = 0; i < kandidaten.length; i++) {
+                var bf = kandidaten[i];
+                if (!bf) continue;
+                // Lewis & Short nummert gelijkluidende kopwoorden (liber1 = vrij,
+                // liber2 = boek); dat telcijfer telt niet mee bij het vergelijken.
+                var treffers = entries.filter(function (x) {
+                    return x.bron === 'Lewis-Short' && x.def &&
+                        baseForm(x.woord || '').replace(/[0-9]+$/, '') === bf;
+                });
+                if (!treffers.length) continue;
+                // Meer artikelen onder hetzelfde kopwoord: kies dat waarvan de
+                // woordsoort klopt met de verrijking, anders het eerste.
+                if (treffers.length > 1 && e.woordsoort) {
+                    var soort = e.woordsoort.split(' ')[0].toLowerCase();
+                    var passend = treffers.filter(function (x) {
+                        return (x.gloss || '').toLowerCase().indexOf(soort) >= 0;
+                    })[0];
+                    if (passend) return passend;
+                }
+                return treffers[0];
+            }
+            return null;
         }
         return null;
+    }
+
+    // Woordenboekvermelding bij een verrijkte grondtekst-gloss. De gegevens komen
+    // uit data/lexicon-latijn.json (zie scripts/verrijk_lexicon_latijn.py); vormen
+    // die niet met zekerheid aan een stamwoord konden worden gekoppeld hebben deze
+    // velden niet en krijgen alleen hun oude gloss te zien.
+    function verrijkingBlok(e) {
+        if (!e.woordsoort) return '';
+        var h = '<div class="lex-verrijking">';
+        h += '<div class="lex-vr-kop">' +
+            '<span class="lex-vr-ws">' + esc(e.woordsoort) + '</span>' +
+            (e.stamvormen ? '<span class="lex-vr-stam" lang="la">' + esc(e.stamvormen) + '</span>' : '') +
+            '</div>';
+        if (e.vormanalyse) {
+            // Bevat de analyse al een eigen vertaling ("gebiedende wijs ev. — ga!"),
+            // dan zou "van vado" erachter alleen maar houterig lezen.
+            var toonStam = e.stamwoord && e.vormanalyse.indexOf(' — ') < 0;
+            h += '<div class="lex-vr-vorm"><strong>Deze vorm:</strong> ' + esc(e.vormanalyse) +
+                (toonStam ? ' van <span lang="la">' + esc(e.stamwoord) + '</span>' : '') + '</div>';
+        }
+        if (e.betekenissen && e.betekenissen.length) {
+            h += '<ol class="lex-vr-bet">';
+            for (var i = 0; i < e.betekenissen.length; i++) {
+                h += '<li>' + esc(e.betekenissen[i]) + '</li>';
+            }
+            h += '</ol>';
+        }
+        if (e.toelichting) h += '<p class="lex-vr-toel">' + esc(e.toelichting) + '</p>';
+        if (e.verwant && e.verwant.length) {
+            h += '<div class="lex-vr-verwant"><strong>Verwant:</strong> ' +
+                e.verwant.map(function (w) {
+                    return '<a class="lex-vr-link" data-zoek="' + esc(w) + '" lang="la">' + esc(w) + '</a>';
+                }).join(', ') + '</div>';
+        }
+        if (e.homoniem && e.homoniem.length) {
+            h += '<div class="lex-vr-verwant"><strong>Deze vorm kan ook horen bij:</strong> ' +
+                e.homoniem.map(function (w) {
+                    return '<a class="lex-vr-link" data-zoek="' + esc(w) + '" lang="la">' + esc(w) + '</a>';
+                }).join(', ') + '</div>';
+        }
+        if (e.herkomst) h += '<div class="lex-vr-herkomst">Vermelding naar ' + esc(e.herkomst) + '.</div>';
+        return h + '</div>';
     }
 
     function showEntry(e) {
@@ -462,8 +559,13 @@
             (e.translit ? '<span class="lex-entry-translit" title="Gelatiniseerde (getranslitereerde) uitspraak">' + esc(e.translit) + '</span>' : '') +
             (gloss ? '<span class="lex-entry-gloss">' + esc(gloss) + '</span>' : '') +
             (cur.abbr && !e.nl ? '<span class="lex-concept" title="De Nederlandse vertaling van de volledige definitie volgt nog">Definitie nog niet vertaald</span>' : '') +
+            (cur.id === 'latijn' && e.bron === 'Grondtekst-gloss' && !e.woordsoort ?
+                '<span class="lex-concept" title="Deze tekstvorm kon niet met zekerheid aan één stamwoord worden gekoppeld; alleen de grondtekst-gloss wordt getoond">Nog niet uitgebreid</span>' : '') +
             (heeftEngels ? '<button class="lex-orig-toggle" id="lex-orig-toggle">' + (origineel ? '← Nederlandse versie' : ('Originele ' + (cur.id === 'geez' ? 'Latijnse' : 'Engelse') + ' versie →')) + '</button>' : '') +
             '</div>';
+        // Verrijkte grondtekst-gloss (Latijn): woordsoort, stamvormen, genummerde
+        // betekenissen, vormanalyse, toelichting en verwante woorden.
+        h += verrijkingBlok(e);
         // Lexicon-label als link naar de bronpagina (over dat woordenboek + bronvermelding)
         function lexLabelLink(label, url) {
             return url ? '<a class="lex-lexlabel-link" href="' + url + '" title="Over dit woordenboek en de bronvermelding">' + esc(label) + '</a>' : esc(label);
@@ -483,7 +585,7 @@
             // Latijn getoond wanneer origineel óf een nog-niet-vertaalde Dillmann-entry; NL-vertaling krijgt geen lang="la"
             var latijnShown = defHtml0 && (origineel || !e.defNl);
             h += '<div class="lex-def"' + (latijnShown ? ' lang="la"' : (origineel ? ' lang="en"' : '')) + '>' + body + '</div>';
-        } else if (cur.id === 'latijn' || cur.id === 'geez') {
+        } else if ((cur.id === 'latijn' && !e.woordsoort) || cur.id === 'geez') {
             h += '<div class="lex-def lex-geenart"><em>Geen woordenboekartikel gevonden — dit is een grondtekst-gloss, vaak een eigennaam of een eenvoudige vorm die niet als apart lemma in ' +
                 (cur.id === 'latijn' ? 'Lewis &amp; Short' : 'Dillmann') + ' staat.</em></div>';
         }
@@ -526,6 +628,15 @@
         // Onderlinge link: spring naar het aangeklikte lemma
         var xr = ev.target.closest && ev.target.closest('.lex-xref');
         if (xr && xr.dataset.key) { ev.preventDefault(); openKey(xr.dataset.key); }
+        // Verwant woord uit de verrijking: zoek erop in de woordenlijst
+        var vr = ev.target.closest && ev.target.closest('.lex-vr-link');
+        if (vr && vr.dataset.zoek) {
+            ev.preventDefault();
+            var zoekveld = document.getElementById('lex-zoek');
+            zoekveld.value = vr.dataset.zoek;
+            filter(zoekveld.value);
+            zoekveld.focus();
+        }
     });
     document.getElementById('lex-zoek').addEventListener('input', function () { filter(this.value); });
     (function () { var bf = document.getElementById('lex-bron-filter'); if (bf) bf.addEventListener('change', function () { bronFilter = this.value; filter(document.getElementById('lex-zoek').value); }); })();
