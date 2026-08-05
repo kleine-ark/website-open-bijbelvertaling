@@ -32,13 +32,31 @@ en plak dit:
 
 ```javascript
 // Ontvangt meldingen van openvertaling.nl, schrijft ze in de spreadsheet
-// en stuurt een mail. Retourneert JSON, zodat de site kan zien of het lukte.
+// en stuurt een mail.
 
 var MAIL_NAAR = 'maartenvroegindeweij@gmail.com';
 
+// Open het /exec-adres in je browser om te controleren of deze code
+// daadwerkelijk geïmplementeerd is. Zie je JSON met "levend": true, dan staat
+// hij live. Zie je iets anders, dan wijst de implementatie naar een oude
+// versie zonder deze code.
+function doGet() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  return uit({
+    levend: true,
+    spreadsheet: ss ? ss.getName() : null,
+    waarschuwing: ss ? null : 'Script hangt niet aan een spreadsheet — ' +
+                              'maak het aan via Extensies > Apps Script vanuit de sheet zelf'
+  });
+}
+
 function doPost(e) {
   try {
-    var d = JSON.parse(e.postData.contents);
+    // De site stuurt JSON, maar een gewone formulier-POST komt binnen als
+    // e.parameter. Allebei accepteren scheelt zoekwerk.
+    var d = (e && e.postData && e.postData.contents)
+              ? JSON.parse(e.postData.contents)
+              : (e && e.parameter) || {};
     var blad = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
 
     // Kolomkoppen aanmaken bij de eerste melding
