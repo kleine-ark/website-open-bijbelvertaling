@@ -940,7 +940,7 @@
       "number": 10,
       "textSV1888": "Toen zeide Mozes tot den HEERE: Och Heere! ik ben geen man wel ter tale, noch van gisteren, noch van eergisteren, noch van toen af, toen Gij tot Uw knecht gesproken hebt; want ik ben zwaar van mond, en zwaar van tong.",
       "text1637": "Doe seyde Mose tot den HEERE; [8] Och Heere, ick [9] en ben geen man wel ter tale, noch van gisteren, [10] noch van eer-gisteren, noch van doe af, doe ghy tot uwen knecht gesproken hebt: want ick ben swaer van monde, ende swaer van tonge.",
-      "text2026": "Toen zei Mozes tot JAHWEH: Och Heere! ik ben geen man wel ter tale, noch van gisteren, noch van eergisteren, noch van toen af, toen U tot Uw knecht gesproken hebt; want ik ben zwaar van mond, en zwaar van tong.",
+      "text2026": "Toen zei Mozes tot JAHWEH: Och Heere! ik ben niet goed in spreken, noch van gisteren, noch van eergisteren, noch van toen af, toen U tot Uw knecht gesproken hebt; want ik ben zwaar van mond, en zwaar van tong.",
       "marginNotes": [
         {
           "marker": "8",
@@ -1091,7 +1091,7 @@
           "morph": "HPp1cs"
         }
       ],
-      "text2026_html": "Toen zei Mozes tot JAHWEH: <span class=\"direct-speech\"><i>Och Heere! ik ben geen man wel ter tale, noch van gisteren, noch van eergisteren, noch van toen af, toen U tot Uw knecht gesproken hebt; want ik ben zwaar van mond, en zwaar van tong.</i></span>",
+      "text2026_html": "Toen zei Mozes tot JAHWEH: <span class=\"direct-speech\"><i>Och Heere! ik ben niet goed in spreken, noch van gisteren, noch van eergisteren, noch van toen af, toen U tot Uw knecht gesproken hebt; want ik ben zwaar van mond, en zwaar van tong.</i></span>",
       "textSV1888_html": "Toen zeide Mozes tot den HEERE:<sup class=\"note-marker\" data-note=\"8\">8</sup> Och Heere! ik<sup class=\"note-marker\" data-note=\"9\">9</sup> ben geen man wel ter tale, noch van gisteren,<sup class=\"note-marker\" data-note=\"10\">10</sup> noch van eergisteren, noch van toen af, toen Gij tot Uw knecht gesproken hebt; want ik ben zwaar van mond, en zwaar van tong.",
       "text1637_html": "Doe seyde Mose tot den HEERE; <sup class=\"note-marker\" data-note=\"8\">8</sup> Och Heere, ick <sup class=\"note-marker\" data-note=\"9\">9</sup> en ben geen man wel ter tale, noch van gistere<i>n</i>, <sup class=\"note-marker\" data-note=\"10\">10</sup> noch van eer-gisteren, noch van doe af, doe ghy tot uwen knecht gesproken hebt: want ick ben swaer van monde, ende swaer van tonge.",
       "phraseDiff": [
@@ -1104,6 +1104,11 @@
           "old": "den HEERE:",
           "new": "JAHWEH:",
           "principe": "N1"
+        },
+        {
+          "old": "geen man wel ter tale,",
+          "new": "niet goed in spreken,",
+          "principe": "V998"
         },
         {
           "old": "Gij",
