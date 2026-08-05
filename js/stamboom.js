@@ -1,51 +1,83 @@
 /* Open Vertaling — interactieve stamboom (stamboom.html).
  *
  * Leest data/stamboom.json (gemaakt door scripts/build_stamboom.py) en tekent
- * daar een VERTICALE, uitklapbare boom van: Adam bovenaan, de generaties naar
- * beneden, broers en zussen naast elkaar. Slepen en zoomen met muis én
- * aanraking.
+ * daar een VERTICALE boom van: Adam bovenaan, de generaties naar beneden.
+ * Slepen en zoomen met muis én aanraking; losse namen kunnen met de hand
+ * verplaatst worden.
  *
- * Waarom hij zo compact begint
- * ----------------------------
- * Van Adam tot Jezus liggen 64 generaties. Ze alle 64 als losse rij tekenen
- * levert een tekening van ruim tweeduizend pixels hoog op waarin niemand meer
- * iets terugvindt. Daarom twee ingrepen:
+ * Waarom een INGESPRONGEN indeling
+ * --------------------------------
+ * De eerste opzet zette broers en zussen náást elkaar, zoals een gewone
+ * stamboom. Dat werkt zolang alles dichtstaat, maar met 367 zichtbare namen
+ * liep de tekening op tot ruim 19.000 pixels breed: horizontaal slepen over
+ * twintig schermbreedtes. De breedte werd bepaald door het aantal broers en
+ * zussen, en dat groeit onbeheersbaar.
  *
- *   1. RECHTE STUKKEN WORDEN SAMENGEVOUWEN. Grote delen van de boom vertakken
- *      niet: Genesis 5 en 11 en de koningen van Juda zijn lange kettingen van
- *      vader op zoon. Zo'n keten wordt één schakel-vakje
- *      ("Seth › … › Lamech · 8 gen.") dat opengaat bij aantikken. Onderbroken
- *      wordt hij alleen bij een ANKER (Adam, Noach, Sem, Abraham, Izak, Jakob,
- *      Juda, David, Jechonia, Zerubbabel, Jozef, Jezus — zie
- *      scripts/build_stamboom.py) of bij iemand van wie de zijtak openstaat.
+ * Daarom staat de boom nu als een REGISTER: kinderen onder hun ouder, elk
+ * vertakkingsniveau een klein stukje naar rechts ingesprongen, met een dunne
+ * verbindingslijn (de "rail") die van de ouder naar beneden loopt en bij elk
+ * kind een streepje naar binnen maakt. De breedte hangt nu af van de diepte
+ * van de VERTAKKING en niet meer van het aantal namen: van Adam tot Jezus zijn
+ * er hoogstens 19 vertakkingsniveaus, dus 19 × 26 px inspringing.
+ *
+ * Twee bijzonderheden:
+ *
+ *   - EEN RECHTE AFSTAMMING SPRINGT NIET IN. Heeft iemand maar één zichtbaar
+ *     kind, dan staat dat kind recht onder hem. Zo blijft de ingeklapte boom
+ *     één smalle kolom die op een telefoon van 390 px past, en leest een
+ *     rechte lijn van vader op zoon als één doorlopende streep.
+ *   - BROERS EN ZUSSEN ZONDER NAKOMELINGEN LOPEN TERUG, zoals tekst afbreekt.
+ *     De twintig kinderen van David of de dertien van Joktan vullen anders
+ *     twintig regels; nu staan ze met een paar naast elkaar binnen een vaste
+ *     regelbreedte. Alleen namen die zelf geen kinderen hebben doen mee, zodat
+ *     nooit onduidelijk wordt wie van wie afstamt.
+ *
+ * De twee inklap-mechanismen van de eerste opzet blijven:
+ *
+ *   1. RECHTE STUKKEN WORDEN SAMENGEVOUWEN. Genesis 5 en 11 en de koningen van
+ *      Juda zijn lange kettingen van vader op zoon. Zo'n keten wordt één
+ *      schakel-vakje ("Seth › … › Lamech · 8 gen.") dat opengaat bij aantikken.
+ *      Onderbroken wordt hij alleen bij een ANKER (Adam, Noach, Sem, Abraham,
+ *      Izak, Jakob, Juda, David, Jechonia, Zerubbabel, Jozef, Jezus) of bij
+ *      iemand van wie de zijtak openstaat.
  *   2. ZIJTAKKEN STAAN DICHT. Van iemand op de hoofdlijn is standaard alleen de
  *      zoon zichtbaar die de lijn voortzet; de rest zit achter een telbadge
  *      ("+12"). Wat openstaat wordt onthouden in de URL en in localStorage,
  *      zodat een gedeelde link hetzelfde toont.
  *
- * Zo begint de boom op 18 rijen die in hun geheel op een telefoonscherm passen.
- *
- * Bewust zonder externe bibliotheken en zonder taalfeatures van na Safari 15.4
- * (dus geen lookbehind, geen Object.groupBy, geen container queries): de site
- * moet het op een iPad met iPadOS 15.4 blijven doen.
+ * Bewust zonder externe bibliotheken: alles wat hier nodig is — verschuiven,
+ * zoomen, knijpen, een eigen indeling — staat in een paar honderd regels, en
+ * een tekenbibliotheek zou daar alleen gewicht en een tweede browserondergrens
+ * aan toevoegen. Ook geen taalfeatures van na Safari 15.4 (dus geen lookbehind,
+ * geen Object.groupBy, geen container queries): de site moet het op een iPad
+ * met iPadOS 15.4 blijven doen.
  */
 (function () {
     'use strict';
 
     // ── Maatvoering ───────────────────────────────────────────────────────
-    var DOOS_H = 22;           // hoogte van elk vakje (alle rijen even hoog)
-    var V_GAP = 8;             // ruimte tussen twee generatierijen
-    var RIJ = DOOS_H + V_GAP;  // verticale stap per rij
-    var H_GAP = 14;            // ruimte tussen twee vakjes naast elkaar
-    var PAD = 9;               // binnenmarge links/rechts in een vakje
-    var MAX_B = 250, MIN_B = 62;
-    var MIN_K = 0.06, MAX_K = 3;
+    // Ruimer dan een schema: leesbaarheid gaat hier boven compactheid.
+    var DOOS_H = 26;           // hoogte van elk vakje (alle regels even hoog)
+    var V_GAP = 7;             // ruimte tussen twee regels
+    var RIJ = DOOS_H + V_GAP;  // verticale stap per regel
+    var H_GAP = 16;            // ruimte tussen twee vakjes op dezelfde regel
+    var INSPRING = 26;         // inspringing per vertakkingsniveau
+    var RAIL = 12;             // afstand van de verbindingslijn tot de linkerrand
+    var STROOM_B = 520;        // maximale regelbreedte voor teruglopende namen
+    var PAD = 11;              // binnenmarge links/rechts in een vakje
+    var BASIS = 18;            // basislijn van de tekst binnen het vakje
+    var MAX_B = 260, MIN_B = 66;
+    var MIN_K = 0.04, MAX_K = 3;
 
-    var FONT_NAAM = '11.5px "Fira Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
-    var FONT_BIJ = '10px "Fira Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
-    var FONT_BADGE = '600 9px "Fira Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+    var SERIF = '"EB Garamond", Garamond, Cambria, "Times New Roman", Georgia, serif';
+    var SANS = '"Fira Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+    var FONT_NAAM = '15px ' + SERIF;
+    var FONT_ANKER = '600 15px ' + SERIF;   // ankers staan vet; apart meten
+    var FONT_BIJ = 'italic 12.5px ' + SERIF;
+    var FONT_BADGE = '600 9.5px ' + SANS;
 
     var OPSLAG = 'sv2026_stamboom';
+    var OPSLAG_VERZET = 'sv2026_stamboom_verzet';
 
     var canvas = document.getElementById('sb-canvas');
     var kaart = document.getElementById('sb-kaart');
@@ -58,13 +90,21 @@
     var P = null;               // personen (id -> object)
     var takOpen = {};           // id -> true: ook de zijtakken van deze persoon tonen
     var ketenOpen = {};         // begin-id van een keten -> true: keten uitgevouwen
+    var verzet = {};            // sleutel -> {dx, dy}: met de hand verplaatst
     var spineKindVan = {};      // id -> kind dat de hoofdlijn voortzet
     var gekozen = null;         // id van de geopende persoonskaart
     var view = { x: 0, y: 0, k: 1 };
     var gEl = null;             // <g> waarop de transform staat
+    var lijnLaag = null, knoopLaag = null;
     var plaats = {};            // id (of 'keten:'+id) -> {x, y}
+    var knoopVan = {};          // sleutel -> weergaveknoop
+    var ouderVan = {};          // sleutel -> weergaveknoop van de ouder
+    var elVan = {};             // sleutel -> <g> in de tekening
+    var lijnEl = {};            // sleutel -> {gewoon, lijn, via} <path>
     var laatsteBox = null;      // omhullende rechthoek van de tekening
     var aangeraakt = false;     // heeft de gebruiker zelf al verschoven/gezoomd?
+
+    var SVGNS = 'http://www.w3.org/2000/svg';
 
     // ── Hulp ──────────────────────────────────────────────────────────────
 
@@ -72,6 +112,8 @@
         return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
             .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
+
+    function f(n) { return Math.round(n * 10) / 10; }
 
     // Combinerende accenttekens (U+0300–U+036F), als patroon opgeschreven zodat
     // deze regel zelf geen losse accenttekens bevat.
@@ -93,7 +135,7 @@
             var c = document.createElement('canvas');
             meetCtx = (c && c.getContext) ? c.getContext('2d') : null;
         }
-        if (!meetCtx) return String(tekst).length * (parseFloat(font) * 0.55);
+        if (!meetCtx) return String(tekst).length * (parseFloat(font) * 0.5);
         meetCtx.font = font;
         return meetCtx.measureText(String(tekst)).width;
     }
@@ -164,7 +206,7 @@
                 if (!ketenOpen[run[0]]) {
                     return { soort: 'keten', id: run[0], ids: run, kinderen: [maakKnoop(cur, false)] };
                 }
-                inKeten = true;      // uitgevouwen: elke schakel een eigen rij
+                inKeten = true;      // uitgevouwen: elke schakel een eigen regel
             }
         } else if (!isVlak(id)) {
             inKeten = false;         // einde van de uitgevouwen keten
@@ -172,6 +214,17 @@
         var kids = zichtbareKinderen(id), uit = [];
         for (var i = 0; i < kids.length; i++) uit.push(maakKnoop(kids[i], inKeten));
         return { soort: 'persoon', id: id, kinderen: uit };
+    }
+
+    function sleutelVan(dn) { return dn.soort === 'keten' ? 'keten:' + dn.id : dn.id; }
+
+    /** Kinderloos = mag met broers en zussen op één teruglopende regel staan.
+     *  Iemand met kinderen — ook als die dichtstaan — krijgt altijd een eigen
+     *  regel, anders is niet meer te zien wie van wie afstamt. */
+    function isKinderloos(dn) {
+        if (dn.soort === 'keten' || dn.kinderen.length) return false;
+        var p = persoon(dn.id);
+        return !(p && p.kinderen && p.kinderen.length);
     }
 
     // ── Opmaak van één vakje ──────────────────────────────────────────────
@@ -190,7 +243,7 @@
 
     function opmaak(dn) {
         if (dn.opmaak) return dn.opmaak;
-        var o = { badge: '', badgeB: 0 };
+        var o = { badge: '', badgeB: 0, font: FONT_NAAM };
         if (dn.soort === 'keten') {
             var namen = [];
             for (var i = 0; i < dn.ids.length; i++) namen.push(persoon(dn.ids[i]).naam);
@@ -202,56 +255,93 @@
             var p = persoon(dn.id);
             o.naam = p.naam;
             o.bij = partnerTekst(p);
+            if (p.anker) o.font = FONT_ANKER;
             var n = verborgen(dn.id);
             if (n > 0) o.badge = '+' + n;
             o.titel = p.naam + (o.bij ? ' ' + o.bij : '');
         }
-        o.naamB = breed(o.naam, FONT_NAAM);
+        o.naamB = breed(o.naam, o.font);
         o.bijB = o.bij ? breed(o.bij, FONT_BIJ) : 0;
-        o.badgeB = o.badge ? breed(o.badge, FONT_BADGE) + 10 : 0;
-        var w = PAD + o.naamB + (o.bij ? 5 + o.bijB : 0) + (o.badge ? 6 + o.badgeB : 0) + PAD;
+        o.badgeB = o.badge ? breed(o.badge, FONT_BADGE) + 11 : 0;
+        var w = PAD + o.naamB + (o.bij ? 6 + o.bijB : 0) + (o.badge ? 7 + o.badgeB : 0) + PAD;
         if (w > MAX_B) {
-            var ruimte = MAX_B - 2 * PAD - (o.badge ? 6 + o.badgeB : 0);
+            var ruimte = MAX_B - 2 * PAD - (o.badge ? 7 + o.badgeB : 0);
             if (o.bij) {
-                o.bij = inkorten(o.bij, Math.max(24, ruimte - o.naamB - 5), FONT_BIJ);
+                o.bij = inkorten(o.bij, Math.max(26, ruimte - o.naamB - 6), FONT_BIJ);
                 o.bijB = breed(o.bij, FONT_BIJ);
-                ruimte -= o.bijB + 5;
+                ruimte -= o.bijB + 6;
             }
-            o.naam = inkorten(o.naam, Math.max(30, ruimte), FONT_NAAM);
-            o.naamB = breed(o.naam, FONT_NAAM);
-            w = PAD + o.naamB + (o.bij ? 5 + o.bijB : 0) + (o.badge ? 6 + o.badgeB : 0) + PAD;
+            o.naam = inkorten(o.naam, Math.max(34, ruimte), o.font);
+            o.naamB = breed(o.naam, o.font);
+            w = PAD + o.naamB + (o.bij ? 6 + o.bijB : 0) + (o.badge ? 7 + o.badgeB : 0) + PAD;
         }
         o.w = Math.max(MIN_B, Math.min(MAX_B, Math.ceil(w)));
         dn.opmaak = o;
         return o;
     }
 
-    // ── Ordening ──────────────────────────────────────────────────────────
+    // ── Ordening: het ingesprongen register ───────────────────────────────
+    //
+    // plaatsKnoop zet de knoop op (x, y) en daaronder zijn kinderen, en geeft
+    // terug op welke hoogte de volgende regel begint. dn.regels bewaart per
+    // knoop welke kinderen op welke regel terechtkwamen; het tekenen van de
+    // verbindingslijnen leest dat weer uit.
 
-    function meetBlok(dn) {
-        dn.w = opmaak(dn).w;
-        var n = dn.kinderen.length;
-        if (!n) { dn.blok = dn.w; return dn.blok; }
-        var som = 0;
-        for (var i = 0; i < n; i++) som += meetBlok(dn.kinderen[i]);
-        som += H_GAP * (n - 1);
-        dn.blok = Math.max(dn.w, som);
-        return dn.blok;
+    function plaatsRegel(regel, x, y) {
+        for (var i = 0; i < regel.length; i++) {
+            regel[i].x = x;
+            regel[i].y = y;
+            x += regel[i].w + H_GAP;
+        }
     }
 
-    function plaatsBlok(dn, links, rij) {
-        dn.y = rij * RIJ;
-        var n = dn.kinderen.length, i;
-        if (!n) { dn.cx = links + dn.blok / 2; return; }
-        var totaal = 0;
-        for (i = 0; i < n; i++) totaal += dn.kinderen[i].blok;
-        totaal += H_GAP * (n - 1);
-        var x = links + (dn.blok - totaal) / 2;
-        for (i = 0; i < n; i++) {
-            plaatsBlok(dn.kinderen[i], x, rij + 1);
-            x += dn.kinderen[i].blok + H_GAP;
+    function plaatsKnoop(dn, x, y) {
+        dn.w = opmaak(dn).w;
+        dn.x = x;
+        dn.y = y;
+        dn.regels = [];
+        var kids = dn.kinderen, n = kids.length;
+        var cy = y + RIJ;
+        if (!n) return cy;
+
+        // Eén zichtbaar kind = rechte afstamming: recht eronder, niet inspringen.
+        dn.recht = (n === 1);
+        var kx = dn.recht ? x : x + INSPRING;
+
+        var i = 0;
+        while (i < n) {
+            // Zoek een aaneengesloten reeks kinderloze broers en zussen. Die
+            // mogen teruglopen; de volgorde van geboorte blijft daarbij intact.
+            var j = i;
+            while (j < n && isKinderloos(kids[j])) j++;
+            if (j - i >= 2) {
+                var regel = [], breedte = 0;
+                for (var q = i; q < j; q++) {
+                    var kn = kids[q];
+                    kn.w = opmaak(kn).w;
+                    var erbij = regel.length ? H_GAP + kn.w : kn.w;
+                    if (regel.length && breedte + erbij > STROOM_B) {
+                        plaatsRegel(regel, kx, cy);
+                        dn.regels.push(regel);
+                        cy += RIJ;
+                        regel = []; breedte = 0; erbij = kn.w;
+                    }
+                    regel.push(kn);
+                    breedte += erbij;
+                }
+                if (regel.length) {
+                    plaatsRegel(regel, kx, cy);
+                    dn.regels.push(regel);
+                    cy += RIJ;
+                }
+                i = j;
+            } else {
+                dn.regels.push([kids[i]]);
+                cy = plaatsKnoop(kids[i], kx, cy);
+                i++;
+            }
         }
-        dn.cx = (dn.kinderen[0].cx + dn.kinderen[n - 1].cx) / 2;
+        return cy;
     }
 
     function alleKnopen(wortel) {
@@ -259,12 +349,12 @@
         while (stapel.length) {
             var dn = stapel.pop();
             uit.push(dn);
-            for (var i = 0; i < dn.kinderen.length; i++) stapel.push(dn.kinderen[i]);
+            for (var i = dn.kinderen.length - 1; i >= 0; i--) stapel.push(dn.kinderen[i]);
         }
         return uit;
     }
 
-    // ── Tekenen ───────────────────────────────────────────────────────────
+    // ── Verbindingslijnen ─────────────────────────────────────────────────
 
     function opHoofdlijn(dn) {
         if (dn.soort === 'keten') return true;
@@ -272,9 +362,85 @@
         return !!(p && p.hoofdlijn);
     }
 
+    function lijnSoort(dn, kd) {
+        if (kd.soort === 'persoon' && persoon(kd.id).viaMoeder) return 'via';
+        if (opHoofdlijn(dn) && opHoofdlijn(kd)) return 'lijn';
+        return 'gewoon';
+    }
+
+    /** De padstukken die onder één ouder horen, per lijnsoort. De rail — de
+     *  lange verticale streep langs een hele zijtak — staat apart, zodat hij
+     *  lichter getekend kan worden dan de streepjes naar de kinderen zelf.
+     *  Bij een opengeklapte boom lopen sommige rails duizenden pixels door. */
+    function lijnPaden(dn) {
+        var uit = { rail: '', gewoon: '', lijn: '', via: '' };
+        var regels = dn.regels;
+        if (!regels || !regels.length) return uit;
+        var railX = dn.px + RAIL;
+        var onder = dn.py + DOOS_H;
+        var i, j;
+
+        // Rechte afstamming: één streep recht naar beneden.
+        if (dn.recht && regels.length === 1 && regels[0].length === 1 &&
+            Math.abs(regels[0][0].px - dn.px) < 0.5) {
+            var kd = regels[0][0];
+            uit[lijnSoort(dn, kd)] += 'M' + f(railX) + ' ' + f(onder) + 'V' + f(kd.py);
+            return uit;
+        }
+
+        // Vertakking: een rail langs de linkerkant met een streepje per regel.
+        var hoog = onder, laag = onder;
+        for (i = 0; i < regels.length; i++) {
+            var my = regels[i][0].py + DOOS_H / 2;
+            if (my < hoog) hoog = my;
+            if (my > laag) laag = my;
+        }
+        uit.rail += 'M' + f(railX) + ' ' + f(hoog) + 'V' + f(laag);
+        for (i = 0; i < regels.length; i++) {
+            var regel = regels[i];
+            var y = regel[0].py + DOOS_H / 2;
+            uit[lijnSoort(dn, regel[0])] += 'M' + f(railX) + ' ' + f(y) + 'H' + f(regel[0].px);
+            // Teruggelopen broers en zussen: een dunne draad door de tussenruimte.
+            for (j = 1; j < regel.length; j++) {
+                var a = regel[j - 1], b = regel[j];
+                uit[lijnSoort(dn, b)] += 'M' + f(a.px + a.w) + ' ' + f(a.py + DOOS_H / 2) +
+                                         'L' + f(b.px) + ' ' + f(b.py + DOOS_H / 2);
+            }
+        }
+        return uit;
+    }
+
+    var LIJN_KLASSE = {
+        rail: 'sb-lijn is-rail', gewoon: 'sb-lijn',
+        lijn: 'sb-lijn is-lijn', via: 'sb-lijn is-via'
+    };
+
+    /** Werkt de lijnen van één ouder bij zonder de hele tekening te herbouwen. */
+    function hertekenLijnen(dn) {
+        if (!lijnLaag) return;
+        var sl = sleutelVan(dn);
+        var paden = lijnPaden(dn);
+        var set = lijnEl[sl] || (lijnEl[sl] = {});
+        for (var soort in paden) {
+            var d = paden[soort];
+            var el = set[soort];
+            if (!el) {
+                if (!d) continue;
+                el = document.createElementNS(SVGNS, 'path');
+                el.setAttribute('class', LIJN_KLASSE[soort]);
+                el.setAttribute('data-van', sl);
+                el.setAttribute('data-stijl', soort);
+                lijnLaag.appendChild(el);
+                set[soort] = el;
+            }
+            el.setAttribute('d', d);
+        }
+    }
+
+    // ── Tekenen ───────────────────────────────────────────────────────────
+
     function tekenKnoop(dn) {
         var o = opmaak(dn);
-        var bx = dn.cx - dn.w / 2, by = dn.y;
         var s = [], kl = 'sb-node', sleutel;
         if (dn.soort === 'keten') {
             kl += ' is-keten';
@@ -288,81 +454,105 @@
             if (dn.id === gekozen) kl += ' is-gekozen';
             sleutel = ' data-id="' + esc(dn.id) + '"';
         }
-        s.push('<g class="' + kl + '"' + sleutel + '><title>' + esc(o.titel) + '</title>');
-        s.push('<rect class="sb-doos" x="' + bx.toFixed(1) + '" y="' + by + '" width="' + dn.w +
-               '" height="' + DOOS_H + '" rx="4"/>');
-        var tx = bx + PAD, ty = by + 15;
-        s.push('<text class="sb-naam" x="' + tx.toFixed(1) + '" y="' + ty + '">' + esc(o.naam) + '</text>');
+        s.push('<g class="' + kl + '" transform="translate(' + f(dn.px) + ' ' + f(dn.py) + ')"' +
+               sleutel + '><title>' + esc(o.titel) + '</title>');
+        s.push('<rect class="sb-doos" x="0" y="0" width="' + dn.w +
+               '" height="' + DOOS_H + '" rx="3"/>');
+        s.push('<text class="sb-naam" x="' + PAD + '" y="' + BASIS + '">' + esc(o.naam) + '</text>');
         if (o.bij) {
-            s.push('<text class="sb-bij" x="' + (tx + o.naamB + 5).toFixed(1) + '" y="' + ty + '">' +
+            s.push('<text class="sb-bij" x="' + f(PAD + o.naamB + 6) + '" y="' + BASIS + '">' +
                    esc(o.bij) + '</text>');
         }
-        s.push('</g>');
         if (o.badge) {
-            var kx = bx + dn.w - PAD - o.badgeB;
+            var kx = dn.w - PAD - o.badgeB;
             var attr = dn.soort === 'keten'
                 ? ' data-keten="' + esc(dn.id) + '"'
                 : ' data-klap="' + esc(dn.id) + '"';
             s.push('<g class="sb-badge' + (dn.soort === 'keten' ? ' is-keten' : '') + '"' + attr + '>' +
-                   '<rect x="' + kx.toFixed(1) + '" y="' + (by + 5) + '" width="' + o.badgeB.toFixed(1) +
-                   '" height="12" rx="6"/>' +
-                   '<text x="' + (kx + o.badgeB / 2).toFixed(1) + '" y="' + (by + 14) +
+                   '<rect x="' + f(kx) + '" y="' + ((DOOS_H - 14) / 2) + '" width="' + f(o.badgeB) +
+                   '" height="14" rx="7"/>' +
+                   '<text x="' + f(kx + o.badgeB / 2) + '" y="' + ((DOOS_H - 14) / 2 + 10) +
                    '" text-anchor="middle">' + esc(o.badge) + '</text></g>');
         }
+        s.push('</g>');
         return s.join('');
     }
 
     function teken() {
         var wortel = maakKnoop(DATA.wortel, false);
-        meetBlok(wortel);
-        plaatsBlok(wortel, 0, 0);
+        plaatsKnoop(wortel, 0, 0);
         var knopen = alleKnopen(wortel);
 
-        var s = [], i, j;
-        var minX = 1e9, maxX = -1e9, maxY = -1e9;
-        plaats = {};
+        var i, j, dn;
+        knoopVan = {}; ouderVan = {}; elVan = {}; lijnEl = {}; plaats = {};
 
-        // Verbindingslijnen eerst, zodat de vakjes erbovenop komen te liggen.
+        // Handmatig verplaatste knopen: het verzet bovenop de indeling leggen.
         for (i = 0; i < knopen.length; i++) {
-            var dn = knopen[i];
+            dn = knopen[i];
+            var sl = sleutelVan(dn);
+            knoopVan[sl] = dn;
+            var v = verzet[sl];
+            dn.px = dn.x + (v ? v.dx : 0);
+            dn.py = dn.y + (v ? v.dy : 0);
             for (j = 0; j < dn.kinderen.length; j++) {
-                var kd = dn.kinderen[j];
-                var y1 = dn.y + DOOS_H, my = y1 + V_GAP / 2;
-                var kl = 'sb-lijn';
-                if (opHoofdlijn(dn) && opHoofdlijn(kd)) kl += ' is-lijn';
-                if (kd.soort === 'persoon' && persoon(kd.id).viaMoeder) kl += ' is-via';
-                s.push('<path class="' + kl + '" d="M' + dn.cx.toFixed(1) + ' ' + y1 +
-                       'V' + my + 'H' + kd.cx.toFixed(1) + 'V' + kd.y + '"/>');
+                ouderVan[sleutelVan(dn.kinderen[j])] = dn;
             }
         }
+
+        var lijnen = [], vakjes = [];
+        var minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
 
         for (i = 0; i < knopen.length; i++) {
-            var n = knopen[i];
-            s.push(tekenKnoop(n));
-            var bx = n.cx - n.w / 2;
-            if (bx < minX) minX = bx;
-            if (bx + n.w > maxX) maxX = bx + n.w;
-            if (n.y + DOOS_H > maxY) maxY = n.y + DOOS_H;
-            var mid = { x: n.cx, y: n.y + DOOS_H / 2 };
-            if (n.soort === 'keten') {
-                plaats['keten:' + n.id] = mid;
-                for (j = 0; j < n.ids.length; j++) plaats[n.ids[j]] = mid;
+            dn = knopen[i];
+            var paden = lijnPaden(dn);
+            var sleutel = sleutelVan(dn);
+            for (var soort in paden) {
+                if (!paden[soort]) continue;
+                lijnen.push('<path class="' + LIJN_KLASSE[soort] + '" data-van="' + esc(sleutel) +
+                            '" data-stijl="' + soort + '" d="' + paden[soort] + '"/>');
+            }
+            vakjes.push(tekenKnoop(dn));
+
+            if (dn.px < minX) minX = dn.px;
+            if (dn.px + dn.w > maxX) maxX = dn.px + dn.w;
+            if (dn.py < minY) minY = dn.py;
+            if (dn.py + DOOS_H > maxY) maxY = dn.py + DOOS_H;
+
+            var mid = { x: dn.px + dn.w / 2, y: dn.py + DOOS_H / 2 };
+            if (dn.soort === 'keten') {
+                plaats['keten:' + dn.id] = mid;
+                for (j = 0; j < dn.ids.length; j++) plaats[dn.ids[j]] = mid;
             } else {
-                plaats[n.id] = mid;
+                plaats[dn.id] = mid;
             }
         }
 
-        laatsteBox = { x: minX - 10, y: -10, w: (maxX - minX) + 20, h: maxY + 20 };
+        laatsteBox = { x: minX - 12, y: minY - 12, w: (maxX - minX) + 24, h: (maxY - minY) + 24 };
 
         var laden = document.getElementById('sb-laden');
         if (laden && laden.parentNode) laden.parentNode.removeChild(laden);
         var oud = canvas.querySelector('svg');
         if (oud) canvas.removeChild(oud);
         var houder = document.createElement('div');
-        houder.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" aria-label="Stamboom van Adam tot Jezus">' +
-                           '<g id="sb-g">' + s.join('') + '</g></svg>';
+        houder.innerHTML = '<svg xmlns="' + SVGNS + '" aria-label="Stamboom van Adam tot Jezus">' +
+                           '<g id="sb-g"><g id="sb-lijnen">' + lijnen.join('') +
+                           '</g><g id="sb-knopen">' + vakjes.join('') + '</g></g></svg>';
         canvas.insertBefore(houder.firstChild, canvas.firstChild);
         gEl = document.getElementById('sb-g');
+        lijnLaag = document.getElementById('sb-lijnen');
+        knoopLaag = document.getElementById('sb-knopen');
+
+        // Verwijzingen bewaren, zodat één verplaatste naam niet de hele
+        // tekening opnieuw hoeft te laten opbouwen.
+        var ps = lijnLaag.childNodes;
+        for (i = 0; i < ps.length; i++) {
+            var van = ps[i].getAttribute('data-van');
+            (lijnEl[van] || (lijnEl[van] = {}))[ps[i].getAttribute('data-stijl')] = ps[i];
+        }
+        var gs = knoopLaag.childNodes;
+        for (i = 0; i < gs.length && i < knopen.length; i++) elVan[sleutelVan(knopen[i])] = gs[i];
+
+        toonHerstel();
         pasToe();
     }
 
@@ -394,10 +584,10 @@
         pasToe();
     }
 
-    function zoomKnop(f) {
+    function zoomKnop(fac) {
         var m = maat();
         aangeraakt = true;
-        zoomNaar(view.k * f, m.b / 2, m.h / 2);
+        zoomNaar(view.k * fac, m.b / 2, m.h / 2);
     }
 
     function centreerOp(id, minK) {
@@ -410,21 +600,138 @@
         pasToe();
     }
 
-    function passend(maxSchaal) {
+    /** maxSchaal begrenst het inzoomen; opBreedte houdt de BREEDTE leidend.
+     *
+     *  Een register is hoog en smal. Alles in één keer passend maken levert bij
+     *  een opengeklapte boom een streepje van negentig pixels op waar niets meer
+     *  in te lezen valt. Met opBreedte wordt daarom nooit verder uitgezoomd dan
+     *  de breedte vraagt (en nooit onder ware grootte als de breedte al past);
+     *  verticaal scrolt de lezer mee, met Adam bovenaan. Scheelt het in de
+     *  hoogte maar een randje, dan komt dat randje er alsnog bij. */
+    function passend(maxSchaal, opBreedte) {
         if (!laatsteBox) return;
         var m = maat();
-        var k = Math.min(m.b / laatsteBox.w, m.h / laatsteBox.h);
+        var kb = m.b / laatsteBox.w, kh = m.h / laatsteBox.h;
+        var k = Math.min(kb, kh, maxSchaal || MAX_K);
+        if (opBreedte) {
+            var bodem = Math.min(kb, 1);
+            if (k < bodem) k = (kh >= bodem * 0.9) ? kh : bodem;
+        }
         view.k = klem(k, MIN_K, maxSchaal || MAX_K);
         view.x = (m.b - laatsteBox.w * view.k) / 2 - laatsteBox.x * view.k;
-        view.y = (m.h - laatsteBox.h * view.k) / 2 - laatsteBox.y * view.k;
+        var hoogte = laatsteBox.h * view.k;
+        if (hoogte > m.h) view.y = 12 - laatsteBox.y * view.k;   // bovenaan beginnen
+        else view.y = (m.h - hoogte) / 2 - laatsteBox.y * view.k;
         pasToe();
     }
 
     function beginBeeld() {
         // De ingeklapte boom hoort in zijn geheel in beeld te staan. Past hij
-        // ruim, dan mag hij tot 1,4× opgeschaald worden zodat hij op een groot
-        // scherm niet als postzegel middenin blijft staan.
-        passend(1.4);
+        // ruim, dan mag hij tot 1,4× opgeschaald worden; past hij alleen in de
+        // breedte, dan blijft hij op ware grootte staan met Adam bovenaan.
+        passend(1.4, true);
+    }
+
+    // ── Knopen met de hand verplaatsen ────────────────────────────────────
+
+    function leesVerzet() {
+        try {
+            var s = localStorage.getItem(OPSLAG_VERZET);
+            var o = s ? JSON.parse(s) : null;
+            if (o && typeof o === 'object') verzet = o;
+        } catch (e) { /* privémodus */ }
+    }
+
+    function bewaarVerzet() {
+        try {
+            if (heeftVerzet()) localStorage.setItem(OPSLAG_VERZET, JSON.stringify(verzet));
+            else localStorage.removeItem(OPSLAG_VERZET);
+        } catch (e) { /* privémodus */ }
+    }
+
+    function heeftVerzet() { for (var k in verzet) { if (verzet[k]) return true; } return false; }
+
+    function toonHerstel() {
+        var el = document.getElementById('sb-herschik');
+        if (el) el.hidden = !heeftVerzet();
+    }
+
+    function zetVerzet(sl, dx, dy) {
+        verzet[sl] = { dx: Math.round(dx * 10) / 10, dy: Math.round(dy * 10) / 10 };
+        var dn = knoopVan[sl];
+        if (!dn) return;
+        dn.px = dn.x + verzet[sl].dx;
+        dn.py = dn.y + verzet[sl].dy;
+        var el = elVan[sl];
+        if (el) el.setAttribute('transform', 'translate(' + f(dn.px) + ' ' + f(dn.py) + ')');
+        var mid = { x: dn.px + dn.w / 2, y: dn.py + DOOS_H / 2 };
+        plaats[sl] = mid;
+        if (dn.soort === 'keten') {
+            for (var i = 0; i < dn.ids.length; i++) plaats[dn.ids[i]] = mid;
+        } else {
+            plaats[dn.id] = mid;
+        }
+        hertekenLijnen(dn);
+        var ou = ouderVan[sl];
+        if (ou) hertekenLijnen(ou);
+    }
+
+    function herschik() {
+        verzet = {};
+        bewaarVerzet();
+        teken();
+        aangeraakt = true;
+    }
+
+    /** Geeft de sleutel van de knoop onder een aangeraakt element, of null.
+     *  Een tik op de telbadge telt niet als vastpakken: die klapt open. */
+    function knoopOnder(el) {
+        while (el && el !== canvas) {
+            if (el.getAttribute) {
+                var kl = el.getAttribute('class');
+                if (kl && kl.indexOf('sb-badge') > -1) return null;
+                if (kl && kl.indexOf('sb-node') > -1) {
+                    var id = el.getAttribute('data-id');
+                    if (id) return id;
+                    var kt = el.getAttribute('data-keten');
+                    if (kt) return 'keten:' + kt;
+                    return null;
+                }
+            }
+            el = el.parentNode;
+        }
+        return null;
+    }
+
+    var sleepKnoop = null;
+
+    function beginKnoopSleep(sl, cx, cy) {
+        var oud = verzet[sl] || { dx: 0, dy: 0 };
+        sleepKnoop = { sl: sl, x: cx, y: cy, dx0: oud.dx, dy0: oud.dy, actief: false };
+    }
+
+    function knoopSleepStap(cx, cy) {
+        if (!sleepKnoop) return;
+        if (!sleepKnoop.actief) {
+            sleepKnoop.actief = true;
+            var el = elVan[sleepKnoop.sl];
+            if (el) el.setAttribute('class', el.getAttribute('class') + ' is-pakt');
+        }
+        zetVerzet(sleepKnoop.sl,
+            sleepKnoop.dx0 + (cx - sleepKnoop.x) / view.k,
+            sleepKnoop.dy0 + (cy - sleepKnoop.y) / view.k);
+    }
+
+    function eindKnoopSleep() {
+        if (!sleepKnoop) return;
+        if (sleepKnoop.actief) {
+            var el = elVan[sleepKnoop.sl];
+            if (el) el.setAttribute('class', el.getAttribute('class').replace(/ is-pakt/, ''));
+            bewaarVerzet();
+            toonHerstel();
+            aangeraakt = true;
+        }
+        sleepKnoop = null;
     }
 
     // ── Muis ──────────────────────────────────────────────────────────────
@@ -433,11 +740,21 @@
 
     canvas.addEventListener('mousedown', function (e) {
         if (raakteBezig || e.button !== 0) return;
-        sleep = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y };
         verplaatst = 0;
+        var sl = knoopOnder(e.target);
+        if (sl) { beginKnoopSleep(sl, e.clientX, e.clientY); return; }
+        sleep = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y };
         canvas.classList.add('sb-sleept');
     });
     window.addEventListener('mousemove', function (e) {
+        if (sleepKnoop) {
+            var ax = e.clientX - sleepKnoop.x, ay = e.clientY - sleepKnoop.y;
+            verplaatst = Math.max(verplaatst, Math.abs(ax) + Math.abs(ay));
+            if (!sleepKnoop.actief && verplaatst < 5) return;
+            knoopSleepStap(e.clientX, e.clientY);
+            verbergHint();
+            return;
+        }
         if (!sleep) return;
         var dx = e.clientX - sleep.x, dy = e.clientY - sleep.y;
         verplaatst = Math.max(verplaatst, Math.abs(dx) + Math.abs(dy));
@@ -448,6 +765,7 @@
         verbergHint();
     });
     window.addEventListener('mouseup', function () {
+        eindKnoopSleep();
         sleep = null;
         canvas.classList.remove('sb-sleept');
     });
@@ -457,28 +775,51 @@
         var m = maat();
         // Eén sprong per gebeurtenis begrenzen: sommige trackpads sturen enorme
         // deltaY-waarden en de boom zou dan wegschieten.
-        var f = klem(Math.pow(0.9982, e.deltaY * (e.deltaMode === 1 ? 16 : 1)), 0.6, 1.6);
+        var fac = klem(Math.pow(0.9982, e.deltaY * (e.deltaMode === 1 ? 16 : 1)), 0.6, 1.6);
         aangeraakt = true;
-        zoomNaar(view.k * f, e.clientX - m.l, e.clientY - m.t);
+        zoomNaar(view.k * fac, e.clientX - m.l, e.clientY - m.t);
         verbergHint();
     }, { passive: false });
 
     // ── Aanraking ─────────────────────────────────────────────────────────
+    //
+    // Eén vinger verschuift het beeld. Wie een naam wil verplaatsen houdt hem
+    // even vast: na een halve seconde stilstaan pakt de vinger de naam op.
 
-    var raak = null;
+    var raak = null, pakTimer = null;
 
     function afstand(t) {
         var dx = t[0].clientX - t[1].clientX, dy = t[0].clientY - t[1].clientY;
         return Math.sqrt(dx * dx + dy * dy);
     }
 
+    function stopPakTimer() {
+        if (pakTimer) { clearTimeout(pakTimer); pakTimer = null; }
+    }
+
     canvas.addEventListener('touchstart', function (e) {
         raakteBezig = true;
+        stopPakTimer();
         var t = e.touches;
         if (t.length === 1) {
             raak = { soort: 1, x: t[0].clientX, y: t[0].clientY, vx: view.x, vy: view.y };
             verplaatst = 0;
+            var sl = knoopOnder(e.target);
+            if (sl) {
+                var cx = t[0].clientX, cy = t[0].clientY;
+                pakTimer = setTimeout(function () {
+                    pakTimer = null;
+                    if (verplaatst > 8) return;
+                    // Het kleine beetje verschuiving van het beeld terugdraaien.
+                    view.x = raak.vx; view.y = raak.vy;
+                    pasToe();
+                    beginKnoopSleep(sl, cx, cy);
+                    knoopSleepStap(cx, cy);
+                    verbergHint();
+                }, 450);
+            }
         } else if (t.length >= 2) {
+            eindKnoopSleep();
             var m = maat();
             raak = {
                 soort: 2, d: afstand(t), k: view.k,
@@ -496,9 +837,15 @@
         if (!raak) return;
         e.preventDefault();
         var t = e.touches;
+        if (sleepKnoop && t.length === 1) {
+            knoopSleepStap(t[0].clientX, t[0].clientY);
+            verplaatst = 99;
+            return;
+        }
         if (raak.soort === 1 && t.length === 1) {
             var dx = t[0].clientX - raak.x, dy = t[0].clientY - raak.y;
             verplaatst = Math.max(verplaatst, Math.abs(dx) + Math.abs(dy));
+            if (verplaatst > 8) stopPakTimer();
             view.x = raak.vx + dx;
             view.y = raak.vy + dy;
             aangeraakt = true;
@@ -521,7 +868,9 @@
     }, { passive: false });
 
     function raakEinde(e) {
+        stopPakTimer();
         if (e.touches && e.touches.length === 0) {
+            eindKnoopSleep();
             raak = null;
             setTimeout(function () { raakteBezig = false; }, 350);
         } else if (e.touches && e.touches.length === 1 && raak && raak.soort === 2) {
@@ -663,7 +1012,7 @@
         if (go) gaNaar(go);
     });
 
-    /** Vouwt precies genoeg open om deze persoon als eigen rij te tonen. */
+    /** Vouwt precies genoeg open om deze persoon als eigen regel te tonen. */
     function maakZichtbaar(id) {
         var pad = [], p = persoon(id);
         while (p) { pad.unshift(p.id); p = p.ouder ? persoon(p.ouder) : null; }
@@ -832,10 +1181,11 @@
         aangeraakt = false;
         bewaar();
     });
-    knop('sb-alles', function () { alles(true); teken(); passend(); aangeraakt = true; bewaar(); });
+    knop('sb-alles', function () { alles(true); teken(); beginBeeld(); aangeraakt = true; bewaar(); });
     knop('sb-passend', function () { aangeraakt = true; passend(); });
     knop('sb-in', function () { zoomKnop(1.25); });
     knop('sb-uit', function () { zoomKnop(0.8); });
+    knop('sb-herschik', herschik);
 
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && !kaart.hidden) sluitKaart();
@@ -873,6 +1223,7 @@
         P = json.personen;
         bepaalSpineKinderen();
         bouwSprongen();
+        leesVerzet();
 
         var st = leesToestand();
         var heeftPersoon = pasToestandToe(st);

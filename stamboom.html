@@ -110,6 +110,9 @@
                 var(--bg-surface, #fff);
             touch-action: none;
             -webkit-user-select: none; user-select: none;
+            /* Een naam oppakken gaat op de telefoon met lang indrukken; zonder
+               dit zet Safari daar zijn eigen vergrootglas/menu overheen. */
+            -webkit-touch-callout: none;
             -webkit-tap-highlight-color: transparent;
             cursor: grab;
         }
@@ -121,40 +124,55 @@
         }
         .sb-canvas svg { display: block; width: 100%; height: 100%; }
 
-        /* Vakjes. De maten staan in js/stamboom.js — hier alleen kleur en letter. */
-        .sb-doos { fill: var(--bg-surface, #fff); stroke: var(--border-default, #d4d0c8); stroke-width: 1; }
-        .sb-node text { font-family: var(--font-body); fill: var(--text-primary, #333); }
-        .sb-naam { font-size: 11.5px; }
-        .sb-bij { font-size: 10px; fill: var(--text-muted, #888); }
-        .sb-node { cursor: pointer; }
-        .sb-node:hover .sb-doos { stroke: var(--gold); stroke-width: 1.6; }
-        .sb-node.is-vrouw .sb-doos { fill: rgba(203,164,73,0.10); }
-        .sb-node.is-volk .sb-doos { stroke-dasharray: 3 3; fill: none; }
-        .sb-node.is-volk .sb-naam { fill: var(--text-muted, #888); font-style: italic; }
-        .sb-node.is-lijn .sb-doos { stroke: var(--gold); stroke-width: 1.6; }
-        .sb-node.is-anker .sb-naam { font-weight: 600; }
-        .sb-node.is-keten .sb-doos {
-            fill: rgba(146,182,180,0.14); stroke: var(--teal, #76978a);
-            stroke-width: 1.4; stroke-dasharray: 5 3;
+        /* Vakjes. De maten staan in js/stamboom.js — hier alleen kleur en letter.
+           Opzet als een gedrukt familieregister: serif-namen, hairline-randen,
+           geen felle vlakken. Alleen de hoofdlijn draagt goud. */
+        .sb-doos {
+            fill: var(--bg-surface, #fff); stroke: var(--border-soft, #e8e4dc);
+            stroke-width: 1;
         }
-        .sb-node.is-keten .sb-naam { fill: var(--teal, #4a6b62); }
-        .sb-node.is-gekozen .sb-doos { fill: var(--navy); stroke: var(--gold); stroke-width: 2; }
-        .sb-node.is-gekozen .sb-naam { fill: #fff; font-weight: 600; }
-        .sb-node.is-gekozen .sb-bij { fill: rgba(255,255,255,0.72); }
+        .sb-node text { font-family: var(--font-serif); fill: var(--navy, #142e42); }
+        .sb-naam { font-size: 15px; }
+        .sb-bij { font-size: 12.5px; font-style: italic; fill: var(--text-muted, #888); }
+        .sb-node { cursor: pointer; }
+        .sb-node:hover .sb-doos { stroke: var(--gold); }
+        .sb-node.is-vrouw .sb-doos { fill: rgba(203,164,73,0.08); }
+        .sb-node.is-volk .sb-doos { stroke-dasharray: 2 3; }
+        .sb-node.is-volk .sb-naam { fill: var(--text-muted, #888); font-style: italic; }
+        .sb-node.is-lijn .sb-doos { stroke: rgba(203,164,73,0.85); }
+        .sb-node.is-anker .sb-doos { stroke: var(--gold); stroke-width: 1.3; }
+        .sb-node.is-anker .sb-naam { font-weight: 600; letter-spacing: .015em; }
+        .sb-node.is-keten .sb-doos {
+            fill: rgba(146,182,180,0.09); stroke: rgba(146,182,180,0.85);
+            stroke-width: 1; stroke-dasharray: 4 3;
+        }
+        .sb-node.is-keten .sb-naam { fill: var(--text-secondary, #555); font-style: italic; }
+        .sb-node.is-gekozen .sb-doos { fill: var(--navy); stroke: var(--gold); stroke-width: 1.4; }
+        .sb-node.is-gekozen .sb-naam { fill: #fdfbf6; }
+        .sb-node.is-gekozen .sb-bij { fill: rgba(255,255,255,0.70); }
+        /* Terwijl een naam met de hand verplaatst wordt. */
+        .sb-node.is-pakt { cursor: grabbing; }
+        .sb-node.is-pakt .sb-doos { stroke: var(--gold); stroke-width: 1.6; }
+        :root[data-theme="donker"] .sb-node text { fill: var(--text-primary, #e8e6e0); }
         :root[data-theme="donker"] .sb-node.is-keten .sb-naam { fill: var(--teal-light, #a5c4b8); }
         :root[data-theme="donker"] .sb-node.is-gekozen .sb-doos { fill: #2b3a46; }
 
-        .sb-lijn { fill: none; stroke: var(--border-default, #d4d0c8); stroke-width: 1.4; }
-        .sb-lijn.is-lijn { stroke: var(--gold); stroke-width: 2; }
+        /* Dunne, rustige verbindingslijnen — de rail links met een streepje
+           naar elk kind, zoals in een gedrukte geslachtslijst. */
+        .sb-lijn { fill: none; stroke: var(--border-default, #d4d0c8); stroke-width: 1; }
+        /* De rail loopt langs een hele zijtak en kan duizenden pixels lang zijn;
+           lichter dan de streepjes naar de kinderen, anders overheerst hij. */
+        .sb-lijn.is-rail { stroke: var(--border-soft, #e8e4dc); }
+        .sb-lijn.is-lijn { stroke: rgba(203,164,73,0.9); stroke-width: 1.2; }
         .sb-lijn.is-via { stroke-dasharray: 4 3; }
 
         /* Telbadge: "+12" opent de zijtakken, "8 gen." vouwt een keten uit. */
         .sb-badge { cursor: pointer; }
-        .sb-badge rect { fill: rgba(203,164,73,0.20); stroke: none; }
-        .sb-badge text { font-size: 9px; font-weight: 600; fill: #8a6d1f; font-family: var(--font-body); }
-        .sb-badge.is-keten rect { fill: rgba(146,182,180,0.30); }
+        .sb-badge rect { fill: none; stroke: rgba(203,164,73,0.55); stroke-width: 1; }
+        .sb-badge text { font-size: 9.5px; font-weight: 600; fill: #8a6d1f; font-family: var(--font-body); }
+        .sb-badge.is-keten rect { stroke: rgba(146,182,180,0.75); }
         .sb-badge.is-keten text { fill: #3f6058; }
-        .sb-badge:hover rect { fill: var(--gold); }
+        .sb-badge:hover rect { fill: var(--gold); stroke: var(--gold); }
         .sb-badge:hover text { fill: #fff; }
         :root[data-theme="donker"] .sb-badge text { fill: var(--gold); }
         :root[data-theme="donker"] .sb-badge.is-keten text { fill: var(--teal-light, #a5c4b8); }
@@ -233,9 +251,9 @@
         @media (max-width: 760px) {
             .sb-intro { padding: 14px 14px 2px; }
             .sb-lead { font-size: 13.5px; padding: 7px 12px; margin-bottom: 10px; }
-            /* Hoog genoeg om de volledig ingeklapte boom (18 rijen, ± 552 px)
-               op een telefoon van 390 × 844 in één keer te tonen. */
-            .sb-canvas { height: 68vh; min-height: 360px; }
+            /* Hoog genoeg om de volledig ingeklapte boom (18 regels) op een
+               telefoon van 390 × 844 in één keer te tonen. */
+            .sb-canvas { height: 74vh; min-height: 380px; }
             .sb-sprong {
                 width: 100%; flex-wrap: nowrap; overflow-x: auto;
                 -webkit-overflow-scrolling: touch; padding-bottom: 2px;
@@ -282,6 +300,8 @@
         <button type="button" id="sb-hoofdlijn" title="Alles dicht: alleen de lijn van Adam tot Jezus">Inklappen</button>
         <button type="button" id="sb-alles">Alles open</button>
         <button type="button" id="sb-passend">Passend</button>
+        <button type="button" id="sb-herschik" hidden
+                title="Zet met de hand verplaatste namen terug op hun plek">Indeling herstellen</button>
         <button type="button" class="sb-icon" id="sb-uit" aria-label="Uitzoomen">−</button>
         <button type="button" class="sb-icon" id="sb-in" aria-label="Inzoomen">+</button>
         <span class="sb-sprong" id="sb-sprong"></span>
@@ -290,7 +310,7 @@
     <div class="sb-wrap">
         <div class="sb-canvas" id="sb-canvas">
             <div class="sb-laden" id="sb-laden">Stamboom wordt geladen…</div>
-            <div class="sb-hint" id="sb-hint">Tik op <b>+12</b> voor de zijtakken, op een gestreept vakje voor de tussenliggende generaties</div>
+            <div class="sb-hint" id="sb-hint">Tik op <b>+12</b> voor de zijtakken, op een gestreept vakje voor de generaties ertussen</div>
         </div>
         <aside class="sb-kaart" id="sb-kaart" hidden aria-live="polite"></aside>
     </div>
@@ -301,7 +321,9 @@
         <span><i>+12</i> telbadge: zoveel kinderen staan nog dicht</span>
         <span>getinte vakjes: vrouwen</span>
         <span>cursief en gestreept: volken in plaats van personen (Genesis 10)</span>
-        <span>Sleep om te verschuiven, knijp of scroll om te zoomen. Wat u openklapt blijft in de adresbalk staan, zodat u de link kunt delen.</span>
+        <span>De namen staan ingesprongen: elk vertakkingsniveau een stukje naar rechts, met een dunne lijn van de ouder naar elk kind. Broers en zussen zonder nakomelingen lopen terug over meerdere regels.</span>
+        <span>Sleep om te verschuiven, knijp of scroll om te zoomen. Een naam die in de weg staat kunt u zelf verslepen — op de telefoon door hem even vast te houden; met <b>Indeling herstellen</b> springt alles terug.</span>
+        <span>Wat u openklapt blijft in de adresbalk staan, zodat u de link kunt delen.</span>
     </p>
 
     <script src="js/stamboom.js"></script>

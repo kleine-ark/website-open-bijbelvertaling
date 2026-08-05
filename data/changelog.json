@@ -1,6 +1,56 @@
 {
  "wijzigingen": [
   {
+   "versie": "v0.26.0",
+   "datum": "2026-08-04",
+   "items": [
+    {
+     "type": "feature",
+     "beschrijving": "Stamboom opnieuw getekend als ingesprongen register, zoals een gedrukte geslachtslijst. Met alles open ging de breedte van 19.462 naar 1.004 pixels. Namen zijn nu ook met de hand te verslepen, en de opmaak is klassieker: EB Garamond, dunne lijnen, goud alleen voor de hoofdlijn."
+    },
+    {
+     "type": "feature",
+     "beschrijving": "Latijns woordenboek uitgebreid: 3803 van de 3961 vermeldingen hebben nu woordsoort, stamvormen, genummerde betekenissen en een vormanalyse. Verbogen vormen zijn aan hun stamwoord geknoopt, dus filiorum toont het volledige artikel van filius."
+    },
+    {
+     "type": "feature",
+     "beschrijving": "Geneste citaten zijn Bijbelbreed gemarkeerd: van 77 naar 691 verzen in 48 boeken. Een citaat binnen een citaat wordt geel weergegeven."
+    },
+    {
+     "type": "feature",
+     "beschrijving": "Exodus 1 tot en met 5 nagekeken. De teller staat op 46 boeken, 552 hoofdstukken en 14.483 verzen, oftewel 38,9 procent."
+    },
+    {
+     "type": "feature",
+     "beschrijving": "Nieuw onderwerp: moet je altijd de waarheid spreken, ook als er levens van afhangen? Zeventien verzen, met zowel de verloskundigen die Farao voorlogen als de teksten die de leugen veroordelen."
+    },
+    {
+     "type": "fix",
+     "beschrijving": "In de wiki verscheen de site binnen zichzelf: elke pagina bracht in het iframe zijn eigen bovenbalk mee, en acht pagina's ook een tweede zijbalk. Opgelost op een plek, voor alle pagina's tegelijk."
+    },
+    {
+     "type": "fix",
+     "beschrijving": "128 verzen hadden scheve opmaak: een verkeerde sluitvolgorde in Genesis 1 tot en met 20 en een zwevende cursief in Johannes. Browsers repareerden dat stil, maar scripts liepen erop stuk - daardoor waren die verzen overgeslagen bij het markeren van citaten."
+    },
+    {
+     "type": "fix",
+     "beschrijving": "Feedback komt nu rechtstreeks per mail aan, zonder dat de lezer hoeft in te loggen."
+    },
+    {
+     "type": "bulk",
+     "beschrijving": "Drie principes Bijbelbreed: kinderen van Israel wordt Israelieten (621 verzen), ambtlieden wordt voormannen, en lasten wordt dwangarbeid - dat laatste alleen in Exodus 1 tot en met 6, want elders betekent het belastingen."
+    },
+    {
+     "type": "systeem",
+     "beschrijving": "Vastgelegd dat een principe eenmalig werkt vanuit de tekst van 1888. Wat een principe oplevert mag niet door een tweede principe worden aangepakt, anders draaien ze elkaar terug. scripts/audit_principes.py controleert de lijst daarop."
+    },
+    {
+     "type": "systeem",
+     "beschrijving": "Bronvermelding bij de maten en gewichten: per waarde staat er nu op welke vondst of tekst hij rust, van de tunnel van Siloam tot de kruikscherven uit Lachis."
+    }
+   ]
+  },
+  {
    "versie": "v0.25.0",
    "datum": "2026-08-04",
    "items": [

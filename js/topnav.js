@@ -21,7 +21,7 @@
     }
 
     nav.innerHTML =
-        '<div class="topnav-brand">Open Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.25.0</a></span></div>' +
+        '<div class="topnav-brand">Open Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.26.0</a></span></div>' +
         '<div class="topnav-links" id="topnav-links">' +
             '<a href="over-ov.html">Over OV</a>' +
             '<a href="index.html#johannes/1">Tekst</a>' +
