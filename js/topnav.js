@@ -6,6 +6,20 @@
     var nav = document.getElementById('topnav');
     if (!nav) return;
 
+    /* Ingebed in de wiki? Die laadt pagina's in een iframe, en dan verschijnt
+       de hele site nóg een keer binnen zichzelf: een tweede bovenbalk, en bij
+       acht pagina's ook een tweede documentatie-zijbalk. Binnen een iframe
+       renderen we daarom geen navigatie en laden we de zweefknoppen niet. De
+       markering op <html> laat de CSS de eigen zijbalk van de pagina en de
+       lege balk verbergen. */
+    var ingebed;
+    try { ingebed = window.self !== window.top; }
+    catch (e) { ingebed = true; }   // andere herkomst: dan zitten we zeker ingebed
+    if (ingebed) {
+        document.documentElement.classList.add('ov-ingebed');
+        return;
+    }
+
     nav.innerHTML =
         '<div class="topnav-brand">Open Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.25.0</a></span></div>' +
         '<div class="topnav-links" id="topnav-links">' +
