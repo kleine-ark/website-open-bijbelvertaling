@@ -287,7 +287,7 @@
       "number": 4,
       "textSV1888": "En met hen naar hun geslachten, naar hun vaderlijke huizen, waren de hopen des krijgsheirs zes en dertig duizend; want zij hadden vele vrouwen en kinderen.",
       "text1637": "Ende met hen nae hare geslachten, nae hare vaderlicke huysen, waren de hoopen des krijchs-heyrs, ses en dertich duysent: want sy [3] hadden vele wyven ende kinderen.",
-      "text2026": "En met hen naar hun geslachten, naar hun vaderlijke huizen, waren de hopen van de oorlogsheirs zes en dertig duizend; want zij hadden vele vrouwen en kinderen.",
+      "text2026": "En met hen naar hun geslachten, naar hun vaderlijke huizen, waren de hopen van de legers zes en dertig duizend; want zij hadden vele vrouwen en kinderen.",
       "marginNotes": [
         {
           "marker": "3",
@@ -369,14 +369,14 @@
           "morph": "HC/Ncmpa"
         }
       ],
-      "text2026_html": "En met hen naar hun geslachten, naar hun vaderlijke huizen, waren de hopen van de oorlogsheirs zes en dertig duizend; want zij<sup class=\"note-marker\" data-note=\"3\">3</sup> hadden vele vrouwen en kinderen.",
+      "text2026_html": "En met hen naar hun geslachten, naar hun vaderlijke huizen, waren de hopen van de legers zes en dertig duizend; want zij<sup class=\"note-marker\" data-note=\"3\">3</sup> hadden vele vrouwen en kinderen.",
       "textSV1888_html": "En met hen naar hun geslachten, naar hun vaderlijke huizen, waren de hopen des krijgsheirs zes en dertig duizend; want zij<sup class=\"note-marker\" data-note=\"3\">3</sup> hadden vele vrouwen en kinderen.",
       "text1637_html": "Ende met hen nae hare geslachten, nae hare vaderlicke huysen, waren de hoopen des krijchs-heyrs, ses en dertich duysent: want sy <sup class=\"note-marker\" data-note=\"3\">3</sup> hadden vele wyven ende kinderen.",
       "phraseDiff": [
         {
           "old": "des krijgsheirs",
-          "new": "van de oorlogsheirs",
-          "principe": "N3"
+          "new": "van de legers",
+          "principe": null
         }
       ]
     },
@@ -2983,7 +2983,7 @@
       "number": 40,
       "textSV1888": "Deze allen waren kinderen van Aser, hoofden der vaderlijke huizen, uitgelezene kloeke helden, hoofden der vorsten; en zij werden in geslachtsregisters geteld ten heire in den krijg; hun getal was zes en twintig duizend mannen.",
       "text1637": "Dese alle waren kinderen Asers, hoofden der vaderlicke huysen, [37] uytgelesene kloecke helden, hoofden der Vorsten: Ende sy werden in geslacht-registers getelt ten heyre inden krijch, haer getal was ses en twintich duysent mannen.",
-      "text2026": "Deze allen waren kinderen van Aser, hoofden van de vaderlijke huizen, uitgelezene kloeke helden, hoofden van de vorsten; en zij werden in geslachtsregisters geteld ten heire in de oorlog; hun getal was zes en twintig duizend mannen.",
+      "text2026": "Deze allen waren kinderen van Aser, hoofden van de vaderlijke huizen, uitgelezene kloeke helden, hoofden van de vorsten; en zij werden in geslachtsregisters geteld ten strijde in de oorlog; hun getal was zes en twintig duizend mannen.",
       "marginNotes": [
         {
           "marker": "37",
@@ -3095,7 +3095,7 @@
           "morph": "HAcbsa"
         }
       ],
-      "text2026_html": "Deze allen waren kinderen van Aser, hoofden van de vaderlijke<sup class=\"note-marker\" data-note=\"37\">37</sup> huizen, uitgelezene kloeke helden, hoofden van de vorsten; en zij werden in geslachtsregisters geteld ten heire in de oorlog; hun getal was zes en twintig duizend mannen.",
+      "text2026_html": "Deze allen waren kinderen van Aser, hoofden van de vaderlijke<sup class=\"note-marker\" data-note=\"37\">37</sup> huizen, uitgelezene kloeke helden, hoofden van de vorsten; en zij werden in geslachtsregisters geteld ten strijde in de oorlog; hun getal was zes en twintig duizend mannen.",
       "textSV1888_html": "Deze allen waren kinderen van Aser, hoofden der vaderlijke huizen,<sup class=\"note-marker\" data-note=\"37\">37</sup> uitgelezene kloeke helden, hoofden der vorsten; en zij werden in geslachtsregisters geteld ten heire in den krijg; hun getal was zes en twintig duizend mannen.",
       "text1637_html": "Dese alle waren kinderen Asers, hoofden der vaderlicke huysen, <sup class=\"note-marker\" data-note=\"37\">37</sup> uytgelesene kloecke helden, hoofden der Vorsten: Ende sy werden in geslacht-registers getelt ten heyre inden krijch, haer getal was ses en twintich duysent mannen.",
       "phraseDiff": [
@@ -3108,6 +3108,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "heire",
+          "new": "strijde",
+          "principe": null
         },
         {
           "old": "den krijg;",

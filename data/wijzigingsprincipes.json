@@ -515,9 +515,9 @@
   {
    "id": "O2",
    "categorie": "Overig",
-   "oud": "heir",
-   "nieuw": "legermacht",
-   "toelichting": "Verouderd woord",
+   "oud": "heir / heiren / heire / heirs / heirkracht / heirschaar / ten heire",
+   "nieuw": "leger / legers / legermacht / ten strijde",
+   "toelichting": "De verbogen vormen bleven eerst staan, waardoor 'leger' en 'heiren' door elkaar stonden. 'Ten heire' is een vaste uitdrukking die vrijwel altijd met 'uittrekken' samengaat; daar past 'ten strijde'.",
    "regex": "\\bheir\\b"
   },
   {
@@ -8750,6 +8750,38 @@
    "oud": "welke",
    "nieuw": "wie",
    "toelichting": "Na een voorzetsel verwijst 'welke' in de Statenvertaling ook naar personen: 'tot welke JAHWEH zei'. Dat kan in modern Nederlands alleen naar zaken verwijzen. Alleen vervangen waar het antecedent een persoon is; bij zaken blijft 'welke' staan.",
+   "regex": ""
+  },
+  {
+   "id": "V1007",
+   "categorie": "Verouderde woorden",
+   "oud": "vorsen",
+   "nieuw": "kikkers",
+   "toelichting": "'Vors' is de oude vorm van kikker en wordt nu voor 'vorst' of voor het werkwoord 'vorsen' aangezien. Alle vijftien plaatsen gaan over de plaag in Egypte of verwijzen daarnaar.",
+   "regex": ""
+  },
+  {
+   "id": "V1008",
+   "categorie": "Verouderde woorden",
+   "oud": "guichelaar / guichelaars",
+   "nieuw": "bezweerder / bezweerders",
+   "toelichting": "'Guichelaar' klinkt nu als goochelaar, iemand met kaarttrucs. Het gaat om waarzeggerij. Niet 'tovenaar' of 'waarzegger', want die staan in dezelfde opsomming (Deuteronomium 18:10, Daniel 2:2) en moeten van elkaar te onderscheiden blijven.",
+   "regex": ""
+  },
+  {
+   "id": "V1009",
+   "categorie": "Verouderde uitdrukkingen",
+   "oud": "ter oorzake van / ter oorzake dat",
+   "nieuw": "vanwege / omdat",
+   "toelichting": "Twee vormen met een eigen uitkomst: voor een zelfstandig naamwoord 'vanwege', voor een bijzin 'omdat'.",
+   "regex": ""
+  },
+  {
+   "id": "V1010",
+   "categorie": "Verouderde vormen",
+   "oud": "diene",
+   "nieuw": "zal dienen / dien / moet dienen",
+   "toelichting": "De aanvoegende wijs is verdwenen uit het Nederlands. Welke vorm ervoor in de plaats komt hangt van de zin af: een doelzin krijgt 'zal dienen' ('dat het Mij zal dienen'), een mededeling de gewone tegenwoordige tijd ('zo dien ik'), een aansporing 'moet dienen'.",
    "regex": ""
   }
  ]

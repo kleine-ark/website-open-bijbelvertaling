@@ -2642,7 +2642,7 @@
       "number": 24,
       "textSV1888": "Zo zult gij ze beiden uitbrengen tot de poort derzelver stad, en gij zult hen met stenen stenigen, dat zij sterven; de jonge dochter, ter oorzake, dat zij niet geroepen heeft in de stad, en den man, ter oorzake dat hij zijns naasten vrouw vernederd heeft; zo zult gij het boze uit het midden van u wegdoen.",
       "text1637": "So sult ghyse beyde uytbrengen tot de poorte der selver stadt, ende sultse met steenen steenigen, datse sterven; de jonge dochter, ter oorsake datse niet geroepen en heeft inde stadt, ende den man, ter oorsake dat hy sijns naesten wijf [34] vernedert heeft: so sult ghy het boose uyt het midden van u wech doen.",
-      "text2026": "Zo zult u ze beiden uitbrengen tot de poort van die stad, en u zult hen met stenen stenigen, dat zij sterven; het meisje, ter oorzake, dat zij niet geroepen heeft in de stad, en de man, ter oorzake dat hij de vrouw van zijn naaste vernederd heeft; zo zult u het boze uit het midden van u wegdoen.",
+      "text2026": "Zo zult u ze beiden uitbrengen tot de poort van die stad, en u zult hen met stenen stenigen, dat zij sterven; het meisje, omdat zij niet geroepen heeft in de stad, en de man, omdat hij de vrouw van zijn naaste vernederd heeft; zo zult u het boze uit het midden van u wegdoen.",
       "marginNotes": [
         {
           "marker": "34",
@@ -2809,7 +2809,7 @@
           "morph": "HR/Ncmsc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo zult u ze beiden uitbrengen tot de poort van die stad, en u zult hen met stenen stenigen, dat zij sterven; het meisje, ter oorzake, dat zij niet geroepen heeft in de stad, en de man, ter oorzake dat hij de vrouw van zijn naaste<sup class=\"note-marker\" data-note=\"34\">34</sup> vernederd heeft; zo zult u het boze uit het midden van u wegdoen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo zult u ze beiden uitbrengen tot de poort van die stad, en u zult hen met stenen stenigen, dat zij sterven; het meisje, omdat zij niet geroepen heeft in de stad, en de man, omdat hij de vrouw van zijn naaste<sup class=\"note-marker\" data-note=\"34\">34</sup> vernederd heeft; zo zult u het boze uit het midden van u wegdoen.</i></span>",
       "textSV1888_html": "Zo zult gij ze beiden uitbrengen tot de poort derzelver stad, en gij zult hen met stenen stenigen, dat zij sterven; de jonge dochter, ter oorzake, dat zij niet geroepen heeft in de stad, en den man, ter oorzake dat hij zijns naasten vrouw<sup class=\"note-marker\" data-note=\"34\">34</sup> vernederd heeft; zo zult gij het boze uit het midden van u wegdoen.",
       "text1637_html": "So sult ghyse beyde uytbrengen tot de poorte der selver stadt, ende sultse met steenen steenigen, datse sterven; de jonge dochter, ter oorsake datse niet geroepen en heeft inde stadt, ende den man, ter oorsake dat hy sijns naesten wijf <sup class=\"note-marker\" data-note=\"34\">34</sup> vernedert heeft: so sult ghy het boose uyt het midden van u wech doen.",
       "phraseDiff": [
@@ -2829,14 +2829,19 @@
           "principe": "A1"
         },
         {
-          "old": "de jonge dochter,",
-          "new": "het meisje,",
+          "old": "de jonge dochter, ter oorzake, dat",
+          "new": "het meisje, omdat",
           "principe": null
         },
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "ter oorzake dat",
+          "new": "omdat",
+          "principe": null
         },
         {
           "old": "zijns naasten",
