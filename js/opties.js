@@ -12,7 +12,7 @@ const Opties = {
         otSheol: 'dodenrijk',    // 'dodenrijk' (OT-context, modern) | 'hel' (SV-traditioneel)
         thema: 'auto',           // 'auto' (systeem) | 'licht' | 'donker'
         arabischeNamen: 'uit',   // 'uit' (Nederlandse namen) | 'aan' (Musa, Ibrahim, Isa …) — alleen OV-tekst
-        jezusYeshua: 'uit',      // 'uit' (Jezus) | 'aan' (Yeshua) — de Hebreeuwse naamvorm
+        jezusNaam: 'nl',         // 'nl' (Jezus Christus) | 'hebreeuws' (Yeshua HaMashiach) | 'koranisch' (Isa) | 'arabisch' (Yasūʿ al-Masīḥ)
         geoMarkeren: 'uit',      // 'uit' | 'aan' — geografische locaties in de tekst markeren (nu: Genesis)
         maatstelsel: 'bijbels',  // 'bijbels' (el, efa, sikkel) | 'metrisch' (meter, liter, gram) | 'imperiaal' (voet, gallon, pond)
     },
@@ -203,15 +203,29 @@ const Opties = {
         }
         // 'ov': geen transformatie
 
-        // === Jezus → Yeshua (optioneel) ===
-        // De Hebreeuwse vorm van de naam. "Jezus Sirach" blijft ongemoeid: dat
-        // is Ben Sira, een andere persoon, en de boektitel hoort niet te wijzigen.
-        if (this.state.jezusYeshua === 'aan') {
+        // === Naam van Jezus ===
+        // Vier keuzes. "Jezus Sirach" blijft altijd ongemoeid: dat is Ben Sira,
+        // een andere persoon, en de boektitel hoort niet te wijzigen.
+        //
+        // De samenstelling "Jezus Christus" moet vóór de losse naam staan,
+        // anders wordt eerst "Jezus" vervangen en blijft "Christus" los achter.
+        var NAAMVORMEN = {
+            hebreeuws: { vol: 'Yeshua HaMashiach', kort: 'Yeshua',
+                         volHoofd: 'YESHUA HAMASHIACH', kortHoofd: 'YESHUA' },
+            koranisch: { vol: 'Isa al-Masih', kort: 'Isa',
+                         volHoofd: 'ISA AL-MASIH', kortHoofd: 'ISA' },
+            arabisch:  { vol: 'Yasūʿ al-Masīḥ', kort: 'Yasūʿ',
+                         volHoofd: 'YASŪʿ AL-MASĪḤ', kortHoofd: 'YASŪʿ' },
+        };
+        var vorm = NAAMVORMEN[this.state.jezusNaam];
+        if (vorm) {
             out = this._replaceOutsideTags(out, [
                 // De Statenvertaling zet de naam in hoofdletters waar hij
-                // gegeven wordt (Mattheüs 1:21, 1:25). Die vorm blijft behouden.
-                [/\bJEZUS\b/g, 'YESHUA'],
-                [/\bJezus\b(?! Sirach)/g, 'Yeshua'],
+                // gegeven wordt (Mattheüs 1:21, 1:25). Dat blijft zo.
+                [/\bJEZUS CHRISTUS\b/g, vorm.volHoofd],
+                [/\bJezus Christus\b/g, vorm.vol],
+                [/\bJEZUS\b/g, vorm.kortHoofd],
+                [/\bJezus\b(?! Sirach)/g, vorm.kort],
             ]);
         }
 
