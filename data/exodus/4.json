@@ -97,7 +97,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Toen antwoordde Mozes, en zei: <span class=\"direct-speech\"><i>Maar zie, zij zullen mij niet geloven, noch mijn stem horen; want zij zullen zeggen: JAHWEH is u niet verschenen!</i></span>",
+      "text2026_html": "Toen antwoordde Mozes, en zei: <span class=\"direct-speech\"><i>Maar zie, zij zullen mij niet geloven, noch mijn stem horen; want zij zullen zeggen: <span class=\"direct-speech\"><i>JAHWEH is u niet verschenen!</i></span></i></span>",
       "textSV1888_html": "Toen antwoordde Mozes, en zeide: Maar<sup class=\"note-marker\" data-note=\"1\">1</sup> zie, zij zullen mij niet geloven, noch mijn stem horen; want zij zullen zeggen: De HEERE is u niet verschenen!",
       "text1637_html": "DOe antwoordde Mose, ende seyde; Maer siet, <sup class=\"note-marker\" data-note=\"1\">1</sup> sy en sullen my niet gelooven, noch mijne stemme hooren, want sy sullen seggen, De HEERE en is u niet verschenen.",
       "phraseDiff": [
@@ -456,7 +456,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Opdat zij geloven, dat u verschenen is JAHWEH, de God van hun vaderen, de God van Abraham, de God van Izak, en de God van Jakob.",
+      "text2026_html": "<span class=\"god-speaks\"><i>Opdat zij geloven, dat u verschenen is JAHWEH, de God van hun vaderen, de God van Abraham, de God van Izak, en de God van Jakob.</i></span>",
       "text1637_html": "Op dat sy gelooven, dat u verschenen zy de HEERE de Godt harer vaderen, de Godt Abrahams, de Godt Isaacs, ende de Godt Iacobs.",
       "phraseDiff": [
         {
@@ -647,7 +647,7 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En Hij zei: Steek uw hand opnieuw in uw boezem. En hij stak zijn hand opnieuw in zijn boezem; daarna trok hij ze uit zijn boezem, en ziet, zij was weer als zijn ander vlees.</i></span>",
+      "text2026_html": "En Hij zei: <span class=\"god-speaks\"><i>Steek uw hand opnieuw in uw boezem.</i></span> En hij stak zijn hand opnieuw in zijn boezem; daarna trok hij ze uit zijn boezem, en ziet, zij was weer als zijn ander vlees.",
       "text1637_html": "En<i>de</i> hy seyde, Steeckt uwe hant wederom in uwen boesem, ende hy stack sijne hant wederom in sijnen boesem: daer na trock hyse uyt sijnen boesem, ende siet, sy was weder als sijn [ander] vleesch.",
       "phraseDiff": [
         {
@@ -2527,7 +2527,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Dan zult u tot Farao zeggen: Zo zegt JAHWEH: Mijn zoon, Mijn eerstgeborene, is Israël.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Dan zult u tot Farao zeggen: Zo zegt JAHWEH: <span class=\"god-speaks\"><i>Mijn zoon, Mijn eerstgeborene, is Israël.</i></span></i></span>",
       "textSV1888_html": "Dan zult gij tot Farao zeggen: Alzo zegt de HEERE: Mijn zoon, Mijn eerstgeborene, is<sup class=\"note-marker\" data-note=\"27\">27</sup> Israël.",
       "text1637_html": "Dan sult ghy tot Pharao seggen: Alsoo seyt de HEERE, Mijn sone, mijn Eerstgeboren, is <sup class=\"note-marker\" data-note=\"27\">27</sup> Israël.",
       "phraseDiff": [
@@ -2905,7 +2905,7 @@
           "morph": "HRd/Ncfpa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En Hij liet van hem af. Toen zei zij: Bloedbruidegom! vanwege de besnijdenis.</i></span>",
+      "text2026_html": "En Hij liet van hem af. Toen zei zij: <span class=\"direct-speech\"><i>Bloedbruidegom!</i></span> vanwege de besnijdenis.",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"35\">35</sup> Hij liet van hem af. Toen zeide zij:<sup class=\"note-marker\" data-note=\"36\">36</sup> Bloedbruidegom! vanwege de besnijdenis.",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"35\">35</sup> hy liet van hem af: doe seyde sy, Bloet-bruydegom, <sup class=\"note-marker\" data-note=\"36\">36</sup> van wegen de besnijdenissen.",
       "phraseDiff": [
@@ -3115,7 +3115,7 @@
       "number": 29,
       "textSV1888": "Toen ging Mozes en Aäron, en zij verzamelden al de oudsten der kinderen Israëls.",
       "text1637": "Doe ginck Mose ende Aaron, ende sy versamelden alle de Outste der kinderen Israëls.",
-      "text2026": "Toen ging Mozes en Aäron, en zij verzamelden al de oudsten van de kinderen van Israël.",
+      "text2026": "Toen ging Mozes en Aäron, en zij verzamelden al de oudsten van de Israëlieten.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3164,17 +3164,12 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Toen ging Mozes en Aäron, en zij verzamelden al de oudsten van de kinderen van Israël.</i></span>",
+      "text2026_html": "Toen ging Mozes en Aäron, en zij verzamelden al de oudsten van de Israëlieten.",
       "text1637_html": "Doe ginck Mose ende Aaron, ende sy versamelden alle de Outste der kinderen Israëls.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
-        },
-        {
-          "old": "Israëls.",
-          "new": "van Israël.",
+          "old": "der kinderen Israëls.",
+          "new": "van de Israëlieten.",
           "principe": null
         }
       ]
@@ -3257,7 +3252,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En Aäron sprak al de woorden, die JAHWEH tot Mozes gesproken had; en hij deed de tekenen voor de ogen van het volk.</i></span>",
+      "text2026_html": "En Aäron sprak al de woorden, die JAHWEH tot Mozes gesproken had; en hij deed de tekenen voor de ogen van het volk.",
       "text1637_html": "Ende Aaron sprack alle de woorden, die de HEERE tot Mose gesproken hadde: en hy dede de teeckenen voor de oogen des volcks.",
       "phraseDiff": [
         {
@@ -3276,7 +3271,7 @@
       "number": 31,
       "textSV1888": "En het volk geloofde, en zij hoorden, dat de HEERE de kinderen Israëls bezocht, en dat Hij hun verdrukking zag, en zij neigden hun hoofden, en aanbaden.",
       "text1637": "Ende het volck geloofde, ende hoorden, dat de HEERE de kinderen Israëls besocht, ende dat hy hare verdruckinge [38] sach, ende sy neygden hare hoofden, ende aenbaden.",
-      "text2026": "En het volk geloofde, en zij hoorden, dat JAHWEH de kinderen van Israël bezocht, en dat Hij hun verdrukking zag, en zij neigden hun hoofden, en aanbaden.",
+      "text2026": "En het volk geloofde, en zij hoorden, dat JAHWEH de Israëlieten bezocht, en dat Hij hun verdrukking zag, en zij neigden hun hoofden, en aanbaden.",
       "marginNotes": [
         {
           "marker": "38",
@@ -3363,18 +3358,18 @@
           "morph": "HC/Vvw3mp"
         }
       ],
-      "text2026_html": "En het volk geloofde, en zij hoorden, dat JAHWEH de kinderen van Israël bezocht, en dat Hij hun verdrukking<sup class=\"note-marker\" data-note=\"38\">38</sup> zag, en zij neigden hun hoofden, en aanbaden.",
+      "text2026_html": "En het volk geloofde, en zij hoorden, dat JAHWEH de Israëlieten bezocht, en dat Hij hun verdrukking<sup class=\"note-marker\" data-note=\"38\">38</sup> zag, en zij neigden hun hoofden, en aanbaden.",
       "textSV1888_html": "En het volk geloofde, en zij hoorden, dat de HEERE de kinderen Israëls bezocht, en dat Hij hun verdrukking<sup class=\"note-marker\" data-note=\"38\">38</sup> zag, en zij neigden hun hoofden, en aanbaden.",
       "text1637_html": "Ende het volck geloofde, ende hoorden, dat de HEERE de kinderen Israëls besocht, ende dat hy hare verdruckinge <sup class=\"note-marker\" data-note=\"38\">38</sup> sach, ende sy neygden hare hoofden, ende aenbaden.",
       "phraseDiff": [
         {
-          "old": "de HEERE",
+          "old": "",
           "new": "JAHWEH",
-          "principe": "G1"
+          "principe": null
         },
         {
-          "old": "Israëls",
-          "new": "van Israël",
+          "old": "HEERE de kinderen Israëls",
+          "new": "Israëlieten",
           "principe": null
         }
       ]
