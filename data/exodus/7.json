@@ -320,7 +320,7 @@
       "number": 4,
       "textSV1888": "Farao nu zal naar ulieden niet horen, en Ik zal Mijn hand aan Egypte leggen, en voeren Mijn heiren, Mijn volk, de kinderen Israëls, uit Egypteland, door grote gerichten.",
       "text1637": "Pharao nu en sal nae u lieden niet hooren, ende ick sal mijne [5] hant [6] aen Egypten [7] leggen, ende voeren mijne heyren, mijn volck, de kinderen Israëls, uyt Egypten-lant, door groote [8] gerichten.",
-      "text2026": "Farao nu zal naar u niet horen, en Ik zal Mijn hand aan Egypte leggen, en voeren Mijn heiren, Mijn volk, de Israëlieten, uit Egypteland, door grote gerichten.",
+      "text2026": "Farao nu zal naar u niet horen, en Ik zal Mijn hand aan Egypte leggen, en voeren Mijn legers, Mijn volk, de Israëlieten, uit Egypteland, door grote gerichten.",
       "marginNotes": [
         {
           "marker": "5",
@@ -448,7 +448,7 @@
           "morph": "HAampa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Farao nu zal naar u niet horen, en Ik zal Mijn hand aan<sup class=\"note-marker\" data-note=\"5\">5</sup><sup class=\"note-marker\" data-note=\"6\">6</sup> Egypte<sup class=\"note-marker\" data-note=\"7\">7</sup> leggen, en voeren Mijn heiren, Mijn volk, de Israëlieten, uit Egypteland, door grote<sup class=\"note-marker\" data-note=\"8\">8</sup> gerichten.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Farao nu zal naar u niet horen, en Ik zal Mijn hand aan<sup class=\"note-marker\" data-note=\"5\">5</sup><sup class=\"note-marker\" data-note=\"6\">6</sup> Egypte<sup class=\"note-marker\" data-note=\"7\">7</sup> leggen, en voeren Mijn legers, Mijn volk, de Israëlieten, uit Egypteland, door grote<sup class=\"note-marker\" data-note=\"8\">8</sup> gerichten.</i></span>",
       "textSV1888_html": "Farao nu zal naar ulieden niet horen, en Ik zal Mijn hand aan<sup class=\"note-marker\" data-note=\"5\">5</sup><sup class=\"note-marker\" data-note=\"6\">6</sup> Egypte<sup class=\"note-marker\" data-note=\"7\">7</sup> leggen, en voeren Mijn heiren, Mijn volk, de kinderen Israëls, uit Egypteland, door grote<sup class=\"note-marker\" data-note=\"8\">8</sup> gerichten.",
       "text1637_html": "Pharao nu en sal nae u lieden niet hooren, ende ick sal mijne <sup class=\"note-marker\" data-note=\"5\">5</sup> hant <sup class=\"note-marker\" data-note=\"6\">6</sup> aen Egypten <sup class=\"note-marker\" data-note=\"7\">7</sup> leggen, ende voeren mijne heyren, mijn volck, de kinderen Israëls, uyt Egypten-lant, door groote <sup class=\"note-marker\" data-note=\"8\">8</sup> gerichten.",
       "phraseDiff": [
@@ -456,6 +456,11 @@
           "old": "ulieden",
           "new": "u",
           "principe": "A2"
+        },
+        {
+          "old": "heiren,",
+          "new": "legers,",
+          "principe": null
         },
         {
           "old": "kinderen Israëls,",
@@ -1044,7 +1049,7 @@
       "number": 11,
       "textSV1888": "Farao nu riep ook de wijzen en de guichelaars; en de Egyptische tovenaars deden ook alzo met hun bezweringen.",
       "text1637": "Pharao nu riep oock de Wijse ende de [12] guychelaers: ende de Egyptische [13] tooveraers [14] deden oock alsoo met hare besweeringen.",
-      "text2026": "Farao nu riep ook de wijzen en de guichelaars; en de Egyptische tovenaars deden ook zo met hun bezweringen.",
+      "text2026": "Farao nu riep ook de wijzen en de bezweerders; en de Egyptische tovenaars deden ook zo met hun bezweringen.",
       "marginNotes": [
         {
           "marker": "12",
@@ -1130,10 +1135,15 @@
           "morph": "HTm"
         }
       ],
-      "text2026_html": "Farao nu riep ook de wijzen en de<sup class=\"note-marker\" data-note=\"12\">12</sup> guichelaars; en de Egyptische<sup class=\"note-marker\" data-note=\"13\">13</sup> tovenaars<sup class=\"note-marker\" data-note=\"14\">14</sup> deden ook zo met hun bezweringen.",
+      "text2026_html": "Farao nu riep ook de wijzen en de<sup class=\"note-marker\" data-note=\"12\">12</sup> bezweerders; en de Egyptische<sup class=\"note-marker\" data-note=\"13\">13</sup> tovenaars<sup class=\"note-marker\" data-note=\"14\">14</sup> deden ook zo met hun bezweringen.",
       "textSV1888_html": "Farao nu riep ook de wijzen en de<sup class=\"note-marker\" data-note=\"12\">12</sup> guichelaars; en de Egyptische<sup class=\"note-marker\" data-note=\"13\">13</sup> tovenaars<sup class=\"note-marker\" data-note=\"14\">14</sup> deden ook alzo met hun bezweringen.",
       "text1637_html": "Pharao nu riep oock de Wijse ende de <sup class=\"note-marker\" data-note=\"12\">12</sup> guychelaers: ende de Egyptische <sup class=\"note-marker\" data-note=\"13\">13</sup> tooveraers <sup class=\"note-marker\" data-note=\"14\">14</sup> deden oock alsoo met hare besweeringen.",
       "phraseDiff": [
+        {
+          "old": "guichelaars;",
+          "new": "bezweerders;",
+          "principe": null
+        },
         {
           "old": "alzo",
           "new": "zo",
@@ -1516,7 +1526,7 @@
       "number": 16,
       "textSV1888": "En gij zult tot hem zeggen: de HEERE, de God der Hebreën, heeft mij tot u gezonden, zeggende: Laat Mijn volk trekken, dat het Mij diene in de woestijn; doch zie, gij hebt tot nu toe niet gehoord.",
       "text1637": "Ende ghy sult tot hem seggen, De HEERE, der Hebreen Godt, heeft my tot u gesonden, [18] seggende, Laet mijn volck trecken, dat het my diene in de woestijne: doch siet ghy en hebt tot nu toe niet gehoort.",
-      "text2026": "En u zult tot hem zeggen: JAHWEH, de God van de Hebreën, heeft mij tot u gezonden, zeggende: Laat Mijn volk trekken, dat het Mij diene in de woestijn; maar zie, u hebt tot nu toe niet gehoord.",
+      "text2026": "En u zult tot hem zeggen: JAHWEH, de God van de Hebreën, heeft mij tot u gezonden, zeggende: Laat Mijn volk trekken, dat het Mij zal dienen in de woestijn; maar zie, u hebt tot nu toe niet gehoord.",
       "marginNotes": [
         {
           "marker": "18",
@@ -1618,7 +1628,7 @@
           "morph": "HD"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En u zult tot hem zeggen: JAHWEH, de God van de Hebreën, heeft mij tot u gezonden, zeggende: <span class=\"god-speaks\"><i>Laat Mijn volk trekken, dat het Mij diene in de woestijn; maar zie, u hebt tot nu toe niet gehoord.</i></span></i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En u zult tot hem zeggen: JAHWEH, de God van de Hebreën, heeft mij tot u gezonden, zeggende: <span class=\"god-speaks\"><i>Laat Mijn volk trekken, dat het Mij zal dienen in de woestijn; maar zie, u hebt tot nu toe niet gehoord.</i></span></i></span>",
       "textSV1888_html": "En gij zult tot hem zeggen: de HEERE, de God der Hebreën, heeft mij tot u gezonden,<sup class=\"note-marker\" data-note=\"18\">18</sup> zeggende: Laat Mijn volk trekken, dat het Mij diene in de woestijn; doch zie, gij hebt tot nu toe niet gehoord.",
       "text1637_html": "Ende ghy sult tot hem seggen, De HEERE, der Hebreen Godt, heeft my tot u gesonden, <sup class=\"note-marker\" data-note=\"18\">18</sup> seggende, Laet mijn volck trecken, dat het my diene in de woestijne: doch siet ghy en hebt tot nu toe niet gehoort.",
       "phraseDiff": [
@@ -1636,6 +1646,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "diene",
+          "new": "zal dienen",
+          "principe": null
         },
         {
           "old": "doch",
