@@ -187,7 +187,7 @@
       "number": 3,
       "textSV1888": "Doch als zij hem niet langer verbergen kon, zo nam zij voor hem een kistje van biezen, en belijmde het met lijm en met pek; en zij leide het knechtje daarin, en leide het in de biezen, aan den oever der rivier.",
       "text1637": "Doch als sy hem [6] niet langer verbergen en konde, so nam sy voor hem [7] een kiste van [8] biesen, ende belijmdese met lijm, ende met peck; ende sy leyde het knechtken daer in, ende leydese in de biesen, aen den [9] oever der riviere.",
-      "text2026": "Maar als zij hem niet langer verbergen kon, zo nam zij voor hem een kistje van biezen, en belijmde het met lijm en met pek; en zij legde het knechtje daarin, en legde het in de biezen, aan de oever van de rivier.",
+      "text2026": "Maar als zij hem niet langer verbergen kon, zo nam zij voor hem een kistje van biezen, en belijmde het met lijm en met pek; en zij legde het jongetje daarin, en legde het in de biezen, aan de oever van de rivier.",
       "marginNotes": [
         {
           "marker": "6",
@@ -320,7 +320,7 @@
           "morph": "HTd/Np"
         }
       ],
-      "text2026_html": "Maar als zij hem<sup class=\"note-marker\" data-note=\"6\">6</sup> niet langer verbergen kon, zo nam zij voor hem<sup class=\"note-marker\" data-note=\"7\">7</sup> een kistje van<sup class=\"note-marker\" data-note=\"8\">8</sup> biezen, en belijmde het met lijm en met pek; en zij legde het knechtje daarin, en legde het in de biezen, aan de<sup class=\"note-marker\" data-note=\"9\">9</sup> oever van de rivier.",
+      "text2026_html": "Maar als zij hem<sup class=\"note-marker\" data-note=\"6\">6</sup> niet langer verbergen kon, zo nam zij voor hem<sup class=\"note-marker\" data-note=\"7\">7</sup> een kistje van<sup class=\"note-marker\" data-note=\"8\">8</sup> biezen, en belijmde het met lijm en met pek; en zij legde het jongetje daarin, en legde het in de biezen, aan de<sup class=\"note-marker\" data-note=\"9\">9</sup> oever van de rivier.",
       "textSV1888_html": "Doch als zij hem<sup class=\"note-marker\" data-note=\"6\">6</sup> niet langer verbergen kon, zo nam zij voor hem<sup class=\"note-marker\" data-note=\"7\">7</sup> een kistje van<sup class=\"note-marker\" data-note=\"8\">8</sup> biezen, en belijmde het met lijm en met pek; en zij leide het knechtje daarin, en leide het in de biezen, aan den<sup class=\"note-marker\" data-note=\"9\">9</sup> oever der rivier.",
       "text1637_html": "Doch als sy hem <sup class=\"note-marker\" data-note=\"6\">6</sup> niet langer verbergen en konde, so nam sy voor hem <sup class=\"note-marker\" data-note=\"7\">7</sup> een kiste van <sup class=\"note-marker\" data-note=\"8\">8</sup> biesen, ende belijmdese met lijm, ende met peck; ende sy leyde het knechtken daer in, ende leydese in de biesen, aen den <sup class=\"note-marker\" data-note=\"9\">9</sup> oever der riviere.",
       "phraseDiff": [
@@ -333,6 +333,11 @@
           "old": "leide",
           "new": "legde",
           "principe": "V554"
+        },
+        {
+          "old": "knechtje",
+          "new": "jongetje",
+          "principe": "V996"
         },
         {
           "old": "leide",
@@ -568,7 +573,7 @@
       "number": 6,
       "textSV1888": "Toen zij het open deed, zo zag zij dat knechtje; en ziet, het jongsken weende; en zij werd met barmhartigheid bewogen over hetzelve, en zij zeide: Dit is een van de knechtjes der Hebreën!",
       "text1637": "Doe syse op dede, so sach [13] sy dat knechtken, ende siet, het jongsken weende: ende sy wert met barmherticheyt beweegt over ’t selve, ende sy seyde, Dit is een van de knechtkens der Hebreen.",
-      "text2026": "Toen zij het open deed, zo zag zij dat knechtje; en ziet, het jongen huilde; en zij werd met barmhartigheid bewogen over hetzelfde, en zij zei: Dit is één van de knechtjes van de Hebreën!",
+      "text2026": "Toen zij het open deed, zo zag zij dat jongetje; en ziet, het jongen huilde; en zij werd met barmhartigheid bewogen over hetzelfde, en zij zei: Dit is één van de jongetjes van de Hebreën!",
       "marginNotes": [
         {
           "marker": "13",
@@ -645,10 +650,15 @@
           "morph": "HPdxms"
         }
       ],
-      "text2026_html": "Toen zij het open deed, zo zag zij dat knechtje; en ziet, het jongen huilde; en zij werd met barmhartigheid bewogen over hetzelfde, en zij zei: <span class=\"direct-speech\"><i>Dit is één van de knechtjes van de Hebreën!</i></span>",
+      "text2026_html": "Toen zij het open deed, zo zag zij dat jongetje; en ziet, het jongen huilde; en zij werd met barmhartigheid bewogen over hetzelfde, en zij zei: <span class=\"direct-speech\"><i>Dit is één van de jongetjes van de Hebreën!</i></span>",
       "textSV1888_html": "Toen zij het open deed, zo<sup class=\"note-marker\" data-note=\"13\">13</sup> zag zij dat knechtje; en ziet, het jongsken weende; en zij werd met barmhartigheid bewogen over hetzelve, en zij zeide: Dit is een van de knechtjes der Hebreën!",
       "text1637_html": "Doe syse op dede, so sach <sup class=\"note-marker\" data-note=\"13\">13</sup> sy dat knechtken, ende siet, het jongsken weende: ende sy wert met barmherticheyt beweegt over ’t selve, ende sy seyde, Dit is een van de knechtkens der Hebreen.",
       "phraseDiff": [
+        {
+          "old": "knechtje;",
+          "new": "jongetje;",
+          "principe": "V996"
+        },
         {
           "old": "jongsken weende;",
           "new": "jongen huilde;",
@@ -670,9 +680,9 @@
           "principe": "V735"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "knechtjes der",
+          "new": "jongetjes van de",
+          "principe": null
         }
       ]
     },
@@ -680,7 +690,7 @@
       "number": 7,
       "textSV1888": "Toen zeide zijn zuster tot Farao's dochter: Zal ik heengaan, en u een voedstervrouw uit de Hebreïnnen roepen, die dat knechtje voor u zoge?",
       "text1637": "Doe seyde sijne suster tot Pharaos dochter, sal ick henen gaen, ende u eene [14] voester-vrouwe uyt de Hebrëinnen roepen, die u dat knechtken sooge?",
-      "text2026": "Toen zei zijn zus tot Farao's dochter: Zal ik heengaan, en u een voedstervrouw uit de Hebreïnnen roepen, die dat knechtje voor u zoge?",
+      "text2026": "Toen zei zijn zus tot Farao's dochter: Zal ik heengaan, en u een voedstervrouw uit de Hebreïnnen roepen, die dat jongetje voor u zoge?",
       "marginNotes": [
         {
           "marker": "14",
@@ -772,7 +782,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "Toen zei zijn zus tot Farao's dochter: Zal ik heengaan, en u een voedstervrouw uit de Hebreïnnen roepen, die dat knechtje voor u zoge?",
+      "text2026_html": "Toen zei zijn zus tot Farao's dochter: Zal ik heengaan, en u een voedstervrouw uit de Hebreïnnen roepen, die dat jongetje voor u zoge?",
       "textSV1888_html": "Toen zeide zijn zuster tot Farao's dochter: Zal ik heengaan, en u een<sup class=\"note-marker\" data-note=\"14\">14</sup> voedstervrouw uit de Hebreïnnen roepen, die dat knechtje voor u zoge?",
       "text1637_html": "Doe seyde sijne suster tot Pharaos dochter, sal ick henen gaen, ende u eene <sup class=\"note-marker\" data-note=\"14\">14</sup> voester-vrouwe uyt de Hebrëinnen roepen, die u dat knechtken sooge?",
       "phraseDiff": [
@@ -785,6 +795,11 @@
           "old": "zuster",
           "new": "zus",
           "principe": "O22c"
+        },
+        {
+          "old": "knechtje",
+          "new": "jongetje",
+          "principe": "V996"
         }
       ]
     },
@@ -792,7 +807,7 @@
       "number": 8,
       "textSV1888": "En de dochter van Farao zeide tot haar: Ga heen. En de jonge maagd ging, en riep des knechtjes moeder.",
       "text1637": "Ende de dochter Pharaos seyde tot haer, Gaet henen: ende de jonge maecht ginck, ende riep des knechtkens moeder.",
-      "text2026": "En de dochter van Farao zei tot haar: Ga heen. En de jonge maagd ging, en riep van de knechtjes moeder.",
+      "text2026": "En de dochter van Farao zei tot haar: Ga heen. En de jonge maagd ging, en riep van de jongetjes moeder.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -851,7 +866,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "En de dochter van Farao zei tot haar: <span class=\"direct-speech\"><i>Ga heen. En de jonge maagd ging, en riep van de knechtjes moeder.</i></span>",
+      "text2026_html": "En de dochter van Farao zei tot haar: <span class=\"direct-speech\"><i>Ga heen. En de jonge maagd ging, en riep van de jongetjes moeder.</i></span>",
       "text1637_html": "Ende de dochter Pharaos seyde tot haer, Gaet henen: ende de jonge maecht ginck, ende riep des knechtkens moeder.",
       "phraseDiff": [
         {
@@ -860,9 +875,9 @@
           "principe": "W1"
         },
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des knechtjes",
+          "new": "van de jongetjes",
+          "principe": null
         }
       ]
     },
@@ -870,7 +885,7 @@
       "number": 9,
       "textSV1888": "Toen zeide Farao's dochter tot haar: Neem dit knechtje heen, en zoog het mij; ik zal u uw loon geven. En de vrouw nam het knechtje en zoogde het.",
       "text1637": "Doe seyde Pharaos dochter tot haer, Neemt dit knechtken henen, ende soogt het my, ick sal [u] uwen loon geven; ende de vrouwe nam het knechtken ende soogde ’t.",
-      "text2026": "Toen zei Farao's dochter tot haar: Neem dit knechtje heen, en zoog het mij; ik zal u uw loon geven. En de vrouw nam het knechtje en zoogde het.",
+      "text2026": "Toen zei Farao's dochter tot haar: Neem dit jongetje heen, en zoog het mij; ik zal u uw loon geven. En de vrouw nam het jongetje en zoogde het.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -964,13 +979,23 @@
           "morph": "HC/Vhw3fs/Sp3ms"
         }
       ],
-      "text2026_html": "Toen zei Farao's dochter tot haar: <span class=\"direct-speech\"><i>Neem dit knechtje heen, en zoog het mij; ik zal u uw loon geven.</i></span> En de vrouw nam het knechtje en zoogde het.",
+      "text2026_html": "Toen zei Farao's dochter tot haar: <span class=\"direct-speech\"><i>Neem dit jongetje heen, en zoog het mij; ik zal u uw loon geven.</i></span> En de vrouw nam het jongetje en zoogde het.",
       "text1637_html": "Doe seyde Pharaos dochter tot haer, Neemt dit knechtken henen, ende soogt het my, ick sal [u] uwen loon geven; ende de vrouwe nam het knechtken ende soogde ’t.",
       "phraseDiff": [
         {
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "knechtje",
+          "new": "jongetje",
+          "principe": "V996"
+        },
+        {
+          "old": "knechtje",
+          "new": "jongetje",
+          "principe": "V996"
         }
       ]
     },
@@ -978,7 +1003,7 @@
       "number": 10,
       "textSV1888": "En toen het knechtje groot geworden was, zo bracht zij het tot Farao's dochter, en het werd haar ten zoon; en zij noemde zijn naam Mozes, en zeide: Want ik heb hem uit het water getogen.",
       "text1637": "Ende doe het knechtken groot geworden was, so bracht sy het tot Pharaos dochter, [15] ende het wiert haer ten sone; ende sy noemde synen name [16] Mose, ende seyde, Want ick hebbe hem uyt het water getogen.",
-      "text2026": "En toen het knechtje groot geworden was, zo bracht zij het tot Farao's dochter, en het werd haar ten zoon; en zij noemde zijn naam Mozes, en zei: Want ik heb hem uit het water getogen.",
+      "text2026": "En toen het jongetje groot geworden was, zo bracht zij het tot Farao's dochter, en het werd haar ten zoon; en zij noemde zijn naam Mozes, en zei: Want ik heb hem uit het water getogen.",
       "marginNotes": [
         {
           "marker": "15",
@@ -1077,10 +1102,15 @@
           "morph": "HVqp1cs/Sp3ms"
         }
       ],
-      "text2026_html": "En toen het knechtje groot geworden was, zo bracht zij het tot Farao's dochter, en het werd haar ten zoon; en zij noemde zijn naam Mozes, en zei: <span class=\"direct-speech\"><i>Want ik heb hem uit het water getogen.</i></span>",
+      "text2026_html": "En toen het jongetje groot geworden was, zo bracht zij het tot Farao's dochter, en het werd haar ten zoon; en zij noemde zijn naam Mozes, en zei: <span class=\"direct-speech\"><i>Want ik heb hem uit het water getogen.</i></span>",
       "textSV1888_html": "En toen het knechtje groot geworden was, zo bracht zij het tot Farao's dochter,<sup class=\"note-marker\" data-note=\"15\">15</sup> en het werd haar ten zoon; en zij noemde zijn naam<sup class=\"note-marker\" data-note=\"16\">16</sup> Mozes, en zeide: Want ik heb hem uit het water getogen.",
       "text1637_html": "Ende doe het knechtken groot geworden was, so bracht sy het tot Pharaos dochter, <sup class=\"note-marker\" data-note=\"15\">15</sup> ende het wiert haer ten sone; ende sy noemde synen name <sup class=\"note-marker\" data-note=\"16\">16</sup> Mose, ende seyde, Want ick hebbe hem uyt het water getogen.",
       "phraseDiff": [
+        {
+          "old": "knechtje",
+          "new": "jongetje",
+          "principe": "V996"
+        },
         {
           "old": "zeide:",
           "new": "zei:",
