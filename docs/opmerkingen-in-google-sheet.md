@@ -1,42 +1,34 @@
 # Opmerkingen in een Google Sheet
 
-Meldingen van lezers komen per mail binnen via FormSubmit. Dat werkt, maar je
-hebt geen lijst: alles staat los in het postvak, en er valt niets mee te
-sorteren of af te vinken.
+Meldingen van lezers gaan naar een **Google Formulier**, dat uit zichzelf naar
+een gekoppelde spreadsheet schrijft. Die sheet is als CSV uit te lezen, zodat
+`scripts/lees_opmerkingen.py` de opmerkingen kan ophalen en ze rechtstreeks
+verwerkt kunnen worden tot tekstwijzigingen.
 
-Daarom gaat elke melding daarnaast naar een **Google Formulier**, dat uit
-zichzelf naar een gekoppelde spreadsheet schrijft. Die sheet is als CSV uit te
-lezen, zodat `scripts/lees_opmerkingen.py` de opmerkingen kan ophalen en ze
-rechtstreeks verwerkt kunnen worden tot tekstwijzigingen.
+Eerder gingen de meldingen per mail. Dat werkte, maar gaf geen lijst: alles
+stond los in het postvak, en er viel niets mee te sorteren of af te vinken.
 
 Geen Zapier, geen extra dienst, geen sleutel in de repo.
-
-> **Waarom een formulier en geen Apps Script?** Dat was de eerste opzet, en op
-> papier is die netter: één script kan schrijven én mailen. In de praktijk
-> struikelde het over de implementatie — een web-app moet apart gepubliceerd
-> worden, met de juiste toegangsrechten, opnieuw bij elke wijziging, en het
-> adres hoort bij één specifiek project. Ging daar iets mis, dan meldde Google
-> alleen `Fonction de script introuvable` en was er niets aan te zien. Een
-> formulier heeft geen van die onderdelen: geen code, geen implementatie, geen
-> versies. Het schrijft altijd naar zijn eigen spreadsheet.
 
 ## Hoe het in elkaar zit
 
 ```
 lezer klikt "verbetering doorgeven"
         │
-        ├──► Google Formulier ──► gekoppelde spreadsheet ──► lees_opmerkingen.py
-        │      (formResponse)                                 (gepubliceerde CSV)
-        │
-        └──► FormSubmit ──► mail
-               (antwoordt, en bepaalt de bevestiging aan de lezer)
+        └──► Google Formulier ──► gekoppelde spreadsheet ──► lees_opmerkingen.py
+               (formResponse)                                 (gepubliceerde CSV)
 ```
 
-Beide wegen worden tegelijk bewandeld. Het formulier laat niet weten of het
-gelukt is — Google staat geen CORS toe op `formResponse`, dus het verzoek gaat
-eropuit zonder leesbaar antwoord. De mailweg antwoordt wél, en daaraan hangt de
-bevestiging die de lezer ziet. Valt één van beide uit, dan komt de melding via
-de andere alsnog binnen.
+Eén weg, verder niets. Er ging eerder ook een mail uit, en dat is eruit
+gehaald: twee wegen naast elkaar betekent twee dingen die kunnen stukgaan en
+twee plekken om na te kijken, terwijl de spreadsheet nu juist de lijst geeft
+die een postvak niet gaf.
+
+Het formulier laat niet weten of het gelukt is — Google staat geen CORS toe op
+`formResponse`, dus het verzoek gaat eropuit zonder leesbaar antwoord. Wat we
+er wél uit halen: ketst `fetch` af, dan is er geen verbinding. Dat is precies
+de fout die de lezer zelf kan verhelpen, en daar hangt de melding aan die hij
+te zien krijgt. Een fout aan Google's kant kan hij toch niet oplossen.
 
 ## Het formulier aanmaken — eenmalig, vijf minuten
 

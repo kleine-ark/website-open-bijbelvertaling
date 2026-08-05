@@ -7,13 +7,11 @@
 
 const Feedback = {
     /* De melding gaat naar een Google Formulier, dat uit zichzelf naar zijn
-       gekoppelde spreadsheet schrijft. Bewust geen Apps Script: dat moet apart
-       geïmplementeerd worden, met eigen rechten, opnieuw bij elke wijziging —
-       en als daar iets misgaat is er niets aan te zien. Bewust ook geen
-       Firestore: dat vroeg inloggen van de bezoeker én beveiligingsregels in
-       de console, terwijl het doel simpelweg is dat de melding aankomt.
-       Inloggen blijft wel bestaan voor persoonlijke instellingen en
-       markeringen.
+       gekoppelde spreadsheet schrijft. Eén weg, verder niets: geen mail, geen
+       Firestore. Dat laatste vroeg inloggen van de bezoeker én
+       beveiligingsregels in de console, terwijl het doel simpelweg is dat de
+       melding aankomt. Inloggen blijft wel bestaan voor persoonlijke
+       instellingen en markeringen.
 
        De veldnummers komen uit het formulier zelf; scripts/formulier_velden.py
        leest ze eruit. Zie docs/opmerkingen-in-google-sheet.md.
@@ -28,9 +26,6 @@ const Feedback = {
         suggestie: 'entry.758123662',
         van:       'entry.745198439'
     },
-    // Terugval als het formulier onbereikbaar is — geen tweede verzendweg,
-    // maar de enige uitweg die de lezer zelf nog heeft.
-    MAIL_TERUGVAL: 'maartenvroegindeweij@gmail.com',
     modal: null,
     pending: null,  // { bookId, ch, vs, text }
 
@@ -193,13 +188,9 @@ const Feedback = {
             status.textContent = 'Bedankt! Je opmerking is verstuurd.';
             setTimeout(() => this.close(), 1600);
         } else {
-            const subject = `[OSV opmerking] ${payload.ref}`;
-            const body =
-                `Vers: ${payload.ref}\n` +
-                `Geselecteerde tekst:\n  "${payload.selected}"\n\n` +
-                `Suggestie:\n${payload.suggestion}\n`;
-            const mailto = `mailto:${this.MAIL_TERUGVAL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            status.innerHTML = 'Online versturen mislukt. <a href="' + mailto + '" style="color:var(--gold);font-weight:600;">Klik hier om via je mailprogramma te versturen</a>.';
+            // De ingevulde tekst blijft staan en de knop gaat weer aan, zodat
+            // opnieuw proberen niets kost.
+            status.textContent = 'Versturen mislukt — er lijkt geen verbinding te zijn. Probeer het zo nog eens.';
             sendBtn.disabled = false;
         }
     }
