@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Haalt de opmerkingen van lezers op uit de gepubliceerde Google Sheet.
 
-De sheet wordt gevuld door het Apps Script uit
+De sheet wordt gevuld door een Google Formulier; zie
 docs/opmerkingen-in-google-sheet.md. Publiceren als CSV maakt hem leesbaar
 zonder inloggen of sleutel, dus dit script heeft geen geheimen nodig en kan
 gewoon in de repo staan.

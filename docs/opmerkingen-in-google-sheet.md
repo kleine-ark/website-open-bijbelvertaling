@@ -1,137 +1,107 @@
 # Opmerkingen in een Google Sheet
 
-Meldingen van lezers komen nu per mail binnen via FormSubmit. Dat werkt, maar
-je hebt geen lijst: alles staat los in je postvak, en er valt niets mee te
+Meldingen van lezers komen per mail binnen via FormSubmit. Dat werkt, maar je
+hebt geen lijst: alles staat los in het postvak, en er valt niets mee te
 sorteren of af te vinken.
 
-Met een Google Apps Script schrijven we elke melding weg in een spreadsheet
-**en** krijg je nog steeds een mail. Bijkomend voordeel: die sheet is als CSV
-uit te lezen, zodat `scripts/lees_opmerkingen.py` de opmerkingen kan ophalen
-en ik ze rechtstreeks kan verwerken tot tekstwijzigingen.
+Daarom gaat elke melding daarnaast naar een **Google Formulier**, dat uit
+zichzelf naar een gekoppelde spreadsheet schrijft. Die sheet is als CSV uit te
+lezen, zodat `scripts/lees_opmerkingen.py` de opmerkingen kan ophalen en ze
+rechtstreeks verwerkt kunnen worden tot tekstwijzigingen.
 
 Geen Zapier, geen extra dienst, geen sleutel in de repo.
 
-## Eenmalig instellen — ongeveer tien minuten
+> **Waarom een formulier en geen Apps Script?** Dat was de eerste opzet, en op
+> papier is die netter: één script kan schrijven én mailen. In de praktijk
+> struikelde het over de implementatie — een web-app moet apart gepubliceerd
+> worden, met de juiste toegangsrechten, opnieuw bij elke wijziging, en het
+> adres hoort bij één specifiek project. Ging daar iets mis, dan meldde Google
+> alleen `Fonction de script introuvable` en was er niets aan te zien. Een
+> formulier heeft geen van die onderdelen: geen code, geen implementatie, geen
+> versies. Het schrijft altijd naar zijn eigen spreadsheet.
 
-### 1. Maak de spreadsheet
+## Hoe het in elkaar zit
 
-Ga naar [drive.google.com](https://drive.google.com) en controleer rechtsboven
-met welk account je bent ingelogd. Klik dan op **Nieuw → Google
-Spreadsheets** en noem het bestand bijvoorbeeld **Opmerkingen Open
-Vertaling**. Verder niets invullen; het script maakt de kolomkoppen zelf.
-
-> Gebruik niet de snelkoppeling `sheets.new`. Ben je met meerdere
-> Google-accounts tegelijk ingelogd, dan gaat die naar het verkeerde account
-> en krijg je "Kan het bestand momenteel niet openen". Via Drive zie je
-> meteen met welk account je werkt.
-
-### 2. Plak het script erin
-
-In diezelfde spreadsheet: **Extensies → Apps Script**. Verwijder wat er staat
-en plak dit:
-
-```javascript
-// Ontvangt meldingen van openvertaling.nl, schrijft ze in de spreadsheet
-// en stuurt een mail.
-
-var MAIL_NAAR = 'maartenvroegindeweij@gmail.com';
-
-// Open het /exec-adres in je browser om te controleren of deze code
-// daadwerkelijk geïmplementeerd is. Zie je JSON met "levend": true, dan staat
-// hij live. Zie je iets anders, dan wijst de implementatie naar een oude
-// versie zonder deze code.
-function doGet() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  return uit({
-    levend: true,
-    spreadsheet: ss ? ss.getName() : null,
-    waarschuwing: ss ? null : 'Script hangt niet aan een spreadsheet — ' +
-                              'maak het aan via Extensies > Apps Script vanuit de sheet zelf'
-  });
-}
-
-function doPost(e) {
-  try {
-    // De site stuurt JSON, maar een gewone formulier-POST komt binnen als
-    // e.parameter. Allebei accepteren scheelt zoekwerk.
-    var d = (e && e.postData && e.postData.contents)
-              ? JSON.parse(e.postData.contents)
-              : (e && e.parameter) || {};
-    var blad = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
-    // Kolomkoppen aanmaken bij de eerste melding
-    if (blad.getLastRow() === 0) {
-      blad.appendRow(['Ontvangen', 'Vers', 'Geselecteerde tekst', 'Suggestie',
-                      'Van', 'Status', 'Browser']);
-      blad.setFrozenRows(1);
-    }
-
-    blad.appendRow([
-      new Date(),
-      d.ref || '',
-      d.selected || '',
-      d.suggestion || '',
-      d.van || 'anoniem',
-      'nieuw',
-      d.userAgent || ''
-    ]);
-
-    MailApp.sendEmail({
-      to: MAIL_NAAR,
-      subject: 'Opmerking bij ' + (d.ref || 'de vertaling'),
-      body: 'Vers: ' + (d.ref || '-') +
-            '\n\nGeselecteerde tekst:\n' + (d.selected || '(geen)') +
-            '\n\nSuggestie:\n' + (d.suggestion || '') +
-            '\n\nVan: ' + (d.van || 'anoniem')
-    });
-
-    return uit({ ok: true });
-  } catch (err) {
-    return uit({ ok: false, fout: String(err) });
-  }
-}
-
-function uit(obj) {
-  return ContentService.createTextOutput(JSON.stringify(obj))
-                       .setMimeType(ContentService.MimeType.JSON);
-}
+```
+lezer klikt "verbetering doorgeven"
+        │
+        ├──► Google Formulier ──► gekoppelde spreadsheet ──► lees_opmerkingen.py
+        │      (formResponse)                                 (gepubliceerde CSV)
+        │
+        └──► FormSubmit ──► mail
+               (antwoordt, en bepaalt de bevestiging aan de lezer)
 ```
 
-### 3. Publiceer het als web-app
+Beide wegen worden tegelijk bewandeld. Het formulier laat niet weten of het
+gelukt is — Google staat geen CORS toe op `formResponse`, dus het verzoek gaat
+eropuit zonder leesbaar antwoord. De mailweg antwoordt wél, en daaraan hangt de
+bevestiging die de lezer ziet. Valt één van beide uit, dan komt de melding via
+de andere alsnog binnen.
 
-**Implementeren → Nieuwe implementatie → Type: Web-app.**
+## Het formulier aanmaken — eenmalig, vijf minuten
 
-Twee instellingen zijn cruciaal:
+1. Ga naar [forms.new](https://forms.new), of Drive → **Nieuw → Google
+   Formulieren**.
+2. Maak vier vragen, alle vier van het type **Kort antwoord**, in deze
+   volgorde: `Vers`, `Geselecteerde tekst`, `Suggestie`, `Van`.
+3. Tabblad **Antwoorden** → het groene spreadsheet-icoon → **Nieuwe
+   spreadsheet maken**.
+4. Rechtsboven **Verzenden** → het link-icoon 🔗 → kopieer de link.
 
-| | |
-|---|---|
-| Uitvoeren als | **Ikzelf** |
-| Wie heeft toegang | **Iedereen** |
+> Gebruik niet de snelkoppeling `sheets.new` om vooraf zelf een spreadsheet te
+> maken. Ben je met meerdere Google-accounts tegelijk ingelogd, dan gaat die
+> naar het verkeerde account en krijg je "Kan het bestand momenteel niet
+> openen". Laat het formulier de spreadsheet aanmaken; dan klopt het account
+> per definitie.
 
-Zonder die tweede kan de site niets versturen. Google vraagt eenmalig
-toestemming; je krijgt een waarschuwing dat het script niet geverifieerd is —
-dat klopt, het is je eigen script. Kies *Geavanceerd* en ga door.
+### De veldnummers opzoeken
 
-Je krijgt een adres van de vorm
-`https://script.google.com/macros/s/AKfy…/exec`. **Dat adres heb ik nodig.**
+Elk antwoordveld heeft een nummer dat in `js/feedback.js` moet staan. Die zijn
+uit het formulier zelf te lezen — inloggen is niet nodig, want een formulier is
+openbaar:
 
-### 4. Zet de sheet open voor uitlezen
+```bash
+python scripts/formulier_velden.py https://docs.google.com/forms/d/e/…/viewform
+```
 
-Om de opmerkingen automatisch te kunnen inlezen: in de spreadsheet
-**Bestand → Delen → Publiceren op internet**, kies het eerste blad en
-**Kommagescheiden waarden (.csv)**, en publiceer.
+Zet de uitkomst in `FORMULIER` en `FORMULIER_VELDEN` in `js/feedback.js`.
+Verander je later de volgorde of de naam van een vraag, dan blijven de nummers
+gelijk; voeg je een vraag toe, draai het script dan opnieuw.
 
-Je krijgt een tweede adres, eindigend op `output=csv`. **Dat heb ik ook
-nodig.**
+## De sheet leesbaar maken
 
-> Let op: een gepubliceerde sheet is voor iedereen leesbaar die het adres
-> kent. Zet er dus geen gegevens in die niet openbaar mogen zijn. De
-> meldingen zelf zijn suggesties op een publieke Bijbeltekst, maar het
-> mailadres van een inzender is dat niet — daarom slaat het script alleen op
-> wat de inzender zelf invulde, en niet zijn adres.
+De gekoppelde spreadsheet is standaard privé. Delen met "iedereen met de link"
+is niet genoeg — dat geeft zicht in de browser, maar programmatisch uitlezen
+levert dan een 401. Daarvoor moet hij gepubliceerd worden:
 
-## Daarna
+**Bestand → Delen → Publiceren op internet** → eerste blad → **Kommagescheiden
+waarden (.csv)** → **Publiceren**.
 
-Geef me beide adressen door. Ik zet het eerste in `js/feedback.js` en het
-tweede in `scripts/lees_opmerkingen.py`, en dan kan ik met één opdracht alle
-openstaande opmerkingen ophalen en verwerken.
+Je krijgt een adres dat eindigt op `output=csv`. Zet dat in
+`data/opmerkingen-bron.json`:
+
+```json
+{"csv": "https://docs.google.com/spreadsheets/d/e/…/pub?output=csv"}
+```
+
+Dat bestand staat in `.gitignore`, zodat het adres niet in de geschiedenis
+belandt. Als alternatief kan het in de omgevingsvariabele
+`OV_OPMERKINGEN_CSV`.
+
+> Een gepubliceerde sheet is leesbaar voor iedereen die het adres kent. Zet er
+> dus niets in dat niet openbaar mag zijn. De meldingen zelf zijn suggesties op
+> een publieke Bijbeltekst; het mailadres van een inzender is dat niet, en dat
+> wordt daarom niet naar het formulier gestuurd — alleen de naam die iemand
+> zelf invulde. Het mailadres loopt uitsluitend via de mailweg.
+
+## Uitlezen
+
+```bash
+python scripts/lees_opmerkingen.py                 # openstaande meldingen
+python scripts/lees_opmerkingen.py --alles         # ook de afgehandelde
+python scripts/lees_opmerkingen.py --boek genesis  # alleen dat boek
+python scripts/lees_opmerkingen.py --json          # machineleesbaar
+```
+
+Voeg in de spreadsheet zelf een kolom **Status** toe om meldingen af te vinken;
+alles wat niet leeg of `nieuw` is, valt buiten de standaardlijst.
