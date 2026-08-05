@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = '2026-08-83-jezusnaam'
+const VERSION = '2026-08-84-sheet'
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
