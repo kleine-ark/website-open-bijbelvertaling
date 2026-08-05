@@ -15,9 +15,15 @@ Geen Zapier, geen extra dienst, geen sleutel in de repo.
 
 ### 1. Maak de spreadsheet
 
-Ga naar [sheets.new](https://sheets.new) en noem hem bijvoorbeeld
-**Opmerkingen Open Vertaling**. Verder niets invullen; het script maakt de
-kolomkoppen zelf.
+Ga naar [drive.google.com](https://drive.google.com) en controleer rechtsboven
+met welk account je bent ingelogd. Klik dan op **Nieuw → Google
+Spreadsheets** en noem het bestand bijvoorbeeld **Opmerkingen Open
+Vertaling**. Verder niets invullen; het script maakt de kolomkoppen zelf.
+
+> Gebruik niet de snelkoppeling `sheets.new`. Ben je met meerdere
+> Google-accounts tegelijk ingelogd, dan gaat die naar het verkeerde account
+> en krijg je "Kan het bestand momenteel niet openen". Via Drive zie je
+> meteen met welk account je werkt.
 
 ### 2. Plak het script erin
 
