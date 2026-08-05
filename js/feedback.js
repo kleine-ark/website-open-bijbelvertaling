@@ -16,6 +16,12 @@ const Feedback = {
        bevestiging een sleutel van de vorm /ajax/a1b2c3…; vervang die hier,
        dan staat het mailadres niet meer in de broncode en kunnen spambots
        het niet oogsten. */
+    /* Voorkeursweg: een Google Apps Script dat de melding in een spreadsheet
+       zet én een mail stuurt. Dan is er een lijst om te sorteren en af te
+       vinken, en kan scripts/lees_opmerkingen.py ze automatisch ophalen.
+       Zolang dit leeg is gaat alles via FormSubmit, dat alleen mailt.
+       Instellen staat in docs/opmerkingen-in-google-sheet.md. */
+    SHEET_ENDPOINT: '',
     FORM_ENDPOINT: 'https://formsubmit.co/ajax/maartenvroegindeweij@gmail.com',
     MAIL_TERUGVAL: 'maartenvroegindeweij@gmail.com',
     modal: null,
@@ -158,7 +164,31 @@ const Feedback = {
         // onderstreep zijn instellingen van FormSubmit zelf en komen niet in
         // de mail terecht.
         let ok = false;
-        try {
+
+        // Eerst de spreadsheet, als die is ingesteld.
+        if (this.SHEET_ENDPOINT) {
+            try {
+                const r = await fetch(this.SHEET_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({
+                        ref: payload.ref,
+                        selected: payload.selected,
+                        suggestion: payload.suggestion,
+                        van: payload.user.name || 'anoniem',
+                        userAgent: payload.userAgent
+                    })
+                });
+                const j = await r.json().catch(() => ({}));
+                ok = r.ok && j.ok === true;
+                if (!ok) console.warn('[Feedback] spreadsheet antwoordde:', r.status, j);
+            } catch (e) {
+                console.warn('[Feedback] spreadsheet onbereikbaar:', e);
+            }
+        }
+
+        // Anders, of als dat niet lukte, de mailweg.
+        if (!ok) try {
             const r = await fetch(this.FORM_ENDPOINT, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
