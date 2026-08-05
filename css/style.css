@@ -976,7 +976,26 @@ body {
 #sidebar-right input[type="checkbox"], #sidebar-right input[type="radio"] {
     margin: 0; flex-shrink: 0;
 }
-#sidebar-right .hint { color: #999; font-size: 11px; }
+/* De toelichting onder de optie in plaats van erachter. Achter de optie was
+   zij maatgevend voor de breedte van het hele paneel — "(cursief, « », rood =
+   God, geel = duivel)" dwong er honderd pixels bij die de leestekst kwijtraakt.
+   Onder de optie mag de balk versmallen. */
+#sidebar-right .hint {
+    display: block;
+    color: #999;
+    font-size: 11px;
+    line-height: 1.35;
+    margin-top: 1px;
+    padding-left: 22px;   /* uitlijnen met de tekst naast het vinkje */
+}
+/* Een label met een keuzevakje zet dat vakje bovenaan, zodat de toelichting
+   eronder netjes inspringt in plaats van het vakje mee te slepen. */
+#sidebar-right .opt-group label {
+    display: block;
+    align-items: flex-start;
+}
+#sidebar-right .opt-group label > input { float: left; margin-right: 6px; }
+#sidebar-right { width: 220px; min-width: 220px; }
 
 /* Mobile backdrop voor off-canvas drawers */
 #mobile-backdrop {

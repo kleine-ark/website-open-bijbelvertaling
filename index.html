@@ -823,14 +823,17 @@
         var cb = document.getElementById('toggle-dyslexia');
         if (cb) cb.checked = true;
     }
-    // Citaatopmaak (standaard UIT; alleen aan als de gebruiker expliciet 'true' koos)
-    if (localStorage.getItem('citaatopmaak') === 'true') {
-        var cc = document.getElementById('toggle-citaten');
-        if (cc) cc.checked = true;
-    } else {
+    // Citaatopmaak (standaard AAN; alleen uit als de gebruiker expliciet 'false' koos).
+    // Stond eerder standaard uit, waardoor niemand de cursieve directe rede zag,
+    // de rode Godsspraak, of het gele niveau van een citaat binnen een citaat —
+    // terwijl 691 verzen die markering wel dragen.
+    if (localStorage.getItem('citaatopmaak') === 'false') {
         document.body.classList.add('citaten-uit');
         var cc0 = document.getElementById('toggle-citaten');
         if (cc0) cc0.checked = false;
+    } else {
+        var cc = document.getElementById('toggle-citaten');
+        if (cc) cc.checked = true;
     }
     // Pericoop-kopjes herstellen (standaard AAN; alleen uit als expliciet 'false')
     if (localStorage.getItem('pericopen') === 'false') {

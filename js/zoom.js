@@ -141,7 +141,9 @@
         var s = document.createElement('style');
         s.id = 'ov-zoom-css';
         s.textContent =
-            '#ov-zoom{position:fixed;left:10px;bottom:12px;z-index:5000;display:none;' +
+            /* Rechtsonder, niet linksonder: links zit de knop voor het vorige
+               hoofdstuk. positioneer() tilt hem bovendien boven de voetbalk. */
+            '#ov-zoom{position:fixed;right:10px;bottom:12px;z-index:5000;display:none;' +
             'align-items:center;gap:2px;background:rgba(20,46,66,0.92);border:1px solid rgba(203,164,73,0.5);' +
             'border-radius:22px;padding:3px;box-shadow:0 2px 10px rgba(0,0,0,0.3);backdrop-filter:blur(4px);}' +
             '#ov-zoom button{font-family:inherit;color:#fff;background:transparent;border:none;cursor:pointer;}' +
