@@ -228,8 +228,8 @@
    "id": "V3",
    "categorie": "Verouderde woorden",
    "oud": "ganse",
-   "nieuw": "gehele",
-   "toelichting": "Verouderd bijvoeglijk naamwoord",
+   "nieuw": "hele",
+   "toelichting": "Verouderd bijvoeglijk naamwoord. Wijst rechtstreeks naar de einduitkomst; een eerdere tussenvorm werd door een tweede principe alsnog aangepast.",
    "regex": "\\b[Gg]anse\\b"
   },
   {
@@ -1852,8 +1852,8 @@
    "id": "V169",
    "categorie": "Verouderde woorden",
    "oud": "waardiglijk",
-   "nieuw": "waardig",
-   "toelichting": "",
+   "nieuw": "waard",
+   "toelichting": "Wijst rechtstreeks naar de einduitkomst; een eerdere tussenvorm werd door een tweede principe alsnog aangepast.",
    "regex": "\\b[Ww]aardiglijk\\b"
   },
   {
@@ -1996,8 +1996,8 @@
    "id": "V187",
    "categorie": "Verouderde woorden",
    "oud": "onbeschuldiglijk",
-   "nieuw": "onbeschuldig",
-   "toelichting": "",
+   "nieuw": "onschuldig",
+   "toelichting": "Wijst rechtstreeks naar de einduitkomst; een eerdere tussenvorm werd door een tweede principe alsnog aangepast.",
    "regex": "\\b[Oo]nbeschuldiglijk\\b"
   },
   {
@@ -2316,8 +2316,8 @@
    "id": "V227",
    "categorie": "Verouderde woorden",
    "oud": "welbehagelijk",
-   "nieuw": "welgevallig",
-   "toelichting": "v0.13.6: Verouderde compositie; modern equivalent 'welgevallig' (= aangenaam, behaaglijk in Godsdienstige context). 9 voorkomens in hoofdtekst + 30 in marginNotes.",
+   "nieuw": "welbehaaglijk",
+   "toelichting": "v0.13.6: Verouderde compositie; modern equivalent 'welgevallig' (= aangenaam, behaaglijk in Godsdienstige context). 9 voorkomens in hoofdtekst + 30 in marginNotes. Wijst rechtstreeks naar de einduitkomst; een eerdere tussenvorm werd door een tweede principe alsnog aangepast.",
    "regex": "\\b[Ww]elbehagelijk\\b"
   },
   {
@@ -2449,15 +2449,6 @@
    "toelichting": "'Lossing' (in zin van: prijs voor vrijkoping) → 'losprijs' (modern equivalent). Gangbaar in evangelies (Mat 20:28, Mar 10:45) en theologisch register.",
    "regex": "\\b[Ll]ossing\\b",
    "voorbeeld": "Mar 8:37 'tot lossing van zijn ziel' → 'tot losprijs van zijn ziel'"
-  },
-  {
-   "id": "V243",
-   "categorie": "Verouderde woorden",
-   "oud": "voller",
-   "nieuw": "wolbewerker",
-   "toelichting": "'Voller' (oud-Nederlands beroep: iemand die wol vol-/dik-werkte) → 'wolbewerker' (modern equivalent).",
-   "regex": "\\bvoller\\b",
-   "voorbeeld": "Mar 9:3 'geen voller op aarde' → 'geen wolbewerker op aarde'"
   },
   {
    "id": "V244",
@@ -2706,8 +2697,8 @@
    "id": "V271",
    "categorie": "Verouderde woorden",
    "oud": "verborgenheid",
-   "nieuw": "geheimenis",
-   "toelichting": "'Verborgenheid' (Grieks μυστήριον = mysterion) → 'geheimenis' — modern theologisch register, conform HSV en NBG. Inclusief meervoud.",
+   "nieuw": "geheim",
+   "toelichting": "'Verborgenheid' (Grieks μυστήριον = mysterion) → 'geheimenis' — modern theologisch register, conform HSV en NBG. Inclusief meervoud. Wijst rechtstreeks naar de einduitkomst; een eerdere tussenvorm werd door een tweede principe alsnog aangepast.",
    "regex": "\\b[Vv]erborgenhed(en|eid)\\b",
    "voorbeeld": "Ef 5:32 'Deze verborgenheid is groot' → 'Deze geheimenis is groot'"
   },
@@ -2885,8 +2876,8 @@
    "id": "V292",
    "categorie": "Naamvallen",
    "oud": "denzelfden",
-   "nieuw": "denzelfde",
-   "toelichting": "4e naamvalsuitgang -n verwijderd",
+   "nieuw": "deze",
+   "toelichting": "4e naamvalsuitgang -n verwijderd. Wijst rechtstreeks naar de einduitkomst; een eerdere tussenvorm werd door een tweede principe alsnog aangepast.",
    "regex": "\\b[Dd]enzelfden\\b"
   },
   {
@@ -7117,8 +7108,8 @@
    "id": "V827",
    "categorie": "Verouderde woorden",
    "oud": "uitnemend",
-   "nieuw": "uitermate",
-   "toelichting": "Als bijwoord van graad 'uitnemend (zeer)' → 'uitermate'. NIET het bijvoeglijke 'uitnemend' = voortreffelijk/uitmuntend. AI per situatie.",
+   "nieuw": "bovenmate",
+   "toelichting": "Als bijwoord van graad 'uitnemend (zeer)' → 'uitermate'. NIET het bijvoeglijke 'uitnemend' = voortreffelijk/uitmuntend. AI per situatie. Wijst rechtstreeks naar de einduitkomst; een eerdere tussenvorm werd door een tweede principe alsnog aangepast.",
    "regex": "\\buitnemend"
   },
   {
@@ -7253,8 +7244,8 @@
    "id": "V844",
    "categorie": "Verouderde woorden",
    "oud": "billijk",
-   "nieuw": "behoorlijk",
-   "toelichting": "In de betekenis 'passend/gepast/behoorlijk' (zoals billijk is) → 'behoorlijk'. NIET 'billijk' = redelijk/rechtvaardig (billijke voorwaarden) of 'billijkheid' = recht/gerechtigheid. AI per situatie.",
+   "nieuw": "(context-afhankelijk)",
+   "toelichting": "Soms 'behoorlijk', soms 'terecht'. Per plaats beoordelen; zie ook V926.",
    "regex": "\\bbillijk"
   },
   {
@@ -7632,14 +7623,6 @@
    "nieuw": "minnaars",
    "toelichting": "Verouderd 'boelen' (minnaars/geliefden in ontuchtige zin) -> 'minnaars'. NIET 'boelerij' (=hoererij).",
    "regex": "\\bboelen\\b"
-  },
-  {
-   "id": "V892",
-   "categorie": "Verouderde woorden",
-   "oud": "most",
-   "nieuw": "jonge wijn",
-   "toelichting": "Verouderd 'most' (jonge, nog niet uitgegiste wijn) -> 'jonge wijn'.",
-   "regex": "\\bmost\\b"
   },
   {
    "id": "V893",
