@@ -2,33 +2,224 @@
   "titel": "Islamitische (Arabische) namen",
   "toelichting": "Optionele weergave: vervangt in de leestekst een aantal bijbelse figuren en begrippen door hun gevestigde Arabische/Koranische naamvorm. Alleen de moderne Open Vertaling-tekst wordt aangepast; de historische kolommen blijven ongewijzigd. Standaard uitgeschakeld.",
   "namen": [
-    { "nl": "Adam", "varianten": [], "translit": "Adam", "arab": "آدَم", "uitleg": "De eerste mens" },
-    { "nl": "Henoch", "varianten": [], "translit": "Idris", "arab": "إِدْرِيس", "uitleg": "Profeet, traditioneel met Henoch vereenzelvigd" },
-    { "nl": "Noach", "varianten": [], "translit": "Nuh", "arab": "نُوح", "uitleg": "Profeet van de zondvloed" },
-    { "nl": "Abraham", "varianten": [], "translit": "Ibrahim", "arab": "إِبْرَاهِيم", "uitleg": "Aartsvader en profeet" },
-    { "nl": "Ismaël", "varianten": ["Ismael"], "translit": "Ismail", "arab": "إِسْمَاعِيل", "uitleg": "Zoon van Abraham en Hagar" },
-    { "nl": "Izaäk", "varianten": ["Izak", "Isaäk", "Isaak"], "translit": "Ishaq", "arab": "إِسْحَاق", "uitleg": "Zoon van Abraham en Sara" },
-    { "nl": "Jakob", "varianten": [], "translit": "Yaqub", "arab": "يَعْقُوب", "uitleg": "Zoon van Izaäk, ook Israël" },
-    { "nl": "Jozef", "varianten": [], "translit": "Yusuf", "arab": "يُوسُف", "uitleg": "Zoon van Jakob" },
-    { "nl": "Mozes", "varianten": [], "translit": "Musa", "arab": "مُوسَىٰ", "uitleg": "Profeet van de uittocht" },
-    { "nl": "Aäron", "varianten": ["Aaron"], "translit": "Harun", "arab": "هَارُون", "uitleg": "Broer van Mozes" },
-    { "nl": "David", "varianten": [], "translit": "Dawud", "arab": "دَاوُد", "uitleg": "Koning en profeet" },
-    { "nl": "Salomo", "varianten": ["Salomon"], "translit": "Sulayman", "arab": "سُلَيْمَان", "uitleg": "Zoon van David, koning" },
-    { "nl": "Elia", "varianten": [], "translit": "Ilyas", "arab": "إِلْيَاس", "uitleg": "Profeet" },
-    { "nl": "Elisa", "varianten": [], "translit": "Alyasa", "arab": "الْيَسَع", "uitleg": "Profeet, opvolger van Elia" },
-    { "nl": "Jona", "varianten": [], "translit": "Yunus", "arab": "يُونُس", "uitleg": "Profeet van de grote vis" },
-    { "nl": "Job", "varianten": [], "translit": "Ayyub", "arab": "أَيُّوب", "uitleg": "De beproefde rechtvaardige" },
-    { "nl": "Lot", "varianten": [], "translit": "Lut", "arab": "لُوط", "uitleg": "Neef van Abraham" },
-    { "nl": "Zacharias", "varianten": [], "translit": "Zakariya", "arab": "زَكَرِيَّا", "uitleg": "Vader van Johannes de Doper" },
-    { "nl": "Johannes", "varianten": [], "translit": "Yahya", "arab": "يَحْيَىٰ", "uitleg": "Johannes de Doper" },
-    { "nl": "Jezus", "varianten": ["JEZUS"], "translit": "Isa", "arab": "عِيسَىٰ", "uitleg": "Zoon van Maria; in de Koran de Messias (al-Masih)" },
-    { "nl": "Maria", "varianten": [], "translit": "Maryam", "arab": "مَرْيَم", "uitleg": "Moeder van Jezus" },
-    { "nl": "Gabriël", "varianten": ["Gabriel"], "translit": "Jibril", "arab": "جِبْرِيل", "uitleg": "In de islamitische traditie de engel van de openbaring" },
-    { "nl": "Farao", "varianten": [], "translit": "Firaun", "arab": "فِرْعَوْن", "uitleg": "De heerser van Egypte" },
-    { "nl": "Goliath", "varianten": [], "translit": "Jalut", "arab": "جَالُوت", "uitleg": "De reus die David versloeg" },
-    { "nl": "Saul", "varianten": [], "translit": "Talut", "arab": "طَالُوت", "uitleg": "De eerste koning van Israël" },
-    { "nl": "Thora", "varianten": [], "translit": "Taurat", "arab": "التَّوْرَاة", "uitleg": "In de Koran de aan Mozes gegeven Wet" },
-    { "nl": "Evangelie", "varianten": [], "translit": "Indjiel", "arab": "الإِنْجِيل", "uitleg": "In de Koran het aan Jezus gegeven Evangelie" },
-    { "nl": "Psalmen", "varianten": [], "translit": "Zaboer", "arab": "الزَّبُور", "uitleg": "In de Koran de aan David gegeven Psalmen" }
+    {
+      "nl": "Adam",
+      "varianten": [],
+      "translit": "Adam",
+      "arab": "آدَم",
+      "uitleg": "De eerste mens"
+    },
+    {
+      "nl": "Henoch",
+      "varianten": [],
+      "translit": "Idris",
+      "arab": "إِدْرِيس",
+      "uitleg": "Profeet, traditioneel met Henoch vereenzelvigd"
+    },
+    {
+      "nl": "Noach",
+      "varianten": [],
+      "translit": "Nuh",
+      "arab": "نُوح",
+      "uitleg": "Profeet van de zondvloed"
+    },
+    {
+      "nl": "Abraham",
+      "varianten": [],
+      "translit": "Ibrahim",
+      "arab": "إِبْرَاهِيم",
+      "uitleg": "Aartsvader en profeet"
+    },
+    {
+      "nl": "Ismaël",
+      "varianten": [
+        "Ismael"
+      ],
+      "translit": "Ismail",
+      "arab": "إِسْمَاعِيل",
+      "uitleg": "Zoon van Abraham en Hagar"
+    },
+    {
+      "nl": "Izaäk",
+      "varianten": [
+        "Izak",
+        "Isaäk",
+        "Isaak"
+      ],
+      "translit": "Ishaq",
+      "arab": "إِسْحَاق",
+      "uitleg": "Zoon van Abraham en Sara"
+    },
+    {
+      "nl": "Jakob",
+      "varianten": [],
+      "translit": "Yaqub",
+      "arab": "يَعْقُوب",
+      "uitleg": "Zoon van Izaäk, ook Israël"
+    },
+    {
+      "nl": "Jozef",
+      "varianten": [],
+      "translit": "Yusuf",
+      "arab": "يُوسُف",
+      "uitleg": "Zoon van Jakob"
+    },
+    {
+      "nl": "Mozes",
+      "varianten": [],
+      "translit": "Musa",
+      "arab": "مُوسَىٰ",
+      "uitleg": "Profeet van de uittocht"
+    },
+    {
+      "nl": "Aäron",
+      "varianten": [
+        "Aaron"
+      ],
+      "translit": "Harun",
+      "arab": "هَارُون",
+      "uitleg": "Broer van Mozes"
+    },
+    {
+      "nl": "David",
+      "varianten": [],
+      "translit": "Dawud",
+      "arab": "دَاوُد",
+      "uitleg": "Koning en profeet"
+    },
+    {
+      "nl": "Salomo",
+      "varianten": [
+        "Salomon"
+      ],
+      "translit": "Sulayman",
+      "arab": "سُلَيْمَان",
+      "uitleg": "Zoon van David, koning"
+    },
+    {
+      "nl": "Elia",
+      "varianten": [],
+      "translit": "Ilyas",
+      "arab": "إِلْيَاس",
+      "uitleg": "Profeet"
+    },
+    {
+      "nl": "Elisa",
+      "varianten": [],
+      "translit": "Alyasa",
+      "arab": "الْيَسَع",
+      "uitleg": "Profeet, opvolger van Elia"
+    },
+    {
+      "nl": "Jona",
+      "varianten": [],
+      "translit": "Yunus",
+      "arab": "يُونُس",
+      "uitleg": "Profeet van de grote vis"
+    },
+    {
+      "nl": "Job",
+      "varianten": [],
+      "translit": "Ayyub",
+      "arab": "أَيُّوب",
+      "uitleg": "De beproefde rechtvaardige"
+    },
+    {
+      "nl": "Lot",
+      "varianten": [],
+      "translit": "Lut",
+      "arab": "لُوط",
+      "uitleg": "Neef van Abraham"
+    },
+    {
+      "nl": "Zacharias",
+      "varianten": [],
+      "translit": "Zakariya",
+      "arab": "زَكَرِيَّا",
+      "uitleg": "Vader van Johannes de Doper"
+    },
+    {
+      "nl": "Johannes",
+      "varianten": [],
+      "translit": "Yahya",
+      "arab": "يَحْيَىٰ",
+      "uitleg": "Johannes de Doper"
+    },
+    {
+      "nl": "Jezus Christus",
+      "varianten": [
+        "JEZUS CHRISTUS"
+      ],
+      "translit": "Yasū‘ al-Masīḥ",
+      "arab": "يَسُوع الْمَسِيح",
+      "uitleg": "al-Masīḥ betekent de Messias, de Gezalfde."
+    },
+    {
+      "nl": "Jezus",
+      "varianten": [
+        "JEZUS"
+      ],
+      "translit": "Yasū‘",
+      "arab": "يَسُوع",
+      "uitleg": "De naam zoals Arabische christenen hem gebruiken en zoals hij in Arabische Bijbels staat. De Koran gebruikt ʿĪsā."
+    },
+    {
+      "nl": "Maria",
+      "varianten": [],
+      "translit": "Maryam",
+      "arab": "مَرْيَم",
+      "uitleg": "Moeder van Jezus"
+    },
+    {
+      "nl": "Gabriël",
+      "varianten": [
+        "Gabriel"
+      ],
+      "translit": "Jibril",
+      "arab": "جِبْرِيل",
+      "uitleg": "In de islamitische traditie de engel van de openbaring"
+    },
+    {
+      "nl": "Farao",
+      "varianten": [],
+      "translit": "Firaun",
+      "arab": "فِرْعَوْن",
+      "uitleg": "De heerser van Egypte"
+    },
+    {
+      "nl": "Goliath",
+      "varianten": [],
+      "translit": "Jalut",
+      "arab": "جَالُوت",
+      "uitleg": "De reus die David versloeg"
+    },
+    {
+      "nl": "Saul",
+      "varianten": [],
+      "translit": "Talut",
+      "arab": "طَالُوت",
+      "uitleg": "De eerste koning van Israël"
+    },
+    {
+      "nl": "Thora",
+      "varianten": [],
+      "translit": "Taurat",
+      "arab": "التَّوْرَاة",
+      "uitleg": "In de Koran de aan Mozes gegeven Wet"
+    },
+    {
+      "nl": "Evangelie",
+      "varianten": [],
+      "translit": "Indjiel",
+      "arab": "الإِنْجِيل",
+      "uitleg": "In de Koran het aan Jezus gegeven Evangelie"
+    },
+    {
+      "nl": "Psalmen",
+      "varianten": [],
+      "translit": "Zaboer",
+      "arab": "الزَّبُور",
+      "uitleg": "In de Koran de aan David gegeven Psalmen"
+    }
   ]
 }
