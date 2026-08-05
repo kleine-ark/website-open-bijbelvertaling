@@ -1,10 +1,23 @@
-/* Feedback-tool — gebruiker selecteert tekst, klikt 💬 in floating palette,
- * vult suggestie in, verzendt → Firestore (collectie `feedback`) +
- * POST /api/feedback (server.py mailt door naar maartenvroegindeweij@gmail.com).
+/* Feedback-tool — de lezer selecteert tekst, klikt 💬 in het zwevende palet,
+ * vult een suggestie in en verstuurt. De melding gaat rechtstreeks per mail.
+ *
+ * Geen inloggen vereist: dat is een drempel die alleen maar minder feedback
+ * oplevert. Wie wél is ingelogd stuurt zijn naam automatisch mee.
  */
 
 const Feedback = {
-    SERVER_ENDPOINT: '/api/feedback',
+    /* Meldingen gaan rechtstreeks per mail via FormSubmit. Bewust geen
+       Firestore: dat vroeg inloggen van de bezoeker én beveiligingsregels in
+       de Firebase Console, terwijl het doel simpelweg is dat de melding
+       aankomt. Inloggen blijft wel bestaan voor persoonlijke instellingen en
+       markeringen; wie is ingelogd stuurt zijn naam automatisch mee.
+
+       Het adres staat hier nog voluit. FormSubmit geeft na de eerste
+       bevestiging een sleutel van de vorm /ajax/a1b2c3…; vervang die hier,
+       dan staat het mailadres niet meer in de broncode en kunnen spambots
+       het niet oogsten. */
+    FORM_ENDPOINT: 'https://formsubmit.co/ajax/maartenvroegindeweij@gmail.com',
+    MAIL_TERUGVAL: 'maartenvroegindeweij@gmail.com',
     modal: null,
     pending: null,  // { bookId, ch, vs, text }
 
@@ -102,48 +115,9 @@ const Feedback = {
         m.querySelector('.fb-status').textContent = '';
         m.querySelector('.fb-send').disabled = false;
         m.classList.remove('hidden');
-        this._toonLoginStatus();
         setTimeout(() => m.querySelector('#fb-suggestion').focus(), 30);
     },
 
-    /* Zonder login komt de melding nergens aan: Firestore weigert het schrijven
-       (permission-denied) en er is geen server-endpoint op een statische site.
-       Vraag dus vooraf om inloggen, in plaats van pas na het verzenden te
-       melden dat het mislukt is. */
-    _toonLoginStatus() {
-        var m = this.modal;
-        if (!m) return;
-        var status = m.querySelector('.fb-status');
-        var send = m.querySelector('.fb-send');
-        var ingelogd = !!(window.Auth && window.Auth.currentUser);
-
-        if (ingelogd) {
-            send.disabled = false;
-            status.textContent = '';
-            return;
-        }
-        send.disabled = true;
-        status.innerHTML = 'Log eerst in, dan komt uw suggestie bij ons terecht. ' +
-            '<button type="button" class="fb-login" style="background:var(--navy,#142e42);' +
-            'color:#fff;border:2px solid var(--gold,#cba449);border-radius:5px;' +
-            'padding:5px 14px;font:inherit;font-weight:600;cursor:pointer;margin-left:6px;">' +
-            'Inloggen met Google</button>';
-        var knop = status.querySelector('.fb-login');
-        if (knop) {
-            knop.addEventListener('click', function () {
-                status.textContent = 'Bezig met inloggen…';
-                if (window.Auth && window.Auth.login) window.Auth.login();
-            });
-        }
-        // Na een geslaagde login (ook na de redirect op mobiel) de knop vrijgeven.
-        if (window.Auth && window.Auth.onChange && !this._loginGekoppeld) {
-            this._loginGekoppeld = true;
-            var zelf = this;
-            window.Auth.onChange(function () {
-                if (zelf.modal && !zelf.modal.classList.contains('hidden')) zelf._toonLoginStatus();
-            });
-        }
-    },
 
     close() {
         if (this.modal) this.modal.classList.add('hidden');
@@ -180,48 +154,33 @@ const Feedback = {
             userAgent: navigator.userAgent
         };
 
-        const tasks = [];
-
-        // 1) Firestore (indien ingelogd & beschikbaar)
-        if (window._fb && window._fb.db && user) {
-            tasks.push((async () => {
-                try {
-                    const { collection, addDoc, serverTimestamp } = window._fb.fsMod;
-                    await addDoc(collection(window._fb.db, 'feedback'), {
-                        ...payload,
-                        createdAt: serverTimestamp()
-                    });
-                    return 'firestore-ok';
-                } catch (e) {
-                    console.warn('[Feedback] Firestore failed:', e);
-                    // permission-denied betekent dat de beveiligingsregels het
-                    // schrijven blokkeren, niet dat de verbinding stuk is. Zie
-                    // firestore.rules in de repo; die moet in de Console staan.
-                    if (e && e.code === 'permission-denied') return 'firestore-geweigerd';
-                    return 'firestore-fail';
-                }
-            })());
+        // Eén verzendweg: rechtstreeks per mail. De veldnamen met een
+        // onderstreep zijn instellingen van FormSubmit zelf en komen niet in
+        // de mail terecht.
+        let ok = false;
+        try {
+            const r = await fetch(this.FORM_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    _subject: `Opmerking bij ${payload.ref}`,
+                    _template: 'table',
+                    _captcha: 'false',
+                    Vers: payload.ref,
+                    'Geselecteerde tekst': payload.selected || '(geen selectie)',
+                    Suggestie: payload.suggestion,
+                    Van: payload.user.name + (payload.user.email ? ' <' + payload.user.email + '>' : ''),
+                    Datum: payload.datum,
+                    Browser: payload.userAgent
+                })
+            });
+            const j = await r.json().catch(() => ({}));
+            ok = r.ok && String(j.success) === 'true';
+            if (!ok) console.warn('[Feedback] FormSubmit antwoordde:', r.status, j);
+        } catch (e) {
+            console.warn('[Feedback] versturen mislukt:', e);
         }
 
-        // 2) server.py /api/feedback (mail + log)
-        tasks.push((async () => {
-            try {
-                const r = await fetch(this.SERVER_ENDPOINT, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                if (!r.ok) return 'server-fail-' + r.status;
-                const j = await r.json().catch(() => ({}));
-                return j.mail === true ? 'server-mailed' : 'server-logged';
-            } catch (e) {
-                console.warn('[Feedback] server failed:', e);
-                return 'server-fail';
-            }
-        })());
-
-        const results = await Promise.all(tasks);
-        const ok = results.some(r => r && r.indexOf('fail') === -1);
         if (ok) {
             status.textContent = 'Bedankt! Je opmerking is verstuurd.';
             setTimeout(() => this.close(), 1600);
@@ -231,7 +190,7 @@ const Feedback = {
                 `Vers: ${payload.ref}\n` +
                 `Geselecteerde tekst:\n  "${payload.selected}"\n\n` +
                 `Suggestie:\n${payload.suggestion}\n`;
-            const mailto = `mailto:algemeen3bm@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailto = `mailto:${this.MAIL_TERUGVAL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             status.innerHTML = 'Online versturen mislukt. <a href="' + mailto + '" style="color:var(--gold);font-weight:600;">Klik hier om via je mailprogramma te versturen</a>.';
             sendBtn.disabled = false;
         }
