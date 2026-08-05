@@ -63,25 +63,21 @@
     }
 
     /* --- Plaatsing --------------------------------------------------------
-       De vaste voetbalk op mobiel (#mobile-footer-nav, 72 px hoog) bevat de
-       knoppen voor vorig/volgend hoofdstuk en de afspeelknop. De zweefknop
-       stond daar bovenop. Naar rechts schuiven helpt niet — de vrije gaten in
-       die balk zijn smaller dan de zweefknop — dus zetten we hem erbovenop. */
+       De vaste voetbalk op mobiel (#mobile-footer-nav) bevat de knoppen voor
+       vorig/volgend hoofdstuk en de afspeelknop. De zweefknop moet daarboven
+       blijven; naar opzij schuiven helpt niet, want de vrije gaten in die balk
+       zijn smaller dan de zweefknop.
 
-    function positioneer() {
-        var wrap = document.getElementById('ov-zoom');
-        if (!wrap) return;
-        var ruimte = 12;
-        var balk = document.getElementById('mobile-footer-nav');
-        if (balk) {
-            var st = getComputedStyle(balk);
-            if (st.display !== 'none' && st.visibility !== 'hidden' && st.position === 'fixed') {
-                var r = balk.getBoundingClientRect();
-                if (r.height > 0 && r.bottom >= window.innerHeight - 2) ruimte = Math.round(r.height) + 12;
-            }
-        }
-        wrap.style.bottom = ruimte + 'px';
-    }
+       Dit stond eerst in JavaScript: meet de balk, zet bottom navenant. Dat
+       ging twee keer mis. De balk groeit van 56 naar 72 px zodra de
+       afspeelknop verschijnt, en op een toestel met home-indicator komt daar
+       de veilige zone nog bij — maar de meting draaide daarna niet opnieuw, en
+       een verouderde waarde legt de knop precies op de pijl. Bovendien is
+       innerHeight op iOS niet betrouwbaar terwijl de URL-balk in- en uitschuift.
+
+       De hoogte van die balk staat gewoon in de CSS (10 px ondermarge plus de
+       hoogste knop: 46 px normaal, 62 px met afspeelknop). Dan kan de afstand
+       daar ook staan, en kan hij per definitie niet verouderen. */
 
     // Pas de opgeslagen zoom meteen toe (ook op desktop, zodat de keuze consistent is).
     apply(STEPS[idx]);
@@ -106,7 +102,6 @@
             apply(STEPS[idx]);
             if (STEPS[idx] === 1) localStorage.removeItem(KEY);
             else localStorage.setItem(KEY, STEPS[idx]);
-            positioneer();
             // herstelAnker leest getBoundingClientRect(), wat de layout meteen
             // laat herberekenen — geen requestAnimationFrame nodig. Dat is ook
             // beter: rAF vuurt niet op een achtergrondtab, waardoor de
@@ -119,20 +114,6 @@
         lbl.addEventListener('click', function () { idx = 2; refresh(true); });
         refresh(false);   // bij het opstarten is er nog geen leespositie om te bewaren
 
-        // De voetbalk komt soms pas later in de DOM en verandert van hoogte
-        // zodra de audiospeler verschijnt — dus opnieuw plaatsen bij elke wijziging.
-        function koppelBalk() {
-            positioneer();
-            var balk = document.getElementById('mobile-footer-nav');
-            if (balk && window.ResizeObserver && !balk._ovZoomWatch) {
-                balk._ovZoomWatch = new ResizeObserver(positioneer);
-                balk._ovZoomWatch.observe(balk);
-            }
-        }
-        window.addEventListener('resize', positioneer);
-        window.addEventListener('orientationchange', positioneer);
-        window.addEventListener('load', koppelBalk);
-        koppelBalk();
     }
 
     // Styles injecteren (self-contained, geen extra bestand)
@@ -142,8 +123,11 @@
         s.id = 'ov-zoom-css';
         s.textContent =
             /* Rechtsonder, niet linksonder: links zit de knop voor het vorige
-               hoofdstuk. positioneer() tilt hem bovendien boven de voetbalk. */
-            '#ov-zoom{position:fixed;right:10px;bottom:12px;z-index:5000;display:none;' +
+               hoofdstuk. 84px = 62px afspeelknop + 10px ondermarge van de balk
+               + 12px lucht; env() vangt de home-indicator op. right:20px is
+               dezelfde marge als de pijlen in de balk, zodat het één kolom is. */
+            '#ov-zoom{position:fixed;right:20px;z-index:5000;display:none;' +
+            'bottom:calc(84px + env(safe-area-inset-bottom, 0px));' +
             'align-items:center;gap:2px;background:rgba(20,46,66,0.92);border:1px solid rgba(203,164,73,0.5);' +
             'border-radius:22px;padding:3px;box-shadow:0 2px 10px rgba(0,0,0,0.3);backdrop-filter:blur(4px);}' +
             '#ov-zoom button{font-family:inherit;color:#fff;background:transparent;border:none;cursor:pointer;}' +
