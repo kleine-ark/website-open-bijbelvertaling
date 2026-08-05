@@ -1676,13 +1676,18 @@ span.direct-speech {
 }
 
 /* Citaat binnen een citaat: geel, zodat de lagen uit elkaar te houden zijn.
-   Komt 73 keer voor, meestal wanneer iemand een boodschap doorgeeft die hij
-   zelf gekregen heeft. De regels staan bewust op twee klassen diep, want de
-   losse .god-speaks-regels dragen !important. */
+   Komt honderden keren voor, meestal wanneer iemand een boodschap doorgeeft
+   die hij zelf gekregen heeft ("Zo zegt JAHWEH: …" binnen een opdracht aan
+   de profeet). De regels staan bewust op twee klassen diep, want de losse
+   .god-speaks- en .angel-speaks-regels dragen !important. */
 span.direct-speech span.direct-speech, span.direct-speech span.direct-speech i,
 span.direct-speech span.god-speaks,    span.direct-speech span.god-speaks i,
 span.god-speaks    span.direct-speech, span.god-speaks    span.direct-speech i,
-span.god-speaks    span.god-speaks,    span.god-speaks    span.god-speaks i {
+span.god-speaks    span.god-speaks,    span.god-speaks    span.god-speaks i,
+span.angel-speaks  span.direct-speech, span.angel-speaks  span.direct-speech i,
+span.angel-speaks  span.god-speaks,    span.angel-speaks  span.god-speaks i,
+span.devil-speaks  span.direct-speech, span.devil-speaks  span.direct-speech i,
+span.devil-speaks  span.god-speaks,    span.devil-speaks  span.god-speaks i {
     color: #9a6b00 !important;
 }
 :root[data-theme="donker"] span.direct-speech span.direct-speech,
@@ -1692,7 +1697,15 @@ span.god-speaks    span.god-speaks,    span.god-speaks    span.god-speaks i {
 :root[data-theme="donker"] span.god-speaks span.direct-speech,
 :root[data-theme="donker"] span.god-speaks span.direct-speech i,
 :root[data-theme="donker"] span.god-speaks span.god-speaks,
-:root[data-theme="donker"] span.god-speaks span.god-speaks i {
+:root[data-theme="donker"] span.god-speaks span.god-speaks i,
+:root[data-theme="donker"] span.angel-speaks span.direct-speech,
+:root[data-theme="donker"] span.angel-speaks span.direct-speech i,
+:root[data-theme="donker"] span.angel-speaks span.god-speaks,
+:root[data-theme="donker"] span.angel-speaks span.god-speaks i,
+:root[data-theme="donker"] span.devil-speaks span.direct-speech,
+:root[data-theme="donker"] span.devil-speaks span.direct-speech i,
+:root[data-theme="donker"] span.devil-speaks span.god-speaks,
+:root[data-theme="donker"] span.devil-speaks span.god-speaks i {
     color: #e3b341 !important;
 }
 span.direct-speech::before { content: '\201C'; }
@@ -2005,6 +2018,50 @@ body.citaten-uit .devil-speaks,
 body.citaten-uit .direct-speech i,
 body.citaten-uit .god-speaks i,
 body.citaten-uit .devil-speaks i {
+    color: inherit !important;
+    font-style: normal !important;
+    font-weight: inherit !important;
+}
+/* ook het gele citaat-in-een-citaat; dat staat op twee klassen diep en zou
+   anders als enige gekleurd blijven staan wanneer de opmaak uit is */
+body.citaten-uit span.direct-speech span.direct-speech,
+body.citaten-uit span.direct-speech span.direct-speech i,
+body.citaten-uit span.direct-speech span.god-speaks,
+body.citaten-uit span.direct-speech span.god-speaks i,
+body.citaten-uit span.god-speaks span.direct-speech,
+body.citaten-uit span.god-speaks span.direct-speech i,
+body.citaten-uit span.god-speaks span.god-speaks,
+body.citaten-uit span.god-speaks span.god-speaks i,
+body.citaten-uit span.angel-speaks span.direct-speech,
+body.citaten-uit span.angel-speaks span.direct-speech i,
+body.citaten-uit span.angel-speaks span.god-speaks,
+body.citaten-uit span.angel-speaks span.god-speaks i,
+body.citaten-uit span.devil-speaks span.direct-speech,
+body.citaten-uit span.devil-speaks span.direct-speech i,
+body.citaten-uit span.devil-speaks span.god-speaks,
+body.citaten-uit span.devil-speaks span.god-speaks i {
+    color: inherit !important;
+    font-style: normal !important;
+    font-weight: inherit !important;
+}
+/* in het donkere thema draagt de gele regel een extra klasse aan gewicht;
+   deze variant moet daar overheen */
+:root[data-theme="donker"] body.citaten-uit span.direct-speech span.direct-speech,
+:root[data-theme="donker"] body.citaten-uit span.direct-speech span.direct-speech i,
+:root[data-theme="donker"] body.citaten-uit span.direct-speech span.god-speaks,
+:root[data-theme="donker"] body.citaten-uit span.direct-speech span.god-speaks i,
+:root[data-theme="donker"] body.citaten-uit span.god-speaks span.direct-speech,
+:root[data-theme="donker"] body.citaten-uit span.god-speaks span.direct-speech i,
+:root[data-theme="donker"] body.citaten-uit span.god-speaks span.god-speaks,
+:root[data-theme="donker"] body.citaten-uit span.god-speaks span.god-speaks i,
+:root[data-theme="donker"] body.citaten-uit span.angel-speaks span.direct-speech,
+:root[data-theme="donker"] body.citaten-uit span.angel-speaks span.direct-speech i,
+:root[data-theme="donker"] body.citaten-uit span.angel-speaks span.god-speaks,
+:root[data-theme="donker"] body.citaten-uit span.angel-speaks span.god-speaks i,
+:root[data-theme="donker"] body.citaten-uit span.devil-speaks span.direct-speech,
+:root[data-theme="donker"] body.citaten-uit span.devil-speaks span.direct-speech i,
+:root[data-theme="donker"] body.citaten-uit span.devil-speaks span.god-speaks,
+:root[data-theme="donker"] body.citaten-uit span.devil-speaks span.god-speaks i {
     color: inherit !important;
     font-style: normal !important;
     font-weight: inherit !important;
