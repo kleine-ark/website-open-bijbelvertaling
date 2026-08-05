@@ -56,6 +56,25 @@
             cursor: pointer;
         }
         .wiki-sidebar a:hover { background: rgba(203,164,73,0.08); }
+        /* Onderwerpgroepen. Het aantal pagina's groeit, dus elke groep is in
+           te klappen; de stand blijft bewaard tussen bezoeken. */
+        .wiki-groep + .wiki-groep { margin-top: 2px; }
+        .wiki-groep-kop {
+            display: flex; align-items: center; justify-content: space-between;
+            width: 100%; text-align: left; cursor: pointer;
+            background: none; border: none;
+            padding: 10px 16px 6px;
+            font: 600 11px 'Fira Sans', sans-serif;
+            color: #cba449; text-transform: uppercase; letter-spacing: 0.08em;
+        }
+        .wiki-groep-kop::after {
+            content: '▾'; font-size: 11px; line-height: 1;
+            transition: transform 0.15s ease; color: inherit;
+        }
+        .wiki-groep-kop[aria-expanded="false"]::after { transform: rotate(-90deg); }
+        .wiki-groep-kop:hover { background: rgba(203,164,73,0.08); }
+        .wiki-groep-kop:focus-visible { outline: 2px solid #cba449; outline-offset: -2px; }
+        .wiki-groep-kop[aria-expanded="false"] + .wiki-groep-inhoud { display: none; }
         .wiki-sidebar a.active {
             color: #142e42; font-weight: 600;
             border-left-color: #cba449; background: rgba(203,164,73,0.08);
@@ -97,17 +116,43 @@
             Documentatie-menu
         </button>
         <nav class="wiki-sidebar">
-            <div class="section-label">Documentatie</div>
-            <a href="#uitgangspunten" data-page="uitgangspunten.html" class="active">Uitgangspunten &amp; techniek</a>
-            <a href="#principes" data-page="principes.html">Wijzigingsprincipes</a>
-            <a href="#begrippen" data-page="begrippen.html">Begrippen</a>
-            <a href="#maateenheden" data-page="maateenheden.html">Maten, gewichten &amp; munten</a>
-            <a href="#grondteksten" data-page="grondteksten.html">Grondteksten</a>
-            <a href="#handschriften" data-page="handschriften.html">Handschriften</a>
-            <a href="#geografie" data-page="geografie.html">Geografische aanduidingen</a>
-            <a href="#changelog" data-page="changelog.html">Changelog</a>
-            <div class="section-label">Downloaden</div>
-            <a href="#downloads" data-page="downloads.html">Downloads</a>
+            <!-- Groepen per onderwerp, elk in te klappen. Het aantal pagina's
+                 groeit, dus een platte lijst wordt op den duur onoverzichtelijk. -->
+            <div class="wiki-groep" data-groep="verkennen">
+                <button type="button" class="wiki-groep-kop" aria-expanded="true">Verkennen</button>
+                <div class="wiki-groep-inhoud">
+                    <a href="#kaart" data-page="kaart.html">Kaart</a>
+                    <a href="#stamboom" data-page="stamboom.html">Stamboom</a>
+                </div>
+            </div>
+
+            <div class="wiki-groep" data-groep="vertaling">
+                <button type="button" class="wiki-groep-kop" aria-expanded="true">De vertaling</button>
+                <div class="wiki-groep-inhoud">
+                    <a href="#uitgangspunten" data-page="uitgangspunten.html" class="active">Uitgangspunten &amp; techniek</a>
+                    <a href="#principes" data-page="principes.html">Wijzigingsprincipes</a>
+                    <a href="#statistieken" data-page="statistieken.html">Statistieken</a>
+                    <a href="#changelog" data-page="changelog.html">Changelog</a>
+                </div>
+            </div>
+
+            <div class="wiki-groep" data-groep="naslag">
+                <button type="button" class="wiki-groep-kop" aria-expanded="true">Naslag</button>
+                <div class="wiki-groep-inhoud">
+                    <a href="#begrippen" data-page="begrippen.html">Begrippen</a>
+                    <a href="#maateenheden" data-page="maateenheden.html">Maten, gewichten &amp; munten</a>
+                    <a href="#grondteksten" data-page="grondteksten.html">Grondteksten</a>
+                    <a href="#handschriften" data-page="handschriften.html">Handschriften</a>
+                    <a href="#geografie" data-page="geografie.html">Geografische aanduidingen</a>
+                </div>
+            </div>
+
+            <div class="wiki-groep" data-groep="downloaden">
+                <button type="button" class="wiki-groep-kop" aria-expanded="true">Downloaden</button>
+                <div class="wiki-groep-inhoud">
+                    <a href="#downloads" data-page="downloads.html">Downloads</a>
+                </div>
+            </div>
         </nav>
 
         <iframe id="wiki-frame" class="wiki-iframe" src="uitgangspunten.html"></iframe>
@@ -139,6 +184,36 @@
             a.addEventListener('click', function() { if (isMobile()) sidebar.classList.add('collapsed'); });
         });
 
+        // Groepen in- en uitklappen; de stand blijft bewaard. De groep waarin
+        // de geopende pagina staat gaat altijd open, anders lijkt hij weg.
+        var GROEP_SLEUTEL = 'ov_wiki_groepen';
+        var dicht = {};
+        try { dicht = JSON.parse(localStorage.getItem(GROEP_SLEUTEL) || '{}') || {}; } catch (e) { dicht = {}; }
+
+        var groepen = sidebar.querySelectorAll('.wiki-groep');
+        groepen.forEach(function (g) {
+            var kop = g.querySelector('.wiki-groep-kop');
+            var naam = g.getAttribute('data-groep');
+            if (dicht[naam]) kop.setAttribute('aria-expanded', 'false');
+            kop.addEventListener('click', function () {
+                var open = kop.getAttribute('aria-expanded') !== 'false';
+                kop.setAttribute('aria-expanded', open ? 'false' : 'true');
+                dicht[naam] = open;
+                try { localStorage.setItem(GROEP_SLEUTEL, JSON.stringify(dicht)); } catch (e) {}
+            });
+        });
+
+        function openGroepVan(link) {
+            var g = link.closest('.wiki-groep');
+            if (!g) return;
+            var kop = g.querySelector('.wiki-groep-kop');
+            if (kop && kop.getAttribute('aria-expanded') === 'false') {
+                kop.setAttribute('aria-expanded', 'true');
+                dicht[g.getAttribute('data-groep')] = false;
+                try { localStorage.setItem(GROEP_SLEUTEL, JSON.stringify(dicht)); } catch (e) {}
+            }
+        }
+
         // Map hash to page
         var hashMap = {};
         links.forEach(function(link) {
@@ -152,6 +227,7 @@
             // Update active state
             links.forEach(function(l) { l.classList.remove('active'); });
             link.classList.add('active');
+            openGroepVan(link);
             // Load in iframe
             iframe.src = link.getAttribute('data-page');
         }
