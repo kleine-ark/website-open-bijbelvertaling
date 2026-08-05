@@ -93,9 +93,38 @@ class Hoofdstuk:
             j = rest.find(tot)
             if j < 0:
                 raise ValueError(f'{self.pad} vers {n}: einde "{tot}" niet gevonden')
-            staart = " " + rest[j + len(tot):].lstrip()
+            staart = rest[j + len(tot):].lstrip()
+            # Geen spatie vóór leesteken: het citaat eindigt lang niet altijd op
+            # een zinseinde, en dan hoort de komma of puntkomma erachter direct
+            # tegen de span aan.
+            staart = ("" if staart[:1] in ",;:.!?" else " ") + staart
             rest = rest[:j + len(tot)]
         self._zet(n, f'{kop} <span class="{KLASSE[spreker]}"><i>{rest}</i></span>{staart}')
+
+    def nest(self, n, aankondiging, spreker, tot=None):
+        """Een citaat bínnen een lopende rede, zonder die rede af te breken.
+
+        Aäron vertelt Mozes wat het volk zei; die aangehaalde woorden krijgen
+        een span binnen de zijne. De CSS geeft de binnenste het gele accent."""
+        h = self.vers[n]["text2026_html"]
+        i = h.find(aankondiging)
+        if i < 0:
+            raise ValueError(f'{self.pad} vers {n}: "{aankondiging}" niet gevonden')
+        start = i + len(aankondiging)
+        rest = h[start:]
+        einde = len(rest)
+        if tot is not None:
+            j = rest.find(tot)
+            if j < 0:
+                raise ValueError(f'{self.pad} vers {n}: einde "{tot}" niet gevonden')
+            einde = j + len(tot)
+        else:
+            # tot het einde van de omhullende rede
+            k = rest.rfind('</i></span>')
+            if k >= 0:
+                einde = k
+        binnen = rest[:einde].strip()
+        self._zet(n, f'{h[:start]} <span class="{KLASSE[spreker]}"><i>{binnen}</i></span>{rest[einde:]}')
 
     def klasse(self, spreker, *nummers):
         """Alleen de klasse van de buitenste span wisselen."""
