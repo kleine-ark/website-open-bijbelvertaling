@@ -21,7 +21,7 @@ const Feedback = {
        vinken, en kan scripts/lees_opmerkingen.py ze automatisch ophalen.
        Zolang dit leeg is gaat alles via FormSubmit, dat alleen mailt.
        Instellen staat in docs/opmerkingen-in-google-sheet.md. */
-    SHEET_ENDPOINT: '',
+    SHEET_ENDPOINT: 'https://script.google.com/macros/s/AKfycbyQ7H7Z1KdQ_Zin_W0ktV2qemlZIhQF-XLEsFRpGfHqD8Oup9AlZ379FT0RTsBIoITL/exec',
     FORM_ENDPOINT: 'https://formsubmit.co/ajax/maartenvroegindeweij@gmail.com',
     MAIL_TERUGVAL: 'maartenvroegindeweij@gmail.com',
     modal: null,
