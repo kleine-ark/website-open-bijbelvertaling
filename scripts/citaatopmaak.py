@@ -62,10 +62,13 @@ class Hoofdstuk:
             self.gewijzigd.append(n)
 
     def _ontdaan(self, n):
-        """Het vers zonder de buitenste spraak-span, inhoud ongemoeid."""
+        """Het vers zonder de buitenste spraak-span, inhoud ongemoeid.
+
+        Een notenmarkering kan vóór de span staan (Markus 8:1 begint met een
+        <sup>); die hoort er niet in en blijft dus staan waar hij staat."""
         h = self.vers[n]["text2026_html"]
-        m = re.fullmatch(r'<span class="[a-z-]+"><i>(.*)</i></span>', h, re.S)
-        return m.group(1) if m else h
+        m = re.fullmatch(r'((?:<sup[^>]*>.*?</sup>|\s)*)<span class="[a-z-]+"><i>(.*)</i></span>', h, re.S)
+        return m.group(1) + m.group(2) if m else h
 
     # -- beslissingen -------------------------------------------------------
 
