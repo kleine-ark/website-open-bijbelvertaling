@@ -23,10 +23,100 @@
 
     var idx = currentIndex();
 
+    /* --- Toepassen, en nagaan of het echt gebeurd is -----------------------
+       `zoom` is geen standaard-eigenschap. Chromium en Firefox schalen er alles
+       mee, maar Safari past hem toe op de opmaak en laat de lettergrootte over
+       aan zijn eigen automatische aanpassing. Op de iPad groeide daardoor wel de
+       regelafstand maar niet de letter — een lezer die vergroot omdat hij het
+       niet kan lezen, schiet daar niets mee op.
+
+       De CSS zet die automatische aanpassing uit (text-size-adjust), wat het in
+       de regel oplost. Blijkt de tekst tóch niet mee te schalen, dan meten we
+       dat hier en schakelen we over op de terugval: --ov-zoom, waarmee de CSS de
+       leestekst zelf vergroot. Meten in plaats van de browser herkennen: welke
+       versie het wel of niet doet is niet te weten, of het gewerkt heeft wel. */
+
+    function meetLetter() {
+        var proef = document.createElement('span');
+        proef.textContent = 'M';
+        proef.style.cssText = 'position:absolute;left:-9999px;top:0;font-size:16px;';
+        document.body.appendChild(proef);
+        var h = proef.getBoundingClientRect().height;
+        proef.remove();
+        return h;
+    }
+
+
+    /* De terugval schaalt de leestekst zelf. Niet met vaste waarden in de CSS:
+       de lettergrootte verschilt per schermbreedte (16 px op desktop, 19 op
+       mobiel), en een vaste waarde zou op mobiel het verkeerde uitgangspunt
+       nemen — dan vergroot 140% maar tot 118%. We lezen daarom per cel de
+       natuurlijke grootte uit en bewaren die, zodat er niet op een al vergrote
+       waarde wordt doorgerekend. */
+
+    var huidigeSchaal = 1;
+
+    function schaalTekst(z) {
+        huidigeSchaal = z;
+        var cellen = document.querySelectorAll('.verse-cell');
+        var i, c;
+
+        /* Eerst alles vrijmaken en pas daarna meten. In één doorgang meten en
+           zetten gaat mis: een cel erft van zijn omgeving, en die is dan al
+           vergroot door een eerdere ronde. De gemeten "natuurlijke" grootte is
+           dan die van een al geschaalde cel, en 125% werd zo 116%. */
+        var teMeten = [];
+        for (i = 0; i < cellen.length; i++) {
+            c = cellen[i];
+            if (!c.dataset.ovBasis) { c.style.fontSize = ''; teMeten.push(c); }
+        }
+        for (i = 0; i < teMeten.length; i++) {
+            teMeten[i].dataset.ovBasis = parseFloat(getComputedStyle(teMeten[i]).fontSize);
+        }
+        for (i = 0; i < cellen.length; i++) {
+            c = cellen[i];
+            var basis = parseFloat(c.dataset.ovBasis);
+            c.style.fontSize = (z === 1 || !basis) ? '' : (basis * z) + 'px';
+        }
+    }
+
+    /* De verzen worden opnieuw opgebouwd bij elk hoofdstuk; nieuwe cellen weten
+       nog niets van de schaal. */
+    function volgNieuweVerzen() {
+        if (!window.MutationObserver) return;
+        var houder = document.getElementById('verses-container') || document.body;
+        new MutationObserver(function () {
+            if (huidigeSchaal !== 1) schaalTekst(huidigeSchaal);
+        }).observe(houder, { childList: true, subtree: true });
+    }
+
+    var terugvalNodig = null;   // nog niet gemeten
+
     function apply(z) {
-        // 'zoom' schaalt de volledige pagina; ondersteund in moderne mobiele browsers
-        // (iOS Safari, Chrome). Fallback via transform is onnodig voor deze doelgroep.
-        document.documentElement.style.zoom = (z === 1 ? '' : z);
+        var wortel = document.documentElement;
+        wortel.style.setProperty('--ov-zoom', z);
+
+        if (terugvalNodig === true) {
+            wortel.style.zoom = '';
+            schaalTekst(z);
+            return;
+        }
+
+        var voor = (terugvalNodig === null && z !== 1 && document.body) ? meetLetter() : null;
+        wortel.style.zoom = (z === 1 ? '' : z);
+
+        if (voor !== null) {
+            var na = meetLetter();
+            // schaalt de letter mee? dan is na/voor ongeveer z
+            var gelukt = Math.abs((na / voor) - z) < 0.05 * z;
+            terugvalNodig = !gelukt;
+            if (terugvalNodig) {
+                wortel.style.zoom = '';
+                wortel.classList.add('ov-zoom-tekst');
+                volgNieuweVerzen();
+                schaalTekst(z);
+            }
+        }
     }
 
     /* --- Leespositie vasthouden bij zoomen ---------------------------------

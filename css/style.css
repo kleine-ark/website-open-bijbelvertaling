@@ -1590,6 +1590,23 @@ body.hide-verse-numbers .verse-num::after {
 }
 .verse-cell:last-child { border-right: none; }
 
+/* --- Zoomregeling: tekst moet echt meeschalen --------------------------------
+   De zweefknop zet `zoom` op <html>. Dat is geen standaard-eigenschap: Chromium
+   en Firefox schalen er alles mee, maar Safari past hem toe op de opmaak en
+   laat de lettergrootte over aan zijn eigen automatische aanpassing. Op de iPad
+   groeide daardoor wel de regelafstand maar niet de letter.
+
+   text-size-adjust op 100% zet die automatische aanpassing uit, zodat Safari de
+   tekst niet meer terugregelt. Dat lost het in de regel op. Werkt het tóch niet,
+   dan meet zoom.js dat en schaalt het de leestekst zelf — niet met regels hier,
+   want de lettergroottes verschillen per schermbreedte en een vaste waarde zou
+   op mobiel het verkeerde uitgangspunt nemen. */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+
 .col-1637 { background: var(--parchment); }
 .col-hebrew {
     background: #f8f4f0;
