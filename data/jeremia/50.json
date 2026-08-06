@@ -2666,7 +2666,7 @@
       "number": 22,
       "textSV1888": "Er is een krijgsgeschrei in het land, en een grote breuk.",
       "text1637": "Daer is een krijchs-geschrey in den lande: ende een groote [57] breucke.",
-      "text2026": "Er is een krijgsgeschrei in het land, en een grote breuk.",
+      "text2026": "Er is een oorlogsgeschreeuw in het land, en een grote breuk.",
       "marginNotes": [
         {
           "marker": "57",
@@ -2703,9 +2703,16 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Er is een krijgsgeschrei in het land, en een grote<sup class=\"note-marker\" data-note=\"57\">57</sup> breuk.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Er is een oorlogsgeschreeuw in het land, en een grote<sup class=\"note-marker\" data-note=\"57\">57</sup> breuk.</i></span>",
       "textSV1888_html": "Er is een krijgsgeschrei in het land, en een grote<sup class=\"note-marker\" data-note=\"57\">57</sup> breuk.",
-      "text1637_html": "Daer is een krijchs-geschrey in den lande: ende een groote <sup class=\"note-marker\" data-note=\"57\">57</sup> breucke."
+      "text1637_html": "Daer is een krijchs-geschrey in den lande: ende een groote <sup class=\"note-marker\" data-note=\"57\">57</sup> breucke.",
+      "phraseDiff": [
+        {
+          "old": "krijgsgeschrei",
+          "new": "oorlogsgeschreeuw",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 23,
@@ -5033,7 +5040,7 @@
       "number": 43,
       "textSV1888": "De koning van Babel heeft hunlieder gerucht gehoord, en zijn handen zijn slap geworden; benauwdheid heeft hem aangegrepen, weedom als van een barende vrouw.",
       "text1637": "De Coninck van Babel heeft haerlieder geruchte gehoort, ende sijne handen zijn slap geworden: [i] benaeutheyt heeft hem aengegrepen, weedom als eener barender [vrouwe].",
-      "text2026": "De koning van Babel heeft hun gerucht gehoord, en zijn handen zijn slap geworden; benauwdheid heeft hem aangegrepen, weedom als van een barende vrouw.",
+      "text2026": "De koning van Babel heeft hun gerucht gehoord, en zijn handen zijn slap geworden; benauwdheid heeft hem aangegrepen, smart als van een barende vrouw.",
       "marginNotes": [
         {
           "marker": "i",
@@ -5100,7 +5107,7 @@
           "morph": "HRd/Vqrfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>De koning van Babel heeft hun gerucht gehoord, en zijn handen zijn slap geworden;<sup class=\"note-marker\" data-note=\"i\">i</sup> benauwdheid heeft hem aangegrepen, weedom als van een barende vrouw.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>De koning van Babel heeft hun gerucht gehoord, en zijn handen zijn slap geworden;<sup class=\"note-marker\" data-note=\"i\">i</sup> benauwdheid heeft hem aangegrepen, smart als van een barende vrouw.</i></span>",
       "textSV1888_html": "De koning van Babel heeft hunlieder gerucht gehoord, en zijn handen zijn slap geworden;<sup class=\"note-marker\" data-note=\"i\">i</sup> benauwdheid heeft hem aangegrepen, weedom als van een barende vrouw.",
       "text1637_html": "De Coninck van Babel heeft haerlieder geruchte gehoort, ende sijne handen zijn slap geworden: <sup class=\"note-marker\" data-note=\"i\">i</sup> benaeutheyt heeft hem aengegrepen, weedom als eener barender [vrouwe].",
       "phraseDiff": [
@@ -5108,6 +5115,11 @@
           "old": "hunlieder",
           "new": "hun",
           "principe": "V329"
+        },
+        {
+          "old": "weedom",
+          "new": "smart",
+          "principe": null
         }
       ]
     },

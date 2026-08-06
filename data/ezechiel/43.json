@@ -1894,7 +1894,7 @@
       "number": 15,
       "textSV1888": "En de Harel vier ellen; en van den Ariël voorts opwaarts, de vier hoornen.",
       "text1637": "Ende de [42] Harel, vier ellen: ende van de Ariël voorts opwaerts, de vier [43] hoornen.",
-      "text2026": "En de Harel vier ellen; en van de Ariël verder opwaarts, de vier hoornen.",
+      "text2026": "En de Harel vier ellen; en van de Ariël verder omhoog, de vier hoornen.",
       "marginNotes": [
         {
           "marker": "42",
@@ -1948,7 +1948,7 @@
           "morph": "HAcfsa"
         }
       ],
-      "text2026_html": "En de<sup class=\"note-marker\" data-note=\"42\">42</sup> Harel vier ellen; en van de Ariël verder opwaarts, de vier<sup class=\"note-marker\" data-note=\"43\">43</sup> hoornen.",
+      "text2026_html": "En de<sup class=\"note-marker\" data-note=\"42\">42</sup> Harel vier ellen; en van de Ariël verder omhoog, de vier<sup class=\"note-marker\" data-note=\"43\">43</sup> hoornen.",
       "textSV1888_html": "En de<sup class=\"note-marker\" data-note=\"42\">42</sup> Harel vier ellen; en van den Ariël voorts opwaarts, de vier<sup class=\"note-marker\" data-note=\"43\">43</sup> hoornen.",
       "text1637_html": "Ende de <sup class=\"note-marker\" data-note=\"42\">42</sup> Harel, vier ellen: ende van de Ariël voorts opwaerts, de vier <sup class=\"note-marker\" data-note=\"43\">43</sup> hoornen.",
       "phraseDiff": [
@@ -1958,9 +1958,9 @@
           "principe": "N1"
         },
         {
-          "old": "voorts",
-          "new": "verder",
-          "principe": "V27"
+          "old": "voorts opwaarts,",
+          "new": "verder omhoog,",
+          "principe": null
         }
       ]
     },
@@ -2192,7 +2192,7 @@
       "number": 18,
       "textSV1888": "En Hij zeide tot mij: Mensenkind! zo zegt de Heere HEERE: Dit zijn de ordinantien des altaars, ten dage als men het zal maken, om brandoffer daarop te offeren, en om bloed daarop te sprengen.",
       "text1637": "Ende hy seyde tot my; Menschen kint, so seyt de Heere HEERE; Dit zijn de ordinantien [47] des Altaers, ten dage alsmen hem sal maken: om brandoffer daerop te offeren, ende om bloet daer op te sprengen.",
-      "text2026": "En Hij zei tot mij: Mensenkind! zo zegt de Adonai JAHWEH: Dit zijn de ordinantien van het altaar, op de dag als men het zal maken, om brandoffer daarop te offeren, en om bloed daarop te sprengen.",
+      "text2026": "En Hij zei tot mij: Mensenkind! zo zegt de Adonai JAHWEH: Dit zijn de ordinantien van het altaar, op de dag als men het zal maken, om brandoffer daarop te offeren, en om bloed daarop te sprenkelen.",
       "marginNotes": [
         {
           "marker": "47",
@@ -2299,7 +2299,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "En Hij zei tot mij: <span class=\"god-speaks\"><i>Mensenkind! zo zegt de Adonai JAHWEH: Dit zijn de ordinantien van het altaar, op de dag als men het zal maken, om brandoffer daarop te offeren, en om bloed daarop te sprengen.</i></span>",
+      "text2026_html": "En Hij zei tot mij: <span class=\"god-speaks\"><i>Mensenkind! zo zegt de Adonai JAHWEH: Dit zijn de ordinantien van het altaar, op de dag als men het zal maken, om brandoffer daarop te offeren, en om bloed daarop te sprenkelen.</i></span>",
       "textSV1888_html": "En Hij zeide tot mij: Mensenkind! zo zegt de Heere HEERE: Dit zijn de ordinantien<sup class=\"note-marker\" data-note=\"47\">47</sup> des altaars, ten dage als men het zal maken, om brandoffer daarop te offeren, en om bloed daarop te sprengen.",
       "text1637_html": "Ende hy seyde tot my; Menschen kint, so seyt de Heere HEERE; Dit zijn de ordinantien <sup class=\"note-marker\" data-note=\"47\">47</sup> des Altaers, ten dage alsmen hem sal maken: om brandoffer daerop te offeren, ende om bloet daer op te sprengen.",
       "phraseDiff": [
@@ -2317,6 +2317,11 @@
           "old": "des altaars, ten dage",
           "new": "van het altaar, op de dag",
           "principe": "N3"
+        },
+        {
+          "old": "sprengen.",
+          "new": "sprenkelen.",
+          "principe": null
         }
       ]
     },

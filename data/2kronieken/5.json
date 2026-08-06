@@ -505,7 +505,7 @@
       "number": 5,
       "textSV1888": "En zij brachten de ark, en de tent der samenkomst opwaarts, mitsgaders al de heilige vaten, die in de tent waren; deze brachten de priesters en Levieten opwaarts.",
       "text1637": "Ende sy brachten de Arke, ende de Tente der 'tsamenkomste opwaerts, mitsgaders alle de [7] heylige vaten, die inde Tente waren: dese brachten de Priesters [ende] Leviten opwaerts.",
-      "text2026": "En zij brachten de ark, en de tent van de samenkomst opwaarts, en ook al de heilige voorwerpen, die in de tent waren; deze brachten de priesters en Levieten opwaarts.",
+      "text2026": "En zij brachten de ark, en de tent van de samenkomst omhoog, en ook al de heilige voorwerpen, die in de tent waren; deze brachten de priesters en Levieten omhoog.",
       "marginNotes": [
         {
           "marker": "7",
@@ -597,7 +597,7 @@
           "morph": "HTd/Ngmpa"
         }
       ],
-      "text2026_html": "En zij brachten de ark, en de tent van de samenkomst opwaarts, en ook al de<sup class=\"note-marker\" data-note=\"7\">7</sup> heilige voorwerpen, die in de tent waren; deze brachten de priesters en Levieten opwaarts.",
+      "text2026_html": "En zij brachten de ark, en de tent van de samenkomst omhoog, en ook al de<sup class=\"note-marker\" data-note=\"7\">7</sup> heilige voorwerpen, die in de tent waren; deze brachten de priesters en Levieten omhoog.",
       "textSV1888_html": "En zij brachten de ark, en de tent der samenkomst opwaarts, mitsgaders al de<sup class=\"note-marker\" data-note=\"7\">7</sup> heilige vaten, die in de tent waren; deze brachten de priesters en Levieten opwaarts.",
       "text1637_html": "Ende sy brachten de Arke, ende de Tente der 'tsamenkomste opwaerts, mitsgaders alle de <sup class=\"note-marker\" data-note=\"7\">7</sup> heylige vaten, die inde Tente waren: dese brachten de Priesters [ende] Leviten opwaerts.",
       "phraseDiff": [
@@ -607,13 +607,18 @@
           "principe": "N2"
         },
         {
-          "old": "mitsgaders",
-          "new": "en ook",
-          "principe": "V7"
+          "old": "opwaarts, mitsgaders",
+          "new": "omhoog, en ook",
+          "principe": null
         },
         {
           "old": "vaten,",
           "new": "voorwerpen,",
+          "principe": null
+        },
+        {
+          "old": "opwaarts.",
+          "new": "omhoog.",
           "principe": null
         }
       ]

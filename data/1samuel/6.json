@@ -2836,7 +2836,7 @@
       "number": 21,
       "textSV1888": "Zo zonden zij boden tot de inwoners van Kirjath-jearim, zeggende: De Filistijnen hebben de ark des HEEREN wedergebracht; komt af, haalt ze opwaarts tot u.",
       "text1637": "So sonden sy boden tot de inwoonders van Kiriath-Iearim, seggende: De Philistijnen hebben de Arke des HEEREN weder gebracht, komt af, haeltse opwaerts tot u.",
-      "text2026": "Zo zonden zij boden tot de inwoners van Kirjath-jearim, zeggende: De Filistijnen hebben de ark van JAHWEH teruggebracht; komt af, haalt ze opwaarts tot u.",
+      "text2026": "Zo zonden zij boden tot de inwoners van Kirjath-jearim, zeggende: De Filistijnen hebben de ark van JAHWEH teruggebracht; komt af, haalt ze omhoog tot u.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2920,13 +2920,18 @@
           "morph": "HR/Sp2mp"
         }
       ],
-      "text2026_html": "Zo zonden zij boden tot de inwoners van Kirjath-jearim, zeggende: <span class=\"direct-speech\"><i>De Filistijnen hebben de ark van JAHWEH teruggebracht; komt af, haalt ze opwaarts tot u.</i></span>",
+      "text2026_html": "Zo zonden zij boden tot de inwoners van Kirjath-jearim, zeggende: <span class=\"direct-speech\"><i>De Filistijnen hebben de ark van JAHWEH teruggebracht; komt af, haalt ze omhoog tot u.</i></span>",
       "text1637_html": "So sonden sy boden tot de inwoonders van Kiriath-Iearim, seggende: De Philistijnen hebben de Arke des HEEREN weder gebracht, komt af, haeltse opwaerts tot u.",
       "phraseDiff": [
         {
           "old": "des HEEREN wedergebracht;",
           "new": "van JAHWEH teruggebracht;",
           "principe": "N3"
+        },
+        {
+          "old": "opwaarts",
+          "new": "omhoog",
+          "principe": null
         }
       ]
     }
