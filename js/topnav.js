@@ -36,7 +36,7 @@
     }
 
     nav.innerHTML =
-        '<div class="topnav-brand">Open Vertaling<span class="topnav-version"><a href="changelog.html" style="color:#cba449;text-decoration:none;">v0.26.0</a></span></div>' +
+        '<div class="topnav-brand">Open Vertaling<span class="topnav-version"><a href="changelog.html" id="topnav-versie" style="color:#cba449;text-decoration:none;">…</a></span></div>' +
         '<div class="topnav-links" id="topnav-links">' +
             '<a href="over-ov.html">Over OV</a>' +
             '<a href="index.html#johannes/1">Tekst</a>' +
@@ -48,6 +48,22 @@
         '<button class="topnav-theme" id="topnav-theme-toggle" title="Thema: licht/donker" aria-label="Wissel thema"><svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>' +
         '<div id="auth-slot" class="topnav-auth"></div>' +
         '<button class="topnav-hamburger" id="topnav-hamburger" onclick="document.getElementById(\'topnav-links\').classList.toggle(\'open\');this.classList.toggle(\'open\')" title="Menu" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>';
+
+    /* Het versienummer stond hier hardgecodeerd en liep daardoor achter: bij
+       v0.28.0 wees de balk nog naar v0.26.0. Nu komt hij uit data/stats.json,
+       dat build_stats.py bij elke uitgave bijwerkt — zo kan hij niet meer
+       verouderen. Mislukt het ophalen (offline, eerste bezoek zonder cache),
+       dan blijft het beletselteken staan; een verkeerd nummer tonen is erger
+       dan geen nummer. */
+    (function () {
+        var el = document.getElementById('topnav-versie');
+        if (!el) return;
+        fetch('data/stats.json')
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (s) { if (s && s.version) el.textContent = s.version; })
+            .catch(function () { /* stil: de balk werkt ook zonder nummer */ });
+    })();
+
 
     var page = (location.pathname.split('/').pop() || 'index.html');
     var isLex = page.indexOf('lexicon') === 0;
