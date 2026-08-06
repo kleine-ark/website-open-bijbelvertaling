@@ -15,6 +15,7 @@ const Opties = {
         jezusNaam: 'nl',         // 'nl' (Jezus Christus) | 'hebreeuws' (Yeshua HaMashiach) | 'koranisch' (Isa) | 'arabisch' (Yasūʿ al-Masīḥ)
         geoMarkeren: 'uit',      // 'uit' | 'aan' — geografische locaties in de tekst markeren (nu: Genesis)
         maatstelsel: 'bijbels',  // 'bijbels' (el, efa, sikkel) | 'metrisch' (meter, liter, gram) | 'imperiaal' (voet, gallon, pond)
+        tijdrekening: 'bijbels', // 'bijbels' (de derde ure) | 'modern' (omstreeks negen uur 's ochtends)
     },
 
     state: {},
@@ -23,6 +24,7 @@ const Opties = {
     _arNamen: null,
     _geoData: null,          // { namen:{naam:{type}}, verzen:{"ch:vs":[substrings]} } per boek (nu genesis)
     _eenheden: null,         // omrekentabel + uitzonderingen; lui geladen uit data/eenheden.json
+    _tijden: null,           // uren, nachtwaken en vaste tijdsfrasen; lui geladen uit data/tijden.json
 
     init() {
         const saved = localStorage.getItem(this.STORAGE_KEY);
@@ -54,6 +56,7 @@ const Opties = {
         this.loadArabischeNamen();
         this.loadGeoData();
         this.loadEenheden();
+        this.loadTijden();
 
         // Klik op een gemarkeerde geografische locatie -> geografie-pagina (later: kaart/geodata)
         document.addEventListener('click', function (e) {
@@ -734,6 +737,221 @@ const Opties = {
         return String(s == null ? '' : s)
             .replace(/&/g, '&amp;').replace(/</g, '&lt;')
             .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    },
+
+    // ===================================================================
+    // Tijdsaanduidingen — omrekenen naar moderne kloktijd
+    // -------------------------------------------------------------------
+    // Bij `tijdrekening: 'modern'` wordt "het negende uur" in de OV-tekst
+    // VERVANGEN door "ongeveer drie uur 's middags"; het origineel blijft in
+    // het title-attribuut staan. Bij 'bijbels' (de standaard) verandert er
+    // niets. De brondata in data/ blijft hoe dan ook ongemoeid — dit is een
+    // weergave-optie, geen tekstwijziging.
+    //
+    // De Bijbelse dag loopt van zonsopgang tot zonsondergang en telt twaalf
+    // uren, dus het eerste uur begint omstreeks zes uur 's ochtends. Het zijn
+    // seizoensuren: 's zomers duurt een uur ruim zeventig minuten, 's winters
+    // nog geen vijftig. Daarom staat er altijd "ongeveer" of "omstreeks" bij,
+    // en daarom is er ook geen exactere weergave dan hele uren.
+    //
+    // Rekenwaarden, de nachtwaken (drie in het OT, vier in het NT) en de vaste
+    // frasen staan in data/tijden.json, zodat ze bij te werken zijn zonder deze
+    // code aan te raken.
+    //
+    // De hulpfuncties _maatPlatteTekst / _maatBehoudTags / _maatAttr /
+    // _maatInBereik zijn niet maat-specifiek en worden hier hergebruikt: ze
+    // lossen precies hetzelfde probleem op (tekst herkennen dwars door
+    // nootcijfers en citaat-spans heen, zonder de HTML te beschadigen).
+    //
+    // Let op: geen RegExp-lookbehind — Safari < 16.4 (iPadOS 15.4) kent die niet.
+    // ===================================================================
+
+    /** Laad de omrekentabel voor Bijbelse tijdsaanduidingen. */
+    loadTijden() {
+        fetch('data/tijden.json')
+            .then(r => (r.ok ? r.json() : null))
+            .then(d => {
+                if (!d || !d.uren) return;
+                this._tijden = this._tijdIndex(d);
+                if (this.state.tijdrekening === 'modern' &&
+                    typeof Navigation !== 'undefined' && Navigation.currentBook && Navigation.currentChapter &&
+                    typeof App !== 'undefined' && App.renderChapter) {
+                    App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
+                }
+            })
+            .catch(() => {});
+    },
+
+    /** Bouw eenmalig de zoekpatronen uit data/tijden.json. */
+    _tijdIndex(d) {
+        var LET = '[A-Za-zÀ-ÖØ-öø-ÿ]';
+        var rangen = Object.keys(d.rangtelwoorden || {}).join('|');
+        // "den nacht" (4 Baruch) naast "de nacht"; "overdag" naast "van de dag"
+        var dagdeel = '(?:\\s+van\\s+(?:de|den|het)\\s+(?:nacht|dag)|\\s+in\\s+de\\s+nacht|\\s+overdag)?';
+        var lidwoord = '(?:(?:het|den|de|dit|dat|die)\\s+)?';
+
+        // Hoofdletter-ongevoelig: "Tussen de twee avonden zult u vlees eten"
+        // (Exodus 16:12) staat aan het begin van de zin. De vervanging krijgt
+        // die hoofdletter later terug.
+        //
+        // Het voorzetsel wordt meegenomen omdat "op het negende uur" in modern
+        // Nederlands "omstreeks drie uur" wordt, niet "op ongeveer drie uur".
+        var uurRe = new RegExp(
+            '\\b(?:(ongeveer|omtrent|omstreeks|circa)\\s+)?(?:(op|om|te|ten|ter)\\s+)?' +
+            lidwoord + '(' + rangen + ')' +
+            '(?:\\s+en\\s+' + lidwoord + '(' + rangen + '))?' +
+            '\\s+(?:uur|ure)(' + dagdeel + ')(?!' + LET + ')', 'gi');
+
+        // "waak op!" is een oproep, geen nachtwake — die mag niet meegenomen worden
+        var waakRe = new RegExp(
+            '\\b(' + rangen + ')\\s+(?:nachtwake|nachtwaak|wake|waak)(?!\\s+op\\b)' +
+            '(?:\\s+in\\s+de\\s+nacht)?(?!' + LET + ')', 'gi');
+
+        var bouw = function (lijst) {
+            return (lijst || []).map(function (f) {
+                return {
+                    id: f.id,
+                    re: new RegExp('\\b(?:' + f.patroon + ')(?!' + LET + ')', 'gi'),
+                    enkel: new RegExp('^(?:' + f.patroon + ')$', 'i'),
+                    vervang: f.vervang,
+                    uitleg: f.uitleg,
+                    alleenIn: f.alleenIn,
+                };
+            });
+        };
+
+        return {
+            rangtelwoorden: d.rangtelwoorden || {},
+            uren: d.uren, uurUitleg: d.uurUitleg || {}, waken: d.waken || {},
+            uurRe: uurRe, waakRe: waakRe,
+            genoemdeWaken: bouw(d.genoemdeWaken),
+            frases: bouw(d.frases),
+            toelichtingen: bouw(d.toelichtingen),
+        };
+    },
+
+    /**
+     * Vervang Bijbelse tijdsaanduidingen in een OV-vers door moderne kloktijd.
+     * Geeft de HTML ongewijzigd terug als de optie uit staat, als de tabel nog
+     * niet geladen is, of als er niets te vervangen valt.
+     */
+    rekenTijden(html, book, ch, vnum, testament) {
+        if (!html || !this._tijden) return html;
+        if (this.state.tijdrekening !== 'modern') return html;
+        var T = this._tijden, zelf = this;
+        var proj = this._maatPlatteTekst(html);
+        var plain = proj.plain, map = proj.map;
+        var bezet = [], stukken = [];
+        ch = +ch; vnum = +vnum;
+
+        // Elke plaats wordt hooguit één keer aangepakt. De regels lopen in
+        // volgorde van bepaald naar algemeen, zodat de losse toelichting op
+        // "nachtwake" alleen overblijft waar géén rangtelwoord stond.
+        function vrij(a, b) {
+            for (var i = 0; i < bezet.length; i++) {
+                if (a < bezet[i][1] && b > bezet[i][0]) return false;
+            }
+            return true;
+        }
+        function neem(a, b, klasse, tekst, titel) {
+            bezet.push([a, b]);
+            var binnen = html.slice(map[a], map[b]);
+            var inhoud = tekst === null
+                ? binnen                                        // tekst blijft staan, alleen een toelichting
+                : tekst + zelf._maatBehoudTags(binnen);         // nootcijfers mogen niet verdwijnen
+            stukken.push({
+                van: map[a], tot: map[b],
+                nieuw: '<span class="' + klasse + '" title="' + zelf._maatAttr(titel) + '">' + inhoud + '</span>',
+            });
+        }
+        // Stond het origineel aan het begin van een zin, dan hoort de
+        // vervanging ook met een hoofdletter te beginnen.
+        function volgHoofdletter(origineel, nieuw) {
+            return /^[A-ZÀ-ÖØ-Þ]/.test(origineel)
+                ? nieuw.charAt(0).toUpperCase() + nieuw.slice(1) : nieuw;
+        }
+
+        // === Uren: "ongeveer het zesde uur", "tegen het derde uur in de nacht" ===
+        var m;
+        T.uurRe.lastIndex = 0;
+        while ((m = T.uurRe.exec(plain)) !== null) {
+            var start = m.index, eind = start + m[0].length;
+            if (!vrij(start, eind)) continue;
+            var snacht = /nacht/.test(m[5] || '');
+            var tabel = T.uren[snacht ? 'nacht' : 'dag'];
+            var e1 = tabel[String(T.rangtelwoorden[m[3].toLowerCase()])];
+            var e2 = m[4] ? tabel[String(T.rangtelwoorden[m[4].toLowerCase()])] : null;
+            if (!e1 || (m[4] && !e2)) continue;
+            var tijd;
+            if (e2) {
+                // "het zesde en het negende uur" — het dagdeel hoeft maar één keer
+                tijd = (!e1.los && !e2.los && e1.deel === e2.deel)
+                    ? e1.getal + ' en ' + e2.getal + ' uur ' + e1.deel
+                    : this._tijdTekst(e1) + ' en ' + this._tijdTekst(e2);
+            } else {
+                tijd = this._tijdTekst(e1);
+            }
+            // Met voorzetsel of "ongeveer" ervoor leest "omstreeks" beter;
+            // zonder die aanloop hoort er alsnog een slag om de arm bij.
+            var nieuw = ((m[1] || m[2]) ? 'omstreeks ' : 'ongeveer ') + tijd;
+            neem(start, eind, 'tijd-omgerekend', volgHoofdletter(m[0], nieuw),
+                 'Oorspronkelijk: ' + m[0] + ' · ' + (T.uurUitleg[snacht ? 'nacht' : 'dag'] || ''));
+        }
+
+        // === Nachtwaken met rangtelwoord: "ter vierde wake in de nacht" ===
+        var schema = T.waken[testament === 'NT' ? 'nt' : 'ot'] || {};
+        T.waakRe.lastIndex = 0;
+        while ((m = T.waakRe.exec(plain)) !== null) {
+            var wStart = m.index, wEind = wStart + m[0].length;
+            if (!vrij(wStart, wEind)) continue;
+            var nr = T.rangtelwoorden[m[1].toLowerCase()];
+            var bereik = schema[String(nr)];
+            if (!bereik) continue;                  // "vierde wake" bestaat niet in een driedeling
+            neem(wStart, wEind, 'tijd-omgerekend',
+                 volgHoofdletter(m[0], 'nachtwake ' + bereik),
+                 'Oorspronkelijk: ' + m[0] + ' · ' + (schema.uitleg || ''));
+        }
+
+        // === Vaste frasen: morgenwake, middelste nachtwaak, tussen twee avonden ===
+        var regels = T.genoemdeWaken.concat(T.frases);
+        for (var r = 0; r < regels.length; r++) {
+            var g = regels[r];
+            if (g.alleenIn && !this._maatInBereik(g.alleenIn, book, ch, vnum)) continue;
+            g.re.lastIndex = 0;
+            while ((m = g.re.exec(plain)) !== null) {
+                var fStart = m.index, fEind = fStart + m[0].length;
+                if (!vrij(fStart, fEind)) continue;
+                neem(fStart, fEind, 'tijd-omgerekend',
+                     volgHoofdletter(m[0], m[0].replace(g.enkel, g.vervang)),
+                     'Oorspronkelijk: ' + m[0] + ' · ' + (g.uitleg || ''));
+            }
+        }
+
+        // === Alleen toelichten: het avondoffer blijft een offer, geen kloktijd ===
+        for (var t = 0; t < T.toelichtingen.length; t++) {
+            var u = T.toelichtingen[t];
+            u.re.lastIndex = 0;
+            while ((m = u.re.exec(plain)) !== null) {
+                var tStart = m.index, tEind = tStart + m[0].length;
+                if (!vrij(tStart, tEind)) continue;
+                neem(tStart, tEind, 'tijd-toelichting', null, u.uitleg || '');
+            }
+        }
+
+        if (!stukken.length) return html;
+        stukken.sort(function (a, b) { return a.van - b.van; });
+        var uit = '', vorig = 0;
+        for (var i = 0; i < stukken.length; i++) {
+            if (stukken[i].van < vorig) continue;
+            uit += html.slice(vorig, stukken[i].van) + stukken[i].nieuw;
+            vorig = stukken[i].tot;
+        }
+        return uit + html.slice(vorig);
+    },
+
+    /** Eén kloktijd uitschrijven; middernacht krijgt geen "uur" achter zich. */
+    _tijdTekst(e) {
+        return e.los ? e.los : (e.getal + ' uur ' + e.deel);
     },
 
     /**

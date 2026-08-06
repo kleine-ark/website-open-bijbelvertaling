@@ -681,6 +681,9 @@ const App = {
             if (typeof Opties !== 'undefined' && Opties.markeerGeo) openVertaling = Opties.markeerGeo(openVertaling, bookId, chapterNum, verse.number);
             // Optioneel: Bijbelse maten vervangen door metrisch of imperiaal
             if (typeof Opties !== 'undefined' && Opties.rekenMaten) openVertaling = Opties.rekenMaten(openVertaling, bookId, chapterNum, verse.number);
+            // Optioneel: "het negende uur" vervangen door moderne kloktijd.
+            // Het testament bepaalt of de nacht drie of vier waken telt.
+            if (typeof Opties !== 'undefined' && Opties.rekenTijden) openVertaling = Opties.rekenTijden(openVertaling, bookId, chapterNum, verse.number, book.testament);
 
             // Strong's nummers inline bij SV1888 en OV tekst
             let sv1888Text = verse.textSV1888_html || verse.textSV1888 || '';
