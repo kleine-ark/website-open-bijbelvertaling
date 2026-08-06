@@ -1,6 +1,44 @@
 {
  "wijzigingen": [
   {
+   "versie": "v0.28.0",
+   "datum": "2026-08-05",
+   "items": [
+    {
+     "type": "fix",
+     "beschrijving": "De voetwassing in Johannes 13 was een groei geworden. Het principe 'wassen → groeien' was zonder onderscheid toegepast, terwijl het Nederlands twee werkwoorden 'wassen' kent. 25 plaatsen teruggezet: Johannes 13:5-8, de handwassing in Markus 7:3 en Mattheüs 15:2, het wasvat in Exodus 29-40, de reiniging in Numeri 19, en Farao's dochter die zich weer in de rivier wast."
+    },
+    {
+     "type": "fix",
+     "beschrijving": "Zeventig kromme zinnen uit eerdere sweeps rechtgezet: 'van JAHWEH pascha' → 'het pascha van JAHWEH' (16), 'een brandoffer JAHWEH' → 'een brandoffer voor JAHWEH' (35), 'de heel dag' → 'de hele dag' (9), 'hernstig' → 'hoog' (4, was een verminking van 'hogelijk'), en 'diens bergs' → 'van die berg'."
+    },
+    {
+     "type": "verbetering",
+     "beschrijving": "Verouderde woorden vervangen, met het aantal plaatsen: heir/heiren/ten heire → leger/legers/ten strijde (107), voeten → voetstukken (47), opwaarts → omhoog (44), berd/berderen → plank/planken (44), welke → wie (34), wederbrengen → teruggeven (26), welriekende → geurende (24), sprengen → sprenkelen (22), vorsen → kikkers (13), ter oorzake van → vanwege (13), striklisjes → lussen (13), zelen → touwen (12), richelen → dwarsbalken (10), rieten → armen (9), stiet → stootte (8), guichelaars → bezweerders (7)."
+    },
+    {
+     "type": "verbetering",
+     "beschrijving": "En verder: kwakkelen → kwartels (6), ketentjes → kettinkjes (6), rokken → onderkleding (6), diene → zal dienen (5), uitgelezene → uitgelezen (5), weedom → smart (5), wiesen → wasten (5), kennelijk → bekend (5), krauwelen → vleeshaken (5), schelletje → belletje (4), goedigheid → goedheid (4), krijgsgeschrei → oorlogsgeschreeuw (4), mutsen → hoofddoeken (4), goden → rechters (4), moei → tante (3), sedert → sinds (3), vliede → vlucht (3), horzelen → horzels (3), twistige zaak → rechtszaak (3), allengskens → langzamerhand (2), voorhang → voorhangsel (2), hoed → tulband (2), krielen → krioelen, bundelken → bundeltje, oorlapje → oorlel."
+    },
+    {
+     "type": "feature",
+     "beschrijving": "Principes kunnen nu een bereik hebben: een beperking tot bepaalde boeken of hoofdstukken. Acht principes gebruiken dat, omdat een woord elders iets anders betekent. 'Goden' wordt alleen in Exodus 21-22 'rechters' — daar gaat het om de rechtbank; op 356 andere plaatsen zijn het wel degelijk godheden. 'Voeten' worden alleen voetstukken als onderstel van de tabernakel, niet op de 360 plaatsen waar het gewoon voeten zijn."
+    },
+    {
+     "type": "verbetering",
+     "beschrijving": "Citaatopmaak van Markus (38 verzen), 2 Koningen (38), 1 Samuël (26) en 1 Koningen (20) rechtgezet, plus 270 verzen Bijbelbreed waar de aankondiging binnen het citaat stond. In Markus kregen de woorden van de discipelen en de Farizeeën ten onrechte de kleur van Jezus' woorden. Van de 37.133 verzen heeft er nu geen enkele meer ongebalanceerde opmaak."
+    },
+    {
+     "type": "verbetering",
+     "beschrijving": "Exodus is afgerond: alle 40 hoofdstukken nagelopen."
+    },
+    {
+     "type": "fix",
+     "beschrijving": "Het versienummer in de bovenbalk stond hardgecodeerd en liep achter. Het komt nu uit de statistieken, zodat het niet meer kan verouderen. Ook de overzichtspagina met principes toonde verouderde aantallen; die wordt nu bij elke uitgave opnieuw berekend."
+    }
+   ]
+  },
+  {
    "versie": "v0.27.0",
    "datum": "2026-08-05",
    "items": [

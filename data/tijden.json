@@ -1,0 +1,113 @@
+{
+  "titel": "Bijbelse tijdsaanduidingen",
+  "toelichting": "Rekenwaarden voor de leesoptie 'moderne kloktijd'. De Bijbelse dag loopt van zonsopgang tot zonsondergang en telt twaalf uren; het eerste uur begint dus omstreeks zes uur 's ochtends. Die uren zijn seizoensuren — een twaalfde van de daglengte — dus 's zomers langer dan 's winters. Alle omrekeningen zijn daarom bij benadering, en de weergegeven tekst zegt dat ook met 'ongeveer' of 'omstreeks'. De verantwoording staat op tijdsaanduidingen.html; dat is de bron van waarheid. De brontekst in data/ verandert niet: dit is uitsluitend een weergave-optie.",
+  "bron": "tijdsaanduidingen.html",
+
+  "rangtelwoorden": {
+    "eerste": 1, "tweede": 2, "derde": 3, "vierde": 4, "vijfde": 5, "zesde": 6,
+    "zevende": 7, "achtste": 8, "negende": 9, "tiende": 10, "elfde": 11, "twaalfde": 12
+  },
+
+  "uurUitleg": {
+    "dag": "De Bijbelse dag telt twaalf uren van zonsopgang tot zonsondergang; het eerste uur begint omstreeks zes uur 's ochtends. Het zijn seizoensuren, dus de omrekening is bij benadering.",
+    "nacht": "De nacht telt twaalf uren vanaf zonsondergang; het eerste uur van de nacht begint omstreeks zes uur 's avonds. Het zijn seizoensuren, dus de omrekening is bij benadering."
+  },
+
+  "uren": {
+    "dag": {
+      "1":  { "getal": "zeven",  "deel": "'s ochtends" },
+      "2":  { "getal": "acht",   "deel": "'s ochtends" },
+      "3":  { "getal": "negen",  "deel": "'s ochtends" },
+      "4":  { "getal": "tien",   "deel": "'s ochtends" },
+      "5":  { "getal": "elf",    "deel": "'s ochtends" },
+      "6":  { "getal": "twaalf", "deel": "'s middags" },
+      "7":  { "getal": "één", "deel": "'s middags" },
+      "8":  { "getal": "twee",   "deel": "'s middags" },
+      "9":  { "getal": "drie",   "deel": "'s middags" },
+      "10": { "getal": "vier",   "deel": "'s middags" },
+      "11": { "getal": "vijf",   "deel": "'s middags" },
+      "12": { "getal": "zes",    "deel": "'s avonds" }
+    },
+    "nacht": {
+      "1":  { "getal": "zeven",  "deel": "'s avonds" },
+      "2":  { "getal": "acht",   "deel": "'s avonds" },
+      "3":  { "getal": "negen",  "deel": "'s avonds" },
+      "4":  { "getal": "tien",   "deel": "'s avonds" },
+      "5":  { "getal": "elf",    "deel": "'s avonds" },
+      "6":  { "los": "middernacht" },
+      "7":  { "getal": "één", "deel": "'s nachts" },
+      "8":  { "getal": "twee",   "deel": "'s nachts" },
+      "9":  { "getal": "drie",   "deel": "'s nachts" },
+      "10": { "getal": "vier",   "deel": "'s ochtends" },
+      "11": { "getal": "vijf",   "deel": "'s ochtends" },
+      "12": { "getal": "zes",    "deel": "'s ochtends" }
+    }
+  },
+
+  "waken": {
+    "nt": {
+      "aantal": 4,
+      "uitleg": "Het Nieuwe Testament volgt de Romeinse indeling: vier nachtwaken van drie uur, van zonsondergang tot zonsopgang.",
+      "1": "van zes tot negen uur 's avonds",
+      "2": "van negen uur 's avonds tot middernacht",
+      "3": "van middernacht tot drie uur 's nachts",
+      "4": "van drie tot zes uur 's ochtends"
+    },
+    "ot": {
+      "aantal": 3,
+      "uitleg": "Het Oude Testament verdeelt de nacht in drie waken van vier uur, van zonsondergang tot zonsopgang.",
+      "1": "van zes tot tien uur 's avonds",
+      "2": "van tien uur 's avonds tot twee uur 's nachts",
+      "3": "van twee tot zes uur 's ochtends"
+    }
+  },
+
+  "genoemdeWaken": [
+    {
+      "id": "morgenwake",
+      "patroon": "morgenwake",
+      "vervang": "morgenwake van twee tot zes uur 's ochtends",
+      "uitleg": "De laatste van de drie oudtestamentische nachtwaken, van ongeveer twee uur 's nachts tot zonsopgang."
+    },
+    {
+      "id": "middelste",
+      "patroon": "middelste\\s+(nachtwake|nachtwaak|wake|waak)",
+      "vervang": "$1 van tien uur 's avonds tot twee uur 's nachts",
+      "uitleg": "De middelste van de drie oudtestamentische nachtwaken. Richteren 7:19 noemt hem met zoveel woorden, en bewijst daarmee dat het Oude Testament er drie telt."
+    }
+  ],
+
+  "frases": [
+    {
+      "id": "tweeavonden",
+      "patroon": "tussen\\s+(?:de\\s+)?twee\\s+avonden",
+      "vervang": "tussen drie uur 's middags en zonsondergang",
+      "uitleg": "Letterlijk 'tussen de twee avonden'. De kanttekening van de Statenvertaling leest dat als de tijd tussen het negende uur en zonsondergang. Andere overleveringen leggen het venster juist ná zonsondergang."
+    },
+    {
+      "id": "joh452",
+      "patroon": "om\\s+zeven\\s+uur",
+      "vervang": "omstreeks één uur 's middags",
+      "alleenIn": ["johannes 4:52"],
+      "uitleg": "De grondtekst zegt 'het zevende uur'. De kanttekening rekent dat om als 'omtrent een uur na de middag'."
+    }
+  ],
+
+  "toelichtingen": [
+    {
+      "id": "avondoffer",
+      "patroon": "avondoffer",
+      "uitleg": "Het dagelijkse avondoffer werd omstreeks het negende uur gebracht, ongeveer drie uur 's middags. Handelingen 3:1 noemt dat het uur van het gebed."
+    },
+    {
+      "id": "hanengekraai",
+      "patroon": "hanengekraai",
+      "uitleg": "De derde Romeinse nachtwake, van middernacht tot ongeveer drie uur 's nachts. Markus 13:35 noemt alle vier de waken bij naam."
+    },
+    {
+      "id": "wake-algemeen",
+      "patroon": "nachtwaken|nachtwake|nachtwaak",
+      "uitleg": "Een nachtwake duurt drie tot vier uur: het Oude Testament verdeelt de nacht in drie waken, het Nieuwe Testament in vier."
+    }
+  ]
+}
