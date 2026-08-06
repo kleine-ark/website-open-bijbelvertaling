@@ -1112,6 +1112,20 @@ body.drawer-open #mobile-backdrop { display: block; }
 :root[data-theme="donker"] .maat-ijk { border-bottom-color: rgba(127,192,192,0.35); }
 @media print { .maat-omgerekend, .maat-ijk { border-bottom: none; } }
 
+/* Naar moderne kloktijd omgerekende tijdsaanduiding (optie 'Tijdsaanduidingen').
+   Zelfde terughoudende markering als bij de maten: de tekst leest gewoon door,
+   het origineel staat in het title-attribuut. */
+.tijd-omgerekend {
+    border-bottom: 1px dotted rgba(42,125,125,0.55);
+    cursor: help;
+}
+.tijd-omgerekend:hover { background: rgba(42,125,125,0.10); border-radius: 2px; }
+:root[data-theme="donker"] .tijd-omgerekend { border-bottom-color: rgba(127,192,192,0.55); }
+/* "het avondoffer" is een offer en geen kloktijd — tekst blijft staan, alleen uitleg */
+.tijd-toelichting { border-bottom: 1px dotted rgba(42,125,125,0.35); cursor: help; }
+:root[data-theme="donker"] .tijd-toelichting { border-bottom-color: rgba(127,192,192,0.35); }
+@media print { .tijd-omgerekend, .tijd-toelichting { border-bottom: none; } }
+
 /* Subcategorie binnen een groep (bv. Ethiopische boeken onder de Apocriefen) */
 .tree-subgroup-label {
     padding: 6px 16px 4px 24px;

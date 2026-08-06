@@ -70,9 +70,15 @@
       "uitleg": "De laatste van de drie oudtestamentische nachtwaken, van ongeveer twee uur 's nachts tot zonsopgang."
     },
     {
-      "id": "middelste",
-      "patroon": "middelste\\s+(nachtwake|nachtwaak|wake|waak)",
-      "vervang": "$1 van tien uur 's avonds tot twee uur 's nachts",
+      "id": "middelste-waak",
+      "patroon": "middelste\\s+nachtwaak",
+      "vervang": "nachtwaak van tien uur 's avonds tot twee uur 's nachts",
+      "uitleg": "De middelste van de drie oudtestamentische nachtwaken. Richteren 7:19 noemt hem met zoveel woorden, en bewijst daarmee dat het Oude Testament er drie telt."
+    },
+    {
+      "id": "middelste-wake",
+      "patroon": "middelste\\s+(?:nachtwake|wake)",
+      "vervang": "nachtwake van tien uur 's avonds tot twee uur 's nachts",
       "uitleg": "De middelste van de drie oudtestamentische nachtwaken. Richteren 7:19 noemt hem met zoveel woorden, en bewijst daarmee dat het Oude Testament er drie telt."
     }
   ],
