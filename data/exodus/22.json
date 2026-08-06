@@ -649,7 +649,7 @@
       "number": 7,
       "textSV1888": "Wanneer iemand zijn naaste geld of vaten te bewaren geeft, en het wordt uit diens mans huis gestolen; indien de dief gevonden wordt, hij zal het dubbel wedergeven.",
       "text1637": "Wanneer yemant sijnen naesten gelt, [13] of vaten te bewaren geeft, ende ’t wort uyt dies mans huys gestolen: indien de dief gevonden wort, hy sal ’t dobbel weder geven.",
-      "text2026": "Wanneer iemand zijn naaste geld of voorwerpen te bewaren geeft, en het wordt uit diens mans huis gestolen; als de dief gevonden wordt, hij zal het dubbel wedergeven.",
+      "text2026": "Wanneer iemand zijn naaste geld of voorwerpen te bewaren geeft, en het wordt uit het huis van die man gestolen; als de dief gevonden wordt, hij zal het dubbel wedergeven.",
       "marginNotes": [
         {
           "marker": "13",
@@ -736,13 +736,23 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Wanneer iemand zijn naaste geld<sup class=\"note-marker\" data-note=\"13\">13</sup> of voorwerpen te bewaren geeft, en het wordt uit diens mans huis gestolen; als de dief gevonden wordt, hij zal het dubbel wedergeven.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Wanneer iemand zijn naaste geld<sup class=\"note-marker\" data-note=\"13\">13</sup> of voorwerpen te bewaren geeft, en het wordt uit het huis van die man gestolen; als de dief gevonden wordt, hij zal het dubbel wedergeven.</i></span>",
       "textSV1888_html": "Wanneer iemand zijn naaste geld<sup class=\"note-marker\" data-note=\"13\">13</sup> of vaten te bewaren geeft, en het wordt uit diens mans huis gestolen; indien de dief gevonden wordt, hij zal het dubbel wedergeven.",
       "text1637_html": "Wanneer yemant sijnen naesten gelt, <sup class=\"note-marker\" data-note=\"13\">13</sup> of vaten te bewaren geeft, ende ’t wort uyt dies mans huys gestolen: indien de dief gevonden wort, hy sal ’t dobbel weder geven.",
       "phraseDiff": [
         {
           "old": "vaten",
           "new": "voorwerpen",
+          "principe": null
+        },
+        {
+          "old": "diens mans",
+          "new": "het",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "van die man",
           "principe": null
         },
         {
@@ -756,7 +766,7 @@
       "number": 8,
       "textSV1888": "Indien de dief niet gevonden wordt, zo zal de heer des huizes tot de goden gebracht worden, of hij niet zijn hand aan zijns naasten have gelegd heeft.",
       "text1637": "Indien de dief niet gevonden en wort, so sal de heere des huyses tot de [14] goden gebracht worden, [15] of hy niet sijne hant aen sijnes naesten have geleyt en heeft.",
-      "text2026": "Als de dief niet gevonden wordt, zo zal de heer van het huis tot de goden gebracht worden, of hij niet zijn hand aan van zijn naasten bezittingen gelegd heeft.",
+      "text2026": "Als de dief niet gevonden wordt, zo zal de heer van het huis tot de goden gebracht worden, of hij niet zijn hand aan de bezittingen van zijn naaste gelegd heeft.",
       "marginNotes": [
         {
           "marker": "14",
@@ -930,7 +940,7 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Als de dief niet gevonden wordt, zo zal de heer van het huis tot de<sup class=\"note-marker\" data-note=\"14\">14</sup> goden gebracht worden,<sup class=\"note-marker\" data-note=\"15\">15</sup> of hij niet zijn hand aan van zijn naasten bezittingen gelegd heeft.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Als de dief niet gevonden wordt, zo zal de heer van het huis tot de<sup class=\"note-marker\" data-note=\"14\">14</sup> goden gebracht worden,<sup class=\"note-marker\" data-note=\"15\">15</sup> of hij niet zijn hand aan de bezittingen van zijn naaste gelegd heeft.</i></span>",
       "textSV1888_html": "Indien de dief niet gevonden wordt, zo zal de heer des huizes tot de<sup class=\"note-marker\" data-note=\"14\">14</sup> goden gebracht worden,<sup class=\"note-marker\" data-note=\"15\">15</sup> of hij niet zijn hand aan zijns naasten have gelegd heeft.",
       "text1637_html": "Indien de dief niet gevonden en wort, so sal de heere des huyses tot de <sup class=\"note-marker\" data-note=\"14\">14</sup> goden gebracht worden, <sup class=\"note-marker\" data-note=\"15\">15</sup> of hy niet sijne hant aen sijnes naesten have geleyt en heeft.",
       "phraseDiff": [
@@ -945,14 +955,9 @@
           "principe": "N3"
         },
         {
-          "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
-        },
-        {
-          "old": "have",
-          "new": "bezittingen",
-          "principe": "V28"
+          "old": "zijns naasten have",
+          "new": "de bezittingen van zijn naaste",
+          "principe": null
         }
       ]
     },
@@ -1201,7 +1206,7 @@
       "number": 11,
       "textSV1888": "Zo zal des HEEREN eed tussen hen beiden zijn, of hij niet zijn hand aan zijns naasten have geslagen heeft; en derzelver heer zal dien aannemen; en hij zal het niet wedergeven.",
       "text1637": "So sal [20] des HEEREN eedt tusschen hen beyden zijn, of hy niet sijne hant aen sijns naesten have geslagen heeft: ende de heere der selver [21] sal [dien] aen-nemen, ende [22] hy en sal ’t niet weder geven.",
-      "text2026": "Zo zal van JAHWEH eed tussen hen beiden zijn, of hij niet zijn hand aan van zijn naasten bezittingen geslagen heeft; en van die heer zal die aannemen; en hij zal het niet wedergeven.",
+      "text2026": "Zo zal de eed van JAHWEH tussen hen beiden zijn, of hij niet zijn hand aan de bezittingen van zijn naaste geslagen heeft; en de eigenaar zal dat aannemen; en hij zal het niet wedergeven.",
       "marginNotes": [
         {
           "marker": "20",
@@ -1257,34 +1262,34 @@
           "morph": "HR/Ncmpc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zo zal<sup class=\"note-marker\" data-note=\"20\">20</sup> van JAHWEH eed tussen hen beiden zijn, of hij niet zijn hand aan van zijn naasten bezittingen geslagen heeft; en van die heer zal<sup class=\"note-marker\" data-note=\"21\">21</sup> die aannemen; en<sup class=\"note-marker\" data-note=\"22\">22</sup> hij zal het niet wedergeven.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zo zal<sup class=\"note-marker\" data-note=\"20\">20</sup> de eed van JAHWEH tussen hen beiden zijn, of hij niet zijn hand aan de bezittingen van zijn naaste geslagen heeft; en van die heer zal<sup class=\"note-marker\" data-note=\"21\">21</sup> die aannemen; en<sup class=\"note-marker\" data-note=\"22\">22</sup> hij zal het niet wedergeven.</i></span>",
       "textSV1888_html": "Zo zal<sup class=\"note-marker\" data-note=\"20\">20</sup> des HEEREN eed tussen hen beiden zijn, of hij niet zijn hand aan zijns naasten have geslagen heeft; en derzelver heer zal<sup class=\"note-marker\" data-note=\"21\">21</sup> dien aannemen; en<sup class=\"note-marker\" data-note=\"22\">22</sup> hij zal het niet wedergeven.",
       "text1637_html": "So sal <sup class=\"note-marker\" data-note=\"20\">20</sup> des HEEREN eedt tusschen hen beyden zijn, of hy niet sijne hant aen sijns naesten have geslagen heeft: ende de heere der selver <sup class=\"note-marker\" data-note=\"21\">21</sup> sal [dien] aen-nemen, ende <sup class=\"note-marker\" data-note=\"22\">22</sup> hy en sal ’t niet weder geven.",
       "phraseDiff": [
         {
           "old": "des HEEREN",
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
           "new": "van JAHWEH",
-          "principe": "N3"
+          "principe": null
         },
         {
-          "old": "zijns",
-          "new": "van zijn",
-          "principe": "V201"
+          "old": "zijns naasten have",
+          "new": "de bezittingen van zijn naaste",
+          "principe": null
         },
         {
-          "old": "have",
-          "new": "bezittingen",
-          "principe": "V28"
-        },
-        {
-          "old": "derzelver",
-          "new": "van die",
-          "principe": "V82"
+          "old": "derzelver heer",
+          "new": "de eigenaar",
+          "principe": null
         },
         {
           "old": "dien",
-          "new": "die",
-          "principe": "N4"
+          "new": "dat",
+          "principe": null
         }
       ]
     },
