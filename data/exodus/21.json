@@ -504,7 +504,7 @@
       "number": 6,
       "textSV1888": "Zo zal hem zijn heer tot de goden brengen, daarna zal hij hem aan de deur, of aan den post brengen; en zijn heer zal hem met een priem zijn oor doorboren, en hij zal hem eeuwiglijk dienen.",
       "text1637": "So sal hem sijn heere tot [11] de goden brengen, daer na sal hy hem [12] aen de deure, of aen de post brengen: ende sijn heere sal hem met eenen priem [13] sijn oore doorbooren, ende hy sal hem [14] eeuwichlick dienen.",
-      "text2026": "Zo zal hem zijn heer tot de goden brengen, daarna zal hij hem aan de deur, of aan de post brengen; en zijn heer zal hem met een priem zijn oor doorboren, en hij zal hem eeuwig dienen.",
+      "text2026": "Zo zal hem zijn heer tot de rechters brengen, daarna zal hij hem aan de deur, of aan de post brengen; en zijn heer zal hem met een priem zijn oor doorboren, en hij zal hem eeuwig dienen.",
       "marginNotes": [
         {
           "marker": "11",
@@ -622,10 +622,15 @@
           "morph": "HR/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zo zal hem zijn heer tot<sup class=\"note-marker\" data-note=\"11\">11</sup> de goden brengen, daarna zal hij hem<sup class=\"note-marker\" data-note=\"12\">12</sup> aan de deur, of aan de post brengen; en zijn heer zal hem met een priem<sup class=\"note-marker\" data-note=\"13\">13</sup> zijn oor doorboren, en hij zal hem<sup class=\"note-marker\" data-note=\"14\">14</sup> eeuwig dienen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zo zal hem zijn heer tot<sup class=\"note-marker\" data-note=\"11\">11</sup> de rechters brengen, daarna zal hij hem<sup class=\"note-marker\" data-note=\"12\">12</sup> aan de deur, of aan de post brengen; en zijn heer zal hem met een priem<sup class=\"note-marker\" data-note=\"13\">13</sup> zijn oor doorboren, en hij zal hem<sup class=\"note-marker\" data-note=\"14\">14</sup> eeuwig dienen.</i></span>",
       "textSV1888_html": "Zo zal hem zijn heer tot<sup class=\"note-marker\" data-note=\"11\">11</sup> de goden brengen, daarna zal hij hem<sup class=\"note-marker\" data-note=\"12\">12</sup> aan de deur, of aan den post brengen; en zijn heer zal hem met een priem<sup class=\"note-marker\" data-note=\"13\">13</sup> zijn oor doorboren, en hij zal hem<sup class=\"note-marker\" data-note=\"14\">14</sup> eeuwiglijk dienen.",
       "text1637_html": "So sal hem sijn heere tot <sup class=\"note-marker\" data-note=\"11\">11</sup> de goden brengen, daer na sal hy hem <sup class=\"note-marker\" data-note=\"12\">12</sup> aen de deure, of aen de post brengen: ende sijn heere sal hem met eenen priem <sup class=\"note-marker\" data-note=\"13\">13</sup> sijn oore doorbooren, ende hy sal hem <sup class=\"note-marker\" data-note=\"14\">14</sup> eeuwichlick dienen.",
       "phraseDiff": [
+        {
+          "old": "goden",
+          "new": "rechters",
+          "principe": null
+        },
         {
           "old": "den",
           "new": "de",
@@ -1132,7 +1137,7 @@
       "number": 13,
       "textSV1888": "Doch die hem niet nagesteld heeft, maar God heeft hem zijn hand doen ontmoeten, zo zal Ik u een plaats bestellen, waar hij henen vliede.",
       "text1637": "Doch die [hem] niet [24] na-gestelt en heeft, maer Godt heeft hem sijne hant doen ontmoeten: so sal ick u [25] een plaetse bestellen, daer hy henen vliede.",
-      "text2026": "Maar die hem niet nagesteld heeft, maar God heeft hem zijn hand doen ontmoeten, zo zal Ik u een plaats bestellen, waar hij heen vliede.",
+      "text2026": "Maar die hem niet nagesteld heeft, maar God heeft hem zijn hand doen ontmoeten, zo zal Ik u een plaats bestellen, waar hij heen vlucht.",
       "marginNotes": [
         {
           "marker": "24",
@@ -1211,7 +1216,7 @@
           "morph": "HD/Sd"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar die hem niet<sup class=\"note-marker\" data-note=\"24\">24</sup> nagesteld heeft, maar God heeft hem zijn hand doen ontmoeten, zo zal Ik u<sup class=\"note-marker\" data-note=\"25\">25</sup> een plaats bestellen, waar hij heen vliede.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar die hem niet<sup class=\"note-marker\" data-note=\"24\">24</sup> nagesteld heeft, maar God heeft hem zijn hand doen ontmoeten, zo zal Ik u<sup class=\"note-marker\" data-note=\"25\">25</sup> een plaats bestellen, waar hij heen vlucht.</i></span>",
       "textSV1888_html": "Doch die hem niet<sup class=\"note-marker\" data-note=\"24\">24</sup> nagesteld heeft, maar God heeft hem zijn hand doen ontmoeten, zo zal Ik u<sup class=\"note-marker\" data-note=\"25\">25</sup> een plaats bestellen, waar hij henen vliede.",
       "text1637_html": "Doch die [hem] niet <sup class=\"note-marker\" data-note=\"24\">24</sup> na-gestelt en heeft, maer Godt heeft hem sijne hant doen ontmoeten: so sal ick u <sup class=\"note-marker\" data-note=\"25\">25</sup> een plaetse bestellen, daer hy henen vliede.",
       "phraseDiff": [
@@ -1221,9 +1226,9 @@
           "principe": "V1"
         },
         {
-          "old": "henen",
-          "new": "heen",
-          "principe": "V67"
+          "old": "henen vliede.",
+          "new": "heen vlucht.",
+          "principe": null
         }
       ]
     },
@@ -3239,7 +3244,7 @@
       "number": 35,
       "textSV1888": "Wanneer nu iemands os den os van zijn naaste kwetst, dat hij sterft, zo zal men den levenden os verkopen, en het geld daarvan half en half delen, en den dode zal men ook half en half delen.",
       "text1637": "Wanneer nu yemants osse sijnes naesten osse quetst, dat hy sterft: so salmen den levendigen osse verkoopen, ende het gelt daer van half ende half deylen, ende den dooden salmen oock half ende half deylen.",
-      "text2026": "Wanneer nu iemands os de os van zijn naaste kwetst, dat hij sterft, zo zal men de levenden os verkopen, en het geld daarvan half en half delen, en de dode zal men ook half en half delen.",
+      "text2026": "Wanneer nu iemands os de os van zijn naaste kwetst, dat hij sterft, zo zal men de levende \u0001 verkopen, en het geld daarvan half en half delen, en de dode zal men ook half en half delen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3338,7 +3343,7 @@
           "morph": "HVqi3mp/Sn"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Wanneer nu iemands os de os van zijn naaste kwetst, dat hij sterft, zo zal men de levenden os verkopen, en het geld daarvan half en half delen, en de dode zal men ook half en half delen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Wanneer nu iemands os de os van zijn naaste kwetst, dat hij sterft, zo zal men de levende \u0001 verkopen, en het geld daarvan half en half delen, en de dode zal men ook half en half delen.</i></span>",
       "text1637_html": "Wanneer nu yemants osse sijnes naesten osse quetst, dat hy sterft: so salmen den levendigen osse verkoopen, ende het gelt daer van half ende half deylen, ende den dooden salmen oock half ende half deylen.",
       "phraseDiff": [
         {
@@ -3347,9 +3352,9 @@
           "principe": "N1"
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den levenden os",
+          "new": "de levende \u0001",
+          "principe": null
         },
         {
           "old": "den",
@@ -3362,7 +3367,7 @@
       "number": 36,
       "textSV1888": "Of is het kennelijk geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij in alle manier os voor os vergelden; doch de dode zal zijns wezen.",
       "text1637": "Ofte ist kennelick geweest, dat dien osse van te vooren stootich was, ende sijn heere en heeft hem niet bewaert: so sal hy [62] in aller maniere osse voor osse vergelden, doch de doode sal [63] sijne wesen.",
-      "text2026": "Of is het kennelijk geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij in alle manier os voor os vergelden; maar de dode zal van hem wezen.",
+      "text2026": "Of is het bekend geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij in alle manier os voor os vergelden; maar de dode zal van hem wezen.",
       "marginNotes": [
         {
           "marker": "62",
@@ -3476,10 +3481,15 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Of is het kennelijk geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij<sup class=\"note-marker\" data-note=\"62\">62</sup> in alle manier os voor os vergelden; maar de dode zal<sup class=\"note-marker\" data-note=\"63\">63</sup> van hem wezen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Of is het bekend geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij<sup class=\"note-marker\" data-note=\"62\">62</sup> in alle manier os voor os vergelden; maar de dode zal<sup class=\"note-marker\" data-note=\"63\">63</sup> van hem wezen.</i></span>",
       "textSV1888_html": "Of is het kennelijk geweest, dat die os van te voren stotig was, en zijn heer heeft hem niet bewaard, zo zal hij<sup class=\"note-marker\" data-note=\"62\">62</sup> in alle manier os voor os vergelden; doch de dode zal<sup class=\"note-marker\" data-note=\"63\">63</sup> zijns wezen.",
       "text1637_html": "Ofte ist kennelick geweest, dat dien osse van te vooren stootich was, ende sijn heere en heeft hem niet bewaert: so sal hy <sup class=\"note-marker\" data-note=\"62\">62</sup> in aller maniere osse voor osse vergelden, doch de doode sal <sup class=\"note-marker\" data-note=\"63\">63</sup> sijne wesen.",
       "phraseDiff": [
+        {
+          "old": "kennelijk",
+          "new": "bekend",
+          "principe": null
+        },
         {
           "old": "doch",
           "new": "maar",

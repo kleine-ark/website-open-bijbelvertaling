@@ -766,7 +766,7 @@
       "number": 8,
       "textSV1888": "Indien de dief niet gevonden wordt, zo zal de heer des huizes tot de goden gebracht worden, of hij niet zijn hand aan zijns naasten have gelegd heeft.",
       "text1637": "Indien de dief niet gevonden en wort, so sal de heere des huyses tot de [14] goden gebracht worden, [15] of hy niet sijne hant aen sijnes naesten have geleyt en heeft.",
-      "text2026": "Als de dief niet gevonden wordt, zo zal de heer van het huis tot de goden gebracht worden, of hij niet zijn hand aan de bezittingen van zijn naaste gelegd heeft.",
+      "text2026": "Als de dief niet gevonden wordt, zo zal de heer van het huis tot de rechters gebracht worden, of hij niet zijn hand aan de bezittingen van zijn naaste gelegd heeft.",
       "marginNotes": [
         {
           "marker": "14",
@@ -955,6 +955,11 @@
           "principe": "N3"
         },
         {
+          "old": "goden",
+          "new": "rechters",
+          "principe": null
+        },
+        {
           "old": "zijns naasten have",
           "new": "de bezittingen van zijn naaste",
           "principe": null
@@ -965,7 +970,7 @@
       "number": 9,
       "textSV1888": "Over alle zaak van onrecht, over een os, over een ezel, over klein vee, over kleding, over al het verlorene, hetwelk iemand zegt, dat het zijn is, beider zaak zal voor de goden komen; wien de goden verwijzen, die zal het aan zijn naaste dubbel wedergeven.",
       "text1637": "Over alle sake van onrecht, over eenen osse, over eenen esel, over kleyn vee, over kleedinge, over al ’t verlorene, [16] ’t welck yemant seyt dat het sijne is: [17] beyder sake sal voor de goden komen: welcken de goden verwijsen, die sal ’t sijnen naesten dobbel wedergeven.",
-      "text2026": "Over alle zaak van onrecht, over een os, over een ezel, over klein vee, over kleding, over al het verlorene, dat iemand zegt, dat het zijn is, beider zaak zal voor de goden komen; wie de goden verwijzen, die zal het aan zijn naaste dubbel wedergeven.",
+      "text2026": "Over alle zaak van onrecht, over een os, over een ezel, over klein vee, over kleding, over al het verlorene, dat iemand zegt, dat het zijn is, beider zaak zal voor de rechters komen; wie de rechters verwijzen, die zal het aan zijn naaste dubbel wedergeven.",
       "marginNotes": [
         {
           "marker": "16",
@@ -1084,7 +1089,7 @@
           "morph": "HVqrmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Over alle zaak van onrecht, over een os, over een ezel, over klein vee, over kleding, over al het verlorene,<sup class=\"note-marker\" data-note=\"16\">16</sup> dat iemand zegt, dat het zijn is,<sup class=\"note-marker\" data-note=\"17\">17</sup> beider zaak zal voor de goden komen; wie de goden verwijzen, die zal het aan zijn naaste dubbel wedergeven.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Over alle zaak van onrecht, over een os, over een ezel, over klein vee, over kleding, over al het verlorene,<sup class=\"note-marker\" data-note=\"16\">16</sup> dat iemand zegt, dat het zijn is,<sup class=\"note-marker\" data-note=\"17\">17</sup> beider zaak zal voor de rechters komen; wie de rechters verwijzen, die zal het aan zijn naaste dubbel wedergeven.</i></span>",
       "textSV1888_html": "Over alle zaak van onrecht, over een os, over een ezel, over klein vee, over kleding, over al het verlorene,<sup class=\"note-marker\" data-note=\"16\">16</sup> hetwelk iemand zegt, dat het zijn is,<sup class=\"note-marker\" data-note=\"17\">17</sup> beider zaak zal voor de goden komen; wien de goden verwijzen, die zal het aan zijn naaste dubbel wedergeven.",
       "text1637_html": "Over alle sake van onrecht, over eenen osse, over eenen esel, over kleyn vee, over kleedinge, over al ’t verlorene, <sup class=\"note-marker\" data-note=\"16\">16</sup> ’t welck yemant seyt dat het sijne is: <sup class=\"note-marker\" data-note=\"17\">17</sup> beyder sake sal voor de goden komen: welcken de goden verwijsen, die sal ’t sijnen naesten dobbel wedergeven.",
       "phraseDiff": [
@@ -1094,9 +1099,19 @@
           "principe": "N6"
         },
         {
+          "old": "goden",
+          "new": "rechters",
+          "principe": null
+        },
+        {
           "old": "wien",
           "new": "wie",
           "principe": "V34"
+        },
+        {
+          "old": "goden",
+          "new": "rechters",
+          "principe": null
         }
       ]
     },
@@ -1635,7 +1650,7 @@
       "number": 16,
       "textSV1888": "Wanneer nu iemand een maagd verlokt, die niet ondertrouwd is, en hij ligt bij haar, die zal haar zonder uitstel een bruidschat geven, dat zij hem ter vrouwe zij.",
       "text1637": "Wanneer nu yemant een maecht verlockt, [28] die niet ondertrouwt en is, ende hy ligt by haer: die sal haer sonder uytstel eenen bruytschat geven, datse hem ter vrouwe zy.",
-      "text2026": "Wanneer nu iemand een maagd verlokt, die niet ondertrouwd is, en hij ligt bij haar, die zal haar zonder uitstel een bruidschat geven, dat zij hem ter vrouwe zij.",
+      "text2026": "Wanneer nu iemand een maagd verlokt, die niet ondertrouwd is, en hij ligt bij haar, die zal haar zonder uitstel een bruidschat geven, dat zij hem zijn vrouw wordt.",
       "marginNotes": [
         {
           "marker": "28",
@@ -1697,9 +1712,16 @@
           "morph": "HTd/Ncfpa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Wanneer nu iemand een maagd verlokt,<sup class=\"note-marker\" data-note=\"28\">28</sup> die niet ondertrouwd is, en hij ligt bij haar, die zal haar zonder uitstel een bruidschat geven, dat zij hem ter vrouwe zij.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Wanneer nu iemand een maagd verlokt,<sup class=\"note-marker\" data-note=\"28\">28</sup> die niet ondertrouwd is, en hij ligt bij haar, die zal haar zonder uitstel een bruidschat geven, dat zij hem zijn vrouw wordt.</i></span>",
       "textSV1888_html": "Wanneer nu iemand een maagd verlokt,<sup class=\"note-marker\" data-note=\"28\">28</sup> die niet ondertrouwd is, en hij ligt bij haar, die zal haar zonder uitstel een bruidschat geven, dat zij hem ter vrouwe zij.",
-      "text1637_html": "Wanneer nu yemant een maecht verlockt, <sup class=\"note-marker\" data-note=\"28\">28</sup> die niet ondertrouwt en is, ende hy ligt by haer: die sal haer sonder uytstel eenen bruytschat geven, datse hem ter vrouwe zy."
+      "text1637_html": "Wanneer nu yemant een maecht verlockt, <sup class=\"note-marker\" data-note=\"28\">28</sup> die niet ondertrouwt en is, ende hy ligt by haer: die sal haer sonder uytstel eenen bruytschat geven, datse hem ter vrouwe zy.",
+      "phraseDiff": [
+        {
+          "old": "ter vrouwe zij.",
+          "new": "zijn vrouw wordt.",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 17,
@@ -1904,7 +1926,7 @@
       "number": 20,
       "textSV1888": "Wie den goden offert, behalve den HEERE alleen, die zal verbannen worden.",
       "text1637": "[e] Wie den Goden [34] offert, behalven den HEERE alleen, [35] die sal verbannen worden.",
-      "text2026": "Wie de goden offert, behalve JAHWEH alleen, die zal verbannen worden.",
+      "text2026": "Wie de rechters offert, behalve JAHWEH alleen, die zal verbannen worden.",
       "marginNotes": [
         {
           "marker": "d",
@@ -1980,14 +2002,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Wie de goden<sup class=\"note-marker\" data-note=\"34\">34</sup> offert, behalve JAHWEH alleen,<sup class=\"note-marker\" data-note=\"35\">35</sup> die zal verbannen worden.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Wie de rechters<sup class=\"note-marker\" data-note=\"34\">34</sup> offert, behalve JAHWEH alleen,<sup class=\"note-marker\" data-note=\"35\">35</sup> die zal verbannen worden.</i></span>",
       "textSV1888_html": "Wie den goden<sup class=\"note-marker\" data-note=\"34\">34</sup> offert, behalve den HEERE alleen,<sup class=\"note-marker\" data-note=\"35\">35</sup> die zal verbannen worden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Wie den Goden <sup class=\"note-marker\" data-note=\"34\">34</sup> offert, behalven den HEERE alleen, <sup class=\"note-marker\" data-note=\"35\">35</sup> die sal verbannen worden.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den goden",
+          "new": "de rechters",
+          "principe": null
         },
         {
           "old": "den HEERE",

@@ -683,7 +683,7 @@
       "number": 8,
       "textSV1888": "En olie tot den luchter, en specerijen ter zalfolie, en tot roking welriekende specerijen;",
       "text1637": "[g] Ende olye tot den luchter: ende speceryen ter salf-olye, ende tot rookinge welrieckende speceryen.",
-      "text2026": "En olie tot de luchter, en specerijen ter zalfolie, en tot roking welriekende specerijen;",
+      "text2026": "En olie tot de luchter, en specerijen ter zalfolie, en tot roking geurende specerijen;",
       "marginNotes": [
         {
           "marker": "g",
@@ -730,7 +730,7 @@
           "morph": "HTd/Ncmpa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"direct-speech\"><i> En olie tot de luchter, en specerijen ter zalfolie, en tot roking welriekende specerijen;</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"direct-speech\"><i> En olie tot de luchter, en specerijen ter zalfolie, en tot roking geurende specerijen;</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> En olie tot den luchter, en specerijen ter zalfolie, en tot roking welriekende specerijen;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> Ende olye tot den luchter: ende speceryen ter salf-olye, ende tot rookinge welrieckende speceryen.",
       "phraseDiff": [
@@ -738,6 +738,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "welriekende",
+          "new": "geurende",
+          "principe": null
         }
       ]
     },
@@ -885,7 +890,7 @@
       "number": 11,
       "textSV1888": "De tabernakel, zijn tent en zijn deksel, zijn haakjes en zijn berderen, zijn richelen, zijn pilaren, en zijn voeten;",
       "text1637": "[i] Den Tabernakel, sijn tente, ende sijn decksel: sijne haecxkens, ende sijne berderen, sijne rychelen, sijne pilaren, ende sijne voeten.",
-      "text2026": "De tabernakel, zijn tent en zijn deksel, zijn haakjes en zijn berderen, zijn richelen, zijn pilaren, en zijn voeten;",
+      "text2026": "De tabernakel, zijn tent en zijn deksel, zijn haakjes en zijn planken, zijn richelen, zijn pilaren, en zijn voetstukken;",
       "marginNotes": [
         {
           "marker": "i",
@@ -977,15 +982,27 @@
           "morph": "HNcmpc/Sp3ms"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"i\">i</sup><span class=\"direct-speech\"><i> De tabernakel, zijn tent en zijn deksel, zijn haakjes en zijn berderen, zijn richelen, zijn pilaren, en zijn voeten;</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"i\">i</sup><span class=\"direct-speech\"><i> De tabernakel, zijn tent en zijn deksel, zijn haakjes en zijn planken, zijn richelen, zijn pilaren, en zijn voetstukken;</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"i\">i</sup> De tabernakel, zijn tent en zijn deksel, zijn haakjes en zijn berderen, zijn richelen, zijn pilaren, en zijn voeten;",
-      "text1637_html": "<sup class=\"note-marker\" data-note=\"i\">i</sup> Den Tabernakel, sijn tente, ende sijn decksel: sijne haecxkens, ende sijne berderen, sijne rychelen, sijne pilaren, ende sijne voeten."
+      "text1637_html": "<sup class=\"note-marker\" data-note=\"i\">i</sup> Den Tabernakel, sijn tente, ende sijn decksel: sijne haecxkens, ende sijne berderen, sijne rychelen, sijne pilaren, ende sijne voeten.",
+      "phraseDiff": [
+        {
+          "old": "berderen,",
+          "new": "planken,",
+          "principe": null
+        },
+        {
+          "old": "voeten;",
+          "new": "voetstukken;",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 12,
       "textSV1888": "De ark en haar handbomen, het verzoendeksel en den voorhang des deksels;",
       "text1637": "De Arke ende hare [7] hant-boomen, het versoen-decksel, ende den voorhanck [8] des decksels.",
-      "text2026": "De ark en haar handbomen, het verzoendeksel en de voorhang van het deksel;",
+      "text2026": "De ark en haar handbomen, het verzoendeksel en het voorhangsel van het deksel;",
       "marginNotes": [
         {
           "marker": "7",
@@ -1049,18 +1066,13 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>De ark en haar<sup class=\"note-marker\" data-note=\"7\">7</sup> handbomen, het verzoendeksel en de voorhang<sup class=\"note-marker\" data-note=\"8\">8</sup> van het deksel;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>De ark en haar<sup class=\"note-marker\" data-note=\"7\">7</sup> handbomen, het verzoendeksel en het voorhangsel<sup class=\"note-marker\" data-note=\"8\">8</sup> van het deksel;</i></span>",
       "textSV1888_html": "De ark en haar<sup class=\"note-marker\" data-note=\"7\">7</sup> handbomen, het verzoendeksel en den voorhang<sup class=\"note-marker\" data-note=\"8\">8</sup> des deksels;",
       "text1637_html": "De Arke ende hare <sup class=\"note-marker\" data-note=\"7\">7</sup> hant-boomen, het versoen-decksel, ende den voorhanck <sup class=\"note-marker\" data-note=\"8\">8</sup> des decksels.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
-        },
-        {
-          "old": "des deksels;",
-          "new": "van het deksel;",
+          "old": "den voorhang des deksels;",
+          "new": "het voorhangsel van het deksel;",
           "principe": null
         }
       ]
@@ -1230,7 +1242,7 @@
       "number": 15,
       "textSV1888": "En het reukaltaar, en zijn handbomen, en de zalfolie, en het reukwerk van welriekende specerijen; en het deksel der deur aan de deur des tabernakels;",
       "text1637": "[m] Ende den [11] reuck-altaer, ende sijne hant-boomen, ende [n] de salf-olye, ende het reuck-werck van welrieckende speceryen: ende [o] het decksel der deure aen de deure des Tabernakels.",
-      "text2026": "En het reukaltaar, en zijn handbomen, en de zalfolie, en het reukwerk van welriekende specerijen; en het deksel van de deur aan de deur van de tabernakel;",
+      "text2026": "En het reukaltaar, en zijn handbomen, en de zalfolie, en het reukwerk van geurende specerijen; en het deksel van de deur aan de deur van de tabernakel;",
       "marginNotes": [
         {
           "marker": "m",
@@ -1343,10 +1355,15 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup><span class=\"direct-speech\"><i> En het reukaltaar, en zijn handbomen, en de<sup class=\"note-marker\" data-note=\"11\">11</sup> zalfolie,<sup class=\"note-marker\" data-note=\"n\">n</sup> en het reukwerk van welriekende specerijen; en<sup class=\"note-marker\" data-note=\"o\">o</sup> het deksel van de deur aan de deur van de tabernakel;</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup><span class=\"direct-speech\"><i> En het reukaltaar, en zijn handbomen, en de<sup class=\"note-marker\" data-note=\"11\">11</sup> zalfolie,<sup class=\"note-marker\" data-note=\"n\">n</sup> en het reukwerk van geurende specerijen; en<sup class=\"note-marker\" data-note=\"o\">o</sup> het deksel van de deur aan de deur van de tabernakel;</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup> En het reukaltaar, en zijn handbomen, en de<sup class=\"note-marker\" data-note=\"11\">11</sup> zalfolie,<sup class=\"note-marker\" data-note=\"n\">n</sup> en het reukwerk van welriekende specerijen; en<sup class=\"note-marker\" data-note=\"o\">o</sup> het deksel der deur aan de deur des tabernakels;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"m\">m</sup> Ende den <sup class=\"note-marker\" data-note=\"11\">11</sup> reuck-altaer, ende sijne hant-boomen, ende <sup class=\"note-marker\" data-note=\"n\">n</sup> de salf-olye, ende het reuck-werck van welrieckende speceryen: ende <sup class=\"note-marker\" data-note=\"o\">o</sup> het decksel der deure aen de deure des Tabernakels.",
       "phraseDiff": [
+        {
+          "old": "welriekende",
+          "new": "geurende",
+          "principe": null
+        },
         {
           "old": "der",
           "new": "van de",
@@ -1492,7 +1509,7 @@
       "number": 17,
       "textSV1888": "De behangselen des voorhofs, zijn pilaren en zijn voeten; en het deksel van de poort des voorhofs;",
       "text1637": "[r] De behangselen des voor-hofs, sijne pilaren, ende sijne voeten, ende [s] het decksel van de poorte des voor-hofs.",
-      "text2026": "De behangselen van de voorhof, zijn pilaren en zijn voeten; en het deksel van de poort van de voorhof;",
+      "text2026": "De behangselen van de voorhof, zijn pilaren en zijn voetstukken; en het deksel van de poort van de voorhof;",
       "marginNotes": [
         {
           "marker": "r",
@@ -1566,7 +1583,7 @@
           "morph": "HTd/Ncbsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"r\">r</sup><span class=\"direct-speech\"><i> De behangselen van de voorhof, zijn pilaren en zijn voeten; en<sup class=\"note-marker\" data-note=\"s\">s</sup> het deksel van de poort van de voorhof;</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"r\">r</sup><span class=\"direct-speech\"><i> De behangselen van de voorhof, zijn pilaren en zijn voetstukken; en<sup class=\"note-marker\" data-note=\"s\">s</sup> het deksel van de poort van de voorhof;</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"r\">r</sup> De behangselen des voorhofs, zijn pilaren en zijn voeten; en<sup class=\"note-marker\" data-note=\"s\">s</sup> het deksel van de poort des voorhofs;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"r\">r</sup> De behangselen des voor-hofs, sijne pilaren, ende sijne voeten, ende <sup class=\"note-marker\" data-note=\"s\">s</sup> het decksel van de poorte des voor-hofs.",
       "phraseDiff": [
@@ -1574,6 +1591,11 @@
           "old": "des voorhofs,",
           "new": "van de voorhof,",
           "principe": "N3"
+        },
+        {
+          "old": "voeten;",
+          "new": "voetstukken;",
+          "principe": null
         },
         {
           "old": "des voorhofs;",
@@ -1586,7 +1608,7 @@
       "number": 18,
       "textSV1888": "De nagelen des tabernakels, en de pennen des voorhofs, met derzelver zelen;",
       "text1637": "[t] De [12] nagelen des Tabernakels, ende de pinnen des voorhofs, met hare [13] zeelen.",
-      "text2026": "De nagelen van de tabernakel, en de pennen van de voorhof, met van die zelen;",
+      "text2026": "De nagelen van de tabernakel, en de pennen van de voorhof, met van die touwen;",
       "marginNotes": [
         {
           "marker": "t",
@@ -1652,7 +1674,7 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"t\">t</sup><span class=\"direct-speech\"><i> De<sup class=\"note-marker\" data-note=\"12\">12</sup> nagelen van de tabernakel, en de pennen van de voorhof, met van die<sup class=\"note-marker\" data-note=\"13\">13</sup> zelen;</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"t\">t</sup><span class=\"direct-speech\"><i> De<sup class=\"note-marker\" data-note=\"12\">12</sup> nagelen van de tabernakel, en de pennen van de voorhof, met van die<sup class=\"note-marker\" data-note=\"13\">13</sup> touwen;</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"t\">t</sup> De<sup class=\"note-marker\" data-note=\"12\">12</sup> nagelen des tabernakels, en de pennen des voorhofs, met derzelver<sup class=\"note-marker\" data-note=\"13\">13</sup> zelen;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"t\">t</sup> De <sup class=\"note-marker\" data-note=\"12\">12</sup> nagelen des Tabernakels, ende de pinnen des voorhofs, met hare <sup class=\"note-marker\" data-note=\"13\">13</sup> zeelen.",
       "phraseDiff": [
@@ -1667,9 +1689,9 @@
           "principe": "N3"
         },
         {
-          "old": "derzelver",
-          "new": "van die",
-          "principe": "V82"
+          "old": "derzelver zelen;",
+          "new": "van die touwen;",
+          "principe": null
         }
       ]
     },
@@ -2649,7 +2671,7 @@
       "number": 28,
       "textSV1888": "En specerijen en olie, tot den luchter en tot de zalfolie, en tot roking welriekende specerijen.",
       "text1637": "Ende specerye, ende olye [y] tot den luchter, ende tot de salf-olye, ende [z] tot roockinge welrieckende speceryen.",
-      "text2026": "En specerijen en olie, tot de luchter en tot de zalfolie, en tot roking welriekende specerijen.",
+      "text2026": "En specerijen en olie, tot de luchter en tot de zalfolie, en tot roking geurende specerijen.",
       "marginNotes": [
         {
           "marker": "y",
@@ -2713,7 +2735,7 @@
           "morph": "HTd/Ncmpa"
         }
       ],
-      "text2026_html": "En specerijen en olie,<sup class=\"note-marker\" data-note=\"y\">y</sup> tot de luchter en tot de zalfolie, en<sup class=\"note-marker\" data-note=\"z\">z</sup> tot roking welriekende specerijen.",
+      "text2026_html": "En specerijen en olie,<sup class=\"note-marker\" data-note=\"y\">y</sup> tot de luchter en tot de zalfolie, en<sup class=\"note-marker\" data-note=\"z\">z</sup> tot roking geurende specerijen.",
       "textSV1888_html": "En specerijen en olie,<sup class=\"note-marker\" data-note=\"y\">y</sup> tot den luchter en tot de zalfolie, en<sup class=\"note-marker\" data-note=\"z\">z</sup> tot roking welriekende specerijen.",
       "text1637_html": "Ende specerye, ende olye <sup class=\"note-marker\" data-note=\"y\">y</sup> tot den luchter, ende tot de salf-olye, ende <sup class=\"note-marker\" data-note=\"z\">z</sup> tot roockinge welrieckende speceryen.",
       "phraseDiff": [
@@ -2721,6 +2743,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "welriekende",
+          "new": "geurende",
+          "principe": null
         }
       ]
     },

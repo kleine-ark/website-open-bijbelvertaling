@@ -387,7 +387,7 @@
       "number": 4,
       "textSV1888": "Toen het volk dit kwade woord hoorde, zo droegen zij leed; en niemand van hen deed zijn versiersel aan zich.",
       "text1637": "Doe het volck dit quade woort hoorde, so droegen sy leet, ende niemant van hen dede sijn verciersel aen hem:",
-      "text2026": "Toen het volk dit kwade woord hoorde, zo droegen zij leed; en niemand van hen deed zijn versiersel aan zich.",
+      "text2026": "Toen het volk dit kwade woord hoorde, zo bedreven zij rouw; en niemand van hen deed zijn versiersel aan zich.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -451,8 +451,20 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "Toen het volk dit kwade woord hoorde, zo droegen zij leed; en niemand van hen deed zijn versiersel aan zich.",
-      "text1637_html": "Doe het volck dit quade woort hoorde, so droegen sy leet, ende niemant van hen dede sijn verciersel aen hem:"
+      "text2026_html": "Toen het volk dit kwade woord hoorde, zo bedreven zij rouw; en niemand van hen deed zijn versiersel aan zich.",
+      "text1637_html": "Doe het volck dit quade woort hoorde, so droegen sy leet, ende niemant van hen dede sijn verciersel aen hem:",
+      "phraseDiff": [
+        {
+          "old": "droegen",
+          "new": "bedreven",
+          "principe": null
+        },
+        {
+          "old": "leed;",
+          "new": "rouw;",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 5,
@@ -2194,7 +2206,7 @@
       "number": 19,
       "textSV1888": "Doch Hij zeide: Ik zal al Mijn goedigheid voorbij uw aangezicht laten gaan, en zal den Naam des HEEREN uitroepen voor uw aangezicht; maar Ik zal genadig zijn, wien Ik zal genadig zijn, en Ik zal Mij ontfermen, over wien Ik Mij ontfermen zal.",
       "text1637": "Doch Hy seyde, Ick sal al mijne goedicheyt voor-by u aengesichte gaen laten, ende [30] sal den Name des HEEREN uytroepen voor u aengesichte: [d] maer ick sal genadich zijn, dien ick sal genadich zijn, ende ick sal my ontfermen diens ick my ontfermen sal.",
-      "text2026": "Maar Hij zei: Ik zal al Mijn goedigheid voorbij uw aangezicht laten gaan, en zal de Naam van JAHWEH uitroepen voor uw aangezicht; maar Ik zal genadig zijn, wie Ik zal genadig zijn, en Ik zal Mij ontfermen, over wie Ik Mij ontfermen zal.",
+      "text2026": "Maar Hij zei: Ik zal al Mijn goedheid voorbij uw aangezicht laten gaan, en zal de Naam van JAHWEH uitroepen voor uw aangezicht; maar Ik zal genadig zijn, wie Ik zal genadig zijn, en Ik zal Mij ontfermen, over wie Ik Mij ontfermen zal.",
       "marginNotes": [
         {
           "marker": "30",
@@ -2308,7 +2320,7 @@
           "morph": "HVpi1cs"
         }
       ],
-      "text2026_html": "Maar Hij zei: <span class=\"god-speaks\"><i>Ik zal al Mijn goedigheid voorbij uw aangezicht laten gaan, en zal de Naam van JAHWEH uitroepen voor uw aangezicht; maar Ik zal genadig zijn, wie Ik zal genadig zijn, en Ik zal Mij ontfermen, over wie Ik Mij ontfermen zal.</i></span>",
+      "text2026_html": "Maar Hij zei: <span class=\"god-speaks\"><i>Ik zal al Mijn goedheid voorbij uw aangezicht laten gaan, en zal de Naam van JAHWEH uitroepen voor uw aangezicht; maar Ik zal genadig zijn, wie Ik zal genadig zijn, en Ik zal Mij ontfermen, over wie Ik Mij ontfermen zal.</i></span>",
       "textSV1888_html": "Doch Hij zeide: Ik zal al Mijn goedigheid voorbij uw aangezicht laten gaan, en<sup class=\"note-marker\" data-note=\"30\">30</sup> zal den Naam des HEEREN uitroepen voor uw aangezicht;<sup class=\"note-marker\" data-note=\"d\">d</sup> maar Ik zal genadig zijn, wien Ik zal genadig zijn, en Ik zal Mij ontfermen, over wien Ik Mij ontfermen zal.",
       "text1637_html": "Doch Hy seyde, Ick sal al mijne goedicheyt voor-by u aengesichte gaen laten, ende <sup class=\"note-marker\" data-note=\"30\">30</sup> sal den Name des HEEREN uytroepen voor u aengesichte: <sup class=\"note-marker\" data-note=\"d\">d</sup> maer ick sal genadich zijn, dien ick sal genadich zijn, ende ick sal my ontfermen diens ick my ontfermen sal.",
       "phraseDiff": [
@@ -2321,6 +2333,11 @@
           "old": "zeide:",
           "new": "zei:",
           "principe": "W1"
+        },
+        {
+          "old": "goedigheid",
+          "new": "goedheid",
+          "principe": null
         },
         {
           "old": "den",
