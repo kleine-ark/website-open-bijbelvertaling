@@ -5,7 +5,7 @@
    "number": 1,
    "textSV1888": "Het woord, dat van den HEERE geschied is tot Jeremia, als koning Zekekia tot hem zond Pashur, den zoon van Malchia, en Zefanja, den zoon van Maaseja, den priester, zeggende:",
    "text1637": "HEt woort, dat van den HEERE geschiet is tot Ieremia: als de Coninck Zedekia tot hem sondt Pashur den [1] sone van Malchia, ende Zephania den sone van Maaseja, den Priester, seggende:",
-   "text2026": "Het woord, dat van JAHWEH gebeurd is tot Jeremia, als koning Zekekia tot hem zond Pashur, de zoon van Malchia, en Zefanja, de zoon van Maaseja, de priester, zeggende:",
+   "text2026": "Het woord, dat van JAHWEH gebeurd is tot Jeremia, als koning Zedekia tot hem zond Pashur, de zoon van Malchia, en Zefanja, de zoon van Maaseja, de priester, zeggende:",
    "marginNotes": [
     {
      "marker": "1",
@@ -122,13 +122,18 @@
      "morph": "HR/Vqc"
     }
    ],
-   "text2026_html": "Het woord, dat van JAHWEH gebeurd is tot Jeremia, als koning Zekekia tot hem zond Pashur, de<sup class=\"note-marker\" data-note=\"1\">1</sup> zoon van Malchia, en Zefanja, de zoon van Maaseja, de priester, zeggende:",
+   "text2026_html": "Het woord, dat van JAHWEH gebeurd is tot Jeremia, als koning Zedekia tot hem zond Pashur, de<sup class=\"note-marker\" data-note=\"1\">1</sup> zoon van Malchia, en Zefanja, de zoon van Maaseja, de priester, zeggende:",
    "textSV1888_html": "Het woord, dat van den HEERE geschied is tot Jeremia, als koning Zekekia tot hem zond Pashur, den<sup class=\"note-marker\" data-note=\"1\">1</sup> zoon van Malchia, en Zefanja, den zoon van Maaseja, den priester, zeggende:",
    "text1637_html": "HEt woort, dat van den HEERE geschiet is tot Ieremia: als de Coninck Zedekia tot hem sondt Pashur den <sup class=\"note-marker\" data-note=\"1\">1</sup> sone van Malchia, en<i>de</i> Zephania den sone van Maaseja, den Priester, seggende:",
    "phraseDiff": [
     {
      "old": "den HEERE geschied",
      "new": "JAHWEH gebeurd",
+     "principe": null
+    },
+    {
+     "old": "Zekekia",
+     "new": "Zedekia",
      "principe": null
     },
     {
@@ -351,7 +356,7 @@
    "number": 4,
    "textSV1888": "Zo zegt de HEERE, de God Israëls: Ziet, Ik zal de krijgswapenen omwenden, die in ulieder hand zijn, met dewelke gij strijdt tegen den koning van Babel en tegen de Chaldeeën, die u belegeren, van buiten aan den muur; en Ik zal ze verzamelen in het midden van deze stad.",
    "text1637": "Soo seyt de HEERE de Godt Israëls; Siet ick sal de [5] krijgs-wapenen [6] omwenden, die in u lieder hant zijn, met dewelcke ghy strijdet tegen den Coninck van Babel ende tegen de Chaldeen, die u belegeren, van buyten aen den muer: ende ick [7] salse versamelen in ’t midden van dese stadt.",
-   "text2026": "Zo zegt JAHWEH, de God van Israël: Zie, Ik zal de oorlogswapenen omwenden, die in uw hand zijn, met die u strijdt tegen de koning van Babel en tegen de Chaldeeën, die u belegeren, van buiten aan de muur; en Ik zal ze verzamelen in het midden van deze stad.",
+   "text2026": "Zo zegt JAHWEH, de God van Israël: Zie, Ik zal de oorlogswapenen omwenden, die in uw hand zijn, waarmee u strijdt tegen de koning van Babel en tegen de Chaldeeën, die u belegeren, van buiten aan de muur; en Ik zal ze verzamelen in het midden van deze stad.",
    "marginNotes": [
     {
      "marker": "5",
@@ -532,7 +537,7 @@
      "morph": "HTd/Pdxfs"
     }
    ],
-   "text2026_html": "<span class=\"god-speaks\"><i>Zo zegt JAHWEH, de God van Israël: Zie, Ik zal de oorlogswapenen omwenden, die in uw hand zijn, met die u strijdt tegen de koning van Babel en tegen de Chaldeeën, die u belegeren, van buiten aan de muur; en Ik zal ze verzamelen in het midden van deze stad.</i></span>",
+   "text2026_html": "<span class=\"god-speaks\"><i>Zo zegt JAHWEH, de God van Israël: Zie, Ik zal de oorlogswapenen omwenden, die in uw hand zijn, waarmee u strijdt tegen de koning van Babel en tegen de Chaldeeën, die u belegeren, van buiten aan de muur; en Ik zal ze verzamelen in het midden van deze stad.</i></span>",
    "textSV1888_html": "Zo zegt de HEERE, de God Israëls: Ziet, Ik zal de<sup class=\"note-marker\" data-note=\"5\">5</sup> krijgswapenen<sup class=\"note-marker\" data-note=\"6\">6</sup> omwenden, die in ulieder hand zijn, met dewelke gij strijdt tegen den koning van Babel en tegen de Chaldeeën, die u belegeren, van buiten aan den muur; en Ik<sup class=\"note-marker\" data-note=\"7\">7</sup> zal ze verzamelen in het midden van deze stad.",
    "text1637_html": "Soo seyt de HEERE de Godt Israëls; Siet ick sal de <sup class=\"note-marker\" data-note=\"5\">5</sup> krijgs-wapenen <sup class=\"note-marker\" data-note=\"6\">6</sup> omwenden, die in u lieder hant zijn, met dewelcke ghy strijdet tegen den Coninck van Babel ende tegen de Chaldeen, die u belegeren, van buyten aen den muer: ende ick <sup class=\"note-marker\" data-note=\"7\">7</sup> salse versamelen in ’t midden van dese stadt.",
    "phraseDiff": [
@@ -557,9 +562,9 @@
      "principe": "V311"
     },
     {
-     "old": "dewelke gij",
-     "new": "die u",
-     "principe": "A1"
+     "old": "met dewelke gij",
+     "new": "waarmee u",
+     "principe": null
     },
     {
      "old": "den",
@@ -757,7 +762,7 @@
    "number": 7,
    "textSV1888": "En daarna spreekt de HEERE, zal Ik Zedekia, den koning van Juda, en zijn knechten, en het volk, en die in deze stad overgebleven zijn van de pestilentie, van het zwaard en van den honger, geven in de hand van Nebukadrezar, den koning van Babel, en in de hand hunner vijanden, en in de hand dergenen, die hun ziel zoeken; en hij zal ze slaan met de scherpte des zwaards; hij zal ze niet sparen, noch verschonen, noch zich ontfermen.",
    "text1637": "Ende daerna, spreeckt de HEERE, sal ick Zedekia den Coninck van Iuda, ende sijne knechten, ende het volck, ende die in dese stadt overgebleven zijn van de pestilentie, van het sweert, ende van den honger, geven in de hant Nebucadrezars des Conincx van Babel, ende in de hant harer vyanden, ende in de hant der gener die hare [9] ziele soecken: ende [10] hy salse slaen [11] met de scherpte des sweerts; hy en salse niet sparen, noch verschoonen, noch sich ontfermen.",
-   "text2026": "En daarna spreekt JAHWEH, zal Ik Zedekia, de koning van Juda, en zijn knechten, en het volk, en die in deze stad overgebleven zijn van de pest, van het zwaard en van de honger, geven in de hand van Nebukadrezar, de koning van Babel, en in de hand van hun vijanden, en in de hand van degenen, die hun ziel zoeken; en hij zal ze slaan met de scherpte van het zwaard; hij zal ze niet sparen, noch sparen, noch zich ontfermen.",
+   "text2026": "En daarna spreekt JAHWEH, zal Ik Zedekia, de koning van Juda, en zijn knechten, en het volk, en die in deze stad overgebleven zijn van de pest, van het zwaard en van de honger, geven in de hand van Nebukadrezar, de koning van Babel, en in de hand van hun vijanden, en in de hand van degenen, die hun ziel zoeken; en hij zal ze slaan met de scherpte van het zwaard; hij zal ze niet sparen, noch ontzien, noch zich ontfermen.",
    "marginNotes": [
     {
      "marker": "10",
@@ -993,7 +998,7 @@
      "morph": "HVpi3ms"
     }
    ],
-   "text2026_html": "<span class=\"god-speaks\"><i>En daarna spreekt JAHWEH, zal Ik Zedekia, de koning van Juda, en zijn knechten, en het volk, en die in deze stad overgebleven zijn van de pest, van het zwaard en van de honger, geven in de hand van Nebukadrezar, de koning van Babel, en in de hand van hun vijanden, en in de hand van degenen, die hun<sup class=\"note-marker\" data-note=\"9\">9</sup> ziel zoeken; en<sup class=\"note-marker\" data-note=\"10\">10</sup> hij zal ze<sup class=\"note-marker\" data-note=\"11\">11</sup> slaan met de scherpte van het zwaard; hij zal ze niet sparen, noch sparen, noch zich ontfermen.</i></span>",
+   "text2026_html": "<span class=\"god-speaks\"><i>En daarna spreekt JAHWEH, zal Ik Zedekia, de koning van Juda, en zijn knechten, en het volk, en die in deze stad overgebleven zijn van de pest, van het zwaard en van de honger, geven in de hand van Nebukadrezar, de koning van Babel, en in de hand van hun vijanden, en in de hand van degenen, die hun<sup class=\"note-marker\" data-note=\"9\">9</sup> ziel zoeken; en<sup class=\"note-marker\" data-note=\"10\">10</sup> hij zal ze<sup class=\"note-marker\" data-note=\"11\">11</sup> slaan met de scherpte van het zwaard; hij zal ze niet sparen, noch ontzien, noch zich ontfermen.</i></span>",
    "textSV1888_html": "En daarna spreekt de HEERE, zal Ik Zedekia, den koning van Juda, en zijn knechten, en het volk, en die in deze stad overgebleven zijn van de pestilentie, van het zwaard en van den honger, geven in de hand van Nebukadrezar, den koning van Babel, en in de hand hunner vijanden, en in de hand dergenen, die hun<sup class=\"note-marker\" data-note=\"9\">9</sup> ziel zoeken; en<sup class=\"note-marker\" data-note=\"10\">10</sup> hij zal ze<sup class=\"note-marker\" data-note=\"11\">11</sup> slaan met de scherpte des zwaards; hij zal ze niet sparen, noch verschonen, noch zich ontfermen.",
    "text1637_html": "Ende daerna, spreeckt de HEERE, sal ick Zedekia den Coninck van Iuda, ende sijne knechten, ende het volck, ende die in dese stadt overgebleven zijn van de pestilentie, van het sweert, ende van den honger, geven in de hant Nebucadrezars des Conincx van Babel, ende in de hant harer vyanden, ende in de hant der gener die hare <sup class=\"note-marker\" data-note=\"9\">9</sup> ziele soecken: ende <sup class=\"note-marker\" data-note=\"10\">10</sup> hy salse slaen <sup class=\"note-marker\" data-note=\"11\">11</sup> met de scherpte des sweerts; hy en salse niet sparen, noch verschoonen, noch sich ontfermen.",
    "phraseDiff": [
@@ -1006,6 +1011,11 @@
      "old": "den",
      "new": "de",
      "principe": "N1"
+    },
+    {
+     "old": "pestilentie,",
+     "new": "pest,",
+     "principe": "V914"
     },
     {
      "old": "den",
@@ -1034,13 +1044,8 @@
     },
     {
      "old": "verschonen,",
-     "new": "sparen,",
-     "principe": "V442"
-    },
-    {
-     "old": "pestilentie",
-     "new": "pest",
-     "principe": "V914"
+     "new": "ontzien,",
+     "principe": null
     }
    ]
   },

@@ -400,7 +400,7 @@
       "number": 4,
       "textSV1888": "Wacht u, een iegelijk van zijn vriend, en vertrouwt niet op enigen broeder; want elk broeder doet niet dan bedriegen, en elk vriend wandelt in achterklap.",
       "text1637": "Wachtet u, een yegelijck van sijnen vrient, ende en vertrouwet niet op eenigen broeder: want elck broeder [7] doet niet dan bedriegen, ende elck vrient [e] wandelt [in] achterklap.",
-      "text2026": "Wees op uw hoede, ieder voor zijn vriend, en vertrouwt niet op enige broer; want elk broer doet niet dan bedriegen, en elk vriend wandelt in achterklap.",
+      "text2026": "Wees op uw hoede, ieder voor zijn vriend, en vertrouwt niet op enige broer; want elke broer doet niet dan bedriegen, en elke vriend wandelt in achterklap.",
       "marginNotes": [
         {
           "marker": "7",
@@ -479,7 +479,7 @@
           "morph": "HVNp3cp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Wees op uw hoede, ieder voor zijn vriend, en vertrouwt niet op enige broer; want elk broer<sup class=\"note-marker\" data-note=\"7\">7</sup> doet niet dan bedriegen, en elk vriend<sup class=\"note-marker\" data-note=\"e\">e</sup> wandelt in achterklap.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Wees op uw hoede, ieder voor zijn vriend, en vertrouwt niet op enige broer; want elke broer<sup class=\"note-marker\" data-note=\"7\">7</sup> doet niet dan bedriegen, en elke vriend<sup class=\"note-marker\" data-note=\"e\">e</sup> wandelt in achterklap.</i></span>",
       "textSV1888_html": "Wacht u, een iegelijk van zijn vriend, en vertrouwt niet op enigen broeder; want elk broeder<sup class=\"note-marker\" data-note=\"7\">7</sup> doet niet dan bedriegen, en elk vriend<sup class=\"note-marker\" data-note=\"e\">e</sup> wandelt in achterklap.",
       "text1637_html": "Wachtet u, een yegelijck van sijnen vrient, ende en vertrouwet niet op eenigen broeder: want elck broeder <sup class=\"note-marker\" data-note=\"7\">7</sup> doet niet dan bedriegen, ende elck vrient <sup class=\"note-marker\" data-note=\"e\">e</sup> wandelt [in] achterklap.",
       "phraseDiff": [
@@ -494,9 +494,14 @@
           "principe": "V44"
         },
         {
-          "old": "broeder",
-          "new": "broer",
-          "principe": "O22a"
+          "old": "elk broeder",
+          "new": "elke broer",
+          "principe": null
+        },
+        {
+          "old": "elk",
+          "new": "elke",
+          "principe": null
         }
       ]
     },
@@ -2336,7 +2341,7 @@
       "number": 22,
       "textSV1888": "Spreek: Zo spreekt de HEERE: Ja, een dood lichaam des mensen zal liggen, als mest op het open veld, en als een garve achter den maaier, die niemand opzamelt.",
       "text1637": "Spreeckt; Soo spreeckt de HEERE, [n] Ia een doot lichaem des menschen sal [35] liggen, als mist op het [36] open velt: ende als eene [37] garve achter den maeyer, [38] die niemant op en samelt.",
-      "text2026": "Spreek: Zo spreekt JAHWEH: Ja, een dood lichaam van de mensen zal liggen, als mest op het open veld, en als een graanschoof achter de maaier, die niemand opzamelt.",
+      "text2026": "Spreek: Zo spreekt JAHWEH: Ja, een dood lichaam van de mens zal liggen, als mest op het open veld, en als een graanschoof achter de maaier, die niemand opzamelt.",
       "marginNotes": [
         {
           "marker": "35",
@@ -2451,7 +2456,7 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Spreek: Zo spreekt JAHWEH: Ja, een dood lichaam van de mensen zal liggen, als mest op het open veld, en als een graanschoof achter de maaier, die niemand opzamelt.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Spreek: Zo spreekt JAHWEH: Ja, een dood lichaam van de mens zal liggen, als mest op het open veld, en als een graanschoof achter de maaier, die niemand opzamelt.</i></span>",
       "textSV1888_html": "Spreek: Zo spreekt de HEERE:<sup class=\"note-marker\" data-note=\"n\">n</sup> Ja, een dood lichaam des mensen zal<sup class=\"note-marker\" data-note=\"35\">35</sup> liggen, als mest op het<sup class=\"note-marker\" data-note=\"36\">36</sup> open veld, en als een<sup class=\"note-marker\" data-note=\"37\">37</sup> garve achter den maaier,<sup class=\"note-marker\" data-note=\"38\">38</sup> die niemand opzamelt.",
       "text1637_html": "Spreeckt; Soo spreeckt de HEERE, <sup class=\"note-marker\" data-note=\"n\">n</sup> Ia een doot lichaem des menschen sal <sup class=\"note-marker\" data-note=\"35\">35</sup> liggen, als mist op het <sup class=\"note-marker\" data-note=\"36\">36</sup> open velt: en<i>de</i> als eene <sup class=\"note-marker\" data-note=\"37\">37</sup> garve achter den maeyer, <sup class=\"note-marker\" data-note=\"38\">38</sup> die niemant op en samelt.",
       "phraseDiff": [
@@ -2461,19 +2466,19 @@
           "principe": "G1"
         },
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
-        },
-        {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "des mensen",
+          "new": "van de mens",
+          "principe": null
         },
         {
           "old": "garve",
           "new": "graanschoof",
           "principe": "V915"
+        },
+        {
+          "old": "den",
+          "new": "de",
+          "principe": "N1"
         }
       ]
     },
