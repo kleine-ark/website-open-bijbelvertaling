@@ -705,7 +705,7 @@
    "number": 8,
    "textSV1888": "Ook het varken; want dat verdeelt zijn klauw wel, maar het herkauwt niet; onrein zal het ulieden zijn; van hun vlees zult gij niet eten, en hun dood aas zult gij niet aanroeren.",
    "text1637": "Oock het vercken, want dat verdeelt sijne klaeuwe wel, maer het en herkauwt niet; onreyn sal ’t ulieden zijn: van haer vleesch sult ghy niet eten, ende haer doot aes en sult ghy niet aenroeren.",
-   "text2026": "Ook het varken; want dat verdeelt zijn klauw wel, maar het herkauwt niet; onrein zal het u zijn; van hun vlees zult u niet eten, en hun dood aas zult u niet aanroeren.",
+   "text2026": "Ook het varken; want dat verdeelt zijn klauw wel, maar het herkauwt niet; onrein zal het u zijn; van hun vlees zult u niet eten, en hun kadaver zult u niet aanroeren.",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -794,7 +794,7 @@
      "morph": "HVqi2mp"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>Ook het varken; want dat verdeelt zijn klauw wel, maar het herkauwt niet; onrein zal het u zijn; van hun vlees zult u niet eten, en hun dood aas zult u niet aanroeren.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>Ook het varken; want dat verdeelt zijn klauw wel, maar het herkauwt niet; onrein zal het u zijn; van hun vlees zult u niet eten, en hun kadaver zult u niet aanroeren.</i></span>",
    "text1637_html": "Oock het vercken, want dat verdeelt sijne klaeuwe wel, maer het en herkauwt niet; onreyn sal ’t ulieden zijn: van haer vleesch sult ghy niet eten, ende haer doot aes en sult ghy niet aenroeren.",
    "phraseDiff": [
     {
@@ -806,6 +806,11 @@
      "old": "gij",
      "new": "u",
      "principe": "A1"
+    },
+    {
+     "old": "dood aas",
+     "new": "kadaver",
+     "principe": null
     },
     {
      "old": "gij",
@@ -1121,7 +1126,7 @@
    "number": 14,
    "textSV1888": "En alle rave naar zijn aard;",
    "text1637": "Ende alle rave nae haren aert.",
-   "text2026": "En alle rave naar zijn aard;",
+   "text2026": "En alle raven naar zijn aard;",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -1145,14 +1150,21 @@
      "morph": "HR/Ncmsc/Sp3ms"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>En alle rave naar zijn aard;</i></span>",
-   "text1637_html": "Ende alle rave nae haren aert."
+   "text2026_html": "<span class=\"direct-speech\"><i>En alle raven naar zijn aard;</i></span>",
+   "text1637_html": "Ende alle rave nae haren aert.",
+   "phraseDiff": [
+    {
+     "old": "rave",
+     "new": "raven",
+     "principe": null
+    }
+   ]
   },
   {
    "number": 15,
    "textSV1888": "En de struis, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;",
    "text1637": "Ende de struys, ende de nacht-uyl, ende de koeckoeck: ende de sperwer nae sijnen aert.",
-   "text2026": "En de struis, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;",
+   "text2026": "En de struisvogel, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -1206,14 +1218,21 @@
      "morph": "HR/Ncmsc/Sp3ms"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>En de struis, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;</i></span>",
-   "text1637_html": "Ende de struys, ende de nacht-uyl, ende de koeckoeck: ende de sperwer nae sijnen aert."
+   "text2026_html": "<span class=\"direct-speech\"><i>En de struisvogel, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;</i></span>",
+   "text1637_html": "Ende de struys, ende de nacht-uyl, ende de koeckoeck: ende de sperwer nae sijnen aert.",
+   "phraseDiff": [
+    {
+     "old": "struis,",
+     "new": "struisvogel,",
+     "principe": null
+    }
+   ]
   },
   {
    "number": 16,
    "textSV1888": "En de steenuil, en de schuifuit, en de kauw,",
    "text1637": "Ende de steen-uyl, ende de schuyfuyt, ende de kaeuwe.",
-   "text2026": "En de steenuil, en de schuifuit, en de kauw,",
+   "text2026": "En de steenuil, en de ransuil, en de kauw,",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -1242,14 +1261,21 @@
      "morph": "HC/Td/Ncfsa"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>En de steenuil, en de schuifuit, en de kauw,</i></span>",
-   "text1637_html": "Ende de steen-uyl, ende de schuyfuyt, ende de kaeuwe."
+   "text2026_html": "<span class=\"direct-speech\"><i>En de steenuil, en de ransuil, en de kauw,</i></span>",
+   "text1637_html": "Ende de steen-uyl, ende de schuyfuyt, ende de kaeuwe.",
+   "phraseDiff": [
+    {
+     "old": "schuifuit,",
+     "new": "ransuil,",
+     "principe": null
+    }
+   ]
   },
   {
    "number": 17,
    "textSV1888": "En de roerdomp, en de pelikaan, en het duikertje;",
    "text1637": "Ende de roerdomp, ende de pellicaen, ende het duyckerken.",
-   "text2026": "En de roerdomp, en de pelikaan, en het duikertje;",
+   "text2026": "En de roerdomp, en de pelikaan, en het visarend;",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -1278,14 +1304,21 @@
      "morph": "HTd/Ncmsa"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>En de roerdomp, en de pelikaan, en het duikertje;</i></span>",
-   "text1637_html": "Ende de roerdomp, ende de pellicaen, ende het duyckerken."
+   "text2026_html": "<span class=\"direct-speech\"><i>En de roerdomp, en de pelikaan, en het visarend;</i></span>",
+   "text1637_html": "Ende de roerdomp, ende de pellicaen, ende het duyckerken.",
+   "phraseDiff": [
+    {
+     "old": "duikertje;",
+     "new": "visarend;",
+     "principe": null
+    }
+   ]
   },
   {
    "number": 18,
    "textSV1888": "En de ooievaar, en de reiger naar zijn aard; en de hop, en de vledermuis;",
    "text1637": "Ende de oyvaer, ende de reyger nae sijnen aert: ende de hoppe, ende de vledermuys.",
-   "text2026": "En de ooievaar, en de reiger naar zijn aard; en de hop, en de vledermuis;",
+   "text2026": "En de ooievaar, en de reiger naar zijn aard; en de hop, en de vleermuis;",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -1314,8 +1347,15 @@
      "morph": "HC/Td/Ncmsa"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>En de ooievaar, en de reiger naar zijn aard; en de hop, en de vledermuis;</i></span>",
-   "text1637_html": "Ende de oyvaer, ende de reyger nae sijnen aert: ende de hoppe, ende de vledermuys."
+   "text2026_html": "<span class=\"direct-speech\"><i>En de ooievaar, en de reiger naar zijn aard; en de hop, en de vleermuis;</i></span>",
+   "text1637_html": "Ende de oyvaer, ende de reyger nae sijnen aert: ende de hoppe, ende de vledermuys.",
+   "phraseDiff": [
+    {
+     "old": "vledermuis;",
+     "new": "vleermuis;",
+     "principe": null
+    }
+   ]
   },
   {
    "number": 19,
@@ -1417,7 +1457,7 @@
    "number": 21,
    "textSV1888": "Gij zult geen dood aas eten; den vreemdeling, die in uw poorten is, zult gij het geven, dat hij het ete, of verkoopt het den vreemde; want gij zijt een heilig volk den HEERE, uw God. Gij zult het bokje niet koken in de melk zijner moeder.",
    "text1637": "Ghy en sult geen doot aes eten; den [6] vreemdelinck, die in uwe poorten is, sult ghy het geven, dat hy ’t ete, ofte verkoopt het den vreemden; want ghy zijt een heylich volck den HEERE uwen Gode: ghy sult het [d] bocxken niet [7] koken in sijnes moeders melck.",
-   "text2026": "U zult geen dood aas eten; de vreemdeling, die in uw poorten is, zult u het geven, dat hij het ete, of verkoopt het de vreemde; want u bent een heilig volk JAHWEH, uw God. U zult het bokje niet koken in de melk van zijn moeder.",
+   "text2026": "U zult geen kadaver eten; de vreemdeling, die in uw poorten is, zult u het geven, dat hij het ete, of verkoopt het de vreemde; want u bent een heilig volk JAHWEH, uw God. U zult het bokje niet koken in de melk van zijn moeder.",
    "marginNotes": [
     {
      "marker": "6",
@@ -1558,7 +1598,7 @@
      "morph": "HNcfsc/Sp3ms"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>U zult geen dood aas eten; de<sup class=\"note-marker\" data-note=\"6\">6</sup> vreemdeling, die in uw poorten is, zult u het geven, dat hij het ete, of verkoopt het de vreemde; want u bent een heilig volk JAHWEH, uw God. U zult het<sup class=\"note-marker\" data-note=\"d\">d</sup> bokje niet<sup class=\"note-marker\" data-note=\"7\">7</sup> koken in de melk van zijn moeder.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>U zult geen kadaver eten; de<sup class=\"note-marker\" data-note=\"6\">6</sup> vreemdeling, die in uw poorten is, zult u het geven, dat hij het ete, of verkoopt het de vreemde; want u bent een heilig volk JAHWEH, uw God. U zult het<sup class=\"note-marker\" data-note=\"d\">d</sup> bokje niet<sup class=\"note-marker\" data-note=\"7\">7</sup> koken in de melk van zijn moeder.</i></span>",
    "textSV1888_html": "Gij zult geen dood aas eten; den<sup class=\"note-marker\" data-note=\"6\">6</sup> vreemdeling, die in uw poorten is, zult gij het geven, dat hij het ete, of verkoopt het den vreemde; want gij zijt een heilig volk den HEERE, uw God. Gij zult het<sup class=\"note-marker\" data-note=\"d\">d</sup> bokje niet<sup class=\"note-marker\" data-note=\"7\">7</sup> koken in de melk zijner moeder.",
    "text1637_html": "Ghy en sult geen doot aes eten; den <sup class=\"note-marker\" data-note=\"6\">6</sup> vreemdelinck, die in uwe poorten is, sult ghy het geven, dat hy ’t ete, ofte verkoopt het den vreemden; want ghy zijt een heylich volck den HEERE uwen Gode: ghy sult het <sup class=\"note-marker\" data-note=\"d\">d</sup> bocxken niet <sup class=\"note-marker\" data-note=\"7\">7</sup> koken in sijnes moeders melck.",
    "phraseDiff": [
@@ -1566,6 +1606,11 @@
      "old": "Gij",
      "new": "U",
      "principe": "A1"
+    },
+    {
+     "old": "dood aas",
+     "new": "kadaver",
+     "principe": null
     },
     {
      "old": "den",

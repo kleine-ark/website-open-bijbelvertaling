@@ -134,7 +134,7 @@
       "number": 2,
       "textSV1888": "En ongezuurd brood, en ongezuurde koeken, met olie gemengd, en ongezuurde vladen, met olie bestreken; van tarwemeelbloem zult gij dezelve maken.",
       "text1637": "Ende ongesuert broot, ende ongesuerde koecken met olye gemengt, ende ongesuerde vladen, [2] met olye bestreken: van tarwen meel-bloeme sult ghy de selve maken.",
-      "text2026": "En ongezuurd brood, en ongezuurde koeken, met olie gemengd, en ongezuurde vladen, met olie bestreken; van tarwemeelbloem zult u dezelfde maken.",
+      "text2026": "En ongezuurd brood, en ongezuurde koeken, met olie gemengd, en ongezuurde platte koeken, met olie bestreken; van tarwemeelbloem zult u dezelfde maken.",
       "marginNotes": [
         {
           "marker": "2",
@@ -216,10 +216,15 @@
           "morph": "HTo/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En ongezuurd brood, en ongezuurde koeken, met olie gemengd, en ongezuurde vladen,<sup class=\"note-marker\" data-note=\"2\">2</sup> met olie bestreken; van tarwemeelbloem zult u dezelfde maken.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En ongezuurd brood, en ongezuurde koeken, met olie gemengd, en ongezuurde platte koeken,<sup class=\"note-marker\" data-note=\"2\">2</sup> met olie bestreken; van tarwemeelbloem zult u dezelfde maken.</i></span>",
       "textSV1888_html": "En ongezuurd brood, en ongezuurde koeken, met olie gemengd, en ongezuurde vladen,<sup class=\"note-marker\" data-note=\"2\">2</sup> met olie bestreken; van tarwemeelbloem zult gij dezelve maken.",
       "text1637_html": "Ende ongesuert broot, ende ongesuerde koecken met olye gemengt, ende ongesuerde vladen, <sup class=\"note-marker\" data-note=\"2\">2</sup> met olye bestreken: van tarwen meel-bloeme sult ghy de selve maken.",
       "phraseDiff": [
+        {
+          "old": "vladen,",
+          "new": "platte koeken,",
+          "principe": null
+        },
         {
           "old": "gij dezelve",
           "new": "u dezelfde",
@@ -1764,7 +1769,7 @@
       "number": 17,
       "textSV1888": "En den ram zult gij in zijn delen delen; en gij zult zijn ingewand en zijn schenkelen wassen, en op zijn delen, en op zijn hoofd leggen.",
       "text1637": "Ende den ram [16] sult ghy in sijne deelen deylen: ende ghy sult sijn ingewant ende sijne schenckelen wasschen, ende op sijne deelen, ende op sijn hooft leggen.",
-      "text2026": "En de ram zult u in zijn delen delen; en u zult zijn binnenste en zijn schenkelen wassen, en op zijn delen, en op zijn hoofd leggen.",
+      "text2026": "En de ram zult u in zijn delen delen; en u zult zijn binnenste en zijn poten wassen, en op zijn delen, en op zijn hoofd leggen.",
       "marginNotes": [
         {
           "marker": "16",
@@ -1836,7 +1841,7 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En de ram<sup class=\"note-marker\" data-note=\"16\">16</sup> zult u in zijn delen delen; en u zult zijn binnenste en zijn schenkelen wassen, en op zijn delen, en op zijn hoofd leggen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En de ram<sup class=\"note-marker\" data-note=\"16\">16</sup> zult u in zijn delen delen; en u zult zijn binnenste en zijn poten wassen, en op zijn delen, en op zijn hoofd leggen.</i></span>",
       "textSV1888_html": "En den ram<sup class=\"note-marker\" data-note=\"16\">16</sup> zult gij in zijn delen delen; en gij zult zijn ingewand en zijn schenkelen wassen, en op zijn delen, en op zijn hoofd leggen.",
       "text1637_html": "Ende den ram <sup class=\"note-marker\" data-note=\"16\">16</sup> sult ghy in sijne deelen deylen: ende ghy sult sijn ingewant ende sijne schenckelen wasschen, ende op sijne deelen, ende op sijn hooft leggen.",
       "phraseDiff": [
@@ -1859,6 +1864,11 @@
           "old": "ingewand",
           "new": "binnenste",
           "principe": "V383"
+        },
+        {
+          "old": "schenkelen",
+          "new": "poten",
+          "principe": null
         }
       ]
     },
@@ -3638,7 +3648,7 @@
       "number": 31,
       "textSV1888": "Gij zult den ram der vulling nemen, en gij zult zijn vlees in de heilige plaats zieden.",
       "text1637": "Ghy sult den ram der vullinge nemen, ende ghy sult sijn vleesch [38] in de heylige plaetse sieden.",
-      "text2026": "U zult de ram van de vulling nemen, en u zult zijn vlees in de heilige plaats zieden.",
+      "text2026": "U zult de ram van de vulling nemen, en u zult zijn vlees in de heilige plaats koken.",
       "marginNotes": [
         {
           "marker": "38",
@@ -3695,7 +3705,7 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>U zult de ram van de vulling nemen, en u zult zijn vlees<sup class=\"note-marker\" data-note=\"38\">38</sup> in de heilige plaats zieden.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>U zult de ram van de vulling nemen, en u zult zijn vlees<sup class=\"note-marker\" data-note=\"38\">38</sup> in de heilige plaats koken.</i></span>",
       "textSV1888_html": "Gij zult den ram der vulling nemen, en gij zult zijn vlees<sup class=\"note-marker\" data-note=\"38\">38</sup> in de heilige plaats zieden.",
       "text1637_html": "Ghy sult den ram der vullinge nemen, ende ghy sult sijn vleesch <sup class=\"note-marker\" data-note=\"38\">38</sup> in de heylige plaetse sieden.",
       "phraseDiff": [
@@ -3718,6 +3728,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "zieden.",
+          "new": "koken.",
+          "principe": null
         }
       ]
     },
