@@ -118,7 +118,7 @@
       "number": 2,
       "textSV1888": "Gij zult de menigte tot boze zaken niet volgen; en gij zult niet spreken in een twistige zaak, dat gij u neigt naar de menigte, om het recht te buigen.",
       "text1637": "Ghy en sult de [5] menichte tot boose saken niet volgen: ende ghy en sult niet spreken in eene twistige sake, dat ghy u neycht nae de menichte, om [het recht] te buygen.",
-      "text2026": "U zult de menigte tot boze zaken niet volgen; en u zult niet spreken in een rechtszaak, dat u u neigt naar de menigte, om het recht te buigen.",
+      "text2026": "U zult de menigte tot boze zaken niet volgen; en u zult niet spreken in een rechtszaak, dat u zich neigt naar de menigte, om het recht te buigen.",
       "marginNotes": [
         {
           "marker": "5",
@@ -195,7 +195,7 @@
           "morph": "HR/Vhc"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>U zult de<sup class=\"note-marker\" data-note=\"5\">5</sup> menigte tot boze zaken niet volgen; en u zult niet spreken in een rechtszaak, dat u u neigt naar de menigte, om het recht te buigen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>U zult de<sup class=\"note-marker\" data-note=\"5\">5</sup> menigte tot boze zaken niet volgen; en u zult niet spreken in een rechtszaak, dat u zich neigt naar de menigte, om het recht te buigen.</i></span>",
       "textSV1888_html": "Gij zult de<sup class=\"note-marker\" data-note=\"5\">5</sup> menigte tot boze zaken niet volgen; en gij zult niet spreken in een twistige zaak, dat gij u neigt naar de menigte, om het recht te buigen.",
       "text1637_html": "Ghy en sult de <sup class=\"note-marker\" data-note=\"5\">5</sup> menichte tot boose saken niet volgen: ende ghy en sult niet spreken in eene twistige sake, dat ghy u neycht nae de menichte, om [het recht] te buygen.",
       "phraseDiff": [
@@ -216,8 +216,13 @@
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "zich",
+          "principe": null
         }
       ]
     },

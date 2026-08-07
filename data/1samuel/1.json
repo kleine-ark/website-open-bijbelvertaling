@@ -1592,7 +1592,7 @@
    "number": 14,
    "textSV1888": "En Eli zeide tot haar: Hoe lang zult gij u dronken aanstellen? Doe uw wijn van u.",
    "text1637": "Ende Eli seyde tot haer: Hoe lange sult ghy u droncken aenstellen? [31] Doet uwen wijn van u.",
-   "text2026": "En Eli zei tot haar: Hoe lang zult u u dronken aanstellen? Doe uw wijn van u.",
+   "text2026": "En Eli zei tot haar: Hoe lang zult u zich dronken aanstellen? Doe uw wijn van u.",
    "marginNotes": [
     {
      "marker": "31",
@@ -1654,7 +1654,7 @@
      "morph": "HR/R/Sp2fs"
     }
    ],
-   "text2026_html": "En Eli zei tot haar: <span class=\"direct-speech\"><i>Hoe lang zult u u dronken aanstellen? Doe uw wijn van u.</i></span>",
+   "text2026_html": "En Eli zei tot haar: <span class=\"direct-speech\"><i>Hoe lang zult u zich dronken aanstellen? Doe uw wijn van u.</i></span>",
    "textSV1888_html": "En Eli zeide tot haar: Hoe lang zult gij u dronken aanstellen?<sup class=\"note-marker\" data-note=\"31\">31</sup> Doe uw wijn van u.",
    "text1637_html": "Ende Eli seyde tot haer: Hoe lange sult ghy u droncken aenstellen? <sup class=\"note-marker\" data-note=\"31\">31</sup> Doet uwen wijn van u.",
    "phraseDiff": [
@@ -1665,8 +1665,13 @@
     },
     {
      "old": "gij",
-     "new": "u",
-     "principe": "A1"
+     "new": "",
+     "principe": null
+    },
+    {
+     "old": "",
+     "new": "zich",
+     "principe": null
     }
    ]
   },

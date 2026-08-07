@@ -2399,7 +2399,7 @@
       "number": 19,
       "textSV1888": "En als gij de drie dagen zult uitgebleven zijn, kom haastig af, en ga tot die plaats, waar gij u verborgen hadt ten dage dezer handeling; en blijf bij den steen Ezel.",
       "text1637": "Ende als ghy de drie dagen sult uyt-gebleven zijn, komt haestich [39] af, ende gaet tot die plaetse, daer ghy u verborgen hadt ten dage [40] deser handelinge: ende blijft [41] by den steen Ezel.",
-      "text2026": "En als u de drie dagen zult uitgebleven zijn, kom haastig af, en ga tot die plaats, waar u u verborgen had op de dag van deze handeling; en blijf bij de steen Ezel.",
+      "text2026": "En als u de drie dagen zult uitgebleven zijn, kom haastig af, en ga tot die plaats, waar u zich verborgen had op de dag van deze handeling; en blijf bij de steen Ezel.",
       "marginNotes": [
         {
           "marker": "39",
@@ -2500,7 +2500,7 @@
           "morph": "HTd/Np"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En als u de drie dagen zult uitgebleven zijn, kom haastig<sup class=\"note-marker\" data-note=\"39\">39</sup> af, en ga tot die plaats, waar u u verborgen had op de dag<sup class=\"note-marker\" data-note=\"40\">40</sup> van deze handeling; en blijf<sup class=\"note-marker\" data-note=\"41\">41</sup> bij de steen Ezel.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En als u de drie dagen zult uitgebleven zijn, kom haastig<sup class=\"note-marker\" data-note=\"39\">39</sup> af, en ga tot die plaats, waar u zich verborgen had op de dag<sup class=\"note-marker\" data-note=\"40\">40</sup> van deze handeling; en blijf<sup class=\"note-marker\" data-note=\"41\">41</sup> bij de steen Ezel.</i></span>",
       "textSV1888_html": "En als gij de drie dagen zult uitgebleven zijn, kom haastig<sup class=\"note-marker\" data-note=\"39\">39</sup> af, en ga tot die plaats, waar gij u verborgen hadt ten dage<sup class=\"note-marker\" data-note=\"40\">40</sup> dezer handeling; en blijf<sup class=\"note-marker\" data-note=\"41\">41</sup> bij den steen Ezel.",
       "text1637_html": "Ende als ghy de drie dagen sult uyt-gebleven zijn, komt haestich <sup class=\"note-marker\" data-note=\"39\">39</sup> af, ende gaet tot die plaetse, daer ghy u verborgen hadt ten dage <sup class=\"note-marker\" data-note=\"40\">40</sup> deser handelinge: ende blijft <sup class=\"note-marker\" data-note=\"41\">41</sup> by den steen Ezel.",
       "phraseDiff": [
@@ -2511,8 +2511,13 @@
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "zich",
+          "principe": null
         },
         {
           "old": "hadt ten dage dezer",

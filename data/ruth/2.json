@@ -735,7 +735,7 @@
       "number": 8,
       "textSV1888": "Toen zeide Boaz tot Ruth: Hoort gij niet, mijn dochter? Ga niet, om in een ander veld op te lezen; ook zult gij van hier niet weggaan, maar hier zult gij u houden bij mijn maagden.",
       "text1637": "Doe seyde Boaz tot Ruth; Hoort ghy niet mijne dochter? gaet niet, om in een ander velt op te lesen, oock en sult ghy van hier niet wech gaen: maer hier sult ghy u houden by mijne [12] maechden.",
-      "text2026": "Toen zei Boaz tot Ruth: Hoort u niet, mijn dochter? Ga niet, om in een ander veld op te lezen; ook zult u van hier niet weggaan, maar hier zult u u houden bij mijn maagden.",
+      "text2026": "Toen zei Boaz tot Ruth: Hoort u niet, mijn dochter? Ga niet, om in een ander veld op te lezen; ook zult u van hier niet weggaan, maar hier zult u zich houden bij mijn maagden.",
       "marginNotes": [
         {
           "marker": "12",
@@ -847,7 +847,7 @@
           "morph": "HNcfpc/Sp1cs"
         }
       ],
-      "text2026_html": "Toen zei Boaz tot Ruth: <span class=\"direct-speech\"><i>Hoort u niet, mijn dochter? Ga niet, om in een ander veld op te lezen; ook zult u van hier niet weggaan, maar hier zult u u houden bij mijn maagden.</i></span>",
+      "text2026_html": "Toen zei Boaz tot Ruth: <span class=\"direct-speech\"><i>Hoort u niet, mijn dochter? Ga niet, om in een ander veld op te lezen; ook zult u van hier niet weggaan, maar hier zult u zich houden bij mijn maagden.</i></span>",
       "textSV1888_html": "Toen zeide Boaz tot Ruth: Hoort gij niet, mijn dochter? Ga niet, om in een ander veld op te lezen; ook zult gij van hier niet weggaan, maar hier zult gij u houden bij mijn<sup class=\"note-marker\" data-note=\"12\">12</sup> maagden.",
       "text1637_html": "Doe seyde Boaz tot Ruth; Hoort ghy niet mijne dochter? gaet niet, om in een ander velt op te lesen, oock en sult ghy van hier niet wech gaen: maer hier sult ghy u houden by mijne <sup class=\"note-marker\" data-note=\"12\">12</sup> maechden.",
       "phraseDiff": [
@@ -868,8 +868,13 @@
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "zich",
+          "principe": null
         }
       ]
     },
