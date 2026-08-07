@@ -2188,7 +2188,7 @@
       "number": 19,
       "textSV1888": "Het volk nu was den tienden der eerste maand uit de Jordaan opgeklommen; en zij legerden zich te Gilgal, aan het oosteinde van Jericho.",
       "text1637": "’T volck nu was den tienden der eerster maent uyt de Iordane opgeklommen: ende sy legerden haer te [16] Gilgal aen ’t Oost-eynde van Iericho.",
-      "text2026": "Het volk nu was de tienden van de eerste maand uit de Jordaan opgeklommen; en zij legerden zich te Gilgal, aan het oosteinde van Jericho.",
+      "text2026": "Het volk nu was de tiende van de eerste maand uit de Jordaan opgeklommen; en zij legerden zich te Gilgal, aan het oosteinde van Jericho.",
       "marginNotes": [
         {
           "marker": "16",
@@ -2260,19 +2260,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Het volk nu was de tienden van de eerste maand uit de Jordaan opgeklommen; en zij legerden zich te<sup class=\"note-marker\" data-note=\"16\">16</sup> Gilgal, aan het oosteinde van Jericho.",
+      "text2026_html": "Het volk nu was de tiende van de eerste maand uit de Jordaan opgeklommen; en zij legerden zich te<sup class=\"note-marker\" data-note=\"16\">16</sup> Gilgal, aan het oosteinde van Jericho.",
       "textSV1888_html": "Het volk nu was den tienden der eerste maand uit de Jordaan opgeklommen; en zij legerden zich te<sup class=\"note-marker\" data-note=\"16\">16</sup> Gilgal, aan het oosteinde van Jericho.",
       "text1637_html": "’T volck nu was den tienden der eerster maent uyt de Iordane opgeklommen: ende sy legerden haer te <sup class=\"note-marker\" data-note=\"16\">16</sup> Gilgal aen ’t Oost-eynde van Iericho.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
+          "old": "den tienden der",
+          "new": "de tiende van de",
           "principe": "N1"
-        },
-        {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
         }
       ]
     },
@@ -2675,7 +2670,7 @@
       "number": 24,
       "textSV1888": "Opdat alle volken der aarde de hand des HEEREN kennen zouden, dat zij sterk is; opdat gijlieden den HEERE, uw God, vrezet te allen dage.",
       "text1637": "Op dat alle volcken der aerde de hant des HEEREN kennen souden, [19] dat sy sterck is: op dat ghylieden den HEERE uwen Godt vreeset [20] t’allen dagen.",
-      "text2026": "Opdat alle volken van de aarde de hand van JAHWEH kennen zouden, dat zij sterk is; opdat u JAHWEH, uw God, vrezet te alle dage.",
+      "text2026": "Opdat alle volken van de aarde de hand van JAHWEH kennen zouden, dat zij sterk is; opdat u JAHWEH, uw God, vreest te alle dage.",
       "marginNotes": [
         {
           "marker": "19",
@@ -2784,7 +2779,7 @@
           "morph": "HTd/Ncmpa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Opdat alle volken van de aarde de hand van JAHWEH kennen zouden,<sup class=\"note-marker\" data-note=\"19\">19</sup> dat zij sterk is; opdat u JAHWEH, uw God, vrezet<sup class=\"note-marker\" data-note=\"20\">20</sup> te alle dage.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Opdat alle volken van de aarde de hand van JAHWEH kennen zouden,<sup class=\"note-marker\" data-note=\"19\">19</sup> dat zij sterk is; opdat u JAHWEH, uw God, vreest<sup class=\"note-marker\" data-note=\"20\">20</sup> te alle dage.</i></span>",
       "textSV1888_html": "Opdat alle volken der aarde de hand des HEEREN kennen zouden,<sup class=\"note-marker\" data-note=\"19\">19</sup> dat zij sterk is; opdat gijlieden den HEERE, uw God, vrezet<sup class=\"note-marker\" data-note=\"20\">20</sup> te allen dage.",
       "text1637_html": "Op dat alle volcken der aerde de hant des HEEREN kennen souden, <sup class=\"note-marker\" data-note=\"19\">19</sup> dat sy sterck is: op dat ghylieden den HEERE uwen Godt vreeset <sup class=\"note-marker\" data-note=\"20\">20</sup> t’allen dagen.",
       "phraseDiff": [
@@ -2802,6 +2797,11 @@
           "old": "gijlieden den HEERE,",
           "new": "u JAHWEH,",
           "principe": "N1"
+        },
+        {
+          "old": "vrezet",
+          "new": "vreest",
+          "principe": null
         },
         {
           "old": "allen",
