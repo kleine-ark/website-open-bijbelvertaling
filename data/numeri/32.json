@@ -740,7 +740,14 @@
       ],
       "text2026_html": "<span class=\"direct-speech\"><i>Zo deden uw vaders, als ik hen van<sup class=\"note-marker\" data-note=\"a\">a</sup> Kades-barnea zond, om dit land te bekijken.</i></span>",
       "textSV1888_html": "Zo deden uw vaders, als ik hen van<sup class=\"note-marker\" data-note=\"a\">a</sup> Kades-barnea zond, om dit land te bezien.",
-      "text1637_html": "Soo deden uwe vaders, als ickse van <sup class=\"note-marker\" data-note=\"a\">a</sup> Kades Barnea sondt om dit lant te besien:"
+      "text1637_html": "Soo deden uwe vaders, als ickse van <sup class=\"note-marker\" data-note=\"a\">a</sup> Kades Barnea sondt om dit lant te besien:",
+      "phraseDiff": [
+        {
+          "old": "bezien.",
+          "new": "bekijken.",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 9,
@@ -2161,7 +2168,7 @@
       "number": 22,
       "textSV1888": "En het land voor het aangezicht des HEEREN ten ondergebracht zij; zo zult gij daarna wederkeren, en onschuldig zijn voor den HEERE en voor Israël, en dit land zal u ter bezitting zijn voor het aangezicht des HEEREN.",
       "text1637": "Ende het lant voor het aengesichte des HEEREN ondergebracht zy; so sult ghy daerna wederkeeren, ende onschuldich zijn voor den HEERE, ende voor Israël: ende dit lant sal u ter besittinge zijn voor het aengesichte des HEEREN.",
-      "text2026": "En het land voor het aangezicht van JAHWEH ten ondergebracht zij; zo zult u daarna terugkeren, en onschuldig zijn voor JAHWEH en voor Israël, en dit land zal u ter bezitting zijn voor het aangezicht van JAHWEH.",
+      "text2026": "En het land voor het aangezicht van JAHWEH ten onder gebracht zij; zo zult u daarna terugkeren, en onschuldig zijn voor JAHWEH en voor Israël, en dit land zal u ter bezitting zijn voor het aangezicht van JAHWEH.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2250,13 +2257,18 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En het land voor het aangezicht van JAHWEH ten ondergebracht zij; zo zult u daarna terugkeren, en onschuldig zijn voor JAHWEH en voor Israël, en dit land zal u ter bezitting zijn voor het aangezicht van JAHWEH.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En het land voor het aangezicht van JAHWEH ten onder gebracht zij; zo zult u daarna terugkeren, en onschuldig zijn voor JAHWEH en voor Israël, en dit land zal u ter bezitting zijn voor het aangezicht van JAHWEH.</i></span>",
       "text1637_html": "Ende het lant voor het aengesichte des HEEREN ondergebracht zy; so sult ghy daerna wederkeeren, ende onschuldich zijn voor den HEERE, ende voor Israël: ende dit lant sal u ter besittinge zijn voor het aengesichte des HEEREN.",
       "phraseDiff": [
         {
           "old": "des HEEREN",
           "new": "van JAHWEH",
           "principe": "N3"
+        },
+        {
+          "old": "ondergebracht",
+          "new": "onder gebracht",
+          "principe": null
         },
         {
           "old": "gij",
@@ -2842,7 +2854,7 @@
       "number": 29,
       "textSV1888": "En Mozes zeide tot hen: Indien de kinderen van Gad, en de kinderen van Ruben, met ulieden over de Jordaan zullen trekken, een ieder, die toegerust is ten oorlog, voor het aangezicht des HEEREN, als het land voor uw aangezicht zal ten ondergebracht zijn; zo zult gij hun het land Gilead ter bezitting geven.",
       "text1637": "Ende Mose seyde tot hen; Indien de kinderen Gads, ende de kinderen Rubens met u lieden over de Iordane sullen trecken, een yeder, die gerust is ten oorloge, voor het aengesichte des HEEREN; als het lant voor u aengesichte sal ondergebracht zijn, so sult ghy hen het lant Gilead ter besittinge geven.",
-      "text2026": "En Mozes zei tot hen: Als de kinderen van Gad, en de kinderen van Ruben, met u over de Jordaan zullen trekken, een ieder, die toegerust is ten oorlog, voor het aangezicht van JAHWEH, als het land voor uw aangezicht zal ten ondergebracht zijn; zo zult u hun het land Gilead ter bezitting geven.",
+      "text2026": "En Mozes zei tot hen: Als de kinderen van Gad, en de kinderen van Ruben, met u over de Jordaan zullen trekken, een ieder, die toegerust is ten oorlog, voor het aangezicht van JAHWEH, als het land voor uw aangezicht zal ten onder gebracht zijn; zo zult u hun het land Gilead ter bezitting geven.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2976,7 +2988,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "En Mozes zei tot hen: <span class=\"direct-speech\"><i>Als de kinderen van Gad, en de kinderen van Ruben, met u over de Jordaan zullen trekken, een ieder, die toegerust is ten oorlog, voor het aangezicht van JAHWEH, als het land voor uw aangezicht zal ten ondergebracht zijn; zo zult u hun het land Gilead ter bezitting geven.</i></span>",
+      "text2026_html": "En Mozes zei tot hen: <span class=\"direct-speech\"><i>Als de kinderen van Gad, en de kinderen van Ruben, met u over de Jordaan zullen trekken, een ieder, die toegerust is ten oorlog, voor het aangezicht van JAHWEH, als het land voor uw aangezicht zal ten onder gebracht zijn; zo zult u hun het land Gilead ter bezitting geven.</i></span>",
       "text1637_html": "Ende Mose seyde tot hen; Indien de kinderen Gads, ende de kinderen Rubens met u lieden over de Iordane sullen trecken, een yeder, die gerust is ten oorloge, voor het aengesichte des HEEREN; als het lant voor u aengesichte sal ondergebracht zijn, so sult ghy hen het lant Gilead ter besittinge geven.",
       "phraseDiff": [
         {
@@ -2998,6 +3010,11 @@
           "old": "des HEEREN,",
           "new": "van JAHWEH,",
           "principe": "N3"
+        },
+        {
+          "old": "ondergebracht",
+          "new": "onder gebracht",
+          "principe": null
         },
         {
           "old": "gij",

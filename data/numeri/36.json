@@ -784,7 +784,7 @@
       "number": 6,
       "textSV1888": "Dit is het woord, dat de HEERE van de dochteren van Zelafead geboden heeft, zeggende: Laat zij dien tot vrouwen worden, die in haar ogen goed zal zijn; alleenlijk, dat zij aan het geslacht van haars vaders stam tot vrouwen worden.",
       "text1637": "Dit is het woort, dat de HEERE van de dochteren Zelapheads geboden heeft, seggende: Laetse dien tot wijven worden, die in hare [11] oogen goet sal zijn: alleenlick, dat sy aen't geslachte van haers vaders stamme tot wijven worden.",
-      "text2026": "Dit is het woord, dat JAHWEH van de dochters van Zelafead geboden heeft, zeggende: Laat zij die tot vrouwen worden, die in haar ogen goed zal zijn; alleen, dat zij aan het geslacht van haar vader stam tot vrouwen worden.",
+      "text2026": "Dit is het woord, dat JAHWEH van de dochters van Zelafead geboden heeft, zeggende: Laat zij die tot vrouwen worden, die in haar ogen goed zal zijn; alleen, dat zij aan het geslacht van de stam van haar vader tot vrouwen worden.",
       "marginNotes": [
         {
           "marker": "11",
@@ -886,7 +886,7 @@
           "morph": "HR/Ncfpa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Dit is het woord, dat JAHWEH van de dochters van Zelafead geboden heeft, zeggende: <span class=\"god-speaks\"><i>Laat zij die tot vrouwen worden, die in haar ogen goed zal zijn; alleen, dat zij aan het geslacht van haar vader stam tot vrouwen worden.</i></span></i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Dit is het woord, dat JAHWEH van de dochters van Zelafead geboden heeft, zeggende: <span class=\"god-speaks\"><i>Laat zij die tot vrouwen worden, die in haar ogen goed zal zijn; alleen, dat zij aan het geslacht van de stam van haar vader tot vrouwen worden.</i></span></i></span>",
       "textSV1888_html": "Dit is het woord, dat de HEERE van de dochteren van Zelafead geboden heeft, zeggende: Laat zij dien tot vrouwen worden, die in haar<sup class=\"note-marker\" data-note=\"11\">11</sup> ogen goed zal zijn; alleenlijk, dat zij aan het geslacht van haars vaders stam tot vrouwen worden.",
       "text1637_html": "Dit is het woort, dat de HEERE van de dochteren Zelapheads geboden heeft, seggende: Laetse dien tot wijven worden, die in hare <sup class=\"note-marker\" data-note=\"11\">11</sup> oogen goet sal zijn: alleenlick, dat sy aen't geslachte van haers vaders stamme tot wijven worden.",
       "phraseDiff": [
@@ -912,8 +912,13 @@
         },
         {
           "old": "haars vaders",
-          "new": "haar vader",
-          "principe": "V207"
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "van haar vader",
+          "principe": null
         }
       ]
     },
@@ -1357,7 +1362,7 @@
       "number": 11,
       "textSV1888": "Want Machla, Thirza, en Hogla, en Milka, en Noha, dochteren van Zelafead, zijn den zonen harer ooms tot vrouwen geworden.",
       "text1637": "[c] Want Machla, Thirsa, ende Hogla, ende Milca, ende Noha, Zelapheads dochteren, zijn den sonen harer oomen tot wijven geworden.",
-      "text2026": "Want Machla, Thirza, en Hogla, en Milka, en Noha, dochters van Zelafead, zijn de zonen haar ooms tot vrouwen geworden.",
+      "text2026": "Want Machla, Thirza, en Hogla, en Milka, en Noha, dochters van Zelafead, zijn aan de zonen van haar ooms tot vrouwen geworden.",
       "marginNotes": [
         {
           "marker": "c",
@@ -1424,7 +1429,7 @@
           "morph": "HR/Ncfpa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Want Machla, Thirza, en Hogla, en Milka, en Noha, dochters van Zelafead, zijn de zonen haar ooms tot vrouwen geworden.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Want Machla, Thirza, en Hogla, en Milka, en Noha, dochters van Zelafead, zijn aan de zonen van haar ooms tot vrouwen geworden.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Want Machla, Thirza, en Hogla, en Milka, en Noha, dochteren van Zelafead, zijn den zonen harer ooms tot vrouwen geworden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Want Machla, Thirsa, ende Hogla, ende Milca, ende Noha, Zelapheads dochteren, zijn den sonen harer oomen tot wijven geworden.",
       "phraseDiff": [
@@ -1435,13 +1440,13 @@
         },
         {
           "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "new": "aan de",
+          "principe": null
         },
         {
           "old": "harer",
-          "new": "haar",
-          "principe": "V208"
+          "new": "van haar",
+          "principe": null
         }
       ]
     },
