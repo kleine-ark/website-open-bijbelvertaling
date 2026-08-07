@@ -260,7 +260,7 @@
           "morph": "HVqi2mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Al wat onder de beesten de<sup class=\"note-marker\" data-note=\"2\">2</sup> klauw verdeelt, en<sup class=\"note-marker\" data-note=\"3\">3</sup> de kloof van de klauwen in tweeën klieft,<sup class=\"note-marker\" data-note=\"4\">4</sup> en herkauwt, dat<sup class=\"note-marker\" data-note=\"5\">5</sup> zult u eten.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Al wat onder de beesten gespleten hoeven heeft,<sup class=\"note-marker\" data-note=\"2\">2</sup> en<sup class=\"note-marker\" data-note=\"3\">3</sup> de kloof van de klauwen in tweeën klieft,<sup class=\"note-marker\" data-note=\"4\">4</sup> en herkauwt, dat<sup class=\"note-marker\" data-note=\"5\">5</sup> zult u eten.</i></span>",
       "textSV1888_html": "Al wat onder de beesten den<sup class=\"note-marker\" data-note=\"2\">2</sup> klauw verdeelt, en<sup class=\"note-marker\" data-note=\"3\">3</sup> de kloof der klauwen in tweeën klieft,<sup class=\"note-marker\" data-note=\"4\">4</sup> en herkauwt, dat<sup class=\"note-marker\" data-note=\"5\">5</sup> zult gij eten.",
       "text1637_html": "Al wat onder de beesten de <sup class=\"note-marker\" data-note=\"2\">2</sup> klaeuwe verdeelt, ende <sup class=\"note-marker\" data-note=\"3\">3</sup> de klove der klaeuwen in tween klieft, [ende] <sup class=\"note-marker\" data-note=\"4\">4</sup> herkauwt: dat <sup class=\"note-marker\" data-note=\"5\">5</sup> sult ghy eten.",
       "phraseDiff": [
@@ -1472,7 +1472,7 @@
       "number": 17,
       "textSV1888": "En de steenuil, en het duikertje, en de schuifuit,",
       "text1637": "Ende den Steen-uyl, ende het Duyckerken, ende de [18] Schuyfuyt,",
-      "text2026": "En de steenuil, en het visarend, en de ransuil,",
+      "text2026": "En de steenuil, en de visarend, en de ransuil,",
       "marginNotes": [
         {
           "marker": "18",
@@ -1514,19 +1514,19 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En de steenuil, en het visarend, en de<sup class=\"note-marker\" data-note=\"18\">18</sup> ransuil,</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En de steenuil, en de visarend, en de<sup class=\"note-marker\" data-note=\"18\">18</sup> ransuil,</i></span>",
       "textSV1888_html": "En de steenuil, en het duikertje, en de<sup class=\"note-marker\" data-note=\"18\">18</sup> schuifuit,",
       "text1637_html": "Ende den Steen-uyl, ende het Duyckerken, ende de <sup class=\"note-marker\" data-note=\"18\">18</sup> Schuyfuyt,",
       "phraseDiff": [
         {
-          "old": "duikertje,",
-          "new": "visarend,",
-          "principe": null
+          "old": "het duikertje,",
+          "new": "de visarend,",
+          "principe": "V1071"
         },
         {
           "old": "schuifuit,",
           "new": "ransuil,",
-          "principe": null
+          "principe": "V1072"
         }
       ]
     },
@@ -3032,7 +3032,7 @@
       "number": 34,
       "textSV1888": "Van alle spijze, die men eet, waarop het water zal gekomen zijn, die zal onrein zijn; en alle drank, die men drinkt, zal in alle vat onrein zijn.",
       "text1637": "Van alle spijse diemen eet, daer op [32] het water sal gekomen zijn, [die] sal onreyn zijn: ende alle dranck, diemen drinckt, sal in alle [33] vat onreyn zijn.",
-      "text2026": "Van alle voedsel, die men eet, waarop het water zal gekomen zijn, die zal onrein zijn; en alle drank, die men drinkt, zal in alle voorwerp onrein zijn.",
+      "text2026": "Van alle voedsel, dat men eet, waarop het water zal gekomen zijn, dat zal onrein zijn; en alle drank, die men drinkt, zal in alle voorwerp onrein zijn.",
       "marginNotes": [
         {
           "marker": "32",
@@ -3131,14 +3131,19 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Van alle voedsel, die men eet, waarop<sup class=\"note-marker\" data-note=\"32\">32</sup> het water zal gekomen zijn, die zal onrein zijn; en alle drank, die men drinkt, zal in alle<sup class=\"note-marker\" data-note=\"33\">33</sup> voorwerp onrein zijn.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Van alle voedsel, dat men eet, waarop<sup class=\"note-marker\" data-note=\"32\">32</sup> het water zal gekomen zijn, dat zal onrein zijn; en alle drank, die men drinkt, zal in alle<sup class=\"note-marker\" data-note=\"33\">33</sup> voorwerp onrein zijn.</i></span>",
       "textSV1888_html": "Van alle spijze, die men eet, waarop<sup class=\"note-marker\" data-note=\"32\">32</sup> het water zal gekomen zijn, die zal onrein zijn; en alle drank, die men drinkt, zal in alle<sup class=\"note-marker\" data-note=\"33\">33</sup> vat onrein zijn.",
       "text1637_html": "Van alle spijse diemen eet, daer op <sup class=\"note-marker\" data-note=\"32\">32</sup> het water sal gekomen zijn, [die] sal onreyn zijn: ende alle dranck, diemen drinckt, sal in alle <sup class=\"note-marker\" data-note=\"33\">33</sup> vat onreyn zijn.",
       "phraseDiff": [
         {
-          "old": "spijze,",
-          "new": "voedsel,",
-          "principe": "V49"
+          "old": "spijze, die",
+          "new": "voedsel, dat",
+          "principe": null
+        },
+        {
+          "old": "die",
+          "new": "dat",
+          "principe": null
         },
         {
           "old": "vat",
@@ -4138,7 +4143,7 @@
           "morph": "HTd/Ncbsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup><span class=\"god-speaks\"><i> Want<sup class=\"note-marker\" data-note=\"41\">41</sup> Ik ben JAHWEH, uw God; daarom zult u<sup class=\"note-marker\" data-note=\"42\">42</sup> u heiligen, en heilig zijn, omdat Ik heilig ben; en u zult uw ziel niet verontreinigen aan enig kruipend gedierte, dat zich op de aarde roert.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup><span class=\"god-speaks\"><i> Want<sup class=\"note-marker\" data-note=\"41\">41</sup> Ik ben JAHWEH, uw God; daarom zult u<sup class=\"note-marker\" data-note=\"42\">42</sup> zich heiligen, en heilig zijn, omdat Ik heilig ben; en u zult uw ziel niet verontreinigen aan enig kruipend gedierte, dat zich op de aarde roert.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Want<sup class=\"note-marker\" data-note=\"41\">41</sup> Ik ben de HEERE, uw God; daarom zult gij u<sup class=\"note-marker\" data-note=\"42\">42</sup> heiligen, en heilig zijn, dewijl Ik heilig ben; en gij zult uw ziel niet verontreinigen aan enig kruipend gedierte, dat zich op de aarde roert.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Want <sup class=\"note-marker\" data-note=\"41\">41</sup> ick ben de HEERE uwe Godt; daerom sult ghy u <sup class=\"note-marker\" data-note=\"42\">42</sup> heyligen, ende heylich zijn, dewijle ick heylich ben: ende ghy en sult uwe ziele niet verontreynigen aen eenich kruypende gedierte, dat sich op aerden roert.",
       "phraseDiff": [
