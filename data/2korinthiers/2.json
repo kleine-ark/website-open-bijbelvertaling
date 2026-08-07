@@ -790,7 +790,7 @@
       "number": 6,
       "textSV1888": "Den zodanige is deze bestraffing genoeg, die van velen geschied is.",
       "text1637": "[b] Den sodanigen is [11] dese bestraffinge genoegh, die van velen [geschiet is].",
-      "text2026": "Voor zo iemand is deze bestraffing genoeg, die van velen geschied is.",
+      "text2026": "Voor zo iemand is deze bestraffing genoeg, die van velen gebeurd is.",
       "marginNotes": [
         {
           "marker": "11",
@@ -869,13 +869,18 @@
           "gloss": "〔greater"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Voor zo iemand is<sup class=\"note-marker\" data-note=\"11\">11</sup> deze bestraffing genoeg, die van velen geschied is.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Voor zo iemand is<sup class=\"note-marker\" data-note=\"11\">11</sup> deze bestraffing genoeg, die van velen gebeurd is.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Den zodanige is<sup class=\"note-marker\" data-note=\"11\">11</sup> deze bestraffing genoeg, die van velen geschied is.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Den sodanigen is <sup class=\"note-marker\" data-note=\"11\">11</sup> dese bestraffinge genoegh, die van velen [<i>geschiet is</i>].",
       "phraseDiff": [
         {
           "old": "Den zodanige",
           "new": "Voor zo iemand",
+          "principe": null
+        },
+        {
+          "old": "geschied",
+          "new": "gebeurd",
           "principe": null
         }
       ]

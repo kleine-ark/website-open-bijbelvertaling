@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Het woord, dat tot Jeremia geschied is over het ganse volk van Juda, in het vierde jaar van Jojakim, zoon van Josia, koning van Juda (dit was het eerste jaar van Nebukadnezar, koning van Babel);",
       "text1637": "HEt woort, dat tot Ieremia geschiet is over het gantsche volck van Iuda; in den vierden jare van Iojakim, sone van Iosia, Coninck van Iuda, (dat was het eerste jaer van Nebucadrezar Coninck van Babel.)",
-      "text2026": "Het woord, dat tot Jeremia geschied is over het hele volk van Juda, in het vierde jaar van Jojakim, zoon van Josia, koning van Juda (dit was het eerste jaar van Nebukadnezar, koning van Babel);",
+      "text2026": "Het woord, dat tot Jeremia gebeurd is over het hele volk van Juda, in het vierde jaar van Jojakim, zoon van Josia, koning van Juda (dit was het eerste jaar van Nebukadnezar, koning van Babel);",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -119,9 +119,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Het woord, dat tot Jeremia geschied is over het hele volk van Juda, in het vierde jaar van Jojakim, zoon van Josia, koning van Juda (dit was het eerste jaar van Nebukadnezar, koning van Babel);",
+      "text2026_html": "Het woord, dat tot Jeremia gebeurd is over het hele volk van Juda, in het vierde jaar van Jojakim, zoon van Josia, koning van Juda (dit was het eerste jaar van Nebukadnezar, koning van Babel);",
       "text1637_html": "HEt woort, dat tot Ieremia geschiet is over het gantsche volck van Iuda; in den vierden jare van Iojakim, sone van Iosia, Coninck van Iuda, (dat was het eerste jaer van Nebucadrezar Coninck van Babel.)",
       "phraseDiff": [
+        {
+          "old": "geschied",
+          "new": "gebeurd",
+          "principe": null
+        },
         {
           "old": "ganse",
           "new": "hele",
@@ -230,7 +235,7 @@
       "number": 3,
       "textSV1888": "Van het dertiende jaar van Josia, den zoon van Amon, den koning van Juda, tot op dezen dag toe (dit is het drie en twintigste jaar) is het woord des HEEREN tot mij geschied; en ik heb tot ulieden gesproken, vroeg op zijnde en sprekende, maar gij hebt niet gehoord.",
       "text1637": "Van den dertienden jare Iosie, des soons Amons, des Conincks van Iuda, tot op desen dach toe ( [2] dit is het drie en twintichste jaer) is het woort des HEEREN tot my geschiedt: ende ick hebbe tot ulieden gesproken, [3] vroech op zijnde ende sprekende, maer ghy en hebt niet [4] gehoort.",
-      "text2026": "Van het dertiende jaar van Josia, de zoon van Amon, de koning van Juda, tot op deze dag toe (dit is het drie en twintigste jaar) is het woord van JAHWEH tot mij geschied; en ik heb tot u gesproken, vroeg op zijnde en sprekende, maar u hebt niet gehoord.",
+      "text2026": "Van het dertiende jaar van Josia, de zoon van Amon, de koning van Juda, tot op deze dag toe (dit is het drie en twintigste jaar) is het woord van JAHWEH tot mij gebeurd; en ik heb tot u gesproken, vroeg op zijnde en sprekende, maar u hebt niet gehoord.",
       "marginNotes": [
         {
           "marker": "2",
@@ -386,7 +391,7 @@
           "morph": "HVqp2mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Van het dertiende jaar van Josia, de zoon van Amon, de koning van Juda, tot op deze dag toe (dit<sup class=\"note-marker\" data-note=\"2\">2</sup> is het drie en twintigste jaar) is het woord van JAHWEH tot mij geschied; en ik heb tot u gesproken,<sup class=\"note-marker\" data-note=\"3\">3</sup> vroeg op zijnde en sprekende, maar u hebt niet<sup class=\"note-marker\" data-note=\"4\">4</sup> gehoord.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Van het dertiende jaar van Josia, de zoon van Amon, de koning van Juda, tot op deze dag toe (dit<sup class=\"note-marker\" data-note=\"2\">2</sup> is het drie en twintigste jaar) is het woord van JAHWEH tot mij gebeurd; en ik heb tot u gesproken,<sup class=\"note-marker\" data-note=\"3\">3</sup> vroeg op zijnde en sprekende, maar u hebt niet<sup class=\"note-marker\" data-note=\"4\">4</sup> gehoord.</i></span>",
       "textSV1888_html": "Van het dertiende jaar van Josia, den zoon van Amon, den koning van Juda, tot op dezen dag toe (dit<sup class=\"note-marker\" data-note=\"2\">2</sup> is het drie en twintigste jaar) is het woord des HEEREN tot mij geschied; en ik heb tot ulieden gesproken,<sup class=\"note-marker\" data-note=\"3\">3</sup> vroeg op zijnde en sprekende, maar gij hebt niet<sup class=\"note-marker\" data-note=\"4\">4</sup> gehoord.",
       "text1637_html": "Van den dertienden jare Iosie, des soons Amons, des Conincks van Iuda, tot op desen dach toe (<sup class=\"note-marker\" data-note=\"2\">2</sup> dit is het drie en twintichste jaer) is het woort des HEEREN tot my geschiedt: ende ick hebbe tot ulieden gesproken, <sup class=\"note-marker\" data-note=\"3\">3</sup> vroech op zijnde ende sprekende, maer ghy en hebt niet <sup class=\"note-marker\" data-note=\"4\">4</sup> gehoort.",
       "phraseDiff": [
@@ -409,6 +414,11 @@
           "old": "des HEEREN",
           "new": "van JAHWEH",
           "principe": "N3"
+        },
+        {
+          "old": "geschied;",
+          "new": "gebeurd;",
+          "principe": null
         },
         {
           "old": "ulieden",

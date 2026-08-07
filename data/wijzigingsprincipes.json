@@ -193,22 +193,6 @@
    "regex": "\\b(wederkeer|wederkeerde|wedergekeerd)"
   },
   {
-   "id": "W3",
-   "categorie": "Werkwoordsvormen",
-   "oud": "verbeidde",
-   "nieuw": "wachtte",
-   "toelichting": "Verouderd werkwoord",
-   "regex": "\\bverbeidde\\b"
-  },
-  {
-   "id": "W4",
-   "categorie": "Werkwoordsvormen",
-   "oud": "vertoefde",
-   "nieuw": "bleef",
-   "toelichting": "Verouderd werkwoord",
-   "regex": "\\bvertoefde\\b"
-  },
-  {
    "id": "V1",
    "categorie": "Verouderde woorden",
    "oud": "doch",
@@ -379,8 +363,8 @@
   {
    "id": "V22",
    "categorie": "Verouderde woorden",
-   "oud": "arend",
-   "nieuw": "adelaar",
+   "oud": "arend / arenden",
+   "nieuw": "adelaar / adelaars",
    "toelichting": "Verouderd woord",
    "regex": "\\b[Aa]rend(en)?\\b"
   },
@@ -627,9 +611,9 @@
   {
    "id": "V40",
    "categorie": "Verouderde woorden",
-   "oud": "geschieden",
-   "nieuw": "gebeuren",
-   "toelichting": "Verouderd werkwoord",
+   "oud": "geschieden / geschiedt / geschiedde / geschiedden / geschied / geschiede",
+   "nieuw": "gebeuren / gebeurt / gebeurde / gebeurden / gebeurd / gebeure",
+   "toelichting": "Alle vervoegingen. De eerste doorvoering pakte alleen de infinitief; 929 vervoegde vormen bleven staan.",
    "regex": "\\b[Gg]eschieden\\b"
   },
   {
@@ -793,14 +777,6 @@
    "regex": "\\b[Hh]aastelijk\\b"
   },
   {
-   "id": "V57",
-   "categorie": "Verouderde woorden",
-   "oud": "heimelijk",
-   "nieuw": "in het geheim",
-   "toelichting": "Verouderd bijwoord",
-   "regex": "\\b[Hh]eimelijk\\b"
-  },
-  {
    "id": "V58",
    "categorie": "Verouderde woorden",
    "oud": "vrijelijk",
@@ -927,14 +903,6 @@
    "nieuw": "geloofde",
    "toelichting": "Verouderde werkwoordsvorm (2e persoon)",
    "regex": "\\bgeloofdet\\b"
-  },
-  {
-   "id": "W10",
-   "categorie": "Werkwoordsvormen",
-   "oud": "vlieden / vlood / gevloden",
-   "nieuw": "vluchten / vluchtte / gevlucht",
-   "toelichting": "Verouderd werkwoord",
-   "regex": "\\b(vlieden|vlood|gevloden|Vlieden|Vlood)\\b"
   },
   {
    "id": "W11",
@@ -1315,8 +1283,8 @@
   {
    "id": "V101",
    "categorie": "Verouderde woorden",
-   "oud": "verfoeisel",
-   "nieuw": "gruwel",
+   "oud": "verfoeisel / verfoeiselen",
+   "nieuw": "gruwel / gruwelen",
    "toelichting": "Verouderd",
    "regex": "\\b[Vv]erfoeisel\\b"
   },
@@ -1331,9 +1299,9 @@
   {
    "id": "V104",
    "categorie": "Verouderde woorden",
-   "oud": "vertroosten",
-   "nieuw": "troosten",
-   "toelichting": "Verouderd",
+   "oud": "vertroosten / vertroostte / vertroostten",
+   "nieuw": "troosten / troostte / troostten",
+   "toelichting": "Het voltooid deelwoord 'vertroost' blijft per zin handwerk: soms 'getroost', soms tegenwoordige tijd.",
    "regex": "\\b[Vv]ertroosten\\b"
   },
   {
@@ -2129,14 +2097,6 @@
    "regex": "\\b[Kk]rijg\\b"
   },
   {
-   "id": "V204",
-   "categorie": "Verouderde woorden",
-   "oud": "spijs",
-   "nieuw": "(context-afhankelijk)",
-   "toelichting": "Verouderd; spijze al vervangen (V49) (context-bewuste vervanging)",
-   "regex": "\\b[Ss]pijs\\b"
-  },
-  {
    "id": "V205",
    "categorie": "Verouderde woorden",
    "oud": "huns",
@@ -2175,14 +2135,6 @@
    "nieuw": "kon",
    "toelichting": "Verouderde 2e persoon (context-bewuste vervanging)",
    "regex": "\\b[Kk]ondet\\b"
-  },
-  {
-   "id": "V210",
-   "categorie": "Verouderde woorden",
-   "oud": "mijner",
-   "nieuw": "van mijn",
-   "toelichting": "Genitief 1e persoon (context-bewuste vervanging). In v0.13 onjuist als simpel mijner→mijn vervangen; in v0.13.1 hersteld naar van mijn X.",
-   "regex": "\\b[Mm]ijner\\b"
   },
   {
    "id": "V211",
@@ -2469,15 +2421,6 @@
    "voorbeeld": "Mar 9:3 'hoedanige geen wolbewerker' → 'zoals geen wolbewerker'"
   },
   {
-   "id": "V246",
-   "categorie": "Verouderde woorden",
-   "oud": "genaken",
-   "nieuw": "naderen",
-   "toelichting": "'Genaken' (oud-Nederlands voor naderen/dichtbij komen) → 'naderen'. Inclusief vervoegingen: genaakten→naderden, genaakte→naderde.",
-   "regex": "\\b[Gg]enaak(en|ten|te)?\\b",
-   "voorbeeld": "Mar 11:1 'als zij Jeruzalem genaakten' → 'als zij Jeruzalem naderden'"
-  },
-  {
    "id": "V247",
    "categorie": "Spelling",
    "oud": "ongehevelde",
@@ -2746,15 +2689,6 @@
    "toelichting": "'Gedurigheid' (volharding/voortdurendheid) → 'volharding'. Cascade-fix: eerdere bulk 'gedurig→steeds' (V231) maakte ten onrechte 'gedurigheid' → 'steedsheid' (geen woord). Nu beide hersteld naar 'volharding'.",
    "regex": "\\b([Gg]edurig|[Ss]teeds)heid\\b",
    "voorbeeld": "Ef 6:18 'met alle steedsheid' → 'met alle volharding'"
-  },
-  {
-   "id": "V277",
-   "categorie": "Verouderde woorden",
-   "oud": "Denwelken/denwelke",
-   "nieuw": "Die/die",
-   "toelichting": "Oude relatieve vorm van denwelke (mannelijk accusatief) → die.",
-   "regex": "\\b[Dd]enwelke(?:n)?\\b",
-   "voorbeeld": "Ef 6:22 'Denwelken ik tot u gezonden heb' → 'Die ik tot u gezonden heb'"
   },
   {
    "id": "V278",
@@ -3147,8 +3081,8 @@
   {
    "id": "V326",
    "categorie": "Verouderde woorden",
-   "oud": "spies",
-   "nieuw": "speer",
+   "oud": "spies / spiesen",
+   "nieuw": "speer / speren",
    "toelichting": "Verouderd zelfstandig naamwoord — wapen (lans, speer)",
    "regex": "\\b[Ss]pies\\b"
   },
@@ -3259,9 +3193,9 @@
   {
    "id": "V340",
    "categorie": "Verouderde woorden",
-   "oud": "vloden / vlieden / vliedt / vlood",
-   "nieuw": "vluchtten / vluchten / vlucht / vluchtte",
-   "toelichting": "Verouderde vormen van 'vlieden' = vluchten",
+   "oud": "vlieden / vliedt / vlood / vloden / gevloden",
+   "nieuw": "vluchten / vlucht / vluchtte / vluchtten / gevlucht",
+   "toelichting": "Alle vervoegingen in één principe.",
    "regex": "\\b[Vv]l(oden|ieden|iedt|ood)\\b"
   },
   {
@@ -3620,8 +3554,8 @@
    "id": "V385",
    "categorie": "Werkwoordsvormen",
    "oud": "vertoeven / vertoeft / vertoefde / vertoefden (specifiek 'vertoef niet' → 'wacht niet langer')",
-   "nieuw": "wachten / wacht / wachtte / wachtten",
-   "toelichting": "Verouderd werkwoord voor 'verwijlen/dralen/wachten'. De idiomatische dringend-vorm 'vertoef niet' (verwijl niet, talm niet) wordt 'wacht niet langer' om de emfase te behouden.",
+   "nieuw": "wachten / blijven (per zin)",
+   "toelichting": "Twee betekenissen: 'vertoef niet' is 'wacht niet langer', maar wie ergens vertoefde, bleef daar.",
    "regex": "\\b[Vv]ertoef(de[nn]?|t|en)?\\b"
   },
   {
@@ -3916,8 +3850,8 @@
    "id": "V422",
    "categorie": "Verouderde woorden",
    "oud": "heimelijk / heimelijke / heimelijken",
-   "nieuw": "geheim / geheime",
-   "toelichting": "Verouderd adjectief voor 'in het geheim/verborgen'. Modern Nederlands gebruikt 'geheim'. Mannelijk-acc verbogen vorm 'heimelijken' wordt naar 'geheime' (N1 lift).",
+   "nieuw": "geheim / geheime / in het geheim",
+   "toelichting": "Bijvoeglijk wordt 'geheime', bijwoordelijk 'in het geheim'.",
    "regex": "\\b[Hh]eimelijk(en|er|e)?\\b"
   },
   {
@@ -4076,8 +4010,8 @@
    "id": "V442",
    "categorie": "Verouderde woorden",
    "oud": "verschonen / verschoont / verschoonde",
-   "nieuw": "sparen / spaart / spaarde",
-   "toelichting": "SV gebruikt 'verschonen' voor 'sparen, medelijden hebben met' (Hebr. chus). Modern Nederlands 'verschonen' = wettelijk vrijstellen of kleding wisselen — andere betekenis. 'Sparen' is helder en kort.",
+   "nieuw": "sparen / spaart / spaarde / ontzien",
+   "toelichting": "Meestal sparen; waar iemand ontzien wordt, ontzien.",
    "regex": "\\b[Vv]erschon(en|t|de|den)?\\b"
   },
   {
@@ -4733,7 +4667,7 @@
    "categorie": "Verouderde woorden",
    "oud": "spijs",
    "nieuw": "voedsel",
-   "toelichting": "Verouderd voor 'voedsel/eten' (Hebr. ochel, lechem). Modern: 'voedsel'. 'Spijswet' / 'spijsoffer' blijven als compounds.",
+   "toelichting": "Meestal voedsel; in de offerwetten blijft 'spijsoffer' staan.",
    "regex": "\\b[Ss]pijs\\b"
   },
   {
@@ -5063,14 +4997,6 @@
    "nieuw": "kamers",
    "toelichting": "SV-meervoud op -en (kameren); modern Nederlands: kamers.",
    "regex": "\\b[Kk]ameren\\b"
-  },
-  {
-   "id": "V568",
-   "categorie": "Verouderde woorden",
-   "oud": "ten huize van",
-   "nieuw": "in het huis van",
-   "toelichting": "Verouderde datief-constructie 'ten huize' (= 'te dem huize' = 'in het huis'). Modern Nederlands: 'in het huis van' (slankst) of 'thuis bij' (informeel). In Bijbel-context met onderwerp (God/koning/etc.) past 'in het huis van' het beste.",
-   "regex": "\\b[Tt]en huize van\\b"
   },
   {
    "id": "V569",
@@ -6581,7 +6507,7 @@
    "categorie": "Verouderde woorden",
    "oud": "male",
    "nieuw": "reiszak",
-   "toelichting": "'male' (knapzak/reiszak) → 'reiszak'.",
+   "toelichting": "Reiszak. Niet te verwarren met V962: 'male' als keer (te dien male).",
    "regex": "\\b[Mm]ale\\b"
   },
   {
@@ -6735,14 +6661,6 @@
    "nieuw": "aanklagen / klaagt aan / aangeklaagd / aanklager / aanklacht",
    "toelichting": "'verklagen' (= aanklagen/beschuldigen) → 'aanklagen'. Let op: scheidbaar werkwoord, juiste woordvolgorde. NIET 'verklaren' (= uitleggen, met -r-) wijzigen. Voltooid deelwoord 'verklaagd' → 'aangeklaagd', zelfstandig naamwoord 'verklager' → 'aanklager'. Contextueel-handmatig.",
    "regex": "\\bverkla(ag|g)\\w*\\b"
-  },
-  {
-   "id": "V781",
-   "categorie": "Verouderde woorden",
-   "oud": "dien / dienzelven / dienzelfden (aanwijzend)",
-   "nieuw": "die (op die dag, in die nacht, die man, enz.)",
-   "toelichting": "Aanwijzend voornaamwoord 'dien' (verbogen vorm van 'die') en de vormen 'dienzelven'/'dienzelfden' -> 'die', met natuurlijke moderne formulering: 'te/op dienzelven dage' -> 'op die dag', 'in dienzelven nacht' -> 'in die nacht', 'dienzelven man/hoorn/honger/tijd' -> 'die man/hoorn/honger/tijd'. WAARSCHUWING: het WERKWOORD 'dienen' NIET wijzigen (bijv. 'Die ik dien in mijn geest', 'dien de HEERE', 'dien mij'). Ook samenstellingen met 'dien' als deel met rust laten: indien, bedienen, verdienen, dienst, dienaar, dienstknecht, godsdienst, enz. Daarom contextueel-handmatig toegepast, niet via blinde regex.",
-   "regex": "\\b[Dd]ienzel(?:v|fd)\\w*\\b"
   },
   {
    "id": "V782",
@@ -7244,8 +7162,8 @@
    "id": "V844",
    "categorie": "Verouderde woorden",
    "oud": "billijk",
-   "nieuw": "(context-afhankelijk)",
-   "toelichting": "Soms 'behoorlijk', soms 'terecht'. Per plaats beoordelen; zie ook V926.",
+   "nieuw": "terecht / redelijk",
+   "toelichting": "Per zin: een oordeel is terecht, een verzoek redelijk.",
    "regex": "\\bbillijk"
   },
   {
@@ -7287,14 +7205,6 @@
    "nieuw": "van alle",
    "toelichting": "Verouderde genitief 'aller X' (= van alle X) → 'van alle X' (de God van alle vertroosting). NIET waar 'aller' onderdeel is van een vaste vorm of 'aller-' (overtreffende trap, bv. allerhoogste). AI per situatie.",
    "regex": "\\baller\\b"
-  },
-  {
-   "id": "V850",
-   "categorie": "Verouderde woorden",
-   "oud": "neen",
-   "nieuw": "nee",
-   "toelichting": "Verouderd 'neen' → 'nee'. Ondubbelzinnig.",
-   "regex": "\\bneen\\b"
   },
   {
    "id": "V851",
@@ -7473,14 +7383,6 @@
    "regex": "\\bzade\\b"
   },
   {
-   "id": "V873",
-   "categorie": "Verouderde woorden",
-   "oud": "vlieden",
-   "nieuw": "vluchten",
-   "toelichting": "Verouderd 'vlieden' (vlied/vliedt/vlood/gevloden) → 'vluchten' (vlucht/vluchtte/gevlucht); naar context met voorzetsel 'vluchten voor / weg van'. Incl. vervoegingen. AI per situatie.",
-   "regex": "\\bvlie(d|dt|den)\\b"
-  },
-  {
    "id": "V874",
    "categorie": "Verouderde woorden",
    "oud": "vrouwkens",
@@ -7535,22 +7437,6 @@
    "nieuw": "voorheen",
    "toelichting": "Verouderd 'voortijds' (eertijds, vroeger) → 'voorheen'. AI per situatie.",
    "regex": "\\bvoortijds\\b"
-  },
-  {
-   "id": "V881",
-   "categorie": "Verouderde woorden",
-   "oud": "schepter",
-   "nieuw": "scepter",
-   "toelichting": "Verouderde spelling 'schepter' → 'scepter' (koningsstaf). Ondubbelzinnig.",
-   "regex": "\\bschepter"
-  },
-  {
-   "id": "V882",
-   "categorie": "Verouderde woorden",
-   "oud": "betamen",
-   "nieuw": "passen",
-   "toelichting": "'betamen' (het betaamde Hem) → 'passen' (het paste Hem): verouderd werkwoord voor 'gepast/behoorlijk zijn'.",
-   "regex": "\\bbetaam"
   },
   {
    "id": "V883",
@@ -7849,14 +7735,6 @@
    "regex": "\\breten\\b"
   },
   {
-   "id": "V923",
-   "categorie": "Verouderde woorden",
-   "oud": "Te die dage",
-   "nieuw": "Op die dag",
-   "toelichting": "Verouderd 'te/ter die dage' -> 'op die dag'.",
-   "regex": "[Tt]e die dage"
-  },
-  {
    "id": "V924",
    "categorie": "Werkwoordsvormen",
    "oud": "vreze",
@@ -7873,28 +7751,12 @@
    "regex": "\\bbozen weg\\b"
   },
   {
-   "id": "V926",
-   "categorie": "Verouderde woorden",
-   "oud": "billijk",
-   "nieuw": "terecht",
-   "toelichting": "'billijk' (in de zin van terecht/gepast) -> 'terecht'; niet blind in alle contexten.",
-   "regex": "\\bbillijk\\b"
-  },
-  {
    "id": "V927",
    "categorie": "Verouderde woorden",
    "oud": "verdek",
    "nieuw": "afdek",
    "toelichting": "Verouderd 'verdek(ken)' -> 'afdek(ken)'.",
    "regex": "\\bverdek\\w*\\b"
-  },
-  {
-   "id": "V928",
-   "categorie": "Verouderde woorden",
-   "oud": "verschoont",
-   "nieuw": "ontziet",
-   "toelichting": "'verschonen' (sparen/ontzien) -> 'ontzien'.",
-   "regex": "\\bverschoon\\w*\\b"
   },
   {
    "id": "V929",
@@ -8269,7 +8131,7 @@
    "categorie": "Verouderde woorden",
    "oud": "male / malen",
    "nieuw": "keer / keren",
-   "toelichting": "'Male' is de oude vorm van 'maal' (keer), niet de reiszak. Alleen bij telwoorden en 'ten tweeden/derden male'; het werkwoord 'malen' (graan) blijft.",
+   "toelichting": "Keer. Niet te verwarren met V760: 'male' als reiszak.",
    "regex": ""
   },
   {

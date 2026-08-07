@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Het woord, dat tot Jeremia geschied is, van den HEERE, zeggende:",
       "text1637": "HEt woort, dat tot Ieremia geschiet is, van den HEERE, seggende:",
-      "text2026": "Het woord, dat tot Jeremia geschied is, van JAHWEH, zeggende:",
+      "text2026": "Het woord, dat tot Jeremia gebeurd is, van JAHWEH, zeggende:",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -49,9 +49,14 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "Het woord, dat tot Jeremia geschied is, van JAHWEH, zeggende:",
+      "text2026_html": "Het woord, dat tot Jeremia gebeurd is, van JAHWEH, zeggende:",
       "text1637_html": "HEt woort, dat tot Ieremia geschiet is, van den HEERE, seggende:",
       "phraseDiff": [
+        {
+          "old": "geschied",
+          "new": "gebeurd",
+          "principe": null
+        },
         {
           "old": "den HEERE,",
           "new": "JAHWEH,",
@@ -3505,7 +3510,7 @@
       "number": 30,
       "textSV1888": "Want de kinderen van Juda hebben gedaan, dat kwaad is in Mijn ogen, spreekt de HEERE; zij hebben hun verfoeiselen gesteld in het huis, dat naar Mijn Naam genoemd is, om dat te verontreinigen.",
       "text1637": "Want de kinderen van Iuda hebben gedaen, dat quaet is in mijne oogen, spreeckt de HEERE: sy hebben hare [50] verfoeyselen gestelt in het [51] huys, [52] dat nae mijnen Name genoemt is, om dat te verontreynigen.",
-      "text2026": "Want de kinderen van Juda hebben gedaan, dat kwaad is in Mijn ogen, spreekt JAHWEH; zij hebben hun verfoeiselen gesteld in het huis, dat naar Mijn Naam genoemd is, om dat te verontreinigen.",
+      "text2026": "Want de kinderen van Juda hebben gedaan, dat kwaad is in Mijn ogen, spreekt JAHWEH; zij hebben hun gruwelen gesteld in het huis, dat naar Mijn Naam genoemd is, om dat te verontreinigen.",
       "marginNotes": [
         {
           "marker": "50",
@@ -3611,7 +3616,7 @@
           "morph": "HR/Vpc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Want de kinderen van Juda hebben gedaan, dat kwaad is in Mijn ogen, spreekt JAHWEH; zij hebben hun<sup class=\"note-marker\" data-note=\"50\">50</sup> verfoeiselen gesteld in het<sup class=\"note-marker\" data-note=\"51\">51</sup> huis,<sup class=\"note-marker\" data-note=\"52\">52</sup> dat naar Mijn Naam genoemd is, om dat te verontreinigen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Want de kinderen van Juda hebben gedaan, dat kwaad is in Mijn ogen, spreekt JAHWEH; zij hebben hun<sup class=\"note-marker\" data-note=\"50\">50</sup> gruwelen gesteld in het<sup class=\"note-marker\" data-note=\"51\">51</sup> huis,<sup class=\"note-marker\" data-note=\"52\">52</sup> dat naar Mijn Naam genoemd is, om dat te verontreinigen.</i></span>",
       "textSV1888_html": "Want de kinderen van Juda hebben gedaan, dat kwaad is in Mijn ogen, spreekt de HEERE; zij hebben hun<sup class=\"note-marker\" data-note=\"50\">50</sup> verfoeiselen gesteld in het<sup class=\"note-marker\" data-note=\"51\">51</sup> huis,<sup class=\"note-marker\" data-note=\"52\">52</sup> dat naar Mijn Naam genoemd is, om dat te verontreinigen.",
       "text1637_html": "Want de kinderen van Iuda hebben gedaen, dat quaet is in mijne oogen, spreeckt de HEERE: sy hebben hare <sup class=\"note-marker\" data-note=\"50\">50</sup> verfoeyselen gestelt in het <sup class=\"note-marker\" data-note=\"51\">51</sup> huys, <sup class=\"note-marker\" data-note=\"52\">52</sup> dat nae mijnen Name genoemt is, om dat te verontreynigen.",
       "phraseDiff": [
@@ -3619,6 +3624,11 @@
           "old": "de HEERE;",
           "new": "JAHWEH;",
           "principe": "G1"
+        },
+        {
+          "old": "verfoeiselen",
+          "new": "gruwelen",
+          "principe": null
         }
       ]
     },

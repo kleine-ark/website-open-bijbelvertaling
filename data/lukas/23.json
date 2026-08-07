@@ -2312,7 +2312,7 @@
       "number": 19,
       "textSV1888": "Dewelke was om zeker oproer, dat in de stad geschied was, en om een doodslag, in de gevangenis geworpen.",
       "text1637": "De welcke was om sekeren oproer, die in de stadt geschiet was, ende [om] eenen doodt-slag, in de gevanckenisse geworpen.",
-      "text2026": "Die was om zeker oproer, dat in de stad geschied was, en om een doodslag, in de gevangenis geworpen.",
+      "text2026": "Die was om zeker oproer, dat in de stad gebeurd was, en om een doodslag, in de gevangenis geworpen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2406,13 +2406,18 @@
           "gloss": "〔prison/watch"
         }
       ],
-      "text2026_html": "Die was om zeker oproer, dat in de stad geschied was, en om een doodslag, in de gevangenis geworpen.",
+      "text2026_html": "Die was om zeker oproer, dat in de stad gebeurd was, en om een doodslag, in de gevangenis geworpen.",
       "text1637_html": "De welcke was om sekeren oproer, die in de stadt geschiet was, ende [<i>om</i>] eenen doodt-slag, in de gevanckenisse geworpen.",
       "phraseDiff": [
         {
           "old": "Dewelke",
           "new": "Die",
           "principe": "V75"
+        },
+        {
+          "old": "geschied",
+          "new": "gebeurd",
+          "principe": null
         }
       ]
     },
@@ -5799,7 +5804,7 @@
       "number": 47,
       "textSV1888": "Als nu de hoofdman over honderd zag, wat er geschied was, verheerlijkte hij God, en zeide: Waarlijk, deze Mens was rechtvaardig.",
       "text1637": "[a] Als nu de hooftman over hondert sagh dat daer geschiet was, [53] verheerlickte hy Godt, ende seyde, Waerlick dese mensche was rechtveerdigh.",
-      "text2026": "Als nu de hoofdman over honderd zag, wat er geschied was, verheerlijkte hij God, en zei: Werkelijk, deze Mens was rechtvaardig.",
+      "text2026": "Als nu de hoofdman over honderd zag, wat er gebeurd was, verheerlijkte hij God, en zei: Werkelijk, deze Mens was rechtvaardig.",
       "marginNotes": [
         {
           "marker": "a",
@@ -5914,10 +5919,15 @@
           "gloss": "〔to be"
         }
       ],
-      "text2026_html": "Als nu de hoofdman over honderd zag, wat er geschied was, verheerlijkte hij God, en zei: <span class=\"direct-speech\"><i>Werkelijk, deze Mens was rechtvaardig.</i></span>",
+      "text2026_html": "Als nu de hoofdman over honderd zag, wat er gebeurd was, verheerlijkte hij God, en zei: <span class=\"direct-speech\"><i>Werkelijk, deze Mens was rechtvaardig.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Als nu de hoofdman over honderd zag, wat er geschied was,<sup class=\"note-marker\" data-note=\"53\">53</sup> verheerlijkte hij God, en zeide: Waarlijk, deze Mens was rechtvaardig.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Als nu de hooftman over hondert sagh dat daer geschiet was, <sup class=\"note-marker\" data-note=\"53\">53</sup> verheerlickte hy Godt, ende seyde, Waerlick dese mensche was rechtveerdigh.",
       "phraseDiff": [
+        {
+          "old": "geschied",
+          "new": "gebeurd",
+          "principe": null
+        },
         {
           "old": "zeide: Waarlijk,",
           "new": "zei: Werkelijk,",
@@ -5929,7 +5939,7 @@
       "number": 48,
       "textSV1888": "En al de scharen, die samengekomen waren om dit te aanschouwen, ziende de dingen, die geschied waren, keerden wederom, slaande op hun borsten.",
       "text1637": "Ende alle de scharen, die daer te samen gekomen waren om dit te aenschouwen, siende de dingen, die geschiet waren, keerden wederom [54] slaende op hare borsten.",
-      "text2026": "En al de menigten, die samengekomen waren om dit te aanschouwen, ziende de dingen, die geschied waren, keerden opnieuw, slaande op hun borsten.",
+      "text2026": "En al de menigten, die samengekomen waren om dit te aanschouwen, ziende de dingen, die gebeurd waren, keerden opnieuw, slaande op hun borsten.",
       "marginNotes": [
         {
           "marker": "54",
@@ -6037,7 +6047,7 @@
           "gloss": "〔to return"
         }
       ],
-      "text2026_html": "En al de menigten, die samengekomen waren om dit te aanschouwen, ziende de dingen, die geschied waren, keerden opnieuw,<sup class=\"note-marker\" data-note=\"54\">54</sup> slaande op hun borsten.",
+      "text2026_html": "En al de menigten, die samengekomen waren om dit te aanschouwen, ziende de dingen, die gebeurd waren, keerden opnieuw,<sup class=\"note-marker\" data-note=\"54\">54</sup> slaande op hun borsten.",
       "textSV1888_html": "En al de scharen, die samengekomen waren om dit te aanschouwen, ziende de dingen, die geschied waren, keerden wederom,<sup class=\"note-marker\" data-note=\"54\">54</sup> slaande op hun borsten.",
       "text1637_html": "Ende alle de scharen, die daer te samen gekomen waren om dit te aenschouwen, siende de dingen, die geschiet waren, keerden wederom <sup class=\"note-marker\" data-note=\"54\">54</sup> slaende op hare borsten.",
       "phraseDiff": [
@@ -6045,6 +6055,11 @@
           "old": "scharen,",
           "new": "menigten,",
           "principe": "V234"
+        },
+        {
+          "old": "geschied",
+          "new": "gebeurd",
+          "principe": null
         },
         {
           "old": "wederom,",
