@@ -228,7 +228,7 @@
    "number": 3,
    "textSV1888": "Want de inzettingen der volken zijn ijdelheid; want het is hout, dat men uit het woud gehouwen heeft, een werk van des werkmeesters handen met de bijl.",
    "text1637": "Want de [5] insettingen der volckeren zijn ydelheyt: want [a] het is [6] hout datmen uyt den woude gehouwen heeft, een werck van ’s werckmeesters handen, met de byle.",
-   "text2026": "Want de voorschriften van de volken zijn zinloosheid; want het is hout, dat men uit het woud gehouwen heeft, een werk van de werkmeester handen met de bijl.",
+   "text2026": "Want de voorschriften van de volken zijn zinloosheid; want het is hout, dat men uit het woud gehouwen heeft, een werk van de handen van de werkmeester met de bijl.",
    "marginNotes": [
     {
      "marker": "5",
@@ -319,7 +319,7 @@
      "morph": "HRd/Ncmsa"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>Want de<sup class=\"note-marker\" data-note=\"5\">5</sup> voorschriften van de volken zijn zinloosheid; want<sup class=\"note-marker\" data-note=\"a\">a</sup> het is<sup class=\"note-marker\" data-note=\"6\">6</sup> hout, dat men uit het woud gehouwen heeft, een werk van de werkmeester handen met de bijl.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>Want de<sup class=\"note-marker\" data-note=\"5\">5</sup> voorschriften van de volken zijn zinloosheid; want<sup class=\"note-marker\" data-note=\"a\">a</sup> het is<sup class=\"note-marker\" data-note=\"6\">6</sup> hout, dat men uit het woud gehouwen heeft, een werk van de handen van de werkmeester met de bijl.</i></span>",
    "textSV1888_html": "Want de<sup class=\"note-marker\" data-note=\"5\">5</sup> inzettingen der volken zijn ijdelheid; want<sup class=\"note-marker\" data-note=\"a\">a</sup> het is<sup class=\"note-marker\" data-note=\"6\">6</sup> hout, dat men uit het woud gehouwen heeft, een werk van des werkmeesters handen met de bijl.",
    "text1637_html": "Want de <sup class=\"note-marker\" data-note=\"5\">5</sup> insettingen der volckeren zijn ydelheyt: want <sup class=\"note-marker\" data-note=\"a\">a</sup> het is <sup class=\"note-marker\" data-note=\"6\">6</sup> hout datmen uyt den woude gehouwen heeft, een werck van ’s werckmeesters handen, met de byle.",
    "phraseDiff": [
@@ -335,7 +335,12 @@
     },
     {
      "old": "des werkmeesters",
-     "new": "de werkmeester",
+     "new": "de",
+     "principe": null
+    },
+    {
+     "old": "",
+     "new": "van de werkmeester",
      "principe": null
     }
    ]
