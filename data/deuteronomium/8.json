@@ -958,7 +958,7 @@
       "number": 9,
       "textSV1888": "Een land, waarin gij brood zonder schaarsheid eten zult, waarin u niets ontbreken zal; een land, welks stenen ijzer zijn, en uit welks bergen gij koper uithouwen zult.",
       "text1637": "Een lant, daer in ghy [13] broot sonder schaersheyt eten sult; daer in u niets ontbreken sal: een lant welckes steenen [14] yser zijn, ende uyt welckes bergen ghy koper uythouwen sult.",
-      "text2026": "Een land, waarin u brood zonder schaarsheid eten zult, waarin u niets ontbreken zal; een land, waarvan de stenen ijzer zijn, en waaruit de bergen u koper uithouwen zult.",
+      "text2026": "Een land, waarin u brood zonder schaarsheid eten zult, waarin u niets ontbreken zal; een land, waarvan de stenen ijzer zijn, en waarvan u uit de bergen koper uithouwen zult.",
       "marginNotes": [
         {
           "marker": "13",
@@ -1067,7 +1067,7 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Een land, waarin u<sup class=\"note-marker\" data-note=\"13\">13</sup> brood zonder schaarsheid eten zult, waarin u niets ontbreken zal; een land, waarvan de stenen ijzer zijn<sup class=\"note-marker\" data-note=\"14\">14</sup>, en waaruit de bergen u koper uithouwen zult.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Een land, waarin u<sup class=\"note-marker\" data-note=\"13\">13</sup> brood zonder schaarsheid eten zult, waarin u niets ontbreken zal; een land, waarvan de stenen ijzer zijn<sup class=\"note-marker\" data-note=\"14\">14</sup>, en waarvan u uit de bergen koper uithouwen zult.</i></span>",
       "textSV1888_html": "Een land, waarin gij<sup class=\"note-marker\" data-note=\"13\">13</sup> brood zonder schaarsheid eten zult, waarin u niets ontbreken zal; een land, welks stenen<sup class=\"note-marker\" data-note=\"14\">14</sup> ijzer zijn, en uit welks bergen gij koper uithouwen zult.",
       "text1637_html": "Een lant, daer in ghy <sup class=\"note-marker\" data-note=\"13\">13</sup> broot sonder schaersheyt eten sult; daer in u niets ontbreken sal: een lant welckes steenen <sup class=\"note-marker\" data-note=\"14\">14</sup> yser zijn, ende uyt welckes bergen ghy koper uythouwen sult.",
       "phraseDiff": [
@@ -1082,14 +1082,19 @@
           "principe": "V211"
         },
         {
-          "old": "uit welks",
-          "new": "waaruit de",
-          "principe": "V211"
+          "old": "",
+          "new": "waarvan u",
+          "principe": null
+        },
+        {
+          "old": "welks",
+          "new": "de",
+          "principe": null
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "",
+          "principe": null
         }
       ]
     },
