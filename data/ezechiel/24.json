@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Wijders geschiedde des HEEREN woord tot mij, in het negende jaar, in de tiende maand, op den tienden der maand, zeggende:",
       "text1637": "Wijders geschiedde des HEEREN woort tot my, in’t [1] negende jaer, in de [2] tiende maent, op den tienden der maent, seggende:",
-      "text2026": "Verder geschiedde het woord van JAHWEH tot mij, in het negende jaar, in de tiende maand, op de tienden van de maand, zeggende:",
+      "text2026": "Verder gebeurde het woord van JAHWEH tot mij, in het negende jaar, in de tiende maand, op de tienden van de maand, zeggende:",
       "marginNotes": [
         {
           "marker": "1",
@@ -79,18 +79,13 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "Verder geschiedde het woord van JAHWEH tot mij, in<sup class=\"note-marker\" data-note=\"1\">1</sup> het negende jaar, in de<sup class=\"note-marker\" data-note=\"2\">2</sup> tiende maand, op de tienden van de maand, zeggende:",
+      "text2026_html": "Verder gebeurde het woord van JAHWEH tot mij, in<sup class=\"note-marker\" data-note=\"1\">1</sup> het negende jaar, in de<sup class=\"note-marker\" data-note=\"2\">2</sup> tiende maand, op de tienden van de maand, zeggende:",
       "textSV1888_html": "Wijders geschiedde des HEEREN woord tot mij, in<sup class=\"note-marker\" data-note=\"1\">1</sup> het negende jaar, in de<sup class=\"note-marker\" data-note=\"2\">2</sup> tiende maand, op den tienden der maand, zeggende:",
       "text1637_html": "Wijders geschiedde des HEEREN woort tot my, in’t <sup class=\"note-marker\" data-note=\"1\">1</sup> negende jaer, in de <sup class=\"note-marker\" data-note=\"2\">2</sup> tiende maent, op den tienden der maent, seggende:",
       "phraseDiff": [
         {
-          "old": "Wijders",
-          "new": "Verder",
-          "principe": null
-        },
-        {
-          "old": "des HEEREN",
-          "new": "het",
+          "old": "Wijders geschiedde des HEEREN",
+          "new": "Verder gebeurde het",
           "principe": null
         },
         {
@@ -1753,7 +1748,7 @@
       "number": 15,
       "textSV1888": "Wijders geschiedde des HEEREN woord tot mij, zeggende:",
       "text1637": "Wijders geschiedde des HEEREN woort tot my, seggende:",
-      "text2026": "Verder geschiedde het woord van JAHWEH tot mij, zeggende:",
+      "text2026": "Verder gebeurde het woord van JAHWEH tot mij, zeggende:",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1782,17 +1777,12 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "Verder geschiedde het woord van JAHWEH tot mij, zeggende:",
+      "text2026_html": "Verder gebeurde het woord van JAHWEH tot mij, zeggende:",
       "text1637_html": "Wijders geschiedde des HEEREN woort tot my, seggende:",
       "phraseDiff": [
         {
-          "old": "Wijders",
-          "new": "Verder",
-          "principe": null
-        },
-        {
-          "old": "des HEEREN",
-          "new": "het",
+          "old": "Wijders geschiedde des HEEREN",
+          "new": "Verder gebeurde het",
           "principe": null
         },
         {
@@ -2297,7 +2287,7 @@
       "number": 20,
       "textSV1888": "En ik zeide tot hen: Het woord des HEEREN is tot mij geschied, zeggende:",
       "text1637": "Ende ick seyde tot hen: Het woort des HEEREN is tot my geschiet, seggende:",
-      "text2026": "En ik zei tot hen: Het woord van JAHWEH is tot mij geschied, zeggende:",
+      "text2026": "En ik zei tot hen: Het woord van JAHWEH is tot mij gebeurd, zeggende:",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2336,7 +2326,7 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "En ik zei tot hen: <span class=\"direct-speech\"><i>Het woord van JAHWEH is tot mij geschied, zeggende:</i></span>",
+      "text2026_html": "En ik zei tot hen: <span class=\"direct-speech\"><i>Het woord van JAHWEH is tot mij gebeurd, zeggende:</i></span>",
       "text1637_html": "Ende ick seyde tot hen: Het woort des HEEREN is tot my geschiet, seggende:",
       "phraseDiff": [
         {
@@ -2348,6 +2338,11 @@
           "old": "des HEEREN",
           "new": "van JAHWEH",
           "principe": "N3"
+        },
+        {
+          "old": "geschied,",
+          "new": "gebeurd,",
+          "principe": null
         }
       ]
     },

@@ -2904,7 +2904,7 @@
       "number": 27,
       "textSV1888": "Is deze zaak van mijn heer den koning geschied? En hebt gij uw knecht niet bekend gemaakt, wie op den troon van mijn heer den koning na hem zitten zou?",
       "text1637": "Is dese sake van mijn heer de Coninc geschiet? ende en hebt uwen knecht niet bekent gemaeckt, wie op den throon mijns heeren des Conincks na hem sitten soude?",
-      "text2026": "Is deze zaak van mijn heer de koning geschied? En hebt u uw knecht niet bekend gemaakt, wie op de troon van mijn heer de koning na hem zitten zou?",
+      "text2026": "Is deze zaak van mijn heer de koning gebeurd? En hebt u uw knecht niet bekend gemaakt, wie op de troon van mijn heer de koning na hem zitten zou?",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2998,13 +2998,18 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Is deze zaak van mijn heer de koning geschied? En hebt u uw knecht niet bekend gemaakt, wie op de troon van mijn heer de koning na hem zitten zou?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Is deze zaak van mijn heer de koning gebeurd? En hebt u uw knecht niet bekend gemaakt, wie op de troon van mijn heer de koning na hem zitten zou?</i></span>",
       "text1637_html": "Is dese sake van mijn heer de Coninc geschiet? en<i>de</i> en hebt uwen knecht niet bekent gemaeckt, wie op den throon mijns heeren des Conincks na hem sitten soude?",
       "phraseDiff": [
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "geschied?",
+          "new": "gebeurd?",
+          "principe": null
         },
         {
           "old": "gij",

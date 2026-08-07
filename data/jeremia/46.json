@@ -5,7 +5,7 @@
    "number": 1,
    "textSV1888": "Het woord des HEEREN, dat tot den profeet Jeremia geschied is tegen de heidenen.",
    "text1637": "HEt woordt des HEEREN, dat tot den Propheet Ieremia geschiet is, tegen de heydenen.",
-   "text2026": "Het woord van JAHWEH, dat tot de profeet Jeremia geschied is tegen de heidenen.",
+   "text2026": "Het woord van JAHWEH, dat tot de profeet Jeremia gebeurd is tegen de heidenen.",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -54,7 +54,7 @@
      "morph": "HTd/Ncmpa"
     }
    ],
-   "text2026_html": "Het woord van JAHWEH, dat tot de profeet Jeremia geschied is tegen de heidenen.",
+   "text2026_html": "Het woord van JAHWEH, dat tot de profeet Jeremia gebeurd is tegen de heidenen.",
    "text1637_html": "HEt woordt des HEEREN, dat tot den Propheet Ieremia geschiet is, tegen de heydenen.",
    "phraseDiff": [
     {
@@ -66,6 +66,11 @@
      "old": "den",
      "new": "de",
      "principe": "N1"
+    },
+    {
+     "old": "geschied",
+     "new": "gebeurd",
+     "principe": null
     }
    ]
   },
@@ -315,7 +320,7 @@
    "number": 4,
    "textSV1888": "Spant de paarden aan, en klimt op, gij ruiters! en stelt u met helmen; veegt de spiesen, trekt de pantsiers aan!",
    "text1637": "[7] Spannet de peerden aen, ende klimmet op, ghy ruyters, ende stellet u met helmen: [a] vaecht de spiessen, trecket de pantziers aen.",
-   "text2026": "Spant de paarden aan, en klimt op, u ruiters! en stelt u met helmen; veegt de spiesen, trekt de pantsiers aan!",
+   "text2026": "Spant de paarden aan, en klimt op, u ruiters! en stelt u met helmen; veegt de speren, trekt de pantsiers aan!",
    "marginNotes": [
     {
      "marker": "7",
@@ -384,7 +389,7 @@
      "morph": "HTd/Ncmpa"
     }
    ],
-   "text2026_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup><span class=\"god-speaks\"><i> Spant de paarden aan, en klimt op, u ruiters! en stelt u met helmen;<sup class=\"note-marker\" data-note=\"a\">a</sup> veegt de spiesen, trekt de pantsiers aan!</i></span>",
+   "text2026_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup><span class=\"god-speaks\"><i> Spant de paarden aan, en klimt op, u ruiters! en stelt u met helmen;<sup class=\"note-marker\" data-note=\"a\">a</sup> veegt de speren, trekt de pantsiers aan!</i></span>",
    "textSV1888_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup> Spant de paarden aan, en klimt op, gij ruiters! en stelt u met helmen;<sup class=\"note-marker\" data-note=\"a\">a</sup> veegt de spiesen, trekt de pantsiers aan!",
    "text1637_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup> Spannet de peerden aen, en<i>de</i> klimmet op, ghy ruyters, ende stellet u met helmen: <sup class=\"note-marker\" data-note=\"a\">a</sup> vaecht de spiessen, trecket de pantziers aen.",
    "phraseDiff": [
@@ -392,6 +397,11 @@
      "old": "gij",
      "new": "u",
      "principe": "A1"
+    },
+    {
+     "old": "spiesen,",
+     "new": "speren,",
+     "principe": null
     }
    ]
   },

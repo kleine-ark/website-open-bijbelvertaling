@@ -2889,7 +2889,7 @@
       "number": 17,
       "textSV1888": "En de zevende engel goot zijn fiool uit in de lucht; en er kwam een grote stem uit den tempel des hemels, van den troon, zeggende: Het is geschied.",
       "text1637": "Ende de sevende Engel [28] goot sijne phiole uyt in de lucht: ende daer quam een groote stemme uyt den Tempel des Hemels, van den Throon, seggende, [n] [29] Het is geschiet:",
-      "text2026": "En de zevende engel goot zijn schaal uit in de lucht; en er kwam een luide stem uit de tempel van de hemel, van de troon, zeggende: Het is geschied.",
+      "text2026": "En de zevende engel goot zijn schaal uit in de lucht; en er kwam een luide stem uit de tempel van de hemel, van de troon, zeggende: Het is gebeurd.",
       "marginNotes": [
         {
           "marker": "28",
@@ -3047,7 +3047,7 @@
           "gloss": "〔to be"
         }
       ],
-      "text2026_html": "En de zevende engel goot zijn schaal uit in de lucht; en er kwam een luide stem uit de tempel van de hemel, van de troon, zeggende: <span class=\"god-speaks\"><i>Het is geschied.</i></span>",
+      "text2026_html": "En de zevende engel goot zijn schaal uit in de lucht; en er kwam een luide stem uit de tempel van de hemel, van de troon, zeggende: <span class=\"god-speaks\"><i>Het is gebeurd.</i></span>",
       "textSV1888_html": "En de zevende engel<sup class=\"note-marker\" data-note=\"28\">28</sup> goot zijn fiool uit in de lucht; en er kwam een grote stem uit den tempel des hemels, van den troon, zeggende:<sup class=\"note-marker\" data-note=\"29\">29</sup><sup class=\"note-marker\" data-note=\"n\">n</sup> Het is geschied.",
       "text1637_html": "Ende de sevende Engel <sup class=\"note-marker\" data-note=\"28\">28</sup> goot sijne phiole uyt in de lucht: ende daer quam een groote stemme uyt den Tempel des Hemels, van den Throon, seggende, <sup class=\"note-marker\" data-note=\"n\">n</sup> <sup class=\"note-marker\" data-note=\"29\">29</sup> Het is geschiet:",
       "phraseDiff": [
@@ -3075,6 +3075,11 @@
           "old": "den",
           "new": "de hemel, van de",
           "principe": "N1"
+        },
+        {
+          "old": "geschied.",
+          "new": "gebeurd.",
+          "principe": null
         }
       ]
     },
@@ -3082,7 +3087,7 @@
       "number": 18,
       "textSV1888": "En er geschiedden stemmen, en donderslagen, en bliksemen; en er geschiedde een grote aardbeving, hoedanige niet is geschied van dat de mensen op de aarde geweest zijn, namelijk een zodanige aardbeving en zo groot.",
       "text1637": "Ende [30] daer geschiedden [o] stemmen, ende donder-slagen, ende blixemen: ende daer geschiedde een groote aerdbevinge, hoedanighe niet en is geschiedt van dat de menschen op de aerde geweest zijn, [namelick] een sodanige aerdbevinge, [ende] so groot.",
-      "text2026": "En er geschiedden stemmen, en donderslagen, en bliksemen; en er geschiedde een grote aardbeving, zoals niet is geschied van dat de mensen op de aarde geweest zijn, namelijk zulk een aardbeving en zo groot.",
+      "text2026": "En er gebeurden stemmen, en donderslagen, en bliksemen; en er gebeurde een grote aardbeving, zoals niet is gebeurd van dat de mensen op de aarde geweest zijn, namelijk zulk een aardbeving en zo groot.",
       "marginNotes": [
         {
           "marker": "o",
@@ -3251,14 +3256,29 @@
           "gloss": "〔great"
         }
       ],
-      "text2026_html": "En<sup class=\"note-marker\" data-note=\"30\">30</sup> er geschiedden<sup class=\"note-marker\" data-note=\"o\">o</sup> stemmen, en donderslagen, en bliksemen; en er geschiedde een grote aardbeving, zoals niet is geschied van dat de mensen op de aarde geweest zijn, namelijk zulk een aardbeving en zo groot.",
+      "text2026_html": "En<sup class=\"note-marker\" data-note=\"30\">30</sup> er gebeurden<sup class=\"note-marker\" data-note=\"o\">o</sup> stemmen, en donderslagen, en bliksemen; en er gebeurde een grote aardbeving, zoals niet is gebeurd van dat de mensen op de aarde geweest zijn, namelijk zulk een aardbeving en zo groot.",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"30\">30</sup> er geschiedden<sup class=\"note-marker\" data-note=\"o\">o</sup> stemmen, en donderslagen, en bliksemen; en er geschiedde een grote aardbeving, hoedanige niet is geschied van dat de mensen op de aarde geweest zijn, namelijk een zodanige aardbeving en zo groot.",
       "text1637_html": "En<i>de</i> <sup class=\"note-marker\" data-note=\"30\">30</sup> daer geschiedden <sup class=\"note-marker\" data-note=\"o\">o</sup> stemmen, ende donder-slagen, ende blixemen: en<i>de</i> daer geschiedde een groote aerdbevinge, hoedanighe niet en is geschiedt van dat de menschen op de aerde geweest zijn, [<i>namelick</i>] een sodanige aerdbevinge, [<i>ende</i>] so groot.",
       "phraseDiff": [
         {
+          "old": "geschiedden",
+          "new": "gebeurden",
+          "principe": null
+        },
+        {
+          "old": "geschiedde",
+          "new": "gebeurde",
+          "principe": null
+        },
+        {
           "old": "hoedanige",
           "new": "zoals",
           "principe": "V245"
+        },
+        {
+          "old": "geschied",
+          "new": "gebeurd",
+          "principe": null
         },
         {
           "old": "",
@@ -3638,7 +3658,7 @@
         {
           "old": "gevloden,",
           "new": "gevlucht,",
-          "principe": "W10"
+          "principe": "V340"
         }
       ]
     },

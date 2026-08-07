@@ -981,7 +981,7 @@
       "number": 10,
       "textSV1888": "Die van den beginne aan verkondigt het einde, en van ouds af die dingen, die nog niet geschied zijn; Die zegt: Mijn raad zal bestaan, en Ik zal al Mijn welbehagen doen.",
       "text1637": "[31] Die van den beginne aen verkondige het eynde, ende van outs af die dingen, die noch niet geschiet en zijn: die segge, [d] Mijn raet sal bestaen, ende ick sal al mijn wel-behagen doen.",
-      "text2026": "Die van de beginne aan verkondigt het einde, en van ouds af die dingen, die nog niet geschied zijn; Die zegt: Mijn raad zal bestaan, en Ik zal al Mijn welbehagen doen.",
+      "text2026": "Die van de beginne aan verkondigt het einde, en van ouds af die dingen, die nog niet gebeurd zijn; Die zegt: Mijn raad zal bestaan, en Ik zal al Mijn welbehagen doen.",
       "marginNotes": [
         {
           "marker": "31",
@@ -1065,7 +1065,7 @@
           "morph": "HVqi1cs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Die van de beginne aan verkondigt het einde, en van ouds af die dingen, die nog niet geschied zijn; Die zegt: <span class=\"direct-speech\"><i>Mijn raad zal bestaan, en Ik zal al Mijn welbehagen doen.</i></span></i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Die van de beginne aan verkondigt het einde, en van ouds af die dingen, die nog niet gebeurd zijn; Die zegt: <span class=\"direct-speech\"><i>Mijn raad zal bestaan, en Ik zal al Mijn welbehagen doen.</i></span></i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"31\">31</sup> Die van den beginne aan verkondigt het einde, en van ouds af die dingen, die nog niet geschied zijn; Die zegt:<sup class=\"note-marker\" data-note=\"d\">d</sup> Mijn raad zal bestaan, en Ik zal al Mijn welbehagen doen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"31\">31</sup> Die van den beginne aen verkondige het eynde, ende van outs af die dinge<i>n</i>, die noch niet geschiet en zijn: die segge, <sup class=\"note-marker\" data-note=\"d\">d</sup> Mijn raet sal bestaen, ende ick sal al mijn wel-behagen doen.",
       "phraseDiff": [
@@ -1073,6 +1073,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "geschied",
+          "new": "gebeurd",
+          "principe": null
         }
       ]
     },

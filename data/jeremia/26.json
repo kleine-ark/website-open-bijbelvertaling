@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "In het begin des koninkrijks van Jojakim, den zoon van Josia, koning van Juda, geschiedde dit woord van den HEERE, zeggende:",
       "text1637": "IN ’t begin des Coninckrijcks Iojakims, des soons Iosia, Conincx van Iuda, geschiedde dit woort van den HEERE, seggende:",
-      "text2026": "In het begin van het koninkrijk van Jojakim, de zoon van Josia, koning van Juda, geschiedde dit woord van JAHWEH, zeggende:",
+      "text2026": "In het begin van het koninkrijk van Jojakim, de zoon van Josia, koning van Juda, gebeurde dit woord van JAHWEH, zeggende:",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -74,7 +74,7 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "In het begin van het koninkrijk van Jojakim, de zoon van Josia, koning van Juda, geschiedde dit woord van JAHWEH, zeggende:",
+      "text2026_html": "In het begin van het koninkrijk van Jojakim, de zoon van Josia, koning van Juda, gebeurde dit woord van JAHWEH, zeggende:",
       "text1637_html": "IN ’t begin des Coninckrijcks Iojakims, des soons Iosia, Conincx van Iuda, geschiedde dit woort van den HEERE, seggende:",
       "phraseDiff": [
         {
@@ -86,6 +86,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "geschiedde",
+          "new": "gebeurde",
+          "principe": null
         },
         {
           "old": "den HEERE,",
@@ -816,7 +821,7 @@
       "number": 8,
       "textSV1888": "Zo geschiedde het, als Jeremia geëindigd had te spreken alles, wat de HEERE geboden had tot al het volk te spreken, dat de priesters en de profeten en al het volk hem grepen, zeggende: Gij zult den dood sterven!",
       "text1637": "So geschiedde’t, als Ieremia geeyndigt hadde te spreken alles wat de HEERE geboden hadde tot al het volck te spreken; dat de Priesters ende de Propheten ende al het volck hem grepen, seggende, Ghy sult [8] den doot sterven.",
-      "text2026": "Zo geschiedde het, als Jeremia geëindigd had te spreken alles, wat JAHWEH geboden had tot al het volk te spreken, dat de priesters en de profeten en al het volk hem grepen, zeggende: U zult de dood sterven!",
+      "text2026": "Zo gebeurde het, als Jeremia geëindigd had te spreken alles, wat JAHWEH geboden had tot al het volk te spreken, dat de priesters en de profeten en al het volk hem grepen, zeggende: U zult de dood sterven!",
       "marginNotes": [
         {
           "marker": "8",
@@ -938,10 +943,15 @@
           "morph": "HVqi2ms"
         }
       ],
-      "text2026_html": "Zo geschiedde het, als Jeremia geëindigd had te spreken alles, wat JAHWEH geboden had tot al het volk te spreken, dat de priesters en de profeten en al het volk hem grepen, zeggende: <span class=\"direct-speech\"><i>U zult de dood sterven!</i></span>",
+      "text2026_html": "Zo gebeurde het, als Jeremia geëindigd had te spreken alles, wat JAHWEH geboden had tot al het volk te spreken, dat de priesters en de profeten en al het volk hem grepen, zeggende: <span class=\"direct-speech\"><i>U zult de dood sterven!</i></span>",
       "textSV1888_html": "Zo geschiedde het, als Jeremia geëindigd had te spreken alles, wat de HEERE geboden had tot al het volk te spreken, dat de priesters en de profeten en al het volk hem grepen, zeggende: Gij zult<sup class=\"note-marker\" data-note=\"8\">8</sup> den dood sterven!",
       "text1637_html": "So geschiedde’t, als Ieremia geeyndigt hadde te spreken alles wat de HEERE geboden hadde tot al het volck te spreken; dat de Priesters ende de Propheten ende al het volck hem grepen, seggende, Ghy sult <sup class=\"note-marker\" data-note=\"8\">8</sup> den doot sterven.",
       "phraseDiff": [
+        {
+          "old": "geschiedde",
+          "new": "gebeurde",
+          "principe": null
+        },
         {
           "old": "de HEERE",
           "new": "JAHWEH",
