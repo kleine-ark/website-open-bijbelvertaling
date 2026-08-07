@@ -112,24 +112,59 @@ Zulke principes krijgen een **bereik**: het veld `bereik` in
 bereik zou je moeten kiezen tussen fout in de tabernakel of fout in de rest van
 de Bijbel.
 
+### 5. Half doorgevoerde principes
+
+Een principe dat alleen de vorm uit het voorbeeld vervangt laat de rest van het
+paradigma staan. `geschieden` → `gebeuren` was op de infinitief toegepast; 946
+keer *geschiedde*, *geschied* en *geschiedt* stonden er nog, zodat oude en
+nieuwe vormen door elkaar heen voorkwamen — opvallender dan wanneer er niets
+was gebeurd. Neem bij élk principe meteen alle vervoegingen en verbuigingen
+mee, en zet ze in de definitie.
+
 ## Werkwijze voor één principe
 
-1. **Meet eerst.** Hoe vaak komt het woord voor in `textSV1888`, in hoeveel
-   boeken? Zoek ook op verbogen vormen — `heir` bleek `heiren`, `heire`, `heirs`,
-   `heirkracht`, `heirscharen`, `ten heire` te hebben, en de eerste sweep pakte
-   alleen de kale vorm.
-2. **Bekijk de contexten** voordat je een uitkomst kiest. Bij `guichelaar` bleek
-   uit Deuteronomium 18:10 dat *tovenaar* en *waarzegger* in dezelfde opsomming
-   staan; die vielen dus af, en het werd *bezweerder*.
-3. **Controleer of de uitkomst niet het bronwoord van een ander principe is.**
-   `audit_principes.py` doet die toets.
-4. **Voer door** op `text2026` én `text2026_html`, met de eerste-linie-toets op
-   `textSV1888`.
-5. **Regenereer `phraseDiff`** met difflib over de kale `textSV1888` tegen de
-   kale `text2026`, en zet het principe-id bij het paar dat je zojuist maakte.
-6. **Leg het principe vast** met een toelichting die uitlegt wáárom deze uitkomst
-   en niet een andere. De toelichting is voor de lezer van de site, niet voor jou.
-7. **Lees een steekproef helemaal door** en draai de audit.
+1. **Onderzoek de tekst.** Hoe vaak komt het woord voor in `textSV1888`, in
+   hoeveel boeken, en in welke betekenissen? Zoek ook op **alle vervoegingen en
+   verbuigingen** — `heir` bleek `heiren`, `heire`, `heirs`, `heirkracht` te
+   hebben; `geschieden` had 946 vervoegde vormen die de eerste doorvoering liet
+   staan. Bekijk de contexten voordat je een uitkomst kiest: bij `guichelaar`
+   bleek uit Deuteronomium 18:10 dat *tovenaar* en *waarzegger* in dezelfde
+   opsomming staan, dus die vielen af.
+2. **Leg het principe vast, met alle vormen.** `oud` en `nieuw` noemen elke
+   vervoeging: `zieden / ziedt / ziedende / gezoden / zood` →
+   `koken / kook / kokende / gekookt / kookte`. Een principe dat alleen de
+   infinitief noemt is half af. Controleer met `audit_principes.py` dat de
+   uitkomst niet het bronwoord van een ander principe is, en dat het bronwoord
+   niet al ergens anders behandeld wordt — dubbels sluipen erin.
+3. **Vervang** op `text2026` én `text2026_html`, met de eerste-linie-toets op
+   `textSV1888`. Regenereer `phraseDiff` en zet het principe-id op het paar.
+4. **Controleer met AI of de zinsbouw nog klopt.** Dit is een aparte stap, geen
+   bijgedachte. Een woordvervanging die zelf goed is laat geregeld een kromme
+   zin achter: het lidwoord hoort bij het oude woord (`de voorhang` → `het
+   voorhangsel`), de woordvolgorde hoorde bij de oude naamval (`des HEEREN
+   pascha` → *van JAHWEH pascha*), het betrekkelijk voornaamwoord loopt niet mee
+   (`het voorhangsel, die`), of een samengesteld werkwoord eist een andere
+   volgorde (`drenkte` → *gaf te drinken haar kudden*). Lees daarom de geraakte
+   verzen als zín, niet als fragment rond het vervangen woord, en herstel wat
+   krom staat — dat herstel is vaak méér werk dan de vervanging zelf, en het
+   hoort bij het principe.
+5. **Draai de naschriften**: `audit_principes.py`,
+   `build_principes_data.py` (anders toont de principes-pagina verouderde
+   aantallen), en bij een versie ook `build_stats.py` mét argumenten.
+
+### Bekende vormen van kromme zinnen om op te zoeken
+
+Na elke sweep gericht zoeken op wat de sweep kan hebben áchtergelaten:
+
+| Patroon | Voorbeeld van de schade |
+|---|---|
+| lidwoord past niet bij het nieuwe woord | `de voorhangsel`, `die meisje` |
+| naamval-volgorde bleef staan | `van JAHWEH pascha`, `van het volk stem` |
+| derde naamval zonder voorzetsel | `een brandoffer JAHWEH`, `reuk JAHWEH` |
+| verbogen uitgang weggevallen | `de heel dag`, `levenden os` |
+| betrekkelijk voornaamwoord loopt niet mee | `het tentkleed, die` |
+| woordvolgorde bij samengesteld werkwoord | `gaf te drinken haar kudden` |
+| verminkt woord | `hernstig` (uit `hogelijk`) |
 
 ## Citaatopmaak
 
@@ -192,6 +227,42 @@ Een melding is niet altijd een suggestie. Tussen 117 opmerkingen over Exodus
 zaten vier echte fouten die de lezer als suggestie formuleerde — waaronder de
 voetwassing. Lees ze dus als waarnemingen, en ga na of er iets stuk is voordat je
 een woord vervangt.
+
+## Een boek afronden — uitgavechecklist
+
+Telkens dezelfde stappen, in deze volgorde; het overslaan van één ervan is elke
+keer opgevallen:
+
+1. `data/verified-chapters.json`: het boek op `"all"` — dit stuurt de
+   concept-markering in de inhoudsopgave.
+2. `python scripts/build_stats.py vX.Y.Z "d maand jjjj"` — **mét argumenten**,
+   anders zet hij de versie stilletjes terug.
+3. `python scripts/build_principes_data.py` — anders toont de principes-pagina
+   verouderde aantallen en missen nieuwe principes hun vindplaatsen.
+4. Changelog (`data/changelog.json`): **concreet**. Elk gewijzigd woord met het
+   aantal plaatsen (`vorsen → kikkers (15)`), niet "diverse woorden
+   gemoderniseerd". Beperkt aantal regels mag; vaagheid niet.
+5. `sw.js`: `VERSION` ophogen — anders serveert de service worker oude
+   bestanden en lijkt de wijziging niet aangekomen. Let op: de regel is al
+   eens door een slordige `sed` afgekapt; controleer met `node --check`.
+6. Push, en **controleer dat de uitrol echt gedraaid heeft**: de push-trigger
+   heeft weleens niets gedaan. `gh run list` na de push; zo nodig
+   `gh workflow run deploy.yml --ref main`, en daarna live nameten
+   (`curl` op `sw.js` en een gewijzigd databestand).
+
+Het versienummer in de bovenbalk komt uit `data/stats.json` en hoeft nergens
+met de hand gezet.
+
+## Lezersmeldingen verwerken
+
+Ophalen: `python scripts/lees_opmerkingen.py` (via de gepubliceerde CSV van de
+spreadsheet). Regels met "Test" of "mag weg" zijn controleregels.
+
+Een melding is kort ("Citatie", "alternatief") en wijst vaak naar iets dat
+groter is dan het genoemde vers — één melding over Exodus 8 bleek voor 24 van
+de 32 verzen te gelden, en één woordmelding bleek een Bijbelbreed patroon.
+Onderzoek dus eerst de omvang, meld terug wat er wérkelijk aan de hand was, en
+verwerk de melding als principe en niet als losse correctie.
 
 ## Veelgemaakte fouten
 
