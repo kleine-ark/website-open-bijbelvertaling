@@ -1,0 +1,82 @@
+/* Naslagpagina's: materialen, dieren, bomen en planten — en de tegel-
+ * hoofdpagina van de wiki. Eén stylesheet, want de vormtaal is gedeeld. */
+
+.page #naslag { max-width: 880px; }
+
+.ns-lead {
+    font-size: 16px; color: var(--text-secondary, #555);
+    border-left: 3px solid var(--gold); padding: 8px 16px;
+    background: rgba(203,164,73,0.06); border-radius: 0 6px 6px 0; margin: 12px 0 22px;
+}
+
+/* hoofdpagina: onderwerpen als kaarten */
+.ns-rooster {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px; margin: 18px 0;
+}
+.ns-kaart {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 14px 16px; border: 1px solid var(--border, #e5e1d8); border-radius: 8px;
+    text-decoration: none; background: var(--bg, #fff);
+    transition: border-color .15s, box-shadow .15s;
+}
+.ns-kaart:hover { border-color: var(--gold); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.ns-kaart-naam { font-weight: 600; color: var(--navy); font-size: 15.5px; }
+.ns-kaart-tal { font-size: 12px; color: #999; }
+
+/* subpagina */
+.ns-terug { margin: 4px 0 14px; font-size: 13.5px; }
+.ns-terug a { color: var(--teal); text-decoration: none; }
+.ns-beschrijving { font-size: 16px; line-height: 1.75; color: var(--text, #333); max-width: 70ch; }
+.ns-kop {
+    margin: 26px 0 8px; color: var(--navy); font-family: var(--font-cursive);
+    font-size: 24px; font-weight: 400; border-bottom: 2px solid var(--gold); padding-bottom: 4px;
+}
+.ns-verzen { line-height: 2.2; }
+.ns-vers {
+    display: inline-block; padding: 1px 9px; margin: 0 3px 3px 0;
+    border: 1px solid var(--border, #e0dcd2); border-radius: 12px;
+    font-size: 13px; color: var(--teal); text-decoration: none; white-space: nowrap;
+}
+.ns-vers:hover { border-color: var(--gold); background: rgba(203,164,73,0.08); }
+
+/* donker thema */
+:root[data-theme="donker"] .ns-kaart { background: rgba(255,255,255,0.03); }
+:root[data-theme="donker"] .ns-kaart-naam { color: #e8e4da; }
+:root[data-theme="donker"] .ns-beschrijving { color: #cfcabe; }
+
+/* ── Tegel-hoofdpagina van de wiki ─────────────────────────────────────────
+   Naar het kaartontwerp van kleineark.com: witte kaart, dunne rand, kop in
+   marineblauw, gouden badge — met bovenin een afbeelding. */
+.wo-pagina { max-width: 1060px; }
+.wo-groeplabel {
+    margin: 30px 0 12px; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
+}
+.wo-groeplabel:first-of-type { margin-top: 20px; }
+.wo-rooster {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+}
+.wo-kaart {
+    display: flex; flex-direction: column;
+    background: var(--bg, #fff); border: 1px solid #eee; border-radius: 10px;
+    padding: 0 0 16px; overflow: hidden; text-decoration: none;
+    transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.wo-kaart:hover { border-color: var(--gold); box-shadow: 0 4px 14px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.wo-kaart img {
+    width: 100%; height: 130px; object-fit: cover; display: block;
+    border-bottom: 1px solid #eee; margin: 0 0 4px;
+}
+.wo-kaart h3 { margin: 10px 20px 6px; font-size: 16px; color: var(--navy); line-height: 1.3; }
+.wo-kaart p  { margin: 0 20px 10px; font-size: 13.5px; line-height: 1.55; color: #666; flex: 1; }
+.wo-badge {
+    align-self: flex-start; margin: 0 20px;
+    background: var(--gold); color: #fff; font-size: 11px; font-weight: 600;
+    padding: 3px 10px; border-radius: 11px; letter-spacing: 0.02em;
+}
+:root[data-theme="donker"] .wo-kaart { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); }
+:root[data-theme="donker"] .wo-kaart h3 { color: #e8e4da; }
+:root[data-theme="donker"] .wo-kaart p { color: #a9a397; }
+:root[data-theme="donker"] .wo-kaart img { border-color: rgba(255,255,255,0.1); opacity: 0.92; }
