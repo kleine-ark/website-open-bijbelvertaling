@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Gij zult uws broeders os of klein vee niet zien afgedreven, en u van die verbergen; gij zult ze uw broeder ganselijk weder toesturen.",
       "text1637": "GHy sult uwes broeders [a] [1] osse ofte kleyn vee niet sien [2] afgedreven, ende u van die [3] verbergen: ghy sultse uwen broeder [4] gantschelick weder toe stieren.",
-      "text2026": "U zult van uw broer os of klein vee niet zien afgedreven, en u van die verbergen; u zult ze uw broer geheel weer toesturen.",
+      "text2026": "U zult os of klein vee van uw broer niet zien afgedreven, en u van die verbergen; u zult ze uw broer geheel weer toesturen.",
       "marginNotes": [
         {
           "marker": "a",
@@ -115,7 +115,7 @@
           "morph": "HR/Ncmsc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>U zult van uw broer<sup class=\"note-marker\" data-note=\"1\">1</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> os of klein vee niet zien<sup class=\"note-marker\" data-note=\"2\">2</sup> afgedreven, en u van die<sup class=\"note-marker\" data-note=\"3\">3</sup> verbergen; u zult ze uw broer<sup class=\"note-marker\" data-note=\"4\">4</sup> geheel weer toesturen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>U zult os of klein vee van uw broer<sup class=\"note-marker\" data-note=\"1\">1</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> niet zien<sup class=\"note-marker\" data-note=\"2\">2</sup> afgedreven, en u van die<sup class=\"note-marker\" data-note=\"3\">3</sup> verbergen; u zult ze uw broer<sup class=\"note-marker\" data-note=\"4\">4</sup> geheel weer toesturen.</i></span>",
       "textSV1888_html": "Gij zult uws broeders<sup class=\"note-marker\" data-note=\"1\">1</sup><sup class=\"note-marker\" data-note=\"a\">a</sup> os of klein vee niet zien<sup class=\"note-marker\" data-note=\"2\">2</sup> afgedreven, en u van die<sup class=\"note-marker\" data-note=\"3\">3</sup> verbergen; gij zult ze uw broeder<sup class=\"note-marker\" data-note=\"4\">4</sup> ganselijk weder toesturen.",
       "text1637_html": "GHy sult uwes broeders <sup class=\"note-marker\" data-note=\"a\">a</sup> <sup class=\"note-marker\" data-note=\"1\">1</sup> osse ofte kleyn vee niet sien <sup class=\"note-marker\" data-note=\"2\">2</sup> afgedreven, ende u van die <sup class=\"note-marker\" data-note=\"3\">3</sup> verbergen: ghy sultse uwen broeder <sup class=\"note-marker\" data-note=\"4\">4</sup> gantschelick weder toe stieren.",
       "phraseDiff": [
@@ -126,8 +126,13 @@
         },
         {
           "old": "uws broeders",
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
           "new": "van uw broer",
-          "principe": "V200"
+          "principe": null
         },
         {
           "old": "gij",
@@ -480,7 +485,7 @@
       "number": 4,
       "textSV1888": "Gij zult uws broeders ezel of zijn os niet zien, vallende op den weg, en u van die verbergen; gij zult ze met hem ganselijk oprichten.",
       "text1637": "Ghy en sult uwes broeders esel ofte sijnen osse niet sien vallende op den wege, ende u van die verbergen: ghy sultse met [10] hem [11] gantschlick oprichten.",
-      "text2026": "U zult van uw broer ezel of zijn os niet zien, vallende op de weg, en u van die verbergen; u zult ze met hem geheel oprichten.",
+      "text2026": "U zult de ezel van uw broer of zijn os niet zien, vallende op de weg, en u van die verbergen; u zult ze met hem geheel oprichten.",
       "marginNotes": [
         {
           "marker": "10",
@@ -569,7 +574,7 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>U zult van uw broer ezel of zijn os niet zien, vallende op de weg, en u van die verbergen; u zult ze met<sup class=\"note-marker\" data-note=\"10\">10</sup> hem<sup class=\"note-marker\" data-note=\"11\">11</sup> geheel oprichten.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>U zult de ezel van uw broer of zijn os niet zien, vallende op de weg, en u van die verbergen; u zult ze met<sup class=\"note-marker\" data-note=\"10\">10</sup> hem<sup class=\"note-marker\" data-note=\"11\">11</sup> geheel oprichten.</i></span>",
       "textSV1888_html": "Gij zult uws broeders ezel of zijn os niet zien, vallende op den weg, en u van die verbergen; gij zult ze met<sup class=\"note-marker\" data-note=\"10\">10</sup> hem<sup class=\"note-marker\" data-note=\"11\">11</sup> ganselijk oprichten.",
       "text1637_html": "Ghy en sult uwes broeders esel ofte sijnen osse niet sien vallende op den wege, ende u van die verbergen: ghy sultse met <sup class=\"note-marker\" data-note=\"10\">10</sup> hem <sup class=\"note-marker\" data-note=\"11\">11</sup> gantschlick oprichten.",
       "phraseDiff": [
@@ -580,8 +585,13 @@
         },
         {
           "old": "uws broeders",
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
           "new": "van uw broer",
-          "principe": "V200"
+          "principe": null
         },
         {
           "old": "den",
@@ -2874,7 +2884,7 @@
       "number": 25,
       "textSV1888": "En indien een man een ondertrouwde jonge dochter in het veld gevonden, en de man haar verkracht en bij haar gelegen zal hebben, zo zal de man, die bij haar gelegen heeft, alleen sterven;",
       "text1637": "Ende indien een man eene ondertrouwde jonge dochter in ’t velt gevonden, ende de man haer verkracht, ende by haer gelegen sal hebben; so sal de man, die by haer gelegen heeft, alleen sterven:",
-      "text2026": "En als een man een ondertrouwde meisje in het veld gevonden, en de man haar verkracht en bij haar gelegen zal hebben, zo zal de man, die bij haar gelegen heeft, alleen sterven;",
+      "text2026": "En als een man een ondertrouwd meisje in het veld gevonden, en de man haar verkracht en bij haar gelegen zal hebben, zo zal de man, die bij haar gelegen heeft, alleen sterven;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2968,7 +2978,7 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En als een man een ondertrouwde meisje in het veld gevonden, en de man haar verkracht en bij haar gelegen zal hebben, zo zal de man, die bij haar gelegen heeft, alleen sterven;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En als een man een ondertrouwd meisje in het veld gevonden, en de man haar verkracht en bij haar gelegen zal hebben, zo zal de man, die bij haar gelegen heeft, alleen sterven;</i></span>",
       "text1637_html": "Ende indien een man eene ondertrouwde jonge dochter in ’t velt gevonden, ende de man haer verkracht, ende by haer gelegen sal hebben; so sal de man, die by haer gelegen heeft, alleen sterven:",
       "phraseDiff": [
         {
@@ -2977,9 +2987,9 @@
           "principe": "V41"
         },
         {
-          "old": "jonge dochter",
-          "new": "meisje",
-          "principe": "V943"
+          "old": "ondertrouwde jonge dochter",
+          "new": "ondertrouwd meisje",
+          "principe": null
         }
       ]
     },
@@ -2987,7 +2997,7 @@
       "number": 26,
       "textSV1888": "Maar de jonge dochter zult gij niets doen; de jonge dochter heeft geen zonde des doods; want gelijk of een man tegen zijn naaste opstond, en sloeg hem dood aan het leven, alzo is deze zaak.",
       "text1637": "Maer de jonge dochter sult ghy [35] niets doen; de jonge dochter en heeft [36] geene sonde des doots: want gelijck of een man tegens sijnen naesten opstont, ende [37] sloech hem doot aen ’t leven, [38] alsoo is dese sake.",
-      "text2026": "Maar het meisje zult u niets doen; het meisje heeft geen zonde van de dood; want zoals of een man tegen zijn naaste opstond, en sloeg hem dood aan het leven, zo is deze zaak.",
+      "text2026": "Maar het meisje zult u niets doen; het meisje heeft geen zonde van de dood; want zoals wanneer een man tegen zijn naaste opstond, en sloeg hem dood aan het leven, zo is deze zaak.",
       "marginNotes": [
         {
           "marker": "35",
@@ -3115,14 +3125,14 @@
           "morph": "HTd/Pdxms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar het meisje zult u<sup class=\"note-marker\" data-note=\"35\">35</sup> niets doen; het meisje heeft<sup class=\"note-marker\" data-note=\"36\">36</sup> geen zonde van de dood; want zoals of een man tegen zijn naaste opstond, en<sup class=\"note-marker\" data-note=\"37\">37</sup> sloeg hem dood aan het leven,<sup class=\"note-marker\" data-note=\"38\">38</sup> zo is deze zaak.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Maar het meisje zult u<sup class=\"note-marker\" data-note=\"35\">35</sup> niets doen; het meisje heeft<sup class=\"note-marker\" data-note=\"36\">36</sup> geen zonde van de dood; want zoals wanneer een man tegen zijn naaste opstond, en<sup class=\"note-marker\" data-note=\"37\">37</sup> sloeg hem dood aan het leven,<sup class=\"note-marker\" data-note=\"38\">38</sup> zo is deze zaak.</i></span>",
       "textSV1888_html": "Maar de jonge dochter zult gij<sup class=\"note-marker\" data-note=\"35\">35</sup> niets doen; de jonge dochter heeft<sup class=\"note-marker\" data-note=\"36\">36</sup> geen zonde des doods; want gelijk of een man tegen zijn naaste opstond, en<sup class=\"note-marker\" data-note=\"37\">37</sup> sloeg hem dood aan het leven,<sup class=\"note-marker\" data-note=\"38\">38</sup> alzo is deze zaak.",
       "text1637_html": "Maer de jonge dochter sult ghy <sup class=\"note-marker\" data-note=\"35\">35</sup> niets doen; de jonge dochter en heeft <sup class=\"note-marker\" data-note=\"36\">36</sup> geene sonde des doots: want gelijck of een man tegens sijnen naesten opstont, ende <sup class=\"note-marker\" data-note=\"37\">37</sup> sloech hem doot aen ’t leven, <sup class=\"note-marker\" data-note=\"38\">38</sup> alsoo is dese sake.",
       "phraseDiff": [
         {
-          "old": "jonge dochter",
-          "new": "meisje",
-          "principe": "V943"
+          "old": "de jonge dochter",
+          "new": "het meisje",
+          "principe": null
         },
         {
           "old": "gij",
@@ -3130,9 +3140,9 @@
           "principe": "A1"
         },
         {
-          "old": "jonge dochter",
-          "new": "meisje",
-          "principe": "V943"
+          "old": "de jonge dochter",
+          "new": "het meisje",
+          "principe": null
         },
         {
           "old": "des doods;",
@@ -3140,8 +3150,8 @@
           "principe": "N3"
         },
         {
-          "old": "gelijk",
-          "new": "zoals",
+          "old": "gelijk of",
+          "new": "zoals wanneer",
           "principe": null
         },
         {
