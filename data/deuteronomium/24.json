@@ -2401,7 +2401,7 @@
       "number": 21,
       "textSV1888": "Wanneer gij uw wijngaard zult afgelezen hebben, zo zult gij de druiven achter u niet nalezen; voor den vreemdeling, voor den wees en voor de weduwe zal het zijn.",
       "text1637": "Wanneer ghy uwen wijngaert sult afgelesen hebben, so en sult ghy de druyven achter u niet nalesen: voor den vreemdelinck, voor den weese, ende voor de weduwe sal ’t zijn.",
-      "text2026": "Wanneer u uw wijngaard zult afgelezen hebben, zo zult u de druiven achter u niet nalezen; voor de vreemdeling, voor de wees en voor de weduwe zal het zijn.",
+      "text2026": "Wanneer u uw wijngaard zult afgelezen hebben, zo zult u de druiven achter u niet nalopen; voor de vreemdeling, voor de wees en voor de weduwe zal het zijn.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2455,7 +2455,7 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer u uw wijngaard zult afgelezen hebben, zo zult u de druiven achter u niet nalezen; voor de vreemdeling, voor de wees en voor de weduwe zal het zijn.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer u uw wijngaard zult afgelezen hebben, zo zult u de druiven achter u niet nalopen; voor de vreemdeling, voor de wees en voor de weduwe zal het zijn.</i></span>",
       "text1637_html": "Wanneer ghy uwen wijngaert sult afgelesen hebben, so en sult ghy de druyven achter u niet nalesen: voor den vreemdelinck, voor den weese, ende voor de weduwe sal ’t zijn.",
       "phraseDiff": [
         {
@@ -2467,6 +2467,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "nalezen;",
+          "new": "nalopen;",
+          "principe": null
         },
         {
           "old": "den",

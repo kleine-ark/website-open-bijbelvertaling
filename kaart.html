@@ -80,6 +80,12 @@
             <label><input type="checkbox" id="f-zeker" checked> Zeker</label>
             <label><input type="checkbox" id="f-waarschijnlijk"> Waarschijnlijk</label>
             <label><input type="checkbox" id="f-onzeker"> Onzeker</label>
+            <span class="laagkeuze">Achtergrond:
+                <label><input type="radio" name="kaartlaag" value="kaart" checked> Kaart</label>
+                <label><input type="radio" name="kaartlaag" value="stil"> Zonder tekst</label>
+                <label><input type="radio" name="kaartlaag" value="lucht"> Luchtfoto</label>
+                <label><input type="radio" name="kaartlaag" value="land"> Landschap</label>
+            </span>
         </div>
     </div>
     <div id="map"></div>
@@ -127,9 +133,37 @@
         osmLayer.on('postrender', function (evt) {
             if (evt.context) { evt.context.filter = 'none'; }
         });
+        /* Extra achtergronden. Alle drie zonder eigen opmaaklaag:
+           - stil:  CARTO light_nolabels — dezelfde OSM-data maar zonder namen,
+                    zodat de Bijbelse namen niet vechten met de moderne
+           - lucht: Esri World Imagery (satelliet)
+           - land:  Esri Shaded Relief — alleen het landschap, geen wegen of
+                    plaatsen; boven zoom 13 zijn er geen tegels, dus begrensd */
+        function xyz(url, attributie, maxZoom) {
+            return new ol.layer.Tile({
+                visible: false,
+                source: new ol.source.XYZ({ url: url, attributions: attributie,
+                                            maxZoom: maxZoom || 19, crossOrigin: 'anonymous' })
+            });
+        }
+        var lagen = {
+            kaart: osmLayer,
+            stil:  xyz('https://{a-d}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+                       '&copy; OpenStreetMap-bijdragers &copy; CARTO'),
+            lucht: xyz('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+                       'Bron: Esri, Maxar, Earthstar Geographics'),
+            land:  xyz('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}',
+                       'Bron: Esri, USGS', 13)
+        };
+        document.querySelectorAll('input[name="kaartlaag"]').forEach(function (r) {
+            r.addEventListener('change', function () {
+                for (var k in lagen) lagen[k].setVisible(k === this.value);
+            }.bind(r));
+        });
+
         var map = new ol.Map({
             target: 'map',
-            layers: [ osmLayer, vectorLayer ],
+            layers: [ lagen.kaart, lagen.stil, lagen.lucht, lagen.land, vectorLayer ],
             view: new ol.View({ center: ol.proj.fromLonLat([32, 33]), zoom: 5 })
         });
 

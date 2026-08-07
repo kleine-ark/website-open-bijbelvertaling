@@ -329,7 +329,7 @@
       "number": 3,
       "textSV1888": "Hiermede zal Aäron in het heilige gaan: met een var, een jong rund ten zondoffer, en een ram ten brandoffer.",
       "text1637": "Hier mede sal Aaron in dat Heylige gaen; met [6] eenen varre, [7] eenen jongen runt ten sond-offer, ende eenen ram ten brand-offer.",
-      "text2026": "Hiermede zal Aäron in het heilige gaan: met een stier, een jong rund ten zondoffer, en een ram ten brandoffer.",
+      "text2026": "Hiermee zal Aäron in het heilige gaan: met een stier, een jong rund ten zondoffer, en een ram ten brandoffer.",
       "marginNotes": [
         {
           "marker": "6",
@@ -403,10 +403,15 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Hiermede zal Aäron in het heilige gaan: met<sup class=\"note-marker\" data-note=\"6\">6</sup> een stier,<sup class=\"note-marker\" data-note=\"7\">7</sup> een jong rund ten zondoffer, en een ram ten brandoffer.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Hiermee zal Aäron in het heilige gaan: met<sup class=\"note-marker\" data-note=\"6\">6</sup> een stier,<sup class=\"note-marker\" data-note=\"7\">7</sup> een jong rund ten zondoffer, en een ram ten brandoffer.</i></span>",
       "textSV1888_html": "Hiermede zal Aäron in het heilige gaan: met<sup class=\"note-marker\" data-note=\"6\">6</sup> een var,<sup class=\"note-marker\" data-note=\"7\">7</sup> een jong rund ten zondoffer, en een ram ten brandoffer.",
       "text1637_html": "Hier mede sal Aaron in dat Heylige gaen; met <sup class=\"note-marker\" data-note=\"6\">6</sup> eenen varre, <sup class=\"note-marker\" data-note=\"7\">7</sup> eenen jongen runt ten sond-offer, ende eenen ram ten brand-offer.",
       "phraseDiff": [
+        {
+          "old": "Hiermede",
+          "new": "Hiermee",
+          "principe": null
+        },
         {
           "old": "var,",
           "new": "stier,",
@@ -3441,7 +3446,7 @@
       "number": 29,
       "textSV1888": "En dit zal voor u tot een eeuwige inzetting zijn: gij zult in de zevende maand, op den tienden der maand, uw zielen verootmoedigen, en geen werk doen, inboorling noch vreemdeling, die in het midden van u als vreemdeling verkeert.",
       "text1637": "Ende [dit] sal voor u tot een [41] eeuwige insettinge zijn: [f] Ghy sult in de [42] sevende maent, op den tienden der maent [43] uwe zielen [44] verootmoedigen, ende geen werck doen, inboorlinck, noch vreemdelinck, die in 't midden van u als vreemdelinck verkeert.",
-      "text2026": "En dit zal voor u tot een eeuwige inzetting zijn: u zult in de zevende maand, op de tiende van de maand, uw zielen verootmoedigen, en geen werk doen, inboorling noch vreemdeling, die in het midden van u als vreemdeling verkeert.",
+      "text2026": "En dit zal voor u tot een eeuwige inzetting zijn: u zult in de zevende maand, op de tiende van de maand, uw zielen verootmoedigen, en geen werk doen, ingezetene noch vreemdeling, die in het midden van u als vreemdeling verkeert.",
       "marginNotes": [
         {
           "marker": "41",
@@ -3576,7 +3581,7 @@
           "morph": "HR/Ncmsc/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En dit zal voor u tot een<sup class=\"note-marker\" data-note=\"41\">41</sup> eeuwige inzetting zijn:<sup class=\"note-marker\" data-note=\"f\">f</sup> u zult in de<sup class=\"note-marker\" data-note=\"42\">42</sup> zevende maand, op de tiende van de<sup class=\"note-marker\" data-note=\"43\">43</sup> maand, uw zielen<sup class=\"note-marker\" data-note=\"44\">44</sup> verootmoedigen, en geen werk doen, inboorling noch vreemdeling, die in het midden van u als vreemdeling verkeert.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En dit zal voor u tot een<sup class=\"note-marker\" data-note=\"41\">41</sup> eeuwige inzetting zijn:<sup class=\"note-marker\" data-note=\"f\">f</sup> u zult in de<sup class=\"note-marker\" data-note=\"42\">42</sup> zevende maand, op de tiende van de<sup class=\"note-marker\" data-note=\"43\">43</sup> maand, uw zielen<sup class=\"note-marker\" data-note=\"44\">44</sup> verootmoedigen, en geen werk doen, ingezetene noch vreemdeling, die in het midden van u als vreemdeling verkeert.</i></span>",
       "textSV1888_html": "En dit zal voor u tot een<sup class=\"note-marker\" data-note=\"41\">41</sup> eeuwige inzetting zijn:<sup class=\"note-marker\" data-note=\"f\">f</sup> gij zult in de<sup class=\"note-marker\" data-note=\"42\">42</sup> zevende maand, op den tienden der maand,<sup class=\"note-marker\" data-note=\"43\">43</sup> uw zielen<sup class=\"note-marker\" data-note=\"44\">44</sup> verootmoedigen, en geen werk doen, inboorling noch vreemdeling, die in het midden van u als vreemdeling verkeert.",
       "text1637_html": "Ende [dit] sal voor u tot een <sup class=\"note-marker\" data-note=\"41\">41</sup> eeuwige insettinge zijn: <sup class=\"note-marker\" data-note=\"f\">f</sup> Ghy sult in de <sup class=\"note-marker\" data-note=\"42\">42</sup> sevende maent, op den tienden der maent <sup class=\"note-marker\" data-note=\"43\">43</sup> uwe zielen <sup class=\"note-marker\" data-note=\"44\">44</sup> verootmoedigen, ende geen werck doen, inboorlinck, noch vreemdelinck, die in 't midden van u als vreemdelinck verkeert.",
       "phraseDiff": [
@@ -3588,6 +3593,11 @@
         {
           "old": "den tienden der",
           "new": "de tiende van de",
+          "principe": null
+        },
+        {
+          "old": "inboorling",
+          "new": "ingezetene",
           "principe": null
         }
       ]
