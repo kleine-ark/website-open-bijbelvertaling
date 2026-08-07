@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Roep nu, zal er iemand zijn, die u antwoorde? En tot wien van de heiligen zult gij u keren?",
       "text1637": "ROept nu; [1] salder yemant zijn, die u [2] antwoorde? ende tot wien vanden [3] heyligen sult ghy u keeren?",
-      "text2026": "Roep nu, zal er iemand zijn, die u antwoorde? En tot wie van de heiligen zult u u keren?",
+      "text2026": "Roep nu, zal er iemand zijn, die u antwoorde? En tot wie van de heiligen zult u zich keren?",
       "marginNotes": [
         {
           "marker": "1",
@@ -71,7 +71,7 @@
           "morph": "HVqi2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Roep nu,<sup class=\"note-marker\" data-note=\"1\">1</sup> zal er iemand zijn, die u<sup class=\"note-marker\" data-note=\"2\">2</sup> antwoorde? En tot wie van<sup class=\"note-marker\" data-note=\"3\">3</sup> de heiligen zult u u keren?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Roep nu,<sup class=\"note-marker\" data-note=\"1\">1</sup> zal er iemand zijn, die u<sup class=\"note-marker\" data-note=\"2\">2</sup> antwoorde? En tot wie van<sup class=\"note-marker\" data-note=\"3\">3</sup> de heiligen zult u zich keren?</i></span>",
       "textSV1888_html": "Roep nu,<sup class=\"note-marker\" data-note=\"1\">1</sup> zal er iemand zijn, die u<sup class=\"note-marker\" data-note=\"2\">2</sup> antwoorde? En tot wien van<sup class=\"note-marker\" data-note=\"3\">3</sup> de heiligen zult gij u keren?",
       "text1637_html": "ROept nu; <sup class=\"note-marker\" data-note=\"1\">1</sup> salder yemant zijn, die u <sup class=\"note-marker\" data-note=\"2\">2</sup> antwoorde? ende tot wien vanden <sup class=\"note-marker\" data-note=\"3\">3</sup> heyligen sult ghy u keeren?",
       "phraseDiff": [
@@ -82,8 +82,13 @@
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "zich",
+          "principe": null
         }
       ]
     },

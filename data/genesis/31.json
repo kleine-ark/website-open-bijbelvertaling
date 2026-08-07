@@ -3403,7 +3403,7 @@
       "number": 26,
       "textSV1888": "Toen zeide Laban tot Jakob: Wat hebt gij gedaan, dat gij u aan mijn hart ontstolen hebt, en mijn dochteren ontvoerd hebt, als gevangenen met het zwaard?",
       "text1637": "Doe seyde Laban tot Iacob; Wat hebt ghy gedaen, dat ghy [41] u van mijn herte ontstolen hebt, ende mijne dochteren ontvoert hebt, [42] als gevangene met den sweerde?",
-      "text2026": "Toen zei Laban tot Jakob: Wat hebt u gedaan, dat u u aan mijn hart ontstolen hebt, en mijn dochters ontvoerd hebt, als gevangenen met het zwaard?",
+      "text2026": "Toen zei Laban tot Jakob: Wat hebt u gedaan, dat u zich aan mijn hart ontstolen hebt, en mijn dochters ontvoerd hebt, als gevangenen met het zwaard?",
       "marginNotes": [
         {
           "marker": "41",
@@ -3507,7 +3507,7 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "Toen zei Laban tot Jakob: <span class=\"direct-speech\"><i>Wat hebt u gedaan, dat u u aan mijn hart ontstolen hebt, en mijn dochters ontvoerd hebt, als gevangenen met het zwaard?</i></span>",
+      "text2026_html": "Toen zei Laban tot Jakob: <span class=\"direct-speech\"><i>Wat hebt u gedaan, dat u zich aan mijn hart ontstolen hebt, en mijn dochters ontvoerd hebt, als gevangenen met het zwaard?</i></span>",
       "textSV1888_html": "Toen zeide Laban tot Jakob: Wat hebt gij gedaan, dat gij<sup class=\"note-marker\" data-note=\"41\">41</sup> u aan mijn hart ontstolen hebt, en mijn dochteren ontvoerd hebt,<sup class=\"note-marker\" data-note=\"42\">42</sup> als gevangenen met het zwaard?",
       "text1637_html": "Doe seyde Laban tot Iacob; Wat hebt ghy gedae<i>n</i>, dat ghy <sup class=\"note-marker\" data-note=\"41\">41</sup> u van mijn herte ontstolen hebt, en<i>de</i> mijne dochteren ontvoert hebt, <sup class=\"note-marker\" data-note=\"42\">42</sup> als gevangene met den sweerde?",
       "phraseDiff": [
@@ -3523,8 +3523,13 @@
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "zich",
+          "principe": null
         },
         {
           "old": "dochteren",

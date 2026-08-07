@@ -3026,7 +3026,7 @@
       "number": 30,
       "textSV1888": "Deze dingen zal men u doen, dewijl gij de heidenen nagehoereerd hebt, en omdat gij u met hun drekgoden verontreinigd hebt.",
       "text1637": "Dese dingen [63] salmen u doen: dewijle ghy den heydenen nagehoereert hebt, [ende] om dat ghy u met hare dreckgoden verontreynicht hebt.",
-      "text2026": "Deze dingen zal men u doen, omdat u de heidenen nagehoereerd hebt, en omdat u u met hun afgoden verontreinigd hebt.",
+      "text2026": "Deze dingen zal men u doen, omdat u de heidenen nagehoereerd hebt, en omdat u zich met hun afgoden verontreinigd hebt.",
       "marginNotes": [
         {
           "marker": "63",
@@ -3088,7 +3088,7 @@
           "morph": "HR/Ncmpc/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Deze dingen<sup class=\"note-marker\" data-note=\"63\">63</sup> zal men u doen, omdat u de heidenen nagehoereerd hebt, en omdat u u met hun afgoden verontreinigd hebt.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Deze dingen<sup class=\"note-marker\" data-note=\"63\">63</sup> zal men u doen, omdat u de heidenen nagehoereerd hebt, en omdat u zich met hun afgoden verontreinigd hebt.</i></span>",
       "textSV1888_html": "Deze dingen<sup class=\"note-marker\" data-note=\"63\">63</sup> zal men u doen, dewijl gij de heidenen nagehoereerd hebt, en omdat gij u met hun drekgoden verontreinigd hebt.",
       "text1637_html": "Dese dingen <sup class=\"note-marker\" data-note=\"63\">63</sup> salmen u doen: dewijle ghy den heydene<i>n</i> nagehoereert hebt, [ende] om dat ghy u met hare dreckgoden verontreynicht hebt.",
       "phraseDiff": [
@@ -3099,8 +3099,13 @@
         },
         {
           "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "zich",
+          "principe": null
         },
         {
           "old": "drekgoden",
@@ -4160,7 +4165,7 @@
       "number": 40,
       "textSV1888": "Dit is er ook, dat zij gezonden hebben tot mannen, die van verre zouden komen; tot dewelken als een bode gezonden was, ziet, zo kwamen zij, voor dewelken gij u wiest, uw ogen blankettet en u met sieraad versierdet;",
       "text1637": "Dit isser oock, datse [84] gesonden hebben tot mannen, die van verre souden komen: tot de welcke als een bode gesonden was, siet so quamense, voor de welcke ghy u wiescht, uwe oogen blanckettedet, ende u met cieraet vercierdet;",
-      "text2026": "Dit is er ook, dat zij gezonden hebben tot mannen, die van verre zouden komen; tot wie als een bode gezonden was, ziet, zo kwamen zij, voor wie u u waste, uw ogen blankettet en u met sieraad versierde;",
+      "text2026": "Dit is er ook, dat zij gezonden hebben tot mannen, die van verre zouden komen; tot wie als een bode gezonden was, ziet, zo kwamen zij, voor wie u zich waste, uw ogen blankettet en u met sieraad versierde;",
       "marginNotes": [
         {
           "marker": "84",
@@ -4262,7 +4267,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Dit is er ook, dat<sup class=\"note-marker\" data-note=\"84\">84</sup> zij gezonden hebben tot mannen, die van verre zouden komen; tot wie als een bode gezonden was, ziet, zo kwamen zij, voor wie u u waste, uw ogen blankettet en u met sieraad versierde;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Dit is er ook, dat<sup class=\"note-marker\" data-note=\"84\">84</sup> zij gezonden hebben tot mannen, die van verre zouden komen; tot wie als een bode gezonden was, ziet, zo kwamen zij, voor wie u zich waste, uw ogen blankettet en u met sieraad versierde;</i></span>",
       "textSV1888_html": "Dit is er ook, dat<sup class=\"note-marker\" data-note=\"84\">84</sup> zij gezonden hebben tot mannen, die van verre zouden komen; tot dewelken als een bode gezonden was, ziet, zo kwamen zij, voor dewelken gij u wiest, uw ogen blankettet en u met sieraad versierdet;",
       "text1637_html": "Dit isser oock, datse <sup class=\"note-marker\" data-note=\"84\">84</sup> gesonden hebben tot mannen, die van verre souden komen: tot de welcke als een bode gesonden was, siet so quamense, voor de welcke ghy u wiescht, uwe oogen blanckettedet, ende u met cieraet vercierdet;",
       "phraseDiff": [
@@ -4278,7 +4283,7 @@
         },
         {
           "old": "wiest,",
-          "new": "u waste,",
+          "new": "zich waste,",
           "principe": null
         },
         {
