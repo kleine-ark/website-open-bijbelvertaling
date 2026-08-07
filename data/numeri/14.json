@@ -551,7 +551,7 @@
       "number": 6,
       "textSV1888": "En Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, zijnde van degenen, die dat land verspied hadden, scheurden hun klederen.",
       "text1637": "Ende Iosua de sone Nun, ende Caleb de sone Iephunne, zijnde van de gene, die dat lant verspiedt hadden, [9] scheurden hare kleederen.",
-      "text2026": "En Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, zijnde van degenen, die dat land verspied hadden, scheurden hun kleren.",
+      "text2026": "En Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, zijnde van degenen, die dat land bespioneerd hadden, scheurden hun kleren.",
       "marginNotes": [
         {
           "marker": "9",
@@ -623,10 +623,15 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "En Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, zijnde van degenen, die dat land verspied hadden,<sup class=\"note-marker\" data-note=\"9\">9</sup> scheurden hun kleren.",
+      "text2026_html": "En Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, zijnde van degenen, die dat land bespioneerd hadden,<sup class=\"note-marker\" data-note=\"9\">9</sup> scheurden hun kleren.",
       "textSV1888_html": "En Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, zijnde van degenen, die dat land verspied hadden,<sup class=\"note-marker\" data-note=\"9\">9</sup> scheurden hun klederen.",
       "text1637_html": "Ende Iosua de sone Nun, ende Caleb de sone Iephunne, zijnde van de gene, die dat lant verspiedt hadden, <sup class=\"note-marker\" data-note=\"9\">9</sup> scheurden hare kleederen.",
       "phraseDiff": [
+        {
+          "old": "verspied",
+          "new": "bespioneerd",
+          "principe": null
+        },
         {
           "old": "klederen.",
           "new": "kleren.",
@@ -638,7 +643,7 @@
       "number": 7,
       "textSV1888": "En zij spraken tot de ganse vergadering der kinderen Israëls, zeggende: Het land, door hetwelk wij getrokken zijn, om hetzelve te verspieden, is een uitermate goed land.",
       "text1637": "Ende sy spraken tot de gantsche vergaderinge der kinderen Israëls, seggende: Het lant, door het welcke wy getrocken zijn, om het selve te verspieden, is een [10] uytermaten goet lant.",
-      "text2026": "En zij spraken tot de hele vergadering van de Israëlieten, zeggende: Het land, door dat wij getrokken zijn, om het te bespioneren, is een bovenmate goed land.",
+      "text2026": "En zij spraken tot de hele vergadering van de Israëlieten, zeggende: Het land, waardoor wij getrokken zijn, om het te bespioneren, is een bovenmate goed land.",
       "marginNotes": [
         {
           "marker": "10",
@@ -735,7 +740,7 @@
           "morph": "HD"
         }
       ],
-      "text2026_html": "En zij spraken tot de hele vergadering van de Israëlieten, zeggende: <span class=\"direct-speech\"><i>Het land, door dat wij getrokken zijn, om het te bespioneren, is een bovenmate goed land.</i></span>",
+      "text2026_html": "En zij spraken tot de hele vergadering van de Israëlieten, zeggende: <span class=\"direct-speech\"><i>Het land, waardoor wij getrokken zijn, om het te bespioneren, is een bovenmate goed land.</i></span>",
       "textSV1888_html": "En zij spraken tot de ganse vergadering der kinderen Israëls, zeggende: Het land, door hetwelk wij getrokken zijn, om hetzelve te verspieden, is een<sup class=\"note-marker\" data-note=\"10\">10</sup> uitermate goed land.",
       "text1637_html": "Ende sy spraken tot de gantsche vergaderinge der kinderen Israëls, seggende: Het lant, door het welcke wy getrocken zijn, om het selve te verspieden, is een <sup class=\"note-marker\" data-note=\"10\">10</sup> uytermaten goet lant.",
       "phraseDiff": [
@@ -750,9 +755,9 @@
           "principe": null
         },
         {
-          "old": "hetwelk",
-          "new": "dat",
-          "principe": "N6"
+          "old": "door hetwelk",
+          "new": "waardoor",
+          "principe": null
         },
         {
           "old": "hetzelve",
@@ -2399,7 +2404,7 @@
       "number": 22,
       "textSV1888": "Want al de mannen, die gezien hebben Mijn heerlijkheid, en Mijn tekenen, die Ik in Egypte en in de woestijn gedaan heb, en Mij nu tienmaal verzocht hebben, en Mijner stem niet zijn gehoorzaam geweest;",
       "text1637": "Want alle de mannen, die gesien hebben mijne heerlickheyt, ende mijne teeckenen, die ick in Egypten, ende in de woestijne gedaen hebbe; ende my nu [29] tien malen versocht hebben, ende mijne stemme niet en zijn gehoorsaem geweest;",
-      "text2026": "Want al de mannen, die gezien hebben Mijn heerlijkheid, en Mijn tekenen, die Ik in Egypte en in de woestijn gedaan heb, en Mij nu tienmaal verzocht hebben, en Van mijn stem niet zijn gehoorzaam geweest;",
+      "text2026": "Want al de mannen, die gezien hebben Mijn heerlijkheid, en Mijn tekenen, die Ik in Egypte en in de woestijn gedaan heb, en Mij nu tienmaal verzocht hebben, en aan Mijn stem niet gehoorzaam zijn geweest;",
       "marginNotes": [
         {
           "marker": "29",
@@ -2511,14 +2516,24 @@
           "morph": "HR/Ncmsc/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Want al de mannen, die gezien hebben Mijn heerlijkheid, en Mijn tekenen, die Ik in Egypte en in de woestijn gedaan heb, en Mij nu<sup class=\"note-marker\" data-note=\"29\">29</sup> tienmaal verzocht hebben, en Van mijn stem niet zijn gehoorzaam geweest;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Want al de mannen, die gezien hebben Mijn heerlijkheid, en Mijn tekenen, die Ik in Egypte en in de woestijn gedaan heb, en Mij nu<sup class=\"note-marker\" data-note=\"29\">29</sup> tienmaal verzocht hebben, en aan Mijn stem niet gehoorzaam zijn geweest;</i></span>",
       "textSV1888_html": "Want al de mannen, die gezien hebben Mijn heerlijkheid, en Mijn tekenen, die Ik in Egypte en in de woestijn gedaan heb, en Mij nu<sup class=\"note-marker\" data-note=\"29\">29</sup> tienmaal verzocht hebben, en Mijner stem niet zijn gehoorzaam geweest;",
       "text1637_html": "Want alle de mannen, die gesien hebben mijne heerlickheyt, ende mijne teeckenen, die ick in Egypten, ende in de woestijne gedaen hebbe; ende my nu <sup class=\"note-marker\" data-note=\"29\">29</sup> tien malen versocht hebben, ende mijne stemme niet en zijn gehoorsaem geweest;",
       "phraseDiff": [
         {
           "old": "Mijner",
-          "new": "Van mijn",
-          "principe": "N7"
+          "new": "aan Mijn",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "gehoorzaam",
+          "principe": null
+        },
+        {
+          "old": "gehoorzaam",
+          "new": "",
+          "principe": null
         }
       ]
     },
@@ -2615,7 +2630,7 @@
       "number": 24,
       "textSV1888": "Doch Mijn knecht Kaleb, omdat een andere geest met hem geweest is, en hij volhard heeft Mij na te volgen, zo zal Ik hem brengen tot het land, in hetwelk hij gekomen was, en zijn zaad zal het erfelijk bezitten.",
       "text1637": "Doch [h] [31] mijn knecht Caleb, om dat een ander geest met hem geweest is, [32] ende heeft volherdt my na te volgen: so sal ick hem brengen tot het lant, in het welcke hy gekomen was, ende sijn zaet sal het erffelick besitten.",
-      "text2026": "Maar Mijn knecht Kaleb, omdat een andere geest met hem geweest is, en hij volhard heeft Mij na te volgen, zo zal Ik hem brengen tot het land, in dat hij gekomen was, en zijn zaad zal het erfelijk bezitten.",
+      "text2026": "Maar Mijn knecht Kaleb, omdat een andere geest met hem geweest is, en hij volhard heeft Mij na te volgen, zo zal Ik hem brengen tot het land, waarin hij gekomen was, en zijn zaad zal het erfelijk bezitten.",
       "marginNotes": [
         {
           "marker": "h",
@@ -2726,7 +2741,7 @@
           "morph": "HVhi3ms/Sp3fs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar<sup class=\"note-marker\" data-note=\"31\">31</sup><sup class=\"note-marker\" data-note=\"h\">h</sup> Mijn knecht Kaleb, omdat een andere geest met hem geweest is,<sup class=\"note-marker\" data-note=\"32\">32</sup> en hij volhard heeft Mij na te volgen, zo zal Ik hem brengen tot het land, in dat hij gekomen was, en zijn zaad zal het erfelijk bezitten.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar<sup class=\"note-marker\" data-note=\"31\">31</sup><sup class=\"note-marker\" data-note=\"h\">h</sup> Mijn knecht Kaleb, omdat een andere geest met hem geweest is,<sup class=\"note-marker\" data-note=\"32\">32</sup> en hij volhard heeft Mij na te volgen, zo zal Ik hem brengen tot het land, waarin hij gekomen was, en zijn zaad zal het erfelijk bezitten.</i></span>",
       "textSV1888_html": "Doch<sup class=\"note-marker\" data-note=\"31\">31</sup><sup class=\"note-marker\" data-note=\"h\">h</sup> Mijn knecht Kaleb, omdat een andere geest met hem geweest is,<sup class=\"note-marker\" data-note=\"32\">32</sup> en hij volhard heeft Mij na te volgen, zo zal Ik hem brengen tot het land, in hetwelk hij gekomen was, en zijn zaad zal het erfelijk bezitten.",
       "text1637_html": "Doch <sup class=\"note-marker\" data-note=\"h\">h</sup> <sup class=\"note-marker\" data-note=\"31\">31</sup> mijn knecht Caleb, om dat een ander geest met hem geweest is, <sup class=\"note-marker\" data-note=\"32\">32</sup> ende heeft volherdt my na te volgen: so sal ick hem brengen tot het lant, in het welcke hy gekomen was, ende sijn zaet sal het erffelick besitten.",
       "phraseDiff": [
@@ -2736,9 +2751,9 @@
           "principe": "V1"
         },
         {
-          "old": "hetwelk",
-          "new": "dat",
-          "principe": "N6"
+          "old": "in hetwelk",
+          "new": "waarin",
+          "principe": null
         }
       ]
     },
@@ -2893,7 +2908,7 @@
       "number": 27,
       "textSV1888": "Hoe lang zal Ik bij deze boze vergadering zijn, die tegen Mij zijn murmurerende? Ik heb gehoord de murmureringen van de kinderen Israëls, waarmede zij tegen Mij zijn murmurerende.",
       "text1637": "[35] Hoe [i] lange sal [ick] by dese boose vergaderinge zijn, die tegen my zijn murmurerende? ick hebbe gehoort de murmureringen der kinderen Israëls, daermede sy tegen my zijn murmurerende.",
-      "text2026": "Hoe lang zal Ik bij deze boze vergadering zijn, die tegen Mij zijn murmurerende? Ik heb gehoord de geklaag van de Israëlieten, waarmee zij tegen Mij zijn murmurerende.",
+      "text2026": "Hoe lang zal Ik bij deze boze vergadering zijn, die tegen Mij zijn morrende? Ik heb gehoord het geklaag van de Israëlieten, waarmee zij tegen Mij zijn morrende.",
       "marginNotes": [
         {
           "marker": "i",
@@ -3002,18 +3017,28 @@
           "morph": "HVqp1cs"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"35\">35</sup><span class=\"god-speaks\"><i> Hoe<sup class=\"note-marker\" data-note=\"i\">i</sup> lang zal Ik bij deze boze vergadering zijn, die tegen Mij zijn murmurerende? Ik heb gehoord de geklaag van de Israëlieten, waarmee zij tegen Mij zijn murmurerende.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"35\">35</sup><span class=\"god-speaks\"><i> Hoe<sup class=\"note-marker\" data-note=\"i\">i</sup> lang zal Ik bij deze boze vergadering zijn, die tegen Mij zijn morrende? Ik heb gehoord het geklaag van de Israëlieten, waarmee zij tegen Mij zijn morrende.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"35\">35</sup> Hoe<sup class=\"note-marker\" data-note=\"i\">i</sup> lang zal Ik bij deze boze vergadering zijn, die tegen Mij zijn murmurerende? Ik heb gehoord de murmureringen van de kinderen Israëls, waarmede zij tegen Mij zijn murmurerende.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"35\">35</sup> Hoe <sup class=\"note-marker\" data-note=\"i\">i</sup> lange sal [ick] by dese boose vergaderinge zijn, die tegen my zijn murmurerende? ick hebbe gehoort de murmureringen der kinderen Israëls, daermede sy tegen my zijn murmurerende.",
       "phraseDiff": [
         {
-          "old": "murmureringen",
-          "new": "geklaag",
+          "old": "murmurerende?",
+          "new": "morrende?",
+          "principe": null
+        },
+        {
+          "old": "de murmureringen",
+          "new": "het geklaag",
           "principe": null
         },
         {
           "old": "kinderen Israëls, waarmede",
           "new": "Israëlieten, waarmee",
+          "principe": null
+        },
+        {
+          "old": "murmurerende.",
+          "new": "morrende.",
           "principe": null
         }
       ]
@@ -3143,7 +3168,7 @@
       "number": 29,
       "textSV1888": "Uw dode lichamen zullen in deze woestijn vallen; en al uw getelden, naar uw gehele getal, van twintig jaren oud en daarboven, gij, die tegen Mij gemurmureerd hebt.",
       "text1637": "Uwe [l] doode lichamen sullen in dese woestijne vallen; ende alle uwe [38] getelde nae u geheel getal, van twintich jaer out, ende daer boven, ghy die tegen my gemurmureert hebt:",
-      "text2026": "Uw dode lichamen zullen in deze woestijn vallen; en al uw getelden, naar uw hele getal, van twintig jaren oud en daarboven, u, die tegen Mij gemurmureerd hebt.",
+      "text2026": "Uw dode lichamen zullen in deze woestijn vallen; en al uw getelden, naar uw hele getal, van twintig jaren oud en daarboven, u, die tegen Mij gemord hebt.",
       "marginNotes": [
         {
           "marker": "l",
@@ -3237,7 +3262,7 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Uw<sup class=\"note-marker\" data-note=\"l\">l</sup> dode lichamen zullen in deze woestijn vallen; en al uw<sup class=\"note-marker\" data-note=\"38\">38</sup> getelden, naar uw hele getal, van twintig jaren oud en daarboven, u, die tegen Mij gemurmureerd hebt.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Uw<sup class=\"note-marker\" data-note=\"l\">l</sup> dode lichamen zullen in deze woestijn vallen; en al uw<sup class=\"note-marker\" data-note=\"38\">38</sup> getelden, naar uw hele getal, van twintig jaren oud en daarboven, u, die tegen Mij gemord hebt.</i></span>",
       "textSV1888_html": "Uw<sup class=\"note-marker\" data-note=\"l\">l</sup> dode lichamen zullen in deze woestijn vallen; en al uw<sup class=\"note-marker\" data-note=\"38\">38</sup> getelden, naar uw gehele getal, van twintig jaren oud en daarboven, gij, die tegen Mij gemurmureerd hebt.",
       "text1637_html": "Uwe <sup class=\"note-marker\" data-note=\"l\">l</sup> doode lichamen sullen in dese woestijne vallen; ende alle uwe <sup class=\"note-marker\" data-note=\"38\">38</sup> getelde nae u geheel getal, van twintich jaer out, ende daer boven, ghy die tegen my gemurmureert hebt:",
       "phraseDiff": [
@@ -3250,6 +3275,11 @@
           "old": "gij,",
           "new": "u,",
           "principe": "A1"
+        },
+        {
+          "old": "gemurmureerd",
+          "new": "gemord",
+          "principe": null
         }
       ]
     },
@@ -3257,7 +3287,7 @@
       "number": 30,
       "textSV1888": "Zo gij in dat land komt, over hetwelk Ik Mijn hand opgeheven heb, dat Ik u daarin zou doen wonen, behalve Kaleb, de zoon van Jefunne, en Jozua, de zoon van Nun.",
       "text1637": "So ghy in dat lant komt, over 't welcke ick [39] mijne hant opgeheven hebbe, dat ick u daer in soude doen woonen! [m] behalven Caleb de sone van Iephunne, ende Iosua de sone van Nun.",
-      "text2026": "Zo u in dat land komt, over dat Ik Mijn hand opgeheven heb, dat Ik u daarin zou doen wonen, behalve Kaleb, de zoon van Jefunne, en Jozua, de zoon van Nun.",
+      "text2026": "Zo u in dat land komt, waarover Ik Mijn hand opgeheven heb, dat Ik u daarin zou doen wonen, behalve Kaleb, de zoon van Jefunne, en Jozua, de zoon van Nun.",
       "marginNotes": [
         {
           "marker": "39",
@@ -3376,7 +3406,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zo u in dat land komt, over dat Ik<sup class=\"note-marker\" data-note=\"39\">39</sup> Mijn hand opgeheven heb, dat Ik u daarin zou doen wonen,<sup class=\"note-marker\" data-note=\"m\">m</sup> behalve Kaleb, de zoon van Jefunne, en Jozua, de zoon van Nun.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zo u in dat land komt, waarover Ik<sup class=\"note-marker\" data-note=\"39\">39</sup> Mijn hand opgeheven heb, dat Ik u daarin zou doen wonen,<sup class=\"note-marker\" data-note=\"m\">m</sup> behalve Kaleb, de zoon van Jefunne, en Jozua, de zoon van Nun.</i></span>",
       "textSV1888_html": "Zo gij in dat land komt, over hetwelk Ik<sup class=\"note-marker\" data-note=\"39\">39</sup> Mijn hand opgeheven heb, dat Ik u daarin zou doen wonen,<sup class=\"note-marker\" data-note=\"m\">m</sup> behalve Kaleb, de zoon van Jefunne, en Jozua, de zoon van Nun.",
       "text1637_html": "So ghy in dat lant komt, over 't welcke ick <sup class=\"note-marker\" data-note=\"39\">39</sup> mijne hant opgeheven hebbe, dat ick u daer in soude doen woonen! <sup class=\"note-marker\" data-note=\"m\">m</sup> behalven Caleb de sone van Iephunne, ende Iosua de sone van Nun.",
       "phraseDiff": [
@@ -3386,9 +3416,9 @@
           "principe": "A1"
         },
         {
-          "old": "hetwelk",
-          "new": "dat",
-          "principe": "N6"
+          "old": "over hetwelk",
+          "new": "waarover",
+          "principe": null
         }
       ]
     },
@@ -3636,7 +3666,7 @@
       "number": 34,
       "textSV1888": "Naar het getal der dagen, in welke gij dat land verspied hebt, veertig dagen, elken dag voor elk jaar, zult gij uw ongerechtigheden dragen, veertig jaren, en gij zult gewaar worden Mijn afbreking.",
       "text1637": "Nae 'tgetal der dagen, in de welcke ghy dat lant verspiedt hebt, [n] veertich dagen, elcke dach voor elck jaer, sult ghy uwe [43] ongerechticheden dragen, [44] veertich jaer: ende sult gewaer worden, [45] mijne afbrekinge.",
-      "text2026": "Naar het getal van de dagen, in welke u dat land verspied hebt, veertig dagen, elke dag voor elk jaar, zult u uw ongerechtigheden dragen, veertig jaren, en u zult gewaar worden Mijn afbreking.",
+      "text2026": "Naar het getal van de dagen, in welke u dat land bespioneerd hebt, veertig dagen, elke dag voor elk jaar, zult u uw ongerechtigheden dragen, veertig jaren, en u zult gewaar worden Mijn afbreking.",
       "marginNotes": [
         {
           "marker": "n",
@@ -3769,7 +3799,7 @@
           "morph": "HNcfsc/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Naar het getal van de dagen, in welke u dat land verspied hebt,<sup class=\"note-marker\" data-note=\"n\">n</sup> veertig dagen, elke dag voor elk jaar, zult u uw<sup class=\"note-marker\" data-note=\"43\">43</sup> ongerechtigheden dragen,<sup class=\"note-marker\" data-note=\"44\">44</sup> veertig jaren, en u zult gewaar worden<sup class=\"note-marker\" data-note=\"45\">45</sup> Mijn afbreking.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Naar het getal van de dagen, in welke u dat land bespioneerd hebt,<sup class=\"note-marker\" data-note=\"n\">n</sup> veertig dagen, elke dag voor elk jaar, zult u uw<sup class=\"note-marker\" data-note=\"43\">43</sup> ongerechtigheden dragen,<sup class=\"note-marker\" data-note=\"44\">44</sup> veertig jaren, en u zult gewaar worden<sup class=\"note-marker\" data-note=\"45\">45</sup> Mijn afbreking.</i></span>",
       "textSV1888_html": "Naar het getal der dagen, in welke gij dat land verspied hebt,<sup class=\"note-marker\" data-note=\"n\">n</sup> veertig dagen, elken dag voor elk jaar, zult gij uw<sup class=\"note-marker\" data-note=\"43\">43</sup> ongerechtigheden dragen,<sup class=\"note-marker\" data-note=\"44\">44</sup> veertig jaren, en gij zult gewaar worden<sup class=\"note-marker\" data-note=\"45\">45</sup> Mijn afbreking.",
       "text1637_html": "Nae 'tgetal der dagen, in de welcke ghy dat lant verspiedt hebt, <sup class=\"note-marker\" data-note=\"n\">n</sup> veertich dagen, elcke dach voor elck jaer, sult ghy uwe <sup class=\"note-marker\" data-note=\"43\">43</sup> ongerechticheden dragen, <sup class=\"note-marker\" data-note=\"44\">44</sup> veertich jaer: ende sult gewaer worden, <sup class=\"note-marker\" data-note=\"45\">45</sup> mijne afbrekinge.",
       "phraseDiff": [
@@ -3782,6 +3812,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "verspied",
+          "new": "bespioneerd",
+          "principe": null
         },
         {
           "old": "elken",

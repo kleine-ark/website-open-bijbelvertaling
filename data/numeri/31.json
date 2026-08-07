@@ -1994,7 +1994,7 @@
       "number": 20,
       "textSV1888": "Ook zult gij alle kleding, en alle gereedschap van vellen, en alle geiten haren werk, en gereedschap van hout, ontzondigen.",
       "text1637": "Oock sult ghy alle kleedinge, ende alle gereetschap van vellen, ende alle geyten [hayren] werck, ende alle gereetschap van hout, [23] ontsondigen.",
-      "text2026": "Ook zult u alle kleding, en alle gereedschap van vellen, en alle geiten haar werk, en gereedschap van hout, ontzondigen.",
+      "text2026": "Ook zult u alle kleding, en alle gereedschap van vellen, en alle werk van geitenhaar, en gereedschap van hout, ontzondigen.",
       "marginNotes": [
         {
           "marker": "23",
@@ -2066,7 +2066,7 @@
           "morph": "HVti2mp"
         }
       ],
-      "text2026_html": "Ook zult u alle kleding, en alle gereedschap van vellen, en alle geiten haar werk, en gereedschap van hout,<sup class=\"note-marker\" data-note=\"23\">23</sup> ontzondigen.",
+      "text2026_html": "Ook zult u alle kleding, en alle gereedschap van vellen, en alle werk van geitenhaar, en gereedschap van hout,<sup class=\"note-marker\" data-note=\"23\">23</sup> ontzondigen.",
       "textSV1888_html": "Ook zult gij alle kleding, en alle gereedschap van vellen, en alle geiten haren werk, en gereedschap van hout,<sup class=\"note-marker\" data-note=\"23\">23</sup> ontzondigen.",
       "text1637_html": "Oock sult ghy alle kleedinge, ende alle gereetschap van vellen, ende alle geyten [hayren] werck, ende alle gereetschap van hout, <sup class=\"note-marker\" data-note=\"23\">23</sup> ontsondigen.",
       "phraseDiff": [
@@ -2076,8 +2076,8 @@
           "principe": "A1"
         },
         {
-          "old": "haren",
-          "new": "haar",
+          "old": "geiten haren werk,",
+          "new": "werk van geitenhaar,",
           "principe": null
         }
       ]
@@ -3280,7 +3280,7 @@
       "number": 32,
       "textSV1888": "De buit nu, het overschot van den roof, dat het krijgsvolk geroofd had, was zeshonderd vijf en zeventig duizend schapen;",
       "text1637": "De buyt nu, [38] het overschot des roofs, dat het [39] krijchsvolck gerooft hadde, was; ses hondert-duysent, ende tseventich duysent, ende vijf duysent [40] schapen:",
-      "text2026": "De buit nu, het overschot van de roof, dat de soldaten geroofd had, was zeshonderd vijf en zeventig duizend schapen;",
+      "text2026": "De buit nu, het overschot van de roof, dat de soldaten geroofd hadden, was zeshonderd vijf en zeventig duizend schapen;",
       "marginNotes": [
         {
           "marker": "38",
@@ -3386,7 +3386,7 @@
           "morph": "HAcbpa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>De buit nu,<sup class=\"note-marker\" data-note=\"38\">38</sup> het overschot van de roof, dat de<sup class=\"note-marker\" data-note=\"39\">39</sup> soldaten geroofd had, was zeshonderd vijf en zeventig duizend<sup class=\"note-marker\" data-note=\"40\">40</sup> schapen;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>De buit nu,<sup class=\"note-marker\" data-note=\"38\">38</sup> het overschot van de roof, dat de<sup class=\"note-marker\" data-note=\"39\">39</sup> soldaten geroofd hadden, was zeshonderd vijf en zeventig duizend<sup class=\"note-marker\" data-note=\"40\">40</sup> schapen;</i></span>",
       "textSV1888_html": "De buit nu,<sup class=\"note-marker\" data-note=\"38\">38</sup> het overschot van den roof, dat het<sup class=\"note-marker\" data-note=\"39\">39</sup> krijgsvolk geroofd had, was zeshonderd vijf en zeventig duizend<sup class=\"note-marker\" data-note=\"40\">40</sup> schapen;",
       "text1637_html": "De buyt nu, <sup class=\"note-marker\" data-note=\"38\">38</sup> het overschot des roofs, dat het <sup class=\"note-marker\" data-note=\"39\">39</sup> krijchsvolck gerooft hadde, was; ses hondert-duysent, ende tseventich duysent, ende vijf duysent <sup class=\"note-marker\" data-note=\"40\">40</sup> schapen:",
       "phraseDiff": [
@@ -3399,6 +3399,11 @@
           "old": "het krijgsvolk",
           "new": "de soldaten",
           "principe": "V356"
+        },
+        {
+          "old": "had,",
+          "new": "hadden,",
+          "principe": null
         }
       ]
     },
@@ -3480,7 +3485,7 @@
       "number": 35,
       "textSV1888": "En der mensen zielen, uit de vrouwen, die geen bijligging des mans bekend hadden, alle zielen waren twee en dertig duizend.",
       "text1637": "Ende der menschen zielen, uyt de wijven, die geene byligginge des mans bekent en hadden, alle zielen waren twee en dertich duysent.",
-      "text2026": "En van de mensen zielen, uit de vrouwen, die geen bijligging van de man bekend hadden, alle zielen waren twee en dertig duizend.",
+      "text2026": "En de zielen van de mensen, uit de vrouwen, die geen bijligging van de man bekend hadden, alle zielen waren twee en dertig duizend.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3554,13 +3559,13 @@
           "morph": "HAcbsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En van de mensen zielen, uit de vrouwen, die geen bijligging van de man bekend hadden, alle zielen waren twee en dertig duizend.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En de zielen van de mensen, uit de vrouwen, die geen bijligging van de man bekend hadden, alle zielen waren twee en dertig duizend.</i></span>",
       "text1637_html": "Ende der menschen zielen, uyt de wijven, die geene byligginge des mans bekent en hadden, alle zielen waren twee en dertich duysent.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der mensen zielen,",
+          "new": "de zielen van de mensen,",
+          "principe": null
         },
         {
           "old": "des mans",
@@ -3879,7 +3884,7 @@
       "number": 40,
       "textSV1888": "En der mensen zielen waren zestien duizend, en hun schatting voor den HEERE twee en dertig zielen.",
       "text1637": "Ende der menschen zielen waren sestien duysent: ende hare schattinge voor den HEERE twee en dertich zielen.",
-      "text2026": "En van de mensen zielen waren zestien duizend, en hun schatting voor JAHWEH twee en dertig zielen.",
+      "text2026": "En de zielen van de mensen waren zestien duizend, en hun schatting voor JAHWEH twee en dertig zielen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3933,13 +3938,18 @@
           "morph": "HNcbsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En van de mensen zielen waren zestien duizend, en hun schatting voor JAHWEH twee en dertig zielen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En de zielen van de mensen waren zestien duizend, en hun schatting voor JAHWEH twee en dertig zielen.</i></span>",
       "text1637_html": "Ende der menschen zielen waren sestien duysent: ende hare schattinge voor den HEERE twee en dertich zielen.",
       "phraseDiff": [
         {
           "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "new": "de zielen van de",
+          "principe": null
+        },
+        {
+          "old": "zielen",
+          "new": "",
+          "principe": null
         },
         {
           "old": "den HEERE",
@@ -4279,13 +4289,20 @@
         }
       ],
       "text2026_html": "<span class=\"god-speaks\"><i>En de ezels dertig duizend en vijfhonderd;</i></span>",
-      "text1637_html": "Ende de eselen dertich duysent, ende vijf hondert:"
+      "text1637_html": "Ende de eselen dertich duysent, ende vijf hondert:",
+      "phraseDiff": [
+        {
+          "old": "ezelen",
+          "new": "ezels",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 46,
       "textSV1888": "En der mensen zielen zestien duizend;)",
       "text1637": "Ende der menschen zielen sestien duysent.)",
-      "text2026": "En van de mensen zielen zestien duizend;)",
+      "text2026": "En de zielen van de mensen zestien duizend;)",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4314,13 +4331,18 @@
           "morph": "HAcbsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En van de mensen zielen zestien duizend;)</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En de zielen van de mensen zestien duizend;)</i></span>",
       "text1637_html": "Ende der menschen zielen sestien duysent.)",
       "phraseDiff": [
         {
           "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "new": "de zielen van de",
+          "principe": null
+        },
+        {
+          "old": "zielen",
+          "new": "",
+          "principe": null
         }
       ]
     },
@@ -4702,7 +4724,7 @@
       "number": 50,
       "textSV1888": "Daarom hebben wij een offerande des HEEREN gebracht, een ieder wat hij gekregen heeft, een gouden vat, een keten, of een armring, een vingerring, een oorring, of een afhangenden gordel, om voor onze zielen verzoening te doen voor het aangezicht des HEEREN.",
       "text1637": "Daerom hebben wy eene offerhande des HEEREN gebracht, een yeder dat hy [47] gekregen heeft, een gouden [48] vat, een [49] keten, ofte een armrinck, een vinger-rinck, een oor-rinck, ofte [50] een afhangenden gordel, om voor onse zielen [51] versoeninge te doen, voor het aengesicht des HEEREN.",
-      "text2026": "Daarom hebben wij een offergave van JAHWEH gebracht, een ieder wat hij gekregen heeft, een gouden voorwerp, een keten, of een armring, een vingerring, een oorring, of een afhangenden gordel, om voor onze zielen verzoening te doen voor het aangezicht van JAHWEH.",
+      "text2026": "Daarom hebben wij een offergave van JAHWEH gebracht, een ieder wat hij gekregen heeft, een gouden voorwerp, een keten, of een armring, een vingerring, een oorring, of een afhangende gordel, om voor onze zielen verzoening te doen voor het aangezicht van JAHWEH.",
       "marginNotes": [
         {
           "marker": "47",
@@ -4837,7 +4859,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Daarom hebben wij een offergave van JAHWEH gebracht, een ieder wat hij<sup class=\"note-marker\" data-note=\"47\">47</sup> gekregen heeft, een gouden<sup class=\"note-marker\" data-note=\"48\">48</sup> voorwerp, een<sup class=\"note-marker\" data-note=\"49\">49</sup> keten, of een armring, een vingerring, een oorring, of<sup class=\"note-marker\" data-note=\"50\">50</sup> een afhangenden gordel, om voor onze zielen<sup class=\"note-marker\" data-note=\"51\">51</sup> verzoening te doen voor het aangezicht van JAHWEH.",
+      "text2026_html": "Daarom hebben wij een offergave van JAHWEH gebracht, een ieder wat hij<sup class=\"note-marker\" data-note=\"47\">47</sup> gekregen heeft, een gouden<sup class=\"note-marker\" data-note=\"48\">48</sup> voorwerp, een<sup class=\"note-marker\" data-note=\"49\">49</sup> keten, of een armring, een vingerring, een oorring, of<sup class=\"note-marker\" data-note=\"50\">50</sup> een afhangende gordel, om voor onze zielen<sup class=\"note-marker\" data-note=\"51\">51</sup> verzoening te doen voor het aangezicht van JAHWEH.",
       "textSV1888_html": "Daarom hebben wij een offerande des HEEREN gebracht, een ieder wat hij<sup class=\"note-marker\" data-note=\"47\">47</sup> gekregen heeft, een gouden<sup class=\"note-marker\" data-note=\"48\">48</sup> vat, een<sup class=\"note-marker\" data-note=\"49\">49</sup> keten, of een armring, een vingerring, een oorring, of<sup class=\"note-marker\" data-note=\"50\">50</sup> een afhangenden gordel, om voor onze zielen<sup class=\"note-marker\" data-note=\"51\">51</sup> verzoening te doen voor het aangezicht des HEEREN.",
       "text1637_html": "Daerom hebben wy eene offerhande des HEEREN gebracht, een yeder dat hy <sup class=\"note-marker\" data-note=\"47\">47</sup> gekregen heeft, een gouden <sup class=\"note-marker\" data-note=\"48\">48</sup> vat, een <sup class=\"note-marker\" data-note=\"49\">49</sup> keten, ofte een armrinck, een vinger-rinck, een oor-rinck, ofte <sup class=\"note-marker\" data-note=\"50\">50</sup> een afhangenden gordel, om voor onse zielen <sup class=\"note-marker\" data-note=\"51\">51</sup> versoeninge te doen, voor het aengesicht des HEEREN.",
       "phraseDiff": [
@@ -4849,6 +4871,11 @@
         {
           "old": "vat,",
           "new": "voorwerp,",
+          "principe": null
+        },
+        {
+          "old": "afhangenden",
+          "new": "afhangende",
           "principe": null
         },
         {
