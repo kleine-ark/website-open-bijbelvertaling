@@ -34,18 +34,6 @@
         .sb-intro { max-width: 900px; margin: 0 auto; padding: 22px 20px 4px; }
         .sb-intro h1 { margin: 0 0 2px; }
         .sb-intro .subtitle { margin: 0 0 10px; }
-        .sb-lead {
-            font-size: 15px; color: var(--text-secondary, #555);
-            border-left: 3px solid var(--gold); padding: 8px 16px;
-            background: rgba(203,164,73,0.06); border-radius: 0 6px 6px 0; margin: 0 0 14px;
-        }
-        .sb-lead > summary {
-            cursor: pointer; list-style: none; font-weight: 600; color: var(--gold);
-            font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em;
-        }
-        .sb-lead > summary::-webkit-details-marker { display: none; }
-        .sb-lead[open] > summary { margin-bottom: 5px; }
-
         /* ── Werkbalk ─────────────────────────────────────────────── */
         .sb-bar {
             max-width: 1400px; margin: 0 auto; padding: 0 14px 8px;
@@ -250,7 +238,6 @@
 
         @media (max-width: 760px) {
             .sb-intro { padding: 14px 14px 2px; }
-            .sb-lead { font-size: 13.5px; padding: 7px 12px; margin-bottom: 10px; }
             /* Hoog genoeg om de volledig ingeklapte boom (18 regels) op een
                telefoon van 390 × 844 in één keer te tonen. */
             .sb-canvas { height: 74vh; min-height: 380px; }
@@ -275,20 +262,6 @@
     <div class="sb-intro">
         <h1>Stamboom van de Bijbel</h1>
         <p class="subtitle">Van Adam, door de geslachten heen, tot Jozef en Jezus.</p>
-        <details class="sb-lead" id="sb-uitleg" open>
-            <summary>Hoe leest u deze boom?</summary>
-            Deze boom is regel voor regel uit de tekst zelf afgeleid: uit de geslachtsregisters van Genesis 5, 10 en 11,
-            uit de zonen van Abraham en Jakob, uit het huis van Levi en het huis van David. <strong>Klik op een naam</strong>
-            en u ziet de verzen waar die persoon vandaan komt, met een verwijzing naar de tekst.
-            Jaartallen en leeftijden staan er (nog) niet bij — alleen namen en verwantschap.
-        </details>
-        <script>
-            /* Op een smal scherm dichtgeklapt, zodat de boom zelf meteen in beeld staat. */
-            (function () {
-                var d = document.getElementById('sb-uitleg');
-                if (d && window.innerWidth < 760) d.removeAttribute('open');
-            })();
-        </script>
     </div>
 
     <div class="sb-bar">
