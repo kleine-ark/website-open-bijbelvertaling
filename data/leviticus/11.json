@@ -172,7 +172,7 @@
       "number": 3,
       "textSV1888": "Al wat onder de beesten den klauw verdeelt, en de kloof der klauwen in tweeën klieft, en herkauwt, dat zult gij eten.",
       "text1637": "Al wat onder de beesten de [2] klaeuwe verdeelt, ende [3] de klove der klaeuwen in tween klieft, [ende] [4] herkauwt: dat [5] sult ghy eten.",
-      "text2026": "Al wat onder de beesten de klauw verdeelt, en de kloof van de klauwen in tweeën klieft, en herkauwt, dat zult u eten.",
+      "text2026": "Al wat onder de beesten gespleten hoeven heeft, en de kloof van de klauwen in tweeën klieft, en herkauwt, dat zult u eten.",
       "marginNotes": [
         {
           "marker": "2",
@@ -265,9 +265,9 @@
       "text1637_html": "Al wat onder de beesten de <sup class=\"note-marker\" data-note=\"2\">2</sup> klaeuwe verdeelt, ende <sup class=\"note-marker\" data-note=\"3\">3</sup> de klove der klaeuwen in tween klieft, [ende] <sup class=\"note-marker\" data-note=\"4\">4</sup> herkauwt: dat <sup class=\"note-marker\" data-note=\"5\">5</sup> sult ghy eten.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den klauw verdeelt,",
+          "new": "gespleten hoeven heeft,",
+          "principe": null
         },
         {
           "old": "der",
@@ -721,7 +721,7 @@
       "number": 8,
       "textSV1888": "Van hun vlees zult gij niet eten, en hun dood aas niet aanroeren, zij zullen u onrein zijn.",
       "text1637": "Van haer vleesch en sult ghy niet eten, noch haer doode aes niet aenroeren: sy sullen u onreyn zijn.",
-      "text2026": "Van hun vlees zult u niet eten, en hun dood aas niet aanroeren, zij zullen u onrein zijn.",
+      "text2026": "Van hun vlees zult u niet eten, en hun kadaver niet aanroeren, zij zullen u onrein zijn.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -770,13 +770,18 @@
           "morph": "HR/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Van hun vlees zult u niet eten, en hun dood aas niet aanroeren, zij zullen u onrein zijn.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Van hun vlees zult u niet eten, en hun kadaver niet aanroeren, zij zullen u onrein zijn.</i></span>",
       "text1637_html": "Van haer vleesch en sult ghy niet eten, noch haer doode aes niet aenroeren: sy sullen u onreyn zijn.",
       "phraseDiff": [
         {
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
         }
       ]
     },
@@ -1030,7 +1035,7 @@
       "number": 11,
       "textSV1888": "Ja, een verfoeisel zullen zij u zijn; van hun vlees zult gij niet eten, en hun dood aas zult gij verfoeien.",
       "text1637": "Ia een verfoeysel sullense u zijn: van haer vleesch en sult ghy niet eten, ende haer doode aes sult ghy verfoeyen.",
-      "text2026": "Ja, een gruwel zullen zij u zijn; van hun vlees zult u niet eten, en hun dood aas zult u verafschuwen.",
+      "text2026": "Ja, een gruwel zullen zij u zijn; van hun vlees zult u niet eten, en hun kadaver zult u verafschuwen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1079,7 +1084,7 @@
           "morph": "HVpi2mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Ja, een gruwel zullen zij u zijn; van hun vlees zult u niet eten, en hun dood aas zult u verafschuwen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Ja, een gruwel zullen zij u zijn; van hun vlees zult u niet eten, en hun kadaver zult u verafschuwen.</i></span>",
       "text1637_html": "Ia een verfoeysel sullense u zijn: van haer vleesch en sult ghy niet eten, ende haer doode aes sult ghy verfoeyen.",
       "phraseDiff": [
         {
@@ -1091,6 +1096,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
         },
         {
           "old": "gij verfoeien.",
@@ -1347,7 +1357,7 @@
       "number": 15,
       "textSV1888": "Alle rave naar haar aard;",
       "text1637": "Alle Rave nae haeren aert,",
-      "text2026": "Alle rave naar haar aard;",
+      "text2026": "Alle raven naar haar aard;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1371,14 +1381,21 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Alle rave naar haar aard;</i></span>",
-      "text1637_html": "Alle Rave nae haeren aert,"
+      "text2026_html": "<span class=\"god-speaks\"><i>Alle raven naar haar aard;</i></span>",
+      "text1637_html": "Alle Rave nae haeren aert,",
+      "phraseDiff": [
+        {
+          "old": "rave",
+          "new": "raven",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 16,
       "textSV1888": "En de struis, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;",
       "text1637": "Ende de [17] Struys, ende de Nachtuyl, ende de Koeckoeck, ende de Sperwer nae sijnen aert,",
-      "text2026": "En de struis, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;",
+      "text2026": "En de struisvogel, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;",
       "marginNotes": [
         {
           "marker": "17",
@@ -1440,15 +1457,22 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En de<sup class=\"note-marker\" data-note=\"17\">17</sup> struis, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En de<sup class=\"note-marker\" data-note=\"17\">17</sup> struisvogel, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;</i></span>",
       "textSV1888_html": "En de<sup class=\"note-marker\" data-note=\"17\">17</sup> struis, en de nachtuil, en de koekoek, en de sperwer naar zijn aard;",
-      "text1637_html": "Ende de <sup class=\"note-marker\" data-note=\"17\">17</sup> Struys, ende de Nachtuyl, ende de Koeckoeck, ende de Sperwer nae sijnen aert,"
+      "text1637_html": "Ende de <sup class=\"note-marker\" data-note=\"17\">17</sup> Struys, ende de Nachtuyl, ende de Koeckoeck, ende de Sperwer nae sijnen aert,",
+      "phraseDiff": [
+        {
+          "old": "struis,",
+          "new": "struisvogel,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 17,
       "textSV1888": "En de steenuil, en het duikertje, en de schuifuit,",
       "text1637": "Ende den Steen-uyl, ende het Duyckerken, ende de [18] Schuyfuyt,",
-      "text2026": "En de steenuil, en het duikertje, en de schuifuit,",
+      "text2026": "En de steenuil, en het visarend, en de ransuil,",
       "marginNotes": [
         {
           "marker": "18",
@@ -1490,9 +1514,21 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En de steenuil, en het duikertje, en de<sup class=\"note-marker\" data-note=\"18\">18</sup> schuifuit,</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En de steenuil, en het visarend, en de<sup class=\"note-marker\" data-note=\"18\">18</sup> ransuil,</i></span>",
       "textSV1888_html": "En de steenuil, en het duikertje, en de<sup class=\"note-marker\" data-note=\"18\">18</sup> schuifuit,",
-      "text1637_html": "Ende den Steen-uyl, ende het Duyckerken, ende de <sup class=\"note-marker\" data-note=\"18\">18</sup> Schuyfuyt,"
+      "text1637_html": "Ende den Steen-uyl, ende het Duyckerken, ende de <sup class=\"note-marker\" data-note=\"18\">18</sup> Schuyfuyt,",
+      "phraseDiff": [
+        {
+          "old": "duikertje,",
+          "new": "visarend,",
+          "principe": null
+        },
+        {
+          "old": "schuifuit,",
+          "new": "ransuil,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 18,
@@ -1539,7 +1575,7 @@
       "number": 19,
       "textSV1888": "En de ooievaar, de reiger naar zijn aard, en de hop, en de vledermuis.",
       "text1637": "Ende den [19] Oyvaer, de Reyger nae sijnen aert, ende de Hoppe, ende de Vledermuys.",
-      "text2026": "En de ooievaar, de reiger naar zijn aard, en de hop, en de vledermuis.",
+      "text2026": "En de ooievaar, de reiger naar zijn aard, en de hop, en de vleermuis.",
       "marginNotes": [
         {
           "marker": "19",
@@ -1591,9 +1627,16 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En de<sup class=\"note-marker\" data-note=\"19\">19</sup> ooievaar, de reiger naar zijn aard, en de hop, en de vledermuis.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En de<sup class=\"note-marker\" data-note=\"19\">19</sup> ooievaar, de reiger naar zijn aard, en de hop, en de vleermuis.</i></span>",
       "textSV1888_html": "En de<sup class=\"note-marker\" data-note=\"19\">19</sup> ooievaar, de reiger naar zijn aard, en de hop, en de vledermuis.",
-      "text1637_html": "Ende den <sup class=\"note-marker\" data-note=\"19\">19</sup> Oyvaer, de Reyger nae sijnen aert, ende de Hoppe, ende de Vledermuys."
+      "text1637_html": "Ende den <sup class=\"note-marker\" data-note=\"19\">19</sup> Oyvaer, de Reyger nae sijnen aert, ende de Hoppe, ende de Vledermuys.",
+      "phraseDiff": [
+        {
+          "old": "vledermuis.",
+          "new": "vleermuis.",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 20,
@@ -1662,7 +1705,7 @@
       "number": 21,
       "textSV1888": "Dit nochtans zult gij eten van al het kruipend gevogelte, dat op vier voeten gaat, hetwelk boven aan zijn voeten schenkelen heeft, om daarmede op de aarde te springen;",
       "text1637": "Dit nochtans sult ghy eten van al het kruypende gevogelte, dat op vier [voeten] gaet, [20] 't welck boven aen sijne voeten schenckelen heeft, om daer mede op d' aerde te springen.",
-      "text2026": "Dit toch zult u eten van al het kruipend gevogelte, dat op vier voeten gaat, dat boven aan zijn voeten schenkelen heeft, om daarmede op de aarde te springen;",
+      "text2026": "Dit toch zult u eten van al het kruipend gevogelte, dat op vier voeten gaat, dat boven aan zijn voeten poten heeft, om daarmede op de aarde te springen;",
       "marginNotes": [
         {
           "marker": "20",
@@ -1769,7 +1812,7 @@
           "morph": "HTd/Ncbsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Dit toch zult u eten van al het kruipend gevogelte, dat op vier voeten<sup class=\"note-marker\" data-note=\"20\">20</sup> gaat, dat boven aan zijn voeten schenkelen heeft, om daarmede op de aarde te springen;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Dit toch zult u eten van al het kruipend gevogelte, dat op vier voeten<sup class=\"note-marker\" data-note=\"20\">20</sup> gaat, dat boven aan zijn voeten poten heeft, om daarmede op de aarde te springen;</i></span>",
       "textSV1888_html": "Dit nochtans zult gij eten van al het kruipend gevogelte, dat op vier voeten<sup class=\"note-marker\" data-note=\"20\">20</sup> gaat, hetwelk boven aan zijn voeten schenkelen heeft, om daarmede op de aarde te springen;",
       "text1637_html": "Dit nochtans sult ghy eten van al het kruypende gevogelte, dat op vier [voeten] gaet, <sup class=\"note-marker\" data-note=\"20\">20</sup> 't welck boven aen sijne voeten schenckelen heeft, om daer mede op d' aerde te springen.",
       "phraseDiff": [
@@ -1787,6 +1830,11 @@
           "old": "hetwelk",
           "new": "dat",
           "principe": "N6"
+        },
+        {
+          "old": "schenkelen",
+          "new": "poten",
+          "principe": null
         }
       ]
     },
@@ -1996,7 +2044,7 @@
       "number": 24,
       "textSV1888": "En aan deze zult gij verontreinigd worden; zo wie hun dood aas zal aangeroerd hebben, zal onrein zijn tot aan den avond.",
       "text1637": "Ende [23] aen dese sult ghy [24] verontreynigt worden: so wie haer doodt aes sal aengeroert hebben, [25] sal onreyn zijn tot aen den avont.",
-      "text2026": "En aan deze zult u verontreinigd worden; zo wie hun dood aas zal aangeroerd hebben, zal onrein zijn tot aan de avond.",
+      "text2026": "En aan deze zult u verontreinigd worden; zo wie hun kadaver zal aangeroerd hebben, zal onrein zijn tot aan de avond.",
       "marginNotes": [
         {
           "marker": "23",
@@ -2062,7 +2110,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En<sup class=\"note-marker\" data-note=\"23\">23</sup> aan deze zult u<sup class=\"note-marker\" data-note=\"24\">24</sup> verontreinigd worden; zo wie hun dood aas zal aangeroerd hebben,<sup class=\"note-marker\" data-note=\"25\">25</sup> zal onrein zijn tot aan de avond.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En<sup class=\"note-marker\" data-note=\"23\">23</sup> aan deze zult u<sup class=\"note-marker\" data-note=\"24\">24</sup> verontreinigd worden; zo wie hun kadaver zal aangeroerd hebben,<sup class=\"note-marker\" data-note=\"25\">25</sup> zal onrein zijn tot aan de avond.</i></span>",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"23\">23</sup> aan deze zult gij<sup class=\"note-marker\" data-note=\"24\">24</sup> verontreinigd worden; zo wie hun dood aas zal aangeroerd hebben,<sup class=\"note-marker\" data-note=\"25\">25</sup> zal onrein zijn tot aan den avond.",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"23\">23</sup> aen dese sult ghy <sup class=\"note-marker\" data-note=\"24\">24</sup> verontreynigt worden: so wie haer doodt aes sal aengeroert hebben, <sup class=\"note-marker\" data-note=\"25\">25</sup> sal onreyn zijn tot aen den avont.",
       "phraseDiff": [
@@ -2070,6 +2118,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
         },
         {
           "old": "den",
@@ -2082,7 +2135,7 @@
       "number": 25,
       "textSV1888": "Zo wie van hun dood aas gedragen zal hebben, zal zijn klederen wassen, en onrein zijn tot aan den avond.",
       "text1637": "So wie van haer doodt aes gedragen sal hebben, sal sijne kleederen wasschen, ende onreyn zijn tot aen den avont.",
-      "text2026": "Zo wie van hun dood aas gedragen zal hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond.",
+      "text2026": "Zo wie van hun kadaver gedragen zal hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2126,9 +2179,14 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zo wie van hun dood aas gedragen zal hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zo wie van hun kadaver gedragen zal hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond.</i></span>",
       "text1637_html": "So wie van haer doodt aes gedragen sal hebben, sal sijne kleederen wasschen, ende onreyn zijn tot aen den avont.",
       "phraseDiff": [
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
+        },
         {
           "old": "klederen",
           "new": "kleren",
@@ -2145,7 +2203,7 @@
       "number": 26,
       "textSV1888": "Alle beest, dat den klauw verdeelt, doch de klove niet in tweeën klieft, en niet herkauwt, zal u onrein zijn; zo wie hetzelve aangeroerd zal hebben, zal onrein zijn.",
       "text1637": "[26] Alle beeste, [27] die de klauwe verdeelt, doch de klove niet in tween en klieft, noch niet en herkauwt, sullen u onreyn zijn: so wie de selve aengeroert sal hebben, sal onreyn zijn.",
-      "text2026": "Alle beest, dat de klauw verdeelt, maar de klove niet in tweeën klieft, en niet herkauwt, zal u onrein zijn; zo wie het aangeroerd zal hebben, zal onrein zijn.",
+      "text2026": "Alle beest, dat gespleten hoeven heeft, maar de klove niet in tweeën klieft, en niet herkauwt, zal u onrein zijn; zo wie het aangeroerd zal hebben, zal onrein zijn.",
       "marginNotes": [
         {
           "marker": "26",
@@ -2259,19 +2317,14 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"26\">26</sup><span class=\"god-speaks\"><i> Alle beest,<sup class=\"note-marker\" data-note=\"27\">27</sup> dat de klauw verdeelt, maar de klove niet in tweeën klieft, en niet herkauwt, zal u onrein zijn; zo wie het aangeroerd zal hebben, zal onrein zijn.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"26\">26</sup><span class=\"god-speaks\"><i> Alle beest,<sup class=\"note-marker\" data-note=\"27\">27</sup> dat gespleten hoeven heeft, maar de klove niet in tweeën klieft, en niet herkauwt, zal u onrein zijn; zo wie het aangeroerd zal hebben, zal onrein zijn.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"26\">26</sup> Alle beest,<sup class=\"note-marker\" data-note=\"27\">27</sup> dat den klauw verdeelt, doch de klove niet in tweeën klieft, en niet herkauwt, zal u onrein zijn; zo wie hetzelve aangeroerd zal hebben, zal onrein zijn.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"26\">26</sup> Alle beeste, <sup class=\"note-marker\" data-note=\"27\">27</sup> die de klauwe verdeelt, doch de klove niet in tween en klieft, noch niet en herkauwt, sullen u onreyn zijn: so wie de selve aengeroert sal hebben, sal onreyn zijn.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
-        },
-        {
-          "old": "doch",
-          "new": "maar",
-          "principe": "V1"
+          "old": "den klauw verdeelt, doch",
+          "new": "gespleten hoeven heeft, maar",
+          "principe": null
         },
         {
           "old": "hetzelve",
@@ -2284,7 +2337,7 @@
       "number": 27,
       "textSV1888": "En al wat op zijn poten gaat onder alle gedierte, op vier voeten gaande, die zullen u onrein zijn; al wie hun dood aas aangeroerd zal hebben, zal onrein zijn tot aan den avond.",
       "text1637": "Ende al wat op sijne pooten gaet onder alle gedierte, op vier [voeten] gaende, die sullen u onreyn zijn: al die haer doodt aes aengeroert sal hebben, sal onreyn zijn, tot aen den avont.",
-      "text2026": "En al wat op zijn poten gaat onder alle gedierte, op vier voeten gaande, die zullen u onrein zijn; al wie hun dood aas aangeroerd zal hebben, zal onrein zijn tot aan de avond.",
+      "text2026": "En al wat op zijn poten gaat onder alle gedierte, op vier voeten gaande, die zullen u onrein zijn; al wie hun kadaver aangeroerd zal hebben, zal onrein zijn tot aan de avond.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2378,9 +2431,14 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En al wat op zijn poten gaat onder alle gedierte, op vier voeten gaande, die zullen u onrein zijn; al wie hun dood aas aangeroerd zal hebben, zal onrein zijn tot aan de avond.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En al wat op zijn poten gaat onder alle gedierte, op vier voeten gaande, die zullen u onrein zijn; al wie hun kadaver aangeroerd zal hebben, zal onrein zijn tot aan de avond.</i></span>",
       "text1637_html": "Ende al wat op sijne pooten gaet onder alle gedierte, op vier [voeten] gaende, die sullen u onreyn zijn: al die haer doodt aes aengeroert sal hebben, sal onreyn zijn, tot aen den avont.",
       "phraseDiff": [
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
+        },
         {
           "old": "den",
           "new": "de",
@@ -2392,7 +2450,7 @@
       "number": 28,
       "textSV1888": "Ook die hun dood aas zal gedragen hebben, zal zijn klederen wassen, en onrein zijn tot aan den avond; zij zullen u onrein zijn.",
       "text1637": "Oock die haer doodt aes sal gedragen hebben, sal sijne kleederen wasschen, ende onreyn zijn tot aen den avont: sy sullen u onreyn zijn.",
-      "text2026": "Ook die hun dood aas zal gedragen hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond; zij zullen u onrein zijn.",
+      "text2026": "Ook die hun kadaver zal gedragen hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond; zij zullen u onrein zijn.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2451,9 +2509,14 @@
           "morph": "HR/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Ook die hun dood aas zal gedragen hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond; zij zullen u onrein zijn.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Ook die hun kadaver zal gedragen hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond; zij zullen u onrein zijn.</i></span>",
       "text1637_html": "Oock die haer doodt aes sal gedragen hebben, sal sijne kleederen wasschen, ende onreyn zijn tot aen den avont: sy sullen u onreyn zijn.",
       "phraseDiff": [
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
+        },
         {
           "old": "klederen",
           "new": "kleren",
@@ -3088,7 +3151,7 @@
       "number": 35,
       "textSV1888": "En waarop iets van hun dood aas zal vallen, zal onrein zijn; de oven en de aarden pan zal verbroken worden; zij zijn onrein, daarom zullen zij u onrein zijn.",
       "text1637": "Ende waer op yet van haer doodt aes sal vallen, sal onreyn zijn, de oven ende de aerden panne sal verbroken worden, sy zijn onreyn: daerom sullen sy u onreyn zijn.",
-      "text2026": "En waarop iets van hun dood aas zal vallen, zal onrein zijn; de oven en de aarden pan zal verbroken worden; zij zijn onrein, daarom zullen zij u onrein zijn.",
+      "text2026": "En waarop iets van hun kadaver zal vallen, zal onrein zijn; de oven en de aarden pan zal verbroken worden; zij zijn onrein, daarom zullen zij u onrein zijn.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3162,14 +3225,21 @@
           "morph": "HR/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En waarop iets van hun dood aas zal vallen, zal onrein zijn; de oven en de aarden pan zal verbroken worden; zij zijn onrein, daarom zullen zij u onrein zijn.</i></span>",
-      "text1637_html": "Ende waer op yet van haer doodt aes sal vallen, sal onreyn zijn, de oven ende de aerden panne sal verbroken worden, sy zijn onreyn: daerom sullen sy u onreyn zijn."
+      "text2026_html": "<span class=\"god-speaks\"><i>En waarop iets van hun kadaver zal vallen, zal onrein zijn; de oven en de aarden pan zal verbroken worden; zij zijn onrein, daarom zullen zij u onrein zijn.</i></span>",
+      "text1637_html": "Ende waer op yet van haer doodt aes sal vallen, sal onreyn zijn, de oven ende de aerden panne sal verbroken worden, sy zijn onreyn: daerom sullen sy u onreyn zijn.",
+      "phraseDiff": [
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 36,
       "textSV1888": "Doch een fontein, of put van vergadering der wateren, zal rein zijn; maar wie hun dood aas zal aangeroerd hebben, zal onrein zijn.",
       "text1637": "Doch [34] eene fonteyne, ofte put van vergaderinge der wateren [35] sal reyn zijn: maer [36] wie haer doodt aes sal aengeroert hebben, sal onreyn zijn.",
-      "text2026": "Maar een fontein, of put van vergadering van de wateren, zal rein zijn; maar wie hun dood aas zal aangeroerd hebben, zal onrein zijn.",
+      "text2026": "Maar een fontein, of put van vergadering van de wateren, zal rein zijn; maar wie hun kadaver zal aangeroerd hebben, zal onrein zijn.",
       "marginNotes": [
         {
           "marker": "34",
@@ -3245,7 +3315,7 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar<sup class=\"note-marker\" data-note=\"34\">34</sup> een fontein, of put van vergadering van de wateren,<sup class=\"note-marker\" data-note=\"35\">35</sup> zal rein zijn; maar<sup class=\"note-marker\" data-note=\"36\">36</sup> wie hun dood aas zal aangeroerd hebben, zal onrein zijn.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar<sup class=\"note-marker\" data-note=\"34\">34</sup> een fontein, of put van vergadering van de wateren,<sup class=\"note-marker\" data-note=\"35\">35</sup> zal rein zijn; maar<sup class=\"note-marker\" data-note=\"36\">36</sup> wie hun kadaver zal aangeroerd hebben, zal onrein zijn.</i></span>",
       "textSV1888_html": "Doch<sup class=\"note-marker\" data-note=\"34\">34</sup> een fontein, of put van vergadering der wateren,<sup class=\"note-marker\" data-note=\"35\">35</sup> zal rein zijn; maar<sup class=\"note-marker\" data-note=\"36\">36</sup> wie hun dood aas zal aangeroerd hebben, zal onrein zijn.",
       "text1637_html": "Doch <sup class=\"note-marker\" data-note=\"34\">34</sup> eene fonteyne, ofte put van vergaderinge der wateren <sup class=\"note-marker\" data-note=\"35\">35</sup> sal reyn zijn: maer <sup class=\"note-marker\" data-note=\"36\">36</sup> wie haer doodt aes sal aengeroert hebben, sal onreyn zijn.",
       "phraseDiff": [
@@ -3258,6 +3328,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
         }
       ]
     },
@@ -3265,7 +3340,7 @@
       "number": 37,
       "textSV1888": "En wanneer van hun dood aas zal gevallen zijn op enig zaaibaar zaad, dat gezaaid wordt, dat zal rein zijn.",
       "text1637": "Ende wanneer van haer doodt aes sal gevallen zijn op eenich [37] zaeyelick zaet, dat gezaeyt wort, dat sal reyn zijn.",
-      "text2026": "En wanneer van hun dood aas zal gevallen zijn op enig zaaibaar zaad, dat gezaaid wordt, dat zal rein zijn.",
+      "text2026": "En wanneer van hun kadaver zal gevallen zijn op enig zaaibaar zaad, dat gezaaid wordt, dat zal rein zijn.",
       "marginNotes": [
         {
           "marker": "37",
@@ -3332,15 +3407,22 @@
           "morph": "HPp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En wanneer van hun dood aas zal gevallen zijn op enig<sup class=\"note-marker\" data-note=\"37\">37</sup> zaaibaar zaad, dat gezaaid wordt, dat zal rein zijn.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En wanneer van hun kadaver zal gevallen zijn op enig<sup class=\"note-marker\" data-note=\"37\">37</sup> zaaibaar zaad, dat gezaaid wordt, dat zal rein zijn.</i></span>",
       "textSV1888_html": "En wanneer van hun dood aas zal gevallen zijn op enig<sup class=\"note-marker\" data-note=\"37\">37</sup> zaaibaar zaad, dat gezaaid wordt, dat zal rein zijn.",
-      "text1637_html": "Ende wanneer van haer doodt aes sal gevallen zijn op eenich <sup class=\"note-marker\" data-note=\"37\">37</sup> zaeyelick zaet, dat gezaeyt wort, dat sal reyn zijn."
+      "text1637_html": "Ende wanneer van haer doodt aes sal gevallen zijn op eenich <sup class=\"note-marker\" data-note=\"37\">37</sup> zaeyelick zaet, dat gezaeyt wort, dat sal reyn zijn.",
+      "phraseDiff": [
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 38,
       "textSV1888": "Maar als water op het zaad gedaan zal worden, en van hun dood aas daarop zal gevallen zijn, dat zal u onrein zijn.",
       "text1637": "Maer als water op het zaet gedaen sal werden, ende van haer doodt aes daer op sal gevallen zijn, dat sal u onreyn zijn.",
-      "text2026": "Maar als water op het zaad gedaan zal worden, en van hun dood aas daarop zal gevallen zijn, dat zal u onrein zijn.",
+      "text2026": "Maar als water op het zaad gedaan zal worden, en van hun kadaver daarop zal gevallen zijn, dat zal u onrein zijn.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3399,14 +3481,21 @@
           "morph": "HR/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar als water op het zaad gedaan zal worden, en van hun dood aas daarop zal gevallen zijn, dat zal u onrein zijn.</i></span>",
-      "text1637_html": "Maer als water op het zaet gedaen sal werden, ende van haer doodt aes daer op sal gevallen zijn, dat sal u onreyn zijn."
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar als water op het zaad gedaan zal worden, en van hun kadaver daarop zal gevallen zijn, dat zal u onrein zijn.</i></span>",
+      "text1637_html": "Maer als water op het zaet gedaen sal werden, ende van haer doodt aes daer op sal gevallen zijn, dat sal u onreyn zijn.",
+      "phraseDiff": [
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 39,
       "textSV1888": "En wanneer van de dieren, die u tot spijze zijn, iets zal gestorven zijn, wie deszelfs dood aas zal aangeroerd hebben, zal onrein zijn tot aan den avond.",
       "text1637": "Ende wanneer vande dieren, die u tot spijse zijn [yet] sal gestorven zijn, wie des selven doodt aes sal aengeroert hebben, sal onreyn zijn tot aen den avont.",
-      "text2026": "En wanneer van de dieren, die u tot voedsel zijn, iets zal gestorven zijn, wie daarvan dood aas zal aangeroerd hebben, zal onrein zijn tot aan de avond.",
+      "text2026": "En wanneer van de dieren, die u tot voedsel zijn, iets zal gestorven zijn, wie daarvan kadaver zal aangeroerd hebben, zal onrein zijn tot aan de avond.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3475,7 +3564,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En wanneer van de dieren, die u tot voedsel zijn, iets zal gestorven zijn, wie daarvan dood aas zal aangeroerd hebben, zal onrein zijn tot aan de avond.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En wanneer van de dieren, die u tot voedsel zijn, iets zal gestorven zijn, wie daarvan kadaver zal aangeroerd hebben, zal onrein zijn tot aan de avond.</i></span>",
       "text1637_html": "Ende wanneer vande dieren, die u tot spijse zijn [yet] sal gestorven zijn, wie des selven doodt aes sal aengeroert hebben, sal onreyn zijn tot aen den avont.",
       "phraseDiff": [
         {
@@ -3484,9 +3573,9 @@
           "principe": "V49"
         },
         {
-          "old": "deszelfs",
-          "new": "daarvan",
-          "principe": "V110"
+          "old": "deszelfs dood aas",
+          "new": "daarvan kadaver",
+          "principe": null
         },
         {
           "old": "den",
@@ -3499,7 +3588,7 @@
       "number": 40,
       "textSV1888": "Ook die van hun dood aas gegeten zal hebben, zal zijn klederen wassen, en onrein zijn tot aan den avond; en die hun dood aas zal gedragen hebben, zal zijn klederen wassen, en onrein zijn tot aan den avond.",
       "text1637": "Oock die van haer doodt aes [38] gegeten sal hebben, sal sijne kleederen wasschen, ende onreyn zijn tot aen den avont: ende die haer doodt aes sal gedragen hebben, sal sijne kleederen wasschen, ende onreyn zijn tot aen den avont.",
-      "text2026": "Ook die van hun dood aas gegeten zal hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond; en die hun dood aas zal gedragen hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond.",
+      "text2026": "Ook die van hun kadaver gegeten zal hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond; en die hun kadaver zal gedragen hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond.",
       "marginNotes": [
         {
           "marker": "38",
@@ -3586,10 +3675,15 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Ook die van hun dood aas<sup class=\"note-marker\" data-note=\"38\">38</sup> gegeten zal hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond; en die hun dood aas zal gedragen hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Ook die van hun kadaver<sup class=\"note-marker\" data-note=\"38\">38</sup> gegeten zal hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond; en die hun kadaver zal gedragen hebben, zal zijn kleren wassen, en onrein zijn tot aan de avond.</i></span>",
       "textSV1888_html": "Ook die van hun dood aas<sup class=\"note-marker\" data-note=\"38\">38</sup> gegeten zal hebben, zal zijn klederen wassen, en onrein zijn tot aan den avond; en die hun dood aas zal gedragen hebben, zal zijn klederen wassen, en onrein zijn tot aan den avond.",
       "text1637_html": "Oock die van haer doodt aes <sup class=\"note-marker\" data-note=\"38\">38</sup> gegeten sal hebben, sal sijne kleederen wasschen, ende onreyn zijn tot aen den avont: ende die haer doodt aes sal gedragen hebben, sal sijne kleederen wasschen, ende onreyn zijn tot aen den avont.",
       "phraseDiff": [
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
+        },
         {
           "old": "klederen",
           "new": "kleren",
@@ -3599,6 +3693,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "dood aas",
+          "new": "kadaver",
+          "principe": null
         },
         {
           "old": "klederen",

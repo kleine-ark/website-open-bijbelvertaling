@@ -2139,7 +2139,7 @@
       "number": 21,
       "textSV1888": "Het zal in een pan met olie gemaakt worden; geroost zult gij het brengen; en de gebakken stukken des spijsoffers zult gij offeren, tot een liefelijken reuk den HEERE.",
       "text1637": "'T sal in eene panne met olie gemaeckt worden; [35] geroostet sult ghy dat brengen: ende de [36] gebackene stucken des spijs-offers sult ghy offeren ten lieflicken reucke den HEERE.",
-      "text2026": "Het zal in een pan met olie gemaakt worden; geroosterd zult u het brengen; en de gebakken stukken van het voedseloffer zult u offeren, tot een liefelijke reuk JAHWEH.",
+      "text2026": "Het zal in een pan met olie gemaakt worden; geroosterd zult u het brengen; en de gebakken stukken van het voedseloffer zult u offeren, tot een liefelijke reuk voor JAHWEH.",
       "marginNotes": [
         {
           "marker": "35",
@@ -2223,7 +2223,7 @@
           "morph": "HRd/Ncmpa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Het zal in een pan met olie gemaakt worden;<sup class=\"note-marker\" data-note=\"35\">35</sup> geroosterd zult u het brengen; en de<sup class=\"note-marker\" data-note=\"36\">36</sup> gebakken stukken van het voedseloffer zult u offeren, tot een liefelijke reuk JAHWEH.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Het zal in een pan met olie gemaakt worden;<sup class=\"note-marker\" data-note=\"35\">35</sup> geroosterd zult u het brengen; en de<sup class=\"note-marker\" data-note=\"36\">36</sup> gebakken stukken van het voedseloffer zult u offeren, tot een liefelijke reuk voor JAHWEH.</i></span>",
       "textSV1888_html": "Het zal in een pan met olie gemaakt worden;<sup class=\"note-marker\" data-note=\"35\">35</sup> geroost zult gij het brengen; en de<sup class=\"note-marker\" data-note=\"36\">36</sup> gebakken stukken des spijsoffers zult gij offeren, tot een liefelijken reuk den HEERE.",
       "text1637_html": "'T sal in eene panne met olie gemaeckt worden; <sup class=\"note-marker\" data-note=\"35\">35</sup> geroostet sult ghy dat brengen: ende de <sup class=\"note-marker\" data-note=\"36\">36</sup> gebackene stucken des spijs-offers sult ghy offeren ten lieflicken reucke den HEERE.",
       "phraseDiff": [
@@ -2254,8 +2254,8 @@
         },
         {
           "old": "den HEERE.",
-          "new": "JAHWEH.",
-          "principe": "N1"
+          "new": "voor JAHWEH.",
+          "principe": null
         }
       ]
     },
@@ -2592,7 +2592,7 @@
       "number": 28,
       "textSV1888": "En het aarden vat, waarin het gezoden is, zal gebroken worden; maar zo het in een koperen vat gezoden is, zo zal het geschuurd en in water gespoeld worden.",
       "text1637": "Ende het aerden vat, daer in het gesoden is, sal gebroken worden: maer soo 't in een koperen vat gesoden is, so sal 't geschuert, ende in [48] water gespoelt worden.",
-      "text2026": "En het aarden pot, waarin het gezoden is, zal gebroken worden; maar zo het in een koperen pot gezoden is, zo zal het geschuurd en in water gespoeld worden.",
+      "text2026": "En het aarden pot, waarin het gekookt is, zal gebroken worden; maar zo het in een koperen pot gekookt is, zo zal het geschuurd en in water gespoeld worden.",
       "marginNotes": [
         {
           "marker": "48",
@@ -2602,7 +2602,7 @@
           "text2026": "water gespoeld worden: Te weten, in het heilige water. Zie Ex. 40:7 , 40:30 , en onder, Lev. 8:11 . Exodus 40:7 : En u zult het wasvat zetten tussen de tent van de samenkomst, en tussen het altaar; en u zult water daar in doen. Exodus 40:30 : Hij zette ook het wasvat tussen de tent van de samenkomst, en tussen het altaar; en hij deed water daarin om te groeien. Leviticus 8:11 : En hij sprengde daarvan op het altaar zevenmaal; en hij zalfde het altaar, en al zijn gereedschap, en ook het wasvat en zijn voet, om die te heiligen."
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En het aarden pot, waarin het gezoden is, zal gebroken worden; maar zo het in een koperen pot gezoden is, zo zal het geschuurd en in<sup class=\"note-marker\" data-note=\"48\">48</sup> water gespoeld worden.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En het aarden pot, waarin het gekookt is, zal gebroken worden; maar zo het in een koperen pot gekookt is, zo zal het geschuurd en in<sup class=\"note-marker\" data-note=\"48\">48</sup> water gespoeld worden.</i></span>",
       "textSV1888_html": "En het aarden vat, waarin het gezoden is, zal gebroken worden; maar zo het in een koperen vat gezoden is, zo zal het geschuurd en in<sup class=\"note-marker\" data-note=\"48\">48</sup> water gespoeld worden.",
       "text1637_html": "Ende het aerden vat, daer in het gesoden is, sal gebroken worden: maer soo 't in een koperen vat gesoden is, so sal 't geschuert, ende in <sup class=\"note-marker\" data-note=\"48\">48</sup> water gespoelt worden.",
       "phraseDiff": [
@@ -2612,8 +2612,13 @@
           "principe": null
         },
         {
-          "old": "vat",
-          "new": "pot",
+          "old": "gezoden",
+          "new": "gekookt",
+          "principe": null
+        },
+        {
+          "old": "vat gezoden",
+          "new": "pot gekookt",
           "principe": null
         }
       ]

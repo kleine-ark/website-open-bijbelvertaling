@@ -787,7 +787,7 @@
       "number": 12,
       "textSV1888": "Want zij hebben kwaad tegen U aangelegd; zij hebben een schandelijke daad bedacht, doch zullen niets vermogen.",
       "text1637": "Want sy hebben quaet tegen [15] u aengeleyt; sy hebben een schendelicke daet bedacht, [doch] sullen niets vermogen.",
-      "text2026": "Want zij hebben kwaad tegen U aangelegd; zij hebben een schandelijke daad bedacht, maar zullen niets vermogen.",
+      "text2026": "Want zij hebben kwaad tegen U aangelegd; zij hebben een schandelijke daad bedacht, maar zullen niets uitrichten.",
       "marginNotes": [
         {
           "marker": "15",
@@ -839,7 +839,7 @@
           "morph": "HVqi3mp"
         }
       ],
-      "text2026_html": "Want zij hebben kwaad tegen<sup class=\"note-marker\" data-note=\"15\">15</sup> U aangelegd; zij hebben een schandelijke daad bedacht, maar zullen niets vermogen.",
+      "text2026_html": "Want zij hebben kwaad tegen<sup class=\"note-marker\" data-note=\"15\">15</sup> U aangelegd; zij hebben een schandelijke daad bedacht, maar zullen niets uitrichten.",
       "textSV1888_html": "Want zij hebben kwaad tegen<sup class=\"note-marker\" data-note=\"15\">15</sup> U aangelegd; zij hebben een schandelijke daad bedacht, doch zullen niets vermogen.",
       "text1637_html": "Want sy hebben quaet tegen <sup class=\"note-marker\" data-note=\"15\">15</sup> u aengeleyt; sy hebben een schendelicke daet bedacht, [doch] sullen niets vermogen.",
       "phraseDiff": [
@@ -847,6 +847,11 @@
           "old": "doch",
           "new": "maar",
           "principe": "V1"
+        },
+        {
+          "old": "vermogen.",
+          "new": "uitrichten.",
+          "principe": "V1089"
         }
       ]
     },

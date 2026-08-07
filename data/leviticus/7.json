@@ -976,7 +976,7 @@
       "number": 12,
       "textSV1888": "Indien hij dat tot een lofoffer offert, zo zal hij, nevens het lofoffer, ongezuurde koeken met olie gemengd, en ongezuurde vladen met olie bestreken, offeren; en zullen die koeken met olie gemengd van geroost meelbloem zijn.",
       "text1637": "Indien hy dat tot [a] een [14] lof-offer offert, so sal hy neffens het lof[offer] ongesuerde koecken met olie gemengt, ende ongesuerde vladen met olie bestreken, offeren: ende sullen die koecken met olie gemengt, van [15] gerooste meel-bloeme zijn.",
-      "text2026": "Als hij dat tot een lofoffer offert, zo zal hij, naast het lofoffer, ongezuurde koeken met olie gemengd, en ongezuurde vladen met olie bestreken, offeren; en zullen die koeken met olie gemengd van geroosterde meelbloem zijn.",
+      "text2026": "Als hij dat tot een lofoffer offert, zo zal hij, naast het lofoffer, ongezuurde koeken met olie gemengd, en ongezuurde platte koeken met olie bestreken, offeren; en zullen die koeken met olie gemengd van geroosterde meelbloem zijn.",
       "marginNotes": [
         {
           "marker": "a",
@@ -1107,7 +1107,7 @@
           "morph": "HRd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Als hij dat tot<sup class=\"note-marker\" data-note=\"a\">a</sup> een<sup class=\"note-marker\" data-note=\"14\">14</sup> lofoffer offert, zo zal hij, naast het lofoffer, ongezuurde koeken met olie gemengd, en ongezuurde vladen met olie bestreken, offeren; en zullen die koeken met olie gemengd van<sup class=\"note-marker\" data-note=\"15\">15</sup> geroosterde meelbloem zijn.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Als hij dat tot<sup class=\"note-marker\" data-note=\"a\">a</sup> een<sup class=\"note-marker\" data-note=\"14\">14</sup> lofoffer offert, zo zal hij, naast het lofoffer, ongezuurde koeken met olie gemengd, en ongezuurde platte koeken met olie bestreken, offeren; en zullen die koeken met olie gemengd van<sup class=\"note-marker\" data-note=\"15\">15</sup> geroosterde meelbloem zijn.</i></span>",
       "textSV1888_html": "Indien hij dat tot<sup class=\"note-marker\" data-note=\"a\">a</sup> een<sup class=\"note-marker\" data-note=\"14\">14</sup> lofoffer offert, zo zal hij, nevens het lofoffer, ongezuurde koeken met olie gemengd, en ongezuurde vladen met olie bestreken, offeren; en zullen die koeken met olie gemengd van<sup class=\"note-marker\" data-note=\"15\">15</sup> geroost meelbloem zijn.",
       "text1637_html": "Indien hy dat tot <sup class=\"note-marker\" data-note=\"a\">a</sup> een <sup class=\"note-marker\" data-note=\"14\">14</sup> lof-offer offert, so sal hy neffens het lof[offer] ongesuerde koecken met olie gemengt, ende ongesuerde vladen met olie bestreken, offeren: ende sullen die koecken met olie gemengt, van <sup class=\"note-marker\" data-note=\"15\">15</sup> gerooste meel-bloeme zijn.",
       "phraseDiff": [
@@ -1120,6 +1120,11 @@
           "old": "nevens",
           "new": "naast",
           "principe": "V19"
+        },
+        {
+          "old": "vladen",
+          "new": "platte koeken",
+          "principe": null
         },
         {
           "old": "geroost",
@@ -2321,7 +2326,7 @@
       "number": 24,
       "textSV1888": "Maar het vet van een dood aas, en het vet van het verscheurde, mag tot alle werk gebezigd worden; doch gij zult het ganselijk niet eten.",
       "text1637": "Maer het vet van een doot aes, ende het vet van het verscheurde, mach tot [35] allen wercke [36] gebesicht worden: [37] doch en sult ghy dat gantschelick niet eten.",
-      "text2026": "Maar het vet van een dood aas, en het vet van het verscheurde, mag tot alle werk gebezigd worden; maar u zult het geheel niet eten.",
+      "text2026": "Maar het vet van een kadaver, en het vet van het verscheurde, mag tot alle werk gebezigd worden; maar u zult het geheel niet eten.",
       "marginNotes": [
         {
           "marker": "35",
@@ -2397,10 +2402,15 @@
           "morph": "HVqi2mp/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar het vet van een dood aas, en het vet van het verscheurde, mag tot<sup class=\"note-marker\" data-note=\"35\">35</sup> alle werk<sup class=\"note-marker\" data-note=\"36\">36</sup> gebezigd worden;<sup class=\"note-marker\" data-note=\"37\">37</sup> maar u zult het geheel niet eten.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar het vet van een kadaver, en het vet van het verscheurde, mag tot<sup class=\"note-marker\" data-note=\"35\">35</sup> alle werk<sup class=\"note-marker\" data-note=\"36\">36</sup> gebezigd worden;<sup class=\"note-marker\" data-note=\"37\">37</sup> maar u zult het geheel niet eten.</i></span>",
       "textSV1888_html": "Maar het vet van een dood aas, en het vet van het verscheurde, mag tot<sup class=\"note-marker\" data-note=\"35\">35</sup> alle werk<sup class=\"note-marker\" data-note=\"36\">36</sup> gebezigd worden;<sup class=\"note-marker\" data-note=\"37\">37</sup> doch gij zult het ganselijk niet eten.",
       "text1637_html": "Maer het vet van een doot aes, ende het vet van het verscheurde, mach tot <sup class=\"note-marker\" data-note=\"35\">35</sup> allen wercke <sup class=\"note-marker\" data-note=\"36\">36</sup> gebesicht worden: <sup class=\"note-marker\" data-note=\"37\">37</sup> doch en sult ghy dat gantschelick niet eten.",
       "phraseDiff": [
+        {
+          "old": "dood aas,",
+          "new": "kadaver,",
+          "principe": null
+        },
         {
           "old": "doch gij",
           "new": "maar u",
@@ -3652,7 +3662,7 @@
       "number": 38,
       "textSV1888": "Die de HEERE Mozes op den berg Sinaï geboden heeft, ten dage als Hij den kinderen Israëls gebood, dat zij hun offeranden den HEERE, in de woestijn van Sinaï, zouden offeren.",
       "text1637": "Die de HEERE Mose op den berch Sinai geboden heeft; ten dage als hy den kinderen Israëls geboot, datse hare offerhanden den HEERE inde woestijne Sinai souden offeren.",
-      "text2026": "Die JAHWEH Mozes op de berg Sinaï geboden heeft, op de dag als Hij de Israëlieten gebood, dat zij hun offergaven JAHWEH, in de woestijn van Sinaï, zouden offeren.",
+      "text2026": "Die JAHWEH Mozes op de berg Sinaï geboden heeft, op de dag als Hij de Israëlieten gebood, dat zij hun offergaven aan JAHWEH, in de woestijn van Sinaï, zouden offeren.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3746,7 +3756,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Die JAHWEH Mozes op de berg Sinaï geboden heeft, op de dag als Hij de Israëlieten gebood, dat zij hun offergaven JAHWEH, in de woestijn van Sinaï, zouden offeren.",
+      "text2026_html": "Die JAHWEH Mozes op de berg Sinaï geboden heeft, op de dag als Hij de Israëlieten gebood, dat zij hun offergaven aan JAHWEH, in de woestijn van Sinaï, zouden offeren.",
       "text1637_html": "Die de HEERE Mose op den berch Sinai geboden heeft; ten dage als hy den kinderen Israëls geboot, datse hare offerhanden den HEERE inde woestijne Sinai souden offeren.",
       "phraseDiff": [
         {
@@ -3771,8 +3781,8 @@
         },
         {
           "old": "offeranden den HEERE,",
-          "new": "offergaven JAHWEH,",
-          "principe": "N1"
+          "new": "offergaven aan JAHWEH,",
+          "principe": null
         }
       ]
     }
