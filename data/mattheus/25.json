@@ -1642,7 +1642,7 @@
       "number": 16,
       "textSV1888": "Die nu de vijf talenten ontvangen had, ging heen, en handelde daarmede, en won andere vijf talenten.",
       "text1637": "Die nu de vijf talenten ontfangen hadde ginck henen ende handelde daer mede, ende [10] wan andere vijf talenten.",
-      "text2026": "Die nu de vijf talenten ontvangen had, ging heen, en handelde daarmede, en won andere vijf talenten.",
+      "text2026": "Die nu de vijf talenten ontvangen had, ging heen, en handelde daarmee, en won andere vijf talenten.",
       "marginNotes": [
         {
           "marker": "10",
@@ -1732,9 +1732,16 @@
           "gloss": "〔five"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Die nu de vijf talenten ontvangen had, ging heen, en handelde daarmede, en<sup class=\"note-marker\" data-note=\"10\">10</sup> won andere vijf talenten.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Die nu de vijf talenten ontvangen had, ging heen, en handelde daarmee, en<sup class=\"note-marker\" data-note=\"10\">10</sup> won andere vijf talenten.</i></span>",
       "textSV1888_html": "Die nu de vijf talenten ontvangen had, ging heen, en handelde daarmede, en<sup class=\"note-marker\" data-note=\"10\">10</sup> won andere vijf talenten.",
-      "text1637_html": "Die nu de vijf talenten ontfangen hadde ginck henen ende handelde daer mede, ende <sup class=\"note-marker\" data-note=\"10\">10</sup> wan andere vijf talenten."
+      "text1637_html": "Die nu de vijf talenten ontfangen hadde ginck henen ende handelde daer mede, ende <sup class=\"note-marker\" data-note=\"10\">10</sup> wan andere vijf talenten.",
+      "phraseDiff": [
+        {
+          "old": "daarmede,",
+          "new": "daarmee,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 17,
@@ -3356,7 +3363,7 @@
       "number": 28,
       "textSV1888": "Neemt dan van hem het talent weg, en geeft het dengene, die de tien talenten heeft.",
       "text1637": "Neemt dan van hem het talent wech, ende geeft het den genen, die de tien talenten heeft.",
-      "text2026": "Neemt dan van hem het talent weg, en geeft het dengene, die de tien talenten heeft.",
+      "text2026": "Neemt dan van hem het talent weg, en geeft het degene, die de tien talenten heeft.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3438,14 +3445,21 @@
           "gloss": "〔talent"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Neemt dan van hem het talent weg, en geeft het dengene, die de tien talenten heeft.</i></span>",
-      "text1637_html": "Neemt dan van hem het talent wech, ende geeft het den genen, die de tien talenten heeft."
+      "text2026_html": "<span class=\"god-speaks\"><i>Neemt dan van hem het talent weg, en geeft het degene, die de tien talenten heeft.</i></span>",
+      "text1637_html": "Neemt dan van hem het talent wech, ende geeft het den genen, die de tien talenten heeft.",
+      "phraseDiff": [
+        {
+          "old": "dengene,",
+          "new": "degene,",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 29,
       "textSV1888": "Want een iegelijk die heeft, dien zal gegeven worden, en hij zal overvloedig hebben; maar van dengene, die niet heeft, van dien zal genomen worden, ook dat hij heeft.",
       "text1637": "[e] Want [20] een yegelick [21] die heeft [dien] sal gegeven worden, ende hy sal overvloedich hebben: maer van de gene [22] die niet en heeft, van dien sal genomen worden oock dat hy heeft.",
-      "text2026": "Want een ieder die heeft, die zal gegeven worden, en hij zal overvloedig hebben; maar van dengene, die niet heeft, van die zal genomen worden, ook dat hij heeft.",
+      "text2026": "Want een ieder die heeft, die zal gegeven worden, en hij zal overvloedig hebben; maar van degene, die niet heeft, van die zal genomen worden, ook dat hij heeft.",
       "marginNotes": [
         {
           "marker": "c",
@@ -3580,7 +3594,7 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Want een<sup class=\"note-marker\" data-note=\"20\">20</sup> ieder<sup class=\"note-marker\" data-note=\"21\">21</sup> die heeft, die zal gegeven worden, en hij zal overvloedig hebben; maar van dengene,<sup class=\"note-marker\" data-note=\"22\">22</sup> die niet heeft, van die zal genomen worden, ook dat hij heeft.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Want een<sup class=\"note-marker\" data-note=\"20\">20</sup> ieder<sup class=\"note-marker\" data-note=\"21\">21</sup> die heeft, die zal gegeven worden, en hij zal overvloedig hebben; maar van degene,<sup class=\"note-marker\" data-note=\"22\">22</sup> die niet heeft, van die zal genomen worden, ook dat hij heeft.</i></span>",
       "textSV1888_html": "Want<sup class=\"note-marker\" data-note=\"20\">20</sup> een iegelijk<sup class=\"note-marker\" data-note=\"21\">21</sup> die heeft, dien zal gegeven worden, en hij zal overvloedig hebben; maar van dengene,<sup class=\"note-marker\" data-note=\"22\">22</sup> die niet heeft, van dien zal genomen worden, ook dat hij heeft.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Want <sup class=\"note-marker\" data-note=\"20\">20</sup> een yegelick <sup class=\"note-marker\" data-note=\"21\">21</sup> die heeft [<i>dien</i>] sal gegeven worden, ende hy sal overvloedich hebben: maer van de gene <sup class=\"note-marker\" data-note=\"22\">22</sup> die niet en heeft, van dien sal genomen worden oock dat hy heeft.",
       "phraseDiff": [
@@ -3593,6 +3607,11 @@
           "old": "dien",
           "new": "die",
           "principe": "N4"
+        },
+        {
+          "old": "dengene,",
+          "new": "degene,",
+          "principe": null
         },
         {
           "old": "dien",
