@@ -58,7 +58,10 @@
 
     function schaalTekst(z) {
         huidigeSchaal = z;
-        var cellen = document.querySelectorAll('.verse-cell');
+        /* Ook de perikoopkopjes: die staan búiten de verscellen (het zijn
+           broertjes van de versrijen) en bleven op de iPad dus op de
+           basisgrootte staan terwijl de tekst eromheen meegroeide. */
+        var cellen = document.querySelectorAll('.verse-cell, .pericope-heading');
         var i, c;
 
         /* Eerst alles vrijmaken en pas daarna meten. In één doorgang meten en
