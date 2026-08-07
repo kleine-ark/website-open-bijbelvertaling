@@ -20,13 +20,25 @@
         return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
-    /* Vindplaats "12:6" -> koppeling naar de leestekst. target=_top zodat de
-       lezer uit de wiki-iframe stapt in plaats van de Bijbel ín het kader te
-       openen (site-in-site). */
+    /* Vindplaats -> koppeling naar de leestekst. Twee vormen:
+       "12:6"           — boek-brede pagina; het boek komt uit d.bron
+       "exodus 15:1"    — Bijbelbrede pagina (liederen, gebeden); het boek-id
+                          staat vóór de spatie, zoals de mapnamen in data/
+       target=_top zodat de lezer uit de wiki-iframe stapt in plaats van de
+       Bijbel ín het kader te openen (site-in-site). */
     function versLink(boek, ref) {
-        var hoofdstuk = ref.split(':')[0];
-        return '<a class="ns-vers" target="_top" href="index.html#' + boek.toLowerCase() +
-               '/' + hoofdstuk + '">' + esc(ref) + '</a>';
+        var doelBoek = boek.toLowerCase();
+        var rest = ref;
+        var i = ref.indexOf(' ');
+        if (i > 0) {
+            doelBoek = ref.slice(0, i).toLowerCase();
+            rest = ref.slice(i + 1);
+        }
+        var toon = (i > 0)
+            ? ref.charAt(0).toUpperCase() + ref.slice(1)   // "Exodus 15:1"
+            : ref;
+        return '<a class="ns-vers" target="_top" href="index.html#' + doelBoek +
+               '/' + rest.split(':')[0] + '">' + esc(toon) + '</a>';
     }
 
     function itemParam() {
