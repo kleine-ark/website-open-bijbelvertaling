@@ -116,35 +116,23 @@
             Documentatie-menu
         </button>
         <nav class="wiki-sidebar">
-            <!-- Groepen per onderwerp, elk in te klappen. Het aantal pagina's
-                 groeit, dus een platte lijst wordt op den duur onoverzichtelijk. -->
-            <div class="wiki-groep" data-groep="verkennen">
-                <button type="button" class="wiki-groep-kop" aria-expanded="true">Verkennen</button>
+            <!-- Groepen per onderwerp, elk in te klappen. De volgorde is die
+                 van de lezer: eerst de wereld van de Bijbel (naslag bij het
+                 lezen), daarna downloaden, en onderaan het vertaaltechnische
+                 werk - wie daarvoor komt, weet het te vinden. -->
+            <div class="wiki-groep" data-groep="wereld">
+                <button type="button" class="wiki-groep-kop" aria-expanded="true">De wereld van de Bijbel</button>
                 <div class="wiki-groep-inhoud">
+                    <a href="#overzicht" data-page="wiki-overzicht.html" class="active">Overzicht</a>
                     <a href="#kaart" data-page="kaart.html">Kaart</a>
                     <a href="#stamboom" data-page="stamboom.html">Stamboom</a>
-                </div>
-            </div>
-
-            <div class="wiki-groep" data-groep="vertaling">
-                <button type="button" class="wiki-groep-kop" aria-expanded="true">De vertaling</button>
-                <div class="wiki-groep-inhoud">
-                    <a href="#uitgangspunten" data-page="uitgangspunten.html" class="active">Uitgangspunten &amp; techniek</a>
-                    <a href="#principes" data-page="principes.html">Wijzigingsprincipes</a>
-                    <a href="#statistieken" data-page="statistieken.html">Statistieken</a>
-                    <a href="#changelog" data-page="changelog.html">Changelog</a>
-                </div>
-            </div>
-
-            <div class="wiki-groep" data-groep="naslag">
-                <button type="button" class="wiki-groep-kop" aria-expanded="true">Naslag</button>
-                <div class="wiki-groep-inhoud">
-                    <a href="#begrippen" data-page="begrippen.html">Begrippen</a>
+                    <a href="#geografie" data-page="geografie.html">Geografische aanduidingen</a>
                     <a href="#maateenheden" data-page="maateenheden.html">Maten, gewichten &amp; munten</a>
                     <a href="#tijdsaanduidingen" data-page="tijdsaanduidingen.html">Tijdsaanduidingen</a>
-                    <a href="#grondteksten" data-page="grondteksten.html">Grondteksten</a>
-                    <a href="#handschriften" data-page="handschriften.html">Handschriften</a>
-                    <a href="#geografie" data-page="geografie.html">Geografische aanduidingen</a>
+                    <a href="#materialen" data-page="materialen.html">Materialen</a>
+                    <a href="#dieren" data-page="dieren.html">Dieren</a>
+                    <a href="#bomen-planten" data-page="bomen-planten.html">Bomen &amp; planten</a>
+                    <a href="#begrippen" data-page="begrippen.html">Begrippen</a>
                 </div>
             </div>
 
@@ -154,9 +142,21 @@
                     <a href="#downloads" data-page="downloads.html">Downloads</a>
                 </div>
             </div>
+
+            <div class="wiki-groep" data-groep="vertaling">
+                <button type="button" class="wiki-groep-kop" aria-expanded="true">De vertaling</button>
+                <div class="wiki-groep-inhoud">
+                    <a href="#uitgangspunten" data-page="uitgangspunten.html">Uitgangspunten &amp; techniek</a>
+                    <a href="#principes" data-page="principes.html">Wijzigingsprincipes</a>
+                    <a href="#statistieken" data-page="statistieken.html">Statistieken</a>
+                    <a href="#changelog" data-page="changelog.html">Changelog</a>
+                    <a href="#grondteksten" data-page="grondteksten.html">Grondteksten</a>
+                    <a href="#handschriften" data-page="handschriften.html">Handschriften</a>
+                </div>
+            </div>
         </nav>
 
-        <iframe id="wiki-frame" class="wiki-iframe" src="uitgangspunten.html"></iframe>
+        <iframe id="wiki-frame" class="wiki-iframe" src="wiki-overzicht.html"></iframe>
     </div>
 
     <script>
