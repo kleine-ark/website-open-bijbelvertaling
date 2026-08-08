@@ -1145,8 +1145,18 @@ const App = {
                 const letter = after.nodeValue[0];
                 after.splitText(1);                         // rest = na de letter
                 const span = document.createElement('span');
-                span.className = 'dropcap';
                 span.textContent = letter;
+                if (/^[A-Za-z]$/.test(letter)) {
+                    const assetLetter = letter.toUpperCase();
+                    span.className = 'dropcap dropcap--penkrul';
+                    span.style.setProperty('--dropcap-image-light',
+                        `url("/images/initialen/vrije-penkrul/${assetLetter}.svg")`);
+                    span.style.setProperty('--dropcap-image-dark',
+                        `url("/images/initialen/vrije-penkrul/donker/${assetLetter}.svg")`);
+                } else {
+                    // Voor letters buiten A–Z blijft de leesbare typografische initiaal staan.
+                    span.className = 'dropcap dropcap--fallback';
+                }
                 after.replaceWith(span);                     // vervang de losse letter-node
                 break;
             }

@@ -56,12 +56,22 @@ body {
     border-bottom: 1px solid var(--border);
     gap: 16px;
 }
-.site-title {
-    font-family: var(--font-ui);
-    font-size: 18px; font-weight: 600;
-    color: var(--accent);
-    white-space: nowrap;
+.reader-brand {
+    display: flex;
+    align-items: center;
+    width: 190px;
 }
+.reader-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 42px;
+}
+.reader-logo--light { display: none; }
+body.dark .reader-logo--dark,
+:root[data-theme="donker"] .reader-logo--dark { display: none; }
+body.dark .reader-logo--light,
+:root[data-theme="donker"] .reader-logo--light { display: block; }
 .header-center { flex: 1; max-width: 400px; }
 .search-bar { position: relative; }
 .search-bar input {
@@ -322,7 +332,8 @@ body.dark .icon-sun { display: none; }
 @media (max-width: 768px) {
     html { font-size: 16px; }
     #reader-header { padding: 8px 12px; }
-    .site-title { font-size: 15px; }
+    .reader-brand { width: 140px; }
+    .reader-logo { max-height: 32px; }
     .header-center { display: none; } /* search moves to mobile tab */
     #book-nav { padding: 6px 12px; top: 43px; }
     #reader-content { padding: 20px 16px 120px; }
