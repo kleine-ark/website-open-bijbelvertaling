@@ -976,6 +976,8 @@ body {
     display: flex;
     flex-direction: column;
 }
+#sidebar-right:not([open]) { display: none; }
+#sidebar-right[open] { display: flex; }
 #sidebar-right.collapsed {
     width: 0; min-width: 0; padding: 0; overflow: hidden;
 }
