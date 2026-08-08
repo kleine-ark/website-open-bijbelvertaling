@@ -1,237 +1,103 @@
-"""Bouw de subtiele cinemagraphs voor de wiki-tegels Liederen en Gebeden."""
+"""Bouw subtiele cinemagraphs van de handgetekende wiki-illustraties."""
 
 from __future__ import annotations
 
 import math
 from pathlib import Path
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = ROOT / "images" / "wiki"
+SOURCE_DIR = OUTPUT_DIR / "bronnen"
 WIDTH = 600
 HEIGHT = 300
-SCALE = 3
 FRAME_COUNT = 50
 FRAME_DURATION_MS = 100
 
-NAVY = "#142e42"
-GOLD = "#cba449"
-TEAL = "#4a7c7a"
-PAPER = "#faf7ef"
+
+def source_image(name: str) -> Image.Image:
+    """Open de gegenereerde illustratie en lever het vaste tegelkader."""
+    with Image.open(SOURCE_DIR / f"{name}.webp") as source:
+        return source.convert("RGB").resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
 
 
-def point(x: float, y: float) -> tuple[int, int]:
-    return round(x * SCALE), round(y * SCALE)
+def draw_liederen(base: Image.Image, phase: float) -> Image.Image:
+    """Laat alleen een heel zachte lichttrilling over de liersnaren lopen."""
+    image = base.convert("RGBA")
+    glans = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(glans)
+
+    for index, x in enumerate((276, 283, 290, 297, 304, 311, 318, 325)):
+        golf = (math.sin(phase - index * 0.7) + 1) / 2
+        alpha = round(4 + 25 * golf)
+        draw.line((x, 74, x, 205), fill=(214, 176, 80, alpha), width=1)
+        if golf > 0.82:
+            y = round(90 + 96 * ((index + phase / (2 * math.pi)) % 8) / 8)
+            draw.ellipse((x - 2, y - 3, x + 2, y + 3), fill=(239, 211, 133, 16))
+
+    glans = glans.filter(ImageFilter.GaussianBlur(0.45))
+    return Image.alpha_composite(image, glans).convert("RGB")
 
 
-def width(value: float) -> int:
-    return max(1, round(value * SCALE))
-
-
-def cubic(
-    start: tuple[float, float],
-    control_a: tuple[float, float],
-    control_b: tuple[float, float],
-    end: tuple[float, float],
-    steps: int = 36,
-) -> list[tuple[int, int]]:
-    result = []
-    for index in range(steps + 1):
-        t = index / steps
-        u = 1 - t
-        x = (
-            u**3 * start[0]
-            + 3 * u**2 * t * control_a[0]
-            + 3 * u * t**2 * control_b[0]
-            + t**3 * end[0]
-        )
-        y = (
-            u**3 * start[1]
-            + 3 * u**2 * t * control_a[1]
-            + 3 * u * t**2 * control_b[1]
-            + t**3 * end[1]
-        )
-        result.append(point(x, y))
-    return result
-
-
-def background() -> Image.Image:
-    top = (250, 247, 239)
-    bottom = (239, 231, 212)
-    image = Image.new("RGB", (WIDTH * SCALE, HEIGHT * SCALE), top)
-    draw = ImageDraw.Draw(image)
-    for y in range(HEIGHT * SCALE):
-        ratio = y / (HEIGHT * SCALE - 1)
-        color = tuple(round(a + (b - a) * ratio) for a, b in zip(top, bottom))
-        draw.line((0, y, WIDTH * SCALE, y), fill=color)
-    return image
-
-
-def draw_rotated_ellipse(
-    image: Image.Image,
-    center: tuple[float, float],
-    radii: tuple[float, float],
-    angle: float,
-    color: str,
-) -> None:
-    rx, ry = radii
-    margin = 3
-    layer = Image.new(
-        "RGBA",
-        (width((rx + margin) * 2), width((ry + margin) * 2)),
-        (0, 0, 0, 0),
-    )
-    layer_draw = ImageDraw.Draw(layer)
-    layer_draw.ellipse(
-        (
-            width(margin),
-            width(margin),
-            width(margin + rx * 2),
-            width(margin + ry * 2),
-        ),
-        fill=color,
-    )
-    layer = layer.rotate(angle, resample=Image.Resampling.BICUBIC, expand=True)
-    target = point(center[0], center[1])
-    image.alpha_composite(
-        layer,
-        (target[0] - layer.width // 2, target[1] - layer.height // 2),
-    )
-
-
-def draw_liederen(phase: float) -> Image.Image:
-    image = background().convert("RGBA")
-    draw = ImageDraw.Draw(image)
-
-    bowl = cubic((248, 160), (248, 216), (352, 216), (352, 160))
-    bowl.extend([point(352, 148), point(248, 148)])
-    draw.polygon(bowl, fill=PAPER)
-    draw.line(bowl + [bowl[0]], fill=NAVY, width=width(5), joint="curve")
-
-    draw.line(
-        cubic((252, 150), (238, 118), (236, 94), (246, 72)),
-        fill=NAVY,
-        width=width(5),
-        joint="curve",
-    )
-    draw.line(
-        cubic((348, 150), (362, 118), (364, 94), (354, 72)),
-        fill=NAVY,
-        width=width(5),
-        joint="curve",
-    )
-    draw.line((point(243, 72), point(357, 72)), fill=GOLD, width=width(6))
-    draw.ellipse((point(237, 66), point(249, 78)), fill=GOLD)
-    draw.ellipse((point(351, 66), point(363, 78)), fill=GOLD)
-
-    string_ends = ((272, 196), (286, 201), (300, 203), (314, 201), (328, 196))
-    for index, (x, bottom_y) in enumerate(string_ends):
-        vibration = 1.15 * math.sin(phase + index * 0.62)
-        points = []
-        for step in range(25):
-            ratio = step / 24
-            y = 78 + (bottom_y - 78) * ratio
-            offset = vibration * math.sin(math.pi * ratio)
-            points.append(point(x + offset, y))
-        draw.line(points, fill=TEAL, width=width(3.5))
-
-    note_shift = 2.4 * math.sin(phase)
-    draw_rotated_ellipse(image, (428, 120 + note_shift), (9, 7), 20, NAVY)
-    draw.line(
-        (point(435, 119 + note_shift), point(435, 64 + note_shift)),
-        fill=NAVY,
-        width=width(4),
-    )
-    draw_rotated_ellipse(image, (465, 112 - note_shift * 0.65), (9, 7), 20, NAVY)
-    draw.line(
-        (point(472, 111 - note_shift * 0.65), point(472, 56 - note_shift * 0.65)),
-        fill=NAVY,
-        width=width(4),
-    )
-    draw.polygon(
-        (
-            point(435, 64 + note_shift),
-            point(472, 56 - note_shift * 0.65),
-            point(472, 70 - note_shift * 0.65),
-            point(435, 78 + note_shift),
-        ),
-        fill=NAVY,
-    )
-
-    return image.convert("RGB").resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
-
-
-def smoke_path(
-    phase: float,
+def smoke_line(
     x: float,
-    bottom_y: float,
-    top_y: float,
-    amplitude: float,
+    bottom: float,
+    top: float,
+    phase: float,
     offset: float,
-) -> list[tuple[int, int]]:
+    amplitude: float,
+) -> list[tuple[float, float]]:
     points = []
-    for step in range(49):
-        ratio = step / 48
-        y = bottom_y + (top_y - bottom_y) * ratio
-        wave = amplitude * math.sin(ratio * math.pi * 3.2 + phase + offset)
-        taper = 0.35 + ratio * 0.65
-        points.append(point(x + wave * taper, y))
+    for step in range(45):
+        ratio = step / 44
+        y = bottom + (top - bottom) * ratio
+        drift = amplitude * math.sin(ratio * math.pi * 2.7 + phase + offset)
+        points.append((x + drift * (0.35 + ratio * 0.65), y))
     return points
 
 
-def draw_gebeden(phase: float) -> Image.Image:
-    image = background().convert("RGBA")
+def draw_gebeden(base: Image.Image, phase: float) -> Image.Image:
+    """Laat de rook bijna onmerkbaar drijven en de kolen zacht ademen."""
+    image = base.convert("RGBA")
 
-    glow_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
-    glow = ImageDraw.Draw(glow_layer)
+    gloed = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    glow_draw = ImageDraw.Draw(gloed)
     pulse = (math.sin(phase) + 1) / 2
-    for x, y, radius in ((277, 193, 7), (300, 189, 8), (323, 193, 7)):
-        outer = radius + 8 + pulse * 2
-        glow.ellipse(
-            (point(x - outer, y - outer), point(x + outer, y + outer)),
-            fill=(203, 164, 73, round(16 + 15 * pulse)),
+    for x in (293, 302, 311):
+        radius = 4.5 + pulse
+        glow_draw.ellipse(
+            (x - radius, 170 - radius, x + radius, 170 + radius),
+            fill=(214, 157, 54, round(8 + 15 * pulse)),
         )
-    image = Image.alpha_composite(image, glow_layer)
-    draw = ImageDraw.Draw(image)
+    gloed = gloed.filter(ImageFilter.GaussianBlur(4.2))
+    image = Image.alpha_composite(image, gloed)
 
-    smoke_specs = (
-        (300, 172, 44, 16, 0.0, 5, 0.80),
-        (258, 176, 120, 9, 1.8, 5, 0.48),
-        (342, 176, 120, 9, 3.5, 5, 0.48),
+    rook = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    smoke_draw = ImageDraw.Draw(rook)
+    specs = (
+        (286, 164, 55, 0.0, 4.0, 17),
+        (304, 164, 45, 1.9, 3.4, 14),
+        (320, 163, 70, 3.7, 3.1, 12),
     )
-    for x, bottom_y, top_y, amplitude, offset, stroke, opacity in smoke_specs:
-        smoke_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
-        smoke_draw = ImageDraw.Draw(smoke_layer)
+    for x, bottom, top, offset, amplitude, alpha in specs:
         smoke_draw.line(
-            smoke_path(phase, x, bottom_y, top_y, amplitude, offset),
-            fill=(74, 124, 122, round(255 * opacity)),
-            width=width(stroke),
+            smoke_line(x, bottom, top, phase, offset, amplitude),
+            fill=(89, 117, 116, alpha),
+            width=2,
             joint="curve",
         )
-        image = Image.alpha_composite(image, smoke_layer)
-
-    draw = ImageDraw.Draw(image)
-    draw.ellipse((point(270, 186), point(284, 200)), fill=GOLD)
-    draw.ellipse((point(292, 181), point(308, 197)), fill=GOLD)
-    draw.ellipse((point(316, 186), point(330, 200)), fill=GOLD)
-
-    bowl = cubic((228, 196), (244, 226), (356, 226), (372, 196))
-    bowl.append(point(228, 196))
-    draw.polygon(bowl, fill=PAPER)
-    draw.line(bowl, fill=NAVY, width=width(5), joint="curve")
-    draw.line((point(300, 222), point(300, 238)), fill=NAVY, width=width(5))
-    draw.line((point(270, 252), point(330, 252)), fill=NAVY, width=width(5))
-    draw.line((point(206, 196), point(394, 196)), fill=NAVY, width=width(5))
-    draw.line((point(240, 252), point(254, 252)), fill=GOLD, width=width(5))
-    draw.line((point(346, 252), point(360, 252)), fill=GOLD, width=width(5))
-
-    return image.convert("RGB").resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
+    rook = rook.filter(ImageFilter.GaussianBlur(1.1))
+    return Image.alpha_composite(image, rook).convert("RGB")
 
 
 def save_animation(name: str, renderer) -> Path:
-    frames = [renderer(2 * math.pi * index / FRAME_COUNT) for index in range(FRAME_COUNT)]
+    base = source_image(name)
+    frames = [
+        renderer(base, 2 * math.pi * index / FRAME_COUNT)
+        for index in range(FRAME_COUNT)
+    ]
     output = OUTPUT_DIR / f"{name}.webp"
     frames[0].save(
         output,

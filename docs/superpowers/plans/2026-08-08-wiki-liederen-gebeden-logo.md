@@ -4,13 +4,13 @@
 
 **Goal:** Voeg subtiel bewegende, naadloos lussende WebP-logo's toe aan de wiki-tegels Liederen en Gebeden.
 
-**Architecture:** De bestaande SVG's blijven de ontwerpbron en het toegankelijke stilstaande alternatief. Een kleine bouwscript tekent dezelfde geometrie op hoge resolutie en verandert uitsluitend de bewegende elementen; `wiki-overzicht.html` kiest bewegend of stil via `<picture>` en `prefers-reduced-motion`.
+**Architecture:** Twee gegenereerde handgetekende illustraties vormen de ontwerpbron. Een kleine bouwscript voegt alleen lokale, periodieke licht- en rookeffecten toe; `wiki-overzicht.html` kiest bewegend of stil via `<picture>` en `prefers-reduced-motion`.
 
 **Tech Stack:** Python 3, Pillow, HTML `<picture>`, pytest.
 
 ## Global Constraints
 
-- Behoud de bestaande SVG-compositie, kleuren en afmetingen exact.
+- Sluit aan op het perkament, de fijne inktlijnen en de gedempte goud-/marineaccenten van de overige wiki-illustraties.
 - De lus duurt 4–6 seconden, is naadloos en bevat alleen subtiele beweging.
 - De SVG blijft de fallback voor verminderde beweging.
 - Raak het losse evangelisatietraktaat en andere niet-gerelateerde bestanden niet aan.
@@ -37,10 +37,10 @@
 - Create: `images/wiki/gebeden.webp`
 
 **Interfaces:**
-- Consumes: de vormen en kleuren uit `images/wiki/liederen.svg` en `images/wiki/gebeden.svg`
+- Consumes: `images/wiki/bronnen/liederen.webp` en `images/wiki/bronnen/gebeden.webp`
 - Produces: twee WebP's van 600 × 300, 50 frames, 100 ms per frame, oneindige loop
 
-- [x] **Step 1: Render 50 periodieke frames per logo waarvan de laatste fase vloeiend op de eerste aansluit.**
+- [x] **Step 1: Render 50 periodieke frames per illustratie waarvan de laatste fase vloeiend op de eerste aansluit.**
 - [x] **Step 2: Sla de frames op als verliesloze geanimeerde WebP met `loop=0`.**
 - [x] **Step 3: Controleer afmetingen, frameaantal, duur en loopmetadata via de WebP-container.**
 
