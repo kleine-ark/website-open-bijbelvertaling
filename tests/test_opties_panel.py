@@ -62,7 +62,8 @@ class OptionsPanelBrowserTests(unittest.TestCase):
     def open_reader(self, width=1280, height=900):
         page = self.browser.new_page(viewport={"width": width, "height": height})
         page.goto(f"{self.base_url}/index.html#genesis/1", wait_until="domcontentloaded")
-        page.locator("#sidebar-right-open").wait_for(state="visible", timeout=15_000)
+        opener = "#mobile-opties-btn" if width <= 768 else "#sidebar-right-open"
+        page.locator(opener).wait_for(state="visible", timeout=15_000)
         return page
 
     def test_opties_opent_modaal_zonder_de_leestekst_te_versmallen(self):
@@ -186,6 +187,90 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             page.locator("#sidebar-right-open").wait_for(state="visible", timeout=15_000)
             page.locator("#sidebar-right-open").click()
             self.assertEqual(page.locator("#options-zoom-value").inner_text(), "110%")
+        finally:
+            page.close()
+
+    def test_desktop_paneel_is_zwevend_en_ongeveer_520_px(self):
+        for width in (1440, 1000):
+            with self.subTest(width=width):
+                page = self.open_reader(width=width, height=900)
+                try:
+                    page.locator("#sidebar-right-open").click()
+                    page.wait_for_timeout(250)
+                    box = page.locator("#sidebar-right").bounding_box()
+                    self.assertGreaterEqual(box["width"], 500)
+                    self.assertLessEqual(box["width"], 540)
+                    self.assertAlmostEqual(box["x"] + box["width"], width - 16, delta=1)
+                finally:
+                    page.close()
+
+    def test_mobiel_paneel_gebruikt_de_beschikbare_breedte(self):
+        for width in (768, 545, 390):
+            with self.subTest(width=width):
+                page = self.open_reader(width=width, height=844)
+                try:
+                    page.locator("#mobile-opties-btn").click()
+                    page.locator("#sidebar-right").wait_for(state="visible", timeout=3_000)
+                    page.wait_for_timeout(250)
+                    box = page.locator("#sidebar-right").bounding_box()
+                    self.assertAlmostEqual(box["x"], 0, delta=1)
+                    self.assertAlmostEqual(box["width"], width, delta=1)
+                finally:
+                    page.close()
+
+    def test_lange_keuzerij_toont_de_actuele_waarde(self):
+        page = self.open_reader()
+        try:
+            page.locator("#sidebar-right-open").click()
+            current = page.locator('[data-option-summary="godsnaam"] .option-current')
+            self.assertEqual(current.count(), 1)
+            self.assertEqual(current.inner_text(), "JAHWEH / God JAHWEH")
+        finally:
+            page.close()
+
+    def test_desktop_opener_heeft_een_duidelijke_toegankelijke_naam(self):
+        page = self.open_reader()
+        try:
+            self.assertEqual(
+                page.locator("#sidebar-right-open").get_attribute("aria-label"),
+                "Leesvoorkeuren openen",
+            )
+        finally:
+            page.close()
+
+    def test_escape_sluit_en_herstelt_focus_naar_de_opener(self):
+        page = self.open_reader()
+        try:
+            opener = page.locator("#sidebar-right-open")
+            opener.click()
+            page.keyboard.press("Escape")
+            self.assertFalse(page.locator("#sidebar-right").evaluate("el => el.open"))
+            self.assertEqual(page.evaluate("document.activeElement.id"), "sidebar-right-open")
+        finally:
+            page.close()
+
+    def test_pijltjestoets_wisselt_tab_en_zichtbaar_paneel(self):
+        page = self.open_reader()
+        try:
+            page.locator("#sidebar-right-open").click()
+            page.locator("#options-tab-lezen").focus()
+            page.keyboard.press("ArrowRight")
+            self.assertEqual(
+                page.locator('[role="tab"][aria-selected="true"]').text_content().strip(),
+                "Vergelijken",
+            )
+            self.assertTrue(page.locator("#options-panel-vergelijken").is_visible())
+            self.assertFalse(page.locator("#options-panel-lezen").is_visible())
+        finally:
+            page.close()
+
+    def test_klik_op_verduisterde_achtergrond_sluit_het_paneel(self):
+        page = self.open_reader(width=1440, height=900)
+        try:
+            page.locator("#sidebar-right-open").click()
+            page.wait_for_timeout(250)
+            page.mouse.click(100, 450)
+            self.assertFalse(page.locator("#sidebar-right").evaluate("el => el.open"))
         finally:
             page.close()
 
