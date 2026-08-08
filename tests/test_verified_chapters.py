@@ -15,6 +15,7 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
     assert verified["genesis"] == "all"
     assert verified["exodus"] == "all"
     assert verified["leviticus"] == "all"
+    assert verified["prediker"] == "all"
     assert verified["ruth"] == "all"
 
     niet_menselijk_bevestigd = {
@@ -33,7 +34,6 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
         "esther",
         "job",
         "spreuken",
-        "prediker",
         "hooglied",
         "jesaja",
         "klaagliederen",
