@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-from scripts.build_corpus_naslag import build_all, load_corpus
+from scripts.build_corpus_naslag import build_all, find_refs, load_corpus
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,3 +23,29 @@ def test_corpus_bevat_alleen_echte_verzen():
 
 def test_bouwen_zonder_schrijven_is_deterministisch():
     assert build_all(ROOT, write=False) == build_all(ROOT, write=False)
+
+
+def test_zoekvormen_raken_hele_woorden_en_behouden_canonieke_volgorde():
+    item = {
+        "zoekvormen": ["ram", "rammen"],
+        "expliciet": [],
+        "uitsluiten": [],
+    }
+
+    refs = find_refs(load_corpus(ROOT), item)
+
+    assert "genesis 15:9" in refs
+    assert len(refs) == len(set(refs))
+
+
+def test_explicit_refs_worden_toegevoegd_en_uitsluitingen_verwijderd():
+    item = {
+        "zoekvormen": ["boom van het leven"],
+        "expliciet": ["openbaring 22:2"],
+        "uitsluiten": ["genesis 2:9"],
+    }
+
+    refs = find_refs(load_corpus(ROOT), item)
+
+    assert "openbaring 22:2" in refs
+    assert "genesis 2:9" not in refs
