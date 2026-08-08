@@ -625,7 +625,7 @@
       "number": 7,
       "textSV1888": "Als nu Boaz gegeten en gedronken had, en zijn hart vrolijk was, zo kwam hij om neder te liggen aan het uiterste van een koren hoop. Daarna kwam zij stilletjes in, en sloeg zijn voetdeksel op, en leide zich.",
       "text1637": "Als nu Boaz gegeten ende gedroncken hadde, ende sijn herte [12] vrolick was, so quam hy om neder te liggen aen het uyterste eens [koorn-] hoops: daerna quam sy stillekens in, ende sloech sijn voetdecksel op, ende leyde haer.",
-      "text2026": "Als nu Boaz gegeten en gedronken had, en zijn hart vrolijk was, zo kwam hij om neer te liggen aan het uiterste van een koren hoop. Daarna kwam zij stilletjes in, en sloeg zijn voetdeksel op, en legde zich.",
+      "text2026": "Als nu Boaz gegeten en gedronken had, en zijn hart vrolijk was, zo kwam hij om neer te liggen aan het uiterste van een korenhoop. Daarna kwam zij stilletjes in, en sloeg zijn voetdeksel op, en legde zich.",
       "marginNotes": [
         {
           "marker": "12",
@@ -707,7 +707,7 @@
           "morph": "HC/Vqw3fs"
         }
       ],
-      "text2026_html": "Als nu Boaz gegeten en gedronken had, en zijn hart<sup class=\"note-marker\" data-note=\"12\">12</sup> vrolijk was, zo kwam hij om neer te liggen aan het uiterste van een koren hoop. Daarna kwam zij stilletjes in, en sloeg zijn voetdeksel op, en legde zich.",
+      "text2026_html": "Als nu Boaz gegeten en gedronken had, en zijn hart<sup class=\"note-marker\" data-note=\"12\">12</sup> vrolijk was, zo kwam hij om neer te liggen aan het uiterste van een korenhoop. Daarna kwam zij stilletjes in, en sloeg zijn voetdeksel op, en legde zich.",
       "textSV1888_html": "Als nu Boaz gegeten en gedronken had, en zijn hart<sup class=\"note-marker\" data-note=\"12\">12</sup> vrolijk was, zo kwam hij om neder te liggen aan het uiterste van een koren hoop. Daarna kwam zij stilletjes in, en sloeg zijn voetdeksel op, en leide zich.",
       "text1637_html": "Als nu Boaz gegeten ende gedroncken hadde, ende sijn herte <sup class=\"note-marker\" data-note=\"12\">12</sup> vrolick was, so quam hy om neder te liggen aen het uyterste eens [koorn-] hoops: daerna quam sy stillekens in, ende sloech sijn voetdecksel op, ende leyde haer.",
       "phraseDiff": [
@@ -715,6 +715,11 @@
           "old": "neder",
           "new": "neer",
           "principe": "V354"
+        },
+        {
+          "old": "koren hoop.",
+          "new": "korenhoop.",
+          "principe": null
         },
         {
           "old": "leide",
@@ -923,7 +928,7 @@
       "number": 10,
       "textSV1888": "En hij zeide: Gezegend zijt gij den HEERE, mijn dochter! Gij hebt deze uw laatste weldadigheid beter gemaakt dan de eerste, dewijl gij geen jonge gezellen zijt nagegaan, hetzij arm of rijk.",
       "text1637": "Ende hy seyde; Gesegent zijt ghy den HEERE, mijne dochter; ghy [16] hebt dese uwe laetste weldadicheyt beter gemaeckt als d’eerste; dewijle ghy geene jonge-gesellen zijt nagegaen, ’t zy arm, ofte rijck.",
-      "text2026": "En hij zei: Gezegend bent u JAHWEH, mijn dochter! U hebt deze uw laatste goedertierenheid beter gemaakt dan de eerste, omdat u geen jongemannen bent nagegaan, hetzij arm of rijk.",
+      "text2026": "En hij zei: Gezegend bent u door JAHWEH, mijn dochter! U hebt deze uw laatste goedertierenheid beter gemaakt dan de eerste, omdat u geen jongemannen bent nagegaan, hetzij arm of rijk.",
       "marginNotes": [
         {
           "marker": "16",
@@ -1025,7 +1030,7 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>Gezegend bent u JAHWEH, mijn dochter! U hebt deze uw laatste goedertierenheid beter gemaakt dan de eerste, omdat u geen jongemannen bent nagegaan, hetzij arm of rijk.</i></span>",
+      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>Gezegend bent u door JAHWEH, mijn dochter! U hebt deze uw laatste goedertierenheid beter gemaakt dan de eerste, omdat u geen jongemannen bent nagegaan, hetzij arm of rijk.</i></span>",
       "textSV1888_html": "En hij zeide: Gezegend zijt gij den HEERE, mijn dochter! Gij<sup class=\"note-marker\" data-note=\"16\">16</sup> hebt deze uw laatste weldadigheid beter gemaakt dan de eerste, dewijl gij geen jonge gezellen zijt nagegaan, hetzij arm of rijk.",
       "text1637_html": "Ende hy seyde; Gesegent zijt ghy den HEERE, mijne dochter; ghy <sup class=\"note-marker\" data-note=\"16\">16</sup> hebt dese uwe laetste weldadicheyt beter gemaeckt als d’eerste; dewijle ghy geene jonge-gesellen zijt nagegaen, ’t zy arm, ofte rijck.",
       "phraseDiff": [
@@ -1036,8 +1041,8 @@
         },
         {
           "old": "zijt gij den HEERE,",
-          "new": "bent u JAHWEH,",
-          "principe": "N1"
+          "new": "bent u door JAHWEH,",
+          "principe": null
         },
         {
           "old": "Gij",
