@@ -12,7 +12,7 @@ const OptionsPanel = {
         const closeButton = document.getElementById('sidebar-right-toggle');
         if (!this.dialog || !openButton || !closeButton) return;
 
-        openButton.style.display = 'block';
+        openButton.hidden = false;
         openButton.setAttribute('aria-controls', 'sidebar-right');
         openButton.setAttribute('aria-expanded', 'false');
         openButton.addEventListener('click', () => this.open(openButton));
