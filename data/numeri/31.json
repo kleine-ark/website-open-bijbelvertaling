@@ -2575,7 +2575,7 @@
       "number": 26,
       "textSV1888": "Neem op de som van den buit der gevangenen van mensen en van beesten; gij en Eleazar, de priester, en de hoofden van de vaderen der vergadering.",
       "text1637": "Neemt op de somme des buyts [28] der gevangenen, van menschen, ende van beesten; ghy, ende Eleazar de Priester, ende de Hoofden van de vaderen der vergaderinge.",
-      "text2026": "Neem op de som van de buit van de gevangenen van mensen en van beesten; u en Eleazar, de priester, en de familiehoofden van de vergadering.",
+      "text2026": "Neem het aantal op van de buit van de gevangenen van mensen en van beesten; u en Eleazar, de priester, en de familiehoofden van de vergadering.",
       "marginNotes": [
         {
           "marker": "28",
@@ -2652,19 +2652,29 @@
           "morph": "HTd/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Neem op de som van de buit<sup class=\"note-marker\" data-note=\"28\">28</sup> van de gevangenen van mensen en van beesten; u en Eleazar, de priester, en de familiehoofden van de vergadering.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Neem het aantal op van de buit<sup class=\"note-marker\" data-note=\"28\">28</sup> van de gevangenen van mensen en van beesten; u en Eleazar, de priester, en de familiehoofden van de vergadering.</i></span>",
       "textSV1888_html": "Neem op de som van den<sup class=\"note-marker\" data-note=\"28\">28</sup> buit der gevangenen van mensen en van beesten; gij en Eleazar, de priester, en de hoofden van de vaderen der vergadering.",
       "text1637_html": "Neemt op de somme des buyts <sup class=\"note-marker\" data-note=\"28\">28</sup> der gevangenen, van menschen, ende van beesten; ghy, ende Eleazar de Priester, ende de Hoofden van de vaderen der vergaderinge.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "",
+          "new": "het aantal",
+          "principe": "V1130"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "",
+          "new": "van",
+          "principe": null
+        },
+        {
+          "old": "som",
+          "new": "buit",
+          "principe": "V1130"
+        },
+        {
+          "old": "den buit der",
+          "new": "de",
+          "principe": null
         },
         {
           "old": "gij",
@@ -4610,7 +4620,7 @@
       "number": 49,
       "textSV1888": "En zij zeiden tot Mozes: Uw knechten hebben opgenomen de som der krijgslieden, die onder onze hand geweest zijn; en uit ons ontbreekt niet een man.",
       "text1637": "Ende sy seyden tot Mose; Uwe knechten hebben opgenomen de somme der krijchslieden, die [45] onder onse hant geweest zijn: ende [46] uyt ons en gebreeckt niet een man.",
-      "text2026": "En zij zeiden tot Mozes: Uw knechten hebben opgenomen de som van de soldaten, die onder onze hand geweest zijn; en uit ons ontbreekt niet één man.",
+      "text2026": "En zij zeiden tot Mozes: Uw knechten hebben opgenomen het aantal van de soldaten, die onder onze hand geweest zijn; en uit ons ontbreekt niet één man.",
       "marginNotes": [
         {
           "marker": "45",
@@ -4704,14 +4714,19 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "En zij zeiden tot Mozes: Uw knechten hebben opgenomen de som van de soldaten, die<sup class=\"note-marker\" data-note=\"45\">45</sup> onder onze hand geweest zijn; en<sup class=\"note-marker\" data-note=\"46\">46</sup> uit ons ontbreekt niet één man.",
+      "text2026_html": "En zij zeiden tot Mozes: Uw knechten hebben opgenomen het aantal van de soldaten, die<sup class=\"note-marker\" data-note=\"45\">45</sup> onder onze hand geweest zijn; en<sup class=\"note-marker\" data-note=\"46\">46</sup> uit ons ontbreekt niet één man.",
       "textSV1888_html": "En zij zeiden tot Mozes: Uw knechten hebben opgenomen de som der krijgslieden, die<sup class=\"note-marker\" data-note=\"45\">45</sup> onder onze hand geweest zijn; en<sup class=\"note-marker\" data-note=\"46\">46</sup> uit ons ontbreekt niet een man.",
       "text1637_html": "Ende sy seyden tot Mose; Uwe knechten hebben opgenomen de somme der krijchslieden, die <sup class=\"note-marker\" data-note=\"45\">45</sup> onder onse hant geweest zijn: ende <sup class=\"note-marker\" data-note=\"46\">46</sup> uyt ons en gebreeckt niet een man.",
       "phraseDiff": [
         {
-          "old": "der krijgslieden,",
-          "new": "van de soldaten,",
-          "principe": "N2"
+          "old": "",
+          "new": "het aantal van",
+          "principe": "V1130"
+        },
+        {
+          "old": "som der krijgslieden,",
+          "new": "soldaten,",
+          "principe": "V1130"
         },
         {
           "old": "een",
