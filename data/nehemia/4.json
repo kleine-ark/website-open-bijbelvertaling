@@ -1081,7 +1081,7 @@
       "number": 10,
       "textSV1888": "Toen zeide Juda: De kracht der dragers is vervallen, en des stofs is veel, zodat wij aan den muur niet zullen kunnen bouwen.",
       "text1637": "Doe seyde [24] Iuda; De kracht der dragers is [25] vervallen, ende [26] des stofs is veel: so dat wy aen den muer [27] niet sullen konnen bouwen.",
-      "text2026": "Toen zei Juda: De kracht van de dragers is vervallen, en van het stof is veel, zodat wij aan de muur niet zullen kunnen bouwen.",
+      "text2026": "Toen zei Juda: De kracht van de dragers is vervallen, en er is veel stof, zodat wij aan de muur niet zullen kunnen bouwen.",
       "marginNotes": [
         {
           "marker": "24",
@@ -1209,7 +1209,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Toen zei Juda: <span class=\"direct-speech\"><i>De kracht van de dragers is vervallen, en van het stof is veel, zodat wij aan de muur niet zullen kunnen bouwen.</i></span>",
+      "text2026_html": "Toen zei Juda: <span class=\"direct-speech\"><i>De kracht van de dragers is vervallen, en er is veel stof, zodat wij aan de muur niet zullen kunnen bouwen.</i></span>",
       "textSV1888_html": "Toen zeide<sup class=\"note-marker\" data-note=\"24\">24</sup> Juda: De kracht der dragers is<sup class=\"note-marker\" data-note=\"25\">25</sup> vervallen, en<sup class=\"note-marker\" data-note=\"26\">26</sup> des stofs is veel, zodat wij aan den muur<sup class=\"note-marker\" data-note=\"27\">27</sup> niet zullen kunnen bouwen.",
       "text1637_html": "Doe seyde <sup class=\"note-marker\" data-note=\"24\">24</sup> Iuda; De kracht der dragers is <sup class=\"note-marker\" data-note=\"25\">25</sup> vervallen, ende <sup class=\"note-marker\" data-note=\"26\">26</sup> des stofs is veel: so dat wy aen den muer <sup class=\"note-marker\" data-note=\"27\">27</sup> niet sullen konnen bouwen.",
       "phraseDiff": [
@@ -1225,8 +1225,13 @@
         },
         {
           "old": "des stofs",
-          "new": "van het stof",
-          "principe": "N3"
+          "new": "er",
+          "principe": null
+        },
+        {
+          "old": "veel,",
+          "new": "veel stof,",
+          "principe": null
         },
         {
           "old": "den",
@@ -1331,7 +1336,7 @@
       "number": 12,
       "textSV1888": "En het geschiedde, als de Joden, die bij hen woonden, kwamen, dat zij het ons wel tienmaal zeiden, uit al de plaatsen, door dewelke gij tot ons wederkeert.",
       "text1637": "Ende het geschiedde, als de Ioden, die by hen woonden, quamen, dat sy het ons [wel] [29] tienmael seyden, uyt alle de plaetsen, [door] [30] de welcke ghy tot ons wederkeert.",
-      "text2026": "En het gebeurde, als de Joden, die bij hen woonden, kwamen, dat zij het ons wel tienmaal zeiden, uit al de plaatsen, door die u tot ons terugkeert.",
+      "text2026": "En het gebeurde, als de Joden, die bij hen woonden, kwamen, dat zij het ons wel tienmaal zeiden, uit al de plaatsen, waardoor u tot ons terugkeert.",
       "marginNotes": [
         {
           "marker": "29",
@@ -1400,7 +1405,7 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En het gebeurde, als de Joden, die bij hen woonden, kwamen, dat zij het ons<sup class=\"note-marker\" data-note=\"29\">29</sup> wel tienmaal zeiden, uit al de plaatsen,<sup class=\"note-marker\" data-note=\"30\">30</sup> door die u tot ons terugkeert.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En het gebeurde, als de Joden, die bij hen woonden, kwamen, dat zij het ons<sup class=\"note-marker\" data-note=\"29\">29</sup> wel tienmaal zeiden, uit al de plaatsen,<sup class=\"note-marker\" data-note=\"30\">30</sup> waardoor u tot ons terugkeert.</i></span>",
       "textSV1888_html": "En het geschiedde, als de Joden, die bij hen woonden, kwamen, dat zij het ons<sup class=\"note-marker\" data-note=\"29\">29</sup> wel tienmaal zeiden, uit al de plaatsen,<sup class=\"note-marker\" data-note=\"30\">30</sup> door dewelke gij tot ons wederkeert.",
       "text1637_html": "Ende het geschiedde, als de Ioden, die by hen woonden, quamen, dat sy het ons [wel] <sup class=\"note-marker\" data-note=\"29\">29</sup> tienmael seyden, uyt alle de plaetsen, [door] <sup class=\"note-marker\" data-note=\"30\">30</sup> de welcke ghy tot ons wederkeert.",
       "phraseDiff": [
@@ -1410,9 +1415,9 @@
           "principe": null
         },
         {
-          "old": "dewelke gij",
-          "new": "die u",
-          "principe": "A1"
+          "old": "door dewelke gij",
+          "new": "waardoor u",
+          "principe": null
         },
         {
           "old": "wederkeert.",

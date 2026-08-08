@@ -356,7 +356,7 @@
       "number": 4,
       "textSV1888": "Eljasib nu, de priester, die gesteld was over de kamer van het huis onzes Gods, was voor dezen nabestaande van Tobia geworden.",
       "text1637": "Eljasib nu, de Priester, die gestelt was over de [7] kamer van het Huys onses Godts, was voor desen [8] nae bestaende van Tobia geworden:",
-      "text2026": "Eljasib nu, de priester, die gesteld was over de kamer van het huis van onze God, was voor deze nabestaande van Tobia geworden.",
+      "text2026": "Eljasib nu, de priester, die gesteld was over de kamer van het huis van onze God, was te voren nabestaande van Tobia geworden.",
       "marginNotes": [
         {
           "marker": "7",
@@ -425,7 +425,7 @@
           "morph": "HR/Np"
         }
       ],
-      "text2026_html": "Eljasib nu, de priester, die gesteld was over de<sup class=\"note-marker\" data-note=\"7\">7</sup> kamer van het huis van onze God, was voor deze<sup class=\"note-marker\" data-note=\"8\">8</sup> nabestaande van Tobia geworden.",
+      "text2026_html": "Eljasib nu, de priester, die gesteld was over de<sup class=\"note-marker\" data-note=\"7\">7</sup> kamer van het huis van onze God, was te voren<sup class=\"note-marker\" data-note=\"8\">8</sup> nabestaande van Tobia geworden.",
       "textSV1888_html": "Eljasib nu, de priester, die gesteld was over de<sup class=\"note-marker\" data-note=\"7\">7</sup> kamer van het huis onzes Gods, was voor dezen<sup class=\"note-marker\" data-note=\"8\">8</sup> nabestaande van Tobia geworden.",
       "text1637_html": "Eljasib nu, de Priester, die gestelt was over de <sup class=\"note-marker\" data-note=\"7\">7</sup> kamer van het Huys onses Godts, was voor desen <sup class=\"note-marker\" data-note=\"8\">8</sup> nae bestaende van Tobia geworden:",
       "phraseDiff": [
@@ -435,9 +435,9 @@
           "principe": "V398"
         },
         {
-          "old": "dezen",
-          "new": "deze",
-          "principe": "N4"
+          "old": "voor dezen",
+          "new": "te voren",
+          "principe": null
         }
       ]
     },
@@ -1084,7 +1084,7 @@
       "number": 10,
       "textSV1888": "Ook vernam ik, dat der Levieten deel hun niet gegeven was; zodat de Levieten en de zangers, die het werk deden, gevloden waren, een iegelijk naar zijn akker.",
       "text1637": "Ooc vernam ick, dat der Leviten [23] deel [hen] niet gegeven en was: So dat de Leviten ende de Sangers, die het [24] werck deden, gevloden waren een yegelick na sijnen acker.",
-      "text2026": "Ook vernam ik, dat van de Levieten deel hun niet gegeven was; zodat de Levieten en de zangers, die het werk deden, gevlucht waren, ieder naar zijn akker.",
+      "text2026": "Ook vernam ik, dat het deel van de Levieten hun niet gegeven was; zodat de Levieten en de zangers, die het werk deden, gevlucht waren, ieder naar zijn akker.",
       "marginNotes": [
         {
           "marker": "23",
@@ -1168,14 +1168,19 @@
           "morph": "HTd/Ncfsa"
         }
       ],
-      "text2026_html": "Ook vernam ik, dat van de<sup class=\"note-marker\" data-note=\"23\">23</sup> Levieten deel hun niet gegeven was; zodat de Levieten en de zangers, die het<sup class=\"note-marker\" data-note=\"24\">24</sup> werk deden, gevlucht waren, ieder naar zijn akker.",
+      "text2026_html": "Ook vernam ik, dat het deel van de<sup class=\"note-marker\" data-note=\"23\">23</sup> Levieten hun niet gegeven was; zodat de Levieten en de zangers, die het<sup class=\"note-marker\" data-note=\"24\">24</sup> werk deden, gevlucht waren, ieder naar zijn akker.",
       "textSV1888_html": "Ook vernam ik, dat der Levieten<sup class=\"note-marker\" data-note=\"23\">23</sup> deel hun niet gegeven was; zodat de Levieten en de zangers, die het<sup class=\"note-marker\" data-note=\"24\">24</sup> werk deden, gevloden waren, een iegelijk naar zijn akker.",
       "text1637_html": "Ooc vernam ick, dat der Levite<i>n</i> <sup class=\"note-marker\" data-note=\"23\">23</sup> deel [hen] niet gegeven en was: So dat de Leviten en<i>de</i> de Sangers, die het <sup class=\"note-marker\" data-note=\"24\">24</sup> werck deden, gevloden waren een yegelick na sijne<i>n</i> acker.",
       "phraseDiff": [
         {
           "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "new": "het deel van de",
+          "principe": null
+        },
+        {
+          "old": "deel",
+          "new": "",
+          "principe": null
         },
         {
           "old": "gevloden",
