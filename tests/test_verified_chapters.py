@@ -12,12 +12,12 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
         (ROOT / "data" / "verified-chapters.json").read_text(encoding="utf-8")
     )
 
-    assert verified["genesis"] == list(range(1, 21))
+    assert verified["genesis"] == "all"
+    assert verified["exodus"] == "all"
     assert verified["leviticus"] == "all"
     assert verified["ruth"] == "all"
 
     niet_menselijk_bevestigd = {
-        "exodus",
         "numeri",
         "deuteronomium",
         "jozua",

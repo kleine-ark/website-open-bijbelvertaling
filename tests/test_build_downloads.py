@@ -64,17 +64,13 @@ def test_xml_is_welgevormd(epub):
             ET.fromstring(epub.read(naam))
 
 
-def test_alleen_nagekeken_hoofdstukken(epub, verified):
-    """Genesis is deels nagekeken: 1 t/m 20 wel, 21 en verder niet."""
-    gen = verified["genesis"]
-    assert gen != "all", "test gaat ervan uit dat Genesis deels nagekeken is"
-    hoogste = max(gen)
-    inhoud = epub.read("OEBPS/genesis.xhtml").decode("utf-8")
-    koppen = set(re.findall(r'<h2 id="h(\d+)">', inhoud))
-    assert str(hoogste) in koppen, f"Genesis {hoogste} hoort erin te staan"
-    assert str(hoogste + 1) not in koppen, f"Genesis {hoogste + 1} is niet nagekeken"
-    for nr in koppen:
-        assert int(nr) in gen, f"Genesis {nr} staat erin maar is niet nagekeken"
+def test_menselijk_nagekeken_genesis_en_exodus_staan_volledig_in_epub(epub, verified):
+    """Van menselijk voltooide boeken bevat de EPUB ieder hoofdstuk."""
+    for boek, laatste_hoofdstuk in (("genesis", 50), ("exodus", 40)):
+        assert verified[boek] == "all"
+        inhoud = epub.read(f"OEBPS/{boek}.xhtml").decode("utf-8")
+        koppen = {int(nr) for nr in re.findall(r'<h2 id="h(\d+)">', inhoud)}
+        assert koppen == set(range(1, laatste_hoofdstuk + 1))
 
 
 def test_inhoudsopgave_verwijst_alleen_naar_bestaande_bestanden(epub):
