@@ -97,15 +97,35 @@
                  '<h2 class="ns-kop">Volledige tekst</h2>' +
                  '<p class="ns-tekstladen">De volledige tekst wordt geladen…</p></section>';
         }
-        h += '<h2 class="ns-kop">Vindplaatsen in ' + esc(d.bron) + '</h2>';
-        h += '<p class="ns-verzen">';
-        for (var i = 0; i < it.verzen.length; i++) {
-            h += versLink(d.bron, it.verzen[i]) + ' ';
+        if (d.nummerType) {
+            h += '<h2 class="ns-kop">Vindplaatsen in ' + esc(d.bron) + '</h2>';
+            h += '<p class="ns-verzen">';
+            for (var i = 0; i < it.verzen.length; i++) {
+                h += versLink(d.bron, it.verzen[i]) + ' ';
+            }
+            h += '</p>';
+        } else {
+            h += '<h2 class="ns-kop">Teksten in ' + esc(d.bron) + '</h2>';
+            h += '<ol id="naslag-gekoppelde-teksten" class="gt-lijst"></ol>';
         }
-        h += '</p>';
         houder.innerHTML = h;
 
         if (d.nummerType && it.tekstpassages) laadVolledigeTekst(d, it);
+        if (!d.nummerType && globalThis.GekoppeldeTeksten) {
+            var refs = [];
+            for (var r = 0; r < it.verzen.length; r++) {
+                refs.push((d.bronId || d.bron.toLowerCase()) + ' ' + it.verzen[r]);
+            }
+            globalThis.GekoppeldeTeksten.render(
+                document.getElementById('naslag-gekoppelde-teksten'),
+                refs,
+                { boeknamen: (function () {
+                    var namen = {};
+                    namen[d.bronId || d.bron.toLowerCase()] = d.bron;
+                    return namen;
+                })() }
+            );
+        }
     }
 
     function bundelPad(d, it) {
