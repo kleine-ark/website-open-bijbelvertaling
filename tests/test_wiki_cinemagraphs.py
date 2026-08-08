@@ -49,6 +49,16 @@ class PictureParser(HTMLParser):
 
 
 class WikiCinemagraphTests(unittest.TestCase):
+    def test_personen_en_muziekinstrumenten_zijn_aparte_wikipaginas(self):
+        overview = (ROOT / "wiki-overzicht.html").read_text(encoding="utf-8")
+        shell = (ROOT / "wiki.html").read_text(encoding="utf-8")
+
+        for slug in ("personen", "muziekinstrumenten"):
+            self.assertIn(f'href="wiki.html#{slug}"', overview)
+            self.assertIn(f'href="#{slug}" data-page="{slug}.html"', shell)
+            page = (ROOT / f"{slug}.html").read_text(encoding="utf-8")
+            self.assertIn(f'data-naslag="data/naslag-{slug}.json"', page)
+
     def test_removed_begrippen_page_is_not_linked_from_the_wiki(self):
         overview = (ROOT / "wiki-overzicht.html").read_text(encoding="utf-8")
         shell = (ROOT / "wiki.html").read_text(encoding="utf-8")

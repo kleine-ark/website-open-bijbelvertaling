@@ -1,5 +1,6 @@
 import contextlib
 import http.server
+import json
 import pathlib
 import threading
 import unittest
@@ -8,6 +9,10 @@ from playwright.sync_api import sync_playwright
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+
+
+def read_json(path):
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 class _QuietHandler(http.server.SimpleHTTPRequestHandler):
@@ -127,23 +132,27 @@ class GekoppeldeTekstenTest(unittest.TestCase):
         finally:
             page.close()
 
-    def test_materialen_shows_all_eight_goud_texts_as_a_list(self):
+    def test_materialen_shows_all_goud_texts_as_a_list(self):
+        data = read_json(ROOT / "data" / "naslag-materialen.json")
+        expected = len(next(item for item in data["items"] if item["id"] == "goud")["verzen"])
         page = self.browser.new_page(viewport={"width": 900, "height": 900})
         try:
             page.goto(f"{self.base_url}/materialen.html?item=goud")
             page.locator('.gt-vers[data-ref="genesis 2:11"] .osv-vers').wait_for()
-            self.assertEqual(page.locator("#naslag-gekoppelde-teksten .gt-vers").count(), 8)
+            self.assertEqual(page.locator("#naslag-gekoppelde-teksten .gt-vers").count(), expected)
             self.assertEqual(page.locator("#naslag .ns-verzen").count(), 0)
         finally:
             page.close()
 
     def test_dieren_and_bomen_use_the_same_text_list(self):
         cases = (
-            ("dieren.html?item=vee", 34),
-            ("bomen-planten.html?item=de-boom-van-het-leven", 3),
+            ("dieren.html?item=vee", "data/naslag-dieren.json", "vee"),
+            ("bomen-planten.html?item=de-boom-van-het-leven", "data/naslag-bomen-planten.json", "de-boom-van-het-leven"),
         )
-        for address, expected in cases:
+        for address, data_path, item_id in cases:
             with self.subTest(address=address):
+                data = read_json(ROOT / data_path)
+                expected = len(next(item for item in data["items"] if item["id"] == item_id)["verzen"])
                 page = self.browser.new_page(viewport={"width": 900, "height": 900})
                 try:
                     page.goto(f"{self.base_url}/{address}")
@@ -154,6 +163,54 @@ class GekoppeldeTekstenTest(unittest.TestCase):
                     )
                 finally:
                     page.close()
+
+    def test_personen_and_instrumenten_have_separate_pages_with_full_refs(self):
+        cases = (
+            ("personen.html?item=tobias-oud", "tobit 1:1", "Tobit 1:1"),
+            (
+                "muziekinstrumenten.html?item=citer",
+                "jezussirach 39:19",
+                "Jezus Sirach 39:19",
+            ),
+        )
+        for address, verse_ref, label in cases:
+            with self.subTest(address=address):
+                page = self.browser.new_page(viewport={"width": 1000, "height": 900})
+                try:
+                    page.goto(f"{self.base_url}/{address}")
+                    verse = page.locator(f'.gt-vers[data-ref="{verse_ref}"]')
+                    verse.locator(".osv-vers").wait_for(timeout=5000)
+                    self.assertEqual(verse.locator(".gt-vers-kop a").inner_text(), label)
+                    self.assertTrue(page.locator(".ns-type-detail").is_visible())
+                finally:
+                    page.close()
+
+    def test_personen_overview_can_filter_equal_names(self):
+        page = self.browser.new_page(viewport={"width": 1000, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/personen.html")
+            search = page.locator("#ns-zoeken")
+            search.wait_for(timeout=5000)
+            search.fill("Azaria")
+            self.assertEqual(page.locator(".ns-kaart:visible").count(), 2)
+            self.assertEqual(
+                page.locator(".ns-kaart:visible .ns-kaart-onderscheiding").count(),
+                2,
+            )
+        finally:
+            page.close()
+
+    def test_naslag_reading_column_has_desktop_left_margin(self):
+        page = self.browser.new_page(viewport={"width": 1000, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/materialen.html?item=goud")
+            page.locator("#naslag h1").wait_for()
+            left = page.locator("#naslag h1").evaluate(
+                "element => element.getBoundingClientRect().left"
+            )
+            self.assertGreaterEqual(left, 32)
+        finally:
+            page.close()
 
     def test_tijdsaanduidingen_inserts_generated_text_lists_and_counts(self):
         page = self.browser.new_page(viewport={"width": 1100, "height": 900})

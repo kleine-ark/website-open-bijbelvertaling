@@ -48,13 +48,21 @@ installation.then(() => process.stdout.write(JSON.stringify(opened)));
     return json.loads(result.stdout)
 
 
-def test_current_release_describes_numeri_and_uses_one_version():
+def test_current_release_describes_corpus_naslag_and_uses_one_version():
     stats = read_json("data/stats.json")
     changelog = read_json("data/changelog.json")
     current_release = changelog["wijzigingen"][0]
     descriptions = " ".join(item["beschrijving"] for item in current_release["items"])
 
-    assert "Numeri 1–20" in descriptions
+    assert current_release["versie"] == "v0.31.1"
+    for subject in (
+        "Materialen",
+        "Dieren",
+        "Bomen & planten",
+        "Personen",
+        "Muziekinstrumenten",
+    ):
+        assert subject in descriptions
     assert stats["version"] == current_release["versie"]
     assert service_worker_install_cache() == [f"shell-{current_release['versie']}"]
     assert current_release["datum"] == "2026-08-09"

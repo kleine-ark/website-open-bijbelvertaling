@@ -104,7 +104,9 @@ def find_refs(corpus: list[VerseRef], item: dict[str, Any]) -> list[str]:
     found = {
         verse.ref
         for verse in corpus
-        if pattern is not None and pattern.search(verse.text)
+        if pattern is not None
+        and (not item.get("boeken") or verse.book_id in item["boeken"])
+        and pattern.search(verse.text)
     }
     for ref in item.get("expliciet", []):
         if ref not in positions:
@@ -163,6 +165,95 @@ def _base_dataset(title: str, intro: str, books: list[dict[str, Any]]) -> dict[s
     }
 
 
+def _build_people(
+    definition: dict[str, Any],
+    root: Path,
+    books: list[dict[str, Any]],
+    corpus: list[VerseRef],
+    empty: list[dict[str, str]],
+) -> dict[str, Any]:
+    """Bouw personen zonder gelijknamige mensen met elkaar te vermengen."""
+    data = _base_dataset(definition["titel"], definition.get("intro", ""), books)
+    positions = {verse.ref: index for index, verse in enumerate(corpus)}
+    supplements = {
+        item["id"]: item for item in definition.get("aanvullingen", [])
+    }
+    seen: set[str] = set()
+    family_tree = read_json(root / "data" / "stamboom.json")["personen"]
+
+    for person_id, person in family_tree.items():
+        if person.get("soort") == "volk":
+            continue
+        if person_id in seen:
+            raise ValueError(f"Dubbel persoon-id in stamboom: {person_id}")
+        seen.add(person_id)
+        refs: set[str] = set()
+        for verse in person.get("verzen", []):
+            ref = f"{verse['boek']} {verse['hoofdstuk']}:{verse['vers']}"
+            if ref in positions:
+                refs.add(ref)
+
+        supplement = supplements.get(person_id, {})
+        if supplement:
+            refs.update(find_refs(corpus, supplement))
+        ordered_refs = sorted(refs, key=positions.__getitem__)
+        if not ordered_refs:
+            empty.append({"categorie": "personen", "id": person_id})
+            continue
+
+        description = supplement.get("beschrijving") or person.get("opmerking")
+        if not description:
+            first = ordered_refs[0]
+            description = f"{person['naam']} wordt voor het eerst genoemd in {first}."
+        item = {
+            "id": person_id,
+            "naam": person["naam"],
+            "beschrijving": description,
+            "verzen": ordered_refs,
+        }
+        if person.get("geslacht"):
+            item["geslacht"] = person["geslacht"]
+        if supplement.get("gebruik"):
+            item["gebruik"] = supplement["gebruik"]
+        data["items"].append(item)
+
+    for source in definition.get("extra", []):
+        person_id = source.get("id", "")
+        if not person_id or person_id in seen:
+            raise ValueError(f"Ontbrekend of dubbel persoon-id: {person_id!r}")
+        seen.add(person_id)
+        refs = find_refs(corpus, source)
+        if not refs:
+            empty.append({"categorie": "personen", "id": person_id})
+            continue
+        item = {
+            "id": person_id,
+            "naam": source["naam"],
+            "beschrijving": source["beschrijving"],
+            "verzen": refs,
+        }
+        for key in ("gebruik", "onderscheiding"):
+            if source.get(key):
+                item[key] = source[key]
+        data["items"].append(item)
+
+    people_by_name: dict[str, list[dict[str, Any]]] = {}
+    for item in data["items"]:
+        people_by_name.setdefault(item["naam"].casefold(), []).append(item)
+    for same_name in people_by_name.values():
+        if len(same_name) < 2:
+            continue
+        for item in same_name:
+            book_id, verse = item["verzen"][0].split(" ", 1)
+            book_name = data["boeknamen"].get(book_id, book_id.capitalize())
+            item.setdefault(
+                "onderscheiding", f"Eerste vermelding: {book_name} {verse}"
+            )
+
+    data["items"].sort(key=lambda item: positions[item["verzen"][0]])
+    return data
+
+
 def build_all(root: Path = ROOT, write: bool = True) -> dict[str, dict[str, Any]]:
     """Bouw alle vijf gegevenssets; `write=False` is puur en testbaar."""
     catalog = read_json(root / "data" / "naslag-catalogus.json")
@@ -174,9 +265,8 @@ def build_all(root: Path = ROOT, write: bool = True) -> dict[str, dict[str, Any]
         built[category] = _build_category(
             definition, books, corpus, empty, category
         )
-    people = catalog["personen"]
-    built["personen"] = _base_dataset(
-        people["titel"], people.get("intro", ""), books
+    built["personen"] = _build_people(
+        catalog["personen"], root, books, corpus, empty
     )
 
     report = {
