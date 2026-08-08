@@ -423,7 +423,7 @@
       "number": 5,
       "textSV1888": "Ook waren al de deuren en de posten vierkantig van enerlei uitzicht; en venster was tegenover venster, in drie orden.",
       "text1637": "Oock waren alle de deuren, ende de posten vierkantich [11] van (eenderley) uytsicht: ende venster was tegen over venster, [12] in drie orderen.",
-      "text2026": "Ook waren al de deuren en de posten vierkantig van enerlei uitzicht; en venster was tegenover venster, in drie orden.",
+      "text2026": "Ook waren al de deuren en de posten vierkantig van dezelfde uitzicht; en venster was tegenover venster, in drie orden.",
       "marginNotes": [
         {
           "marker": "11",
@@ -497,9 +497,16 @@
           "morph": "HNcfpa"
         }
       ],
-      "text2026_html": "Ook waren al de deuren en de posten vierkantig<sup class=\"note-marker\" data-note=\"11\">11</sup> van enerlei uitzicht; en venster was tegenover venster,<sup class=\"note-marker\" data-note=\"12\">12</sup> in drie orden.",
+      "text2026_html": "Ook waren al de deuren en de posten vierkantig<sup class=\"note-marker\" data-note=\"11\">11</sup> van dezelfde uitzicht; en venster was tegenover venster,<sup class=\"note-marker\" data-note=\"12\">12</sup> in drie orden.",
       "textSV1888_html": "Ook waren al de deuren en de posten vierkantig<sup class=\"note-marker\" data-note=\"11\">11</sup> van enerlei uitzicht; en venster was tegenover venster,<sup class=\"note-marker\" data-note=\"12\">12</sup> in drie orden.",
-      "text1637_html": "Oock waren alle de deuren, ende de posten vierkantich <sup class=\"note-marker\" data-note=\"11\">11</sup> van (eenderley) uytsicht: ende venster was tegen over venster, <sup class=\"note-marker\" data-note=\"12\">12</sup> in drie orderen."
+      "text1637_html": "Oock waren alle de deuren, ende de posten vierkantich <sup class=\"note-marker\" data-note=\"11\">11</sup> van (eenderley) uytsicht: ende venster was tegen over venster, <sup class=\"note-marker\" data-note=\"12\">12</sup> in drie orderen.",
+      "phraseDiff": [
+        {
+          "old": "enerlei",
+          "new": "dezelfde",
+          "principe": "V1163"
+        }
+      ]
     },
     {
       "number": 6,
@@ -4149,7 +4156,7 @@
       "number": 37,
       "textSV1888": "Dezen gelijk maakte hij de tien stellingen; enerlei gieting, enerlei maat, enerlei snede hadden zij allen.",
       "text1637": "Desen gelijcke maeckte hy de tien stellingen: eenerley gietinge, eenerley mate, eenerley snede, hadden sy alle.",
-      "text2026": "Aan deze gelijk maakte hij de tien stellingen; enerlei gieting, enerlei maat, enerlei snede hadden zij allen.",
+      "text2026": "Aan deze gelijk maakte hij de tien stellingen; dezelfde gieting, dezelfde maat, dezelfde snede hadden zij allen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4213,13 +4220,28 @@
           "morph": "HR/Ncmsc/Sp3fp"
         }
       ],
-      "text2026_html": "Aan deze gelijk maakte hij de tien stellingen; enerlei gieting, enerlei maat, enerlei snede hadden zij allen.",
+      "text2026_html": "Aan deze gelijk maakte hij de tien stellingen; dezelfde gieting, dezelfde maat, dezelfde snede hadden zij allen.",
       "text1637_html": "Desen gelijcke maeckte hy de tien stellingen: eenerley gietinge, eenerley mate, eenerley snede, hadden sy alle.",
       "phraseDiff": [
         {
           "old": "Dezen",
           "new": "Aan deze",
           "principe": null
+        },
+        {
+          "old": "enerlei",
+          "new": "dezelfde",
+          "principe": "V1163"
+        },
+        {
+          "old": "enerlei",
+          "new": "dezelfde",
+          "principe": "V1163"
+        },
+        {
+          "old": "enerlei",
+          "new": "dezelfde",
+          "principe": "V1163"
         }
       ]
     },

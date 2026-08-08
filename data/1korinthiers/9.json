@@ -1057,7 +1057,7 @@
       "number": 9,
       "textSV1888": "Want in de wet van Mozes is geschreven: Gij zult een dorsenden os niet muilbanden. Zorgt ook God voor de ossen?",
       "text1637": "Want in de Wet Mosis is geschreven, [h] Ghy en sult [15] eenen dorschenden osse niet muyl-banden. [16] Sorght oock Godt voor de ossen?",
-      "text2026": "Want in de wet van Mozes is geschreven: U zult een dorsenden os niet muilbanden. Zorgt ook God voor de ossen?",
+      "text2026": "Want in de wet van Mozes is geschreven: U zult een dorsenden os niet muilbanden. Zorg ook God voor de ossen?",
       "marginNotes": [
         {
           "marker": "15",
@@ -1179,7 +1179,7 @@
           "gloss": "〔God"
         }
       ],
-      "text2026_html": "Want in de wet van Mozes is geschreven:<sup class=\"note-marker\" data-note=\"h\">h</sup> <span class=\"god-speaks\"><i>U zult<sup class=\"note-marker\" data-note=\"15\">15</sup> een dorsenden os niet muilbanden.</i></span><sup class=\"note-marker\" data-note=\"16\">16</sup> Zorgt ook God voor de ossen?",
+      "text2026_html": "Want in de wet van Mozes is geschreven:<sup class=\"note-marker\" data-note=\"h\">h</sup> <span class=\"god-speaks\"><i>U zult<sup class=\"note-marker\" data-note=\"15\">15</sup> een dorsenden os niet muilbanden.</i></span><sup class=\"note-marker\" data-note=\"16\">16</sup> Zorg ook God voor de ossen?",
       "textSV1888_html": "Want in de wet van Mozes is geschreven:<sup class=\"note-marker\" data-note=\"h\">h</sup> Gij zult<sup class=\"note-marker\" data-note=\"15\">15</sup> een dorsenden os niet muilbanden.<sup class=\"note-marker\" data-note=\"16\">16</sup> Zorgt ook God voor de ossen?",
       "text1637_html": "Want in de Wet Mosis is geschreven, <sup class=\"note-marker\" data-note=\"h\">h</sup> Ghy en sult <sup class=\"note-marker\" data-note=\"15\">15</sup> eenen dorschenden osse niet muyl-banden. <sup class=\"note-marker\" data-note=\"16\">16</sup> Sorght oock Godt voor de ossen?",
       "phraseDiff": [
@@ -1187,6 +1187,11 @@
           "old": "Gij",
           "new": "U",
           "principe": "A1"
+        },
+        {
+          "old": "Zorgt",
+          "new": "Zorg",
+          "principe": "V1158"
         }
       ]
     },
@@ -3322,7 +3327,7 @@
       "number": 24,
       "textSV1888": "Weet gijlieden niet, dat die in de loopbaan lopen, allen wel lopen, maar dat een den prijs ontvangt? Loopt alzo, dat gij dien moogt verkrijgen.",
       "text1637": "[51] Weet ghy lieden niet, dat die in [r] de loop-bane [52] loopen, alle wel loopen, maer [dat] [53] een den prijs ontfanght? loopt [54] alsoo dat ghy [dien] meugt [55] verkrijgen.",
-      "text2026": "Weet u niet, dat die in de loopbaan lopen, allen wel lopen, maar dat één de prijs ontvangt? Loopt zo, dat u die mag verkrijgen.",
+      "text2026": "Weet u niet, dat die in de loopbaan lopen, allen wel lopen, maar dat één de prijs ontvangt? Loop zo, dat u die mag verkrijgen.",
       "marginNotes": [
         {
           "marker": "51",
@@ -3483,7 +3488,7 @@
           "gloss": "〔to take/realize"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"51\">51</sup> Weet u niet, dat die in<sup class=\"note-marker\" data-note=\"r\">r</sup> de loopbaan<sup class=\"note-marker\" data-note=\"52\">52</sup> lopen, allen wel lopen, maar<sup class=\"note-marker\" data-note=\"53\">53</sup> dat één de prijs ontvangt? Loopt<sup class=\"note-marker\" data-note=\"54\">54</sup> zo, dat u die<sup class=\"note-marker\" data-note=\"55\">55</sup> mag verkrijgen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"51\">51</sup> Weet u niet, dat die in<sup class=\"note-marker\" data-note=\"r\">r</sup> de loopbaan<sup class=\"note-marker\" data-note=\"52\">52</sup> lopen, allen wel lopen, maar<sup class=\"note-marker\" data-note=\"53\">53</sup> dat één de prijs ontvangt? Loop<sup class=\"note-marker\" data-note=\"54\">54</sup> zo, dat u die<sup class=\"note-marker\" data-note=\"55\">55</sup> mag verkrijgen.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"51\">51</sup> Weet gijlieden niet, dat die in<sup class=\"note-marker\" data-note=\"r\">r</sup> de loopbaan<sup class=\"note-marker\" data-note=\"52\">52</sup> lopen, allen wel lopen, maar<sup class=\"note-marker\" data-note=\"53\">53</sup> dat een den prijs ontvangt? Loopt<sup class=\"note-marker\" data-note=\"54\">54</sup> alzo, dat gij dien<sup class=\"note-marker\" data-note=\"55\">55</sup> moogt verkrijgen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"51\">51</sup> Weet ghy lieden niet, dat die in <sup class=\"note-marker\" data-note=\"r\">r</sup> de loop-bane <sup class=\"note-marker\" data-note=\"52\">52</sup> loopen, alle wel loopen, maer [<i>dat</i>] <sup class=\"note-marker\" data-note=\"53\">53</sup> een den prijs ontfanght? loopt <sup class=\"note-marker\" data-note=\"54\">54</sup> alsoo dat ghy [<i>dien</i>] meugt <sup class=\"note-marker\" data-note=\"55\">55</sup> verkrijgen.",
       "phraseDiff": [
@@ -3498,9 +3503,9 @@
           "principe": null
         },
         {
-          "old": "alzo,",
-          "new": "zo,",
-          "principe": "V42"
+          "old": "Loopt alzo,",
+          "new": "Loop zo,",
+          "principe": "V1158"
         },
         {
           "old": "gij dien moogt",

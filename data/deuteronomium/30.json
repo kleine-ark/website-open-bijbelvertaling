@@ -1698,7 +1698,7 @@
       "number": 15,
       "textSV1888": "Ziet, ik heb u heden voorgesteld het leven, en het goede, en den dood, en het kwade.",
       "text1637": "Siet ick heb u heden voorgestelt [15] het leven, ende het goede: ende den doot, ende het quade.",
-      "text2026": "Ziet, ik heb u vandaag voorgesteld het leven, en het goede, en de dood, en het kwade.",
+      "text2026": "Zie, ik heb u vandaag voorgesteld het leven, en het goede, en de dood, en het kwade.",
       "marginNotes": [
         {
           "marker": "15",
@@ -1770,10 +1770,15 @@
           "morph": "HTd/Aamsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Ziet, ik heb u vandaag voorgesteld<sup class=\"note-marker\" data-note=\"15\">15</sup> het leven, en het goede, en de dood, en het kwade.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zie, ik heb u vandaag voorgesteld<sup class=\"note-marker\" data-note=\"15\">15</sup> het leven, en het goede, en de dood, en het kwade.</i></span>",
       "textSV1888_html": "Ziet, ik heb u heden voorgesteld<sup class=\"note-marker\" data-note=\"15\">15</sup> het leven, en het goede, en den dood, en het kwade.",
       "text1637_html": "Siet ick heb u heden voorgestelt <sup class=\"note-marker\" data-note=\"15\">15</sup> het leven, ende het goede: ende den doot, ende het quade.",
       "phraseDiff": [
+        {
+          "old": "Ziet,",
+          "new": "Zie,",
+          "principe": "V1158"
+        },
         {
           "old": "heden",
           "new": "vandaag",
@@ -2207,7 +2212,7 @@
       "number": 19,
       "textSV1888": "Ik neem heden tegen ulieden tot getuigen den hemel en de aarde; het leven en den dood heb ik u voorgesteld, den zegen en den vloek! Kiest dan het leven, opdat gij levet, gij en uw zaad;",
       "text1637": "[g] Ick [18] neme heden tegens ulieden tot getuygen den hemel ende de aerde; het leven ende den doot heb ick [19] u voorgestelt, den segen ende den vloeck: kiest dan het leven, op dat ghy levet, ghy, ende u zaet;",
-      "text2026": "Ik neem vandaag tegen u tot getuigen de hemel en de aarde; het leven en de dood heb ik u voorgesteld, de zegen en de vloek! Kiest dan het leven, opdat u leeft, u en uw zaad;",
+      "text2026": "Ik neem vandaag tegen u tot getuigen de hemel en de aarde; het leven en de dood heb ik u voorgesteld, de zegen en de vloek! Kies dan het leven, opdat u leeft, u en uw zaad;",
       "marginNotes": [
         {
           "marker": "g",
@@ -2328,7 +2333,7 @@
           "morph": "HC/Ncmsc/Sp2ms"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"direct-speech\"><i> Ik<sup class=\"note-marker\" data-note=\"18\">18</sup> neem vandaag tegen u tot getuigen de hemel en de aarde; het leven en de dood heb ik<sup class=\"note-marker\" data-note=\"19\">19</sup> u voorgesteld, de zegen en de vloek! Kiest dan het leven, opdat u leeft, u en uw zaad;</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"direct-speech\"><i> Ik<sup class=\"note-marker\" data-note=\"18\">18</sup> neem vandaag tegen u tot getuigen de hemel en de aarde; het leven en de dood heb ik<sup class=\"note-marker\" data-note=\"19\">19</sup> u voorgesteld, de zegen en de vloek! Kies dan het leven, opdat u leeft, u en uw zaad;</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> Ik<sup class=\"note-marker\" data-note=\"18\">18</sup> neem heden tegen ulieden tot getuigen den hemel en de aarde; het leven en den dood heb ik<sup class=\"note-marker\" data-note=\"19\">19</sup> u voorgesteld, den zegen en den vloek! Kiest dan het leven, opdat gij levet, gij en uw zaad;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> Ick <sup class=\"note-marker\" data-note=\"18\">18</sup> neme heden tegens ulieden tot getuyge<i>n</i> den hemel ende de aerde; het leven ende den doot heb ick <sup class=\"note-marker\" data-note=\"19\">19</sup> u voorgestelt, den segen ende den vloeck: kiest dan het leven, op dat ghy levet, ghy, ende u zaet;",
       "phraseDiff": [
@@ -2361,6 +2366,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "Kiest",
+          "new": "Kies",
+          "principe": "V1158"
         },
         {
           "old": "gij levet, gij",

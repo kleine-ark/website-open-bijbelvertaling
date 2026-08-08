@@ -5,7 +5,7 @@
    "number": 1,
    "textSV1888": "En de ganse aarde was van enerlei spraak en enerlei woorden.",
    "text1637": "ENde [1] de gantsche aerde was [2] van eenerley [3] sprake, ende eenerley woorden.",
-   "text2026": "En de hele aarde was van enerlei taal en enerlei woorden.",
+   "text2026": "En de hele aarde was van dezelfde taal en dezelfde woorden.",
    "marginNotes": [
     {
      "marker": "1",
@@ -100,7 +100,7 @@
      "morph": "HAcmpa"
     }
    ],
-   "text2026_html": "En<sup class=\"note-marker\" data-note=\"1\">1</sup> de hele aarde was<sup class=\"note-marker\" data-note=\"2\">2</sup> van enerlei<sup class=\"note-marker\" data-note=\"3\">3</sup> taal en enerlei woorden.",
+   "text2026_html": "En<sup class=\"note-marker\" data-note=\"1\">1</sup> de hele aarde was<sup class=\"note-marker\" data-note=\"2\">2</sup> van dezelfde<sup class=\"note-marker\" data-note=\"3\">3</sup> taal en dezelfde woorden.",
    "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"1\">1</sup> de ganse aarde was<sup class=\"note-marker\" data-note=\"2\">2</sup> van enerlei<sup class=\"note-marker\" data-note=\"3\">3</sup> spraak en enerlei woorden.",
    "text1637_html": "ENde <sup class=\"note-marker\" data-note=\"1\">1</sup> de gantsche aerde was <sup class=\"note-marker\" data-note=\"2\">2</sup> van eenerley <sup class=\"note-marker\" data-note=\"3\">3</sup> sprake, ende eenerley woorden.",
    "phraseDiff": [
@@ -110,9 +110,14 @@
      "principe": "V3"
     },
     {
-     "old": "spraak",
-     "new": "taal",
-     "principe": "V907"
+     "old": "enerlei spraak",
+     "new": "dezelfde taal",
+     "principe": "V1163"
+    },
+    {
+     "old": "enerlei",
+     "new": "dezelfde",
+     "principe": "V1163"
     }
    ]
   },
@@ -701,7 +706,7 @@
    "number": 6,
    "textSV1888": "En de HEERE zeide: Ziet, zij zijn enerlei volk, en hebben allen enerlei spraak; en dit is het, dat zij beginnen te maken; maar nu, zoude hun niet afgesneden worden al wat zij bedacht hebben te maken?",
    "text1637": "Ende de HEERE seyde: Siet, sy zijn eenerley volck, ende hebben alle eenerley sprake, ende dit ist, dat sy beginnen te maken: maer [15] nu, [16] en soude hen niet afgesneden worden al wat sy bedacht hebben te maken?",
-   "text2026": "En JAHWEH zei: Zie, zij zijn enerlei volk, en hebben alle enerlei taal; en dit is het, dat zij beginnen te maken; maar nu, zou hun niet afgesneden worden al wat zij bedacht hebben te maken?",
+   "text2026": "En JAHWEH zei: Zie, zij zijn dezelfde volk, en hebben alle dezelfde taal; en dit is het, dat zij beginnen te maken; maar nu, zou hun niet afgesneden worden al wat zij bedacht hebben te maken?",
    "marginNotes": [
     {
      "marker": "15",
@@ -815,7 +820,7 @@
      "morph": "HR/Vqc"
     }
    ],
-   "text2026_html": "En JAHWEH zei: <span class=\"god-speaks\"><i>Zie, zij zijn enerlei volk, en hebben alle enerlei taal; en dit is het, dat zij beginnen te maken; maar nu, zou hun niet afgesneden worden al wat zij bedacht hebben te maken?</i></span>",
+   "text2026_html": "En JAHWEH zei: <span class=\"god-speaks\"><i>Zie, zij zijn dezelfde volk, en hebben alle dezelfde taal; en dit is het, dat zij beginnen te maken; maar nu, zou hun niet afgesneden worden al wat zij bedacht hebben te maken?</i></span>",
    "textSV1888_html": "En de HEERE zeide: Ziet, zij zijn enerlei volk, en hebben allen enerlei spraak; en dit is het, dat zij beginnen te maken; maar<sup class=\"note-marker\" data-note=\"15\">15</sup> nu,<sup class=\"note-marker\" data-note=\"16\">16</sup> zoude hun niet afgesneden worden al wat zij bedacht hebben te maken?",
    "text1637_html": "Ende de HEERE seyde: Siet, sy zijn eenerley volck, ende hebben alle eenerley sprake, ende dit ist, dat sy beginnen te maken: maer <sup class=\"note-marker\" data-note=\"15\">15</sup> nu, <sup class=\"note-marker\" data-note=\"16\">16</sup> en soude hen niet afgesneden worden al wat sy bedacht hebben te maken?",
    "phraseDiff": [
@@ -825,19 +830,19 @@
      "principe": "G1"
     },
     {
-     "old": "allen",
-     "new": "alle",
-     "principe": null
+     "old": "enerlei",
+     "new": "dezelfde",
+     "principe": "V1163"
+    },
+    {
+     "old": "allen enerlei spraak;",
+     "new": "alle dezelfde taal;",
+     "principe": "V1163"
     },
     {
      "old": "zoude",
      "new": "zou",
      "principe": "V50"
-    },
-    {
-     "old": "spraak",
-     "new": "taal",
-     "principe": "V907"
     }
    ]
   },

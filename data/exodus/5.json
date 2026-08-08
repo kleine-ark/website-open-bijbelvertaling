@@ -394,7 +394,7 @@
    "number": 4,
    "textSV1888": "Toen zeide de koning van Egypte tot hen: Gij, Mozes en Aäron! waarom trekt gij het volk af van hun werken? Gaat heen tot uw lasten.",
    "text1637": "Doe seyde de Coninck van Egypten tot hen, Ghy Mose ende Aaron, waerom treckt ghy het volck af van hare wercken? gaet henen tot uwe lasten.",
-   "text2026": "Toen zei de koning van Egypte tot hen: U, Mozes en Aäron! waarom trekt u het volk af van hun werken? Gaat heen tot uw dwangarbeid.",
+   "text2026": "Toen zei de koning van Egypte tot hen: U, Mozes en Aäron! waarom trekt u het volk af van hun werken? Ga heen tot uw dwangarbeid.",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -463,7 +463,7 @@
      "morph": "HR/Ncfpc/Sp2mp"
     }
    ],
-   "text2026_html": "Toen zei de koning van Egypte tot hen: <span class=\"direct-speech\"><i>U, Mozes en Aäron! waarom trekt u het volk af van hun werken? Gaat heen tot uw dwangarbeid.</i></span>",
+   "text2026_html": "Toen zei de koning van Egypte tot hen: <span class=\"direct-speech\"><i>U, Mozes en Aäron! waarom trekt u het volk af van hun werken? Ga heen tot uw dwangarbeid.</i></span>",
    "text1637_html": "Doe seyde de Coninck van Egypten tot hen, Ghy Mose ende Aaron, waerom treckt ghy het volck af van hare wercken? gaet henen tot uwe lasten.",
    "phraseDiff": [
     {
@@ -482,6 +482,11 @@
      "principe": "A1"
     },
     {
+     "old": "Gaat",
+     "new": "Ga",
+     "principe": "V1158"
+    },
+    {
      "old": "lasten.",
      "new": "dwangarbeid.",
      "principe": "V1003"
@@ -492,7 +497,7 @@
    "number": 5,
    "textSV1888": "Verder zeide Farao: Ziet, het volk des lands is alreeds te veel; en zoudt gijlieden hen doen rusten van hun lasten?",
    "text1637": "Voorder seyde Pharao, Siet [1] het volck des lants is alreede [te] vele: ende [2] soudt ghy-lieden haer doen rusten van hare lasten?",
-   "text2026": "Verder zei Farao: Ziet, het volk van het land is alreeds te veel; en zou u hen doen rusten van hun dwangarbeid?",
+   "text2026": "Verder zei Farao: Zie, het volk van het land is alreeds te veel; en zou u hen doen rusten van hun dwangarbeid?",
    "marginNotes": [
     {
      "marker": "1",
@@ -561,7 +566,7 @@
      "morph": "HR/Ncfpc/Sp3mp"
     }
    ],
-   "text2026_html": "Verder zei Farao: <span class=\"direct-speech\"><i>Ziet, het volk van het land is alreeds te veel; en zou u hen doen rusten van hun dwangarbeid?</i></span>",
+   "text2026_html": "Verder zei Farao: <span class=\"direct-speech\"><i>Zie, het volk van het land is alreeds te veel; en zou u hen doen rusten van hun dwangarbeid?</i></span>",
    "textSV1888_html": "Verder zeide Farao: Ziet,<sup class=\"note-marker\" data-note=\"1\">1</sup> het volk des lands is alreeds te veel; en<sup class=\"note-marker\" data-note=\"2\">2</sup> zoudt gijlieden hen doen rusten van hun lasten?",
    "text1637_html": "Voorder seyde Pharao, Siet <sup class=\"note-marker\" data-note=\"1\">1</sup> het volck des lants is alreede [te] vele: ende <sup class=\"note-marker\" data-note=\"2\">2</sup> soudt ghy-lieden haer doen rusten van hare lasten?",
    "phraseDiff": [
@@ -569,6 +574,11 @@
      "old": "zeide",
      "new": "zei",
      "principe": "W1"
+    },
+    {
+     "old": "Ziet,",
+     "new": "Zie,",
+     "principe": "V1158"
     },
     {
      "old": "des lands",
@@ -1156,7 +1166,7 @@
    "number": 11,
    "textSV1888": "Gaat gij zelve heen, haalt u stro, waar gij het vindt; doch van uw dienst zal niet verminderd worden.",
    "text1637": "Gaet ghy [selfs] henen, haelt u stroo, waer ghy het vindt: doch van uwen dienst en sal [9] niet vermindert worden.",
-   "text2026": "Gaat u zelf heen, haalt u stro, waar u het vindt; maar van uw dienst zal niet verminderd worden.",
+   "text2026": "Ga u zelf heen, haalt u stro, waar u het vindt; maar van uw dienst zal niet verminderd worden.",
    "marginNotes": [
     {
      "marker": "9",
@@ -1228,14 +1238,14 @@
      "morph": "HNcmsa"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>Gaat u zelf heen, haalt u stro, waar u het vindt; maar van uw dienst zal<sup class=\"note-marker\" data-note=\"9\">9</sup> niet verminderd worden.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>Ga u zelf heen, haalt u stro, waar u het vindt; maar van uw dienst zal<sup class=\"note-marker\" data-note=\"9\">9</sup> niet verminderd worden.</i></span>",
    "textSV1888_html": "Gaat gij zelve heen, haalt u stro, waar gij het vindt; doch van uw dienst zal<sup class=\"note-marker\" data-note=\"9\">9</sup> niet verminderd worden.",
    "text1637_html": "Gaet ghy [selfs] hene<i>n</i>, haelt u stroo, waer ghy het vindt: doch van uwen dienst en sal <sup class=\"note-marker\" data-note=\"9\">9</sup> niet vermindert worden.",
    "phraseDiff": [
     {
-     "old": "gij zelve",
-     "new": "u zelf",
-     "principe": null
+     "old": "Gaat gij zelve",
+     "new": "Ga u zelf",
+     "principe": "V1158"
     },
     {
      "old": "gij",
@@ -1656,7 +1666,7 @@
    "number": 16,
    "textSV1888": "Aan uw knechten wordt geen stro gegeven, en zij zeggen tot ons: Maakt de tichelstenen; en ziet, uw knechten worden geslagen, doch de schuld is uws volks!",
    "text1637": "Uwen knechten en wort geen stroo gegeven, ende [12] sy seggen tot ons, Maeckt de tichel-steenen: ende siet, uwe knechten worden geslagen, doch de schult is [13] uwes volcks.",
-   "text2026": "Aan uw knechten wordt geen stro gegeven, en zij zeggen tot ons: Maakt de bakstenen; en ziet, uw knechten worden geslagen, maar de schuld is van uw volk!",
+   "text2026": "Aan uw knechten wordt geen stro gegeven, en zij zeggen tot ons: Maak de bakstenen; en ziet, uw knechten worden geslagen, maar de schuld is van uw volk!",
    "marginNotes": [
     {
      "marker": "12",
@@ -1740,10 +1750,15 @@
      "morph": "HNcmsc/Sp2ms"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>Aan uw knechten wordt geen stro gegeven, en<sup class=\"note-marker\" data-note=\"12\">12</sup> zij zeggen tot ons: <span class=\"direct-speech\"><i>Maakt de bakstenen;</i></span> en ziet, uw knechten worden geslagen, maar de schuld is<sup class=\"note-marker\" data-note=\"13\">13</sup> van uw volk!</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>Aan uw knechten wordt geen stro gegeven, en<sup class=\"note-marker\" data-note=\"12\">12</sup> zij zeggen tot ons: <span class=\"direct-speech\"><i>Maak de bakstenen;</i></span> en ziet, uw knechten worden geslagen, maar de schuld is<sup class=\"note-marker\" data-note=\"13\">13</sup> van uw volk!</i></span>",
    "textSV1888_html": "Aan uw knechten wordt geen stro gegeven, en<sup class=\"note-marker\" data-note=\"12\">12</sup> zij zeggen tot ons: Maakt de tichelstenen; en ziet, uw knechten worden geslagen, doch de schuld is<sup class=\"note-marker\" data-note=\"13\">13</sup> uws volks!",
    "text1637_html": "Uwen knechten en wort geen stroo gegeven, ende <sup class=\"note-marker\" data-note=\"12\">12</sup> sy segge<i>n</i> tot ons, Maeckt de tichel-steenen: ende siet, uwe knechten worden geslagen, doch de schult is <sup class=\"note-marker\" data-note=\"13\">13</sup> uwes volcks.",
    "phraseDiff": [
+    {
+     "old": "Maakt",
+     "new": "Maak",
+     "principe": "V1158"
+    },
     {
      "old": "tichelstenen;",
      "new": "bakstenen;",

@@ -677,7 +677,7 @@
       "number": 6,
       "textSV1888": "Daarom is ook vervat in de Schrift: Ziet, Ik leg in Sion een uitersten Hoeksteen, Die uitverkoren en dierbaar is; en: Die in Hem gelooft, zal niet beschaamd worden.",
       "text1637": "[15] Daerom is oock vervattet in de Schrift, [g] Siet ick legge in Sion [16] eenen uytersten hoecksteen, die uytverkoren [ende] dierbaer is: ende, Die in hem gelooft en sal [17] niet beschaemt worden.",
-      "text2026": "Daarom is ook vervat in de Schrift: Ziet, Ik leg in Sion een uitersten Hoeksteen, Die uitverkoren en dierbaar is; en: Die in Hem gelooft, zal niet beschaamd worden.",
+      "text2026": "Daarom is ook vervat in de Schrift: Zie, Ik leg in Sion een uitersten Hoeksteen, Die uitverkoren en dierbaar is; en: Die in Hem gelooft, zal niet beschaamd worden.",
       "marginNotes": [
         {
           "marker": "15",
@@ -830,10 +830,16 @@
           "gloss": "〔to dishonor"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"15\">15</sup> Daarom is ook vervat in de Schrift:<sup class=\"note-marker\" data-note=\"g\">g</sup> <span class=\"god-speaks\"><i>Ziet, Ik leg in Sion<sup class=\"note-marker\" data-note=\"16\">16</sup> een uitersten Hoeksteen, Die uitverkoren en dierbaar is;</i></span> en: <span class=\"god-speaks\"><i>Die in Hem gelooft, zal<sup class=\"note-marker\" data-note=\"17\">17</sup> niet beschaamd worden.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"15\">15</sup> Daarom is ook vervat in de Schrift:<sup class=\"note-marker\" data-note=\"g\">g</sup> <span class=\"god-speaks\"><i>Zie, Ik leg in Sion<sup class=\"note-marker\" data-note=\"16\">16</sup> een uitersten Hoeksteen, Die uitverkoren en dierbaar is;</i></span> en: <span class=\"god-speaks\"><i>Die in Hem gelooft, zal<sup class=\"note-marker\" data-note=\"17\">17</sup> niet beschaamd worden.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"15\">15</sup> Daarom is ook vervat in de Schrift:<sup class=\"note-marker\" data-note=\"g\">g</sup> Ziet, Ik leg in Sion<sup class=\"note-marker\" data-note=\"16\">16</sup> een uitersten Hoeksteen, Die uitverkoren en dierbaar is; en: Die in Hem gelooft, zal<sup class=\"note-marker\" data-note=\"17\">17</sup> niet beschaamd worden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"15\">15</sup> Daerom is oock vervattet in de Schrift, <sup class=\"note-marker\" data-note=\"g\">g</sup> Siet ick legge in Sion <sup class=\"note-marker\" data-note=\"16\">16</sup> eenen uytersten hoecksteen, die uytverkoren [<i>ende</i>] dierbaer is: ende, Die in hem gelooft en sal <sup class=\"note-marker\" data-note=\"17\">17</sup> niet beschaemt worden.",
-      "phraseDiff": []
+      "phraseDiff": [
+        {
+          "old": "Ziet,",
+          "new": "Zie,",
+          "principe": "V1158"
+        }
+      ]
     },
     {
       "number": 7,
@@ -2406,7 +2412,7 @@
       "number": 17,
       "textSV1888": "Eert een iegelijk; hebt de broederschap lief; vreest God; eert den koning.",
       "text1637": "[x] [41] Eert een yegelick: [y] hebt [42] de broederschap lief: vreest Godt: [z] eert den Coninck.",
-      "text2026": "Eer ieder; hebt de broederschap lief; vreest God; eer de koning.",
+      "text2026": "Eer ieder; heb de broederschap lief; vrees God; eer de koning.",
       "marginNotes": [
         {
           "marker": "41",
@@ -2512,14 +2518,19 @@
           "gloss": "〔to honor"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"41\">41</sup><sup class=\"note-marker\" data-note=\"x\">x</sup> Eer ieder;<sup class=\"note-marker\" data-note=\"y\">y</sup> hebt<sup class=\"note-marker\" data-note=\"42\">42</sup> de broederschap lief; vreest God;<sup class=\"note-marker\" data-note=\"z\">z</sup> eer de koning.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"41\">41</sup><sup class=\"note-marker\" data-note=\"x\">x</sup> Eer ieder;<sup class=\"note-marker\" data-note=\"y\">y</sup> heb<sup class=\"note-marker\" data-note=\"42\">42</sup> de broederschap lief; vrees God;<sup class=\"note-marker\" data-note=\"z\">z</sup> eer de koning.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"41\">41</sup><sup class=\"note-marker\" data-note=\"x\">x</sup> Eert een iegelijk;<sup class=\"note-marker\" data-note=\"y\">y</sup> hebt<sup class=\"note-marker\" data-note=\"42\">42</sup> de broederschap lief; vreest God;<sup class=\"note-marker\" data-note=\"z\">z</sup> eert den koning.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"x\">x</sup> <sup class=\"note-marker\" data-note=\"41\">41</sup> Eert een yegelick: <sup class=\"note-marker\" data-note=\"y\">y</sup> hebt <sup class=\"note-marker\" data-note=\"42\">42</sup> de broederschap lief: vreest Godt: <sup class=\"note-marker\" data-note=\"z\">z</sup> eert den Coninck.",
       "phraseDiff": [
         {
-          "old": "Eert een iegelijk;",
-          "new": "Eer ieder;",
-          "principe": "V5"
+          "old": "Eert een iegelijk; hebt",
+          "new": "Eer ieder; heb",
+          "principe": "V1158"
+        },
+        {
+          "old": "vreest",
+          "new": "vrees",
+          "principe": "V1158"
         },
         {
           "old": "eert den",

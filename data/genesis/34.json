@@ -822,7 +822,7 @@
       "number": 8,
       "textSV1888": "Toen sprak Hemor met hen, zeggende: Mijns zoons Sichems ziel is verliefd op ulieder dochter; geeft hem haar toch tot een vrouw.",
       "text1637": "Doe sprack Hemor met hen, seggende: Mijnes soons Sichems ziele is verlieft op u lieder dochter: geeft se hem doch tot eene vrouwe.",
-      "text2026": "Toen sprak Hemor met hen, zeggende: De ziel van mijn zoon Sichem is verliefd op uw dochter; geeft hem haar toch tot een vrouw.",
+      "text2026": "Toen sprak Hemor met hen, zeggende: De ziel van mijn zoon Sichem is verliefd op uw dochter; geef hem haar toch tot een vrouw.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -896,7 +896,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "Toen sprak Hemor met hen, zeggende: <span class=\"direct-speech\"><i>De ziel van mijn zoon Sichem is verliefd op uw dochter; geeft hem haar toch tot een vrouw.</i></span>",
+      "text2026_html": "Toen sprak Hemor met hen, zeggende: <span class=\"direct-speech\"><i>De ziel van mijn zoon Sichem is verliefd op uw dochter; geef hem haar toch tot een vrouw.</i></span>",
       "text1637_html": "Doe sprack Hemor met hen, seggende: Mijnes soons Sichems ziele is verlieft op u lieder dochter: geeft se hem doch tot eene vrouwe.",
       "phraseDiff": [
         {
@@ -913,6 +913,11 @@
           "old": "ulieder",
           "new": "uw",
           "principe": "V311"
+        },
+        {
+          "old": "geeft",
+          "new": "geef",
+          "principe": "V1158"
         }
       ]
     },
@@ -920,7 +925,7 @@
       "number": 9,
       "textSV1888": "En verzwagert u met ons; geeft ons uw dochteren; en neemt voor u onze dochteren;",
       "text1637": "Ende [12] verswagert u met ons, [13] geeft ons uwe dochteren, ende [14] neemt voor u onse dochteren.",
-      "text2026": "En verzwagert u met ons; geeft ons uw dochters; en neemt voor u onze dochters;",
+      "text2026": "En verzwagert u met ons; geef ons uw dochters; en neemt voor u onze dochters;",
       "marginNotes": [
         {
           "marker": "12",
@@ -1037,10 +1042,15 @@
           "morph": "HR/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En<sup class=\"note-marker\" data-note=\"12\">12</sup> verzwagert u met ons;<sup class=\"note-marker\" data-note=\"13\">13</sup> geeft ons uw dochters; en<sup class=\"note-marker\" data-note=\"14\">14</sup> neemt voor u onze dochters;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En<sup class=\"note-marker\" data-note=\"12\">12</sup> verzwagert u met ons;<sup class=\"note-marker\" data-note=\"13\">13</sup> geef ons uw dochters; en<sup class=\"note-marker\" data-note=\"14\">14</sup> neemt voor u onze dochters;</i></span>",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"12\">12</sup> verzwagert u met ons;<sup class=\"note-marker\" data-note=\"13\">13</sup> geeft ons uw dochteren; en<sup class=\"note-marker\" data-note=\"14\">14</sup> neemt voor u onze dochteren;",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"12\">12</sup> verswagert u met ons, <sup class=\"note-marker\" data-note=\"13\">13</sup> geeft ons uwe dochteren, ende <sup class=\"note-marker\" data-note=\"14\">14</sup> neemt voor u onse dochteren.",
       "phraseDiff": [
+        {
+          "old": "geeft",
+          "new": "geef",
+          "principe": "V1158"
+        },
         {
           "old": "dochteren;",
           "new": "dochters;",

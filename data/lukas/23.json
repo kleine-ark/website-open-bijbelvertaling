@@ -3318,7 +3318,7 @@
       "number": 28,
       "textSV1888": "En Jezus, Zich tot haar kerende, zeide: Gij dochters van Jeruzalem! weent niet over Mij, maar weent over uzelven, en over uw kinderen.",
       "text1637": "Ende Iesus hem tot haer keerdende seyde, [30] Ghy dochters van Ierusalem, en weent [31] niet over my, maer [32] weent over u selven, ende over uwe kinderen.",
-      "text2026": "En Jezus, Zich tot haar kerende, zei: U dochters van Jeruzalem! weent niet over Mij, maar weent over uzelf, en over uw kinderen.",
+      "text2026": "En Jezus, Zich tot haar kerende, zei: U dochters van Jeruzalem! ween niet over Mij, maar weent over uzelf, en over uw kinderen.",
       "marginNotes": [
         {
           "marker": "30",
@@ -3476,7 +3476,7 @@
           "gloss": "〔you"
         }
       ],
-      "text2026_html": "En Jezus, Zich tot haar kerende, zei:<sup class=\"note-marker\" data-note=\"30\">30</sup> <span class=\"god-speaks\"><i>U dochters van Jeruzalem! weent<sup class=\"note-marker\" data-note=\"31\">31</sup> niet over Mij, maar<sup class=\"note-marker\" data-note=\"32\">32</sup> weent over uzelf, en over uw kinderen.</i></span>",
+      "text2026_html": "En Jezus, Zich tot haar kerende, zei:<sup class=\"note-marker\" data-note=\"30\">30</sup> <span class=\"god-speaks\"><i>U dochters van Jeruzalem! ween<sup class=\"note-marker\" data-note=\"31\">31</sup> niet over Mij, maar<sup class=\"note-marker\" data-note=\"32\">32</sup> weent over uzelf, en over uw kinderen.</i></span>",
       "textSV1888_html": "En Jezus, Zich tot haar kerende, zeide:<sup class=\"note-marker\" data-note=\"30\">30</sup> Gij dochters van Jeruzalem! weent<sup class=\"note-marker\" data-note=\"31\">31</sup> niet over Mij, maar<sup class=\"note-marker\" data-note=\"32\">32</sup> weent over uzelven, en over uw kinderen.",
       "text1637_html": "Ende Iesus hem tot haer keerdende seyde, <sup class=\"note-marker\" data-note=\"30\">30</sup> Ghy dochters van Ierusalem, en weent <sup class=\"note-marker\" data-note=\"31\">31</sup> niet over my, maer <sup class=\"note-marker\" data-note=\"32\">32</sup> weent over u selven, ende over uwe kinderen.",
       "phraseDiff": [
@@ -3484,6 +3484,11 @@
           "old": "zeide: Gij",
           "new": "zei: U",
           "principe": "A1"
+        },
+        {
+          "old": "weent",
+          "new": "ween",
+          "principe": "V1158"
         },
         {
           "old": "uzelven,",
@@ -3650,7 +3655,7 @@
       "number": 30,
       "textSV1888": "Alsdan zullen zij beginnen te zeggen tot de bergen: Valt op ons; en tot de heuvelen: Bedekt ons.",
       "text1637": "Als dan sullen sy beginnen [35] te seggen tot de bergen, [n] Valt op ons: ende tot de heuvelen, Bedeckt ons.",
-      "text2026": "Dan zullen zij beginnen te zeggen tot de bergen: Valt op ons; en tot de heuvelen: Bedekt ons.",
+      "text2026": "Dan zullen zij beginnen te zeggen tot de bergen: Val op ons; en tot de heuvelen: Bedek ons.",
       "marginNotes": [
         {
           "marker": "35",
@@ -3747,7 +3752,7 @@
           "gloss": "〔I/we"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Dan zullen zij beginnen<sup class=\"note-marker\" data-note=\"35\">35</sup> te zeggen tot de bergen:<sup class=\"note-marker\" data-note=\"n\">n</sup> Valt op ons; en tot de heuvelen: Bedekt ons.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Dan zullen zij beginnen<sup class=\"note-marker\" data-note=\"35\">35</sup> te zeggen tot de bergen:<sup class=\"note-marker\" data-note=\"n\">n</sup> Val op ons; en tot de heuvelen: Bedek ons.</i></span>",
       "textSV1888_html": "Alsdan zullen zij beginnen<sup class=\"note-marker\" data-note=\"35\">35</sup> te zeggen tot de bergen:<sup class=\"note-marker\" data-note=\"n\">n</sup> Valt op ons; en tot de heuvelen: Bedekt ons.",
       "text1637_html": "Als dan sullen sy beginnen <sup class=\"note-marker\" data-note=\"35\">35</sup> te seggen tot de bergen, <sup class=\"note-marker\" data-note=\"n\">n</sup> Valt op ons: ende tot de heuvelen, Bedeckt ons.",
       "phraseDiff": [
@@ -3755,6 +3760,16 @@
           "old": "Alsdan",
           "new": "Dan",
           "principe": "V196"
+        },
+        {
+          "old": "Valt",
+          "new": "Val",
+          "principe": "V1158"
+        },
+        {
+          "old": "Bedekt",
+          "new": "Bedek",
+          "principe": "V1158"
         }
       ]
     },

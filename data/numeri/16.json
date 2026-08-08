@@ -668,7 +668,7 @@
       "number": 6,
       "textSV1888": "Doet dit: neemt u wierookvaten, Korach en zijn ganse vergadering;",
       "text1637": "Doet dit: neemt u wieroock-vaten, Korah ende sijne gantsche vergaderinge:",
-      "text2026": "Doet dit: neemt u wierookvaten, Korach en zijn hele vergadering;",
+      "text2026": "Doe dit: neem u wierookvaten, Korach en zijn hele vergadering;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -712,9 +712,19 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Doet dit: neemt u wierookvaten, Korach en zijn hele vergadering;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Doe dit: neem u wierookvaten, Korach en zijn hele vergadering;</i></span>",
       "text1637_html": "Doet dit: neemt u wieroock-vaten, Korah ende sijne gantsche vergaderinge:",
       "phraseDiff": [
+        {
+          "old": "Doet",
+          "new": "Doe",
+          "principe": "V1158"
+        },
+        {
+          "old": "neemt",
+          "new": "neem",
+          "principe": "V1158"
+        },
         {
           "old": "ganse",
           "new": "hele",
@@ -875,7 +885,7 @@
       "number": 8,
       "textSV1888": "Voorts zeide Mozes tot Korach: Hoort toch, gij, kinderen van Levi!",
       "text1637": "Voort seyde Mose tot Korah: Hoort doch, ghy kinderen van Levi:",
-      "text2026": "Verder zei Mozes tot Korach: Hoort toch, u, kinderen van Levi!",
+      "text2026": "Verder zei Mozes tot Korach: Hoor toch, u, kinderen van Levi!",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -919,13 +929,18 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Verder zei Mozes tot Korach: <span class=\"direct-speech\"><i>Hoort toch, u, kinderen van Levi!</i></span>",
+      "text2026_html": "Verder zei Mozes tot Korach: <span class=\"direct-speech\"><i>Hoor toch, u, kinderen van Levi!</i></span>",
       "text1637_html": "Voort seyde Mose tot Korah: Hoort doch, ghy kinderen van Levi:",
       "phraseDiff": [
         {
           "old": "Voorts zeide",
           "new": "Verder zei",
           "principe": "W1"
+        },
+        {
+          "old": "Hoort",
+          "new": "Hoor",
+          "principe": "V1158"
         },
         {
           "old": "gij,",
@@ -1365,7 +1380,7 @@
       "number": 13,
       "textSV1888": "Is het te weinig, dat gij ons uit een land, van melk en honig vloeiende, hebt opgevoerd, om ons te doden in de woestijn, dat gij ook uzelven ten enenmaal over ons tot een overheer maakt?",
       "text1637": "Ist te weynich, dat ghy ons uyt een [20] lant, van melck ende honich vloeyende, hebt opgevoert, om ons te dooden in de woestijne, dat ghy oock u selven [21] t' eenemael over ons tot een Over-Heer maeckt?",
-      "text2026": "Is het te weinig, dat u ons uit een land, van melk en honing vloeiende, hebt opgevoerd, om ons te doden in de woestijn, dat u ook uzelf ten enenmaal over ons tot een overheer maakt?",
+      "text2026": "Is het te weinig, dat u ons uit een land, van melk en honing vloeiende, hebt opgevoerd, om ons te doden in de woestijn, dat u ook uzelf ten enenmaal over ons tot een heerser maakt?",
       "marginNotes": [
         {
           "marker": "20",
@@ -1454,7 +1469,7 @@
           "morph": "HVta"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Is het te weinig, dat u ons uit een<sup class=\"note-marker\" data-note=\"20\">20</sup> land, van melk en honing vloeiende, hebt opgevoerd, om ons te doden in de woestijn, dat u ook<sup class=\"note-marker\" data-note=\"21\">21</sup> uzelf ten enenmaal over ons tot een overheer maakt?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Is het te weinig, dat u ons uit een<sup class=\"note-marker\" data-note=\"20\">20</sup> land, van melk en honing vloeiende, hebt opgevoerd, om ons te doden in de woestijn, dat u ook<sup class=\"note-marker\" data-note=\"21\">21</sup> uzelf ten enenmaal over ons tot een heerser maakt?</i></span>",
       "textSV1888_html": "Is het te weinig, dat gij ons uit een<sup class=\"note-marker\" data-note=\"20\">20</sup> land, van melk en honig vloeiende, hebt opgevoerd, om ons te doden in de woestijn, dat gij ook uzelven<sup class=\"note-marker\" data-note=\"21\">21</sup> ten enenmaal over ons tot een overheer maakt?",
       "text1637_html": "Ist te weynich, dat ghy ons uyt een <sup class=\"note-marker\" data-note=\"20\">20</sup> lant, van melck ende honich vloeyende, hebt opgevoert, om ons te dooden in de woestijne, dat ghy oock u selven <sup class=\"note-marker\" data-note=\"21\">21</sup> t' eenemael over ons tot een Over-Heer maeckt?",
       "phraseDiff": [
@@ -1477,6 +1492,11 @@
           "old": "uzelven",
           "new": "uzelf",
           "principe": null
+        },
+        {
+          "old": "overheer",
+          "new": "heerser",
+          "principe": "V1164"
         }
       ]
     },
@@ -2292,7 +2312,7 @@
       "number": 21,
       "textSV1888": "Scheidt u af uit het midden van deze vergadering, en Ik zal hen als in een ogenblik verteren!",
       "text1637": "Scheydet u af uyt het midden van dese vergaderinge, ende ick salse als in een [29] oogenblick verteeren.",
-      "text2026": "Scheidt u af uit het midden van deze vergadering, en Ik zal hen als in een ogenblik verteren!",
+      "text2026": "Scheid u af uit het midden van deze vergadering, en Ik zal hen als in een ogenblik verteren!",
       "marginNotes": [
         {
           "marker": "29",
@@ -2339,9 +2359,16 @@
           "morph": "HR/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Scheidt u af uit het midden van deze vergadering, en Ik zal hen als in een<sup class=\"note-marker\" data-note=\"29\">29</sup> ogenblik verteren!</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Scheid u af uit het midden van deze vergadering, en Ik zal hen als in een<sup class=\"note-marker\" data-note=\"29\">29</sup> ogenblik verteren!</i></span>",
       "textSV1888_html": "Scheidt u af uit het midden van deze vergadering, en Ik zal hen als in een<sup class=\"note-marker\" data-note=\"29\">29</sup> ogenblik verteren!",
-      "text1637_html": "Scheydet u af uyt het midden van dese vergaderinge, ende ick salse als in een <sup class=\"note-marker\" data-note=\"29\">29</sup> oogenblick verteeren."
+      "text1637_html": "Scheydet u af uyt het midden van dese vergaderinge, ende ick salse als in een <sup class=\"note-marker\" data-note=\"29\">29</sup> oogenblick verteeren.",
+      "phraseDiff": [
+        {
+          "old": "Scheidt",
+          "new": "Scheid",
+          "principe": "V1158"
+        }
+      ]
     },
     {
       "number": 22,
@@ -2543,7 +2570,7 @@
       "number": 24,
       "textSV1888": "Spreek tot deze vergadering, zeggende: Gaat op van rondom de woning van Korach, Dathan en Abiram.",
       "text1637": "Spreeckt tot dese vergaderinge, seggende: Gaet op van rontomme der wooninge van Korah, Dathan, ende Abiram.",
-      "text2026": "Spreek tot deze vergadering, zeggende: Gaat op van rondom de woning van Korach, Dathan en Abiram.",
+      "text2026": "Spreek tot deze vergadering, zeggende: Ga op van rondom de woning van Korach, Dathan en Abiram.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2597,8 +2624,15 @@
           "morph": "HC/Np"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Spreek tot deze vergadering, zeggende: <span class=\"direct-speech\"><i>Gaat op van rondom de woning van Korach, Dathan en Abiram.</i></span></i></span>",
-      "text1637_html": "Spreeckt tot dese vergaderinge, seggende: Gaet op van rontomme der wooninge van Korah, Dathan, ende Abiram."
+      "text2026_html": "<span class=\"god-speaks\"><i>Spreek tot deze vergadering, zeggende: <span class=\"direct-speech\"><i>Ga op van rondom de woning van Korach, Dathan en Abiram.</i></span></i></span>",
+      "text1637_html": "Spreeckt tot dese vergaderinge, seggende: Gaet op van rontomme der wooninge van Korah, Dathan, ende Abiram.",
+      "phraseDiff": [
+        {
+          "old": "Gaat",
+          "new": "Ga",
+          "principe": "V1158"
+        }
+      ]
     },
     {
       "number": 25,
@@ -2665,7 +2699,7 @@
       "number": 26,
       "textSV1888": "En hij sprak tot de vergadering, zeggende: Wijkt toch af van de tenten dezer goddeloze mannen, en roert niets aan van hetgeen hunner is, opdat gij niet misschien verdaan wordt in al hun zonden.",
       "text1637": "Ende hy sprack tot de vergaderinge, seggende; Wijckt doch af van de tenten deser godtlooser mannen, ende en roert niets aen van 't gene dat hare is: op dat ghy niet misschien verdaen en wordet [33] in alle hare sonden.",
-      "text2026": "En hij sprak tot de vergadering, zeggende: Wijkt toch af van de tenten van deze goddeloze mannen, en roert niets aan van wat hun is, opdat u niet misschien verdaan wordt in al hun zonden.",
+      "text2026": "En hij sprak tot de vergadering, zeggende: Wijk toch af van de tenten van deze goddeloze mannen, en roert niets aan van wat hun is, opdat u niet misschien verdaan wordt in al hun zonden.",
       "marginNotes": [
         {
           "marker": "33",
@@ -2777,10 +2811,15 @@
           "morph": "HNcfpc/Sp3mp"
         }
       ],
-      "text2026_html": "En hij sprak tot de vergadering, zeggende: <span class=\"direct-speech\"><i>Wijkt toch af van de tenten van deze goddeloze mannen, en roert niets aan van wat hun is, opdat u niet misschien verdaan wordt in al hun zonden.</i></span>",
+      "text2026_html": "En hij sprak tot de vergadering, zeggende: <span class=\"direct-speech\"><i>Wijk toch af van de tenten van deze goddeloze mannen, en roert niets aan van wat hun is, opdat u niet misschien verdaan wordt in al hun zonden.</i></span>",
       "textSV1888_html": "En hij sprak tot de vergadering, zeggende: Wijkt toch af van de tenten dezer goddeloze mannen, en roert niets aan van hetgeen hunner is, opdat gij niet misschien verdaan wordt<sup class=\"note-marker\" data-note=\"33\">33</sup> in al hun zonden.",
       "text1637_html": "Ende hy sprack tot de vergaderinge, seggende; Wijckt doch af van de tenten deser godtlooser mannen, ende en roert niets aen van 't gene dat hare is: op dat ghy niet misschien verdaen en wordet <sup class=\"note-marker\" data-note=\"33\">33</sup> in alle hare sonden.",
       "phraseDiff": [
+        {
+          "old": "Wijkt",
+          "new": "Wijk",
+          "principe": "V1158"
+        },
         {
           "old": "dezer",
           "new": "van deze",
