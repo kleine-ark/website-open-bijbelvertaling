@@ -3958,7 +3958,7 @@
       "number": 36,
       "textSV1888": "Hun getelden nu waren, naar hun geslachten, twee duizend zevenhonderd en vijftig.",
       "text1637": "Hare getelde nu waren nae hare geslachten, twee duysent, seven hondert ende vijftich.",
-      "text2026": "Hun getelden nu waren, naar hun geslachten, twee duizend zevenhonderd en vijftig.",
+      "text2026": "Hun ingeschrevenen nu waren, naar hun geslachten, twee duizend zevenhonderd en vijftig.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3997,14 +3997,21 @@
           "morph": "HC/Acbpa"
         }
       ],
-      "text2026_html": "Hun getelden nu waren, naar hun geslachten, twee duizend zevenhonderd en vijftig.",
-      "text1637_html": "Hare getelde nu waren nae hare geslachten, twee duysent, seven hondert ende vijftich."
+      "text2026_html": "Hun ingeschrevenen nu waren, naar hun geslachten, twee duizend zevenhonderd en vijftig.",
+      "text1637_html": "Hare getelde nu waren nae hare geslachten, twee duysent, seven hondert ende vijftich.",
+      "phraseDiff": [
+        {
+          "old": "getelden",
+          "new": "ingeschrevenen",
+          "principe": "V1142"
+        }
+      ]
     },
     {
       "number": 37,
       "textSV1888": "Dit zijn de getelden van de geslachten der Kohathieten, van al wie in de tent der samenkomst diende, welke Mozes en Aäron geteld hebben, naar het bevel des HEEREN, door de hand van Mozes.",
       "text1637": "Dese zijn de getelde vande geslachten der Kohathiten, van al die in de Tente der t' samenkomste diende: dewelcke Mose, ende Aaron getelt hebben, nae het bevel des HEEREN, [45] door de hant Mose.",
-      "text2026": "Dit zijn de getelden van de geslachten van de Kohathieten, van al wie in de tent van de samenkomst diende, die Mozes en Aäron geteld hebben, naar het bevel van JAHWEH, door de hand van Mozes.",
+      "text2026": "Dit zijn de ingeschrevenen van de geslachten van de Kohathieten, van al wie in de tent van de samenkomst diende, die Mozes en Aäron geteld hebben, naar het bevel van JAHWEH, door de hand van Mozes.",
       "marginNotes": [
         {
           "marker": "45",
@@ -4101,10 +4108,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Dit zijn de getelden van de geslachten van de Kohathieten, van al wie in de tent van de samenkomst diende, die Mozes en Aäron geteld hebben, naar het bevel van JAHWEH,<sup class=\"note-marker\" data-note=\"45\">45</sup> door de hand van Mozes.",
+      "text2026_html": "Dit zijn de ingeschrevenen van de geslachten van de Kohathieten, van al wie in de tent van de samenkomst diende, die Mozes en Aäron geteld hebben, naar het bevel van JAHWEH,<sup class=\"note-marker\" data-note=\"45\">45</sup> door de hand van Mozes.",
       "textSV1888_html": "Dit zijn de getelden van de geslachten der Kohathieten, van al wie in de tent der samenkomst diende, welke Mozes en Aäron geteld hebben, naar het bevel des HEEREN,<sup class=\"note-marker\" data-note=\"45\">45</sup> door de hand van Mozes.",
       "text1637_html": "Dese zijn de getelde vande geslachten der Kohathiten, van al die in de Tente der t' samenkomste diende: dewelcke Mose, ende Aaron getelt hebben, nae het bevel des HEEREN, <sup class=\"note-marker\" data-note=\"45\">45</sup> door de hant Mose.",
       "phraseDiff": [
+        {
+          "old": "getelden",
+          "new": "ingeschrevenen",
+          "principe": "V1142"
+        },
         {
           "old": "der",
           "new": "van de",
@@ -4131,7 +4143,7 @@
       "number": 38,
       "textSV1888": "Insgelijks de getelden der zonen van Gerson, naar hun geslachten, en naar het huis hunner vaderen;",
       "text1637": "Insgelijcks de getelde der sonen Gersons; nae hare geslachten, ende nae het huys harer vaderen:",
-      "text2026": "Ook de getelden van de zonen van Gerson, naar hun geslachten, en naar het huis van hun vaderen;",
+      "text2026": "Ook de ingeschrevenen van de zonen van Gerson, naar hun geslachten, en naar het huis van hun vaderen;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4165,7 +4177,7 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "Ook de getelden van de zonen van Gerson, naar hun geslachten, en naar het huis van hun vaderen;",
+      "text2026_html": "Ook de ingeschrevenen van de zonen van Gerson, naar hun geslachten, en naar het huis van hun vaderen;",
       "text1637_html": "Insgelijcks de getelde der sonen Gersons; nae hare geslachten, ende nae het huys harer vaderen:",
       "phraseDiff": [
         {
@@ -4174,9 +4186,9 @@
           "principe": "V653"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "getelden der",
+          "new": "ingeschrevenen van de",
+          "principe": "V1142"
         },
         {
           "old": "hunner",
@@ -4297,7 +4309,7 @@
       "number": 40,
       "textSV1888": "Hun getelden waren, naar hun geslachten, naar het huis hunner vaderen, twee duizend zeshonderd en dertig.",
       "text1637": "Hare getelde waren nae hare geslachten, nae het huys harer vaderen, twee duysent, ende ses hondert en dertich.",
-      "text2026": "Hun getelden waren, naar hun geslachten, naar het huis van hun vaderen, twee duizend zeshonderd en dertig.",
+      "text2026": "Hun ingeschrevenen waren, naar hun geslachten, naar het huis van hun vaderen, twee duizend zeshonderd en dertig.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4346,9 +4358,14 @@
           "morph": "HC/Acbpa"
         }
       ],
-      "text2026_html": "Hun getelden waren, naar hun geslachten, naar het huis van hun vaderen, twee duizend zeshonderd en dertig.",
+      "text2026_html": "Hun ingeschrevenen waren, naar hun geslachten, naar het huis van hun vaderen, twee duizend zeshonderd en dertig.",
       "text1637_html": "Hare getelde waren nae hare geslachten, nae het huys harer vaderen, twee duysent, ende ses hondert en dertich.",
       "phraseDiff": [
+        {
+          "old": "getelden",
+          "new": "ingeschrevenen",
+          "principe": "V1142"
+        },
         {
           "old": "hunner",
           "new": "van hun",
@@ -4360,7 +4377,7 @@
       "number": 41,
       "textSV1888": "Dezen zijn de getelden van de geslachten der zonen van Gerson, van al wie in de tent der samenkomst diende, welke Mozes en Aäron telden, naar het bevel des HEEREN.",
       "text1637": "Dese zijn de getelde van de geslachten der sonen Gersons, van al die in de Tente der t' samen-komste diende: dewelcke Mose, ende Aaron telden nae het bevel des HEEREN.",
-      "text2026": "Deze zijn de getelden van de geslachten van de zonen van Gerson, van al wie in de tent van de samenkomst diende, die Mozes en Aäron telden, naar het bevel van JAHWEH.",
+      "text2026": "Deze zijn de ingeschrevenen van de geslachten van de zonen van Gerson, van al wie in de tent van de samenkomst diende, die Mozes en Aäron telden, naar het bevel van JAHWEH.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4444,13 +4461,18 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Deze zijn de getelden van de geslachten van de zonen van Gerson, van al wie in de tent van de samenkomst diende, die Mozes en Aäron telden, naar het bevel van JAHWEH.",
+      "text2026_html": "Deze zijn de ingeschrevenen van de geslachten van de zonen van Gerson, van al wie in de tent van de samenkomst diende, die Mozes en Aäron telden, naar het bevel van JAHWEH.",
       "text1637_html": "Dese zijn de getelde van de geslachten der sonen Gersons, van al die in de Tente der t' samen-komste diende: dewelcke Mose, ende Aaron telden nae het bevel des HEEREN.",
       "phraseDiff": [
         {
           "old": "Dezen",
           "new": "Deze",
           "principe": null
+        },
+        {
+          "old": "getelden",
+          "new": "ingeschrevenen",
+          "principe": "V1142"
         },
         {
           "old": "der",
@@ -4478,7 +4500,7 @@
       "number": 42,
       "textSV1888": "En de getelden van de geslachten der zonen van Merari, naar hun geslachten, naar het huis hunner vaderen,",
       "text1637": "Ende de getelde van de geslachten der sonen Merari: nae hare geslachten, nae het huys harer vaderen;",
-      "text2026": "En de getelden van de geslachten van de zonen van Merari, naar hun geslachten, naar het huis van hun vaderen,",
+      "text2026": "En de ingeschrevenen van de geslachten van de zonen van Merari, naar hun geslachten, naar het huis van hun vaderen,",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4517,9 +4539,14 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "En de getelden van de geslachten van de zonen van Merari, naar hun geslachten, naar het huis van hun vaderen,",
+      "text2026_html": "En de ingeschrevenen van de geslachten van de zonen van Merari, naar hun geslachten, naar het huis van hun vaderen,",
       "text1637_html": "Ende de getelde van de geslachten der sonen Merari: nae hare geslachten, nae het huys harer vaderen;",
       "phraseDiff": [
+        {
+          "old": "getelden",
+          "new": "ingeschrevenen",
+          "principe": "V1142"
+        },
         {
           "old": "der",
           "new": "van de",
@@ -4644,7 +4671,7 @@
       "number": 44,
       "textSV1888": "Hun getelden nu waren, naar hun geslachten, drie duizend en tweehonderd.",
       "text1637": "Hare getelde nu waren, nae hare geslachten, [46] drie duysent, ende twee hondert.",
-      "text2026": "Hun getelden nu waren, naar hun geslachten, drie duizend en tweehonderd.",
+      "text2026": "Hun ingeschrevenen nu waren, naar hun geslachten, drie duizend en tweehonderd.",
       "marginNotes": [
         {
           "marker": "46",
@@ -4686,15 +4713,22 @@
           "morph": "HC/Acbda"
         }
       ],
-      "text2026_html": "Hun getelden nu waren, naar hun geslachten,<sup class=\"note-marker\" data-note=\"46\">46</sup> drie duizend en tweehonderd.",
+      "text2026_html": "Hun ingeschrevenen nu waren, naar hun geslachten,<sup class=\"note-marker\" data-note=\"46\">46</sup> drie duizend en tweehonderd.",
       "textSV1888_html": "Hun getelden nu waren, naar hun geslachten,<sup class=\"note-marker\" data-note=\"46\">46</sup> drie duizend en tweehonderd.",
-      "text1637_html": "Hare getelde nu waren, nae hare geslachten, <sup class=\"note-marker\" data-note=\"46\">46</sup> drie duysent, ende twee hondert."
+      "text1637_html": "Hare getelde nu waren, nae hare geslachten, <sup class=\"note-marker\" data-note=\"46\">46</sup> drie duysent, ende twee hondert.",
+      "phraseDiff": [
+        {
+          "old": "getelden",
+          "new": "ingeschrevenen",
+          "principe": "V1142"
+        }
+      ]
     },
     {
       "number": 45,
       "textSV1888": "Dezen zijn de getelden van de geslachten der zonen van Merari, welke Mozes en Aäron geteld hebben, naar het bevel des HEEREN, door de hand van Mozes.",
       "text1637": "Dese zijn de getelde van de geslachten der sonen van Merari: dewelcke Mose, ende Aaron getelt hebben, nae 't bevel des HEEREN, door de hant Mose.",
-      "text2026": "Deze zijn de getelden van de geslachten van de zonen van Merari, die Mozes en Aäron geteld hebben, naar het bevel van JAHWEH, door de hand van Mozes.",
+      "text2026": "Deze zijn de ingeschrevenen van de geslachten van de zonen van Merari, die Mozes en Aäron geteld hebben, naar het bevel van JAHWEH, door de hand van Mozes.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4768,13 +4802,18 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Deze zijn de getelden van de geslachten van de zonen van Merari, die Mozes en Aäron geteld hebben, naar het bevel van JAHWEH, door de hand van Mozes.",
+      "text2026_html": "Deze zijn de ingeschrevenen van de geslachten van de zonen van Merari, die Mozes en Aäron geteld hebben, naar het bevel van JAHWEH, door de hand van Mozes.",
       "text1637_html": "Dese zijn de getelde van de geslachten der sonen van Merari: dewelcke Mose, ende Aaron getelt hebben, nae 't bevel des HEEREN, door de hant Mose.",
       "phraseDiff": [
         {
           "old": "Dezen",
           "new": "Deze",
           "principe": null
+        },
+        {
+          "old": "getelden",
+          "new": "ingeschrevenen",
+          "principe": "V1142"
         },
         {
           "old": "der",
@@ -4797,7 +4836,7 @@
       "number": 46,
       "textSV1888": "Al de getelden, welke Mozes en Aäron, en de oversten van Israël geteld hebben van de Levieten, naar hun geslachten, en naar het huis hunner vaderen,",
       "text1637": "Alle de getelde, dewelcke Mose ende Aaron, ende de Overste Israëls getelt hebben vande Leviten; nae hare geslachten, ende nae het huys harer vaderen,",
-      "text2026": "Al de getelden, die Mozes en Aäron, en de oversten van Israël geteld hebben van de Levieten, naar hun geslachten, en naar het huis van hun vaderen,",
+      "text2026": "Al de ingeschrevenen, die Mozes en Aäron, en de oversten van Israël geteld hebben van de Levieten, naar hun geslachten, en naar het huis van hun vaderen,",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -4866,13 +4905,13 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "Al de getelden, die Mozes en Aäron, en de oversten van Israël geteld hebben van de Levieten, naar hun geslachten, en naar het huis van hun vaderen,",
+      "text2026_html": "Al de ingeschrevenen, die Mozes en Aäron, en de oversten van Israël geteld hebben van de Levieten, naar hun geslachten, en naar het huis van hun vaderen,",
       "text1637_html": "Alle de getelde, dewelcke Mose ende Aaron, ende de Overste Israëls getelt hebben vande Leviten; nae hare geslachten, ende nae het huys harer vaderen,",
       "phraseDiff": [
         {
-          "old": "welke",
-          "new": "die",
-          "principe": "V808"
+          "old": "getelden, welke",
+          "new": "ingeschrevenen, die",
+          "principe": "V1142"
         },
         {
           "old": "hunner",
@@ -5027,7 +5066,7 @@
       "number": 48,
       "textSV1888": "Hun getelden waren acht duizend vijfhonderd en tachtig.",
       "text1637": "Hare getelde waren acht duysent ende vijf hondert, ende tachtentich.",
-      "text2026": "Hun getelden waren acht duizend vijfhonderd en tachtig.",
+      "text2026": "Hun ingeschrevenen waren acht duizend vijfhonderd en tachtig.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -5066,14 +5105,21 @@
           "morph": "HC/Acbpa"
         }
       ],
-      "text2026_html": "Hun getelden waren acht duizend vijfhonderd en tachtig.",
-      "text1637_html": "Hare getelde waren acht duysent ende vijf hondert, ende tachtentich."
+      "text2026_html": "Hun ingeschrevenen waren acht duizend vijfhonderd en tachtig.",
+      "text1637_html": "Hare getelde waren acht duysent ende vijf hondert, ende tachtentich.",
+      "phraseDiff": [
+        {
+          "old": "getelden",
+          "new": "ingeschrevenen",
+          "principe": "V1142"
+        }
+      ]
     },
     {
       "number": 49,
       "textSV1888": "Men telde hen, naar het bevel des HEEREN, door de hand van Mozes, een ieder naar zijn dienst, en naar zijn last; en zijn getelden waren, die de HEERE Mozes geboden had.",
       "text1637": "Men teldese nae het bevel des HEEREN door de hant Mose, een yeder nae sijnen dienst, ende nae sijnen last: ende sijne getelde waren, [48] die de HEERE Mose geboden hadde.",
-      "text2026": "Men telde hen, naar het bevel van JAHWEH, door de hand van Mozes, een ieder naar zijn dienst, en naar zijn last; en zijn getelden waren, die JAHWEH Mozes geboden had.",
+      "text2026": "Men telde hen, naar het bevel van JAHWEH, door de hand van Mozes, een ieder naar zijn dienst, en naar zijn last; en zijn ingeschrevenen waren, die JAHWEH Mozes geboden had.",
       "marginNotes": [
         {
           "marker": "48",
@@ -5180,7 +5226,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Men telde hen, naar het bevel van JAHWEH, door de hand van Mozes, een ieder naar zijn dienst, en naar zijn last; en zijn getelden waren,<sup class=\"note-marker\" data-note=\"48\">48</sup> die JAHWEH Mozes geboden had.",
+      "text2026_html": "Men telde hen, naar het bevel van JAHWEH, door de hand van Mozes, een ieder naar zijn dienst, en naar zijn last; en zijn ingeschrevenen waren,<sup class=\"note-marker\" data-note=\"48\">48</sup> die JAHWEH Mozes geboden had.",
       "textSV1888_html": "Men telde hen, naar het bevel des HEEREN, door de hand van Mozes, een ieder naar zijn dienst, en naar zijn last; en zijn getelden waren,<sup class=\"note-marker\" data-note=\"48\">48</sup> die de HEERE Mozes geboden had.",
       "text1637_html": "Men teldese nae het bevel des HEEREN door de hant Mose, een yeder nae sijnen dienst, ende nae sijnen last: ende sijne getelde waren, <sup class=\"note-marker\" data-note=\"48\">48</sup> die de HEERE Mose geboden hadde.",
       "phraseDiff": [
@@ -5188,6 +5234,11 @@
           "old": "des HEEREN,",
           "new": "van JAHWEH,",
           "principe": "N3"
+        },
+        {
+          "old": "getelden",
+          "new": "ingeschrevenen",
+          "principe": "V1142"
         },
         {
           "old": "de HEERE",

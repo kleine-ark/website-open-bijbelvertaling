@@ -2148,7 +2148,7 @@
       "number": 25,
       "textSV1888": "Het zilver nu van de getelden der vergadering was honderd talenten, en duizend zevenhonderd vijf en zeventig sikkelen, naar den sikkel des heiligdoms.",
       "text1637": "Het silver nu van de getelde der vergaderinge, was hondert talenten, ende een duysent ende seven hondert ende vijfentseventich sikelen, nae den sikel des heylichdoms.",
-      "text2026": "Het zilver nu van de getelden van de vergadering was honderd talenten, en duizend zevenhonderd vijf en zeventig sikkels, naar de sikkel van het heiligdom.",
+      "text2026": "Het zilver nu van de ingeschrevenen van de vergadering was honderd talenten, en duizend zevenhonderd vijf en zeventig sikkels, naar de sikkel van het heiligdom.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2217,13 +2217,13 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "Het zilver nu van de getelden van de vergadering was honderd talenten, en duizend zevenhonderd vijf en zeventig sikkels, naar de sikkel van het heiligdom.",
+      "text2026_html": "Het zilver nu van de ingeschrevenen van de vergadering was honderd talenten, en duizend zevenhonderd vijf en zeventig sikkels, naar de sikkel van het heiligdom.",
       "text1637_html": "Het silver nu van de getelde der vergaderinge, was hondert talenten, ende een duysent ende seven hondert ende vijfentseventich sikelen, nae den sikel des heylichdoms.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "getelden der",
+          "new": "ingeschrevenen van de",
+          "principe": "V1142"
         },
         {
           "old": "sikkelen,",
@@ -2246,7 +2246,7 @@
       "number": 26,
       "textSV1888": "Een beka voor elk hoofd, dat is een halve sikkel, naar den sikkel des heiligdoms, van een ieder, die overging tot de getelden, van twintig jaren oud en daarboven, namelijk zeshonderd drie duizend, vijfhonderd en vijftig.",
       "text1637": "Een [10] Beka voor elck [11] hooft, [dat is] een halve sikel nae den sikel des heylichdoms: van een yeder die over ginck tot de getelde, van [12] twintich jaer out ende daer boven, [namelick] ses hondert duysent, ende drye duysent, ende vijf hondert, ende vijftich.",
-      "text2026": "Een beka voor elk hoofd, dat is een halve sikkel, naar de sikkel van het heiligdom, van een ieder, die overging tot de getelden, van twintig jaar oud en daarboven, namelijk zeshonderd drie duizend, vijfhonderd en vijftig.",
+      "text2026": "Een beka voor elk hoofd, dat is een halve sikkel, naar de sikkel van het heiligdom, van een ieder, die overging tot de ingeschrevenen, van twintig jaar oud en daarboven, namelijk zeshonderd drie duizend, vijfhonderd en vijftig.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2360,7 +2360,7 @@
           "morph": "HC/Acbpa"
         }
       ],
-      "text2026_html": "Een beka voor elk hoofd, dat is een halve sikkel, naar de sikkel van het heiligdom, van een ieder, die overging tot de getelden, van twintig jaar oud en daarboven, namelijk zeshonderd drie duizend, vijfhonderd en vijftig.",
+      "text2026_html": "Een beka voor elk hoofd, dat is een halve sikkel, naar de sikkel van het heiligdom, van een ieder, die overging tot de ingeschrevenen, van twintig jaar oud en daarboven, namelijk zeshonderd drie duizend, vijfhonderd en vijftig.",
       "text1637_html": "Een <sup class=\"note-marker\" data-note=\"10\">10</sup> Beka voor elck <sup class=\"note-marker\" data-note=\"11\">11</sup> hooft, [dat is] een halve sikel nae den sikel des heylichdoms: van een yeder die over ginck tot de getelde, van <sup class=\"note-marker\" data-note=\"12\">12</sup> twintich jaer out ende daer boven, [namelick] ses hondert duysent, ende drye duysent, ende vijf hondert, ende vijftich.",
       "phraseDiff": [
         {
@@ -2372,6 +2372,11 @@
           "old": "des heiligdoms,",
           "new": "van het heiligdom,",
           "principe": "N3"
+        },
+        {
+          "old": "getelden,",
+          "new": "ingeschrevenen,",
+          "principe": "V1142"
         },
         {
           "old": "jaren",
