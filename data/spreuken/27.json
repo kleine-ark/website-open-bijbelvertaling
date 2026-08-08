@@ -1424,7 +1424,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "IJzer scherpt men met ijzer; zo scherpt een man het aangezicht van zijn naasten.",
+      "text2026": "IJzer scherpt men met ijzer; zo scherpt een man het aangezicht van zijn naaste.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -1467,7 +1467,7 @@
       "hsv": "IJzer scherpt men met ijzer,zo scherpt een man het gezicht van zijn naaste.",
       "nbg51": "Zoals men ijzer met ijzer scherpt,",
       "textSV1888": "IJzer scherpt men met ijzer; alzo scherpt een man het aangezicht zijns naasten.",
-      "text2026_html": "IJzer scherpt men met ijzer; zo scherpt een man het<sup class=\"note-marker\" data-note=\"39\">39</sup> aangezicht van zijn naasten.",
+      "text2026_html": "IJzer scherpt men met ijzer; zo scherpt een man het<sup class=\"note-marker\" data-note=\"39\">39</sup> aangezicht van zijn naaste.",
       "textSV1888_html": "IJzer scherpt men met ijzer; alzo scherpt een man het<sup class=\"note-marker\" data-note=\"39\">39</sup> aangezicht zijns naasten.",
       "phraseDiff": [
         {
@@ -1476,8 +1476,8 @@
           "principe": "V42"
         },
         {
-          "old": "zijns",
-          "new": "van zijn",
+          "old": "zijns naasten.",
+          "new": "van zijn naaste.",
           "principe": "V201"
         }
       ]
@@ -1570,7 +1570,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Gelijk in het water het aangezicht is tegen het aangezicht, zo is van de mensen hart tegen de mens.",
+      "text2026": "Gelijk in het water het aangezicht is tegen het aangezicht, zo is het hart van de mens tegen de mens.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -1613,7 +1613,7 @@
       "hsv": "Zoals water gezicht tegenover gezicht stelt,zo weerspiegelt het hart van de mens de mens zelf.",
       "nbg51": "Zoals het water het gelaat weerspiegelt,",
       "textSV1888": "Gelijk in het water het aangezicht is tegen het aangezicht, alzo is des mensen hart tegen den mens.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"42\">42</sup> Gelijk in het water het aangezicht is tegen het aangezicht, zo is van de mensen hart tegen de mens.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"42\">42</sup> Gelijk in het water het aangezicht is tegen het aangezicht, zo is het hart van de mens tegen de mens.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"42\">42</sup> Gelijk in het water het aangezicht is tegen het aangezicht, alzo is des mensen hart tegen den mens.",
       "phraseDiff": [
         {
@@ -1622,9 +1622,14 @@
           "principe": "V42"
         },
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des mensen",
+          "new": "het",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "van de mens",
+          "principe": null
         },
         {
           "old": "den",
