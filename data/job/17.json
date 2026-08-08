@@ -305,7 +305,7 @@
       "number": 5,
       "textSV1888": "Die met vleiing den vrienden wat aanzegt, ook zijner kinderen ogen zullen versmachten.",
       "text1637": "[13] Die met vleyinge den vrienden [wat] aenseyt, oock sijner [14] kinderen oogen sullen versmachten.",
-      "text2026": "Die met vleiing de vrienden wat aanzegt, ook van zijn kinderen ogen zullen versmachten.",
+      "text2026": "Die met vleiing de vrienden wat aanzegt, ook de ogen van zijn kinderen zullen versmachten.",
       "marginNotes": [
         {
           "marker": "13",
@@ -354,7 +354,7 @@
           "morph": "HVqi3fp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"13\">13</sup><span class=\"direct-speech\"><i> Die met vleiing de vrienden wat aanzegt, ook<sup class=\"note-marker\" data-note=\"14\">14</sup> van zijn kinderen ogen zullen versmachten.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"13\">13</sup><span class=\"direct-speech\"><i> Die met vleiing de vrienden wat aanzegt, ook<sup class=\"note-marker\" data-note=\"14\">14</sup> de ogen van zijn kinderen zullen versmachten.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"13\">13</sup> Die met vleiing den vrienden wat aanzegt, ook<sup class=\"note-marker\" data-note=\"14\">14</sup> zijner kinderen ogen zullen versmachten.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"13\">13</sup> Die met vleyinge den vrienden [wat] aenseyt, oock sijner <sup class=\"note-marker\" data-note=\"14\">14</sup> kinderen oogen sullen versmachten.",
       "phraseDiff": [
@@ -365,8 +365,13 @@
         },
         {
           "old": "zijner",
-          "new": "van zijn",
-          "principe": "N7"
+          "new": "de ogen van zijn",
+          "principe": null
+        },
+        {
+          "old": "ogen",
+          "new": "",
+          "principe": null
         }
       ]
     },

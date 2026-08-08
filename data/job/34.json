@@ -100,7 +100,7 @@
       "number": 3,
       "textSV1888": "Want het oor proeft de woorden, gelijk het gehemelte de spijze smaakt.",
       "text1637": "[a] Want de oore [2] proeft de woorden: [3] gelijck het gehemelte de spijse smaeckt.",
-      "text2026": "Want het oor proeft de woorden, gelijk het gehemelte de voedsel smaakt.",
+      "text2026": "Want het oor proeft de woorden, gelijk het gehemelte het voedsel smaakt.",
       "marginNotes": [
         {
           "marker": "a",
@@ -161,13 +161,13 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"direct-speech\"><i> Want het oor<sup class=\"note-marker\" data-note=\"2\">2</sup> proeft de woorden,<sup class=\"note-marker\" data-note=\"3\">3</sup> gelijk het gehemelte de voedsel smaakt.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"direct-speech\"><i> Want het oor<sup class=\"note-marker\" data-note=\"2\">2</sup> proeft de woorden,<sup class=\"note-marker\" data-note=\"3\">3</sup> gelijk het gehemelte het voedsel smaakt.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Want het oor<sup class=\"note-marker\" data-note=\"2\">2</sup> proeft de woorden,<sup class=\"note-marker\" data-note=\"3\">3</sup> gelijk het gehemelte de spijze smaakt.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Want de oore <sup class=\"note-marker\" data-note=\"2\">2</sup> proeft de woorden: <sup class=\"note-marker\" data-note=\"3\">3</sup> gelijck het gehemelte de spijse smaeckt.",
       "phraseDiff": [
         {
-          "old": "spijze",
-          "new": "voedsel",
+          "old": "de spijze",
+          "new": "het voedsel",
           "principe": "V49"
         }
       ]
@@ -690,7 +690,7 @@
       "number": 11,
       "textSV1888": "Want naar het werk des mensen vergeldt Hij hem, en naar eens ieders weg doet Hij het hem vinden.",
       "text1637": "[e] Want [nae] het werck des menschen [19] vergeldt hy hem: ende nae eens yeders [20] wech doet hy't [21] hem vinden.",
-      "text2026": "Want naar het werk van de mensen vergeldt Hij hem, en naar van een ieder weg doet Hij het hem vinden.",
+      "text2026": "Want naar het werk van de mens vergeldt Hij hem, en naar de weg van een ieder doet Hij het hem vinden.",
       "marginNotes": [
         {
           "marker": "e",
@@ -763,19 +763,24 @@
           "morph": "HVhi3ms/Sp1cp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup><span class=\"direct-speech\"><i> Want naar het werk van de mensen<sup class=\"note-marker\" data-note=\"19\">19</sup> vergeldt Hij hem, en naar van een ieder<sup class=\"note-marker\" data-note=\"20\">20</sup> weg doet Hij<sup class=\"note-marker\" data-note=\"21\">21</sup> het hem vinden.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup><span class=\"direct-speech\"><i> Want naar het werk van de mens<sup class=\"note-marker\" data-note=\"19\">19</sup> vergeldt Hij hem, en naar de weg<sup class=\"note-marker\" data-note=\"20\">20</sup> van een ieder doet Hij<sup class=\"note-marker\" data-note=\"21\">21</sup> het hem vinden.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Want naar het werk des mensen<sup class=\"note-marker\" data-note=\"19\">19</sup> vergeldt Hij hem, en naar eens ieders<sup class=\"note-marker\" data-note=\"20\">20</sup> weg doet Hij<sup class=\"note-marker\" data-note=\"21\">21</sup> het hem vinden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Want [nae] het werck des menschen <sup class=\"note-marker\" data-note=\"19\">19</sup> vergeldt hy hem: ende nae eens yeders <sup class=\"note-marker\" data-note=\"20\">20</sup> wech doet hy't <sup class=\"note-marker\" data-note=\"21\">21</sup> hem vinden.",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
+          "old": "des mensen",
+          "new": "van de mens",
           "principe": "N3"
         },
         {
           "old": "eens ieders",
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
           "new": "van een ieder",
-          "principe": "V424"
+          "principe": null
         }
       ]
     },
@@ -1880,7 +1885,7 @@
       "number": 25,
       "textSV1888": "Daarom dat Hij hun werken kent, zo keert Hij hen des nachts om, en zij worden verbrijzeld.",
       "text1637": "Daerom [dat] hy hare wercken kent; [49] so keert hyse des nachts om, ende sy worden verbrijselt.",
-      "text2026": "Daarom Hij hun werken kent, zo keert Hij hen in de nacht om, en zij worden verbrijzeld.",
+      "text2026": "Daarom dat Hij hun werken kent, zo keert Hij hen in de nacht om, en zij worden verbrijzeld.",
       "marginNotes": [
         {
           "marker": "49",
@@ -1922,15 +1927,10 @@
           "morph": "HC/Vti3mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Daarom Hij hun werken kent,<sup class=\"note-marker\" data-note=\"49\">49</sup> zo keert Hij hen in de nacht om, en zij worden verbrijzeld.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Daarom dat Hij hun werken kent,<sup class=\"note-marker\" data-note=\"49\">49</sup> zo keert Hij hen in de nacht om, en zij worden verbrijzeld.</i></span>",
       "textSV1888_html": "Daarom dat Hij hun werken kent,<sup class=\"note-marker\" data-note=\"49\">49</sup> zo keert Hij hen des nachts om, en zij worden verbrijzeld.",
       "text1637_html": "Daerom [dat] hy hare wercken kent; <sup class=\"note-marker\" data-note=\"49\">49</sup> so keert hyse des nachts om, ende sy worden verbrijselt.",
       "phraseDiff": [
-        {
-          "old": "dat",
-          "new": "",
-          "principe": null
-        },
         {
           "old": "des nachts",
           "new": "in de nacht",
@@ -2001,7 +2001,7 @@
       "number": 27,
       "textSV1888": "Daarom dat zij van achter Hem afgeweken zijn, en geen Zijner wegen verstaan hebben;",
       "text1637": "Daerom datse van achter [53] hem afgeweken zijn; [n] ende geene [54] sijner wegen verstaen en hebben:",
-      "text2026": "Daarom zij van achter Hem afgeweken zijn, en geen van Zijn wegen verstaan hebben;",
+      "text2026": "Daarom dat zij van achter Hem afgeweken zijn, en geen van Zijn wegen verstaan hebben;",
       "marginNotes": [
         {
           "marker": "n",
@@ -2072,15 +2072,10 @@
           "morph": "HVhp3cp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Daarom zij van achter<sup class=\"note-marker\" data-note=\"53\">53</sup> Hem afgeweken zijn,<sup class=\"note-marker\" data-note=\"n\">n</sup> en geen<sup class=\"note-marker\" data-note=\"54\">54</sup> van Zijn wegen verstaan hebben;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Daarom dat zij van achter<sup class=\"note-marker\" data-note=\"53\">53</sup> Hem afgeweken zijn,<sup class=\"note-marker\" data-note=\"n\">n</sup> en geen<sup class=\"note-marker\" data-note=\"54\">54</sup> van Zijn wegen verstaan hebben;</i></span>",
       "textSV1888_html": "Daarom dat zij van achter<sup class=\"note-marker\" data-note=\"53\">53</sup> Hem afgeweken zijn,<sup class=\"note-marker\" data-note=\"n\">n</sup> en geen<sup class=\"note-marker\" data-note=\"54\">54</sup> Zijner wegen verstaan hebben;",
       "text1637_html": "Daerom datse van achter <sup class=\"note-marker\" data-note=\"53\">53</sup> hem afgeweken zijn; <sup class=\"note-marker\" data-note=\"n\">n</sup> ende geene <sup class=\"note-marker\" data-note=\"54\">54</sup> sijner wegen verstaen en hebben:",
       "phraseDiff": [
-        {
-          "old": "dat",
-          "new": "",
-          "principe": null
-        },
         {
           "old": "Zijner",
           "new": "van Zijn",

@@ -248,7 +248,7 @@
       "number": 4,
       "textSV1888": "Wie zou het opperste zijns kleeds ontdekken? Wie zou met zijn dubbelen breidel hem aankomen?",
       "text1637": "Wie soude [9] het opperste sijnes kleets ontdecken? wie soude met sijnen [10] dobbelen breydel [11] [hem] aenkomen?",
-      "text2026": "Wie zou het bovenste van zijn kleed ontdekken? Wie zou met zijn dubbelen breidel hem aankomen?",
+      "text2026": "Wie zou het bovenste van zijn kleed ontdekken? Wie zou met zijn dubbele breidel hem aankomen?",
       "marginNotes": [
         {
           "marker": "9",
@@ -309,7 +309,7 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Wie zou<sup class=\"note-marker\" data-note=\"9\">9</sup> het bovenste van zijn kleed ontdekken? Wie zou met zijn<sup class=\"note-marker\" data-note=\"10\">10</sup> dubbelen breidel<sup class=\"note-marker\" data-note=\"11\">11</sup> hem aankomen?</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Wie zou<sup class=\"note-marker\" data-note=\"9\">9</sup> het bovenste van zijn kleed ontdekken? Wie zou met zijn<sup class=\"note-marker\" data-note=\"10\">10</sup> dubbele breidel<sup class=\"note-marker\" data-note=\"11\">11</sup> hem aankomen?</i></span>",
       "textSV1888_html": "Wie zou<sup class=\"note-marker\" data-note=\"9\">9</sup> het opperste zijns kleeds ontdekken? Wie zou met zijn<sup class=\"note-marker\" data-note=\"10\">10</sup> dubbelen breidel<sup class=\"note-marker\" data-note=\"11\">11</sup> hem aankomen?",
       "text1637_html": "Wie soude <sup class=\"note-marker\" data-note=\"9\">9</sup> het opperste sijnes kleets ontdecken? wie soude met sijnen <sup class=\"note-marker\" data-note=\"10\">10</sup> dobbelen breydel <sup class=\"note-marker\" data-note=\"11\">11</sup> [hem] aenkomen?",
       "phraseDiff": [
@@ -317,6 +317,11 @@
           "old": "opperste zijns kleeds",
           "new": "bovenste van zijn kleed",
           "principe": "V980"
+        },
+        {
+          "old": "dubbelen",
+          "new": "dubbele",
+          "principe": null
         }
       ]
     },
@@ -593,7 +598,7 @@
       "number": 9,
       "textSV1888": "Elk een zijner niezingen doet een licht schijnen; en zijn ogen zijn als de oogleden des dageraads.",
       "text1637": "Elck eene sijner [20] niesingen doet een licht schijnen: ende sijne oogen zijn [21] als de oogenleden des dageraets.",
-      "text2026": "Elk één van zijn niezingen doet een licht schijnen; en zijn ogen zijn als de oogleden van de dageraad.",
+      "text2026": "Elk van zijn niezingen doet een licht schijnen; en zijn ogen zijn als de oogleden van de dageraad.",
       "marginNotes": [
         {
           "marker": "20",
@@ -642,14 +647,14 @@
           "morph": "HVti3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Elk één van zijn<sup class=\"note-marker\" data-note=\"20\">20</sup> niezingen doet een licht schijnen; en zijn ogen zijn<sup class=\"note-marker\" data-note=\"21\">21</sup> als de oogleden van de dageraad.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Elk van zijn<sup class=\"note-marker\" data-note=\"20\">20</sup> niezingen doet een licht schijnen; en zijn ogen zijn<sup class=\"note-marker\" data-note=\"21\">21</sup> als de oogleden van de dageraad.</i></span>",
       "textSV1888_html": "Elk een zijner<sup class=\"note-marker\" data-note=\"20\">20</sup> niezingen doet een licht schijnen; en zijn ogen zijn<sup class=\"note-marker\" data-note=\"21\">21</sup> als de oogleden des dageraads.",
       "text1637_html": "Elck eene sijner <sup class=\"note-marker\" data-note=\"20\">20</sup> niesingen doet een licht schijnen: ende sijne oogen zijn <sup class=\"note-marker\" data-note=\"21\">21</sup> als de oogenleden des dageraets.",
       "phraseDiff": [
         {
           "old": "een zijner",
-          "new": "één van zijn",
-          "principe": "N7"
+          "new": "van zijn",
+          "principe": null
         },
         {
           "old": "des dageraads.",
@@ -719,7 +724,7 @@
       "number": 11,
       "textSV1888": "Uit zijn neusgaten komt rook voort, als uit een ziedenden pot en ruimen ketel.",
       "text1637": "Uyt sijne neusgaten komt roock voort, als [uyt] eenen siedenden pot, ende [24] ruymen ketel.",
-      "text2026": "Uit zijn neusgaten komt rook voort, als uit een ziedenden pot en ruimen ketel.",
+      "text2026": "Uit zijn neusgaten komt rook voort, als uit een kokende pot en ruime ketel.",
       "marginNotes": [
         {
           "marker": "24",
@@ -761,9 +766,21 @@
           "morph": "HVti3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Uit zijn neusgaten komt rook voort, als uit een ziedenden pot en<sup class=\"note-marker\" data-note=\"24\">24</sup> ruimen ketel.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Uit zijn neusgaten komt rook voort, als uit een kokende pot en<sup class=\"note-marker\" data-note=\"24\">24</sup> ruime ketel.</i></span>",
       "textSV1888_html": "Uit zijn neusgaten komt rook voort, als uit een ziedenden pot en<sup class=\"note-marker\" data-note=\"24\">24</sup> ruimen ketel.",
-      "text1637_html": "Uyt sijne neusgaten komt roock voort, als [uyt] eenen siedenden pot, ende <sup class=\"note-marker\" data-note=\"24\">24</sup> ruymen ketel."
+      "text1637_html": "Uyt sijne neusgaten komt roock voort, als [uyt] eenen siedenden pot, ende <sup class=\"note-marker\" data-note=\"24\">24</sup> ruymen ketel.",
+      "phraseDiff": [
+        {
+          "old": "ziedenden",
+          "new": "kokende",
+          "principe": "V1074"
+        },
+        {
+          "old": "ruimen",
+          "new": "ruime",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 12,
@@ -826,7 +843,7 @@
       "number": 13,
       "textSV1888": "In zijn hals herbergt de sterkte; voor hem springt zelfs de droefheid van vreugde op.",
       "text1637": "In sijnen hals [27] herbercht de sterckte: [28] voor hem springt selve de droefheyt van vreuchden op.",
-      "text2026": "In zijn hals herbergt de sterkte; voor hem springt zelfs de verdriet van vreugde op.",
+      "text2026": "In zijn hals herbergt de sterkte; voor hem springt zelfs het verdriet van vreugde op.",
       "marginNotes": [
         {
           "marker": "27",
@@ -875,14 +892,14 @@
           "morph": "HVqi3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>In zijn hals<sup class=\"note-marker\" data-note=\"27\">27</sup> herbergt de sterkte;<sup class=\"note-marker\" data-note=\"28\">28</sup> voor hem springt zelfs de verdriet van vreugde op.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>In zijn hals<sup class=\"note-marker\" data-note=\"27\">27</sup> herbergt de sterkte;<sup class=\"note-marker\" data-note=\"28\">28</sup> voor hem springt zelfs het verdriet van vreugde op.</i></span>",
       "textSV1888_html": "In zijn hals<sup class=\"note-marker\" data-note=\"27\">27</sup> herbergt de sterkte;<sup class=\"note-marker\" data-note=\"28\">28</sup> voor hem springt zelfs de droefheid van vreugde op.",
       "text1637_html": "In sijnen hals <sup class=\"note-marker\" data-note=\"27\">27</sup> herbercht de sterckte: <sup class=\"note-marker\" data-note=\"28\">28</sup> voor hem springt selve de droefheyt van vreuchden op.",
       "phraseDiff": [
         {
-          "old": "droefheid",
-          "new": "verdriet",
-          "principe": "V15"
+          "old": "de droefheid",
+          "new": "het verdriet",
+          "principe": null
         }
       ]
     },
@@ -1016,7 +1033,7 @@
       "number": 16,
       "textSV1888": "Van zijn verheffen schromen de sterken; om zijner doorbrekingen wille ontzondigen zij zich.",
       "text1637": "Van [32] sijn verheffen schromen de stercke: om [33] [sijner] doorbrekingen wille, [34] ontsondigen sy hen.",
-      "text2026": "Van zijn verheffen schromen de sterken; om zijn doorbrekingen wille ontzondigen zij zich.",
+      "text2026": "Van zijn verheffen schromen de sterken; omwille van zijn doorbrekingen ontzondigen zij zich.",
       "marginNotes": [
         {
           "marker": "32",
@@ -1077,14 +1094,19 @@
           "morph": "HAafsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Van<sup class=\"note-marker\" data-note=\"32\">32</sup> zijn verheffen schromen de sterken; om<sup class=\"note-marker\" data-note=\"33\">33</sup> zijn doorbrekingen wille<sup class=\"note-marker\" data-note=\"34\">34</sup> ontzondigen zij zich.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Van<sup class=\"note-marker\" data-note=\"32\">32</sup> zijn verheffen schromen de sterken; omwille van zijn doorbrekingen<sup class=\"note-marker\" data-note=\"33\">33</sup><sup class=\"note-marker\" data-note=\"34\">34</sup> ontzondigen zij zich.</i></span>",
       "textSV1888_html": "Van<sup class=\"note-marker\" data-note=\"32\">32</sup> zijn verheffen schromen de sterken; om<sup class=\"note-marker\" data-note=\"33\">33</sup> zijner doorbrekingen wille<sup class=\"note-marker\" data-note=\"34\">34</sup> ontzondigen zij zich.",
       "text1637_html": "Van <sup class=\"note-marker\" data-note=\"32\">32</sup> sijn verheffen schromen de stercke: om <sup class=\"note-marker\" data-note=\"33\">33</sup> [sijner] doorbrekingen wille, <sup class=\"note-marker\" data-note=\"34\">34</sup> ontsondigen sy hen.",
       "phraseDiff": [
         {
-          "old": "zijner",
-          "new": "zijn",
-          "principe": "N7"
+          "old": "om zijner",
+          "new": "omwille van zijn",
+          "principe": null
+        },
+        {
+          "old": "wille",
+          "new": "",
+          "principe": null
         }
       ]
     },
