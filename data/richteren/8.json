@@ -1666,7 +1666,7 @@
       "number": 15,
       "textSV1888": "Toen kwam hij tot de lieden van Sukkoth, en zeide: Ziet daar Zebah en Tsalmuna, van dewelke gij mij smadelijk verweten hebt, zeggende: Is de handpalm van Zebah en Tsalmuna alrede in uw hand, dat wij aan uw mannen, die moede zijn, brood zouden geven?",
       "text1637": "Doe quam hy tot de lieden van Succoth, ende seyde; Siet daer Zebah ende Tsalmuna, van de welcke ghy my smadelick verweten hebt, seggende; Is de hant-palme van Zebah ende Tsalmuna alreede in uwe hant, dat wy uwen mannen, die moede zijn, broot souden geven?",
-      "text2026": "Toen kwam hij tot de mensen van Sukkoth, en zei: Zie daar Zebah en Tsalmuna, van die u mij smadelijk verweten hebt, zeggende: Is de handpalm van Zebah en Tsalmuna al in uw hand, dat wij aan uw mannen, die moe zijn, brood zouden geven?",
+      "text2026": "Toen kwam hij tot de mensen van Sukkoth, en zei: Zie daar Zebah en Tsalmuna, om wie u mij smadelijk verweten hebt, zeggende: Is de handpalm van Zebah en Tsalmuna al in uw hand, dat wij aan uw mannen, die moe zijn, brood zouden geven?",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1780,7 +1780,7 @@
           "morph": "HNcbsa"
         }
       ],
-      "text2026_html": "Toen kwam hij tot de mensen van Sukkoth, en zei: <span class=\"direct-speech\"><i>Zie daar Zebah en Tsalmuna, van die u mij smadelijk verweten hebt, zeggende: <span class=\"direct-speech\"><i>Is de handpalm van Zebah en Tsalmuna al in uw hand, dat wij aan uw mannen, die moe zijn, brood zouden geven?</i></span></i></span>",
+      "text2026_html": "Toen kwam hij tot de mensen van Sukkoth, en zei: <span class=\"direct-speech\"><i>Zie daar Zebah en Tsalmuna, om wie u mij smadelijk verweten hebt, zeggende: <span class=\"direct-speech\"><i>Is de handpalm van Zebah en Tsalmuna al in uw hand, dat wij aan uw mannen, die moe zijn, brood zouden geven?</i></span></i></span>",
       "text1637_html": "Doe quam hy tot de lieden van Succoth, ende seyde; Siet daer Zebah ende Tsalmuna, van de welcke ghy my smadelick verweten hebt, seggende; Is de hant-palme van Zebah ende Tsalmuna alreede in uwe hant, dat wy uwen mannen, die moede zijn, broot souden geven?",
       "phraseDiff": [
         {
@@ -1794,9 +1794,9 @@
           "principe": "W1"
         },
         {
-          "old": "dewelke gij",
-          "new": "die u",
-          "principe": "A1"
+          "old": "van dewelke gij",
+          "new": "om wie u",
+          "principe": null
         },
         {
           "old": "alrede",
@@ -2490,7 +2490,7 @@
       "number": 22,
       "textSV1888": "Toen zeiden de mannen van Israël tot Gideon: Heers over ons, zo gij als uw zoon en uws zoons zoon, dewijl gij ons van der Midianieten hand verlost hebt.",
       "text1637": "Doe seyden de [31] mannen van Israël tot Gideon; Heerscht over ons, [32] soo ghy, als uwe soon ende uwes soons soon: dewijle ghy ons van der Midianiten hant verlost hebt.",
-      "text2026": "Toen zeiden de mannen van Israël tot Gideon: Heers over ons, zo u als uw zoon en van uw zoon zoon, omdat u ons van de Midianieten hand verlost hebt.",
+      "text2026": "Toen zeiden de mannen van Israël tot Gideon: Heers over ons, zo u als uw zoon en de zoon van uw zoon, omdat u ons van de hand van de Midianieten verlost hebt.",
       "marginNotes": [
         {
           "marker": "31",
@@ -2599,7 +2599,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Toen zeiden de<sup class=\"note-marker\" data-note=\"31\">31</sup> mannen van Israël tot Gideon: <span class=\"direct-speech\"><i>Heers over ons,<sup class=\"note-marker\" data-note=\"32\">32</sup> zo u als uw zoon en van uw zoon zoon, omdat u ons van de Midianieten hand verlost hebt.</i></span>",
+      "text2026_html": "Toen zeiden de<sup class=\"note-marker\" data-note=\"31\">31</sup> mannen van Israël tot Gideon: <span class=\"direct-speech\"><i>Heers over ons,<sup class=\"note-marker\" data-note=\"32\">32</sup> zo u als uw zoon en de zoon van uw zoon, omdat u ons van de hand van de Midianieten verlost hebt.</i></span>",
       "textSV1888_html": "Toen zeiden de<sup class=\"note-marker\" data-note=\"31\">31</sup> mannen van Israël tot Gideon: Heers over ons,<sup class=\"note-marker\" data-note=\"32\">32</sup> zo gij als uw zoon en uws zoons zoon, dewijl gij ons van der Midianieten hand verlost hebt.",
       "text1637_html": "Doe seyden de <sup class=\"note-marker\" data-note=\"31\">31</sup> mannen van Israël tot Gideon; Heerscht over ons, <sup class=\"note-marker\" data-note=\"32\">32</sup> soo ghy, als uwe soon ende uwes soons soon: dewijle ghy ons van der Midianiten hant verlost hebt.",
       "phraseDiff": [
@@ -2610,8 +2610,8 @@
         },
         {
           "old": "uws zoons",
-          "new": "van uw zoon",
-          "principe": "V200"
+          "new": "de zoon van uw",
+          "principe": null
         },
         {
           "old": "dewijl gij",
@@ -2620,8 +2620,13 @@
         },
         {
           "old": "der",
-          "new": "de",
-          "principe": "N2"
+          "new": "de hand van de",
+          "principe": null
+        },
+        {
+          "old": "hand",
+          "new": "",
+          "principe": null
         }
       ]
     },
@@ -3276,7 +3281,7 @@
       "number": 28,
       "textSV1888": "Alzo werden de Midianieten te ondergebracht voor het aangezicht der kinderen Israëls, en hieven hun hoofd niet meer op. En het land was stil veertig jaren, in de dagen van Gideon.",
       "text1637": "Also werden de Midianiten t’ ondergebracht voor het aengesichte der kinderen Israëls, ende [44] en hieven haren kop niet meer op: ende het lant was stil veertich jaer, [45] in de dagen Gideons.",
-      "text2026": "Zo werden de Midianieten te ondergebracht voor het aangezicht van de Israëlieten, en hieven hun hoofd niet meer op. En het land was stil veertig jaren, in de dagen van Gideon.",
+      "text2026": "Zo werden de Midianieten ten onder gebracht voor het aangezicht van de Israëlieten, en hieven hun hoofd niet meer op. En het land was stil veertig jaren, in de dagen van Gideon.",
       "marginNotes": [
         {
           "marker": "44",
@@ -3370,7 +3375,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Zo werden de Midianieten te ondergebracht voor het aangezicht van de Israëlieten, en<sup class=\"note-marker\" data-note=\"44\">44</sup> hieven hun hoofd niet meer op. En het land was stil veertig jaren,<sup class=\"note-marker\" data-note=\"45\">45</sup> in de dagen van Gideon.",
+      "text2026_html": "Zo werden de Midianieten ten onder gebracht voor het aangezicht van de Israëlieten, en<sup class=\"note-marker\" data-note=\"44\">44</sup> hieven hun hoofd niet meer op. En het land was stil veertig jaren,<sup class=\"note-marker\" data-note=\"45\">45</sup> in de dagen van Gideon.",
       "textSV1888_html": "Alzo werden de Midianieten te ondergebracht voor het aangezicht der kinderen Israëls, en<sup class=\"note-marker\" data-note=\"44\">44</sup> hieven hun hoofd niet meer op. En het land was stil veertig jaren,<sup class=\"note-marker\" data-note=\"45\">45</sup> in de dagen van Gideon.",
       "text1637_html": "Also werden de Midianiten t’ ondergebracht voor het aengesichte der kinderen Israëls, ende <sup class=\"note-marker\" data-note=\"44\">44</sup> en hieven haren kop niet meer op: ende het lant was stil veertich jaer, <sup class=\"note-marker\" data-note=\"45\">45</sup> in de dagen Gideons.",
       "phraseDiff": [
@@ -3378,6 +3383,11 @@
           "old": "Alzo",
           "new": "Zo",
           "principe": "V42"
+        },
+        {
+          "old": "te ondergebracht",
+          "new": "ten onder gebracht",
+          "principe": null
         },
         {
           "old": "der kinderen Israëls,",
@@ -3454,7 +3464,7 @@
       "number": 30,
       "textSV1888": "Gideon nu had zeventig zonen, die uit zijn heupe voortgekomen waren; want hij had vele vrouwen.",
       "text1637": "Gideon nu hadde tseventich sonen die uyt sijne [48] heupe voortgekomen waren: want hy hadde veel wijven.",
-      "text2026": "Gideon nu had zeventig zonen, die uit zijn heupe voortgekomen waren; want hij had vele vrouwen.",
+      "text2026": "Gideon nu had zeventig zonen, die uit zijn heup voortgekomen waren; want hij had vele vrouwen.",
       "marginNotes": [
         {
           "marker": "48",
@@ -3521,9 +3531,16 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "Gideon nu had zeventig zonen, die uit zijn<sup class=\"note-marker\" data-note=\"48\">48</sup> heupe voortgekomen waren; want hij had vele vrouwen.",
+      "text2026_html": "Gideon nu had zeventig zonen, die uit zijn<sup class=\"note-marker\" data-note=\"48\">48</sup> heup voortgekomen waren; want hij had vele vrouwen.",
       "textSV1888_html": "Gideon nu had zeventig zonen, die uit zijn<sup class=\"note-marker\" data-note=\"48\">48</sup> heupe voortgekomen waren; want hij had vele vrouwen.",
-      "text1637_html": "Gideon nu hadde tseventich sonen die uyt sijne <sup class=\"note-marker\" data-note=\"48\">48</sup> heupe voortgekomen waren: want hy hadde veel wijven."
+      "text1637_html": "Gideon nu hadde tseventich sonen die uyt sijne <sup class=\"note-marker\" data-note=\"48\">48</sup> heupe voortgekomen waren: want hy hadde veel wijven.",
+      "phraseDiff": [
+        {
+          "old": "heupe",
+          "new": "heup",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 31,
@@ -3637,7 +3654,7 @@
       "number": 32,
       "textSV1888": "En Gideon, de zoon van Joas, stierf in goeden ouderdom; en hij werd begraven in het graf van zijn vader Joas, te Ofra, des Abi-ezriets.",
       "text1637": "Ende Gideon, de sone van Ioas, sterf in goeden [53] ouderdom: ende hy wert begraven in ’t graf sijns vaders Ioas, tot Ophra des [54] Abiezriters.",
-      "text2026": "En Gideon, de zoon van Joas, stierf in goede ouderdom; en hij werd begraven in het graf van zijn vader Joas, te Ofra, van de Abi-ezriets.",
+      "text2026": "En Gideon, de zoon van Joas, stierf in goede ouderdom; en hij werd begraven in het graf van zijn vader Joas, te Ofra, van de Abi-ezriet.",
       "marginNotes": [
         {
           "marker": "53",
@@ -3721,7 +3738,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En Gideon, de zoon van Joas, stierf in goede<sup class=\"note-marker\" data-note=\"53\">53</sup> ouderdom; en hij werd begraven in het graf van zijn vader Joas, te Ofra, van<sup class=\"note-marker\" data-note=\"54\">54</sup> de Abi-ezriets.",
+      "text2026_html": "En Gideon, de zoon van Joas, stierf in goede<sup class=\"note-marker\" data-note=\"53\">53</sup> ouderdom; en hij werd begraven in het graf van zijn vader Joas, te Ofra, van<sup class=\"note-marker\" data-note=\"54\">54</sup> de Abi-ezriet.",
       "textSV1888_html": "En Gideon, de zoon van Joas, stierf in goeden<sup class=\"note-marker\" data-note=\"53\">53</sup> ouderdom; en hij werd begraven in het graf van zijn vader Joas, te Ofra, des<sup class=\"note-marker\" data-note=\"54\">54</sup> Abi-ezriets.",
       "text1637_html": "Ende Gideon, de sone van Ioas, sterf in goeden <sup class=\"note-marker\" data-note=\"53\">53</sup> ouderdom: ende hy wert begraven in ’t graf sijns vaders Ioas, tot Ophra des <sup class=\"note-marker\" data-note=\"54\">54</sup> Abiezriters.",
       "phraseDiff": [
@@ -3731,9 +3748,9 @@
           "principe": null
         },
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des Abi-ezriets.",
+          "new": "van de Abi-ezriet.",
+          "principe": null
         }
       ]
     },

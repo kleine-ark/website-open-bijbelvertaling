@@ -439,7 +439,7 @@
       "number": 5,
       "textSV1888": "Want zie, gij zult zwanger worden, en een zoon baren, op wiens hoofd geen scheermes zal komen; want dat knechtje zal een Nazireër Gods zijn, van moeders buik af; en hij zal beginnen Israël te verlossen uit der Filistijnen hand.",
       "text1637": "Want siet, ghy sult swanger worden, ende eenen sone baren, [c] op wiens hooft geen [6] scheermes sal komen; want dat knechtken sal een [7] Nazireer Godes zijn, van [8] [moeders] buyck af: ende hy sal [9] beginnen Israël te verlossen uyt der Philistijnen hant.",
-      "text2026": "Want zie, u zult zwanger worden, en een zoon baren, op wie de hoofd geen scheermes zal komen; want dat jongetje zal een Nazireër Gods zijn, van moeders buik af; en hij zal beginnen Israël te verlossen uit van de Filistijnen hand.",
+      "text2026": "Want zie, u zult zwanger worden, en een zoon baren, op wiens hoofd geen scheermes zal komen; want dat jongetje zal een Nazireër Gods zijn, van moeders buik af; en hij zal beginnen Israël te verlossen uit de hand van de Filistijnen.",
       "marginNotes": [
         {
           "marker": "c",
@@ -599,7 +599,7 @@
           "morph": "HNgmpa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Want zie, u zult zwanger worden, en een zoon baren,<sup class=\"note-marker\" data-note=\"c\">c</sup> op wie de hoofd geen<sup class=\"note-marker\" data-note=\"6\">6</sup> scheermes zal komen; want dat jongetje zal een<sup class=\"note-marker\" data-note=\"7\">7</sup> Nazireër Gods zijn, van<sup class=\"note-marker\" data-note=\"8\">8</sup> moeders buik af; en hij zal<sup class=\"note-marker\" data-note=\"9\">9</sup> beginnen Israël te verlossen uit van de Filistijnen hand.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Want zie, u zult zwanger worden, en een zoon baren,<sup class=\"note-marker\" data-note=\"c\">c</sup> op wiens hoofd geen<sup class=\"note-marker\" data-note=\"6\">6</sup> scheermes zal komen; want dat jongetje zal een<sup class=\"note-marker\" data-note=\"7\">7</sup> Nazireër Gods zijn, van<sup class=\"note-marker\" data-note=\"8\">8</sup> moeders buik af; en hij zal<sup class=\"note-marker\" data-note=\"9\">9</sup> beginnen Israël te verlossen uit de hand van de Filistijnen.</i></span>",
       "textSV1888_html": "Want zie, gij zult zwanger worden, en een zoon baren,<sup class=\"note-marker\" data-note=\"c\">c</sup> op wiens hoofd geen<sup class=\"note-marker\" data-note=\"6\">6</sup> scheermes zal komen; want dat knechtje zal een<sup class=\"note-marker\" data-note=\"7\">7</sup> Nazireër Gods zijn, van<sup class=\"note-marker\" data-note=\"8\">8</sup> moeders buik af; en hij zal<sup class=\"note-marker\" data-note=\"9\">9</sup> beginnen Israël te verlossen uit der Filistijnen hand.",
       "text1637_html": "Want siet, ghy sult swanger worden, ende eenen sone bare<i>n</i>, <sup class=\"note-marker\" data-note=\"c\">c</sup> op wiens hooft geen <sup class=\"note-marker\" data-note=\"6\">6</sup> scheermes sal komen; want dat knechtken sal een <sup class=\"note-marker\" data-note=\"7\">7</sup> Nazireer Godes zijn, van <sup class=\"note-marker\" data-note=\"8\">8</sup> [moeders] buyck af: ende hy sal <sup class=\"note-marker\" data-note=\"9\">9</sup> beginnen Israël te verlossen uyt der Philistijnen hant.",
       "phraseDiff": [
@@ -609,19 +609,14 @@
           "principe": "A1"
         },
         {
-          "old": "wiens",
-          "new": "wie de",
-          "principe": "V312"
-        },
-        {
           "old": "knechtje",
           "new": "jongetje",
           "principe": "V996"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der Filistijnen hand.",
+          "new": "de hand van de Filistijnen.",
+          "principe": null
         }
       ]
     },
@@ -1467,7 +1462,7 @@
       "number": 12,
       "textSV1888": "Toen zeide Manoach: Nu, dat Uw woorden komen; maar wat zal des knechtjes wijze en zijn werk zijn?",
       "text1637": "Doe seyde Manoah; Nu, [13] dat uwe woorden komen: [maer] wat sal des knechtkens [14] wijse ende sijn werck zijn?",
-      "text2026": "Toen zei Manoach: Nu, dat Uw woorden komen; maar wat zal van de jongetjes wijze en zijn werk zijn?",
+      "text2026": "Toen zei Manoach: Nu, dat Uw woorden komen; maar wat zal de wijze van het jongetje en zijn werk zijn?",
       "marginNotes": [
         {
           "marker": "13",
@@ -1536,7 +1531,7 @@
           "morph": "HC/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "Toen zei Manoach: <span class=\"direct-speech\"><i>Nu, dat Uw woorden komen; maar wat zal van de jongetjes wijze en zijn werk zijn?</i></span>",
+      "text2026_html": "Toen zei Manoach: <span class=\"direct-speech\"><i>Nu, dat Uw woorden komen; maar wat zal de wijze van het jongetje en zijn werk zijn?</i></span>",
       "textSV1888_html": "Toen zeide Manoach: Nu,<sup class=\"note-marker\" data-note=\"13\">13</sup> dat Uw woorden komen; maar wat zal des knechtjes<sup class=\"note-marker\" data-note=\"14\">14</sup> wijze en zijn werk zijn?",
       "text1637_html": "Doe seyde Manoah; Nu, <sup class=\"note-marker\" data-note=\"13\">13</sup> dat uwe woorden komen: [maer] wat sal des knechtkens <sup class=\"note-marker\" data-note=\"14\">14</sup> wijse ende sijn werck zijn?",
       "phraseDiff": [
@@ -1547,7 +1542,12 @@
         },
         {
           "old": "des knechtjes",
-          "new": "van de jongetjes",
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "van het jongetje",
           "principe": null
         }
       ]
@@ -2210,7 +2210,7 @@
       "number": 19,
       "textSV1888": "Toen nam Manoach een geitenbokje, en het spijsoffer, en offerde het op den rotssteen, den HEERE. En Hij handelde wonderlijk in Zijn doen; en Manoach en zijn huisvrouw zagen toe.",
       "text1637": "Doe nam Manoah een geytenbocxken, ende het spijsoffer, ende [22] offerde ’t op den rotzsteen, [23] den HEERE: ende [24] hy handelde wonderlick in [sijn] doen; Ende Manoah ende sijne huysvrouwe sagen toe.",
-      "text2026": "Toen nam Manoach een geitenbokje, en het spijsoffer, en offerde het op de rotssteen, JAHWEH. En Hij handelde wonderlijk in Zijn doen; en Manoach en zijn huisvrouw zagen toe.",
+      "text2026": "Toen nam Manoach een geitenbokje, en het spijsoffer, en offerde het op de rotssteen aan JAHWEH. En Hij handelde wonderlijk in Zijn doen; en Manoach en zijn huisvrouw zagen toe.",
       "marginNotes": [
         {
           "marker": "22",
@@ -2316,19 +2316,14 @@
           "morph": "HVqrmpa"
         }
       ],
-      "text2026_html": "Toen nam Manoach een geitenbokje, en het spijsoffer, en<sup class=\"note-marker\" data-note=\"22\">22</sup> offerde het op de rotssteen,<sup class=\"note-marker\" data-note=\"23\">23</sup> JAHWEH. En<sup class=\"note-marker\" data-note=\"24\">24</sup> Hij handelde wonderlijk in Zijn doen; en Manoach en zijn huisvrouw zagen toe.",
+      "text2026_html": "Toen nam Manoach een geitenbokje, en het spijsoffer, en<sup class=\"note-marker\" data-note=\"22\">22</sup> offerde het op de rotssteen<sup class=\"note-marker\" data-note=\"23\">23</sup> aan JAHWEH. En<sup class=\"note-marker\" data-note=\"24\">24</sup> Hij handelde wonderlijk in Zijn doen; en Manoach en zijn huisvrouw zagen toe.",
       "textSV1888_html": "Toen nam Manoach een geitenbokje, en het spijsoffer, en<sup class=\"note-marker\" data-note=\"22\">22</sup> offerde het op den rotssteen,<sup class=\"note-marker\" data-note=\"23\">23</sup> den HEERE. En<sup class=\"note-marker\" data-note=\"24\">24</sup> Hij handelde wonderlijk in Zijn doen; en Manoach en zijn huisvrouw zagen toe.",
       "text1637_html": "Doe nam Manoah een geytenbocxken, ende het spijsoffer, ende <sup class=\"note-marker\" data-note=\"22\">22</sup> offerde ’t op den rotzsteen, <sup class=\"note-marker\" data-note=\"23\">23</sup> den HEERE: ende <sup class=\"note-marker\" data-note=\"24\">24</sup> hy handelde wonderlick in [sijn] doen; Ende Manoah ende sijne huysvrouwe sagen toe.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
-        },
-        {
-          "old": "den HEERE.",
-          "new": "JAHWEH.",
-          "principe": "N1"
+          "old": "den rotssteen, den HEERE.",
+          "new": "de rotssteen aan JAHWEH.",
+          "principe": null
         }
       ]
     },
@@ -2660,7 +2655,7 @@
       "number": 23,
       "textSV1888": "Maar zijn huisvrouw zeide tot hem: Zo de HEERE lust had ons te doden, Hij had het brandoffer en spijsoffer van onze hand niet aangenomen, noch ons dit alles getoond, noch ons om dezen tijd laten horen, zulks als dit is.",
       "text1637": "Maer sijne huysvrouwe seyde tot hem; So de HEERE lust hadde ons te dooden, hy en hadde het brantoffer ende spijsoffer van onse hant niet aengenomen, nochte ons dit alles getoont, nochte ons om desen tijt laten hooren [sulcx] als [27] dit is.",
-      "text2026": "Maar zijn huisvrouw zei tot hem: Zo JAHWEH lust had ons te doden, Hij had het brandoffer en spijsoffer van onze hand niet aangenomen, noch ons dit alles getoond, noch ons om deze tijd laten horen, dat als dit is.",
+      "text2026": "Maar zijn huisvrouw zei tot hem: Zo JAHWEH lust had ons te doden, Hij had het brandoffer en spijsoffer van onze hand niet aangenomen, noch ons dit alles getoond, noch ons om deze tijd zoiets als dit laten horen.",
       "marginNotes": [
         {
           "marker": "27",
@@ -2777,7 +2772,7 @@
           "morph": "HR/Pdxfs"
         }
       ],
-      "text2026_html": "Maar zijn huisvrouw zei tot hem: <span class=\"direct-speech\"><i>Zo JAHWEH lust had ons te doden, Hij had het brandoffer en spijsoffer van onze hand niet aangenomen, noch ons dit alles getoond, noch ons om deze tijd laten horen, dat als dit is.</i></span>",
+      "text2026_html": "Maar zijn huisvrouw zei tot hem: <span class=\"direct-speech\"><i>Zo JAHWEH lust had ons te doden, Hij had het brandoffer en spijsoffer van onze hand niet aangenomen, noch ons dit alles getoond, noch ons om deze tijd zoiets als dit laten horen.</i></span>",
       "textSV1888_html": "Maar zijn huisvrouw zeide tot hem: Zo de HEERE lust had ons te doden, Hij had het brandoffer en spijsoffer van onze hand niet aangenomen, noch ons dit alles getoond, noch ons om dezen tijd laten horen, zulks als<sup class=\"note-marker\" data-note=\"27\">27</sup> dit is.",
       "text1637_html": "Maer sijne huysvrouwe seyde tot hem; So de HEERE lust hadde ons te dooden, hy en hadde het brantoffer ende spijsoffer van onse hant niet aengenomen, nochte ons dit alles getoont, nochte ons om desen tijt laten hooren [sulcx] als <sup class=\"note-marker\" data-note=\"27\">27</sup> dit is.",
       "phraseDiff": [
@@ -2797,9 +2792,14 @@
           "principe": "N4"
         },
         {
-          "old": "zulks",
-          "new": "dat",
-          "principe": "V400"
+          "old": "laten horen, zulks",
+          "new": "zoiets",
+          "principe": null
+        },
+        {
+          "old": "is.",
+          "new": "laten horen.",
+          "principe": null
         }
       ]
     },
