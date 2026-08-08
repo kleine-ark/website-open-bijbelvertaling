@@ -58,13 +58,13 @@ class WikiReadingGutterTest(unittest.TestCase):
         cls.server.server_close()
         cls.server_thread.join(timeout=2)
 
-    def _left_gutter(self, viewport_width):
+    def _left_gutter(self, viewport_width, page_hash="bomen-planten", selector="#naslag"):
         page = self.browser.new_page(
             viewport={"width": viewport_width, "height": 900}
         )
         try:
-            page.goto(f"{self.base_url}/wiki.html#bomen-planten")
-            article = page.frame_locator("#wiki-frame").locator("#naslag")
+            page.goto(f"{self.base_url}/wiki.html#{page_hash}")
+            article = page.frame_locator("#wiki-frame").locator(selector)
             article.wait_for(state="visible")
             return article.evaluate("node => node.getBoundingClientRect().left")
         finally:
@@ -77,6 +77,17 @@ class WikiReadingGutterTest(unittest.TestCase):
 
     def test_mobile_wiki_article_keeps_a_compact_reading_gutter(self):
         self.assertGreaterEqual(self._left_gutter(390), 16)
+
+    def test_maateenheden_has_a_desktop_reading_gutter(self):
+        gutter = self._left_gutter(1450, "maateenheden", ".page h1")
+        self.assertGreaterEqual(gutter, 24)
+        self.assertLessEqual(gutter, 48)
+
+    def test_maateenheden_keeps_a_mobile_reading_gutter(self):
+        self.assertGreaterEqual(
+            self._left_gutter(390, "maateenheden", ".page h1"),
+            16,
+        )
 
     def test_liederen_overview_omits_lamech(self):
         page = self.browser.new_page(viewport={"width": 1450, "height": 900})
