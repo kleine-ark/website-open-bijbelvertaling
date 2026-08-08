@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Voorts sprak de HEERE tot Mozes, in de woestijn van Sinaï, in de tent der samenkomst, op den eersten der tweede maand, in het tweede jaar, nadat zij uit Egypteland uitgetogen ware, zeggende:",
       "text1637": "VOorder sprack de HEERE tot Mose, inde woestijne Sinai, inde tente der t' samen-komste; op den eersten [1] der tweeder maent, in 't tweede jaer, na dat sy uyt Egyptenlant uyt-getogen waren, seggende:",
-      "text2026": "Verder sprak JAHWEH tot Mozes, in de woestijn van Sinaï, in de tent van de samenkomst, op de eerste van de tweede maand, in het tweede jaar, nadat zij uit Egypteland uitgetogen waren, zeggende:",
+      "text2026": "Verder sprak JAHWEH tot Mozes, in de woestijn van Sinaï, in de tent van de samenkomst, op de eerste van de tweede maand, in het tweede jaar, nadat zij uit Egypteland vertrokken waren, zeggende:",
       "marginNotes": [
         {
           "marker": "1",
@@ -102,7 +102,7 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "Verder sprak JAHWEH tot Mozes, in de woestijn van Sinaï, in de tent van de samenkomst, op de eerste<sup class=\"note-marker\" data-note=\"1\">1</sup> van de tweede maand, in het tweede jaar, nadat zij uit Egypteland uitgetogen waren, zeggende:",
+      "text2026_html": "Verder sprak JAHWEH tot Mozes, in de woestijn van Sinaï, in de tent van de samenkomst, op de eerste<sup class=\"note-marker\" data-note=\"1\">1</sup> van de tweede maand, in het tweede jaar, nadat zij uit Egypteland vertrokken waren, zeggende:",
       "textSV1888_html": "Voorts sprak de HEERE tot Mozes, in de woestijn van Sinaï, in de tent der samenkomst, op den eersten<sup class=\"note-marker\" data-note=\"1\">1</sup> der tweede maand, in het tweede jaar, nadat zij uit Egypteland uitgetogen ware, zeggende:",
       "text1637_html": "<i>VOorder</i> sprack de HEERE tot Mose, inde woestijne Sinai, inde tente der t' samen-komste; op den eersten <sup class=\"note-marker\" data-note=\"1\">1</sup> der tweeder maent, in 't tweede jaer, na dat sy uyt Egyptenlant uyt-getogen waren, seggende:",
       "phraseDiff": [
@@ -127,9 +127,9 @@
           "principe": "N1"
         },
         {
-          "old": "ware,",
-          "new": "waren,",
-          "principe": null
+          "old": "uitgetogen ware,",
+          "new": "vertrokken waren,",
+          "principe": "V1129"
         }
       ]
     },
@@ -137,7 +137,7 @@
       "number": 2,
       "textSV1888": "Neem op de som van de gehele vergadering der kinderen Israëls, naar hun geslachten, naar het huis hunner vaderen, in het getal der namen, van al wat mannelijk is, hoofd voor hoofd.",
       "text1637": "[a] Nemet op [2] de somme vande geheele vergaderingen der kinderen Israëls, nae hare geslachten, nae het huys harer vaderen; in het getal der namen van alles wat manlick is, [3] hooft voor hooft:",
-      "text2026": "Neem op de som van de hele vergadering van de Israëlieten, naar hun geslachten, naar het huis van hun vaderen, in het getal van de namen, van al wat mannelijk is, hoofd voor hoofd.",
+      "text2026": "Neem het aantal op van de hele vergadering van de Israëlieten, naar hun geslachten, naar het huis van hun vaderen, in het getal van de namen, van al wat mannelijk is, hoofd voor hoofd.",
       "marginNotes": [
         {
           "marker": "a",
@@ -238,10 +238,20 @@
           "morph": "HR/Ncfpc/Sp3mp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"god-speaks\"><i> Neem op<sup class=\"note-marker\" data-note=\"2\">2</sup> de som van de hele vergadering van de Israëlieten, naar hun geslachten, naar het huis van hun vaderen, in het getal van de namen, van al wat mannelijk is,<sup class=\"note-marker\" data-note=\"3\">3</sup> hoofd voor hoofd.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup><span class=\"god-speaks\"><i> Neem het aantal op<sup class=\"note-marker\" data-note=\"2\">2</sup> van de hele vergadering van de Israëlieten, naar hun geslachten, naar het huis van hun vaderen, in het getal van de namen, van al wat mannelijk is,<sup class=\"note-marker\" data-note=\"3\">3</sup> hoofd voor hoofd.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Neem op<sup class=\"note-marker\" data-note=\"2\">2</sup> de som van de gehele vergadering der kinderen Israëls, naar hun geslachten, naar het huis hunner vaderen, in het getal der namen, van al wat mannelijk is,<sup class=\"note-marker\" data-note=\"3\">3</sup> hoofd voor hoofd.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Nemet op <sup class=\"note-marker\" data-note=\"2\">2</sup> de somme vande geheele vergaderingen der kinderen Israëls, nae hare geslachten, nae het huys harer vaderen; in het getal der namen van alles wat manlick is, <sup class=\"note-marker\" data-note=\"3\">3</sup> hooft voor hooft:",
       "phraseDiff": [
+        {
+          "old": "",
+          "new": "het aantal",
+          "principe": "V1130"
+        },
+        {
+          "old": "de som",
+          "new": "",
+          "principe": "V1130"
+        },
         {
           "old": "gehele",
           "new": "hele",

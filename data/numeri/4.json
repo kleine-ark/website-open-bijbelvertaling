@@ -58,7 +58,7 @@
       "number": 2,
       "textSV1888": "Neemt op de som der zonen van Kohath, uit het midden der zonen van Levi, naar hun geslachten, naar het huis hunner vaderen.",
       "text1637": "Neemt op de [1] somme der sonen Kohaths uyt het midden der sonen Levi: nae hare geslachten, nae het huys harer vaderen,",
-      "text2026": "Neemt op de som van de zonen van Kohath, uit het midden van de zonen van Levi, naar hun geslachten, naar het huis van hun vaderen.",
+      "text2026": "Neemt het aantal op van de zonen van Kohath, uit het midden van de zonen van Levi, naar hun geslachten, naar het huis van hun vaderen.",
       "marginNotes": [
         {
           "marker": "1",
@@ -125,14 +125,24 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Neemt op de<sup class=\"note-marker\" data-note=\"1\">1</sup> som van de zonen van Kohath, uit het midden van de zonen van Levi, naar hun geslachten, naar het huis van hun vaderen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Neemt het aantal<sup class=\"note-marker\" data-note=\"1\">1</sup> op van de zonen van Kohath, uit het midden van de zonen van Levi, naar hun geslachten, naar het huis van hun vaderen.</i></span>",
       "textSV1888_html": "Neemt op de<sup class=\"note-marker\" data-note=\"1\">1</sup> som der zonen van Kohath, uit het midden der zonen van Levi, naar hun geslachten, naar het huis hunner vaderen.",
       "text1637_html": "Neemt op de <sup class=\"note-marker\" data-note=\"1\">1</sup> somme der sonen Kohaths uyt het midden der sonen Levi: nae hare geslachten, nae het huys harer vaderen,",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "",
+          "new": "het aantal",
+          "principe": "V1130"
+        },
+        {
+          "old": "",
+          "new": "van",
+          "principe": "V1130"
+        },
+        {
+          "old": "som der",
+          "new": "",
+          "principe": "V1130"
         },
         {
           "old": "der",
@@ -2352,7 +2362,7 @@
       "number": 22,
       "textSV1888": "Neem ook op de som der zonen van Gerson, naar het huis hunner vaderen, naar hun geslachten.",
       "text1637": "Neemt oock op de somme der sonen Gersons, nae het huys harer vaderen, nae hare geslachten.",
-      "text2026": "Neem ook op de som van de zonen van Gerson, naar het huis van hun vaderen, naar hun geslachten.",
+      "text2026": "Neem ook het aantal op van de zonen van Gerson, naar het huis van hun vaderen, naar hun geslachten.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2406,13 +2416,23 @@
           "morph": "HR/Ncfpc/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Neem ook op de som van de zonen van Gerson, naar het huis van hun vaderen, naar hun geslachten.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Neem ook het aantal op van de zonen van Gerson, naar het huis van hun vaderen, naar hun geslachten.</i></span>",
       "text1637_html": "Neemt oock op de somme der sonen Gersons, nae het huys harer vaderen, nae hare geslachten.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "",
+          "new": "het aantal",
+          "principe": "V1130"
+        },
+        {
+          "old": "",
+          "new": "van",
+          "principe": null
+        },
+        {
+          "old": "som der",
+          "new": "",
+          "principe": "V1130"
         },
         {
           "old": "hunner",
