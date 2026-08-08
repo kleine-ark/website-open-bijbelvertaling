@@ -592,37 +592,37 @@
                     <div><h3>Vertaalweergave</h3><p>Kies hoe namen, maten en tijden worden weergegeven.</p></div>
                 </div>
                 <div class="options-list options-choice-list">
-                    <details class="option-choice"><summary>Godsnaam in het Oude Testament</summary><div class="option-choice-values">
+                    <details class="option-choice" data-option-summary="godsnaam"><summary><span>Godsnaam in het Oude Testament</span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="ov"> JAHWEH / God JAHWEH</label>
                         <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="klassiek"> HEERE / de HEERE God</label>
                         <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jehovah"> Jehovah / God Jehovah</label>
                         <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jhwh"> יהוה / God יהוה</label>
                     </div></details>
-                    <details class="option-choice"><summary>Aanspreektitel in het Nieuwe Testament</summary><div class="option-choice-values">
+                    <details class="option-choice" data-option-summary="heereNT"><summary><span>Aanspreektitel in het Nieuwe Testament</span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="heere"> Heere</label>
                         <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="here"> Here</label>
                     </div></details>
-                    <details class="option-choice"><summary>Sheol in het Oude Testament</summary><div class="option-choice-values">
+                    <details class="option-choice" data-option-summary="otSheol"><summary><span>Sheol in het Oude Testament</span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="dodenrijk"> Dodenrijk</label>
                         <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="hel"> Hel</label>
                     </div></details>
-                    <details class="option-choice"><summary>Namen van personen</summary><div class="option-choice-values">
+                    <details class="option-choice" data-option-summary="arabischeNamen"><summary><span>Namen van personen</span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-arabischeNamen" data-optie="arabischeNamen" value="uit"> Nederlands</label>
                         <label><input type="radio" name="opt-arabischeNamen" data-optie="arabischeNamen" value="aan"> Arabisch</label>
                     </div></details>
-                    <details class="option-choice"><summary>Naam van Jezus</summary><div class="option-choice-values">
+                    <details class="option-choice" data-option-summary="jezusNaam"><summary><span>Naam van Jezus</span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="nl"> Jezus Christus</label>
                         <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="hebreeuws"> Yeshua HaMashiach</label>
                         <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="koranisch"> Isa</label>
                         <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="arabisch"> Yasūʿ al-Masīḥ</label>
                     </div></details>
-                    <details class="option-choice"><summary>Maten en gewichten</summary><div class="option-choice-values">
+                    <details class="option-choice" data-option-summary="maatstelsel"><summary><span>Maten en gewichten</span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="bijbels"> Bijbels</label>
                         <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="metrisch"> Metrisch</label>
                         <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="imperiaal"> Imperiaal</label>
                         <p class="option-help">Omrekeningen zijn bij benadering. <a href="maateenheden.html" target="_blank" rel="noopener">Bekijk de verantwoording.</a></p>
                     </div></details>
-                    <details class="option-choice"><summary>Tijdsaanduidingen</summary><div class="option-choice-values">
+                    <details class="option-choice" data-option-summary="tijdrekening"><summary><span>Tijdsaanduidingen</span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-tijdrekening" data-optie="tijdrekening" value="bijbels"> Bijbels</label>
                         <label><input type="radio" name="opt-tijdrekening" data-optie="tijdrekening" value="modern"> Moderne kloktijd</label>
                         <p class="option-help"><a href="tijdsaanduidingen.html" target="_blank" rel="noopener">Lees hoe de tijdsomrekening werkt.</a></p>
@@ -682,7 +682,9 @@
             </section>
         </div>
     </dialog>
-    <button id="sidebar-right-open" title="Opties uitklappen" style="display:none;">◀</button>
+    <button id="sidebar-right-open" type="button" aria-label="Leesvoorkeuren openen" title="Leesvoorkeuren" style="display:none;">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M10 14v6"/></svg>
+    </button>
     <div id="mobile-backdrop"></div>
 
     <script>

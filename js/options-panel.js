@@ -43,6 +43,7 @@ const OptionsPanel = {
             document.body.classList.remove('options-open');
             if (this.lastTrigger && this.lastTrigger.isConnected) this.lastTrigger.focus();
         });
+        this.dialog.addEventListener('change', () => this.syncOptionSummaries());
 
         this.setupZoom();
     },
@@ -52,6 +53,7 @@ const OptionsPanel = {
         this.lastTrigger = trigger || document.activeElement;
         if (window.Sidebar && Sidebar._closeLeft) Sidebar._closeLeft();
         if (!this.dialog.open) this.dialog.showModal();
+        this.syncOptionSummaries();
         document.body.classList.add('options-open');
         const opener = document.getElementById('sidebar-right-open');
         if (opener) opener.setAttribute('aria-expanded', 'true');
@@ -109,6 +111,18 @@ const OptionsPanel = {
         };
         bind();
         window.addEventListener('ovzoomready', bind, { once: true });
+    },
+
+    syncOptionSummaries() {
+        if (!this.dialog) return;
+        this.dialog.querySelectorAll('[data-option-summary]').forEach(group => {
+            const option = group.dataset.optionSummary;
+            const checked = group.querySelector(`[data-optie="${option}"]:checked`);
+            const current = group.querySelector('.option-current');
+            if (!checked || !current) return;
+            const label = checked.closest('label');
+            current.textContent = label ? label.textContent.trim() : checked.value;
+        });
     },
 };
 
