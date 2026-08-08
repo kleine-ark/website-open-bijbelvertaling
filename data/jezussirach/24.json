@@ -506,13 +506,13 @@
       "number": 8,
       "text1637": "Toen beval mij de schepper aller dingen, en die mij geschapen heeft, deed mijn tent rusten, en zeide:",
       "textSV1888": "Toen beval mij de schepper aller dingen, en die mij geschapen heeft, deed mijn tent rusten, en zeide:",
-      "text2026": "Toen beval mij de schepper alle dingen, en die mij geschapen heeft, deed mijn tent rusten, en zei:",
+      "text2026": "Toen beval mij de schepper van alle dingen, en die mij geschapen heeft, deed mijn tent rusten, en zei:",
       "marginNotes": [],
-      "text2026_html": "<span class=\"god-speaks\"><i><span class=\"direct-speech\"><i>Toen beval mij de schepper alle dingen, en die mij geschapen heeft,</i></span> deed mijn tent rusten, en zei:</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i><span class=\"direct-speech\"><i>Toen beval mij de schepper van alle dingen, en die mij geschapen heeft,</i></span> deed mijn tent rusten, en zei:</i></span>",
       "phraseDiff": [
         {
           "old": "aller",
-          "new": "alle",
+          "new": "van alle",
           "principe": null
         },
         {
@@ -1022,9 +1022,9 @@
       "number": 14,
       "text1637": "Ik ben verhoogd geworden gelijk een dadelboom te Engedi, en gelijk een, rozeboom te Jericho.",
       "textSV1888": "Ik ben verhoogd geworden gelijk een dadelboom te Engedi, en gelijk een, rozeboom te Jericho.",
-      "text2026": "Ik ben verhoogd geworden zoals een dadelboom te Engedi, en zoals een, rozeboom te Jericho.",
+      "text2026": "Ik ben verhoogd geworden zoals een dadelboom te Engedi, en zoals een rozeboom te Jericho.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Ik ben verhoogd geworden zoals een dadelboom te Engedi, en zoals een, rozeboom te Jericho.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Ik ben verhoogd geworden zoals een dadelboom te Engedi, en zoals een rozeboom te Jericho.</i></span>",
       "phraseDiff": [
         {
           "old": "gelijk",
@@ -1032,8 +1032,8 @@
           "principe": null
         },
         {
-          "old": "gelijk",
-          "new": "zoals",
+          "old": "gelijk een,",
+          "new": "zoals een",
           "principe": null
         }
       ],
@@ -2682,9 +2682,9 @@
       "number": 34,
       "text1637": "Ik heb gezegd: Ik zal mijn beste hof wateren, en mijn oprecht tuinbeddeken begieten.",
       "textSV1888": "Ik heb gezegd: Ik zal mijn beste hof wateren, en mijn oprecht tuinbeddeken begieten.",
-      "text2026": "Ik heb gezegd: Ik zal mijn beste hof wateren, en mijn oprecht tuinbeddeken begieten.",
+      "text2026": "Ik heb gezegd: Ik zal mijn beste hof wateren, en mijn oprechte tuinbeddeken begieten.",
       "marginNotes": [],
-      "text2026_html": "Ik heb gezegd: Ik zal mijn beste hof wateren, en mijn oprecht tuinbeddeken begieten.",
+      "text2026_html": "Ik heb gezegd: Ik zal mijn beste hof wateren, en mijn oprechte tuinbeddeken begieten.",
       "grondtekst": [
         {
           "woord": "ἴδετε",
@@ -2741,6 +2741,13 @@
           "strongs": "G846",
           "transliteratie": "autēn"
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "oprecht",
+          "new": "oprechte",
+          "principe": null
+        }
       ]
     },
     {
@@ -2756,18 +2763,25 @@
       "number": 36,
       "text1637": "Want ik doe de onderwijzing jichten als de dageraad, en doe ze schijnen tot in verre landen.",
       "textSV1888": "Want ik doe de onderwijzing jichten als de dageraad, en doe ze schijnen tot in verre landen.",
-      "text2026": "Want ik doe de onderwijzing jichten als de dageraad, en doe ze schijnen tot in verre landen.",
+      "text2026": "Want ik doe de onderwijzing lichten als de dageraad, en doe ze schijnen tot in verre landen.",
       "marginNotes": [],
-      "text2026_html": "Want ik doe de onderwijzing jichten als de dageraad, en doe ze schijnen tot in verre landen.",
-      "grondtekst": null
+      "text2026_html": "Want ik doe de onderwijzing lichten als de dageraad, en doe ze schijnen tot in verre landen.",
+      "grondtekst": null,
+      "phraseDiff": [
+        {
+          "old": "jichten",
+          "new": "lichten",
+          "principe": null
+        }
+      ]
     },
     {
       "number": 37,
       "text1637": "Want ik giet lering uit gelijk een profetie, en laat ze, na tot eeuwige geslachten.",
       "textSV1888": "Want ik giet lering uit gelijk een profetie, en laat ze, na tot eeuwige geslachten.",
-      "text2026": "Want ik giet onderwijzing uit zoals een profetie, en laat ze, na tot eeuwige geslachten.",
+      "text2026": "Want ik giet onderwijzing uit zoals een profetie, en laat ze na tot eeuwige geslachten.",
       "marginNotes": [],
-      "text2026_html": "Want ik giet onderwijzing uit zoals een profetie, en laat ze, na tot eeuwige geslachten.",
+      "text2026_html": "Want ik giet onderwijzing uit zoals een profetie, en laat ze na tot eeuwige geslachten.",
       "phraseDiff": [
         {
           "old": "lering",
@@ -2777,6 +2791,11 @@
         {
           "old": "gelijk",
           "new": "zoals",
+          "principe": null
+        },
+        {
+          "old": "ze,",
+          "new": "ze",
           "principe": null
         }
       ],
