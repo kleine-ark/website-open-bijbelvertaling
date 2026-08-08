@@ -1,6 +1,20 @@
 {
  "wijzigingen": [
   {
+   "versie": "v0.30.1",
+   "datum": "2026-08-08",
+   "items": [
+    {
+     "type": "fix",
+     "beschrijving": "De status 'afgerond' is voortaan uitsluitend voor boeken die door een mens zijn nagelezen. Boeken die alleen integraal met AI op kromme zinnen zijn gecontroleerd, zijn teruggezet naar concept. De tekstverbeteringen blijven behouden."
+    },
+    {
+     "type": "verbetering",
+     "beschrijving": "Genesis blijft gedeeltelijk nagelezen (hoofdstukken 1-20); Leviticus en Ruth staan volledig op afgerond. De statistieken en de nagekeken EPUB zijn opnieuw opgebouwd op basis van de menselijke reviewstatus."
+    }
+   ]
+  },
+  {
    "versie": "v0.30.0",
    "datum": "2026-08-08",
    "items": [
