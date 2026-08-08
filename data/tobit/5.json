@@ -1632,9 +1632,9 @@
       "number": 15,
       "text1637": "Hij dan zeide: Ik ben Azarias, de zoon van de grote Ananias, een uwer broederen.",
       "textSV1888": "Hij dan zeide: Ik ben Azarias, de zoon van de grote Ananias, een uwer broederen.",
-      "text2026": "Hij dan zei: Ik ben Azarias, de zoon van de grote Ananias, een uw broers.",
+      "text2026": "Hij dan zei: Ik ben Azarias, de zoon van de grote Ananias, een van uw broers.",
       "marginNotes": [],
-      "text2026_html": "Hij dan zei: <span class=\"direct-speech\"><i>Ik ben Azarias, de zoon van de grote Ananias, een uw broers.</i></span>",
+      "text2026_html": "Hij dan zei: <span class=\"direct-speech\"><i>Ik ben Azarias, de zoon van de grote Ananias, een van uw broers.</i></span>",
       "phraseDiff": [
         {
           "old": "zeide:",
@@ -1643,8 +1643,8 @@
         },
         {
           "old": "uwer broederen.",
-          "new": "uw broers.",
-          "principe": "N7"
+          "new": "van uw broers.",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -2316,9 +2316,9 @@
       "number": 19,
       "text1637": "Dewijl wij tezamen getrokken zijn naar Jeruzalem om te aanbidden, daarheen brengende de eerstgeborenen van het vee en de tienden der vruchten.",
       "textSV1888": "Dewijl wij tezamen getrokken zijn naar Jeruzalem om te aanbidden, daarheen brengende de eerstgeborenen van het vee en de tienden der vruchten.",
-      "text2026": "Omdat wij samen getrokken zijn naar Jeruzalem om te aanbidden, daarheen en brachten de eerstgeborenen van het vee en de tienden van de vruchten.",
+      "text2026": "Omdat wij samen naar Jeruzalem getrokken zijn om te aanbidden, en daarheen de eerstgeborenen van het vee en de tienden van de vruchten brachten.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Omdat wij samen getrokken zijn naar Jeruzalem om te aanbidden, daarheen en brachten de eerstgeborenen van het vee en de tienden van de vruchten.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Omdat wij samen naar Jeruzalem getrokken zijn om te aanbidden, en daarheen de eerstgeborenen van het vee en de tienden van de vruchten brachten.</i></span>",
       "phraseDiff": [
         {
           "old": "Dewijl",
@@ -2327,18 +2327,28 @@
         },
         {
           "old": "tezamen",
-          "new": "samen",
-          "principe": "V374"
-        },
-        {
-          "old": "brengende",
-          "new": "en brachten",
+          "new": "samen naar Jeruzalem",
           "principe": null
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "naar Jeruzalem",
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "en",
+          "principe": null
+        },
+        {
+          "old": "brengende",
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "der vruchten.",
+          "new": "van de vruchten brachten.",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -2786,18 +2796,33 @@
       "number": 27,
       "text1637": "Want zulks als ons van de Here gegeven is om te leven, dat is ons genoeg.",
       "textSV1888": "Want zulks als ons van de Here gegeven is om te leven, dat is ons genoeg.",
-      "text2026": "Want dat als ons van Heere gegeven is om te leven, dat is ons genoeg.",
+      "text2026": "Want wat ons door de Heere gegeven is om van te leven, is ons genoeg.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want dat als ons van Heere gegeven is om te leven, dat is ons genoeg.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want wat ons door de Heere gegeven is om van te leven, is ons genoeg.</i></span>",
       "phraseDiff": [
         {
-          "old": "zulks",
-          "new": "dat",
-          "principe": "V400"
+          "old": "zulks als",
+          "new": "wat",
+          "principe": null
         },
         {
-          "old": "de Here",
+          "old": "van",
+          "new": "door",
+          "principe": null
+        },
+        {
+          "old": "Here",
           "new": "Heere",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "van",
+          "principe": null
+        },
+        {
+          "old": "dat",
+          "new": "",
           "principe": null
         }
       ],
