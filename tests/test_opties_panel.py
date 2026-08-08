@@ -92,6 +92,79 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_bestaande_controls_staan_in_het_juiste_tabblad(self):
+        expected_tab = {
+            "toggle-versnummers": "lezen",
+            "toggle-citaten": "lezen",
+            "toggle-doorlopend": "lezen",
+            "opt-audio-speed": "lezen",
+            "toggle-kt-popup": "vergelijken",
+            "toggle-tags": "onderzoeken",
+            "toggle-hs-vers": "onderzoeken",
+        }
+        page = self.open_reader()
+        try:
+            for control_id, tab in expected_tab.items():
+                with self.subTest(control=control_id):
+                    self.assertEqual(
+                        page.locator(f"#options-panel-{tab} #{control_id}").count(),
+                        1,
+                    )
+        finally:
+            page.close()
+
+    def test_datawaarden_blijven_compatibel_met_bestaande_voorkeuren(self):
+        page = self.open_reader()
+        try:
+            godsnaam_values = page.locator('[data-optie="godsnaam"]').evaluate_all(
+                "els => els.map(el => el.value)"
+            )
+            column_values = page.locator("[data-toggle-col]").evaluate_all(
+                "els => els.map(el => el.dataset.toggleCol)"
+            )
+            self.assertEqual(
+                godsnaam_values,
+                ["ov", "klassiek", "jehovah", "jhwh"],
+            )
+            self.assertEqual(
+                set(column_values),
+                {
+                    "1637",
+                    "sv1888",
+                    "2026",
+                    "margin1637",
+                    "marginSV1888",
+                    "margin2026",
+                    "hebrew",
+                    "diff",
+                    "noteDiff",
+                },
+            )
+        finally:
+            page.close()
+
+    def test_vertaalkeuze_blijft_bewaard_na_herladen(self):
+        page = self.open_reader()
+        try:
+            page.wait_for_function(
+                "window.Opties && window.Opties.state && window.Opties.state.godsnaam"
+            )
+            page.locator("#sidebar-right-open").click()
+            page.get_by_text("Godsnaam in het Oude Testament", exact=True).click()
+            klassiek = page.locator('[data-optie="godsnaam"][value="klassiek"]')
+            klassiek.check()
+            page.wait_for_function(
+                "JSON.parse(localStorage.getItem('sv2026_vertaalopties')).godsnaam === 'klassiek'"
+            )
+
+            page.reload(wait_until="domcontentloaded")
+            page.wait_for_function(
+                "window.Opties && window.Opties.state.godsnaam === 'klassiek'"
+            )
+            self.assertTrue(klassiek.is_checked())
+        finally:
+            page.close()
+
 
 if __name__ == "__main__":
     unittest.main()

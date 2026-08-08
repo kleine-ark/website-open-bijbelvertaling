@@ -556,118 +556,122 @@
                 <button type="button" role="tab" id="options-tab-onderzoeken" data-options-tab="onderzoeken" aria-controls="options-panel-onderzoeken" aria-selected="false" tabindex="-1">Onderzoeken</button>
             </div>
         </div>
-        <div id="sidebar-right-body">
+        <div id="sidebar-right-body" class="options-body">
+            <section id="options-panel-lezen" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-lezen">
+                <div class="options-section-heading">
+                    <span class="options-section-icon" aria-hidden="true">Aa</span>
+                    <div><h3>Weergave</h3><p>Maak de leestekst rustig en persoonlijk.</p></div>
+                </div>
+                <div class="options-list">
+                    <fieldset class="option-choice option-choice-inline">
+                        <legend>Thema</legend>
+                        <label><input type="radio" name="opt-thema" data-optie="thema" value="auto"> Automatisch</label>
+                        <label><input type="radio" name="opt-thema" data-optie="thema" value="licht"> Licht</label>
+                        <label><input type="radio" name="opt-thema" data-optie="thema" value="donker"> Donker</label>
+                    </fieldset>
+                    <label class="option-row"><span><strong>Boekinleiding</strong><small>Toon de inleiding bij het gekozen boek.</small></span><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"></label>
+                    <label class="option-row"><span><strong>Hoofdstukinleiding</strong><small>Toon de inleiding boven het hoofdstuk.</small></span><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"></label>
+                    <label class="option-row"><span><strong>Dyslexiemodus</strong><small>Gebruik een eenvoudiger leesritme.</small></span><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"></label>
+                    <label class="option-row"><span><strong>Citaatopmaak</strong><small>Cursief en kleuronderscheid voor sprekers.</small></span><input type="checkbox" id="toggle-citaten" onchange="document.body.classList.toggle('citaten-uit', !this.checked);localStorage.setItem('citaatopmaak', this.checked)"></label>
+                    <label class="option-row"><span><strong>Versnummers</strong></span><input type="checkbox" id="toggle-versnummers" checked onchange="Opties.state.versnummers=this.checked?'aan':'uit';Opties.applyVerseNumbersClass();Opties.save();"></label>
+                    <label class="option-row"><span><strong>Hoofdstuknummers</strong></span><input type="checkbox" id="toggle-hoofdstuknummers" checked onchange="document.body.classList.toggle('hoofdstuknummers-uit', !this.checked);localStorage.setItem('hoofdstuknummers', this.checked)"></label>
+                    <label class="option-row"><span><strong>Perikoopkopjes</strong><small>Tussenkopjes per gedeelte.</small></span><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"></label>
+                    <label class="option-row"><span><strong>Doorlopend lezen</strong><small>Laad het volgende hoofdstuk tijdens het scrollen.</small></span><input type="checkbox" id="toggle-doorlopend" onchange="localStorage.setItem('doorlopend', this.checked); document.body.classList.toggle('doorlopend-aan', this.checked); if (typeof App !== 'undefined' && typeof Navigation !== 'undefined' && Navigation.currentBook) { App.renderChapter(Navigation.currentBook, Navigation.currentChapter); }"></label>
+                </div>
 
-            <!-- ===== 1. WEERGAVE ===== -->
-            <div class="opt-section">Weergave</div>
-            <div class="opt-group">
-                <div class="opt-group-label">Pagina &amp; leeshulp</div>
-                <label><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"> Boekinleiding</label>
-                <label><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"> Hoofdstukinleiding</label>
-                <label><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"> Dyslexie-modus</label>
-                <label><input type="checkbox" id="toggle-citaten" onchange="document.body.classList.toggle('citaten-uit', !this.checked);localStorage.setItem('citaatopmaak', this.checked)"> Citaatopmaak <span class="hint">(cursief, « », rood = God, geel = duivel)</span></label>
-                <label><input type="checkbox" id="toggle-versnummers" checked onchange="Opties.state.versnummers=this.checked?'aan':'uit';Opties.applyVerseNumbersClass();Opties.save();"> Versnummers</label>
-                <label><input type="checkbox" id="toggle-hoofdstuknummers" checked onchange="document.body.classList.toggle('hoofdstuknummers-uit', !this.checked);localStorage.setItem('hoofdstuknummers', this.checked)"> Hoofdstuknummers</label>
-                <label><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"> Pericoop-kopjes <span class="hint">(tussenkopjes per gedeelte)</span></label>
-                <label><input type="checkbox" id="toggle-doorlopend" onchange="localStorage.setItem('doorlopend', this.checked); document.body.classList.toggle('doorlopend-aan', this.checked); if (typeof App !== 'undefined' && typeof Navigation !== 'undefined' && Navigation.currentBook) { App.renderChapter(Navigation.currentBook, Navigation.currentChapter); }"> Doorlopend lezen <span class="hint">(scroll automatisch door hoofdstukken)</span></label>
-                <label><input type="checkbox" id="toggle-hs-vers"> Oudste handschrift per vers <span class="hint">(oorspronkelijke taal + oudste überhaupt)</span></label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Layout extra kolommen</div>
-                <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="naast"> Ernaast <span class="hint">(parallelle kolom)</span></label>
-                <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="eronder"> Eronder <span class="hint">(nieuwe regel)</span></label>
-            </div>
+                <div class="options-section-heading">
+                    <span class="options-section-icon options-section-icon-gold" aria-hidden="true">יהוה</span>
+                    <div><h3>Vertaalweergave</h3><p>Kies hoe namen, maten en tijden worden weergegeven.</p></div>
+                </div>
+                <div class="options-list options-choice-list">
+                    <details class="option-choice"><summary>Godsnaam in het Oude Testament</summary><div class="option-choice-values">
+                        <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="ov"> JAHWEH / God JAHWEH</label>
+                        <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="klassiek"> HEERE / de HEERE God</label>
+                        <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jehovah"> Jehovah / God Jehovah</label>
+                        <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jhwh"> יהוה / God יהוה</label>
+                    </div></details>
+                    <details class="option-choice"><summary>Aanspreektitel in het Nieuwe Testament</summary><div class="option-choice-values">
+                        <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="heere"> Heere</label>
+                        <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="here"> Here</label>
+                    </div></details>
+                    <details class="option-choice"><summary>Sheol in het Oude Testament</summary><div class="option-choice-values">
+                        <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="dodenrijk"> Dodenrijk</label>
+                        <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="hel"> Hel</label>
+                    </div></details>
+                    <details class="option-choice"><summary>Namen van personen</summary><div class="option-choice-values">
+                        <label><input type="radio" name="opt-arabischeNamen" data-optie="arabischeNamen" value="uit"> Nederlands</label>
+                        <label><input type="radio" name="opt-arabischeNamen" data-optie="arabischeNamen" value="aan"> Arabisch</label>
+                    </div></details>
+                    <details class="option-choice"><summary>Naam van Jezus</summary><div class="option-choice-values">
+                        <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="nl"> Jezus Christus</label>
+                        <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="hebreeuws"> Yeshua HaMashiach</label>
+                        <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="koranisch"> Isa</label>
+                        <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="arabisch"> Yasūʿ al-Masīḥ</label>
+                    </div></details>
+                    <details class="option-choice"><summary>Maten en gewichten</summary><div class="option-choice-values">
+                        <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="bijbels"> Bijbels</label>
+                        <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="metrisch"> Metrisch</label>
+                        <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="imperiaal"> Imperiaal</label>
+                        <p class="option-help">Omrekeningen zijn bij benadering. <a href="maateenheden.html" target="_blank" rel="noopener">Bekijk de verantwoording.</a></p>
+                    </div></details>
+                    <details class="option-choice"><summary>Tijdsaanduidingen</summary><div class="option-choice-values">
+                        <label><input type="radio" name="opt-tijdrekening" data-optie="tijdrekening" value="bijbels"> Bijbels</label>
+                        <label><input type="radio" name="opt-tijdrekening" data-optie="tijdrekening" value="modern"> Moderne kloktijd</label>
+                        <p class="option-help"><a href="tijdsaanduidingen.html" target="_blank" rel="noopener">Lees hoe de tijdsomrekening werkt.</a></p>
+                    </div></details>
+                </div>
 
-            <!-- ===== 2. THEOLOGISCH ===== -->
-            <div class="opt-section">Theologisch</div>
-            <div class="opt-group">
-                <div class="opt-group-label">Godsnaam (OT)</div>
-                <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="ov"> JAHWEH / God JAHWEH <span class="hint">(OV)</span></label>
-                <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="klassiek"> HEERE / de HEERE God <span class="hint">(SV)</span></label>
-                <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jehovah"> Jehovah / God Jehovah <span class="hint">(klassiek lat.)</span></label>
-                <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jhwh"> יהוה / God יהוה <span class="hint">(Hebr.)</span></label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Aanspreektitel (NT)</div>
-                <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="heere"> Heere <span class="hint">(OV)</span></label>
-                <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="here"> Here <span class="hint">(Kurios — NBG-stijl)</span></label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Sheol (OT)</div>
-                <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="dodenrijk"> Dodenrijk <span class="hint">(OV, modern)</span></label>
-                <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="hel"> Hel <span class="hint">(SV-traditioneel)</span></label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Namen van personen</div>
-                <label><input type="radio" name="opt-arabischeNamen" data-optie="arabischeNamen" value="uit"> Nederlands <span class="hint">(standaard)</span></label>
-                <label><input type="radio" name="opt-arabischeNamen" data-optie="arabischeNamen" value="aan"> Arabisch <span class="hint">(Musa, Ibrahim, Isa …)</span></label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Naam van Jezus</div>
-                <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="nl"> Jezus Christus <span class="hint">(standaard)</span></label>
-                <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="hebreeuws"> Yeshua HaMashiach <span class="hint">(Hebreeuws)</span></label>
-                <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="koranisch"> Isa <span class="hint">(koranisch)</span></label>
-                <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="arabisch"> Yasūʿ al-Masīḥ <span class="hint">(Arabische christenen)</span></label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Geografische locaties</div>
-                <label><input type="radio" name="opt-geoMarkeren" data-optie="geoMarkeren" value="uit"> Niet markeren <span class="hint">(standaard)</span></label>
-                <label><input type="radio" name="opt-geoMarkeren" data-optie="geoMarkeren" value="aan"> Markeren <span class="hint">(nu Genesis)</span></label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Maten en gewichten</div>
-                <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="bijbels"> Bijbels <span class="hint">(el, efa, sikkel — standaard)</span></label>
-                <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="metrisch"> Metrisch <span class="hint">(“driehonderd ellen” wordt “ongeveer 133 meter”)</span></label>
-                <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="imperiaal"> Imperiaal <span class="hint">(voet, duim, yard, gallon, pint, pond, ounce)</span></label>
-                <div class="hint" style="margin:4px 0 0 2px">De omrekening is bij benadering: geen enkele Bijbelse maat is exact bekend. Zie de <a href="maateenheden.html" target="_blank" rel="noopener">verantwoording met marges</a>. Beweeg over een omgerekende maat om de oorspronkelijke te zien.</div>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Tijdsaanduidingen</div>
-                <label><input type="radio" name="opt-tijdrekening" data-optie="tijdrekening" value="bijbels"> Bijbels <span class="hint">(het negende uur, de vierde wake — standaard)</span></label>
-                <label><input type="radio" name="opt-tijdrekening" data-optie="tijdrekening" value="modern"> Moderne kloktijd <span class="hint">(“het negende uur” wordt “ongeveer drie uur 's middags”)</span></label>
-                <div class="hint" style="margin:4px 0 0 2px">De Bijbelse dag telt twaalf uren van zonsopgang tot zonsondergang, dus een uur is 's zomers langer dan 's winters. Zie de <a href="tijdsaanduidingen.html" target="_blank" rel="noopener">verantwoording</a>. Beweeg over een omgerekende tijd om de oorspronkelijke te zien.</div>
-            </div>
+                <div class="options-section-heading">
+                    <span class="options-section-icon" aria-hidden="true">▶</span>
+                    <div><h3>Voorlezen</h3><p>Stel stem en afspeelsnelheid in.</p></div>
+                </div>
+                <div class="options-list">
+                    <fieldset class="option-choice option-choice-inline"><legend>Stem</legend>
+                        <label><input type="radio" name="opt-stem" value="m"> Man</label>
+                        <label><input type="radio" name="opt-stem" value="v"> Vrouw</label>
+                    </fieldset>
+                    <label class="option-row"><span><strong>Afspeelsnelheid</strong></span><select id="opt-audio-speed">
+                        <option value="0.75">0,75×</option><option value="1">1×</option><option value="1.25">1,25×</option><option value="1.5">1,5×</option><option value="2">2×</option>
+                    </select></label>
+                </div>
+            </section>
 
-            <!-- ===== 3. VERTALING &amp; BRONNEN ===== -->
-            <div class="opt-section">Vertaling &amp; bronnen</div>
-            <div class="opt-group">
-                <div class="opt-group-label">Tekstedities</div>
-                <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
-                <label><input type="checkbox" data-toggle-col="sv1888"> SV 1888</label>
-                <label><input type="checkbox" data-toggle-col="2026" checked> OV</label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Kanttekeningen</div>
-                <label><input type="checkbox" data-toggle-col="margin1637"> KT 1637</label>
-                <label><input type="checkbox" data-toggle-col="marginSV1888"> KT 1888</label>
-                <label><input type="checkbox" data-toggle-col="margin2026"> OSV KT (kolom)</label>
-                <label><input type="checkbox" id="toggle-kt-popup" onchange="document.body.classList.toggle('kt-popup-mode', this.checked)"> OSV KT (popup)</label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Analyse</div>
-                <label><input type="checkbox" data-toggle-col="hebrew"> Hebr/Grieks/Aram/Lat/Ge'ez</label>
-                <label><input type="checkbox" data-toggle-col="diff"> Verschillen SV-OV</label>
-                <label><input type="checkbox" data-toggle-col="noteDiff"> Verschillen KT SV-OSV</label>
-                <label><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"> Tags</label>
-            </div>
+            <section id="options-panel-vergelijken" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-vergelijken" hidden>
+                <div class="options-section-heading"><span class="options-section-icon" aria-hidden="true">Ⅱ</span><div><h3>Teksten naast elkaar</h3><p>Vergelijk vertalingen en kanttekeningen.</p></div></div>
+                <div class="options-list">
+                    <fieldset class="option-choice"><legend>Tekstedities</legend><div class="option-choice-values option-choice-grid">
+                        <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
+                        <label><input type="checkbox" data-toggle-col="sv1888"> SV 1888</label>
+                        <label><input type="checkbox" data-toggle-col="2026" checked> Open Vertaling</label>
+                    </div></fieldset>
+                    <fieldset class="option-choice"><legend>Kanttekeningen</legend><div class="option-choice-values option-choice-grid">
+                        <label><input type="checkbox" data-toggle-col="margin1637"> KT 1637</label>
+                        <label><input type="checkbox" data-toggle-col="marginSV1888"> KT 1888</label>
+                        <label><input type="checkbox" data-toggle-col="margin2026"> OV-kanttekeningen als kolom</label>
+                        <label><input type="checkbox" id="toggle-kt-popup" onchange="document.body.classList.toggle('kt-popup-mode', this.checked)"> OV-kanttekeningen als popup</label>
+                    </div></fieldset>
+                    <fieldset class="option-choice option-choice-inline"><legend>Extra kolommen</legend>
+                        <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="naast"> Ernaast</label>
+                        <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="eronder"> Eronder</label>
+                    </fieldset>
+                    <label class="option-row"><span><strong>Verschillen SV–OV</strong></span><input type="checkbox" data-toggle-col="diff"></label>
+                    <label class="option-row"><span><strong>Verschillen in kanttekeningen</strong></span><input type="checkbox" data-toggle-col="noteDiff"></label>
+                </div>
+            </section>
 
-            <!-- ===== AUDIO (voorlezing) ===== -->
-            <div class="opt-section">Voorlezing</div>
-            <div class="opt-group">
-                <div class="opt-group-label">Stem</div>
-                <label><input type="radio" name="opt-stem" value="m"> Mannenstem</label>
-                <label><input type="radio" name="opt-stem" value="v"> Vrouwenstem</label>
-            </div>
-            <div class="opt-group">
-                <div class="opt-group-label">Afspeelsnelheid</div>
-                <select id="opt-audio-speed">
-                    <option value="0.75">0,75×</option>
-                    <option value="1">1×</option>
-                    <option value="1.25">1,25×</option>
-                    <option value="1.5">1,5×</option>
-                    <option value="2">2×</option>
-                </select>
-            </div>
+            <section id="options-panel-onderzoeken" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-onderzoeken" hidden>
+                <div class="options-section-heading"><span class="options-section-icon options-section-icon-gold" aria-hidden="true">א</span><div><h3>Onderzoekslagen</h3><p>Voeg bronnen en taalinformatie toe aan de tekst.</p></div></div>
+                <div class="options-list">
+                    <label class="option-row"><span><strong>Grondtalen</strong><small>Hebreeuws, Grieks, Aramees, Latijn of Ge'ez.</small></span><input type="checkbox" data-toggle-col="hebrew"></label>
+                    <label class="option-row"><span><strong>Oudste handschrift per vers</strong><small>Oorspronkelijke taal en oudste vindplaats.</small></span><input type="checkbox" id="toggle-hs-vers"></label>
+                    <label class="option-row"><span><strong>Onderwerptags</strong></span><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"></label>
+                    <fieldset class="option-choice option-choice-inline"><legend>Geografische locaties</legend>
+                        <label><input type="radio" name="opt-geoMarkeren" data-optie="geoMarkeren" value="uit"> Niet markeren</label>
+                        <label><input type="radio" name="opt-geoMarkeren" data-optie="geoMarkeren" value="aan"> Markeren</label>
+                    </fieldset>
+                    <div class="option-status"><strong>Strong-nummers</strong><span>Beschikbaar zodra dit boek woord voor woord gekoppeld is.</span></div>
+                </div>
+            </section>
         </div>
     </dialog>
     <button id="sidebar-right-open" title="Opties uitklappen" style="display:none;">◀</button>
