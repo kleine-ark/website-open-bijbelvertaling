@@ -54,6 +54,42 @@
 }
 .ns-vers:hover { border-color: var(--gold); background: rgba(203,164,73,0.08); }
 
+/* Uitgeschreven vindplaatsen met optionele context */
+.gt-lijst {
+    max-width: 76ch; margin: 12px 0 0; padding: 0; list-style: none;
+}
+.gt-vers {
+    margin: 0; padding: 16px 0 18px; border-bottom: 1px solid var(--border, #e5e1d8);
+}
+.gt-vers:first-child { border-top: 1px solid var(--border, #e5e1d8); }
+.gt-vers-kop {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin-bottom: 7px; font-family: var(--font-body);
+}
+.gt-vers-kop > a { color: var(--teal); font-size: 14px; font-weight: 600; text-decoration: none; }
+.gt-vers-kop > a:hover { text-decoration: underline; }
+.gt-knoppen { display: inline-flex; flex: 0 0 auto; gap: 5px; }
+.gt-plus, .gt-min {
+    width: 31px; height: 31px; padding: 0; border: 1px solid var(--border, #d9d4c8);
+    border-radius: 50%; background: transparent; color: var(--teal); cursor: pointer;
+    font: 600 18px/29px var(--font-body); text-align: center;
+}
+.gt-plus:hover, .gt-min:hover { border-color: var(--gold); background: rgba(203,164,73,0.08); }
+.gt-plus:focus-visible, .gt-min:focus-visible, .gt-vers-kop > a:focus-visible {
+    outline: 2px solid var(--gold); outline-offset: 2px;
+}
+.gt-vers-tekst { color: var(--text, #333); font-size: 16px; line-height: 1.75; }
+.gt-vers-tekst .osv-tekst { display: grid; gap: 6px; }
+.gt-vers-tekst .osv-vers { display: block; }
+.gt-vers-tekst .context-vers { color: var(--text-secondary, #777); }
+.gt-vers-tekst .focus-vers { color: var(--text, #333); }
+.gt-vers-tekst .gt-verborgen { display: none; }
+
+@media (max-width: 480px) {
+    .gt-vers { padding: 14px 0 16px; }
+    .gt-vers-tekst { font-size: 15.5px; }
+}
+
 /* Letterlijke lied- en gebedsteksten */
 .ns-volledige-tekst { max-width: 72ch; margin-top: 28px; }
 .ns-volledige-tekst > .ns-kop { margin-top: 0; }
@@ -99,6 +135,9 @@
 :root[data-theme="donker"] .ns-sectie-kop { color: #e8e4da; }
 :root[data-theme="donker"] .ns-tekstvers { color: #cfcabe; }
 :root[data-theme="donker"] .ns-tekstmelding { color: #cfcabe; background: rgba(203,164,73,0.1); }
+:root[data-theme="donker"] .gt-vers-tekst,
+:root[data-theme="donker"] .gt-vers-tekst .focus-vers { color: #cfcabe; }
+:root[data-theme="donker"] .gt-vers-tekst .context-vers { color: #999286; }
 
 /* ── Tegel-hoofdpagina van de wiki ─────────────────────────────────────────
    Naar het kaartontwerp van kleineark.com: witte kaart, dunne rand, kop in
