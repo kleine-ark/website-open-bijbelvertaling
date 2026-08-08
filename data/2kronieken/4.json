@@ -1214,7 +1214,7 @@
       "number": 12,
       "textSV1888": "De twee pilaren, en de bollen, en de twee kapitelen, op het hoofd der pilaren; en de twee netten, om de twee bollen der kapitelen te bedekken, die op der pilaren hoofd waren;",
       "text1637": "De twee pilaren, ende de bollen ende de twee capiteelen, op het hooft der pilaren: ende de twee netten, om de twee bollen der capiteelen te bedecken, die op der pilaren hooft waren:",
-      "text2026": "De twee pilaren, en de bollen, en de twee kapitelen, op het hoofd van de pilaren; en de twee netten, om de twee bollen van de kapitelen te bedekken, die op van de pilaren hoofd waren;",
+      "text2026": "De twee pilaren, en de bollen, en de twee kapitelen, op het hoofd van de pilaren; en de twee netten, om de twee bollen van de kapitelen te bedekken, die op het hoofd van de pilaren waren;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1313,7 +1313,7 @@
           "morph": "HTd/Ncmpa"
         }
       ],
-      "text2026_html": "De twee pilaren, en de bollen, en de twee kapitelen, op het hoofd van de pilaren; en de twee netten, om de twee bollen van de kapitelen te bedekken, die op van de pilaren hoofd waren;",
+      "text2026_html": "De twee pilaren, en de bollen, en de twee kapitelen, op het hoofd van de pilaren; en de twee netten, om de twee bollen van de kapitelen te bedekken, die op het hoofd van de pilaren waren;",
       "text1637_html": "De twee pilaren, ende de bollen ende de twee capiteelen, op het hooft der pilaren: ende de twee netten, om de twee bollen der capiteelen te bedecken, die op der pilaren hooft waren:",
       "phraseDiff": [
         {
@@ -1328,8 +1328,13 @@
         },
         {
           "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "new": "het hoofd van de",
+          "principe": null
+        },
+        {
+          "old": "hoofd",
+          "new": "",
+          "principe": null
         }
       ]
     },
