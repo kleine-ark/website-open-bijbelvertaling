@@ -88,6 +88,16 @@ class WikiReadingGutterTest(unittest.TestCase):
         finally:
             page.close()
 
+    def test_liederen_overview_has_no_intro_panel(self):
+        page = self.browser.new_page(viewport={"width": 1450, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/wiki.html#liederen")
+            article = page.frame_locator("#wiki-frame").locator("#naslag")
+            article.locator(".ns-rooster").wait_for(state="visible")
+            self.assertEqual(article.locator(".ns-lead").count(), 0)
+        finally:
+            page.close()
+
     def test_gebeden_overview_has_no_intro_panel(self):
         page = self.browser.new_page(viewport={"width": 1450, "height": 900})
         try:
