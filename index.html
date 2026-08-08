@@ -543,11 +543,18 @@
     <script src="js/lexicon.js"></script>
     </div><!-- /main-wrapper -->
 
-    <!-- Rechter sidebar: Opties -->
-    <aside id="sidebar-right" class="collapsed">
-        <div id="sidebar-right-header">
-            <span class="sidebar-right-title">Opties</span>
-            <button id="sidebar-right-toggle" title="Opties inklappen">▶</button>
+    <!-- Zwevend optiespaneel -->
+    <dialog id="sidebar-right" class="options-panel" aria-labelledby="options-title">
+        <div id="sidebar-right-header" class="options-header">
+            <button id="sidebar-right-toggle" type="button" aria-label="Opties sluiten" title="Opties sluiten">&times;</button>
+            <p class="options-eyebrow">Open Vertaling</p>
+            <h2 id="options-title">Leesvoorkeuren</h2>
+            <p class="options-preview">In de beginne schiep God de hemel en de aarde.</p>
+            <div class="options-tabs" role="tablist" aria-label="Categorieën">
+                <button type="button" role="tab" id="options-tab-lezen" data-options-tab="lezen" aria-controls="options-panel-lezen" aria-selected="true">Lezen</button>
+                <button type="button" role="tab" id="options-tab-vergelijken" data-options-tab="vergelijken" aria-controls="options-panel-vergelijken" aria-selected="false" tabindex="-1">Vergelijken</button>
+                <button type="button" role="tab" id="options-tab-onderzoeken" data-options-tab="onderzoeken" aria-controls="options-panel-onderzoeken" aria-selected="false" tabindex="-1">Onderzoeken</button>
+            </div>
         </div>
         <div id="sidebar-right-body">
 
@@ -662,7 +669,7 @@
                 </select>
             </div>
         </div>
-    </aside>
+    </dialog>
     <button id="sidebar-right-open" title="Opties uitklappen" style="display:none;">◀</button>
     <div id="mobile-backdrop"></div>
 
@@ -866,6 +873,7 @@
         if (ch) ch.checked = false;
     }
 </script>
+    <script src="js/options-panel.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/mobile-nav.js"></script>
     <script src="js/column-resize.js"></script>

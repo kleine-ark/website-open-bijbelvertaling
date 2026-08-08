@@ -85,7 +85,7 @@ const MobileNav = {
             else this.closePicker();
         });
 
-        // Opties-knop opent rechter sidebar als drawer
+        // Opties-knop opent het gedeelde modale optiespaneel.
         optBtn.addEventListener('click', () => this._openOpties());
 
         // Reageer op hash-veranderingen
@@ -374,15 +374,9 @@ const MobileNav = {
     },
 
     _openOpties() {
-        // Mimic Sidebar's expand-rechts pad: voeg mobile-open toe + drawer-open op body
-        const r = document.getElementById('sidebar-right');
-        if (!r) return;
-        r.classList.remove('collapsed');
-        r.classList.add('mobile-open');
-        document.body.classList.add('drawer-open');
-        // Sluit links indien open
-        const s = document.getElementById('sidebar');
-        if (s) { s.classList.remove('mobile-open'); s.classList.add('collapsed'); }
+        if (window.OptionsPanel) {
+            OptionsPanel.open(document.getElementById('mobile-opties-btn'));
+        }
     },
 };
 

@@ -3,7 +3,6 @@
 const Sidebar = {
     init() {
         this.setupToggle();
-        this.setupRightToggle();
         this.setupMobileBackdrop();
         this.setupSearch();
     },
@@ -28,7 +27,7 @@ const Sidebar = {
             sidebar.classList.remove('collapsed');
             if (this.isMobile()) {
                 sidebar.classList.add('mobile-open');
-                this._closeRight();   // op mobile: andere drawer sluiten
+                if (window.OptionsPanel) OptionsPanel.close();
                 document.body.classList.add('drawer-open');
             } else {
                 openBtn.style.display = 'none';
@@ -49,70 +48,11 @@ const Sidebar = {
         openBtn.addEventListener('click', expand);
     },
 
-    setupRightToggle() {
-        const r = document.getElementById('sidebar-right');
-        const toggleBtn = document.getElementById('sidebar-right-toggle');
-        const openBtn = document.getElementById('sidebar-right-open');
-        if (!r || !toggleBtn || !openBtn) return;
-
-        const collapse = () => {
-            r.classList.remove('mobile-open');
-            r.classList.add('collapsed');
-            openBtn.style.display = 'block';
-            document.body.classList.toggle('drawer-open', this._anyDrawerOpen());
-            if (!this.isMobile()) localStorage.setItem('sv2026_sidebarRightCollapsed', 'true');
-        };
-
-        const expand = () => {
-            r.classList.remove('collapsed');
-            if (this.isMobile()) {
-                r.classList.add('mobile-open');
-                this._closeLeft();
-                document.body.classList.add('drawer-open');
-            } else {
-                openBtn.style.display = 'none';
-            }
-            if (!this.isMobile()) localStorage.setItem('sv2026_sidebarRightCollapsed', 'false');
-        };
-
-        // Default state — bekijk eerst localStorage; daarna fallback naar
-        // de class op het element zelf (HTML kan default 'collapsed' staan).
-        const stored = localStorage.getItem('sv2026_sidebarRightCollapsed');
-        const startsCollapsed = stored !== null
-            ? stored === 'true'
-            : r.classList.contains('collapsed');
-        if (this.isMobile() || startsCollapsed) {
-            collapse();
-        } else {
-            r.classList.remove('collapsed');
-            openBtn.style.display = 'none';
-        }
-
-        toggleBtn.addEventListener('click', collapse);
-        openBtn.addEventListener('click', expand);
-
-        // Re-evaluate on resize
-        window.addEventListener('resize', () => {
-            if (this.isMobile()) {
-                if (!r.classList.contains('mobile-open')) {
-                    r.classList.add('collapsed');
-                    openBtn.style.display = 'block';
-                }
-            } else {
-                if (localStorage.getItem('sv2026_sidebarRightCollapsed') !== 'true') {
-                    r.classList.remove('collapsed');
-                    openBtn.style.display = 'none';
-                }
-            }
-        });
-    },
-
     setupMobileBackdrop() {
         const bd = document.getElementById('mobile-backdrop');
         if (!bd) return;
         bd.addEventListener('click', () => {
             this._closeLeft();
-            this._closeRight();
         });
     },
 
@@ -125,17 +65,8 @@ const Sidebar = {
         if (o && this.isMobile()) o.style.display = 'block';
         document.body.classList.toggle('drawer-open', this._anyDrawerOpen());
     },
-    _closeRight() {
-        const r = document.getElementById('sidebar-right');
-        const o = document.getElementById('sidebar-right-open');
-        if (!r) return;
-        r.classList.remove('mobile-open');
-        r.classList.add('collapsed');
-        if (o && this.isMobile()) o.style.display = 'block';
-        document.body.classList.toggle('drawer-open', this._anyDrawerOpen());
-    },
     _anyDrawerOpen() {
-        return document.querySelector('#sidebar.mobile-open, #sidebar-right.mobile-open') !== null;
+        return document.querySelector('#sidebar.mobile-open') !== null;
     },
 
     setupSearch() {
