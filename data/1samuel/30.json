@@ -1389,7 +1389,7 @@
       "number": 13,
       "textSV1888": "Daarna zeide David tot hem: Wiens zijt gij? En van waar zijt gij? Toen zeide de Egyptische jongen: Ik ben de knecht van een Amalekietischen man, en mijn heer heeft mij verlaten, omdat ik voor drie dagen krank geworden ben.",
       "text1637": "Daerna seyde David tot hem: Wiens zijt ghy? ende van waer zijt ghy? doe seyde de Egyptische [17] jonge, Ick ben eenes Amalekitischen mans knecht, ende mijn heere heeft my verlaten, om dat ick [18] [voor] drie dagen kranck geworden ben.",
-      "text2026": "Daarna zei David tot hem: Van wie bent u? En vanwaar bent u? Toen zei de Egyptische jongen: Ik ben de knecht van een Amalekietischen man, en mijn heer heeft mij verlaten, omdat ik voor drie dagen ziek geworden ben.",
+      "text2026": "Daarna zei David tot hem: Van wie bent u? En vanwaar bent u? Toen zei de Egyptische jongen: Ik ben de knecht van een Amalekietische man, en mijn heer heeft mij verlaten, omdat ik voor drie dagen ziek geworden ben.",
       "marginNotes": [
         {
           "marker": "17",
@@ -1513,7 +1513,7 @@
           "morph": "HAcmsa"
         }
       ],
-      "text2026_html": "Daarna zei David tot hem: <span class=\"direct-speech\"><i>Van wie bent u? En vanwaar bent u?</i></span> Toen zei de Egyptische jongen: <span class=\"direct-speech\"><i>Ik ben de knecht van een Amalekietischen man, en mijn heer heeft mij verlaten, omdat ik voor drie dagen ziek geworden ben.</i></span>",
+      "text2026_html": "Daarna zei David tot hem: <span class=\"direct-speech\"><i>Van wie bent u? En vanwaar bent u?</i></span> Toen zei de Egyptische jongen: <span class=\"direct-speech\"><i>Ik ben de knecht van een Amalekietische man, en mijn heer heeft mij verlaten, omdat ik voor drie dagen ziek geworden ben.</i></span>",
       "textSV1888_html": "Daarna zeide David tot hem: Wiens zijt gij? En van waar zijt gij? Toen zeide de Egyptische<sup class=\"note-marker\" data-note=\"17\">17</sup> jongen: Ik ben de knecht van een Amalekietischen man, en mijn heer heeft mij verlaten, omdat ik voor<sup class=\"note-marker\" data-note=\"18\">18</sup> drie dagen krank geworden ben.",
       "text1637_html": "Daerna seyde David tot hem: Wiens zijt ghy? ende van waer zijt ghy? doe seyde de Egyptische <sup class=\"note-marker\" data-note=\"17\">17</sup> jonge, Ick ben eenes Amalekitischen mans knecht, ende mijn heere heeft my verlaten, om dat ick <sup class=\"note-marker\" data-note=\"18\">18</sup> [voor] drie dagen kranck geworden ben.",
       "phraseDiff": [
@@ -1536,6 +1536,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Amalekietischen",
+          "new": "Amalekietische",
+          "principe": null
         },
         {
           "old": "krank",
@@ -1951,7 +1956,7 @@
       "number": 17,
       "textSV1888": "En David sloeg hen van de schemering tot aan den avond van hunlieder anderen dag; en er ontkwam niet een man van hen, behalve vierhonderd jonge mannen, die op kemelen reden en vloden.",
       "text1637": "Ende David sloechse van [23] de schemeringe [24] tot aen den avont van haerlieder anderen dach, ende daer en ontquam niet een man van hen, behalven vier hondert jonge mannen, die op kemelen reden, ende vloden.",
-      "text2026": "En David sloeg hen van de schemering tot aan de avond van hun anderen dag; en er ontkwam niet één man van hen, behalve vierhonderd jonge mannen, die op kamelen reden en vluchtten.",
+      "text2026": "En David sloeg hen van de schemering tot aan de avond van hun andere dag; en er ontkwam niet één man van hen, behalve vierhonderd jonge mannen, die op kamelen reden en vluchtten.",
       "marginNotes": [
         {
           "marker": "23",
@@ -2075,7 +2080,7 @@
           "morph": "HC/Vqw3mp"
         }
       ],
-      "text2026_html": "En David sloeg hen van<sup class=\"note-marker\" data-note=\"23\">23</sup> de schemering<sup class=\"note-marker\" data-note=\"24\">24</sup> tot aan de avond van hun anderen dag; en er ontkwam niet één man van hen, behalve vierhonderd jonge mannen, die op kamelen reden en vluchtten.",
+      "text2026_html": "En David sloeg hen van<sup class=\"note-marker\" data-note=\"23\">23</sup> de schemering<sup class=\"note-marker\" data-note=\"24\">24</sup> tot aan de avond van hun andere dag; en er ontkwam niet één man van hen, behalve vierhonderd jonge mannen, die op kamelen reden en vluchtten.",
       "textSV1888_html": "En David sloeg hen van<sup class=\"note-marker\" data-note=\"23\">23</sup> de schemering<sup class=\"note-marker\" data-note=\"24\">24</sup> tot aan den avond van hunlieder anderen dag; en er ontkwam niet een man van hen, behalve vierhonderd jonge mannen, die op kemelen reden en vloden.",
       "text1637_html": "Ende David sloechse van <sup class=\"note-marker\" data-note=\"23\">23</sup> de schemeringe <sup class=\"note-marker\" data-note=\"24\">24</sup> tot aen den avont van haerlieder anderen dach, en<i>de</i> daer en ontquam niet een man van hen, behalven vier hondert jonge mannen, die op kemelen reden, ende vloden.",
       "phraseDiff": [
@@ -2085,9 +2090,9 @@
           "principe": "N1"
         },
         {
-          "old": "hunlieder",
-          "new": "hun",
-          "principe": "V329"
+          "old": "hunlieder anderen",
+          "new": "hun andere",
+          "principe": null
         },
         {
           "old": "een",
