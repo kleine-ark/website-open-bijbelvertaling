@@ -329,7 +329,7 @@
       "number": 3,
       "textSV1888": "Hiermede zal Aäron in het heilige gaan: met een var, een jong rund ten zondoffer, en een ram ten brandoffer.",
       "text1637": "Hier mede sal Aaron in dat Heylige gaen; met [6] eenen varre, [7] eenen jongen runt ten sond-offer, ende eenen ram ten brand-offer.",
-      "text2026": "Hiermee zal Aäron in het heilige gaan: met een stier, een jong rund ten zondoffer, en een ram ten brandoffer.",
+      "text2026": "Hiermee zal Aäron in het heilige gaan: met een stier, een jong rund als zondoffer, en een ram als brandoffer.",
       "marginNotes": [
         {
           "marker": "6",
@@ -403,7 +403,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Hiermee zal Aäron in het heilige gaan: met<sup class=\"note-marker\" data-note=\"6\">6</sup> een stier,<sup class=\"note-marker\" data-note=\"7\">7</sup> een jong rund ten zondoffer, en een ram ten brandoffer.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Hiermee zal Aäron in het heilige gaan: met<sup class=\"note-marker\" data-note=\"6\">6</sup> een stier,<sup class=\"note-marker\" data-note=\"7\">7</sup> een jong rund als zondoffer, en een ram als brandoffer.</i></span>",
       "textSV1888_html": "Hiermede zal Aäron in het heilige gaan: met<sup class=\"note-marker\" data-note=\"6\">6</sup> een var,<sup class=\"note-marker\" data-note=\"7\">7</sup> een jong rund ten zondoffer, en een ram ten brandoffer.",
       "text1637_html": "Hier mede sal Aaron in dat Heylige gaen; met <sup class=\"note-marker\" data-note=\"6\">6</sup> eenen varre, <sup class=\"note-marker\" data-note=\"7\">7</sup> eenen jongen runt ten sond-offer, ende eenen ram ten brand-offer.",
       "phraseDiff": [
@@ -416,6 +416,16 @@
           "old": "var,",
           "new": "stier,",
           "principe": "V410"
+        },
+        {
+          "old": "ten",
+          "new": "als",
+          "principe": "V1143"
+        },
+        {
+          "old": "ten",
+          "new": "als",
+          "principe": "V1143"
         }
       ]
     },
@@ -582,7 +592,7 @@
       "number": 5,
       "textSV1888": "En aan de vergadering der kinderen Israëls zal hij nemen twee geitenbokken ten zondoffer, en een ram ten brandoffer.",
       "text1637": "Ende van de vergaderinge der kinderen Israëls sal hy nemen twee geyten bocken ten sond-offer: ende eenen ram ten brand-offer.",
-      "text2026": "En aan de gemeenschap van de Israëlieten zal hij nemen twee geitenbokken ten zondoffer, en één ram ten brandoffer.",
+      "text2026": "En aan de gemeenschap van de Israëlieten zal hij nemen twee geitenbokken als zondoffer, en één ram als brandoffer.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -646,7 +656,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En aan de gemeenschap van de Israëlieten zal hij nemen twee geitenbokken ten zondoffer, en één ram ten brandoffer.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En aan de gemeenschap van de Israëlieten zal hij nemen twee geitenbokken als zondoffer, en één ram als brandoffer.</i></span>",
       "text1637_html": "Ende van de vergaderinge der kinderen Israëls sal hy nemen twee geyten bocken ten sond-offer: ende eenen ram ten brand-offer.",
       "phraseDiff": [
         {
@@ -655,9 +665,19 @@
           "principe": "V1140"
         },
         {
+          "old": "ten",
+          "new": "als",
+          "principe": "V1143"
+        },
+        {
           "old": "een",
           "new": "één",
           "principe": "V735"
+        },
+        {
+          "old": "ten",
+          "new": "als",
+          "principe": "V1143"
         }
       ]
     },

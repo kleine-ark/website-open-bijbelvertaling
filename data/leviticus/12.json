@@ -508,7 +508,7 @@
       "number": 6,
       "textSV1888": "En als de dagen harer reiniging voor den zoon, of voor de dochter, vervuld zullen zijn, zo zal zij een eenjarig lam ten brandoffer, en een jonge duif, of tortelduif, ten zondoffer brengen, voor de deur van de tent der samenkomst, tot den priester.",
       "text1637": "Ende als de dagen harer reyniginge voor den soon, ofte voor de dochter vervult sullen zijn, so sal sy een jarich lam ten brand-offer, ende eene jonge duyve, ofte tortelduyve ten sond-offer brengen; voor de deure der Tente der t' samen-komste, tot den Priester.",
-      "text2026": "En als de dagen van haar reiniging voor de zoon, of voor de dochter, vervuld zullen zijn, zo zal zij een eenjarig lam ten brandoffer, en een jonge duif, of tortelduif, ten zondoffer brengen, voor de deur van de tent van de samenkomst, tot de priester.",
+      "text2026": "En als de dagen van haar reiniging voor de zoon, of voor de dochter, vervuld zullen zijn, zo zal zij een eenjarig lam als brandoffer, en een jonge duif, of tortelduif, als zondoffer brengen, voor de deur van de tent van de samenkomst, tot de priester.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -622,7 +622,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En als de dagen van haar reiniging voor de zoon, of voor de dochter, vervuld zullen zijn, zo zal zij een eenjarig lam ten brandoffer, en een jonge duif, of tortelduif, ten zondoffer brengen, voor de deur van de tent van de samenkomst, tot de priester.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En als de dagen van haar reiniging voor de zoon, of voor de dochter, vervuld zullen zijn, zo zal zij een eenjarig lam als brandoffer, en een jonge duif, of tortelduif, als zondoffer brengen, voor de deur van de tent van de samenkomst, tot de priester.</i></span>",
       "text1637_html": "Ende als de dagen harer reyniginge voor den soon, ofte voor de dochter vervult sullen zijn, so sal sy een jarich lam ten brand-offer, ende eene jonge duyve, ofte tortelduyve ten sond-offer brengen; voor de deure der Tente der t' samen-komste, tot den Priester.",
       "phraseDiff": [
         {
@@ -634,6 +634,16 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "ten",
+          "new": "als",
+          "principe": "V1143"
+        },
+        {
+          "old": "ten",
+          "new": "als",
+          "principe": "V1143"
         },
         {
           "old": "der",
@@ -759,7 +769,7 @@
       "number": 8,
       "textSV1888": "Maar indien haar hand niet genoeg voor een lam vindt, zo zal zij twee tortelduiven, of twee jonge duiven nemen, een ten brandoffer, en een ten zondoffer; en de priester zal voor haar verzoening doen; zo zal zij rein zijn.",
       "text1637": "Maer [10] indien hare hant niet [11] genoech voor een lam en vindt, so salse twee tortelduyven, ofte twee jonge duyven nemen, eene ten brand-offer, ende eene ten [12] sond-offer: ende de Priester sal voor haer versoeninge doen, so salse reyn zijn.",
-      "text2026": "Maar als haar hand niet genoeg voor een lam vindt, zo zal zij twee tortelduiven, of twee jonge duiven nemen, één ten brandoffer, en één ten zondoffer; en de priester zal voor haar verzoening doen; zo zal zij rein zijn.",
+      "text2026": "Maar als haar hand niet genoeg voor een lam vindt, zo zal zij twee tortelduiven, of twee jonge duiven nemen, één als brandoffer, en één als zondoffer; en de priester zal voor haar verzoening doen; zo zal zij rein zijn.",
       "marginNotes": [
         {
           "marker": "10",
@@ -890,7 +900,7 @@
           "morph": "HC/Vqq3fs"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Maar<sup class=\"note-marker\" data-note=\"10\">10</sup> als haar hand niet<sup class=\"note-marker\" data-note=\"11\">11</sup> genoeg voor een lam vindt, zo zal zij twee tortelduiven, of twee jonge duiven nemen, één ten brandoffer, en één ten<sup class=\"note-marker\" data-note=\"12\">12</sup> zondoffer; en de priester zal voor haar verzoening doen; zo zal zij rein zijn.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Maar<sup class=\"note-marker\" data-note=\"10\">10</sup> als haar hand niet<sup class=\"note-marker\" data-note=\"11\">11</sup> genoeg voor een lam vindt, zo zal zij twee tortelduiven, of twee jonge duiven nemen, één als brandoffer, en één als<sup class=\"note-marker\" data-note=\"12\">12</sup> zondoffer; en de priester zal voor haar verzoening doen; zo zal zij rein zijn.</i></span>",
       "textSV1888_html": "Maar<sup class=\"note-marker\" data-note=\"10\">10</sup> indien haar hand niet<sup class=\"note-marker\" data-note=\"11\">11</sup> genoeg voor een lam vindt, zo zal zij twee tortelduiven, of twee jonge duiven nemen, een ten brandoffer, en een ten<sup class=\"note-marker\" data-note=\"12\">12</sup> zondoffer; en de priester zal voor haar verzoening doen; zo zal zij rein zijn.",
       "text1637_html": "Maer <sup class=\"note-marker\" data-note=\"10\">10</sup> indien hare hant niet <sup class=\"note-marker\" data-note=\"11\">11</sup> genoech voor een lam en vindt, so salse twee tortelduyven, ofte twee jonge duyven nemen, eene ten brand-offer, ende eene ten <sup class=\"note-marker\" data-note=\"12\">12</sup> sond-offer: ende de Priester sal voor haer versoeninge doen, so salse reyn zijn.",
       "phraseDiff": [
@@ -900,14 +910,14 @@
           "principe": "V41"
         },
         {
-          "old": "een",
-          "new": "één",
-          "principe": "V735"
+          "old": "een ten",
+          "new": "één als",
+          "principe": "V1143"
         },
         {
-          "old": "een",
-          "new": "één",
-          "principe": "V735"
+          "old": "een ten",
+          "new": "één als",
+          "principe": "V1143"
         }
       ]
     }
