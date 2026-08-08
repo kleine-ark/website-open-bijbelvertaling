@@ -440,7 +440,7 @@
    "number": 6,
    "textSV1888": "Alle beesten, die de klauwen verdelen, en de kloof in twee klauwen klieven, en herkauwen onder de beesten, die zult gij eten.",
    "text1637": "[5] Alle beesten, die de klaeuwen verdeelen, ende de klove in twee klaeuwen klieven, [ende] herkauwen onder de beesten, die sult ghy eten.",
-   "text2026": "Alle beesten, die de klauwen verdelen, en de kloof in twee klauwen klieven, en herkauwen onder de beesten, die zult u eten.",
+   "text2026": "Alle beesten, die gespleten hoeven hebben, en de kloof in twee klauwen klieven, en herkauwen onder de beesten, die zult u eten.",
    "marginNotes": [
     {
      "marker": "5",
@@ -517,10 +517,15 @@
      "morph": "HVqi2mp"
     }
    ],
-   "text2026_html": "<sup class=\"note-marker\" data-note=\"5\">5</sup><span class=\"direct-speech\"><i> Alle beesten, die de klauwen verdelen, en de kloof in twee klauwen klieven, en herkauwen onder de beesten, die zult u eten.</i></span>",
+   "text2026_html": "<sup class=\"note-marker\" data-note=\"5\">5</sup><span class=\"direct-speech\"><i> Alle beesten, die gespleten hoeven hebben, en de kloof in twee klauwen klieven, en herkauwen onder de beesten, die zult u eten.</i></span>",
    "textSV1888_html": "<sup class=\"note-marker\" data-note=\"5\">5</sup> Alle beesten, die de klauwen verdelen, en de kloof in twee klauwen klieven, en herkauwen onder de beesten, die zult gij eten.",
    "text1637_html": "<sup class=\"note-marker\" data-note=\"5\">5</sup> Alle beesten, die de klaeuwen verdeelen, ende de klove in twee klaeuwen klieven, [ende] herkauwen onder de beesten, die sult ghy eten.",
    "phraseDiff": [
+    {
+     "old": "de klauwen verdelen,",
+     "new": "gespleten hoeven hebben,",
+     "principe": "V1092"
+    },
     {
      "old": "gij",
      "new": "u",
@@ -532,7 +537,7 @@
    "number": 7,
    "textSV1888": "Maar deze zult gij niet eten, van degenen, die alleen herkauwen, of van degenen, die den gekloofden klauw alleen verdelen: den kemel, en den haas, en het konijn; want deze herkauwen wel, maar zij verdelen den klauw niet; onrein zullen zij ulieden zijn.",
    "text1637": "Maer dese en sult ghy niet eten, van de gene die [alleen] herkauwen; ofte vande gene die de gekloofde klaeuwe [alleen] verdeelen: den kemel, ende de hase, ende het konijn; want dese herkauwen wel, maer sy verdeelen de klaeuwe niet; onreyn sullense ulieden zijn.",
-   "text2026": "Maar deze zult u niet eten, van degenen, die alleen herkauwen, of van degenen, die de gekloofden klauw alleen verdelen: de kameel, en de haas, en het konijn; want deze herkauwen wel, maar zij verdelen de klauw niet; onrein zullen zij u zijn.",
+   "text2026": "Maar deze zult u niet eten, van degenen, die alleen herkauwen, of van degenen, die alleen gespleten hoeven hebben: de kameel, en de haas, en het konijn; want deze herkauwen wel, maar zij hebben geen gespleten hoeven; onrein zullen zij u zijn.",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -666,7 +671,7 @@
      "morph": "HR/Sp2mp"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>Maar deze zult u niet eten, van degenen, die alleen herkauwen, of van degenen, die de gekloofden klauw alleen verdelen: de kameel, en de haas, en het konijn; want deze herkauwen wel, maar zij verdelen de klauw niet; onrein zullen zij u zijn.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>Maar deze zult u niet eten, van degenen, die alleen herkauwen, of van degenen, die alleen gespleten hoeven hebben: de kameel, en de haas, en het konijn; want deze herkauwen wel, maar zij hebben geen gespleten hoeven; onrein zullen zij u zijn.</i></span>",
    "text1637_html": "Maer dese en sult ghy niet eten, van de gene die [alleen] herkauwen; ofte vande gene die de gekloofde klaeuwe [alleen] verdeelen: den kemel, ende de hase, ende het konijn; want dese herkauwen wel, maer sy verdeelen de klaeuwe niet; onreyn sullense ulieden zijn.",
    "phraseDiff": [
     {
@@ -675,24 +680,24 @@
      "principe": "A1"
     },
     {
-     "old": "den",
-     "new": "de",
-     "principe": "N1"
+     "old": "den gekloofden klauw",
+     "new": "",
+     "principe": "V1092"
     },
     {
-     "old": "den kemel,",
-     "new": "de kameel,",
-     "principe": "N1"
-    },
-    {
-     "old": "den",
-     "new": "de",
-     "principe": "N1"
+     "old": "verdelen: den kemel,",
+     "new": "gespleten hoeven hebben: de kameel,",
+     "principe": "V1092"
     },
     {
      "old": "den",
      "new": "de",
      "principe": "N1"
+    },
+    {
+     "old": "verdelen den klauw niet;",
+     "new": "hebben geen gespleten hoeven;",
+     "principe": "V1092"
     },
     {
      "old": "ulieden",
@@ -705,7 +710,7 @@
    "number": 8,
    "textSV1888": "Ook het varken; want dat verdeelt zijn klauw wel, maar het herkauwt niet; onrein zal het ulieden zijn; van hun vlees zult gij niet eten, en hun dood aas zult gij niet aanroeren.",
    "text1637": "Oock het vercken, want dat verdeelt sijne klaeuwe wel, maer het en herkauwt niet; onreyn sal ’t ulieden zijn: van haer vleesch sult ghy niet eten, ende haer doot aes en sult ghy niet aenroeren.",
-   "text2026": "Ook het varken; want dat verdeelt zijn klauw wel, maar het herkauwt niet; onrein zal het u zijn; van hun vlees zult u niet eten, en hun kadaver zult u niet aanroeren.",
+   "text2026": "Ook het varken; want dat heeft wel gespleten hoeven, maar het herkauwt niet; onrein zal het u zijn; van hun vlees zult u niet eten, en hun kadaver zult u niet aanroeren.",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -794,9 +799,14 @@
      "morph": "HVqi2mp"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>Ook het varken; want dat verdeelt zijn klauw wel, maar het herkauwt niet; onrein zal het u zijn; van hun vlees zult u niet eten, en hun kadaver zult u niet aanroeren.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>Ook het varken; want dat heeft wel gespleten hoeven, maar het herkauwt niet; onrein zal het u zijn; van hun vlees zult u niet eten, en hun kadaver zult u niet aanroeren.</i></span>",
    "text1637_html": "Oock het vercken, want dat verdeelt sijne klaeuwe wel, maer het en herkauwt niet; onreyn sal ’t ulieden zijn: van haer vleesch sult ghy niet eten, ende haer doot aes en sult ghy niet aenroeren.",
    "phraseDiff": [
+    {
+     "old": "verdeelt zijn klauw wel,",
+     "new": "heeft wel gespleten hoeven,",
+     "principe": "V1092"
+    },
     {
      "old": "ulieden",
      "new": "u",
