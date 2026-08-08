@@ -93,6 +93,17 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         finally:
             page.close()
 
+    def test_wiki_overzicht_noemt_de_actuele_aantallen(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/wiki-overzicht.html")
+            page.locator(".wo-badge").first.wait_for(state="visible")
+            badges = page.locator(".wo-badge").all_inner_texts()
+            self.assertIn("31 liederen", badges)
+            self.assertIn("45 gebeden", badges)
+        finally:
+            page.close()
+
     def test_lieddetail_toont_nummer_en_volledige_eerste_en_laatste_regel(self):
         bundle = json.loads(
             (ROOT / "data/naslag-teksten/liederen/lied-bij-de-schelfzee.json").read_text(
