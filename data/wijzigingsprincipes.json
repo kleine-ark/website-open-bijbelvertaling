@@ -9847,6 +9847,141 @@
    "toelichting": "\"Getelden\" is als zelfstandig naamwoord uit het Nederlands verdwenen. \"Zij die geteld waren\" past alleen in lopend proza (Numeri 14:29 en 26:64) en niet in de telformules, waar het woord een bezittelijk voornaamwoord bij zich heeft: \"hun getelden van de stam van Ruben\". Daar is het \"ingeschrevenen\" geworden, wat in elke zinspositie past en klopt met wat de telling is: een inschrijving. Niet \"getelde mannen\", want in Numeri 3 en 26:62 worden Levieten van een maand oud geteld.",
    "regex": "",
    "voorbeeld": "Numeri 1:21 — Hun getelden van de stam van Ruben → Hun ingeschrevenen"
+  },
+  {
+   "id": "V1143",
+   "categorie": "Naamvallen",
+   "oud": "ten zondoffer",
+   "nieuw": "als zondoffer",
+   "toelichting": "De datief \"ten\" in de offerformules betekent \"als\": een dier wordt niet aan het zondoffer gegeven, het ís het zondoffer. Overgeslagen: Leviticus 16:9, waar de zin \"ten zondoffer maken\" luidt — \"als zondoffer maken\" is geen Nederlands, daar zou het werkwoord mee moeten veranderen.",
+   "regex": "\\bten zondoffer\\b",
+   "voorbeeld": "Numeri 7:46 — Één geitenbok, ten zondoffer → Één geitenbok, als zondoffer"
+  },
+  {
+   "id": "V1144",
+   "categorie": "Naamvallen",
+   "oud": "ten brandoffer",
+   "nieuw": "als brandoffer",
+   "toelichting": "Zelfde datief als V1143. Niet gewijzigd waar \"ten\" geen \"als\" maar \"voor\" betekent: 2 Kronieken 4:6 (\"wat ten brandoffer behoort\" = wat erbij hoort), Jozua 22:26, 22:28 en 22:29 (een altaar dat niet vóór het brandoffer bestemd is — het altaar is zelf geen offer), Leviticus 5:10 (\"ten brandoffer maken\", zie V1143) en Numeri 7:87 (\"Al de runderen ten brandoffer waren twaalf stieren\" — een totaaltelling, geen gelijkstelling).",
+   "regex": "\\bten brandoffer\\b",
+   "voorbeeld": "Genesis 22:13 — offerde hem ten brandoffer → offerde hem als brandoffer"
+  },
+  {
+   "id": "V1145",
+   "categorie": "Naamvallen",
+   "oud": "ten spijsoffer",
+   "nieuw": "als spijsoffer",
+   "toelichting": "Zelfde datief als V1143. Jozua 22:29 overgeslagen: daar gaat het om een altaar dat ergens vóór bestemd zou zijn, niet om iets dat een spijsoffer ís.",
+   "regex": "\\bten spijsoffer\\b",
+   "voorbeeld": "Numeri 28:5 — een tiende deel van een efa meelbloem ten spijsoffer → als spijsoffer"
+  },
+  {
+   "id": "V1146",
+   "categorie": "Naamvallen",
+   "oud": "ten dankoffer",
+   "nieuw": "als dankoffer",
+   "toelichting": "Zelfde datief als V1143. Numeri 7:88 overgeslagen: \"Al de runderen ten dankoffer waren vier en twintig stieren\" is een totaaltelling.",
+   "regex": "\\bten dankoffer\\b",
+   "voorbeeld": "Numeri 7:17 — En ten dankoffer: twee runderen → En als dankoffer: twee runderen"
+  },
+  {
+   "id": "V1147",
+   "categorie": "Naamvallen",
+   "oud": "ten beweegoffer",
+   "nieuw": "als beweegoffer",
+   "toelichting": "Zelfde datief als V1143. Steeds in de vorm \"bewegen ten beweegoffer\", wat \"als beweegoffer bewegen\" wordt.",
+   "regex": "\\bten beweegoffer\\b",
+   "voorbeeld": "Exodus 29:24 — beweeg ze ten beweegoffer → beweeg ze als beweegoffer"
+  },
+  {
+   "id": "V1148",
+   "categorie": "Naamvallen",
+   "oud": "ten schuldoffer",
+   "nieuw": "als schuldoffer",
+   "toelichting": "Zelfde datief als V1143.",
+   "regex": "\\bten schuldoffer\\b",
+   "voorbeeld": "Leviticus 19:21 — een ram ten schuldoffer → een ram als schuldoffer"
+  },
+  {
+   "id": "V1149",
+   "categorie": "Naamvallen",
+   "oud": "ten vuuroffer",
+   "nieuw": "als vuuroffer",
+   "toelichting": "Zelfde datief als V1143.",
+   "regex": "\\bten vuuroffer\\b",
+   "voorbeeld": "Leviticus 7:5 — zal die aansteken op het altaar, ten vuuroffer → als vuuroffer"
+  },
+  {
+   "id": "V1150",
+   "categorie": "Naamvallen",
+   "oud": "ten hefoffer",
+   "nieuw": "als hefoffer",
+   "toelichting": "Zelfde datief als V1143. Exodus 36:6 is bij deze doorvoering niet meegenomen omdat er tegelijk in dat hoofdstuk werd gewerkt; die plaats moet nog.",
+   "regex": "\\bten hefoffer\\b",
+   "voorbeeld": "Leviticus 7:14 — zal hij aan JAHWEH ten hefoffer offeren → als hefoffer offeren"
+  },
+  {
+   "id": "V1151",
+   "categorie": "Naamvallen",
+   "oud": "ten drankoffer",
+   "nieuw": "als drankoffer",
+   "toelichting": "Zelfde datief als V1143.",
+   "regex": "\\bten drankoffer\\b",
+   "voorbeeld": "Numeri 15:5 — En wijn ten drankoffer → En wijn als drankoffer"
+  },
+  {
+   "id": "V1152",
+   "categorie": "Naamvallen",
+   "oud": "ten gedenkoffer",
+   "nieuw": "als gedenkoffer",
+   "toelichting": "Zelfde datief als V1143.",
+   "regex": "\\bten gedenkoffer\\b",
+   "voorbeeld": "Jesaja 66:3 — wie wierook brandt ten gedenkoffer → als gedenkoffer"
+  },
+  {
+   "id": "V1153",
+   "categorie": "Naamvallen",
+   "oud": "ten koning",
+   "nieuw": "tot koning",
+   "toelichting": "Verouderde datief bij zalven, maken, stellen en zijn. Modern Nederlands heeft hier \"tot\": iemand tot koning zalven. Alle twaalf plaatsen hebben dezelfde zinsbouw.",
+   "regex": "\\bten koning\\b",
+   "voorbeeld": "1 Kronieken 11:3 — zij zalfden David ten koning → zij zalfden David tot koning"
+  },
+  {
+   "id": "V1154",
+   "categorie": "Naamvallen",
+   "oud": "ten erfdeel",
+   "nieuw": "als erfdeel",
+   "toelichting": "Verouderde datief bij geven, vallen en zijn: het land wordt niet aan het erfdeel gegeven, het ís het erfdeel. Jubileeën 9:7 blijft staan — dat boek is niet uit de Statenvertaling vertaald en heeft geen 1888-brontekst, dus de eerstelijnstoets slaat hem over.",
+   "regex": "\\bten erfdeel\\b",
+   "voorbeeld": "Jozua 14:13 — hij gaf Kaleb Hebron ten erfdeel → hij gaf Kaleb Hebron als erfdeel"
+  },
+  {
+   "id": "V1155",
+   "categorie": "Naamvallen",
+   "oud": "ten priester / ten voorganger / ten rechter / ten bewaarder / ten overste / ten zoon / ten volk / ten getuige / ten hoofd",
+   "nieuw": "tot priester / tot voorganger / tot rechter / tot bewaarder / tot overste / tot zoon / tot volk / tot getuige / tot hoofd",
+   "toelichting": "Dezelfde datief als V1153, maar met andere naamwoorden: iemand of iets wordt tot iets aangesteld, gekozen of gemaakt. Tien plaatsen. Niet meegenomen: 2 Samuël 19:22 (\"mij ten satan zijn\" — daar zou ook het naamwoord moeten veranderen), Genesis 47:31 (\"ten hoofde van het bed\" — dat is het hoofdeinde, geen datief van gelijkstelling), en de eenmalige gevallen ten schat, ten pand en ten naam, die elk hun eigen zinsbouw hebben.",
+   "regex": "\\bten (priester|voorganger|rechter|bewaarder|overste|zoon|volk|getuige|hoofd)\\b",
+   "voorbeeld": "1 Samuël 2:28 — Mij ten priester gekozen → Mij tot priester gekozen"
+  },
+  {
+   "id": "V1156",
+   "categorie": "Naamvallen",
+   "oud": "ten liefelijke reuk",
+   "nieuw": "tot een liefelijke reuk",
+   "toelichting": "In Numeri 15 en 28 staat overal \"tot een liefelijke reuk\"; alleen in zes verzen in Numeri 28 en 29 bleef de oude datief \"ten liefelijken reuk\" staan. Nu gelijkgetrokken met de rest van het boek.",
+   "regex": "\\bten liefelijke reuk\\b",
+   "voorbeeld": "Numeri 29:2 — een brandoffer, ten liefelijke reuk → een brandoffer, tot een liefelijke reuk"
+  },
+  {
+   "id": "V1157",
+   "categorie": "Naamvallen",
+   "oud": "reukwerks",
+   "nieuw": "reukwerk",
+   "toelichting": "Oude genitief na \"vol\" en \"van\" en na een hoeveelheidswoord. Vijftien plaatsen, alle met dezelfde bouw: Numeri 7 (dertien maal), Openbaring 5:8 en 8:3.",
+   "regex": "\\breukwerks\\b",
+   "voorbeeld": "Numeri 7:14 — Één reukschaal van tien gouden sikkels, vol reukwerks → vol reukwerk"
   }
  ]
 }
