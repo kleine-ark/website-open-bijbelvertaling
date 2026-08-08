@@ -26,7 +26,7 @@
           "type": "explanatory",
           "textSV1888": "hij kreeg gene warmte: Hebreeuws, יִחַ֖ם, hem werd niet warm.",
           "text1637": "Hebr. Hem en wert niet warm.",
-          "text2026": "hij kreeg andere warmte: Hebreeuws, יִחַ֖ם, hem werd niet warm."
+          "text2026": "hij kreeg geen warmte: Hebreeuws, יִחַ֖ם, hem werd niet warm."
         }
       ],
       "grondtekst": [
@@ -262,7 +262,7 @@
       "number": 3,
       "textSV1888": "Zo zochten zij een schone jonge dochter in alle landpalen van Israël; en zij vonden Abisag, een Sunamietische, en brachten ze tot den koning.",
       "text1637": "So sochtense eene schoone jonge dochter in alle landtpalen Israëls: ende vonden Abisag eene [7] Sunamitische; ende brachtense tot den Coninck.",
-      "text2026": "Zo zochten zij een schone meisje in alle gebied van Israël; en zij vonden Abisag, een Sunamietische, en brachten ze tot de koning.",
+      "text2026": "Zo zochten zij een schoon meisje in alle gebied van Israël; en zij vonden Abisag, een Sunamietische, en brachten ze tot de koning.",
       "marginNotes": [
         {
           "marker": "7",
@@ -339,14 +339,14 @@
           "morph": "HRd/Ncmsa"
         }
       ],
-      "text2026_html": "Zo zochten zij een schone meisje in alle gebied van Israël; en zij vonden Abisag, een<sup class=\"note-marker\" data-note=\"7\">7</sup> Sunamietische, en brachten ze tot de koning.",
+      "text2026_html": "Zo zochten zij een schoon meisje in alle gebied van Israël; en zij vonden Abisag, een<sup class=\"note-marker\" data-note=\"7\">7</sup> Sunamietische, en brachten ze tot de koning.",
       "textSV1888_html": "Zo zochten zij een schone jonge dochter in alle landpalen van Israël; en zij vonden Abisag, een<sup class=\"note-marker\" data-note=\"7\">7</sup> Sunamietische, en brachten ze tot den koning.",
       "text1637_html": "So sochtense eene schoone jonge dochter in alle landtpalen Israëls: ende vonden Abisag eene <sup class=\"note-marker\" data-note=\"7\">7</sup> Sunamitische; ende brachtense tot den Coninck.",
       "phraseDiff": [
         {
-          "old": "jonge dochter",
-          "new": "meisje",
-          "principe": "V943"
+          "old": "schone jonge dochter",
+          "new": "schoon meisje",
+          "principe": null
         },
         {
           "old": "landpalen",
@@ -3992,7 +3992,7 @@
       "number": 36,
       "textSV1888": "Toen antwoordde Benaja, de zoon van Jojada, den koning, en zeide: Amen; alzo zegge de HEERE, de God van mijn heer den koning!",
       "text1637": "Doe antwoordde Benaja de sone van Iojada den Coninck, ende seyde, Amen: alsoo [49] segge de HEERE de Godt mijns heeren des Conincx.",
-      "text2026": "Toen antwoordde Benaja, de zoon van Jojada, de koning, en zei: Amen; zo zeg JAHWEH, de God van mijn heer de koning!",
+      "text2026": "Toen antwoordde Benaja, de zoon van Jojada, de koning, en zei: Amen; zo zegge JAHWEH, de God van mijn heer de koning!",
       "marginNotes": [
         {
           "marker": "49",
@@ -4074,7 +4074,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "Toen antwoordde Benaja, de zoon van Jojada, de koning, en zei: <span class=\"direct-speech\"><i>Amen; zo zeg JAHWEH, de God van mijn heer de koning!</i></span>",
+      "text2026_html": "Toen antwoordde Benaja, de zoon van Jojada, de koning, en zei: <span class=\"direct-speech\"><i>Amen; zo zegge JAHWEH, de God van mijn heer de koning!</i></span>",
       "textSV1888_html": "Toen antwoordde Benaja, de zoon van Jojada, den koning, en zeide: Amen; alzo<sup class=\"note-marker\" data-note=\"49\">49</sup> zegge de HEERE, de God van mijn heer den koning!",
       "text1637_html": "Doe antwoordde Benaja de sone van Iojada den Coninck, ende seyde, Amen: alsoo <sup class=\"note-marker\" data-note=\"49\">49</sup> segge de HEERE de Godt mijns heeren des Conincx.",
       "phraseDiff": [
@@ -4089,9 +4089,14 @@
           "principe": "W1"
         },
         {
-          "old": "alzo zegge de HEERE,",
-          "new": "zo zeg JAHWEH,",
-          "principe": "G1"
+          "old": "alzo",
+          "new": "zo",
+          "principe": null
+        },
+        {
+          "old": "de HEERE,",
+          "new": "JAHWEH,",
+          "principe": null
         },
         {
           "old": "den",
