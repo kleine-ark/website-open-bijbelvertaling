@@ -423,7 +423,7 @@
       "number": 8,
       "textSV1888": "En Saharaim gewon kinderen in het land van Moab (nadat hij dezelve weggezonden had) uit Husim en Baära, zijn vrouwen;",
       "text1637": "Ende [7] Saharaim gewan kinderen in den lande Moabs (na dat [8] hy [9] deselve wech gesonden hadde) uyt Husim, ende Baara sijne wyven.",
-      "text2026": "En Saharaim verwekte kinderen in het land van Moab (nadat hij dezelfde weggezonden had) uit Husim en Baära, zijn vrouwen;",
+      "text2026": "En Saharaim verwekte kinderen in het land van Moab (nadat hij hen weggezonden had) uit Husim en Baära, zijn vrouwen;",
       "marginNotes": [
         {
           "marker": "7",
@@ -504,7 +504,7 @@
           "morph": "HNcfpc/Sp3ms"
         }
       ],
-      "text2026_html": "En<sup class=\"note-marker\" data-note=\"7\">7</sup> Saharaim verwekte kinderen in het land van Moab<sup class=\"note-marker\" data-note=\"8\">8</sup> (nadat<sup class=\"note-marker\" data-note=\"9\">9</sup> hij dezelfde weggezonden had) uit Husim en Baära, zijn vrouwen;",
+      "text2026_html": "En<sup class=\"note-marker\" data-note=\"7\">7</sup> Saharaim verwekte kinderen in het land van Moab<sup class=\"note-marker\" data-note=\"8\">8</sup> (nadat<sup class=\"note-marker\" data-note=\"9\">9</sup> hij hen weggezonden had) uit Husim en Baära, zijn vrouwen;",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"7\">7</sup> Saharaim gewon kinderen in het land van Moab<sup class=\"note-marker\" data-note=\"8\">8</sup> (nadat<sup class=\"note-marker\" data-note=\"9\">9</sup> hij dezelve weggezonden had) uit Husim en Baära, zijn vrouwen;",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"7\">7</sup> Saharaim gewan kinderen in den lande Moabs (na dat <sup class=\"note-marker\" data-note=\"8\">8</sup> hy <sup class=\"note-marker\" data-note=\"9\">9</sup> deselve wech gesonden hadde) uyt Husim, ende Baara sijne wyven.",
       "phraseDiff": [
@@ -515,8 +515,8 @@
         },
         {
           "old": "dezelve",
-          "new": "dezelfde",
-          "principe": "O3"
+          "new": "hen",
+          "principe": null
         }
       ]
     },
@@ -611,7 +611,7 @@
       "number": 10,
       "textSV1888": "En Jeüz, en Sochja, en Mirma; dezen zijn zijne zonen, hoofden der vaderen.",
       "text1637": "Ende Ieüz, ende Sochja, ende Mirma: Dese zijn sijne sonen, hoofden der vaderen.",
-      "text2026": "En Jeüz, en Sochja, en Mirma; deze zijn zijne zonen, familiehoofden.",
+      "text2026": "En Jeüz, en Sochja, en Mirma; deze zijn zijn zonen, familiehoofden.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -665,13 +665,18 @@
           "morph": "HNcmpa"
         }
       ],
-      "text2026_html": "En Jeüz, en Sochja, en Mirma; deze zijn zijne zonen, familiehoofden.",
+      "text2026_html": "En Jeüz, en Sochja, en Mirma; deze zijn zijn zonen, familiehoofden.",
       "text1637_html": "Ende Ieüz, ende Sochja, ende Mirma: Dese zijn sijne sonen, hoofden der vaderen.",
       "phraseDiff": [
         {
           "old": "dezen",
           "new": "deze",
           "principe": "N4"
+        },
+        {
+          "old": "zijne",
+          "new": "zijn",
+          "principe": null
         },
         {
           "old": "hoofden der vaderen.",
