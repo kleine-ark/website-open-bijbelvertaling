@@ -16,17 +16,24 @@
     border-bottom: 2px solid var(--gold);   /* doorlopende gouden lijn onder topnav */
 }
 .topnav-brand {
-    font-family: var(--font-cursive, 'Allura', cursive);
-    font-size: 32px;
-    font-weight: 400;
-    color: #fff;
-    letter-spacing: 0.01em;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 7px;
     flex: 1 1 auto;
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
+}
+.topnav-brand-link {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+    min-width: 0;
+}
+.topnav-logo {
+    display: block;
+    width: min(210px, 100%);
+    height: auto;
+    max-height: 50px;
 }
 .topnav-subtitle {
     /* Subtitle krimpt eerst weg als ruimte krap wordt */
@@ -42,6 +49,7 @@
 }
 .topnav-version {
     font-family: var(--font-body);
+    font-style: normal;
     font-size: 10px;
     font-weight: 600;
     background: rgba(203,164,73,0.25);
@@ -300,14 +308,11 @@
 
 @media (max-width: 768px) {
     #topnav { padding: 0 12px; height: 56px; }
-    /* Merknaam op mobiel: rechtop serif i.p.v. het sterk cursieve Allura
-       (op iPhone nauwelijks leesbaar). */
     .topnav-brand {
-        font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
-        font-size: 21px;
-        font-weight: 600;
-        letter-spacing: 0.01em;
+        flex: 0 1 auto;
+        gap: 5px;
     }
+    .topnav-logo { width: 150px; max-height: 40px; }
     .topnav-subtitle { display: none; }
     /* Versienummer klein zichtbaar naast de merknaam op mobiel. */
     .topnav-version { display: inline; font-size: 11px; margin-left: 6px; vertical-align: middle; opacity: 0.85; }
@@ -350,6 +355,23 @@
    citaat de eerste LETTER vergroot en niet het aanhalingsteken. */
 .col-2026 .dropcap {
     float: left;
+}
+.col-2026 .dropcap--penkrul {
+    width: 2.55em;
+    height: 3.2em;
+    margin: -0.12em 0.38em -0.08em 0;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    line-height: 0;
+    background-image: var(--dropcap-image-light);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+}
+:root[data-theme="donker"] .col-2026 .dropcap--penkrul {
+    background-image: var(--dropcap-image-dark);
+}
+.col-2026 .dropcap--fallback {
     font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
     font-size: 2.9em;
     line-height: 0.72;

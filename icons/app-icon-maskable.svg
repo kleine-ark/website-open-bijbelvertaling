@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#142e42"/>
-  <text x="256" y="312" font-family="Georgia, 'Times New Roman', serif" font-size="190" font-weight="700" text-anchor="middle" fill="#cba449" letter-spacing="-5">OV</text>
-  <rect x="158" y="346" width="196" height="9" rx="4" fill="#cba449"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="maskable-title">
+  <title id="maskable-title">Open Vertaling</title>
+  <rect width="512" height="512" fill="#143247"/>
+  <g transform="translate(51.2 51.2) scale(.8)">
+    <path data-role="folio-o" d="M 342 100 C 267 48 157 68 102 151 C 46 236 67 351 151 404 C 220 448 306 423 351 361" fill="none" stroke="#ffffff" stroke-width="38" stroke-linecap="round"/>
+    <path data-role="folio-v" d="M 294 291 C 317 307 334 330 350 364 L 400 174 L 446 174 L 371 429 C 365 449 349 452 339 431 L 278 315 Z" fill="#cba449"/>
+    <path data-role="page-one" d="M 278 294 C 305 297 326 307 344 325" fill="none" stroke="#cba449" stroke-width="12" stroke-linecap="round"/>
+    <path data-role="page-two" d="M 270 313 C 299 315 323 326 345 346" fill="none" stroke="#cba449" stroke-width="10" stroke-linecap="round"/>
+    <path data-role="page-three" d="M 264 332 C 295 334 321 345 347 368" fill="none" stroke="#cba449" stroke-width="8" stroke-linecap="round"/>
+  </g>
 </svg>

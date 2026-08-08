@@ -36,7 +36,12 @@
     }
 
     nav.innerHTML =
-        '<div class="topnav-brand">Open Vertaling<span class="topnav-version"><a href="changelog.html" id="topnav-versie" style="color:#cba449;text-decoration:none;">…</a></span></div>' +
+        '<div class="topnav-brand">' +
+            '<a class="topnav-brand-link" href="index.html#johannes/1" aria-label="Open Vertaling — naar de leestekst">' +
+                '<img class="topnav-logo" src="/images/branding/open-vertaling-logo-light.svg" alt="Open Vertaling">' +
+            '</a>' +
+            '<span class="topnav-version"><a href="changelog.html" id="topnav-versie" style="color:#cba449;text-decoration:none;">…</a></span>' +
+        '</div>' +
         '<div class="topnav-links" id="topnav-links">' +
             '<a href="over-ov.html">Over OV</a>' +
             '<a href="index.html#johannes/1">Tekst</a>' +
