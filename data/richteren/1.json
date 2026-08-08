@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En het geschiedde na den dood van Jozua, dat de kinderen Israëls den HEERE vraagden, zeggende: Wie zal onder ons het eerst optrekken naar de Kanaänieten, om tegen hen te krijgen?",
       "text1637": "ENde het geschiedde na den doot van Iosua, dat de kinderen Israëls den HEERE [1] vraegden, seggende: [a] Wie sal onder ons voor eerst op-trecken nae de Canaaniten, om tegens hen te krijgen?",
-      "text2026": "En het gebeurde na de dood van Jozua, dat de Israëlieten JAHWEH vroegen, zeggende: Wie zal onder ons het eerst optrekken naar de Kanaänieten, om tegen hen te krijgen?",
+      "text2026": "En het gebeurde na de dood van Jozua, dat de Israëlieten JAHWEH vroegen, zeggende: Wie zal onder ons het eerst optrekken naar de Kanaänieten, om tegen hen te strijden?",
       "marginNotes": [
         {
           "marker": "1",
@@ -109,7 +109,7 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "En het gebeurde na de dood van Jozua, dat de Israëlieten JAHWEH vroegen, zeggende: <span class=\"direct-speech\"><i>Wie zal onder ons het eerst optrekken naar de Kanaänieten, om tegen hen te krijgen?</i></span>",
+      "text2026_html": "En het gebeurde na de dood van Jozua, dat de Israëlieten JAHWEH vroegen, zeggende: <span class=\"direct-speech\"><i>Wie zal onder ons het eerst optrekken naar de Kanaänieten, om tegen hen te strijden?</i></span>",
       "textSV1888_html": "En het geschiedde na den dood van Jozua, dat de kinderen Israëls den HEERE<sup class=\"note-marker\" data-note=\"1\">1</sup> vraagden, zeggende:<sup class=\"note-marker\" data-note=\"a\">a</sup> Wie zal onder ons het eerst optrekken naar de Kanaänieten, om tegen hen te krijgen?",
       "text1637_html": "<i>ENde</i> het geschiedde na den doot va<i>n</i> Iosua, dat de kinderen Israëls den HEERE <sup class=\"note-marker\" data-note=\"1\">1</sup> vraegden, seggende: <sup class=\"note-marker\" data-note=\"a\">a</sup> Wie sal onder ons voor eerst op-trecken nae de Canaaniten, om tegens hen te krijgen?",
       "phraseDiff": [
@@ -127,6 +127,11 @@
           "old": "kinderen Israëls den HEERE vraagden,",
           "new": "Israëlieten JAHWEH vroegen,",
           "principe": null
+        },
+        {
+          "old": "krijgen?",
+          "new": "strijden?",
+          "principe": "V1112"
         }
       ]
     },
@@ -617,7 +622,7 @@
       "number": 7,
       "textSV1888": "Toen zeide Adoni-Bezek: Zeventig koningen, met afgehouwen duimen van hun handen en van hun voeten, waren onder mijn tafel, de kruimen oplezende; gelijk als ik gedaan heb, alzo heeft mij God vergolden! En zij brachten hem te Jeruzalem, en hij stierf aldaar.",
       "text1637": "Doe seyde Adoni-Bezek; Tseventich Coningen, met afgehouwene duymen harer handen ende harer voeten, waren onder mijne tafel [8] [de kruymen] oplesende; gelijck als ick gedaen hebben, alsoo heeft my Godt vergolden: ende sy brachten hem tot Ierusalem, ende hy sterf aldaer.",
-      "text2026": "Toen zei Adoni-Bezek: Zeventig koningen, met afgehouwen duimen van hun handen en van hun voeten, waren onder mijn tafel, de kruimen oplezende; zoals ik gedaan heb, zo heeft mij God vergolden! En zij brachten hem te Jeruzalem, en hij stierf daar.",
+      "text2026": "Toen zei Adoni-Bezek: Zeventig koningen, met afgehouwen duimen van hun handen en van hun voeten, waren onder mijn tafel, de kruimen oprapende; zoals ik gedaan heb, zo heeft mij God vergolden! En zij brachten hem te Jeruzalem, en hij stierf daar.",
       "marginNotes": [
         {
           "marker": "8",
@@ -744,7 +749,7 @@
           "morph": "HD"
         }
       ],
-      "text2026_html": "Toen zei Adoni-Bezek: <span class=\"direct-speech\"><i>Zeventig koningen, met afgehouwen duimen van hun handen en van hun voeten, waren onder mijn tafel, de kruimen oplezende; zoals ik gedaan heb, zo heeft mij God vergolden!</i></span> En zij brachten hem te Jeruzalem, en hij stierf daar.",
+      "text2026_html": "Toen zei Adoni-Bezek: <span class=\"direct-speech\"><i>Zeventig koningen, met afgehouwen duimen van hun handen en van hun voeten, waren onder mijn tafel, de kruimen oprapende; zoals ik gedaan heb, zo heeft mij God vergolden!</i></span> En zij brachten hem te Jeruzalem, en hij stierf daar.",
       "textSV1888_html": "Toen zeide Adoni-Bezek: Zeventig koningen, met afgehouwen duimen van hun handen en van hun voeten, waren onder mijn tafel,<sup class=\"note-marker\" data-note=\"8\">8</sup> de kruimen oplezende; gelijk als ik gedaan heb, alzo heeft mij God vergolden! En zij brachten hem te Jeruzalem, en hij stierf aldaar.",
       "text1637_html": "Doe seyde Adoni-Bezek; Tseventich Coningen, met afgehouwene duymen harer handen ende harer voeten, waren onder mijne tafel <sup class=\"note-marker\" data-note=\"8\">8</sup> [de kruymen] oplesende; gelijck als ick gedaen hebben, alsoo heeft my Godt vergolden: ende sy brachten hem tot Ierusalem, ende hy sterf aldaer.",
       "phraseDiff": [
@@ -754,9 +759,9 @@
           "principe": "W1"
         },
         {
-          "old": "gelijk als",
-          "new": "zoals",
-          "principe": "V804"
+          "old": "oplezende; gelijk als",
+          "new": "oprapende; zoals",
+          "principe": null
         },
         {
           "old": "alzo",

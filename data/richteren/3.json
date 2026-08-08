@@ -636,7 +636,7 @@
       "number": 6,
       "textSV1888": "Zo namen zij zich derzelver dochters tot vrouwen, en gaven hun dochters aan derzelver zonen; en zij dienden derzelver goden.",
       "text1637": "So namen sy hen der selver dochteren tot wijven, ende gaven hare dochteren aen der selver sonen: ende sy dienden haren Goden.",
-      "text2026": "Zo namen zij zich van die dochters tot vrouwen, en gaven hun dochters aan van die zonen; en zij dienden van die goden.",
+      "text2026": "Zo namen zij zich hun dochters tot vrouwen, en gaven hun eigen dochters aan hun zonen; en zij dienden hun goden.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -700,23 +700,28 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "Zo namen zij zich van die dochters tot vrouwen, en gaven hun dochters aan van die zonen; en zij dienden van die goden.",
+      "text2026_html": "Zo namen zij zich hun dochters tot vrouwen, en gaven hun eigen dochters aan hun zonen; en zij dienden hun goden.",
       "text1637_html": "So namen sy hen der selver dochteren tot wijven, ende gaven hare dochteren aen der selver sonen: ende sy dienden haren Goden.",
       "phraseDiff": [
         {
           "old": "derzelver",
-          "new": "van die",
-          "principe": "V82"
+          "new": "hun",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "eigen",
+          "principe": null
         },
         {
           "old": "derzelver",
-          "new": "van die",
-          "principe": "V82"
+          "new": "hun",
+          "principe": null
         },
         {
           "old": "derzelver",
-          "new": "van die",
-          "principe": "V82"
+          "new": "hun",
+          "principe": null
         }
       ]
     },
@@ -3423,7 +3428,7 @@
       "number": 30,
       "textSV1888": "Alzo werd Moab te dien dage onder Israëls hand te ondergebracht; en het land was stil tachtig jaren.",
       "text1637": "Also wert Moab te dien dage onder Israëls hant t’ ondergebracht: ende het lant was stil tachtentich jaer.",
-      "text2026": "Zo werd Moab op die dag onder Israëls hand te ondergebracht; en het land was stil tachtig jaren.",
+      "text2026": "Zo werd Moab op die dag onder Israëls hand ten onder gebracht; en het land was stil tachtig jaren.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3482,7 +3487,7 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "Zo werd Moab op die dag onder Israëls hand te ondergebracht; en het land was stil tachtig jaren.",
+      "text2026_html": "Zo werd Moab op die dag onder Israëls hand ten onder gebracht; en het land was stil tachtig jaren.",
       "text1637_html": "Also wert Moab te dien dage onder Israëls hant t’ ondergebracht: ende het lant was stil tachtentich jaer.",
       "phraseDiff": [
         {
@@ -3494,6 +3499,11 @@
           "old": "te dien dage",
           "new": "op die dag",
           "principe": "N4"
+        },
+        {
+          "old": "te ondergebracht;",
+          "new": "ten onder gebracht;",
+          "principe": null
         }
       ]
     },

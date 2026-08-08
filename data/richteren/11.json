@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Jeftha nu, de Gileadiet, was een strijdbaar held, maar hij was een hoerekind; doch Gilead had Jeftha gegenereerd.",
       "text1637": "[a] IEphtah nu de [1] Gileaditer was een strijdtbaer helt; maer hy was een [2] hoeren-kint: doch [3] Gilead hadde Iephtah gegenereert.",
-      "text2026": "Jeftha nu, de Gileadiet, was een strijdbaar held, maar hij was een hoerekind; maar Gilead had Jeftha gegenereerd.",
+      "text2026": "Jeftha nu, de Gileadiet, was een strijdbaar held, maar hij was een hoerenkind; maar Gilead had Jeftha gegenereerd.",
       "marginNotes": [
         {
           "marker": "a",
@@ -103,14 +103,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Jeftha nu, de<sup class=\"note-marker\" data-note=\"1\">1</sup> Gileadiet, was een strijdbaar held, maar hij was een<sup class=\"note-marker\" data-note=\"2\">2</sup> hoerekind; maar<sup class=\"note-marker\" data-note=\"3\">3</sup> Gilead had Jeftha gegenereerd.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Jeftha nu, de<sup class=\"note-marker\" data-note=\"1\">1</sup> Gileadiet, was een strijdbaar held, maar hij was een<sup class=\"note-marker\" data-note=\"2\">2</sup> hoerenkind; maar<sup class=\"note-marker\" data-note=\"3\">3</sup> Gilead had Jeftha gegenereerd.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> Jeftha nu, de<sup class=\"note-marker\" data-note=\"1\">1</sup> Gileadiet, was een strijdbaar held, maar hij was een<sup class=\"note-marker\" data-note=\"2\">2</sup> hoerekind; doch<sup class=\"note-marker\" data-note=\"3\">3</sup> Gilead had Jeftha gegenereerd.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"a\">a</sup> IEphtah nu de <sup class=\"note-marker\" data-note=\"1\">1</sup> Gileaditer was een strijdtbaer helt; maer hy was een <sup class=\"note-marker\" data-note=\"2\">2</sup> hoeren-kint: doch <sup class=\"note-marker\" data-note=\"3\">3</sup> Gilead hadde Iephtah gegenereert.",
       "phraseDiff": [
         {
-          "old": "doch",
-          "new": "maar",
-          "principe": "V1"
+          "old": "hoerekind; doch",
+          "new": "hoerenkind; maar",
+          "principe": null
         }
       ]
     },
@@ -1295,7 +1295,7 @@
       "number": 12,
       "textSV1888": "Voorts zond Jeftha boden tot den koning der kinderen Ammons, zeggende: Wat hebben ik en gij met elkander te doen, dat gij tot mij gekomen zijt, om tegen mijn land te krijgen?",
       "text1637": "Voorts sondt Iephtah boden tot den Koninck der kinderen Ammons, [18] seggende: [19] Wat hebben ick ende ghy met malkanderen te doen, dat ghy tot my gekomen zijt, om [20] tegen mijn lant te krijgen?",
-      "text2026": "Verder zond Jeftha boden tot de koning van de kinderen Ammons, zeggende: Wat hebben ik en u met elkaar te doen, dat u tot mij gekomen bent, om tegen mijn land te krijgen?",
+      "text2026": "Verder zond Jeftha boden tot de koning van de kinderen Ammons, zeggende: Wat hebben ik en u met elkaar te doen, dat u tot mij gekomen bent, om tegen mijn land te strijden?",
       "marginNotes": [
         {
           "marker": "18",
@@ -1401,7 +1401,7 @@
           "morph": "HR/Ncbsc/Sp1cs"
         }
       ],
-      "text2026_html": "Verder zond Jeftha boden tot de koning van de kinderen Ammons, zeggende: <span class=\"direct-speech\"><i>Wat hebben ik en u met elkaar te doen, dat u tot mij gekomen bent, om tegen mijn land te krijgen?</i></span>",
+      "text2026_html": "Verder zond Jeftha boden tot de koning van de kinderen Ammons, zeggende: <span class=\"direct-speech\"><i>Wat hebben ik en u met elkaar te doen, dat u tot mij gekomen bent, om tegen mijn land te strijden?</i></span>",
       "textSV1888_html": "Voorts zond Jeftha boden tot den koning der kinderen Ammons,<sup class=\"note-marker\" data-note=\"18\">18</sup> zeggende:<sup class=\"note-marker\" data-note=\"19\">19</sup> Wat hebben ik en gij met elkander te doen, dat gij tot mij gekomen zijt, om<sup class=\"note-marker\" data-note=\"20\">20</sup> tegen mijn land te krijgen?",
       "text1637_html": "Voorts sondt Iephtah boden tot den Koninck der kinderen Ammons, <sup class=\"note-marker\" data-note=\"18\">18</sup> seggende: <sup class=\"note-marker\" data-note=\"19\">19</sup> Wat hebben ick ende ghy met malkanderen te doen, dat ghy tot my gekomen zijt, om <sup class=\"note-marker\" data-note=\"20\">20</sup> tegen mijn lant te krijgen?",
       "phraseDiff": [
@@ -1439,6 +1439,11 @@
           "old": "zijt,",
           "new": "bent,",
           "principe": null
+        },
+        {
+          "old": "krijgen?",
+          "new": "strijden?",
+          "principe": "V1112"
         }
       ]
     },
@@ -3043,7 +3048,7 @@
       "number": 25,
       "textSV1888": "Nu voorts, zijt gij veel beter dan Balak, de zoon van Zippor, de koning der Moabieten? heeft hij ooit met Israël getwist? heeft hij ook ooit tegen hem gekrijgd?",
       "text1637": "[g] Nu voorts, zijt ghy [38] veel beter als Balak, de sone Zippors, der Moabiten Koninck? heeft hy oyt met Israël [39] getwistet, heeft hy oock oyt tegen hen gekrijgt?",
-      "text2026": "Nu verder, bent u veel beter dan Balak, de zoon van Zippor, de koning van de Moabieten? heeft hij ooit met Israël getwist? heeft hij ook ooit tegen hem gekrijgd?",
+      "text2026": "Nu verder, bent u veel beter dan Balak, de zoon van Zippor, de koning van de Moabieten? heeft hij ooit met Israël getwist? heeft hij ook ooit tegen hem gestreden?",
       "marginNotes": [
         {
           "marker": "g",
@@ -3154,7 +3159,7 @@
           "morph": "HR/Sp3mp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"direct-speech\"><i> Nu verder, bent u<sup class=\"note-marker\" data-note=\"38\">38</sup> veel beter dan Balak, de zoon van Zippor, de koning van de Moabieten? heeft hij ooit met Israël<sup class=\"note-marker\" data-note=\"39\">39</sup> getwist? heeft hij ook ooit tegen hem gekrijgd?</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup><span class=\"direct-speech\"><i> Nu verder, bent u<sup class=\"note-marker\" data-note=\"38\">38</sup> veel beter dan Balak, de zoon van Zippor, de koning van de Moabieten? heeft hij ooit met Israël<sup class=\"note-marker\" data-note=\"39\">39</sup> getwist? heeft hij ook ooit tegen hem gestreden?</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> Nu voorts, zijt gij<sup class=\"note-marker\" data-note=\"38\">38</sup> veel beter dan Balak, de zoon van Zippor, de koning der Moabieten? heeft hij ooit met Israël<sup class=\"note-marker\" data-note=\"39\">39</sup> getwist? heeft hij ook ooit tegen hem gekrijgd?",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"g\">g</sup> Nu voorts, zijt ghy <sup class=\"note-marker\" data-note=\"38\">38</sup> veel beter als Balak, de sone Zippors, der Moabiten Koninck? heeft hy oyt met Israël <sup class=\"note-marker\" data-note=\"39\">39</sup> getwistet, heeft hy oock oyt tegen hen gekrijgt?",
       "phraseDiff": [
@@ -3167,6 +3172,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "gekrijgd?",
+          "new": "gestreden?",
+          "principe": "V1112"
         }
       ]
     },
@@ -3174,7 +3184,7 @@
       "number": 26,
       "textSV1888": "Terwijl Israël driehonderd jaren gewoond heeft in Hesbon, en in haar stedekens, en in Aroër en in de stedekens, en in al de steden, die aan de zijde van de Arnon zijn; waarom hebt gij het dan in dien tijd niet gered?",
       "text1637": "Terwijlen Israël [40] drye hondert jaer gewoont heeft in Hesbon, ende in hare stedekens, ende in Aroër ende in hare stedekens, ende in alle de steden, die aen de zijde van Arnon zijn; waerom en hebt ghy ’t dan in dien tijt niet [41] gereddet?",
-      "text2026": "Terwijl Israël driehonderd jaren gewoond heeft in Hesbon, en in haar stedekens, en in Aroër en in de stedekens, en in al de steden, die aan de zijde van de Arnon zijn; waarom hebt u het dan in die tijd niet gered?",
+      "text2026": "Terwijl Israël driehonderd jaren gewoond heeft in Hesbon, en in haar stadjes, en in Aroër en in de stadjes, en in al de steden, die aan de zijde van de Arnon zijn; waarom hebt u het dan in die tijd niet gered?",
       "marginNotes": [
         {
           "marker": "40",
@@ -3293,10 +3303,20 @@
           "morph": "HTd/Pp3fs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Terwijl Israël<sup class=\"note-marker\" data-note=\"40\">40</sup> driehonderd jaren gewoond heeft in Hesbon, en in haar stedekens, en in Aroër en in de stedekens, en in al de steden, die aan de zijde van de Arnon zijn; waarom hebt u het dan in die tijd niet<sup class=\"note-marker\" data-note=\"41\">41</sup> gered?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Terwijl Israël<sup class=\"note-marker\" data-note=\"40\">40</sup> driehonderd jaren gewoond heeft in Hesbon, en in haar stadjes, en in Aroër en in de stadjes, en in al de steden, die aan de zijde van de Arnon zijn; waarom hebt u het dan in die tijd niet<sup class=\"note-marker\" data-note=\"41\">41</sup> gered?</i></span>",
       "textSV1888_html": "Terwijl Israël<sup class=\"note-marker\" data-note=\"40\">40</sup> driehonderd jaren gewoond heeft in Hesbon, en in haar stedekens, en in Aroër en in de stedekens, en in al de steden, die aan de zijde van de Arnon zijn; waarom hebt gij het dan in dien tijd niet<sup class=\"note-marker\" data-note=\"41\">41</sup> gered?",
       "text1637_html": "Terwijlen Israël <sup class=\"note-marker\" data-note=\"40\">40</sup> drye hondert jaer gewoont heeft in Hesbon, ende in hare stedekens, ende in Aroër ende in hare stedekens, ende in alle de steden, die aen de zijde van Arnon zijn; waerom en hebt ghy ’t dan in dien tijt niet <sup class=\"note-marker\" data-note=\"41\">41</sup> gereddet?",
       "phraseDiff": [
+        {
+          "old": "stedekens,",
+          "new": "stadjes,",
+          "principe": null
+        },
+        {
+          "old": "stedekens,",
+          "new": "stadjes,",
+          "principe": null
+        },
         {
           "old": "gij",
           "new": "u",
@@ -3313,7 +3333,7 @@
       "number": 27,
       "textSV1888": "Ook heb ik tegen u niet gezondigd, maar gij doet kwalijk bij mij, dat gij tegen mij krijgt; de HEERE, Die Rechter is, richte heden tussen de kinderen Israëls en tussen de kinderen Ammons!",
       "text1637": "Oock en heb [42] ick aen u niet gesondicht, maer ghy [43] doet qualick by my, dat ghy tegen my krijgt: de HEERE, die Richter is, richte heden tusschen de kinderen Israëls ende tusschen de kinderen Ammons.",
-      "text2026": "Ook heb ik tegen u niet gezondigd, maar u doet kwalijk bij mij, dat u tegen mij krijgt; JAHWEH, Die Rechter is, richte vandaag tussen de Israëlieten en tussen de kinderen Ammons!",
+      "text2026": "Ook heb ik tegen u niet gezondigd, maar u doet kwalijk bij mij, dat u tegen mij strijdt; JAHWEH, Die Rechter is, richte vandaag tussen de Israëlieten en tussen de kinderen Ammons!",
       "marginNotes": [
         {
           "marker": "42",
@@ -3432,7 +3452,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Ook heb<sup class=\"note-marker\" data-note=\"42\">42</sup> ik tegen u niet gezondigd, maar u<sup class=\"note-marker\" data-note=\"43\">43</sup> doet kwalijk bij mij, dat u tegen mij krijgt; JAHWEH, Die Rechter is, richte vandaag tussen de Israëlieten en tussen de kinderen Ammons!</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Ook heb<sup class=\"note-marker\" data-note=\"42\">42</sup> ik tegen u niet gezondigd, maar u<sup class=\"note-marker\" data-note=\"43\">43</sup> doet kwalijk bij mij, dat u tegen mij strijdt; JAHWEH, Die Rechter is, richte vandaag tussen de Israëlieten en tussen de kinderen Ammons!</i></span>",
       "textSV1888_html": "Ook heb<sup class=\"note-marker\" data-note=\"42\">42</sup> ik tegen u niet gezondigd, maar gij<sup class=\"note-marker\" data-note=\"43\">43</sup> doet kwalijk bij mij, dat gij tegen mij krijgt; de HEERE, Die Rechter is, richte heden tussen de kinderen Israëls en tussen de kinderen Ammons!",
       "text1637_html": "Oock en heb <sup class=\"note-marker\" data-note=\"42\">42</sup> ick aen u niet gesondicht, maer ghy <sup class=\"note-marker\" data-note=\"43\">43</sup> doet qualick by my, dat ghy tegen my krijgt: de HEERE, die Richter is, richte heden tusschen de kinderen Israëls ende tusschen de kinderen Ammons.",
       "phraseDiff": [
@@ -3447,9 +3467,9 @@
           "principe": "A1"
         },
         {
-          "old": "de HEERE,",
-          "new": "JAHWEH,",
-          "principe": "G1"
+          "old": "krijgt; de HEERE,",
+          "new": "strijdt; JAHWEH,",
+          "principe": null
         },
         {
           "old": "heden",
@@ -3976,7 +3996,7 @@
       "number": 33,
       "textSV1888": "En hij sloeg hen van Aroër af tot daar gij komt te Minnith, twintig steden, en tot aan Abel-Keramim, met een zeer groten slag. Alzo werden de kinderen Ammons te ondergebracht voor het aangezicht der kinderen Israëls.",
       "text1637": "Ende hy sloechse van [52] Aroër af tot daer ghy komt te [53] Minnith, twintich steden, ende tot aen [54] Abel Keramim, met eenen seer grooten slach: also werden de kinderen Ammons t’ onder gebracht voor het aengesichte der kinderen Israëls.",
-      "text2026": "En hij sloeg hen van Aroër af tot daar u komt te Minnith, twintig steden, en tot aan Abel-Keramim, met een zeer grote slag. Zo werden de kinderen Ammons te ondergebracht voor het aangezicht van de Israëlieten.",
+      "text2026": "En hij sloeg hen van Aroër af tot daar u komt te Minnith, twintig steden, en tot aan Abel-Keramim, met een zeer grote slag. Zo werden de kinderen Ammons ten onder gebracht voor het aangezicht van de Israëlieten.",
       "marginNotes": [
         {
           "marker": "52",
@@ -4097,7 +4117,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En hij sloeg hen van<sup class=\"note-marker\" data-note=\"52\">52</sup> Aroër af tot daar u komt te<sup class=\"note-marker\" data-note=\"53\">53</sup> Minnith, twintig steden, en tot aan<sup class=\"note-marker\" data-note=\"54\">54</sup> Abel-Keramim, met een zeer grote slag. Zo werden de kinderen Ammons te ondergebracht voor het aangezicht van de Israëlieten.",
+      "text2026_html": "En hij sloeg hen van<sup class=\"note-marker\" data-note=\"52\">52</sup> Aroër af tot daar u komt te<sup class=\"note-marker\" data-note=\"53\">53</sup> Minnith, twintig steden, en tot aan<sup class=\"note-marker\" data-note=\"54\">54</sup> Abel-Keramim, met een zeer grote slag. Zo werden de kinderen Ammons ten onder gebracht voor het aangezicht van de Israëlieten.",
       "textSV1888_html": "En hij sloeg hen van<sup class=\"note-marker\" data-note=\"52\">52</sup> Aroër af tot daar gij komt te<sup class=\"note-marker\" data-note=\"53\">53</sup> Minnith, twintig steden, en tot aan<sup class=\"note-marker\" data-note=\"54\">54</sup> Abel-Keramim, met een zeer groten slag. Alzo werden de kinderen Ammons te ondergebracht voor het aangezicht der kinderen Israëls.",
       "text1637_html": "Ende hy sloechse van <sup class=\"note-marker\" data-note=\"52\">52</sup> Aroër af tot daer ghy komt te <sup class=\"note-marker\" data-note=\"53\">53</sup> Minnith, twintich steden, ende tot aen <sup class=\"note-marker\" data-note=\"54\">54</sup> Abel Keramim, met eenen seer grooten slach: also werden de kinderen Ammons t’ onder gebracht voor het aengesichte der kinderen Israëls.",
       "phraseDiff": [
@@ -4115,6 +4135,11 @@
           "old": "Alzo",
           "new": "Zo",
           "principe": "V42"
+        },
+        {
+          "old": "te ondergebracht",
+          "new": "ten onder gebracht",
+          "principe": null
         },
         {
           "old": "der kinderen Israëls.",
@@ -4429,7 +4454,7 @@
       "number": 36,
       "textSV1888": "En zij zeide tot hem: Mijn vader! hebt gij uw mond opengedaan tot den HEERE, doe mij, gelijk als uit uw mond gegaan is; naardien u de HEERE volkomene wraak gegeven heeft van uw vijanden, van de kinderen Ammons.",
       "text1637": "Ende sy seyde tot hem; Mijn vader, hebt ghy uwen mont opgedaen tot den HEERE, [59] doet my, gelijck als uyt uwen monde gegaen is: naedien u de HEERE [60] volkomene-wrake gegeven heeft van uwe vyanden, van de kinderen Ammons.",
-      "text2026": "En zij zei tot hem: Mijn vader! hebt u uw mond opengedaan tot JAHWEH, doe mij, zoals uit uw mond gegaan is; aangezien u JAHWEH volkomen wraak gegeven heeft van uw vijanden, van de kinderen Ammons.",
+      "text2026": "En zij zei tot hem: Mijn vader! hebt u uw mond opengedaan tot JAHWEH, doe mij, zoals uit uw mond gegaan is; aangezien JAHWEH u volkomen wraak gegeven heeft van uw vijanden, van de kinderen Ammons.",
       "marginNotes": [
         {
           "marker": "59",
@@ -4558,7 +4583,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En zij zei tot hem: <span class=\"direct-speech\"><i>Mijn vader! hebt u uw mond opengedaan tot JAHWEH, doe mij, zoals uit uw mond gegaan is; aangezien u JAHWEH volkomen wraak gegeven heeft van uw vijanden, van de kinderen Ammons.</i></span>",
+      "text2026_html": "En zij zei tot hem: <span class=\"direct-speech\"><i>Mijn vader! hebt u uw mond opengedaan tot JAHWEH, doe mij, zoals uit uw mond gegaan is; aangezien JAHWEH u volkomen wraak gegeven heeft van uw vijanden, van de kinderen Ammons.</i></span>",
       "textSV1888_html": "En zij zeide tot hem: Mijn vader! hebt gij uw mond opengedaan tot den HEERE,<sup class=\"note-marker\" data-note=\"59\">59</sup> doe mij, gelijk als uit uw mond gegaan is; naardien u de HEERE<sup class=\"note-marker\" data-note=\"60\">60</sup> volkomene wraak gegeven heeft van uw vijanden, van de kinderen Ammons.",
       "text1637_html": "Ende sy seyde tot hem; Mijn vader, hebt ghy uwen mont opgedaen tot den HEERE, <sup class=\"note-marker\" data-note=\"59\">59</sup> doet my, gelijck als uyt uwen monde gegaen is: naedien u de HEERE <sup class=\"note-marker\" data-note=\"60\">60</sup> volkomene-wrake gegeven heeft van uwe vyanden, van de kinderen Ammons.",
       "phraseDiff": [
@@ -4584,13 +4609,13 @@
         },
         {
           "old": "naardien",
-          "new": "aangezien",
-          "principe": "V26"
+          "new": "aangezien JAHWEH",
+          "principe": null
         },
         {
           "old": "de HEERE volkomene",
-          "new": "JAHWEH volkomen",
-          "principe": "G1"
+          "new": "volkomen",
+          "principe": null
         }
       ]
     },
