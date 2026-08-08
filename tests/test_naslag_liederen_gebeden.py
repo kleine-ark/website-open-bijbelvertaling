@@ -1,6 +1,8 @@
 """Datamodel- en bouwtests voor genummerde liederen en gebeden."""
 
 import json
+import shutil
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -288,3 +290,63 @@ def test_builder_weigert_verkeerd_aantal_items(tmp_path):
 
     with pytest.raises(ValueError, match="31 items"):
         build_collection(tmp_path, "liederen", "bron.json")
+
+
+def test_geschreven_bundels_zijn_volledig_en_vers(built):
+    for kind, bundles in built.items():
+        target = ROOT / "data" / "naslag-teksten" / kind
+        assert {path.stem for path in target.glob("*.json")} == set(bundles)
+        for item_id, expected in bundles.items():
+            actual = json.loads((target / f"{item_id}.json").read_text(encoding="utf-8"))
+            assert actual == expected
+
+
+def copy_builder_inputs(target_root):
+    (target_root / "scripts").mkdir(parents=True)
+    (target_root / "desktop").mkdir()
+    (target_root / "data").mkdir()
+    shutil.copy2(ROOT / "scripts/build_naslag_teksten.py", target_root / "scripts")
+    shutil.copy2(ROOT / "desktop/build-dist.mjs", target_root / "desktop")
+
+    for source_name in ("naslag-liederen.json", "naslag-gebeden.json"):
+        source_path = ROOT / "data" / source_name
+        shutil.copy2(source_path, target_root / "data")
+        source = json.loads(source_path.read_text(encoding="utf-8"))
+        for item in source["items"]:
+            for passage in item["tekstpassages"]:
+                if "hoofdstuk" in passage:
+                    chapters = [passage["hoofdstuk"]]
+                else:
+                    chapters = range(
+                        passage["vanHoofdstuk"], passage["totHoofdstuk"] + 1
+                    )
+                book_dir = target_root / "data" / passage["boek"]
+                book_dir.mkdir(exist_ok=True)
+                for chapter in chapters:
+                    destination = book_dir / f"{chapter}.json"
+                    if not destination.exists():
+                        shutil.copy2(
+                            ROOT / "data" / passage["boek"] / f"{chapter}.json",
+                            destination,
+                        )
+
+
+def test_desktopbouw_genereert_bundels_voordat_data_wordt_gekopieerd(tmp_path):
+    copy_builder_inputs(tmp_path)
+
+    result = subprocess.run(
+        ["node", "desktop/build-dist.mjs"],
+        cwd=tmp_path,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert (
+        tmp_path
+        / "desktop/dist/data/naslag-teksten/liederen/lied-bij-de-schelfzee.json"
+    ).exists()
+    assert (
+        tmp_path
+        / "desktop/dist/data/naslag-teksten/gebeden/paulus-gebed-voor-filippi.json"
+    ).exists()

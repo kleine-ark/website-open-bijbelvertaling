@@ -3,6 +3,7 @@
 // Cross-platform (Linux + Windows CI): gebruikt alleen node:fs.
 // Sluit bewust uit: audio/ (11 GB), git/venvs/scripts/docs en alle build-mappen.
 import { cpSync, rmSync, mkdirSync, existsSync, readdirSync } from "node:fs";
+import { spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -15,6 +16,16 @@ const DIRS = ["css", "js", "data", "icons", "images", "fonts"];
 // Losse bestanden in de repo-root die de app nodig heeft.
 const FILE_GLOB = (name) => name.endsWith(".html") && name !== "mockup-leesversie.html";
 const FILES = ["favicon.svg", "manifest.json", "sw.js", "embed.js"];
+
+console.log("[build-dist] volledige naslagteksten bouwen");
+const built = spawnSync(
+  process.env.PYTHON || "python",
+  [join(root, "scripts", "build_naslag_teksten.py")],
+  { cwd: root, stdio: "inherit" },
+);
+if (built.error || built.status !== 0) {
+  throw new Error("bouwen naslagteksten mislukt", { cause: built.error });
+}
 
 console.log("[build-dist] schoonmaken:", out);
 rmSync(out, { recursive: true, force: true });
