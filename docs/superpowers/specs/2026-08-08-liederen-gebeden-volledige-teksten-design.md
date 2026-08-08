@@ -24,15 +24,16 @@ Liederen en gebeden hebben elk hun eigen nummerreeks. De eerder verwijderde
 inleiding boven het gebedenoverzicht keert niet terug.
 
 Het huidige verzamelitem voor Paulus' drie gebeden wordt opgesplitst in twee
-gebeden voor Efeze en één gebed voor Filippi. Daardoor groeit het doel van 36
-naar 38 afzonderlijke gebedsitems.
+gebeden voor Efeze en één gebed voor Filippi. Daarnaast worden de Psalmen als
+gebedsboek nauwkeuriger vertegenwoordigd. Daardoor groeit het doel van 36 naar
+45 afzonderlijke gebedsitems.
 
 ## Vastgestelde keuzes
 
 | Onderwerp | Keuze |
 |---|---|
 | Liednummering | Eén reeks `1` t/m `31`, afgeleid van de volgorde in de liederen-data |
-| Gebedsnummering | Eén afzonderlijke reeks `1` t/m `38`, afgeleid van de volgorde in de gebeden-data |
+| Gebedsnummering | Eén afzonderlijke reeks `1` t/m `45`, afgeleid van de volgorde in de gebeden-data |
 | Betekenis van chronologisch | Volgorde van de Bijbelse verhaallijn; niet de moderne datering van de uiteindelijke boekvorm |
 | Psalmen | Eén genummerd item met Psalm 1 t/m 150 |
 | Gebeden | Chronologisch genummerd en voorzien van de volledige tekst |
@@ -94,9 +95,16 @@ Chronologische uitzonderingen worden niet verzwegen:
 ## Chronologische gebedsvolgorde en volledige passages
 
 De gebeden-data wordt de gezaghebbende volgorde voor een afzonderlijke reeks
-`Gebed 1` t/m `Gebed 38`. Ook hier geldt de Bijbelse verhaallijn. Ondateerbare
+`Gebed 1` t/m `Gebed 45`. Ook hier geldt de Bijbelse verhaallijn. Ondateerbare
 wijsheids- en apocriefe passages staan bij hun traditionele of verhalende
 historische setting.
+
+Voor de Psalmen geldt een controleerbare selectie. Alle vijf psalmen die zichzelf
+in het opschrift expliciet `een gebed` noemen worden opgenomen: Psalm 17, 86,
+90, 102 en 142. Daarnaast blijven of komen vier zelfstandige gebedspsalmen met
+een duidelijk eigen karakter in de reeks: Psalm 51 (boete), Psalm 72 (voorbede
+voor de koning), Psalm 119 (leven naar Gods Woord) en Psalm 130 (uit de diepten).
+Niet iedere klaag- of lofpsalm wordt daardoor automatisch een apart gebedsitem.
 
 | Nr. | Item | Volledige tekstpassage |
 |---:|---|---|
@@ -107,37 +115,44 @@ historische setting.
 | 5 | Het gebed van Jabez | 1 Kronieken 4:10 |
 | 6 | Simsons laatste gebed | Richteren 16:28 |
 | 7 | Het gebed van Hanna | 1 Samuël 1:10–11 |
-| 8 | Davids dankgebed over de belofte | 2 Samuël 7:18–29 |
-| 9 | Davids boetgebed (Psalm 51) | Psalm 51:1–21 |
-| 10 | Salomo's gebed om wijsheid | 1 Koningen 3:6–9 |
-| 11 | Salomo's tempelwijdingsgebed | 1 Koningen 8:22–53 |
-| 12 | Het gebed van Agur | Spreuken 30:7–9 |
-| 13 | Elia op de Karmel | 1 Koningen 18:36–37 |
-| 14 | Josafats gebed | 2 Kronieken 20:5–12 |
-| 15 | Jona's gebed uit de vis | Jona 2:1–9 |
-| 16 | De gebeden van Tobit en Sara | Tobit 3:1–6 en 3:13–23 |
-| 17 | Het gebed van Judith | Judith 9:1–14 |
-| 18 | Hizkia's gebed om uitredding | 2 Koningen 19:15–19 |
-| 19 | Hizkia's gebed om genezing | Jesaja 38:2–3 |
-| 20 | Het Gebed van Manasse | Gebed van Manasse 1–14 |
-| 21 | Habakuks gebed | Habakuk 3:1–19 |
-| 22 | Het Gebed van Azaria | Gebed van Azaria 25–50 |
-| 23 | Het gebed van de ballingen (Baruch) | Baruch 1:15–3:8 |
-| 24 | Daniëls boetgebed | Daniël 9:4–19 |
-| 25 | Mordechai's gebed | Esther apocrief 13:8–18 |
-| 26 | Esthers gebed | Esther apocrief 14:1–19 |
-| 27 | Ezra's boetgebed | Ezra 9:5–15 |
-| 28 | Nehemia's gebed | Nehemia 1:5–11 |
-| 29 | Het boetgebed onder Nehemia | Nehemia 9:5–37 |
-| 30 | Het Onze Vader | Mattheüs 6:9–13 en Lukas 11:2–4 |
-| 31 | Het gebed van de tollenaar | Lukas 18:13 |
-| 32 | Het hogepriesterlijk gebed | Johannes 17:1–26 |
-| 33 | Jezus in Gethsemane | Mattheüs 26:39–44 |
-| 34 | Het gebed van de gemeente | Handelingen 4:24–30 |
-| 35 | Het gebed van Stefanus | Handelingen 7:59–60 |
-| 36 | Paulus' eerste gebed voor de gemeente in Efeze | Efeziërs 1:16–23 |
-| 37 | Paulus' tweede gebed voor de gemeente in Efeze | Efeziërs 3:14–21 |
-| 38 | Paulus' gebed voor de gemeente in Filippi | Filippenzen 1:9–11 |
+| 8 | Davids gebed in de grot (Psalm 142) | Psalm 142:1–8 |
+| 9 | Davids gebed om bewaring (Psalm 17) | Psalm 17:1–15 |
+| 10 | Davids dankgebed over de belofte | 2 Samuël 7:18–29 |
+| 11 | Davids boetgebed (Psalm 51) | Psalm 51:1–21 |
+| 12 | Davids gebed in benauwdheid (Psalm 86) | Psalm 86:1–17 |
+| 13 | Het gebed om leven naar Gods Woord (Psalm 119) | Psalm 119:1–176 |
+| 14 | Davids gebed voor Salomo (Psalm 72) | Psalm 72:1–20 |
+| 15 | Salomo's gebed om wijsheid | 1 Koningen 3:6–9 |
+| 16 | Salomo's tempelwijdingsgebed | 1 Koningen 8:22–53 |
+| 17 | Het gebed van Agur | Spreuken 30:7–9 |
+| 18 | Elia op de Karmel | 1 Koningen 18:36–37 |
+| 19 | Josafats gebed | 2 Kronieken 20:5–12 |
+| 20 | Jona's gebed uit de vis | Jona 2:1–9 |
+| 21 | De gebeden van Tobit en Sara | Tobit 3:1–6 en 3:13–23 |
+| 22 | Het gebed van Judith | Judith 9:1–14 |
+| 23 | Hizkia's gebed om uitredding | 2 Koningen 19:15–19 |
+| 24 | Hizkia's gebed om genezing | Jesaja 38:2–3 |
+| 25 | Het Gebed van Manasse | Gebed van Manasse 1–14 |
+| 26 | Habakuks gebed | Habakuk 3:1–19 |
+| 27 | Het Gebed van Azaria | Gebed van Azaria 25–50 |
+| 28 | Het gebed van de ballingen (Baruch) | Baruch 1:15–3:8 |
+| 29 | Daniëls boetgebed | Daniël 9:4–19 |
+| 30 | Het gebed van de verdrukte (Psalm 102) | Psalm 102:1–29 |
+| 31 | Mordechai's gebed | Esther apocrief 13:8–18 |
+| 32 | Esthers gebed | Esther apocrief 14:1–19 |
+| 33 | Ezra's boetgebed | Ezra 9:5–15 |
+| 34 | Nehemia's gebed | Nehemia 1:5–11 |
+| 35 | Het boetgebed onder Nehemia | Nehemia 9:5–37 |
+| 36 | Het gebed uit de diepten (Psalm 130) | Psalm 130:1–8 |
+| 37 | Het Onze Vader | Mattheüs 6:9–13 en Lukas 11:2–4 |
+| 38 | Het gebed van de tollenaar | Lukas 18:13 |
+| 39 | Het hogepriesterlijk gebed | Johannes 17:1–26 |
+| 40 | Jezus in Gethsemane | Mattheüs 26:39–44 |
+| 41 | Het gebed van de gemeente | Handelingen 4:24–30 |
+| 42 | Het gebed van Stefanus | Handelingen 7:59–60 |
+| 43 | Paulus' eerste gebed voor de gemeente in Efeze | Efeziërs 1:16–23 |
+| 44 | Paulus' tweede gebed voor de gemeente in Efeze | Efeziërs 3:14–21 |
+| 45 | Paulus' gebed voor de gemeente in Filippi | Filippenzen 1:9–11 |
 
 Een grens selecteert altijd volledige verzen. Als een vers eerst de bidder
 introduceert en daarna de gebedswoorden geeft, blijft het hele vers staan; de
@@ -189,7 +204,7 @@ Een nieuw script `scripts/build_naslag_teksten.py`:
    `data/naslag-teksten/<soort>/<id>.json`;
 5. stopt met een fout bij een ontbrekend hoofdstuk, vers, tekstveld, dubbel
    item-id, een ander aantal dan 31 geordende lied-items of een ander aantal
-   dan 38 geordende gebedsitems.
+   dan 45 geordende gebedsitems.
 
 Er is bewust geen terugval op `text1637`, `textSV1888` of `text2026_html`.
 Daardoor kan een onvolledige Open Vertaling niet ongemerkt worden vermengd met
@@ -209,7 +224,7 @@ de bronhoofdstukken.
 - iedere tegel krijgt een compact gouden nummerlabel `Lied 1`, `Lied 2`, …;
 - de tegelnaam en het bestaande aantal vindplaatsen blijven staan;
 - de DOM-volgorde is tevens de chronologische volgorde;
-- het overzicht Gebeden krijgt op dezelfde wijze `Gebed 1` t/m `Gebed 38` en
+- het overzicht Gebeden krijgt op dezelfde wijze `Gebed 1` t/m `Gebed 45` en
   behoudt geen inleidende tekst of lege introductiebox.
 
 ### Detailpagina
@@ -255,7 +270,7 @@ liednummers gepresenteerd.
 1. alle `tekstpassages` verwijzen naar bestaande hoofdstukken en verzen;
 2. elk geselecteerd vers heeft een niet-lege `text2026`;
 3. de gebouwde tekst is byte-voor-byte gelijk aan de tekst uit de brondata;
-4. de 31 liednummers en 38 gebedsnummers zijn per reeks uniek, oplopend en
+4. de 31 liednummers en 45 gebedsnummers zijn per reeks uniek, oplopend en
    aaneengesloten;
 5. de Psalmen zijn één lied-item en de bundel bevat precies 150 psalmkoppen;
 6. samengestelde items bewaren de opgegeven passagevolgorde;
@@ -264,17 +279,19 @@ liednummers gepresenteerd.
 ### Browsertests
 
 1. het liederenoverzicht toont `Lied 1` t/m `Lied 31` in DOM-volgorde;
-2. het gebedenoverzicht toont `Gebed 1` t/m `Gebed 38` in DOM-volgorde;
+2. het gebedenoverzicht toont `Gebed 1` t/m `Gebed 45` in DOM-volgorde;
 3. een gewone lieddetailpagina toont de volledige eerste en laatste versregel;
 4. een gebed met meerdere passages toont alle passagekoppen en zijn nummer;
-5. de drie gebeden van Paulus hebben elk een eigen kaart, nummer, detailpagina
+5. de negen geselecteerde gebedspsalmen hebben elk een eigen kaart, nummer,
+   detailpagina en volledige tekstbundel;
+6. de drie gebeden van Paulus hebben elk een eigen kaart, nummer, detailpagina
    en tekstbundel;
-6. de Psalmen-pagina biedt ankers 1 t/m 150 en toont de tekst van Psalm 1 en
+7. de Psalmen-pagina biedt ankers 1 t/m 150 en toont de tekst van Psalm 1 en
    Psalm 150;
-7. een item zonder overgeleverde woorden toont de melding en geen verzonnen
+8. een item zonder overgeleverde woorden toont de melding en geen verzonnen
    liedtekst;
-8. een mislukte tekstfetch laat titel, beschrijving en vindplaatslinks staan;
-9. het gebedenoverzicht bevat geen `.ns-lead`.
+9. een mislukte tekstfetch laat titel, beschrijving en vindplaatslinks staan;
+10. het gebedenoverzicht bevat geen `.ns-lead`.
 
 ## Buiten scope
 
