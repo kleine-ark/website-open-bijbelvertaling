@@ -824,7 +824,7 @@
       "number": 7,
       "textSV1888": "Daarna zeide Jesaja: Neemt een klomp vijgen; en zij namen ze, en leiden ze op de zweer, en hij werd genezen.",
       "text1637": "Daerna seyde Iesaia; Nemet eenen klomp vijgen: ende sy namense, ende leydense op de sweere; ende hy wert [13] genesen.",
-      "text2026": "Daarna zei Jesaja: Neemt een klomp vijgen; en zij namen ze, en leiden ze op de zweer, en hij werd genezen.",
+      "text2026": "Daarna zei Jesaja: Neemt een klomp vijgen; en zij namen ze, en legden ze op de zweer, en hij werd genezen.",
       "marginNotes": [
         {
           "marker": "13",
@@ -886,7 +886,7 @@
           "morph": "HC/Vqw3ms"
         }
       ],
-      "text2026_html": "Daarna zei Jesaja: <span class=\"direct-speech\"><i>Neemt een klomp vijgen;</i></span> en zij namen ze, en leiden ze op de zweer, en hij werd genezen.",
+      "text2026_html": "Daarna zei Jesaja: <span class=\"direct-speech\"><i>Neemt een klomp vijgen;</i></span> en zij namen ze, en legden ze op de zweer, en hij werd genezen.",
       "textSV1888_html": "Daarna zeide Jesaja: Neemt een klomp vijgen; en zij namen ze, en leiden ze op de zweer, en hij werd<sup class=\"note-marker\" data-note=\"13\">13</sup> genezen.",
       "text1637_html": "Daerna seyde Iesaia; Nemet eenen klomp vijgen: ende sy namense, ende leydense op de sweere; ende hy wert <sup class=\"note-marker\" data-note=\"13\">13</sup> genesen.",
       "phraseDiff": [
@@ -894,6 +894,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "leiden",
+          "new": "legden",
+          "principe": null
         }
       ]
     },
@@ -1203,7 +1208,7 @@
       "number": 10,
       "textSV1888": "Toen zeide Hizkia: Het is der schaduwe licht, tien graden nederwaarts te gaan; neen, maar dat de schaduw tien graden achterwaarts kere.",
       "text1637": "Doe seyde Iehizkia; ’Tis der schaduwe [20] licht, tien graden nederwaerts te gaen: Neen, maer dat de schaduwe tien graden achterwaert keere.",
-      "text2026": "Toen zei Hizkia: Het is van de schaduwe licht, tien graden naar beneden te gaan; neen, maar dat de schaduw tien graden achteruit kere.",
+      "text2026": "Toen zei Hizkia: Het is voor de schaduw licht, tien graden naar beneden te gaan; neen, maar dat de schaduw tien graden achteruit kere.",
       "marginNotes": [
         {
           "marker": "20",
@@ -1285,7 +1290,7 @@
           "morph": "HNcfpa"
         }
       ],
-      "text2026_html": "Toen zei Hizkia: <span class=\"direct-speech\"><i>Het is van de schaduwe licht, tien graden naar beneden te gaan; neen, maar dat de schaduw tien graden achteruit kere.</i></span>",
+      "text2026_html": "Toen zei Hizkia: <span class=\"direct-speech\"><i>Het is voor de schaduw licht, tien graden naar beneden te gaan; neen, maar dat de schaduw tien graden achteruit kere.</i></span>",
       "textSV1888_html": "Toen zeide Hizkia: Het is der schaduwe<sup class=\"note-marker\" data-note=\"20\">20</sup> licht, tien graden nederwaarts te gaan; neen, maar dat de schaduw tien graden achterwaarts kere.",
       "text1637_html": "Doe seyde Iehizkia; ’Tis der schaduwe <sup class=\"note-marker\" data-note=\"20\">20</sup> licht, tien grade<i>n</i> nederwaerts te gaen: Neen, maer dat de schaduwe tien graden achterwaert keere.",
       "phraseDiff": [
@@ -1295,9 +1300,9 @@
           "principe": "W1"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der schaduwe",
+          "new": "voor de schaduw",
+          "principe": null
         },
         {
           "old": "nederwaarts",
