@@ -5,7 +5,7 @@ DATA = Path("data")
 
 def test_genesis_1_starts_correctly():
     text = extract_chapter_text(DATA, "genesis", 1)
-    assert text.startswith("In de beginne schiep God de hemel en de aarde.")
+    assert text.startswith("In het begin schiep God de hemel en de aarde.")
 
 def test_genesis_1_joins_all_31_verses():
     text = extract_chapter_text(DATA, "genesis", 1)
