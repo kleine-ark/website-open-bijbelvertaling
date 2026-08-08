@@ -949,7 +949,7 @@
       "number": 10,
       "textSV1888": "Zes van hun namen op een steen, en de zes overige namen op den anderen steen, naar hun geboorten;",
       "text1637": "Sesse van hare namen op eenen steen, ende de ses overige namen op den anderen steen, nae hare geboorten:",
-      "text2026": "Zes van hun namen op één steen, en de zes overige namen op de anderen steen, naar hun geboorten;",
+      "text2026": "Zes van hun namen op één steen, en de zes overige namen op de anderen steen, naar hun geboortevolgorde;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1018,7 +1018,7 @@
           "morph": "HR/Ncfpc/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zes van hun namen op één steen, en de zes overige namen op de anderen steen, naar hun geboorten;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zes van hun namen op één steen, en de zes overige namen op de anderen steen, naar hun geboortevolgorde;</i></span>",
       "text1637_html": "Sesse van hare namen op eenen steen, ende de ses overige namen op den anderen steen, nae hare geboorten:",
       "phraseDiff": [
         {
@@ -1030,6 +1030,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "geboorten;",
+          "new": "geboortevolgorde;",
+          "principe": "V1131"
         }
       ]
     },
