@@ -4790,5 +4790,16 @@ span.devil-speaks, span.devil-speaks i {
    weg, dan mag de inhoud de volle breedte gebruiken. */
 .ov-ingebed .doc-shell,
 .ov-ingebed .doc-layout { display: block !important; }
-.ov-ingebed .doc-content,
-.ov-ingebed .page { max-width: 100% !important; }
+.ov-ingebed .doc-content { max-width: 100% !important; }
+.ov-ingebed .page {
+    max-width: 100% !important;
+    box-sizing: border-box;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+@media (max-width: 768px) {
+    .ov-ingebed .page {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
