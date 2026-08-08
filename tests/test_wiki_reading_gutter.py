@@ -115,8 +115,9 @@ class WikiReadingGutterTest(unittest.TestCase):
             page.goto(f"{self.base_url}/wiki.html#liederen")
             article = page.frame_locator("#wiki-frame").locator("#naslag")
             article.locator(".ns-rooster").wait_for(state="visible")
-            self.assertGreater(article.locator(".ns-kaart").count(), 0)
+            self.assertEqual(article.locator(".ns-kaart").count(), 177)
             self.assertEqual(article.locator(".ns-kaart-tal").count(), 0)
+            self.assertEqual(article.locator(".ns-kaart-passage").count(), 177)
         finally:
             page.close()
 

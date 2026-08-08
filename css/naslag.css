@@ -37,6 +37,9 @@
 }
 .ns-kaart-naam { font-weight: 600; color: var(--navy); font-size: 15.5px; }
 .ns-kaart-tal { font-size: 12px; color: #999; }
+.ns-kaart-passage {
+    margin-top: 2px; color: #9a7421; font-size: 12.5px; line-height: 1.45;
+}
 
 /* subpagina */
 .ns-terug { margin: 4px 0 14px; font-size: 13.5px; }
@@ -112,23 +115,14 @@
     background: rgba(203,164,73,0.07); color: var(--text-secondary, #555);
     font-size: 14px; line-height: 1.65;
 }
-.ns-psalm-sprongen {
-    display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 28px;
-}
-.ns-psalm-sprongen a {
-    display: inline-flex; align-items: center; justify-content: center;
-    min-width: 30px; height: 30px; padding: 0 4px; box-sizing: border-box;
-    border: 1px solid var(--border, #e0dcd2); border-radius: 6px;
-    color: var(--teal); text-decoration: none; font-size: 12px;
-}
-.ns-psalm-sprongen a:hover { border-color: var(--gold); background: rgba(203,164,73,0.08); }
-.ns-psalm-sprongen a:focus-visible, .ns-vers:focus-visible, .ns-kaart:focus-visible {
+.ns-vers:focus-visible, .ns-kaart:focus-visible {
     outline: 2px solid var(--gold); outline-offset: 2px;
 }
 
 /* donker thema */
 :root[data-theme="donker"] .ns-kaart { background: rgba(255,255,255,0.03); }
 :root[data-theme="donker"] .ns-kaart-naam { color: #e8e4da; }
+:root[data-theme="donker"] .ns-kaart-passage { color: #e2c77f; }
 :root[data-theme="donker"] .ns-beschrijving { color: #cfcabe; }
 :root[data-theme="donker"] .ns-nummer { background: rgba(203,164,73,0.2); color: #e2c77f; }
 :root[data-theme="donker"] .ns-passage > h3,

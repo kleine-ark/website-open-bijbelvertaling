@@ -13,7 +13,6 @@ from scripts.build_naslag_teksten import build_all, build_collection, expand_pas
 ROOT = Path(__file__).resolve().parents[1]
 
 LIED_IDS = [
-    "lofzang-in-henoch",
     "lied-bij-de-schelfzee",
     "lied-van-mirjam",
     "lied-van-de-bron",
@@ -25,23 +24,17 @@ LIED_IDS = [
     "loflied-bij-de-ark",
     "davids-lied-van-bevrijding",
     "laatste-woorden-van-david",
-    "de-psalmen",
+] + [f"psalm-{number}" for number in range(1, 151)] + [
     "het-hooglied",
     "lied-van-de-wijngaard",
     "lied-van-de-sterke-stad",
-    "loflied-van-tobit",
     "lofzang-van-hizkia",
     "gebed-van-habakuk",
-    "gezang-in-de-vuuroven",
-    "klaagliederen",
-    "loflied-van-judith",
-    "dankgebed-van-jezus-sirach",
+] + [f"klaaglied-{number}" for number in range(1, 6)] + [
     "lofzang-van-maria",
     "lofzang-van-zacharias",
     "engelenzang",
     "lofzang-van-simeon",
-    "lofzang-bij-het-avondmaal",
-    "paulus-en-silas",
     "het-nieuwe-lied",
     "gezang-van-mozes-en-het-lam",
 ]
@@ -122,16 +115,48 @@ def test_lamech_en_de_gebedenintro_blijven_verwijderd(liederen, gebeden):
     assert "intro" not in gebeden
 
 
-def test_psalmen_blijven_een_lied_met_150_hoofdstukken(liederen):
-    psalmen = next(item for item in liederen["items"] if item["id"] == "de-psalmen")
-    assert psalmen["tekstpassages"] == [
+def test_psalmen_en_klaagliederen_zijn_afzonderlijke_liederen(liederen):
+    by_id = {item["id"]: item for item in liederen["items"]}
+
+    assert [item_id for item_id in by_id if item_id.startswith("psalm-")] == [
+        f"psalm-{number}" for number in range(1, 151)
+    ]
+    assert [item_id for item_id in by_id if item_id.startswith("klaaglied-")] == [
+        f"klaaglied-{number}" for number in range(1, 6)
+    ]
+    assert by_id["psalm-1"]["tekstpassages"] == [
         {
             "boek": "psalmen",
-            "vanHoofdstuk": 1,
-            "totHoofdstuk": 150,
-            "label": "Psalm 1–150",
+            "hoofdstuk": 1,
+            "van": 1,
+            "tot": 6,
+            "label": "Psalm 1",
         }
     ]
+    assert by_id["klaaglied-1"]["tekstpassages"] == [
+        {
+            "boek": "klaagliederen",
+            "hoofdstuk": 1,
+            "van": 1,
+            "tot": 22,
+            "label": "Klaagliederen 1:1–22",
+        }
+    ]
+
+
+def test_liednummering_heeft_de_afgesproken_grenspunten(liederen):
+    nummers = {
+        item["id"]: number
+        for number, item in enumerate(liederen["items"], start=1)
+    }
+
+    assert nummers["lied-bij-de-schelfzee"] == 1
+    assert nummers["psalm-1"] == 12
+    assert nummers["psalm-150"] == 161
+    assert nummers["klaaglied-1"] == 167
+    assert nummers["klaaglied-5"] == 171
+    assert nummers["het-nieuwe-lied"] == 176
+    assert nummers["gezang-van-mozes-en-het-lam"] == 177
 
 
 def test_negen_gebedspsalmen_hebben_hun_volledige_passage(gebeden):
@@ -198,10 +223,21 @@ def test_ieder_item_heeft_unieke_inhoud_en_passagegrenzen(request, fixture_name)
                 assert passage["vanHoofdstuk"] <= passage["totHoofdstuk"]
 
 
-def test_niet_overgeleverde_liedwoorden_worden_niet_gereconstrueerd(liederen):
-    by_id = {item["id"]: item for item in liederen["items"]}
-    for item_id in ("lofzang-bij-het-avondmaal", "paulus-en-silas"):
-        assert by_id[item_id]["tekstmelding"].strip()
+def test_apocriefe_en_woordloze_liedvermeldingen_zijn_verwijderd(liederen):
+    ids = {item["id"] for item in liederen["items"]}
+    uitgesloten = {
+        "lofzang-in-henoch",
+        "loflied-van-tobit",
+        "gezang-in-de-vuuroven",
+        "loflied-van-judith",
+        "dankgebed-van-jezus-sirach",
+        "lofzang-bij-het-avondmaal",
+        "paulus-en-silas",
+        "de-psalmen",
+        "klaagliederen",
+    }
+
+    assert ids.isdisjoint(uitgesloten)
 
 
 @pytest.fixture(scope="module")
@@ -211,7 +247,7 @@ def built():
 
 def test_builder_leidt_aaneengesloten_nummers_af(built):
     assert [bundle["nummer"] for bundle in built["liederen"].values()] == list(
-        range(1, 32)
+        range(1, 178)
     )
     assert [bundle["nummer"] for bundle in built["gebeden"].values()] == list(
         range(1, 46)
@@ -230,13 +266,20 @@ def test_gebouwd_vers_is_exact_text2026(built):
     assert verse == {"nummer": 23, "tekst": expected}
 
 
-def test_psalmenbundel_heeft_precies_150_secties(built):
-    psalmen = built["liederen"]["de-psalmen"]
-    sections = psalmen["passages"][0]["sections"]
+def test_iedere_psalmbundel_heeft_precies_een_eigen_hoofdstuk(built):
+    psalm_ids = [f"psalm-{number}" for number in range(1, 151)]
 
-    assert len(sections) == 150
-    assert sections[0]["hoofdstuk"] == 1
-    assert sections[-1]["hoofdstuk"] == 150
+    assert all(item_id in built["liederen"] for item_id in psalm_ids)
+    assert built["liederen"]["psalm-1"]["passages"][0]["sections"][0][
+        "hoofdstuk"
+    ] == 1
+    assert built["liederen"]["psalm-150"]["passages"][0]["sections"][0][
+        "hoofdstuk"
+    ] == 150
+    assert all(
+        len(built["liederen"][item_id]["passages"][0]["sections"]) == 1
+        for item_id in psalm_ids
+    )
 
 
 def test_samengestelde_passages_behouden_de_opgegeven_volgorde(built):
@@ -244,13 +287,6 @@ def test_samengestelde_passages_behouden_de_opgegeven_volgorde(built):
     labels = [passage["label"] for passage in mozes["passages"]]
 
     assert labels == ["Exodus 32:11–14", "Numeri 14:13–19"]
-
-
-def test_niet_overgeleverde_woorden_blijven_een_melding(built):
-    avondmaal = built["liederen"]["lofzang-bij-het-avondmaal"]
-
-    assert avondmaal["tekstmelding"].startswith("De woorden")
-    assert len(avondmaal["passages"]) == 2
 
 
 def write_test_chapter(root, verses):
@@ -288,7 +324,7 @@ def test_builder_weigert_verkeerd_aantal_items(tmp_path):
         json.dumps({"nummerType": "Lied", "items": []}), encoding="utf-8"
     )
 
-    with pytest.raises(ValueError, match="31 items"):
+    with pytest.raises(ValueError, match="177 items"):
         build_collection(tmp_path, "liederen", "bron.json")
 
 
