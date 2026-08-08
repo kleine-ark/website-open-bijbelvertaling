@@ -1926,7 +1926,7 @@
       "number": 20,
       "textSV1888": "Wie den goden offert, behalve den HEERE alleen, die zal verbannen worden.",
       "text1637": "[e] Wie den Goden [34] offert, behalven den HEERE alleen, [35] die sal verbannen worden.",
-      "text2026": "Wie de rechters offert, behalve JAHWEH alleen, die zal verbannen worden.",
+      "text2026": "Wie de goden offert, behalve JAHWEH alleen, die zal verbannen worden.",
       "marginNotes": [
         {
           "marker": "d",
@@ -2002,14 +2002,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Wie de rechters<sup class=\"note-marker\" data-note=\"34\">34</sup> offert, behalve JAHWEH alleen,<sup class=\"note-marker\" data-note=\"35\">35</sup> die zal verbannen worden.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Wie de goden<sup class=\"note-marker\" data-note=\"34\">34</sup> offert, behalve JAHWEH alleen,<sup class=\"note-marker\" data-note=\"35\">35</sup> die zal verbannen worden.</i></span>",
       "textSV1888_html": "Wie den goden<sup class=\"note-marker\" data-note=\"34\">34</sup> offert, behalve den HEERE alleen,<sup class=\"note-marker\" data-note=\"35\">35</sup> die zal verbannen worden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Wie den Goden <sup class=\"note-marker\" data-note=\"34\">34</sup> offert, behalven den HEERE alleen, <sup class=\"note-marker\" data-note=\"35\">35</sup> die sal verbannen worden.",
       "phraseDiff": [
         {
-          "old": "den goden",
-          "new": "de rechters",
-          "principe": null
+          "old": "den",
+          "new": "de",
+          "principe": "N1"
         },
         {
           "old": "den HEERE",
@@ -2694,7 +2694,7 @@
       "number": 28,
       "textSV1888": "De goden zult gij niet vloeken, en de oversten in uw volk zult gij niet lasteren.",
       "text1637": "[45] De goden en sult ghy niet vloecken: ende de [k] Overste in uwen volcke en sult ghy niet lasteren.",
-      "text2026": "De goden zult u niet vloeken, en de oversten in uw volk zult u niet lasteren.",
+      "text2026": "De rechters zult u niet vloeken, en de oversten in uw volk zult u niet lasteren.",
       "marginNotes": [
         {
           "marker": "45",
@@ -2753,10 +2753,15 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"45\">45</sup><span class=\"god-speaks\"><i> De goden zult u niet vloeken, en de oversten in uw volk zult u niet lasteren.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"45\">45</sup><span class=\"god-speaks\"><i> De rechters zult u niet vloeken, en de oversten in uw volk zult u niet lasteren.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"45\">45</sup> De goden zult gij niet vloeken, en de oversten in uw volk zult gij niet lasteren.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"45\">45</sup> De goden en sult ghy niet vloecken: ende de <sup class=\"note-marker\" data-note=\"k\">k</sup> Overste in uwen volcke en sult ghy niet lasteren.",
       "phraseDiff": [
+        {
+          "old": "goden",
+          "new": "rechters",
+          "principe": "V1057"
+        },
         {
           "old": "gij",
           "new": "u",
