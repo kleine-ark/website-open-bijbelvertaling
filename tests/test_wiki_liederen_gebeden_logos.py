@@ -3,6 +3,8 @@ from pathlib import Path
 import struct
 import unittest
 
+from PIL import Image
+
 
 ROOT = Path(__file__).resolve().parents[1]
 NAMES = ("liederen", "gebeden")
@@ -38,7 +40,20 @@ class PictureParser(HTMLParser):
 
 
 class WikiLiederenGebedenLogoTests(unittest.TestCase):
-    def test_tiles_use_motion_webp_with_static_svg_fallback(self):
+    def test_generated_art_sources_match_the_painterly_wiki_style(self):
+        for name in NAMES:
+            source = ROOT / "images" / "wiki" / "bronnen" / f"{name}.webp"
+            with Image.open(source) as artwork:
+                self.assertEqual(artwork.size, (1200, 600))
+
+            with Image.open(ROOT / "images" / "wiki" / f"{name}.webp") as animation:
+                animation.seek(0)
+                frame = animation.convert("RGB")
+                colors = frame.getcolors(frame.width * frame.height)
+                self.assertIsNotNone(colors)
+                self.assertGreater(len(colors), 5000)
+
+    def test_tiles_use_motion_webp_with_static_painterly_fallback(self):
         html = (ROOT / "wiki-overzicht.html").read_text(encoding="utf-8")
         parser = PictureParser()
         parser.feed(html)
@@ -58,6 +73,8 @@ class WikiLiederenGebedenLogoTests(unittest.TestCase):
                 source["media"], "(prefers-reduced-motion: no-preference)"
             )
             self.assertEqual(fallback["src"], f"images/wiki/{name}.svg")
+            svg = (ROOT / fallback["src"]).read_text(encoding="utf-8")
+            self.assertIn(f'bronnen/{name}.webp', svg)
 
     def test_assets_are_animated_five_second_webp_loops(self):
         for name in NAMES:

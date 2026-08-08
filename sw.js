@@ -116,6 +116,13 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
+    // Deze twee wiki-illustraties kunnen opnieuw gegenereerd worden onder
+    // dezelfde stabiele bestandsnaam. Haal ze daarom online altijd vers op.
+    if (/\/images\/wiki\/(?:liederen|gebeden)\.(?:webp|svg)$/.test(path)) {
+        event.respondWith(networkFirst(req, SHELL_CACHE));
+        return;
+    }
+
     // Fonts, images, alles anders: cache-first
     event.respondWith(cacheFirst(req, SHELL_CACHE));
 });
