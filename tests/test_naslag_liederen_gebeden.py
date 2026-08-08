@@ -5,6 +5,8 @@ from pathlib import Path
 
 import pytest
 
+from scripts.build_naslag_teksten import build_all, build_collection, expand_passage
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -198,3 +200,91 @@ def test_niet_overgeleverde_liedwoorden_worden_niet_gereconstrueerd(liederen):
     by_id = {item["id"]: item for item in liederen["items"]}
     for item_id in ("lofzang-bij-het-avondmaal", "paulus-en-silas"):
         assert by_id[item_id]["tekstmelding"].strip()
+
+
+@pytest.fixture(scope="module")
+def built():
+    return build_all(ROOT, write=False)
+
+
+def test_builder_leidt_aaneengesloten_nummers_af(built):
+    assert [bundle["nummer"] for bundle in built["liederen"].values()] == list(
+        range(1, 32)
+    )
+    assert [bundle["nummer"] for bundle in built["gebeden"].values()] == list(
+        range(1, 46)
+    )
+    assert all(bundle["nummerType"] == "Lied" for bundle in built["liederen"].values())
+    assert all(bundle["nummerType"] == "Gebed" for bundle in built["gebeden"].values())
+
+
+def test_gebouwd_vers_is_exact_text2026(built):
+    verse = built["gebeden"]["abrahams-voorbede-voor-sodom"]["passages"][0][
+        "sections"
+    ][0]["verzen"][0]
+    source = load_json("data/genesis/18.json")["verses"]
+    expected = next(item["text2026"] for item in source if item["number"] == 23)
+
+    assert verse == {"nummer": 23, "tekst": expected}
+
+
+def test_psalmenbundel_heeft_precies_150_secties(built):
+    psalmen = built["liederen"]["de-psalmen"]
+    sections = psalmen["passages"][0]["sections"]
+
+    assert len(sections) == 150
+    assert sections[0]["hoofdstuk"] == 1
+    assert sections[-1]["hoofdstuk"] == 150
+
+
+def test_samengestelde_passages_behouden_de_opgegeven_volgorde(built):
+    mozes = built["gebeden"]["mozes-voorbeden-voor-israel"]
+    labels = [passage["label"] for passage in mozes["passages"]]
+
+    assert labels == ["Exodus 32:11–14", "Numeri 14:13–19"]
+
+
+def test_niet_overgeleverde_woorden_blijven_een_melding(built):
+    avondmaal = built["liederen"]["lofzang-bij-het-avondmaal"]
+
+    assert avondmaal["tekstmelding"].startswith("De woorden")
+    assert len(avondmaal["passages"]) == 2
+
+
+def write_test_chapter(root, verses):
+    chapter_dir = root / "data" / "testboek"
+    chapter_dir.mkdir(parents=True)
+    (chapter_dir / "1.json").write_text(
+        json.dumps({"verses": verses}, ensure_ascii=False), encoding="utf-8"
+    )
+
+
+def test_builder_weigert_lege_text2026(tmp_path):
+    write_test_chapter(tmp_path, [{"number": 1, "text2026": ""}])
+
+    with pytest.raises(ValueError, match="lege text2026.*testboek 1:1"):
+        expand_passage(
+            tmp_path,
+            {"boek": "testboek", "hoofdstuk": 1, "van": 1, "tot": 1, "label": "Test"},
+        )
+
+
+def test_builder_weigert_ontbrekend_vers(tmp_path):
+    write_test_chapter(tmp_path, [{"number": 1, "text2026": "Eerste vers"}])
+
+    with pytest.raises(ValueError, match="ontbrekend vers.*testboek 1:2"):
+        expand_passage(
+            tmp_path,
+            {"boek": "testboek", "hoofdstuk": 1, "van": 1, "tot": 2, "label": "Test"},
+        )
+
+
+def test_builder_weigert_verkeerd_aantal_items(tmp_path):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    (data_dir / "bron.json").write_text(
+        json.dumps({"nummerType": "Lied", "items": []}), encoding="utf-8"
+    )
+
+    with pytest.raises(ValueError, match="31 items"):
+        build_collection(tmp_path, "liederen", "bron.json")
