@@ -66,11 +66,20 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         page.locator("#naslag h1").wait_for(state="visible")
         return page
 
-    def test_liederen_overzicht_is_genummerd_van_1_tot_31(self):
+    def test_liederen_overzicht_is_genummerd_en_toont_bijbelgedeelten(self):
         page = self.open_page("liederen.html")
         try:
             labels = page.locator(".ns-kaart .ns-nummer").all_inner_texts()
-            self.assertEqual(labels, [f"Lied {number}" for number in range(1, 32)])
+            self.assertEqual(labels, [f"Lied {number}" for number in range(1, 178)])
+            passages = page.locator(".ns-kaart .ns-kaart-passage").all_inner_texts()
+            self.assertEqual(len(passages), 177)
+            self.assertEqual(passages[0], "Exodus 15:1–18")
+            self.assertEqual(passages[11], "Psalm 1")
+            self.assertEqual(passages[161], "Hooglied 1–8")
+            self.assertEqual(
+                passages[-2],
+                "Openbaring 5:8–10 · Openbaring 14:2–3",
+            )
             self.assertNotIn("Lamech", page.locator("#naslag").inner_text())
         finally:
             page.close()
@@ -99,7 +108,7 @@ class WikiLiederenGebedenTest(unittest.TestCase):
             page.goto(f"{self.base_url}/wiki-overzicht.html")
             page.locator(".wo-badge").first.wait_for(state="visible")
             badges = page.locator(".wo-badge").all_inner_texts()
-            self.assertIn("31 liederen", badges)
+            self.assertIn("177 liederen", badges)
             self.assertIn("45 gebeden", badges)
         finally:
             page.close()
@@ -113,7 +122,7 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         page = self.open_page("liederen.html?item=lied-bij-de-schelfzee")
         try:
             page.locator(".ns-volledige-tekst .ns-tekstvers").first.wait_for()
-            self.assertEqual(page.locator(".ns-nummer").first.inner_text(), "Lied 2")
+            self.assertEqual(page.locator(".ns-nummer").first.inner_text(), "Lied 1")
             verses = page.locator(".ns-volledige-tekst .ns-tekstvers").all_inner_texts()
             expected = bundle["passages"][0]["sections"][0]["verzen"]
             self.assertIn(expected[0]["tekst"], verses[0])
@@ -133,34 +142,50 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         finally:
             page.close()
 
-    def test_psalmenpagina_heeft_150_sprongen_en_beide_uiteinden(self):
-        page = self.open_page("liederen.html?item=de-psalmen")
+    def test_psalmen_hebben_ieder_hun_eigen_detailpagina(self):
+        page = self.open_page("liederen.html?item=psalm-1")
         try:
-            page.locator("#psalm-150").wait_for(state="visible")
-            self.assertEqual(page.locator(".ns-psalm-sprongen a").count(), 150)
-            self.assertEqual(page.locator("#psalm-1").inner_text(), "Psalm 1")
-            self.assertEqual(page.locator("#psalm-150").inner_text(), "Psalm 150")
-            self.assertGreater(page.locator("#psalm-150 + .ns-tekstvers").count(), 0)
+            page.locator(".ns-passage > h3").wait_for(state="visible")
+            self.assertEqual(page.locator(".ns-psalm-sprongen").count(), 0)
+            self.assertEqual(page.locator(".ns-passage > h3").inner_text(), "Psalm 1")
+            self.assertEqual(page.locator(".ns-nummer").first.inner_text(), "Lied 12")
         finally:
             page.close()
 
-    def test_niet_overgeleverde_liedwoorden_krijgen_een_eerlijke_melding(self):
-        page = self.open_page("liederen.html?item=lofzang-bij-het-avondmaal")
+        page = self.open_page("liederen.html?item=psalm-150")
         try:
-            page.locator(".ns-tekstmelding").wait_for(state="visible")
-            self.assertIn("niet overgeleverd", page.locator(".ns-tekstmelding").inner_text())
-            self.assertIn("Mattheüs 26:30", page.locator("#naslag").inner_text())
+            page.locator(".ns-passage > h3").wait_for(state="visible")
+            self.assertEqual(page.locator(".ns-passage > h3").inner_text(), "Psalm 150")
+            self.assertGreater(page.locator(".ns-passage .ns-tekstvers").count(), 0)
+            self.assertEqual(page.locator(".ns-nummer").first.inner_text(), "Lied 161")
         finally:
             page.close()
 
-    def test_mislukte_tekstfetch_laat_beschrijving_en_vindplaatsen_staan(self):
+    def test_lieddetail_verbergt_vindplaatsen_maar_gebeddetail_behoudt_ze(self):
+        page = self.open_page("liederen.html?item=lied-bij-de-schelfzee")
+        try:
+            page.locator(".ns-volledige-tekst").wait_for(state="visible")
+            self.assertNotIn("Vindplaatsen in", page.locator("#naslag").inner_text())
+            self.assertEqual(page.locator(".ns-vers").count(), 0)
+        finally:
+            page.close()
+
+        page = self.open_page("gebeden.html?item=abrahams-voorbede-voor-sodom")
+        try:
+            page.locator(".ns-volledige-tekst").wait_for(state="visible")
+            self.assertIn("Vindplaatsen in", page.locator("#naslag").inner_text())
+            self.assertGreater(page.locator(".ns-vers").count(), 0)
+        finally:
+            page.close()
+
+    def test_mislukte_tekstfetch_laat_de_beschrijving_staan(self):
         page = self.browser.new_page(viewport={"width": 1280, "height": 900})
         try:
             page.route("**/data/naslag-teksten/liederen/lied-bij-de-schelfzee.json", lambda route: route.abort())
             page.goto(f"{self.base_url}/liederen.html?item=lied-bij-de-schelfzee")
             page.locator(".ns-tekstfout").wait_for(state="visible")
             self.assertTrue(page.locator(".ns-beschrijving").is_visible())
-            self.assertGreater(page.locator(".ns-vers").count(), 0)
+            self.assertEqual(page.locator(".ns-vers").count(), 0)
             self.assertEqual(
                 page.locator(".ns-tekstfout").inner_text(),
                 "De volledige tekst kon niet geladen worden.",

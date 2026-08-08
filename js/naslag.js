@@ -66,6 +66,15 @@
         })
         .catch(function () { houder.textContent = 'De gegevens konden niet geladen worden.'; });
 
+    function overzichtPassage(it) {
+        if (it.overzichtLabel) return it.overzichtLabel;
+        var labels = [];
+        for (var i = 0; i < it.tekstpassages.length; i++) {
+            labels.push(it.tekstpassages[i].label);
+        }
+        return labels.join(' · ');
+    }
+
     function toonOverzicht(d) {
         document.title = d.titel + ' — Open Vertaling';
         var h = '<h1>' + esc(d.titel) + '</h1>';
@@ -76,7 +85,8 @@
             h += '<a class="ns-kaart" href="?item=' + encodeURIComponent(it.id) + '">' +
                  (d.nummerType ? '<span class="ns-nummer">' + esc(d.nummerType) + ' ' + (i + 1) + '</span>' : '') +
                  '<span class="ns-kaart-naam">' + esc(it.naam) + '</span>' +
-                 (d.nummerType === 'Lied' ? '' : '<span class="ns-kaart-tal">' + it.verzen.length +
+                 (d.nummerType === 'Lied' ? '<span class="ns-kaart-passage">' + esc(overzichtPassage(it)) + '</span>' :
+                 '<span class="ns-kaart-tal">' + it.verzen.length +
                  (it.verzen.length === 1 ? ' vindplaats' : ' vindplaatsen') + '</span>') + '</a>';
         }
         h += '</div>';
@@ -97,14 +107,14 @@
                  '<h2 class="ns-kop">Volledige tekst</h2>' +
                  '<p class="ns-tekstladen">De volledige tekst wordt geladen…</p></section>';
         }
-        if (d.nummerType) {
+        if (d.nummerType === 'Gebed') {
             h += '<h2 class="ns-kop">Vindplaatsen in ' + esc(d.bron) + '</h2>';
             h += '<p class="ns-verzen">';
             for (var i = 0; i < it.verzen.length; i++) {
                 h += versLink(d.bron, it.verzen[i]) + ' ';
             }
             h += '</p>';
-        } else {
+        } else if (!d.nummerType) {
             h += '<h2 class="ns-kop">Teksten in ' + esc(d.bron) + '</h2>';
             h += '<ol id="naslag-gekoppelde-teksten" class="gt-lijst"></ol>';
         }
@@ -158,18 +168,6 @@
         container.textContent = '';
         container.appendChild(maakElement('h2', 'ns-kop', 'Volledige tekst'));
 
-        var isPsalmen = bundle.id === 'de-psalmen';
-        if (isPsalmen) {
-            var sprongen = maakElement('nav', 'ns-psalm-sprongen');
-            sprongen.setAttribute('aria-label', 'Ga naar een psalm');
-            for (var psalm = 1; psalm <= 150; psalm++) {
-                var link = maakElement('a', '', String(psalm));
-                link.href = '#psalm-' + psalm;
-                sprongen.appendChild(link);
-            }
-            container.appendChild(sprongen);
-        }
-
         for (var p = 0; p < bundle.passages.length; p++) {
             var passage = bundle.passages[p];
             var passageNode = maakElement('section', 'ns-passage');
@@ -177,12 +175,9 @@
 
             for (var s = 0; s < passage.sections.length; s++) {
                 var section = passage.sections[s];
-                if (isPsalmen || passage.sections.length > 1) {
-                    var sectionTitle = isPsalmen
-                        ? 'Psalm ' + section.hoofdstuk
-                        : passage.label.split(':')[0] + ', hoofdstuk ' + section.hoofdstuk;
+                if (passage.sections.length > 1) {
+                    var sectionTitle = passage.label.split(':')[0] + ', hoofdstuk ' + section.hoofdstuk;
                     var sectionHeading = maakElement('h4', 'ns-sectie-kop', sectionTitle);
-                    if (isPsalmen) sectionHeading.id = 'psalm-' + section.hoofdstuk;
                     passageNode.appendChild(sectionHeading);
                 }
 
