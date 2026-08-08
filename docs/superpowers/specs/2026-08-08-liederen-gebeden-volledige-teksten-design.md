@@ -23,12 +23,16 @@ Deze uitbreiding heeft drie doelen:
 Liederen en gebeden hebben elk hun eigen nummerreeks. De eerder verwijderde
 inleiding boven het gebedenoverzicht keert niet terug.
 
+Het huidige verzamelitem voor Paulus' drie gebeden wordt opgesplitst in twee
+gebeden voor Efeze en één gebed voor Filippi. Daardoor groeit het doel van 36
+naar 38 afzonderlijke gebedsitems.
+
 ## Vastgestelde keuzes
 
 | Onderwerp | Keuze |
 |---|---|
 | Liednummering | Eén reeks `1` t/m `31`, afgeleid van de volgorde in de liederen-data |
-| Gebedsnummering | Eén afzonderlijke reeks `1` t/m `36`, afgeleid van de volgorde in de gebeden-data |
+| Gebedsnummering | Eén afzonderlijke reeks `1` t/m `38`, afgeleid van de volgorde in de gebeden-data |
 | Betekenis van chronologisch | Volgorde van de Bijbelse verhaallijn; niet de moderne datering van de uiteindelijke boekvorm |
 | Psalmen | Eén genummerd item met Psalm 1 t/m 150 |
 | Gebeden | Chronologisch genummerd en voorzien van de volledige tekst |
@@ -90,7 +94,7 @@ Chronologische uitzonderingen worden niet verzwegen:
 ## Chronologische gebedsvolgorde en volledige passages
 
 De gebeden-data wordt de gezaghebbende volgorde voor een afzonderlijke reeks
-`Gebed 1` t/m `Gebed 36`. Ook hier geldt de Bijbelse verhaallijn. Ondateerbare
+`Gebed 1` t/m `Gebed 38`. Ook hier geldt de Bijbelse verhaallijn. Ondateerbare
 wijsheids- en apocriefe passages staan bij hun traditionele of verhalende
 historische setting.
 
@@ -131,7 +135,9 @@ historische setting.
 | 33 | Jezus in Gethsemane | Mattheüs 26:39–44 |
 | 34 | Het gebed van de gemeente | Handelingen 4:24–30 |
 | 35 | Het gebed van Stefanus | Handelingen 7:59–60 |
-| 36 | Paulus' gebeden voor de gemeenten | Efeziërs 1:16–23, Efeziërs 3:14–21 en Filippenzen 1:9–11 |
+| 36 | Paulus' eerste gebed voor de gemeente in Efeze | Efeziërs 1:16–23 |
+| 37 | Paulus' tweede gebed voor de gemeente in Efeze | Efeziërs 3:14–21 |
+| 38 | Paulus' gebed voor de gemeente in Filippi | Filippenzen 1:9–11 |
 
 Een grens selecteert altijd volledige verzen. Als een vers eerst de bidder
 introduceert en daarna de gebedswoorden geeft, blijft het hele vers staan; de
@@ -183,7 +189,7 @@ Een nieuw script `scripts/build_naslag_teksten.py`:
    `data/naslag-teksten/<soort>/<id>.json`;
 5. stopt met een fout bij een ontbrekend hoofdstuk, vers, tekstveld, dubbel
    item-id, een ander aantal dan 31 geordende lied-items of een ander aantal
-   dan 36 geordende gebedsitems.
+   dan 38 geordende gebedsitems.
 
 Er is bewust geen terugval op `text1637`, `textSV1888` of `text2026_html`.
 Daardoor kan een onvolledige Open Vertaling niet ongemerkt worden vermengd met
@@ -203,7 +209,7 @@ de bronhoofdstukken.
 - iedere tegel krijgt een compact gouden nummerlabel `Lied 1`, `Lied 2`, …;
 - de tegelnaam en het bestaande aantal vindplaatsen blijven staan;
 - de DOM-volgorde is tevens de chronologische volgorde;
-- het overzicht Gebeden krijgt op dezelfde wijze `Gebed 1` t/m `Gebed 36` en
+- het overzicht Gebeden krijgt op dezelfde wijze `Gebed 1` t/m `Gebed 38` en
   behoudt geen inleidende tekst of lege introductiebox.
 
 ### Detailpagina
@@ -249,7 +255,7 @@ liednummers gepresenteerd.
 1. alle `tekstpassages` verwijzen naar bestaande hoofdstukken en verzen;
 2. elk geselecteerd vers heeft een niet-lege `text2026`;
 3. de gebouwde tekst is byte-voor-byte gelijk aan de tekst uit de brondata;
-4. de 31 liednummers en 36 gebedsnummers zijn per reeks uniek, oplopend en
+4. de 31 liednummers en 38 gebedsnummers zijn per reeks uniek, oplopend en
    aaneengesloten;
 5. de Psalmen zijn één lied-item en de bundel bevat precies 150 psalmkoppen;
 6. samengestelde items bewaren de opgegeven passagevolgorde;
@@ -258,15 +264,17 @@ liednummers gepresenteerd.
 ### Browsertests
 
 1. het liederenoverzicht toont `Lied 1` t/m `Lied 31` in DOM-volgorde;
-2. het gebedenoverzicht toont `Gebed 1` t/m `Gebed 36` in DOM-volgorde;
+2. het gebedenoverzicht toont `Gebed 1` t/m `Gebed 38` in DOM-volgorde;
 3. een gewone lieddetailpagina toont de volledige eerste en laatste versregel;
 4. een gebed met meerdere passages toont alle passagekoppen en zijn nummer;
-5. de Psalmen-pagina biedt ankers 1 t/m 150 en toont de tekst van Psalm 1 en
+5. de drie gebeden van Paulus hebben elk een eigen kaart, nummer, detailpagina
+   en tekstbundel;
+6. de Psalmen-pagina biedt ankers 1 t/m 150 en toont de tekst van Psalm 1 en
    Psalm 150;
-6. een item zonder overgeleverde woorden toont de melding en geen verzonnen
+7. een item zonder overgeleverde woorden toont de melding en geen verzonnen
    liedtekst;
-7. een mislukte tekstfetch laat titel, beschrijving en vindplaatslinks staan;
-8. het gebedenoverzicht bevat geen `.ns-lead`.
+8. een mislukte tekstfetch laat titel, beschrijving en vindplaatslinks staan;
+9. het gebedenoverzicht bevat geen `.ns-lead`.
 
 ## Buiten scope
 
