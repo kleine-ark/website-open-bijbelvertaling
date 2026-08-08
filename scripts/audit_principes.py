@@ -203,7 +203,13 @@ def bereik_nagelopen(principes, verzen):
         binnen, boeken = set(), set()
         for boek, plaatsen in (ber or {}).items():
             boeken.add(boek.lower())
-            for x in (plaatsen or []):
+            # Een boek zonder hoofdstukken (null of een lege lijst) betekent
+            # "het hele boek". Wie dat als een leeg bereik leest, meldt elke
+            # toepassing in dat boek als "buiten bereik" — precies andersom.
+            if not plaatsen:
+                binnen.update(k for k in per_vers if k[0] == boek.lower())
+                continue
+            for x in plaatsen:
                 if isinstance(x, int):
                     binnen.update(k for k in per_vers if k[0] == boek.lower() and k[1] == x)
                 else:

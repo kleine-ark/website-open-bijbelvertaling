@@ -9146,15 +9146,17 @@
    "categorie": "Verouderde woorden",
    "oud": "gelijkenis maken",
    "nieuw": "afbeelding maken",
-   "toelichting": "In het tweede gebod gaat het om een afbeelding. Elders betekent 'gelijkenis' een parabel en blijft het staan.",
+   "toelichting": "In het tweede gebod gaat het om een afbeelding. Elders betekent 'gelijkenis' een parabel en blijft het staan. Uitdrukkelijk NIET in Deuteronomium 4:12 en 4:15 — daar wordt niets gemaakt maar gezien (\"u zag geen gelijkenis\", \"u hebt geen gelijkenis gezien\"); het gaat daar om de gedaante van JAHWEH die niemand zag, niet om een afbeelding, en \"afbeelding\" keert de betekenis om.",
    "regex": "",
    "bereik": {
     "exodus": [
-     20
+     "20:4"
     ],
     "deuteronomium": [
-     4,
-     5
+     "4:16",
+     "4:23",
+     "4:25",
+     "5:8"
     ]
    }
   },
@@ -9177,12 +9179,23 @@
    "categorie": "Verouderde woorden",
    "oud": "schenkel / schenkelen (dier)",
    "nieuw": "poot / poten",
-   "toelichting": "Bij offerdieren. Bij mensen (Daniël, Hooglied, Jesaja) zijn het benen — zie V1066.",
+   "toelichting": "Bij offerdieren. Toegepast in Exodus 12:9 en 29:17, Leviticus 1:9, 1:13, 4:11, 8:21, 9:14 en 11:21, en Amos 3:12. Bij mensen (Daniël, Hooglied, Jesaja) zijn het benen — zie V1066.",
    "regex": "",
    "bereik": {
-    "leviticus": null,
-    "exodus": null,
-    "amos": null
+    "leviticus": [
+     1,
+     4,
+     8,
+     9,
+     11
+    ],
+    "exodus": [
+     12,
+     29
+    ],
+    "amos": [
+     3
+    ]
    }
   },
   {
@@ -9190,12 +9203,18 @@
    "categorie": "Verouderde woorden",
    "oud": "schenkel / schenkelen (mens)",
    "nieuw": "been / benen",
-   "toelichting": "'schenkel / schenkelen (mens)' is verouderd.",
+   "toelichting": "Bij mensen zijn het benen: Daniël 2:33, Hooglied 5:15 en Jesaja 47:2. Bij offerdieren zijn het poten — zie V1065. Richteren 15:8 (\"de schenkel en de heup\") valt buiten beide bereiken en is niet gewijzigd.",
    "regex": "",
    "bereik": {
-    "daniel": null,
-    "hooglied": null,
-    "jesaja": null
+    "daniel": [
+     2
+    ],
+    "hooglied": [
+     5
+    ],
+    "jesaja": [
+     47
+    ]
    }
   },
   {
@@ -9403,7 +9422,7 @@
    "categorie": "Verouderde woorden",
    "oud": "de klauw verdelen",
    "nieuw": "gespleten hoeven hebben",
-   "toelichting": "'de klauw verdelen' is verouderd.",
+   "toelichting": "Statenvertaling-uitdrukking voor een gespleten hoef. Ook de vervoegde en ontkende vormen vallen eronder: \"verdeelt den klauw niet\" wordt \"heeft geen gespleten hoeven\". Toegepast in Leviticus 11:3-7 en 11:26 en Deuteronomium 14:6-8.",
    "regex": "",
    "bereik": {
     "leviticus": [
