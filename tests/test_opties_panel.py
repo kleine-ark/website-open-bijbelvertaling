@@ -235,6 +235,12 @@ class OptionsPanelBrowserTests(unittest.TestCase):
                 page.locator("#sidebar-right-open").get_attribute("aria-label"),
                 "Leesvoorkeuren openen",
             )
+            self.assertEqual(
+                page.locator("#sidebar-right-open").evaluate(
+                    "el => getComputedStyle(el).display"
+                ),
+                "grid",
+            )
         finally:
             page.close()
 
