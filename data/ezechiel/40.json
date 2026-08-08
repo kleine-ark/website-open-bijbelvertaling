@@ -1413,7 +1413,7 @@
       "number": 10,
       "textSV1888": "En de kamertjes der poort, den weg naar het oosten, waren drie van deze, en drie van gene zijde; die drie hadden enerlei maat; ook hadden de posten, van deze en van gene zijde, enerlei maat.",
       "text1637": "Ende de kamerkens der poorte des weegs nae’t oosten, waren [39] drie van dese, ende drie van gene zijde; die drie hadden eenderley mate: oock hadden de posten, van dese ende van gene zijde, eenderley mate.",
-      "text2026": "En de kamertjes van de poort, de weg naar het oosten, waren drie van deze, en drie van de andere zijde; die drie hadden enerlei maat; ook hadden de posten, van deze en van de andere zijde, enerlei maat.",
+      "text2026": "En de kamertjes van de poort, de weg naar het oosten, waren drie van deze, en drie van de andere zijde; die drie hadden dezelfde maat; ook hadden de posten, van deze en van de andere zijde, dezelfde maat.",
       "marginNotes": [
         {
           "marker": "39",
@@ -1505,7 +1505,7 @@
           "morph": "HC/R/D"
         }
       ],
-      "text2026_html": "En de kamertjes van de poort, de weg naar het oosten, waren<sup class=\"note-marker\" data-note=\"39\">39</sup> drie van deze, en drie van de andere zijde; die drie hadden enerlei maat; ook hadden de posten, van deze en van de andere zijde, enerlei maat.",
+      "text2026_html": "En de kamertjes van de poort, de weg naar het oosten, waren<sup class=\"note-marker\" data-note=\"39\">39</sup> drie van deze, en drie van de andere zijde; die drie hadden dezelfde maat; ook hadden de posten, van deze en van de andere zijde, dezelfde maat.",
       "textSV1888_html": "En de kamertjes der poort, den weg naar het oosten, waren<sup class=\"note-marker\" data-note=\"39\">39</sup> drie van deze, en drie van gene zijde; die drie hadden enerlei maat; ook hadden de posten, van deze en van gene zijde, enerlei maat.",
       "text1637_html": "Ende de kamerkens der poorte des weegs nae’t oosten, waren <sup class=\"note-marker\" data-note=\"39\">39</sup> drie van dese, ende drie van gene zijde; die drie hadden eenderley mate: oock hadden de posten, van dese ende van gene zijde, eenderley mate.",
       "phraseDiff": [
@@ -1525,9 +1525,19 @@
           "principe": "V736"
         },
         {
+          "old": "enerlei",
+          "new": "dezelfde",
+          "principe": "V1163"
+        },
+        {
           "old": "gene",
           "new": "de andere",
           "principe": "V736"
+        },
+        {
+          "old": "enerlei",
+          "new": "dezelfde",
+          "principe": "V1163"
         }
       ]
     },

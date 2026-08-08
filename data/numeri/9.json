@@ -844,7 +844,7 @@
       "number": 8,
       "textSV1888": "En Mozes zeide tot hen: Blijft staande, dat ik hoor, wat de HEERE u gebieden zal.",
       "text1637": "Ende Mose seyde tot hen: Blijft staende, dat ick hoore wat de HEERE u gebieden sal.",
-      "text2026": "En Mozes zei tot hen: Blijft staande, dat ik hoor, wat JAHWEH u gebieden zal.",
+      "text2026": "En Mozes zei tot hen: Blijf staande, dat ik hoor, wat JAHWEH u gebieden zal.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -893,13 +893,18 @@
           "morph": "HR/Sp2mp"
         }
       ],
-      "text2026_html": "En Mozes zei tot hen: <span class=\"direct-speech\"><i>Blijft staande, dat ik hoor, wat JAHWEH u gebieden zal.</i></span>",
+      "text2026_html": "En Mozes zei tot hen: <span class=\"direct-speech\"><i>Blijf staande, dat ik hoor, wat JAHWEH u gebieden zal.</i></span>",
       "text1637_html": "Ende Mose seyde tot hen: Blijft staende, dat ick hoore wat de HEERE u gebieden sal.",
       "phraseDiff": [
         {
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Blijft",
+          "new": "Blijf",
+          "principe": "V1158"
         },
         {
           "old": "de HEERE",
@@ -1453,7 +1458,7 @@
       "number": 14,
       "textSV1888": "En wanneer een vreemdeling bij u als vreemdeling verkeert, en hij het pascha den HEERE ook houden zal, naar de inzetting van het pascha, en naar zijn wijze, alzo zal hij het houden; het zal enerlei inzetting voor ulieden zijn, beiden den vreemdeling en den inboorling des lands.",
       "text1637": "Ende wanneer een vreemdelinck by u als vreemdelinck verkeert, ende hy het Paesschen den HEERE oock houden sal, nae de insettinge van het Paesschen, ende nae [18] sijne wijse, alsoo sal hy het houden: [c] het sal eenderley insettinge voor u lieden zijn, beyde den vreemdelinck ende den inboorlinck des lants.",
-      "text2026": "En wanneer een vreemdeling bij u als vreemdeling verkeert, en hij het pascha voor JAHWEH ook houden zal, naar de inzetting van het pascha, en naar zijn wijze, zo zal hij het houden; het zal enerlei inzetting voor u zijn, beiden de vreemdeling en de ingezetene van het land.",
+      "text2026": "En wanneer een vreemdeling bij u als vreemdeling verkeert, en hij het pascha voor JAHWEH ook houden zal, naar de inzetting van het pascha, en naar zijn wijze, zo zal hij het houden; het zal één inzetting voor u zijn, beiden de vreemdeling en de ingezetene van het land.",
       "marginNotes": [
         {
           "marker": "18",
@@ -1567,7 +1572,7 @@
           "morph": "HTd/Ncbsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En wanneer een vreemdeling bij u als vreemdeling verkeert, en hij het pascha voor JAHWEH ook houden zal, naar de inzetting van het pascha, en naar<sup class=\"note-marker\" data-note=\"18\">18</sup> zijn wijze, zo zal hij het houden;<sup class=\"note-marker\" data-note=\"c\">c</sup> het zal enerlei inzetting voor u zijn, beiden de vreemdeling en de ingezetene van het land.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En wanneer een vreemdeling bij u als vreemdeling verkeert, en hij het pascha voor JAHWEH ook houden zal, naar de inzetting van het pascha, en naar<sup class=\"note-marker\" data-note=\"18\">18</sup> zijn wijze, zo zal hij het houden;<sup class=\"note-marker\" data-note=\"c\">c</sup> het zal één inzetting voor u zijn, beiden de vreemdeling en de ingezetene van het land.</i></span>",
       "textSV1888_html": "En wanneer een vreemdeling bij u als vreemdeling verkeert, en hij het pascha den HEERE ook houden zal, naar de inzetting van het pascha, en naar<sup class=\"note-marker\" data-note=\"18\">18</sup> zijn wijze, alzo zal hij het houden;<sup class=\"note-marker\" data-note=\"c\">c</sup> het zal enerlei inzetting voor ulieden zijn, beiden den vreemdeling en den inboorling des lands.",
       "text1637_html": "Ende wanneer een vreemdelinck by u als vreemdelinck verkeert, ende hy het Paesschen den HEERE oock houden sal, nae de insettinge van het Paesschen, ende nae <sup class=\"note-marker\" data-note=\"18\">18</sup> sijne wijse, alsoo sal hy het houden: <sup class=\"note-marker\" data-note=\"c\">c</sup> het sal eenderley insettinge voor u lieden zijn, beyde den vreemdelinck ende den inboorlinck des lants.",
       "phraseDiff": [
@@ -1580,6 +1585,11 @@
           "old": "alzo",
           "new": "zo",
           "principe": "V42"
+        },
+        {
+          "old": "enerlei",
+          "new": "één",
+          "principe": "V1163"
         },
         {
           "old": "ulieden",

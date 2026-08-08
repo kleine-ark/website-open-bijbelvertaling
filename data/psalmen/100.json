@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Een lofzang. Gij ganse aarde! juicht den HEERE.",
       "text1637": "[1] EEn Lof-psalm. [2] Ghy gantsche aerde juycht den [3] HEERE.",
-      "text2026": "Een lofzang. U hele aarde! juicht JAHWEH.",
+      "text2026": "Een lofzang. U hele aarde! juich JAHWEH.",
       "marginNotes": [
         {
           "marker": "1",
@@ -61,7 +61,7 @@
           "morph": "HTd/Ncbsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> Een lofzang.<sup class=\"note-marker\" data-note=\"2\">2</sup> U hele aarde! juicht<sup class=\"note-marker\" data-note=\"3\">3</sup> JAHWEH.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> Een lofzang.<sup class=\"note-marker\" data-note=\"2\">2</sup> U hele aarde! juich<sup class=\"note-marker\" data-note=\"3\">3</sup> JAHWEH.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> Een lofzang.<sup class=\"note-marker\" data-note=\"2\">2</sup> Gij ganse aarde! juicht den<sup class=\"note-marker\" data-note=\"3\">3</sup> HEERE.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> EEn Lof-psalm. <sup class=\"note-marker\" data-note=\"2\">2</sup> Ghy gantsche aerde juycht den <sup class=\"note-marker\" data-note=\"3\">3</sup> HEERE.",
       "phraseDiff": [
@@ -71,9 +71,9 @@
           "principe": "A1"
         },
         {
-          "old": "den HEERE.",
-          "new": "JAHWEH.",
-          "principe": "N1"
+          "old": "juicht den HEERE.",
+          "new": "juich JAHWEH.",
+          "principe": "V1158"
         }
       ]
     },
@@ -254,7 +254,7 @@
       "number": 4,
       "textSV1888": "Gaat in tot Zijn poorten met lof, in Zijn voorhoven met lofgezang; looft Hem, prijst Zijn Naam.",
       "text1637": "Gaet in [7] tot sijne poorten met [8] lof: in [9] sijne voorhoven, met lofsanck: lovet hem, prijst sijnen Name.",
-      "text2026": "Gaat in tot Zijn poorten met lof, in Zijn voorhoven met lofgezang; looft Hem, prijst Zijn Naam.",
+      "text2026": "Ga in tot Zijn poorten met lof, in Zijn voorhoven met lofgezang; loof Hem, prijst Zijn Naam.",
       "marginNotes": [
         {
           "marker": "7",
@@ -325,10 +325,21 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "Gaat in<sup class=\"note-marker\" data-note=\"7\">7</sup> tot Zijn poorten met<sup class=\"note-marker\" data-note=\"8\">8</sup> lof, in<sup class=\"note-marker\" data-note=\"9\">9</sup> Zijn voorhoven met lofgezang; looft Hem, prijst Zijn Naam.",
+      "text2026_html": "Ga in<sup class=\"note-marker\" data-note=\"7\">7</sup> tot Zijn poorten met<sup class=\"note-marker\" data-note=\"8\">8</sup> lof, in<sup class=\"note-marker\" data-note=\"9\">9</sup> Zijn voorhoven met lofgezang; loof Hem, prijst Zijn Naam.",
       "textSV1888_html": "Gaat in<sup class=\"note-marker\" data-note=\"7\">7</sup> tot Zijn poorten met<sup class=\"note-marker\" data-note=\"8\">8</sup> lof, in<sup class=\"note-marker\" data-note=\"9\">9</sup> Zijn voorhoven met lofgezang; looft Hem, prijst Zijn Naam.",
       "text1637_html": "Gaet in <sup class=\"note-marker\" data-note=\"7\">7</sup> tot sijne poorten met <sup class=\"note-marker\" data-note=\"8\">8</sup> lof: in <sup class=\"note-marker\" data-note=\"9\">9</sup> sijne voorhoven, met lofsanck: lovet hem, prijst sijnen Name.",
-      "phraseDiff": []
+      "phraseDiff": [
+        {
+          "old": "Gaat",
+          "new": "Ga",
+          "principe": "V1158"
+        },
+        {
+          "old": "looft",
+          "new": "loof",
+          "principe": "V1158"
+        }
+      ]
     },
     {
       "number": 5,

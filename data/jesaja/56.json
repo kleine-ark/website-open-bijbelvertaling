@@ -259,7 +259,7 @@
       "number": 3,
       "textSV1888": "En de vreemde, die zich tot den HEERE gevoegd heeft, spreke niet, zeggende: De HEERE heeft mij gans en al van Zijn volk gescheiden; en de gesnedene zegge niet: Ziet, ik ben een dorre boom.",
       "text1637": "Ende [7] de vreemde die hem tot den HEERE gevoecht heeft, [8] en spreke niet, seggende, De HEERE heeft my gantsch en gaer van sijnen volcke gescheyden: ende de gesnedene en segge niet, Siet, [9] ick ben een dorren boom.",
-      "text2026": "En de vreemde, die zich tot JAHWEH gevoegd heeft, spreke niet, zeggende: JAHWEH heeft mij geheel en al van Zijn volk gescheiden; en de gesnedene zeg niet: Ziet, ik ben een dorre boom.",
+      "text2026": "En de vreemde, die zich tot JAHWEH gevoegd heeft, spreke niet, zeggende: JAHWEH heeft mij geheel en al van Zijn volk gescheiden; en de gesnedene zeg niet: Zie, ik ben een dorre boom.",
       "marginNotes": [
         {
           "marker": "8",
@@ -385,7 +385,7 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "En de vreemde, die zich tot JAHWEH gevoegd heeft, spreke niet, zeggende: <span class=\"direct-speech\"><i>JAHWEH heeft mij geheel en al van Zijn volk gescheiden; en de gesnedene zeg niet: <span class=\"direct-speech\"><i>Ziet, ik ben een dorre boom.</i></span></i></span>",
+      "text2026_html": "En de vreemde, die zich tot JAHWEH gevoegd heeft, spreke niet, zeggende: <span class=\"direct-speech\"><i>JAHWEH heeft mij geheel en al van Zijn volk gescheiden; en de gesnedene zeg niet: <span class=\"direct-speech\"><i>Zie, ik ben een dorre boom.</i></span></i></span>",
       "textSV1888_html": "En de vreemde, die zich tot den HEERE gevoegd heeft,<sup class=\"note-marker\" data-note=\"8\">8</sup> spreke niet, zeggende: De HEERE heeft mij gans en al van Zijn volk gescheiden; en de gesnedene zegge niet: Ziet,<sup class=\"note-marker\" data-note=\"9\">9</sup> ik ben een dorre boom.",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"7\">7</sup> de vreemde die hem tot den HEERE gevoecht heeft, <sup class=\"note-marker\" data-note=\"8\">8</sup> en spreke niet, seggende, De HEERE heeft my gantsch en gaer van sijnen volcke gescheyden: ende de gesnedene en segge niet, Siet, <sup class=\"note-marker\" data-note=\"9\">9</sup> ick ben een dorren boom.",
       "phraseDiff": [
@@ -408,6 +408,11 @@
           "old": "zegge",
           "new": "zeg",
           "principe": "V401"
+        },
+        {
+          "old": "Ziet,",
+          "new": "Zie,",
+          "principe": "V1158"
         }
       ]
     },
@@ -1445,7 +1450,7 @@
       "number": 12,
       "textSV1888": "Komt herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterken drank zuipen; en de dag van morgen zal zijn als deze, ja, groter, veel treffelijker.",
       "text1637": "Comt herwaerts, [seggen sy] [38] ick sal wijn halen, ende wy sullen stercken dranck suypen: [39] ende, [40] de dach van morgen sal zijn als dese, [41] [ja] grooter, veel treffelicker.",
-      "text2026": "Komt herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterke drank zuipen; en de dag van morgen zal zijn als deze, ja, groter, veel treffelijker.",
+      "text2026": "Kom herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterke drank zuipen; en de dag van morgen zal zijn als deze, ja, groter, veel treffelijker.",
       "marginNotes": [
         {
           "marker": "40",
@@ -1538,10 +1543,15 @@
           "morph": "HD"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Komt herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterke drank zuipen; en<sup class=\"note-marker\" data-note=\"40\">40</sup> de dag van morgen zal zijn als deze,<sup class=\"note-marker\" data-note=\"41\">41</sup> ja, groter, veel treffelijker.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Kom herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterke drank zuipen; en<sup class=\"note-marker\" data-note=\"40\">40</sup> de dag van morgen zal zijn als deze,<sup class=\"note-marker\" data-note=\"41\">41</sup> ja, groter, veel treffelijker.</i></span>",
       "textSV1888_html": "Komt herwaarts, zeggen zij: ik zal wijn halen, en wij zullen sterken drank zuipen; en<sup class=\"note-marker\" data-note=\"40\">40</sup> de dag van morgen zal zijn als deze,<sup class=\"note-marker\" data-note=\"41\">41</sup> ja, groter, veel treffelijker.",
       "text1637_html": "Comt herwaerts, [seggen sy] <sup class=\"note-marker\" data-note=\"38\">38</sup> ick sal wijn halen, ende wy sullen stercken dranck suypen: <sup class=\"note-marker\" data-note=\"39\">39</sup> ende, <sup class=\"note-marker\" data-note=\"40\">40</sup> de dach van morgen sal zijn als dese, <sup class=\"note-marker\" data-note=\"41\">41</sup> [ja] grooter, veel treffelicker.",
       "phraseDiff": [
+        {
+          "old": "Komt",
+          "new": "Kom",
+          "principe": "V1158"
+        },
         {
           "old": "sterken",
           "new": "sterke",

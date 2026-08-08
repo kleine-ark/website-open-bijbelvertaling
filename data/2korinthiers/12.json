@@ -1849,7 +1849,7 @@
       "number": 13,
       "textSV1888": "Want wat is er, waarin gij minder geweest zijt dan de andere Gemeenten, anders, dan dat ik zelf u niet lastig ben geweest? Vergeeft mij dit ongelijk.",
       "text1637": "Want wat isser, daer in ghy minder geweest zijt dan [23] de andere Gemeynten, [e] anders, dan dat ick selve u [24] niet lastigh en ben geweest? [25] vergeeft my dit ongelijck.",
-      "text2026": "Want wat is er, waarin u minder geweest bent dan de andere Gemeenten, anders, dan dat ik zelf u niet tot last ben geweest? Vergeeft mij dit ongelijk.",
+      "text2026": "Want wat is er, waarin u minder geweest bent dan de andere Gemeenten, anders, dan dat ik zelf u niet tot last ben geweest? Vergeef mij dit ongelijk.",
       "marginNotes": [
         {
           "marker": "23",
@@ -2014,7 +2014,7 @@
           "gloss": "〔this/he/she/it"
         }
       ],
-      "text2026_html": "Want wat is er, waarin u minder geweest bent dan<sup class=\"note-marker\" data-note=\"23\">23</sup> de andere Gemeenten,<sup class=\"note-marker\" data-note=\"e\">e</sup> anders, dan dat ik zelf u<sup class=\"note-marker\" data-note=\"24\">24</sup> niet tot last ben geweest?<sup class=\"note-marker\" data-note=\"25\">25</sup> Vergeeft mij dit ongelijk.",
+      "text2026_html": "Want wat is er, waarin u minder geweest bent dan<sup class=\"note-marker\" data-note=\"23\">23</sup> de andere Gemeenten,<sup class=\"note-marker\" data-note=\"e\">e</sup> anders, dan dat ik zelf u<sup class=\"note-marker\" data-note=\"24\">24</sup> niet tot last ben geweest?<sup class=\"note-marker\" data-note=\"25\">25</sup> Vergeef mij dit ongelijk.",
       "textSV1888_html": "Want wat is er, waarin gij minder geweest zijt dan<sup class=\"note-marker\" data-note=\"23\">23</sup> de andere Gemeenten,<sup class=\"note-marker\" data-note=\"e\">e</sup> anders, dan dat ik zelf u<sup class=\"note-marker\" data-note=\"24\">24</sup> niet lastig ben geweest?<sup class=\"note-marker\" data-note=\"25\">25</sup> Vergeeft mij dit ongelijk.",
       "text1637_html": "Want wat isser, daer in ghy minder geweest zijt dan <sup class=\"note-marker\" data-note=\"23\">23</sup> de andere Gemeynten, <sup class=\"note-marker\" data-note=\"e\">e</sup> anders, dan dat ick selve u <sup class=\"note-marker\" data-note=\"24\">24</sup> niet lastigh en ben geweest? <sup class=\"note-marker\" data-note=\"25\">25</sup> vergeeft my dit ongelijck.",
       "phraseDiff": [
@@ -2032,6 +2032,11 @@
           "old": "lastig",
           "new": "tot last",
           "principe": "V856"
+        },
+        {
+          "old": "Vergeeft",
+          "new": "Vergeef",
+          "principe": "V1158"
         }
       ]
     },
@@ -2039,7 +2044,7 @@
       "number": 14,
       "textSV1888": "Ziet, ik ben ten derden male gereed, om tot u te komen, en zal u niet lastig zijn; want ik zoek niet het uwe, maar u; want de kinderen moeten niet schatten vergaderen voor de ouders, maar de ouders voor de kinderen.",
       "text1637": "Siet ick ben [26] ten derdenmael gereet om tot u te comen, ende en sal u niet lastigh zijn. [f] Want ick en soecke [27] niet het uwe, maer u. Want de kinderen en moeten niet schatten vergaderen voor de ouders, maer de ouders voor de kinderen.",
-      "text2026": "Ziet, ik ben voor de derde keer gereed, om tot u te komen, en zal u niet tot last zijn; want ik zoek niet het uwe, maar u; want de kinderen moeten niet schatten verzamelen voor de ouders, maar de ouders voor de kinderen.",
+      "text2026": "Zie, ik ben voor de derde keer gereed, om tot u te komen, en zal u niet tot last zijn; want ik zoek niet het uwe, maar u; want de kinderen moeten niet schatten verzamelen voor de ouders, maar de ouders voor de kinderen.",
       "marginNotes": [
         {
           "marker": "26",
@@ -2251,10 +2256,15 @@
           "gloss": "〔child"
         }
       ],
-      "text2026_html": "Ziet, ik ben<sup class=\"note-marker\" data-note=\"26\">26</sup> voor de derde keer gereed, om tot u te komen, en zal u niet tot last zijn;<sup class=\"note-marker\" data-note=\"f\">f</sup> want ik zoek<sup class=\"note-marker\" data-note=\"27\">27</sup> niet het uwe, maar u; want de kinderen moeten niet schatten verzamelen voor de ouders, maar de ouders voor de kinderen.",
+      "text2026_html": "Zie, ik ben<sup class=\"note-marker\" data-note=\"26\">26</sup> voor de derde keer gereed, om tot u te komen, en zal u niet tot last zijn;<sup class=\"note-marker\" data-note=\"f\">f</sup> want ik zoek<sup class=\"note-marker\" data-note=\"27\">27</sup> niet het uwe, maar u; want de kinderen moeten niet schatten verzamelen voor de ouders, maar de ouders voor de kinderen.",
       "textSV1888_html": "Ziet, ik ben<sup class=\"note-marker\" data-note=\"26\">26</sup> ten derden male gereed, om tot u te komen, en zal u niet lastig zijn;<sup class=\"note-marker\" data-note=\"f\">f</sup> want ik zoek<sup class=\"note-marker\" data-note=\"27\">27</sup> niet het uwe, maar u; want de kinderen moeten niet schatten vergaderen voor de ouders, maar de ouders voor de kinderen.",
       "text1637_html": "Siet ick ben <sup class=\"note-marker\" data-note=\"26\">26</sup> ten derdenmael gereet om tot u te comen, ende en sal u niet lastigh zijn. <sup class=\"note-marker\" data-note=\"f\">f</sup> Want ick en soecke <sup class=\"note-marker\" data-note=\"27\">27</sup> niet het uwe, maer u. Want de kinderen en moeten niet schatten vergaderen voor de ouders, maer de ouders voor de kinderen.",
       "phraseDiff": [
+        {
+          "old": "Ziet,",
+          "new": "Zie,",
+          "principe": "V1158"
+        },
         {
           "old": "ten derden male",
           "new": "voor de derde keer",
