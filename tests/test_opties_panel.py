@@ -59,9 +59,9 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         cls.server.server_close()
         cls.server_thread.join(timeout=2)
 
-    def open_reader(self, width=1280, height=900):
+    def open_reader(self, width=1280, height=900, location="genesis/1"):
         page = self.browser.new_page(viewport={"width": width, "height": height})
-        page.goto(f"{self.base_url}/index.html#genesis/1", wait_until="domcontentloaded")
+        page.goto(f"{self.base_url}/index.html#{location}", wait_until="domcontentloaded")
         opener = "#mobile-opties-btn" if width <= 768 else "#sidebar-right-open"
         page.locator(opener).wait_for(state="visible", timeout=15_000)
         return page
@@ -187,6 +187,22 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             page.locator("#sidebar-right-open").wait_for(state="visible", timeout=15_000)
             page.locator("#sidebar-right-open").click()
             self.assertEqual(page.locator("#options-zoom-value").inner_text(), "110%")
+        finally:
+            page.close()
+
+    def test_grote_getallen_kunnen_ook_in_cijfers_worden_getoond(self):
+        page = self.open_reader(location="numeri/2")
+        try:
+            page.locator("#sidebar-right-open").click()
+            page.get_by_text("Grote getallen", exact=True).click()
+            cijfers = page.locator('[data-optie="getalweergave"][value="cijfers"]')
+            self.assertEqual(cijfers.count(), 1)
+            cijfers.check()
+
+            verse_acht = page.locator('.verse-row[data-verse="8"] .col-2026')
+            verse_acht.wait_for(state="visible", timeout=5_000)
+            self.assertIn("zeven en vijftig duizend en vierhonderd", verse_acht.inner_text())
+            self.assertIn("57.400", verse_acht.inner_text())
         finally:
             page.close()
 

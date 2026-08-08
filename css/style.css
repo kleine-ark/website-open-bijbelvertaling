@@ -1476,6 +1476,14 @@ body.drawer-open #mobile-backdrop { display: block; }
 :root[data-theme="donker"] .maat-ijk { border-bottom-color: rgba(127,192,192,0.35); }
 @media print { .maat-omgerekend, .maat-ijk { border-bottom: none; } }
 
+.getal-cijfer {
+    color: var(--teal);
+    font-size: 0.82em;
+    font-style: normal;
+    white-space: nowrap;
+}
+:root[data-theme="donker"] .getal-cijfer { color: #7fc0c0; }
+
 /* Naar moderne kloktijd omgerekende tijdsaanduiding (optie 'Tijdsaanduidingen').
    Zelfde terughoudende markering als bij de maten: de tekst leest gewoon door,
    het origineel staat in het title-attribuut. */

@@ -15,6 +15,7 @@ const Opties = {
         jezusNaam: 'nl',         // 'nl' (Jezus Christus) | 'hebreeuws' (Yeshua HaMashiach) | 'koranisch' (Isa) | 'arabisch' (Yasūʿ al-Masīḥ)
         geoMarkeren: 'uit',      // 'uit' | 'aan' — geografische locaties in de tekst markeren (nu: Genesis)
         maatstelsel: 'bijbels',  // 'bijbels' (el, efa, sikkel) | 'metrisch' (meter, liter, gram) | 'imperiaal' (voet, gallon, pond)
+        getalweergave: 'woorden', // 'woorden' | 'cijfers' — zet grote uitgeschreven aantallen ook tussen haakjes in cijfers
         tijdrekening: 'bijbels', // 'bijbels' (de derde ure) | 'modern' (omstreeks negen uur 's ochtends)
     },
 
@@ -239,6 +240,10 @@ const Opties = {
             out = this._replaceOutsideTags(out, this._arNamen);
         }
 
+        // Grote aantallen blijven uitgeschreven en krijgen desgewenst een
+        // compact cijferbeeld ernaast, bijvoorbeeld "zeven ... duizend (57.400)".
+        out = this.toonGetalcijfers(out);
+
         return out;
     },
 
@@ -329,13 +334,64 @@ const Opties = {
             .then(d => {
                 if (!d || !Array.isArray(d.eenheden)) return;
                 this._eenheden = this._maatIndex(d);
-                if (this.state.maatstelsel && this.state.maatstelsel !== 'bijbels' &&
+                if (((this.state.maatstelsel && this.state.maatstelsel !== 'bijbels') ||
+                    this.state.getalweergave === 'cijfers') &&
                     typeof Navigation !== 'undefined' && Navigation.currentBook && Navigation.currentChapter &&
                     typeof App !== 'undefined' && App.renderChapter) {
                     App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
                 }
             })
             .catch(() => {});
+    },
+
+    /**
+     * Voeg na uitgeschreven aantallen vanaf duizend een cijfernotatie toe.
+     * De woorden blijven de eigenlijke vertaling; dit is uitsluitend leeshulp.
+     */
+    toonGetalcijfers(html) {
+        if (!html || this.state.getalweergave !== 'cijfers' || !this._eenheden) return html;
+        var E = this._eenheden;
+        var proj = this._maatPlatteTekst(html);
+        var plain = proj.plain, map = proj.map;
+        var woordRe = /[A-Za-zÀ-ÖØ-öø-ÿ]+/g, woorden = [], m;
+        while ((m = woordRe.exec(plain)) !== null) {
+            woorden.push({ woord: m[0].toLowerCase(), start: m.index, eind: m.index + m[0].length });
+        }
+
+        var invoegingen = [], laatsteEind = -1;
+        for (var i = 0; i < woorden.length; i++) {
+            if (woorden[i].woord.indexOf('duizend') === -1 ||
+                this._maatMorfemen(E, woorden[i].woord) === null) continue;
+
+            var links = i, rechts = i;
+            while (links > 0 && /^\s+$/.test(plain.slice(woorden[links - 1].eind, woorden[links].start)) &&
+                this._maatMorfemen(E, woorden[links - 1].woord) !== null) links--;
+            while (rechts + 1 < woorden.length && /^\s+$/.test(plain.slice(woorden[rechts].eind, woorden[rechts + 1].start)) &&
+                this._maatMorfemen(E, woorden[rechts + 1].woord) !== null) rechts++;
+
+            while (links <= rechts && E.scheiders.indexOf(woorden[links].woord) !== -1) links++;
+            while (rechts >= links && E.scheiders.indexOf(woorden[rechts].woord) !== -1) rechts--;
+            if (links > rechts) continue;
+
+            var begin = woorden[links].start, eind = woorden[rechts].eind;
+            if (begin < laatsteEind) continue;
+            var parsed = this._maatUitTokens(E, woorden.slice(links, rechts + 1).map(function (x) { return x.woord; }));
+            if (!parsed.expliciet || !isFinite(parsed.aantal) || parsed.aantal < 1000) continue;
+
+            var cijfer = this._maatGetalTekst(parsed.aantal);
+            invoegingen.push({
+                positie: map[eind - 1] + 1,
+                html: ' <span class="getal-cijfer" aria-label="' + cijfer + '">(' + cijfer + ')</span>',
+            });
+            laatsteEind = eind;
+            i = rechts;
+        }
+
+        for (var j = invoegingen.length - 1; j >= 0; j--) {
+            var item = invoegingen[j];
+            html = html.slice(0, item.positie) + item.html + html.slice(item.positie);
+        }
+        return html;
     },
 
     /** Bouw eenmalig de zoekstructuren uit data/eenheden.json. */
