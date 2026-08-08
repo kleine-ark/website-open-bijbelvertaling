@@ -165,6 +165,30 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_zoom_staat_in_lezen_en_niet_meer_zwevend(self):
+        page = self.open_reader()
+        try:
+            page.locator("#sidebar-right-open").click()
+            self.assertEqual(page.locator("#options-panel-lezen #options-zoom").count(), 1)
+            self.assertEqual(page.locator("body > #ov-zoom").count(), 0)
+        finally:
+            page.close()
+
+    def test_zoom_blijft_bewaard_na_herladen(self):
+        page = self.open_reader()
+        try:
+            page.locator("#sidebar-right-open").click()
+            page.locator("#options-zoom-in").click()
+            page.wait_for_function("localStorage.getItem('ov_zoom') === '1.1'")
+            self.assertEqual(page.locator("#options-zoom-value").inner_text(), "110%")
+
+            page.reload(wait_until="domcontentloaded")
+            page.locator("#sidebar-right-open").wait_for(state="visible", timeout=15_000)
+            page.locator("#sidebar-right-open").click()
+            self.assertEqual(page.locator("#options-zoom-value").inner_text(), "110%")
+        finally:
+            page.close()
+
 
 if __name__ == "__main__":
     unittest.main()
