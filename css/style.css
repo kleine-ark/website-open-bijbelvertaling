@@ -292,7 +292,7 @@
     background: none; border: none; cursor: pointer;
     width: 44px; height: 44px; padding: 0;
     flex-direction: column; justify-content: center; align-items: center;
-    gap: 5px; margin-left: 4px;
+    gap: 5px; margin-inline-start: auto;
     border-radius: 6px;
     transition: background 0.15s;
 }
@@ -353,10 +353,6 @@
     .topnav-version a { font-size: 11px; }
 
     .topnav-hamburger { display: flex; }
-    /* Op mobiel: push search/auth/hamburger naar rechts (links is verborgen,
-       dus de margin:auto-truc op .topnav-links werkt niet meer). */
-    .topnav-search { margin-left: auto; }
-
     /* Links als off-canvas dropdown vanuit topnav */
     .topnav-links {
         display: none;

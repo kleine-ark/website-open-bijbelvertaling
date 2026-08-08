@@ -118,6 +118,35 @@ class BrandingBrowserTests(unittest.TestCase):
             finally:
                 page.close()
 
+    def test_hamburger_blijft_rechtsboven_op_alle_responsieve_breekpunten(self):
+        for width, expected_right_gap in (
+            (1000, 30),
+            (769, 30),
+            (768, 12),
+            (700, 12),
+            (390, 12),
+        ):
+            page = self.browser.new_page(viewport={"width": width, "height": 900})
+            try:
+                page.goto(f"{self.base_url}/over-ov.html")
+                hamburger = page.locator("#topnav-hamburger")
+                hamburger.wait_for(state="visible", timeout=3_000)
+                right_gap = page.evaluate(
+                    """() => {
+                        const nav = document.querySelector('#topnav').getBoundingClientRect();
+                        const button = document.querySelector('#topnav-hamburger').getBoundingClientRect();
+                        return nav.right - button.right;
+                    }"""
+                )
+                self.assertAlmostEqual(
+                    right_gap,
+                    expected_right_gap,
+                    delta=1,
+                    msg=f"hamburger staat niet rechtsboven bij {width}px",
+                )
+            finally:
+                page.close()
+
     def test_gedeelde_navigatie_linkt_naar_de_publieke_downloadpagina(self):
         page = self.browser.new_page(viewport={"width": 1440, "height": 900})
         try:

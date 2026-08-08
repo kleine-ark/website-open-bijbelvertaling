@@ -21,6 +21,8 @@ Het aangeleverde Open Vertaling-woordmerk en beeldmerk vervangen de oude tekstue
 - De volledige tekst **Open Vertaling** wordt geforceerd behouden: niet afkappen, niet verbergen en niet automatisch verkleinen. Het merkelement zelf mag niet krimpen.
 - Zodra de beschikbare breedte te klein wordt, verhuizen het versienummer, de themaknop en de loginbediening eerder naar het hamburgermenu. De overige navigatie wijkt dus voor het woordmerk, niet andersom.
 - Ook op zeer smalle schermen blijft de volledige naam zichtbaar. Als één regel niet genoeg ruimte biedt, mag de bovenbalk hoger worden; horizontaal afsnijden of alleen het beeldmerk tonen is niet toegestaan.
+- Zodra de hamburger zichtbaar is, staat hij altijd als laatste bediening rechtsboven. Hij krijgt zelf de vrije ruimte vóór zich en leunt niet op de zichtbaarheid of breedte van zoekbalk, thema, versie of login.
+- Het uitklapmenu blijft vanaf de rechterzijde onder de hamburger openen. Er mag geen andere kopbediening rechts van de hamburger verschijnen.
 
 ## Sierinitialen
 
@@ -45,3 +47,4 @@ De marineblauwe en gouden merkkleuren blijven leidend. Het woordmerk is het enig
 - Doorlopend lezen geeft ieder nieuw hoofdstuk zijn eigen sierinitiaal.
 - Het koplogo heeft op ieder getest breekpunt zijn intrinsieke beeldverhouding en het woordmerk is visueel tweemaal zo groot als vóór deze correctie.
 - Bij desktop-, tablet- en mobiele breedtes blijft de volledige tekst **Open Vertaling** zichtbaar zonder afkapping of krimp; concurrerende kopbedieningen staan waar nodig in het hamburgermenu.
+- Op alle breedtes waarop de hamburger zichtbaar is, valt zijn rechterrand samen met de binnenmarge van de bovenbalk, zowel met als zonder de overige kopbedieningen.
