@@ -23,7 +23,6 @@ MAIN = [
     ("/bronnen.html", "0.5", "monthly"),
     ("/uitgangspunten.html", "0.5", "monthly"),
     ("/principes.html", "0.5", "monthly"),
-    ("/begrippen.html", "0.5", "monthly"),
     ("/geografie.html", "0.5", "monthly"),
     ("/statistieken.html", "0.5", "weekly"),
     ("/changelog.html", "0.5", "weekly"),
