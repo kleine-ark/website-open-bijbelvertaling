@@ -1787,7 +1787,7 @@
       "number": 16,
       "textSV1888": "En hij zeide: Op dezen gezetten tijd, omtrent dezen tijd des levens zult gij een zoon omhelzen. En zij zeide: Neen, mijn heer, gij, man Gods, lieg tegen uw dienstmaagd niet.",
       "text1637": "Ende hy seyde, [25] Op [b] desen gesetten tijt, [26] ontrent desen tijt des levens sult ghy eenen sone omhelsen: ende sy seyde, Neen, mijn Heere, ghy man Godts [27] en liecht tegen uwe dienstmaecht niet.",
-      "text2026": "En hij zei: Op deze gezetten tijd, ongeveer deze tijd van het leven zult u een zoon omhelzen. En zij zei: Nee, mijn heer, u, man van God, lieg tegen uw dienstmaagd niet.",
+      "text2026": "En hij zei: Op deze vastgestelde tijd, ongeveer deze tijd van het leven zult u een zoon omhelzen. En zij zei: Nee, mijn heer, u, man van God, lieg tegen uw dienstmaagd niet.",
       "marginNotes": [
         {
           "marker": "b",
@@ -1900,7 +1900,7 @@
           "morph": "HR/Ncfsc/Sp2ms"
         }
       ],
-      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>Op deze gezetten tijd, ongeveer deze tijd van het leven zult u een zoon omhelzen. </i></span> En zij zei: <span class=\"direct-speech\"><i>Nee, mijn heer, u, man van God, lieg tegen uw dienstmaagd niet.</i></span>",
+      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>Op deze vastgestelde tijd, ongeveer deze tijd van het leven zult u een zoon omhelzen. </i></span> En zij zei: <span class=\"direct-speech\"><i>Nee, mijn heer, u, man van God, lieg tegen uw dienstmaagd niet.</i></span>",
       "textSV1888_html": "En hij zeide:<sup class=\"note-marker\" data-note=\"25\">25</sup> Op<sup class=\"note-marker\" data-note=\"b\">b</sup> dezen gezetten tijd,<sup class=\"note-marker\" data-note=\"26\">26</sup> omtrent dezen tijd des levens zult gij een zoon omhelzen. En zij zeide: Neen, mijn heer, gij, man Gods,<sup class=\"note-marker\" data-note=\"27\">27</sup> lieg tegen uw dienstmaagd niet.",
       "text1637_html": "Ende hy seyde, <sup class=\"note-marker\" data-note=\"25\">25</sup> Op <sup class=\"note-marker\" data-note=\"b\">b</sup> desen gesetten tijt, <sup class=\"note-marker\" data-note=\"26\">26</sup> ontrent desen tijt des levens sult ghy eenen sone omhelsen: ende sy seyde, Neen, mijn Heere, ghy man Godts <sup class=\"note-marker\" data-note=\"27\">27</sup> en liecht tegen uwe dienstmaecht niet.",
       "phraseDiff": [
@@ -1910,9 +1910,9 @@
           "principe": "W1"
         },
         {
-          "old": "dezen",
-          "new": "deze",
-          "principe": "N4"
+          "old": "dezen gezetten",
+          "new": "deze vastgestelde",
+          "principe": null
         },
         {
           "old": "omtrent dezen",
@@ -4310,7 +4310,7 @@
       "number": 38,
       "textSV1888": "Als nu Elisa weder te Gilgal kwam, zo was er honger in dat land, en de zonen der profeten zaten voor zijn aangezicht; en hij zeide tot zijn jongen: Zet den groten pot aan, en zied moes voor de zonen der profeten.",
       "text1637": "Als nu Elisa weder te [60] Gilgal quam, so wasser honger in dat lant, ende de sonen der Propheten [61] saten voor sijn aengesichte: ende hy seyde tot sijnen jongen: [62] Set den grooten pot aen, ende siedt moes voor de sonen der Propheten.",
-      "text2026": "Als nu Elisa weer te Gilgal kwam, zo was er honger in dat land, en de zonen van de profeten zaten voor zijn aangezicht; en hij zei tot zijn jongen: Zet de grote pot aan, en zied moes voor de zonen van de profeten.",
+      "text2026": "Als nu Elisa weer te Gilgal kwam, zo was er honger in dat land, en de zonen van de profeten zaten voor zijn aangezicht; en hij zei tot zijn jongen: Zet de grote pot aan, en kook moes voor de zonen van de profeten.",
       "marginNotes": [
         {
           "marker": "60",
@@ -4426,7 +4426,7 @@
           "morph": "HTd/Ncmpa"
         }
       ],
-      "text2026_html": "Als nu Elisa weer te Gilgal kwam, zo was er honger in dat land, en de zonen van de profeten zaten voor zijn aangezicht; en hij zei tot zijn jongen: <span class=\"direct-speech\"><i>Zet de grote pot aan, en zied moes voor de zonen van de profeten.</i></span>",
+      "text2026_html": "Als nu Elisa weer te Gilgal kwam, zo was er honger in dat land, en de zonen van de profeten zaten voor zijn aangezicht; en hij zei tot zijn jongen: <span class=\"direct-speech\"><i>Zet de grote pot aan, en kook moes voor de zonen van de profeten.</i></span>",
       "textSV1888_html": "Als nu Elisa weder te<sup class=\"note-marker\" data-note=\"60\">60</sup> Gilgal kwam, zo was er honger in dat land, en de zonen der profeten<sup class=\"note-marker\" data-note=\"61\">61</sup> zaten voor zijn aangezicht; en hij zeide tot zijn jongen:<sup class=\"note-marker\" data-note=\"62\">62</sup> Zet den groten pot aan, en zied moes voor de zonen der profeten.",
       "text1637_html": "Als nu Elisa weder te <sup class=\"note-marker\" data-note=\"60\">60</sup> Gilgal quam, so wasser honger in dat lant, ende de sonen der Propheten <sup class=\"note-marker\" data-note=\"61\">61</sup> saten voor sijn aengesichte: ende hy seyde tot sijnen jongen: <sup class=\"note-marker\" data-note=\"62\">62</sup> Set den grooten pot aen, ende siedt moes voor de sonen der Propheten.",
       "phraseDiff": [
@@ -4449,6 +4449,11 @@
           "old": "den groten",
           "new": "de grote",
           "principe": "N1"
+        },
+        {
+          "old": "zied",
+          "new": "kook",
+          "principe": null
         },
         {
           "old": "der",
