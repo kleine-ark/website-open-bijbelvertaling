@@ -992,7 +992,7 @@
    "number": 10,
    "textSV1888": "Vanwege de menigte zijner paarden zal u derzelver stof bedekken; uw muren zullen beven vanwege het gedruis der ruiteren, en wielen, en wagenen, als hij door uw poorten zal intrekken, gelijk door de ingangen ener doorgebrokene stad.",
    "text1637": "Van wegen de menichte [24] sijner peerden, sal u der selver stof bedecken: uwe mueren sullen beven van wegen het gedruys der ruyteren, ende [25] wielen, ende wagenen, als hy door uwe poorten sal intrecken, [26] gelijck [door] de ingangen eener doorgebrokene stadt.",
-   "text2026": "Vanwege de menigte van zijn paarden zal u van die stof bedekken; uw muren zullen beven vanwege het geluid van de ruiteren, en wielen, en wagens, als hij door uw poorten zal intrekken, gelijk door de ingangen van een doorgebrokene stad.",
+   "text2026": "Vanwege de menigte van zijn paarden zal hun stof u bedekken; uw muren zullen beven vanwege het geluid van de ruiteren, en wielen, en wagens, als hij door uw poorten zal intrekken, gelijk door de ingangen van een doorgebrokene stad.",
    "marginNotes": [
     {
      "marker": "24",
@@ -1093,7 +1093,7 @@
      "morph": "HVPsfsa"
     }
    ],
-   "text2026_html": "<span class=\"god-speaks\"><i>Vanwege de menigte van zijn paarden zal u van die stof bedekken; uw muren zullen beven vanwege het geluid van de ruiteren,<sup class=\"note-marker\" data-note=\"24\">24</sup> en<sup class=\"note-marker\" data-note=\"25\">25</sup> wielen, en wagens, als hij door uw poorten zal intrekken,<sup class=\"note-marker\" data-note=\"26\">26</sup> gelijk door de ingangen van een doorgebrokene stad.</i></span>",
+   "text2026_html": "<span class=\"god-speaks\"><i>Vanwege de menigte van zijn paarden zal hun stof u bedekken; uw muren zullen beven vanwege het geluid van de ruiteren,<sup class=\"note-marker\" data-note=\"24\">24</sup> en<sup class=\"note-marker\" data-note=\"25\">25</sup> wielen, en wagens, als hij door uw poorten zal intrekken,<sup class=\"note-marker\" data-note=\"26\">26</sup> gelijk door de ingangen van een doorgebrokene stad.</i></span>",
    "textSV1888_html": "Vanwege de menigte<sup class=\"note-marker\" data-note=\"24\">24</sup> zijner paarden zal u derzelver stof bedekken; uw muren zullen beven vanwege het gedruis der ruiteren, en<sup class=\"note-marker\" data-note=\"25\">25</sup> wielen, en wagenen, als hij door uw poorten zal intrekken,<sup class=\"note-marker\" data-note=\"26\">26</sup> gelijk door de ingangen ener doorgebrokene stad.",
    "text1637_html": "Van wegen de menichte <sup class=\"note-marker\" data-note=\"24\">24</sup> sijner peerden, sal u der selver stof bedecken: uwe mueren sullen beven van wegen het gedruys der ruyteren, ende <sup class=\"note-marker\" data-note=\"25\">25</sup> wielen, ende wagenen, als hy door uwe poorten sal intrecken, <sup class=\"note-marker\" data-note=\"26\">26</sup> gelijck [door] de ingangen eener doorgebrokene stadt.",
    "phraseDiff": [
@@ -1103,14 +1103,19 @@
      "principe": "N7"
     },
     {
-     "old": "derzelver",
-     "new": "van die",
+     "old": "",
+     "new": "hun stof",
+     "principe": null
+    },
+    {
+     "old": "derzelver stof",
+     "new": "",
      "principe": "V82"
     },
     {
-     "old": "der",
-     "new": "van de",
-     "principe": "N2"
+     "old": "gedruis der",
+     "new": "geluid van de",
+     "principe": null
     },
     {
      "old": "wagenen,",
@@ -1121,11 +1126,6 @@
      "old": "ener",
      "new": "van een",
      "principe": "V735"
-    },
-    {
-     "old": "gedruis",
-     "new": "geluid",
-     "principe": "V908"
     }
    ]
   },
