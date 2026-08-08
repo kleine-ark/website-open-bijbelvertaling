@@ -1,6 +1,7 @@
-/* Open Vertaling — naslagpagina's (materialen, dieren, bomen en planten).
+/* Open Vertaling — naslagpagina's (materialen, dieren, bomen en planten,
+ * personen en muziekinstrumenten).
  *
- * Eén renderer voor drie pagina's: elke pagina zet data-naslag op <body> met
+ * Eén renderer voor alle naslagpagina's: elke pagina zet data-naslag op <body> met
  * het pad naar zijn databestand. Zonder ?item= toont hij de hoofdpagina (alle
  * onderwerpen als kaarten); met ?item=goud de subpagina van dat onderwerp.
  * Zo bestaat er per onderwerp een eigen adres zonder tientallen losse
@@ -79,18 +80,48 @@
         document.title = d.titel + ' — Open Vertaling';
         var h = '<h1>' + esc(d.titel) + '</h1>';
         if (d.intro) h += '<p class="ns-lead">' + esc(d.intro) + '</p>';
+        var items = d.items.slice();
+        if (!d.nummerType) {
+            items.sort(function (a, b) {
+                var byName = a.naam.localeCompare(b.naam, 'nl', { sensitivity: 'base' });
+                return byName || a.id.localeCompare(b.id, 'nl');
+            });
+            h += '<label class="ns-zoek-label" for="ns-zoeken">Zoeken in ' +
+                 esc(d.titel.toLowerCase()) + '</label>' +
+                 '<input id="ns-zoeken" class="ns-zoeken" type="search" ' +
+                 'autocomplete="off" placeholder="Typ een naam of begrip">' +
+                 '<p id="ns-zoek-status" class="ns-zoek-status" aria-live="polite"></p>';
+        }
         h += '<div class="ns-rooster">';
-        for (var i = 0; i < d.items.length; i++) {
-            var it = d.items[i];
+        for (var i = 0; i < items.length; i++) {
+            var it = items[i];
             h += '<a class="ns-kaart" href="?item=' + encodeURIComponent(it.id) + '">' +
                  (d.nummerType ? '<span class="ns-nummer">' + esc(d.nummerType) + ' ' + (i + 1) + '</span>' : '') +
                  '<span class="ns-kaart-naam">' + esc(it.naam) + '</span>' +
+                 (it.onderscheiding ? '<span class="ns-kaart-onderscheiding">' + esc(it.onderscheiding) + '</span>' : '') +
+                 (it.gebruik ? '<span class="ns-type">' + esc(it.gebruik) + '</span>' : '') +
                  (d.nummerType === 'Lied' ? '<span class="ns-kaart-passage">' + esc(overzichtPassage(it)) + '</span>' :
                  '<span class="ns-kaart-tal">' + it.verzen.length +
                  (it.verzen.length === 1 ? ' vindplaats' : ' vindplaatsen') + '</span>') + '</a>';
         }
         h += '</div>';
         houder.innerHTML = h;
+
+        var search = document.getElementById('ns-zoeken');
+        if (search) {
+            var cards = houder.querySelectorAll('.ns-kaart');
+            var status = document.getElementById('ns-zoek-status');
+            search.addEventListener('input', function () {
+                var query = search.value.toLocaleLowerCase('nl').trim();
+                var visible = 0;
+                for (var c = 0; c < cards.length; c++) {
+                    var match = !query || cards[c].textContent.toLocaleLowerCase('nl').indexOf(query) >= 0;
+                    cards[c].hidden = !match;
+                    if (match) visible++;
+                }
+                status.textContent = query ? visible + (visible === 1 ? ' resultaat' : ' resultaten') : '';
+            });
+        }
     }
 
     function toonItem(d, it, itemIndex) {
@@ -101,6 +132,12 @@
             h += '<span class="ns-nummer">' + esc(d.nummerType) + ' ' + (itemIndex + 1) + '</span>';
         }
         h += '<h1>' + esc(it.naam) + '</h1>';
+        if (it.gebruik) {
+            h += '<span class="ns-type ns-type-detail">' + esc(it.gebruik) + '</span>';
+        }
+        if (it.onderscheiding) {
+            h += '<p class="ns-onderscheiding">' + esc(it.onderscheiding) + '</p>';
+        }
         h += '<p class="ns-beschrijving">' + esc(it.beschrijving) + '</p>';
         if (d.nummerType && it.tekstpassages) {
             h += '<section class="ns-volledige-tekst" aria-live="polite">' +
@@ -124,12 +161,14 @@
         if (!d.nummerType && globalThis.GekoppeldeTeksten) {
             var refs = [];
             for (var r = 0; r < it.verzen.length; r++) {
-                refs.push((d.bronId || d.bron.toLowerCase()) + ' ' + it.verzen[r]);
+                refs.push(it.verzen[r].indexOf(' ') > 0
+                    ? it.verzen[r]
+                    : (d.bronId || d.bron.toLowerCase()) + ' ' + it.verzen[r]);
             }
             globalThis.GekoppeldeTeksten.render(
                 document.getElementById('naslag-gekoppelde-teksten'),
                 refs,
-                { boeknamen: (function () {
+                { boeknamen: d.boeknamen || (function () {
                     var namen = {};
                     namen[d.bronId || d.bron.toLowerCase()] = d.bron;
                     return namen;
