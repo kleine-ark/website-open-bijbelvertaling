@@ -467,7 +467,7 @@
       "number": 5,
       "textSV1888": "Alzo zegt de Heere HEERE tot deze beenderen: Ziet, Ik zal den geest in u brengen, en gij zult levend worden.",
       "text1637": "Alsoo seyt de Heere HEERE tot dese beenderen, Siet ick sal den [12] geest in u brengen, ende ghy sult levendich worden.",
-      "text2026": "Zo zegt de Adonai JAHWEH tot deze beenderen: Ziet, Ik zal de geest in u brengen, en u zult levend worden.",
+      "text2026": "Zo zegt de Adonai JAHWEH tot deze beenderen: Zie, Ik zal de geest in u brengen, en u zult levend worden.",
       "marginNotes": [
         {
           "marker": "12",
@@ -539,7 +539,7 @@
           "morph": "HC/Vqq2mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zo zegt de Adonai JAHWEH tot deze beenderen: Ziet, Ik zal de geest in u brengen, en u zult levend worden.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zo zegt de Adonai JAHWEH tot deze beenderen: Zie, Ik zal de geest in u brengen, en u zult levend worden.</i></span>",
       "textSV1888_html": "Alzo zegt de Heere HEERE tot deze beenderen: Ziet, Ik zal den<sup class=\"note-marker\" data-note=\"12\">12</sup> geest in u brengen, en gij zult levend worden.",
       "text1637_html": "Alsoo seyt de Heere HEERE tot dese beenderen, Siet ick sal den <sup class=\"note-marker\" data-note=\"12\">12</sup> geest in u brengen, ende ghy sult levendich worden.",
       "phraseDiff": [
@@ -552,6 +552,11 @@
           "old": "Heere HEERE",
           "new": "Adonai JAHWEH",
           "principe": "G4"
+        },
+        {
+          "old": "Ziet,",
+          "new": "Zie,",
+          "principe": "V1158"
         },
         {
           "old": "den",
@@ -1184,7 +1189,7 @@
       "number": 11,
       "textSV1888": "Toen zeide Hij tot mij: Mensenkind! deze beenderen zijn het ganse huis Israëls; ziet, zij zeggen: Onze beenderen zijn verdord, en onze verwachting is verloren, wij zijn afgesneden.",
       "text1637": "Doe seyde hy tot my, Menschen-kint, dese beenderen [23] die zijn het gantsche huys Israëls: Siet, sy seggen; [24] Onse beenderen sijn verdorret, ende onse verwachtinge is verloren, wy zijn [25] afgesneden.",
-      "text2026": "Toen zei Hij tot mij: Mensenkind! deze beenderen zijn het hele huis van Israël; ziet, zij zeggen: Onze beenderen zijn verdord, en onze verwachting is verloren, wij zijn afgesneden.",
+      "text2026": "Toen zei Hij tot mij: Mensenkind! deze beenderen zijn het hele huis van Israël; zie, zij zeggen: Onze beenderen zijn verdord, en onze verwachting is verloren, wij zijn afgesneden.",
       "marginNotes": [
         {
           "marker": "23",
@@ -1300,7 +1305,7 @@
           "morph": "HR/Sp1cp"
         }
       ],
-      "text2026_html": "Toen zei Hij tot mij: <span class=\"god-speaks\"><i>Mensenkind! deze beenderen zijn het hele huis van Israël; ziet, zij zeggen: <span class=\"direct-speech\"><i>Onze beenderen zijn verdord, en onze verwachting is verloren, wij zijn afgesneden.</i></span></i></span>",
+      "text2026_html": "Toen zei Hij tot mij: <span class=\"god-speaks\"><i>Mensenkind! deze beenderen zijn het hele huis van Israël; zie, zij zeggen: <span class=\"direct-speech\"><i>Onze beenderen zijn verdord, en onze verwachting is verloren, wij zijn afgesneden.</i></span></i></span>",
       "textSV1888_html": "Toen zeide Hij tot mij: Mensenkind! deze beenderen<sup class=\"note-marker\" data-note=\"23\">23</sup> zijn het ganse huis Israëls; ziet, zij zeggen:<sup class=\"note-marker\" data-note=\"24\">24</sup> Onze beenderen zijn verdord, en onze verwachting is verloren, wij zijn<sup class=\"note-marker\" data-note=\"25\">25</sup> afgesneden.",
       "text1637_html": "Doe seyde hy tot my, Menschen-kint, dese beenderen <sup class=\"note-marker\" data-note=\"23\">23</sup> die zijn het gantsche huys Israëls: Siet, sy seggen; <sup class=\"note-marker\" data-note=\"24\">24</sup> Onse beenderen sijn verdorret, ende onse verwachtinge is verloren, wy zijn <sup class=\"note-marker\" data-note=\"25\">25</sup> afgesneden.",
       "phraseDiff": [
@@ -1315,9 +1320,9 @@
           "principe": "V3"
         },
         {
-          "old": "Israëls;",
-          "new": "van Israël;",
-          "principe": null
+          "old": "Israëls; ziet,",
+          "new": "van Israël; zie,",
+          "principe": "V1158"
         }
       ]
     },

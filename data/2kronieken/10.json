@@ -433,7 +433,7 @@
       "number": 5,
       "textSV1888": "En hij zeide tot hen: Komt over drie dagen weder tot mij. En het volk ging heen.",
       "text1637": "Ende hy seyde tot hen; Komt over drie dagen weder tot my: ende het volck ginck henen.",
-      "text2026": "En hij zei tot hen: Komt over drie dagen weer tot mij. En het volk ging heen.",
+      "text2026": "En hij zei tot hen: Kom over drie dagen weer tot mij. En het volk ging heen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -482,13 +482,18 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "En hij zei tot hen: <span class=\"direct-speech\"><i>Komt over drie dagen weer tot mij. En het volk ging heen.</i></span>",
+      "text2026_html": "En hij zei tot hen: <span class=\"direct-speech\"><i>Kom over drie dagen weer tot mij. En het volk ging heen.</i></span>",
       "text1637_html": "Ende hy seyde tot hen; Komt over drie dagen weder tot my: ende het volck ginck henen.",
       "phraseDiff": [
         {
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Komt",
+          "new": "Kom",
+          "principe": "V1158"
         },
         {
           "old": "weder",
@@ -1336,7 +1341,7 @@
       "number": 12,
       "textSV1888": "Zo kwam Jerobeam en al het volk tot Rehabeam, op den derden dag, gelijk als de koning gesproken had, zeggende: Komt weder tot mij op den derden dag.",
       "text1637": "So quam Ierobeam, ende al het volck tot Rehabeam, op den derden dach; gelijck als de Coninck gesproken hadde, seggende; Komet weder tot my op den derden dach.",
-      "text2026": "Zo kwam Jerobeam en al het volk tot Rehabeam, op de derde dag, zoals de koning gesproken had, zeggende: Komt weer tot mij op de derde dag.",
+      "text2026": "Zo kwam Jerobeam en al het volk tot Rehabeam, op de derde dag, zoals de koning gesproken had, zeggende: Kom weer tot mij op de derde dag.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1420,7 +1425,7 @@
           "morph": "HTd/Aomsa"
         }
       ],
-      "text2026_html": "Zo kwam Jerobeam en al het volk tot Rehabeam, op de derde dag, zoals de koning gesproken had, zeggende: Komt weer tot mij op de derde dag.",
+      "text2026_html": "Zo kwam Jerobeam en al het volk tot Rehabeam, op de derde dag, zoals de koning gesproken had, zeggende: Kom weer tot mij op de derde dag.",
       "text1637_html": "So quam Ierobeam, ende al het volck tot Rehabeam, op den derden dach; gelijck als de Coninck gesproken hadde, seggende; Komet weder tot my op den derden dach.",
       "phraseDiff": [
         {
@@ -1434,9 +1439,9 @@
           "principe": "V804"
         },
         {
-          "old": "weder",
-          "new": "weer",
-          "principe": "V66"
+          "old": "Komt weder",
+          "new": "Kom weer",
+          "principe": "V1158"
         },
         {
           "old": "den derden",

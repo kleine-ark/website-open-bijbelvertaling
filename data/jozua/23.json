@@ -354,7 +354,7 @@
       "number": 4,
       "textSV1888": "Ziet, ik heb u deze overige volken door het lot doen toevallen, ten erfdeel voor uw stammen, van de Jordaan af, met al de volken, die ik uitgeroeid heb, en tot de grote zee, tegen den ondergang der zon.",
       "text1637": "Siet ick hebbe u dese [4] overige volckeren door het lot doen toevallen, ten erfdeele uwen stammen, van de Iordane af, met alle de volcken die ick uytgeroeyt hebbe, ende tot de groote Zee tegen den onderganck der Sonne.",
-      "text2026": "Ziet, ik heb u deze overige volken door het lot doen toevallen, als erfdeel voor uw stammen, van de Jordaan af, met al de volken, die ik uitgeroeid heb, en tot de grote zee, tegen de ondergang van de zon.",
+      "text2026": "Zie, ik heb u deze overige volken door het lot doen toevallen, als erfdeel voor uw stammen, van de Jordaan af, met al de volken, die ik uitgeroeid heb, en tot de grote zee, tegen de ondergang van de zon.",
       "marginNotes": [
         {
           "marker": "4",
@@ -461,10 +461,15 @@
           "morph": "HTd/Ncbsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Ziet, ik heb u deze<sup class=\"note-marker\" data-note=\"4\">4</sup> overige volken door het lot doen toevallen, als erfdeel voor uw stammen, van de Jordaan af, met al de volken, die ik uitgeroeid heb, en tot de grote zee, tegen de ondergang van de zon.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zie, ik heb u deze<sup class=\"note-marker\" data-note=\"4\">4</sup> overige volken door het lot doen toevallen, als erfdeel voor uw stammen, van de Jordaan af, met al de volken, die ik uitgeroeid heb, en tot de grote zee, tegen de ondergang van de zon.</i></span>",
       "textSV1888_html": "Ziet, ik heb u deze<sup class=\"note-marker\" data-note=\"4\">4</sup> overige volken door het lot doen toevallen, ten erfdeel voor uw stammen, van de Jordaan af, met al de volken, die ik uitgeroeid heb, en tot de grote zee, tegen den ondergang der zon.",
       "text1637_html": "Siet ick hebbe u dese <sup class=\"note-marker\" data-note=\"4\">4</sup> overige volckeren door het lot doen toevallen, ten erfdeele uwen stammen, van de Iordane af, met alle de volcken die ick uytgeroeyt hebbe, ende tot de groote Zee tegen den onderganck der Sonne.",
       "phraseDiff": [
+        {
+          "old": "Ziet,",
+          "new": "Zie,",
+          "principe": "V1158"
+        },
         {
           "old": "ten",
           "new": "als",
@@ -734,7 +739,7 @@
       "number": 7,
       "textSV1888": "Dat gij niet ingaat tot deze volken: deze, die overgebleven zijn bij ulieden; gedenkt ook niet aan den naam hunner goden, en doet er niet bij zweren, en dient hen niet, en buigt u voor die niet;",
       "text1637": "Dat ghy [7] niet in en gaet tot dese volckeren, dese die overgebleven zijn by ulieden: [c] [8] gedenckt oock niet aen den name harer Goden, [9] noch en doeter niet by sweeren, noch en dientse niet, noch en buycht u voor die niet.",
-      "text2026": "Dat u niet ingaat tot deze volken: deze, die overgebleven zijn bij u; gedenkt ook niet aan de naam van hun goden, en doet er niet bij zweren, en dient hen niet, en buigt u voor die niet;",
+      "text2026": "Dat u niet ingaat tot deze volken: deze, die overgebleven zijn bij u; gedenk ook niet aan de naam van hun goden, en doet er niet bij zweren, en dient hen niet, en buigt u voor die niet;",
       "marginNotes": [
         {
           "marker": "7",
@@ -857,7 +862,7 @@
           "morph": "HR/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Dat u<sup class=\"note-marker\" data-note=\"7\">7</sup> niet ingaat tot deze volken: deze, die overgebleven zijn bij u;<sup class=\"note-marker\" data-note=\"8\">8</sup><sup class=\"note-marker\" data-note=\"c\">c</sup> gedenkt ook niet aan de naam van hun goden,<sup class=\"note-marker\" data-note=\"9\">9</sup> en doet er niet bij zweren, en dient hen niet, en buigt u voor die niet;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Dat u<sup class=\"note-marker\" data-note=\"7\">7</sup> niet ingaat tot deze volken: deze, die overgebleven zijn bij u;<sup class=\"note-marker\" data-note=\"8\">8</sup><sup class=\"note-marker\" data-note=\"c\">c</sup> gedenk ook niet aan de naam van hun goden,<sup class=\"note-marker\" data-note=\"9\">9</sup> en doet er niet bij zweren, en dient hen niet, en buigt u voor die niet;</i></span>",
       "textSV1888_html": "Dat gij<sup class=\"note-marker\" data-note=\"7\">7</sup> niet ingaat tot deze volken: deze, die overgebleven zijn bij ulieden;<sup class=\"note-marker\" data-note=\"8\">8</sup><sup class=\"note-marker\" data-note=\"c\">c</sup> gedenkt ook niet aan den naam hunner goden,<sup class=\"note-marker\" data-note=\"9\">9</sup> en doet er niet bij zweren, en dient hen niet, en buigt u voor die niet;",
       "text1637_html": "Dat ghy <sup class=\"note-marker\" data-note=\"7\">7</sup> niet in en gaet tot dese volckeren, dese die overgebleven zijn by ulieden: <sup class=\"note-marker\" data-note=\"c\">c</sup> <sup class=\"note-marker\" data-note=\"8\">8</sup> gedenckt oock niet aen den name harer Goden, <sup class=\"note-marker\" data-note=\"9\">9</sup> noch en doeter niet by sweeren, noch en dientse niet, noch en buycht u voor die niet.",
       "phraseDiff": [
@@ -867,9 +872,9 @@
           "principe": "A1"
         },
         {
-          "old": "ulieden;",
-          "new": "u;",
-          "principe": "A2"
+          "old": "ulieden; gedenkt",
+          "new": "u; gedenk",
+          "principe": "V1158"
         },
         {
           "old": "den",

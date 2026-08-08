@@ -2332,7 +2332,7 @@
    "number": 19,
    "textSV1888": "En Rabsake zeide tot hen: Zegt nu tot Hizkia: Zo zegt de grote koning, de koning van Assyrië: Wat vertrouwen is dit, waarmede gij vertrouwt?",
    "text1637": "Ende Rabsake seyde tot hem: Segget nu tot Hizkia; Soo seyt de groote Coninck, de Coninck van Assyrien: Wat vertrouwen is dit, daer mede ghy vertrouwt?",
-   "text2026": "En Rabsake zei tot hen: Zegt nu tot Hizkia: Zo zegt de grote koning, de koning van Assyrië: Wat vertrouwen is dit, waarmee u vertrouwt?",
+   "text2026": "En Rabsake zei tot hen: Zeg nu tot Hizkia: Zo zegt de grote koning, de koning van Assyrië: Wat vertrouwen is dit, waarmee u vertrouwt?",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -2431,13 +2431,18 @@
      "morph": "HVqp2ms"
     }
    ],
-   "text2026_html": "En Rabsake zei tot hen: <span class=\"direct-speech\"><i>Zegt nu tot Hizkia: Zo zegt de grote koning, de koning van Assyrië: <span class=\"direct-speech\"><i>Wat vertrouwen is dit, waarmee u vertrouwt?</i></span></i></span>",
+   "text2026_html": "En Rabsake zei tot hen: <span class=\"direct-speech\"><i>Zeg nu tot Hizkia: Zo zegt de grote koning, de koning van Assyrië: <span class=\"direct-speech\"><i>Wat vertrouwen is dit, waarmee u vertrouwt?</i></span></i></span>",
    "text1637_html": "Ende Rabsake seyde tot hem: Segget nu tot Hizkia; Soo seyt de groote Coninck, de Coninck van Assyrien: Wat vertrouwen is dit, daer mede ghy vertrouwt?",
    "phraseDiff": [
     {
      "old": "zeide",
      "new": "zei",
      "principe": "W1"
+    },
+    {
+     "old": "Zegt",
+     "new": "Zeg",
+     "principe": "V1158"
     },
     {
      "old": "waarmede gij",
@@ -3941,7 +3946,7 @@
    "number": 31,
    "textSV1888": "Hoort naar Hizkia niet; want zo zegt de koning van Assyrië: Handelt met mij door een geschenk, en komt tot mij uit, en eet, een ieder van zijn wijnstok, en een ieder van zijn vijgeboom; en drinkt een ieder het water zijns bornputs;",
    "text1637": "En hooret nae Hizkia niet: want soo seyt de Coninck van Assyrien; Handelet met my door een [43] geschenck, ende komet tot my uyt, ende etet een yeder [van] sijnen wijnstock, ende een yeder [van] sijnen vijgeboom, ende drincket een yeder het water sijnes bornputs;",
-   "text2026": "Hoort naar Hizkia niet; want zo zegt de koning van Assyrië: Handelt met mij door een geschenk, en komt tot mij uit, en eet, een ieder van zijn wijnstok, en een ieder van zijn vijgeboom; en drinkt een ieder het water van zijn bornput;",
+   "text2026": "Hoor naar Hizkia niet; want zo zegt de koning van Assyrië: Handel met mij door een geschenk, en komt tot mij uit, en eet, een ieder van zijn wijnstok, en een ieder van zijn vijgeboom; en drinkt een ieder het water van zijn bornput;",
    "marginNotes": [
     {
      "marker": "43",
@@ -4068,10 +4073,20 @@
      "morph": "HNcmsc/Sp3ms"
     }
    ],
-   "text2026_html": "Hoort naar Hizkia niet; want zo zegt de koning van Assyrië: Handelt met mij door een geschenk, en komt tot mij uit, en eet, een ieder van zijn wijnstok, en een ieder van zijn vijgeboom; en drinkt een ieder het water van zijn bornput;",
+   "text2026_html": "Hoor naar Hizkia niet; want zo zegt de koning van Assyrië: Handel met mij door een geschenk, en komt tot mij uit, en eet, een ieder van zijn wijnstok, en een ieder van zijn vijgeboom; en drinkt een ieder het water van zijn bornput;",
    "textSV1888_html": "Hoort naar Hizkia niet; want zo zegt de koning van Assyrië: Handelt met mij door een<sup class=\"note-marker\" data-note=\"43\">43</sup> geschenk, en komt tot mij uit, en eet, een ieder van zijn wijnstok, en een ieder van zijn vijgeboom; en drinkt een ieder het water zijns bornputs;",
    "text1637_html": "En hooret nae Hizkia niet: want soo seyt de Coninck van Assyrien; Handelet met my door een <sup class=\"note-marker\" data-note=\"43\">43</sup> geschenck, ende komet tot my uyt, ende etet een yeder [van] sijnen wijnstock, ende een yeder [van] sijnen vijgeboom, ende drincket een yeder het water sijnes bornputs;",
    "phraseDiff": [
+    {
+     "old": "Hoort",
+     "new": "Hoor",
+     "principe": "V1158"
+    },
+    {
+     "old": "Handelt",
+     "new": "Handel",
+     "principe": "V1158"
+    },
     {
      "old": "zijns bornputs;",
      "new": "van zijn bornput;",

@@ -610,7 +610,7 @@
       "number": 5,
       "textSV1888": "En de koning gebood Joab, en Abisai, en Ithai, zeggende: Handelt mij zachtkens met den jongeling, met Absalom. En al het volk hoorde het, als de koning aan al de oversten van Absaloms zaak gebood.",
       "text1637": "Ende de Coninck geboodt Ioab, ende Abisai, ende Ithai, seggende; [Handelt] my sachtkens met den Iongelinck, met Absalom: ende al ’t volck hoorde ’t, als de Coninck allen den Oversten van Absaloms sake geboodt.",
-      "text2026": "En de koning gebood Joab, en Abisai, en Ithai, zeggende: Handelt mij zachtkens met de jongeling, met Absalom. En al het volk hoorde het, als de koning aan al de oversten van Absaloms zaak gebood.",
+      "text2026": "En de koning gebood Joab, en Abisai, en Ithai, zeggende: Handel mij zachtkens met de jongeling, met Absalom. En al het volk hoorde het, als de koning aan al de oversten van Absaloms zaak gebood.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -734,9 +734,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En de koning gebood Joab, en Abisai, en Ithai, zeggende: <span class=\"direct-speech\"><i>Handelt mij zachtkens met de jongeling, met Absalom.</i></span> En al het volk hoorde het, als de koning aan al de oversten van Absaloms zaak gebood.",
+      "text2026_html": "En de koning gebood Joab, en Abisai, en Ithai, zeggende: <span class=\"direct-speech\"><i>Handel mij zachtkens met de jongeling, met Absalom.</i></span> En al het volk hoorde het, als de koning aan al de oversten van Absaloms zaak gebood.",
       "text1637_html": "Ende de Coninck geboodt Ioab, ende Abisai, ende Ithai, seggende; [Handelt] my sachtkens met den Iongelinck, met Absalom: ende al ’t volck hoorde ’t, als de Coninck allen den Oversten van Absaloms sake geboodt.",
       "phraseDiff": [
+        {
+          "old": "Handelt",
+          "new": "Handel",
+          "principe": "V1158"
+        },
         {
           "old": "den",
           "new": "de",
@@ -1484,7 +1489,7 @@
       "number": 12,
       "textSV1888": "Maar die man zeide tot Joab: En of ik al duizend zilverlingen op mijn handen mocht wegen, zo zou ik mijn hand aan des konings zoon niet slaan; want de koning heeft u, en Abisai, en Ithai, voor onze oren geboden, zeggende: Hoedt u, wie gij zijt, van den jongeling, van Absalom.",
       "text1637": "Maer die man seyde tot Ioab; Ende of ick al duysent silverlingen op mijne handen mochte [17] wegen, so en soude ick mijne hant aen des Conincks sone niet slaen: want de Coninck heeft u, ende Abisai, ende Ithai voor onse ooren geboden, seggende; [18] Hoedt u, wie [ghy zijt] [18] van den jongelinck, van Absalom.",
-      "text2026": "Maar die man zei tot Joab: En of ik al duizend zilverlingen op mijn handen mocht wegen, zo zou ik mijn hand aan de zoon van de koning niet slaan; want de koning heeft u, en Abisai, en Ithai, voor onze oren geboden, zeggende: Hoedt u, wie u bent, van de jongeling, van Absalom.",
+      "text2026": "Maar die man zei tot Joab: En of ik al duizend zilverlingen op mijn handen mocht wegen, zo zou ik mijn hand aan de zoon van de koning niet slaan; want de koning heeft u, en Abisai, en Ithai, voor onze oren geboden, zeggende: Hoed u, wie u bent, van de jongeling, van Absalom.",
       "marginNotes": [
         {
           "marker": "17",
@@ -1658,7 +1663,7 @@
           "morph": "HR/Np"
         }
       ],
-      "text2026_html": "Maar die man zei tot Joab: <span class=\"direct-speech\"><i>En of ik al duizend zilverlingen op mijn handen mocht wegen, zo zou ik mijn hand aan de zoon van de koning niet slaan; want de koning heeft u, en Abisai, en Ithai, voor onze oren geboden, zeggende: <span class=\"direct-speech\"><i>Hoedt u, wie u bent, van de jongeling, van Absalom.</i></span></i></span>",
+      "text2026_html": "Maar die man zei tot Joab: <span class=\"direct-speech\"><i>En of ik al duizend zilverlingen op mijn handen mocht wegen, zo zou ik mijn hand aan de zoon van de koning niet slaan; want de koning heeft u, en Abisai, en Ithai, voor onze oren geboden, zeggende: <span class=\"direct-speech\"><i>Hoed u, wie u bent, van de jongeling, van Absalom.</i></span></i></span>",
       "textSV1888_html": "Maar die man zeide tot Joab: En of ik al duizend zilverlingen op mijn handen mocht<sup class=\"note-marker\" data-note=\"17\">17</sup> wegen, zo zou ik mijn hand aan des konings zoon niet slaan; want de koning heeft u, en Abisai, en Ithai, voor onze oren geboden, zeggende:<sup class=\"note-marker\" data-note=\"18\">18</sup> Hoedt u, wie gij zijt, van den jongeling, van Absalom.",
       "text1637_html": "Maer die man seyde tot Ioab; Ende of ick al duysent silverlingen op mijne handen mochte <sup class=\"note-marker\" data-note=\"17\">17</sup> wegen, so en soude ick mijne hant aen des Conincks sone niet slaen: want de Coninck heeft u, ende Abisai, ende Ithai voor onse ooren geboden, seggende; <sup class=\"note-marker\" data-note=\"18\">18</sup> Hoedt u, wie [ghy zijt] <sup class=\"note-marker\" data-note=\"18\">18</sup> van den jongelinck, van Absalom.",
       "phraseDiff": [
@@ -1676,6 +1681,11 @@
           "old": "",
           "new": "van de koning",
           "principe": null
+        },
+        {
+          "old": "Hoedt",
+          "new": "Hoed",
+          "principe": "V1158"
         },
         {
           "old": "gij zijt,",

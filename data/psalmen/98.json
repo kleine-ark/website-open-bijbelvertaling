@@ -325,7 +325,7 @@
       "number": 4,
       "textSV1888": "Juicht den HEERE, gij ganse aarde! roept uit van vreugde, en zingt vrolijk, en psalmzingt.",
       "text1637": "Iuychet den HEERE [11] ghy gantsche aerde, roept uyt van vreuchde, ende singt vrolick, ende psalm-singt.",
-      "text2026": "Juich JAHWEH, u hele aarde! roept uit van vreugde, en zingt vrolijk, en psalmzingt.",
+      "text2026": "Juich JAHWEH, u hele aarde! roep uit van vreugde, en zingt vrolijk, en psalmzingt.",
       "marginNotes": [
         {
           "marker": "11",
@@ -372,7 +372,7 @@
           "morph": "HC/Vpv2mp"
         }
       ],
-      "text2026_html": "Juich JAHWEH,<sup class=\"note-marker\" data-note=\"11\">11</sup> u hele aarde! roept uit van vreugde, en zingt vrolijk, en psalmzingt.",
+      "text2026_html": "Juich JAHWEH,<sup class=\"note-marker\" data-note=\"11\">11</sup> u hele aarde! roep uit van vreugde, en zingt vrolijk, en psalmzingt.",
       "textSV1888_html": "Juicht den HEERE,<sup class=\"note-marker\" data-note=\"11\">11</sup> gij ganse aarde! roept uit van vreugde, en zingt vrolijk, en psalmzingt.",
       "text1637_html": "Iuychet den HEERE <sup class=\"note-marker\" data-note=\"11\">11</sup> ghy gantsche aerde, roept uyt van vreuchde, ende singt vrolick, ende psalm-singt.",
       "phraseDiff": [
@@ -380,6 +380,11 @@
           "old": "Juicht den HEERE, gij ganse",
           "new": "Juich JAHWEH, u hele",
           "principe": null
+        },
+        {
+          "old": "roept",
+          "new": "roep",
+          "principe": "V1158"
         }
       ]
     },
@@ -440,7 +445,7 @@
       "number": 6,
       "textSV1888": "Met trompetten en bazuinengeklank; juicht voor het aangezicht des Konings, des HEEREN.",
       "text1637": "Met trompetten ende basuynen geklanck, juycht voor het aengesichte [12] des Conincks, des HEEREN.",
-      "text2026": "Met trompetten en bazuinengeklank; juicht voor het aangezicht van de Koning, van JAHWEH.",
+      "text2026": "Met trompetten en bazuinengeklank; juich voor het aangezicht van de Koning, van JAHWEH.",
       "marginNotes": [
         {
           "marker": "12",
@@ -487,10 +492,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Met trompetten en bazuinengeklank; juicht voor het aangezicht<sup class=\"note-marker\" data-note=\"12\">12</sup> van de Koning, van JAHWEH.",
+      "text2026_html": "Met trompetten en bazuinengeklank; juich voor het aangezicht<sup class=\"note-marker\" data-note=\"12\">12</sup> van de Koning, van JAHWEH.",
       "textSV1888_html": "Met trompetten en bazuinengeklank; juicht voor het aangezicht<sup class=\"note-marker\" data-note=\"12\">12</sup> des Konings, des HEEREN.",
       "text1637_html": "Met trompetten ende basuynen geklanck, juycht voor het aengesichte <sup class=\"note-marker\" data-note=\"12\">12</sup> des Conincks, des HEEREN.",
       "phraseDiff": [
+        {
+          "old": "juicht",
+          "new": "juich",
+          "principe": "V1158"
+        },
         {
           "old": "des Konings, des HEEREN.",
           "new": "van de Koning, van JAHWEH.",

@@ -59,7 +59,7 @@
       "number": 2,
       "textSV1888": "Al gij volken, klapt in de hand; juicht Gode met een stem van vreugdegezang.",
       "text1637": "Alle ghy volcken, klappet [3] in de hant: Iuychet Gode met eene stemme van vreuchden-gesanck.",
-      "text2026": "Alle volken, klapt in de hand; juicht voor God met een stem van vreugdegezang.",
+      "text2026": "Alle volken, klapt in de hand; juich voor God met een stem van vreugdegezang.",
       "marginNotes": [
         {
           "marker": "3",
@@ -111,7 +111,7 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "Alle volken, klapt<sup class=\"note-marker\" data-note=\"3\">3</sup> in de hand; juicht voor God met een stem van vreugdegezang.",
+      "text2026_html": "Alle volken, klapt<sup class=\"note-marker\" data-note=\"3\">3</sup> in de hand; juich voor God met een stem van vreugdegezang.",
       "textSV1888_html": "Al gij volken, klapt<sup class=\"note-marker\" data-note=\"3\">3</sup> in de hand; juicht Gode met een stem van vreugdegezang.",
       "text1637_html": "Alle ghy volcken, klappet <sup class=\"note-marker\" data-note=\"3\">3</sup> in de hant: Iuychet Gode met eene stemme van vreuchden-gesanck.",
       "phraseDiff": [
@@ -121,9 +121,9 @@
           "principe": "A1"
         },
         {
-          "old": "Gode",
-          "new": "voor God",
-          "principe": "V467"
+          "old": "juicht Gode",
+          "new": "juich voor God",
+          "principe": "V1158"
         }
       ]
     },
@@ -462,7 +462,7 @@
       "number": 8,
       "textSV1888": "Want God is een Koning der ganse aarde; psalmzingt met een onderwijzing!",
       "text1637": "Want Godt is een Coninck der gantscher aerde; psalm-singet [met] een [10] onderwijsinge.",
-      "text2026": "Want God is een Koning van de hele aarde; psalmzingt met een onderwijzing!",
+      "text2026": "Want God is een Koning van de hele aarde; psalmzing met een onderwijzing!",
       "marginNotes": [
         {
           "marker": "10",
@@ -509,7 +509,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Want God is een Koning van de hele aarde; psalmzingt met een<sup class=\"note-marker\" data-note=\"10\">10</sup> onderwijzing!",
+      "text2026_html": "Want God is een Koning van de hele aarde; psalmzing met een<sup class=\"note-marker\" data-note=\"10\">10</sup> onderwijzing!",
       "textSV1888_html": "Want God is een Koning der ganse aarde; psalmzingt met een<sup class=\"note-marker\" data-note=\"10\">10</sup> onderwijzing!",
       "text1637_html": "Want Godt is een Coninck der gantscher aerde; psalm-singet [met] een <sup class=\"note-marker\" data-note=\"10\">10</sup> onderwijsinge.",
       "phraseDiff": [
@@ -517,6 +517,11 @@
           "old": "der ganse",
           "new": "van de hele",
           "principe": "N2"
+        },
+        {
+          "old": "psalmzingt",
+          "new": "psalmzing",
+          "principe": "V1158"
         }
       ]
     },

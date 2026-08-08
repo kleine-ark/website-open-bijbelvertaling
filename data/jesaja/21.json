@@ -482,7 +482,7 @@
       "number": 5,
       "textSV1888": "Bereid de tafel, zie toe, gij wachter! eet, drink; maakt u op, gij vorsten, bestrijkt het schild!",
       "text1637": "[22] Bereydt de tafel, [23] siet toe ghy [24] wachter, eett, drinckt: [25] maeckt u op ghy Vorsten, [26] bestrijckt den schilt.",
-      "text2026": "Bereid de tafel, zie toe, u wachter! eet, drink; maakt u op, u vorsten, bestrijkt het schild!",
+      "text2026": "Bereid de tafel, zie toe, u wachter! eet, drink; maak u op, u vorsten, bestrijkt het schild!",
       "marginNotes": [
         {
           "marker": "22",
@@ -572,7 +572,7 @@
           "morph": "HNcbsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"22\">22</sup> Bereid de tafel,<sup class=\"note-marker\" data-note=\"23\">23</sup> zie toe, u<sup class=\"note-marker\" data-note=\"24\">24</sup> wachter! eet, drink;<sup class=\"note-marker\" data-note=\"25\">25</sup> maakt u op, u vorsten,<sup class=\"note-marker\" data-note=\"26\">26</sup> bestrijkt het schild!",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"22\">22</sup> Bereid de tafel,<sup class=\"note-marker\" data-note=\"23\">23</sup> zie toe, u<sup class=\"note-marker\" data-note=\"24\">24</sup> wachter! eet, drink;<sup class=\"note-marker\" data-note=\"25\">25</sup> maak u op, u vorsten,<sup class=\"note-marker\" data-note=\"26\">26</sup> bestrijkt het schild!",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"22\">22</sup> Bereid de tafel,<sup class=\"note-marker\" data-note=\"23\">23</sup> zie toe, gij<sup class=\"note-marker\" data-note=\"24\">24</sup> wachter! eet, drink;<sup class=\"note-marker\" data-note=\"25\">25</sup> maakt u op, gij vorsten,<sup class=\"note-marker\" data-note=\"26\">26</sup> bestrijkt het schild!",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"22\">22</sup> Bereydt de tafel, <sup class=\"note-marker\" data-note=\"23\">23</sup> siet toe ghy <sup class=\"note-marker\" data-note=\"24\">24</sup> wachter, eett, drinckt: <sup class=\"note-marker\" data-note=\"25\">25</sup> maeckt u op ghy Vorsten, <sup class=\"note-marker\" data-note=\"26\">26</sup> bestrijckt den schilt.",
       "phraseDiff": [
@@ -580,6 +580,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "maakt",
+          "new": "maak",
+          "principe": "V1158"
         },
         {
           "old": "gij",
@@ -1312,7 +1317,7 @@
       "number": 12,
       "textSV1888": "De wachter zeide: De morgenstond is gekomen, en het is nog nacht; wilt gijlieden vragen, vraagt; keert weder, komt.",
       "text1637": "[50] De wachter seyde, [51] De morgenstont is gekomen, ende [52] 't is noch nacht: wilt ghylieden [53] vragen, [54] vraecht; [55] keert weder, [56] komt.",
-      "text2026": "De wachter zei: De morgenstond is gekomen, en het is nog nacht; wilt u vragen, vraagt; keert weer, komt.",
+      "text2026": "De wachter zei: De morgenstond is gekomen, en het is nog nacht; wilt u vragen, vraagt; keer weer, komt.",
       "marginNotes": [
         {
           "marker": "50",
@@ -1421,7 +1426,7 @@
           "morph": "HVqv2mp"
         }
       ],
-      "text2026_html": "De wachter zei: <span class=\"direct-speech\"><i>De morgenstond is gekomen, en het is nog nacht; wilt u vragen, vraagt; keert weer, komt.</i></span>",
+      "text2026_html": "De wachter zei: <span class=\"direct-speech\"><i>De morgenstond is gekomen, en het is nog nacht; wilt u vragen, vraagt; keer weer, komt.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"50\">50</sup> De wachter zeide:<sup class=\"note-marker\" data-note=\"51\">51</sup> De morgenstond is gekomen, en<sup class=\"note-marker\" data-note=\"52\">52</sup> het is nog nacht; wilt gijlieden<sup class=\"note-marker\" data-note=\"53\">53</sup> vragen,<sup class=\"note-marker\" data-note=\"54\">54</sup> vraagt;<sup class=\"note-marker\" data-note=\"55\">55</sup> keert weder,<sup class=\"note-marker\" data-note=\"56\">56</sup> komt.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"50\">50</sup> De wachter seyde, <sup class=\"note-marker\" data-note=\"51\">51</sup> De morgenstont is gekomen, ende <sup class=\"note-marker\" data-note=\"52\">52</sup> 't is noch nacht: wilt ghylieden <sup class=\"note-marker\" data-note=\"53\">53</sup> vrage<i>n</i>, <sup class=\"note-marker\" data-note=\"54\">54</sup> vraecht; <sup class=\"note-marker\" data-note=\"55\">55</sup> keert weder, <sup class=\"note-marker\" data-note=\"56\">56</sup> komt.",
       "phraseDiff": [
@@ -1436,9 +1441,9 @@
           "principe": "A2"
         },
         {
-          "old": "weder,",
-          "new": "weer,",
-          "principe": "V66"
+          "old": "keert weder,",
+          "new": "keer weer,",
+          "principe": "V1158"
         }
       ]
     },
