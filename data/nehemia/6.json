@@ -184,7 +184,7 @@
       "number": 2,
       "textSV1888": "Zo zond Sanballat, en Gesem, tot mij, om te zeggen: Kom en laat ons te zamen vergaderen in de dorpen, in het dal Ono. Maar zij dachten mij kwaad te doen.",
       "text1637": "So sondt Saneballat ende Gesem tot my, om te seggen; Komt ende laet ons te samen vergaderen in de [3] dorpen, inden dale [4] Ono: maer sy dachten my [5] quaet te doen.",
-      "text2026": "Zo zond Sanballat, en Gesem, tot mij, om te zeggen: Kom en laat ons samen verzamelen in de dorpen, in het dal Ono. Maar zij dachten mij kwaad te doen.",
+      "text2026": "Zo zond Sanballat, en Gesem, tot mij, om te zeggen: Kom en laat ons samenkomen in de dorpen, in het dal Ono. Maar zij dachten mij kwaad te doen.",
       "marginNotes": [
         {
           "marker": "3",
@@ -290,14 +290,14 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo zond Sanballat, en Gesem, tot mij, om te zeggen: Kom en laat ons samen verzamelen in de<sup class=\"note-marker\" data-note=\"3\">3</sup> dorpen, in het<sup class=\"note-marker\" data-note=\"4\">4</sup> dal Ono. Maar zij dachten mij<sup class=\"note-marker\" data-note=\"5\">5</sup> kwaad te doen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo zond Sanballat, en Gesem, tot mij, om te zeggen: Kom en laat ons samenkomen in de<sup class=\"note-marker\" data-note=\"3\">3</sup> dorpen, in het<sup class=\"note-marker\" data-note=\"4\">4</sup> dal Ono. Maar zij dachten mij<sup class=\"note-marker\" data-note=\"5\">5</sup> kwaad te doen.</i></span>",
       "textSV1888_html": "Zo zond Sanballat, en Gesem, tot mij, om te zeggen: Kom en laat ons te zamen vergaderen in de<sup class=\"note-marker\" data-note=\"3\">3</sup> dorpen, in het<sup class=\"note-marker\" data-note=\"4\">4</sup> dal Ono. Maar zij dachten mij<sup class=\"note-marker\" data-note=\"5\">5</sup> kwaad te doen.",
       "text1637_html": "So sondt Saneballat ende Gesem tot my, om te seggen; Komt ende laet ons te samen vergaderen in de <sup class=\"note-marker\" data-note=\"3\">3</sup> dorpen, inden dale <sup class=\"note-marker\" data-note=\"4\">4</sup> Ono: maer sy dachten my <sup class=\"note-marker\" data-note=\"5\">5</sup> quaet te doen.",
       "phraseDiff": [
         {
           "old": "te zamen vergaderen",
-          "new": "samen verzamelen",
-          "principe": "V318"
+          "new": "samenkomen",
+          "principe": null
         }
       ]
     },
@@ -1686,7 +1686,7 @@
       "number": 15,
       "textSV1888": "De muur nu werd volbracht, op den vijf en twintigsten van Elul, in twee en vijftig dagen.",
       "text1637": "De muer nu wert volbracht, op den vijf ende twintichsten van [28] Elul: [29] in twee ende vijftich dagen.",
-      "text2026": "De muur nu werd volbracht, op de vijf en twintigsten van Elul, in twee en vijftig dagen.",
+      "text2026": "De muur nu werd volbracht, op de vijf en twintigste van Elul, in twee en vijftig dagen.",
       "marginNotes": [
         {
           "marker": "28",
@@ -1745,7 +1745,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "De muur nu werd volbracht, op de vijf en twintigsten van<sup class=\"note-marker\" data-note=\"28\">28</sup> Elul,<sup class=\"note-marker\" data-note=\"29\">29</sup> in twee en vijftig dagen.",
+      "text2026_html": "De muur nu werd volbracht, op de vijf en twintigste van<sup class=\"note-marker\" data-note=\"28\">28</sup> Elul,<sup class=\"note-marker\" data-note=\"29\">29</sup> in twee en vijftig dagen.",
       "textSV1888_html": "De muur nu werd volbracht, op den vijf en twintigsten van<sup class=\"note-marker\" data-note=\"28\">28</sup> Elul,<sup class=\"note-marker\" data-note=\"29\">29</sup> in twee en vijftig dagen.",
       "text1637_html": "De muer nu wert volbracht, op den vijf ende twintichsten van <sup class=\"note-marker\" data-note=\"28\">28</sup> Elul: <sup class=\"note-marker\" data-note=\"29\">29</sup> in twee ende vijftich dagen.",
       "phraseDiff": [
@@ -1753,6 +1753,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "twintigsten",
+          "new": "twintigste",
+          "principe": null
         }
       ]
     },

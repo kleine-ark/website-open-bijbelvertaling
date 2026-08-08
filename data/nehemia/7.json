@@ -409,7 +409,7 @@
       "number": 4,
       "textSV1888": "De stad nu was wijd van ruimte en groot; doch des volks was weinig daarbinnen; en de huizen waren niet gebouwd.",
       "text1637": "De stadt nu was wijt van [8] ruymte ende groot, doch des volcks was weynich daer [9] binnen: ende de huysen en waren [10] niet gebouwt.",
-      "text2026": "De stad nu was wijd van ruimte en groot; maar van het volk was weinig daarbinnen; en de huizen waren niet gebouwd.",
+      "text2026": "De stad nu was wijd van ruimte en groot; maar er was weinig volk daarbinnen; en de huizen waren niet gebouwd.",
       "marginNotes": [
         {
           "marker": "8",
@@ -485,14 +485,19 @@
           "morph": "HVqsmpa"
         }
       ],
-      "text2026_html": "De stad nu was wijd van<sup class=\"note-marker\" data-note=\"8\">8</sup> ruimte en groot; maar van het volk was weinig<sup class=\"note-marker\" data-note=\"9\">9</sup> daarbinnen; en de huizen waren<sup class=\"note-marker\" data-note=\"10\">10</sup> niet gebouwd.",
+      "text2026_html": "De stad nu was wijd van<sup class=\"note-marker\" data-note=\"8\">8</sup> ruimte en groot; maar er was weinig<sup class=\"note-marker\" data-note=\"9\">9</sup> volk daarbinnen; en de huizen waren<sup class=\"note-marker\" data-note=\"10\">10</sup> niet gebouwd.",
       "textSV1888_html": "De stad nu was wijd van<sup class=\"note-marker\" data-note=\"8\">8</sup> ruimte en groot; doch des volks was weinig<sup class=\"note-marker\" data-note=\"9\">9</sup> daarbinnen; en de huizen waren<sup class=\"note-marker\" data-note=\"10\">10</sup> niet gebouwd.",
       "text1637_html": "De stadt nu was wijt van <sup class=\"note-marker\" data-note=\"8\">8</sup> ruymte ende groot, doch des volcks was weynich daer <sup class=\"note-marker\" data-note=\"9\">9</sup> binnen: ende de huysen en waren <sup class=\"note-marker\" data-note=\"10\">10</sup> niet gebouwt.",
       "phraseDiff": [
         {
           "old": "doch des volks",
-          "new": "maar van het volk",
-          "principe": "N3"
+          "new": "maar er",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "volk",
+          "principe": null
         }
       ]
     },
@@ -3259,7 +3264,7 @@
       "number": 61,
       "textSV1888": "Ook togen dezen op van Thel-Melah, Thel-Harsa, Cherub, Addon en Immer; maar zij konden hunner vaderen huis, en hun zaad niet tonen, of zij uit Israël waren;",
       "text1637": "Oock togen dese op van Thelmelah, Thelharsa; Cherub, Addon, ende Immer: Maer sy en konden harer vaderen huys, noch haer zaet niet toonen of sy uyt Israël waren.",
-      "text2026": "Ook trokken deze op van Thel-Melah, Thel-Harsa, Cherub, Addon en Immer; maar zij konden van hun vaderen huis, en hun zaad niet tonen, of zij uit Israël waren;",
+      "text2026": "Ook trokken deze op van Thel-Melah, Thel-Harsa, Cherub, Addon en Immer; maar zij konden het huis van hun vaderen, en hun zaad niet tonen, of zij uit Israël waren;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3353,7 +3358,7 @@
           "morph": "HPp3mp"
         }
       ],
-      "text2026_html": "Ook trokken deze op van Thel-Melah, Thel-Harsa, Cherub, Addon en Immer; maar zij konden van hun vaderen huis, en hun zaad niet tonen, of zij uit Israël waren;",
+      "text2026_html": "Ook trokken deze op van Thel-Melah, Thel-Harsa, Cherub, Addon en Immer; maar zij konden het huis van hun vaderen, en hun zaad niet tonen, of zij uit Israël waren;",
       "text1637_html": "Oock togen dese op van Thelmelah, Thelharsa; Cherub, Addon, ende Immer: Maer sy en konden harer vaderen huys, noch haer zaet niet toonen of sy uyt Israël waren.",
       "phraseDiff": [
         {
@@ -3362,9 +3367,9 @@
           "principe": "N4"
         },
         {
-          "old": "hunner",
-          "new": "van hun",
-          "principe": "N7"
+          "old": "hunner vaderen huis,",
+          "new": "het huis van hun vaderen,",
+          "principe": null
         }
       ]
     },
