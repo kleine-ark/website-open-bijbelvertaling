@@ -48,28 +48,28 @@ installation.then(() => process.stdout.write(JSON.stringify(opened)));
     return json.loads(result.stdout)
 
 
-def test_current_release_describes_prediker_and_uses_one_version():
+def test_current_release_describes_numeri_and_uses_one_version():
     stats = read_json("data/stats.json")
     changelog = read_json("data/changelog.json")
-    downloads = read_json("downloads/index.json")
     current_release = changelog["wijzigingen"][0]
     descriptions = " ".join(item["beschrijving"] for item in current_release["items"])
 
-    assert "Prediker" in descriptions
+    assert "Numeri 1–20" in descriptions
     assert stats["version"] == current_release["versie"]
-    assert downloads["versie"] == current_release["versie"]
     assert service_worker_install_cache() == [f"shell-{current_release['versie']}"]
-    assert current_release["datum"] == "2026-08-08"
-    assert stats["date"] == "8 augustus 2026"
+    assert current_release["datum"] == "2026-08-09"
+    assert stats["date"] == "9 augustus 2026"
 
 
-def test_human_review_statistics_include_prediker():
+def test_human_review_statistics_include_numeri_1_tot_20():
     stats = read_json("data/stats.json")
+    verified = read_json("data/verified-chapters.json")
 
     assert stats["books_verified"] == 49
-    assert stats["chapters_verified"] == 630
-    assert stats["verses_verified"] == 16738
-    assert "Prediker" in stats["verified_books"]
+    assert stats["chapters_verified"] == 650
+    assert stats["verses_verified"] == 17474
+    assert "Numeri 1–20" in stats["verified_books"]
+    assert verified["numeri"] == list(range(1, 21))
 
 
 def test_desktop_version_remains_independent():
