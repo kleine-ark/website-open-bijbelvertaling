@@ -494,7 +494,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "In het huis van de rechtvaardigen is een grote schat; maar in van de goddelozen inkomst is beroerte.",
+      "text2026": "In het huis van de rechtvaardigen is een grote schat; maar in de inkomst van de goddelozen is beroerte.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -537,7 +537,7 @@
       "hsv": "In het huis van een rechtvaardige is grote rijkdom,maar in het inkomen van een goddeloze is verval.",
       "nbg51": "In het huis van de rechtvaardige is een grote schat,",
       "textSV1888": "In het huis des rechtvaardigen is een grote schat; maar in des goddelozen inkomst is beroerte.",
-      "text2026_html": "In het<sup class=\"note-marker\" data-note=\"12\">12</sup> huis van de rechtvaardigen is een<sup class=\"note-marker\" data-note=\"13\">13</sup> grote schat; maar in van de goddelozen inkomst is<sup class=\"note-marker\" data-note=\"14\">14</sup> beroerte.",
+      "text2026_html": "In het<sup class=\"note-marker\" data-note=\"12\">12</sup> huis van de rechtvaardigen is een<sup class=\"note-marker\" data-note=\"13\">13</sup> grote schat; maar in de inkomst van de goddelozen is<sup class=\"note-marker\" data-note=\"14\">14</sup> beroerte.",
       "textSV1888_html": "In het<sup class=\"note-marker\" data-note=\"12\">12</sup> huis des rechtvaardigen is een<sup class=\"note-marker\" data-note=\"13\">13</sup> grote schat; maar in des goddelozen inkomst is<sup class=\"note-marker\" data-note=\"14\">14</sup> beroerte.",
       "phraseDiff": [
         {
@@ -547,8 +547,13 @@
         },
         {
           "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "new": "de inkomst van de",
+          "principe": null
+        },
+        {
+          "old": "inkomst",
+          "new": "",
+          "principe": null
         }
       ]
     },
@@ -935,7 +940,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Het dodenrijk en het verderf zijn voor JAHWEH; hoeveel te meer de harten van de mensen kinderen?",
+      "text2026": "Het dodenrijk en het verderf zijn voor JAHWEH; hoeveel te meer de harten van de mensenkinderen?",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -988,7 +993,7 @@
       "hsv": "ⓟGraf en verderf liggen open voor de HEERE —hoeveel te meer ⓠde harten van de mensenkinderen.",
       "nbg51": "Dodenrijk en verderf liggen open voor de Here ,",
       "textSV1888": "De hel en het verderf zijn voor den HEERE; hoeveel te meer de harten van des mensen kinderen?",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"22\">22</sup><sup class=\"note-marker\" data-note=\"f\">f</sup> Het dodenrijk en het verderf zijn<sup class=\"note-marker\" data-note=\"23\">23</sup> voor JAHWEH; hoeveel te meer<sup class=\"note-marker\" data-note=\"g\">g</sup> de harten van de mensen<sup class=\"note-marker\" data-note=\"24\">24</sup> kinderen?",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"22\">22</sup><sup class=\"note-marker\" data-note=\"f\">f</sup> Het dodenrijk en het verderf zijn<sup class=\"note-marker\" data-note=\"23\">23</sup> voor JAHWEH; hoeveel te meer<sup class=\"note-marker\" data-note=\"g\">g</sup> de harten van de mensenkinderen?<sup class=\"note-marker\" data-note=\"24\">24</sup>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"22\">22</sup><sup class=\"note-marker\" data-note=\"f\">f</sup> De hel en het verderf zijn<sup class=\"note-marker\" data-note=\"23\">23</sup> voor den HEERE; hoeveel te meer<sup class=\"note-marker\" data-note=\"g\">g</sup> de harten van des mensen<sup class=\"note-marker\" data-note=\"24\">24</sup> kinderen?",
       "phraseDiff": [
         {
@@ -1002,8 +1007,8 @@
           "principe": "N1"
         },
         {
-          "old": "des",
-          "new": "de",
+          "old": "des mensen kinderen?",
+          "new": "de mensenkinderen?",
           "principe": "N3"
         }
       ]
@@ -1782,7 +1787,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "De dwaasheid is de verstandeloze blijdschap; maar een man van verstand zal recht wandelen.",
+      "text2026": "De dwaasheid is blijdschap voor de verstandeloze; maar een man van verstand zal recht wandelen.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -1830,13 +1835,13 @@
       "hsv": "ⓦDwaasheid is blijdschap voor een mens zonder verstand,[35]maar iemand met inzicht houdt de rechte weg.[36]",
       "nbg51": "Dwaasheid is vreugde voor de verstandeloze,",
       "textSV1888": "De dwaasheid is den verstandeloze blijdschap; maar een man van verstand zal recht wandelen.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"n\">n</sup> De dwaasheid is de verstandeloze blijdschap; maar een man van verstand zal<sup class=\"note-marker\" data-note=\"41\">41</sup> recht wandelen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"n\">n</sup> De dwaasheid is blijdschap voor de verstandeloze; maar een man van verstand zal<sup class=\"note-marker\" data-note=\"41\">41</sup> recht wandelen.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"n\">n</sup> De dwaasheid is den verstandeloze blijdschap; maar een man van verstand zal<sup class=\"note-marker\" data-note=\"41\">41</sup> recht wandelen.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den verstandeloze blijdschap;",
+          "new": "blijdschap voor de verstandeloze;",
+          "principe": null
         }
       ]
     },
@@ -2057,7 +2062,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "De weg van het leven is de verstandige naar boven; opdat hij afwijke van het dodenrijk, beneden.",
+      "text2026": "De weg van het leven is voor de verstandige naar boven; opdat hij afwijke van het dodenrijk, beneden.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -2105,7 +2110,7 @@
       "hsv": "Het pad ten leven voert voor een verstandige omhoog,om de hel beneden te ontwijken.",
       "nbg51": "Het pad des levens gaat voor de verstandige opwaarts,",
       "textSV1888": "De weg des levens is den verstandige naar boven; opdat hij afwijke van de hel, beneden.",
-      "text2026_html": "De weg<sup class=\"note-marker\" data-note=\"48\">48</sup> van het leven is de verstandige<sup class=\"note-marker\" data-note=\"49\">49</sup> naar boven; opdat hij afwijke van het<sup class=\"note-marker\" data-note=\"50\">50</sup> dodenrijk,<sup class=\"note-marker\" data-note=\"51\">51</sup> beneden.",
+      "text2026_html": "De weg<sup class=\"note-marker\" data-note=\"48\">48</sup> van het leven is voor de verstandige<sup class=\"note-marker\" data-note=\"49\">49</sup> naar boven; opdat hij afwijke van het<sup class=\"note-marker\" data-note=\"50\">50</sup> dodenrijk,<sup class=\"note-marker\" data-note=\"51\">51</sup> beneden.",
       "textSV1888_html": "De weg<sup class=\"note-marker\" data-note=\"48\">48</sup> des levens is den verstandige<sup class=\"note-marker\" data-note=\"49\">49</sup> naar boven; opdat hij afwijke van de<sup class=\"note-marker\" data-note=\"50\">50</sup> hel,<sup class=\"note-marker\" data-note=\"51\">51</sup> beneden.",
       "phraseDiff": [
         {
@@ -2115,7 +2120,7 @@
         },
         {
           "old": "den",
-          "new": "de",
+          "new": "voor de",
           "principe": "N1"
         },
         {
