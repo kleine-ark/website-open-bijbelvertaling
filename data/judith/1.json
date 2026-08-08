@@ -564,14 +564,19 @@
       "number": 5,
       "text1637": "En maakte haar poorten verheven tot de hoogte van zeventig ellen, en dezer poorten breedte van veertig ellen, tot de uittocht van zijn machtige legers, en tot de ordeningen van zijn voetvolk.",
       "textSV1888": "En maakte haar poorten verheven tot de hoogte van zeventig ellen, en dezer poorten breedte van veertig ellen, tot de uittocht van zijn machtige legers, en tot de ordeningen van zijn voetvolk.",
-      "text2026": "En maakte haar poorten verheven tot de hoogte van zeventig ellen, en van deze poorten breedte van veertig ellen, tot de uittocht van zijn machtige legers, en tot de ordeningen van zijn voetvolk.",
+      "text2026": "En maakte haar poorten verheven tot de hoogte van zeventig ellen, en de breedte van deze poorten veertig ellen, tot de uittocht van zijn machtige legers, en tot de ordeningen van zijn voetvolk.",
       "marginNotes": [],
-      "text2026_html": "En maakte haar poorten verheven tot de hoogte van zeventig ellen, en van deze poorten breedte van veertig ellen, tot de uittocht van zijn machtige legers, en tot de ordeningen van zijn voetvolk.",
+      "text2026_html": "En maakte haar poorten verheven tot de hoogte van zeventig ellen, en de breedte van deze poorten veertig ellen, tot de uittocht van zijn machtige legers, en tot de ordeningen van zijn voetvolk.",
       "phraseDiff": [
         {
-          "old": "dezer",
-          "new": "van deze",
-          "principe": "N5"
+          "old": "dezer poorten",
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "deze poorten",
+          "principe": null
         }
       ],
       "grondtekst": [
@@ -2558,9 +2563,9 @@
       "number": 16,
       "text1637": "En hij keerde met hen weder naar Nineve, hij en al zijn leger, uit vele volken bestaande, een zeer grote menigte van krijgslieden; en hij was daar ledig, en hield maaltijden, hij en zijn leger, honderdentwintig dagen lang.",
       "textSV1888": "En hij keerde met hen weder naar Nineve, hij en al zijn leger, uit vele volken bestaande, een zeer grote menigte van krijgslieden; en hij was daar ledig, en hield maaltijden, hij en zijn leger, honderdentwintig dagen lang.",
-      "text2026": "En hij keerde met hen weer naar Nineve, hij en al zijn leger, uit vele volken bestaande, een zeer grote menigte van soldaten; en hij was daar leeg, en hield maaltijden, hij en zijn leger, honderdentwintig dagen lang.",
+      "text2026": "En hij keerde met hen weer naar Nineve, hij en al zijn leger, uit vele volken bestaande, een zeer grote menigte van soldaten; en hij rustte daar uit, en hield maaltijden, hij en zijn leger, honderdentwintig dagen lang.",
       "marginNotes": [],
-      "text2026_html": "En hij keerde met hen weer naar Nineve, hij en al zijn leger, uit vele volken bestaande, een zeer grote menigte van soldaten; en hij was daar leeg, en hield maaltijden, hij en zijn leger, honderdentwintig dagen lang.",
+      "text2026_html": "En hij keerde met hen weer naar Nineve, hij en al zijn leger, uit vele volken bestaande, een zeer grote menigte van soldaten; en hij rustte daar uit, en hield maaltijden, hij en zijn leger, honderdentwintig dagen lang.",
       "phraseDiff": [
         {
           "old": "weder",
@@ -2573,8 +2578,13 @@
           "principe": "V83"
         },
         {
+          "old": "was",
+          "new": "rustte",
+          "principe": null
+        },
+        {
           "old": "ledig,",
-          "new": "leeg,",
+          "new": "uit,",
           "principe": null
         }
       ],
