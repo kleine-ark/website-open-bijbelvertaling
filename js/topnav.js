@@ -47,6 +47,7 @@
             '<a href="index.html#johannes/1">Tekst</a>' +
             '<a href="onderwerpen.html">Onderwerpen</a>' +
             '<a href="wiki.html">Wiki</a>' +
+            '<a href="downloads.html">Downloads</a>' +
             '<a href="lexicon-viewer.html?taal=hebreeuws">Woordenboek</a>' +
         '</div>' +
         '<input type="search" id="topnav-search-input" class="topnav-search-input" placeholder="Zoek in Gods Woord… (Ctrl+K)" autocomplete="off" aria-label="Zoeken in Gods Woord" onkeydown="if(event.key===\'Enter\'){var q=this.value.trim();if(q){location.href=\'index.html?q=\'+encodeURIComponent(q);}}">' +

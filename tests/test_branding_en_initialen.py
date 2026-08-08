@@ -99,7 +99,7 @@ class BrandingBrowserTests(unittest.TestCase):
         cls.server_thread.join(timeout=2)
 
     def test_volledige_merknaam_blijft_zichtbaar_bij_hamburgermenu(self):
-        for width in (1440, 390):
+        for width in (1440, 1000, 390):
             page = self.browser.new_page(viewport={"width": width, "height": 900})
             try:
                 page.goto(f"{self.base_url}/over-ov.html")
@@ -107,10 +107,26 @@ class BrandingBrowserTests(unittest.TestCase):
                 logo.wait_for(state="visible", timeout=3_000)
                 self.assertEqual(logo.get_attribute("alt"), "Open Vertaling")
                 self.assertGreater(logo.evaluate("img => img.naturalWidth"), 0)
-                if width == 390:
+                self.assertGreater(
+                    logo.evaluate("img => img.getBoundingClientRect().width"), 100
+                )
+                if width < 1200:
                     self.assertTrue(page.locator("#topnav-hamburger").is_visible())
+                    self.assertFalse(page.locator("#topnav-links").is_visible())
+                else:
+                    self.assertFalse(page.locator("#topnav-hamburger").is_visible())
             finally:
                 page.close()
+
+    def test_gedeelde_navigatie_linkt_naar_de_publieke_downloadpagina(self):
+        page = self.browser.new_page(viewport={"width": 1440, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/over-ov.html")
+            link = page.get_by_role("link", name="Downloads", exact=True)
+            link.wait_for(state="visible", timeout=3_000)
+            self.assertEqual(link.get_attribute("href"), "downloads.html")
+        finally:
+            page.close()
 
     def test_aparte_leesheader_toont_het_woordmerk_in_beide_themas(self):
         page = self.browser.new_page(viewport={"width": 390, "height": 900})
