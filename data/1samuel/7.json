@@ -1140,7 +1140,7 @@
       "number": 9,
       "textSV1888": "Toen nam Samuël een melklam, en hij offerde het geheel den HEERE ten brandoffer; en Samuël riep tot den HEERE voor Israël; en de HEERE verhoorde hem.",
       "text1637": "Doe nam Samuel een [14] melck-lam, ende [15] hy offerde’t geheel den HEERE ten brand-offer: ende Samuel riep tot den HEERE voor Israël, ende de HEERE [16] verhoorde hem.",
-      "text2026": "Toen nam Samuël een melklam, en hij offerde het geheel JAHWEH ten brandoffer; en Samuël riep tot JAHWEH voor Israël; en JAHWEH verhoorde hem.",
+      "text2026": "Toen nam Samuël een melklam, en hij offerde het geheel aan JAHWEH ten brandoffer; en Samuël riep tot JAHWEH voor Israël; en JAHWEH verhoorde hem.",
       "marginNotes": [
         {
           "marker": "14",
@@ -1251,14 +1251,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Toen nam Samuël een<sup class=\"note-marker\" data-note=\"14\">14</sup> melklam, en<sup class=\"note-marker\" data-note=\"15\">15</sup> hij offerde het geheel JAHWEH ten brandoffer; en Samuël riep tot JAHWEH voor Israël; en JAHWEH<sup class=\"note-marker\" data-note=\"16\">16</sup> verhoorde hem.",
+      "text2026_html": "Toen nam Samuël een<sup class=\"note-marker\" data-note=\"14\">14</sup> melklam, en<sup class=\"note-marker\" data-note=\"15\">15</sup> hij offerde het geheel aan JAHWEH ten brandoffer; en Samuël riep tot JAHWEH voor Israël; en JAHWEH<sup class=\"note-marker\" data-note=\"16\">16</sup> verhoorde hem.",
       "textSV1888_html": "Toen nam Samuël een<sup class=\"note-marker\" data-note=\"14\">14</sup> melklam, en<sup class=\"note-marker\" data-note=\"15\">15</sup> hij offerde het geheel den HEERE ten brandoffer; en Samuël riep tot den HEERE voor Israël; en de HEERE<sup class=\"note-marker\" data-note=\"16\">16</sup> verhoorde hem.",
       "text1637_html": "Doe nam Samuel een <sup class=\"note-marker\" data-note=\"14\">14</sup> melck-lam, ende <sup class=\"note-marker\" data-note=\"15\">15</sup> hy offerde’t geheel den HEERE ten brand-offer: ende Samuel riep tot den HEERE voor Israël, ende de HEERE <sup class=\"note-marker\" data-note=\"16\">16</sup> verhoorde hem.",
       "phraseDiff": [
         {
           "old": "den HEERE",
-          "new": "JAHWEH",
-          "principe": "N1"
+          "new": "aan JAHWEH",
+          "principe": null
         },
         {
           "old": "den HEERE",
@@ -1780,7 +1780,7 @@
       "number": 14,
       "textSV1888": "En de steden, welke de Filistijnen van Israël genomen hadden kwamen weder aan Israël, van Ekron tot Gath toe; ook rukte Israël derzelver landpale uit de hand der Filistijnen; en er was vrede tussen Israël en tussen de Amorieten.",
       "text1637": "Ende de steden welcke de Philistijnen van Israël genomen hadden, quamen weder aen Israël, van Ekron tot Gath toe, oock ruckte Israël der selver lantpale uyt de hant der Philistijnen: ende [23] daer was vrede tusschen Israël ende tusschen [24] de Amoriten.",
-      "text2026": "En de steden, die de Filistijnen van Israël genomen hadden kwamen weer aan Israël, van Ekron tot Gath toe; ook rukte Israël van die landpale uit de hand van de Filistijnen; en er was vrede tussen Israël en tussen de Amorieten.",
+      "text2026": "En de steden, die de Filistijnen van Israël genomen hadden kwamen weer aan Israël, van Ekron tot Gath toe; ook rukte Israël de landpale daarvan uit de hand van de Filistijnen; en er was vrede tussen Israël en tussen de Amorieten.",
       "marginNotes": [
         {
           "marker": "23",
@@ -1914,7 +1914,7 @@
           "morph": "HTd/Ngmsa"
         }
       ],
-      "text2026_html": "En de steden, die de Filistijnen van Israël genomen hadden kwamen weer aan Israël, van Ekron tot Gath toe; ook rukte Israël van die landpale uit de hand van de Filistijnen; en<sup class=\"note-marker\" data-note=\"23\">23</sup> er was vrede tussen Israël en tussen<sup class=\"note-marker\" data-note=\"24\">24</sup> de Amorieten.",
+      "text2026_html": "En de steden, die de Filistijnen van Israël genomen hadden kwamen weer aan Israël, van Ekron tot Gath toe; ook rukte Israël de landpale daarvan uit de hand van de Filistijnen; en<sup class=\"note-marker\" data-note=\"23\">23</sup> er was vrede tussen Israël en tussen<sup class=\"note-marker\" data-note=\"24\">24</sup> de Amorieten.",
       "textSV1888_html": "En de steden, welke de Filistijnen van Israël genomen hadden kwamen weder aan Israël, van Ekron tot Gath toe; ook rukte Israël derzelver landpale uit de hand der Filistijnen; en<sup class=\"note-marker\" data-note=\"23\">23</sup> er was vrede tussen Israël en tussen<sup class=\"note-marker\" data-note=\"24\">24</sup> de Amorieten.",
       "text1637_html": "Ende de steden welcke de Philistijnen van Israël genomen hadden, quamen weder aen Israël, van Ekron tot Gath toe, oock ruckte Israël der selver lantpale uyt de hant der Philistijnen: ende <sup class=\"note-marker\" data-note=\"23\">23</sup> daer was vrede tusschen Israël ende tusschen <sup class=\"note-marker\" data-note=\"24\">24</sup> de Amoriten.",
       "phraseDiff": [
@@ -1930,8 +1930,13 @@
         },
         {
           "old": "derzelver",
-          "new": "van die",
-          "principe": "V82"
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "daarvan",
+          "principe": null
         },
         {
           "old": "der",
