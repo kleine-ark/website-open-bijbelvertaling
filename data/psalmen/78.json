@@ -5,7 +5,7 @@
    "number": 1,
    "textSV1888": "Een onderwijzing van Asaf. O mijn volk! neem mijn leer ter oren; neigt ulieder oor tot de redenen mijns monds.",
    "text1637": "EEn’ [1] onderwijsinge [2] Asaphs. O mijn volck, neemt mijne leere ter ooren: neyget ulieder oore tot de redenen mijns monts.",
-   "text2026": "Een onderwijzing van Asaf. O mijn volk! neem mijn leer ter oren; neigt uw oor tot de redenen van mijn mond.",
+   "text2026": "Een onderwijzing van Asaf. O mijn volk! neem mijn leer ter oren; neig uw oor tot de redenen van mijn mond.",
    "marginNotes": [
     {
      "marker": "1",
@@ -69,14 +69,14 @@
      "morph": "HNcmsc/Sp1cs"
     }
    ],
-   "text2026_html": "Een<sup class=\"note-marker\" data-note=\"1\">1</sup> onderwijzing<sup class=\"note-marker\" data-note=\"2\">2</sup> van Asaf. O mijn volk! neem mijn leer ter oren; neigt uw oor tot de redenen van mijn mond.",
+   "text2026_html": "Een<sup class=\"note-marker\" data-note=\"1\">1</sup> onderwijzing<sup class=\"note-marker\" data-note=\"2\">2</sup> van Asaf. O mijn volk! neem mijn leer ter oren; neig uw oor tot de redenen van mijn mond.",
    "textSV1888_html": "Een<sup class=\"note-marker\" data-note=\"1\">1</sup> onderwijzing<sup class=\"note-marker\" data-note=\"2\">2</sup> van Asaf. O mijn volk! neem mijn leer ter oren; neigt ulieder oor tot de redenen mijns monds.",
    "text1637_html": "EEn’ <sup class=\"note-marker\" data-note=\"1\">1</sup> onderwijsinge <sup class=\"note-marker\" data-note=\"2\">2</sup> Asaphs. O mijn volck, neemt mijne leere ter ooren: neyget ulieder oore tot de redenen mijns monts.",
    "phraseDiff": [
     {
-     "old": "ulieder",
-     "new": "uw",
-     "principe": "V311"
+     "old": "neigt ulieder",
+     "new": "neig uw",
+     "principe": "V1158"
     },
     {
      "old": "mijns monds.",
@@ -1254,7 +1254,7 @@
    "number": 20,
    "textSV1888": "Ziet, Hij heeft den rotssteen geslagen, dat er wateren uitvloeiden, en beken overvloediglijk uitbraken, zou Hij ook brood kunnen geven? Zou Hij Zijn volke vlees toebereiden?",
    "text1637": "[h] Siet, hy heeft den rotzsteen geslagen, datter wateren uyt vloeyden, ende beken overvloedichlick uytbraken: soude hy oock broot konnen geven? soude hy sijnen volcke vleesch toebereyden?",
-   "text2026": "Ziet, Hij heeft de rotssteen geslagen, dat er wateren uitvloeiden, en beken overvloedig uitbraken, zou Hij ook brood kunnen geven? Zou Hij Zijn volk vlees toebereiden?",
+   "text2026": "Zie, Hij heeft de rotssteen geslagen, dat er wateren uitvloeiden, en beken overvloedig uitbraken, zou Hij ook brood kunnen geven? Zou Hij Zijn volk vlees toebereiden?",
    "marginNotes": [
     {
      "marker": "h",
@@ -1341,10 +1341,15 @@
      "morph": "HR/Ncmsc/Sp3ms"
     }
    ],
-   "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup><span class=\"direct-speech\"><i> Ziet, Hij heeft de rotssteen geslagen, dat er wateren uitvloeiden, en beken overvloedig uitbraken, zou Hij ook brood kunnen geven? Zou Hij Zijn volk vlees toebereiden?</i></span>",
+   "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup><span class=\"direct-speech\"><i> Zie, Hij heeft de rotssteen geslagen, dat er wateren uitvloeiden, en beken overvloedig uitbraken, zou Hij ook brood kunnen geven? Zou Hij Zijn volk vlees toebereiden?</i></span>",
    "textSV1888_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Ziet, Hij heeft den rotssteen geslagen, dat er wateren uitvloeiden, en beken overvloediglijk uitbraken, zou Hij ook brood kunnen geven? Zou Hij Zijn volke vlees toebereiden?",
    "text1637_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Siet, hy heeft den rotzsteen geslagen, datter wateren uyt vloeyden, ende beken overvloedichlick uytbraken: soude hy oock broot konnen geven? soude hy sijnen volcke vleesch toebereyden?",
    "phraseDiff": [
+    {
+     "old": "Ziet,",
+     "new": "Zie,",
+     "principe": "V1158"
+    },
     {
      "old": "den",
      "new": "de",

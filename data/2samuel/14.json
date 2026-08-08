@@ -1090,7 +1090,7 @@
       "number": 10,
       "textSV1888": "En de koning zeide: Spreekt iemand tegen u, zo breng hem tot mij; en hij zal u voortaan niet meer aantasten.",
       "text1637": "Ende de Coninck seyde: Spreeckt yemant tegen u, so brengt hem tot my; ende hy en sal u [17] voortaen niet mer aentasten.",
-      "text2026": "En de koning zei: Spreekt iemand tegen u, zo breng hem tot mij; en hij zal u voortaan niet meer aantasten.",
+      "text2026": "En de koning zei: Spreek iemand tegen u, zo breng hem tot mij; en hij zal u voortaan niet meer aantasten.",
       "marginNotes": [
         {
           "marker": "17",
@@ -1157,14 +1157,14 @@
           "morph": "HR/Sp2fs"
         }
       ],
-      "text2026_html": "En de koning zei: <span class=\"direct-speech\"><i>Spreekt iemand tegen u, zo breng hem tot mij; en hij zal u voortaan niet meer aantasten.</i></span>",
+      "text2026_html": "En de koning zei: <span class=\"direct-speech\"><i>Spreek iemand tegen u, zo breng hem tot mij; en hij zal u voortaan niet meer aantasten.</i></span>",
       "textSV1888_html": "En de koning zeide: Spreekt iemand tegen u, zo breng hem tot mij; en hij zal u<sup class=\"note-marker\" data-note=\"17\">17</sup> voortaan niet meer aantasten.",
       "text1637_html": "Ende de Coninck seyde: Spreeckt yemant tegen u, so brengt hem tot my; ende hy en sal u <sup class=\"note-marker\" data-note=\"17\">17</sup> voortaen niet mer aentasten.",
       "phraseDiff": [
         {
-          "old": "zeide:",
-          "new": "zei:",
-          "principe": "W1"
+          "old": "zeide: Spreekt",
+          "new": "zei: Spreek",
+          "principe": "V1158"
         }
       ]
     },
@@ -3878,7 +3878,7 @@
       "number": 30,
       "textSV1888": "Zo zeide hij tot zijn knechten: Ziet, het stuk akkers van Joab is aan de zijde van het mijne, en hij heeft gerst daarop; gaat heen, en steekt het aan met vuur, en Absaloms knechten staken dat stuk akkers aan met vuur.",
       "text1637": "So seyde [66] hy tot sijne knechten; Siet, het stuck ackers Ioabs is aen de [67] zijde van ’t mijne, ende hy heeft gerste daer op; gaet henen, ende steeckte ’t aen met vyer: ende Absaloms knechten staken dat stuck ackers aen met vyer.",
-      "text2026": "Zo zei hij tot zijn knechten: Ziet, het stuk akkers van Joab is aan de zijde van het mijne, en hij heeft gerst daarop; gaat heen, en steekt het aan met vuur, en Absaloms knechten staken dat stuk akkers aan met vuur.",
+      "text2026": "Zo zei hij tot zijn knechten: Zie, het stuk akkers van Joab is aan de zijde van het mijne, en hij heeft gerst daarop; ga heen, en steekt het aan met vuur, en Absaloms knechten staken dat stuk akkers aan met vuur.",
       "marginNotes": [
         {
           "marker": "66",
@@ -3997,7 +3997,7 @@
           "morph": "HRd/Ncbsa"
         }
       ],
-      "text2026_html": "Zo zei hij tot zijn knechten: <span class=\"direct-speech\"><i>Ziet, het stuk akkers van Joab is aan de zijde van het mijne, en hij heeft gerst daarop; gaat heen, en steekt het aan met vuur, en Absaloms knechten staken dat stuk akkers aan met vuur.</i></span>",
+      "text2026_html": "Zo zei hij tot zijn knechten: <span class=\"direct-speech\"><i>Zie, het stuk akkers van Joab is aan de zijde van het mijne, en hij heeft gerst daarop; ga heen, en steekt het aan met vuur, en Absaloms knechten staken dat stuk akkers aan met vuur.</i></span>",
       "textSV1888_html": "Zo zeide<sup class=\"note-marker\" data-note=\"66\">66</sup> hij tot zijn knechten: Ziet, het stuk akkers van Joab is aan de<sup class=\"note-marker\" data-note=\"67\">67</sup> zijde van het mijne, en hij heeft gerst daarop; gaat heen, en steekt het aan met vuur, en Absaloms knechten staken dat stuk akkers aan met vuur.",
       "text1637_html": "So seyde <sup class=\"note-marker\" data-note=\"66\">66</sup> hy tot sijne knechten; Siet, het stuck ackers Ioabs is aen de <sup class=\"note-marker\" data-note=\"67\">67</sup> zijde van ’t mijne, ende hy heeft gerste daer op; gaet henen, ende steeckte ’t aen met vyer: ende Absaloms knechten staken dat stuck ackers aen met vyer.",
       "phraseDiff": [
@@ -4005,6 +4005,16 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Ziet,",
+          "new": "Zie,",
+          "principe": "V1158"
+        },
+        {
+          "old": "gaat",
+          "new": "ga",
+          "principe": "V1158"
         }
       ]
     },

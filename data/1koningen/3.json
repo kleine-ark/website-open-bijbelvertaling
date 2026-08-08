@@ -2839,7 +2839,7 @@
       "number": 24,
       "textSV1888": "Verder zeide de koning: Haalt mij een zwaard; en zij brachten een zwaard voor het aangezicht des konings.",
       "text1637": "Voorder seyde de Coninck, [32] Haelt my een sweert: ende sy brachten een sweert voor het aengesicht des Conincks.",
-      "text2026": "Verder zei de koning: Haalt mij een zwaard; en zij brachten een zwaard voor het aangezicht van de koning.",
+      "text2026": "Verder zei de koning: Haal mij een zwaard; en zij brachten een zwaard voor het aangezicht van de koning.",
       "marginNotes": [
         {
           "marker": "32",
@@ -2896,7 +2896,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "Verder zei de koning: <span class=\"direct-speech\"><i>Haalt mij een zwaard; en zij brachten een zwaard voor het aangezicht van de koning.</i></span>",
+      "text2026_html": "Verder zei de koning: <span class=\"direct-speech\"><i>Haal mij een zwaard; en zij brachten een zwaard voor het aangezicht van de koning.</i></span>",
       "textSV1888_html": "Verder zeide de koning:<sup class=\"note-marker\" data-note=\"32\">32</sup> Haalt mij een zwaard; en zij brachten een zwaard voor het aangezicht des konings.",
       "text1637_html": "Voorder seyde de Coninck, <sup class=\"note-marker\" data-note=\"32\">32</sup> Haelt my een sweert: ende sy brachten een sweert voor het aengesicht des Conincks.",
       "phraseDiff": [
@@ -2904,6 +2904,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Haalt",
+          "new": "Haal",
+          "principe": "V1158"
         },
         {
           "old": "des konings.",
@@ -2916,7 +2921,7 @@
       "number": 25,
       "textSV1888": "En de koning zeide: Doorsnijdt dat levende kind in tweeën, en geeft de ene een helft, en de andere een helft.",
       "text1637": "Ende de Coninck seyde, Doorsnijdt dat levende kint in tween: ende geeft de eene een helft, ende de andere een helft.",
-      "text2026": "En de koning zei: Doorsnijdt dat levende kind in tweeën, en geeft de ene één helft, en de andere één helft.",
+      "text2026": "En de koning zei: Doorsnijd dat levende kind in tweeën, en geeft de ene één helft, en de andere één helft.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2990,13 +2995,13 @@
           "morph": "HR/Acfsa"
         }
       ],
-      "text2026_html": "En de koning zei: <span class=\"direct-speech\"><i>Doorsnijdt dat levende kind in tweeën, en geeft de ene één helft, en de andere één helft.</i></span>",
+      "text2026_html": "En de koning zei: <span class=\"direct-speech\"><i>Doorsnijd dat levende kind in tweeën, en geeft de ene één helft, en de andere één helft.</i></span>",
       "text1637_html": "Ende de Coninck seyde, Doorsnijdt dat levende kint in tween: ende geeft de eene een helft, ende de andere een helft.",
       "phraseDiff": [
         {
-          "old": "zeide:",
-          "new": "zei:",
-          "principe": "W1"
+          "old": "zeide: Doorsnijdt",
+          "new": "zei: Doorsnijd",
+          "principe": "V1158"
         },
         {
           "old": "een",
@@ -3240,7 +3245,7 @@
       "number": 27,
       "textSV1888": "Toen antwoordde de koning, en zeide: Geeft aan die het levende kind, en doodt het geenszins; die is zijn moeder.",
       "text1637": "Doe antwoordde de Coninck, ende seyde, Geeft die het levendige kint, ende en doot het geensins niet: die is sijne moeder.",
-      "text2026": "Toen antwoordde de koning, en zei: Geeft aan die het levende kind, en doodt het in geen geval; die is zijn moeder.",
+      "text2026": "Toen antwoordde de koning, en zei: Geef aan die het levende kind, en doodt het in geen geval; die is zijn moeder.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3309,13 +3314,13 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "Toen antwoordde de koning, en zei: <span class=\"direct-speech\"><i>Geeft aan die het levende kind, en doodt het in geen geval; die is zijn moeder.</i></span>",
+      "text2026_html": "Toen antwoordde de koning, en zei: <span class=\"direct-speech\"><i>Geef aan die het levende kind, en doodt het in geen geval; die is zijn moeder.</i></span>",
       "text1637_html": "Doe antwoordde de Coninck, ende seyde, Geeft die het levendige kint, ende en doot het geensins niet: die is sijne moeder.",
       "phraseDiff": [
         {
-          "old": "zeide:",
-          "new": "zei:",
-          "principe": "W1"
+          "old": "zeide: Geeft",
+          "new": "zei: Geef",
+          "principe": "V1158"
         },
         {
           "old": "geenszins;",

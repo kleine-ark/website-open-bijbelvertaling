@@ -3014,7 +3014,7 @@
       "number": 24,
       "textSV1888": "En hij zeide tot degenen, die bij hem stonden: Neemt dat pond van hem weg, en geeft het dien, die de tien ponden heeft.",
       "text1637": "Ende hy seyde tot de gene die by hem stonden, Neemt dat pondt van hem wech, ende geeft het dien, die de tien ponden heeft.",
-      "text2026": "En hij zei tot degenen, die bij hem stonden: Neemt dat pond van hem weg, en geeft het die, die de tien ponden heeft.",
+      "text2026": "En hij zei tot degenen, die bij hem stonden: Neem dat pond van hem weg, en geeft het die, die de tien ponden heeft.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3114,13 +3114,18 @@
           "gloss": "〔to have/be"
         }
       ],
-      "text2026_html": "En hij zei tot degenen, die bij hem stonden: <span class=\"god-speaks\"><i>Neemt dat pond van hem weg, en geeft het die, die de tien ponden heeft.</i></span>",
+      "text2026_html": "En hij zei tot degenen, die bij hem stonden: <span class=\"god-speaks\"><i>Neem dat pond van hem weg, en geeft het die, die de tien ponden heeft.</i></span>",
       "text1637_html": "Ende hy seyde tot de gene die by hem stonden, Neemt dat pondt van hem wech, en<i>de</i> geeft het dien, die de tien ponden heeft.",
       "phraseDiff": [
         {
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Neemt",
+          "new": "Neem",
+          "principe": "V1158"
         },
         {
           "old": "dien,",
@@ -3708,7 +3713,7 @@
       "number": 30,
       "textSV1888": "Zeggende: Gaat henen in dat vlek, dat tegenover is; in hetwelk inkomende, zult gij een veulen gebonden vinden, waarop geen mens ooit heeft gezeten; ontbindt hetzelve, en brengt het.",
       "text1637": "Seggende, Gaet henen in dat vleck, dat tegen over is: in 't welck inkomende sult ghy [29] een veulen gebonden vinden, waer op geen mensche oyt en heeft geseten: ontbindt het selve, ende brenght het.",
-      "text2026": "Zeggende: Gaat heen in dat plaats, dat tegenover is; in dat inkomende, zult u een veulen gebonden vinden, waarop geen mens ooit heeft gezeten; ontbindt hetzelfde, en brengt het.",
+      "text2026": "Zeggende: Ga heen in dat plaats, dat tegenover is; in dat inkomende, zult u een veulen gebonden vinden, waarop geen mens ooit heeft gezeten; ontbind hetzelfde, en brengt het.",
       "marginNotes": [
         {
           "marker": "29",
@@ -3852,14 +3857,14 @@
           "gloss": "〔to bring"
         }
       ],
-      "text2026_html": "Zeggende: <span class=\"god-speaks\"><i>Gaat heen in dat plaats, dat tegenover is; in dat inkomende, zult u<sup class=\"note-marker\" data-note=\"29\">29</sup> een veulen gebonden vinden, waarop geen mens ooit heeft gezeten; ontbindt hetzelfde, en brengt het.</i></span>",
+      "text2026_html": "Zeggende: <span class=\"god-speaks\"><i>Ga heen in dat plaats, dat tegenover is; in dat inkomende, zult u<sup class=\"note-marker\" data-note=\"29\">29</sup> een veulen gebonden vinden, waarop geen mens ooit heeft gezeten; ontbind hetzelfde, en brengt het.</i></span>",
       "textSV1888_html": "Zeggende: Gaat henen in dat vlek, dat tegenover is; in hetwelk inkomende, zult gij<sup class=\"note-marker\" data-note=\"29\">29</sup> een veulen gebonden vinden, waarop geen mens ooit heeft gezeten; ontbindt hetzelve, en brengt het.",
       "text1637_html": "Seggende, Gaet henen in dat vleck, dat tegen over is: in 't welck inkomende sult ghy <sup class=\"note-marker\" data-note=\"29\">29</sup> een veulen gebonden vinden, waer op geen mensche oyt en heeft geseten: ontbindt het selve, ende brenght het.",
       "phraseDiff": [
         {
-          "old": "henen",
-          "new": "heen",
-          "principe": "V67"
+          "old": "Gaat henen",
+          "new": "Ga heen",
+          "principe": "V1158"
         },
         {
           "old": "vlek,",
@@ -3877,9 +3882,9 @@
           "principe": "A1"
         },
         {
-          "old": "hetzelve,",
-          "new": "hetzelfde,",
-          "principe": "O4"
+          "old": "ontbindt hetzelve,",
+          "new": "ontbind hetzelfde,",
+          "principe": "V1158"
         }
       ]
     },

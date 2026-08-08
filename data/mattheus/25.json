@@ -489,7 +489,7 @@
       "number": 6,
       "textSV1888": "En ter middernacht geschiedde een geroep: Ziet, de bruidegom komt, gaat uit hem tegemoet!",
       "text1637": "Ende te middernacht geschiedde een geroep, Siet de Bruydegom komt, gaet uyt hem te gemoet.",
-      "text2026": "En ter middernacht gebeurde een geroep: Ziet, de bruidegom komt, gaat uit hem tegemoet!",
+      "text2026": "En ter middernacht gebeurde een geroep: Zie, de bruidegom komt, gaat uit hem tegemoet!",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -565,13 +565,18 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En ter middernacht gebeurde een geroep: Ziet, de bruidegom komt, gaat uit hem tegemoet!</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En ter middernacht gebeurde een geroep: Zie, de bruidegom komt, gaat uit hem tegemoet!</i></span>",
       "text1637_html": "Ende te middernacht geschiedde een geroep, Siet de Bruydegom komt, gaet uyt hem te gemoet.",
       "phraseDiff": [
         {
           "old": "geschiedde",
           "new": "gebeurde",
           "principe": null
+        },
+        {
+          "old": "Ziet,",
+          "new": "Zie,",
+          "principe": "V1158"
         }
       ]
     },
@@ -665,7 +670,7 @@
       "number": 8,
       "textSV1888": "En de dwazen zeiden tot de wijzen: Geeft ons van uw olie; want onze lampen gaan uit.",
       "text1637": "Ende de dwase seyden tot de wijse, Geeft ons van uwe olie, want onse lampen gaen uyt.",
-      "text2026": "En de dwazen zeiden tot de wijzen: Geeft ons van uw olie; want onze lampen gaan uit.",
+      "text2026": "En de dwazen zeiden tot de wijzen: Geef ons van uw olie; want onze lampen gaan uit.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -771,8 +776,15 @@
           "gloss": "〔to extinguish"
         }
       ],
-      "text2026_html": "En de dwazen zeiden tot de wijzen: <span class=\"god-speaks\"><i>Geeft ons van uw olie; want onze lampen gaan uit.</i></span>",
-      "text1637_html": "Ende de dwase seyden tot de wijse, Geeft ons van uwe olie, want onse lampen gaen uyt."
+      "text2026_html": "En de dwazen zeiden tot de wijzen: <span class=\"god-speaks\"><i>Geef ons van uw olie; want onze lampen gaan uit.</i></span>",
+      "text1637_html": "Ende de dwase seyden tot de wijse, Geeft ons van uwe olie, want onse lampen gaen uyt.",
+      "phraseDiff": [
+        {
+          "old": "Geeft",
+          "new": "Geef",
+          "principe": "V1158"
+        }
+      ]
     },
     {
       "number": 9,
@@ -3363,7 +3375,7 @@
       "number": 28,
       "textSV1888": "Neemt dan van hem het talent weg, en geeft het dengene, die de tien talenten heeft.",
       "text1637": "Neemt dan van hem het talent wech, ende geeft het den genen, die de tien talenten heeft.",
-      "text2026": "Neemt dan van hem het talent weg, en geeft het degene, die de tien talenten heeft.",
+      "text2026": "Neem dan van hem het talent weg, en geeft het degene, die de tien talenten heeft.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3445,9 +3457,14 @@
           "gloss": "〔talent"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Neemt dan van hem het talent weg, en geeft het degene, die de tien talenten heeft.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Neem dan van hem het talent weg, en geeft het degene, die de tien talenten heeft.</i></span>",
       "text1637_html": "Neemt dan van hem het talent wech, ende geeft het den genen, die de tien talenten heeft.",
       "phraseDiff": [
+        {
+          "old": "Neemt",
+          "new": "Neem",
+          "principe": "V1158"
+        },
         {
           "old": "dengene,",
           "new": "degene,",
@@ -4234,7 +4251,7 @@
       "number": 34,
       "textSV1888": "Alsdan zal de Koning zeggen tot degenen, die tot Zijn rechterhand zijn: Komt, gij gezegenden Mijns Vaders! beërft dat Koninkrijk, hetwelk u bereid is van de grondlegging der wereld.",
       "text1637": "Alsdan sal [27] de Coninck seggen tot de gene de tot sijner rechter-[handt zijn], Komt ghy [28] gesegende mijns Vaders, be-erft dat Coninckrijck, [k] ’t welck [29] u bereyt is van de grontlegginge der werelt.",
-      "text2026": "Dan zal de Koning zeggen tot degenen, die tot Zijn rechterhand zijn: Komt, u gezegenden van Mijn Vader! beërft dat Koninkrijk, dat u bereid is van de grondlegging van de wereld.",
+      "text2026": "Dan zal de Koning zeggen tot degenen, die tot Zijn rechterhand zijn: Kom, u gezegenden van Mijn Vader! beërft dat Koninkrijk, dat u bereid is van de grondlegging van de wereld.",
       "marginNotes": [
         {
           "marker": "27",
@@ -4399,7 +4416,7 @@
           "gloss": "〔world"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Dan zal<sup class=\"note-marker\" data-note=\"27\">27</sup> de Koning zeggen tot degenen, die tot Zijn rechterhand zijn: Komt, u<sup class=\"note-marker\" data-note=\"28\">28</sup> gezegenden van Mijn Vader! beërft dat Koninkrijk,<sup class=\"note-marker\" data-note=\"k\">k</sup> dat<sup class=\"note-marker\" data-note=\"29\">29</sup> u bereid is van de grondlegging van de wereld.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Dan zal<sup class=\"note-marker\" data-note=\"27\">27</sup> de Koning zeggen tot degenen, die tot Zijn rechterhand zijn: Kom, u<sup class=\"note-marker\" data-note=\"28\">28</sup> gezegenden van Mijn Vader! beërft dat Koninkrijk,<sup class=\"note-marker\" data-note=\"k\">k</sup> dat<sup class=\"note-marker\" data-note=\"29\">29</sup> u bereid is van de grondlegging van de wereld.</i></span>",
       "textSV1888_html": "Alsdan zal<sup class=\"note-marker\" data-note=\"27\">27</sup> de Koning zeggen tot degenen, die tot Zijn rechterhand zijn: Komt, gij<sup class=\"note-marker\" data-note=\"28\">28</sup> gezegenden Mijns Vaders! beërft dat Koninkrijk,<sup class=\"note-marker\" data-note=\"k\">k</sup> hetwelk<sup class=\"note-marker\" data-note=\"29\">29</sup> u bereid is van de grondlegging der wereld.",
       "text1637_html": "Alsdan sal <sup class=\"note-marker\" data-note=\"27\">27</sup> de Coninck seggen tot de gene de tot sijner rechter-[<i>handt zijn</i>], Komt ghy <sup class=\"note-marker\" data-note=\"28\">28</sup> gesegende mijns Vaders, be-erft dat Coninckrijck, <sup class=\"note-marker\" data-note=\"k\">k</sup> ’t welck <sup class=\"note-marker\" data-note=\"29\">29</sup> u bereyt is van de grontlegginge der werelt.",
       "phraseDiff": [
@@ -4409,9 +4426,9 @@
           "principe": "V196"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "Komt, gij",
+          "new": "Kom, u",
+          "principe": "V1158"
         },
         {
           "old": "Mijns Vaders!",
@@ -5185,7 +5202,7 @@
       "number": 41,
       "textSV1888": "Dan zal Hij zeggen ook tot degenen, die ter linkerhand zijn: Gaat weg van Mij, gij vervloekten, in het eeuwige vuur, hetwelk den duivel en zijn engelen bereid is.",
       "text1637": "Dan sal hy seggen oock tot de gene die ter slincker-[handt zijn], [q] Gaet wech van my ghy [34] vervloeckte in het [r] eeuwige vyer, ’t welck den [35] Duyvel ende sijne engelen bereydt is.",
-      "text2026": "Dan zal Hij zeggen ook tot degenen, die ter linkerhand zijn: Gaat weg van Mij, u vervloekten, in het eeuwige vuur, dat de duivel en zijn engelen bereid is.",
+      "text2026": "Dan zal Hij zeggen ook tot degenen, die ter linkerhand zijn: Ga weg van Mij, u vervloekten, in het eeuwige vuur, dat de duivel en zijn engelen bereid is.",
       "marginNotes": [
         {
           "marker": "q",
@@ -5362,10 +5379,15 @@
           "gloss": "〔he/she/it/self"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Dan zal Hij zeggen ook tot degenen, die ter linkerhand<sup class=\"note-marker\" data-note=\"q\">q</sup> zijn: Gaat weg van Mij, u<sup class=\"note-marker\" data-note=\"34\">34</sup> vervloekten, in het<sup class=\"note-marker\" data-note=\"r\">r</sup> eeuwige vuur, dat de<sup class=\"note-marker\" data-note=\"35\">35</sup> duivel en zijn engelen bereid is.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Dan zal Hij zeggen ook tot degenen, die ter linkerhand<sup class=\"note-marker\" data-note=\"q\">q</sup> zijn: Ga weg van Mij, u<sup class=\"note-marker\" data-note=\"34\">34</sup> vervloekten, in het<sup class=\"note-marker\" data-note=\"r\">r</sup> eeuwige vuur, dat de<sup class=\"note-marker\" data-note=\"35\">35</sup> duivel en zijn engelen bereid is.</i></span>",
       "textSV1888_html": "Dan zal Hij zeggen ook tot degenen, die ter linkerhand<sup class=\"note-marker\" data-note=\"q\">q</sup> zijn: Gaat weg van Mij, gij<sup class=\"note-marker\" data-note=\"34\">34</sup> vervloekten, in het<sup class=\"note-marker\" data-note=\"r\">r</sup> eeuwige vuur, hetwelk den<sup class=\"note-marker\" data-note=\"35\">35</sup> duivel en zijn engelen bereid is.",
       "text1637_html": "Dan sal hy seggen oock tot de gene die ter slincker-[<i>handt zijn</i>], <sup class=\"note-marker\" data-note=\"q\">q</sup> Gaet wech van my ghy <sup class=\"note-marker\" data-note=\"34\">34</sup> vervloeckte in het <sup class=\"note-marker\" data-note=\"r\">r</sup> eeuwige vyer, ’t welck den <sup class=\"note-marker\" data-note=\"35\">35</sup> Duyvel ende sijne engelen bereydt is.",
       "phraseDiff": [
+        {
+          "old": "Gaat",
+          "new": "Ga",
+          "principe": "V1158"
+        },
         {
           "old": "gij",
           "new": "u",

@@ -424,7 +424,7 @@
       "number": 4,
       "textSV1888": "En gebood hun, zeggende: Ziet toe, gijlieden zult der stad lagen leggen van achter de stad; houdt u niet zeer verre van de stad, en weest gij allen bereid.",
       "text1637": "Ende geboodt hen, seggende: Siet toe, ghylieden sult der stadt lagen leggen van achter de stadt, houdt u niet seer verre van de stadt: ende weest ghy alle bereydt.",
-      "text2026": "En gebood hun, zeggende: Ziet toe, u zult tegen de stad hinderlagen leggen van achter de stad; houdt u niet zeer verre van de stad, en wees u allen bereid.",
+      "text2026": "En gebood hun, zeggende: Zie toe, u zult tegen de stad hinderlagen leggen van achter de stad; houd u niet zeer verre van de stad, en wees u allen bereid.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -513,9 +513,14 @@
           "morph": "HVNrmpa"
         }
       ],
-      "text2026_html": "En gebood hun, zeggende: <span class=\"direct-speech\"><i>Ziet toe, u zult tegen de stad hinderlagen leggen van achter de stad; houdt u niet zeer verre van de stad, en wees u allen bereid.</i></span>",
+      "text2026_html": "En gebood hun, zeggende: <span class=\"direct-speech\"><i>Zie toe, u zult tegen de stad hinderlagen leggen van achter de stad; houd u niet zeer verre van de stad, en wees u allen bereid.</i></span>",
       "text1637_html": "Ende geboodt hen, seggende: Siet toe, ghylieden sult der stadt lagen leggen van achter de stadt, houdt u niet seer verre van de stadt: ende weest ghy alle bereydt.",
       "phraseDiff": [
+        {
+          "old": "Ziet",
+          "new": "Zie",
+          "principe": "V1158"
+        },
         {
           "old": "gijlieden",
           "new": "u",
@@ -530,6 +535,11 @@
           "old": "lagen",
           "new": "hinderlagen",
           "principe": "V343"
+        },
+        {
+          "old": "houdt",
+          "new": "houd",
+          "principe": "V1158"
         },
         {
           "old": "weest gij",
@@ -847,7 +857,7 @@
       "number": 8,
       "textSV1888": "En het zal geschieden, wanneer gij de stad ingenomen hebt, zo zult gij de stad met vuur aansteken; naar het woord des HEEREN zult gijlieden doen; ziet, ik heb het ulieden geboden.",
       "text1637": "Ende ’t sal geschieden, wanneer ghy de stadt ingenomen hebt, so sult ghy de stadt met vyere aensteken, nae den woorde des HEEREN sult ghylieden doen, siet ick hebbet ulieden geboden.",
-      "text2026": "En het zal gebeuren, wanneer u de stad ingenomen hebt, zo zult u de stad met vuur aansteken; naar het woord van JAHWEH zult u doen; ziet, ik heb het u geboden.",
+      "text2026": "En het zal gebeuren, wanneer u de stad ingenomen hebt, zo zult u de stad met vuur aansteken; naar het woord van JAHWEH zult u doen; zie, ik heb het u geboden.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -921,7 +931,7 @@
           "morph": "HTo/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En het zal gebeuren, wanneer u de stad ingenomen hebt, zo zult u de stad met vuur aansteken; naar het woord van JAHWEH zult u doen; ziet, ik heb het u geboden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En het zal gebeuren, wanneer u de stad ingenomen hebt, zo zult u de stad met vuur aansteken; naar het woord van JAHWEH zult u doen; zie, ik heb het u geboden.</i></span>",
       "text1637_html": "Ende ’t sal geschieden, wanneer ghy de stadt ingenomen hebt, so sult ghy de stadt met vyere aensteken, nae den woorde des HEEREN sult ghylieden doen, siet ick hebbet ulieden geboden.",
       "phraseDiff": [
         {
@@ -948,6 +958,11 @@
           "old": "gijlieden",
           "new": "u",
           "principe": "A2"
+        },
+        {
+          "old": "ziet,",
+          "new": "zie,",
+          "principe": "V1158"
         },
         {
           "old": "ulieden",

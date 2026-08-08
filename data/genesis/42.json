@@ -121,7 +121,7 @@
       "number": 2,
       "textSV1888": "Voorts zeide hij: Ziet, ik heb gehoord, dat er koren in Egypte is; trekt daarhenen af, en koopt ons koren van daar, opdat wij leven en niet sterven.",
       "text1637": "Voorts seyde hy; Siet, [a] ick hebbe gehoort datter koorn in Egypten is: trecket daer henen af, ende koopet ons [koorn] van daer, op dat wy leven, ende niet en sterven.",
-      "text2026": "Verder zei hij: Ziet, ik heb gehoord, dat er koren in Egypte is; trekt daarheen af, en koopt ons koren van daar, opdat wij leven en niet sterven.",
+      "text2026": "Verder zei hij: Zie, ik heb gehoord, dat er koren in Egypte is; trek daarheen af, en koopt ons koren van daar, opdat wij leven en niet sterven.",
       "marginNotes": [
         {
           "marker": "a",
@@ -208,7 +208,7 @@
           "morph": "HVqi1cp"
         }
       ],
-      "text2026_html": "Verder zei hij: <span class=\"direct-speech\"><i>Ziet, ik heb gehoord, dat er koren in Egypte is; trekt daarheen af, en koopt ons koren van daar, opdat wij leven en niet sterven.</i></span>",
+      "text2026_html": "Verder zei hij: <span class=\"direct-speech\"><i>Zie, ik heb gehoord, dat er koren in Egypte is; trek daarheen af, en koopt ons koren van daar, opdat wij leven en niet sterven.</i></span>",
       "textSV1888_html": "Voorts zeide hij: Ziet,<sup class=\"note-marker\" data-note=\"a\">a</sup> ik heb gehoord, dat er koren in Egypte is; trekt daarhenen af, en koopt ons koren van daar, opdat wij leven en niet sterven.",
       "text1637_html": "Voorts seyde hy; Siet, <sup class=\"note-marker\" data-note=\"a\">a</sup> ick hebbe gehoort datter koorn in Egypten is: trecket daer henen af, ende koopet ons [koorn] van daer, op dat wy leven, ende niet en sterven.",
       "phraseDiff": [
@@ -218,9 +218,14 @@
           "principe": "W1"
         },
         {
-          "old": "daarhenen",
-          "new": "daarheen",
-          "principe": "V223"
+          "old": "Ziet,",
+          "new": "Zie,",
+          "principe": "V1158"
+        },
+        {
+          "old": "trekt daarhenen",
+          "new": "trek daarheen",
+          "principe": "V1158"
         }
       ]
     },
@@ -1992,7 +1997,7 @@
       "number": 18,
       "textSV1888": "En ten derden dage zeide Jozef tot hen: Doet dit, zo zult gij leven; ik vrees God.",
       "text1637": "Ende ten derden dage seyde Ioseph tot hen; [21] Doet dit, so sult ghy leven: ick vreese Godt.",
-      "text2026": "En op de derde dag zei Jozef tot hen: Doet dit, zo zult u leven; ik vrees God.",
+      "text2026": "En op de derde dag zei Jozef tot hen: Doe dit, zo zult u leven; ik vrees God.",
       "marginNotes": [
         {
           "marker": "21",
@@ -2074,7 +2079,7 @@
           "morph": "HVqrmsa"
         }
       ],
-      "text2026_html": "En op de derde dag zei Jozef tot hen: <span class=\"direct-speech\"><i>Doet dit, zo zult u leven; ik vrees God.</i></span>",
+      "text2026_html": "En op de derde dag zei Jozef tot hen: <span class=\"direct-speech\"><i>Doe dit, zo zult u leven; ik vrees God.</i></span>",
       "textSV1888_html": "En ten derden dage zeide Jozef tot hen:<sup class=\"note-marker\" data-note=\"21\">21</sup> Doet dit, zo zult gij leven; ik vrees God.",
       "text1637_html": "Ende ten derden dage seyde Ioseph tot hen; <sup class=\"note-marker\" data-note=\"21\">21</sup> Doet dit, so sult ghy leven: ick vreese Godt.",
       "phraseDiff": [
@@ -2082,6 +2087,11 @@
           "old": "ten derden dage zeide",
           "new": "op de derde dag zei",
           "principe": "W1"
+        },
+        {
+          "old": "Doet",
+          "new": "Doe",
+          "principe": "V1158"
         },
         {
           "old": "gij",

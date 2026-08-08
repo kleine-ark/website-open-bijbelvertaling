@@ -585,7 +585,7 @@
       "number": 5,
       "textSV1888": "Hij dan zeide: Met vrede; ik ben gekomen om den HEERE offerande te doen; heiligt u, en komt met mij ten offer; en hij heiligde Isaï en zijn zonen, en hij nodigde hen ten offer.",
       "text1637": "Hy dan seyde, Met vrede, ick ben gekomen om den HEERE offerhande te doen, [11] heylicht u, ende komt met my te offer: ende [12] hy heylichde Isaï, ende sijne sonen, ende hy noodigdese ten offer.",
-      "text2026": "Hij dan zei: Met vrede; ik ben gekomen om JAHWEH offergave te doen; heiligt u, en komt met mij ten offer; en hij heiligde Isaï en zijn zonen, en hij nodigde hen ten offer.",
+      "text2026": "Hij dan zei: Met vrede; ik ben gekomen om JAHWEH offergave te doen; heilig u, en komt met mij ten offer; en hij heiligde Isaï en zijn zonen, en hij nodigde hen ten offer.",
       "marginNotes": [
         {
           "marker": "11",
@@ -689,7 +689,7 @@
           "morph": "HRd/Ncmsa"
         }
       ],
-      "text2026_html": "Hij dan zei: <span class=\"direct-speech\"><i>Met vrede; ik ben gekomen om JAHWEH offergave te doen;</i></span> heiligt u, en komt met mij ten offer; en hij heiligde Isaï en zijn zonen, en hij nodigde hen ten offer.",
+      "text2026_html": "Hij dan zei: <span class=\"direct-speech\"><i>Met vrede; ik ben gekomen om JAHWEH offergave te doen;</i></span> heilig u, en komt met mij ten offer; en hij heiligde Isaï en zijn zonen, en hij nodigde hen ten offer.",
       "textSV1888_html": "Hij dan zeide: Met vrede; ik ben gekomen om den HEERE offerande te doen;<sup class=\"note-marker\" data-note=\"11\">11</sup> heiligt u, en komt met mij ten offer; en<sup class=\"note-marker\" data-note=\"12\">12</sup> hij heiligde Isaï en zijn zonen, en hij nodigde hen ten offer.",
       "text1637_html": "Hy dan seyde, Met vrede, ick ben gekomen om den HEERE offerhande te doen, <sup class=\"note-marker\" data-note=\"11\">11</sup> heylicht u, ende komt met my te offer: ende <sup class=\"note-marker\" data-note=\"12\">12</sup> hy heylichde Isaï, ende sijne sonen, ende hy noodigdese ten offer.",
       "phraseDiff": [
@@ -702,6 +702,11 @@
           "old": "den HEERE offerande",
           "new": "JAHWEH offergave",
           "principe": "N1"
+        },
+        {
+          "old": "heiligt",
+          "new": "heilig",
+          "principe": "V1158"
         }
       ]
     },
@@ -2118,7 +2123,7 @@
       "number": 17,
       "textSV1888": "Toen zeide Saul tot zijn knechten: Ziet mij toch naar een man uit, die wel spelen kan, en brengt hem tot mij.",
       "text1637": "Doe seyde Saul tot sijne knechten: Siet my doch eenen man uyt, die wel spelen kan, ende brengt hem tot my.",
-      "text2026": "Toen zei Saul tot zijn knechten: Ziet mij toch naar een man uit, die wel spelen kan, en brengt hem tot mij.",
+      "text2026": "Toen zei Saul tot zijn knechten: Zie mij toch naar een man uit, die wel spelen kan, en brengt hem tot mij.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2182,13 +2187,18 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "Toen zei Saul tot zijn knechten: <span class=\"direct-speech\"><i>Ziet mij toch naar een man uit, die wel spelen kan, en brengt hem tot mij.</i></span>",
+      "text2026_html": "Toen zei Saul tot zijn knechten: <span class=\"direct-speech\"><i>Zie mij toch naar een man uit, die wel spelen kan, en brengt hem tot mij.</i></span>",
       "text1637_html": "Doe seyde Saul tot sijne knechten: Siet my doch eenen man uyt, die wel spelen kan, ende brengt hem tot my.",
       "phraseDiff": [
         {
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "Ziet",
+          "new": "Zie",
+          "principe": "V1158"
         }
       ]
     },

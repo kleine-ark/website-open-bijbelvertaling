@@ -353,7 +353,7 @@
       "number": 5,
       "textSV1888": "Ondersteunt gijlieden mij met de flessen, versterkt mij met de appelen, want ik ben krank van liefde.",
       "text1637": "[16] Ondersteunt ghy-lieden my [17] met de flesschen, [18] versterckt my met de appelen: want [19] ick ben kranck van liefde.",
-      "text2026": "Ondersteunt u mij met de flessen, versterkt mij met de appelen, want ik ben ziek van liefde.",
+      "text2026": "Ondersteun u mij met de flessen, versterkt mij met de appelen, want ik ben ziek van liefde.",
       "marginNotes": [
         {
           "marker": "16",
@@ -426,14 +426,14 @@
           "morph": "HPp1cs"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup><span class=\"direct-speech\"><i> Ondersteunt u mij<sup class=\"note-marker\" data-note=\"17\">17</sup> met de flessen,<sup class=\"note-marker\" data-note=\"18\">18</sup> versterkt mij met de appelen, want<sup class=\"note-marker\" data-note=\"19\">19</sup> ik ben ziek van liefde.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup><span class=\"direct-speech\"><i> Ondersteun u mij<sup class=\"note-marker\" data-note=\"17\">17</sup> met de flessen,<sup class=\"note-marker\" data-note=\"18\">18</sup> versterkt mij met de appelen, want<sup class=\"note-marker\" data-note=\"19\">19</sup> ik ben ziek van liefde.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup> Ondersteunt gijlieden mij<sup class=\"note-marker\" data-note=\"17\">17</sup> met de flessen,<sup class=\"note-marker\" data-note=\"18\">18</sup> versterkt mij met de appelen, want<sup class=\"note-marker\" data-note=\"19\">19</sup> ik ben krank van liefde.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup> Ondersteunt ghy-lieden my <sup class=\"note-marker\" data-note=\"17\">17</sup> met de flesschen, <sup class=\"note-marker\" data-note=\"18\">18</sup> versterckt my met de appelen: want <sup class=\"note-marker\" data-note=\"19\">19</sup> ick ben kranck van liefde.",
       "phraseDiff": [
         {
-          "old": "gijlieden",
-          "new": "u",
-          "principe": "A2"
+          "old": "Ondersteunt gijlieden",
+          "new": "Ondersteun u",
+          "principe": "V1158"
         },
         {
           "old": "krank",
@@ -763,7 +763,7 @@
       "number": 9,
       "textSV1888": "Mijn Liefste is gelijk een ree, of een welp der herten; ziet, Hij staat achter onzen muur, kijkende uit de vensteren, blinkende uit de traliën.",
       "text1637": "Mijn Liefste is gelijck een rhee, ofte een welp der herten: siet, hy staet [31] achter onsen muer, [32] kijckende uyt de vensteren, [33] blinckende uyt [34] de tralien.",
-      "text2026": "Mijn Liefste is gelijk een ree, of een welp van de herten; ziet, Hij staat achter onze muur, kijkende uit de vensters, blinkende uit de tralies.",
+      "text2026": "Mijn Liefste is gelijk een ree, of een welp van de herten; zie, Hij staat achter onze muur, kijkende uit de vensters, blinkende uit de tralies.",
       "marginNotes": [
         {
           "marker": "31",
@@ -881,7 +881,7 @@
           "morph": "HTd/Ncmpa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Mijn Liefste is gelijk een ree, of een welp van de herten; ziet, Hij staat<sup class=\"note-marker\" data-note=\"31\">31</sup> achter onze muur,<sup class=\"note-marker\" data-note=\"32\">32</sup> kijkende uit de vensters,<sup class=\"note-marker\" data-note=\"33\">33</sup> blinkende uit<sup class=\"note-marker\" data-note=\"34\">34</sup> de tralies.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Mijn Liefste is gelijk een ree, of een welp van de herten; zie, Hij staat<sup class=\"note-marker\" data-note=\"31\">31</sup> achter onze muur,<sup class=\"note-marker\" data-note=\"32\">32</sup> kijkende uit de vensters,<sup class=\"note-marker\" data-note=\"33\">33</sup> blinkende uit<sup class=\"note-marker\" data-note=\"34\">34</sup> de tralies.</i></span>",
       "textSV1888_html": "Mijn Liefste is gelijk een ree, of een welp der herten; ziet, Hij staat<sup class=\"note-marker\" data-note=\"31\">31</sup> achter onzen muur,<sup class=\"note-marker\" data-note=\"32\">32</sup> kijkende uit de vensteren,<sup class=\"note-marker\" data-note=\"33\">33</sup> blinkende uit<sup class=\"note-marker\" data-note=\"34\">34</sup> de traliën.",
       "text1637_html": "Mijn Liefste is gelijck een rhee, ofte een welp der herten: siet, hy staet <sup class=\"note-marker\" data-note=\"31\">31</sup> achter onsen muer, <sup class=\"note-marker\" data-note=\"32\">32</sup> kijckende uyt de vensteren, <sup class=\"note-marker\" data-note=\"33\">33</sup> blinckende uyt <sup class=\"note-marker\" data-note=\"34\">34</sup> de tralien.",
       "phraseDiff": [
@@ -889,6 +889,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "ziet,",
+          "new": "zie,",
+          "principe": "V1158"
         },
         {
           "old": "onzen",
@@ -1430,7 +1435,7 @@
       "number": 15,
       "textSV1888": "Vangt gijlieden ons de vossen, de kleine vossen, die de wijngaarden verderven, want onze wijngaarden hebben jonge druifjes.",
       "text1637": "[54] Vangt ghy lieden ons [55] de [c] Vossen, de kleyne Vossen, die de wijngaerden verderven: want onse wijngaerden [hebben] [56] jonge druyfkens.",
-      "text2026": "Vangt u ons de vossen, de kleine vossen, die de wijngaarden verderven, want onze wijngaarden hebben jonge druifjes.",
+      "text2026": "Vang u ons de vossen, de kleine vossen, die de wijngaarden verderven, want onze wijngaarden hebben jonge druifjes.",
       "marginNotes": [
         {
           "marker": "54",
@@ -1508,14 +1513,14 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"54\">54</sup><span class=\"direct-speech\"><i> Vangt u ons<sup class=\"note-marker\" data-note=\"55\">55</sup> de<sup class=\"note-marker\" data-note=\"c\">c</sup> vossen, de kleine vossen, die de wijngaarden verderven, want onze wijngaarden<sup class=\"note-marker\" data-note=\"56\">56</sup> hebben jonge druifjes.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"54\">54</sup><span class=\"direct-speech\"><i> Vang u ons<sup class=\"note-marker\" data-note=\"55\">55</sup> de<sup class=\"note-marker\" data-note=\"c\">c</sup> vossen, de kleine vossen, die de wijngaarden verderven, want onze wijngaarden<sup class=\"note-marker\" data-note=\"56\">56</sup> hebben jonge druifjes.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"54\">54</sup> Vangt gijlieden ons<sup class=\"note-marker\" data-note=\"55\">55</sup> de<sup class=\"note-marker\" data-note=\"c\">c</sup> vossen, de kleine vossen, die de wijngaarden verderven, want onze wijngaarden<sup class=\"note-marker\" data-note=\"56\">56</sup> hebben jonge druifjes.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"54\">54</sup> Vangt ghy lieden ons <sup class=\"note-marker\" data-note=\"55\">55</sup> de <sup class=\"note-marker\" data-note=\"c\">c</sup> Vossen, de kleyne Vossen, die de wijngaerden verderven: want onse wijngaerden [hebben] <sup class=\"note-marker\" data-note=\"56\">56</sup> jonge druyfkens.",
       "phraseDiff": [
         {
-          "old": "gijlieden",
-          "new": "u",
-          "principe": "A2"
+          "old": "Vangt gijlieden",
+          "new": "Vang u",
+          "principe": "V1158"
         }
       ]
     },

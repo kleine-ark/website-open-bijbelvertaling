@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Ziet, een koning zal regeren in gerechtigheid, en de vorsten zullen heersen naar recht.",
       "text1637": "SIet [1] een [a] Coninck sal regeren in gerechticheyt: ende [2] de Vorsten [3] sullen heerschen nae recht.",
-      "text2026": "Ziet, een koning zal regeren in gerechtigheid, en de vorsten zullen heersen naar recht.",
+      "text2026": "Zie, een koning zal regeren in gerechtigheid, en de vorsten zullen heersen naar recht.",
       "marginNotes": [
         {
           "marker": "a",
@@ -73,10 +73,16 @@
           "morph": "HVqi3mp"
         }
       ],
-      "text2026_html": "Ziet,<sup class=\"note-marker\" data-note=\"1\">1</sup> een<sup class=\"note-marker\" data-note=\"a\">a</sup> koning zal regeren in gerechtigheid, en<sup class=\"note-marker\" data-note=\"2\">2</sup> de vorsten<sup class=\"note-marker\" data-note=\"3\">3</sup> zullen heersen naar recht.",
+      "text2026_html": "Zie,<sup class=\"note-marker\" data-note=\"1\">1</sup> een<sup class=\"note-marker\" data-note=\"a\">a</sup> koning zal regeren in gerechtigheid, en<sup class=\"note-marker\" data-note=\"2\">2</sup> de vorsten<sup class=\"note-marker\" data-note=\"3\">3</sup> zullen heersen naar recht.",
       "textSV1888_html": "Ziet,<sup class=\"note-marker\" data-note=\"1\">1</sup> een<sup class=\"note-marker\" data-note=\"a\">a</sup> koning zal regeren in gerechtigheid, en<sup class=\"note-marker\" data-note=\"2\">2</sup> de vorsten<sup class=\"note-marker\" data-note=\"3\">3</sup> zullen heersen naar recht.",
       "text1637_html": "SIet <sup class=\"note-marker\" data-note=\"1\">1</sup> een <sup class=\"note-marker\" data-note=\"a\">a</sup> Coninck sal regeren in gerechticheyt: ende <sup class=\"note-marker\" data-note=\"2\">2</sup> de Vorsten <sup class=\"note-marker\" data-note=\"3\">3</sup> sullen heerschen nae recht.",
-      "phraseDiff": []
+      "phraseDiff": [
+        {
+          "old": "Ziet,",
+          "new": "Zie,",
+          "principe": "V1158"
+        }
+      ]
     },
     {
       "number": 2,
@@ -825,7 +831,7 @@
       "number": 9,
       "textSV1888": "Staat op, gij geruste vrouwen, hoort mijn stem; gij dochters, die zo zeker zijt, neemt mijn redenen ter ore.",
       "text1637": "[29] Staet op, [30] ghy geruste wijven, hoort mijn stemme: ghy dochters die soo seker zijt, neemt mijne redenen ter oore.",
-      "text2026": "Staat op, u geruste vrouwen, hoort mijn stem; u dochters, die zo zeker bent, neem mijn redenen ter ore.",
+      "text2026": "Sta op, u geruste vrouwen, hoort mijn stem; u dochters, die zo zeker bent, neem mijn redenen ter ore.",
       "marginNotes": [
         {
           "marker": "29",
@@ -889,10 +895,15 @@
           "morph": "HNcfsc/Sp1cs"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"29\">29</sup> Staat op,<sup class=\"note-marker\" data-note=\"30\">30</sup> u geruste vrouwen, hoort mijn stem; u dochters, die zo zeker bent, neem mijn redenen ter ore.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"29\">29</sup> Sta op,<sup class=\"note-marker\" data-note=\"30\">30</sup> u geruste vrouwen, hoort mijn stem; u dochters, die zo zeker bent, neem mijn redenen ter ore.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"29\">29</sup> Staat op,<sup class=\"note-marker\" data-note=\"30\">30</sup> gij geruste vrouwen, hoort mijn stem; gij dochters, die zo zeker zijt, neemt mijn redenen ter ore.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"29\">29</sup> Staet op, <sup class=\"note-marker\" data-note=\"30\">30</sup> ghy geruste wijven, hoort mijn stemme: ghy dochters die soo seker zijt, neemt mijne redenen ter oore.",
       "phraseDiff": [
+        {
+          "old": "Staat",
+          "new": "Sta",
+          "principe": "V1158"
+        },
         {
           "old": "gij",
           "new": "u",

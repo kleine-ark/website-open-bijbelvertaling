@@ -1098,7 +1098,7 @@
       "number": 11,
       "textSV1888": "Want Og, de koning van Bazan, was alleen van de overigen der reuzen overgebleven; ziet, zijn bedstede, zijnde een bedstede van ijzer, is zij niet te Rabba der kinderen Ammons? Negen ellen is haar lengte, en vier ellen haar breedte, naar eens mans elleboog.",
       "text1637": "Want Og de Coninck van Basan, was [12] alleen van de overige der Reusen overgebleven; siet, sijne bedstede, zijnde eene bedstede van yser, isse niet te [13] Rabba der kinderen Ammons? negen [14] ellen is hare lengte, ende vier ellen hare breette, nae eens mans ellenboge.",
-      "text2026": "Want Og, de koning van Bazan, was alleen van de overigen van de reuzen overgebleven; ziet, zijn bedstede, zijnde een bedstede van ijzer, is zij niet te Rabba van de kinderen Ammons? Negen ellen is haar lengte, en vier ellen haar breedte, naar de elleboog van een man.",
+      "text2026": "Want Og, de koning van Bazan, was alleen van de overigen van de reuzen overgebleven; zie, zijn bedstede, zijnde een bedstede van ijzer, is zij niet te Rabba van de kinderen Ammons? Negen ellen is haar lengte, en vier ellen haar breedte, naar de elleboog van een man.",
       "marginNotes": [
         {
           "marker": "12",
@@ -1249,7 +1249,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want Og, de koning van Bazan, was<sup class=\"note-marker\" data-note=\"12\">12</sup> alleen van de overigen van de reuzen overgebleven; ziet, zijn bedstede, zijnde een bedstede van ijzer, is zij niet te<sup class=\"note-marker\" data-note=\"13\">13</sup> Rabba van de kinderen Ammons? Negen<sup class=\"note-marker\" data-note=\"14\">14</sup> ellen is haar lengte, en vier ellen haar breedte, naar de elleboog van een man.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want Og, de koning van Bazan, was<sup class=\"note-marker\" data-note=\"12\">12</sup> alleen van de overigen van de reuzen overgebleven; zie, zijn bedstede, zijnde een bedstede van ijzer, is zij niet te<sup class=\"note-marker\" data-note=\"13\">13</sup> Rabba van de kinderen Ammons? Negen<sup class=\"note-marker\" data-note=\"14\">14</sup> ellen is haar lengte, en vier ellen haar breedte, naar de elleboog van een man.</i></span>",
       "textSV1888_html": "Want Og, de koning van Bazan, was<sup class=\"note-marker\" data-note=\"12\">12</sup> alleen van de overigen der reuzen overgebleven; ziet, zijn bedstede, zijnde een bedstede van ijzer, is zij niet te<sup class=\"note-marker\" data-note=\"13\">13</sup> Rabba der kinderen Ammons? Negen<sup class=\"note-marker\" data-note=\"14\">14</sup> ellen is haar lengte, en vier ellen haar breedte, naar eens mans elleboog.",
       "text1637_html": "Want Og de Coninck van Basan, was <sup class=\"note-marker\" data-note=\"12\">12</sup> alleen van de overige der Reusen overgebleven; siet, sijne bedstede, zijnde eene bedstede van yser, isse niet te <sup class=\"note-marker\" data-note=\"13\">13</sup> Rabba der kinderen Ammons? negen <sup class=\"note-marker\" data-note=\"14\">14</sup> ellen is hare lengte, ende vier ellen hare breette, nae eens mans ellenboge.",
       "phraseDiff": [
@@ -1257,6 +1257,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "ziet,",
+          "new": "zie,",
+          "principe": "V1158"
         },
         {
           "old": "der",
@@ -2606,7 +2611,7 @@
       "number": 22,
       "textSV1888": "Vreest ze niet; want de HEERE, uw God, strijdt voor ulieden.",
       "text1637": "En vreestse niet: want de HEERE uwe Godt die strijdt voor u lieden.",
-      "text2026": "Vreest ze niet; want JAHWEH, uw God, strijdt voor u.",
+      "text2026": "Vrees ze niet; want JAHWEH, uw God, strijdt voor u.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2650,9 +2655,14 @@
           "morph": "HR/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Vreest ze niet; want JAHWEH, uw God, strijdt voor u.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Vrees ze niet; want JAHWEH, uw God, strijdt voor u.</i></span>",
       "text1637_html": "En vreestse niet: want de HEERE uwe Godt die strijdt voor u lieden.",
       "phraseDiff": [
+        {
+          "old": "Vreest",
+          "new": "Vrees",
+          "principe": "V1158"
+        },
         {
           "old": "de HEERE,",
           "new": "JAHWEH,",
