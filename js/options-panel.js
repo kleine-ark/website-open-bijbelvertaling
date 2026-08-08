@@ -43,6 +43,8 @@ const OptionsPanel = {
             document.body.classList.remove('options-open');
             if (this.lastTrigger && this.lastTrigger.isConnected) this.lastTrigger.focus();
         });
+
+        this.setupZoom();
     },
 
     open(trigger) {
@@ -88,6 +90,25 @@ const OptionsPanel = {
         if (target === null) return;
         event.preventDefault();
         this.activateTab(tabs[target].dataset.optionsTab, true);
+    },
+
+    setupZoom() {
+        const bind = () => {
+            if (!window.OVZoom || this.dialog.dataset.zoomBound === 'true') return;
+            const out = document.getElementById('options-zoom-out');
+            const value = document.getElementById('options-zoom-value');
+            const input = document.getElementById('options-zoom-in');
+            if (!out || !value || !input) return;
+            this.dialog.dataset.zoomBound = 'true';
+            out.addEventListener('click', () => OVZoom.step(-1));
+            input.addEventListener('click', () => OVZoom.step(1));
+            value.addEventListener('click', () => OVZoom.reset());
+            OVZoom.subscribe(zoom => {
+                value.textContent = `${Math.round(zoom * 100)}%`;
+            });
+        };
+        bind();
+        window.addEventListener('ovzoomready', bind, { once: true });
     },
 };
 

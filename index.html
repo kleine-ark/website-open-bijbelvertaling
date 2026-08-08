@@ -569,6 +569,14 @@
                         <label><input type="radio" name="opt-thema" data-optie="thema" value="licht"> Licht</label>
                         <label><input type="radio" name="opt-thema" data-optie="thema" value="donker"> Donker</label>
                     </fieldset>
+                    <div id="options-zoom" class="option-row options-zoom" role="group" aria-label="Tekstgrootte">
+                        <span><strong>Tekstgrootte</strong><small>Vergroot de leestekst en bewaar deze keuze.</small></span>
+                        <span class="options-zoom-controls">
+                            <button type="button" id="options-zoom-out" aria-label="Tekst kleiner">−</button>
+                            <button type="button" id="options-zoom-value" aria-label="Tekstgrootte herstellen" title="Terug naar 100%">100%</button>
+                            <button type="button" id="options-zoom-in" aria-label="Tekst groter">+</button>
+                        </span>
+                    </div>
                     <label class="option-row"><span><strong>Boekinleiding</strong><small>Toon de inleiding bij het gekozen boek.</small></span><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"></label>
                     <label class="option-row"><span><strong>Hoofdstukinleiding</strong><small>Toon de inleiding boven het hoofdstuk.</small></span><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"></label>
                     <label class="option-row"><span><strong>Dyslexiemodus</strong><small>Gebruik een eenvoudiger leesritme.</small></span><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"></label>
