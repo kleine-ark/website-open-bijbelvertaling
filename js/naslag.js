@@ -76,8 +76,8 @@
             h += '<a class="ns-kaart" href="?item=' + encodeURIComponent(it.id) + '">' +
                  (d.nummerType ? '<span class="ns-nummer">' + esc(d.nummerType) + ' ' + (i + 1) + '</span>' : '') +
                  '<span class="ns-kaart-naam">' + esc(it.naam) + '</span>' +
-                 '<span class="ns-kaart-tal">' + it.verzen.length +
-                 (it.verzen.length === 1 ? ' vindplaats' : ' vindplaatsen') + '</span></a>';
+                 (d.nummerType === 'Lied' ? '' : '<span class="ns-kaart-tal">' + it.verzen.length +
+                 (it.verzen.length === 1 ? ' vindplaats' : ' vindplaatsen') + '</span>') + '</a>';
         }
         h += '</div>';
         houder.innerHTML = h;
