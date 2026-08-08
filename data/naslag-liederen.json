@@ -1,15 +1,34 @@
 {
  "titel": "Liederen in de Bijbel",
  "bron": "de hele Bijbel",
- "intro": "Waar de Bijbel zingt, staat de tijd even stil: aan de Schelfzee, bij de bron in de woestijn, in de brandende oven, in de gevangenis van Filippi en voor de troon. Hier staan de liederen van de hele Bijbel bij elkaar — wie zingt, waarom, en waar het staat — van het zwaardlied van Lamech tot het gezang van Mozes en het Lam, met de honderdvijftig Psalmen als het liedboek in het midden. Ook de lofzangen uit de apocriefe en Ethiopische boeken zingen mee: Tobit, Judith, de drie mannen in de oven en de engelen in Henoch. Zo doet de Bijbel zelf wat hij vraagt: „sprekende onder elkaar met psalmen, en lofzangen, en geestelijke liederen” (Efeziërs 5:19).",
+ "intro": "Waar de Bijbel zingt, staat de tijd even stil: aan de Schelfzee, bij de bron in de woestijn, in de brandende oven, in de gevangenis van Filippi en voor de troon. Hier staan de liederen van de hele Bijbel bij elkaar — wie zingt, waarom, en waar het staat — van het lied bij de Schelfzee tot het gezang van Mozes en het Lam, met de honderdvijftig Psalmen als het liedboek in het midden. Ook de lofzangen uit de apocriefe en Ethiopische boeken zingen mee: Tobit, Judith, de drie mannen in de oven en de engelen in Henoch. Zo doet de Bijbel zelf wat hij vraagt: „sprekende onder elkaar met psalmen, en lofzangen, en geestelijke liederen” (Efeziërs 5:19).",
  "items": [
   {
-   "id": "lied-van-lamech",
-   "naam": "Het lied van Lamech",
-   "beschrijving": "Het oudste dichtstuk van de Bijbel: Lamech, nakomeling van Kaïn, draagt zijn beide vrouwen een wraakzang voor — „Hoort mijn stem, u vrouwen van Lamech! neemt ter ore mijn rede!” (Genesis 4:23). De tekst zelf noemt het geen lied, maar de dubbele aanspraak en de maat van de regels zijn die van de latere liederen; het staat bekend als het zwaardlied van Lamech. Tegenover Kaïns zevenvoudige wraak zet hij „zeventigmaal zevenmaal”.",
+   "id": "lofzang-in-henoch",
+   "naam": "De lofzang van hen die niet sluimeren (Henoch)",
+   "beschrijving": "In het boek Henoch hoort de ziener de lofzang van hen „die niet sluimeren”: „Heilig, heilig, heilig is de Heere der geesten; Hij vervult de aarde met geesten” (Henoch 39:12), en de vier aangezichten rond de troon zingen lofprijzingen (40:3). Het is de drievoudige heiligroep die ook de serafs roepen in Jesaja 6:3 en de vier dieren in Openbaring 4:8 — de lofzang die dag noch nacht ophoudt.",
    "verzen": [
-    "genesis 4:23",
-    "genesis 4:24"
+    "henoch 39:10",
+    "henoch 39:12",
+    "henoch 40:3",
+    "jesaja 6:3",
+    "openbaring 4:8"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "henoch",
+     "hoofdstuk": 39,
+     "van": 10,
+     "tot": 13,
+     "label": "Henoch 39:10–13"
+    },
+    {
+     "boek": "henoch",
+     "hoofdstuk": 40,
+     "van": 3,
+     "tot": 7,
+     "label": "Henoch 40:3–7"
+    }
    ]
   },
   {
@@ -23,6 +42,15 @@
     "exodus 15:11",
     "exodus 15:18",
     "exodus 15:19"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "exodus",
+     "hoofdstuk": 15,
+     "van": 1,
+     "tot": 18,
+     "label": "Exodus 15:1–18"
+    }
    ]
   },
   {
@@ -32,6 +60,15 @@
    "verzen": [
     "exodus 15:20",
     "exodus 15:21"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "exodus",
+     "hoofdstuk": 15,
+     "van": 20,
+     "tot": 21,
+     "label": "Exodus 15:20–21"
+    }
    ]
   },
   {
@@ -42,6 +79,15 @@
     "numeri 21:16",
     "numeri 21:17",
     "numeri 21:18"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "numeri",
+     "hoofdstuk": 21,
+     "van": 17,
+     "tot": 18,
+     "label": "Numeri 21:17–18"
+    }
    ]
   },
   {
@@ -56,6 +102,15 @@
     "deuteronomium 32:4",
     "deuteronomium 32:43",
     "deuteronomium 32:44"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "deuteronomium",
+     "hoofdstuk": 32,
+     "van": 1,
+     "tot": 43,
+     "label": "Deuteronomium 32:1–43"
+    }
    ]
   },
   {
@@ -68,6 +123,15 @@
     "richteren 5:3",
     "richteren 5:12",
     "richteren 5:31"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "richteren",
+     "hoofdstuk": 5,
+     "van": 1,
+     "tot": 31,
+     "label": "Richteren 5:1–31"
+    }
    ]
   },
   {
@@ -78,6 +142,15 @@
     "1samuel 2:1",
     "1samuel 2:2",
     "1samuel 2:10"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "1samuel",
+     "hoofdstuk": 2,
+     "van": 1,
+     "tot": 10,
+     "label": "1 Samuël 2:1–10"
+    }
    ]
   },
   {
@@ -87,6 +160,15 @@
    "verzen": [
     "1samuel 18:6",
     "1samuel 18:7"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "1samuel",
+     "hoofdstuk": 18,
+     "van": 6,
+     "tot": 7,
+     "label": "1 Samuël 18:6–7"
+    }
    ]
   },
   {
@@ -99,6 +181,36 @@
     "2samuel 1:19",
     "2samuel 1:25",
     "2samuel 1:27"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "2samuel",
+     "hoofdstuk": 1,
+     "van": 17,
+     "tot": 27,
+     "label": "2 Samuël 1:17–27"
+    }
+   ]
+  },
+  {
+   "id": "loflied-bij-de-ark",
+   "naam": "Het loflied bij de ark",
+   "beschrijving": "Toen de ark in Jeruzalem was gebracht, „gaf David ten eerste deze psalm, om JAHWEH te loven, door de dienst van Asaf, en zijn broers” (1 Kronieken 16:7): „Loof JAHWEH, roep Zijn Naam aan, maakt Zijn daden bekend onder de volken” (16:8). Het loopt uit op het amen van heel het volk (16:36), en delen ervan keren terug in het liedboek: dezelfde regels openen Psalm 105.",
+   "verzen": [
+    "1kronieken 16:7",
+    "1kronieken 16:8",
+    "1kronieken 16:9",
+    "1kronieken 16:36",
+    "psalmen 105:1"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "1kronieken",
+     "hoofdstuk": 16,
+     "van": 7,
+     "tot": 36,
+     "label": "1 Kronieken 16:7–36"
+    }
    ]
   },
   {
@@ -112,6 +224,15 @@
     "2samuel 22:51",
     "psalmen 18:1",
     "psalmen 18:2"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "2samuel",
+     "hoofdstuk": 22,
+     "van": 1,
+     "tot": 51,
+     "label": "2 Samuël 22:1–51"
+    }
    ]
   },
   {
@@ -124,18 +245,15 @@
     "2samuel 23:3",
     "2samuel 23:4",
     "2samuel 23:7"
-   ]
-  },
-  {
-   "id": "loflied-bij-de-ark",
-   "naam": "Het loflied bij de ark",
-   "beschrijving": "Toen de ark in Jeruzalem was gebracht, „gaf David ten eerste deze psalm, om JAHWEH te loven, door de dienst van Asaf, en zijn broers” (1 Kronieken 16:7): „Loof JAHWEH, roep Zijn Naam aan, maakt Zijn daden bekend onder de volken” (16:8). Het loopt uit op het amen van heel het volk (16:36), en delen ervan keren terug in het liedboek: dezelfde regels openen Psalm 105.",
-   "verzen": [
-    "1kronieken 16:7",
-    "1kronieken 16:8",
-    "1kronieken 16:9",
-    "1kronieken 16:36",
-    "psalmen 105:1"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "2samuel",
+     "hoofdstuk": 23,
+     "van": 1,
+     "tot": 7,
+     "label": "2 Samuël 23:1–7"
+    }
    ]
   },
   {
@@ -151,6 +269,14 @@
     "psalmen 136:26",
     "psalmen 150:1",
     "psalmen 150:6"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "psalmen",
+     "vanHoofdstuk": 1,
+     "totHoofdstuk": 150,
+     "label": "Psalm 1–150"
+    }
    ]
   },
   {
@@ -161,6 +287,64 @@
     "hooglied 1:1",
     "hooglied 1:2",
     "hooglied 8:14"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "hooglied",
+     "hoofdstuk": 1,
+     "van": 1,
+     "tot": 17,
+     "label": "Hooglied 1:1–17"
+    },
+    {
+     "boek": "hooglied",
+     "hoofdstuk": 2,
+     "van": 1,
+     "tot": 17,
+     "label": "Hooglied 2:1–17"
+    },
+    {
+     "boek": "hooglied",
+     "hoofdstuk": 3,
+     "van": 1,
+     "tot": 11,
+     "label": "Hooglied 3:1–11"
+    },
+    {
+     "boek": "hooglied",
+     "hoofdstuk": 4,
+     "van": 1,
+     "tot": 16,
+     "label": "Hooglied 4:1–16"
+    },
+    {
+     "boek": "hooglied",
+     "hoofdstuk": 5,
+     "van": 1,
+     "tot": 16,
+     "label": "Hooglied 5:1–16"
+    },
+    {
+     "boek": "hooglied",
+     "hoofdstuk": 6,
+     "van": 1,
+     "tot": 13,
+     "label": "Hooglied 6:1–13"
+    },
+    {
+     "boek": "hooglied",
+     "hoofdstuk": 7,
+     "van": 1,
+     "tot": 13,
+     "label": "Hooglied 7:1–13"
+    },
+    {
+     "boek": "hooglied",
+     "hoofdstuk": 8,
+     "van": 1,
+     "tot": 14,
+     "label": "Hooglied 8:1–14"
+    }
    ]
   },
   {
@@ -171,6 +355,15 @@
     "jesaja 5:1",
     "jesaja 5:2",
     "jesaja 5:7"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "jesaja",
+     "hoofdstuk": 5,
+     "van": 1,
+     "tot": 7,
+     "label": "Jesaja 5:1–7"
+    }
    ]
   },
   {
@@ -180,6 +373,35 @@
    "verzen": [
     "jesaja 26:1",
     "jesaja 26:2"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "jesaja",
+     "hoofdstuk": 26,
+     "van": 1,
+     "tot": 21,
+     "label": "Jesaja 26:1–21"
+    }
+   ]
+  },
+  {
+   "id": "loflied-van-tobit",
+   "naam": "Het loflied van Tobit",
+   "beschrijving": "„En Tobias schreef een gebed tot verheuging” (Tobit 13:1) — een loflied op schrift: „Geloofd zij God die in de eeuwigheid leeft, en geloofd zij Zijn koninkrijk” (13:2). Het ziet uit naar een Jeruzalem dat „met safyr, en smaragd, en met kostelijke stenen gebouwd” zal worden (13:18).",
+   "verzen": [
+    "tobit 13:1",
+    "tobit 13:2",
+    "tobit 13:15",
+    "tobit 13:18"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "tobit",
+     "hoofdstuk": 13,
+     "van": 1,
+     "tot": 21,
+     "label": "Tobit 13:1–21"
+    }
    ]
   },
   {
@@ -189,17 +411,15 @@
    "verzen": [
     "jesaja 38:9",
     "jesaja 38:20"
-   ]
-  },
-  {
-   "id": "klaagliederen",
-   "naam": "Klaagliederen — de klaagzangbundel",
-   "beschrijving": "Vijf klaagzangen over het verwoeste Jeruzalem; vier ervan zijn alfabetisch gebouwd, en de Hebreeuwse letters staan nog in de tekst: „Aleph. Hoe zit die stad zo eenzaam, die vol volk was” (Klaagliederen 1:1). De klaagzang was een ambacht van zangers en zangeressen: over koning Josia werden klaagliederen gemaakt „tot een inzetting in Israël” (2 Kronieken 35:25).",
-   "verzen": [
-    "klaagliederen 1:1",
-    "klaagliederen 3:66",
-    "klaagliederen 5:22",
-    "2kronieken 35:25"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "jesaja",
+     "hoofdstuk": 38,
+     "van": 9,
+     "tot": 20,
+     "label": "Jesaja 38:9–20"
+    }
    ]
   },
   {
@@ -212,36 +432,15 @@
     "habakuk 3:17",
     "habakuk 3:18",
     "habakuk 3:19"
-   ]
-  },
-  {
-   "id": "loflied-van-tobit",
-   "naam": "Het loflied van Tobit",
-   "beschrijving": "„En Tobias schreef een gebed tot verheuging” (Tobit 13:1) — een loflied op schrift: „Geloofd zij God die in de eeuwigheid leeft, en geloofd zij Zijn koninkrijk” (13:2). Het ziet uit naar een Jeruzalem dat „met safyr, en smaragd, en met kostelijke stenen gebouwd” zal worden (13:18).",
-   "verzen": [
-    "tobit 13:1",
-    "tobit 13:2",
-    "tobit 13:15",
-    "tobit 13:18"
-   ]
-  },
-  {
-   "id": "loflied-van-judith",
-   "naam": "Het loflied van Judith",
-   "beschrijving": "Na de verlossing van haar stad „begon Judith deze dankzegging te zingen onder geheel Israël, en het hele volk zong deze lofzang haar na” (Judith 16:1). „Begint de lof van mijn Heere met tambourijn; zing mijn Heere met cimbalen, en dicht Hem kunstig een nieuwe Psalm” (16:2). Een overwinningslied in de lijn van Mirjam en Debora.",
-   "verzen": [
-    "judith 16:1",
-    "judith 16:2",
-    "judith 16:15"
-   ]
-  },
-  {
-   "id": "dankgebed-van-jezus-sirach",
-   "naam": "Het dankgebed van Jezus Sirach",
-   "beschrijving": "Het slothoofdstuk van Jezus Sirach is een dankpsalm, met als opschrift „Een Gebed van Jezus, de zoon van Sirach”. Het opent als het liedboek zelf: „Ik zal U belijden Heere, Koning, en ik zal U prijzen, o God, die mijn zaligmaker bent” (Jezus Sirach 51:1), en dankt de God die „ons verlost uit het verderf” heeft (51:15).",
-   "verzen": [
-    "jezussirach 51:1",
-    "jezussirach 51:15"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "habakuk",
+     "hoofdstuk": 3,
+     "van": 1,
+     "tot": 19,
+     "label": "Habakuk 3:1–19"
+    }
    ]
   },
   {
@@ -258,27 +457,100 @@
     "gezangindevuuroven 1:88",
     "gezangindevuuroven 1:89",
     "gezangindevuuroven 1:90"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "gezangindevuuroven",
+     "hoofdstuk": 1,
+     "van": 51,
+     "tot": 90,
+     "label": "Gezang in de vuuroven 51–90"
+    }
    ]
   },
   {
-   "id": "lofzang-in-henoch",
-   "naam": "De lofzang van hen die niet sluimeren (Henoch)",
-   "beschrijving": "In het boek Henoch hoort de ziener de lofzang van hen „die niet sluimeren”: „Heilig, heilig, heilig is de Heere der geesten; Hij vervult de aarde met geesten” (Henoch 39:12), en de vier aangezichten rond de troon zingen lofprijzingen (40:3). Het is de drievoudige heiligroep die ook de serafs roepen in Jesaja 6:3 en de vier dieren in Openbaring 4:8 — de lofzang die dag noch nacht ophoudt.",
+   "id": "klaagliederen",
+   "naam": "Klaagliederen — de klaagzangbundel",
+   "beschrijving": "Vijf klaagzangen over het verwoeste Jeruzalem; vier ervan zijn alfabetisch gebouwd, en de Hebreeuwse letters staan nog in de tekst: „Aleph. Hoe zit die stad zo eenzaam, die vol volk was” (Klaagliederen 1:1). De klaagzang was een ambacht van zangers en zangeressen: over koning Josia werden klaagliederen gemaakt „tot een inzetting in Israël” (2 Kronieken 35:25).",
    "verzen": [
-    "henoch 39:10",
-    "henoch 39:12",
-    "henoch 40:3",
-    "jesaja 6:3",
-    "openbaring 4:8"
+    "klaagliederen 1:1",
+    "klaagliederen 3:66",
+    "klaagliederen 5:22",
+    "2kronieken 35:25"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "klaagliederen",
+     "hoofdstuk": 1,
+     "van": 1,
+     "tot": 22,
+     "label": "Klaagliederen 1:1–22"
+    },
+    {
+     "boek": "klaagliederen",
+     "hoofdstuk": 2,
+     "van": 1,
+     "tot": 22,
+     "label": "Klaagliederen 2:1–22"
+    },
+    {
+     "boek": "klaagliederen",
+     "hoofdstuk": 3,
+     "van": 1,
+     "tot": 66,
+     "label": "Klaagliederen 3:1–66"
+    },
+    {
+     "boek": "klaagliederen",
+     "hoofdstuk": 4,
+     "van": 1,
+     "tot": 22,
+     "label": "Klaagliederen 4:1–22"
+    },
+    {
+     "boek": "klaagliederen",
+     "hoofdstuk": 5,
+     "van": 1,
+     "tot": 22,
+     "label": "Klaagliederen 5:1–22"
+    }
    ]
   },
   {
-   "id": "lofzang-bij-het-avondmaal",
-   "naam": "De lofzang bij het laatste avondmaal",
-   "beschrijving": "„En als zij de lofzang gezongen hadden, gingen zij uit naar de Olijfberg” (Mattheüs 26:30, evenzo Markus 14:26) — één regel over Jezus die met Zijn leerlingen zingt, aan het slot van het laatste avondmaal. Bij de paasmaaltijd hoorde naar oud gebruik het Hallel, Psalm 113 tot en met 118: het lied voor de nacht van Gethsémané.",
+   "id": "loflied-van-judith",
+   "naam": "Het loflied van Judith",
+   "beschrijving": "Na de verlossing van haar stad „begon Judith deze dankzegging te zingen onder geheel Israël, en het hele volk zong deze lofzang haar na” (Judith 16:1). „Begint de lof van mijn Heere met tambourijn; zing mijn Heere met cimbalen, en dicht Hem kunstig een nieuwe Psalm” (16:2). Een overwinningslied in de lijn van Mirjam en Debora.",
    "verzen": [
-    "mattheus 26:30",
-    "markus 14:26"
+    "judith 16:1",
+    "judith 16:2",
+    "judith 16:15"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "judith",
+     "hoofdstuk": 16,
+     "van": 1,
+     "tot": 21,
+     "label": "Judith 16:1–21"
+    }
+   ]
+  },
+  {
+   "id": "dankgebed-van-jezus-sirach",
+   "naam": "Het dankgebed van Jezus Sirach",
+   "beschrijving": "Het slothoofdstuk van Jezus Sirach is een dankpsalm, met als opschrift „Een Gebed van Jezus, de zoon van Sirach”. Het opent als het liedboek zelf: „Ik zal U belijden Heere, Koning, en ik zal U prijzen, o God, die mijn zaligmaker bent” (Jezus Sirach 51:1), en dankt de God die „ons verlost uit het verderf” heeft (51:15).",
+   "verzen": [
+    "jezussirach 51:1",
+    "jezussirach 51:15"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "jezussirach",
+     "hoofdstuk": 51,
+     "van": 1,
+     "tot": 16,
+     "label": "Jezus Sirach 51:1–16"
+    }
    ]
   },
   {
@@ -290,6 +562,15 @@
     "lukas 1:47",
     "lukas 1:48",
     "lukas 1:55"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "lukas",
+     "hoofdstuk": 1,
+     "van": 46,
+     "tot": 55,
+     "label": "Lukas 1:46–55"
+    }
    ]
   },
   {
@@ -301,6 +582,15 @@
     "lukas 1:68",
     "lukas 1:69",
     "lukas 1:79"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "lukas",
+     "hoofdstuk": 1,
+     "van": 67,
+     "tot": 79,
+     "label": "Lukas 1:67–79"
+    }
    ]
   },
   {
@@ -310,6 +600,15 @@
    "verzen": [
     "lukas 2:13",
     "lukas 2:14"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "lukas",
+     "hoofdstuk": 2,
+     "van": 13,
+     "tot": 14,
+     "label": "Lukas 2:13–14"
+    }
    ]
   },
   {
@@ -322,7 +621,42 @@
     "lukas 2:29",
     "lukas 2:30",
     "lukas 2:32"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "lukas",
+     "hoofdstuk": 2,
+     "van": 28,
+     "tot": 32,
+     "label": "Lukas 2:28–32"
+    }
    ]
+  },
+  {
+   "id": "lofzang-bij-het-avondmaal",
+   "naam": "De lofzang bij het laatste avondmaal",
+   "beschrijving": "„En als zij de lofzang gezongen hadden, gingen zij uit naar de Olijfberg” (Mattheüs 26:30, evenzo Markus 14:26) — één regel over Jezus die met Zijn leerlingen zingt, aan het slot van het laatste avondmaal. Bij de paasmaaltijd hoorde naar oud gebruik het Hallel, Psalm 113 tot en met 118: het lied voor de nacht van Gethsémané.",
+   "verzen": [
+    "mattheus 26:30",
+    "markus 14:26"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "mattheus",
+     "hoofdstuk": 26,
+     "van": 30,
+     "tot": 30,
+     "label": "Mattheüs 26:30"
+    },
+    {
+     "boek": "markus",
+     "hoofdstuk": 14,
+     "van": 26,
+     "tot": 26,
+     "label": "Markus 14:26"
+    }
+   ],
+   "tekstmelding": "De woorden van deze lofzang zijn niet overgeleverd. De genoemde verzen vertellen alleen dat Jezus en Zijn discipelen de lofzang zongen."
   },
   {
    "id": "paulus-en-silas",
@@ -332,7 +666,17 @@
     "handelingen 16:24",
     "handelingen 16:25",
     "handelingen 16:26"
-   ]
+   ],
+   "tekstpassages": [
+    {
+     "boek": "handelingen",
+     "hoofdstuk": 16,
+     "van": 25,
+     "tot": 25,
+     "label": "Handelingen 16:25"
+    }
+   ],
+   "tekstmelding": "De woorden van deze lofzangen zijn niet overgeleverd. Handelingen vertelt alleen dat Paulus en Silas ze in de gevangenis zongen."
   },
   {
    "id": "het-nieuwe-lied",
@@ -344,6 +688,22 @@
     "openbaring 5:10",
     "openbaring 14:2",
     "openbaring 14:3"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "openbaring",
+     "hoofdstuk": 5,
+     "van": 8,
+     "tot": 10,
+     "label": "Openbaring 5:8–10"
+    },
+    {
+     "boek": "openbaring",
+     "hoofdstuk": 14,
+     "van": 2,
+     "tot": 3,
+     "label": "Openbaring 14:2–3"
+    }
    ]
   },
   {
@@ -354,7 +714,17 @@
     "openbaring 15:2",
     "openbaring 15:3",
     "openbaring 15:4"
+   ],
+   "tekstpassages": [
+    {
+     "boek": "openbaring",
+     "hoofdstuk": 15,
+     "van": 2,
+     "tot": 4,
+     "label": "Openbaring 15:2–4"
+    }
    ]
   }
- ]
+ ],
+ "nummerType": "Lied"
 }
