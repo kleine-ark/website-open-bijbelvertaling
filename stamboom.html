@@ -30,7 +30,7 @@
     <style>
         /* body is een kolom-flexbox: zonder width:100% krimpen deze blokken met
            'margin: 0 auto' naar hun inhoudsbreedte in plaats van uit te rekken. */
-        .sb-intro, .sb-bar, .sb-wrap, .sb-legenda { width: 100%; box-sizing: border-box; }
+        .sb-intro, .sb-bar, .sb-wrap { width: 100%; box-sizing: border-box; }
         .sb-intro { max-width: 900px; margin: 0 auto; padding: 22px 20px 4px; }
         .sb-intro h1 { margin: 0 0 2px; }
         .sb-intro .subtitle { margin: 0 0 10px; }
@@ -229,13 +229,6 @@
             margin: 2px 0 0; font-family: var(--font-serif); font-size: 14px; line-height: 1.5;
             color: var(--text-primary, #333);
         }
-        .sb-legenda {
-            max-width: 1400px; margin: 0 auto; padding: 0 14px 30px;
-            font-size: 12.5px; color: var(--text-muted, #888);
-        }
-        .sb-legenda span { display: inline-block; margin-right: 14px; }
-        .sb-legenda i { font-style: normal; color: var(--gold); }
-
         @media (max-width: 760px) {
             .sb-intro { padding: 14px 14px 2px; }
             /* Hoog genoeg om de volledig ingeklapte boom (18 regels) op een
@@ -287,17 +280,6 @@
         </div>
         <aside class="sb-kaart" id="sb-kaart" hidden aria-live="polite"></aside>
     </div>
-
-    <p class="sb-legenda">
-        <span><i>——</i> gouden rand: de lijn van Adam naar Jezus</span>
-        <span><i>- -</i> groengestreept vakje: een rechte reeks van vader op zoon — tik erop en de generaties komen los te staan</span>
-        <span><i>+12</i> telbadge: zoveel kinderen staan nog dicht</span>
-        <span>getinte vakjes: vrouwen</span>
-        <span>cursief en gestreept: volken in plaats van personen (Genesis 10)</span>
-        <span>De namen staan ingesprongen: elk vertakkingsniveau een stukje naar rechts, met een dunne lijn van de ouder naar elk kind. Broers en zussen zonder nakomelingen lopen terug over meerdere regels.</span>
-        <span>Sleep om te verschuiven, knijp of scroll om te zoomen. Een naam die in de weg staat kunt u zelf verslepen — op de telefoon door hem even vast te houden; met <b>Indeling herstellen</b> springt alles terug.</span>
-        <span>Wat u openklapt blijft in de adresbalk staan, zodat u de link kunt delen.</span>
-    </p>
 
     <script src="js/stamboom.js"></script>
 </body>

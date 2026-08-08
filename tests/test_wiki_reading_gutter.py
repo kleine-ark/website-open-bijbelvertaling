@@ -98,6 +98,16 @@ class WikiReadingGutterTest(unittest.TestCase):
         finally:
             page.close()
 
+    def test_stamboom_has_no_explanation_legend_below_the_tree(self):
+        page = self.browser.new_page(viewport={"width": 1450, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/stamboom.html")
+            page.locator("#sb-canvas").wait_for(state="visible")
+            self.assertEqual(page.locator(".sb-legenda").count(), 0)
+            self.assertTrue(page.locator("#sb-hoofdlijn").is_visible())
+        finally:
+            page.close()
+
 
 if __name__ == "__main__":
     unittest.main()
