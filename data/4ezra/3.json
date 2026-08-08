@@ -361,9 +361,9 @@
    "number": 4,
    "text1637": "O heersende Here, gij hebt van den beginne gesproken, toen gij het aardrijk hebt gefundeerd, gij alleen, en hebt het volk geboden gegeven;",
    "textSV1888": "O heersende Here, gij hebt van den beginne gesproken, toen gij het aardrijk hebt gefundeerd, gij alleen, en hebt het volk geboden gegeven;",
-   "text2026": "O heersende Heere, u hebt van de beginne gesproken, toen u het aarde hebt gefundeerd, u alleen, en hebt het volk geboden gegeven;",
+   "text2026": "O heersende Heere, u hebt van de beginne gesproken, toen u de aarde hebt gefundeerd, u alleen, en hebt het volk geboden gegeven;",
    "marginNotes": [],
-   "text2026_html": "<span class=\"direct-speech\"><i>O heersende Heere, u hebt van de beginne gesproken, toen u het aarde hebt gefundeerd, u alleen, en hebt het volk geboden gegeven;</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>O heersende Heere, u hebt van de beginne gesproken, toen u de aarde hebt gefundeerd, u alleen, en hebt het volk geboden gegeven;</i></span>",
    "phraseDiff": [
     {
      "old": "Here, gij",
@@ -376,14 +376,9 @@
      "principe": "N1"
     },
     {
-     "old": "gij",
-     "new": "u",
-     "principe": "A1"
-    },
-    {
-     "old": "aardrijk",
-     "new": "aarde",
-     "principe": "V18"
+     "old": "gij het aardrijk",
+     "new": "u de aarde",
+     "principe": null
     },
     {
      "old": "gij",
@@ -1809,9 +1804,9 @@
    "number": 15,
    "text1637": "En gij hebt met hem een eeuwig verbond gemaakt, en hebt hem gezegd, dat gij zijn zaad nimmermeer zoudt verlaten; deze hebt gij gegeven Izaäk, en Izaäk hebt gij gegeven Jakob en Ezau.",
    "textSV1888": "En gij hebt met hem een eeuwig verbond gemaakt, en hebt hem gezegd, dat gij zijn zaad nimmermeer zoudt verlaten; deze hebt gij gegeven Izaäk, en Izaäk hebt gij gegeven Jakob en Ezau.",
-   "text2026": "En u hebt met hem een eeuwig verbond gemaakt, en hebt hem gezegd, dat u zijn zaad nimmermeer zou verlaten; deze hebt u gegeven Izaäk, en Izaäk hebt u gegeven Jakob en Ezau.",
+   "text2026": "En u hebt met hem een eeuwig verbond gemaakt, en hebt hem gezegd, dat u zijn zaad nimmermeer zou verlaten; aan deze hebt u Izaäk gegeven, en aan Izaäk hebt u Jakob en Ezau gegeven.",
    "marginNotes": [],
-   "text2026_html": "<span class=\"direct-speech\"><i>En u hebt met hem een eeuwig verbond gemaakt, en hebt hem gezegd, dat u zijn zaad nimmermeer zou verlaten; deze hebt u gegeven Izaäk, en Izaäk hebt u gegeven Jakob en Ezau.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>En u hebt met hem een eeuwig verbond gemaakt, en hebt hem gezegd, dat u zijn zaad nimmermeer zou verlaten; aan deze hebt u Izaäk gegeven, en aan Izaäk hebt u Jakob en Ezau gegeven.</i></span>",
    "phraseDiff": [
     {
      "old": "gij",
@@ -1829,14 +1824,29 @@
      "principe": "V202"
     },
     {
-     "old": "gij",
-     "new": "u",
-     "principe": "A1"
+     "old": "",
+     "new": "aan",
+     "principe": null
     },
     {
-     "old": "gij",
+     "old": "gij gegeven Izaäk,",
+     "new": "u Izaäk gegeven,",
+     "principe": null
+    },
+    {
+     "old": "",
+     "new": "aan",
+     "principe": null
+    },
+    {
+     "old": "gij gegeven",
      "new": "u",
-     "principe": "A1"
+     "principe": null
+    },
+    {
+     "old": "Ezau.",
+     "new": "Ezau gegeven.",
+     "principe": null
     }
    ],
    "grondtekst": [
@@ -2356,9 +2366,9 @@
    "number": 19,
    "text1637": "En uw heerlijkheid ging door vier poorten, namelijk door het vuur, en de aardbeving, en de wind, en de vorst; opdat gij het zaad Jakobs, de wet gaaft, en het geslacht Israëls ijver.",
    "textSV1888": "En uw heerlijkheid ging door vier poorten, namelijk door het vuur, en de aardbeving, en de wind, en de vorst; opdat gij het zaad Jakobs, de wet gaaft, en het geslacht Israëls ijver.",
-   "text2026": "En uw heerlijkheid ging door vier poorten, namelijk door het vuur, en de aardbeving, en de wind, en de vorst; opdat u het zaad van Jakob, de wet gaf, en het geslacht Israëls ijver.",
+   "text2026": "En uw heerlijkheid ging door vier poorten, namelijk door het vuur, en de aardbeving, en de wind, en de vorst; opdat u het zaad van Jakob de wet gaf, en het geslacht Israëls ijver.",
    "marginNotes": [],
-   "text2026_html": "<span class=\"direct-speech\"><i>En uw heerlijkheid ging door vier poorten, namelijk door het vuur, en de aardbeving, en de wind, en de vorst; opdat u het zaad van Jakob, de wet gaf, en het geslacht Israëls ijver.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>En uw heerlijkheid ging door vier poorten, namelijk door het vuur, en de aardbeving, en de wind, en de vorst; opdat u het zaad van Jakob de wet gaf, en het geslacht Israëls ijver.</i></span>",
    "phraseDiff": [
     {
      "old": "gij",
@@ -2367,7 +2377,7 @@
     },
     {
      "old": "Jakobs,",
-     "new": "van Jakob,",
+     "new": "van Jakob",
      "principe": null
     },
     {
@@ -2987,14 +2997,19 @@
    "number": 24,
    "text1637": "En gij hebt hem gezegd, dat hij uw naam een stad zou bouwen, en dat men u daarin wierook en offeranden zou offeren.",
    "textSV1888": "En gij hebt hem gezegd, dat hij uw naam een stad zou bouwen, en dat men u daarin wierook en offeranden zou offeren.",
-   "text2026": "En u hebt hem gezegd, dat hij uw naam een stad zou bouwen, en dat men u daarin wierook en offergaven zou offeren.",
+   "text2026": "En u hebt hem gezegd, dat hij voor uw naam een stad zou bouwen, en dat men u daarin wierook en offergaven zou offeren.",
    "marginNotes": [],
-   "text2026_html": "<span class=\"direct-speech\"><i>En u hebt hem gezegd, dat hij uw naam een stad zou bouwen, en dat men u daarin wierook en offergaven zou offeren.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>En u hebt hem gezegd, dat hij voor uw naam een stad zou bouwen, en dat men u daarin wierook en offergaven zou offeren.</i></span>",
    "phraseDiff": [
     {
      "old": "gij",
      "new": "u",
      "principe": "A1"
+    },
+    {
+     "old": "",
+     "new": "voor",
+     "principe": null
     },
     {
      "old": "offeranden",
@@ -4168,14 +4183,19 @@
    "number": 34,
    "text1637": "Nu dan, weeg onze ongerechtigheden in een schaal, en dergenen daartegen die in de wereld wonen, zo zal uw naam niet gevonden worden dan in Israël.",
    "textSV1888": "Nu dan, weeg onze ongerechtigheden in een schaal, en dergenen daartegen die in de wereld wonen, zo zal uw naam niet gevonden worden dan in Israël.",
-   "text2026": "Nu dan, weeg onze ongerechtigheden in een schaal, en van degenen daartegen die in de wereld wonen, zo zal uw naam niet gevonden worden dan in Israël.",
+   "text2026": "Nu dan, weeg onze ongerechtigheden in een schaal, en daartegen die van degenen die in de wereld wonen, zo zal uw naam niet gevonden worden dan in Israël.",
    "marginNotes": [],
-   "text2026_html": "<span class=\"direct-speech\"><i>Nu dan, weeg onze ongerechtigheden in een schaal, en van degenen daartegen die in de wereld wonen, zo zal uw naam niet gevonden worden dan in Israël.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>Nu dan, weeg onze ongerechtigheden in een schaal, en daartegen die van degenen die in de wereld wonen, zo zal uw naam niet gevonden worden dan in Israël.</i></span>",
    "phraseDiff": [
     {
      "old": "dergenen",
-     "new": "van degenen",
-     "principe": "V302"
+     "new": "",
+     "principe": null
+    },
+    {
+     "old": "",
+     "new": "die van degenen",
+     "principe": null
     }
    ],
    "grondtekst": [
