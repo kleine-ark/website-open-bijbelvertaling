@@ -1160,7 +1160,7 @@
       "number": 18,
       "textSV1888": "Hij laat mij niet toe mijn adem te verhalen; maar Hij verzadigt mij met bitterheden.",
       "text1637": "Hy en laet my niet toe [31] mijnen adem te verhalen: maer hy versadicht my met [32] bitterheden.",
-      "text2026": "Hij laat mij niet toe mijn adem te vertellen; maar Hij verzadigt mij met bitterheden.",
+      "text2026": "Hij laat mij niet toe op adem te komen; maar Hij verzadigt mij met bitterheden.",
       "marginNotes": [
         {
           "marker": "31",
@@ -1214,13 +1214,18 @@
           "morph": "HNcmpa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Hij laat mij niet toe<sup class=\"note-marker\" data-note=\"31\">31</sup> mijn adem te vertellen; maar Hij verzadigt mij met<sup class=\"note-marker\" data-note=\"31\">31</sup> bitterheden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Hij laat mij niet toe<sup class=\"note-marker\" data-note=\"31\">31</sup> op adem te komen; maar Hij verzadigt mij met<sup class=\"note-marker\" data-note=\"31\">31</sup> bitterheden.</i></span>",
       "textSV1888_html": "Hij laat mij niet toe<sup class=\"note-marker\" data-note=\"31\">31</sup> mijn adem te verhalen; maar Hij verzadigt mij met<sup class=\"note-marker\" data-note=\"32\">32</sup> bitterheden.",
       "text1637_html": "Hy en laet my niet toe <sup class=\"note-marker\" data-note=\"31\">31</sup> mijnen adem te verhalen: maer hy versadicht my met <sup class=\"note-marker\" data-note=\"32\">32</sup> bitterheden.",
       "phraseDiff": [
         {
+          "old": "mijn",
+          "new": "op",
+          "principe": null
+        },
+        {
           "old": "verhalen;",
-          "new": "vertellen;",
+          "new": "komen;",
           "principe": null
         }
       ]
@@ -1597,7 +1602,7 @@
       "number": 24,
       "textSV1888": "De aarde wordt gegeven in de hand des goddelozen; Hij overdekt het aangezicht harer rechteren; zo niet, wie is Hij dan?",
       "text1637": "De aerde wort [44] gegeven [45] inde hant des godtloosen; [46] Hy overdeckt het aengesichte harer Richteren: so niet, [47] wie is hy [48] dan?",
-      "text2026": "De aarde wordt gegeven in de hand van de goddelozen; Hij overdekt het aangezicht haar rechteren; zo niet, wie is Hij dan?",
+      "text2026": "De aarde wordt gegeven in de hand van de goddelozen; Hij overdekt het aangezicht van haar rechters; zo niet, wie is Hij dan?",
       "marginNotes": [
         {
           "marker": "44",
@@ -1697,7 +1702,7 @@
           "morph": "HPp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>De aarde wordt<sup class=\"note-marker\" data-note=\"44\">44</sup> gegeven<sup class=\"note-marker\" data-note=\"45\">45</sup> in de hand van de<sup class=\"note-marker\" data-note=\"46\">46</sup> goddelozen; Hij overdekt het aangezicht haar rechteren; zo niet,<sup class=\"note-marker\" data-note=\"47\">47</sup> wie is Hij<sup class=\"note-marker\" data-note=\"48\">48</sup> dan?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>De aarde wordt<sup class=\"note-marker\" data-note=\"44\">44</sup> gegeven<sup class=\"note-marker\" data-note=\"45\">45</sup> in de hand van de<sup class=\"note-marker\" data-note=\"46\">46</sup> goddelozen; Hij overdekt het aangezicht van haar rechters; zo niet,<sup class=\"note-marker\" data-note=\"47\">47</sup> wie is Hij<sup class=\"note-marker\" data-note=\"48\">48</sup> dan?</i></span>",
       "textSV1888_html": "De aarde wordt<sup class=\"note-marker\" data-note=\"44\">44</sup> gegeven<sup class=\"note-marker\" data-note=\"45\">45</sup> in de hand des goddelozen;<sup class=\"note-marker\" data-note=\"46\">46</sup> Hij overdekt het aangezicht harer rechteren; zo niet,<sup class=\"note-marker\" data-note=\"47\">47</sup> wie is Hij<sup class=\"note-marker\" data-note=\"48\">48</sup> dan?",
       "text1637_html": "De aerde wort <sup class=\"note-marker\" data-note=\"44\">44</sup> gegeven <sup class=\"note-marker\" data-note=\"45\">45</sup> inde hant des godtloosen; <sup class=\"note-marker\" data-note=\"46\">46</sup> Hy overdeckt het aengesichte harer Richteren: so niet, <sup class=\"note-marker\" data-note=\"47\">47</sup> wie is hy <sup class=\"note-marker\" data-note=\"48\">48</sup> dan?",
       "phraseDiff": [
@@ -1707,9 +1712,9 @@
           "principe": "N3"
         },
         {
-          "old": "harer",
-          "new": "haar",
-          "principe": "V208"
+          "old": "harer rechteren;",
+          "new": "van haar rechters;",
+          "principe": null
         }
       ]
     },

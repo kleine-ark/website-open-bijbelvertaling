@@ -442,7 +442,7 @@
       "number": 7,
       "textSV1888": "Den moede hebt gij geen water te drinken gegeven, en van den hongerige hebt gij het brood onthouden.",
       "text1637": "Den moeden en hebt ghy geen water te drincken gegeven; ende vanden hongerigen hebt ghy het broot onthouden.",
-      "text2026": "De moe hebt u geen water te drinken gegeven, en van de hongerige hebt u het brood onthouden.",
+      "text2026": "De vermoeide hebt u geen water te drinken gegeven, en van de hongerige hebt u het brood onthouden.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -481,12 +481,12 @@
           "morph": "HNcbsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>De moe hebt u geen water te drinken gegeven, en van de hongerige hebt u het brood onthouden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>De vermoeide hebt u geen water te drinken gegeven, en van de hongerige hebt u het brood onthouden.</i></span>",
       "text1637_html": "Den moeden en hebt ghy geen water te drincken gegeven; ende vanden hongerigen hebt ghy het broot onthouden.",
       "phraseDiff": [
         {
           "old": "Den moede",
-          "new": "De moe",
+          "new": "De vermoeide",
           "principe": "V33"
         },
         {
@@ -708,7 +708,7 @@
       "number": 11,
       "textSV1888": "Of gij ziet de duisternis niet, en des water overvloed bedekt u.",
       "text1637": "Ofte ghy [17] en siet de duysternisse niet; ende [18] des waters overvloet bedeckt u.",
-      "text2026": "Of u ziet de duisternis niet, en van het water overvloed bedekt u.",
+      "text2026": "Of u ziet de duisternis niet, en de overvloed van het water bedekt u.",
       "marginNotes": [
         {
           "marker": "17",
@@ -762,7 +762,7 @@
           "morph": "HVpi3fs/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Of<sup class=\"note-marker\" data-note=\"17\">17</sup> u ziet de duisternis niet, en<sup class=\"note-marker\" data-note=\"18\">18</sup> van het water overvloed bedekt u.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Of<sup class=\"note-marker\" data-note=\"17\">17</sup> u ziet de duisternis niet, en<sup class=\"note-marker\" data-note=\"18\">18</sup> de overvloed van het water bedekt u.</i></span>",
       "textSV1888_html": "Of<sup class=\"note-marker\" data-note=\"17\">17</sup> gij ziet de duisternis niet, en<sup class=\"note-marker\" data-note=\"18\">18</sup> des water overvloed bedekt u.",
       "text1637_html": "Ofte ghy <sup class=\"note-marker\" data-note=\"17\">17</sup> en siet de duysternisse niet; ende <sup class=\"note-marker\" data-note=\"18\">18</sup> des waters overvloet bedeckt u.",
       "phraseDiff": [
@@ -773,8 +773,13 @@
         },
         {
           "old": "des",
-          "new": "van het",
-          "principe": "N3"
+          "new": "de overvloed van het",
+          "principe": null
+        },
+        {
+          "old": "overvloed",
+          "new": "",
+          "principe": null
         }
       ]
     },

@@ -285,7 +285,7 @@
       "number": 5,
       "textSV1888": "Dat de duisternis en des doods schaduw hem verontreinigen; dat wolken over hem wonen; dat hem verschrikken de zwarte dampen des dags!",
       "text1637": "Dat de duysternisse, ende [6] des doots schaduwe hem verontreynigen, dat wolcken over hem woonen, dat hem verschricken de [7] swarte dampen des daechs.",
-      "text2026": "Dat de duisternis en van de dood schaduw hem verontreinigen; dat wolken over hem wonen; dat hem verschrikken de zwarte dampen van de dag!",
+      "text2026": "Dat de duisternis en de schaduw van de dood hem verontreinigen; dat wolken over hem wonen; dat hem verschrikken de zwarte dampen van de dag!",
       "marginNotes": [
         {
           "marker": "6",
@@ -349,14 +349,19 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Dat de duisternis en<sup class=\"note-marker\" data-note=\"6\">6</sup> van de dood schaduw hem verontreinigen; dat wolken over hem wonen; dat hem verschrikken de<sup class=\"note-marker\" data-note=\"7\">7</sup> zwarte dampen van de dag!</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Dat de duisternis en<sup class=\"note-marker\" data-note=\"6\">6</sup> de schaduw van de dood hem verontreinigen; dat wolken over hem wonen; dat hem verschrikken de<sup class=\"note-marker\" data-note=\"7\">7</sup> zwarte dampen van de dag!</i></span>",
       "textSV1888_html": "Dat de duisternis en<sup class=\"note-marker\" data-note=\"6\">6</sup> des doods schaduw hem verontreinigen; dat wolken over hem wonen; dat hem verschrikken de<sup class=\"note-marker\" data-note=\"7\">7</sup> zwarte dampen des dags!",
       "text1637_html": "Dat de duysternisse, ende <sup class=\"note-marker\" data-note=\"6\">6</sup> des doots schaduwe hem verontreynigen, dat wolcken over hem woone<i>n</i>, dat hem verschricken de <sup class=\"note-marker\" data-note=\"7\">7</sup> swarte dampen des daechs.",
       "phraseDiff": [
         {
           "old": "des doods",
+          "new": "de",
+          "principe": null
+        },
+        {
+          "old": "",
           "new": "van de dood",
-          "principe": "N3"
+          "principe": null
         },
         {
           "old": "des dags!",
@@ -369,7 +374,7 @@
       "number": 6,
       "textSV1888": "Diezelve nacht, donkerheid neme hem in; dat hij zich niet verheuge onder de dagen des jaars; dat hij in het getal der maanden niet kome!",
       "text1637": "Die selve nacht, donckerheyt neme haer in, dat sy haer [8] niet en verheuge onder de dagen des jaers; dat sy in't getal der [9] maenden niet en kome.",
-      "text2026": "Die nacht, donkerheid neme hem in; dat hij zich niet verheuge onder de dagen van de jaar; dat hij in het getal van de maanden niet kome!",
+      "text2026": "Die nacht, donkerheid neme hem in; dat hij zich niet verheuge onder de dagen van het jaar; dat hij in het getal van de maanden niet kome!",
       "marginNotes": [
         {
           "marker": "8",
@@ -448,7 +453,7 @@
           "morph": "HVqj3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Die nacht, donkerheid neme hem in; dat hij zich<sup class=\"note-marker\" data-note=\"8\">8</sup> niet verheuge onder de dagen van de jaar; dat hij in het getal van<sup class=\"note-marker\" data-note=\"9\">9</sup> de maanden niet kome!</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Die nacht, donkerheid neme hem in; dat hij zich<sup class=\"note-marker\" data-note=\"8\">8</sup> niet verheuge onder de dagen van het jaar; dat hij in het getal van<sup class=\"note-marker\" data-note=\"9\">9</sup> de maanden niet kome!</i></span>",
       "textSV1888_html": "Diezelve nacht, donkerheid neme hem in; dat hij zich<sup class=\"note-marker\" data-note=\"8\">8</sup> niet verheuge onder de dagen des jaars; dat hij in het getal der<sup class=\"note-marker\" data-note=\"9\">9</sup> maanden niet kome!",
       "text1637_html": "Die selve nacht, donckerheyt neme haer in, dat sy haer <sup class=\"note-marker\" data-note=\"8\">8</sup> niet en verheuge onder de dagen des jaers; dat sy in't getal der <sup class=\"note-marker\" data-note=\"9\">9</sup> maenden niet en kome.",
       "phraseDiff": [
@@ -459,8 +464,8 @@
         },
         {
           "old": "des jaars;",
-          "new": "van de jaar;",
-          "principe": "N3"
+          "new": "van het jaar;",
+          "principe": null
         },
         {
           "old": "der",
