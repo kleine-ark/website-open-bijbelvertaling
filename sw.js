@@ -118,7 +118,7 @@ self.addEventListener('fetch', (event) => {
 
     // Deze twee wiki-illustraties kunnen opnieuw gegenereerd worden onder
     // dezelfde stabiele bestandsnaam. Haal ze daarom online altijd vers op.
-    if (/\/images\/wiki\/(?:liederen|gebeden)\.(?:webp|svg)$/.test(path)) {
+    if (/\/images\/wiki\/(?:bronnen\/)?(?:liederen|gebeden)\.webp$/.test(path)) {
         event.respondWith(networkFirst(req, SHELL_CACHE));
         return;
     }
