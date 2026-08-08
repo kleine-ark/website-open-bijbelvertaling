@@ -306,6 +306,40 @@
 .topnav-hamburger.open span:nth-child(2) { opacity: 0; }
 .topnav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+/* Zodra de volledige desktopnavigatie het woordmerk zou wegdrukken, gaat zij
+   al op tablet-/smalle laptopbreedte achter de hamburger. */
+@media (min-width: 769px) and (max-width: 1180px) {
+    .topnav-brand { flex: 1 1 auto; gap: 7px; }
+    .topnav-logo { width: 167px; max-height: 50px; }
+    .topnav-hamburger { display: flex; }
+    .topnav-links {
+        display: none;
+        position: fixed;
+        top: 72px;
+        right: 0;
+        min-width: 210px;
+        margin: 0;
+        padding: 8px 0;
+        gap: 0;
+        flex-direction: column;
+        background: var(--navy);
+        border-left: 1px solid rgba(203,164,73,0.3);
+        border-bottom: 1px solid rgba(203,164,73,0.3);
+        border-bottom-left-radius: 8px;
+        box-shadow: -2px 4px 16px rgba(0,0,0,0.3);
+        z-index: 400;
+    }
+    .topnav-links.open { display: flex; }
+    .topnav-links a {
+        padding: 12px 24px;
+        font-size: 15px;
+        color: rgba(255,255,255,0.9);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .topnav-links a:last-child { border-bottom: none; }
+    .topnav-links a:hover { background: rgba(203,164,73,0.15); color: var(--gold); }
+}
+
 @media (max-width: 768px) {
     #topnav { padding: 0 12px; height: 56px; }
     .topnav-brand {
@@ -3769,6 +3803,9 @@ body.dark .geez-lex-popup .geez-lex-betekenis { color: #d8d8d8; }
 
 /* Op mobiel verbergen — daar blijft de search-icon-knop staan */
 @media (max-width: 768px) {
+    .topnav-search-input { display: none; }
+}
+@media (min-width: 769px) and (max-width: 1180px) {
     .topnav-search-input { display: none; }
 }
 
