@@ -56,6 +56,18 @@ class WikiCinemagraphTests(unittest.TestCase):
         self.assertNotIn('href="wiki.html#begrippen"', overview)
         self.assertNotIn('href="#begrippen"', shell)
 
+        public_files = list(ROOT.glob("*.html")) + [
+            ROOT / "llms.txt",
+            ROOT / "sitemap.xml",
+            ROOT / "scripts" / "build_sitemap.py",
+        ]
+        for path in public_files:
+            self.assertNotIn(
+                "begrippen.html",
+                path.read_text(encoding="utf-8"),
+                f"verwijderde Begrippenpagina wordt nog genoemd in {path.name}",
+            )
+
     def test_motion_tiles_use_webp_with_static_reduced_motion_fallback(self):
         html = (ROOT / "wiki-overzicht.html").read_text(encoding="utf-8")
         parser = PictureParser()
