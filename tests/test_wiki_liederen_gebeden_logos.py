@@ -53,7 +53,7 @@ class WikiLiederenGebedenLogoTests(unittest.TestCase):
                 self.assertIsNotNone(colors)
                 self.assertGreater(len(colors), 5000)
 
-    def test_tiles_use_motion_webp_with_static_painterly_fallback(self):
+    def test_tiles_use_only_generated_raster_art(self):
         html = (ROOT / "wiki-overzicht.html").read_text(encoding="utf-8")
         parser = PictureParser()
         parser.feed(html)
@@ -72,9 +72,10 @@ class WikiLiederenGebedenLogoTests(unittest.TestCase):
             self.assertEqual(
                 source["media"], "(prefers-reduced-motion: no-preference)"
             )
-            self.assertEqual(fallback["src"], f"images/wiki/{name}.svg")
-            svg = (ROOT / fallback["src"]).read_text(encoding="utf-8")
-            self.assertIn(f'bronnen/{name}.webp', svg)
+            self.assertEqual(
+                fallback["src"], f"images/wiki/bronnen/{name}.webp"
+            )
+            self.assertFalse((ROOT / "images" / "wiki" / f"{name}.svg").exists())
 
     def test_assets_are_animated_five_second_webp_loops(self):
         for name in NAMES:

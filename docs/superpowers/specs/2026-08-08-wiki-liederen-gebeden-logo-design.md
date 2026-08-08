@@ -6,15 +6,15 @@ De tegels Liederen en Gebeden krijgen dezelfde handgetekende beeldtaal en subtie
 
 ## Visueel ontwerp
 
-- **Liederen:** een handgetekende antieke lier op warm perkament. Een zachte goudglans loopt langzaam over de snaren.
-- **Gebeden:** een handgetekende bronzen wierookschaal op warm perkament. De rook drijft nauwelijks zichtbaar en de kolen krijgen een zeer zachte gloed.
+- **Liederen:** een handgetekende Bijbelse muzikant die bij zonsopgang op een houten lier speelt. Een zachte goudglans loopt langzaam door het ochtendlicht en over de snaren.
+- **Gebeden:** een handgetekende geknielde figuur onder een olijfboom, met de heuvels en stad in de verte. Alleen het ochtendlicht ademt bijna onmerkbaar.
 - Beide illustraties gebruiken fijne marineblauwe inktlijnen, gedempt goud en terughoudende aquareltextuur. De beeldbronnen staan in `images/wiki/bronnen/`.
 - Beide animaties zijn 600 × 300 pixels, duren vijf seconden en sluiten naadloos aan op het eerste beeld.
 - Geen tekst, camerabeweging, snelle beweging of nieuwe beeldelementen.
 
 ## Integratie
 
-`wiki-overzicht.html` gebruikt per tegel een `<picture>`: de bewegende WebP voor bezoekers die beweging toestaan, en een SVG-verwijzing naar dezelfde handgetekende bron als stil alternatief bij `prefers-reduced-motion` of ontbrekende animatie-ondersteuning. De cacheversie van de site wordt verhoogd zodat oudere tegelbeelden worden vervangen.
+`wiki-overzicht.html` gebruikt per tegel een `<picture>`: de bewegende WebP voor bezoekers die beweging toestaan, en de echte gegenereerde rasterbron als stil alternatief bij `prefers-reduced-motion` of ontbrekende animatie-ondersteuning. Er is geen SVG-route voor deze twee tegels. De service worker haalt deze vier rasterbestanden online altijd vers op, zodat oudere tegelbeelden worden vervangen.
 
 ## Controle
 

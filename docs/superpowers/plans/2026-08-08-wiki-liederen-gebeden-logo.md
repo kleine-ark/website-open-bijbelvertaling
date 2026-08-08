@@ -12,7 +12,7 @@
 
 - Sluit aan op het perkament, de fijne inktlijnen en de gedempte goud-/marineaccenten van de overige wiki-illustraties.
 - De lus duurt 4–6 seconden, is naadloos en bevat alleen subtiele beweging.
-- De SVG blijft de fallback voor verminderde beweging.
+- De gegenereerde rasterbron blijft de fallback voor verminderde beweging; gebruik voor deze twee tegels geen SVG.
 - Raak het losse evangelisatietraktaat en andere niet-gerelateerde bestanden niet aan.
 
 ---
@@ -52,7 +52,7 @@
 
 **Interfaces:**
 - Consumes: de twee gebouwde WebP's
-- Produces: bewegende tegels met SVG-fallback
+- Produces: bewegende tegels met gegenereerde rasterfallback
 
 - [x] **Step 1: Vervang beide losse `<img>`-elementen door het bestaande `<picture>`-patroon.**
 - [x] **Step 2: Draai `python -m pytest -q tests/test_wiki_liederen_gebeden_logos.py`.**
