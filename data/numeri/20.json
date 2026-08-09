@@ -1771,7 +1771,7 @@
       "number": 16,
       "textSV1888": "Toen riepen wij tot den HEERE, en Hij hoorde onze stem, en Hij zond een Engel, en Hij leidde ons uit Egypte; en ziet, wij zijn te Kades, en stad aan het uiterste uwer landpale.",
       "text1637": "Doe [i] riepen wy tot den HEERE, ende hy hoorde onse stemme, ende hy [k] sondt eenen Engel, ende hy leydde ons uyt Egypten: ende siet, wy zijn te Kades, eene stadt, aen 't uyterste uwer lantpale.",
-      "text2026": "Toen riepen wij tot JAHWEH, en Hij hoorde onze stem, en Hij zond een Engel, en Hij leidde ons uit Egypte; en ziet, wij zijn te Kades, een stad aan het uiterste van uw landpale.",
+      "text2026": "Toen riepen wij tot JAHWEH, en Hij hoorde onze stem, en Hij zond een Engel, en Hij leidde ons uit Egypte; en ziet, wij zijn te Kades, een stad aan het uiterste van uw gebied.",
       "marginNotes": [
         {
           "marker": "i",
@@ -1865,7 +1865,7 @@
           "morph": "HNcmsc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Toen<sup class=\"note-marker\" data-note=\"i\">i</sup> riepen wij tot JAHWEH, en Hij hoorde onze stem, en Hij<sup class=\"note-marker\" data-note=\"k\">k</sup> zond een Engel, en Hij leidde ons uit Egypte; en ziet, wij zijn te Kades, een stad aan het uiterste van uw landpale.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Toen<sup class=\"note-marker\" data-note=\"i\">i</sup> riepen wij tot JAHWEH, en Hij hoorde onze stem, en Hij<sup class=\"note-marker\" data-note=\"k\">k</sup> zond een Engel, en Hij leidde ons uit Egypte; en ziet, wij zijn te Kades, een stad aan het uiterste van uw gebied.</i></span>",
       "textSV1888_html": "Toen<sup class=\"note-marker\" data-note=\"i\">i</sup> riepen wij tot den HEERE, en Hij hoorde onze stem, en Hij<sup class=\"note-marker\" data-note=\"k\">k</sup> zond een Engel, en Hij leidde ons uit Egypte; en ziet, wij zijn te Kades, en stad aan het uiterste uwer landpale.",
       "text1637_html": "Doe <sup class=\"note-marker\" data-note=\"i\">i</sup> riepen wy tot den HEERE, ende hy hoorde onse stemme, ende hy <sup class=\"note-marker\" data-note=\"k\">k</sup> sondt eenen Engel, ende hy leydde ons uyt Egypten: ende siet, wy zijn te Kades, eene stadt, aen 't uyterste uwer lantpale.",
       "phraseDiff": [
@@ -1880,9 +1880,9 @@
           "principe": null
         },
         {
-          "old": "uwer",
-          "new": "van uw",
-          "principe": "N7"
+          "old": "uwer landpale.",
+          "new": "van uw gebied.",
+          "principe": "V1199"
         }
       ]
     },
@@ -2372,7 +2372,7 @@
       "number": 21,
       "textSV1888": "Alzo weigerde Edom Israël toe te laten door zijn landpale te trekken; daarom week Israël van hem af.",
       "text1637": "Also weygerde Edom [32] Israël toe te laten door sijne lantpale te trecken: [33] daerom [l] weeck Israël van hem af.",
-      "text2026": "Zo weigerde Edom Israël toe te laten door zijn landpale te trekken; daarom week Israël van hem af.",
+      "text2026": "Zo weigerde Edom Israël toe te laten door zijn gebied te trekken; daarom week Israël van hem af.",
       "marginNotes": [
         {
           "marker": "33",
@@ -2448,7 +2448,7 @@
           "morph": "HR/R/Sp3ms"
         }
       ],
-      "text2026_html": "Zo weigerde Edom Israël toe te laten door zijn landpale te trekken;<sup class=\"note-marker\" data-note=\"33\">33</sup> daarom<sup class=\"note-marker\" data-note=\"l\">l</sup> week Israël van hem af.",
+      "text2026_html": "Zo weigerde Edom Israël toe te laten door zijn gebied te trekken;<sup class=\"note-marker\" data-note=\"33\">33</sup> daarom<sup class=\"note-marker\" data-note=\"l\">l</sup> week Israël van hem af.",
       "textSV1888_html": "Alzo weigerde Edom Israël toe te laten door zijn landpale te trekken;<sup class=\"note-marker\" data-note=\"33\">33</sup> daarom<sup class=\"note-marker\" data-note=\"l\">l</sup> week Israël van hem af.",
       "text1637_html": "Also weygerde Edom <sup class=\"note-marker\" data-note=\"32\">32</sup> Israël toe te laten door sijne lantpale te trecken: <sup class=\"note-marker\" data-note=\"33\">33</sup> daerom <sup class=\"note-marker\" data-note=\"l\">l</sup> weeck Israël van hem af.",
       "phraseDiff": [
@@ -2456,6 +2456,11 @@
           "old": "Alzo",
           "new": "Zo",
           "principe": "V42"
+        },
+        {
+          "old": "landpale",
+          "new": "gebied",
+          "principe": "V1199"
         }
       ]
     },
