@@ -103,7 +103,7 @@
       "number": 2,
       "textSV1888": "En zij nodigden het volk tot de slachtofferen harer goden; en het volk at, en boog zich voor haar goden.",
       "text1637": "[b] Ende [4] sy noodichden het volck tot de slacht-offeren [5] harer Goden: ende [6] het volck [7] at, ende 't buygde sich voor hare Goden.",
-      "text2026": "En zij nodigden het volk tot de slachtofferen van haar goden; en het volk at, en boog zich voor haar goden.",
+      "text2026": "En zij nodigden het volk tot de slachtoffers van haar goden; en het volk at, en boog zich voor haar goden.",
       "marginNotes": [
         {
           "marker": "b",
@@ -183,14 +183,14 @@
           "morph": "HR/Ncmpc/Sp3fp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> En<sup class=\"note-marker\" data-note=\"4\">4</sup> zij nodigden het volk tot de slachtofferen<sup class=\"note-marker\" data-note=\"5\">5</sup> van haar goden; en<sup class=\"note-marker\" data-note=\"6\">6</sup> het volk<sup class=\"note-marker\" data-note=\"7\">7</sup> at, en boog zich voor haar goden.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> En<sup class=\"note-marker\" data-note=\"4\">4</sup> zij nodigden het volk tot de slachtoffers<sup class=\"note-marker\" data-note=\"5\">5</sup> van haar goden; en<sup class=\"note-marker\" data-note=\"6\">6</sup> het volk<sup class=\"note-marker\" data-note=\"7\">7</sup> at, en boog zich voor haar goden.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> En<sup class=\"note-marker\" data-note=\"4\">4</sup> zij nodigden het volk tot de slachtofferen<sup class=\"note-marker\" data-note=\"5\">5</sup> harer goden; en<sup class=\"note-marker\" data-note=\"6\">6</sup> het volk<sup class=\"note-marker\" data-note=\"7\">7</sup> at, en boog zich voor haar goden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Ende <sup class=\"note-marker\" data-note=\"4\">4</sup> sy noodichden het volck tot de slacht-offeren <sup class=\"note-marker\" data-note=\"5\">5</sup> harer Goden: ende <sup class=\"note-marker\" data-note=\"6\">6</sup> het volck <sup class=\"note-marker\" data-note=\"7\">7</sup> at, ende 't buygde sich voor hare Goden.",
       "phraseDiff": [
         {
-          "old": "harer",
-          "new": "van haar",
-          "principe": null
+          "old": "slachtofferen harer",
+          "new": "slachtoffers van haar",
+          "principe": "V1173"
         }
       ]
     },
@@ -525,7 +525,7 @@
       "number": 6,
       "textSV1888": "En ziet, een man uit de kinderen Israëls kwam, en bracht een Midianietin tot zijn broederen voor de ogen van Mozes, en voor de ogen van de ganse vergadering der kinderen Israëls, toen zij weenden voor de deur van de tent der samenkomst.",
       "text1637": "Ende siet, een man uyt de kinderen Israëls quam, ende bracht eene Midianitinne tot [12] sijne broederen voor de oogen Mose, ende voor de oogen der gantscher vergaderinge der kinderen Israëls, doe sy weenden voor de deure der Tente der t' samen-komste.",
-      "text2026": "En ziet, een man uit de Israëlieten kwam, en bracht een Midianietin tot zijn broers voor de ogen van Mozes, en voor de ogen van de hele gemeenschap van de Israëlieten, toen zij huilden voor de deur van de tent van de samenkomst.",
+      "text2026": "En ziet, een man uit de Israëlieten kwam, en bracht een Midianitische vrouw tot zijn broers voor de ogen van Mozes, en voor de ogen van de hele gemeenschap van de Israëlieten, toen zij huilden voor de deur van de tent van de samenkomst.",
       "marginNotes": [
         {
           "marker": "12",
@@ -647,7 +647,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "En ziet, een man uit de Israëlieten kwam, en bracht een Midianietin tot<sup class=\"note-marker\" data-note=\"12\">12</sup> zijn broers voor de ogen van Mozes, en voor de ogen van de hele gemeenschap van de Israëlieten, toen zij huilden voor de deur van de tent van de samenkomst.",
+      "text2026_html": "En ziet, een man uit de Israëlieten kwam, en bracht een Midianitische vrouw tot<sup class=\"note-marker\" data-note=\"12\">12</sup> zijn broers voor de ogen van Mozes, en voor de ogen van de hele gemeenschap van de Israëlieten, toen zij huilden voor de deur van de tent van de samenkomst.",
       "textSV1888_html": "En ziet, een man uit de kinderen Israëls kwam, en bracht een Midianietin tot<sup class=\"note-marker\" data-note=\"12\">12</sup> zijn broederen voor de ogen van Mozes, en voor de ogen van de ganse vergadering der kinderen Israëls, toen zij weenden voor de deur van de tent der samenkomst.",
       "text1637_html": "Ende siet, een man uyt de kinderen Israëls quam, ende bracht eene Midianitinne tot <sup class=\"note-marker\" data-note=\"12\">12</sup> sijne broederen voor de oogen Mose, ende voor de oogen der gantscher vergaderinge der kinderen Israëls, doe sy weenden voor de deure der Tente der t' samen-komste.",
       "phraseDiff": [
@@ -655,6 +655,11 @@
           "old": "kinderen Israëls",
           "new": "Israëlieten",
           "principe": null
+        },
+        {
+          "old": "Midianietin",
+          "new": "Midianitische vrouw",
+          "principe": "V1185"
         },
         {
           "old": "broederen",
@@ -1377,7 +1382,7 @@
       "number": 14,
       "textSV1888": "De naam nu des verslagenen Israëlietischen mans, die verslagen was met de Midianietin, was Zimri, de zoon van Salu, een overste van een vaderlijk huis der Simeonieten.",
       "text1637": "De name nu des verslagenen Israëlitischen mans, die verslagen was met de Midianitinne, was Zimri de sone Salu, een overste eenes vaderlicken huyses der Simeoniten.",
-      "text2026": "De naam nu van de verslagenen Israëlietische mans, die verslagen was met de Midianietin, was Zimri, de zoon van Salu, een overste van een vaderlijk huis van de Simeonieten.",
+      "text2026": "De naam nu van de verslagen Israëlitische man, die verslagen was met de Midianitische vrouw, was Zimri, de zoon van Salu, een overste van een vaderlijk huis van de Simeonieten.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1456,18 +1461,18 @@
           "morph": "HRd/Ngmsa"
         }
       ],
-      "text2026_html": "De naam nu van de verslagenen Israëlietische mans, die verslagen was met de Midianietin, was Zimri, de zoon van Salu, een overste van een vaderlijk huis van de Simeonieten.",
+      "text2026_html": "De naam nu van de verslagen Israëlitische man, die verslagen was met de Midianitische vrouw, was Zimri, de zoon van Salu, een overste van een vaderlijk huis van de Simeonieten.",
       "text1637_html": "De name nu des verslagenen Israëlitischen mans, die verslagen was met de Midianitinne, was Zimri de sone Salu, een overste eenes vaderlicken huyses der Simeoniten.",
       "phraseDiff": [
         {
-          "old": "des",
-          "new": "van de",
-          "principe": "N3"
+          "old": "des verslagenen Israëlietischen mans,",
+          "new": "van de verslagen Israëlitische man,",
+          "principe": "V1186"
         },
         {
-          "old": "Israëlietischen",
-          "new": "Israëlietische",
-          "principe": "V1001"
+          "old": "Midianietin,",
+          "new": "Midianitische vrouw,",
+          "principe": "V1185"
         },
         {
           "old": "der",
@@ -1620,7 +1625,7 @@
       "number": 17,
       "textSV1888": "Handel vijandelijk met de Midianieten, en versla hen;",
       "text1637": "Handelt [i] vyantlick met de Midianiten: ende verslaetse.",
-      "text2026": "Handel vijandelijk met de Midianieten, en versla hen;",
+      "text2026": "Handel vijandig met de Midianieten, en versla hen;",
       "marginNotes": [
         {
           "marker": "i",
@@ -1657,15 +1662,22 @@
           "morph": "HTo/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Handel<sup class=\"note-marker\" data-note=\"i\">i</sup> vijandelijk met de Midianieten, en versla hen;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Handel<sup class=\"note-marker\" data-note=\"i\">i</sup> vijandig met de Midianieten, en versla hen;</i></span>",
       "textSV1888_html": "Handel<sup class=\"note-marker\" data-note=\"i\">i</sup> vijandelijk met de Midianieten, en versla hen;",
-      "text1637_html": "Handelt <sup class=\"note-marker\" data-note=\"i\">i</sup> vyantlick met de Midianiten: ende verslaetse."
+      "text1637_html": "Handelt <sup class=\"note-marker\" data-note=\"i\">i</sup> vyantlick met de Midianiten: ende verslaetse.",
+      "phraseDiff": [
+        {
+          "old": "vijandelijk",
+          "new": "vijandig",
+          "principe": "V1176"
+        }
+      ]
     },
     {
       "number": 18,
       "textSV1888": "Want zij hebben vijandelijk tegen ulieden gehandeld door hun listen, die zij listig tegen u bedacht hebben in de zaak van Peor, en in de zaak van Kozbi, de dochter van den overste der Midianieten, hun zuster, die verslagen is, ten dage der plaag, om de zaak van Peor.",
       "text1637": "Want sy hebben vyantlick [k] tegens u lieden gehandelt door hare listen, die sy listelick tegens u bedacht hebben in de sake van Peor, ende in de sake van Cozbi, de dochter des Oversten der Midianiten, hare [18] suster, die verslagen is ten dage der plage om de sake van Peor.",
-      "text2026": "Want zij hebben vijandelijk tegen u gehandeld door hun listen, die zij listig tegen u bedacht hebben in de zaak van Peor, en in de zaak van Kozbi, de dochter van de overste van de Midianieten, hun zus, die verslagen is, op de dag van de plaag, om de zaak van Peor.",
+      "text2026": "Want zij hebben vijandig tegen u gehandeld door hun listen, die zij listig tegen u bedacht hebben in de zaak van Peor, en in de zaak van Kozbi, de dochter van de overste van de Midianieten, hun zus, die verslagen is, op de dag van de plaag, om de zaak van Peor.",
       "marginNotes": [
         {
           "marker": "k",
@@ -1804,10 +1816,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Want zij hebben vijandelijk<sup class=\"note-marker\" data-note=\"k\">k</sup> tegen u gehandeld door hun listen, die zij listig tegen u bedacht hebben in de zaak van Peor, en in de zaak van Kozbi, de dochter van de overste van de Midianieten,<sup class=\"note-marker\" data-note=\"18\">18</sup> hun zus, die verslagen is, op de dag van de plaag, om de zaak van Peor.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Want zij hebben vijandig<sup class=\"note-marker\" data-note=\"k\">k</sup> tegen u gehandeld door hun listen, die zij listig tegen u bedacht hebben in de zaak van Peor, en in de zaak van Kozbi, de dochter van de overste van de Midianieten,<sup class=\"note-marker\" data-note=\"18\">18</sup> hun zus, die verslagen is, op de dag van de plaag, om de zaak van Peor.</i></span>",
       "textSV1888_html": "Want zij hebben vijandelijk<sup class=\"note-marker\" data-note=\"k\">k</sup> tegen ulieden gehandeld door hun listen, die zij listig tegen u bedacht hebben in de zaak van Peor, en in de zaak van Kozbi, de dochter van den overste der Midianieten, hun<sup class=\"note-marker\" data-note=\"18\">18</sup> zuster, die verslagen is, ten dage der plaag, om de zaak van Peor.",
       "text1637_html": "Want sy hebben vyantlick <sup class=\"note-marker\" data-note=\"k\">k</sup> tegens u lieden gehandelt door hare listen, die sy listelick tegens u bedacht hebben in de sake van Peor, ende in de sake van Cozbi, de dochter des Oversten der Midianiten, hare <sup class=\"note-marker\" data-note=\"18\">18</sup> suster, die verslagen is ten dage der plage om de sake van Peor.",
       "phraseDiff": [
+        {
+          "old": "vijandelijk",
+          "new": "vijandig",
+          "principe": "V1176"
+        },
         {
           "old": "ulieden",
           "new": "u",

@@ -2415,7 +2415,7 @@
       "number": 23,
       "textSV1888": "Mij hebt gij niet gebracht het kleine vee uwer brandofferen, en met uw slachtofferen hebt gij Mij niet geëerd; Ik heb u Mij niet doen dienen met spijsoffer, en Ik heb u niet vermoeid met wierook.",
       "text1637": "[69] My en hebt ghy niet gebracht [70] het cleyne vee uwer brantofferen, noch [met] uwe slachtofferen en hebt ghy my niet ge-eert: Ick en hebbe u [my] niet doen dienen met [71] spijs-offer, noch ick en hebbe u niet vermoeyt [72] met wieroock.",
-      "text2026": "Mij hebt u niet gebracht het kleine vee van uw brandofferen, en met uw slachtofferen hebt u Mij niet geëerd; Ik heb u Mij niet doen dienen met spijsoffer, en Ik heb u niet vermoeid met wierook.",
+      "text2026": "Mij hebt u niet gebracht het kleine vee van uw brandoffers, en met uw slachtoffers hebt u Mij niet geëerd; Ik heb u Mij niet doen dienen met spijsoffer, en Ik heb u niet vermoeid met wierook.",
       "marginNotes": [
         {
           "marker": "70",
@@ -2518,7 +2518,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Mij hebt u niet gebracht<sup class=\"note-marker\" data-note=\"70\">70</sup> het kleine vee van uw brandofferen, en met uw slachtofferen hebt u Mij niet geëerd; Ik heb u Mij niet doen dienen met<sup class=\"note-marker\" data-note=\"71\">71</sup> spijsoffer, en Ik heb u niet vermoeid<sup class=\"note-marker\" data-note=\"72\">72</sup> met wierook.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Mij hebt u niet gebracht<sup class=\"note-marker\" data-note=\"70\">70</sup> het kleine vee van uw brandoffers, en met uw slachtoffers hebt u Mij niet geëerd; Ik heb u Mij niet doen dienen met<sup class=\"note-marker\" data-note=\"71\">71</sup> spijsoffer, en Ik heb u niet vermoeid<sup class=\"note-marker\" data-note=\"72\">72</sup> met wierook.</i></span>",
       "textSV1888_html": "Mij hebt gij niet gebracht<sup class=\"note-marker\" data-note=\"70\">70</sup> het kleine vee uwer brandofferen, en met uw slachtofferen hebt gij Mij niet geëerd; Ik heb u Mij niet doen dienen met<sup class=\"note-marker\" data-note=\"71\">71</sup> spijsoffer, en Ik heb u niet vermoeid<sup class=\"note-marker\" data-note=\"72\">72</sup> met wierook.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"69\">69</sup> My en hebt ghy niet gebracht <sup class=\"note-marker\" data-note=\"70\">70</sup> het cleyne vee uwer brantofferen, noch [met] uwe slachtoffere<i>n</i> en hebt ghy my niet ge-eert: Ick en hebbe u [my] niet doen dienen met <sup class=\"note-marker\" data-note=\"71\">71</sup> spijs-offer, noch ick en hebbe u niet vermoeyt <sup class=\"note-marker\" data-note=\"72\">72</sup> met wieroock.",
       "phraseDiff": [
@@ -2528,9 +2528,14 @@
           "principe": "A1"
         },
         {
-          "old": "uwer",
-          "new": "van uw",
-          "principe": "N7"
+          "old": "uwer brandofferen,",
+          "new": "van uw brandoffers,",
+          "principe": "V1173"
+        },
+        {
+          "old": "slachtofferen",
+          "new": "slachtoffers",
+          "principe": "V1173"
         },
         {
           "old": "gij",
