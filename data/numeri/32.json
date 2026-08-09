@@ -2301,7 +2301,7 @@
       "number": 23,
       "textSV1888": "Indien gij daarentegen alzo niet zult doen, ziet, zo hebt gij tegen den HEERE gezondigd; doch gij zult uw zonde gewaar worden, als zij u vinden zal!",
       "text1637": "Indien ghy daerentegen alsoo niet sult doen, siet, so hebt ghy aen den HEERE gesondigt: doch [27] ghy sult uwer sonde gewaer worden, alsse u [28] vinden sal.",
-      "text2026": "Als u daarentegen zo niet zult doen, ziet, zo hebt u tegen JAHWEH gezondigd; maar u zult uw zonde gewaar worden, als zij u vinden zal!",
+      "text2026": "Als u daarentegen zo niet zult doen, ziet, zo hebt u tegen JAHWEH gezondigd; maar u zult uw zonde bemerken, als zij u vinden zal!",
       "marginNotes": [
         {
           "marker": "27",
@@ -2380,7 +2380,7 @@
           "morph": "HTo/Sp2mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Als u daarentegen zo niet zult doen, ziet, zo hebt u tegen JAHWEH gezondigd; maar<sup class=\"note-marker\" data-note=\"27\">27</sup> u zult uw zonde gewaar worden, als zij u<sup class=\"note-marker\" data-note=\"28\">28</sup> vinden zal!</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Als u daarentegen zo niet zult doen, ziet, zo hebt u tegen JAHWEH gezondigd; maar<sup class=\"note-marker\" data-note=\"27\">27</sup> u zult uw zonde bemerken, als zij u<sup class=\"note-marker\" data-note=\"28\">28</sup> vinden zal!</i></span>",
       "textSV1888_html": "Indien gij daarentegen alzo niet zult doen, ziet, zo hebt gij tegen den HEERE gezondigd; doch<sup class=\"note-marker\" data-note=\"27\">27</sup> gij zult uw zonde gewaar worden, als zij u<sup class=\"note-marker\" data-note=\"28\">28</sup> vinden zal!",
       "text1637_html": "Indien ghy daerentegen alsoo niet sult doen, siet, so hebt ghy aen den HEERE gesondigt: doch <sup class=\"note-marker\" data-note=\"27\">27</sup> ghy sult uwer sonde gewaer worden, alsse u <sup class=\"note-marker\" data-note=\"28\">28</sup> vinden sal.",
       "phraseDiff": [
@@ -2408,6 +2408,11 @@
           "old": "doch gij",
           "new": "maar u",
           "principe": "A1"
+        },
+        {
+          "old": "gewaar worden,",
+          "new": "bemerken,",
+          "principe": "V1190"
         }
       ]
     },
@@ -2744,7 +2749,7 @@
       "number": 28,
       "textSV1888": "Toen gebood Mozes, hunnenthalve, den priester Eleazar, en Jozua, den zoon van Nun, en den hoofden der vaderen van de stammen der kinderen Israëls;",
       "text1637": "[c] Doe geboodt Mose harent halven den Priester Eleazar, ende Iosua den sone van Nun, ende den hoofden der vaderen van de stammen der kinderen Israëls:",
-      "text2026": "Toen gebood Mozes, hunnenthalve, de priester Eleazar, en Jozua, de zoon van Nun, en de familiehoofden van de stammen van de Israëlieten;",
+      "text2026": "Toen gebood Mozes, aangaande hen, de priester Eleazar, en Jozua, de zoon van Nun, en de familiehoofden van de stammen van de Israëlieten;",
       "marginNotes": [
         {
           "marker": "c",
@@ -2836,14 +2841,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Toen gebood Mozes, hunnenthalve, de priester Eleazar, en Jozua, de zoon van Nun, en de familiehoofden van de stammen van de Israëlieten;",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Toen gebood Mozes, aangaande hen, de priester Eleazar, en Jozua, de zoon van Nun, en de familiehoofden van de stammen van de Israëlieten;",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Toen gebood Mozes, hunnenthalve, den priester Eleazar, en Jozua, den zoon van Nun, en den hoofden der vaderen van de stammen der kinderen Israëls;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Doe geboodt Mose harent halven den Priester Eleazar, ende Iosua den sone van Nun, ende den hoofden der vaderen van de stammen der kinderen Israëls:",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "hunnenthalve, den",
+          "new": "aangaande hen, de",
+          "principe": "V1194"
         },
         {
           "old": "den",

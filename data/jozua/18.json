@@ -464,7 +464,7 @@
       "number": 5,
       "textSV1888": "Zij nu zullen het delen in zeven delen; Juda zal blijven op zijn landpale van het zuiden, en het huis van Jozef zal blijven op zijn landpale van het noorden.",
       "text1637": "Sy nu sullen het deylen in seven deelen: Iuda sal blijven op sijne lantpale van ’t Zuyden, ende ’t huys Iosephs sal blijven op sijne lantpale van ’t Noorden.",
-      "text2026": "Zij nu zullen het delen in zeven delen; Juda zal blijven op zijn landpale van het zuiden, en het huis van Jozef zal blijven op zijn landpale van het noorden.",
+      "text2026": "Zij nu zullen het delen in zeven delen; Juda zal blijven op zijn gebied van het zuiden, en het huis van Jozef zal blijven op zijn gebied van het noorden.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -543,8 +543,20 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zij nu zullen het delen in zeven delen; Juda zal blijven op zijn landpale van het zuiden, en het huis van Jozef zal blijven op zijn landpale van het noorden.</i></span>",
-      "text1637_html": "Sy nu sullen het deylen in seven deelen: Iuda sal blijven op sijne lantpale van ’t Zuyden, ende ’t huys Iosephs sal blijven op sijne lantpale van ’t Noorden."
+      "text2026_html": "<span class=\"direct-speech\"><i>Zij nu zullen het delen in zeven delen; Juda zal blijven op zijn gebied van het zuiden, en het huis van Jozef zal blijven op zijn gebied van het noorden.</i></span>",
+      "text1637_html": "Sy nu sullen het deylen in seven deelen: Iuda sal blijven op sijne lantpale van ’t Zuyden, ende ’t huys Iosephs sal blijven op sijne lantpale van ’t Noorden.",
+      "phraseDiff": [
+        {
+          "old": "landpale",
+          "new": "gebied",
+          "principe": "V1199"
+        },
+        {
+          "old": "landpale",
+          "new": "gebied",
+          "principe": "V1199"
+        }
+      ]
     },
     {
       "number": 6,
@@ -1233,7 +1245,7 @@
       "number": 11,
       "textSV1888": "En het lot van den stam der kinderen van Benjamin kwam op, naar hun huisgezinnen; en de landpale van hun lot ging uit tussen de kinderen van Juda, en tussen de kinderen van Jozef.",
       "text1637": "Ende het lot der stamme der kinderen Benjamins [10] quam op, nae hare huysgesinnen: ende de lantpale hares lots ginck uyt tusschen de kinderen Iuda, ende tusschen de kinderen Iosephs.",
-      "text2026": "En het lot van de stam van de kinderen van Benjamin kwam op, naar hun huisgezinnen; en de landpale van hun lot ging uit tussen de kinderen van Juda, en tussen de kinderen van Jozef.",
+      "text2026": "En het lot van de stam van de kinderen van Benjamin kwam op, naar hun huisgezinnen; en de grens van hun lot ging uit tussen de kinderen van Juda, en tussen de kinderen van Jozef.",
       "marginNotes": [
         {
           "marker": "10",
@@ -1320,7 +1332,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En het lot van de stam van de kinderen van<sup class=\"note-marker\" data-note=\"10\">10</sup> Benjamin kwam op, naar hun huisgezinnen; en de landpale van hun lot ging uit tussen de kinderen van Juda, en tussen de kinderen van Jozef.",
+      "text2026_html": "En het lot van de stam van de kinderen van<sup class=\"note-marker\" data-note=\"10\">10</sup> Benjamin kwam op, naar hun huisgezinnen; en de grens van hun lot ging uit tussen de kinderen van Juda, en tussen de kinderen van Jozef.",
       "textSV1888_html": "En het lot van den stam der kinderen van<sup class=\"note-marker\" data-note=\"10\">10</sup> Benjamin kwam op, naar hun huisgezinnen; en de landpale van hun lot ging uit tussen de kinderen van Juda, en tussen de kinderen van Jozef.",
       "text1637_html": "Ende het lot der stamme der kinderen Benjamins <sup class=\"note-marker\" data-note=\"10\">10</sup> quam op, nae hare huysgesinnen: ende de lantpale hares lots ginck uyt tusschen de kinderen Iuda, ende tusschen de kinderen Iosephs.",
       "phraseDiff": [
@@ -1333,6 +1345,11 @@
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
         }
       ]
     },
@@ -1340,7 +1357,7 @@
       "number": 12,
       "textSV1888": "En hun landpale was naar den hoek noordwaarts van de Jordaan; en deze landpale gaat opwaarts aan de zijde van Jericho van het noorden, en gaat op door het gebergte westwaarts, en haar uitgangen zijn aan de woestijn van Beth-Aven.",
       "text1637": "Ende hare lantpale was nae den hoeck Noordwaerts van de Iordane: ende dese lantpale gaet opwaerts aen de zijde van Iericho van ’t Noorden, ende gaet op door ’t geberchte Westwaerts, ende [a] hare uytgangen zijn aen de woestijne van Beth-Aven.",
-      "text2026": "En hun landpale was naar de hoek naar het noorden van de Jordaan; en deze landpale gaat omhoog aan de zijde van Jericho van het noorden, en gaat op door het gebergte naar het westen, en haar uitgangen zijn aan de woestijn van Beth-Aven.",
+      "text2026": "En hun gebied was naar de hoek naar het noorden van de Jordaan; en deze grens gaat omhoog aan de zijde van Jericho van het noorden, en gaat op door het gebergte naar het westen, en haar uitgangen zijn aan de woestijn van Beth-Aven.",
       "marginNotes": [
         {
           "marker": "a",
@@ -1457,10 +1474,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En hun landpale was naar de hoek naar het noorden van de Jordaan; en deze landpale gaat omhoog aan de zijde van Jericho van het noorden, en gaat op door het gebergte naar het westen, en<sup class=\"note-marker\" data-note=\"a\">a</sup> haar uitgangen zijn aan de woestijn van Beth-Aven.",
+      "text2026_html": "En hun gebied was naar de hoek naar het noorden van de Jordaan; en deze grens gaat omhoog aan de zijde van Jericho van het noorden, en gaat op door het gebergte naar het westen, en<sup class=\"note-marker\" data-note=\"a\">a</sup> haar uitgangen zijn aan de woestijn van Beth-Aven.",
       "textSV1888_html": "En hun landpale was naar den hoek noordwaarts van de Jordaan; en deze landpale gaat opwaarts aan de zijde van Jericho van het noorden, en gaat op door het gebergte westwaarts, en<sup class=\"note-marker\" data-note=\"a\">a</sup> haar uitgangen zijn aan de woestijn van Beth-Aven.",
       "text1637_html": "Ende hare lantpale was nae den hoeck Noordwaerts van de Iordane: ende dese lantpale gaet opwaerts aen de zijde van Iericho van ’t Noorden, ende gaet op door ’t geberchte Westwaerts, ende <sup class=\"note-marker\" data-note=\"a\">a</sup> hare uytgangen zijn aen de woestijne van Beth-Aven.",
       "phraseDiff": [
+        {
+          "old": "landpale",
+          "new": "gebied",
+          "principe": "V1199"
+        },
         {
           "old": "den",
           "new": "de",
@@ -1470,6 +1492,11 @@
           "old": "noordwaarts",
           "new": "naar het noorden",
           "principe": "V160"
+        },
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
         },
         {
           "old": "opwaarts",
@@ -1487,7 +1514,7 @@
       "number": 13,
       "textSV1888": "En van daar gaat de landpale door naar Luz, aan de zijde van Luz (welke is Beth-El), zuidwaarts; en deze landpale gaat af naar Atroth-Addar, aan den berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
       "text1637": "Ende van daer gaet de lantpale door nae Luz, aen de zijde van Luz, [11] (welcke is Beth-El) Zuydwaerts, ende dese lantpale gaet af nae Atroth Addar, aen den berch, die aen de Zuydzijde van ’t benedenste Beth-Horon is.",
-      "text2026": "En van daar gaat de landpale door naar Luz, aan de zijde van Luz (die is Beth-El), naar het zuiden; en deze landpale gaat af naar Atroth-Addar, aan de berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
+      "text2026": "En van daar gaat de grens door naar Luz, aan de zijde van Luz (die is Beth-El), naar het zuiden; en deze grens gaat af naar Atroth-Addar, aan de berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
       "marginNotes": [
         {
           "marker": "11",
@@ -1609,10 +1636,15 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "En van daar gaat de landpale door naar Luz, aan de zijde van Luz<sup class=\"note-marker\" data-note=\"11\">11</sup> (die is Beth-El), naar het zuiden; en deze landpale gaat af naar Atroth-Addar, aan de berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
+      "text2026_html": "En van daar gaat de grens door naar Luz, aan de zijde van Luz<sup class=\"note-marker\" data-note=\"11\">11</sup> (die is Beth-El), naar het zuiden; en deze grens gaat af naar Atroth-Addar, aan de berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
       "textSV1888_html": "En van daar gaat de landpale door naar Luz, aan de zijde van Luz<sup class=\"note-marker\" data-note=\"11\">11</sup> (welke is Beth-El), zuidwaarts; en deze landpale gaat af naar Atroth-Addar, aan den berg, die aan de zuidzijde van het benedenste Beth-Horon is.",
       "text1637_html": "Ende van daer gaet de lantpale door nae Luz, ae<i>n</i> de zijde van Luz, <sup class=\"note-marker\" data-note=\"11\">11</sup> (welcke is Beth-El) Zuydwaerts, ende dese lantpale gaet af nae Atroth Addar, aen den berch, die aen de Zuydzijde van ’t benedenste Beth-Horon is.",
       "phraseDiff": [
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
+        },
         {
           "old": "(welke",
           "new": "(die",
@@ -1622,6 +1654,11 @@
           "old": "zuidwaarts;",
           "new": "naar het zuiden;",
           "principe": "V161"
+        },
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
         },
         {
           "old": "den",
@@ -1634,7 +1671,7 @@
       "number": 14,
       "textSV1888": "En die landpale strekt en keert zich om, naar den westhoek zuidwaarts van den berg, die tegenover Beth-Horon zuidwaarts is, en haar uitgangen zijn aan Kirjath-Baäl (welke is Kirjath-Jearim), een stad der kinderen van Juda. Dit is de hoek ten westen.",
       "text1637": "Ende die lantpale streckt ende keert haer om nae den Westhoeck Zuydwaerts van den berch, die tegen over Beth-Horon Zuydwaerts is, ende hare uytgangen zijn aen Kiriath-Baal, (welcke is Kiriath-Iearim) eene stadt der kinderen Iuda: Dit is de hoeck ten Westen.",
-      "text2026": "En die landpale strekt en keert zich om, naar de westhoek naar het zuiden van de berg, die tegenover Beth-Horon naar het zuiden is, en haar uitgangen zijn aan Kirjath-Baäl (die is Kirjath-Jearim), een stad van de kinderen van Juda. Dit is de hoek ten westen.",
+      "text2026": "En die grens strekt en keert zich om, naar de westhoek naar het zuiden van de berg, die tegenover Beth-Horon naar het zuiden is, en haar uitgangen zijn aan Kirjath-Baäl (die is Kirjath-Jearim), een stad van de kinderen van Juda. Dit is de hoek ten westen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1778,9 +1815,14 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "En die landpale strekt en keert zich om, naar de westhoek naar het zuiden van de berg, die tegenover Beth-Horon naar het zuiden is, en haar uitgangen zijn aan Kirjath-Baäl (die is Kirjath-Jearim), een stad van de kinderen van Juda. Dit is de hoek ten westen.",
+      "text2026_html": "En die grens strekt en keert zich om, naar de westhoek naar het zuiden van de berg, die tegenover Beth-Horon naar het zuiden is, en haar uitgangen zijn aan Kirjath-Baäl (die is Kirjath-Jearim), een stad van de kinderen van Juda. Dit is de hoek ten westen.",
       "text1637_html": "Ende die lantpale streckt ende keert haer om nae den Westhoeck Zuydwaerts van den berch, die tegen over Beth-Horon Zuydwaerts is, ende hare uytgangen zijn aen Kiriath-Baal, (welcke is Kiriath-Iearim) eene stadt der kinderen Iuda: Dit is de hoeck ten Westen.",
       "phraseDiff": [
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
+        },
         {
           "old": "den",
           "new": "de",
@@ -1817,7 +1859,7 @@
       "number": 15,
       "textSV1888": "De hoek nu ten zuiden is aan het uiterste van Kirjath-Jearim; en deze landpale gaat uit ten westen, en zij komt uit aan de fontein der wateren van Neftoah.",
       "text1637": "De hoeck nu ten Zuyden is aen’t uyterste van Kiriath-Iearim: Ende dese lantpale gaet uyt ten Westen, ende sy komt uyt aen de fonteyne der wateren van Nephtoah.",
-      "text2026": "De hoek nu ten zuiden is aan het uiterste van Kirjath-Jearim; en deze landpale gaat uit ten westen, en zij komt uit aan de fontein van de wateren van Neftoah.",
+      "text2026": "De hoek nu ten zuiden is aan het uiterste van Kirjath-Jearim; en deze grens gaat uit ten westen, en zij komt uit aan de fontein van de wateren van Neftoah.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1886,9 +1928,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "De hoek nu ten zuiden is aan het uiterste van Kirjath-Jearim; en deze landpale gaat uit ten westen, en zij komt uit aan de fontein van de wateren van Neftoah.",
+      "text2026_html": "De hoek nu ten zuiden is aan het uiterste van Kirjath-Jearim; en deze grens gaat uit ten westen, en zij komt uit aan de fontein van de wateren van Neftoah.",
       "text1637_html": "De hoeck nu ten Zuyden is aen’t uyterste van Kiriath-Iearim: En<i>de</i> dese lantpale gaet uyt ten Westen, ende sy komt uyt aen de fonteyne der watere<i>n</i> van Nephtoah.",
       "phraseDiff": [
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
+        },
         {
           "old": "der",
           "new": "van de",
@@ -1900,7 +1947,7 @@
       "number": 16,
       "textSV1888": "En deze landpale gaat af tot aan het uiterste des bergs, die tegenover het dal van den zoon van Hinnom is, die in het dal der Refaïeten is tegen het noorden; en gaat af door het dal van Hinnom, aan de zijde der Jebusieten zuidwaarts, en gaat af aan de fontein van Rogel;",
       "text1637": "Ende dese lantpale gaet af tot aen het uyterste des berchs, die tegen over het dal des soons Hinnoms is, die in ’t dal der [12] Rephaiten is tegen ’t Noorden: Ende [b] gaet af door het dal Hinnoms aen de zijde der Iebusiten Zuydwaerts, ende [c] gaet af aen de fonteyne Rogels.",
-      "text2026": "En deze landpale gaat af tot aan het uiterste van de berg, die tegenover het dal van de zoon van Hinnom is, die in het dal van de Refaïeten is tegen het noorden; en gaat af door het dal van Hinnom, aan de zijde van de Jebusieten naar het zuiden, en gaat af aan de fontein van Rogel;",
+      "text2026": "En deze grens gaat af tot aan het uiterste van de berg, die tegenover het dal van de zoon van Hinnom is, die in het dal van de Refaïeten is tegen het noorden; en gaat af door het dal van Hinnom, aan de zijde van de Jebusieten naar het zuiden, en gaat af aan de fontein van Rogel;",
       "marginNotes": [
         {
           "marker": "12",
@@ -2051,10 +2098,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En deze landpale gaat af tot aan het uiterste van de berg, die tegenover het dal van de zoon van Hinnom is, die in het dal van<sup class=\"note-marker\" data-note=\"12\">12</sup> de Refaïeten is tegen het noorden; en<sup class=\"note-marker\" data-note=\"b\">b</sup> gaat af door het dal van Hinnom, aan de zijde van de Jebusieten naar het zuiden, en<sup class=\"note-marker\" data-note=\"c\">c</sup> gaat af aan de fontein van Rogel;",
+      "text2026_html": "En deze grens gaat af tot aan het uiterste van de berg, die tegenover het dal van de zoon van Hinnom is, die in het dal van<sup class=\"note-marker\" data-note=\"12\">12</sup> de Refaïeten is tegen het noorden; en<sup class=\"note-marker\" data-note=\"b\">b</sup> gaat af door het dal van Hinnom, aan de zijde van de Jebusieten naar het zuiden, en<sup class=\"note-marker\" data-note=\"c\">c</sup> gaat af aan de fontein van Rogel;",
       "textSV1888_html": "En deze landpale gaat af tot aan het uiterste des bergs, die tegenover het dal van den zoon van Hinnom is, die in het dal der<sup class=\"note-marker\" data-note=\"12\">12</sup> Refaïeten is tegen het noorden; en<sup class=\"note-marker\" data-note=\"b\">b</sup> gaat af door het dal van Hinnom, aan de zijde der Jebusieten zuidwaarts, en<sup class=\"note-marker\" data-note=\"c\">c</sup> gaat af aan de fontein van Rogel;",
       "text1637_html": "Ende dese lantpale gaet af tot aen het uyterste des berchs, die tegen over het dal des soons Hinnoms is, die in ’t dal der <sup class=\"note-marker\" data-note=\"12\">12</sup> Rephaiten is tegen ’t Noorden: Ende <sup class=\"note-marker\" data-note=\"b\">b</sup> gaet af door het dal Hinnoms aen de zijde der Iebusiten Zuydwaerts, ende <sup class=\"note-marker\" data-note=\"c\">c</sup> gaet af aen de fonteyne Rogels.",
       "phraseDiff": [
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
+        },
         {
           "old": "des bergs,",
           "new": "van de berg,",
@@ -2294,7 +2346,7 @@
       "number": 19,
       "textSV1888": "Verder gaat deze landpale door aan de zijde van Beth-Hogla noordwaarts, en de uitgangen van deze landpale zijn aan de tong der Zoutzee noordwaarts, aan het uiterste van de Jordaan zuidwaarts. Dit is de zuiderlandpale.",
       "text1637": "Voorder gaet dese lantpale door aen de zijde van Beth-Hogla Noordwaerts, ende de uytgangen deser lantpale zijn aen [17] de tonge der sout-Zee Noordwaerts, aen het uyterste der Iordane Zuydwaerts: Dit is de Zuyder lantpale.",
-      "text2026": "Verder gaat deze landpale door aan de zijde van Beth-Hogla naar het noorden, en de uitgangen van deze landpale zijn aan de tong van de Zoutzee naar het noorden, aan het uiterste van de Jordaan naar het zuiden. Dit is de zuiderlandpale.",
+      "text2026": "Verder gaat deze grens door aan de zijde van Beth-Hogla naar het noorden, en de uitgangen van deze grens zijn aan de tong van de Zoutzee naar het noorden, aan het uiterste van de Jordaan naar het zuiden. Dit is de zuiderlandpale.",
       "marginNotes": [
         {
           "marker": "17",
@@ -2416,14 +2468,24 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Verder gaat deze landpale door aan de zijde van Beth-Hogla naar het noorden, en de uitgangen van deze landpale zijn aan<sup class=\"note-marker\" data-note=\"17\">17</sup> de tong van de Zoutzee naar het noorden, aan het uiterste van de Jordaan naar het zuiden. Dit is de zuiderlandpale.",
+      "text2026_html": "Verder gaat deze grens door aan de zijde van Beth-Hogla naar het noorden, en de uitgangen van deze grens zijn aan<sup class=\"note-marker\" data-note=\"17\">17</sup> de tong van de Zoutzee naar het noorden, aan het uiterste van de Jordaan naar het zuiden. Dit is de zuiderlandpale.",
       "textSV1888_html": "Verder gaat deze landpale door aan de zijde van Beth-Hogla noordwaarts, en de uitgangen van deze landpale zijn aan<sup class=\"note-marker\" data-note=\"17\">17</sup> de tong der Zoutzee noordwaarts, aan het uiterste van de Jordaan zuidwaarts. Dit is de zuiderlandpale.",
       "text1637_html": "Voorder gaet dese lantpale door aen de zijde van Beth-Hogla Noordwaerts, ende de uytgangen deser lantpale zijn aen <sup class=\"note-marker\" data-note=\"17\">17</sup> de tonge der sout-Zee Noordwaerts, aen het uyterste der Iordane Zuydwaerts: Dit is de Zuyder lantpale.",
       "phraseDiff": [
         {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
+        },
+        {
           "old": "noordwaarts,",
           "new": "naar het noorden,",
           "principe": "V160"
+        },
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
         },
         {
           "old": "der",
