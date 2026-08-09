@@ -64,13 +64,20 @@ def test_xml_is_welgevormd(epub):
             ET.fromstring(epub.read(naam))
 
 
-def test_menselijk_nagekeken_genesis_en_exodus_staan_volledig_in_epub(epub, verified):
+def test_menselijk_afgeronde_boeken_staan_volledig_in_epub(epub, verified):
     """Van menselijk voltooide boeken bevat de EPUB ieder hoofdstuk."""
-    for boek, laatste_hoofdstuk in (("genesis", 50), ("exodus", 40)):
+    for boek, laatste_hoofdstuk in (("genesis", 50), ("exodus", 40), ("numeri", 36)):
         assert verified[boek] == "all"
         inhoud = epub.read(f"OEBPS/{boek}.xhtml").decode("utf-8")
         koppen = {int(nr) for nr in re.findall(r'<h2 id="h(\d+)">', inhoud)}
         assert koppen == set(range(1, laatste_hoofdstuk + 1))
+
+
+def test_deuteronomium_bevat_alleen_de_eerste_vijf_nagekeken_hoofdstukken(epub, verified):
+    assert verified["deuteronomium"] == [1, 2, 3, 4, 5]
+    inhoud = epub.read("OEBPS/deuteronomium.xhtml").decode("utf-8")
+    koppen = {int(nr) for nr in re.findall(r'<h2 id="h(\d+)">', inhoud)}
+    assert koppen == {1, 2, 3, 4, 5}
 
 
 def test_inhoudsopgave_verwijst_alleen_naar_bestaande_bestanden(epub):

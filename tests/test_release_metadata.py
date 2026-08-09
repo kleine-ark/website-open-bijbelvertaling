@@ -69,15 +69,17 @@ def test_current_release_describes_corpus_naslag_and_uses_one_version():
     assert stats["date"] == "9 augustus 2026"
 
 
-def test_human_review_statistics_include_numeri_1_tot_20():
+def test_human_review_statistics_include_numeri_en_deuteronomium_1_tot_5():
     stats = read_json("data/stats.json")
     verified = read_json("data/verified-chapters.json")
 
-    assert stats["books_verified"] == 49
-    assert stats["chapters_verified"] == 650
-    assert stats["verses_verified"] == 17474
-    assert "Numeri 1–20" in stats["verified_books"]
-    assert verified["numeri"] == list(range(1, 21))
+    assert stats["books_verified"] == 50
+    assert stats["chapters_verified"] == 671
+    assert stats["verses_verified"] == 18220
+    assert "Numeri" in stats["verified_books"]
+    assert "Deuteronomium 1–5" in stats["verified_books"]
+    assert verified["numeri"] == "all"
+    assert verified["deuteronomium"] == [1, 2, 3, 4, 5]
 
 
 def test_desktop_version_remains_independent():
