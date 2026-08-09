@@ -1879,7 +1879,7 @@
       "number": 17,
       "textSV1888": "Maar nadat de wolk opgeheven werd van boven de tent, zo verreisden ook daarna de kinderen Israëls; en in de plaats, waar de wolk bleef, daar legerden zich de kinderen Israëls.",
       "text1637": "Maer na dat de wolcke opgeheven wert van boven de Tente, alsoo verreysden oock daerna de kinderen Israëls: ende in de plaetse daer de wolcke bleef, daer legerden hen de kinderen Israëls.",
-      "text2026": "Maar nadat de wolk opgeheven werd van boven de tent, zo verreisden ook daarna de Israëlieten; en in de plaats, waar de wolk bleef, daar legerden zich de Israëlieten.",
+      "text2026": "Maar nadat de wolk opgeheven werd van boven de tent, zo verreisden ook daarna de Israëlieten; en in de plaats, waar de wolk bleef, daar sloegen hun kamp op de Israëlieten.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1978,13 +1978,18 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Maar nadat de wolk opgeheven werd van boven de tent, zo verreisden ook daarna de Israëlieten; en in de plaats, waar de wolk bleef, daar legerden zich de Israëlieten.",
+      "text2026_html": "Maar nadat de wolk opgeheven werd van boven de tent, zo verreisden ook daarna de Israëlieten; en in de plaats, waar de wolk bleef, daar sloegen hun kamp op de Israëlieten.",
       "text1637_html": "Maer na dat de wolcke opgeheven wert van boven de Tente, alsoo verreysden oock daerna de kinderen Israëls: ende in de plaetse daer de wolcke bleef, daer legerden hen de kinderen Israëls.",
       "phraseDiff": [
         {
           "old": "kinderen Israëls;",
           "new": "Israëlieten;",
           "principe": null
+        },
+        {
+          "old": "legerden zich",
+          "new": "sloegen hun kamp op",
+          "principe": "V1191"
         },
         {
           "old": "kinderen Israëls.",
@@ -2515,7 +2520,7 @@
       "number": 22,
       "textSV1888": "Of als de wolk twee dagen, of een maand, of vele dagen vertoog op den tabernakel, blijvende daarop, zo legerden zich de kinderen Israëls, en verreisden niet; en als zij verheven werd, verreisden zij.",
       "text1637": "Ofte als de wolcke twee dagen, ofte een maent, ofte [28] [vele] dagen vertooch op den Tabernakel, blijvende daer op, [f] so legerden hen de kinderen Israëls, ende en verreysden niet: ende als sy verheven wert, verreysdense.",
-      "text2026": "Of als de wolk twee dagen, of een maand, of vele dagen vertoog op de tabernakel, blijvende daarop, zo legerden zich de Israëlieten, en verreisden niet; en als zij verheven werd, verreisden zij.",
+      "text2026": "Of als de wolk twee dagen, of een maand, of vele dagen vertoog op de tabernakel, blijvende daarop, zo sloegen hun kamp op de Israëlieten, en verreisden niet; en als zij verheven werd, verreisden zij.",
       "marginNotes": [
         {
           "marker": "28",
@@ -2629,7 +2634,7 @@
           "morph": "HVqi3mp"
         }
       ],
-      "text2026_html": "Of als de wolk twee dagen, of een maand, of<sup class=\"note-marker\" data-note=\"28\">28</sup> vele dagen vertoog op de tabernakel, blijvende daarop,<sup class=\"note-marker\" data-note=\"f\">f</sup> zo legerden zich de Israëlieten, en verreisden niet; en als zij verheven werd, verreisden zij.",
+      "text2026_html": "Of als de wolk twee dagen, of een maand, of<sup class=\"note-marker\" data-note=\"28\">28</sup> vele dagen vertoog op de tabernakel, blijvende daarop,<sup class=\"note-marker\" data-note=\"f\">f</sup> zo sloegen hun kamp op de Israëlieten, en verreisden niet; en als zij verheven werd, verreisden zij.",
       "textSV1888_html": "Of als de wolk twee dagen, of een maand, of<sup class=\"note-marker\" data-note=\"28\">28</sup> vele dagen vertoog op den tabernakel, blijvende daarop,<sup class=\"note-marker\" data-note=\"f\">f</sup> zo legerden zich de kinderen Israëls, en verreisden niet; en als zij verheven werd, verreisden zij.",
       "text1637_html": "Ofte als de wolcke twee dagen, ofte een maent, ofte <sup class=\"note-marker\" data-note=\"28\">28</sup> [vele] dagen vertooch op den Tabernakel, blijvende daer op, <sup class=\"note-marker\" data-note=\"f\">f</sup> so legerden hen de kinderen Israëls, ende en verreysden niet: ende als sy verheven wert, verreysdense.",
       "phraseDiff": [
@@ -2637,6 +2642,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "legerden zich",
+          "new": "sloegen hun kamp op",
+          "principe": "V1191"
         },
         {
           "old": "kinderen Israëls,",

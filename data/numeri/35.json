@@ -1511,7 +1511,7 @@
       "number": 15,
       "textSV1888": "Die zes steden zullen voor de kinderen Israëls, en voor den vreemdeling, en den bijwoner in het midden van hen, tot een toevlucht zijn; opdat daarheen vliede, wie een ziel onvoorziens slaat.",
       "text1637": "Die selve ses steden sullen den kinderen Israëls, ende den vreemdelinck, ende den bywoonder in 't midden van hen, tot eene toevlucht zijn: op dat daer henen vliede, wie eene ziele onversiens slaet.",
-      "text2026": "Die zes steden zullen voor de Israëlieten, en voor de vreemdeling, en de bijwoner in het midden van hen, tot een toevlucht zijn; opdat daarheen vlucht, wie een ziel onvoorziens slaat.",
+      "text2026": "Die zes steden zullen voor de Israëlieten, en voor de vreemdeling, en de bijwoner in het midden van hen, tot een toevlucht zijn; opdat daarheen vlucht, wie een ziel zonder opzet slaat.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1595,7 +1595,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Die zes steden zullen voor de Israëlieten, en voor de vreemdeling, en de bijwoner in het midden van hen, tot een toevlucht zijn; opdat daarheen vlucht, wie een ziel onvoorziens slaat.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Die zes steden zullen voor de Israëlieten, en voor de vreemdeling, en de bijwoner in het midden van hen, tot een toevlucht zijn; opdat daarheen vlucht, wie een ziel zonder opzet slaat.</i></span>",
       "text1637_html": "Die selve ses steden sullen den kinderen Israëls, ende den vreemdelinck, ende den bywoonder in 't midden van hen, tot eene toevlucht zijn: op dat daer henen vliede, wie eene ziele onversiens slaet.",
       "phraseDiff": [
         {
@@ -1617,6 +1617,11 @@
           "old": "vliede,",
           "new": "vlucht,",
           "principe": "V1026"
+        },
+        {
+          "old": "onvoorziens",
+          "new": "zonder opzet",
+          "principe": "V1197"
         }
       ]
     },
@@ -2304,7 +2309,7 @@
       "number": 23,
       "textSV1888": "Of onvoorziens met enigen steen, waarvan men zoude kunnen sterven, en hij dien op hem heeft doen vallen, dat hij gestorven zij, zo hij hem toch geen vijand was, noch zijn kwaad zoekende;",
       "text1637": "Ofte [22] onversiens met eenigen steen, waer van men soude konnen sterven, ende hy dien op hem heeft doen vallen, dat hy gestorven zy: so hy hem doch geen vyant en was, nochte sijn [23] quaet soeckende:",
-      "text2026": "Of onvoorziens met enige steen, waarvan men zou kunnen sterven, en hij die op hem heeft doen vallen, dat hij gestorven zij, zo hij hem toch geen vijand was, noch zijn kwaad zoekende;",
+      "text2026": "Of zonder opzet met enige steen, waarvan men zou kunnen sterven, en hij die op hem heeft doen vallen, dat hij gestorven zij, zo hij hem toch geen vijand was, noch zijn kwaad zoekende;",
       "marginNotes": [
         {
           "marker": "22",
@@ -2413,10 +2418,15 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Of<sup class=\"note-marker\" data-note=\"22\">22</sup> onvoorziens met enige steen, waarvan men zou kunnen sterven, en hij die op hem heeft doen vallen, dat hij gestorven zij, zo hij hem toch geen vijand was, noch zijn<sup class=\"note-marker\" data-note=\"23\">23</sup> kwaad zoekende;</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Of<sup class=\"note-marker\" data-note=\"22\">22</sup> zonder opzet met enige steen, waarvan men zou kunnen sterven, en hij die op hem heeft doen vallen, dat hij gestorven zij, zo hij hem toch geen vijand was, noch zijn<sup class=\"note-marker\" data-note=\"23\">23</sup> kwaad zoekende;</i></span>",
       "textSV1888_html": "Of<sup class=\"note-marker\" data-note=\"22\">22</sup> onvoorziens met enigen steen, waarvan men zoude kunnen sterven, en hij dien op hem heeft doen vallen, dat hij gestorven zij, zo hij hem toch geen vijand was, noch zijn<sup class=\"note-marker\" data-note=\"23\">23</sup> kwaad zoekende;",
       "text1637_html": "Ofte <sup class=\"note-marker\" data-note=\"22\">22</sup> onversiens met eenigen steen, waer van men soude konnen sterven, ende hy dien op hem heeft doen vallen, dat hy gestorven zy: so hy hem doch geen vyant en was, nochte sijn <sup class=\"note-marker\" data-note=\"23\">23</sup> quaet soeckende:",
       "phraseDiff": [
+        {
+          "old": "onvoorziens",
+          "new": "zonder opzet",
+          "principe": "V1197"
+        },
         {
           "old": "enigen",
           "new": "enige",

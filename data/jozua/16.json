@@ -112,7 +112,7 @@
       "number": 2,
       "textSV1888": "En het komt van Beth-el uit naar Luz; en het gaat door tot de landpale des Archiets, tot Ataroth toe;",
       "text1637": "Ende ’t komt van Beth-el uyt nae [2] Luz: ende ’t gaet door tot de lantpale des Architers, tot Ataroth toe.",
-      "text2026": "En het komt van Beth-el uit naar Luz; en het gaat door tot de landpale van de Archiet, tot Ataroth toe;",
+      "text2026": "En het komt van Beth-el uit naar Luz; en het gaat door tot de grens van de Archiet, tot Ataroth toe;",
       "marginNotes": [
         {
           "marker": "2",
@@ -169,14 +169,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En het komt van Beth-el uit naar<sup class=\"note-marker\" data-note=\"2\">2</sup> Luz; en het gaat door tot de landpale van de Archiet, tot Ataroth toe;",
+      "text2026_html": "En het komt van Beth-el uit naar<sup class=\"note-marker\" data-note=\"2\">2</sup> Luz; en het gaat door tot de grens van de Archiet, tot Ataroth toe;",
       "textSV1888_html": "En het komt van Beth-el uit naar<sup class=\"note-marker\" data-note=\"2\">2</sup> Luz; en het gaat door tot de landpale des Archiets, tot Ataroth toe;",
       "text1637_html": "Ende ’t komt van Beth-el uyt nae <sup class=\"note-marker\" data-note=\"2\">2</sup> Luz: ende ’t gaet door tot de lantpale des Architers, tot Ataroth toe.",
       "phraseDiff": [
         {
-          "old": "des Archiets,",
-          "new": "van de Archiet,",
-          "principe": null
+          "old": "landpale des Archiets,",
+          "new": "grens van de Archiet,",
+          "principe": "V1199"
         }
       ]
     },
@@ -184,7 +184,7 @@
       "number": 3,
       "textSV1888": "En het gaat af tegen het westen naar de landpale Jafleti, tot aan de landpale van het benedenste Beth-horon, en tot Gezer; en haar uitgangen zijn aan de zee.",
       "text1637": "Ende ’t gaet af tegen ’t Westen nae de lantpale Iaphleti, tot aen de lantpale van ’t benedenste Beth-Horon, ende tot Gazer: ende hare uytgangen zijn aen de Zee.",
-      "text2026": "En het gaat af tegen het westen naar de landpale Jafleti, tot aan de landpale van het benedenste Beth-horon, en tot Gezer; en haar uitgangen zijn aan de zee.",
+      "text2026": "En het gaat af tegen het westen naar de grens Jafleti, tot aan de grens van het benedenste Beth-horon, en tot Gezer; en haar uitgangen zijn aan de zee.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -263,8 +263,20 @@
           "morph": "HNcmsa/Sd"
         }
       ],
-      "text2026_html": "En het gaat af tegen het westen naar de landpale Jafleti, tot aan de landpale van het benedenste Beth-horon, en tot Gezer; en haar uitgangen zijn aan de zee.",
-      "text1637_html": "Ende ’t gaet af tegen ’t Westen nae de lantpale Iaphleti, tot aen de lantpale van ’t benedenste Beth-Horon, ende tot Gazer: en<i>de</i> hare uytgangen zijn aen de Zee."
+      "text2026_html": "En het gaat af tegen het westen naar de grens Jafleti, tot aan de grens van het benedenste Beth-horon, en tot Gezer; en haar uitgangen zijn aan de zee.",
+      "text1637_html": "Ende ’t gaet af tegen ’t Westen nae de lantpale Iaphleti, tot aen de lantpale van ’t benedenste Beth-Horon, ende tot Gazer: en<i>de</i> hare uytgangen zijn aen de Zee.",
+      "phraseDiff": [
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
+        },
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
+        }
+      ]
     },
     {
       "number": 4,
@@ -313,7 +325,7 @@
       "number": 5,
       "textSV1888": "De landpale nu der kinderen van Efraïm, naar hun huisgezinnen, is deze: te weten, de landpale huns erfdeels was oostwaarts Atroth-addar tot aan het bovenste Beth-horon.",
       "text1637": "De lantpale nu der kinderen Ephraims nae hare huysgesinnen, is dese: Te weten de lantpale hares erfdeels was Oostwaerts Atroth Addar tot aen het bovenste Beth-Horon.",
-      "text2026": "De landpale nu van de kinderen van Efraïm, naar hun huisgezinnen, is deze: te weten, de landpale van hun erfdeel was naar het oosten Atroth-addar tot aan het bovenste Beth-horon.",
+      "text2026": "De grens nu van de kinderen van Efraïm, naar hun huisgezinnen, is deze: te weten, de grens van hun erfdeel was naar het oosten Atroth-addar tot aan het bovenste Beth-horon.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -392,18 +404,23 @@
           "morph": "HAamsa"
         }
       ],
-      "text2026_html": "De landpale nu van de kinderen van Efraïm, naar hun huisgezinnen, is deze: te weten, de landpale van hun erfdeel was naar het oosten Atroth-addar tot aan het bovenste Beth-horon.",
+      "text2026_html": "De grens nu van de kinderen van Efraïm, naar hun huisgezinnen, is deze: te weten, de grens van hun erfdeel was naar het oosten Atroth-addar tot aan het bovenste Beth-horon.",
       "text1637_html": "De lantpale nu der kinderen Ephraims nae hare huysgesinnen, is dese: Te weten de lantpale hares erfdeels was Oostwaerts Atroth Addar tot aen het bovenste Beth-Horon.",
       "phraseDiff": [
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
+        },
         {
           "old": "der",
           "new": "van de",
           "principe": "N2"
         },
         {
-          "old": "huns erfdeels",
-          "new": "van hun erfdeel",
-          "principe": "V205"
+          "old": "landpale huns erfdeels",
+          "new": "grens van hun erfdeel",
+          "principe": "V1199"
         },
         {
           "old": "oostwaarts",
@@ -416,7 +433,7 @@
       "number": 6,
       "textSV1888": "En deze landpale gaat uit tegen het westen bij Michmetath, van het noorden, en deze landpale keert zich om tegen het oosten naar Thaänath-Silo, en gaat door dezelve van het oosten naar Janoah;",
       "text1637": "Ende dese lantpale gaet uyt tegen ’t Westen by Michmetath, van ’t Noorden, ende dese lantpale keert haer om tegen ’t Oosten nae Thaanat-Silo, ende gaet door de selve van ’t Oosten nae Ianoach.",
-      "text2026": "En deze landpale gaat uit tegen het westen bij Michmetath, van het noorden, en deze landpale keert zich om tegen het oosten naar Thaänath-Silo, en gaat daardoor van het oosten naar Janoah;",
+      "text2026": "En deze grens gaat uit tegen het westen bij Michmetath, van het noorden, en deze grens keert zich om tegen het oosten naar Thaänath-Silo, en gaat daardoor van het oosten naar Janoah;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -490,9 +507,19 @@
           "morph": "HNp/Sd"
         }
       ],
-      "text2026_html": "En deze landpale gaat uit tegen het westen bij Michmetath, van het noorden, en deze landpale keert zich om tegen het oosten naar Thaänath-Silo, en gaat daardoor van het oosten naar Janoah;",
+      "text2026_html": "En deze grens gaat uit tegen het westen bij Michmetath, van het noorden, en deze grens keert zich om tegen het oosten naar Thaänath-Silo, en gaat daardoor van het oosten naar Janoah;",
       "text1637_html": "Ende dese lantpale gaet uyt tegen ’t Westen by Michmetath, van ’t Noorden, ende dese lantpale keert haer om tegen ’t Oosten nae Thaanat-Silo, ende gaet door de selve van ’t Oosten nae Ianoach.",
       "phraseDiff": [
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
+        },
+        {
+          "old": "landpale",
+          "new": "grens",
+          "principe": "V1199"
+        },
         {
           "old": "door dezelve",
           "new": "daardoor",
@@ -555,7 +582,7 @@
       "number": 8,
       "textSV1888": "Van Tappuah gaat deze landpale westwaarts naar de beek Kana, en haar uitgangen zijn aan de zee. Dit is het erfdeel van den stam der kinderen van Efraïm, naar hun huisgezinnen.",
       "text1637": "Van Tappuah gaet dese lantpale Westwaert [3] nae de beke Kana, ende hare uytgangen zijn aen de Zee: Dit is het erfdeel der stamme der kinderen Ephraims, nae hare huysgesinnen,",
-      "text2026": "Van Tappuah gaat deze landpale naar het westen naar de beek Kana, en haar uitgangen zijn aan de zee. Dit is het erfdeel van de stam van de kinderen van Efraïm, naar hun huisgezinnen.",
+      "text2026": "Van Tappuah gaat deze grens naar het westen naar de beek Kana, en haar uitgangen zijn aan de zee. Dit is het erfdeel van de stam van de kinderen van Efraïm, naar hun huisgezinnen.",
       "marginNotes": [
         {
           "marker": "3",
@@ -642,14 +669,14 @@
           "morph": "HR/Ncfpc/Sp3mp"
         }
       ],
-      "text2026_html": "Van Tappuah gaat deze landpale naar het westen<sup class=\"note-marker\" data-note=\"3\">3</sup> naar de beek Kana, en haar uitgangen zijn aan de zee. Dit is het erfdeel van de stam van de kinderen van Efraïm, naar hun huisgezinnen.",
+      "text2026_html": "Van Tappuah gaat deze grens naar het westen<sup class=\"note-marker\" data-note=\"3\">3</sup> naar de beek Kana, en haar uitgangen zijn aan de zee. Dit is het erfdeel van de stam van de kinderen van Efraïm, naar hun huisgezinnen.",
       "textSV1888_html": "Van Tappuah gaat deze landpale westwaarts<sup class=\"note-marker\" data-note=\"3\">3</sup> naar de beek Kana, en haar uitgangen zijn aan de zee. Dit is het erfdeel van den stam der kinderen van Efraïm, naar hun huisgezinnen.",
       "text1637_html": "Van Tappuah gaet dese lantpale Westwaert <sup class=\"note-marker\" data-note=\"3\">3</sup> nae de beke Kana, ende hare uytgangen zijn aen de Zee: Dit is het erfdeel der stamme der kinderen Ephraims, nae hare huysgesinnen,",
       "phraseDiff": [
         {
-          "old": "westwaarts",
-          "new": "naar het westen",
-          "principe": "V159"
+          "old": "landpale westwaarts",
+          "new": "grens naar het westen",
+          "principe": "V1199"
         },
         {
           "old": "den",
