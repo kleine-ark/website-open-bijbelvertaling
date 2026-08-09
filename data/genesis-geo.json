@@ -1,463 +1,827 @@
 {
   "boek": "genesis",
-  "status": "concept, nog niet gecontroleerd",
+  "status": "agent-reviewed",
+  "reviewStatus": "ai-geidentificeerd-agent-reviewed",
+  "humanReviewed": false,
+  "provenance": {
+    "methode": "vers-voor-vers agentbeoordeling met expliciete plaatscatalogus",
+    "scope": "uitsluitend Bijbeltekst; kanttekeningen niet meegetagd"
+  },
+  "dekking": {
+    "verzenBeoordeeld": 1533,
+    "verzenMetTags": 289
+  },
   "namen": {
     "Abel-mizraim": {
-      "type": "stad"
+      "id": "geo-abel-mizraim",
+      "naam": "Abel-mizraim",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Accad": {
-      "type": "stad"
+      "id": "geo-accad",
+      "naam": "Accad",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Adama": {
-      "type": "stad"
+      "id": "geo-adama",
+      "naam": "Adama",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Adullam": {
-      "type": "stad"
+      "id": "geo-adullam",
+      "naam": "Adullam",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Ai": {
-      "type": "stad"
+      "id": "geo-ai",
+      "naam": "Ai",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Amalekieten": {
-      "type": "volk-gebied"
+      "id": "geo-amalekieten",
+      "naam": "Amalekieten",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Amoriet": {
-      "type": "volk-gebied"
+      "id": "geo-amoriet",
+      "naam": "Amoriet",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Amorieten": {
-      "type": "volk-gebied"
+      "id": "geo-amorieten",
+      "naam": "Amorieten",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Ararat": {
-      "type": "berg"
+      "id": "geo-ararat",
+      "naam": "Ararat",
+      "type": "berg",
+      "status": "agent-reviewed"
     },
     "Assur": {
-      "type": "land"
+      "id": "geo-assur",
+      "naam": "Assur",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Asteroth-karnaim": {
-      "type": "stad"
+      "id": "geo-asteroth-karnaim",
+      "naam": "Asteroth-karnaim",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Avith": {
-      "type": "stad"
+      "id": "geo-avith",
+      "naam": "Avith",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Babel": {
-      "type": "stad"
+      "id": "geo-babel",
+      "naam": "Babel",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Bela": {
-      "type": "stad"
+      "id": "geo-bela",
+      "naam": "Bela",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Ber-seba": {
-      "type": "stad"
+      "id": "geo-ber-seba",
+      "naam": "Ber-seba",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Bered": {
-      "type": "stad"
+      "id": "geo-bered",
+      "naam": "Bered",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Beth-el": {
-      "type": "stad"
+      "id": "geo-beth-el",
+      "naam": "Beth-el",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Bethlehem": {
-      "type": "stad"
+      "id": "geo-bethlehem",
+      "naam": "Bethlehem",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Bozra": {
-      "type": "stad"
+      "id": "geo-bozra",
+      "naam": "Bozra",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Calne": {
-      "type": "stad"
+      "id": "geo-calne",
+      "naam": "Calne",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Chezib": {
-      "type": "stad"
+      "id": "geo-chezib",
+      "naam": "Chezib",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Cusch": {
-      "type": "land"
+      "id": "geo-cusch",
+      "naam": "Cusch",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Damascus": {
-      "type": "stad"
+      "id": "geo-damascus",
+      "naam": "Damascus",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Dan": {
-      "type": "stad"
+      "id": "geo-dan",
+      "naam": "Dan",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Dinhaba": {
-      "type": "stad"
+      "id": "geo-dinhaba",
+      "naam": "Dinhaba",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Dothan": {
-      "type": "stad"
+      "id": "geo-dothan",
+      "naam": "Dothan",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Ebal": {
+      "id": "geo-ebal",
+      "naam": "Ebal",
+      "type": "berg",
+      "status": "agent-reviewed"
     },
     "Eden": {
-      "type": "streek"
+      "id": "geo-eden",
+      "naam": "Eden",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Edom": {
-      "type": "land"
+      "id": "geo-edom",
+      "naam": "Edom",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Efrath": {
-      "type": "stad"
+      "id": "geo-efrath",
+      "naam": "Efrath",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Egypte": {
-      "type": "land"
+      "id": "geo-egypte",
+      "naam": "Egypte",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Egypteland": {
-      "type": "land"
+      "id": "geo-egypte",
+      "naam": "Egypte",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Elam": {
-      "type": "land"
+      "id": "geo-elam",
+      "naam": "Elam",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Ellasar": {
-      "type": "streek"
+      "id": "geo-ellasar",
+      "naam": "Ellasar",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Emieten": {
-      "type": "volk-gebied"
+      "id": "geo-emieten",
+      "naam": "Emieten",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "En-mispat": {
-      "type": "stad"
+      "id": "geo-en-mispat",
+      "naam": "En-mispat",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Erech": {
-      "type": "stad"
+      "id": "geo-erech",
+      "naam": "Erech",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Esek": {
-      "type": "water"
+      "id": "geo-esek",
+      "naam": "Esek",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
+    },
+    "Eskol": {
+      "id": "geo-eskol",
+      "naam": "Eskol",
+      "type": "plaats",
+      "status": "agent-reviewed"
     },
     "Fereziet": {
-      "type": "volk-gebied"
+      "id": "geo-fereziet",
+      "naam": "Fereziet",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Ferezieten": {
-      "type": "volk-gebied"
+      "id": "geo-ferezieten",
+      "naam": "Ferezieten",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Filistijnen": {
-      "type": "volk-gebied"
+      "id": "geo-filistijnen",
+      "naam": "Filistijnen",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Frath": {
-      "type": "rivier"
+      "id": "geo-frath",
+      "naam": "Frath",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
     },
     "Gaza": {
-      "type": "stad"
+      "id": "geo-gaza",
+      "naam": "Gaza",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Gerar": {
-      "type": "stad"
+      "id": "geo-gerar",
+      "naam": "Gerar",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Gihon": {
-      "type": "rivier"
+      "id": "geo-gihon",
+      "naam": "Gihon",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
     },
     "Gilead": {
-      "type": "streek"
+      "id": "geo-gilead",
+      "naam": "Gilead",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Girgaziet": {
-      "type": "volk-gebied"
+      "id": "geo-girgaziet",
+      "naam": "Girgaziet",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Gomorra": {
-      "type": "stad"
+      "id": "geo-gomorra",
+      "naam": "Gomorra",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Gosen": {
-      "type": "streek"
+      "id": "geo-gosen",
+      "naam": "Gosen",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Ham": {
-      "type": "streek"
+      "id": "geo-ham",
+      "naam": "Ham",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Haran": {
-      "type": "stad"
+      "id": "geo-haran",
+      "naam": "Haran",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Havila": {
-      "type": "streek"
+      "id": "geo-havila",
+      "naam": "Havila",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Hazezon-thamar": {
-      "type": "stad"
+      "id": "geo-hazezon-thamar",
+      "naam": "Hazezon-thamar",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Hebron": {
-      "type": "stad"
+      "id": "geo-hebron",
+      "naam": "Hebron",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Hethiet": {
-      "type": "volk-gebied"
+      "id": "geo-hethiet",
+      "naam": "Hethiet",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Hiddekel": {
-      "type": "rivier"
+      "id": "geo-hiddekel",
+      "naam": "Hiddekel",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
     },
     "Hoba": {
-      "type": "stad"
+      "id": "geo-hoba",
+      "naam": "Hoba",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Horieten": {
-      "type": "volk-gebied"
+      "id": "geo-horieten",
+      "naam": "Horieten",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Jabbok": {
-      "type": "rivier"
+      "id": "geo-jabbok",
+      "naam": "Jabbok",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
     },
     "Jebusiet": {
-      "type": "volk-gebied"
+      "id": "geo-jebusiet",
+      "naam": "Jebusiet",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Jordaan": {
-      "type": "rivier"
+      "id": "geo-jordaan",
+      "naam": "Jordaan",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
     },
     "Kades": {
-      "type": "streek"
+      "id": "geo-kades",
+      "naam": "Kades",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
     },
     "Kadmoniet": {
-      "type": "volk-gebied"
+      "id": "geo-kadmoniet",
+      "naam": "Kadmoniet",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Kalach": {
-      "type": "stad"
+      "id": "geo-kalach",
+      "naam": "Kalach",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Kanaän": {
-      "type": "land"
+      "id": "geo-kanaan",
+      "naam": "Kanaän",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Kanaäniet": {
-      "type": "volk-gebied"
+      "id": "geo-kanaaniet",
+      "naam": "Kanaäniet",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Kanaänieten": {
-      "type": "volk-gebied"
+      "id": "geo-kanaanieten",
+      "naam": "Kanaänieten",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Keniet": {
-      "type": "volk-gebied"
+      "id": "geo-keniet",
+      "naam": "Keniet",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Keniziet": {
-      "type": "volk-gebied"
+      "id": "geo-keniziet",
+      "naam": "Keniziet",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Kiriath-arba": {
-      "type": "stad"
+      "id": "geo-kiriath-arba",
+      "naam": "Kiriath-arba",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Kirjath-arba": {
-      "type": "stad"
+      "id": "geo-kirjath-arba",
+      "naam": "Kirjath-arba",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Lachai-roi": {
-      "type": "water"
+      "id": "geo-lachai-roi",
+      "naam": "Lachai-roi",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
     },
     "Lasa": {
-      "type": "stad"
+      "id": "geo-lasa",
+      "naam": "Lasa",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Luz": {
-      "type": "stad"
+      "id": "geo-luz",
+      "naam": "Luz",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Machpela": {
-      "type": "streek"
+      "id": "geo-machpela",
+      "naam": "Machpela",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Mahanaim": {
-      "type": "stad"
+      "id": "geo-mahanaim",
+      "naam": "Mahanaim",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Mamre": {
-      "type": "streek"
+      "id": "geo-mamre",
+      "naam": "Mamre",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Masreka": {
-      "type": "stad"
+      "id": "geo-masreka",
+      "naam": "Masreka",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Massa": {
+      "id": "geo-massa",
+      "naam": "Massa",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
     },
     "Mescha": {
-      "type": "streek"
+      "id": "geo-mescha",
+      "naam": "Mescha",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Mesopotamië": {
-      "type": "streek"
+      "id": "geo-mesopotamie",
+      "naam": "Mesopotamië",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Midian": {
-      "type": "volk-gebied"
+      "id": "geo-midian",
+      "naam": "Midian",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Migdal-eder": {
-      "type": "stad"
+      "id": "geo-migdal-eder",
+      "naam": "Migdal-eder",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Mizpa": {
-      "type": "stad"
+      "id": "geo-mizpa",
+      "naam": "Mizpa",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Moab": {
-      "type": "land"
+      "id": "geo-moab",
+      "naam": "Moab",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "More": {
+      "id": "geo-more",
+      "naam": "More",
+      "type": "plaats",
+      "status": "agent-reviewed"
     },
     "Moria": {
-      "type": "streek"
+      "id": "geo-moria",
+      "naam": "Moria",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Nineve": {
-      "type": "stad"
+      "id": "geo-nineve",
+      "naam": "Nineve",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Nod": {
-      "type": "streek"
+      "id": "geo-nod",
+      "naam": "Nod",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "On": {
-      "type": "stad"
+      "id": "geo-on",
+      "naam": "On",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Paddan": {
-      "type": "streek"
+      "id": "geo-paddan",
+      "naam": "Paddan",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Paddan-aram": {
-      "type": "streek"
+      "id": "geo-paddan-aram",
+      "naam": "Paddan-aram",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Pahu": {
-      "type": "stad"
+      "id": "geo-pahu",
+      "naam": "Pahu",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Paran": {
-      "type": "streek"
+      "id": "geo-paran",
+      "naam": "Paran",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Pison": {
-      "type": "rivier"
+      "id": "geo-pison",
+      "naam": "Pison",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
     },
     "Pniël": {
-      "type": "stad"
+      "id": "geo-pniel",
+      "naam": "Pniël",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Rameses": {
-      "type": "streek"
+      "id": "geo-rameses",
+      "naam": "Rameses",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Refaieten": {
-      "type": "volk-gebied"
+      "id": "geo-refaieten",
+      "naam": "Refaieten",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Rehoboth": {
-      "type": "stad"
+      "id": "geo-rehoboth",
+      "naam": "Rehoboth",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Resen": {
-      "type": "stad"
+      "id": "geo-resen",
+      "naam": "Resen",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Salem": {
-      "type": "stad"
+      "id": "geo-salem",
+      "naam": "Salem",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Schave": {
-      "type": "streek"
+      "id": "geo-schave",
+      "naam": "Schave",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Schave-kiriathaim": {
-      "type": "stad"
+      "id": "geo-schave-kiriathaim",
+      "naam": "Schave-kiriathaim",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Seba": {
-      "type": "water"
+      "id": "geo-seba",
+      "naam": "Seba",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
     },
     "Sefar": {
-      "type": "berg"
+      "id": "geo-sefar",
+      "naam": "Sefar",
+      "type": "berg",
+      "status": "agent-reviewed"
     },
     "Seïr": {
-      "type": "streek"
+      "id": "geo-seir",
+      "naam": "Seïr",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Sichem": {
-      "type": "stad"
+      "id": "geo-sichem",
+      "naam": "Sichem",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Siddim": {
-      "type": "streek"
+      "id": "geo-siddim",
+      "naam": "Siddim",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Sidon": {
-      "type": "stad"
+      "id": "geo-sidon",
+      "naam": "Sidon",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Sinear": {
-      "type": "streek"
+      "id": "geo-sinear",
+      "naam": "Sinear",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Sitna": {
-      "type": "water"
+      "id": "geo-sitna",
+      "naam": "Sitna",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
     },
     "Sodom": {
-      "type": "stad"
+      "id": "geo-sodom",
+      "naam": "Sodom",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Sukkoth": {
-      "type": "stad"
+      "id": "geo-sukkoth",
+      "naam": "Sukkoth",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
     },
     "Sur": {
-      "type": "streek"
+      "id": "geo-woestijn-sur",
+      "naam": "woestijn Sur",
+      "type": "woestijn",
+      "status": "agent-reviewed"
     },
     "Timna": {
-      "type": "stad"
+      "id": "geo-timna",
+      "naam": "Timna",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Ur van de Chaldeeën": {
-      "type": "stad"
+      "id": "geo-ur-van-de-chaldeeen",
+      "naam": "Ur van de Chaldeeën",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "woestijn Paran": {
+      "id": "geo-woestijn-paran",
+      "naam": "woestijn Paran",
+      "type": "woestijn",
+      "status": "agent-reviewed"
     },
     "Zeboim": {
-      "type": "stad"
+      "id": "geo-zeboim",
+      "naam": "Zeboïm",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Zoar": {
-      "type": "stad"
+      "id": "geo-zoar",
+      "naam": "Zoar",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Zoboim": {
-      "type": "stad"
+      "id": "geo-zoboim",
+      "naam": "Zoboim",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
     },
     "Zoutzee": {
-      "type": "water"
+      "id": "geo-zoutzee",
+      "naam": "Zoutzee",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
+    },
+    "Zuiden": {
+      "id": "geo-zuiden",
+      "naam": "Zuiden",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "zuiderland": {
-      "type": "streek"
+      "id": "geo-zuiderland",
+      "naam": "zuiderland",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     },
     "Zuzieten": {
-      "type": "volk-gebied"
+      "id": "geo-zuzieten",
+      "naam": "Zuzieten",
+      "type": "land-streek",
+      "status": "agent-reviewed"
     }
   },
   "verzen": {
-    "2:8": [
-      "Eden"
-    ],
-    "2:10": [
-      "Eden"
-    ],
-    "2:11": [
-      "Pison",
-      "Havila"
-    ],
-    "2:13": [
-      "Gihon",
-      "Cusch"
-    ],
     "2:14": [
-      "Hiddekel",
       "Assur",
-      "Frath"
+      "Frath",
+      "Hiddekel"
     ],
-    "2:15": [
-      "Eden"
+    "9:18": [
+      "Kanaän"
     ],
-    "3:23": [
-      "Eden"
+    "9:25": [
+      "Kanaän"
     ],
-    "3:24": [
-      "Eden"
+    "9:26": [
+      "Kanaän"
     ],
-    "4:16": [
-      "Nod",
-      "Eden"
+    "9:27": [
+      "Kanaän"
     ],
-    "8:4": [
-      "Ararat"
-    ],
-    "10:10": [
-      "Babel",
-      "Erech",
-      "Accad",
-      "Calne",
-      "Sinear"
+    "10:6": [
+      "Kanaän"
     ],
     "10:11": [
+      "Assur",
       "Nineve",
       "Rehoboth",
       "Kalach"
     ],
-    "10:12": [
-      "Resen",
-      "Nineve",
-      "Kalach"
+    "10:15": [
+      "Kanaän"
     ],
     "10:19": [
-      "Sidon",
-      "Gerar",
-      "Gaza",
       "Sodom",
       "Gomorra",
       "Adama",
+      "Gaza",
+      "Sidon",
+      "Gerar",
       "Zoboim",
       "Lasa"
     ],
-    "10:30": [
-      "Mescha",
-      "Sefar"
-    ],
-    "11:2": [
-      "Sinear"
-    ],
-    "11:9": [
-      "Babel"
-    ],
-    "11:28": [
-      "Ur van de Chaldeeën"
+    "10:22": [
+      "Assur"
     ],
     "11:31": [
+      "Kanaän",
       "Haran",
-      "Ur van de Chaldeeën",
-      "Kanaän"
-    ],
-    "11:32": [
-      "Haran"
-    ],
-    "12:4": [
-      "Haran"
+      "Ur van de Chaldeeën"
     ],
     "12:5": [
-      "Haran",
-      "Kanaän"
+      "Kanaän",
+      "Haran"
     ],
     "12:6": [
+      "More",
       "Sichem",
       "Kanaänieten"
     ],
-    "12:8": [
-      "Beth-el",
-      "Ai"
+    "12:9": [
+      "Zuiden"
     ],
     "12:10": [
       "Egypte"
@@ -469,21 +833,19 @@
       "Egypte"
     ],
     "13:1": [
-      "Egypte"
+      "Egypte",
+      "Zuiden"
     ],
     "13:3": [
+      "Zuiden",
       "Beth-el",
       "Ai"
     ],
-    "13:7": [
-      "Kanaänieten",
-      "Ferezieten"
-    ],
     "13:10": [
+      "Egypteland",
       "Jordaan",
       "Sodom",
       "Gomorra",
-      "Egypteland",
       "Zoar"
     ],
     "13:11": [
@@ -496,43 +858,33 @@
     "13:13": [
       "Sodom"
     ],
-    "13:18": [
-      "Mamre",
-      "Hebron"
+    "13:14": [
+      "Zuiden"
     ],
-    "14:1": [
-      "Sinear",
-      "Ellasar",
-      "Elam"
+    "13:18": [
+      "Hebron",
+      "Mamre"
     ],
     "14:2": [
       "Sodom",
       "Gomorra",
       "Adama",
       "Zeboim",
-      "Bela",
-      "Zoar"
+      "Zoar",
+      "Bela"
     ],
     "14:3": [
-      "Siddim",
-      "Zoutzee"
-    ],
-    "14:5": [
-      "Refaieten",
-      "Asteroth-karnaim",
-      "Zuzieten",
-      "Ham",
-      "Emieten",
-      "Schave-kiriathaim"
+      "Zoutzee",
+      "Siddim"
     ],
     "14:6": [
-      "Horieten",
       "Seïr",
-      "Paran"
+      "Paran",
+      "Horieten"
     ],
     "14:7": [
-      "En-mispat",
       "Kades",
+      "En-mispat",
       "Amalekieten",
       "Amoriet",
       "Hazezon-thamar"
@@ -542,19 +894,14 @@
       "Gomorra",
       "Adama",
       "Zeboim",
-      "Bela",
       "Zoar",
+      "Bela",
       "Siddim"
     ],
-    "14:9": [
-      "Elam",
-      "Sinear",
-      "Ellasar"
-    ],
     "14:10": [
-      "Siddim",
       "Sodom",
-      "Gomorra"
+      "Gomorra",
+      "Siddim"
     ],
     "14:11": [
       "Sodom",
@@ -563,19 +910,15 @@
     "14:12": [
       "Sodom"
     ],
+    "14:13": [
+      "Eskol"
+    ],
     "14:14": [
       "Dan"
-    ],
-    "14:15": [
-      "Hoba",
-      "Damascus"
     ],
     "14:17": [
       "Sodom",
       "Schave"
-    ],
-    "14:18": [
-      "Salem"
     ],
     "14:21": [
       "Sodom"
@@ -583,31 +926,12 @@
     "14:22": [
       "Sodom"
     ],
-    "15:7": [
-      "Ur van de Chaldeeën"
-    ],
-    "15:16": [
-      "Amorieten"
+    "14:24": [
+      "Eskol"
     ],
     "15:18": [
       "Egypte",
       "Frath"
-    ],
-    "15:19": [
-      "Keniet",
-      "Keniziet",
-      "Kadmoniet"
-    ],
-    "15:20": [
-      "Hethiet",
-      "Fereziet",
-      "Refaieten"
-    ],
-    "15:21": [
-      "Amoriet",
-      "Kanaäniet",
-      "Girgaziet",
-      "Jebusiet"
     ],
     "16:3": [
       "Kanaän"
@@ -616,15 +940,12 @@
       "Sur"
     ],
     "16:14": [
-      "Lachai-roi",
       "Kades",
+      "Lachai-roi",
       "Bered"
     ],
     "17:8": [
       "Kanaän"
-    ],
-    "18:1": [
-      "Mamre"
     ],
     "18:16": [
       "Sodom"
@@ -662,165 +983,65 @@
     "19:30": [
       "Zoar"
     ],
+    "19:37": [
+      "Moab"
+    ],
     "20:1": [
-      "Kades",
+      "Zuiden",
       "Sur",
+      "Kades",
       "Gerar"
-    ],
-    "20:2": [
-      "Gerar"
-    ],
-    "21:14": [
-      "Ber-seba"
     ],
     "21:21": [
-      "Paran",
-      "Egypteland"
-    ],
-    "21:31": [
-      "Ber-seba"
-    ],
-    "21:32": [
-      "Ber-seba",
-      "Filistijnen"
-    ],
-    "21:33": [
-      "Ber-seba"
-    ],
-    "21:34": [
-      "Filistijnen"
-    ],
-    "22:2": [
-      "Moria"
-    ],
-    "22:19": [
-      "Ber-seba"
+      "Egypteland",
+      "woestijn Paran",
+      "Paran"
     ],
     "23:2": [
-      "Kiriath-arba",
+      "Kanaän",
       "Hebron",
-      "Kanaän"
-    ],
-    "23:9": [
-      "Machpela"
-    ],
-    "23:17": [
-      "Machpela",
-      "Mamre"
+      "Kiriath-arba"
     ],
     "23:19": [
-      "Machpela",
-      "Mamre",
+      "Kanaän",
       "Hebron",
-      "Kanaän"
+      "Machpela",
+      "Mamre"
     ],
     "24:10": [
       "Mesopotamië"
     ],
-    "24:62": [
-      "Lachai-roi",
-      "zuiderland"
-    ],
-    "25:9": [
-      "Machpela",
-      "Mamre"
-    ],
-    "25:11": [
-      "Lachai-roi"
+    "25:14": [
+      "Massa"
     ],
     "25:18": [
-      "Havila",
-      "Sur",
       "Egypte",
-      "Assur"
+      "Assur",
+      "Sur",
+      "Havila"
     ],
-    "25:20": [
-      "Paddan-aram"
-    ],
-    "26:1": [
-      "Filistijnen",
-      "Gerar"
+    "25:30": [
+      "Edom"
     ],
     "26:2": [
       "Egypte"
     ],
-    "26:6": [
-      "Gerar"
-    ],
-    "26:8": [
-      "Filistijnen"
-    ],
-    "26:14": [
-      "Filistijnen"
-    ],
-    "26:15": [
-      "Filistijnen"
-    ],
-    "26:17": [
-      "Gerar"
-    ],
-    "26:18": [
-      "Filistijnen"
-    ],
-    "26:20": [
-      "Gerar",
-      "Esek"
-    ],
-    "26:21": [
-      "Sitna"
-    ],
-    "26:22": [
-      "Rehoboth"
-    ],
-    "26:23": [
-      "Ber-seba"
-    ],
-    "26:26": [
-      "Gerar"
-    ],
-    "26:33": [
-      "Seba",
-      "Ber-seba"
-    ],
-    "27:43": [
-      "Haran"
-    ],
     "28:1": [
       "Kanaän"
     ],
-    "28:2": [
-      "Paddan-aram"
-    ],
-    "28:5": [
-      "Paddan-aram"
-    ],
     "28:6": [
-      "Paddan-aram",
-      "Kanaän"
-    ],
-    "28:7": [
+      "Kanaän",
       "Paddan-aram"
     ],
     "28:8": [
       "Kanaän"
     ],
-    "28:10": [
-      "Ber-seba",
-      "Haran"
-    ],
-    "28:19": [
-      "Beth-el",
-      "Luz"
-    ],
-    "29:4": [
-      "Haran"
-    ],
-    "31:13": [
-      "Beth-el"
+    "28:14": [
+      "Zuiden"
     ],
     "31:18": [
-      "Paddan-aram",
-      "Kanaän"
+      "Kanaän",
+      "Paddan-aram"
     ],
     "31:21": [
       "Gilead"
@@ -837,27 +1058,15 @@
     "31:48": [
       "Gilead"
     ],
-    "31:49": [
-      "Mizpa"
-    ],
-    "32:2": [
-      "Mahanaim"
-    ],
     "32:3": [
-      "Seïr",
-      "Edom"
+      "Edom",
+      "Seïr"
     ],
     "32:10": [
       "Jordaan"
     ],
     "32:22": [
       "Jabbok"
-    ],
-    "32:30": [
-      "Pniël"
-    ],
-    "32:31": [
-      "Pniël"
     ],
     "33:14": [
       "Seïr"
@@ -869,58 +1078,22 @@
       "Sukkoth"
     ],
     "33:18": [
-      "Sichem",
       "Kanaän",
+      "Sichem",
       "Paddan-aram"
-    ],
-    "34:30": [
-      "Kanaänieten",
-      "Ferezieten"
-    ],
-    "35:1": [
-      "Beth-el"
-    ],
-    "35:3": [
-      "Beth-el"
-    ],
-    "35:4": [
-      "Sichem"
     ],
     "35:6": [
-      "Luz",
       "Kanaän",
+      "Luz",
       "Beth-el"
-    ],
-    "35:7": [
-      "Beth-el"
-    ],
-    "35:8": [
-      "Beth-el"
-    ],
-    "35:9": [
-      "Paddan-aram"
-    ],
-    "35:15": [
-      "Beth-el"
-    ],
-    "35:16": [
-      "Beth-el",
-      "Efrath"
-    ],
-    "35:19": [
-      "Efrath",
-      "Bethlehem"
-    ],
-    "35:21": [
-      "Migdal-eder"
-    ],
-    "35:26": [
-      "Paddan-aram"
     ],
     "35:27": [
+      "Hebron",
       "Mamre",
-      "Kirjath-arba",
-      "Hebron"
+      "Kirjath-arba"
+    ],
+    "36:1": [
+      "Edom"
     ],
     "36:2": [
       "Kanaän"
@@ -932,6 +1105,7 @@
       "Kanaän"
     ],
     "36:8": [
+      "Edom",
       "Seïr"
     ],
     "36:9": [
@@ -943,8 +1117,18 @@
     "36:17": [
       "Edom"
     ],
-    "36:21": [
+    "36:19": [
       "Edom"
+    ],
+    "36:20": [
+      "Seïr"
+    ],
+    "36:21": [
+      "Edom",
+      "Seïr"
+    ],
+    "36:23": [
+      "Ebal"
     ],
     "36:30": [
       "Seïr"
@@ -956,22 +1140,10 @@
       "Edom",
       "Dinhaba"
     ],
-    "36:33": [
-      "Bozra"
-    ],
     "36:35": [
-      "Midian",
       "Moab",
+      "Midian",
       "Avith"
-    ],
-    "36:36": [
-      "Masreka"
-    ],
-    "36:37": [
-      "Rehoboth"
-    ],
-    "36:39": [
-      "Pahu"
     ],
     "36:43": [
       "Edom"
@@ -979,43 +1151,19 @@
     "37:1": [
       "Kanaän"
     ],
-    "37:12": [
-      "Sichem"
-    ],
-    "37:13": [
-      "Sichem"
-    ],
     "37:14": [
       "Hebron",
       "Sichem"
     ],
-    "37:17": [
-      "Dothan"
-    ],
     "37:25": [
-      "Gilead",
-      "Egypte"
+      "Egypte",
+      "Gilead"
     ],
     "37:28": [
       "Egypte"
     ],
     "37:36": [
       "Egypte"
-    ],
-    "38:1": [
-      "Adullam"
-    ],
-    "38:5": [
-      "Chezib"
-    ],
-    "38:12": [
-      "Timna"
-    ],
-    "38:13": [
-      "Timna"
-    ],
-    "38:14": [
-      "Timna"
     ],
     "39:1": [
       "Egypte"
@@ -1057,18 +1205,15 @@
       "Egypteland"
     ],
     "41:45": [
-      "On",
-      "Egypte"
+      "Egypte",
+      "On"
     ],
     "41:46": [
-      "Egypte",
-      "Egypteland"
+      "Egypteland",
+      "Egypte"
     ],
     "41:48": [
       "Egypteland"
-    ],
-    "41:50": [
-      "On"
     ],
     "41:53": [
       "Egypte"
@@ -1155,21 +1300,15 @@
     "45:26": [
       "Egypteland"
     ],
-    "46:1": [
-      "Ber-seba"
-    ],
     "46:3": [
       "Egypte"
     ],
     "46:4": [
       "Egypte"
     ],
-    "46:5": [
-      "Ber-seba"
-    ],
     "46:6": [
-      "Kanaän",
-      "Egypte"
+      "Egypte",
+      "Kanaän"
     ],
     "46:7": [
       "Egypte"
@@ -1179,9 +1318,6 @@
     ],
     "46:12": [
       "Kanaän"
-    ],
-    "46:15": [
-      "Paddan-aram"
     ],
     "46:20": [
       "Egypteland",
@@ -1256,29 +1392,23 @@
       "Egypte"
     ],
     "48:3": [
-      "Luz",
-      "Kanaän"
+      "Kanaän",
+      "Luz"
     ],
     "48:5": [
-      "Egypte",
-      "Egypteland"
+      "Egypteland",
+      "Egypte"
     ],
     "48:7": [
-      "Paddan",
       "Kanaän",
+      "Paddan",
       "Efrath",
       "Bethlehem"
     ],
-    "48:22": [
-      "Amorieten"
-    ],
-    "49:13": [
-      "Sidon"
-    ],
     "49:30": [
+      "Kanaän",
       "Machpela",
-      "Mamre",
-      "Kanaän"
+      "Mamre"
     ],
     "50:5": [
       "Kanaän"
@@ -1293,9 +1423,9 @@
       "Jordaan"
     ],
     "50:11": [
+      "Jordaan",
       "Kanaänieten",
-      "Abel-mizraim",
-      "Jordaan"
+      "Abel-mizraim"
     ],
     "50:13": [
       "Kanaän",
@@ -1310,6 +1440,4437 @@
     ],
     "50:26": [
       "Egypte"
+    ],
+    "2:8": [
+      "Eden"
+    ],
+    "2:10": [
+      "Eden"
+    ],
+    "2:11": [
+      "Pison",
+      "Havila"
+    ],
+    "2:13": [
+      "Gihon",
+      "Cusch"
+    ],
+    "2:15": [
+      "Eden"
+    ],
+    "3:23": [
+      "Eden"
+    ],
+    "3:24": [
+      "Eden"
+    ],
+    "4:16": [
+      "Nod",
+      "Eden"
+    ],
+    "8:4": [
+      "Ararat"
+    ],
+    "10:10": [
+      "Babel",
+      "Erech",
+      "Accad",
+      "Calne",
+      "Sinear"
+    ],
+    "10:12": [
+      "Resen",
+      "Nineve",
+      "Kalach"
+    ],
+    "10:30": [
+      "Mescha",
+      "Sefar"
+    ],
+    "11:2": [
+      "Sinear"
+    ],
+    "11:9": [
+      "Babel"
+    ],
+    "11:28": [
+      "Ur van de Chaldeeën"
+    ],
+    "11:32": [
+      "Haran"
+    ],
+    "12:4": [
+      "Haran"
+    ],
+    "12:8": [
+      "Beth-el",
+      "Ai"
+    ],
+    "13:7": [
+      "Kanaänieten",
+      "Ferezieten"
+    ],
+    "14:1": [
+      "Sinear",
+      "Ellasar",
+      "Elam"
+    ],
+    "14:5": [
+      "Refaieten",
+      "Asteroth-karnaim",
+      "Zuzieten",
+      "Ham",
+      "Emieten",
+      "Schave-kiriathaim"
+    ],
+    "14:9": [
+      "Elam",
+      "Sinear",
+      "Ellasar"
+    ],
+    "14:15": [
+      "Hoba",
+      "Damascus"
+    ],
+    "14:18": [
+      "Salem"
+    ],
+    "15:7": [
+      "Ur van de Chaldeeën"
+    ],
+    "15:16": [
+      "Amorieten"
+    ],
+    "15:19": [
+      "Keniet",
+      "Keniziet",
+      "Kadmoniet"
+    ],
+    "15:20": [
+      "Hethiet",
+      "Fereziet",
+      "Refaieten"
+    ],
+    "15:21": [
+      "Amoriet",
+      "Kanaäniet",
+      "Girgaziet",
+      "Jebusiet"
+    ],
+    "18:1": [
+      "Mamre"
+    ],
+    "20:2": [
+      "Gerar"
+    ],
+    "21:14": [
+      "Ber-seba"
+    ],
+    "21:31": [
+      "Ber-seba"
+    ],
+    "21:32": [
+      "Ber-seba",
+      "Filistijnen"
+    ],
+    "21:33": [
+      "Ber-seba"
+    ],
+    "21:34": [
+      "Filistijnen"
+    ],
+    "22:2": [
+      "Moria"
+    ],
+    "22:19": [
+      "Ber-seba"
+    ],
+    "23:9": [
+      "Machpela"
+    ],
+    "23:17": [
+      "Machpela",
+      "Mamre"
+    ],
+    "24:62": [
+      "Lachai-roi",
+      "zuiderland"
+    ],
+    "25:9": [
+      "Machpela",
+      "Mamre"
+    ],
+    "25:11": [
+      "Lachai-roi"
+    ],
+    "25:20": [
+      "Paddan-aram"
+    ],
+    "26:1": [
+      "Filistijnen",
+      "Gerar"
+    ],
+    "26:6": [
+      "Gerar"
+    ],
+    "26:8": [
+      "Filistijnen"
+    ],
+    "26:14": [
+      "Filistijnen"
+    ],
+    "26:15": [
+      "Filistijnen"
+    ],
+    "26:17": [
+      "Gerar"
+    ],
+    "26:18": [
+      "Filistijnen"
+    ],
+    "26:20": [
+      "Gerar",
+      "Esek"
+    ],
+    "26:21": [
+      "Sitna"
+    ],
+    "26:22": [
+      "Rehoboth"
+    ],
+    "26:23": [
+      "Ber-seba"
+    ],
+    "26:26": [
+      "Gerar"
+    ],
+    "26:33": [
+      "Seba",
+      "Ber-seba"
+    ],
+    "27:43": [
+      "Haran"
+    ],
+    "28:2": [
+      "Paddan-aram"
+    ],
+    "28:5": [
+      "Paddan-aram"
+    ],
+    "28:7": [
+      "Paddan-aram"
+    ],
+    "28:10": [
+      "Ber-seba",
+      "Haran"
+    ],
+    "28:19": [
+      "Beth-el",
+      "Luz"
+    ],
+    "29:4": [
+      "Haran"
+    ],
+    "31:13": [
+      "Beth-el"
+    ],
+    "31:49": [
+      "Mizpa"
+    ],
+    "32:2": [
+      "Mahanaim"
+    ],
+    "32:30": [
+      "Pniël"
+    ],
+    "32:31": [
+      "Pniël"
+    ],
+    "34:30": [
+      "Kanaänieten",
+      "Ferezieten"
+    ],
+    "35:1": [
+      "Beth-el"
+    ],
+    "35:3": [
+      "Beth-el"
+    ],
+    "35:4": [
+      "Sichem"
+    ],
+    "35:7": [
+      "Beth-el"
+    ],
+    "35:8": [
+      "Beth-el"
+    ],
+    "35:9": [
+      "Paddan-aram"
+    ],
+    "35:15": [
+      "Beth-el"
+    ],
+    "35:16": [
+      "Beth-el",
+      "Efrath"
+    ],
+    "35:19": [
+      "Efrath",
+      "Bethlehem"
+    ],
+    "35:21": [
+      "Migdal-eder"
+    ],
+    "35:26": [
+      "Paddan-aram"
+    ],
+    "36:33": [
+      "Bozra"
+    ],
+    "36:36": [
+      "Masreka"
+    ],
+    "36:37": [
+      "Rehoboth"
+    ],
+    "36:39": [
+      "Pahu"
+    ],
+    "37:12": [
+      "Sichem"
+    ],
+    "37:13": [
+      "Sichem"
+    ],
+    "37:17": [
+      "Dothan"
+    ],
+    "38:1": [
+      "Adullam"
+    ],
+    "38:5": [
+      "Chezib"
+    ],
+    "38:12": [
+      "Timna"
+    ],
+    "38:13": [
+      "Timna"
+    ],
+    "38:14": [
+      "Timna"
+    ],
+    "41:50": [
+      "On"
+    ],
+    "46:1": [
+      "Ber-seba"
+    ],
+    "46:5": [
+      "Ber-seba"
+    ],
+    "46:15": [
+      "Paddan-aram"
+    ],
+    "48:22": [
+      "Amorieten"
+    ],
+    "49:13": [
+      "Sidon"
     ]
-  }
+  },
+  "mentions": {
+    "2:14": [
+      {
+        "id": "geo-assur",
+        "label": "Assur",
+        "type": "land-streek",
+        "ref": "genesis 2:14",
+        "href": "index.html#genesis/2/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-frath",
+        "label": "Frath",
+        "type": "rivier-water",
+        "ref": "genesis 2:14",
+        "href": "index.html#genesis/2/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hiddekel",
+        "label": "Hiddekel",
+        "type": "rivier-water",
+        "ref": "genesis 2:14",
+        "href": "index.html#genesis/2/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "9:18": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 9:18",
+        "href": "index.html#genesis/9/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "9:25": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 9:25",
+        "href": "index.html#genesis/9/25",
+        "status": "agent-reviewed"
+      }
+    ],
+    "9:26": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 9:26",
+        "href": "index.html#genesis/9/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "9:27": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 9:27",
+        "href": "index.html#genesis/9/27",
+        "status": "agent-reviewed"
+      }
+    ],
+    "10:6": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 10:6",
+        "href": "index.html#genesis/10/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "10:11": [
+      {
+        "id": "geo-assur",
+        "label": "Assur",
+        "type": "land-streek",
+        "ref": "genesis 10:11",
+        "href": "index.html#genesis/10/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-nineve",
+        "label": "Nineve",
+        "type": "stad-dorp",
+        "ref": "genesis 10:11",
+        "href": "index.html#genesis/10/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-rehoboth",
+        "label": "Rehoboth",
+        "type": "stad-dorp",
+        "ref": "genesis 10:11",
+        "href": "index.html#genesis/10/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kalach",
+        "label": "Kalach",
+        "type": "stad-dorp",
+        "ref": "genesis 10:11",
+        "href": "index.html#genesis/10/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "10:15": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 10:15",
+        "href": "index.html#genesis/10/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "10:19": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 10:19",
+        "href": "index.html#genesis/10/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gomorra",
+        "label": "Gomorra",
+        "type": "stad-dorp",
+        "ref": "genesis 10:19",
+        "href": "index.html#genesis/10/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-adama",
+        "label": "Adama",
+        "type": "stad-dorp",
+        "ref": "genesis 10:19",
+        "href": "index.html#genesis/10/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gaza",
+        "label": "Gaza",
+        "type": "stad-dorp",
+        "ref": "genesis 10:19",
+        "href": "index.html#genesis/10/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sidon",
+        "label": "Sidon",
+        "type": "stad-dorp",
+        "ref": "genesis 10:19",
+        "href": "index.html#genesis/10/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gerar",
+        "label": "Gerar",
+        "type": "stad-dorp",
+        "ref": "genesis 10:19",
+        "href": "index.html#genesis/10/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zoboim",
+        "label": "Zoboim",
+        "type": "stad-dorp",
+        "ref": "genesis 10:19",
+        "href": "index.html#genesis/10/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-lasa",
+        "label": "Lasa",
+        "type": "stad-dorp",
+        "ref": "genesis 10:19",
+        "href": "index.html#genesis/10/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "10:22": [
+      {
+        "id": "geo-assur",
+        "label": "Assur",
+        "type": "land-streek",
+        "ref": "genesis 10:22",
+        "href": "index.html#genesis/10/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:31": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 11:31",
+        "href": "index.html#genesis/11/31",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-haran",
+        "label": "Haran",
+        "type": "stad-dorp",
+        "ref": "genesis 11:31",
+        "href": "index.html#genesis/11/31",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ur-van-de-chaldeeen",
+        "label": "Ur van de Chaldeeën",
+        "type": "stad-dorp",
+        "ref": "genesis 11:31",
+        "href": "index.html#genesis/11/31",
+        "status": "agent-reviewed"
+      }
+    ],
+    "12:5": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 12:5",
+        "href": "index.html#genesis/12/5",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-haran",
+        "label": "Haran",
+        "type": "stad-dorp",
+        "ref": "genesis 12:5",
+        "href": "index.html#genesis/12/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "12:6": [
+      {
+        "id": "geo-more",
+        "label": "More",
+        "type": "plaats",
+        "ref": "genesis 12:6",
+        "href": "index.html#genesis/12/6",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sichem",
+        "label": "Sichem",
+        "type": "stad-dorp",
+        "ref": "genesis 12:6",
+        "href": "index.html#genesis/12/6",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kanaanieten",
+        "label": "Kanaänieten",
+        "type": "land-streek",
+        "ref": "genesis 12:6",
+        "href": "index.html#genesis/12/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "12:9": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "genesis 12:9",
+        "href": "index.html#genesis/12/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "12:10": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 12:10",
+        "href": "index.html#genesis/12/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "12:11": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 12:11",
+        "href": "index.html#genesis/12/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "12:14": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 12:14",
+        "href": "index.html#genesis/12/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:1": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 13:1",
+        "href": "index.html#genesis/13/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "genesis 13:1",
+        "href": "index.html#genesis/13/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:3": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "genesis 13:3",
+        "href": "index.html#genesis/13/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 13:3",
+        "href": "index.html#genesis/13/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ai",
+        "label": "Ai",
+        "type": "stad-dorp",
+        "ref": "genesis 13:3",
+        "href": "index.html#genesis/13/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:10": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 13:10",
+        "href": "index.html#genesis/13/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "genesis 13:10",
+        "href": "index.html#genesis/13/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 13:10",
+        "href": "index.html#genesis/13/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gomorra",
+        "label": "Gomorra",
+        "type": "stad-dorp",
+        "ref": "genesis 13:10",
+        "href": "index.html#genesis/13/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zoar",
+        "label": "Zoar",
+        "type": "stad-dorp",
+        "ref": "genesis 13:10",
+        "href": "index.html#genesis/13/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:11": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "genesis 13:11",
+        "href": "index.html#genesis/13/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:12": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 13:12",
+        "href": "index.html#genesis/13/12",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 13:12",
+        "href": "index.html#genesis/13/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:13": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 13:13",
+        "href": "index.html#genesis/13/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:14": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "genesis 13:14",
+        "href": "index.html#genesis/13/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:18": [
+      {
+        "id": "geo-hebron",
+        "label": "Hebron",
+        "type": "stad-dorp",
+        "ref": "genesis 13:18",
+        "href": "index.html#genesis/13/18",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-mamre",
+        "label": "Mamre",
+        "type": "land-streek",
+        "ref": "genesis 13:18",
+        "href": "index.html#genesis/13/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:2": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 14:2",
+        "href": "index.html#genesis/14/2",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gomorra",
+        "label": "Gomorra",
+        "type": "stad-dorp",
+        "ref": "genesis 14:2",
+        "href": "index.html#genesis/14/2",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-adama",
+        "label": "Adama",
+        "type": "stad-dorp",
+        "ref": "genesis 14:2",
+        "href": "index.html#genesis/14/2",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zeboim",
+        "label": "Zeboim",
+        "type": "stad-dorp",
+        "ref": "genesis 14:2",
+        "href": "index.html#genesis/14/2",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zoar",
+        "label": "Zoar",
+        "type": "stad-dorp",
+        "ref": "genesis 14:2",
+        "href": "index.html#genesis/14/2",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-bela",
+        "label": "Bela",
+        "type": "stad-dorp",
+        "ref": "genesis 14:2",
+        "href": "index.html#genesis/14/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:3": [
+      {
+        "id": "geo-zoutzee",
+        "label": "Zoutzee",
+        "type": "rivier-water",
+        "ref": "genesis 14:3",
+        "href": "index.html#genesis/14/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-siddim",
+        "label": "Siddim",
+        "type": "land-streek",
+        "ref": "genesis 14:3",
+        "href": "index.html#genesis/14/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:6": [
+      {
+        "id": "geo-seir",
+        "label": "Seïr",
+        "type": "land-streek",
+        "ref": "genesis 14:6",
+        "href": "index.html#genesis/14/6",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-woestijn-paran",
+        "label": "Paran",
+        "type": "woestijn",
+        "ref": "genesis 14:6",
+        "href": "index.html#genesis/14/6",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-horieten",
+        "label": "Horieten",
+        "type": "land-streek",
+        "ref": "genesis 14:6",
+        "href": "index.html#genesis/14/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:7": [
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "genesis 14:7",
+        "href": "index.html#genesis/14/7",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-en-mispat",
+        "label": "En-mispat",
+        "type": "stad-dorp",
+        "ref": "genesis 14:7",
+        "href": "index.html#genesis/14/7",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-amalekieten",
+        "label": "Amalekieten",
+        "type": "land-streek",
+        "ref": "genesis 14:7",
+        "href": "index.html#genesis/14/7",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-amoriet",
+        "label": "Amoriet",
+        "type": "land-streek",
+        "ref": "genesis 14:7",
+        "href": "index.html#genesis/14/7",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hazezon-thamar",
+        "label": "Hazezon-thamar",
+        "type": "stad-dorp",
+        "ref": "genesis 14:7",
+        "href": "index.html#genesis/14/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:8": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 14:8",
+        "href": "index.html#genesis/14/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gomorra",
+        "label": "Gomorra",
+        "type": "stad-dorp",
+        "ref": "genesis 14:8",
+        "href": "index.html#genesis/14/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-adama",
+        "label": "Adama",
+        "type": "stad-dorp",
+        "ref": "genesis 14:8",
+        "href": "index.html#genesis/14/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zeboim",
+        "label": "Zeboim",
+        "type": "stad-dorp",
+        "ref": "genesis 14:8",
+        "href": "index.html#genesis/14/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zoar",
+        "label": "Zoar",
+        "type": "stad-dorp",
+        "ref": "genesis 14:8",
+        "href": "index.html#genesis/14/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-bela",
+        "label": "Bela",
+        "type": "stad-dorp",
+        "ref": "genesis 14:8",
+        "href": "index.html#genesis/14/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-siddim",
+        "label": "Siddim",
+        "type": "land-streek",
+        "ref": "genesis 14:8",
+        "href": "index.html#genesis/14/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:10": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 14:10",
+        "href": "index.html#genesis/14/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gomorra",
+        "label": "Gomorra",
+        "type": "stad-dorp",
+        "ref": "genesis 14:10",
+        "href": "index.html#genesis/14/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-siddim",
+        "label": "Siddim",
+        "type": "land-streek",
+        "ref": "genesis 14:10",
+        "href": "index.html#genesis/14/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:11": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 14:11",
+        "href": "index.html#genesis/14/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gomorra",
+        "label": "Gomorra",
+        "type": "stad-dorp",
+        "ref": "genesis 14:11",
+        "href": "index.html#genesis/14/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:12": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 14:12",
+        "href": "index.html#genesis/14/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:13": [
+      {
+        "id": "geo-eskol",
+        "label": "Eskol",
+        "type": "plaats",
+        "ref": "genesis 14:13",
+        "href": "index.html#genesis/14/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:14": [
+      {
+        "id": "geo-dan",
+        "label": "Dan",
+        "type": "stad-dorp",
+        "ref": "genesis 14:14",
+        "href": "index.html#genesis/14/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:17": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 14:17",
+        "href": "index.html#genesis/14/17",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-schave",
+        "label": "Schave",
+        "type": "land-streek",
+        "ref": "genesis 14:17",
+        "href": "index.html#genesis/14/17",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:21": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 14:21",
+        "href": "index.html#genesis/14/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:22": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 14:22",
+        "href": "index.html#genesis/14/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:24": [
+      {
+        "id": "geo-eskol",
+        "label": "Eskol",
+        "type": "plaats",
+        "ref": "genesis 14:24",
+        "href": "index.html#genesis/14/24",
+        "status": "agent-reviewed"
+      }
+    ],
+    "15:18": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 15:18",
+        "href": "index.html#genesis/15/18",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-frath",
+        "label": "Frath",
+        "type": "rivier-water",
+        "ref": "genesis 15:18",
+        "href": "index.html#genesis/15/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "16:3": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 16:3",
+        "href": "index.html#genesis/16/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "16:7": [
+      {
+        "id": "geo-woestijn-sur",
+        "label": "Sur",
+        "type": "woestijn",
+        "ref": "genesis 16:7",
+        "href": "index.html#genesis/16/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "16:14": [
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "genesis 16:14",
+        "href": "index.html#genesis/16/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-lachai-roi",
+        "label": "Lachai-roi",
+        "type": "rivier-water",
+        "ref": "genesis 16:14",
+        "href": "index.html#genesis/16/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-bered",
+        "label": "Bered",
+        "type": "stad-dorp",
+        "ref": "genesis 16:14",
+        "href": "index.html#genesis/16/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "17:8": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 17:8",
+        "href": "index.html#genesis/17/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "18:16": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 18:16",
+        "href": "index.html#genesis/18/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "18:20": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 18:20",
+        "href": "index.html#genesis/18/20",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gomorra",
+        "label": "Gomorra",
+        "type": "stad-dorp",
+        "ref": "genesis 18:20",
+        "href": "index.html#genesis/18/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "18:22": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 18:22",
+        "href": "index.html#genesis/18/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "18:26": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 18:26",
+        "href": "index.html#genesis/18/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "19:1": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 19:1",
+        "href": "index.html#genesis/19/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "19:4": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 19:4",
+        "href": "index.html#genesis/19/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "19:22": [
+      {
+        "id": "geo-zoar",
+        "label": "Zoar",
+        "type": "stad-dorp",
+        "ref": "genesis 19:22",
+        "href": "index.html#genesis/19/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "19:23": [
+      {
+        "id": "geo-zoar",
+        "label": "Zoar",
+        "type": "stad-dorp",
+        "ref": "genesis 19:23",
+        "href": "index.html#genesis/19/23",
+        "status": "agent-reviewed"
+      }
+    ],
+    "19:24": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 19:24",
+        "href": "index.html#genesis/19/24",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gomorra",
+        "label": "Gomorra",
+        "type": "stad-dorp",
+        "ref": "genesis 19:24",
+        "href": "index.html#genesis/19/24",
+        "status": "agent-reviewed"
+      }
+    ],
+    "19:28": [
+      {
+        "id": "geo-sodom",
+        "label": "Sodom",
+        "type": "stad-dorp",
+        "ref": "genesis 19:28",
+        "href": "index.html#genesis/19/28",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gomorra",
+        "label": "Gomorra",
+        "type": "stad-dorp",
+        "ref": "genesis 19:28",
+        "href": "index.html#genesis/19/28",
+        "status": "agent-reviewed"
+      }
+    ],
+    "19:30": [
+      {
+        "id": "geo-zoar",
+        "label": "Zoar",
+        "type": "stad-dorp",
+        "ref": "genesis 19:30",
+        "href": "index.html#genesis/19/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "19:37": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "genesis 19:37",
+        "href": "index.html#genesis/19/37",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:1": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "genesis 20:1",
+        "href": "index.html#genesis/20/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-woestijn-sur",
+        "label": "Sur",
+        "type": "woestijn",
+        "ref": "genesis 20:1",
+        "href": "index.html#genesis/20/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "genesis 20:1",
+        "href": "index.html#genesis/20/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gerar",
+        "label": "Gerar",
+        "type": "stad-dorp",
+        "ref": "genesis 20:1",
+        "href": "index.html#genesis/20/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:21": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 21:21",
+        "href": "index.html#genesis/21/21",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-woestijn-paran",
+        "label": "woestijn Paran",
+        "type": "woestijn",
+        "ref": "genesis 21:21",
+        "href": "index.html#genesis/21/21",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-paran",
+        "label": "Paran",
+        "type": "land-streek",
+        "ref": "genesis 21:21",
+        "href": "index.html#genesis/21/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "23:2": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 23:2",
+        "href": "index.html#genesis/23/2",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hebron",
+        "label": "Hebron",
+        "type": "stad-dorp",
+        "ref": "genesis 23:2",
+        "href": "index.html#genesis/23/2",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kiriath-arba",
+        "label": "Kiriath-arba",
+        "type": "stad-dorp",
+        "ref": "genesis 23:2",
+        "href": "index.html#genesis/23/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "23:19": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 23:19",
+        "href": "index.html#genesis/23/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hebron",
+        "label": "Hebron",
+        "type": "stad-dorp",
+        "ref": "genesis 23:19",
+        "href": "index.html#genesis/23/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-machpela",
+        "label": "Machpela",
+        "type": "land-streek",
+        "ref": "genesis 23:19",
+        "href": "index.html#genesis/23/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-mamre",
+        "label": "Mamre",
+        "type": "land-streek",
+        "ref": "genesis 23:19",
+        "href": "index.html#genesis/23/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "24:10": [
+      {
+        "id": "geo-mesopotamie",
+        "label": "Mesopotamië",
+        "type": "land-streek",
+        "ref": "genesis 24:10",
+        "href": "index.html#genesis/24/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "25:14": [
+      {
+        "id": "geo-massa",
+        "label": "Massa",
+        "type": "route-legerplaats",
+        "ref": "genesis 25:14",
+        "href": "index.html#genesis/25/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "25:18": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 25:18",
+        "href": "index.html#genesis/25/18",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-assur",
+        "label": "Assur",
+        "type": "land-streek",
+        "ref": "genesis 25:18",
+        "href": "index.html#genesis/25/18",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-woestijn-sur",
+        "label": "Sur",
+        "type": "woestijn",
+        "ref": "genesis 25:18",
+        "href": "index.html#genesis/25/18",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-havila",
+        "label": "Havila",
+        "type": "land-streek",
+        "ref": "genesis 25:18",
+        "href": "index.html#genesis/25/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "25:30": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 25:30",
+        "href": "index.html#genesis/25/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:2": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 26:2",
+        "href": "index.html#genesis/26/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "28:1": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 28:1",
+        "href": "index.html#genesis/28/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "28:6": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 28:6",
+        "href": "index.html#genesis/28/6",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-paddan-aram",
+        "label": "Paddan-aram",
+        "type": "land-streek",
+        "ref": "genesis 28:6",
+        "href": "index.html#genesis/28/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "28:8": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 28:8",
+        "href": "index.html#genesis/28/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "28:14": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "genesis 28:14",
+        "href": "index.html#genesis/28/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "31:18": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 31:18",
+        "href": "index.html#genesis/31/18",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-paddan-aram",
+        "label": "Paddan-aram",
+        "type": "land-streek",
+        "ref": "genesis 31:18",
+        "href": "index.html#genesis/31/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "31:21": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "genesis 31:21",
+        "href": "index.html#genesis/31/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "31:23": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "genesis 31:23",
+        "href": "index.html#genesis/31/23",
+        "status": "agent-reviewed"
+      }
+    ],
+    "31:25": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "genesis 31:25",
+        "href": "index.html#genesis/31/25",
+        "status": "agent-reviewed"
+      }
+    ],
+    "31:47": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "genesis 31:47",
+        "href": "index.html#genesis/31/47",
+        "status": "agent-reviewed"
+      }
+    ],
+    "31:48": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "genesis 31:48",
+        "href": "index.html#genesis/31/48",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:3": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 32:3",
+        "href": "index.html#genesis/32/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-seir",
+        "label": "Seïr",
+        "type": "land-streek",
+        "ref": "genesis 32:3",
+        "href": "index.html#genesis/32/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:10": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "genesis 32:10",
+        "href": "index.html#genesis/32/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:22": [
+      {
+        "id": "geo-jabbok",
+        "label": "Jabbok",
+        "type": "rivier-water",
+        "ref": "genesis 32:22",
+        "href": "index.html#genesis/32/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:14": [
+      {
+        "id": "geo-seir",
+        "label": "Seïr",
+        "type": "land-streek",
+        "ref": "genesis 33:14",
+        "href": "index.html#genesis/33/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:16": [
+      {
+        "id": "geo-seir",
+        "label": "Seïr",
+        "type": "land-streek",
+        "ref": "genesis 33:16",
+        "href": "index.html#genesis/33/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:17": [
+      {
+        "id": "geo-sukkoth",
+        "label": "Sukkoth",
+        "type": "route-legerplaats",
+        "ref": "genesis 33:17",
+        "href": "index.html#genesis/33/17",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:18": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 33:18",
+        "href": "index.html#genesis/33/18",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sichem",
+        "label": "Sichem",
+        "type": "stad-dorp",
+        "ref": "genesis 33:18",
+        "href": "index.html#genesis/33/18",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-paddan-aram",
+        "label": "Paddan-aram",
+        "type": "land-streek",
+        "ref": "genesis 33:18",
+        "href": "index.html#genesis/33/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:6": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 35:6",
+        "href": "index.html#genesis/35/6",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-luz",
+        "label": "Luz",
+        "type": "stad-dorp",
+        "ref": "genesis 35:6",
+        "href": "index.html#genesis/35/6",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 35:6",
+        "href": "index.html#genesis/35/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:27": [
+      {
+        "id": "geo-hebron",
+        "label": "Hebron",
+        "type": "stad-dorp",
+        "ref": "genesis 35:27",
+        "href": "index.html#genesis/35/27",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-mamre",
+        "label": "Mamre",
+        "type": "land-streek",
+        "ref": "genesis 35:27",
+        "href": "index.html#genesis/35/27",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kirjath-arba",
+        "label": "Kirjath-arba",
+        "type": "stad-dorp",
+        "ref": "genesis 35:27",
+        "href": "index.html#genesis/35/27",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:1": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 36:1",
+        "href": "index.html#genesis/36/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:2": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 36:2",
+        "href": "index.html#genesis/36/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:5": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 36:5",
+        "href": "index.html#genesis/36/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:6": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 36:6",
+        "href": "index.html#genesis/36/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:8": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 36:8",
+        "href": "index.html#genesis/36/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-seir",
+        "label": "Seïr",
+        "type": "land-streek",
+        "ref": "genesis 36:8",
+        "href": "index.html#genesis/36/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:9": [
+      {
+        "id": "geo-seir",
+        "label": "Seïr",
+        "type": "land-streek",
+        "ref": "genesis 36:9",
+        "href": "index.html#genesis/36/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:16": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 36:16",
+        "href": "index.html#genesis/36/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:17": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 36:17",
+        "href": "index.html#genesis/36/17",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:19": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 36:19",
+        "href": "index.html#genesis/36/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:20": [
+      {
+        "id": "geo-seir",
+        "label": "Seïr",
+        "type": "land-streek",
+        "ref": "genesis 36:20",
+        "href": "index.html#genesis/36/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:21": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 36:21",
+        "href": "index.html#genesis/36/21",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-seir",
+        "label": "Seïr",
+        "type": "land-streek",
+        "ref": "genesis 36:21",
+        "href": "index.html#genesis/36/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:23": [
+      {
+        "id": "geo-ebal",
+        "label": "Ebal",
+        "type": "berg",
+        "ref": "genesis 36:23",
+        "href": "index.html#genesis/36/23",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:30": [
+      {
+        "id": "geo-seir",
+        "label": "Seïr",
+        "type": "land-streek",
+        "ref": "genesis 36:30",
+        "href": "index.html#genesis/36/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:31": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 36:31",
+        "href": "index.html#genesis/36/31",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:32": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 36:32",
+        "href": "index.html#genesis/36/32",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-dinhaba",
+        "label": "Dinhaba",
+        "type": "stad-dorp",
+        "ref": "genesis 36:32",
+        "href": "index.html#genesis/36/32",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:35": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "genesis 36:35",
+        "href": "index.html#genesis/36/35",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-midian",
+        "label": "Midian",
+        "type": "land-streek",
+        "ref": "genesis 36:35",
+        "href": "index.html#genesis/36/35",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-avith",
+        "label": "Avith",
+        "type": "stad-dorp",
+        "ref": "genesis 36:35",
+        "href": "index.html#genesis/36/35",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:43": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "genesis 36:43",
+        "href": "index.html#genesis/36/43",
+        "status": "agent-reviewed"
+      }
+    ],
+    "37:1": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 37:1",
+        "href": "index.html#genesis/37/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "37:14": [
+      {
+        "id": "geo-hebron",
+        "label": "Hebron",
+        "type": "stad-dorp",
+        "ref": "genesis 37:14",
+        "href": "index.html#genesis/37/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sichem",
+        "label": "Sichem",
+        "type": "stad-dorp",
+        "ref": "genesis 37:14",
+        "href": "index.html#genesis/37/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "37:25": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 37:25",
+        "href": "index.html#genesis/37/25",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "genesis 37:25",
+        "href": "index.html#genesis/37/25",
+        "status": "agent-reviewed"
+      }
+    ],
+    "37:28": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 37:28",
+        "href": "index.html#genesis/37/28",
+        "status": "agent-reviewed"
+      }
+    ],
+    "37:36": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 37:36",
+        "href": "index.html#genesis/37/36",
+        "status": "agent-reviewed"
+      }
+    ],
+    "39:1": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 39:1",
+        "href": "index.html#genesis/39/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "40:1": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 40:1",
+        "href": "index.html#genesis/40/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "40:5": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 40:5",
+        "href": "index.html#genesis/40/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:8": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 41:8",
+        "href": "index.html#genesis/41/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:19": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 41:19",
+        "href": "index.html#genesis/41/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:29": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 41:29",
+        "href": "index.html#genesis/41/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:30": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 41:30",
+        "href": "index.html#genesis/41/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:33": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 41:33",
+        "href": "index.html#genesis/41/33",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:34": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 41:34",
+        "href": "index.html#genesis/41/34",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:36": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 41:36",
+        "href": "index.html#genesis/41/36",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:41": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 41:41",
+        "href": "index.html#genesis/41/41",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:43": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 41:43",
+        "href": "index.html#genesis/41/43",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:44": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 41:44",
+        "href": "index.html#genesis/41/44",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:45": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 41:45",
+        "href": "index.html#genesis/41/45",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-on",
+        "label": "On",
+        "type": "stad-dorp",
+        "ref": "genesis 41:45",
+        "href": "index.html#genesis/41/45",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:46": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 41:46",
+        "href": "index.html#genesis/41/46",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 41:46",
+        "href": "index.html#genesis/41/46",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:48": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 41:48",
+        "href": "index.html#genesis/41/48",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:53": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 41:53",
+        "href": "index.html#genesis/41/53",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:54": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 41:54",
+        "href": "index.html#genesis/41/54",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:55": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 41:55",
+        "href": "index.html#genesis/41/55",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:56": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 41:56",
+        "href": "index.html#genesis/41/56",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:57": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 41:57",
+        "href": "index.html#genesis/41/57",
+        "status": "agent-reviewed"
+      }
+    ],
+    "42:1": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 42:1",
+        "href": "index.html#genesis/42/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "42:2": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 42:2",
+        "href": "index.html#genesis/42/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "42:3": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 42:3",
+        "href": "index.html#genesis/42/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "42:5": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 42:5",
+        "href": "index.html#genesis/42/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "42:7": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 42:7",
+        "href": "index.html#genesis/42/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "42:13": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 42:13",
+        "href": "index.html#genesis/42/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "42:29": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 42:29",
+        "href": "index.html#genesis/42/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "42:32": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 42:32",
+        "href": "index.html#genesis/42/32",
+        "status": "agent-reviewed"
+      }
+    ],
+    "43:2": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 43:2",
+        "href": "index.html#genesis/43/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "43:15": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 43:15",
+        "href": "index.html#genesis/43/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "44:8": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 44:8",
+        "href": "index.html#genesis/44/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:4": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 45:4",
+        "href": "index.html#genesis/45/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:8": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 45:8",
+        "href": "index.html#genesis/45/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:9": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 45:9",
+        "href": "index.html#genesis/45/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:10": [
+      {
+        "id": "geo-gosen",
+        "label": "Gosen",
+        "type": "land-streek",
+        "ref": "genesis 45:10",
+        "href": "index.html#genesis/45/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:13": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 45:13",
+        "href": "index.html#genesis/45/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:17": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 45:17",
+        "href": "index.html#genesis/45/17",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:18": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 45:18",
+        "href": "index.html#genesis/45/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:19": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 45:19",
+        "href": "index.html#genesis/45/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:20": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 45:20",
+        "href": "index.html#genesis/45/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:23": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 45:23",
+        "href": "index.html#genesis/45/23",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:25": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 45:25",
+        "href": "index.html#genesis/45/25",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 45:25",
+        "href": "index.html#genesis/45/25",
+        "status": "agent-reviewed"
+      }
+    ],
+    "45:26": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 45:26",
+        "href": "index.html#genesis/45/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:3": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 46:3",
+        "href": "index.html#genesis/46/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:4": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 46:4",
+        "href": "index.html#genesis/46/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:6": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 46:6",
+        "href": "index.html#genesis/46/6",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 46:6",
+        "href": "index.html#genesis/46/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:7": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 46:7",
+        "href": "index.html#genesis/46/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:8": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 46:8",
+        "href": "index.html#genesis/46/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:12": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 46:12",
+        "href": "index.html#genesis/46/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:20": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 46:20",
+        "href": "index.html#genesis/46/20",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-on",
+        "label": "On",
+        "type": "stad-dorp",
+        "ref": "genesis 46:20",
+        "href": "index.html#genesis/46/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:26": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 46:26",
+        "href": "index.html#genesis/46/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:27": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 46:27",
+        "href": "index.html#genesis/46/27",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:28": [
+      {
+        "id": "geo-gosen",
+        "label": "Gosen",
+        "type": "land-streek",
+        "ref": "genesis 46:28",
+        "href": "index.html#genesis/46/28",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:29": [
+      {
+        "id": "geo-gosen",
+        "label": "Gosen",
+        "type": "land-streek",
+        "ref": "genesis 46:29",
+        "href": "index.html#genesis/46/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:31": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 46:31",
+        "href": "index.html#genesis/46/31",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:34": [
+      {
+        "id": "geo-gosen",
+        "label": "Gosen",
+        "type": "land-streek",
+        "ref": "genesis 46:34",
+        "href": "index.html#genesis/46/34",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:1": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 47:1",
+        "href": "index.html#genesis/47/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gosen",
+        "label": "Gosen",
+        "type": "land-streek",
+        "ref": "genesis 47:1",
+        "href": "index.html#genesis/47/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:4": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 47:4",
+        "href": "index.html#genesis/47/4",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gosen",
+        "label": "Gosen",
+        "type": "land-streek",
+        "ref": "genesis 47:4",
+        "href": "index.html#genesis/47/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:6": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 47:6",
+        "href": "index.html#genesis/47/6",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gosen",
+        "label": "Gosen",
+        "type": "land-streek",
+        "ref": "genesis 47:6",
+        "href": "index.html#genesis/47/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:11": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 47:11",
+        "href": "index.html#genesis/47/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-rameses",
+        "label": "Rameses",
+        "type": "stad-dorp",
+        "ref": "genesis 47:11",
+        "href": "index.html#genesis/47/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:13": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 47:13",
+        "href": "index.html#genesis/47/13",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 47:13",
+        "href": "index.html#genesis/47/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:14": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 47:14",
+        "href": "index.html#genesis/47/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 47:14",
+        "href": "index.html#genesis/47/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:15": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 47:15",
+        "href": "index.html#genesis/47/15",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 47:15",
+        "href": "index.html#genesis/47/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:20": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 47:20",
+        "href": "index.html#genesis/47/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:21": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 47:21",
+        "href": "index.html#genesis/47/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:26": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 47:26",
+        "href": "index.html#genesis/47/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:27": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 47:27",
+        "href": "index.html#genesis/47/27",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gosen",
+        "label": "Gosen",
+        "type": "land-streek",
+        "ref": "genesis 47:27",
+        "href": "index.html#genesis/47/27",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:28": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 47:28",
+        "href": "index.html#genesis/47/28",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:29": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 47:29",
+        "href": "index.html#genesis/47/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "47:30": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 47:30",
+        "href": "index.html#genesis/47/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "48:3": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 48:3",
+        "href": "index.html#genesis/48/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-luz",
+        "label": "Luz",
+        "type": "stad-dorp",
+        "ref": "genesis 48:3",
+        "href": "index.html#genesis/48/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "48:5": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "genesis 48:5",
+        "href": "index.html#genesis/48/5",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 48:5",
+        "href": "index.html#genesis/48/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "48:7": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 48:7",
+        "href": "index.html#genesis/48/7",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-paddan",
+        "label": "Paddan",
+        "type": "land-streek",
+        "ref": "genesis 48:7",
+        "href": "index.html#genesis/48/7",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-efrath",
+        "label": "Efrath",
+        "type": "stad-dorp",
+        "ref": "genesis 48:7",
+        "href": "index.html#genesis/48/7",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-bethlehem",
+        "label": "Bethlehem",
+        "type": "stad-dorp",
+        "ref": "genesis 48:7",
+        "href": "index.html#genesis/48/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "49:30": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 49:30",
+        "href": "index.html#genesis/49/30",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-machpela",
+        "label": "Machpela",
+        "type": "land-streek",
+        "ref": "genesis 49:30",
+        "href": "index.html#genesis/49/30",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-mamre",
+        "label": "Mamre",
+        "type": "land-streek",
+        "ref": "genesis 49:30",
+        "href": "index.html#genesis/49/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "50:5": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 50:5",
+        "href": "index.html#genesis/50/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "50:7": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 50:7",
+        "href": "index.html#genesis/50/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "50:8": [
+      {
+        "id": "geo-gosen",
+        "label": "Gosen",
+        "type": "land-streek",
+        "ref": "genesis 50:8",
+        "href": "index.html#genesis/50/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "50:10": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "genesis 50:10",
+        "href": "index.html#genesis/50/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "50:11": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "genesis 50:11",
+        "href": "index.html#genesis/50/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kanaanieten",
+        "label": "Kanaänieten",
+        "type": "land-streek",
+        "ref": "genesis 50:11",
+        "href": "index.html#genesis/50/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-abel-mizraim",
+        "label": "Abel-mizraim",
+        "type": "stad-dorp",
+        "ref": "genesis 50:11",
+        "href": "index.html#genesis/50/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "50:13": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "genesis 50:13",
+        "href": "index.html#genesis/50/13",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-machpela",
+        "label": "Machpela",
+        "type": "land-streek",
+        "ref": "genesis 50:13",
+        "href": "index.html#genesis/50/13",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-mamre",
+        "label": "Mamre",
+        "type": "land-streek",
+        "ref": "genesis 50:13",
+        "href": "index.html#genesis/50/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "50:14": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 50:14",
+        "href": "index.html#genesis/50/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "50:22": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 50:22",
+        "href": "index.html#genesis/50/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "50:26": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "genesis 50:26",
+        "href": "index.html#genesis/50/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "2:8": [
+      {
+        "id": "geo-eden",
+        "label": "Eden",
+        "type": "land-streek",
+        "ref": "genesis 2:8",
+        "href": "index.html#genesis/2/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "2:10": [
+      {
+        "id": "geo-eden",
+        "label": "Eden",
+        "type": "land-streek",
+        "ref": "genesis 2:10",
+        "href": "index.html#genesis/2/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "2:11": [
+      {
+        "id": "geo-pison",
+        "label": "Pison",
+        "type": "rivier-water",
+        "ref": "genesis 2:11",
+        "href": "index.html#genesis/2/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-havila",
+        "label": "Havila",
+        "type": "land-streek",
+        "ref": "genesis 2:11",
+        "href": "index.html#genesis/2/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "2:13": [
+      {
+        "id": "geo-gihon",
+        "label": "Gihon",
+        "type": "rivier-water",
+        "ref": "genesis 2:13",
+        "href": "index.html#genesis/2/13",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-cusch",
+        "label": "Cusch",
+        "type": "land-streek",
+        "ref": "genesis 2:13",
+        "href": "index.html#genesis/2/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "2:15": [
+      {
+        "id": "geo-eden",
+        "label": "Eden",
+        "type": "land-streek",
+        "ref": "genesis 2:15",
+        "href": "index.html#genesis/2/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "3:23": [
+      {
+        "id": "geo-eden",
+        "label": "Eden",
+        "type": "land-streek",
+        "ref": "genesis 3:23",
+        "href": "index.html#genesis/3/23",
+        "status": "agent-reviewed"
+      }
+    ],
+    "3:24": [
+      {
+        "id": "geo-eden",
+        "label": "Eden",
+        "type": "land-streek",
+        "ref": "genesis 3:24",
+        "href": "index.html#genesis/3/24",
+        "status": "agent-reviewed"
+      }
+    ],
+    "4:16": [
+      {
+        "id": "geo-nod",
+        "label": "Nod",
+        "type": "land-streek",
+        "ref": "genesis 4:16",
+        "href": "index.html#genesis/4/16",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-eden",
+        "label": "Eden",
+        "type": "land-streek",
+        "ref": "genesis 4:16",
+        "href": "index.html#genesis/4/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "8:4": [
+      {
+        "id": "geo-ararat",
+        "label": "Ararat",
+        "type": "berg",
+        "ref": "genesis 8:4",
+        "href": "index.html#genesis/8/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "10:10": [
+      {
+        "id": "geo-babel",
+        "label": "Babel",
+        "type": "stad-dorp",
+        "ref": "genesis 10:10",
+        "href": "index.html#genesis/10/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-erech",
+        "label": "Erech",
+        "type": "stad-dorp",
+        "ref": "genesis 10:10",
+        "href": "index.html#genesis/10/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-accad",
+        "label": "Accad",
+        "type": "stad-dorp",
+        "ref": "genesis 10:10",
+        "href": "index.html#genesis/10/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-calne",
+        "label": "Calne",
+        "type": "stad-dorp",
+        "ref": "genesis 10:10",
+        "href": "index.html#genesis/10/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sinear",
+        "label": "Sinear",
+        "type": "land-streek",
+        "ref": "genesis 10:10",
+        "href": "index.html#genesis/10/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "10:12": [
+      {
+        "id": "geo-resen",
+        "label": "Resen",
+        "type": "stad-dorp",
+        "ref": "genesis 10:12",
+        "href": "index.html#genesis/10/12",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-nineve",
+        "label": "Nineve",
+        "type": "stad-dorp",
+        "ref": "genesis 10:12",
+        "href": "index.html#genesis/10/12",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kalach",
+        "label": "Kalach",
+        "type": "stad-dorp",
+        "ref": "genesis 10:12",
+        "href": "index.html#genesis/10/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "10:30": [
+      {
+        "id": "geo-mescha",
+        "label": "Mescha",
+        "type": "land-streek",
+        "ref": "genesis 10:30",
+        "href": "index.html#genesis/10/30",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sefar",
+        "label": "Sefar",
+        "type": "berg",
+        "ref": "genesis 10:30",
+        "href": "index.html#genesis/10/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:2": [
+      {
+        "id": "geo-sinear",
+        "label": "Sinear",
+        "type": "land-streek",
+        "ref": "genesis 11:2",
+        "href": "index.html#genesis/11/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:9": [
+      {
+        "id": "geo-babel",
+        "label": "Babel",
+        "type": "stad-dorp",
+        "ref": "genesis 11:9",
+        "href": "index.html#genesis/11/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:28": [
+      {
+        "id": "geo-ur-van-de-chaldeeen",
+        "label": "Ur van de Chaldeeën",
+        "type": "stad-dorp",
+        "ref": "genesis 11:28",
+        "href": "index.html#genesis/11/28",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:32": [
+      {
+        "id": "geo-haran",
+        "label": "Haran",
+        "type": "stad-dorp",
+        "ref": "genesis 11:32",
+        "href": "index.html#genesis/11/32",
+        "status": "agent-reviewed"
+      }
+    ],
+    "12:4": [
+      {
+        "id": "geo-haran",
+        "label": "Haran",
+        "type": "stad-dorp",
+        "ref": "genesis 12:4",
+        "href": "index.html#genesis/12/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "12:8": [
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 12:8",
+        "href": "index.html#genesis/12/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ai",
+        "label": "Ai",
+        "type": "stad-dorp",
+        "ref": "genesis 12:8",
+        "href": "index.html#genesis/12/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:7": [
+      {
+        "id": "geo-kanaanieten",
+        "label": "Kanaänieten",
+        "type": "land-streek",
+        "ref": "genesis 13:7",
+        "href": "index.html#genesis/13/7",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ferezieten",
+        "label": "Ferezieten",
+        "type": "land-streek",
+        "ref": "genesis 13:7",
+        "href": "index.html#genesis/13/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:1": [
+      {
+        "id": "geo-sinear",
+        "label": "Sinear",
+        "type": "land-streek",
+        "ref": "genesis 14:1",
+        "href": "index.html#genesis/14/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ellasar",
+        "label": "Ellasar",
+        "type": "land-streek",
+        "ref": "genesis 14:1",
+        "href": "index.html#genesis/14/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-elam",
+        "label": "Elam",
+        "type": "land-streek",
+        "ref": "genesis 14:1",
+        "href": "index.html#genesis/14/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:5": [
+      {
+        "id": "geo-refaieten",
+        "label": "Refaieten",
+        "type": "land-streek",
+        "ref": "genesis 14:5",
+        "href": "index.html#genesis/14/5",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-asteroth-karnaim",
+        "label": "Asteroth-karnaim",
+        "type": "stad-dorp",
+        "ref": "genesis 14:5",
+        "href": "index.html#genesis/14/5",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zuzieten",
+        "label": "Zuzieten",
+        "type": "land-streek",
+        "ref": "genesis 14:5",
+        "href": "index.html#genesis/14/5",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ham",
+        "label": "Ham",
+        "type": "land-streek",
+        "ref": "genesis 14:5",
+        "href": "index.html#genesis/14/5",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-emieten",
+        "label": "Emieten",
+        "type": "land-streek",
+        "ref": "genesis 14:5",
+        "href": "index.html#genesis/14/5",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-schave-kiriathaim",
+        "label": "Schave-kiriathaim",
+        "type": "stad-dorp",
+        "ref": "genesis 14:5",
+        "href": "index.html#genesis/14/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:9": [
+      {
+        "id": "geo-elam",
+        "label": "Elam",
+        "type": "land-streek",
+        "ref": "genesis 14:9",
+        "href": "index.html#genesis/14/9",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sinear",
+        "label": "Sinear",
+        "type": "land-streek",
+        "ref": "genesis 14:9",
+        "href": "index.html#genesis/14/9",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ellasar",
+        "label": "Ellasar",
+        "type": "land-streek",
+        "ref": "genesis 14:9",
+        "href": "index.html#genesis/14/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:15": [
+      {
+        "id": "geo-hoba",
+        "label": "Hoba",
+        "type": "stad-dorp",
+        "ref": "genesis 14:15",
+        "href": "index.html#genesis/14/15",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-damascus",
+        "label": "Damascus",
+        "type": "stad-dorp",
+        "ref": "genesis 14:15",
+        "href": "index.html#genesis/14/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:18": [
+      {
+        "id": "geo-salem",
+        "label": "Salem",
+        "type": "stad-dorp",
+        "ref": "genesis 14:18",
+        "href": "index.html#genesis/14/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "15:7": [
+      {
+        "id": "geo-ur-van-de-chaldeeen",
+        "label": "Ur van de Chaldeeën",
+        "type": "stad-dorp",
+        "ref": "genesis 15:7",
+        "href": "index.html#genesis/15/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "15:16": [
+      {
+        "id": "geo-amorieten",
+        "label": "Amorieten",
+        "type": "land-streek",
+        "ref": "genesis 15:16",
+        "href": "index.html#genesis/15/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "15:19": [
+      {
+        "id": "geo-keniet",
+        "label": "Keniet",
+        "type": "land-streek",
+        "ref": "genesis 15:19",
+        "href": "index.html#genesis/15/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-keniziet",
+        "label": "Keniziet",
+        "type": "land-streek",
+        "ref": "genesis 15:19",
+        "href": "index.html#genesis/15/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kadmoniet",
+        "label": "Kadmoniet",
+        "type": "land-streek",
+        "ref": "genesis 15:19",
+        "href": "index.html#genesis/15/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "15:20": [
+      {
+        "id": "geo-hethiet",
+        "label": "Hethiet",
+        "type": "land-streek",
+        "ref": "genesis 15:20",
+        "href": "index.html#genesis/15/20",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-fereziet",
+        "label": "Fereziet",
+        "type": "land-streek",
+        "ref": "genesis 15:20",
+        "href": "index.html#genesis/15/20",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-refaieten",
+        "label": "Refaieten",
+        "type": "land-streek",
+        "ref": "genesis 15:20",
+        "href": "index.html#genesis/15/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "15:21": [
+      {
+        "id": "geo-amoriet",
+        "label": "Amoriet",
+        "type": "land-streek",
+        "ref": "genesis 15:21",
+        "href": "index.html#genesis/15/21",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kanaaniet",
+        "label": "Kanaäniet",
+        "type": "land-streek",
+        "ref": "genesis 15:21",
+        "href": "index.html#genesis/15/21",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-girgaziet",
+        "label": "Girgaziet",
+        "type": "land-streek",
+        "ref": "genesis 15:21",
+        "href": "index.html#genesis/15/21",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jebusiet",
+        "label": "Jebusiet",
+        "type": "land-streek",
+        "ref": "genesis 15:21",
+        "href": "index.html#genesis/15/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "18:1": [
+      {
+        "id": "geo-mamre",
+        "label": "Mamre",
+        "type": "land-streek",
+        "ref": "genesis 18:1",
+        "href": "index.html#genesis/18/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:2": [
+      {
+        "id": "geo-gerar",
+        "label": "Gerar",
+        "type": "stad-dorp",
+        "ref": "genesis 20:2",
+        "href": "index.html#genesis/20/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:14": [
+      {
+        "id": "geo-ber-seba",
+        "label": "Ber-seba",
+        "type": "stad-dorp",
+        "ref": "genesis 21:14",
+        "href": "index.html#genesis/21/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:31": [
+      {
+        "id": "geo-ber-seba",
+        "label": "Ber-seba",
+        "type": "stad-dorp",
+        "ref": "genesis 21:31",
+        "href": "index.html#genesis/21/31",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:32": [
+      {
+        "id": "geo-ber-seba",
+        "label": "Ber-seba",
+        "type": "stad-dorp",
+        "ref": "genesis 21:32",
+        "href": "index.html#genesis/21/32",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-filistijnen",
+        "label": "Filistijnen",
+        "type": "land-streek",
+        "ref": "genesis 21:32",
+        "href": "index.html#genesis/21/32",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:33": [
+      {
+        "id": "geo-ber-seba",
+        "label": "Ber-seba",
+        "type": "stad-dorp",
+        "ref": "genesis 21:33",
+        "href": "index.html#genesis/21/33",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:34": [
+      {
+        "id": "geo-filistijnen",
+        "label": "Filistijnen",
+        "type": "land-streek",
+        "ref": "genesis 21:34",
+        "href": "index.html#genesis/21/34",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:2": [
+      {
+        "id": "geo-moria",
+        "label": "Moria",
+        "type": "land-streek",
+        "ref": "genesis 22:2",
+        "href": "index.html#genesis/22/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:19": [
+      {
+        "id": "geo-ber-seba",
+        "label": "Ber-seba",
+        "type": "stad-dorp",
+        "ref": "genesis 22:19",
+        "href": "index.html#genesis/22/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "23:9": [
+      {
+        "id": "geo-machpela",
+        "label": "Machpela",
+        "type": "land-streek",
+        "ref": "genesis 23:9",
+        "href": "index.html#genesis/23/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "23:17": [
+      {
+        "id": "geo-machpela",
+        "label": "Machpela",
+        "type": "land-streek",
+        "ref": "genesis 23:17",
+        "href": "index.html#genesis/23/17",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-mamre",
+        "label": "Mamre",
+        "type": "land-streek",
+        "ref": "genesis 23:17",
+        "href": "index.html#genesis/23/17",
+        "status": "agent-reviewed"
+      }
+    ],
+    "24:62": [
+      {
+        "id": "geo-lachai-roi",
+        "label": "Lachai-roi",
+        "type": "rivier-water",
+        "ref": "genesis 24:62",
+        "href": "index.html#genesis/24/62",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zuiderland",
+        "label": "zuiderland",
+        "type": "land-streek",
+        "ref": "genesis 24:62",
+        "href": "index.html#genesis/24/62",
+        "status": "agent-reviewed"
+      }
+    ],
+    "25:9": [
+      {
+        "id": "geo-machpela",
+        "label": "Machpela",
+        "type": "land-streek",
+        "ref": "genesis 25:9",
+        "href": "index.html#genesis/25/9",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-mamre",
+        "label": "Mamre",
+        "type": "land-streek",
+        "ref": "genesis 25:9",
+        "href": "index.html#genesis/25/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "25:11": [
+      {
+        "id": "geo-lachai-roi",
+        "label": "Lachai-roi",
+        "type": "rivier-water",
+        "ref": "genesis 25:11",
+        "href": "index.html#genesis/25/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "25:20": [
+      {
+        "id": "geo-paddan-aram",
+        "label": "Paddan-aram",
+        "type": "land-streek",
+        "ref": "genesis 25:20",
+        "href": "index.html#genesis/25/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:1": [
+      {
+        "id": "geo-filistijnen",
+        "label": "Filistijnen",
+        "type": "land-streek",
+        "ref": "genesis 26:1",
+        "href": "index.html#genesis/26/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-gerar",
+        "label": "Gerar",
+        "type": "stad-dorp",
+        "ref": "genesis 26:1",
+        "href": "index.html#genesis/26/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:6": [
+      {
+        "id": "geo-gerar",
+        "label": "Gerar",
+        "type": "stad-dorp",
+        "ref": "genesis 26:6",
+        "href": "index.html#genesis/26/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:8": [
+      {
+        "id": "geo-filistijnen",
+        "label": "Filistijnen",
+        "type": "land-streek",
+        "ref": "genesis 26:8",
+        "href": "index.html#genesis/26/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:14": [
+      {
+        "id": "geo-filistijnen",
+        "label": "Filistijnen",
+        "type": "land-streek",
+        "ref": "genesis 26:14",
+        "href": "index.html#genesis/26/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:15": [
+      {
+        "id": "geo-filistijnen",
+        "label": "Filistijnen",
+        "type": "land-streek",
+        "ref": "genesis 26:15",
+        "href": "index.html#genesis/26/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:17": [
+      {
+        "id": "geo-gerar",
+        "label": "Gerar",
+        "type": "stad-dorp",
+        "ref": "genesis 26:17",
+        "href": "index.html#genesis/26/17",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:18": [
+      {
+        "id": "geo-filistijnen",
+        "label": "Filistijnen",
+        "type": "land-streek",
+        "ref": "genesis 26:18",
+        "href": "index.html#genesis/26/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:20": [
+      {
+        "id": "geo-gerar",
+        "label": "Gerar",
+        "type": "stad-dorp",
+        "ref": "genesis 26:20",
+        "href": "index.html#genesis/26/20",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-esek",
+        "label": "Esek",
+        "type": "rivier-water",
+        "ref": "genesis 26:20",
+        "href": "index.html#genesis/26/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:21": [
+      {
+        "id": "geo-sitna",
+        "label": "Sitna",
+        "type": "rivier-water",
+        "ref": "genesis 26:21",
+        "href": "index.html#genesis/26/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:22": [
+      {
+        "id": "geo-rehoboth",
+        "label": "Rehoboth",
+        "type": "stad-dorp",
+        "ref": "genesis 26:22",
+        "href": "index.html#genesis/26/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:23": [
+      {
+        "id": "geo-ber-seba",
+        "label": "Ber-seba",
+        "type": "stad-dorp",
+        "ref": "genesis 26:23",
+        "href": "index.html#genesis/26/23",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:26": [
+      {
+        "id": "geo-gerar",
+        "label": "Gerar",
+        "type": "stad-dorp",
+        "ref": "genesis 26:26",
+        "href": "index.html#genesis/26/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:33": [
+      {
+        "id": "geo-seba",
+        "label": "Seba",
+        "type": "rivier-water",
+        "ref": "genesis 26:33",
+        "href": "index.html#genesis/26/33",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ber-seba",
+        "label": "Ber-seba",
+        "type": "stad-dorp",
+        "ref": "genesis 26:33",
+        "href": "index.html#genesis/26/33",
+        "status": "agent-reviewed"
+      }
+    ],
+    "27:43": [
+      {
+        "id": "geo-haran",
+        "label": "Haran",
+        "type": "stad-dorp",
+        "ref": "genesis 27:43",
+        "href": "index.html#genesis/27/43",
+        "status": "agent-reviewed"
+      }
+    ],
+    "28:2": [
+      {
+        "id": "geo-paddan-aram",
+        "label": "Paddan-aram",
+        "type": "land-streek",
+        "ref": "genesis 28:2",
+        "href": "index.html#genesis/28/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "28:5": [
+      {
+        "id": "geo-paddan-aram",
+        "label": "Paddan-aram",
+        "type": "land-streek",
+        "ref": "genesis 28:5",
+        "href": "index.html#genesis/28/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "28:7": [
+      {
+        "id": "geo-paddan-aram",
+        "label": "Paddan-aram",
+        "type": "land-streek",
+        "ref": "genesis 28:7",
+        "href": "index.html#genesis/28/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "28:10": [
+      {
+        "id": "geo-ber-seba",
+        "label": "Ber-seba",
+        "type": "stad-dorp",
+        "ref": "genesis 28:10",
+        "href": "index.html#genesis/28/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-haran",
+        "label": "Haran",
+        "type": "stad-dorp",
+        "ref": "genesis 28:10",
+        "href": "index.html#genesis/28/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "28:19": [
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 28:19",
+        "href": "index.html#genesis/28/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-luz",
+        "label": "Luz",
+        "type": "stad-dorp",
+        "ref": "genesis 28:19",
+        "href": "index.html#genesis/28/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "29:4": [
+      {
+        "id": "geo-haran",
+        "label": "Haran",
+        "type": "stad-dorp",
+        "ref": "genesis 29:4",
+        "href": "index.html#genesis/29/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "31:13": [
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 31:13",
+        "href": "index.html#genesis/31/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "31:49": [
+      {
+        "id": "geo-mizpa",
+        "label": "Mizpa",
+        "type": "stad-dorp",
+        "ref": "genesis 31:49",
+        "href": "index.html#genesis/31/49",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:2": [
+      {
+        "id": "geo-mahanaim",
+        "label": "Mahanaim",
+        "type": "stad-dorp",
+        "ref": "genesis 32:2",
+        "href": "index.html#genesis/32/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:30": [
+      {
+        "id": "geo-pniel",
+        "label": "Pniël",
+        "type": "stad-dorp",
+        "ref": "genesis 32:30",
+        "href": "index.html#genesis/32/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:31": [
+      {
+        "id": "geo-pniel",
+        "label": "Pniël",
+        "type": "stad-dorp",
+        "ref": "genesis 32:31",
+        "href": "index.html#genesis/32/31",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:30": [
+      {
+        "id": "geo-kanaanieten",
+        "label": "Kanaänieten",
+        "type": "land-streek",
+        "ref": "genesis 34:30",
+        "href": "index.html#genesis/34/30",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ferezieten",
+        "label": "Ferezieten",
+        "type": "land-streek",
+        "ref": "genesis 34:30",
+        "href": "index.html#genesis/34/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:1": [
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 35:1",
+        "href": "index.html#genesis/35/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:3": [
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 35:3",
+        "href": "index.html#genesis/35/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:4": [
+      {
+        "id": "geo-sichem",
+        "label": "Sichem",
+        "type": "stad-dorp",
+        "ref": "genesis 35:4",
+        "href": "index.html#genesis/35/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:7": [
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 35:7",
+        "href": "index.html#genesis/35/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:8": [
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 35:8",
+        "href": "index.html#genesis/35/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:9": [
+      {
+        "id": "geo-paddan-aram",
+        "label": "Paddan-aram",
+        "type": "land-streek",
+        "ref": "genesis 35:9",
+        "href": "index.html#genesis/35/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:15": [
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 35:15",
+        "href": "index.html#genesis/35/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:16": [
+      {
+        "id": "geo-beth-el",
+        "label": "Beth-el",
+        "type": "stad-dorp",
+        "ref": "genesis 35:16",
+        "href": "index.html#genesis/35/16",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-efrath",
+        "label": "Efrath",
+        "type": "stad-dorp",
+        "ref": "genesis 35:16",
+        "href": "index.html#genesis/35/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:19": [
+      {
+        "id": "geo-efrath",
+        "label": "Efrath",
+        "type": "stad-dorp",
+        "ref": "genesis 35:19",
+        "href": "index.html#genesis/35/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-bethlehem",
+        "label": "Bethlehem",
+        "type": "stad-dorp",
+        "ref": "genesis 35:19",
+        "href": "index.html#genesis/35/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:21": [
+      {
+        "id": "geo-migdal-eder",
+        "label": "Migdal-eder",
+        "type": "stad-dorp",
+        "ref": "genesis 35:21",
+        "href": "index.html#genesis/35/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:26": [
+      {
+        "id": "geo-paddan-aram",
+        "label": "Paddan-aram",
+        "type": "land-streek",
+        "ref": "genesis 35:26",
+        "href": "index.html#genesis/35/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:33": [
+      {
+        "id": "geo-bozra",
+        "label": "Bozra",
+        "type": "stad-dorp",
+        "ref": "genesis 36:33",
+        "href": "index.html#genesis/36/33",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:36": [
+      {
+        "id": "geo-masreka",
+        "label": "Masreka",
+        "type": "stad-dorp",
+        "ref": "genesis 36:36",
+        "href": "index.html#genesis/36/36",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:37": [
+      {
+        "id": "geo-rehoboth",
+        "label": "Rehoboth",
+        "type": "stad-dorp",
+        "ref": "genesis 36:37",
+        "href": "index.html#genesis/36/37",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:39": [
+      {
+        "id": "geo-pahu",
+        "label": "Pahu",
+        "type": "stad-dorp",
+        "ref": "genesis 36:39",
+        "href": "index.html#genesis/36/39",
+        "status": "agent-reviewed"
+      }
+    ],
+    "37:12": [
+      {
+        "id": "geo-sichem",
+        "label": "Sichem",
+        "type": "stad-dorp",
+        "ref": "genesis 37:12",
+        "href": "index.html#genesis/37/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "37:13": [
+      {
+        "id": "geo-sichem",
+        "label": "Sichem",
+        "type": "stad-dorp",
+        "ref": "genesis 37:13",
+        "href": "index.html#genesis/37/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "37:17": [
+      {
+        "id": "geo-dothan",
+        "label": "Dothan",
+        "type": "stad-dorp",
+        "ref": "genesis 37:17",
+        "href": "index.html#genesis/37/17",
+        "status": "agent-reviewed"
+      }
+    ],
+    "38:1": [
+      {
+        "id": "geo-adullam",
+        "label": "Adullam",
+        "type": "stad-dorp",
+        "ref": "genesis 38:1",
+        "href": "index.html#genesis/38/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "38:5": [
+      {
+        "id": "geo-chezib",
+        "label": "Chezib",
+        "type": "stad-dorp",
+        "ref": "genesis 38:5",
+        "href": "index.html#genesis/38/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "38:12": [
+      {
+        "id": "geo-timna",
+        "label": "Timna",
+        "type": "stad-dorp",
+        "ref": "genesis 38:12",
+        "href": "index.html#genesis/38/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "38:13": [
+      {
+        "id": "geo-timna",
+        "label": "Timna",
+        "type": "stad-dorp",
+        "ref": "genesis 38:13",
+        "href": "index.html#genesis/38/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "38:14": [
+      {
+        "id": "geo-timna",
+        "label": "Timna",
+        "type": "stad-dorp",
+        "ref": "genesis 38:14",
+        "href": "index.html#genesis/38/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "41:50": [
+      {
+        "id": "geo-on",
+        "label": "On",
+        "type": "stad-dorp",
+        "ref": "genesis 41:50",
+        "href": "index.html#genesis/41/50",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:1": [
+      {
+        "id": "geo-ber-seba",
+        "label": "Ber-seba",
+        "type": "stad-dorp",
+        "ref": "genesis 46:1",
+        "href": "index.html#genesis/46/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:5": [
+      {
+        "id": "geo-ber-seba",
+        "label": "Ber-seba",
+        "type": "stad-dorp",
+        "ref": "genesis 46:5",
+        "href": "index.html#genesis/46/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "46:15": [
+      {
+        "id": "geo-paddan-aram",
+        "label": "Paddan-aram",
+        "type": "land-streek",
+        "ref": "genesis 46:15",
+        "href": "index.html#genesis/46/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "48:22": [
+      {
+        "id": "geo-amorieten",
+        "label": "Amorieten",
+        "type": "land-streek",
+        "ref": "genesis 48:22",
+        "href": "index.html#genesis/48/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "49:13": [
+      {
+        "id": "geo-sidon",
+        "label": "Sidon",
+        "type": "stad-dorp",
+        "ref": "genesis 49:13",
+        "href": "index.html#genesis/49/13",
+        "status": "agent-reviewed"
+      }
+    ]
+  },
+  "reviewQueue": [
+    {
+      "ref": "genesis 10:2",
+      "reden": "Volkennamen en geografische namen lopen in de volkenlijst samen; afzonderlijke identiteit controleren.",
+      "status": "needs-human-review"
+    },
+    {
+      "ref": "genesis 10:7",
+      "reden": "Havila, Seba en Dedan kunnen hier zowel personen als latere gebieden aanduiden.",
+      "status": "needs-human-review"
+    },
+    {
+      "ref": "genesis 36:20",
+      "reden": "Seïr is in dit vers een persoon, niet het gelijknamige gebied.",
+      "status": "needs-human-review"
+    }
+  ]
 }

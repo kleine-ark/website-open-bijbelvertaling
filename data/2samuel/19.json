@@ -1111,7 +1111,7 @@
       "number": 9,
       "textSV1888": "En al het volk, in alle stammen van Israël, was onder zich twistende, zeggende: De koning heeft ons gered van de hand onzer vijanden en hij heeft ons bevrijd van de hand der Filistijnen, en nu is hij uit het land gevlucht voor Absalom;",
       "text1637": "Ende al’t volck, in alle stammen Israëls, was onder sich [12] twistende, seggende: De Coninck heeft ons geredt van de hant onser vyanden, ende hy heeft ons bevrijdt van de hant der Philistijnen, ende nu is hy uyt den lande gevlucht voor Absalom!",
-      "text2026": "En al het volk, in alle stammen van Israël, was onder zich twistende, zeggende: De koning heeft ons gered van de hand onzer vijanden en hij heeft ons bevrijd van de hand van de Filistijnen, en nu is hij uit het land gevlucht voor Absalom;",
+      "text2026": "En al het volk, in alle stammen van Israël, was onder zich twistende, zeggende: De koning heeft ons gered van de hand van onze vijanden en hij heeft ons bevrijd van de hand van de Filistijnen, en nu is hij uit het land gevlucht voor Absalom;",
       "marginNotes": [
         {
           "marker": "12",
@@ -1228,10 +1228,15 @@
           "morph": "HR/Ncmpc/Sp3ms"
         }
       ],
-      "text2026_html": "En al het volk, in alle stammen van Israël, was onder zich twistende, zeggende: <span class=\"direct-speech\"><i>De koning heeft ons gered van de hand onzer vijanden en hij heeft ons bevrijd van de hand van de Filistijnen, en nu is hij uit het land gevlucht voor Absalom;</i></span>",
+      "text2026_html": "En al het volk, in alle stammen van Israël, was onder zich twistende, zeggende: <span class=\"direct-speech\"><i>De koning heeft ons gered van de hand van onze vijanden en hij heeft ons bevrijd van de hand van de Filistijnen, en nu is hij uit het land gevlucht voor Absalom;</i></span>",
       "textSV1888_html": "En al het volk, in alle stammen van Israël, was onder zich<sup class=\"note-marker\" data-note=\"12\">12</sup> twistende, zeggende: De koning heeft ons gered van de hand onzer vijanden en hij heeft ons bevrijd van de hand der Filistijnen, en nu is hij uit het land gevlucht voor Absalom;",
       "text1637_html": "Ende al’t volck, in alle stammen Israëls, was onder sich <sup class=\"note-marker\" data-note=\"12\">12</sup> twistende, seggende: De Coninck heeft ons geredt van de hant onser vyanden, ende hy heeft ons bevrijdt van de hant der Philistijnen, ende nu is hy uyt de<i>n</i> lande gevlucht voor Absalom!",
       "phraseDiff": [
+        {
+          "old": "onzer",
+          "new": "van onze",
+          "principe": "V1170"
+        },
         {
           "old": "der",
           "new": "van de",
@@ -2536,7 +2541,7 @@
       "number": 19,
       "textSV1888": "En hij zeide tot den koning: Mijn heer rekene mij niet toe de misdaad, en gedenke niet, wat uw knecht verkeerdelijk gedaan heeft, te dien dage, als mijn heer de koning uit Jeruzalem uitging, dat het de koning zich ter harte zoude nemen.",
       "text1637": "Ende hy seyde tot den Coninck; Mijn heere en rekene my niet toe de misdaet, ende gedencke niet, wat uwe knecht verkeerdelick gedaen heeft, te dien dage, als mijn heere de Coninck uyt Ierusalem uytginck; datte’t de Coninck [36] sich ter herten soude nemen.",
-      "text2026": "En hij zei tot de koning: Mijn heer rekene mij niet toe de misdaad, en gedenke niet, wat uw knecht verkeerd gedaan heeft, op die dag, als mijn heer de koning uit Jeruzalem uitging, dat het de koning zich ter hart zou nemen.",
+      "text2026": "En hij zei tot de koning: Mijn heer rekene mij niet toe de misdaad, en gedenke niet, wat uw knecht verkeerd gedaan heeft, op die dag, als mijn heer de koning uit Jeruzalem uitging, dat het de koning zich ter harte zou nemen.",
       "marginNotes": [
         {
           "marker": "36",
@@ -2633,7 +2638,7 @@
           "morph": "HRd/Np"
         }
       ],
-      "text2026_html": "En hij zei tot de koning: <span class=\"direct-speech\"><i>Mijn heer rekene mij niet toe de misdaad, en gedenke niet, wat uw knecht verkeerd gedaan heeft, op die dag, als mijn heer de koning uit Jeruzalem uitging, dat het de koning zich ter hart zou nemen.</i></span>",
+      "text2026_html": "En hij zei tot de koning: <span class=\"direct-speech\"><i>Mijn heer rekene mij niet toe de misdaad, en gedenke niet, wat uw knecht verkeerd gedaan heeft, op die dag, als mijn heer de koning uit Jeruzalem uitging, dat het de koning zich ter harte zou nemen.</i></span>",
       "textSV1888_html": "En hij zeide tot den koning: Mijn heer rekene mij niet toe de misdaad, en gedenke niet, wat uw knecht verkeerdelijk gedaan heeft, te dien dage, als mijn heer de koning uit Jeruzalem uitging, dat het de koning<sup class=\"note-marker\" data-note=\"36\">36</sup> zich ter harte zoude nemen.",
       "text1637_html": "En<i>de</i> hy seyde tot den Coninck; Mijn heere en rekene my niet toe de misdaet, en<i>de</i> gedencke niet, wat uwe knecht verkeerdelick gedae<i>n</i> heeft, te die<i>n</i> dage, als mijn heere de Coninck uyt Ierusalem uytginck; datte’t de Coninck <sup class=\"note-marker\" data-note=\"36\">36</sup> sich ter herte<i>n</i> soude neme<i>n</i>.",
       "phraseDiff": [
@@ -2658,9 +2663,9 @@
           "principe": "N4"
         },
         {
-          "old": "harte zoude",
-          "new": "hart zou",
-          "principe": "V50"
+          "old": "zoude",
+          "new": "zou",
+          "principe": "V1171"
         }
       ]
     },

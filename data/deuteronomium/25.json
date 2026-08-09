@@ -452,7 +452,7 @@
       "number": 5,
       "textSV1888": "Wanneer broeders samenwonen, en een van hen sterft, en geen zoon heeft, zo zal de vrouw des verstorvenen aan geen vreemden man daarbuiten geworden; haar mans broeder zal tot haar ingaan, en nemen haar zich ter vrouwe, en doen haar den plicht van eens mans broeder.",
       "text1637": "Wanneer broeders te samen woonen, ende [15] een van hen sterft, ende geenen sone heeft, so en sal het wijf des verstorvenen [16] aen geenen vreemden manne daer buyten geworden: [c] haers mans broeder sal tot haer ingaen, ende [17] nemense sich ter vrouwe, ende doen haer den plicht van eens mans broeder.",
-      "text2026": "Wanneer broers samenwonen, en één van hen sterft, en geen zoon heeft, zo zal de vrouw van de verstorvene aan geen vreemde man daarbuiten geworden; haar mans broer zal tot haar ingaan, en nemen haar zich ter vrouwe, en doen haar de plicht van de broer van een man.",
+      "text2026": "Wanneer broers samenwonen en één van hen sterft en geen zoon heeft, zal de vrouw van de overledene niet de vrouw van een vreemde man buiten de familie worden; de broer van haar man zal tot haar ingaan, haar tot vrouw nemen en tegenover haar de zwagerplicht vervullen.",
       "marginNotes": [
         {
           "marker": "15",
@@ -605,13 +605,13 @@
           "morph": "HC/Vpq3ms/Sp3fs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer broers samenwonen, en<sup class=\"note-marker\" data-note=\"15\">15</sup> één van hen sterft, en geen zoon heeft, zo zal de vrouw van de verstorvene<sup class=\"note-marker\" data-note=\"16\">16</sup> aan geen vreemde man daarbuiten geworden;<sup class=\"note-marker\" data-note=\"c\">c</sup> haar mans broer zal tot haar ingaan, en<sup class=\"note-marker\" data-note=\"17\">17</sup> nemen haar zich ter vrouwe, en doen haar de plicht van de broer van een man.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer broers samenwonen en<sup class=\"note-marker\" data-note=\"15\">15</sup> één van hen sterft en geen zoon heeft, zal de vrouw van de overledene<sup class=\"note-marker\" data-note=\"16\">16</sup> niet de vrouw van een vreemde man buiten de familie worden;<sup class=\"note-marker\" data-note=\"c\">c</sup> de broer van haar man zal tot haar ingaan,<sup class=\"note-marker\" data-note=\"17\">17</sup> haar tot vrouw nemen en tegenover haar de zwagerplicht vervullen.</i></span>",
       "textSV1888_html": "Wanneer broeders samenwonen, en<sup class=\"note-marker\" data-note=\"15\">15</sup> een van hen sterft, en geen zoon heeft, zo zal de vrouw des verstorvenen<sup class=\"note-marker\" data-note=\"16\">16</sup> aan geen vreemden man daarbuiten geworden;<sup class=\"note-marker\" data-note=\"c\">c</sup> haar mans broeder zal tot haar ingaan, en<sup class=\"note-marker\" data-note=\"17\">17</sup> nemen haar zich ter vrouwe, en doen haar den plicht van eens mans broeder.",
       "text1637_html": "Wanneer broeders te samen woonen, ende <sup class=\"note-marker\" data-note=\"15\">15</sup> een van hen sterft, ende geenen sone heeft, so en sal het wijf des verstorvenen <sup class=\"note-marker\" data-note=\"16\">16</sup> aen geenen vreemden manne daer buyten geworden: <sup class=\"note-marker\" data-note=\"c\">c</sup> haers mans broeder sal tot haer ingaen, ende <sup class=\"note-marker\" data-note=\"17\">17</sup> nemense sich ter vrouwe, ende doen haer den plicht van eens mans broeder.",
       "phraseDiff": [
         {
-          "old": "broeders",
-          "new": "broers",
+          "old": "broeders samenwonen,",
+          "new": "broers samenwonen",
           "principe": null
         },
         {
@@ -620,28 +620,43 @@
           "principe": "V735"
         },
         {
-          "old": "des verstorvenen",
-          "new": "van de verstorvene",
+          "old": "sterft,",
+          "new": "sterft",
           "principe": null
         },
         {
-          "old": "vreemden",
-          "new": "vreemde",
+          "old": "zo",
+          "new": "",
           "principe": null
         },
         {
-          "old": "broeder",
-          "new": "broer",
-          "principe": "O22a"
+          "old": "des verstorvenen aan geen vreemden",
+          "new": "van de overledene niet de vrouw van een vreemde",
+          "principe": null
         },
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "daarbuiten geworden;",
+          "new": "buiten de familie worden; de broer van",
+          "principe": null
         },
         {
-          "old": "eens mans broeder.",
-          "new": "de broer van een man.",
+          "old": "mans broeder",
+          "new": "man",
+          "principe": null
+        },
+        {
+          "old": "",
+          "new": "haar tot vrouw nemen",
+          "principe": null
+        },
+        {
+          "old": "nemen",
+          "new": "tegenover",
+          "principe": null
+        },
+        {
+          "old": "zich ter vrouwe, en doen haar den plicht van eens mans broeder.",
+          "new": "de zwagerplicht vervullen.",
           "principe": null
         }
       ]

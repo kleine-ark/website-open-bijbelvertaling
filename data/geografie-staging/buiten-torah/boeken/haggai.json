@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "boek": "haggai",
+  "scope": "buiten-torah",
+  "status": "agent-reviewed",
+  "humanReviewed": false,
+  "dekking": {
+    "verzenBeoordeeld": 38,
+    "verzenMetBronvermelding": 1,
+    "vermeldingen": 1,
+    "reviewQueue": 1
+  },
+  "mentions": {
+    "2:5": [
+      {
+        "entityId": "geo-egypt-f301ca",
+        "ref": "haggai 2:5",
+        "href": "index.html#haggai/2/5",
+        "label": null,
+        "status": "needs-human-review",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+      }
+    ]
+  },
+  "reviewQueue": [
+    {
+      "type": "label-of-homoniem",
+      "entityId": "geo-egypt-f301ca",
+      "ref": "haggai 2:5",
+      "tekst": "Maar nu, wees sterk, u Zerubbabel! spreek JAHWEH; en wees sterk, u Josua, zoon van Jozadak, hogepriester! en wees sterk, al u volk van het land! spreek JAHWEH; en werkt, want Ik ben met u, spreekt JAHWEH van de legermachten;",
+      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
+      "status": "needs-human-review"
+    }
+  ]
+}

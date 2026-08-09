@@ -175,6 +175,64 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_boekvolgorde_staat_bij_lezen_en_niet_in_de_boekenzijbalk(self):
+        page = self.open_reader()
+        try:
+            self.assertEqual(page.locator("#sidebar #sb-boekvolgorde").count(), 0)
+            page.locator("#sidebar-right-open").click()
+            keuze = page.locator('#options-panel-lezen [data-optie="boekvolgorde"]')
+            self.assertEqual(keuze.count(), 1)
+            self.assertEqual(keuze.get_attribute("aria-label"), "Boekvolgorde")
+        finally:
+            page.close()
+
+    def test_boekenzijbalk_begint_direct_met_de_eerste_boekgroep(self):
+        page = self.open_reader()
+        try:
+            sidebar = page.locator("#sidebar")
+            eerste_groep = page.locator("#sidebar-tree .tree-group").first
+
+            self.assertEqual(page.locator("#sidebar .sidebar-left-title").count(), 0)
+            self.assertEqual(page.locator("#sidebar-search").count(), 0)
+            self.assertEqual(page.locator("#book-search").count(), 0)
+            self.assertLessEqual(
+                eerste_groep.bounding_box()["y"] - sidebar.bounding_box()["y"],
+                8,
+            )
+
+            inklappen = page.locator("#sidebar-toggle")
+            self.assertTrue(inklappen.is_visible())
+            inklappen.click()
+            self.assertTrue(sidebar.evaluate("el => el.classList.contains('collapsed')"))
+        finally:
+            page.close()
+
+    def test_boekvolgorde_in_leesvoorkeuren_wordt_bewaard(self):
+        page = self.open_reader()
+        try:
+            page.locator("#sidebar-right-open").click()
+            keuze = page.locator('#options-panel-lezen [data-optie="boekvolgorde"]')
+            keuze.select_option("tenach")
+            page.wait_for_function(
+                "JSON.parse(localStorage.getItem('sv2026_vertaalopties')).boekvolgorde === 'tenach'"
+            )
+            page.reload(wait_until="domcontentloaded")
+            page.locator("#sidebar-right-open").wait_for(state="visible", timeout=15_000)
+            page.locator("#sidebar-right-open").click()
+            self.assertEqual(keuze.input_value(), "tenach")
+        finally:
+            page.close()
+
+    def test_mobiele_boekenpicker_herhaalt_de_boekvolgordekeuze_niet(self):
+        page = self.open_reader(width=390, height=844)
+        try:
+            page.locator("#mobile-book-btn").click()
+            page.locator("#mobile-picker").wait_for(state="visible", timeout=3_000)
+            self.assertEqual(page.locator("#mobile-picker .mp-order").count(), 0)
+            self.assertEqual(page.locator("#mobile-picker .mp-search").count(), 1)
+        finally:
+            page.close()
+
     def test_zoom_blijft_bewaard_na_herladen(self):
         page = self.open_reader()
         try:
@@ -220,6 +278,24 @@ class OptionsPanelBrowserTests(unittest.TestCase):
                 finally:
                     page.close()
 
+    def test_achtergrond_blijft_op_desktop_onvervaagd(self):
+        page = self.open_reader(width=1280, height=900)
+        try:
+            page.locator("#sidebar-right-open").click()
+            backdrop = page.locator("#sidebar-right").evaluate(
+                """el => {
+                    const stijl = getComputedStyle(el, '::backdrop');
+                    return {
+                        achtergrond: stijl.backgroundColor,
+                        vervaging: stijl.backdropFilter || stijl.webkitBackdropFilter,
+                    };
+                }"""
+            )
+            self.assertEqual(backdrop["achtergrond"], "rgba(0, 0, 0, 0)")
+            self.assertEqual(backdrop["vervaging"], "none")
+        finally:
+            page.close()
+
     def test_mobiel_paneel_gebruikt_de_beschikbare_breedte(self):
         for width in (768, 545, 390):
             with self.subTest(width=width):
@@ -233,6 +309,54 @@ class OptionsPanelBrowserTests(unittest.TestCase):
                     self.assertAlmostEqual(box["width"], width, delta=1)
                 finally:
                     page.close()
+
+    def test_mobiele_darkmode_volgt_het_goedgekeurde_bottomsheet_ontwerp(self):
+        page = self.open_reader(width=390, height=844)
+        try:
+            page.evaluate(
+                """localStorage.setItem('sv2026_vertaalopties',
+                JSON.stringify({thema: 'donker'}))"""
+            )
+            page.reload(wait_until="domcontentloaded")
+            page.locator("#mobile-opties-btn").click()
+            panel = page.locator("#sidebar-right")
+            panel.wait_for(state="visible", timeout=3_000)
+            page.wait_for_timeout(250)
+
+            box = panel.bounding_box()
+            tabs = page.locator(".options-tabs").bounding_box()
+            grip = page.locator(".options-sheet-grip").bounding_box()
+            title = page.locator("#options-title").bounding_box()
+            style = panel.evaluate(
+                """el => ({
+                    background: getComputedStyle(el).backgroundColor,
+                    radius: parseFloat(getComputedStyle(el).borderTopLeftRadius)
+                })"""
+            )
+
+            self.assertGreater(box["y"], 100)
+            self.assertLess(tabs["y"], grip["y"])
+            self.assertLess(grip["y"], title["y"])
+            self.assertGreaterEqual(style["radius"], 30)
+            self.assertGreater(int(style["background"].split("(")[1].split(",")[0]), 230)
+            self.assertEqual(
+                page.locator("#options-title").evaluate(
+                    "el => getComputedStyle(el).textAlign"
+                ),
+                "center",
+            )
+            self.assertFalse(
+                page.locator("#options-panel-lezen .options-section-heading")
+                .first.is_visible()
+            )
+            self.assertEqual(
+                page.locator("#options-tab-lezen").evaluate(
+                    "el => getComputedStyle(el).backgroundColor"
+                ),
+                "rgba(0, 0, 0, 0)",
+            )
+        finally:
+            page.close()
 
     def test_lange_keuzerij_toont_de_actuele_waarde(self):
         page = self.open_reader()

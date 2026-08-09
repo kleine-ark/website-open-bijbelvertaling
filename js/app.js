@@ -4,58 +4,43 @@ const App = {
     // Alle kolom-keys in volgorde (num is altijd zichtbaar)
     ALL_COLS: ['1637', 'margin1637', 'sv1888', 'marginSV1888', '2026', 'margin2026', 'hebrew', 'diff', 'noteDiff'],
 
+    _escapeStrongHtml(value) {
+        return String(value == null ? '' : value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    },
+
     /**
-     * Voeg Strong's nummers inline toe aan de OV2026 tekst.
-     * Strategie: wijs elk grondtekst-woord sequentieel toe aan de
-     * woorden in de Nederlandse tekst. HTML-tags worden overgeslagen.
-     * Grondtekst-entries zonder strongs worden overgeslagen.
+     * Render Strong-nummers uitsluitend naast het grondtekstwoord waaraan de
+     * brondata ze koppelt. De Nederlandse tekst bevat geen woordalignering;
+     * nummers daar sequentieel over verdelen zou dus schijnprecisie zijn.
      */
-    addInlineStrongs(htmlText, grondtekst) {
-        if (!htmlText || !grondtekst || grondtekst.length === 0) return htmlText;
-
-        // Verzamel Strong's nummers in volgorde (sla lege/particle-only over)
-        const strongsEntries = grondtekst.filter(w => w.strongs);
-
-        // Splits de HTML-tekst in tokens: HTML-tags vs tekst-segmenten
-        // We matchen HTML tags, of runs van niet-tag tekst
-        const tokenRegex = /(<[^>]+>)|([^<]+)/g;
-        let match;
-        const tokens = [];
-        while ((match = tokenRegex.exec(htmlText)) !== null) {
-            if (match[1]) {
-                // HTML tag — bewaar ongewijzigd
-                tokens.push({ type: 'tag', value: match[1] });
-            } else if (match[2]) {
-                // Tekst segment
-                tokens.push({ type: 'text', value: match[2] });
-            }
-        }
-
-        // Loop door teksttokens en splits in woorden; wijs Strong's toe
-        let strongsIdx = 0;
-        const result = [];
-
-        for (const token of tokens) {
-            if (token.type === 'tag') {
-                result.push(token.value);
-                continue;
-            }
-            // Splits tekst in woorden en niet-woord stukken (spaties, leestekens)
-            const parts = token.value.split(/(\s+)/);
-            for (const part of parts) {
-                // Check of dit een echt woord is (bevat minstens één letter)
-                if (/[a-zA-ZàáâãäåèéêëìíîïòóôõöùúûüýÿæœÀ-ÖØ-öø-ÿ]/.test(part) && strongsIdx < strongsEntries.length) {
-                    const entry = strongsEntries[strongsIdx];
-                    const title = entry.gloss ? entry.gloss.replace(/[〔〕]/g, '') : entry.woord || '';
-                    result.push(part + `<sup class="strongs-inline" title="${title}">${entry.strongs}</sup>`);
-                    strongsIdx++;
-                } else {
-                    result.push(part);
-                }
-            }
-        }
-
-        return result.join('');
+    renderStrongLinks(grondtekst) {
+        if (!Array.isArray(grondtekst)) return '';
+        const esc = this._escapeStrongHtml;
+        const tokens = grondtekst.map(word => {
+            if (!word || typeof word !== 'object') return '';
+            const numbers = String(word.strongs || '').match(/[HG]\d+[A-Za-z]?/g) || [];
+            if (!numbers.length) return '';
+            const sourceWord = esc(word.woord || '');
+            const transliteration = esc(word.transliteratie || word.translit || '');
+            const gloss = esc(word.gloss || word.betekenis || '');
+            const language = numbers[0].startsWith('H') ? 'he' : 'grc';
+            const tokenClass = numbers[0].startsWith('H') ? 'strongs-token-hebrew' : 'strongs-token-greek';
+            const links = [...new Set(numbers)].map(number => {
+                const safeNumber = esc(number);
+                const label = `Open woordenboekbetekenis van ${number}${word.woord ? ` bij ${word.woord}` : ''}`;
+                return `<button type="button" class="strongs-inline" data-strongs="${safeNumber}" data-source-word="${sourceWord}" data-transliteratie="${transliteration}" data-gloss="${gloss}" aria-label="${esc(label)}">&lt;${safeNumber}&gt;</button>`;
+            }).join('');
+            return `<span class="strongs-token ${tokenClass}"><span class="strongs-source-word" lang="${language}">${sourceWord}</span>${links}</span>`;
+        }).filter(Boolean).join(' ');
+        const directionClass = grondtekst.some(word => /^G/.test(String((word && word.strongs) || '')))
+            ? ' strongs-alignment-greek'
+            : ' strongs-alignment-hebrew';
+        return tokens ? `<span class="strongs-alignment${directionClass}" aria-label="Strong-nummers bij de grondtekst">${tokens}</span>` : '';
     },
     // AUDIO_AVAILABLE leeft in js/audio-available.js (window.AUDIO_AVAILABLE) —
     // niet hier definieren. Wordt door de TTS-rollout-script bijgewerkt.
@@ -146,9 +131,7 @@ const App = {
             ? '<strong>⚠ Buiten-canoniek boek (Ethiopisch-orthodoxe traditie).</strong> ' +
               'Dit boek is géén onderdeel van de canon van Gods Woord en hoort niet tot de Statenvertaling-canon. ' +
               'De vertaling is in bewerking en de Ge’ez-grondtekst wordt slechts gedeeltelijk (per beschikbaar hoofdstuk) getoond.'
-            : '<strong>⚠ Apocrief boek — geen onderdeel van de canon van Gods Woord.</strong> ' +
-              'Dit boek behoort tot de apocriefe (deuterocanonieke) geschriften en maakt geen deel uit van de 66 boeken ' +
-              'van de protestantse canon. Het wordt hier opgenomen ter informatie en studie, niet als gezaghebbend Woord van God.';
+            : '<strong>⚠ Apocrief boek - geen onderdeel van de canon van Gods Woord</strong>';
         banner.style.display = 'block';
     },
 
@@ -449,15 +432,6 @@ const App = {
         // Audio play-knop in chapter-footer wirelinen
         App._setupAudioPlayer();
 
-        // Strong's toggle (optioneel — checkbox is verwijderd uit Opties)
-        const strongsCb = document.getElementById('toggle-strongs');
-        if (strongsCb) {
-            strongsCb.addEventListener('change', () => {
-                if (Navigation.currentBook && Navigation.currentChapter) {
-                    App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
-                }
-            });
-        }
         // Begrippen-default: als checkbox checked is bij load → meteen activeren
         setTimeout(() => {
             const begrCb = document.getElementById('toggle-begrippen') || document.getElementById('quick-begrippen');
@@ -630,7 +604,7 @@ const App = {
             row.dataset.verse = verse.number;
 
             // Hebreeuws/Grieks kolom — klikbare woorden met Strong's
-            const showStrongs = document.getElementById('toggle-strongs') && document.getElementById('toggle-strongs').checked;
+            const showStrongs = typeof Opties !== 'undefined' && Opties.state.strongs === 'aan';
             let hebrewHtml;
             const isGeez = book.testament === 'ET';
             if (verse.grondtekst && verse.grondtekst.length > 0) {
@@ -685,23 +659,11 @@ const App = {
             // Het testament bepaalt of de nacht drie of vier waken telt.
             if (typeof Opties !== 'undefined' && Opties.rekenTijden) openVertaling = Opties.rekenTijden(openVertaling, bookId, chapterNum, verse.number, book.testament);
 
-            // Strong's nummers inline bij SV1888 en OV tekst
+            // Strong-nummers als bronvaste grondtekstalignering onder de OV-tekst.
+            // Er is geen betrouwbare woordalignering met de Nederlandse tekst.
             let sv1888Text = verse.textSV1888_html || verse.textSV1888 || '';
             if (showStrongs && verse.grondtekst && verse.grondtekst.length > 0) {
-                // OV2026: voeg Strong's nummers inline toe na elk woord
-                openVertaling = this.addInlineStrongs(openVertaling, verse.grondtekst);
-
-                // SV1888: toon Strong's als rij onder de tekst (bestaand gedrag)
-                const strongsList = verse.grondtekst
-                    .filter(w => w.strongs)
-                    .map(w => {
-                        const title = w.gloss ? w.gloss.replace(/[〔〕]/g, '') : w.woord || '';
-                        return `<span class="strongs-inline" title="${title}">${w.strongs}</span>`;
-                    })
-                    .join(' ');
-                if (strongsList) {
-                    sv1888Text += `<div class="strongs-row">${strongsList}</div>`;
-                }
+                openVertaling += this.renderStrongLinks(verse.grondtekst);
             }
 
             // Diff-kolom: toon phrase-level wijzigingen als "oud → nieuw"

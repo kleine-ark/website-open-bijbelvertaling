@@ -52,7 +52,7 @@
       "number": 2,
       "textSV1888": "O God! neem mijn gebed ter oren, en verberg U niet voor mijn smeking.",
       "text1637": "O Godt, neemt mijn gebedt ter ooren: ende en verbergt u niet voor mijne smeeckinge.",
-      "text2026": "O God! neem mijn gebed ter oren, en verberg U niet voor mijn smeking.",
+      "text2026": "O God! neem mijn gebed ter ore, en verberg U niet voor mijn smeking.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -86,8 +86,15 @@
           "morph": "HR/Ncfsc/Sp1cs"
         }
       ],
-      "text2026_html": "O God! neem mijn gebed ter oren, en verberg U niet voor mijn smeking.",
-      "text1637_html": "O Godt, neemt mijn gebedt ter ooren: ende en verbergt u niet voor mijne smeeckinge."
+      "text2026_html": "O God! neem mijn gebed ter ore, en verberg U niet voor mijn smeking.",
+      "text1637_html": "O Godt, neemt mijn gebedt ter ooren: ende en verbergt u niet voor mijne smeeckinge.",
+      "phraseDiff": [
+        {
+          "old": "oren,",
+          "new": "ore,",
+          "principe": "V1194"
+        }
+      ]
     },
     {
       "number": 3,
@@ -1044,7 +1051,7 @@
       "number": 16,
       "textSV1888": "Dat hun de dood als een schuldeiser overvalle, dat zij als levend ter helle nederdalen; want boosheden zijn in hun woning, in het binnenste van hen.",
       "text1637": "[30] Dat hen de [31] doot als een schulteysscher overvalle, datse levendich ter hellen nederdalen: want boosheden zijn in hare [32] wooninge in’t binnenste van hen.",
-      "text2026": "Dat hun de dood als een schuldeiser overvalle, dat zij als levend ter dodenrijk neerdalen; want boosheden zijn in hun woning, in het binnenste van hen.",
+      "text2026": "Dat hun de dood als een schuldeiser overvalle, dat zij als levend naar het dodenrijk neerdalen; want boosheden zijn in hun woning, in het binnenste van hen.",
       "marginNotes": [
         {
           "marker": "30",
@@ -1115,14 +1122,14 @@
           "morph": "HR/Ncmsc/Sp3mp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"30\">30</sup> Dat hun de<sup class=\"note-marker\" data-note=\"31\">31</sup> dood als een schuldeiser overvalle, dat zij als levend ter dodenrijk neerdalen; want boosheden zijn in hun<sup class=\"note-marker\" data-note=\"32\">32</sup> woning, in het binnenste van hen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"30\">30</sup> Dat hun de<sup class=\"note-marker\" data-note=\"31\">31</sup> dood als een schuldeiser overvalle, dat zij als levend naar het dodenrijk neerdalen; want boosheden zijn in hun<sup class=\"note-marker\" data-note=\"32\">32</sup> woning, in het binnenste van hen.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"30\">30</sup> Dat hun de<sup class=\"note-marker\" data-note=\"31\">31</sup> dood als een schuldeiser overvalle, dat zij als levend ter helle nederdalen; want boosheden zijn in hun<sup class=\"note-marker\" data-note=\"32\">32</sup> woning, in het binnenste van hen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"30\">30</sup> Dat hen de <sup class=\"note-marker\" data-note=\"31\">31</sup> doot als een schulteysscher overvalle, datse levendich ter hellen nederdalen: want boosheden zijn in hare <sup class=\"note-marker\" data-note=\"32\">32</sup> wooninge in’t binnenste van hen.",
       "phraseDiff": [
         {
-          "old": "helle nederdalen;",
-          "new": "dodenrijk neerdalen;",
-          "principe": null
+          "old": "ter helle nederdalen;",
+          "new": "naar het dodenrijk neerdalen;",
+          "principe": "V1197"
         }
       ]
     },

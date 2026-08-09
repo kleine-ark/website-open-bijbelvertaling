@@ -120,7 +120,12 @@
     function render(container, references, options) {
         options = options || {};
         if (!container) return;
+        var oldMore = container.nextElementSibling;
+        if (oldMore && oldMore.classList.contains('gt-meer-teksten')) oldMore.remove();
         container.textContent = '';
+        var allReferences = references || [];
+        var limit = options.compact ? (options.initialLimit || 8) : allReferences.length;
+        references = allReferences.slice(0, limit);
         var items = [];
         for (var i = 0; i < (references || []).length; i++) {
             var item = maakItem(references[i], options);
@@ -141,6 +146,19 @@
             }
         }, { rootMargin: '400px 0px' });
         for (var n = 0; n < items.length; n++) observer.observe(items[n]);
+
+        if (allReferences.length > references.length) {
+            var more = element('button', 'gt-meer-teksten', '+ meer teksten');
+            more.type = 'button';
+            more.setAttribute('aria-label', 'Meer teksten weergeven');
+            more.addEventListener('click', function () {
+                var expandedOptions = {};
+                for (var key in options) expandedOptions[key] = options[key];
+                expandedOptions.compact = false;
+                render(container, allReferences, expandedOptions);
+            });
+            container.insertAdjacentElement('afterend', more);
+        }
     }
 
     global.GekoppeldeTeksten = {

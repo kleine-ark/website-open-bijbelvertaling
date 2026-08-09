@@ -2,6 +2,7 @@
 
 const Lexicon = {
     currentTooltip: null,
+    lastTrigger: null,
 
     hoverTooltip: null,
     hoverTimeout: null,
@@ -33,13 +34,13 @@ const Lexicon = {
             const inlineEl = e.target.closest('.strongs-inline');
             if (inlineEl) {
                 e.stopPropagation();
-                const strongs = inlineEl.textContent.trim();
+                const strongs = inlineEl.dataset.strongs || inlineEl.textContent.trim().replace(/[<>]/g, '');
                 if (strongs) {
                     this.showEntryByStrongs(strongs, inlineEl);
                 }
                 return;
             }
-            if (this.currentTooltip && !e.target.closest('.lexicon-tooltip')) {
+            if (this.currentTooltip && !e.target.closest('.lexicon-tooltip, .strongs-sheet-panel')) {
                 this.hideTooltip();
             }
         });
@@ -61,6 +62,13 @@ const Lexicon = {
                 clearTimeout(this.hoverTimeout);
                 this.hideHover();
                 this.clearHighlights();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.currentTooltip) {
+                e.preventDefault();
+                this.hideTooltip(true);
             }
         });
     },
@@ -105,81 +113,15 @@ const Lexicon = {
     },
 
     async showEntry(wordEl) {
-        this.hideTooltip();
-
         const strongs = wordEl.dataset.strongs;
         if (!strongs) return;
-
-        // Lazy-load lexicon indien nog niet geladen (bespaart 14 MB initial load)
-        if (window.LexiconLoader) {
-            await window.LexiconLoader.ensureLoaded(strongs.startsWith('H') ? 'hebrew' : 'greek');
-        }
-
-        let entry = null;
-        let lexiconName = '';
-
-        if (strongs.startsWith('H') && typeof bdbLexicon !== 'undefined') {
-            entry = bdbLexicon[strongs];
-            lexiconName = 'BDB Hebreeuws';
-        } else if (strongs.startsWith('G') && typeof abbottSmithLexicon !== 'undefined') {
-            entry = abbottSmithLexicon[strongs];
-            lexiconName = 'Abbott-Smith Grieks';
-        }
-
-        if (!entry) return;
-
-        // Nederlandse overlay (valt terug op Engels zolang nog niet vertaald)
-        const nl = await this.ensureNl(strongs.startsWith('H') ? 'hebrew' : 'greek');
-        const t = nl[strongs] || {};
-
-        const tooltip = document.createElement('div');
-        tooltip.className = 'lexicon-tooltip';
-
-        const gloss = t.glossNl || entry.gloss || '';
-        const woord = entry.woord || '';
-        // Korte definitie: neem eerste 400 tekens (Nederlands indien beschikbaar)
-        let definitie = t.samenvattingNl || t.definitieNl || entry.definitie || '';
-        if (definitie.length > 400) {
-            definitie = definitie.substring(0, 400) + '...';
-        }
-
-        tooltip.innerHTML = `
-            <div class="lexicon-header">
-                <span class="lexicon-strongs">${strongs}</span>
-                <span class="lexicon-source">${lexiconName}</span>
-            </div>
-            <div class="lexicon-word">${woord}</div>
-            <div class="lexicon-gloss">${gloss}</div>
-            <div class="lexicon-def">${definitie}</div>
-            <div style="margin-top:8px;border-top:1px solid #eee;padding-top:6px;">
-                <a href="lexicon-viewer.html?entry=${strongs}" target="_blank" rel="noopener" style="color:var(--gold);font-size:12px;text-decoration:none;">→ Open in lexicon</a>
-            </div>
-        `;
-
-        document.body.appendChild(tooltip);
-        this.currentTooltip = tooltip;
-
-        // Positioneer bij het woord
-        const rect = wordEl.getBoundingClientRect();
-        const tooltipRect = tooltip.getBoundingClientRect();
-
-        let left = rect.left;
-        let top = rect.bottom + 4;
-
-        // Zorg dat tooltip binnen viewport blijft
-        if (left + tooltipRect.width > window.innerWidth - 10) {
-            left = window.innerWidth - tooltipRect.width - 10;
-        }
-        if (top + tooltipRect.height > window.innerHeight - 10) {
-            top = rect.top - tooltipRect.height - 4;
-        }
-
-        tooltip.style.left = left + 'px';
-        tooltip.style.top = top + 'px';
+        return this.showEntryByStrongs(strongs, wordEl);
     },
 
     async showEntryByStrongs(strongs, anchorEl) {
         this.hideTooltip();
+
+        if (!/^[HG]\d+[A-Za-z]?$/.test(strongs)) return;
 
         // Lazy-load lexicon indien nog niet geladen
         if (window.LexiconLoader) {
@@ -202,44 +144,91 @@ const Lexicon = {
         const nl = await this.ensureNl(strongs.startsWith('H') ? 'hebrew' : 'greek');
         const t = nl[strongs] || {};
 
-        const gloss = t.glossNl || entry.gloss || '';
-        const woord = entry.woord || '';
-        let definitie = t.samenvattingNl || t.definitieNl || entry.definitie || '';
-        if (definitie.length > 400) definitie = definitie.substring(0, 400) + '...';
+        const gloss = t.glossNl || t.samenvattingNl || entry.gloss || '';
+        const woord = anchorEl.dataset.sourceWord || entry.woord || '';
+        const transliteratie = anchorEl.dataset.transliteratie || entry.translit || entry.transliteratie || '';
+        const definitie = t.definitieNl || entry.definitie || '';
 
-        const tooltip = document.createElement('div');
-        tooltip.className = 'lexicon-tooltip';
-        tooltip.innerHTML = `
-            <div class="lexicon-header">
-                <span class="lexicon-strongs">${strongs}</span>
-                <span class="lexicon-source">${lexiconName}</span>
-            </div>
-            <div class="lexicon-word">${woord}</div>
-            <div class="lexicon-gloss">${gloss}</div>
-            <div class="lexicon-def">${definitie}</div>
-            <div style="margin-top:8px;border-top:1px solid #eee;padding-top:6px;">
-                <a href="lexicon-viewer.html?entry=${strongs}" target="_blank" rel="noopener" style="color:var(--gold);font-size:12px;text-decoration:none;">→ Open in lexicon</a>
-            </div>
-        `;
+        const sheet = document.createElement('div');
+        sheet.id = 'strongs-sheet';
+        sheet.className = 'strongs-sheet';
+        sheet.setAttribute('role', 'dialog');
+        sheet.setAttribute('aria-modal', 'true');
+        sheet.setAttribute('aria-labelledby', 'strongs-sheet-number');
+        sheet.innerHTML = `
+            <section class="strongs-sheet-panel">
+                <div class="strongs-sheet-handle" aria-hidden="true"></div>
+                <header class="strongs-sheet-header">
+                    <div>
+                        <span id="strongs-sheet-number" class="lexicon-strongs">${this.escapeHtml(strongs)}</span>
+                        <span class="lexicon-source">${this.escapeHtml(lexiconName)}</span>
+                    </div>
+                    <button type="button" class="strongs-sheet-close" aria-label="Woordenboek sluiten">×</button>
+                </header>
+                <div class="strongs-sheet-content">
+                    <div id="strongs-sheet-word" class="lexicon-word">${this.escapeHtml(woord)}</div>
+                    ${transliteratie ? `<div class="strongs-sheet-transliteration">${this.escapeHtml(transliteratie)}</div>` : ''}
+                    <div class="lexicon-gloss">${this.escapeHtml(gloss)}</div>
+                    <div id="strongs-sheet-definition" class="lexicon-def">${this.sanitizeDefinition(definitie)}</div>
+                    <a id="strongs-sheet-full-link" class="strongs-sheet-full-link" href="lexicon-viewer.html?entry=${encodeURIComponent(strongs)}">Volledig woordenboekartikel openen →</a>
+                </div>
+            </section>`;
 
-        document.body.appendChild(tooltip);
-        this.currentTooltip = tooltip;
-
-        const rect = anchorEl.getBoundingClientRect();
-        const tooltipRect = tooltip.getBoundingClientRect();
-        let left = rect.left;
-        let top = rect.bottom + 4;
-        if (left + tooltipRect.width > window.innerWidth - 10) left = window.innerWidth - tooltipRect.width - 10;
-        if (top + tooltipRect.height > window.innerHeight - 10) top = rect.top - tooltipRect.height - 4;
-        tooltip.style.left = left + 'px';
-        tooltip.style.top = top + 'px';
+        sheet.addEventListener('click', (event) => {
+            if (event.target === sheet) this.hideTooltip(true);
+        });
+        sheet.addEventListener('keydown', (event) => {
+            if (event.key !== 'Tab') return;
+            const focusable = [...sheet.querySelectorAll('button:not([disabled]), a[href]')];
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        });
+        sheet.querySelector('.strongs-sheet-close').addEventListener('click', () => this.hideTooltip(true));
+        document.body.appendChild(sheet);
+        document.body.classList.add('strongs-sheet-open');
+        this.currentTooltip = sheet;
+        this.lastTrigger = anchorEl;
+        sheet.querySelector('.strongs-sheet-close').focus();
     },
 
-    hideTooltip() {
+    escapeHtml(value) {
+        const span = document.createElement('span');
+        span.textContent = String(value == null ? '' : value);
+        return span.innerHTML;
+    },
+
+    sanitizeDefinition(html) {
+        const template = document.createElement('template');
+        template.innerHTML = String(html || 'Geen woordenboekdefinitie beschikbaar.');
+        const allowed = new Set(['B', 'STRONG', 'I', 'EM', 'BR', 'P', 'DIV', 'UL', 'OL', 'LI', 'SUP', 'SUB', 'SPAN']);
+        [...template.content.querySelectorAll('*')].forEach(node => {
+            if (!allowed.has(node.tagName)) {
+                node.replaceWith(...node.childNodes);
+                return;
+            }
+            [...node.attributes].forEach(attribute => node.removeAttribute(attribute.name));
+        });
+        return template.innerHTML;
+    },
+
+    hideTooltip(restoreFocus = false) {
         if (this.currentTooltip) {
             this.currentTooltip.remove();
             this.currentTooltip = null;
         }
+        document.body.classList.remove('strongs-sheet-open');
+        if (restoreFocus && this.lastTrigger && this.lastTrigger.isConnected) {
+            this.lastTrigger.focus();
+        }
+        this.lastTrigger = null;
     },
 
     // --- Grondtekst ↔ NL koppeling ---

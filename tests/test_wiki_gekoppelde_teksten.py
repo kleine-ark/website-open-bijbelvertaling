@@ -139,6 +139,8 @@ class GekoppeldeTekstenTest(unittest.TestCase):
         try:
             page.goto(f"{self.base_url}/materialen.html?item=goud")
             page.locator('.gt-vers[data-ref="genesis 2:11"] .osv-vers').wait_for()
+            self.assertEqual(page.locator("#naslag-gekoppelde-teksten .gt-vers").count(), min(8, expected))
+            page.get_by_role("button", name="Meer teksten weergeven").click()
             self.assertEqual(page.locator("#naslag-gekoppelde-teksten .gt-vers").count(), expected)
             self.assertEqual(page.locator("#naslag .ns-verzen").count(), 0)
         finally:
@@ -157,10 +159,10 @@ class GekoppeldeTekstenTest(unittest.TestCase):
                 try:
                     page.goto(f"{self.base_url}/{address}")
                     page.locator("#naslag-gekoppelde-teksten .gt-vers").first.wait_for(timeout=3000)
-                    self.assertEqual(
-                        page.locator("#naslag-gekoppelde-teksten .gt-vers").count(),
-                        expected,
-                    )
+                    self.assertEqual(page.locator("#naslag-gekoppelde-teksten .gt-vers").count(), min(8, expected))
+                    if expected > 8:
+                        page.get_by_role("button", name="Meer teksten weergeven").click()
+                    self.assertEqual(page.locator("#naslag-gekoppelde-teksten .gt-vers").count(), expected)
                 finally:
                     page.close()
 
@@ -179,6 +181,12 @@ class GekoppeldeTekstenTest(unittest.TestCase):
                 try:
                     page.goto(f"{self.base_url}/{address}")
                     verse = page.locator(f'.gt-vers[data-ref="{verse_ref}"]')
+                    page.locator("#naslag-gekoppelde-teksten .gt-vers").first.wait_for(
+                        timeout=5000
+                    )
+                    more = page.get_by_role("button", name="Meer teksten weergeven")
+                    if not verse.count() and more.is_visible():
+                        more.click()
                     verse.locator(".osv-vers").wait_for(timeout=5000)
                     self.assertEqual(verse.locator(".gt-vers-kop a").inner_text(), label)
                     self.assertTrue(page.locator(".ns-type-detail").is_visible())

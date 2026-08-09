@@ -57,7 +57,8 @@ class WikiCinemagraphTests(unittest.TestCase):
             self.assertIn(f'href="wiki.html#{slug}"', overview)
             self.assertIn(f'href="#{slug}" data-page="{slug}.html"', shell)
             page = (ROOT / f"{slug}.html").read_text(encoding="utf-8")
-            self.assertIn(f'data-naslag="data/naslag-{slug}.json"', page)
+            data_file = "personen-register" if slug == "personen" else f"naslag-{slug}"
+            self.assertIn(f'data-naslag="data/{data_file}.json"', page)
 
     def test_removed_begrippen_page_is_not_linked_from_the_wiki(self):
         overview = (ROOT / "wiki-overzicht.html").read_text(encoding="utf-8")

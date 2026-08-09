@@ -31,9 +31,10 @@
 }
 .topnav-logo {
     display: block;
-    width: min(210px, 100%);
-    height: auto;
-    max-height: 50px;
+    width: auto;
+    height: 58px;
+    max-width: 210px;
+    object-fit: contain;
 }
 .topnav-subtitle {
     /* Subtitle krimpt eerst weg als ruimte krap wordt */
@@ -310,7 +311,7 @@
    al op tablet-/smalle laptopbreedte achter de hamburger. */
 @media (min-width: 769px) and (max-width: 1180px) {
     .topnav-brand { flex: 1 1 auto; gap: 7px; }
-    .topnav-logo { width: 167px; max-height: 50px; }
+    .topnav-logo { width: auto; height: 50px; max-width: 167px; }
     .topnav-hamburger { display: flex; }
     .topnav-links {
         display: none;
@@ -346,7 +347,7 @@
         flex: 0 1 auto;
         gap: 5px;
     }
-    .topnav-logo { width: 150px; max-height: 40px; }
+    .topnav-logo { width: auto; height: 44px; max-width: 150px; }
     .topnav-subtitle { display: none; }
     /* Versienummer klein zichtbaar naast de merknaam op mobiel. */
     .topnav-version { display: inline; font-size: 11px; margin-left: 6px; vertical-align: middle; opacity: 0.85; }
@@ -913,27 +914,12 @@ body {
     padding: 0;
     overflow: hidden;
 }
-#sidebar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 16px;
-    border-bottom: 2px solid var(--gold);
-    flex: 0 0 auto;
-    background: var(--navy);
-    position: sticky;
-    top: 0;
-    z-index: 5;
-}
-#sidebar-header h1 {
-    font-family: var(--font-cursive);
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--teal-light);
-    white-space: nowrap;
-}
 #sidebar-toggle {
-    background: none;
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    z-index: 6;
+    background: var(--navy);
     border: none;
     color: rgba(255,255,255,0.5);
     font-size: 16px;
@@ -974,14 +960,6 @@ body {
 body.options-open #sidebar-right-open { visibility: hidden; }
 
 /* === Zwevend optiespaneel === */
-.sidebar-left-title {
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.05em;
-    color: #fff;
-}
-
 #sidebar-right.options-panel {
     position: fixed;
     inset: 88px 16px 16px auto;
@@ -1009,8 +987,8 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     animation: options-panel-in 180ms ease-out forwards;
 }
 #sidebar-right.options-panel::backdrop {
-    background: rgba(14, 34, 50, 0.42);
-    backdrop-filter: blur(1.5px);
+    background: transparent;
+    backdrop-filter: none;
 }
 @keyframes options-panel-in {
     to { opacity: 1; transform: translateX(0); }
@@ -1025,6 +1003,7 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     border: 0;
     border-bottom: 1px solid var(--border-soft);
 }
+.options-sheet-grip { display: none; }
 #sidebar-right-toggle {
     position: absolute;
     top: 15px;
@@ -1038,6 +1017,7 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     font-size: 28px;
     line-height: 1;
     cursor: pointer;
+    z-index: 3;
 }
 #sidebar-right-toggle:hover { background: var(--bg-surface-alt); color: var(--navy); }
 .options-eyebrow {
@@ -1067,7 +1047,7 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
-    margin: 0 -4px;
+    margin: 0 -4px 16px;
 }
 .options-tabs [role="tab"] {
     position: relative;
@@ -1289,6 +1269,7 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     color: var(--text-primary);
     font: 12px var(--font-body);
 }
+.option-row-book-order select { max-width: 230px; }
 .options-zoom-controls {
     display: inline-flex;
     flex: 0 0 auto;
@@ -1332,22 +1313,108 @@ body.options-open #sidebar-right-open { visibility: hidden; }
 :root[data-theme="donker"] #sidebar-right-toggle { color: var(--text-primary); }
 
 @media (max-width: 768px) {
+    #sidebar-right.options-panel::backdrop {
+        background: rgba(8, 27, 42, 0.24);
+        backdrop-filter: none;
+    }
     #sidebar-right.options-panel {
-        inset: 56px 0 0;
+        inset: max(180px, 32dvh) 0 0;
         width: 100vw;
-        height: calc(100dvh - 56px);
+        height: auto;
         max-height: none;
         border-width: 1px 0 0;
-        border-radius: 22px 22px 0 0;
+        border-color: rgba(20, 46, 66, 0.14);
+        border-radius: 38px 38px 0 0;
+        background: #fbfaf7;
+        color: #172d40;
         transform: translateY(18px);
-        box-shadow: 0 -10px 40px rgba(10, 31, 48, 0.22);
+        box-shadow: 0 -12px 38px rgba(5, 24, 38, 0.28);
     }
-    #sidebar-right-header.options-header { padding: 19px 20px 0; }
-    #sidebar-right-toggle { top: 10px; right: 12px; }
-    #options-title { font-size: 27px; }
-    .options-preview { margin-bottom: 12px; font-size: 16px; }
-    .options-tabs [role="tab"] { min-height: 44px; font-size: 11px; letter-spacing: 0.055em; }
-    #sidebar-right-body.options-body { padding: 16px 19px calc(32px + env(safe-area-inset-bottom, 0px)); }
+    :root[data-theme="donker"] #sidebar-right.options-panel {
+        background: #fbfaf7 !important;
+        color: #172d40;
+    }
+    #sidebar-right-header.options-header {
+        padding: 30px 25px 0;
+        background: #fbfaf7;
+        color: #172d40;
+        border-bottom-color: rgba(20, 46, 66, 0.14);
+    }
+    #sidebar-right-toggle {
+        top: 70px;
+        right: 15px;
+        color: #17344e !important;
+        z-index: 2;
+    }
+    .options-tabs { margin: 0 34px 18px; }
+    .options-tabs [role="tab"] {
+        min-height: 46px;
+        color: #17344e !important;
+        font-family: var(--font-serif);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.045em;
+        background: transparent !important;
+    }
+    .options-tabs [role="tab"][aria-selected="true"] { color: #17344e !important; }
+    .options-tabs [role="tab"]::after { left: 12px; right: 12px; height: 3px; }
+    .options-sheet-grip {
+        display: block;
+        width: 42px;
+        height: 6px;
+        margin: 0 auto 15px;
+        border-radius: 999px;
+        background: #cbc8c2;
+    }
+    .options-eyebrow { display: none; }
+    #options-title {
+        margin: 0 44px;
+        color: #17344e !important;
+        font-size: 29px;
+        text-align: center;
+    }
+    .options-preview {
+        margin: 8px 0 20px;
+        color: #2e3740;
+        font-size: 16px;
+        text-align: center;
+    }
+    #sidebar-right-body.options-body {
+        padding: 0 24px calc(32px + env(safe-area-inset-bottom, 0px));
+        background: #fbfaf7;
+        color: #172d40;
+    }
+    #sidebar-right .options-section-heading h3,
+    #sidebar-right .option-row,
+    #sidebar-right .option-choice > summary,
+    #sidebar-right .option-choice > legend,
+    #sidebar-right .option-status strong { color: #172d40; }
+    #sidebar-right .options-section-heading p,
+    #sidebar-right .option-row small,
+    #sidebar-right .option-current,
+    #sidebar-right .option-choice-values label,
+    #sidebar-right .option-status { color: #657078; }
+    #sidebar-right .options-list,
+    #sidebar-right .option-row,
+    #sidebar-right .option-choice,
+    #sidebar-right .options-header { border-color: rgba(20, 46, 66, 0.14); }
+    #sidebar-right input[type="radio"] { background: #fbfaf7; }
+    #sidebar-right label:has(input[type="radio"]:checked) {
+        color: #17344e;
+        font-weight: 600;
+    }
+    #sidebar-right .options-zoom-controls { background: #f1eee8; }
+    #sidebar-right .options-zoom-controls button {
+        background: transparent !important;
+        color: #17344e !important;
+    }
+    #sidebar-right #options-panel-lezen > .options-section-heading:first-child { display: none; }
+    #sidebar-right #options-panel-lezen > .options-list:first-of-type { border-top: 0; }
+    #sidebar-right input[type="checkbox"] { background: #eeeae2 !important; }
+    #sidebar-right input[type="checkbox"]:checked {
+        background: #123752 !important;
+        border-color: #123752 !important;
+    }
     .options-section-heading:not(:first-child) { margin-top: 24px; }
     .option-row { min-height: 56px; }
 }
@@ -1370,53 +1437,6 @@ body.options-open #sidebar-right-open { visibility: hidden; }
 }
 body.drawer-open #mobile-backdrop { display: block; }
 
-#sidebar-search {
-    padding: 8px 12px;
-}
-#sidebar-search input {
-    width: 100%;
-    padding: 6px 10px;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 4px;
-    background: rgba(255,255,255,0.08);
-    color: #fff;
-    font-family: var(--font-body);
-    font-size: 13px;
-    outline: none;
-}
-#sidebar-search input::placeholder { color: rgba(255,255,255,0.4); }
-#sidebar-search input:focus { border-color: var(--gold); background: rgba(255,255,255,0.12); }
-
-/* Boekvolgorde-keuze in linker sidebar */
-#sidebar-boekvolgorde {
-    padding: 0 12px 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-#sidebar-boekvolgorde label {
-    font-size: 11px;
-    color: rgba(255,255,255,0.55);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    flex: 0 0 auto;
-}
-#sidebar-boekvolgorde select {
-    flex: 1 1 auto;
-    min-width: 0;
-    padding: 5px 8px;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 4px;
-    background: rgba(255,255,255,0.08);
-    color: #fff;
-    font-family: var(--font-body);
-    font-size: 12px;
-    outline: none;
-    cursor: pointer;
-}
-#sidebar-boekvolgorde select:focus { border-color: var(--gold); }
-#sidebar-boekvolgorde select option { color: #222; }
-
 #sidebar-tree {
     flex: 1;
     overflow-y: auto;
@@ -1430,7 +1450,7 @@ body.drawer-open #mobile-backdrop { display: block; }
     margin-bottom: 2px;
 }
 .tree-group-label {
-    padding: 8px 16px;
+    padding: 8px 42px 8px 16px;
     font-size: 11px;
     font-weight: 600;
     color: var(--gold);
@@ -2277,16 +2297,54 @@ sup.note-marker:hover {
 }
 .strongs-inline {
     cursor: pointer;
-    padding: 0 2px;
-    border-radius: 2px;
-    color: #4a7fb5;
-    font-size: 9px;
-    vertical-align: super;
-    line-height: 0;
+    padding: 2px 3px;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    color: #246da8;
+    font: inherit;
+    font-size: 10px;
+    line-height: 1.2;
+    user-select: none;
 }
 .strongs-inline:hover {
     background: rgba(74, 127, 181, 0.15);
     color: #2a5a8a;
+}
+.strongs-inline:focus-visible {
+    outline: 2px solid #246da8;
+    outline-offset: 2px;
+}
+.strongs-alignment {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 5px 9px;
+    margin-top: 9px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-light);
+    direction: rtl;
+    font-family: var(--font-body);
+    user-select: none;
+}
+.strongs-alignment-greek { direction: ltr; }
+.strongs-alignment-greek .strongs-source-word {
+    direction: ltr;
+    font-family: var(--font-serif);
+}
+.strongs-token {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    direction: ltr;
+}
+.strongs-source-word {
+    color: var(--text-primary);
+    font-family: "Noto Serif Hebrew", "SBL Hebrew", "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.2;
+    direction: rtl;
 }
 
 .strongs-word:hover {
@@ -2408,6 +2466,100 @@ sup.note-marker:hover {
     color: #555;
     border-top: 1px solid #eee;
     padding-top: 8px;
+}
+
+/* Toegankelijk woordenboekpaneel onderaan bij Strong-nummers. */
+.strongs-sheet {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: rgba(19, 41, 58, 0.28);
+}
+.strongs-sheet-panel {
+    width: min(760px, 100%);
+    max-height: min(72vh, 680px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-light);
+    border-bottom: 0;
+    border-radius: 18px 18px 0 0;
+    background: var(--bg-surface);
+    box-shadow: 0 -12px 40px rgba(19, 41, 58, 0.2);
+}
+.strongs-sheet-handle {
+    width: 44px;
+    height: 4px;
+    margin: 9px auto 2px;
+    border-radius: 3px;
+    background: var(--border-light);
+}
+.strongs-sheet-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-light);
+}
+.strongs-sheet-header > div {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+.strongs-sheet-close {
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+.strongs-sheet-close:focus-visible {
+    outline: 2px solid #246da8;
+    outline-offset: 2px;
+}
+.strongs-sheet-content {
+    overflow-y: auto;
+    padding: 18px 22px 28px;
+    line-height: 1.6;
+}
+.strongs-sheet-content .lexicon-word {
+    font-size: 28px;
+    color: var(--text-primary);
+}
+.strongs-sheet-transliteration {
+    margin-top: -4px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+.strongs-sheet-content .lexicon-def {
+    max-height: none;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+.strongs-sheet-content .lexicon-def p:first-child { margin-top: 0; }
+.strongs-sheet-full-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media (min-width: 769px) {
+    .strongs-sheet-panel {
+        margin-bottom: 18px;
+        border-bottom: 1px solid var(--border-light);
+        border-radius: 18px;
+    }
 }
 
 /* Directe rede — cursief */
@@ -4462,9 +4614,6 @@ body.dark .geez-lex-popup .geez-lex-betekenis { color: #d8d8d8; }
     background: var(--bg-surface-alt) !important;
     color: var(--text-primary) !important;
 }
-:root[data-theme="donker"] #sidebar-header {
-    background: #000000 !important;   /* was navy/blauw — nu zwart */
-}
 :root[data-theme="donker"] #sidebar #sidebar-tree,
 :root[data-theme="donker"] #sidebar input,
 :root[data-theme="donker"] #sidebar button {
@@ -4747,7 +4896,6 @@ body.dark .geez-lex-popup .geez-lex-betekenis { color: #d8d8d8; }
    (Het decoratieve Allura blijft alleen op de over-ov hero.) */
 .topnav-brand,
 #chapter-title,
-#sidebar-header h1,
 .header-title,
 .mp-title,
 .opt-section,

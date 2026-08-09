@@ -149,7 +149,7 @@
    "number": 3,
    "textSV1888": "Hoort, gij koningen, neemt ter oren, gij vorsten! Ik, den HEERE zal ik zingen, ik zal den HEERE, den God Israëls, psalmzingen.",
    "text1637": "Hoort, ghy Koningen, neemt ter ooren, ghy Vorsten: Ick, den HEERE sal ick singen, ick sal den HEERE den Godt Israëls psalm-singen.",
-   "text2026": "Hoor, u koningen, neemt ter oren, u vorsten! Ik, voor JAHWEH zal ik zingen, ik zal JAHWEH, de God van Israël, psalmzingen.",
+   "text2026": "Hoor, u koningen, neem ter ore, u vorsten! Ik, voor JAHWEH zal ik zingen, ik zal JAHWEH, de God van Israël, psalmzingen.",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -213,7 +213,7 @@
      "morph": "HNp"
     }
    ],
-   "text2026_html": "<span class=\"direct-speech\"><i>Hoor, u koningen, neemt ter oren, u vorsten! Ik, voor JAHWEH zal ik zingen, ik zal JAHWEH, de God van Israël, psalmzingen.</i></span>",
+   "text2026_html": "<span class=\"direct-speech\"><i>Hoor, u koningen, neem ter ore, u vorsten! Ik, voor JAHWEH zal ik zingen, ik zal JAHWEH, de God van Israël, psalmzingen.</i></span>",
    "text1637_html": "Hoort, ghy Koningen, neemt ter ooren, ghy Vorsten: Ick, den HEERE sal ick singen, ick sal den HEERE den Godt Israëls psalm-singen.",
    "phraseDiff": [
     {
@@ -222,9 +222,14 @@
      "principe": "V1158"
     },
     {
-     "old": "gij",
-     "new": "u",
-     "principe": "A1"
+     "old": "neemt",
+     "new": "neem",
+     "principe": null
+    },
+    {
+     "old": "oren, gij",
+     "new": "ore, u",
+     "principe": "V1194"
     },
     {
      "old": "den HEERE",

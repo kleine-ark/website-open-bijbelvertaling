@@ -156,28 +156,9 @@ const MobileNav = {
         });
         body.appendChild(search);
 
-        // Boekvolgorde-keuze (zelfde opties als de desktop-sidebar)
+        // De boekvolgorde komt uit Leesvoorkeuren; de boekenpicker toont alleen
+        // de zoekfunctie en de boeken in de daar gekozen volgorde.
         const mode = (window.Opties && Opties.state && Opties.state.boekvolgorde) || 'canoniek';
-        const orderSel = document.createElement('select');
-        orderSel.className = 'mp-order';
-        orderSel.setAttribute('aria-label', 'Boekvolgorde');
-        [['canoniek','Canoniek (SV / westers)'],['tenach','Joodse Tenach (TNK)'],['orthodox','Orthodox (Septuaginta)'],['ethiopisch','Ethiopisch (Tewahedo)'],['chronologisch','Chronologisch (gebeurtenissen)'],['schrijftijd','Vermoedelijke schrijftijd'],['auteur','Op auteur']].forEach(([v,t]) => {
-            const o = document.createElement('option');
-            o.value = v; o.textContent = 'Volgorde: ' + t;
-            if (v === mode) o.selected = true;
-            orderSel.appendChild(o);
-        });
-        orderSel.addEventListener('change', () => {
-            if (window.Opties) {
-                Opties.state.boekvolgorde = orderSel.value;
-                Opties.save();
-                if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
-                document.querySelectorAll('select[data-optie="boekvolgorde"]').forEach(s => { s.value = orderSel.value; });
-            }
-            body.innerHTML = '';
-            this._renderBooks(body);
-        });
-        body.appendChild(orderSel);
 
         // Groepen volgens de gekozen volgorde (val terug op de statische canon)
         let groups = this.BOOK_GROUPS;

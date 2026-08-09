@@ -212,7 +212,14 @@
             var feats = new ol.format.GeoJSON().readFeatures(res[0], { dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857' });
             vectorSource.addFeatures(feats);
             pasFilterToe();
-            if (feats.length) {
+            var gevraagdePlaats = new URLSearchParams(window.location.search).get('plaats');
+            var gekozen = gevraagdePlaats && feats.find(function (feat) {
+                return String(feat.get('naam') || '').toLocaleLowerCase('nl') === gevraagdePlaats.toLocaleLowerCase('nl');
+            });
+            if (gekozen) {
+                map.getView().animate({ center: gekozen.getGeometry().getCoordinates(), zoom: 9, duration: 300 });
+                gekozen.setStyle(markerStyle(gekozen, true));
+            } else if (feats.length) {
                 var ext = vectorSource.getExtent();
                 map.getView().fit(ext, { padding: [50, 50, 50, 50], maxZoom: 7, duration: 300 });
             }

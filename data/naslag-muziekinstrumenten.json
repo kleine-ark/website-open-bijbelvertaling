@@ -2,7 +2,7 @@
   "titel": "Muziekinstrumenten in de Bijbel",
   "bron": "de hele Bijbel",
   "corpusbreed": true,
-  "intro": "Muziekinstrumenten uit de hele Bijbel, van Jubal in Genesis tot de citers in Openbaring. De vindplaatsen omvatten ook de apocriefe boeken.",
+  "intro": "Muziekinstrumenten uit de hele Bijbel, van Jubal in Genesis tot de citers in Openbaring. Canonieke, apocriefe en Ethiopische vindplaatsen zijn afzonderlijk vastgelegd.",
   "boeknamen": {
     "genesis": "Genesis",
     "markus": "Markus",
@@ -85,7 +85,13 @@
     "2petrus": "2 Petrus",
     "2johannes": "2 Johannes",
     "3johannes": "3 Johannes",
-    "judas": "Judas"
+    "judas": "Judas",
+    "henoch": "Henoch",
+    "jubileeen": "Jubileeën",
+    "1meqabyan": "1 Meqabyan",
+    "2meqabyan": "2 Meqabyan",
+    "3meqabyan": "3 Meqabyan",
+    "4baruch": "4 Baruch"
   },
   "items": [
     {
@@ -133,9 +139,68 @@
         "nehemia 12:27",
         "job 21:12",
         "job 30:31",
+        "ezechiel 26:13",
         "1makkabeeen 4:54",
+        "1meqabyan 7:18",
+        "1meqabyan 9:5"
+      ],
+      "canoniekeVerzen": [
+        "genesis 4:21",
+        "genesis 31:27",
+        "psalmen 33:2",
+        "psalmen 43:4",
+        "psalmen 49:5",
+        "psalmen 57:9",
+        "psalmen 71:22",
+        "psalmen 81:3",
+        "psalmen 92:4",
+        "psalmen 98:5",
+        "psalmen 108:3",
+        "psalmen 137:2",
+        "psalmen 147:7",
+        "psalmen 149:3",
+        "psalmen 150:3",
+        "jesaja 5:12",
+        "jesaja 16:11",
+        "jesaja 23:16",
+        "jesaja 24:8",
+        "jesaja 30:32",
+        "1samuel 10:5",
+        "1samuel 16:16",
+        "1samuel 16:23",
+        "2samuel 6:5",
+        "1koningen 10:12",
+        "1kronieken 13:8",
+        "1kronieken 15:16",
+        "1kronieken 15:21",
+        "1kronieken 15:28",
+        "1kronieken 16:5",
+        "1kronieken 25:1",
+        "1kronieken 25:3",
+        "1kronieken 25:6",
+        "2kronieken 5:12",
+        "2kronieken 9:11",
+        "2kronieken 20:28",
+        "2kronieken 29:25",
+        "nehemia 12:27",
+        "job 21:12",
+        "job 30:31",
         "ezechiel 26:13"
       ],
+      "apocriefeVerzen": [
+        "1makkabeeen 4:54"
+      ],
+      "ethiopischeVerzen": [
+        "1meqabyan 7:18",
+        "1meqabyan 9:5"
+      ],
+      "tekstvormen": [
+        "harp",
+        "harpen"
+      ],
+      "zekerheid": "zeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
       "gebruik": "letterlijk"
     },
     {
@@ -145,22 +210,41 @@
       "verzen": [
         "psalmen 149:3",
         "psalmen 150:4",
-        "1koningen 9:8",
-        "job 27:23",
+        "openbaring 18:22",
+        "jeremia 48:36",
+        "mattheus 11:17",
+        "lukas 7:32",
+        "1korinthiers 14:7",
         "3ezra 5:2",
         "jezussirach 40:20",
         "1makkabeeen 3:45",
-        "jeremia 19:8",
+        "1meqabyan 19:1"
+      ],
+      "canoniekeVerzen": [
+        "psalmen 149:3",
+        "psalmen 150:4",
+        "openbaring 18:22",
         "jeremia 48:36",
-        "jeremia 49:17",
-        "jeremia 50:13",
-        "klaagliederen 2:15",
-        "klaagliederen 2:16",
-        "ezechiel 27:36",
         "mattheus 11:17",
         "lukas 7:32",
         "1korinthiers 14:7"
       ],
+      "apocriefeVerzen": [
+        "3ezra 5:2",
+        "jezussirach 40:20",
+        "1makkabeeen 3:45"
+      ],
+      "ethiopischeVerzen": [
+        "1meqabyan 19:1"
+      ],
+      "tekstvormen": [
+        "fluit",
+        "fluiten",
+        "fluiters"
+      ],
+      "zekerheid": "zeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
       "gebruik": "letterlijk"
     },
     {
@@ -195,6 +279,9 @@
         "ezra 3:10",
         "nehemia 12:35",
         "nehemia 12:41",
+        "ezechiel 7:14",
+        "hosea 5:8",
+        "mattheus 6:2",
         "jezussirach 50:17",
         "1makkabeeen 3:54",
         "1makkabeeen 4:13",
@@ -204,11 +291,60 @@
         "1makkabeeen 9:12",
         "1makkabeeen 9:13",
         "1makkabeeen 16:8",
-        "2makkabeeen 15:25",
+        "2makkabeeen 15:25"
+      ],
+      "canoniekeVerzen": [
+        "psalmen 98:6",
+        "numeri 10:2",
+        "numeri 10:8",
+        "numeri 10:9",
+        "numeri 10:10",
+        "numeri 31:6",
+        "2koningen 11:14",
+        "2koningen 12:13",
+        "1kronieken 13:8",
+        "1kronieken 15:24",
+        "1kronieken 15:28",
+        "1kronieken 16:6",
+        "1kronieken 16:42",
+        "2kronieken 5:12",
+        "2kronieken 5:13",
+        "2kronieken 7:6",
+        "2kronieken 13:12",
+        "2kronieken 13:14",
+        "2kronieken 15:14",
+        "2kronieken 20:28",
+        "2kronieken 23:13",
+        "2kronieken 29:26",
+        "2kronieken 29:27",
+        "2kronieken 29:28",
+        "ezra 3:10",
+        "nehemia 12:35",
+        "nehemia 12:41",
         "ezechiel 7:14",
         "hosea 5:8",
         "mattheus 6:2"
       ],
+      "apocriefeVerzen": [
+        "jezussirach 50:17",
+        "1makkabeeen 3:54",
+        "1makkabeeen 4:13",
+        "1makkabeeen 5:31",
+        "1makkabeeen 5:33",
+        "1makkabeeen 6:33",
+        "1makkabeeen 9:12",
+        "1makkabeeen 9:13",
+        "1makkabeeen 16:8",
+        "2makkabeeen 15:25"
+      ],
+      "ethiopischeVerzen": [],
+      "tekstvormen": [
+        "trompet",
+        "trompetten"
+      ],
+      "zekerheid": "zeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
       "gebruik": "letterlijk en beeldspraak"
     },
     {
@@ -231,10 +367,43 @@
         "2kronieken 29:25",
         "ezra 3:10",
         "nehemia 12:27",
+        "3ezra 5:59",
         "judith 16:2",
         "1makkabeeen 4:54",
         "1makkabeeen 13:51"
       ],
+      "canoniekeVerzen": [
+        "psalmen 150:5",
+        "2samuel 6:5",
+        "1kronieken 13:8",
+        "1kronieken 15:16",
+        "1kronieken 15:19",
+        "1kronieken 15:28",
+        "1kronieken 16:5",
+        "1kronieken 16:42",
+        "1kronieken 25:1",
+        "1kronieken 25:6",
+        "2kronieken 5:12",
+        "2kronieken 5:13",
+        "2kronieken 29:25",
+        "ezra 3:10",
+        "nehemia 12:27"
+      ],
+      "apocriefeVerzen": [
+        "3ezra 5:59",
+        "judith 16:2",
+        "1makkabeeen 4:54",
+        "1makkabeeen 13:51"
+      ],
+      "ethiopischeVerzen": [],
+      "tekstvormen": [
+        "cimbaal",
+        "cimbalen",
+        "cymbalen"
+      ],
+      "zekerheid": "zeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
       "gebruik": "letterlijk en beeldspraak"
     },
     {
@@ -259,6 +428,7 @@
         "openbaring 8:13",
         "openbaring 9:14",
         "openbaring 10:7",
+        "openbaring 18:22",
         "leviticus 25:9",
         "jozua 6:4",
         "jozua 6:5",
@@ -292,6 +462,29 @@
         "nehemia 4:20",
         "job 39:27",
         "job 39:28",
+        "jeremia 4:5",
+        "jeremia 4:19",
+        "jeremia 4:21",
+        "jeremia 6:1",
+        "jeremia 6:17",
+        "jeremia 42:14",
+        "jeremia 51:27",
+        "ezechiel 33:3",
+        "ezechiel 33:4",
+        "ezechiel 33:5",
+        "ezechiel 33:6",
+        "hosea 5:8",
+        "hosea 8:1",
+        "joel 2:1",
+        "joel 2:15",
+        "amos 2:2",
+        "amos 3:6",
+        "zefanja 1:16",
+        "mattheus 24:31",
+        "1korinthiers 14:8",
+        "1korinthiers 15:52",
+        "1tessalonicensen 4:16",
+        "hebreeen 12:19",
         "3ezra 5:59",
         "3ezra 5:62",
         "3ezra 5:64",
@@ -300,6 +493,67 @@
         "4ezra 5:4",
         "4ezra 6:23",
         "1makkabeeen 4:40",
+        "1meqabyan 7:18",
+        "1meqabyan 9:8",
+        "2meqabyan 14:34",
+        "2meqabyan 16:9",
+        "2meqabyan 19:14",
+        "2meqabyan 19:15",
+        "4baruch 3:2",
+        "4baruch 4:2"
+      ],
+      "canoniekeVerzen": [
+        "exodus 19:16",
+        "exodus 19:19",
+        "exodus 20:18",
+        "psalmen 47:6",
+        "psalmen 81:4",
+        "psalmen 150:3",
+        "jesaja 18:3",
+        "jesaja 27:13",
+        "jesaja 58:1",
+        "zacharia 9:14",
+        "openbaring 1:10",
+        "openbaring 4:1",
+        "openbaring 8:2",
+        "openbaring 8:6",
+        "openbaring 8:13",
+        "openbaring 9:14",
+        "openbaring 10:7",
+        "openbaring 18:22",
+        "leviticus 25:9",
+        "jozua 6:4",
+        "jozua 6:5",
+        "jozua 6:8",
+        "jozua 6:9",
+        "jozua 6:13",
+        "jozua 6:16",
+        "jozua 6:20",
+        "richteren 3:27",
+        "richteren 6:34",
+        "richteren 7:8",
+        "richteren 7:16",
+        "richteren 7:18",
+        "richteren 7:19",
+        "richteren 7:20",
+        "richteren 7:22",
+        "1samuel 13:3",
+        "2samuel 2:28",
+        "2samuel 6:15",
+        "2samuel 15:10",
+        "2samuel 18:16",
+        "2samuel 20:1",
+        "2samuel 20:22",
+        "1koningen 1:34",
+        "1koningen 1:39",
+        "1koningen 1:41",
+        "2koningen 9:13",
+        "1kronieken 15:28",
+        "2kronieken 15:14",
+        "nehemia 4:18",
+        "nehemia 4:20",
+        "job 39:27",
+        "job 39:28",
         "jeremia 4:5",
         "jeremia 4:19",
         "jeremia 4:21",
@@ -324,6 +578,34 @@
         "1tessalonicensen 4:16",
         "hebreeen 12:19"
       ],
+      "apocriefeVerzen": [
+        "3ezra 5:59",
+        "3ezra 5:62",
+        "3ezra 5:64",
+        "3ezra 5:65",
+        "3ezra 5:66",
+        "4ezra 5:4",
+        "4ezra 6:23",
+        "1makkabeeen 4:40"
+      ],
+      "ethiopischeVerzen": [
+        "1meqabyan 7:18",
+        "1meqabyan 9:8",
+        "2meqabyan 14:34",
+        "2meqabyan 16:9",
+        "2meqabyan 19:14",
+        "2meqabyan 19:15",
+        "4baruch 3:2",
+        "4baruch 4:2"
+      ],
+      "tekstvormen": [
+        "bazuin",
+        "bazuinen",
+        "bazuiners"
+      ],
+      "zekerheid": "zeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
       "gebruik": "letterlijk en beeldspraak"
     },
     {
@@ -356,8 +638,52 @@
         "2kronieken 20:28",
         "2kronieken 29:25",
         "nehemia 12:27",
+        "amos 6:5",
+        "1meqabyan 9:5",
+        "1meqabyan 19:1",
+        "2meqabyan 19:2"
+      ],
+      "canoniekeVerzen": [
+        "psalmen 33:2",
+        "psalmen 57:9",
+        "psalmen 71:22",
+        "psalmen 81:3",
+        "psalmen 92:4",
+        "psalmen 108:3",
+        "psalmen 144:9",
+        "psalmen 150:3",
+        "jesaja 5:12",
+        "jesaja 14:11",
+        "1samuel 10:5",
+        "2samuel 6:5",
+        "1koningen 10:12",
+        "1kronieken 13:8",
+        "1kronieken 15:16",
+        "1kronieken 15:20",
+        "1kronieken 15:28",
+        "1kronieken 16:5",
+        "1kronieken 25:1",
+        "1kronieken 25:6",
+        "2kronieken 5:12",
+        "2kronieken 9:11",
+        "2kronieken 20:28",
+        "2kronieken 29:25",
+        "nehemia 12:27",
         "amos 6:5"
       ],
+      "apocriefeVerzen": [],
+      "ethiopischeVerzen": [
+        "1meqabyan 9:5",
+        "1meqabyan 19:1",
+        "2meqabyan 19:2"
+      ],
+      "tekstvormen": [
+        "luit",
+        "luiten"
+      ],
+      "zekerheid": "zeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
       "gebruik": "letterlijk"
     },
     {
@@ -365,18 +691,47 @@
       "naam": "Citer",
       "beschrijving": "Snaarinstrument in eredienst, feest en visioen; ook genoemd in Jezus Sirach, Makkabeeën en Openbaring.",
       "verzen": [
+        "openbaring 5:8",
         "openbaring 14:2",
         "openbaring 15:2",
+        "openbaring 18:22",
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15",
+        "1korinthiers 14:7",
         "jezussirach 39:19",
         "1makkabeeen 3:45",
         "1makkabeeen 4:54",
-        "1makkabeeen 13:51",
+        "1makkabeeen 13:51"
+      ],
+      "canoniekeVerzen": [
+        "openbaring 5:8",
+        "openbaring 14:2",
+        "openbaring 15:2",
+        "openbaring 18:22",
         "daniel 3:5",
         "daniel 3:7",
         "daniel 3:10",
         "daniel 3:15",
         "1korinthiers 14:7"
       ],
+      "apocriefeVerzen": [
+        "jezussirach 39:19",
+        "1makkabeeen 3:45",
+        "1makkabeeen 4:54",
+        "1makkabeeen 13:51"
+      ],
+      "ethiopischeVerzen": [],
+      "tekstvormen": [
+        "citer",
+        "citers",
+        "citeren",
+        "citerspelers"
+      ],
+      "zekerheid": "zeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
       "gebruik": "letterlijk en beeldspraak"
     },
     {
@@ -386,6 +741,7 @@
       "verzen": [
         "genesis 31:27",
         "exodus 15:20",
+        "psalmen 68:26",
         "psalmen 81:3",
         "psalmen 149:3",
         "psalmen 150:4",
@@ -398,12 +754,52 @@
         "2samuel 6:5",
         "1kronieken 13:8",
         "job 21:12",
+        "jeremia 31:4",
+        "ezechiel 28:13",
         "3ezra 5:2",
         "judith 3:9",
         "1makkabeeen 9:39",
+        "1meqabyan 9:5",
+        "1meqabyan 19:1"
+      ],
+      "canoniekeVerzen": [
+        "genesis 31:27",
+        "exodus 15:20",
+        "psalmen 68:26",
+        "psalmen 81:3",
+        "psalmen 149:3",
+        "psalmen 150:4",
+        "jesaja 5:12",
+        "jesaja 24:8",
+        "jesaja 30:32",
+        "richteren 11:34",
+        "1samuel 10:5",
+        "1samuel 18:6",
+        "2samuel 6:5",
+        "1kronieken 13:8",
+        "job 21:12",
         "jeremia 31:4",
         "ezechiel 28:13"
       ],
+      "apocriefeVerzen": [
+        "3ezra 5:2",
+        "judith 3:9",
+        "1makkabeeen 9:39"
+      ],
+      "ethiopischeVerzen": [
+        "1meqabyan 9:5",
+        "1meqabyan 19:1"
+      ],
+      "tekstvormen": [
+        "trommel",
+        "trommels",
+        "trommelen",
+        "trommelende",
+        "trom"
+      ],
+      "zekerheid": "zeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
       "gebruik": "letterlijk"
     },
     {
@@ -414,6 +810,19 @@
         "exodus 19:13",
         "jozua 6:5"
       ],
+      "canoniekeVerzen": [
+        "exodus 19:13",
+        "jozua 6:5"
+      ],
+      "apocriefeVerzen": [],
+      "ethiopischeVerzen": [],
+      "tekstvormen": [
+        "ramshoorn",
+        "ramshoornen"
+      ],
+      "zekerheid": "zeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
       "gebruik": "letterlijk"
     },
     {
@@ -424,9 +833,28 @@
         "genesis 4:21",
         "psalmen 150:4",
         "job 21:12",
+        "job 30:31",
+        "2meqabyan 19:2"
+      ],
+      "canoniekeVerzen": [
+        "genesis 4:21",
+        "psalmen 150:4",
+        "job 21:12",
         "job 30:31"
       ],
-      "gebruik": "letterlijk"
+      "apocriefeVerzen": [],
+      "ethiopischeVerzen": [
+        "2meqabyan 19:2"
+      ],
+      "tekstvormen": [
+        "orgel",
+        "orgelen"
+      ],
+      "zekerheid": "onzeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
+      "gebruik": "letterlijk",
+      "reviewnotitie": "De vertaalterm duidt geen modern pijporgel met klavier aan; de precieze historische vorm is onzeker."
     },
     {
       "id": "pijp",
@@ -435,17 +863,39 @@
       "verzen": [
         "jesaja 5:12",
         "jesaja 30:29",
-        "zacharia 4:2",
         "1samuel 10:5",
         "1koningen 1:40",
-        "job 31:22",
         "ezechiel 28:13",
         "daniel 3:5",
         "daniel 3:7",
         "daniel 3:10",
-        "daniel 3:15"
+        "daniel 3:15",
+        "mattheus 9:23"
       ],
-      "gebruik": "letterlijk"
+      "canoniekeVerzen": [
+        "jesaja 5:12",
+        "jesaja 30:29",
+        "1samuel 10:5",
+        "1koningen 1:40",
+        "ezechiel 28:13",
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15",
+        "mattheus 9:23"
+      ],
+      "apocriefeVerzen": [],
+      "ethiopischeVerzen": [],
+      "tekstvormen": [
+        "pijp",
+        "pijpen",
+        "pijpers"
+      ],
+      "zekerheid": "waarschijnlijk",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
+      "gebruik": "letterlijk",
+      "reviewnotitie": "Ezechiël 28:13 gebruikt de vertaalwoorden trommelen en pijpen in een tekstkritisch en instrumentkundig onzekere passage."
     },
     {
       "id": "vedel",
@@ -457,7 +907,23 @@
         "daniel 3:10",
         "daniel 3:15"
       ],
-      "gebruik": "letterlijk"
+      "canoniekeVerzen": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "apocriefeVerzen": [],
+      "ethiopischeVerzen": [],
+      "tekstvormen": [
+        "vedel",
+        "vedels"
+      ],
+      "zekerheid": "onzeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
+      "gebruik": "letterlijk",
+      "reviewnotitie": "De historische vorm achter de traditionele vertaalterm vedel is onzeker; een middeleeuws strijkinstrument is niet aannemelijk."
     },
     {
       "id": "psalter",
@@ -469,7 +935,121 @@
         "daniel 3:10",
         "daniel 3:15"
       ],
+      "canoniekeVerzen": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "apocriefeVerzen": [],
+      "ethiopischeVerzen": [],
+      "tekstvormen": [
+        "psalter",
+        "psalteren"
+      ],
+      "zekerheid": "onzeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
+      "gebruik": "letterlijk",
+      "reviewnotitie": "De precieze vorm van het Babylonische snaarinstrument achter psalter is onzeker."
+    },
+    {
+      "id": "hoorn",
+      "naam": "Hoorn",
+      "beschrijving": "Blaasinstrument in het Babylonische muziekgezelschap van Daniël 3.",
+      "verzen": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "canoniekeVerzen": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "apocriefeVerzen": [],
+      "ethiopischeVerzen": [],
+      "tekstvormen": [],
+      "zekerheid": "waarschijnlijk",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
+      "gebruik": "letterlijk",
+      "reviewnotitie": "Alleen de vier ondubbelzinnige muzikale vermeldingen zijn opgenomen; andere hoornen zijn dierlijk, bouwkundig of beeldspraak."
+    },
+    {
+      "id": "schellen",
+      "naam": "Schellen",
+      "beschrijving": "Rinkelend slaginstrument bij het opbrengen van de ark.",
+      "verzen": [
+        "2samuel 6:5"
+      ],
+      "canoniekeVerzen": [
+        "2samuel 6:5"
+      ],
+      "apocriefeVerzen": [],
+      "ethiopischeVerzen": [],
+      "tekstvormen": [],
+      "zekerheid": "onzeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
+      "gebruik": "letterlijk",
+      "reviewnotitie": "De vertaalterm is zeker, maar de precieze historische vorm kan een ratel of sistrumachtig instrument zijn."
+    },
+    {
+      "id": "tiensnarig-instrument",
+      "naam": "Tiensnarig instrument",
+      "beschrijving": "Een niet nader benoemd snaarinstrument met tien snaren in drie psalmen.",
+      "verzen": [
+        "psalmen 33:2",
+        "psalmen 92:4",
+        "psalmen 144:9"
+      ],
+      "canoniekeVerzen": [
+        "psalmen 33:2",
+        "psalmen 92:4",
+        "psalmen 144:9"
+      ],
+      "apocriefeVerzen": [],
+      "ethiopischeVerzen": [],
+      "tekstvormen": [
+        "tiensnarig instrument"
+      ],
+      "zekerheid": "onzeker",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
+      "gebruik": "letterlijk",
+      "reviewnotitie": "De tekst noemt het aantal snaren, maar bepaalt de bouwvorm niet."
+    },
+    {
+      "id": "lier",
+      "naam": "Lier",
+      "beschrijving": "Snaarinstrument dat in de Ethiopische Meqabyan-boeken naast trom, fluit, luit en orgel wordt genoemd.",
+      "verzen": [
+        "1meqabyan 19:1",
+        "2meqabyan 19:2"
+      ],
+      "canoniekeVerzen": [],
+      "apocriefeVerzen": [],
+      "ethiopischeVerzen": [
+        "1meqabyan 19:1",
+        "2meqabyan 19:2"
+      ],
+      "tekstvormen": [
+        "lier"
+      ],
+      "zekerheid": "waarschijnlijk",
+      "reviewStatus": "agent-reviewed",
+      "humanReviewed": false,
       "gebruik": "letterlijk"
     }
-  ]
+  ],
+  "reviewStatus": "agent-reviewed",
+  "humanReviewed": false,
+  "methodiek": "expliciete instrumentcatalogus met naamvarianten en contextuele uitsluitingen, toegepast op alle 88 boeken",
+  "dekking": {
+    "boekenGescand": 88,
+    "verzenGescand": 41132
+  }
 }

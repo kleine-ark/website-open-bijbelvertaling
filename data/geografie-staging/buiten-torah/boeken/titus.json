@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "boek": "titus",
+  "scope": "buiten-torah",
+  "status": "agent-reviewed",
+  "humanReviewed": false,
+  "dekking": {
+    "verzenBeoordeeld": 46,
+    "verzenMetBronvermelding": 3,
+    "vermeldingen": 3,
+    "reviewQueue": 3
+  },
+  "mentions": {
+    "1:12": [
+      {
+        "entityId": "geo-crete-26aa94",
+        "ref": "titus 1:12",
+        "href": "index.html#titus/1/12",
+        "label": null,
+        "status": "needs-human-review",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+      }
+    ],
+    "1:5": [
+      {
+        "entityId": "geo-crete-26aa94",
+        "ref": "titus 1:5",
+        "href": "index.html#titus/1/5",
+        "label": null,
+        "status": "needs-human-review",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+      }
+    ],
+    "3:12": [
+      {
+        "entityId": "geo-nicopolis-f43cde",
+        "ref": "titus 3:12",
+        "href": "index.html#titus/3/12",
+        "label": null,
+        "status": "needs-human-review",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+      }
+    ]
+  },
+  "reviewQueue": [
+    {
+      "type": "label-of-homoniem",
+      "entityId": "geo-crete-26aa94",
+      "ref": "titus 1:5",
+      "tekst": "Om die oorzaak heb ik u op Kreta achtergelaten, opdat u, wat nog ontbrak, verder zou te recht brengen, en dat u van stad tot stad zou ouderlingen aanstellen, zoals ik u bevolen heb:",
+      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
+      "status": "needs-human-review"
+    },
+    {
+      "type": "label-of-homoniem",
+      "entityId": "geo-crete-26aa94",
+      "ref": "titus 1:12",
+      "tekst": "Één uit hen, zijnde hun eigen profeet, heeft gezegd: De Kretensen zijn altijd leugenachtig, kwade beesten, luilakken.",
+      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
+      "status": "needs-human-review"
+    },
+    {
+      "type": "label-of-homoniem",
+      "entityId": "geo-nicopolis-f43cde",
+      "ref": "titus 3:12",
+      "tekst": "Als ik Artemas tot u zal zenden, of Tychikus, zo doe uw best om tot mij te komen te Nikopolis; want daar heb ik voorgenomen te overwinteren.",
+      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
+      "status": "needs-human-review"
+    }
+  ]
+}
