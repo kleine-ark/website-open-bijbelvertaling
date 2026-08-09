@@ -18,6 +18,8 @@ const Opties = {
         getalweergave: 'woorden', // 'woorden' | 'cijfers' — zet grote uitgeschreven aantallen ook tussen haakjes in cijfers
         tijdrekening: 'bijbels', // 'bijbels' (de derde ure) | 'modern' (omstreeks negen uur 's ochtends)
         strongs: 'uit',          // 'uit' | 'aan' — bronvaste Strong-nummers bij grondtekstwoorden
+        lettertype: 'klassiek',
+        regelafstand: 'normaal',
     },
 
     state: {},
@@ -53,6 +55,7 @@ const Opties = {
         this.applyLayoutClass();
         this.applyVerseNumbersClass();
         this.applyThemeClass();
+        this.applyReaderStyleClasses();
 
         // Arabische namen lui laden (en, indien al ingeschakeld, hoofdstuk herrenderen)
         this.ready = Promise.all([
@@ -108,6 +111,8 @@ const Opties = {
                         this.applyVerseNumbersClass();
                     } else if (optie === 'thema') {
                         this.applyThemeClass();
+                    } else if (optie === 'lettertype' || optie === 'regelafstand') {
+                        this.applyReaderStyleClasses();
                     } else if (optie === 'boekvolgorde') {
                         // Sidebar + topnav opnieuw renderen, geen hoofdstuk-rerender
                         if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
@@ -131,6 +136,20 @@ const Opties = {
     applyVerseNumbersClass() {
         // Toggle een class op <body> zodat CSS de versnummers kan verbergen.
         document.body.classList.toggle('hide-verse-numbers', this.state.versnummers === 'uit');
+    },
+
+    applyReaderStyleClasses() {
+        const font = this.state.lettertype === 'rustig' ? 'rustig' : 'klassiek';
+        const spacing = ['compact', 'normaal', 'ruim'].includes(this.state.regelafstand)
+            ? this.state.regelafstand
+            : 'normaal';
+        document.body.classList.remove('reader-font-klassiek', 'reader-font-rustig');
+        document.body.classList.remove(
+            'reader-spacing-compact',
+            'reader-spacing-normaal',
+            'reader-spacing-ruim'
+        );
+        document.body.classList.add(`reader-font-${font}`, `reader-spacing-${spacing}`);
     },
 
     applyThemeClass() {

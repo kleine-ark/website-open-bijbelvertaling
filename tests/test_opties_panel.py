@@ -93,6 +93,67 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_hoofdinstellingen_gebruiken_de_aangeleverde_iconen(self):
+        expected = {
+            "thema.svg",
+            "lettertype.svg",
+            "tekstgrootte.svg",
+            "regelafstand.svg",
+            "versnummers.svg",
+            "godsnaam.svg",
+            "voorkeurseditie.svg",
+            "voorleesstem.svg",
+        }
+        page = self.open_reader()
+        try:
+            page.locator("#sidebar-right-open").click()
+            sources = page.locator("#sidebar-right .option-icon").evaluate_all(
+                "els => els.map(el => new URL(el.src).pathname.split('/').pop())"
+            )
+            self.assertEqual(set(sources), expected)
+            self.assertEqual(len(sources), len(expected))
+            self.assertTrue(page.locator("#sidebar-right .option-icon").evaluate_all(
+                "els => els.every(el => el.complete && el.naturalWidth > 0)"
+            ))
+        finally:
+            page.close()
+
+    def test_lettertype_en_regelafstand_worden_toegepast_en_bewaard(self):
+        page = self.open_reader()
+        try:
+            page.wait_for_function("window.Opties && window.Opties.state")
+            page.locator("#sidebar-right-open").click()
+            page.locator('[data-optie="lettertype"][value="rustig"]').check()
+            page.locator('[data-optie="regelafstand"][value="ruim"]').check()
+
+            self.assertTrue(page.locator("body").evaluate(
+                "el => el.classList.contains('reader-font-rustig')"
+            ))
+            self.assertTrue(page.locator("body").evaluate(
+                "el => el.classList.contains('reader-spacing-ruim')"
+            ))
+            verse = page.locator("#verses-container .verse-cell.col-2026").first
+            verse.wait_for(timeout=5000)
+            typography = verse.evaluate(
+                "el => ({font: getComputedStyle(el).fontFamily, line: parseFloat(getComputedStyle(el).lineHeight)})"
+            )
+            self.assertIn("Fira Sans", typography["font"])
+            self.assertGreater(typography["line"], 32)
+            page.wait_for_function(
+                """() => {
+                    const state = JSON.parse(localStorage.getItem('sv2026_vertaalopties'));
+                    return state.lettertype === 'rustig' && state.regelafstand === 'ruim';
+                }"""
+            )
+
+            page.reload(wait_until="domcontentloaded")
+            page.wait_for_function(
+                "window.Opties && window.Opties.state.lettertype === 'rustig'"
+            )
+            self.assertTrue(page.locator("body.reader-font-rustig.reader-spacing-ruim").count())
+        finally:
+            page.close()
+
     def test_bestaande_controls_staan_in_het_juiste_tabblad(self):
         expected_tab = {
             "toggle-versnummers": "lezen",
