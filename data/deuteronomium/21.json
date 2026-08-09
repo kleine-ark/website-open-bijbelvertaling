@@ -1154,7 +1154,7 @@
       "number": 12,
       "textSV1888": "Zo zult gij haar binnen in uw huis brengen; en zij zal haar hoofd scheren, en haar nagelen besnijden.",
       "text1637": "So sult ghyse [10] binnen in u huys brengen: ende sy sal haer hooft scheeren, ende hare nagelen [11] besnijden.",
-      "text2026": "Zo zult u haar binnen in uw huis brengen; en zij zal haar hoofd scheren, en haar nagelen besnijden.",
+      "text2026": "Zo zult u haar binnen in uw huis brengen; en zij zal haar hoofd scheren, en haar nagels knippen.",
       "marginNotes": [
         {
           "marker": "10",
@@ -1223,7 +1223,7 @@
           "morph": "HNcmpc/Sp3fs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo zult u<sup class=\"note-marker\" data-note=\"10\">10</sup> haar binnen in uw huis brengen; en zij zal haar hoofd scheren, en haar nagelen<sup class=\"note-marker\" data-note=\"11\">11</sup> besnijden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo zult u<sup class=\"note-marker\" data-note=\"10\">10</sup> haar binnen in uw huis brengen; en zij zal haar hoofd scheren, en haar nagels knippen.</i></span>",
       "textSV1888_html": "Zo zult gij<sup class=\"note-marker\" data-note=\"10\">10</sup> haar binnen in uw huis brengen; en zij zal haar hoofd scheren, en haar nagelen<sup class=\"note-marker\" data-note=\"11\">11</sup> besnijden.",
       "text1637_html": "So sult ghyse <sup class=\"note-marker\" data-note=\"10\">10</sup> binnen in u huys brengen: ende sy sal haer hooft scheeren, ende hare nagelen <sup class=\"note-marker\" data-note=\"11\">11</sup> besnijden.",
       "phraseDiff": [
@@ -1231,6 +1231,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "nagelen besnijden.",
+          "new": "nagels knippen.",
+          "principe": "V1207"
         }
       ]
     },
@@ -2016,7 +2021,7 @@
       "number": 18,
       "textSV1888": "Wanneer iemand een moedwilligen en wederspannigen zoon heeft, die de stem zijns vaders en de stem zijner moeder niet gehoorzaam is; en zij hem gekastijd zullen hebben, en hij naar hen niet horen zal,",
       "text1637": "Wanneer yemant eenen moetwilligen ende wederspannigen sone heeft, die de stemme sijns vaders, ende de stemme sijner moeder niet gehoorsaem en is: ende sy hem gekastijdt sullen hebben, ende hy nae hen niet hooren sal:",
-      "text2026": "Wanneer iemand een moedwilligen en opstandigen zoon heeft, die de stem van zijn vader en de stem van zijn moeder niet gehoorzaam is; en zij hem gekastijd zullen hebben, en hij naar hen niet horen zal,",
+      "text2026": "Wanneer iemand een moedwillige en opstandige zoon heeft, die de stem van zijn vader en de stem van zijn moeder niet gehoorzaam is; en zij hem gestraft zullen hebben, en hij naar hen niet horen zal,",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2105,13 +2110,18 @@
           "morph": "HR/Sp3mp"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer iemand een moedwilligen en opstandigen zoon heeft, die de stem van zijn vader en de stem van zijn moeder niet gehoorzaam is; en zij hem gekastijd zullen hebben, en hij naar hen niet horen zal,</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wanneer iemand een moedwillige en opstandige zoon heeft, die de stem van zijn vader en de stem van zijn moeder niet gehoorzaam is; en zij hem gestraft zullen hebben, en hij naar hen niet horen zal,</i></span>",
       "text1637_html": "Wanneer yemant eenen moetwilligen ende wederspannigen sone heeft, die de stemme sijns vaders, ende de stemme sijner moeder niet gehoorsaem en is: ende sy hem gekastijdt sullen hebben, ende hy nae hen niet hooren sal:",
       "phraseDiff": [
         {
+          "old": "moedwilligen",
+          "new": "moedwillige",
+          "principe": "V1208"
+        },
+        {
           "old": "wederspannigen",
-          "new": "opstandigen",
-          "principe": "V455"
+          "new": "opstandige",
+          "principe": "V1208"
         },
         {
           "old": "zijns vaders",
@@ -2122,6 +2132,11 @@
           "old": "zijner",
           "new": "van zijn",
           "principe": "N7"
+        },
+        {
+          "old": "gekastijd",
+          "new": "gestraft",
+          "principe": "V1209"
         }
       ]
     },
@@ -2235,7 +2250,7 @@
       "number": 20,
       "textSV1888": "En zij zullen zeggen tot de oudsten zijner stad: Deze onze zoon is afwijkende en wederspannig, hij is onze stem niet gehoorzaam; hij is een brasser en zuiper.",
       "text1637": "Ende sy sullen seggen tot de Outsten sijner stadt: Dese onse sone is afwijckende ende wederspannich, hy en is onser stemme niet gehoorsaem: hy is een brasser ende suyper.",
-      "text2026": "En zij zullen zeggen tot de oudsten van zijn stad: Deze onze zoon is afwijkende en opstandig, hij is onze stem niet gehoorzaam; hij is een brasser en zuiper.",
+      "text2026": "En zij zullen zeggen tot de oudsten van zijn stad: Deze onze zoon is afwijkende en opstandig, hij is onze stem niet gehoorzaam; hij is een brasser en dronkaard.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2304,7 +2319,7 @@
           "morph": "HC/Vqrmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En zij zullen zeggen tot de oudsten van zijn stad: Deze onze zoon is afwijkende en opstandig, hij is onze stem niet gehoorzaam; hij is een brasser en zuiper.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En zij zullen zeggen tot de oudsten van zijn stad: Deze onze zoon is afwijkende en opstandig, hij is onze stem niet gehoorzaam; hij is een brasser en dronkaard.</i></span>",
       "text1637_html": "Ende sy sullen seggen tot de Outsten sijner stadt: Dese onse sone is afwijckende ende wederspannich, hy en is onser stemme niet gehoorsaem: hy is een brasser ende suyper.",
       "phraseDiff": [
         {
@@ -2316,6 +2331,11 @@
           "old": "wederspannig,",
           "new": "opstandig,",
           "principe": "V455"
+        },
+        {
+          "old": "zuiper.",
+          "new": "dronkaard.",
+          "principe": "V1210"
         }
       ]
     },
