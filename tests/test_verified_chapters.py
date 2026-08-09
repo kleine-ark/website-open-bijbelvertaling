@@ -17,10 +17,11 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
     assert verified["leviticus"] == "all"
     assert verified["prediker"] == "all"
     assert verified["ruth"] == "all"
-    assert verified["numeri"] == list(range(1, 21))
+    assert verified["numeri"] == "all"
+    assert verified["deuteronomium"] == [1, 2, 3, 4, 5]
+    assert 6 not in verified["deuteronomium"]
 
     niet_menselijk_bevestigd = {
-        "deuteronomium",
         "jozua",
         "jeremia",
         "richteren",
