@@ -1534,7 +1534,7 @@
       "number": 15,
       "textSV1888": "En het zal geschieden te dien dage, dat Tyrus zal vergeten worden zeventig jaren, gelijk eens konings dagen; maar ten einde van zeventig jaren zal in Tyrus als een hoerenlied zijn:",
       "text1637": "Ende het sal geschieden te dien dage, [57] dat Tyrus sal vergeten worden [58] tseventich jaren, [59] gelijck eenes Conincks dagen: [maer] ten eynde van tseventich jaer, [60] sal in Tyro als een hoereliet zijn.",
-      "text2026": "En het zal gebeuren op die dag, dat Tyrus zal vergeten worden zeventig jaren, gelijk de dagen van een koning; maar ten einde van zeventig jaren zal in Tyrus als een hoerenlied zijn:",
+      "text2026": "En het zal gebeuren op die dag, dat Tyrus zal vergeten worden zeventig jaren, gelijk de dagen van een koning; maar na verloop van zeventig jaren zal in Tyrus als een hoerenlied zijn:",
       "marginNotes": [
         {
           "marker": "57",
@@ -1652,7 +1652,7 @@
           "morph": "HTd/Vqrfsa"
         }
       ],
-      "text2026_html": "En het zal gebeuren op die dag,<sup class=\"note-marker\" data-note=\"57\">57</sup> dat Tyrus zal vergeten worden<sup class=\"note-marker\" data-note=\"58\">58</sup> zeventig jaren,<sup class=\"note-marker\" data-note=\"59\">59</sup> gelijk de dagen van een koning; maar ten einde van zeventig jaren<sup class=\"note-marker\" data-note=\"60\">60</sup> zal in Tyrus als een hoerenlied zijn:",
+      "text2026_html": "En het zal gebeuren op die dag,<sup class=\"note-marker\" data-note=\"57\">57</sup> dat Tyrus zal vergeten worden<sup class=\"note-marker\" data-note=\"58\">58</sup> zeventig jaren,<sup class=\"note-marker\" data-note=\"59\">59</sup> gelijk de dagen van een koning; maar na verloop van zeventig jaren<sup class=\"note-marker\" data-note=\"60\">60</sup> zal in Tyrus als een hoerenlied zijn:",
       "textSV1888_html": "En het zal geschieden te dien dage,<sup class=\"note-marker\" data-note=\"57\">57</sup> dat Tyrus zal vergeten worden<sup class=\"note-marker\" data-note=\"58\">58</sup> zeventig jaren,<sup class=\"note-marker\" data-note=\"59\">59</sup> gelijk eens konings dagen; maar ten einde van zeventig jaren<sup class=\"note-marker\" data-note=\"60\">60</sup> zal in Tyrus als een hoerenlied zijn:",
       "text1637_html": "En<i>de</i> het sal geschieden te dien dage, <sup class=\"note-marker\" data-note=\"57\">57</sup> dat Tyrus sal vergeten worden <sup class=\"note-marker\" data-note=\"58\">58</sup> tseventich jaren, <sup class=\"note-marker\" data-note=\"59\">59</sup> gelijck eenes Conincks dagen: [maer] ten eynde van tseventich jaer, <sup class=\"note-marker\" data-note=\"60\">60</sup> sal in Tyro als een hoereliet zijn.",
       "phraseDiff": [
@@ -1665,6 +1665,11 @@
           "old": "eens konings dagen;",
           "new": "de dagen van een koning;",
           "principe": null
+        },
+        {
+          "old": "ten einde",
+          "new": "na verloop",
+          "principe": "V1202"
         }
       ]
     },
@@ -1790,7 +1795,7 @@
       "number": 17,
       "textSV1888": "Want het zal geschieden ten einde van zeventig jaren, dat de HEERE Tyrus zal bezoeken, en dat zij wederkeren zal tot haar hoerenloon, en zij zal hoererij bedrijven met alle koninkrijken der aarde, die op den aardbodem zijn.",
       "text1637": "Want het sal geschieden ten eynde van tseventich jaer, dat de HEERE Tyrus sal besoecken, ende dat sy wederkeeren sal tot haren hoeren-loon, ende sy sal [65] hoererye bedrijven met alle Coninckrijcken der aerde, die op den aerdbodem zijn.",
-      "text2026": "Want het zal gebeuren ten einde van zeventig jaren, dat JAHWEH Tyrus zal bezoeken, en dat zij terugkeren zal tot haar hoerenloon, en zij zal hoererij bedrijven met alle koninkrijken van de aarde, die op de aardbodem zijn.",
+      "text2026": "Want het zal gebeuren na verloop van zeventig jaren, dat JAHWEH Tyrus zal bezoeken, en dat zij terugkeren zal tot haar hoerenloon, en zij zal hoererij bedrijven met alle koninkrijken van de aarde, die op de aardbodem zijn.",
       "marginNotes": [
         {
           "marker": "65",
@@ -1892,14 +1897,14 @@
           "morph": "HTd/Ncfsa"
         }
       ],
-      "text2026_html": "Want het zal gebeuren ten einde van zeventig jaren, dat JAHWEH Tyrus zal bezoeken, en dat zij terugkeren zal tot haar hoerenloon, en zij zal<sup class=\"note-marker\" data-note=\"65\">65</sup> hoererij bedrijven met alle koninkrijken van de aarde, die op de aardbodem zijn.",
+      "text2026_html": "Want het zal gebeuren na verloop van zeventig jaren, dat JAHWEH Tyrus zal bezoeken, en dat zij terugkeren zal tot haar hoerenloon, en zij zal<sup class=\"note-marker\" data-note=\"65\">65</sup> hoererij bedrijven met alle koninkrijken van de aarde, die op de aardbodem zijn.",
       "textSV1888_html": "Want het zal geschieden ten einde van zeventig jaren, dat de HEERE Tyrus zal bezoeken, en dat zij wederkeren zal tot haar hoerenloon, en zij zal<sup class=\"note-marker\" data-note=\"65\">65</sup> hoererij bedrijven met alle koninkrijken der aarde, die op den aardbodem zijn.",
       "text1637_html": "Want het sal geschieden ten eynde van tseventich jaer, dat de HEERE Tyrus sal besoecken, ende dat sy wederkeeren sal tot haren hoeren-loon, ende sy sal <sup class=\"note-marker\" data-note=\"65\">65</sup> hoererye bedrijven met alle Coninckrijcken der aerde, die op den aerdbodem zijn.",
       "phraseDiff": [
         {
-          "old": "geschieden",
-          "new": "gebeuren",
-          "principe": "V40"
+          "old": "geschieden ten einde",
+          "new": "gebeuren na verloop",
+          "principe": "V1202"
         },
         {
           "old": "de HEERE",
