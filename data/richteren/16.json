@@ -271,7 +271,7 @@
       "number": 3,
       "textSV1888": "Maar Simson lag tot middernacht toe; toen stond hij op ter middernacht, en hij greep de deuren der stadspoort met de beide posten, en nam ze weg met den grendelboom, en leide ze op zijn schouderen, en droeg ze opwaarts op de hoogte des bergs, die in het gezicht van Hebron is.",
       "text1637": "Maer Simson lach tot middernacht toe, doe stont hy op ter middernacht; ende hy greep de deuren der stadtpoorte met de beyde posten, ende namse wech met den grendel-boom, ende leydese op sijne schouderen, ende droechse opwaerts [9] op de hoochte des berchs, die in ’t gesichte van Hebron is.",
-      "text2026": "Maar Simson lag tot middernacht toe; toen stond hij op ter middernacht, en hij greep de deuren van de stadspoort met de beide posten, en nam ze weg met de grendelboom, en legde ze op zijn schouders, en droeg ze omhoog op de hoogte van de berg, die in het gezicht van Hebron is.",
+      "text2026": "Maar Simson lag tot middernacht toe; toen stond hij op om middernacht, en hij greep de deuren van de stadspoort met de beide posten, en nam ze weg met de grendelboom, en legde ze op zijn schouders, en droeg ze omhoog op de hoogte van de berg, die in het gezicht van Hebron is.",
       "marginNotes": [
         {
           "marker": "9",
@@ -423,10 +423,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Maar Simson lag tot middernacht toe; toen stond hij op ter middernacht, en hij greep de deuren van de stadspoort met de beide posten, en nam ze weg met de grendelboom, en legde ze op zijn schouders, en droeg ze<sup class=\"note-marker\" data-note=\"9\">9</sup> omhoog op de hoogte van de berg, die in het gezicht van Hebron is.",
+      "text2026_html": "Maar Simson lag tot middernacht toe; toen stond hij op om middernacht, en hij greep de deuren van de stadspoort met de beide posten, en nam ze weg met de grendelboom, en legde ze op zijn schouders, en droeg ze<sup class=\"note-marker\" data-note=\"9\">9</sup> omhoog op de hoogte van de berg, die in het gezicht van Hebron is.",
       "textSV1888_html": "Maar Simson lag tot middernacht toe; toen stond hij op ter middernacht, en hij greep de deuren der stadspoort met de beide posten, en nam ze weg met den grendelboom, en leide ze op zijn schouderen, en droeg ze<sup class=\"note-marker\" data-note=\"9\">9</sup> opwaarts op de hoogte des bergs, die in het gezicht van Hebron is.",
       "text1637_html": "Maer Simson lach tot middernacht toe, doe stont hy op ter middernacht; ende hy greep de deuren der stadtpoorte met de beyde posten, ende namse wech met den grendel-boom, ende leydese op sijne schouderen, ende droechse opwaerts <sup class=\"note-marker\" data-note=\"9\">9</sup> op de hoochte des berchs, die in ’t gesichte van Hebron is.",
       "phraseDiff": [
+        {
+          "old": "ter",
+          "new": "om",
+          "principe": "V1196"
+        },
         {
           "old": "der",
           "new": "van de",
@@ -2983,7 +2988,7 @@
       "number": 24,
       "textSV1888": "Desgelijks als hem het volk zag, loofden zij hun god, want zij zeiden: Onze god heeft in onze hand gegeven onzen vijand, en die ons land verwoestte, en die onzer verslagenen velen maakte!",
       "text1637": "Desgelijcx als hem het volck sach, loofden sy haren Godt: want sy seyden; Onse Godt heeft in onse hant gegeven onsen vyant, ende die ons lant verwoestede, ende die onser verslagenen [44] vele maeckte.",
-      "text2026": "Evenzo als hem het volk zag, loofden zij hun god, want zij zeiden: Onze god heeft in onze hand gegeven onze vijand, en die ons land verwoestte, en die onzer verslagenen velen maakte!",
+      "text2026": "Evenzo als hem het volk zag, loofden zij hun god, want zij zeiden: Onze god heeft in onze hand gegeven onze vijand, en die ons land verwoestte, en die van onze verslagenen velen maakte!",
       "marginNotes": [
         {
           "marker": "44",
@@ -3095,7 +3100,7 @@
           "morph": "HAampc/Sp1cp"
         }
       ],
-      "text2026_html": "Evenzo als hem het volk zag, loofden zij hun god, want zij zeiden: Onze god heeft in onze hand gegeven onze vijand, en die ons land verwoestte, en die onzer verslagenen<sup class=\"note-marker\" data-note=\"44\">44</sup> velen maakte!",
+      "text2026_html": "Evenzo als hem het volk zag, loofden zij hun god, want zij zeiden: Onze god heeft in onze hand gegeven onze vijand, en die ons land verwoestte, en die van onze verslagenen<sup class=\"note-marker\" data-note=\"44\">44</sup> velen maakte!",
       "textSV1888_html": "Desgelijks als hem het volk zag, loofden zij hun god, want zij zeiden: Onze god heeft in onze hand gegeven onzen vijand, en die ons land verwoestte, en die onzer verslagenen<sup class=\"note-marker\" data-note=\"44\">44</sup> velen maakte!",
       "text1637_html": "Desgelijcx als hem het volck sach, loofden sy haren Godt: want sy seyden; Onse Godt heeft in onse hant gegeven onsen vyant, ende die ons lant verwoestede, ende die onser verslagenen <sup class=\"note-marker\" data-note=\"44\">44</sup> vele maeckte.",
       "phraseDiff": [
@@ -3108,6 +3113,11 @@
           "old": "onzen",
           "new": "onze",
           "principe": "N8"
+        },
+        {
+          "old": "onzer",
+          "new": "van onze",
+          "principe": "V1170"
         }
       ]
     },

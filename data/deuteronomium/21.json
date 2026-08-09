@@ -1071,7 +1071,7 @@
       "number": 11,
       "textSV1888": "En gij onder de gevangenen zult zien een vrouw, schoon van gedaante, en gij lust tot haar gekregen zult hebben, dat gij ze u ter vrouwe neemt;",
       "text1637": "Ende ghy onder de gevangene sult sien eene vrouwe, schoone van gedaente; ende ghy lust tot haer gekregen sult hebben, dat ghyse u ter vrouwe neemt:",
-      "text2026": "En u onder de gevangenen zult zien een vrouw, schoon van gedaante, en u lust tot haar gekregen zult hebben, dat u ze u ter vrouwe neemt;",
+      "text2026": "En u onder de gevangenen zult zien een vrouw, schoon van gedaante, en u lust tot haar gekregen zult hebben, dat u haar tot vrouw neemt;",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1125,7 +1125,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En u onder de gevangenen zult zien een vrouw, schoon van gedaante, en u lust tot haar gekregen zult hebben, dat u ze u ter vrouwe neemt;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En u onder de gevangenen zult zien een vrouw, schoon van gedaante, en u lust tot haar gekregen zult hebben, dat u haar tot vrouw neemt;</i></span>",
       "text1637_html": "Ende ghy onder de gevangene sult sien eene vrouwe, schoone van gedaente; ende ghy lust tot haer gekregen sult hebben, dat ghyse u ter vrouwe neemt:",
       "phraseDiff": [
         {
@@ -1139,9 +1139,14 @@
           "principe": "A1"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "gij ze",
+          "new": "",
+          "principe": null
+        },
+        {
+          "old": "ter vrouwe",
+          "new": "haar tot vrouw",
+          "principe": null
         }
       ]
     },
@@ -1233,7 +1238,7 @@
       "number": 13,
       "textSV1888": "En zij zal het kleed harer gevangenis van zich afleggen, en in uw huis zitten, en haar vader en haar moeder een maand lang bewenen; en daarna zult gij tot haar ingaan, en haar man zijn, en zij zal u ter vrouwe zijn.",
       "text1637": "Ende sy sal het [12] kleet haerder gevanckenisse van haer afleggen, ende in uwen huyse sitten, ende haren vader ende hare moeder [13] een maent lanck beweenen: ende daerna sult ghy tot haer ingaen, ende haer man zijn, ende sy sal u ter vrouwe zijn.",
-      "text2026": "En zij zal het kleed van haar gevangenschap van zich afleggen, en in uw huis zitten, en haar vader en haar moeder een maand lang bewenen; en daarna zult u tot haar ingaan, en haar man zijn, en zij zal u ter vrouwe zijn.",
+      "text2026": "En zij zal het kleed van haar gevangenschap van zich afleggen, en in uw huis zitten, en haar vader en haar moeder een maand lang bewenen; en daarna zult u tot haar ingaan, en haar man zijn, en zij zal u tot vrouw zijn.",
       "marginNotes": [
         {
           "marker": "12",
@@ -1362,7 +1367,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En zij zal het<sup class=\"note-marker\" data-note=\"12\">12</sup> kleed van haar gevangenschap van zich afleggen, en in uw huis zitten, en haar vader en haar moeder<sup class=\"note-marker\" data-note=\"13\">13</sup> een maand lang bewenen; en daarna zult u tot haar ingaan, en haar man zijn, en zij zal u ter vrouwe zijn.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En zij zal het<sup class=\"note-marker\" data-note=\"12\">12</sup> kleed van haar gevangenschap van zich afleggen, en in uw huis zitten, en haar vader en haar moeder<sup class=\"note-marker\" data-note=\"13\">13</sup> een maand lang bewenen; en daarna zult u tot haar ingaan, en haar man zijn, en zij zal u tot vrouw zijn.</i></span>",
       "textSV1888_html": "En zij zal het<sup class=\"note-marker\" data-note=\"12\">12</sup> kleed harer gevangenis van zich afleggen, en in uw huis zitten, en haar vader en haar moeder<sup class=\"note-marker\" data-note=\"13\">13</sup> een maand lang bewenen; en daarna zult gij tot haar ingaan, en haar man zijn, en zij zal u ter vrouwe zijn.",
       "text1637_html": "Ende sy sal het <sup class=\"note-marker\" data-note=\"12\">12</sup> kleet haerder gevanckenisse van haer afleggen, ende in uwen huyse sitten, ende haren vader ende hare moeder <sup class=\"note-marker\" data-note=\"13\">13</sup> een maent lanck beweenen: ende daerna sult ghy tot haer ingaen, ende haer man zijn, ende sy sal u ter vrouwe zijn.",
       "phraseDiff": [
@@ -1375,6 +1380,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "ter vrouwe",
+          "new": "tot vrouw",
+          "principe": "V1195"
         }
       ]
     },

@@ -71,6 +71,7 @@ const Sidebar = {
 
     setupSearch() {
         const input = document.getElementById('book-search');
+        if (!input) return;
         input.addEventListener('input', () => {
             const q = input.value.toLowerCase().trim();
             document.querySelectorAll('.tree-book').forEach(book => {

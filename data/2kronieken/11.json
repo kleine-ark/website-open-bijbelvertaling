@@ -1683,7 +1683,7 @@
       "number": 18,
       "textSV1888": "En Rehabeam nam zich, benevens Mahalath, de dochter van Jerimoth, den zoon van David, ter vrouwe Abihaïl, de dochter van Eliab, den zoon van Isaï,",
       "text1637": "Ende Rehabeam nam sich, [33] beneven Mahalath, de dochter Ierimoths des soons Davids, ter vrouwe, Abihail de dochter [34] Eliabs des soons Isai.",
-      "text2026": "En Rehabeam nam zich, naast Mahalath, de dochter van Jerimoth, de zoon van David, ter vrouwe Abihaïl, de dochter van Eliab, de zoon van Isaï,",
+      "text2026": "En Rehabeam nam naast Mahalath, de dochter van Jerimoth, de zoon van David, ook Abihaïl, de dochter van Eliab, de zoon van Isaï, tot vrouw,",
       "marginNotes": [
         {
           "marker": "33",
@@ -1777,14 +1777,14 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En Rehabeam nam zich,<sup class=\"note-marker\" data-note=\"33\">33</sup> naast Mahalath, de dochter van Jerimoth, de zoon van David, ter vrouwe Abihaïl, de dochter<sup class=\"note-marker\" data-note=\"34\">34</sup> van Eliab, de zoon van Isaï,",
+      "text2026_html": "En Rehabeam nam<sup class=\"note-marker\" data-note=\"33\">33</sup> naast Mahalath, de dochter van Jerimoth, de zoon van David, ook Abihaïl, de dochter<sup class=\"note-marker\" data-note=\"34\">34</sup> van Eliab, de zoon van Isaï, tot vrouw,",
       "textSV1888_html": "En Rehabeam nam zich,<sup class=\"note-marker\" data-note=\"33\">33</sup> benevens Mahalath, de dochter van Jerimoth, den zoon van David, ter vrouwe Abihaïl, de dochter<sup class=\"note-marker\" data-note=\"34\">34</sup> van Eliab, den zoon van Isaï,",
       "text1637_html": "Ende Rehabeam nam sich, <sup class=\"note-marker\" data-note=\"33\">33</sup> beneven Mahalath, de dochter Ierimoths des soons Davids, ter vrouwe, Abihail de dochter <sup class=\"note-marker\" data-note=\"34\">34</sup> Eliabs des soons Isai.",
       "phraseDiff": [
         {
-          "old": "benevens",
+          "old": "zich, benevens",
           "new": "naast",
-          "principe": "V24"
+          "principe": null
         },
         {
           "old": "den",
@@ -1792,9 +1792,19 @@
           "principe": "N1"
         },
         {
+          "old": "ter vrouwe",
+          "new": "ook",
+          "principe": null
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "",
+          "new": "tot vrouw,",
+          "principe": null
         }
       ]
     },

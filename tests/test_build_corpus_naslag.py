@@ -129,3 +129,54 @@ def test_muziekinstrumenten_vormen_een_eigen_corpusbrede_naslag(built_naslag):
         for ref in refs
     )
     assert any(ref.startswith("jezussirach ") or ref.startswith("1makkabeeen ") for ref in refs)
+
+
+@pytest.mark.parametrize("category", ("dieren", "bomen-planten"))
+def test_natuurnaslag_scannt_alle_88_boeken_met_reviewmetadata(category, built_naslag):
+    data = built_naslag[category]
+
+    assert data["dekking"]["boekenGescand"] == 88
+    assert len(data["dekking"]["perBoek"]) == 88
+    assert data["reviewStatus"] == "agent-reviewed"
+    assert data["humanReviewed"] is False
+    assert all(book["gescand"] for book in data["dekking"]["perBoek"])
+
+
+@pytest.mark.parametrize("category", ("dieren", "bomen-planten"))
+def test_natuurvermeldingen_hebben_context_alias_en_geldige_verwijzing(category, built_naslag):
+    data = built_naslag[category]
+    geldige_refs = {verse.ref for verse in load_corpus(ROOT, include_ethiopic=True)}
+    vermeldingen = [mention for item in data["items"] for mention in item["vermeldingen"]]
+
+    assert vermeldingen
+    assert all(mention["ref"] in geldige_refs for mention in vermeldingen)
+    assert all(mention["tekstvorm"] for mention in vermeldingen)
+    assert {mention["gebruik"] for mention in vermeldingen} <= {
+        "letterlijk", "beeldend-symbolisch", "vergelijkend"
+    }
+    assert all(mention["reviewStatus"] != "human-reviewed" for mention in vermeldingen)
+    assert all(item["zekerheid"] in {"zeker", "waarschijnlijk", "onzeker"} for item in data["items"])
+
+
+def test_natuurrapport_bevat_tellingen_en_aparte_reviewqueue(tmp_path):
+    build_all(ROOT, write=True)
+    report = read_json("data/naslag-natuur-controle.json")
+
+    assert report["boekenGescand"] == 88
+    assert len(report["perBoek"]) == 88
+    assert set(report["totalen"]) == {"dieren", "bomen-planten"}
+    assert isinstance(report["reviewqueue"], list)
+
+
+def test_ontbrekende_concrete_soorten_en_gewassen_krijgen_een_stabiel_item(built_naslag):
+    animal_ids = {item["id"] for item in built_naslag["dieren"]["items"]}
+    plant_ids = {item["id"] for item in built_naslag["bomen-planten"]["items"]}
+
+    assert {"havik", "sperwer", "hyena", "basilisk", "buffel", "steenbok"} <= animal_ids
+    assert {"papyrus", "terebint", "graan-en-koren", "wikke"} <= plant_ids
+
+
+def test_persoonsnaam_ram_wordt_niet_als_dier_gepubliceerd(built_naslag):
+    ram = next(item for item in built_naslag["dieren"]["items"] if item["id"] == "rammen")
+
+    assert "1kronieken 2:9" not in ram["verzen"]

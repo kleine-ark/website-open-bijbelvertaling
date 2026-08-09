@@ -102,6 +102,14 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
+    // Merkbestanden houden stabiele publieke bestandsnamen. Haal ze online
+    // eerst opnieuw op, zodat een vernieuwd logo niet achter een oude cache
+    // blijft hangen; offline blijft de laatste succesvolle versie beschikbaar.
+    if (path.startsWith('/images/branding/') || path === '/favicon.svg' || path.startsWith('/icons/')) {
+        event.respondWith(networkFirst(req, SHELL_CACHE));
+        return;
+    }
+
     // CSS + JS: network-first — stijl/gedrag-wijzigingen meteen zichtbaar,
     // cache alleen als fallback (offline). Voorkomt "verandering pas na 2e refresh".
     if (path.endsWith('.css') || path.endsWith('.js')) {

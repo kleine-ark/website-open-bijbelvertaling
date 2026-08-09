@@ -117,25 +117,7 @@
     <div id="app-container">
     <!-- Sidebar navigatie -->
     <nav id="sidebar">
-        <div id="sidebar-header">
-            <span class="sidebar-left-title">Boeken</span>
-            <button id="sidebar-toggle" title="Sidebar inklappen">◀</button>
-        </div>
-        <div id="sidebar-search">
-            <input type="text" id="book-search" placeholder="Zoek boek..." autocomplete="off">
-        </div>
-        <div id="sidebar-boekvolgorde">
-            <label for="sb-boekvolgorde">Volgorde</label>
-            <select id="sb-boekvolgorde" data-optie="boekvolgorde">
-                <option value="canoniek">Canoniek (SV / westers)</option>
-                <option value="tenach">Joodse Tenach (TNK)</option>
-                <option value="orthodox">Orthodox (Septuaginta)</option>
-                <option value="ethiopisch">Ethiopisch (Tewahedo) — met Henoch, Jubileeën, Meqabyan</option>
-                <option value="chronologisch">Chronologisch (gebeurtenissen)</option>
-                <option value="schrijftijd">Vermoedelijke schrijftijd</option>
-                <option value="auteur">Op auteur</option>
-            </select>
-        </div>
+        <button id="sidebar-toggle" type="button" title="Sidebar inklappen" aria-label="Boeknavigatie inklappen">◀</button>
         <div id="sidebar-tree"></div>
     </nav>
 
@@ -547,14 +529,15 @@
     <dialog id="sidebar-right" class="options-panel" aria-labelledby="options-title">
         <div id="sidebar-right-header" class="options-header">
             <button id="sidebar-right-toggle" type="button" aria-label="Opties sluiten" title="Opties sluiten">&times;</button>
-            <p class="options-eyebrow">Open Vertaling</p>
-            <h2 id="options-title">Leesvoorkeuren</h2>
-            <p class="options-preview">In de beginne schiep God de hemel en de aarde.</p>
             <div class="options-tabs" role="tablist" aria-label="Categorieën">
                 <button type="button" role="tab" id="options-tab-lezen" data-options-tab="lezen" aria-controls="options-panel-lezen" aria-selected="true">Lezen</button>
                 <button type="button" role="tab" id="options-tab-vergelijken" data-options-tab="vergelijken" aria-controls="options-panel-vergelijken" aria-selected="false" tabindex="-1">Vergelijken</button>
                 <button type="button" role="tab" id="options-tab-onderzoeken" data-options-tab="onderzoeken" aria-controls="options-panel-onderzoeken" aria-selected="false" tabindex="-1">Onderzoeken</button>
             </div>
+            <span class="options-sheet-grip" aria-hidden="true"></span>
+            <p class="options-eyebrow">Open Vertaling</p>
+            <h2 id="options-title">Leesvoorkeuren</h2>
+            <p class="options-preview">In de beginne schiep God de hemel en de aarde.</p>
         </div>
         <div id="sidebar-right-body" class="options-body">
             <section id="options-panel-lezen" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-lezen">
@@ -585,6 +568,25 @@
                     <label class="option-row"><span><strong>Hoofdstuknummers</strong></span><input type="checkbox" id="toggle-hoofdstuknummers" checked onchange="document.body.classList.toggle('hoofdstuknummers-uit', !this.checked);localStorage.setItem('hoofdstuknummers', this.checked)"></label>
                     <label class="option-row"><span><strong>Perikoopkopjes</strong><small>Tussenkopjes per gedeelte.</small></span><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"></label>
                     <label class="option-row"><span><strong>Doorlopend lezen</strong><small>Laad het volgende hoofdstuk tijdens het scrollen.</small></span><input type="checkbox" id="toggle-doorlopend" onchange="localStorage.setItem('doorlopend', this.checked); document.body.classList.toggle('doorlopend-aan', this.checked); if (typeof App !== 'undefined' && typeof Navigation !== 'undefined' && Navigation.currentBook) { App.renderChapter(Navigation.currentBook, Navigation.currentChapter); }"></label>
+                </div>
+
+                <div class="options-section-heading">
+                    <span class="options-section-icon" aria-hidden="true">☰</span>
+                    <div><h3>Navigatie</h3><p>Kies hoe de boeken in menu's en bij het doorlezen worden geordend.</p></div>
+                </div>
+                <div class="options-list">
+                    <label class="option-row option-row-book-order" for="opt-boekvolgorde">
+                        <span><strong>Boekvolgorde</strong><small>Deze keuze geldt ook voor vorige en volgende hoofdstukken.</small></span>
+                        <select id="opt-boekvolgorde" data-optie="boekvolgorde" aria-label="Boekvolgorde">
+                            <option value="canoniek">Canoniek (SV / westers)</option>
+                            <option value="tenach">Joodse Tenach (TNK)</option>
+                            <option value="orthodox">Orthodox (Septuaginta)</option>
+                            <option value="ethiopisch">Ethiopisch (Tewahedo)</option>
+                            <option value="chronologisch">Chronologisch (gebeurtenissen)</option>
+                            <option value="schrijftijd">Vermoedelijke schrijftijd</option>
+                            <option value="auteur">Op auteur</option>
+                        </select>
+                    </label>
                 </div>
 
                 <div class="options-section-heading">
@@ -681,7 +683,7 @@
                         <label><input type="radio" name="opt-geoMarkeren" data-optie="geoMarkeren" value="uit"> Niet markeren</label>
                         <label><input type="radio" name="opt-geoMarkeren" data-optie="geoMarkeren" value="aan"> Markeren</label>
                     </fieldset>
-                    <div class="option-status"><strong>Strong-nummers</strong><span>Beschikbaar zodra dit boek woord voor woord gekoppeld is.</span></div>
+                    <label class="option-row"><span><strong>Strong-nummers</strong><small>Toon blauwe nummers bij de gekoppelde Hebreeuwse en Griekse grondtekstwoorden.</small></span><input type="checkbox" id="toggle-strongs" data-optie="strongs" value="aan"></label>
                 </div>
             </section>
         </div>

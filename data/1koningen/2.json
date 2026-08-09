@@ -2098,7 +2098,7 @@
       "number": 17,
       "textSV1888": "En hij zeide: Spreek toch tot den koning Salomo, want hij zal uw aangezicht niet afwijzen, dat hij mij Abisag, de Sunamietische, ter vrouwe geve.",
       "text1637": "Ende hy seyde, Spreeckt doch tot den Coninck Salomo, want hy en sal u aengesichte niet afwijsen; dat hy my Abisag de Sunamitische ter vrouwe geve.",
-      "text2026": "En hij zei: Spreek toch tot de koning Salomo, want hij zal uw aangezicht niet afwijzen, dat hij mij Abisag, de Sunamietische, ter vrouwe geve.",
+      "text2026": "En hij zei: Spreek toch tot de koning Salomo, want hij zal uw aangezicht niet afwijzen, dat hij mij Abisag, de Sunamietische, tot vrouw geve.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2182,7 +2182,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>Spreek toch tot de koning Salomo, want hij zal uw aangezicht niet afwijzen, dat hij mij Abisag, de Sunamietische, ter vrouwe geve.</i></span>",
+      "text2026_html": "En hij zei: <span class=\"direct-speech\"><i>Spreek toch tot de koning Salomo, want hij zal uw aangezicht niet afwijzen, dat hij mij Abisag, de Sunamietische, tot vrouw geve.</i></span>",
       "text1637_html": "Ende hy seyde, Spreeckt doch tot den Coninck Salomo, want hy en sal u aengesichte niet afwijsen; dat hy my Abisag de Sunamitische ter vrouwe geve.",
       "phraseDiff": [
         {
@@ -2194,6 +2194,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "ter vrouwe",
+          "new": "tot vrouw",
+          "principe": "V1195"
         }
       ]
     },
@@ -2570,7 +2575,7 @@
       "number": 21,
       "textSV1888": "En zij zeide: Laat Abisag, de Sunamietische, aan Adonia, uw broeder, ter vrouwe gegeven worden.",
       "text1637": "Ende sy seyde, Laet Abisagde Sunamitische aen Adonia uwen broeder ter vrouwe gegeven worden.",
-      "text2026": "En zij zei: Laat Abisag, de Sunamietische, aan Adonia, uw broer, ter vrouwe gegeven worden.",
+      "text2026": "En zij zei: Laat Abisag, de Sunamietische, aan Adonia, uw broer, tot vrouw gegeven worden.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2614,7 +2619,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "En zij zei: <span class=\"direct-speech\"><i>Laat Abisag, de Sunamietische, aan Adonia, uw broer, ter vrouwe gegeven worden.</i></span>",
+      "text2026_html": "En zij zei: <span class=\"direct-speech\"><i>Laat Abisag, de Sunamietische, aan Adonia, uw broer, tot vrouw gegeven worden.</i></span>",
       "text1637_html": "Ende sy seyde, Laet Abisagde Sunamitische aen Adonia uwen broeder ter vrouwe gegeven worden.",
       "phraseDiff": [
         {
@@ -2623,9 +2628,9 @@
           "principe": "W1"
         },
         {
-          "old": "broeder,",
-          "new": "broer,",
-          "principe": "O22a"
+          "old": "broeder, ter vrouwe",
+          "new": "broer, tot vrouw",
+          "principe": "V1195"
         }
       ]
     },

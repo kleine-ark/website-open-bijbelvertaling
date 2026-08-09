@@ -43,7 +43,7 @@
     }
 
     function itemParam() {
-        var m = /[?&]item=([^&]+)/.exec(location.search);
+        var m = /[?&](?:persoon|item)=([^&]+)/.exec(location.search);
         return m ? decodeURIComponent(m[1]) : null;
     }
 
@@ -52,12 +52,13 @@
         .then(function (d) {
             if (!d) { houder.textContent = 'De gegevens konden niet geladen worden.'; return; }
             var gekozen = itemParam();
+            var collectie = d.personen || d.items || [];
             var item = null;
             var itemIndex = -1;
             if (gekozen) {
-                for (var i = 0; i < d.items.length; i++) {
-                    if (d.items[i].id === gekozen) {
-                        item = d.items[i];
+                for (var i = 0; i < collectie.length; i++) {
+                    if (collectie[i].id === gekozen) {
+                        item = collectie[i];
                         itemIndex = i;
                         break;
                     }
@@ -76,11 +77,27 @@
         return labels.join(' · ');
     }
 
+    function overzichtBoeken(it) {
+        var boeken = [];
+        var gezien = {};
+        for (var i = 0; i < it.tekstpassages.length; i++) {
+            var passage = it.tekstpassages[i];
+            var label = passage.boekNaam || passage.label || passage.boek;
+            var match = label.match(/^(.*?)(?=\s+\d)/);
+            var boek = match ? match[1] : label;
+            if (!gezien[boek]) {
+                gezien[boek] = true;
+                boeken.push(boek);
+            }
+        }
+        return boeken.join(' · ');
+    }
+
     function toonOverzicht(d) {
         document.title = d.titel + ' — Open Vertaling';
         var h = '<h1>' + esc(d.titel) + '</h1>';
         if (d.intro) h += '<p class="ns-lead">' + esc(d.intro) + '</p>';
-        var items = d.items.slice();
+        var items = (d.personen || d.items || []).slice();
         if (!d.nummerType) {
             items.sort(function (a, b) {
                 var byName = a.naam.localeCompare(b.naam, 'nl', { sensitivity: 'base' });
@@ -95,12 +112,13 @@
         h += '<div class="ns-rooster">';
         for (var i = 0; i < items.length; i++) {
             var it = items[i];
-            h += '<a class="ns-kaart" href="?item=' + encodeURIComponent(it.id) + '">' +
+            h += '<a class="ns-kaart" href="?' + (d.personen ? 'persoon' : 'item') + '=' + encodeURIComponent(it.id) + '">' +
                  (d.nummerType ? '<span class="ns-nummer">' + esc(d.nummerType) + ' ' + (i + 1) + '</span>' : '') +
                  '<span class="ns-kaart-naam">' + esc(it.naam) + '</span>' +
                  (it.onderscheiding ? '<span class="ns-kaart-onderscheiding">' + esc(it.onderscheiding) + '</span>' : '') +
                  (it.gebruik ? '<span class="ns-type">' + esc(it.gebruik) + '</span>' : '') +
                  (d.nummerType === 'Lied' ? '<span class="ns-kaart-passage">' + esc(overzichtPassage(it)) + '</span>' :
+                 d.nummerType === 'Gebed' ? '<span class="ns-kaart-passage">' + esc(overzichtBoeken(it)) + '</span>' :
                  '<span class="ns-kaart-tal">' + it.verzen.length +
                  (it.verzen.length === 1 ? ' vindplaats' : ' vindplaatsen') + '</span>') + '</a>';
         }
@@ -139,6 +157,13 @@
             h += '<p class="ns-onderscheiding">' + esc(it.onderscheiding) + '</p>';
         }
         h += '<p class="ns-beschrijving">' + esc(it.beschrijving) + '</p>';
+        if (it.naamvormen && it.naamvormen.length > 1) {
+            h += '<p class="ns-naamvormen"><strong>Naamvormen:</strong> ' +
+                 esc(it.naamvormen.join(' · ')) + '</p>';
+        }
+        if (it.stamvader) h += stamvaderHtml(it.stamvader);
+        if (it.kaart) h += volkenKaartHtml(it.kaart);
+        if (d.relaties) h += familieHtml(d, it);
         if (d.nummerType && it.tekstpassages) {
             h += '<section class="ns-volledige-tekst" aria-live="polite">' +
                  '<h2 class="ns-kop">Volledige tekst</h2>' +
@@ -168,13 +193,77 @@
             globalThis.GekoppeldeTeksten.render(
                 document.getElementById('naslag-gekoppelde-teksten'),
                 refs,
-                { boeknamen: d.boeknamen || (function () {
+                { compact: true, initialLimit: 8, boeknamen: d.boeknamen || (function () {
                     var namen = {};
                     namen[d.bronId || d.bron.toLowerCase()] = d.bron;
                     return namen;
                 })() }
             );
         }
+    }
+
+    function stamvaderHtml(stamvader) {
+        var ref = String(stamvader.ref || '');
+        var parts = ref.split(' ');
+        var boek = parts[0] || '';
+        var cv = (parts[1] || '').split(':');
+        var refLink = 'index.html#' + boek + '/' + (cv[0] || '') + '/' + (cv[1] || '');
+        return '<section class="vn-stamvader" aria-labelledby="vn-stamvader-kop">' +
+            '<div class="vn-stamvader-tak" aria-hidden="true"><span></span></div>' +
+            '<div><span class="vn-label">Stamvader</span>' +
+            '<h2 id="vn-stamvader-kop">' + esc(stamvader.naam) + '</h2>' +
+            '<p>' + esc(stamvader.relatie) +
+            (stamvader.betekenis ? '; de naam betekent ‘' + esc(stamvader.betekenis) + '’' : '') + '.</p>' +
+            '<div class="vn-stamvader-links">' +
+            '<a target="_top" href="' + refLink + '">' + esc(ref) + '</a>' +
+            (stamvader.persoonLink ? '<a target="_top" href="' + esc(stamvader.persoonLink) + '">Persoonspagina</a>' : '') +
+            '</div></div></section>';
+    }
+
+    function volkenKaartHtml(kaart) {
+        return '<a class="vn-kaart" target="_top" href="' + esc(kaart.link) + '" aria-label="Bekijk ' +
+            esc(kaart.plaats) + ' op de interactieve kaart">' +
+            '<span class="vn-kaart-beeld" aria-hidden="true">' +
+            '<svg viewBox="0 0 420 190" role="img">' +
+            '<path class="vn-water" d="M151 0 C144 42 161 64 153 100 C148 126 157 145 150 190" />' +
+            '<ellipse class="vn-zee" cx="150" cy="151" rx="14" ry="27" />' +
+            '<path class="vn-gebied" d="M177 37 C224 20 298 38 328 76 C310 122 269 153 199 149 C173 116 168 76 177 37 Z" />' +
+            '<circle class="vn-marker-ring" cx="254" cy="83" r="11" />' +
+            '<circle class="vn-marker" cx="254" cy="83" r="5" />' +
+            '<text class="vn-rabba" x="272" y="88">Rabba</text>' +
+            '<text class="vn-jordaan" x="126" y="83" transform="rotate(-83 126 83)">Jordaan</text>' +
+            '<text class="vn-ammon" x="230" y="126">AMMON</text>' +
+            '</svg></span>' +
+            '<span class="vn-kaart-info"><span class="vn-label">Woongebied</span>' +
+            '<strong>' + esc(kaart.gebied) + '</strong>' +
+            '<span>' + esc(kaart.plaats) + ' — ' + esc(kaart.moderneNaam) + '</span>' +
+            '<small>' + esc(kaart.toelichting) + '</small>' +
+            '<span class="vn-kaart-cta">Bekijk op de kaart →</span></span></a>';
+    }
+
+    function familieHtml(d, it) {
+        var people = d.personen || [];
+        var byId = {};
+        for (var p = 0; p < people.length; p++) byId[people[p].id] = people[p];
+        var rows = [];
+        for (var r = 0; r < d.relaties.length; r++) {
+            var rel = d.relaties[r];
+            if (rel.van !== it.id && rel.naar !== it.id) continue;
+            var otherId = rel.van === it.id ? rel.naar : rel.van;
+            if (!byId[otherId]) continue;
+            var label = rel.type;
+            if (rel.type === 'vader' || rel.type === 'moeder') {
+                label = rel.naar === it.id ? rel.type : 'kind';
+            }
+            rows.push('<li><span class="ps-relatie-type">' + esc(label) + '</span> ' +
+                '<a href="?persoon=' + encodeURIComponent(otherId) + '">' +
+                esc(byId[otherId].naam) + '</a>' +
+                (rel.refs && rel.refs.length ? ' <span class="ps-relatie-ref">' + esc(rel.refs.join(' · ')) + '</span>' : '') +
+                '</li>');
+        }
+        if (!rows.length) return '';
+        return '<section class="ps-familie"><h2 class="ns-kop">Familie en stamboom</h2><ul>' +
+               rows.join('') + '</ul><p><a href="stamboom.html">Bekijk de stambomen</a></p></section>';
     }
 
     function bundelPad(d, it) {
@@ -184,6 +273,10 @@
 
     function laadVolledigeTekst(d, it) {
         var container = houder.querySelector('.ns-volledige-tekst');
+        if (d.nummerType === 'Lied' && globalThis.OSV && typeof globalThis.OSV.cite === 'function') {
+            laadLiedtekstUitCitaten(container, it);
+            return;
+        }
         fetch(bundelPad(d, it))
             .then(function (r) {
                 if (!r.ok) throw new Error('tekstbundel ontbreekt');
@@ -194,6 +287,30 @@
                 container.innerHTML = '<h2 class="ns-kop">Volledige tekst</h2>' +
                     '<p class="ns-tekstfout">De volledige tekst kon niet geladen worden.</p>';
             });
+    }
+
+    function laadLiedtekstUitCitaten(container, it) {
+        container.textContent = '';
+        container.appendChild(maakElement('h2', 'ns-kop', 'Volledige tekst'));
+        var passages = it.tekstpassages || [];
+        var taken = passages.map(function (passage) {
+            var passageNode = maakElement('section', 'ns-passage ns-liedcitaat');
+            passageNode.appendChild(maakElement('h3', '', passage.label));
+            var citaat = maakElement('div', 'osv-cite ns-liedtekst');
+            citaat.innerHTML = '<span class="osv-laden">…</span>';
+            passageNode.appendChild(citaat);
+            container.appendChild(passageNode);
+
+            var ref = passage.boek + ' ' + passage.hoofdstuk + ':' + passage.van +
+                (passage.tot !== passage.van ? '-' + passage.tot : '');
+            return globalThis.OSV.cite(ref, { link: false }).then(function (resultaat) {
+                citaat.innerHTML = resultaat.html;
+            });
+        });
+        Promise.all(taken).catch(function () {
+            container.innerHTML = '<h2 class="ns-kop">Volledige tekst</h2>' +
+                '<p class="ns-tekstfout">De volledige tekst kon niet geladen worden.</p>';
+        });
     }
 
     function maakElement(tag, className, text) {
@@ -223,8 +340,16 @@
                 for (var v = 0; v < section.verzen.length; v++) {
                     var vers = section.verzen[v];
                     var verseNode = maakElement('p', 'ns-tekstvers');
-                    verseNode.appendChild(maakElement('sup', '', String(vers.nummer)));
-                    verseNode.appendChild(document.createTextNode(' ' + vers.tekst));
+                    var textNode = verseNode;
+                    if (bundle.nummerType === 'Gebed' && section.boek) {
+                        textNode = maakElement('a', 'ns-tekstvers-link');
+                        textNode.href = 'index.html#' + section.boek + '/' +
+                            section.hoofdstuk + '/' + vers.nummer;
+                        textNode.target = '_top';
+                        verseNode.appendChild(textNode);
+                    }
+                    textNode.appendChild(maakElement('sup', '', String(vers.nummer)));
+                    textNode.appendChild(document.createTextNode(' ' + vers.tekst));
                     passageNode.appendChild(verseNode);
                 }
             }

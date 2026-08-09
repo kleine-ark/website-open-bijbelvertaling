@@ -213,9 +213,7 @@ const Lees = {
             ? '<strong>⚠ Buiten-canoniek boek (Ethiopisch-orthodoxe traditie).</strong> ' +
               'Dit boek is géén onderdeel van de canon van Gods Woord en hoort niet tot de Statenvertaling-canon. ' +
               'De vertaling is in bewerking en de Ge’ez-grondtekst wordt slechts gedeeltelijk (per beschikbaar hoofdstuk) getoond.'
-            : '<strong>⚠ Apocrief boek — geen onderdeel van de canon van Gods Woord.</strong> ' +
-              'Dit boek behoort tot de apocriefe (deuterocanonieke) geschriften en maakt geen deel uit van de 66 boeken ' +
-              'van de protestantse canon. Het wordt hier opgenomen ter informatie en studie, niet als gezaghebbend Woord van God.';
+            : '<strong>⚠ Apocrief boek - geen onderdeel van de canon van Gods Woord</strong>';
         banner.style.display = 'block';
     },
 

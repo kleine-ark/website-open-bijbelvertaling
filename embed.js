@@ -47,7 +47,7 @@
         .then(function (r) { return r.json(); })
         .then(function (d) {
           var m = {};
-          (d.books || []).forEach(function (b) { m[b.id] = b.nameDutch || b.id; });
+          (d.books || []).forEach(function (b) { m[b.id] = b; });
           return m;
         })
         .catch(function () { return {}; });
@@ -113,7 +113,9 @@
   /* Hoofd-API: levert {html, plain, ref, label, url} voor een referentie */
   function cite(ref, opts) {
     opts = opts || {};
-    var numbers = bool(opts.numbers, true);
+    var globalOptions = typeof Opties !== 'undefined' && Opties.state;
+    var numbersDefault = globalOptions ? globalOptions.versnummers !== 'uit' : true;
+    var numbers = bool(opts.numbers, numbersDefault);
     var citaat = bool(opts.citaat, true);
     var showLink = bool(opts.link, true);
     var gods = opts.godsnaam || 'ov';
@@ -121,16 +123,25 @@
     var p = parseRef(ref);
     if (!p) return Promise.reject(new Error('Ongeldige referentie: ' + ref));
 
-    return Promise.all([loadChapter(p.book, p.chapter), loadBooks()]).then(function (res) {
-      var data = res[0], names = res[1];
-      var name = names[p.book] || p.book;
+    var optionsReady = typeof Opties !== 'undefined' && Opties.ready
+      ? Opties.ready : Promise.resolve();
+    return Promise.all([loadChapter(p.book, p.chapter), loadBooks(), optionsReady]).then(function (res) {
+      var data = res[0], books = res[1], book = books[p.book] || {};
+      var name = book.nameDutch || p.book;
       var picked = (data.verses || []).filter(function (v) { return v.number >= p.from && v.number <= p.to; });
       if (!picked.length) throw new Error('Vers niet gevonden: ' + ref);
 
       var parts = picked.map(function (v) {
         var body = citaat ? (v.text2026_html || v.text2026 || '') : (v.text2026 || '');
         if (!citaat) body = escapeHtml(body);
-        body = applyGodsnaam(body, gods);
+        if (typeof Opties !== 'undefined' && Opties.transformOV && opts.godsnaam === undefined) {
+          body = Opties.transformOV(body, book.testament);
+          if (Opties.markeerGeo) body = Opties.markeerGeo(body, p.book, p.chapter, v.number);
+          if (Opties.rekenMaten) body = Opties.rekenMaten(body, p.book, p.chapter, v.number);
+          if (Opties.rekenTijden) body = Opties.rekenTijden(body, p.book, p.chapter, v.number, book.testament);
+        } else {
+          body = applyGodsnaam(body, gods);
+        }
         var num = numbers ? '<sup class="osv-num">' + v.number + '</sup> ' : '';
         return '<span class="osv-vers">' + num + body + '</span>';
       });
@@ -144,7 +155,14 @@
       var html = '<span class="osv-tekst">' + parts.join(' ') + '</span>' + linkHtml;
 
       var plain = picked.map(function (v) {
-        var t = applyGodsnaam(v.text2026 || '', gods);
+        var t = v.text2026 || '';
+        if (typeof Opties !== 'undefined' && Opties.transformOV && opts.godsnaam === undefined) {
+          t = Opties.transformOV(t, book.testament);
+          if (Opties.rekenMaten) t = Opties.rekenMaten(t, p.book, p.chapter, v.number);
+          if (Opties.rekenTijden) t = Opties.rekenTijden(t, p.book, p.chapter, v.number, book.testament);
+        } else {
+          t = applyGodsnaam(t, gods);
+        }
         return (numbers ? v.number + ' ' : '') + t;
       }).join(' ');
 

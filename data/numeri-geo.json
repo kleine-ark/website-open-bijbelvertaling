@@ -1,0 +1,4739 @@
+{
+  "boek": "numeri",
+  "status": "agent-reviewed",
+  "reviewStatus": "ai-geidentificeerd-agent-reviewed",
+  "humanReviewed": false,
+  "provenance": {
+    "methode": "vers-voor-vers agentbeoordeling met expliciete plaatscatalogus",
+    "scope": "uitsluitend Bijbeltekst; kanttekeningen niet meegetagd"
+  },
+  "dekking": {
+    "verzenBeoordeeld": 1288,
+    "verzenMetTags": 201
+  },
+  "namen": {
+    "Abarim": {
+      "id": "geo-abarim",
+      "naam": "Abarim",
+      "type": "berg",
+      "status": "agent-reviewed"
+    },
+    "Abel-sittim": {
+      "id": "geo-sittim",
+      "naam": "Sittim",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Abrona": {
+      "id": "geo-abrona",
+      "naam": "Abrona",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Ain": {
+      "id": "geo-ain",
+      "naam": "Ain",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Akrabbim": {
+      "id": "geo-akrabbim",
+      "naam": "Akrabbim",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Almon-diblathaim": {
+      "id": "geo-almon-diblathaim",
+      "naam": "Almon-diblathaim",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Aluz": {
+      "id": "geo-aluz",
+      "naam": "Aluz",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Ar": {
+      "id": "geo-ar",
+      "naam": "Ar",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Arnon": {
+      "id": "geo-arnon",
+      "naam": "Arnon",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
+    },
+    "Aroër": {
+      "id": "geo-aroer",
+      "naam": "Aroër",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Assur": {
+      "id": "geo-assur",
+      "naam": "Assur",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Ataroth": {
+      "id": "geo-ataroth",
+      "naam": "Ataroth",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Atroth-Sofan": {
+      "id": "geo-atroth-sofan",
+      "naam": "Atroth-Sofan",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Azmon": {
+      "id": "geo-azmon",
+      "naam": "Azmon",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Bamoth": {
+      "id": "geo-bamoth",
+      "naam": "Bamoth",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Basan": {
+      "id": "geo-basan",
+      "naam": "Basan",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Bazan": {
+      "id": "geo-basan",
+      "naam": "Basan",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Baäl-Meon": {
+      "id": "geo-baal-meon",
+      "naam": "Baäl-Meon",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Beer": {
+      "id": "geo-beer",
+      "naam": "Beer",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Behon": {
+      "id": "geo-behon",
+      "naam": "Behon",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Bene-jaakan": {
+      "id": "geo-bene-jaakan",
+      "naam": "Bene-jaakan",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Beth-Haran": {
+      "id": "geo-beth-haran",
+      "naam": "Beth-Haran",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Beth-jesimoth": {
+      "id": "geo-beth-jesimoth",
+      "naam": "Beth-jesimoth",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Beth-Nimra": {
+      "id": "geo-beth-nimra",
+      "naam": "Beth-Nimra",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Chitteers": {
+      "id": "geo-chittim",
+      "naam": "Chittim",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Cinnereth": {
+      "id": "geo-cinnereth",
+      "naam": "Cinnereth",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
+    },
+    "Dibon": {
+      "id": "geo-dibon",
+      "naam": "Dibon",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Dibon-gad": {
+      "id": "geo-dibon-gad",
+      "naam": "Dibon-gad",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Dofka": {
+      "id": "geo-dofka",
+      "naam": "Dofka",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Edom": {
+      "id": "geo-edom",
+      "naam": "Edom",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Edreï": {
+      "id": "geo-edrei",
+      "naam": "Edreï",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Egypte": {
+      "id": "geo-egypte",
+      "naam": "Egypte",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Egypteland": {
+      "id": "geo-egypte",
+      "naam": "Egypte",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Eleale": {
+      "id": "geo-eleale",
+      "naam": "Eleale",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Elim": {
+      "id": "geo-elim",
+      "naam": "Elim",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Eskol": {
+      "id": "geo-eskol",
+      "naam": "Eskol",
+      "type": "plaats",
+      "status": "agent-reviewed"
+    },
+    "Etham": {
+      "id": "geo-etham",
+      "naam": "Etham",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Ezeon-geber": {
+      "id": "geo-ezeon-geber",
+      "naam": "Ezeon-geber",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Funon": {
+      "id": "geo-funon",
+      "naam": "Funon",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Gilead": {
+      "id": "geo-gilead",
+      "naam": "Gilead",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Hamath": {
+      "id": "geo-hamath",
+      "naam": "Hamath",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Harad": {
+      "id": "geo-harad",
+      "naam": "Harad",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Harada": {
+      "id": "geo-harada",
+      "naam": "Harada",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Hasmona": {
+      "id": "geo-hasmona",
+      "naam": "Hasmona",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Havvoth-Jaïr": {
+      "id": "geo-havvoth-jair",
+      "naam": "Havvoth-Jaïr",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Hazar-addar": {
+      "id": "geo-hazar-addar",
+      "naam": "Hazar-addar",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Hazar-enan": {
+      "id": "geo-hazar-enan",
+      "naam": "Hazar-enan",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Hazeroth": {
+      "id": "geo-hazeroth",
+      "naam": "Hazeroth",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Hebron": {
+      "id": "geo-hebron",
+      "naam": "Hebron",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Hesbon": {
+      "id": "geo-hesbon",
+      "naam": "Hesbon",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Hezbon": {
+      "id": "geo-hesbon",
+      "naam": "Hesbon",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "hoogten van Baäl": {
+      "id": "geo-bamoth",
+      "naam": "Bamoth",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Hor": {
+      "id": "geo-hor",
+      "naam": "Hor",
+      "type": "berg",
+      "status": "agent-reviewed"
+    },
+    "Hor-gidgad": {
+      "id": "geo-hor-gidgad",
+      "naam": "Hor-gidgad",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Horma": {
+      "id": "geo-horma",
+      "naam": "Horma",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Jabbok": {
+      "id": "geo-jabbok",
+      "naam": "Jabbok",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
+    },
+    "Jahza": {
+      "id": "geo-jahza",
+      "naam": "Jahza",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Jaëzer": {
+      "id": "geo-jaezer",
+      "naam": "Jaëzer",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Jericho": {
+      "id": "geo-jericho",
+      "naam": "Jericho",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Jogbeha": {
+      "id": "geo-jogbeha",
+      "naam": "Jogbeha",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Jordaan": {
+      "id": "geo-jordaan",
+      "naam": "Jordaan",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
+    },
+    "Jotbatha": {
+      "id": "geo-jotbatha",
+      "naam": "Jotbatha",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Kades": {
+      "id": "geo-kades",
+      "naam": "Kades",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Kades-barnea": {
+      "id": "geo-kades",
+      "naam": "Kades",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Kanaän": {
+      "id": "geo-kanaan",
+      "naam": "Kanaän",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Kehelatha": {
+      "id": "geo-kehelatha",
+      "naam": "Kehelatha",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Kenath": {
+      "id": "geo-kenath",
+      "naam": "Kenath",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Kibroth Thaava": {
+      "id": "geo-kibroth-thaava",
+      "naam": "Kibroth Thaava",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Kibroth-thaava": {
+      "id": "geo-kibroth-thaava",
+      "naam": "Kibroth Thaava",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Kirjath-huzzoth": {
+      "id": "geo-kirjath-huzzoth",
+      "naam": "Kirjath-huzzoth",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Kirjathaim": {
+      "id": "geo-kirjathaim",
+      "naam": "Kirjathaim",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Libna": {
+      "id": "geo-libna",
+      "naam": "Libna",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Makheloth": {
+      "id": "geo-makheloth",
+      "naam": "Makheloth",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Mara": {
+      "id": "geo-mara",
+      "naam": "Mara",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Mattana": {
+      "id": "geo-mattana",
+      "naam": "Mattana",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Medeba": {
+      "id": "geo-medeba",
+      "naam": "Medeba",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Meriba": {
+      "id": "geo-meriba",
+      "naam": "Meriba",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Migdol": {
+      "id": "geo-migdol",
+      "naam": "Migdol",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Mithka": {
+      "id": "geo-mithka",
+      "naam": "Mithka",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Moab": {
+      "id": "geo-moab",
+      "naam": "Moab",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Moseroth": {
+      "id": "geo-moseroth",
+      "naam": "Moseroth",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Nahaliel": {
+      "id": "geo-nahaliel",
+      "naam": "Nahaliel",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Nebo": {
+      "id": "geo-nebo",
+      "naam": "Nebo",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Nimra": {
+      "id": "geo-nimra",
+      "naam": "Nimra",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Nobah": {
+      "id": "geo-nobah",
+      "naam": "Nobah",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Nofat": {
+      "id": "geo-nofat",
+      "naam": "Nofat",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Oboth": {
+      "id": "geo-oboth",
+      "naam": "Oboth",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Paran": {
+      "id": "geo-woestijn-paran",
+      "naam": "woestijn Paran",
+      "type": "woestijn",
+      "status": "agent-reviewed"
+    },
+    "Peor": {
+      "id": "geo-peor",
+      "naam": "Peor",
+      "type": "berg",
+      "status": "agent-reviewed"
+    },
+    "Pethor": {
+      "id": "geo-pethor",
+      "naam": "Pethor",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Pi-hachiroth": {
+      "id": "geo-pi-hachiroth",
+      "naam": "Pi-hachiroth",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Pisga": {
+      "id": "geo-pisga",
+      "naam": "Pisga",
+      "type": "berg",
+      "status": "agent-reviewed"
+    },
+    "Rafidim": {
+      "id": "geo-rafidim",
+      "naam": "Rafidim",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Rameses": {
+      "id": "geo-rameses",
+      "naam": "Rameses",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Rechob": {
+      "id": "geo-rechob",
+      "naam": "Rechob",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Ribla": {
+      "id": "geo-ribla",
+      "naam": "Ribla",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Rimmon-perez": {
+      "id": "geo-rimmon-perez",
+      "naam": "Rimmon-perez",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Rissa": {
+      "id": "geo-rissa",
+      "naam": "Rissa",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Rithma": {
+      "id": "geo-rithma",
+      "naam": "Rithma",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Safer": {
+      "id": "geo-safer",
+      "naam": "Safer",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Schebam": {
+      "id": "geo-schebam",
+      "naam": "Schebam",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Schelfzee": {
+      "id": "geo-schelfzee",
+      "naam": "Schelfzee",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
+    },
+    "Sefam": {
+      "id": "geo-sefam",
+      "naam": "Sefam",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Seïr": {
+      "id": "geo-seir",
+      "naam": "Seïr",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Sibma": {
+      "id": "geo-schebam",
+      "naam": "Schebam",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Sinaï": {
+      "id": "geo-sinai",
+      "naam": "Sinaï",
+      "type": "plaats",
+      "status": "agent-reviewed"
+    },
+    "Sittim": {
+      "id": "geo-sittim",
+      "naam": "Sittim",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Sukkoth": {
+      "id": "geo-sukkoth",
+      "naam": "Sukkoth",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Syrië": {
+      "id": "geo-syrie",
+      "naam": "Syrië",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    },
+    "Tachath": {
+      "id": "geo-tachath",
+      "naam": "Tachath",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Thab-era": {
+      "id": "geo-thab-era",
+      "naam": "Thab-era",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Tharah": {
+      "id": "geo-tharah",
+      "naam": "Tharah",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Thirza": {
+      "id": "geo-thirza",
+      "naam": "Thirza",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Tirza": {
+      "id": "geo-thirza",
+      "naam": "Thirza",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "veld Zofim": {
+      "id": "geo-veld-zofim",
+      "naam": "veld Zofim",
+      "type": "plaats",
+      "status": "agent-reviewed"
+    },
+    "Waheb": {
+      "id": "geo-waheb",
+      "naam": "Waheb",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "woestijn Paran": {
+      "id": "geo-woestijn-paran",
+      "naam": "woestijn Paran",
+      "type": "woestijn",
+      "status": "agent-reviewed"
+    },
+    "woestijn Sin": {
+      "id": "geo-woestijn-sin",
+      "naam": "woestijn Sin",
+      "type": "woestijn",
+      "status": "agent-reviewed"
+    },
+    "woestijn Zin": {
+      "id": "geo-woestijn-zin",
+      "naam": "woestijn Zin",
+      "type": "woestijn",
+      "status": "agent-reviewed"
+    },
+    "Zalmona": {
+      "id": "geo-zalmona",
+      "naam": "Zalmona",
+      "type": "route-legerplaats",
+      "status": "agent-reviewed"
+    },
+    "Zedad": {
+      "id": "geo-zedad",
+      "naam": "Zedad",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Zered": {
+      "id": "geo-zered",
+      "naam": "Zered",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
+    },
+    "Zifron": {
+      "id": "geo-zifron",
+      "naam": "Zifron",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Zin": {
+      "id": "geo-woestijn-zin",
+      "naam": "woestijn Zin",
+      "type": "woestijn",
+      "status": "agent-reviewed"
+    },
+    "Zoan": {
+      "id": "geo-zoan",
+      "naam": "Zoan",
+      "type": "stad-dorp",
+      "status": "agent-reviewed"
+    },
+    "Zoutzee": {
+      "id": "geo-zoutzee",
+      "naam": "Zoutzee",
+      "type": "rivier-water",
+      "status": "agent-reviewed"
+    },
+    "Zuiden": {
+      "id": "geo-zuiden",
+      "naam": "Zuiden",
+      "type": "land-streek",
+      "status": "agent-reviewed"
+    }
+  },
+  "verzen": {
+    "1:1": [
+      "Egypteland",
+      "Sinaï"
+    ],
+    "1:19": [
+      "Sinaï"
+    ],
+    "2:10": [
+      "Zuiden"
+    ],
+    "3:1": [
+      "Sinaï"
+    ],
+    "3:4": [
+      "Sinaï"
+    ],
+    "3:13": [
+      "Egypteland"
+    ],
+    "3:14": [
+      "Sinaï"
+    ],
+    "3:19": [
+      "Hebron"
+    ],
+    "3:29": [
+      "Zuiden"
+    ],
+    "8:17": [
+      "Egypteland"
+    ],
+    "9:1": [
+      "Egypteland",
+      "Sinaï"
+    ],
+    "9:5": [
+      "Sinaï"
+    ],
+    "10:6": [
+      "Zuiden"
+    ],
+    "10:12": [
+      "Sinaï",
+      "woestijn Paran"
+    ],
+    "11:3": [
+      "Thab-era"
+    ],
+    "11:5": [
+      "Egypte"
+    ],
+    "11:18": [
+      "Egypte"
+    ],
+    "11:20": [
+      "Egypte"
+    ],
+    "11:34": [
+      "Kibroth Thaava"
+    ],
+    "11:35": [
+      "Kibroth Thaava",
+      "Hazeroth"
+    ],
+    "12:16": [
+      "Paran",
+      "Hazeroth"
+    ],
+    "13:2": [
+      "Kanaän"
+    ],
+    "13:3": [
+      "Paran"
+    ],
+    "13:17": [
+      "Kanaän",
+      "Zuiden"
+    ],
+    "13:21": [
+      "woestijn Zin",
+      "Rechob",
+      "Hamath"
+    ],
+    "13:22": [
+      "Egypte",
+      "Zuiden",
+      "Zoan",
+      "Hebron"
+    ],
+    "13:23": [
+      "Eskol"
+    ],
+    "13:24": [
+      "Eskol"
+    ],
+    "13:26": [
+      "Paran",
+      "Kades"
+    ],
+    "13:29": [
+      "Zuiden",
+      "Jordaan"
+    ],
+    "14:2": [
+      "Egypteland"
+    ],
+    "14:3": [
+      "Egypte"
+    ],
+    "14:4": [
+      "Egypte"
+    ],
+    "14:19": [
+      "Egypteland"
+    ],
+    "14:22": [
+      "Egypte"
+    ],
+    "14:25": [
+      "Schelfzee"
+    ],
+    "14:45": [
+      "Horma"
+    ],
+    "15:41": [
+      "Egypteland"
+    ],
+    "20:1": [
+      "woestijn Zin",
+      "Kades"
+    ],
+    "20:5": [
+      "Egypte"
+    ],
+    "20:13": [
+      "Meriba"
+    ],
+    "20:14": [
+      "Edom",
+      "Kades"
+    ],
+    "20:15": [
+      "Egypte"
+    ],
+    "20:16": [
+      "Egypte",
+      "Kades"
+    ],
+    "20:18": [
+      "Edom"
+    ],
+    "20:20": [
+      "Edom"
+    ],
+    "20:21": [
+      "Edom"
+    ],
+    "20:22": [
+      "Hor",
+      "Kades"
+    ],
+    "20:23": [
+      "Edom",
+      "Hor"
+    ],
+    "20:24": [
+      "Meriba"
+    ],
+    "20:25": [
+      "Hor"
+    ],
+    "20:27": [
+      "Hor"
+    ],
+    "21:1": [
+      "Zuiden",
+      "Harad"
+    ],
+    "21:3": [
+      "Horma"
+    ],
+    "21:4": [
+      "Schelfzee",
+      "Hor"
+    ],
+    "21:5": [
+      "Egypte"
+    ],
+    "21:10": [
+      "Oboth"
+    ],
+    "21:11": [
+      "Moab",
+      "Abarim",
+      "Oboth"
+    ],
+    "21:12": [
+      "Zered"
+    ],
+    "21:13": [
+      "Moab",
+      "Arnon"
+    ],
+    "21:14": [
+      "Arnon",
+      "Waheb"
+    ],
+    "21:15": [
+      "Moab",
+      "Ar"
+    ],
+    "21:16": [
+      "Beer"
+    ],
+    "21:18": [
+      "Mattana"
+    ],
+    "21:19": [
+      "Mattana",
+      "Nahaliel",
+      "Bamoth"
+    ],
+    "21:20": [
+      "Moab",
+      "Pisga",
+      "Bamoth"
+    ],
+    "21:23": [
+      "Jahza"
+    ],
+    "21:24": [
+      "Arnon",
+      "Jabbok"
+    ],
+    "21:25": [
+      "Hesbon"
+    ],
+    "21:26": [
+      "Arnon",
+      "Hesbon"
+    ],
+    "21:27": [
+      "Hesbon"
+    ],
+    "21:28": [
+      "Arnon",
+      "Hesbon",
+      "Ar"
+    ],
+    "21:29": [
+      "Moab"
+    ],
+    "21:30": [
+      "Hesbon",
+      "Dibon",
+      "Nofat",
+      "Medeba"
+    ],
+    "21:32": [
+      "Jaëzer"
+    ],
+    "21:33": [
+      "Basan",
+      "Edreï"
+    ],
+    "21:34": [
+      "Hesbon"
+    ],
+    "22:1": [
+      "Moab",
+      "Jordaan",
+      "Jericho"
+    ],
+    "22:3": [
+      "Moab"
+    ],
+    "22:4": [
+      "Moab"
+    ],
+    "22:5": [
+      "Egypte",
+      "Pethor"
+    ],
+    "22:11": [
+      "Egypte"
+    ],
+    "22:21": [
+      "Moab"
+    ],
+    "22:36": [
+      "Arnon"
+    ],
+    "22:39": [
+      "Kirjath-huzzoth"
+    ],
+    "22:41": [
+      "hoogten van Baäl"
+    ],
+    "23:7": [
+      "Syrië"
+    ],
+    "23:14": [
+      "Pisga",
+      "veld Zofim"
+    ],
+    "23:22": [
+      "Egypte"
+    ],
+    "23:28": [
+      "Peor"
+    ],
+    "24:8": [
+      "Egypte"
+    ],
+    "24:18": [
+      "Edom",
+      "Seïr"
+    ],
+    "24:22": [
+      "Assur"
+    ],
+    "24:24": [
+      "Assur",
+      "Chitteers"
+    ],
+    "25:1": [
+      "Sittim"
+    ],
+    "25:18": [
+      "Peor"
+    ],
+    "26:3": [
+      "Moab",
+      "Jordaan",
+      "Jericho"
+    ],
+    "26:4": [
+      "Egypteland"
+    ],
+    "26:19": [
+      "Kanaän"
+    ],
+    "26:29": [
+      "Gilead"
+    ],
+    "26:30": [
+      "Gilead"
+    ],
+    "26:33": [
+      "Tirza"
+    ],
+    "26:59": [
+      "Egypte"
+    ],
+    "26:63": [
+      "Moab",
+      "Jordaan",
+      "Jericho"
+    ],
+    "26:64": [
+      "Sinaï"
+    ],
+    "27:1": [
+      "Gilead",
+      "Tirza"
+    ],
+    "27:12": [
+      "Abarim"
+    ],
+    "27:14": [
+      "woestijn Zin",
+      "Meriba",
+      "Kades"
+    ],
+    "28:6": [
+      "Sinaï"
+    ],
+    "31:12": [
+      "Moab",
+      "Jordaan",
+      "Jericho"
+    ],
+    "31:16": [
+      "Peor"
+    ],
+    "32:1": [
+      "Gilead",
+      "Jaëzer"
+    ],
+    "32:3": [
+      "Nebo",
+      "Hesbon",
+      "Ataroth",
+      "Dibon",
+      "Jaëzer",
+      "Nimra",
+      "Eleale",
+      "Schebam",
+      "Behon"
+    ],
+    "32:5": [
+      "Jordaan"
+    ],
+    "32:8": [
+      "Kades-barnea"
+    ],
+    "32:9": [
+      "Eskol"
+    ],
+    "32:11": [
+      "Egypte"
+    ],
+    "32:19": [
+      "Jordaan"
+    ],
+    "32:21": [
+      "Jordaan"
+    ],
+    "32:26": [
+      "Gilead"
+    ],
+    "32:29": [
+      "Gilead",
+      "Jordaan"
+    ],
+    "32:30": [
+      "Kanaän"
+    ],
+    "32:32": [
+      "Kanaän",
+      "Jordaan"
+    ],
+    "32:33": [
+      "Bazan"
+    ],
+    "32:34": [
+      "Ataroth",
+      "Dibon",
+      "Aroër"
+    ],
+    "32:35": [
+      "Jaëzer",
+      "Atroth-Sofan",
+      "Jogbeha"
+    ],
+    "32:36": [
+      "Beth-Nimra",
+      "Beth-Haran"
+    ],
+    "32:37": [
+      "Hezbon",
+      "Eleale",
+      "Kirjathaim"
+    ],
+    "32:38": [
+      "Nebo",
+      "Sibma",
+      "Baäl-Meon"
+    ],
+    "32:39": [
+      "Gilead"
+    ],
+    "32:40": [
+      "Gilead"
+    ],
+    "32:41": [
+      "Havvoth-Jaïr"
+    ],
+    "32:42": [
+      "Nobah",
+      "Kenath"
+    ],
+    "33:1": [
+      "Egypteland"
+    ],
+    "33:3": [
+      "Rameses"
+    ],
+    "33:5": [
+      "Rameses",
+      "Sukkoth"
+    ],
+    "33:6": [
+      "Sukkoth",
+      "Etham"
+    ],
+    "33:7": [
+      "Migdol",
+      "Etham",
+      "Pi-hachiroth"
+    ],
+    "33:8": [
+      "Etham",
+      "Mara"
+    ],
+    "33:9": [
+      "Mara",
+      "Elim"
+    ],
+    "33:10": [
+      "Schelfzee",
+      "Elim"
+    ],
+    "33:11": [
+      "Schelfzee",
+      "woestijn Sin"
+    ],
+    "33:12": [
+      "woestijn Sin",
+      "Dofka"
+    ],
+    "33:13": [
+      "Dofka",
+      "Aluz"
+    ],
+    "33:14": [
+      "Rafidim",
+      "Aluz"
+    ],
+    "33:15": [
+      "Sinaï",
+      "Rafidim"
+    ],
+    "33:16": [
+      "Sinaï",
+      "Kibroth-thaava"
+    ],
+    "33:17": [
+      "Kibroth-thaava",
+      "Hazeroth"
+    ],
+    "33:18": [
+      "Hazeroth",
+      "Rithma"
+    ],
+    "33:19": [
+      "Rithma",
+      "Rimmon-perez"
+    ],
+    "33:20": [
+      "Rimmon-perez",
+      "Libna"
+    ],
+    "33:21": [
+      "Libna",
+      "Rissa"
+    ],
+    "33:22": [
+      "Rissa",
+      "Kehelatha"
+    ],
+    "33:23": [
+      "Kehelatha",
+      "Safer"
+    ],
+    "33:24": [
+      "Safer",
+      "Harada"
+    ],
+    "33:25": [
+      "Harada",
+      "Makheloth"
+    ],
+    "33:26": [
+      "Makheloth",
+      "Tachath"
+    ],
+    "33:27": [
+      "Tachath",
+      "Tharah"
+    ],
+    "33:28": [
+      "Tharah",
+      "Mithka"
+    ],
+    "33:29": [
+      "Mithka",
+      "Hasmona"
+    ],
+    "33:30": [
+      "Hasmona",
+      "Moseroth"
+    ],
+    "33:31": [
+      "Moseroth",
+      "Bene-jaakan"
+    ],
+    "33:32": [
+      "Bene-jaakan",
+      "Hor-gidgad"
+    ],
+    "33:33": [
+      "Hor-gidgad",
+      "Jotbatha"
+    ],
+    "33:34": [
+      "Jotbatha",
+      "Abrona"
+    ],
+    "33:35": [
+      "Abrona",
+      "Ezeon-geber"
+    ],
+    "33:36": [
+      "woestijn Zin",
+      "Kades",
+      "Ezeon-geber"
+    ],
+    "33:37": [
+      "Edom",
+      "Hor",
+      "Kades"
+    ],
+    "33:38": [
+      "Egypteland",
+      "Hor"
+    ],
+    "33:39": [
+      "Hor"
+    ],
+    "33:40": [
+      "Kanaän",
+      "Zuiden",
+      "Harad"
+    ],
+    "33:41": [
+      "Hor",
+      "Zalmona"
+    ],
+    "33:42": [
+      "Zalmona",
+      "Funon"
+    ],
+    "33:43": [
+      "Oboth",
+      "Funon"
+    ],
+    "33:44": [
+      "Moab",
+      "Abarim",
+      "Oboth"
+    ],
+    "33:45": [
+      "Abarim",
+      "Dibon-gad"
+    ],
+    "33:46": [
+      "Dibon-gad",
+      "Almon-diblathaim"
+    ],
+    "33:47": [
+      "Abarim",
+      "Nebo",
+      "Almon-diblathaim"
+    ],
+    "33:48": [
+      "Jordaan",
+      "Abarim",
+      "Jericho"
+    ],
+    "33:49": [
+      "Jordaan",
+      "Beth-jesimoth",
+      "Abel-sittim"
+    ],
+    "33:50": [
+      "Jordaan",
+      "Jericho"
+    ],
+    "33:51": [
+      "Kanaän",
+      "Jordaan"
+    ],
+    "34:2": [
+      "Kanaän"
+    ],
+    "34:3": [
+      "Edom",
+      "Zoutzee",
+      "woestijn Zin"
+    ],
+    "34:4": [
+      "Zuiden",
+      "Zin",
+      "Hazar-addar",
+      "Kades-barnea",
+      "Akrabbim",
+      "Azmon"
+    ],
+    "34:5": [
+      "Egypte",
+      "Azmon"
+    ],
+    "34:7": [
+      "Hor"
+    ],
+    "34:8": [
+      "Hor",
+      "Zedad",
+      "Hamath"
+    ],
+    "34:9": [
+      "Hazar-enan",
+      "Zifron"
+    ],
+    "34:10": [
+      "Hazar-enan",
+      "Sefam"
+    ],
+    "34:11": [
+      "Cinnereth",
+      "Ribla",
+      "Ain",
+      "Sefam"
+    ],
+    "34:12": [
+      "Jordaan",
+      "Zoutzee"
+    ],
+    "34:15": [
+      "Jordaan",
+      "Jericho"
+    ],
+    "34:29": [
+      "Kanaän"
+    ],
+    "35:1": [
+      "Jordaan",
+      "Jericho"
+    ],
+    "35:5": [
+      "Zuiden"
+    ],
+    "35:10": [
+      "Kanaän",
+      "Jordaan"
+    ],
+    "35:14": [
+      "Kanaän",
+      "Jordaan"
+    ],
+    "36:1": [
+      "Gilead"
+    ],
+    "36:11": [
+      "Thirza"
+    ],
+    "36:13": [
+      "Jordaan",
+      "Jericho"
+    ]
+  },
+  "mentions": {
+    "1:1": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "numeri 1:1",
+        "href": "index.html#numeri/1/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "plaats",
+        "ref": "numeri 1:1",
+        "href": "index.html#numeri/1/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "1:19": [
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "plaats",
+        "ref": "numeri 1:19",
+        "href": "index.html#numeri/1/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "2:10": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "numeri 2:10",
+        "href": "index.html#numeri/2/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "3:1": [
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "berg",
+        "ref": "numeri 3:1",
+        "href": "index.html#numeri/3/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "3:4": [
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "plaats",
+        "ref": "numeri 3:4",
+        "href": "index.html#numeri/3/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "3:13": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "numeri 3:13",
+        "href": "index.html#numeri/3/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "3:14": [
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "plaats",
+        "ref": "numeri 3:14",
+        "href": "index.html#numeri/3/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "3:19": [
+      {
+        "id": "geo-hebron",
+        "label": "Hebron",
+        "type": "stad-dorp",
+        "ref": "numeri 3:19",
+        "href": "index.html#numeri/3/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "3:29": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "numeri 3:29",
+        "href": "index.html#numeri/3/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "8:17": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "numeri 8:17",
+        "href": "index.html#numeri/8/17",
+        "status": "agent-reviewed"
+      }
+    ],
+    "9:1": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "numeri 9:1",
+        "href": "index.html#numeri/9/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "plaats",
+        "ref": "numeri 9:1",
+        "href": "index.html#numeri/9/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "9:5": [
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "plaats",
+        "ref": "numeri 9:5",
+        "href": "index.html#numeri/9/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "10:6": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "numeri 10:6",
+        "href": "index.html#numeri/10/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "10:12": [
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "woestijn",
+        "ref": "numeri 10:12",
+        "href": "index.html#numeri/10/12",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-woestijn-paran",
+        "label": "woestijn Paran",
+        "type": "woestijn",
+        "ref": "numeri 10:12",
+        "href": "index.html#numeri/10/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:3": [
+      {
+        "id": "geo-thab-era",
+        "label": "Thab-era",
+        "type": "route-legerplaats",
+        "ref": "numeri 11:3",
+        "href": "index.html#numeri/11/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:5": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 11:5",
+        "href": "index.html#numeri/11/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:18": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 11:18",
+        "href": "index.html#numeri/11/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:20": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 11:20",
+        "href": "index.html#numeri/11/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:34": [
+      {
+        "id": "geo-kibroth-thaava",
+        "label": "Kibroth Thaava",
+        "type": "route-legerplaats",
+        "ref": "numeri 11:34",
+        "href": "index.html#numeri/11/34",
+        "status": "agent-reviewed"
+      }
+    ],
+    "11:35": [
+      {
+        "id": "geo-kibroth-thaava",
+        "label": "Kibroth Thaava",
+        "type": "route-legerplaats",
+        "ref": "numeri 11:35",
+        "href": "index.html#numeri/11/35",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hazeroth",
+        "label": "Hazeroth",
+        "type": "route-legerplaats",
+        "ref": "numeri 11:35",
+        "href": "index.html#numeri/11/35",
+        "status": "agent-reviewed"
+      }
+    ],
+    "12:16": [
+      {
+        "id": "geo-woestijn-paran",
+        "label": "Paran",
+        "type": "woestijn",
+        "ref": "numeri 12:16",
+        "href": "index.html#numeri/12/16",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hazeroth",
+        "label": "Hazeroth",
+        "type": "route-legerplaats",
+        "ref": "numeri 12:16",
+        "href": "index.html#numeri/12/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:2": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 13:2",
+        "href": "index.html#numeri/13/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:3": [
+      {
+        "id": "geo-woestijn-paran",
+        "label": "Paran",
+        "type": "woestijn",
+        "ref": "numeri 13:3",
+        "href": "index.html#numeri/13/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:17": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 13:17",
+        "href": "index.html#numeri/13/17",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "numeri 13:17",
+        "href": "index.html#numeri/13/17",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:21": [
+      {
+        "id": "geo-woestijn-zin",
+        "label": "woestijn Zin",
+        "type": "woestijn",
+        "ref": "numeri 13:21",
+        "href": "index.html#numeri/13/21",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-rechob",
+        "label": "Rechob",
+        "type": "stad-dorp",
+        "ref": "numeri 13:21",
+        "href": "index.html#numeri/13/21",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hamath",
+        "label": "Hamath",
+        "type": "stad-dorp",
+        "ref": "numeri 13:21",
+        "href": "index.html#numeri/13/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:22": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 13:22",
+        "href": "index.html#numeri/13/22",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "numeri 13:22",
+        "href": "index.html#numeri/13/22",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zoan",
+        "label": "Zoan",
+        "type": "stad-dorp",
+        "ref": "numeri 13:22",
+        "href": "index.html#numeri/13/22",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hebron",
+        "label": "Hebron",
+        "type": "stad-dorp",
+        "ref": "numeri 13:22",
+        "href": "index.html#numeri/13/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:23": [
+      {
+        "id": "geo-eskol",
+        "label": "Eskol",
+        "type": "plaats",
+        "ref": "numeri 13:23",
+        "href": "index.html#numeri/13/23",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:24": [
+      {
+        "id": "geo-eskol",
+        "label": "Eskol",
+        "type": "plaats",
+        "ref": "numeri 13:24",
+        "href": "index.html#numeri/13/24",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:26": [
+      {
+        "id": "geo-woestijn-paran",
+        "label": "Paran",
+        "type": "woestijn",
+        "ref": "numeri 13:26",
+        "href": "index.html#numeri/13/26",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "numeri 13:26",
+        "href": "index.html#numeri/13/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "13:29": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "numeri 13:29",
+        "href": "index.html#numeri/13/29",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 13:29",
+        "href": "index.html#numeri/13/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:2": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "numeri 14:2",
+        "href": "index.html#numeri/14/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:3": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 14:3",
+        "href": "index.html#numeri/14/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:4": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 14:4",
+        "href": "index.html#numeri/14/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:19": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "numeri 14:19",
+        "href": "index.html#numeri/14/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:22": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 14:22",
+        "href": "index.html#numeri/14/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:25": [
+      {
+        "id": "geo-schelfzee",
+        "label": "Schelfzee",
+        "type": "rivier-water",
+        "ref": "numeri 14:25",
+        "href": "index.html#numeri/14/25",
+        "status": "agent-reviewed"
+      }
+    ],
+    "14:45": [
+      {
+        "id": "geo-horma",
+        "label": "Horma",
+        "type": "stad-dorp",
+        "ref": "numeri 14:45",
+        "href": "index.html#numeri/14/45",
+        "status": "agent-reviewed"
+      }
+    ],
+    "15:41": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "numeri 15:41",
+        "href": "index.html#numeri/15/41",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:1": [
+      {
+        "id": "geo-woestijn-zin",
+        "label": "woestijn Zin",
+        "type": "woestijn",
+        "ref": "numeri 20:1",
+        "href": "index.html#numeri/20/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "numeri 20:1",
+        "href": "index.html#numeri/20/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:5": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 20:5",
+        "href": "index.html#numeri/20/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:13": [
+      {
+        "id": "geo-meriba",
+        "label": "Meriba",
+        "type": "route-legerplaats",
+        "ref": "numeri 20:13",
+        "href": "index.html#numeri/20/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:14": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "numeri 20:14",
+        "href": "index.html#numeri/20/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "numeri 20:14",
+        "href": "index.html#numeri/20/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:15": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 20:15",
+        "href": "index.html#numeri/20/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:16": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 20:16",
+        "href": "index.html#numeri/20/16",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "numeri 20:16",
+        "href": "index.html#numeri/20/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:18": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "numeri 20:18",
+        "href": "index.html#numeri/20/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:20": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "numeri 20:20",
+        "href": "index.html#numeri/20/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:21": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "numeri 20:21",
+        "href": "index.html#numeri/20/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:22": [
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 20:22",
+        "href": "index.html#numeri/20/22",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "numeri 20:22",
+        "href": "index.html#numeri/20/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:23": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "numeri 20:23",
+        "href": "index.html#numeri/20/23",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 20:23",
+        "href": "index.html#numeri/20/23",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:24": [
+      {
+        "id": "geo-meriba",
+        "label": "Meriba",
+        "type": "route-legerplaats",
+        "ref": "numeri 20:24",
+        "href": "index.html#numeri/20/24",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:25": [
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 20:25",
+        "href": "index.html#numeri/20/25",
+        "status": "agent-reviewed"
+      }
+    ],
+    "20:27": [
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 20:27",
+        "href": "index.html#numeri/20/27",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:1": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "numeri 21:1",
+        "href": "index.html#numeri/21/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-harad",
+        "label": "Harad",
+        "type": "stad-dorp",
+        "ref": "numeri 21:1",
+        "href": "index.html#numeri/21/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:3": [
+      {
+        "id": "geo-horma",
+        "label": "Horma",
+        "type": "stad-dorp",
+        "ref": "numeri 21:3",
+        "href": "index.html#numeri/21/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:4": [
+      {
+        "id": "geo-schelfzee",
+        "label": "Schelfzee",
+        "type": "rivier-water",
+        "ref": "numeri 21:4",
+        "href": "index.html#numeri/21/4",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 21:4",
+        "href": "index.html#numeri/21/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:5": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 21:5",
+        "href": "index.html#numeri/21/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:10": [
+      {
+        "id": "geo-oboth",
+        "label": "Oboth",
+        "type": "route-legerplaats",
+        "ref": "numeri 21:10",
+        "href": "index.html#numeri/21/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:11": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 21:11",
+        "href": "index.html#numeri/21/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-abarim",
+        "label": "Abarim",
+        "type": "route-legerplaats",
+        "ref": "numeri 21:11",
+        "href": "index.html#numeri/21/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-oboth",
+        "label": "Oboth",
+        "type": "route-legerplaats",
+        "ref": "numeri 21:11",
+        "href": "index.html#numeri/21/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:12": [
+      {
+        "id": "geo-zered",
+        "label": "Zered",
+        "type": "rivier-water",
+        "ref": "numeri 21:12",
+        "href": "index.html#numeri/21/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:13": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 21:13",
+        "href": "index.html#numeri/21/13",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-arnon",
+        "label": "Arnon",
+        "type": "rivier-water",
+        "ref": "numeri 21:13",
+        "href": "index.html#numeri/21/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:14": [
+      {
+        "id": "geo-arnon",
+        "label": "Arnon",
+        "type": "rivier-water",
+        "ref": "numeri 21:14",
+        "href": "index.html#numeri/21/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-waheb",
+        "label": "Waheb",
+        "type": "route-legerplaats",
+        "ref": "numeri 21:14",
+        "href": "index.html#numeri/21/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:15": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 21:15",
+        "href": "index.html#numeri/21/15",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ar",
+        "label": "Ar",
+        "type": "stad-dorp",
+        "ref": "numeri 21:15",
+        "href": "index.html#numeri/21/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:16": [
+      {
+        "id": "geo-beer",
+        "label": "Beer",
+        "type": "route-legerplaats",
+        "ref": "numeri 21:16",
+        "href": "index.html#numeri/21/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:18": [
+      {
+        "id": "geo-mattana",
+        "label": "Mattana",
+        "type": "route-legerplaats",
+        "ref": "numeri 21:18",
+        "href": "index.html#numeri/21/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:19": [
+      {
+        "id": "geo-mattana",
+        "label": "Mattana",
+        "type": "route-legerplaats",
+        "ref": "numeri 21:19",
+        "href": "index.html#numeri/21/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-nahaliel",
+        "label": "Nahaliel",
+        "type": "route-legerplaats",
+        "ref": "numeri 21:19",
+        "href": "index.html#numeri/21/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-bamoth",
+        "label": "Bamoth",
+        "type": "route-legerplaats",
+        "ref": "numeri 21:19",
+        "href": "index.html#numeri/21/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:20": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 21:20",
+        "href": "index.html#numeri/21/20",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-pisga",
+        "label": "Pisga",
+        "type": "berg",
+        "ref": "numeri 21:20",
+        "href": "index.html#numeri/21/20",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-bamoth",
+        "label": "Bamoth",
+        "type": "route-legerplaats",
+        "ref": "numeri 21:20",
+        "href": "index.html#numeri/21/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:23": [
+      {
+        "id": "geo-jahza",
+        "label": "Jahza",
+        "type": "stad-dorp",
+        "ref": "numeri 21:23",
+        "href": "index.html#numeri/21/23",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:24": [
+      {
+        "id": "geo-arnon",
+        "label": "Arnon",
+        "type": "rivier-water",
+        "ref": "numeri 21:24",
+        "href": "index.html#numeri/21/24",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jabbok",
+        "label": "Jabbok",
+        "type": "rivier-water",
+        "ref": "numeri 21:24",
+        "href": "index.html#numeri/21/24",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:25": [
+      {
+        "id": "geo-hesbon",
+        "label": "Hesbon",
+        "type": "stad-dorp",
+        "ref": "numeri 21:25",
+        "href": "index.html#numeri/21/25",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:26": [
+      {
+        "id": "geo-arnon",
+        "label": "Arnon",
+        "type": "rivier-water",
+        "ref": "numeri 21:26",
+        "href": "index.html#numeri/21/26",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hesbon",
+        "label": "Hesbon",
+        "type": "stad-dorp",
+        "ref": "numeri 21:26",
+        "href": "index.html#numeri/21/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:27": [
+      {
+        "id": "geo-hesbon",
+        "label": "Hesbon",
+        "type": "stad-dorp",
+        "ref": "numeri 21:27",
+        "href": "index.html#numeri/21/27",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:28": [
+      {
+        "id": "geo-arnon",
+        "label": "Arnon",
+        "type": "rivier-water",
+        "ref": "numeri 21:28",
+        "href": "index.html#numeri/21/28",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hesbon",
+        "label": "Hesbon",
+        "type": "stad-dorp",
+        "ref": "numeri 21:28",
+        "href": "index.html#numeri/21/28",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ar",
+        "label": "Ar",
+        "type": "stad-dorp",
+        "ref": "numeri 21:28",
+        "href": "index.html#numeri/21/28",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:29": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 21:29",
+        "href": "index.html#numeri/21/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:30": [
+      {
+        "id": "geo-hesbon",
+        "label": "Hesbon",
+        "type": "stad-dorp",
+        "ref": "numeri 21:30",
+        "href": "index.html#numeri/21/30",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-dibon",
+        "label": "Dibon",
+        "type": "stad-dorp",
+        "ref": "numeri 21:30",
+        "href": "index.html#numeri/21/30",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-nofat",
+        "label": "Nofat",
+        "type": "stad-dorp",
+        "ref": "numeri 21:30",
+        "href": "index.html#numeri/21/30",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-medeba",
+        "label": "Medeba",
+        "type": "stad-dorp",
+        "ref": "numeri 21:30",
+        "href": "index.html#numeri/21/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:32": [
+      {
+        "id": "geo-jaezer",
+        "label": "Jaëzer",
+        "type": "stad-dorp",
+        "ref": "numeri 21:32",
+        "href": "index.html#numeri/21/32",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:33": [
+      {
+        "id": "geo-basan",
+        "label": "Basan",
+        "type": "land-streek",
+        "ref": "numeri 21:33",
+        "href": "index.html#numeri/21/33",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-edrei",
+        "label": "Edreï",
+        "type": "stad-dorp",
+        "ref": "numeri 21:33",
+        "href": "index.html#numeri/21/33",
+        "status": "agent-reviewed"
+      }
+    ],
+    "21:34": [
+      {
+        "id": "geo-hesbon",
+        "label": "Hesbon",
+        "type": "stad-dorp",
+        "ref": "numeri 21:34",
+        "href": "index.html#numeri/21/34",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:1": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 22:1",
+        "href": "index.html#numeri/22/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 22:1",
+        "href": "index.html#numeri/22/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jericho",
+        "label": "Jericho",
+        "type": "stad-dorp",
+        "ref": "numeri 22:1",
+        "href": "index.html#numeri/22/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:3": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 22:3",
+        "href": "index.html#numeri/22/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:4": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 22:4",
+        "href": "index.html#numeri/22/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:5": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 22:5",
+        "href": "index.html#numeri/22/5",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-pethor",
+        "label": "Pethor",
+        "type": "stad-dorp",
+        "ref": "numeri 22:5",
+        "href": "index.html#numeri/22/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:11": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 22:11",
+        "href": "index.html#numeri/22/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:21": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 22:21",
+        "href": "index.html#numeri/22/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:36": [
+      {
+        "id": "geo-arnon",
+        "label": "Arnon",
+        "type": "rivier-water",
+        "ref": "numeri 22:36",
+        "href": "index.html#numeri/22/36",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:39": [
+      {
+        "id": "geo-kirjath-huzzoth",
+        "label": "Kirjath-huzzoth",
+        "type": "stad-dorp",
+        "ref": "numeri 22:39",
+        "href": "index.html#numeri/22/39",
+        "status": "agent-reviewed"
+      }
+    ],
+    "22:41": [
+      {
+        "id": "geo-bamoth",
+        "label": "hoogten van Baäl",
+        "type": "route-legerplaats",
+        "ref": "numeri 22:41",
+        "href": "index.html#numeri/22/41",
+        "status": "agent-reviewed"
+      }
+    ],
+    "23:7": [
+      {
+        "id": "geo-syrie",
+        "label": "Syrië",
+        "type": "land-streek",
+        "ref": "numeri 23:7",
+        "href": "index.html#numeri/23/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "23:14": [
+      {
+        "id": "geo-pisga",
+        "label": "Pisga",
+        "type": "berg",
+        "ref": "numeri 23:14",
+        "href": "index.html#numeri/23/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-veld-zofim",
+        "label": "veld Zofim",
+        "type": "plaats",
+        "ref": "numeri 23:14",
+        "href": "index.html#numeri/23/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "23:22": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 23:22",
+        "href": "index.html#numeri/23/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "23:28": [
+      {
+        "id": "geo-peor",
+        "label": "Peor",
+        "type": "berg",
+        "ref": "numeri 23:28",
+        "href": "index.html#numeri/23/28",
+        "status": "agent-reviewed"
+      }
+    ],
+    "24:8": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 24:8",
+        "href": "index.html#numeri/24/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "24:18": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "numeri 24:18",
+        "href": "index.html#numeri/24/18",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-seir",
+        "label": "Seïr",
+        "type": "land-streek",
+        "ref": "numeri 24:18",
+        "href": "index.html#numeri/24/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "24:22": [
+      {
+        "id": "geo-assur",
+        "label": "Assur",
+        "type": "land-streek",
+        "ref": "numeri 24:22",
+        "href": "index.html#numeri/24/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "24:24": [
+      {
+        "id": "geo-assur",
+        "label": "Assur",
+        "type": "land-streek",
+        "ref": "numeri 24:24",
+        "href": "index.html#numeri/24/24",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-chittim",
+        "label": "Chitteers",
+        "type": "land-streek",
+        "ref": "numeri 24:24",
+        "href": "index.html#numeri/24/24",
+        "status": "agent-reviewed"
+      }
+    ],
+    "25:1": [
+      {
+        "id": "geo-sittim",
+        "label": "Sittim",
+        "type": "route-legerplaats",
+        "ref": "numeri 25:1",
+        "href": "index.html#numeri/25/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "25:18": [
+      {
+        "id": "geo-peor",
+        "label": "Peor",
+        "type": "berg",
+        "ref": "numeri 25:18",
+        "href": "index.html#numeri/25/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:3": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 26:3",
+        "href": "index.html#numeri/26/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 26:3",
+        "href": "index.html#numeri/26/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jericho",
+        "label": "Jericho",
+        "type": "stad-dorp",
+        "ref": "numeri 26:3",
+        "href": "index.html#numeri/26/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:4": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "numeri 26:4",
+        "href": "index.html#numeri/26/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:19": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 26:19",
+        "href": "index.html#numeri/26/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:29": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "numeri 26:29",
+        "href": "index.html#numeri/26/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:30": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "numeri 26:30",
+        "href": "index.html#numeri/26/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:33": [
+      {
+        "id": "geo-thirza",
+        "label": "Tirza",
+        "type": "stad-dorp",
+        "ref": "numeri 26:33",
+        "href": "index.html#numeri/26/33",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:59": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 26:59",
+        "href": "index.html#numeri/26/59",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:63": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 26:63",
+        "href": "index.html#numeri/26/63",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 26:63",
+        "href": "index.html#numeri/26/63",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jericho",
+        "label": "Jericho",
+        "type": "stad-dorp",
+        "ref": "numeri 26:63",
+        "href": "index.html#numeri/26/63",
+        "status": "agent-reviewed"
+      }
+    ],
+    "26:64": [
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "plaats",
+        "ref": "numeri 26:64",
+        "href": "index.html#numeri/26/64",
+        "status": "agent-reviewed"
+      }
+    ],
+    "27:1": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "numeri 27:1",
+        "href": "index.html#numeri/27/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-thirza",
+        "label": "Tirza",
+        "type": "stad-dorp",
+        "ref": "numeri 27:1",
+        "href": "index.html#numeri/27/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "27:12": [
+      {
+        "id": "geo-abarim",
+        "label": "Abarim",
+        "type": "berg",
+        "ref": "numeri 27:12",
+        "href": "index.html#numeri/27/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "27:14": [
+      {
+        "id": "geo-woestijn-zin",
+        "label": "woestijn Zin",
+        "type": "woestijn",
+        "ref": "numeri 27:14",
+        "href": "index.html#numeri/27/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-meriba",
+        "label": "Meriba",
+        "type": "route-legerplaats",
+        "ref": "numeri 27:14",
+        "href": "index.html#numeri/27/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "numeri 27:14",
+        "href": "index.html#numeri/27/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "28:6": [
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "berg",
+        "ref": "numeri 28:6",
+        "href": "index.html#numeri/28/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "31:12": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 31:12",
+        "href": "index.html#numeri/31/12",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 31:12",
+        "href": "index.html#numeri/31/12",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jericho",
+        "label": "Jericho",
+        "type": "stad-dorp",
+        "ref": "numeri 31:12",
+        "href": "index.html#numeri/31/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "31:16": [
+      {
+        "id": "geo-peor",
+        "label": "Peor",
+        "type": "berg",
+        "ref": "numeri 31:16",
+        "href": "index.html#numeri/31/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:1": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "numeri 32:1",
+        "href": "index.html#numeri/32/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jaezer",
+        "label": "Jaëzer",
+        "type": "stad-dorp",
+        "ref": "numeri 32:1",
+        "href": "index.html#numeri/32/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:3": [
+      {
+        "id": "geo-nebo",
+        "label": "Nebo",
+        "type": "stad-dorp",
+        "ref": "numeri 32:3",
+        "href": "index.html#numeri/32/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hesbon",
+        "label": "Hesbon",
+        "type": "stad-dorp",
+        "ref": "numeri 32:3",
+        "href": "index.html#numeri/32/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ataroth",
+        "label": "Ataroth",
+        "type": "stad-dorp",
+        "ref": "numeri 32:3",
+        "href": "index.html#numeri/32/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-dibon",
+        "label": "Dibon",
+        "type": "stad-dorp",
+        "ref": "numeri 32:3",
+        "href": "index.html#numeri/32/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jaezer",
+        "label": "Jaëzer",
+        "type": "stad-dorp",
+        "ref": "numeri 32:3",
+        "href": "index.html#numeri/32/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-nimra",
+        "label": "Nimra",
+        "type": "stad-dorp",
+        "ref": "numeri 32:3",
+        "href": "index.html#numeri/32/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-eleale",
+        "label": "Eleale",
+        "type": "stad-dorp",
+        "ref": "numeri 32:3",
+        "href": "index.html#numeri/32/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-schebam",
+        "label": "Schebam",
+        "type": "stad-dorp",
+        "ref": "numeri 32:3",
+        "href": "index.html#numeri/32/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-behon",
+        "label": "Behon",
+        "type": "stad-dorp",
+        "ref": "numeri 32:3",
+        "href": "index.html#numeri/32/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:5": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 32:5",
+        "href": "index.html#numeri/32/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:8": [
+      {
+        "id": "geo-kades",
+        "label": "Kades-barnea",
+        "type": "route-legerplaats",
+        "ref": "numeri 32:8",
+        "href": "index.html#numeri/32/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:9": [
+      {
+        "id": "geo-eskol",
+        "label": "Eskol",
+        "type": "plaats",
+        "ref": "numeri 32:9",
+        "href": "index.html#numeri/32/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:11": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 32:11",
+        "href": "index.html#numeri/32/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:19": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 32:19",
+        "href": "index.html#numeri/32/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:21": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 32:21",
+        "href": "index.html#numeri/32/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:26": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "numeri 32:26",
+        "href": "index.html#numeri/32/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:29": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "numeri 32:29",
+        "href": "index.html#numeri/32/29",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 32:29",
+        "href": "index.html#numeri/32/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:30": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 32:30",
+        "href": "index.html#numeri/32/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:32": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 32:32",
+        "href": "index.html#numeri/32/32",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 32:32",
+        "href": "index.html#numeri/32/32",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:33": [
+      {
+        "id": "geo-basan",
+        "label": "Bazan",
+        "type": "land-streek",
+        "ref": "numeri 32:33",
+        "href": "index.html#numeri/32/33",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:34": [
+      {
+        "id": "geo-ataroth",
+        "label": "Ataroth",
+        "type": "stad-dorp",
+        "ref": "numeri 32:34",
+        "href": "index.html#numeri/32/34",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-dibon",
+        "label": "Dibon",
+        "type": "stad-dorp",
+        "ref": "numeri 32:34",
+        "href": "index.html#numeri/32/34",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-aroer",
+        "label": "Aroër",
+        "type": "stad-dorp",
+        "ref": "numeri 32:34",
+        "href": "index.html#numeri/32/34",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:35": [
+      {
+        "id": "geo-jaezer",
+        "label": "Jaëzer",
+        "type": "stad-dorp",
+        "ref": "numeri 32:35",
+        "href": "index.html#numeri/32/35",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-atroth-sofan",
+        "label": "Atroth-Sofan",
+        "type": "stad-dorp",
+        "ref": "numeri 32:35",
+        "href": "index.html#numeri/32/35",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jogbeha",
+        "label": "Jogbeha",
+        "type": "stad-dorp",
+        "ref": "numeri 32:35",
+        "href": "index.html#numeri/32/35",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:36": [
+      {
+        "id": "geo-beth-nimra",
+        "label": "Beth-Nimra",
+        "type": "stad-dorp",
+        "ref": "numeri 32:36",
+        "href": "index.html#numeri/32/36",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-beth-haran",
+        "label": "Beth-Haran",
+        "type": "stad-dorp",
+        "ref": "numeri 32:36",
+        "href": "index.html#numeri/32/36",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:37": [
+      {
+        "id": "geo-hesbon",
+        "label": "Hezbon",
+        "type": "stad-dorp",
+        "ref": "numeri 32:37",
+        "href": "index.html#numeri/32/37",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-eleale",
+        "label": "Eleale",
+        "type": "stad-dorp",
+        "ref": "numeri 32:37",
+        "href": "index.html#numeri/32/37",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kirjathaim",
+        "label": "Kirjathaim",
+        "type": "stad-dorp",
+        "ref": "numeri 32:37",
+        "href": "index.html#numeri/32/37",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:38": [
+      {
+        "id": "geo-nebo",
+        "label": "Nebo",
+        "type": "stad-dorp",
+        "ref": "numeri 32:38",
+        "href": "index.html#numeri/32/38",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-schebam",
+        "label": "Sibma",
+        "type": "stad-dorp",
+        "ref": "numeri 32:38",
+        "href": "index.html#numeri/32/38",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-baal-meon",
+        "label": "Baäl-Meon",
+        "type": "stad-dorp",
+        "ref": "numeri 32:38",
+        "href": "index.html#numeri/32/38",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:39": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "numeri 32:39",
+        "href": "index.html#numeri/32/39",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:40": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "numeri 32:40",
+        "href": "index.html#numeri/32/40",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:41": [
+      {
+        "id": "geo-havvoth-jair",
+        "label": "Havvoth-Jaïr",
+        "type": "land-streek",
+        "ref": "numeri 32:41",
+        "href": "index.html#numeri/32/41",
+        "status": "agent-reviewed"
+      }
+    ],
+    "32:42": [
+      {
+        "id": "geo-nobah",
+        "label": "Nobah",
+        "type": "stad-dorp",
+        "ref": "numeri 32:42",
+        "href": "index.html#numeri/32/42",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kenath",
+        "label": "Kenath",
+        "type": "stad-dorp",
+        "ref": "numeri 32:42",
+        "href": "index.html#numeri/32/42",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:1": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "numeri 33:1",
+        "href": "index.html#numeri/33/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:3": [
+      {
+        "id": "geo-rameses",
+        "label": "Rameses",
+        "type": "stad-dorp",
+        "ref": "numeri 33:3",
+        "href": "index.html#numeri/33/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:5": [
+      {
+        "id": "geo-rameses",
+        "label": "Rameses",
+        "type": "stad-dorp",
+        "ref": "numeri 33:5",
+        "href": "index.html#numeri/33/5",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sukkoth",
+        "label": "Sukkoth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:5",
+        "href": "index.html#numeri/33/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:6": [
+      {
+        "id": "geo-sukkoth",
+        "label": "Sukkoth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:6",
+        "href": "index.html#numeri/33/6",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-etham",
+        "label": "Etham",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:6",
+        "href": "index.html#numeri/33/6",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:7": [
+      {
+        "id": "geo-migdol",
+        "label": "Migdol",
+        "type": "stad-dorp",
+        "ref": "numeri 33:7",
+        "href": "index.html#numeri/33/7",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-etham",
+        "label": "Etham",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:7",
+        "href": "index.html#numeri/33/7",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-pi-hachiroth",
+        "label": "Pi-hachiroth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:7",
+        "href": "index.html#numeri/33/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:8": [
+      {
+        "id": "geo-etham",
+        "label": "Etham",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:8",
+        "href": "index.html#numeri/33/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-mara",
+        "label": "Mara",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:8",
+        "href": "index.html#numeri/33/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:9": [
+      {
+        "id": "geo-mara",
+        "label": "Mara",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:9",
+        "href": "index.html#numeri/33/9",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-elim",
+        "label": "Elim",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:9",
+        "href": "index.html#numeri/33/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:10": [
+      {
+        "id": "geo-schelfzee",
+        "label": "Schelfzee",
+        "type": "rivier-water",
+        "ref": "numeri 33:10",
+        "href": "index.html#numeri/33/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-elim",
+        "label": "Elim",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:10",
+        "href": "index.html#numeri/33/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:11": [
+      {
+        "id": "geo-schelfzee",
+        "label": "Schelfzee",
+        "type": "rivier-water",
+        "ref": "numeri 33:11",
+        "href": "index.html#numeri/33/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-woestijn-sin",
+        "label": "woestijn Sin",
+        "type": "woestijn",
+        "ref": "numeri 33:11",
+        "href": "index.html#numeri/33/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:12": [
+      {
+        "id": "geo-woestijn-sin",
+        "label": "woestijn Sin",
+        "type": "woestijn",
+        "ref": "numeri 33:12",
+        "href": "index.html#numeri/33/12",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-dofka",
+        "label": "Dofka",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:12",
+        "href": "index.html#numeri/33/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:13": [
+      {
+        "id": "geo-dofka",
+        "label": "Dofka",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:13",
+        "href": "index.html#numeri/33/13",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-aluz",
+        "label": "Aluz",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:13",
+        "href": "index.html#numeri/33/13",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:14": [
+      {
+        "id": "geo-rafidim",
+        "label": "Rafidim",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:14",
+        "href": "index.html#numeri/33/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-aluz",
+        "label": "Aluz",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:14",
+        "href": "index.html#numeri/33/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:15": [
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "plaats",
+        "ref": "numeri 33:15",
+        "href": "index.html#numeri/33/15",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-rafidim",
+        "label": "Rafidim",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:15",
+        "href": "index.html#numeri/33/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:16": [
+      {
+        "id": "geo-sinai",
+        "label": "Sinaï",
+        "type": "plaats",
+        "ref": "numeri 33:16",
+        "href": "index.html#numeri/33/16",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kibroth-thaava",
+        "label": "Kibroth-thaava",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:16",
+        "href": "index.html#numeri/33/16",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:17": [
+      {
+        "id": "geo-kibroth-thaava",
+        "label": "Kibroth-thaava",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:17",
+        "href": "index.html#numeri/33/17",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hazeroth",
+        "label": "Hazeroth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:17",
+        "href": "index.html#numeri/33/17",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:18": [
+      {
+        "id": "geo-hazeroth",
+        "label": "Hazeroth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:18",
+        "href": "index.html#numeri/33/18",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-rithma",
+        "label": "Rithma",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:18",
+        "href": "index.html#numeri/33/18",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:19": [
+      {
+        "id": "geo-rithma",
+        "label": "Rithma",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:19",
+        "href": "index.html#numeri/33/19",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-rimmon-perez",
+        "label": "Rimmon-perez",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:19",
+        "href": "index.html#numeri/33/19",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:20": [
+      {
+        "id": "geo-rimmon-perez",
+        "label": "Rimmon-perez",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:20",
+        "href": "index.html#numeri/33/20",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-libna",
+        "label": "Libna",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:20",
+        "href": "index.html#numeri/33/20",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:21": [
+      {
+        "id": "geo-libna",
+        "label": "Libna",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:21",
+        "href": "index.html#numeri/33/21",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-rissa",
+        "label": "Rissa",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:21",
+        "href": "index.html#numeri/33/21",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:22": [
+      {
+        "id": "geo-rissa",
+        "label": "Rissa",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:22",
+        "href": "index.html#numeri/33/22",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kehelatha",
+        "label": "Kehelatha",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:22",
+        "href": "index.html#numeri/33/22",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:23": [
+      {
+        "id": "geo-kehelatha",
+        "label": "Kehelatha",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:23",
+        "href": "index.html#numeri/33/23",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-safer",
+        "label": "Safer",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:23",
+        "href": "index.html#numeri/33/23",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:24": [
+      {
+        "id": "geo-safer",
+        "label": "Safer",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:24",
+        "href": "index.html#numeri/33/24",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-harada",
+        "label": "Harada",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:24",
+        "href": "index.html#numeri/33/24",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:25": [
+      {
+        "id": "geo-harada",
+        "label": "Harada",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:25",
+        "href": "index.html#numeri/33/25",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-makheloth",
+        "label": "Makheloth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:25",
+        "href": "index.html#numeri/33/25",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:26": [
+      {
+        "id": "geo-makheloth",
+        "label": "Makheloth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:26",
+        "href": "index.html#numeri/33/26",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-tachath",
+        "label": "Tachath",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:26",
+        "href": "index.html#numeri/33/26",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:27": [
+      {
+        "id": "geo-tachath",
+        "label": "Tachath",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:27",
+        "href": "index.html#numeri/33/27",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-tharah",
+        "label": "Tharah",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:27",
+        "href": "index.html#numeri/33/27",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:28": [
+      {
+        "id": "geo-tharah",
+        "label": "Tharah",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:28",
+        "href": "index.html#numeri/33/28",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-mithka",
+        "label": "Mithka",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:28",
+        "href": "index.html#numeri/33/28",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:29": [
+      {
+        "id": "geo-mithka",
+        "label": "Mithka",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:29",
+        "href": "index.html#numeri/33/29",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hasmona",
+        "label": "Hasmona",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:29",
+        "href": "index.html#numeri/33/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:30": [
+      {
+        "id": "geo-hasmona",
+        "label": "Hasmona",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:30",
+        "href": "index.html#numeri/33/30",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-moseroth",
+        "label": "Moseroth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:30",
+        "href": "index.html#numeri/33/30",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:31": [
+      {
+        "id": "geo-moseroth",
+        "label": "Moseroth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:31",
+        "href": "index.html#numeri/33/31",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-bene-jaakan",
+        "label": "Bene-jaakan",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:31",
+        "href": "index.html#numeri/33/31",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:32": [
+      {
+        "id": "geo-bene-jaakan",
+        "label": "Bene-jaakan",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:32",
+        "href": "index.html#numeri/33/32",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hor-gidgad",
+        "label": "Hor-gidgad",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:32",
+        "href": "index.html#numeri/33/32",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:33": [
+      {
+        "id": "geo-hor-gidgad",
+        "label": "Hor-gidgad",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:33",
+        "href": "index.html#numeri/33/33",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jotbatha",
+        "label": "Jotbatha",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:33",
+        "href": "index.html#numeri/33/33",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:34": [
+      {
+        "id": "geo-jotbatha",
+        "label": "Jotbatha",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:34",
+        "href": "index.html#numeri/33/34",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-abrona",
+        "label": "Abrona",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:34",
+        "href": "index.html#numeri/33/34",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:35": [
+      {
+        "id": "geo-abrona",
+        "label": "Abrona",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:35",
+        "href": "index.html#numeri/33/35",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ezeon-geber",
+        "label": "Ezeon-geber",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:35",
+        "href": "index.html#numeri/33/35",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:36": [
+      {
+        "id": "geo-woestijn-zin",
+        "label": "woestijn Zin",
+        "type": "woestijn",
+        "ref": "numeri 33:36",
+        "href": "index.html#numeri/33/36",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:36",
+        "href": "index.html#numeri/33/36",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ezeon-geber",
+        "label": "Ezeon-geber",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:36",
+        "href": "index.html#numeri/33/36",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:37": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "numeri 33:37",
+        "href": "index.html#numeri/33/37",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 33:37",
+        "href": "index.html#numeri/33/37",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kades",
+        "label": "Kades",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:37",
+        "href": "index.html#numeri/33/37",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:38": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypteland",
+        "type": "land-streek",
+        "ref": "numeri 33:38",
+        "href": "index.html#numeri/33/38",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 33:38",
+        "href": "index.html#numeri/33/38",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:39": [
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 33:39",
+        "href": "index.html#numeri/33/39",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:40": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 33:40",
+        "href": "index.html#numeri/33/40",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "numeri 33:40",
+        "href": "index.html#numeri/33/40",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-harad",
+        "label": "Harad",
+        "type": "stad-dorp",
+        "ref": "numeri 33:40",
+        "href": "index.html#numeri/33/40",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:41": [
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 33:41",
+        "href": "index.html#numeri/33/41",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zalmona",
+        "label": "Zalmona",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:41",
+        "href": "index.html#numeri/33/41",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:42": [
+      {
+        "id": "geo-zalmona",
+        "label": "Zalmona",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:42",
+        "href": "index.html#numeri/33/42",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-funon",
+        "label": "Funon",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:42",
+        "href": "index.html#numeri/33/42",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:43": [
+      {
+        "id": "geo-oboth",
+        "label": "Oboth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:43",
+        "href": "index.html#numeri/33/43",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-funon",
+        "label": "Funon",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:43",
+        "href": "index.html#numeri/33/43",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:44": [
+      {
+        "id": "geo-moab",
+        "label": "Moab",
+        "type": "land-streek",
+        "ref": "numeri 33:44",
+        "href": "index.html#numeri/33/44",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-abarim",
+        "label": "Abarim",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:44",
+        "href": "index.html#numeri/33/44",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-oboth",
+        "label": "Oboth",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:44",
+        "href": "index.html#numeri/33/44",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:45": [
+      {
+        "id": "geo-abarim",
+        "label": "Abarim",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:45",
+        "href": "index.html#numeri/33/45",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-dibon-gad",
+        "label": "Dibon-gad",
+        "type": "stad-dorp",
+        "ref": "numeri 33:45",
+        "href": "index.html#numeri/33/45",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:46": [
+      {
+        "id": "geo-dibon-gad",
+        "label": "Dibon-gad",
+        "type": "stad-dorp",
+        "ref": "numeri 33:46",
+        "href": "index.html#numeri/33/46",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-almon-diblathaim",
+        "label": "Almon-diblathaim",
+        "type": "stad-dorp",
+        "ref": "numeri 33:46",
+        "href": "index.html#numeri/33/46",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:47": [
+      {
+        "id": "geo-abarim",
+        "label": "Abarim",
+        "type": "berg",
+        "ref": "numeri 33:47",
+        "href": "index.html#numeri/33/47",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-nebo",
+        "label": "Nebo",
+        "type": "stad-dorp",
+        "ref": "numeri 33:47",
+        "href": "index.html#numeri/33/47",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-almon-diblathaim",
+        "label": "Almon-diblathaim",
+        "type": "stad-dorp",
+        "ref": "numeri 33:47",
+        "href": "index.html#numeri/33/47",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:48": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 33:48",
+        "href": "index.html#numeri/33/48",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-abarim",
+        "label": "Abarim",
+        "type": "berg",
+        "ref": "numeri 33:48",
+        "href": "index.html#numeri/33/48",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jericho",
+        "label": "Jericho",
+        "type": "stad-dorp",
+        "ref": "numeri 33:48",
+        "href": "index.html#numeri/33/48",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:49": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 33:49",
+        "href": "index.html#numeri/33/49",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-beth-jesimoth",
+        "label": "Beth-jesimoth",
+        "type": "stad-dorp",
+        "ref": "numeri 33:49",
+        "href": "index.html#numeri/33/49",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sittim",
+        "label": "Abel-sittim",
+        "type": "route-legerplaats",
+        "ref": "numeri 33:49",
+        "href": "index.html#numeri/33/49",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:50": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 33:50",
+        "href": "index.html#numeri/33/50",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jericho",
+        "label": "Jericho",
+        "type": "stad-dorp",
+        "ref": "numeri 33:50",
+        "href": "index.html#numeri/33/50",
+        "status": "agent-reviewed"
+      }
+    ],
+    "33:51": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 33:51",
+        "href": "index.html#numeri/33/51",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 33:51",
+        "href": "index.html#numeri/33/51",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:2": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 34:2",
+        "href": "index.html#numeri/34/2",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:3": [
+      {
+        "id": "geo-edom",
+        "label": "Edom",
+        "type": "land-streek",
+        "ref": "numeri 34:3",
+        "href": "index.html#numeri/34/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zoutzee",
+        "label": "Zoutzee",
+        "type": "rivier-water",
+        "ref": "numeri 34:3",
+        "href": "index.html#numeri/34/3",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-woestijn-zin",
+        "label": "woestijn Zin",
+        "type": "woestijn",
+        "ref": "numeri 34:3",
+        "href": "index.html#numeri/34/3",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:4": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "numeri 34:4",
+        "href": "index.html#numeri/34/4",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-woestijn-zin",
+        "label": "Zin",
+        "type": "woestijn",
+        "ref": "numeri 34:4",
+        "href": "index.html#numeri/34/4",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hazar-addar",
+        "label": "Hazar-addar",
+        "type": "stad-dorp",
+        "ref": "numeri 34:4",
+        "href": "index.html#numeri/34/4",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-kades",
+        "label": "Kades-barnea",
+        "type": "route-legerplaats",
+        "ref": "numeri 34:4",
+        "href": "index.html#numeri/34/4",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-akrabbim",
+        "label": "Akrabbim",
+        "type": "route-legerplaats",
+        "ref": "numeri 34:4",
+        "href": "index.html#numeri/34/4",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-azmon",
+        "label": "Azmon",
+        "type": "route-legerplaats",
+        "ref": "numeri 34:4",
+        "href": "index.html#numeri/34/4",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:5": [
+      {
+        "id": "geo-egypte",
+        "label": "Egypte",
+        "type": "land-streek",
+        "ref": "numeri 34:5",
+        "href": "index.html#numeri/34/5",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-azmon",
+        "label": "Azmon",
+        "type": "route-legerplaats",
+        "ref": "numeri 34:5",
+        "href": "index.html#numeri/34/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:7": [
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 34:7",
+        "href": "index.html#numeri/34/7",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:8": [
+      {
+        "id": "geo-hor",
+        "label": "Hor",
+        "type": "berg",
+        "ref": "numeri 34:8",
+        "href": "index.html#numeri/34/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zedad",
+        "label": "Zedad",
+        "type": "stad-dorp",
+        "ref": "numeri 34:8",
+        "href": "index.html#numeri/34/8",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-hamath",
+        "label": "Hamath",
+        "type": "stad-dorp",
+        "ref": "numeri 34:8",
+        "href": "index.html#numeri/34/8",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:9": [
+      {
+        "id": "geo-hazar-enan",
+        "label": "Hazar-enan",
+        "type": "stad-dorp",
+        "ref": "numeri 34:9",
+        "href": "index.html#numeri/34/9",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zifron",
+        "label": "Zifron",
+        "type": "stad-dorp",
+        "ref": "numeri 34:9",
+        "href": "index.html#numeri/34/9",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:10": [
+      {
+        "id": "geo-hazar-enan",
+        "label": "Hazar-enan",
+        "type": "stad-dorp",
+        "ref": "numeri 34:10",
+        "href": "index.html#numeri/34/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sefam",
+        "label": "Sefam",
+        "type": "stad-dorp",
+        "ref": "numeri 34:10",
+        "href": "index.html#numeri/34/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:11": [
+      {
+        "id": "geo-cinnereth",
+        "label": "Cinnereth",
+        "type": "rivier-water",
+        "ref": "numeri 34:11",
+        "href": "index.html#numeri/34/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ribla",
+        "label": "Ribla",
+        "type": "stad-dorp",
+        "ref": "numeri 34:11",
+        "href": "index.html#numeri/34/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-ain",
+        "label": "Ain",
+        "type": "stad-dorp",
+        "ref": "numeri 34:11",
+        "href": "index.html#numeri/34/11",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-sefam",
+        "label": "Sefam",
+        "type": "stad-dorp",
+        "ref": "numeri 34:11",
+        "href": "index.html#numeri/34/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:12": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 34:12",
+        "href": "index.html#numeri/34/12",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-zoutzee",
+        "label": "Zoutzee",
+        "type": "rivier-water",
+        "ref": "numeri 34:12",
+        "href": "index.html#numeri/34/12",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:15": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 34:15",
+        "href": "index.html#numeri/34/15",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jericho",
+        "label": "Jericho",
+        "type": "stad-dorp",
+        "ref": "numeri 34:15",
+        "href": "index.html#numeri/34/15",
+        "status": "agent-reviewed"
+      }
+    ],
+    "34:29": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 34:29",
+        "href": "index.html#numeri/34/29",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:1": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 35:1",
+        "href": "index.html#numeri/35/1",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jericho",
+        "label": "Jericho",
+        "type": "stad-dorp",
+        "ref": "numeri 35:1",
+        "href": "index.html#numeri/35/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:5": [
+      {
+        "id": "geo-zuiden",
+        "label": "Zuiden",
+        "type": "land-streek",
+        "ref": "numeri 35:5",
+        "href": "index.html#numeri/35/5",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:10": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 35:10",
+        "href": "index.html#numeri/35/10",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 35:10",
+        "href": "index.html#numeri/35/10",
+        "status": "agent-reviewed"
+      }
+    ],
+    "35:14": [
+      {
+        "id": "geo-kanaan",
+        "label": "Kanaän",
+        "type": "land-streek",
+        "ref": "numeri 35:14",
+        "href": "index.html#numeri/35/14",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 35:14",
+        "href": "index.html#numeri/35/14",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:1": [
+      {
+        "id": "geo-gilead",
+        "label": "Gilead",
+        "type": "land-streek",
+        "ref": "numeri 36:1",
+        "href": "index.html#numeri/36/1",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:11": [
+      {
+        "id": "geo-thirza",
+        "label": "Thirza",
+        "type": "stad-dorp",
+        "ref": "numeri 36:11",
+        "href": "index.html#numeri/36/11",
+        "status": "agent-reviewed"
+      }
+    ],
+    "36:13": [
+      {
+        "id": "geo-jordaan",
+        "label": "Jordaan",
+        "type": "rivier-water",
+        "ref": "numeri 36:13",
+        "href": "index.html#numeri/36/13",
+        "status": "agent-reviewed"
+      },
+      {
+        "id": "geo-jericho",
+        "label": "Jericho",
+        "type": "stad-dorp",
+        "ref": "numeri 36:13",
+        "href": "index.html#numeri/36/13",
+        "status": "agent-reviewed"
+      }
+    ]
+  },
+  "reviewQueue": [
+    {
+      "ref": "numeri 21:1",
+      "reden": "Atharim kan een plaatsnaam of een routeaanduiding zijn.",
+      "status": "needs-human-review"
+    },
+    {
+      "ref": "numeri 32:3",
+      "reden": "Behon is een onzekere spelling/identificatie van Baäl-Meon.",
+      "status": "needs-human-review"
+    }
+  ]
+}

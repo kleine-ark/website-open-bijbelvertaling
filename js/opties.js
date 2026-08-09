@@ -13,17 +13,18 @@ const Opties = {
         thema: 'auto',           // 'auto' (systeem) | 'licht' | 'donker'
         arabischeNamen: 'uit',   // 'uit' (Nederlandse namen) | 'aan' (Musa, Ibrahim, Isa …) — alleen OV-tekst
         jezusNaam: 'nl',         // 'nl' (Jezus Christus) | 'hebreeuws' (Yeshua HaMashiach) | 'koranisch' (Isa) | 'arabisch' (Yasūʿ al-Masīḥ)
-        geoMarkeren: 'uit',      // 'uit' | 'aan' — geografische locaties in de tekst markeren (nu: Genesis)
+        geoMarkeren: 'uit',      // 'uit' | 'aan' — geografische locaties in de tekst markeren (Torah)
         maatstelsel: 'bijbels',  // 'bijbels' (el, efa, sikkel) | 'metrisch' (meter, liter, gram) | 'imperiaal' (voet, gallon, pond)
         getalweergave: 'woorden', // 'woorden' | 'cijfers' — zet grote uitgeschreven aantallen ook tussen haakjes in cijfers
         tijdrekening: 'bijbels', // 'bijbels' (de derde ure) | 'modern' (omstreeks negen uur 's ochtends)
+        strongs: 'uit',          // 'uit' | 'aan' — bronvaste Strong-nummers bij grondtekstwoorden
     },
 
     state: {},
 
     // Vervang-paren voor Arabische namen ([regex, translit]); lui geladen uit data/namen-arabisch.json
     _arNamen: null,
-    _geoData: null,          // { namen:{naam:{type}}, verzen:{"ch:vs":[substrings]} } per boek (nu genesis)
+    _geoData: {},            // per boek: { namen:{naam:{type}}, verzen:{"ch:vs":[substrings]} }
     _eenheden: null,         // omrekentabel + uitzonderingen; lui geladen uit data/eenheden.json
     _tijden: null,           // uren, nachtwaken en vaste tijdsfrasen; lui geladen uit data/tijden.json
 
@@ -54,10 +55,12 @@ const Opties = {
         this.applyThemeClass();
 
         // Arabische namen lui laden (en, indien al ingeschakeld, hoofdstuk herrenderen)
-        this.loadArabischeNamen();
-        this.loadGeoData();
-        this.loadEenheden();
-        this.loadTijden();
+        this.ready = Promise.all([
+            this.loadArabischeNamen(),
+            this.loadGeoData(),
+            this.loadEenheden(),
+            this.loadTijden(),
+        ]);
 
         // Klik op een gemarkeerde geografische locatie -> geografie-pagina (later: kaart/geodata)
         document.addEventListener('click', function (e) {
@@ -249,7 +252,7 @@ const Opties = {
 
     /** Laad de Arabische-namen-tabel en bouw vervang-paren (whole-word). */
     loadArabischeNamen() {
-        fetch('data/namen-arabisch.json')
+        return fetch('data/namen-arabisch.json')
             .then(r => (r.ok ? r.json() : null))
             .then(d => {
                 if (!d || !Array.isArray(d.namen)) return;
@@ -273,13 +276,18 @@ const Opties = {
             .catch(() => {});
     },
 
-    /** Laad de geografische-locatie-data (nu Genesis). */
+    /** Laad de geografische-locatie-data voor de vijf boeken van de Torah. */
     loadGeoData() {
-        fetch('data/genesis-geo.json')
-            .then(r => (r.ok ? r.json() : null))
-            .then(d => {
-                if (!d || !d.verzen) return;
-                this._geoData = d;
+        var boeken = ['genesis', 'exodus', 'leviticus', 'numeri', 'deuteronomium'];
+        return Promise.all(boeken.map(function (boek) {
+            return fetch('data/' + boek + '-geo.json')
+                .then(function (r) { return r.ok ? r.json() : null; })
+                .then(function (data) { return [boek, data]; });
+        }))
+            .then(resultaten => {
+                resultaten.forEach(paar => {
+                    if (paar[1] && paar[1].verzen) this._geoData[paar[0]] = paar[1];
+                });
                 if (this.state.geoMarkeren === 'aan' &&
                     typeof Navigation !== 'undefined' && Navigation.currentBook && Navigation.currentChapter &&
                     typeof App !== 'undefined' && App.renderChapter) {
@@ -291,10 +299,11 @@ const Opties = {
 
     /** Markeer geografische locaties in een OV-vers (buiten HTML-tags). */
     markeerGeo(html, book, ch, vnum) {
-        if (this.state.geoMarkeren !== 'aan' || book !== 'genesis' || !this._geoData) return html;
-        var locs = this._geoData.verzen[ch + ':' + vnum];
+        if (this.state.geoMarkeren !== 'aan' || !this._geoData[book]) return html;
+        var boekData = this._geoData[book];
+        var locs = boekData.verzen[ch + ':' + vnum];
         if (!locs || !locs.length) return html;
-        var namen = this._geoData.namen || {};
+        var namen = boekData.namen || {};
         var esc = function (s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); };
         var uniq = Object.keys(locs.reduce(function (a, l) { a[l] = 1; return a; }, {}))
             .sort(function (a, b) { return b.length - a.length; });
@@ -329,7 +338,7 @@ const Opties = {
 
     /** Laad de omrekentabel voor Bijbelse maten en gewichten. */
     loadEenheden() {
-        fetch('data/eenheden.json')
+        return fetch('data/eenheden.json')
             .then(r => (r.ok ? r.json() : null))
             .then(d => {
                 if (!d || !Array.isArray(d.eenheden)) return;
@@ -824,7 +833,7 @@ const Opties = {
 
     /** Laad de omrekentabel voor Bijbelse tijdsaanduidingen. */
     loadTijden() {
-        fetch('data/tijden.json')
+        return fetch('data/tijden.json')
             .then(r => (r.ok ? r.json() : null))
             .then(d => {
                 if (!d || !d.uren) return;

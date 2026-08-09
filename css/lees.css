@@ -63,9 +63,10 @@ body {
 }
 .reader-logo {
     display: block;
-    width: 100%;
-    height: auto;
-    max-height: 42px;
+    width: auto;
+    height: 52px;
+    max-width: 100%;
+    object-fit: contain;
 }
 .reader-logo--light { display: none; }
 body.dark .reader-logo--dark,
@@ -333,7 +334,7 @@ body.dark .icon-sun { display: none; }
     html { font-size: 16px; }
     #reader-header { padding: 8px 12px; }
     .reader-brand { width: 140px; }
-    .reader-logo { max-height: 32px; }
+    .reader-logo { width: auto; height: 40px; max-width: 100%; }
     .header-center { display: none; } /* search moves to mobile tab */
     #book-nav { padding: 6px 12px; top: 43px; }
     #reader-content { padding: 20px 16px 120px; }

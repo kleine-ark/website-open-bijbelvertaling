@@ -291,7 +291,7 @@ const VerseSelect = {
             const htmlParts = col2026.map(({ num, cell }) => {
                 const clone = cell.cloneNode(true);
                 clone.querySelectorAll('.note-marker').forEach(m => m.remove());
-                clone.querySelectorAll('.strongs-inline').forEach(m => m.remove());
+                clone.querySelectorAll('.strongs-alignment, .strongs-inline').forEach(m => m.remove());
                 // god-speaks → rode cursief tekst met „..." aanhalingstekens
                 clone.querySelectorAll('.god-speaks').forEach(span => {
                     const inner = span.innerHTML;
@@ -316,7 +316,7 @@ const VerseSelect = {
             const plain = col2026.map(({ num, cell }) => {
                 const clone = cell.cloneNode(true);
                 clone.querySelectorAll('.note-marker').forEach(m => m.remove());
-                clone.querySelectorAll('.strongs-inline').forEach(m => m.remove());
+                clone.querySelectorAll('.strongs-alignment, .strongs-inline').forEach(m => m.remove());
                 return `${num} ${clone.textContent.trim()}`;
             }).join('\n');
 
@@ -333,7 +333,7 @@ const VerseSelect = {
             const plain = col2026.map(({ num, cell }) => {
                 const clone = cell.cloneNode(true);
                 clone.querySelectorAll('.note-marker').forEach(m => m.remove());
-                clone.querySelectorAll('.strongs-inline').forEach(m => m.remove());
+                clone.querySelectorAll('.strongs-alignment, .strongs-inline').forEach(m => m.remove());
                 return `${num} ${clone.textContent.trim()}`;
             }).join('\n');
 
@@ -349,7 +349,7 @@ const VerseSelect = {
             const num = row.dataset.verse;
             const cell = row.querySelector('.col-2026');
             const clone = cell ? cell.cloneNode(true) : null;
-            if (clone) clone.querySelectorAll('.note-marker, .strongs-inline').forEach(m => m.remove());
+            if (clone) clone.querySelectorAll('.note-marker, .strongs-alignment, .strongs-inline').forEach(m => m.remove());
             return { num, text: clone ? clone.textContent.trim().replace(/\s+/g,' ') : '', html: clone ? clone.innerHTML.trim() : '' };
         });
         // Build ref

@@ -102,6 +102,18 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         finally:
             page.close()
 
+    def test_gebedstegels_tonen_bijbelboeken_in_plaats_van_vindplaatsen(self):
+        page = self.open_page("gebeden.html")
+        try:
+            boeken = page.locator(".ns-kaart .ns-kaart-passage").all_inner_texts()
+            self.assertEqual(len(boeken), 45)
+            self.assertEqual(boeken[0], "Genesis")
+            self.assertEqual(boeken[2], "Exodus · Numeri")
+            self.assertEqual(page.locator(".ns-kaart .ns-kaart-tal").count(), 0)
+            self.assertNotIn("vindplaats", page.locator(".ns-rooster").inner_text().lower())
+        finally:
+            page.close()
+
     def test_wiki_overzicht_noemt_de_actuele_aantallen(self):
         page = self.browser.new_page(viewport={"width": 1280, "height": 900})
         try:
@@ -121,9 +133,9 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         )
         page = self.open_page("liederen.html?item=lied-bij-de-schelfzee")
         try:
-            page.locator(".ns-volledige-tekst .ns-tekstvers").first.wait_for()
+            page.locator(".ns-volledige-tekst .osv-vers").first.wait_for()
             self.assertEqual(page.locator(".ns-nummer").first.inner_text(), "Lied 1")
-            verses = page.locator(".ns-volledige-tekst .ns-tekstvers").all_inner_texts()
+            verses = page.locator(".ns-volledige-tekst .osv-vers").all_inner_texts()
             expected = bundle["passages"][0]["sections"][0]["verzen"]
             self.assertIn(expected[0]["tekst"], verses[0])
             self.assertIn(expected[-1]["tekst"], verses[-1])
@@ -142,6 +154,52 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         finally:
             page.close()
 
+    def test_liedtekst_gebruikt_de_gedeelde_ov_citatie_en_globale_opties(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 900})
+        page.add_init_script(
+            """
+            localStorage.setItem('sv2026_vertaalopties', JSON.stringify({
+                godsnaam: 'klassiek',
+                versnummers: 'uit'
+            }));
+            """
+        )
+        try:
+            page.goto(
+                f"{self.base_url}/liederen.html?item=lied-bij-de-schelfzee"
+            )
+            page.locator(".ns-volledige-tekst .osv-vers").first.wait_for(
+                state="visible"
+            )
+            tekst = page.locator(".ns-volledige-tekst").inner_text()
+            self.assertIn("HEERE", tekst)
+            self.assertNotIn("JAHWEH", tekst)
+            self.assertGreater(
+                page.locator(".ns-volledige-tekst .direct-speech").count(), 0
+            )
+            self.assertEqual(
+                page.locator(".ns-volledige-tekst .ns-tekstvers").count(), 0
+            )
+            self.assertEqual(
+                page.locator(".ns-volledige-tekst .osv-num").count(), 0
+            )
+        finally:
+            page.close()
+
+    def test_ieder_vers_van_de_gebedstekst_linkt_naar_de_bijbellezer(self):
+        page = self.open_page("gebeden.html?item=abrahams-voorbede-voor-sodom")
+        try:
+            page.locator(".ns-tekstvers").first.wait_for(state="visible")
+            links = page.locator(".ns-tekstvers .ns-tekstvers-link")
+            self.assertEqual(links.count(), page.locator(".ns-tekstvers").count())
+            self.assertTrue(
+                links.first.get_attribute("href").endswith("index.html#genesis/18/23")
+            )
+            self.assertEqual(links.first.get_attribute("target"), "_top")
+            self.assertIn("En Abraham trad toe", links.first.inner_text())
+        finally:
+            page.close()
+
     def test_psalmen_hebben_ieder_hun_eigen_detailpagina(self):
         page = self.open_page("liederen.html?item=psalm-1")
         try:
@@ -156,7 +214,7 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         try:
             page.locator(".ns-passage > h3").wait_for(state="visible")
             self.assertEqual(page.locator(".ns-passage > h3").inner_text(), "Psalm 150")
-            self.assertGreater(page.locator(".ns-passage .ns-tekstvers").count(), 0)
+            self.assertGreater(page.locator(".ns-passage .osv-vers").count(), 0)
             self.assertEqual(page.locator(".ns-nummer").first.inner_text(), "Lied 161")
         finally:
             page.close()
@@ -181,7 +239,7 @@ class WikiLiederenGebedenTest(unittest.TestCase):
     def test_mislukte_tekstfetch_laat_de_beschrijving_staan(self):
         page = self.browser.new_page(viewport={"width": 1280, "height": 900})
         try:
-            page.route("**/data/naslag-teksten/liederen/lied-bij-de-schelfzee.json", lambda route: route.abort())
+            page.route("**/data/exodus/15.json", lambda route: route.abort())
             page.goto(f"{self.base_url}/liederen.html?item=lied-bij-de-schelfzee")
             page.locator(".ns-tekstfout").wait_for(state="visible")
             self.assertTrue(page.locator(".ns-beschrijving").is_visible())
