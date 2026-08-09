@@ -1322,7 +1322,7 @@
    "number": 17,
    "textSV1888": "Alwaar de vogeltjes nestelen; des ooievaars huis zijn de dennebomen.",
    "text1637": "Alwaer [37] de vogelkens nestelen: Des [38] Oyevaers huys zijn [39] de denne-boomen.",
-   "text2026": "Alwaar de vogeltjes nestelen; van de ooievaars huis zijn de dennebomen.",
+   "text2026": "Alwaar de vogeltjes nestelen; de dennenbomen zijn het huis van de ooievaar.",
    "marginNotes": [
     {
      "marker": "37",
@@ -1388,9 +1388,19 @@
    "text1637_html": "Alwaer <sup class=\"note-marker\" data-note=\"37\">37</sup> de vogelkens nestelen: Des <sup class=\"note-marker\" data-note=\"38\">38</sup> Oyevaers huys zijn <sup class=\"note-marker\" data-note=\"39\">39</sup> de denne-boomen.",
    "phraseDiff": [
     {
-     "old": "des",
-     "new": "van de",
-     "principe": "N3"
+     "old": "des ooievaars",
+     "new": "de dennenbomen zijn het",
+     "principe": "V1167"
+    },
+    {
+     "old": "zijn",
+     "new": "van",
+     "principe": "V1167"
+    },
+    {
+     "old": "dennebomen.",
+     "new": "ooievaar.",
+     "principe": "V1167"
     }
    ]
   },
