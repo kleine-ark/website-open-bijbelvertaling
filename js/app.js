@@ -19,28 +19,7 @@ const App = {
      * nummers daar sequentieel over verdelen zou dus schijnprecisie zijn.
      */
     renderStrongLinks(grondtekst) {
-        if (!Array.isArray(grondtekst)) return '';
-        const esc = this._escapeStrongHtml;
-        const tokens = grondtekst.map(word => {
-            if (!word || typeof word !== 'object') return '';
-            const numbers = String(word.strongs || '').match(/[HG]\d+[A-Za-z]?/g) || [];
-            if (!numbers.length) return '';
-            const sourceWord = esc(word.woord || '');
-            const transliteration = esc(word.transliteratie || word.translit || '');
-            const gloss = esc(word.gloss || word.betekenis || '');
-            const language = numbers[0].startsWith('H') ? 'he' : 'grc';
-            const tokenClass = numbers[0].startsWith('H') ? 'strongs-token-hebrew' : 'strongs-token-greek';
-            const links = [...new Set(numbers)].map(number => {
-                const safeNumber = esc(number);
-                const label = `Open woordenboekbetekenis van ${number}${word.woord ? ` bij ${word.woord}` : ''}`;
-                return `<button type="button" class="strongs-inline" data-strongs="${safeNumber}" data-source-word="${sourceWord}" data-transliteratie="${transliteration}" data-gloss="${gloss}" aria-label="${esc(label)}">&lt;${safeNumber}&gt;</button>`;
-            }).join('');
-            return `<span class="strongs-token ${tokenClass}"><span class="strongs-source-word" lang="${language}">${sourceWord}</span>${links}</span>`;
-        }).filter(Boolean).join(' ');
-        const directionClass = grondtekst.some(word => /^G/.test(String((word && word.strongs) || '')))
-            ? ' strongs-alignment-greek'
-            : ' strongs-alignment-hebrew';
-        return tokens ? `<span class="strongs-alignment${directionClass}" aria-label="Strong-nummers bij de grondtekst">${tokens}</span>` : '';
+        return window.OVWoordnummers ? window.OVWoordnummers.renderAlignment(grondtekst) : '';
     },
     // AUDIO_AVAILABLE leeft in js/audio-available.js (window.AUDIO_AVAILABLE) —
     // niet hier definieren. Wordt door de TTS-rollout-script bijgewerkt.
@@ -498,6 +477,20 @@ const App = {
             document.getElementById('verses-container').innerHTML = '<p>Hoofdstuk niet gevonden.</p>';
             return;
         }
+        if (chapter._unavailable) {
+            const meta = chapter._translation || { code: 'nl-ov', naam: 'Open Vertaling' };
+            const message = (typeof I18n !== 'undefined')
+                ? I18n.t('edition.unavailable', { boek: book.nameDutch, editie: meta.naam })
+                : `${book.nameDutch} is niet beschikbaar in ${meta.naam}.`;
+            const action = (typeof I18n !== 'undefined') ? I18n.t('edition.openDutch') : 'Open dit boek in Open Vertaling';
+            const href = `${location.pathname}?editie=nl-ov#${bookId}/${chapterNum}`;
+            document.getElementById('verses-container').innerHTML =
+                `<section class="translation-unavailable"><p>${App._escapeStrongHtml(message)}</p>` +
+                `<a href="${App._escapeStrongHtml(href)}">${App._escapeStrongHtml(action)}</a></section>`;
+            return;
+        }
+        const translationMeta = chapter._translation || null;
+        const isExternalTranslation = !!translationMeta;
         // Pre-fetch buurchapters bij idle (volgende klik = instant)
         DataLoader.prefetchAdjacent(bookId, chapterNum);
         // Boeknaam onthouden (gebruikt door scroll-spy bij doorlopend lezen)
@@ -535,7 +528,7 @@ const App = {
             catch (e) { App._pericopen = {}; }
         }
         const pericMap = {};
-        for (const p of ((App._pericopen && App._pericopen[bookId]) || [])) {
+        for (const p of (isExternalTranslation ? [] : ((App._pericopen && App._pericopen[bookId]) || []))) {
             if (p.c === chapterNum) pericMap[p.v] = p.t;
         }
 
@@ -559,7 +552,7 @@ const App = {
 
         // Boekinleiding inline in de tekstkolom (alleen bij hoofdstuk 1, onder de
         // hoofdstukkop), zichtbaar via instelling (body.show-book-intro)
-        if (chapterNum === 1 && book.bookIntro && (book.bookIntro.text2026 || book.bookIntro.text1637)) {
+        if (!isExternalTranslation && chapterNum === 1 && book.bookIntro && (book.bookIntro.text2026 || book.bookIntro.text1637)) {
             const bIntro = document.createElement('div');
             bIntro.className = 'book-intro-inline';
             bIntro.dataset.book = bookId;
@@ -650,14 +643,14 @@ const App = {
             // anders text2026 of textHerzien als platte tekst
             let openVertaling = verse.text2026_html || verse.text2026 || verse.textHerzien || '';
             // Pas vertalingsopties toe (Godsnaam etc.) — alleen tekst, niet HTML-tags
-            if (typeof Opties !== 'undefined') openVertaling = Opties.transformOV(openVertaling, book.testament);
+            if (!isExternalTranslation && typeof Opties !== 'undefined') openVertaling = Opties.transformOV(openVertaling, book.testament);
             // Optioneel: geografische locaties markeren (nu Genesis)
-            if (typeof Opties !== 'undefined' && Opties.markeerGeo) openVertaling = Opties.markeerGeo(openVertaling, bookId, chapterNum, verse.number);
+            if (!isExternalTranslation && typeof Opties !== 'undefined' && Opties.markeerGeo) openVertaling = Opties.markeerGeo(openVertaling, bookId, chapterNum, verse.number);
             // Optioneel: Bijbelse maten vervangen door metrisch of imperiaal
-            if (typeof Opties !== 'undefined' && Opties.rekenMaten) openVertaling = Opties.rekenMaten(openVertaling, bookId, chapterNum, verse.number);
+            if (!isExternalTranslation && typeof Opties !== 'undefined' && Opties.rekenMaten) openVertaling = Opties.rekenMaten(openVertaling, bookId, chapterNum, verse.number);
             // Optioneel: "het negende uur" vervangen door moderne kloktijd.
             // Het testament bepaalt of de nacht drie of vier waken telt.
-            if (typeof Opties !== 'undefined' && Opties.rekenTijden) openVertaling = Opties.rekenTijden(openVertaling, bookId, chapterNum, verse.number, book.testament);
+            if (!isExternalTranslation && typeof Opties !== 'undefined' && Opties.rekenTijden) openVertaling = Opties.rekenTijden(openVertaling, bookId, chapterNum, verse.number, book.testament);
 
             // Strong-nummers als bronvaste grondtekstalignering onder de OV-tekst.
             // Er is geen betrouwbare woordalignering met de Nederlandse tekst.
@@ -750,7 +743,7 @@ const App = {
                 <div class="verse-cell col-margin1637" data-col="margin1637">${margin1637Html}</div>
                 <div class="verse-cell col-sv1888" data-col="sv1888">${sv1888Text}</div>
                 <div class="verse-cell col-marginSV1888" data-col="marginSV1888">${marginSV1888Html}</div>
-                <div class="verse-cell col-2026" data-col="2026">${openVertaling}</div>
+                <div class="verse-cell col-2026" data-col="2026"${translationMeta ? ` lang="${App._escapeStrongHtml(translationMeta.taal)}" dir="${translationMeta.richting === 'rtl' ? 'rtl' : 'ltr'}"` : ''}>${openVertaling}</div>
                 <div class="verse-cell col-margin2026" data-col="margin2026">${margin2026Html}</div>
                 <div class="verse-cell col-hebrew" data-col="hebrew">${hebrewHtml}</div>
                 <div class="verse-cell col-diff" data-col="diff">${diffHtml}</div>
@@ -758,7 +751,7 @@ const App = {
             `;
 
             sink.appendChild(row);
-            Editor.attachVerseListeners(row, bookId, chapterNum, verse.number);
+            if (!isExternalTranslation) Editor.attachVerseListeners(row, bookId, chapterNum, verse.number);
             // Rechtermuisknop op versnummer = tag toevoegen
             row.querySelector('.verse-num').addEventListener('contextmenu', (e) => {
                 e.preventDefault();

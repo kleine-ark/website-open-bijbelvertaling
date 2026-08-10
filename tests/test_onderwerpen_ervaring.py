@@ -133,6 +133,41 @@ class OnderwerpenErvaringTest(unittest.TestCase):
         finally:
             page.close()
 
+    def test_onderwerpcitaten_gebruiken_de_centrale_weergavemodule(self):
+        page = self.browser.new_page(viewport={"width": 1000, "height": 900})
+        page.add_init_script(
+            """
+            localStorage.setItem('sv2026_vertaalopties', JSON.stringify({
+                godsnaam: 'klassiek', citaten: 'uit', versnummers: 'uit',
+                lettertype: 'rustig', regelafstand: 'ruim', thema: 'licht'
+            }));
+            """
+        )
+        try:
+            page.goto(f"{self.base_url}/onderwerpen.html#tag=volk-ammon")
+            citaat = page.locator(
+                '.ond-vers[data-ref="genesis 19:31"] .ond-vers-tekst .osv-vers'
+            )
+            citaat.wait_for(state="visible")
+
+            self.assertEqual(page.evaluate("typeof window.OVTekstweergave"), "object")
+            self.assertTrue(page.locator("body").evaluate("el => el.classList.contains('citaten-uit')"))
+            self.assertTrue(page.locator("body").evaluate("el => el.classList.contains('hide-verse-numbers')"))
+            self.assertTrue(page.locator("body").evaluate("el => el.classList.contains('reader-font-rustig')"))
+            self.assertTrue(page.locator("body").evaluate("el => el.classList.contains('reader-spacing-ruim')"))
+            self.assertEqual(citaat.locator(".osv-num").count(), 0)
+            self.assertEqual(citaat.locator(".direct-speech").count(), 0)
+            self.assertEqual(
+                citaat.evaluate("el => getComputedStyle(el).fontFamily"),
+                page.locator("body").evaluate("el => getComputedStyle(el).fontFamily"),
+            )
+            self.assertGreater(
+                citaat.evaluate("el => parseFloat(getComputedStyle(el).lineHeight)"),
+                30,
+            )
+        finally:
+            page.close()
+
     def test_browsergeschiedenis_herstelt_het_overzicht(self):
         page = self.open_page()
         try:

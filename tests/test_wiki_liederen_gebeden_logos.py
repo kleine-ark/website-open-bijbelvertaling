@@ -20,23 +20,14 @@ def webp_chunks(data):
         offset += 8 + length + (length % 2)
 
 
-class PictureParser(HTMLParser):
+class ImageParser(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.current = None
-        self.pictures = []
+        self.images = []
 
     def handle_starttag(self, tag, attrs):
-        attributes = dict(attrs)
-        if tag == "picture":
-            self.current = {}
-        elif self.current is not None and tag in {"source", "img"}:
-            self.current[tag] = attributes
-
-    def handle_endtag(self, tag):
-        if tag == "picture" and self.current is not None:
-            self.pictures.append(self.current)
-            self.current = None
+        if tag == "img":
+            self.images.append(dict(attrs))
 
 
 class WikiLiederenGebedenLogoTests(unittest.TestCase):
@@ -55,26 +46,18 @@ class WikiLiederenGebedenLogoTests(unittest.TestCase):
 
     def test_tiles_use_only_generated_raster_art(self):
         html = (ROOT / "wiki-overzicht.html").read_text(encoding="utf-8")
-        parser = PictureParser()
+        parser = ImageParser()
         parser.feed(html)
-        pictures = {
-            Path(picture["img"]["src"]).stem: picture
-            for picture in parser.pictures
-            if Path(picture["img"]["src"]).stem in NAMES
+        images = {
+            Path(image["src"]).stem: image
+            for image in parser.images
+            if Path(image.get("src", "")).stem in NAMES
         }
 
-        self.assertEqual(set(pictures), set(NAMES))
+        self.assertNotIn("<picture", html)
+        self.assertEqual(set(images), set(NAMES))
         for name in NAMES:
-            source = pictures[name]["source"]
-            fallback = pictures[name]["img"]
-            self.assertEqual(source["srcset"], f"images/wiki/{name}.webp")
-            self.assertEqual(source["type"], "image/webp")
-            self.assertEqual(
-                source["media"], "(prefers-reduced-motion: no-preference)"
-            )
-            self.assertEqual(
-                fallback["src"], f"images/wiki/bronnen/{name}.webp"
-            )
+            self.assertEqual(images[name]["src"], f"images/wiki/{name}.webp")
             self.assertFalse((ROOT / "images" / "wiki" / f"{name}.svg").exists())
 
     def test_assets_are_animated_five_second_webp_loops(self):

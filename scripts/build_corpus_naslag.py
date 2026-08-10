@@ -373,6 +373,7 @@ def _build_instruments(
         item = {
             "id": source["id"],
             "naam": source["naam"],
+            "afbeelding": f"images/wiki/muziekinstrumenten/{source['id']}.webp",
             "beschrijving": source["beschrijving"],
             "verzen": canonical + apocryphal + ethiopic,
             "canoniekeVerzen": canonical,

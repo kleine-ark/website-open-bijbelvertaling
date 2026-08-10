@@ -491,6 +491,10 @@ const Lees = {
             // Add Strong's word wrapping
             textNode.innerHTML = this.wrapWordsWithStrongs(html, verse.grondtekst);
             span.appendChild(textNode);
+            if (this.wordNumbersEnabled() && window.OVWoordnummers) {
+                const alignment = window.OVWoordnummers.renderAlignment(verse.grondtekst || []);
+                if (alignment) span.insertAdjacentHTML('beforeend', alignment);
+            }
 
             // Parallelle vertalingen onder het vers
             for (const par of parallels) {
@@ -560,6 +564,15 @@ const Lees = {
         // Strong's lookup via a modal that shows all source words for the verse.
         // This is simpler and more reliable than per-word wrapping.
         return html;
+    },
+
+    wordNumbersEnabled() {
+        try {
+            const state = JSON.parse(localStorage.getItem('sv2026_vertaalopties') || '{}');
+            return state.strongs === 'aan';
+        } catch (e) {
+            return false;
+        }
     },
 
     // === Notes panel ===
@@ -659,7 +672,7 @@ const Lees = {
         const plain = sel.toString().replace(/\s+/g, ' ').trim();
         // HTML met opmaak: clone DocumentFragment en strip note-markers
         const frag = range.cloneContents();
-        frag.querySelectorAll('.note-marker, .strongs-inline').forEach(m => m.remove());
+        frag.querySelectorAll('.note-marker, .strongs-alignment').forEach(m => m.remove());
         const div = document.createElement('div');
         div.appendChild(frag);
         const html = div.innerHTML.trim();
@@ -888,7 +901,7 @@ const Lees = {
         const text = spans.map(span => {
             const num = span.dataset.verse;
             const clone = span.querySelector('.verse-text').cloneNode(true);
-            clone.querySelectorAll('.note-marker, .strongs-inline').forEach(m => m.remove());
+            clone.querySelectorAll('.note-marker, .strongs-alignment').forEach(m => m.remove());
             return `${num} ${clone.textContent.trim()}`;
         }).join('\n');
         const ref = this._buildRef();
@@ -919,7 +932,7 @@ const Lees = {
             num: span.dataset.verse,
             text: (() => {
                 const c = span.querySelector('.verse-text').cloneNode(true);
-                c.querySelectorAll('.note-marker, .strongs-inline').forEach(m => m.remove());
+                c.querySelectorAll('.note-marker, .strongs-alignment').forEach(m => m.remove());
                 return c.textContent.trim().replace(/\s+/g, ' ');
             })(),
         }));

@@ -95,14 +95,41 @@ class OptionsPanelBrowserTests(unittest.TestCase):
 
     def test_hoofdinstellingen_gebruiken_de_aangeleverde_iconen(self):
         expected = {
-            "thema.svg",
-            "lettertype.svg",
-            "tekstgrootte.svg",
-            "regelafstand.svg",
-            "versnummers.svg",
-            "godsnaam.svg",
-            "voorkeurseditie.svg",
-            "voorleesstem.svg",
+            "thema.png",
+            "lettertype.png",
+            "tekstgrootte.png",
+            "regelafstand.png",
+            "versnummers.png",
+            "godsnaam.png",
+            "voorkeurseditie.png",
+            "voorleesstem.png",
+        }
+        page = self.open_reader()
+        try:
+            page.locator("#sidebar-right-open").click()
+            sources = page.locator("#sidebar-right .option-icon").evaluate_all(
+                "els => els.map(el => new URL(el.src).pathname.split('/').pop())"
+            )
+            self.assertTrue(expected.issubset(set(sources)))
+            self.assertTrue(page.locator("#sidebar-right .option-icon").evaluate_all(
+                "els => els.every(el => el.complete && el.naturalWidth > 0)"
+            ))
+        finally:
+            page.close()
+
+    def test_iedere_zichtbare_instelling_heeft_een_eigen_icoon(self):
+        expected = {
+            "thema.png", "lettertype.png", "tekstgrootte.png", "regelafstand.png",
+            "versnummers.png", "godsnaam.png", "voorkeurseditie.png", "voorleesstem.png",
+            "boekinleiding.png", "hoofdstukinleiding.png", "dyslexiemodus.png",
+            "citaatopmaak.png", "hoofdstuknummers.png", "perikoopkopjes.png",
+            "doorlopend-lezen.png", "boekvolgorde.png", "aanspreektitel-nt.png",
+            "sheol.png", "namen-personen.png", "naam-jezus.png",
+            "maten-gewichten.png", "grote-getallen.png", "tijdsaanduidingen.png",
+            "afspeelsnelheid.png", "kanttekeningen.png", "extra-kolommen.png",
+            "verschillen-vertalingen.png", "verschillen-kanttekeningen.png",
+            "grondtalen.png", "oudste-handschrift.png", "onderwerptags.png",
+            "geografische-locaties.png", "strong-nummers.png",
         }
         page = self.open_reader()
         try:
@@ -354,6 +381,79 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             )
             self.assertEqual(backdrop["achtergrond"], "rgba(0, 0, 0, 0)")
             self.assertEqual(backdrop["vervaging"], "none")
+        finally:
+            page.close()
+
+    def test_desktop_paneel_is_via_de_kop_versleepbaar_en_bewaart_de_positie(self):
+        page = self.open_reader(width=1280, height=900)
+        try:
+            page.locator("#sidebar-right-open").click()
+            panel = page.locator("#sidebar-right")
+            header = page.locator("#sidebar-right-header")
+            begin = panel.bounding_box()
+            kop = header.bounding_box()
+
+            page.mouse.move(kop["x"] + 180, kop["y"] + kop["height"] - 22)
+            page.mouse.down()
+            page.mouse.move(kop["x"] + 30, kop["y"] + 120, steps=8)
+            page.mouse.up()
+
+            verplaatst = panel.bounding_box()
+            self.assertLess(verplaatst["x"], begin["x"] - 100)
+            opgeslagen = page.evaluate(
+                "JSON.parse(localStorage.getItem('ov_options_panel_position'))"
+            )
+            self.assertAlmostEqual(opgeslagen["x"], verplaatst["x"], delta=2)
+            self.assertAlmostEqual(opgeslagen["y"], verplaatst["y"], delta=2)
+
+            panel.locator("#sidebar-right-toggle").click()
+            page.locator("#sidebar-right-open").click()
+            heropend = panel.bounding_box()
+            self.assertAlmostEqual(heropend["x"], verplaatst["x"], delta=2)
+            self.assertAlmostEqual(heropend["y"], verplaatst["y"], delta=2)
+        finally:
+            page.close()
+
+    def test_desktop_sleepbeweging_blijft_binnen_de_viewport(self):
+        page = self.open_reader(width=1000, height=700)
+        try:
+            page.locator("#sidebar-right-open").click()
+            panel = page.locator("#sidebar-right")
+            header = page.locator("#sidebar-right-header")
+            kop = header.bounding_box()
+
+            page.mouse.move(kop["x"] + 180, kop["y"] + kop["height"] - 22)
+            page.mouse.down()
+            page.mouse.move(-500, -500, steps=5)
+            page.mouse.up()
+            linksboven = panel.bounding_box()
+            self.assertGreaterEqual(linksboven["x"], 15)
+            self.assertGreaterEqual(linksboven["y"], 15)
+
+            kop = header.bounding_box()
+            page.mouse.move(kop["x"] + 180, kop["y"] + kop["height"] - 22)
+            page.mouse.down()
+            page.mouse.move(2000, 1500, steps=5)
+            page.mouse.up()
+            rechtsonder = panel.bounding_box()
+            self.assertLessEqual(rechtsonder["x"] + rechtsonder["width"], 985)
+            self.assertLessEqual(rechtsonder["y"] + rechtsonder["height"], 685)
+        finally:
+            page.close()
+
+    def test_mobiel_negeert_een_opgeslagen_desktoppositie(self):
+        page = self.open_reader(width=390, height=844)
+        try:
+            page.evaluate(
+                "localStorage.setItem('ov_options_panel_position', JSON.stringify({x: 240, y: 40}))"
+            )
+            page.locator("#mobile-opties-btn").click()
+            panel = page.locator("#sidebar-right")
+            panel.wait_for(state="visible", timeout=3_000)
+            box = panel.bounding_box()
+            self.assertAlmostEqual(box["x"], 0, delta=1)
+            self.assertAlmostEqual(box["width"], 390, delta=1)
+            self.assertGreater(box["y"], 100)
         finally:
             page.close()
 

@@ -77,20 +77,19 @@
         return labels.join(' · ');
     }
 
-    function overzichtBoeken(it) {
-        var boeken = [];
+    function overzichtHoofdstukken(it) {
+        var hoofdstukken = [];
         var gezien = {};
         for (var i = 0; i < it.tekstpassages.length; i++) {
             var passage = it.tekstpassages[i];
-            var label = passage.boekNaam || passage.label || passage.boek;
-            var match = label.match(/^(.*?)(?=\s+\d)/);
-            var boek = match ? match[1] : label;
-            if (!gezien[boek]) {
-                gezien[boek] = true;
-                boeken.push(boek);
+            var label = passage.label || ((passage.boekNaam || passage.boek) + ' ' + passage.hoofdstuk);
+            var hoofdstuk = label.split(':')[0];
+            if (!gezien[hoofdstuk]) {
+                gezien[hoofdstuk] = true;
+                hoofdstukken.push(hoofdstuk);
             }
         }
-        return boeken.join(' · ');
+        return hoofdstukken.join(' · ');
     }
 
     function toonOverzicht(d) {
@@ -113,12 +112,13 @@
         for (var i = 0; i < items.length; i++) {
             var it = items[i];
             h += '<a class="ns-kaart" href="?' + (d.personen ? 'persoon' : 'item') + '=' + encodeURIComponent(it.id) + '">' +
+                 (it.afbeelding ? '<img class="ns-kaart-beeld" src="' + esc(it.afbeelding) + '" alt="" loading="lazy" width="640" height="640">' : '') +
                  (d.nummerType ? '<span class="ns-nummer">' + esc(d.nummerType) + ' ' + (i + 1) + '</span>' : '') +
                  '<span class="ns-kaart-naam">' + esc(it.naam) + '</span>' +
                  (it.onderscheiding ? '<span class="ns-kaart-onderscheiding">' + esc(it.onderscheiding) + '</span>' : '') +
                  (it.gebruik ? '<span class="ns-type">' + esc(it.gebruik) + '</span>' : '') +
                  (d.nummerType === 'Lied' ? '<span class="ns-kaart-passage">' + esc(overzichtPassage(it)) + '</span>' :
-                 d.nummerType === 'Gebed' ? '<span class="ns-kaart-passage">' + esc(overzichtBoeken(it)) + '</span>' :
+                 d.nummerType === 'Gebed' ? '<span class="ns-kaart-passage">' + esc(overzichtHoofdstukken(it)) + '</span>' :
                  '<span class="ns-kaart-tal">' + it.verzen.length +
                  (it.verzen.length === 1 ? ' vindplaats' : ' vindplaatsen') + '</span>') + '</a>';
         }
@@ -150,6 +150,10 @@
             h += '<span class="ns-nummer">' + esc(d.nummerType) + ' ' + (itemIndex + 1) + '</span>';
         }
         h += '<h1>' + esc(it.naam) + '</h1>';
+        if (it.afbeelding) {
+            h += '<img class="ns-detail-beeld" src="' + esc(it.afbeelding) + '" alt="' +
+                 esc(it.naam) + '" width="640" height="640">';
+        }
         if (it.gebruik) {
             h += '<span class="ns-type ns-type-detail">' + esc(it.gebruik) + '</span>';
         }
@@ -273,8 +277,10 @@
 
     function laadVolledigeTekst(d, it) {
         var container = houder.querySelector('.ns-volledige-tekst');
-        if (d.nummerType === 'Lied' && globalThis.OSV && typeof globalThis.OSV.cite === 'function') {
-            laadLiedtekstUitCitaten(container, it);
+        if ((d.nummerType === 'Lied' || d.nummerType === 'Gebed') &&
+            globalThis.OSV && typeof globalThis.OSV.cite === 'function') {
+            if (d.nummerType === 'Gebed') laadGebedtekstUitCitaten(container, it);
+            else laadLiedtekstUitCitaten(container, it);
             return;
         }
         fetch(bundelPad(d, it))
@@ -306,6 +312,37 @@
             return globalThis.OSV.cite(ref, { link: false }).then(function (resultaat) {
                 citaat.innerHTML = resultaat.html;
             });
+        });
+        Promise.all(taken).catch(function () {
+            container.innerHTML = '<h2 class="ns-kop">Volledige tekst</h2>' +
+                '<p class="ns-tekstfout">De volledige tekst kon niet geladen worden.</p>';
+        });
+    }
+
+    function laadGebedtekstUitCitaten(container, it) {
+        container.textContent = '';
+        container.appendChild(maakElement('h2', 'ns-kop', 'Volledige tekst'));
+        var passages = it.tekstpassages || [];
+        var taken = [];
+        passages.forEach(function (passage) {
+            var passageNode = maakElement('section', 'ns-passage ns-gebedcitaat');
+            passageNode.appendChild(maakElement('h3', '', passage.label));
+            container.appendChild(passageNode);
+            for (var nummer = passage.van; nummer <= passage.tot; nummer++) {
+                (function (versnummer) {
+                    var verseNode = maakElement('p', 'ns-tekstvers');
+                    var link = maakElement('a', 'ns-tekstvers-link');
+                    link.href = 'index.html#' + passage.boek + '/' + passage.hoofdstuk + '/' + versnummer;
+                    link.target = '_top';
+                    link.innerHTML = '<span class="osv-laden">…</span>';
+                    verseNode.appendChild(link);
+                    passageNode.appendChild(verseNode);
+                    var ref = passage.boek + ' ' + passage.hoofdstuk + ':' + versnummer;
+                    taken.push(globalThis.OSV.cite(ref, { link: false }).then(function (resultaat) {
+                        link.innerHTML = resultaat.html;
+                    }));
+                })(nummer);
+            }
         });
         Promise.all(taken).catch(function () {
             container.innerHTML = '<h2 class="ns-kop">Volledige tekst</h2>' +

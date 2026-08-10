@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = 'v0.31.1'
+const VERSION = 'v0.32.0';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -19,6 +19,8 @@ const PRECACHE_URLS = [
     '/index.html',
     '/css/style.css',
     '/js/storage.js',
+    '/js/i18n.js',
+    '/js/teksteditie.js',
     '/js/data-loader.js',
     '/js/book-orders.js',
     '/js/navigation.js',
@@ -41,6 +43,7 @@ const PRECACHE_URLS = [
     '/js/begrippen.js',
     '/js/references.js',
     '/js/lexicon.js',
+    '/js/woordnummers.js',
     '/js/editor.js',
     '/js/export.js',
     '/js/column-resize.js',
@@ -52,6 +55,8 @@ const PRECACHE_URLS = [
     '/js/cloud-opties.js',
     '/js/stats-inject.js',
     '/data/books.json',
+    '/data/vertalingen/manifest.json',
+    '/i18n/nl.json',
     '/data/stats.json',
 ];
 

@@ -21,6 +21,16 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
     assert verified["deuteronomium"] == [1, 2, 3, 4, 5]
     assert 6 not in verified["deuteronomium"]
 
+    assert set(verified) == {
+        "genesis",
+        "exodus",
+        "leviticus",
+        "ruth",
+        "prediker",
+        "numeri",
+        "deuteronomium",
+    }
+
     niet_menselijk_bevestigd = {
         "jozua",
         "jeremia",

@@ -27,7 +27,7 @@ const Feedback = {
         van:       'entry.745198439'
     },
     modal: null,
-    pending: null,  // { bookId, ch, vs, text }
+    pending: null,  // { bookId, ch, vs, ref?, text }
 
     init() {
         this._extendPalette();
@@ -116,9 +116,14 @@ const Feedback = {
     open(sel) {
         this.pending = sel;
         const m = this._ensureModal();
-        const refLabel = `${sel.bookId} ${sel.ch}:${sel.vs}`;
+        const refLabel = sel.ref || `${sel.bookId} ${sel.ch}:${sel.vs}`;
         m.querySelector('.fb-ref').textContent = refLabel;
-        m.querySelector('.fb-quote').textContent = sel.text;
+        const quote = m.querySelector('.fb-quote');
+        quote.replaceChildren();
+        String(sel.text || '').split('\n').forEach((line, index) => {
+            if (index > 0) quote.appendChild(document.createElement('br'));
+            quote.appendChild(document.createTextNode(line));
+        });
         m.querySelector('#fb-suggestion').value = '';
         m.querySelector('.fb-status').textContent = '';
         m.querySelector('.fb-send').disabled = false;
@@ -152,7 +157,7 @@ const Feedback = {
                 name: user.displayName || '',
                 email: user.email || ''
             } : { uid: null, name: 'anoniem', email: '' },
-            ref: `${this.pending.bookId} ${this.pending.ch}:${this.pending.vs}`,
+            ref: this.pending.ref || `${this.pending.bookId} ${this.pending.ch}:${this.pending.vs}`,
             book: this.pending.bookId,
             chapter: this.pending.ch,
             verse: this.pending.vs,

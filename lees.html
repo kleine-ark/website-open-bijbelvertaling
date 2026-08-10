@@ -165,11 +165,14 @@
 
     <script src="js/audio-available.js"></script>
     <script src="js/chunked-audio.js"></script>
+    <script src="js/woordnummers.js"></script>
+    <script src="js/lexicon.js"></script>
     <script src="js/lees.js"></script>
     <script src="js/lees-lexicon.js"></script>
     <script src="js/search.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
+        if (window.Lexicon) window.Lexicon.init();
         if (window.Search) window.Search.init({ leesMode: true });
     });
     </script>

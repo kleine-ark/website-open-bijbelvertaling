@@ -9,6 +9,7 @@ const Opties = {
         kolomLayout: 'naast',    // 'naast' (parallelle kolom) | 'eronder' (nieuwe regel onder OV2026)
         boekvolgorde: 'canoniek',// 'canoniek' | 'tenach' | 'chronologisch' | 'auteur' | 'lengte'
         versnummers: 'aan',      // 'aan' | 'uit'
+        citaten: 'aan',          // 'aan' | 'uit' — citaatmarkering en sprekerkleuren
         otSheol: 'dodenrijk',    // 'dodenrijk' (OT-context, modern) | 'hel' (SV-traditioneel)
         thema: 'auto',           // 'auto' (systeem) | 'licht' | 'donker'
         arabischeNamen: 'uit',   // 'uit' (Nederlandse namen) | 'aan' (Musa, Ibrahim, Isa …) — alleen OV-tekst
@@ -18,6 +19,7 @@ const Opties = {
         getalweergave: 'woorden', // 'woorden' | 'cijfers' — zet grote uitgeschreven aantallen ook tussen haakjes in cijfers
         tijdrekening: 'bijbels', // 'bijbels' (de derde ure) | 'modern' (omstreeks negen uur 's ochtends)
         strongs: 'uit',          // 'uit' | 'aan' — bronvaste Strong-nummers bij grondtekstwoorden
+        teksteditie: 'nl-ov',    // actieve Bijbeltekst; de interface blijft Nederlands
         lettertype: 'klassiek',
         regelafstand: 'normaal',
     },
@@ -35,10 +37,20 @@ const Opties = {
         // Mobiele default: kolommen 'eronder' i.p.v. 'naast' — beter leesbaar op smal scherm
         const defaults = { ...this.DEFAULTS };
         if (window.innerWidth <= 768) defaults.kolomLayout = 'eronder';
+        let savedState = {};
         try {
-            this.state = saved ? { ...defaults, ...JSON.parse(saved) } : { ...defaults };
+            savedState = saved ? JSON.parse(saved) : {};
+            this.state = { ...defaults, ...savedState };
         } catch (e) {
             this.state = { ...defaults };
+        }
+        // Een geldige URL-keuze heeft in deze tab voorrang op de opslag.
+        if (typeof TekstEditie !== 'undefined') this.state.teksteditie = TekstEditie.code();
+        // Een oudere versie bewaarde citaatopmaak onder een losse sleutel.
+        // Neem die eenmalig over zolang de centrale opties nog geen keuze bevatten.
+        if (!Object.prototype.hasOwnProperty.call(savedState, 'citaten')) {
+            const legacyCitaten = localStorage.getItem('citaatopmaak');
+            if (legacyCitaten !== null) this.state.citaten = legacyCitaten === 'false' ? 'uit' : 'aan';
         }
 
         // Sync radio buttons + selects
@@ -54,6 +66,7 @@ const Opties = {
         // Pas layout-class direct toe (geen re-render nodig — pure CSS)
         this.applyLayoutClass();
         this.applyVerseNumbersClass();
+        this.applyCitationsClass();
         this.applyThemeClass();
         this.applyReaderStyleClasses();
 
@@ -109,6 +122,9 @@ const Opties = {
                     } else if (optie === 'versnummers') {
                         // Pure CSS-toggle — geen re-render
                         this.applyVerseNumbersClass();
+                    } else if (optie === 'citaten') {
+                        this.applyCitationsClass();
+                        this.applyToCurrentChapter();
                     } else if (optie === 'thema') {
                         this.applyThemeClass();
                     } else if (optie === 'lettertype' || optie === 'regelafstand') {
@@ -117,6 +133,9 @@ const Opties = {
                         // Sidebar + topnav opnieuw renderen, geen hoofdstuk-rerender
                         if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
                         if (typeof Navigation !== 'undefined' && Navigation.renderBookNav) Navigation.renderBookNav();
+                    } else if (optie === 'teksteditie') {
+                        if (typeof TekstEditie !== 'undefined') TekstEditie.setCode(input.value);
+                        this.applyToCurrentChapter();
                     } else {
                         this.applyToCurrentChapter();
                     }
@@ -136,6 +155,10 @@ const Opties = {
     applyVerseNumbersClass() {
         // Toggle een class op <body> zodat CSS de versnummers kan verbergen.
         document.body.classList.toggle('hide-verse-numbers', this.state.versnummers === 'uit');
+    },
+
+    applyCitationsClass() {
+        document.body.classList.toggle('citaten-uit', this.state.citaten === 'uit');
     },
 
     applyReaderStyleClasses() {

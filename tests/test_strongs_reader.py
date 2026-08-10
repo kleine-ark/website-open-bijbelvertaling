@@ -6,6 +6,10 @@ import json
 from pathlib import Path
 import threading
 import unittest
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from audit_woordnummers import audit
 
 from playwright.sync_api import sync_playwright
 
@@ -189,12 +193,87 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_latijnse_en_geez_eigen_nummers_worden_niet_als_strongs_getoond(self):
+    def test_latijnse_en_geez_woordnummers_worden_bronvast_getoond(self):
         page = self.open_reader("4ezra/1")
         try:
-            self.enable_strongs(page, expect_alignment=False)
-            self.assertEqual(page.locator('.strongs-alignment [data-strongs^="OVL"]').count(), 0)
-            self.assertEqual(page.locator('.strongs-alignment [data-strongs^="OVG"]').count(), 0)
+            self.enable_strongs(page)
+            latin = page.locator('.verse-row[data-verse="1"] .strongs-alignment [data-strongs^="OVL"]').first
+            self.assertEqual(latin.inner_text(), "<OVL00001>")
+            self.assertEqual(
+                latin.locator("xpath=preceding-sibling::*[contains(@class,'strongs-source-word')]").get_attribute("lang"),
+                "la",
+            )
+            latin.click()
+            page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)
+            self.assertIn("OVL00001", page.locator("#strongs-sheet-number").inner_text())
+            self.assertIn("taal=latijn", page.locator("#strongs-sheet-full-link").get_attribute("href"))
+            page.locator(".strongs-sheet-close").click()
+        finally:
+            page.close()
+
+        page = self.open_reader("henoch/1")
+        try:
+            self.enable_strongs(page)
+            geez = page.locator('.verse-row[data-verse="1"] .strongs-alignment [data-strongs^="OVG"]').first
+            self.assertTrue(geez.inner_text().startswith("<OVG"))
+            self.assertEqual(
+                geez.locator("xpath=preceding-sibling::*[contains(@class,'strongs-source-word')]").get_attribute("lang"),
+                "gez",
+            )
+            geez.click()
+            page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)
+            self.assertIn("OVG", page.locator("#strongs-sheet-number").inner_text())
+            self.assertIn("taal=geez", page.locator("#strongs-sheet-full-link").get_attribute("href"))
+        finally:
+            page.close()
+
+    def test_gedeelde_renderer_is_beschikbaar_voor_interne_citaties(self):
+        page = self.open_reader("genesis/1")
+        try:
+            html = page.evaluate(
+                """() => OVWoordnummers.renderAlignment([
+                    {woord: 'בְּרֵאשִׁית', strongs: 'H7225', transliteratie: 'bereshit'}
+                ])"""
+            )
+            self.assertIn('data-strongs="H7225"', html)
+            self.assertIn('lang="he"', html)
+        finally:
+            page.close()
+
+    def test_interne_citatie_neemt_globale_woordnummervoorkeur_over(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 900})
+        page.add_init_script(
+            "localStorage.setItem('sv2026_vertaalopties', JSON.stringify({strongs:'aan'}))"
+        )
+        try:
+            page.goto(f"{self.base_url}/onderwerpen.html", wait_until="domcontentloaded")
+            page.wait_for_function("window.OSV && window.OVTekstweergave")
+            html = page.evaluate("() => OSV.cite('genesis 1:1', {link:false}).then(r => r.html)")
+            self.assertIn('class="strongs-alignment', html)
+            self.assertIn('data-strongs="H7225"', html)
+
+            page.locator("body").evaluate(
+                "(el, markup) => el.insertAdjacentHTML('beforeend', markup)", html
+            )
+            page.locator('[data-strongs="H7225"]').first.click()
+            page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)
+            self.assertIn("H7225", page.locator("#strongs-sheet-number").inner_text())
+        finally:
+            page.close()
+
+    def test_doorlopende_leesversie_neemt_woordnummervoorkeur_over(self):
+        page = self.browser.new_page(viewport={"width": 900, "height": 900})
+        page.add_init_script(
+            "localStorage.setItem('sv2026_vertaalopties', JSON.stringify({strongs:'aan'}))"
+        )
+        try:
+            page.goto(f"{self.base_url}/lees.html#genesis/1", wait_until="domcontentloaded")
+            alignment = page.locator('.verse-span[data-verse="1"] .strongs-alignment')
+            alignment.wait_for(state="visible", timeout=15_000)
+            trigger = alignment.locator('[data-strongs="H7225"]')
+            self.assertEqual(trigger.inner_text(), "<H7225>")
+            trigger.click()
+            page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)
         finally:
             page.close()
 
@@ -219,8 +298,15 @@ class StrongsReaderBrowserTests(unittest.TestCase):
 
 
 class StrongsDataTests(unittest.TestCase):
-    def test_strongverwijzingen_zijn_alleen_bronnummers(self):
-        prefixes = set()
+    def test_alle_88_boeken_hebben_bronvaste_woordnummers(self):
+        report = audit()
+        self.assertEqual(report["books"], 88)
+        self.assertEqual(report["books_with_numbers"], 88)
+        self.assertFalse(report["invalid"])
+        self.assertEqual(set(report["families"]), {"H", "G", "OVL", "OVG"})
+
+    def test_woordverwijzingen_gebruiken_alleen_ondersteunde_nummerfamilies(self):
+        families = set()
         for chapter_file in ROOT.glob("data/*/[0-9]*.json"):
             data = json.loads(chapter_file.read_text(encoding="utf-8"))
             for verse in data.get("verses", []):
@@ -231,9 +317,18 @@ class StrongsDataTests(unittest.TestCase):
                         continue
                     value = str(word.get("strongs") or "")
                     if value:
-                        prefixes.add(value[:1])
-        self.assertTrue({"H", "G"}.issubset(prefixes))
-        self.assertTrue(prefixes.issubset({"H", "G", "O"}))
+                        for number in value.split():
+                            if number.startswith("OVL"):
+                                families.add("OVL")
+                            elif number.startswith("OVG"):
+                                families.add("OVG")
+                            elif number.startswith("H"):
+                                families.add("H")
+                            elif number.startswith("G"):
+                                families.add("G")
+                            else:
+                                self.fail(f"Onbekende woordnummerfamilie: {number}")
+        self.assertEqual(families, {"H", "G", "OVL", "OVG"})
 
 
 if __name__ == "__main__":

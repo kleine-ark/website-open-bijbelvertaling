@@ -202,13 +202,25 @@ class BrandingBrowserTests(unittest.TestCase):
             finally:
                 page.close()
 
-    def test_gedeelde_navigatie_linkt_naar_de_publieke_downloadpagina(self):
+    def test_onderwerpen_downloads_en_woordenboek_staan_alleen_in_de_wiki(self):
         page = self.browser.new_page(viewport={"width": 1440, "height": 900})
         try:
             page.goto(f"{self.base_url}/over-ov.html")
-            link = page.get_by_role("link", name="Downloads", exact=True)
-            link.wait_for(state="visible", timeout=3_000)
-            self.assertEqual(link.get_attribute("href"), "downloads.html")
+            hoofdlinks = page.locator("#topnav-links a")
+            self.assertEqual(
+                hoofdlinks.all_text_contents(),
+                ["Over OV", "Tekst", "Wiki"],
+            )
+
+            page.goto(f"{self.base_url}/wiki.html")
+            wiki_links = page.locator(".wiki-sidebar a[data-page]")
+            routes = {
+                link.inner_text(): (link.get_attribute("href"), link.get_attribute("data-page"))
+                for link in wiki_links.all()
+            }
+            self.assertEqual(routes["Onderwerpen"], ("#onderwerpen", "onderwerpen.html"))
+            self.assertEqual(routes["Woordenboek"], ("#woordenboek", "lexicon.html"))
+            self.assertEqual(routes["Downloads"], ("#downloads", "downloads.html"))
         finally:
             page.close()
 

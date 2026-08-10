@@ -258,7 +258,7 @@ const VerseSelect = {
         });
     },
 
-    // Opmerking/suggestie openen voor het (eerste) geselecteerde vers
+    // Opmerking/suggestie openen voor de volledige geselecteerde passage
     openNote() {
         const rows = this.getSelectedRows();
         if (!rows.length || !window.Feedback) return;
@@ -268,6 +268,7 @@ const VerseSelect = {
             bookId: first.dataset.book,
             ch: parseInt(first.dataset.chapter, 10),
             vs: parseInt(first.dataset.verse, 10),
+            ref: data ? data.ref : '',
             text: data ? data.plain : ''
         });
     },
@@ -350,22 +351,38 @@ const VerseSelect = {
             const cell = row.querySelector('.col-2026');
             const clone = cell ? cell.cloneNode(true) : null;
             if (clone) clone.querySelectorAll('.note-marker, .strongs-alignment, .strongs-inline').forEach(m => m.remove());
-            return { num, text: clone ? clone.textContent.trim().replace(/\s+/g,' ') : '', html: clone ? clone.innerHTML.trim() : '' };
+            return {
+                bookId: row.dataset.book,
+                chapter: parseInt(row.dataset.chapter, 10),
+                num,
+                text: clone ? clone.textContent.trim().replace(/\s+/g,' ') : '',
+                html: clone ? clone.innerHTML.trim() : ''
+            };
         });
-        // Build ref
-        const nums = items.map(i => parseInt(i.num)).sort((a,b) => a-b);
-        const bookEl = document.getElementById('chapter-title');
-        let bookName = '';
-        if (bookEl) {
-            const c = bookEl.cloneNode(true);
-            c.querySelectorAll('.chapter-concept-tag').forEach(t => t.remove());
-            bookName = c.textContent.trim();
+        // Bouw per boek en hoofdstuk een volledige verwijzing. Dat blijft ook
+        // eenduidig bij een selectie die over een hoofdstukgrens doorloopt.
+        const groups = [];
+        for (const item of items) {
+            let group = groups[groups.length - 1];
+            if (!group || group.bookId !== item.bookId || group.chapter !== item.chapter) {
+                group = { bookId: item.bookId, chapter: item.chapter, nums: [] };
+                groups.push(group);
+            }
+            group.nums.push(parseInt(item.num, 10));
         }
-        let ref;
-        if (nums.length === 1) ref = `${bookName}:${nums[0]}`;
-        else if (nums.every((n,i) => i===0 || n === nums[i-1]+1))
-            ref = `${bookName}:${nums[0]}-${nums[nums.length-1]}`;
-        else ref = `${bookName}:${nums.join(',')}`;
+        const ref = groups.map(group => {
+            const knownName = window.App && App._contNames && App._contNames[group.bookId];
+            const cachedName = window.DataLoader && DataLoader.cache && DataLoader.cache[group.bookId]
+                ? DataLoader.cache[group.bookId].nameDutch
+                : '';
+            const bookName = knownName || cachedName || group.bookId;
+            const nums = [...group.nums].sort((a, b) => a - b);
+            const verses = nums.length > 1 && nums.every((n, i) => i === 0 || n === nums[i - 1] + 1)
+                ? `${nums[0]}-${nums[nums.length - 1]}`
+                : nums.join(',');
+            return `${bookName} ${group.chapter}:${verses}`;
+        }).join('; ');
+        const nums = items.map(i => parseInt(i.num, 10));
         const plain = items.map(i => `${i.num} ${i.text}`).join('\n');
         const html = items.map(i => `<b>${i.num}</b> ${i.html}`).join('<br>\n');
         return { ref, plain, html, nums, items };

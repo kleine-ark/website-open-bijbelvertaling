@@ -5,6 +5,8 @@ const OptionsPanel = {
     lastTrigger: null,
     activeTab: 'lezen',
     sessionKey: 'ov_options_tab',
+    positionKey: 'ov_options_panel_position',
+    dragState: null,
 
     init() {
         this.dialog = document.getElementById('sidebar-right');
@@ -45,6 +47,9 @@ const OptionsPanel = {
         });
         this.dialog.addEventListener('change', () => this.syncOptionSummaries());
 
+        this.setupDesktopDragging();
+        window.addEventListener('resize', () => this.handleViewportChange());
+
         this.setupZoom();
     },
 
@@ -53,6 +58,7 @@ const OptionsPanel = {
         this.lastTrigger = trigger || document.activeElement;
         if (window.Sidebar && Sidebar._closeLeft) Sidebar._closeLeft();
         if (!this.dialog.open) this.dialog.showModal();
+        this.restoreDesktopPosition();
         this.syncOptionSummaries();
         document.body.classList.add('options-open');
         const opener = document.getElementById('sidebar-right-open');
@@ -63,6 +69,115 @@ const OptionsPanel = {
 
     close() {
         if (this.dialog && this.dialog.open) this.dialog.close();
+    },
+
+    isDesktop() {
+        return window.matchMedia('(min-width: 769px)').matches;
+    },
+
+    setupDesktopDragging() {
+        const header = document.getElementById('sidebar-right-header');
+        if (!header) return;
+
+        header.addEventListener('pointerdown', event => {
+            if (!this.isDesktop() || event.button !== 0) return;
+            if (event.target.closest('button, input, select, textarea, a, [role="tab"]')) return;
+
+            const rect = this.dialog.getBoundingClientRect();
+            this.dragState = {
+                pointerId: event.pointerId,
+                offsetX: event.clientX - rect.left,
+                offsetY: event.clientY - rect.top,
+            };
+            this.dialog.classList.add('is-dragging');
+            header.setPointerCapture(event.pointerId);
+            event.preventDefault();
+        });
+
+        header.addEventListener('pointermove', event => {
+            if (!this.dragState || event.pointerId !== this.dragState.pointerId) return;
+            this.setDesktopPosition(
+                event.clientX - this.dragState.offsetX,
+                event.clientY - this.dragState.offsetY,
+            );
+        });
+
+        const finishDrag = event => {
+            if (!this.dragState || event.pointerId !== this.dragState.pointerId) return;
+            if (header.hasPointerCapture(event.pointerId)) header.releasePointerCapture(event.pointerId);
+            this.dragState = null;
+            this.dialog.classList.remove('is-dragging');
+            this.saveDesktopPosition();
+        };
+        header.addEventListener('pointerup', finishDrag);
+        header.addEventListener('pointercancel', finishDrag);
+    },
+
+    clampDesktopPosition(x, y) {
+        const rect = this.dialog.getBoundingClientRect();
+        const padding = 16;
+        const maxX = Math.max(padding, window.innerWidth - rect.width - padding);
+        const maxY = Math.max(padding, window.innerHeight - rect.height - padding);
+        return {
+            x: Math.min(Math.max(x, padding), maxX),
+            y: Math.min(Math.max(y, padding), maxY),
+        };
+    },
+
+    setDesktopPosition(x, y) {
+        if (!this.isDesktop()) return;
+        this.dialog.classList.add('has-custom-position');
+        const position = this.clampDesktopPosition(x, y);
+        Object.assign(this.dialog.style, {
+            left: `${position.x}px`,
+            top: `${position.y}px`,
+            right: 'auto',
+            bottom: 'auto',
+        });
+    },
+
+    saveDesktopPosition() {
+        if (!this.isDesktop()) return;
+        const rect = this.dialog.getBoundingClientRect();
+        const position = this.clampDesktopPosition(rect.left, rect.top);
+        localStorage.setItem(this.positionKey, JSON.stringify(position));
+    },
+
+    readDesktopPosition() {
+        try {
+            const position = JSON.parse(localStorage.getItem(this.positionKey));
+            if (!position || !Number.isFinite(position.x) || !Number.isFinite(position.y)) return null;
+            return position;
+        } catch (_error) {
+            return null;
+        }
+    },
+
+    restoreDesktopPosition() {
+        if (!this.isDesktop()) {
+            this.clearInlinePosition();
+            return;
+        }
+        const position = this.readDesktopPosition();
+        if (position) this.setDesktopPosition(position.x, position.y);
+    },
+
+    clearInlinePosition() {
+        this.dialog.classList.remove('has-custom-position');
+        this.dialog.style.removeProperty('left');
+        this.dialog.style.removeProperty('top');
+        this.dialog.style.removeProperty('right');
+        this.dialog.style.removeProperty('bottom');
+    },
+
+    handleViewportChange() {
+        if (!this.dialog || !this.dialog.open) return;
+        if (!this.isDesktop()) {
+            this.clearInlinePosition();
+            return;
+        }
+        const position = this.readDesktopPosition();
+        if (position) this.setDesktopPosition(position.x, position.y);
     },
 
     activateTab(name, focus = false) {

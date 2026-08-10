@@ -143,4 +143,4 @@ def test_tag_is_eenmaal_in_bestaande_onderwerpdata_opgenomen():
 def test_onderwerpenpagina_plaatst_tag_bij_de_geestelijke_wereld():
     html = (ROOT / "onderwerpen.html").read_text(encoding="utf-8")
     assert "id: 'geestelijke-wereld'" in html
-    assert "ids: ['engelen', 'demonen-en-duivelen']" in html
+    assert "ids: ['engelen', 'demonen-en-duivelen', 'reuzen']" in html

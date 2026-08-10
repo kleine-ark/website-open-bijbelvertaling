@@ -48,34 +48,33 @@ installation.then(() => process.stdout.write(JSON.stringify(opened)));
     return json.loads(result.stdout)
 
 
-def test_current_release_describes_corpus_naslag_and_uses_one_version():
+def test_current_release_describes_woordnummers_en_uses_one_version():
     stats = read_json("data/stats.json")
     changelog = read_json("data/changelog.json")
     current_release = changelog["wijzigingen"][0]
     descriptions = " ".join(item["beschrijving"] for item in current_release["items"])
 
-    assert current_release["versie"] == "v0.31.1"
+    assert current_release["versie"] == "v0.32.0"
     for subject in (
-        "Materialen",
-        "Dieren",
-        "Bomen & planten",
-        "Personen",
+        "Strong- en woordnummers",
+        "Liederen",
+        "gebeden",
         "Muziekinstrumenten",
     ):
         assert subject in descriptions
     assert stats["version"] == current_release["versie"]
     assert service_worker_install_cache() == [f"shell-{current_release['versie']}"]
-    assert current_release["datum"] == "2026-08-09"
-    assert stats["date"] == "9 augustus 2026"
+    assert current_release["datum"] == "2026-08-10"
+    assert stats["date"] == "10 augustus 2026"
 
 
 def test_human_review_statistics_include_numeri_en_deuteronomium_1_tot_5():
     stats = read_json("data/stats.json")
     verified = read_json("data/verified-chapters.json")
 
-    assert stats["books_verified"] == 50
-    assert stats["chapters_verified"] == 671
-    assert stats["verses_verified"] == 18220
+    assert stats["books_verified"] == 6
+    assert stats["chapters_verified"] == 174
+    assert stats["verses_verified"] == 5394
     assert "Numeri" in stats["verified_books"]
     assert "Deuteronomium 1–5" in stats["verified_books"]
     assert verified["numeri"] == "all"
