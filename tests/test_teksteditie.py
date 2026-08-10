@@ -82,7 +82,7 @@ class TekstEditieTests(unittest.TestCase):
             page.locator('.verse-row[data-verse="1"]').wait_for(timeout=20_000)
             marker = page.evaluate("window.__editionMarker = Math.random(); window.__editionMarker")
             page.locator("#sidebar-right-open").click()
-            page.locator("#options-tab-vergelijken").click()
+            page.locator('details[data-options-category="bronnen"] > summary').click()
             page.locator('[data-optie="teksteditie"]').select_option("en-webbe")
             page.locator('.verse-row[data-verse="1"] .col-2026').wait_for(timeout=20_000)
             page.wait_for_function("document.querySelector('.col-2026').innerText.includes('beginning')")

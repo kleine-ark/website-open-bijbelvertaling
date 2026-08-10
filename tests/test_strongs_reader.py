@@ -73,7 +73,7 @@ class StrongsReaderBrowserTests(unittest.TestCase):
     def enable_strongs(self, page, expect_alignment=True):
         opener = "#mobile-opties-btn" if page.viewport_size["width"] <= 768 else "#sidebar-right-open"
         page.locator(opener).click()
-        page.locator("#options-tab-onderzoeken").click()
+        page.locator('details[data-options-category="bronnen"] > summary').click()
         page.locator("#toggle-strongs").check()
         page.locator("#sidebar-right-toggle").click()
         if expect_alignment:
@@ -83,7 +83,7 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         page = self.open_reader()
         try:
             page.locator("#sidebar-right-open").click()
-            page.locator("#options-tab-onderzoeken").click()
+            page.locator('details[data-options-category="bronnen"] > summary').click()
             toggle = page.locator("#toggle-strongs")
             self.assertFalse(toggle.is_checked())
             toggle.check()
@@ -93,7 +93,7 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             page.reload(wait_until="domcontentloaded")
             page.locator("#sidebar-right-open").wait_for(state="visible", timeout=15_000)
             page.locator("#sidebar-right-open").click()
-            page.locator("#options-tab-onderzoeken").click()
+            page.locator('details[data-options-category="bronnen"] > summary').click()
             self.assertTrue(toggle.is_checked())
         finally:
             page.close()

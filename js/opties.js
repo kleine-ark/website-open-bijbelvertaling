@@ -56,7 +56,10 @@ const Opties = {
         // Sync radio buttons + selects
         document.querySelectorAll('[data-optie]').forEach(input => {
             const optie = input.dataset.optie;
-            if (input.tagName === 'SELECT') {
+            if (input.type === 'range' && optie === 'regelafstand') {
+                input.value = String({ compact: 0, normaal: 1, ruim: 2 }[this.state.regelafstand] ?? 1);
+                this.updateRangeLabel(input);
+            } else if (input.tagName === 'SELECT') {
                 input.value = this.state[optie];
             } else {
                 input.checked = this.state[optie] === input.value;
@@ -113,6 +116,13 @@ const Opties = {
                     this.applyToCurrentChapter();
                     return;
                 }
+                if (input.type === 'range' && input.dataset.optie === 'regelafstand') {
+                    this.state.regelafstand = ['compact', 'normaal', 'ruim'][Number(input.value)] || 'normaal';
+                    this.updateRangeLabel(input);
+                    this.save();
+                    this.applyReaderStyleClasses();
+                    return;
+                }
                 if (input.tagName === 'SELECT' || input.checked) {
                     this.state[input.dataset.optie] = input.value;
                     this.save();
@@ -142,6 +152,12 @@ const Opties = {
                 }
             });
         });
+    },
+
+    updateRangeLabel(input) {
+        const label = document.getElementById(`${input.id}-value`);
+        if (!label) return;
+        label.textContent = ['Compact', 'Normaal', 'Ruim'][Number(input.value)] || 'Normaal';
     },
 
     applyLayoutClass() {
