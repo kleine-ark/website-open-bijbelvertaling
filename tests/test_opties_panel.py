@@ -82,14 +82,12 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_opties_heeft_drie_toegankelijke_tabs(self):
+    def test_opties_heeft_inklapbare_categorieen_in_plaats_van_tabs(self):
         page = self.open_reader()
         try:
             page.locator("#sidebar-right-open").click()
-            self.assertEqual(
-                page.get_by_role("tab").all_text_contents(),
-                ["Lezen", "Vergelijken", "Onderzoeken"],
-            )
+            self.assertEqual(page.get_by_role("tab").count(), 0)
+            self.assertEqual(page.locator("details.options-category").count(), 5)
         finally:
             page.close()
 
@@ -107,11 +105,11 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         page = self.open_reader()
         try:
             page.locator("#sidebar-right-open").click()
-            sources = page.locator("#sidebar-right .option-icon").evaluate_all(
+            sources = page.locator("#sidebar-right .options-list > :not(.option-mirror) .option-icon").evaluate_all(
                 "els => els.map(el => new URL(el.src).pathname.split('/').pop())"
             )
             self.assertTrue(expected.issubset(set(sources)))
-            self.assertTrue(page.locator("#sidebar-right .option-icon").evaluate_all(
+            self.assertTrue(page.locator("#sidebar-right .options-list > :not(.option-mirror) .option-icon").evaluate_all(
                 "els => els.every(el => el.complete && el.naturalWidth > 0)"
             ))
         finally:
@@ -127,6 +125,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             "sheol.png", "namen-personen.png", "naam-jezus.png",
             "maten-gewichten.png", "grote-getallen.png", "tijdsaanduidingen.png",
             "afspeelsnelheid.png", "kanttekeningen.png", "extra-kolommen.png",
+            "vergelijkingsedities.png",
             "verschillen-vertalingen.png", "verschillen-kanttekeningen.png",
             "grondtalen.png", "oudste-handschrift.png", "onderwerptags.png",
             "geografische-locaties.png", "strong-nummers.png",
@@ -134,14 +133,81 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         page = self.open_reader()
         try:
             page.locator("#sidebar-right-open").click()
-            sources = page.locator("#sidebar-right .option-icon").evaluate_all(
+            sources = page.locator("#sidebar-right .options-list > :not(.option-mirror) .option-icon").evaluate_all(
                 "els => els.map(el => new URL(el.src).pathname.split('/').pop())"
             )
             self.assertEqual(set(sources), expected)
             self.assertEqual(len(sources), len(expected))
-            self.assertTrue(page.locator("#sidebar-right .option-icon").evaluate_all(
+            self.assertTrue(page.locator("#sidebar-right .options-list > :not(.option-mirror) .option-icon").evaluate_all(
                 "els => els.every(el => el.complete && el.naturalWidth > 0)"
             ))
+        finally:
+            page.close()
+
+    def test_ieder_instellingenblok_heeft_exact_een_rastericoon(self):
+        page = self.open_reader()
+        try:
+            page.locator("#sidebar-right-open").click()
+            instellingen = page.locator(
+                "#sidebar-right .options-list > .option-row, "
+                "#sidebar-right .options-list > .option-choice"
+            )
+            self.assertGreater(instellingen.count(), 30)
+            for index in range(instellingen.count()):
+                with self.subTest(index=index):
+                    blok = instellingen.nth(index)
+                    self.assertEqual(blok.locator(":scope .option-icon").count(), 1)
+                    bron = blok.locator(":scope .option-icon").get_attribute("src")
+                    self.assertTrue(bron.endswith(".png"), bron)
+
+            self.assertEqual(
+                page.locator("#sidebar-right .options-section-icon").count(),
+                0,
+                "Sectiekoppen mogen geen teksttekens als pseudo-iconen gebruiken",
+            )
+        finally:
+            page.close()
+
+    def test_desktop_is_compact_en_mobiel_houdt_aanraakdoelen(self):
+        page = self.open_reader(width=1280, height=900)
+        try:
+            page.locator("#sidebar-right-open").click()
+            maten = page.locator("#sidebar-right").evaluate(
+                """panel => {
+                    const row = panel.querySelector('.option-row');
+                    const heading = panel.querySelector('.options-category > summary');
+                    const body = panel.querySelector('.options-body');
+                    return {
+                        rowMinHeight: parseFloat(getComputedStyle(row).minHeight),
+                        rowPaddingTop: parseFloat(getComputedStyle(row).paddingTop),
+                        headingHeight: parseFloat(getComputedStyle(heading).minHeight),
+                        bodyPaddingTop: parseFloat(getComputedStyle(body).paddingTop),
+                    };
+                }"""
+            )
+            self.assertLessEqual(maten["rowMinHeight"], 50)
+            self.assertLessEqual(maten["rowPaddingTop"], 7)
+            self.assertLessEqual(maten["headingHeight"], 52)
+            self.assertLessEqual(maten["bodyPaddingTop"], 14)
+        finally:
+            page.close()
+
+        page = self.open_reader(width=390, height=844)
+        try:
+            page.locator("#mobile-opties-btn").click()
+            page.locator("#sidebar-right").wait_for(state="visible", timeout=3_000)
+            self.assertGreaterEqual(
+                page.locator("#sidebar-right .option-row").first.evaluate(
+                    "el => parseFloat(getComputedStyle(el).minHeight)"
+                ),
+                44,
+            )
+            page.locator('details[data-options-category="bronnen"] > summary').click()
+            self.assertGreaterEqual(
+                page.locator('details[data-options-category="bronnen"] .option-choice-inline label')
+                .first.evaluate("el => parseFloat(getComputedStyle(el).minHeight)"),
+                44,
+            )
         finally:
             page.close()
 
@@ -150,8 +216,10 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         try:
             page.wait_for_function("window.Opties && window.Opties.state")
             page.locator("#sidebar-right-open").click()
+            page.locator('details[data-options-category="weergave"] > summary').click()
             page.locator('[data-optie="lettertype"][value="rustig"]').check()
-            page.locator('[data-optie="regelafstand"][value="ruim"]').check()
+            page.locator('#opt-regelafstand').fill("2")
+            page.locator('#opt-regelafstand').dispatch_event("change")
 
             self.assertTrue(page.locator("body").evaluate(
                 "el => el.classList.contains('reader-font-rustig')"
@@ -181,22 +249,22 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_bestaande_controls_staan_in_het_juiste_tabblad(self):
-        expected_tab = {
-            "toggle-versnummers": "lezen",
-            "toggle-citaten": "lezen",
-            "toggle-doorlopend": "lezen",
-            "opt-audio-speed": "lezen",
-            "toggle-kt-popup": "vergelijken",
-            "toggle-tags": "onderzoeken",
-            "toggle-hs-vers": "onderzoeken",
+    def test_bestaande_controls_staan_in_de_juiste_categorie(self):
+        expected_category = {
+            "toggle-versnummers": "weergave",
+            "toggle-citaten": "weergave",
+            "toggle-doorlopend": "weergave",
+            "opt-audio-speed": "voorlezen",
+            "toggle-kt-popup": "bronnen",
+            "toggle-tags": "bronnen",
+            "toggle-hs-vers": "bronnen",
         }
         page = self.open_reader()
         try:
-            for control_id, tab in expected_tab.items():
+            for control_id, category in expected_category.items():
                 with self.subTest(control=control_id):
                     self.assertEqual(
-                        page.locator(f"#options-panel-{tab} #{control_id}").count(),
+                        page.locator(f'details[data-options-category="{category}"] #{control_id}').count(),
                         1,
                     )
         finally:
@@ -239,8 +307,11 @@ class OptionsPanelBrowserTests(unittest.TestCase):
                 "window.Opties && window.Opties.state && window.Opties.state.godsnaam"
             )
             page.locator("#sidebar-right-open").click()
-            page.get_by_text("Godsnaam in het Oude Testament", exact=True).click()
-            klassiek = page.locator('[data-optie="godsnaam"][value="klassiek"]')
+            theology = page.locator('details[data-options-category="theologie"]')
+            theology.locator(":scope > summary").click()
+            godsnaam = theology.locator('[data-option-summary="godsnaam"]')
+            godsnaam.locator(":scope > summary").click()
+            klassiek = godsnaam.locator('[data-optie="godsnaam"][value="klassiek"]')
             klassiek.check()
             page.wait_for_function(
                 "JSON.parse(localStorage.getItem('sv2026_vertaalopties')).godsnaam === 'klassiek'"
@@ -254,21 +325,21 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_zoom_staat_in_lezen_en_niet_meer_zwevend(self):
+    def test_zoom_staat_in_weergave_en_niet_meer_zwevend(self):
         page = self.open_reader()
         try:
             page.locator("#sidebar-right-open").click()
-            self.assertEqual(page.locator("#options-panel-lezen #options-zoom").count(), 1)
+            self.assertEqual(page.locator('details[data-options-category="weergave"] #options-zoom').count(), 1)
             self.assertEqual(page.locator("body > #ov-zoom").count(), 0)
         finally:
             page.close()
 
-    def test_boekvolgorde_staat_bij_lezen_en_niet_in_de_boekenzijbalk(self):
+    def test_boekvolgorde_staat_bij_theologie_en_niet_in_de_boekenzijbalk(self):
         page = self.open_reader()
         try:
             self.assertEqual(page.locator("#sidebar #sb-boekvolgorde").count(), 0)
             page.locator("#sidebar-right-open").click()
-            keuze = page.locator('#options-panel-lezen [data-optie="boekvolgorde"]')
+            keuze = page.locator('details[data-options-category="theologie"] [data-optie="boekvolgorde"]')
             self.assertEqual(keuze.count(), 1)
             self.assertEqual(keuze.get_attribute("aria-label"), "Boekvolgorde")
         finally:
@@ -299,7 +370,8 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         page = self.open_reader()
         try:
             page.locator("#sidebar-right-open").click()
-            keuze = page.locator('#options-panel-lezen [data-optie="boekvolgorde"]')
+            page.locator('details[data-options-category="theologie"] > summary').click()
+            keuze = page.locator('details[data-options-category="theologie"] [data-optie="boekvolgorde"]')
             keuze.select_option("tenach")
             page.wait_for_function(
                 "JSON.parse(localStorage.getItem('sv2026_vertaalopties')).boekvolgorde === 'tenach'"
@@ -325,6 +397,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         page = self.open_reader()
         try:
             page.locator("#sidebar-right-open").click()
+            page.locator('details[data-options-category="weergave"] > summary').click()
             page.locator("#options-zoom-in").click()
             page.wait_for_function("localStorage.getItem('ov_zoom') === '1.1'")
             self.assertEqual(page.locator("#options-zoom-value").inner_text(), "110%")
@@ -332,6 +405,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             page.reload(wait_until="domcontentloaded")
             page.locator("#sidebar-right-open").wait_for(state="visible", timeout=15_000)
             page.locator("#sidebar-right-open").click()
+            page.locator('details[data-options-category="weergave"] > summary').click()
             self.assertEqual(page.locator("#options-zoom-value").inner_text(), "110%")
         finally:
             page.close()
@@ -340,6 +414,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         page = self.open_reader(location="numeri/2")
         try:
             page.locator("#sidebar-right-open").click()
+            page.locator('details[data-options-category="theologie"] > summary').click()
             page.get_by_text("Grote getallen", exact=True).click()
             cijfers = page.locator('[data-optie="getalweergave"][value="cijfers"]')
             self.assertEqual(cijfers.count(), 1)
@@ -453,7 +528,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             box = panel.bounding_box()
             self.assertAlmostEqual(box["x"], 0, delta=1)
             self.assertAlmostEqual(box["width"], 390, delta=1)
-            self.assertGreater(box["y"], 100)
+            self.assertAlmostEqual(box["y"], 0, delta=1)
         finally:
             page.close()
 
@@ -471,7 +546,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
                 finally:
                     page.close()
 
-    def test_mobiele_darkmode_volgt_het_goedgekeurde_bottomsheet_ontwerp(self):
+    def test_mobiele_darkmode_blijft_een_helder_schermvullend_optiescherm(self):
         page = self.open_reader(width=390, height=844)
         try:
             page.evaluate(
@@ -485,9 +560,6 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             page.wait_for_timeout(250)
 
             box = panel.bounding_box()
-            tabs = page.locator(".options-tabs").bounding_box()
-            grip = page.locator(".options-sheet-grip").bounding_box()
-            title = page.locator("#options-title").bounding_box()
             style = panel.evaluate(
                 """el => ({
                     background: getComputedStyle(el).backgroundColor,
@@ -495,10 +567,9 @@ class OptionsPanelBrowserTests(unittest.TestCase):
                 })"""
             )
 
-            self.assertGreater(box["y"], 100)
-            self.assertLess(tabs["y"], grip["y"])
-            self.assertLess(grip["y"], title["y"])
-            self.assertGreaterEqual(style["radius"], 30)
+            self.assertAlmostEqual(box["y"], 0, delta=1)
+            self.assertAlmostEqual(box["height"], 844, delta=1)
+            self.assertEqual(style["radius"], 0)
             self.assertGreater(int(style["background"].split("(")[1].split(",")[0]), 230)
             self.assertEqual(
                 page.locator("#options-title").evaluate(
@@ -506,16 +577,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
                 ),
                 "center",
             )
-            self.assertFalse(
-                page.locator("#options-panel-lezen .options-section-heading")
-                .first.is_visible()
-            )
-            self.assertEqual(
-                page.locator("#options-tab-lezen").evaluate(
-                    "el => getComputedStyle(el).backgroundColor"
-                ),
-                "rgba(0, 0, 0, 0)",
-            )
+            self.assertEqual(page.locator("details.options-category").count(), 5)
         finally:
             page.close()
 
@@ -523,7 +585,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         page = self.open_reader()
         try:
             page.locator("#sidebar-right-open").click()
-            current = page.locator('[data-option-summary="godsnaam"] .option-current')
+            current = page.locator('[data-option-mirror="godsnaam"] .option-current')
             self.assertEqual(current.count(), 1)
             self.assertEqual(current.inner_text(), "JAHWEH / God JAHWEH")
         finally:
@@ -556,18 +618,14 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_pijltjestoets_wisselt_tab_en_zichtbaar_paneel(self):
+    def test_enter_klapt_een_categorie_open(self):
         page = self.open_reader()
         try:
             page.locator("#sidebar-right-open").click()
-            page.locator("#options-tab-lezen").focus()
-            page.keyboard.press("ArrowRight")
-            self.assertEqual(
-                page.locator('[role="tab"][aria-selected="true"]').text_content().strip(),
-                "Vergelijken",
-            )
-            self.assertTrue(page.locator("#options-panel-vergelijken").is_visible())
-            self.assertFalse(page.locator("#options-panel-lezen").is_visible())
+            category = page.locator('details[data-options-category="weergave"]')
+            category.locator("summary").focus()
+            page.keyboard.press("Enter")
+            self.assertTrue(category.get_attribute("open") is not None)
         finally:
             page.close()
 

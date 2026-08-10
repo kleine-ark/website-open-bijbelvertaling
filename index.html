@@ -532,12 +532,6 @@
     <dialog id="sidebar-right" class="options-panel" aria-labelledby="options-title">
         <div id="sidebar-right-header" class="options-header">
             <button id="sidebar-right-toggle" type="button" aria-label="Opties sluiten" title="Opties sluiten">&times;</button>
-            <div class="options-tabs" role="tablist" aria-label="Categorieën">
-                <button type="button" role="tab" id="options-tab-lezen" data-options-tab="lezen" aria-controls="options-panel-lezen" aria-selected="true">Lezen</button>
-                <button type="button" role="tab" id="options-tab-vergelijken" data-options-tab="vergelijken" aria-controls="options-panel-vergelijken" aria-selected="false" tabindex="-1">Vergelijken</button>
-                <button type="button" role="tab" id="options-tab-onderzoeken" data-options-tab="onderzoeken" aria-controls="options-panel-onderzoeken" aria-selected="false" tabindex="-1">Onderzoeken</button>
-            </div>
-            <span class="options-sheet-grip" aria-hidden="true"></span>
             <p class="options-eyebrow">Open Vertaling</p>
             <h2 id="options-title">Leesvoorkeuren</h2>
             <p class="options-preview">In de beginne schiep God de hemel en de aarde.</p>
@@ -545,7 +539,6 @@
         <div id="sidebar-right-body" class="options-body">
             <section id="options-panel-lezen" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-lezen">
                 <div class="options-section-heading">
-                    <span class="options-section-icon" aria-hidden="true">Aa</span>
                     <div><h3>Weergave</h3><p>Maak de leestekst rustig en persoonlijk.</p></div>
                 </div>
                 <div class="options-list">
@@ -569,12 +562,11 @@
                             <button type="button" id="options-zoom-in" aria-label="Tekst groter">+</button>
                         </span>
                     </div>
-                    <fieldset class="option-choice option-choice-inline option-choice-with-icon">
-                        <legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/regelafstand.png" alt="" aria-hidden="true"><span>Regelafstand</span></span></legend>
-                        <label><input type="radio" name="opt-regelafstand" data-optie="regelafstand" value="compact"> Compact</label>
-                        <label><input type="radio" name="opt-regelafstand" data-optie="regelafstand" value="normaal"> Normaal</label>
-                        <label><input type="radio" name="opt-regelafstand" data-optie="regelafstand" value="ruim"> Ruim</label>
-                    </fieldset>
+                    <label class="option-row option-row-with-icon" for="opt-regelafstand">
+                        <img class="option-icon" src="images/iconen/instellingen/regelafstand.png" alt="" aria-hidden="true">
+                        <span><strong>Regelafstand</strong><small id="opt-regelafstand-value">Normaal</small></span>
+                        <input type="range" id="opt-regelafstand" data-optie="regelafstand" min="0" max="2" step="1" value="1" aria-describedby="opt-regelafstand-value">
+                    </label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/boekinleiding.png" alt="" aria-hidden="true"><span><strong>Boekinleiding</strong><small>Toon de inleiding bij het gekozen boek.</small></span><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/hoofdstukinleiding.png" alt="" aria-hidden="true"><span><strong>Hoofdstukinleiding</strong><small>Toon de inleiding boven het hoofdstuk.</small></span><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/dyslexiemodus.png" alt="" aria-hidden="true"><span><strong>Dyslexiemodus</strong><small>Gebruik een eenvoudiger leesritme.</small></span><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"></label>
@@ -586,7 +578,6 @@
                 </div>
 
                 <div class="options-section-heading">
-                    <span class="options-section-icon" aria-hidden="true">☰</span>
                     <div><h3>Navigatie</h3><p>Kies hoe de boeken in menu's en bij het doorlezen worden geordend.</p></div>
                 </div>
                 <div class="options-list">
@@ -606,7 +597,6 @@
                 </div>
 
                 <div class="options-section-heading">
-                    <span class="options-section-icon options-section-icon-gold" aria-hidden="true">יהוה</span>
                     <div><h3>Vertaalweergave</h3><p>Kies hoe namen, maten en tijden worden weergegeven.</p></div>
                 </div>
                 <div class="options-list options-choice-list">
@@ -652,7 +642,6 @@
                 </div>
 
                 <div class="options-section-heading">
-                    <span class="options-section-icon" aria-hidden="true">▶</span>
                     <div><h3>Voorlezen</h3><p>Stel stem en afspeelsnelheid in.</p></div>
                 </div>
                 <div class="options-list">
@@ -667,7 +656,7 @@
             </section>
 
             <section id="options-panel-vergelijken" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-vergelijken" hidden>
-                <div class="options-section-heading"><span class="options-section-icon" aria-hidden="true">Ⅱ</span><div><h3>Teksten naast elkaar</h3><p>Vergelijk vertalingen en kanttekeningen.</p></div></div>
+                <div class="options-section-heading"><div><h3>Teksten naast elkaar</h3><p>Vergelijk vertalingen en kanttekeningen.</p></div></div>
                 <div class="options-list">
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/voorkeurseditie.png" alt="" aria-hidden="true"><span><strong>Bijbeltekst</strong><small>De bediening blijft Nederlands.</small></span><select id="opt-teksteditie" data-optie="teksteditie" aria-label="Bijbeltekst">
                         <option value="nl-ov">Nederlands — Open Vertaling</option>
@@ -676,7 +665,7 @@
                         <option value="ar-vd">Arabisch — Van Dyck</option>
                         <option value="es-rv1909">Spaans — Reina-Valera 1909</option>
                     </select></label>
-                    <fieldset class="option-choice"><legend>Vergelijkingsedities</legend><div class="option-choice-values option-choice-grid">
+                    <fieldset class="option-choice option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/vergelijkingsedities.png" alt="" aria-hidden="true"><span>Vergelijkingsedities</span></span></legend><div class="option-choice-values option-choice-grid">
                         <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
                         <label><input type="checkbox" data-toggle-col="sv1888"> SV 1888</label>
                         <label><input type="checkbox" data-toggle-col="2026" checked> Open Vertaling</label>
@@ -697,15 +686,12 @@
             </section>
 
             <section id="options-panel-onderzoeken" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-onderzoeken" hidden>
-                <div class="options-section-heading"><span class="options-section-icon options-section-icon-gold" aria-hidden="true">א</span><div><h3>Onderzoekslagen</h3><p>Voeg bronnen en taalinformatie toe aan de tekst.</p></div></div>
+                <div class="options-section-heading"><div><h3>Onderzoekslagen</h3><p>Voeg bronnen en taalinformatie toe aan de tekst.</p></div></div>
                 <div class="options-list">
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/grondtalen.png" alt="" aria-hidden="true"><span><strong>Grondtalen</strong><small>Hebreeuws, Grieks, Aramees, Latijn of Ge'ez.</small></span><input type="checkbox" data-toggle-col="hebrew"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/oudste-handschrift.png" alt="" aria-hidden="true"><span><strong>Oudste handschrift per vers</strong><small>Oorspronkelijke taal en oudste vindplaats.</small></span><input type="checkbox" id="toggle-hs-vers"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/onderwerptags.png" alt="" aria-hidden="true"><span><strong>Onderwerptags</strong></span><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"></label>
-                    <fieldset class="option-choice option-choice-inline option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/geografische-locaties.png" alt="" aria-hidden="true"><span>Geografische locaties</span></span></legend>
-                        <label><input type="radio" name="opt-geoMarkeren" data-optie="geoMarkeren" value="uit"> Niet markeren</label>
-                        <label><input type="radio" name="opt-geoMarkeren" data-optie="geoMarkeren" value="aan"> Markeren</label>
-                    </fieldset>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/geografische-locaties.png" alt="" aria-hidden="true"><span><strong>Geografische locaties</strong></span><input type="checkbox" id="toggle-geo-markeren" data-optie="geoMarkeren" value="aan"></label>
                         <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/strong-nummers.png" alt="" aria-hidden="true"><span><strong>Strong- en woordnummers</strong><small>Toon blauwe nummers bij gekoppelde Hebreeuwse, Griekse, Latijnse en Ge’ez-grondtekstwoorden.</small></span><input type="checkbox" id="toggle-strongs" data-optie="strongs" value="aan"></label>
                 </div>
             </section>

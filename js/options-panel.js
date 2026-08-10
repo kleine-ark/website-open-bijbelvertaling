@@ -3,10 +3,9 @@
 const OptionsPanel = {
     dialog: null,
     lastTrigger: null,
-    activeTab: 'lezen',
-    sessionKey: 'ov_options_tab',
     positionKey: 'ov_options_panel_position',
     dragState: null,
+    optionMirrors: new Map(),
 
     init() {
         this.dialog = document.getElementById('sidebar-right');
@@ -19,19 +18,7 @@ const OptionsPanel = {
         openButton.setAttribute('aria-expanded', 'false');
         openButton.addEventListener('click', () => this.open(openButton));
         closeButton.addEventListener('click', () => this.close());
-
-        const savedTab = sessionStorage.getItem(this.sessionKey);
-        if (['lezen', 'vergelijken', 'onderzoeken'].includes(savedTab)) {
-            this.activeTab = savedTab;
-        }
-        this.activateTab(this.activeTab);
-
-        this.dialog.querySelectorAll('[role="tab"]').forEach(tab => {
-            tab.addEventListener('click', () => this.activateTab(tab.dataset.optionsTab));
-        });
-        this.dialog.querySelector('.options-tabs').addEventListener('keydown', event => {
-            this.handleTabKeydown(event);
-        });
+        this.buildCategoryTemplate();
 
         this.dialog.addEventListener('click', event => {
             if (event.target !== this.dialog) return;
@@ -45,7 +32,10 @@ const OptionsPanel = {
             document.body.classList.remove('options-open');
             if (this.lastTrigger && this.lastTrigger.isConnected) this.lastTrigger.focus();
         });
-        this.dialog.addEventListener('change', () => this.syncOptionSummaries());
+        this.dialog.addEventListener('change', () => {
+            this.syncOptionSummaries();
+            this.syncOptionMirrors();
+        });
 
         this.setupDesktopDragging();
         window.addEventListener('resize', () => this.handleViewportChange());
@@ -60,6 +50,7 @@ const OptionsPanel = {
         if (!this.dialog.open) this.dialog.showModal();
         this.restoreDesktopPosition();
         this.syncOptionSummaries();
+        this.syncOptionMirrors();
         document.body.classList.add('options-open');
         const opener = document.getElementById('sidebar-right-open');
         if (opener) opener.setAttribute('aria-expanded', 'true');
@@ -69,6 +60,159 @@ const OptionsPanel = {
 
     close() {
         if (this.dialog && this.dialog.open) this.dialog.close();
+    },
+
+    buildCategoryTemplate() {
+        const body = document.getElementById('sidebar-right-body');
+        if (!body || body.dataset.categoriesBuilt === 'true') return;
+
+        const definitions = [
+            {
+                key: 'weergave', label: 'Weergave',
+                selectors: [
+                    '#toggle-dyslexia', '#toggle-citaten', '#toggle-doorlopend',
+                    '#toggle-versnummers', '#toggle-hoofdstuknummers',
+                    '[data-optie="lettertype"]', '[data-optie="thema"]',
+                    '#opt-regelafstand', '#toggle-pericopen', '#options-zoom',
+                ],
+            },
+            {
+                key: 'bronnen', label: 'Vertalingen, talen & kanttekeningen',
+                selectors: [
+                    '#opt-teksteditie', '#toggle-book-intro', '#toggle-chapter-intro',
+                    '#toggle-strongs', '[data-toggle-col="diff"]',
+                    '[data-toggle-col="1637"]', '[data-toggle-col="margin1637"]',
+                    '[data-optie="kolomLayout"]', '[data-toggle-col="noteDiff"]',
+                    '[data-toggle-col="hebrew"]', '#toggle-hs-vers', '#toggle-tags',
+                    '#toggle-geo-markeren',
+                ],
+            },
+            {
+                key: 'theologie', label: 'Theologie',
+                selectors: [
+                    '#opt-boekvolgorde', '[data-option-summary="godsnaam"]',
+                    '[data-option-summary="heereNT"]',
+                    '[data-option-summary="otSheol"]', '[data-option-summary="jezusNaam"]',
+                    '[data-option-summary="arabischeNamen"]',
+                    '[data-option-summary="maatstelsel"]', '[data-option-summary="getalweergave"]',
+                    '[data-option-summary="tijdrekening"]',
+                ],
+            },
+            {
+                key: 'voorlezen', label: 'Voorlezen',
+                selectors: ['[name="opt-stem"]', '#opt-audio-speed'],
+            },
+        ];
+
+        const originalPanels = Array.from(body.querySelectorAll('.options-tabpanel'));
+        definitions.forEach(definition => {
+            const category = document.createElement('details');
+            category.className = 'options-category';
+            category.dataset.optionsCategory = definition.key;
+            category.open = Boolean(definition.open);
+            const summary = document.createElement('summary');
+            summary.textContent = definition.label;
+            const list = document.createElement('div');
+            list.className = 'options-list';
+            category.append(summary, list);
+
+            definition.selectors.forEach(selector => {
+                const control = body.querySelector(selector);
+                if (!control) return;
+                const row = control.closest('.option-row, .option-choice');
+                if (row && !list.contains(row)) list.appendChild(row);
+            });
+            body.appendChild(category);
+        });
+        originalPanels.forEach(panel => panel.remove());
+
+        const mostUsed = document.createElement('details');
+        mostUsed.className = 'options-category';
+        mostUsed.dataset.optionsCategory = 'meest-gebruikt';
+        mostUsed.open = true;
+        const mostUsedSummary = document.createElement('summary');
+        mostUsedSummary.textContent = 'Meest gebruikt';
+        const mostUsedList = document.createElement('div');
+        mostUsedList.className = 'options-list';
+        mostUsed.append(mostUsedSummary, mostUsedList);
+
+        [
+            ['dyslexie', '#toggle-dyslexia'],
+            ['doorlopend', '#toggle-doorlopend'],
+            ['godsnaam', '[data-option-summary="godsnaam"]'],
+            ['thema', '[data-optie="thema"]'],
+            ['arabische-namen', '[data-option-summary="arabischeNamen"]'],
+            ['strongs', '#toggle-strongs'],
+            ['verschillen', '[data-toggle-col="diff"]'],
+        ].forEach(([key, selector]) => {
+            const control = body.querySelector(selector);
+            const row = control && control.closest('.option-row, .option-choice');
+            if (row) mostUsedList.appendChild(this.createOptionMirror(key, row));
+        });
+        body.prepend(mostUsed);
+        body.dataset.categoriesBuilt = 'true';
+        this.syncOptionMirrors();
+    },
+
+    createOptionMirror(key, primaryRow) {
+        const mirror = primaryRow.cloneNode(true);
+        mirror.classList.add('option-mirror');
+        mirror.dataset.optionMirror = key;
+        mirror.removeAttribute('data-option-summary');
+
+        mirror.querySelectorAll('[id]').forEach(element => element.removeAttribute('id'));
+        mirror.querySelectorAll('[for]').forEach(element => element.removeAttribute('for'));
+        mirror.querySelectorAll('[aria-controls], [aria-describedby], [aria-labelledby]').forEach(element => {
+            element.removeAttribute('aria-controls');
+            element.removeAttribute('aria-describedby');
+            element.removeAttribute('aria-labelledby');
+        });
+
+        const primaryControls = Array.from(primaryRow.querySelectorAll('input, select'));
+        const mirrorControls = Array.from(mirror.querySelectorAll('input, select'));
+        mirrorControls.forEach((control, index) => {
+            control.removeAttribute('onchange');
+            control.removeAttribute('data-optie');
+            control.removeAttribute('data-toggle-col');
+            if (control.type === 'radio') control.name = `option-mirror-${key}`;
+            control.addEventListener('change', () => {
+                const primary = primaryControls[index];
+                if (!primary || (control.type === 'radio' && !control.checked)) return;
+                if (control.type === 'checkbox' || control.type === 'radio') {
+                    primary.checked = control.checked;
+                } else {
+                    primary.value = control.value;
+                }
+                primary.dispatchEvent(new Event('change', { bubbles: true }));
+                this.syncOptionMirrors();
+            });
+        });
+
+        this.optionMirrors.set(key, { primaryRow, mirror });
+        return mirror;
+    },
+
+    syncOptionMirrors() {
+        this.optionMirrors.forEach(({ primaryRow, mirror }) => {
+            const primaryControls = Array.from(primaryRow.querySelectorAll('input, select'));
+            const mirrorControls = Array.from(mirror.querySelectorAll('input, select'));
+            mirrorControls.forEach((control, index) => {
+                const primary = primaryControls[index];
+                if (!primary) return;
+                if (control.type === 'checkbox' || control.type === 'radio') {
+                    control.checked = primary.checked;
+                } else {
+                    control.value = primary.value;
+                }
+            });
+
+            const current = mirror.querySelector('.option-current');
+            const selected = mirror.querySelector('input:checked, option:checked');
+            if (current && selected) {
+                const label = selected.closest('label');
+                current.textContent = label ? label.textContent.trim() : selected.textContent.trim();
+            }
+        });
     },
 
     isDesktop() {
@@ -178,35 +322,6 @@ const OptionsPanel = {
         }
         const position = this.readDesktopPosition();
         if (position) this.setDesktopPosition(position.x, position.y);
-    },
-
-    activateTab(name, focus = false) {
-        if (!['lezen', 'vergelijken', 'onderzoeken'].includes(name)) return;
-        this.activeTab = name;
-        sessionStorage.setItem(this.sessionKey, name);
-        this.dialog.querySelectorAll('[role="tab"]').forEach(tab => {
-            const selected = tab.dataset.optionsTab === name;
-            tab.setAttribute('aria-selected', selected ? 'true' : 'false');
-            tab.tabIndex = selected ? 0 : -1;
-            if (selected && focus) tab.focus();
-        });
-        this.dialog.querySelectorAll('[role="tabpanel"]').forEach(panel => {
-            panel.hidden = panel.id !== `options-panel-${name}`;
-        });
-    },
-
-    handleTabKeydown(event) {
-        const tabs = Array.from(this.dialog.querySelectorAll('[role="tab"]'));
-        const current = tabs.indexOf(document.activeElement);
-        if (current < 0) return;
-        let target = null;
-        if (event.key === 'ArrowRight') target = (current + 1) % tabs.length;
-        if (event.key === 'ArrowLeft') target = (current - 1 + tabs.length) % tabs.length;
-        if (event.key === 'Home') target = 0;
-        if (event.key === 'End') target = tabs.length - 1;
-        if (target === null) return;
-        event.preventDefault();
-        this.activateTab(tabs[target].dataset.optionsTab, true);
     },
 
     setupZoom() {
