@@ -116,18 +116,25 @@
             Documentatie-menu
         </button>
         <nav class="wiki-sidebar">
-            <!-- Groepen per onderwerp, elk in te klappen. De volgorde is die
-                 van de lezer: eerst de wereld van de Bijbel (naslag bij het
-                 lezen), daarna downloaden, en onderaan het vertaaltechnische
-                 werk - wie daarvoor komt, weet het te vinden. -->
-            <div class="wiki-groep" data-groep="wereld">
-                <button type="button" class="wiki-groep-kop" aria-expanded="true">De wereld van de Bijbel</button>
+            <!-- Eerst de zes hoofdingangen, daarna de inhoudelijke wereld
+                 achter de tekst. Dubbele ingangen verwijzen bewust naar
+                 dezelfde pagina; er wordt geen tweede naslagpagina gemaakt. -->
+            <div class="wiki-groep" data-groep="inhoud">
+                <button type="button" class="wiki-groep-kop" aria-expanded="true">Inhoud</button>
                 <div class="wiki-groep-inhoud">
-                    <a href="#overzicht" data-page="wiki-overzicht.html" class="active">Overzicht</a>
                     <a href="#onderwerpen" data-page="onderwerpen.html">Onderwerpen</a>
                     <a href="#woordenboek" data-page="lexicon.html">Woordenboek</a>
+                    <a href="#liederen" data-page="liederen.html">Liederen</a>
+                    <a href="#gebeden" data-page="gebeden.html">Gebeden</a>
                     <a href="#kaart" data-page="kaart.html">Kaart</a>
                     <a href="#personen" data-page="personen.html">Personen en stambomen</a>
+                </div>
+            </div>
+
+            <div class="wiki-groep" data-groep="oosten">
+                <button type="button" class="wiki-groep-kop" aria-expanded="true">De wereld van het Oosten</button>
+                <div class="wiki-groep-inhoud">
+                    <a href="#personen-en-stambomen" data-page="personen.html">Personen en stambomen</a>
                     <a href="#volken-naties" data-page="volken-naties.html">Volken &amp; Naties</a>
                     <a href="#geografie" data-page="geografie.html">Geografische aanduidingen</a>
                     <a href="#maateenheden" data-page="maateenheden.html">Maten, gewichten &amp; munten</a>
@@ -136,8 +143,6 @@
                     <a href="#dieren" data-page="dieren.html">Dieren</a>
                     <a href="#bomen-planten" data-page="bomen-planten.html">Bomen &amp; planten</a>
                     <a href="#muziekinstrumenten" data-page="muziekinstrumenten.html">Muziekinstrumenten</a>
-                    <a href="#liederen" data-page="liederen.html">Liederen</a>
-                    <a href="#gebeden" data-page="gebeden.html">Gebeden</a>
                 </div>
             </div>
 
@@ -157,6 +162,7 @@
                     <a href="#changelog" data-page="changelog.html">Changelog</a>
                     <a href="#grondteksten" data-page="grondteksten.html">Grondteksten</a>
                     <a href="#handschriften" data-page="handschriften.html">Handschriften</a>
+                    <a href="#bronnen" data-page="bronnen.html">Bronnen &amp; licenties</a>
                 </div>
             </div>
         </nav>
@@ -170,6 +176,43 @@
         var iframe = document.getElementById('wiki-frame');
         var links = sidebar.querySelectorAll('a[data-page]');
 
+        /* Een verwijzing naar de Bijbellezer mag nooit binnen het wiki-frame
+           openen. Dit vangnet geldt ook voor dynamisch opgebouwde links en
+           klikbare tekstblokken; gewone wiki-detailnavigatie blijft in het
+           frame. De citaatcomponent zet zelf al target=_top, maar deze grens
+           voorkomt dat een oudere of gespecialiseerde wikipagina site-in-site
+           veroorzaakt. */
+        function installIframeNavigationGuard() {
+            var doc;
+            try { doc = iframe.contentDocument || (iframe.contentWindow && iframe.contentWindow.document); }
+            catch (e) { return; }
+            if (!doc || !doc.documentElement || doc.documentElement.getAttribute('data-wiki-frame-guard') === '1') return;
+            doc.documentElement.setAttribute('data-wiki-frame-guard', '1');
+            doc.addEventListener('click', function (event) {
+                if (event.defaultPrevented || event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                var target = event.target && event.target.nodeType === 1 ? event.target : event.target.parentElement;
+                if (!target) return;
+
+                var anchor = target.closest('a[href]');
+                var destination = '';
+                if (anchor) {
+                    try {
+                        var url = new URL(anchor.href, iframe.contentWindow.location.href);
+                        var file = url.pathname.split('/').pop();
+                        if (file === 'index.html' && url.hash) destination = url.href;
+                    } catch (e) {}
+                } else if (!target.closest('button,input,select,textarea,label')) {
+                    var refNode = target.closest('[data-ref]');
+                    var match = refNode && String(refNode.getAttribute('data-ref') || '').match(/^(\S+)\s+(\d+):(\d+)/);
+                    if (match) destination = 'index.html#' + match[1].toLowerCase() + '/' + match[2] + '/' + match[3];
+                }
+                if (!destination) return;
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                window.location.href = destination;
+            }, true);
+        }
+
         // Iframe-thema synchroon houden met de parent (anders licht/donker omgekeerd)
         function syncIframeTheme() {
             try {
@@ -177,6 +220,7 @@
                 var doc = iframe.contentDocument || (iframe.contentWindow && iframe.contentWindow.document);
                 if (doc && doc.documentElement) doc.documentElement.setAttribute('data-theme', theme);
             } catch (e) {}
+            installIframeNavigationGuard();
         }
         iframe.addEventListener('load', syncIframeTheme);
         window.WikiSyncIframeTheme = syncIframeTheme;

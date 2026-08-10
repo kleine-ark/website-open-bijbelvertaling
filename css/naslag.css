@@ -219,6 +219,18 @@
 }
 
 /* Letterlijke lied- en gebedsteksten */
+.ov-naslagtekst { min-width: 0; }
+.ov-naslagtekst-link {
+    display: inline-block;
+    margin: 0 0 7px;
+    color: var(--teal, #557f7c);
+    font: 600 13px/1.35 var(--font-body);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(85, 127, 124, 0.32);
+}
+.ov-naslagtekst-link:hover { color: var(--gold); border-bottom-color: currentColor; }
+.ov-naslagtekst-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.ov-naslagtekst-citaat { color: inherit; }
 .ns-volledige-tekst { max-width: 72ch; margin-top: 28px; }
 .ns-volledige-tekst > .ns-kop { margin-top: 0; }
 .ns-tekstladen, .ns-tekstfout { color: var(--text-secondary, #666); font-style: italic; }

@@ -84,7 +84,9 @@
         container.innerHTML = '';
 
         // Alle cijfers uit de centrale stats.json — single source of truth.
-        const totalPrincipes = (statsData && statsData.principes) || principesData.length;
+        // De definitielijst is hier de bron; stats.json kan tijdens een lopende
+        // teksteditie kort achterlopen op nieuw toegevoegde principes.
+        const totalPrincipes = principesData.length;
         const TOTAL_DIFFS = (statsData && statsData.text_changes) || 0;
         const viaPrincipe = (statsData && statsData.changes_via_principe) || 0;
         const pct = (statsData && statsData.changes_via_principe_pct) || 0;
@@ -92,7 +94,7 @@
         const summary = document.createElement('div');
         summary.className = 'principes-summary';
         summary.style.cssText = 'background:var(--bg-surface,#f8f6f2);color:var(--text-primary,inherit);border-left:3px solid #cba449;border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:15px;line-height:1.6;';
-        summary.innerHTML = `<strong>${TOTAL_DIFFS.toLocaleString('nl-NL')}</strong> tekstwijzigingen tussen SV1888 en de OSV. Daarvan is <strong>${viaPrincipe.toLocaleString('nl-NL')}</strong> (${pct}%) via een van de <strong>${totalPrincipes}</strong> principes geregeld; <strong>${losse.toLocaleString('nl-NL')}</strong> zijn losse, vers-specifieke correcties.`;
+        summary.innerHTML = `<strong>${TOTAL_DIFFS.toLocaleString('nl-NL')}</strong> tekstwijzigingen tussen SV1888 en de Open Vertaling. Daarvan is <strong>${viaPrincipe.toLocaleString('nl-NL')}</strong> (${pct}%) via een van de <strong>${totalPrincipes}</strong> principes geregeld; <strong>${losse.toLocaleString('nl-NL')}</strong> zijn losse, vers-specifieke correcties.`;
         container.appendChild(summary);
 
         // Group by category

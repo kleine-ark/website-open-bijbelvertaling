@@ -6,26 +6,26 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#142e42">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verantwoording &amp; bronnen — Open Vertaling</title>
+    <title>Bronnen &amp; licenties — Open Vertaling</title>
     <!-- SEO:start (auto — seo_build.py) -->
     <meta name="description" content="Verantwoording en bronnen van de Open Vertaling: alle gebruikte bronnen — Statenvertaling, grondteksten, woordenboeken, kaart en handschrift-foto's — met links en licenties.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-    <link rel="canonical" href="https://openvertaling.nl/bronnen.html">
+    <link rel="canonical" href="https://openvertaling.nl/wiki.html#bronnen">
     <meta name="author" content="Open Vertaling — de kleine ark">
     <meta name="theme-color" content="#142e42">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Open Vertaling">
     <meta property="og:locale" content="nl_NL">
-    <meta property="og:title" content="Verantwoording &amp; bronnen — Open Vertaling">
+    <meta property="og:title" content="Bronnen &amp; licenties — Open Vertaling">
     <meta property="og:description" content="Verantwoording en bronnen van de Open Vertaling: alle gebruikte bronnen — Statenvertaling, grondteksten, woordenboeken, kaart en handschrift-foto's — met links en licenties.">
-    <meta property="og:url" content="https://openvertaling.nl/bronnen.html">
+    <meta property="og:url" content="https://openvertaling.nl/wiki.html#bronnen">
     <meta property="og:image" content="https://openvertaling.nl/icons/icon-512.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Verantwoording &amp; bronnen — Open Vertaling">
+    <meta name="twitter:title" content="Bronnen &amp; licenties — Open Vertaling">
     <meta name="twitter:description" content="Verantwoording en bronnen van de Open Vertaling: alle gebruikte bronnen — Statenvertaling, grondteksten, woordenboeken, kaart en handschrift-foto's — met links en licenties.">
     <meta name="twitter:image" content="https://openvertaling.nl/icons/icon-512.png">
     <!-- SEO:end -->
-
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .page { max-width: 880px; }
@@ -40,10 +40,22 @@
         .br-lic.pd { background: rgba(92,184,92,0.15); color: #3a7a3a; }
         .br-lic.nc { background: rgba(203,164,73,0.18); color: #8a6d1f; }
         .br-note { font-size: 12.5px; color: #888; margin: 6px 0 0; }
+        .br-snelnav { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 24px; }
+        .br-snelnav a { border: 1px solid var(--border, #e5e1d8); border-radius: 999px; padding: 5px 11px; color: var(--teal); text-decoration: none; font-size: 12.5px; background: var(--bg-surface, #fff); }
+        .br-snelnav a:hover { border-color: var(--gold); color: var(--navy); }
         :root[data-theme="donker"] table.br-tab td { color: var(--text-secondary); }
         :root[data-theme="donker"] table.br-tab td.br-naam { color: var(--text-primary); }
         @media (max-width: 620px) { table.br-tab, table.br-tab tbody, table.br-tab tr, table.br-tab td { display: block; } table.br-tab thead { display: none; } table.br-tab td { border: none; padding: 2px 0; } table.br-tab td.br-naam { margin-top: 12px; } table.br-tab tr { border-bottom: 1px solid var(--border, #eee); padding-bottom: 10px; } }
     </style>
+    <script>
+    (function () {
+        if (window.self === window.top) {
+            window.location.replace("wiki.html#bronnen");
+            return;
+        }
+        document.documentElement.classList.add("ov-ingebed");
+    })();
+    </script>
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
@@ -51,16 +63,26 @@
     <script src="js/topnav.js"></script>
 
     <div class="page">
-        <h1>Verantwoording &amp; bronnen</h1>
+        <h1>Bronnen &amp; licenties</h1>
         <p class="subtitle">Alle bronnen die aan de Open Vertaling ten grondslag liggen, met vindplaats en licentie.</p>
 
         <div class="br-lead">
             De Open Vertaling is met zorg samengesteld uit vrij beschikbare, gezaghebbende bronnen. Hieronder staat per categorie
             welke tekst, welk woordenboek of welk bestand is gebruikt, waar het vandaan komt en onder welke licentie. Waar de
-            Nederlandse tekst met AI-hulp is samengesteld, is dat vermeld; die wordt vers voor vers en woord voor woord nagekeken.
+            Nederlandse tekst met digitale hulpmiddelen is samengesteld, is dat vermeld; publicatie als nagekeken tekst gebeurt pas na menselijke controle.
         </div>
 
-        <h2 class="br-groep">Basistekst</h2>
+        <nav class="br-snelnav" aria-label="Onderdelen van de bronnenlijst">
+            <a href="#basistekst">Basistekst</a>
+            <a href="#vertalingen">Andere talen</a>
+            <a href="#grondteksten">Grondteksten</a>
+            <a href="#woordenboeken">Woordenboeken</a>
+            <a href="#kaart">Kaart &amp; geografie</a>
+            <a href="#handschriften">Handschriften</a>
+            <a href="#machineleesbaar">Machine-leesbaar</a>
+        </nav>
+
+        <h2 class="br-groep" id="basistekst">Basistekst</h2>
         <table class="br-tab">
             <thead><tr><th>Bron</th><th>Wat</th><th>Herkomst</th><th>Licentie</th></tr></thead>
             <tbody>
@@ -70,7 +92,19 @@
         </table>
         <p class="br-note">De moderne tekst (Open Vertaling) is een herziening van deze Statenvertaling in hedendaags Nederlands; elke wijziging is per vers zichtbaar via de verschilweergave.</p>
 
-        <h2 class="br-groep">Grondteksten</h2>
+        <h2 class="br-groep" id="vertalingen">Bijbelteksten in andere talen</h2>
+        <table class="br-tab">
+            <thead><tr><th>Uitgave</th><th>Taal</th><th>Herkomst</th><th>Licentie</th></tr></thead>
+            <tbody>
+                <tr><td class="br-naam">Louis Segond 1910</td><td>Frans</td><td><a href="https://ebible.org/find/details.php?id=fraLSG" target="_blank" rel="noopener">eBible.org, fraLSG</a></td><td><span class="br-lic pd">publiek domein</span></td></tr>
+                <tr><td class="br-naam">World English Bible British Edition</td><td>Engels</td><td><a href="https://ebible.org/find/details.php?id=eng-webbe" target="_blank" rel="noopener">eBible.org, eng-webbe</a></td><td><span class="br-lic pd">publiek domein</span></td></tr>
+                <tr><td class="br-naam">Arabic Van Dyck</td><td>Arabisch</td><td><a href="https://ebible.org/find/details.php?id=arb-vd" target="_blank" rel="noopener">eBible.org, arb-vd</a></td><td><span class="br-lic pd">publiek domein</span></td></tr>
+                <tr><td class="br-naam">Reina-Valera 1909</td><td>Spaans</td><td><a href="https://ebible.org/find/details.php?id=spaRV1909" target="_blank" rel="noopener">eBible.org, spaRV1909</a></td><td><span class="br-lic pd">publiek domein</span></td></tr>
+            </tbody>
+        </table>
+        <p class="br-note">De editiegegevens, broncodes, controlesommen en beschikbare boeken staan in het <a href="data/vertalingen/manifest.json" target="_blank" rel="noopener">machine-leesbare vertalingenmanifest</a>.</p>
+
+        <h2 class="br-groep" id="grondteksten">Grondteksten</h2>
         <table class="br-tab">
             <thead><tr><th>Bron</th><th>Wat</th><th>Herkomst</th><th>Licentie</th></tr></thead>
             <tbody>
@@ -82,7 +116,7 @@
             </tbody>
         </table>
 
-        <h2 class="br-groep">Woordenboeken (lexicons)</h2>
+        <h2 class="br-groep" id="woordenboeken">Woordenboeken (lexicons)</h2>
         <table class="br-tab">
             <thead><tr><th>Bron</th><th>Taal</th><th>Herkomst</th><th>Licentie</th></tr></thead>
             <tbody>
@@ -95,18 +129,19 @@
                 <tr><td class="br-naam">Strong's Concordance (1890)</td><td>Hebreeuws &amp; Grieks</td><td>De Strong's-nummering (H#### / G####).</td><td><span class="br-lic pd">publiek domein</span></td></tr>
             </tbody>
         </table>
-        <p class="br-note">De Nederlandse vertaling van de definities is met AI-hulp samengesteld en wordt nagekeken; bij twijfel geldt de oorspronkelijke tekst. Zie ook de pagina <a href="woordenboeken.html">De woordenboeken</a>. Voor de Ethiopische en Latijnse boeken is een eigen woordnummering gemaakt (OV-strongs, OVG/OVL), gekoppeld aan Dillmann resp. Lewis &amp; Short.</p>
+        <p class="br-note">De Nederlandse vertaling van de definities is met digitale hulpmiddelen samengesteld en wordt nagekeken; bij twijfel geldt de oorspronkelijke tekst. Zie ook <a href="wiki.html#woordenboek" target="_top">het woordenboek in de wiki</a>. Voor de Ethiopische en Latijnse boeken is een eigen woordnummering gemaakt (OVG/OVL), gekoppeld aan Dillmann respectievelijk Lewis &amp; Short.</p>
 
-        <h2 class="br-groep">Kaart &amp; geografie</h2>
+        <h2 class="br-groep" id="kaart">Kaart &amp; geografie</h2>
         <table class="br-tab">
             <thead><tr><th>Bron</th><th>Wat</th><th>Herkomst</th><th>Licentie</th></tr></thead>
             <tbody>
                 <tr><td class="br-naam">OpenStreetMap</td><td>Kaartgegevens en -tegels voor de Bijbelkaart.</td><td><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap-bijdragers</a>.</td><td><span class="br-lic">ODbL</span></td></tr>
                 <tr><td class="br-naam">OpenLayers</td><td>Kaart-weergavebibliotheek.</td><td><a href="https://openlayers.org/" target="_blank" rel="noopener">openlayers.org</a></td><td><span class="br-lic">BSD-2</span></td></tr>
+                <tr><td class="br-naam">OpenBible.info Bible Geocoding Data</td><td>Puntlocaties en onzekerheidsinformatie voor Bijbelse plaatsen.</td><td><a href="https://www.openbible.info/geo/" target="_blank" rel="noopener">openbible.info/geo</a></td><td><span class="br-lic">CC BY 4.0</span></td></tr>
             </tbody>
         </table>
 
-        <h2 class="br-groep">Handschriften &amp; afbeeldingen</h2>
+        <h2 class="br-groep" id="handschriften">Handschriften &amp; afbeeldingen</h2>
         <table class="br-tab">
             <thead><tr><th>Bron</th><th>Wat</th><th>Herkomst</th><th>Licentie</th></tr></thead>
             <tbody>
@@ -115,14 +150,14 @@
             </tbody>
         </table>
 
-        <h2 class="br-groep">Machine-leesbaar</h2>
+        <h2 class="br-groep" id="machineleesbaar">Machine-leesbaar</h2>
         <ul>
-            <li><a href="/llms.txt">llms.txt</a> — samenvatting en bronnen voor AI/taalmodellen.</li>
-            <li><a href="/voor-ai.html">Voor AI's &amp; ontwikkelaars</a> — hoe je de tekst leest, gebruikt en citeert.</li>
-            <li><a href="/data/books-index.json">books-index.json</a> — alle Bijbelboeken met data-id.</li>
+            <li><a href="/llms.txt" target="_blank" rel="noopener">llms.txt</a> — samenvatting en bronnen voor AI/taalmodellen.</li>
+            <li><a href="/voor-ai.html" target="_top">Voor AI's &amp; ontwikkelaars</a> — hoe je de tekst leest, gebruikt en citeert.</li>
+            <li><a href="/data/books-index.json" target="_blank" rel="noopener">books-index.json</a> — alle Bijbelboeken met data-id.</li>
         </ul>
 
-        <p style="margin-top:26px;font-size:13px;color:#888;">De Open Vertaling zelf (de moderne Bijbeltekst) is vrij en niet-commercieel beschikbaar. Voor hergebruik van grondtekst- of woordenboekmateriaal geldt de hierboven genoemde licentie van die bron. Vragen? Zie <a href="over-ov.html#over-ons">Over ons</a>.</p>
+        <p style="margin-top:26px;font-size:13px;color:#888;"><strong>De Open Vertaling zelf wordt aangeboden als CC0 / publiek domein</strong>: vrij te gebruiken, te kopiëren, te bewerken en te verspreiden. Voor hergebruik van grondtekst-, woordenboek-, kaart- of beeldmateriaal geldt de hierboven genoemde licentie van die bron. Vragen? Zie <a href="over-ov.html#over-ons" target="_top">Over ons</a>.</p>
     </div>
 
     <script src="js/firebase-config.js"></script>

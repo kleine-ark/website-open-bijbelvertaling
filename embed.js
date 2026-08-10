@@ -258,7 +258,7 @@
       '.osv-cite .osv-vers{}' +
       '.osv-cite .god-speaks{color:#c0392b;font-style:italic;}' +
       '.osv-cite .direct-speech{font-style:italic;}' +
-      '.osv-cite .direct-speech::before{content:"\\00ab";}.osv-cite .direct-speech::after{content:"\\00bb";}' +
+      '.osv-cite .direct-speech::before{content:"“";}.osv-cite .direct-speech::after{content:"”";}' +
       '.osv-cite .devil-speaks{color:#b8860b;font-style:italic;}' +
       '.osv-cite .angel-speaks{color:#1d4ed8;font-style:italic;}' +
       '.osv-cite .note-marker,.osv-cite .strongs-inline{display:none;}' +
