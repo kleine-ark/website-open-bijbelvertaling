@@ -97,6 +97,76 @@ def mozes_gebeden() -> list[dict]:
     return result
 
 
+def getsemane_gebed() -> dict:
+    return gebed(
+        "jezus-in-gethsemane",
+        "Jezus in Gethsemane",
+        "In Gethsemane legt Jezus in drie opgetekende Evangelieverslagen Zijn doodsangst en volledige overgave aan de wil van Zijn Vader neer.",
+        [
+            tekstpassage("mattheus", 26, 39, 44, "Mattheüs 26:39–44"),
+            tekstpassage("markus", 14, 35, 39, "Markus 14:35–39"),
+            tekstpassage("lukas", 22, 41, 44, "Lukas 22:41–44"),
+        ],
+    )
+
+
+def handelingen_en_openbaring_gebeden() -> list[dict]:
+    gegevens = [
+        (
+            "gebed-om-een-nieuwe-apostel",
+            "Gebed om een nieuwe apostel",
+            "De discipelen vragen de Kenner van alle harten aan te wijzen wie de plaats van Judas moet innemen.",
+            [tekstpassage("handelingen", 1, 24, 25, "Handelingen 1:24–25")],
+        ),
+        (
+            "aanbidding-van-de-ouderlingen",
+            "Aanbidding van de ouderlingen",
+            "De vierentwintig ouderlingen aanbidden de Schepper, Die alle dingen door Zijn wil heeft doen bestaan.",
+            [tekstpassage("openbaring", 4, 11, 11, "Openbaring 4:11")],
+        ),
+        (
+            "het-nieuwe-lied-voor-het-lam",
+            "Het nieuwe lied voor het Lam",
+            "De hemelse raad richt zich tot het Lam en belijdt dat Hij waardig is, omdat Hij met Zijn bloed mensen voor God heeft gekocht.",
+            [tekstpassage("openbaring", 5, 9, 10, "Openbaring 5:9–10")],
+        ),
+        (
+            "roep-van-de-martelaren",
+            "De roep van de martelaren",
+            "De gedode getuigen roepen tot de heilige en waarachtige Heerser en vragen hoe lang het oordeel nog uitblijft.",
+            [tekstpassage("openbaring", 6, 10, 10, "Openbaring 6:10")],
+        ),
+        (
+            "dankgebed-van-de-ouderlingen",
+            "Dankgebed van de ouderlingen",
+            "De ouderlingen danken de almachtige God dat Hij Zijn grote kracht heeft aangenomen en als Koning heerst.",
+            [tekstpassage("openbaring", 11, 17, 18, "Openbaring 11:17–18")],
+        ),
+        (
+            "gezang-van-mozes-en-het-lam",
+            "Het gezang van Mozes en het Lam",
+            "De overwinnaars richten hun gezang tot de almachtige God en prijzen Zijn grote werken, heiligheid en rechtvaardige wegen.",
+            [tekstpassage("openbaring", 15, 3, 4, "Openbaring 15:3–4")],
+        ),
+        (
+            "lof-over-gods-rechtvaardige-oordelen",
+            "Lof over Gods rechtvaardige oordelen",
+            "De engel van de wateren en de stem van het altaar spreken God rechtstreeks aan en belijden dat Zijn oordelen rechtvaardig en waarachtig zijn.",
+            [tekstpassage("openbaring", 16, 5, 7, "Openbaring 16:5–7")],
+        ),
+        (
+            "kom-heere-jezus",
+            "Kom, Heere Jezus",
+            "De Geest, de bruid en Johannes antwoorden op Jezus' belofte van Zijn komst met de korte slotaanroeping: Kom.",
+            [
+                tekstpassage("openbaring", 22, 17, 17, "Openbaring 22:17"),
+                tekstpassage("openbaring", 22, 20, 20, "Openbaring 22:20"),
+            ],
+        ),
+    ]
+    return [gebed(item_id, naam, beschrijving, passages) for item_id, naam, beschrijving, passages in gegevens]
+
+
 def psalm_item(number: int, bestaand: dict[str, dict]) -> dict:
     bestaand_id = BEKENDE_PSALMEN.get(number)
     if bestaand_id and bestaand_id in bestaand:
@@ -132,15 +202,20 @@ def build() -> dict:
     source = json.loads(TARGET.read_text(encoding="utf-8"))
     existing = {item["id"]: item for item in source["items"]}
     mozes = mozes_gebeden()
-    mozes_ids = {item["id"] for item in mozes}
+    gecontroleerde_nt_gebeden = [getsemane_gebed(), *handelingen_en_openbaring_gebeden()]
+    vervangen_ids = {
+        *(item["id"] for item in mozes),
+        *(item["id"] for item in gecontroleerde_nt_gebeden),
+    }
     items = [
         item
         for item in source["items"]
         if item["tekstpassages"][0]["boek"] != "psalmen"
         and item["id"] != "mozes-voorbeden-voor-israel"
-        and item["id"] not in mozes_ids
+        and item["id"] not in vervangen_ids
     ]
     items.extend(mozes)
+    items.extend(gecontroleerde_nt_gebeden)
     items.extend(psalm_item(number, existing) for number in GEBEDSPSALMEN)
     items = [item for _, item in sorted(enumerate(items), key=lambda pair: sort_key(pair[1], pair[0]))]
     source["items"] = items

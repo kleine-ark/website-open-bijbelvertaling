@@ -84,7 +84,7 @@ def test_reeksen_zijn_compleet_en_chronologisch(liederen, gebeden):
     assert liederen["nummerType"] == "Lied"
     assert gebeden["nummerType"] == "Gebed"
     assert [item["id"] for item in liederen["items"]] == LIED_IDS
-    assert len(gebeden["items"]) == 132
+    assert len(gebeden["items"]) == 140
 
     positie = {boek: index for index, boek in enumerate(BOOK_ORDER)}
     sleutels = []
@@ -194,10 +194,60 @@ def test_ieder_gebed_van_mozes_is_een_afzonderlijk_item(gebeden):
 def test_paulus_is_opgesplitst_in_drie_gebeden(gebeden):
     ids = [item["id"] for item in gebeden["items"]]
     assert "paulus-gebeden-voor-de-gemeenten" not in ids
-    assert ids[-3:] == [
+    paulus_ids = [item_id for item_id in ids if item_id.startswith("paulus-")]
+    assert paulus_ids == [
         "paulus-eerste-gebed-voor-efeze",
         "paulus-tweede-gebed-voor-efeze",
         "paulus-gebed-voor-filippi",
+    ]
+
+
+def test_handelingen_en_openbaring_bevatten_alle_uitgeschreven_gebeden(gebeden):
+    by_id = {item["id"]: item for item in gebeden["items"]}
+    expected = {
+        "gebed-om-een-nieuwe-apostel": [("handelingen", 1, 24, 25)],
+        "aanbidding-van-de-ouderlingen": [("openbaring", 4, 11, 11)],
+        "het-nieuwe-lied-voor-het-lam": [("openbaring", 5, 9, 10)],
+        "roep-van-de-martelaren": [("openbaring", 6, 10, 10)],
+        "dankgebed-van-de-ouderlingen": [("openbaring", 11, 17, 18)],
+        "gezang-van-mozes-en-het-lam": [("openbaring", 15, 3, 4)],
+        "lof-over-gods-rechtvaardige-oordelen": [("openbaring", 16, 5, 7)],
+        "kom-heere-jezus": [("openbaring", 22, 17, 17), ("openbaring", 22, 20, 20)],
+    }
+
+    for item_id, passages in expected.items():
+        assert item_id in by_id
+        assert [
+            (p["boek"], p["hoofdstuk"], p["van"], p["tot"])
+            for p in by_id[item_id]["tekstpassages"]
+        ] == passages
+
+    ids = [item["id"] for item in gebeden["items"]]
+    assert ids.index("gebed-om-een-nieuwe-apostel") < ids.index("het-gebed-van-de-gemeente")
+    assert ids.index("aanbidding-van-de-ouderlingen") < ids.index("kom-heere-jezus")
+    assert [
+        item["id"] for item in gebeden["items"]
+        if item["tekstpassages"][0]["boek"] == "handelingen"
+    ] == [
+        "gebed-om-een-nieuwe-apostel",
+        "het-gebed-van-de-gemeente",
+        "het-gebed-van-stefanus",
+    ]
+    assert [
+        item["id"] for item in gebeden["items"]
+        if item["tekstpassages"][0]["boek"] == "openbaring"
+    ] == list(expected)[1:]
+
+
+def test_getsemane_toont_alle_drie_synoptische_gebedsteksten(gebeden):
+    item = next(item for item in gebeden["items"] if item["id"] == "jezus-in-gethsemane")
+    assert [
+        (p["boek"], p["hoofdstuk"], p["van"], p["tot"])
+        for p in item["tekstpassages"]
+    ] == [
+        ("mattheus", 26, 39, 44),
+        ("markus", 14, 35, 39),
+        ("lukas", 22, 41, 44),
     ]
 
 
@@ -256,7 +306,7 @@ def test_builder_leidt_aaneengesloten_nummers_af(built):
         range(1, 178)
     )
     assert [bundle["nummer"] for bundle in built["gebeden"].values()] == list(
-        range(1, 133)
+        range(1, 141)
     )
     assert all(bundle["nummerType"] == "Lied" for bundle in built["liederen"].values())
     assert all(bundle["nummerType"] == "Gebed" for bundle in built["gebeden"].values())
