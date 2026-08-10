@@ -100,15 +100,16 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         finally:
             page.close()
 
-    def test_gebeden_overzicht_is_genummerd_van_1_tot_45(self):
+    def test_gebeden_overzicht_is_genummerd_van_1_tot_140(self):
         page = self.open_page("gebeden.html")
         try:
             labels = page.locator(".ns-kaart .ns-nummer").all_inner_texts()
-            self.assertEqual(labels, [f"Gebed {number}" for number in range(1, 133)])
+            self.assertEqual(labels, [f"Gebed {number}" for number in range(1, 141)])
             self.assertEqual(page.locator(".ns-lead").count(), 0)
             names = page.locator(".ns-kaart-naam").all_inner_texts()
+            paulus_names = [name for name in names if name.startswith("Paulus'")]
             self.assertEqual(
-                names[-3:],
+                paulus_names,
                 [
                     "Paulus' eerste gebed voor de gemeente in Efeze",
                     "Paulus' tweede gebed voor de gemeente in Efeze",
@@ -122,7 +123,7 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         page = self.open_page("gebeden.html")
         try:
             passages = page.locator(".ns-kaart .ns-kaart-passage").all_inner_texts()
-            self.assertEqual(len(passages), 132)
+            self.assertEqual(len(passages), 140)
             self.assertEqual(passages[0], "Genesis 18")
             self.assertEqual(passages[2], "Exodus 5")
             self.assertEqual(passages[4], "Exodus 32 · Deuteronomium 9")
@@ -138,7 +139,7 @@ class WikiLiederenGebedenTest(unittest.TestCase):
             page.locator(".wo-badge").first.wait_for(state="visible")
             badges = page.locator(".wo-badge").all_inner_texts()
             self.assertIn("177 liederen", badges)
-            self.assertIn("132 gebeden", badges)
+            self.assertIn("140 gebeden", badges)
         finally:
             page.close()
 
@@ -170,6 +171,29 @@ class WikiLiederenGebedenTest(unittest.TestCase):
             )
         finally:
             page.close()
+
+    def test_getsemane_en_openbaring_tonen_alle_passages_met_klikbare_verzen(self):
+        cases = {
+            "jezus-in-gethsemane": [
+                "Mattheüs 26:39–44",
+                "Markus 14:35–39",
+                "Lukas 22:41–44",
+            ],
+            "kom-heere-jezus": ["Openbaring 22:17", "Openbaring 22:20"],
+        }
+        for item_id, headings in cases.items():
+            page = self.open_page(f"gebeden.html?item={item_id}")
+            try:
+                page.locator(".ns-tekstvers .ns-tekstvers-link").first.wait_for()
+                self.assertEqual(page.locator(".ns-passage > h3").all_inner_texts(), headings)
+                links = page.locator(".ns-tekstvers .ns-tekstvers-link")
+                self.assertEqual(links.count(), page.locator(".ns-tekstvers").count())
+                self.assertTrue(all(
+                    "index.html#" in href
+                    for href in links.evaluate_all("els => els.map(el => el.href)")
+                ))
+            finally:
+                page.close()
 
     def test_liedtekst_gebruikt_de_gedeelde_ov_citatie_en_globale_opties(self):
         page = self.browser.new_page(viewport={"width": 1280, "height": 900})
@@ -213,7 +237,11 @@ class WikiLiederenGebedenTest(unittest.TestCase):
                 links.first.get_attribute("href").endswith("index.html#genesis/18/23")
             )
             self.assertEqual(links.first.get_attribute("target"), "_top")
-            self.assertIn("En Abraham trad toe", links.first.inner_text())
+            self.assertIn("Genesis 18:23", links.first.inner_text())
+            self.assertIn(
+                "En Abraham trad toe",
+                page.locator(".ns-tekstvers .ov-naslagtekst-citaat").first.inner_text(),
+            )
         finally:
             page.close()
 
