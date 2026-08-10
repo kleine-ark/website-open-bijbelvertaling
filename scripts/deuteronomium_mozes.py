@@ -13,7 +13,13 @@ Wat blijft staan:
 * elke direct-speech waar iemand anders dan Mozes spreekt: het volk dat
   antwoordt ("Toen antwoordde u mij, en zei:"), de verspieders, de broers, en
   de hypothetische sprekers in de wetten ("dat hij zichzelf zegene in zijn
-  hart, zeggende:").
+  hart, zeggende:");
+* de tien zegeningen in hoofdstuk 33 ("En van Juda zei hij:", "En van Levi zei
+  hij:") en het gebed in 9:26. Dat is Mozes, maar hoofdstuk 33 heeft een eigen
+  vertelkader — "Dit nu is de zegen waarmee Mozes gezegend heeft" — met per
+  stam een aangekondigd citaat, en dat is juist het patroon waarvoor de
+  conventie bestaat. Uitdrukkelijk zo besloten op 9 augustus 2026; niet
+  alsnog weghalen bij een volgende ronde.
 
 Wat weggaat:
 
