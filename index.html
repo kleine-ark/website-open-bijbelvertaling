@@ -515,6 +515,8 @@
     };
     </script>
     <script src="js/storage.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/teksteditie.js"></script>
     <script src="js/data-loader.js"></script>
     <script src="js/book-orders.js"></script>
     <script src="js/geez-lexicon.js"></script>
@@ -522,6 +524,7 @@
     <script src="js/editor.js"></script>
     <script src="js/export.js"></script>
     <script src="js/references.js"></script>
+    <script src="js/woordnummers.js"></script>
     <script src="js/lexicon.js"></script>
     </div><!-- /main-wrapper -->
 
@@ -547,18 +550,18 @@
                 </div>
                 <div class="options-list">
                     <fieldset class="option-choice option-choice-inline option-choice-with-icon">
-                        <legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/thema.svg" alt="" aria-hidden="true"><span>Thema</span></span></legend>
+                        <legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/thema.png" alt="" aria-hidden="true"><span>Thema</span></span></legend>
                         <label><input type="radio" name="opt-thema" data-optie="thema" value="auto"> Automatisch</label>
                         <label><input type="radio" name="opt-thema" data-optie="thema" value="licht"> Licht</label>
                         <label><input type="radio" name="opt-thema" data-optie="thema" value="donker"> Donker</label>
                     </fieldset>
                     <fieldset class="option-choice option-choice-inline option-choice-with-icon">
-                        <legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/lettertype.svg" alt="" aria-hidden="true"><span>Lettertype</span></span></legend>
+                        <legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/lettertype.png" alt="" aria-hidden="true"><span>Lettertype</span></span></legend>
                         <label><input type="radio" name="opt-lettertype" data-optie="lettertype" value="klassiek"> Klassiek</label>
                         <label><input type="radio" name="opt-lettertype" data-optie="lettertype" value="rustig"> Rustig</label>
                     </fieldset>
                     <div id="options-zoom" class="option-row option-row-with-icon options-zoom" role="group" aria-label="Tekstgrootte">
-                        <img class="option-icon" src="images/iconen/instellingen/tekstgrootte.svg" alt="" aria-hidden="true">
+                        <img class="option-icon" src="images/iconen/instellingen/tekstgrootte.png" alt="" aria-hidden="true">
                         <span><strong>Tekstgrootte</strong><small>Vergroot de leestekst en bewaar deze keuze.</small></span>
                         <span class="options-zoom-controls">
                             <button type="button" id="options-zoom-out" aria-label="Tekst kleiner">−</button>
@@ -567,19 +570,19 @@
                         </span>
                     </div>
                     <fieldset class="option-choice option-choice-inline option-choice-with-icon">
-                        <legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/regelafstand.svg" alt="" aria-hidden="true"><span>Regelafstand</span></span></legend>
+                        <legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/regelafstand.png" alt="" aria-hidden="true"><span>Regelafstand</span></span></legend>
                         <label><input type="radio" name="opt-regelafstand" data-optie="regelafstand" value="compact"> Compact</label>
                         <label><input type="radio" name="opt-regelafstand" data-optie="regelafstand" value="normaal"> Normaal</label>
                         <label><input type="radio" name="opt-regelafstand" data-optie="regelafstand" value="ruim"> Ruim</label>
                     </fieldset>
-                    <label class="option-row"><span><strong>Boekinleiding</strong><small>Toon de inleiding bij het gekozen boek.</small></span><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"></label>
-                    <label class="option-row"><span><strong>Hoofdstukinleiding</strong><small>Toon de inleiding boven het hoofdstuk.</small></span><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"></label>
-                    <label class="option-row"><span><strong>Dyslexiemodus</strong><small>Gebruik een eenvoudiger leesritme.</small></span><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"></label>
-                    <label class="option-row"><span><strong>Citaatopmaak</strong><small>Cursief en kleuronderscheid voor sprekers.</small></span><input type="checkbox" id="toggle-citaten" onchange="document.body.classList.toggle('citaten-uit', !this.checked);localStorage.setItem('citaatopmaak', this.checked)"></label>
-                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/versnummers.svg" alt="" aria-hidden="true"><span><strong>Versnummers</strong></span><input type="checkbox" id="toggle-versnummers" checked onchange="Opties.state.versnummers=this.checked?'aan':'uit';Opties.applyVerseNumbersClass();Opties.save();"></label>
-                    <label class="option-row"><span><strong>Hoofdstuknummers</strong></span><input type="checkbox" id="toggle-hoofdstuknummers" checked onchange="document.body.classList.toggle('hoofdstuknummers-uit', !this.checked);localStorage.setItem('hoofdstuknummers', this.checked)"></label>
-                    <label class="option-row"><span><strong>Perikoopkopjes</strong><small>Tussenkopjes per gedeelte.</small></span><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"></label>
-                    <label class="option-row"><span><strong>Doorlopend lezen</strong><small>Laad het volgende hoofdstuk tijdens het scrollen.</small></span><input type="checkbox" id="toggle-doorlopend" onchange="localStorage.setItem('doorlopend', this.checked); document.body.classList.toggle('doorlopend-aan', this.checked); if (typeof App !== 'undefined' && typeof Navigation !== 'undefined' && Navigation.currentBook) { App.renderChapter(Navigation.currentBook, Navigation.currentChapter); }"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/boekinleiding.png" alt="" aria-hidden="true"><span><strong>Boekinleiding</strong><small>Toon de inleiding bij het gekozen boek.</small></span><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/hoofdstukinleiding.png" alt="" aria-hidden="true"><span><strong>Hoofdstukinleiding</strong><small>Toon de inleiding boven het hoofdstuk.</small></span><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/dyslexiemodus.png" alt="" aria-hidden="true"><span><strong>Dyslexiemodus</strong><small>Gebruik een eenvoudiger leesritme.</small></span><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/citaatopmaak.png" alt="" aria-hidden="true"><span><strong>Citaatopmaak</strong><small>Cursief en kleuronderscheid voor sprekers.</small></span><input type="checkbox" id="toggle-citaten" data-optie="citaten" value="aan"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/versnummers.png" alt="" aria-hidden="true"><span><strong>Versnummers</strong></span><input type="checkbox" id="toggle-versnummers" checked onchange="Opties.state.versnummers=this.checked?'aan':'uit';Opties.applyVerseNumbersClass();Opties.save();"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/hoofdstuknummers.png" alt="" aria-hidden="true"><span><strong>Hoofdstuknummers</strong></span><input type="checkbox" id="toggle-hoofdstuknummers" checked onchange="document.body.classList.toggle('hoofdstuknummers-uit', !this.checked);localStorage.setItem('hoofdstuknummers', this.checked)"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/perikoopkopjes.png" alt="" aria-hidden="true"><span><strong>Perikoopkopjes</strong><small>Tussenkopjes per gedeelte.</small></span><input type="checkbox" id="toggle-pericopen" checked onchange="document.body.classList.toggle('pericopen-uit', !this.checked);localStorage.setItem('pericopen', this.checked)"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/doorlopend-lezen.png" alt="" aria-hidden="true"><span><strong>Doorlopend lezen</strong><small>Laad het volgende hoofdstuk tijdens het scrollen.</small></span><input type="checkbox" id="toggle-doorlopend" onchange="localStorage.setItem('doorlopend', this.checked); document.body.classList.toggle('doorlopend-aan', this.checked); if (typeof App !== 'undefined' && typeof Navigation !== 'undefined' && Navigation.currentBook) { App.renderChapter(Navigation.currentBook, Navigation.currentChapter); }"></label>
                 </div>
 
                 <div class="options-section-heading">
@@ -587,7 +590,8 @@
                     <div><h3>Navigatie</h3><p>Kies hoe de boeken in menu's en bij het doorlezen worden geordend.</p></div>
                 </div>
                 <div class="options-list">
-                    <label class="option-row option-row-book-order" for="opt-boekvolgorde">
+                    <label class="option-row option-row-with-icon option-row-book-order" for="opt-boekvolgorde">
+                        <img class="option-icon" src="images/iconen/instellingen/boekvolgorde.png" alt="" aria-hidden="true">
                         <span><strong>Boekvolgorde</strong><small>Deze keuze geldt ook voor vorige en volgende hoofdstukken.</small></span>
                         <select id="opt-boekvolgorde" data-optie="boekvolgorde" aria-label="Boekvolgorde">
                             <option value="canoniek">Canoniek (SV / westers)</option>
@@ -606,41 +610,41 @@
                     <div><h3>Vertaalweergave</h3><p>Kies hoe namen, maten en tijden worden weergegeven.</p></div>
                 </div>
                 <div class="options-list options-choice-list">
-                    <details class="option-choice option-choice-with-icon" data-option-summary="godsnaam"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/godsnaam.svg" alt="" aria-hidden="true"><span>Godsnaam in het Oude Testament</span></span><span class="option-current"></span></summary><div class="option-choice-values">
+                    <details class="option-choice option-choice-with-icon" data-option-summary="godsnaam"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/godsnaam.png" alt="" aria-hidden="true"><span>Godsnaam in het Oude Testament</span></span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="ov"> JAHWEH / God JAHWEH</label>
                         <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="klassiek"> HEERE / de HEERE God</label>
                         <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jehovah"> Jehovah / God Jehovah</label>
                         <label><input type="radio" name="opt-godsnaam" data-optie="godsnaam" value="jhwh"> יהוה / God יהוה</label>
                     </div></details>
-                    <details class="option-choice" data-option-summary="heereNT"><summary><span>Aanspreektitel in het Nieuwe Testament</span><span class="option-current"></span></summary><div class="option-choice-values">
+                    <details class="option-choice option-choice-with-icon" data-option-summary="heereNT"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/aanspreektitel-nt.png" alt="" aria-hidden="true"><span>Aanspreektitel in het Nieuwe Testament</span></span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="heere"> Heere</label>
                         <label><input type="radio" name="opt-heereNT" data-optie="heereNT" value="here"> Here</label>
                     </div></details>
-                    <details class="option-choice" data-option-summary="otSheol"><summary><span>Sheol in het Oude Testament</span><span class="option-current"></span></summary><div class="option-choice-values">
+                    <details class="option-choice option-choice-with-icon" data-option-summary="otSheol"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/sheol.png" alt="" aria-hidden="true"><span>Sheol in het Oude Testament</span></span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="dodenrijk"> Dodenrijk</label>
                         <label><input type="radio" name="opt-otSheol" data-optie="otSheol" value="hel"> Hel</label>
                     </div></details>
-                    <details class="option-choice" data-option-summary="arabischeNamen"><summary><span>Namen van personen</span><span class="option-current"></span></summary><div class="option-choice-values">
+                    <details class="option-choice option-choice-with-icon" data-option-summary="arabischeNamen"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/namen-personen.png" alt="" aria-hidden="true"><span>Namen van personen</span></span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-arabischeNamen" data-optie="arabischeNamen" value="uit"> Nederlands</label>
                         <label><input type="radio" name="opt-arabischeNamen" data-optie="arabischeNamen" value="aan"> Arabisch</label>
                     </div></details>
-                    <details class="option-choice" data-option-summary="jezusNaam"><summary><span>Naam van Jezus</span><span class="option-current"></span></summary><div class="option-choice-values">
+                    <details class="option-choice option-choice-with-icon" data-option-summary="jezusNaam"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/naam-jezus.png" alt="" aria-hidden="true"><span>Naam van Jezus</span></span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="nl"> Jezus Christus</label>
                         <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="hebreeuws"> Yeshua HaMashiach</label>
                         <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="koranisch"> Isa</label>
                         <label><input type="radio" name="opt-jezusNaam" data-optie="jezusNaam" value="arabisch"> Yasūʿ al-Masīḥ</label>
                     </div></details>
-                    <details class="option-choice" data-option-summary="maatstelsel"><summary><span>Maten en gewichten</span><span class="option-current"></span></summary><div class="option-choice-values">
+                    <details class="option-choice option-choice-with-icon" data-option-summary="maatstelsel"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/maten-gewichten.png" alt="" aria-hidden="true"><span>Maten en gewichten</span></span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="bijbels"> Bijbels</label>
                         <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="metrisch"> Metrisch</label>
                         <label><input type="radio" name="opt-maatstelsel" data-optie="maatstelsel" value="imperiaal"> Imperiaal</label>
                         <p class="option-help">Omrekeningen zijn bij benadering. <a href="maateenheden.html" target="_blank" rel="noopener">Bekijk de verantwoording.</a></p>
                     </div></details>
-                    <details class="option-choice" data-option-summary="getalweergave"><summary><span>Grote getallen</span><span class="option-current"></span></summary><div class="option-choice-values">
+                    <details class="option-choice option-choice-with-icon" data-option-summary="getalweergave"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/grote-getallen.png" alt="" aria-hidden="true"><span>Grote getallen</span></span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-getalweergave" data-optie="getalweergave" value="woorden"> Alleen uitgeschreven</label>
                         <label><input type="radio" name="opt-getalweergave" data-optie="getalweergave" value="cijfers"> Ook als cijfers</label>
                     </div></details>
-                    <details class="option-choice" data-option-summary="tijdrekening"><summary><span>Tijdsaanduidingen</span><span class="option-current"></span></summary><div class="option-choice-values">
+                    <details class="option-choice option-choice-with-icon" data-option-summary="tijdrekening"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/tijdsaanduidingen.png" alt="" aria-hidden="true"><span>Tijdsaanduidingen</span></span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-tijdrekening" data-optie="tijdrekening" value="bijbels"> Bijbels</label>
                         <label><input type="radio" name="opt-tijdrekening" data-optie="tijdrekening" value="modern"> Moderne kloktijd</label>
                         <p class="option-help"><a href="tijdsaanduidingen.html" target="_blank" rel="noopener">Lees hoe de tijdsomrekening werkt.</a></p>
@@ -652,11 +656,11 @@
                     <div><h3>Voorlezen</h3><p>Stel stem en afspeelsnelheid in.</p></div>
                 </div>
                 <div class="options-list">
-                    <fieldset class="option-choice option-choice-inline option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/voorleesstem.svg" alt="" aria-hidden="true"><span>Stem</span></span></legend>
+                    <fieldset class="option-choice option-choice-inline option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/voorleesstem.png" alt="" aria-hidden="true"><span>Stem</span></span></legend>
                         <label><input type="radio" name="opt-stem" value="m"> Man</label>
                         <label><input type="radio" name="opt-stem" value="v"> Vrouw</label>
                     </fieldset>
-                    <label class="option-row"><span><strong>Afspeelsnelheid</strong></span><select id="opt-audio-speed">
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/afspeelsnelheid.png" alt="" aria-hidden="true"><span><strong>Afspeelsnelheid</strong></span><select id="opt-audio-speed">
                         <option value="0.75">0,75×</option><option value="1">1×</option><option value="1.25">1,25×</option><option value="1.5">1,5×</option><option value="2">2×</option>
                     </select></label>
                 </div>
@@ -665,37 +669,44 @@
             <section id="options-panel-vergelijken" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-vergelijken" hidden>
                 <div class="options-section-heading"><span class="options-section-icon" aria-hidden="true">Ⅱ</span><div><h3>Teksten naast elkaar</h3><p>Vergelijk vertalingen en kanttekeningen.</p></div></div>
                 <div class="options-list">
-                    <fieldset class="option-choice option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/voorkeurseditie.svg" alt="" aria-hidden="true"><span>Tekstedities</span></span></legend><div class="option-choice-values option-choice-grid">
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/voorkeurseditie.png" alt="" aria-hidden="true"><span><strong>Bijbeltekst</strong><small>De bediening blijft Nederlands.</small></span><select id="opt-teksteditie" data-optie="teksteditie" aria-label="Bijbeltekst">
+                        <option value="nl-ov">Nederlands — Open Vertaling</option>
+                        <option value="fr-lsg1910">Frans — Louis Segond 1910</option>
+                        <option value="en-webbe">Engels — World English Bible (Brits)</option>
+                        <option value="ar-vd">Arabisch — Van Dyck</option>
+                        <option value="es-rv1909">Spaans — Reina-Valera 1909</option>
+                    </select></label>
+                    <fieldset class="option-choice"><legend>Vergelijkingsedities</legend><div class="option-choice-values option-choice-grid">
                         <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
                         <label><input type="checkbox" data-toggle-col="sv1888"> SV 1888</label>
                         <label><input type="checkbox" data-toggle-col="2026" checked> Open Vertaling</label>
                     </div></fieldset>
-                    <fieldset class="option-choice"><legend>Kanttekeningen</legend><div class="option-choice-values option-choice-grid">
+                    <fieldset class="option-choice option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/kanttekeningen.png" alt="" aria-hidden="true"><span>Kanttekeningen</span></span></legend><div class="option-choice-values option-choice-grid">
                         <label><input type="checkbox" data-toggle-col="margin1637"> KT 1637</label>
                         <label><input type="checkbox" data-toggle-col="marginSV1888"> KT 1888</label>
                         <label><input type="checkbox" data-toggle-col="margin2026"> OV-kanttekeningen als kolom</label>
                         <label><input type="checkbox" id="toggle-kt-popup" onchange="document.body.classList.toggle('kt-popup-mode', this.checked)"> OV-kanttekeningen als popup</label>
                     </div></fieldset>
-                    <fieldset class="option-choice option-choice-inline"><legend>Extra kolommen</legend>
+                    <fieldset class="option-choice option-choice-inline option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/extra-kolommen.png" alt="" aria-hidden="true"><span>Extra kolommen</span></span></legend>
                         <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="naast"> Ernaast</label>
                         <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="eronder"> Eronder</label>
                     </fieldset>
-                    <label class="option-row"><span><strong>Verschillen SV–OV</strong></span><input type="checkbox" data-toggle-col="diff"></label>
-                    <label class="option-row"><span><strong>Verschillen in kanttekeningen</strong></span><input type="checkbox" data-toggle-col="noteDiff"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/verschillen-vertalingen.png" alt="" aria-hidden="true"><span><strong>Verschillen SV–OV</strong></span><input type="checkbox" data-toggle-col="diff"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/verschillen-kanttekeningen.png" alt="" aria-hidden="true"><span><strong>Verschillen in kanttekeningen</strong></span><input type="checkbox" data-toggle-col="noteDiff"></label>
                 </div>
             </section>
 
             <section id="options-panel-onderzoeken" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-onderzoeken" hidden>
                 <div class="options-section-heading"><span class="options-section-icon options-section-icon-gold" aria-hidden="true">א</span><div><h3>Onderzoekslagen</h3><p>Voeg bronnen en taalinformatie toe aan de tekst.</p></div></div>
                 <div class="options-list">
-                    <label class="option-row"><span><strong>Grondtalen</strong><small>Hebreeuws, Grieks, Aramees, Latijn of Ge'ez.</small></span><input type="checkbox" data-toggle-col="hebrew"></label>
-                    <label class="option-row"><span><strong>Oudste handschrift per vers</strong><small>Oorspronkelijke taal en oudste vindplaats.</small></span><input type="checkbox" id="toggle-hs-vers"></label>
-                    <label class="option-row"><span><strong>Onderwerptags</strong></span><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"></label>
-                    <fieldset class="option-choice option-choice-inline"><legend>Geografische locaties</legend>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/grondtalen.png" alt="" aria-hidden="true"><span><strong>Grondtalen</strong><small>Hebreeuws, Grieks, Aramees, Latijn of Ge'ez.</small></span><input type="checkbox" data-toggle-col="hebrew"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/oudste-handschrift.png" alt="" aria-hidden="true"><span><strong>Oudste handschrift per vers</strong><small>Oorspronkelijke taal en oudste vindplaats.</small></span><input type="checkbox" id="toggle-hs-vers"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/onderwerptags.png" alt="" aria-hidden="true"><span><strong>Onderwerptags</strong></span><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"></label>
+                    <fieldset class="option-choice option-choice-inline option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/geografische-locaties.png" alt="" aria-hidden="true"><span>Geografische locaties</span></span></legend>
                         <label><input type="radio" name="opt-geoMarkeren" data-optie="geoMarkeren" value="uit"> Niet markeren</label>
                         <label><input type="radio" name="opt-geoMarkeren" data-optie="geoMarkeren" value="aan"> Markeren</label>
                     </fieldset>
-                    <label class="option-row"><span><strong>Strong-nummers</strong><small>Toon blauwe nummers bij de gekoppelde Hebreeuwse en Griekse grondtekstwoorden.</small></span><input type="checkbox" id="toggle-strongs" data-optie="strongs" value="aan"></label>
+                        <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/strong-nummers.png" alt="" aria-hidden="true"><span><strong>Strong- en woordnummers</strong><small>Toon blauwe nummers bij gekoppelde Hebreeuwse, Griekse, Latijnse en Ge’ez-grondtekstwoorden.</small></span><input type="checkbox" id="toggle-strongs" data-optie="strongs" value="aan"></label>
                 </div>
             </section>
         </div>
@@ -874,18 +885,6 @@
         var cb = document.getElementById('toggle-dyslexia');
         if (cb) cb.checked = true;
     }
-    // Citaatopmaak (standaard AAN; alleen uit als de gebruiker expliciet 'false' koos).
-    // Stond eerder standaard uit, waardoor niemand de cursieve directe rede zag,
-    // de rode Godsspraak, of het gele niveau van een citaat binnen een citaat —
-    // terwijl 691 verzen die markering wel dragen.
-    if (localStorage.getItem('citaatopmaak') === 'false') {
-        document.body.classList.add('citaten-uit');
-        var cc0 = document.getElementById('toggle-citaten');
-        if (cc0) cc0.checked = false;
-    } else {
-        var cc = document.getElementById('toggle-citaten');
-        if (cc) cc.checked = true;
-    }
     // Pericoop-kopjes herstellen (standaard AAN; alleen uit als expliciet 'false')
     if (localStorage.getItem('pericopen') === 'false') {
         document.body.classList.add('pericopen-uit');
@@ -915,6 +914,7 @@
     <script src="js/begrippen.js"></script>
     <script src="js/tags.js"></script>
     <script src="js/opties.js"></script>
+    <script src="js/tekstweergave.js"></script>
     <script src="js/audio-available.js"></script>
     <script src="js/chunked-audio.js"></script>
     <script src="js/verse-witness-reader.js"></script>

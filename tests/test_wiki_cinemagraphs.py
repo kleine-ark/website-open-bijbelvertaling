@@ -29,23 +29,14 @@ def webp_chunks(data):
         offset += 8 + length + (length % 2)
 
 
-class PictureParser(HTMLParser):
+class ImageParser(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.current = None
-        self.pictures = []
+        self.images = []
 
     def handle_starttag(self, tag, attrs):
-        attributes = dict(attrs)
-        if tag == "picture":
-            self.current = {}
-        elif self.current is not None and tag in {"source", "img"}:
-            self.current[tag] = attributes
-
-    def handle_endtag(self, tag):
-        if tag == "picture" and self.current is not None:
-            self.pictures.append(self.current)
-            self.current = None
+        if tag == "img":
+            self.images.append(dict(attrs))
 
 
 class WikiCinemagraphTests(unittest.TestCase):
@@ -79,30 +70,22 @@ class WikiCinemagraphTests(unittest.TestCase):
                 f"verwijderde Begrippenpagina wordt nog genoemd in {path.name}",
             )
 
-    def test_motion_tiles_use_webp_with_static_reduced_motion_fallback(self):
+    def test_motion_tiles_use_animated_webp_without_fallback(self):
         html = (ROOT / "wiki-overzicht.html").read_text(encoding="utf-8")
-        parser = PictureParser()
+        self.assertNotIn("<picture", html)
+        self.assertNotIn("prefers-reduced-motion", html)
+
+        parser = ImageParser()
         parser.feed(html)
-        pictures = {
-            Path(picture["img"]["src"]).stem: picture
-            for picture in parser.pictures
+        images = {
+            Path(image["src"]).stem: image
+            for image in parser.images
+            if image.get("src", "").startswith("images/wiki/")
         }
 
-        self.assertEqual(set(pictures), set(NAMES))
+        self.assertEqual(set(images), set(NAMES))
         for name in NAMES:
-            source = pictures[name]["source"]
-            fallback = pictures[name]["img"]
-            self.assertEqual(source["srcset"], f"images/wiki/{name}.webp")
-            self.assertEqual(source["type"], "image/webp")
-            self.assertEqual(
-                source["media"], "(prefers-reduced-motion: no-preference)"
-            )
-            if name in {"liederen", "gebeden"}:
-                self.assertEqual(
-                    fallback["src"], f"images/wiki/bronnen/{name}.webp"
-                )
-            else:
-                self.assertEqual(fallback["src"], f"images/wiki/{name}.svg")
+            self.assertEqual(images[name]["src"], f"images/wiki/{name}.webp")
 
     def test_assets_are_animated_five_second_webp_loops(self):
         for name in NAMES:

@@ -33,6 +33,11 @@ def test_alle_afzonderlijke_instrumentnamen_worden_gepubliceerd(instruments_data
         "trommel", "ramshoorn", "orgel", "pijp", "vedel", "psalter",
         "hoorn", "schellen", "tiensnarig-instrument", "lier",
     } <= ids
+    assert all(
+        item["afbeelding"]
+        == f"images/wiki/muziekinstrumenten/{item['id']}.webp"
+        for item in instruments_data["items"]
+    )
 
 
 def test_alle_88_boeken_worden_gescand_en_corpusdelen_blijven_onderscheiden(instruments_data):
@@ -69,3 +74,15 @@ def test_naamvarianten_worden_gevonden_zonder_werkwoordelijke_homoniemen(instrum
     assert {"job 17:6", "nahum 2:7"}.isdisjoint(items["trommel"]["verzen"])
     assert {"mattheus 9:23", "daniel 3:5"} <= set(items["pijp"]["verzen"])
     assert {"zacharia 4:2", "job 31:22"}.isdisjoint(items["pijp"]["verzen"])
+
+
+def test_ieder_gepubliceerd_instrument_heeft_een_eigen_webbeeld():
+    published = json.loads(
+        (ROOT / "data" / "naslag-muziekinstrumenten.json").read_text(encoding="utf-8")
+    )
+
+    assert len(published["items"]) == 17
+    images = [item["afbeelding"] for item in published["items"]]
+    assert len(set(images)) == 17
+    assert all(image.startswith("images/wiki/muziekinstrumenten/") for image in images)
+    assert all((ROOT / image).is_file() for image in images)

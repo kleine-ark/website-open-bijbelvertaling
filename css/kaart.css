@@ -1,0 +1,125 @@
+:root {
+    --kaart-inkt: #142e42;
+    --kaart-goud: #c9a44b;
+    --kaart-papier: rgba(255, 253, 248, .96);
+    --kaart-lijn: rgba(20, 46, 66, .14);
+}
+
+.kaart-kop {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 76px;
+    padding: 10px clamp(16px, 3vw, 38px);
+    border-bottom: 1px solid var(--kaart-lijn);
+    background: var(--bg-surface, #fff);
+}
+.kaart-koptekst { min-width: 0; }
+.kaart-kop h1 { margin: 0; color: var(--navy, var(--kaart-inkt)); font-family: var(--font-cursive); font-size: clamp(24px, 2.3vw, 31px); font-weight: 400; line-height: 1.1; }
+.kaart-kop p { margin: 5px 0 0; color: var(--teal); font-size: 13px; }
+.kaart-kop p a { color: var(--gold, var(--kaart-goud)); font-weight: 600; text-decoration: none; }
+.kaart-kop p a:hover { text-decoration: underline; }
+
+.kaart-instellingen-open {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 10px;
+    min-height: 42px;
+    padding: 0 17px;
+    border: 1px solid rgba(201, 164, 75, .7);
+    border-radius: 999px;
+    color: var(--kaart-inkt);
+    background: #fffdf8;
+    box-shadow: 0 5px 16px rgba(20, 46, 66, .08);
+    font: 600 13px/1 var(--font-sans, sans-serif);
+    cursor: pointer;
+}
+.kaart-instellingen-open:hover { border-color: var(--kaart-goud); transform: translateY(-1px); }
+.kaart-instellingen-open[aria-expanded="true"] { color: #fff; background: var(--kaart-inkt); border-color: var(--kaart-inkt); }
+.kaart-instellingen-open-icoon { display: grid; gap: 3px; width: 18px; }
+.kaart-instellingen-open-icoon i { display: block; position: relative; height: 1px; background: currentColor; }
+.kaart-instellingen-open-icoon i::after { content: ""; position: absolute; top: -2px; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+.kaart-instellingen-open-icoon i:nth-child(1)::after { left: 3px; }
+.kaart-instellingen-open-icoon i:nth-child(2)::after { right: 2px; }
+.kaart-instellingen-open-icoon i:nth-child(3)::after { left: 7px; }
+
+.kaart-werkvlak { position: relative; flex: 1 1 auto; min-height: 0; }
+#map { position: absolute; inset: 0; width: 100%; background: #e9e5da; }
+.kaart-instellingen {
+    position: absolute;
+    z-index: 20;
+    top: 18px;
+    right: 18px;
+    width: min(370px, calc(100vw - 36px));
+    max-height: calc(100% - 36px);
+    overflow: auto;
+    padding: 20px;
+    border: 1px solid rgba(201, 164, 75, .42);
+    border-radius: 20px 4px 20px 20px;
+    color: var(--kaart-inkt);
+    background: var(--kaart-papier);
+    box-shadow: 0 18px 48px rgba(20, 46, 66, .24), 0 2px 8px rgba(20, 46, 66, .1);
+    backdrop-filter: blur(14px);
+}
+.kaart-instellingen[hidden] { display: none; }
+.kaart-instellingen-kop { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+.kaart-instellingen-eyebrow { color: var(--kaart-goud); font: 700 10px/1 var(--font-sans, sans-serif); letter-spacing: .16em; text-transform: uppercase; }
+.kaart-instellingen h2 { margin: 4px 0 0; color: var(--kaart-inkt); font: 600 23px/1.15 var(--font-serif); }
+.kaart-instellingen-sluit { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--kaart-lijn); border-radius: 50%; color: var(--kaart-inkt); background: transparent; font-size: 22px; line-height: 1; cursor: pointer; }
+.kaart-instellingen-sluit:hover { color: #fff; background: var(--kaart-inkt); }
+
+.kaart-telling { display: flex; align-items: baseline; gap: 6px; margin: 18px 0 0; padding: 12px 14px; border: 1px solid var(--kaart-lijn); border-radius: 11px; background: rgba(20, 46, 66, .035); color: var(--teal); font: 500 12px/1.3 var(--font-sans, sans-serif); }
+.kaart-telling .telling { color: var(--kaart-inkt); font-family: var(--font-serif); font-size: 17px; font-weight: 700; }
+.kaart-telling-markering { align-self: center; width: 8px; height: 8px; border: 2px solid #fff; border-radius: 50%; background: #c0392b; box-shadow: 0 0 0 1px #c0392b; }
+
+.kaart-keuzegroep { min-width: 0; margin: 20px 0 0; padding: 0; border: 0; }
+.kaart-keuzegroep legend { width: 100%; margin-bottom: 10px; color: var(--kaart-inkt); font: 700 12px/1.2 var(--font-sans, sans-serif); letter-spacing: .025em; }
+.kaart-keuzerij { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.kaart-keuzerij label { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 38px; padding: 0 7px; border: 1px solid var(--kaart-lijn); border-radius: 9px; color: var(--teal); background: rgba(255,255,255,.58); font: 600 11px/1.1 var(--font-sans, sans-serif); cursor: pointer; }
+.kaart-keuzerij input { position: absolute; opacity: 0; pointer-events: none; }
+.kaart-keuzerij label:has(input:checked) { border-color: rgba(201, 164, 75, .75); color: var(--kaart-inkt); background: rgba(201, 164, 75, .12); }
+.zekerheidstip { width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; }
+.zekerheidstip.z-zeker { background: #4e8c64; }
+.zekerheidstip.z-waarschijnlijk { background: #c9a44b; }
+.zekerheidstip.z-onzeker { background: #92999e; }
+
+.kaart-laagrooster { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.kaart-laagoptie { position: relative; overflow: hidden; display: grid; grid-template-columns: 56px 1fr; align-items: center; gap: 10px; min-height: 55px; padding: 5px; border: 1px solid var(--kaart-lijn); border-radius: 11px; color: var(--teal); background: rgba(255,255,255,.62); font: 600 11px/1.15 var(--font-sans, sans-serif); cursor: pointer; }
+.kaart-laagoptie input { position: absolute; opacity: 0; pointer-events: none; }
+.kaart-laagoptie:has(input:checked) { border-color: var(--kaart-goud); color: var(--kaart-inkt); box-shadow: inset 0 0 0 1px var(--kaart-goud); }
+.kaart-laagvoorbeeld { display: block; align-self: stretch; min-height: 43px; border-radius: 7px; background-color: #dce2d7; }
+.kaart-laag-kaart .kaart-laagvoorbeeld { background: linear-gradient(35deg, transparent 45%, rgba(20,46,66,.3) 46% 48%, transparent 49%), linear-gradient(145deg, #d8decf 30%, #eef0df 31% 60%, #cdd8d2 61%); }
+.kaart-laag-stil .kaart-laagvoorbeeld { background: linear-gradient(25deg, #e5e6dc 0 38%, #f3f0e6 39% 67%, #d9e0d9 68%); }
+.kaart-laag-lucht .kaart-laagvoorbeeld { background: radial-gradient(circle at 68% 30%, #bfaa73 0 10%, transparent 11%), linear-gradient(135deg, #305c56, #80764d 45%, #254f55); }
+.kaart-laag-land .kaart-laagvoorbeeld { background: repeating-radial-gradient(ellipse at 0 100%, #c2b68a 0 6px, #879a75 7px 12px, #d9cda4 13px 18px); }
+
+.kaart-instellingen-open:focus-visible, .kaart-instellingen-sluit:focus-visible,
+.kaart-keuzerij label:has(input:focus-visible), .kaart-laagoptie:has(input:focus-visible) { outline: 3px solid rgba(201, 164, 75, .55); outline-offset: 2px; }
+
+:root[data-theme="donker"] .kaart-kop { border-color: var(--border-default, #33434e); background: var(--bg-surface); }
+:root[data-theme="donker"] .kaart-kop h1, :root[data-theme="donker"] .kaart-instellingen h2,
+:root[data-theme="donker"] .kaart-keuzegroep legend, :root[data-theme="donker"] .kaart-telling .telling { color: var(--text-primary); }
+:root[data-theme="donker"] .kaart-instellingen-open { color: var(--text-primary); background: #1c3548; }
+:root[data-theme="donker"] .kaart-instellingen { --kaart-papier: rgba(20, 39, 53, .96); --kaart-lijn: rgba(255,255,255,.13); color: var(--text-primary); }
+:root[data-theme="donker"] .kaart-keuzerij label, :root[data-theme="donker"] .kaart-laagoptie { color: var(--text-secondary, #b7c0c5); background: rgba(255,255,255,.045); }
+:root[data-theme="donker"] .kaart-keuzerij label:has(input:checked), :root[data-theme="donker"] .kaart-laagoptie:has(input:checked) { color: var(--text-primary); }
+:root[data-theme="donker"] .kaart-instellingen-sluit { color: var(--text-primary); }
+
+@media (max-width: 620px) {
+    .kaart-kop { min-height: 70px; gap: 10px; padding: 9px 12px; }
+    .kaart-kop h1 { font-size: 23px; }
+    .kaart-kop p { display: none; }
+    .kaart-instellingen-open { min-height: 40px; padding: 0 13px; }
+    .kaart-instellingen-open > span:last-child { font-size: 0; }
+    .kaart-instellingen-open > span:last-child::after { content: "Instellen"; font-size: 12px; }
+    .kaart-instellingen { top: 10px; right: 8px; width: calc(100vw - 16px); max-height: calc(100% - 20px); padding: 18px; border-radius: 18px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .kaart-instellingen-open { transition: color .18s ease, background .18s ease, border-color .18s ease, transform .18s ease; }
+    .kaart-instellingen:not([hidden]) { animation: kaart-paneel-in .18s ease-out; }
+    @keyframes kaart-paneel-in { from { opacity: 0; transform: translateY(-8px) scale(.985); } }
+}

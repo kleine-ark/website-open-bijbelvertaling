@@ -7,10 +7,37 @@ from pathlib import Path
 
 import pytest
 
+from scripts.build_gebeden_catalogus import BOOK_ORDER
 from scripts.build_naslag_teksten import build_all, build_collection, expand_passage
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+GEBEDSPSALMEN = [
+    3, 4, 5, 6, 7, 9, 10, 12, 13, 16, 17, 19, 20, 22, 25, 26, 27, 28,
+    30, 31, 33, 35, 36, 38, 39, 40, 41, 42, 43, 44, 51, 54, 55, 56, 57,
+    58, 59, 60, 61, 63, 64, 67, 69, 70, 71, 72, 74, 77, 79, 80, 82, 83,
+    84, 85, 86, 88, 89, 90, 94, 102, 106, 108, 109, 115, 116, 118, 119,
+    120, 122, 123, 125, 126, 129, 130, 132, 137, 138, 139, 140, 141, 142,
+    143, 144,
+]
+
+MOZES_GEBEDEN = [
+    "mozes-klacht-over-farao",
+    "mozes-gebed-bij-refidim",
+    "mozes-voorbede-na-het-gouden-kalf",
+    "mozes-tweede-voorbede-na-het-gouden-kalf",
+    "mozes-gebed-om-gods-tegenwoordigheid",
+    "mozes-gebed-om-gods-heerlijkheid",
+    "mozes-voorbede-na-de-verbondsvernieuwing",
+    "mozes-gebeden-bij-het-optrekken-en-rusten-van-de-ark",
+    "mozes-klacht-over-de-last-van-het-volk",
+    "mozes-gebed-voor-mirjam",
+    "mozes-voorbede-na-de-verspieders",
+    "mozes-en-aaron-voor-de-gemeente",
+    "mozes-gebed-om-een-opvolger",
+    "mozes-gebed-om-kanaan-binnen-te-gaan",
+]
 
 LIED_IDS = [
     "lied-bij-de-schelfzee",
@@ -39,55 +66,6 @@ LIED_IDS = [
     "gezang-van-mozes-en-het-lam",
 ]
 
-GEBED_IDS = [
-    "abrahams-voorbede-voor-sodom",
-    "jakobs-gebed-voor-de-ontmoeting-met-ezau",
-    "mozes-voorbeden-voor-israel",
-    "het-gebed-van-mozes-psalm-90",
-    "het-gebed-van-jabez",
-    "simsons-laatste-gebed",
-    "het-gebed-van-hanna",
-    "davids-gebed-in-de-grot-psalm-142",
-    "davids-gebed-om-bewaring-psalm-17",
-    "davids-dankgebed-over-de-belofte",
-    "davids-boetgebed-psalm-51",
-    "davids-gebed-in-benauwdheid-psalm-86",
-    "gebed-om-leven-naar-gods-woord-psalm-119",
-    "davids-gebed-voor-salomo-psalm-72",
-    "salomos-gebed-om-wijsheid",
-    "salomos-tempelwijdingsgebed",
-    "het-gebed-van-agur",
-    "elia-op-de-karmel",
-    "josafats-gebed",
-    "jonas-gebed-uit-de-vis",
-    "de-gebeden-van-tobit-en-sara",
-    "het-gebed-van-judith",
-    "hizkias-gebed-om-uitredding",
-    "hizkias-gebed-om-genezing",
-    "het-gebed-van-manasse",
-    "habakuks-gebed",
-    "het-gebed-van-azaria",
-    "het-gebed-van-de-ballingen-baruch",
-    "daniels-boetgebed",
-    "gebed-van-de-verdrukte-psalm-102",
-    "mordechais-gebed",
-    "esthers-gebed",
-    "ezras-boetgebed",
-    "nehemias-gebed",
-    "het-boetgebed-onder-nehemia",
-    "gebed-uit-de-diepten-psalm-130",
-    "het-onze-vader",
-    "het-gebed-van-de-tollenaar",
-    "het-hogepriesterlijk-gebed",
-    "jezus-in-gethsemane",
-    "het-gebed-van-de-gemeente",
-    "het-gebed-van-stefanus",
-    "paulus-eerste-gebed-voor-efeze",
-    "paulus-tweede-gebed-voor-efeze",
-    "paulus-gebed-voor-filippi",
-]
-
-
 def load_json(path):
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
@@ -106,7 +84,18 @@ def test_reeksen_zijn_compleet_en_chronologisch(liederen, gebeden):
     assert liederen["nummerType"] == "Lied"
     assert gebeden["nummerType"] == "Gebed"
     assert [item["id"] for item in liederen["items"]] == LIED_IDS
-    assert [item["id"] for item in gebeden["items"]] == GEBED_IDS
+    assert len(gebeden["items"]) == 132
+
+    positie = {boek: index for index, boek in enumerate(BOOK_ORDER)}
+    sleutels = []
+    for item in gebeden["items"]:
+        passage = item["tekstpassages"][0]
+        sleutels.append((
+            positie[passage["boek"]],
+            passage.get("hoofdstuk", passage.get("vanHoofdstuk", 0)),
+            passage.get("van", 0),
+        ))
+    assert sleutels == sorted(sleutels)
 
 
 def test_lamech_en_de_gebedenintro_blijven_verwijderd(liederen, gebeden):
@@ -185,6 +174,23 @@ def test_negen_gebedspsalmen_hebben_hun_volledige_passage(gebeden):
         ]
 
 
+def test_alle_gebedspsalmen_staan_afzonderlijk_en_op_psalmnummer(gebeden):
+    psalm_items = [
+        item for item in gebeden["items"]
+        if item["tekstpassages"][0]["boek"] == "psalmen"
+    ]
+
+    assert [item["tekstpassages"][0]["hoofdstuk"] for item in psalm_items] == GEBEDSPSALMEN
+    assert all(len(item["tekstpassages"]) == 1 for item in psalm_items)
+
+
+def test_ieder_gebed_van_mozes_is_een_afzonderlijk_item(gebeden):
+    ids = [item["id"] for item in gebeden["items"]]
+
+    assert "mozes-voorbeden-voor-israel" not in ids
+    assert [item_id for item_id in ids if item_id in MOZES_GEBEDEN] == MOZES_GEBEDEN
+
+
 def test_paulus_is_opgesplitst_in_drie_gebeden(gebeden):
     ids = [item["id"] for item in gebeden["items"]]
     assert "paulus-gebeden-voor-de-gemeenten" not in ids
@@ -250,7 +256,7 @@ def test_builder_leidt_aaneengesloten_nummers_af(built):
         range(1, 178)
     )
     assert [bundle["nummer"] for bundle in built["gebeden"].values()] == list(
-        range(1, 46)
+        range(1, 133)
     )
     assert all(bundle["nummerType"] == "Lied" for bundle in built["liederen"].values())
     assert all(bundle["nummerType"] == "Gebed" for bundle in built["gebeden"].values())
@@ -283,10 +289,10 @@ def test_iedere_psalmbundel_heeft_precies_een_eigen_hoofdstuk(built):
 
 
 def test_samengestelde_passages_behouden_de_opgegeven_volgorde(built):
-    mozes = built["gebeden"]["mozes-voorbeden-voor-israel"]
+    mozes = built["gebeden"]["mozes-voorbede-na-het-gouden-kalf"]
     labels = [passage["label"] for passage in mozes["passages"]]
 
-    assert labels == ["Exodus 32:11–14", "Numeri 14:13–19"]
+    assert labels == ["Exodus 32:11–14", "Deuteronomium 9:26–29"]
 
 
 def write_test_chapter(root, verses):

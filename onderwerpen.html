@@ -233,6 +233,7 @@
     <script src="js/book-orders.js"></script>
     <script src="js/opties.js"></script>
     <script>Opties.init();</script>
+    <script src="js/tekstweergave.js"></script>
     <script src="embed.js"></script>
     <script>
     (function () {
@@ -293,15 +294,16 @@
         }
         // Onderwerpen geordend in rubrieken (zoals de wiki van de kleine ark)
         const CATEGORIEEN = [
-            { id: 'kern', label: "Kernthema's van het geloof", ids: ['schepping', 'jahweh-schepping', 'zonde', 'bekering', 'geloof', 'verbond', 'gods-leiding'] },
-            { id: 'jezus', label: 'Wie is Jezus Christus?', ids: ['karakter-jezus', 'jezus-is-god'] },
-            { id: 'geestelijke-wereld', label: 'De geestelijke wereld', ids: ['engelen', 'demonen-en-duivelen'] },
+            { id: 'kern', label: "Kernthema's van het geloof", ids: ['schepping', 'jahweh-schepping', 'zonde', 'bekering', 'geloof', 'verbond', 'gods-leiding', 'zegeningen', 'vervloekingen', 'beloften'] },
+            { id: 'jezus', label: 'Wie is Jezus Christus?', ids: ['karakter-jezus', 'jezus-is-god', 'jezus-in-het-ot'] },
+            { id: 'geestelijke-wereld', label: 'De geestelijke wereld', ids: ['engelen', 'demonen-en-duivelen', 'reuzen'] },
             { id: 'gemeente', label: 'Gebed & gemeente', ids: ['gebed', 'gebedshouding', 'tucht-gemeente', 'evangelisatie'] },
             { id: 'spreken', label: 'Wie spreekt er in Gods Woord?', ids: ['vader-spreekt', 'zoon-spreekt', 'geest-spreekt'] },
             { id: 'liefde', label: 'Liefde', ids: ['liefde-algemeen', 'liefde-man-vrouw'] },
             { id: 'huwelijk-seks', label: 'Huwelijk & seksualiteit', ids: ['huwelijk', 'misbruik-verkrachting-en-incest', 'lhbtq'] },
-            { id: 'leven-samenleving', label: 'Leven & samenleving', ids: ['rijkdom-armoede', 'werk-en-vlijt', 'waarheid-en-levensgevaar'] },
-            { id: 'onderscheiding', label: 'Geestelijke onderscheiding', ids: ['valse-profetie', 'waarzeggerij', 'kinderoffers'] },
+            { id: 'leven-samenleving', label: 'Leven & samenleving', ids: ['rijkdom-armoede', 'werk-en-vlijt', 'waarheid-en-levensgevaar', 'opvoeding-kinderen', 'bouwen', 'huisinwijding'] },
+            { id: 'eredienst', label: 'Feesten & eredienst', ids: ['bijbelse-feesten'] },
+            { id: 'onderscheiding', label: 'Geestelijke onderscheiding', ids: ['valse-profetie', 'waarzeggerij', 'kinderoffers', 'vloek-op-voorwerpen', 'ziekte-van-jahweh'] },
             { id: 'volken', label: 'Volken & geschiedenis', ids: ['volk-ammon'] },
             { id: 'vragen', label: 'Vragen & moeilijke onderwerpen', ids: ['apostelen-vandaag'] }
         ];

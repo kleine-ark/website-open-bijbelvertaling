@@ -33,17 +33,10 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.3.1/ol.css">
+    <link rel="stylesheet" href="css/kaart.css">
     <style>
         html, body { height: 100%; margin: 0; }
         body { display: flex; flex-direction: column; background: var(--bg-page, #f8f6f2); overflow: hidden; }
-        .kaart-kop { flex: 0 0 auto; padding: 12px 20px 10px; border-bottom: 1px solid var(--border, #d4d0c8); background: var(--bg-surface, #fff); }
-        .kaart-kop h1 { font-family: var(--font-cursive); font-weight: 400; font-size: 26px; color: var(--navy); margin: 0 0 2px; }
-        .kaart-kop p { margin: 0 0 8px; font-size: 13px; color: var(--teal); }
-        .kaart-kop p a { color: var(--gold); }
-        .kaart-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; font-size: 13px; }
-        .kaart-filters label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; color: var(--navy); }
-        .kaart-filters .telling { color: var(--teal); font-weight: 600; }
-        #map { flex: 1 1 auto; width: 100%; background: #e9e5da; }
         .ol-popup { position: absolute; background: #fff; box-shadow: 0 2px 12px rgba(20,46,66,.25); padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border, #d4d0c8); min-width: 210px; max-width: 280px; bottom: 14px; left: -120px; font-family: var(--font-body); }
         .ol-popup:after { content: ""; position: absolute; bottom: -10px; left: 50%; margin-left: -10px; border: 10px solid transparent; border-top-color: #fff; }
         .ol-popup h3 { margin: 0 0 2px; font-size: 16px; color: var(--navy); font-family: var(--font-serif); }
@@ -58,9 +51,6 @@
         .z-waarschijnlijk { background: rgba(203,164,73,.20); color: #8a6d1f; }
         .z-onzeker { background: rgba(150,150,150,.20); color: #666; }
         :root[data-theme="donker"] body { background: var(--bg-page); }
-        :root[data-theme="donker"] .kaart-kop { background: var(--bg-surface); border-color: var(--border-default, #333); }
-        :root[data-theme="donker"] .kaart-kop h1 { color: var(--text-primary); }
-        :root[data-theme="donker"] .kaart-filters label { color: var(--text-primary); }
         :root[data-theme="donker"] .ol-popup { background: var(--bg-surface); border-color: var(--border-default, #333); color: var(--text-primary); }
         :root[data-theme="donker"] .ol-popup:after { border-top-color: var(--bg-surface); }
         :root[data-theme="donker"] .ol-popup h3 { color: var(--text-primary); }
@@ -72,27 +62,58 @@
     <nav id="topnav"></nav>
     <script src="js/topnav.js"></script>
 
-    <div class="kaart-kop">
-        <h1>Kaart van Gods Woord</h1>
-        <p>Geografische aanduidingen uit Gods Woord op de kaart. Klik op een plaats voor toelichting en verwijzingen. &nbsp;<a href="geografie.html">Alle geografische aanduidingen →</a></p>
-        <div class="kaart-filters">
-            <span class="telling" id="telling">…</span>
-            <label><input type="checkbox" id="f-zeker" checked> Zeker</label>
-            <label><input type="checkbox" id="f-waarschijnlijk"> Waarschijnlijk</label>
-            <label><input type="checkbox" id="f-onzeker"> Onzeker</label>
-            <span class="laagkeuze">Achtergrond:
-                <label><input type="radio" name="kaartlaag" value="kaart" checked> Kaart</label>
-                <label><input type="radio" name="kaartlaag" value="stil"> Zonder tekst</label>
-                <label><input type="radio" name="kaartlaag" value="lucht"> Luchtfoto</label>
-                <label><input type="radio" name="kaartlaag" value="land"> Landschap</label>
-            </span>
+    <header class="kaart-kop">
+        <div class="kaart-koptekst">
+            <h1>Kaart van Gods Woord</h1>
+            <p>Klik op een plaats voor de Bijbelse verwijzingen. <a href="geografie.html">Bekijk alle plaatsen</a></p>
         </div>
-    </div>
-    <div id="map"></div>
+        <button class="kaart-instellingen-open" id="kaart-instellingen-open" type="button"
+                aria-controls="kaart-instellingen" aria-expanded="false">
+            <span class="kaart-instellingen-open-icoon" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>Kaart instellen</span>
+        </button>
+    </header>
+    <main class="kaart-werkvlak">
+        <div id="map"></div>
+        <section class="kaart-instellingen" id="kaart-instellingen" role="region"
+                 aria-labelledby="kaart-instellingen-titel" hidden>
+            <div class="kaart-instellingen-kop">
+                <div>
+                    <span class="kaart-instellingen-eyebrow">Weergave</span>
+                    <h2 id="kaart-instellingen-titel">Kaartinstellingen</h2>
+                </div>
+                <button class="kaart-instellingen-sluit" id="kaart-instellingen-sluit" type="button"
+                        aria-label="Kaartinstellingen sluiten">&times;</button>
+            </div>
+            <div class="kaart-telling">
+                <span class="kaart-telling-markering" aria-hidden="true"></span>
+                <span class="telling" id="telling">&hellip;</span>
+                <span>zichtbaar op de kaart</span>
+            </div>
+            <fieldset class="kaart-keuzegroep kaart-zekerheid">
+                <legend>Zekerheid van locaties</legend>
+                <div class="kaart-keuzerij">
+                    <label><input type="checkbox" id="f-zeker" checked><span class="zekerheidstip z-zeker"></span><span>Zeker</span></label>
+                    <label><input type="checkbox" id="f-waarschijnlijk"><span class="zekerheidstip z-waarschijnlijk"></span><span>Waarschijnlijk</span></label>
+                    <label><input type="checkbox" id="f-onzeker"><span class="zekerheidstip z-onzeker"></span><span>Onzeker</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="kaart-keuzegroep kaart-achtergronden">
+                <legend>Achtergrondkaart</legend>
+                <div class="kaart-laagrooster">
+                    <label class="kaart-laagoptie kaart-laag-kaart"><input type="radio" name="kaartlaag" value="kaart" checked><span class="kaart-laagvoorbeeld" aria-hidden="true"></span><span>Kaart</span></label>
+                    <label class="kaart-laagoptie kaart-laag-stil"><input type="radio" name="kaartlaag" value="stil"><span class="kaart-laagvoorbeeld" aria-hidden="true"></span><span>Zonder tekst</span></label>
+                    <label class="kaart-laagoptie kaart-laag-lucht"><input type="radio" name="kaartlaag" value="lucht"><span class="kaart-laagvoorbeeld" aria-hidden="true"></span><span>Luchtfoto</span></label>
+                    <label class="kaart-laagoptie kaart-laag-land"><input type="radio" name="kaartlaag" value="land"><span class="kaart-laagvoorbeeld" aria-hidden="true"></span><span>Landschap</span></label>
+                </div>
+            </fieldset>
+        </section>
+    </main>
     <div id="popup" class="ol-popup" style="display:none;">
         <a href="#" id="popup-closer" class="ol-popup-closer">✕</a>
         <div id="popup-content"></div>
     </div>
+    <script src="js/kaart-instellingen.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/ol@10.3.1/dist/ol.js"></script>
     <script src="js/book-orders.js"></script>

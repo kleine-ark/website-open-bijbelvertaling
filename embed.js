@@ -16,6 +16,7 @@
  *   citaat    true|false   citaatopmaak (rood=God enz.)(standaard true)
  *   link      true|false   bronverwijzing tonen        (standaard true)
  *   godsnaam  ov|klassiek|jehovah|jhwh                 (standaard ov = JAHWEH)
+ *   strongs   true|false   bronvaste woordnummers tonen (standaard: globale voorkeur)
  *
  * Via JavaScript:
  *   OSV.cite('johannes 3:16', {numbers:false}).then(r => el.innerHTML = r.html);
@@ -40,6 +41,40 @@
 
   var chapterCache = {};
   var booksPromise = null;
+  var wordNumberPromise = null;
+
+  function storedStrongPreference() {
+    try {
+      var saved = JSON.parse(localStorage.getItem('sv2026_vertaalopties') || '{}');
+      return saved.strongs === 'aan';
+    } catch (e) { return false; }
+  }
+
+  function ensureWordNumberSupport(enabled) {
+    if (!enabled) return Promise.resolve();
+    if (!wordNumberPromise) {
+      var rendererReady = global.OVWoordnummers ? Promise.resolve() : new Promise(function (resolve) {
+          var tag = document.createElement('script');
+          tag.src = BASE + '/js/woordnummers.js';
+          tag.onload = resolve;
+          tag.onerror = resolve;
+          document.head.appendChild(tag);
+        });
+      wordNumberPromise = rendererReady.then(function () {
+        if (global.Lexicon) return;
+        return new Promise(function (resolve) {
+          var tag = document.createElement('script');
+          tag.src = BASE + '/js/lexicon.js';
+          tag.onload = resolve;
+          tag.onerror = resolve;
+          document.head.appendChild(tag);
+        });
+      }).then(function () {
+        if (global.Lexicon) global.Lexicon.init();
+      });
+    }
+    return wordNumberPromise;
+  }
 
   function loadBooks() {
     if (!booksPromise) {
@@ -114,18 +149,27 @@
   function cite(ref, opts) {
     opts = opts || {};
     var globalOptions = typeof Opties !== 'undefined' && Opties.state;
+    var sharedView = global.OVTekstweergave;
     var numbersDefault = globalOptions ? globalOptions.versnummers !== 'uit' : true;
-    var numbers = bool(opts.numbers, numbersDefault);
-    var citaat = bool(opts.citaat, true);
+    var numbers = sharedView
+      ? sharedView.versnummersAan(opts)
+      : bool(opts.numbers, numbersDefault);
+    var citaat = sharedView
+      ? sharedView.citatenAan(opts)
+      : bool(opts.citaat, true);
     var showLink = bool(opts.link, true);
     var gods = opts.godsnaam || 'ov';
+    var showWordNumbers = bool(
+      opts.strongs,
+      globalOptions ? globalOptions.strongs === 'aan' : storedStrongPreference()
+    );
 
     var p = parseRef(ref);
     if (!p) return Promise.reject(new Error('Ongeldige referentie: ' + ref));
 
     var optionsReady = typeof Opties !== 'undefined' && Opties.ready
       ? Opties.ready : Promise.resolve();
-    return Promise.all([loadChapter(p.book, p.chapter), loadBooks(), optionsReady]).then(function (res) {
+    return Promise.all([loadChapter(p.book, p.chapter), loadBooks(), optionsReady, ensureWordNumberSupport(showWordNumbers)]).then(function (res) {
       var data = res[0], books = res[1], book = books[p.book] || {};
       var name = book.nameDutch || p.book;
       var picked = (data.verses || []).filter(function (v) { return v.number >= p.from && v.number <= p.to; });
@@ -134,7 +178,11 @@
       var parts = picked.map(function (v) {
         var body = citaat ? (v.text2026_html || v.text2026 || '') : (v.text2026 || '');
         if (!citaat) body = escapeHtml(body);
-        if (typeof Opties !== 'undefined' && Opties.transformOV && opts.godsnaam === undefined) {
+        if (sharedView && opts.godsnaam === undefined) {
+          body = sharedView.transformeer(body, {
+            boek: p.book, hoofdstuk: p.chapter, vers: v.number, testament: book.testament
+          }, opts);
+        } else if (typeof Opties !== 'undefined' && Opties.transformOV && opts.godsnaam === undefined) {
           body = Opties.transformOV(body, book.testament);
           if (Opties.markeerGeo) body = Opties.markeerGeo(body, p.book, p.chapter, v.number);
           if (Opties.rekenMaten) body = Opties.rekenMaten(body, p.book, p.chapter, v.number);
@@ -143,7 +191,9 @@
           body = applyGodsnaam(body, gods);
         }
         var num = numbers ? '<sup class="osv-num">' + v.number + '</sup> ' : '';
-        return '<span class="osv-vers">' + num + body + '</span>';
+        var alignment = showWordNumbers && global.OVWoordnummers
+          ? global.OVWoordnummers.renderAlignment(v.grondtekst || []) : '';
+        return '<span class="osv-vers">' + num + body + alignment + '</span>';
       });
 
       var label = name + ' ' + p.chapter + ':' + p.from + (p.to !== p.from ? '-' + p.to : '');
@@ -156,7 +206,11 @@
 
       var plain = picked.map(function (v) {
         var t = v.text2026 || '';
-        if (typeof Opties !== 'undefined' && Opties.transformOV && opts.godsnaam === undefined) {
+        if (sharedView && opts.godsnaam === undefined) {
+          t = sharedView.transformeer(t, {
+            boek: p.book, hoofdstuk: p.chapter, vers: v.number, testament: book.testament
+          }, opts);
+        } else if (typeof Opties !== 'undefined' && Opties.transformOV && opts.godsnaam === undefined) {
           t = Opties.transformOV(t, book.testament);
           if (Opties.rekenMaten) t = Opties.rekenMaten(t, p.book, p.chapter, v.number);
           if (Opties.rekenTijden) t = Opties.rekenTijden(t, p.book, p.chapter, v.number, book.testament);
@@ -183,6 +237,7 @@
       citaat: el.getAttribute('data-osv-citaat'),
       link: el.getAttribute('data-osv-link'),
       godsnaam: el.getAttribute('data-osv-godsnaam') || undefined
+      ,strongs: el.getAttribute('data-osv-strongs')
     };
     el.classList.add('osv-cite');
     el.innerHTML = '<span class="osv-laden">…</span>';
@@ -207,6 +262,9 @@
       '.osv-cite .devil-speaks{color:#b8860b;font-style:italic;}' +
       '.osv-cite .angel-speaks{color:#1d4ed8;font-style:italic;}' +
       '.osv-cite .note-marker,.osv-cite .strongs-inline{display:none;}' +
+      '.osv-cite .strongs-alignment{display:flex;flex-wrap:wrap;gap:5px 9px;margin-top:.55em;padding-top:.45em;border-top:1px solid rgba(120,100,70,.18);direction:rtl;user-select:none;}' +
+      '.osv-cite .strongs-alignment-ltr{direction:ltr;}.osv-cite .strongs-token{display:inline-flex;flex-direction:column;align-items:center;direction:ltr;}' +
+      '.osv-cite .strongs-source-word{font-size:.92em;line-height:1.1;}.osv-cite .strongs-inline{display:inline-block;border:0;background:transparent;color:#246da8;font:inherit;font-size:.58em;cursor:pointer;}' +
       '.osv-cite .osv-bron{display:block;margin-top:.4em;font-family:system-ui,sans-serif;font-size:.8em;color:#7a6a3a;text-decoration:none;}' +
       '.osv-cite .osv-bron:hover{text-decoration:underline;}' +
       '.osv-cite .osv-merk{opacity:.75;}' +

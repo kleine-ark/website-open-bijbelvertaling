@@ -108,9 +108,8 @@ def main():
     }
 
     # === Nakijksnelheid + verwachte einddatum (zelf-bijwerkend) ===
-    # data/review-history.json houdt per datum het aantal nagekeken verzen bij.
-    # Elke build voegt de stand van vandaag toe; de snelheid is de lineaire trend
-    # (kleinste-kwadraten) over de hele historie, de ETA de projectie naar 100%.
+    # data/review-history.json wordt door het reviewproces bijgehouden. Deze build
+    # leest het bestand uitsluitend; releasebouw mag de reviewhistorie niet wijzigen.
     NL_M = ['', 'januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli',
             'augustus', 'september', 'oktober', 'november', 'december']
     hist_fp = os.path.join(DATA, 'review-history.json')
@@ -119,11 +118,11 @@ def main():
     except Exception:
         hist = {}
     today = datetime.date.today()
-    hist[today.isoformat()] = verses_ver
-    json.dump(hist, open(hist_fp, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
-    open(hist_fp, 'a', encoding='utf-8').write('\n')
-
     pts = sorted((datetime.date.fromisoformat(d), v) for d, v in hist.items())
+    if not pts or pts[-1][0] != today:
+        pts.append((today, verses_ver))
+    elif pts[-1][1] != verses_ver:
+        pts[-1] = (today, verses_ver)
     if len(pts) >= 2:
         x0 = pts[0][0].toordinal()
         xs = [p[0].toordinal() - x0 for p in pts]
@@ -133,6 +132,11 @@ def main():
         denom = n * sxx - sx * sx
         slope = (n * sxy - sx * sy) / denom if denom else 0.0   # verzen/dag
         remaining = verses_total - verses_ver
+        # Een lagere actuele stand betekent dat eerder foutief toegekende
+        # reviewstatus is gecorrigeerd. Toon dan geen misleidende snelheid/ETA.
+        corrected_downward = verses_ver < max(ys[:-1], default=0)
+        if corrected_downward:
+            slope = 0.0
         stats['review_verses_per_day'] = round(slope, 1)
         stats['review_verses_per_week'] = round(slope * 7)
         stats['review_remaining_verses'] = remaining

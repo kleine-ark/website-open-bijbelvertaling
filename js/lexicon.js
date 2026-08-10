@@ -20,6 +20,8 @@ const Lexicon = {
     },
 
     init() {
+        if (this._initialized) return;
+        this._initialized = true;
         // Klik: toon uitgebreide lexicon-entry
         document.addEventListener('click', (e) => {
             // Klik op grondtekst-woord
@@ -121,33 +123,52 @@ const Lexicon = {
     async showEntryByStrongs(strongs, anchorEl) {
         this.hideTooltip();
 
-        if (!/^[HG]\d+[A-Za-z]?$/.test(strongs)) return;
+        const family = window.OVWoordnummers
+            ? window.OVWoordnummers.familyOf(strongs)
+            : (/^H\d+[A-Za-z]?$/.test(strongs) ? 'H' : (/^G\d+[A-Za-z]?$/.test(strongs) ? 'G' : null));
+        if (!family) return;
 
         // Lazy-load lexicon indien nog niet geladen
-        if (window.LexiconLoader) {
-            await window.LexiconLoader.ensureLoaded(strongs.startsWith('H') ? 'hebrew' : 'greek');
+        if ((family === 'H' || family === 'G') && window.LexiconLoader) {
+            await window.LexiconLoader.ensureLoaded(family === 'H' ? 'hebrew' : 'greek');
         }
 
         let entry = null;
         let lexiconName = '';
+        let fullLink = '';
 
-        if (strongs.startsWith('H') && typeof bdbLexicon !== 'undefined') {
-            entry = bdbLexicon[strongs];
+        if (family === 'H') {
             lexiconName = 'BDB Hebreeuws';
-        } else if (strongs.startsWith('G') && typeof abbottSmithLexicon !== 'undefined') {
-            entry = abbottSmithLexicon[strongs];
+            fullLink = `lexicon-viewer.html?entry=${encodeURIComponent(strongs)}`;
+            if (typeof bdbLexicon !== 'undefined') entry = bdbLexicon[strongs];
+        } else if (family === 'G') {
             lexiconName = 'Abbott-Smith Grieks';
+            fullLink = `lexicon-viewer.html?entry=${encodeURIComponent(strongs)}`;
+            if (typeof abbottSmithLexicon !== 'undefined') entry = abbottSmithLexicon[strongs];
+        } else if (family === 'OVL') {
+            entry = {};
+            lexiconName = 'Lewis & Short Latijn';
+            fullLink = `lexicon-viewer.html?taal=latijn&zoek=${encodeURIComponent(strongs)}`;
+        } else if (family === 'OVG') {
+            entry = {};
+            lexiconName = 'Dillmann Ge’ez';
+            fullLink = `lexicon-viewer.html?taal=geez&zoek=${encodeURIComponent(strongs)}`;
         }
 
-        if (!entry) return;
+        // Een nummer blijft bruikbaar wanneer een lexiconartikel nog ontbreekt:
+        // toon de brongegevens en bied de volledige woordenboekzoeking aan.
+        if (!entry) entry = {};
 
-        const nl = await this.ensureNl(strongs.startsWith('H') ? 'hebrew' : 'greek');
+        const nl = (family === 'H' || family === 'G')
+            ? await this.ensureNl(family === 'H' ? 'hebrew' : 'greek') : {};
         const t = nl[strongs] || {};
 
-        const gloss = t.glossNl || t.samenvattingNl || entry.gloss || '';
+        const gloss = anchorEl.dataset.gloss || t.glossNl || t.samenvattingNl || entry.gloss || '';
         const woord = anchorEl.dataset.sourceWord || entry.woord || '';
         const transliteratie = anchorEl.dataset.transliteratie || entry.translit || entry.transliteratie || '';
-        const definitie = t.definitieNl || entry.definitie || '';
+        const definitie = t.definitieNl || entry.definitie ||
+            (gloss ? `Betekenis in deze bronkoppeling: ${gloss}.` : 'Voor dit woordnummer is nog geen lokale woordenboekdefinitie beschikbaar.');
+        if (!fullLink) fullLink = `lexicon-viewer.html?entry=${encodeURIComponent(strongs)}`;
 
         const sheet = document.createElement('div');
         sheet.id = 'strongs-sheet';
@@ -170,7 +191,7 @@ const Lexicon = {
                     ${transliteratie ? `<div class="strongs-sheet-transliteration">${this.escapeHtml(transliteratie)}</div>` : ''}
                     <div class="lexicon-gloss">${this.escapeHtml(gloss)}</div>
                     <div id="strongs-sheet-definition" class="lexicon-def">${this.sanitizeDefinition(definitie)}</div>
-                    <a id="strongs-sheet-full-link" class="strongs-sheet-full-link" href="lexicon-viewer.html?entry=${encodeURIComponent(strongs)}">Volledig woordenboekartikel openen →</a>
+                    <a id="strongs-sheet-full-link" class="strongs-sheet-full-link" href="${this.escapeHtml(fullLink)}">Volledig woordenboekartikel openen →</a>
                 </div>
             </section>`;
 
@@ -283,3 +304,5 @@ const Lexicon = {
         });
     }
 };
+
+if (typeof window !== 'undefined') window.Lexicon = Lexicon;

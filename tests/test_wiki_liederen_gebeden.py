@@ -66,6 +66,22 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         page.locator("#naslag h1").wait_for(state="visible")
         return page
 
+    def test_muziekinstrumenten_tonen_beeld_op_tegel_en_detailpagina(self):
+        page = self.open_page("muziekinstrumenten.html")
+        try:
+            cards = page.locator(".ns-kaart .ns-kaart-beeld")
+            self.assertEqual(cards.count(), 17)
+            harp_card = page.locator('.ns-kaart[href="?item=harp"] .ns-kaart-beeld')
+            self.assertTrue(harp_card.get_attribute("src").endswith("/harp.webp"))
+
+            page.locator('.ns-kaart[href="?item=harp"]').click()
+            detail = page.locator(".ns-detail-beeld")
+            detail.wait_for(state="visible")
+            self.assertTrue(detail.get_attribute("src").endswith("/harp.webp"))
+            self.assertEqual(detail.get_attribute("alt"), "Harp")
+        finally:
+            page.close()
+
     def test_liederen_overzicht_is_genummerd_en_toont_bijbelgedeelten(self):
         page = self.open_page("liederen.html")
         try:
@@ -88,7 +104,7 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         page = self.open_page("gebeden.html")
         try:
             labels = page.locator(".ns-kaart .ns-nummer").all_inner_texts()
-            self.assertEqual(labels, [f"Gebed {number}" for number in range(1, 46)])
+            self.assertEqual(labels, [f"Gebed {number}" for number in range(1, 133)])
             self.assertEqual(page.locator(".ns-lead").count(), 0)
             names = page.locator(".ns-kaart-naam").all_inner_texts()
             self.assertEqual(
@@ -102,13 +118,14 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         finally:
             page.close()
 
-    def test_gebedstegels_tonen_bijbelboeken_in_plaats_van_vindplaatsen(self):
+    def test_gebedstegels_tonen_bijbelboeken_met_hoofdstuknummers(self):
         page = self.open_page("gebeden.html")
         try:
-            boeken = page.locator(".ns-kaart .ns-kaart-passage").all_inner_texts()
-            self.assertEqual(len(boeken), 45)
-            self.assertEqual(boeken[0], "Genesis")
-            self.assertEqual(boeken[2], "Exodus · Numeri")
+            passages = page.locator(".ns-kaart .ns-kaart-passage").all_inner_texts()
+            self.assertEqual(len(passages), 132)
+            self.assertEqual(passages[0], "Genesis 18")
+            self.assertEqual(passages[2], "Exodus 5")
+            self.assertEqual(passages[4], "Exodus 32 · Deuteronomium 9")
             self.assertEqual(page.locator(".ns-kaart .ns-kaart-tal").count(), 0)
             self.assertNotIn("vindplaats", page.locator(".ns-rooster").inner_text().lower())
         finally:
@@ -121,7 +138,7 @@ class WikiLiederenGebedenTest(unittest.TestCase):
             page.locator(".wo-badge").first.wait_for(state="visible")
             badges = page.locator(".wo-badge").all_inner_texts()
             self.assertIn("177 liederen", badges)
-            self.assertIn("45 gebeden", badges)
+            self.assertIn("132 gebeden", badges)
         finally:
             page.close()
 
@@ -143,13 +160,13 @@ class WikiLiederenGebedenTest(unittest.TestCase):
             page.close()
 
     def test_gebed_met_meerdere_passages_toont_alle_koppen(self):
-        page = self.open_page("gebeden.html?item=mozes-voorbeden-voor-israel")
+        page = self.open_page("gebeden.html?item=mozes-voorbede-na-het-gouden-kalf")
         try:
             page.locator(".ns-volledige-tekst .ns-tekstvers").first.wait_for()
-            self.assertEqual(page.locator(".ns-nummer").first.inner_text(), "Gebed 3")
+            self.assertEqual(page.locator(".ns-nummer").first.inner_text(), "Gebed 5")
             self.assertEqual(
                 page.locator(".ns-passage > h3").all_inner_texts(),
-                ["Exodus 32:11–14", "Numeri 14:13–19"],
+                ["Exodus 32:11–14", "Deuteronomium 9:26–29"],
             )
         finally:
             page.close()

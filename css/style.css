@@ -1002,7 +1002,40 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     color: var(--text-primary);
     border: 0;
     border-bottom: 1px solid var(--border-soft);
+    cursor: grab;
+    touch-action: none;
 }
+
+/* De tekstrichting hoort bij de gekozen Bijbeltekst, niet bij de Nederlandse UI. */
+.verse-cell.col-2026[dir="rtl"] {
+    direction: rtl;
+    text-align: start;
+    unicode-bidi: plaintext;
+    font-family: "Noto Naskh Arabic", "Amiri", serif;
+}
+
+.translation-unavailable {
+    max-width: 42rem;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    border-inline-start: 4px solid var(--gold);
+    background: rgba(199, 154, 58, 0.08);
+}
+
+.translation-unavailable a {
+    color: var(--teal);
+    font-weight: 600;
+}
+#sidebar-right.options-panel.is-dragging,
+#sidebar-right.options-panel.has-custom-position {
+    animation: none;
+    opacity: 1;
+    transform: none;
+}
+#sidebar-right.options-panel.is-dragging { user-select: none; }
+#sidebar-right.options-panel.is-dragging #sidebar-right-header { cursor: grabbing; }
+#sidebar-right-header button,
+#sidebar-right-header [role="tab"] { cursor: pointer; }
 .options-sheet-grip { display: none; }
 #sidebar-right-toggle {
     position: absolute;
@@ -1362,6 +1395,8 @@ body.options-open #sidebar-right-open { visibility: hidden; }
         background: #fbfaf7;
         color: #172d40;
         border-bottom-color: rgba(20, 46, 66, 0.14);
+        cursor: default;
+        touch-action: auto;
     }
     #sidebar-right-toggle {
         top: 70px;
@@ -2007,17 +2042,22 @@ body.hide-verse-numbers .verse-num::after {
 
 body.reader-font-klassiek #content.reading-mode .verse-cell:not(.col-hebrew),
 body.reader-font-klassiek .chapter-intro-inline,
-body.reader-font-klassiek .book-intro-inline {
+body.reader-font-klassiek .book-intro-inline,
+body.reader-font-klassiek .osv-cite {
     font-family: var(--font-serif);
 }
 body.reader-font-rustig #content.reading-mode .verse-cell:not(.col-hebrew),
 body.reader-font-rustig .chapter-intro-inline,
-body.reader-font-rustig .book-intro-inline {
+body.reader-font-rustig .book-intro-inline,
+body.reader-font-rustig .osv-cite {
     font-family: var(--font-body);
 }
 body.reader-spacing-compact #content.reading-mode .verse-cell:not(.col-hebrew) { line-height: 1.55; }
 body.reader-spacing-normaal #content.reading-mode .verse-cell:not(.col-hebrew) { line-height: 1.85; }
 body.reader-spacing-ruim #content.reading-mode .verse-cell:not(.col-hebrew) { line-height: 2.15; }
+body.reader-spacing-compact .osv-cite { line-height: 1.55; }
+body.reader-spacing-normaal .osv-cite { line-height: 1.85; }
+body.reader-spacing-ruim .osv-cite { line-height: 2.15; }
 
 /* --- Zoomregeling: tekst moet echt meeschalen --------------------------------
    De zweefknop zet `zoom` op <html>. Dat is geen standaard-eigenschap: Chromium
@@ -2364,11 +2404,15 @@ sup.note-marker:hover {
     font-family: var(--font-body);
     user-select: none;
 }
+.strongs-alignment-ltr,
 .strongs-alignment-greek { direction: ltr; }
+.strongs-alignment-ltr .strongs-source-word,
 .strongs-alignment-greek .strongs-source-word {
     direction: ltr;
     font-family: var(--font-serif);
 }
+.strongs-token-latin .strongs-source-word { font-style: italic; }
+.strongs-token-geez .strongs-source-word { font-family: "Noto Serif Ethiopic", var(--font-serif); }
 .strongs-token {
     display: inline-flex;
     flex-direction: column;

@@ -29,7 +29,8 @@ const DataLoader = {
 
     /** Laadt 1 hoofdstuk en merget localStorage-edits. */
     async loadChapter(bookId, chapterNum) {
-        const key = `${bookId}:${chapterNum}`;
+        const edition = (typeof TekstEditie !== 'undefined') ? TekstEditie.code() : 'nl-ov';
+        const key = `${edition}:${bookId}:${chapterNum}`;
         if (this.chapterCache[key]) {
             // bump LRU
             const idx = this._chapterCacheOrder.indexOf(key);
@@ -37,12 +38,17 @@ const DataLoader = {
             this._chapterCacheOrder.push(key);
             return this.chapterCache[key];
         }
-        const resp = await fetch(`data/${bookId}/${chapterNum}.json`);
-        if (!resp.ok) return null;
-        const ch = await resp.json();
+        let ch;
+        if (edition !== 'nl-ov' && typeof TekstEditie !== 'undefined') {
+            ch = await TekstEditie.loadChapter(bookId, chapterNum);
+        } else {
+            const resp = await fetch(`data/${bookId}/${chapterNum}.json`);
+            if (!resp.ok) return null;
+            ch = await resp.json();
+        }
 
         // Merge localStorage edits voor deze chapter
-        const edits = (typeof Storage !== 'undefined') ? Storage.getEdits(bookId) : null;
+        const edits = edition === 'nl-ov' && (typeof Storage !== 'undefined') ? Storage.getEdits(bookId) : null;
         if (edits) this._mergeChapterEdits(ch, edits, chapterNum);
 
         this.chapterCache[key] = ch;
@@ -123,11 +129,18 @@ const DataLoader = {
         delete this.bookManifestCache[bookId];
         // chapter-cache for this book
         for (const key of [...this._chapterCacheOrder]) {
-            if (key.startsWith(bookId + ':')) {
+            if (key.includes(':' + bookId + ':') || key.startsWith(bookId + ':')) {
                 const idx = this._chapterCacheOrder.indexOf(key);
                 if (idx >= 0) this._chapterCacheOrder.splice(idx, 1);
                 delete this.chapterCache[key];
             }
         }
-    }
+    },
+
+    invalidateAllChapters() {
+        this.chapterCache = {};
+        this._chapterCacheOrder = [];
+    },
 };
+
+if (typeof window !== 'undefined') window.DataLoader = DataLoader;
