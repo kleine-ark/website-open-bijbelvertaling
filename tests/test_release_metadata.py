@@ -12,6 +12,29 @@ def read_json(path):
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
 
+def test_build_stats_defaults_follow_current_changelog():
+    result = subprocess.run(
+        [
+            "python",
+            "-c",
+            (
+                "import json; "
+                "from scripts.build_stats import default_release_metadata; "
+                "print(json.dumps(default_release_metadata()))"
+            ),
+        ],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    version, datum = json.loads(result.stdout)
+    release = read_json("data/changelog.json")["wijzigingen"][0]
+
+    assert version == release["versie"]
+    assert datum == "10 augustus 2026"
+
+
 def service_worker_install_cache():
     script = r"""
 const handlers = {};
@@ -68,17 +91,35 @@ def test_current_release_describes_woordnummers_en_uses_one_version():
     assert stats["date"] == "10 augustus 2026"
 
 
-def test_human_review_statistics_include_numeri_en_deuteronomium_1_tot_5():
+def test_human_review_statistics_include_nt_numeri_en_heel_deuteronomium():
     stats = read_json("data/stats.json")
     verified = read_json("data/verified-chapters.json")
 
-    assert stats["books_verified"] == 6
-    assert stats["chapters_verified"] == 174
-    assert stats["verses_verified"] == 5394
+    assert stats["books_verified"] == 52
+    assert stats["chapters_verified"] == 714
+    assert stats["verses_verified"] == 19196
+    assert stats["verses_verified_pct"] == 51.6
     assert "Numeri" in stats["verified_books"]
-    assert "Deuteronomium 1–5" in stats["verified_books"]
+    assert "Deuteronomium" in stats["verified_books"]
+    assert stats["nt_verses_verified"] == 7960
+    assert stats["nt_verses_verified_pct"] == 100.0
+    assert stats["ap_verses_verified"] == 1219
+    assert stats["ap_verses_verified_pct"] == 20.1
     assert verified["numeri"] == "all"
-    assert verified["deuteronomium"] == [1, 2, 3, 4, 5]
+    assert verified["deuteronomium"] == "all"
+    assert verified["mattheus"] == "all"
+    assert verified["openbaring"] == "all"
+    assert verified["psalmen"] == "all"
+    assert verified["prediker"] == "all"
+    for kleine_profeet in (
+        "hosea", "joel", "amos", "obadja", "jona", "micha", "nahum",
+        "habakuk", "zefanja", "haggai", "zacharia", "maleachi",
+    ):
+        assert verified[kleine_profeet] == "all"
+    assert verified["1makkabeeen"] == "all"
+    assert verified["baruch"] == "all"
+    assert verified["gebedvanmanasse"] == "all"
+    assert verified["susanna"] == "all"
 
 
 def test_desktop_version_remains_independent():
