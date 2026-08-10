@@ -18,8 +18,27 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
     assert verified["prediker"] == "all"
     assert verified["ruth"] == "all"
     assert verified["numeri"] == "all"
-    assert verified["deuteronomium"] == [1, 2, 3, 4, 5]
-    assert 6 not in verified["deuteronomium"]
+    assert verified["deuteronomium"] == "all"
+
+    nieuw_testament = {
+        "mattheus", "markus", "lukas", "johannes", "handelingen", "romeinen",
+        "1korinthiers", "2korinthiers", "galaten", "efeziers", "filippenzen",
+        "kolossenzen", "1tessalonicensen", "2tessalonicensen", "1timotheus",
+        "2timotheus", "titus", "filemon", "hebreeen", "jakobus", "1petrus",
+        "2petrus", "1johannes", "2johannes", "3johannes", "judas", "openbaring",
+    }
+    assert all(verified.get(boek) == "all" for boek in nieuw_testament)
+
+    eerder_menselijk_nagekeken_ot = {
+        "psalmen", "ezra", "prediker", "hosea", "joel", "amos", "obadja",
+        "jona", "micha", "nahum", "habakuk", "zefanja", "haggai",
+        "zacharia", "maleachi",
+    }
+    nagekeken_apocrieven = {
+        "1makkabeeen", "baruch", "gebedvanmanasse", "susanna",
+    }
+    assert all(verified.get(boek) == "all" for boek in eerder_menselijk_nagekeken_ot)
+    assert all(verified.get(boek) == "all" for boek in nagekeken_apocrieven)
 
     assert set(verified) == {
         "genesis",
@@ -29,7 +48,7 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
         "prediker",
         "numeri",
         "deuteronomium",
-    }
+    } | nieuw_testament | eerder_menselijk_nagekeken_ot | nagekeken_apocrieven
 
     niet_menselijk_bevestigd = {
         "jozua",
@@ -50,6 +69,5 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
         "klaagliederen",
         "ezechiel",
         "daniel",
-        "zacharia",
     }
     assert niet_menselijk_bevestigd.isdisjoint(verified)

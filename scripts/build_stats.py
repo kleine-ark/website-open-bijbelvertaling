@@ -25,9 +25,21 @@ def parse_verified():
     with open(pad, encoding='utf-8') as fh:
         return json.load(fh)
 
+
+def default_release_metadata():
+    """Lees de actuele versie en datum uit de bovenste changelogvermelding."""
+    pad = os.path.join(DATA, 'changelog.json')
+    with open(pad, encoding='utf-8') as fh:
+        release = json.load(fh)['wijzigingen'][0]
+    dag = datetime.date.fromisoformat(release['datum'])
+    maanden = ('', 'januari', 'februari', 'maart', 'april', 'mei', 'juni',
+               'juli', 'augustus', 'september', 'oktober', 'november', 'december')
+    return release['versie'], f'{dag.day} {maanden[dag.month]} {dag.year}'
+
 def main():
-    version = sys.argv[1] if len(sys.argv) > 1 else 'v0.17.0'
-    datum = sys.argv[2] if len(sys.argv) > 2 else '7 juni 2026'
+    standaardversie, standaarddatum = default_release_metadata()
+    version = sys.argv[1] if len(sys.argv) > 1 else standaardversie
+    datum = sys.argv[2] if len(sys.argv) > 2 else standaarddatum
 
     books = json.load(open(os.path.join(DATA, 'books.json'), encoding='utf-8'))['books']
     verified = parse_verified()

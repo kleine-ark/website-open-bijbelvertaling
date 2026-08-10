@@ -73,11 +73,35 @@ def test_menselijk_afgeronde_boeken_staan_volledig_in_epub(epub, verified):
         assert koppen == set(range(1, laatste_hoofdstuk + 1))
 
 
-def test_deuteronomium_bevat_alleen_de_eerste_vijf_nagekeken_hoofdstukken(epub, verified):
-    assert verified["deuteronomium"] == [1, 2, 3, 4, 5]
+def test_deuteronomium_staat_volledig_in_de_nagekeken_epub(epub, verified):
+    assert verified["deuteronomium"] == "all"
     inhoud = epub.read("OEBPS/deuteronomium.xhtml").decode("utf-8")
     koppen = {int(nr) for nr in re.findall(r'<h2 id="h(\d+)">', inhoud)}
-    assert koppen == {1, 2, 3, 4, 5}
+    assert koppen == set(range(1, 35))
+
+
+def test_het_volledige_nieuwe_testament_staat_in_de_nagekeken_epub(epub, verified):
+    for boek, laatste_hoofdstuk in (("mattheus", 28), ("johannes", 21), ("openbaring", 22)):
+        assert verified[boek] == "all"
+        inhoud = epub.read(f"OEBPS/{boek}.xhtml").decode("utf-8")
+        koppen = {int(nr) for nr in re.findall(r'<h2 id="h(\d+)">', inhoud)}
+        assert koppen == set(range(1, laatste_hoofdstuk + 1))
+
+
+def test_de_bevestigde_apocriefe_boeken_staan_in_de_nagekeken_epub(epub, verified):
+    for boek, laatste_hoofdstuk in (("1makkabeeen", 16), ("baruch", 6), ("gebedvanmanasse", 1), ("susanna", 1)):
+        assert verified[boek] == "all"
+        inhoud = epub.read(f"OEBPS/{boek}.xhtml").decode("utf-8")
+        koppen = {int(nr) for nr in re.findall(r'<h2 id="h(\d+)">', inhoud)}
+        assert koppen == set(range(1, laatste_hoofdstuk + 1))
+
+
+def test_alle_kleine_profeten_staan_in_de_nagekeken_epub(epub, verified):
+    for boek, laatste_hoofdstuk in (("hosea", 14), ("joel", 3), ("amos", 9), ("obadja", 1), ("jona", 4), ("micha", 7), ("nahum", 3), ("habakuk", 3), ("zefanja", 3), ("haggai", 2), ("zacharia", 14), ("maleachi", 4)):
+        assert verified[boek] == "all"
+        inhoud = epub.read(f"OEBPS/{boek}.xhtml").decode("utf-8")
+        koppen = {int(nr) for nr in re.findall(r'<h2 id="h(\d+)">', inhoud)}
+        assert koppen == set(range(1, laatste_hoofdstuk + 1))
 
 
 def test_inhoudsopgave_verwijst_alleen_naar_bestaande_bestanden(epub):
