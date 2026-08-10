@@ -55,7 +55,8 @@
         item._gtVerzoek = verzoek;
 
         teksthouder.innerHTML = '<span class="osv-laden">…</span>';
-        if (!parts || !global.OSV || typeof global.OSV.cite !== 'function') {
+        if (!parts || !global.OVTekstweergave ||
+            typeof global.OVTekstweergave.renderNaslagtekst !== 'function') {
             teksthouder.innerHTML = '<span class="osv-fout">Deze tekst kon niet geladen worden.</span>';
             plus.hidden = true;
             min.hidden = true;
@@ -67,9 +68,11 @@
         var citeRef = parts.boek + ' ' + parts.hoofdstuk + ':' + van +
             (tot !== van ? '-' + tot : '');
 
-        return global.OSV.cite(citeRef, { link: false }).then(function (resultaat) {
+        return global.OVTekstweergave.renderNaslagtekst(teksthouder, citeRef, {
+            toonLink: false,
+            target: '_top'
+        }).then(function () {
             if (item._gtVerzoek !== verzoek) return;
-            teksthouder.innerHTML = resultaat.html;
             markeerVerzen(teksthouder, parts, metContext);
             plus.hidden = metContext;
             min.hidden = !metContext;

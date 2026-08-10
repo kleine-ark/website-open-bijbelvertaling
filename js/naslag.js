@@ -278,7 +278,8 @@
     function laadVolledigeTekst(d, it) {
         var container = houder.querySelector('.ns-volledige-tekst');
         if ((d.nummerType === 'Lied' || d.nummerType === 'Gebed') &&
-            globalThis.OSV && typeof globalThis.OSV.cite === 'function') {
+            globalThis.OVTekstweergave &&
+            typeof globalThis.OVTekstweergave.renderNaslagtekst === 'function') {
             if (d.nummerType === 'Gebed') laadGebedtekstUitCitaten(container, it);
             else laadLiedtekstUitCitaten(container, it);
             return;
@@ -302,15 +303,16 @@
         var taken = passages.map(function (passage) {
             var passageNode = maakElement('section', 'ns-passage ns-liedcitaat');
             passageNode.appendChild(maakElement('h3', '', passage.label));
-            var citaat = maakElement('div', 'osv-cite ns-liedtekst');
+            var citaat = maakElement('div', 'ns-liedtekst');
             citaat.innerHTML = '<span class="osv-laden">…</span>';
             passageNode.appendChild(citaat);
             container.appendChild(passageNode);
 
             var ref = passage.boek + ' ' + passage.hoofdstuk + ':' + passage.van +
                 (passage.tot !== passage.van ? '-' + passage.tot : '');
-            return globalThis.OSV.cite(ref, { link: false }).then(function (resultaat) {
-                citaat.innerHTML = resultaat.html;
+            return globalThis.OVTekstweergave.renderNaslagtekst(citaat, ref, {
+                linkLabel: passage.label,
+                target: '_top'
             });
         });
         Promise.all(taken).catch(function () {
@@ -331,15 +333,11 @@
             for (var nummer = passage.van; nummer <= passage.tot; nummer++) {
                 (function (versnummer) {
                     var verseNode = maakElement('p', 'ns-tekstvers');
-                    var link = maakElement('a', 'ns-tekstvers-link');
-                    link.href = 'index.html#' + passage.boek + '/' + passage.hoofdstuk + '/' + versnummer;
-                    link.target = '_top';
-                    link.innerHTML = '<span class="osv-laden">…</span>';
-                    verseNode.appendChild(link);
                     passageNode.appendChild(verseNode);
                     var ref = passage.boek + ' ' + passage.hoofdstuk + ':' + versnummer;
-                    taken.push(globalThis.OSV.cite(ref, { link: false }).then(function (resultaat) {
-                        link.innerHTML = resultaat.html;
+                    taken.push(globalThis.OVTekstweergave.renderNaslagtekst(verseNode, ref, {
+                        linkClass: 'ns-tekstvers-link',
+                        target: '_top'
                     }));
                 })(nummer);
             }

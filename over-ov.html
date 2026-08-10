@@ -150,6 +150,10 @@
         .page h2 { color: var(--navy); font-size: 20px; margin: 32px 0 12px; border-bottom: 2px solid var(--gold); padding-bottom: 6px; }
         .page h3 { color: var(--teal); font-size: 16px; margin: 24px 0 8px; }
         .page p { line-height: 1.8; margin-bottom: 14px; color: #333; }
+        .woordkracht-intro { font-size: 17px; border-left: 3px solid var(--gold); padding: 12px 16px; margin: 18px 0 22px; }
+        .woordkracht-tekst { display: block; margin: 0 0 16px !important; }
+        .woordkracht-tekst:last-child { margin-bottom: 0 !important; }
+        .woordkracht-ref { color: var(--teal) !important; font-weight: 600; white-space: nowrap; text-decoration: none; }
         .page ul { padding-left: 24px; margin-bottom: 16px; }
         .page li { line-height: 1.7; margin-bottom: 6px; }
         .page a { color: var(--gold); }
@@ -177,7 +181,13 @@
 
     <div class="page">
         <h1>Over de Open Vertaling</h1>
-        <p style="margin:8px 0 18px;"><a href="bronnen.html" style="color:var(--teal);font-weight:600;">→ Verantwoording &amp; volledige bronnenlijst</a></p>
+        <div class="woordkracht-intro">
+            <p class="woordkracht-tekst"><em>&ldquo;Waarmee zal de jongeling zijn pad zuiver houden? Als hij dat houdt naar Uw woord.&rdquo;</em> <a class="woordkracht-ref" href="index.html#psalmen/119/9">Psalmen 119:9</a></p>
+            <p class="woordkracht-tekst"><em>&ldquo;Want het Woord van God is levend en krachtig, en scherpsnijdender dan enig tweesnijdend zwaard, en gaat door tot de verdeling van de ziel, en van de geest, en van de samenvoegselen, en van het merg, en is een oordeler van de gedachten en van de overleggingen van het hart.&rdquo;</em> <a class="woordkracht-ref" href="index.html#hebreeen/4/12">Hebreeën 4:12</a></p>
+            <p class="woordkracht-tekst"><em>&ldquo;Zo zal Mijn woord, dat uit Mijn mond uitgaat, ook zijn, het zal niet leeg tot Mij terugkeren; maar het zal doen, wat Mij behaagt, en het zal voorspoedig zijn in wat, waartoe Ik het zend.&rdquo;</em> <a class="woordkracht-ref" href="index.html#jesaja/55/11">Jesaja 55:11</a></p>
+            <p class="woordkracht-tekst"><em>&ldquo;Is Mijn woord niet zo, als een vuur? spreek JAHWEH, en als een hamer, die een steenrots te morzel slaat?&rdquo;</em> <a class="woordkracht-ref" href="index.html#jeremia/23/29">Jeremia 23:29</a></p>
+        </div>
+        <p style="margin:8px 0 18px;"><a href="wiki.html#bronnen" style="color:var(--teal);font-weight:600;">→ Verantwoording &amp; volledige bronnenlijst</a></p>
         <p class="subtitle">Herziening van de Statenvertaling 1637/1888</p>
 
         <style>
@@ -196,7 +206,7 @@
             <li><strong>Public domain.</strong> De tekst is vrij van rechten (CC0) &mdash; vrij te gebruiken voor prediking, studie, apps of welk doel dan ook.</li>
             <li><strong>Open keuzes.</strong> Voor herzieningskeuzes waarover discussie mogelijk is, zijn er keuzeopties (bijvoorbeeld de weergave van de Godsnaam).</li>
             <li><strong>Open voor meer tradities.</strong> Zowel protestants, orthodox als katholiek. De apocriefe boeken zijn ook opgenomen.</li>
-            <li><strong>Open einde.</strong> Het is een project dat vermoedelijk nooit helemaal &lsquo;af&rsquo; zal zijn, maar onderhevig blijft aan nieuwe inzichten en herzieningen &mdash; altijd gebaseerd op de Statenvertaling.</li>
+            <li><strong>Open einde.</strong> Het is een project dat vermoedelijk nooit helemaal &lsquo;af&rsquo; zal zijn, maar onderhevig blijft aan nieuwe inzichten en herzieningen.</li>
         </ul>
         <p>Het gaat erom dat Gods Woord <strong>begrepen</strong> wordt. Daarom staan er
         keuzeopties in de vertaling die daarbij helpen. U bepaalt zelf wat u ziet;
@@ -215,10 +225,6 @@
             <li><strong>De Naam van God, en die van Jezus.</strong> JAHWEH of HEERE;
             Jezus Christus, Yeshua HaMashiach, of Yasū&#703; al-Masīḥ.</li>
         </ul>
-        <p>Wie de oorspronkelijke bewoording wil zien, zet de opties gewoon uit. Ze
-        veranderen niets aan de vertaling &mdash; ze staan ernaast, zoals een kanttekening
-        dat ook doet.</p>
-
         <h2>Doel en aanleiding</h2>
         <p>De directe aanleiding was dat we een evangelisatietraktaat wilde gaan drukken met meerdere boeken en hoofdstukken uit Gods Woord in de HSV. Het blijkt dat er auteursrecht zit op vrijwel alle leesbare 20e- en 21e-eeuwse vertalingen van Gods Woord.</p>
         <p class="highlight"><strong>Er is momenteel dus geen betrouwbare en leesbare Nederlandse vertaling van Gods Woord die vrij is van auteursrecht.</strong></p>
@@ -322,10 +328,9 @@
         <p style="font-size:13px;color:#666;">Wat <strong>blijft staan</strong>: Schrift-eigen register als <em>uitspansel</em>, <em>gedierte</em>, <em>gevogelte</em>, <em>geboomte</em>, en vaste uitdrukkingen als <em>te zijner tijd</em>, <em>voorwaar</em>. Zie de <a href="principes.html">complete principe-lijst</a> voor regex, aantallen en uitzonderingen.</p>
 
         <h2 id="status">Status project: in ontwikkeling</h2>
-        <p>De hertaling is met behulp van AI gedaan. De <strong>werkmethode</strong> is dat we tijdens het lezen <strong>wijzigingsprincipes vastleggen</strong>. Deze worden met behulp van AI in heel Gods Woord doorgevoerd, en vervolgens <strong>handmatig gecontroleerd op uitzonderingen</strong>.</p>
         <p>Onderstaande gedeelten zijn <strong>door een mens vers voor vers nagelopen en gecontroleerd</strong>. Er zal ook nog een 2<sup>e</sup> ronde nodig zijn omdat de principes steeds uitgebreid worden.</p>
         <div style="background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 6px 6px 0;padding:10px 14px;margin:10px 0;font-size:13px;line-height:1.6;color:#14532d;">
-            <strong>✓ Het volledige Nieuwe Testament is klaar (eerste ronde).</strong> Alle 27 boeken van het Nieuwe Testament zijn vers voor vers nagelopen (100&#37;). Uit het <strong>Oude Testament</strong> zijn gereed: <strong>Genesis 1&ndash;20</strong>, <strong>Psalmen</strong>, <strong>Ezra</strong>, <strong>Hosea</strong>, <strong>Maleachi</strong>, <strong>Haggai</strong>, <strong>Zefanja</strong> en <strong>Habakuk</strong>. Uit de apocriefen zijn o.a. Baruch, 1&nbsp;Makkabee&euml;n, Susanna en het Gebed van Manasse nagelopen.
+            <strong>✓ Het volledige Nieuwe Testament is klaar (eerste ronde).</strong> Alle 27 boeken van het Nieuwe Testament zijn vers voor vers nagelopen (100&#37;). Uit het <strong>Oude Testament</strong> zijn gereed: <strong>Genesis</strong>, <strong>Exodus</strong>, <strong>Leviticus</strong>, <strong>Numeri</strong>, <strong>Deuteronomium</strong>, <strong>Ruth</strong>, <strong>Ezra</strong>, <strong>Psalmen</strong>, <strong>Prediker</strong> en <strong>de twaalf kleine profeten</strong>. Uit de apocriefe boeken zijn gereed: <strong>Baruch</strong>, <strong>Susanna</strong>, <strong>het Gebed van Manasse</strong> en <strong>1&nbsp;Makkabee&euml;n</strong>.
         </div>
         <div style="background:#fef3c7;border-left:4px solid #f59e0b;border-radius:0 6px 6px 0;padding:10px 14px;margin:10px 0;font-size:13px;line-height:1.6;color:#78350f;">
             <strong>⚠ Let op:</strong> ook reeds nageleze delen kunnen <strong>met terugwerkende kracht nog wijzigen</strong>. Als er een nieuw wijzigingsprincipe wordt toegevoegd of een bestaand principe wordt aangepast, dan wordt dat in heel Gods Woord doorgevoerd — inclusief de gedeelten die al eerder zijn gecontroleerd.
