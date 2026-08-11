@@ -53,7 +53,7 @@ class OptionsRedesignTests(unittest.TestCase):
             self.assertEqual(page.locator('#sidebar-right [role="tab"]').count(), 0)
             self.assertEqual(
                 page.locator("#sidebar-right > .options-body > details.options-category > summary").all_text_contents(),
-                ["Meest gebruikt", "Weergave", "Vertalingen, talen & kanttekeningen", "Theologie", "Voorlezen"],
+                ["Meest gebruikt", "Vertalingen, talen & kanttekeningen", "Weergave", "Theologie", "Voorlezen"],
             )
             self.assertTrue(page.locator("details.options-category").first.get_attribute("open") is not None)
         finally:
@@ -120,12 +120,12 @@ class OptionsRedesignTests(unittest.TestCase):
 
             self.assertTrue({
                 "Dyslexiemodus", "Doorlopend lezen", "Godsnaam in het Oude Testament",
-                "Thema", "Namen van personen", "Strong- en woordnummers",
+                "Thema", "Regelafstand", "Namen van personen", "Strong- en woordnummers",
                 "Verschillen SV–OV",
             }.issubset(labels("meest-gebruikt")))
             self.assertTrue({
                 "Dyslexiemodus", "Citaatopmaak", "Doorlopend lezen", "Versnummers",
-                "Hoofdstuknummers", "Lettertype", "Thema", "Regelafstand",
+                "Hoofdstuknummers", "Alternatief lettertype", "Thema", "Regelafstand",
             }.issubset(labels("weergave")))
             self.assertIn("Strong- en woordnummers", labels("bronnen"))
             self.assertTrue({
@@ -155,11 +155,17 @@ class OptionsRedesignTests(unittest.TestCase):
             self.assertTrue(primary_dyslexia.is_checked())
             self.assertEqual(page.evaluate("localStorage.getItem('dyslexia')"), "true")
 
-            mirror_theme = most.locator('[data-option-mirror="thema"] input[value="donker"]')
-            primary_theme = view.locator('[data-optie="thema"][value="donker"]')
-            mirror_theme.check()
-            self.assertTrue(primary_theme.is_checked())
+            mirror_theme = most.locator('[data-option-mirror="thema"] select')
+            primary_theme = view.locator('select[data-optie="thema"]')
+            mirror_theme.select_option("donker")
+            self.assertEqual(primary_theme.input_value(), "donker")
             self.assertEqual(page.evaluate("Opties.state.thema"), "donker")
+
+            mirror_spacing = most.locator('[data-option-mirror="regelafstand"] input')
+            primary_spacing = view.locator("#opt-regelafstand")
+            mirror_spacing.fill("2")
+            mirror_spacing.dispatch_event("change")
+            self.assertEqual(primary_spacing.input_value(), "2")
 
             primary_arabic = theology.locator('[data-optie="arabischeNamen"][value="aan"]')
             mirror_arabic = most.locator('[data-option-mirror="arabische-namen"] input[value="aan"]')

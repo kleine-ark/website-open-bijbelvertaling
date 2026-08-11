@@ -68,15 +68,6 @@ const OptionsPanel = {
 
         const definitions = [
             {
-                key: 'weergave', label: 'Weergave',
-                selectors: [
-                    '#toggle-dyslexia', '#toggle-citaten', '#toggle-doorlopend',
-                    '#toggle-versnummers', '#toggle-hoofdstuknummers',
-                    '[data-optie="lettertype"]', '[data-optie="thema"]',
-                    '#opt-regelafstand', '#toggle-pericopen', '#options-zoom',
-                ],
-            },
-            {
                 key: 'bronnen', label: 'Vertalingen, talen & kanttekeningen',
                 selectors: [
                     '#opt-teksteditie', '#toggle-book-intro', '#toggle-chapter-intro',
@@ -85,6 +76,15 @@ const OptionsPanel = {
                     '[data-optie="kolomLayout"]', '[data-toggle-col="noteDiff"]',
                     '[data-toggle-col="hebrew"]', '#toggle-hs-vers', '#toggle-tags',
                     '#toggle-geo-markeren',
+                ],
+            },
+            {
+                key: 'weergave', label: 'Weergave',
+                selectors: [
+                    '#toggle-citaten', '#toggle-doorlopend',
+                    '#toggle-versnummers', '#toggle-hoofdstuknummers',
+                    '#toggle-lettertype-alternatief', '[data-optie="thema"]',
+                    '#opt-regelafstand', '#toggle-pericopen', '#options-zoom', '#toggle-dyslexia',
                 ],
             },
             {
@@ -141,6 +141,7 @@ const OptionsPanel = {
             ['doorlopend', '#toggle-doorlopend'],
             ['godsnaam', '[data-option-summary="godsnaam"]'],
             ['thema', '[data-optie="thema"]'],
+            ['regelafstand', '#opt-regelafstand'],
             ['arabische-namen', '[data-option-summary="arabischeNamen"]'],
             ['strongs', '#toggle-strongs'],
             ['verschillen', '[data-toggle-col="diff"]'],

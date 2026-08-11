@@ -2104,7 +2104,7 @@
       "number": 21,
       "textSV1888": "Of hem door vijandschap met zijn hand geslagen heeft, dat hij gestorven zij; de slager zal zekerlijk gedood worden, een doodslager is hij; de bloedwreker zal dezen doodslager doden, als hij hem ontmoet.",
       "text1637": "Ofte hem door vyantschap met sijne hant geslagen heeft, dat hy gestorven zy, de slager sal sekerlick gedoodt worden, een dootslager is hy: de bloetwreker sal desen dootslager [21] dooden, als hy hem ontmoet.",
-      "text2026": "Of hem door vijandschap met zijn hand geslagen heeft, dat hij gestorven zij; de slager zal zeker gedood worden, een moordenaar is hij; de bloedwreker zal deze moordenaar doden, als hij hem ontmoet.",
+      "text2026": "Of hem door vijandschap met zijn hand geslagen heeft, dat hij gestorven zij; degene die geslagen heeft, zal zeker gedood worden, een moordenaar is hij; de bloedwreker zal deze moordenaar doden, als hij hem ontmoet.",
       "marginNotes": [
         {
           "marker": "21",
@@ -2201,10 +2201,15 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Of hem door vijandschap met zijn hand geslagen heeft, dat hij gestorven zij; de slager zal zeker gedood worden, een moordenaar is hij; de bloedwreker zal deze moordenaar<sup class=\"note-marker\" data-note=\"21\">21</sup> doden, als hij hem ontmoet.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Of hem door vijandschap met zijn hand geslagen heeft, dat hij gestorven zij; degene die geslagen heeft, zal zeker gedood worden, een moordenaar is hij; de bloedwreker zal deze moordenaar<sup class=\"note-marker\" data-note=\"21\">21</sup> doden, als hij hem ontmoet.</i></span>",
       "textSV1888_html": "Of hem door vijandschap met zijn hand geslagen heeft, dat hij gestorven zij; de slager zal zekerlijk gedood worden, een doodslager is hij; de bloedwreker zal dezen doodslager<sup class=\"note-marker\" data-note=\"21\">21</sup> doden, als hij hem ontmoet.",
       "text1637_html": "Ofte hem door vyantschap met sijne hant geslagen heeft, dat hy gestorven zy, de slager sal sekerlick gedoodt worden, een dootslager is hy: de bloetwreker sal desen dootslager <sup class=\"note-marker\" data-note=\"21\">21</sup> dooden, als hy hem ontmoet.",
       "phraseDiff": [
+        {
+          "old": "de slager",
+          "new": "degene die geslagen heeft,",
+          "principe": "V1226"
+        },
         {
           "old": "zekerlijk",
           "new": "zeker",
@@ -2448,7 +2453,7 @@
       "number": 24,
       "textSV1888": "Zo zal de vergadering richten tussen den slager, en tussen den bloedwreker, naar deze zelve rechten.",
       "text1637": "So sal de vergaderinge richten tusschen den slager, ende tusschen den bloetwreker; nae dese selve rechten.",
-      "text2026": "Zo zal de vergadering richten tussen de slager, en tussen de bloedwreker, naar deze zelfde rechten.",
+      "text2026": "Zo zal de vergadering richten tussen degene die geslagen heeft, en tussen de bloedwreker, naar deze zelfde bepalingen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2502,13 +2507,13 @@
           "morph": "HTd/Pdxcp"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Zo zal de vergadering richten tussen de slager, en tussen de bloedwreker, naar deze zelfde rechten.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Zo zal de vergadering richten tussen degene die geslagen heeft, en tussen de bloedwreker, naar deze zelfde bepalingen.</i></span>",
       "text1637_html": "So sal de vergaderinge richten tusschen den slager, ende tusschen den bloetwreker; nae dese selve rechten.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "den slager,",
+          "new": "degene die geslagen heeft,",
+          "principe": "V1226"
         },
         {
           "old": "den",
@@ -2516,9 +2521,9 @@
           "principe": "N1"
         },
         {
-          "old": "zelve",
-          "new": "zelfde",
-          "principe": null
+          "old": "zelve rechten.",
+          "new": "zelfde bepalingen.",
+          "principe": "V1227"
         }
       ]
     },

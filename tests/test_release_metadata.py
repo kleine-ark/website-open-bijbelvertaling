@@ -32,7 +32,7 @@ def test_build_stats_defaults_follow_current_changelog():
     release = read_json("data/changelog.json")["wijzigingen"][0]
 
     assert version == release["versie"]
-    assert datum == "10 augustus 2026"
+    assert datum == "11 augustus 2026"
 
 
 def service_worker_install_cache():
@@ -71,24 +71,24 @@ installation.then(() => process.stdout.write(JSON.stringify(opened)));
     return json.loads(result.stdout)
 
 
-def test_current_release_describes_woordnummers_en_uses_one_version():
+def test_current_release_describes_opties_en_uses_one_version():
     stats = read_json("data/stats.json")
     changelog = read_json("data/changelog.json")
     current_release = changelog["wijzigingen"][0]
     descriptions = " ".join(item["beschrijving"] for item in current_release["items"])
 
-    assert current_release["versie"] == "v0.32.0"
+    assert current_release["versie"] == "v0.33.0"
     for subject in (
-        "Strong- en woordnummers",
-        "Liederen",
-        "gebeden",
-        "Muziekinstrumenten",
+        "Leesvoorkeuren",
+        "Vertalingen, talen & kanttekeningen",
+        "Regelafstand",
+        "Dyslexiemodus",
     ):
         assert subject in descriptions
     assert stats["version"] == current_release["versie"]
     assert service_worker_install_cache() == [f"shell-{current_release['versie']}"]
-    assert current_release["datum"] == "2026-08-10"
-    assert stats["date"] == "10 augustus 2026"
+    assert current_release["datum"] == "2026-08-11"
+    assert stats["date"] == "11 augustus 2026"
 
 
 def test_human_review_statistics_include_jozua_en_richteren_1_tot_7():
