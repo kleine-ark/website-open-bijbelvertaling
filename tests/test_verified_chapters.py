@@ -19,6 +19,8 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
     assert verified["ruth"] == "all"
     assert verified["numeri"] == "all"
     assert verified["deuteronomium"] == "all"
+    assert verified["jozua"] == "all"
+    assert verified["richteren"] == list(range(1, 8))
 
     nieuw_testament = {
         "mattheus", "markus", "lukas", "johannes", "handelingen", "romeinen",
@@ -48,12 +50,12 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
         "prediker",
         "numeri",
         "deuteronomium",
+        "jozua",
+        "richteren",
     } | nieuw_testament | eerder_menselijk_nagekeken_ot | nagekeken_apocrieven
 
     niet_menselijk_bevestigd = {
-        "jozua",
         "jeremia",
-        "richteren",
         "1samuel",
         "2samuel",
         "1koningen",

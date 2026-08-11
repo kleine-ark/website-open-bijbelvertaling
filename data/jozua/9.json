@@ -173,7 +173,7 @@
       "number": 2,
       "textSV1888": "Zo vergaderden zij zich samen, om tegen Jozua en tegen Israël te krijgen, eenmoediglijk.",
       "text1637": "So vergaderden sy hen t’samen om tegen Iosua, ende tegen Israël te krijgen, [5] eenmoedichlick.",
-      "text2026": "Zo verzamelden zij zich samen, om tegen Jozua en tegen Israël eenmoedig te krijgen.",
+      "text2026": "Zo verzamelden zij zich samen, om eenmoedig tegen Jozua en tegen Israël te strijden.",
       "marginNotes": [
         {
           "marker": "5",
@@ -230,7 +230,7 @@
           "morph": "HAcmsa"
         }
       ],
-      "text2026_html": "Zo verzamelden zij zich samen, om tegen Jozua en tegen Israël eenmoedig te krijgen<sup class=\"note-marker\" data-note=\"5\">5</sup>.",
+      "text2026_html": "Zo verzamelden zij zich samen, om eenmoedig tegen Jozua en tegen Israël te strijden.",
       "textSV1888_html": "Zo vergaderden zij zich samen, om tegen Jozua en tegen Israël te krijgen,<sup class=\"note-marker\" data-note=\"5\">5</sup> eenmoediglijk.",
       "text1637_html": "So vergaderden sy hen t’samen om tegen Iosua, ende tegen Israël te krijgen, <sup class=\"note-marker\" data-note=\"5\">5</sup> eenmoedichlick.",
       "phraseDiff": [
@@ -246,7 +246,7 @@
         },
         {
           "old": "krijgen, eenmoediglijk.",
-          "new": "krijgen.",
+          "new": "strijden.",
           "principe": null
         }
       ]
@@ -1474,7 +1474,7 @@
       "number": 14,
       "textSV1888": "Toen namen de mannen van hun reiskost; en zij vraagden het den mond des HEEREN niet.",
       "text1637": "Doe namen [21] de mannen van haren reys-kost: ende sy en [22] vraechden ’t [23] den mont des HEEREN niet.",
-      "text2026": "Toen namen de mannen van hun reiskost; en zij vraagden het de mond van JAHWEH niet.",
+      "text2026": "Toen namen de mannen van hun reiskost, maar zij baden JAHWEH niet om raad.",
       "marginNotes": [
         {
           "marker": "21",
@@ -1540,19 +1540,29 @@
           "morph": "HVqp3cp"
         }
       ],
-      "text2026_html": "Toen namen<sup class=\"note-marker\" data-note=\"21\">21</sup> de mannen van hun reiskost; en zij<sup class=\"note-marker\" data-note=\"22\">22</sup> vraagden het<sup class=\"note-marker\" data-note=\"23\">23</sup> de mond van JAHWEH niet.",
+      "text2026_html": "Toen namen<sup class=\"note-marker\" data-note=\"21\">21</sup> de mannen van hun reiskost, maar zij<sup class=\"note-marker\" data-note=\"22\">22</sup> baden JAHWEH niet om raad.",
       "textSV1888_html": "Toen namen<sup class=\"note-marker\" data-note=\"21\">21</sup> de mannen van hun reiskost; en zij<sup class=\"note-marker\" data-note=\"22\">22</sup> vraagden het<sup class=\"note-marker\" data-note=\"23\">23</sup> den mond des HEEREN niet.",
       "text1637_html": "Doe namen <sup class=\"note-marker\" data-note=\"21\">21</sup> de mannen van haren reys-kost: ende sy en <sup class=\"note-marker\" data-note=\"22\">22</sup> vraechden ’t <sup class=\"note-marker\" data-note=\"23\">23</sup> den mont des HEEREN niet.",
       "phraseDiff": [
         {
-          "old": "den",
-          "new": "de",
-          "principe": "N1"
+          "old": "reiskost; en",
+          "new": "reiskost, maar",
+          "principe": null
+        },
+        {
+          "old": "vraagden het den mond",
+          "new": "baden",
+          "principe": null
         },
         {
           "old": "des HEEREN",
-          "new": "van JAHWEH",
+          "new": "JAHWEH",
           "principe": "N3"
+        },
+        {
+          "old": "",
+          "new": "om raad.",
+          "principe": null
         }
       ]
     },
