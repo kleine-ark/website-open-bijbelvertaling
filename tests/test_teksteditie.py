@@ -51,7 +51,7 @@ class TekstEditieTests(unittest.TestCase):
         manifest = json.loads((ROOT / "data" / "vertalingen" / "manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(
             [item["code"] for item in manifest["edities"]],
-            ["fr-lsg1910", "en-webbe", "ar-vd", "uk-ukrfb", "de-luther1912", "es-rv1909"],
+            ["fr-lsg1910", "en-webbe", "ar-vd", "uk-ukrfb", "de-luther1912", "es-rv1909", "pl-gdanska1881", "tr-open-basic-nt"],
         )
 
     def test_french_query_renders_french_text_with_text_language(self):
@@ -97,6 +97,35 @@ class TekstEditieTests(unittest.TestCase):
             self.assertEqual(verse.get_attribute("lang"), "de")
             self.assertEqual(verse.get_attribute("dir"), "ltr")
             self.assertEqual(page.locator("html").get_attribute("lang"), "nl")
+        finally:
+            page.close()
+
+    def test_polish_gdansk_text_renders_in_the_reader_with_its_text_language(self):
+        page = self.open_reader("pl-gdanska1881")
+        try:
+            verse = page.locator('.verse-row[data-verse="1"] .col-2026')
+            verse.wait_for(timeout=20_000)
+            self.assertIn("Na początku", verse.inner_text().replace("\n", ""))
+            self.assertEqual(verse.get_attribute("lang"), "pl")
+            self.assertEqual(verse.get_attribute("dir"), "ltr")
+        finally:
+            page.close()
+
+    def test_turkish_nt_renders_but_old_testament_stays_explicitly_unavailable(self):
+        page = self.open_reader("tr-open-basic-nt", "johannes/1")
+        try:
+            verse = page.locator('.verse-row[data-verse="1"] .col-2026')
+            verse.wait_for(timeout=20_000)
+            self.assertIn("Başlangıçta", verse.inner_text().replace("\n", ""))
+            self.assertEqual(verse.get_attribute("lang"), "tr")
+        finally:
+            page.close()
+
+        page = self.open_reader("tr-open-basic-nt", "genesis/1")
+        try:
+            message = page.locator(".translation-unavailable")
+            message.wait_for(timeout=20_000)
+            self.assertIn("niet beschikbaar", message.inner_text())
         finally:
             page.close()
 

@@ -42,12 +42,14 @@ BOOK_IDS = {
 }
 
 EDITIONS = {
-    "fr-lsg1910": {"source": "fraLSG", "name": "Louis Segond 1910", "language": "fr", "direction": "ltr", "sha256": "3A0615E992FFD412B1AFCAED50D146BBA5EC8AE2378F04CA71459A4CD2D7CC33"},
-    "en-webbe": {"source": "eng-webbe", "name": "World English Bible British Edition", "language": "en", "direction": "ltr", "sha256": "71BC006074BBEE6206F4B822814218FD64E6CB51C71647104C94D5B08FFAFC9F"},
-    "ar-vd": {"source": "arb-vd", "name": "Arabic Van Dyck", "language": "ar", "direction": "rtl", "sha256": "E4A2AB9491B2AC2FF799BB2A80EC9322203A7C36E78210B4506DF84308C54948"},
-    "uk-ukrfb": {"source": "ukrfb", "name": "Ukrainian Freedom Bible", "language": "uk", "direction": "ltr", "sha256": "C634DB3081690A9201E19F71276EAA6E5B4B487D1455637548305F220B2B6CD5"},
-    "de-luther1912": {"source": "deu1912", "name": "Lutherbibel 1912", "language": "de", "direction": "ltr", "sha256": "650A8192134A8F0057286C469754EDCFAEE4FBB18800621AEE4563F3055BB39B"},
-    "es-rv1909": {"source": "spaRV1909", "name": "Reina-Valera 1909", "language": "es", "direction": "ltr", "sha256": "B5BFAC87199A561FCBACB5E32BE5D8D280934B1C6830088D9EB8C68FFBFBE711"},
+    "fr-lsg1910": {"source": "fraLSG", "name": "Louis Segond 1910", "language": "fr", "direction": "ltr", "sha256": "3A0615E992FFD412B1AFCAED50D146BBA5EC8AE2378F04CA71459A4CD2D7CC33", "rights": "publiek domein"},
+    "en-webbe": {"source": "eng-webbe", "name": "World English Bible British Edition", "language": "en", "direction": "ltr", "sha256": "71BC006074BBEE6206F4B822814218FD64E6CB51C71647104C94D5B08FFAFC9F", "rights": "publiek domein"},
+    "ar-vd": {"source": "arb-vd", "name": "Arabic Van Dyck", "language": "ar", "direction": "rtl", "sha256": "E4A2AB9491B2AC2FF799BB2A80EC9322203A7C36E78210B4506DF84308C54948", "rights": "publiek domein"},
+    "uk-ukrfb": {"source": "ukrfb", "name": "Ukrainian Freedom Bible", "language": "uk", "direction": "ltr", "sha256": "C634DB3081690A9201E19F71276EAA6E5B4B487D1455637548305F220B2B6CD5", "rights": "publiek domein"},
+    "de-luther1912": {"source": "deu1912", "name": "Lutherbibel 1912", "language": "de", "direction": "ltr", "sha256": "650A8192134A8F0057286C469754EDCFAEE4FBB18800621AEE4563F3055BB39B", "rights": "publiek domein"},
+    "es-rv1909": {"source": "spaRV1909", "name": "Reina-Valera 1909", "language": "es", "direction": "ltr", "sha256": "B5BFAC87199A561FCBACB5E32BE5D8D280934B1C6830088D9EB8C68FFBFBE711", "rights": "publiek domein"},
+    "pl-gdanska1881": {"source": "pol-gdanska", "name": "Biblia Gdańska 1881", "language": "pl", "direction": "ltr", "sha256": "7FF221FB7638B42CEAD7F24283E9BC5C58570B674C49132F1C057FF8BE0A716D", "rights": "publiek domein", "source_url": "https://crosswire.org/ftpmirror/pub/sword/packages/rawzip/PolGdanska.zip"},
+    "tr-open-basic-nt": {"source": "tur-open-basic-nt", "name": "Open Basic Turkish New Testament", "language": "tr", "direction": "ltr", "sha256": "109BCB5CDDE3B806534FA59650CBD2BE5CC5DA4740E926690443238662956EFB", "rights": "CC BY-SA 4.0", "source_url": "https://ebible.org/Scriptures/turobt_usfm.zip", "scope": "Nieuwe Testament", "attribution": "Copyright © 2023 Biblica, Inc., The Translation Trust, OM UK and Global Nomads. Original work available at biblica.com and open.bible."},
 }
 
 NOTE_RE = re.compile(r"\\f\s+(.*?)\\f\*", re.S)
@@ -221,9 +223,12 @@ def convert_all(source_root: Path, output: Path, editions=None):
                 unsupported[warning["marker"]] += 1
         manifest["edities"].append({
             "code": code, "naam": meta["name"], "taal": meta["language"],
-            "richting": meta["direction"], "rechten": "publiek domein",
+            "richting": meta["direction"], "rechten": meta["rights"],
             "bron": f"bronbestanden/vertalingen/{meta['source']}",
             "bronSha256": meta["sha256"], "boeken": sorted(edition_books),
+            **({"bronUrl": meta["source_url"]} if meta.get("source_url") else {}),
+            **({"reikwijdte": meta["scope"]} if meta.get("scope") else {}),
+            **({"naamsvermelding": meta["attribution"]} if meta.get("attribution") else {}),
         })
         report["edities"][code] = {**dict(counts), "onbekendeMarkeringen": dict(sorted(unsupported.items()))}
     _write_json(output / "manifest.json", manifest)

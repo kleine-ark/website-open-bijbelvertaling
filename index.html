@@ -38,7 +38,7 @@
     <!-- Auto-open Search bij ?q=... van andere pagina's -->
     <script>window.addEventListener('load',function(){try{var p=new URLSearchParams(location.search);var q=p.get('q');if(q&&typeof Search!=='undefined'){setTimeout(function(){Search.open(q);},200);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}});</script>
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css?v=0.34.0">
+    <link rel="stylesheet" href="css/style.css?v=0.35.0">
     <link rel="stylesheet" href="css/print.css" media="print">
 
     <!-- JSONLD:start (auto) -->
@@ -659,6 +659,8 @@
                         <option value="uk-ukrfb">Oekraïens — Freedom Bible</option>
                         <option value="de-luther1912">Duits — Lutherbibel 1912</option>
                         <option value="es-rv1909">Spaans — Reina-Valera 1909</option>
+                        <option value="pl-gdanska1881">Pools — Biblia Gdańska 1881</option>
+                        <option value="tr-open-basic-nt">Turks — Open Basic Turkish NT</option>
                     </select></label>
                     <fieldset class="option-choice option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/vergelijkingsedities.png" alt="" aria-hidden="true"><span>Vergelijkingsedities</span></span></legend><div class="option-choice-values option-choice-grid">
                         <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
@@ -899,7 +901,7 @@
     <script src="js/audio-available.js"></script>
     <script src="js/chunked-audio.js"></script>
     <script src="js/verse-witness-reader.js"></script>
-    <script src="js/app.js?v=0.34.0"></script>
+    <script src="js/app.js?v=0.35.0"></script>
     <script src="js/search.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {

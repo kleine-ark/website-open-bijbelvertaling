@@ -160,6 +160,27 @@ class WikiCitationTemplateTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_de_gedeelde_citaatcomponent_ondersteunt_pools_en_turks_nt(self):
+        page = self.open_page("liederen.html?item=lied-bij-de-schelfzee")
+        try:
+            polish = page.evaluate("""async () => {
+                const result = await OSV.cite('genesis 1:1', { edition: 'pl-gdanska1881' });
+                return { html: result.html, taal: result.taal, editie: result.editie };
+            }""")
+            self.assertEqual(polish["taal"], "pl")
+            self.assertEqual(polish["editie"], "pl-gdanska1881")
+            self.assertIn("Na początku", polish["html"])
+
+            turkish = page.evaluate("""async () => {
+                const result = await OSV.cite('johannes 1:1', { edition: 'tr-open-basic-nt' });
+                return { html: result.html, taal: result.taal, editie: result.editie };
+            }""")
+            self.assertEqual(turkish["taal"], "tr")
+            self.assertEqual(turkish["editie"], "tr-open-basic-nt")
+            self.assertIn("Başlangıçta", turkish["html"])
+        finally:
+            page.close()
+
     def test_lied_hergebruikt_de_gekoppelde_teksten_bediening(self):
         page = self.open_page("liederen.html?item=lied-bij-de-schelfzee")
         try:
