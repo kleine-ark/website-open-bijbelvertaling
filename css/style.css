@@ -997,7 +997,8 @@ body.options-open #sidebar-right-open { visibility: hidden; }
 #sidebar-right-header.options-header {
     position: relative;
     flex: 0 0 auto;
-    padding: 18px 28px 0;
+    min-height: 54px;
+    padding: 0;
     background: var(--bg-surface);
     color: var(--text-primary);
     border: 0;
@@ -1053,29 +1054,6 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     z-index: 3;
 }
 #sidebar-right-toggle:hover { background: var(--bg-surface-alt); color: var(--navy); }
-.options-eyebrow {
-    margin: 0 48px 3px 0;
-    color: var(--gold);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-}
-#options-title {
-    margin: 0;
-    color: var(--navy);
-    font-family: var(--font-serif);
-    font-size: 30px;
-    font-weight: 500;
-    letter-spacing: -0.015em;
-}
-.options-preview {
-    margin: 3px 0 12px;
-    color: var(--text-secondary);
-    font-family: var(--font-serif);
-    font-size: 17px;
-    line-height: 1.45;
-}
 .options-tabs {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1341,12 +1319,43 @@ body.options-open #sidebar-right-open { visibility: hidden; }
 .option-help a { color: var(--teal); }
 .option-row select {
     max-width: 150px;
-    padding: 7px 30px 7px 10px;
-    border: 1px solid var(--border-default);
-    border-radius: 9px;
-    background: var(--bg-surface);
+    padding: 8px 34px 8px 13px;
+    border: 0;
+    border-radius: 999px;
+    outline: 0;
+    background: transparent;
     color: var(--text-primary);
-    font: 12px var(--font-body);
+    font: 600 12px var(--font-body);
+    cursor: pointer;
+    appearance: none;
+}
+.option-select-shell {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-default);
+    border-radius: 999px;
+    background: var(--bg-surface-alt);
+    transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+.option-select-shell::after {
+    content: "";
+    position: absolute;
+    right: 14px;
+    width: 7px;
+    height: 7px;
+    border-right: 1.8px solid var(--navy);
+    border-bottom: 1.8px solid var(--navy);
+    pointer-events: none;
+    transform: translateY(-2px) rotate(45deg);
+}
+.option-select-shell:hover {
+    border-color: color-mix(in srgb, var(--gold) 70%, var(--border-default));
+    background: var(--bg-surface);
+}
+.option-select-shell:focus-within {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 18%, transparent);
 }
 .option-row-book-order select { max-width: 230px; }
 .options-zoom-controls {
@@ -1385,7 +1394,6 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     outline: 3px solid color-mix(in srgb, var(--gold) 62%, transparent);
     outline-offset: 2px;
 }
-:root[data-theme="donker"] #options-title,
 :root[data-theme="donker"] .options-tabs [role="tab"][aria-selected="true"],
 :root[data-theme="donker"] .options-section-heading h3,
 :root[data-theme="donker"] .options-zoom-controls button,
@@ -1416,7 +1424,8 @@ body.options-open #sidebar-right-open { visibility: hidden; }
         color: #172d40;
     }
     #sidebar-right-header.options-header {
-        padding: calc(16px + env(safe-area-inset-top, 0px)) 20px 8px;
+        min-height: calc(54px + env(safe-area-inset-top, 0px));
+        padding: 0;
         background: #fbfaf7;
         color: #172d40;
         border-bottom-color: rgba(20, 46, 66, 0.14);
@@ -1441,19 +1450,6 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     }
     .options-tabs [role="tab"][aria-selected="true"] { color: #17344e !important; }
     .options-tabs [role="tab"]::after { left: 12px; right: 12px; height: 3px; }
-    .options-eyebrow { display: none; }
-    #options-title {
-        margin: 0 44px 2px;
-        color: #17344e !important;
-        font-size: 27px;
-        text-align: center;
-    }
-    .options-preview {
-        margin: 5px 0 12px;
-        color: #2e3740;
-        font-size: 16px;
-        text-align: center;
-    }
     #sidebar-right-body.options-body {
         padding: 10px 12px calc(18px + env(safe-area-inset-bottom, 0px));
         background: #fbfaf7;

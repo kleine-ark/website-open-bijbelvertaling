@@ -91,6 +91,16 @@ const Opties = {
         const vnCb = document.getElementById('toggle-versnummers');
         if (vnCb) vnCb.checked = this.state.versnummers !== 'uit';
 
+        const alternatiefLettertype = document.getElementById('toggle-lettertype-alternatief');
+        if (alternatiefLettertype) {
+            alternatiefLettertype.checked = this.state.lettertype === 'rustig';
+            alternatiefLettertype.addEventListener('change', () => {
+                this.state.lettertype = alternatiefLettertype.checked ? 'rustig' : 'klassiek';
+                this.save();
+                this.applyReaderStyleClasses();
+            });
+        }
+
         // Topnav-knop voor 1-klik thema-wissel (donker ↔ licht)
         const themeBtn = document.getElementById('topnav-theme-toggle');
         if (themeBtn) {
@@ -99,8 +109,9 @@ const Opties = {
                 this.state.thema = cur;
                 this.save();
                 this.applyThemeClass();
-                document.querySelectorAll('input[data-optie="thema"]').forEach(r => {
-                    r.checked = (r.value === cur);
+                document.querySelectorAll('[data-optie="thema"]').forEach(control => {
+                    if (control.tagName === 'SELECT') control.value = cur;
+                    else control.checked = (control.value === cur);
                 });
             });
         }

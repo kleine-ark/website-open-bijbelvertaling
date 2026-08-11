@@ -217,7 +217,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             page.wait_for_function("window.Opties && window.Opties.state")
             page.locator("#sidebar-right-open").click()
             page.locator('details[data-options-category="weergave"] > summary').click()
-            page.locator('[data-optie="lettertype"][value="rustig"]').check()
+            page.locator('#toggle-lettertype-alternatief').check()
             page.locator('#opt-regelafstand').fill("2")
             page.locator('#opt-regelafstand').dispatch_event("change")
 
@@ -571,13 +571,37 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             self.assertAlmostEqual(box["height"], 844, delta=1)
             self.assertEqual(style["radius"], 0)
             self.assertGreater(int(style["background"].split("(")[1].split(",")[0]), 230)
-            self.assertEqual(
-                page.locator("#options-title").evaluate(
-                    "el => getComputedStyle(el).textAlign"
-                ),
-                "center",
-            )
+            self.assertEqual(page.locator("#options-title").count(), 0)
+            self.assertEqual(page.locator(".options-preview").count(), 0)
             self.assertEqual(page.locator("details.options-category").count(), 5)
+        finally:
+            page.close()
+
+    def test_compacte_kop_en_eenregelige_keuzes(self):
+        page = self.open_reader()
+        try:
+            page.locator("#sidebar-right-open").click()
+            panel = page.locator("#sidebar-right")
+            self.assertEqual(panel.get_attribute("aria-label"), "Opties")
+            self.assertEqual(panel.locator("#options-title").count(), 0)
+            self.assertEqual(panel.locator(".options-preview").count(), 0)
+
+            weergave = panel.locator('details[data-options-category="weergave"]')
+            weergave.locator(":scope > summary").click()
+            self.assertEqual(weergave.locator('select[data-optie="thema"]').count(), 1)
+            self.assertEqual(weergave.locator('input[data-optie="thema"]').count(), 0)
+            self.assertEqual(weergave.locator("#toggle-lettertype-alternatief").count(), 1)
+
+            primary_rows = weergave.locator(":scope > .options-list > :not(.option-mirror)")
+            self.assertEqual(primary_rows.last.locator("#toggle-dyslexia").count(), 1)
+            self.assertEqual(weergave.locator("#toggle-dyslexia").locator("xpath=ancestor::label[1]").locator("small").count(), 0)
+
+            bronnen = panel.locator('details[data-options-category="bronnen"]')
+            bronnen.locator(":scope > summary").click()
+            self.assertEqual(bronnen.locator("#toggle-strongs").locator("xpath=ancestor::label[1]").locator("small").count(), 0)
+
+            most = panel.locator('details[data-options-category="meest-gebruikt"]')
+            self.assertEqual(most.locator('[data-option-mirror="regelafstand"] input[type="range"]').count(), 1)
         finally:
             page.close()
 

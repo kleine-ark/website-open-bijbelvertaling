@@ -529,12 +529,9 @@
     </div><!-- /main-wrapper -->
 
     <!-- Zwevend optiespaneel -->
-    <dialog id="sidebar-right" class="options-panel" aria-labelledby="options-title">
+    <dialog id="sidebar-right" class="options-panel" aria-label="Opties">
         <div id="sidebar-right-header" class="options-header">
             <button id="sidebar-right-toggle" type="button" aria-label="Opties sluiten" title="Opties sluiten">&times;</button>
-            <p class="options-eyebrow">Open Vertaling</p>
-            <h2 id="options-title">Leesvoorkeuren</h2>
-            <p class="options-preview">In de beginne schiep God de hemel en de aarde.</p>
         </div>
         <div id="sidebar-right-body" class="options-body">
             <section id="options-panel-lezen" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-lezen">
@@ -542,17 +539,12 @@
                     <div><h3>Weergave</h3><p>Maak de leestekst rustig en persoonlijk.</p></div>
                 </div>
                 <div class="options-list">
-                    <fieldset class="option-choice option-choice-inline option-choice-with-icon">
-                        <legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/thema.png" alt="" aria-hidden="true"><span>Thema</span></span></legend>
-                        <label><input type="radio" name="opt-thema" data-optie="thema" value="auto"> Automatisch</label>
-                        <label><input type="radio" name="opt-thema" data-optie="thema" value="licht"> Licht</label>
-                        <label><input type="radio" name="opt-thema" data-optie="thema" value="donker"> Donker</label>
-                    </fieldset>
-                    <fieldset class="option-choice option-choice-inline option-choice-with-icon">
-                        <legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/lettertype.png" alt="" aria-hidden="true"><span>Lettertype</span></span></legend>
-                        <label><input type="radio" name="opt-lettertype" data-optie="lettertype" value="klassiek"> Klassiek</label>
-                        <label><input type="radio" name="opt-lettertype" data-optie="lettertype" value="rustig"> Rustig</label>
-                    </fieldset>
+                    <label class="option-row option-row-with-icon option-row-select" for="opt-thema">
+                        <img class="option-icon" src="images/iconen/instellingen/thema.png" alt="" aria-hidden="true">
+                        <span><strong>Thema</strong></span>
+                        <span class="option-select-shell"><select id="opt-thema" data-optie="thema" aria-label="Thema"><option value="auto">Automatisch</option><option value="licht">Licht</option><option value="donker">Donker</option></select></span>
+                    </label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/lettertype.png" alt="" aria-hidden="true"><span><strong>Alternatief lettertype</strong></span><input type="checkbox" id="toggle-lettertype-alternatief"></label>
                     <div id="options-zoom" class="option-row option-row-with-icon options-zoom" role="group" aria-label="Tekstgrootte">
                         <img class="option-icon" src="images/iconen/instellingen/tekstgrootte.png" alt="" aria-hidden="true">
                         <span><strong>Tekstgrootte</strong><small>Vergroot de leestekst en bewaar deze keuze.</small></span>
@@ -569,7 +561,7 @@
                     </label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/boekinleiding.png" alt="" aria-hidden="true"><span><strong>Boekinleiding</strong><small>Toon de inleiding bij het gekozen boek.</small></span><input type="checkbox" id="toggle-book-intro" onchange="document.body.classList.toggle('show-book-intro', this.checked)"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/hoofdstukinleiding.png" alt="" aria-hidden="true"><span><strong>Hoofdstukinleiding</strong><small>Toon de inleiding boven het hoofdstuk.</small></span><input type="checkbox" id="toggle-chapter-intro" onchange="document.body.classList.toggle('show-chapter-intro', this.checked)"></label>
-                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/dyslexiemodus.png" alt="" aria-hidden="true"><span><strong>Dyslexiemodus</strong><small>Gebruik een eenvoudiger leesritme.</small></span><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/dyslexiemodus.png" alt="" aria-hidden="true"><span><strong>Dyslexiemodus</strong></span><input type="checkbox" id="toggle-dyslexia" onchange="document.body.classList.toggle('dyslexia-mode', this.checked);localStorage.setItem('dyslexia', this.checked)"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/citaatopmaak.png" alt="" aria-hidden="true"><span><strong>Citaatopmaak</strong><small>Cursief en kleuronderscheid voor sprekers.</small></span><input type="checkbox" id="toggle-citaten" data-optie="citaten" value="aan"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/versnummers.png" alt="" aria-hidden="true"><span><strong>Versnummers</strong></span><input type="checkbox" id="toggle-versnummers" checked onchange="Opties.state.versnummers=this.checked?'aan':'uit';Opties.applyVerseNumbersClass();Opties.save();"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/hoofdstuknummers.png" alt="" aria-hidden="true"><span><strong>Hoofdstuknummers</strong></span><input type="checkbox" id="toggle-hoofdstuknummers" checked onchange="document.body.classList.toggle('hoofdstuknummers-uit', !this.checked);localStorage.setItem('hoofdstuknummers', this.checked)"></label>
@@ -692,7 +684,7 @@
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/oudste-handschrift.png" alt="" aria-hidden="true"><span><strong>Oudste handschrift per vers</strong><small>Oorspronkelijke taal en oudste vindplaats.</small></span><input type="checkbox" id="toggle-hs-vers"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/onderwerptags.png" alt="" aria-hidden="true"><span><strong>Onderwerptags</strong></span><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/geografische-locaties.png" alt="" aria-hidden="true"><span><strong>Geografische locaties</strong></span><input type="checkbox" id="toggle-geo-markeren" data-optie="geoMarkeren" value="aan"></label>
-                        <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/strong-nummers.png" alt="" aria-hidden="true"><span><strong>Strong- en woordnummers</strong><small>Toon blauwe nummers bij gekoppelde Hebreeuwse, Griekse, Latijnse en Ge’ez-grondtekstwoorden.</small></span><input type="checkbox" id="toggle-strongs" data-optie="strongs" value="aan"></label>
+                        <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/strong-nummers.png" alt="" aria-hidden="true"><span><strong>Strong- en woordnummers</strong></span><input type="checkbox" id="toggle-strongs" data-optie="strongs" value="aan"></label>
                 </div>
             </section>
         </div>
