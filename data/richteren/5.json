@@ -385,7 +385,7 @@
    "number": 5,
    "textSV1888": "De bergen vervloten van het aangezicht des HEEREN; zelfs Sinaï van het aangezicht des HEEREN, des Gods van Israël.",
    "text1637": "[b] De [7] bergen vervloten van het aengesichte des HEEREN, [8] selfs [c] Si-nai, van het aengesichte des HEEREN, des Godts Israëls.",
-   "text2026": "De bergen vervloten van het aangezicht van JAHWEH; zelfs Sinaï van het aangezicht van JAHWEH, van de God van Israël.",
+   "text2026": "De bergen vloeiden weg van het aangezicht van JAHWEH; zelfs Sinaï van het aangezicht van JAHWEH, van de God van Israël.",
    "marginNotes": [
     {
      "marker": "b",
@@ -468,10 +468,15 @@
      "morph": "HNp"
     }
    ],
-   "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup><span class=\"direct-speech\"><i> De<sup class=\"note-marker\" data-note=\"7\">7</sup> bergen vervloten van het aangezicht van JAHWEH;<sup class=\"note-marker\" data-note=\"8\">8</sup> zelfs<sup class=\"note-marker\" data-note=\"c\">c</sup> Sinaï van het aangezicht van JAHWEH, van de God van Israël.</i></span>",
+   "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup><span class=\"direct-speech\"><i> De<sup class=\"note-marker\" data-note=\"7\">7</sup> bergen vloeiden weg van het aangezicht van JAHWEH;<sup class=\"note-marker\" data-note=\"8\">8</sup> zelfs<sup class=\"note-marker\" data-note=\"c\">c</sup> Sinaï van het aangezicht van JAHWEH, van de God van Israël.</i></span>",
    "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> De<sup class=\"note-marker\" data-note=\"7\">7</sup> bergen vervloten van het aangezicht des HEEREN;<sup class=\"note-marker\" data-note=\"8\">8</sup> zelfs<sup class=\"note-marker\" data-note=\"c\">c</sup> Sinaï van het aangezicht des HEEREN, des Gods van Israël.",
    "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> De <sup class=\"note-marker\" data-note=\"7\">7</sup> bergen vervloten van het aengesichte des HEEREN, <sup class=\"note-marker\" data-note=\"8\">8</sup> selfs <sup class=\"note-marker\" data-note=\"c\">c</sup> Si-nai, van het aengesichte des HEEREN, des Godts Israëls.",
    "phraseDiff": [
+    {
+     "old": "vervloten",
+     "new": "vloeiden weg",
+     "principe": null
+    },
     {
      "old": "des HEEREN;",
      "new": "van JAHWEH;",
@@ -2897,7 +2902,7 @@
    "number": 29,
    "textSV1888": "De wijsten harer staatsvrouwen antwoordden; ook beantwoordde zij haar redenen aan zichzelve:",
    "text1637": "[79] De wijste harer [80] staetvrouwen antwoorden: oock beantwoordde sy hare redenen aen haer selve:",
-   "text2026": "De wijsten van haar staatsvrouwen antwoordden; ook beantwoordde zij haar redenen aan zichzelf:",
+   "text2026": "Haar meest wijze vorstinnen antwoordden haar; ook beantwoordde zij zichzelf:",
    "marginNotes": [
     {
      "marker": "79",
@@ -2956,13 +2961,18 @@
      "morph": "HR/Sp3fs"
     }
    ],
-   "text2026_html": "<sup class=\"note-marker\" data-note=\"79\">79</sup><span class=\"direct-speech\"><i> De wijsten van haar<sup class=\"note-marker\" data-note=\"80\">80</sup> staatsvrouwen antwoordden; ook beantwoordde zij haar redenen aan zichzelf:</i></span>",
+   "text2026_html": "<sup class=\"note-marker\" data-note=\"79\">79</sup><span class=\"direct-speech\"><i> Haar meest wijze vorstinnen antwoordden haar; ook beantwoordde zij zichzelf:</i></span>",
    "textSV1888_html": "<sup class=\"note-marker\" data-note=\"79\">79</sup> De wijsten harer<sup class=\"note-marker\" data-note=\"80\">80</sup> staatsvrouwen antwoordden; ook beantwoordde zij haar redenen aan zichzelve:",
    "text1637_html": "<sup class=\"note-marker\" data-note=\"79\">79</sup> De wijste harer <sup class=\"note-marker\" data-note=\"80\">80</sup> staetvrouwen antwoorden: oock beantwoordde sy hare redenen aen haer selve:",
    "phraseDiff": [
     {
-     "old": "harer",
-     "new": "van haar",
+     "old": "De wijsten harer staatsvrouwen antwoordden;",
+     "new": "Haar meest wijze vorstinnen antwoordden haar;",
+     "principe": null
+    },
+    {
+     "old": "haar redenen aan",
+     "new": "",
      "principe": null
     },
     {

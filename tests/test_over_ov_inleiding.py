@@ -48,6 +48,8 @@ class OverOvInleidingTests(unittest.TestCase):
             "Leviticus",
             "Numeri",
             "Deuteronomium",
+            "Jozua",
+            "Richteren 1&ndash;7",
             "Ruth",
             "Ezra",
             "Psalmen",

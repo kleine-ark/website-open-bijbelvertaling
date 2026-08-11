@@ -91,22 +91,26 @@ def test_current_release_describes_woordnummers_en_uses_one_version():
     assert stats["date"] == "10 augustus 2026"
 
 
-def test_human_review_statistics_include_nt_numeri_en_heel_deuteronomium():
+def test_human_review_statistics_include_jozua_en_richteren_1_tot_7():
     stats = read_json("data/stats.json")
     verified = read_json("data/verified-chapters.json")
 
-    assert stats["books_verified"] == 52
-    assert stats["chapters_verified"] == 714
-    assert stats["verses_verified"] == 19196
-    assert stats["verses_verified_pct"] == 51.6
+    assert stats["books_verified"] == 53
+    assert stats["chapters_verified"] == 745
+    assert stats["verses_verified"] == 20064
+    assert stats["verses_verified_pct"] == 53.9
     assert "Numeri" in stats["verified_books"]
     assert "Deuteronomium" in stats["verified_books"]
+    assert "Jozua" in stats["verified_books"]
+    assert "Richteren 1–7" in stats["verified_books"]
     assert stats["nt_verses_verified"] == 7960
     assert stats["nt_verses_verified_pct"] == 100.0
     assert stats["ap_verses_verified"] == 1219
     assert stats["ap_verses_verified_pct"] == 20.1
     assert verified["numeri"] == "all"
     assert verified["deuteronomium"] == "all"
+    assert verified["jozua"] == "all"
+    assert verified["richteren"] == list(range(1, 8))
     assert verified["mattheus"] == "all"
     assert verified["openbaring"] == "all"
     assert verified["psalmen"] == "all"

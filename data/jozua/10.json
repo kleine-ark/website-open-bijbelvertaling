@@ -3200,7 +3200,7 @@
       "number": 26,
       "textSV1888": "En Jozua sloeg hen daarna, en doodde ze, en hing ze aan vijf houten; en zij hingen aan de houten tot den avond.",
       "text1637": "Ende Iosua sloechse daer na, ende dooddese, ende hingse aen vijf [24] houten: ende sy hingen aen de houten: [25] tot den [c] avont.",
-      "text2026": "En Jozua sloeg hen daarna, en doodde ze, en hing ze aan vijf houten; en zij hingen aan de houten tot de avond.",
+      "text2026": "En Jozua sloeg hen daarna, en doodde ze, en hing ze aan vijf palen; en zij hingen aan de palen tot de avond.",
       "marginNotes": [
         {
           "marker": "24",
@@ -3301,10 +3301,20 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "En Jozua sloeg hen daarna, en doodde ze, en hing ze aan vijf<sup class=\"note-marker\" data-note=\"24\">24</sup> houten; en zij hingen aan de houten<sup class=\"note-marker\" data-note=\"25\">25</sup> tot de<sup class=\"note-marker\" data-note=\"c\">c</sup> avond.",
+      "text2026_html": "En Jozua sloeg hen daarna, en doodde ze, en hing ze aan vijf<sup class=\"note-marker\" data-note=\"24\">24</sup> palen; en zij hingen aan de palen<sup class=\"note-marker\" data-note=\"25\">25</sup> tot de<sup class=\"note-marker\" data-note=\"c\">c</sup> avond.",
       "textSV1888_html": "En Jozua sloeg hen daarna, en doodde ze, en hing ze aan vijf<sup class=\"note-marker\" data-note=\"24\">24</sup> houten; en zij hingen aan de houten<sup class=\"note-marker\" data-note=\"25\">25</sup> tot den<sup class=\"note-marker\" data-note=\"c\">c</sup> avond.",
       "text1637_html": "Ende Iosua sloechse daer na, ende dooddese, ende hingse aen vijf <sup class=\"note-marker\" data-note=\"24\">24</sup> houte<i>n</i>: ende sy hingen aen de houten: <sup class=\"note-marker\" data-note=\"25\">25</sup> tot den <sup class=\"note-marker\" data-note=\"c\">c</sup> avont.",
       "phraseDiff": [
+        {
+          "old": "houten;",
+          "new": "palen;",
+          "principe": null
+        },
+        {
+          "old": "houten",
+          "new": "palen",
+          "principe": null
+        },
         {
           "old": "den",
           "new": "de",
@@ -3316,7 +3326,7 @@
       "number": 27,
       "textSV1888": "En het geschiedde, ten tijde als de zon onderging, beval Jozua, dat men hen van de houten afname, en zij wierpen hen in de spelonk, alwaar zij verborgen geweest waren; en zij leiden grote stenen voor den mond der spelonk, die daar zijn tot op dezen zelven dag.",
       "text1637": "Ende ’t geschiedde ten tijde als de Sonne onderginck, beval Iosua datmense van de houten afname, ende sy wierpense in de speloncke, alwaer sy verborgen geweest waren: ende sy leyden groote steenen voor den mont der speloncke, [die daer zijn] tot op desen selven dach.",
-      "text2026": "En het gebeurde, ten tijde als de zon onderging, beval Jozua, dat men hen van de houten afname, en zij wierpen hen in de grot, alwaar zij verborgen geweest waren; en zij legden grote stenen voor de mond van de grot, die daar zijn tot op deze dag.",
+      "text2026": "En het gebeurde, ten tijde als de zon onderging, beval Jozua, dat men hen van de palen afname, en zij wierpen hen in de grot, waar zij verborgen geweest waren; en zij legden grote stenen voor de mond van de grot, die daar zijn tot op deze dag.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3445,7 +3455,7 @@
           "morph": "HTd/Pdxms"
         }
       ],
-      "text2026_html": "En het gebeurde, ten tijde als de zon onderging, beval Jozua, dat men hen van de houten afname, en zij wierpen hen in de grot, alwaar zij verborgen geweest waren; en zij legden grote stenen voor de mond van de grot, die daar zijn tot op deze dag.",
+      "text2026_html": "En het gebeurde, ten tijde als de zon onderging, beval Jozua, dat men hen van de palen afname, en zij wierpen hen in de grot, waar zij verborgen geweest waren; en zij legden grote stenen voor de mond van de grot, die daar zijn tot op deze dag.",
       "text1637_html": "Ende ’t geschiedde ten tijde als de Sonne onderginck, beval Iosua datmense van de houten afname, ende sy wierpense in de speloncke, alwaer sy verborgen geweest waren: ende sy leyden groote steenen voor den mont der speloncke, [die daer zijn] tot op desen selven dach.",
       "phraseDiff": [
         {
@@ -3454,9 +3464,19 @@
           "principe": null
         },
         {
+          "old": "houten",
+          "new": "palen",
+          "principe": null
+        },
+        {
           "old": "spelonk,",
           "new": "grot,",
           "principe": "V86"
+        },
+        {
+          "old": "alwaar",
+          "new": "waar",
+          "principe": null
         },
         {
           "old": "leiden",
