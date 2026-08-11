@@ -98,6 +98,26 @@ def test_german_luther_1912_is_registered_as_a_public_domain_edition():
     assert edition["direction"] == "ltr"
 
 
+def test_polish_gdansk_is_registered_as_a_public_domain_full_bible():
+    builder = load_builder()
+    edition = builder.EDITIONS["pl-gdanska1881"]
+
+    assert edition["source"] == "pol-gdanska"
+    assert edition["name"] == "Biblia Gdańska 1881"
+    assert edition["language"] == "pl"
+    assert edition["rights"] == "publiek domein"
+
+
+def test_turkish_open_basic_is_registered_as_a_cc_by_sa_new_testament():
+    builder = load_builder()
+    edition = builder.EDITIONS["tr-open-basic-nt"]
+
+    assert edition["source"] == "tur-open-basic-nt"
+    assert edition["language"] == "tr"
+    assert edition["rights"] == "CC BY-SA 4.0"
+    assert edition["scope"] == "Nieuwe Testament"
+
+
 def test_every_published_manifest_book_exists_in_site_manifest():
     site_ids = {
         book["id"]
