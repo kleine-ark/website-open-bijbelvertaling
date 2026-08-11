@@ -1,7 +1,7 @@
 /* Gedeelde teksteditie-laag voor OV en de genormaliseerde buitenlandse corpora. */
 (function (global) {
     'use strict';
-    const CODES = new Set(['nl-ov', 'fr-lsg1910', 'en-webbe', 'ar-vd', 'es-rv1909']);
+    const CODES = new Set(['nl-ov', 'fr-lsg1910', 'en-webbe', 'ar-vd', 'uk-ukrfb', 'de-luther1912', 'es-rv1909']);
     const STORAGE_KEY = 'sv2026_vertaalopties';
 
     function storedCode() {

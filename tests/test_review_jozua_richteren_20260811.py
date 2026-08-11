@@ -65,6 +65,45 @@ def test_opgegeven_correcties_in_richteren():
         assert_tekst("richteren", hoofdstuk, nummer, verwacht)
 
 
+def test_nieuwe_opmerkingen_in_richteren_zijn_verwerkt():
+    controles = {
+        (8, 1): "Wat is dit, dat u ons gedaan hebt",
+        (9, 34): "met vier groepen",
+        (10, 17): "de kinderen van Ammon werden bijeengeroepen",
+        (11, 2): "verstootten Jeftha uit",
+        (11, 38): "met haar vriendinnen",
+        (11, 39): "een gewoonte in Israël",
+        (12, 3): "dat u niet verloste",
+        (13, 25): "begon hem bij tijden aan te vuren",
+        (14, 8): "het kadaver van de leeuw",
+        (14, 20): "die hem vergezeld had",
+        (15, 2): "dat u haar geheel haatte",
+        (16, 31): "Israël gericht twintig jaar",
+        (20, 38): "tijd met de hinderlaag",
+    }
+    for (hoofdstuk, nummer), verwacht in controles.items():
+        assert_tekst("richteren", hoofdstuk, nummer, verwacht)
+
+    for hoofdstuk, nummer in ((17, 9), (18, 10)):
+        html = vers("richteren", hoofdstuk, nummer)["text2026_html"]
+        assert html.count('<span class="direct-speech"><i>') == 1
+        assert html.endswith("</i></span>")
+
+
+def test_richteren_opmerkingen_zijn_ook_als_onderwerpstags_opgenomen():
+    tags = json.loads((ROOT / "data" / "tags.json").read_text(encoding="utf-8"))["tags"]
+    per_id = {tag["id"]: tag for tag in tags}
+    verwacht = {
+        "afgoden": "richteren 8:33",
+        "almacht-van-god": "richteren 9:23",
+        "zaaien-en-oogsten": "richteren 9:56",
+        "vruchtbaarheid-en-onvruchtbaarheid": "richteren 13:2",
+        "lhbtq": "richteren 19:22",
+    }
+    for tag_id, ref in verwacht.items():
+        assert ref in {item["ref"] for item in per_id[tag_id]["verzen"]}
+
+
 def test_reuzentag_bevat_de_drie_opgegeven_jozuaverzen():
     tags = json.loads((ROOT / "data" / "tags.json").read_text(encoding="utf-8"))
     reuzen = next(tag for tag in tags["tags"] if tag["id"] == "reuzen")

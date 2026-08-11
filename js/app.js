@@ -13,13 +13,8 @@ const App = {
             .replace(/'/g, '&#39;');
     },
 
-    /**
-     * Render Strong-nummers uitsluitend naast het grondtekstwoord waaraan de
-     * brondata ze koppelt. De Nederlandse tekst bevat geen woordalignering;
-     * nummers daar sequentieel over verdelen zou dus schijnprecisie zijn.
-     */
-    renderStrongLinks(grondtekst) {
-        return window.OVWoordnummers ? window.OVWoordnummers.renderAlignment(grondtekst) : '';
+    renderStrongLinks(html, woordnummers) {
+        return window.OVWoordnummers ? window.OVWoordnummers.renderInline(html, woordnummers) : html;
     },
     // AUDIO_AVAILABLE leeft in js/audio-available.js (window.AUDIO_AVAILABLE) —
     // niet hier definieren. Wordt door de TTS-rollout-script bijgewerkt.
@@ -652,21 +647,28 @@ const App = {
             // Het testament bepaalt of de nacht drie of vier waken telt.
             if (!isExternalTranslation && typeof Opties !== 'undefined' && Opties.rekenTijden) openVertaling = Opties.rekenTijden(openVertaling, bookId, chapterNum, verse.number, book.testament);
 
-            // Strong-nummers als bronvaste grondtekstalignering onder de OV-tekst.
-            // Er is geen betrouwbare woordalignering met de Nederlandse tekst.
+            // Alleen handmatig gecontroleerde Strong-koppelingen staan inline in de OV-tekst.
+            // Project-eigen Latijnse/Ge'ez-nummers behouden hun bronwoordweergave.
             let sv1888Text = verse.textSV1888_html || verse.textSV1888 || '';
-            if (showStrongs && verse.grondtekst && verse.grondtekst.length > 0) {
-                openVertaling += this.renderStrongLinks(verse.grondtekst);
+            if (showStrongs && verse.woordnummers && verse.woordnummers.length > 0) {
+                openVertaling = this.renderStrongLinks(openVertaling, verse.woordnummers);
+            } else if (showStrongs && verse.grondtekst && verse.grondtekst.some(w => /^(?:OVL|OVG)/.test(w.strongs || ''))) {
+                openVertaling += window.OVWoordnummers.renderAlignment(verse.grondtekst);
             }
 
             // Diff-kolom: toon phrase-level wijzigingen als "oud → nieuw"
             let diffHtml = '';
             if (verse.phraseDiff && verse.phraseDiff.length > 0) {
                 diffHtml = verse.phraseDiff.map(d => {
-                    const badge = d.principe ? `<a class="principe-badge cat-${d.principe[0]}" href="principes.html#${d.principe}" title="${d.principe}">${d.principe}</a>` : '';
+                    // Sommige geïmporteerde revisies dragen meerdere principes als array.
+                    // De leesweergave mag daardoor nooit vóór de initiaal-rendering afbreken.
+                    const principe = Array.isArray(d.principe)
+                        ? (d.principe[0] || '')
+                        : String(d.principe || '');
+                    const badge = principe ? `<a class="principe-badge cat-${principe[0]}" href="principes.html#${principe}" title="${principe}">${principe}</a>` : '';
                     const escOld = (d.old || '').replace(/'/g, "\\'");
                     const escNew = (d.new || '').replace(/'/g, "\\'");
-                    const escPrincipe = (d.principe || '').replace(/'/g, "\\'");
+                    const escPrincipe = principe.replace(/'/g, "\\'");
                     const undoBtn = `<button class="undo-diff-btn" title="Uitzondering maken" onclick="undoDiff('${bookId}', ${chapterNum}, ${verse.number}, '${escPrincipe}', '${escOld}', '${escNew}')">✕</button>`;
                     if (d.old && d.new) {
                         return `<span class="diff-change">${badge}${undoBtn}<span class="diff-old">${d.old}</span> → <span class="diff-new">${d.new}</span></span>`;
@@ -1075,7 +1077,9 @@ const App = {
         const container = document.getElementById('verses-container');
         if (!container) return;
         // Verwijder oude dropcaps (bij hervertonen)
-        container.querySelectorAll('.dropcap').forEach(d => d.replaceWith(...d.childNodes));
+        container.querySelectorAll('.dropcap').forEach(d => {
+            d.replaceWith(document.createTextNode(d.dataset.letter || d.textContent));
+        });
         // Drop-cap op het EERSTE vers van ELK hoofdstuk (ook in doorlopend lezen,
         // waar meerdere hoofdstukken na elkaar staan).
         const firstVerseRows = container.querySelectorAll('.verse-row[data-verse="1"]');
@@ -1101,13 +1105,24 @@ const App = {
                 after.splitText(1);                         // rest = na de letter
                 const span = document.createElement('span');
                 span.textContent = letter;
+                span.dataset.letter = letter;
                 if (/^[A-Za-z]$/.test(letter)) {
                     const assetLetter = letter.toUpperCase();
                     span.className = 'dropcap dropcap--penkrul';
-                    span.style.setProperty('--dropcap-image-light',
+                    span.style.setProperty('--dropcap-shape',
                         `url("/images/initialen/vrije-penkrul/${assetLetter}.svg")`);
-                    span.style.setProperty('--dropcap-image-dark',
-                        `url("/images/initialen/vrije-penkrul/donker/${assetLetter}.svg")`);
+                    const licht = document.createElement('img');
+                    licht.className = 'dropcap-image dropcap-image--light';
+                    licht.src = `/images/initialen/vrije-penkrul/${assetLetter}.svg`;
+                    licht.alt = '';
+                    licht.setAttribute('aria-hidden', 'true');
+                    const donker = document.createElement('img');
+                    donker.className = 'dropcap-image dropcap-image--dark';
+                    donker.src = `/images/initialen/vrije-penkrul/donker/${assetLetter}.svg`;
+                    donker.alt = '';
+                    donker.hidden = true;
+                    donker.setAttribute('aria-hidden', 'true');
+                    span.append(licht, donker);
                 } else {
                     // Voor letters buiten A–Z blijft de leesbare typografische initiaal staan.
                     span.className = 'dropcap dropcap--fallback';

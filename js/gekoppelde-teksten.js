@@ -24,6 +24,9 @@
     }
 
     function linkVoor(ref, parts) {
+        if (global.OVTekstweergave && typeof global.OVTekstweergave.lezerLink === 'function') {
+            return global.OVTekstweergave.lezerLink(ref);
+        }
         if (!parts) return 'index.html#' + encodeURIComponent(String(ref || ''));
         return 'index.html#' + parts.boek + '/' + parts.hoofdstuk + '/' + parts.van;
     }

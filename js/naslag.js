@@ -280,8 +280,14 @@
         if ((d.nummerType === 'Lied' || d.nummerType === 'Gebed') &&
             globalThis.OVTekstweergave &&
             typeof globalThis.OVTekstweergave.renderNaslagtekst === 'function') {
-            if (d.nummerType === 'Gebed') laadGebedtekstUitCitaten(container, it);
-            else laadLiedtekstUitCitaten(container, it);
+            if (d.nummerType === 'Gebed') {
+                laadGebedtekstUitCitaten(container, it);
+            } else if (globalThis.GekoppeldeTeksten &&
+                       typeof globalThis.GekoppeldeTeksten.render === 'function') {
+                laadLiedtekstMetBediening(container, it);
+            } else {
+                laadLiedtekstUitCitaten(container, it);
+            }
             return;
         }
         fetch(bundelPad(d, it))
@@ -294,6 +300,32 @@
                 container.innerHTML = '<h2 class="ns-kop">Volledige tekst</h2>' +
                     '<p class="ns-tekstfout">De volledige tekst kon niet geladen worden.</p>';
             });
+    }
+
+    /* Liederen gebruiken dezelfde gekoppelde-tekstencomponent als de overige
+       wiki-pagina's. Daardoor krijgt een volledig lied ook de vertrouwde
+       tekstlink en +/−-bediening voor context buiten het lied. */
+    function laadLiedtekstMetBediening(container, it) {
+        container.textContent = '';
+        container.appendChild(maakElement('h2', 'ns-kop', 'Volledige tekst'));
+        var passages = it.tekstpassages || [];
+        for (var i = 0; i < passages.length; i++) {
+            var passage = passages[i];
+            var passageNode = maakElement('section', 'ns-passage ns-liedcitaat');
+            passageNode.appendChild(maakElement('h3', '', passage.label));
+            var lijst = maakElement('ol', 'gt-lijst ns-liedtekst');
+            passageNode.appendChild(lijst);
+            container.appendChild(passageNode);
+
+            var ref = passage.boek + ' ' + passage.hoofdstuk + ':' + passage.van +
+                (passage.tot !== passage.van ? '-' + passage.tot : '');
+            globalThis.GekoppeldeTeksten.render(lijst, [ref], { compact: false });
+
+            /* De centrale component maakt de link direct; het lied levert de
+               redactionele boeknaam en bereik als leesbaar opschrift. */
+            var link = lijst.querySelector('.gt-vers-kop > a');
+            if (link) link.textContent = passage.label;
+        }
     }
 
     function laadLiedtekstUitCitaten(container, it) {

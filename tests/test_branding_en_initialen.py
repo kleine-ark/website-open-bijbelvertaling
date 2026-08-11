@@ -4,6 +4,7 @@ import contextlib
 import hashlib
 import http.server
 from pathlib import Path
+import re
 import threading
 import unittest
 import xml.etree.ElementTree as ET
@@ -170,8 +171,17 @@ class BrandingBrowserTests(unittest.TestCase):
     def test_stabiele_merkbestanden_worden_online_ververst(self):
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
         self.assertIn("path.startsWith('/images/branding/')", service_worker)
+        self.assertIn("path.startsWith('/images/initialen/')", service_worker)
         self.assertIn("path === '/favicon.svg'", service_worker)
         self.assertIn("path.startsWith('/icons/')", service_worker)
+
+    def test_kritieke_letteropmaak_bestanden_hebben_releaseversie_in_de_url(self):
+        service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
+        versie = re.search(r"const VERSION = 'v([^']+)'", service_worker).group(1)
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+
+        self.assertIn(f'href="css/style.css?v={versie}"', index)
+        self.assertIn(f'src="js/app.js?v={versie}"', index)
 
     def test_hamburger_blijft_rechtsboven_op_alle_responsieve_breekpunten(self):
         for width, expected_right_gap in (
@@ -250,20 +260,129 @@ class BrandingBrowserTests(unittest.TestCase):
                 )
                 dropcap.wait_for(state="visible", timeout=15_000)
                 state = dropcap.evaluate(
-                    "el => ({text: el.textContent, background: getComputedStyle(el).backgroundImage})"
+                    """el => ({
+                        text: el.dataset.letter,
+                        lightSrc: el.querySelector('.dropcap-image--light').src,
+                        lightVisible: !!el.querySelector('.dropcap-image--light').getClientRects().length
+                    })"""
                 )
                 self.assertEqual(state["text"], letter)
-                self.assertIn(f"/{letter}.svg", state["background"])
+                self.assertIn(f"/{letter}.svg", state["lightSrc"])
+                self.assertTrue(state["lightVisible"])
                 if chapter == 1:
                     page.locator("#topnav-theme-toggle").click()
                     dark_state = dropcap.evaluate(
-                        "el => ({color: getComputedStyle(el).color, "
-                        "background: getComputedStyle(el).backgroundImage})"
+                        """el => ({
+                            color: getComputedStyle(el).color,
+                            darkSrc: el.querySelector('.dropcap-image--dark').src,
+                            lightVisible: !!el.querySelector('.dropcap-image--light').getClientRects().length,
+                            darkVisible: !!el.querySelector('.dropcap-image--dark').getClientRects().length
+                        })"""
                     )
-                    self.assertIn(f"/donker/{letter}.svg", dark_state["background"])
+                    self.assertIn(f"/donker/{letter}.svg", dark_state["darkSrc"])
+                    self.assertFalse(dark_state["lightVisible"])
+                    self.assertTrue(dark_state["darkVisible"])
                     self.assertEqual(dark_state["color"], "rgba(0, 0, 0, 0)")
             finally:
                 page.close()
+
+    def test_lukas_22_krijgt_op_vers_een_decoratieve_e_initiaal(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/index.html#lukas/22")
+            dropcap = page.locator(
+                '.verse-row[data-chapter="22"][data-verse="1"] '
+                ".col-2026 .dropcap"
+            )
+            dropcap.wait_for(state="visible", timeout=15_000)
+            state = dropcap.evaluate(
+                """el => ({
+                    letter: el.dataset.letter,
+                    source: el.querySelector('.dropcap-image--light').src
+                })"""
+            )
+            self.assertEqual(state["letter"], "E")
+            self.assertIn("/E.svg", state["source"])
+        finally:
+            page.close()
+
+    def test_alle_initiaalbeelden_zijn_strak_op_het_tekenwerk_bijgesneden(self):
+        page = self.browser.new_page()
+        try:
+            page.goto(f"{self.base_url}/index.html", wait_until="domcontentloaded")
+            audit = page.evaluate(
+                """async () => {
+                    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+                    const resultaten = [];
+                    for (const thema of ['', 'donker/']) {
+                        for (const letter of letters) {
+                            const url = `/images/initialen/vrije-penkrul/${thema}${letter}.svg`;
+                            const tekst = await (await fetch(url)).text();
+                            const bron = new DOMParser().parseFromString(tekst, 'image/svg+xml').documentElement;
+                            const svg = document.importNode(bron, true);
+                            svg.style.cssText = 'position:fixed;left:-10000px;top:-10000px;width:400px;height:400px';
+                            document.body.append(svg);
+                            const vak = svg.viewBox.baseVal;
+                            const onderdelen = [...svg.querySelectorAll('[data-role]')];
+                            const dozen = onderdelen.map(el => el.getBBox());
+                            const links = Math.min(...dozen.map(b => b.x));
+                            const boven = Math.min(...dozen.map(b => b.y));
+                            const rechts = Math.max(...dozen.map(b => b.x + b.width));
+                            const onder = Math.max(...dozen.map(b => b.y + b.height));
+                            resultaten.push({
+                                url,
+                                marges: [links - vak.x, boven - vak.y,
+                                    vak.x + vak.width - rechts, vak.y + vak.height - onder]
+                            });
+                            svg.remove();
+                        }
+                    }
+                    return resultaten;
+                }"""
+            )
+            for resultaat in audit:
+                with self.subTest(asset=resultaat["url"]):
+                    self.assertGreaterEqual(min(resultaat["marges"]), 3)
+                    self.assertLessEqual(max(resultaat["marges"]), 12)
+        finally:
+            page.close()
+
+    def test_initiaalbeeld_volgt_eigen_breedte_en_sluit_dicht_aan_op_de_tekst(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/index.html#genesis/1")
+            dropcap = page.locator(
+                '.verse-row[data-chapter="1"][data-verse="1"] .col-2026 .dropcap'
+            )
+            dropcap.wait_for(state="visible", timeout=15_000)
+            meting = dropcap.evaluate(
+                """el => {
+                    const beeld = el.querySelector('img:not([hidden])');
+                    const walker = document.createTreeWalker(el.parentElement, NodeFilter.SHOW_TEXT);
+                    let node;
+                    while ((node = walker.nextNode())) {
+                        if (el.contains(node) || !node.nodeValue.trim()) continue;
+                    const index = node.nodeValue.search(/\\S/);
+                        const bereik = document.createRange();
+                        bereik.setStart(node, index);
+                        bereik.setEnd(node, index + 1);
+                        return {
+                            letter: el.dataset.letter,
+                            vorm: getComputedStyle(el).shapeOutside,
+                            beeld: beeld && beeld.getBoundingClientRect().toJSON(),
+                            volgende: bereik.getBoundingClientRect().toJSON(),
+                        };
+                    }
+                    return {letter: el.dataset.letter, beeld: null, volgende: null};
+                }"""
+            )
+            self.assertEqual(meting["letter"], "I")
+            self.assertIn("/I.svg", meting["vorm"])
+            self.assertIsNotNone(meting["beeld"])
+            self.assertIsNotNone(meting["volgende"])
+            self.assertLessEqual(meting["volgende"]["left"] - meting["beeld"]["right"], -5)
+        finally:
+            page.close()
 
 
 if __name__ == "__main__":

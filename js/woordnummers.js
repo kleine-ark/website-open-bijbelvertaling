@@ -54,5 +54,99 @@
         return `<span class="strongs-alignment${directionClass}" aria-label="Woordnummers bij de grondtekst">${tokens}</span>`;
     }
 
-    global.OVWoordnummers = { FAMILIES, escapeHtml, familyOf, parse, renderAlignment };
+    function escapeRegExp(value) {
+        return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function inlineButtons(mapping) {
+        const numbers = parse(Array.isArray(mapping.strongs) ? mapping.strongs.join(' ') : mapping.strongs);
+        const sourceWords = mapping.bronwoorden || [];
+        const transliterations = mapping.transliteraties || [];
+        const glosses = mapping.glossen || [];
+        return numbers.map((number, index) => {
+            const safeNumber = escapeHtml(number);
+            const sourceWord = escapeHtml(sourceWords[index] || sourceWords[0] || '');
+            const transliteration = escapeHtml(transliterations[index] || transliterations[0] || '');
+            const gloss = escapeHtml(glosses[index] || glosses[0] || '');
+            return `<button type="button" class="strongs-inline" data-strongs="${safeNumber}" data-source-word="${sourceWord}" data-transliteratie="${transliteration}" data-gloss="${gloss}" aria-label="Open woordenboekbetekenis van ${safeNumber}">${safeNumber}</button>`;
+        }).join('');
+    }
+
+    function renderInline(html, mappings) {
+        if (!Array.isArray(mappings) || !mappings.length || typeof document === 'undefined') {
+            return String(html || '');
+        }
+        const template = document.createElement('template');
+        template.innerHTML = String(html || '');
+
+        mappings.forEach(mapping => {
+            if (!mapping || (mapping.reviewstatus && !['handmatig_gecontroleerd', 'automatisch_hoog_vertrouwen'].includes(mapping.reviewstatus))) return;
+            const target = String(mapping.tekst || '');
+            const occurrence = Math.max(1, Number(mapping.voorkomen) || 1);
+            const buttons = inlineButtons(mapping);
+            if (!target || !buttons) return;
+
+            const matcher = new RegExp(`(^|[^\\p{L}\\p{N}])(${escapeRegExp(target)})(?=$|[^\\p{L}\\p{N}])`, 'giu');
+            const walker = document.createTreeWalker(template.content, NodeFilter.SHOW_TEXT, {
+                acceptNode(node) {
+                    const parent = node.parentElement;
+                    return (!parent || !parent.closest('button, sup, script, style'))
+                        ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+                }
+            });
+            let seen = 0;
+            let node;
+            while ((node = walker.nextNode())) {
+                matcher.lastIndex = 0;
+                let match;
+                while ((match = matcher.exec(node.data))) {
+                    seen += 1;
+                    if (seen !== occurrence) continue;
+                    const start = match.index + match[1].length;
+                    const end = start + match[2].length;
+                    const tail = node.splitText(end);
+                    node.splitText(start);
+                    const holder = document.createElement('template');
+                    holder.innerHTML = buttons;
+                    tail.parentNode.insertBefore(holder.content, tail);
+                    return;
+                }
+            }
+        });
+        return template.innerHTML;
+    }
+
+    const mappingCache = {};
+
+    async function loadBookMappings(bookId, base) {
+        const prefix = String(base || '').replace(/\/$/, '');
+        const key = `${prefix}:${bookId}`;
+        if (!mappingCache[key]) {
+            mappingCache[key] = fetch(`${prefix}/data/woordnummers-inline/${bookId}.json`)
+                .then(response => response.ok ? response.json() : null)
+                .catch(() => null);
+        }
+        return mappingCache[key];
+    }
+
+    function mergeChapterMappings(chapter, mappingBook, chapterNumber) {
+        if (!chapter || !mappingBook || !mappingBook.chapters) return chapter;
+        const external = mappingBook.chapters[String(chapterNumber)] || {};
+        for (const verse of chapter.verses || []) {
+            const generated = external[String(verse.number)] || [];
+            if (!generated.length) continue;
+            const merged = new Map();
+            [...generated, ...(verse.woordnummers || [])].forEach(mapping => {
+                const key = `${String(mapping.tekst || '').toLocaleLowerCase('nl')}#${mapping.voorkomen || 1}`;
+                merged.set(key, mapping);
+            });
+            verse.woordnummers = [...merged.values()];
+        }
+        return chapter;
+    }
+
+    global.OVWoordnummers = {
+        FAMILIES, escapeHtml, familyOf, parse, renderAlignment, renderInline,
+        loadBookMappings, mergeChapterMappings
+    };
 })(typeof window !== 'undefined' ? window : this);

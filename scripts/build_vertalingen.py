@@ -45,6 +45,8 @@ EDITIONS = {
     "fr-lsg1910": {"source": "fraLSG", "name": "Louis Segond 1910", "language": "fr", "direction": "ltr", "sha256": "3A0615E992FFD412B1AFCAED50D146BBA5EC8AE2378F04CA71459A4CD2D7CC33"},
     "en-webbe": {"source": "eng-webbe", "name": "World English Bible British Edition", "language": "en", "direction": "ltr", "sha256": "71BC006074BBEE6206F4B822814218FD64E6CB51C71647104C94D5B08FFAFC9F"},
     "ar-vd": {"source": "arb-vd", "name": "Arabic Van Dyck", "language": "ar", "direction": "rtl", "sha256": "E4A2AB9491B2AC2FF799BB2A80EC9322203A7C36E78210B4506DF84308C54948"},
+    "uk-ukrfb": {"source": "ukrfb", "name": "Ukrainian Freedom Bible", "language": "uk", "direction": "ltr", "sha256": "C634DB3081690A9201E19F71276EAA6E5B4B487D1455637548305F220B2B6CD5"},
+    "de-luther1912": {"source": "deu1912", "name": "Lutherbibel 1912", "language": "de", "direction": "ltr", "sha256": "650A8192134A8F0057286C469754EDCFAEE4FBB18800621AEE4563F3055BB39B"},
     "es-rv1909": {"source": "spaRV1909", "name": "Reina-Valera 1909", "language": "es", "direction": "ltr", "sha256": "B5BFAC87199A561FCBACB5E32BE5D8D280934B1C6830088D9EB8C68FFBFBE711"},
 }
 

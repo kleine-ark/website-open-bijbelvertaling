@@ -99,6 +99,32 @@
 }
 .topnav-theme:hover { color: #fff; background: rgba(255,255,255,0.12); }
 .topnav-theme svg { display: block; }
+
+/* Centrale ingang voor dezelfde globale leesvoorkeuren als in de leestekst. */
+.topnav-tekstopties {
+    background: rgba(203,164,73,0.13);
+    border: 1px solid rgba(203,164,73,0.44);
+    color: #f7ecd0;
+    cursor: pointer;
+    min-height: 38px;
+    padding: 0 11px;
+    margin-right: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 7px;
+    font: 600 13px/1 var(--font-body);
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.topnav-tekstopties:hover,
+.topnav-tekstopties[aria-expanded="true"] {
+    color: #fff;
+    background: rgba(203,164,73,0.28);
+    border-color: var(--gold);
+}
+.topnav-tekstopties svg { flex: 0 0 auto; }
 /* Toon sun in licht-mode, moon in donker-mode (icoon van wat je KRIJGT bij klik). */
 .topnav-theme .theme-icon-sun { display: none; }
 .topnav-theme .theme-icon-moon { display: block; }
@@ -339,10 +365,15 @@
     }
     .topnav-links a:last-child { border-bottom: none; }
     .topnav-links a:hover { background: rgba(203,164,73,0.15); color: var(--gold); }
+    .topnav-tekstopties { width: 38px; padding: 0; gap: 0; }
+    .topnav-tekstopties span { display: none; }
 }
 
 @media (max-width: 768px) {
     #topnav { padding: 0 12px; height: 56px; }
+    /* De mobiele leestoolbalk heeft al een eigen, goed bereikbaar opties-icoon.
+       Zo blijft het woordmerk in de hoofdbalk altijd leesbaar. */
+    .topnav-tekstopties { display: none; }
     .topnav-brand {
         flex: 0 1 auto;
         gap: 5px;
@@ -388,19 +419,23 @@
     float: left;
 }
 .col-2026 .dropcap--penkrul {
-    width: 2.55em;
-    height: 3.2em;
-    margin: -0.12em 0.38em -0.08em 0;
+    margin: -0.12em 0.08em -0.08em 0;
     color: transparent !important;
     -webkit-text-fill-color: transparent;
     line-height: 0;
-    background-image: var(--dropcap-image-light);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: contain;
+    shape-outside: var(--dropcap-shape);
+    shape-image-threshold: 0.08;
+    shape-margin: 0.02em;
 }
-:root[data-theme="donker"] .col-2026 .dropcap--penkrul {
-    background-image: var(--dropcap-image-dark);
+.col-2026 .dropcap-image {
+    display: block;
+    width: auto;
+    height: 3.2em;
+}
+.col-2026 .dropcap-image--dark { display: none; }
+:root[data-theme="donker"] .col-2026 .dropcap-image--light { display: none; }
+:root[data-theme="donker"] .col-2026 .dropcap-image--dark {
+    display: block;
 }
 .col-2026 .dropcap--fallback {
     font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
@@ -1107,7 +1142,9 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     min-height: 50px;
     align-items: center;
     padding: 0 46px 0 16px;
-    color: var(--navy);
+    background: #e8f2fb;
+    border-bottom: 1px solid #b7d2e8;
+    color: #102f4b;
     font: 600 16px/1.2 var(--font-serif);
     list-style: none;
     cursor: pointer;
@@ -1395,9 +1432,19 @@ body.options-open #sidebar-right-open { visibility: hidden; }
     outline-offset: 2px;
 }
 :root[data-theme="donker"] .options-tabs [role="tab"][aria-selected="true"],
+:root[data-theme="donker"] .options-category > summary,
 :root[data-theme="donker"] .options-section-heading h3,
 :root[data-theme="donker"] .options-zoom-controls button,
 :root[data-theme="donker"] #sidebar-right-toggle { color: var(--text-primary); }
+:root[data-theme="donker"] .option-current { color: var(--text-secondary); }
+:root[data-theme="donker"] .option-select-shell::after {
+    border-color: var(--text-secondary);
+}
+:root[data-theme="donker"] .options-category > summary {
+    background: #163c62;
+    border-bottom-color: #2c5d89;
+    color: #f4f8fc;
+}
 
 @media (max-width: 768px) {
     #sidebar-right.options-panel::backdrop {
@@ -2403,12 +2450,14 @@ sup.note-marker:hover {
     padding: 2px 3px;
     border: 0;
     border-radius: 3px;
-    background: transparent;
+    background: rgba(74, 127, 181, 0.14);
     color: #246da8;
     font: inherit;
     font-size: 10px;
     line-height: 1.2;
     user-select: none;
+    vertical-align: super;
+    margin-inline: 2px 1px;
 }
 .strongs-inline:hover {
     background: rgba(74, 127, 181, 0.15);
