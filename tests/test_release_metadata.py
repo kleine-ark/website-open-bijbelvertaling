@@ -71,18 +71,16 @@ installation.then(() => process.stdout.write(JSON.stringify(opened)));
     return json.loads(result.stdout)
 
 
-def test_current_release_describes_opties_en_uses_one_version():
+def test_current_release_describes_talen_en_uses_one_version():
     stats = read_json("data/stats.json")
     changelog = read_json("data/changelog.json")
     current_release = changelog["wijzigingen"][0]
     descriptions = " ".join(item["beschrijving"] for item in current_release["items"])
 
-    assert current_release["versie"] == "v0.33.0"
+    assert current_release["versie"] == "v0.36.0"
     for subject in (
-        "Leesvoorkeuren",
-        "Vertalingen, talen & kanttekeningen",
-        "Regelafstand",
-        "Dyslexiemodus",
+        "materialenpagina",
+        "leem en baksteen",
     ):
         assert subject in descriptions
     assert stats["version"] == current_release["versie"]
@@ -91,18 +89,20 @@ def test_current_release_describes_opties_en_uses_one_version():
     assert stats["date"] == "11 augustus 2026"
 
 
-def test_human_review_statistics_include_jozua_en_richteren_1_tot_7():
+def test_human_review_statistics_include_jozua_en_heel_richteren():
     stats = read_json("data/stats.json")
     verified = read_json("data/verified-chapters.json")
 
-    assert stats["books_verified"] == 53
-    assert stats["chapters_verified"] == 745
-    assert stats["verses_verified"] == 20064
-    assert stats["verses_verified_pct"] == 53.9
+    assert stats["books_verified"] == 54
+    assert stats["chapters_verified"] == 759
+    assert stats["verses_verified"] == 20472
+    assert stats["verses_verified_pct"] == 55.0
     assert "Numeri" in stats["verified_books"]
     assert "Deuteronomium" in stats["verified_books"]
     assert "Jozua" in stats["verified_books"]
-    assert "Richteren 1–7" in stats["verified_books"]
+    assert "Richteren" in stats["verified_books"]
+    assert stats["ot_verses_verified"] == 11293
+    assert stats["ot_verses_verified_pct"] == 48.6
     assert stats["nt_verses_verified"] == 7960
     assert stats["nt_verses_verified_pct"] == 100.0
     assert stats["ap_verses_verified"] == 1219
@@ -110,7 +110,7 @@ def test_human_review_statistics_include_jozua_en_richteren_1_tot_7():
     assert verified["numeri"] == "all"
     assert verified["deuteronomium"] == "all"
     assert verified["jozua"] == "all"
-    assert verified["richteren"] == list(range(1, 8))
+    assert verified["richteren"] == "all"
     assert verified["mattheus"] == "all"
     assert verified["openbaring"] == "all"
     assert verified["psalmen"] == "all"
