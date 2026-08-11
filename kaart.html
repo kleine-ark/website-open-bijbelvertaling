@@ -43,8 +43,10 @@
         .ol-popup .pp-type { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--gold); font-weight: 600; }
         .ol-popup .pp-modern { font-size: 12.5px; color: #666; margin: 5px 0; }
         .ol-popup .pp-toel { font-size: 13px; color: #333; line-height: 1.45; margin: 6px 0; }
-        .ol-popup .pp-refs { font-size: 12.5px; margin-top: 6px; }
-        .ol-popup .pp-refs a { color: var(--gold); text-decoration: none; margin-right: 8px; }
+        .ol-popup .pp-refs { display: flex; flex-wrap: wrap; gap: 3px 8px; max-height: 180px; overflow: auto; font-size: 12.5px; margin-top: 6px; padding-right: 4px; }
+        .ol-popup .pp-refs a { color: var(--gold); text-decoration: none; }
+        .ol-popup .pp-refs a.ref-te-controleren { text-decoration: underline dotted; text-underline-offset: 3px; }
+        .ol-popup .pp-koppeling { margin-top: 5px; color: #777; font-size: 10.5px; }
         .ol-popup .pp-zeker { display: inline-block; margin-top: 6px; font-size: 11px; padding: 1px 7px; border-radius: 10px; }
         .ol-popup-closer { position: absolute; top: 6px; right: 9px; text-decoration: none; color: #999; font-size: 15px; }
         .z-zeker { background: rgba(92,184,92,.18); color: #3d7a3d; }
@@ -90,12 +92,23 @@
                 <span class="telling" id="telling">&hellip;</span>
                 <span>zichtbaar op de kaart</span>
             </div>
+            <fieldset class="kaart-keuzegroep kaart-tekstfilter">
+                <legend>Bijbelgedeelte</legend>
+                <label class="kaart-selectrij" for="f-boek">
+                    <span>Bijbelboek</span>
+                    <select id="f-boek" name="boek"><option value="">Alle boeken</option></select>
+                </label>
+                <label class="kaart-selectrij" for="f-hoofdstuk">
+                    <span>Hoofdstuk</span>
+                    <select id="f-hoofdstuk" name="hoofdstuk" disabled><option value="">Alle hoofdstukken</option></select>
+                </label>
+            </fieldset>
             <fieldset class="kaart-keuzegroep kaart-zekerheid">
                 <legend>Zekerheid van locaties</legend>
                 <div class="kaart-keuzerij">
                     <label><input type="checkbox" id="f-zeker" checked><span class="zekerheidstip z-zeker"></span><span>Zeker</span></label>
-                    <label><input type="checkbox" id="f-waarschijnlijk"><span class="zekerheidstip z-waarschijnlijk"></span><span>Waarschijnlijk</span></label>
-                    <label><input type="checkbox" id="f-onzeker"><span class="zekerheidstip z-onzeker"></span><span>Onzeker</span></label>
+                    <label><input type="checkbox" id="f-waarschijnlijk" checked><span class="zekerheidstip z-waarschijnlijk"></span><span>Waarschijnlijk</span></label>
+                    <label><input type="checkbox" id="f-onzeker" checked><span class="zekerheidstip z-onzeker"></span><span>Onzeker</span></label>
                 </div>
             </fieldset>
             <fieldset class="kaart-keuzegroep kaart-achtergronden">
@@ -124,19 +137,19 @@
         function prettyRef(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); return (BOOKNAMES[b] || (b.charAt(0).toUpperCase() + b.slice(1))) + ' ' + ref.slice(sp + 1); }
         function refHref(ref) { var sp = ref.lastIndexOf(' '); var b = ref.slice(0, sp); var cv = ref.slice(sp + 1).split(':'); return 'index.html#' + b + '/' + cv[0] + '/' + (cv[1] || ''); }
 
-        var KLEUR = { stad: '#c0392b', dorp: '#c0392b', land: '#8e44ad', streek: '#8e44ad', regio: '#8e44ad', berg: '#6b4b2a', rivier: '#2980b9', zee: '#2980b9', meer: '#2980b9', eiland: '#16a085' };
-        function markerStyle(feat, sel) {
+        var KLEUR = { stad: '#c0392b', dorp: '#c0392b', 'stad-dorp': '#c0392b', land: '#8e44ad', streek: '#8e44ad', regio: '#8e44ad', 'land-streek': '#8e44ad', berg: '#6b4b2a', rivier: '#2980b9', zee: '#2980b9', meer: '#2980b9', 'rivier-water': '#2980b9', eiland: '#16a085', woestijn: '#b7863c', 'dal-vlakte': '#66845d' };
+        function markerStyle(feat, sel, resolution) {
             var p = feat.getProperties();
             var kleur = KLEUR[p.type] || '#555';
-            var zeker = p.zekerheid === 'zeker';
+            var zeker = p.zekerheid === 'zeker', waarschijnlijk = p.zekerheid === 'waarschijnlijk';
             return new ol.style.Style({
                 image: new ol.style.Circle({
-                    radius: sel ? 8 : 6,
+                    radius: sel ? 8 : (zeker ? 5.5 : 5),
                     fill: new ol.style.Fill({ color: kleur }),
-                    stroke: new ol.style.Stroke({ color: zeker ? '#fff' : 'rgba(255,255,255,.6)', width: zeker ? 2 : 1.5 })
+                    stroke: new ol.style.Stroke({ color: zeker ? '#fff' : waarschijnlijk ? '#c9a44b' : '#92999e', width: zeker ? 2 : 1.5, lineDash: zeker ? undefined : [2, 2] })
                 }),
                 text: new ol.style.Text({
-                    text: p.naam, font: '12px "Fira Sans", sans-serif', offsetY: -14,
+                    text: sel || resolution < 20000 ? p.naam : '', font: '12px "Fira Sans", sans-serif', offsetY: -14,
                     fill: new ol.style.Fill({ color: '#142e42' }),
                     stroke: new ol.style.Stroke({ color: 'rgba(255,255,255,.85)', width: 3 }),
                     overflow: true
@@ -145,7 +158,7 @@
         }
 
         var vectorSource = new ol.source.Vector();
-        var vectorLayer = new ol.layer.Vector({ source: vectorSource, style: function (f) { return markerStyle(f, false); } });
+        var vectorLayer = new ol.layer.Vector({ source: vectorSource, style: function (f, resolution) { return markerStyle(f, false, resolution); } });
         // OSM-achtergrond in grijswaarden (alleen de tegels, niet de markers)
         var osmLayer = new ol.layer.Tile({ source: new ol.source.OSM() });
         osmLayer.on('prerender', function (evt) {
@@ -192,18 +205,39 @@
         map.addOverlay(overlay);
         document.getElementById('popup-closer').onclick = function () { overlay.setPosition(undefined); document.getElementById('popup').style.display = 'none'; return false; };
 
+        var boekSelect = document.getElementById('f-boek');
+        var hoofdstukSelect = document.getElementById('f-hoofdstuk');
         function filters() {
-            return { zeker: document.getElementById('f-zeker').checked, waarschijnlijk: document.getElementById('f-waarschijnlijk').checked, onzeker: document.getElementById('f-onzeker').checked };
+            return {
+                zeker: document.getElementById('f-zeker').checked,
+                waarschijnlijk: document.getElementById('f-waarschijnlijk').checked,
+                onzeker: document.getElementById('f-onzeker').checked,
+                boek: boekSelect.value,
+                hoofdstuk: hoofdstukSelect.value ? Number(hoofdstukSelect.value) : null
+            };
+        }
+        function passendeRefs(feat, f) {
+            return (feat.get('refs') || []).filter(function (r) {
+                return (!f.boek || r.boek === f.boek) && (!f.hoofdstuk || r.hoofdstuk === f.hoofdstuk);
+            });
+        }
+        function schrijfFilterUrl(f) {
+            var url = new URL(window.location.href);
+            if (f.boek) url.searchParams.set('boek', f.boek); else url.searchParams.delete('boek');
+            if (f.boek && f.hoofdstuk) url.searchParams.set('hoofdstuk', String(f.hoofdstuk)); else url.searchParams.delete('hoofdstuk');
+            history.replaceState(null, '', url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : '') + url.hash);
         }
         function pasFilterToe() {
             var f = filters(), zicht = 0;
             vectorSource.forEachFeature(function (feat) {
                 var z = feat.get('zekerheid') || 'onzeker';
-                var aan = f[z] !== false && (z === 'zeker' ? f.zeker : z === 'waarschijnlijk' ? f.waarschijnlijk : f.onzeker);
+                var zekerheidAan = z === 'zeker' ? f.zeker : z === 'waarschijnlijk' ? f.waarschijnlijk : f.onzeker;
+                var aan = zekerheidAan && passendeRefs(feat, f).length > 0;
                 feat.setStyle(aan ? undefined : new ol.style.Style({}));
                 if (aan) zicht++;
             });
             document.getElementById('telling').textContent = zicht + ' plaatsen';
+            schrijfFilterUrl(f);
         }
         ['f-zeker', 'f-waarschijnlijk', 'f-onzeker'].forEach(function (id) { document.getElementById(id).addEventListener('change', pasFilterToe); });
 
@@ -211,7 +245,9 @@
             var feat = map.forEachFeatureAtPixel(evt.pixel, function (f) { return f; });
             if (!feat) { overlay.setPosition(undefined); document.getElementById('popup').style.display = 'none'; return; }
             var p = feat.getProperties();
-            var refs = (p.verwijzingen || []).map(function (r) { return '<a href="' + refHref(r) + '">' + esc(prettyRef(r)) + '</a>'; }).join(' ');
+            var f = filters();
+            var actieveRefs = passendeRefs(feat, f);
+            var refs = actieveRefs.map(function (r) { return '<a' + (r.status === 'needs-human-review' ? ' class="ref-te-controleren" title="Tekstkoppeling moet nog menselijk worden gecontroleerd"' : '') + ' href="' + esc(r.href || refHref(r.ref)) + '">' + esc(prettyRef(r.ref)) + '</a>'; }).join(' ');
             var zl = { zeker: 'Locatie zeker', waarschijnlijk: 'Locatie waarschijnlijk', onzeker: 'Locatie onzeker' }[p.zekerheid] || '';
             document.getElementById('popup-content').innerHTML =
                 '<div class="pp-type">' + esc(p.type || '') + '</div>' +
@@ -219,6 +255,7 @@
                 (p.moderneNaam ? '<div class="pp-modern">Nu: ' + esc(p.moderneNaam) + '</div>' : '') +
                 (p.toelichting ? '<div class="pp-toel">' + esc(p.toelichting) + '</div>' : '') +
                 (refs ? '<div class="pp-refs">' + refs + '</div>' : '') +
+                (actieveRefs.some(function (r) { return r.status === 'needs-human-review'; }) ? '<div class="pp-koppeling">Gestippeld: tekstkoppeling nog menselijk te controleren</div>' : '') +
                 (zl ? '<span class="pp-zeker z-' + esc(p.zekerheid) + '">' + zl + '</span>' : '');
             document.getElementById('popup').style.display = '';
             overlay.setPosition(feat.getGeometry().getCoordinates());
@@ -226,16 +263,42 @@
         map.on('pointermove', function (e) { map.getTargetElement().style.cursor = map.hasFeatureAtPixel(e.pixel) ? 'pointer' : ''; });
 
         Promise.all([
-            fetch('data/geografie.geojson').then(function (r) { return r.json(); }),
+            fetch('data/geografie-runtime.geojson').then(function (r) { return r.json(); }),
             fetch('data/books.json').then(function (r) { return r.json(); }).catch(function () { return { books: [] }; })
         ]).then(function (res) {
             (res[1].books || []).forEach(function (b) { BOOKNAMES[b.id] = b.nameDutch || b.id; });
+            var manifest = { books: res[1].books || [] };
+            var inData = {};
+            (res[0].features || []).forEach(function (feature) { (feature.properties.refs || []).forEach(function (ref) { inData[ref.boek] = true; }); });
+            var volgorde = window.getFlatBookOrder ? window.getFlatBookOrder('canoniek', manifest) : Object.keys(inData);
+            volgorde.concat(Object.keys(inData)).filter(function (id, i, arr) { return inData[id] && arr.indexOf(id) === i; }).forEach(function (id) {
+                var option = document.createElement('option'); option.value = id; option.textContent = BOOKNAMES[id] || id; boekSelect.appendChild(option);
+            });
+            var params = new URLSearchParams(window.location.search);
+            if (params.get('boek') && inData[params.get('boek')]) boekSelect.value = params.get('boek');
+            function vulHoofdstukken(gekozen) {
+                hoofdstukSelect.innerHTML = '<option value="">Alle hoofdstukken</option>';
+                hoofdstukSelect.disabled = !gekozen;
+                if (!gekozen) return;
+                var chapters = {};
+                (res[0].features || []).forEach(function (feature) { (feature.properties.refs || []).forEach(function (ref) { if (ref.boek === gekozen) chapters[ref.hoofdstuk] = true; }); });
+                Object.keys(chapters).map(Number).sort(function (a, b) { return a - b; }).forEach(function (chapter) {
+                    var option = document.createElement('option'); option.value = chapter; option.textContent = 'Hoofdstuk ' + chapter; hoofdstukSelect.appendChild(option);
+                });
+            }
+            vulHoofdstukken(boekSelect.value);
+            if (boekSelect.value && params.get('hoofdstuk') && hoofdstukSelect.querySelector('option[value="' + Number(params.get('hoofdstuk')) + '"]')) hoofdstukSelect.value = Number(params.get('hoofdstuk'));
+            boekSelect.addEventListener('change', function () { vulHoofdstukken(this.value); pasFilterToe(); });
+            hoofdstukSelect.addEventListener('change', pasFilterToe);
             var feats = new ol.format.GeoJSON().readFeatures(res[0], { dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857' });
             vectorSource.addFeatures(feats);
             pasFilterToe();
             var gevraagdePlaats = new URLSearchParams(window.location.search).get('plaats');
             var gekozen = gevraagdePlaats && feats.find(function (feat) {
-                return String(feat.get('naam') || '').toLocaleLowerCase('nl') === gevraagdePlaats.toLocaleLowerCase('nl');
+                var gevraagd = gevraagdePlaats.toLocaleLowerCase('nl');
+                return String(feat.get('id') || '').toLocaleLowerCase('nl') === gevraagd ||
+                    String(feat.get('naam') || '').toLocaleLowerCase('nl') === gevraagd ||
+                    (feat.get('aliases') || []).some(function (alias) { return String(alias).toLocaleLowerCase('nl') === gevraagd; });
             });
             if (gekozen) {
                 map.getView().animate({ center: gekozen.getGeometry().getCoordinates(), zoom: 9, duration: 300 });

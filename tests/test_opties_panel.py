@@ -115,6 +115,20 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_tekstopties_staat_in_de_hoofdbalk_en_opent_hetzelfde_paneel(self):
+        page = self.open_reader()
+        try:
+            opener = page.locator("#topnav-tekstopties")
+            self.assertTrue(opener.is_visible())
+            self.assertEqual(opener.get_attribute("aria-controls"), "sidebar-right")
+
+            opener.click()
+            self.assertTrue(page.locator("#sidebar-right").evaluate(
+                "el => el instanceof HTMLDialogElement && el.open"
+            ))
+        finally:
+            page.close()
+
     def test_iedere_zichtbare_instelling_heeft_een_eigen_icoon(self):
         expected = {
             "thema.png", "lettertype.png", "tekstgrootte.png", "regelafstand.png",
@@ -410,15 +424,37 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_grote_getallen_kunnen_ook_in_cijfers_worden_getoond(self):
+    def test_alle_ondubbelzinnige_getallen_kunnen_ook_in_cijfers_worden_getoond(self):
         page = self.open_reader(location="numeri/2")
         try:
+            page.wait_for_function("window.Opties && window.Opties._eenheden")
             page.locator("#sidebar-right-open").click()
             page.locator('details[data-options-category="theologie"] > summary').click()
-            page.get_by_text("Grote getallen", exact=True).click()
+            getallen = page.locator('[data-option-summary="getalweergave"]')
+            self.assertEqual(
+                getallen.locator(".option-label-with-icon > span:last-child").inner_text(),
+                "Getallen",
+            )
+            getallen.locator(":scope > summary").click()
             cijfers = page.locator('[data-optie="getalweergave"][value="cijfers"]')
             self.assertEqual(cijfers.count(), 1)
             cijfers.check()
+
+            voorbeelden = page.evaluate(
+                """() => ({
+                    klein: Opties.toonGetalcijfers('drie dagen en één nacht, maar een mens'),
+                    samengesteld: Opties.toonGetalcijfers('zeven en vijftig duizend en vierhonderd'),
+                    html: Opties.toonGetalcijfers('<i>twaalf</i> stammen')
+                })"""
+            )
+            self.assertIn('drie <span class="getal-cijfer" aria-label="3">(3)</span> dagen', voorbeelden["klein"])
+            self.assertIn('één <span class="getal-cijfer" aria-label="1">(1)</span> nacht', voorbeelden["klein"])
+            self.assertNotIn('een <span class="getal-cijfer"', voorbeelden["klein"])
+            self.assertIn('(57.400)</span>', voorbeelden["samengesteld"])
+            self.assertEqual(
+                voorbeelden["html"],
+                '<i>twaalf <span class="getal-cijfer" aria-label="12">(12)</span></i> stammen',
+            )
 
             verse_acht = page.locator('.verse-row[data-verse="8"] .col-2026')
             verse_acht.wait_for(state="visible", timeout=5_000)
@@ -576,6 +612,97 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             self.assertEqual(page.locator("details.options-category").count(), 5)
         finally:
             page.close()
+
+    def test_desktop_darkmode_houdt_categoriekoppen_en_keuzewaarden_leesbaar(self):
+        page = self.open_reader(width=1000, height=900)
+        try:
+            page.evaluate(
+                """localStorage.setItem('sv2026_vertaalopties',
+                JSON.stringify({thema: 'donker'}))"""
+            )
+            page.reload(wait_until="domcontentloaded")
+            page.locator("#sidebar-right-open").click()
+
+            contrasten = page.locator("#sidebar-right").evaluate(
+                """panel => {
+                    const rgb = value => value.match(/[\\d.]+/g).slice(0, 3).map(Number);
+                    const luminance = value => {
+                        const channels = rgb(value).map(channel => {
+                            channel /= 255;
+                            return channel <= 0.04045
+                                ? channel / 12.92
+                                : Math.pow((channel + 0.055) / 1.055, 2.4);
+                        });
+                        return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+                    };
+                    const ratio = (voorgrond, achtergrond) => {
+                        const a = luminance(voorgrond);
+                        const b = luminance(achtergrond);
+                        return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+                    };
+                    const achtergrond = getComputedStyle(panel).backgroundColor;
+                    return {
+                        koppen: [...panel.querySelectorAll('.options-category > summary')]
+                            .map(el => ratio(getComputedStyle(el).color, achtergrond)),
+                        waarden: [...panel.querySelectorAll('.option-current')]
+                            .filter(el => el.getClientRects().length)
+                            .map(el => ratio(getComputedStyle(el).color, achtergrond)),
+                    };
+                }"""
+            )
+
+            self.assertTrue(contrasten["koppen"])
+            self.assertTrue(contrasten["waarden"])
+            self.assertGreaterEqual(min(contrasten["koppen"]), 4.5)
+            self.assertGreaterEqual(min(contrasten["waarden"]), 7)
+        finally:
+            page.close()
+
+    def test_sectiekoppen_hebben_in_elk_thema_een_eigen_accentvlak(self):
+        def kopstijl(theme):
+            page = self.open_reader(width=1000, height=900)
+            try:
+                page.evaluate(
+                    """theme => localStorage.setItem('sv2026_vertaalopties',
+                    JSON.stringify({thema: theme}))""",
+                    theme,
+                )
+                page.reload(wait_until="domcontentloaded")
+                page.locator("#sidebar-right-open").click()
+                return page.locator(".options-category > summary").first.evaluate(
+                    """el => {
+                        const rgb = value => value.match(/[\\d.]+/g).slice(0, 3).map(Number);
+                        const luminance = value => rgb(value).map(channel => {
+                            channel /= 255;
+                            return channel <= 0.04045
+                                ? channel / 12.92
+                                : Math.pow((channel + 0.055) / 1.055, 2.4);
+                        }).reduce((total, channel, index) => total + channel * [0.2126, 0.7152, 0.0722][index], 0);
+                        const background = getComputedStyle(el).backgroundColor;
+                        const color = getComputedStyle(el).color;
+                        return {
+                            background,
+                            color,
+                            panelBackground: getComputedStyle(el.closest('#sidebar-right')).backgroundColor,
+                            contrast: (Math.max(luminance(color), luminance(background)) + 0.05) /
+                                (Math.min(luminance(color), luminance(background)) + 0.05),
+                            width: el.getBoundingClientRect().width,
+                            categoryWidth: el.parentElement.getBoundingClientRect().width
+                        };
+                    }"""
+                )
+            finally:
+                page.close()
+
+        licht = kopstijl("licht")
+        donker = kopstijl("donker")
+        self.assertNotEqual(licht["background"], licht["panelBackground"])
+        self.assertNotEqual(donker["background"], donker["panelBackground"])
+        self.assertNotEqual(licht["background"], donker["background"])
+        self.assertGreaterEqual(licht["contrast"], 4.5)
+        self.assertGreaterEqual(donker["contrast"], 4.5)
+        self.assertAlmostEqual(licht["width"], licht["categoryWidth"], delta=2)
+        self.assertAlmostEqual(donker["width"], donker["categoryWidth"], delta=2)
 
     def test_compacte_kop_en_eenregelige_keuzes(self):
         page = self.open_reader()

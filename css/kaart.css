@@ -77,6 +77,15 @@
 
 .kaart-keuzegroep { min-width: 0; margin: 20px 0 0; padding: 0; border: 0; }
 .kaart-keuzegroep legend { width: 100%; margin-bottom: 10px; color: var(--kaart-inkt); font: 700 12px/1.2 var(--font-sans, sans-serif); letter-spacing: .025em; }
+.kaart-tekstfilter { display: grid; gap: 8px; }
+.kaart-selectrij { display: grid; grid-template-columns: 94px minmax(0, 1fr); align-items: center; gap: 10px; color: var(--teal); font: 600 11px/1.2 var(--font-sans, sans-serif); }
+.kaart-selectrij select {
+    width: 100%; min-width: 0; height: 38px; padding: 0 34px 0 11px;
+    border: 1px solid var(--kaart-lijn); border-radius: 9px;
+    color: var(--kaart-inkt); background-color: rgba(255,255,255,.72);
+    font: 600 12px/1 var(--font-sans, sans-serif); cursor: pointer;
+}
+.kaart-selectrij select:disabled { cursor: not-allowed; opacity: .5; }
 .kaart-keuzerij { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
 .kaart-keuzerij label { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 38px; padding: 0 7px; border: 1px solid var(--kaart-lijn); border-radius: 9px; color: var(--teal); background: rgba(255,255,255,.58); font: 600 11px/1.1 var(--font-sans, sans-serif); cursor: pointer; }
 .kaart-keuzerij input { position: absolute; opacity: 0; pointer-events: none; }
@@ -105,6 +114,7 @@
 :root[data-theme="donker"] .kaart-instellingen-open { color: var(--text-primary); background: #1c3548; }
 :root[data-theme="donker"] .kaart-instellingen { --kaart-papier: rgba(20, 39, 53, .96); --kaart-lijn: rgba(255,255,255,.13); color: var(--text-primary); }
 :root[data-theme="donker"] .kaart-keuzerij label, :root[data-theme="donker"] .kaart-laagoptie { color: var(--text-secondary, #b7c0c5); background: rgba(255,255,255,.045); }
+:root[data-theme="donker"] .kaart-selectrij select { color: var(--text-primary); background-color: #1c3548; }
 :root[data-theme="donker"] .kaart-keuzerij label:has(input:checked), :root[data-theme="donker"] .kaart-laagoptie:has(input:checked) { color: var(--text-primary); }
 :root[data-theme="donker"] .kaart-instellingen-sluit { color: var(--text-primary); }
 

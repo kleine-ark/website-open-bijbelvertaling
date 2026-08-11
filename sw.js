@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = 'v0.33.0';
+const VERSION = 'v0.34.0';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -107,10 +107,11 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Merkbestanden houden stabiele publieke bestandsnamen. Haal ze online
-    // eerst opnieuw op, zodat een vernieuwd logo niet achter een oude cache
-    // blijft hangen; offline blijft de laatste succesvolle versie beschikbaar.
-    if (path.startsWith('/images/branding/') || path === '/favicon.svg' || path.startsWith('/icons/')) {
+    // Merkbestanden en hoofdstukinitialen houden stabiele publieke bestandsnamen.
+    // Haal ze online eerst opnieuw op, zodat vernieuwde beelden niet achter een
+    // oude cache blijven hangen; offline blijft de laatste versie beschikbaar.
+    if (path.startsWith('/images/branding/') || path.startsWith('/images/initialen/') ||
+        path === '/favicon.svg' || path.startsWith('/icons/')) {
         event.respondWith(networkFirst(req, SHELL_CACHE));
         return;
     }

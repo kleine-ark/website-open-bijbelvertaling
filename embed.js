@@ -40,8 +40,27 @@
   var BASE = inferBase();
 
   var chapterCache = {};
+  var wordMappingCache = {};
   var booksPromise = null;
   var wordNumberPromise = null;
+  var editionsPromise = null;
+  var editionChapterCache = {};
+
+  function mergeInlineMappings(chapter, mappingBook, chapterNumber) {
+    if (!chapter || !mappingBook || !mappingBook.chapters) return chapter;
+    var external = mappingBook.chapters[String(chapterNumber)] || {};
+    (chapter.verses || []).forEach(function (verse) {
+      var generated = external[String(verse.number)] || [];
+      if (!generated.length) return;
+      var merged = {};
+      generated.concat(verse.woordnummers || []).forEach(function (mapping) {
+        var key = String(mapping.tekst || '').toLocaleLowerCase('nl') + '#' + (mapping.voorkomen || 1);
+        merged[key] = mapping;
+      });
+      verse.woordnummers = Object.keys(merged).map(function (key) { return merged[key]; });
+    });
+    return chapter;
+  }
 
   function storedStrongPreference() {
     try {
@@ -93,10 +112,48 @@
   function loadChapter(book, ch) {
     var key = book + '/' + ch;
     if (!chapterCache[key]) {
-      chapterCache[key] = fetch(BASE + '/data/' + book + '/' + ch + '.json')
+      var chapterRequest = fetch(BASE + '/data/' + book + '/' + ch + '.json')
         .then(function (r) { if (!r.ok) throw new Error('niet gevonden'); return r.json(); });
+      if (!wordMappingCache[book]) {
+        wordMappingCache[book] = fetch(BASE + '/data/woordnummers-inline/' + book + '.json')
+          .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+      }
+      chapterCache[key] = Promise.all([chapterRequest, wordMappingCache[book]]).then(function (items) {
+        var chapter = items[0], mappings = items[1];
+        return mergeInlineMappings(chapter, mappings, ch);
+      });
     }
     return chapterCache[key];
+  }
+
+  function loadEditions() {
+    if (!editionsPromise) {
+      editionsPromise = fetch(BASE + '/data/vertalingen/manifest.json')
+        .then(function (r) { if (!r.ok) throw new Error('vertalingenmanifest niet gevonden'); return r.json(); })
+        .then(function (data) { return data.edities || []; });
+    }
+    return editionsPromise;
+  }
+
+  function selectedEdition(opts) {
+    var requested = opts.edition || opts.editie;
+    if (requested) return requested;
+    if (global.TekstEditie && typeof global.TekstEditie.code === 'function') return global.TekstEditie.code();
+    try {
+      return JSON.parse(localStorage.getItem('sv2026_vertaalopties') || '{}').teksteditie || 'nl-ov';
+    } catch (e) {
+      return 'nl-ov';
+    }
+  }
+
+  function loadEditionChapter(edition, book, ch) {
+    if (edition === 'nl-ov') return loadChapter(book, ch);
+    var key = edition + ':' + book + '/' + ch;
+    if (!editionChapterCache[key]) {
+      editionChapterCache[key] = fetch(BASE + '/data/vertalingen/' + edition + '/' + book + '/' + ch + '.json')
+        .then(function (r) { if (!r.ok) throw new Error('vertaling niet gevonden'); return r.json(); });
+    }
+    return editionChapterCache[key];
   }
 
   function parseRef(ref) {
@@ -166,61 +223,81 @@
 
     var p = parseRef(ref);
     if (!p) return Promise.reject(new Error('Ongeldige referentie: ' + ref));
+    var edition = selectedEdition(opts);
 
     var optionsReady = typeof Opties !== 'undefined' && Opties.ready
       ? Opties.ready : Promise.resolve();
-    return Promise.all([loadChapter(p.book, p.chapter), loadBooks(), optionsReady, ensureWordNumberSupport(showWordNumbers)]).then(function (res) {
+    return Promise.all([
+      loadEditionChapter(edition, p.book, p.chapter),
+      loadBooks(), optionsReady, ensureWordNumberSupport(showWordNumbers),
+      edition === 'nl-ov' ? Promise.resolve(null) : loadEditions()
+    ]).then(function (res) {
       var data = res[0], books = res[1], book = books[p.book] || {};
+      var editionMeta = edition === 'nl-ov'
+        ? { code: 'nl-ov', taal: 'nl', richting: 'ltr', naam: 'Open Vertaling' }
+        : (res[4] || []).filter(function (item) { return item.code === edition; })[0];
+      if (!editionMeta) throw new Error('Onbekende teksteditie: ' + edition);
+      var external = edition !== 'nl-ov';
       var name = book.nameDutch || p.book;
-      var picked = (data.verses || []).filter(function (v) { return v.number >= p.from && v.number <= p.to; });
+      var verses = data.verses || data.verzen || [];
+      var picked = verses.filter(function (v) {
+        var number = v.number || v.nummer;
+        return number >= p.from && number <= p.to;
+      });
       if (!picked.length) throw new Error('Vers niet gevonden: ' + ref);
 
       var parts = picked.map(function (v) {
-        var body = citaat ? (v.text2026_html || v.text2026 || '') : (v.text2026 || '');
+        var number = v.number || v.nummer;
+        var html = v.text2026_html || v.html || v.text2026 || v.tekst || '';
+        var text = v.text2026 || v.tekst || '';
+        var body = citaat ? html : text;
         if (!citaat) body = escapeHtml(body);
-        if (sharedView && opts.godsnaam === undefined) {
+        if (!external && sharedView && opts.godsnaam === undefined) {
           body = sharedView.transformeer(body, {
-            boek: p.book, hoofdstuk: p.chapter, vers: v.number, testament: book.testament
+            boek: p.book, hoofdstuk: p.chapter, vers: number, testament: book.testament
           }, opts);
-        } else if (typeof Opties !== 'undefined' && Opties.transformOV && opts.godsnaam === undefined) {
+        } else if (!external && typeof Opties !== 'undefined' && Opties.transformOV && opts.godsnaam === undefined) {
           body = Opties.transformOV(body, book.testament);
-          if (Opties.markeerGeo) body = Opties.markeerGeo(body, p.book, p.chapter, v.number);
-          if (Opties.rekenMaten) body = Opties.rekenMaten(body, p.book, p.chapter, v.number);
-          if (Opties.rekenTijden) body = Opties.rekenTijden(body, p.book, p.chapter, v.number, book.testament);
-        } else {
+          if (Opties.markeerGeo) body = Opties.markeerGeo(body, p.book, p.chapter, number);
+          if (Opties.rekenMaten) body = Opties.rekenMaten(body, p.book, p.chapter, number);
+          if (Opties.rekenTijden) body = Opties.rekenTijden(body, p.book, p.chapter, number, book.testament);
+        } else if (!external) {
           body = applyGodsnaam(body, gods);
         }
-        var num = numbers ? '<sup class="osv-num">' + v.number + '</sup> ' : '';
-        var alignment = showWordNumbers && global.OVWoordnummers
-          ? global.OVWoordnummers.renderAlignment(v.grondtekst || []) : '';
-        return '<span class="osv-vers">' + num + body + alignment + '</span>';
+        var num = numbers ? '<sup class="osv-num">' + number + '</sup> ' : '';
+        if (!external && showWordNumbers && global.OVWoordnummers) {
+          body = global.OVWoordnummers.renderInline(body, v.woordnummers || []);
+        }
+        return '<span class="osv-vers">' + num + body + '</span>';
       });
 
       var label = name + ' ' + p.chapter + ':' + p.from + (p.to !== p.from ? '-' + p.to : '');
-      var url = SITE + '/index.html#' + p.book + '/' + p.chapter;
+      var url = SITE + '/index.html' + (external ? '?editie=' + encodeURIComponent(edition) : '') + '#' + p.book + '/' + p.chapter;
       var linkHtml = showLink
         ? '<a class="osv-bron" href="' + url + '" target="_blank" rel="noopener">— ' + label +
           ' <span class="osv-merk">(Open Vertaling)</span></a>'
         : '';
-      var html = '<span class="osv-tekst">' + parts.join(' ') + '</span>' + linkHtml;
+      var html = '<span class="osv-tekst" lang="' + escapeHtml(editionMeta.taal || 'nl') + '"' +
+        ((editionMeta.richting || 'ltr') === 'rtl' ? ' dir="rtl"' : '') + '>' + parts.join(' ') + '</span>' + linkHtml;
 
       var plain = picked.map(function (v) {
-        var t = v.text2026 || '';
-        if (sharedView && opts.godsnaam === undefined) {
+        var number = v.number || v.nummer;
+        var t = v.text2026 || v.tekst || '';
+        if (!external && sharedView && opts.godsnaam === undefined) {
           t = sharedView.transformeer(t, {
-            boek: p.book, hoofdstuk: p.chapter, vers: v.number, testament: book.testament
+            boek: p.book, hoofdstuk: p.chapter, vers: number, testament: book.testament
           }, opts);
-        } else if (typeof Opties !== 'undefined' && Opties.transformOV && opts.godsnaam === undefined) {
+        } else if (!external && typeof Opties !== 'undefined' && Opties.transformOV && opts.godsnaam === undefined) {
           t = Opties.transformOV(t, book.testament);
-          if (Opties.rekenMaten) t = Opties.rekenMaten(t, p.book, p.chapter, v.number);
-          if (Opties.rekenTijden) t = Opties.rekenTijden(t, p.book, p.chapter, v.number, book.testament);
-        } else {
+          if (Opties.rekenMaten) t = Opties.rekenMaten(t, p.book, p.chapter, number);
+          if (Opties.rekenTijden) t = Opties.rekenTijden(t, p.book, p.chapter, number, book.testament);
+        } else if (!external) {
           t = applyGodsnaam(t, gods);
         }
-        return (numbers ? v.number + ' ' : '') + t;
+        return (numbers ? number + ' ' : '') + t;
       }).join(' ');
 
-      return { html: html, plain: plain, ref: ref, label: label, url: url };
+      return { html: html, plain: plain, ref: ref, label: label, url: url, editie: edition, taal: editionMeta.taal, richting: editionMeta.richting };
     });
   }
 
@@ -236,12 +313,19 @@
       numbers: el.getAttribute('data-osv-numbers'),
       citaat: el.getAttribute('data-osv-citaat'),
       link: el.getAttribute('data-osv-link'),
-      godsnaam: el.getAttribute('data-osv-godsnaam') || undefined
+      godsnaam: el.getAttribute('data-osv-godsnaam') || undefined,
+      edition: el.getAttribute('data-osv-edition') || undefined
       ,strongs: el.getAttribute('data-osv-strongs')
     };
     el.classList.add('osv-cite');
     el.innerHTML = '<span class="osv-laden">…</span>';
-    cite(ref, opts).then(function (r) { el.innerHTML = r.html; })
+    cite(ref, opts).then(function (r) {
+      el.innerHTML = r.html;
+      if (r.taal) el.setAttribute('lang', r.taal);
+      if (r.richting === 'rtl') el.setAttribute('dir', 'rtl');
+      else el.removeAttribute('dir');
+      if (r.editie) el.setAttribute('data-osv-editie', r.editie);
+    })
       .catch(function (e) { el.innerHTML = '<span class="osv-fout">[' + (ref || '') + ' niet gevonden]</span>'; });
   }
 
@@ -261,7 +345,7 @@
       '.osv-cite .direct-speech::before{content:"“";}.osv-cite .direct-speech::after{content:"”";}' +
       '.osv-cite .devil-speaks{color:#b8860b;font-style:italic;}' +
       '.osv-cite .angel-speaks{color:#1d4ed8;font-style:italic;}' +
-      '.osv-cite .note-marker,.osv-cite .strongs-inline{display:none;}' +
+      '.osv-cite .note-marker{display:none;}' +
       '.osv-cite .strongs-alignment{display:flex;flex-wrap:wrap;gap:5px 9px;margin-top:.55em;padding-top:.45em;border-top:1px solid rgba(120,100,70,.18);direction:rtl;user-select:none;}' +
       '.osv-cite .strongs-alignment-ltr{direction:ltr;}.osv-cite .strongs-token{display:inline-flex;flex-direction:column;align-items:center;direction:ltr;}' +
       '.osv-cite .strongs-source-word{font-size:.92em;line-height:1.1;}.osv-cite .strongs-inline{display:inline-block;border:0;background:transparent;color:#246da8;font:inherit;font-size:.58em;cursor:pointer;}' +

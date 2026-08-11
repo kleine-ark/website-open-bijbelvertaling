@@ -64,6 +64,12 @@ def audit():
         "missing_ground_text_by_book": Counter(),
         "missing_ground_text_field_state": Counter(),
         "missing_ground_text_refs": {},
+        "inline_eligible_verses": 0,
+        "verses_with_inline_mappings": 0,
+        "inline_mappings": 0,
+        "inline_number_links": 0,
+        "inline_review_status": Counter(),
+        "invalid_inline": [],
         "invalid": [],
     }
     for book in books:
@@ -89,6 +95,7 @@ def audit():
                         f"{chapter}:{verse.get('number')}"
                     )
                 verse_has_numbers = False
+                ground_strongs = Counter()
                 for word in words:
                     if not isinstance(word, dict):
                         continue
@@ -113,12 +120,56 @@ def audit():
                             "OVG" if number.startswith("OVG") else number[0]
                         )
                         report["families"][family] += 1
+                        ground_strongs[number] += 1
                     if valid:
                         report["numbered_tokens"] += 1
                         verse_has_numbers = True
                         book_has_numbers = True
                 if verse_has_numbers:
                     report["verses_with_numbers"] += 1
+                if any(number.startswith(("H", "G")) for number in ground_strongs):
+                    report["inline_eligible_verses"] += 1
+
+                inline = verse.get("woordnummers") or []
+                if inline:
+                    report["verses_with_inline_mappings"] += 1
+                linked_strongs = Counter()
+                verse_text = str(verse.get("text2026") or verse.get("textHerzien") or "")
+                for mapping in inline:
+                    location = {"book": book["id"], "chapter": chapter, "verse": verse.get("number")}
+                    if not isinstance(mapping, dict):
+                        report["invalid_inline"].append({**location, "reason": "mapping_not_object"})
+                        continue
+                    report["inline_mappings"] += 1
+                    status = str(mapping.get("reviewstatus") or "missing")
+                    report["inline_review_status"][status] += 1
+                    numbers = mapping.get("strongs")
+                    if not isinstance(numbers, list) or not numbers:
+                        report["invalid_inline"].append({**location, "reason": "missing_strongs"})
+                        continue
+                    report["inline_number_links"] += len(numbers)
+                    for number in numbers:
+                        if not isinstance(number, str) or not re.fullmatch(r"[HG]\d+[A-Za-z]?", number):
+                            report["invalid_inline"].append({**location, "reason": "invalid_strongs", "number": number})
+                        else:
+                            linked_strongs[number] += 1
+                    target = str(mapping.get("tekst") or "")
+                    occurrence = mapping.get("voorkomen")
+                    if not target or not isinstance(occurrence, int) or occurrence < 1 or verse_text.casefold().count(target.casefold()) < occurrence:
+                        report["invalid_inline"].append({**location, "reason": "stale_anchor", "target": target})
+                    confidence = mapping.get("confidence")
+                    if status != "handmatig_gecontroleerd" or not isinstance(confidence, (int, float)) or not 0 <= confidence <= 1:
+                        report["invalid_inline"].append({**location, "reason": "review_metadata"})
+                    provenance = mapping.get("herkomst")
+                    required = {"dataset", "versie", "sha256", "referentie", "bronindices"}
+                    if not isinstance(provenance, dict) or not required.issubset(provenance):
+                        report["invalid_inline"].append({**location, "reason": "provenance"})
+                for number, count in linked_strongs.items():
+                    if count > ground_strongs[number]:
+                        report["invalid_inline"].append({
+                            "book": book["id"], "chapter": chapter, "verse": verse.get("number"),
+                            "reason": "strongs_overlinked", "number": number,
+                        })
         if book_has_numbers:
             report["books_with_numbers"] += 1
     report["families"] = dict(sorted(report["families"].items()))
@@ -127,12 +178,29 @@ def audit():
         "unnumbered_by_book",
         "missing_ground_text_by_book",
         "missing_ground_text_field_state",
+        "inline_review_status",
     ):
         report[key] = dict(sorted(report[key].items()))
+    projection_path = DATA / "woordnummers-inline" / "status.json"
+    projection = json.loads(projection_path.read_text(encoding="utf-8")) if projection_path.exists() else {"books": {}}
+    projection_totals = Counter()
+    invalid_projection = []
+    for book_id, item in projection.get("books", {}).items():
+        for key in ("source_links", "manual_links", "automatic_visible_links", "review_links", "visible_verses", "eligible_verses"):
+            projection_totals[key] += int(item.get(key, 0))
+        if int(item.get("source_links", 0)) != sum(int(item.get(key, 0)) for key in ("manual_links", "automatic_visible_links", "review_links")):
+            invalid_projection.append({"book": book_id, "reason": "link_totals"})
+        if int(item.get("visible_verses", 0)) > int(item.get("eligible_verses", 0)):
+            invalid_projection.append({"book": book_id, "reason": "verse_totals"})
+    report["corpus_projection"] = {
+        "books": len(projection.get("books", {})),
+        **dict(projection_totals),
+    }
+    report["invalid_projection"] = invalid_projection
     return report
 
 
 if __name__ == "__main__":
     result = audit()
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    raise SystemExit(1 if result["invalid"] or result["books_with_numbers"] != result["books"] else 0)
+    raise SystemExit(1 if result["invalid"] or result["invalid_inline"] or result["invalid_projection"] or result["books_with_numbers"] != result["books"] else 0)

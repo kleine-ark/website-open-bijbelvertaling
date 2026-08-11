@@ -78,6 +78,26 @@ def test_standard_book_codes_match_open_vertaling_ids():
     assert "4MA" not in builder.BOOK_IDS
 
 
+def test_ukrainian_freedom_bible_is_registered_as_a_public_domain_edition():
+    builder = load_builder()
+    edition = builder.EDITIONS["uk-ukrfb"]
+
+    assert edition["source"] == "ukrfb"
+    assert edition["name"] == "Ukrainian Freedom Bible"
+    assert edition["language"] == "uk"
+    assert edition["direction"] == "ltr"
+
+
+def test_german_luther_1912_is_registered_as_a_public_domain_edition():
+    builder = load_builder()
+    edition = builder.EDITIONS["de-luther1912"]
+
+    assert edition["source"] == "deu1912"
+    assert edition["name"] == "Lutherbibel 1912"
+    assert edition["language"] == "de"
+    assert edition["direction"] == "ltr"
+
+
 def test_every_published_manifest_book_exists_in_site_manifest():
     site_ids = {
         book["id"]

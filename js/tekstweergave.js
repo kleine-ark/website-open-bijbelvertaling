@@ -70,8 +70,10 @@
 
     function lezerLink(ref) {
         var match = String(ref || '').trim().match(/^(\S+)\s+(\d+):(\d+)/);
-        if (!match) return 'index.html#' + encodeURIComponent(String(ref || ''));
-        return 'index.html#' + match[1].toLowerCase() + '/' + match[2] + '/' + match[3];
+        var edition = state().teksteditie;
+        var query = edition && edition !== 'nl-ov' ? '?editie=' + encodeURIComponent(edition) : '';
+        if (!match) return 'index.html' + query + '#' + encodeURIComponent(String(ref || ''));
+        return 'index.html' + query + '#' + match[1].toLowerCase() + '/' + match[2] + '/' + match[3];
     }
 
     /* Eén DOM-template voor OV-tekst op alle naslagpagina's. De citaatinhoud
@@ -112,9 +114,16 @@
         delete citeOptions.target;
         delete citeOptions.toonLink;
         citeOptions.link = false;
+        if (citeOptions.strongs === undefined) {
+            citeOptions.strongs = state().strongs === 'aan';
+        }
 
         return global.OSV.cite(ref, citeOptions).then(function (resultaat) {
             citation.innerHTML = resultaat.html;
+            if (resultaat.taal) component.setAttribute('lang', resultaat.taal);
+            if (resultaat.richting === 'rtl') component.setAttribute('dir', 'rtl');
+            else component.removeAttribute('dir');
+            if (resultaat.editie) component.setAttribute('data-osv-editie', resultaat.editie);
             if (!options.linkLabel) link.textContent = resultaat.label;
             return { component: component, citation: citation, link: link, resultaat: resultaat };
         }).catch(function (error) {

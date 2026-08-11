@@ -68,6 +68,10 @@ const Lees = {
         this.chapterCache = this.chapterCache || {};
         if (this.chapterCache[key]) return this.chapterCache[key];
         const data = await this.fetchJSON(`/data/${bookId}/${chapter}.json`);
+        if (window.OVWoordnummers) {
+            const mappings = await window.OVWoordnummers.loadBookMappings(bookId);
+            window.OVWoordnummers.mergeChapterMappings(data, mappings, chapter);
+        }
         this.chapterCache[key] = data;
         return data;
     },
@@ -488,11 +492,11 @@ const Lees = {
             const textNode = document.createElement('span');
             textNode.className = 'verse-text';
             const html = verse.text2026_html || verse.text2026 || '';
-            // Add Strong's word wrapping
-            textNode.innerHTML = this.wrapWordsWithStrongs(html, verse.grondtekst);
+            textNode.innerHTML = this.wrapWordsWithStrongs(html, verse.woordnummers);
             span.appendChild(textNode);
-            if (this.wordNumbersEnabled() && window.OVWoordnummers) {
-                const alignment = window.OVWoordnummers.renderAlignment(verse.grondtekst || []);
+            if (this.wordNumbersEnabled() && window.OVWoordnummers && !(verse.woordnummers || []).length) {
+                const projectNumbers = (verse.grondtekst || []).filter(word => /^(?:OVL|OVG)/.test(word.strongs || ''));
+                const alignment = window.OVWoordnummers.renderAlignment(projectNumbers);
                 if (alignment) span.insertAdjacentHTML('beforeend', alignment);
             }
 
@@ -556,14 +560,9 @@ const Lees = {
         });
     },
 
-    wrapWordsWithStrongs(html, grondtekst) {
-        if (!grondtekst || grondtekst.length === 0) return html;
-
-        // We can't easily map Hebrew/Greek words to Dutch words positionally.
-        // Instead, store the grondtekst data on the verse-span and handle
-        // Strong's lookup via a modal that shows all source words for the verse.
-        // This is simpler and more reliable than per-word wrapping.
-        return html;
+    wrapWordsWithStrongs(html, woordnummers) {
+        if (!this.wordNumbersEnabled() || !window.OVWoordnummers) return html;
+        return window.OVWoordnummers.renderInline(html, woordnummers || []);
     },
 
     wordNumbersEnabled() {

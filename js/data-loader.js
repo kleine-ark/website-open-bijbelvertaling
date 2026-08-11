@@ -45,6 +45,10 @@ const DataLoader = {
             const resp = await fetch(`data/${bookId}/${chapterNum}.json`);
             if (!resp.ok) return null;
             ch = await resp.json();
+            if (window.OVWoordnummers) {
+                const mappings = await window.OVWoordnummers.loadBookMappings(bookId);
+                window.OVWoordnummers.mergeChapterMappings(ch, mappings, chapterNum);
+            }
         }
 
         // Merge localStorage edits voor deze chapter

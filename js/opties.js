@@ -16,7 +16,7 @@ const Opties = {
         jezusNaam: 'nl',         // 'nl' (Jezus Christus) | 'hebreeuws' (Yeshua HaMashiach) | 'koranisch' (Isa) | 'arabisch' (Yasūʿ al-Masīḥ)
         geoMarkeren: 'uit',      // 'uit' | 'aan' — geografische locaties in de tekst markeren (Torah)
         maatstelsel: 'bijbels',  // 'bijbels' (el, efa, sikkel) | 'metrisch' (meter, liter, gram) | 'imperiaal' (voet, gallon, pond)
-        getalweergave: 'woorden', // 'woorden' | 'cijfers' — zet grote uitgeschreven aantallen ook tussen haakjes in cijfers
+        getalweergave: 'woorden', // 'woorden' | 'cijfers' — zet uitgeschreven aantallen ook tussen haakjes in cijfers
         tijdrekening: 'bijbels', // 'bijbels' (de derde ure) | 'modern' (omstreeks negen uur 's ochtends)
         strongs: 'uit',          // 'uit' | 'aan' — bronvaste Strong-nummers bij grondtekstwoorden
         teksteditie: 'nl-ov',    // actieve Bijbeltekst; de interface blijft Nederlands
@@ -312,8 +312,8 @@ const Opties = {
             out = this._replaceOutsideTags(out, this._arNamen);
         }
 
-        // Grote aantallen blijven uitgeschreven en krijgen desgewenst een
-        // compact cijferbeeld ernaast, bijvoorbeeld "zeven ... duizend (57.400)".
+        // Aantallen blijven uitgeschreven en krijgen desgewenst een compact
+        // cijferbeeld ernaast, bijvoorbeeld "drie (3)" of "... duizend (57.400)".
         out = this.toonGetalcijfers(out);
 
         return out;
@@ -423,7 +423,8 @@ const Opties = {
     },
 
     /**
-     * Voeg na uitgeschreven aantallen vanaf duizend een cijfernotatie toe.
+     * Voeg na ondubbelzinnige uitgeschreven aantallen een cijfernotatie toe.
+     * Het onbeklemtoonde lidwoord "een" blijft ongemoeid; "één" is wel een getal.
      * De woorden blijven de eigenlijke vertaling; dit is uitsluitend leeshulp.
      */
     toonGetalcijfers(html) {
@@ -438,8 +439,8 @@ const Opties = {
 
         var invoegingen = [], laatsteEind = -1;
         for (var i = 0; i < woorden.length; i++) {
-            if (woorden[i].woord.indexOf('duizend') === -1 ||
-                this._maatMorfemen(E, woorden[i].woord) === null) continue;
+            var eersteMorfemen = this._maatMorfemen(E, woorden[i].woord);
+            if (eersteMorfemen === null || !eersteMorfemen.length) continue;
 
             var links = i, rechts = i;
             while (links > 0 && /^\s+$/.test(plain.slice(woorden[links - 1].eind, woorden[links].start)) &&
@@ -451,12 +452,19 @@ const Opties = {
             while (rechts >= links && E.scheiders.indexOf(woorden[rechts].woord) !== -1) rechts--;
             if (links > rechts) continue;
 
+            // "een" en "ene" zijn doorgaans lidwoord/voornaamwoord. Alleen de
+            // expliciet beklemtoonde schrijfwijze "één" krijgt zelfstandig (1).
+            if (links === rechts && (woorden[links].woord === 'een' || woorden[links].woord === 'ene')) {
+                i = rechts;
+                continue;
+            }
+
             var begin = woorden[links].start, eind = woorden[rechts].eind;
             if (begin < laatsteEind) continue;
             var parsed = this._maatUitTokens(E, woorden.slice(links, rechts + 1).map(function (x) { return x.woord; }));
-            if (!parsed.expliciet || !isFinite(parsed.aantal) || parsed.aantal < 1000) continue;
+            if (!parsed.expliciet || !isFinite(parsed.aantal) || parsed.aantal <= 0) continue;
 
-            var cijfer = this._maatGetalTekst(parsed.aantal);
+            var cijfer = this._getalExactTekst(parsed.aantal);
             invoegingen.push({
                 positie: map[eind - 1] + 1,
                 html: ' <span class="getal-cijfer" aria-label="' + cijfer + '">(' + cijfer + ')</span>',
@@ -470,6 +478,13 @@ const Opties = {
             html = html.slice(0, item.positie) + item.html + html.slice(item.positie);
         }
         return html;
+    },
+
+    /** Exacte Nederlandse cijfernotatie voor een expliciet genoemd aantal. */
+    _getalExactTekst(v) {
+        var d = String(v).split('.');
+        var geheel = d[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        return d.length > 1 ? geheel + ',' + d[1] : geheel;
     },
 
     /** Bouw eenmalig de zoekstructuren uit data/eenheden.json. */

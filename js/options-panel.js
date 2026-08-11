@@ -9,14 +9,22 @@ const OptionsPanel = {
 
     init() {
         this.dialog = document.getElementById('sidebar-right');
-        const openButton = document.getElementById('sidebar-right-open');
+        const openButtons = [
+            document.getElementById('sidebar-right-open'),
+            document.getElementById('topnav-tekstopties'),
+        ].filter(Boolean);
         const closeButton = document.getElementById('sidebar-right-toggle');
-        if (!this.dialog || !openButton || !closeButton) return;
+        if (!this.dialog || !openButtons.length || !closeButton) return;
 
-        openButton.hidden = false;
-        openButton.setAttribute('aria-controls', 'sidebar-right');
-        openButton.setAttribute('aria-expanded', 'false');
-        openButton.addEventListener('click', () => this.open(openButton));
+        openButtons.forEach(openButton => {
+            openButton.hidden = false;
+            openButton.setAttribute('aria-controls', 'sidebar-right');
+            openButton.setAttribute('aria-expanded', 'false');
+            openButton.addEventListener('click', event => {
+                event.preventDefault();
+                this.open(openButton);
+            });
+        });
         closeButton.addEventListener('click', () => this.close());
         this.buildCategoryTemplate();
 
@@ -28,7 +36,7 @@ const OptionsPanel = {
             if (outside) this.close();
         });
         this.dialog.addEventListener('close', () => {
-            openButton.setAttribute('aria-expanded', 'false');
+            openButtons.forEach(openButton => openButton.setAttribute('aria-expanded', 'false'));
             document.body.classList.remove('options-open');
             if (this.lastTrigger && this.lastTrigger.isConnected) this.lastTrigger.focus();
         });
@@ -41,6 +49,10 @@ const OptionsPanel = {
         window.addEventListener('resize', () => this.handleViewportChange());
 
         this.setupZoom();
+        if (new URLSearchParams(location.search).get('opties') === '1') {
+            history.replaceState(null, '', location.pathname + location.hash);
+            requestAnimationFrame(() => this.open(openButtons[0]));
+        }
     },
 
     open(trigger) {
@@ -52,8 +64,9 @@ const OptionsPanel = {
         this.syncOptionSummaries();
         this.syncOptionMirrors();
         document.body.classList.add('options-open');
-        const opener = document.getElementById('sidebar-right-open');
-        if (opener) opener.setAttribute('aria-expanded', 'true');
+        document.querySelectorAll('#sidebar-right-open, #topnav-tekstopties').forEach(opener => {
+            opener.setAttribute('aria-expanded', 'true');
+        });
         const closeButton = document.getElementById('sidebar-right-toggle');
         if (closeButton) closeButton.focus();
     },

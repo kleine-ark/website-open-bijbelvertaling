@@ -163,7 +163,7 @@ const Lexicon = {
             ? await this.ensureNl(family === 'H' ? 'hebrew' : 'greek') : {};
         const t = nl[strongs] || {};
 
-        const gloss = anchorEl.dataset.gloss || t.glossNl || t.samenvattingNl || entry.gloss || '';
+        const gloss = t.glossNl || t.samenvattingNl || anchorEl.dataset.gloss || entry.gloss || '';
         const woord = anchorEl.dataset.sourceWord || entry.woord || '';
         const transliteratie = anchorEl.dataset.transliteratie || entry.translit || entry.transliteratie || '';
         const definitie = t.definitieNl || entry.definitie ||

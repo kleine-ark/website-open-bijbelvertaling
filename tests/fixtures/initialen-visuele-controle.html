@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <title>Visuele controle initialen A–Z</title>
+    <style>
+        body { margin: 0; padding: 24px; background: #ece8df; color: #142e42; font-family: Georgia, serif; }
+        h1 { margin: 0 0 18px; font-size: 24px; }
+        .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+        .card { overflow: hidden; background: #fff; border: 1px solid #cdbd98; border-radius: 10px; }
+        .label { padding: 7px 10px; background: #eee7d8; font: 700 14px Arial, sans-serif; }
+        .sample { height: 112px; padding: 10px; overflow: hidden; font-size: 20px; line-height: 1.45; }
+        .sample.dark { background: #142e42; color: #f7f0df; }
+        .initial { float: left; margin: -.12em .08em -.08em 0; color: transparent; line-height: 1; shape-outside: var(--vorm); shape-image-threshold: .08; shape-margin: .02em; }
+        .initial img { display: block; width: auto; height: 3.2em; }
+    </style>
+</head>
+<body>
+    <h1>Visuele controle: alle initialen, licht en donker</h1>
+    <main class="grid" id="grid"></main>
+    <script>
+        document.getElementById('grid').innerHTML = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(letter => `
+            <section class="card">
+                <div class="label">${letter}</div>
+                <div class="sample"><span class="initial" style="--vorm:url('/images/initialen/vrije-penkrul/${letter}.svg?v=0.33.0')"><img src="/images/initialen/vrije-penkrul/${letter}.svg?v=0.33.0" alt="${letter}"></span>ansluitende tekst loopt langs de lettervorm door op een tweede regel.</div>
+                <div class="sample dark"><span class="initial" style="--vorm:url('/images/initialen/vrije-penkrul/donker/${letter}.svg?v=0.33.0')"><img src="/images/initialen/vrije-penkrul/donker/${letter}.svg?v=0.33.0" alt="${letter}"></span>ansluitende tekst loopt langs de lettervorm door op een tweede regel.</div>
+            </section>`).join('');
+    </script>
+</body>
+</html>

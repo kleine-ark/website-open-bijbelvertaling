@@ -286,13 +286,10 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         try:
             page.route("**/data/exodus/15.json", lambda route: route.abort())
             page.goto(f"{self.base_url}/liederen.html?item=lied-bij-de-schelfzee")
-            page.locator(".ns-tekstfout").wait_for(state="visible")
+            page.locator(".gt-vers .osv-fout").wait_for(state="visible")
             self.assertTrue(page.locator(".ns-beschrijving").is_visible())
             self.assertEqual(page.locator(".ns-vers").count(), 0)
-            self.assertEqual(
-                page.locator(".ns-tekstfout").inner_text(),
-                "De volledige tekst kon niet geladen worden.",
-            )
+            self.assertIn("niet geladen", page.locator(".gt-vers .osv-fout").inner_text())
         finally:
             page.close()
 
