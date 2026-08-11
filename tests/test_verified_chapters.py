@@ -20,7 +20,7 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
     assert verified["numeri"] == "all"
     assert verified["deuteronomium"] == "all"
     assert verified["jozua"] == "all"
-    assert verified["richteren"] == list(range(1, 8))
+    assert verified["richteren"] == "all"
 
     nieuw_testament = {
         "mattheus", "markus", "lukas", "johannes", "handelingen", "romeinen",
