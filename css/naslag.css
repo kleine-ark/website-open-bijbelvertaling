@@ -70,6 +70,7 @@
     font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
 }
 .ns-kaart-naam { font-weight: 600; color: var(--navy); font-size: 15.5px; }
+.ns-kaart-beschrijving { color: var(--text-secondary, #666); font-size: 12.5px; line-height: 1.5; }
 .ns-kaart-tal { font-size: 12px; color: #999; }
 .ns-kaart-onderscheiding {
     color: var(--text-secondary, #777); font-size: 11.5px; line-height: 1.4;
@@ -95,6 +96,9 @@
     border: 1px solid var(--border, #e5e1d8); border-radius: 12px;
 }
 .ns-beschrijving { font-size: 16px; line-height: 1.75; color: var(--text, #333); max-width: 70ch; }
+.ns-externe-bron { margin: 10px 0 20px; }
+.ns-externe-bron a { color: var(--teal); font-weight: 600; text-decoration: none; }
+.ns-externe-bron a:hover { text-decoration: underline; }
 .ns-onderscheiding { margin: 0 0 8px; color: var(--teal); font-size: 13px; }
 .ns-kop {
     clear: both;
@@ -284,6 +288,7 @@
 :root[data-theme="donker"] .ns-detail-beeld { opacity: .9; border-color: rgba(255,255,255,.1); }
 :root[data-theme="donker"] .ns-zoeken { background: rgba(255,255,255,0.04); color: #e8e4da; }
 :root[data-theme="donker"] .ns-kaart-naam { color: #e8e4da; }
+:root[data-theme="donker"] .ns-kaart-beschrijving { color: #bbb5a9; }
 :root[data-theme="donker"] .ns-kaart-passage { color: #e2c77f; }
 :root[data-theme="donker"] .ns-beschrijving { color: #cfcabe; }
 :root[data-theme="donker"] .ns-nummer { background: rgba(203,164,73,0.2); color: #e2c77f; }
