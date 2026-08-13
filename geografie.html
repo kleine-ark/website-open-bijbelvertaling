@@ -112,7 +112,7 @@
             var refs = (p.refs || []).slice(0, 12).map(function (r) { return '<a href="' + esc(r.href || refHref(r.ref)) + '">' + esc(prettyRef(r.ref)) + '</a>'; }).join('');
             if ((p.refs || []).length > 12) refs += '<a href="kaart.html?plaats=' + encodeURIComponent(p.id || p.naam) + '">+' + ((p.refs || []).length - 12) + ' meer op de kaart</a>';
             var z = p.zekerheid || 'onzeker';
-            return '<li class="geo-item"><span class="geo-naam">' + esc(p.naam || '') + '</span>' +
+            return '<li class="geo-item"><a class="geo-naam" href="plaats.html?plaats=' + encodeURIComponent(p.id || '') + '">' + esc(p.naam || '') + '</a>' +
                 '<span class="geo-badge z-' + esc(z) + '">' + esc(ZEKER_LABEL[z] || z) + '</span>' +
                 (p.moderneNaam ? ' <span class="geo-modern">— nu: ' + esc(p.moderneNaam) + '</span>' : '') +
                 (p.toelichting ? '<div class="geo-toel">' + esc(p.toelichting) + '</div>' : '') +

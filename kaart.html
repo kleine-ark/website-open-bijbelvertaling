@@ -254,6 +254,7 @@
                 '<h3>' + esc(p.naam || '') + '</h3>' +
                 (p.moderneNaam ? '<div class="pp-modern">Nu: ' + esc(p.moderneNaam) + '</div>' : '') +
                 (p.toelichting ? '<div class="pp-toel">' + esc(p.toelichting) + '</div>' : '') +
+                '<div class="pp-toel"><a href="plaats.html?plaats=' + encodeURIComponent(p.id || '') + '">Bronpagina en alle verwijzingen →</a></div>' +
                 (refs ? '<div class="pp-refs">' + refs + '</div>' : '') +
                 (actieveRefs.some(function (r) { return r.status === 'needs-human-review'; }) ? '<div class="pp-koppeling">Gestippeld: tekstkoppeling nog menselijk te controleren</div>' : '') +
                 (zl ? '<span class="pp-zeker z-' + esc(p.zekerheid) + '">' + zl + '</span>' : '');

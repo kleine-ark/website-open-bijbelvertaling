@@ -252,6 +252,11 @@ def enrich_from_legacy(features: dict[str, dict]) -> dict:
             "humanReviewed": False,
             "aliases": [],
             "refs": refs,
+            "bron": {
+                "dataset": "Open Vertaling bestaande kaartgegevens",
+                "url": "https://openvertaling.nl/geografie.html",
+                "onderbouwing": "Bestaand handmatig samengesteld kaartpunt; de tekstverwijzingen zijn in de runtime-index opgenomen.",
+            },
         }
         features[legacy_id] = old
         appended += 1
