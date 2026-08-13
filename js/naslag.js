@@ -115,6 +115,7 @@
                  (it.afbeelding ? '<img class="ns-kaart-beeld" src="' + esc(it.afbeelding) + '" alt="" loading="lazy" width="640" height="640">' : '') +
                  (d.nummerType ? '<span class="ns-nummer">' + esc(d.nummerType) + ' ' + (i + 1) + '</span>' : '') +
                  '<span class="ns-kaart-naam">' + esc(it.naam) + '</span>' +
+                 (it.beschrijving ? '<span class="ns-kaart-beschrijving">' + esc(eersteZin(it.beschrijving)) + '</span>' : '') +
                  (it.onderscheiding ? '<span class="ns-kaart-onderscheiding">' + esc(it.onderscheiding) + '</span>' : '') +
                  (it.gebruik ? '<span class="ns-type">' + esc(it.gebruik) + '</span>' : '') +
                  (d.nummerType === 'Lied' ? '<span class="ns-kaart-passage">' + esc(overzichtPassage(it)) + '</span>' :
@@ -161,6 +162,10 @@
             h += '<p class="ns-onderscheiding">' + esc(it.onderscheiding) + '</p>';
         }
         h += '<p class="ns-beschrijving">' + esc(it.beschrijving) + '</p>';
+        if (d.titel === 'Materialen in de Bijbel' || it.wikipedia) {
+            h += '<p class="ns-externe-bron"><a href="' + esc(wikipediaUrl(it)) +
+                '" target="_blank" rel="noopener noreferrer">Lees meer op Wikipedia <span aria-hidden="true">↗</span></a></p>';
+        }
         if (it.naamvormen && it.naamvormen.length > 1) {
             h += '<p class="ns-naamvormen"><strong>Naamvormen:</strong> ' +
                  esc(it.naamvormen.join(' · ')) + '</p>';
@@ -300,6 +305,16 @@
                 container.innerHTML = '<h2 class="ns-kop">Volledige tekst</h2>' +
                     '<p class="ns-tekstfout">De volledige tekst kon niet geladen worden.</p>';
             });
+    }
+
+    function eersteZin(tekst) {
+        var match = String(tekst || '').match(/^.*?[.!?](?:\s|$)/);
+        return match ? match[0].trim() : String(tekst || '').trim();
+    }
+
+    function wikipediaUrl(item) {
+        if (item.wikipedia) return item.wikipedia;
+        return 'https://nl.wikipedia.org/w/index.php?search=' + encodeURIComponent(item.naam);
     }
 
     /* Liederen gebruiken dezelfde gekoppelde-tekstencomponent als de overige

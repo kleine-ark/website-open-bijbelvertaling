@@ -146,6 +146,22 @@ class GekoppeldeTekstenTest(unittest.TestCase):
         finally:
             page.close()
 
+    def test_materialen_tonen_korte_toelichting_en_externe_bron(self):
+        page = self.browser.new_page(viewport={"width": 900, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/materialen.html")
+            card = page.locator('.ns-kaart[href="?item=amethist"]')
+            card.wait_for()
+            self.assertIn("paarsgekleurde variëteit van kwarts", card.inner_text())
+
+            page.goto(f"{self.base_url}/materialen.html?item=amethist")
+            link = page.get_by_role("link", name="Lees meer op Wikipedia")
+            link.wait_for()
+            self.assertEqual(link.get_attribute("target"), "_blank")
+            self.assertTrue(link.get_attribute("href").startswith("https://nl.wikipedia.org/"))
+        finally:
+            page.close()
+
     def test_dieren_and_bomen_use_the_same_text_list(self):
         cases = (
             ("dieren.html?item=vee", "data/naslag-dieren.json", "vee"),
