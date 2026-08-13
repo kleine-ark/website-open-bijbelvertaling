@@ -132,6 +132,8 @@
         body.lex-geen-verwijzingen .dl-ref { display: none; }   /* ook Dillmann-verwijzingen */
         .lex-ref { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); white-space: nowrap; }
         .lex-ref:hover { color: var(--navy); background: rgba(203,164,73,0.14); }
+        .lex-source-ref { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
+        .lex-source-ref:hover { color: var(--teal); }
         .lex-verw { margin-top: 16px; font-size: 13px; color: var(--teal); }
         .lex-verw a { color: var(--gold); text-decoration: none; margin-right: 8px; border-bottom: 1px dotted var(--gold); }
         .lex-src { margin-top: 26px; font-size: 12px; color: #999; border-top: 1px solid var(--border, #e5e1d8); padding-top: 10px; }
@@ -305,8 +307,9 @@
         Bar:'baruch', '1Ma':'1makkabeeen', '1Mac':'1makkabeeen', '2Ma':'2makkabeeen', '2Mac':'2makkabeeen',
         '3Ma':'3makkabeeen', '3Mac':'3makkabeeen', Man:'gebedvanmanasse', Sus:'susanna', Bel:'belenddedraak'
     };
-    function linkifyTbesg(html) {
+    function linkifyTbesg(html, showRefs) {
         return html.replace(/<ref='([^']+)'>([^<]*)<\/ref>/g, function (m, attr, txt) {
+            if (!showRefs) return '';
             var parts = attr.replace(/\.$/, '').split('.');
             var b = TBESG_BOOK[parts[0]];
             if (!b || !parts[1]) return txt || '';       // onbekende boek-code: alleen de tekst tonen
@@ -334,10 +337,11 @@
 
     // Linkify verwijzingen in BDB/Abbott-definities: toon Nederlandse boeknaam,
     // en link ook kale vervolg-verwijzingen (die het vorige boek erven).
-    function linkifyAbbr(html) {
+    function linkifyAbbr(html, showRefs) {
         var lastBook = null;
         return html.replace(/>([^<]+)</g, function (m, txt) {
             var out = txt.replace(refRe, function (mm, ab, ch, vs, rng) {
+                if (!showRefs) return '';
                 var book = null;
                 if (ab && ABBR[ab]) { book = ABBR[ab]; lastBook = book; }
                 if (!book) {
@@ -352,6 +356,102 @@
             });
             return '>' + out + '<';
         });
+    }
+    function referencesVisible() {
+        var toggle = document.getElementById('lex-refs-toggle');
+        return !toggle || toggle.checked;
+    }
+    // Veelgebruikte afkortingen uit de historische lexicons worden voor lezers
+    // voluit gezet. Alleen bronnen die al een eigen informatiepagina hebben
+    // krijgen daarbij een doorklik-link.
+    var LEXICON_ABBREVIATIONS = {
+        'LXX': { label: 'Septuaginta', href: 'bronnen.html#grondteksten' },
+        'VGT': { label: 'Vulgaat', href: 'bronnen.html#grondteksten' },
+        'BDB': { label: 'Brown-Driver-Briggs', href: 'woordenboeken.html#bdb' },
+        'TBESG': { label: 'TBESG', href: 'woordenboeken.html#tbesg' },
+        'AS': { label: 'Abbott-Smith', href: 'woordenboeken.html#abbott-smith' },
+        'WH': { label: 'Westcott en Hort' },
+        'Rec.': { label: 'Textus Receptus' },
+        'RV': { label: 'Revised Version' },
+        'AV': { label: 'Authorized Version' },
+        'EV': { label: 'Engelse vertaling(en)' },
+        'MM': { label: 'Moulton en Milligan' },
+        'Lft.': { label: 'Lightfoot' },
+        'ICC': { label: 'International Critical Commentary' },
+        'Thuc.': { label: 'Thucydides' },
+        'Plat.': { label: 'Plato' },
+        'Xen.': { label: 'Xenophon' },
+        'Arist.': { label: 'Aristoteles' },
+        'Hom.': { label: 'Homerus' },
+        'Hdt.': { label: 'Herodotus' },
+        'Polyb.': { label: 'Polybius' },
+        'Plut.': { label: 'Plutarchus' },
+        'Eur.': { label: 'Euripides' },
+        'Aq.': { label: 'Aquila' },
+        'Sm.': { label: 'Symmachus' },
+        'Th.': { label: 'Theodotion' },
+        'SYN.': { label: 'Synoniemen' },
+        'NT': { label: 'Nieuwe Testament' },
+        'OT': { label: 'Oude Testament' },
+        'Heb.': { label: 'Hebreeuws' },
+        'Aram.': { label: 'Aramees' },
+        'Lat.': { label: 'Latijn' },
+        'Gr.': { label: 'Grieks' },
+        'cf.': { label: 'vergelijk' },
+        'vgl.': { label: 'vergelijk' },
+        'ib.': { label: 'op dezelfde plaats' },
+        'ibid.': { label: 'op dezelfde plaats' },
+        'al.': { label: 'enzovoort' },
+        'e.a.': { label: 'enzovoort' },
+        'sc.': { label: 'namelijk' },
+        'mg.': { label: 'kanttekening' },
+        'txt.': { label: 'tekst' }
+    };
+    var lexiconAbbreviationKeys = Object.keys(LEXICON_ABBREVIATIONS).sort(function (a, b) { return b.length - a.length; });
+    var lexiconAbbreviationRe = new RegExp('\\b(' + lexiconAbbreviationKeys.map(function (key) {
+        return key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }).join('|') + ')', 'g');
+    function expandLexiconAbbreviations(html) {
+        var holder = document.createElement('div');
+        holder.innerHTML = html;
+        var walk = document.createTreeWalker(holder, NodeFilter.SHOW_TEXT), nodes = [], node;
+        while ((node = walk.nextNode())) {
+            if (!node.parentElement.closest('a')) nodes.push(node);
+        }
+        nodes.forEach(function (textNode) {
+            var parts = textNode.nodeValue.split(lexiconAbbreviationRe);
+            if (parts.length === 1) return;
+            var fragment = document.createDocumentFragment();
+            parts.forEach(function (part, index) {
+                if (index % 2 === 0) { fragment.appendChild(document.createTextNode(part)); return; }
+                var info = LEXICON_ABBREVIATIONS[part];
+                var el = document.createElement(info.href ? 'a' : 'span');
+                el.textContent = info.label;
+                el.className = 'lex-source-ref';
+                if (info.href) { el.href = info.href; el.target = '_top'; }
+                fragment.appendChild(el);
+            });
+            textNode.replaceWith(fragment);
+        });
+        return holder.innerHTML;
+    }
+    // Wanneer schriftverwijzingen zijn uitgeschakeld worden ze tijdens het
+    // renderen verwijderd. De komma's en puntkomma's die alleen die
+    // verwijzingen scheidden, worden dan eveneens opgeruimd.
+    function tidyHiddenReferencePunctuation(html) {
+        var holder = document.createElement('div');
+        holder.innerHTML = html;
+        var walk = document.createTreeWalker(holder, NodeFilter.SHOW_TEXT);
+        var node;
+        while ((node = walk.nextNode())) {
+            node.nodeValue = node.nodeValue
+                .replace(/\s*,\s*(?=[,;:\]\)\(])/g, '')
+                .replace(/\s*;\s*(?=[,;:\]\)])/g, '')
+                .replace(/\s*:\s*(?=[,;\]\)])/g, '')
+                .replace(/\[\s*(?=[,;:\]\)])/g, '[')
+                .replace(/\(\s*(?=[,;:\]\)])/g, '(');
+        }
+        return holder.innerHTML;
     }
     // Maak de Assyrische (Akkadische) cognaat in een BDB-definitie aanklikbaar naar het Akkadisch-tabblad.
     function linkifyAkkadisch(html) {
@@ -548,6 +648,7 @@
         var origineel = showOrig && heeftEngels;
         var gloss = origineel ? (e.glossEn || e.gloss) : e.gloss;
         var def = origineel ? e.defEn : e.def;
+        var showRefs = referencesVisible();
         // Grondtekst-gloss zonder eigen artikel -> haal het woordenboekartikel erbij
         var defHtml0 = e.defHtml, artLabel = null;
         if (!def && !e.ab && (cur.id === 'latijn' || cur.id === 'geez')) {
@@ -573,13 +674,15 @@
         if (e.ab) {
             // Twee lexicons gecombineerd (TBESG + Abbott-Smith), elk gelabeld met link naar de bronpagina
             if (def) h += '<div class="lex-lexlabel">' + lexLabelLink(cur.lex1label || 'Lexicon 1', cur.lex1url) + '</div>' +
-                '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + linkifyXref(linkifyTbesg(def), e.key) + '</div>';
+                '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + expandLexiconAbbreviations(linkifyXref(linkifyTbesg(def, showRefs), e.key)) + '</div>';
             var abDef = origineel ? e.ab.defEn : e.ab.def;
             if (abDef) h += '<div class="lex-lexlabel">' + lexLabelLink(cur.lex2.label, cur.lex2.infoUrl) + (e.ab.nl ? '' : ' <span class="lex-concept" title="Nederlandse vertaling volgt">nog niet vertaald</span>') + '</div>' +
-                '<div class="lex-def"' + ((origineel || !e.ab.nl) ? ' lang="en"' : '') + '>' + linkifyXref(linkifyAbbr(abDef), e.key) + '</div>';
+                '<div class="lex-def"' + ((origineel || !e.ab.nl) ? ' lang="en"' : '') + '>' + expandLexiconAbbreviations(linkifyXref(linkifyAbbr(abDef, showRefs), e.key)) + '</div>';
         } else if (def) {
             // Dillmann levert al opgemaakte (Latijnse) HTML; anders escapen/linkifyen.
-            var body = defHtml0 ? def : linkifyXref(cur.reftags ? linkifyTbesg(def) : cur.abbr ? linkifyAbbr(def) : esc(def), e.key);
+            var body = defHtml0 ? def : linkifyXref(cur.reftags ? linkifyTbesg(def, showRefs) : cur.abbr ? linkifyAbbr(def, showRefs) : esc(def), e.key);
+            if (!defHtml0) body = expandLexiconAbbreviations(body);
+            if (!showRefs && !defHtml0) body = tidyHiddenReferencePunctuation(body);
             if (cur.id === 'hebreeuws') body = linkifyAkkadisch(body);   // Assyrische cognaat -> Akkadisch woordenboek
             if (artLabel) h += '<div class="lex-lexlabel">' + esc(artLabel) + '</div>';
             // Latijn getoond wanneer origineel óf een nog-niet-vertaalde Dillmann-entry; NL-vertaling krijgt geen lang="la"
@@ -610,6 +713,7 @@
         else if (e.bron === 'Grondtekst-gloss') bronTxt = (cur.id === 'latijn' ? 'Grondtekst-gloss bij 4 Ezra (Vulgaat-traditie)' : 'Grondtekst-gloss bij de Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA)');
         else bronTxt = cur.bron;
         h += '<div class="lex-src">Bron: ' + bronTxt + '. Tekstverwijzingen zijn aanklikbaar en openen de tekst.</div>';
+        if (!showRefs) h = tidyHiddenReferencePunctuation(h);
         contentEl.innerHTML = h;
         contentEl.scrollTop = 0;
     }
@@ -687,6 +791,7 @@
         rt.addEventListener('change', function () {
             document.body.classList.toggle('lex-geen-verwijzingen', !this.checked);
             localStorage.setItem('lexRefs', this.checked ? '1' : '0');
+            if (currentEntry) showEntry(currentEntry);
         });
     })();
 

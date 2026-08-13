@@ -11,7 +11,7 @@ const Lexicon = {
     _nl: { hebrew: null, greek: null },
     async ensureNl(lang) {
         if (this._nl[lang]) return this._nl[lang];
-        const url = lang === 'hebrew' ? '/data/lexicon-nl/bdb-nl.json' : '/data/lexicon-nl/abbott-nl.json';
+        const url = lang === 'hebrew' ? '/data/lexicon-nl/bdb-nl.json' : '/data/lexicon-nl/tbesg-nl.json';
         try {
             const r = await fetch(url);
             this._nl[lang] = r.ok ? await r.json() : {};
@@ -142,16 +142,16 @@ const Lexicon = {
             fullLink = `lexicon-viewer.html?entry=${encodeURIComponent(strongs)}`;
             if (typeof bdbLexicon !== 'undefined') entry = bdbLexicon[strongs];
         } else if (family === 'G') {
-            lexiconName = 'Abbott-Smith Grieks';
-            fullLink = `lexicon-viewer.html?entry=${encodeURIComponent(strongs)}`;
-            if (typeof abbottSmithLexicon !== 'undefined') entry = abbottSmithLexicon[strongs];
+            lexiconName = 'TBESG Grieks';
+            fullLink = `lexicon-viewer.html?taal=grieks&entry=${encodeURIComponent(strongs)}`;
+            if (typeof tbesgLexicon !== 'undefined') entry = tbesgLexicon[strongs];
         } else if (family === 'OVL') {
             entry = {};
             lexiconName = 'Lewis & Short Latijn';
             fullLink = `lexicon-viewer.html?taal=latijn&zoek=${encodeURIComponent(strongs)}`;
         } else if (family === 'OVG') {
             entry = {};
-            lexiconName = 'Dillmann Ge’ez';
+            lexiconName = 'Dillmann Ge’ez-woordenboek';
             fullLink = `lexicon-viewer.html?taal=geez&zoek=${encodeURIComponent(strongs)}`;
         }
 
