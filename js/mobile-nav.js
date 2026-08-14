@@ -38,8 +38,7 @@ const MobileNav = {
         this.inited = true;
 
         const bookBtn = document.getElementById('mobile-book-btn');
-        const optBtn  = document.getElementById('mobile-opties-btn');
-        if (!bookBtn || !optBtn) return;
+        if (!bookBtn) return;
 
         // Manifest preloaden voor naam-mapping
         const manifest = await DataLoader.loadManifest();
@@ -86,7 +85,6 @@ const MobileNav = {
         });
 
         // Opties-knop opent het gedeelde modale optiespaneel.
-        optBtn.addEventListener('click', () => this._openOpties());
 
         // Reageer op hash-veranderingen
         window.addEventListener('hashchange', () => this.syncFromState());
@@ -170,7 +168,8 @@ const MobileNav = {
         } catch (e) {}
 
         for (const [label, ids] of groups) {
-            const books = ids.map(id => this.bookById[id]).filter(Boolean);
+            const books = ids.map(id => this.bookById[id]).filter(book => book &&
+                (typeof isBookVisibleInNavigation !== 'function' || isBookVisibleInNavigation(book)));
             if (!books.length) continue;
             const grp = document.createElement('div');
             grp.className = 'mp-group';
@@ -264,7 +263,8 @@ const MobileNav = {
         sel.appendChild(ph);
 
         for (const [label, ids] of Object.entries(bookOrder)) {
-            const books = ids.map(id => this.bookById[id]).filter(Boolean);
+            const books = ids.map(id => this.bookById[id]).filter(book => book &&
+                (typeof isBookVisibleInNavigation !== 'function' || isBookVisibleInNavigation(book)));
             if (books.length === 0) continue;
             const og = document.createElement('optgroup');
             og.label = label;
@@ -278,7 +278,8 @@ const MobileNav = {
         }
         // Eventuele ontbrekende boeken (Ethiopische stub-boeken hier altijd verbergen)
         const assigned = new Set(Object.values(bookOrder).flat());
-        const rest = manifest.books.filter(b => !assigned.has(b.id) && !b.ethiopic);
+        const rest = manifest.books.filter(b => !assigned.has(b.id) &&
+            (typeof isBookVisibleInNavigation !== 'function' || isBookVisibleInNavigation(b)));
         if (rest.length > 0) {
             const og = document.createElement('optgroup');
             og.label = 'Overig';
@@ -354,11 +355,6 @@ const MobileNav = {
         } catch (e) {}
     },
 
-    _openOpties() {
-        if (window.OptionsPanel) {
-            OptionsPanel.open(document.getElementById('mobile-opties-btn'));
-        }
-    },
 };
 
 document.addEventListener('DOMContentLoaded', () => {

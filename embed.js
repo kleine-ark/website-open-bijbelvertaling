@@ -305,8 +305,8 @@
     return String(s).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; });
   }
 
-  function renderEl(el) {
-    if (el.getAttribute('data-osv-done') === '1') return;
+  function renderEl(el, force) {
+    if (!force && el.getAttribute('data-osv-done') === '1') return;
     el.setAttribute('data-osv-done', '1');
     var ref = el.getAttribute('data-osv');
     var opts = {
@@ -329,8 +329,9 @@
       .catch(function (e) { el.innerHTML = '<span class="osv-fout">[' + (ref || '') + ' niet gevonden]</span>'; });
   }
 
-  function renderAll(root) {
-    (root || document).querySelectorAll('[data-osv]:not([data-osv-done="1"])').forEach(renderEl);
+  function renderAll(root, force) {
+    var selector = force ? '[data-osv]' : '[data-osv]:not([data-osv-done="1"])';
+    (root || document).querySelectorAll(selector).forEach(function (el) { renderEl(el, force); });
   }
 
   /* Scoped CSS injecteren (werkt ook op externe sites) */
@@ -365,6 +366,7 @@
     cite: cite,
     render: renderEl,
     renderAll: renderAll,
+    refresh: function (root) { renderAll(root, true); },
     base: BASE,
     site: SITE,
     _loadChapter: loadChapter

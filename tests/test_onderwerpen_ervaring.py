@@ -133,6 +133,24 @@ class OnderwerpenErvaringTest(unittest.TestCase):
         finally:
             page.close()
 
+    def test_nieuw_uitgewerkte_onderwerpen_staan_in_een_hoofdrubriek(self):
+        page = self.open_page()
+        try:
+            page.locator(".ond-card").first.wait_for(state="visible")
+            kaarten = page.locator(".ond-card")
+            for onderwerp in (
+                "Afgoden in de Bijbel", "De almacht van God",
+                "Zaaien en oogsten", "Vruchtbaarheid en onvruchtbaarheid",
+            ):
+                kaart = kaarten.filter(has_text=onderwerp)
+                self.assertEqual(kaart.count(), 1)
+                self.assertNotEqual(
+                    kaart.locator("xpath=ancestor::section[1]").get_attribute("id"),
+                    "cat-overig",
+                )
+        finally:
+            page.close()
+
     def test_onderwerpcitaten_gebruiken_de_centrale_weergavemodule(self):
         page = self.browser.new_page(viewport={"width": 1000, "height": 900})
         page.add_init_script(

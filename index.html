@@ -99,9 +99,6 @@
         <button type="button" id="mobile-search-btn" aria-label="Zoeken" title="Zoeken in Gods Woord" onclick="if(window.Search&&Search.open){Search.open();}else{location.href='index.html?q=';}">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
         </button>
-        <button id="mobile-opties-btn" aria-label="Opties openen" title="Opties">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        </button>
     </div>
 
     <!-- Mobiele picker-overlay: fullscreen, eerst boek-grid, dan hoofdstuk-grid -->
@@ -491,13 +488,13 @@
 
     <!-- Lexicons worden on-demand geladen via Lexicon.ensureLoaded() — niet automatisch op page load (samen 14 MB) -->
     <script>
-    // Lazy-loader voor lexicons. Roep aan voordat je bdbLexicon/abbottSmithLexicon nodig hebt.
+    // Lazy-loader voor lexicons. Roep aan voordat je bdbLexicon/tbesgLexicon nodig hebt.
     window.LexiconLoader = {
         promises: {},
         load(which) {
             if (this.promises[which]) return this.promises[which];
             this.promises[which] = new Promise((resolve, reject) => {
-                const src = which === 'hebrew' ? 'js/hebreeuws-woordenboek.js' : 'js/grieks-woordenboek.js';
+                const src = which === 'hebrew' ? 'js/hebreeuws-woordenboek.js' : 'js/grieks-tbesg.js';
                 const s = document.createElement('script');
                 s.src = src; s.async = true;
                 s.onload = () => resolve();
@@ -507,7 +504,7 @@
             return this.promises[which];
         },
         async ensureLoaded(which) {
-            const v = which === 'hebrew' ? 'bdbLexicon' : 'abbottSmithLexicon';
+            const v = which === 'hebrew' ? 'bdbLexicon' : 'tbesgLexicon';
             if (typeof window[v] !== 'undefined') return;
             await this.load(which);
         },
@@ -532,9 +529,14 @@
     <!-- Zwevend optiespaneel -->
     <dialog id="sidebar-right" class="options-panel" aria-label="Opties">
         <div id="sidebar-right-header" class="options-header">
+            <h2 id="options-title">Instellingen</h2>
             <button id="sidebar-right-toggle" type="button" aria-label="Opties sluiten" title="Opties sluiten">&times;</button>
         </div>
         <div id="sidebar-right-body" class="options-body">
+            <label class="options-search" for="options-search">
+                <span class="sr-only">Zoek een instelling</span>
+                <input id="options-search" type="search" placeholder="Zoek een instelling" autocomplete="off">
+            </label>
             <section id="options-panel-lezen" class="options-tabpanel" role="tabpanel" aria-labelledby="options-tab-lezen">
                 <div class="options-section-heading">
                     <div><h3>Weergave</h3><p>Maak de leestekst rustig en persoonlijk.</p></div>
@@ -587,6 +589,8 @@
                             <option value="auteur">Op auteur</option>
                         </select>
                     </label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/apocriefe-boeken.png" alt="" aria-hidden="true"><span><strong>Apocriefe boeken</strong><small>Toon de apocriefe boeken in de boekkeuze.</small></span><input type="checkbox" id="toggle-apocriefe-boeken" data-optie="apocriefeBoeken" value="aan"></label>
+                    <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/ethiopische-boeken.png" alt="" aria-hidden="true"><span><strong>Ethiopische boeken</strong><small>Toon de Ethiopische boeken in de boekkeuze.</small></span><input type="checkbox" id="toggle-ethiopische-boeken" data-optie="ethiopischeBoeken" value="aan"></label>
                 </div>
 
                 <div class="options-section-heading">
@@ -625,7 +629,7 @@
                     </div></details>
                     <details class="option-choice option-choice-with-icon" data-option-summary="getalweergave"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/grote-getallen.png" alt="" aria-hidden="true"><span>Getallen</span></span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-getalweergave" data-optie="getalweergave" value="woorden"> Uitgeschreven</label>
-                        <label><input type="radio" name="opt-getalweergave" data-optie="getalweergave" value="cijfers"> Ook als cijfers</label>
+                        <label><input type="radio" name="opt-getalweergave" data-optie="getalweergave" value="cijfers"> Vanaf 21 ook als cijfers</label>
                     </div></details>
                     <details class="option-choice option-choice-with-icon" data-option-summary="tijdrekening"><summary><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/tijdsaanduidingen.png" alt="" aria-hidden="true"><span>Tijdsaanduidingen</span></span><span class="option-current"></span></summary><div class="option-choice-values">
                         <label><input type="radio" name="opt-tijdrekening" data-optie="tijdrekening" value="bijbels"> Bijbels</label>
@@ -689,14 +693,11 @@
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/oudste-handschrift.png" alt="" aria-hidden="true"><span><strong>Oudste handschrift per vers</strong><small>Oorspronkelijke taal en oudste vindplaats.</small></span><input type="checkbox" id="toggle-hs-vers"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/onderwerptags.png" alt="" aria-hidden="true"><span><strong>Onderwerptags</strong></span><input type="checkbox" id="toggle-tags" onchange="document.body.classList.toggle('show-tags', this.checked)"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/geografische-locaties.png" alt="" aria-hidden="true"><span><strong>Geografische locaties</strong></span><input type="checkbox" id="toggle-geo-markeren" data-optie="geoMarkeren" value="aan"></label>
-                        <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/strong-nummers.png" alt="" aria-hidden="true"><span><strong>Strong- en woordnummers</strong></span><input type="checkbox" id="toggle-strongs" data-optie="strongs" value="aan"></label>
+                        <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/strong-nummers.png" alt="" aria-hidden="true"><span><strong>Strong- en woordnummers</strong><em class="option-status-inline">In bewerking</em></span><input type="checkbox" id="toggle-strongs" data-optie="strongs" value="aan"></label>
                 </div>
             </section>
         </div>
     </dialog>
-    <button id="sidebar-right-open" type="button" aria-label="Leesvoorkeuren openen" title="Leesvoorkeuren" hidden>
-        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M10 14v6"/></svg>
-    </button>
     <div id="mobile-backdrop"></div>
 
     <script>

@@ -79,13 +79,14 @@ const App = {
             const container = document.getElementById('verses-container');
             if (container && container.parentNode) container.parentNode.insertBefore(box, container);
         }
+        const handschriftenUrl = `handschriften/${encodeURIComponent(book.id)}.html`;
+        const handschriftenTitel = 'Open de handschriftenpagina met oudste fragment, vindgeschiedenis en scans';
         const parts = [];
-        if (d && (d.schrijftijdKort || d.schrijftijd)) parts.push(`<span class="dating-label">Schrijftijd:</span> ${d.schrijftijdKort || d.schrijftijd}`);
+        if (d && (d.schrijftijdKort || d.schrijftijd)) parts.push(`<a class="dating-link" href="${handschriftenUrl}" title="${handschriftenTitel}"><span class="dating-label">Schrijftijd:</span> ${d.schrijftijdKort || d.schrijftijd}</a>`);
         // Alleen het jaartal van het oudste handschrift tonen (geen siglum/nummer); details staan op de handschriftenpagina.
         const oudsteJaar = d && (d.oudsteDatum || d.oudsteHandschrift);
-        if (oudsteJaar) parts.push(`<span class="dating-label">Oudste handschrift:</span> ${String(oudsteJaar).split(' (')[0]}`);
-        parts.push(`<a class="dating-link" href="handschriften/${encodeURIComponent(book.id)}.html" title="Handschriften van dit boek: oudste fragment, vindgeschiedenis en scans">📖 Handschriften van dit boek ›</a>`);
-        box.innerHTML = '📜 ' + parts.join(' &nbsp;·&nbsp; ');
+        if (oudsteJaar) parts.push(`<a class="dating-link" href="${handschriftenUrl}" title="${handschriftenTitel}"><span class="dating-label">Oudste handschrift:</span> ${String(oudsteJaar).split(' (')[0]}</a>`);
+        box.innerHTML = '<img class="dating-icon" src="images/iconen/instellingen/oudste-handschrift.png" alt="" aria-hidden="true">' + parts.join(' &nbsp;·&nbsp; ');
         box.style.display = 'block';
     },
 
@@ -647,13 +648,12 @@ const App = {
             // Het testament bepaalt of de nacht drie of vier waken telt.
             if (!isExternalTranslation && typeof Opties !== 'undefined' && Opties.rekenTijden) openVertaling = Opties.rekenTijden(openVertaling, bookId, chapterNum, verse.number, book.testament);
 
-            // Alleen handmatig gecontroleerde Strong-koppelingen staan inline in de OV-tekst.
-            // Project-eigen Latijnse/Ge'ez-nummers behouden hun bronwoordweergave.
+            // Alleen gecontroleerde koppelingen staan inline in de Nederlandse OV-tekst.
+            // Nooit een extra grondtekstregel: de lezer ziet uitsluitend aanklikbare nummers
+            // direct na het Nederlandse woord waarop de koppeling betrekking heeft.
             let sv1888Text = verse.textSV1888_html || verse.textSV1888 || '';
             if (showStrongs && verse.woordnummers && verse.woordnummers.length > 0) {
                 openVertaling = this.renderStrongLinks(openVertaling, verse.woordnummers);
-            } else if (showStrongs && verse.grondtekst && verse.grondtekst.some(w => /^(?:OVL|OVG)/.test(w.strongs || ''))) {
-                openVertaling += window.OVWoordnummers.renderAlignment(verse.grondtekst);
             }
 
             // Diff-kolom: toon phrase-level wijzigingen als "oud → nieuw"

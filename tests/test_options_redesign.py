@@ -43,7 +43,11 @@ class OptionsRedesignTests(unittest.TestCase):
     def open_reader(self, width=390, height=844):
         page = self.browser.new_page(viewport={"width": width, "height": height})
         page.goto(f"{self.base_url}/index.html#genesis/1", wait_until="domcontentloaded")
-        page.locator("#mobile-opties-btn" if width <= 768 else "#sidebar-right-open").click()
+        if width <= 768:
+            page.locator("#topnav-hamburger").click()
+            page.locator("#topnav-mobile-tekstopties").click()
+        else:
+            page.locator("#topnav-tekstopties").click()
         page.locator("#sidebar-right").wait_for(state="visible")
         return page
 
@@ -59,14 +63,14 @@ class OptionsRedesignTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_mobiel_is_schermvullend_met_sluitkruis(self):
+    def test_mobiel_is_halvhoge_bottom_sheet_met_sluitkruis(self):
         page = self.open_reader()
         try:
             box = page.locator("#sidebar-right").bounding_box()
             self.assertAlmostEqual(box["x"], 0, delta=1)
-            self.assertAlmostEqual(box["y"], 0, delta=1)
+            self.assertAlmostEqual(box["y"], 422, delta=2)
             self.assertAlmostEqual(box["width"], 390, delta=1)
-            self.assertAlmostEqual(box["height"], 844, delta=1)
+            self.assertAlmostEqual(box["height"], 422, delta=2)
             self.assertTrue(page.locator("#sidebar-right-toggle").is_visible())
             self.assertEqual(page.locator("#sidebar-right-toggle").get_attribute("aria-label"), "Opties sluiten")
         finally:
@@ -83,9 +87,38 @@ class OptionsRedesignTests(unittest.TestCase):
             self.assertEqual(defaults["otSheol"], "dodenrijk")
             self.assertEqual(defaults["citaten"], "aan")
             self.assertEqual(defaults["versnummers"], "aan")
+            self.assertEqual(defaults["apocriefeBoeken"], "aan")
+            self.assertEqual(defaults["ethiopischeBoeken"], "uit")
             geo = page.locator('input[type="checkbox"][data-optie="geoMarkeren"]')
             self.assertEqual(geo.count(), 1)
             self.assertFalse(geo.is_checked())
+        finally:
+            page.close()
+
+    def test_instelingen_zoeken_en_boekzichtbaarheid_zijn_globale_theologieopties(self):
+        page = self.open_reader(width=1280)
+        try:
+            self.assertEqual(page.locator("#options-title").inner_text(), "Instellingen")
+            search = page.locator("#options-search")
+            self.assertEqual(search.get_attribute("placeholder"), "Zoek een instelling")
+
+            search.fill("Ethiopische boeken")
+            theology = page.locator('details[data-options-category="theologie"]')
+            self.assertTrue(theology.is_visible())
+            self.assertTrue(theology.get_attribute("open") is not None)
+            self.assertEqual(page.locator('#toggle-ethiopische-boeken').count(), 1)
+            self.assertTrue(page.locator('#toggle-apocriefe-boeken').is_checked())
+            self.assertFalse(page.locator('#toggle-ethiopische-boeken').is_checked())
+
+            page.locator('#toggle-ethiopische-boeken').check()
+            page.wait_for_function("Opties.state.ethiopischeBoeken === 'aan'")
+            page.wait_for_function("document.querySelector('[data-book-id=\"henoch\"]') !== null")
+            self.assertGreater(page.locator('[data-book-id="henoch"]').count(), 0)
+
+            page.locator('#toggle-apocriefe-boeken').uncheck()
+            page.wait_for_function("Opties.state.apocriefeBoeken === 'uit'")
+            page.wait_for_function("document.querySelector('[data-book-id=\"tobit\"]') === null")
+            self.assertEqual(page.locator('[data-book-id="tobit"]').count(), 0)
         finally:
             page.close()
 

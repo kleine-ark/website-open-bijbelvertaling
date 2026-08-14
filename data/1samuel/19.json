@@ -113,7 +113,7 @@
       "number": 2,
       "textSV1888": "En Jonathan verkondigde het David, zeggende: Mijn vader Saul zoekt u te doden; nu dan, wacht u toch des morgens, en blijf in het verborgene, en versteek u.",
       "text1637": "Ende Ionathan vercondigde ’t David, seggende, Mijn vader Saul soeckt u te dooden: nu dan, wacht u doch [1] ’s morgens, ende blijft in’t verborgen, ende versteeckt u.",
-      "text2026": "En Jonathan verkondigde het David, zeggende: Mijn vader Saul zoekt u te doden; nu dan, wees toch 's morgens op uw hoede, en blijf in het verborgene, en versteek u.",
+      "text2026": "En Jonathan verkondigde het David, zeggende: Mijn vader Saul zoekt u te doden; nu dan, wees toch 's morgens op uw hoede, en blijf in het verborgene, en verstop u.",
       "marginNotes": [
         {
           "marker": "1",
@@ -200,7 +200,7 @@
           "morph": "HC/VNq2ms"
         }
       ],
-      "text2026_html": "En Jonathan verkondigde het David, zeggende: <span class=\"direct-speech\"><i>Mijn vader Saul zoekt u te doden; nu dan, wees toch 's morgens op uw hoede, en blijf in het verborgene, en versteek u.</i></span>",
+      "text2026_html": "En Jonathan verkondigde het David, zeggende: <span class=\"direct-speech\"><i>Mijn vader Saul zoekt u te doden; nu dan, wees toch 's morgens op uw hoede, en blijf in het verborgene, en verstop u.</i></span>",
       "textSV1888_html": "En Jonathan verkondigde het David, zeggende: Mijn vader Saul zoekt u te doden; nu dan, wacht u toch<sup class=\"note-marker\" data-note=\"1\">1</sup> des morgens, en blijf in het verborgene, en versteek u.",
       "text1637_html": "Ende Ionathan vercondigde ’t David, seggende, Mijn vader Saul soeckt u te dooden: nu dan, wacht u doch <sup class=\"note-marker\" data-note=\"1\">1</sup> ’s morgens, ende blijft in’t verborgen, en<i>de</i> versteeckt u.",
       "phraseDiff": [
@@ -213,6 +213,11 @@
           "old": "des morgens,",
           "new": "'s morgens op uw hoede,",
           "principe": "N3"
+        },
+        {
+          "old": "versteek",
+          "new": "verstop",
+          "principe": null
         }
       ]
     },

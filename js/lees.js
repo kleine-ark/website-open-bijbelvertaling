@@ -191,13 +191,14 @@ const Lees = {
             const heading = document.getElementById('chapter-heading');
             if (heading && heading.parentNode) heading.parentNode.insertBefore(box, heading.nextSibling);
         }
+        const handschriftenUrl = `handschriften/${encodeURIComponent(book.id)}.html`;
+        const handschriftenTitel = 'Open de handschriftenpagina met oudste fragment, vindgeschiedenis en scans';
         const parts = [];
-        if (d && (d.schrijftijdKort || d.schrijftijd)) parts.push(`<span class="dating-label">Schrijftijd:</span> ${d.schrijftijdKort || d.schrijftijd}`);
+        if (d && (d.schrijftijdKort || d.schrijftijd)) parts.push(`<a class="dating-link" href="${handschriftenUrl}" title="${handschriftenTitel}"><span class="dating-label">Schrijftijd:</span> ${d.schrijftijdKort || d.schrijftijd}</a>`);
         // Alleen het jaartal van het oudste handschrift tonen (geen siglum/nummer); details staan op de handschriftenpagina.
         const oudsteJaar = d && (d.oudsteDatum || d.oudsteHandschrift);
-        if (oudsteJaar) parts.push(`<span class="dating-label">Oudste handschrift:</span> ${String(oudsteJaar).split(' (')[0]}`);
-        parts.push(`<a class="dating-link" href="handschriften/${encodeURIComponent(book.id)}.html" title="Handschriften van dit boek: oudste fragment, vindgeschiedenis en scans">📖 Handschriften van dit boek ›</a>`);
-        box.innerHTML = '📜 ' + parts.join(' &nbsp;·&nbsp; ');
+        if (oudsteJaar) parts.push(`<a class="dating-link" href="${handschriftenUrl}" title="${handschriftenTitel}"><span class="dating-label">Oudste handschrift:</span> ${String(oudsteJaar).split(' (')[0]}</a>`);
+        box.innerHTML = '<img class="dating-icon" src="images/iconen/instellingen/oudste-handschrift.png" alt="" aria-hidden="true">' + parts.join(' &nbsp;·&nbsp; ');
         box.style.display = 'block';
     },
 
@@ -494,12 +495,6 @@ const Lees = {
             const html = verse.text2026_html || verse.text2026 || '';
             textNode.innerHTML = this.wrapWordsWithStrongs(html, verse.woordnummers);
             span.appendChild(textNode);
-            if (this.wordNumbersEnabled() && window.OVWoordnummers && !(verse.woordnummers || []).length) {
-                const projectNumbers = (verse.grondtekst || []).filter(word => /^(?:OVL|OVG)/.test(word.strongs || ''));
-                const alignment = window.OVWoordnummers.renderAlignment(projectNumbers);
-                if (alignment) span.insertAdjacentHTML('beforeend', alignment);
-            }
-
             // Parallelle vertalingen onder het vers
             for (const par of parallels) {
                 const t = par.chData[String(verse.number)];

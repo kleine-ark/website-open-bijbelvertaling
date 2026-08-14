@@ -502,7 +502,7 @@
       "number": 5,
       "textSV1888": "David nu antwoordde den priester, en zeide tot hem: Ja trouwens, de vrouwen zijn ons onthouden geweest gisteren en eergisteren, toen ik uitging, en de vaten der jongelingen zijn heilig; en het is enigerwijze gemeen brood, te meer dewijl heden ander in de vaten zal geheiligd worden.",
       "text1637": "David nu antwoordde den Priester, ende seyde hem, Ia trouwens, de vrouwen zijn ons onthouden geweest [13] gisteren ende eergisteren doe ick uytginck, ende de [14] vaten der jongelingen zijn heylich: ende het is [15] eeniger wijse gemeyn [broot], te meer dewijle heden [ander] in de [16] vaten sal geheylicht worden.",
-      "text2026": "David nu antwoordde de priester, en zei tot hem: Ja trouwens, de vrouwen zijn ons onthouden geweest gisteren en eergisteren, toen ik uitging, en de vaten van de jongemannen zijn heilig; en het is enigerwijze gemeen brood, te meer omdat vandaag ander in de vaten zal geheiligd worden.",
+      "text2026": "David nu antwoordde de priester, en zei tot hem: Ja trouwens, de vrouwen zijn ons onthouden geweest gisteren en eergisteren, toen ik uitging, en de voorwerpen van de jongemannen zijn heilig; en het is enigerwijze normaal brood, te meer omdat vandaag ander in de voorwerpen zal geheiligd worden.",
       "marginNotes": [
         {
           "marker": "13",
@@ -640,7 +640,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "David nu antwoordde de priester, en zei tot hem: <span class=\"direct-speech\"><i>Ja trouwens, de vrouwen zijn ons onthouden geweest gisteren en eergisteren, toen ik uitging, en de vaten van de jongemannen zijn heilig; en het is enigerwijze gemeen brood, te meer omdat vandaag ander in de vaten zal geheiligd worden.</i></span>",
+      "text2026_html": "David nu antwoordde de priester, en zei tot hem: <span class=\"direct-speech\"><i>Ja trouwens, de vrouwen zijn ons onthouden geweest gisteren en eergisteren, toen ik uitging, en de voorwerpen van de jongemannen zijn heilig; en het is enigerwijze normaal brood, te meer omdat vandaag ander in de voorwerpen zal geheiligd worden.</i></span>",
       "textSV1888_html": "David nu antwoordde den priester, en zeide tot hem: Ja trouwens, de vrouwen zijn ons onthouden geweest<sup class=\"note-marker\" data-note=\"13\">13</sup> gisteren en eergisteren, toen ik uitging, en de<sup class=\"note-marker\" data-note=\"14\">14</sup> vaten der jongelingen zijn heilig; en het is<sup class=\"note-marker\" data-note=\"15\">15</sup> enigerwijze gemeen brood, te meer dewijl heden ander in de<sup class=\"note-marker\" data-note=\"16\">16</sup> vaten zal geheiligd worden.",
       "text1637_html": "David nu antwoordde den Priester, ende seyde hem, Ia trouwens, de vrouwen zijn ons onthouden geweest <sup class=\"note-marker\" data-note=\"13\">13</sup> gisteren ende eergisteren doe ick uytginck, en<i>de</i> de <sup class=\"note-marker\" data-note=\"14\">14</sup> vaten der jongelingen zijn heylich: ende het is <sup class=\"note-marker\" data-note=\"15\">15</sup> eeniger wijse gemeyn [broot], te meer dewijle heden [ander] in de <sup class=\"note-marker\" data-note=\"16\">16</sup> vaten sal geheylicht worden.",
       "phraseDiff": [
@@ -655,14 +655,24 @@
           "principe": "W1"
         },
         {
-          "old": "der jongelingen",
-          "new": "van de jongemannen",
-          "principe": "N2"
+          "old": "vaten der jongelingen",
+          "new": "voorwerpen van de jongemannen",
+          "principe": null
+        },
+        {
+          "old": "gemeen",
+          "new": "normaal",
+          "principe": null
         },
         {
           "old": "dewijl heden",
           "new": "omdat vandaag",
           "principe": "V986"
+        },
+        {
+          "old": "vaten",
+          "new": "voorwerpen",
+          "principe": null
         }
       ]
     },
@@ -1833,7 +1843,7 @@
       "number": 14,
       "textSV1888": "Toen zeide Achis tot zijn knechten: Ziet, gij ziet, dat de man razende is, waarom hebt gij hem tot mij gebracht?",
       "text1637": "Doe seyde Achis tot sijne knechten: Siet, ghy siet dat de man rasende is, waerom hebt ghy hem tot my gebracht?",
-      "text2026": "Toen zei Achis tot zijn knechten: Zie, u ziet, dat de man razende is, waarom hebt u hem tot mij gebracht?",
+      "text2026": "Toen zei Achis tot zijn knechten: Zie, u ziet, dat de man krankzinnig is, waarom hebt u hem tot mij gebracht?",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1907,7 +1917,7 @@
           "morph": "HNcbsc/Sp3ms"
         }
       ],
-      "text2026_html": "Toen zei Achis tot zijn knechten: <span class=\"direct-speech\"><i>Zie, u ziet, dat de man razende is, waarom hebt u hem tot mij gebracht?</i></span>",
+      "text2026_html": "Toen zei Achis tot zijn knechten: <span class=\"direct-speech\"><i>Zie, u ziet, dat de man krankzinnig is, waarom hebt u hem tot mij gebracht?</i></span>",
       "text1637_html": "Doe seyde Achis tot sijne knechten: Siet, ghy siet dat de man rasende is, waerom hebt ghy hem tot my gebracht?",
       "phraseDiff": [
         {
@@ -1919,6 +1929,11 @@
           "old": "Ziet, gij",
           "new": "Zie, u",
           "principe": "A1"
+        },
+        {
+          "old": "razende",
+          "new": "krankzinnig",
+          "principe": null
         },
         {
           "old": "gij",

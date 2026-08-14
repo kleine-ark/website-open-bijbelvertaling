@@ -9,6 +9,44 @@ const Lexicon = {
 
     // Nederlandse vertaal-overlay (glossNl/definitieNl), lui geladen per taal
     _nl: { hebrew: null, greek: null },
+
+    TBESG_BOOKS: {
+        Gen: 'genesis', Exo: 'exodus', Lev: 'leviticus', Num: 'numeri', Deu: 'deuteronomium', Jos: 'jozua',
+        Jdg: 'richteren', Rut: 'ruth', '1Sa': '1samuel', '2Sa': '2samuel', '1Ki': '1koningen', '2Ki': '2koningen',
+        '3Ki': '1koningen', '4Ki': '2koningen', '1Ch': '1kronieken', '2Ch': '2kronieken', Ezr: 'ezra', Neh: 'nehemia',
+        Est: 'esther', Job: 'job', Psa: 'psalmen', Pro: 'spreuken', Ecc: 'prediker', Sng: 'hooglied', Isa: 'jesaja',
+        Jer: 'jeremia', Lam: 'klaagliederen', Ezk: 'ezechiel', Dan: 'daniel', Hos: 'hosea', Jol: 'joel', Amo: 'amos',
+        Oba: 'obadja', Jon: 'jona', Mic: 'micha', Nah: 'nahum', Hab: 'habakuk', Zep: 'zefanja', Hag: 'haggai', Zec: 'zacharia', Mal: 'maleachi',
+        Mat: 'mattheus', Mrk: 'markus', Luk: 'lukas', Jhn: 'johannes', Act: 'handelingen', Rom: 'romeinen',
+        '1Co': '1korinthiers', '2Co': '2korinthiers', Gal: 'galaten', Eph: 'efeziers', Php: 'filippenzen', Phil: 'filippenzen', Col: 'kolossenzen',
+        '1Th': '1tessalonicensen', '2Th': '2tessalonicensen', '1Ti': '1timotheus', '1Tim': '1timotheus', Tim: '1timotheus', '2Ti': '2timotheus', Tit: 'titus',
+        Heb: 'hebreeen', Jas: 'jakobus', '1Pe': '1petrus', '1Pet': '1petrus', '2Pe': '2petrus', '1Jn': '1johannes', '1Jo': '1johannes', '2Jn': '2johannes', '3Jn': '3johannes', Jude: 'judas', Rev: 'openbaring',
+        '1Es': '3ezra', '2Es': '4ezra', Tob: 'tobit', Jdt: 'judith', Wis: 'boekderwijsheid', Sir: 'jezussirach', Bar: 'baruch', '1Ma': '1makkabeeen', '1Mac': '1makkabeeen', '2Ma': '2makkabeeen', '2Mac': '2makkabeeen', '3Ma': '3makkabeeen', '3Mac': '3makkabeeen', Man: 'gebedvanmanasse', Sus: 'susanna', Bel: 'belenddedraak'
+    },
+
+    _bookNames: null,
+    async ensureBookNames() {
+        if (this._bookNames) return this._bookNames;
+        try {
+            const response = await fetch('data/books.json');
+            const data = response.ok ? await response.json() : { books: [] };
+            this._bookNames = Object.fromEntries((data.books || []).map(book => [book.id, book.nameDutch || book.id]));
+        } catch (error) {
+            this._bookNames = {};
+        }
+        return this._bookNames;
+    },
+
+    linkifyTbesgDefinition(definition, names) {
+        return String(definition || '').replace(/<ref='([^']+)'>([^<]*)<\/ref>/g, (_match, attribute, text) => {
+            const parts = String(attribute).replace(/\.$/, '').split('.');
+            const bookId = this.TBESG_BOOKS[parts[0]];
+            if (!bookId || !parts[1]) return text || '';
+            const label = `${names[bookId] || bookId} ${parts[1]}:${parts[2] || ''}`;
+            const href = `index.html#${bookId}/${parts[1]}/${parts[2] || ''}`;
+            return `<a href="${href}">${this.escapeHtml(label)}</a>`;
+        });
+    },
     async ensureNl(lang) {
         if (this._nl[lang]) return this._nl[lang];
         const url = lang === 'hebrew' ? '/data/lexicon-nl/bdb-nl.json' : '/data/lexicon-nl/tbesg-nl.json';
@@ -166,8 +204,11 @@ const Lexicon = {
         const gloss = t.glossNl || t.samenvattingNl || anchorEl.dataset.gloss || entry.gloss || '';
         const woord = anchorEl.dataset.sourceWord || entry.woord || '';
         const transliteratie = anchorEl.dataset.transliteratie || entry.translit || entry.transliteratie || '';
-        const definitie = t.definitieNl || entry.definitie ||
+        const rawDefinition = t.definitieNl || entry.definitie ||
             (gloss ? `Betekenis in deze bronkoppeling: ${gloss}.` : 'Voor dit woordnummer is nog geen lokale woordenboekdefinitie beschikbaar.');
+        const definitie = family === 'G'
+            ? this.linkifyTbesgDefinition(rawDefinition, await this.ensureBookNames())
+            : rawDefinition;
         if (!fullLink) fullLink = `lexicon-viewer.html?entry=${encodeURIComponent(strongs)}`;
 
         const sheet = document.createElement('div');
@@ -229,10 +270,23 @@ const Lexicon = {
     sanitizeDefinition(html) {
         const template = document.createElement('template');
         template.innerHTML = String(html || 'Geen woordenboekdefinitie beschikbaar.');
-        const allowed = new Set(['B', 'STRONG', 'I', 'EM', 'BR', 'P', 'DIV', 'UL', 'OL', 'LI', 'SUP', 'SUB', 'SPAN']);
+        const allowed = new Set(['B', 'STRONG', 'I', 'EM', 'BR', 'P', 'DIV', 'UL', 'OL', 'LI', 'SUP', 'SUB', 'SPAN', 'A']);
         [...template.content.querySelectorAll('*')].forEach(node => {
             if (!allowed.has(node.tagName)) {
                 node.replaceWith(...node.childNodes);
+                return;
+            }
+            if (node.tagName === 'A') {
+                // Alleen door ons gemaakte, interne Schriftverwijzingen mogen
+                // als link in een woordenboekdefinitie blijven staan.
+                const href = node.getAttribute('href') || '';
+                if (!/^index\.html#[a-z0-9]+\/\d+\/\d+$/i.test(href)) {
+                    node.replaceWith(...node.childNodes);
+                    return;
+                }
+                [...node.attributes].forEach(attribute => {
+                    if (attribute.name !== 'href') node.removeAttribute(attribute.name);
+                });
                 return;
             }
             [...node.attributes].forEach(attribute => node.removeAttribute(attribute.name));
