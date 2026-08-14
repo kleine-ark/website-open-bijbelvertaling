@@ -111,7 +111,10 @@
         h += '<div class="ns-rooster">';
         for (var i = 0; i < items.length; i++) {
             var it = items[i];
-            h += '<a class="ns-kaart" href="?' + (d.personen ? 'persoon' : 'item') + '=' + encodeURIComponent(it.id) + '">' +
+            var zoekTekst = d.personen
+                ? [it.naam, it.onderscheiding || ''].join(' ')
+                : [it.naam, it.beschrijving || '', it.gebruik || '', it.onderscheiding || ''].join(' ');
+            h += '<a class="ns-kaart" data-zoektekst="' + esc(zoekTekst) + '" href="?' + (d.personen ? 'persoon' : 'item') + '=' + encodeURIComponent(it.id) + '">' +
                  (it.afbeelding ? '<img class="ns-kaart-beeld" src="' + esc(it.afbeelding) + '" alt="" loading="lazy" width="640" height="640">' : '') +
                  (d.nummerType ? '<span class="ns-nummer">' + esc(d.nummerType) + ' ' + (i + 1) + '</span>' : '') +
                  '<span class="ns-kaart-naam">' + esc(it.naam) + '</span>' +
@@ -134,7 +137,7 @@
                 var query = search.value.toLocaleLowerCase('nl').trim();
                 var visible = 0;
                 for (var c = 0; c < cards.length; c++) {
-                    var match = !query || cards[c].textContent.toLocaleLowerCase('nl').indexOf(query) >= 0;
+                    var match = !query || cards[c].getAttribute('data-zoektekst').toLocaleLowerCase('nl').indexOf(query) >= 0;
                     cards[c].hidden = !match;
                     if (match) visible++;
                 }

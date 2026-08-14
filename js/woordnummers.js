@@ -6,7 +6,7 @@
         H:   { lang: 'he',  direction: 'rtl', tokenClass: 'strongs-token-hebrew', label: 'Strong Hebreeuws' },
         G:   { lang: 'grc', direction: 'ltr', tokenClass: 'strongs-token-greek',  label: 'Strong Grieks' },
         OVL: { lang: 'la',  direction: 'ltr', tokenClass: 'strongs-token-latin',  label: 'Open Vertaling Latijn' },
-        OVG: { lang: 'gez', direction: 'ltr', tokenClass: 'strongs-token-geez',   label: 'Open Vertaling Ge’ez' },
+        OVG: { lang: 'gez', direction: 'ltr', tokenClass: 'strongs-token-geez',   label: 'Ge’ez-woordnummer' },
     };
 
     function escapeHtml(value) {
@@ -68,7 +68,7 @@
             const sourceWord = escapeHtml(sourceWords[index] || sourceWords[0] || '');
             const transliteration = escapeHtml(transliterations[index] || transliterations[0] || '');
             const gloss = escapeHtml(glosses[index] || glosses[0] || '');
-            return `<button type="button" class="strongs-inline" data-strongs="${safeNumber}" data-source-word="${sourceWord}" data-transliteratie="${transliteration}" data-gloss="${gloss}" aria-label="Open woordenboekbetekenis van ${safeNumber}">${safeNumber}</button>`;
+            return `<button type="button" class="strongs-inline" data-strongs="${safeNumber}" data-source-word="${sourceWord}" data-transliteratie="${transliteration}" data-gloss="${gloss}" aria-label="Open woordenboekbetekenis van ${safeNumber}">(${safeNumber})</button>`;
         }).join('');
     }
 

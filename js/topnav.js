@@ -21,6 +21,12 @@
     var nav = document.getElementById('topnav');
     if (!nav) return;
 
+    if (!document.querySelector('script[src$="global-options-host.js"]')) {
+        var hostScript = document.createElement('script');
+        hostScript.src = 'js/global-options-host.js';
+        document.head.appendChild(hostScript);
+    }
+
     /* Ingebed in de wiki? Die laadt pagina's in een iframe, en dan verschijnt
        de hele site nóg een keer binnen zichzelf: een tweede bovenbalk, en bij
        acht pagina's ook een tweede documentatie-zijbalk. Binnen een iframe
@@ -46,6 +52,7 @@
             '<a href="over-ov.html">Over OV</a>' +
             '<a href="index.html#johannes/1">Tekst</a>' +
             '<a href="wiki.html">Wiki</a>' +
+            '<button class="topnav-mobile-tekstopties" id="topnav-mobile-tekstopties" type="button" aria-label="Tekstopties openen" aria-controls="sidebar-right" aria-expanded="false">Tekstopties</button>' +
         '</div>' +
         '<input type="search" id="topnav-search-input" class="topnav-search-input" placeholder="Zoek in Gods Woord… (Ctrl+K)" autocomplete="off" aria-label="Zoeken in Gods Woord" onkeydown="if(event.key===\'Enter\'){var q=this.value.trim();if(q){location.href=\'index.html?q=\'+encodeURIComponent(q);}}">' +
         '<button class="topnav-tekstopties" id="topnav-tekstopties" type="button" aria-label="Tekstopties openen" aria-controls="sidebar-right" aria-expanded="false" title="Tekstopties"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10"/><path d="M18 7h2"/><circle cx="16" cy="7" r="2"/><path d="M4 17h3"/><path d="M11 17h9"/><circle cx="9" cy="17" r="2"/></svg><span>Tekstopties</span></button>' +
@@ -53,12 +60,29 @@
         '<div id="auth-slot" class="topnav-auth"></div>' +
         '<button class="topnav-hamburger" id="topnav-hamburger" onclick="document.getElementById(\'topnav-links\').classList.toggle(\'open\');this.classList.toggle(\'open\')" title="Menu" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>';
 
-    var optiesKnop = document.getElementById('topnav-tekstopties');
-    if (optiesKnop) {
-        optiesKnop.addEventListener('click', function () {
-            if (!window.OptionsPanel) location.href = 'index.html?opties=1';
-        });
+    var optiesKnoppen = [
+        document.getElementById('topnav-tekstopties'),
+        document.getElementById('topnav-mobile-tekstopties')
+    ].filter(Boolean);
+    function openTekstopties(trigger) {
+            if (window.OptionsPanel && document.getElementById('sidebar-right')) {
+                // De hoofdlezer heeft het paneel al in het document; daar
+                // hoeft de host niet eerst asynchroon te worden geladen.
+                window.OptionsPanel.open(trigger);
+            } else if (window.GlobalOptionsHost) {
+                window.GlobalOptionsHost.ensure().then(function () {
+                    window.OptionsPanel.open(trigger);
+                });
+            } else {
+                window.addEventListener('ov:options-host-loaded', function () {
+                    openTekstopties(trigger);
+                }, { once: true });
+            }
     }
+    optiesKnoppen.forEach(function (optiesKnop) {
+        optiesKnop.dataset.globalOptionsBound = 'true';
+        optiesKnop.addEventListener('click', function () { openTekstopties(optiesKnop); });
+    });
 
     /* Het versienummer stond hier hardgecodeerd en liep daardoor achter: bij
        v0.28.0 wees de balk nog naar v0.26.0. Nu komt hij uit data/stats.json,

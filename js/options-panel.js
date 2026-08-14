@@ -8,18 +8,21 @@ const OptionsPanel = {
     optionMirrors: new Map(),
 
     init() {
+        if (this._initialized) return;
         this.dialog = document.getElementById('sidebar-right');
         const openButtons = [
-            document.getElementById('sidebar-right-open'),
             document.getElementById('topnav-tekstopties'),
+            document.getElementById('topnav-mobile-tekstopties'),
         ].filter(Boolean);
         const closeButton = document.getElementById('sidebar-right-toggle');
         if (!this.dialog || !openButtons.length || !closeButton) return;
+        this._initialized = true;
 
         openButtons.forEach(openButton => {
             openButton.hidden = false;
             openButton.setAttribute('aria-controls', 'sidebar-right');
             openButton.setAttribute('aria-expanded', 'false');
+            if (openButton.dataset.globalOptionsBound === 'true') return;
             openButton.addEventListener('click', event => {
                 event.preventDefault();
                 this.open(openButton);
@@ -27,6 +30,7 @@ const OptionsPanel = {
         });
         closeButton.addEventListener('click', () => this.close());
         this.buildCategoryTemplate();
+        this.setupOptionSearch();
 
         this.dialog.addEventListener('click', event => {
             if (event.target !== this.dialog) return;
@@ -39,6 +43,10 @@ const OptionsPanel = {
             openButtons.forEach(openButton => openButton.setAttribute('aria-expanded', 'false'));
             document.body.classList.remove('options-open');
             if (this.lastTrigger && this.lastTrigger.isConnected) this.lastTrigger.focus();
+        });
+        this.dialog.addEventListener('cancel', event => {
+            event.preventDefault();
+            this.close();
         });
         this.dialog.addEventListener('change', () => {
             this.syncOptionSummaries();
@@ -64,7 +72,7 @@ const OptionsPanel = {
         this.syncOptionSummaries();
         this.syncOptionMirrors();
         document.body.classList.add('options-open');
-        document.querySelectorAll('#sidebar-right-open, #topnav-tekstopties').forEach(opener => {
+        document.querySelectorAll('#topnav-tekstopties, #topnav-mobile-tekstopties').forEach(opener => {
             opener.setAttribute('aria-expanded', 'true');
         });
         const closeButton = document.getElementById('sidebar-right-toggle');
@@ -108,7 +116,8 @@ const OptionsPanel = {
                     '[data-option-summary="otSheol"]', '[data-option-summary="jezusNaam"]',
                     '[data-option-summary="arabischeNamen"]',
                     '[data-option-summary="maatstelsel"]', '[data-option-summary="getalweergave"]',
-                    '[data-option-summary="tijdrekening"]',
+                    '[data-option-summary="tijdrekening"]', '#toggle-apocriefe-boeken',
+                    '#toggle-ethiopische-boeken',
                 ],
             },
             {
@@ -166,6 +175,35 @@ const OptionsPanel = {
         body.prepend(mostUsed);
         body.dataset.categoriesBuilt = 'true';
         this.syncOptionMirrors();
+    },
+
+    setupOptionSearch() {
+        const search = document.getElementById('options-search');
+        if (!search || search.dataset.bound === 'true') return;
+        search.dataset.bound = 'true';
+        search.addEventListener('input', () => {
+            const query = search.value.trim().toLocaleLowerCase('nl');
+            this.dialog.querySelectorAll('details.options-category').forEach(category => {
+                const rows = Array.from(category.querySelectorAll(
+                    ':scope > .options-list > .option-row, :scope > .options-list > .option-choice'
+                ));
+                if (!query) {
+                    category.hidden = false;
+                    rows.forEach(row => { row.hidden = false; });
+                    return;
+                }
+                const categoryMatch = category.querySelector(':scope > summary')
+                    .textContent.toLocaleLowerCase('nl').includes(query);
+                let visibleRows = 0;
+                rows.forEach(row => {
+                    const matches = categoryMatch || row.textContent.toLocaleLowerCase('nl').includes(query);
+                    row.hidden = !matches;
+                    if (matches) visibleRows += 1;
+                });
+                category.hidden = visibleRows === 0;
+                if (visibleRows) category.open = true;
+            });
+        });
     },
 
     createOptionMirror(key, primaryRow) {

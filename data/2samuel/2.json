@@ -1658,7 +1658,7 @@
       "number": 14,
       "textSV1888": "En Abner zeide tot Joab: Laat zich nu de jongens opmaken, en voor ons aangezicht spelen. En Joab zeide: Laat hen zich opmaken.",
       "text1637": "Ende Abner seyde tot Ioab; Laet sich nu de [34] jongens opmaken, ende voor ons [35] aengesichte [36] spelen: ende Ioab seyde; Laetse sich opmaken.",
-      "text2026": "En Abner zei tot Joab: Laat zich nu de jongens opmaken, en voor ons aangezicht spelen. En Joab zei: Laat hen zich opmaken.",
+      "text2026": "En Abner zei tot Joab: Laat zich nu de jongens opmaken, en voor ons aangezicht vechten. En Joab zei: Laat hen zich opmaken.",
       "marginNotes": [
         {
           "marker": "34",
@@ -1744,7 +1744,7 @@
           "morph": "HVqj3mp"
         }
       ],
-      "text2026_html": "En Abner zei tot Joab: <span class=\"direct-speech\"><i>Laat zich nu de jongens opmaken, en voor ons aangezicht spelen.</i></span> En Joab zei: <span class=\"direct-speech\"><i>Laat hen zich opmaken.</i></span>",
+      "text2026_html": "En Abner zei tot Joab: <span class=\"direct-speech\"><i>Laat zich nu de jongens opmaken, en voor ons aangezicht vechten.</i></span> En Joab zei: <span class=\"direct-speech\"><i>Laat hen zich opmaken.</i></span>",
       "textSV1888_html": "En Abner zeide tot Joab: Laat zich nu de<sup class=\"note-marker\" data-note=\"34\">34</sup> jongens opmaken, en voor ons<sup class=\"note-marker\" data-note=\"35\">35</sup> aangezicht<sup class=\"note-marker\" data-note=\"36\">36</sup> spelen. En Joab zeide: Laat hen zich opmaken.",
       "text1637_html": "Ende Abner seyde tot Ioab; Laet sich nu de <sup class=\"note-marker\" data-note=\"34\">34</sup> jongens opmaken, ende voor ons <sup class=\"note-marker\" data-note=\"35\">35</sup> aengesichte <sup class=\"note-marker\" data-note=\"36\">36</sup> spelen: ende Ioab seyde; Laetse sich opmaken.",
       "phraseDiff": [
@@ -1752,6 +1752,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "spelen.",
+          "new": "vechten.",
+          "principe": null
         },
         {
           "old": "zeide:",
@@ -2949,7 +2954,7 @@
       "number": 25,
       "textSV1888": "En de kinderen van Benjamin verzamelden zich achter Abner, en werden tot een hoop; en zij stonden op de spits van een heuvel.",
       "text1637": "Ende de kinderen Benjamins versamelden sich achter Abner, ende werden tot eenen [48] hoop: ende sy stonden, op de spitzse van eenen heuvel.",
-      "text2026": "En de kinderen van Benjamin verzamelden zich achter Abner, en werden tot één hoop; en zij stonden op de spits van een heuvel.",
+      "text2026": "En de kinderen van Benjamin verzamelden zich achter Abner, en werden tot één groep; en zij stonden op de spits van een heuvel.",
       "marginNotes": [
         {
           "marker": "48",
@@ -3026,14 +3031,14 @@
           "morph": "HAcfsa"
         }
       ],
-      "text2026_html": "En de kinderen van Benjamin verzamelden zich achter Abner, en werden tot één<sup class=\"note-marker\" data-note=\"48\">48</sup> hoop; en zij stonden op de spits van een heuvel.",
+      "text2026_html": "En de kinderen van Benjamin verzamelden zich achter Abner, en werden tot één<sup class=\"note-marker\" data-note=\"48\">48</sup> groep; en zij stonden op de spits van een heuvel.",
       "textSV1888_html": "En de kinderen van Benjamin verzamelden zich achter Abner, en werden tot een<sup class=\"note-marker\" data-note=\"48\">48</sup> hoop; en zij stonden op de spits van een heuvel.",
       "text1637_html": "Ende de kinderen Benjamins versamelden sich achter Abner, ende werden tot eenen <sup class=\"note-marker\" data-note=\"48\">48</sup> hoop: ende sy stonden, op de spitzse van eenen heuvel.",
       "phraseDiff": [
         {
-          "old": "een",
-          "new": "één",
-          "principe": "V735"
+          "old": "een hoop;",
+          "new": "één groep;",
+          "principe": null
         }
       ]
     },

@@ -10,6 +10,11 @@ from pathlib import Path
 import re
 from typing import Any
 
+try:
+    from scripts.enrich_naslag_materialen import enrich
+except ModuleNotFoundError:  # rechtstreeks uitgevoerd: scripts/ staat op sys.path
+    from enrich_naslag_materialen import enrich
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -547,6 +552,7 @@ def build_all(root: Path = ROOT, write: bool = True) -> dict[str, dict[str, Any]
     built["personen"] = _build_people(
         catalog["personen"], root, books, corpus, empty
     )
+    built["materialen"] = enrich(built["materialen"])
 
     report = {
         "boekenGescand": len({verse.book_id for verse in corpus}),

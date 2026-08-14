@@ -122,7 +122,8 @@ const Sidebar = {
 
         // Voeg eventuele ontbrekende boeken toe aan de juiste groep
         const assignedIds = new Set(Object.values(bookOrder).flat());
-        const unassigned = manifest.books.filter(b => !assignedIds.has(b.id) && !(b.ethiopic && mode !== 'ethiopisch'));
+        const unassigned = manifest.books.filter(b => !assignedIds.has(b.id) &&
+            (typeof isBookVisibleInNavigation !== 'function' || isBookVisibleInNavigation(b)));
         if (unassigned.length > 0) {
             groups.push({ label: 'Overig', books: unassigned });
         }

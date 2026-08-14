@@ -285,8 +285,11 @@
                     if (!e.isIntersecting) return;
                     const el = e.target; _io.unobserve(el);
                     const ref = el.dataset.ref;
-                    if (window.OSV) {
-                        OSV.cite(ref, { link: false }).then(r => { el.innerHTML = r.html; }).catch(() => {});
+                    if (window.OVTekstweergave) {
+                        OVTekstweergave.renderNaslagtekst(el, ref, {
+                            toonLink: false,
+                            target: '_top'
+                        }).catch(() => {});
                     }
                 });
             }, { rootMargin: '400px' });
@@ -294,14 +297,14 @@
         }
         // Onderwerpen geordend in rubrieken (zoals de wiki van de kleine ark)
         const CATEGORIEEN = [
-            { id: 'kern', label: "Kernthema's van het geloof", ids: ['schepping', 'jahweh-schepping', 'zonde', 'bekering', 'geloof', 'verbond', 'gods-leiding', 'zegeningen', 'vervloekingen', 'beloften'] },
+            { id: 'kern', label: "Kernthema's van het geloof", ids: ['schepping', 'jahweh-schepping', 'zonde', 'bekering', 'geloof', 'verbond', 'gods-leiding', 'almacht-van-god', 'zegeningen', 'vervloekingen', 'beloften'] },
             { id: 'jezus', label: 'Wie is Jezus Christus?', ids: ['karakter-jezus', 'jezus-is-god', 'jezus-in-het-ot'] },
-            { id: 'geestelijke-wereld', label: 'De geestelijke wereld', ids: ['engelen', 'demonen-en-duivelen', 'reuzen'] },
+            { id: 'geestelijke-wereld', label: 'De geestelijke wereld', ids: ['engelen', 'demonen-en-duivelen', 'afgoden', 'reuzen'] },
             { id: 'gemeente', label: 'Gebed & gemeente', ids: ['gebed', 'gebedshouding', 'tucht-gemeente', 'evangelisatie'] },
             { id: 'spreken', label: 'Wie spreekt er in Gods Woord?', ids: ['vader-spreekt', 'zoon-spreekt', 'geest-spreekt'] },
             { id: 'liefde', label: 'Liefde', ids: ['liefde-algemeen', 'liefde-man-vrouw'] },
-            { id: 'huwelijk-seks', label: 'Huwelijk & seksualiteit', ids: ['huwelijk', 'misbruik-verkrachting-en-incest', 'lhbtq'] },
-            { id: 'leven-samenleving', label: 'Leven & samenleving', ids: ['rijkdom-armoede', 'werk-en-vlijt', 'waarheid-en-levensgevaar', 'opvoeding-kinderen', 'bouwen', 'huisinwijding'] },
+            { id: 'huwelijk-seks', label: 'Huwelijk & seksualiteit', ids: ['huwelijk', 'vruchtbaarheid-en-onvruchtbaarheid', 'misbruik-verkrachting-en-incest', 'lhbtq'] },
+            { id: 'leven-samenleving', label: 'Leven & samenleving', ids: ['rijkdom-armoede', 'werk-en-vlijt', 'zaaien-en-oogsten', 'waarheid-en-levensgevaar', 'opvoeding-kinderen', 'bouwen', 'huisinwijding'] },
             { id: 'eredienst', label: 'Feesten & eredienst', ids: ['bijbelse-feesten'] },
             { id: 'onderscheiding', label: 'Geestelijke onderscheiding', ids: ['valse-profetie', 'waarzeggerij', 'kinderoffers', 'vloek-op-voorwerpen', 'ziekte-van-jahweh'] },
             { id: 'volken', label: 'Volken & geschiedenis', ids: ['volk-ammon'] },
@@ -417,7 +420,7 @@
         }
         // Toon het vers met `2 × niveau` verzen ervoor en erna (binnen het hoofdstuk)
         function renderContext(li) {
-            if (!window.OSV) return;
+            if (!window.OVTekstweergave) return;
             const ref = li.dataset.ref;
             const lvl = parseInt(li.dataset.lvl, 10) || 0;
             const tekst = li.querySelector('.ond-vers-tekst');
@@ -425,8 +428,10 @@
             const span = 2 * lvl;
             const from = Math.max(1, p.v - span), to = p.v + span;
             const rangeRef = span === 0 ? `${p.book} ${p.ch}:${p.v}` : `${p.book} ${p.ch}:${from}-${to}`;
-            OSV.cite(rangeRef, { link: false }).then(r => {
-                tekst.innerHTML = r.html;
+            OVTekstweergave.renderNaslagtekst(tekst, rangeRef, {
+                toonLink: false,
+                target: '_top',
+                onRendered: () => {
                 if (span > 0) {
                     // Focusvers krijgt de accent-markering; verzen ervoor en erna een lichtere kleur.
                     tekst.querySelectorAll('.osv-vers').forEach(vs => {
@@ -438,6 +443,7 @@
                 }
                 const min = li.querySelector('.ctx-min');
                 if (min) min.hidden = lvl <= 0;
+                }
             }).catch(() => {});
         }
         // Delegatie: +/- knoppen (context) en klik op verstekst (naar Gods Woord springen)

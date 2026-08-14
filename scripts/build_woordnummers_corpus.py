@@ -13,8 +13,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 OUTPUT = DATA / "woordnummers-inline"
+REVIEW_POLICIES = OUTPUT / "review-policies.json"
 WORD_RE = re.compile(r"[^\W\d_]+", re.UNICODE)
-NUMBER_RE = re.compile(r"(?:H\d+[A-Za-z]?|G\d+[A-Za-z]?)")
+NUMBER_RE = re.compile(r"(?:H\d+[A-Za-z]?|G\d+[A-Za-z]?|OVG\d+)")
+
+# Lidwoorden en andere functiewoorden zijn alleen bruikbaar wanneer ze zelf de
+# volledige primaire gloss zijn (bijvoorbeeld G1722: "in"). In een langere
+# gloss als "opwekken uit de slaap" mogen ze nooit als zelfstandig anker
+# dienen: anders kan het Strongnummer van "opgewekt" achter "de" belanden.
+DUTCH_FUNCTION_WORDS = {
+    "aan", "als", "bij", "de", "den", "der", "des", "die", "dit", "door",
+    "een", "en", "er", "het", "hun", "in", "met", "na", "naar", "niet",
+    "of", "om", "onder", "op", "te", "ten", "ter", "tot", "uit", "van",
+    "voor", "waar", "wat", "wie", "wij", "zij", "zich", "zijn",
+}
 
 
 def normalize(value):
@@ -36,11 +48,58 @@ def dutch_tokens(text):
 def lexicon_terms(entry):
     if not isinstance(entry, dict):
         return set()
-    text = " ".join(str(entry.get(field) or "") for field in ("glossNl", "samenvattingNl"))
-    return {normalize(match.group(0)) for match in WORD_RE.finditer(text)}
+    # Elke komma- of slashvariant kan een legitieme kernvertaling zijn
+    # ("scheppen, schiep"). Uit een langere variant nemen we echter alleen
+    # het eerste inhoudswoord. Zo kan "opwekken uit de slaap" nooit het
+    # nummer van "opgewekt" achter "de" of "slaap" zetten. Samenvattingen
+    # worden om dezelfde reden nooit gebruikt.
+    alternatives = re.split(r"[,;/]", str(entry.get("glossNl") or ""))
+    content_terms = set()
+    standalone_function_terms = set()
+    for alternative in alternatives:
+        words = [normalize(match.group(0)) for match in WORD_RE.finditer(alternative)]
+        lexical = [word for word in words if word not in DUTCH_FUNCTION_WORDS]
+        if lexical:
+            content_terms.add(lexical[0])
+        elif len(words) == 1:
+            standalone_function_terms.add(words[0])
+    # Een gloss als "maar, vervolgens, en, nu" is te ambigu om automatisch
+    # te plaatsen. Een zelfstandige gloss als "van" of "en" blijft bruikbaar,
+    # mits het woord in het vers maar één exacte kandidaat heeft.
+    if content_terms:
+        return content_terms
+    return standalone_function_terms if len(alternatives) == 1 else set()
 
 
-def project_verse(verse, lexicon, chapter_verified):
+def geez_terms(word):
+    """Geef uitsluitend enkelvoudige, letterlijke Ge'ez-glossen terug.
+
+    De Ethiopische brondata heeft per woord een korte Nederlandse betekenis.
+    Alleen een betekenis die precies één Nederlands woord is, is veilig genoeg
+    om zonder handmatige redactie als positieanker in de leestekst te tonen.
+    """
+    value = str(word.get("betekenis") or word.get("gloss") or "")
+    result = set()
+    for candidate in re.split(r"[/,;]", value):
+        candidate = candidate.strip()
+        match = WORD_RE.fullmatch(candidate)
+        if match:
+            result.add(normalize(candidate))
+    return result
+
+
+def source_terms(item, lexicon):
+    if item["number"].startswith("OVG"):
+        return geez_terms(item["word"])
+    return lexicon_terms(lexicon.get(item["number"]))
+
+
+def auto_projection_allowed(book_id, policies):
+    """Handmatige boekreview kan automatische woordposities tijdelijk blokkeren."""
+    return not bool((policies.get(book_id) or {}).get("manual_only"))
+
+
+def project_verse(verse, lexicon, chapter_verified, allow_auto=True):
     tokens = dutch_tokens(verse.get("text2026") or verse.get("textHerzien") or "")
     source = []
     for word in verse.get("grondtekst") or []:
@@ -72,15 +131,26 @@ def project_verse(verse, lexicon, chapter_verified):
         return {"mappings": [], "manual_links": manual_links, "visible_links": 0, "review_links": len(source)}
 
     grouped = defaultdict(list)
+    claimed_visible_tokens = set()
     source_denominator = max(1, len(source) - 1)
     token_denominator = max(1, len(tokens) - 1)
     for source_index, item in enumerate(source):
-        terms = lexicon_terms(lexicon.get(item["number"]))
+        terms = source_terms(item, lexicon)
         exact = [token for token in tokens if token["norm"] in terms]
         candidates = exact or tokens
         expected = source_index / source_denominator
         target = min(candidates, key=lambda token: abs(token["index"] / token_denominator - expected))
-        is_visible = bool(exact and chapter_verified)
+        # OVG-nummers komen uit de eigen Ge'ez-brondata. Daarvan wordt alleen
+        # de letterlijke, enkelvoudige Nederlandse gloss toegelaten; die hoeft
+        # daarom niet te wachten op een apart hoofdstuklabel.
+        is_visible = bool(
+            len(exact) == 1
+            and allow_auto
+            and (chapter_verified or item["number"].startswith("OVG"))
+            and target["index"] not in claimed_visible_tokens
+        )
+        if is_visible:
+            claimed_visible_tokens.add(target["index"])
         grouped[(target["index"], is_visible)].append(item)
 
     mappings = []
@@ -97,6 +167,9 @@ def project_verse(verse, lexicon, chapter_verified):
             "tekst": token["tekst"],
             "voorkomen": token["voorkomen"],
             "strongs": numbers,
+            "bronwoorden": [str(item["word"].get("woord") or "") for item in items],
+            "transliteraties": [str(item["word"].get("transliteratie") or item["word"].get("translit") or "") for item in items],
+            "glossen": [str(item["word"].get("betekenis") or item["word"].get("gloss") or "") for item in items],
             "confidence": 0.95 if visible else 0.35,
             "reviewstatus": status,
         })
@@ -156,10 +229,11 @@ def build(output_dir=OUTPUT, write=False):
     lexicon_paths = [DATA / "lexicon-nl" / "bdb-nl.json", DATA / "lexicon-nl" / "abbott-nl.json"]
     for path in lexicon_paths:
         lexicon.update(json.loads(path.read_text(encoding="utf-8")))
+    policies = json.loads(REVIEW_POLICIES.read_text(encoding="utf-8")) if REVIEW_POLICIES.exists() else {}
 
     source = {
         "type": "lokale-grondtekst-met-nederlandse-lexiconprojectie",
-        "pipeline_version": 1,
+        "pipeline_version": 2,
         "lexicon_sha256": {path.name: sha256(path) for path in lexicon_paths},
     }
     status = {"source": source, "books": {}}
@@ -169,6 +243,7 @@ def build(output_dir=OUTPUT, write=False):
 
     for book in books:
         selection = verified.get(book["id"])
+        allow_auto = auto_projection_allowed(book["id"], policies)
         book_output = {"source": source, "book": book["id"], "chapters": {}}
         counters = defaultdict(int)
         for chapter in book.get("chaptersIncluded", []):
@@ -181,7 +256,7 @@ def build(output_dir=OUTPUT, write=False):
                 counters["verified_chapters"] += 1
             verse_output = {}
             for verse in data.get("verses", []):
-                result = project_verse(verse, lexicon, chapter_verified)
+                result = project_verse(verse, lexicon, chapter_verified, allow_auto=allow_auto)
                 total = result["manual_links"] + result["visible_links"] + result["review_links"]
                 if not total:
                     continue

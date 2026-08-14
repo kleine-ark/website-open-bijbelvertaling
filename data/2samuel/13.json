@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "En het geschiedde daarna, alzo Absalom, Davids zoon, een schone zuster had, welker naam was Thamar, dat Amnon, Davids zoon, haar lief kreeg.",
       "text1637": "ENde het geschiedde daerna, also Absalom, Davids [1] sone, eene schoone suster hadde, welcker naem was Thamar, dat Amnon, Davids [2] sone, haer lief kreech.",
-      "text2026": "En het gebeurde daarna, zo Absalom, Davids zoon, een schone zus had, wier naam Thamar was, dat Amnon, Davids zoon, haar lief kreeg.",
+      "text2026": "En het gebeurde daarna, zo Absalom, Davids zoon, een knappe zus had, van wie de naam Thamar was, dat Amnon, Davids zoon, haar lief kreeg.",
       "marginNotes": [
         {
           "marker": "1",
@@ -94,7 +94,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En het gebeurde daarna, zo Absalom, Davids<sup class=\"note-marker\" data-note=\"1\">1</sup> zoon, een schone zus had, wier naam Thamar was, dat Amnon, Davids<sup class=\"note-marker\" data-note=\"2\">2</sup> zoon, haar lief kreeg.",
+      "text2026_html": "En het gebeurde daarna, zo Absalom, Davids<sup class=\"note-marker\" data-note=\"1\">1</sup> zoon, een knappe zus had, van wie de naam Thamar was, dat Amnon, Davids<sup class=\"note-marker\" data-note=\"2\">2</sup> zoon, haar lief kreeg.",
       "textSV1888_html": "En het geschiedde daarna, alzo Absalom, Davids<sup class=\"note-marker\" data-note=\"1\">1</sup> zoon, een schone zuster had, welker naam was Thamar, dat Amnon, Davids<sup class=\"note-marker\" data-note=\"2\">2</sup> zoon, haar lief kreeg.",
       "text1637_html": "ENde het geschiedde daerna, also Absalom, Davids <sup class=\"note-marker\" data-note=\"1\">1</sup> sone, eene schoone suster hadde, welcker naem was Thamar, dat Amnon, Davids <sup class=\"note-marker\" data-note=\"2\">2</sup> sone, haer lief kreech.",
       "phraseDiff": [
@@ -109,14 +109,14 @@
           "principe": "V42"
         },
         {
-          "old": "zuster",
-          "new": "zus",
-          "principe": "O22c"
+          "old": "schone zuster",
+          "new": "knappe zus",
+          "principe": null
         },
         {
           "old": "welker",
-          "new": "wier",
-          "principe": "V212"
+          "new": "van wie de",
+          "principe": null
         },
         {
           "old": "was Thamar,",
@@ -1853,7 +1853,7 @@
       "number": 16,
       "textSV1888": "Toen zeide zij tot hem: Er zijn geen oorzaken om mij uit te drijven; dit kwaad zou groter zijn dan het andere, dat gij bij mij gedaan hebt; maar hij wilde naar haar niet horen.",
       "text1637": "Doe seyde sy tot hem; [19] Daer en zijn geene oorsaken om my uyt te drijven; dit quaet soude grooter zijn dan het ander, dat ghy by my gedaen hebt: maer hy en wilde nae haer niet hooren.",
-      "text2026": "Toen zei zij tot hem: Er zijn geen oorzaken om mij uit te drijven; dit kwaad zou groter zijn dan het andere, dat u bij mij gedaan hebt; maar hij wilde naar haar niet horen.",
+      "text2026": "Toen zei zij tot hem: Er zijn geen redenen om mij uit te drijven; dit kwaad zou groter zijn dan het andere, dat u bij mij gedaan hebt; maar hij wilde naar haar niet horen.",
       "marginNotes": [
         {
           "marker": "19",
@@ -1945,7 +1945,7 @@
           "morph": "HR/Sp3fs"
         }
       ],
-      "text2026_html": "Toen zei zij tot hem: <span class=\"direct-speech\"><i>Er zijn geen oorzaken om mij uit te drijven; dit kwaad zou groter zijn dan het andere, dat u bij mij gedaan hebt; maar hij wilde naar haar niet horen.</i></span>",
+      "text2026_html": "Toen zei zij tot hem: <span class=\"direct-speech\"><i>Er zijn geen redenen om mij uit te drijven; dit kwaad zou groter zijn dan het andere, dat u bij mij gedaan hebt; maar hij wilde naar haar niet horen.</i></span>",
       "textSV1888_html": "Toen zeide zij tot hem:<sup class=\"note-marker\" data-note=\"19\">19</sup> Er zijn geen oorzaken om mij uit te drijven; dit kwaad zou groter zijn dan het andere, dat gij bij mij gedaan hebt; maar hij wilde naar haar niet horen.",
       "text1637_html": "Doe seyde sy tot hem; <sup class=\"note-marker\" data-note=\"19\">19</sup> Daer en zijn geene oorsaken om my uyt te drijven; dit quaet soude grooter zijn dan het ander, dat ghy by my gedaen hebt: maer hy en wilde nae haer niet hooren.",
       "phraseDiff": [
@@ -1953,6 +1953,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "oorzaken",
+          "new": "redenen",
+          "principe": null
         },
         {
           "old": "gij",

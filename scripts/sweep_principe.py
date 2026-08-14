@@ -17,11 +17,17 @@ Gebruik:
     --vervang   vervanging; backreferences als \\1 mogen
     --boeken    kommalijst om te beperken, bijv. numeri,leviticus
     --sla-over  kommalijst boek:hoofdstuk:vers die overgeslagen worden
+    --koppel-bestaand  koppel een al doorgevoerde wijziging opnieuw aan --id
     --droog     toon wat er zou veranderen, schrijf niets
 
 Zonder --droog worden text2026 én text2026_html bijgewerkt en wordt de
 phraseDiff opnieuw opgebouwd, waarbij het nieuwe woordpaar aan --id wordt
 gekoppeld en bestaande koppelingen bewaard blijven.
+
+Met --koppel-bestaand wordt de tekst niet gewijzigd. Dat is bedoeld voor een
+principe dat al eerder door een algemene sweep is toegepast: de woorddiff wordt
+opnieuw opgebouwd en alleen de wijzigingen binnen het --sv-patroon krijgen de
+specifieke principe-id.
 """
 import argparse
 import difflib
@@ -99,6 +105,51 @@ def nieuwe_diff(sv, ov, oude_diff, pid, merk=""):
     return uit
 
 
+def _doelwoord_posities(tekst, patroon):
+    """Geef woordindexen terug die overlappen met het bronpatroon.
+
+    SequenceMatcher werkt met woorden; reguliere expressies werken met
+    tekenposities. Deze kleine brug houdt een verfijnde principekoppeling bij
+    de juiste woordwijziging, ook als een vers meerdere keren ``den -> de``
+    bevat.
+    """
+    woorden = list(re.finditer(r"\S+", tekst))
+    posities = set()
+    for match in patroon.finditer(tekst):
+        for i, woord in enumerate(woorden):
+            if woord.start() < match.end() and woord.end() > match.start():
+                posities.add(i)
+    return posities
+
+
+def koppel_bestaande_diff(sv, ov, oude_diff, pid, sv_pat, merk=""):
+    """Bouw de woorddiff opnieuw op en verfijn alleen het bronpatroon naar pid.
+
+    De algemene principekoppeling op overige wijzigingen blijft behouden.
+    Daardoor verandert een historische her-koppeling geen tekst en telt zij
+    niet dubbel mee in de statistieken.
+    """
+    kaart = {sleutel((e["old"], e["new"])): e.get("principe") for e in oude_diff}
+    a, b = sv.split(), ov.split()
+    doelposities = _doelwoord_posities(sv, sv_pat)
+    uit = []
+    gezien = set()
+    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b).get_opcodes():
+        if tag == "equal":
+            continue
+        oud, nieuw = " ".join(a[i1:i2]), " ".join(b[j1:j2])
+        if not (oud or nieuw):
+            continue
+        s = sleutel((oud, nieuw))
+        gezien.add(s)
+        principe = pid if any(i in doelposities for i in range(i1, i2)) else kaart.get(s)
+        uit.append({"old": oud, "new": nieuw, "principe": principe})
+    for s, p in kaart.items():
+        if s not in gezien and p:
+            print(f"  !! {merk}: koppeling {p} bij {s} is vervallen door hergroepering")
+    return uit
+
+
 def verzen(d):
     v = d.get("verses")
     if isinstance(v, list):
@@ -116,6 +167,8 @@ def main():
     p.add_argument("--vervang", required=True)
     p.add_argument("--boeken", help="kommalijst, bijv. numeri,leviticus")
     p.add_argument("--sla-over", default="", help="kommalijst boek:hoofdstuk:vers")
+    p.add_argument("--koppel-bestaand", action="store_true",
+                   help="koppel een eerder gewijzigde woorddiff aan --id, zonder tekstwijziging")
     p.add_argument("--droog", action="store_true")
     a = p.parse_args()
 
@@ -159,16 +212,23 @@ def main():
 
             nieuw_ov = zoek_pat.sub(a.vervang, ov)
             nieuw_html = zoek_pat.sub(a.vervang, v.get("text2026_html") or "")
-            if nieuw_ov == ov:
+            if not a.koppel_bestaand and nieuw_ov == ov:
                 continue
-            print(f"{merk}\n   was: {kaal(ov)[:150]}\n   nu : {kaal(nieuw_ov)[:150]}")
+            actie = "koppelt" if a.koppel_bestaand else "was"
+            print(f"{merk}\n   {actie}: {kaal(ov)[:150]}"
+                  f"{'' if a.koppel_bestaand else f'\\n   nu : {kaal(nieuw_ov)[:150]}'}")
             geraakt += 1
             if not a.droog:
-                v["text2026"] = nieuw_ov
-                v["text2026_html"] = nieuw_html
-                v["phraseDiff"] = nieuwe_diff(
-                    kaal(v.get("textSV1888", "")), kaal(nieuw_ov),
-                    v.get("phraseDiff", []), a.id, merk)
+                if a.koppel_bestaand:
+                    v["phraseDiff"] = koppel_bestaande_diff(
+                        kaal(v.get("textSV1888", "")), kaal(ov),
+                        v.get("phraseDiff", []), a.id, sv_pat, merk)
+                else:
+                    v["text2026"] = nieuw_ov
+                    v["text2026_html"] = nieuw_html
+                    v["phraseDiff"] = nieuwe_diff(
+                        kaal(v.get("textSV1888", "")), kaal(nieuw_ov),
+                        v.get("phraseDiff", []), a.id, merk)
                 gewijzigd = True
 
         if gewijzigd:

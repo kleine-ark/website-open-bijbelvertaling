@@ -225,6 +225,15 @@
         iframe.addEventListener('load', syncIframeTheme);
         window.WikiSyncIframeTheme = syncIframeTheme;
 
+        window.addEventListener('ov:opties-gewijzigd', function (event) {
+            if (!iframe.contentWindow) return;
+            iframe.contentWindow.postMessage({
+                type: 'ov:opties-gewijzigd',
+                state: event.detail && event.detail.state ? event.detail.state :
+                    (window.Opties ? window.Opties.state : {})
+            }, window.location.origin);
+        });
+
         // Mobiel: zijmenu inklapbaar (standaard ingeklapt; sluit na een keuze)
         var isMobile = function() { return window.matchMedia('(max-width: 768px)').matches; };
         var menuToggle = document.getElementById('wiki-menu-toggle');

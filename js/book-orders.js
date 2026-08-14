@@ -154,6 +154,23 @@ const BookOrders = {
 const ETHIOPIC_BOOKS = ['henoch', 'jubileeen', '1meqabyan', '2meqabyan', '3meqabyan', '4baruch'];
 const ETHIOPIC_GROUP_LABEL = 'Ethiopische boeken (buiten de canon)';
 
+function isBookVisibleInNavigation(book) {
+    if (!book) return false;
+    const options = (typeof window !== 'undefined' && window.Opties && Opties.state) || {};
+    const isEthiopic = book.ethiopic || book.testament === 'ET' || ETHIOPIC_BOOKS.includes(book.id);
+    if (isEthiopic) return options.ethiopischeBoeken === 'aan';
+    if (book.testament === 'AP') return options.apocriefeBoeken !== 'uit';
+    return true;
+}
+
+function onlyVisibleBooks(groups, manifest) {
+    const byId = Object.fromEntries((manifest.books || []).map(book => [book.id, book]));
+    return Object.fromEntries(Object.entries(groups).map(([label, ids]) => [
+        label,
+        ids.filter(id => isBookVisibleInNavigation(byId[id])),
+    ]));
+}
+
 // Aparte 'ethiopisch'-volgorde blijft bestaan (canonieke ordening; de groep wordt
 // automatisch toegevoegd door getBookOrderGroups, dus hier niet nogmaals opnemen).
 BookOrders.ethiopisch = {
@@ -210,10 +227,10 @@ function getBookOrderGroups(mode, manifest) {
             else if (n >= 4) buckets['Kort (4–9 hfdst)'].push(b.id);
             else buckets['Zeer kort (1–3 hfdst)'].push(b.id);
         }
-        return withEthiopic(buckets, manifest);
+        return onlyVisibleBooks(withEthiopic(buckets, manifest), manifest);
     }
 
-    return withEthiopic(ordering.groups, manifest);
+    return onlyVisibleBooks(withEthiopic(ordering.groups, manifest), manifest);
 }
 
 /**
@@ -222,7 +239,7 @@ function getBookOrderGroups(mode, manifest) {
  */
 function getFlatBookOrder(mode, manifest) {
     const groups = getBookOrderGroups(mode, manifest);
-    const allIds = new Set(manifest.books.map(b => b.id));
+    const allIds = new Set(manifest.books.filter(isBookVisibleInNavigation).map(b => b.id));
     const ordered = [];
     const seen = new Set();
     for (const ids of Object.values(groups)) {
@@ -235,8 +252,7 @@ function getFlatBookOrder(mode, manifest) {
     }
     // Voeg ontbrekende toe in manifest-volgorde — behalve Ethiopische boeken buiten de ethiopisch-volgorde
     for (const b of manifest.books) {
-        if (!seen.has(b.id)) {
-            if (b.ethiopic && mode !== 'ethiopisch') continue;
+        if (!seen.has(b.id) && isBookVisibleInNavigation(b)) {
             ordered.push(b.id);
             seen.add(b.id);
         }
@@ -249,6 +265,7 @@ if (typeof window !== 'undefined') {
     window.BookOrders = BookOrders;
     window.getBookOrderGroups = getBookOrderGroups;
     window.getFlatBookOrder = getFlatBookOrder;
+    window.isBookVisibleInNavigation = isBookVisibleInNavigation;
     window.ETHIOPIC_GROUP_LABEL = ETHIOPIC_GROUP_LABEL;
     window.ETHIOPIC_BOOKS = ETHIOPIC_BOOKS;
 }

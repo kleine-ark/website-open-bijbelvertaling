@@ -163,8 +163,10 @@ def test_audit_reports_exact_inline_pilot_coverage_and_valid_provenance():
     report = AUDIT.audit()
 
     assert report["inline_eligible_verses"] > report["verses_with_inline_mappings"]
-    assert report["verses_with_inline_mappings"] == 5
-    assert report["inline_mappings"] == 43
-    assert report["inline_number_links"] == 61
-    assert report["inline_review_status"] == {"handmatig_gecontroleerd": 43}
+    # Johannes 1:1-5 plus de gecontroleerde Izaäk-koppeling in Gebed van
+    # Manasse 1 vormen samen de huidige, handmatig gereviewde basis.
+    assert report["verses_with_inline_mappings"] == 6
+    assert report["inline_mappings"] == 44
+    assert report["inline_number_links"] == 62
+    assert report["inline_review_status"] == {"handmatig_gecontroleerd": 44}
     assert report["invalid_inline"] == []

@@ -83,6 +83,13 @@
         options = options || {};
         if (!container) return Promise.reject(new Error('Naslagtekstcontainer ontbreekt'));
 
+        // Houd de bron bij op de buitenste houder. Daarmee kan één globale
+        // instellingenwijziging alle citaten opnieuw via ditzelfde template
+        // opbouwen, ongeacht welke wikipagina ze heeft aangemaakt.
+        container.setAttribute('data-ov-citaat-ref', ref);
+        container._ovCitaatOpties = {};
+        for (var opgeslagen in options) container._ovCitaatOpties[opgeslagen] = options[opgeslagen];
+
         container.textContent = '';
         var component = document.createElement('div');
         component.className = 'ov-naslagtekst' + (options.className ? ' ' + options.className : '');
@@ -113,6 +120,7 @@
         delete citeOptions.linkLabel;
         delete citeOptions.target;
         delete citeOptions.toonLink;
+        delete citeOptions.onRendered;
         citeOptions.link = false;
         if (citeOptions.strongs === undefined) {
             citeOptions.strongs = state().strongs === 'aan';
@@ -125,10 +133,31 @@
             else component.removeAttribute('dir');
             if (resultaat.editie) component.setAttribute('data-osv-editie', resultaat.editie);
             if (!options.linkLabel) link.textContent = resultaat.label;
+            if (typeof options.onRendered === 'function') options.onRendered(citation, resultaat);
             return { component: component, citation: citation, link: link, resultaat: resultaat };
         }).catch(function (error) {
             citation.innerHTML = '<span class="osv-fout">Deze tekst kon niet geladen worden.</span>';
             throw error;
+        });
+    }
+
+    function verversCitaten(root) {
+        pasDocumentToe();
+        var houders = (root || document).querySelectorAll('[data-ov-citaat-ref]');
+        var taken = [];
+        for (var i = 0; i < houders.length; i++) {
+            var houder = houders[i];
+            taken.push(renderNaslagtekst(
+                houder,
+                houder.getAttribute('data-ov-citaat-ref'),
+                houder._ovCitaatOpties || {}
+            ).catch(function () {}));
+        }
+        if (global.OSV && typeof global.OSV.refresh === 'function') {
+            global.OSV.refresh(root || document);
+        }
+        return Promise.all(taken).then(function () {
+            global.dispatchEvent(new CustomEvent('ov:citaten-ververst'));
         });
     }
 
@@ -139,8 +168,13 @@
         transformeer: transformeer,
         pasDocumentToe: pasDocumentToe,
         lezerLink: lezerLink,
-        renderNaslagtekst: renderNaslagtekst
+        renderNaslagtekst: renderNaslagtekst,
+        verversCitaten: verversCitaten
     };
+
+    global.addEventListener('ov:opties-gewijzigd', function () {
+        verversCitaten(document);
+    });
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', pasDocumentToe);

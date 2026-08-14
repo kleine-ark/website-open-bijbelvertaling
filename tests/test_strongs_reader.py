@@ -71,8 +71,11 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         return page
 
     def enable_strongs(self, page, expect_inline=True):
-        opener = "#mobile-opties-btn" if page.viewport_size["width"] <= 768 else "#sidebar-right-open"
-        page.locator(opener).click()
+        if page.viewport_size["width"] <= 768:
+            page.locator("#topnav-hamburger").click()
+            page.locator("#topnav-mobile-tekstopties").click()
+        else:
+            page.locator("#topnav-tekstopties").click()
         page.locator('details[data-options-category="bronnen"] > summary').click()
         page.locator("#toggle-strongs").check()
         page.locator("#sidebar-right-toggle").click()
@@ -82,7 +85,7 @@ class StrongsReaderBrowserTests(unittest.TestCase):
     def test_strongs_voorkeur_staat_standaard_uit_en_wordt_bewaard(self):
         page = self.open_reader()
         try:
-            page.locator("#sidebar-right-open").click()
+            page.locator("#topnav-tekstopties").click()
             page.locator('details[data-options-category="bronnen"] > summary').click()
             toggle = page.locator("#toggle-strongs")
             self.assertFalse(toggle.is_checked())
@@ -91,8 +94,8 @@ class StrongsReaderBrowserTests(unittest.TestCase):
                 "JSON.parse(localStorage.getItem('sv2026_vertaalopties')).strongs === 'aan'"
             )
             page.reload(wait_until="domcontentloaded")
-            page.locator("#sidebar-right-open").wait_for(state="visible", timeout=15_000)
-            page.locator("#sidebar-right-open").click()
+            page.locator("#topnav-tekstopties").wait_for(state="visible", timeout=15_000)
+            page.locator("#topnav-tekstopties").click()
             page.locator('details[data-options-category="bronnen"] > summary').click()
             self.assertTrue(toggle.is_checked())
         finally:
@@ -104,7 +107,13 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             self.enable_strongs(page)
             cell = page.locator('.verse-row[data-verse="1"] .col-2026')
             first = cell.locator('[data-strongs="G1722"]').first
-            self.assertEqual(first.inner_text(), "G1722")
+            self.assertEqual(first.inner_text(), "(G1722)")
+            styles = first.evaluate("""el => ({
+                verticalAlign: getComputedStyle(el).verticalAlign,
+                backgroundColor: getComputedStyle(el).backgroundColor
+            })""")
+            self.assertEqual(styles["verticalAlign"], "baseline")
+            self.assertIn(styles["backgroundColor"], {"transparent", "rgba(0, 0, 0, 0)"})
             self.assertTrue(first.evaluate("""el => {
                 const range = document.createRange();
                 range.setStart(el.parentNode, 0);
@@ -116,6 +125,22 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_gebed_van_manasse_plaatst_g2464_alleen_na_izaak(self):
+        page = self.open_reader("gebedvanmanasse/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="1"] .col-2026')
+            trigger = cell.locator('[data-strongs="G2464"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                return range.toString().trimEnd().endsWith('Izaäk');
+            }"""))
+        finally:
+            page.close()
+
     def test_nagekeken_genesis_haalt_corpusmapping_op_zonder_grondtekstregel(self):
         page = self.open_reader("genesis/1")
         try:
@@ -124,6 +149,35 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             self.assertGreater(cell.locator('.strongs-inline').count(), 0)
             self.assertEqual(cell.locator('.strongs-alignment').count(), 0)
             self.assertEqual(cell.locator('.strongs-source-word').count(), 0)
+        finally:
+            page.close()
+
+    def test_nagekeken_1samuel_haalt_corpusmapping_op_zonder_grondtekstregel(self):
+        page = self.open_reader("1samuel/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="1"] .col-2026')
+            self.assertGreater(cell.locator('.strongs-inline').count(), 0)
+            self.assertEqual(cell.locator('.strongs-alignment').count(), 0)
+            self.assertEqual(cell.locator('.strongs-source-word').count(), 0)
+        finally:
+            page.close()
+
+    def test_mattheus_1_24_toont_geen_strong_van_een_uitlegwoord(self):
+        """G1453 hoort bij 'opgewekt', nooit bij het lidwoord 'de'."""
+        page = self.open_reader("mattheus/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="24"] .col-2026')
+            self.assertEqual(cell.locator('[data-strongs="G1453"]').count(), 0)
+            sleep = cell.locator('[data-strongs="G5258"]')
+            self.assertEqual(sleep.count(), 1)
+            self.assertTrue(sleep.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                return range.toString().trimEnd().endsWith('slaap');
+            }"""))
         finally:
             page.close()
 
@@ -140,12 +194,17 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             self.assertIn("G1722", page.locator("#strongs-sheet-number").inner_text())
             self.assertTrue(page.locator("#strongs-sheet-word").inner_text().strip())
             self.assertTrue(page.locator("#strongs-sheet-definition").inner_text().strip())
+            self.assertIn("TBESG", page.locator("#strongs-sheet .lexicon-source").inner_text())
             self.assertEqual(
                 page.locator("#strongs-sheet .lexicon-gloss").inner_text(),
-                "in, binnen, op, bij, door, onder",
+                "in, op, onder, met",
             )
             self.assertIn(
-                "entry=G1722",
+                "het meest voorkomende voorzetsel",
+                page.locator("#strongs-sheet-definition").inner_text(),
+            )
+            self.assertIn(
+                "taal=grieks&entry=G1722",
                 page.locator("#strongs-sheet-full-link").get_attribute("href"),
             )
 
@@ -175,8 +234,8 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             )
             self.assertIn('data-strongs="H1"', html)
             self.assertIn('data-strongs="G3056"', html)
-            self.assertIn(">H1</button>", html)
-            self.assertIn(">G3056</button>", html)
+            self.assertIn("(H1)</button>", html)
+            self.assertIn("(G3056)</button>", html)
         finally:
             page.close()
 
@@ -198,9 +257,13 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             trigger.click()
             sheet = page.locator("#strongs-sheet")
             sheet.wait_for(state="visible", timeout=5_000)
-            panel_box = page.locator(".strongs-sheet-panel").bounding_box()
+            panel = page.locator(".strongs-sheet-panel")
+            panel_box = panel.bounding_box()
             self.assertLessEqual(panel_box["width"], 390)
+            self.assertAlmostEqual(panel_box["x"], 0, delta=1)
             self.assertAlmostEqual(panel_box["y"] + panel_box["height"], 844, delta=1)
+            self.assertEqual(panel.evaluate("el => getComputedStyle(el).position"), "absolute")
+            self.assertEqual(panel.evaluate("el => getComputedStyle(el).bottom"), "0px")
 
             sheet.click(position={"x": 4, "y": 4})
             self.assertFalse(sheet.is_visible())
@@ -208,37 +271,69 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_latijnse_en_geez_woordnummers_worden_bronvast_getoond(self):
+    def test_ongemapte_latijnse_en_geez_woordnummers_krijgen_geen_aparte_grondtekstregel(self):
         page = self.open_reader("4ezra/1")
         try:
             self.enable_strongs(page, expect_inline=False)
-            latin = page.locator('.verse-row[data-verse="1"] .strongs-alignment [data-strongs^="OVL"]').first
-            self.assertEqual(latin.inner_text(), "<OVL00001>")
-            self.assertEqual(
-                latin.locator("xpath=preceding-sibling::*[contains(@class,'strongs-source-word')]").get_attribute("lang"),
-                "la",
+            cell = page.locator('.verse-row[data-verse="1"] .col-2026')
+            self.assertEqual(cell.locator('.strongs-alignment').count(), 0)
+            self.assertEqual(cell.locator('.strongs-source-word').count(), 0)
+        finally:
+            page.close()
+
+    def test_griekse_sheet_toont_herzien_artikel_met_aanklikbare_tekstverwijzingen(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            page.locator('.verse-row[data-verse="1"] .col-2026 [data-strongs="G1722"]').first.click()
+            definition = page.locator("#strongs-sheet-definition")
+            definition.wait_for(timeout=5_000)
+            self.assertIn("het meest voorkomende voorzetsel", definition.inner_text())
+            reference = definition.locator('a[href="index.html#lukas/7/37"]')
+            self.assertGreater(reference.count(), 0)
+            self.assertEqual(reference.first.inner_text(), "Lukas 7:37")
+        finally:
+            page.close()
+
+    def test_geez_woordnummer_staat_inline_en_opent_het_dillmann_woordenboek(self):
+        page = self.open_reader("henoch/1")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="1"] .col-2026 [data-strongs="OVG3907"]')
+            self.assertEqual(trigger.inner_text(), "(OVG3907)")
+            trigger.click()
+            sheet = page.locator("#strongs-sheet")
+            sheet.wait_for(state="visible", timeout=5_000)
+            self.assertIn("DILLMANN GE’EZ-WOORDENBOEK", sheet.locator(".lexicon-source").inner_text())
+            self.assertIn(
+                "taal=geez&zoek=OVG3907",
+                sheet.locator("#strongs-sheet-full-link").get_attribute("href"),
             )
-            latin.click()
-            page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)
-            self.assertIn("OVL00001", page.locator("#strongs-sheet-number").inner_text())
-            self.assertIn("taal=latijn", page.locator("#strongs-sheet-full-link").get_attribute("href"))
-            page.locator(".strongs-sheet-close").click()
+        finally:
+            page.close()
+
+    def test_strongnummers_blijven_helderblauw_in_donker_thema(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 900})
+        page.add_init_script(
+            "localStorage.setItem('sv2026_vertaalopties', JSON.stringify({thema:'donker'}))"
+        )
+        try:
+            page.goto(f"{self.base_url}/index.html#johannes/1", wait_until="domcontentloaded")
+            page.locator('.verse-row[data-verse="1"]').wait_for(timeout=15_000)
+            self.enable_strongs(page)
+            color = page.locator('.verse-row[data-verse="1"] [data-strongs="G1722"]').first.evaluate(
+                "el => getComputedStyle(el).color"
+            )
+            self.assertEqual(color, "rgb(131, 187, 239)")
         finally:
             page.close()
 
         page = self.open_reader("henoch/1")
         try:
             self.enable_strongs(page, expect_inline=False)
-            geez = page.locator('.verse-row[data-verse="1"] .strongs-alignment [data-strongs^="OVG"]').first
-            self.assertTrue(geez.inner_text().startswith("<OVG"))
-            self.assertEqual(
-                geez.locator("xpath=preceding-sibling::*[contains(@class,'strongs-source-word')]").get_attribute("lang"),
-                "gez",
-            )
-            geez.click()
-            page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)
-            self.assertIn("OVG", page.locator("#strongs-sheet-number").inner_text())
-            self.assertIn("taal=geez", page.locator("#strongs-sheet-full-link").get_attribute("href"))
+            cell = page.locator('.verse-row[data-verse="1"] .col-2026')
+            self.assertEqual(cell.locator('.strongs-alignment').count(), 0)
+            self.assertEqual(cell.locator('.strongs-source-word').count(), 0)
         finally:
             page.close()
 
@@ -286,7 +381,7 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             page.goto(f"{self.base_url}/lees.html#johannes/1", wait_until="domcontentloaded")
             trigger = page.locator('.verse-span[data-verse="1"] .verse-text [data-strongs="G1722"]')
             trigger.wait_for(state="visible", timeout=15_000)
-            self.assertEqual(trigger.inner_text(), "G1722")
+            self.assertEqual(trigger.inner_text(), "(G1722)")
             self.assertEqual(page.locator('.verse-span[data-verse="1"] .strongs-alignment').count(), 0)
             trigger.click()
             page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)

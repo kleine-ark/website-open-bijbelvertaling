@@ -16,9 +16,11 @@ const Opties = {
         jezusNaam: 'nl',         // 'nl' (Jezus Christus) | 'hebreeuws' (Yeshua HaMashiach) | 'koranisch' (Isa) | 'arabisch' (Yasūʿ al-Masīḥ)
         geoMarkeren: 'uit',      // 'uit' | 'aan' — geografische locaties in de tekst markeren (Torah)
         maatstelsel: 'bijbels',  // 'bijbels' (el, efa, sikkel) | 'metrisch' (meter, liter, gram) | 'imperiaal' (voet, gallon, pond)
-        getalweergave: 'woorden', // 'woorden' | 'cijfers' — zet uitgeschreven aantallen ook tussen haakjes in cijfers
+        getalweergave: 'woorden', // 'woorden' | 'cijfers' — zet aantallen vanaf 21 ook tussen haakjes in cijfers
         tijdrekening: 'bijbels', // 'bijbels' (de derde ure) | 'modern' (omstreeks negen uur 's ochtends)
         strongs: 'uit',          // 'uit' | 'aan' — bronvaste Strong-nummers bij grondtekstwoorden
+        apocriefeBoeken: 'aan',
+        ethiopischeBoeken: 'uit',
         teksteditie: 'nl-ov',    // actieve Bijbeltekst; de interface blijft Nederlands
         lettertype: 'klassiek',
         regelafstand: 'normaal',
@@ -33,6 +35,8 @@ const Opties = {
     _tijden: null,           // uren, nachtwaken en vaste tijdsfrasen; lui geladen uit data/tijden.json
 
     init() {
+        if (this._initialized) return;
+        this._initialized = true;
         const saved = localStorage.getItem(this.STORAGE_KEY);
         // Mobiele default: kolommen 'eronder' i.p.v. 'naast' — beter leesbaar op smal scherm
         const defaults = { ...this.DEFAULTS };
@@ -124,6 +128,11 @@ const Opties = {
                 if (input.type === 'checkbox') {
                     this.state[input.dataset.optie] = input.checked ? input.value : 'uit';
                     this.save();
+                    if (input.dataset.optie === 'apocriefeBoeken' || input.dataset.optie === 'ethiopischeBoeken') {
+                        if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
+                        if (typeof Navigation !== 'undefined' && Navigation.renderBookNav) Navigation.renderBookNav();
+                        return;
+                    }
                     this.applyToCurrentChapter();
                     return;
                 }
@@ -150,7 +159,7 @@ const Opties = {
                         this.applyThemeClass();
                     } else if (optie === 'lettertype' || optie === 'regelafstand') {
                         this.applyReaderStyleClasses();
-                    } else if (optie === 'boekvolgorde') {
+                    } else if (optie === 'boekvolgorde' || optie === 'apocriefeBoeken' || optie === 'ethiopischeBoeken') {
                         // Sidebar + topnav opnieuw renderen, geen hoofdstuk-rerender
                         if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
                         if (typeof Navigation !== 'undefined' && Navigation.renderBookNav) Navigation.renderBookNav();
@@ -218,6 +227,9 @@ const Opties = {
 
     save() {
         localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.state));
+        window.dispatchEvent(new CustomEvent('ov:opties-gewijzigd', {
+            detail: { state: { ...this.state } }
+        }));
     },
 
     /**
@@ -423,7 +435,7 @@ const Opties = {
     },
 
     /**
-     * Voeg na ondubbelzinnige uitgeschreven aantallen een cijfernotatie toe.
+     * Voeg na ondubbelzinnige uitgeschreven aantallen vanaf 21 een cijfernotatie toe.
      * Het onbeklemtoonde lidwoord "een" blijft ongemoeid; "één" is wel een getal.
      * De woorden blijven de eigenlijke vertaling; dit is uitsluitend leeshulp.
      */
@@ -462,7 +474,7 @@ const Opties = {
             var begin = woorden[links].start, eind = woorden[rechts].eind;
             if (begin < laatsteEind) continue;
             var parsed = this._maatUitTokens(E, woorden.slice(links, rechts + 1).map(function (x) { return x.woord; }));
-            if (!parsed.expliciet || !isFinite(parsed.aantal) || parsed.aantal <= 0) continue;
+            if (!parsed.expliciet || !isFinite(parsed.aantal) || parsed.aantal <= 20) continue;
 
             var cijfer = this._getalExactTekst(parsed.aantal);
             invoegingen.push({
@@ -800,6 +812,10 @@ const Opties = {
      * "en"/"ën"/"of"/"halve" leveren een lege bijdrage maar zijn wél toegestaan.
      */
     _maatMorfemen(E, woord) {
+        // Het bronbestand kan door oudere tooling met verkeerd gedecodeerde
+        // UTF-8 binnenkomen. Normaliseer alleen de bekende beklemtoonde vorm
+        // zodat "één" even betrouwbaar als "een" als getal wordt herkend.
+        woord = String(woord).replace(/één/gi, 'een');
         var res = [], i = 0, n = woord.length;
         while (i < n) {
             var gevonden = null;
@@ -1131,7 +1147,12 @@ const Opties = {
         if (typeof Navigation !== 'undefined' && Navigation.currentBook && Navigation.currentChapter) {
             App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
         } else {
-            location.reload();
+            // Naslag- en wikipagina's hebben geen hoofdstukrouter. Hun
+            // citaten luisteren naar ov:opties-gewijzigd en worden daar via
+            // de gedeelde tekstcomponent vernieuwd, zonder navigatie.
+            if (typeof OVTekstweergave !== 'undefined' && OVTekstweergave.verversCitaten) {
+                OVTekstweergave.verversCitaten(document);
+            }
         }
     },
 };
