@@ -91,6 +91,7 @@ class LexiconViewerTests(unittest.TestCase):
             )
             page.locator('.lex-lexlabel:has-text("Abbott-Smith")').wait_for(timeout=15_000)
             definitions = page.locator(".lex-def")
+            abbott = definitions.nth(1)
             text = definitions.all_inner_texts()
             combined = "\n".join(text)
 
@@ -104,13 +105,29 @@ class LexiconViewerTests(unittest.TestCase):
             self.assertEqual(page.locator('a[href="wiki.html#aratus"]').count(), 2)
             for href in (
                 "index.html#handelingen/17/28",
+                "index.html#1korinthiers/7/7",
+                "index.html#galaten/4/22",
+                "index.html#handelingen/14/4",
                 "index.html#handelingen/17/32",
+                "index.html#filippenzen/1/16",
+                "index.html#mattheus/16/14",
+                "index.html#johannes/7/12",
+                "index.html#hebreeen/7/21",
                 "index.html#hebreeen/7/23",
+                "index.html#mattheus/2/14",
+                "index.html#markus/1/45",
+                "index.html#lukas/8/21",
                 "index.html#johannes/9/38",
             ):
-                self.assertGreaterEqual(page.locator(f'a[href="{href}"]').count(), 1, href)
+                self.assertGreaterEqual(abbott.locator(f'a[href="{href}"]').count(), 1, href)
 
             self.assertGreaterEqual(definitions.first.locator("a.lex-xref").count(), 6)
+            for strong in ("G3303", "G1161", "G243"):
+                self.assertGreaterEqual(
+                    abbott.locator(f'a.lex-xref[data-key="{strong}"]').count(),
+                    1,
+                    strong,
+                )
         finally:
             page.close()
 

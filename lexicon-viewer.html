@@ -362,6 +362,15 @@
             return '>' + out + '<';
         });
     }
+    function linkifyAbbott(html, showRefs) {
+        // Nagekeken Abbott-Smith-overlays gebruiken dezelfde gestructureerde
+        // <ref='Boek.hoofdstuk.vers'>-tags als TBESG. Verwerk die tags vóór
+        // de vrije afkortingsherkenning; anders ontstaat een link binnen een
+        // nog onverwerkte ref-tag en blijft de verwijzing in de browser tekst.
+        return html.indexOf("<ref='") >= 0
+            ? linkifyTbesg(html, showRefs)
+            : linkifyAbbr(html, showRefs);
+    }
     function referencesVisible() {
         var toggle = document.getElementById('lex-refs-toggle');
         return !toggle || toggle.checked;
@@ -682,7 +691,7 @@
                 '<div class="lex-def"' + (origineel ? ' lang="en"' : '') + '>' + expandLexiconAbbreviations(linkifyXref(linkifyTbesg(def, showRefs), e.key)) + '</div>';
             var abDef = origineel ? e.ab.defEn : e.ab.def;
             if (abDef) h += '<div class="lex-lexlabel">' + lexLabelLink(cur.lex2.label, cur.lex2.infoUrl) + (e.ab.nl ? '' : ' <span class="lex-concept" title="Nederlandse vertaling volgt">nog niet vertaald</span>') + '</div>' +
-                '<div class="lex-def"' + ((origineel || !e.ab.nl) ? ' lang="en"' : '') + '>' + expandLexiconAbbreviations(linkifyXref(linkifyAbbr(abDef, showRefs), e.key)) + '</div>';
+                '<div class="lex-def"' + ((origineel || !e.ab.nl) ? ' lang="en"' : '') + '>' + expandLexiconAbbreviations(linkifyXref(linkifyAbbott(abDef, showRefs), e.key)) + '</div>';
         } else if (def) {
             // Dillmann levert al opgemaakte (Latijnse) HTML; anders escapen/linkifyen.
             var body = defHtml0 ? def : linkifyXref(cur.reftags ? linkifyTbesg(def, showRefs) : cur.abbr ? linkifyAbbr(def, showRefs) : esc(def), e.key);
