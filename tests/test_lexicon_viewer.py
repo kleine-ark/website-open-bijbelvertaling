@@ -271,6 +271,30 @@ class LexiconViewerTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_g15_linkt_hoofdstukwissels_en_eenhoofdstukboek(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 1400})
+        try:
+            page.goto(
+                f"{self.base_url}/lexicon-viewer.html?taal=grieks&entry=G15",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.lex-lexlabel:has-text("Abbott-Smith")').wait_for(timeout=15_000)
+            definitions = page.locator(".lex-def")
+            for block in (definitions.nth(0), definitions.nth(1)):
+                for href in (
+                    "index.html#1petrus/2/15",
+                    "index.html#1petrus/2/20",
+                    "index.html#1petrus/3/6",
+                    "index.html#1petrus/3/17",
+                ):
+                    self.assertEqual(block.locator(f'a.lex-ref[href="{href}"]').count(), 1, href)
+            self.assertEqual(
+                definitions.nth(1).locator('a.lex-ref[href="index.html#3johannes/1/11"]').count(),
+                1,
+            )
+        finally:
+            page.close()
+
     def test_homerus_en_aratus_openen_als_volwaardige_wikipaginas(self):
         for slug, heading in (("homerus", "Homerus"), ("aratus", "Aratus")):
             page = self.browser.new_page(viewport={"width": 1280, "height": 900})
