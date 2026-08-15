@@ -211,6 +211,50 @@ class LexiconViewerTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_g6_tot_g8_linken_vervolgverzen_en_nummering_per_bron(self):
+        cases = {
+            "G6": (
+                "index.html#genesis/4/2",
+                "index.html#hebreeen/11/4",
+                "index.html#hebreeen/12/24",
+                "index.html#mattheus/23/35",
+                "index.html#lukas/11/51",
+            ),
+            "G7": (
+                "index.html#1koningen/14/1",
+                "index.html#1kronieken/24/3",
+                "index.html#1kronieken/24/10",
+                "index.html#mattheus/1/7",
+                "index.html#lukas/1/5",
+            ),
+            "G8": (
+                "index.html#1koningen/21/1",
+                "index.html#markus/2/26",
+            ),
+        }
+        for strong, hrefs in cases.items():
+            page = self.browser.new_page(viewport={"width": 1280, "height": 1100})
+            try:
+                page.goto(
+                    f"{self.base_url}/lexicon-viewer.html?taal=grieks&entry={strong}",
+                    wait_until="domcontentloaded",
+                )
+                page.locator('.lex-lexlabel:has-text("Abbott-Smith")').wait_for(timeout=15_000)
+                definitions = page.locator(".lex-def")
+                self.assertEqual(definitions.count(), 2)
+                for block in (definitions.nth(0), definitions.nth(1)):
+                    for href in hrefs:
+                        self.assertEqual(
+                            block.locator(f'a.lex-ref[href="{href}"]').count(),
+                            1,
+                            f"{strong}: {href} in {block.inner_text()}",
+                        )
+                if strong == "G7":
+                    for block in (definitions.nth(0), definitions.nth(1)):
+                        self.assertGreaterEqual(block.locator(".lex-numbered-item").count(), 2)
+            finally:
+                page.close()
+
     def test_homerus_en_aratus_openen_als_volwaardige_wikipaginas(self):
         for slug, heading in (("homerus", "Homerus"), ("aratus", "Aratus")):
             page = self.browser.new_page(viewport={"width": 1280, "height": 900})
