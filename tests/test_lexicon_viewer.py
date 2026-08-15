@@ -131,6 +131,86 @@ class LexiconViewerTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_g2_splitst_samengestelde_verwijzingen_per_woordenboekblok(self):
+        """Ook vervolgverzen in een enkele brontag worden losse Nederlandse links."""
+        page = self.browser.new_page(viewport={"width": 1280, "height": 1200})
+        try:
+            page.goto(
+                f"{self.base_url}/lexicon-viewer.html?taal=grieks&entry=G2",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.lex-lexlabel:has-text("Abbott-Smith")').wait_for(timeout=15_000)
+            definitions = page.locator(".lex-def")
+            self.assertEqual(definitions.count(), 2)
+            expected = (
+                ("index.html#exodus/4/14", "Exodus 4:14"),
+                ("index.html#lukas/1/5", "Lukas 1:5"),
+                ("index.html#handelingen/7/40", "Handelingen 7:40"),
+                ("index.html#hebreeen/5/4", "Hebreeën 5:4"),
+                ("index.html#hebreeen/7/11", "Hebreeën 7:11"),
+                ("index.html#hebreeen/9/4", "Hebreeën 9:4"),
+            )
+            for block in (definitions.nth(0), definitions.nth(1)):
+                for href, label in expected:
+                    link = block.locator(f'a.lex-ref[href="{href}"]')
+                    self.assertEqual(link.count(), 1, f"{href} in {block.inner_text()}")
+                    self.assertEqual(link.inner_text(), label)
+                self.assertNotIn("<ref", block.inner_text())
+        finally:
+            page.close()
+
+    def test_g1_verbergt_ruwe_omzetmarkeringen_in_beide_woordenboekblokken(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 1000})
+        try:
+            page.goto(
+                f"{self.base_url}/lexicon-viewer.html?taal=grieks&entry=G1",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.lex-lexlabel:has-text("Abbott-Smith")').wait_for(timeout=15_000)
+            definitions = page.locator(".lex-def")
+            self.assertEqual(definitions.count(), 2)
+            for block in (definitions.nth(0), definitions.nth(1)):
+                text = block.inner_text()
+                self.assertNotIn("__", text)
+                self.assertNotIn("<BR", text)
+                self.assertNotIn("<lb", text)
+                self.assertEqual(block.locator('a.lex-xref[data-key="G1"]').count(), 0)
+                for strong in ("G94", "G190", "G80", "G573"):
+                    self.assertGreaterEqual(
+                        block.locator(f'a.lex-xref[data-key="{strong}"]').count(),
+                        1,
+                        f"{strong} in {text}",
+                    )
+        finally:
+            page.close()
+
+    def test_g3_splitst_oude_en_nieuwe_testamentverwijzingen(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 1100})
+        try:
+            page.goto(
+                f"{self.base_url}/lexicon-viewer.html?taal=grieks&entry=G3",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.lex-lexlabel:has-text("Abbott-Smith")').wait_for(timeout=15_000)
+            definitions = page.locator(".lex-def")
+            tbesg = definitions.nth(0)
+            abbott = definitions.nth(1)
+            for href in (
+                "index.html#job/26/6",
+                "index.html#job/28/22",
+                "index.html#job/31/12",
+                "index.html#psalmen/88/12",
+                "index.html#spreuken/15/11",
+                "index.html#openbaring/9/11",
+            ):
+                self.assertEqual(tbesg.locator(f'a.lex-ref[href="{href}"]').count(), 1, href)
+            self.assertEqual(
+                abbott.locator('a.lex-ref[href="index.html#openbaring/9/11"]').count(),
+                1,
+            )
+        finally:
+            page.close()
+
     def test_homerus_en_aratus_openen_als_volwaardige_wikipaginas(self):
         for slug, heading in (("homerus", "Homerus"), ("aratus", "Aratus")):
             page = self.browser.new_page(viewport={"width": 1280, "height": 900})
