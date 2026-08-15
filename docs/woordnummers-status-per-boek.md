@@ -6,7 +6,7 @@ Automatisch opgebouwd door `scripts/build_woordnummers_corpus.py`. Alleen handma
 |---|---:|---:|---:|---:|---:|---:|
 | genesis | nagekeken_tekst | 1412/1532 | 0 | 4313 | 15805 | 21,44% |
 | markus | nagekeken_tekst | 647/673 | 0 | 2260 | 9044 | 19,99% |
-| johannes | nagekeken_tekst | 5/878 | 61 | 0 | 15574 | 0,39% |
+| johannes | nagekeken_tekst | 38/878 | 518 | 0 | 15109 | 3,31% |
 | handelingen | nagekeken_tekst | 972/1002 | 0 | 3668 | 14782 | 19,88% |
 | romeinen | nagekeken_tekst | 413/432 | 0 | 1501 | 5610 | 21,11% |
 | exodus | nagekeken_tekst | 1066/1207 | 0 | 3090 | 13253 | 18,91% |
@@ -70,7 +70,7 @@ Automatisch opgebouwd door `scripts/build_woordnummers_corpus.py`. Alleen handma
 | habakuk | nagekeken_tekst | 54/56 | 0 | 141 | 516 | 21,46% |
 | zefanja | nagekeken_tekst | 51/53 | 0 | 174 | 589 | 22,80% |
 | haggai | nagekeken_tekst | 17/37 | 0 | 46 | 537 | 7,89% |
-| mattheus | nagekeken_tekst | 1018/1068 | 0 | 3743 | 14603 | 20,40% |
+| mattheus | nagekeken_tekst | 1024/1068 | 191 | 3700 | 14395 | 21,28% |
 | lukas | nagekeken_tekst | 1096/1149 | 0 | 3942 | 15540 | 20,23% |
 | 1korinthiers | nagekeken_tekst | 413/437 | 0 | 1430 | 5400 | 20,94% |
 | 2korinthiers | nagekeken_tekst | 246/256 | 0 | 886 | 3591 | 19,79% |
@@ -92,4 +92,4 @@ Automatisch opgebouwd door `scripts/build_woordnummers_corpus.py`. Alleen handma
 | 2meqabyan | resterend_corpus | 370/418 | 0 | 1059 | 3659 | 22,45% |
 | 3meqabyan | resterend_corpus | 176/207 | 0 | 491 | 2126 | 18,76% |
 | 4baruch | resterend_corpus | 189/197 | 0 | 681 | 1602 | 29,83% |
-| **Totaal** |  | **21181/39528** | **62** | **66782** | **499708** | **11,80%** |
+| **Totaal** |  | **21220/39528** | **710** | **66739** | **499035** | **11,91%** |

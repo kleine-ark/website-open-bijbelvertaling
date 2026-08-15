@@ -268,6 +268,8 @@ def _build_nature_category(
             "tekstvormen": sorted(found_forms, key=str.casefold), "zekerheid": certainty,
             "reviewStatus": "agent-reviewed", "humanReviewed": False,
         }
+        if category == "dieren":
+            item["afbeelding"] = f"images/wiki/dieren/{source['id']}.webp"
         if note:
             item["reviewnotitie"] = note
             reviewqueue.append({"categorie": category, "type": "historische-soortidentificatie", "itemId": source["id"], "notitie": note, "reviewStatus": "needs-human-review"})

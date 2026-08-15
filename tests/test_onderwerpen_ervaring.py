@@ -164,7 +164,7 @@ class OnderwerpenErvaringTest(unittest.TestCase):
         try:
             page.goto(f"{self.base_url}/onderwerpen.html#tag=volk-ammon")
             citaat = page.locator(
-                '.ond-vers[data-ref="genesis 19:31"] .ond-vers-tekst .osv-vers'
+                '.ond-top10-vers[data-ref="genesis 19:31"] .ond-top10-tekst .osv-vers'
             )
             citaat.wait_for(state="visible")
 

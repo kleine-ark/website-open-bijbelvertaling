@@ -537,6 +537,7 @@ const Opties = {
             stoffen: opties.stofadjectieven || {},
             stelsels: d.stelsels || {},
             uitzonderingen: d.uitzonderingen || [],
+            implicieteMaten: d.implicieteMaten || [],
         };
     },
 
@@ -649,14 +650,42 @@ const Opties = {
             });
             grens = eind;
         }
-        if (!stukken.length) return html;
+        if (!stukken.length) return this._rekenImplicieteMaten(html, book, ch, vnum, stelsel, E);
         var uit = '', vorig = 0;
         for (var i = 0; i < stukken.length; i++) {
             if (stukken[i].van < vorig) continue;
             uit += html.slice(vorig, stukken[i].van) + stukken[i].nieuw;
             vorig = stukken[i].tot;
         }
-        return uit + html.slice(vorig);
+        return this._rekenImplicieteMaten(uit + html.slice(vorig), book, ch, vnum, stelsel, E);
+    },
+
+    /**
+     * Vul alleen expliciet geregistreerde, elliptische maten aan. Soms noemt
+     * een vers de eenheid maar Ã©Ã©n keer (bijvoorbeeld: â€œzestig ellen â€¦
+     * twintig in zijn breedteâ€). De bron blijft onaangeroerd; de tabel legt
+     * per vers vast welk getal die eerder genoemde eenheid herhaalt.
+     */
+    _rekenImplicieteMaten(html, book, ch, vnum, stelsel, E) {
+        var regels = E.implicieteMaten || [];
+        for (var i = 0; i < regels.length; i++) {
+            var regel = regels[i];
+            if (!regel || !regel.zoek || !regel.eenheid || !regel.verzen ||
+                !this._maatInBereik(regel.verzen, book, ch, vnum)) continue;
+            var eh = E.vormMap[String(regel.eenheid).toLowerCase()];
+            if (!eh || !isFinite(regel.aantal) || html.indexOf(regel.zoek) === -1) continue;
+            var waarde = typeof regel.waarde === 'number' ? regel.waarde : eh.waarde;
+            var deel = this._maatFormatteer(regel.aantal * waarde, eh.grondEenheid, stelsel);
+            if (!deel) continue;
+            var nieuw = 'ongeveer ' + deel.getal + ' ' + deel.eenheid;
+            var origineel = regel.zoek + ' ' + (eh.enkelvoud || regel.eenheid);
+            var titel = 'Oorspronkelijk: ' + origineel + ' Â· ' +
+                (regel.uitleg || 'de eenheid is in deze zin uit de directe context aangevuld');
+            html = html.replace(regel.zoek,
+                '<span class="maat-omgerekend maat-impliciet" title="' +
+                this._maatAttr(titel) + '">' + nieuw + '</span>');
+        }
+        return html;
     },
 
     /**
