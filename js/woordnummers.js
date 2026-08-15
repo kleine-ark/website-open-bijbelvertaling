@@ -28,6 +28,11 @@
         return [...new Set(matches)].filter(number => familyOf(number));
     }
 
+    function parseSequence(value) {
+        const matches = String(value || '').match(/(?:OVL|OVG)\d+|[HG]\d+[A-Za-z]?/g) || [];
+        return matches.filter(number => familyOf(number));
+    }
+
     function renderAlignment(groundText) {
         if (!Array.isArray(groundText)) return '';
         let firstFamily = null;
@@ -59,7 +64,9 @@
     }
 
     function inlineButtons(mapping) {
-        const numbers = parse(Array.isArray(mapping.strongs) ? mapping.strongs.join(' ') : mapping.strongs);
+        const numbers = Array.isArray(mapping.strongs)
+            ? mapping.strongs.flatMap(parseSequence)
+            : parse(mapping.strongs);
         const sourceWords = mapping.bronwoorden || [];
         const transliterations = mapping.transliteraties || [];
         const glosses = mapping.glossen || [];
@@ -105,27 +112,35 @@
                         ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
                 }
             });
+            const nodes = [];
+            let flattened = '';
+            let current;
+            while ((current = walker.nextNode())) {
+                const start = flattened.length;
+                flattened += current.data;
+                nodes.push({ node: current, start, end: flattened.length });
+            }
             let seen = 0;
-            let node;
-            while ((node = walker.nextNode())) {
-                matcher.lastIndex = 0;
-                let match;
-                while ((match = matcher.exec(node.data))) {
-                    seen += 1;
-                    if (seen !== occurrence) continue;
-                    const start = match.index + match[1].length;
-                    const end = start + match[2].length;
-                    const tail = node.splitText(end);
-                    const matched = node.splitText(start);
-                    const holder = document.createElement('template');
-                    holder.innerHTML = buttons;
-                    if (!mapping.tekst && mapping.plaats === 'voor') {
-                        matched.parentNode.insertBefore(holder.content, matched);
-                    } else {
-                        tail.parentNode.insertBefore(holder.content, tail);
-                    }
-                    return;
-                }
+            matcher.lastIndex = 0;
+            let match;
+            while ((match = matcher.exec(flattened))) {
+                seen += 1;
+                if (seen !== occurrence) continue;
+                const absoluteStart = match.index + match[1].length;
+                const absoluteEnd = absoluteStart + match[2].length;
+                const before = !mapping.tekst && mapping.plaats === 'voor';
+                const absolutePosition = before ? absoluteStart : absoluteEnd;
+                const boundary = nodes.find((entry, index) => (
+                    absolutePosition < entry.end
+                    || (absolutePosition === entry.end && (before || index === nodes.length - 1))
+                ));
+                if (!boundary) return;
+                const offset = Math.max(0, Math.min(boundary.node.length, absolutePosition - boundary.start));
+                const tail = boundary.node.splitText(offset);
+                const holder = document.createElement('template');
+                holder.innerHTML = buttons;
+                tail.parentNode.insertBefore(holder.content, tail);
+                return;
             }
         });
         return template.innerHTML;

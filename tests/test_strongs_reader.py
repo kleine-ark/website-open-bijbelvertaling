@@ -121,7 +121,9 @@ class StrongsReaderBrowserTests(unittest.TestCase):
                 const range = document.createRange();
                 range.setStart(el.parentNode, 0);
                 range.setEndBefore(el);
-                return range.toString().trimEnd().endsWith('In');
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('In');
             }"""))
             self.assertEqual(cell.locator('.strongs-alignment').count(), 0)
             self.assertEqual(cell.locator('.strongs-source-word').count(), 0)
@@ -354,6 +356,59 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_johannes_2_1_plaatst_derdestrong_bij_de_derde_dag(self):
+        page = self.open_reader("johannes/2")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="1"] .col-2026 [data-strongs="G5154"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('op de derde dag');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_2_rendert_alle_434_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/2")
+        try:
+            self.enable_strongs(page)
+            self.assertEqual(
+                page.locator('.verse-row .col-2026 .strongs-inline').count(),
+                434,
+            )
+        finally:
+            page.close()
+
+    def test_johannes_2_11_plaatst_tekenstrong_bij_van_de_tekenen(self):
+        page = self.open_reader("johannes/2")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="11"] .col-2026 [data-strongs="G4592"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('van de tekenen');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_2_25_plaatst_mensstrong_bij_in_de_mens(self):
+        page = self.open_reader("johannes/2")
+        try:
+            self.enable_strongs(page)
+            triggers = page.locator('.verse-row[data-verse="25"] .col-2026 [data-strongs="G444"]')
+            self.assertEqual(triggers.count(), 2)
+            self.assertTrue(triggers.nth(1).evaluate("""el => {
+                const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('wat in de mens was');
+            }"""))
+        finally:
+            page.close()
+
     def test_mattheus_1_1_plaatst_christusstrong_na_christus(self):
         page = self.open_reader("mattheus/1")
         try:
@@ -579,7 +634,11 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             first = page.locator('.verse-row[data-verse="1"] .col-2026')
             was = first.locator('[data-strongs="G2258"]').first
             self.assertEqual(was.inner_text(), "(G2258)")
-            self.assertIn("was", was.evaluate("el => el.previousSibling.textContent"))
+            self.assertTrue(was.evaluate("""el => {
+                const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('was');
+            }"""))
 
             twelfth = page.locator('.verse-row[data-verse="12"] .col-2026')
             unrendered = twelfth.locator(
