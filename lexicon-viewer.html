@@ -296,6 +296,13 @@
     // Optionele boek-afkorting gevolgd door hoofdstuk:vers (met optioneel bereik).
     // Zonder boek = "kale" verwijzing (bv. 15:20) die het laatstgenoemde boek erft.
     var refRe = new RegExp('(?:\\b(' + abbrAlt + ')\\s?)?(\\d+):(\\d+)((?:[-–]\\d+)?)|(,\\s*)(\\d+)(?!\\d|\\s*:)((?:[-–]\\d+)?)', 'g');
+    var SINGLE_CHAPTER_BOOKS = {
+        Phm:'filemon', Phlm:'filemon', Philemon:'filemon',
+        'II Jo':'2johannes', 'III Jo':'3johannes',
+        '2 Jo':'2johannes', '3 Jo':'3johannes',
+        Jude:'judas', Ju:'judas'
+    };
+    var singleChapterRefRe = /\b(III Jo|II Jo|3 Jo|2 Jo|Philemon|Phlm|Phm|Jude|Ju)\s+(\d+)((?:[-–]\d+)?)/g;
 
     function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
     var BOOKNAMES = {}, CHAPTERCOUNT = {};
@@ -406,7 +413,7 @@
     function linkifyAbbr(html, showRefs) {
         var lastBook = null, lastChapter = null, lastReferenceEnd = -1;
         return transformTextOutsideAnchors(html, function (txt) {
-            return txt.replace(refRe, function (mm, ab, ch, vs, rng, comma, continuedVerse, continuedRange, offset) {
+            var linked = txt.replace(refRe, function (mm, ab, ch, vs, rng, comma, continuedVerse, continuedRange, offset) {
                 if (!showRefs) return '';
                 if (continuedVerse) {
                     if (!lastBook || !lastChapter || offset !== lastReferenceEnd) return mm;
@@ -427,6 +434,12 @@
                 // Elke verwijzing als volledige tekst: altijd de volle boeknaam tonen.
                 var disp = bookName(book) + ' ' + ch + ':' + vs + (rng || '');
                 return '<a class="lex-ref" target="_top" href="index.html#' + book + '/' + ch + '/' + vs + '">' + disp + '</a>';
+            });
+            return linked.replace(singleChapterRefRe, function (_match, abbreviation, verse, range) {
+                if (!showRefs) return '';
+                var book = SINGLE_CHAPTER_BOOKS[abbreviation];
+                var disp = bookName(book) + ' 1:' + verse + (range || '');
+                return '<a class="lex-ref" target="_top" href="index.html#' + book + '/1/' + verse + '">' + disp + '</a>';
             });
         });
     }
