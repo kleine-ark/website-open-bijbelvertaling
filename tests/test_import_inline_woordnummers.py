@@ -253,6 +253,40 @@ def test_johannes_1_onderscheidt_vertaalde_en_niet_afzonderlijk_vertaalde_tr_woo
     assert data["verses"][51]["grondtekst"][-1]["strongs"] == "G444"
 
 
+def test_generieke_tr_bron_leest_johannes_2_met_exacte_griekse_woordvormen():
+    from scripts.rebuild_nt_tr_strongs import load_tr_chapter
+
+    verses = load_tr_chapter(
+        Path(r"C:\tmp\greektext-textus-receptus\parsed\JOH.UTR"),
+        Path(r"C:\tmp\crosswire-kjv\kjv.osis.xml"),
+        chapter=2,
+        osis_book="John",
+    )
+
+    assert len(verses) == 25
+    assert verses[1][0]["woord"] == "και"
+    assert verses[1][0]["display_strong"] == "G2532"
+    assert all(
+        any("\u0370" <= char <= "\u03ff" for char in token["woord"])
+        for tokens in verses.values() for token in tokens
+    )
+
+
+def test_johannes_2_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "2.json").read_text(encoding="utf-8"))
+    assert len(data["verses"]) == 25
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        mappings = verse.get("woordnummers", [])
+        source_indices = [
+            index for mapping in mappings
+            for index in mapping.get("herkomst", {}).get("bronindices", [])
+        ]
+        assert ground, f"Johannes 2:{verse['number']} mist TR-grondtekst"
+        assert len(source_indices) == len(ground)
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert all(mapping.get("reviewstatus") == "handmatig_gecontroleerd" for mapping in mappings)
+
 def test_audit_reports_johannes_tr_coverage_and_valid_provenance():
     report = AUDIT.audit()
 
