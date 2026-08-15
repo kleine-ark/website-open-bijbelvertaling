@@ -255,6 +255,22 @@ class LexiconViewerTests(unittest.TestCase):
             finally:
                 page.close()
 
+    def test_g305_herkent_vierde_koningen_als_tweede_koningen(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 1200})
+        try:
+            page.goto(
+                f"{self.base_url}/lexicon-viewer.html?taal=grieks&entry=G305",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.lex-lexlabel:has-text("Abbott-Smith")').wait_for(timeout=15_000)
+            definitions = page.locator(".lex-def")
+            for block in (definitions.nth(0), definitions.nth(1)):
+                link = block.locator('a.lex-ref[href="index.html#2koningen/12/4"]')
+                self.assertEqual(link.count(), 1, block.inner_text())
+                self.assertEqual(link.inner_text(), "2 Koningen 12:4")
+        finally:
+            page.close()
+
     def test_homerus_en_aratus_openen_als_volwaardige_wikipaginas(self):
         for slug, heading in (("homerus", "Homerus"), ("aratus", "Aratus")):
             page = self.browser.new_page(viewport={"width": 1280, "height": 900})
