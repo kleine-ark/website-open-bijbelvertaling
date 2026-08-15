@@ -219,15 +219,16 @@ def test_audit_includes_generated_corpus_projection_status():
     assert report["corpus_projection"]["review_links"] == expected_review
 
 
-def test_johannes_shows_no_unreviewed_automatic_inline_projection():
-    """Johannes blijft bij de eerste handmatige audit vrij van gokwerk.
-
-    De Griekse woordvolgorde en Nederlandse woordvolgorde lopen geregeld uiteen.
-    Tot een vers handmatig is gecontroleerd, mogen alleen de mappings in het
-    eigen versbestand zichtbaar zijn; de gegenereerde boekprojectie blijft leeg.
-    """
+def test_johannes_1_projection_contains_only_reviewed_tr_mappings():
+    """Johannes 1 publiceert de gecontroleerde TR-laag, niet een gokprojectie."""
     mapping_book = json.loads(
         (ROOT / "data" / "woordnummers-inline" / "johannes.json").read_text(encoding="utf-8")
     )
 
-    assert mapping_book["chapters"] == {}
+    chapter = mapping_book["chapters"]["1"]
+    assert len(chapter) == 52
+    assert all(
+        mapping.get("reviewstatus") == "handmatig_gecontroleerd"
+        and mapping.get("herkomst", {}).get("dataset") == "robinson-scrivener-tr"
+        for mappings in chapter.values() for mapping in mappings
+    )

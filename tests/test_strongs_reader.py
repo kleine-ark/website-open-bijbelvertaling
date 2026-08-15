@@ -1,15 +1,18 @@
 """Browser- en datacontracten voor bronvaste Strong-verwijzingen."""
 
 import contextlib
+import hashlib
 import http.server
 import json
 from pathlib import Path
+import tempfile
 import threading
 import unittest
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from audit_woordnummers import audit
+from import_inline_woordnummers import apply_review_file, parse_usj
 
 from playwright.sync_api import sync_playwright
 
@@ -125,6 +128,268 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_johannes_1_6_plaatst_de_naamstrong_na_johannes(self):
+        """De gecontroleerde naamkoppeling volgt de Nederlandse woordvolgorde."""
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="6"] .col-2026')
+            trigger = cell.locator('[data-strongs="G2491"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                return range.toString().trimEnd().endsWith('Johannes');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_7_plaatst_g846_na_hem(self):
+        """De Griekse woordvolgorde verandert de Nederlandse ankerplek niet."""
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="7"] .col-2026')
+            trigger = cell.locator('[data-strongs="G846"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const firstStrong = el.previousElementSibling;
+                if (!firstStrong || firstStrong.dataset.strongs !== 'G1223') return false;
+                const range = document.createRange();
+                range.setStart(firstStrong.parentNode, 0);
+                range.setEndBefore(firstStrong);
+                return range.toString().trimEnd().endsWith('hem');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_8_plaatst_getuigenisstrong_na_getuigen(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="8"] .col-2026')
+            trigger = cell.locator('[data-strongs="G3140"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                return range.toString().trimEnd().endsWith('getuigen');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_9_plaatst_wereldstrong_na_wereld(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="9"] .col-2026')
+            trigger = cell.locator('[data-strongs="G2889"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const firstStrong = el.previousElementSibling?.previousElementSibling;
+                if (!firstStrong || firstStrong.dataset.strongs !== 'G1519') return false;
+                const range = document.createRange();
+                range.setStart(firstStrong.parentNode, 0);
+                range.setEndBefore(firstStrong);
+                return range.toString().trimEnd().endsWith('wereld');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_10_plaatst_kennenstrong_na_gekend(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="10"] .col-2026')
+            trigger = cell.locator('[data-strongs="G1097"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                return range.toString().trimEnd().endsWith('gekend');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_11_plaatst_ontvangststrong_na_aangenomen(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="11"] .col-2026')
+            trigger = cell.locator('[data-strongs="G3880"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                return range.toString().trimEnd().endsWith('aangenomen');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_12_plaatst_ontvangststrong_na_aangenomen(self):
+        """Ook bij de volgende zin blijft G2983 aan het Nederlandse werkwoord."""
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="12"] .col-2026')
+            trigger = cell.locator('[data-strongs="G2983"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                return range.toString().trimEnd().endsWith('aangenomen');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_20_plaatst_christusstrong_na_christus(self):
+        """De belijdenis in Johannes 1:20 houdt de titel aan het juiste woord."""
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="20"] .col-2026')
+            trigger = cell.locator('[data-strongs="G5547"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('Christus');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_25_plaatst_doopstrong_na_doopt(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="25"] .col-2026')
+            trigger = cell.locator('[data-strongs="G907"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                return range.toString().trimEnd().endsWith('doopt');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_29_plaatst_lamstrong_bij_lam_van_god(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="29"] .col-2026')
+            trigger = cell.locator('[data-strongs="G286"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('Lam van God');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_34_plaatst_zoonstrong_bij_de_zoon_van_god(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="34"] .col-2026')
+            trigger = cell.locator('[data-strongs="G5207"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('de Zoon van God');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_36_plaatst_lamstrong_bij_lam_van_god(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="36"] .col-2026')
+            trigger = cell.locator('[data-strongs="G286"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('het Lam van God');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_1_38_plaatst_volgstrong_na_volgen(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="38"] .col-2026')
+            trigger = cell.locator('[data-strongs="G190"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('volgen');
+            }"""))
+        finally:
+            page.close()
+
+    def test_mattheus_1_1_plaatst_christusstrong_na_christus(self):
+        page = self.open_reader("mattheus/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="1"] .col-2026')
+            trigger = cell.locator('[data-strongs="G5547"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('CHRISTUS');
+            }"""))
+        finally:
+            page.close()
+
+    def test_mattheus_1_20_plaatst_engelstrong_na_engel(self):
+        """De boodschapper blijft aan het Nederlandse zelfstandig naamwoord gekoppeld."""
+        page = self.open_reader("mattheus/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="20"] .col-2026')
+            trigger = cell.locator('[data-strongs="G32"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('engel');
+            }"""))
+        finally:
+            page.close()
+
     def test_gebed_van_manasse_plaatst_g2464_alleen_na_izaak(self):
         page = self.open_reader("gebedvanmanasse/1")
         try:
@@ -163,13 +428,22 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_mattheus_1_24_toont_geen_strong_van_een_uitlegwoord(self):
-        """G1453 hoort bij 'opgewekt', nooit bij het lidwoord 'de'."""
+    def test_mattheus_1_24_plaatst_opstaanstrong_na_opgewekt(self):
+        """G1453 hoort bij 'opgewekt zijnde', nooit bij het lidwoord 'de'."""
         page = self.open_reader("mattheus/1")
         try:
             self.enable_strongs(page)
             cell = page.locator('.verse-row[data-verse="24"] .col-2026')
-            self.assertEqual(cell.locator('[data-strongs="G1453"]').count(), 0)
+            wake = cell.locator('[data-strongs="G1453"]')
+            self.assertEqual(wake.count(), 1)
+            self.assertTrue(wake.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('opgewekt zijnde');
+            }"""))
             sleep = cell.locator('[data-strongs="G5258"]')
             self.assertEqual(sleep.count(), 1)
             self.assertTrue(sleep.evaluate("""el => {
@@ -278,6 +552,42 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             cell = page.locator('.verse-row[data-verse="1"] .col-2026')
             self.assertEqual(cell.locator('.strongs-alignment').count(), 0)
             self.assertEqual(cell.locator('.strongs-source-word').count(), 0)
+        finally:
+            page.close()
+
+    def test_niet_afzonderlijk_vertaald_grondwoord_blijft_inline_zichtbaar(self):
+        page = self.open_reader()
+        try:
+            html = page.evaluate(
+                """() => OVWoordnummers.renderInline('het Woord', [{
+                    tekst: '', anker: 'Woord', voorkomen: 1, plaats: 'na',
+                    strongs: ['G3588'], bronwoorden: ['ὁ'],
+                    status: 'niet_afzonderlijk_weergegeven',
+                    reviewstatus: 'handmatig_gecontroleerd'
+                }])"""
+            )
+            self.assertIn('Woord<button', html)
+            self.assertIn('data-strongs="G3588"', html)
+            self.assertIn('data-alignment-status="niet_afzonderlijk_weergegeven"', html)
+        finally:
+            page.close()
+
+    def test_johannes_1_toont_tr_vormnummer_en_ongemapt_grondwoord_inline(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            first = page.locator('.verse-row[data-verse="1"] .col-2026')
+            was = first.locator('[data-strongs="G2258"]').first
+            self.assertEqual(was.inner_text(), "(G2258)")
+            self.assertIn("was", was.evaluate("el => el.previousSibling.textContent"))
+
+            twelfth = page.locator('.verse-row[data-verse="12"] .col-2026')
+            unrendered = twelfth.locator(
+                '[data-strongs="G846"][data-alignment-status="niet_afzonderlijk_weergegeven"]'
+            )
+            self.assertEqual(unrendered.count(), 1)
+            unrendered.click()
+            page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)
         finally:
             page.close()
 
@@ -405,6 +715,75 @@ class StrongsReaderBrowserTests(unittest.TestCase):
 
 
 class StrongsDataTests(unittest.TestCase):
+    def test_importer_gebruikt_explicit_source_verse_voor_verschoven_lokaal_vers(self):
+        source_document = {
+            "type": "USJ",
+            "content": [
+                {"type": "chapter", "number": "1"},
+                {"type": "verse", "number": "2"},
+                {"type": "char", "marker": "w", "strong": "G3056", "content": ["Word"]},
+            ],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source_dir = root / "source"; source_dir.mkdir()
+            source_path = source_dir / "demo.usj"
+            source_path.write_text(json.dumps(source_document), encoding="utf-8")
+            digest = hashlib.sha256(source_path.read_bytes()).hexdigest().upper()
+            data_dir = root / "data" / "demo"; data_dir.mkdir(parents=True)
+            (data_dir / "1.json").write_text(json.dumps({"verses":[{"number":1,"text2026":"Woord","grondtekst":[{"woord":"λόγος","strongs":"G3056"}]}]}), encoding="utf-8")
+            review = {"source":{"id":"test","version":"1","sha256":"x"},"books":[{"code":"DEM","repo_book":"demo","chapter":1,"source_file":"demo.usj","source_file_sha256":digest,"verses":[{"verse":1,"source_verse":2,"mappings":[{"tekst":"Woord","bronindices":[0],"grondindices":[0],"confidence":1.0,"reviewstatus":"handmatig_gecontroleerd"}]}]}]}
+            review_path = root / "review.json"; review_path.write_text(json.dumps(review), encoding="utf-8")
+            report = apply_review_file(review_path, source_dir, root / "data", write=True)
+            result = json.loads((data_dir / "1.json").read_text(encoding="utf-8"))
+        self.assertEqual(report["added"], 1)
+        self.assertEqual(result["verses"][0]["woordnummers"][0]["herkomst"]["referentie"], "DEM 1:2")
+
+    def test_johannes_review_metadata_bewaart_bewezen_verscorrespondentie(self):
+        pilot = json.loads((ROOT / "data" / "woordnummers-pilot-johannes.json").read_text(encoding="utf-8"))
+        correspondence = {
+            item["local_verse"]: item
+            for item in pilot["books"][0]["verse_correspondence"]
+        }
+        self.assertEqual(correspondence[38]["status"], "gedeeltelijk")
+        self.assertEqual(correspondence[39]["status"], "afwijkend")
+        for local_verse in range(40, 46):
+            self.assertEqual(correspondence[local_verse]["status"], "afwijkend")
+            self.assertIn("grondtekst", correspondence[local_verse]["reden"])
+
+    def test_usj_parser_behoudt_geneste_versgrens_in_char_inhoud(self):
+        """Een USJ-versmarker kan binnen opgemaakte inhoud staan (Johannes 1:39)."""
+        fixture = {
+            "type": "USJ",
+            "content": [
+                {"type": "chapter", "number": "1"},
+                {
+                    "type": "para",
+                    "content": [
+                        {"type": "verse", "number": "38"},
+                        {
+                            "type": "char",
+                            "marker": "qt",
+                            "content": [
+                                {"type": "verse", "number": "39"},
+                                {
+                                    "type": "char",
+                                    "marker": "w",
+                                    "strong": "G4226",
+                                    "content": ["where"],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ]
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "nested.usj"
+            source.write_text(json.dumps(fixture), encoding="utf-8")
+            parsed = parse_usj(source)
+        self.assertEqual(parsed[(1, 39)], [{"text": "where", "strongs": ["G4226"]}])
+
     def test_alle_88_boeken_hebben_bronvaste_woordnummers(self):
         report = audit()
         self.assertEqual(report["books"], 88)

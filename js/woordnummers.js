@@ -63,12 +63,15 @@
         const sourceWords = mapping.bronwoorden || [];
         const transliterations = mapping.transliteraties || [];
         const glosses = mapping.glossen || [];
+        const alignmentStatus = mapping.status
+            ? ` data-alignment-status="${escapeHtml(mapping.status)}"`
+            : '';
         return numbers.map((number, index) => {
             const safeNumber = escapeHtml(number);
             const sourceWord = escapeHtml(sourceWords[index] || sourceWords[0] || '');
             const transliteration = escapeHtml(transliterations[index] || transliterations[0] || '');
             const gloss = escapeHtml(glosses[index] || glosses[0] || '');
-            return `<button type="button" class="strongs-inline" data-strongs="${safeNumber}" data-source-word="${sourceWord}" data-transliteratie="${transliteration}" data-gloss="${gloss}" aria-label="Open woordenboekbetekenis van ${safeNumber}">(${safeNumber})</button>`;
+            return `<button type="button" class="strongs-inline" data-strongs="${safeNumber}" data-source-word="${sourceWord}" data-transliteratie="${transliteration}" data-gloss="${gloss}"${alignmentStatus} aria-label="Open woordenboekbetekenis van ${safeNumber}">(${safeNumber})</button>`;
         }).join('');
     }
 
@@ -79,9 +82,17 @@
         const template = document.createElement('template');
         template.innerHTML = String(html || '');
 
-        mappings.forEach(mapping => {
+        // Plaats eerst de langste Nederlandse woordgroep. Zo kan een korter
+        // anker (bijvoorbeeld "en ziende") de tekstknoop van een langere
+        // gecontroleerde koppeling ("ziende hen volgen") niet voortijdig
+        // opsplitsen.
+        [...mappings].sort((left, right) => {
+            const leftTarget = String(left?.tekst || left?.anker || '');
+            const rightTarget = String(right?.tekst || right?.anker || '');
+            return rightTarget.length - leftTarget.length;
+        }).forEach(mapping => {
             if (!mapping || (mapping.reviewstatus && !['handmatig_gecontroleerd', 'automatisch_hoog_vertrouwen'].includes(mapping.reviewstatus))) return;
-            const target = String(mapping.tekst || '');
+            const target = String(mapping.tekst || mapping.anker || '');
             const occurrence = Math.max(1, Number(mapping.voorkomen) || 1);
             const buttons = inlineButtons(mapping);
             if (!target || !buttons) return;
@@ -105,10 +116,14 @@
                     const start = match.index + match[1].length;
                     const end = start + match[2].length;
                     const tail = node.splitText(end);
-                    node.splitText(start);
+                    const matched = node.splitText(start);
                     const holder = document.createElement('template');
                     holder.innerHTML = buttons;
-                    tail.parentNode.insertBefore(holder.content, tail);
+                    if (!mapping.tekst && mapping.plaats === 'voor') {
+                        matched.parentNode.insertBefore(holder.content, matched);
+                    } else {
+                        tail.parentNode.insertBefore(holder.content, tail);
+                    }
                     return;
                 }
             }

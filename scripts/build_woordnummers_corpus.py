@@ -128,7 +128,7 @@ def project_verse(verse, lexicon, chapter_verified, allow_auto=True):
     }
     manual_links = sum(len(item.get("strongs") or []) for item in manual)
     if not tokens or not source:
-        return {"mappings": [], "manual_links": manual_links, "visible_links": 0, "review_links": len(source)}
+        return {"mappings": manual, "manual_links": manual_links, "visible_links": 0, "review_links": len(source)}
 
     grouped = defaultdict(list)
     claimed_visible_tokens = set()
@@ -153,7 +153,7 @@ def project_verse(verse, lexicon, chapter_verified, allow_auto=True):
             claimed_visible_tokens.add(target["index"])
         grouped[(target["index"], is_visible)].append(item)
 
-    mappings = []
+    mappings = list(manual)
     visible_links = 0
     review_links = 0
     for (token_index, visible), items in sorted(grouped.items()):
@@ -269,7 +269,7 @@ def build(output_dir=OUTPUT, write=False):
                     counters["visible_verses"] += 1
                 visible_mappings = [
                     mapping for mapping in result["mappings"]
-                    if mapping["reviewstatus"] == "automatisch_hoog_vertrouwen"
+                    if mapping["reviewstatus"] in {"automatisch_hoog_vertrouwen", "handmatig_gecontroleerd"}
                 ]
                 if visible_mappings:
                     verse_output[str(verse["number"])] = visible_mappings
