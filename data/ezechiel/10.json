@@ -1125,7 +1125,7 @@
       "number": 9,
       "textSV1888": "Toen zag ik, en ziet, vier raderen waren bij de cherubs; een rad was bij elken cherub; en de gedaante der raderen was als de verf van een turkoois-steen.",
       "text1637": "Doe sach ick, ende siet, [41] vier raders waren by [42] de Cherubim; [43] een radt was by elcken Cherub: ende de gedaente der raderen [a] was als de verwe van een [44] Turkoys-steen.",
-      "text2026": "Toen zag ik, en ziet, vier raderen waren bij de cherubs; een rad was bij elke cherub; en de gedaante van de raderen was als de verf van een turkoois-steen.",
+      "text2026": "Toen zag ik, en ziet, vier wielen waren bij de cherubs; een rad was bij elke cherub; en de gedaante van de wielen was als de verf van een turkoois-steen.",
       "marginNotes": [
         {
           "marker": "41",
@@ -1270,19 +1270,24 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Toen zag ik, en ziet,<sup class=\"note-marker\" data-note=\"41\">41</sup> vier raderen waren bij<sup class=\"note-marker\" data-note=\"42\">42</sup> de cherubs;<sup class=\"note-marker\" data-note=\"43\">43</sup> een rad was bij elke cherub; en de gedaante van de raderen<sup class=\"note-marker\" data-note=\"a\">a</sup> was als de verf van een<sup class=\"note-marker\" data-note=\"44\">44</sup> turkoois-steen.",
+      "text2026_html": "Toen zag ik, en ziet,<sup class=\"note-marker\" data-note=\"41\">41</sup> vier wielen waren bij<sup class=\"note-marker\" data-note=\"42\">42</sup> de cherubs;<sup class=\"note-marker\" data-note=\"43\">43</sup> een rad was bij elke cherub; en de gedaante van de wielen<sup class=\"note-marker\" data-note=\"a\">a</sup> was als de verf van een<sup class=\"note-marker\" data-note=\"44\">44</sup> turkoois-steen.",
       "textSV1888_html": "Toen zag ik, en ziet,<sup class=\"note-marker\" data-note=\"41\">41</sup> vier raderen waren bij<sup class=\"note-marker\" data-note=\"42\">42</sup> de cherubs;<sup class=\"note-marker\" data-note=\"43\">43</sup> een rad was bij elken cherub; en de gedaante der raderen<sup class=\"note-marker\" data-note=\"a\">a</sup> was als de verf van een<sup class=\"note-marker\" data-note=\"44\">44</sup> turkoois-steen.",
       "text1637_html": "Doe sach ick, ende siet, <sup class=\"note-marker\" data-note=\"41\">41</sup> vier raders waren by <sup class=\"note-marker\" data-note=\"42\">42</sup> de Cherubim; <sup class=\"note-marker\" data-note=\"43\">43</sup> een radt was by elcken Cherub: ende de gedaente der raderen <sup class=\"note-marker\" data-note=\"a\">a</sup> was als de verwe van een <sup class=\"note-marker\" data-note=\"44\">44</sup> Turkoys-steen.",
       "phraseDiff": [
+        {
+          "old": "raderen",
+          "new": "wielen",
+          "principe": "V1225"
+        },
         {
           "old": "elken",
           "new": "elke",
           "principe": "V591"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der raderen",
+          "new": "van de wielen",
+          "principe": "V1225"
         }
       ]
     },
@@ -1510,7 +1515,7 @@
       "number": 12,
       "textSV1888": "Hun ganse lichaam nu, en hun ruggen, en hun handen, en hun vleugelen, mitsgaders de raderen, waren vol ogen rondom; die vier hadden hun raderen.",
       "text1637": "[51] Haer gantsche [52] lijf nu, ende hare ruggen, ende hare handen, ende hare vleugelen; mitsgaders de raderen, waren vol oogen rontom; [53] die viere hadden hare raderen.",
-      "text2026": "Hun hele lichaam nu, en hun ruggen, en hun handen, en hun vleugelen, en ook de raderen, waren vol ogen rondom; die vier hadden hun raderen.",
+      "text2026": "Hun hele lichaam nu, en hun ruggen, en hun handen, en hun vleugelen, en ook de wielen, waren vol ogen rondom; die vier hadden hun wielen.",
       "marginNotes": [
         {
           "marker": "51",
@@ -1591,7 +1596,7 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"51\">51</sup> Hun hele<sup class=\"note-marker\" data-note=\"52\">52</sup> lichaam nu, en hun ruggen, en hun handen, en hun vleugelen, en ook de raderen, waren vol ogen rondom;<sup class=\"note-marker\" data-note=\"53\">53</sup> die vier hadden hun raderen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"51\">51</sup> Hun hele<sup class=\"note-marker\" data-note=\"52\">52</sup> lichaam nu, en hun ruggen, en hun handen, en hun vleugelen, en ook de wielen, waren vol ogen rondom;<sup class=\"note-marker\" data-note=\"53\">53</sup> die vier hadden hun wielen.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"51\">51</sup> Hun ganse<sup class=\"note-marker\" data-note=\"52\">52</sup> lichaam nu, en hun ruggen, en hun handen, en hun vleugelen, mitsgaders de raderen, waren vol ogen rondom;<sup class=\"note-marker\" data-note=\"53\">53</sup> die vier hadden hun raderen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"51\">51</sup> Haer gantsche <sup class=\"note-marker\" data-note=\"52\">52</sup> lijf nu, ende hare ruggen, ende hare handen, ende hare vleugelen; mitsgaders de raderen, waren vol oogen rontom; <sup class=\"note-marker\" data-note=\"53\">53</sup> die viere hadden hare raderen.",
       "phraseDiff": [
@@ -1604,6 +1609,16 @@
           "old": "mitsgaders",
           "new": "en ook",
           "principe": "V7"
+        },
+        {
+          "old": "raderen,",
+          "new": "wielen,",
+          "principe": "V1225"
+        },
+        {
+          "old": "raderen.",
+          "new": "wielen.",
+          "principe": "V1225"
         }
       ]
     },
@@ -1611,7 +1626,7 @@
       "number": 13,
       "textSV1888": "Aangaande de raderen, elkeen derzelve werd voor mijn oren genoemd Galgal.",
       "text1637": "Aengaende de raderen, elck een der selver wiert [54] voor mijne ooren genaemt, Galgal.",
-      "text2026": "Voor wat betreft de raderen, elk daarvan werd voor mijn oren genoemd Galgal.",
+      "text2026": "Voor wat betreft de wielen, elk daarvan werd voor mijn oren genoemd Galgal.",
       "marginNotes": [
         {
           "marker": "54",
@@ -1648,7 +1663,7 @@
           "morph": "HR/Ncfdc/Sp1cs"
         }
       ],
-      "text2026_html": "Voor wat betreft de raderen, elk daarvan werd<sup class=\"note-marker\" data-note=\"54\">54</sup> voor mijn oren genoemd Galgal.",
+      "text2026_html": "Voor wat betreft de wielen, elk daarvan werd<sup class=\"note-marker\" data-note=\"54\">54</sup> voor mijn oren genoemd Galgal.",
       "textSV1888_html": "Aangaande de raderen, elkeen derzelve werd<sup class=\"note-marker\" data-note=\"54\">54</sup> voor mijn oren genoemd Galgal.",
       "text1637_html": "Aengaende de raderen, elck een der selver wiert <sup class=\"note-marker\" data-note=\"54\">54</sup> voor mijne ooren genaemt, Galgal.",
       "phraseDiff": [
@@ -1658,9 +1673,9 @@
           "principe": "V814"
         },
         {
-          "old": "elkeen derzelve",
-          "new": "elk daarvan",
-          "principe": null
+          "old": "raderen, elkeen derzelve",
+          "new": "wielen, elk daarvan",
+          "principe": "V1225"
         }
       ]
     },
@@ -1874,7 +1889,7 @@
       "number": 16,
       "textSV1888": "En als de cherubs gingen, zo gingen die raderen nevens dezelven; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich diezelve raderen ook niet om van bij hen.",
       "text1637": "[b] Ende als de Cherubim gingen, so gingen die raderen nevens de selve: ende als de Cherubim hare vleugelen ophieven, om sich vander aerde om hooge te heffen, so en keerden haer die selve raderen oock niet om, van by hen.",
-      "text2026": "En als de cherubs gingen, zo gingen die raderen naast die; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich die raderen ook niet om van bij hen.",
+      "text2026": "En als de cherubs gingen, zo gingen die wielen naast die; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich die wielen ook niet om van bij hen.",
       "marginNotes": [
         {
           "marker": "b",
@@ -1976,19 +1991,19 @@
           "morph": "HR/R/Sp3mp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> En als de cherubs gingen, zo gingen die raderen naast die; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich die raderen ook niet om van bij hen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> En als de cherubs gingen, zo gingen die wielen naast die; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich die wielen ook niet om van bij hen.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> En als de cherubs gingen, zo gingen die raderen nevens dezelven; en als de cherubs hun vleugelen ophieven, om zich van de aarde omhoog te heffen, zo keerden zich diezelve raderen ook niet om van bij hen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"b\">b</sup> Ende als de Cherubim gingen, so gingen die raderen nevens de selve: ende als de Cherubim hare vleugelen ophieven, om sich vander aerde om hooge te heffen, so en keerden haer die selve raderen oock niet om, van by hen.",
       "phraseDiff": [
         {
-          "old": "nevens dezelven;",
-          "new": "naast die;",
-          "principe": null
+          "old": "raderen nevens dezelven;",
+          "new": "wielen naast die;",
+          "principe": "V1225"
         },
         {
-          "old": "diezelve",
-          "new": "die",
-          "principe": null
+          "old": "diezelve raderen",
+          "new": "die wielen",
+          "principe": "V1225"
         }
       ]
     },
@@ -2185,7 +2200,7 @@
       "number": 19,
       "textSV1888": "En de cherubs hieven hun vleugelen op, en verhieven zich van de aarde omhoog voor mijn ogen, als zij uitgingen; en de raderen waren tegenover hen; en elkeen stond aan de deur der Oostpoort van het huis des HEEREN; en de heerlijkheid des Gods Israëls was van boven over hen.",
       "text1637": "Ende de Cherubim hieven hare vleugelen op, ende verhieven haer vander aerde om hooge [65] voor mijne oogen, als sy uyt gingen; ende de raderen waren [66] tegens over hen: ende elck een [67] stont aen de deure [68] der oost-poorte van het Huys des HEEREN; ende de heerlickheyt des Godts Israëls was van boven over [69] hen.",
-      "text2026": "En de cherubs hieven hun vleugelen op, en verhieven zich van de aarde omhoog voor mijn ogen, als zij uitgingen; en de raderen waren tegenover hen; en elk stond aan de deur van de Oostpoort van het huis van JAHWEH; en de heerlijkheid van de God van Israël was van boven over hen.",
+      "text2026": "En de cherubs hieven hun vleugelen op, en verhieven zich van de aarde omhoog voor mijn ogen, als zij uitgingen; en de wielen waren tegenover hen; en elk stond aan de deur van de Oostpoort van het huis van JAHWEH; en de heerlijkheid van de God van Israël was van boven over hen.",
       "marginNotes": [
         {
           "marker": "65",
@@ -2335,10 +2350,15 @@
           "morph": "HR/R/D/Sd"
         }
       ],
-      "text2026_html": "En de cherubs hieven hun vleugelen op, en verhieven zich van de aarde omhoog<sup class=\"note-marker\" data-note=\"65\">65</sup> voor mijn ogen, als zij uitgingen; en de raderen waren<sup class=\"note-marker\" data-note=\"66\">66</sup> tegenover hen; en elk<sup class=\"note-marker\" data-note=\"67\">67</sup> stond aan de deur<sup class=\"note-marker\" data-note=\"68\">68</sup> van de Oostpoort van het huis van JAHWEH; en de heerlijkheid van de God van Israël was van boven over<sup class=\"note-marker\" data-note=\"69\">69</sup> hen.",
+      "text2026_html": "En de cherubs hieven hun vleugelen op, en verhieven zich van de aarde omhoog<sup class=\"note-marker\" data-note=\"65\">65</sup> voor mijn ogen, als zij uitgingen; en de wielen waren<sup class=\"note-marker\" data-note=\"66\">66</sup> tegenover hen; en elk<sup class=\"note-marker\" data-note=\"67\">67</sup> stond aan de deur<sup class=\"note-marker\" data-note=\"68\">68</sup> van de Oostpoort van het huis van JAHWEH; en de heerlijkheid van de God van Israël was van boven over<sup class=\"note-marker\" data-note=\"69\">69</sup> hen.",
       "textSV1888_html": "En de cherubs hieven hun vleugelen op, en verhieven zich van de aarde omhoog<sup class=\"note-marker\" data-note=\"65\">65</sup> voor mijn ogen, als zij uitgingen; en de raderen waren<sup class=\"note-marker\" data-note=\"66\">66</sup> tegenover hen; en elkeen<sup class=\"note-marker\" data-note=\"67\">67</sup> stond aan de deur<sup class=\"note-marker\" data-note=\"68\">68</sup> der Oostpoort van het huis des HEEREN; en de heerlijkheid des Gods Israëls was van boven over<sup class=\"note-marker\" data-note=\"69\">69</sup> hen.",
       "text1637_html": "Ende de Cherubim hieven hare vleugelen op, ende verhieven haer vander aerde om hooge <sup class=\"note-marker\" data-note=\"65\">65</sup> voor mijne oogen, als sy uyt gingen; ende de raderen waren <sup class=\"note-marker\" data-note=\"66\">66</sup> tegens over hen: ende elck een <sup class=\"note-marker\" data-note=\"67\">67</sup> stont aen de deure <sup class=\"note-marker\" data-note=\"68\">68</sup> der oost-poorte van het Huys des HEEREN; ende de heerlickheyt des Godts Israëls was van boven over <sup class=\"note-marker\" data-note=\"69\">69</sup> hen.",
       "phraseDiff": [
+        {
+          "old": "raderen",
+          "new": "wielen",
+          "principe": "V1225"
+        },
         {
           "old": "elkeen",
           "new": "elk",

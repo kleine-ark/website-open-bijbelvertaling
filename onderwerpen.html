@@ -141,6 +141,19 @@
         #ond-detail h2 .ond-dot { width: 8px; height: 34px; border-radius: 999px; }
         .beschr-detail { max-width: 760px; font-size: 15px; }
         .ond-detail-count { margin-top: 14px; color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .ond-top10 { margin: 0 0 22px; padding: 22px 24px 8px; border: 1px solid #e2dacb; border-radius: 14px; background: linear-gradient(135deg, rgba(255,253,249,.9), rgba(246,240,229,.72)); }
+        .ond-top10-kop { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 8px; }
+        .ond-top10 h3 { margin: 0; color: var(--navy); font-family: var(--font-serif); font-size: 24px; font-weight: 600; }
+        .ond-top10-kop p { margin: 0; color: #7a7165; font-size: 12px; }
+        .ond-top10-lijst { list-style: none; padding: 0; margin: 0; }
+        .ond-top10-vers { margin: 0; padding: 16px 0 18px; border-bottom: 1px solid #e9e1d4; }
+        .ond-top10-vers:last-child { border-bottom: 0; }
+        .ond-top10-vers .ond-vers-kop { margin-bottom: 7px; }
+        .ond-top10-tekst { font-family: var(--font-serif, 'EB Garamond', Georgia, serif); font-size: 17px; line-height: 1.72; color: #222; min-height: 1.4em; }
+        .ond-top10-tekst .ov-naslagtekst-link { display: inline-block; margin: 0 0 5px; color: var(--gold); font: 600 13px system-ui, sans-serif; text-decoration: none; }
+        .ond-top10-tekst .ov-naslagtekst-link:hover { text-decoration: underline; }
+        .ond-top10-tekst .osv-vers { display: block; margin: 0 0 6px; }
+        .ond-top10-tekst .osv-vers:last-child { margin-bottom: 0; }
         .ond-detail-toolbar { position: sticky; top: 0; z-index: 3; display: grid; grid-template-columns: auto minmax(180px, 260px) 1fr; align-items: center; gap: 10px; margin: 0 0 8px; padding: 11px 14px; border: 1px solid #e2dccf; border-radius: 11px; background: rgba(248,246,242,.94); backdrop-filter: blur(8px); }
         .ond-detail-toolbar label { color: #7a7165; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
         .ond-detail-toolbar select { min-width: 0; padding: 8px 32px 8px 10px; border: 1px solid #d8d0c1; border-radius: 8px; background: #fff; color: var(--navy); font: 13px var(--font-body); }
@@ -167,6 +180,11 @@
         :root[data-theme="donker"] .ond-detail-toolbar { background: color-mix(in srgb, var(--bg-page) 92%, transparent); }
         :root[data-theme="donker"] .ond-detail-toolbar { border-color: var(--border-default); }
         :root[data-theme="donker"] .ond-detail-toolbar select { background: var(--bg-surface-alt); color: var(--text-primary); border-color: var(--border-default); }
+        :root[data-theme="donker"] .ond-top10 { background: linear-gradient(135deg, var(--bg-surface), var(--bg-surface-alt)); border-color: var(--border-default); }
+        :root[data-theme="donker"] .ond-top10 h3,
+        :root[data-theme="donker"] .ond-top10-tekst { color: var(--text-primary); }
+        :root[data-theme="donker"] .ond-top10-kop p { color: var(--text-secondary); }
+        :root[data-theme="donker"] .ond-top10-vers { border-color: var(--border-default); }
         :root[data-theme="donker"] .ond-card .count { border-top-color: var(--border-default); }
         :root[data-theme="donker"] .ond-vers:hover { background: rgba(255,255,255,.035); }
         :root[data-theme="donker"] .ond-terug { background: var(--bg-surface-alt); border-color: var(--border-default); }
@@ -185,6 +203,9 @@
             .ond-detail-toolbar { grid-template-columns: 1fr auto; }
             .ond-detail-toolbar label { display: none; }
             .ond-detail-toolbar select { width: 100%; }
+            .ond-top10 { padding: 19px 16px 5px; }
+            .ond-top10 h3 { font-size: 22px; }
+            .ond-top10-tekst { font-size: 16px; }
             .ond-vers { padding-right: 7px; padding-left: 7px; }
             .ond-vers-tekst { font-size: 16px; }
         }
@@ -218,6 +239,13 @@
                 <p id="ond-detail-beschr" class="beschr-detail"></p>
                 <div id="ond-detail-count" class="ond-detail-count"></div>
             </header>
+            <section class="ond-top10" id="ond-top10" aria-labelledby="ond-top10-titel">
+                <div class="ond-top10-kop">
+                    <h3 id="ond-top10-titel">Top 10 teksten</h3>
+                    <p>De belangrijkste teksten eerst</p>
+                </div>
+                <ol class="ond-top10-lijst" id="ond-top10-lijst"></ol>
+            </section>
             <div class="ond-detail-toolbar">
                 <label for="ond-boekfilter">Bijbelboek</label>
                 <select id="ond-boekfilter" aria-label="Filter teksten op Bijbelboek"></select>
@@ -276,6 +304,14 @@
                     return ka[0] - kb[0] || ka[1] - kb[1] || ka[2] - kb[2];
                 });
         }
+        function topTienVan(tag) {
+            const ordered = verzenVan(tag);
+            const byRef = new Map(ordered.map(item => [item.ref, item]));
+            if (Array.isArray(tag.topTien) && tag.topTien.length) {
+                return tag.topTien.map(ref => byRef.get(ref)).filter(Boolean).slice(0, 10);
+            }
+            return ordered.slice(0, 10);
+        }
         // Lazy: laad de verstekst via de OV-bibliotheek zodra een item in beeld komt
         let _io = null;
         function observeTeksten(root) {
@@ -293,20 +329,20 @@
                     }
                 });
             }, { rootMargin: '400px' });
-            root.querySelectorAll('.ond-vers-tekst[data-ref]').forEach(el => _io.observe(el));
+            root.querySelectorAll('.ond-vers-tekst[data-ref]:not([data-citaat-eager])').forEach(el => _io.observe(el));
         }
         // Onderwerpen geordend in rubrieken (zoals de wiki van de kleine ark)
         const CATEGORIEEN = [
             { id: 'kern', label: "Kernthema's van het geloof", ids: ['schepping', 'jahweh-schepping', 'zonde', 'bekering', 'geloof', 'verbond', 'gods-leiding', 'almacht-van-god', 'zegeningen', 'vervloekingen', 'beloften'] },
             { id: 'jezus', label: 'Wie is Jezus Christus?', ids: ['karakter-jezus', 'jezus-is-god', 'jezus-in-het-ot'] },
             { id: 'geestelijke-wereld', label: 'De geestelijke wereld', ids: ['engelen', 'demonen-en-duivelen', 'afgoden', 'reuzen'] },
-            { id: 'gemeente', label: 'Gebed & gemeente', ids: ['gebed', 'gebedshouding', 'tucht-gemeente', 'evangelisatie'] },
+            { id: 'gemeente', label: 'Gebed & gemeente', ids: ['gebed', 'gebedshouding', 'doop-door-onderdompeling', 'tucht-gemeente', 'evangelisatie'] },
             { id: 'spreken', label: 'Wie spreekt er in Gods Woord?', ids: ['vader-spreekt', 'zoon-spreekt', 'geest-spreekt'] },
             { id: 'liefde', label: 'Liefde', ids: ['liefde-algemeen', 'liefde-man-vrouw'] },
             { id: 'huwelijk-seks', label: 'Huwelijk & seksualiteit', ids: ['huwelijk', 'vruchtbaarheid-en-onvruchtbaarheid', 'misbruik-verkrachting-en-incest', 'lhbtq'] },
-            { id: 'leven-samenleving', label: 'Leven & samenleving', ids: ['rijkdom-armoede', 'werk-en-vlijt', 'zaaien-en-oogsten', 'waarheid-en-levensgevaar', 'opvoeding-kinderen', 'bouwen', 'huisinwijding'] },
+            { id: 'leven-samenleving', label: 'Leven & samenleving', ids: ['rijkdom-armoede', 'werk-en-vlijt', 'vakmanschap', 'zaaien-en-oogsten', 'waarheid-en-levensgevaar', 'opvoeding-kinderen', 'bouwen', 'huisinwijding', 'wijn'] },
             { id: 'eredienst', label: 'Feesten & eredienst', ids: ['bijbelse-feesten'] },
-            { id: 'onderscheiding', label: 'Geestelijke onderscheiding', ids: ['valse-profetie', 'waarzeggerij', 'kinderoffers', 'vloek-op-voorwerpen', 'ziekte-van-jahweh'] },
+            { id: 'onderscheiding', label: 'Geestelijke onderscheiding', ids: ['valse-profetie', 'waarzeggerij', 'kinderoffers', 'vloek-op-voorwerpen', 'ziekte-van-jahweh', 'dubbelhartigheid'] },
             { id: 'volken', label: 'Volken & geschiedenis', ids: ['volk-ammon'] },
             { id: 'vragen', label: 'Vragen & moeilijke onderwerpen', ids: ['apostelen-vandaag'] }
         ];
@@ -367,6 +403,7 @@
                 `<span class="ond-dot" style="background:${tag.kleur || '#999'}"></span>${tag.naam || ''}`;
             document.getElementById('ond-detail-beschr').textContent = tag.beschrijving || '';
             document.getElementById('ond-detail-count').textContent = `${ACTIEVE_VERZEN.length} ${ACTIEVE_VERZEN.length === 1 ? 'tekst' : 'teksten'} uit Gods Woord`;
+            renderTopTien(tag);
             vulBoekfilter();
             renderDetailLijst();
             window.scrollTo(0, 0);
@@ -376,6 +413,25 @@
 
         function boekVan(ref) {
             return ref.slice(0, ref.lastIndexOf(' '));
+        }
+        function renderTopTien(tag) {
+            const section = document.getElementById('ond-top10');
+            const list = document.getElementById('ond-top10-lijst');
+            const items = topTienVan(tag);
+            section.hidden = items.length === 0;
+            list.innerHTML = items.map((item, index) => {
+                const ster = item.rang === 1 ? '<span class="ster">&#9733;</span> ' : '';
+                return `<li class="ond-top10-vers" data-ref="${item.ref}">
+                    <div class="ond-vers-kop">${index + 1}. ${ster}${prettyRef(item.ref)}</div>
+                    <div class="ond-top10-tekst" data-ref="${item.ref}"></div>
+                </li>`;
+            }).join('');
+            list.querySelectorAll('.ond-top10-tekst[data-ref]').forEach(el => {
+                if (!window.OVTekstweergave) return;
+                OVTekstweergave.renderNaslagtekst(el, el.dataset.ref, {
+                    target: '_top'
+                }).catch(() => {});
+            });
         }
         function vulBoekfilter() {
             const filter = document.getElementById('ond-boekfilter');
@@ -405,6 +461,14 @@
                     <div class="ond-vers-tekst osv-cite" data-ref="${it.ref}" title="Klik om naar deze tekst in Gods Woord te gaan"></div>
                 </li>`;
             }).join('');
+            const eerste = lijst.querySelector('.ond-vers-tekst[data-ref]');
+            if (eerste && window.OVTekstweergave) {
+                eerste.dataset.citaatEager = 'true';
+                OVTekstweergave.renderNaslagtekst(eerste, eerste.dataset.ref, {
+                    toonLink: false,
+                    target: '_top'
+                }).catch(() => {});
+            }
             observeTeksten(lijst);
             bindLijstInteractie(lijst);
             document.getElementById('ond-zichtbaar-count').textContent = `${zichtbaar.length} van ${alle.length}`;

@@ -545,6 +545,42 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_metrische_optie_rekent_een_dagreis_in_1_koningen_om(self):
+        """Een dagreis is een afstandsmaat en mag niet als archaÃ¯sch restant blijven staan."""
+        page = self.open_reader(location="1koningen/19")
+        try:
+            page.wait_for_function("window.Opties && window.Opties._eenheden")
+            page.evaluate(
+                """() => {
+                    Opties.state.maatstelsel = 'metrisch';
+                    App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
+                }"""
+            )
+
+            vers = page.locator('.verse-row[data-verse="4"] .col-2026')
+            vers.wait_for(state="visible", timeout=5_000)
+            self.assertIn("ongeveer 35 km", vers.inner_text())
+        finally:
+            page.close()
+
+    def test_metrische_optie_vult_de_elliptische_el_in_1_koningen_aan(self):
+        """Een niet-herhaald 'ellen' mag de tweede afmeting niet onleesbaar laten."""
+        page = self.open_reader(location="1koningen/6")
+        try:
+            page.wait_for_function("window.Opties && window.Opties._eenheden")
+            page.evaluate(
+                """() => {
+                    Opties.state.maatstelsel = 'metrisch';
+                    App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
+                }"""
+            )
+
+            vers = page.locator('.verse-row[data-verse="2"] .col-2026')
+            vers.wait_for(state="visible", timeout=5_000)
+            self.assertIn("ongeveer 8,9 meter in zijn breedte", vers.inner_text())
+        finally:
+            page.close()
+
     def test_desktop_paneel_is_via_de_kop_versleepbaar_en_bewaart_de_positie(self):
         page = self.open_reader(width=1280, height=900)
         try:

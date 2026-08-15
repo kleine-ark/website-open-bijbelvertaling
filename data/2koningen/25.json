@@ -1543,7 +1543,7 @@
       "number": 14,
       "textSV1888": "Zij namen ook de potten, en de schoffelen, en de gaffelen, en de rookschalen, en al de koperen vaten, daar men den dienst mede deed.",
       "text1637": "Sy namen oock [20] de potten, ende de schoeffelen, ende de gaffelen, ende de roockschalen, ende alle de koperen vaten, daermen den dienst mede dede.",
-      "text2026": "Zij namen ook de potten, en de schoffelen, en de gaffelen, en de rookschalen, en al de koperen voorwerpen, daar men de dienst mee deed.",
+      "text2026": "Zij namen ook de potten, en de scheppen, en de messen, en de rookschalen, en al de koperen voorwerpen, daar men de dienst mee deed.",
       "marginNotes": [
         {
           "marker": "20",
@@ -1635,10 +1635,20 @@
           "morph": "HVqp3cp"
         }
       ],
-      "text2026_html": "Zij namen ook<sup class=\"note-marker\" data-note=\"20\">20</sup> de potten, en de schoffelen, en de gaffelen, en de rookschalen, en al de koperen voorwerpen, daar men de dienst mee deed.",
+      "text2026_html": "Zij namen ook<sup class=\"note-marker\" data-note=\"20\">20</sup> de potten, en de scheppen, en de messen, en de rookschalen, en al de koperen voorwerpen, daar men de dienst mee deed.",
       "textSV1888_html": "Zij namen ook<sup class=\"note-marker\" data-note=\"20\">20</sup> de potten, en de schoffelen, en de gaffelen, en de rookschalen, en al de koperen vaten, daar men den dienst mede deed.",
       "text1637_html": "Sy namen oock <sup class=\"note-marker\" data-note=\"20\">20</sup> de potten, ende de schoeffelen, ende de gaffelen, ende de roockschalen, ende alle de koperen vaten, daermen den dienst mede dede.",
       "phraseDiff": [
+        {
+          "old": "schoffelen,",
+          "new": "scheppen,",
+          "principe": "V1226"
+        },
+        {
+          "old": "gaffelen,",
+          "new": "messen,",
+          "principe": "V1231"
+        },
         {
           "old": "vaten,",
           "new": "voorwerpen,",
@@ -1876,7 +1886,7 @@
       "number": 17,
       "textSV1888": "De hoogte van een pilaar was achttien ellen, en het kapiteel daarop was koper; en de hoogte des kapiteels was drie ellen; en het net, en de granaatappelen op het kapiteel rondom, waren alle van koper; en dezen gelijk had de andere pilaar, met het net.",
       "text1637": "[d] De hoochte eenes [24] pilaers was achtien ellen, ende het capiteel daer op was koper, ende de hoochte des capiteels was drie ellen, ende het net, ende de granaet-appelen op het capiteel rontom, waren alle van koper: ende desen gelijcke hadde de andere pilaer, met het net.",
-      "text2026": "De hoogte van een pilaar was achttien ellen, en het kapiteel daarop was koper; en de hoogte van het kapiteel was drie ellen; en het net, en de granaatappelen op het kapiteel rondom, waren alle van koper; en gelijk aan deze had de andere pilaar, met het net.",
+      "text2026": "De hoogte van een pilaar was achttien ellen, en het kapiteel daarop was koper; en de hoogte van het kapiteel was drie ellen; en het net, en de granaatappels op het kapiteel rondom, waren alle van koper; en gelijk aan deze had de andere pilaar, met het net.",
       "marginNotes": [
         {
           "marker": "d",
@@ -2020,7 +2030,7 @@
           "morph": "HTd/Ncfsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> De hoogte van<sup class=\"note-marker\" data-note=\"24\">24</sup> een pilaar was achttien ellen, en het kapiteel daarop was koper; en de hoogte van het kapiteel was drie ellen; en het net, en de granaatappelen op het kapiteel rondom, waren alle van koper; en gelijk aan deze had de andere pilaar, met het net.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> De hoogte van<sup class=\"note-marker\" data-note=\"24\">24</sup> een pilaar was achttien ellen, en het kapiteel daarop was koper; en de hoogte van het kapiteel was drie ellen; en het net, en de granaatappels op het kapiteel rondom, waren alle van koper; en gelijk aan deze had de andere pilaar, met het net.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> De hoogte van<sup class=\"note-marker\" data-note=\"24\">24</sup> een pilaar was achttien ellen, en het kapiteel daarop was koper; en de hoogte des kapiteels was drie ellen; en het net, en de granaatappelen op het kapiteel rondom, waren alle van koper; en dezen gelijk had de andere pilaar, met het net.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"d\">d</sup> De hoochte eenes <sup class=\"note-marker\" data-note=\"24\">24</sup> pilaers was achtien ellen, ende het capiteel daer op was koper, ende de hoochte des capiteels was drie ellen, ende het net, ende de granaet-appelen op het capiteel rontom, waren alle van koper: ende desen gelijcke hadde de andere pilaer, met het net.",
       "phraseDiff": [
@@ -2028,6 +2038,11 @@
           "old": "des kapiteels",
           "new": "van het kapiteel",
           "principe": null
+        },
+        {
+          "old": "granaatappelen",
+          "new": "granaatappels",
+          "principe": "V1223"
         },
         {
           "old": "dezen",

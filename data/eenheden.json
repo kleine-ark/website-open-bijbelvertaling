@@ -65,6 +65,16 @@
     }
   },
 
+  "implicieteMaten": [
+    {
+      "verzen": ["1koningen 6:2"],
+      "zoek": "twintig",
+      "eenheid": "el",
+      "aantal": 20,
+      "uitleg": "twintig ellen â€” de maat wordt in de middelste afmeting van het huis niet herhaald"
+    }
+  ],
+
   "eenheden": [
     {
       "id": "el",
@@ -178,6 +188,16 @@
       "enkelvoud": "sabbatsreis",
       "waarde": 890,
       "uitleg": "de sabbatsreis ≈ 890 m — tweeduizend el, de afstand die men op sabbat mocht afleggen (rabbijnse regel)"
+    },
+
+    {
+      "id": "dagreis",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["dagreizen", "dagreize", "dagreis"],
+      "enkelvoud": "dagreis",
+      "waarde": 35000,
+      "uitleg": "de dagreis is ongeveer 35 km; schattingen lopen uiteen van ongeveer 30 tot 40 km"
     },
 
     {

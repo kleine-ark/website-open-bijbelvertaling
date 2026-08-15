@@ -22,6 +22,7 @@ import io
 import json
 import os
 import sys
+import unicodedata
 import urllib.request
 
 WORTEL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -52,6 +53,20 @@ def kolom(rij, *namen):
             if k and k.strip().lower() == n.lower():
                 return (v or "").strip()
     return ""
+
+
+def _sleutel(tekst):
+    """Vergelijk boeknamen onafhankelijk van spaties en diakritische tekens."""
+    zonder_acc = "".join(
+        teken for teken in unicodedata.normalize("NFD", tekst.lower())
+        if unicodedata.category(teken) != "Mn"
+    )
+    return "".join(teken for teken in zonder_acc if teken.isalnum())
+
+
+def zelfde_boek(vers, boek):
+    """Geeft terug of een sheet-verwijzing met het gevraagde boek begint."""
+    return _sleutel(vers).startswith(_sleutel(boek))
 
 
 def main():
@@ -85,7 +100,7 @@ def main():
         if not a.alles and status.lower() not in ("", "nieuw"):
             continue
         vers = kolom(r, "Vers")
-        if a.boek and not vers.lower().startswith(a.boek.lower()):
+        if a.boek and not zelfde_boek(vers, a.boek):
             continue
         uit.append({
             "ontvangen": kolom(r, "Ontvangen"),

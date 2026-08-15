@@ -32,7 +32,7 @@ def test_build_stats_defaults_follow_current_changelog():
     release = read_json("data/changelog.json")["wijzigingen"][0]
 
     assert version == release["versie"]
-    assert datum == "11 augustus 2026"
+    assert datum == "15 augustus 2026"
 
 
 def service_worker_install_cache():
@@ -77,7 +77,7 @@ def test_current_release_describes_talen_en_uses_one_version():
     current_release = changelog["wijzigingen"][0]
     descriptions = " ".join(item["beschrijving"] for item in current_release["items"])
 
-    assert current_release["versie"] == "v0.36.0"
+    assert current_release["versie"] == "v0.37.0"
     for subject in (
         "materialenpagina",
         "leem en baksteen",
@@ -85,8 +85,17 @@ def test_current_release_describes_talen_en_uses_one_version():
         assert subject in descriptions
     assert stats["version"] == current_release["versie"]
     assert service_worker_install_cache() == [f"shell-{current_release['versie']}"]
-    assert current_release["datum"] == "2026-08-11"
-    assert stats["date"] == "11 augustus 2026"
+    assert current_release["datum"] == "2026-08-15"
+    assert stats["date"] == "15 augustus 2026"
+
+
+def test_statische_release_fallbacks_verwijzen_naar_de_actuele_versie():
+    """Ook vóór het laden van stats.json mag de site geen oud nummer tonen."""
+    current = read_json("data/changelog.json")["wijzigingen"][0]["versie"]
+    for bestand in ("over-ov.html", "statistieken.html"):
+        inhoud = (ROOT / bestand).read_text(encoding="utf-8")
+        assert current in inhoud
+        assert "v0.21.6" not in inhoud
 
 
 def test_human_review_statistics_include_jozua_en_heel_richteren():
