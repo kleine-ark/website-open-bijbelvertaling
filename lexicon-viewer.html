@@ -238,26 +238,28 @@
 
     // Boek-afkortingen (BDB / Abbott-Smith, Engels) -> onze boek-id
     var ABBR = {
-        Gen:'genesis', Exod:'exodus', Ex:'exodus', Lev:'leviticus', Num:'numeri', Deut:'deuteronomium', Dt:'deuteronomium',
+        Gen:'genesis', Ge:'genesis', Exod:'exodus', Ex:'exodus', Lev:'leviticus', Num:'numeri', Deut:'deuteronomium', Dt:'deuteronomium',
         Josh:'jozua', Jos:'jozua', Judg:'richteren', Jdg:'richteren', Ruth:'ruth',
-        '1Sam':'1samuel', '2Sam':'2samuel', '1Kin':'1koningen', '1Kgs':'1koningen', '2Kin':'2koningen', '2Kgs':'2koningen',
-        '1Chr':'1kronieken', '2Chr':'2kronieken', Ezra:'ezra', Neh:'nehemia', Esth:'esther', Est:'esther',
+        '1Sam':'1samuel', '2Sam':'2samuel', '1Kin':'1koningen', '1Kgs':'1koningen', 'I Ki':'1koningen', 'III Ki':'1koningen',
+        '2Kin':'2koningen', '2Kgs':'2koningen', 'II Ki':'2koningen', 'IV Ki':'2koningen',
+        '1Chr':'1kronieken', 'I Ch':'1kronieken', '2Chr':'2kronieken', 'II Ch':'2kronieken', Ezra:'ezra', Neh:'nehemia', Esth:'esther', Est:'esther',
         Job:'job', Ps:'psalmen', Psa:'psalmen', Prov:'spreuken', Pr:'spreuken', Eccl:'prediker', Qoh:'prediker',
         Song:'hooglied', Cant:'hooglied', Isa:'jesaja', Jer:'jeremia', Lam:'klaagliederen', Ezek:'ezechiel', Eze:'ezechiel',
         Dan:'daniel', Hos:'hosea', Joel:'joel', Amos:'amos', Am:'amos', Obad:'obadja', Ob:'obadja', Jonah:'jona', Jon:'jona',
         Mic:'micha', Nah:'nahum', Hab:'habakuk', Zeph:'zefanja', Zep:'zefanja', Hag:'haggai', Zech:'zacharia', Zec:'zacharia', Mal:'maleachi',
-        Matt:'mattheus', Mt:'mattheus', Mark:'markus', Mk:'markus', Luke:'lukas', Lk:'lukas', John:'johannes', Jn:'johannes',
+        Matt:'mattheus', Mt:'mattheus', Mark:'markus', Mk:'markus', Luke:'lukas', Lk:'lukas', John:'johannes', Jn:'johannes', Jo:'johannes',
         Acts:'handelingen', Act:'handelingen', Ac:'handelingen', Rom:'romeinen', Ro:'romeinen',
         '1Cor':'1korinthiers', '2Cor':'2korinthiers', 'I Co':'1korinthiers', 'II Co':'2korinthiers',
         Gal:'galaten', Ga:'galaten', Eph:'efeziers',
         Phil:'filippenzen', Phl:'filippenzen', Col:'kolossenzen',
         '1Thess':'1tessalonicensen', '1Th':'1tessalonicensen', 'I Th':'1tessalonicensen',
         '2Thess':'2tessalonicensen', '2Th':'2tessalonicensen', 'II Th':'2tessalonicensen',
-        '1Tim':'1timotheus', 'I Ti':'1timotheus', '2Tim':'2timotheus', 'II Ti':'2timotheus',
+        '1Tim':'1timotheus', '1 Ti':'1timotheus', 'I Ti':'1timotheus', '2Tim':'2timotheus', '2 Ti':'2timotheus', 'II Ti':'2timotheus',
         Titus:'titus', Tit:'titus', Phlm:'filemon', Phm:'filemon', Heb:'hebreeen', He:'hebreeen',
-        Jas:'jakobus', Ja:'jakobus', '1Pet':'1petrus', 'I Pe':'1petrus', '2Pet':'2petrus', 'II Pe':'2petrus',
-        '1John':'1johannes', '1Jn':'1johannes', 'I Jo':'1johannes', '2John':'2johannes', 'II Jo':'2johannes',
-        '3John':'3johannes', 'III Jo':'3johannes', Jude:'judas', Ju:'judas', Rev:'openbaring', Re:'openbaring',
+        Jas:'jakobus', Ja:'jakobus', '1Pet':'1petrus', '1 Pe':'1petrus', 'I Pe':'1petrus', '2Pet':'2petrus', '2 Pe':'2petrus', 'II Pe':'2petrus',
+        '1John':'1johannes', '1Jn':'1johannes', '1 Jo':'1johannes', 'I Jo':'1johannes',
+        '2John':'2johannes', '2 Jo':'2johannes', 'II Jo':'2johannes',
+        '3John':'3johannes', '3 Jo':'3johannes', 'III Jo':'3johannes', Jude:'judas', Ju:'judas', Rev:'openbaring', Re:'openbaring',
         Tob:'tobit', Jth:'judith', Jdt:'judith', '1Macc':'1makkabeeen', '2Macc':'2makkabeeen', Sir:'jezussirach', Ecclus:'jezussirach', Wis:'boekderwijsheid', Bar:'baruch'
     };
     // Volledige boeknamen (Engels + Nederlands) + gespatieerde nummers als aliassen,
@@ -293,7 +295,7 @@
     var abbrAlt = abbrKeys.map(function (k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|');
     // Optionele boek-afkorting gevolgd door hoofdstuk:vers (met optioneel bereik).
     // Zonder boek = "kale" verwijzing (bv. 15:20) die het laatstgenoemde boek erft.
-    var refRe = new RegExp('(?:\\b(' + abbrAlt + ')\\s?)?(\\d+):(\\d+)((?:[-–]\\d+)?)', 'g');
+    var refRe = new RegExp('(?:\\b(' + abbrAlt + ')\\s?)?(\\d+):(\\d+)((?:[-–]\\d+)?)|(,\\s*)(\\d+)(?!\\d|\\s*:)((?:[-–]\\d+)?)', 'g');
 
     function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
     var BOOKNAMES = {}, CHAPTERCOUNT = {};
@@ -346,9 +348,12 @@
         return links;
     }
     function normalizeLexiconMarkup(html) {
-        return String(html || '')
-            .replace(/<\s*(?:BR|lb)\b[^>]*\/?\s*>/gi, '<br>')
-            .replace(/__\s*(\d+)\.\s*/g, '<span class="lex-number">$1.</span> ');
+        var normalized = String(html || '').replace(/<\s*(?:BR|lb)\b[^>]*\/?\s*>/gi, '<br>');
+        return normalized.replace(/<br>\s*(?:__\s*)?(\d+)\.\s*([\s\S]*?)(?=<br>\s*(?:__\s*)?\d+\.\s*|$)/gi,
+            function (_match, number, body) {
+                return '<div class="lex-numbered-item"><span class="lex-number">' + number +
+                    '.</span><div class="lex-item-body">' + body.trim() + '</div></div>';
+            }).replace(/__\s*(\d+)\.\s*/g, '<span class="lex-number">$1.</span> ');
     }
     function linkifyTbesg(html, showRefs) {
         return normalizeLexiconMarkup(html).replace(/<ref='([^']+)'>([^<]*)<\/ref>/g, function (m, attr, txt) {
@@ -399,10 +404,16 @@
     // Linkify verwijzingen in BDB/Abbott-definities: toon Nederlandse boeknaam,
     // en link ook kale vervolg-verwijzingen (die het vorige boek erven).
     function linkifyAbbr(html, showRefs) {
-        var lastBook = null;
+        var lastBook = null, lastChapter = null, lastReferenceEnd = -1;
         return transformTextOutsideAnchors(html, function (txt) {
-            return txt.replace(refRe, function (mm, ab, ch, vs, rng) {
+            return txt.replace(refRe, function (mm, ab, ch, vs, rng, comma, continuedVerse, continuedRange, offset) {
                 if (!showRefs) return '';
+                if (continuedVerse) {
+                    if (!lastBook || !lastChapter || offset !== lastReferenceEnd) return mm;
+                    lastReferenceEnd = offset + mm.length;
+                    var continuedDisp = bookName(lastBook) + ' ' + lastChapter + ':' + continuedVerse + (continuedRange || '');
+                    return (comma || ', ') + '<a class="lex-ref" target="_top" href="index.html#' + lastBook + '/' + lastChapter + '/' + continuedVerse + '">' + continuedDisp + '</a>';
+                }
                 var book = null;
                 if (ab && ABBR[ab]) { book = ABBR[ab]; lastBook = book; }
                 if (!book) {
@@ -411,6 +422,8 @@
                     // alleen linken als het hoofdstuk in dat boek bestaat (voorkomt bv. "37:35" -> Spreuken)
                     if (CHAPTERCOUNT[book] && +ch > CHAPTERCOUNT[book]) return mm;
                 }
+                lastChapter = ch;
+                lastReferenceEnd = offset + mm.length;
                 // Elke verwijzing als volledige tekst: altijd de volle boeknaam tonen.
                 var disp = bookName(book) + ' ' + ch + ':' + vs + (rng || '');
                 return '<a class="lex-ref" target="_top" href="index.html#' + book + '/' + ch + '/' + vs + '">' + disp + '</a>';
