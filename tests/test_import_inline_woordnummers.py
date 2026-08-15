@@ -287,6 +287,22 @@ def test_johannes_2_publiceert_ieder_tr_token_precies_eenmaal():
         assert sorted(source_indices) == list(range(len(ground)))
         assert all(mapping.get("reviewstatus") == "handmatig_gecontroleerd" for mapping in mappings)
 
+
+def test_johannes_3_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "3.json").read_text(encoding="utf-8"))
+    assert len(data["verses"]) == 36
+    assert sum(len(verse.get("grondtekst", [])) for verse in data["verses"]) == 672
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        mappings = verse.get("woordnummers", [])
+        source_indices = [
+            index for mapping in mappings
+            for index in mapping.get("herkomst", {}).get("bronindices", [])
+        ]
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+        assert all(mapping.get("reviewstatus") == "handmatig_gecontroleerd" for mapping in mappings)
+
 def test_audit_reports_johannes_tr_coverage_and_valid_provenance():
     report = AUDIT.audit()
 

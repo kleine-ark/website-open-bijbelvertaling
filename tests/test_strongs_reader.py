@@ -409,6 +409,42 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_johannes_3_rendert_alle_672_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/3")
+        try:
+            self.enable_strongs(page)
+            self.assertEqual(page.locator('.verse-row .col-2026 .strongs-inline').count(), 672)
+        finally:
+            page.close()
+
+    def test_johannes_3_16_plaatst_eniggeborenstrong_bij_eniggeboren_zoon(self):
+        page = self.open_reader("johannes/3")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="16"] .col-2026 [data-strongs="G3439"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('eniggeboren Zoon gegeven heeft');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_3_36_plaatst_toornstrong_bij_de_toorn_van_god(self):
+        page = self.open_reader("johannes/3")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="36"] .col-2026 [data-strongs="G3709"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('de toorn van God');
+            }"""))
+        finally:
+            page.close()
+
     def test_mattheus_1_1_plaatst_christusstrong_na_christus(self):
         page = self.open_reader("mattheus/1")
         try:
