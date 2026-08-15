@@ -20,6 +20,13 @@ TRADITIONAL_FORM_STRONGS = {
     ("G1510", "V-IAI-3S"): "G2258",  # ἦν — was
 }
 
+# De klassieke KJV/Strong-presentatielaag gebruikt voor ἦν bij G2258 de
+# samengevatte werkwoordscode G5713. De UTR-bron bewaart daarnaast de
+# expliciet actieve Robinson-analyse als G5707 / V-IAI-3S.
+TRADITIONAL_TVM_OVERRIDES = {
+    ("G2258", "V-IAI-3S"): "G5713",
+}
+
 
 def _strongs(value):
     if isinstance(value, list):
@@ -94,15 +101,19 @@ def parse_tr_utr(path):
                 continue
             lemma = f"G{int(match.group(2))}"
             morphology = match.group(4)
+            display_strong = TRADITIONAL_FORM_STRONGS.get(
+                (lemma, morphology), lemma
+            )
+            raw_tvm = f"G{match.group(3)}" if match.group(3) else None
             tokens.append(
                 {
                     "text": match.group(1),
                     "lemma_strong": lemma,
-                    "display_strong": TRADITIONAL_FORM_STRONGS.get(
-                        (lemma, morphology), lemma
-                    ),
+                    "display_strong": display_strong,
                     "morphology": morphology,
-                    "tvm": f"G{match.group(3)}" if match.group(3) else None,
+                    "tvm": TRADITIONAL_TVM_OVERRIDES.get(
+                        (display_strong, morphology), raw_tvm
+                    ),
                 }
             )
         verses[reference] = tokens

@@ -110,7 +110,7 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             self.enable_strongs(page)
             cell = page.locator('.verse-row[data-verse="1"] .col-2026')
             first = cell.locator('[data-strongs="G1722"]').first
-            self.assertEqual(first.inner_text(), "(G1722)")
+            self.assertEqual(first.inner_text(), "<1722>")
             styles = first.evaluate("""el => ({
                 verticalAlign: getComputedStyle(el).verticalAlign,
                 backgroundColor: getComputedStyle(el).backgroundColor
@@ -445,19 +445,18 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_johannes_4_1_tot_10_rendert_alle_161_gecontroleerde_tr_tokens_inline(self):
+    def test_johannes_4_rendert_alle_953_gecontroleerde_tr_tokens_inline(self):
         page = self.open_reader("johannes/4")
         try:
             self.enable_strongs(page)
-            verses = page.locator('.verse-row[data-verse="1"], .verse-row[data-verse="2"], .verse-row[data-verse="3"], .verse-row[data-verse="4"], .verse-row[data-verse="5"], .verse-row[data-verse="6"], .verse-row[data-verse="7"], .verse-row[data-verse="8"], .verse-row[data-verse="9"], .verse-row[data-verse="10"]')
             per_verse = {
                 number: page.locator(f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline').count()
-                for number in range(1, 11)
+                for number in range(1, 55)
             }
-            rendered_ten = page.locator('.verse-row[data-verse="10"] .col-2026 .strongs-inline').evaluate_all(
+            rendered_last = page.locator('.verse-row[data-verse="54"] .col-2026 .strongs-inline').evaluate_all(
                 "elements => elements.map(element => element.dataset.strongs)"
             )
-            self.assertEqual(sum(per_verse.values()), 161, {"counts": per_verse, "verse10": rendered_ten})
+            self.assertEqual(sum(per_verse.values()), 953, {"counts": per_verse, "verse54": rendered_last})
         finally:
             page.close()
 
@@ -486,6 +485,77 @@ class StrongsReaderBrowserTests(unittest.TestCase):
                 const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
                 return fragment.textContent.trimEnd().endsWith('levend water');
             }"""))
+        finally:
+            page.close()
+
+    def test_johannes_4_14_plaatst_toekomstcode_bij_zal_geven(self):
+        page = self.open_reader("johannes/4")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="14"] .col-2026 [data-strongs="G1325"]').first
+            self.assertEqual(trigger.inner_text(), "<1325>(5692)")
+            self.assertEqual(trigger.get_attribute("data-tvm"), "G5692")
+        finally:
+            page.close()
+
+    def test_johannes_4_25_plaatst_messiasstrong_bij_de_messias(self):
+        page = self.open_reader("johannes/4")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="25"] .col-2026 [data-strongs="G3323"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('dat de Messias komt');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_4_42_plaatst_zaligmakerstrong_bij_zaligmaker(self):
+        page = self.open_reader("johannes/4")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="42"] .col-2026 [data-strongs="G4990"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('de Zaligmaker van de wereld');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_4_46_toont_vormnummer_en_tijdcode_bij_was(self):
+        page = self.open_reader("johannes/4")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="46"] .col-2026 [data-strongs="G2258"]')
+            self.assertEqual(trigger.inner_text(), "<2258>(5713)")
+            self.assertEqual(trigger.get_attribute("data-tvm"), "G5713")
+        finally:
+            page.close()
+
+    def test_johannes_5_1_tot_10_rendert_alle_172_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/5")
+        try:
+            self.enable_strongs(page)
+            per_verse = {
+                number: page.locator(f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline').count()
+                for number in range(1, 11)
+            }
+            self.assertEqual(sum(per_verse.values()), 172, per_verse)
+        finally:
+            page.close()
+
+    def test_johannes_5_5_gebruikt_de_uitgeschreven_tr_getalvariant(self):
+        page = self.open_reader("johannes/5")
+        try:
+            self.enable_strongs(page)
+            verse = page.locator('.verse-row[data-verse="5"] .col-2026')
+            self.assertEqual(verse.locator('[data-strongs="G5144"]').count(), 1)
+            self.assertEqual(verse.locator('[data-strongs="G3638"]').count(), 1)
+            self.assertEqual(verse.locator('[data-strongs="G2258"]').inner_text(), "<2258>(5713)")
         finally:
             page.close()
 
@@ -643,8 +713,8 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             )
             self.assertIn('data-strongs="H1"', html)
             self.assertIn('data-strongs="G3056"', html)
-            self.assertIn("(H1)</button>", html)
-            self.assertIn("(G3056)</button>", html)
+            self.assertIn("&lt;1&gt;</button>", html)
+            self.assertIn("&lt;3056&gt;</button>", html)
         finally:
             page.close()
 
@@ -713,7 +783,7 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             self.enable_strongs(page)
             first = page.locator('.verse-row[data-verse="1"] .col-2026')
             was = first.locator('[data-strongs="G2258"]').first
-            self.assertEqual(was.inner_text(), "(G2258)")
+            self.assertEqual(was.inner_text(), "<2258>(5713)")
             self.assertTrue(was.evaluate("""el => {
                 const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
                 const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
@@ -727,6 +797,18 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             self.assertEqual(unrendered.count(), 1)
             unrendered.click()
             page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)
+        finally:
+            page.close()
+
+    def test_johannes_1_2_toont_woordnummer_met_tijdcode(self):
+        page = self.open_reader("johannes/1")
+        try:
+            self.enable_strongs(page)
+            was = page.locator(
+                '.verse-row[data-verse="2"] .col-2026 [data-strongs="G2258"]'
+            ).first
+            self.assertEqual(was.inner_text(), "<2258>(5713)")
+            self.assertEqual(was.get_attribute("data-tvm"), "G5713")
         finally:
             page.close()
 
@@ -749,7 +831,7 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         try:
             self.enable_strongs(page)
             trigger = page.locator('.verse-row[data-verse="1"] .col-2026 [data-strongs="OVG3907"]')
-            self.assertEqual(trigger.inner_text(), "(OVG3907)")
+            self.assertEqual(trigger.inner_text(), "<3907>")
             trigger.click()
             sheet = page.locator("#strongs-sheet")
             sheet.wait_for(state="visible", timeout=5_000)
@@ -830,7 +912,7 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             page.goto(f"{self.base_url}/lees.html#johannes/1", wait_until="domcontentloaded")
             trigger = page.locator('.verse-span[data-verse="1"] .verse-text [data-strongs="G1722"]')
             trigger.wait_for(state="visible", timeout=15_000)
-            self.assertEqual(trigger.inner_text(), "(G1722)")
+            self.assertEqual(trigger.inner_text(), "<1722>")
             self.assertEqual(page.locator('.verse-span[data-verse="1"] .strongs-alignment').count(), 0)
             trigger.click()
             page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)

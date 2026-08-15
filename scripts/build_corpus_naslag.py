@@ -79,6 +79,61 @@ NATURE_EXTRA_ITEMS = {
     ],
 }
 
+# Korte, leesbare toelichtingen voor de dierkaarten. De catalogus bevat de
+# zoekvormen; deze laag voorkomt kale standaardzinnen in de gepubliceerde wiki.
+ANIMAL_CARD_DESCRIPTIONS = {
+    "lam": "Een jong schaap, verbonden met het paasoffer en het beeld van onschuldige overgave.",
+    "kalf": "Een jong rund, genoemd bij feestmaaltijden, offers en het gouden kalf in de woestijn.",
+    "stier": "Een mannelijk rund dat in offers, veeteelt en beelden van kracht voorkomt.",
+    "os": "Een werkdier voor ploeg en dorsvloer, dat ook als offerdier wordt genoemd.",
+    "koe": "Een vrouwelijk rund, bekend uit Farao's droom van de vette en magere koeien.",
+    "muilezel": "Een kruising van paard en ezel, in de Bijbel vooral een rijdier van aanzien.",
+    "haas": "Een snel wild dier dat in de spijswetten als onrein wordt gerekend.",
+    "klipdas": "Een klein rotsbewonend dier dat in Spreuken wijs heet omdat het zijn huis in de rotsen maakt.",
+    "hert": "Een sierlijk wild dier, vaak beeld van snelheid, verlangen en levenskracht.",
+    "ree": "Een rank hertachtig dier dat in liefdespoëzie en beelden van sierlijkheid voorkomt.",
+    "wilde-os": "Een krachtig wild rund; welke moderne soort precies bedoeld is, blijft onzeker.",
+    "nijlpaard": "Het dier dat vaak met Behemoth wordt verbonden, al is die identificatie niet zeker.",
+    "krokodil": "Een dier dat soms met Leviathan wordt verbonden, zonder dat iedere tekst dit zeker maakt.",
+    "olifant": "Een groot dier dat in de Makkabeeënboeken als oorlogsdier wordt genoemd.",
+    "aap": "Een exotisch dier dat met de handel van Salomo wordt verbonden.",
+    "pauw": "Een exotische vogel die bij Salomo's handelsvloot wordt vermeld.",
+    "arend": "Een grote roofvogel, beeld van snelheid, bescherming en vernieuwde kracht.",
+    "gier": "Een aasvogel die in de spijswetten onder de onreine vogels wordt genoemd.",
+    "ooievaar": "Een trekvogel die de Bijbel kent en in de spijswetten als onrein noemt.",
+    "reiger": "Een waadvogel die in de lijsten van onreine vogels wordt genoemd.",
+    "pelikaan": "Een watervogel die in de Psalmen en profeten het beeld van verlatenheid versterkt.",
+    "nachtuil": "Een nachtelijke vogel uit de lijsten van onreine dieren.",
+    "struisvogel": "Een woestijnvogel die in Job en de profeten wordt genoemd.",
+    "kwartel": "Een trekvogel die Israël in de woestijn als voedsel ontvangt.",
+    "mus": "Een klein vogeltje dat Gods zorg voor het geringe leven onderstreept.",
+    "zwaluw": "Een snelle trekvogel die terugkeert naar haar nest, ook nabij Gods huis.",
+    "haan": "Een boerderijdier waarvan het kraaien de nacht en de ochtend markeert.",
+    "hen": "Een vogel die haar kuikens beschermt en zo beeld wordt van zorgende beschutting.",
+    "vleermuis": "Een nachtdier dat in de spijswetten bij de onreine dieren wordt genoemd.",
+    "sprinkhaan": "Een insect dat oogsten kan verwoesten en in de profeten een legerbeeld wordt.",
+    "kever": "Een klein kruipend dier dat in de Bijbelse dierlijsten wordt genoemd.",
+    "mier": "Een klein insect dat Spreuken als voorbeeld van vlijt en vooruitzien gebruikt.",
+    "bij": "Een insect dat honing voortbrengt en in de Bijbel ook een beeld van een zwermende vijand is.",
+    "wesp": "Een stekend insect dat als beeld van verdrijving wordt gebruikt.",
+    "mug": "Een zeer klein insect dat Jezus gebruikt om uiterlijke nauwkeurigheid te ontmaskeren.",
+    "mot": "Een insect dat kleding en bezit aantast en zo vergankelijkheid verbeeldt.",
+    "worm": "Een klein dier dat verval, vernedering en sterfelijkheid in beeld brengt.",
+    "schorpioen": "Een giftig woestijndier dat gevaar en harde heerschappij verbeeldt.",
+    "kikker": "Een waterdier dat in Egypte als plaag verschijnt en in Openbaring als onreine geest wordt verbeeld.",
+    "walvis": "Een groot zeedier; de Hebreeuwse term wijst niet noodzakelijk op een moderne walvissoort.",
+    "mol": "Een klein gravend dier dat in Jesaja naast vleermuizen wordt genoemd.",
+    "muis": "Een klein knaagdier dat in de wet en in het verhaal van de Filistijnen voorkomt.",
+    "schildpad": "Een kruipend dier uit de spijswetten, al is de historische soortidentificatie onzeker.",
+    "slak": "Een klein weekdier dat in een psalm het beeld van wegsmelten en vergaan draagt.",
+    "bloedzuiger": "Een parasiet die Spreuken noemt als beeld van onverzadigbare hebzucht.",
+    "vos": "Een sluw roofdier; met jakhals verbonden aan verwoesting en verlaten plaatsen.",
+    "hond": "Een dier dat als bewaker voorkomt, maar in veel teksten een beeld van verachting draagt.",
+    "zwijn": "Een wild varken, gebruikt als beeld voor wie het heilige niet waardeert.",
+    "beer": "Een sterk roofdier dat de Bijbel gebruikt voor plotselinge en gevaarlijke kracht.",
+    "luipaard": "Een snel gevlekt roofdier, beeld van kracht en onverwachte dreiging.",
+}
+
 UNCERTAIN_NATURE = {
     "wilde-os": ("onzeker", "Het Bijbelse dierlemma is zeker; de moderne soortidentificatie is omstreden."),
     "nijlpaard": ("waarschijnlijk", "Behemoth wordt vaak met het nijlpaard verbonden, maar de identificatie is niet zeker."),
@@ -262,8 +317,11 @@ def _build_nature_category(
         if not mentions:
             continue
         certainty, note = UNCERTAIN_NATURE.get(source["id"], ("zeker", None))
+        description = source["beschrijving"]
+        if category == "dieren":
+            description = ANIMAL_CARD_DESCRIPTIONS.get(source["id"], description)
         item = {
-            "id": source["id"], "naam": source["naam"], "beschrijving": source["beschrijving"],
+            "id": source["id"], "naam": source["naam"], "beschrijving": description,
             "verzen": [mention["ref"] for mention in mentions], "vermeldingen": mentions,
             "tekstvormen": sorted(found_forms, key=str.casefold), "zekerheid": certainty,
             "reviewStatus": "agent-reviewed", "humanReviewed": False,

@@ -1898,7 +1898,7 @@
       "number": 14,
       "textSV1888": "En Hiram had den koning gezonden honderd en twintig talenten gouds.",
       "text1637": "Ende Hiram hadde den Coninck gesonden, hondert, ende [23] twintich talenten gouts.",
-      "text2026": "En Hiram had de koning gezonden honderd en twintig talenten gouds.",
+      "text2026": "En Hiram had de koning gezonden honderd en twintig talenten goud.",
       "marginNotes": [
         {
           "marker": "23",
@@ -1945,7 +1945,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "En Hiram had de koning gezonden honderd en<sup class=\"note-marker\" data-note=\"23\">23</sup> twintig talenten gouds.",
+      "text2026_html": "En Hiram had de koning gezonden honderd en<sup class=\"note-marker\" data-note=\"23\">23</sup> twintig talenten goud.",
       "textSV1888_html": "En Hiram had den koning gezonden honderd en<sup class=\"note-marker\" data-note=\"23\">23</sup> twintig talenten gouds.",
       "text1637_html": "Ende Hiram hadde den Coninck gesonden, hondert, ende <sup class=\"note-marker\" data-note=\"23\">23</sup> twintich talenten gouts.",
       "phraseDiff": [
@@ -1953,6 +1953,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "gouds.",
+          "new": "goud.",
+          "principe": "V1232"
         }
       ]
     },
@@ -2132,7 +2137,7 @@
         {
           "old": "oorzaak van het uitschot, dat de",
           "new": "reden waarom",
-          "principe": null
+          "principe": "MR-SK-023"
         },
         {
           "old": "deed opkomen,",
@@ -2794,7 +2799,7 @@
         {
           "old": "gebracht op slaafsen uitschot",
           "new": "tot slavenarbeid verplicht",
-          "principe": null
+          "principe": "MR-SK-045"
         },
         {
           "old": "dezen",

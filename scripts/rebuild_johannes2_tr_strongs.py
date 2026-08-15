@@ -96,7 +96,7 @@ SPECS = {
 
 def mapping(anchor, token_ids, tokens, verse):
     chosen = [tokens[index] for index in token_ids]
-    return {
+    record = {
         "tekst": anchor,
         "voorkomen": 1,
         "strongs": [token["display_strong"] for token in chosen],
@@ -116,6 +116,10 @@ def mapping(anchor, token_ids, tokens, verse):
             "bronindices": token_ids,
         },
     }
+    tvm = [token.get("tvm") for token in chosen]
+    if any(tvm):
+        record["tvm"] = tvm
+    return record
 
 
 def build(utr_path: Path, osis_path: Path, write=False):

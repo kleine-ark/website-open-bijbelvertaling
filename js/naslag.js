@@ -114,8 +114,8 @@
             var zoekTekst = d.personen
                 ? [it.naam, it.onderscheiding || ''].join(' ')
                 : [it.naam, it.beschrijving || '', it.gebruik || '', it.onderscheiding || ''].join(' ');
-            h += '<a class="ns-kaart" data-zoektekst="' + esc(zoekTekst) + '" href="?' + (d.personen ? 'persoon' : 'item') + '=' + encodeURIComponent(it.id) + '">' +
-                 (it.afbeelding ? '<img class="ns-kaart-beeld" src="' + esc(it.afbeelding) + '" alt="" loading="lazy" width="640" height="640">' : '') +
+            h += '<a class="ns-kaart' + (d.titel === 'Dieren in de Bijbel' ? ' ns-kaart--dieren' : '') + '" data-zoektekst="' + esc(zoekTekst) + '" href="?' + (d.personen ? 'persoon' : 'item') + '=' + encodeURIComponent(it.id) + '">' +
+                 (it.afbeelding ? '<img class="ns-kaart-beeld" src="' + esc(it.afbeelding) + '" alt="' + esc(it.naam) + '" loading="lazy" width="640" height="640">' : '') +
                  (d.nummerType ? '<span class="ns-nummer">' + esc(d.nummerType) + ' ' + (i + 1) + '</span>' : '') +
                  '<span class="ns-kaart-naam">' + esc(it.naam) + '</span>' +
                  (it.beschrijving ? '<span class="ns-kaart-beschrijving">' + esc(eersteZin(it.beschrijving)) + '</span>' : '') +
@@ -165,7 +165,7 @@
             h += '<p class="ns-onderscheiding">' + esc(it.onderscheiding) + '</p>';
         }
         h += '<p class="ns-beschrijving">' + esc(it.beschrijving) + '</p>';
-        if (d.titel === 'Materialen in de Bijbel' || it.wikipedia) {
+        if (d.titel === 'Materialen in de Bijbel' || d.titel === 'Dieren in de Bijbel' || it.wikipedia) {
             h += '<p class="ns-externe-bron"><a href="' + esc(wikipediaUrl(it)) +
                 '" target="_blank" rel="noopener noreferrer">Lees meer op Wikipedia <span aria-hidden="true">↗</span></a></p>';
         }

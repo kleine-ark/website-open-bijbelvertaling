@@ -2401,7 +2401,7 @@
       "number": 19,
       "textSV1888": "En des HEEREN woord geschiedde tot Jeremia, zeggende:",
       "text1637": "Ende des HEEREN woort geschiedde tot Ieremia, seggende:",
-      "text2026": "En het woord van JAHWEH gebeurde tot Jeremia, zeggende:",
+      "text2026": "En het woord van JAHWEH kwam tot Jeremia, zeggende:",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -2435,18 +2435,23 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En het woord van JAHWEH gebeurde tot Jeremia, zeggende:</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En het woord van JAHWEH kwam tot Jeremia, zeggende:</i></span>",
       "text1637_html": "Ende des HEEREN woort geschiedde tot Ieremia, seggende:",
       "phraseDiff": [
         {
           "old": "des HEEREN",
           "new": "het",
-          "principe": "N3"
+          "principe": "V1230"
         },
         {
           "old": "geschiedde",
-          "new": "van JAHWEH gebeurde",
-          "principe": null
+          "new": "van JAHWEH kwam",
+          "principe": "V1230"
+        },
+        {
+          "old": "des HEEREN",
+          "new": "het",
+          "principe": "N3"
         }
       ]
     },

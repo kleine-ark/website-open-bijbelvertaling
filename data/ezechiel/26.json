@@ -5,7 +5,7 @@
    "number": 1,
    "textSV1888": "En het gebeurde in het elfde jaar, op den eersten der maand, dat des HEEREN woord tot mij geschiedde, zeggende:",
    "text1637": "ENde het gebeurde in’t [1] elfste jaer, op den eersten der [2] maent; [dat] des HEEREN woort tot my geschiedde, seggende:",
-   "text2026": "En het gebeurde in het elfde jaar, op de eerste van de maand, dat het woord van JAHWEH tot mij gebeurde, zeggende:",
+   "text2026": "En het gebeurde in het elfde jaar, op de eerste van de maand, dat het woord van JAHWEH tot mij kwam, zeggende:",
    "marginNotes": [
     {
      "marker": "1",
@@ -79,10 +79,15 @@
      "morph": "HR/Vqc"
     }
    ],
-   "text2026_html": "En het gebeurde in<sup class=\"note-marker\" data-note=\"1\">1</sup> het elfde jaar, op de eerste van<sup class=\"note-marker\" data-note=\"2\">2</sup> de maand, dat het woord van JAHWEH tot mij gebeurde, zeggende:",
+   "text2026_html": "En het gebeurde in<sup class=\"note-marker\" data-note=\"1\">1</sup> het elfde jaar, op de eerste van<sup class=\"note-marker\" data-note=\"2\">2</sup> de maand, dat het woord van JAHWEH tot mij kwam, zeggende:",
    "textSV1888_html": "En het gebeurde in<sup class=\"note-marker\" data-note=\"1\">1</sup> het elfde jaar, op den eersten der<sup class=\"note-marker\" data-note=\"2\">2</sup> maand, dat des HEEREN woord tot mij geschiedde, zeggende:",
    "text1637_html": "ENde het gebeurde in’t <sup class=\"note-marker\" data-note=\"1\">1</sup> elfste jaer, op den eersten der <sup class=\"note-marker\" data-note=\"2\">2</sup> maent; [dat] des HEEREN woort tot my geschiedde, seggende:",
    "phraseDiff": [
+     {
+       "old": "het woord des HEEREN tot mij geschiedde",
+       "new": "het woord van JAHWEH tot mij kwam",
+       "principe": "V1230"
+     },
     {
      "old": "den eersten der",
      "new": "de eerste van de",
@@ -812,7 +817,7 @@
    "number": 8,
    "textSV1888": "Hij zal uw dochteren op het veld met het zwaard doden, en hij zal sterkten tegen u maken, en een wal tegen u opwerpen, en rondassen tegen u opheffen.",
    "text1637": "Hy sal uwe [18] dochteren op den velde met den sweerde dooden: ende hy sal [19] sterckten tegen u maken, ende eenen [20] wal tegen u opwerpen, ende [21] rondassen tegen u opheffen.",
-   "text2026": "Hij zal uw dochters op het veld met het zwaard doden, en hij zal vestingen tegen u maken, en een wal tegen u opwerpen, en rondassen tegen u opheffen.",
+   "text2026": "Hij zal uw dochters op het veld met het zwaard doden, en hij zal vestingen tegen u maken, en een wal tegen u opwerpen, en grote schilden tegen u opheffen.",
    "marginNotes": [
     {
      "marker": "18",
@@ -910,7 +915,7 @@
      "morph": "HNcfsa"
     }
    ],
-   "text2026_html": "<span class=\"god-speaks\"><i>Hij zal uw<sup class=\"note-marker\" data-note=\"18\">18</sup> dochters op het veld met het zwaard doden, en hij zal<sup class=\"note-marker\" data-note=\"19\">19</sup> vestingen tegen u maken, en een<sup class=\"note-marker\" data-note=\"20\">20</sup> wal tegen u opwerpen, en<sup class=\"note-marker\" data-note=\"21\">21</sup> rondassen tegen u opheffen.</i></span>",
+   "text2026_html": "<span class=\"god-speaks\"><i>Hij zal uw<sup class=\"note-marker\" data-note=\"18\">18</sup> dochters op het veld met het zwaard doden, en hij zal<sup class=\"note-marker\" data-note=\"19\">19</sup> vestingen tegen u maken, en een<sup class=\"note-marker\" data-note=\"20\">20</sup> wal tegen u opwerpen, en<sup class=\"note-marker\" data-note=\"21\">21</sup> grote schilden tegen u opheffen.</i></span>",
    "textSV1888_html": "Hij zal uw<sup class=\"note-marker\" data-note=\"18\">18</sup> dochteren op het veld met het zwaard doden, en hij zal<sup class=\"note-marker\" data-note=\"19\">19</sup> sterkten tegen u maken, en een<sup class=\"note-marker\" data-note=\"20\">20</sup> wal tegen u opwerpen, en<sup class=\"note-marker\" data-note=\"21\">21</sup> rondassen tegen u opheffen.",
    "text1637_html": "Hy sal uwe <sup class=\"note-marker\" data-note=\"18\">18</sup> dochteren op den velde met den sweerde dooden: ende hy sal <sup class=\"note-marker\" data-note=\"19\">19</sup> sterckten tegen u maken, ende eenen <sup class=\"note-marker\" data-note=\"20\">20</sup> wal tegen u opwerpen, ende <sup class=\"note-marker\" data-note=\"21\">21</sup> rondassen tegen u opheffen.",
    "phraseDiff": [
@@ -923,6 +928,11 @@
      "old": "sterkten",
      "new": "vestingen",
      "principe": "V342"
+    },
+    {
+     "old": "rondassen",
+     "new": "grote schilden",
+     "principe": "V1236"
     }
    ]
   },
