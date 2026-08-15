@@ -153,10 +153,12 @@ def audit():
                             report["invalid_inline"].append({**location, "reason": "invalid_strongs", "number": number})
                         else:
                             linked_strongs[number] += 1
-                    target = str(mapping.get("tekst") or "")
+                    target = str(mapping.get("tekst") or mapping.get("anker") or "")
                     occurrence = mapping.get("voorkomen")
                     if not target or not isinstance(occurrence, int) or occurrence < 1 or verse_text.casefold().count(target.casefold()) < occurrence:
                         report["invalid_inline"].append({**location, "reason": "stale_anchor", "target": target})
+                    if not mapping.get("tekst") and mapping.get("plaats") not in {"voor", "na"}:
+                        report["invalid_inline"].append({**location, "reason": "invalid_insertion_position"})
                     confidence = mapping.get("confidence")
                     if status != "handmatig_gecontroleerd" or not isinstance(confidence, (int, float)) or not 0 <= confidence <= 1:
                         report["invalid_inline"].append({**location, "reason": "review_metadata"})

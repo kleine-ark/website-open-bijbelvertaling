@@ -13,6 +13,14 @@ STRONG_RE = re.compile(r"[HG]\d+[A-Za-z]?")
 REVIEWED = "handmatig_gecontroleerd"
 
 
+# De Robinson/Scrivener-bron bewaart bij werkwoorden het lemma-Strongnummer.
+# Oudere Strong-studiebijbels tonen voor enkele veelgebruikte vormen een eigen
+# vormnummer.  Die presentatielaag blijft bewust gescheiden van het lemma.
+TRADITIONAL_FORM_STRONGS = {
+    ("G1510", "V-IAI-3S"): "G2258",  # ἦν — was
+}
+
+
 def _strongs(value):
     if isinstance(value, list):
         values = value
@@ -50,10 +58,87 @@ def parse_usj(path):
                 if numbers:
                     text = "".join(part for part in item.get("content", []) if isinstance(part, str))
                     verses[(chapter, verse)].append({"text": text, "strongs": numbers})
-            if kind not in {"char", "verse", "chapter"} and isinstance(item.get("content"), list):
+            if isinstance(item.get("content"), list):
                 visit(item["content"])
 
     visit(document.get("content", []))
+    return verses
+
+
+def parse_tr_utr(path):
+    """Lees Robinsons publieke TR-formaat met lemma en morfologie apart."""
+    raw = Path(path).read_text(encoding="utf-8")
+    records = {}
+    current = None
+    for line in raw.splitlines():
+        match = re.match(r"^(\d+):(\d+)\s+(.*)$", line)
+        if match:
+            current = (int(match.group(1)), int(match.group(2)))
+            records[current] = match.group(3)
+        elif current is not None:
+            records[current] += " " + line.strip()
+
+    verses = {}
+    token_pattern = re.compile(r"(\S+)\s+(\d+)(?:\s+(\d{4}))?\s+\{([^}]+)\}")
+    for reference, text in records.items():
+        # Robinson noteert enkele spellingvarianten als
+        # ``| vorm_a | vorm_b | 3478 {N-PRI}``. Voor de tokenlaag kiezen we
+        # de eerste vermelde TR-vorm; de varianten blijven in de bron zelf.
+        text = re.sub(r"\|\s*([^|\s]+)\s*\|\s*[^|\s]+\s*\|\s*(\d+)", r"\1 \2", text)
+        tokens = []
+        for match in token_pattern.finditer(text):
+            # Een beperkt aantal UTR-regels bevat na een woord twee mogelijke
+            # morfologiecodes zonder herhaalde woordvorm. Zo'n numerieke of
+            # accolade-voorloper is metadata en geen zelfstandig Grieks token.
+            if match.group(1).isdigit() or "{" in match.group(1) or "}" in match.group(1):
+                continue
+            lemma = f"G{int(match.group(2))}"
+            morphology = match.group(4)
+            tokens.append(
+                {
+                    "text": match.group(1),
+                    "lemma_strong": lemma,
+                    "display_strong": TRADITIONAL_FORM_STRONGS.get(
+                        (lemma, morphology), lemma
+                    ),
+                    "morphology": morphology,
+                    "tvm": f"G{match.group(3)}" if match.group(3) else None,
+                }
+            )
+        verses[reference] = tokens
+    return verses
+
+
+def parse_tagnt_tr(path, book="Jhn", chapter=None):
+    """Lees alleen de Scrivener/TR-woorden uit STEPBible TAGNT."""
+    pattern = re.compile(rf"^{re.escape(book)}\.(\d+)\.(\d+)#(\d+)=")
+    verses = {}
+    for line in Path(path).read_text(encoding="utf-8-sig").splitlines():
+        columns = line.split("\t")
+        match = pattern.match(columns[0]) if columns else None
+        if not match or len(columns) < 13:
+            continue
+        current_chapter, verse, sequence = map(int, match.groups())
+        if chapter is not None and current_chapter != int(chapter):
+            continue
+        if "TR" not in columns[5].split("+"):
+            continue
+        tagged = re.match(r"(G\d+[A-Za-z]?)=([^\s]+)", columns[3])
+        if not tagged:
+            continue
+        lemma, morphology = tagged.groups()
+        alternatives = _strongs(columns[12])
+        display = alternatives[0] if alternatives else lemma
+        greek = columns[1].split(" (", 1)[0].strip().rstrip(",.;·")
+        verses.setdefault((current_chapter, verse), []).append({
+            "text": greek,
+            "lemma_strong": lemma,
+            "display_strong": display,
+            "morphology": morphology,
+            "sequence": sequence,
+        })
+    for tokens in verses.values():
+        tokens.sort(key=lambda item: item["sequence"])
     return verses
 
 
@@ -155,9 +240,10 @@ def apply_review_file(review_path, source_dir, data_dir=None, write=False):
 
         for verse_review in book.get("verses", []):
             number = int(verse_review["verse"])
+            source_number = int(verse_review.get("source_verse", number))
             verse = by_number[number]
-            reference = f"{book['code']} {book['chapter']}:{number}"
-            external = external_verses.get((int(book["chapter"]), number), [])
+            reference = f"{book['code']} {book['chapter']}:{source_number}"
+            external = external_verses.get((int(book["chapter"]), source_number), [])
             local = verse.get("grondtekst") or []
             proposed = [
                 build_inline_mapping(item, external, local, source, reference)
