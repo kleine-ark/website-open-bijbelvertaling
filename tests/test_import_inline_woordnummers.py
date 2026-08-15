@@ -72,7 +72,7 @@ def test_parse_tr_utr_separates_display_strong_morphology_and_lemma(tmp_path):
     assert verses[(1, 1)] == [
         {"text": "en", "lemma_strong": "G1722", "display_strong": "G1722", "morphology": "PREP", "tvm": None},
         {"text": "arch", "lemma_strong": "G746", "display_strong": "G746", "morphology": "N-DSF", "tvm": None},
-        {"text": "hn", "lemma_strong": "G1510", "display_strong": "G2258", "morphology": "V-IAI-3S", "tvm": "G5707"},
+        {"text": "hn", "lemma_strong": "G1510", "display_strong": "G2258", "morphology": "V-IAI-3S", "tvm": "G5713"},
         {"text": "o", "lemma_strong": "G3588", "display_strong": "G3588", "morphology": "T-NSM", "tvm": None},
         {"text": "logov", "lemma_strong": "G3056", "display_strong": "G3056", "morphology": "N-NSM", "tvm": None},
     ]
@@ -287,6 +287,23 @@ def test_generieke_tr_bron_bewaart_vergelijkende_vormstrong_naast_het_lemma():
     assert comparative["display_strong"] == "G4119"
 
 
+def test_generieke_tr_bron_kiest_bij_johannes_5_5_de_osis_variantstroom():
+    from scripts.rebuild_nt_tr_strongs import load_tr_chapter
+
+    verses = load_tr_chapter(
+        Path(r"C:\tmp\greektext-textus-receptus\parsed\JOH.UTR"),
+        Path(r"C:\tmp\crosswire-kjv\kjv.osis.xml"),
+        chapter=5,
+        osis_book="John",
+    )
+
+    assert len(verses[5]) == 13
+    assert verses[5][5]["woord"] == "τριακοντα"
+    assert [token["display_strong"] for token in verses[5][5:9]] == [
+        "G5144", "G2532", "G3638", "G2094",
+    ]
+
+
 def test_johannes_2_publiceert_ieder_tr_token_precies_eenmaal():
     data = json.loads((ROOT / "data" / "johannes" / "2.json").read_text(encoding="utf-8"))
     assert len(data["verses"]) == 25
@@ -319,16 +336,29 @@ def test_johannes_3_publiceert_ieder_tr_token_precies_eenmaal():
         assert all(mapping.get("reviewstatus") == "handmatig_gecontroleerd" for mapping in mappings)
 
 
-def test_johannes_4_1_tot_10_publiceert_ieder_tr_token_precies_eenmaal():
+def test_johannes_4_publiceert_ieder_tr_token_precies_eenmaal():
     data = json.loads((ROOT / "data" / "johannes" / "4.json").read_text(encoding="utf-8"))
-    reviewed = data["verses"][:10]
-    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 161
+    reviewed = data["verses"]
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 953
     for verse in reviewed:
         ground = verse.get("grondtekst", [])
         mappings = verse.get("woordnummers", [])
         source_indices = [index for item in mappings for index in item["herkomst"]["bronindices"]]
         assert sorted(source_indices) == list(range(len(ground)))
         assert len(set(source_indices)) == len(ground)
+
+
+def test_johannes_5_1_tot_10_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "5.json").read_text(encoding="utf-8"))
+    reviewed = data["verses"][:10]
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 172
+    for verse in reviewed:
+        ground = verse.get("grondtekst", [])
+        mappings = verse.get("woordnummers", [])
+        source_indices = [index for item in mappings for index in item["herkomst"]["bronindices"]]
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+        assert all(item.get("reviewstatus") == "handmatig_gecontroleerd" for item in mappings)
 
 def test_audit_reports_johannes_tr_coverage_and_valid_provenance():
     report = AUDIT.audit()

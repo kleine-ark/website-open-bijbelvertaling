@@ -232,6 +232,8 @@ def source_word(token, exact_wordform, old_word=None):
     word["strongs"] = token["display_strong"]
     word["lemma_strongs"] = token["lemma_strong"]
     word["morfologie"] = token["morphology"]
+    if token.get("tvm"):
+        word["tvm"] = token["tvm"]
     return word
 
 
@@ -257,6 +259,9 @@ def mapping(anchor, occurrence, token_ids, tokens, source_verse, status="vertaal
             "bronindices": [tokens[index]["source_index"] for index in token_ids],
         },
     }
+    tvm = [token.get("tvm") for token in chosen]
+    if any(tvm):
+        record["tvm"] = tvm
     return record
 
 

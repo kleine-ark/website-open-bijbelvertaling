@@ -13,6 +13,13 @@ from scripts.apply_google_review_1koningen import (
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def html(hoofdstuk, nummer):
+    data = json.loads(
+        (ROOT / "data" / "1koningen" / f"{hoofdstuk}.json").read_text(encoding="utf-8")
+    )
+    return next(item["text2026_html"] for item in data["verses"] if item["number"] == nummer)
+
+
 def test_pas_tekst_aan_vervangt_noodde_en_houdt_html_gelijk():
     vers = {
         "text2026": "Maar Nathan noodde hij niet.",
@@ -25,6 +32,17 @@ def test_pas_tekst_aan_vervangt_noodde_en_houdt_html_gelijk():
 
     assert vers["text2026"] == "Maar Nathan nodigde hij niet uit."
     assert vers["text2026_html"] == vers["text2026"]
+
+
+def test_pas_tekst_aan_is_idempotent_als_nieuwe_woord_het_oude_bevat():
+    vers = {
+        "text2026": "De marskramers kwamen.",
+        "text2026_html": "De marskramers kwamen.",
+        "textSV1888": "De kramers kwamen.",
+        "phraseDiff": [],
+    }
+    assert pas_tekst_aan(vers, [("kramers", "marskramers")], "test") is False
+    assert vers["text2026"] == "De marskramers kwamen."
 
 
 def test_pas_tekst_aan_weigert_onvindbare_brontekst():
@@ -224,3 +242,57 @@ def test_1_koningen_5_2_is_een_aankondiging_en_geen_zelfstandig_citaat():
     vers = next(item for item in data["verses"] if item["number"] == 2)
 
     assert "direct-speech" not in vers["text2026_html"]
+
+
+def test_resterende_eenduidige_opmerkingen_uit_1_koningen_zijn_verwerkt():
+    """Veilige lexicale verbeteringen uit de tweede reviewbatch blijven zichtbaar."""
+    def vers(hoofdstuk, nummer):
+        data = json.loads(
+            (ROOT / "data" / "1koningen" / f"{hoofdstuk}.json").read_text(encoding="utf-8")
+        )
+        return next(item["text2026"] for item in data["verses"] if item["number"] == nummer)
+
+    assert "marskramers" in vers(10, 15)
+    assert "landvoogden" in vers(10, 15)
+    assert "grote schilden" in vers(10, 16)
+    assert "buitenlandse vrouwen" in vers(11, 1)
+    assert "beste manschappen" in vers(12, 21)
+    assert "zo deed hij" in vers(12, 32)
+    assert "graf van uw vader" in vers(13, 22)
+    assert "samenzwering" in vers(15, 27)
+    assert "inwoners van Gilead" in vers(17, 1)
+    assert "hand vol meel" in vers(17, 12)
+    assert "herstelde het altaar" in vers(18, 30)
+    assert "vermomde zich" in vers(22, 30)
+
+
+def test_tweede_reviewbatch_behoudt_bestaande_principekoppelingen():
+    """Nieuwe verbeteringen mogen oudere, onafhankelijke herkomstlabels niet wissen."""
+    checks = [
+        (10, 16, "V941"), (10, 18, "N4"), (10, 18, "V913"),
+        (16, 9, "N2"), (16, 26, "N1"), (19, 2, "N4"),
+        (20, 43, "V67"), (22, 30, "V42"),
+    ]
+    for hoofdstuk, nummer, principe in checks:
+        data = json.loads(
+            (ROOT / "data" / "1koningen" / f"{hoofdstuk}.json").read_text(encoding="utf-8")
+        )
+        vers = next(item for item in data["verses"] if item["number"] == nummer)
+        assert principe in {item.get("principe") for item in vers["phraseDiff"]}
+
+
+def test_citaten_scheiden_rede_van_vertelling_en_sprekers():
+    assert html(11, 2).endswith("neigen;</i></span> aan deze hing Salomo met liefde.")
+    assert html(12, 18).count('class="direct-speech"') == 0
+    assert html(12, 24).endswith(
+        "</i></span> En zij hoorden het woord van JAHWEH, en keerden weer, "
+        "om weg te trekken naar het woord van JAHWEH."
+    )
+    assert html(14, 12).startswith('<span class="god-speaks"><i>')
+    assert html(14, 16).startswith('<span class="god-speaks"><i>')
+    assert html(18, 40).endswith(
+        "</i></span> En zij grepen ze; en Elia voerde hen af naar de beek Kison, "
+        "en slachtte hen daar."
+    )
+    assert html(22, 22).count('class="god-speaks"') == 2
+    assert html(22, 22).count('class="direct-speech"') == 1

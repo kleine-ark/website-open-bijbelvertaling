@@ -63,6 +63,12 @@
     border-bottom: 1px solid var(--border, #e5e1d8);
     border-radius: 7px 7px 0 0;
 }
+/* De dierillustraties zijn vierkant. Deze brede uitsnede begint daarom aan
+   de bovenzijde: zo blijft het gezicht van het dier in beeld. */
+.ns-kaart--dieren .ns-kaart-beeld {
+    height: 138px;
+    object-position: center top;
+}
 .ns-nummer {
     display: inline-flex; align-self: flex-start; width: max-content;
     margin: 0 0 4px; padding: 3px 9px; border-radius: 999px;

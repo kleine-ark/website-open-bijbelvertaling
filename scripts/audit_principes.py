@@ -251,12 +251,16 @@ def bereik_nagelopen(principes, verzen):
 def main():
     snel = "--snel" in sys.argv
     principes = json.load(open(PAD, encoding="utf-8"))["principes"]
+    # Contextueel begrensde principes mogen dezelfde woorden anders behandelen
+    # dan een algemene regel: hun vindplaatsen zijn expliciet vastgelegd en ze
+    # worden niet als een blinde corpus-sweep uitgevoerd.
+    globale_principes = [p for p in principes if not p.get("bereik")]
     print(f"principes: {len(principes)}\n")
     problemen = 0
 
     # 1) Regelrechte omkering: A -> B en B -> A. Die draaien elkaar eeuwig terug.
     paren = collections.defaultdict(list)
-    for p in principes:
+    for p in globale_principes:
         paren[(norm(p.get("oud")), norm(p.get("nieuw")))].append(p["id"])
     omkeringen = []
     for (oud, nieuw), ids in paren.items():
@@ -271,7 +275,7 @@ def main():
 
     # 2) Hetzelfde bronwoord met verschillende uitkomsten.
     per_oud = collections.defaultdict(list)
-    for p in principes:
+    for p in globale_principes:
         if norm(p.get("oud")):
             per_oud[norm(p["oud"])].append((p["id"], norm(p.get("nieuw"))))
     botsend = {k: v for k, v in per_oud.items() if len({n for _, n in v}) > 1}
@@ -285,11 +289,11 @@ def main():
 
     # 3) Ketens: de uitkomst van het ene principe is het bronwoord van het andere.
     per_nieuw = collections.defaultdict(list)
-    for p in principes:
+    for p in globale_principes:
         if norm(p.get("nieuw")):
             per_nieuw[norm(p["nieuw"])].append(p["id"])
     ketens = []
-    for p in principes:
+    for p in globale_principes:
         oud = norm(p.get("oud"))
         if oud and oud in per_nieuw:
             for eerder in per_nieuw[oud]:

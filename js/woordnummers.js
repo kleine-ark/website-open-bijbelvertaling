@@ -33,6 +33,10 @@
         return matches.filter(number => familyOf(number));
     }
 
+    function visibleNumber(number) {
+        return String(number || '').replace(/^(?:OVL|OVG|[HG])/, '');
+    }
+
     function renderAlignment(groundText) {
         if (!Array.isArray(groundText)) return '';
         let firstFamily = null;
@@ -70,6 +74,7 @@
         const sourceWords = mapping.bronwoorden || [];
         const transliterations = mapping.transliteraties || [];
         const glosses = mapping.glossen || [];
+        const tvmCodes = mapping.tvm || [];
         const alignmentStatus = mapping.status
             ? ` data-alignment-status="${escapeHtml(mapping.status)}"`
             : '';
@@ -78,7 +83,12 @@
             const sourceWord = escapeHtml(sourceWords[index] || sourceWords[0] || '');
             const transliteration = escapeHtml(transliterations[index] || transliterations[0] || '');
             const gloss = escapeHtml(glosses[index] || glosses[0] || '');
-            return `<button type="button" class="strongs-inline" data-strongs="${safeNumber}" data-source-word="${sourceWord}" data-transliteratie="${transliteration}" data-gloss="${gloss}"${alignmentStatus} aria-label="Open woordenboekbetekenis van ${safeNumber}">(${safeNumber})</button>`;
+            const visible = escapeHtml(visibleNumber(number));
+            const tvm = parseSequence(tvmCodes[index] || '')[0] || '';
+            const safeTvm = escapeHtml(tvm);
+            const visibleTvm = tvm ? `(${escapeHtml(visibleNumber(tvm))})` : '';
+            const tvmAttribute = tvm ? ` data-tvm="${safeTvm}"` : '';
+            return `<button type="button" class="strongs-inline" data-strongs="${safeNumber}"${tvmAttribute} data-source-word="${sourceWord}" data-transliteratie="${transliteration}" data-gloss="${gloss}"${alignmentStatus} aria-label="Open woordenboekbetekenis van ${safeNumber}${tvm ? `, tijdcode ${safeTvm}` : ''}">&lt;${visible}&gt;${visibleTvm}</button>`;
         }).join('');
     }
 

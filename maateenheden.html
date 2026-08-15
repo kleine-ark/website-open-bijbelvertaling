@@ -39,14 +39,28 @@
         .me-let strong { color: #b4553a; }
         .me-vraag { border-left: 3px solid var(--teal, #92b6b4); background: rgba(146,182,180,0.10); padding: 10px 16px; border-radius: 0 6px 6px 0; margin: 14px 0; font-size: 14.5px; }
         .me-tel { display: inline-block; font-size: 11px; background: rgba(146,182,180,0.18); color: #4a6b62; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+        .me-illustratie {
+            display: grid; grid-template-columns: minmax(156px, 214px) minmax(0, 1fr); gap: 18px;
+            max-width: 740px; margin: 16px 0 20px; overflow: hidden;
+            border: 1px solid var(--border, #e5e1d8); border-radius: 12px;
+            background: linear-gradient(115deg, rgba(203,164,73,0.10), rgba(255,255,255,0));
+        }
+        .me-illustratie img { width: 100%; height: 100%; min-height: 174px; object-fit: cover; object-position: center; display: block; }
+        .me-illustratie-tekst { align-self: center; padding: 16px 20px 16px 0; color: var(--text-secondary, #555); font-size: 14px; line-height: 1.6; }
+        .me-illustratie-tekst strong { display: block; margin-bottom: 4px; color: var(--navy); font-family: var(--font-body); font-size: 16px; }
         :root[data-theme="donker"] table.me-tab td { color: var(--text-secondary); }
         :root[data-theme="donker"] table.me-tab td.me-naam { color: var(--text-primary); }
+        :root[data-theme="donker"] .me-illustratie { background: linear-gradient(115deg, rgba(203,164,73,0.14), rgba(21,37,50,0.10)); }
         @media (max-width: 620px) {
             table.me-tab, table.me-tab tbody, table.me-tab tr, table.me-tab td { display: block; }
             table.me-tab thead { display: none; }
             table.me-tab td { border: none; padding: 2px 0; }
             table.me-tab td.me-naam { margin-top: 12px; }
             table.me-tab tr { border-bottom: 1px solid var(--border, #eee); padding-bottom: 10px; }
+            .me-illustratie { grid-template-columns: 122px minmax(0, 1fr); gap: 12px; margin: 12px 0 16px; }
+            .me-illustratie img { min-height: 122px; }
+            .me-illustratie-tekst { padding: 12px 14px 12px 0; font-size: 13px; }
+            .me-illustratie-tekst strong { font-size: 14px; }
         }
     </style>
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
@@ -67,6 +81,10 @@
         </div>
 
         <h2 class="me-groep">Lengte</h2>
+        <figure class="me-illustratie">
+            <img src="images/wiki/maateenheden/lengte.webp" alt="Lengtematen: el, span, handbreed en riet" loading="lazy" width="1024" height="1024">
+            <figcaption class="me-illustratie-tekst"><strong>Met het lichaam als maat</strong>Een el loopt van elleboog tot vingertop; span, handbreed en vinger maken die maat zichtbaar kleiner. Het riet is de lange meetstok van de landmeter.</figcaption>
+        </figure>
         <table class="me-tab">
             <thead><tr><th>Eenheid</th><th>Modern</th><th>Toelichting</th><th>Voorbeeld</th></tr></thead>
             <tbody>
@@ -93,6 +111,10 @@
         </div>
 
         <h2 class="me-groep">Inhoud</h2>
+        <figure class="me-illustratie">
+            <img src="images/wiki/maateenheden/inhoud.webp" alt="Inhoudsmaten: graan- en vloeistofvaten" loading="lazy" width="1024" height="1024">
+            <figcaption class="me-illustratie-tekst"><strong>Graan en vloeistof</strong>Dezelfde maat werd in manden, kommen en kruiken afgemeten. De efa is voor graan wat de bath is voor vloeistoffen: beide zijn de grote basiseenheid.</figcaption>
+        </figure>
         <p class="me-note">De efa (droog) en de bath (nat) zijn even groot; de Bijbel zegt dat zelf in Ezechiël 45:11. Alle onderstaande maten hangen daaraan vast, dus één onzekerheid werkt door in de hele tabel.</p>
         <table class="me-tab">
             <thead><tr><th>Eenheid</th><th>Modern</th><th>Toelichting</th><th>Voorbeeld</th></tr></thead>
@@ -125,6 +147,10 @@
         </div>
 
         <h2 class="me-groep">Gewicht</h2>
+        <figure class="me-illustratie">
+            <img src="images/wiki/maateenheden/gewicht.webp" alt="Gewichten: balans, stenen gewichten en talent" loading="lazy" width="1024" height="1024">
+            <figcaption class="me-illustratie-tekst"><strong>Wegen met stenen</strong>Een balans en vaste gewichten maken een sikkel controleerbaar. De kleine gera en beka horen bij de sikkel; een talent is een veel grotere last.</figcaption>
+        </figure>
         <table class="me-tab">
             <thead><tr><th>Eenheid</th><th>Modern</th><th>Toelichting</th><th>Voorbeeld</th></tr></thead>
             <tbody>
@@ -146,6 +172,10 @@
         </div>
 
         <h2 class="me-groep">Geld</h2>
+        <figure class="me-illustratie">
+            <img src="images/wiki/maateenheden/geld.webp" alt="Bijbelse munten en geldwaarden" loading="lazy" width="1024" height="1024">
+            <figcaption class="me-illustratie-tekst"><strong>Munten vertellen geen vaste prijs</strong>Penning, drachme, stater en oort verschillen sterk in grootte en zilvergewicht. Hun koopkracht wordt daarom op deze pagina vooral naast een dagloon uitgelegd.</figcaption>
+        </figure>
         <p class="me-note">Geldbedragen zijn bewust niet omgerekend naar euro's. De zilverwaarde van een munt zegt namelijk weinig over wat je ervoor kon kopen; een dagloon is een veel bruikbaarder maatstaf.</p>
         <table class="me-tab">
             <thead><tr><th>Munt</th><th>Waarde</th><th>Toelichting</th><th>Voorbeeld</th></tr></thead>

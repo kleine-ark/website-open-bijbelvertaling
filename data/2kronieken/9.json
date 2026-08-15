@@ -990,7 +990,7 @@
    "number": 9,
    "textSV1888": "En zij gaf den koning honderd en twintig talenten gouds, en specerijen in grote menigte, en kostelijk gesteente; en er was gelijk deze specerij, die de koningin van Scheba den koning Salomo gaf, geen geweest.",
    "text1637": "Ende sy gaf den Coninck hondert, ende twintich [10] talenten gouts, ende specerijen in groote menichte, ende kostelick gesteente: ende daer en was [11] gelijck dese specerije, die de Coninginne van Scheba den Coninck Salomo gaf, geene geweest.",
-   "text2026": "En zij gaf de koning honderd en twintig talenten gouds, en specerijen in grote menigte, en kostelijk gesteente; en er was zoals deze specerij, die de koningin van Scheba de koning Salomo gaf, geen geweest.",
+   "text2026": "En zij gaf de koning honderd en twintig talenten goud, en specerijen in grote menigte, en kostelijk gesteente; en er was zoals deze specerij, die de koningin van Scheba de koning Salomo gaf, geen geweest.",
    "marginNotes": [
     {
      "marker": "10",
@@ -1114,7 +1114,7 @@
      "morph": "HNp"
     }
    ],
-   "text2026_html": "En zij gaf de koning honderd en twintig<sup class=\"note-marker\" data-note=\"10\">10</sup> talenten gouds, en specerijen in grote menigte, en kostelijk gesteente; en er was<sup class=\"note-marker\" data-note=\"11\">11</sup> zoals deze specerij, die de koningin van Scheba de koning Salomo gaf, geen geweest.",
+   "text2026_html": "En zij gaf de koning honderd en twintig<sup class=\"note-marker\" data-note=\"10\">10</sup> talenten goud, en specerijen in grote menigte, en kostelijk gesteente; en er was<sup class=\"note-marker\" data-note=\"11\">11</sup> zoals deze specerij, die de koningin van Scheba de koning Salomo gaf, geen geweest.",
    "textSV1888_html": "En zij gaf den koning honderd en twintig<sup class=\"note-marker\" data-note=\"10\">10</sup> talenten gouds, en specerijen in grote menigte, en kostelijk gesteente; en er was<sup class=\"note-marker\" data-note=\"11\">11</sup> gelijk deze specerij, die de koningin van Scheba den koning Salomo gaf, geen geweest.",
    "text1637_html": "Ende sy gaf den Coninck hondert, en<i>de</i> twintich <sup class=\"note-marker\" data-note=\"10\">10</sup> talenten gouts, ende specerijen in groote menichte, ende kostelick gesteente: ende daer en was <sup class=\"note-marker\" data-note=\"11\">11</sup> gelijck dese specerije, die de Coninginne van Scheba den Coninck Salomo gaf, geene geweest.",
    "phraseDiff": [
@@ -1122,6 +1122,11 @@
      "old": "den",
      "new": "de",
      "principe": "N1"
+    },
+    {
+     "old": "gouds,",
+     "new": "goud,",
+     "principe": "V1232"
     },
     {
      "old": "gelijk",
@@ -1524,7 +1529,7 @@
    "number": 13,
    "textSV1888": "Het gewicht nu van het goud, dat voor Salomo op een jaar inkwam, was zeshonderd zes en zestig talenten gouds;",
    "text1637": "Het gewichte nu van het gout, dat voor Salomo op een jaer inquam, was seshondert, en ses-en-sestich talenten gouts;",
-   "text2026": "Het gewicht nu van het goud, dat voor Salomo op één jaar inkwam, was zeshonderd zes en zestig talenten gouds;",
+   "text2026": "Het gewicht nu van het goud, dat voor Salomo op één jaar inkwam, was zeshonderd zes en zestig talenten goud;",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -1598,13 +1603,18 @@
      "morph": "HNcmsa"
     }
    ],
-   "text2026_html": "Het gewicht nu van het goud, dat voor Salomo op één jaar inkwam, was zeshonderd zes en zestig talenten gouds;",
+   "text2026_html": "Het gewicht nu van het goud, dat voor Salomo op één jaar inkwam, was zeshonderd zes en zestig talenten goud;",
    "text1637_html": "Het gewichte nu van het gout, dat voor Salomo op een jaer inquam, was seshondert, en ses-en-sestich talenten gouts;",
    "phraseDiff": [
     {
      "old": "een",
      "new": "één",
      "principe": "V735"
+    },
+    {
+     "old": "gouds;",
+     "new": "goud;",
+     "principe": "V1232"
     }
    ]
   },
@@ -1612,7 +1622,7 @@
    "number": 14,
    "textSV1888": "Behalve dat zij van de kramers en de kooplieden inbrachten; ook brachten alle koningen van Arabië, en de vorsten deszelven lands, goud en zilver aan Salomo.",
    "text1637": "Behalven dat sy van de [17] kramers ende de kooplieden inbrachten; oock [18] brachten alle Coningen van Arabien, ende de Vorsten des selven lants, gout ende silver aen Salomo.",
-   "text2026": "Behalve dat zij van de kramers en de kooplieden inbrachten; ook brachten alle koningen van Arabië, en de vorsten van dat land, goud en zilver aan Salomo.",
+   "text2026": "Behalve dat zij van de marskramers en de kooplieden inbrachten; ook brachten alle koningen van Arabië, en de vorsten van dat land, goud en zilver aan Salomo.",
    "marginNotes": [
     {
      "marker": "17",
@@ -1701,10 +1711,15 @@
      "morph": "HR/Np"
     }
    ],
-   "text2026_html": "Behalve dat zij van de<sup class=\"note-marker\" data-note=\"17\">17</sup> kramers en de kooplieden inbrachten; ook<sup class=\"note-marker\" data-note=\"18\">18</sup> brachten alle koningen van Arabië, en de vorsten van dat land, goud en zilver aan Salomo.",
+   "text2026_html": "Behalve dat zij van de<sup class=\"note-marker\" data-note=\"17\">17</sup> marskramers en de kooplieden inbrachten; ook<sup class=\"note-marker\" data-note=\"18\">18</sup> brachten alle koningen van Arabië, en de vorsten van dat land, goud en zilver aan Salomo.",
    "textSV1888_html": "Behalve dat zij van de<sup class=\"note-marker\" data-note=\"17\">17</sup> kramers en de kooplieden inbrachten; ook<sup class=\"note-marker\" data-note=\"18\">18</sup> brachten alle koningen van Arabië, en de vorsten deszelven lands, goud en zilver aan Salomo.",
    "text1637_html": "Behalven dat sy van de <sup class=\"note-marker\" data-note=\"17\">17</sup> kramers en<i>de</i> de kooplieden inbrachten; oock <sup class=\"note-marker\" data-note=\"18\">18</sup> brachten alle Coningen van Arabien, ende de Vorsten des selven lants, gout ende silver aen Salomo.",
    "phraseDiff": [
+    {
+     "old": "kramers",
+     "new": "marskramers",
+     "principe": "V1237"
+    },
     {
      "old": "deszelven lands,",
      "new": "van dat land,",
@@ -1716,7 +1731,7 @@
    "number": 15,
    "textSV1888": "Daartoe maakte de koning Salomo tweehonderd rondassen van geslagen goud; zeshonderd sikkelen van geslagen goud liet hij opwegen tot elke rondas.",
    "text1637": "Daer toe maeckte de Coninck Salomo twee hondert rondassen van geslagen gout: ses hondert [19] [sikelen] van geslagen gout liet hy op-wegen tot elcke rondasse.",
-   "text2026": "Daartoe maakte de koning Salomo tweehonderd rondassen van geslagen goud; zeshonderd sikkels van geslagen goud liet hij opwegen tot elke rondas.",
+   "text2026": "Daartoe maakte de koning Salomo tweehonderd grote schilden van geslagen goud; zeshonderd sikkels van geslagen goud liet hij opwegen tot elk groot schild.",
    "marginNotes": [
     {
      "marker": "19",
@@ -1803,14 +1818,24 @@
      "morph": "HTd/Acfsa"
     }
    ],
-   "text2026_html": "Daartoe maakte de koning Salomo tweehonderd rondassen van geslagen goud; zeshonderd sikkels<sup class=\"note-marker\" data-note=\"19\">19</sup> van geslagen goud liet hij opwegen tot elke rondas.",
+   "text2026_html": "Daartoe maakte de koning Salomo tweehonderd grote schilden van geslagen goud; zeshonderd sikkels<sup class=\"note-marker\" data-note=\"19\">19</sup> van geslagen goud liet hij opwegen tot elk groot schild.",
    "textSV1888_html": "Daartoe maakte de koning Salomo tweehonderd rondassen van geslagen goud; zeshonderd sikkelen<sup class=\"note-marker\" data-note=\"19\">19</sup> van geslagen goud liet hij opwegen tot elke rondas.",
    "text1637_html": "Daer toe maeckte de Coninck Salomo twee hondert rondassen van geslagen gout: ses hondert <sup class=\"note-marker\" data-note=\"19\">19</sup> [sikelen] van geslagen gout liet hy op-wegen tot elcke rondasse.",
    "phraseDiff": [
     {
+     "old": "rondassen",
+     "new": "grote schilden",
+     "principe": "V1236"
+    },
+    {
      "old": "sikkelen",
      "new": "sikkels",
      "principe": "V941"
+    },
+    {
+     "old": "elke rondas.",
+     "new": "elk groot schild.",
+     "principe": "V1236"
     }
    ]
   },
@@ -1957,7 +1982,7 @@
    "number": 17,
    "textSV1888": "Nog maakte de koning een groten elpenbenen troon, en hij overtoog denzelven met louter goud.",
    "text1637": "Noch maeckte de Coninck eenen grooten elpen-beenen throon, ende hy over-tooch den selven met [22] louter gout.",
-   "text2026": "Nog maakte de koning een grote ivoren troon, en hij overtoog die met louter goud.",
+   "text2026": "Nog maakte de koning een grote ivoren troon, en hij overtrok die met louter goud.",
    "marginNotes": [
     {
      "marker": "22",
@@ -2009,7 +2034,7 @@
      "morph": "HAamsa"
     }
    ],
-   "text2026_html": "Nog maakte de koning een grote ivoren troon, en hij overtoog die met<sup class=\"note-marker\" data-note=\"22\">22</sup> louter goud.",
+   "text2026_html": "Nog maakte de koning een grote ivoren troon, en hij overtrok die met<sup class=\"note-marker\" data-note=\"22\">22</sup> louter goud.",
    "textSV1888_html": "Nog maakte de koning een groten elpenbenen troon, en hij overtoog denzelven met<sup class=\"note-marker\" data-note=\"22\">22</sup> louter goud.",
    "text1637_html": "Noch maeckte de Coninck eenen grooten elpen-beenen throon, ende hy over-tooch den selven met <sup class=\"note-marker\" data-note=\"22\">22</sup> louter gout.",
    "phraseDiff": [
@@ -2019,9 +2044,9 @@
      "principe": null
     },
     {
-     "old": "denzelven",
-     "new": "die",
-     "principe": null
+     "old": "overtoog denzelven",
+     "new": "overtrok die",
+     "principe": "V1235"
     }
    ]
   },

@@ -1143,7 +1143,7 @@
       "number": 12,
       "textSV1888": "Want hij nam weg de schandjongens uit het land, en deed weg al de drekgoden, die zijn vaders gemaakt hadden.",
       "text1637": "Want hy nam wech [f] de [20] schant-jongers uyt den lande, ende dede wech alle de [21] dreck-goden, die sijne [22] vaders gemaeckt hadden;",
-      "text2026": "Want hij nam weg de schandjongens uit het land, en deed weg al de afgoden, die zijn vaders gemaakt hadden.",
+      "text2026": "Want hij nam weg de schandjongens uit het land, en deed weg al de afgoden, die zijn vader gemaakt had.",
       "marginNotes": [
         {
           "marker": "f",
@@ -1231,13 +1231,23 @@
           "morph": "HNcmpc/Sp3ms"
         }
       ],
-      "text2026_html": "Want hij nam weg<sup class=\"note-marker\" data-note=\"f\">f</sup> de<sup class=\"note-marker\" data-note=\"20\">20</sup> schandjongens uit het land, en deed weg al de afgoden,<sup class=\"note-marker\" data-note=\"21\">21</sup> die zijn<sup class=\"note-marker\" data-note=\"22\">22</sup> vaders gemaakt hadden.",
+      "text2026_html": "Want hij nam weg<sup class=\"note-marker\" data-note=\"f\">f</sup> de<sup class=\"note-marker\" data-note=\"20\">20</sup> schandjongens uit het land, en deed weg al de afgoden,<sup class=\"note-marker\" data-note=\"21\">21</sup> die zijn<sup class=\"note-marker\" data-note=\"22\">22</sup> vader gemaakt had.",
       "textSV1888_html": "Want hij nam weg<sup class=\"note-marker\" data-note=\"f\">f</sup> de<sup class=\"note-marker\" data-note=\"20\">20</sup> schandjongens uit het land, en deed weg al de drekgoden,<sup class=\"note-marker\" data-note=\"21\">21</sup> die zijn<sup class=\"note-marker\" data-note=\"22\">22</sup> vaders gemaakt hadden.",
       "text1637_html": "Want hy nam wech <sup class=\"note-marker\" data-note=\"f\">f</sup> de <sup class=\"note-marker\" data-note=\"20\">20</sup> schant-jongers uyt den lande, ende dede wech alle de <sup class=\"note-marker\" data-note=\"21\">21</sup> dreck-goden, die sijne <sup class=\"note-marker\" data-note=\"22\">22</sup> vaders gemaeckt hadden;",
       "phraseDiff": [
         {
           "old": "drekgoden,",
           "new": "afgoden,",
+          "principe": null
+        },
+        {
+          "old": "vaders",
+          "new": "vader",
+          "principe": "MR-SK-117"
+        },
+        {
+          "old": "hadden.",
+          "new": "had.",
           "principe": null
         }
       ]
@@ -3197,7 +3207,7 @@
       "number": 27,
       "textSV1888": "En Baësa, de zoon van Ahia, van het huis van Issaschar, maakte een verbintenis tegen hem, en Baësa sloeg hem te Gibbethon, hetwelk der Filistijnen is, als Nadab en gans Israël Gibbethon belegerden.",
       "text1637": "Ende Baësa de soon van [56] Ahia vanden huyse [57] Issaschars [58] maeckte eene verbintenisse tegen hem, ende Baësa sloech hem te [59] Gibbethon, welcke der Philistijnen is, als Nadab, ende gantsch Israël Gibbethon belegerden.",
-      "text2026": "En Baësa, de zoon van Ahia, van het huis van Issaschar, maakte een verbintenis tegen hem, en Baësa sloeg hem te Gibbethon, dat van de Filistijnen is, als Nadab en geheel Israël Gibbethon belegerden.",
+      "text2026": "En Baësa, de zoon van Ahia, van het huis van Issaschar, smeedde een samenzwering tegen hem, en Baësa sloeg hem te Gibbethon, dat van de Filistijnen is, als Nadab en geheel Israël Gibbethon belegerden.",
       "marginNotes": [
         {
           "marker": "56",
@@ -3320,10 +3330,20 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En Baësa, de zoon van<sup class=\"note-marker\" data-note=\"56\">56</sup> Ahia, van het<sup class=\"note-marker\" data-note=\"57\">57</sup> huis van<sup class=\"note-marker\" data-note=\"58\">58</sup> Issaschar, maakte een verbintenis tegen hem, en Baësa sloeg hem te<sup class=\"note-marker\" data-note=\"59\">59</sup> Gibbethon, dat van de Filistijnen is, als Nadab en geheel Israël Gibbethon belegerden.",
+      "text2026_html": "En Baësa, de zoon van<sup class=\"note-marker\" data-note=\"56\">56</sup> Ahia, van het<sup class=\"note-marker\" data-note=\"57\">57</sup> huis van<sup class=\"note-marker\" data-note=\"58\">58</sup> Issaschar, smeedde een samenzwering tegen hem, en Baësa sloeg hem te<sup class=\"note-marker\" data-note=\"59\">59</sup> Gibbethon, dat van de Filistijnen is, als Nadab en geheel Israël Gibbethon belegerden.",
       "textSV1888_html": "En Baësa, de zoon van<sup class=\"note-marker\" data-note=\"56\">56</sup> Ahia, van het<sup class=\"note-marker\" data-note=\"57\">57</sup> huis van<sup class=\"note-marker\" data-note=\"58\">58</sup> Issaschar, maakte een verbintenis tegen hem, en Baësa sloeg hem te<sup class=\"note-marker\" data-note=\"59\">59</sup> Gibbethon, hetwelk der Filistijnen is, als Nadab en gans Israël Gibbethon belegerden.",
       "text1637_html": "Ende Baësa de soon van <sup class=\"note-marker\" data-note=\"56\">56</sup> Ahia vanden huyse <sup class=\"note-marker\" data-note=\"57\">57</sup> Issaschars <sup class=\"note-marker\" data-note=\"58\">58</sup> maeckte eene verbintenisse tegen hem, ende Baësa sloech hem te <sup class=\"note-marker\" data-note=\"59\">59</sup> Gibbethon, welcke der Philistijnen is, als Nadab, ende gantsch Israël Gibbethon belegerden.",
       "phraseDiff": [
+        {
+          "old": "maakte",
+          "new": "smeedde",
+          "principe": null
+        },
+        {
+          "old": "verbintenis",
+          "new": "samenzwering",
+          "principe": "MR-SK-058"
+        },
         {
           "old": "hetwelk der",
           "new": "dat van de",
