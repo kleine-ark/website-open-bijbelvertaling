@@ -81,3 +81,49 @@ class LexiconViewerTests(unittest.TestCase):
             )
         finally:
             page.close()
+
+    def test_g3588_heeft_nagekeken_opmaak_bronlinks_en_volledige_tekstlinks(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 1400})
+        try:
+            page.goto(
+                f"{self.base_url}/lexicon-viewer.html?taal=grieks&entry=G3588",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.lex-lexlabel:has-text("Abbott-Smith")').wait_for(timeout=15_000)
+            definitions = page.locator(".lex-def")
+            text = definitions.all_inner_texts()
+            combined = "\n".join(text)
+
+            self.assertNotIn("__", combined)
+            self.assertIn("Blass-Debrunner-Funk, paragraaf 71", combined)
+            self.assertIn("Moulton, Prolegomena, blz. 81 e.v.", combined)
+            self.assertGreaterEqual(definitions.first.locator(".lex-section-title").count(), 2)
+            self.assertGreaterEqual(definitions.first.locator(".lex-numbered-item").count(), 9)
+
+            self.assertEqual(page.locator('a[href="wiki.html#homerus"]').count(), 2)
+            self.assertEqual(page.locator('a[href="wiki.html#aratus"]').count(), 2)
+            for href in (
+                "index.html#handelingen/17/28",
+                "index.html#handelingen/17/32",
+                "index.html#hebreeen/7/23",
+                "index.html#johannes/9/38",
+            ):
+                self.assertGreaterEqual(page.locator(f'a[href="{href}"]').count(), 1, href)
+
+            self.assertGreaterEqual(definitions.first.locator("a.lex-xref").count(), 6)
+        finally:
+            page.close()
+
+    def test_homerus_en_aratus_openen_als_volwaardige_wikipaginas(self):
+        for slug, heading in (("homerus", "Homerus"), ("aratus", "Aratus")):
+            page = self.browser.new_page(viewport={"width": 1280, "height": 900})
+            try:
+                page.goto(f"{self.base_url}/wiki.html#{slug}", wait_until="domcontentloaded")
+                frame = page.locator("#wiki-frame")
+                page.wait_for_function(
+                    "slug => document.querySelector('#wiki-frame').getAttribute('src').includes(slug + '.html')",
+                    arg=slug,
+                )
+                self.assertEqual(frame.content_frame.locator("h1").inner_text(), heading)
+            finally:
+                page.close()

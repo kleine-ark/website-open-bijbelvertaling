@@ -121,6 +121,11 @@
         /* Witregel tussen de genummerde betekenissen (BDB gebruikt <p><b>1</b>… per betekenis) */
         .lex-def p { margin: 0.85em 0 0; }
         .lex-def p:first-child { margin-top: 0; }
+        .lex-section-title { margin: 1.15em 0 0.45em; color: var(--navy); font-weight: 700; font-size: 1.08em; }
+        .lex-numbered-item { display: grid; grid-template-columns: 1.8em minmax(0, 1fr); gap: 0.25em; margin: 0.8em 0; }
+        .lex-numbered-item > .lex-number { color: var(--gold); font-weight: 700; }
+        .lex-numbered-item > .lex-item-body { min-width: 0; }
+        :root[data-theme="donker"] .lex-section-title { color: var(--text-primary); }
         .lex-bron-filter { font-size: 12px; color: var(--teal); border: 1px solid var(--border, #d4d0c8); border-radius: 6px; padding: 3px 7px; background: var(--bg-surface, #fff); margin-bottom: 9px; flex: 0 0 auto; }
         :root[data-theme="donker"] .lex-bron-filter { background: var(--bg-surface-alt); color: var(--text-primary); border-color: #333; }
         .lex-geenart { color: #888; }
@@ -224,8 +229,8 @@
     // Taal-configuratie
     var TALEN = [
         { id: 'hebreeuws', label: 'Hebreeuws & Aramees', src: 'js/hebreeuws-woordenboek.js', global: 'bdbLexicon', nlJson: 'data/lexicon-nl/bdb-nl.json', refsJson: 'data/lexicon-nl/strong-refs-he.json', abbr: true, bron: 'Brown-Driver-Briggs (1906), publiek domein — <a href="https://github.com/openscriptures/BrownDriverBriggs" target="_blank" rel="noopener">openscriptures/BrownDriverBriggs</a>. Nederlandse vertaling automatisch, in bewerking.' },
-        { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true,
-          lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', label: 'Abbott-Smith (1922)', infoUrl: 'woordenboeken.html#abbott-smith' }, lex1label: 'TBESG (2018)', lex1url: 'woordenboeken.html#tbesg', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
+        { id: 'grieks', label: 'Grieks', src: 'js/grieks-tbesg.js', global: 'tbesgLexicon', nlJson: 'data/lexicon-nl/tbesg-nl.json', reviewedJson: 'data/lexicon-nl/tbesg-reviewed.json', refsJson: 'data/lexicon-nl/strong-refs-grc.json', abbr: true, reftags: true,
+          lex2: { src: 'js/grieks-woordenboek.js', global: 'abbottSmithLexicon', nlJson: 'data/lexicon-nl/abbott-nl.json', reviewedJson: 'data/lexicon-nl/abbott-reviewed.json', label: 'Abbott-Smith (1922)', infoUrl: 'woordenboeken.html#abbott-smith' }, lex1label: 'TBESG (2018)', lex1url: 'woordenboeken.html#tbesg', bron: 'TBESG — Translators Brief lexicon of Extended Strongs for Greek, <a href="https://github.com/STEPBible/STEPBible-Data" target="_blank" rel="noopener">STEP Bible</a> / Tyndale House Cambridge (CC BY 4.0). Gebaseerd op Abbott-Smith, gecorrigeerd en uitgebreid. Nederlandse vertaling automatisch, in bewerking.' },
         { id: 'akkadisch', label: 'Akkadisch', json: 'data/lexicon-akkadisch.json', bron: 'ORACC — Open Richly Annotated Cuneiform Corpus (SAAo, RINAP, RIBo); Neo-Assyrisch/Babylonisch Akkadisch (CC0, publiek domein).' },
         { id: 'latijn', label: 'Latijn', json: 'data/lexicon-latijn.json', json2: 'data/lexicon-lewis-short-4ezra.json', bron: 'Grondtekst-glossen: 4 Ezra (Vulgaat-traditie). Woordenboek: Lewis & Short, A Latin Dictionary (1879), publiek domein — beperkt tot de woorden die in 4 Ezra voorkomen.' },
         { id: 'geez', label: "Ge'ez", json: 'data/lexicon-geez.json', json2: 'data/lexicon-dillmann-geez.json', dnlJson: 'data/lexicon-nl/dillmann-nl.json', bron: 'Grondtekst-glossen: Ethiopische boeken — Beta maṣāḥǝft (CC BY-SA). Woordenboek: Dillmann, Lexicon linguae aethiopicae (1865), digitale editie TraCES / Beta maṣāḥǝft (CC BY-NC-SA 4.0) — beperkt tot de woorden die in de Ethiopische boeken voorkomen; definities in het Latijn, Nederlandse vertaling volgt.' }
@@ -321,7 +326,7 @@
 
     // Onderlinge links: Griekse/Hebreeuwse woorden in een definitie die zelf een lemma zijn,
     // klikbaar maken naar dat lemma (cur._hw = kop-woord -> Strong-nummer).
-    var XREF_RE = { grieks: /[Ͱ-Ͽἀ-῿]{4,}/g, hebreeuws: /[֐-׿]{3,}/g };
+    var XREF_RE = { grieks: /[Ͱ-Ͽἀ-῿]{2,}/g, hebreeuws: /[֐-׿]{3,}/g };
     // Basisvorm: strip accenten/spiritus (Grieks) en niqqud/cantillatie (Hebreeuws) — accent-ongevoelig matchen
     function baseForm(w) { return w.normalize('NFD').replace(/[̀-ͯ҃-҉֑-ׇ᪰-᫿᷀-᷿]/g, '').toLowerCase(); }
     function linkifyXref(html, selfKey) {
@@ -382,7 +387,7 @@
         'Plat.': { label: 'Plato' },
         'Xen.': { label: 'Xenophon' },
         'Arist.': { label: 'Aristoteles' },
-        'Hom.': { label: 'Homerus' },
+        'Hom.': { label: 'Homerus', href: 'wiki.html#homerus' },
         'Hdt.': { label: 'Herodotus' },
         'Polyb.': { label: 'Polybius' },
         'Plut.': { label: 'Plutarchus' },
@@ -865,6 +870,11 @@
             if (!taal.nlJson) return;
             return fetch(taal.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._nl = d; }).catch(function () { taal._nl = {}; });
         }).then(function () {
+            if (!taal.reviewedJson) return;
+            return fetch(taal.reviewedJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) {
+                taal._nl = Object.assign({}, taal._nl || {}, d);
+            });
+        }).then(function () {
             renderList();          // lijst is er nu al — geen wachten op het zware woordenboek
             tryOpen();
             // Fase 2 — zware tweede bron (Dillmann 21MB / Lewis&Short) + refs + lex2 op de achtergrond.
@@ -877,6 +887,11 @@
             if (taal.dnlJson) bg.push(fetch(taal.dnlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal._dnl = d; }).catch(function () { taal._dnl = {}; }));
             if (taal.lex2) bg.push(loadScript(taal.lex2.src).then(function () {
                 return fetch(taal.lex2.nlJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) { taal.lex2._nl = d; }).catch(function () { taal.lex2._nl = {}; });
+            }).then(function () {
+                if (!taal.lex2.reviewedJson) return;
+                return fetch(taal.lex2.reviewedJson).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) {
+                    taal.lex2._nl = Object.assign({}, taal.lex2._nl || {}, d);
+                });
             }));
             if (!bg.length) { loaded[taal.id] = true; return; }
             Promise.all(bg).then(function () {
