@@ -19,6 +19,9 @@ UTR_SHA256 = {
     "JOH.UTR": "77FBB830AE3E11B79F7F47A8E68A119DC77F0722EBCC99BB00111702797BFFE5",
 }
 OSIS_SHA256 = "2BC5C343DA30125AF8D4D1E27F8444019030B6350D16E69EF8645BF9E17D5963"
+FORM_STRONG_OVERRIDES = {
+    ("G4183", "A-APM-C"): "G4119",
+}
 
 
 def sha256(path: Path) -> str:
@@ -84,13 +87,22 @@ def load_tr_chapter(
         tokens = []
         for index, token in enumerate(source):
             exact = indexed[index]
-            if normal(exact["lemma_strong"]) != normal(token["lemma_strong"]):
+            display_strong = FORM_STRONG_OVERRIDES.get(
+                (normal(token["lemma_strong"]), token["morphology"]),
+                token["display_strong"],
+            )
+            if normal(token["lemma_strong"]) == "G4183" and token["morphology"].endswith("-C"):
+                display_strong = "G4119"
+            if normal(exact["lemma_strong"]) not in {
+                normal(token["lemma_strong"]), normal(display_strong)
+            }:
                 raise ValueError(
                     f"{osis_book}.{chapter}.{verse} token {index + 1}: "
                     f"OSIS {exact['lemma_strong']} != UTR {token['lemma_strong']}"
                 )
             enriched = dict(token)
             enriched["woord"] = exact["woord"]
+            enriched["display_strong"] = display_strong
             enriched["source_index"] = index
             tokens.append(enriched)
         result[verse] = tokens
