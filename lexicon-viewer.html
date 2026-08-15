@@ -247,10 +247,17 @@
         Dan:'daniel', Hos:'hosea', Joel:'joel', Amos:'amos', Am:'amos', Obad:'obadja', Ob:'obadja', Jonah:'jona', Jon:'jona',
         Mic:'micha', Nah:'nahum', Hab:'habakuk', Zeph:'zefanja', Zep:'zefanja', Hag:'haggai', Zech:'zacharia', Zec:'zacharia', Mal:'maleachi',
         Matt:'mattheus', Mt:'mattheus', Mark:'markus', Mk:'markus', Luke:'lukas', Lk:'lukas', John:'johannes', Jn:'johannes',
-        Acts:'handelingen', Rom:'romeinen', '1Cor':'1korinthiers', '2Cor':'2korinthiers', Gal:'galaten', Eph:'efeziers',
-        Phil:'filippenzen', Col:'kolossenzen', '1Thess':'1tessalonicensen', '1Th':'1tessalonicensen', '2Thess':'2tessalonicensen', '2Th':'2tessalonicensen',
-        '1Tim':'1timotheus', '2Tim':'2timotheus', Titus:'titus', Tit:'titus', Phlm:'filemon', Heb:'hebreeen',
-        Jas:'jakobus', '1Pet':'1petrus', '2Pet':'2petrus', '1John':'1johannes', '1Jn':'1johannes', '2John':'2johannes', '3John':'3johannes', Jude:'judas', Rev:'openbaring',
+        Acts:'handelingen', Act:'handelingen', Ac:'handelingen', Rom:'romeinen', Ro:'romeinen',
+        '1Cor':'1korinthiers', '2Cor':'2korinthiers', 'I Co':'1korinthiers', 'II Co':'2korinthiers',
+        Gal:'galaten', Ga:'galaten', Eph:'efeziers',
+        Phil:'filippenzen', Phl:'filippenzen', Col:'kolossenzen',
+        '1Thess':'1tessalonicensen', '1Th':'1tessalonicensen', 'I Th':'1tessalonicensen',
+        '2Thess':'2tessalonicensen', '2Th':'2tessalonicensen', 'II Th':'2tessalonicensen',
+        '1Tim':'1timotheus', 'I Ti':'1timotheus', '2Tim':'2timotheus', 'II Ti':'2timotheus',
+        Titus:'titus', Tit:'titus', Phlm:'filemon', Phm:'filemon', Heb:'hebreeen', He:'hebreeen',
+        Jas:'jakobus', Ja:'jakobus', '1Pet':'1petrus', 'I Pe':'1petrus', '2Pet':'2petrus', 'II Pe':'2petrus',
+        '1John':'1johannes', '1Jn':'1johannes', 'I Jo':'1johannes', '2John':'2johannes', 'II Jo':'2johannes',
+        '3John':'3johannes', 'III Jo':'3johannes', Jude:'judas', Ju:'judas', Rev:'openbaring', Re:'openbaring',
         Tob:'tobit', Jth:'judith', Jdt:'judith', '1Macc':'1makkabeeen', '2Macc':'2makkabeeen', Sir:'jezussirach', Ecclus:'jezussirach', Wis:'boekderwijsheid', Bar:'baruch'
     };
     // Volledige boeknamen (Engels + Nederlands) + gespatieerde nummers als aliassen,
@@ -312,31 +319,80 @@
         Bar:'baruch', '1Ma':'1makkabeeen', '1Mac':'1makkabeeen', '2Ma':'2makkabeeen', '2Mac':'2makkabeeen',
         '3Ma':'3makkabeeen', '3Mac':'3makkabeeen', Man:'gebedvanmanasse', Sus:'susanna', Bel:'belenddedraak'
     };
+    function structuredRefLinks(attr) {
+        var book = null, chapter = null, links = [];
+        String(attr || '').replace(/[()]/g, '').split(';').forEach(function (section) {
+            section.split(',').forEach(function (raw, index) {
+                var token = raw.trim().replace(/[.\s]+$/, '');
+                if (!token) return;
+                var full = token.match(/^([1-3]?[A-Za-z]+)\.(\d+)[.:](\d+)(?:[-–](\d+))?/);
+                var chapterVerse = token.match(/^(\d+)[.:](\d+)(?:[-–](\d+))?/);
+                var verseOnly = token.match(/^(\d+)(?:[-–](\d+))?/);
+                var verse, endVerse;
+                if (full) {
+                    book = TBESG_BOOK[full[1]] || null;
+                    chapter = full[2]; verse = full[3]; endVerse = full[4];
+                } else if (chapterVerse && (index === 0 || token.indexOf(':') >= 0)) {
+                    chapter = chapterVerse[1]; verse = chapterVerse[2]; endVerse = chapterVerse[3];
+                } else if (verseOnly && book && chapter) {
+                    verse = verseOnly[1]; endVerse = verseOnly[2];
+                }
+                if (!book || !chapter || !verse) return;
+                var range = endVerse ? '-' + endVerse : '';
+                links.push('<a class="lex-ref" target="_top" href="index.html#' + book + '/' + chapter + '/' + verse + '">' +
+                    bookName(book) + ' ' + chapter + ':' + verse + range + '</a>');
+            });
+        });
+        return links;
+    }
+    function normalizeLexiconMarkup(html) {
+        return String(html || '')
+            .replace(/<\s*(?:BR|lb)\b[^>]*\/?\s*>/gi, '<br>')
+            .replace(/__\s*(\d+)\.\s*/g, '<span class="lex-number">$1.</span> ');
+    }
     function linkifyTbesg(html, showRefs) {
-        return html.replace(/<ref='([^']+)'>([^<]*)<\/ref>/g, function (m, attr, txt) {
+        return normalizeLexiconMarkup(html).replace(/<ref='([^']+)'>([^<]*)<\/ref>/g, function (m, attr, txt) {
             if (!showRefs) return '';
-            var parts = attr.replace(/\.$/, '').split('.');
-            var b = TBESG_BOOK[parts[0]];
-            if (!b || !parts[1]) return txt || '';       // onbekende boek-code: alleen de tekst tonen
-            // Altijd de volledige Nederlandse boeknaam tonen (bv. "Act. 20:32" -> "Handelingen 20:32").
-            var disp = bookName(b) + ' ' + parts[1] + ':' + (parts[2] || '');
-            return '<a class="lex-ref" target="_top" href="index.html#' + b + '/' + parts[1] + '/' + (parts[2] || '') + '">' + disp + '</a>';
+            var links = structuredRefLinks(attr);
+            return links.length ? links.join('; ') : (txt || '');
         });
     }
 
     // Onderlinge links: Griekse/Hebreeuwse woorden in een definitie die zelf een lemma zijn,
     // klikbaar maken naar dat lemma (cur._hw = kop-woord -> Strong-nummer).
-    var XREF_RE = { grieks: /[Ͱ-Ͽἀ-῿]{2,}/g, hebreeuws: /[֐-׿]{3,}/g };
+    var XREF_RE = {
+        grieks: /[Ͱ-Ͽἀ-῿]+(?:[-‐‑‒–—][Ͱ-Ͽἀ-῿]+)*/g,
+        hebreeuws: /[֐-׿]{3,}/g
+    };
     // Basisvorm: strip accenten/spiritus (Grieks) en niqqud/cantillatie (Hebreeuws) — accent-ongevoelig matchen
-    function baseForm(w) { return w.normalize('NFD').replace(/[̀-ͯ҃-҉֑-ׇ᪰-᫿᷀-᷿]/g, '').toLowerCase(); }
+    function baseForm(w) {
+        return w.normalize('NFD')
+            .replace(/[̀-ͯ҃-҉֑-ׇ᪰-᫿᷀-᷿]/g, '')
+            .replace(/[-‐‑‒–—]/g, '')
+            .toLowerCase();
+    }
+    function transformTextOutsideAnchors(html, transform) {
+        var anchors = [];
+        var protectedHtml = String(html || '').replace(/<a\b[^>]*>[\s\S]*?<\/a>/gi, function (anchor) {
+            anchors.push(anchor);
+            return '\uE000' + (anchors.length - 1) + '\uE001';
+        });
+        var wrapped = '>' + protectedHtml + '<';
+        var transformed = wrapped.replace(/>([^<]*)</g, function (_match, text) {
+            return '>' + transform(text) + '<';
+        }).slice(1, -1);
+        return transformed.replace(/\uE000(\d+)\uE001/g, function (_match, index) {
+            return anchors[+index] || '';
+        });
+    }
     function linkifyXref(html, selfKey) {
         if (!cur || !cur._hw) return html;
         var re = XREF_RE[cur.id]; if (!re) return html;
-        return html.replace(/>([^<]+)</g, function (m, txt) {
-            return '>' + txt.replace(re, function (w) {
+        return transformTextOutsideAnchors(html, function (txt) {
+            return txt.replace(re, function (w) {
                 var k = cur._hw[baseForm(w)];
                 return (k && k !== selfKey) ? '<a class="lex-xref" data-key="' + k + '">' + w + '</a>' : w;
-            }) + '<';
+            });
         });
     }
 
@@ -344,8 +400,8 @@
     // en link ook kale vervolg-verwijzingen (die het vorige boek erven).
     function linkifyAbbr(html, showRefs) {
         var lastBook = null;
-        return html.replace(/>([^<]+)</g, function (m, txt) {
-            var out = txt.replace(refRe, function (mm, ab, ch, vs, rng) {
+        return transformTextOutsideAnchors(html, function (txt) {
+            return txt.replace(refRe, function (mm, ab, ch, vs, rng) {
                 if (!showRefs) return '';
                 var book = null;
                 if (ab && ABBR[ab]) { book = ABBR[ab]; lastBook = book; }
@@ -359,7 +415,6 @@
                 var disp = bookName(book) + ' ' + ch + ':' + vs + (rng || '');
                 return '<a class="lex-ref" target="_top" href="index.html#' + book + '/' + ch + '/' + vs + '">' + disp + '</a>';
             });
-            return '>' + out + '<';
         });
     }
     function linkifyAbbott(html, showRefs) {
@@ -367,6 +422,7 @@
         // <ref='Boek.hoofdstuk.vers'>-tags als TBESG. Verwerk die tags vóór
         // de vrije afkortingsherkenning; anders ontstaat een link binnen een
         // nog onverwerkte ref-tag en blijft de verwijzing in de browser tekst.
+        html = normalizeLexiconMarkup(html);
         return html.indexOf("<ref='") >= 0
             ? linkifyTbesg(html, showRefs)
             : linkifyAbbr(html, showRefs);
