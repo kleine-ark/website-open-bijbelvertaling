@@ -445,6 +445,50 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_johannes_4_1_tot_10_rendert_alle_161_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/4")
+        try:
+            self.enable_strongs(page)
+            verses = page.locator('.verse-row[data-verse="1"], .verse-row[data-verse="2"], .verse-row[data-verse="3"], .verse-row[data-verse="4"], .verse-row[data-verse="5"], .verse-row[data-verse="6"], .verse-row[data-verse="7"], .verse-row[data-verse="8"], .verse-row[data-verse="9"], .verse-row[data-verse="10"]')
+            per_verse = {
+                number: page.locator(f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline').count()
+                for number in range(1, 11)
+            }
+            rendered_ten = page.locator('.verse-row[data-verse="10"] .col-2026 .strongs-inline').evaluate_all(
+                "elements => elements.map(element => element.dataset.strongs)"
+            )
+            self.assertEqual(sum(per_verse.values()), 161, {"counts": per_verse, "verse10": rendered_ten})
+        finally:
+            page.close()
+
+    def test_johannes_4_1_plaatst_vergelijkende_vormstrong_bij_meer_discipelen_maakte(self):
+        page = self.open_reader("johannes/4")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="1"] .col-2026 [data-strongs="G4119"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('meer discipelen maakte');
+            }"""))
+        finally:
+            page.close()
+
+    def test_johannes_4_10_plaatst_waterstrong_bij_levend_water(self):
+        page = self.open_reader("johannes/4")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="10"] .col-2026 [data-strongs="G5204"]')
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('levend water');
+            }"""))
+        finally:
+            page.close()
+
     def test_mattheus_1_1_plaatst_christusstrong_na_christus(self):
         page = self.open_reader("mattheus/1")
         try:
