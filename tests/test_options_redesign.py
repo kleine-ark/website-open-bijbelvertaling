@@ -63,14 +63,14 @@ class OptionsRedesignTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_mobiel_is_halvhoge_bottom_sheet_met_sluitkruis(self):
+    def test_mobiel_is_drie_kwart_hoge_bottom_sheet_met_sluitkruis(self):
         page = self.open_reader()
         try:
             box = page.locator("#sidebar-right").bounding_box()
             self.assertAlmostEqual(box["x"], 0, delta=1)
-            self.assertAlmostEqual(box["y"], 422, delta=2)
+            self.assertAlmostEqual(box["y"], 211, delta=2)
             self.assertAlmostEqual(box["width"], 390, delta=1)
-            self.assertAlmostEqual(box["height"], 422, delta=2)
+            self.assertAlmostEqual(box["height"], 633, delta=2)
             self.assertTrue(page.locator("#sidebar-right-toggle").is_visible())
             self.assertEqual(page.locator("#sidebar-right-toggle").get_attribute("aria-label"), "Opties sluiten")
         finally:

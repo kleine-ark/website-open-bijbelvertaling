@@ -2536,7 +2536,7 @@
         {
           "old": "gekrijgd,",
           "new": "gevochten,",
-          "principe": "MR-SK-052"
+          "principe": "MR-SK-067"
         },
         {
           "old": "der",
@@ -3422,7 +3422,7 @@
       "number": 27,
       "textSV1888": "En de koning Rehabeam maakte, in plaats van die, koperen schilden; en hij beval die onder de hand van de oversten der trawanten, die de deur van het huis des konings bewaarden.",
       "text1637": "Ende de Coninck Rehabeam maeckte in plaetse van die, koperen schilden: ende hy beval [die] onder de hant der Overste der [56] trauwanten, die de deure van het huys des Conincks bewaerden.",
-      "text2026": "En de koning Rehabeam maakte, in plaats van die, koperen schilden; en hij beval die onder de hand van de oversten van de trawanten, die de deur van het huis van de koning bewaarden.",
+      "text2026": "En de koning Rehabeam maakte, in plaats van die, koperen schilden; en hij beval die onder de hand van de oversten van de lijfwachten, die de deur van het huis van de koning bewaarden.",
       "marginNotes": [
         {
           "marker": "56",
@@ -3509,19 +3509,24 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "En de koning Rehabeam maakte, in plaats van die, koperen schilden; en hij beval die onder de hand van de oversten van<sup class=\"note-marker\" data-note=\"56\">56</sup> de trawanten, die de deur van het huis van de koning bewaarden.",
+      "text2026_html": "En de koning Rehabeam maakte, in plaats van die, koperen schilden; en hij beval die onder de hand van de oversten van<sup class=\"note-marker\" data-note=\"56\">56</sup> de lijfwachten, die de deur van het huis van de koning bewaarden.",
       "textSV1888_html": "En de koning Rehabeam maakte, in plaats van die, koperen schilden; en hij beval die onder de hand van de oversten der trawanten,<sup class=\"note-marker\" data-note=\"56\">56</sup> die de deur van het huis des konings bewaarden.",
       "text1637_html": "En<i>de</i> de Coninck Rehabeam maeckte in plaetse van die, koperen schilden: ende hy beval [die] onder de hant der Overste der <sup class=\"note-marker\" data-note=\"56\">56</sup> trauwanten, die de deure van het huys des Conincks bewaerden.",
       "phraseDiff": [
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der trawanten,",
+          "new": "van de lijfwachten,",
+          "principe": "MR-2K-GLOBAL-003"
         },
         {
           "old": "des konings",
           "new": "van de koning",
           "principe": "N3"
+        },
+        {
+          "old": "der",
+          "new": "van de",
+          "principe": "N2"
         }
       ]
     },
@@ -3529,7 +3534,7 @@
       "number": 28,
       "textSV1888": "En het geschiedde, zo wanneer de koning in het huis des HEEREN ging, dat de trawanten dezelve droegen, en die wederbrachten in der trawanten wachtkamer.",
       "text1637": "Ende het geschiedde, so wanneer de Coninck in het Huys des HEEREN ginck, [dat] de trauwanten [57] de selve droegen; ende die wederbrachten in der trauwanten [58] wacht-kamer.",
-      "text2026": "En het gebeurde, zo wanneer de koning in het huis van JAHWEH ging, dat de trawanten die droegen, en die terugbrachten in de wachtkamer van de trawanten.",
+      "text2026": "En het gebeurde, zo wanneer de koning in het huis van JAHWEH ging, dat de lijfwachten die droegen, en die terugbrachten in de wachtkamer van de lijfwachten.",
       "marginNotes": [
         {
           "marker": "57",
@@ -3608,7 +3613,7 @@
           "morph": "HTd/Vqrmpa"
         }
       ],
-      "text2026_html": "En het gebeurde, zo wanneer de koning in het huis van JAHWEH ging, dat de trawanten<sup class=\"note-marker\" data-note=\"57\">57</sup> die droegen, en die terugbrachten in de wachtkamer van de<sup class=\"note-marker\" data-note=\"58\">58</sup> trawanten.",
+      "text2026_html": "En het gebeurde, zo wanneer de koning in het huis van JAHWEH ging, dat de lijfwachten<sup class=\"note-marker\" data-note=\"57\">57</sup> die droegen, en die terugbrachten in de wachtkamer van de<sup class=\"note-marker\" data-note=\"58\">58</sup> lijfwachten.",
       "textSV1888_html": "En het geschiedde, zo wanneer de koning in het huis des HEEREN ging, dat de trawanten<sup class=\"note-marker\" data-note=\"57\">57</sup> dezelve droegen, en die wederbrachten in der trawanten<sup class=\"note-marker\" data-note=\"58\">58</sup> wachtkamer.",
       "text1637_html": "Ende het geschiedde, so wanneer de Coninck in het Huys des HEEREN ginck, [dat] de trauwanten <sup class=\"note-marker\" data-note=\"57\">57</sup> de selve droegen; ende die wederbrachten in der trauwanten <sup class=\"note-marker\" data-note=\"58\">58</sup> wacht-kamer.",
       "phraseDiff": [
@@ -3623,9 +3628,9 @@
           "principe": "N3"
         },
         {
-          "old": "dezelve",
-          "new": "die",
-          "principe": "O3"
+          "old": "trawanten dezelve",
+          "new": "lijfwachten die",
+          "principe": "MR-2K-GLOBAL-003"
         },
         {
           "old": "wederbrachten",
@@ -3634,8 +3639,13 @@
         },
         {
           "old": "der trawanten wachtkamer.",
-          "new": "de wachtkamer van de trawanten.",
-          "principe": null
+          "new": "de wachtkamer van de lijfwachten.",
+          "principe": "MR-2K-GLOBAL-003"
+        },
+        {
+          "old": "dezelve",
+          "new": "die",
+          "principe": "O3"
         }
       ]
     },

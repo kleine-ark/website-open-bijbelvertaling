@@ -1476,7 +1476,7 @@
       "number": 15,
       "textSV1888": "Het overige nu der geschiedenissen van Sallum, en zijn verbintenis, die hij maakte, ziet, die zijn geschreven in het boek der kronieken der koningen van Israël.",
       "text1637": "Het overige nu der geschiedenissen Sallums, ende sijne verbintenisse, die hy maeckte, siet, die sijn geschreven in ’t boeck der Chroniken der Koningen Israëls.",
-      "text2026": "Het overige nu van de geschiedenissen van Sallum, en zijn verbintenis, die hij maakte, ziet, die zijn geschreven in het boek van de kronieken van de koningen van Israël.",
+      "text2026": "Het overige nu van de geschiedenissen van Sallum, en zijn samenzwering, die hij maakte, ziet, die zijn geschreven in het boek van de kronieken van de koningen van Israël.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -1550,13 +1550,18 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Het overige nu van de geschiedenissen van Sallum, en zijn verbintenis, die hij maakte, ziet, die zijn geschreven in het boek van de kronieken van de koningen van Israël.",
+      "text2026_html": "Het overige nu van de geschiedenissen van Sallum, en zijn samenzwering, die hij maakte, ziet, die zijn geschreven in het boek van de kronieken van de koningen van Israël.",
       "text1637_html": "Het overige nu der geschiedenissen Sallums, ende sijne verbintenisse, die hy maeckte, siet, die sijn geschreven in ’t boeck der Chroniken der Koningen Israëls.",
       "phraseDiff": [
         {
           "old": "der",
           "new": "van de",
           "principe": "N2"
+        },
+        {
+          "old": "verbintenis,",
+          "new": "samenzwering,",
+          "principe": "MR-SK-149"
         },
         {
           "old": "der",
@@ -1928,7 +1933,7 @@
       "number": 19,
       "textSV1888": "Toen kwam Pul, de koning van Assyrië, tegen het land; en Menahem gaf aan Pul duizend talenten zilvers, opdat zijn hand met hem zoude zijn, om het koninkrijk in zijn hand te sterken.",
       "text1637": "[e] [Doe] quam [19] Pul de Koninck van Assyrien tegen het lant; ende Menahem gaf aen Pul [20] duysent talenten silvers, [21] op dat sijne hant met hem soude zijn, om het Koninckrijck in sijne hant te stercken.",
-      "text2026": "Toen kwam Pul, de koning van Assyrië, tegen het land; en Menahem gaf aan Pul duizend talenten zilvers, opdat zijn hand met hem zou zijn, om het koninkrijk in zijn hand te sterken.",
+      "text2026": "Toen kwam Pul, de koning van Assyrië, tegen het land; en Menahem gaf aan Pul duizend talenten zilver, opdat zijn hand met hem zou zijn, om het koninkrijk in zijn hand te sterken.",
       "marginNotes": [
         {
           "marker": "e",
@@ -2051,10 +2056,15 @@
           "morph": "HR/Ncbsc/Sp3ms"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Toen<sup class=\"note-marker\" data-note=\"19\">19</sup> kwam Pul, de koning van Assyrië, tegen het land; en Menahem gaf aan Pul<sup class=\"note-marker\" data-note=\"20\">20</sup> duizend talenten zilvers,<sup class=\"note-marker\" data-note=\"21\">21</sup> opdat zijn hand met hem zou zijn, om het koninkrijk in zijn hand te sterken.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Toen<sup class=\"note-marker\" data-note=\"19\">19</sup> kwam Pul, de koning van Assyrië, tegen het land; en Menahem gaf aan Pul<sup class=\"note-marker\" data-note=\"20\">20</sup> duizend talenten zilver,<sup class=\"note-marker\" data-note=\"21\">21</sup> opdat zijn hand met hem zou zijn, om het koninkrijk in zijn hand te sterken.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> Toen<sup class=\"note-marker\" data-note=\"19\">19</sup> kwam Pul, de koning van Assyrië, tegen het land; en Menahem gaf aan Pul<sup class=\"note-marker\" data-note=\"20\">20</sup> duizend talenten zilvers,<sup class=\"note-marker\" data-note=\"21\">21</sup> opdat zijn hand met hem zoude zijn, om het koninkrijk in zijn hand te sterken.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> [Doe] quam <sup class=\"note-marker\" data-note=\"19\">19</sup> Pul de Koninck van Assyrien tegen het lant; ende Menahem gaf aen Pul <sup class=\"note-marker\" data-note=\"20\">20</sup> duysent talenten silvers, <sup class=\"note-marker\" data-note=\"21\">21</sup> op dat sijne hant met hem soude zijn, om het Koninckrijck in sijne hant te stercken.",
       "phraseDiff": [
+        {
+          "old": "zilvers,",
+          "new": "zilver,",
+          "principe": "MR-SK-100"
+        },
         {
           "old": "zoude",
           "new": "zou",

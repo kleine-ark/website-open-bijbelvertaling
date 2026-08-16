@@ -76,6 +76,7 @@ const Opties = {
         this.applyCitationsClass();
         this.applyThemeClass();
         this.applyReaderStyleClasses();
+        document.body.classList.toggle('show-tags', this.state.geoMarkeren === 'aan');
 
         // Arabische namen lui laden (en, indien al ingeschakeld, hoofdstuk herrenderen)
         this.ready = Promise.all([
@@ -127,6 +128,9 @@ const Opties = {
                 // vuren alleen bij de nieuwe keuze.
                 if (input.type === 'checkbox') {
                     this.state[input.dataset.optie] = input.checked ? input.value : 'uit';
+                    if (input.id === 'toggle-contextmarkeringen') {
+                        document.body.classList.toggle('show-tags', input.checked);
+                    }
                     this.save();
                     if (input.dataset.optie === 'apocriefeBoeken' || input.dataset.optie === 'ethiopischeBoeken') {
                         if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();

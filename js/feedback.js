@@ -94,6 +94,15 @@ const Feedback = {
                 <h3 id="fb-title">Feedback / suggestie</h3>
                 <p class="fb-ref"></p>
                 <blockquote class="fb-quote"></blockquote>
+                <fieldset class="fb-types">
+                    <legend>Soort opmerking</legend>
+                    <label><input type="radio" name="fb-type" value="Citatie" checked> Citatie</label>
+                    <label><input type="radio" name="fb-type" value="Principe"> Principe</label>
+                    <label><input type="radio" name="fb-type" value="Spelling en grammatica"> Spelling en grammatica</label>
+                    <label><input type="radio" name="fb-type" value="Oude woorden vervangen"> Oude woorden vervangen</label>
+                    <label><input type="radio" name="fb-type" value="Woord is niet volgens principe vervangen"> Niet volgens principe vervangen</label>
+                    <label><input type="radio" name="fb-type" value="Tag onderwerp"> Tag onderwerp</label>
+                </fieldset>
                 <label for="fb-suggestion">Jouw suggestie of opmerking</label>
                 <textarea id="fb-suggestion" rows="5" placeholder="Bijv.: 'voorgesteld als — voorgedragen als'..."></textarea>
                 <div class="fb-actions">
@@ -162,7 +171,7 @@ const Feedback = {
             chapter: this.pending.ch,
             verse: this.pending.vs,
             selected: this.pending.text,
-            suggestion: txt,
+            suggestion: `[${m.querySelector('input[name="fb-type"]:checked').value}] ${txt}`,
             datum: new Date().toISOString(),
             userAgent: navigator.userAgent
         };

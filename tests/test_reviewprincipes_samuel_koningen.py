@@ -63,3 +63,11 @@ def test_reviewcorrecties_zijn_in_de_verzen_aan_hun_principe_gekoppeld():
             ontbrekend.append(f"{boek} {hoofdstuk}:{versnummer} -> {verwacht}")
 
     assert not ontbrekend, "Niet gekoppelde reviewprincipes:\n" + "\n".join(ontbrekend)
+
+
+def test_reviewprincipe_ids_zijn_uniek():
+    principes = json.loads(
+        (ROOT / "data" / "wijzigingsprincipes.json").read_text(encoding="utf-8")
+    )["principes"]
+    ids = [item["id"] for item in principes if item["id"].startswith("MR-SK-")]
+    assert len(ids) == len(set(ids))

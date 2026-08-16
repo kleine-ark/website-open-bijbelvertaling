@@ -1086,12 +1086,15 @@ const Lees = {
                     location.hash = `#${book.id}/1`;
                 });
                 items.appendChild(btn);
+
             }
             group.appendChild(items);
             list.appendChild(group);
         }
 
         overlay.classList.remove('hidden');
+        const actief = list.querySelector('.book-group-items button.active');
+        if (actief) requestAnimationFrame(() => actief.scrollIntoView({ block: 'center' }));
     },
 
     // === Search ===
