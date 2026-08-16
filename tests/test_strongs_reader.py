@@ -130,6 +130,104 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_genesis_1_1_plaatst_strongs_op_lokale_woordankers(self):
+        page = self.open_reader("genesis/1")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="1"] .col-2026')
+            for strong, anchor in [("H7225", "begin"), ("H1254", "schiep"), ("H430", "God"), ("H8064", "hemel"), ("H776", "aarde")]:
+                trigger = cell.locator(f'[data-strongs="{strong}"]').first
+                self.assertTrue(trigger.evaluate("""(el, anchor) => {
+                    const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                    const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(x => x.remove());
+                    return fragment.textContent.trimEnd().endsWith(anchor);
+                }""", anchor))
+        finally:
+            page.close()
+
+    def test_genesis_2_6_behoudt_meerdere_lege_strongsankers(self):
+        """Niet-afzonderlijk vertaalde woorden blijven elk zichtbaar op hun eigen anker."""
+        page = self.open_reader("genesis/2")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="6"] .col-2026')
+            for strong, anchor in [("H853", "bevochtigde"), ("H6440", "hele")]:
+                trigger = cell.locator(f'[data-strongs="{strong}"]')
+                self.assertEqual(trigger.count(), 1)
+                self.assertTrue(trigger.evaluate("""(el, anchor) => {
+                    const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                    const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(x => x.remove());
+                    return fragment.textContent.trimEnd().endsWith(anchor);
+                }""", anchor), f"Genesis 2:6 {strong}")
+        finally:
+            page.close()
+
+    def test_genesis_2_12_tot_15_plaatst_granulaire_ankers_en_behoudt_lokaal_lemma(self):
+        page = self.open_reader("genesis/2")
+        try:
+            self.enable_strongs(page)
+            for verse, strong, anchor in [
+                (12, "H2091", "goud"),
+                (12, "H8033", "daar"),
+                (13, "H853", "omloopt"),
+                (14, "H2313", "Hiddekel"),
+                (14, "H6578", "Frath"),
+                (15, "H3240", "zette"),
+            ]:
+                trigger = page.locator(
+                    f'.verse-row[data-verse="{verse}"] .col-2026 [data-strongs="{strong}"]'
+                )
+                self.assertEqual(trigger.count(), 1, f"Genesis 2:{verse} {strong}")
+                self.assertTrue(trigger.evaluate("""(el, anchor) => {
+                    const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                    const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(x => x.remove());
+                    return fragment.textContent.trimEnd().endsWith(anchor);
+                }""", anchor), f"Genesis 2:{verse} {strong}")
+            self.assertEqual(
+                page.locator('.verse-row[data-verse="15"] .col-2026 [data-strongs="H5117"]').count(),
+                0,
+            )
+        finally:
+            page.close()
+
+    def test_genesis_1_6_tot_10_plaatst_strongs_op_lokale_woordankers(self):
+        page = self.open_reader("genesis/1")
+        try:
+            self.enable_strongs(page)
+            for verse, strong, anchor in [
+                (6, "H559", "zei"),
+                (6, "H7549", "uitspansel"),
+                (7, "H6213", "maakte"),
+                (8, "H8064", "hemel"),
+                (9, "H6960", "verzameld"),
+                (10, "H4723", "vergadering"),
+                (11, "H1876", "uitschiete"),
+                (12, "H3318", "bracht voort"),
+                (13, "H7992", "derde"),
+                (14, "H3974", "lichten"),
+                (15, "H215", "licht te geven"),
+                (16, "H3556", "sterren"),
+                (17, "H5414", "stelde"),
+                (18, "H4910", "heersen"),
+                (19, "H7243", "vierde"),
+                (20, "H8318", "gewemel"),
+                (21, "H8577", "walvissen"),
+                (22, "H1288", "zegende"),
+                (23, "H2549", "vijfde"),
+                (24, "H3318", "brenge"),
+                (25, "H7431", "kruipend"),
+            ]:
+                trigger = page.locator(
+                    f'.verse-row[data-verse="{verse}"] .col-2026 [data-strongs="{strong}"]'
+                ).first
+                self.assertTrue(trigger.evaluate("""(el, anchor) => {
+                    const range = document.createRange(); range.setStart(el.parentNode, 0); range.setEndBefore(el);
+                    const fragment = range.cloneContents(); fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(x => x.remove());
+                    return fragment.textContent.trimEnd().endsWith(anchor);
+                }""", anchor), f"Genesis 1:{verse} {strong}")
+        finally:
+            page.close()
+
     def test_johannes_1_6_plaatst_de_naamstrong_na_johannes(self):
         """De gecontroleerde naamkoppeling volgt de Nederlandse woordvolgorde."""
         page = self.open_reader("johannes/1")
@@ -536,15 +634,15 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_johannes_5_1_tot_10_rendert_alle_172_gecontroleerde_tr_tokens_inline(self):
+    def test_johannes_5_rendert_alle_832_gecontroleerde_tr_tokens_inline(self):
         page = self.open_reader("johannes/5")
         try:
             self.enable_strongs(page)
             per_verse = {
                 number: page.locator(f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline').count()
-                for number in range(1, 11)
+                for number in range(1, 48)
             }
-            self.assertEqual(sum(per_verse.values()), 172, per_verse)
+            self.assertEqual(sum(per_verse.values()), 832, per_verse)
         finally:
             page.close()
 
@@ -556,6 +654,132 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             self.assertEqual(verse.locator('[data-strongs="G5144"]').count(), 1)
             self.assertEqual(verse.locator('[data-strongs="G3638"]').count(), 1)
             self.assertEqual(verse.locator('[data-strongs="G2258"]').inner_text(), "<2258>(5713)")
+        finally:
+            page.close()
+
+    def test_johannes_5_19_plaatst_zoonstrong_bij_de_zoon(self):
+        page = self.open_reader("johannes/5")
+        try:
+            self.enable_strongs(page)
+            triggers = page.locator('.verse-row[data-verse="19"] .col-2026 [data-strongs="G5207"]')
+            self.assertEqual(triggers.count(), 2)
+        finally:
+            page.close()
+
+    def test_johannes_5_29_plaatst_opstandingstrong_tweemaal(self):
+        page = self.open_reader("johannes/5")
+        try:
+            self.enable_strongs(page)
+            triggers = page.locator('.verse-row[data-verse="29"] .col-2026 [data-strongs="G386"]')
+            self.assertEqual(triggers.count(), 2)
+        finally:
+            page.close()
+
+    def test_johannes_5_39_plaatst_schriftenstrong_bij_de_schriften(self):
+        page = self.open_reader("johannes/5")
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="39"] .col-2026 [data-strongs="G1124"]')
+            self.assertEqual(trigger.count(), 1)
+        finally:
+            page.close()
+
+    def test_johannes_6_rendert_alle_1284_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/6")
+        try:
+            self.enable_strongs(page)
+            per_verse = {number: page.locator(
+                f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline'
+            ).count() for number in range(1, 72)}
+            self.assertEqual(sum(per_verse.values()), 1284, per_verse)
+        finally:
+            page.close()
+
+    def test_johannes_7_rendert_alle_873_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/7")
+        try:
+            self.enable_strongs(page)
+            per_verse = {number: page.locator(
+                f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline'
+            ).count() for number in range(1, 54)}
+            self.assertEqual(sum(per_verse.values()), 873, per_verse)
+        finally:
+            page.close()
+
+    def test_johannes_8_rendert_1110_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/8")
+        try:
+            self.enable_strongs(page)
+            per_verse = {number: page.locator(
+                f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline'
+            ).count() for number in range(1, 60)}
+            self.assertEqual(sum(per_verse.values()), 1110, per_verse)
+        finally:
+            page.close()
+
+    def test_johannes_9_rendert_698_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/9")
+        try:
+            self.enable_strongs(page)
+            per_verse = {number: page.locator(
+                f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline'
+            ).count() for number in range(1, 42)}
+            self.assertEqual(sum(per_verse.values()), 698, per_verse)
+        finally:
+            page.close()
+
+    def test_johannes_10_rendert_711_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/10")
+        try:
+            self.enable_strongs(page)
+            per_verse = {number: page.locator(
+                f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline'
+            ).count() for number in range(1, 43)}
+            self.assertEqual(sum(per_verse.values()), 711, per_verse)
+        finally:
+            page.close()
+
+    def test_johannes_11_rendert_958_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/11")
+        try:
+            self.enable_strongs(page)
+            per_verse = {number: page.locator(
+                f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline'
+            ).count() for number in range(1, 58)}
+            self.assertEqual(sum(per_verse.values()), 958, per_verse)
+        finally:
+            page.close()
+
+    def test_johannes_12_rendert_891_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/12")
+        try:
+            self.enable_strongs(page)
+            per_verse = {number: page.locator(
+                f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline'
+            ).count() for number in range(1, 51)}
+            self.assertEqual(sum(per_verse.values()), 891, per_verse)
+        finally:
+            page.close()
+
+    def test_johannes_13_rendert_669_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/13")
+        try:
+            self.enable_strongs(page)
+            per_verse = {number: page.locator(
+                f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline'
+            ).count() for number in range(1, 39)}
+            self.assertEqual(sum(per_verse.values()), 669, per_verse)
+        finally:
+            page.close()
+
+    def test_johannes_14_1_10_rendert_189_gecontroleerde_tr_tokens_inline(self):
+        page = self.open_reader("johannes/14")
+        try:
+            self.enable_strongs(page)
+            per_verse = {number: page.locator(
+                f'.verse-row[data-verse="{number}"] .col-2026 .strongs-inline'
+            ).count() for number in range(1, 11)}
+            self.assertEqual(sum(per_verse.values()), 189, per_verse)
         finally:
             page.close()
 
