@@ -1,0 +1,31 @@
+{
+  "source": {
+    "id": "bsb-full-strongs-usj",
+    "version": "5.6",
+    "sha256": "70CF7B6FE614E1227FF7BD13E5946BB3876B14DA214392032CD2B3514233DFA3"
+  },
+  "grondtekst_bron": {
+    "dataset": "openscriptures-morphhb",
+    "versie": "v2.2",
+    "commit": "6a5db284c715c18b239422e57bb89684e6a19f00",
+    "bestand": "wlc/Deut.xml",
+    "sha256": "BFD3E792709E3F54E3029FF6ADAFF76EA469E40BCA26C75E164A882ECC457DAF"
+  },
+  "versindeling_afwijking": {
+    "nederlandse_deuteronomium_22_1_tot_29": "MorphHB Deut.22.1 tot en met Deut.22.29",
+    "nederlandse_deuteronomium_22_30": "MorphHB Deut.23.1",
+    "herstel": "De grondtekst van 22:30 ontbrak en is uit Deut.23.1 aangevuld.",
+    "bronherstel_22_10": "De morfologie van het derde token van 22:10 stond als HC/R/Ncbsa opgeslagen; MorphHB v2.2 geeft HC/Rd/Ncbsa. Woord en Strong-nummer zijn ongewijzigd.",
+    "bevestigingsmethode": "Bevestigd door de opgeslagen Hebreeuwse tokens naast de Nederlandse zin van hetzelfde versnummer te leggen: de eerder opgeslagen tokens hoorden bij de Nederlandse zin van het vórige respectievelijk vólgende versnummer. Een onafhankelijke tweede aanwijzing is de BSB-uitlijngids, die de Nederlandse versindeling volgt: zijn Strong-multiset komt per vers voor 0,83 tot 1,00 overeen met het hier vastgelegde Masoretische vers en voor 0,00 tot 0,29 met het eerder opgeslagen vers. Na herstel reproduceren alle 959 Deuteronomium-verzen precies één MorphHB-vers byte-identiek (woord, Strong en morfologie), met een inleesroutine die het qere binnen <note type=\"variant\"> niet meetelt en de vergrote letters binnen <seg type=\"x-large\"> wél."
+  },
+  "books": [
+    {
+      "code": "DEU",
+      "repo_book": "deuteronomium",
+      "chapter": 22,
+      "source_file": "05DEUBSB_full_strongs.usj",
+      "source_file_sha256": "70CF7B6FE614E1227FF7BD13E5946BB3876B14DA214392032CD2B3514233DFA3",
+      "verses": []
+    }
+  ]
+}
