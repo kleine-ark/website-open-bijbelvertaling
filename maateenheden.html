@@ -48,6 +48,11 @@
         .me-illustratie img { width: 100%; height: 100%; min-height: 174px; object-fit: cover; object-position: center; display: block; }
         .me-illustratie-tekst { align-self: center; padding: 16px 20px 16px 0; color: var(--text-secondary, #555); font-size: 14px; line-height: 1.6; }
         .me-illustratie-tekst strong { display: block; margin-bottom: 4px; color: var(--navy); font-family: var(--font-body); font-size: 16px; }
+        .me-detailgalerij { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 16px 0 24px; }
+        .me-detailkaart { margin: 0; overflow: hidden; border: 1px solid var(--border, #e5e1d8); border-radius: 10px; background: var(--surface, #fffdf9); }
+        .me-detailkaart img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; background: #efe8da; }
+        .me-detailkaart figcaption { padding: 8px 9px 9px; color: var(--text-secondary, #555); font-size: 12px; line-height: 1.35; }
+        .me-detailkaart strong { color: var(--navy); display: block; font-size: 13px; margin-bottom: 1px; }
         :root[data-theme="donker"] table.me-tab td { color: var(--text-secondary); }
         :root[data-theme="donker"] table.me-tab td.me-naam { color: var(--text-primary); }
         :root[data-theme="donker"] .me-illustratie { background: linear-gradient(115deg, rgba(203,164,73,0.14), rgba(21,37,50,0.10)); }
@@ -61,6 +66,7 @@
             .me-illustratie img { min-height: 122px; }
             .me-illustratie-tekst { padding: 12px 14px 12px 0; font-size: 13px; }
             .me-illustratie-tekst strong { font-size: 14px; }
+            .me-detailgalerij { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
         }
     </style>
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
@@ -110,6 +116,13 @@
             weet of die langer of korter was.
         </div>
 
+        <div class="me-detailgalerij" aria-label="Lengtematen in beeld">
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/el.webp" alt="Een el, gemeten van elleboog tot vingertop" loading="lazy" width="1024" height="1024"><figcaption><strong>El</strong>De maat van de onderarm.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/span.webp" alt="Een span, de afstand tussen duim en pink" loading="lazy" width="1024" height="1024"><figcaption><strong>Span</strong>De gespreide hand.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/riet.webp" alt="Een riet als lange meetstok" loading="lazy" width="1024" height="1024"><figcaption><strong>Riet</strong>De meetstok van de landmeter.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/stadie.webp" alt="Een stadie als Griekse afstandsmaat" loading="lazy" width="1024" height="1024"><figcaption><strong>Stadie</strong>De Griekse afstandsmaat.</figcaption></figure>
+        </div>
+
         <h2 class="me-groep">Inhoud</h2>
         <figure class="me-illustratie">
             <img src="images/wiki/maateenheden/inhoud.webp" alt="Inhoudsmaten: graan- en vloeistofvaten" loading="lazy" width="1024" height="1024">
@@ -146,6 +159,13 @@
             de tabel hierboven schuiven mee met die keuze.
         </div>
 
+        <div class="me-detailgalerij" aria-label="Inhoudsmaten in beeld">
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/homer-kor.webp" alt="Een homer of kor als grote graanmaat" loading="lazy" width="1024" height="1024"><figcaption><strong>Homer / kor</strong>De grote maat van tien efa.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/efa.webp" alt="Een efa als maat voor graan" loading="lazy" width="1024" height="1024"><figcaption><strong>Efa</strong>De standaardmaat voor graan.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/bath.webp" alt="Een bath als maat voor vloeistof" loading="lazy" width="1024" height="1024"><figcaption><strong>Bath</strong>De grote maat voor vloeistof.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/hin.webp" alt="Een hin voor olie of wijn" loading="lazy" width="1024" height="1024"><figcaption><strong>Hin</strong>De offermaat voor olie en wijn.</figcaption></figure>
+        </div>
+
         <h2 class="me-groep">Gewicht</h2>
         <figure class="me-illustratie">
             <img src="images/wiki/maateenheden/gewicht.webp" alt="Gewichten: balans, stenen gewichten en talent" loading="lazy" width="1024" height="1024">
@@ -171,6 +191,13 @@
             <em>mna</em>, en bij Johannes de Romeinse <em>litra</em> van ongeveer 327 g.
         </div>
 
+        <div class="me-detailgalerij" aria-label="Gewichten in beeld">
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/talent.webp" alt="Een talent als zwaar gewicht" loading="lazy" width="1024" height="1024"><figcaption><strong>Talent</strong>De zwaarste gewichtsmaat.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/sikkel.webp" alt="Een sikkel op een balans" loading="lazy" width="1024" height="1024"><figcaption><strong>Sikkel</strong>De basiseenheid van gewicht.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/beka.webp" alt="Een beka als halve sikkel" loading="lazy" width="1024" height="1024"><figcaption><strong>Beka</strong>Een halve sikkel.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/gera.webp" alt="Een gera als klein gewicht" loading="lazy" width="1024" height="1024"><figcaption><strong>Gera</strong>Een twintigste sikkel.</figcaption></figure>
+        </div>
+
         <h2 class="me-groep">Geld</h2>
         <figure class="me-illustratie">
             <img src="images/wiki/maateenheden/geld.webp" alt="Bijbelse munten en geldwaarden" loading="lazy" width="1024" height="1024">
@@ -192,6 +219,14 @@
             <strong>Let op — “penning” dekt vier verschillende munten.</strong> De Statenvertaling gebruikt dat ene
             woord voor de denarius, de drachme, de lepton en de kodrantes. Die verhouden zich tot elkaar als 1 tot 128.
             Waar het bedrag ertoe doet, is dat in de kanttekeningen terug te vinden.
+        </div>
+
+        <div class="me-detailgalerij" aria-label="Bijbelse munten in beeld">
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/penning.webp" alt="Een Romeinse penning" loading="lazy" width="1024" height="1024"><figcaption><strong>Penning</strong>Ongeveer een dagloon.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/zilverling.webp" alt="Zilverlingen als gewogen zilver" loading="lazy" width="1024" height="1024"><figcaption><strong>Zilverling</strong>Gewogen zilver als betaalmiddel.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/drachme.webp" alt="Een Griekse drachme" loading="lazy" width="1024" height="1024"><figcaption><strong>Drachme</strong>De Griekse zilvermunt.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/stater.webp" alt="Een stater als munt voor de tempelbelasting" loading="lazy" width="1024" height="1024"><figcaption><strong>Stater</strong>De munt uit de bek van de vis.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/oort.webp" alt="Een oort als kleine munt" loading="lazy" width="1024" height="1024"><figcaption><strong>Oort</strong>De kleinste munt in omloop.</figcaption></figure>
         </div>
 
         <h2 class="me-groep">Tijd</h2>
