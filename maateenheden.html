@@ -49,8 +49,8 @@
         .me-illustratie-tekst { align-self: center; padding: 16px 20px 16px 0; color: var(--text-secondary, #555); font-size: 14px; line-height: 1.6; }
         .me-illustratie-tekst strong { display: block; margin-bottom: 4px; color: var(--navy); font-family: var(--font-body); font-size: 16px; }
         .me-detailgalerij { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 16px 0 24px; }
-        .me-detailkaart { margin: 0; overflow: hidden; border: 1px solid var(--border, #e5e1d8); border-radius: 10px; background: var(--surface, #fffdf9); }
-        .me-detailkaart img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; background: #efe8da; }
+        .me-detailkaart { margin: 0; overflow: hidden; aspect-ratio: 1; display: grid; grid-template-rows: minmax(0, 1fr) auto; border: 1px solid var(--border, #e5e1d8); border-radius: 10px; background: var(--surface, #fffdf9); }
+        .me-detailkaart img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: center; background: #efe8da; }
         .me-detailkaart figcaption { padding: 8px 9px 9px; color: var(--text-secondary, #555); font-size: 12px; line-height: 1.35; }
         .me-detailkaart strong { color: var(--navy); display: block; font-size: 13px; margin-bottom: 1px; }
         :root[data-theme="donker"] table.me-tab td { color: var(--text-secondary); }
@@ -119,8 +119,15 @@
         <div class="me-detailgalerij" aria-label="Lengtematen in beeld">
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/el.webp" alt="Een el, gemeten van elleboog tot vingertop" loading="lazy" width="1024" height="1024"><figcaption><strong>El</strong>De maat van de onderarm.</figcaption></figure>
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/span.webp" alt="Een span, de afstand tussen duim en pink" loading="lazy" width="1024" height="1024"><figcaption><strong>Span</strong>De gespreide hand.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/handbreed.webp" alt="Een handbreed als lengtemaat" loading="lazy" width="1024" height="1024"><figcaption><strong>Handbreed</strong>De breedte van vier vingers.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/vinger.webp" alt="Een vinger als kleine lengtemaat" loading="lazy" width="1024" height="1024"><figcaption><strong>Vinger</strong>De kleinste lengtemaat.</figcaption></figure>
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/riet.webp" alt="Een riet als lange meetstok" loading="lazy" width="1024" height="1024"><figcaption><strong>Riet</strong>De meetstok van de landmeter.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/vadem.webp" alt="Een vadem als spanwijdte van beide armen" loading="lazy" width="1024" height="1024"><figcaption><strong>Vadem</strong>De spanwijdte van beide armen.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/schrede.webp" alt="Een schrede als stap" loading="lazy" width="1024" height="1024"><figcaption><strong>Schrede</strong>Eén stap.</figcaption></figure>
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/stadie.webp" alt="Een stadie als Griekse afstandsmaat" loading="lazy" width="1024" height="1024"><figcaption><strong>Stadie</strong>De Griekse afstandsmaat.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/mijl.webp" alt="Een Romeinse mijl als afstandsmaat" loading="lazy" width="1024" height="1024"><figcaption><strong>Mijl</strong>Duizend dubbele passen.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/sabbatsreis.webp" alt="Een sabbatsreis als toegestane reisafstand" loading="lazy" width="1024" height="1024"><figcaption><strong>Sabbatsreis</strong>De traditionele reisafstand op sabbat.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/dagreis.webp" alt="Een dagreis van een karavaan" loading="lazy" width="1024" height="1024"><figcaption><strong>Dagreis</strong>De afstand van een reisdag.</figcaption></figure>
         </div>
 
         <h2 class="me-groep">Inhoud</h2>
@@ -163,7 +170,14 @@
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/homer-kor.webp" alt="Een homer of kor als grote graanmaat" loading="lazy" width="1024" height="1024"><figcaption><strong>Homer / kor</strong>De grote maat van tien efa.</figcaption></figure>
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/efa.webp" alt="Een efa als maat voor graan" loading="lazy" width="1024" height="1024"><figcaption><strong>Efa</strong>De standaardmaat voor graan.</figcaption></figure>
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/bath.webp" alt="Een bath als maat voor vloeistof" loading="lazy" width="1024" height="1024"><figcaption><strong>Bath</strong>De grote maat voor vloeistof.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/sea.webp" alt="Een sea als maat voor graan" loading="lazy" width="1024" height="1024"><figcaption><strong>Sea</strong>Een derde efa.</figcaption></figure>
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/hin.webp" alt="Een hin voor olie of wijn" loading="lazy" width="1024" height="1024"><figcaption><strong>Hin</strong>De offermaat voor olie en wijn.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/gomer.webp" alt="Een gomer als dagelijkse portie manna" loading="lazy" width="1024" height="1024"><figcaption><strong>Gomer</strong>De dagelijkse portie manna.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/kab.webp" alt="Een kab als kleine inhoudsmaat" loading="lazy" width="1024" height="1024"><figcaption><strong>Kab</strong>Een kleine kommaat.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/log.webp" alt="Een log als kleine inhoudsmaat" loading="lazy" width="1024" height="1024"><figcaption><strong>Log</strong>De kleinste inhoudsmaat.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/metreet.webp" alt="Een metreet als groot stenen watervat" loading="lazy" width="1024" height="1024"><figcaption><strong>Metreet</strong>De maat van de watervaten te Kana.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/korenmaat.webp" alt="Een korenmaat met een lamp erboven" loading="lazy" width="1024" height="1024"><figcaption><strong>Korenmaat</strong>De maat waaronder geen lamp hoort.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/maatje.webp" alt="Een maatje als dagrantsoen graan" loading="lazy" width="1024" height="1024"><figcaption><strong>Maatje</strong>Een dagrantsoen graan.</figcaption></figure>
         </div>
 
         <h2 class="me-groep">Gewicht</h2>
@@ -193,6 +207,7 @@
 
         <div class="me-detailgalerij" aria-label="Gewichten in beeld">
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/talent.webp" alt="Een talent als zwaar gewicht" loading="lazy" width="1024" height="1024"><figcaption><strong>Talent</strong>De zwaarste gewichtsmaat.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/pond.webp" alt="Een pond als gewicht" loading="lazy" width="1024" height="1024"><figcaption><strong>Pond</strong>Een gewicht met meerdere waarden.</figcaption></figure>
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/sikkel.webp" alt="Een sikkel op een balans" loading="lazy" width="1024" height="1024"><figcaption><strong>Sikkel</strong>De basiseenheid van gewicht.</figcaption></figure>
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/beka.webp" alt="Een beka als halve sikkel" loading="lazy" width="1024" height="1024"><figcaption><strong>Beka</strong>Een halve sikkel.</figcaption></figure>
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/gera.webp" alt="Een gera als klein gewicht" loading="lazy" width="1024" height="1024"><figcaption><strong>Gera</strong>Een twintigste sikkel.</figcaption></figure>
@@ -237,6 +252,11 @@
                 <tr><td class="me-naam">nachtwake</td><td class="me-waarde">3 of 4 uur</td><td>Het Oude Testament verdeelt de nacht in drie waken, het Nieuwe Testament volgt de Romeinse indeling in vier.</td><td>Richteren 7:19 <span class="me-tel">13×</span></td></tr>
             </tbody>
         </table>
+
+        <div class="me-detailgalerij" aria-label="Bijbelse tijdsaanduidingen in beeld">
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/uur.webp" alt="Een uur gerekend vanaf zonsopgang" loading="lazy" width="1024" height="1024"><figcaption><strong>Uur</strong>Een twaalfde van de daglengte.</figcaption></figure>
+            <figure class="me-detailkaart"><img src="images/wiki/maateenheden/nachtwake.webp" alt="Een nachtwake in de Bijbelse tijd" loading="lazy" width="1024" height="1024"><figcaption><strong>Nachtwake</strong>Een deel van de nacht.</figcaption></figure>
+        </div>
 
         <div class="me-vraag">
             <strong>Rekende Johannes anders?</strong> Er is een oud meningsverschil of het evangelie naar Johannes de

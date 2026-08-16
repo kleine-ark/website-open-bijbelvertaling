@@ -233,8 +233,11 @@
     }
 
     function volkenKaartHtml(kaart) {
+        var plaats = kaart.plaats || '';
+        var label = kaart.label || String(kaart.gebied || '').toUpperCase();
+        var rivier = kaart.rivier || 'Jordaan';
         return '<a class="vn-kaart" target="_top" href="' + esc(kaart.link) + '" aria-label="Bekijk ' +
-            esc(kaart.plaats) + ' op de interactieve kaart">' +
+            esc(plaats) + ' op de interactieve kaart">' +
             '<span class="vn-kaart-beeld" aria-hidden="true">' +
             '<svg viewBox="0 0 420 190" role="img">' +
             '<path class="vn-water" d="M151 0 C144 42 161 64 153 100 C148 126 157 145 150 190" />' +
@@ -242,14 +245,15 @@
             '<path class="vn-gebied" d="M177 37 C224 20 298 38 328 76 C310 122 269 153 199 149 C173 116 168 76 177 37 Z" />' +
             '<circle class="vn-marker-ring" cx="254" cy="83" r="11" />' +
             '<circle class="vn-marker" cx="254" cy="83" r="5" />' +
-            '<text class="vn-rabba" x="272" y="88">Rabba</text>' +
-            '<text class="vn-jordaan" x="126" y="83" transform="rotate(-83 126 83)">Jordaan</text>' +
-            '<text class="vn-ammon" x="230" y="126">AMMON</text>' +
+            '<text class="vn-plaats" x="272" y="88">' + esc(plaats) + '</text>' +
+            '<text class="vn-waternaam" x="126" y="83" transform="rotate(-83 126 83)">' + esc(rivier) + '</text>' +
+            '<text class="vn-volk" x="230" y="126">' + esc(label) + '</text>' +
             '</svg></span>' +
             '<span class="vn-kaart-info"><span class="vn-label">Woongebied</span>' +
             '<strong>' + esc(kaart.gebied) + '</strong>' +
             '<span>' + esc(kaart.plaats) + ' — ' + esc(kaart.moderneNaam) + '</span>' +
             '<small>' + esc(kaart.toelichting) + '</small>' +
+            (kaart.bronLabel ? '<small class="vn-kaart-bron"><strong>Bron:</strong> ' + esc(kaart.bronLabel) + '</small>' : '') +
             '<span class="vn-kaart-cta">Bekijk op de kaart →</span></span></a>';
     }
 

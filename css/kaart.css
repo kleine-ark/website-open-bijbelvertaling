@@ -17,7 +17,22 @@
     background: var(--bg-surface, #fff);
 }
 .kaart-koptekst { min-width: 0; }
+.kaart-titelrij { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
 .kaart-kop h1 { margin: 0; color: var(--navy, var(--kaart-inkt)); font-family: var(--font-cursive); font-size: clamp(24px, 2.3vw, 31px); font-weight: 400; line-height: 1.1; }
+.kaart-status {
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(201, 164, 75, .62);
+    border-radius: 999px;
+    color: var(--teal);
+    background: rgba(201, 164, 75, .09);
+    font: 600 10px/1 var(--font-sans, sans-serif);
+    letter-spacing: .02em;
+    white-space: nowrap;
+}
+.kaart-status strong { padding: 6px 8px; color: #fff; background: var(--navy, var(--kaart-inkt)); font-size: 9px; letter-spacing: .09em; text-transform: uppercase; }
+.kaart-status span { padding: 6px 9px 6px 7px; }
 .kaart-kop p { margin: 5px 0 0; color: var(--teal); font-size: 13px; }
 .kaart-kop p a { color: var(--gold, var(--kaart-goud)); font-weight: 600; text-decoration: none; }
 .kaart-kop p a:hover { text-decoration: underline; }
@@ -109,6 +124,7 @@
 .kaart-keuzerij label:has(input:focus-visible), .kaart-laagoptie:has(input:focus-visible) { outline: 3px solid rgba(201, 164, 75, .55); outline-offset: 2px; }
 
 :root[data-theme="donker"] .kaart-kop { border-color: var(--border-default, #33434e); background: var(--bg-surface); }
+:root[data-theme="donker"] .kaart-status { color: var(--text-secondary, #b7c0c5); background: rgba(201, 164, 75, .08); }
 :root[data-theme="donker"] .kaart-kop h1, :root[data-theme="donker"] .kaart-instellingen h2,
 :root[data-theme="donker"] .kaart-keuzegroep legend, :root[data-theme="donker"] .kaart-telling .telling { color: var(--text-primary); }
 :root[data-theme="donker"] .kaart-instellingen-open { color: var(--text-primary); background: #1c3548; }

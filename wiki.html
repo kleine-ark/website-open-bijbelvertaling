@@ -290,8 +290,11 @@
             links.forEach(function(l) { l.classList.remove('active'); });
             link.classList.add('active');
             openGroepVan(link);
-            // Load in iframe
-            iframe.src = link.getAttribute('data-page');
+            // Laad de actuele detailpagina. Zonder unieke query kan een
+            // eerder geopende iframe-pagina uit de browsercache blijven
+            // staan terwijl de Wiki zelf al is vernieuwd.
+            var page = link.getAttribute('data-page');
+            iframe.src = page + (page.indexOf('?') === -1 ? '?' : '&') + '_wiki=' + Date.now();
         }
 
         // Click handler

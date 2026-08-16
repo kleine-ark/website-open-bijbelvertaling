@@ -4,7 +4,7 @@
   "titel": "Geografische aanduidingen in Gods Woord",
   "toelichting": "Vector-data voor de kaart. Coordinaten in WGS84 [lengtegraad, breedtegraad]. 'zekerheid' geeft aan hoe zeker de moderne locatie is (zeker/waarschijnlijk/onzeker).",
   "bijgewerkt": "2026-07-19",
-  "aantal": 123
+  "aantal": 124
  },
  "features": [
   {
@@ -2791,6 +2791,30 @@
      "lukas 24:13"
     ],
     "toelichting": "Dorp waar de Opgestane verscheen; exacte plaats omstreden."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     35.0,
+     28.25
+    ]
+   },
+   "properties": {
+    "id": "midian",
+    "naam": "Midian",
+    "type": "streek",
+    "moderneNaam": "noordwest-Arabië / oostelijke Sinaï",
+    "landModern": "Jordanië / Saoedi-Arabië",
+    "zekerheid": "onzeker",
+    "verwijzingen": [
+     "genesis 25:2",
+     "exodus 2:15",
+     "richteren 6:1"
+    ],
+    "toelichting": "Woestijngebied van de Midianieten. De precieze ligging en omvang zijn onzeker; het punt is een oriëntatie."
    }
   }
  ]
