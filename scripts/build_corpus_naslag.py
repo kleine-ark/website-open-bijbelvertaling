@@ -63,19 +63,19 @@ NATURE_EXTRA_ITEMS = {
     "bomen-planten": [
         ("boom-algemeen", "Boom", ["boom", "bomen", "geboomte"], "Bomen waarvan de tekst geen afzonderlijke soort noemt."),
         ("struik-algemeen", "Struik", ["struik", "struiken"], "Struiken waarvan de tekst geen afzonderlijke soort noemt."),
-        ("gewas", "Gewas", ["gewas", "gewassen", "veldgewas", "veldgewassen"], "Gewassen en veldgewassen zonder nadere soortaanduiding."),
+        ("gewas", "Gewas", ["gewas", "gewassen", "veldgewas", "veldgewassen"], "Gewas is de algemene Bijbelse aanduiding voor planten die op akkers groeien en voedsel of zaad voortbrengen."),
         ("vrucht-algemeen", "Vrucht", ["vrucht", "vruchten", "veldvrucht", "veldvruchten"], "Botanische vruchten waarvan de tekst geen afzonderlijke soort noemt."),
         ("tak-en-wortel", "Tak en wortel", ["tak", "takken", "wortel", "wortels", "wortelen"], "Botanische takken en wortels, letterlijk of als beeld gebruikt."),
-        ("papyrus", "Papyrus", ["papyrus"], "De plant die als schrijfmateriaal wordt gebruikt."),
-        ("terebint", "Terebint", ["terebint", "terebinten", "terebintnoten"], "Een boom die in Jubileeën wordt genoemd."),
+        ("papyrus", "Papyrus", ["papyrus"], "Papyrus is een hoge oeverplant waarvan de stengels in de oudheid onder meer tot schrijfmateriaal werden verwerkt."),
+        ("terebint", "Terebint", ["terebint", "terebinten", "terebintnoten"], "De terebint is een brede, langlevende boom die in het Bijbelse landschap schaduw bood en als herkenningspunt kon dienen."),
         ("almuggimboom", "Almuggimboom", ["almuggimhout"], "Het kostbare hout waarvan de precieze boomsoort onzeker is."),
-        ("graan-en-koren", "Graan en koren", ["graan", "koren"], "Graan en koren als gewas en voedsel."),
-        ("korenaar", "Korenaar", ["aar", "aren", "korenaar", "korenaren"], "De aar waarin het graan groeit."),
+        ("graan-en-koren", "Graan en koren", ["graan", "koren"], "Graan en koren vormden het dagelijkse basisvoedsel en werden gemalen tot meel voor brood en offers."),
+        ("korenaar", "Korenaar", ["aar", "aren", "korenaar", "korenaren"], "De korenaar draagt de graankorrels en staat in de Bijbel voor oogst, voedsel en vruchtbaarheid."),
         ("stro-en-kaf", "Stro en kaf", ["stro", "kaf"], "De stengel en het omhulsel die na de graanoogst overblijven."),
-        ("wikke", "Wikke", ["wikke", "wikken"], "Een akkergewas dat Jesaja naast komijn noemt."),
+        ("wikke", "Wikke", ["wikke", "wikken"], "Wikke is een vlinderbloemig akkergewas dat Jesaja naast komijn noemt bij zijn beschrijving van zorgvuldig zaaien."),
         ("doornstruik", "Doornstruik", ["doornstruik", "doornstruiken"], "Een doornige struik die de tekst afzonderlijk noemt."),
         ("blad-algemeen", "Blad", ["blad", "bladeren"], "Bladeren van bomen en planten, letterlijk of beeldend gebruikt."),
-        ("bloem-algemeen", "Bloem", ["bloem", "bloemen"], "Bloemen van planten, letterlijk of beeldend gebruikt."),
+        ("bloem-algemeen", "Bloem", ["bloem", "bloemen"], "Bloemen verbeelden in de Bijbel zowel de schoonheid van de schepping als de vergankelijkheid van het menselijke leven."),
     ],
 }
 
@@ -298,7 +298,10 @@ def _build_nature_category(
                 usages = {value[0] for value in classifications}
                 usage = "vergelijkend" if "vergelijkend" in usages else ("beeldend-symbolisch" if "beeldend-symbolisch" in usages else "letterlijk")
                 certainty = "zeker" if all(value[1] == "zeker" for value in classifications) else "waarschijnlijk"
-                exact_forms = sorted({match.group("form") for match in accepted}, key=str.casefold)
+                exact_forms = sorted(
+                    {match.group("form") for match in accepted},
+                    key=lambda value: (value.casefold(), value),
+                )
                 found_forms.update(exact_forms)
                 mentions_by_ref[verse.ref] = {
                     "ref": verse.ref, "tekstvorm": exact_forms[0], "tekstvormen": exact_forms,
@@ -323,11 +326,13 @@ def _build_nature_category(
         item = {
             "id": source["id"], "naam": source["naam"], "beschrijving": description,
             "verzen": [mention["ref"] for mention in mentions], "vermeldingen": mentions,
-            "tekstvormen": sorted(found_forms, key=str.casefold), "zekerheid": certainty,
+            "tekstvormen": sorted(
+                found_forms, key=lambda value: (value.casefold(), value)
+            ), "zekerheid": certainty,
             "reviewStatus": "agent-reviewed", "humanReviewed": False,
         }
-        if category == "dieren":
-            item["afbeelding"] = f"images/wiki/dieren/{source['id']}.webp"
+        if category in {"dieren", "bomen-planten"}:
+            item["afbeelding"] = f"images/wiki/{category}/{source['id']}.webp"
         if note:
             item["reviewnotitie"] = note
             reviewqueue.append({"categorie": category, "type": "historische-soortidentificatie", "itemId": source["id"], "notitie": note, "reviewStatus": "needs-human-review"})
@@ -660,6 +665,28 @@ def build_all(root: Path = ROOT, write: bool = True) -> dict[str, dict[str, Any]
             target = root / "data" / filename
             target.write_text(
                 json.dumps(built[category], ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+        # Een gevalideerde illustratie is pas werkelijk geïntegreerd wanneer
+        # de gepubliceerde catalogus ernaar verwijst en het bestand bestaat.
+        for category in ("dieren", "bomen-planten"):
+            manifest_path = root / "images" / "wiki" / "manifests" / f"{category}.json"
+            if not manifest_path.is_file():
+                continue
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            published_images = {
+                item.get("afbeelding") for item in built[category]["items"]
+            }
+            for entry in manifest.get("items", []):
+                if (
+                    entry.get("doelpad") in published_images
+                    and (root / entry["doelpad"]).is_file()
+                ):
+                    entry["status"] = "integrated"
+                    # Lokale generatiepaden horen niet in het publieke manifest.
+                    entry.pop("bronGeneratie", None)
+            manifest_path.write_text(
+                json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
                 encoding="utf-8",
             )
         (root / "data" / "naslag-controle.json").write_text(
