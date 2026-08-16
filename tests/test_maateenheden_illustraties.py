@@ -34,14 +34,18 @@ def test_maatgewicht_en_munten_hebben_detailillustraties():
 
     slugs = (
         "el", "span", "riet", "stadie",
-        "homer-kor", "efa", "bath", "hin",
-        "talent", "sikkel", "beka", "gera",
+        "handbreed", "vinger", "vadem", "schrede", "mijl", "sabbatsreis", "dagreis",
+        "homer-kor", "efa", "bath", "sea", "hin", "gomer", "kab", "log", "metreet", "korenmaat", "maatje",
+        "talent", "pond", "sikkel", "beka", "gera",
         "penning", "zilverling", "drachme", "stater", "oort",
+        "uur", "nachtwake",
     )
 
     for slug in slugs:
         assert f'images/wiki/maateenheden/{slug}.webp' in page
         assert (ROOT / "images" / "wiki" / "maateenheden" / f"{slug}.webp").is_file()
 
-    assert page.count('class="me-detailgalerij"') == 4
+    assert page.count('class="me-detailgalerij"') == 5
     assert page.count('class="me-detailkaart"') == len(slugs)
+    assert 'aspect-ratio: 1' in page
+    assert 'grid-template-rows: minmax(0, 1fr) auto' in page

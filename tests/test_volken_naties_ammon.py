@@ -36,6 +36,21 @@ class VolkenNatiesDataTest(unittest.TestCase):
         self.catalogue = read_json("data/naslag-volken-naties.json")
         self.ammon = next(item for item in self.catalogue["items"] if item["id"] == "ammon")
 
+    def test_four_nations_have_a_separate_naslag_item_with_ancestor_and_map(self):
+        expected = {
+            "ammon": ("Ben-Ammi", "Rabba"),
+            "edom": ("Ezau", "Edom"),
+            "midian": ("Midian", "Midian"),
+            "moab": ("Moab", "Moab"),
+        }
+        actual = {item["id"]: item for item in self.catalogue["items"]}
+        self.assertEqual(set(actual), set(expected))
+        for item_id, (ancestor, map_location) in expected.items():
+            with self.subTest(item_id=item_id):
+                self.assertEqual(actual[item_id]["stamvader"]["naam"], ancestor)
+                self.assertEqual(actual[item_id]["kaart"]["plaats"], map_location)
+                self.assertTrue(actual[item_id]["verzen"])
+
     def test_ammon_is_a_nation_with_ben_ammi_as_ancestor(self):
         self.assertEqual(self.catalogue["titel"], "Volken & Naties")
         self.assertEqual(self.catalogue["canon"], "66 boeken")
@@ -79,6 +94,16 @@ class VolkenNatiesDataTest(unittest.TestCase):
         rabba = next(feature for feature in features if feature["properties"]["naam"] == "Rabba")
         self.assertEqual(self.ammon["kaart"]["coordinaten"], rabba["geometry"]["coordinates"])
 
+    def test_each_nation_map_card_is_backed_by_a_geographic_location(self):
+        features = read_json("data/geografie.geojson")["features"]
+        by_name = {feature["properties"]["naam"]: feature for feature in features}
+        for item in self.catalogue["items"]:
+            with self.subTest(item=item["id"]):
+                feature = by_name[item["kaart"]["plaats"]]
+                self.assertEqual(item["kaart"]["coordinaten"], feature["geometry"]["coordinates"])
+                self.assertIn(item["kaart"]["zekerheid"], {"zeker", "waarschijnlijk", "onzeker", "benadering"})
+                self.assertTrue(item["kaart"]["bron"])
+
     def test_ammon_has_a_topic_tag_with_the_same_canonical_coverage(self):
         tags = read_json("data/tags.json")["tags"]
         tag = next(tag for tag in tags if tag["id"] == "volk-ammon")
@@ -86,6 +111,14 @@ class VolkenNatiesDataTest(unittest.TestCase):
         actual = {entry["ref"] for entry in tag["verzen"]}
         self.assertEqual(actual, expected)
         self.assertTrue(all(entry["humanReviewed"] is False for entry in tag["verzen"]))
+
+    def test_each_nation_has_a_topic_tag_with_the_same_canonical_coverage(self):
+        tags = {tag["id"]: tag for tag in read_json("data/tags.json")["tags"]}
+        for item in self.catalogue["items"]:
+            with self.subTest(item=item["id"]):
+                tag = tags[f'volk-{item["id"]}']
+                expected = set().union(*(expand_ref(ref) for ref in item["verzen"]))
+                self.assertEqual({entry["ref"] for entry in tag["verzen"]}, expected)
 
 
 class VolkenNatiesBrowserTest(unittest.TestCase):
@@ -121,6 +154,7 @@ class VolkenNatiesBrowserTest(unittest.TestCase):
             self.assertEqual(page.locator("#naslag h1").inner_text(), "Ammon")
             self.assertIn("Ben-Ammi", page.locator(".vn-stamvader").inner_text())
             self.assertIn("Rabba", page.locator(".vn-kaart").inner_text())
+            self.assertIn("Bron: Geografische aanduidingen in Gods Woord", page.locator(".vn-kaart").inner_text())
             self.assertEqual(
                 page.locator("a.vn-kaart").get_attribute("href"),
                 "kaart.html?plaats=Rabba",
@@ -128,6 +162,18 @@ class VolkenNatiesBrowserTest(unittest.TestCase):
             page.locator("#naslag-gekoppelde-teksten .gt-vers-tekst .osv-vers").first.wait_for(timeout=5000)
             first_link = page.locator("#naslag-gekoppelde-teksten .gt-vers-kop > a").first
             self.assertEqual(first_link.get_attribute("href"), "index.html#genesis/19/30")
+
+    def test_each_nation_opens_as_its_own_detail_page_with_universal_citations(self):
+        page = self.browser.new_page(viewport={"width": 1200, "height": 900})
+        with contextlib.closing(page):
+            for item_id, name in (("edom", "Edom"), ("midian", "Midian"), ("moab", "Moab")):
+                with self.subTest(item_id=item_id):
+                    page.goto(f"{self.base_url}/volken-naties.html?item={item_id}")
+                    page.locator("#naslag h1").wait_for()
+                    self.assertEqual(page.locator("#naslag h1").inner_text(), name)
+                    page.locator(".vn-stamvader").wait_for()
+                    page.locator(".vn-kaart").wait_for()
+                    page.locator("#naslag-gekoppelde-teksten .gt-vers-tekst .osv-vers").first.wait_for(timeout=5000)
 
     def test_wiki_links_to_the_new_category_without_a_legacy_page(self):
         wiki = (ROOT / "wiki.html").read_text(encoding="utf-8")

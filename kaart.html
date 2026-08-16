@@ -66,7 +66,10 @@
 
     <header class="kaart-kop">
         <div class="kaart-koptekst">
-            <h1>Kaart van Gods Woord</h1>
+            <div class="kaart-titelrij">
+                <h1>Kaart van Gods Woord</h1>
+                <span class="kaart-status"><strong>Bèta</strong><span>nog te controleren</span></span>
+            </div>
             <p>Klik op een plaats voor de Bijbelse verwijzingen. <a href="geografie.html">Bekijk alle plaatsen</a></p>
         </div>
         <button class="kaart-instellingen-open" id="kaart-instellingen-open" type="button"
@@ -114,9 +117,9 @@
             <fieldset class="kaart-keuzegroep kaart-achtergronden">
                 <legend>Achtergrondkaart</legend>
                 <div class="kaart-laagrooster">
-                    <label class="kaart-laagoptie kaart-laag-kaart"><input type="radio" name="kaartlaag" value="kaart" checked><span class="kaart-laagvoorbeeld" aria-hidden="true"></span><span>Kaart</span></label>
+                    <label class="kaart-laagoptie kaart-laag-kaart"><input type="radio" name="kaartlaag" value="kaart"><span class="kaart-laagvoorbeeld" aria-hidden="true"></span><span>Kaart</span></label>
                     <label class="kaart-laagoptie kaart-laag-stil"><input type="radio" name="kaartlaag" value="stil"><span class="kaart-laagvoorbeeld" aria-hidden="true"></span><span>Zonder tekst</span></label>
-                    <label class="kaart-laagoptie kaart-laag-lucht"><input type="radio" name="kaartlaag" value="lucht"><span class="kaart-laagvoorbeeld" aria-hidden="true"></span><span>Luchtfoto</span></label>
+                    <label class="kaart-laagoptie kaart-laag-lucht"><input type="radio" name="kaartlaag" value="lucht" checked><span class="kaart-laagvoorbeeld" aria-hidden="true"></span><span>Luchtfoto</span></label>
                     <label class="kaart-laagoptie kaart-laag-land"><input type="radio" name="kaartlaag" value="land"><span class="kaart-laagvoorbeeld" aria-hidden="true"></span><span>Landschap</span></label>
                 </div>
             </fieldset>
@@ -194,6 +197,10 @@
                 for (var k in lagen) lagen[k].setVisible(k === this.value);
             }.bind(r));
         });
+        var standaardLaag = document.querySelector('input[name="kaartlaag"]:checked');
+        if (standaardLaag) {
+            for (var laagNaam in lagen) lagen[laagNaam].setVisible(laagNaam === standaardLaag.value);
+        }
 
         var map = new ol.Map({
             target: 'map',

@@ -165,13 +165,14 @@
 .vn-gebied { fill: rgba(203,164,73,.27); stroke: #b68d31; stroke-width: 1.5; stroke-dasharray: 5 4; }
 .vn-marker-ring { fill: rgba(20,46,66,.15); }
 .vn-marker { fill: var(--navy); stroke: #fff; stroke-width: 2; }
-.vn-rabba { fill: var(--navy); font: 600 13px var(--font-body); }
-.vn-jordaan { fill: #547f89; font: 10px var(--font-body); letter-spacing: .08em; text-transform: uppercase; }
-.vn-ammon { fill: #8d6a20; font: 700 12px var(--font-body); letter-spacing: .18em; }
+.vn-plaats { fill: var(--navy); font: 600 13px var(--font-body); }
+.vn-waternaam { fill: #547f89; font: 10px var(--font-body); letter-spacing: .08em; text-transform: uppercase; }
+.vn-volk { fill: #8d6a20; font: 700 12px var(--font-body); letter-spacing: .18em; }
 .vn-kaart-info { display: flex; flex-direction: column; justify-content: center; padding: 22px; }
 .vn-kaart-info strong { color: var(--navy); font-size: 16px; line-height: 1.45; }
 .vn-kaart-info > span:not(.vn-label):not(.vn-kaart-cta) { margin-top: 7px; color: var(--teal); font-size: 13px; }
 .vn-kaart-info small { margin-top: 10px; color: var(--text-secondary, #666); font-size: 11.5px; line-height: 1.5; }
+.vn-kaart-info .vn-kaart-bron { margin-top: 8px; }
 .vn-kaart-cta { margin-top: 14px; color: var(--gold); font-size: 12.5px; font-weight: 700; }
 
 @media (max-width: 640px) {
