@@ -9,10 +9,10 @@ Automatisch opgebouwd door `scripts/build_woordnummers_corpus.py`. Alleen handma
 | johannes | nagekeken_tekst | 880/880 | 15940 | 0 | 5 | 99,97% |
 | handelingen | nagekeken_tekst | 1007/1007 | 18806 | 0 | 0 | 100,00% |
 | romeinen | nagekeken_tekst | 433/433 | 7193 | 0 | 0 | 100,00% |
-| exodus | nagekeken_tekst | 1085/1207 | 2081 | 2706 | 11551 | 29,30% |
+| exodus | nagekeken_tekst | 1087/1207 | 2450 | 2613 | 11275 | 30,99% |
 | deuteronomium | nagekeken_tekst | 865/956 | 0 | 2808 | 10988 | 20,35% |
 | esther | resterend_corpus | 0/167 | 0 | 0 | 3003 | 0,00% |
-| psalmen | nagekeken_tekst | 2179/2527 | 0 | 4606 | 14559 | 24,03% |
+| psalmen | nagekeken_tekst | 2179/2527 | 0 | 4607 | 14558 | 24,04% |
 | spreuken | resterend_corpus | 0/915 | 0 | 0 | 6899 | 0,00% |
 | prediker | nagekeken_tekst | 199/222 | 0 | 587 | 2362 | 19,91% |
 | jesaja | resterend_corpus | 0/1291 | 0 | 0 | 16622 | 0,00% |
@@ -29,11 +29,11 @@ Automatisch opgebouwd door `scripts/build_woordnummers_corpus.py`. Alleen handma
 | ruth | nagekeken_tekst | 75/85 | 0 | 247 | 990 | 19,97% |
 | 1samuel | nagekeken_tekst | 768/810 | 0 | 2565 | 10399 | 19,79% |
 | 2samuel | resterend_corpus | 0/694 | 0 | 0 | 10788 | 0,00% |
-| 1koningen | nagekeken_tekst | 749/803 | 0 | 2626 | 10056 | 20,71% |
+| 1koningen | nagekeken_tekst | 749/803 | 0 | 2629 | 10053 | 20,73% |
 | 2koningen | resterend_corpus | 0/718 | 0 | 0 | 12105 | 0,00% |
 | 1kronieken | resterend_corpus | 0/927 | 0 | 0 | 10481 | 0,00% |
 | 2kronieken | resterend_corpus | 0/820 | 0 | 0 | 13096 | 0,00% |
-| ezra | nagekeken_tekst | 258/280 | 0 | 829 | 2882 | 22,34% |
+| ezra | nagekeken_tekst | 258/280 | 0 | 831 | 2880 | 22,39% |
 | nehemia | resterend_corpus | 0/398 | 0 | 0 | 5096 | 0,00% |
 | job | resterend_corpus | 0/1062 | 0 | 0 | 8113 | 0,00% |
 | galaten | nagekeken_tekst | 149/149 | 2252 | 0 | 0 | 100,00% |
@@ -92,4 +92,4 @@ Automatisch opgebouwd door `scripts/build_woordnummers_corpus.py`. Alleen handma
 | 2meqabyan | resterend_corpus | 370/418 | 0 | 1059 | 3659 | 22,45% |
 | 3meqabyan | resterend_corpus | 176/207 | 0 | 491 | 2126 | 18,76% |
 | 4baruch | resterend_corpus | 189/197 | 0 | 681 | 1602 | 29,83% |
-| **Totaal** |  | **23233/39545** | **162784** | **39626** | **366715** | **35,57%** |
+| **Totaal** |  | **23235/39545** | **163153** | **39539** | **366433** | **35,61%** |
