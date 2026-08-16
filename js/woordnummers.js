@@ -177,7 +177,10 @@
             if (!generated.length) continue;
             const merged = new Map();
             [...generated, ...(verse.woordnummers || [])].forEach(mapping => {
-                const key = `${String(mapping.tekst || '').toLocaleLowerCase('nl')}#${mapping.voorkomen || 1}`;
+                const strongs = Array.isArray(mapping.strongs)
+                    ? mapping.strongs.join('|')
+                    : String(mapping.strongs || '');
+                const key = `${String(mapping.tekst || '').toLocaleLowerCase('nl')}#${String(mapping.anker || '').toLocaleLowerCase('nl')}#${mapping.voorkomen || 1}#${strongs}`;
                 merged.set(key, mapping);
             });
             verse.woordnummers = [...merged.values()];

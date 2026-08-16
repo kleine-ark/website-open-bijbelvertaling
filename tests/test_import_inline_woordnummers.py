@@ -156,6 +156,33 @@ def test_build_mapping_requires_review_and_matching_source_sequence():
     }
 
 
+def test_build_mapping_bewaart_lokaal_lemma_bij_gedocumenteerde_gidsafwijking():
+    result = MODULE.build_inline_mapping(
+        {
+            "tekst": "zette",
+            "bronindices": [0],
+            "grondindices": [0],
+            "confidence": 1,
+            "reviewstatus": "handmatig_gecontroleerd",
+        },
+        [{"text": "and placed him", "strongs": ["H5117"]}],
+        [{"woord": "וַ/יַּנִּחֵ/הוּ", "strongs": "H3240"}],
+        {"id": "bsb-full-strongs-usj", "version": "5.6", "sha256": "abc"},
+        "GEN 2:15",
+        lemma_afwijking={
+            "reden": "lemma_afwijking",
+            "bronindices": [0],
+            "grondindices": [0],
+            "bron_strongs": ["H5117"],
+            "grondtekst_strongs": ["H3240"],
+        },
+    )
+
+    assert result["strongs"] == ["H3240"]
+    assert result["gids_strongs"] == ["H5117"]
+    assert result["herkomst"]["bronindices"] == [0]
+
+
 def test_merge_preserves_existing_manually_checked_mapping():
     existing = {
         "tekst": "In",
@@ -183,6 +210,163 @@ def test_merge_preserves_existing_manually_checked_mapping():
     assert (added, preserved) == (1, 1)
     assert verse["woordnummers"][0] == existing
     assert verse["woordnummers"][1]["strongs"] == ["G746"]
+
+
+def test_replace_reviewed_mappings_vervangt_alleen_dezelfde_bron_en_reviewvers():
+    target_provenance = {
+        "dataset": "bsb-full-strongs-usj",
+        "versie": "5.6",
+        "sha256": "ABC",
+        "referentie": "GEN 1:1",
+    }
+    obsolete = {
+        "tekst": "In het begin schiep God de hemel en de aarde.",
+        "voorkomen": 1,
+        "strongs": ["H7225", "H1254"],
+        "herkomst": target_provenance.copy(),
+    }
+    other_verse = {
+        "tekst": "Ander vers",
+        "voorkomen": 1,
+        "strongs": ["H1"],
+        "herkomst": {**target_provenance, "referentie": "GEN 1:2"},
+    }
+    editorial = {
+        "tekst": "God",
+        "voorkomen": 1,
+        "strongs": ["H430"],
+        "herkomst": {"dataset": "redactie", "referentie": "GEN 1:1"},
+    }
+    verse = {"woordnummers": [obsolete, other_verse, editorial]}
+    replacement = {
+        "tekst": "begin",
+        "voorkomen": 1,
+        "strongs": ["H7225"],
+        "herkomst": {**target_provenance, "bronindices": [0]},
+    }
+
+    replaced = MODULE.replace_reviewed_mappings(
+        verse, [replacement], target_provenance
+    )
+
+    assert replaced == 1
+    assert verse["woordnummers"] == [other_verse, editorial, replacement]
+
+
+def test_apply_review_file_vervangt_opt_in_alleen_het_reviewvers(tmp_path):
+    source_dir = tmp_path / "source"
+    source_dir.mkdir()
+    source_path = source_dir / "44JHN.usj"
+    _write_usj(source_path)
+    source_hash = MODULE._sha256(source_path)
+    data_dir = tmp_path / "data" / "johannes"
+    data_dir.mkdir(parents=True)
+    provenance = {
+        "dataset": "bsb-full-strongs-usj",
+        "versie": "5.6",
+        "sha256": "SOURCE",
+        "referentie": "JHN 1:1",
+    }
+    chapter = {
+        "verses": [
+            {
+                "number": 1,
+                "text2026": "In het begin",
+                "grondtekst": [
+                    {"woord": "In", "strongs": "G1722"},
+                    {"woord": "beginning", "strongs": "G746"},
+                ],
+                "woordnummers": [
+                    {"tekst": "In het begin", "voorkomen": 1, "strongs": ["G1722", "G746"], "herkomst": provenance},
+                    {"tekst": "In", "voorkomen": 1, "strongs": ["G1722"], "herkomst": {"dataset": "redactie"}},
+                ],
+            }
+        ]
+    }
+    (data_dir / "1.json").write_text(json.dumps(chapter), encoding="utf-8")
+    review = {
+        "source": {"id": "bsb-full-strongs-usj", "version": "5.6", "sha256": "SOURCE"},
+        "books": [{
+            "code": "JHN", "repo_book": "johannes", "chapter": 1,
+            "source_file": "44JHN.usj", "source_file_sha256": source_hash,
+            "verses": [{
+                "verse": 1, "vervang_bronrecords": True,
+                "mappings": [
+                    {"tekst": "In", "bronindices": [0], "grondindices": [0], "confidence": 1, "reviewstatus": "handmatig_gecontroleerd"},
+                    {"tekst": "begin", "bronindices": [1], "grondindices": [1], "confidence": 1, "reviewstatus": "handmatig_gecontroleerd"},
+                ],
+            }],
+        }],
+    }
+    review_path = tmp_path / "review.json"
+    review_path.write_text(json.dumps(review), encoding="utf-8")
+
+    report = MODULE.apply_review_file(review_path, source_dir, tmp_path / "data", write=True)
+    saved = json.loads((data_dir / "1.json").read_text(encoding="utf-8"))
+
+    assert report["replaced"] == 1
+    assert [item["tekst"] for item in saved["verses"][0]["woordnummers"]] == ["In", "In", "begin"]
+    assert saved["verses"][0]["woordnummers"][0]["herkomst"] == {"dataset": "redactie"}
+
+
+def test_apply_review_file_beperkt_import_tot_gevraagde_verzen(tmp_path):
+    source_dir = tmp_path / "source"
+    source_dir.mkdir()
+    source_path = source_dir / "44JHN.usj"
+    _write_usj(source_path)
+    source_hash = MODULE._sha256(source_path)
+    data_dir = tmp_path / "data" / "johannes"
+    data_dir.mkdir(parents=True)
+    (data_dir / "1.json").write_text(json.dumps({"verses": [
+        {"number": 1, "text2026": "In", "grondtekst": [{"woord": "In", "strongs": "G1722"}]},
+        {"number": 2, "text2026": "Leeg", "grondtekst": []},
+    ]}), encoding="utf-8")
+    review = {
+        "source": {"id": "bsb-full-strongs-usj", "version": "5.6", "sha256": "SOURCE"},
+        "books": [{
+            "code": "JHN", "repo_book": "johannes", "chapter": 1,
+            "source_file": "44JHN.usj", "source_file_sha256": source_hash,
+            "verses": [
+                {"verse": 1, "mappings": [{"tekst": "In", "bronindices": [0], "grondindices": [0], "confidence": 1, "reviewstatus": "handmatig_gecontroleerd"}]},
+                {"verse": 2, "mappings": []},
+            ],
+        }],
+    }
+    review_path = tmp_path / "review.json"
+    review_path.write_text(json.dumps(review), encoding="utf-8")
+
+    report = MODULE.apply_review_file(
+        review_path, source_dir, tmp_path / "data", write=True, verse_numbers={1}
+    )
+
+    assert report["verses"] == 1
+    saved = json.loads((data_dir / "1.json").read_text(encoding="utf-8"))
+    assert saved["verses"][0]["woordnummers"][0]["strongs"] == ["G1722"]
+    assert "woordnummers" not in saved["verses"][1]
+
+
+def test_build_mapping_bewaart_niet_vertaald_woord_zichtbaar_bij_anker():
+    result = MODULE.build_inline_mapping(
+        {
+            "tekst": "",
+            "anker": "God",
+            "plaats": "na",
+            "status": "niet_afzonderlijk_weergegeven",
+            "bronindices": [0],
+            "grondindices": [0],
+            "confidence": 1,
+            "reviewstatus": "handmatig_gecontroleerd",
+        },
+        [{"text": "et", "strongs": ["H853"]}],
+        [{"woord": "אֵת", "strongs": "H853"}],
+        {"id": "bsb-full-strongs-usj", "version": "5.6", "sha256": "abc"},
+        "GEN 1:1",
+    )
+
+    assert result["tekst"] == ""
+    assert result["anker"] == "God"
+    assert result["plaats"] == "na"
+    assert result["status"] == "niet_afzonderlijk_weergegeven"
 
 
 def test_johannes_1_1_tot_5_is_tr_reviewed_without_text_changes():
@@ -287,6 +471,614 @@ def test_generieke_tr_bron_bewaart_vergelijkende_vormstrong_naast_het_lemma():
     assert comparative["display_strong"] == "G4119"
 
 
+def test_tr_bron_behoudt_utr_lemma_bij_mattheus_21_8_vormpresentatie():
+    from scripts.rebuild_nt_tr_strongs import load_tr_chapter
+    verses = load_tr_chapter(Path(r"C:\tmp\greektext-textus-receptus\parsed\MT.UTR"), Path(r"C:\tmp\crosswire-kjv\kjv.osis.xml"), chapter=21, osis_book="Matt")
+    token = verses[8][2]
+    assert token["lemma_strong"] == "G4183"
+    assert token["morphology"] == "A-NSM-S"
+    assert token["display_strong"] == "G4118"
+
+
+def test_tr_bron_herindexeert_osis_variantstroom_bij_mattheus_23_14():
+    from scripts.rebuild_nt_tr_strongs import load_tr_chapter
+
+    verses = load_tr_chapter(
+        Path(r"C:\tmp\greektext-textus-receptus\parsed\MT.UTR"),
+        Path(r"C:\tmp\crosswire-kjv\kjv.osis.xml"),
+        chapter=23,
+        osis_book="Matt",
+    )
+
+    assert len(verses[14]) == 20
+    assert verses[14][0]["woord"] == "ουαι"
+    assert verses[14][-1]["woord"] == "κριμα"
+
+
+def test_tr_bron_behoudt_utr_lemma_bij_mattheus_26_45_vormpresentatie():
+    from scripts.rebuild_nt_tr_strongs import load_tr_chapter
+
+    verses = load_tr_chapter(
+        Path(r"C:\tmp\greektext-textus-receptus\parsed\MT.UTR"),
+        Path(r"C:\tmp\crosswire-kjv\kjv.osis.xml"),
+        chapter=26,
+        osis_book="Matt",
+    )
+    token = verses[45][11]
+    assert token["woord"] == "λοιπον"
+    assert token["lemma_strong"] == "G3062"
+    assert token["morphology"] == "A-ASN"
+    assert token["display_strong"] == "G3063"
+
+
+def test_mattheus_21_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "mattheus" / "21.json").read_text(encoding="utf-8"))
+    verses = {int(verse["number"]): verse for verse in data["verses"]}
+
+    for number in range(1, 47):
+        verse = verses[number]
+        ground = verse.get("grondtekst", [])
+        source_indices = [
+            index
+            for mapping in verse.get("woordnummers", [])
+            for index in mapping.get("herkomst", {}).get("bronindices", [])
+        ]
+        assert ground, f"Mattheüs 21:{number} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+        assert all(mapping.get("reviewstatus") == "handmatig_gecontroleerd" for mapping in verse["woordnummers"])
+
+    variant = next(
+        mapping for mapping in verses[8]["woordnummers"]
+        if 2 in mapping["herkomst"]["bronindices"]
+    )
+    assert variant["strongs"][variant["herkomst"]["bronindices"].index(2)] == "G4118"
+    assert variant["lemma_strongs"][variant["herkomst"]["bronindices"].index(2)] == "G4183"
+    shifted = next(
+        mapping for mapping in verses[2]["woordnummers"]
+        if mapping["herkomst"]["bronindices"] == [0, 1]
+    )
+    assert shifted["status"] == "niet_afzonderlijk_weergegeven"
+    assert shifted["anker"] == "Ga"
+
+
+def test_mattheus_22_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "mattheus" / "22.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [
+            index
+            for mapping in verse.get("woordnummers", [])
+            for index in mapping.get("herkomst", {}).get("bronindices", [])
+        ]
+        assert ground, f"Mattheüs 22:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+        assert all(mapping.get("reviewstatus") == "handmatig_gecontroleerd" for mapping in verse["woordnummers"])
+
+
+def test_mattheus_23_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "mattheus" / "23.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Mattheüs 23:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_mattheus_24_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "mattheus" / "24.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Mattheüs 24:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_mattheus_25_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "mattheus" / "25.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Mattheüs 25:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_mattheus_26_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "mattheus" / "26.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Mattheüs 26:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_mattheus_27_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "mattheus" / "27.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Mattheüs 27:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_mattheus_28_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "mattheus" / "28.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Mattheüs 28:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_generieke_tr_bron_leest_markus_1_van_gepinde_utr():
+    from scripts.rebuild_nt_tr_strongs import load_tr_chapter
+    verses = load_tr_chapter(
+        Path(r"C:\tmp\greektext-textus-receptus\parsed\MR.UTR"),
+        Path(r"C:\tmp\crosswire-kjv\kjv.osis.xml"),
+        chapter=1,
+        osis_book="Mark",
+    )
+    assert len(verses) == 45
+
+
+def test_generieke_tr_bron_leest_handelingen_1_van_gepinde_utr():
+    from scripts.rebuild_nt_tr_strongs import load_tr_chapter
+
+    verses = load_tr_chapter(
+        Path(r"C:\tmp\greektext-textus-receptus\parsed\AC.UTR"),
+        Path(r"C:\tmp\crosswire-kjv\kjv.osis.xml"),
+        chapter=1,
+        osis_book="Acts",
+    )
+
+    assert len(verses) == 26
+    assert sum(len(tokens) for tokens in verses.values()) == 515
+    assert verses[1][0]["woord"] == "\u03c4\u03bf\u03bd"
+
+
+def test_osis_parser_negeert_niet_utr_lezing_met_n_bronindex_in_romeinen_1_3():
+    from scripts.rebuild_nt_tr_strongs import parse_osis_chapter
+
+    verses = parse_osis_chapter(Path(r"C:\tmp\crosswire-kjv\kjv.osis.xml"), "Rom", 1)
+
+    assert sorted(verses[3]) == list(range(11))
+    assert verses[3][0]["lemma_strong"] == "G4012"
+
+
+def test_markus_1_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "1.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Markus 1:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_markus_2_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "2.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Markus 2:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_markus_3_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "3.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Markus 3:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_markus_4_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "4.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Markus 4:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_markus_5_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "5.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Markus 5:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_markus_6_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "6.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground, f"Markus 6:{verse['number']} mist TR-grondtekst"
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_markus_7_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "7.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground and sorted(source_indices) == list(range(len(ground))) and len(set(source_indices)) == len(ground)
+
+
+def test_markus_8_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "8.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground and sorted(source_indices) == list(range(len(ground))) and len(set(source_indices)) == len(ground)
+
+
+def test_markus_9_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "9.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground and sorted(source_indices) == list(range(len(ground))) and len(set(source_indices)) == len(ground)
+
+
+def test_markus_10_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "10.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground and sorted(source_indices) == list(range(len(ground))) and len(set(source_indices)) == len(ground)
+
+
+def test_markus_11_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "11.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground and sorted(source_indices) == list(range(len(ground))) and len(set(source_indices)) == len(ground)
+
+
+def test_markus_12_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "12.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        ground = verse.get("grondtekst", [])
+        source_indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert ground and sorted(source_indices) == list(range(len(ground))) and len(set(source_indices)) == len(ground)
+
+
+def test_markus_13_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "13.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_markus_14_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "14.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_markus_15_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "15.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_markus_16_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "markus" / "16.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_1_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "1.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_2_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "2.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_3_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "3.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_4_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "4.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_5_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "5.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_6_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "6.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_7_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "7.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_8_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "8.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_9_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "9.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_10_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "10.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_11_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "11.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_12_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "12.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_13_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "13.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_14_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "14.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_15_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "15.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_16_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "16.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_17_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "17.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_18_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "18.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_19_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "19.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_20_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "20.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_21_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "21.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_22_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "22.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_23_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "23.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_lukas_24_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "lukas" / "24.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_handelingen_1_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "handelingen" / "1.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_handelingen_2_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "handelingen" / "2.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_handelingen_3_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "handelingen" / "3.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_handelingen_4_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "handelingen" / "4.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_handelingen_5_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "handelingen" / "5.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_handelingen_6_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "handelingen" / "6.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+def test_handelingen_7_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "handelingen" / "7.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for m in verse.get("woordnummers", []) for i in m.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+@pytest.mark.parametrize("chapter", range(8, 29))
+def test_handelingen_overige_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(chapter):
+    data = json.loads((ROOT / "data" / "handelingen" / f"{chapter}.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for mapping in verse.get("woordnummers", []) for i in mapping.get("herkomst", {}).get("bronindices", [])]
+        assert verse.get("grondtekst") and sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+@pytest.mark.parametrize("chapter", range(1, 17))
+def test_romeinen_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(chapter):
+    data = json.loads((ROOT / "data" / "romeinen" / f"{chapter}.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for mapping in verse.get("woordnummers", []) for i in mapping.get("herkomst", {}).get("bronindices", [])]
+        if not verse.get("grondtekst"):
+            assert not indices
+            continue
+        assert sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+@pytest.mark.parametrize("chapter", range(1, 17))
+def test_1korinthiers_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(chapter):
+    data = json.loads((ROOT / "data" / "1korinthiers" / f"{chapter}.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for mapping in verse.get("woordnummers", []) for i in mapping.get("herkomst", {}).get("bronindices", [])]
+        if not verse.get("grondtekst"):
+            assert not indices
+            continue
+        assert sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+@pytest.mark.parametrize("chapter", range(1, 14))
+def test_2korinthiers_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(chapter):
+    data = json.loads((ROOT / "data" / "2korinthiers" / f"{chapter}.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for mapping in verse.get("woordnummers", []) for i in mapping.get("herkomst", {}).get("bronindices", [])]
+        if not verse.get("grondtekst"):
+            assert not indices
+            continue
+        assert sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+@pytest.mark.parametrize("chapter", range(1, 7))
+def test_galaten_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(chapter):
+    data = json.loads((ROOT / "data" / "galaten" / f"{chapter}.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for mapping in verse.get("woordnummers", []) for i in mapping.get("herkomst", {}).get("bronindices", [])]
+        if not verse.get("grondtekst"):
+            assert not indices
+            continue
+        assert sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+@pytest.mark.parametrize("chapter", range(1, 7))
+def test_efeziers_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(chapter):
+    data = json.loads((ROOT / "data" / "efeziers" / f"{chapter}.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for mapping in verse.get("woordnummers", []) for i in mapping.get("herkomst", {}).get("bronindices", [])]
+        if not verse.get("grondtekst"):
+            assert not indices
+            continue
+        assert sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
+@pytest.mark.parametrize("chapter", range(1, 5))
+def test_filippenzen_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(chapter):
+    data = json.loads((ROOT / "data" / "filippenzen" / f"{chapter}.json").read_text(encoding="utf-8"))
+    for verse in data["verses"]:
+        indices = [i for mapping in verse.get("woordnummers", []) for i in mapping.get("herkomst", {}).get("bronindices", [])]
+        if not verse.get("grondtekst"):
+            assert not indices
+            continue
+        assert sorted(indices) == list(range(len(verse["grondtekst"]))) and len(indices) == len(set(indices))
+
+
 def test_generieke_tr_bron_kiest_bij_johannes_5_5_de_osis_variantstroom():
     from scripts.rebuild_nt_tr_strongs import load_tr_chapter
 
@@ -302,6 +1094,22 @@ def test_generieke_tr_bron_kiest_bij_johannes_5_5_de_osis_variantstroom():
     assert [token["display_strong"] for token in verses[5][5:9]] == [
         "G5144", "G2532", "G3638", "G2094",
     ]
+
+
+def test_generieke_tr_bron_vult_johannes_9_21_bronvast_aan_uit_osis():
+    from scripts.rebuild_nt_tr_strongs import load_tr_chapter
+
+    verses = load_tr_chapter(
+        Path(r"C:\tmp\greektext-textus-receptus\parsed\JOH.UTR"),
+        Path(r"C:\tmp\crosswire-kjv\kjv.osis.xml"),
+        chapter=9,
+        osis_book="John",
+    )
+
+    assert len(verses[21]) == 24
+    assert verses[21][22]["woord"] == "αυτου"
+    assert verses[21][22]["display_strong"] == "G848"
+    assert verses[21][22]["bronstatus"] == "osis_aanvulling"
 
 
 def test_johannes_2_publiceert_ieder_tr_token_precies_eenmaal():
@@ -348,10 +1156,10 @@ def test_johannes_4_publiceert_ieder_tr_token_precies_eenmaal():
         assert len(set(source_indices)) == len(ground)
 
 
-def test_johannes_5_1_tot_10_publiceert_ieder_tr_token_precies_eenmaal():
+def test_johannes_5_publiceert_ieder_tr_token_precies_eenmaal():
     data = json.loads((ROOT / "data" / "johannes" / "5.json").read_text(encoding="utf-8"))
-    reviewed = data["verses"][:10]
-    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 172
+    reviewed = data["verses"]
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 832
     for verse in reviewed:
         ground = verse.get("grondtekst", [])
         mappings = verse.get("woordnummers", [])
@@ -359,6 +1167,121 @@ def test_johannes_5_1_tot_10_publiceert_ieder_tr_token_precies_eenmaal():
         assert sorted(source_indices) == list(range(len(ground)))
         assert len(set(source_indices)) == len(ground)
         assert all(item.get("reviewstatus") == "handmatig_gecontroleerd" for item in mappings)
+
+
+def test_johannes_6_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "6.json").read_text(encoding="utf-8"))
+    reviewed = data["verses"]
+    assert len(reviewed) == 71
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 1284
+    for verse in reviewed:
+        ground = verse.get("grondtekst", [])
+        mappings = verse.get("woordnummers", [])
+        source_indices = [index for item in mappings for index in item["herkomst"]["bronindices"]]
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_johannes_7_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "7.json").read_text(encoding="utf-8"))
+    reviewed = data["verses"]
+    assert len(reviewed) == 53
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 873
+    for verse in reviewed:
+        ground = verse.get("grondtekst", [])
+        mappings = verse.get("woordnummers", [])
+        source_indices = [index for item in mappings for index in item["herkomst"]["bronindices"]]
+        assert sorted(source_indices) == list(range(len(ground)))
+        assert len(set(source_indices)) == len(ground)
+
+
+def test_johannes_8_publiceert_tokens_met_traceerbare_versgrensafwijking():
+    data = json.loads((ROOT / "data" / "johannes" / "8.json").read_text(encoding="utf-8"))
+    review = json.loads((ROOT / "data" / "woordnummers-review" / "johannes-8.json").read_text(encoding="utf-8"))
+    reviewed = data["verses"]
+    assert len(reviewed) == 59
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 1115
+    assert review["verses"]["3"]["ongemapt"][0]["reden"] == "versgrens_afwijking"
+    assert review["verses"]["3"]["ongemapt"][0]["bronindices"] == [13, 14, 15, 16, 17]
+    for verse in reviewed:
+        number = str(verse["number"])
+        ground = verse.get("grondtekst", [])
+        mapped = [index for item in verse.get("woordnummers", []) for index in item["herkomst"]["bronindices"]]
+        excluded = [index for item in review["verses"][number]["ongemapt"] for index in item["bronindices"]]
+        assert sorted(mapped + excluded) == list(range(len(ground)))
+        assert len(set(mapped + excluded)) == len(ground)
+
+
+def test_johannes_9_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "9.json").read_text(encoding="utf-8"))
+    reviewed = data["verses"]
+    assert len(reviewed) == 41
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 698
+    assert reviewed[20]["grondtekst"][22]["bronstatus"] == "osis_aanvulling"
+    for verse in reviewed:
+        ground = verse.get("grondtekst", [])
+        mapped = [index for item in verse.get("woordnummers", []) for index in item["herkomst"]["bronindices"]]
+        assert sorted(mapped) == list(range(len(ground)))
+        assert len(set(mapped)) == len(ground)
+
+
+def test_johannes_10_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "10.json").read_text(encoding="utf-8"))
+    reviewed = data["verses"]
+    assert len(reviewed) == 42
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 711
+    for verse in reviewed:
+        ground = verse.get("grondtekst", [])
+        mapped = [index for item in verse.get("woordnummers", []) for index in item["herkomst"]["bronindices"]]
+        assert sorted(mapped) == list(range(len(ground)))
+        assert len(set(mapped)) == len(ground)
+
+
+def test_johannes_11_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "11.json").read_text(encoding="utf-8"))
+    reviewed = data["verses"]
+    assert len(reviewed) == 57
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 958
+    for verse in reviewed:
+        ground = verse.get("grondtekst", [])
+        mapped = [index for item in verse.get("woordnummers", []) for index in item["herkomst"]["bronindices"]]
+        assert sorted(mapped) == list(range(len(ground)))
+        assert len(set(mapped)) == len(ground)
+
+
+def test_johannes_12_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "12.json").read_text(encoding="utf-8"))
+    reviewed = data["verses"]
+    assert len(reviewed) == 50
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 891
+    for verse in reviewed:
+        ground = verse.get("grondtekst", [])
+        mapped = [index for item in verse.get("woordnummers", []) for index in item["herkomst"]["bronindices"]]
+        assert sorted(mapped) == list(range(len(ground)))
+        assert len(set(mapped)) == len(ground)
+
+
+def test_johannes_13_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "13.json").read_text(encoding="utf-8"))
+    reviewed = data["verses"]
+    assert len(reviewed) == 38
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 669
+    for verse in reviewed:
+        ground = verse.get("grondtekst", [])
+        mapped = [index for item in verse.get("woordnummers", []) for index in item["herkomst"]["bronindices"]]
+        assert sorted(mapped) == list(range(len(ground)))
+        assert len(set(mapped)) == len(ground)
+
+
+def test_johannes_14_1_10_publiceert_ieder_tr_token_precies_eenmaal():
+    data = json.loads((ROOT / "data" / "johannes" / "14.json").read_text(encoding="utf-8"))
+    reviewed = data["verses"][:10]
+    assert sum(len(verse.get("grondtekst", [])) for verse in reviewed) == 189
+    for verse in reviewed:
+        ground = verse.get("grondtekst", [])
+        mapped = [index for item in verse.get("woordnummers", []) for index in item["herkomst"]["bronindices"]]
+        assert sorted(mapped) == list(range(len(ground)))
+        assert len(set(mapped)) == len(ground)
 
 def test_audit_reports_johannes_tr_coverage_and_valid_provenance():
     report = AUDIT.audit()
@@ -369,3 +1292,137 @@ def test_audit_reports_johannes_tr_coverage_and_valid_provenance():
     assert report["verses_with_inline_mappings"] >= 52
     assert report["inline_review_status"].get("handmatig_gecontroleerd", 0) >= 52
     assert not [item for item in report["invalid_inline"] if item.get("book") == "johannes"]
+
+
+@pytest.mark.parametrize("chapter,verse_count", [(1, 29), (2, 23), (3, 25), (4, 18)])
+def test_kolossenzen_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(chapter, verse_count):
+    data = json.loads((ROOT / "data" / "kolossenzen" / f"{chapter}.json").read_text(encoding="utf-8"))
+    review = json.loads((ROOT / "data" / "woordnummers-review" / f"kolossenzen-{chapter}.json").read_text(encoding="utf-8"))
+
+    assert len(data["verses"]) == verse_count
+    for verse in data["verses"]:
+        number = str(verse["number"])
+        ground = verse.get("grondtekst", [])
+        mappings = verse.get("woordnummers", [])
+        indices = [
+            index
+            for mapping in mappings
+            for index in mapping.get("herkomst", {}).get("bronindices", [])
+        ]
+        assert ground, f"Kolossenzen {chapter}:{number} mist TR-grondtekst"
+        assert sorted(indices) == list(range(len(ground)))
+        assert len(indices) == len(set(indices))
+        assert all(mapping["tekst"] in verse["text2026"] for mapping in mappings)
+        assert all(mapping.get("reviewstatus") == "handmatig_gecontroleerd" for mapping in mappings)
+        assert review["verses"][number]["ongemapt"] == []
+
+
+@pytest.mark.parametrize(
+    "book,chapters",
+    [("1tessalonicensen", range(1, 6)), ("2tessalonicensen", range(1, 4))],
+)
+def test_tessalonicensen_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(book, chapters):
+    for chapter in chapters:
+        data = json.loads((ROOT / "data" / book / f"{chapter}.json").read_text(encoding="utf-8"))
+        review = json.loads((ROOT / "data" / "woordnummers-review" / f"{book}-{chapter}.json").read_text(encoding="utf-8"))
+        for verse in data["verses"]:
+            number = str(verse["number"])
+            ground = verse.get("grondtekst", [])
+            mappings = verse.get("woordnummers", [])
+            indices = [
+                index
+                for mapping in mappings
+                for index in mapping.get("herkomst", {}).get("bronindices", [])
+            ]
+            assert ground and indices == list(range(len(ground)))
+            assert len(indices) == len(set(indices))
+            assert all(mapping["tekst"] in verse["text2026"] for mapping in mappings)
+            assert review["verses"][number]["ongemapt"] == []
+
+
+@pytest.mark.parametrize(
+    "book,chapters",
+    [
+        ("1timotheus", range(1, 7)),
+        ("2timotheus", range(1, 5)),
+        ("titus", range(1, 4)),
+        ("filemon", range(1, 2)),
+    ],
+)
+def test_pastorale_brieven_publiceren_ieder_tr_token_precies_eenmaal(book, chapters):
+    for chapter in chapters:
+        data = json.loads((ROOT / "data" / book / f"{chapter}.json").read_text(encoding="utf-8"))
+        review = json.loads((ROOT / "data" / "woordnummers-review" / f"{book}-{chapter}.json").read_text(encoding="utf-8"))
+        for verse in data["verses"]:
+            indices = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+            unmapped = [index for item in review["verses"][str(verse["number"])]["ongemapt"] for index in item["bronindices"]]
+            assert verse.get("grondtekst") and sorted(indices + unmapped) == list(range(len(verse["grondtekst"])))
+            assert len(indices + unmapped) == len(set(indices + unmapped))
+            assert all(mapping["tekst"] in verse["text2026"] for mapping in verse["woordnummers"])
+
+
+def test_1timotheus_3_11_bewaart_de_bewezen_osisvariant_als_ongemapt():
+    from scripts.rebuild_nt_tr_strongs import load_tr_chapter
+
+    chapter = load_tr_chapter(
+        Path(r"C:\tmp\greektext-textus-receptus\parsed\1TI.UTR"),
+        Path(r"C:\tmp\crosswire-kjv\kjv.osis.xml"),
+        chapter=3,
+        osis_book="1Tim",
+        allowed_osis_variants={(11, 5)},
+    )
+
+    assert chapter[11][5]["lemma_strong"] == "G3524"
+    assert chapter[11][5]["bronstatus"] == "osis_variant_ongemapt"
+    assert chapter[11][5]["osis_variant"] == {"lemma_strong": "G3542", "morfologie": "A-APM"}
+
+
+@pytest.mark.parametrize(
+    "book,chapters",
+    [
+        ("hebreeen", range(1, 14)), ("jakobus", range(1, 6)),
+        ("1petrus", range(1, 6)), ("2petrus", range(1, 4)),
+        ("1johannes", range(1, 6)), ("2johannes", range(1, 2)),
+        ("3johannes", range(1, 2)), ("judas", range(1, 2)),
+        ("openbaring", range(1, 23)),
+    ],
+)
+def test_resterende_nt_brieven_publiceren_ieder_tr_token_of_een_variant(book, chapters):
+    for chapter in chapters:
+        data = json.loads((ROOT / "data" / book / f"{chapter}.json").read_text(encoding="utf-8"))
+        review = json.loads((ROOT / "data" / "woordnummers-review" / f"{book}-{chapter}.json").read_text(encoding="utf-8"))
+        for verse in data["verses"]:
+            if not verse.get("grondtekst"):
+                assert verse.get("woordnummers") == []
+                assert review["verses"][str(verse["number"])]["bronafwijking"]["reden"] == "versgrens_afwijking"
+                continue
+            mapped = [index for mapping in verse.get("woordnummers", []) for index in mapping.get("herkomst", {}).get("bronindices", [])]
+            unmapped = [index for item in review["verses"][str(verse["number"])]["ongemapt"] for index in item["bronindices"]]
+            assert verse.get("grondtekst") and sorted(mapped + unmapped) == list(range(len(verse["grondtekst"])))
+            assert len(mapped + unmapped) == len(set(mapped + unmapped))
+            assert all(mapping["tekst"] in verse["text2026"] for mapping in verse["woordnummers"])
+
+
+def test_genesis_4_review_bevat_alle_versen_en_dekt_iedere_lokale_positie():
+    """Een niet-lege reviewbron bewaakt de reproduceerbare hoofdstukimport."""
+    path = ROOT / "data" / "woordnummers-review" / "genesis-4.json"
+    assert path.stat().st_size > 0
+    review = json.loads(path.read_text(encoding="utf-8"))
+    records = review["books"][0]["verses"]
+    assert [record["verse"] for record in records] == list(range(1, 27))
+    assert all(record["mappings"] for record in records)
+
+    chapter = json.loads((ROOT / "data" / "genesis" / "4.json").read_text(encoding="utf-8"))
+    for verse, record in zip(chapter["verses"], records):
+        mapped = [
+            index
+            for mapping in record["mappings"]
+            for index in mapping["grondindices"]
+        ]
+        unmapped = [
+            index
+            for item in record.get("ongemapt", [])
+            for index in item["grondindices"]
+        ]
+        assert sorted(mapped + unmapped) == list(range(len(verse["grondtekst"])))
+        assert len(mapped + unmapped) == len(set(mapped + unmapped))

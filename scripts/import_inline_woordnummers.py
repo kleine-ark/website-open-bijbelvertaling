@@ -153,7 +153,9 @@ def parse_tagnt_tr(path, book="Jhn", chapter=None):
     return verses
 
 
-def build_inline_mapping(review, external_tokens, local_tokens, source, reference):
+def build_inline_mapping(
+    review, external_tokens, local_tokens, source, reference, lemma_afwijking=None
+):
     if review.get("reviewstatus") != REVIEWED:
         raise ValueError(f"Ongeldige reviewstatus voor {reference}: {review.get('reviewstatus')!r}")
     confidence = review.get("confidence")
@@ -170,15 +172,33 @@ def build_inline_mapping(review, external_tokens, local_tokens, source, referenc
 
     external_numbers = [number for token in external for number in _strongs(token.get("strongs"))]
     local_numbers = [number for token in local for number in _strongs(token.get("strongs"))]
-    if not external_numbers or external_numbers != local_numbers:
+    # Een vers kan meer dan één, inhoudelijk onafhankelijke afwijking tussen
+    # de uitlijngids en de lokale grondtekst bevatten. Elke afwijking blijft
+    # daarom atomair in het reviewbestand; de importer accepteert uitsluitend
+    # de record die precies bij deze mapping hoort.
+    differences = lemma_afwijking if isinstance(lemma_afwijking, list) else [lemma_afwijking]
+    documented_difference = any(
+        isinstance(difference, dict)
+        and difference.get("reden") == "lemma_afwijking"
+        and difference.get("bronindices") == list(source_indices)
+        and difference.get("grondindices") == list(ground_indices)
+        and difference.get("bron_strongs") == external_numbers
+        and difference.get("grondtekst_strongs") == local_numbers
+        for difference in differences
+    )
+    if not external_numbers or (
+        external_numbers != local_numbers and not documented_difference
+    ):
         raise ValueError(
             f"Afwijkende bronvolgorde voor {reference}: extern {external_numbers}, lokaal {local_numbers}"
         )
 
-    return {
+    mapping = {
         "tekst": str(review["tekst"]),
         "voorkomen": int(review.get("voorkomen", 1)),
-        "strongs": external_numbers,
+        # De lokale WLC/OSHB-tokenlaag is leidend. Een expliciet vastgelegde
+        # gidsafwijking blijft zichtbaar naast, maar vervangt nooit dit lemma.
+        "strongs": local_numbers,
         "bronwoorden": [str(token.get("woord") or "") for token in local],
         "transliteraties": [
             str(token.get("transliteratie") or token.get("translit") or "") for token in local
@@ -194,6 +214,12 @@ def build_inline_mapping(review, external_tokens, local_tokens, source, referenc
             "bronindices": list(source_indices),
         },
     }
+    if external_numbers != local_numbers:
+        mapping["gids_strongs"] = external_numbers
+    for key in ("anker", "plaats", "status", "toelichting"):
+        if key in review:
+            mapping[key] = review[key]
+    return mapping
 
 
 def _anchor_key(mapping):
@@ -222,6 +248,26 @@ def merge_reviewed_mappings(verse, proposed):
     return added, preserved
 
 
+def replace_reviewed_mappings(verse, proposed, provenance):
+    """Vervang uitsluitend bronrecords van één expliciet gereviewd vers.
+
+    Een reviewbestand kan deze route alleen per vers inschakelen. Daarmee
+    blijven redactionele ankers en records van andere bronverzen onaangeraakt.
+    """
+    existing = verse.setdefault("woordnummers", [])
+    keys = ("dataset", "versie", "sha256", "referentie")
+    kept = []
+    replaced = 0
+    for mapping in existing:
+        origin = mapping.get("herkomst", {}) if isinstance(mapping, dict) else {}
+        if all(origin.get(key) == provenance.get(key) for key in keys):
+            replaced += 1
+        else:
+            kept.append(mapping)
+    verse["woordnummers"] = kept + proposed
+    return replaced
+
+
 def _sha256(path):
     digest = hashlib.sha256()
     with Path(path).open("rb") as handle:
@@ -230,13 +276,19 @@ def _sha256(path):
     return digest.hexdigest().upper()
 
 
-def apply_review_file(review_path, source_dir, data_dir=None, write=False):
+def apply_review_file(review_path, source_dir, data_dir=None, write=False, verse_numbers=None):
     """Bouw en merge alle gereviewde mappings uit één reproduceerbaar reviewbestand."""
     review = json.loads(Path(review_path).read_text(encoding="utf-8"))
     source = review["source"]
     source_dir = Path(source_dir)
     data_dir = Path(data_dir or ROOT / "data")
-    report = {"mode": "write" if write else "dry-run", "added": 0, "preserved": 0, "verses": 0}
+    report = {
+        "mode": "write" if write else "dry-run",
+        "added": 0,
+        "preserved": 0,
+        "replaced": 0,
+        "verses": 0,
+    }
 
     for book in review.get("books", []):
         source_path = source_dir / book["source_file"]
@@ -249,23 +301,50 @@ def apply_review_file(review_path, source_dir, data_dir=None, write=False):
         chapter = json.loads(original)
         by_number = {int(verse["number"]): verse for verse in chapter.get("verses", [])}
 
+        chapter_changed = False
         for verse_review in book.get("verses", []):
             number = int(verse_review["verse"])
+            if verse_numbers is not None and number not in verse_numbers:
+                continue
             source_number = int(verse_review.get("source_verse", number))
             verse = by_number[number]
             reference = f"{book['code']} {book['chapter']}:{source_number}"
             external = external_verses.get((int(book["chapter"]), source_number), [])
             local = verse.get("grondtekst") or []
             proposed = [
-                build_inline_mapping(item, external, local, source, reference)
+                build_inline_mapping(
+                    item,
+                    external,
+                    local,
+                    source,
+                    reference,
+                    lemma_afwijking=verse_review.get(
+                        "bronafwijkingen", verse_review.get("bronafwijking")
+                    ),
+                )
                 for item in verse_review.get("mappings", [])
             ]
-            added, preserved = merge_reviewed_mappings(verse, proposed)
+            if verse_review.get("vervang_bronrecords"):
+                if not proposed:
+                    raise ValueError(f"Geen vervangende mappings voor {reference}")
+                provenance = {
+                    "dataset": source["id"],
+                    "versie": source["version"],
+                    "sha256": source["sha256"],
+                    "referentie": reference,
+                }
+                replaced = replace_reviewed_mappings(verse, proposed, provenance)
+                added, preserved = len(proposed), 0
+                report["replaced"] += replaced
+                chapter_changed = chapter_changed or bool(replaced or proposed)
+            else:
+                added, preserved = merge_reviewed_mappings(verse, proposed)
+                chapter_changed = chapter_changed or bool(added)
             report["added"] += added
             report["preserved"] += preserved
             report["verses"] += 1
 
-        if write and report["added"]:
+        if write and chapter_changed:
             rendered = json.dumps(chapter, ensure_ascii=False, indent=2) + "\n"
             chapter_path.write_text(rendered, encoding="utf-8")
     return report
@@ -276,9 +355,21 @@ def main():
     parser.add_argument("--review", type=Path, required=True)
     parser.add_argument("--source-dir", type=Path, required=True)
     parser.add_argument("--data-dir", type=Path, default=ROOT / "data")
+    parser.add_argument(
+        "--verses",
+        type=int,
+        nargs="+",
+        help="beperk de import tot deze versnummers binnen het reviewhoofdstuk",
+    )
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
-    report = apply_review_file(args.review, args.source_dir, args.data_dir, args.write)
+    report = apply_review_file(
+        args.review,
+        args.source_dir,
+        args.data_dir,
+        args.write,
+        verse_numbers=set(args.verses) if args.verses else None,
+    )
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 

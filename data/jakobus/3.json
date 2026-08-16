@@ -53,70 +53,70 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "Μὴ",
+          "woord": "μη",
           "strongs": "G3361",
-          "transliteratie": "Mē",
-          "gloss": "not"
+          "lemma_strongs": "G3361",
+          "morfologie": "PRT-N"
         },
         {
-          "woord": "πολλοὶ",
+          "woord": "πολλοι",
           "strongs": "G4183",
-          "transliteratie": "polloi",
-          "gloss": "much"
+          "lemma_strongs": "G4183",
+          "morfologie": "A-NPM"
         },
         {
-          "woord": "διδάσκαλοι",
+          "woord": "διδασκαλοι",
           "strongs": "G1320",
-          "transliteratie": "didaskaloi",
-          "gloss": "teacher"
+          "lemma_strongs": "G1320",
+          "morfologie": "N-NPM"
         },
         {
-          "woord": "γίνεσθε",
+          "woord": "γινεσθε",
           "strongs": "G1096",
-          "transliteratie": "ginesthe",
-          "gloss": "to be"
+          "lemma_strongs": "G1096",
+          "morfologie": "V-PNM-2P"
         },
         {
-          "woord": "ἀδελφοί",
+          "woord": "αδελφοι",
           "strongs": "G80",
-          "transliteratie": "adelphoi",
-          "gloss": "brother"
+          "lemma_strongs": "G80",
+          "morfologie": "N-VPM"
         },
         {
           "woord": "μου",
           "strongs": "G1473",
-          "transliteratie": "mou",
-          "gloss": "I/we"
+          "lemma_strongs": "G1473",
+          "morfologie": "P-1GS"
         },
         {
-          "woord": "εἰδότες",
+          "woord": "ειδοτες",
           "strongs": "G1492",
-          "transliteratie": "eidotes",
-          "gloss": "to know"
+          "lemma_strongs": "G1492",
+          "morfologie": "V-RAP-NPM"
         },
         {
-          "woord": "ὅτι",
+          "woord": "οτι",
           "strongs": "G3754",
-          "transliteratie": "hoti",
-          "gloss": "that/since"
+          "lemma_strongs": "G3754",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "μεῖζον",
+          "woord": "μειζον",
           "strongs": "G3173",
-          "transliteratie": "meizon",
-          "gloss": "great"
+          "lemma_strongs": "G3173",
+          "morfologie": "A-ASN-C"
         },
         {
-          "woord": "κρίμα",
+          "woord": "κριμα",
           "strongs": "G2917",
-          "transliteratie": "krima",
-          "gloss": "judgment"
+          "lemma_strongs": "G2917",
+          "morfologie": "N-ASN"
         },
         {
-          "woord": "λημψόμεθα",
+          "woord": "ληψομεθα",
           "strongs": "G2983",
-          "transliteratie": "lēmpsometha",
-          "gloss": "to take"
+          "lemma_strongs": "G2983",
+          "morfologie": "V-FDI-1P"
         }
       ],
       "hsv": "U moet ⓕniet allemaal leermeesters willen zijn, mijn broeders. U weet immers ⓖdat wij dan een strenger oordeel zullen ontvangen.",
@@ -139,6 +139,125 @@
           "old": "te meerder",
           "new": "een strenger",
           "principe": "V735"
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Wees niet vele leermeesters, mijn broeders, wetende, dat wij een strenger oordeel zullen ontvangen.",
+          "voorkomen": 1,
+          "strongs": [
+            "G3361",
+            "G4183",
+            "G1320",
+            "G1096",
+            "G80",
+            "G1473",
+            "G1492",
+            "G3754",
+            "G3173",
+            "G2917",
+            "G2983"
+          ],
+          "lemma_strongs": [
+            "G3361",
+            "G4183",
+            "G1320",
+            "G1096",
+            "G80",
+            "G1473",
+            "G1492",
+            "G3754",
+            "G3173",
+            "G2917",
+            "G2983"
+          ],
+          "morfologie": [
+            "PRT-N",
+            "A-NPM",
+            "N-NPM",
+            "V-PNM-2P",
+            "N-VPM",
+            "P-1GS",
+            "V-RAP-NPM",
+            "CONJ",
+            "A-ASN-C",
+            "N-ASN",
+            "V-FDI-1P"
+          ],
+          "bronwoorden": [
+            "μη",
+            "πολλοι",
+            "διδασκαλοι",
+            "γινεσθε",
+            "αδελφοι",
+            "μου",
+            "ειδοτες",
+            "οτι",
+            "μειζον",
+            "κριμα",
+            "ληψομεθα"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:1",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            "G5737",
+            null,
+            null,
+            "G5761",
+            null,
+            null,
+            null,
+            "G5695"
+          ]
         }
       ]
     },
@@ -197,118 +316,118 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "πολλὰ",
+          "woord": "πολλα",
           "strongs": "G4183",
-          "transliteratie": "polla",
-          "gloss": "much"
+          "lemma_strongs": "G4183",
+          "morfologie": "A-APN"
         },
         {
-          "woord": "γὰρ",
+          "woord": "γαρ",
           "strongs": "G1063",
-          "transliteratie": "gar",
-          "gloss": "for"
+          "lemma_strongs": "G1063",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "πταίομεν",
+          "woord": "πταιομεν",
           "strongs": "G4417",
-          "transliteratie": "ptaiomen",
-          "gloss": "to stumble"
+          "lemma_strongs": "G4417",
+          "morfologie": "V-PAI-1P"
         },
         {
-          "woord": "ἅπαντες",
+          "woord": "απαντες",
           "strongs": "G537",
-          "transliteratie": "hapantes",
-          "gloss": "all"
+          "lemma_strongs": "G537",
+          "morfologie": "A-NPM"
         },
         {
-          "woord": "εἴ",
+          "woord": "ει",
           "strongs": "G1487",
-          "transliteratie": "ei",
-          "gloss": "if"
+          "lemma_strongs": "G1487",
+          "morfologie": "COND"
         },
         {
           "woord": "τις",
           "strongs": "G5100",
-          "transliteratie": "tis",
-          "gloss": "one"
+          "lemma_strongs": "G5100",
+          "morfologie": "X-NSM"
         },
         {
-          "woord": "ἐν",
+          "woord": "εν",
           "strongs": "G1722",
-          "transliteratie": "en",
-          "gloss": "in/on/among"
+          "lemma_strongs": "G1722",
+          "morfologie": "PREP"
         },
         {
-          "woord": "λόγῳ",
+          "woord": "λογω",
           "strongs": "G3056",
-          "transliteratie": "logō",
-          "gloss": "word"
+          "lemma_strongs": "G3056",
+          "morfologie": "N-DSM"
         },
         {
-          "woord": "οὐ",
+          "woord": "ου",
           "strongs": "G3756",
-          "transliteratie": "ou",
-          "gloss": "no"
+          "lemma_strongs": "G3756",
+          "morfologie": "PRT-N"
         },
         {
-          "woord": "πταίει",
+          "woord": "πταιει",
           "strongs": "G4417",
-          "transliteratie": "ptaiei",
-          "gloss": "to stumble"
+          "lemma_strongs": "G4417",
+          "morfologie": "V-PAI-3S"
         },
         {
-          "woord": "οὗτος",
+          "woord": "ουτος",
           "strongs": "G3778",
-          "transliteratie": "houtos",
-          "gloss": "this/he/she/it"
+          "lemma_strongs": "G3778",
+          "morfologie": "D-NSM"
         },
         {
-          "woord": "τέλειος",
+          "woord": "τελειος",
           "strongs": "G5046",
-          "transliteratie": "teleios",
-          "gloss": "perfect"
+          "lemma_strongs": "G5046",
+          "morfologie": "A-NSM"
         },
         {
-          "woord": "ἀνήρ",
+          "woord": "ανηρ",
           "strongs": "G435",
-          "transliteratie": "anēr",
-          "gloss": "man"
+          "lemma_strongs": "G435",
+          "morfologie": "N-NSM"
         },
         {
-          "woord": "δυνατὸς",
+          "woord": "δυνατος",
           "strongs": "G1415",
-          "transliteratie": "dynatos",
-          "gloss": "able"
+          "lemma_strongs": "G1415",
+          "morfologie": "A-NSM"
         },
         {
-          "woord": "χαλιναγωγῆσαι",
+          "woord": "χαλιναγωγησαι",
           "strongs": "G5468",
-          "transliteratie": "chalinagōgēsai",
-          "gloss": "to bridle"
+          "lemma_strongs": "G5468",
+          "morfologie": "V-AAN"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ὅλον",
+          "woord": "ολον",
           "strongs": "G3650",
-          "transliteratie": "holon",
-          "gloss": "all"
+          "lemma_strongs": "G3650",
+          "morfologie": "A-ASN"
         },
         {
-          "woord": "τὸ",
+          "woord": "το",
           "strongs": "G3588",
-          "transliteratie": "to",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-ASN"
         },
         {
-          "woord": "σῶμα",
+          "woord": "σωμα",
           "strongs": "G4983",
-          "transliteratie": "sōma",
-          "gloss": "body"
+          "lemma_strongs": "G4983",
+          "morfologie": "N-ASN"
         }
       ],
       "hsv": "Want wij struikelen allen in veel opzichten. ⓗAls iemand in woorden niet struikelt, is hij een volmaakt man, die bij machte is om ook het hele lichaam in toom te houden.",
@@ -331,6 +450,189 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Want wij struikelen allen in vele. Als iemand in woorden niet struikelt, die is een volmaakt man, machtig om ook het hele lichaam in de toom te houden.",
+          "voorkomen": 1,
+          "strongs": [
+            "G4183",
+            "G1063",
+            "G4417",
+            "G537",
+            "G1487",
+            "G5100",
+            "G1722",
+            "G3056",
+            "G3756",
+            "G4417",
+            "G3778",
+            "G5046",
+            "G435",
+            "G1415",
+            "G5468",
+            "G2532",
+            "G3650",
+            "G3588",
+            "G4983"
+          ],
+          "lemma_strongs": [
+            "G4183",
+            "G1063",
+            "G4417",
+            "G537",
+            "G1487",
+            "G5100",
+            "G1722",
+            "G3056",
+            "G3756",
+            "G4417",
+            "G3778",
+            "G5046",
+            "G435",
+            "G1415",
+            "G5468",
+            "G2532",
+            "G3650",
+            "G3588",
+            "G4983"
+          ],
+          "morfologie": [
+            "A-APN",
+            "CONJ",
+            "V-PAI-1P",
+            "A-NPM",
+            "COND",
+            "X-NSM",
+            "PREP",
+            "N-DSM",
+            "PRT-N",
+            "V-PAI-3S",
+            "D-NSM",
+            "A-NSM",
+            "N-NSM",
+            "A-NSM",
+            "V-AAN",
+            "CONJ",
+            "A-ASN",
+            "T-ASN",
+            "N-ASN"
+          ],
+          "bronwoorden": [
+            "πολλα",
+            "γαρ",
+            "πταιομεν",
+            "απαντες",
+            "ει",
+            "τις",
+            "εν",
+            "λογω",
+            "ου",
+            "πταιει",
+            "ουτος",
+            "τελειος",
+            "ανηρ",
+            "δυνατος",
+            "χαλιναγωγησαι",
+            "και",
+            "ολον",
+            "το",
+            "σωμα"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:2",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            "G5719",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5719",
+            null,
+            null,
+            null,
+            null,
+            "G5658",
+            null,
+            null,
+            null,
+            null
+          ]
         }
       ]
     },
@@ -368,130 +670,124 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "Εἰ",
-          "strongs": "G1487",
-          "transliteratie": "Ei",
-          "gloss": "if"
+          "woord": "ιδου",
+          "strongs": "G3708",
+          "lemma_strongs": "G3708",
+          "morfologie": "V-2AMM-2S"
         },
         {
-          "woord": "δὲ",
-          "strongs": "G1161",
-          "transliteratie": "de",
-          "gloss": "but/and"
-        },
-        {
-          "woord": "τῶν",
+          "woord": "των",
           "strongs": "G3588",
-          "transliteratie": "tōn",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-GPM"
         },
         {
-          "woord": "ἵππων",
+          "woord": "ιππων",
           "strongs": "G2462",
-          "transliteratie": "hippōn",
-          "gloss": "horse"
+          "lemma_strongs": "G2462",
+          "morfologie": "N-GPM"
         },
         {
-          "woord": "τοὺς",
+          "woord": "τους",
           "strongs": "G3588",
-          "transliteratie": "tous",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-APM"
         },
         {
-          "woord": "χαλινοὺς",
+          "woord": "χαλινους",
           "strongs": "G5469",
-          "transliteratie": "chalinous",
-          "gloss": "bridle"
+          "lemma_strongs": "G5469",
+          "morfologie": "N-APM"
         },
         {
-          "woord": "εἰς",
+          "woord": "εις",
           "strongs": "G1519",
-          "transliteratie": "eis",
-          "gloss": "toward"
+          "lemma_strongs": "G1519",
+          "morfologie": "PREP"
         },
         {
-          "woord": "τὰ",
+          "woord": "τα",
           "strongs": "G3588",
-          "transliteratie": "ta",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-APN"
         },
         {
-          "woord": "στόματα",
+          "woord": "στοματα",
           "strongs": "G4750",
-          "transliteratie": "stomata",
-          "gloss": "mouth"
+          "lemma_strongs": "G4750",
+          "morfologie": "N-APN"
         },
         {
-          "woord": "βάλλομεν",
+          "woord": "βαλλομεν",
           "strongs": "G906",
-          "transliteratie": "ballomen",
-          "gloss": "to throw"
+          "lemma_strongs": "G906",
+          "morfologie": "V-PAI-1P"
         },
         {
-          "woord": "εἰς",
-          "strongs": "G1519",
-          "transliteratie": "eis",
-          "gloss": "toward"
+          "woord": "προς",
+          "strongs": "G4314",
+          "lemma_strongs": "G4314",
+          "morfologie": "PREP"
         },
         {
-          "woord": "τὸ",
+          "woord": "το",
           "strongs": "G3588",
-          "transliteratie": "to",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-ASN"
         },
         {
-          "woord": "πείθεσθαι",
+          "woord": "πειθεσθαι",
           "strongs": "G3982",
-          "transliteratie": "peithesthai",
-          "gloss": "to persuade"
+          "lemma_strongs": "G3982",
+          "morfologie": "V-PPN"
         },
         {
-          "woord": "αὐτοὺς",
+          "woord": "αυτους",
           "strongs": "G846",
-          "transliteratie": "autous",
-          "gloss": "he/she/it/self"
+          "lemma_strongs": "G846",
+          "morfologie": "P-APM"
         },
         {
-          "woord": "ἡμῖν",
+          "woord": "ημιν",
           "strongs": "G1473",
-          "transliteratie": "hēmin",
-          "gloss": "I/we"
+          "lemma_strongs": "G1473",
+          "morfologie": "P-1DP"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ὅλον",
+          "woord": "ολον",
           "strongs": "G3650",
-          "transliteratie": "holon",
-          "gloss": "all"
+          "lemma_strongs": "G3650",
+          "morfologie": "A-ASN"
         },
         {
-          "woord": "τὸ",
+          "woord": "το",
           "strongs": "G3588",
-          "transliteratie": "to",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-ASN"
         },
         {
-          "woord": "σῶμα",
+          "woord": "σωμα",
           "strongs": "G4983",
-          "transliteratie": "sōma",
-          "gloss": "body"
+          "lemma_strongs": "G4983",
+          "morfologie": "N-ASN"
         },
         {
-          "woord": "αὐτῶν",
+          "woord": "αυτων",
           "strongs": "G846",
-          "transliteratie": "autōn",
-          "gloss": "he/she/it/self"
+          "lemma_strongs": "G846",
+          "morfologie": "P-GPM"
         },
         {
-          "woord": "μετάγομεν",
+          "woord": "μεταγομεν",
           "strongs": "G3329",
-          "transliteratie": "metagomen",
-          "gloss": "to turn"
+          "lemma_strongs": "G3329",
+          "morfologie": "V-PAI-1P"
         }
       ],
       "hsv": "Zie, wij leggen de paarden een bit in de mond, opdat ze ons zouden gehoorzamen, en wij sturen daarmee heel hun lichaam.",
@@ -525,6 +821,197 @@
           "new": "hele",
           "principe": "V391"
         }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Zie, wij leggen de paarden bitten in de monden, opdat zij ons zouden gehoorzamen, en wij leiden daarmee hun hele lichaam om;",
+          "voorkomen": 1,
+          "strongs": [
+            "G3708",
+            "G3588",
+            "G2462",
+            "G3588",
+            "G5469",
+            "G1519",
+            "G3588",
+            "G4750",
+            "G906",
+            "G4314",
+            "G3588",
+            "G3982",
+            "G846",
+            "G1473",
+            "G2532",
+            "G3650",
+            "G3588",
+            "G4983",
+            "G846",
+            "G3329"
+          ],
+          "lemma_strongs": [
+            "G3708",
+            "G3588",
+            "G2462",
+            "G3588",
+            "G5469",
+            "G1519",
+            "G3588",
+            "G4750",
+            "G906",
+            "G4314",
+            "G3588",
+            "G3982",
+            "G846",
+            "G1473",
+            "G2532",
+            "G3650",
+            "G3588",
+            "G4983",
+            "G846",
+            "G3329"
+          ],
+          "morfologie": [
+            "V-2AMM-2S",
+            "T-GPM",
+            "N-GPM",
+            "T-APM",
+            "N-APM",
+            "PREP",
+            "T-APN",
+            "N-APN",
+            "V-PAI-1P",
+            "PREP",
+            "T-ASN",
+            "V-PPN",
+            "P-APM",
+            "P-1DP",
+            "CONJ",
+            "A-ASN",
+            "T-ASN",
+            "N-ASN",
+            "P-GPM",
+            "V-PAI-1P"
+          ],
+          "bronwoorden": [
+            "ιδου",
+            "των",
+            "ιππων",
+            "τους",
+            "χαλινους",
+            "εις",
+            "τα",
+            "στοματα",
+            "βαλλομεν",
+            "προς",
+            "το",
+            "πειθεσθαι",
+            "αυτους",
+            "ημιν",
+            "και",
+            "ολον",
+            "το",
+            "σωμα",
+            "αυτων",
+            "μεταγομεν"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:3",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ]
+          },
+          "tvm": [
+            "G5640",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5719",
+            null,
+            null,
+            "G5745",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5719"
+          ]
+        }
       ]
     },
     {
@@ -547,130 +1034,136 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "ἰδοὺ",
-          "strongs": "G2400",
-          "transliteratie": "idou",
-          "gloss": "look!"
+          "woord": "ιδου",
+          "strongs": "G3708",
+          "lemma_strongs": "G3708",
+          "morfologie": "V-2AMM-2S"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "τὰ",
+          "woord": "τα",
           "strongs": "G3588",
-          "transliteratie": "ta",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-NPN"
         },
         {
-          "woord": "πλοῖα",
+          "woord": "πλοια",
           "strongs": "G4143",
-          "transliteratie": "ploia",
-          "gloss": "boat"
+          "lemma_strongs": "G4143",
+          "morfologie": "N-NPN"
         },
         {
-          "woord": "τηλικαῦτα",
+          "woord": "τηλικαυτα",
           "strongs": "G5082",
-          "transliteratie": "tēlikauta",
-          "gloss": "so great"
+          "lemma_strongs": "G5082",
+          "morfologie": "D-NPN"
         },
         {
-          "woord": "ὄντα",
+          "woord": "οντα",
           "strongs": "G1510",
-          "transliteratie": "onta",
-          "gloss": "to be"
+          "lemma_strongs": "G1510",
+          "morfologie": "V-PAP-NPN"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ὑπὸ",
+          "woord": "υπο",
           "strongs": "G5259",
-          "transliteratie": "hypo",
-          "gloss": "by/under"
+          "lemma_strongs": "G5259",
+          "morfologie": "PREP"
         },
         {
-          "woord": "ἀνέμων",
-          "strongs": "G417",
-          "transliteratie": "anemōn",
-          "gloss": "wind"
-        },
-        {
-          "woord": "σκληρῶν",
+          "woord": "σκληρων",
           "strongs": "G4642",
-          "transliteratie": "sklērōn",
-          "gloss": "hard"
+          "lemma_strongs": "G4642",
+          "morfologie": "A-GPM"
         },
         {
-          "woord": "ἐλαυνόμενα",
+          "woord": "ανεμων",
+          "strongs": "G417",
+          "lemma_strongs": "G417",
+          "morfologie": "N-GPM"
+        },
+        {
+          "woord": "ελαυνομενα",
           "strongs": "G1643",
-          "transliteratie": "elaunomena",
-          "gloss": "to drive"
+          "lemma_strongs": "G1643",
+          "morfologie": "V-PPP-NPN"
         },
         {
-          "woord": "μετάγεται",
+          "woord": "μεταγεται",
           "strongs": "G3329",
-          "transliteratie": "metagetai",
-          "gloss": "to turn"
+          "lemma_strongs": "G3329",
+          "morfologie": "V-PPI-3S"
         },
         {
-          "woord": "ὑπὸ",
+          "woord": "υπο",
           "strongs": "G5259",
-          "transliteratie": "hypo",
-          "gloss": "by/under"
+          "lemma_strongs": "G5259",
+          "morfologie": "PREP"
         },
         {
-          "woord": "ἐλαχίστου",
+          "woord": "ελαχιστου",
           "strongs": "G1646",
-          "transliteratie": "elachistou",
-          "gloss": "least"
+          "lemma_strongs": "G1646",
+          "morfologie": "A-GSN-S"
         },
         {
-          "woord": "πηδαλίου",
+          "woord": "πηδαλιου",
           "strongs": "G4079",
-          "transliteratie": "pēdaliou",
-          "gloss": "rudder"
+          "lemma_strongs": "G4079",
+          "morfologie": "N-GSN"
         },
         {
-          "woord": "ὅπου",
+          "woord": "οπου",
           "strongs": "G3699",
-          "transliteratie": "hopou",
-          "gloss": "where(-ever)"
+          "lemma_strongs": "G3699",
+          "morfologie": "ADV"
         },
         {
-          "woord": "ἡ",
+          "woord": "αν",
+          "strongs": "G302",
+          "lemma_strongs": "G302",
+          "morfologie": "PRT"
+        },
+        {
+          "woord": "η",
           "strongs": "G3588",
-          "transliteratie": "hē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-NSF"
         },
         {
-          "woord": "ὁρμὴ",
+          "woord": "ορμη",
           "strongs": "G3730",
-          "transliteratie": "hormē",
-          "gloss": "impulse"
+          "lemma_strongs": "G3730",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "τοῦ",
+          "woord": "του",
           "strongs": "G3588",
-          "transliteratie": "tou",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-GSM"
         },
         {
-          "woord": "εὐθύνοντος",
+          "woord": "ευθυνοντος",
           "strongs": "G2116",
-          "transliteratie": "euthynontos",
-          "gloss": "to straighten"
+          "lemma_strongs": "G2116",
+          "morfologie": "V-PAP-GSM"
         },
         {
-          "woord": "βούλεται",
+          "woord": "βουληται",
           "strongs": "G1014",
-          "transliteratie": "bouletai",
-          "gloss": "to plan"
+          "lemma_strongs": "G1014",
+          "morfologie": "V-PNS-3S"
         }
       ],
       "hsv": "Zie, ook de schepen, al zijn ze nog zo groot en worden ze door harde winden voortgedreven, ze worden gestuurd door een zeer klein roer, waarheen de stuurman ook maar kiest en wil.[3]",
@@ -693,6 +1186,213 @@
           "old": "des stuurders",
           "new": "van de stuurman",
           "principe": "N3"
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Zie ook de schepen, hoewel zij zo groot zijn, en van harde winden gedreven, zij worden omgewend van een zeer klein roer, waarheen ook de begeerte van de stuurman wil.",
+          "voorkomen": 1,
+          "strongs": [
+            "G3708",
+            "G2532",
+            "G3588",
+            "G4143",
+            "G5082",
+            "G1510",
+            "G2532",
+            "G5259",
+            "G4642",
+            "G417",
+            "G1643",
+            "G3329",
+            "G5259",
+            "G1646",
+            "G4079",
+            "G3699",
+            "G302",
+            "G3588",
+            "G3730",
+            "G3588",
+            "G2116",
+            "G1014"
+          ],
+          "lemma_strongs": [
+            "G3708",
+            "G2532",
+            "G3588",
+            "G4143",
+            "G5082",
+            "G1510",
+            "G2532",
+            "G5259",
+            "G4642",
+            "G417",
+            "G1643",
+            "G3329",
+            "G5259",
+            "G1646",
+            "G4079",
+            "G3699",
+            "G302",
+            "G3588",
+            "G3730",
+            "G3588",
+            "G2116",
+            "G1014"
+          ],
+          "morfologie": [
+            "V-2AMM-2S",
+            "CONJ",
+            "T-NPN",
+            "N-NPN",
+            "D-NPN",
+            "V-PAP-NPN",
+            "CONJ",
+            "PREP",
+            "A-GPM",
+            "N-GPM",
+            "V-PPP-NPN",
+            "V-PPI-3S",
+            "PREP",
+            "A-GSN-S",
+            "N-GSN",
+            "ADV",
+            "PRT",
+            "T-NSF",
+            "N-NSF",
+            "T-GSM",
+            "V-PAP-GSM",
+            "V-PNS-3S"
+          ],
+          "bronwoorden": [
+            "ιδου",
+            "και",
+            "τα",
+            "πλοια",
+            "τηλικαυτα",
+            "οντα",
+            "και",
+            "υπο",
+            "σκληρων",
+            "ανεμων",
+            "ελαυνομενα",
+            "μεταγεται",
+            "υπο",
+            "ελαχιστου",
+            "πηδαλιου",
+            "οπου",
+            "αν",
+            "η",
+            "ορμη",
+            "του",
+            "ευθυνοντος",
+            "βουληται"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:4",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21
+            ]
+          },
+          "tvm": [
+            "G5640",
+            null,
+            null,
+            null,
+            null,
+            "G5723",
+            null,
+            null,
+            null,
+            null,
+            "G5746",
+            "G5743",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5723",
+            "G5741"
+          ]
         }
       ]
     },
@@ -737,100 +1437,94 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "Οὕτως",
+          "woord": "ουτως",
           "strongs": "G3779",
-          "transliteratie": "Houtōs",
-          "gloss": "thus(-ly)"
+          "lemma_strongs": "G3779",
+          "morfologie": "ADV"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ἡ",
+          "woord": "η",
           "strongs": "G3588",
-          "transliteratie": "hē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-NSF"
         },
         {
-          "woord": "γλῶσσα",
+          "woord": "γλωσσα",
           "strongs": "G1100",
-          "transliteratie": "glōssa",
-          "gloss": "tongue"
+          "lemma_strongs": "G1100",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "μικρὸν",
+          "woord": "μικρον",
           "strongs": "G3398",
-          "transliteratie": "mikron",
-          "gloss": "small"
+          "lemma_strongs": "G3398",
+          "morfologie": "A-NSN"
         },
         {
-          "woord": "μέλος",
+          "woord": "μελος",
           "strongs": "G3196",
-          "transliteratie": "melos",
-          "gloss": "member"
+          "lemma_strongs": "G3196",
+          "morfologie": "N-NSN"
         },
         {
-          "woord": "ἐστὶν",
+          "woord": "εστιν",
           "strongs": "G1510",
-          "transliteratie": "estin",
-          "gloss": "to be"
+          "lemma_strongs": "G1510",
+          "morfologie": "V-PAI-3S"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "μεγάλα",
-          "strongs": "G3173",
-          "transliteratie": "megala",
-          "gloss": "great"
+          "woord": "μεγαλαυχει",
+          "strongs": "G3166",
+          "lemma_strongs": "G3166",
+          "morfologie": "V-PAI-3S"
         },
         {
-          "woord": "αὐχεῖ",
-          "strongs": "G6094",
-          "transliteratie": "auchei",
-          "gloss": "to_boast"
+          "woord": "ιδου",
+          "strongs": "G3708",
+          "lemma_strongs": "G3708",
+          "morfologie": "V-2AMM-2S"
         },
         {
-          "woord": "ἰδοὺ",
-          "strongs": "G2400",
-          "transliteratie": "idou",
-          "gloss": "look!"
+          "woord": "ολιγον",
+          "strongs": "G3641",
+          "lemma_strongs": "G3641",
+          "morfologie": "A-NSN"
         },
         {
-          "woord": "ἡλίκον",
-          "strongs": "G2245",
-          "transliteratie": "hēlikon",
-          "gloss": "how great"
-        },
-        {
-          "woord": "πῦρ",
+          "woord": "πυρ",
           "strongs": "G4442",
-          "transliteratie": "pyr",
-          "gloss": "fire"
+          "lemma_strongs": "G4442",
+          "morfologie": "N-NSN"
         },
         {
-          "woord": "ἡλίκην",
+          "woord": "ηλικην",
           "strongs": "G2245",
-          "transliteratie": "hēlikēn",
-          "gloss": "how great"
+          "lemma_strongs": "G2245",
+          "morfologie": "A-ASF"
         },
         {
-          "woord": "ὕλην",
+          "woord": "υλην",
           "strongs": "G5208",
-          "transliteratie": "hylēn",
-          "gloss": "forest"
+          "lemma_strongs": "G5208",
+          "morfologie": "N-ASF"
         },
         {
-          "woord": "ἀνάπτει",
+          "woord": "αναπτει",
           "strongs": "G381",
-          "transliteratie": "anaptei",
-          "gloss": "to kindle"
+          "lemma_strongs": "G381",
+          "morfologie": "V-PAI-3S"
         }
       ],
       "hsv": "ⓘZo is ook de tong een klein lichaamsdeel, en roemt toch van grote dingen. Zie eens hoe een klein vuur een grote hoop hout aansteekt.",
@@ -863,6 +1557,157 @@
           "old": "houts",
           "new": "hout",
           "principe": null
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Zo is ook de tong een klein lid, en roemt toch grote dingen. Zie, een klein vuur, hoe grote hoop hout het aansteekt.",
+          "voorkomen": 1,
+          "strongs": [
+            "G3779",
+            "G2532",
+            "G3588",
+            "G1100",
+            "G3398",
+            "G3196",
+            "G1510",
+            "G2532",
+            "G3166",
+            "G3708",
+            "G3641",
+            "G4442",
+            "G2245",
+            "G5208",
+            "G381"
+          ],
+          "lemma_strongs": [
+            "G3779",
+            "G2532",
+            "G3588",
+            "G1100",
+            "G3398",
+            "G3196",
+            "G1510",
+            "G2532",
+            "G3166",
+            "G3708",
+            "G3641",
+            "G4442",
+            "G2245",
+            "G5208",
+            "G381"
+          ],
+          "morfologie": [
+            "ADV",
+            "CONJ",
+            "T-NSF",
+            "N-NSF",
+            "A-NSN",
+            "N-NSN",
+            "V-PAI-3S",
+            "CONJ",
+            "V-PAI-3S",
+            "V-2AMM-2S",
+            "A-NSN",
+            "N-NSN",
+            "A-ASF",
+            "N-ASF",
+            "V-PAI-3S"
+          ],
+          "bronwoorden": [
+            "ουτως",
+            "και",
+            "η",
+            "γλωσσα",
+            "μικρον",
+            "μελος",
+            "εστιν",
+            "και",
+            "μεγαλαυχει",
+            "ιδου",
+            "ολιγον",
+            "πυρ",
+            "ηλικην",
+            "υλην",
+            "αναπτει"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:5",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5719",
+            null,
+            "G5719",
+            "G5640",
+            null,
+            null,
+            null,
+            null,
+            "G5719"
+          ]
         }
       ]
     },
@@ -935,190 +1780,196 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ἡ",
+          "woord": "η",
           "strongs": "G3588",
-          "transliteratie": "hē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-NSF"
         },
         {
-          "woord": "γλῶσσα",
+          "woord": "γλωσσα",
           "strongs": "G1100",
-          "transliteratie": "glōssa",
-          "gloss": "tongue"
+          "lemma_strongs": "G1100",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "πῦρ",
+          "woord": "πυρ",
           "strongs": "G4442",
-          "transliteratie": "pyr",
-          "gloss": "fire"
+          "lemma_strongs": "G4442",
+          "morfologie": "N-NSN"
         },
         {
-          "woord": "ὁ",
+          "woord": "ο",
           "strongs": "G3588",
-          "transliteratie": "ho",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-NSM"
         },
         {
-          "woord": "κόσμος",
+          "woord": "κοσμος",
           "strongs": "G2889",
-          "transliteratie": "kosmos",
-          "gloss": "world"
+          "lemma_strongs": "G2889",
+          "morfologie": "N-NSM"
         },
         {
-          "woord": "τῆς",
+          "woord": "της",
           "strongs": "G3588",
-          "transliteratie": "tēs",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-GSF"
         },
         {
-          "woord": "ἀδικίας",
+          "woord": "αδικιας",
           "strongs": "G93",
-          "transliteratie": "adikias",
-          "gloss": "unrighteousness"
+          "lemma_strongs": "G93",
+          "morfologie": "N-GSF"
         },
         {
-          "woord": "ἡ",
+          "woord": "ουτως",
+          "strongs": "G3779",
+          "lemma_strongs": "G3779",
+          "morfologie": "ADV"
+        },
+        {
+          "woord": "η",
           "strongs": "G3588",
-          "transliteratie": "hē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-NSF"
         },
         {
-          "woord": "γλῶσσα",
+          "woord": "γλωσσα",
           "strongs": "G1100",
-          "transliteratie": "glōssa",
-          "gloss": "tongue"
+          "lemma_strongs": "G1100",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "καθίσταται",
+          "woord": "καθισταται",
           "strongs": "G2525",
-          "transliteratie": "kathistatai",
-          "gloss": "to appoint/conduct"
+          "lemma_strongs": "G2525",
+          "morfologie": "V-PPI-3S"
         },
         {
-          "woord": "ἐν",
+          "woord": "εν",
           "strongs": "G1722",
-          "transliteratie": "en",
-          "gloss": "in/on/among"
+          "lemma_strongs": "G1722",
+          "morfologie": "PREP"
         },
         {
-          "woord": "τοῖς",
+          "woord": "τοις",
           "strongs": "G3588",
-          "transliteratie": "tois",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-DPN"
         },
         {
-          "woord": "μέλεσιν",
+          "woord": "μελεσιν",
           "strongs": "G3196",
-          "transliteratie": "melesin",
-          "gloss": "member"
+          "lemma_strongs": "G3196",
+          "morfologie": "N-DPN"
         },
         {
-          "woord": "ἡμῶν",
+          "woord": "ημων",
           "strongs": "G1473",
-          "transliteratie": "hēmōn",
-          "gloss": "I/we"
+          "lemma_strongs": "G1473",
+          "morfologie": "P-1GP"
         },
         {
-          "woord": "ἡ",
+          "woord": "η",
           "strongs": "G3588",
-          "transliteratie": "hē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-NSF"
         },
         {
-          "woord": "σπιλοῦσα",
+          "woord": "σπιλουσα",
           "strongs": "G4695",
-          "transliteratie": "spilousa",
-          "gloss": "to stain"
+          "lemma_strongs": "G4695",
+          "morfologie": "V-PAP-NSF"
         },
         {
-          "woord": "ὅλον",
+          "woord": "ολον",
           "strongs": "G3650",
-          "transliteratie": "holon",
-          "gloss": "all"
+          "lemma_strongs": "G3650",
+          "morfologie": "A-ASN"
         },
         {
-          "woord": "τὸ",
+          "woord": "το",
           "strongs": "G3588",
-          "transliteratie": "to",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-ASN"
         },
         {
-          "woord": "σῶμα",
+          "woord": "σωμα",
           "strongs": "G4983",
-          "transliteratie": "sōma",
-          "gloss": "body"
+          "lemma_strongs": "G4983",
+          "morfologie": "N-ASN"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "φλογίζουσα",
+          "woord": "φλογιζουσα",
           "strongs": "G5394",
-          "transliteratie": "phlogizousa",
-          "gloss": "to kindle"
+          "lemma_strongs": "G5394",
+          "morfologie": "V-PAP-NSF"
         },
         {
-          "woord": "τὸν",
+          "woord": "τον",
           "strongs": "G3588",
-          "transliteratie": "ton",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-ASM"
         },
         {
-          "woord": "τροχὸν",
+          "woord": "τροχον",
           "strongs": "G5164",
-          "transliteratie": "trochon",
-          "gloss": "course/wheel"
+          "lemma_strongs": "G5164",
+          "morfologie": "N-ASM"
         },
         {
-          "woord": "τῆς",
+          "woord": "της",
           "strongs": "G3588",
-          "transliteratie": "tēs",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-GSF"
         },
         {
-          "woord": "γενέσεως",
+          "woord": "γενεσεως",
           "strongs": "G1078",
-          "transliteratie": "geneseōs",
-          "gloss": "origin"
+          "lemma_strongs": "G1078",
+          "morfologie": "N-GSF"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "φλογιζομένη",
+          "woord": "φλογιζομενη",
           "strongs": "G5394",
-          "transliteratie": "phlogizomenē",
-          "gloss": "to kindle"
+          "lemma_strongs": "G5394",
+          "morfologie": "V-PPP-NSF"
         },
         {
-          "woord": "ὑπὸ",
+          "woord": "υπο",
           "strongs": "G5259",
-          "transliteratie": "hypo",
-          "gloss": "by/under"
+          "lemma_strongs": "G5259",
+          "morfologie": "PREP"
         },
         {
-          "woord": "τῆς",
+          "woord": "της",
           "strongs": "G3588",
-          "transliteratie": "tēs",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-GSF"
         },
         {
-          "woord": "γεέννης",
+          "woord": "γεεννης",
           "strongs": "G1067",
-          "transliteratie": "geennēs",
-          "gloss": "Gehenna"
+          "lemma_strongs": "G1067",
+          "morfologie": "N-GSF"
         }
       ],
       "hsv": "Ook de tong is een vuur, een wereld van ongerechtigheid. Zo staat het met de tong onder onze lichaamsdelen. Ze besmet het hele lichaam, en zet onze levensloop[4] vanaf het begin in vlam, en ze wordt zelf door de hel in vlam gezet.",
@@ -1152,6 +2003,293 @@
           "new": "onze levensloop,",
           "principe": "V291"
         }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "De tong is ook een vuur, een wereld van de ongerechtigheid; zo is de tong onder onze leden gesteld, die het hele lichaam besmet, en ontsteekt onze levensloop, en wordt ontstoken van de hel.",
+          "voorkomen": 1,
+          "strongs": [
+            "G2532",
+            "G3588",
+            "G1100",
+            "G4442",
+            "G3588",
+            "G2889",
+            "G3588",
+            "G93",
+            "G3779",
+            "G3588",
+            "G1100",
+            "G2525",
+            "G1722",
+            "G3588",
+            "G3196",
+            "G1473",
+            "G3588",
+            "G4695",
+            "G3650",
+            "G3588",
+            "G4983",
+            "G2532",
+            "G5394",
+            "G3588",
+            "G5164",
+            "G3588",
+            "G1078",
+            "G2532",
+            "G5394",
+            "G5259",
+            "G3588",
+            "G1067"
+          ],
+          "lemma_strongs": [
+            "G2532",
+            "G3588",
+            "G1100",
+            "G4442",
+            "G3588",
+            "G2889",
+            "G3588",
+            "G93",
+            "G3779",
+            "G3588",
+            "G1100",
+            "G2525",
+            "G1722",
+            "G3588",
+            "G3196",
+            "G1473",
+            "G3588",
+            "G4695",
+            "G3650",
+            "G3588",
+            "G4983",
+            "G2532",
+            "G5394",
+            "G3588",
+            "G5164",
+            "G3588",
+            "G1078",
+            "G2532",
+            "G5394",
+            "G5259",
+            "G3588",
+            "G1067"
+          ],
+          "morfologie": [
+            "CONJ",
+            "T-NSF",
+            "N-NSF",
+            "N-NSN",
+            "T-NSM",
+            "N-NSM",
+            "T-GSF",
+            "N-GSF",
+            "ADV",
+            "T-NSF",
+            "N-NSF",
+            "V-PPI-3S",
+            "PREP",
+            "T-DPN",
+            "N-DPN",
+            "P-1GP",
+            "T-NSF",
+            "V-PAP-NSF",
+            "A-ASN",
+            "T-ASN",
+            "N-ASN",
+            "CONJ",
+            "V-PAP-NSF",
+            "T-ASM",
+            "N-ASM",
+            "T-GSF",
+            "N-GSF",
+            "CONJ",
+            "V-PPP-NSF",
+            "PREP",
+            "T-GSF",
+            "N-GSF"
+          ],
+          "bronwoorden": [
+            "και",
+            "η",
+            "γλωσσα",
+            "πυρ",
+            "ο",
+            "κοσμος",
+            "της",
+            "αδικιας",
+            "ουτως",
+            "η",
+            "γλωσσα",
+            "καθισταται",
+            "εν",
+            "τοις",
+            "μελεσιν",
+            "ημων",
+            "η",
+            "σπιλουσα",
+            "ολον",
+            "το",
+            "σωμα",
+            "και",
+            "φλογιζουσα",
+            "τον",
+            "τροχον",
+            "της",
+            "γενεσεως",
+            "και",
+            "φλογιζομενη",
+            "υπο",
+            "της",
+            "γεεννης"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:6",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5743",
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5723",
+            null,
+            null,
+            null,
+            null,
+            "G5723",
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5746",
+            null,
+            null,
+            null
+          ]
+        }
       ]
     },
     {
@@ -1181,112 +2319,112 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "Πᾶσα",
+          "woord": "πασα",
           "strongs": "G3956",
-          "transliteratie": "Pasa",
-          "gloss": "all"
+          "lemma_strongs": "G3956",
+          "morfologie": "A-NSF"
         },
         {
-          "woord": "γὰρ",
+          "woord": "γαρ",
           "strongs": "G1063",
-          "transliteratie": "gar",
-          "gloss": "for"
+          "lemma_strongs": "G1063",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "φύσις",
+          "woord": "φυσις",
           "strongs": "G5449",
-          "transliteratie": "physis",
-          "gloss": "nature"
+          "lemma_strongs": "G5449",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "θηρίων",
+          "woord": "θηριων",
           "strongs": "G2342",
-          "transliteratie": "thēriōn",
-          "gloss": "wild animal"
+          "lemma_strongs": "G2342",
+          "morfologie": "N-GPN"
         },
         {
           "woord": "τε",
           "strongs": "G5037",
-          "transliteratie": "te",
-          "gloss": "and/both"
+          "lemma_strongs": "G5037",
+          "morfologie": "PRT"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "πετεινῶν",
+          "woord": "πετεινων",
           "strongs": "G4071",
-          "transliteratie": "peteinōn",
-          "gloss": "bird"
+          "lemma_strongs": "G4071",
+          "morfologie": "N-GPN"
         },
         {
-          "woord": "ἑρπετῶν",
+          "woord": "ερπετων",
           "strongs": "G2062",
-          "transliteratie": "herpetōn",
-          "gloss": "reptile"
+          "lemma_strongs": "G2062",
+          "morfologie": "N-GPN"
         },
         {
           "woord": "τε",
           "strongs": "G5037",
-          "transliteratie": "te",
-          "gloss": "and/both"
+          "lemma_strongs": "G5037",
+          "morfologie": "PRT"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ἐναλίων",
+          "woord": "εναλιων",
           "strongs": "G1724",
-          "transliteratie": "enaliōn",
-          "gloss": "marine"
+          "lemma_strongs": "G1724",
+          "morfologie": "A-GPN"
         },
         {
-          "woord": "δαμάζεται",
+          "woord": "δαμαζεται",
           "strongs": "G1150",
-          "transliteratie": "damazetai",
-          "gloss": "to tame"
+          "lemma_strongs": "G1150",
+          "morfologie": "V-PPI-3S"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "δεδάμασται",
+          "woord": "δεδαμασται",
           "strongs": "G1150",
-          "transliteratie": "dedamastai",
-          "gloss": "to tame"
+          "lemma_strongs": "G1150",
+          "morfologie": "V-RPI-3S"
         },
         {
-          "woord": "τῇ",
+          "woord": "τη",
           "strongs": "G3588",
-          "transliteratie": "tē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-DSF"
         },
         {
-          "woord": "φύσει",
+          "woord": "φυσει",
           "strongs": "G5449",
-          "transliteratie": "physei",
-          "gloss": "nature"
+          "lemma_strongs": "G5449",
+          "morfologie": "N-DSF"
         },
         {
-          "woord": "τῇ",
+          "woord": "τη",
           "strongs": "G3588",
-          "transliteratie": "tē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-DSF"
         },
         {
-          "woord": "ἀνθρωπίνῃ",
+          "woord": "ανθρωπινη",
           "strongs": "G442",
-          "transliteratie": "anthrōpinē",
-          "gloss": "human"
+          "lemma_strongs": "G442",
+          "morfologie": "A-DSF"
         }
       ],
       "hsv": "Want elke natuur, zowel van wilde dieren en vogels als van kruipende dieren en zeedieren, wordt getemd en is getemd door de menselijke natuur.",
@@ -1309,6 +2447,181 @@
           "old": "en der",
           "new": "als van de",
           "principe": "N2"
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Want alle natuur, zowel van de wilde dieren als van de vogels, zowel van de kruipende als van de zeedieren, wordt getemd en is getemd geweest van de menselijke natuur.",
+          "voorkomen": 1,
+          "strongs": [
+            "G3956",
+            "G1063",
+            "G5449",
+            "G2342",
+            "G5037",
+            "G2532",
+            "G4071",
+            "G2062",
+            "G5037",
+            "G2532",
+            "G1724",
+            "G1150",
+            "G2532",
+            "G1150",
+            "G3588",
+            "G5449",
+            "G3588",
+            "G442"
+          ],
+          "lemma_strongs": [
+            "G3956",
+            "G1063",
+            "G5449",
+            "G2342",
+            "G5037",
+            "G2532",
+            "G4071",
+            "G2062",
+            "G5037",
+            "G2532",
+            "G1724",
+            "G1150",
+            "G2532",
+            "G1150",
+            "G3588",
+            "G5449",
+            "G3588",
+            "G442"
+          ],
+          "morfologie": [
+            "A-NSF",
+            "CONJ",
+            "N-NSF",
+            "N-GPN",
+            "PRT",
+            "CONJ",
+            "N-GPN",
+            "N-GPN",
+            "PRT",
+            "CONJ",
+            "A-GPN",
+            "V-PPI-3S",
+            "CONJ",
+            "V-RPI-3S",
+            "T-DSF",
+            "N-DSF",
+            "T-DSF",
+            "A-DSF"
+          ],
+          "bronwoorden": [
+            "πασα",
+            "γαρ",
+            "φυσις",
+            "θηριων",
+            "τε",
+            "και",
+            "πετεινων",
+            "ερπετων",
+            "τε",
+            "και",
+            "εναλιων",
+            "δαμαζεται",
+            "και",
+            "δεδαμασται",
+            "τη",
+            "φυσει",
+            "τη",
+            "ανθρωπινη"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:7",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5743",
+            null,
+            "G5769",
+            null,
+            null,
+            null,
+            null
+          ]
         }
       ]
     },
@@ -1346,83 +2659,210 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "τὴν",
+          "woord": "την",
           "strongs": "G3588",
-          "transliteratie": "tēn",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-ASF"
         },
         {
-          "woord": "δὲ",
+          "woord": "δε",
           "strongs": "G1161",
-          "transliteratie": "de",
-          "gloss": "but/and"
+          "lemma_strongs": "G1161",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "γλῶσσαν",
+          "woord": "γλωσσαν",
           "strongs": "G1100",
-          "transliteratie": "glōssan",
-          "gloss": "tongue"
+          "lemma_strongs": "G1100",
+          "morfologie": "N-ASF"
         },
         {
-          "woord": "οὐδεὶς",
+          "woord": "ουδεις",
           "strongs": "G3762",
-          "transliteratie": "oudeis",
-          "gloss": "no one"
+          "lemma_strongs": "G3762",
+          "morfologie": "A-NSM-N"
         },
         {
-          "woord": "δαμάσαι",
-          "strongs": "G1150",
-          "transliteratie": "damasai",
-          "gloss": "to tame"
-        },
-        {
-          "woord": "δύναται",
+          "woord": "δυναται",
           "strongs": "G1410",
-          "transliteratie": "dynatai",
-          "gloss": "be able"
+          "lemma_strongs": "G1410",
+          "morfologie": "V-PNI-3S"
         },
         {
-          "woord": "ἀνθρώπων",
+          "woord": "ανθρωπων",
           "strongs": "G444",
-          "transliteratie": "anthrōpōn",
-          "gloss": "a human"
+          "lemma_strongs": "G444",
+          "morfologie": "N-GPM"
         },
         {
-          "woord": "ἀκατάστατον",
-          "strongs": "G182",
-          "transliteratie": "akatastaton",
-          "gloss": "restless"
+          "woord": "δαμασαι",
+          "strongs": "G1150",
+          "lemma_strongs": "G1150",
+          "morfologie": "V-AAN"
         },
         {
-          "woord": "κακόν",
+          "woord": "ακατασχετον",
+          "strongs": "G183",
+          "lemma_strongs": "G183",
+          "morfologie": "A-NSN"
+        },
+        {
+          "woord": "κακον",
           "strongs": "G2556",
-          "transliteratie": "kakon",
-          "gloss": "evil/harm"
+          "lemma_strongs": "G2556",
+          "morfologie": "A-NSN"
         },
         {
-          "woord": "μεστὴ",
+          "woord": "μεστη",
           "strongs": "G3324",
-          "transliteratie": "mestē",
-          "gloss": "full"
+          "lemma_strongs": "G3324",
+          "morfologie": "A-NSF"
         },
         {
-          "woord": "ἰοῦ",
+          "woord": "ιου",
           "strongs": "G2447",
-          "transliteratie": "iou",
-          "gloss": "poison/rust"
+          "lemma_strongs": "G2447",
+          "morfologie": "N-GSM"
         },
         {
-          "woord": "θανατηφόρου",
+          "woord": "θανατηφορου",
           "strongs": "G2287",
-          "transliteratie": "thanatēphorou",
-          "gloss": "deadly"
+          "lemma_strongs": "G2287",
+          "morfologie": "A-GSM"
         }
       ],
       "hsv": "Maar de tong kan geen mens temmen. Ze is een niet te bedwingen kwaad, vol dodelijk vergif.",
       "nbg51": "maar de tong kan geen mens bedwingen. Zij is een onberekenbaar kwaad, vol dodelijk venijn.",
       "text2026_html": "Maar de tong<sup class=\"note-marker\" data-note=\"26\">26</sup> kan geen mens<sup class=\"note-marker\" data-note=\"27\">27</sup> temmen; zij is een onbedwingelijk kwaad,<sup class=\"note-marker\" data-note=\"28\">28</sup> vol van dodelijk venijn.",
       "textSV1888": "Maar de tong kan geen mens temmen; zij is een onbedwingelijk kwaad, vol van dodelijk venijn.",
-      "textSV1888_html": "Maar de tong<sup class=\"note-marker\" data-note=\"26\">26</sup> kan geen mens<sup class=\"note-marker\" data-note=\"27\">27</sup> temmen; zij is een onbedwingelijk kwaad,<sup class=\"note-marker\" data-note=\"28\">28</sup> vol van dodelijk venijn."
+      "textSV1888_html": "Maar de tong<sup class=\"note-marker\" data-note=\"26\">26</sup> kan geen mens<sup class=\"note-marker\" data-note=\"27\">27</sup> temmen; zij is een onbedwingelijk kwaad,<sup class=\"note-marker\" data-note=\"28\">28</sup> vol van dodelijk venijn.",
+      "woordnummers": [
+        {
+          "tekst": "Maar de tong kan geen mens temmen; zij is een onbedwingelijk kwaad, vol van dodelijk venijn.",
+          "voorkomen": 1,
+          "strongs": [
+            "G3588",
+            "G1161",
+            "G1100",
+            "G3762",
+            "G1410",
+            "G444",
+            "G1150",
+            "G183",
+            "G2556",
+            "G3324",
+            "G2447",
+            "G2287"
+          ],
+          "lemma_strongs": [
+            "G3588",
+            "G1161",
+            "G1100",
+            "G3762",
+            "G1410",
+            "G444",
+            "G1150",
+            "G183",
+            "G2556",
+            "G3324",
+            "G2447",
+            "G2287"
+          ],
+          "morfologie": [
+            "T-ASF",
+            "CONJ",
+            "N-ASF",
+            "A-NSM-N",
+            "V-PNI-3S",
+            "N-GPM",
+            "V-AAN",
+            "A-NSN",
+            "A-NSN",
+            "A-NSF",
+            "N-GSM",
+            "A-GSM"
+          ],
+          "bronwoorden": [
+            "την",
+            "δε",
+            "γλωσσαν",
+            "ουδεις",
+            "δυναται",
+            "ανθρωπων",
+            "δαμασαι",
+            "ακατασχετον",
+            "κακον",
+            "μεστη",
+            "ιου",
+            "θανατηφορου"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:8",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            null,
+            "G5736",
+            null,
+            "G5658",
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
     },
     {
       "number": 9,
@@ -1458,112 +2898,112 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "Ἐν",
+          "woord": "εν",
           "strongs": "G1722",
-          "transliteratie": "En",
-          "gloss": "in/on/among"
+          "lemma_strongs": "G1722",
+          "morfologie": "PREP"
         },
         {
-          "woord": "αὐτῇ",
+          "woord": "αυτη",
           "strongs": "G846",
-          "transliteratie": "autē",
-          "gloss": "he/she/it/self"
+          "lemma_strongs": "G846",
+          "morfologie": "P-DSF"
         },
         {
-          "woord": "εὐλογοῦμεν",
+          "woord": "ευλογουμεν",
           "strongs": "G2127",
-          "transliteratie": "eulogoumen",
-          "gloss": "to praise/bless"
+          "lemma_strongs": "G2127",
+          "morfologie": "V-PAI-1P"
         },
         {
-          "woord": "τὸν",
+          "woord": "τον",
           "strongs": "G3588",
-          "transliteratie": "ton",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-ASM"
         },
         {
-          "woord": "Κύριον",
-          "strongs": "G2962",
-          "transliteratie": "Kyrion",
-          "gloss": "lord"
-        },
-        {
-          "woord": "καὶ",
-          "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
-        },
-        {
-          "woord": "Πατέρα",
-          "strongs": "G3962",
-          "transliteratie": "Patera",
-          "gloss": "father"
-        },
-        {
-          "woord": "καὶ",
-          "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
-        },
-        {
-          "woord": "ἐν",
-          "strongs": "G1722",
-          "transliteratie": "en",
-          "gloss": "in/on/among"
-        },
-        {
-          "woord": "αὐτῇ",
-          "strongs": "G846",
-          "transliteratie": "autē",
-          "gloss": "he/she/it/self"
-        },
-        {
-          "woord": "καταρώμεθα",
-          "strongs": "G2672",
-          "transliteratie": "katarōmetha",
-          "gloss": "to curse"
-        },
-        {
-          "woord": "τοὺς",
-          "strongs": "G3588",
-          "transliteratie": "tous",
-          "gloss": "the/this/who"
-        },
-        {
-          "woord": "ἀνθρώπους",
-          "strongs": "G444",
-          "transliteratie": "anthrōpous",
-          "gloss": "a human"
-        },
-        {
-          "woord": "τοὺς",
-          "strongs": "G3588",
-          "transliteratie": "tous",
-          "gloss": "the/this/who"
-        },
-        {
-          "woord": "καθ᾽",
-          "strongs": "G2596",
-          "transliteratie": "kath",
-          "gloss": "according to"
-        },
-        {
-          "woord": "ὁμοίωσιν",
-          "strongs": "G3669",
-          "transliteratie": "homoiōsin",
-          "gloss": "likeness"
-        },
-        {
-          "woord": "Θεοῦ",
+          "woord": "θεον",
           "strongs": "G2316",
-          "transliteratie": "Theou",
-          "gloss": "God"
+          "lemma_strongs": "G2316",
+          "morfologie": "N-ASM"
         },
         {
-          "woord": "γεγονότας",
+          "woord": "και",
+          "strongs": "G2532",
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
+        },
+        {
+          "woord": "πατερα",
+          "strongs": "G3962",
+          "lemma_strongs": "G3962",
+          "morfologie": "N-ASM"
+        },
+        {
+          "woord": "και",
+          "strongs": "G2532",
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
+        },
+        {
+          "woord": "εν",
+          "strongs": "G1722",
+          "lemma_strongs": "G1722",
+          "morfologie": "PREP"
+        },
+        {
+          "woord": "αυτη",
+          "strongs": "G846",
+          "lemma_strongs": "G846",
+          "morfologie": "P-DSF"
+        },
+        {
+          "woord": "καταρωμεθα",
+          "strongs": "G2672",
+          "lemma_strongs": "G2672",
+          "morfologie": "V-PNI-1P"
+        },
+        {
+          "woord": "τους",
+          "strongs": "G3588",
+          "lemma_strongs": "G3588",
+          "morfologie": "T-APM"
+        },
+        {
+          "woord": "ανθρωπους",
+          "strongs": "G444",
+          "lemma_strongs": "G444",
+          "morfologie": "N-APM"
+        },
+        {
+          "woord": "τους",
+          "strongs": "G3588",
+          "lemma_strongs": "G3588",
+          "morfologie": "T-APM"
+        },
+        {
+          "woord": "καθ",
+          "strongs": "G2596",
+          "lemma_strongs": "G2596",
+          "morfologie": "PREP"
+        },
+        {
+          "woord": "ομοιωσιν",
+          "strongs": "G3669",
+          "lemma_strongs": "G3669",
+          "morfologie": "N-ASF"
+        },
+        {
+          "woord": "θεου",
+          "strongs": "G2316",
+          "lemma_strongs": "G2316",
+          "morfologie": "N-GSM"
+        },
+        {
+          "woord": "γεγονοτας",
           "strongs": "G1096",
-          "transliteratie": "gegonotas",
-          "gloss": "to be"
+          "lemma_strongs": "G1096",
+          "morfologie": "V-2RAP-APM"
         }
       ],
       "hsv": "Door haar loven wij God en de Vader, en door haar vervloeken wij de mensen, ⓙdie naar de gelijkenis van God gemaakt zijn.",
@@ -1576,6 +3016,181 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Door haar loven wij God en de Vader, en door haar vervloeken wij de mensen, die naar de gelijkenis van God gemaakt zijn.",
+          "voorkomen": 1,
+          "strongs": [
+            "G1722",
+            "G846",
+            "G2127",
+            "G3588",
+            "G2316",
+            "G2532",
+            "G3962",
+            "G2532",
+            "G1722",
+            "G846",
+            "G2672",
+            "G3588",
+            "G444",
+            "G3588",
+            "G2596",
+            "G3669",
+            "G2316",
+            "G1096"
+          ],
+          "lemma_strongs": [
+            "G1722",
+            "G846",
+            "G2127",
+            "G3588",
+            "G2316",
+            "G2532",
+            "G3962",
+            "G2532",
+            "G1722",
+            "G846",
+            "G2672",
+            "G3588",
+            "G444",
+            "G3588",
+            "G2596",
+            "G3669",
+            "G2316",
+            "G1096"
+          ],
+          "morfologie": [
+            "PREP",
+            "P-DSF",
+            "V-PAI-1P",
+            "T-ASM",
+            "N-ASM",
+            "CONJ",
+            "N-ASM",
+            "CONJ",
+            "PREP",
+            "P-DSF",
+            "V-PNI-1P",
+            "T-APM",
+            "N-APM",
+            "T-APM",
+            "PREP",
+            "N-ASF",
+            "N-GSM",
+            "V-2RAP-APM"
+          ],
+          "bronwoorden": [
+            "εν",
+            "αυτη",
+            "ευλογουμεν",
+            "τον",
+            "θεον",
+            "και",
+            "πατερα",
+            "και",
+            "εν",
+            "αυτη",
+            "καταρωμεθα",
+            "τους",
+            "ανθρωπους",
+            "τους",
+            "καθ",
+            "ομοιωσιν",
+            "θεου",
+            "γεγονοτας"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:9",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            "G5719",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5736",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5756"
+          ]
         }
       ]
     },
@@ -1599,94 +3214,94 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "ἐκ",
+          "woord": "εκ",
           "strongs": "G1537",
-          "transliteratie": "ek",
-          "gloss": "of/from"
+          "lemma_strongs": "G1537",
+          "morfologie": "PREP"
         },
         {
-          "woord": "τοῦ",
+          "woord": "του",
           "strongs": "G3588",
-          "transliteratie": "tou",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-GSN"
         },
         {
-          "woord": "αὐτοῦ",
+          "woord": "αυτου",
           "strongs": "G846",
-          "transliteratie": "autou",
-          "gloss": "he/she/it/self"
+          "lemma_strongs": "G846",
+          "morfologie": "P-GSN"
         },
         {
-          "woord": "στόματος",
+          "woord": "στοματος",
           "strongs": "G4750",
-          "transliteratie": "stomatos",
-          "gloss": "mouth"
+          "lemma_strongs": "G4750",
+          "morfologie": "N-GSN"
         },
         {
-          "woord": "ἐξέρχεται",
+          "woord": "εξερχεται",
           "strongs": "G1831",
-          "transliteratie": "exerchetai",
-          "gloss": "to go out"
+          "lemma_strongs": "G1831",
+          "morfologie": "V-PNI-3S"
         },
         {
-          "woord": "εὐλογία",
+          "woord": "ευλογια",
           "strongs": "G2129",
-          "transliteratie": "eulogia",
-          "gloss": "praise"
+          "lemma_strongs": "G2129",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "κατάρα",
+          "woord": "καταρα",
           "strongs": "G2671",
-          "transliteratie": "katara",
-          "gloss": "curse"
+          "lemma_strongs": "G2671",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "οὐ",
+          "woord": "ου",
           "strongs": "G3756",
-          "transliteratie": "ou",
-          "gloss": "no"
+          "lemma_strongs": "G3756",
+          "morfologie": "PRT-N"
         },
         {
-          "woord": "χρή",
+          "woord": "χρη",
           "strongs": "G5534",
-          "transliteratie": "chrē",
-          "gloss": "it should be"
+          "lemma_strongs": "G5534",
+          "morfologie": "V-PAI-3S"
         },
         {
-          "woord": "ἀδελφοί",
+          "woord": "αδελφοι",
           "strongs": "G80",
-          "transliteratie": "adelphoi",
-          "gloss": "brother"
+          "lemma_strongs": "G80",
+          "morfologie": "N-VPM"
         },
         {
           "woord": "μου",
           "strongs": "G1473",
-          "transliteratie": "mou",
-          "gloss": "I/we"
+          "lemma_strongs": "G1473",
+          "morfologie": "P-1GS"
         },
         {
-          "woord": "ταῦτα",
+          "woord": "ταυτα",
           "strongs": "G3778",
-          "transliteratie": "tauta",
-          "gloss": "this/he/she/it"
+          "lemma_strongs": "G3778",
+          "morfologie": "D-NPN"
         },
         {
-          "woord": "οὕτως",
+          "woord": "ουτως",
           "strongs": "G3779",
-          "transliteratie": "houtōs",
-          "gloss": "thus(-ly)"
+          "lemma_strongs": "G3779",
+          "morfologie": "ADV"
         },
         {
-          "woord": "γίνεσθαι",
+          "woord": "γινεσθαι",
           "strongs": "G1096",
-          "transliteratie": "ginesthai",
-          "gloss": "to be"
+          "lemma_strongs": "G1096",
+          "morfologie": "V-PNN"
         }
       ],
       "hsv": "Uit dezelfde mond komen zegen en vervloeking voort. Dit behoort niet zo te zijn, mijn broeders.",
@@ -1709,6 +3324,157 @@
           "old": "geschieden.",
           "new": "gebeuren.",
           "principe": "V40"
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Uit deze mond komt voort zegening en vervloeking. Dit moet, mijn broeders, zo niet gebeuren.",
+          "voorkomen": 1,
+          "strongs": [
+            "G1537",
+            "G3588",
+            "G846",
+            "G4750",
+            "G1831",
+            "G2129",
+            "G2532",
+            "G2671",
+            "G3756",
+            "G5534",
+            "G80",
+            "G1473",
+            "G3778",
+            "G3779",
+            "G1096"
+          ],
+          "lemma_strongs": [
+            "G1537",
+            "G3588",
+            "G846",
+            "G4750",
+            "G1831",
+            "G2129",
+            "G2532",
+            "G2671",
+            "G3756",
+            "G5534",
+            "G80",
+            "G1473",
+            "G3778",
+            "G3779",
+            "G1096"
+          ],
+          "morfologie": [
+            "PREP",
+            "T-GSN",
+            "P-GSN",
+            "N-GSN",
+            "V-PNI-3S",
+            "N-NSF",
+            "CONJ",
+            "N-NSF",
+            "PRT-N",
+            "V-PAI-3S",
+            "N-VPM",
+            "P-1GS",
+            "D-NPN",
+            "ADV",
+            "V-PNN"
+          ],
+          "bronwoorden": [
+            "εκ",
+            "του",
+            "αυτου",
+            "στοματος",
+            "εξερχεται",
+            "ευλογια",
+            "και",
+            "καταρα",
+            "ου",
+            "χρη",
+            "αδελφοι",
+            "μου",
+            "ταυτα",
+            "ουτως",
+            "γινεσθαι"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:10",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            null,
+            "G5736",
+            null,
+            null,
+            null,
+            null,
+            "G5719",
+            null,
+            null,
+            null,
+            null,
+            "G5738"
+          ]
         }
       ]
     },
@@ -1739,89 +3505,224 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "μήτι",
+          "woord": "μητι",
           "strongs": "G3385",
-          "transliteratie": "mēti",
-          "gloss": "no?"
+          "lemma_strongs": "G3385",
+          "morfologie": "PRT-I"
         },
         {
-          "woord": "ἡ",
+          "woord": "η",
           "strongs": "G3588",
-          "transliteratie": "hē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-NSF"
         },
         {
-          "woord": "πηγὴ",
+          "woord": "πηγη",
           "strongs": "G4077",
-          "transliteratie": "pēgē",
-          "gloss": "flow"
+          "lemma_strongs": "G4077",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "ἐκ",
+          "woord": "εκ",
           "strongs": "G1537",
-          "transliteratie": "ek",
-          "gloss": "of/from"
+          "lemma_strongs": "G1537",
+          "morfologie": "PREP"
         },
         {
-          "woord": "τῆς",
+          "woord": "της",
           "strongs": "G3588",
-          "transliteratie": "tēs",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-GSF"
         },
         {
-          "woord": "αὐτῆς",
+          "woord": "αυτης",
           "strongs": "G846",
-          "transliteratie": "autēs",
-          "gloss": "he/she/it/self"
+          "lemma_strongs": "G846",
+          "morfologie": "P-GSF"
         },
         {
-          "woord": "ὀπῆς",
+          "woord": "οπης",
           "strongs": "G3692",
-          "transliteratie": "opēs",
-          "gloss": "hole"
+          "lemma_strongs": "G3692",
+          "morfologie": "N-GSF"
         },
         {
-          "woord": "βρύει",
+          "woord": "βρυει",
           "strongs": "G1032",
-          "transliteratie": "bryei",
-          "gloss": "to pour"
+          "lemma_strongs": "G1032",
+          "morfologie": "V-PAI-3S"
         },
         {
-          "woord": "τὸ",
+          "woord": "το",
           "strongs": "G3588",
-          "transliteratie": "to",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-ASN"
         },
         {
-          "woord": "γλυκὺ",
+          "woord": "γλυκυ",
           "strongs": "G1099",
-          "transliteratie": "glyky",
-          "gloss": "sweet"
+          "lemma_strongs": "G1099",
+          "morfologie": "A-ASN"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "τὸ",
+          "woord": "το",
           "strongs": "G3588",
-          "transliteratie": "to",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-ASN"
         },
         {
-          "woord": "πικρόν",
+          "woord": "πικρον",
           "strongs": "G4089",
-          "transliteratie": "pikron",
-          "gloss": "bitter"
+          "lemma_strongs": "G4089",
+          "morfologie": "A-ASN"
         }
       ],
       "hsv": "Laat soms een bron uit dezelfde ader zoet en bitter water opwellen?",
       "nbg51": "Doet soms een bron uit dezelfde ader zoet en bitter water opwellen?",
       "text2026_html": "Welt ook een fontein<sup class=\"note-marker\" data-note=\"32\">32</sup> uit een zelfde ader<sup class=\"note-marker\" data-note=\"33\">33</sup> het zoet en het bitter?",
       "textSV1888": "Welt ook een fontein uit een zelfde ader het zoet en het bitter?",
-      "textSV1888_html": "Welt ook een fontein<sup class=\"note-marker\" data-note=\"32\">32</sup> uit een zelfde ader<sup class=\"note-marker\" data-note=\"33\">33</sup> het zoet en het bitter?"
+      "textSV1888_html": "Welt ook een fontein<sup class=\"note-marker\" data-note=\"32\">32</sup> uit een zelfde ader<sup class=\"note-marker\" data-note=\"33\">33</sup> het zoet en het bitter?",
+      "woordnummers": [
+        {
+          "tekst": "Welt ook een fontein uit een zelfde ader het zoet en het bitter?",
+          "voorkomen": 1,
+          "strongs": [
+            "G3385",
+            "G3588",
+            "G4077",
+            "G1537",
+            "G3588",
+            "G846",
+            "G3692",
+            "G1032",
+            "G3588",
+            "G1099",
+            "G2532",
+            "G3588",
+            "G4089"
+          ],
+          "lemma_strongs": [
+            "G3385",
+            "G3588",
+            "G4077",
+            "G1537",
+            "G3588",
+            "G846",
+            "G3692",
+            "G1032",
+            "G3588",
+            "G1099",
+            "G2532",
+            "G3588",
+            "G4089"
+          ],
+          "morfologie": [
+            "PRT-I",
+            "T-NSF",
+            "N-NSF",
+            "PREP",
+            "T-GSF",
+            "P-GSF",
+            "N-GSF",
+            "V-PAI-3S",
+            "T-ASN",
+            "A-ASN",
+            "CONJ",
+            "T-ASN",
+            "A-ASN"
+          ],
+          "bronwoorden": [
+            "μητι",
+            "η",
+            "πηγη",
+            "εκ",
+            "της",
+            "αυτης",
+            "οπης",
+            "βρυει",
+            "το",
+            "γλυκυ",
+            "και",
+            "το",
+            "πικρον"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:11",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5719",
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
     },
     {
       "number": 12,
@@ -1864,94 +3765,112 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "μὴ",
+          "woord": "μη",
           "strongs": "G3361",
-          "transliteratie": "mē",
-          "gloss": "not"
+          "lemma_strongs": "G3361",
+          "morfologie": "PRT-N"
         },
         {
-          "woord": "δύναται",
+          "woord": "δυναται",
           "strongs": "G1410",
-          "transliteratie": "dynatai",
-          "gloss": "be able"
+          "lemma_strongs": "G1410",
+          "morfologie": "V-PNI-3S"
         },
         {
-          "woord": "ἀδελφοί",
+          "woord": "αδελφοι",
           "strongs": "G80",
-          "transliteratie": "adelphoi",
-          "gloss": "brother"
+          "lemma_strongs": "G80",
+          "morfologie": "N-VPM"
         },
         {
           "woord": "μου",
           "strongs": "G1473",
-          "transliteratie": "mou",
-          "gloss": "I/we"
+          "lemma_strongs": "G1473",
+          "morfologie": "P-1GS"
         },
         {
-          "woord": "συκῆ",
+          "woord": "συκη",
           "strongs": "G4808",
-          "transliteratie": "sykē",
-          "gloss": "fig tree"
+          "lemma_strongs": "G4808",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "ἐλαίας",
+          "woord": "ελαιας",
           "strongs": "G1636",
-          "transliteratie": "elaias",
-          "gloss": "olive tree"
+          "lemma_strongs": "G1636",
+          "morfologie": "N-APF"
         },
         {
-          "woord": "ποιῆσαι",
+          "woord": "ποιησαι",
           "strongs": "G4160",
-          "transliteratie": "poiēsai",
-          "gloss": "to do/make"
+          "lemma_strongs": "G4160",
+          "morfologie": "V-AAN"
         },
         {
-          "woord": "ἢ",
+          "woord": "η",
           "strongs": "G2228",
-          "transliteratie": "ē",
-          "gloss": "or"
+          "lemma_strongs": "G2228",
+          "morfologie": "PRT"
         },
         {
-          "woord": "ἄμπελος",
+          "woord": "αμπελος",
           "strongs": "G288",
-          "transliteratie": "ampelos",
-          "gloss": "vine"
+          "lemma_strongs": "G288",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "σῦκα",
+          "woord": "συκα",
           "strongs": "G4810",
-          "transliteratie": "syka",
-          "gloss": "fig"
+          "lemma_strongs": "G4810",
+          "morfologie": "N-APN"
         },
         {
-          "woord": "οὔτε",
-          "strongs": "G3777",
-          "transliteratie": "oute",
-          "gloss": "neither"
+          "woord": "ουτως",
+          "strongs": "G3779",
+          "lemma_strongs": "G3779",
+          "morfologie": "ADV"
         },
         {
-          "woord": "ἁλυκὸν",
+          "woord": "ουδεμια",
+          "strongs": "G3762",
+          "lemma_strongs": "G3762",
+          "morfologie": "A-NSF-N"
+        },
+        {
+          "woord": "πηγη",
+          "strongs": "G4077",
+          "lemma_strongs": "G4077",
+          "morfologie": "N-NSF"
+        },
+        {
+          "woord": "αλυκον",
           "strongs": "G252",
-          "transliteratie": "halykon",
-          "gloss": "salty"
+          "lemma_strongs": "G252",
+          "morfologie": "A-ASN"
         },
         {
-          "woord": "γλυκὺ",
+          "woord": "και",
+          "strongs": "G2532",
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
+        },
+        {
+          "woord": "γλυκυ",
           "strongs": "G1099",
-          "transliteratie": "glyky",
-          "gloss": "sweet"
+          "lemma_strongs": "G1099",
+          "morfologie": "A-ASN"
         },
         {
-          "woord": "ποιῆσαι",
+          "woord": "ποιησαι",
           "strongs": "G4160",
-          "transliteratie": "poiēsai",
-          "gloss": "to do/make"
+          "lemma_strongs": "G4160",
+          "morfologie": "V-AAN"
         },
         {
-          "woord": "ὕδωρ",
+          "woord": "υδωρ",
           "strongs": "G5204",
-          "transliteratie": "hydōr",
-          "gloss": "water"
+          "lemma_strongs": "G5204",
+          "morfologie": "N-ASN"
         }
       ],
       "hsv": "Kan ook, mijn broeders, een vijgenboom olijven voortbrengen, of een wijnstok vijgen? Evenmin kan een bron zout én zoet water voortbrengen.",
@@ -1974,6 +3893,181 @@
           "old": "fontein",
           "new": "bron",
           "principe": null
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Kan ook, mijn broeders, een vijgenboom olijven voortbrengen, of een wijnstok vijgen? Zo kan geen bron zout en zoet water voortbrengen.",
+          "voorkomen": 1,
+          "strongs": [
+            "G3361",
+            "G1410",
+            "G80",
+            "G1473",
+            "G4808",
+            "G1636",
+            "G4160",
+            "G2228",
+            "G288",
+            "G4810",
+            "G3779",
+            "G3762",
+            "G4077",
+            "G252",
+            "G2532",
+            "G1099",
+            "G4160",
+            "G5204"
+          ],
+          "lemma_strongs": [
+            "G3361",
+            "G1410",
+            "G80",
+            "G1473",
+            "G4808",
+            "G1636",
+            "G4160",
+            "G2228",
+            "G288",
+            "G4810",
+            "G3779",
+            "G3762",
+            "G4077",
+            "G252",
+            "G2532",
+            "G1099",
+            "G4160",
+            "G5204"
+          ],
+          "morfologie": [
+            "PRT-N",
+            "V-PNI-3S",
+            "N-VPM",
+            "P-1GS",
+            "N-NSF",
+            "N-APF",
+            "V-AAN",
+            "PRT",
+            "N-NSF",
+            "N-APN",
+            "ADV",
+            "A-NSF-N",
+            "N-NSF",
+            "A-ASN",
+            "CONJ",
+            "A-ASN",
+            "V-AAN",
+            "N-ASN"
+          ],
+          "bronwoorden": [
+            "μη",
+            "δυναται",
+            "αδελφοι",
+            "μου",
+            "συκη",
+            "ελαιας",
+            "ποιησαι",
+            "η",
+            "αμπελος",
+            "συκα",
+            "ουτως",
+            "ουδεμια",
+            "πηγη",
+            "αλυκον",
+            "και",
+            "γλυκυ",
+            "ποιησαι",
+            "υδωρ"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:12",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ]
+          },
+          "tvm": [
+            null,
+            "G5736",
+            null,
+            null,
+            null,
+            null,
+            "G5658",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5658",
+            null
+          ]
         }
       ]
     },
@@ -2025,106 +4119,106 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "Τίς",
+          "woord": "τις",
           "strongs": "G5101",
-          "transliteratie": "Tis",
-          "gloss": "which?"
+          "lemma_strongs": "G5101",
+          "morfologie": "I-NSM"
         },
         {
-          "woord": "σοφὸς",
+          "woord": "σοφος",
           "strongs": "G4680",
-          "transliteratie": "sophos",
-          "gloss": "wise"
+          "lemma_strongs": "G4680",
+          "morfologie": "A-NSM"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ἐπιστήμων",
+          "woord": "επιστημων",
           "strongs": "G1990",
-          "transliteratie": "epistēmōn",
-          "gloss": "knowing"
+          "lemma_strongs": "G1990",
+          "morfologie": "A-NSM"
         },
         {
-          "woord": "ἐν",
+          "woord": "εν",
           "strongs": "G1722",
-          "transliteratie": "en",
-          "gloss": "in/on/among"
+          "lemma_strongs": "G1722",
+          "morfologie": "PREP"
         },
         {
-          "woord": "ὑμῖν",
+          "woord": "υμιν",
           "strongs": "G4771",
-          "transliteratie": "hymin",
-          "gloss": "you"
+          "lemma_strongs": "G4771",
+          "morfologie": "P-2DP"
         },
         {
-          "woord": "δειξάτω",
+          "woord": "δειξατω",
           "strongs": "G1166",
-          "transliteratie": "deixatō",
-          "gloss": "to show"
+          "lemma_strongs": "G1166",
+          "morfologie": "V-AAM-3S"
         },
         {
-          "woord": "ἐκ",
+          "woord": "εκ",
           "strongs": "G1537",
-          "transliteratie": "ek",
-          "gloss": "of/from"
+          "lemma_strongs": "G1537",
+          "morfologie": "PREP"
         },
         {
-          "woord": "τῆς",
+          "woord": "της",
           "strongs": "G3588",
-          "transliteratie": "tēs",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-GSF"
         },
         {
-          "woord": "καλῆς",
+          "woord": "καλης",
           "strongs": "G2570",
-          "transliteratie": "kalēs",
-          "gloss": "good"
+          "lemma_strongs": "G2570",
+          "morfologie": "A-GSF"
         },
         {
-          "woord": "ἀναστροφῆς",
+          "woord": "αναστροφης",
           "strongs": "G391",
-          "transliteratie": "anastrophēs",
-          "gloss": "behaviour"
+          "lemma_strongs": "G391",
+          "morfologie": "N-GSF"
         },
         {
-          "woord": "τὰ",
+          "woord": "τα",
           "strongs": "G3588",
-          "transliteratie": "ta",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-APN"
         },
         {
-          "woord": "ἔργα",
+          "woord": "εργα",
           "strongs": "G2041",
-          "transliteratie": "erga",
-          "gloss": "work"
+          "lemma_strongs": "G2041",
+          "morfologie": "N-APN"
         },
         {
-          "woord": "αὐτοῦ",
+          "woord": "αυτου",
           "strongs": "G846",
-          "transliteratie": "autou",
-          "gloss": "he/she/it/self"
+          "lemma_strongs": "G846",
+          "morfologie": "P-GSM"
         },
         {
-          "woord": "ἐν",
+          "woord": "εν",
           "strongs": "G1722",
-          "transliteratie": "en",
-          "gloss": "in/on/among"
+          "lemma_strongs": "G1722",
+          "morfologie": "PREP"
         },
         {
-          "woord": "πραΰτητι",
+          "woord": "πραυτητι",
           "strongs": "G4240",
-          "transliteratie": "praytēti",
-          "gloss": "gentleness"
+          "lemma_strongs": "G4240",
+          "morfologie": "N-DSF"
         },
         {
-          "woord": "σοφίας",
+          "woord": "σοφιας",
           "strongs": "G4678",
-          "transliteratie": "sophias",
-          "gloss": "wisdom"
+          "lemma_strongs": "G4678",
+          "morfologie": "N-GSF"
         }
       ],
       "hsv": "Wie is wijs en verstandig onder u? ⓚLaat hij uit zijn goede levenswandel zijn werken laten zien, in zachtmoedige wijsheid.",
@@ -2142,6 +4236,173 @@
           "old": "goeden",
           "new": "goede",
           "principe": null
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Wie is wijs en verstandig onder u? Die bewijze uit zijn goede wandel zijn werken in zachtmoedige wijsheid.",
+          "voorkomen": 1,
+          "strongs": [
+            "G5101",
+            "G4680",
+            "G2532",
+            "G1990",
+            "G1722",
+            "G4771",
+            "G1166",
+            "G1537",
+            "G3588",
+            "G2570",
+            "G391",
+            "G3588",
+            "G2041",
+            "G846",
+            "G1722",
+            "G4240",
+            "G4678"
+          ],
+          "lemma_strongs": [
+            "G5101",
+            "G4680",
+            "G2532",
+            "G1990",
+            "G1722",
+            "G4771",
+            "G1166",
+            "G1537",
+            "G3588",
+            "G2570",
+            "G391",
+            "G3588",
+            "G2041",
+            "G846",
+            "G1722",
+            "G4240",
+            "G4678"
+          ],
+          "morfologie": [
+            "I-NSM",
+            "A-NSM",
+            "CONJ",
+            "A-NSM",
+            "PREP",
+            "P-2DP",
+            "V-AAM-3S",
+            "PREP",
+            "T-GSF",
+            "A-GSF",
+            "N-GSF",
+            "T-APN",
+            "N-APN",
+            "P-GSM",
+            "PREP",
+            "N-DSF",
+            "N-GSF"
+          ],
+          "bronwoorden": [
+            "τις",
+            "σοφος",
+            "και",
+            "επιστημων",
+            "εν",
+            "υμιν",
+            "δειξατω",
+            "εκ",
+            "της",
+            "καλης",
+            "αναστροφης",
+            "τα",
+            "εργα",
+            "αυτου",
+            "εν",
+            "πραυτητι",
+            "σοφιας"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:13",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5657",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
         }
       ]
     },
@@ -2193,112 +4454,112 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "εἰ",
+          "woord": "ει",
           "strongs": "G1487",
-          "transliteratie": "ei",
-          "gloss": "if"
+          "lemma_strongs": "G1487",
+          "morfologie": "COND"
         },
         {
-          "woord": "δὲ",
+          "woord": "δε",
           "strongs": "G1161",
-          "transliteratie": "de",
-          "gloss": "but/and"
+          "lemma_strongs": "G1161",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ζῆλον",
+          "woord": "ζηλον",
           "strongs": "G2205",
-          "transliteratie": "zēlon",
-          "gloss": "zeal"
+          "lemma_strongs": "G2205",
+          "morfologie": "N-ASM"
         },
         {
-          "woord": "πικρὸν",
+          "woord": "πικρον",
           "strongs": "G4089",
-          "transliteratie": "pikron",
-          "gloss": "bitter"
+          "lemma_strongs": "G4089",
+          "morfologie": "A-ASM"
         },
         {
-          "woord": "ἔχετε",
+          "woord": "εχετε",
           "strongs": "G2192",
-          "transliteratie": "echete",
-          "gloss": "to have/be"
+          "lemma_strongs": "G2192",
+          "morfologie": "V-PAI-2P"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ἐριθείαν",
+          "woord": "εριθειαν",
           "strongs": "G2052",
-          "transliteratie": "eritheian",
-          "gloss": "rivalry"
+          "lemma_strongs": "G2052",
+          "morfologie": "N-ASF"
         },
         {
-          "woord": "ἐν",
+          "woord": "εν",
           "strongs": "G1722",
-          "transliteratie": "en",
-          "gloss": "in/on/among"
+          "lemma_strongs": "G1722",
+          "morfologie": "PREP"
         },
         {
-          "woord": "τῇ",
+          "woord": "τη",
           "strongs": "G3588",
-          "transliteratie": "tē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-DSF"
         },
         {
-          "woord": "καρδίᾳ",
+          "woord": "καρδια",
           "strongs": "G2588",
-          "transliteratie": "kardia",
-          "gloss": "heart"
+          "lemma_strongs": "G2588",
+          "morfologie": "N-DSF"
         },
         {
-          "woord": "ὑμῶν",
+          "woord": "υμων",
           "strongs": "G4771",
-          "transliteratie": "hymōn",
-          "gloss": "you"
+          "lemma_strongs": "G4771",
+          "morfologie": "P-2GP"
         },
         {
-          "woord": "μὴ",
+          "woord": "μη",
           "strongs": "G3361",
-          "transliteratie": "mē",
-          "gloss": "not"
+          "lemma_strongs": "G3361",
+          "morfologie": "PRT-N"
         },
         {
-          "woord": "κατακαυχᾶσθε",
+          "woord": "κατακαυχασθε",
           "strongs": "G2620",
-          "transliteratie": "katakauchasthe",
-          "gloss": "to boast"
+          "lemma_strongs": "G2620",
+          "morfologie": "V-PNM-2P"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ψεύδεσθε",
+          "woord": "ψευδεσθε",
           "strongs": "G5574",
-          "transliteratie": "pseudesthe",
-          "gloss": "to lie"
+          "lemma_strongs": "G5574",
+          "morfologie": "V-PNM-2P"
         },
         {
-          "woord": "κατὰ",
+          "woord": "κατα",
           "strongs": "G2596",
-          "transliteratie": "kata",
-          "gloss": "according to"
+          "lemma_strongs": "G2596",
+          "morfologie": "PREP"
         },
         {
-          "woord": "τῆς",
+          "woord": "της",
           "strongs": "G3588",
-          "transliteratie": "tēs",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-GSF"
         },
         {
-          "woord": "ἀληθείας",
+          "woord": "αληθειας",
           "strongs": "G225",
-          "transliteratie": "alētheias",
-          "gloss": "truth"
+          "lemma_strongs": "G225",
+          "morfologie": "N-GSF"
         }
       ],
       "hsv": "ⓛWanneer u echter bittere afgunst en eigenbelang in uw hart hebt, beroem u dan niet en lieg niet tegen de waarheid.",
@@ -2311,6 +4572,181 @@
           "old": "indien gij bitteren nijd",
           "new": "als u bittere afgunst",
           "principe": "A1"
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Maar als u bittere afgunst en twistgierigheid hebt in uw hart, zo roemt en liegt niet tegen de waarheid.",
+          "voorkomen": 1,
+          "strongs": [
+            "G1487",
+            "G1161",
+            "G2205",
+            "G4089",
+            "G2192",
+            "G2532",
+            "G2052",
+            "G1722",
+            "G3588",
+            "G2588",
+            "G4771",
+            "G3361",
+            "G2620",
+            "G2532",
+            "G5574",
+            "G2596",
+            "G3588",
+            "G225"
+          ],
+          "lemma_strongs": [
+            "G1487",
+            "G1161",
+            "G2205",
+            "G4089",
+            "G2192",
+            "G2532",
+            "G2052",
+            "G1722",
+            "G3588",
+            "G2588",
+            "G4771",
+            "G3361",
+            "G2620",
+            "G2532",
+            "G5574",
+            "G2596",
+            "G3588",
+            "G225"
+          ],
+          "morfologie": [
+            "COND",
+            "CONJ",
+            "N-ASM",
+            "A-ASM",
+            "V-PAI-2P",
+            "CONJ",
+            "N-ASF",
+            "PREP",
+            "T-DSF",
+            "N-DSF",
+            "P-2GP",
+            "PRT-N",
+            "V-PNM-2P",
+            "CONJ",
+            "V-PNM-2P",
+            "PREP",
+            "T-GSF",
+            "N-GSF"
+          ],
+          "bronwoorden": [
+            "ει",
+            "δε",
+            "ζηλον",
+            "πικρον",
+            "εχετε",
+            "και",
+            "εριθειαν",
+            "εν",
+            "τη",
+            "καρδια",
+            "υμων",
+            "μη",
+            "κατακαυχασθε",
+            "και",
+            "ψευδεσθε",
+            "κατα",
+            "της",
+            "αληθειας"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:14",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            null,
+            "G5719",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5737",
+            null,
+            "G5737",
+            null,
+            null,
+            null
+          ]
         }
       ]
     },
@@ -2362,77 +4798,196 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "οὐκ",
+          "woord": "ουκ",
           "strongs": "G3756",
-          "transliteratie": "ouk",
-          "gloss": "no"
+          "lemma_strongs": "G3756",
+          "morfologie": "PRT-N"
         },
         {
-          "woord": "ἔστιν",
+          "woord": "εστιν",
           "strongs": "G1510",
-          "transliteratie": "estin",
-          "gloss": "to be"
+          "lemma_strongs": "G1510",
+          "morfologie": "V-PAI-3S"
         },
         {
-          "woord": "αὕτη",
+          "woord": "αυτη",
           "strongs": "G3778",
-          "transliteratie": "hautē",
-          "gloss": "this/he/she/it"
+          "lemma_strongs": "G3778",
+          "morfologie": "D-NSF"
         },
         {
-          "woord": "ἡ",
+          "woord": "η",
           "strongs": "G3588",
-          "transliteratie": "hē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-NSF"
         },
         {
-          "woord": "σοφία",
+          "woord": "σοφια",
           "strongs": "G4678",
-          "transliteratie": "sophia",
-          "gloss": "wisdom"
+          "lemma_strongs": "G4678",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "ἄνωθεν",
+          "woord": "ανωθεν",
           "strongs": "G509",
-          "transliteratie": "anōthen",
-          "gloss": "from above/again"
+          "lemma_strongs": "G509",
+          "morfologie": "ADV"
         },
         {
-          "woord": "κατερχομένη",
+          "woord": "κατερχομενη",
           "strongs": "G2718",
-          "transliteratie": "katerchomenē",
-          "gloss": "to descend"
+          "lemma_strongs": "G2718",
+          "morfologie": "V-PNP-NSF"
         },
         {
-          "woord": "ἀλλὰ",
+          "woord": "αλλ",
           "strongs": "G235",
-          "transliteratie": "alla",
-          "gloss": "but"
+          "lemma_strongs": "G235",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ἐπίγειος",
+          "woord": "επιγειος",
           "strongs": "G1919",
-          "transliteratie": "epigeios",
-          "gloss": "earthly"
+          "lemma_strongs": "G1919",
+          "morfologie": "A-NSF"
         },
         {
-          "woord": "ψυχική",
+          "woord": "ψυχικη",
           "strongs": "G5591",
-          "transliteratie": "psychikē",
-          "gloss": "natural"
+          "lemma_strongs": "G5591",
+          "morfologie": "A-NSF"
         },
         {
-          "woord": "δαιμονιώδης",
+          "woord": "δαιμονιωδης",
           "strongs": "G1141",
-          "transliteratie": "daimoniōdēs",
-          "gloss": "demonic"
+          "lemma_strongs": "G1141",
+          "morfologie": "A-NSF"
         }
       ],
       "hsv": "ⓜDat is niet de wijsheid die van boven komt, maar ze is aards, natuurlijk, duivels.",
       "nbg51": "Dat is niet de wijsheid, die van boven komt, maar zij is aards, ongeestelijk, duivels;",
       "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Deze is de wijsheid niet,<sup class=\"note-marker\" data-note=\"46\">46</sup> die van boven afkomt, maar is<sup class=\"note-marker\" data-note=\"47\">47</sup> aards,<sup class=\"note-marker\" data-note=\"48\">48</sup> natuurlijk,<sup class=\"note-marker\" data-note=\"49\">49</sup> duivels.",
       "textSV1888": "Deze is de wijsheid niet, die van boven afkomt, maar is aards, natuurlijk, duivels.",
-      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Deze is de wijsheid niet,<sup class=\"note-marker\" data-note=\"46\">46</sup> die van boven afkomt, maar is<sup class=\"note-marker\" data-note=\"47\">47</sup> aards,<sup class=\"note-marker\" data-note=\"48\">48</sup> natuurlijk,<sup class=\"note-marker\" data-note=\"49\">49</sup> duivels."
+      "textSV1888_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Deze is de wijsheid niet,<sup class=\"note-marker\" data-note=\"46\">46</sup> die van boven afkomt, maar is<sup class=\"note-marker\" data-note=\"47\">47</sup> aards,<sup class=\"note-marker\" data-note=\"48\">48</sup> natuurlijk,<sup class=\"note-marker\" data-note=\"49\">49</sup> duivels.",
+      "woordnummers": [
+        {
+          "tekst": "Deze is de wijsheid niet, die van boven afkomt, maar is aards, natuurlijk, duivels.",
+          "voorkomen": 1,
+          "strongs": [
+            "G3756",
+            "G1510",
+            "G3778",
+            "G3588",
+            "G4678",
+            "G509",
+            "G2718",
+            "G235",
+            "G1919",
+            "G5591",
+            "G1141"
+          ],
+          "lemma_strongs": [
+            "G3756",
+            "G1510",
+            "G3778",
+            "G3588",
+            "G4678",
+            "G509",
+            "G2718",
+            "G235",
+            "G1919",
+            "G5591",
+            "G1141"
+          ],
+          "morfologie": [
+            "PRT-N",
+            "V-PAI-3S",
+            "D-NSF",
+            "T-NSF",
+            "N-NSF",
+            "ADV",
+            "V-PNP-NSF",
+            "CONJ",
+            "A-NSF",
+            "A-NSF",
+            "A-NSF"
+          ],
+          "bronwoorden": [
+            "ουκ",
+            "εστιν",
+            "αυτη",
+            "η",
+            "σοφια",
+            "ανωθεν",
+            "κατερχομενη",
+            "αλλ",
+            "επιγειος",
+            "ψυχικη",
+            "δαιμονιωδης"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:15",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "tvm": [
+            null,
+            "G5719",
+            null,
+            null,
+            null,
+            null,
+            "G5740",
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
     },
     {
       "number": 16,
@@ -2454,70 +5009,70 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "ὅπου",
+          "woord": "οπου",
           "strongs": "G3699",
-          "transliteratie": "hopou",
-          "gloss": "where(-ever)"
+          "lemma_strongs": "G3699",
+          "morfologie": "ADV"
         },
         {
-          "woord": "γὰρ",
+          "woord": "γαρ",
           "strongs": "G1063",
-          "transliteratie": "gar",
-          "gloss": "for"
+          "lemma_strongs": "G1063",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ζῆλος",
+          "woord": "ζηλος",
           "strongs": "G2205",
-          "transliteratie": "zēlos",
-          "gloss": "zeal"
+          "lemma_strongs": "G2205",
+          "morfologie": "N-NSM"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ἐριθεία",
+          "woord": "εριθεια",
           "strongs": "G2052",
-          "transliteratie": "eritheia",
-          "gloss": "rivalry"
+          "lemma_strongs": "G2052",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "ἐκεῖ",
+          "woord": "εκει",
           "strongs": "G1563",
-          "transliteratie": "ekei",
-          "gloss": "there"
+          "lemma_strongs": "G1563",
+          "morfologie": "ADV"
         },
         {
-          "woord": "ἀκαταστασία",
+          "woord": "ακαταστασια",
           "strongs": "G181",
-          "transliteratie": "akatastasia",
-          "gloss": "disorder"
+          "lemma_strongs": "G181",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "πᾶν",
+          "woord": "παν",
           "strongs": "G3956",
-          "transliteratie": "pan",
-          "gloss": "all"
+          "lemma_strongs": "G3956",
+          "morfologie": "A-NSN"
         },
         {
-          "woord": "φαῦλον",
+          "woord": "φαυλον",
           "strongs": "G5337",
-          "transliteratie": "phaulon",
-          "gloss": "evil"
+          "lemma_strongs": "G5337",
+          "morfologie": "A-NSN"
         },
         {
-          "woord": "πρᾶγμα",
+          "woord": "πραγμα",
           "strongs": "G4229",
-          "transliteratie": "pragma",
-          "gloss": "thing"
+          "lemma_strongs": "G4229",
+          "morfologie": "N-NSN"
         }
       ],
       "hsv": "ⓝWant waar afgunst en eigenbelang is, daar heersen wanorde en allerlei kwade praktijken.",
@@ -2535,6 +5090,112 @@
           "old": "aldaar",
           "new": "daar",
           "principe": "V36"
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Want waar afgunst en twistgierigheid is, daar is verwarring en alle boze handel.",
+          "voorkomen": 1,
+          "strongs": [
+            "G3699",
+            "G1063",
+            "G2205",
+            "G2532",
+            "G2052",
+            "G1563",
+            "G181",
+            "G2532",
+            "G3956",
+            "G5337",
+            "G4229"
+          ],
+          "lemma_strongs": [
+            "G3699",
+            "G1063",
+            "G2205",
+            "G2532",
+            "G2052",
+            "G1563",
+            "G181",
+            "G2532",
+            "G3956",
+            "G5337",
+            "G4229"
+          ],
+          "morfologie": [
+            "ADV",
+            "CONJ",
+            "N-NSM",
+            "CONJ",
+            "N-NSF",
+            "ADV",
+            "N-NSF",
+            "CONJ",
+            "A-NSN",
+            "A-NSN",
+            "N-NSN"
+          ],
+          "bronwoorden": [
+            "οπου",
+            "γαρ",
+            "ζηλος",
+            "και",
+            "εριθεια",
+            "εκει",
+            "ακαταστασια",
+            "και",
+            "παν",
+            "φαυλον",
+            "πραγμα"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:16",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
         }
       ]
     },
@@ -2579,118 +5240,124 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "Ἡ",
+          "woord": "η",
           "strongs": "G3588",
-          "transliteratie": "Hē",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-NSF"
         },
         {
-          "woord": "δὲ",
+          "woord": "δε",
           "strongs": "G1161",
-          "transliteratie": "de",
-          "gloss": "but/and"
+          "lemma_strongs": "G1161",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "ἄνωθεν",
+          "woord": "ανωθεν",
           "strongs": "G509",
-          "transliteratie": "anōthen",
-          "gloss": "from above/again"
+          "lemma_strongs": "G509",
+          "morfologie": "ADV"
         },
         {
-          "woord": "σοφία",
+          "woord": "σοφια",
           "strongs": "G4678",
-          "transliteratie": "sophia",
-          "gloss": "wisdom"
+          "lemma_strongs": "G4678",
+          "morfologie": "N-NSF"
         },
         {
-          "woord": "πρῶτον",
-          "strongs": "G4413",
-          "transliteratie": "prōton",
-          "gloss": "first"
+          "woord": "πρωτον",
+          "strongs": "G4412",
+          "lemma_strongs": "G4412",
+          "morfologie": "ADV-S"
         },
         {
-          "woord": "μὲν",
+          "woord": "μεν",
           "strongs": "G3303",
-          "transliteratie": "men",
-          "gloss": "on the other hand"
+          "lemma_strongs": "G3303",
+          "morfologie": "PRT"
         },
         {
-          "woord": "ἁγνή",
+          "woord": "αγνη",
           "strongs": "G53",
-          "transliteratie": "hagnē",
-          "gloss": "pure"
+          "lemma_strongs": "G53",
+          "morfologie": "A-NSF"
         },
         {
-          "woord": "ἐστιν",
+          "woord": "εστιν",
           "strongs": "G1510",
-          "transliteratie": "estin",
-          "gloss": "to be"
+          "lemma_strongs": "G1510",
+          "morfologie": "V-PAI-3S"
         },
         {
-          "woord": "ἔπειτα",
+          "woord": "επειτα",
           "strongs": "G1899",
-          "transliteratie": "epeita",
-          "gloss": "then"
+          "lemma_strongs": "G1899",
+          "morfologie": "ADV"
         },
         {
-          "woord": "εἰρηνική",
+          "woord": "ειρηνικη",
           "strongs": "G1516",
-          "transliteratie": "eirēnikē",
-          "gloss": "peaceful"
+          "lemma_strongs": "G1516",
+          "morfologie": "A-NSF"
         },
         {
-          "woord": "ἐπιεικής",
+          "woord": "επιεικης",
           "strongs": "G1933",
-          "transliteratie": "epieikēs",
-          "gloss": "gentle"
+          "lemma_strongs": "G1933",
+          "morfologie": "A-NSF"
         },
         {
-          "woord": "εὐπειθής",
+          "woord": "ευπειθης",
           "strongs": "G2138",
-          "transliteratie": "eupeithēs",
-          "gloss": "compliant"
+          "lemma_strongs": "G2138",
+          "morfologie": "A-NSF"
         },
         {
-          "woord": "μεστὴ",
+          "woord": "μεστη",
           "strongs": "G3324",
-          "transliteratie": "mestē",
-          "gloss": "full"
+          "lemma_strongs": "G3324",
+          "morfologie": "A-NSF"
         },
         {
-          "woord": "ἐλέους",
+          "woord": "ελεους",
           "strongs": "G1656",
-          "transliteratie": "eleous",
-          "gloss": "mercy"
+          "lemma_strongs": "G1656",
+          "morfologie": "N-GSN"
         },
         {
-          "woord": "καὶ",
+          "woord": "και",
           "strongs": "G2532",
-          "transliteratie": "kai",
-          "gloss": "and"
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "καρπῶν",
+          "woord": "καρπων",
           "strongs": "G2590",
-          "transliteratie": "karpōn",
-          "gloss": "fruit"
+          "lemma_strongs": "G2590",
+          "morfologie": "N-GPM"
         },
         {
-          "woord": "ἀγαθῶν",
+          "woord": "αγαθων",
           "strongs": "G18",
-          "transliteratie": "agathōn",
-          "gloss": "good-doer"
+          "lemma_strongs": "G18",
+          "morfologie": "A-GPM"
         },
         {
-          "woord": "ἀδιάκριτος",
+          "woord": "αδιακριτος",
           "strongs": "G87",
-          "transliteratie": "adiakritos",
-          "gloss": "impartial"
+          "lemma_strongs": "G87",
+          "morfologie": "A-NSF"
         },
         {
-          "woord": "ἀνυπόκριτος",
+          "woord": "και",
+          "strongs": "G2532",
+          "lemma_strongs": "G2532",
+          "morfologie": "CONJ"
+        },
+        {
+          "woord": "ανυποκριτος",
           "strongs": "G505",
-          "transliteratie": "anypokritos",
-          "gloss": "genuine"
+          "lemma_strongs": "G505",
+          "morfologie": "A-NSF"
         }
       ],
       "hsv": "Maar de wijsheid die van boven is, is ten eerste rein, vervolgens vreedzaam, welwillend, voor rede vatbaar, vol barmhartigheid en goede vruchten, onpartijdig en ongeveinsd.",
@@ -2718,6 +5385,197 @@
           "old": "niet partijdig oordelende,",
           "new": "onpartijdig oordelend",
           "principe": "V295"
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "Maar de wijsheid die van boven is, die is ten eerste zuiver, daarna vredelievend, bescheiden, voor rede vatbaar, vol van barmhartigheid en van goede vruchten, onpartijdig oordelend en ongeveinsd.",
+          "voorkomen": 1,
+          "strongs": [
+            "G3588",
+            "G1161",
+            "G509",
+            "G4678",
+            "G4412",
+            "G3303",
+            "G53",
+            "G1510",
+            "G1899",
+            "G1516",
+            "G1933",
+            "G2138",
+            "G3324",
+            "G1656",
+            "G2532",
+            "G2590",
+            "G18",
+            "G87",
+            "G2532",
+            "G505"
+          ],
+          "lemma_strongs": [
+            "G3588",
+            "G1161",
+            "G509",
+            "G4678",
+            "G4412",
+            "G3303",
+            "G53",
+            "G1510",
+            "G1899",
+            "G1516",
+            "G1933",
+            "G2138",
+            "G3324",
+            "G1656",
+            "G2532",
+            "G2590",
+            "G18",
+            "G87",
+            "G2532",
+            "G505"
+          ],
+          "morfologie": [
+            "T-NSF",
+            "CONJ",
+            "ADV",
+            "N-NSF",
+            "ADV-S",
+            "PRT",
+            "A-NSF",
+            "V-PAI-3S",
+            "ADV",
+            "A-NSF",
+            "A-NSF",
+            "A-NSF",
+            "A-NSF",
+            "N-GSN",
+            "CONJ",
+            "N-GPM",
+            "A-GPM",
+            "A-NSF",
+            "CONJ",
+            "A-NSF"
+          ],
+          "bronwoorden": [
+            "η",
+            "δε",
+            "ανωθεν",
+            "σοφια",
+            "πρωτον",
+            "μεν",
+            "αγνη",
+            "εστιν",
+            "επειτα",
+            "ειρηνικη",
+            "επιεικης",
+            "ευπειθης",
+            "μεστη",
+            "ελεους",
+            "και",
+            "καρπων",
+            "αγαθων",
+            "αδιακριτος",
+            "και",
+            "ανυποκριτος"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:17",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5719",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
         }
       ]
     },
@@ -2762,58 +5620,64 @@
       "status": "draft",
       "grondtekst": [
         {
-          "woord": "καρπὸς",
+          "woord": "καρπος",
           "strongs": "G2590",
-          "transliteratie": "karpos",
-          "gloss": "fruit"
+          "lemma_strongs": "G2590",
+          "morfologie": "N-NSM"
         },
         {
-          "woord": "δὲ",
+          "woord": "δε",
           "strongs": "G1161",
-          "transliteratie": "de",
-          "gloss": "but/and"
+          "lemma_strongs": "G1161",
+          "morfologie": "CONJ"
         },
         {
-          "woord": "δικαιοσύνης",
-          "strongs": "G1343",
-          "transliteratie": "dikaiosynēs",
-          "gloss": "righteousness"
-        },
-        {
-          "woord": "ἐν",
-          "strongs": "G1722",
-          "transliteratie": "en",
-          "gloss": "in/on/among"
-        },
-        {
-          "woord": "εἰρήνῃ",
-          "strongs": "G1515",
-          "transliteratie": "eirēnē",
-          "gloss": "peace"
-        },
-        {
-          "woord": "σπείρεται",
-          "strongs": "G4687",
-          "transliteratie": "speiretai",
-          "gloss": "to sow"
-        },
-        {
-          "woord": "τοῖς",
+          "woord": "της",
           "strongs": "G3588",
-          "transliteratie": "tois",
-          "gloss": "the/this/who"
+          "lemma_strongs": "G3588",
+          "morfologie": "T-GSF"
         },
         {
-          "woord": "ποιοῦσιν",
-          "strongs": "G4160",
-          "transliteratie": "poiousin",
-          "gloss": "to do/make"
+          "woord": "δικαιοσυνης",
+          "strongs": "G1343",
+          "lemma_strongs": "G1343",
+          "morfologie": "N-GSF"
         },
         {
-          "woord": "εἰρήνην",
+          "woord": "εν",
+          "strongs": "G1722",
+          "lemma_strongs": "G1722",
+          "morfologie": "PREP"
+        },
+        {
+          "woord": "ειρηνη",
           "strongs": "G1515",
-          "transliteratie": "eirēnēn",
-          "gloss": "peace"
+          "lemma_strongs": "G1515",
+          "morfologie": "N-DSF"
+        },
+        {
+          "woord": "σπειρεται",
+          "strongs": "G4687",
+          "lemma_strongs": "G4687",
+          "morfologie": "V-PPI-3S"
+        },
+        {
+          "woord": "τοις",
+          "strongs": "G3588",
+          "lemma_strongs": "G3588",
+          "morfologie": "T-DPM"
+        },
+        {
+          "woord": "ποιουσιν",
+          "strongs": "G4160",
+          "lemma_strongs": "G4160",
+          "morfologie": "V-PAP-DPM"
+        },
+        {
+          "woord": "ειρηνην",
+          "strongs": "G1515",
+          "lemma_strongs": "G1515",
+          "morfologie": "N-ASF"
         }
       ],
       "hsv": "En de vrucht van de gerechtigheid wordt in vrede gezaaid voor hen die vrede stichten.",
@@ -2831,6 +5695,117 @@
           "old": "degenen,",
           "new": "hen,",
           "principe": null
+        }
+      ],
+      "woordnummers": [
+        {
+          "tekst": "En de vrucht van de rechtvaardigheid wordt in vrede gezaaid voor hen, die vrede maken.",
+          "voorkomen": 1,
+          "strongs": [
+            "G2590",
+            "G1161",
+            "G3588",
+            "G1343",
+            "G1722",
+            "G1515",
+            "G4687",
+            "G3588",
+            "G4160",
+            "G1515"
+          ],
+          "lemma_strongs": [
+            "G2590",
+            "G1161",
+            "G3588",
+            "G1343",
+            "G1722",
+            "G1515",
+            "G4687",
+            "G3588",
+            "G4160",
+            "G1515"
+          ],
+          "morfologie": [
+            "N-NSM",
+            "CONJ",
+            "T-GSF",
+            "N-GSF",
+            "PREP",
+            "N-DSF",
+            "V-PPI-3S",
+            "T-DPM",
+            "V-PAP-DPM",
+            "N-ASF"
+          ],
+          "bronwoorden": [
+            "καρπος",
+            "δε",
+            "της",
+            "δικαιοσυνης",
+            "εν",
+            "ειρηνη",
+            "σπειρεται",
+            "τοις",
+            "ποιουσιν",
+            "ειρηνην"
+          ],
+          "transliteraties": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "glossen": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "status": "vertaald",
+          "confidence": 1.0,
+          "reviewstatus": "handmatig_gecontroleerd",
+          "herkomst": {
+            "dataset": "robinson-scrivener-tr",
+            "versie": "JAS.UTR",
+            "sha256": "FB3A867EFCB0BE09AA3C5104F594A93F4767E602DBECEC71D3F9EE65BBC13663",
+            "referentie": "JAS 3:18",
+            "bronindices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "tvm": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "G5743",
+            null,
+            "G5723",
+            null
+          ]
         }
       ]
     }
