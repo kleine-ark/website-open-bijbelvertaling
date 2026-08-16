@@ -98,20 +98,21 @@ def test_statische_release_fallbacks_verwijzen_naar_de_actuele_versie():
         assert "v0.21.6" not in inhoud
 
 
-def test_human_review_statistics_include_jozua_en_heel_richteren():
+def test_human_review_statistics_include_2_koningen():
     stats = read_json("data/stats.json")
     verified = read_json("data/verified-chapters.json")
 
-    assert stats["books_verified"] == 55
-    assert stats["chapters_verified"] == 790
-    assert stats["verses_verified"] == 21283
-    assert stats["verses_verified_pct"] == 57.2
+    assert stats["books_verified"] == 57
+    assert stats["chapters_verified"] == 837
+    assert stats["verses_verified"] == 22819
+    assert stats["verses_verified_pct"] == 61.3
     assert "Numeri" in stats["verified_books"]
     assert "Deuteronomium" in stats["verified_books"]
     assert "Jozua" in stats["verified_books"]
     assert "Richteren" in stats["verified_books"]
-    assert stats["ot_verses_verified"] == 12104
-    assert stats["ot_verses_verified_pct"] == 52.1
+    assert "2 Koningen" in stats["verified_books"]
+    assert stats["ot_verses_verified"] == 13640
+    assert stats["ot_verses_verified_pct"] == 58.8
     assert stats["nt_verses_verified"] == 7960
     assert stats["nt_verses_verified_pct"] == 100.0
     assert stats["ap_verses_verified"] == 1219
@@ -121,6 +122,7 @@ def test_human_review_statistics_include_jozua_en_heel_richteren():
     assert verified["jozua"] == "all"
     assert verified["richteren"] == "all"
     assert verified["1samuel"] == "all"
+    assert verified["2koningen"] == "all"
     assert verified["mattheus"] == "all"
     assert verified["openbaring"] == "all"
     assert verified["psalmen"] == "all"

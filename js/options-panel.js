@@ -95,8 +95,7 @@ const OptionsPanel = {
                     '#toggle-strongs', '[data-toggle-col="diff"]',
                     '[data-toggle-col="1637"]', '[data-toggle-col="margin1637"]',
                     '[data-optie="kolomLayout"]', '[data-toggle-col="noteDiff"]',
-                    '[data-toggle-col="hebrew"]', '#toggle-hs-vers', '#toggle-tags',
-                    '#toggle-geo-markeren',
+                    '[data-toggle-col="hebrew"]', '#toggle-hs-vers', '#toggle-contextmarkeringen',
                 ],
             },
             {

@@ -1041,7 +1041,7 @@
       "number": 9,
       "textSV1888": "Het overige nu des volks, die in de stad waren overgebleven, en de afvalligen, die tot hem gevallen waren, met het overige des volks, die overgebleven waren, voerde Nebuzaradan, de overste der trawanten, gevankelijk naar Babel.",
       "text1637": "Het overige nu des volcks, die in de stadt waren overgebleven, ende de afvallige die tot [20] hem gevallen waren, met het overige des volcks, die overgebleven waren, voerde Nebuzaradan, de Overste der [21] Trauwanten, gevanckelick [nae] Babel.",
-      "text2026": "Het overige nu van het volk, die in de stad waren overgebleven, en de afvalligen, die tot hem gevallen waren, met het overige van het volk, die overgebleven waren, voerde Nebuzaradan, de overste van de trawanten, als gevangene naar Babel.",
+      "text2026": "Het overige nu van het volk, die in de stad waren overgebleven, en de afvalligen, die tot hem gevallen waren, met het overige van het volk, die overgebleven waren, voerde Nebuzaradan, de overste van de lijfwachten, als gevangene naar Babel.",
       "marginNotes": [
         {
           "marker": "20",
@@ -1160,7 +1160,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Het overige nu van het volk, die in de stad waren overgebleven, en de afvalligen, die tot<sup class=\"note-marker\" data-note=\"20\">20</sup> hem gevallen waren, met het overige van het volk, die overgebleven waren, voerde Nebuzaradan, de overste van<sup class=\"note-marker\" data-note=\"21\">21</sup> de trawanten, als gevangene naar Babel.",
+      "text2026_html": "Het overige nu van het volk, die in de stad waren overgebleven, en de afvalligen, die tot<sup class=\"note-marker\" data-note=\"20\">20</sup> hem gevallen waren, met het overige van het volk, die overgebleven waren, voerde Nebuzaradan, de overste van<sup class=\"note-marker\" data-note=\"21\">21</sup> de lijfwachten, als gevangene naar Babel.",
       "textSV1888_html": "Het overige nu des volks, die in de stad waren overgebleven, en de afvalligen, die tot<sup class=\"note-marker\" data-note=\"20\">20</sup> hem gevallen waren, met het overige des volks, die overgebleven waren, voerde Nebuzaradan, de overste der<sup class=\"note-marker\" data-note=\"21\">21</sup> trawanten, gevankelijk naar Babel.",
       "text1637_html": "Het overige nu des volcks, die in de stadt waren overgebleven, ende de afvallige die tot <sup class=\"note-marker\" data-note=\"20\">20</sup> hem gevallen waren, met het overige des volcks, die overgebleven waren, voerde Nebuzaradan, de Overste der <sup class=\"note-marker\" data-note=\"21\">21</sup> Trauwanten, gevanckelick [nae] Babel.",
       "phraseDiff": [
@@ -1173,6 +1173,11 @@
           "old": "des volks,",
           "new": "van het volk,",
           "principe": "N3"
+        },
+        {
+          "old": "der trawanten, gevankelijk",
+          "new": "van de lijfwachten, als gevangene",
+          "principe": "MR-2K-GLOBAL-003"
         },
         {
           "old": "der",
@@ -1190,7 +1195,7 @@
       "number": 10,
       "textSV1888": "Maar van het volk, die arm waren, die niet met al hadden, liet Nebuzaradan, de overste der trawanten, enigen overig in het land van Juda; en hij gaf hun te dien dage wijngaarden en akkers.",
       "text1637": "Maer van den volcke, die arm waren, die niet met allen en hadden, liet Nebuzaradan, de Overste der Trauwanten, [eenige] overich in den lande Iuda: ende hy [22] gaf hen te dien dage wijngaerden ende ackers in.",
-      "text2026": "Maar van het volk, die arm waren, die niet met al hadden, liet Nebuzaradan, de overste van de trawanten, enige overig in het land van Juda; en hij gaf hun op die dag wijngaarden en akkers.",
+      "text2026": "Maar van het volk, die arm waren, die niet met al hadden, liet Nebuzaradan, de overste van de lijfwachten, enige overig in het land van Juda; en hij gaf hun op die dag wijngaarden en akkers.",
       "marginNotes": [
         {
           "marker": "22",
@@ -1297,10 +1302,20 @@
           "morph": "HTd/Pp3ms"
         }
       ],
-      "text2026_html": "Maar van het volk, die arm waren, die niet met al hadden, liet Nebuzaradan, de overste van de trawanten, enige overig in het land van Juda; en hij<sup class=\"note-marker\" data-note=\"22\">22</sup> gaf hun op die dag wijngaarden en akkers.",
+      "text2026_html": "Maar van het volk, die arm waren, die niet met al hadden, liet Nebuzaradan, de overste van de lijfwachten, enige overig in het land van Juda; en hij<sup class=\"note-marker\" data-note=\"22\">22</sup> gaf hun op die dag wijngaarden en akkers.",
       "textSV1888_html": "Maar van het volk, die arm waren, die niet met al hadden, liet Nebuzaradan, de overste der trawanten, enigen overig in het land van Juda; en hij<sup class=\"note-marker\" data-note=\"22\">22</sup> gaf hun te dien dage wijngaarden en akkers.",
       "text1637_html": "Maer van den volcke, die arm waren, die niet met allen en hadden, liet Nebuzaradan, de Overste der Trauwanten, [eenige] overich in den lande Iuda: ende hy <sup class=\"note-marker\" data-note=\"22\">22</sup> gaf hen te dien dage wijngaerden ende ackers in.",
       "phraseDiff": [
+        {
+          "old": "der trawanten, enigen",
+          "new": "van de lijfwachten, enige",
+          "principe": "MR-2K-GLOBAL-003"
+        },
+        {
+          "old": "te dien dage",
+          "new": "op die dag",
+          "principe": "N4"
+        },
         {
           "old": "der",
           "new": "van de",
@@ -1310,11 +1325,6 @@
           "old": "enigen",
           "new": "enige",
           "principe": "V44"
-        },
-        {
-          "old": "te dien dage",
-          "new": "op die dag",
-          "principe": "N4"
         }
       ]
     },
@@ -1322,7 +1332,7 @@
       "number": 11,
       "textSV1888": "Maar van Jeremia had Nebukadrezar, de koning van Babel, bevel gegeven in de hand van Nebuzaradan, den overste der trawanten, zeggende:",
       "text1637": "Maer van [23] Ieremia hadde Nebucadrezar, de Coninck van Babel, bevel gegeven [24] in de hant van Nebuzaradan, den Oversten der Trauwanten, seggende:",
-      "text2026": "Maar van Jeremia had Nebukadrezar, de koning van Babel, bevel gegeven in de hand van Nebuzaradan, de overste van de trawanten, zeggende:",
+      "text2026": "Maar van Jeremia had Nebukadrezar, de koning van Babel, bevel gegeven in de hand van Nebuzaradan, de overste van de lijfwachten, zeggende:",
       "marginNotes": [
         {
           "marker": "23",
@@ -1396,7 +1406,7 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "Maar van<sup class=\"note-marker\" data-note=\"23\">23</sup> Jeremia had Nebukadrezar, de koning van Babel, bevel gegeven<sup class=\"note-marker\" data-note=\"24\">24</sup> in de hand van Nebuzaradan, de overste van de trawanten, zeggende:",
+      "text2026_html": "Maar van<sup class=\"note-marker\" data-note=\"23\">23</sup> Jeremia had Nebukadrezar, de koning van Babel, bevel gegeven<sup class=\"note-marker\" data-note=\"24\">24</sup> in de hand van Nebuzaradan, de overste van de lijfwachten, zeggende:",
       "textSV1888_html": "Maar van<sup class=\"note-marker\" data-note=\"23\">23</sup> Jeremia had Nebukadrezar, de koning van Babel, bevel gegeven<sup class=\"note-marker\" data-note=\"24\">24</sup> in de hand van Nebuzaradan, den overste der trawanten, zeggende:",
       "text1637_html": "Maer van <sup class=\"note-marker\" data-note=\"23\">23</sup> Ieremia hadde Nebucadrezar, de Coninck van Babel, bevel gegeven <sup class=\"note-marker\" data-note=\"24\">24</sup> in de hant van Nebuzaradan, den Oversten der Trauwanten, seggende:",
       "phraseDiff": [
@@ -1404,6 +1414,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "der trawanten,",
+          "new": "van de lijfwachten,",
+          "principe": "MR-2K-GLOBAL-003"
         },
         {
           "old": "der",
@@ -1540,7 +1555,7 @@
       "number": 13,
       "textSV1888": "Zo zond Nebuzaradan, de overste der trawanten, mitsgaders Nebuschazban Rab-saris en Nergal-sarezer Rab-mag, en al de oversten des konings van Babel;",
       "text1637": "So sondt Nebuzaradan, de Overste der Trauwanten, mitsgaders Nebuschasban [27] Rab-saris, ende Nergal Sarezer Rab-Mag, ende alle de Overste des Conincks van Babel:",
-      "text2026": "Zo zond Nebuzaradan, de overste van de trawanten, en ook Nebuschazban Rab-saris en Nergal-sarezer Rab-mag, en al de oversten van de koning van Babel;",
+      "text2026": "Zo zond Nebuzaradan, de overste van de lijfwachten, en ook Nebuschazban Rab-saris en Nergal-sarezer Rab-mag, en al de oversten van de koning van Babel;",
       "marginNotes": [
         {
           "marker": "27",
@@ -1632,10 +1647,20 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Zo zond Nebuzaradan, de overste van de trawanten, en ook Nebuschazban<sup class=\"note-marker\" data-note=\"27\">27</sup> Rab-saris en Nergal-sarezer Rab-mag, en al de oversten van de koning van Babel;",
+      "text2026_html": "Zo zond Nebuzaradan, de overste van de lijfwachten, en ook Nebuschazban<sup class=\"note-marker\" data-note=\"27\">27</sup> Rab-saris en Nergal-sarezer Rab-mag, en al de oversten van de koning van Babel;",
       "textSV1888_html": "Zo zond Nebuzaradan, de overste der trawanten, mitsgaders Nebuschazban<sup class=\"note-marker\" data-note=\"27\">27</sup> Rab-saris en Nergal-sarezer Rab-mag, en al de oversten des konings van Babel;",
       "text1637_html": "So sondt Nebuzaradan, de Overste der Trauwanten, mitsgaders Nebuschasban <sup class=\"note-marker\" data-note=\"27\">27</sup> Rab-saris, ende Nergal Sarezer Rab-Mag, ende alle de Overste des Conincks van Babel:",
       "phraseDiff": [
+        {
+          "old": "der trawanten, mitsgaders",
+          "new": "van de lijfwachten, en ook",
+          "principe": "MR-2K-GLOBAL-003"
+        },
+        {
+          "old": "des konings",
+          "new": "van de koning",
+          "principe": "N3"
+        },
         {
           "old": "der",
           "new": "van de",
@@ -1645,11 +1670,6 @@
           "old": "mitsgaders",
           "new": "en ook",
           "principe": "V7"
-        },
-        {
-          "old": "des konings",
-          "new": "van de koning",
-          "principe": "N3"
         }
       ]
     },

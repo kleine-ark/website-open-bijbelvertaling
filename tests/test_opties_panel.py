@@ -70,8 +70,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
 
     @staticmethod
     def open_mobile_options(page):
-        page.locator("#topnav-hamburger").click()
-        page.locator("#topnav-mobile-tekstopties").click()
+        page.locator("#topnav-tekstopties").click()
 
     def test_opties_opent_modaal_zonder_de_leestekst_te_versmallen(self):
         page = self.open_reader()
@@ -134,13 +133,13 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_mobiel_optiescherm_is_een_halvhoge_bottom_sheet(self):
+    def test_mobiel_optiescherm_is_een_drie_kwart_hoge_bottom_sheet(self):
         page = self.open_reader(width=390, height=844)
         try:
             self.open_mobile_options(page)
             panel = page.locator("#sidebar-right")
             box = panel.bounding_box()
-            self.assertAlmostEqual(box["height"], 422, delta=2)
+            self.assertAlmostEqual(box["height"], 633, delta=2)
             self.assertAlmostEqual(box["y"] + box["height"], 844, delta=1)
             self.assertEqual(
                 panel.evaluate("el => getComputedStyle(el, '::backdrop').backgroundColor"),
@@ -180,6 +179,16 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_mobiele_tekstopties_staat_apart_in_de_hoofdbalk(self):
+        page = self.open_reader(width=390, height=844)
+        try:
+            opener = page.locator("#topnav-tekstopties")
+            self.assertTrue(opener.is_visible())
+            opener.click()
+            self.assertTrue(page.locator("#sidebar-right").evaluate("el => el.open"))
+        finally:
+            page.close()
+
     def test_iedere_zichtbare_instelling_heeft_een_eigen_icoon(self):
         expected = {
             "thema.png", "lettertype.png", "tekstgrootte.png", "regelafstand.png",
@@ -193,7 +202,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             "vergelijkingsedities.png",
             "verschillen-vertalingen.png", "verschillen-kanttekeningen.png",
             "grondtalen.png", "oudste-handschrift.png", "onderwerptags.png",
-            "geografische-locaties.png", "strong-nummers.png",
+            "strong-nummers.png",
             "apocriefe-boeken.png", "ethiopische-boeken.png",
         }
         page = self.open_reader()
@@ -322,7 +331,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             "toggle-doorlopend": "weergave",
             "opt-audio-speed": "voorlezen",
             "toggle-kt-popup": "bronnen",
-            "toggle-tags": "bronnen",
+            "toggle-contextmarkeringen": "bronnen",
             "toggle-hs-vers": "bronnen",
         }
         page = self.open_reader()
@@ -449,13 +458,15 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_mobiele_boekenpicker_herhaalt_de_boekvolgordekeuze_niet(self):
-        page = self.open_reader(width=390, height=844)
+    def test_mobiele_boekenpicker_opent_bij_huidig_boek_en_hoofdstuk(self):
+        page = self.open_reader(width=390, height=844, location="2koningen/15")
         try:
             page.locator("#mobile-book-btn").click()
             page.locator("#mobile-picker").wait_for(state="visible", timeout=3_000)
             self.assertEqual(page.locator("#mobile-picker .mp-order").count(), 0)
-            self.assertEqual(page.locator("#mobile-picker .mp-search").count(), 1)
+            self.assertEqual(page.locator("#mobile-picker .mp-search").count(), 0)
+            self.assertEqual(page.locator("#mp-title").inner_text(), "2 Koningen — kies hoofdstuk")
+            self.assertEqual(page.locator("#mobile-picker .mp-item.active").inner_text(), "15")
         finally:
             page.close()
 
@@ -581,6 +592,30 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_metrische_optie_rekent_de_gemelde_maten_in_2_koningen_om(self):
+        controles = [
+            ("2koningen/14", "13", "meter"),
+            ("2koningen/15", "19", "ton"),
+            ("2koningen/18", "14", "ton"),
+        ]
+        for locatie, versnummer, eenheid in controles:
+            with self.subTest(locatie=locatie, vers=versnummer):
+                page = self.open_reader(location=locatie)
+                try:
+                    page.wait_for_function("window.Opties && window.Opties._eenheden")
+                    page.evaluate(
+                        """() => {
+                            Opties.state.maatstelsel = 'metrisch';
+                            App.renderChapter(Navigation.currentBook, Navigation.currentChapter);
+                        }"""
+                    )
+                    vers = page.locator(f'.verse-row[data-verse="{versnummer}"] .col-2026')
+                    vers.wait_for(state="visible", timeout=5_000)
+                    self.assertIn(eenheid, vers.inner_text().lower())
+                finally:
+                    page.close()
+
+
     def test_desktop_paneel_is_via_de_kop_versleepbaar_en_bewaart_de_positie(self):
         page = self.open_reader(width=1280, height=900)
         try:
@@ -650,7 +685,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             box = panel.bounding_box()
             self.assertAlmostEqual(box["x"], 0, delta=1)
             self.assertAlmostEqual(box["width"], 390, delta=1)
-            self.assertAlmostEqual(box["y"], 422, delta=2)
+            self.assertAlmostEqual(box["y"], 211, delta=2)
         finally:
             page.close()
 
@@ -668,7 +703,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
                 finally:
                     page.close()
 
-    def test_mobiele_darkmode_blijft_een_heldere_halvhoge_bottom_sheet(self):
+    def test_mobiele_darkmode_blijft_een_heldere_drie_kwart_hoge_bottom_sheet(self):
         page = self.open_reader(width=390, height=844)
         try:
             page.evaluate(
@@ -689,8 +724,8 @@ class OptionsPanelBrowserTests(unittest.TestCase):
                 })"""
             )
 
-            self.assertAlmostEqual(box["y"], 422, delta=2)
-            self.assertAlmostEqual(box["height"], 422, delta=2)
+            self.assertAlmostEqual(box["y"], 211, delta=2)
+            self.assertAlmostEqual(box["height"], 633, delta=2)
             self.assertGreater(style["radius"], 0)
             self.assertGreater(int(style["background"].split("(")[1].split(",")[0]), 230)
             self.assertEqual(page.locator("#options-title").inner_text(), "Instellingen")

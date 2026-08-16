@@ -4293,7 +4293,7 @@
       "number": 10,
       "textSV1888": "Farao was zeer vertoornd op zijn dienaars, en leverde mij in bewaring ten huize van den overste der trawanten, mij en den overste der bakkers.",
       "text1637": "[16] Pharao was seer vertoornt op sijne dienaers, ende leverde my in bewaringe ten huyse van den [17] oversten der Trauwanten, my, ende den oversten der Backeren.",
-      "text2026": "Farao was zeer vertoornd op zijn dienaren, en leverde mij in bewaring in het huis van de overste van de trawanten, mij en de overste van de bakkers.",
+      "text2026": "Farao was zeer vertoornd op zijn dienaren, en leverde mij in bewaring in het huis van de overste van de lijfwachten, mij en de overste van de bakkers.",
       "marginNotes": [
         {
           "marker": "16",
@@ -4392,7 +4392,7 @@
           "morph": "HTd/Vqrmpa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup><span class=\"direct-speech\"><i> Farao was zeer vertoornd op zijn dienaren, en leverde mij in bewaring in het huis van de<sup class=\"note-marker\" data-note=\"17\">17</sup> overste van de trawanten, mij en de overste van de bakkers.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup><span class=\"direct-speech\"><i> Farao was zeer vertoornd op zijn dienaren, en leverde mij in bewaring in het huis van de<sup class=\"note-marker\" data-note=\"17\">17</sup> overste van de lijfwachten, mij en de overste van de bakkers.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup> Farao was zeer vertoornd op zijn dienaars, en leverde mij in bewaring ten huize van den<sup class=\"note-marker\" data-note=\"17\">17</sup> overste der trawanten, mij en den overste der bakkers.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"16\">16</sup> Pharao was seer vertoornt op sijne dienaers, ende leverde my in bewaringe ten huyse van den <sup class=\"note-marker\" data-note=\"17\">17</sup> oversten der Trauwanten, my, ende den oversten der Backeren.",
       "phraseDiff": [
@@ -4412,9 +4412,9 @@
           "principe": "N1"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "der trawanten,",
+          "new": "van de lijfwachten,",
+          "principe": "MR-2K-GLOBAL-003"
         },
         {
           "old": "den",
@@ -5197,7 +5197,7 @@
       "number": 12,
       "textSV1888": "En aldaar was bij ons een Hebreeuws jongeling, een knecht van den overste der trawanten; en wij vertelden ze hem, en hij leide ons onze dromen uit; een ieder leide hij ze uit, naar zijn droom.",
       "text1637": "Ende aldaer was by ons een Hebreeusch [19] jongelinck, een knecht van den oversten der Trauwanten; ende wy verteldense hem, ende hy leyde ons onse droomen uyt: eenen yederen leyde hyse uyt, na sijnen droom.",
-      "text2026": "En daar was bij ons een Hebreeuws jongeling, een knecht van de overste van de trawanten; en wij vertelden ze hem, en hij legde ons onze dromen uit; een ieder legde hij ze uit, naar zijn droom.",
+      "text2026": "En daar was bij ons een Hebreeuws jongeling, een knecht van de overste van de lijfwachten; en wij vertelden ze hem, en hij legde ons onze dromen uit; een ieder legde hij ze uit, naar zijn droom.",
       "marginNotes": [
         {
           "marker": "19",
@@ -5289,7 +5289,7 @@
           "morph": "HVqp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>En daar was bij ons een Hebreeuws<sup class=\"note-marker\" data-note=\"19\">19</sup> jongeling, een knecht van de overste van de trawanten; en wij vertelden ze hem, en hij legde ons onze dromen uit; een ieder legde hij ze uit, naar zijn droom.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>En daar was bij ons een Hebreeuws<sup class=\"note-marker\" data-note=\"19\">19</sup> jongeling, een knecht van de overste van de lijfwachten; en wij vertelden ze hem, en hij legde ons onze dromen uit; een ieder legde hij ze uit, naar zijn droom.</i></span>",
       "textSV1888_html": "En aldaar was bij ons een Hebreeuws<sup class=\"note-marker\" data-note=\"19\">19</sup> jongeling, een knecht van den overste der trawanten; en wij vertelden ze hem, en hij leide ons onze dromen uit; een ieder leide hij ze uit, naar zijn droom.",
       "text1637_html": "Ende aldaer was by ons een Hebreeusch <sup class=\"note-marker\" data-note=\"19\">19</sup> jongelinck, een knecht van den overste<i>n</i> der Trauwante<i>n</i>; en<i>de</i> wy verteldense hem, en<i>de</i> hy leyde ons onse droomen uyt: eenen yederen leyde hyse uyt, na sijnen droo<i>m</i>.",
       "phraseDiff": [
@@ -5304,19 +5304,24 @@
           "principe": "N1"
         },
         {
+          "old": "der trawanten;",
+          "new": "van de lijfwachten;",
+          "principe": "MR-2K-GLOBAL-003"
+        },
+        {
+          "old": "leide",
+          "new": "legde",
+          "principe": "V554"
+        },
+        {
+          "old": "leide",
+          "new": "legde",
+          "principe": "V554"
+        },
+        {
           "old": "der",
           "new": "van de",
           "principe": "N2"
-        },
-        {
-          "old": "leide",
-          "new": "legde",
-          "principe": "V554"
-        },
-        {
-          "old": "leide",
-          "new": "legde",
-          "principe": "V554"
         }
       ],
       "woordnummers": [

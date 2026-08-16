@@ -370,12 +370,39 @@
     .topnav-tekstopties { width: 38px; padding: 0; gap: 0; }
     .topnav-tekstopties span { display: none; }
 }
+.feedback-modal-dialog .fb-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 14px;
+    padding: 0;
+    border: 0;
+}
+.feedback-modal-dialog .fb-types legend {
+    flex: 0 0 100%;
+    margin-bottom: 3px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+.feedback-modal-dialog .fb-types label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    font-size: 11px;
+    cursor: pointer;
+}
+.feedback-modal-dialog .fb-types input { margin: 0; }
 
 @media (max-width: 768px) {
     #topnav { padding: 0 12px; height: 56px; }
-    /* De mobiele leestoolbalk heeft al een eigen, goed bereikbaar opties-icoon.
-       Zo blijft het woordmerk in de hoofdbalk altijd leesbaar. */
-    .topnav-tekstopties { display: none; }
+    /* Tekstopties blijven als zelfstandige hoofdactie zichtbaar; ze horen niet
+       verstopt te zitten in het hamburgermenu. */
+    .topnav-tekstopties { display: inline-flex; width: 38px; padding: 0; gap: 0; flex: 0 0 38px; }
+    .topnav-tekstopties span { display: none; }
+    .topnav-theme { display: none; }
     .topnav-brand {
         flex: 0 1 auto;
         gap: 5px;
@@ -383,7 +410,7 @@
     .topnav-logo { width: auto; height: 44px; max-width: 150px; }
     .topnav-subtitle { display: none; }
     /* Versienummer klein zichtbaar naast de merknaam op mobiel. */
-    .topnav-version { display: inline; font-size: 11px; margin-left: 6px; vertical-align: middle; opacity: 0.85; }
+    .topnav-version { display: none; }
     .topnav-version a { font-size: 11px; }
 
     .topnav-hamburger { display: flex; }
@@ -1519,8 +1546,8 @@ body {
         min-width: 0;
         max-width: 100vw;
         min-height: 0;
-        height: 50dvh;
-        max-height: 50dvh;
+        height: 75dvh;
+        max-height: 75dvh;
         border-width: 1px 0 0;
         border-color: rgba(20, 46, 66, 0.14);
         border-radius: 22px 22px 0 0;

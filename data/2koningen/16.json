@@ -217,7 +217,7 @@
       "number": 3,
       "textSV1888": "Want hij wandelde in den weg der koningen van Israël; ja, hij deed ook zijn zoon door het vuur gaan, naar de gruwelen der heidenen, die de HEERE voor de kinderen Israëls verdreven had.",
       "text1637": "Want hy wandelde in den wech der Coningen Israëls: [b] ja hy dede oock sijnen sone [2] door het vyer gaen, nae de grouwelen der heydenen, die de HEERE voor de kinderen Israëls verdreven hadde.",
-      "text2026": "Want hij wandelde in de weg van de koningen van Israël; ja, hij deed ook zijn zoon door het vuur gaan, naar de gruwelen van de heidenen, die JAHWEH voor de Israëlieten verdreven had.",
+      "text2026": "Want hij wandelde in de weg van de koningen van Israël; ja, hij deed ook zijn zoon door het vuur gaan, naar de gruweldaden van de heidenen, die JAHWEH voor de Israëlieten verdreven had.",
       "marginNotes": [
         {
           "marker": "b",
@@ -326,7 +326,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Want hij wandelde in de weg van de koningen van<sup class=\"note-marker\" data-note=\"b\">b</sup> Israël; ja, hij deed ook zijn zoon<sup class=\"note-marker\" data-note=\"2\">2</sup> door het vuur gaan, naar de gruwelen van de heidenen, die JAHWEH voor de Israëlieten verdreven had.",
+      "text2026_html": "Want hij wandelde in de weg van de koningen van<sup class=\"note-marker\" data-note=\"b\">b</sup> Israël; ja, hij deed ook zijn zoon<sup class=\"note-marker\" data-note=\"2\">2</sup> door het vuur gaan, naar de gruweldaden van de heidenen, die JAHWEH voor de Israëlieten verdreven had.",
       "textSV1888_html": "Want hij wandelde in den weg der koningen van<sup class=\"note-marker\" data-note=\"b\">b</sup> Israël; ja, hij deed ook zijn zoon<sup class=\"note-marker\" data-note=\"2\">2</sup> door het vuur gaan, naar de gruwelen der heidenen, die de HEERE voor de kinderen Israëls verdreven had.",
       "text1637_html": "Want hy wandelde in den wech der Coningen Israëls: <sup class=\"note-marker\" data-note=\"b\">b</sup> ja hy dede oock sijnen sone <sup class=\"note-marker\" data-note=\"2\">2</sup> door het vyer gaen, nae de grouwelen der heydenen, die de HEERE voor de kinderen Israëls verdreven hadde.",
       "phraseDiff": [
@@ -341,9 +341,9 @@
           "principe": "N2"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "gruwelen der",
+          "new": "gruweldaden van de",
+          "principe": "MR-SK-025"
         },
         {
           "old": "de HEERE",
@@ -433,7 +433,7 @@
       "number": 5,
       "textSV1888": "Toen toog Rezin, de koning van Syrië, op, met Pekah, den zoon van Remalia, den koning van Israël, naar Jeruzalem ten strijde; en zij belegerden Achaz, maar zij vermochten niet met strijden.",
       "text1637": "[c] Doe tooch Rezin de Coninck van Syrien op, met Pekah den sone van Remalia, de Coninck Israëls, nae Ierusalem ten strijde: ende sy belegerden Achaz; [5] maer sy en vermochten niet met strijden.",
-      "text2026": "Toen trok Rezin, de koning van Syrië, op, met Pekah, de zoon van Remalia, de koning van Israël, naar Jeruzalem ten strijde; en zij belegerden Achaz, maar zij vermochten niet met strijden.",
+      "text2026": "Toen trok Rezin, de koning van Syrië, op, met Pekah, de zoon van Remalia, de koning van Israël, naar Jeruzalem ten strijde; en zij belegerden Achaz, maar zij konden hem niet verslaan.",
       "marginNotes": [
         {
           "marker": "c",
@@ -542,7 +542,7 @@
           "morph": "HR/VNc"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Toen trok Rezin, de koning van Syrië, op, met Pekah, de zoon van Remalia, de koning van Israël, naar Jeruzalem ten strijde; en zij belegerden Achaz,<sup class=\"note-marker\" data-note=\"5\">5</sup> maar zij vermochten niet met strijden.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Toen trok Rezin, de koning van Syrië, op, met Pekah, de zoon van Remalia, de koning van Israël, naar Jeruzalem ten strijde; en zij belegerden Achaz,<sup class=\"note-marker\" data-note=\"5\">5</sup> maar zij konden hem niet verslaan.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Toen toog Rezin, de koning van Syrië, op, met Pekah, den zoon van Remalia, den koning van Israël, naar Jeruzalem ten strijde; en zij belegerden Achaz,<sup class=\"note-marker\" data-note=\"5\">5</sup> maar zij vermochten niet met strijden.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"c\">c</sup> Doe tooch Rezin de Coninck van Syrien op, met Pekah de<i>n</i> sone van Remalia, de Coninck Israëls, nae Ierusalem ten strijde: en<i>de</i> sy belegerden Achaz; <sup class=\"note-marker\" data-note=\"5\">5</sup> maer sy en vermochten niet met strijden.",
       "phraseDiff": [
@@ -560,6 +560,16 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "vermochten",
+          "new": "konden hem",
+          "principe": "MR-SK-123"
+        },
+        {
+          "old": "met strijden.",
+          "new": "verslaan.",
+          "principe": null
         }
       ]
     },
@@ -1113,7 +1123,7 @@
       "number": 10,
       "textSV1888": "Toen toog de koning Achaz Tiglath-pilezer, den koning van Assyrië, tegemoet, naar Damaskus; en gezien hebbende een altaar, dat te Damaskus was, zo zond de koning Achaz aan den priester Uria de gelijkenis van het altaar, en zijn afbeelding, naar zijn ganse maaksel.",
       "text1637": "Doe tooch de Coninck Achaz Tiglath-Pileser den Coninck van Assyrien [13] te gemoete, nae Damascus; ende gesien hebbende [14] eenen altaer, die te Damascus was, so sondt de Coninck Achaz aen den Priester Uria de gelijckenisse des altaers, ende sijne afbeeldinge, nae sijn gantsche maecksel.",
-      "text2026": "Toen trok de koning Achaz Tiglath-pilezer, de koning van Assyrië, tegemoet, naar Damascus; en gezien hebbende een altaar, dat in Damascus was, zo zond de koning Achaz aan de priester Uria de gelijkenis van het altaar, en zijn afbeelding, naar zijn hele maaksel.",
+      "text2026": "Toen trok de koning Achaz Tiglath-pilezer, de koning van Assyrië, tegemoet, naar Damascus; en gezien hebbende een altaar, dat in Damascus was, zo zond de koning Achaz aan de priester Uria de gelijkenis van het altaar, en zijn afbeelding, met zijn volledige vormgeving.",
       "marginNotes": [
         {
           "marker": "13",
@@ -1267,7 +1277,7 @@
           "morph": "HNcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "Toen trok de koning Achaz Tiglath-pilezer, de koning van Assyrië,<sup class=\"note-marker\" data-note=\"13\">13</sup> tegemoet, naar Damascus; en gezien hebbende<sup class=\"note-marker\" data-note=\"14\">14</sup> een altaar, dat in Damascus was, zo zond de koning Achaz aan de priester Uria de gelijkenis van het altaar, en zijn afbeelding, naar zijn hele maaksel.",
+      "text2026_html": "Toen trok de koning Achaz Tiglath-pilezer, de koning van Assyrië,<sup class=\"note-marker\" data-note=\"13\">13</sup> tegemoet, naar Damascus; en gezien hebbende<sup class=\"note-marker\" data-note=\"14\">14</sup> een altaar, dat in Damascus was, zo zond de koning Achaz aan de priester Uria de gelijkenis van het altaar, en zijn afbeelding, met zijn volledige vormgeving.",
       "textSV1888_html": "Toen toog de koning Achaz Tiglath-pilezer, den koning van Assyrië,<sup class=\"note-marker\" data-note=\"13\">13</sup> tegemoet, naar Damaskus; en gezien hebbende<sup class=\"note-marker\" data-note=\"14\">14</sup> een altaar, dat te Damaskus was, zo zond de koning Achaz aan den priester Uria de gelijkenis van het altaar, en zijn afbeelding, naar zijn ganse maaksel.",
       "text1637_html": "Doe tooch de Coninck Achaz Tiglath-Pileser den Coninck van Assyrien <sup class=\"note-marker\" data-note=\"13\">13</sup> te gemoete, nae Damascus; ende gesien hebbende <sup class=\"note-marker\" data-note=\"14\">14</sup> eenen altaer, die te Damascus was, so sondt de Coninck Achaz aen den Priester Uria de gelijckenisse des altaers, ende sijne afbeeldinge, nae sijn gantsche maecksel.",
       "phraseDiff": [
@@ -1297,9 +1307,14 @@
           "principe": "N1"
         },
         {
-          "old": "ganse",
-          "new": "hele",
-          "principe": "V3"
+          "old": "naar",
+          "new": "met",
+          "principe": null
+        },
+        {
+          "old": "ganse maaksel.",
+          "new": "volledige vormgeving.",
+          "principe": "MR-SK-084"
         }
       ]
     },

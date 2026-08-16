@@ -45,8 +45,12 @@ const MobileNav = {
         this.bookById = {};
         for (const b of manifest.books) this.bookById[b.id] = b;
 
-        // Boek+hoofdstuk-knop opent altijd boek-overlay (kies boek → kies hoofdstuk)
-        bookBtn.addEventListener('click', () => this.openPicker('books'));
+        // Open direct bij de hoofdstukken van het huidige boek. Via Terug kan
+        // de lezer vervolgens een ander boek kiezen.
+        bookBtn.addEventListener('click', () => {
+            const huidigBoek = Navigation.currentBook;
+            this.openPicker(huidigBoek ? 'chapters' : 'books', huidigBoek || null);
+        });
 
         // Begrippen aan/uit toggle
         const begrBtn = document.getElementById('mobile-begrippen-btn');
@@ -204,8 +208,10 @@ const MobileNav = {
     },
 
     _renderChapters(body, book) {
-        const currentChapter = Navigation.currentChapter;
-        const sameBook = (book.id === Navigation.currentBook);
+        const hashParts = location.hash.replace(/^#/, '').split('/');
+        const currentBook = Navigation.currentBook || hashParts[0];
+        const currentChapter = Navigation.currentChapter || parseInt(hashParts[1], 10) || 1;
+        const sameBook = (book.id === currentBook);
         const list = document.createElement('div');
         list.className = 'mp-list mp-chapters';
         for (const ch of book.chaptersIncluded) {

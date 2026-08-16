@@ -2061,7 +2061,7 @@
    "categorie": "Verouderde woorden",
    "oud": "geschiedde",
    "nieuw": "gebeurde",
-      "toelichting": "In een gewone vertelling wordt 'geschiedde' contextbewust 'gebeurde'. Niet mechanisch vervangen: bij 'het woord van JAHWEH geschiedde' wordt het volgens V1230 'het woord van JAHWEH kwam'; een stem komt of klinkt volgens V1238; conjunctief-wensen en bewust plechtige formuleringen vallen onder V776.",
+   "toelichting": "In een gewone vertelling wordt 'geschiedde' contextbewust 'gebeurde'. Niet mechanisch vervangen: bij 'het woord van JAHWEH geschiedde' wordt het volgens V1230 'het woord van JAHWEH kwam'; een stem komt of klinkt volgens V1238; conjunctief-wensen en bewust plechtige formuleringen vallen onder V776.",
    "regex": "\\b[Gg]eschiedde\\b"
   },
   {
@@ -3193,10 +3193,12 @@
   {
    "id": "V340",
    "categorie": "Verouderde woorden",
-   "oud": "vlieden / vliedt / vlood / vloden / gevloden",
-   "nieuw": "vluchten / vlucht / vluchtte / vluchtten / gevlucht",
-   "toelichting": "Alle vervoegingen in één principe.",
-   "regex": "\\b[Vv]l(oden|ieden|iedt|ood)\\b"
+   "oud": "vlied",
+   "nieuw": "vlucht",
+   "toelichting": "De verouderde gebiedende wijs vlied wordt vlucht.",
+   "regex": "\\bvlied\\b",
+   "bron": "menselijke-review",
+   "bereik": "hele corpus"
   },
   {
    "id": "V341",
@@ -10713,6 +10715,46 @@
    "voorbeeld": "Lukas 3:22; Lukas 9:36; Openbaring 11:15"
   },
   {
+   "id": "MR-2K-GLOBAL-001",
+   "categorie": "Spelling en grammatica",
+   "oud": "zilvers",
+   "nieuw": "zilver",
+   "toelichting": "De stofnaam zilver krijgt in deze constructies geen verbuigings-s.",
+   "regex": "\\bzilvers\\b",
+   "bron": "menselijke-review",
+   "bereik": "hele corpus"
+  },
+  {
+   "id": "MR-2K-GLOBAL-002",
+   "categorie": "Verouderde woorden",
+   "oud": "uit oorzake van",
+   "nieuw": "wegens",
+   "toelichting": "Verouderde voorzetselgroep vervangen door het hedendaagse wegens.",
+   "regex": "\\buit oorzake van\\b",
+   "bron": "menselijke-review",
+   "bereik": "hele corpus"
+  },
+  {
+   "id": "MR-2K-GLOBAL-003",
+   "categorie": "Verouderde woorden",
+   "oud": "trawant / trawanten",
+   "nieuw": "lijfwacht / lijfwachten",
+   "toelichting": "Trawant duidt hier op een gewapende lijfwacht.",
+   "regex": "\\btrawant(en)?\\b",
+   "bron": "menselijke-review",
+   "bereik": "hele corpus"
+  },
+  {
+   "id": "MR-2K-GLOBAL-004",
+   "categorie": "Spelling en grammatica",
+   "oud": "drie jaren",
+   "nieuw": "drie jaar",
+   "toelichting": "Na een bepaald hoofdtelwoord blijft jaar in deze tijdsduurconstructie enkelvoud.",
+   "regex": "\\bdrie jaren\\b",
+   "bron": "menselijke-review",
+   "bereik": "hele corpus"
+  },
+  {
    "id": "MR-SK-001",
    "categorie": "Menselijke review",
    "oud": "aan de stelling",
@@ -10760,6 +10802,21 @@
   {
    "id": "MR-SK-004",
    "categorie": "Menselijke review",
+   "oud": "al het koninklijke zaad",
+   "nieuw": "het hele koninklijke nageslacht",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 11:1",
+   "bereik": {
+    "2koningen": [
+     "11:1"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-005",
+   "categorie": "Menselijke review",
    "oud": "alle knieën",
    "nieuw": "knieën",
    "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
@@ -10773,7 +10830,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-005",
+   "id": "MR-SK-006",
    "categorie": "Menselijke review",
    "oud": "allen man",
    "nieuw": "iedereen",
@@ -10788,7 +10845,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-006",
+   "id": "MR-SK-007",
    "categorie": "Menselijke review",
    "oud": "als zullende",
    "nieuw": "alsof zij",
@@ -10803,7 +10860,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-007",
+   "id": "MR-SK-008",
    "categorie": "Menselijke review",
    "oud": "appelen",
    "nieuw": "appels",
@@ -10818,7 +10875,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-008",
+   "id": "MR-SK-009",
    "categorie": "Menselijke review",
    "oud": "armgesmijde",
    "nieuw": "armband",
@@ -10833,7 +10890,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-009",
+   "id": "MR-SK-010",
    "categorie": "Menselijke review",
    "oud": "bejegening van kwaad",
    "nieuw": "bedreiging",
@@ -10848,7 +10905,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-010",
+   "id": "MR-SK-011",
+   "categorie": "Menselijke review",
+   "oud": "bekkeneel",
+   "nieuw": "schedel",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 9:35",
+   "bereik": {
+    "2koningen": [
+     "9:35"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-012",
    "categorie": "Menselijke review",
    "oud": "bekwame boodschap",
    "nieuw": "passende boodschap",
@@ -10863,7 +10935,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-011",
+   "id": "MR-SK-013",
    "categorie": "Menselijke review",
    "oud": "bescheid",
    "nieuw": "een teken van leven",
@@ -10878,7 +10950,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-012",
+   "id": "MR-SK-014",
+   "categorie": "Menselijke review",
+   "oud": "bevond een verbintenis in Hosea, dat hij",
+   "nieuw": "ontdekte dat Hosea samenzwoer: hij had",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 17:4",
+   "bereik": {
+    "2koningen": [
+     "17:4"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-015",
    "categorie": "Menselijke review",
    "oud": "bij geval",
    "nieuw": "toevallig",
@@ -10893,7 +10980,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-013",
+   "id": "MR-SK-016",
    "categorie": "Menselijke review",
    "oud": "burgeren",
    "nieuw": "burgers",
@@ -10908,7 +10995,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-015",
+   "id": "MR-SK-017",
+   "categorie": "Menselijke review",
+   "oud": "cederenhout",
+   "nieuw": "cederhout",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "1koningen 5:10",
+   "bereik": {
+    "1koningen": [
+     "5:10"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-018",
    "categorie": "Menselijke review",
    "oud": "Daarna gebeurde het woord van JAHWEH",
    "nieuw": "Daarna kwam het woord van JAHWEH",
@@ -10923,7 +11025,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-016",
+   "id": "MR-SK-019",
    "categorie": "Menselijke review",
    "oud": "Dat alle man tot mij kwame",
    "nieuw": "Dat iedereen tot mij zou komen",
@@ -10938,7 +11040,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-017",
+   "id": "MR-SK-020",
    "categorie": "Menselijke review",
    "oud": "dat is te zeggen",
    "nieuw": "dat wil zeggen",
@@ -10953,7 +11055,37 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-018",
+   "id": "MR-SK-021",
+   "categorie": "Menselijke review",
+   "oud": "de breuken van het huis verbeteren, naar alles wat er voor breuk bevonden zal worden",
+   "nieuw": "de bouwvalligheden van het huis herstellen, naar alles wat er aan bouwvalligheden gevonden zal worden",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 12:5",
+   "bereik": {
+    "2koningen": [
+     "12:5"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-022",
+   "categorie": "Menselijke review",
+   "oud": "de geheiligde dingen",
+   "nieuw": "de gewijde gaven",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 12:4",
+   "bereik": {
+    "2koningen": [
+     "12:4"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-023",
    "categorie": "Menselijke review",
    "oud": "de gruwel van de kinderen Ammons",
    "nieuw": "de afschuwelijke afgod van de kinderen Ammons",
@@ -10968,7 +11100,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-019",
+   "id": "MR-SK-024",
    "categorie": "Menselijke review",
    "oud": "de gruwel van de Moabieten",
    "nieuw": "de afschuwelijke afgod van de Moabieten",
@@ -10983,7 +11115,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-020",
+   "id": "MR-SK-025",
+   "categorie": "Menselijke review",
+   "oud": "de gruwelen",
+   "nieuw": "de gruweldaden",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 16:3",
+   "bereik": {
+    "2koningen": [
+     "16:3"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-026",
    "categorie": "Menselijke review",
    "oud": "de loop van de eerste",
    "nieuw": "de manier van lopen van de eerste",
@@ -10998,7 +11145,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-021",
+   "id": "MR-SK-027",
    "categorie": "Menselijke review",
    "oud": "deed een uitschot opkomen uit geheel Israël; en het uitschot was dertig duizend man",
    "nieuw": "legde heel Israël een herendienst op; de herendienst bestond uit dertig duizend man",
@@ -11013,7 +11160,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-022",
+   "id": "MR-SK-028",
    "categorie": "Menselijke review",
    "oud": "der stelling",
    "nieuw": "van het onderstel",
@@ -11028,7 +11175,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-023",
+   "id": "MR-SK-029",
    "categorie": "Menselijke review",
    "oud": "Dit is nu de oorzaak van het uitschot, dat de koning Salomo deed opkomen, om",
    "nieuw": "Dit is de reden waarom koning Salomo herendienst oplegde: om",
@@ -11043,7 +11190,39 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-024",
+   "id": "MR-SK-030",
+   "categorie": "Menselijke review",
+   "oud": "door listigheid",
+   "nieuw": "door list",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 10:19",
+   "bereik": {
+    "2koningen": [
+     "10:19"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-031",
+   "categorie": "Menselijke review",
+   "oud": "drie jaren",
+   "nieuw": "drie jaar",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 17:5",
+   "bereik": {
+    "2koningen": [
+     "17:5",
+     "18:10",
+     "24:1"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-032",
    "categorie": "Menselijke review",
    "oud": "een scheur gescheurd had",
    "nieuw": "een zware slag toegebracht had",
@@ -11058,7 +11237,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-025",
+   "id": "MR-SK-033",
    "categorie": "Menselijke review",
    "oud": "een schone zus",
    "nieuw": "een knappe zus",
@@ -11073,7 +11252,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-026",
+   "id": "MR-SK-034",
+   "categorie": "Menselijke review",
+   "oud": "een verbintenis",
+   "nieuw": "een samenzwering",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 9:14",
+   "bereik": {
+    "2koningen": [
+     "9:14"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-035",
    "categorie": "Menselijke review",
    "oud": "een wandelaar overkwam",
    "nieuw": "een wandelaar ontving",
@@ -11088,7 +11282,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-027",
+   "id": "MR-SK-036",
+   "categorie": "Menselijke review",
+   "oud": "een weinig",
+   "nieuw": "een beetje",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 10:18",
+   "bereik": {
+    "2koningen": [
+     "10:18"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-037",
    "categorie": "Menselijke review",
    "oud": "elke rondas",
    "nieuw": "elk groot schild",
@@ -11103,7 +11312,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-028",
+   "id": "MR-SK-038",
+   "categorie": "Menselijke review",
+   "oud": "En voor wat betreft zijn tering, een voortdurende tering werd hem van de koning gegeven, elk dagelijks bestemde deel op zijn dag, al de dagen van zijn leven.",
+   "nieuw": "En wat zijn levensonderhoud betreft, kreeg hij voortdurend een door de koning vastgesteld dagelijks deel, alle dagen van zijn leven.",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 25:30",
+   "bereik": {
+    "2koningen": [
+     "25:30"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-039",
    "categorie": "Menselijke review",
    "oud": "ener stelling",
    "nieuw": "van een onderstel",
@@ -11119,7 +11343,37 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-030",
+   "id": "MR-SK-040",
+   "categorie": "Menselijke review",
+   "oud": "Evenwel",
+   "nieuw": "Echter",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 12:13",
+   "bereik": {
+    "2koningen": [
+     "12:13"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-041",
+   "categorie": "Menselijke review",
+   "oud": "gaffelen",
+   "nieuw": "messen",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "1koningen 7:50",
+   "bereik": {
+    "1koningen": [
+     "7:50"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-042",
    "categorie": "Menselijke review",
    "oud": "gebeurde het woord",
    "nieuw": "kwam het woord",
@@ -11134,7 +11388,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-031",
+   "id": "MR-SK-043",
    "categorie": "Menselijke review",
    "oud": "geen oorzaken",
    "nieuw": "geen redenen",
@@ -11149,7 +11403,37 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-033",
+   "id": "MR-SK-044",
+   "categorie": "Menselijke review",
+   "oud": "gegotene",
+   "nieuw": "gegoten",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "1koningen 7:23",
+   "bereik": {
+    "1koningen": [
+     "7:23"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-045",
+   "categorie": "Menselijke review",
+   "oud": "geheiligde dingen",
+   "nieuw": "gewijde gaven",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 12:18",
+   "bereik": {
+    "2koningen": [
+     "12:18"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-046",
    "categorie": "Menselijke review",
    "oud": "gemelijk en boos",
    "nieuw": "geïrriteerd en boos",
@@ -11164,7 +11448,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-034",
+   "id": "MR-SK-047",
    "categorie": "Menselijke review",
    "oud": "gemelijk en boos",
    "nieuw": "somber gestemd en boos",
@@ -11179,7 +11463,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-035",
+   "id": "MR-SK-048",
    "categorie": "Menselijke review",
    "oud": "geslagen was aan beide voeten",
    "nieuw": "verlamd was aan beide voeten",
@@ -11194,7 +11478,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-036",
+   "id": "MR-SK-049",
    "categorie": "Menselijke review",
    "oud": "getogen",
    "nieuw": "gegaan",
@@ -11209,7 +11493,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-037",
+   "id": "MR-SK-050",
    "categorie": "Menselijke review",
    "oud": "gewassen zal zijn",
    "nieuw": "gegroeid zal zijn",
@@ -11224,7 +11508,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-038",
+   "id": "MR-SK-051",
    "categorie": "Menselijke review",
    "oud": "geweldigen",
    "nieuw": "landvoogden",
@@ -11239,7 +11523,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-039",
+   "id": "MR-SK-052",
    "categorie": "Menselijke review",
    "oud": "God en de koning gezegend",
    "nieuw": "God en de koning vaarwel gezegd",
@@ -11255,7 +11539,23 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-041",
+   "id": "MR-SK-053",
+   "categorie": "Menselijke review",
+   "oud": "gouds",
+   "nieuw": "goud",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "1koningen 10:16",
+   "bereik": {
+    "1koningen": [
+     "10:16",
+     "10:17"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-054",
    "categorie": "Menselijke review",
    "oud": "haar binnenste ontstak over haar zoon",
    "nieuw": "haar moederhart brandde van medelijden om haar zoon",
@@ -11270,7 +11570,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-042",
+   "id": "MR-SK-055",
    "categorie": "Menselijke review",
    "oud": "haar doden zoon",
    "nieuw": "haar dode zoon",
@@ -11285,7 +11585,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-043",
+   "id": "MR-SK-056",
    "categorie": "Menselijke review",
    "oud": "haarlieder dood",
    "nieuw": "hun dood",
@@ -11300,7 +11600,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-044",
+   "id": "MR-SK-057",
    "categorie": "Menselijke review",
    "oud": "hand vol meels",
    "nieuw": "hand vol meel",
@@ -11315,7 +11615,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-045",
+   "id": "MR-SK-058",
    "categorie": "Menselijke review",
    "oud": "heeft Salomo gebracht op slaafsen uitschot",
    "nieuw": "heeft Salomo tot slavenarbeid verplicht",
@@ -11330,7 +11630,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-046",
+   "id": "MR-SK-059",
    "categorie": "Menselijke review",
    "oud": "heelde het altaar",
    "nieuw": "herstelde het altaar",
@@ -11345,7 +11645,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-047",
+   "id": "MR-SK-060",
+   "categorie": "Menselijke review",
+   "oud": "Heilig Baäl een verbodsdag",
+   "nieuw": "Roep een dag van samenkomst voor Baäl af",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 10:20",
+   "bereik": {
+    "2koningen": [
+     "10:20"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-061",
    "categorie": "Menselijke review",
    "oud": "hele vergadering",
    "nieuw": "hele gemeenschap",
@@ -11360,7 +11675,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-048",
+   "id": "MR-SK-062",
    "categorie": "Menselijke review",
    "oud": "henenzond",
    "nieuw": "heenzond",
@@ -11375,7 +11690,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-049",
+   "id": "MR-SK-063",
    "categorie": "Menselijke review",
    "oud": "herren",
    "nieuw": "scharnieren",
@@ -11390,7 +11705,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-050",
+   "id": "MR-SK-064",
+   "categorie": "Menselijke review",
+   "oud": "het schedel",
+   "nieuw": "de schedel",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 9:35",
+   "bereik": {
+    "2koningen": [
+     "9:35"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-065",
    "categorie": "Menselijke review",
    "oud": "het stuk akkers",
    "nieuw": "de akker",
@@ -11405,7 +11735,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-051",
+   "id": "MR-SK-066",
    "categorie": "Menselijke review",
    "oud": "hieuwen zijn hoofd af",
    "nieuw": "hakten zijn hoofd af",
@@ -11420,7 +11750,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-052",
+   "id": "MR-SK-067",
    "categorie": "Menselijke review",
    "oud": "hoe hij gekrijgd",
    "nieuw": "hoe hij gevochten",
@@ -11435,7 +11765,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-053",
+   "id": "MR-SK-068",
+   "categorie": "Menselijke review",
+   "oud": "hoofdmannen",
+   "nieuw": "officieren",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 10:25",
+   "bereik": {
+    "2koningen": [
+     "10:25"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-069",
    "categorie": "Menselijke review",
    "oud": "ieder zijns weegs",
    "nieuw": "ieder zijn eigen weg",
@@ -11450,7 +11795,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-054",
+   "id": "MR-SK-070",
    "categorie": "Menselijke review",
    "oud": "in geen koninkrijken",
    "nieuw": "in geen enkel koninkrijk",
@@ -11465,7 +11810,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-055",
+   "id": "MR-SK-071",
    "categorie": "Menselijke review",
    "oud": "inwoneren van Gilead",
    "nieuw": "inwoners van Gilead",
@@ -11480,7 +11825,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-056",
+   "id": "MR-SK-072",
    "categorie": "Menselijke review",
    "oud": "kopers",
    "nieuw": "koper",
@@ -11495,7 +11840,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-058",
+   "id": "MR-SK-073",
+   "categorie": "Menselijke review",
+   "oud": "kramers",
+   "nieuw": "marskramers",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "1koningen 10:15",
+   "bereik": {
+    "1koningen": [
+     "10:15"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-074",
    "categorie": "Menselijke review",
    "oud": "maakte een verbintenis tegen hem",
    "nieuw": "smeedde een samenzwering tegen hem",
@@ -11511,7 +11871,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-059",
+   "id": "MR-SK-075",
+   "categorie": "Menselijke review",
+   "oud": "maakten een verbintenis",
+   "nieuw": "smeedden een samenzwering",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 21:23",
+   "bereik": {
+    "2koningen": [
+     "21:23"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-076",
    "categorie": "Menselijke review",
    "oud": "maakten over hem een weeklage",
    "nieuw": "bedreven rouw over hem",
@@ -11526,7 +11901,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-060",
+   "id": "MR-SK-077",
    "categorie": "Menselijke review",
    "oud": "mannen uitlezen",
    "nieuw": "mannen uitzoeken",
@@ -11541,7 +11916,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-061",
+   "id": "MR-SK-078",
    "categorie": "Menselijke review",
    "oud": "meer kwaads doen",
    "nieuw": "meer kwaad doen",
@@ -11556,7 +11931,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-062",
+   "id": "MR-SK-079",
    "categorie": "Menselijke review",
    "oud": "met de wederkomst van het jaar",
    "nieuw": "bij het aanbreken van het nieuwe jaar",
@@ -11571,7 +11946,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-063",
+   "id": "MR-SK-080",
    "categorie": "Menselijke review",
    "oud": "mij instellende tot",
    "nieuw": "mij aangesteld heeft als",
@@ -11586,7 +11961,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-064",
+   "id": "MR-SK-081",
    "categorie": "Menselijke review",
    "oud": "mij versteld heb",
    "nieuw": "mij vermomd heb",
@@ -11601,7 +11976,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-065",
+   "id": "MR-SK-082",
    "categorie": "Menselijke review",
    "oud": "mijn broer",
    "nieuw": "mijn broeder",
@@ -11617,7 +11992,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-066",
+   "id": "MR-SK-083",
    "categorie": "Menselijke review",
    "oud": "morgen ongeveer deze tijd",
    "nieuw": "morgen om deze tijd",
@@ -11632,7 +12007,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-067",
+   "id": "MR-SK-084",
+   "categorie": "Menselijke review",
+   "oud": "naar zijn hele maaksel",
+   "nieuw": "met zijn volledige vormgeving",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 16:10",
+   "bereik": {
+    "2koningen": [
+     "16:10"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-085",
    "categorie": "Menselijke review",
    "oud": "nettenwerk",
    "nieuw": "vlechtwerk",
@@ -11647,7 +12037,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-068",
+   "id": "MR-SK-086",
    "categorie": "Menselijke review",
    "oud": "Nog",
    "nieuw": "Ook",
@@ -11662,7 +12052,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-069",
+   "id": "MR-SK-087",
    "categorie": "Menselijke review",
    "oud": "noodde",
    "nieuw": "nodigde",
@@ -11677,7 +12067,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-070",
+   "id": "MR-SK-088",
    "categorie": "Menselijke review",
    "oud": "noodde hij niet",
    "nieuw": "nodigde hij niet uit",
@@ -11692,7 +12082,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-071",
+   "id": "MR-SK-089",
    "categorie": "Menselijke review",
    "oud": "omwille van",
    "nieuw": "vanwege",
@@ -11707,7 +12097,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-072",
+   "id": "MR-SK-090",
    "categorie": "Menselijke review",
    "oud": "op elke stelling",
    "nieuw": "op elk onderstel",
@@ -11722,7 +12112,23 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-074",
+   "id": "MR-SK-091",
+   "categorie": "Menselijke review",
+   "oud": "overtoog",
+   "nieuw": "overtrok",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "1koningen 6:21",
+   "bereik": {
+    "1koningen": [
+     "6:21",
+     "10:18"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-092",
    "categorie": "Menselijke review",
    "oud": "rondassen",
    "nieuw": "grote schilden",
@@ -11737,7 +12143,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-075",
+   "id": "MR-SK-093",
    "categorie": "Menselijke review",
    "oud": "rouw droegt",
    "nieuw": "rouw draagt",
@@ -11752,7 +12158,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-077",
+   "id": "MR-SK-094",
+   "categorie": "Menselijke review",
+   "oud": "schoffelen",
+   "nieuw": "scheppen",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "1koningen 7:45",
+   "bereik": {
+    "1koningen": [
+     "7:45"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-095",
    "categorie": "Menselijke review",
    "oud": "schouders",
    "nieuw": "steunen",
@@ -11768,7 +12189,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-078",
+   "id": "MR-SK-096",
    "categorie": "Menselijke review",
    "oud": "steelsgewijze",
    "nieuw": "sluipend",
@@ -11783,7 +12204,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-079",
+   "id": "MR-SK-097",
    "categorie": "Menselijke review",
    "oud": "stelling",
    "nieuw": "onderstel",
@@ -11798,7 +12219,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-080",
+   "id": "MR-SK-098",
    "categorie": "Menselijke review",
    "oud": "stellingen",
    "nieuw": "onderstellen",
@@ -11816,7 +12237,41 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-081",
+   "id": "MR-SK-099",
+   "categorie": "Menselijke review",
+   "oud": "talent zilvers",
+   "nieuw": "talent zilver",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 5:22",
+   "bereik": {
+    "2koningen": [
+     "5:22"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-100",
+   "categorie": "Menselijke review",
+   "oud": "talenten zilvers",
+   "nieuw": "talenten zilver",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 5:5",
+   "bereik": {
+    "2koningen": [
+     "5:5",
+     "5:23",
+     "15:19",
+     "18:14",
+     "23:33"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-101",
    "categorie": "Menselijke review",
    "oud": "ter zelver plaats",
    "nieuw": "op die plaats",
@@ -11831,7 +12286,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-082",
+   "id": "MR-SK-102",
    "categorie": "Menselijke review",
    "oud": "ticheloven",
    "nieuw": "kleioven",
@@ -11846,7 +12301,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-083",
+   "id": "MR-SK-103",
+   "categorie": "Menselijke review",
+   "oud": "tien duizend gevangen",
+   "nieuw": "tien duizend gevangenen",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 24:14",
+   "bereik": {
+    "2koningen": [
+     "24:14"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-104",
    "categorie": "Menselijke review",
    "oud": "Toen gebeurde het woord van JAHWEH",
    "nieuw": "Toen kwam het woord van JAHWEH",
@@ -11862,7 +12332,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-084",
+   "id": "MR-SK-105",
+   "categorie": "Menselijke review",
+   "oud": "tot verdoens toe",
+   "nieuw": "tot hun vernietiging",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 13:17",
+   "bereik": {
+    "2koningen": [
+     "13:17"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-106",
    "categorie": "Menselijke review",
    "oud": "tot één hoop",
    "nieuw": "tot één groep",
@@ -11877,7 +12362,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-085",
+   "id": "MR-SK-107",
+   "categorie": "Menselijke review",
+   "oud": "trawanten",
+   "nieuw": "lijfwachten",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 10:25",
+   "bereik": {
+    "2koningen": [
+     "10:25"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-108",
    "categorie": "Menselijke review",
    "oud": "u te versteken",
    "nieuw": "u te verbergen",
@@ -11892,7 +12392,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-086",
+   "id": "MR-SK-109",
    "categorie": "Menselijke review",
    "oud": "uit de stelling",
    "nieuw": "uit het onderstel",
@@ -11907,7 +12407,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-087",
+   "id": "MR-SK-110",
+   "categorie": "Menselijke review",
+   "oud": "uit oorzake van",
+   "nieuw": "wegens",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 9:14",
+   "bereik": {
+    "2koningen": [
+     "9:14"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-111",
    "categorie": "Menselijke review",
    "oud": "uit uw lendenen",
    "nieuw": "uit uw lichaam",
@@ -11922,7 +12437,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-088",
+   "id": "MR-SK-112",
    "categorie": "Menselijke review",
    "oud": "uitgelezenen",
    "nieuw": "beste mannen",
@@ -11937,7 +12452,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-089",
+   "id": "MR-SK-113",
    "categorie": "Menselijke review",
    "oud": "uitgelezenen",
    "nieuw": "beste manschappen",
@@ -11952,7 +12467,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-091",
+   "id": "MR-SK-114",
+   "categorie": "Menselijke review",
+   "oud": "uitgenomen",
+   "nieuw": "uitgezonderd",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "1koningen 4:23",
+   "bereik": {
+    "1koningen": [
+     "4:23"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-115",
    "categorie": "Menselijke review",
    "oud": "uw vaderen graf",
    "nieuw": "het graf van uw vader",
@@ -11967,7 +12497,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-092",
+   "id": "MR-SK-116",
    "categorie": "Menselijke review",
    "oud": "Uw zwaar volk",
    "nieuw": "Uw machtig volk",
@@ -11982,7 +12512,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-093",
+   "id": "MR-SK-117",
    "categorie": "Menselijke review",
    "oud": "van gelijken deed hij",
    "nieuw": "zo deed hij",
@@ -11997,7 +12527,37 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-095",
+   "id": "MR-SK-118",
+   "categorie": "Menselijke review",
+   "oud": "veel gelds",
+   "nieuw": "veel geld",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 12:10",
+   "bereik": {
+    "2koningen": [
+     "12:10"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-119",
+   "categorie": "Menselijke review",
+   "oud": "vensteren",
+   "nieuw": "vensters",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "1koningen 6:4",
+   "bereik": {
+    "1koningen": [
+     "6:4"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-120",
    "categorie": "Menselijke review",
    "oud": "verderven",
    "nieuw": "zouden vernietigen",
@@ -12012,7 +12572,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-096",
+   "id": "MR-SK-121",
+   "categorie": "Menselijke review",
+   "oud": "verdorven had",
+   "nieuw": "vernietigd had",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 21:3",
+   "bereik": {
+    "2koningen": [
+     "21:3"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-122",
    "categorie": "Menselijke review",
    "oud": "Verhaal het mij",
    "nieuw": "Vertel het mij",
@@ -12027,7 +12602,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-097",
+   "id": "MR-SK-123",
+   "categorie": "Menselijke review",
+   "oud": "vermochten niet met strijden",
+   "nieuw": "konden hem niet verslaan",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 16:5",
+   "bereik": {
+    "2koningen": [
+     "16:5"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-124",
    "categorie": "Menselijke review",
    "oud": "verschoonde hij te nemen",
    "nieuw": "zag hij ervan af te nemen",
@@ -12042,7 +12632,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-098",
+   "id": "MR-SK-125",
    "categorie": "Menselijke review",
    "oud": "verstelde zich",
    "nieuw": "vermomde zich",
@@ -12057,7 +12647,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-099",
+   "id": "MR-SK-126",
    "categorie": "Menselijke review",
    "oud": "vertoeven",
    "nieuw": "verblijven",
@@ -12072,7 +12662,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-100",
+   "id": "MR-SK-127",
    "categorie": "Menselijke review",
    "oud": "verwekkende JAHWEH",
    "nieuw": "en verwekte JAHWEH",
@@ -12087,7 +12677,67 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-101",
+   "id": "MR-SK-128",
+   "categorie": "Menselijke review",
+   "oud": "vestingen",
+   "nieuw": "schansen",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 25:1",
+   "bereik": {
+    "2koningen": [
+     "25:1"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-129",
+   "categorie": "Menselijke review",
+   "oud": "vlied",
+   "nieuw": "vlucht",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 9:3",
+   "bereik": {
+    "2koningen": [
+     "9:3"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-130",
+   "categorie": "Menselijke review",
+   "oud": "voedsterheren",
+   "nieuw": "verzorgers",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 10:1",
+   "bereik": {
+    "2koningen": [
+     "10:1"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-131",
+   "categorie": "Menselijke review",
+   "oud": "voerde krijg",
+   "nieuw": "voerde strijd",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 12:17",
+   "bereik": {
+    "2koningen": [
+     "12:17"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-132",
    "categorie": "Menselijke review",
    "oud": "volgde hem een gerecht van de koning achterna",
    "nieuw": "werd hem een gerecht van de koning achternagebracht",
@@ -12102,7 +12752,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-102",
+   "id": "MR-SK-133",
    "categorie": "Menselijke review",
    "oud": "voor ons aangezicht spelen",
    "nieuw": "voor ons aangezicht vechten",
@@ -12117,7 +12767,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-103",
+   "id": "MR-SK-134",
    "categorie": "Menselijke review",
    "oud": "vreemde vrouwen",
    "nieuw": "buitenlandse vrouwen",
@@ -12132,7 +12782,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-104",
+   "id": "MR-SK-135",
    "categorie": "Menselijke review",
    "oud": "vreemden man",
    "nieuw": "vreemdeling",
@@ -12147,7 +12797,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-105",
+   "id": "MR-SK-136",
    "categorie": "Menselijke review",
    "oud": "waren bijzonder in het veld",
    "nieuw": "stonden afzonderlijk in het veld",
@@ -12162,7 +12812,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-106",
+   "id": "MR-SK-137",
    "categorie": "Menselijke review",
    "oud": "wedergekomen",
    "nieuw": "teruggekomen",
@@ -12177,7 +12827,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-107",
+   "id": "MR-SK-138",
    "categorie": "Menselijke review",
    "oud": "werk der stelling",
    "nieuw": "werk van het onderstel",
@@ -12192,7 +12842,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-108",
+   "id": "MR-SK-139",
    "categorie": "Menselijke review",
    "oud": "wiens hart",
    "nieuw": "van wie het hart",
@@ -12207,7 +12857,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-109",
+   "id": "MR-SK-140",
    "categorie": "Menselijke review",
    "oud": "wiens kleren",
    "nieuw": "van wie de kleren",
@@ -12222,7 +12872,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-110",
+   "id": "MR-SK-141",
    "categorie": "Menselijke review",
    "oud": "wier naam",
    "nieuw": "van wie de naam",
@@ -12238,7 +12888,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-111",
+   "id": "MR-SK-142",
    "categorie": "Menselijke review",
    "oud": "woord van God gebeurde",
    "nieuw": "woord van God kwam",
@@ -12253,7 +12903,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-112",
+   "id": "MR-SK-143",
    "categorie": "Menselijke review",
    "oud": "woord van JAHWEH gebeurde",
    "nieuw": "woord van JAHWEH kwam",
@@ -12268,7 +12918,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-113",
+   "id": "MR-SK-144",
    "categorie": "Menselijke review",
    "oud": "zachtkens",
    "nieuw": "voorzichtig",
@@ -12283,7 +12933,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-114",
+   "id": "MR-SK-145",
    "categorie": "Menselijke review",
    "oud": "zeer grote menigte",
    "nieuw": "zeer grote hoeveelheid",
@@ -12298,7 +12948,7 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-115",
+   "id": "MR-SK-146",
    "categorie": "Menselijke review",
    "oud": "zeer schoon van aanzien",
    "nieuw": "heel knap om te zien",
@@ -12313,7 +12963,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-117",
+   "id": "MR-SK-147",
+   "categorie": "Menselijke review",
+   "oud": "zijkameren",
+   "nieuw": "zijkamers",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "1koningen 6:5",
+   "bereik": {
+    "1koningen": [
+     "6:5"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-148",
    "categorie": "Menselijke review",
    "oud": "zijn vaders gemaakt hadden",
    "nieuw": "zijn vader gemaakt had",
@@ -12328,7 +12993,22 @@
    "bron": "menselijke-review"
   },
   {
-   "id": "MR-SK-118",
+   "id": "MR-SK-149",
+   "categorie": "Menselijke review",
+   "oud": "zijn verbintenis",
+   "nieuw": "zijn samenzwering",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 15:15",
+   "bereik": {
+    "2koningen": [
+     "15:15"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-150",
    "categorie": "Menselijke review",
    "oud": "Zo believe het U nu",
    "nieuw": "Zo moge het U nu behagen",
@@ -12338,6 +13018,21 @@
    "bereik": {
     "2samuel": [
      "7:29"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-SK-151",
+   "categorie": "Menselijke review",
+   "oud": "zo besloot hem de koning van Assyrië, en bond hem in het gevangenhuis",
+   "nieuw": "daarom nam de koning van Assyrië hem gevangen en zette hem vast in de gevangenis",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2koningen 17:4",
+   "bereik": {
+    "2koningen": [
+     "17:4"
     ]
    },
    "bron": "menselijke-review"

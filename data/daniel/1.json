@@ -698,7 +698,7 @@
       "number": 5,
       "textSV1888": "En de koning verordende hun, wat men ze dag bij dag geven zou van de stukken der spijs des konings, en van den wijn zijns dranks, en dat men hen drie jaren alzo optoog, en dat zij ten einde derzelve zouden staan voor het aangezicht des konings.",
       "text1637": "Ende de Coninck [24] verordineerde haer [25] watmense dach by dach geven soude van [26] de stucken der spijse des Conincks, ende van den wijn [27] sijnes drancks, ende datmense [28] drie jaren [also] optoge, ende dat sy ten eynde der selver souden [29] staen voor het aengesichte des Conincks.",
-      "text2026": "En de koning verordende hun, wat men ze dag bij dag geven zou van de stukken van het voedsel van de koning, en van de wijn van zijn drank, en dat men hen drie jaren zo optoog, en dat zij ten einde daarvan zouden staan voor het aangezicht van de koning.",
+      "text2026": "En de koning verordende hun, wat men ze dag bij dag geven zou van de stukken van het voedsel van de koning, en van de wijn van zijn drank, en dat men hen drie jaar zo optoog, en dat zij ten einde daarvan zouden staan voor het aangezicht van de koning.",
       "marginNotes": [
         {
           "marker": "24",
@@ -835,7 +835,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "En de koning<sup class=\"note-marker\" data-note=\"24\">24</sup> verordende hun, wat<sup class=\"note-marker\" data-note=\"25\">25</sup> men ze dag bij dag geven zou van<sup class=\"note-marker\" data-note=\"26\">26</sup> de stukken van het voedsel van de koning, en van de wijn<sup class=\"note-marker\" data-note=\"27\">27</sup> van zijn drank, en dat<sup class=\"note-marker\" data-note=\"28\">28</sup> men hen drie jaren zo optoog, en dat zij ten einde daarvan zouden<sup class=\"note-marker\" data-note=\"29\">29</sup> staan voor het aangezicht van de koning.",
+      "text2026_html": "En de koning<sup class=\"note-marker\" data-note=\"24\">24</sup> verordende hun, wat<sup class=\"note-marker\" data-note=\"25\">25</sup> men ze dag bij dag geven zou van<sup class=\"note-marker\" data-note=\"26\">26</sup> de stukken van het voedsel van de koning, en van de wijn<sup class=\"note-marker\" data-note=\"27\">27</sup> van zijn drank, en dat<sup class=\"note-marker\" data-note=\"28\">28</sup> men hen drie jaar zo optoog, en dat zij ten einde daarvan zouden<sup class=\"note-marker\" data-note=\"29\">29</sup> staan voor het aangezicht van de koning.",
       "textSV1888_html": "En de koning<sup class=\"note-marker\" data-note=\"24\">24</sup> verordende hun, wat<sup class=\"note-marker\" data-note=\"25\">25</sup> men ze dag bij dag geven zou van<sup class=\"note-marker\" data-note=\"26\">26</sup> de stukken der spijs des konings, en van den wijn<sup class=\"note-marker\" data-note=\"27\">27</sup> zijns dranks, en dat<sup class=\"note-marker\" data-note=\"28\">28</sup> men hen drie jaren alzo optoog, en dat zij ten einde derzelve zouden<sup class=\"note-marker\" data-note=\"29\">29</sup> staan voor het aangezicht des konings.",
       "text1637_html": "Ende de Coninck <sup class=\"note-marker\" data-note=\"24\">24</sup> verordineerde haer <sup class=\"note-marker\" data-note=\"25\">25</sup> watmense dach by dach geven soude van <sup class=\"note-marker\" data-note=\"26\">26</sup> de stucken der spijse des Conincks, ende van den wijn <sup class=\"note-marker\" data-note=\"27\">27</sup> sijnes drancks, ende datmense <sup class=\"note-marker\" data-note=\"28\">28</sup> drie jaren [also] optoge, ende dat sy ten eynde der selver souden <sup class=\"note-marker\" data-note=\"29\">29</sup> staen voor het aengesichte des Conincks.",
       "phraseDiff": [
@@ -855,9 +855,9 @@
           "principe": "V201"
         },
         {
-          "old": "alzo",
-          "new": "zo",
-          "principe": "V42"
+          "old": "jaren alzo",
+          "new": "jaar zo",
+          "principe": "MR-2K-GLOBAL-004"
         },
         {
           "old": "derzelve",
@@ -868,6 +868,11 @@
           "old": "des konings.",
           "new": "van de koning.",
           "principe": "N3"
+        },
+        {
+          "old": "alzo",
+          "new": "zo",
+          "principe": "V42"
         }
       ]
     },

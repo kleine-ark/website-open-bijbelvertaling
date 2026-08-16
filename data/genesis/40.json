@@ -835,7 +835,7 @@
       "number": 3,
       "textSV1888": "En hij leverde hen in bewaring, ten huize van den overste der trawanten, in het gevangenhuis, ter plaatse, waar Jozef gevangen was.",
       "text1637": "Ende hy leverdese in bewaringe, ten huyse des oversten [3] der Trauwanten [4] in 't Gevangen-huys: ter plaetse daer Ioseph [5] gevangen was.",
-      "text2026": "En hij leverde hen in bewaring, in het huis van de overste van de trawanten, in het gevangenhuis, ter plaatse, waar Jozef gevangen was.",
+      "text2026": "En hij leverde hen in bewaring, in het huis van de overste van de lijfwachten, in het gevangenhuis, ter plaatse, waar Jozef gevangen was.",
       "marginNotes": [
         {
           "marker": "3",
@@ -961,7 +961,7 @@
           "morph": "HD"
         }
       ],
-      "text2026_html": "En hij leverde hen in bewaring, in het huis van de<sup class=\"note-marker\" data-note=\"3\">3</sup> overste van de<sup class=\"note-marker\" data-note=\"4\">4</sup> trawanten, in het gevangenhuis, ter plaatse, waar Jozef<sup class=\"note-marker\" data-note=\"5\">5</sup> gevangen was.",
+      "text2026_html": "En hij leverde hen in bewaring, in het huis van de<sup class=\"note-marker\" data-note=\"3\">3</sup> overste van de<sup class=\"note-marker\" data-note=\"4\">4</sup> lijfwachten, in het gevangenhuis, ter plaatse, waar Jozef<sup class=\"note-marker\" data-note=\"5\">5</sup> gevangen was.",
       "textSV1888_html": "En hij leverde hen in bewaring, ten huize van den<sup class=\"note-marker\" data-note=\"3\">3</sup> overste der trawanten,<sup class=\"note-marker\" data-note=\"4\">4</sup> in het gevangenhuis, ter plaatse, waar Jozef<sup class=\"note-marker\" data-note=\"5\">5</sup> gevangen was.",
       "text1637_html": "Ende hy leverdese in bewaringe, ten huyse des oversten <sup class=\"note-marker\" data-note=\"3\">3</sup> der Trauwante<i>n</i> <sup class=\"note-marker\" data-note=\"4\">4</sup> in 't Gevangen-huys: ter plaetse daer Ioseph <sup class=\"note-marker\" data-note=\"5\">5</sup> gevangen was.",
       "phraseDiff": [
@@ -974,6 +974,11 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "der trawanten,",
+          "new": "van de lijfwachten,",
+          "principe": "MR-2K-GLOBAL-003"
         },
         {
           "old": "der",
@@ -1348,7 +1353,7 @@
       "number": 4,
       "textSV1888": "En de overste der trawanten bestelde Jozef bij hen, dat hij hen diende; en zij waren sommige dagen in bewaring.",
       "text1637": "Ende de overste der Trauwanten bestelde Ioseph by hen, dat hyse diende: ende sy waren [6] [sommige] dagen in bewaringe.",
-      "text2026": "En de overste van de trawanten bestelde Jozef bij hen, dat hij hen diende; en zij waren sommige dagen in bewaring.",
+      "text2026": "En de overste van de lijfwachten bestelde Jozef bij hen, dat hij hen diende; en zij waren sommige dagen in bewaring.",
       "marginNotes": [
         {
           "marker": "6",
@@ -1421,10 +1426,15 @@
           "morph": "HR/Ncmsa"
         }
       ],
-      "text2026_html": "En de overste van de trawanten bestelde Jozef bij hen, dat hij hen diende; en zij waren<sup class=\"note-marker\" data-note=\"6\">6</sup> sommige dagen in bewaring.",
+      "text2026_html": "En de overste van de lijfwachten bestelde Jozef bij hen, dat hij hen diende; en zij waren<sup class=\"note-marker\" data-note=\"6\">6</sup> sommige dagen in bewaring.",
       "textSV1888_html": "En de overste der trawanten bestelde Jozef bij hen, dat hij hen diende; en zij waren<sup class=\"note-marker\" data-note=\"6\">6</sup> sommige dagen in bewaring.",
       "text1637_html": "Ende de overste der Trauwanten bestelde Ioseph by hen, dat hyse diende: ende sy waren <sup class=\"note-marker\" data-note=\"6\">6</sup> [sommige] dagen in bewaringe.",
       "phraseDiff": [
+        {
+          "old": "der trawanten",
+          "new": "van de lijfwachten",
+          "principe": "MR-2K-GLOBAL-003"
+        },
         {
           "old": "der",
           "new": "van de",
