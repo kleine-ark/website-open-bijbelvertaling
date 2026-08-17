@@ -854,6 +854,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
 
             most = panel.locator('details[data-options-category="meest-gebruikt"]')
             self.assertEqual(most.locator('[data-option-mirror="regelafstand"] input[type="range"]').count(), 1)
+            self.assertEqual(most.locator('[data-option-mirror="teksteditie"] select').count(), 1)
         finally:
             page.close()
 

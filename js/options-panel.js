@@ -158,6 +158,7 @@ const OptionsPanel = {
         mostUsed.append(mostUsedSummary, mostUsedList);
 
         [
+            ['teksteditie', '#opt-teksteditie'],
             ['dyslexie', '#toggle-dyslexia'],
             ['doorlopend', '#toggle-doorlopend'],
             ['godsnaam', '[data-option-summary="godsnaam"]'],
