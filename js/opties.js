@@ -407,9 +407,9 @@ const Opties = {
     // ===================================================================
     // Maten, inhoudsmaten en gewichten — omrekenen naar een modern stelsel
     // -------------------------------------------------------------------
-    // Bij `maatstelsel: 'metrisch'` of `'imperiaal'` wordt de Bijbelse maat in
-    // de OV-tekst VERVANGEN door de moderne ("driehonderd ellen" wordt
-    // "ongeveer 133 meter"); het origineel blijft in het title-attribuut staan.
+    // Bij `maatstelsel: 'metrisch'` of `'imperiaal'` blijft de Bijbelse maat in
+    // de OV-tekst staan en volgt de moderne waarde tussen haakjes
+    // ("driehonderd ellen (ongeveer 133 meter)").
     // Bij 'bijbels' (de standaard) verandert er niets aan de tekst.
     //
     // Rekenwaarden, de schalen per stelsel, contextvarianten (de lange el van
@@ -650,7 +650,7 @@ const Opties = {
             stukken.push({
                 van: map[g.start], tot: map[eind],
                 nieuw: '<span class="maat-omgerekend" title="' +
-                    this._maatAttr('Oorspronkelijk: ' + origineel + ' · ' + uitleg) + '">' + nieuweTekst + '</span>' + behoud,
+                    this._maatAttr(uitleg) + '">' + origineel + ' (' + nieuweTekst + ')</span>' + behoud,
             });
             grens = eind;
         }
@@ -687,7 +687,7 @@ const Opties = {
                 (regel.uitleg || 'de eenheid is in deze zin uit de directe context aangevuld');
             html = html.replace(regel.zoek,
                 '<span class="maat-omgerekend maat-impliciet" title="' +
-                this._maatAttr(titel) + '">' + nieuw + '</span>');
+                this._maatAttr(titel) + '">' + regel.zoek + ' (' + nieuw + ')</span>');
         }
         return html;
     },

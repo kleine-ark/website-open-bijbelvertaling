@@ -570,6 +570,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
 
             vers = page.locator('.verse-row[data-verse="4"] .col-2026')
             vers.wait_for(state="visible", timeout=5_000)
+            self.assertIn("dagreis", vers.inner_text())
             self.assertIn("ongeveer 35 km", vers.inner_text())
         finally:
             page.close()
@@ -588,7 +589,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
 
             vers = page.locator('.verse-row[data-verse="2"] .col-2026')
             vers.wait_for(state="visible", timeout=5_000)
-            self.assertIn("ongeveer 8,9 meter in zijn breedte", vers.inner_text())
+            self.assertIn("twintig (ongeveer 8,9 meter) in zijn breedte", vers.inner_text())
         finally:
             page.close()
 
