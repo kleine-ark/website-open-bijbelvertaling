@@ -86,6 +86,7 @@ class FeedbackMultipleSelectionTests(unittest.TestCase):
             )
 
             page.locator("#fb-suggestion").fill("Controleer deze doorlopende zin.")
+            page.get_by_role("button", name="Principe", exact=True).click()
             page.locator("#feedback-modal .fb-send").click()
             page.wait_for_function("() => document.querySelector('.fb-status').textContent.includes('verstuurd')")
 
@@ -93,6 +94,7 @@ class FeedbackMultipleSelectionTests(unittest.TestCase):
             fields = FeedbackFields(requests[0])
             self.assertEqual(fields.reference, "Genesis 1:31; Genesis 2:1-2")
             self.assertEqual(fields.selection.splitlines(), expected_lines)
+            self.assertEqual(fields.suggestion, "[Principe] Controleer deze doorlopende zin.")
         finally:
             page.close()
 
@@ -103,6 +105,7 @@ class FeedbackFields:
     def __init__(self, data):
         self.reference = data["entry.1027694877"][0]
         self.selection = data["entry.644152872"][0]
+        self.suggestion = data["entry.758123662"][0]
 
 
 if __name__ == "__main__":

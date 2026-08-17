@@ -378,13 +378,13 @@
     padding: 0;
     border: 0;
 }
-.feedback-modal-dialog .fb-types legend {
+.feedback-modal-dialog .fb-types-label {
     flex: 0 0 100%;
     margin-bottom: 3px;
     color: var(--text-muted);
     font-size: 12px;
 }
-.feedback-modal-dialog .fb-types label {
+.feedback-modal-dialog .fb-type-chip {
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -393,10 +393,22 @@
     border-radius: 999px;
     font-size: 11px;
     cursor: pointer;
+    background: var(--bg-surface, #fff);
+    color: var(--navy);
+    font-family: inherit;
 }
-.feedback-modal-dialog .fb-types input { margin: 0; }
+.feedback-modal-dialog .fb-type-chip:hover,
+.feedback-modal-dialog .fb-type-chip:focus-visible {
+    border-color: var(--gold);
+    outline: none;
+}
+:root[data-theme="donker"] .feedback-modal-dialog .fb-type-chip {
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+}
 
 @media (max-width: 768px) {
+    .feedback-modal-dialog textarea { font-size: 16px; }
     #topnav { padding: 0 12px; height: 56px; }
     /* Tekstopties blijven als zelfstandige hoofdactie zichtbaar; ze horen niet
        verstopt te zitten in het hamburgermenu. */

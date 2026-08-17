@@ -28,6 +28,8 @@ const Feedback = {
     },
     modal: null,
     pending: null,  // { bookId, ch, vs, ref?, text }
+    savedRange: null,
+    savedScroll: null,
 
     init() {
         this._extendPalette();
@@ -94,15 +96,15 @@ const Feedback = {
                 <h3 id="fb-title">Feedback / suggestie</h3>
                 <p class="fb-ref"></p>
                 <blockquote class="fb-quote"></blockquote>
-                <fieldset class="fb-types">
-                    <legend>Soort opmerking</legend>
-                    <label><input type="radio" name="fb-type" value="Citatie" checked> Citatie</label>
-                    <label><input type="radio" name="fb-type" value="Principe"> Principe</label>
-                    <label><input type="radio" name="fb-type" value="Spelling en grammatica"> Spelling en grammatica</label>
-                    <label><input type="radio" name="fb-type" value="Oude woorden vervangen"> Oude woorden vervangen</label>
-                    <label><input type="radio" name="fb-type" value="Woord is niet volgens principe vervangen"> Niet volgens principe vervangen</label>
-                    <label><input type="radio" name="fb-type" value="Tag onderwerp"> Tag onderwerp</label>
-                </fieldset>
+                <div class="fb-types" aria-label="Voeg een categorie toe">
+                    <span class="fb-types-label">Voeg categorie toe</span>
+                    <button type="button" class="fb-type-chip" data-prefix="Citatie">Citatie</button>
+                    <button type="button" class="fb-type-chip" data-prefix="Principe">Principe</button>
+                    <button type="button" class="fb-type-chip" data-prefix="Spelling en grammatica">Spelling en grammatica</button>
+                    <button type="button" class="fb-type-chip" data-prefix="Oude woorden vervangen">Oude woorden</button>
+                    <button type="button" class="fb-type-chip" data-prefix="Woord is niet volgens principe vervangen">Principe niet toegepast</button>
+                    <button type="button" class="fb-type-chip" data-prefix="Tag onderwerp">Onderwerptag</button>
+                </div>
                 <label for="fb-suggestion">Jouw suggestie of opmerking</label>
                 <textarea id="fb-suggestion" rows="5" placeholder="Bijv.: 'voorgesteld als — voorgedragen als'..."></textarea>
                 <div class="fb-actions">
@@ -115,6 +117,9 @@ const Feedback = {
         wrap.querySelector('.feedback-modal-backdrop').addEventListener('click', () => this.close());
         wrap.querySelector('.fb-cancel').addEventListener('click', () => this.close());
         wrap.querySelector('.fb-send').addEventListener('click', () => this.send());
+        wrap.querySelectorAll('.fb-type-chip').forEach(button => {
+            button.addEventListener('click', () => this.insertCategory(button.dataset.prefix));
+        });
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !this.modal.classList.contains('hidden')) this.close();
         });
@@ -124,6 +129,9 @@ const Feedback = {
 
     open(sel) {
         this.pending = sel;
+        const selection = window.getSelection && window.getSelection();
+        this.savedRange = selection && selection.rangeCount ? selection.getRangeAt(0).cloneRange() : null;
+        this.savedScroll = { x: window.scrollX, y: window.scrollY };
         const m = this._ensureModal();
         const refLabel = sel.ref || `${sel.bookId} ${sel.ch}:${sel.vs}`;
         m.querySelector('.fb-ref').textContent = refLabel;
@@ -142,8 +150,31 @@ const Feedback = {
 
 
     close() {
+        if (this.modal) {
+            const field = this.modal.querySelector('#fb-suggestion');
+            if (field) field.blur();
+        }
         if (this.modal) this.modal.classList.add('hidden');
         this.pending = null;
+        if (this.savedRange && window.getSelection) {
+            try {
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(this.savedRange);
+            } catch (_) { /* De tekst kan intussen opnieuw zijn opgebouwd. */ }
+        }
+        if (this.savedScroll) window.scrollTo(this.savedScroll.x, this.savedScroll.y);
+        this.savedRange = null;
+        this.savedScroll = null;
+    },
+
+    insertCategory(label) {
+        const field = this.modal && this.modal.querySelector('#fb-suggestion');
+        if (!field || !label) return;
+        const prefix = `[${label}] `;
+        if (!field.value.startsWith(prefix)) field.value = prefix + field.value;
+        field.setSelectionRange(prefix.length, prefix.length);
+        field.focus({ preventScroll: true });
     },
 
     async send() {
@@ -171,7 +202,7 @@ const Feedback = {
             chapter: this.pending.ch,
             verse: this.pending.vs,
             selected: this.pending.text,
-            suggestion: `[${m.querySelector('input[name="fb-type"]:checked').value}] ${txt}`,
+            suggestion: txt,
             datum: new Date().toISOString(),
             userAgent: navigator.userAgent
         };
