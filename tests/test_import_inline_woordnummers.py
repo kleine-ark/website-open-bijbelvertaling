@@ -423,6 +423,82 @@ def test_apply_review_file_adresseert_gidsvers_in_ander_hoofdstuk(tmp_path):
     assert saved["verses"][0]["woordnummers"][0]["herkomst"]["referentie"] == "1SA 23:29"
 
 
+def test_apply_review_file_reviewt_apocrief_tegen_lokale_grondtekst(tmp_path):
+    # Apocriefe boeken hebben geen externe uitlijngids; het reviewbestand
+    # verklaart source_type lokale-grondtekst en pint de tokenlaag met een
+    # hash die stabiel blijft wanneer de import woordnummers wegschrijft.
+    source_dir = tmp_path / "source"
+    source_dir.mkdir()
+    data_dir = tmp_path / "data" / "tobit"
+    data_dir.mkdir(parents=True)
+    chapter = {"verses": [
+        {
+            "number": 1,
+            "text2026": "Het boek van de woorden van Tobit",
+            "grondtekst": [
+                {"woord": "βίβλος", "strongs": "G976", "transliteratie": "biblos"},
+                {"woord": "λόγων", "strongs": "G3056", "transliteratie": "logon"},
+            ],
+        },
+    ]}
+    (data_dir / "1.json").write_text(json.dumps(chapter, ensure_ascii=False), encoding="utf-8")
+    ground_hash = MODULE._grondtekst_sha256(chapter)
+    review = {
+        "source": {"id": "lokale-grondtekst", "version": "1", "sha256": ground_hash},
+        "books": [{
+            "code": "TOB", "repo_book": "tobit", "chapter": 1,
+            "source_type": "lokale-grondtekst",
+            "grondtekst_sha256": ground_hash,
+            "verses": [{
+                "verse": 1,
+                "mappings": [
+                    {"tekst": "boek", "bronindices": [0], "grondindices": [0], "confidence": 1, "reviewstatus": "handmatig_gecontroleerd"},
+                    {"tekst": "woorden", "bronindices": [1], "grondindices": [1], "confidence": 1, "reviewstatus": "handmatig_gecontroleerd"},
+                ],
+            }],
+        }],
+    }
+    review_path = tmp_path / "review.json"
+    review_path.write_text(json.dumps(review, ensure_ascii=False), encoding="utf-8")
+
+    report = MODULE.apply_review_file(review_path, source_dir, tmp_path / "data", write=True)
+    saved = json.loads((data_dir / "1.json").read_text(encoding="utf-8"))
+
+    assert report["added"] == 2
+    first = saved["verses"][0]["woordnummers"][0]
+    assert first["strongs"] == ["G976"]
+    assert first["herkomst"]["dataset"] == "lokale-grondtekst"
+    assert first["herkomst"]["referentie"] == "TOB 1:1"
+    # De hash blijft na de import geldig: woordnummers tellen niet mee.
+    assert MODULE._grondtekst_sha256(saved) == ground_hash
+
+
+def test_apply_review_file_weigert_lokale_bron_met_verkeerde_hash(tmp_path):
+    source_dir = tmp_path / "source"
+    source_dir.mkdir()
+    data_dir = tmp_path / "data" / "tobit"
+    data_dir.mkdir(parents=True)
+    (data_dir / "1.json").write_text(json.dumps({"verses": [
+        {"number": 1, "text2026": "Het boek", "grondtekst": [{"woord": "βίβλος", "strongs": "G976"}]},
+    ]}, ensure_ascii=False), encoding="utf-8")
+    review = {
+        "source": {"id": "lokale-grondtekst", "version": "1", "sha256": "DEAD"},
+        "books": [{
+            "code": "TOB", "repo_book": "tobit", "chapter": 1,
+            "source_type": "lokale-grondtekst",
+            "grondtekst_sha256": "DEADBEEF",
+            "verses": [{"verse": 1, "mappings": [
+                {"tekst": "boek", "bronindices": [0], "grondindices": [0], "confidence": 1, "reviewstatus": "handmatig_gecontroleerd"},
+            ]}],
+        }],
+    }
+    review_path = tmp_path / "review.json"
+    review_path.write_text(json.dumps(review, ensure_ascii=False), encoding="utf-8")
+
+    with pytest.raises(ValueError, match="Grondtekst-hash wijkt af"):
+        MODULE.apply_review_file(review_path, source_dir, tmp_path / "data", write=False)
+
+
 def test_build_mapping_bewaart_niet_vertaald_woord_zichtbaar_bij_anker():
     result = MODULE.build_inline_mapping(
         {

@@ -276,6 +276,21 @@ def _sha256(path):
     return digest.hexdigest().upper()
 
 
+def _grondtekst_sha256(chapter):
+    """Stabiele hash over uitsluitend de grondtekstlaag van een hoofdstuk.
+
+    De hash verandert niet wanneer de import woordnummers wegschrijft, zodat
+    een reviewbestand voor een boek zonder externe uitlijngids (apocriefen)
+    aantoonbaar tegen precies deze tokenlaag is gemaakt.
+    """
+    payload = {
+        str(verse.get("number")): verse.get("grondtekst") or []
+        for verse in chapter.get("verses", [])
+    }
+    data = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(data.encode("utf-8")).hexdigest().upper()
+
+
 def apply_review_file(review_path, source_dir, data_dir=None, write=False, verse_numbers=None):
     """Bouw en merge alle gereviewde mappings uit één reproduceerbaar reviewbestand."""
     review = json.loads(Path(review_path).read_text(encoding="utf-8"))
@@ -291,15 +306,33 @@ def apply_review_file(review_path, source_dir, data_dir=None, write=False, verse
     }
 
     for book in review.get("books", []):
-        source_path = source_dir / book["source_file"]
-        expected_hash = str(book.get("source_file_sha256") or "").upper()
-        if expected_hash and _sha256(source_path) != expected_hash:
-            raise ValueError(f"SHA-256 wijkt af voor {source_path.name}")
-        external_verses = parse_usj(source_path)
+        # Boeken zonder externe uitlijngids (apocriefen/deuterocanoniek)
+        # reviewen rechtstreeks tegen hun eigen, gehashte grondtekstlaag.
+        local_source = str(book.get("source_type") or "").strip() == "lokale-grondtekst"
+        if local_source:
+            external_verses = None
+        else:
+            source_path = source_dir / book["source_file"]
+            expected_hash = str(book.get("source_file_sha256") or "").upper()
+            if expected_hash and _sha256(source_path) != expected_hash:
+                raise ValueError(f"SHA-256 wijkt af voor {source_path.name}")
+            external_verses = parse_usj(source_path)
         chapter_path = data_dir / book["repo_book"] / f"{book['chapter']}.json"
         original = chapter_path.read_text(encoding="utf-8")
         chapter = json.loads(original)
         by_number = {int(verse["number"]): verse for verse in chapter.get("verses", [])}
+        if local_source:
+            expected_ground = str(book.get("grondtekst_sha256") or "").upper()
+            if not expected_ground:
+                raise ValueError(
+                    f"Reviewbestand zonder grondtekst_sha256 voor {book['repo_book']} {book['chapter']}"
+                )
+            actual_ground = _grondtekst_sha256(chapter)
+            if actual_ground != expected_ground:
+                raise ValueError(
+                    f"Grondtekst-hash wijkt af voor {book['repo_book']} {book['chapter']}: "
+                    f"verwacht {expected_ground}, gevonden {actual_ground}"
+                )
 
         chapter_changed = False
         for verse_review in book.get("verses", []):
@@ -311,8 +344,13 @@ def apply_review_file(review_path, source_dir, data_dir=None, write=False, verse
             # lokale vers, bijvoorbeeld 1 Samuel 24:1 dat bij gids 23:29 hoort.
             source_chapter = int(verse_review.get("source_chapter", book["chapter"]))
             verse = by_number[number]
-            reference = f"{book['code']} {source_chapter}:{source_number}"
-            external = external_verses.get((source_chapter, source_number), [])
+            if external_verses is None:
+                # Lokale grondtekst als bron: bronindices == grondindices.
+                reference = f"{book['code']} {book['chapter']}:{number}"
+                external = list(verse.get("grondtekst") or [])
+            else:
+                reference = f"{book['code']} {source_chapter}:{source_number}"
+                external = external_verses.get((source_chapter, source_number), [])
             local = verse.get("grondtekst") or []
             proposed = [
                 build_inline_mapping(
