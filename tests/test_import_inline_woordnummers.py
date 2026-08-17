@@ -1580,3 +1580,97 @@ def test_genesis_4_review_bevat_alle_versen_en_dekt_iedere_lokale_positie():
         ]
         assert sorted(mapped + unmapped) == list(range(len(verse["grondtekst"])))
         assert len(mapped + unmapped) == len(set(mapped + unmapped))
+
+
+def _proefcorpus(root, mappings):
+    """Zet een corpus van één boek met één vers neer voor AUDIT.audit()."""
+    (root / "books.json").write_text(
+        json.dumps({"books": [{"id": "proefboek", "chaptersIncluded": [1]}]}),
+        encoding="utf-8",
+    )
+    (root / "proefboek").mkdir()
+    (root / "proefboek" / "1.json").write_text(
+        json.dumps(
+            {
+                "verses": [
+                    {
+                        "number": 1,
+                        "text2026": "vierhonderd jaar",
+                        "grondtekst": [
+                            {"woord": "אַרְבַּ֥ע", "strongs": "H702"},
+                            {"woord": "מֵא֖וֹת", "strongs": "H3967"},
+                        ],
+                        "woordnummers": mappings,
+                    }
+                ]
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
+
+def _proefkoppeling(tekst, voorkomen, number="H702"):
+    return {
+        "tekst": tekst,
+        "voorkomen": voorkomen,
+        "strongs": [number],
+        "confidence": 1.0,
+        "reviewstatus": "handmatig_gecontroleerd",
+        "herkomst": {
+            "dataset": "bsb-full-strongs-usj",
+            "versie": "5.6",
+            "sha256": "0" * 64,
+            "referentie": "PRF 1:1",
+            "bronindices": [0],
+        },
+    }
+
+
+def test_audit_meldt_anker_dat_alleen_binnen_een_groter_woord_staat(tmp_path, monkeypatch):
+    """"vier" in "vierhonderd jaar" rendert niet, dus moet de audit het melden.
+
+    De renderer matcht op woordgrenzen. Toen de audit nog met een losse
+    substringtelling werkte, bleef zo'n koppeling groen terwijl het
+    Strongnummer in de lezer stilzwijgend verdween.
+    """
+    _proefcorpus(tmp_path, [_proefkoppeling("vier", 1)])
+    monkeypatch.setattr(AUDIT, "DATA", tmp_path)
+
+    report = AUDIT.audit()
+
+    assert [item["reason"] for item in report["invalid_inline"]] == ["stale_anchor"]
+    assert report["invalid_inline"][0]["target"] == "vier"
+
+
+def test_audit_accepteert_anker_op_de_hele_samenstelling(tmp_path, monkeypatch):
+    """De samenstelling zelf draagt beide Strongnummers en blijft geldig."""
+    _proefcorpus(
+        tmp_path,
+        [
+            _proefkoppeling("vierhonderd", 1),
+            _proefkoppeling("vierhonderd", 1, number="H3967"),
+        ],
+    )
+    monkeypatch.setattr(AUDIT, "DATA", tmp_path)
+
+    report = AUDIT.audit()
+
+    assert report["invalid_inline"] == []
+
+
+@pytest.mark.parametrize(
+    "tekst,anker,verwacht",
+    [
+        ("vierhonderd jaar", "vier", 0),
+        ("vierhonderd jaar", "honderd", 0),
+        ("vierhonderd jaar", "vierhonderd", 1),
+        ("Vierhonderd en vier jaar", "vier", 1),
+        ("En Cham, Kanaäns vader", "Kanaän", 0),
+        ("En Cham, Kanaäns vader", "kanaäns", 1),
+        ("het ene volk en het andere volk", "volk", 2),
+        ("Twee volken zijn in uw buik", "volk", 0),
+    ],
+)
+def test_anchor_occurrences_telt_op_woordgrenzen(tekst, anker, verwacht):
+    assert AUDIT.anchor_occurrences(tekst, anker) == verwacht
