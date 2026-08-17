@@ -32,7 +32,7 @@ def test_build_stats_defaults_follow_current_changelog():
     release = read_json("data/changelog.json")["wijzigingen"][0]
 
     assert version == release["versie"]
-    assert datum == "15 augustus 2026"
+    assert datum == "17 augustus 2026"
 
 
 def service_worker_install_cache():
@@ -77,16 +77,12 @@ def test_current_release_describes_talen_en_uses_one_version():
     current_release = changelog["wijzigingen"][0]
     descriptions = " ".join(item["beschrijving"] for item in current_release["items"])
 
-    assert current_release["versie"] == "v0.37.0"
-    for subject in (
-        "materialenpagina",
-        "leem en baksteen",
-    ):
-        assert subject in descriptions
+    assert current_release["versie"] == "v0.38.0"
+    assert "Inline Strongs" in descriptions
     assert stats["version"] == current_release["versie"]
     assert service_worker_install_cache() == [f"shell-{current_release['versie']}"]
-    assert current_release["datum"] == "2026-08-15"
-    assert stats["date"] == "15 augustus 2026"
+    assert current_release["datum"] == "2026-08-17"
+    assert stats["date"] == "17 augustus 2026"
 
 
 def test_statische_release_fallbacks_verwijzen_naar_de_actuele_versie():
@@ -98,21 +94,22 @@ def test_statische_release_fallbacks_verwijzen_naar_de_actuele_versie():
         assert "v0.21.6" not in inhoud
 
 
-def test_human_review_statistics_include_2_koningen():
+def test_human_review_statistics_include_nehemia():
     stats = read_json("data/stats.json")
     verified = read_json("data/verified-chapters.json")
 
-    assert stats["books_verified"] == 57
-    assert stats["chapters_verified"] == 837
-    assert stats["verses_verified"] == 22819
-    assert stats["verses_verified_pct"] == 61.3
+    assert stats["books_verified"] == 58
+    assert stats["chapters_verified"] == 850
+    assert stats["verses_verified"] == 23226
+    assert stats["verses_verified_pct"] == 62.4
     assert "Numeri" in stats["verified_books"]
     assert "Deuteronomium" in stats["verified_books"]
     assert "Jozua" in stats["verified_books"]
     assert "Richteren" in stats["verified_books"]
     assert "2 Koningen" in stats["verified_books"]
-    assert stats["ot_verses_verified"] == 13640
-    assert stats["ot_verses_verified_pct"] == 58.8
+    assert "Nehemia" in stats["verified_books"]
+    assert stats["ot_verses_verified"] == 14047
+    assert stats["ot_verses_verified_pct"] == 60.5
     assert stats["nt_verses_verified"] == 7960
     assert stats["nt_verses_verified_pct"] == 100.0
     assert stats["ap_verses_verified"] == 1219
@@ -123,6 +120,7 @@ def test_human_review_statistics_include_2_koningen():
     assert verified["richteren"] == "all"
     assert verified["1samuel"] == "all"
     assert verified["2koningen"] == "all"
+    assert verified["nehemia"] == "all"
     assert verified["mattheus"] == "all"
     assert verified["openbaring"] == "all"
     assert verified["psalmen"] == "all"
