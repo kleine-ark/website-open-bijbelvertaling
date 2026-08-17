@@ -55,6 +55,7 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
         "1samuel",
         "1koningen",
         "2koningen",
+        "nehemia",
     } | nieuw_testament | eerder_menselijk_nagekeken_ot | nagekeken_apocrieven
 
     niet_menselijk_bevestigd = {
@@ -62,7 +63,6 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
         "2samuel",
         "1kronieken",
         "2kronieken",
-        "nehemia",
         "esther",
         "job",
         "spreuken",
