@@ -218,7 +218,7 @@
       "number": 3,
       "textSV1888": "Want als zij opgestaan waren op hun standplaats, zo lazen zij in het wetboek des HEEREN, huns Gods, een vierendeel van den dag; en op een ander vierendeel deden zij belijdenis, en aanbaden den HEERE, hun God.",
       "text1637": "Want als sy op-gestaen waren op hare stant-plaetse, so [5] lasen sy in het Wet-boeck des HEEREN haers Godts, een [6] vierendeel van den dach: Ende op een [ander] vierendeel deden sy belijdenisse, ende aenbaden den HEERE haren Godt.",
-      "text2026": "Want als zij opgestaan waren op hun standplaats, zo lazen zij in het wetboek van JAHWEH, van hun God, een vierendeel van de dag; en op een ander vierendeel deden zij belijdenis, en aanbaden JAHWEH, hun God.",
+      "text2026": "Want als zij opgestaan waren op hun standplaats, zo lazen zij in het wetboek van JAHWEH, van hun God, een vierde deel van de dag; en op een ander vierde deel deden zij belijdenis, en aanbaden JAHWEH, hun God.",
       "marginNotes": [
         {
           "marker": "5",
@@ -312,7 +312,7 @@
           "morph": "HNcmpc/Sp3mp"
         }
       ],
-      "text2026_html": "Want als zij opgestaan waren op hun standplaats, zo<sup class=\"note-marker\" data-note=\"5\">5</sup> lazen zij in het wetboek van JAHWEH, van hun God, een<sup class=\"note-marker\" data-note=\"6\">6</sup> vierendeel van de dag; en op een ander vierendeel deden zij belijdenis, en aanbaden JAHWEH, hun God.",
+      "text2026_html": "Want als zij opgestaan waren op hun standplaats, zo<sup class=\"note-marker\" data-note=\"5\">5</sup> lazen zij in het wetboek van JAHWEH, van hun God, een<sup class=\"note-marker\" data-note=\"6\">6</sup> vierde deel van de dag; en op een ander vierde deel deden zij belijdenis, en aanbaden JAHWEH, hun God.",
       "textSV1888_html": "Want als zij opgestaan waren op hun standplaats, zo<sup class=\"note-marker\" data-note=\"5\">5</sup> lazen zij in het wetboek des HEEREN, huns Gods, een<sup class=\"note-marker\" data-note=\"6\">6</sup> vierendeel van den dag; en op een ander vierendeel deden zij belijdenis, en aanbaden den HEERE, hun God.",
       "text1637_html": "Want als sy op-gestaen waren op hare stant-plaetse, so <sup class=\"note-marker\" data-note=\"5\">5</sup> lasen sy in het Wet-boeck des HEEREN haers Godts, een <sup class=\"note-marker\" data-note=\"6\">6</sup> vierendeel van den dach: Ende op een [ander] vierendeel deden sy belijdenisse, ende aenbaden den HEERE haren Godt.",
       "phraseDiff": [
@@ -322,14 +322,34 @@
           "principe": "N3"
         },
         {
+          "old": "vierendeel",
+          "new": "vierde deel",
+          "principe": null
+        },
+        {
           "old": "den",
           "new": "de",
           "principe": "N1"
         },
         {
+          "old": "vierendeel",
+          "new": "vierde deel",
+          "principe": null
+        },
+        {
           "old": "den HEERE,",
           "new": "JAHWEH,",
           "principe": "N1"
+        },
+        {
+          "old": "een vierendeel",
+          "new": "een vierde deel",
+          "principe": "MR-NEH-012"
+        },
+        {
+          "old": "een ander vierendeel",
+          "new": "een ander vierde deel",
+          "principe": "MR-NEH-013"
         }
       ]
     },
@@ -1517,7 +1537,7 @@
       "number": 11,
       "textSV1888": "En Gij hebt de zee voor hun aangezicht gekliefd, dat zij in het midden der zee op het droge zijn doorgegaan; en hun vervolgers hebt Gij in de diepten geworpen, als een steen in sterke wateren.",
       "text1637": "[h] Ende ghy hebt de zee voor haer aengesichte gekloven, dat sy in’t midden der zee op het drooge zijn doorgegaen: ende hare vervolgers hebt ghy in de diepten geworpen, als eenen steen in stercke wateren.",
-      "text2026": "En U hebt de zee voor hun aangezicht gekliefd, dat zij in het midden van de zee op het droge zijn doorgegaan; en hun vervolgers hebt U in de diepten geworpen, als een steen in sterke wateren.",
+      "text2026": "En U hebt de zee voor hun aangezicht gespleten, dat zij in het midden van de zee op het droge zijn doorgegaan; en hun vervolgers hebt U in de diepten geworpen, als een steen in sterke wateren.",
       "marginNotes": [
         {
           "marker": "h",
@@ -1604,7 +1624,7 @@
           "morph": "HAampa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup><span class=\"direct-speech\"><i> En U hebt de zee voor hun aangezicht gekliefd, dat zij in het midden van de zee op het droge zijn doorgegaan; en hun vervolgers hebt U in de diepten geworpen, als een steen in sterke wateren.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup><span class=\"direct-speech\"><i> En U hebt de zee voor hun aangezicht gespleten, dat zij in het midden van de zee op het droge zijn doorgegaan; en hun vervolgers hebt U in de diepten geworpen, als een steen in sterke wateren.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> En Gij hebt de zee voor hun aangezicht gekliefd, dat zij in het midden der zee op het droge zijn doorgegaan; en hun vervolgers hebt Gij in de diepten geworpen, als een steen in sterke wateren.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"h\">h</sup> Ende ghy hebt de zee voor haer aengesichte gekloven, dat sy in’t midden der zee op het drooge zijn doorgegaen: ende hare vervolgers hebt ghy in de diepten geworpen, als eenen steen in stercke wateren.",
       "phraseDiff": [
@@ -1612,6 +1632,11 @@
           "old": "Gij",
           "new": "U",
           "principe": "A1"
+        },
+        {
+          "old": "gekliefd,",
+          "new": "gespleten,",
+          "principe": "MR-NEH-014"
         },
         {
           "old": "der",
