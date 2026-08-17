@@ -124,7 +124,7 @@
           "morph": "HNcfpa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> Het gebeurde nu,<sup class=\"note-marker\" data-note=\"2\">2</sup> als David in zijn huis woonde, dat David tot Nathan, de profeet, zei: Zie, ik woon in een cederen huis, maar de ark van het verbond van JAHWEH onder gordijnen.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> Het gebeurde nu,<sup class=\"note-marker\" data-note=\"2\">2</sup> als David in zijn huis woonde, dat David tot Nathan, de profeet, zei: <span class=\"direct-speech\"><i>Zie, ik woon in een cederen huis, maar de ark van het verbond van JAHWEH onder gordijnen.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> Het geschiedde nu,<sup class=\"note-marker\" data-note=\"2\">2</sup> als David in zijn huis woonde, dat David tot Nathan, den profeet, zeide: Zie, ik woon in een cederen huis, maar de ark des verbonds des HEEREN onder gordijnen.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"1\">1</sup> ’T geschiedde nu <sup class=\"note-marker\" data-note=\"2\">2</sup> als David in sijn huys woonde: dat David tot Nathan den Prophete seyde, Siet ick woone in een cederen huys, maer de Arke des verbonts des HEEREN onder gordijnen.",
       "phraseDiff": [
@@ -1117,7 +1117,7 @@
           "morph": "HR/Vqc"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Maar het gebeurde in dezelfde nacht, dat het woord van God tot Nathan kwam, zeggende:</i></span>",
+      "text2026_html": "Maar het gebeurde in dezelfde nacht, dat het woord van God tot Nathan kwam, zeggende:",
       "text1637_html": "Maer ’t geschiedde inde selve nacht, dat het woort Godes tot Nathan quam, seggende,",
       "phraseDiff": [
         {
@@ -5650,7 +5650,7 @@
       "number": 11,
       "textSV1888": "En het zal geschieden, als uw dagen zullen vervuld zijn, dat gij heengaat tot uw vaderen, zo zal Ik uw zaad na u doen opstaan, hetwelk uit uw zonen zijn zal, en Ik zal zijn koninkrijk bevestigen.",
       "text1637": "Ende ’t sal geschieden, als [13] uwe dagen sullen vervullet zijn, [14] dat ghy henen gaet tot uwe vaderen, so [15] sal ick u zaet na u doen opstaen, ’twelck uyt uwe sonen zijn sal, ende ick sal [16] sijn Coninckrijcke bevestigen.",
-      "text2026": "En het zal gebeuren, als uw dagen zullen vervuld zijn, dat u heengaat tot uw vaderen, zo zal Ik uw zaad na u doen opstaan, dat uit uw zonen zijn zal, en Ik zal zijn koninkrijk bevestigen.",
+      "text2026": "En het zal gebeuren, als uw dagen zullen vervuld zijn, dat u heengaat tot uw vaders, zo zal Ik uw zaad na u doen opstaan, dat uit uw zonen zijn zal, en Ik zal zijn koninkrijk bevestigen.",
       "marginNotes": [
         {
           "marker": "13",
@@ -5768,7 +5768,7 @@
           "morph": "HNcfsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En het zal gebeuren, als<sup class=\"note-marker\" data-note=\"13\">13</sup> uw dagen zullen vervuld zijn,<sup class=\"note-marker\" data-note=\"14\">14</sup> dat u heengaat tot uw vaderen, zo<sup class=\"note-marker\" data-note=\"15\">15</sup> zal Ik uw zaad na u doen opstaan, dat uit uw zonen zijn zal, en Ik zal zijn koninkrijk bevestigen.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En het zal gebeuren, als<sup class=\"note-marker\" data-note=\"13\">13</sup> uw dagen zullen vervuld zijn,<sup class=\"note-marker\" data-note=\"14\">14</sup> dat u heengaat tot uw vaders, zo<sup class=\"note-marker\" data-note=\"15\">15</sup> zal Ik uw zaad na u doen opstaan, dat uit uw zonen zijn zal, en Ik zal zijn koninkrijk bevestigen.</i></span>",
       "textSV1888_html": "En het zal geschieden, als<sup class=\"note-marker\" data-note=\"13\">13</sup> uw dagen zullen vervuld zijn,<sup class=\"note-marker\" data-note=\"14\">14</sup> dat gij heengaat tot uw vaderen, zo<sup class=\"note-marker\" data-note=\"15\">15</sup> zal Ik uw zaad na u doen opstaan, hetwelk uit uw zonen zijn zal, en Ik zal<sup class=\"note-marker\" data-note=\"16\">16</sup> zijn koninkrijk bevestigen.",
       "text1637_html": "Ende ’t sal geschieden, als <sup class=\"note-marker\" data-note=\"13\">13</sup> uwe dagen sullen vervullet zijn, <sup class=\"note-marker\" data-note=\"14\">14</sup> dat ghy henen gaet tot uwe vaderen, so <sup class=\"note-marker\" data-note=\"15\">15</sup> sal ick u zaet na u doen opstaen, ’twelck uyt uwe sonen zijn sal, ende ick sal <sup class=\"note-marker\" data-note=\"16\">16</sup> sijn Coninckrijcke bevestigen.",
       "phraseDiff": [
@@ -5781,6 +5781,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "vaderen,",
+          "new": "vaders,",
+          "principe": "MR-1KR-007"
         },
         {
           "old": "hetwelk",

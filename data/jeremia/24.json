@@ -1290,7 +1290,7 @@
    "number": 10,
    "textSV1888": "En Ik zal onder hen zenden het zwaard, den honger en de pestilentie, totdat zij verteerd zullen zijn uit het land, dat Ik hun en hun vaderen gegeven had.",
    "text1637": "Ende ick sal onder haer senden het sweert, den honger ende de pestilentie: tot dat sy verteert sullen zijn uyt den lande, dat ick haer ende haren vaderen gegeven hadde.",
-   "text2026": "En Ik zal onder hen zenden het zwaard, de honger en de pest, totdat zij verteerd zullen zijn uit het land, dat Ik hun en hun vaderen gegeven had.",
+   "text2026": "En Ik zal onder hen zenden het zwaard, de honger en de pest, totdat zij verteerd zullen zijn uit het land, dat Ik hun en hun vaders gegeven had.",
    "marginNotes": [],
    "grondtekst": [
     {
@@ -1374,7 +1374,7 @@
      "morph": "HC/R/Ncmpc/Sp3mp"
     }
    ],
-   "text2026_html": "<span class=\"god-speaks\"><i>En Ik zal onder hen zenden het zwaard, de honger en de pest, totdat zij verteerd zullen zijn uit het land, dat Ik hun en hun vaderen gegeven had.</i></span>",
+   "text2026_html": "<span class=\"god-speaks\"><i>En Ik zal onder hen zenden het zwaard, de honger en de pest, totdat zij verteerd zullen zijn uit het land, dat Ik hun en hun vaders gegeven had.</i></span>",
    "text1637_html": "Ende ick sal onder haer senden het sweert, den honger ende de pestilentie: tot dat sy verteert sullen zijn uyt den lande, dat ick haer ende haren vaderen gegeven hadde.",
    "phraseDiff": [
     {
@@ -1383,9 +1383,14 @@
      "principe": "N1"
     },
     {
-     "old": "pestilentie",
-     "new": "pest",
+     "old": "pestilentie,",
+     "new": "pest,",
      "principe": "V914"
+    },
+    {
+     "old": "vaderen",
+     "new": "vaders",
+     "principe": "MR-1KR-007"
     }
    ]
   }
