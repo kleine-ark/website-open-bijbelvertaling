@@ -859,6 +859,28 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_thema_select_heeft_een_enkele_rand_en_pijl(self):
+        page = self.open_reader()
+        try:
+            page.locator("#topnav-tekstopties").click()
+            thema = page.locator('[data-options-category="meest-gebruikt"] select').filter(has=page.locator('option[value="licht"]'))
+            stijl = thema.evaluate(
+                """element => {
+                    const css = getComputedStyle(element);
+                    const shell = getComputedStyle(element.closest('.option-select-shell'));
+                    return {
+                        backgroundImage: css.backgroundImage,
+                        borderWidth: css.borderTopWidth,
+                        shellBorderWidth: shell.borderTopWidth,
+                    };
+                }"""
+            )
+            self.assertEqual(stijl["backgroundImage"], "none")
+            self.assertEqual(stijl["borderWidth"], "0px")
+            self.assertEqual(stijl["shellBorderWidth"], "1px")
+        finally:
+            page.close()
+
     def test_lange_keuzerij_toont_de_actuele_waarde(self):
         page = self.open_reader()
         try:
