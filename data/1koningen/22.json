@@ -21807,7 +21807,7 @@
       "number": 40,
       "textSV1888": "Alzo ontsliep Achab met zijn vaderen; en zijn zoon Ahazia werd koning in zijn plaats.",
       "text1637": "Also ontsliep Achab met sijne vaderen: ende sijn soon Ahazia wert Coninck in sijne plaetse.",
-      "text2026": "Zo ontsliep Achab met zijn vaderen; en zijn zoon Ahazia werd koning in zijn plaats.",
+      "text2026": "Zo ontsliep Achab met zijn vaders; en zijn zoon Ahazia werd koning in zijn plaats.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -21851,13 +21851,18 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "Zo ontsliep Achab met zijn vaderen; en zijn zoon Ahazia werd koning in zijn plaats.",
+      "text2026_html": "Zo ontsliep Achab met zijn vaders; en zijn zoon Ahazia werd koning in zijn plaats.",
       "text1637_html": "Also ontsliep Achab met sijne vaderen: ende sijn soon Ahazia wert Coninck in sijne plaetse.",
       "phraseDiff": [
         {
           "old": "Alzo",
           "new": "Zo",
           "principe": "V42"
+        },
+        {
+          "old": "vaderen;",
+          "new": "vaders;",
+          "principe": "MR-1KR-007"
         }
       ],
       "woordnummers": [
@@ -26059,7 +26064,7 @@
       "number": 51,
       "textSV1888": "En Josafat ontsliep met zijn vaderen, en werd bij zijn vaderen begraven in de stad van zijn vader David; en zijn zoon Joram werd koning in zijn plaats.",
       "text1637": "Ende Iosaphat ontsliep met sijne vaderen, ende wert by sijne vaderen begraven in de stadt sijns vaders Davids: ende sijn soon Ioram wert Coninck in sijne plaetse.",
-      "text2026": "En Josafat ontsliep met zijn vaderen, en werd bij zijn vaderen begraven in de stad van zijn vader David; en zijn zoon Joram werd koning in zijn plaats.",
+      "text2026": "En Josafat ontsliep met zijn vaders, en werd bij zijn vaders begraven in de stad van zijn vader David; en zijn zoon Joram werd koning in zijn plaats.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -26133,7 +26138,7 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "En Josafat ontsliep met zijn vaderen, en werd bij zijn vaderen begraven in de stad van zijn vader David; en zijn zoon Joram werd koning in zijn plaats.",
+      "text2026_html": "En Josafat ontsliep met zijn vaders, en werd bij zijn vaders begraven in de stad van zijn vader David; en zijn zoon Joram werd koning in zijn plaats.",
       "text1637_html": "Ende Iosaphat ontsliep met sijne vaderen, ende wert by sijne vaderen begraven in de stadt sijns vaders Davids: ende sijn soon Ioram wert Coninck in sijne plaetse.",
       "woordnummers": [
         {
@@ -26514,6 +26519,18 @@
               13
             ]
           }
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "vaderen,",
+          "new": "vaders,",
+          "principe": "MR-1KR-007"
+        },
+        {
+          "old": "vaderen",
+          "new": "vaders",
+          "principe": "MR-1KR-007"
         }
       ]
     },

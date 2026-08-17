@@ -556,6 +556,26 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_getaloptie_herkent_de_getalvormen_uit_1_kronieken(self):
+        page = self.open_reader(location="1kronieken/12")
+        try:
+            page.wait_for_function("window.Opties && window.Opties._eenheden")
+            page.evaluate("Opties.state.getalweergave = 'cijfers'")
+            voorbeelden = page.evaluate(
+                """() => ({
+                    zesduizend: Opties.toonGetalcijfers('zes duizend en achthonderd'),
+                    twintigduizend: Opties.toonGetalcijfers('twintig duizend en achthonderd'),
+                    tweehonderd: Opties.toonGetalcijfers('tweehonderd acht en tachtig'),
+                    vierentwintigduizend: Opties.toonGetalcijfers('vier en twintig duizend')
+                })"""
+            )
+            self.assertIn('(6.800)</span>', voorbeelden["zesduizend"])
+            self.assertIn('(20.800)</span>', voorbeelden["twintigduizend"])
+            self.assertIn('(288)</span>', voorbeelden["tweehonderd"])
+            self.assertIn('(24.000)</span>', voorbeelden["vierentwintigduizend"])
+        finally:
+            page.close()
+
     def test_metrische_optie_rekent_een_dagreis_in_1_koningen_om(self):
         """Een dagreis is een afstandsmaat en mag niet als archaÃ¯sch restant blijven staan."""
         page = self.open_reader(location="1koningen/19")
