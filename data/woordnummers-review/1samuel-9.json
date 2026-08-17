@@ -14,7 +14,7 @@
   "versindeling_afwijking": {
     "nederlandse_1samuel_9_1_tot_27": "MorphHB 1Sam.9.1 tot en met 1Sam.9.27",
     "uitlijngids": "De BSB-uitlijngids komt vers voor vers overeen met de lokale nummering 9:1-27.",
-    "bevestigingsmethode": "Offset 0. De opgeslagen grondtekst is opnieuw uit de gepinde MorphHB-bron gelezen en token voor token identiek bevonden voor alle 27 verzen.",
+    "bevestigingsmethode": "Offset 0. De opgeslagen grondtekst is opnieuw uit de gepinde MorphHB-bron gelezen en token voor token identiek bevonden voor alle 27 verzen. De inleesroutine houdt het ketiv aan; in 9:26 staat daardoor de ketivvorm ה/גג (H1406) in de tokenlaag, terwijl het qere הַ/גָּ֣גָ/ה (met richtingsuitgang) binnen <note type=\"variant\"> niet meetelt.",
     "herstel_nodig": false
   },
   "books": [
