@@ -307,9 +307,12 @@ def apply_review_file(review_path, source_dir, data_dir=None, write=False, verse
             if verse_numbers is not None and number not in verse_numbers:
                 continue
             source_number = int(verse_review.get("source_verse", number))
+            # Optioneel: het gidsvers kan in een ander hoofdstuk liggen dan het
+            # lokale vers, bijvoorbeeld 1 Samuel 24:1 dat bij gids 23:29 hoort.
+            source_chapter = int(verse_review.get("source_chapter", book["chapter"]))
             verse = by_number[number]
-            reference = f"{book['code']} {book['chapter']}:{source_number}"
-            external = external_verses.get((int(book["chapter"]), source_number), [])
+            reference = f"{book['code']} {source_chapter}:{source_number}"
+            external = external_verses.get((source_chapter, source_number), [])
             local = verse.get("grondtekst") or []
             proposed = [
                 build_inline_mapping(

@@ -345,6 +345,84 @@ def test_apply_review_file_beperkt_import_tot_gevraagde_verzen(tmp_path):
     assert "woordnummers" not in saved["verses"][1]
 
 
+def test_apply_review_file_adresseert_gidsvers_in_ander_hoofdstuk(tmp_path):
+    # 1 Samuel 24:1 hoort bij gidsvers 23:29: het lokale vers staat in
+    # hoofdstuk 24, maar de uitlijngids telt dat vers nog bij hoofdstuk 23.
+    # Het optionele veld source_chapter maakt die verwijzing adresseerbaar.
+    source_dir = tmp_path / "source"
+    source_dir.mkdir()
+    source_path = source_dir / "091SA.usj"
+    source_path.write_text(
+        json.dumps(
+            {
+                "type": "USJ",
+                "content": [
+                    {"type": "chapter", "marker": "c", "number": "23"},
+                    {
+                        "type": "para",
+                        "marker": "p",
+                        "content": [
+                            {"type": "verse", "marker": "v", "number": "29"},
+                            {"type": "char", "marker": "w", "strong": "H5927", "content": ["went up"]},
+                            " ",
+                            {"type": "char", "marker": "w", "strong": "H1732", "content": ["David"]},
+                        ],
+                    },
+                    {"type": "chapter", "marker": "c", "number": "24"},
+                    {
+                        "type": "para",
+                        "marker": "p",
+                        "content": [
+                            {"type": "verse", "marker": "v", "number": "1"},
+                            {"type": "char", "marker": "w", "strong": "H1961", "content": ["it came to pass"]},
+                        ],
+                    },
+                ],
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    source_hash = MODULE._sha256(source_path)
+    data_dir = tmp_path / "data" / "1samuel"
+    data_dir.mkdir(parents=True)
+    (data_dir / "24.json").write_text(json.dumps({"verses": [
+        {
+            "number": 1,
+            "text2026": "En David trok op",
+            "grondtekst": [
+                {"woord": "וַיַּעַל", "strongs": "H5927"},
+                {"woord": "דָּוִד", "strongs": "H1732"},
+            ],
+        },
+    ]}), encoding="utf-8")
+    review = {
+        "source": {"id": "bsb-full-strongs-usj", "version": "5.6", "sha256": "SOURCE"},
+        "books": [{
+            "code": "1SA", "repo_book": "1samuel", "chapter": 24,
+            "source_file": "091SA.usj", "source_file_sha256": source_hash,
+            "verses": [{
+                "verse": 1, "source_chapter": 23, "source_verse": 29,
+                "mappings": [
+                    {"tekst": "trok op", "bronindices": [0], "grondindices": [0], "confidence": 1, "reviewstatus": "handmatig_gecontroleerd"},
+                    {"tekst": "David", "bronindices": [1], "grondindices": [1], "confidence": 1, "reviewstatus": "handmatig_gecontroleerd"},
+                ],
+            }],
+        }],
+    }
+    review_path = tmp_path / "review.json"
+    review_path.write_text(json.dumps(review), encoding="utf-8")
+
+    report = MODULE.apply_review_file(review_path, source_dir, tmp_path / "data", write=True)
+    saved = json.loads((data_dir / "24.json").read_text(encoding="utf-8"))
+
+    assert report["added"] == 2
+    strongs = [item["strongs"] for item in saved["verses"][0]["woordnummers"]]
+    assert strongs == [["H5927"], ["H1732"]]
+    # De herkomstreferentie noemt het gidshoofdstuk, niet het lokale hoofdstuk.
+    assert saved["verses"][0]["woordnummers"][0]["herkomst"]["referentie"] == "1SA 23:29"
+
+
 def test_build_mapping_bewaart_niet_vertaald_woord_zichtbaar_bij_anker():
     result = MODULE.build_inline_mapping(
         {
