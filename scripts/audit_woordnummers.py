@@ -11,6 +11,26 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 NUMBER_RE = re.compile(r"^(?:H\d+[A-Za-z]?|G\d+[A-Za-z]?|OVL\d+|OVG\d+)$")
 
+# De renderer in js/woordnummers.js plaatst een anker alleen op een hele
+# woordvorm en gebruikt daarvoor
+# (^|[^\p{L}\p{N}])(anker)(?=$|[^\p{L}\p{N}]).
+# Python kent geen \p{...}; \w dekt dezelfde letters en cijfers, alleen de
+# underscore hoort er hier niet bij. Vandaar [\W_] als woordgrens.
+BOUNDARY = r"[\W_]"
+
+
+def anchor_occurrences(text, target):
+    """Tel hoe vaak `target` als hele woordvorm in `text` staat.
+
+    Telt met dezelfde woordgrenzen als de renderer, zodat een anker als
+    "vier" in "vierhonderd jaar" niet meetelt. Een substringtelling zou hier
+    wel een treffer geven en de koppeling stil laten verdwijnen.
+    """
+    if not target:
+        return 0
+    pattern = rf"(?:^|{BOUNDARY})(?:{re.escape(target)})(?=$|{BOUNDARY})"
+    return len(re.findall(pattern, text, flags=re.IGNORECASE | re.UNICODE))
+
 
 def source_script(word):
     codepoints = [ord(char) for char in str(word or "") if char.isalpha()]
@@ -155,7 +175,7 @@ def audit():
                             linked_strongs[number] += 1
                     target = str(mapping.get("tekst") or mapping.get("anker") or "")
                     occurrence = mapping.get("voorkomen")
-                    if not target or not isinstance(occurrence, int) or occurrence < 1 or verse_text.casefold().count(target.casefold()) < occurrence:
+                    if not target or not isinstance(occurrence, int) or occurrence < 1 or anchor_occurrences(verse_text, target) < occurrence:
                         report["invalid_inline"].append({**location, "reason": "stale_anchor", "target": target})
                     if not mapping.get("tekst") and mapping.get("plaats") not in {"voor", "na"}:
                         report["invalid_inline"].append({**location, "reason": "invalid_insertion_position"})
