@@ -374,7 +374,7 @@
       "number": 2,
       "textSV1888": "En hij deed dat kwaad was in de ogen des HEEREN, naar de gruwelen der heidenen, die de HEERE voor het aangezicht der kinderen Israëls uit de bezitting verdreven had.",
       "text1637": "Ende hy dede dat quaet was in de oogen des HEEREN; nae [3] de grouwelen der Heydenen, die de HEERE voor het aengesichte der kinderen Israëls uyt de besittinge verdreven hadde.",
-      "text2026": "En hij deed dat kwaad was in de ogen van JAHWEH, naar de gruwelen van de heidenen, die JAHWEH voor het aangezicht van de Israëlieten uit de bezitting verdreven had.",
+      "text2026": "En hij deed dat kwaad was in de ogen van JAHWEH, naar de gruwelijke dingen van de heidenen, die JAHWEH voor het aangezicht van de Israëlieten uit de bezitting verdreven had.",
       "marginNotes": [
         {
           "marker": "3",
@@ -446,7 +446,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "En hij deed dat kwaad was in de ogen van JAHWEH, naar<sup class=\"note-marker\" data-note=\"3\">3</sup> de gruwelen van de heidenen, die JAHWEH voor het aangezicht van de Israëlieten uit de bezitting verdreven had.",
+      "text2026_html": "En hij deed dat kwaad was in de ogen van JAHWEH, naar<sup class=\"note-marker\" data-note=\"3\">3</sup> de gruwelijke dingen van de heidenen, die JAHWEH voor het aangezicht van de Israëlieten uit de bezitting verdreven had.",
       "textSV1888_html": "En hij deed dat kwaad was in de ogen des HEEREN, naar<sup class=\"note-marker\" data-note=\"3\">3</sup> de gruwelen der heidenen, die de HEERE voor het aangezicht der kinderen Israëls uit de bezitting verdreven had.",
       "text1637_html": "Ende hy dede dat quaet was in de oogen des HEEREN; nae <sup class=\"note-marker\" data-note=\"3\">3</sup> de grouwelen der Heydenen, die de HEERE voor het aengesichte der kinderen Israëls uyt de besittinge verdreven hadde.",
       "phraseDiff": [
@@ -456,9 +456,9 @@
           "principe": "N3"
         },
         {
-          "old": "der",
-          "new": "van de",
-          "principe": "N2"
+          "old": "gruwelen der",
+          "new": "gruwelijke dingen van de",
+          "principe": "V1524"
         },
         {
           "old": "de HEERE",
@@ -12386,7 +12386,7 @@
       "number": 24,
       "textSV1888": "En zijn knechten maakten een verbintenis tegen hem, en doodden hem in zijn huis.",
       "text1637": "Ende sijne knechten maeckten eene verbintenisse tegen hem, ende doodden hem in sijn huys.",
-      "text2026": "En zijn knechten maakten een verbintenis tegen hem, en doodden hem in zijn huis.",
+      "text2026": "En zijn knechten maakten een samenzwering tegen hem, en doodden hem in zijn huis.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -12415,7 +12415,7 @@
           "morph": "HR/Ncmsc/Sp3ms"
         }
       ],
-      "text2026_html": "En zijn knechten maakten een verbintenis tegen hem, en doodden hem in zijn huis.",
+      "text2026_html": "En zijn knechten maakten een samenzwering tegen hem, en doodden hem in zijn huis.",
       "text1637_html": "Ende sijne knechten maeckten eene verbintenisse tegen hem, ende doodden hem in sijn huys.",
       "woordnummers": [
         {
@@ -12554,13 +12554,20 @@
             ]
           }
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "verbintenis",
+          "new": "samenzwering",
+          "principe": "V1525"
+        }
       ]
     },
     {
       "number": 25,
       "textSV1888": "Maar het volk des lands sloeg hen allen, die de verbintenis tegen den koning Amon gemaakt hadden; en het volk des lands maakte zijn zoon Josia koning in zijn plaats.",
       "text1637": "Maer het volck des lants [46] sloechse alle, die de verbintenisse tegen den Coninck Amon gemaeckt hadden: ende het volck des lants maeckte sijnen sone Iosia Coninck in sijne plaetse.",
-      "text2026": "Maar het volk van het land sloeg hen allen, die de verbintenis tegen de koning Amon gemaakt hadden; en het volk van het land maakte zijn zoon Josia koning in zijn plaats.",
+      "text2026": "Maar het volk van het land sloeg hen allen, die de samenzwering tegen de koning Amon gemaakt hadden; en het volk van het land maakte zijn zoon Josia koning in zijn plaats.",
       "marginNotes": [
         {
           "marker": "46",
@@ -12652,7 +12659,7 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "Maar het volk van het<sup class=\"note-marker\" data-note=\"46\">46</sup> land sloeg hen allen, die de verbintenis tegen de koning Amon gemaakt hadden; en het volk van het land maakte zijn zoon Josia koning in zijn plaats.",
+      "text2026_html": "Maar het volk van het<sup class=\"note-marker\" data-note=\"46\">46</sup> land sloeg hen allen, die de samenzwering tegen de koning Amon gemaakt hadden; en het volk van het land maakte zijn zoon Josia koning in zijn plaats.",
       "textSV1888_html": "Maar het volk des lands<sup class=\"note-marker\" data-note=\"46\">46</sup> sloeg hen allen, die de verbintenis tegen den koning Amon gemaakt hadden; en het volk des lands maakte zijn zoon Josia koning in zijn plaats.",
       "text1637_html": "Maer het volck des lants <sup class=\"note-marker\" data-note=\"46\">46</sup> sloechse alle, die de verbintenisse tegen den Coninck Amon gemaeckt hadden: ende het volck des lants maeckte sijnen sone Iosia Coninck in sijne plaetse.",
       "phraseDiff": [
@@ -12660,6 +12667,11 @@
           "old": "des lands",
           "new": "van het land",
           "principe": "N3"
+        },
+        {
+          "old": "verbintenis",
+          "new": "samenzwering",
+          "principe": "V1525"
         },
         {
           "old": "den",
