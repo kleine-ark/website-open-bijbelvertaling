@@ -407,7 +407,7 @@
       "number": 4,
       "textSV1888": "(Want Jeremia was nog ingaande en uitgaande in het midden des volks, en zij hadden hem nog in het gevangenhuis niet gesteld.",
       "text1637": "(Want Ieremia was [noch] [7] ingaende ende uytgaende in ’t midden des volcks: ende sy en hadden hem [noch] in ’t [8] gevangenhuys niet gestelt.",
-      "text2026": "(Want Jeremia was nog ingaande en uitgaande in het midden van het volk, en zij hadden hem nog in het gevangenhuis niet gesteld.",
+      "text2026": "(Want Jeremia was nog ingaande en uitgaande in het midden van het volk, en zij hadden hem nog in het gevangenis niet gesteld.",
       "marginNotes": [
         {
           "marker": "7",
@@ -476,7 +476,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "(Want Jeremia was<sup class=\"note-marker\" data-note=\"7\">7</sup> nog ingaande en uitgaande in het midden van het volk, en zij hadden hem nog in het<sup class=\"note-marker\" data-note=\"8\">8</sup> gevangenhuis niet gesteld.",
+      "text2026_html": "(Want Jeremia was<sup class=\"note-marker\" data-note=\"7\">7</sup> nog ingaande en uitgaande in het midden van het volk, en zij hadden hem nog in het<sup class=\"note-marker\" data-note=\"8\">8</sup> gevangenis niet gesteld.",
       "textSV1888_html": "(Want Jeremia was<sup class=\"note-marker\" data-note=\"7\">7</sup> nog ingaande en uitgaande in het midden des volks, en zij hadden hem nog in het<sup class=\"note-marker\" data-note=\"8\">8</sup> gevangenhuis niet gesteld.",
       "text1637_html": "(Want Ieremia was [noch] <sup class=\"note-marker\" data-note=\"7\">7</sup> ingaende ende uytgaende in ’t midden des volcks: ende sy en hadden hem [noch] in ’t <sup class=\"note-marker\" data-note=\"8\">8</sup> gevangenhuys niet gestelt.",
       "phraseDiff": [
@@ -484,6 +484,11 @@
           "old": "des volks,",
           "new": "van het volk,",
           "principe": "N3"
+        },
+        {
+          "old": "gevangenhuis",
+          "new": "gevangenis",
+          "principe": "V1506"
         }
       ]
     },
@@ -1605,7 +1610,7 @@
       "number": 15,
       "textSV1888": "En de vorsten werden zeer toornig op Jeremia en sloegen hem; en zij stelden hem in het gevangenhuis, ten huize van Jonathan, den schrijver; want zij hadden dat tot een gevangenhuis gemaakt.",
       "text1637": "Ende de Vorsten werden seer toornich op Ieremia, ende [23] sloegen hem: ende sy stelden hem in’t [24] gevangen-huys, ten huyse Ionathans des Schrijvers; want sy hadden dat tot een [25] gevangen-huys gemaeckt.",
-      "text2026": "En de vorsten werden zeer boos op Jeremia en sloegen hem; en zij stelden hem in het gevangenhuis, in het huis van Jonathan, de schrijver; want zij hadden dat tot een gevangenhuis gemaakt.",
+      "text2026": "En de vorsten werden zeer boos op Jeremia en sloegen hem; en zij stelden hem in het gevangenis, in het huis van Jonathan, de schrijver; want zij hadden dat tot een gevangenis gemaakt.",
       "marginNotes": [
         {
           "marker": "23",
@@ -1721,7 +1726,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "En de vorsten werden zeer boos op Jeremia en<sup class=\"note-marker\" data-note=\"23\">23</sup> sloegen hem; en zij stelden hem in<sup class=\"note-marker\" data-note=\"24\">24</sup> het gevangenhuis, in het huis van Jonathan, de schrijver; want zij hadden dat tot een<sup class=\"note-marker\" data-note=\"25\">25</sup> gevangenhuis gemaakt.",
+      "text2026_html": "En de vorsten werden zeer boos op Jeremia en<sup class=\"note-marker\" data-note=\"23\">23</sup> sloegen hem; en zij stelden hem in<sup class=\"note-marker\" data-note=\"24\">24</sup> het gevangenis, in het huis van Jonathan, de schrijver; want zij hadden dat tot een<sup class=\"note-marker\" data-note=\"25\">25</sup> gevangenis gemaakt.",
       "textSV1888_html": "En de vorsten werden zeer toornig op Jeremia en<sup class=\"note-marker\" data-note=\"23\">23</sup> sloegen hem; en zij stelden hem in<sup class=\"note-marker\" data-note=\"24\">24</sup> het gevangenhuis, ten huize van Jonathan, den schrijver; want zij hadden dat tot een<sup class=\"note-marker\" data-note=\"25\">25</sup> gevangenhuis gemaakt.",
       "text1637_html": "Ende de Vorsten werden seer toornich op Ieremia, ende <sup class=\"note-marker\" data-note=\"23\">23</sup> sloegen hem: ende sy stelden hem in’t <sup class=\"note-marker\" data-note=\"24\">24</sup> gevangen-huys, ten huyse Ionathans des Schrijvers; want sy hadden dat tot een <sup class=\"note-marker\" data-note=\"25\">25</sup> gevangen-huys gemaeckt.",
       "phraseDiff": [
@@ -1731,14 +1736,19 @@
           "principe": "V262"
         },
         {
-          "old": "ten huize",
-          "new": "in het huis",
-          "principe": null
+          "old": "gevangenhuis, ten huize",
+          "new": "gevangenis, in het huis",
+          "principe": "V1506"
         },
         {
           "old": "den",
           "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "gevangenhuis",
+          "new": "gevangenis",
+          "principe": "V1506"
         }
       ]
     },
@@ -2028,7 +2038,7 @@
       "number": 18,
       "textSV1888": "Voorts zeide Jeremia tot den koning Zedekia: Wat heb ik tegen u, of tegen uw knechten, of tegen dit volk gezondigd, dat gijlieden mij in het gevangenhuis gesteld hebt?",
       "text1637": "Voorts seyde Ieremia tot den Coninck Zedekia: Wat heb ick tegen u, ofte tegen uwe knechten, ofte tegen dit volck gesondicht, dat ghylieden my in’t [32] gevangen-huys gestelt hebt?",
-      "text2026": "Verder zei Jeremia tot de koning Zedekia: Wat heb ik tegen u, of tegen uw knechten, of tegen dit volk gezondigd, dat u mij in het gevangenhuis gesteld hebt?",
+      "text2026": "Verder zei Jeremia tot de koning Zedekia: Wat heb ik tegen u, of tegen uw knechten, of tegen dit volk gezondigd, dat u mij in het gevangenis gesteld hebt?",
       "marginNotes": [
         {
           "marker": "32",
@@ -2125,7 +2135,7 @@
           "morph": "HTd/Ncmsa"
         }
       ],
-      "text2026_html": "Verder zei Jeremia tot de koning Zedekia: <span class=\"direct-speech\"><i>Wat heb ik tegen u, of tegen uw knechten, of tegen dit volk gezondigd, dat u mij in het gevangenhuis gesteld hebt?</i></span>",
+      "text2026_html": "Verder zei Jeremia tot de koning Zedekia: <span class=\"direct-speech\"><i>Wat heb ik tegen u, of tegen uw knechten, of tegen dit volk gezondigd, dat u mij in het gevangenis gesteld hebt?</i></span>",
       "textSV1888_html": "Voorts zeide Jeremia tot den koning Zedekia: Wat heb ik tegen u, of tegen uw knechten, of tegen dit volk gezondigd, dat gijlieden mij in<sup class=\"note-marker\" data-note=\"32\">32</sup> het gevangenhuis gesteld hebt?",
       "text1637_html": "Voorts seyde Ieremia tot den Coninck Zedekia: Wat heb ick tegen u, ofte tegen uwe knechten, ofte tegen dit volck gesondicht, dat ghylieden my in’t <sup class=\"note-marker\" data-note=\"32\">32</sup> gevangen-huys gestelt hebt?",
       "phraseDiff": [
@@ -2143,6 +2153,11 @@
           "old": "gijlieden",
           "new": "u",
           "principe": "A2"
+        },
+        {
+          "old": "gevangenhuis",
+          "new": "gevangenis",
+          "principe": "V1506"
         }
       ]
     },

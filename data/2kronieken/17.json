@@ -5075,7 +5075,7 @@
       "number": 12,
       "textSV1888": "Alzo nam Josafat toe, en werd ten hoogste groot; daartoe bouwde hij in Juda burchten en schatsteden.",
       "text1637": "Alsoo nam Iosaphat toe, ende wert ten hoochsten [14] groot, daer toe bouwde hy in Iuda [15] burchten, ende schatsteden.",
-      "text2026": "Zo nam Josafat toe, en werd ten hoogste groot; daartoe bouwde hij in Juda burchten en schatsteden.",
+      "text2026": "Zo nam Josafat toe, en werd ten hoogste groot; daartoe bouwde hij in Juda burchten en voorraadsteden.",
       "marginNotes": [
         {
           "marker": "14",
@@ -5149,7 +5149,7 @@
           "morph": "HNcfpa"
         }
       ],
-      "text2026_html": "Zo nam Josafat toe, en werd ten hoogste<sup class=\"note-marker\" data-note=\"14\">14</sup> groot; daartoe bouwde hij in Juda<sup class=\"note-marker\" data-note=\"15\">15</sup> burchten en schatsteden.",
+      "text2026_html": "Zo nam Josafat toe, en werd ten hoogste<sup class=\"note-marker\" data-note=\"14\">14</sup> groot; daartoe bouwde hij in Juda<sup class=\"note-marker\" data-note=\"15\">15</sup> burchten en voorraadsteden.",
       "textSV1888_html": "Alzo nam Josafat toe, en werd ten hoogste<sup class=\"note-marker\" data-note=\"14\">14</sup> groot; daartoe bouwde hij in Juda<sup class=\"note-marker\" data-note=\"15\">15</sup> burchten en schatsteden.",
       "text1637_html": "Alsoo nam Iosaphat toe, ende wert ten hoochsten <sup class=\"note-marker\" data-note=\"14\">14</sup> groot, daer toe bouwde hy in Iuda <sup class=\"note-marker\" data-note=\"15\">15</sup> burchten, ende schatsteden.",
       "phraseDiff": [
@@ -5157,6 +5157,11 @@
           "old": "Alzo",
           "new": "Zo",
           "principe": "V42"
+        },
+        {
+          "old": "schatsteden.",
+          "new": "voorraadsteden.",
+          "principe": "V1508"
         }
       ],
       "woordnummers": [
@@ -5423,7 +5428,7 @@
       "number": 13,
       "textSV1888": "En hij had veel werks in de steden van Juda, en krijgslieden, kloeke helden in Jeruzalem.",
       "text1637": "Ende hy hadde [16] veel wercks in de steden van Iuda: ende krijchs-lieden kloecke helden in Ierusalem.",
-      "text2026": "En hij had veel werks in de steden van Juda, en soldaten, strijdbare helden in Jeruzalem.",
+      "text2026": "En hij had veel werk in de steden van Juda, en soldaten, strijdbare helden in Jeruzalem.",
       "marginNotes": [
         {
           "marker": "16",
@@ -5490,10 +5495,15 @@
           "morph": "HR/Np"
         }
       ],
-      "text2026_html": "En hij had<sup class=\"note-marker\" data-note=\"16\">16</sup> veel werks in de steden van Juda, en soldaten, strijdbare helden in Jeruzalem.",
+      "text2026_html": "En hij had<sup class=\"note-marker\" data-note=\"16\">16</sup> veel werk in de steden van Juda, en soldaten, strijdbare helden in Jeruzalem.",
       "textSV1888_html": "En hij had<sup class=\"note-marker\" data-note=\"16\">16</sup> veel werks in de steden van Juda, en krijgslieden, kloeke helden in Jeruzalem.",
       "text1637_html": "Ende hy hadde <sup class=\"note-marker\" data-note=\"16\">16</sup> veel wercks in de steden van Iuda: ende krijchs-lieden kloecke helden in Ierusalem.",
       "phraseDiff": [
+        {
+          "old": "werks",
+          "new": "werk",
+          "principe": "V1509"
+        },
         {
           "old": "krijgslieden, kloeke",
           "new": "soldaten, strijdbare",
@@ -7278,7 +7288,7 @@
       "number": 18,
       "textSV1888": "En naast hem was Jozabad; en met hem waren honderd en tachtig duizend, ten krijge toegerust.",
       "text1637": "Ende naest hem was Iozabad; ende met hem waren hondert en tachtentich duysent, ten krijge toegerust.",
-      "text2026": "En naast hem was Jozabad; en met hem waren honderd en tachtig duizend, ten oorloge toegerust.",
+      "text2026": "En naast hem was Jozabad; en met hem waren honderd en tachtig duizend, voor de oorlog toegerust.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -7327,13 +7337,13 @@
           "morph": "HNcbsa"
         }
       ],
-      "text2026_html": "En naast hem was Jozabad; en met hem waren honderd en tachtig duizend, ten oorloge toegerust.",
+      "text2026_html": "En naast hem was Jozabad; en met hem waren honderd en tachtig duizend, voor de oorlog toegerust.",
       "text1637_html": "Ende naest hem was Iozabad; ende met hem waren hondert en tachtentich duysent, ten krijge toegerust.",
       "phraseDiff": [
         {
-          "old": "krijge",
-          "new": "oorloge",
-          "principe": null
+          "old": "ten krijge",
+          "new": "voor de oorlog",
+          "principe": "V1510"
         }
       ],
       "woordnummers": [
