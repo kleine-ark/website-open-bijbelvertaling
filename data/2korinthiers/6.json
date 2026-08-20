@@ -1203,7 +1203,7 @@
       "number": 5,
       "textSV1888": "In slagen, in gevangenissen, in beroerten, in arbeid, in waken, in vasten,",
       "text1637": "In slagen, in gevangenissen, in [12] beroerten, in arbeydt, in waken, in vasten.",
-      "text2026": "In slagen, in gevangenissen, in beroerten, in arbeid, in waken, in vasten,",
+      "text2026": "In slagen, in gevangenissen, in onlusten, in arbeid, in waken, in vasten,",
       "marginNotes": [
         {
           "marker": "12",
@@ -1287,7 +1287,7 @@
           "morfologie": "N-DPF"
         }
       ],
-      "text2026_html": "In slagen, in gevangenissen, in<sup class=\"note-marker\" data-note=\"12\">12</sup> beroerten, in arbeid, in waken, in vasten,",
+      "text2026_html": "In slagen, in gevangenissen, in<sup class=\"note-marker\" data-note=\"12\">12</sup> onlusten, in arbeid, in waken, in vasten,",
       "textSV1888_html": "In slagen, in gevangenissen, in<sup class=\"note-marker\" data-note=\"12\">12</sup> beroerten, in arbeid, in waken, in vasten,",
       "text1637_html": "In slagen, in gevangenissen, in <sup class=\"note-marker\" data-note=\"12\">12</sup> beroerten, in arbeydt, in waken, in vasten.",
       "woordnummers": [
@@ -1401,6 +1401,13 @@
               11
             ]
           }
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "beroerten,",
+          "new": "onlusten,",
+          "principe": "V1515"
         }
       ]
     },

@@ -11204,7 +11204,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En kwam in het huis van de overste van de synagoge; en zag de beroerte en degenen, die zeer huilden en huilden.",
+      "text2026": "En kwam in het huis van de overste van de synagoge; en zag de onrust en degenen, die zeer huilden en huilden.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -11299,7 +11299,7 @@
       ],
       "hsv": "En Hij kwam bij het huis van het hoofd van de synagoge en zag de opschudding en hen die luid huilden en jammerden.",
       "nbg51": "En zij kwamen in het huis van de overste der synagoge en Hij zag het misbaar en mensen, die luid weenden en weeklaagden.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"31\">31</sup> En kwam in het huis van de overste van de synagoge; en zag de<sup class=\"note-marker\" data-note=\"32\">32</sup> beroerte en degenen, die zeer huilden en huilden.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"31\">31</sup> En kwam in het huis van de overste van de synagoge; en zag de<sup class=\"note-marker\" data-note=\"32\">32</sup> onrust en degenen, die zeer huilden en huilden.",
       "textSV1888": "En kwam in het huis des oversten der synagoge; en zag de beroerte en degenen, die zeer weenden en huilden.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"31\">31</sup> En kwam in het huis des oversten der synagoge; en zag de<sup class=\"note-marker\" data-note=\"32\">32</sup> beroerte en degenen, die zeer weenden en huilden.",
       "phraseDiff": [
@@ -11307,6 +11307,11 @@
           "old": "des oversten der",
           "new": "van de overste van de",
           "principe": "N2"
+        },
+        {
+          "old": "beroerte",
+          "new": "onrust",
+          "principe": "V1515"
         },
         {
           "old": "weenden",
@@ -11473,7 +11478,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "En ingegaan zijnde, zei Hij tot hen: Wat maakt u beroerte, en wat weent u? Het kind is niet gestorven, maar het slaapt.",
+      "text2026": "En ingegaan zijnde, zei Hij tot hen: Waarom maakt u misbaar, en wat weent u? Het kind is niet gestorven, maar het slaapt.",
       "aandachtspunten": "",
       "status": "draft",
       "grondtekst": [
@@ -11570,7 +11575,7 @@
       ],
       "hsv": "En toen Hij naar binnen gegaan was, zei Hij tegen hen: Waarom maakt u misbaar en huilt u? ⓒHet kind is niet gestorven, maar het slaapt.",
       "nbg51": "En binnengekomen, zeide Hij tot hen: Waarom maakt gij misbaar en weent gij? Het kind is niet gestorven, maar het slaapt.",
-      "text2026_html": "En ingegaan zijnde, zei Hij tot hen: <span class=\"god-speaks\"><i>Wat maakt u beroerte, en wat weent u?<sup class=\"note-marker\" data-note=\"k\">k</sup> Het kind is niet gestorven, maar het slaapt.</i></span>",
+      "text2026_html": "En ingegaan zijnde, zei Hij tot hen: <span class=\"god-speaks\"><i>Waarom maakt u misbaar, en wat weent u?<sup class=\"note-marker\" data-note=\"k\">k</sup> Het kind is niet gestorven, maar het slaapt.</i></span>",
       "textSV1888": "En ingegaan zijnde, zeide Hij tot hen: Wat maakt gij beroerte, en wat weent gij? Het kind is niet gestorven, maar het slaapt.",
       "textSV1888_html": "En ingegaan zijnde, zeide Hij tot hen: Wat maakt gij beroerte, en wat weent gij?<sup class=\"note-marker\" data-note=\"k\">k</sup> Het kind is niet gestorven, maar het slaapt.",
       "phraseDiff": [
@@ -11580,9 +11585,14 @@
           "principe": "W1"
         },
         {
-          "old": "gij",
-          "new": "u",
-          "principe": "A1"
+          "old": "Wat",
+          "new": "Waarom",
+          "principe": "V1515"
+        },
+        {
+          "old": "gij beroerte,",
+          "new": "u misbaar,",
+          "principe": "V1515"
         },
         {
           "old": "gij?",

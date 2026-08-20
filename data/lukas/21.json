@@ -1362,7 +1362,7 @@
       "number": 6,
       "textSV1888": "Wat deze dingen aangaat, die gij aanschouwt, er zullen dagen komen, in welke niet een steen op den anderen steen zal gelaten worden, die niet zal worden afgebroken.",
       "text1637": "[Wat] dese dingen [aengaet], die ghy aenschouwt, [d] daer sullen dagen komen, in welcke niet [eenen] steen op [den anderen] steen en sal gelaten worden, die niet en sal worden afgebroken.",
-      "text2026": "Wat deze dingen betreft, die u aanschouwt, er zullen dagen komen, in welke niet een steen op de anderen steen zal gelaten worden, die niet zal worden afgebroken.",
+      "text2026": "Wat deze dingen betreft, die u aanschouwt, er zullen dagen komen, waarin niet een steen op de anderen steen zal gelaten worden, die niet zal worden afgebroken.",
       "marginNotes": [
         {
           "marker": "d",
@@ -1464,7 +1464,7 @@
           "morfologie": "V-FPI-3S"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>Wat deze dingen betreft, die u aanschouwt,<sup class=\"note-marker\" data-note=\"d\">d</sup> er zullen dagen komen, in welke niet een steen op de anderen steen zal gelaten worden, die niet zal worden afgebroken.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>Wat deze dingen betreft, die u aanschouwt,<sup class=\"note-marker\" data-note=\"d\">d</sup> er zullen dagen komen, waarin niet een steen op de anderen steen zal gelaten worden, die niet zal worden afgebroken.</i></span>",
       "textSV1888_html": "Wat deze dingen aangaat, die gij aanschouwt,<sup class=\"note-marker\" data-note=\"d\">d</sup> er zullen dagen komen, in welke niet een steen op den anderen steen zal gelaten worden, die niet zal worden afgebroken.",
       "text1637_html": "[<i>Wat</i>] dese dingen [<i>aengaet</i>], die ghy aenschouwt, <sup class=\"note-marker\" data-note=\"d\">d</sup> daer sullen dagen komen, in welcke niet [<i>eenen</i>] steen op [<i>den anderen</i>] steen en sal gelaten worden, die niet en sal worden afgebroken.",
       "phraseDiff": [
@@ -1477,6 +1477,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "in welke",
+          "new": "waarin",
+          "principe": "V1516"
         },
         {
           "old": "den",
@@ -2375,7 +2380,7 @@
       "number": 9,
       "textSV1888": "En wanneer gij zult horen van oorlogen en beroerten, zo wordt niet verschrikt; want deze dingen moeten eerst geschieden; maar nog is terstond het einde niet.",
       "text1637": "Ende wanneer ghy sult hooren van oorlogen ende [10] beroerten, so en wort niet verschrickt. Want dese dingen moeten [11] eerst geschieden: maer [noch] en is terstont het eynde niet.",
-      "text2026": "En wanneer u zult horen van oorlogen en beroerten, zo wordt niet verschrikt; want deze dingen moeten eerst gebeuren; maar nog is meteen het einde niet.",
+      "text2026": "En wanneer u zult horen van oorlogen en onlusten, zo wordt niet verschrikt; want deze dingen moeten eerst gebeuren; maar nog is meteen het einde niet.",
       "marginNotes": [
         {
           "marker": "10",
@@ -2502,7 +2507,7 @@
           "morfologie": "N-NSN"
         }
       ],
-      "text2026_html": "<span class=\"god-speaks\"><i>En wanneer u zult horen van oorlogen en<sup class=\"note-marker\" data-note=\"10\">10</sup> beroerten, zo wordt niet verschrikt; want deze dingen moeten<sup class=\"note-marker\" data-note=\"11\">11</sup> eerst gebeuren; maar nog is meteen het einde niet.</i></span>",
+      "text2026_html": "<span class=\"god-speaks\"><i>En wanneer u zult horen van oorlogen en<sup class=\"note-marker\" data-note=\"10\">10</sup> onlusten, zo wordt niet verschrikt; want deze dingen moeten<sup class=\"note-marker\" data-note=\"11\">11</sup> eerst gebeuren; maar nog is meteen het einde niet.</i></span>",
       "textSV1888_html": "En wanneer gij zult horen van oorlogen en<sup class=\"note-marker\" data-note=\"10\">10</sup> beroerten, zo wordt niet verschrikt; want deze dingen moeten<sup class=\"note-marker\" data-note=\"11\">11</sup> eerst geschieden; maar nog is terstond het einde niet.",
       "text1637_html": "Ende wanneer ghy sult hooren van oorlogen ende <sup class=\"note-marker\" data-note=\"10\">10</sup> beroerten, so en wort niet verschrickt. Want dese dingen moeten <sup class=\"note-marker\" data-note=\"11\">11</sup> eerst geschieden: maer [<i>noch</i>] en is terstont het eynde niet.",
       "phraseDiff": [
@@ -2510,6 +2515,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "beroerten,",
+          "new": "onlusten,",
+          "principe": "V1515"
         },
         {
           "old": "geschieden;",
