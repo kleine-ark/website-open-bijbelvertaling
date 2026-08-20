@@ -7576,7 +7576,7 @@
       "number": 19,
       "textSV1888": "Dezen waren in den dienst des konings; behalve degenen, die de koning in de vaste steden door gans Juda gezet had.",
       "text1637": "Dese [20] waren in den dienst des Conincks: behalven de gene, die de Coninck inde vaste steden door gantsch Iuda geset hadde.",
-      "text2026": "Deze waren in de dienst van de koning; behalve degenen, die de koning in de versterkte steden door geheel Juda gezet had.",
+      "text2026": "Deze waren in de dienst van de koning; afgezien van degenen, die de koning in de versterkte steden door geheel Juda gezet had.",
       "marginNotes": [
         {
           "marker": "20",
@@ -7648,7 +7648,7 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Deze<sup class=\"note-marker\" data-note=\"20\">20</sup> waren in de dienst van de koning; behalve degenen, die de koning in de versterkte steden door geheel Juda gezet had.",
+      "text2026_html": "Deze<sup class=\"note-marker\" data-note=\"20\">20</sup> waren in de dienst van de koning; afgezien van degenen, die de koning in de versterkte steden door geheel Juda gezet had.",
       "textSV1888_html": "Dezen<sup class=\"note-marker\" data-note=\"20\">20</sup> waren in den dienst des konings; behalve degenen, die de koning in de vaste steden door gans Juda gezet had.",
       "text1637_html": "Dese <sup class=\"note-marker\" data-note=\"20\">20</sup> waren in den dienst des Conincks: behalven de gene, die de Coninck inde vaste steden door gantsch Iuda geset hadde.",
       "phraseDiff": [
@@ -7666,6 +7666,11 @@
           "old": "des konings;",
           "new": "van de koning;",
           "principe": "N3"
+        },
+        {
+          "old": "behalve",
+          "new": "afgezien van",
+          "principe": "V1526"
         },
         {
           "old": "vaste",
