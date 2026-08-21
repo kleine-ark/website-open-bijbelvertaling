@@ -49,7 +49,7 @@ class TopnavQuickActionsTests(unittest.TestCase):
             self.assertEqual(button.count(), 1)
             self.assertEqual(
                 page.locator("#column-toggles-wrapper > button").all_text_contents(),
-                ["Verschillen SV-OV", "Strong"],
+                ["Verschillen SV-OV", "Grondtekst-link"],
             )
             button.click()
             self.assertEqual(button.get_attribute("aria-pressed"), "true")

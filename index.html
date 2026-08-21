@@ -38,7 +38,7 @@
     <!-- Auto-open Search bij ?q=... van andere pagina's -->
     <script>window.addEventListener('load',function(){try{var p=new URLSearchParams(location.search);var q=p.get('q');if(q&&typeof Search!=='undefined'){setTimeout(function(){Search.open(q);},200);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}});</script>
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css?v=0.38.2">
+    <link rel="stylesheet" href="css/style.css?v=0.38.4">
     <link rel="stylesheet" href="css/print.css" media="print">
 
     <!-- JSONLD:start (auto) -->
@@ -146,7 +146,7 @@
                     this.classList.toggle('is-on', on);
                     const cb = document.querySelector('input[data-toggle-col=diff]'); if (cb) { cb.checked = on; cb.dispatchEvent(new Event('change',{bubbles:true})); }
                 ">Verschillen SV-OV</button>
-                <button type="button" id="quick-strongs-btn" class="quickfilter-btn" aria-pressed="false">Strong</button>
+                <button type="button" id="quick-strongs-btn" class="quickfilter-btn" aria-pressed="false">Grondtekst-link</button>
             </div>
         </div>
         <div id="book-intro"></div>
@@ -524,7 +524,7 @@
     <script src="js/export.js"></script>
     <script src="js/references.js"></script>
     <script src="js/woordnummers.js"></script>
-    <script src="js/lexicon.js?v=0.38.2"></script>
+    <script src="js/lexicon.js?v=0.38.4"></script>
     </div><!-- /main-wrapper -->
 
     <!-- Zwevend optiespaneel -->
