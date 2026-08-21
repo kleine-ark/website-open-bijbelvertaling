@@ -93,6 +93,7 @@ const OptionsPanel = {
                 selectors: [
                     '#opt-teksteditie', '#toggle-book-intro', '#toggle-chapter-intro',
                     '#toggle-strongs', '[data-toggle-col="diff"]',
+                    '[data-parallel-editie]',
                     '[data-toggle-col="1637"]', '[data-toggle-col="margin1637"]',
                     '[data-optie="kolomLayout"]', '[data-toggle-col="noteDiff"]',
                     '[data-toggle-col="hebrew"]', '#toggle-hs-vers', '#toggle-contextmarkeringen',

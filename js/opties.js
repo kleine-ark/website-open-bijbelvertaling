@@ -22,6 +22,7 @@ const Opties = {
         apocriefeBoeken: 'aan',
         ethiopischeBoeken: 'uit',
         teksteditie: 'nl-ov',    // actieve Bijbeltekst; de interface blijft Nederlands
+        parallelEdities: [],     // maximaal drie extra edities naast de primaire tekst
         lettertype: 'klassiek',
         regelafstand: 'normaal',
     },
@@ -95,6 +96,48 @@ const Opties = {
         // Versnummers-checkbox (in 'Pagina & leeshulp') synchroniseren met state
         const vnCb = document.getElementById('toggle-versnummers');
         if (vnCb) vnCb.checked = this.state.versnummers !== 'uit';
+
+        if (!Array.isArray(this.state.parallelEdities)) this.state.parallelEdities = [];
+        this.state.parallelEdities = [...new Set(this.state.parallelEdities)].slice(0, 3);
+        const parallelInputs = [...document.querySelectorAll('[data-parallel-editie]')];
+        const syncParallelInputs = () => {
+            const selected = this.state.parallelEdities;
+            parallelInputs.forEach(input => {
+                input.checked = selected.includes(input.dataset.parallelEditie);
+                input.disabled = !input.checked && selected.length >= 3;
+            });
+        };
+        parallelInputs.forEach(input => input.addEventListener('change', () => {
+            const code = input.dataset.parallelEditie;
+            let selected = this.state.parallelEdities.filter(item => item !== code);
+            if (input.checked && selected.length < 3) selected.push(code);
+            this.state.parallelEdities = selected;
+            syncParallelInputs();
+            this.save();
+            this.applyToCurrentChapter();
+        }));
+        syncParallelInputs();
+
+        // Snelle Strong-schakelaar boven de leestekst. Deze bedient bewust de
+        // bestaande optie, zodat opslag, hertekenen en alle spiegels gelijklopen.
+        const quickStrongs = document.getElementById('quick-strongs-btn');
+        const strongsCb = document.getElementById('toggle-strongs');
+        const syncQuickStrongs = () => {
+            if (!quickStrongs) return;
+            const enabled = this.state.strongs === 'aan';
+            quickStrongs.setAttribute('aria-pressed', String(enabled));
+            quickStrongs.classList.toggle('is-on', enabled);
+        };
+        if (quickStrongs && strongsCb) {
+            quickStrongs.addEventListener('click', () => {
+                strongsCb.checked = this.state.strongs !== 'aan';
+                strongsCb.dispatchEvent(new Event('change', { bubbles: true }));
+                syncQuickStrongs();
+            });
+            strongsCb.addEventListener('change', syncQuickStrongs);
+        }
+        window.addEventListener('ov:opties-gewijzigd', syncQuickStrongs);
+        syncQuickStrongs();
 
         const alternatiefLettertype = document.getElementById('toggle-lettertype-alternatief');
         if (alternatiefLettertype) {
@@ -190,6 +233,9 @@ const Opties = {
         content.classList.remove('layout-naast', 'layout-eronder');
         const mode = this.state.kolomLayout === 'eronder' ? 'eronder' : 'naast';
         content.classList.add('layout-' + mode);
+        content.querySelectorAll('.edition-comparison').forEach(comparison => {
+            comparison.dataset.layout = mode;
+        });
     },
 
     applyVerseNumbersClass() {

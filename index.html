@@ -146,6 +146,7 @@
                     this.classList.toggle('is-on', on);
                     const cb = document.querySelector('input[data-toggle-col=diff]'); if (cb) { cb.checked = on; cb.dispatchEvent(new Event('change',{bubbles:true})); }
                 ">Verschillen SV-OV</button>
+                <button type="button" id="quick-strongs-btn" class="quickfilter-btn" aria-pressed="false">Strong</button>
             </div>
         </div>
         <div id="book-intro"></div>
@@ -666,10 +667,19 @@
                         <option value="pl-gdanska1881">Pools — Biblia Gdańska 1881</option>
                         <option value="tr-open-basic-nt">Turks — Open Basic Turkish NT</option>
                     </select></label>
-                    <fieldset class="option-choice option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/vergelijkingsedities.png" alt="" aria-hidden="true"><span>Vergelijkingsedities</span></span></legend><div class="option-choice-values option-choice-grid">
+                    <fieldset id="parallel-editions-choice" class="option-choice option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/vergelijkingsedities.png" alt="" aria-hidden="true"><span>Parallelle edities <small>maximaal 3</small></span></span></legend><div class="option-choice-values option-choice-grid">
+                        <label><input type="checkbox" data-parallel-editie="nl-ov"> Open Vertaling</label>
+                        <label><input type="checkbox" data-parallel-editie="fr-lsg1910"> Frans — Segond</label>
+                        <label><input type="checkbox" data-parallel-editie="en-webbe"> Engels — WEB</label>
+                        <label><input type="checkbox" data-parallel-editie="ar-vd"> Arabisch — Van Dyck</label>
+                        <label><input type="checkbox" data-parallel-editie="uk-ukrfb"> Oekraïens</label>
+                        <label><input type="checkbox" data-parallel-editie="de-luther1912"> Duits — Luther</label>
+                        <label><input type="checkbox" data-parallel-editie="es-rv1909"> Spaans — Reina-Valera</label>
+                        <label><input type="checkbox" data-parallel-editie="pl-gdanska1881"> Pools — Gdańska</label>
+                        <label><input type="checkbox" data-parallel-editie="tr-open-basic-nt"> Turks</label>
                         <label><input type="checkbox" data-toggle-col="1637"> SV 1637</label>
                         <label><input type="checkbox" data-toggle-col="sv1888"> SV 1888</label>
-                        <label><input type="checkbox" data-toggle-col="2026" checked> Open Vertaling</label>
+                        <label><input type="checkbox" data-toggle-col="2026" checked> Primaire Bijbeltekst</label>
                     </div></fieldset>
                     <fieldset class="option-choice option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/kanttekeningen.png" alt="" aria-hidden="true"><span>Kanttekeningen</span></span></legend><div class="option-choice-values option-choice-grid">
                         <label><input type="checkbox" data-toggle-col="margin1637"> KT 1637</label>
@@ -677,9 +687,9 @@
                         <label><input type="checkbox" data-toggle-col="margin2026"> OV-kanttekeningen als kolom</label>
                         <label><input type="checkbox" id="toggle-kt-popup" onchange="document.body.classList.toggle('kt-popup-mode', this.checked)"> OV-kanttekeningen als popup</label>
                     </div></fieldset>
-                    <fieldset class="option-choice option-choice-inline option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/extra-kolommen.png" alt="" aria-hidden="true"><span>Extra kolommen</span></span></legend>
-                        <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="naast"> Ernaast</label>
-                        <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="eronder"> Eronder</label>
+                    <fieldset class="option-choice option-choice-inline option-choice-with-icon"><legend><span class="option-label-with-icon"><img class="option-icon" src="images/iconen/instellingen/extra-kolommen.png" alt="" aria-hidden="true"><span>Weergave parallelle edities</span></span></legend>
+                        <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="naast"> Naast elkaar</label>
+                        <label><input type="radio" name="opt-kolomLayout" data-optie="kolomLayout" value="eronder"> Onder elkaar</label>
                     </fieldset>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/verschillen-vertalingen.png" alt="" aria-hidden="true"><span><strong>Verschillen SV–OV</strong></span><input type="checkbox" data-toggle-col="diff"></label>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/verschillen-kanttekeningen.png" alt="" aria-hidden="true"><span><strong>Verschillen in kanttekeningen</strong></span><input type="checkbox" data-toggle-col="noteDiff"></label>

@@ -60,7 +60,16 @@ const Editor = {
     },
 
     saveVerse(row, bookId, chapterNum, verseNum) {
-        const text2026 = row.querySelector('.col-2026')?.innerText?.trim() || '';
+        const textCell = row.querySelector('.col-2026 .primary-edition') || row.querySelector('.col-2026');
+        let text2026 = '';
+        if (textCell) {
+            const clean = textCell.cloneNode(true);
+            clean.querySelectorAll('.note-marker').forEach(marker => marker.remove());
+            clean.querySelectorAll('.dropcap').forEach(dropcap => {
+                dropcap.replaceWith(document.createTextNode(dropcap.dataset.letter || dropcap.textContent || ''));
+            });
+            text2026 = clean.innerText.trim();
+        }
         const opmerkingen = row.querySelector('.col-opmerkingen')?.innerText?.trim() || '';
         const aandachtspunten = row.querySelector('.col-notes')?.innerText?.trim() || '';
         const status = row.dataset.status || 'empty';
