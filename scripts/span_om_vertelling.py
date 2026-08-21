@@ -43,6 +43,10 @@ import sys
 WORTEL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(WORTEL, "scripts"))
 from sweep_principe import lees, schrijf, kaal  # noqa: E402
+try:
+    from apply_citation_review_overdracht import REVIEWED_KEEP  # noqa: E402
+except ImportError:
+    REVIEWED_KEEP = {}
 
 SPREEK = (r"(?:zei|zeide|zeiden|sprak|spraken|riep|riepen|antwoordde|antwoordden|"
           r"gebood|geboden|vroeg|vraagde|gezegd|gesproken|geantwoord|bad|schreef|zeggende)")
@@ -156,6 +160,10 @@ def main():
                 continue
             s, aankondiging, rest = uitslag
             if s not in a.soorten:
+                VORIG = straks
+                continue
+            ref = (boek, int(d.get("number")), int(v.get("number")))
+            if s == "B" and ref in REVIEWED_KEEP:
                 VORIG = straks
                 continue
             if s in ("A", "C"):

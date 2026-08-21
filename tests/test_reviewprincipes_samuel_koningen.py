@@ -42,10 +42,10 @@ def test_reviewcorrecties_zijn_in_de_verzen_aan_hun_principe_gekoppeld():
     principes = json.loads(
         (ROOT / "data" / "wijzigingsprincipes.json").read_text(encoding="utf-8")
     )["principes"]
-    ids = {
-        (normaliseer(item["oud"]), normaliseer(item["nieuw"])): item["id"]
-        for item in principes
-    }
+    ids = {}
+    for item in principes:
+        sleutel = (normaliseer(item["oud"]), normaliseer(item["nieuw"]))
+        ids.setdefault(sleutel, set()).add(item["id"])
     hoofdstukken = {}
     ontbrekend = []
     for boek, hoofdstuk, versnummer, oud, nieuw in REVIEW_CORRECTIES:
@@ -59,8 +59,10 @@ def test_reviewcorrecties_zijn_in_de_verzen_aan_hun_principe_gekoppeld():
         )
         verwacht = ids[(normaliseer(oud), normaliseer(nieuw))]
         gekoppeld = {item.get("principe") for item in vers.get("phraseDiff", [])}
-        if verwacht not in gekoppeld:
-            ontbrekend.append(f"{boek} {hoofdstuk}:{versnummer} -> {verwacht}")
+        if verwacht.isdisjoint(gekoppeld):
+            ontbrekend.append(
+                f"{boek} {hoofdstuk}:{versnummer} -> {', '.join(sorted(verwacht))}"
+            )
 
     assert not ontbrekend, "Niet gekoppelde reviewprincipes:\n" + "\n".join(ontbrekend)
 
