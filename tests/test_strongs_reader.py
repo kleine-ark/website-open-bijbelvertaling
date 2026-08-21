@@ -989,7 +989,7 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             panel = page.locator(".strongs-sheet-panel")
             panel.wait_for(state="visible", timeout=5_000)
             initial = panel.bounding_box()
-            self.assertGreaterEqual(initial["height"], 630)
+            self.assertAlmostEqual(initial["height"], 450, delta=2)
 
             resize_handle = page.locator(".strongs-sheet-resize-handle")
             self.assertTrue(resize_handle.is_visible())

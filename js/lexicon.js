@@ -232,7 +232,7 @@ const Lexicon = {
         const maxHeight = Math.max(320, window.innerHeight - (viewportMargin * 2));
         return {
             width: Math.min(maxWidth, Math.max(560, Number(width) || 760)),
-            height: Math.min(maxHeight, Math.max(420, Number(height) || window.innerHeight * 0.75))
+            height: Math.min(maxHeight, Math.max(420, Number(height) || window.innerHeight * 0.5))
         };
     },
 
