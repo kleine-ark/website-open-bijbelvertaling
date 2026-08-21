@@ -3,6 +3,7 @@
 const Lexicon = {
     currentTooltip: null,
     lastTrigger: null,
+    strongsSheetSizeKey: 'ov-strongs-sheet-size',
 
     hoverTooltip: null,
     hoverTimeout: null,
@@ -181,6 +182,9 @@ const Lexicon = {
         sheet.innerHTML = `
             <section class="strongs-sheet-panel">
                 <div class="strongs-sheet-handle" aria-hidden="true"></div>
+                <div class="strongs-sheet-resize-handle" role="separator"
+                    aria-label="Woordenboekvenster groter of kleiner maken"
+                    aria-orientation="vertical"></div>
                 <header class="strongs-sheet-header">
                     <div>
                         <span id="strongs-sheet-number" class="lexicon-strongs">${this.escapeHtml(strongs)}</span>
@@ -215,10 +219,69 @@ const Lexicon = {
         });
         sheet.querySelector('.strongs-sheet-close').addEventListener('click', () => this.hideTooltip(true));
         document.body.appendChild(sheet);
+        this.setupStrongSheetResize(sheet.querySelector('.strongs-sheet-panel'));
         document.body.classList.add('strongs-sheet-open');
         this.currentTooltip = sheet;
         this.lastTrigger = anchorEl;
         sheet.querySelector('.strongs-sheet-close').focus();
+    },
+
+    strongSheetBounds(width, height) {
+        const viewportMargin = 20;
+        const maxWidth = Math.max(320, window.innerWidth - (viewportMargin * 2));
+        const maxHeight = Math.max(320, window.innerHeight - (viewportMargin * 2));
+        return {
+            width: Math.min(maxWidth, Math.max(560, Number(width) || 760)),
+            height: Math.min(maxHeight, Math.max(420, Number(height) || window.innerHeight * 0.75))
+        };
+    },
+
+    setupStrongSheetResize(panel) {
+        if (!panel || window.matchMedia('(max-width: 768px)').matches) return;
+
+        let stored = null;
+        try {
+            stored = JSON.parse(localStorage.getItem(this.strongsSheetSizeKey));
+        } catch (_error) {
+            stored = null;
+        }
+        const initial = this.strongSheetBounds(stored && stored.width, stored && stored.height);
+        panel.style.width = `${initial.width}px`;
+        panel.style.height = `${initial.height}px`;
+
+        const handle = panel.querySelector('.strongs-sheet-resize-handle');
+        if (!handle) return;
+        handle.addEventListener('pointerdown', (event) => {
+            event.preventDefault();
+            const start = panel.getBoundingClientRect();
+            const startX = event.clientX;
+            const startY = event.clientY;
+            panel.classList.add('is-resizing');
+            handle.setPointerCapture(event.pointerId);
+
+            const move = (moveEvent) => {
+                const next = this.strongSheetBounds(
+                    start.width + ((moveEvent.clientX - startX) * 2),
+                    start.height - (moveEvent.clientY - startY)
+                );
+                panel.style.width = `${next.width}px`;
+                panel.style.height = `${next.height}px`;
+            };
+            const stop = () => {
+                handle.removeEventListener('pointermove', move);
+                handle.removeEventListener('pointerup', stop);
+                handle.removeEventListener('pointercancel', stop);
+                panel.classList.remove('is-resizing');
+                const size = panel.getBoundingClientRect();
+                localStorage.setItem(this.strongsSheetSizeKey, JSON.stringify({
+                    width: Math.round(size.width),
+                    height: Math.round(size.height)
+                }));
+            };
+            handle.addEventListener('pointermove', move);
+            handle.addEventListener('pointerup', stop);
+            handle.addEventListener('pointercancel', stop);
+        });
     },
 
     escapeHtml(value) {

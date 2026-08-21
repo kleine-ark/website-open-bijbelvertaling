@@ -2848,6 +2848,9 @@ sup.note-marker:hover {
     align-items: baseline;
     gap: 10px;
 }
+.strongs-sheet-resize-handle {
+    display: none;
+}
 .strongs-sheet-header .strongs-sheet-actions {
     align-items: center;
     margin-left: auto;
@@ -2909,10 +2912,45 @@ sup.note-marker:hover {
 
 @media (min-width: 769px) {
     .strongs-sheet-panel {
-        position: static;
+        position: relative;
+        width: min(760px, calc(100vw - 40px));
+        height: min(75vh, calc(100vh - 40px));
+        min-width: min(560px, calc(100vw - 40px));
+        min-height: min(420px, calc(100vh - 40px));
+        max-width: calc(100vw - 40px);
+        max-height: calc(100vh - 40px);
         margin-bottom: 18px;
         border-bottom: 1px solid var(--border-light);
         border-radius: 18px;
+    }
+    .strongs-sheet-resize-handle {
+        position: absolute;
+        z-index: 3;
+        top: 9px;
+        right: 9px;
+        display: block;
+        width: 18px;
+        height: 18px;
+        border-top: 2px solid var(--gold);
+        border-right: 2px solid var(--gold);
+        border-radius: 0 8px 0 0;
+        cursor: nesw-resize;
+        opacity: 0.75;
+    }
+    .strongs-sheet-resize-handle:hover,
+    .strongs-sheet-resize-handle:focus-visible {
+        opacity: 1;
+        outline: none;
+    }
+    .strongs-sheet-panel.is-resizing,
+    .strongs-sheet-panel.is-resizing * {
+        user-select: none;
+    }
+    .strongs-sheet-panel.is-resizing .strongs-sheet-article {
+        pointer-events: none;
+    }
+    .strongs-sheet-actions {
+        padding-right: 14px;
     }
 }
 

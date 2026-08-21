@@ -980,6 +980,55 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_woordenboekpaneel_is_op_desktop_hoog_en_in_twee_richtingen_aanpasbaar(self):
+        page = self.open_reader("johannes/1", width=1280, height=900)
+        try:
+            self.enable_strongs(page)
+            trigger = page.locator('.verse-row[data-verse="1"] [data-strongs="G1722"]').first
+            trigger.click()
+            panel = page.locator(".strongs-sheet-panel")
+            panel.wait_for(state="visible", timeout=5_000)
+            initial = panel.bounding_box()
+            self.assertGreaterEqual(initial["height"], 630)
+
+            resize_handle = page.locator(".strongs-sheet-resize-handle")
+            self.assertTrue(resize_handle.is_visible())
+            handle_box = resize_handle.bounding_box()
+            page.mouse.move(handle_box["x"] + handle_box["width"] / 2, handle_box["y"] + handle_box["height"] / 2)
+            page.mouse.down()
+            page.mouse.move(handle_box["x"] + 150, handle_box["y"] - 90, steps=5)
+            page.mouse.up()
+
+            resized = panel.bounding_box()
+            self.assertGreater(resized["width"], initial["width"] + 80)
+            self.assertGreater(resized["height"], initial["height"] + 50)
+            saved = page.evaluate("JSON.parse(localStorage.getItem('ov-strongs-sheet-size'))")
+            self.assertAlmostEqual(saved["width"], resized["width"], delta=2)
+            self.assertAlmostEqual(saved["height"], resized["height"], delta=2)
+
+            page.locator(".strongs-sheet-close").click()
+            trigger.click()
+            restored = page.locator(".strongs-sheet-panel").bounding_box()
+            self.assertAlmostEqual(restored["width"], resized["width"], delta=2)
+            self.assertAlmostEqual(restored["height"], resized["height"], delta=2)
+        finally:
+            page.close()
+
+    def test_opgeslagen_desktopformaat_blijft_binnen_het_huidige_scherm(self):
+        page = self.open_reader("johannes/1", width=900, height=700)
+        try:
+            page.evaluate("localStorage.setItem('ov-strongs-sheet-size', JSON.stringify({width: 4000, height: 3000}))")
+            self.enable_strongs(page)
+            page.locator('.verse-row[data-verse="1"] [data-strongs="G1722"]').first.click()
+            box = page.locator(".strongs-sheet-panel").bounding_box()
+            self.assertLessEqual(box["width"], 860)
+            self.assertLessEqual(box["height"], 660)
+            self.assertGreaterEqual(box["x"], 20)
+            self.assertGreaterEqual(box["y"], 20)
+            self.assertTrue(page.locator(".strongs-sheet-close").is_visible())
+        finally:
+            page.close()
+
     def test_niet_afzonderlijk_vertaald_grondwoord_blijft_inline_zichtbaar(self):
         page = self.open_reader()
         try:
