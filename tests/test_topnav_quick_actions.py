@@ -5,6 +5,7 @@ import http.server
 from pathlib import Path
 import threading
 import unittest
+import re
 
 from playwright.sync_api import sync_playwright
 
@@ -81,6 +82,14 @@ class TopnavQuickActionsTests(unittest.TestCase):
         finally:
             mobile.close()
             desktop.close()
+
+    def test_strong_koppeling_en_rendercode_hebben_dezelfde_cacheversie(self):
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        opties = re.search(r'<script src="js/opties\.js\?v=([^"]+)">', html)
+        app = re.search(r'<script src="js/app\.js\?v=([^"]+)">', html)
+        self.assertIsNotNone(opties)
+        self.assertIsNotNone(app)
+        self.assertEqual(opties.group(1), app.group(1))
 
 
 if __name__ == "__main__":
