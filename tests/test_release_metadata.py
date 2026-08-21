@@ -32,7 +32,7 @@ def test_build_stats_defaults_follow_current_changelog():
     release = read_json("data/changelog.json")["wijzigingen"][0]
 
     assert version == release["versie"]
-    assert datum == "17 augustus 2026"
+    assert datum == "21 augustus 2026"
 
 
 def service_worker_install_cache():
@@ -71,18 +71,18 @@ installation.then(() => process.stdout.write(JSON.stringify(opened)));
     return json.loads(result.stdout)
 
 
-def test_current_release_describes_talen_en_uses_one_version():
+def test_current_release_describes_review_en_uses_one_version():
     stats = read_json("data/stats.json")
     changelog = read_json("data/changelog.json")
     current_release = changelog["wijzigingen"][0]
     descriptions = " ".join(item["beschrijving"] for item in current_release["items"])
 
-    assert current_release["versie"] == "v0.38.0"
-    assert "Inline Strongs" in descriptions
+    assert current_release["versie"] == "v0.38.1"
+    assert "2 Kronieken" in descriptions
     assert stats["version"] == current_release["versie"]
     assert service_worker_install_cache() == [f"shell-{current_release['versie']}"]
-    assert current_release["datum"] == "2026-08-17"
-    assert stats["date"] == "17 augustus 2026"
+    assert current_release["datum"] == "2026-08-21"
+    assert stats["date"] == "21 augustus 2026"
 
 
 def test_statische_release_fallbacks_verwijzen_naar_de_actuele_versie():
