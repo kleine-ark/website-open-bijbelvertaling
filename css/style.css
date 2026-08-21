@@ -2796,6 +2796,10 @@ sup.note-marker:hover {
     align-items: baseline;
     gap: 10px;
 }
+.strongs-sheet-header .strongs-sheet-actions {
+    align-items: center;
+    margin-left: auto;
+}
 .strongs-sheet-close {
     width: 38px;
     height: 38px;
@@ -2811,10 +2815,13 @@ sup.note-marker:hover {
     outline: 2px solid #246da8;
     outline-offset: 2px;
 }
-.strongs-sheet-content {
-    overflow-y: auto;
-    padding: 18px 22px 28px;
-    line-height: 1.6;
+.strongs-sheet-article {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+    border: 0;
+    background: var(--bg-surface);
 }
 .strongs-sheet-content .lexicon-word {
     font-size: 28px;
@@ -2841,10 +2848,11 @@ sup.note-marker:hover {
 }
 .strongs-sheet-full-link {
     display: inline-block;
-    margin-top: 16px;
+    margin: 0;
     color: var(--gold);
     font-weight: 600;
     text-decoration: none;
+    font-size: 12px;
 }
 
 @media (min-width: 769px) {
