@@ -895,28 +895,24 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             self.assertEqual(sheet.get_attribute("role"), "dialog")
             self.assertEqual(sheet.get_attribute("aria-modal"), "true")
             self.assertIn("G1722", page.locator("#strongs-sheet-number").inner_text())
-            self.assertTrue(page.locator("#strongs-sheet-word").inner_text().strip())
-            self.assertTrue(page.locator("#strongs-sheet-definition").inner_text().strip())
-            self.assertIn("TBESG", page.locator("#strongs-sheet .lexicon-source").inner_text())
-            self.assertEqual(
-                page.locator("#strongs-sheet .lexicon-gloss").inner_text(),
-                "in, op, onder, met",
-            )
+            self.assertIn("WOORDENBOEKARTIKEL", page.locator("#strongs-sheet .lexicon-source").inner_text())
+            article = page.frame_locator("#strongs-sheet-article")
+            article.locator(".lex-entry-head").wait_for(timeout=15_000)
             self.assertIn(
                 "het meest voorkomende voorzetsel",
-                page.locator("#strongs-sheet-definition").inner_text(),
+                article.locator(".lex-def").first.inner_text(),
             )
             self.assertIn(
                 "taal=grieks&entry=G1722",
-                page.locator("#strongs-sheet-full-link").get_attribute("href"),
+                page.locator("#strongs-sheet .strongs-sheet-full-link").get_attribute("href"),
             )
 
-            page.locator("#strongs-sheet-definition").click()
+            article.locator(".lex-entry-head").click()
             self.assertTrue(sheet.is_visible(), "interactie binnen het paneel mag het niet sluiten")
 
             page.locator(".strongs-sheet-close").focus()
             page.keyboard.press("Shift+Tab")
-            self.assertEqual(page.evaluate("document.activeElement.id"), "strongs-sheet-full-link")
+            self.assertIn("strongs-sheet-full-link", page.evaluate("document.activeElement.className"))
             page.keyboard.press("Tab")
             self.assertIn("strongs-sheet-close", page.evaluate("document.activeElement.className"))
 
@@ -1036,15 +1032,18 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
-    def test_griekse_sheet_toont_herzien_artikel_met_aanklikbare_tekstverwijzingen(self):
+    def test_griekse_sheet_toont_het_volledige_woordenboekartikel(self):
         page = self.open_reader("johannes/1")
         try:
             self.enable_strongs(page)
             page.locator('.verse-row[data-verse="1"] .col-2026 [data-strongs="G1722"]').first.click()
-            definition = page.locator("#strongs-sheet-definition")
-            definition.wait_for(timeout=5_000)
-            self.assertIn("het meest voorkomende voorzetsel", definition.inner_text())
-            reference = definition.locator('a[href="index.html#lukas/7/37"]')
+            article = page.frame_locator("#strongs-sheet-article")
+            article.locator(".lex-entry-head").wait_for(timeout=15_000)
+            article.locator(".lex-lexlabel", has_text="Abbott-Smith").wait_for(timeout=15_000)
+            labels = article.locator(".lex-lexlabel").all_inner_texts()
+            self.assertTrue(any("TBESG" in label.upper() for label in labels), labels)
+            self.assertTrue(any("ABBOTT-SMITH" in label.upper() for label in labels), labels)
+            reference = article.locator('a[href="index.html#lukas/7/37"]')
             self.assertGreater(reference.count(), 0)
             self.assertEqual(reference.first.inner_text(), "Lukas 7:37")
         finally:
@@ -1059,11 +1058,14 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             trigger.click()
             sheet = page.locator("#strongs-sheet")
             sheet.wait_for(state="visible", timeout=5_000)
-            self.assertIn("DILLMANN GE’EZ-WOORDENBOEK", sheet.locator(".lexicon-source").inner_text())
+            self.assertIn("WOORDENBOEKARTIKEL", sheet.locator(".lexicon-source").inner_text())
             self.assertIn(
-                "taal=geez&zoek=OVG3907",
-                sheet.locator("#strongs-sheet-full-link").get_attribute("href"),
+                "taal=geez&entry=OVG3907&embed=1",
+                sheet.locator("#strongs-sheet-article").get_attribute("src"),
             )
+            article = page.frame_locator("#strongs-sheet-article")
+            article.locator(".lex-entry-head").wait_for(timeout=20_000)
+            self.assertIn("OVG3907", article.locator(".lex-entry-strong").inner_text())
         finally:
             page.close()
 

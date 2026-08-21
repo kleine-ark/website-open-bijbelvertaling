@@ -166,50 +166,11 @@ const Lexicon = {
             : (/^H\d+[A-Za-z]?$/.test(strongs) ? 'H' : (/^G\d+[A-Za-z]?$/.test(strongs) ? 'G' : null));
         if (!family) return;
 
-        // Lazy-load lexicon indien nog niet geladen
-        if ((family === 'H' || family === 'G') && window.LexiconLoader) {
-            await window.LexiconLoader.ensureLoaded(family === 'H' ? 'hebrew' : 'greek');
-        }
-
-        let entry = null;
-        let lexiconName = '';
-        let fullLink = '';
-
-        if (family === 'H') {
-            lexiconName = 'BDB Hebreeuws';
-            fullLink = `lexicon-viewer.html?entry=${encodeURIComponent(strongs)}`;
-            if (typeof bdbLexicon !== 'undefined') entry = bdbLexicon[strongs];
-        } else if (family === 'G') {
-            lexiconName = 'TBESG Grieks';
-            fullLink = `lexicon-viewer.html?taal=grieks&entry=${encodeURIComponent(strongs)}`;
-            if (typeof tbesgLexicon !== 'undefined') entry = tbesgLexicon[strongs];
-        } else if (family === 'OVL') {
-            entry = {};
-            lexiconName = 'Lewis & Short Latijn';
-            fullLink = `lexicon-viewer.html?taal=latijn&zoek=${encodeURIComponent(strongs)}`;
-        } else if (family === 'OVG') {
-            entry = {};
-            lexiconName = 'Dillmann Ge’ez-woordenboek';
-            fullLink = `lexicon-viewer.html?taal=geez&zoek=${encodeURIComponent(strongs)}`;
-        }
-
-        // Een nummer blijft bruikbaar wanneer een lexiconartikel nog ontbreekt:
-        // toon de brongegevens en bied de volledige woordenboekzoeking aan.
-        if (!entry) entry = {};
-
-        const nl = (family === 'H' || family === 'G')
-            ? await this.ensureNl(family === 'H' ? 'hebrew' : 'greek') : {};
-        const t = nl[strongs] || {};
-
-        const gloss = t.glossNl || t.samenvattingNl || anchorEl.dataset.gloss || entry.gloss || '';
-        const woord = anchorEl.dataset.sourceWord || entry.woord || '';
-        const transliteratie = anchorEl.dataset.transliteratie || entry.translit || entry.transliteratie || '';
-        const rawDefinition = t.definitieNl || entry.definitie ||
-            (gloss ? `Betekenis in deze bronkoppeling: ${gloss}.` : 'Voor dit woordnummer is nog geen lokale woordenboekdefinitie beschikbaar.');
-        const definitie = family === 'G'
-            ? this.linkifyTbesgDefinition(rawDefinition, await this.ensureBookNames())
-            : rawDefinition;
-        if (!fullLink) fullLink = `lexicon-viewer.html?entry=${encodeURIComponent(strongs)}`;
+        const taal = family === 'H' ? 'hebreeuws'
+            : family === 'G' ? 'grieks'
+                : family === 'OVL' ? 'latijn' : 'geez';
+        const fullLink = `lexicon-viewer.html?taal=${taal}&entry=${encodeURIComponent(strongs)}`;
+        const articleLink = `${fullLink}&embed=1`;
 
         const sheet = document.createElement('div');
         sheet.id = 'strongs-sheet';
@@ -223,17 +184,16 @@ const Lexicon = {
                 <header class="strongs-sheet-header">
                     <div>
                         <span id="strongs-sheet-number" class="lexicon-strongs">${this.escapeHtml(strongs)}</span>
-                        <span class="lexicon-source">${this.escapeHtml(lexiconName)}</span>
+                        <span class="lexicon-source">Woordenboekartikel</span>
                     </div>
-                    <button type="button" class="strongs-sheet-close" aria-label="Woordenboek sluiten">×</button>
+                    <div class="strongs-sheet-actions">
+                        <a class="strongs-sheet-full-link" href="${this.escapeHtml(fullLink)}">Open op volledige pagina</a>
+                        <button type="button" class="strongs-sheet-close" aria-label="Woordenboek sluiten">×</button>
+                    </div>
                 </header>
-                <div class="strongs-sheet-content">
-                    <div id="strongs-sheet-word" class="lexicon-word">${this.escapeHtml(woord)}</div>
-                    ${transliteratie ? `<div class="strongs-sheet-transliteration">${this.escapeHtml(transliteratie)}</div>` : ''}
-                    <div class="lexicon-gloss">${this.escapeHtml(gloss)}</div>
-                    <div id="strongs-sheet-definition" class="lexicon-def">${this.sanitizeDefinition(definitie)}</div>
-                    <a id="strongs-sheet-full-link" class="strongs-sheet-full-link" href="${this.escapeHtml(fullLink)}">Volledig woordenboekartikel openen →</a>
-                </div>
+                <iframe id="strongs-sheet-article" class="strongs-sheet-article"
+                    src="${this.escapeHtml(articleLink)}"
+                    title="Woordenboekartikel ${this.escapeHtml(strongs)}"></iframe>
             </section>`;
 
         sheet.addEventListener('click', (event) => {

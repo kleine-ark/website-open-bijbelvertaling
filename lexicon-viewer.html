@@ -33,6 +33,7 @@
 
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>if(new URLSearchParams(location.search).get('embed')==='1')document.documentElement.classList.add('lex-embed');</script>
     <style>
         body { display: block; margin: 0; background: var(--bg-page, #f8f6f2); }
         .lex-topbar { display: flex; align-items: flex-end; gap: 12px; background: var(--bg-surface, #fff); border-bottom: 1px solid var(--border, #d4d0c8); padding-right: 20px; }
@@ -191,6 +192,18 @@
         :root[data-theme="donker"] .lex-toc-woord, :root[data-theme="donker"] .lex-entry-woord { color: var(--text-primary); }
         :root[data-theme="donker"] .lex-def { color: var(--text-secondary, #cfcfcf); }
         :root[data-theme="donker"] .lex-toc-search input { background: var(--bg-surface-alt); color: var(--text-primary); border-color: #333; }
+        html.lex-embed #topnav,
+        html.lex-embed .lex-topbar,
+        html.lex-embed .lex-toc,
+        html.lex-embed .lex-toc-toggle { display: none !important; }
+        html.lex-embed .lex-shell { display: block; height: 100vh; }
+        html.lex-embed .lex-content {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100vh;
+            padding: 18px 22px 40px;
+            background: var(--bg-surface, #fff);
+        }
     </style>
     <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
@@ -1004,9 +1017,13 @@
         (d.books || []).forEach(function (b) { BOOKNAMES[b.id] = b.nameDutch || b.id; CHAPTERCOUNT[b.id] = b.totalChapters || 0; });
     }).finally(function () {
         var q = (location.search.match(/taal=([\w-]+)/) || [])[1];
-        var entryParam = (location.search.match(/entry=([HG]\d+)/) || [])[1];
+        var entryParam = (location.search.match(/entry=((?:[HG]\d+[A-Za-z]?|OV[GL]\d+))/) || [])[1];
         // Als een Strong-entry gevraagd is, kies automatisch de juiste taal
-        if (entryParam && !q) q = entryParam.charAt(0) === 'H' ? 'hebreeuws' : 'grieks';
+        if (entryParam && !q) {
+            q = entryParam.indexOf('OVL') === 0 ? 'latijn'
+                : entryParam.indexOf('OVG') === 0 ? 'geez'
+                    : entryParam.charAt(0) === 'H' ? 'hebreeuws' : 'grieks';
+        }
         var start = TALEN.filter(function (t) { return t.id === q; })[0] || TALEN[0];
         selectTaal(start, entryParam);
     });
