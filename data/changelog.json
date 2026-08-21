@@ -1,6 +1,28 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-08-21",
+      "versie": "v0.38.1",
+      "items": [
+        {
+          "type": "verbetering",
+          "beschrijving": "2 Kronieken is na menselijke controle volledig als nagekeken gemarkeerd; de voortgangsstatistieken zijn opnieuw opgebouwd."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Negen te ruim gemarkeerde citaten zijn opnieuw begrensd en achttien bewust behouden citaatconstructies zijn als beoordeelde uitzonderingen vastgelegd."
+        },
+        {
+          "type": "systeem",
+          "beschrijving": "Menselijke reviewprincipes uit 1 Kronieken zijn tot hun beoordeelde context begrensd en ontbrekende principekoppelingen in 2 Koningen zijn hersteld."
+        },
+        {
+          "type": "verbetering",
+          "beschrijving": "De projectstatus noemt voortaan de boeken die in de eerste menselijke controleronde nog nagekeken moeten worden."
+        }
+      ]
+    },
+    {
       "datum": "2026-08-17",
       "versie": "v0.38.0",
       "items": [
