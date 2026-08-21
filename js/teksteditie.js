@@ -38,8 +38,20 @@
             return manifest.edities.find(item => item.code === code) || null;
         },
         async loadChapter(bookId, chapter) {
-            const code = this.code();
+            return this.loadChapterForEdition(this.code(), bookId, chapter);
+        },
+        async loadChapterForEdition(code, bookId, chapter) {
             const meta = await this.metadata(code);
+            if (code === 'nl-ov') {
+                const key = `${code}:${bookId}:${chapter}`;
+                if (this._cache.has(key)) return this._cache.get(key);
+                const response = await fetch(`data/${bookId}/${chapter}.json`);
+                if (!response.ok) return { _unavailable: true, _translation: meta, boek: bookId, hoofdstuk: chapter };
+                const result = await response.json();
+                result._translation = meta;
+                this._cache.set(key, result);
+                return result;
+            }
             if (!meta || !meta.boeken.includes(bookId)) {
                 return { _unavailable: true, _translation: meta || { code, naam: code }, boek: bookId, hoofdstuk: chapter };
             }

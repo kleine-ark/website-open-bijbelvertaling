@@ -57,8 +57,24 @@
         '<input type="search" id="topnav-search-input" class="topnav-search-input" placeholder="Zoek in Gods Woord… (Ctrl+K)" autocomplete="off" aria-label="Zoeken in Gods Woord" onkeydown="if(event.key===\'Enter\'){var q=this.value.trim();if(q){location.href=\'index.html?q=\'+encodeURIComponent(q);}}">' +
         '<button class="topnav-tekstopties" id="topnav-tekstopties" type="button" aria-label="Tekstopties openen" aria-controls="sidebar-right" aria-expanded="false" title="Tekstopties"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10"/><path d="M18 7h2"/><circle cx="16" cy="7" r="2"/><path d="M4 17h3"/><path d="M11 17h9"/><circle cx="9" cy="17" r="2"/></svg><span>Tekstopties</span></button>' +
         '<button class="topnav-theme" id="topnav-theme-toggle" title="Thema: licht/donker" aria-label="Wissel thema"><svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>' +
+        '<span id="topnav-auth-home" hidden></span>' +
         '<div id="auth-slot" class="topnav-auth"></div>' +
         '<button class="topnav-hamburger" id="topnav-hamburger" onclick="document.getElementById(\'topnav-links\').classList.toggle(\'open\');this.classList.toggle(\'open\')" title="Menu" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>';
+
+    // Gebruik overal exact hetzelfde auth-element. Op mobiel staat het in het
+    // hamburgermenu; op grotere schermen keert het terug naar de hoofdbalk.
+    var authSlot = document.getElementById('auth-slot');
+    var authHome = document.getElementById('topnav-auth-home');
+    var navLinks = document.getElementById('topnav-links');
+    var mobileAuthQuery = window.matchMedia('(max-width: 768px)');
+    function placeAuthSlot() {
+        if (!authSlot || !authHome || !navLinks) return;
+        if (mobileAuthQuery.matches) navLinks.appendChild(authSlot);
+        else authHome.insertAdjacentElement('afterend', authSlot);
+    }
+    placeAuthSlot();
+    if (mobileAuthQuery.addEventListener) mobileAuthQuery.addEventListener('change', placeAuthSlot);
+    else if (mobileAuthQuery.addListener) mobileAuthQuery.addListener(placeAuthSlot);
 
     var optiesKnoppen = [
         document.getElementById('topnav-tekstopties'),

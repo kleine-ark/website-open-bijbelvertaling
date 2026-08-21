@@ -487,6 +487,29 @@ const App = {
         }
         const translationMeta = chapter._translation || null;
         const isExternalTranslation = !!translationMeta;
+        const primaryEditionCode = translationMeta ? translationMeta.code : 'nl-ov';
+        const configuredParallels = (typeof Opties !== 'undefined' && Array.isArray(Opties.state.parallelEdities))
+            ? Opties.state.parallelEdities.filter(code => code !== primaryEditionCode).slice(0, 3)
+            : [];
+        const parallelEditions = [];
+        const unavailableParallelNames = [];
+        if (typeof TekstEditie !== 'undefined') {
+            const loadedParallels = await Promise.all(configuredParallels.map(async code => {
+                const parallelChapter = await TekstEditie.loadChapterForEdition(code, bookId, chapterNum);
+                if (!parallelChapter || parallelChapter._unavailable) {
+                    const missingMeta = parallelChapter && parallelChapter._translation;
+                    unavailableParallelNames.push(missingMeta ? missingMeta.naam : code);
+                    return null;
+                }
+                const meta = parallelChapter._translation || await TekstEditie.metadata(code);
+                return {
+                    code,
+                    meta,
+                    verses: new Map((parallelChapter.verses || []).map(item => [Number(item.number), item])),
+                };
+            }));
+            parallelEditions.push(...loadedParallels.filter(Boolean));
+        }
         // Pre-fetch buurchapters bij idle (volgende klik = instant)
         DataLoader.prefetchAdjacent(bookId, chapterNum);
         // Boeknaam onthouden (gebruikt door scroll-spy bij doorlopend lezen)
@@ -535,6 +558,12 @@ const App = {
         const sink = prepend ? document.createDocumentFragment() : container;
         if (!append && !prepend) {
             container.innerHTML = '';
+            if (unavailableParallelNames.length) {
+                const unavailable = document.createElement('div');
+                unavailable.className = 'parallel-editions-unavailable';
+                unavailable.textContent = `Niet beschikbaar voor dit hoofdstuk: ${unavailableParallelNames.join(', ')}.`;
+                container.appendChild(unavailable);
+            }
         }
         if (append || prepend) {
             // Doorlopend lezen: scheidingskop voor het toegevoegde hoofdstuk
@@ -739,13 +768,29 @@ const App = {
                 }
             }
 
+            let editionTextHtml = openVertaling;
+            if (parallelEditions.length) {
+                const primaryName = translationMeta ? translationMeta.naam : 'Open Vertaling';
+                const layout = (typeof Opties !== 'undefined' && Opties.state.kolomLayout === 'eronder') ? 'eronder' : 'naast';
+                const parallelHtml = parallelEditions.map(item => {
+                    const parallelVerse = item.verses.get(Number(verse.number));
+                    if (!parallelVerse) return '';
+                    const text = parallelVerse.text2026_html || parallelVerse.text2026 || '';
+                    const meta = item.meta || { naam: item.code, taal: '', richting: 'ltr' };
+                    return `<section class="parallel-edition" data-editie="${App._escapeStrongHtml(item.code)}" data-edition-label="${App._escapeStrongHtml(meta.naam)}" lang="${App._escapeStrongHtml(meta.taal || '')}" dir="${meta.richting === 'rtl' ? 'rtl' : 'ltr'}">${text}</section>`;
+                }).join('');
+                editionTextHtml = `<div class="edition-comparison" data-layout="${layout}" style="--edition-count:${parallelEditions.length + 1}">` +
+                    `<section class="parallel-edition primary-edition" data-editie="${App._escapeStrongHtml(primaryEditionCode)}" data-edition-label="${App._escapeStrongHtml(primaryName)}">${openVertaling}</section>` +
+                    parallelHtml + '</div>';
+            }
+
             row.innerHTML = `
                 <div class="verse-num" data-col="num" title="Klik voor status">${verse.number}</div>
                 <div class="verse-cell col-1637" data-col="1637">${verse.text1637_html || verse.text1637}</div>
                 <div class="verse-cell col-margin1637" data-col="margin1637">${margin1637Html}</div>
                 <div class="verse-cell col-sv1888" data-col="sv1888">${sv1888Text}</div>
                 <div class="verse-cell col-marginSV1888" data-col="marginSV1888">${marginSV1888Html}</div>
-                <div class="verse-cell col-2026" data-col="2026"${translationMeta ? ` lang="${App._escapeStrongHtml(translationMeta.taal)}" dir="${translationMeta.richting === 'rtl' ? 'rtl' : 'ltr'}"` : ''}>${openVertaling}</div>
+                <div class="verse-cell col-2026" data-col="2026"${translationMeta ? ` lang="${App._escapeStrongHtml(translationMeta.taal)}" dir="${translationMeta.richting === 'rtl' ? 'rtl' : 'ltr'}"` : ''}>${editionTextHtml}</div>
                 <div class="verse-cell col-margin2026" data-col="margin2026">${margin2026Html}</div>
                 <div class="verse-cell col-hebrew" data-col="hebrew">${hebrewHtml}</div>
                 <div class="verse-cell col-diff" data-col="diff">${diffHtml}</div>
