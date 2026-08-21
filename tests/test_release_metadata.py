@@ -98,10 +98,10 @@ def test_human_review_statistics_include_nehemia_and_esther():
     stats = read_json("data/stats.json")
     verified = read_json("data/verified-chapters.json")
 
-    assert stats["books_verified"] == 59
-    assert stats["chapters_verified"] == 860
-    assert stats["verses_verified"] == 23393
-    assert stats["verses_verified_pct"] == 62.8
+    assert stats["books_verified"] == 61
+    assert stats["chapters_verified"] == 925
+    assert stats["verses_verified"] == 25157
+    assert stats["verses_verified_pct"] == 67.6
     assert "Numeri" in stats["verified_books"]
     assert "Deuteronomium" in stats["verified_books"]
     assert "Jozua" in stats["verified_books"]
@@ -109,8 +109,10 @@ def test_human_review_statistics_include_nehemia_and_esther():
     assert "2 Koningen" in stats["verified_books"]
     assert "Nehemia" in stats["verified_books"]
     assert "Esther" in stats["verified_books"]
-    assert stats["ot_verses_verified"] == 14214
-    assert stats["ot_verses_verified_pct"] == 61.2
+    assert "1 Kronieken" in stats["verified_books"]
+    assert "2 Kronieken" in stats["verified_books"]
+    assert stats["ot_verses_verified"] == 15978
+    assert stats["ot_verses_verified_pct"] == 68.8
     assert stats["nt_verses_verified"] == 7960
     assert stats["nt_verses_verified_pct"] == 100.0
     assert stats["ap_verses_verified"] == 1219

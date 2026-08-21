@@ -189,12 +189,21 @@ de toekomst. V964 en V896 hebben nu een `bereik` met naam en toenaam, en **een
 
 ## 4. Wat blijft liggen
 
-### Concreet en klaar om op te pakken
+### Verwerkt op 21 augustus 2026
 
-**De 27 B-gevallen van `span_om_vertelling.py`.** Daar haalt de spreker vaak zélf
-iemand aan — "Want Mozes heeft gezegd:" bij Jezus, "De HEERE heeft gezegd tot
-mijn Heere" bij David — en dan hoort de aankondiging bínnen de span en is een
-geneste span nodig, geen grensverlegging. Niet mechanisch te beslissen. Lijst:
+**De 27 B-gevallen van `span_om_vertelling.py` zijn handmatig beoordeeld.**
+Negen verzen hadden werkelijk een te ruime span; daar staat de vertellende
+aankondiging nu buiten het citaat: Daniël 6:26, Exodus 33:21, Jeremia 4:11 en
+46:17, Jesaja 10:13, 28:12 en 37:22, Job 42:7 en Mattheüs 18:22. De overige
+achttien zijn doorgaande redes of als geheel aangehaalde Schriftpassages waarin
+de spreker iemand anders aanhaalt. Die buitenste span is bewust behouden.
+
+De volledige classificatie staat in
+`scripts/apply_citation_review_overdracht.py`; regressietests staan in
+`tests/test_overdracht_2026_08_20.py`. Een tweede uitvoering van het script
+wijzigt nul verzen.
+
+De oorspronkelijke lijst was:
 
 ```
 4ezra 4:15, 4ezra 4:35, baruch 3:35, daniel 6:26, exodus 16:16, exodus 32:12,
@@ -208,6 +217,21 @@ ruth 2:7
 ```bash
 python scripts/span_om_vertelling.py --proef --soorten B --toon 200
 ```
+
+De achttien resterende detecties zijn dus beoordeelde uitzonderingen, geen open
+automatische reparatielijst.
+
+De afgeleide principevindplaatsen en statistieken zijn eveneens opnieuw
+gebouwd. `data/stats.json` volgt nu de bron met 1528 principes.
+
+Bij de validatie zijn daarnaast zes menselijke reviewprincipes uit
+1 Kronieken (MR-1KR-006, -007, -014, -016, -017 en -018) alsnog tot hun
+beoordeelde vers begrensd. De twee omzettingen van *geheiligde dingen* naar
+*gewijde gaven* in 2 Koningen 12:18 zijn aan MR-SK-045 gekoppeld. Ook zijn de
+release-cacheverwijzingen en regressieverwachtingen gelijkgetrokken met v0.38.0
+en de menselijke afronding van 1 Kronieken.
+
+### Concreet en klaar om op te pakken
 
 **De overige open meldingen uit de sheet.** Van de 962 meldingen bleven er 88
 open; de eenduidige woorden daaruit zijn nu V1504–V1528. Wat overblijft vraagt
