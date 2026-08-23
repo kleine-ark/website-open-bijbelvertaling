@@ -448,7 +448,7 @@
       "number": 2,
       "textSV1888": "En te Achmetha, in de burcht, die in het landschap Medië is, werd een rol gevonden; en daarin was aldus geschreven: GEDACHTENIS;",
       "text1637": "Ende te [5] Achmetha, in de burcht die in het lantschap Meden is, wert eene [6] rolle gevonden: ende daer in was aldus geschreven, [7] GEDACHTENISSE:",
-      "text2026": "En te Achmetha, in de burcht, die in het landschap Medië is, werd een rol gevonden; en daarin was zo geschreven: GEDACHTENIS;",
+      "text2026": "En te Achmetha, in de burcht, die in het gewest Medië is, werd een rol gevonden; en daarin was zo geschreven: GEDACHTENIS;",
       "marginNotes": [
         {
           "marker": "5",
@@ -534,10 +534,15 @@
           "morph": "ANcmsd/Td"
         }
       ],
-      "text2026_html": "En te<sup class=\"note-marker\" data-note=\"5\">5</sup> Achmetha, in de burcht, die in het landschap Medië is, werd een<sup class=\"note-marker\" data-note=\"6\">6</sup> rol gevonden; en daarin was zo geschreven:<sup class=\"note-marker\" data-note=\"7\">7</sup> GEDACHTENIS;",
+      "text2026_html": "En te<sup class=\"note-marker\" data-note=\"5\">5</sup> Achmetha, in de burcht, die in het gewest Medië is, werd een<sup class=\"note-marker\" data-note=\"6\">6</sup> rol gevonden; en daarin was zo geschreven:<sup class=\"note-marker\" data-note=\"7\">7</sup> GEDACHTENIS;",
       "textSV1888_html": "En te<sup class=\"note-marker\" data-note=\"5\">5</sup> Achmetha, in de burcht, die in het landschap Medië is, werd een<sup class=\"note-marker\" data-note=\"6\">6</sup> rol gevonden; en daarin was aldus geschreven:<sup class=\"note-marker\" data-note=\"7\">7</sup> GEDACHTENIS;",
       "text1637_html": "Ende te <sup class=\"note-marker\" data-note=\"5\">5</sup> Achmetha, in de burcht die in het lantschap Meden is, wert eene <sup class=\"note-marker\" data-note=\"6\">6</sup> rolle gevonden: ende daer in was aldus geschreven, <sup class=\"note-marker\" data-note=\"7\">7</sup> GEDACHTENISSE:",
       "phraseDiff": [
+        {
+          "old": "landschap",
+          "new": "gewest",
+          "principe": "V1535"
+        },
         {
           "old": "aldus",
           "new": "zo",
@@ -6420,7 +6425,7 @@
       "number": 11,
       "textSV1888": "Voorts wordt bevel van mij gegeven, dat al dengene, die dit woord zal veranderen, een hout uit zijn huis zal gerukt en opgericht worden, waaraan hij zal worden opgehangen; en zijn huis zal om diens wille tot een drekhoop gemaakt worden.",
       "text1637": "Voorts wort bevel van my gegeven, dat al de gene, die dit [23] woort sal veranderen, een hout uyt synen huyse sal geruckt ende opgericht worden, daer aen hy sal worden [24] opgehangen: ende sijn huys sal om dies wille tot eenen [25] dreckhoop gemaeckt worden.",
-      "text2026": "Verder wordt bevel van mij gegeven, dat al degene, die dit woord zal veranderen, een hout uit zijn huis zal gerukt en opgericht worden, waaraan hij zal worden opgehangen; en zijn huis zal om diens wille tot een drekhoop gemaakt worden.",
+      "text2026": "Verder wordt bevel van mij gegeven, dat al degene, die dit woord zal veranderen, een hout uit zijn huis zal gerukt en opgericht worden, waaraan hij zal worden opgehangen; en zijn huis zal om diens wille tot een mesthoop gemaakt worden.",
       "marginNotes": [
         {
           "marker": "23",
@@ -6556,7 +6561,7 @@
           "morph": "APdxcs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Verder wordt bevel van mij gegeven, dat al degene, die dit<sup class=\"note-marker\" data-note=\"23\">23</sup> woord zal veranderen, een hout uit zijn huis zal gerukt en opgericht worden, waaraan hij zal worden<sup class=\"note-marker\" data-note=\"24\">24</sup> opgehangen; en zijn huis zal om diens wille tot een<sup class=\"note-marker\" data-note=\"25\">25</sup> drekhoop gemaakt worden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Verder wordt bevel van mij gegeven, dat al degene, die dit<sup class=\"note-marker\" data-note=\"23\">23</sup> woord zal veranderen, een hout uit zijn huis zal gerukt en opgericht worden, waaraan hij zal worden<sup class=\"note-marker\" data-note=\"24\">24</sup> opgehangen; en zijn huis zal om diens wille tot een<sup class=\"note-marker\" data-note=\"25\">25</sup> mesthoop gemaakt worden.</i></span>",
       "textSV1888_html": "Voorts wordt bevel van mij gegeven, dat al dengene, die dit<sup class=\"note-marker\" data-note=\"23\">23</sup> woord zal veranderen, een hout uit zijn huis zal gerukt en opgericht worden, waaraan hij zal worden<sup class=\"note-marker\" data-note=\"24\">24</sup> opgehangen; en zijn huis zal om diens wille tot een<sup class=\"note-marker\" data-note=\"25\">25</sup> drekhoop gemaakt worden.",
       "text1637_html": "Voorts wort bevel van my gegeven, dat al de gene, die dit <sup class=\"note-marker\" data-note=\"23\">23</sup> woort sal verandere<i>n</i>, een hout uyt synen huyse sal geruckt en<i>de</i> opgericht worden, daer aen hy sal worden <sup class=\"note-marker\" data-note=\"24\">24</sup> opgehangen: en<i>de</i> sijn huys sal om dies wille tot eenen <sup class=\"note-marker\" data-note=\"25\">25</sup> dreckhoop gemaeckt worden.",
       "phraseDiff": [
@@ -6569,6 +6574,11 @@
           "old": "dengene,",
           "new": "degene,",
           "principe": null
+        },
+        {
+          "old": "drekhoop",
+          "new": "mesthoop",
+          "principe": "V1534"
         }
       ],
       "woordnummers": [

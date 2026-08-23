@@ -1511,7 +1511,7 @@
       "number": 5,
       "textSV1888": "Van dezen zijn verdeeld de eilanden der volken in hun landschappen, elk naar zijn spraak, naar hun huisgezinnen, onder hun volken.",
       "text1637": "Van dese zijn verdeylt de [18] Eylanden der volcken in hare Lantschappen, [19] elck nae sijne sprake: nae hare huysgesinnen, onder hare volcken.",
-      "text2026": "Van deze zijn verdeeld de eilanden van de volken in hun landschappen, elk naar zijn taal, naar hun huisgezinnen, onder van hun volk.",
+      "text2026": "Van deze zijn verdeeld de eilanden van de volken in hun gewesten, elk naar zijn taal, naar hun huisgezinnen, onder van hun volk.",
       "marginNotes": [
         {
           "marker": "18",
@@ -1607,7 +1607,7 @@
           "morph": "HR/Ncmpc/Sp3mp"
         }
       ],
-      "text2026_html": "Van deze zijn verdeeld de<sup class=\"note-marker\" data-note=\"18\">18</sup> eilanden van de volken in hun landschappen,<sup class=\"note-marker\" data-note=\"19\">19</sup> elk naar zijn taal, naar hun huisgezinnen, onder van hun volk.",
+      "text2026_html": "Van deze zijn verdeeld de<sup class=\"note-marker\" data-note=\"18\">18</sup> eilanden van de volken in hun gewesten,<sup class=\"note-marker\" data-note=\"19\">19</sup> elk naar zijn taal, naar hun huisgezinnen, onder van hun volk.",
       "textSV1888_html": "Van dezen zijn verdeeld de<sup class=\"note-marker\" data-note=\"18\">18</sup> eilanden der volken in hun landschappen,<sup class=\"note-marker\" data-note=\"19\">19</sup> elk naar zijn spraak, naar hun huisgezinnen, onder hun volken.",
       "text1637_html": "Van dese zijn verdeylt de <sup class=\"note-marker\" data-note=\"18\">18</sup> Eylanden der volcken in hare Lantschappen, <sup class=\"note-marker\" data-note=\"19\">19</sup> elck nae sijne sprake: nae hare huysgesinnen, onder hare volcken.",
       "phraseDiff": [
@@ -1622,6 +1622,16 @@
           "principe": "N2"
         },
         {
+          "old": "landschappen,",
+          "new": "gewesten,",
+          "principe": "V1535"
+        },
+        {
+          "old": "spraak,",
+          "new": "taal,",
+          "principe": "V907"
+        },
+        {
           "old": "",
           "new": "van",
           "principe": null
@@ -1630,11 +1640,6 @@
           "old": "volken.",
           "new": "volk.",
           "principe": null
-        },
-        {
-          "old": "spraak",
-          "new": "taal",
-          "principe": "V907"
         }
       ],
       "woordnummers": [
@@ -7628,7 +7633,7 @@
       "number": 20,
       "textSV1888": "Deze zijn zonen van Cham, naar hun huisgezinnen, naar hun spraken, in hun landschappen, in hun volken.",
       "text1637": "Dit zijn Chams sonen, nae hare huysgesinnen, nae hare spraken: in hare lantschappen, in hare volckeren.",
-      "text2026": "Deze zijn zonen van Cham, naar hun huisgezinnen, naar hun spraken, in hun landschappen, in hun volken.",
+      "text2026": "Deze zijn zonen van Cham, naar hun huisgezinnen, naar hun spraken, in hun gewesten, in hun volken.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -7667,9 +7672,15 @@
           "morph": "HR/Ncmpc/Sp3mp"
         }
       ],
-      "text2026_html": "Deze zijn zonen van Cham, naar hun huisgezinnen, naar hun spraken, in hun landschappen, in hun volken.",
+      "text2026_html": "Deze zijn zonen van Cham, naar hun huisgezinnen, naar hun spraken, in hun gewesten, in hun volken.",
       "text1637_html": "Dit zijn Chams sonen, nae hare huysgesinnen, nae hare spraken: in hare lantschappen, in hare volckeren.",
-      "phraseDiff": [],
+      "phraseDiff": [
+        {
+          "old": "landschappen,",
+          "new": "gewesten,",
+          "principe": "V1535"
+        }
+      ],
       "woordnummers": [
         {
           "tekst": "Deze",
@@ -11334,7 +11345,7 @@
       "number": 31,
       "textSV1888": "Deze zijn zonen van Sem, naar hun huisgezinnen, naar hun spraken, in hun landschappen, naar hun volken.",
       "text1637": "Dit zijn Sems sonen, nae hare huysgesinnen, nae hare spraken; in hare lantschappen, nae hare volckeren.",
-      "text2026": "Deze zijn zonen van Sem, naar hun huisgezinnen, naar hun spraken, in hun landschappen, naar hun volken.",
+      "text2026": "Deze zijn zonen van Sem, naar hun huisgezinnen, naar hun spraken, in hun gewesten, naar hun volken.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -11373,9 +11384,15 @@
           "morph": "HR/Ncmpc/Sp3mp"
         }
       ],
-      "text2026_html": "Deze zijn zonen van Sem, naar hun huisgezinnen, naar hun spraken, in hun landschappen, naar hun volken.",
+      "text2026_html": "Deze zijn zonen van Sem, naar hun huisgezinnen, naar hun spraken, in hun gewesten, naar hun volken.",
       "text1637_html": "Dit zijn Sems sonen, nae hare huysgesinnen, nae hare spraken; in hare lantschappen, nae hare volckeren.",
-      "phraseDiff": [],
+      "phraseDiff": [
+        {
+          "old": "landschappen,",
+          "new": "gewesten,",
+          "principe": "V1535"
+        }
+      ],
       "woordnummers": [
         {
           "tekst": "Deze",
