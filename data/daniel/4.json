@@ -1238,7 +1238,7 @@
       "number": 4,
       "textSV1888": "Ik, Nebukadnezar, gerust zijnde in mijn huis, en in mijn paleis groenende,",
       "text1637": "Ick Nebucadnezar [8] gerust zijnde [9] in mijn huys, ende in mijn paleys [10]groenende,",
-      "text2026": "Ik, Nebukadnezar, gerust zijnde in mijn huis, en in mijn paleis groenende,",
+      "text2026": "Ik, Nebukadnezar, gerust zijnde in mijn huis, en welvarend in mijn paleis,",
       "marginNotes": [
         {
           "marker": "10",
@@ -1299,7 +1299,7 @@
           "morph": "AR/Ncmsc/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Ik, Nebukadnezar,<sup class=\"note-marker\" data-note=\"8\">8</sup> gerust zijnde<sup class=\"note-marker\" data-note=\"9\">9</sup> in mijn huis, en in mijn paleis<sup class=\"note-marker\" data-note=\"10\">10</sup> groenende,</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Ik, Nebukadnezar,<sup class=\"note-marker\" data-note=\"8\">8</sup> gerust zijnde<sup class=\"note-marker\" data-note=\"9\">9</sup> in mijn huis, en welvarend in mijn paleis,</i></span>",
       "textSV1888_html": "Ik, Nebukadnezar,<sup class=\"note-marker\" data-note=\"8\">8</sup> gerust zijnde<sup class=\"note-marker\" data-note=\"9\">9</sup> in mijn huis, en in mijn paleis<sup class=\"note-marker\" data-note=\"10\">10</sup> groenende,",
       "text1637_html": "Ick Nebucadnezar <sup class=\"note-marker\" data-note=\"8\">8</sup> gerust zijnde <sup class=\"note-marker\" data-note=\"9\">9</sup> in mijn huys, ende in mijn paleys <sup class=\"note-marker\" data-note=\"10\">10</sup>groenende,",
       "woordnummers": [
@@ -1492,13 +1492,25 @@
             ]
           }
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "",
+          "new": "welvarend",
+          "principe": "V1541"
+        },
+        {
+          "old": "paleis groenende,",
+          "new": "paleis,",
+          "principe": "V1541"
+        }
       ]
     },
     {
       "number": 5,
       "textSV1888": "Zag een droom, die mij vervaarde, en de gedachten, die ik op mijn bed had, en de gezichten mijns hoofds beroerden mij.",
       "text1637": "Sach [11] eenen droom, die my verveerde, ende de gedachten, die ick op mijn bedde hadde, ende de gesichten mijnes hoofdes, beroerden my.",
-      "text2026": "Zag een droom, die mij vervaarde, en de gedachten, die ik op mijn bed had, en de visioenen van mijn hoofd beroerden mij.",
+      "text2026": "Zag een droom, die mij bevreesd maakte, en de gedachten, die ik op mijn bed had, en de visioenen van mijn hoofd beroerden mij.",
       "marginNotes": [
         {
           "marker": "11",
@@ -1555,10 +1567,15 @@
           "morph": "AVpi3mp/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zag<sup class=\"note-marker\" data-note=\"11\">11</sup> een droom, die mij vervaarde, en de gedachten, die ik op mijn bed had, en de visioenen van mijn hoofd beroerden mij.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zag<sup class=\"note-marker\" data-note=\"11\">11</sup> een droom, die mij bevreesd maakte, en de gedachten, die ik op mijn bed had, en de visioenen van mijn hoofd beroerden mij.</i></span>",
       "textSV1888_html": "Zag<sup class=\"note-marker\" data-note=\"11\">11</sup> een droom, die mij vervaarde, en de gedachten, die ik op mijn bed had, en de gezichten mijns hoofds beroerden mij.",
       "text1637_html": "Sach <sup class=\"note-marker\" data-note=\"11\">11</sup> eenen droom, die my verveerde, ende de gedachten, die ick op mijn bedde hadde, ende de gesichten mijnes hoofdes, beroerden my.",
       "phraseDiff": [
+        {
+          "old": "vervaarde,",
+          "new": "bevreesd maakte,",
+          "principe": "V1536"
+        },
         {
           "old": "gezichten mijns hoofds",
           "new": "visioenen van mijn hoofd",
@@ -5945,7 +5962,7 @@
       "number": 14,
       "textSV1888": "Roepende met kracht, en aldus zeggende: Houwt dien boom af, en kapt zijn takken af; stroopt zijn loof af, en verstrooit zijn vruchten, dat de dieren van onder hem wegzwerven, en de vogelen van zijn takken;",
       "text1637": "Roepende met cracht, ende aldus [37] seggende, Houwt dien boom af, ende kapt sijne tacken af, stroopt sijn loof af, ende verstroyt sijne vruchten, dat de dieren van onder hem wech swerven, ende de vogelen van sijne tacken:",
-      "text2026": "Roepende met kracht, en zo zeggende: Houw die boom af, en kapt zijn takken af; stroopt zijn loof af, en verstrooit zijn vruchten, dat de dieren van onder hem wegzwerven, en de vogels van zijn takken;",
+      "text2026": "Roepende met kracht, en zo zeggende: Houw die boom af, en kapt zijn takken af; stroopt zijn loof af, en verstrooit zijn vruchten, dat de dieren van onder hem wegvluchten, en de vogels van zijn takken;",
       "marginNotes": [
         {
           "marker": "37",
@@ -6052,7 +6069,7 @@
           "morph": "ANcmsc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Roepende met kracht, en zo zeggende: <span class=\"direct-speech\"><i>Houw die boom af, en kapt zijn takken af; stroopt zijn loof af, en verstrooit zijn vruchten, dat de dieren van onder hem wegzwerven,</i></span> en de vogels van zijn takken;</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Roepende met kracht, en zo zeggende: <span class=\"direct-speech\"><i>Houw die boom af, en kapt zijn takken af; stroopt zijn loof af, en verstrooit zijn vruchten, dat de dieren van onder hem wegvluchten,</i></span> en de vogels van zijn takken;</i></span>",
       "textSV1888_html": "Roepende met kracht, en aldus<sup class=\"note-marker\" data-note=\"37\">37</sup> zeggende: Houwt dien boom af, en kapt zijn takken af; stroopt zijn loof af, en verstrooit zijn vruchten, dat de dieren van onder hem wegzwerven, en de vogelen van zijn takken;",
       "text1637_html": "Roepende met cracht, ende aldus <sup class=\"note-marker\" data-note=\"37\">37</sup> seggende, Houwt dien boom af, en<i>de</i> kapt sijne tacken af, stroopt sijn loof af, ende verstroyt sijne vruchten, dat de dieren van onder hem wech swerven, ende de vogelen van sijne tacken:",
       "phraseDiff": [
@@ -6065,6 +6082,11 @@
           "old": "Houwt dien",
           "new": "Houw die",
           "principe": "V1158"
+        },
+        {
+          "old": "wegzwerven,",
+          "new": "wegvluchten,",
+          "principe": "V1540"
         },
         {
           "old": "vogelen",
