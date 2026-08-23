@@ -60,6 +60,12 @@ def peel(blok, paar):
         return [(o, n, p), (oud[len(o) + 1:], nieuw[len(n) + 1:], pid)]
     if oud.endswith(" " + o) and nieuw.endswith(" " + n):
         return [(oud[:-len(o) - 1], nieuw[:-len(n) - 1], pid), (o, n, p)]
+    # Zelfde bronwoorden, andere uitkomst: dan is het blok niet samengeklonterd
+    # maar heeft het principe een nieuwe uitkomst gekregen. Het hoort nog steeds
+    # bij hetzelfde principe -- welker werd eerst wier en nu van wie de, en dat
+    # is nog altijd het werk van V212.
+    if oud == o:
+        return [(oud, nieuw, p)]
     return None
 
 
