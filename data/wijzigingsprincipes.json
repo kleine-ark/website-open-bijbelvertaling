@@ -9901,8 +9901,8 @@
    "id": "V1145",
    "categorie": "Naamvallen",
    "oud": "ten spijsoffer",
-   "nieuw": "als spijsoffer",
-   "toelichting": "Zelfde datief als V1143. Jozua 22:29 overgeslagen: daar gaat het om een altaar dat ergens vóór bestemd zou zijn, niet om iets dat een spijsoffer ís.",
+   "nieuw": "als voedseloffer",
+   "toelichting": "Zelfde datief als V1143. Jozua 22:29 overgeslagen: daar gaat het om een altaar dat ergens voor bestemd zou zijn, niet om iets dat een voedseloffer is. Het principe levert meteen de eindvorm op; zou het eerst \"als spijsoffer\" worden, dan is de uitvoer ervan het bronwoord van V1542 en hangt de uitkomst af van de volgorde waarin sweeps draaien.",
    "regex": "\\bten spijsoffer\\b",
    "voorbeeld": "Numeri 28:5 — een tiende deel van een efa meelbloem ten spijsoffer → als spijsoffer"
   },
@@ -13281,7 +13281,7 @@
    "categorie": "Menselijke review",
    "oud": "spijsoffer",
    "nieuw": "voedseloffer",
-   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van Nehemia.",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van Nehemia. Op 23 augustus 2026 is die keuze op verzoek corpusbreed doorgetrokken; V1542 is nu de algemene regel en dit vers valt daaronder.",
    "regex": "",
    "voorbeeld": "Nehemia 10:33",
    "bereik": {
@@ -14162,6 +14162,15 @@
      "4:4"
     ]
    }
+  },
+  {
+   "id": "V1542",
+   "categorie": "Verouderde woorden",
+   "oud": "spijsoffer / spijsoffers",
+   "nieuw": "voedseloffer / voedseloffers",
+   "toelichting": "Spijs is uitgestorven in de betekenis voedsel, en het Hebreeuwse minchah is een gave van meel en olie -- geen dier. De tekst stond hier half in: op 43 plaatsen stond al voedseloffer, waarvan 37 zonder principe, en op 127 plaatsen nog spijsoffer. Nu overal gelijkgetrokken, ook in Jubileeen, dat geen 1888-brontekst heeft. Neemt MR-NEH-015 (Nehemia 10:33) en V1173 (spijsofferen) in zich op.",
+   "regex": "",
+   "voorbeeld": "Numeri 29:16 | zijn spijsoffer, en zijn drankoffer | zijn voedseloffer, en zijn drankoffer"
   }
  ]
 }
