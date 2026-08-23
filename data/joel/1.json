@@ -2980,7 +2980,7 @@
       "number": 9,
       "textSV1888": "Spijsoffer en drankoffer is van het huis des HEEREN afgesneden; de priesters, des HEEREN dienaars, treuren.",
       "text1637": "[17] Spijs-offer ende dranck-offer is van den Huyse des HEEREN afgesneden: De Priesters, des HEEREN dienaers, [18] treuren.",
-      "text2026": "Spijsoffer en drankoffer is van het huis van JAHWEH afgesneden; de priesters, het dienaren van JAHWEH, treuren.",
+      "text2026": "Voedseloffer en drankoffer is van het huis van JAHWEH afgesneden; de priesters, het dienaren van JAHWEH, treuren.",
       "marginNotes": [
         {
           "marker": "17",
@@ -3044,10 +3044,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"17\">17</sup><span class=\"direct-speech\"><i> Spijsoffer en drankoffer is van het huis van JAHWEH afgesneden; de priesters, het dienaren van JAHWEH,<sup class=\"note-marker\" data-note=\"18\">18</sup> treuren.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"17\">17</sup><span class=\"direct-speech\"><i> Voedseloffer en drankoffer is van het huis van JAHWEH afgesneden; de priesters, het dienaren van JAHWEH,<sup class=\"note-marker\" data-note=\"18\">18</sup> treuren.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"17\">17</sup> Spijsoffer en drankoffer is van het huis des HEEREN afgesneden; de priesters, des HEEREN dienaars,<sup class=\"note-marker\" data-note=\"18\">18</sup> treuren.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"17\">17</sup> Spijs-offer ende dranck-offer is van den Huyse des HEEREN afgesneden: De Priesters, des HEEREN dienaers, <sup class=\"note-marker\" data-note=\"18\">18</sup> treuren.",
       "phraseDiff": [
+        {
+          "old": "Spijsoffer",
+          "new": "Voedseloffer",
+          "principe": "V1542"
+        },
         {
           "old": "des HEEREN",
           "new": "van JAHWEH",
@@ -4719,7 +4724,7 @@
       "number": 13,
       "textSV1888": "Omgordt u, en rouwklaagt, gij priesters! huilt, gij dienaars des altaars! gaat in, vernacht in zakken, gij dienaars mijns Gods! want spijsoffer en drankoffer is geweerd van het huis uws Gods.",
       "text1637": "[26] Omgordet u, ende rouwklaget, ghy Priesters, huylet, ghy dienaers des altaers; gaet in, vernachtet in sacken, ghy dienaers mijnes Godts: want [27] spijs-offer ende dranck-offer is geweert van den huyse uwes Godts.",
-      "text2026": "Omgord u, en rouwklaagt, u priesters! huil, u dienaren van het altaar! ga in, overnacht in zakken, u dienaren van mijn God! want spijsoffer en drankoffer is geweerd van het huis van uw God.",
+      "text2026": "Omgord u, en rouwklaagt, u priesters! huil, u dienaren van het altaar! ga in, overnacht in zakken, u dienaren van mijn God! want voedseloffer en drankoffer is geweerd van het huis van uw God.",
       "marginNotes": [
         {
           "marker": "26",
@@ -4823,7 +4828,7 @@
           "morph": "HC/Ncmsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"26\">26</sup><span class=\"direct-speech\"><i> Omgord u, en rouwklaagt, u priesters! huil, u dienaren van het altaar! ga in, overnacht in zakken, u dienaren van mijn God! want<sup class=\"note-marker\" data-note=\"27\">27</sup> spijsoffer en drankoffer is geweerd van het huis van uw God.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"26\">26</sup><span class=\"direct-speech\"><i> Omgord u, en rouwklaagt, u priesters! huil, u dienaren van het altaar! ga in, overnacht in zakken, u dienaren van mijn God! want<sup class=\"note-marker\" data-note=\"27\">27</sup> voedseloffer en drankoffer is geweerd van het huis van uw God.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"26\">26</sup> Omgordt u, en rouwklaagt, gij priesters! huilt, gij dienaars des altaars! gaat in, vernacht in zakken, gij dienaars mijns Gods! want<sup class=\"note-marker\" data-note=\"27\">27</sup> spijsoffer en drankoffer is geweerd van het huis uws Gods.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"26\">26</sup> Omgordet u, ende rouwklaget, ghy Priesters, huylet, ghy dienaers des altaers; gaet in, vernachtet in sacken, ghy dienaers mijnes Godts: want <sup class=\"note-marker\" data-note=\"27\">27</sup> spijs-offer ende dranck-offer is geweert van den huyse uwes Godts.",
       "phraseDiff": [
@@ -4851,6 +4856,11 @@
           "old": "gij dienaars mijns Gods!",
           "new": "u dienaren van mijn God!",
           "principe": "A1"
+        },
+        {
+          "old": "spijsoffer",
+          "new": "voedseloffer",
+          "principe": "V1542"
         },
         {
           "old": "uws Gods.",
