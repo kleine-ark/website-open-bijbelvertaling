@@ -2148,8 +2148,8 @@
    "id": "V212",
    "categorie": "Verouderde woorden",
    "oud": "welker",
-   "nieuw": "wier / waarvan",
-   "toelichting": "[TERUGGEDRAAID 2026-04-29] welker → wier was niet gewenst; alle 84 vervangingen ongedaan gemaakt.",
+   "nieuw": "van wie de / waarvan de",
+   "toelichting": "Het betrekkelijk voornaamwoord in de tweede naamval. Waar het naar een persoon verwijst wordt het \"van wie de\", waar het naar een zaak verwijst \"waarvan de\" -- dezelfde lijn als V1516 voor \"in welke\". Na een voorzetsel blijft de oude vorm staan, want \"in het land van wie ik woon\" is geen Nederlands. Dit principe leverde tot 23 augustus 2026 \"wier\" op; dat is toen doorgetrokken naar de eindvorm, omdat die uitvoer anders het bronwoord van V1543 wordt en de uitkomst dan afhangt van de volgorde waarin sweeps draaien.",
    "regex": "\\b[Ww]elker\\b"
   },
   {
@@ -6301,7 +6301,7 @@
    "categorie": "Naamvallen",
    "oud": "van wie de (bezittelijk)",
    "nieuw": "wiens / wier",
-   "toelichting": "Kromme eerdere vervanging hersteld: bezittelijk \"van wie de X\" → \"wiens/wier X\". Legitieme betrekkelijke bijzinnen (\"van wie de broer ziek was\") blijven.",
+   "toelichting": "[INGETROKKEN 2026-08-23] Dit principe deed \"van wie de X\" terug naar \"wiens/wier X\", als herstel van een kromme eerdere vervanging. Het staat nergens meer in de tekst toegepast, en de lijn is sindsdien omgekeerd: V212 en V1543 maken van welker en wier juist \"van wie de\". Laten staan zou betekenen dat twee principes elkaar eeuwig terugdraaien, zoals V139 en V969 eerder deden. Het nummer blijft bezet zodat het niet hergebruikt wordt.",
    "regex": "\\bvan wie de\\b"
   },
   {
@@ -12905,7 +12905,7 @@
    "categorie": "Menselijke review",
    "oud": "wier naam",
    "nieuw": "van wie de naam",
-   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1-2 Samuel en 1 Koningen. Op 23 augustus 2026 is die keuze de algemene lijn geworden; V1543 doet nu hetzelfde corpusbreed en dit bereik valt daaronder.",
    "regex": "",
    "voorbeeld": "2samuel 3:7",
    "bereik": {
@@ -14171,6 +14171,15 @@
    "toelichting": "Spijs is uitgestorven in de betekenis voedsel, en het Hebreeuwse minchah is een gave van meel en olie -- geen dier. De tekst stond hier half in: op 43 plaatsen stond al voedseloffer, waarvan 37 zonder principe, en op 127 plaatsen nog spijsoffer. Nu overal gelijkgetrokken, ook in Jubileeen, dat geen 1888-brontekst heeft. Neemt MR-NEH-015 (Nehemia 10:33) en V1173 (spijsofferen) in zich op.",
    "regex": "",
    "voorbeeld": "Numeri 29:16 | zijn spijsoffer, en zijn drankoffer | zijn voedseloffer, en zijn drankoffer"
+  },
+  {
+   "id": "V1543",
+   "categorie": "Verouderde woorden",
+   "oud": "wier",
+   "nieuw": "van wie de / waarvan de",
+   "toelichting": "Het betrekkelijk voornaamwoord in de tweede naamval, waar de 1888-tekst zelf al \"wier\" schrijft. Waar het naar een persoon verwijst wordt het \"van wie de\", waar het naar een zaak verwijst \"waarvan de\": een parel waarvan de prijs kostbaar is, de stad waarvan de kooplieden vorsten zijn. Het lidwoord loopt mee met het geslacht - van wie de zoon, maar van wie het hart. Negentig plaatsen. Wat blijft staan: negentien keer na een voorzetsel, want \"in het land van wie ik woon\" is geen Nederlands; Psalm 26:10, dat er twee heeft waarvan de eerste na een voorzetsel staat, zodat een van de twee omzetten twee vormen in een zin zou opleveren; en Jona 2:5, waar het wier gewoon zeewier is. \"wiens\" is niet aangeraakt.",
+   "regex": "",
+   "voorbeeld": "1 Koningen 3:26 | de vrouw, wier zoon de levende was | de vrouw, van wie de zoon de levende was"
   }
  ]
 }

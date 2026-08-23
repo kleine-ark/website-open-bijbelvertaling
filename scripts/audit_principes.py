@@ -254,7 +254,16 @@ def main():
     # Contextueel begrensde principes mogen dezelfde woorden anders behandelen
     # dan een algemene regel: hun vindplaatsen zijn expliciet vastgelegd en ze
     # worden niet als een blinde corpus-sweep uitgevoerd.
-    globale_principes = [p for p in principes if not p.get("bereik")]
+    #
+    # Ingetrokken principes tellen ook niet mee. Zij blijven in het bestand
+    # staan zodat het nummer niet hergebruikt wordt en de geschiedenis leesbaar
+    # blijft, maar ze worden nooit meer gedraaid en kunnen dus met niemand
+    # botsen. Ze zijn te herkennen aan een markering vooraan de toelichting;
+    # V212 gebruikt die conventie al sinds april 2026.
+    ingetrokken = re.compile(r"^\s*\[(?:INGETROKKEN|TERUGGEDRAAID|VERVALLEN)\b")
+    globale_principes = [p for p in principes
+                         if not p.get("bereik")
+                         and not ingetrokken.match(p.get("toelichting") or "")]
     print(f"principes: {len(principes)}\n")
     problemen = 0
 
