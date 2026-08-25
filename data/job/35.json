@@ -130,7 +130,7 @@
       "number": 2,
       "textSV1888": "Houdt gij dat voor recht, dat gij gezegd hebt: Mijn gerechtigheid is meerder dan Gods?",
       "text1637": "Houdt ghy dat [2] voor recht, [dat] ghy geseyt hebt: [3] Mijne gerechticheyt is meerder dan Godts?",
-      "text2026": "Houdt u dat voor recht, dat u gezegd hebt: Mijn gerechtigheid is meerder dan Gods?",
+      "text2026": "Houdt u dat voor recht, dat u gezegd hebt: Mijn gerechtigheid is meerder dan die van God?",
       "marginNotes": [
         {
           "marker": "2",
@@ -179,7 +179,7 @@
           "morph": "HR/Ncmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Houdt u dat<sup class=\"note-marker\" data-note=\"2\">2</sup> voor recht, dat u gezegd hebt:<sup class=\"note-marker\" data-note=\"3\">3</sup> Mijn gerechtigheid is meerder dan Gods?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Houdt u dat<sup class=\"note-marker\" data-note=\"2\">2</sup> voor recht, dat u gezegd hebt:<sup class=\"note-marker\" data-note=\"3\">3</sup> Mijn gerechtigheid is meerder dan die van God?</i></span>",
       "textSV1888_html": "Houdt gij dat<sup class=\"note-marker\" data-note=\"2\">2</sup> voor recht, dat gij gezegd hebt:<sup class=\"note-marker\" data-note=\"3\">3</sup> Mijn gerechtigheid is meerder dan Gods?",
       "text1637_html": "Houdt ghy dat <sup class=\"note-marker\" data-note=\"2\">2</sup> voor recht, [dat] ghy geseyt hebt: <sup class=\"note-marker\" data-note=\"3\">3</sup> Mijne gerechticheyt is meerder dan Godts?",
       "phraseDiff": [
@@ -192,6 +192,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "Gods?",
+          "new": "die van God?",
+          "principe": "V1559"
         }
       ],
       "woordnummers": [
@@ -1776,7 +1781,7 @@
       "number": 8,
       "textSV1888": "Uw goddeloosheid zou zijn tegen een man, gelijk gij zijt, en uw gerechtigheid voor eens mensen kind.",
       "text1637": "Uwe godtloosheyt soude zijn [15] tegen eenen man gelijck ghy zijt, ende uwe gerech-ticheyt [16] voor eens [17] menschen kint.",
-      "text2026": "Uw goddeloosheid zou zijn tegen een man, gelijk u bent, en uw gerechtigheid voor het kind van een mens.",
+      "text2026": "Uw goddeloosheid zou zijn tegen een man, zoals u bent, en uw gerechtigheid voor het kind van een mens.",
       "marginNotes": [
         {
           "marker": "15",
@@ -1832,10 +1837,15 @@
           "morph": "HNcfsc/Sp2ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Uw goddeloosheid zou zijn<sup class=\"note-marker\" data-note=\"15\">15</sup> tegen een man, gelijk u bent, en uw gerechtigheid<sup class=\"note-marker\" data-note=\"16\">16</sup> voor het kind van een mens<sup class=\"note-marker\" data-note=\"17\">17</sup>.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Uw goddeloosheid zou zijn<sup class=\"note-marker\" data-note=\"15\">15</sup> tegen een man, zoals u bent, en uw gerechtigheid<sup class=\"note-marker\" data-note=\"16\">16</sup> voor het kind van een mens<sup class=\"note-marker\" data-note=\"17\">17</sup>.</i></span>",
       "textSV1888_html": "Uw goddeloosheid zou zijn<sup class=\"note-marker\" data-note=\"15\">15</sup> tegen een man, gelijk gij zijt, en uw gerechtigheid<sup class=\"note-marker\" data-note=\"16\">16</sup> voor eens<sup class=\"note-marker\" data-note=\"17\">17</sup> mensen kind.",
       "text1637_html": "Uwe godtloosheyt soude zijn <sup class=\"note-marker\" data-note=\"15\">15</sup> tegen eenen man gelijck ghy zijt, en<i>de</i> uwe gerech-ticheyt <sup class=\"note-marker\" data-note=\"16\">16</sup> voor eens <sup class=\"note-marker\" data-note=\"17\">17</sup> menschen kint.",
       "phraseDiff": [
+        {
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
+        },
         {
           "old": "gij zijt,",
           "new": "u bent,",
