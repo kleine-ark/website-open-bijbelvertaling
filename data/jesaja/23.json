@@ -1788,7 +1788,7 @@
       "number": 5,
       "textSV1888": "Gelijk als geweest is de tijding van Egypte, zal men ook in weedom zijn, als men van Tyrus horen zal.",
       "text1637": "Gelijck als geweest is [23] de tydinge van Egypten, salmen oock [24] in weedom zijn, [25] alsmen van Tyrus hooren sal [*] .",
-      "text2026": "Gelijk als geweest is de tijding van Egypte, zal men ook in smart zijn, als men van Tyrus horen zal.",
+      "text2026": "Zoals geweest is de tijding van Egypte, zal men ook in smart zijn, als men van Tyrus horen zal.",
       "marginNotes": [
         {
           "marker": "23",
@@ -1844,10 +1844,15 @@
           "morph": "HNp"
         }
       ],
-      "text2026_html": "Gelijk als geweest is<sup class=\"note-marker\" data-note=\"23\">23</sup> de tijding van Egypte, zal men<sup class=\"note-marker\" data-note=\"24\">24</sup> ook in smart zijn,<sup class=\"note-marker\" data-note=\"25\">25</sup> als men van Tyrus horen zal.",
+      "text2026_html": "Zoals geweest is<sup class=\"note-marker\" data-note=\"23\">23</sup> de tijding van Egypte, zal men<sup class=\"note-marker\" data-note=\"24\">24</sup> ook in smart zijn,<sup class=\"note-marker\" data-note=\"25\">25</sup> als men van Tyrus horen zal.",
       "textSV1888_html": "Gelijk als geweest is<sup class=\"note-marker\" data-note=\"23\">23</sup> de tijding van Egypte, zal men<sup class=\"note-marker\" data-note=\"24\">24</sup> ook in weedom zijn,<sup class=\"note-marker\" data-note=\"25\">25</sup> als men van Tyrus horen zal.",
       "text1637_html": "Gelijck als geweest is <sup class=\"note-marker\" data-note=\"23\">23</sup> de tydinge van Egypten, salmen oock <sup class=\"note-marker\" data-note=\"24\">24</sup> in weedom zijn, <sup class=\"note-marker\" data-note=\"25\">25</sup> alsmen van Tyrus hooren sal <sup class=\"note-marker\" data-note=\"*\">*</sup> .",
       "phraseDiff": [
+        {
+          "old": "Gelijk als",
+          "new": "Zoals",
+          "principe": "V804"
+        },
         {
           "old": "weedom",
           "new": "smart",
@@ -2828,7 +2833,7 @@
           }
         },
         {
-          "tekst": "wier",
+          "tekst": "waarvan",
           "voorkomen": 1,
           "strongs": [
             "H834"
@@ -5542,7 +5547,7 @@
       "number": 15,
       "textSV1888": "En het zal geschieden te dien dage, dat Tyrus zal vergeten worden zeventig jaren, gelijk eens konings dagen; maar ten einde van zeventig jaren zal in Tyrus als een hoerenlied zijn:",
       "text1637": "Ende het sal geschieden te dien dage, [57] dat Tyrus sal vergeten worden [58] tseventich jaren, [59] gelijck eenes Conincks dagen: [maer] ten eynde van tseventich jaer, [60] sal in Tyro als een hoereliet zijn.",
-      "text2026": "En het zal gebeuren op die dag, dat Tyrus zal vergeten worden zeventig jaren, gelijk de dagen van een koning; maar na verloop van zeventig jaren zal in Tyrus als een hoerenlied zijn:",
+      "text2026": "En het zal gebeuren op die dag, dat Tyrus zal vergeten worden zeventig jaren, zoals de dagen van een koning; maar na verloop van zeventig jaren zal in Tyrus als een hoerenlied zijn:",
       "marginNotes": [
         {
           "marker": "57",
@@ -5660,7 +5665,7 @@
           "morph": "HTd/Vqrfsa"
         }
       ],
-      "text2026_html": "En het zal gebeuren op die dag,<sup class=\"note-marker\" data-note=\"57\">57</sup> dat Tyrus zal vergeten worden<sup class=\"note-marker\" data-note=\"58\">58</sup> zeventig jaren,<sup class=\"note-marker\" data-note=\"59\">59</sup> gelijk de dagen van een koning; maar na verloop van zeventig jaren<sup class=\"note-marker\" data-note=\"60\">60</sup> zal in Tyrus als een hoerenlied zijn:",
+      "text2026_html": "En het zal gebeuren op die dag,<sup class=\"note-marker\" data-note=\"57\">57</sup> dat Tyrus zal vergeten worden<sup class=\"note-marker\" data-note=\"58\">58</sup> zeventig jaren,<sup class=\"note-marker\" data-note=\"59\">59</sup> zoals de dagen van een koning; maar na verloop van zeventig jaren<sup class=\"note-marker\" data-note=\"60\">60</sup> zal in Tyrus als een hoerenlied zijn:",
       "textSV1888_html": "En het zal geschieden te dien dage,<sup class=\"note-marker\" data-note=\"57\">57</sup> dat Tyrus zal vergeten worden<sup class=\"note-marker\" data-note=\"58\">58</sup> zeventig jaren,<sup class=\"note-marker\" data-note=\"59\">59</sup> gelijk eens konings dagen; maar ten einde van zeventig jaren<sup class=\"note-marker\" data-note=\"60\">60</sup> zal in Tyrus als een hoerenlied zijn:",
       "text1637_html": "En<i>de</i> het sal geschieden te dien dage, <sup class=\"note-marker\" data-note=\"57\">57</sup> dat Tyrus sal vergeten worden <sup class=\"note-marker\" data-note=\"58\">58</sup> tseventich jaren, <sup class=\"note-marker\" data-note=\"59\">59</sup> gelijck eenes Conincks dagen: [maer] ten eynde van tseventich jaer, <sup class=\"note-marker\" data-note=\"60\">60</sup> sal in Tyro als een hoereliet zijn.",
       "phraseDiff": [
@@ -5670,9 +5675,9 @@
           "principe": "N4"
         },
         {
-          "old": "eens konings dagen;",
-          "new": "de dagen van een koning;",
-          "principe": null
+          "old": "gelijk eens konings dagen;",
+          "new": "zoals de dagen van een koning;",
+          "principe": "V1544"
         },
         {
           "old": "ten einde",

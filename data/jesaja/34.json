@@ -1178,7 +1178,7 @@
       "number": 4,
       "textSV1888": "En al het heir der hemelen zal uitteren, en de hemelen zullen toegerold worden, gelijk een boek, en al hun heir zal afvallen, gelijk een blad van den wijnstok afvalt, en gelijk een vijg afvalt van den vijgeboom.",
       "text1637": "Ende al het heyr der hemelen sal [10] [a] uyt-teeren, ende de hemelen sullen [11] toegerolt worden, gelijck een boeck, ende al [12] haer heyr sal af-vallen, gelijck een blat van den wijn-stock af-valt, ende gelijck [een vyge] afvalt van den vyge-boom.",
-      "text2026": "En al het leger van de hemelen zal uitteren, en de hemelen zullen toegerold worden, gelijk een boek, en al hun leger zal afvallen, gelijk een blad van de wijnstok afvalt, en gelijk een vijg afvalt van de vijgeboom.",
+      "text2026": "En al het leger van de hemelen zal uitteren, en de hemelen zullen toegerold worden, zoals een boek, en al hun leger zal afvallen, zoals een blad van de wijnstok afvalt, en gelijk een vijg afvalt van de vijgeboom.",
       "marginNotes": [
         {
           "marker": "a",
@@ -1286,7 +1286,7 @@
           "morph": "HR/Ncfsa"
         }
       ],
-      "text2026_html": "En al het leger van de hemelen zal<sup class=\"note-marker\" data-note=\"a\">a</sup> uitteren, en de hemelen zullen<sup class=\"note-marker\" data-note=\"11\">11</sup> toegerold worden, gelijk een boek, en al<sup class=\"note-marker\" data-note=\"12\">12</sup> hun leger zal afvallen, gelijk een blad van de wijnstok afvalt, en gelijk een vijg afvalt van de vijgeboom.",
+      "text2026_html": "En al het leger van de hemelen zal<sup class=\"note-marker\" data-note=\"a\">a</sup> uitteren, en de hemelen zullen<sup class=\"note-marker\" data-note=\"11\">11</sup> toegerold worden, zoals een boek, en al<sup class=\"note-marker\" data-note=\"12\">12</sup> hun leger zal afvallen, zoals een blad van de wijnstok afvalt, en gelijk een vijg afvalt van de vijgeboom.",
       "textSV1888_html": "En al het heir der hemelen zal<sup class=\"note-marker\" data-note=\"a\">a</sup> uitteren, en de hemelen zullen<sup class=\"note-marker\" data-note=\"11\">11</sup> toegerold worden, gelijk een boek, en al<sup class=\"note-marker\" data-note=\"12\">12</sup> hun heir zal afvallen, gelijk een blad van den wijnstok afvalt, en gelijk een vijg afvalt van den vijgeboom.",
       "text1637_html": "Ende al het heyr der hemelen sal <sup class=\"note-marker\" data-note=\"10\">10</sup> <sup class=\"note-marker\" data-note=\"a\">a</sup> uyt-teeren, en<i>de</i> de hemelen sullen <sup class=\"note-marker\" data-note=\"11\">11</sup> toegerolt worden, gelijck een boeck, ende al <sup class=\"note-marker\" data-note=\"12\">12</sup> haer heyr sal af-vallen, gelijck een blat van den wijn-stock af-valt, ende gelijck [een vyge] afvalt van den vyge-boom.",
       "phraseDiff": [
@@ -1296,9 +1296,19 @@
           "principe": "N2"
         },
         {
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
+        },
+        {
           "old": "heir",
           "new": "leger",
           "principe": "O2"
+        },
+        {
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
         },
         {
           "old": "den",

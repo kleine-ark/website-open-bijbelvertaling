@@ -346,7 +346,7 @@
       "number": 2,
       "textSV1888": "En gelijk het volk, alzo zal de priester wezen; gelijk de knecht, alzo zijn heer; gelijk de dienstmaagd, alzo haar vrouw; gelijk de koper, alzo de verkoper; gelijk de lener, alzo de ontlener; gelijk de woekeraar, alzo die, van welken hij woeker ontvangt.",
       "text1637": "Ende [4] gelijck het volck, alsoo sal de [5] Priester wesen; gelijck de knecht, alsoo sijn heere; gelijck de dienstmaecht, alsoo hare vrouwe; [a] gelijck de kooper, alsoo de verkooper: gelijck de leener, alsoo de ontleener; gelijck de woeckeraer, alsoo die van welcken hy woecker ontfangt.",
-      "text2026": "En gelijk het volk, zo zal de priester wezen; gelijk de knecht, zo zijn heer; gelijk de dienstmaagd, zo haar vrouw; gelijk de koper, zo de verkoper; gelijk de lener, zo de ontlener; gelijk de woekeraar, zo die, van wie hij rente ontvangt.",
+      "text2026": "En gelijk het volk, zo zal de priester wezen; gelijk de knecht, zo zijn heer; zoals de dienstmaagd, zo haar vrouw; zoals de koper, zo de verkoper; zoals de lener, zo de ontlener; zoals de woekeraar, zo die, van wie hij rente ontvangt.",
       "marginNotes": [
         {
           "marker": "4",
@@ -447,7 +447,7 @@
           "morph": "HR/Sp3ms"
         }
       ],
-      "text2026_html": "En<sup class=\"note-marker\" data-note=\"4\">4</sup> gelijk het volk, zo zal de<sup class=\"note-marker\" data-note=\"5\">5</sup> priester wezen; gelijk de knecht, zo zijn heer; gelijk de dienstmaagd, zo haar vrouw;<sup class=\"note-marker\" data-note=\"a\">a</sup> gelijk de koper, zo de verkoper; gelijk de lener, zo de ontlener; gelijk de woekeraar, zo die, van wie hij rente ontvangt.",
+      "text2026_html": "En<sup class=\"note-marker\" data-note=\"4\">4</sup> gelijk het volk, zo zal de<sup class=\"note-marker\" data-note=\"5\">5</sup> priester wezen; gelijk de knecht, zo zijn heer; zoals de dienstmaagd, zo haar vrouw;<sup class=\"note-marker\" data-note=\"a\">a</sup> zoals de koper, zo de verkoper; zoals de lener, zo de ontlener; zoals de woekeraar, zo die, van wie hij rente ontvangt.",
       "textSV1888_html": "En<sup class=\"note-marker\" data-note=\"4\">4</sup> gelijk het volk, alzo zal de<sup class=\"note-marker\" data-note=\"5\">5</sup> priester wezen; gelijk de knecht, alzo zijn heer; gelijk de dienstmaagd, alzo haar vrouw;<sup class=\"note-marker\" data-note=\"a\">a</sup> gelijk de koper, alzo de verkoper; gelijk de lener, alzo de ontlener; gelijk de woekeraar, alzo die, van welken hij woeker ontvangt.",
       "text1637_html": "Ende <sup class=\"note-marker\" data-note=\"4\">4</sup> gelijck het volck, alsoo sal de <sup class=\"note-marker\" data-note=\"5\">5</sup> Priester wesen; gelijck de knecht, alsoo sijn heere; gelijck de dienstmaecht, alsoo hare vrouwe; <sup class=\"note-marker\" data-note=\"a\">a</sup> gelijck de kooper, alsoo de verkooper: gelijck de leener, alsoo de ontleener; gelijck de woeckeraer, alsoo die van welcken hy woecker ontfangt.",
       "phraseDiff": [
@@ -462,9 +462,9 @@
           "principe": "V42"
         },
         {
-          "old": "alzo",
-          "new": "zo",
-          "principe": "V42"
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
         },
         {
           "old": "alzo",
@@ -472,9 +472,29 @@
           "principe": "V42"
         },
         {
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
+        },
+        {
           "old": "alzo",
           "new": "zo",
           "principe": "V42"
+        },
+        {
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
+        },
+        {
+          "old": "alzo",
+          "new": "zo",
+          "principe": "V42"
+        },
+        {
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
         },
         {
           "old": "alzo",
@@ -2662,7 +2682,7 @@
         {
           "old": "kweelt",
           "new": "verwelkt",
-          "principe": true
+          "principe": "V930"
         }
       ],
       "woordnummers": [
@@ -7277,7 +7297,7 @@
       "number": 20,
       "textSV1888": "De aarde zal ganselijk waggelen, gelijk een dronkaard, en zij zal heen en weder bewogen worden, gelijk een nachthut; en haar overtreding zal zwaar op haar zijn, en zij zal vallen, en niet weder opstaan.",
       "text1637": "[47] De aerde sal gantschelick waggelen, [h] gelijck een dronckaert, ende sy sal heen ende weder beweecht worden, [i] gelijck [48] een nacht-hutte, ende [49] hare overtredinge sal swaer op haer zijn, ende sy sal vallen, ende [50] niet weder op staen.",
-      "text2026": "De aarde zal geheel waggelen, gelijk een dronkaard, en zij zal heen en weer bewogen worden, gelijk een nachthut; en haar overtreding zal zwaar op haar zijn, en zij zal vallen, en niet weer opstaan.",
+      "text2026": "De aarde zal geheel waggelen, zoals een dronkaard, en zij zal heen en weer bewogen worden, zoals een nachthut; en haar overtreding zal zwaar op haar zijn, en zij zal vallen, en niet weer opstaan.",
       "marginNotes": [
         {
           "marker": "50",
@@ -7389,7 +7409,7 @@
           "morph": "HVqc"
         }
       ],
-      "text2026_html": "De aarde zal geheel waggelen,<sup class=\"note-marker\" data-note=\"h\">h</sup> gelijk een dronkaard, en zij zal heen en weer bewogen worden,<sup class=\"note-marker\" data-note=\"i\">i</sup> gelijk een nachthut; en haar overtreding zal zwaar op haar zijn, en zij zal vallen, en<sup class=\"note-marker\" data-note=\"50\">50</sup> niet weer opstaan.",
+      "text2026_html": "De aarde zal geheel waggelen,<sup class=\"note-marker\" data-note=\"h\">h</sup> zoals een dronkaard, en zij zal heen en weer bewogen worden,<sup class=\"note-marker\" data-note=\"i\">i</sup> zoals een nachthut; en haar overtreding zal zwaar op haar zijn, en zij zal vallen, en<sup class=\"note-marker\" data-note=\"50\">50</sup> niet weer opstaan.",
       "textSV1888_html": "De aarde zal ganselijk waggelen,<sup class=\"note-marker\" data-note=\"h\">h</sup> gelijk een dronkaard, en zij zal heen en weder bewogen worden,<sup class=\"note-marker\" data-note=\"i\">i</sup> gelijk een nachthut; en haar overtreding zal zwaar op haar zijn, en zij zal vallen, en<sup class=\"note-marker\" data-note=\"50\">50</sup> niet weder opstaan.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"47\">47</sup> De aerde sal gantschelick waggelen, <sup class=\"note-marker\" data-note=\"h\">h</sup> gelijck een dronckaert, ende sy sal heen ende weder beweecht worde<i>n</i>, <sup class=\"note-marker\" data-note=\"i\">i</sup> gelijck <sup class=\"note-marker\" data-note=\"48\">48</sup> een nacht-hutte, ende <sup class=\"note-marker\" data-note=\"49\">49</sup> hare overtredinge sal swaer op haer zijn, ende sy sal vallen, ende <sup class=\"note-marker\" data-note=\"50\">50</sup> niet weder op staen.",
       "phraseDiff": [
@@ -7399,9 +7419,19 @@
           "principe": "V195"
         },
         {
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
+        },
+        {
           "old": "weder",
           "new": "weer",
           "principe": "V66"
+        },
+        {
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
         },
         {
           "old": "weder",
