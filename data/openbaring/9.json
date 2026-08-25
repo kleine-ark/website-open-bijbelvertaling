@@ -3235,7 +3235,7 @@
       "number": 9,
       "textSV1888": "En zij hadden borstwapenen als ijzeren borstwapenen; en het gedruis hunner vleugelen was als een gedruis der wagens, wanneer vele paarden naar den strijd lopen.",
       "text1637": "Ende sy hadden borst-wapenen als yseren borst-wapenen: ende het gedruysch harer vleugelen was als een gedruysch der wagenen, wanneer vele peerden na den strijdt loopen.",
-      "text2026": "En zij hadden borstwapenen als ijzeren borstwapenen; en het geluid van hun vleugelen was als een geluid van de wagens, wanneer vele paarden naar de strijd lopen.",
+      "text2026": "En zij hadden borstwapenen als ijzeren borstwapenen; en het geluid van hun vleugels was als een geluid van de wagens, wanneer vele paarden naar de strijd lopen.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -3359,13 +3359,23 @@
           "morfologie": "N-ASM"
         }
       ],
-      "text2026_html": "En zij hadden borstwapenen als ijzeren borstwapenen; en het geluid van hun vleugelen was als een geluid van de wagens, wanneer vele paarden naar de strijd lopen.",
+      "text2026_html": "En zij hadden borstwapenen als ijzeren borstwapenen; en het geluid van hun vleugels was als een geluid van de wagens, wanneer vele paarden naar de strijd lopen.",
       "text1637_html": "Ende sy hadden borst-wapenen als yseren borst-wapenen: ende het gedruysch harer vleugelen was als een gedruysch der wagenen, wanneer vele peerden na den strijdt loopen.",
       "phraseDiff": [
         {
-          "old": "hunner",
-          "new": "van hun",
-          "principe": "N7"
+          "old": "gedruis",
+          "new": "geluid",
+          "principe": "V908"
+        },
+        {
+          "old": "hunner vleugelen",
+          "new": "van hun vleugels",
+          "principe": "V1560"
+        },
+        {
+          "old": "gedruis",
+          "new": "geluid",
+          "principe": "V1560"
         },
         {
           "old": "der",
@@ -3376,11 +3386,6 @@
           "old": "den",
           "new": "de",
           "principe": "N1"
-        },
-        {
-          "old": "gedruis",
-          "new": "geluid",
-          "principe": "V908"
         }
       ],
       "woordnummers": [

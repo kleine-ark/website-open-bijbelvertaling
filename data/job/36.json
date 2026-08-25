@@ -122,7 +122,7 @@
       "number": 2,
       "textSV1888": "Verbeid mij een weinig, en ik zal u aanwijzen, dat er nog redenen voor God zijn.",
       "text1637": "Verbeydt my een weynich, ende ick sal u aenwijsen, datter noch [1] redenen voor Godt zijn.",
-      "text2026": "Verbeid mij een weinig, en ik zal u aanwijzen, dat er nog redenen voor God zijn.",
+      "text2026": "Wacht even op mij, en ik zal u aanwijzen, dat er nog redenen voor God zijn.",
       "marginNotes": [
         {
           "marker": "1",
@@ -174,7 +174,7 @@
           "morph": "HNcfpa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Verbeid mij een weinig, en ik zal u aanwijzen, dat er<sup class=\"note-marker\" data-note=\"1\">1</sup> nog redenen voor God zijn.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Wacht even op mij, en ik zal u aanwijzen, dat er<sup class=\"note-marker\" data-note=\"1\">1</sup> nog redenen voor God zijn.</i></span>",
       "textSV1888_html": "Verbeid mij een weinig, en ik zal u aanwijzen, dat er<sup class=\"note-marker\" data-note=\"1\">1</sup> nog redenen voor God zijn.",
       "text1637_html": "Verbeydt my een weynich, ende ick sal u aenwijsen, datter noch <sup class=\"note-marker\" data-note=\"1\">1</sup> redenen voor Godt zijn.",
       "woordnummers": [
@@ -366,6 +366,13 @@
               5
             ]
           }
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "Verbeid mij een weinig,",
+          "new": "Wacht even op mij,",
+          "principe": "V323"
         }
       ]
     },
@@ -5744,7 +5751,7 @@
       "number": 22,
       "textSV1888": "Zie, God verhoogt door Zijn kracht; wie is een Leraar, gelijk Hij?",
       "text1637": "Siet, Godt [49] verhoogt door sijne kracht: wie is een leeraer, [50] gelijck hy?",
-      "text2026": "Zie, God verhoogt door Zijn kracht; wie is een Leraar, gelijk Hij?",
+      "text2026": "Zie, God verhoogt door Zijn kracht; wie is een Leraar, zoals Hij?",
       "marginNotes": [
         {
           "marker": "49",
@@ -5798,10 +5805,16 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zie, God<sup class=\"note-marker\" data-note=\"49\">49</sup> verhoogt door Zijn kracht; wie is een Leraar,<sup class=\"note-marker\" data-note=\"50\">50</sup> gelijk Hij?</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zie, God<sup class=\"note-marker\" data-note=\"49\">49</sup> verhoogt door Zijn kracht; wie is een Leraar,<sup class=\"note-marker\" data-note=\"50\">50</sup> zoals Hij?</i></span>",
       "textSV1888_html": "Zie, God<sup class=\"note-marker\" data-note=\"49\">49</sup> verhoogt door Zijn kracht; wie is een Leraar,<sup class=\"note-marker\" data-note=\"50\">50</sup> gelijk Hij?",
       "text1637_html": "Siet, Godt <sup class=\"note-marker\" data-note=\"49\">49</sup> verhoogt door sijne kracht: wie is een leeraer, <sup class=\"note-marker\" data-note=\"50\">50</sup> gelijck hy?",
-      "phraseDiff": [],
+      "phraseDiff": [
+        {
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
+        }
+      ],
       "woordnummers": [
         {
           "tekst": "Zie",
@@ -7939,7 +7952,7 @@
       "number": 30,
       "textSV1888": "Zie, Hij breidt over hem Zijn licht uit, en de wortelen der zee bedekt Hij.",
       "text1637": "Siet, [65] hy breydt over [66] hem sijn [67] licht uyt; ende de [68] wortelen der zee bedeckt hy.",
-      "text2026": "Zie, Hij breidt over hem Zijn licht uit, en de wortelen van de zee bedekt Hij.",
+      "text2026": "Zie, Hij breidt over hem Zijn licht uit, en de wortels van de zee bedekt Hij.",
       "marginNotes": [
         {
           "marker": "65",
@@ -8007,10 +8020,15 @@
           "morph": "HVpp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zie,<sup class=\"note-marker\" data-note=\"65\">65</sup> Hij breidt over<sup class=\"note-marker\" data-note=\"66\">66</sup> hem Zijn<sup class=\"note-marker\" data-note=\"67\">67</sup> licht uit, en de<sup class=\"note-marker\" data-note=\"68\">68</sup> wortelen van de zee bedekt Hij.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zie,<sup class=\"note-marker\" data-note=\"65\">65</sup> Hij breidt over<sup class=\"note-marker\" data-note=\"66\">66</sup> hem Zijn<sup class=\"note-marker\" data-note=\"67\">67</sup> licht uit, en de<sup class=\"note-marker\" data-note=\"68\">68</sup> wortels van de zee bedekt Hij.</i></span>",
       "textSV1888_html": "Zie,<sup class=\"note-marker\" data-note=\"65\">65</sup> Hij breidt over<sup class=\"note-marker\" data-note=\"66\">66</sup> hem Zijn<sup class=\"note-marker\" data-note=\"67\">67</sup> licht uit, en de<sup class=\"note-marker\" data-note=\"68\">68</sup> wortelen der zee bedekt Hij.",
       "text1637_html": "Siet, <sup class=\"note-marker\" data-note=\"65\">65</sup> hy breydt over <sup class=\"note-marker\" data-note=\"66\">66</sup> hem sijn <sup class=\"note-marker\" data-note=\"67\">67</sup> licht uyt; ende de <sup class=\"note-marker\" data-note=\"68\">68</sup> wortelen der zee bedeckt hy.",
       "phraseDiff": [
+        {
+          "old": "wortelen",
+          "new": "wortels",
+          "principe": "V1565"
+        },
         {
           "old": "der",
           "new": "van de",

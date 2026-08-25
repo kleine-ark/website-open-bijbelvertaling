@@ -3059,7 +3059,7 @@
    "categorie": "Verouderde woorden",
    "oud": "verbeidt / verbeidde / verbeiden",
    "nieuw": "verwacht / wachtte / verwachten",
-   "toelichting": "Verouderd werkwoord — afwachten",
+   "toelichting": "Verouderd werkwoord — afwachten Op 23 augustus 2026 uitgebreid met de gebiedende wijs verbeid, vijf plaatsen. Niet overal verwacht: in Job 36:2 en 4 Ezra 12:39 gaat het om even wachten, niet om verwachten.",
    "regex": "\\b[Vv]erbeid(t|de|den|en)\\b"
   },
   {
@@ -6845,7 +6845,7 @@
    "categorie": "Verouderde woorden",
    "oud": "gelijk(erwijs) als",
    "nieuw": "zoals",
-   "toelichting": "Half-modernisering: bij het vervangen van 'gelijk(erwijs) als' door 'zoals' bleef het overbodige 'als' staan ('zoals als'). Correct is enkel 'zoals'.",
+   "toelichting": "Half-modernisering: bij het vervangen van 'gelijk(erwijs) als' door 'zoals' bleef het overbodige 'als' staan ('zoals als'). Correct is enkel 'zoals'. Op 23 augustus 2026 alsnog corpusbreed afgemaakt: er stonden nog drieenveertig plaatsen met \"gelijk als\". Zie ook V1544 voor \"gelijk\" zonder \"als\".",
    "regex": "\\bzoals als\\b"
   },
   {
@@ -7340,8 +7340,8 @@
    "id": "V867",
    "categorie": "Verouderde woorden",
    "oud": "klapachtig",
-   "nieuw": "roddelachtig",
-   "toelichting": "Verouderd 'klapachtig' (praatziek, kwaadsprekend) → 'roddelachtig'. AI per situatie.",
+   "nieuw": "roddelachtig / praatziek",
+   "toelichting": "Verouderd 'klapachtig' (praatziek, kwaadsprekend). Welke van de twee hangt af van de plaats, en dat is per geval bepaald. Roddelachtig waar het over kwaadspreken gaat: de weduwen in 1 Timotheus 5:13 en de lip waarop Israel gebracht is in Ezechiel 36:3. Praatziek waar het over de hoeveelheid woorden gaat: de man in Job 11:2, de vrouw in Jezus Sirach 25:24 en de mens in 8:4. Vijf plaatsen.",
    "regex": "\\bklapachtig"
   },
   {
@@ -7562,7 +7562,7 @@
    "categorie": "Verouderde woorden",
    "oud": "kinnebak",
    "nieuw": "kaak",
-   "toelichting": "Verouderd 'kinnebak(ken)' (kaakbeen) -> 'kaak(en)'.",
+   "toelichting": "Verouderd 'kinnebak(ken)' (kaakbeen) -> 'kaak(en)'. Op 23 augustus 2026 alsnog voor het meervoud kinnebakken doorgevoerd, zeven plaatsen. Niet overal kaak: in Klaagliederen 1:2 lopen de tranen over de wangen, en in Richteren 15:17 is het het kaakbeen van een ezel als voorwerp.",
    "regex": "\\bkinnebak"
   },
   {
@@ -7570,7 +7570,7 @@
    "categorie": "Verouderde woorden",
    "oud": "voeder",
    "nieuw": "voer",
-   "toelichting": "Verouderd 'voeder' (veevoer) -> 'voer'.",
+   "toelichting": "Verouderd 'voeder' (veevoer) -> 'voer'. Op 23 augustus 2026 alsnog afgemaakt: er stonden nog twaalf plaatsen met voeder, alle over dierenvoer. In Jezus Sirach 33:24 staat het bewust naast voedsel voor de huisknecht; dat onderscheid is bewaard.",
    "regex": "\\bvoeder\\b"
   },
   {
@@ -14180,6 +14180,289 @@
    "toelichting": "Het betrekkelijk voornaamwoord in de tweede naamval, waar de 1888-tekst zelf al \"wier\" schrijft. Waar het naar een persoon verwijst wordt het \"van wie de\", waar het naar een zaak verwijst \"waarvan de\": een parel waarvan de prijs kostbaar is, de stad waarvan de kooplieden vorsten zijn. Het lidwoord loopt mee met het geslacht - van wie de zoon, maar van wie het hart. Negentig plaatsen. Wat blijft staan: negentien keer na een voorzetsel, want \"in het land van wie ik woon\" is geen Nederlands; Psalm 26:10, dat er twee heeft waarvan de eerste na een voorzetsel staat, zodat een van de twee omzetten twee vormen in een zin zou opleveren; en Jona 2:5, waar het wier gewoon zeewier is. \"wiens\" is niet aangeraakt.",
    "regex": "",
    "voorbeeld": "1 Koningen 3:26 | de vrouw, wier zoon de levende was | de vrouw, van wie de zoon de levende was"
+  },
+  {
+   "id": "V1544",
+   "categorie": "Verouderde woorden",
+   "oud": "gelijk (voegwoord)",
+   "nieuw": "zoals / als",
+   "toelichting": "Gelijk heeft twee betekenissen die niets met elkaar te maken hebben. Als voegwoord betekent het \"net zoals\" en is het verouderd; als bijvoeglijk naamwoord betekent het \"gelijkwaardig\" en is het gewoon Nederlands. Alleen de eerste gaat mee. Na een koppelwerkwoord wordt het \"als\" (\"zijn ledematen zijn als een schaduw\"), elders \"zoals\" (\"zoals de dienaar hijgt naar de schaduw\"). Waar het gelijkwaardig betekent blijft het staan: Job 28:17 en 28:19 (\"haar niet gelijk waarderen\") en 30:19 (\"gelijk geworden als stof\"). Veertig plaatsen in Job, met de hand nagelezen. Buiten Job staat het nog ruim zeshonderd keer; een proef wees uit dat de scheiding zich niet laat automatiseren -- in een steekproef van veertien zaten al twee fouten -- dus dat blijft per boek werk. Vergelijk V804, dat \"gelijk als\" al afhandelde.",
+   "regex": "",
+   "voorbeeld": "Job 7:2 | Gelijk de dienaar hijgt naar de schaduw | Zoals de dienaar hijgt naar de schaduw",
+   "bereik": {
+    "job": [
+     "1:8",
+     "2:3",
+     "5:7",
+     "5:14",
+     "5:26",
+     "7:2",
+     "9:26",
+     "10:4",
+     "10:16",
+     "12:11",
+     "13:9",
+     "13:12",
+     "14:9",
+     "15:24",
+     "16:21",
+     "17:7",
+     "20:7",
+     "21:18",
+     "24:24",
+     "29:2",
+     "29:23",
+     "31:33",
+     "32:19",
+     "33:6",
+     "34:3",
+     "34:7",
+     "35:8",
+     "36:22",
+     "38:14",
+     "40:4",
+     "40:10",
+     "40:24",
+     "41:15",
+     "41:22"
+    ]
+   }
+  },
+  {
+   "id": "V1545",
+   "categorie": "Verouderde woorden",
+   "oud": "henenzenden",
+   "nieuw": "laten halen",
+   "toelichting": "Henenzenden is uitgestorven. In Job 1:5 laat Job zijn kinderen komen om hen te heiligen; daar is \"hen liet halen\" wat er gebeurt.",
+   "regex": "",
+   "voorbeeld": "Job 1:5 | dat Job henenzond | dat Job hen liet halen",
+   "bereik": {
+    "job": [
+     "1:5"
+    ]
+   }
+  },
+  {
+   "id": "V1546",
+   "categorie": "Verouderde woorden",
+   "oud": "weinigje",
+   "nieuw": "klein beetje / klein eindje",
+   "toelichting": "Twee plaatsen, met twee betekenissen. In Job 4:12 gaat het om een kleine hoeveelheid, in Hooglied 3:4 om een korte afstand (\"toen ik een weinigje van hen weggegaan was\").",
+   "regex": "",
+   "voorbeeld": "Job 4:12 | een weinigje daarvan | een klein beetje daarvan"
+  },
+  {
+   "id": "V1547",
+   "categorie": "Verouderde woorden",
+   "oud": "tegenloop",
+   "nieuw": "mikpunt",
+   "toelichting": "Een tegenloop is iets waar men tegenaan loopt, en in Job 7:20 is dat het doelwit van Gods pijlen.",
+   "regex": "",
+   "voorbeeld": "Job 7:20 | tot een tegenloop gesteld | tot een mikpunt gesteld",
+   "bereik": {
+    "job": [
+     "7:20"
+    ]
+   }
+  },
+  {
+   "id": "V1548",
+   "categorie": "Verouderde woorden",
+   "oud": "inzwelgen",
+   "nieuw": "doorslikken / opslokken",
+   "toelichting": "Job 7:19 gaat over speeksel doorslikken; Obadja 1:16 over volken die weggeslokt worden. Twee betekenissen, twee woorden.",
+   "regex": "",
+   "voorbeeld": "Job 7:19 | voordat ik mijn speeksel inzwelge | voordat ik mijn speeksel doorslik"
+  },
+  {
+   "id": "V1549",
+   "categorie": "Verouderde woorden",
+   "oud": "weggevloden",
+   "nieuw": "weggevlucht",
+   "toelichting": "Verouderd voltooid deelwoord van wegvlieden. Twee plaatsen.",
+   "regex": "",
+   "voorbeeld": "Job 9:25 | zij zijn weggevloden | zij zijn weggevlucht"
+  },
+  {
+   "id": "V1550",
+   "categorie": "Verouderde woorden",
+   "oud": "wasse",
+   "nieuw": "was",
+   "toelichting": "Aanvoegende wijs, tegenwoordig niet meer in gebruik. Twee plaatsen, waarvan Johannes 13:8 de voetwassing is -- daar is eerder al eens een groeiwonder van gemaakt door V45, dus die staat er nadrukkelijk bij.",
+   "regex": "",
+   "voorbeeld": "Job 9:30 | Als ik mij wasse met sneeuwwater | Als ik mij was met sneeuwwater"
+  },
+  {
+   "id": "V1551",
+   "categorie": "Verouderde woorden",
+   "oud": "een weinig verkwikken",
+   "nieuw": "wat op adem komen",
+   "toelichting": "Verkwikken bestaat nog, maar \"zich een weinig verkwikken\" leest als een omweg. Alleen Job 10:20, waar Job om een adempauze vraagt voordat hij sterft.",
+   "regex": "",
+   "voorbeeld": "Job 10:20 | dat ik mij een weinig verkwik | dat ik wat op adem kom",
+   "bereik": {
+    "job": [
+     "10:20"
+    ]
+   }
+  },
+  {
+   "id": "V1553",
+   "categorie": "Verouderde woorden",
+   "oud": "verstaken",
+   "nieuw": "wegbergen",
+   "toelichting": "Verstaken is wegstoppen. Alleen Job 14:13, waar Job vraagt of God hem in het graf zou willen wegbergen tot Zijn toorn voorbij is.",
+   "regex": "",
+   "voorbeeld": "Job 14:13 | of U mij in het graf verstaakt | of U mij in het graf wegborg",
+   "bereik": {
+    "job": [
+     "14:13"
+    ]
+   }
+  },
+  {
+   "id": "V1554",
+   "categorie": "Verouderde woorden",
+   "oud": "winderig",
+   "nieuw": "hol",
+   "toelichting": "Winderig betekent hier vol wind, dus zonder inhoud. Twee plaatsen, allebei in Job, over woorden die niets zeggen.",
+   "regex": "",
+   "voorbeeld": "Job 15:2 | winderige wetenschap | holle wetenschap",
+   "bereik": {
+    "job": [
+     "15:2",
+     "16:3"
+    ]
+   }
+  },
+  {
+   "id": "V1555",
+   "categorie": "Verouderde woorden",
+   "oud": "stijven",
+   "nieuw": "drijven",
+   "toelichting": "Stijven is aanzetten of aanmoedigen. Alleen Job 16:3, waar Job vraagt wat Elifaz bezielt om zo door te gaan.",
+   "regex": "",
+   "voorbeeld": "Job 16:3 | wat stijft u, dat u zo antwoordt | wat drijft u, dat u zo antwoordt",
+   "bereik": {
+    "job": [
+     "16:3"
+    ]
+   }
+  },
+  {
+   "id": "V1556",
+   "categorie": "Verouderde woorden",
+   "oud": "toemuren",
+   "nieuw": "versperren / dichtmetselen / inmuren",
+   "toelichting": "Toemuren is dichtmetselen, maar wat er gebeurt verschilt per plaats: in Job 19:8 is een weg versperd, in Ezechiel 13:5 moet een bres in de muur worden dichtgemetseld, en in Klaagliederen 3:7 is iemand zelf ingemuurd.",
+   "regex": "",
+   "voorbeeld": "Job 19:8 | Hij heeft mijn weg toegemuurd | Hij heeft mijn weg versperd"
+  },
+  {
+   "id": "V1557",
+   "categorie": "Verouderde woorden",
+   "oud": "moorder",
+   "nieuw": "moordenaar",
+   "toelichting": "Verouderde vorm. Een plaats.",
+   "regex": "",
+   "voorbeeld": "Job 24:14 | staat de moorder op | staat de moordenaar op",
+   "bereik": {
+    "job": [
+     "24:14"
+    ]
+   }
+  },
+  {
+   "id": "V1558",
+   "categorie": "Verouderde woorden",
+   "oud": "vlieden",
+   "nieuw": "vluchten",
+   "toelichting": "Verouderd. Drie plaatsen, alle in de vorm vliedende.",
+   "regex": "",
+   "voorbeeld": "Job 30:3 | vliedende naar dorre plaatsen | vluchtende naar dorre plaatsen"
+  },
+  {
+   "id": "V1559",
+   "categorie": "Verouderde woorden",
+   "oud": "Gods (tweede naamval als zelfstandig gebruik)",
+   "nieuw": "die van God",
+   "toelichting": "De tweede naamval zonder zelfstandig naamwoord erachter. \"Mijn gerechtigheid is meerder dan Gods\" leest nu alsof er een woord ontbreekt.",
+   "regex": "",
+   "voorbeeld": "Job 35:2 | meerder dan Gods | meerder dan die van God",
+   "bereik": {
+    "job": [
+     "35:2"
+    ]
+   }
+  },
+  {
+   "id": "V1560",
+   "categorie": "Verouderde woorden",
+   "oud": "vleugelen",
+   "nieuw": "vleugels",
+   "toelichting": "Verouderd meervoud. Zesentachtig plaatsen, ook in de boeken zonder 1888-brontekst, zodat er niet twee vormen naast elkaar blijven staan.",
+   "regex": "",
+   "voorbeeld": "Job 39:29 | breidt hij zijn vleugelen uit | breidt hij zijn vleugels uit"
+  },
+  {
+   "id": "V1561",
+   "categorie": "Verouderde woorden",
+   "oud": "visserskrauwel",
+   "nieuw": "vissershaak",
+   "toelichting": "Een krauwel is een gaffel of harpoen. Alleen Job 40:26.",
+   "regex": "",
+   "voorbeeld": "Job 40:26 | met een visserskrauwel zijn hoofd | met een vissershaak zijn hoofd",
+   "bereik": {
+    "job": [
+     "40:26"
+    ]
+   }
+  },
+  {
+   "id": "V1562",
+   "categorie": "Verouderde woorden",
+   "oud": "koen",
+   "nieuw": "vermetel",
+   "toelichting": "Koen is nog te vinden in namen maar niet meer in gewoon taalgebruik. Alleen Job 41:1, waar niemand het waagt de Leviathan te wekken.",
+   "regex": "",
+   "voorbeeld": "Job 41:1 | Niemand is zo koen | Niemand is zo vermetel",
+   "bereik": {
+    "job": [
+     "41:1"
+    ]
+   }
+  },
+  {
+   "id": "V1563",
+   "categorie": "Verouderde woorden",
+   "oud": "vermogen (vermoogt)",
+   "nieuw": "kunnen",
+   "toelichting": "De tweede persoon vermoogt is verouderd. Vier plaatsen; in 1 Korinthiers 10:13 gaat het om wat iemand kan verdragen, dus daar is het aankunt geworden.",
+   "regex": "",
+   "voorbeeld": "Job 42:2 | dat U alles vermoogt | dat U alles kunt"
+  },
+  {
+   "id": "V1564",
+   "categorie": "Verouderde woorden",
+   "oud": "stuk gelds",
+   "nieuw": "geldstuk",
+   "toelichting": "Oude tweede naamval in een samenstelling. Een plaats.",
+   "regex": "",
+   "voorbeeld": "Job 42:11 | ieder een stuk gelds | ieder een geldstuk",
+   "bereik": {
+    "job": [
+     "42:11"
+    ]
+   }
+  },
+  {
+   "id": "V1565",
+   "categorie": "Verouderde woorden",
+   "oud": "wortelen (zelfstandig naamwoord)",
+   "nieuw": "wortels",
+   "toelichting": "Verouderd meervoud. Negenentwintig plaatsen. Het werkwoord wortelen blijft staan: in 2 Koningen 19:30 en Jesaja 37:31 zal het overblijfsel van Juda \"naar beneden wortelen\", en dat is geen meervoud maar een handeling.",
+   "regex": "",
+   "voorbeeld": "Job 8:17 | Zijn wortelen worden ingevlochten | Zijn wortels worden ingevlochten"
   }
  ]
 }

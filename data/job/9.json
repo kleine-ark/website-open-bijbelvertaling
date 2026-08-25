@@ -6681,7 +6681,7 @@
       "number": 25,
       "textSV1888": "En mijn dagen zijn lichter geweest dan een loper; zij zijn weggevloden, zij hebben het goede niet gezien.",
       "text1637": "[e] [49] Ende mijne dagen sijn [50] lichter geweest, als een looper: sy zijn wechgevloden, sy en hebben het goede [51] niet gesien.",
-      "text2026": "En mijn dagen zijn lichter geweest dan een loper; zij zijn weggevloden, zij hebben het goede niet gezien.",
+      "text2026": "En mijn dagen zijn lichter geweest dan een loper; zij zijn weggevlucht, zij hebben het goede niet gezien.",
       "marginNotes": [
         {
           "marker": "e",
@@ -6754,7 +6754,7 @@
           "morph": "HAafsa"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"49\">49</sup><sup class=\"note-marker\" data-note=\"e\">e</sup><span class=\"direct-speech\"><i> En mijn dagen zijn<sup class=\"note-marker\" data-note=\"50\">50</sup> lichter geweest dan een loper; zij zijn weggevloden, zij hebben het goede<sup class=\"note-marker\" data-note=\"51\">51</sup> niet gezien.</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"49\">49</sup><sup class=\"note-marker\" data-note=\"e\">e</sup><span class=\"direct-speech\"><i> En mijn dagen zijn<sup class=\"note-marker\" data-note=\"50\">50</sup> lichter geweest dan een loper; zij zijn weggevlucht, zij hebben het goede<sup class=\"note-marker\" data-note=\"51\">51</sup> niet gezien.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"49\">49</sup><sup class=\"note-marker\" data-note=\"e\">e</sup> En mijn dagen zijn<sup class=\"note-marker\" data-note=\"50\">50</sup> lichter geweest dan een loper; zij zijn weggevloden, zij hebben het goede<sup class=\"note-marker\" data-note=\"51\">51</sup> niet gezien.",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"e\">e</sup> <sup class=\"note-marker\" data-note=\"49\">49</sup> Ende mijne dagen sijn <sup class=\"note-marker\" data-note=\"50\">50</sup> lichter geweest, als een looper: sy zijn wechgevloden, sy en hebben het goede <sup class=\"note-marker\" data-note=\"51\">51</sup> niet gesien.",
       "woordnummers": [
@@ -6974,13 +6974,20 @@
             ]
           }
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "weggevloden,",
+          "new": "weggevlucht,",
+          "principe": "V1549"
+        }
       ]
     },
     {
       "number": 26,
       "textSV1888": "Zij zijn voorbijgevaren met jachtschepen; gelijk een arend naar het aas toevliegt.",
       "text1637": "Sy zijn voor by gevaren [52] met [53] jachtschepen; gelijck een Arent nae het aes toevliecht.",
-      "text2026": "Zij zijn voorbijgevaren met jachtschepen; gelijk een adelaar naar het aas toevliegt.",
+      "text2026": "Zij zijn voorbijgevaren met jachtschepen; zoals een adelaar naar het aas toevliegt.",
       "marginNotes": [
         {
           "marker": "52",
@@ -7039,10 +7046,15 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zij zijn voorbijgevaren<sup class=\"note-marker\" data-note=\"52\">52</sup> met<sup class=\"note-marker\" data-note=\"53\">53</sup> jachtschepen; gelijk een adelaar naar het aas toevliegt.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zij zijn voorbijgevaren<sup class=\"note-marker\" data-note=\"52\">52</sup> met<sup class=\"note-marker\" data-note=\"53\">53</sup> jachtschepen; zoals een adelaar naar het aas toevliegt.</i></span>",
       "textSV1888_html": "Zij zijn voorbijgevaren<sup class=\"note-marker\" data-note=\"52\">52</sup> met<sup class=\"note-marker\" data-note=\"53\">53</sup> jachtschepen; gelijk een arend naar het aas toevliegt.",
       "text1637_html": "Sy zijn voor by gevaren <sup class=\"note-marker\" data-note=\"52\">52</sup> met <sup class=\"note-marker\" data-note=\"53\">53</sup> jachtschepen; gelijck een Arent nae het aes toevliecht.",
       "phraseDiff": [
+        {
+          "old": "gelijk",
+          "new": "zoals",
+          "principe": "V1544"
+        },
         {
           "old": "arend",
           "new": "adelaar",
@@ -8002,7 +8014,7 @@
       "number": 30,
       "textSV1888": "Indien ik mij wasse met sneeuwwater, en mijn handen zuivere met zeep;",
       "text1637": "[f] Indien ick my wassche met sneewater; ende mijne handen suyvere [59] met seepe;",
-      "text2026": "Als ik mij wasse met sneeuwwater, en mijn handen zuivere met zeep;",
+      "text2026": "Als ik mij was met sneeuwwater, en mijn handen zuivere met zeep;",
       "marginNotes": [
         {
           "marker": "f",
@@ -8056,7 +8068,7 @@
           "morph": "HNcfdc/Sp1cs"
         }
       ],
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"f\">f</sup><span class=\"direct-speech\"><i> Als ik mij wasse met sneeuwwater, en mijn handen zuivere<sup class=\"note-marker\" data-note=\"59\">59</sup> met zeep;</i></span>",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"f\">f</sup><span class=\"direct-speech\"><i> Als ik mij was met sneeuwwater, en mijn handen zuivere<sup class=\"note-marker\" data-note=\"59\">59</sup> met zeep;</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"f\">f</sup> Indien ik mij wasse met sneeuwwater, en mijn handen zuivere<sup class=\"note-marker\" data-note=\"59\">59</sup> met zeep;",
       "text1637_html": "<sup class=\"note-marker\" data-note=\"f\">f</sup> Indien ick my wassche met sneewater; ende mijne handen suyvere <sup class=\"note-marker\" data-note=\"59\">59</sup> met seepe;",
       "phraseDiff": [
@@ -8064,6 +8076,11 @@
           "old": "Indien",
           "new": "Als",
           "principe": "V41"
+        },
+        {
+          "old": "wasse",
+          "new": "was",
+          "principe": "V1550"
         }
       ],
       "woordnummers": [
