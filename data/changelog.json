@@ -1,7 +1,29 @@
 {
   "wijzigingen": [
     {
-      "datum": "2026-08-23",
+      "datum": "2026-08-25",
+      "versie": "v0.43.0",
+      "items": [
+        {
+          "type": "verbetering",
+          "beschrijving": "Job is na menselijke controle volledig als nagekeken gemarkeerd en staat niet langer als concept in de inhoudsopgave. Daarmee zijn 63 boeken afgerond."
+        },
+        {
+          "type": "verbetering",
+          "beschrijving": "Gelijk wordt zoals op 131 plaatsen buiten Job, maar alleen waar het buiten twijfel een vergelijking inleidt. De rest blijft staan tot het betreffende boek aan de beurt is; een automatische scheiding bleek te onnauwkeurig."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Zesendertig woordwijzigingen droegen geen principenummer maar de waarde true of false; die zijn aan het juiste principe gekoppeld. En in de boeken zonder Statenvertaling-brontekst zijn 253 zinloze woorddiffs verwijderd."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Het eerste vers van een hoofdstuk krijgt geen openingsaanhalingsteken meer als het met engelenspraak begint, zoals Daniel 11:1."
+        }
+      ]
+    },
+    {
+      "datum": "2026-08-25",
       "versie": "v0.42.0",
       "items": [
         {
