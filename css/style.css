@@ -517,6 +517,7 @@
    ziet er gek uit. Sluit-aanhalingsteken (::after) blijft staan. */
 .verse-row[data-verse="1"] .col-2026 .direct-speech::before,
 .verse-row[data-verse="1"] .col-2026 .god-speaks::before,
+.verse-row[data-verse="1"] .col-2026 .angel-speaks::before,
 .verse-row[data-verse="1"] .col-2026 .devil-speaks::before { content: none; }
 
 /* === Leesmodus === */
