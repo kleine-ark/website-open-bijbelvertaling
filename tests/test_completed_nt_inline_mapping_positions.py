@@ -3,7 +3,12 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-COMPLETED_CHAPTERS = (("handelingen", 1), ("3johannes", 1), ("titus", 2))
+COMPLETED_CHAPTERS = (
+    ("handelingen", 1),
+    ("3johannes", 1),
+    ("titus", 2),
+    ("titus", 3),
+)
 
 
 def _load(path: Path):
