@@ -42,7 +42,7 @@ import sys
 
 WORTEL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(WORTEL, "scripts"))
-from sweep_principe import lees, schrijf, kaal  # noqa: E402
+from sweep_principe import lees, schrijf, kaal, gebalanceerd  # noqa: E402
 try:
     from apply_citation_review_overdracht import REVIEWED_KEEP  # noqa: E402
 except ImportError:
@@ -175,7 +175,7 @@ def main():
                 mislukt.append(merk + " (tekst zou veranderen)")
                 VORIG = straks
                 continue
-            if nieuw.count("<span") != nieuw.count("</span>") or nieuw.count("<i>") != nieuw.count("</i>"):
+            if not gebalanceerd(nieuw):
                 mislukt.append(merk + " (ongebalanceerd)")
                 VORIG = straks
                 continue

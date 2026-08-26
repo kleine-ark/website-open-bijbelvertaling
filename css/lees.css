@@ -247,6 +247,17 @@ body.dark .icon-sun { display: none; }
 }
 .note-marker:hover { text-decoration: underline; }
 
+/* Alfabetlied. Klaagliederen 1–4, Psalm 25, 34, 37, 111, 112, 119 en 145 en
+   Spreuken 31 beginnen elk vers of elke strofe met de volgende letter van het
+   Hebreeuwse alfabet. De letter en zijn naam zijn een redactionele markering en
+   geen tekst die iemand uitspreekt; ze staan daarom apart. Het Hebreeuwse font
+   moet er uitdrukkelijk bij, want het is zonder unicode-range gedeclareerd. */
+.acrostichon {
+    font-family: 'Noto Serif Hebrew', serif;
+    font-style: italic;
+    color: var(--accent, #b8860b);
+}
+
 /* === Notes panel === */
 #notes-panel {
     position: fixed; right: 0; top: 51px; bottom: 0;
