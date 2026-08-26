@@ -52,6 +52,30 @@ def sleutel(paar):
             re.sub(r"^[^\w]+|[^\w]+$", "", paar[1]))
 
 
+def gebalanceerd(html):
+    """Loopt de tags langs en controleert de nesting, niet alleen het aantal.
+
+    Tellen is niet genoeg. Een vers met twee spans waarvan de buitenste huls is
+    weggehaald houdt evenveel openings- als sluittags over, maar staat in de
+    verkeerde volgorde:
+
+        Vau. </i></span> Toen zei ik: <span class="direct-speech"><i>Mijn ...
+
+    Dat is een keer door een telling heen geglipt en stond zo in de tekst.
+    """
+    stapel = []
+    for m in re.finditer(r"</?(?:span|i)\b[^>]*>", html):
+        t = m.group(0)
+        if t.startswith("</"):
+            naam = t[2:-1].strip()
+            if not stapel or stapel[-1] != naam:
+                return False
+            stapel.pop()
+        else:
+            stapel.append(re.match(r"</?(\w+)", t).group(1))
+    return not stapel
+
+
 def lees(pad):
     """JSON plus de opmaak van het origineel: de repo mengt inspringing van 1
     en 2 spaties en niet elk bestand heeft dezelfde regeleindes."""

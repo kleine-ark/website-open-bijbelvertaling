@@ -5757,7 +5757,7 @@
    "categorie": "Werkwoordsvormen",
    "oud": "vastigheid",
    "nieuw": "vastheid",
-   "toelichting": "Verouderd 'vastigheid' vervangen door modern 'vastheid'.",
+   "toelichting": "Verouderd 'vastigheid' vervangen door modern 'vastheid'. Alleen voor de abstracte betekenis stevigheid. Waar vastigheden een versterkte plaats zijn geldt V1567 en wordt het vestingen.",
    "regex": "\\b[Vv]astigheid\\b"
   },
   {
@@ -9277,7 +9277,7 @@
    "categorie": "Verouderde woorden",
    "oud": "struis",
    "nieuw": "struisvogel",
-   "toelichting": "'struis' is verouderd.",
+   "toelichting": "'struis' is verouderd. Op 25 augustus 2026 alsnog afgemaakt voor het meervoud struisen, zeven plaatsen.",
    "regex": ""
   },
   {
@@ -13086,7 +13086,7 @@
    "categorie": "Menselijke review",
    "oud": "grendelen",
    "nieuw": "grendels",
-   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van Nehemia.",
+   "toelichting": "Contextueel beoordeeld tijdens de menselijke review van Nehemia. Op 25 augustus 2026 is deze keuze de algemene regel geworden; V1566 doet nu hetzelfde corpusbreed en dit bereik valt daaronder.",
    "regex": "",
    "voorbeeld": "Nehemia 3:13",
    "bereik": {
@@ -14426,6 +14426,33 @@
    "toelichting": "Verouderd meervoud. Negenentwintig plaatsen. Het werkwoord wortelen blijft staan: in 2 Koningen 19:30 en Jesaja 37:31 zal het overblijfsel van Juda \"naar beneden wortelen\", en dat is geen meervoud maar een handeling.",
    "regex": "",
    "voorbeeld": "Job 8:17 | Zijn wortelen worden ingevlochten | Zijn wortels worden ingevlochten"
+  },
+  {
+   "id": "V1566",
+   "categorie": "Verouderde woorden",
+   "oud": "grendelen",
+   "nieuw": "grendels",
+   "toelichting": "Verouderd meervoud. Tweeentwintig plaatsen, telkens de grendels van een stadspoort. MR-NEH-002 had die keuze al gemaakt tijdens de menselijke review van Nehemia, maar met een bereik dat hem tot een enkel vers beperkte; dat is nu de algemene regel.",
+   "regex": "",
+   "voorbeeld": "Klaagliederen 2:9 | Hij heeft haar grendelen verdorven | Hij heeft haar grendels verdorven"
+  },
+  {
+   "id": "V1567",
+   "categorie": "Verouderde woorden",
+   "oud": "vastigheden",
+   "nieuw": "vestingen",
+   "toelichting": "Hier betekent vastigheid geen stevigheid maar een versterkte plaats -- het Hebreeuwse mibtsar. Negen plaatsen. V666 doet vastigheid naar vastheid en dat klopt voor de abstracte betekenis (\"een pilaar en vastheid van de waarheid\"), maar niet voor deze. In Daniel 11:39 staat al \"vestingen\" in dezelfde zin, en daar is het bolwerken geworden om een verdubbeling te vermijden.",
+   "regex": "",
+   "voorbeeld": "2 Kronieken 11:5 | hij bouwde steden tot vastigheden | hij bouwde steden tot vestingen"
+  },
+  {
+   "id": "V1568",
+   "categorie": "Leesbaarheid",
+   "oud": "Aleph / Beth / Gimel (alfabetlied)",
+   "nieuw": "א Aleph / ב Beth / ג Gimel",
+   "toelichting": "Klaagliederen 1 tot en met 4, Psalm 25, 34, 37, 111, 112, 119 en 145 en Spreuken 31 zijn alfabetliederen: elk vers of elke strofe begint met de volgende letter van het Hebreeuwse alfabet. De Statenvertaling zet daar de naam van de letter neer, maar niet de letter zelf, zodat je aan de tekst niet ziet wat het alfabetvers doet. De letter staat er nu voor, en het geheel heeft de klasse acrostichon zodat de opmaak het cursief en in goud kan zetten. Driehonderdzes letters. In Psalm 111 en 112 staan er meerdere in een vers, want daar loopt het alfabet per zinsnede.",
+   "regex": "",
+   "voorbeeld": "Klaagliederen 1:1 | Aleph. Hoe zit die stad zo eenzaam | א Aleph. Hoe zit die stad zo eenzaam"
   }
  ]
 }
