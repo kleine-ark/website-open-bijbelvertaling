@@ -256,9 +256,21 @@
             o.naam = p.naam;
             o.bij = partnerTekst(p);
             if (p.anker) o.font = FONT_ANKER;
+            // De badge is ook de knop. Zolang er iets verborgen is toont hij
+            // hoeveel; staat de tak open, dan moet er een knop blijven staan om
+            // hem weer dicht te doen. Anders kun je een tak wel openen maar
+            // nooit meer sluiten, en groeit de boom alleen maar.
             var n = verborgen(dn.id);
-            if (n > 0) o.badge = '+' + n;
-            o.titel = p.naam + (o.bij ? ' ' + o.bij : '');
+            if (n > 0) {
+                o.badge = '+' + n;
+                o.titel = p.naam + (o.bij ? ' ' + o.bij : '') + ' — klik om ' + n +
+                          (n === 1 ? ' tak' : ' takken') + ' te tonen';
+            } else if (takOpen[dn.id] && p.kinderen && p.kinderen.length) {
+                o.badge = '−';
+                o.titel = p.naam + (o.bij ? ' ' + o.bij : '') + ' — klik om hier dicht te klappen';
+            } else {
+                o.titel = p.naam + (o.bij ? ' ' + o.bij : '');
+            }
         }
         o.naamB = breed(o.naam, o.font);
         o.bijB = o.bij ? breed(o.bij, FONT_BIJ) : 0;
