@@ -295,7 +295,13 @@
         }
     }
 
-    function plaatsKnoop(dn, x, y) {
+    // `alleen` zegt of deze knoop het enige zichtbare kind van zijn ouder is.
+    // Dat bepaalt of zijn eigen kind zonder inspringen recht eronder mag: dat
+    // is de hoofdlijn. Staat de knoop tussen broers en zussen, dan moet zijn
+    // kind wél inspringen, anders komt het op dezelfde hoogte als zijn ooms en
+    // tantes te staan. Zo leek Henoch, de zoon van Kaïn, een vierde kind van
+    // Adam: onder Adam las de lijst Kaïn, Henoch, Abel, Seth.
+    function plaatsKnoop(dn, x, y, alleen) {
         dn.w = opmaak(dn).w;
         dn.x = x;
         dn.y = y;
@@ -305,7 +311,7 @@
         if (!n) return cy;
 
         // Eén zichtbaar kind = rechte afstamming: recht eronder, niet inspringen.
-        dn.recht = (n === 1);
+        dn.recht = (n === 1) && alleen !== false;
         var kx = dn.recht ? x : x + INSPRING;
 
         var i = 0;
@@ -337,7 +343,7 @@
                 i = j;
             } else {
                 dn.regels.push([kids[i]]);
-                cy = plaatsKnoop(kids[i], kx, cy);
+                cy = plaatsKnoop(kids[i], kx, cy, n === 1);
                 i++;
             }
         }
