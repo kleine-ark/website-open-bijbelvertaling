@@ -1059,9 +1059,13 @@ const Lees = {
             label.textContent = groupName;
             group.appendChild(label);
 
-            // Ethiopische boeken: aparte, standaard ingeklapte (klikbare) kop
-            if (groupName === 'Ethiopische boeken (buiten de canon)') {
-                group.classList.add('book-group-collapsible', 'collapsed');
+            // Apocriefen en Ethiopische boeken: klikbare kop, standaard
+            // ingeklapt. Samen zijn het bijna dertig boeken, en wie de canon
+            // zoekt moet daar niet eerst langs. Staat het geopende boek er wel
+            // in, dan klapt de groep open, anders zie je niet waar je bent.
+            if (groupName === 'Apocriefen' || groupName === 'Ethiopische boeken (buiten de canon)') {
+                group.classList.add('book-group-collapsible');
+                if (!ids.includes(this.currentBook)) group.classList.add('collapsed');
                 label.style.cursor = 'pointer';
                 label.addEventListener('click', () => group.classList.toggle('collapsed'));
             }

@@ -133,7 +133,10 @@ const Sidebar = {
             if (books.length === 0) continue;
 
             const groupEl = document.createElement('div');
-            groupEl.className = 'tree-group';
+            // De apocriefen staan standaard dicht: zestien boeken, met de
+            // Ethiopische er nog onder, die de canon anders uit beeld duwen.
+            // Zoeken klapt alle groepen weer open.
+            groupEl.className = group.label === 'Apocriefen' ? 'tree-group collapsed' : 'tree-group';
 
             const labelEl = document.createElement('div');
             labelEl.className = 'tree-group-label';
