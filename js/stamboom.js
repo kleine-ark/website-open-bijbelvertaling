@@ -931,6 +931,22 @@
         bewaar();
     }
 
+    // Dubbelklikken op een naam klapt zijn tak open of dicht. De badge doet
+    // hetzelfde, maar die is klein en staat er alleen als er iets te klappen
+    // valt; op de naam mikken is makkelijker. De eerste klik van het paar heeft
+    // de kaart al geopend, dus die gaat hier weer dicht.
+    canvas.addEventListener('dblclick', function (e) {
+        if (verplaatst > 6) return;
+        var id = attribuutOmhoog(e.target, 'data-id');
+        if (!id) return;
+        var p = persoon(id);
+        if (!p || !p.kinderen || !p.kinderen.length) return;
+        sluitKaart();
+        takOpen[id] = !takOpen[id];
+        hertekenRond(id);
+        verbergHint();
+    });
+
     canvas.addEventListener('click', function (e) {
         if (verplaatst > 6) return;              // dit was slepen, geen tik
         var ket = attribuutOmhoog(e.target, 'data-keten');
