@@ -22,6 +22,7 @@ COMPLETED_CHAPTERS = (
     ("markus", 1),
     ("markus", 2),
     ("markus", 3),
+    ("markus", 4),
     ("handelingen", 1),
     ("handelingen", 2),
     ("handelingen", 3),
