@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 COMPLETED_CHAPTERS = (
     ("mattheus", 14),
+    ("mattheus", 15),
     ("handelingen", 1),
     ("handelingen", 2),
     ("handelingen", 3),
