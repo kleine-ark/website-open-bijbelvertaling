@@ -186,7 +186,7 @@ def build_inline_mapping(
         and difference.get("grondtekst_strongs") == local_numbers
         for difference in differences
     )
-    if not external_numbers or (
+    if not local_numbers or (
         external_numbers != local_numbers and not documented_difference
     ):
         raise ValueError(
@@ -212,6 +212,7 @@ def build_inline_mapping(
             "sha256": source["sha256"],
             "referentie": reference,
             "bronindices": list(source_indices),
+            "grondindices": list(ground_indices),
         },
     }
     if external_numbers != local_numbers:
@@ -248,7 +249,9 @@ def merge_reviewed_mappings(verse, proposed):
     return added, preserved
 
 
-def replace_reviewed_mappings(verse, proposed, provenance):
+def replace_reviewed_mappings(
+    verse, proposed, provenance, additional_provenances=()
+):
     """Vervang uitsluitend bronrecords van één expliciet gereviewd vers.
 
     Een reviewbestand kan deze route alleen per vers inschakelen. Daarmee
@@ -256,11 +259,15 @@ def replace_reviewed_mappings(verse, proposed, provenance):
     """
     existing = verse.setdefault("woordnummers", [])
     keys = ("dataset", "versie", "sha256", "referentie")
+    provenances = (provenance, *additional_provenances)
     kept = []
     replaced = 0
     for mapping in existing:
         origin = mapping.get("herkomst", {}) if isinstance(mapping, dict) else {}
-        if all(origin.get(key) == provenance.get(key) for key in keys):
+        if any(
+            all(origin.get(key) == candidate.get(key) for key in keys)
+            for candidate in provenances
+        ):
             replaced += 1
         else:
             kept.append(mapping)
@@ -368,13 +375,69 @@ def apply_review_file(review_path, source_dir, data_dir=None, write=False, verse
             if verse_review.get("vervang_bronrecords"):
                 if not proposed:
                     raise ValueError(f"Geen vervangende mappings voor {reference}")
-                provenance = {
+                legacy_provenance = book.get("vervang_bronherkomst")
+                legacy_reference = None
+                if legacy_provenance is not None:
+                    missing = [
+                        key
+                        for key in ("dataset", "versie", "sha256")
+                        if not legacy_provenance.get(key)
+                    ]
+                    if missing:
+                        raise ValueError(
+                            "Onvolledige vervang_bronherkomst voor "
+                            f"{reference}: {', '.join(missing)}"
+                        )
+                    legacy_reference_code = legacy_provenance.get(
+                        "referentie_code", book["code"]
+                    )
+                    legacy_reference = verse_review.get("vervang_bronreferentie")
+                    if legacy_reference is not None and (
+                        not isinstance(legacy_reference, str)
+                        or not legacy_reference.strip()
+                    ):
+                        raise ValueError(
+                            "Ongeldige vervang_bronreferentie voor "
+                            f"{reference}"
+                        )
+                    provenance = {
+                        "dataset": legacy_provenance["dataset"],
+                        "versie": legacy_provenance["versie"],
+                        "sha256": legacy_provenance["sha256"],
+                        "referentie": legacy_reference or (
+                            f"{legacy_reference_code} "
+                            f"{source_chapter}:{source_number}"
+                        ),
+                    }
+                else:
+                    provenance = {
+                        "dataset": source["id"],
+                        "versie": source["version"],
+                        "sha256": source["sha256"],
+                        "referentie": reference,
+                    }
+                current_provenance = {
                     "dataset": source["id"],
                     "versie": source["version"],
                     "sha256": source["sha256"],
                     "referentie": reference,
                 }
-                replaced = replace_reviewed_mappings(verse, proposed, provenance)
+                additional_provenances = [current_provenance]
+                if legacy_reference:
+                    additional_provenances.append(
+                        {
+                            "dataset": source["id"],
+                            "versie": source["version"],
+                            "sha256": source["sha256"],
+                            "referentie": legacy_reference,
+                        }
+                    )
+                replaced = replace_reviewed_mappings(
+                    verse,
+                    proposed,
+                    provenance,
+                    additional_provenances=tuple(additional_provenances),
+                )
                 added, preserved = len(proposed), 0
                 report["replaced"] += replaced
                 chapter_changed = chapter_changed or bool(replaced or proposed)
