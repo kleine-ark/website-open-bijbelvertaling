@@ -14,6 +14,7 @@ COMPLETED_CHAPTERS = (
     ("mattheus", 21),
     ("mattheus", 22),
     ("mattheus", 23),
+    ("mattheus", 24),
     ("handelingen", 1),
     ("handelingen", 2),
     ("handelingen", 3),
