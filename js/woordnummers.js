@@ -175,6 +175,11 @@
         for (const verse of chapter.verses || []) {
             const generated = external[String(verse.number)] || [];
             if (!generated.length) continue;
+            // De hoofdstuk-JSON is de canonieke laag voor de lezer. Meng een
+            // mogelijk nog gecachte boekprojectie alleen in als het vers zelf
+            // nog geen woordnummers bevat; twee publicatiegeneraties naast
+            // elkaar leveren dubbele badges en oude hele-versankers op.
+            if (Array.isArray(verse.woordnummers) && verse.woordnummers.length) continue;
             const merged = new Map();
             [...generated, ...(verse.woordnummers || [])].forEach(mapping => {
                 const strongs = Array.isArray(mapping.strongs)

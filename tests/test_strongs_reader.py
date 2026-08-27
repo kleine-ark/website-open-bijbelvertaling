@@ -1157,6 +1157,32 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_ingebedde_woordnummers_winnen_van_een_verouderde_externe_laag(self):
+        page = self.open_reader("handelingen/22")
+        try:
+            mappings = page.evaluate(
+                """() => {
+                    const chapter = {verses: [{number: 1, woordnummers: [{
+                        tekst: 'Broeders', voorkomen: 1, strongs: ['G80'],
+                        reviewstatus: 'handmatig_gecontroleerd'
+                    }]}]};
+                    const staleExternal = {chapters: {'22': {'1': [{
+                        tekst: 'Broeders en vaders, hoort mijn verantwoording.',
+                        voorkomen: 1, strongs: ['G80', 'G3962']
+                    }]}}};
+                    OVWoordnummers.mergeChapterMappings(chapter, staleExternal, 22);
+                    return chapter.verses[0].woordnummers;
+                }"""
+            )
+            self.assertEqual(mappings, [{
+                "tekst": "Broeders",
+                "voorkomen": 1,
+                "strongs": ["G80"],
+                "reviewstatus": "handmatig_gecontroleerd",
+            }])
+        finally:
+            page.close()
+
     def test_interne_citatie_neemt_globale_woordnummervoorkeur_over(self):
         page = self.browser.new_page(viewport={"width": 1280, "height": 900})
         page.add_init_script(
