@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PAYOFF = "Een echte herziening van de Statenvertaling"
+PAYOFF = "Een herziening van de Statenvertaling"
 
 
 def test_homepage_linkmetadata_gebruikt_open_vertaling_en_de_vaste_payoff():
