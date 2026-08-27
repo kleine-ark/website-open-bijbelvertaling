@@ -10,6 +10,7 @@ COMPLETED_CHAPTERS = (
     ("handelingen", 4),
     ("handelingen", 5),
     ("handelingen", 6),
+    ("handelingen", 7),
     ("3johannes", 1),
     ("titus", 1),
     ("titus", 2),
