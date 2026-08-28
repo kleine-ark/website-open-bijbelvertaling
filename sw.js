@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = 'v0.44.14';
+const VERSION = 'v0.44.15';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
