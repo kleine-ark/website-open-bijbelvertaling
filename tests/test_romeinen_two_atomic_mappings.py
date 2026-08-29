@@ -62,6 +62,8 @@ def test_romeinen_two_review_is_atomic_complete_pinned_and_reachable():
             target = mapping.get("tekst") or mapping.get("anker")
             occurrences = _whole_word_occurrences(verse["text2026"], target)
             assert occurrences, (record["verse"], index, target)
+            if len(occurrences) > 1:
+                assert "voorkomen" in mapping, (record["verse"], index, target)
             occurrence = mapping.get("voorkomen", 1)
             assert 1 <= occurrence <= len(occurrences)
             strong = verse["grondtekst"][mapping["grondindices"][0]]["strongs"]
@@ -70,6 +72,36 @@ def test_romeinen_two_review_is_atomic_complete_pinned_and_reachable():
             runtime_keys.add(key)
 
     assert mapping_count == 452
+
+
+def test_romeinen_two_repeated_function_words_follow_the_greek_order():
+    review = _load(ROOT / "data" / "woordnummers-review" / "romeinen-2.json")
+    records = {record["verse"]: record for record in review["books"][0]["verses"]}
+
+    expected = {
+        (3, 1): 1,
+        (3, 11): 2,
+        (13, 11): 3,
+        (14, 3): 1,
+        (15, 18): 2,
+        (16, 6): 2,
+        (18, 10): 2,
+        (20, 5): 3,
+        (20, 7): 3,
+        (20, 9): 2,
+        (20, 10): 4,
+        (20, 13): 6,
+        (28, 4): 2,
+        (28, 11): 4,
+        (29, 3): 2,
+    }
+    for (verse, ground_index), occurrence in expected.items():
+        mapping = next(
+            mapping
+            for mapping in records[verse]["mappings"]
+            if mapping["grondindices"] == [ground_index]
+        )
+        assert mapping["voorkomen"] == occurrence
 
 
 def test_romeinen_two_records_the_verified_guide_differences():
