@@ -900,7 +900,7 @@
       "number": 13,
       "textSV1888": "Gij verkoopt Uw volk om geen waardij; en Gij verhoogt hun prijs niet.",
       "text1637": "Ghy verkoopt u volck [17] om geene weerdye; ende ghy en [18] verhoogt haren prijs niet.",
-      "text2026": "U verkoopt Uw volk om geen waardij; en U verhoogt hun prijs niet.",
+      "text2026": "U verkoopt Uw volk voor geen prijs; en U verhoogt hun prijs niet.",
       "marginNotes": [
         {
           "marker": "17",
@@ -954,7 +954,7 @@
           "morph": "HR/Ncmpc/Sp3mp"
         }
       ],
-      "text2026_html": "U verkoopt Uw volk om geen waardij; en U verhoogt<sup class=\"note-marker\" data-note=\"17\">17</sup><sup class=\"note-marker\" data-note=\"18\">18</sup> hun prijs niet.",
+      "text2026_html": "U verkoopt Uw volk voor geen prijs; en U verhoogt<sup class=\"note-marker\" data-note=\"17\">17</sup><sup class=\"note-marker\" data-note=\"18\">18</sup> hun prijs niet.",
       "textSV1888_html": "Gij verkoopt Uw volk<sup class=\"note-marker\" data-note=\"17\">17</sup> om geen waardij; en Gij<sup class=\"note-marker\" data-note=\"18\">18</sup> verhoogt hun prijs niet.",
       "text1637_html": "Ghy verkoopt u volck <sup class=\"note-marker\" data-note=\"17\">17</sup> om geene weerdye; ende ghy en <sup class=\"note-marker\" data-note=\"18\">18</sup> verhoogt haren prijs niet.",
       "phraseDiff": [
@@ -962,6 +962,16 @@
           "old": "Gij",
           "new": "U",
           "principe": "A1"
+        },
+        {
+          "old": "om",
+          "new": "voor",
+          "principe": "V1582"
+        },
+        {
+          "old": "waardij;",
+          "new": "prijs;",
+          "principe": "V1582"
         },
         {
           "old": "Gij",

@@ -3530,7 +3530,7 @@
       "hsv": "ⓘEen luiaard zegt: Een felle leeuw op de weg,een leeuw op de pleinen!",
       "nbg51": "De luiaard zegt: Een roofdier op de weg!",
       "textSV1888": "De luiaard zegt: Er is een felle leeuw op den weg, een leeuw is op de straten.",
-      "text2026_html": "<span class=\"direct-speech\"><i>De luiaard zegt: Er is een felle leeuw op de weg, een leeuw is op de straten.</i></span>",
+      "text2026_html": "De luiaard zegt: <span class=\"direct-speech\"><i>Er is een felle leeuw op de weg, een leeuw is op de straten.</i></span>",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"25\">25</sup><sup class=\"note-marker\" data-note=\"e\">e</sup> De luiaard zegt: Er is een felle leeuw op den weg, een leeuw is op de straten.",
       "phraseDiff": [
         {
@@ -5125,7 +5125,7 @@
       "hsv": "zo is iemand die zijn naaste bedriegten zegt: Deed ik het niet voor de grap?",
       "nbg51": "zo is hij, die zijn naaste bedriegt",
       "textSV1888": "Alzo is een man, die zijn naaste bedriegt, en zegt: Jok ik er niet mede?",
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo is een man, die zijn naaste bedriegt, en zegt: <span class=\"direct-speech\"><i>Jok ik er niet mee?</i></span></i></span>",
+      "text2026_html": "Zo is een man, die zijn naaste bedriegt, en zegt: <span class=\"direct-speech\"><i>Jok ik er niet mee?</i></span>",
       "textSV1888_html": "Alzo is een man, die zijn naaste bedriegt, en zegt:<sup class=\"note-marker\" data-note=\"38\">38</sup> Jok ik er niet mede?",
       "phraseDiff": [
         {
@@ -5425,7 +5425,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Als er geen hout is, gaat het vuur uit; en als er geen oorblazer is, wordt het gekijf gestild.",
+      "text2026": "Als er geen hout is, gaat het vuur uit; en als er geen oorblazer is, wordt de ruzie gestild.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -5695,6 +5695,13 @@
               6
             ]
           }
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "het gekijf",
+          "new": "de ruzie",
+          "principe": "V1579"
         }
       ]
     },
