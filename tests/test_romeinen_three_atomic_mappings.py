@@ -97,3 +97,24 @@ def test_romeinen_3_records_all_verified_guide_differences():
     ]
     assert len(deviations) == 10
     assert all(deviation["reden"] in {"lemma_afwijking", "gidstekst_afwijking"} for deviation in deviations)
+
+
+def test_romeinen_3_publishes_every_link_at_an_atomic_target():
+    chapter = _load(ROOT / "data" / "romeinen" / "3.json")
+    inline = _load(ROOT / "data" / "woordnummers-inline" / "romeinen.json")
+    inline_verses = inline["chapters"]["3"]
+
+    for verse in chapter["verses"]:
+        embedded = verse["woordnummers"]
+        projected = inline_verses[str(verse["number"])]
+        expected = len(verse["grondtekst"])
+
+        for mappings in (embedded, projected):
+            assert sum(len(mapping["strongs"]) for mapping in mappings) == expected
+            assert not any(
+                mapping.get("tekst", "").strip() == verse["text2026"].strip()
+                for mapping in mappings
+            )
+
+    assert sum(len(verse["woordnummers"]) for verse in chapter["verses"]) == 425
+    assert sum(len(items) for items in inline_verses.values()) == 425
