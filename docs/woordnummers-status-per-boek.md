@@ -8,7 +8,7 @@ Automatisch opgebouwd door `scripts/build_woordnummers_corpus.py`. Alleen handma
 | markus | nagekeken_tekst | 678/678 | 11648 | 0 | 0 | 100,00% |
 | johannes | nagekeken_tekst | 880/880 | 15940 | 0 | 5 | 99,97% |
 | handelingen | nagekeken_tekst | 1007/1007 | 18806 | 0 | 0 | 100,00% |
-| romeinen | nagekeken_tekst | 433/433 | 7193 | 0 | 0 | 100,00% |
+| romeinen | nagekeken_tekst | 434/434 | 7203 | 0 | 0 | 100,00% |
 | exodus | nagekeken_tekst | 1212/1212 | 16403 | 0 | 0 | 100,00% |
 | deuteronomium | nagekeken_tekst | 959/959 | 13844 | 0 | 0 | 100,00% |
 | esther | nagekeken_tekst | 167/167 | 2992 | 0 | 0 | 100,00% |
@@ -92,4 +92,4 @@ Automatisch opgebouwd door `scripts/build_woordnummers_corpus.py`. Alleen handma
 | 2meqabyan | resterend_corpus | 370/418 | 0 | 1062 | 3656 | 22,51% |
 | 3meqabyan | resterend_corpus | 176/207 | 0 | 495 | 2122 | 18,91% |
 | 4baruch | resterend_corpus | 189/197 | 0 | 680 | 1603 | 29,79% |
-| **Totaal** |  | **32972/39685** | **403894** | **13962** | **152781** | **73,23%** |
+| **Totaal** |  | **32973/39686** | **403904** | **13962** | **152781** | **73,23%** |
