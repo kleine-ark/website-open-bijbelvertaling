@@ -9645,7 +9645,7 @@
    "categorie": "Verouderde woorden",
    "oud": "aleer",
    "nieuw": "voordat",
-   "toelichting": "'aleer' is verouderd.",
+   "toelichting": "'aleer' is verouderd. Op 26 augustus 2026 afgemaakt: er stonden nog twee plaatsen met aleer, in Spreuken 8:25 en Ezechiel 16:57.",
    "regex": ""
   },
   {
@@ -14453,6 +14453,96 @@
    "toelichting": "Klaagliederen 1 tot en met 4, Psalm 25, 34, 37, 111, 112, 119 en 145 en Spreuken 31 zijn alfabetliederen: elk vers of elke strofe begint met de volgende letter van het Hebreeuwse alfabet. De Statenvertaling zet daar de naam van de letter neer, maar niet de letter zelf, zodat je aan de tekst niet ziet wat het alfabetvers doet. De letter staat er nu voor, en het geheel heeft de klasse acrostichon zodat de opmaak het cursief en in goud kan zetten. Driehonderdzes letters. In Psalm 111 en 112 staan er meerdere in een vers, want daar loopt het alfabet per zinsnede.",
    "regex": "",
    "voorbeeld": "Klaagliederen 1:1 | Aleph. Hoe zit die stad zo eenzaam | א Aleph. Hoe zit die stad zo eenzaam"
+  },
+  {
+   "id": "V1569",
+   "categorie": "Verouderde woorden",
+   "oud": "billijkheid / billijkheden",
+   "nieuw": "eerlijkheid",
+   "toelichting": "Billijk bestaat nog maar klinkt juridisch; het zelfstandig naamwoord is uitgestorven. Het staat telkens in een rij met gerechtigheid en recht, waar het Hebreeuws mesharim gebruikt: wat recht en eerlijk is. Elf plaatsen. Waar het meervoud een handeling aanduidt -- \"die billijkheden spreekt\" -- is het eerlijke dingen geworden. Vergelijk V844, dat het bijvoeglijk naamwoord al deed.",
+   "regex": "",
+   "voorbeeld": "Spreuken 1:3 | gerechtigheid, en recht, en billijkheden | gerechtigheid, en recht, en eerlijkheid"
+  },
+  {
+   "id": "V1570",
+   "categorie": "Verouderde woorden",
+   "oud": "kloekzinnigheid",
+   "nieuw": "verstandigheid",
+   "toelichting": "Kloek in de zin van scherpzinnig is verdwenen. Vier plaatsen. Niet bedachtzaamheid, want dat woord staat in Spreuken 1:4 en 8:12 al in dezelfde zin. In Boek der Wijsheid 8:7 hoort het bij de vier hoofddeugden, naast nuchterheid, gerechtigheid en dapperheid.",
+   "regex": "",
+   "voorbeeld": "Spreuken 8:5 | versta kloekzinnigheid | versta verstandigheid"
+  },
+  {
+   "id": "V1571",
+   "categorie": "Verouderde woorden",
+   "oud": "woelachtig",
+   "nieuw": "luidruchtig / onstuimig",
+   "toelichting": "Woelen in de zin van tekeergaan. Drie plaatsen. Bij mensen is het luidruchtig (Spreuken 7:11 en 9:13), bij sterke drank onstuimig (20:1) -- drank schreeuwt niet.",
+   "regex": "",
+   "voorbeeld": "Spreuken 9:13 | Een zotte vrouw is woelachtig | Een zotte vrouw is luidruchtig"
+  },
+  {
+   "id": "V1572",
+   "categorie": "Verouderde woorden",
+   "oud": "wederstrevig",
+   "nieuw": "opstandig",
+   "toelichting": "Verouderd. Twee plaatsen.",
+   "regex": "",
+   "voorbeeld": "Jesaja 65:2 | een wederstrevig volk | een opstandig volk"
+  },
+  {
+   "id": "V1573",
+   "categorie": "Verouderde woorden",
+   "oud": "minnen (zelfstandig naamwoord)",
+   "nieuw": "liefde",
+   "toelichting": "Minnen als zelfstandig naamwoord voor liefde is verdwenen; het werkwoord minnen blijft elders staan. Twee plaatsen.",
+   "regex": "",
+   "voorbeeld": "Spreuken 7:18 | dronken worden van minnen | dronken worden van liefde"
+  },
+  {
+   "id": "V1574",
+   "categorie": "Verouderde woorden",
+   "oud": "bundel gelds",
+   "nieuw": "geldbuidel",
+   "toelichting": "Oude tweede naamval in een samenstelling, zoals V966 (stukken gelds) en V1564 (stuk gelds).",
+   "regex": "",
+   "voorbeeld": "Spreuken 7:20 | een bundel gelds | een geldbuidel"
+  },
+  {
+   "id": "V1575",
+   "categorie": "Verouderde woorden",
+   "oud": "ten bestemden dage",
+   "nieuw": "op de afgesproken dag",
+   "toelichting": "Oude naamvalsvorm. Een plaats.",
+   "regex": "",
+   "voorbeeld": "Spreuken 7:20 | ten bestemden dage | op de afgesproken dag"
+  },
+  {
+   "id": "V1576",
+   "categorie": "Verouderde woorden",
+   "oud": "tred ... benauwd worden",
+   "nieuw": "stap ... belemmerd worden",
+   "toelichting": "Benauwd betekent hier niet bang maar bekneld; tred is nog Nederlands maar in deze wending niet meer te volgen. Alleen Spreuken 4:12.",
+   "regex": "",
+   "voorbeeld": "Spreuken 4:12 | zal uw tred niet benauwd worden | zal uw stap niet belemmerd worden"
+  },
+  {
+   "id": "V1577",
+   "categorie": "Verouderde woorden",
+   "oud": "Mijne (naamwoordelijk)",
+   "nieuw": "van Mij",
+   "toelichting": "Het bezittelijk voornaamwoord als naamwoordelijk deel van het gezegde. Alleen Spreuken 8:14; elders is \"het Mijne\" of \"de mijne\" gewoon Nederlands en blijft het staan.",
+   "regex": "",
+   "voorbeeld": "Spreuken 8:14 | Raad en het wezen zijn Mijne | Raad en het wezen zijn van Mij"
+  },
+  {
+   "id": "V1578",
+   "categorie": "Verouderde woorden",
+   "oud": "wakende (bijwoordelijk)",
+   "nieuw": "wakend / waakzaam",
+   "toelichting": "De oude uitgang op een bijwoordelijk deelwoord. Vijf plaatsen. In Openbaring 3:2 is het een gebiedende wijs en past waakzaam beter. Attributief blijft de vorm staan: \"deze wakende bezorgdheid\" in Jezus Sirach 31:2 is gewoon Nederlands.",
+   "regex": "",
+   "voorbeeld": "Spreuken 8:34 | dagelijks wakende aan Mijn poorten | dagelijks wakend aan Mijn poorten"
   }
  ]
 }

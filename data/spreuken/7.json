@@ -822,7 +822,7 @@
       "hsv": "Zeg tegen de wijsheid: Jij bent mijn zuster,en noem het inzicht je bloedverwant,",
       "nbg51": "Zeg tot de wijsheid: Gij zijt mijn zuster,",
       "textSV1888": "Zeg tot de wijsheid: Gij zijt mijn zuster; en heet het verstand uw bloedvriend;",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup> Zeg tot de wijsheid: U bent mijn zus; en heet het verstand uw<sup class=\"note-marker\" data-note=\"8\">8</sup> bloedvriend;",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup> Zeg tot de wijsheid: <span class=\"direct-speech\"><i>U bent mijn zus</i></span>; en heet het verstand uw<sup class=\"note-marker\" data-note=\"8\">8</sup> bloedvriend;",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"7\">7</sup> Zeg tot de wijsheid: Gij zijt mijn zuster; en heet het verstand uw<sup class=\"note-marker\" data-note=\"8\">8</sup> bloedvriend;",
       "phraseDiff": [
         {
@@ -2546,7 +2546,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Deze was woelachtig en wederstrevig, haar voeten bleven in haar huis niet;",
+      "text2026": "Deze was luidruchtig en opstandig, haar voeten bleven in haar huis niet;",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -2780,6 +2780,18 @@
               3
             ]
           }
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "woelachtig",
+          "new": "luidruchtig",
+          "principe": "V1571"
+        },
+        {
+          "old": "wederstrevig,",
+          "new": "opstandig,",
+          "principe": "V1571"
         }
       ]
     },
@@ -4182,7 +4194,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Kom, laat ons dronken worden van minnen tot de morgen toe; laat ons ons vrolijk maken in grote liefde.",
+      "text2026": "Kom, laat ons dronken worden van liefde tot de morgen toe; laat ons ons vrolijk maken in grote liefde.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -4225,9 +4237,14 @@
       "hsv": "Kom, laten we dronken worden van liefde, tot de morgen toe,laten we samen genieten van grote liefde.",
       "nbg51": "Kom, laat ons zwelgen in minne tot de morgen toe,",
       "textSV1888": "Kom, laat ons dronken worden van minnen tot den morgen toe; laat ons ons vrolijk maken in grote liefde.",
-      "text2026_html": "<span class=\"direct-speech\"><i>Kom, laat ons<sup class=\"note-marker\" data-note=\"34\">34</sup> dronken worden van minnen tot de morgen toe; laat ons ons vrolijk maken in<sup class=\"note-marker\" data-note=\"35\">35</sup> grote liefde.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Kom, laat ons<sup class=\"note-marker\" data-note=\"34\">34</sup> dronken worden van liefde tot de morgen toe; laat ons ons vrolijk maken in<sup class=\"note-marker\" data-note=\"35\">35</sup> grote liefde.</i></span>",
       "textSV1888_html": "Kom, laat ons<sup class=\"note-marker\" data-note=\"34\">34</sup> dronken worden van minnen tot den morgen toe; laat ons ons vrolijk maken in<sup class=\"note-marker\" data-note=\"35\">35</sup> grote liefde.",
       "phraseDiff": [
+        {
+          "old": "minnen",
+          "new": "liefde",
+          "principe": "V1573"
+        },
         {
           "old": "den",
           "new": "de",
@@ -4724,7 +4741,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Hij heeft een bundel gelds in zijn hand genomen; ten bestemden dage zal hij naar zijn huis komen.",
+      "text2026": "Hij heeft een geldbuidel in zijn hand genomen; op de afgesproken dag zal hij naar zijn huis komen.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -4772,7 +4789,7 @@
       "hsv": "Hij heeft de geldbuidel in zijn hand meegenomen,op de dag van de volle maan zal hij thuiskomen.",
       "nbg51": "een buidel geld heeft hij met zich meegenomen,",
       "textSV1888": "Hij heeft een bundel gelds in zijn hand genomen; ten bestemden dage zal hij naar zijn huis komen.",
-      "text2026_html": "<span class=\"direct-speech\"><i>Hij heeft<sup class=\"note-marker\" data-note=\"38\">38</sup> een bundel gelds<sup class=\"note-marker\" data-note=\"39\">39</sup> in zijn hand genomen;<sup class=\"note-marker\" data-note=\"40\">40</sup> ten bestemden dage zal hij naar zijn huis komen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Hij heeft<sup class=\"note-marker\" data-note=\"38\">38</sup> een geldbuidel<sup class=\"note-marker\" data-note=\"39\">39</sup> in zijn hand genomen;<sup class=\"note-marker\" data-note=\"40\">40</sup> op de afgesproken dag zal hij naar zijn huis komen.</i></span>",
       "textSV1888_html": "Hij heeft<sup class=\"note-marker\" data-note=\"38\">38</sup> een bundel gelds<sup class=\"note-marker\" data-note=\"39\">39</sup> in zijn hand genomen;<sup class=\"note-marker\" data-note=\"40\">40</sup> ten bestemden dage zal hij naar zijn huis komen.",
       "woordnummers": [
         {
@@ -4990,6 +5007,18 @@
               5
             ]
           }
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "bundel gelds",
+          "new": "geldbuidel",
+          "principe": "V1574"
+        },
+        {
+          "old": "ten bestemden dage",
+          "new": "op de afgesproken dag",
+          "principe": "V1575"
         }
       ]
     },

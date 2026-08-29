@@ -521,7 +521,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Om aan te nemen onderwijs van goed verstand, gerechtigheid, en recht, en billijkheden;",
+      "text2026": "Om aan te nemen onderwijs van goed verstand, gerechtigheid, en recht, en eerlijkheid;",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -726,6 +726,13 @@
             ]
           }
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "billijkheden;",
+          "new": "eerlijkheid;",
+          "principe": "V1569"
+        }
       ]
     },
     {
@@ -771,7 +778,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Om de eenvoudigen kloekzinnigheid te geven, de jongeling wetenschap en bedachtzaamheid.",
+      "text2026": "Om de eenvoudigen verstandigheid te geven, de jongeling wetenschap en bedachtzaamheid.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -809,13 +816,23 @@
       "hsv": "om aan onverstandigen schranderheid te geven,aan een jongeman kennis en bedachtzaamheid.",
       "nbg51": "om de onverstandigen schranderheid, de jongeling kennis en bedachtzaamheid te geven.",
       "textSV1888": "Om den slechten kloekzinnigheid te geven, den jongeling wetenschap en bedachtzaamheid.",
-      "text2026_html": "Om de<sup class=\"note-marker\" data-note=\"10\">10</sup> eenvoudigen<sup class=\"note-marker\" data-note=\"11\">11</sup> kloekzinnigheid te geven, de<sup class=\"note-marker\" data-note=\"12\">12</sup> jongeling<sup class=\"note-marker\" data-note=\"13\">13</sup> wetenschap en<sup class=\"note-marker\" data-note=\"14\">14</sup> bedachtzaamheid.",
+      "text2026_html": "Om de<sup class=\"note-marker\" data-note=\"10\">10</sup> eenvoudigen<sup class=\"note-marker\" data-note=\"11\">11</sup> verstandigheid te geven, de<sup class=\"note-marker\" data-note=\"12\">12</sup> jongeling<sup class=\"note-marker\" data-note=\"13\">13</sup> wetenschap en<sup class=\"note-marker\" data-note=\"14\">14</sup> bedachtzaamheid.",
       "textSV1888_html": "Om den<sup class=\"note-marker\" data-note=\"10\">10</sup> slechten<sup class=\"note-marker\" data-note=\"11\">11</sup> kloekzinnigheid te geven, den<sup class=\"note-marker\" data-note=\"12\">12</sup> jongeling<sup class=\"note-marker\" data-note=\"13\">13</sup> wetenschap en<sup class=\"note-marker\" data-note=\"14\">14</sup> bedachtzaamheid.",
       "phraseDiff": [
         {
-          "old": "den slechten",
-          "new": "de eenvoudigen",
+          "old": "den",
+          "new": "de",
           "principe": "N1"
+        },
+        {
+          "old": "slechten",
+          "new": "eenvoudigen",
+          "principe": "V408"
+        },
+        {
+          "old": "kloekzinnigheid",
+          "new": "verstandigheid",
+          "principe": "V1570"
         },
         {
           "old": "den",
@@ -2685,7 +2702,7 @@
       "hsv": "Als zij zeggen: Ga met ons mee,laten wij loeren op bloed,zonder reden een onschuldige belagen,[1]",
       "nbg51": "indien zij zeggen: Ga met ons, laat ons loeren op bloed,",
       "textSV1888": "Indien zij zeggen: Ga met ons, laat ons loeren op bloed, ons versteken tegen den onschuldige, zonder oorzaak;",
-      "text2026_html": "<span class=\"direct-speech\"><i>Als zij zeggen: Ga met ons, laat ons<sup class=\"note-marker\" data-note=\"28\">28</sup> loeren op bloed, ons<sup class=\"note-marker\" data-note=\"29\">29</sup> versteken tegen de onschuldige,<sup class=\"note-marker\" data-note=\"30\">30</sup> zonder oorzaak;</i></span>",
+      "text2026_html": "Als zij zeggen: <span class=\"direct-speech\"><i>Ga met ons, laat ons<sup class=\"note-marker\" data-note=\"28\">28</sup> loeren op bloed, ons<sup class=\"note-marker\" data-note=\"29\">29</sup> versteken tegen de onschuldige,<sup class=\"note-marker\" data-note=\"30\">30</sup> zonder oorzaak;</i></span>",
       "textSV1888_html": "Indien zij zeggen: Ga met ons, laat ons<sup class=\"note-marker\" data-note=\"28\">28</sup> loeren op bloed, ons<sup class=\"note-marker\" data-note=\"29\">29</sup> versteken tegen den onschuldige,<sup class=\"note-marker\" data-note=\"30\">30</sup> zonder oorzaak;",
       "phraseDiff": [
         {
