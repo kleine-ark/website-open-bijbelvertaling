@@ -84,3 +84,24 @@ def test_openbaring_22_keeps_the_local_tr_readings_at_their_words():
     assert strongs_for(14, "geboden") == ["G1785"]
     assert strongs_for(19, "boek", 2) == ["G976"]
     assert strongs_for(19, "leven") == ["G2222"]
+
+
+def test_openbaring_22_publishes_every_link_at_an_atomic_target():
+    chapter = _load(ROOT / "data" / "openbaring" / "22.json")
+    inline = _load(ROOT / "data" / "woordnummers-inline" / "openbaring.json")
+    inline_verses = inline["chapters"]["22"]
+
+    for verse in chapter["verses"]:
+        embedded = verse["woordnummers"]
+        projected = inline_verses[str(verse["number"])]
+        expected = len(verse["grondtekst"])
+
+        for mappings in (embedded, projected):
+            assert sum(len(mapping["strongs"]) for mapping in mappings) == expected
+            assert not any(
+                mapping.get("tekst", "").strip() == verse["text2026"].strip()
+                for mapping in mappings
+            )
+
+    assert sum(len(verse["woordnummers"]) for verse in chapter["verses"]) == 451
+    assert sum(len(items) for items in inline_verses.values()) == 451
