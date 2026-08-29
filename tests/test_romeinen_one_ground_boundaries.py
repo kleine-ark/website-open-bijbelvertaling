@@ -5,10 +5,10 @@ from scripts.import_inline_woordnummers import _grondtekst_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_GROUND_SHA = "0BC0FFE88680E764155EB70FDE3EA7855538BAD53578D11B7FBBCB33EB1CAF79"
+EXPECTED_GROUND_SHA = "BDAE9E3CCA31BF420BA40BD2EE5329E8A08A145518864BC1D9A93583BC021CE2"
 EXPECTED_COUNTS = [
     10, 9, 11, 17, 17, 8, 21, 21, 23, 18, 14, 15, 30, 10, 11, 21,
-    18, 18, 14, 23, 22, 4, 18, 21, 25, 22, 35, 20, 14, 9, 5, 23,
+    18, 18, 14, 23, 22, 4, 18, 21, 25, 22, 35, 20, 13, 10, 5, 23,
 ]
 
 
@@ -42,3 +42,5 @@ def test_romeinen_one_restored_ground_boundaries_are_explicit():
         "G4335",
         "G1473",
     ]
+    assert verses[29]["grondtekst"][-1]["strongs"] == "G2550"
+    assert verses[30]["grondtekst"][0]["strongs"] == "G5588"
