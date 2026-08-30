@@ -423,6 +423,114 @@ def test_apply_review_file_adresseert_gidsvers_in_ander_hoofdstuk(tmp_path):
     assert saved["verses"][0]["woordnummers"][0]["herkomst"]["referentie"] == "1SA 23:29"
 
 
+def test_apply_review_file_kan_een_lokaal_vers_over_twee_gidsverzen_verdelen(tmp_path):
+    source_dir = tmp_path / "source"
+    source_dir.mkdir()
+    source_path = source_dir / "46TST.usj"
+    source_path.write_text(
+        json.dumps(
+            {
+                "type": "USJ",
+                "content": [
+                    {"type": "chapter", "marker": "c", "number": "1"},
+                    {
+                        "type": "para",
+                        "marker": "p",
+                        "content": [
+                            {"type": "verse", "marker": "v", "number": "1"},
+                            {"type": "char", "marker": "w", "strong": "G3756", "content": ["not"]},
+                            {"type": "verse", "marker": "v", "number": "2"},
+                            {"type": "char", "marker": "w", "strong": "G1537", "content": ["from"]},
+                            " ",
+                            {"type": "char", "marker": "w", "strong": "G2041", "content": ["works"]},
+                            " ",
+                            {"type": "char", "marker": "w", "strong": "G1398", "content": ["serve"]},
+                        ],
+                    },
+                ],
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    source_hash = MODULE._sha256(source_path)
+    data_dir = tmp_path / "data" / "testboek"
+    data_dir.mkdir(parents=True)
+    (data_dir / "1.json").write_text(
+        json.dumps(
+            {
+                "verses": [
+                    {
+                        "number": 1,
+                        "text2026": "niet uit werken",
+                        "grondtekst": [
+                            {"woord": "οὐ", "strongs": "G3756"},
+                            {"woord": "ἐξ", "strongs": "G1537"},
+                            {"woord": "ἔργων", "strongs": "G2041"},
+                        ],
+                    },
+                    {
+                        "number": 2,
+                        "text2026": "dienen",
+                        "grondtekst": [{"woord": "δουλεύσει", "strongs": "G1398"}],
+                    },
+                ]
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    mapping_meta = {"confidence": 1, "reviewstatus": "handmatig_gecontroleerd"}
+    review = {
+        "source": {"id": "bsb-full-strongs-usj", "version": "5.6", "sha256": "SOURCE"},
+        "books": [
+            {
+                "code": "TST",
+                "repo_book": "testboek",
+                "chapter": 1,
+                "source_file": "46TST.usj",
+                "source_file_sha256": source_hash,
+                "verses": [
+                    {
+                        "verse": 1,
+                        "source_verse": 1,
+                        "mappings": [
+                            {"tekst": "niet", "bronindices": [0], "grondindices": [0], **mapping_meta},
+                            {"tekst": "uit", "bronindices": [0], "grondindices": [1], "source_verse": 2, **mapping_meta},
+                            {"tekst": "werken", "bronindices": [1], "grondindices": [2], "source_verse": 2, **mapping_meta},
+                        ],
+                    },
+                    {
+                        "verse": 2,
+                        "source_verse": 2,
+                        "mappings": [
+                            {"tekst": "dienen", "bronindices": [2], "grondindices": [0], **mapping_meta},
+                        ],
+                    },
+                ],
+            }
+        ],
+    }
+    review_path = tmp_path / "review.json"
+    review_path.write_text(json.dumps(review, ensure_ascii=False), encoding="utf-8")
+
+    report = MODULE.apply_review_file(review_path, source_dir, tmp_path / "data", write=True)
+    saved = json.loads((data_dir / "1.json").read_text(encoding="utf-8"))
+
+    assert report["added"] == 4
+    assert [item["strongs"] for item in saved["verses"][0]["woordnummers"]] == [
+        ["G3756"],
+        ["G1537"],
+        ["G2041"],
+    ]
+    assert [item["herkomst"]["referentie"] for item in saved["verses"][0]["woordnummers"]] == [
+        "TST 1:1",
+        "TST 1:2",
+        "TST 1:2",
+    ]
+    assert saved["verses"][1]["woordnummers"][0]["herkomst"]["referentie"] == "TST 1:2"
+
+
 def test_apply_review_file_reviewt_apocrief_tegen_lokale_grondtekst(tmp_path):
     # Apocriefe boeken hebben geen externe uitlijngids; het reviewbestand
     # verklaart source_type lokale-grondtekst en pint de tokenlaag met een

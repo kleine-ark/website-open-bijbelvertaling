@@ -359,19 +359,33 @@ def apply_review_file(review_path, source_dir, data_dir=None, write=False, verse
                 reference = f"{book['code']} {source_chapter}:{source_number}"
                 external = external_verses.get((source_chapter, source_number), [])
             local = verse.get("grondtekst") or []
-            proposed = [
-                build_inline_mapping(
-                    item,
-                    external,
-                    local,
-                    source,
-                    reference,
-                    lemma_afwijking=verse_review.get(
-                        "bronafwijkingen", verse_review.get("bronafwijking")
-                    ),
+            proposed = []
+            for item in verse_review.get("mappings", []):
+                mapping_external = external
+                mapping_reference = reference
+                if external_verses is not None:
+                    mapping_source_number = int(item.get("source_verse", source_number))
+                    mapping_source_chapter = int(
+                        item.get("source_chapter", source_chapter)
+                    )
+                    mapping_reference = (
+                        f"{book['code']} {mapping_source_chapter}:{mapping_source_number}"
+                    )
+                    mapping_external = external_verses.get(
+                        (mapping_source_chapter, mapping_source_number), []
+                    )
+                proposed.append(
+                    build_inline_mapping(
+                        item,
+                        mapping_external,
+                        local,
+                        source,
+                        mapping_reference,
+                        lemma_afwijking=verse_review.get(
+                            "bronafwijkingen", verse_review.get("bronafwijking")
+                        ),
+                    )
                 )
-                for item in verse_review.get("mappings", [])
-            ]
             if verse_review.get("vervang_bronrecords"):
                 if not proposed:
                     raise ValueError(f"Geen vervangende mappings voor {reference}")
