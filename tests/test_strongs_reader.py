@@ -949,6 +949,33 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_2korinthiers_6_plaatst_strongs_direct_bij_lastige_ankers(self):
+        page = self.open_reader("2korinthiers/6")
+        try:
+            self.enable_strongs(page)
+            verse_five = page.locator('.verse-row[data-verse="5"] .col-2026')
+            onlusten = verse_five.locator('[data-strongs="G181"]')
+            self.assertEqual(onlusten.count(), 1)
+            self.assertTrue(onlusten.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('onlusten');
+            }"""))
+
+            verse_sixteen = page.locator('.verse-row[data-verse="16"] .col-2026')
+            untranslated = verse_sixteen.locator('[data-strongs="G3754"]')
+            self.assertEqual(untranslated.count(), 1)
+            self.assertTrue(untranslated.evaluate("""el => {
+                let next = el.nextSibling;
+                while (next && !String(next.textContent || '').trim()) next = next.nextSibling;
+                return String(next?.textContent || '').trimStart().startsWith('Ik');
+            }"""))
+        finally:
+            page.close()
+
     def test_1korinthiers_12_plaatst_strongs_bij_de_doelwoorden(self):
         """Atomaire mappings mogen in de browser niet als slotblok renderen."""
         page = self.open_reader("1korinthiers/12")
