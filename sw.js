@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = 'v0.45.1';
+const VERSION = 'v0.45.2';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -172,7 +172,7 @@ async function cacheFirstWithRefresh(req, cacheName) {
 async function networkFirst(req, cacheName) {
     const cache = await caches.open(cacheName);
     try {
-        const resp = await fetch(req);
+        const resp = await fetch(req, { cache: 'no-store' });
         if (resp.ok) cache.put(req, resp.clone());
         return resp;
     } catch (e) {

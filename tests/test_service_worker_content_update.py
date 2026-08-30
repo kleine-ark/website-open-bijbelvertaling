@@ -68,9 +68,45 @@ global.console = {{ info: () => undefined, warn: () => undefined }};
     return int(result.stdout)
 
 
+def _network_first_result():
+    worker_source = base64.b64encode(
+        (ROOT / "sw.js").read_bytes()
+    ).decode("ascii")
+    script = f"""
+const workerSource = Buffer.from('{worker_source}', 'base64').toString('utf8');
+const stale = {{ ok: true, body: 'stale', clone() {{ return this; }} }};
+const fresh = {{ ok: true, body: 'fresh', clone() {{ return this; }} }};
+global.self = {{ addEventListener: () => undefined }};
+global.caches = {{
+  open: async () => ({{
+    put: async () => undefined,
+    match: async () => ({{ ok: true, body: 'offline', clone() {{ return this; }} }})
+  }})
+}};
+global.fetch = async (_request, options) =>
+  options && options.cache === 'no-store' ? fresh : stale;
+eval(workerSource + `\n(async () => {{
+  const response = await networkFirst('/data/romeinen/9.json', 'data-test');
+  process.stdout.write(response.body);
+}})();`);
+"""
+    result = subprocess.run(
+        ["node", "-e", script],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return result.stdout
+
+
 def test_bestaande_lezer_herlaadt_na_nieuwe_workeractivatie():
     assert _reloads_after_worker_activation(has_active_controller=True) == 1
 
 
 def test_eerste_workerinstallatie_herlaadt_de_lezer_niet_dubbel():
     assert _reloads_after_worker_activation(has_active_controller=False) == 0
+
+
+def test_network_first_omzeilt_de_http_cache_van_de_browser():
+    assert _network_first_result() == "fresh"
