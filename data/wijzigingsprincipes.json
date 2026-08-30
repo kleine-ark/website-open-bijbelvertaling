@@ -827,10 +827,10 @@
   {
    "id": "V64",
    "categorie": "Verouderde woorden",
-   "oud": "jongsken",
+   "oud": "jongsken / jongske",
    "nieuw": "jongen",
-   "toelichting": "Verouderd verkleinwoord",
-   "regex": "\\b[Jj]ongsken\\b"
+   "toelichting": "Verouderd verkleinwoord, in beide spellingen.",
+   "regex": "\\b[Jj]ongske[n]?\\b"
   },
   {
    "id": "V65",
@@ -6099,10 +6099,10 @@
   {
    "id": "V709",
    "categorie": "Naamvallen",
-   "oud": "hogen berg",
-   "nieuw": "hoge berg",
-   "toelichting": "Attributief '-en' → '-e': 'hogen berg' → 'hoge berg'.",
-   "regex": "\\bhogen berg\\b"
+   "oud": "hogen berg / hogen toren / vasten muur",
+   "nieuw": "hoge berg / hoge toren / vaste muur",
+   "toelichting": "Attributief '-en' wordt '-e'. Waar de verbogen vorm ook nog een verbogen lidwoord bij zich heeft ('tegen allen hogen toren') gaat dat mee: 'tegen elke hoge toren'.",
+   "regex": ""
   },
   {
    "id": "V710",
@@ -14588,6 +14588,69 @@
    "toelichting": "Zat betekent hier niet dat iemand zit maar dat hij genoeg heeft gehad. Die betekenis is uitgestorven op de uitdrukking \"ergens zat van zijn\" na, en juist in de vormen die de Statenvertaling gebruikt -- zat van dagen, zat worden -- leest een hedendaagse lezer er de verleden tijd van zitten in. Van de honderdachtenvijftig plaatsen met zat zijn er honderddrieendertig gewoon \"hij zat\"; de vijfentwintig andere zijn met de hand nagelopen.",
    "regex": "",
    "voorbeeld": "Klaagliederen 3:30 | hij worde zat van smaad | hij worde verzadigd van smaad"
+  },
+  {
+   "id": "V1584",
+   "categorie": "Verouderde woorden",
+   "oud": "een weinig",
+   "nieuw": "een klein",
+   "toelichting": "\"Nog een weinig overblijfsel\" leest nu als een hoeveelheid, terwijl het over de omvang van de rest gaat. Alleen waar weinig bijvoeglijk bij een zelfstandig naamwoord staat; als bijwoord (\"een weinig verder\") blijft het.",
+   "regex": "",
+   "voorbeeld": "Jesaja 1:9"
+  },
+  {
+   "id": "V1585",
+   "categorie": "Verouderde woorden",
+   "oud": "willig",
+   "nieuw": "gewillig",
+   "toelichting": "Zonder voorvoegsel is willig verouderd en verwarrend naast willen. Twee plaatsen: Jesaja 1:19 en 1 Kronieken 29:5. Samengestelde vormen hebben hun eigen principes (V59 gewilliglijk, V171 vrijwilliglijk, V185 moedwilliglijk).",
+   "regex": "\\bwillig\\b",
+   "voorbeeld": "Jesaja 1:19"
+  },
+  {
+   "id": "V1586",
+   "categorie": "Verouderde woorden",
+   "oud": "de gemene man",
+   "nieuw": "de gewone man",
+   "toelichting": "Gemeen betekende gewoon of gemeenschappelijk; die betekenis is omgeslagen naar laaghartig. \"De gemene man\" tegenover \"de aanzienlijke man\" is juist de gewone burger. Drie plaatsen: Jesaja 2:9 en 5:15, en Wijsheid 18:11.",
+   "regex": "\\bde gemene man\\b",
+   "voorbeeld": "Jesaja 2:9"
+  },
+  {
+   "id": "V1587",
+   "categorie": "Spelling",
+   "oud": "vledermuis",
+   "nieuw": "vleermuis",
+   "toelichting": "Verouderde spelling van hetzelfde dier.",
+   "regex": "\\b[Vv]ledermuiz?e?[ns]?\\b",
+   "voorbeeld": "Jesaja 2:20"
+  },
+  {
+   "id": "V1588",
+   "categorie": "Verouderde woorden",
+   "oud": "gelijk (voegwoord)",
+   "nieuw": "zoals",
+   "toelichting": "Gelijk als voegwoord van vergelijking is zoals geworden. Niet automatiseerbaar: gelijk is ook bijvoeglijk naamwoord (\"gelijk gewicht\"), bijwoord (\"gelijk daarna\") en zelfstandig (\"gelijk hebben\"). Een indeling op vorm haalde maar tweeendertig van de achtendertig handmatig geoordeelde plaatsen goed, dus dit gaat per vers.",
+   "regex": "",
+   "voorbeeld": "Jesaja 9:2"
+  },
+  {
+   "id": "V1589",
+   "categorie": "Naamvallen",
+   "oud": "krenktet",
+   "nieuw": "krenkte",
+   "toelichting": "Tweede persoon enkelvoud verleden tijd op -t is verdwenen; de vorm valt samen met de derde persoon.",
+   "regex": "\\bkrenktet\\b",
+   "voorbeeld": "Jesaja 14:12"
+  },
+  {
+   "id": "V1590",
+   "categorie": "Verouderde woorden",
+   "oud": "frontieren",
+   "nieuw": "grenzen",
+   "toelichting": "Leenwoord uit het Frans dat in het Nederlands niet is blijven bestaan.",
+   "regex": "\\b[Ff]rontieren?\\b",
+   "voorbeeld": "Jesaja 18:1"
   }
  ]
 }
