@@ -914,6 +914,23 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_2korinthiers_4_plaatst_de_eerste_strongs_direct_na_daarom(self):
+        page = self.open_reader("2korinthiers/4")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="1"] .col-2026')
+            first = cell.locator('[data-strongs="G1223"]').first
+            self.assertTrue(first.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('Daarom');
+            }"""))
+        finally:
+            page.close()
+
     def test_1korinthiers_12_plaatst_strongs_bij_de_doelwoorden(self):
         """Atomaire mappings mogen in de browser niet als slotblok renderen."""
         page = self.open_reader("1korinthiers/12")
