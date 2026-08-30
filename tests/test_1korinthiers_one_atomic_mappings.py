@@ -91,3 +91,30 @@ def test_1korinthiers_1_documents_every_guide_tr_difference():
     assert records[23]["bronafwijkingen"][0]["grondtekst_strongs"] == ["G1672"]
     assert records[25]["bronafwijkingen"][0]["grondtekst_strongs"] == ["G1510"]
     assert records[29]["bronafwijkingen"][0]["grondtekst_strongs"] == ["G846"]
+
+
+def test_1korinthiers_1_publiceert_de_atomische_mappings():
+    chapter = _load(ROOT / "data" / "1korinthiers" / "1.json")
+    inline = _load(ROOT / "data" / "woordnummers-inline" / "1korinthiers.json")
+    inline_chapter = inline["chapters"]["1"]
+
+    mapping_count = 0
+    link_count = 0
+    for verse in chapter["verses"]:
+        mappings = verse["woordnummers"]
+        indices = [
+            index
+            for mapping in mappings
+            for index in mapping["herkomst"]["grondindices"]
+        ]
+        mapping_count += len(mappings)
+        link_count += len(indices)
+
+        assert sorted(indices) == list(range(len(verse["grondtekst"])))
+        assert len(indices) == len(set(indices))
+        assert all(mapping["reviewstatus"] == "handmatig_gecontroleerd" for mapping in mappings)
+        assert all(mapping.get("status") != "vertaald" for mapping in mappings)
+        assert mappings == inline_chapter[str(verse["number"])]
+
+    assert mapping_count == 500
+    assert link_count == 502
