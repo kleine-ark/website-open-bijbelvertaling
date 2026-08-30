@@ -5695,3 +5695,96 @@ span.devil-speaks, span.devil-speaks i {
         padding-right: 16px;
     }
 }
+
+/* === Opmerkingenkaart op een telefoon === */
+/* De kaart stond op 10vh van boven zonder hoogtebegrenzing en liep daardoor
+   door tot voorbij de onderrand. Met het toetsenbord open viel de knoppenrij
+   helemaal weg: typen ging wel, op Verzenden drukken niet. Hier staat de kaart
+   onderaan vast binnen het deel dat zichtbaar blijft (js/feedback.js meet dat
+   met visualViewport), schuift alleen zijn eigen inhoud, en plakt de
+   knoppenrij aan de onderkant. */
+@media (max-width: 768px) {
+    .feedback-modal-dialog {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: var(--fb-onder, 0px);
+        margin: 0;
+        max-width: none;
+        max-height: calc(var(--fb-hoogte, 92vh) - 8px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 14px 14px 0 0;
+        padding: 14px 16px 0;
+    }
+    .feedback-modal-dialog h3 { font-size: 17px; }
+    .feedback-modal-dialog .fb-quote { max-height: 76px; margin-bottom: 10px; }
+    .feedback-modal-dialog .fb-types { margin-bottom: 10px; }
+    .feedback-modal-dialog textarea { min-height: 72px; }
+    .feedback-modal-dialog .fb-status { margin: 6px 0 0; }
+    .feedback-modal-dialog .fb-actions {
+        position: sticky;
+        bottom: 0;
+        margin: 8px -16px 0;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+        background: #fff;
+        border-top: 1px solid #eee7d8;
+    }
+    .feedback-modal-dialog .fb-cancel,
+    .feedback-modal-dialog .fb-send {
+        flex: 1 1 0;
+        min-height: 46px;
+        font-size: 15px;
+    }
+    :root[data-theme="donker"] .feedback-modal-dialog .fb-actions {
+        background: var(--bg-surface);
+        border-top-color: var(--border-default);
+    }
+}
+
+/* === Melding onderin na het verzenden === */
+/* De kaart is al dicht tegen de tijd dat Google antwoordt, dus de bevestiging
+   kan daar niet meer in staan. */
+.fb-toast {
+    position: fixed;
+    left: 50%;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    z-index: 12000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: min(440px, calc(100vw - 32px));
+    box-sizing: border-box;
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: var(--navy, #1b2440);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.35;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translate(-50%, 16px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+.fb-toast.zichtbaar {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+.fb-toast-fout { background: #7a2733; }
+.fb-toast-knop {
+    flex: 0 0 auto;
+    border: 1px solid rgba(255,255,255,0.5);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    padding: 5px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+}
+.fb-toast-knop:hover { background: rgba(255,255,255,0.15); }
+@media (prefers-reduced-motion: reduce) {
+    .fb-toast { transition: none; }
+}

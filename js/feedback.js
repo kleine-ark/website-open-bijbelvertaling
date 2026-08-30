@@ -107,11 +107,11 @@ const Feedback = {
                 </div>
                 <label for="fb-suggestion">Jouw suggestie of opmerking</label>
                 <textarea id="fb-suggestion" rows="5" placeholder="Bijv.: 'voorgesteld als — voorgedragen als'..."></textarea>
+                <p class="fb-status" aria-live="polite"></p>
                 <div class="fb-actions">
                     <button class="fb-cancel" type="button">Annuleren</button>
                     <button class="fb-send"   type="button">Verzenden</button>
                 </div>
-                <p class="fb-status" aria-live="polite"></p>
             </div>`;
         document.body.appendChild(wrap);
         wrap.querySelector('.feedback-modal-backdrop').addEventListener('click', () => this.close());
@@ -125,6 +125,61 @@ const Feedback = {
         });
         this.modal = wrap;
         return wrap;
+    },
+
+    /* Op een telefoon krimpt het zichtbare deel van het scherm als het
+       toetsenbord opengaat, maar een position:fixed element blijft staan waar
+       het stond. Zo verdween de knoppenrij onder het toetsenbord: typen ging
+       wel, verzenden niet. visualViewport is het enige dat weet hoeveel er nog
+       over is; daar hangen we de onderkant en de maximale hoogte aan op.
+
+       Waar visualViewport ontbreekt vallen de CSS-variabelen terug op hun
+       standaardwaarde en staat de kaart gewoon onderaan het venster. */
+    _volgToetsenbord() {
+        const vv = window.visualViewport;
+        if (!vv) return;
+        if (!this._pasViewport) {
+            this._pasViewport = () => {
+                if (!this.modal || this.modal.classList.contains('hidden')) return;
+                const onder = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+                this.modal.style.setProperty('--fb-onder', onder + 'px');
+                this.modal.style.setProperty('--fb-hoogte', vv.height + 'px');
+            };
+            vv.addEventListener('resize', this._pasViewport);
+            vv.addEventListener('scroll', this._pasViewport);
+        }
+        this._pasViewport();
+    },
+
+    /* De bevestiging staat onderin en niet in de kaart, omdat de kaart al dicht
+       is tegen de tijd dat Google antwoordt. Bij mislukken hangt er een knop
+       aan: de ingetypte tekst is niet weg, die komt er dan weer in te staan. */
+    _melding(tekst, actie) {
+        let el = document.getElementById('fb-toast');
+        if (!el) {
+            el = document.createElement('div');
+            el.id = 'fb-toast';
+            el.className = 'fb-toast';
+            el.setAttribute('role', 'status');
+            el.setAttribute('aria-live', 'polite');
+            document.body.appendChild(el);
+        }
+        clearTimeout(this._meldingTijd);
+        el.replaceChildren(document.createTextNode(tekst));
+        el.classList.toggle('fb-toast-fout', !!actie);
+        if (actie) {
+            const knop = document.createElement('button');
+            knop.type = 'button';
+            knop.className = 'fb-toast-knop';
+            knop.textContent = actie.label;
+            knop.addEventListener('click', () => {
+                el.classList.remove('zichtbaar');
+                actie.doe();
+            });
+            el.appendChild(knop);
+        }
+        el.classList.add('zichtbaar');
+        this._meldingTijd = setTimeout(() => el.classList.remove('zichtbaar'), actie ? 9000 : 3200);
     },
 
     open(sel) {
@@ -145,6 +200,7 @@ const Feedback = {
         m.querySelector('.fb-status').textContent = '';
         m.querySelector('.fb-send').disabled = false;
         m.classList.remove('hidden');
+        this._volgToetsenbord();
         setTimeout(() => m.querySelector('#fb-suggestion').focus(), 30);
     },
 
@@ -177,7 +233,7 @@ const Feedback = {
         field.focus({ preventScroll: true });
     },
 
-    async send() {
+    send() {
         if (!this.pending) return;
         const m = this.modal;
         const txt = m.querySelector('#fb-suggestion').value.trim();
@@ -185,58 +241,45 @@ const Feedback = {
             m.querySelector('.fb-status').textContent = 'Vul eerst een suggestie in.';
             return;
         }
-        const sendBtn = m.querySelector('.fb-send');
-        sendBtn.disabled = true;
-        const status = m.querySelector('.fb-status');
-        status.textContent = 'Verzenden…';
-
         const user = (window.Auth && window.Auth.currentUser) || null;
-        const payload = {
-            user: user ? {
-                uid: user.uid,
-                name: user.displayName || '',
-                email: user.email || ''
-            } : { uid: null, name: 'anoniem', email: '' },
+        const opdracht = {
             ref: this.pending.ref || `${this.pending.bookId} ${this.pending.ch}:${this.pending.vs}`,
-            book: this.pending.bookId,
-            chapter: this.pending.ch,
-            verse: this.pending.vs,
-            selected: this.pending.text,
-            suggestion: txt,
-            datum: new Date().toISOString(),
-            userAgent: navigator.userAgent
+            selectie: this.pending.text || '',
+            suggestie: txt,
+            van: (user && user.displayName) || 'anoniem',
+            selectiegegevens: this.pending
         };
+        // De kaart gaat dicht vóór het versturen. Wachten op Google levert de
+        // lezer niets op — met no-cors is het antwoord toch niet uit te lezen —
+        // en houdt hem ondertussen wel van de tekst af. De uitslag komt onderin.
+        this.close();
+        this._verstuur(opdracht);
+    },
 
-        // Eén verzendweg: het Google Formulier, dat naar zijn eigen
-        // spreadsheet schrijft.
-        //
-        // Wat we van no-cors terugkrijgen is een leeg antwoord — de status is
+    async _verstuur(o) {
+        // Wat we van no-cors terugkrijgen is een leeg antwoord; de status is
         // niet uit te lezen. Wat het wél zegt: als fetch niet afketst, is het
         // verzoek de deur uit. Dat is precies de fout die de lezer kan
         // verhelpen (geen verbinding); een fout aan Google's kant kan hij toch
         // niet oplossen. Daarom hangt de bevestiging aan het afketsen.
-        let ok = false;
+        const v = this.FORMULIER_VELDEN;
+        const velden = new URLSearchParams();
+        velden.append(v.vers, o.ref);
+        velden.append(v.selectie, o.selectie);
+        velden.append(v.suggestie, o.suggestie);
+        velden.append(v.van, o.van);
         try {
-            const v = this.FORMULIER_VELDEN;
-            const velden = new URLSearchParams();
-            velden.append(v.vers, payload.ref || '');
-            velden.append(v.selectie, payload.selected || '');
-            velden.append(v.suggestie, payload.suggestion || '');
-            velden.append(v.van, payload.user.name || 'anoniem');
             await fetch(this.FORMULIER, { method: 'POST', mode: 'no-cors', body: velden });
-            ok = true;
+            this._melding('Bedankt! Je opmerking is verstuurd.');
         } catch (e) {
             console.warn('[Feedback] versturen mislukt:', e);
-        }
-
-        if (ok) {
-            status.textContent = 'Bedankt! Je opmerking is verstuurd.';
-            setTimeout(() => this.close(), 1600);
-        } else {
-            // De ingevulde tekst blijft staan en de knop gaat weer aan, zodat
-            // opnieuw proberen niets kost.
-            status.textContent = 'Versturen mislukt — er lijkt geen verbinding te zijn. Probeer het zo nog eens.';
-            sendBtn.disabled = false;
+            this._melding('Versturen mislukt — er lijkt geen verbinding te zijn.', {
+                label: 'Opnieuw',
+                doe: () => {
+                    this.open(o.selectiegegevens);
+                    this.modal.querySelector('#fb-suggestion').value = o.suggestie;
+                }
+            });
         }
     }
 };
