@@ -956,6 +956,27 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_1korinthiers_14_plaatst_strongs_bij_de_doelwoorden(self):
+        """Een gidsloos bezittelijk voornaamwoord blijft bij de tweede 'u' staan."""
+        page = self.open_reader("1korinthiers/14")
+        try:
+            self.enable_strongs(page)
+            self.assertEqual(page.locator('.verse-row .col-2026 .strongs-inline').count(), 615)
+            trigger = page.locator(
+                '.verse-row[data-verse="26"] .col-2026 [data-strongs="G4771"]'
+            )
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('u');
+            }"""))
+        finally:
+            page.close()
+
     def test_mattheus_1_1_plaatst_christusstrong_na_christus(self):
         page = self.open_reader("mattheus/1")
         try:
