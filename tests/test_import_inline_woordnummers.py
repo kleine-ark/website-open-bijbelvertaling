@@ -1358,7 +1358,13 @@ def test_galaten_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(chapter)
 def test_efeziers_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(chapter):
     data = json.loads((ROOT / "data" / "efeziers" / f"{chapter}.json").read_text(encoding="utf-8"))
     for verse in data["verses"]:
-        indices = [i for mapping in verse.get("woordnummers", []) for i in mapping.get("herkomst", {}).get("bronindices", [])]
+        indices = [
+            i
+            for mapping in verse.get("woordnummers", [])
+            for i in mapping.get("herkomst", {}).get(
+                "grondindices", mapping.get("herkomst", {}).get("bronindices", [])
+            )
+        ]
         if not verse.get("grondtekst"):
             assert not indices
             continue
