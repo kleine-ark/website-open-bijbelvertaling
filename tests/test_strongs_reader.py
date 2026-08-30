@@ -976,6 +976,50 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_2korinthiers_7_plaatst_strongs_direct_bij_herhaalde_woorden(self):
+        page = self.open_reader("2korinthiers/7")
+        try:
+            self.enable_strongs(page)
+            verse_nine = page.locator('.verse-row[data-verse="9"] .col-2026')
+            grieved = verse_nine.locator('[data-strongs="G3076"]')
+            self.assertEqual(grieved.count(), 3)
+            for index in range(3):
+                self.assertTrue(grieved.nth(index).evaluate("""el => {
+                    const range = document.createRange();
+                    range.setStart(el.parentNode, 0);
+                    range.setEndBefore(el);
+                    const fragment = range.cloneContents();
+                    fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                    return fragment.textContent.trimEnd().endsWith('bedroefd');
+                }"""))
+
+            verse_eleven = page.locator('.verse-row[data-verse="11"] .col-2026')
+            yes = verse_eleven.locator('[data-strongs="G235"]')
+            self.assertEqual(yes.count(), 6)
+            for index in range(6):
+                self.assertTrue(yes.nth(index).evaluate("""el => {
+                    const range = document.createRange();
+                    range.setStart(el.parentNode, 0);
+                    range.setEndBefore(el);
+                    const fragment = range.cloneContents();
+                    fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                    return fragment.textContent.trimEnd().toLocaleLowerCase().endsWith('ja');
+                }"""))
+
+            verse_sixteen = page.locator('.verse-row[data-verse="16"] .col-2026')
+            confidence = verse_sixteen.locator('[data-strongs="G2292"]')
+            self.assertEqual(confidence.count(), 1)
+            self.assertTrue(confidence.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('vertrouwen');
+            }"""))
+        finally:
+            page.close()
+
     def test_1korinthiers_12_plaatst_strongs_bij_de_doelwoorden(self):
         """Atomaire mappings mogen in de browser niet als slotblok renderen."""
         page = self.open_reader("1korinthiers/12")
