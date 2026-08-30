@@ -105,6 +105,8 @@
         .lex-entry-woord { font-size: 34px; color: var(--navy); }
         .lex-entry-translit { font-size: 16px; color: var(--teal); font-style: italic; }
         .lex-entry-gloss { font-size: 17px; color: var(--gold); font-style: italic; }
+        .lex-via { margin: 8px 0 0; padding: 7px 11px; border-left: 3px solid var(--teal); background: #f4f7f7; border-radius: 0 4px 4px 0; font-size: 13px; color: #555; }
+        :root[data-theme="donker"] .lex-via { background: var(--bg-surface-alt); color: var(--text-secondary); }
         .lex-def { font-size: 14.5px; line-height: 1.7; color: #333; margin-top: 14px; }
         .lex-def heb, .lex-def [lang="he"], .lex-def .hebrew { font-size: 19px; }
         .lex-def .greek, .lex-def [lang="grc"] { font-size: 17px; }
@@ -749,7 +751,7 @@
         return h + '</div>';
     }
 
-    function showEntry(e) {
+    function showEntry(e, via) {
         currentEntry = e;
         [].forEach.call(listEl.querySelectorAll('.lex-toc-item'), function (n) { n.classList.toggle('active', +n.dataset.i === entries.indexOf(e)); });
         // Kan er tussen NL en origineel geschakeld worden? (vertaalde BDB/Abbott, of vertaalde Dillmann-entry)
@@ -773,6 +775,8 @@
                 '<span class="lex-concept" title="Deze tekstvorm kon niet met zekerheid aan één stamwoord worden gekoppeld; alleen de grondtekst-gloss wordt getoond">Nog niet uitgebreid</span>' : '') +
             (heeftEngels ? '<button class="lex-orig-toggle" id="lex-orig-toggle">' + (origineel ? '← Nederlandse versie' : ('Originele ' + (cur.id === 'geez' ? 'Latijnse' : 'Engelse') + ' versie →')) + '</button>' : '') +
             '</div>';
+        if (via) h += '<p class="lex-via">' + esc(via) + ' heeft in dit woordenboek geen eigen artikel. ' +
+            'Brown-Driver-Briggs ordent op wortel en behandelt dit woord onder ' + esc(e.key) + '.</p>';
         // Verrijkte grondtekst-gloss (Latijn): woordsoort, stamvormen, genummerde
         // betekenissen, vormanalyse, toelichting en verwante woorden.
         h += verrijkingBlok(e);
@@ -904,13 +908,46 @@
         });
     })();
 
+    /* Strong-nummers zonder eigen artikel in Brown-Driver-Briggs.
+
+       Dat is geen gat in de data maar de opzet van dat woordenboek: BDB ordent
+       op wortel en zet afleidingen, byvormen en namen met een andere
+       vocalisatie bij het grondwoord. Zo staat אֲדֹנָי (H136) onder אָדוֹן
+       (H113), en יָלַךְ (H3212) onder הָלַךְ (H1980).
+
+       Zonder deze tabel leverde een klik op zulke woorden niets op, en het
+       gaat niet om uithoeken: alleen al het voorzetsel עַל (H5921) komt in
+       Genesis tot en met Ezechiël bijna drieduizend keer voor.
+
+       Elk paar is nagelopen -- het gezochte woord komt aantoonbaar voor in het
+       artikel waarnaar het verwijst. Nummers waarvoor dat niet vaststond staan
+       er bewust niet in; die melden eerlijk dat er geen artikel is. Koppelen
+       op medeklinkers alleen ging namelijk mis: תָּפֵר (verbreken, H6565)
+       belandde zo bij תָּפַר (naaien). */
+    var LEX_ALIAS = {
+        hebreeuws: {
+            H85: 'H87', H136: 'H113', H341: 'H340', H2088: 'H2090', H2962: 'H2958',
+            H3069: 'H3068', H3110: 'H3076', H3129: 'H3083', H3130: 'H3084', H3212: 'H1980',
+            H3240: 'H5117', H4118: 'H4117', H4725: 'H6965', H5227: 'H5226', H5921: 'H5920',
+            H6944: 'H6942', H7125: 'H7121', H7358: 'H7357', H7535: 'H7534', H8543: 'H865'
+        }
+    };
+
     function openKey(key) {
         var e = entries.filter(function (x) { return x.key === key; })[0];
+        var via = null;
+        if (!e) {
+            var plaatsvervanger = (LEX_ALIAS[cur.id] || {})[key];
+            if (plaatsvervanger) {
+                e = entries.filter(function (x) { return x.key === plaatsvervanger; })[0];
+                if (e) via = key;
+            }
+        }
         if (!e) return false;
         // toon zoekterm zodat het item in de lijst zichtbaar is
         var zoek = document.getElementById('lex-zoek');
-        zoek.value = key; filter(key);
-        showEntry(e);
+        zoek.value = e.key; filter(e.key);
+        showEntry(e, via);
         var it = listEl.querySelector('.lex-toc-item[data-i="' + entries.indexOf(e) + '"]');
         if (it) it.scrollIntoView({ block: 'center' });
         return true;
