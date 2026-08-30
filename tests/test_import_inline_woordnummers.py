@@ -494,6 +494,7 @@ def test_apply_review_file_kan_een_lokaal_vers_over_twee_gidsverzen_verdelen(tmp
                     {
                         "verse": 1,
                         "source_verse": 1,
+                        "vervang_bronrecords": True,
                         "mappings": [
                             {"tekst": "niet", "bronindices": [0], "grondindices": [0], **mapping_meta},
                             {"tekst": "uit", "bronindices": [0], "grondindices": [1], "source_verse": 2, **mapping_meta},
@@ -503,6 +504,7 @@ def test_apply_review_file_kan_een_lokaal_vers_over_twee_gidsverzen_verdelen(tmp
                     {
                         "verse": 2,
                         "source_verse": 2,
+                        "vervang_bronrecords": True,
                         "mappings": [
                             {"tekst": "dienen", "bronindices": [2], "grondindices": [0], **mapping_meta},
                         ],
@@ -515,9 +517,14 @@ def test_apply_review_file_kan_een_lokaal_vers_over_twee_gidsverzen_verdelen(tmp
     review_path.write_text(json.dumps(review, ensure_ascii=False), encoding="utf-8")
 
     report = MODULE.apply_review_file(review_path, source_dir, tmp_path / "data", write=True)
+    second_report = MODULE.apply_review_file(
+        review_path, source_dir, tmp_path / "data", write=True
+    )
     saved = json.loads((data_dir / "1.json").read_text(encoding="utf-8"))
 
     assert report["added"] == 4
+    assert second_report["replaced"] == 4
+    assert len(saved["verses"][0]["woordnummers"]) == 3
     assert [item["strongs"] for item in saved["verses"][0]["woordnummers"]] == [
         ["G3756"],
         ["G1537"],

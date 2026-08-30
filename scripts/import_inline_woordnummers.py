@@ -436,7 +436,21 @@ def apply_review_file(review_path, source_dir, data_dir=None, write=False, verse
                     "sha256": source["sha256"],
                     "referentie": reference,
                 }
+                # Een lokaal vers kan mappings uit meerdere gidsverzen bevatten.
+                # Neem iedere werkelijk opgebouwde gidsreferentie mee bij het
+                # vervangen, zodat een herhaalde import ook die records opruimt
+                # en dus geen dubbele badges achterlaat.
                 additional_provenances = [current_provenance]
+                for mapping in proposed:
+                    mapping_origin = mapping.get("herkomst", {})
+                    mapping_provenance = {
+                        "dataset": mapping_origin.get("dataset"),
+                        "versie": mapping_origin.get("versie"),
+                        "sha256": mapping_origin.get("sha256"),
+                        "referentie": mapping_origin.get("referentie"),
+                    }
+                    if mapping_provenance not in additional_provenances:
+                        additional_provenances.append(mapping_provenance)
                 if legacy_reference:
                     additional_provenances.append(
                         {
