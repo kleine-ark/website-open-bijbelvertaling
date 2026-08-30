@@ -1,6 +1,44 @@
 {
   "wijzigingen": [
     {
+      "datum": "2026-08-30",
+      "versie": "v0.47.0",
+      "items": [
+        {
+          "type": "verbetering",
+          "beschrijving": "Jesaja 1 tot en met 40 is na menselijke controle als nagekeken gemarkeerd. Daarmee staat het Oude Testament op 83 procent en de hele vertaling op 76,4 procent."
+        },
+        {
+          "type": "verbetering",
+          "beschrijving": "In Jesaja stond zesenvijftig procent van het boek als aangehaalde rede gemarkeerd. De woorden van de profeet zelf zijn geen citaat, dus honderdzevenendertig markeringen om een heel vers zijn weg. Aangekondigde citaten blijven staan: het lied in hoofdstuk 12, de spotrede over Babel in hoofdstuk 14 en de verhalende hoofdstukken 36 tot en met 39."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "De aankondiging \"zegt JAHWEH\" stond binnen de markering en las daardoor mee als deel van het citaat. Op tweeënveertig plaatsen in Jesaja staat die nu buiten de aanhaling."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Drie werkwoordsvormen waren door een eerdere sweep beschadigd: \"zeg JAHWEH\", \"spreek JAHWEH\" en \"spreek de Heere\" hebben in de Statenvertaling allemaal een t."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Het opmerkingenscherm was op een telefoon te hoog: met het toetsenbord open viel de knoppenrij eronder weg, zodat je wel kon typen maar niet verzenden. Het scherm sluit nu ook meteen na het verzenden, met de bevestiging onderin."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Woorden als אֲדֹנָי (H136) en het voorzetsel עַל (H5921) leverden geen woordenboekartikel op. Brown-Driver-Briggs ordent op wortel en behandelt ze onder een ander nummer; twintig van zulke nummers vinden nu hun artikel."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "Op de changelogpagina stonden verouderde aantallen zolang de statistiek nog niet was ingeladen. Die vaste getallen worden nu door build_stats.py meegeschreven."
+        },
+        {
+          "type": "verbetering",
+          "beschrijving": "Tien nieuwe principes uit lezersmeldingen op Jesaja: onder meer gemene man wordt gewone man, vledermuizen worden vleermuizen, altegader wordt allemaal en wegvlieden wordt wegvluchten."
+        }
+      ]
+    },
+    {
       "datum": "2026-08-27",
       "versie": "v0.46.0",
       "items": [

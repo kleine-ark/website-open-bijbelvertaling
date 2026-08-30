@@ -36,6 +36,53 @@ def default_release_metadata():
                'juli', 'augustus', 'september', 'oktober', 'november', 'december')
     return release['versie'], f'{dag.day} {maanden[dag.month]} {dag.year}'
 
+
+def schrijf_vaste_waarden(stats):
+    """Zet de aantallen die in de HTML zelf staan gelijk aan stats.json.
+
+    js/stats-inject.js vult ze bij het laden, maar wat er in het bestand staat
+    is wat je ziet zolang dat script nog niet gedraaid heeft -- en wat je ziet
+    als het misgaat of als de service worker een oude versie serveert. Op de
+    changelogpagina stond zo maandenlang 11.175 van de 37.235 verzen met een
+    verwachte afronding in januari 2027, terwijl de echte stand allang hoger
+    lag. Nu schrijft deze build ze mee, met dezelfde opmaak als de injector.
+    """
+    def nl(n):
+        if not isinstance(n, (int, float)):
+            return str(n)
+        if isinstance(n, float):
+            heel, rest = str(n).split('.')
+            return '{:,}'.format(int(heel)).replace(',', '.') + ',' + rest
+        return '{:,}'.format(n).replace(',', '.')
+
+    patroon = re.compile(r'(<span data-stat="([a-z_]+)"((?:(?!</span>)[^<])*)>)'
+                         r'((?:(?!</span>).)*)(</span>)')
+
+    def een(m):
+        sleutel, attrs = m.group(2), m.group(3)
+        if sleutel not in stats:
+            return m.group(0)
+        w = str(stats[sleutel]) if 'data-stat-format="raw"' in attrs else nl(stats[sleutel])
+        suffix = re.search(r'data-stat-suffix="([^"]*)"', attrs)
+        if suffix:
+            w += suffix.group(1)
+        return m.group(1) + w + m.group(5)
+
+    for naam in sorted(os.listdir(ROOT)):
+        if not naam.endswith('.html'):
+            continue
+        pad = os.path.join(ROOT, naam)
+        with open(pad, encoding='utf-8', newline='') as fh:
+            ruw = fh.read()
+        if 'data-stat=' not in ruw:
+            continue
+        nieuw = patroon.sub(een, ruw)
+        if nieuw != ruw:
+            with open(pad, 'w', encoding='utf-8', newline='') as fh:
+                fh.write(nieuw)
+            print('bijgewerkt: ' + naam)
+
+
 def main():
     standaardversie, standaarddatum = default_release_metadata()
     version = sys.argv[1] if len(sys.argv) > 1 else standaardversie
@@ -159,6 +206,8 @@ def main():
             stats['review_eta_month'] = f"{NL_M[eta.month]} {eta.year}"
         else:
             stats['review_eta'] = stats['review_eta_month'] = 'onbekend'
+
+    schrijf_vaste_waarden(stats)
 
     out = os.path.join(DATA, 'stats.json')
     json.dump(stats, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
