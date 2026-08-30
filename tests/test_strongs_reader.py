@@ -130,6 +130,61 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_romeinen_9_plaatst_alle_strongs_bij_hun_nederlandse_woord(self):
+        page = self.open_reader("romeinen/9")
+        try:
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="1"] .col-2026')
+            self.assertEqual(
+                page.locator('.verse-row .col-2026 .strongs-inline').count(),
+                533,
+            )
+            first = cell.locator('[data-strongs="G225"]')
+            self.assertEqual(first.count(), 1)
+            self.assertTrue(first.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('waarheid');
+            }"""))
+        finally:
+            page.close()
+
+    def test_opgeslagen_versedit_mag_canonieke_strongkoppelingen_niet_overschrijven(self):
+        page = self.browser.new_page(viewport={"width": 1280, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/index.html", wait_until="domcontentloaded")
+            page.evaluate("""() => {
+                localStorage.setItem('sv2026_romeinen', JSON.stringify({
+                    '9:1': {
+                        woordnummers: [{
+                            tekst: 'Ik zeg de waarheid in Christus, ik lieg niet (mijn geweten mij mee getuigenis gevende door de Heilige Geest),',
+                            voorkomen: 1,
+                            strongs: ['G225', 'G3004'],
+                            reviewstatus: 'handmatig_gecontroleerd'
+                        }]
+                    }
+                }));
+            }""")
+            page.goto(f"{self.base_url}/index.html#romeinen/9", wait_until="domcontentloaded")
+            page.locator('.verse-row[data-verse="1"]').wait_for(timeout=15_000)
+            self.enable_strongs(page)
+            cell = page.locator('.verse-row[data-verse="1"] .col-2026')
+            first = cell.locator('[data-strongs="G225"]')
+            self.assertEqual(first.count(), 1)
+            self.assertTrue(first.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('waarheid');
+            }"""))
+        finally:
+            page.close()
+
     def test_genesis_1_1_plaatst_strongs_op_lokale_woordankers(self):
         page = self.open_reader("genesis/1")
         try:

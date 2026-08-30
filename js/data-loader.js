@@ -101,23 +101,27 @@ const DataLoader = {
     },
 
     _mergeChapterEdits(chapter, edits, chapterNum) {
+        const editableVerseFields = ['text2026', 'opmerkingen', 'aandachtspunten', 'status'];
         for (const [key, edit] of Object.entries(edits)) {
             const [ch, vs] = key.split(':').map(Number);
             if (ch !== chapterNum) continue;
             const verse = (chapter.verses || []).find(v => v.number === vs);
             if (!verse) continue;
+            const editable = {};
+            for (const field of editableVerseFields) {
+                if (Object.prototype.hasOwnProperty.call(edit, field)) editable[field] = edit[field];
+            }
             if (edit.marginNotes && verse.marginNotes) {
                 for (const [idx, text2026] of Object.entries(edit.marginNotes)) {
                     if (verse.marginNotes[parseInt(idx)]) {
                         verse.marginNotes[parseInt(idx)].text2026 = text2026;
                     }
                 }
-                const rest = { ...edit };
-                delete rest.marginNotes;
-                Object.assign(verse, rest);
-            } else {
-                Object.assign(verse, edit);
             }
+            // Alleen redactionele velden mogen uit lokale bewerkingen komen.
+            // Canonieke grondtekst, provenance en woordnummerkoppelingen worden
+            // altijd uit de vers gepubliceerde hoofdstukdata geladen.
+            Object.assign(verse, editable);
         }
     },
 
