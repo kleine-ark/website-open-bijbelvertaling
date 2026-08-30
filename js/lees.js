@@ -49,7 +49,7 @@ const Lees = {
     },
 
     async fetchJSON(url) {
-        const res = await fetch(url);
+        const res = await fetch(url, { cache: 'no-cache' });
         if (!res.ok) throw new Error(`Fetch failed: ${url}`);
         return res.json();
     },

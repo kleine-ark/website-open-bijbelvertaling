@@ -162,7 +162,7 @@
         const prefix = String(base || '').replace(/\/$/, '');
         const key = `${prefix}:${bookId}`;
         if (!mappingCache[key]) {
-            mappingCache[key] = fetch(`${prefix}/data/woordnummers-inline/${bookId}.json`)
+            mappingCache[key] = fetch(`${prefix}/data/woordnummers-inline/${bookId}.json`, { cache: 'no-cache' })
                 .then(response => response.ok ? response.json() : null)
                 .catch(() => null);
         }

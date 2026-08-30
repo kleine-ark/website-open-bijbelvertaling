@@ -21,6 +21,55 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class _QuietHandler(http.server.SimpleHTTPRequestHandler):
+    cache_probe_version = "oud"
+    cache_probe_requests = 0
+    inline_cache_probe_requests = 0
+
+    def do_GET(self):
+        if self.path.split("?", 1)[0] == "/data/cache-probe/1.json":
+            type(self).cache_probe_requests += 1
+            version = type(self).cache_probe_version
+            payload = json.dumps({
+                "number": 1,
+                "verses": [{
+                    "number": 1,
+                    "text2026": version,
+                    "text2026_html": version,
+                    "woordnummers": [{
+                        "tekst": version,
+                        "voorkomen": 1,
+                        "strongs": ["G1"],
+                        "reviewstatus": "handmatig_gecontroleerd",
+                    }],
+                    "grondtekst": [],
+                }],
+            }).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "public, max-age=3600")
+            self.send_header("Content-Length", str(len(payload)))
+            self.end_headers()
+            self.wfile.write(payload)
+            return
+        if self.path.split("?", 1)[0] == "/data/woordnummers-inline/cache-probe.json":
+            type(self).inline_cache_probe_requests += 1
+            payload = json.dumps({
+                "chapters": {"1": {"1": [{
+                    "tekst": "woord",
+                    "voorkomen": 1,
+                    "strongs": ["G1"],
+                    "reviewstatus": "handmatig_gecontroleerd",
+                }]}}
+            }).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "public, max-age=3600")
+            self.send_header("Content-Length", str(len(payload)))
+            self.end_headers()
+            self.wfile.write(payload)
+            return
+        super().do_GET()
+
     def log_message(self, _format, *_args):
         pass
 
@@ -1238,6 +1287,72 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_hoofdstukdata_wordt_opnieuw_bevestigd_na_publicatie(self):
+        """Een verse publicatie mag niet door een nog verse browsercache worden gemaskeerd."""
+        page = self.open_reader("johannes/1")
+        try:
+            page.evaluate("""() => {
+                const realFetch = window.fetch.bind(window);
+                window.__chapterFetchOptions = [];
+                window.fetch = (input, options) => {
+                    if (String(input).includes('data/cache-probe/1.json')) {
+                        window.__chapterFetchOptions.push(options || {});
+                    }
+                    return realFetch(input, options);
+                };
+            }""")
+            _QuietHandler.cache_probe_version = "oud"
+            _QuietHandler.cache_probe_requests = 0
+            first = page.evaluate(
+                """() => DataLoader.loadChapter('cache-probe', 1)
+                    .then(chapter => chapter.verses[0].woordnummers[0].tekst)"""
+            )
+            self.assertEqual(first, "oud")
+
+            _QuietHandler.cache_probe_version = "nieuw"
+            page.evaluate("() => DataLoader.invalidateCache('cache-probe')")
+            second = page.evaluate(
+                """() => DataLoader.loadChapter('cache-probe', 1)
+                    .then(chapter => chapter.verses[0].woordnummers[0].tekst)"""
+            )
+
+            self.assertEqual(second, "nieuw")
+            self.assertEqual(_QuietHandler.cache_probe_requests, 2)
+            self.assertEqual(
+                page.evaluate("() => window.__chapterFetchOptions.map(options => options.cache)"),
+                ["no-cache", "no-cache"],
+            )
+        finally:
+            page.close()
+
+    def test_externe_woordnummerlaag_wordt_opnieuw_bevestigd_na_publicatie(self):
+        page = self.open_reader("johannes/1")
+        try:
+            page.evaluate("""() => {
+                const realFetch = window.fetch.bind(window);
+                window.__inlineFetchOptions = [];
+                window.fetch = (input, options) => {
+                    if (String(input).includes('woordnummers-inline/cache-probe.json')) {
+                        window.__inlineFetchOptions.push(options || {});
+                    }
+                    return realFetch(input, options);
+                };
+            }""")
+            _QuietHandler.inline_cache_probe_requests = 0
+            mappings = page.evaluate(
+                """() => OVWoordnummers.loadBookMappings('cache-probe')
+                    .then(book => book.chapters['1']['1'][0].tekst)"""
+            )
+
+            self.assertEqual(mappings, "woord")
+            self.assertEqual(_QuietHandler.inline_cache_probe_requests, 1)
+            self.assertEqual(
+                page.evaluate("() => window.__inlineFetchOptions.map(options => options.cache)"),
+                ["no-cache"],
+            )
+        finally:
+            page.close()
+
     def test_interne_citatie_neemt_globale_woordnummervoorkeur_over(self):
         page = self.browser.new_page(viewport={"width": 1280, "height": 900})
         page.add_init_script(
@@ -1272,6 +1387,35 @@ class StrongsReaderBrowserTests(unittest.TestCase):
             self.assertEqual(page.locator('.verse-span[data-verse="1"] .strongs-alignment').count(), 0)
             trigger.click()
             page.locator("#strongs-sheet").wait_for(state="visible", timeout=5_000)
+        finally:
+            page.close()
+
+    def test_doorlopende_leesversie_bevestigt_hoofdstukdata_opnieuw(self):
+        page = self.browser.new_page(viewport={"width": 900, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/lees.html#johannes/1", wait_until="domcontentloaded")
+            page.locator('.verse-span[data-verse="1"]').wait_for(timeout=15_000)
+            page.evaluate("""() => {
+                const realFetch = window.fetch.bind(window);
+                window.__leesFetchOptions = [];
+                window.fetch = (input, options) => {
+                    if (String(input).includes('data/cache-probe/1.json')) {
+                        window.__leesFetchOptions.push(options || {});
+                    }
+                    return realFetch(input, options);
+                };
+            }""")
+
+            text = page.evaluate(
+                """() => Lees.fetchJSON('/data/cache-probe/1.json')
+                    .then(chapter => chapter.verses[0].woordnummers[0].tekst)"""
+            )
+
+            self.assertIn(text, {"oud", "nieuw"})
+            self.assertEqual(
+                page.evaluate("() => window.__leesFetchOptions.map(options => options.cache)"),
+                ["no-cache"],
+            )
         finally:
             page.close()
 
