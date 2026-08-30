@@ -54,7 +54,7 @@ def test_ephesians_five_pins_and_complete_ground_coverage():
 def test_ephesians_five_review_is_atomic_manual_and_reachable():
     _, _, verses, reviewed = _data()
     mappings = [mapping for verse in reviewed.values() for mapping in verse["mappings"]]
-    assert len(mappings) == 461
+    assert len(mappings) == 456
     assert sum(len(mapping["grondindices"]) for mapping in mappings) == 472
     assert max(len(mapping["grondindices"]) for mapping in mappings) == 2
     assert sorted(
@@ -72,8 +72,13 @@ def test_ephesians_five_review_is_atomic_manual_and_reachable():
         (23, "Christus", "", [9, 10]),
         (25, "Christus", "", [8, 9]),
         (27, "dergelijks", "", [14, 15]),
+        (30, "Zijn", "", [3, 5]),
+        (30, "Zijn", "", [7, 9]),
+        (30, "Zijn", "", [12, 14]),
         (31, "Daarom", "", [0, 1]),
         (31, "aanhangen", "", [11, 12]),
+        (31, "zijn", "", [4, 6]),
+        (31, "zijn", "", [13, 15]),
     ]
     assert max(len((mapping.get("tekst") or mapping["anker"]).split()) for mapping in mappings) <= 2
     assert all(mapping["confidence"] == 1 for mapping in mappings)
@@ -114,11 +119,11 @@ def test_ephesians_five_documents_all_guide_tr_differences():
         28: [(["G3779", "G2532"], ["G3779"])],
         29: [(["G5547"], ["G2962"])],
         30: [
-            ([], ["G1537"]), ([], ["G3588"]), ([], ["G4561"]),
-            ([], ["G846"]), ([], ["G2532"]), ([], ["G1537"]),
-            ([], ["G3588"]), ([], ["G3747"]), ([], ["G846"]),
+            ([], ["G1537"]), ([], ["G3588", "G846"]), ([], ["G4561"]),
+            ([], ["G2532"]), ([], ["G1537"]),
+            ([], ["G3588", "G846"]), ([], ["G3747"]),
         ],
-        31: [([], ["G846"])],
+        31: [(["G3588"], ["G3588", "G846"])],
     }
 
 
@@ -135,5 +140,5 @@ def test_ephesians_five_publishes_every_link_at_an_atomic_target():
             assert sum(len(mapping["strongs"]) for mapping in mappings) == expected
             assert not any(mapping.get("tekst", "").strip() == verse["text2026"].strip() for mapping in mappings)
 
-    assert sum(len(verse["woordnummers"]) for verse in chapter["verses"]) == 461
-    assert sum(len(items) for items in inline_verses.values()) == 461
+    assert sum(len(verse["woordnummers"]) for verse in chapter["verses"]) == 456
+    assert sum(len(items) for items in inline_verses.values()) == 456
