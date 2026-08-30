@@ -33,6 +33,7 @@ def test_romeinen_16_rejects_whole_verse_mappings_and_covers_every_ground_token(
     assert book["source_file_sha256"] == GUIDE_SHA
     assert list(records) == list(range(1, 28))
     assert book["reviewbeperking"]["verzen"] == list(range(1, 28))
+    assert records[24]["vervang_bronreferentie"] == "ROM 16:24"
     assert "voorstel_" not in review_path.read_text(encoding="utf-8")
     assert "\ufffd" not in review_path.read_text(encoding="utf-8")
 
