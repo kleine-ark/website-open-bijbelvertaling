@@ -100,3 +100,9 @@ def test_1korinthiers_16_publishes_all_328_links_at_atomic_targets():
 
     assert sum(len(verse["woordnummers"]) for verse in chapter["verses"]) == 325
     assert sum(len(items) for items in inline_verses.values()) == 325
+
+
+def test_readers_refresh_the_atomic_word_number_renderer():
+    expected = 'js/woordnummers.js?v=0.44.28'
+    assert expected in (ROOT / "index.html").read_text(encoding="utf-8")
+    assert expected in (ROOT / "lees.html").read_text(encoding="utf-8")
