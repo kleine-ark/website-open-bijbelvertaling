@@ -73,7 +73,7 @@ Automatisch opgebouwd door `scripts/build_woordnummers_corpus.py`. Alleen handma
 | mattheus | nagekeken_tekst | 1071/1071 | 18777 | 0 | 0 | 100,00% |
 | lukas | nagekeken_tekst | 1151/1151 | 19954 | 0 | 0 | 100,00% |
 | 1korinthiers | nagekeken_tekst | 437/437 | 6929 | 0 | 0 | 100,00% |
-| 2korinthiers | nagekeken_tekst | 256/256 | 4471 | 0 | 0 | 100,00% |
+| 2korinthiers | nagekeken_tekst | 256/256 | 4478 | 0 | 0 | 100,00% |
 | 1tessalonicensen | nagekeken_tekst | 89/89 | 1495 | 0 | 0 | 100,00% |
 | 2tessalonicensen | nagekeken_tekst | 47/47 | 835 | 0 | 0 | 100,00% |
 | 1timotheus | nagekeken_tekst | 113/113 | 1623 | 0 | 1 | 99,94% |
@@ -92,4 +92,4 @@ Automatisch opgebouwd door `scripts/build_woordnummers_corpus.py`. Alleen handma
 | 2meqabyan | resterend_corpus | 370/418 | 0 | 1062 | 3656 | 22,51% |
 | 3meqabyan | resterend_corpus | 176/207 | 0 | 495 | 2122 | 18,91% |
 | 4baruch | resterend_corpus | 189/197 | 0 | 680 | 1603 | 29,79% |
-| **Totaal** |  | **32973/39686** | **403904** | **13962** | **152781** | **73,23%** |
+| **Totaal** |  | **32973/39686** | **403911** | **13962** | **152781** | **73,23%** |
