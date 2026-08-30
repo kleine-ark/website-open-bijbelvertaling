@@ -4801,7 +4801,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Heb u honing gevonden, eet dat u genoeg is; opdat u misschien daarvan niet zat wordt, en die uitspuwt.",
+      "text2026": "Heb u honing gevonden, eet dat u genoeg is; opdat u misschien daarvan niet verzadigd wordt, en die uitspuwt.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -4856,6 +4856,11 @@
           "old": "gij",
           "new": "u",
           "principe": "A1"
+        },
+        {
+          "old": "zat",
+          "new": "verzadigd",
+          "principe": "V1583"
         },
         {
           "old": "dien",
@@ -5071,7 +5076,7 @@
         }
       ],
       "textHerzien": "",
-      "text2026": "Spaar uw voet van het huis van uw naaste, opdat hij niet zat van u wordt, en u hate.",
+      "text2026": "Spaar uw voet van het huis van uw naaste, opdat hij niet verzadigd van u wordt, en u hate.",
       "aandachtspunten": "",
       "status": "empty",
       "grondtekst": [
@@ -5114,13 +5119,18 @@
       "hsv": "Zet uw voet niet te dikwijls[76] in het huis van uw naaste,anders zou hij genoeg van u krijgen en u gaan haten.",
       "nbg51": "Zet uw voet niet te dikwijls in het huis van uw naaste,",
       "textSV1888": "Spaar uw voet van het huis uws naasten, opdat hij niet zat van u worde, en u hate.",
-      "text2026_html": "<sup class=\"note-marker\" data-note=\"39\">39</sup> Spaar uw voet van het huis van uw naaste, opdat hij niet zat van u wordt, en u hate.",
+      "text2026_html": "<sup class=\"note-marker\" data-note=\"39\">39</sup> Spaar uw voet van het huis van uw naaste, opdat hij niet verzadigd van u wordt, en u hate.",
       "textSV1888_html": "<sup class=\"note-marker\" data-note=\"39\">39</sup> Spaar uw voet van het huis uws naasten, opdat hij niet zat van u worde, en u hate.",
       "phraseDiff": [
         {
           "old": "uws naasten,",
           "new": "van uw naaste,",
           "principe": "V200"
+        },
+        {
+          "old": "zat",
+          "new": "verzadigd",
+          "principe": "V1583"
         },
         {
           "old": "worde,",

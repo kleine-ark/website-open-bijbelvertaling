@@ -1137,6 +1137,13 @@ const App = {
                 acceptNode(node) {
                     // Sla note-markers (sup) over
                     if (node.parentElement && node.parentElement.closest('sup')) return NodeFilter.FILTER_REJECT;
+                    // En de letter van het alfabetlied. Klaagliederen 3:1 begint
+                    // met "א Aleph. Ik ben de man…"; het patroon hieronder zoekt
+                    // Latijnse letters, dus zonder deze regel wordt de A van
+                    // Aleph de sierletter en loopt die door de markering heen.
+                    // De sierletter hoort de eerste letter van het vers zelf te
+                    // zijn: de I van Ik.
+                    if (node.parentElement && node.parentElement.closest('.acrostichon')) return NodeFilter.FILTER_REJECT;
                     return NodeFilter.FILTER_ACCEPT;
                 }
             });
