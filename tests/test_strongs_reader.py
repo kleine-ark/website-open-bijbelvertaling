@@ -1020,6 +1020,82 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_2korinthiers_8_plaatst_de_grensvers_strongs_direct_bij_de_woorden(self):
+        page = self.open_reader("2korinthiers/8")
+        try:
+            self.enable_strongs(page)
+            verse_fourteen = page.locator('.verse-row[data-verse="14"] .col-2026')
+
+            equality = verse_fourteen.locator('[data-strongs="G2471"]')
+            self.assertEqual(equality.count(), 2)
+            for index in range(2):
+                self.assertTrue(equality.nth(index).evaluate("""el => {
+                    const range = document.createRange();
+                    range.setStart(el.parentNode, 0);
+                    range.setEndBefore(el);
+                    const fragment = range.cloneContents();
+                    fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                    return fragment.textContent.trimEnd().endsWith('gelijkheid');
+                }"""))
+
+            lack = verse_fourteen.locator('[data-strongs="G5303"]')
+            self.assertEqual(lack.count(), 2)
+            for index in range(2):
+                self.assertTrue(lack.nth(index).evaluate("""el => {
+                    const range = document.createRange();
+                    range.setStart(el.parentNode, 0);
+                    range.setEndBefore(el);
+                    const fragment = range.cloneContents();
+                    fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                    return fragment.textContent.trimEnd().endsWith('gebrek');
+                }"""))
+
+            purpose = verse_fourteen.locator('[data-strongs="G2443"]')
+            self.assertEqual(purpose.count(), 1)
+            self.assertTrue(purpose.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return (fragment.textContent.match(/\\bopdat\\b/gi) || []).length === 2;
+            }"""))
+
+            becoming = verse_fourteen.locator('[data-strongs="G1096"]')
+            self.assertEqual(becoming.count(), 2)
+            self.assertTrue(becoming.nth(0).evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return (fragment.textContent.match(/\\bzij\\b/gi) || []).length === 2;
+            }"""))
+            self.assertTrue(becoming.nth(1).evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('worde');
+            }"""))
+
+            verse_twenty_four = page.locator('.verse-row[data-verse="24"] .col-2026')
+            conjunctions = verse_twenty_four.locator('[data-strongs="G2532"]')
+            self.assertEqual(conjunctions.count(), 2)
+            expected = ['en', 'ook']
+            for index, word in enumerate(expected):
+                self.assertTrue(conjunctions.nth(index).evaluate("""(el, word) => {
+                    const range = document.createRange();
+                    range.setStart(el.parentNode, 0);
+                    range.setEndBefore(el);
+                    const fragment = range.cloneContents();
+                    fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                    return fragment.textContent.trimEnd().toLocaleLowerCase().endsWith(word);
+                }""", word))
+        finally:
+            page.close()
+
     def test_1korinthiers_12_plaatst_strongs_bij_de_doelwoorden(self):
         """Atomaire mappings mogen in de browser niet als slotblok renderen."""
         page = self.open_reader("1korinthiers/12")
