@@ -935,6 +935,27 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_1korinthiers_13_plaatst_strongs_bij_de_doelwoorden(self):
+        """Ook een gidsloos TR-token moet op zijn Nederlandse woord blijven staan."""
+        page = self.open_reader("1korinthiers/13")
+        try:
+            self.enable_strongs(page)
+            self.assertEqual(page.locator('.verse-row .col-2026 .strongs-inline').count(), 199)
+            trigger = page.locator(
+                '.verse-row[data-verse="10"] .col-2026 [data-strongs="G5119"]'
+            )
+            self.assertEqual(trigger.count(), 1)
+            self.assertTrue(trigger.evaluate("""el => {
+                const range = document.createRange();
+                range.setStart(el.parentNode, 0);
+                range.setEndBefore(el);
+                const fragment = range.cloneContents();
+                fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                return fragment.textContent.trimEnd().endsWith('dan');
+            }"""))
+        finally:
+            page.close()
+
     def test_mattheus_1_1_plaatst_christusstrong_na_christus(self):
         page = self.open_reader("mattheus/1")
         try:
