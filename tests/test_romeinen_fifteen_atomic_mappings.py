@@ -77,3 +77,40 @@ def test_romeinen_15_rejects_whole_verse_mappings_and_covers_every_ground_token(
             runtime_keys.add(key)
 
     assert link_count == 550
+
+
+def test_romeinen_15_publication_contains_the_atomic_review():
+    chapter = _load(ROOT / "data" / "romeinen" / "15.json")
+    inline = _load(ROOT / "data" / "woordnummers-inline" / "romeinen.json")
+    review = _load(ROOT / "data" / "woordnummers-review" / "romeinen-15.json")
+    records = {record["verse"]: record for record in review["books"][0]["verses"]}
+    inline_chapter = inline["chapters"]["15"]
+
+    embedded_mappings = 0
+    embedded_links = 0
+    inline_mappings = 0
+    inline_links = 0
+    for verse in chapter["verses"]:
+        verse_number = verse["number"]
+        expected = records[verse_number]["mappings"]
+        embedded = verse["woordnummers"]
+        projected = inline_chapter[str(verse_number)]
+
+        assert len(embedded) == len(expected)
+        assert embedded == projected
+        assert all(
+            mapping["herkomst"]["dataset"] == "bsb-full-strongs-usj"
+            for mapping in embedded
+        )
+        assert not any(
+            mapping.get("tekst", "").strip() == verse["text2026"].strip()
+            for mapping in embedded
+        )
+
+        embedded_mappings += len(embedded)
+        embedded_links += sum(len(mapping["strongs"]) for mapping in embedded)
+        inline_mappings += len(projected)
+        inline_links += sum(len(mapping["strongs"]) for mapping in projected)
+
+    assert (embedded_mappings, embedded_links) == (546, 550)
+    assert (inline_mappings, inline_links) == (546, 550)
