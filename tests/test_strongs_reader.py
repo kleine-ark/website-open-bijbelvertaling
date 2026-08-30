@@ -887,6 +887,33 @@ class StrongsReaderBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_1korinthiers_4_plaatst_alle_strongs_bij_hun_nederlandse_woord(self):
+        """Een terugval naar hele-verskoppelingen mag de nummers niet achteraan zetten."""
+        page = self.open_reader("1korinthiers/4")
+        try:
+            self.enable_strongs(page)
+            self.assertEqual(page.locator('.verse-row .col-2026 .strongs-inline').count(), 347)
+            for verse, strong, anchor in [
+                (1, "G3779", "Zo"),
+                (2, "G3739", "En"),
+                (2, "G1161", "En"),
+                (6, "G5426", "te gevoelen"),
+            ]:
+                trigger = page.locator(
+                    f'.verse-row[data-verse="{verse}"] .col-2026 [data-strongs="{strong}"]'
+                )
+                self.assertEqual(trigger.count(), 1)
+                self.assertTrue(trigger.evaluate("""(el, anchor) => {
+                    const range = document.createRange();
+                    range.setStart(el.parentNode, 0);
+                    range.setEndBefore(el);
+                    const fragment = range.cloneContents();
+                    fragment.querySelectorAll('.strongs-inline, .note-marker').forEach(marker => marker.remove());
+                    return fragment.textContent.trimEnd().endsWith(anchor);
+                }""", anchor))
+        finally:
+            page.close()
+
     def test_mattheus_1_1_plaatst_christusstrong_na_christus(self):
         page = self.open_reader("mattheus/1")
         try:
