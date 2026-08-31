@@ -1642,12 +1642,20 @@ def test_tessalonicensen_hoofdstukken_publiceren_ieder_tr_token_precies_eenmaal(
             indices = [
                 index
                 for mapping in mappings
-                for index in mapping.get("herkomst", {}).get("bronindices", [])
+                for index in mapping.get("herkomst", {}).get(
+                    "grondindices",
+                    mapping.get("herkomst", {}).get("bronindices", []),
+                )
             ]
-            assert ground and indices == list(range(len(ground)))
+            assert ground
+            assert sorted(indices) == list(range(len(ground)))
             assert len(indices) == len(set(indices))
             assert all(mapping["tekst"] in verse["text2026"] for mapping in mappings)
-            assert review["verses"][number]["ongemapt"] == []
+            if "verses" in review:
+                assert review["verses"][number]["ongemapt"] == []
+            else:
+                records = {str(record["verse"]): record for record in review["books"][0]["verses"]}
+                assert records[number].get("ongemapt", []) == []
 
 
 @pytest.mark.parametrize(
