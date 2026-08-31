@@ -5,7 +5,7 @@
       "number": 1,
       "textSV1888": "Een psalm van Asaf. Immers is God Israël goed, dengenen, die rein van harte zijn.",
       "text1637": "EEn Psalm [1] Asaphs. [2] Immers is Godt Israël goet; den genen [3] die reyn van herten zijn.",
-      "text2026": "Een psalm van Asaf. Immers is God Israël goed, van hen, die rein van harte zijn.",
+      "text2026": "Een psalm van Asaf. Immers is God Israël goed, van hen, die rein van hart zijn.",
       "marginNotes": [
         {
           "marker": "1",
@@ -71,7 +71,7 @@
           "morph": "HNcmsa"
         }
       ],
-      "text2026_html": "Een psalm<sup class=\"note-marker\" data-note=\"1\">1</sup> van<sup class=\"note-marker\" data-note=\"2\">2</sup> Asaf. Immers is God Israël goed, van hen,<sup class=\"note-marker\" data-note=\"3\">3</sup> die rein van harte zijn.",
+      "text2026_html": "Een psalm<sup class=\"note-marker\" data-note=\"1\">1</sup> van<sup class=\"note-marker\" data-note=\"2\">2</sup> Asaf. Immers is God Israël goed, van hen,<sup class=\"note-marker\" data-note=\"3\">3</sup> die rein van hart zijn.",
       "textSV1888_html": "Een psalm<sup class=\"note-marker\" data-note=\"1\">1</sup> van<sup class=\"note-marker\" data-note=\"2\">2</sup> Asaf. Immers is God Israël goed, dengenen,<sup class=\"note-marker\" data-note=\"3\">3</sup> die rein van harte zijn.",
       "text1637_html": "EEn Psalm <sup class=\"note-marker\" data-note=\"1\">1</sup> Asaphs. <sup class=\"note-marker\" data-note=\"2\">2</sup> Immers is Godt Israël goet; den genen <sup class=\"note-marker\" data-note=\"3\">3</sup> die reyn van herten zijn.",
       "phraseDiff": [
@@ -79,6 +79,11 @@
           "old": "dengenen,",
           "new": "van hen,",
           "principe": "V397"
+        },
+        {
+          "old": "harte",
+          "new": "hart",
+          "principe": "V1596"
         }
       ]
     },
@@ -1848,7 +1853,7 @@
       "number": 28,
       "textSV1888": "Maar mij aangaande, het is mij goed nabij God te wezen; ik zet mijn betrouwen op den Heere HEERE, om al Uw werken te vertellen.",
       "text1637": "Maer my aengaende; ’tis my goet, [53] nae by Godt te wesen: ick sette mijn betrouwen op den Heere HEERE; om alle uwe wercken te vertellen.",
-      "text2026": "Maar wat mij betreft, het is mij goed nabij God te wezen; ik zet mijn betrouwen op de Adonai JAHWEH, om al Uw werken te vertellen.",
+      "text2026": "Maar wat mij betreft, het is mij goed nabij God te wezen; ik zet mijn betrouwen op Adonai JAHWEH, om al Uw werken te vertellen.",
       "marginNotes": [
         {
           "marker": "53",
@@ -1920,7 +1925,7 @@
           "morph": "HNcfpc/Sp2ms"
         }
       ],
-      "text2026_html": "Maar wat mij betreft, het is mij<sup class=\"note-marker\" data-note=\"53\">53</sup> goed nabij God te wezen; ik zet mijn betrouwen op de Adonai JAHWEH, om al Uw werken te vertellen.",
+      "text2026_html": "Maar wat mij betreft, het is mij<sup class=\"note-marker\" data-note=\"53\">53</sup> goed nabij God te wezen; ik zet mijn betrouwen op Adonai JAHWEH, om al Uw werken te vertellen.",
       "textSV1888_html": "Maar mij aangaande, het is mij<sup class=\"note-marker\" data-note=\"53\">53</sup> goed nabij God te wezen; ik zet mijn betrouwen op den Heere HEERE, om al Uw werken te vertellen.",
       "text1637_html": "Maer my aengaende; ’tis my goet, <sup class=\"note-marker\" data-note=\"53\">53</sup> nae by Godt te wesen: ick sette mijn betrouwen op den Heere HEERE; om alle uwe wercken te vertellen.",
       "phraseDiff": [
@@ -1936,8 +1941,8 @@
         },
         {
           "old": "den Heere HEERE,",
-          "new": "de Adonai JAHWEH,",
-          "principe": "N1"
+          "new": "Adonai JAHWEH,",
+          "principe": "G4"
         }
       ]
     }

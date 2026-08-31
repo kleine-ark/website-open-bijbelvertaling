@@ -147,10 +147,10 @@
   {
    "id": "G4",
    "categorie": "Godsnamen",
-   "oud": "Heere HEERE",
+   "oud": "de Heere HEERE / Heere HEERE",
    "nieuw": "Adonai JAHWEH",
-   "toelichting": "Adonai JAHWEH",
-   "regex": "\\bHeere HEERE\\b"
+   "toelichting": "De Statenvertaling schrijft \"de Heere HEERE\". De eerste doorvoering verving alleen \"Heere HEERE\" en liet het lidwoord staan, zodat er \"de Adonai JAHWEH\" kwam te staan -- een lidwoord voor een eigennaam. Het lidwoord vervalt mee: tweehonderdtweeenvijftig plaatsen bijgewerkt. Waar HEERE alleen staat blijft het lidwoord wel, want daar is het een titel en geen naam.",
+   "regex": ""
   },
   {
    "id": "G5",
@@ -10134,9 +10134,9 @@
   {
    "id": "V1171",
    "categorie": "Verouderde woorden",
-   "oud": "ter hart / van hart",
+   "oud": "ter hart / van hart (bijwoordelijk)",
    "nieuw": "ter harte / van harte",
-   "toelichting": "Een sweep knipte de slot-e weg. \"Ter harte nemen\" en \"van harte doen\" zijn vaste uitdrukkingen met een e. Het bijvoeglijke \"van hart\" blijft juist staan: \"rein van hart\", \"wijs van hart\", \"de gebrokenen van hart\" zijn correct. De Statenvertaling maakt dat onderscheid zelf, dus de eerstelijnstoets kon de twee uit elkaar houden.",
+   "toelichting": "Een sweep knipte de slot-e weg. \"Ter harte nemen\" en \"van harte doen\" zijn vaste uitdrukkingen met een e. Het bijvoeglijke \"van hart\" blijft juist staan: \"rein van hart\", \"wijs van hart\", \"de gebrokenen van hart\" zijn correct. De Statenvertaling maakt dat onderscheid zelf, dus de eerstelijnstoets kon de twee uit elkaar houden. V1596 doet de omgekeerde helft: waar de Statenvertaling zelf \"van harte\" bijvoeglijk gebruikt.",
    "regex": "",
    "voorbeeld": "Lukas 1:66"
   },
@@ -14678,6 +14678,60 @@
    "toelichting": "Vlieden in de betekenis vluchten is verdwenen; wat er nog van over is klinkt als vliegen of vlieten. Zeven plaatsen. Wegvloeien, wegvliegen en henenvlieten zijn andere woorden en blijven staan.",
    "regex": "\\bwegvlieden\\b",
    "voorbeeld": "Jesaja 35:10"
+  },
+  {
+   "id": "V1594",
+   "categorie": "Verouderde woorden",
+   "oud": "zwijmeling",
+   "nieuw": "bedwelming",
+   "toelichting": "De beker van de zwijmeling is de beker die je doet wankelen. Zwijmelen is uitgestorven; wat een lezer er nog van kent is zwijmelen in de zin van wegdromen, en dat is net het omgekeerde. Drie plaatsen.",
+   "regex": "\\bzwijmeling\\b",
+   "voorbeeld": "Jesaja 51:22"
+  },
+  {
+   "id": "V1595",
+   "categorie": "Verouderde woorden",
+   "oud": "vertoeven (uitstel)",
+   "nieuw": "talmen",
+   "toelichting": "Vertoeven heeft twee betekenissen. Ergens verblijven is nog gewoon Nederlands en blijft staan: Genesis 32:4, Handelingen 15:33, 4 Baruch 3:1, Jesaja 5:11 en 29:9, Spreuken 23:30. Uitstel of dralen is de betekenis die verdwenen is -- \"Mijn heil zal niet vertoeven\" -- en die wordt talmen. Elf plaatsen, met de hand nagelopen, want de twee betekenissen zijn niet aan de vorm te zien.",
+   "regex": "",
+   "voorbeeld": "Jesaja 46:13"
+  },
+  {
+   "id": "V1596",
+   "categorie": "Naamvallen",
+   "oud": "van harte (bijvoeglijk)",
+   "nieuw": "van hart",
+   "toelichting": "Waar van harte de toestand van het hart aanduidt is het een oude naamvalsvorm: de gebrokenen van harte, de oprechten van harte, stijf van harte. Als bijwoord betekent van harte iets anders -- oprecht, met overtuiging -- en dat is nog gewoon Nederlands, dus \"van harte vergeven\" en \"van harte gehoorzaam\" blijven staan. Elf plaatsen gewijzigd, veertien gelaten. Zie V1171 voor de andere helft: daar moest de slot-e juist terug.",
+   "regex": "",
+   "voorbeeld": "Jesaja 46:12"
+  },
+  {
+   "id": "V1597",
+   "categorie": "Naamvallen",
+   "oud": "bezittelijk voornaamwoord als naamwoordelijk deel",
+   "nieuw": "van + persoonlijk voornaamwoord",
+   "toelichting": "\"U bent Mijn\" en \"al wat wij hebben, is uw\" gebruiken het bezittelijk voornaamwoord zelfstandig; dat kan in het Nederlands niet meer zonder van. Twee plaatsen: Jesaja 43:1 en 1 Makkabeeen 12:23.",
+   "regex": "",
+   "voorbeeld": "Jesaja 43:1"
+  },
+  {
+   "id": "V1598",
+   "categorie": "Naamvallen",
+   "oud": "alle u dorstigen",
+   "nieuw": "alle dorstigen",
+   "toelichting": "\"O alle u dorstigen\" stapelt de aanspreekvorm op het telwoord. Een van de twee kan weg; het telwoord blijft. Een plaats.",
+   "regex": "\\balle u dorstigen\\b",
+   "voorbeeld": "Jesaja 55:1"
+  },
+  {
+   "id": "V1599",
+   "categorie": "Verouderde woorden",
+   "oud": "Hei!",
+   "nieuw": "Ha!",
+   "toelichting": "Tussenwerpsel van voldoening bij het vuur; de Statenvertaling heeft \"Hah!\". Hei! is nu een aanroep om aandacht en leest daarom verkeerd. Een plaats.",
+   "regex": "\\bHei!",
+   "voorbeeld": "Jesaja 44:16"
   }
  ]
 }
