@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 COLLECTIONS = {
-    "liederen": ("naslag-liederen.json", "Lied", 177),
+    "liederen": ("naslag-liederen.json", "Lied", 178),
     "gebeden": ("naslag-gebeden.json", "Gebed", 140),
 }
 
