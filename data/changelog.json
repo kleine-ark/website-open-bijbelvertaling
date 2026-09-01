@@ -2,6 +2,20 @@
   "wijzigingen": [
     {
       "datum": "2026-09-01",
+      "versie": "v0.49.2",
+      "items": [
+        {
+          "type": "fix",
+          "beschrijving": "De woordnummers van de Ge’ez-grondtekst wezen op 3510 plaatsen naar het verkeerde woordenboeklemma — meestal naar de werkwoordswortel in plaats van het zelfstandig naamwoord. \"Koning\" (ንጉሥ) stond 43× op \"regeren\", en አምላክ (\"God\") op het werkwoord \"God vereren\". Ook waren 2211 nummers met voorloopnullen geschreven, waardoor de badge OVG0015 toonde terwijl de link naar OVG15 ging."
+        },
+        {
+          "type": "fix",
+          "beschrijving": "2258 ingangen in het Ge’ez-woordenboek zijn met de grondtekst gelijkgetrokken."
+        }
+      ]
+    },
+    {
+      "datum": "2026-09-01",
       "versie": "v0.49.1",
       "items": [
         {
