@@ -5788,3 +5788,19 @@ span.devil-speaks, span.devil-speaks i {
 @media (prefers-reduced-motion: reduce) {
     .fb-toast { transition: none; }
 }
+
+/* === Boekenlijst links: dichter op elkaar op een groot scherm === */
+/* De regels stonden op duimformaat: vijf pixels boven en onder plus een marge
+   per boek. Op een muis hoeft dat niet, en met zesenzestig boeken scheelt het
+   of je de lijst overziet of erdoorheen moet scrollen. Onder de 769 pixels
+   blijft alles zoals het was, want daar wordt er wel met een vinger getikt. */
+@media (min-width: 769px) {
+    .tree-book { margin-bottom: 0; }
+    .tree-book-label {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        line-height: 1.35;
+    }
+    .tree-group { margin-bottom: 0; }
+    .tree-group-label { padding-top: 6px; padding-bottom: 6px; }
+}
