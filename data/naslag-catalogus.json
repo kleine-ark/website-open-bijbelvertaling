@@ -1677,7 +1677,11 @@
             "cipressen",
             "cipresboom",
             "dennenboom",
-            "dennenbomen"
+            "dennenbomen",
+            "denneboom",
+            "dennebomen",
+            "dennen",
+            "dennenhout"
           ],
           "gebruik": "letterlijk"
         },
@@ -2122,6 +2126,60 @@
             "onkruid"
           ],
           "gebruik": "letterlijk"
+        },
+        {
+          "id": "mirte",
+          "naam": "Mirte",
+          "beschrijving": "Geurige struik die het hele jaar groen blijft. In het eerste nachtgezicht van Zacharia staat de ruiter tussen de mirten in de diepte (1:8). Jesaja zet hem in de woestijn naast ceder en olijf als teken dat het land herleeft (41:19), en bij Nehemia halen de teruggekeerden mirtetakken voor de loofhutten (8:16).",
+          "zoekvormen": [
+            "mirte",
+            "mirten",
+            "mirteboom",
+            "mirtebomen"
+          ],
+          "gebruik": "letterlijk"
+        },
+        {
+          "id": "busboom",
+          "naam": "Busboom",
+          "beschrijving": "De buksboom, een hardhout dat samen met den en ceder genoemd wordt: bij het herstel van de woestijn (Jesaja 41:19) en bij het versieren van de plaats van Gods heiligdom (60:13).",
+          "zoekvormen": [
+            "busboom",
+            "busbomen"
+          ],
+          "gebruik": "letterlijk"
+        },
+        {
+          "id": "kalmus",
+          "naam": "Kalmus",
+          "beschrijving": "Welriekend riet, van ver ingevoerd en verwerkt in de heilige zalfolie. Jesaja verwijt Israël dat het die niet voor Hem gekocht heeft (43:24); Ezechiël noemt hem onder de handelswaar van Tyrus, en Jeremia naast wierook uit Scheba.",
+          "zoekvormen": [
+            "kalmus"
+          ],
+          "gebruik": "letterlijk"
+        },
+        {
+          "id": "olieachtige-boom",
+          "naam": "Olieachtige boom",
+          "beschrijving": "De oliehoudende boom waarvan Salomo de deuren en de cherubs van het heiligdom liet maken (1 Koningen 6). Jesaja noemt hem bij het herstel van de woestijn, en bij Nehemia komen er takken van voor de loofhutten.",
+          "zoekvormen": [
+            "olieachtig",
+            "olieachtige",
+            "olieachtigen"
+          ],
+          "gebruik": "letterlijk"
+        },
+        {
+          "id": "beuk",
+          "naam": "Beuk",
+          "beschrijving": "Genoemd naast de den en de busboom, zowel bij het herstel van de woestijn (Jesaja 41:19) als bij het versieren van de plaats van Gods heiligdom (60:13).",
+          "zoekvormen": [
+            "beuk",
+            "beuke boom",
+            "beuken",
+            "beukenboom"
+          ],
+          "gebruik": "letterlijk"
         }
       ]
     },
@@ -2133,72 +2191,123 @@
           "id": "harp",
           "naam": "Harp",
           "beschrijving": "Snaarinstrument bij vreugde, lofzang en profetie; Jubal wordt de vader genoemd van allen die harpen en orgelen hanteren.",
-          "zoekvormen": ["harp", "harpen"],
+          "zoekvormen": [
+            "harp",
+            "harpen"
+          ],
           "gebruik": "letterlijk"
         },
         {
           "id": "fluit",
           "naam": "Fluit",
           "beschrijving": "Blaasinstrument bij feest, rouw en openbare muziek.",
-          "zoekvormen": ["fluit", "fluiten", "fluiters"],
-          "uitsluiten": ["1koningen 9:8", "job 27:23", "jeremia 19:8", "jeremia 49:17", "jeremia 50:13", "klaagliederen 2:15", "klaagliederen 2:16", "ezechiel 27:36", "1meqabyan 35:5"],
+          "zoekvormen": [
+            "fluit",
+            "fluiten",
+            "fluiters"
+          ],
+          "uitsluiten": [
+            "1koningen 9:8",
+            "job 27:23",
+            "jeremia 19:8",
+            "jeremia 49:17",
+            "jeremia 50:13",
+            "klaagliederen 2:15",
+            "klaagliederen 2:16",
+            "ezechiel 27:36",
+            "1meqabyan 35:5"
+          ],
           "gebruik": "letterlijk"
         },
         {
           "id": "trompet",
           "naam": "Trompet",
           "beschrijving": "Metalen blaasinstrument voor samenroeping, oorlog, offers en lofprijzing.",
-          "zoekvormen": ["trompet", "trompetten"],
+          "zoekvormen": [
+            "trompet",
+            "trompetten"
+          ],
           "gebruik": "letterlijk en beeldspraak"
         },
         {
           "id": "cimbalen",
           "naam": "Cimbalen",
           "beschrijving": "Slaginstrumenten die met klinkend en schel geluid de lofzang begeleiden.",
-          "zoekvormen": ["cimbaal", "cimbalen", "cymbalen"],
+          "zoekvormen": [
+            "cimbaal",
+            "cimbalen",
+            "cymbalen"
+          ],
           "gebruik": "letterlijk en beeldspraak"
         },
         {
           "id": "bazuin",
           "naam": "Bazuin",
           "beschrijving": "Krachtig blaasinstrument en in profetische teksten een hoorbaar teken van Gods komst en oordeel.",
-          "zoekvormen": ["bazuin", "bazuinen", "bazuiners"],
+          "zoekvormen": [
+            "bazuin",
+            "bazuinen",
+            "bazuiners"
+          ],
           "gebruik": "letterlijk en beeldspraak"
         },
         {
           "id": "luit",
           "naam": "Luit",
           "beschrijving": "Snaarinstrument dat met harpen, trommels en pijpen wordt genoemd.",
-          "zoekvormen": ["luit", "luiten"],
+          "zoekvormen": [
+            "luit",
+            "luiten"
+          ],
           "gebruik": "letterlijk"
         },
         {
           "id": "citer",
           "naam": "Citer",
           "beschrijving": "Snaarinstrument in eredienst, feest en visioen; ook genoemd in Jezus Sirach, Makkabeeën en Openbaring.",
-          "zoekvormen": ["citer", "citers", "citeren", "citerspelers"],
+          "zoekvormen": [
+            "citer",
+            "citers",
+            "citeren",
+            "citerspelers"
+          ],
           "gebruik": "letterlijk en beeldspraak"
         },
         {
           "id": "trommel",
           "naam": "Trommel",
           "beschrijving": "Slaginstrument bij dans en vreugde, onder meer in het lied van Mirjam.",
-          "zoekvormen": ["trommel", "trommels", "trommelen", "trommelende", "trom"],
-          "uitsluiten": ["job 17:6", "nahum 2:7"],
+          "zoekvormen": [
+            "trommel",
+            "trommels",
+            "trommelen",
+            "trommelende",
+            "trom"
+          ],
+          "uitsluiten": [
+            "job 17:6",
+            "nahum 2:7"
+          ],
           "gebruik": "letterlijk"
         },
         {
           "id": "ramshoorn",
           "naam": "Ramshoorn",
           "beschrijving": "Hoornsignaal bij de Sinaï en de inname van Jericho.",
-          "zoekvormen": ["ramshoorn", "ramshoornen"],
+          "zoekvormen": [
+            "ramshoorn",
+            "ramshoornen"
+          ],
           "gebruik": "letterlijk"
         },
         {
           "id": "orgel",
           "naam": "Orgel",
           "beschrijving": "Oude benaming voor een blaas- of pijpinstrument, voor het eerst genoemd bij Jubal.",
-          "zoekvormen": ["orgel", "orgelen"],
+          "zoekvormen": [
+            "orgel",
+            "orgelen"
+          ],
           "gebruik": "letterlijk",
           "zekerheid": "onzeker",
           "reviewnotitie": "De vertaalterm duidt geen modern pijporgel met klavier aan; de precieze historische vorm is onzeker."
@@ -2207,18 +2316,30 @@
           "id": "pijp",
           "naam": "Pijp",
           "beschrijving": "Blaasinstrument dat bij muziekgezelschappen en maaltijden klinkt.",
-          "zoekvormen": ["pijp", "pijpen", "pijpers"],
-          "uitsluiten": ["zacharia 4:2", "job 31:22"],
+          "zoekvormen": [
+            "pijp",
+            "pijpen",
+            "pijpers"
+          ],
+          "uitsluiten": [
+            "zacharia 4:2",
+            "job 31:22"
+          ],
           "gebruik": "letterlijk",
           "zekerheid": "waarschijnlijk",
           "reviewnotitie": "Ezechiël 28:13 gebruikt de vertaalwoorden trommelen en pijpen in een tekstkritisch en instrumentkundig onzekere passage.",
-          "reviewrefs": ["ezechiel 28:13"]
+          "reviewrefs": [
+            "ezechiel 28:13"
+          ]
         },
         {
           "id": "vedel",
           "naam": "Vedel",
           "beschrijving": "Snaarinstrument in het orkest bij het gouden beeld van Nebukadnezar.",
-          "zoekvormen": ["vedel", "vedels"],
+          "zoekvormen": [
+            "vedel",
+            "vedels"
+          ],
           "gebruik": "letterlijk",
           "zekerheid": "onzeker",
           "reviewnotitie": "De historische vorm achter de traditionele vertaalterm vedel is onzeker; een middeleeuws strijkinstrument is niet aannemelijk."
@@ -2227,7 +2348,10 @@
           "id": "psalter",
           "naam": "Psalter",
           "beschrijving": "Snaarinstrument dat in Daniël samen met hoorn, pijp, citer en vedel klinkt.",
-          "zoekvormen": ["psalter", "psalteren"],
+          "zoekvormen": [
+            "psalter",
+            "psalteren"
+          ],
           "gebruik": "letterlijk",
           "zekerheid": "onzeker",
           "reviewnotitie": "De precieze vorm van het Babylonische snaarinstrument achter psalter is onzeker."
@@ -2237,7 +2361,12 @@
           "naam": "Hoorn",
           "beschrijving": "Blaasinstrument in het Babylonische muziekgezelschap van Daniël 3.",
           "zoekvormen": [],
-          "expliciet": ["daniel 3:5", "daniel 3:7", "daniel 3:10", "daniel 3:15"],
+          "expliciet": [
+            "daniel 3:5",
+            "daniel 3:7",
+            "daniel 3:10",
+            "daniel 3:15"
+          ],
           "gebruik": "letterlijk",
           "zekerheid": "waarschijnlijk",
           "reviewnotitie": "Alleen de vier ondubbelzinnige muzikale vermeldingen zijn opgenomen; andere hoornen zijn dierlijk, bouwkundig of beeldspraak."
@@ -2247,7 +2376,9 @@
           "naam": "Schellen",
           "beschrijving": "Rinkelend slaginstrument bij het opbrengen van de ark.",
           "zoekvormen": [],
-          "expliciet": ["2samuel 6:5"],
+          "expliciet": [
+            "2samuel 6:5"
+          ],
           "gebruik": "letterlijk",
           "zekerheid": "onzeker",
           "reviewnotitie": "De vertaalterm is zeker, maar de precieze historische vorm kan een ratel of sistrumachtig instrument zijn."
@@ -2256,7 +2387,9 @@
           "id": "tiensnarig-instrument",
           "naam": "Tiensnarig instrument",
           "beschrijving": "Een niet nader benoemd snaarinstrument met tien snaren in drie psalmen.",
-          "zoekvormen": ["tiensnarig instrument"],
+          "zoekvormen": [
+            "tiensnarig instrument"
+          ],
           "gebruik": "letterlijk",
           "zekerheid": "onzeker",
           "reviewnotitie": "De tekst noemt het aantal snaren, maar bepaalt de bouwvorm niet."
@@ -2265,7 +2398,9 @@
           "id": "lier",
           "naam": "Lier",
           "beschrijving": "Snaarinstrument dat in de Ethiopische Meqabyan-boeken naast trom, fluit, luit en orgel wordt genoemd.",
-          "zoekvormen": ["lier"],
+          "zoekvormen": [
+            "lier"
+          ],
           "gebruik": "letterlijk",
           "zekerheid": "waarschijnlijk"
         }
@@ -2274,12 +2409,16 @@
         {
           "term": "snarenspel",
           "reden": "Verzamelterm voor snaarmuziek of een niet nader bepaald snaarinstrument; niet als afzonderlijke bouwvorm gepubliceerd.",
-          "zoekvormen": ["snarenspel"]
+          "zoekvormen": [
+            "snarenspel"
+          ]
         },
         {
           "term": "akkoordgezang",
           "reden": "Traditionele term in Daniël 3 waarvan niet zeker is of zij zang, samenspel of een afzonderlijk instrument aanduidt.",
-          "zoekvormen": ["akkoordgezang"]
+          "zoekvormen": [
+            "akkoordgezang"
+          ]
         }
       ]
     }
@@ -2292,33 +2431,260 @@
       {
         "id": "jezus",
         "beschrijving": "De Zoon, God geopenbaard in het vlees.",
-        "zoekvormen": ["Jezus", "Christus"],
+        "zoekvormen": [
+          "Jezus",
+          "Christus"
+        ],
         "gebruik": "letterlijk"
       }
     ],
     "extra": [
-      {"id": "johannes-de-doper", "naam": "Johannes de Doper", "beschrijving": "De voorloper die de weg van de Heere bereidt.", "zoekvormen": ["Johannes de Doper"], "expliciet": ["mattheus 3:1", "markus 1:4"], "gebruik": "letterlijk"},
-      {"id": "petrus", "naam": "Petrus", "beschrijving": "Apostel van Jezus Christus, ook Simon en Cefas genoemd.", "zoekvormen": ["Petrus", "Simon Petrus", "Cefas"], "gebruik": "letterlijk"},
-      {"id": "paulus", "naam": "Paulus", "beschrijving": "Apostel van Jezus Christus en verkondiger onder de volken.", "zoekvormen": ["Paulus"], "gebruik": "letterlijk"},
-      {"id": "barnabas", "naam": "Barnabas", "beschrijving": "Medewerker in de eerste gemeenten en reisgenoot van Paulus.", "zoekvormen": ["Barnabas"], "gebruik": "letterlijk"},
-      {"id": "silas", "naam": "Silas", "beschrijving": "Profeet en medewerker van Paulus.", "zoekvormen": ["Silas"], "gebruik": "letterlijk"},
-      {"id": "stefanus", "naam": "Stefanus", "beschrijving": "Getuige van Christus en de eerste in Handelingen die om zijn getuigenis wordt gedood.", "zoekvormen": ["Stefanus"], "gebruik": "letterlijk"},
-      {"id": "timotheus", "naam": "Timotheüs", "beschrijving": "Jonge medewerker van Paulus.", "zoekvormen": ["Timotheüs"], "gebruik": "letterlijk"},
-      {"id": "titus", "naam": "Titus", "beschrijving": "Medewerker van Paulus.", "zoekvormen": ["Titus"], "boeken": ["galaten", "2korinthiers", "titus", "2timotheus"], "gebruik": "letterlijk"},
-      {"id": "lukas", "naam": "Lukas", "beschrijving": "Geliefde arts en medewerker van Paulus.", "zoekvormen": ["Lukas"], "gebruik": "letterlijk"},
-      {"id": "markus", "naam": "Markus", "beschrijving": "Johannes Markus, medewerker van Barnabas, Paulus en Petrus.", "zoekvormen": ["Markus", "Johannes Markus"], "gebruik": "letterlijk"},
-      {"id": "martha", "naam": "Martha", "beschrijving": "Zuster van Maria en Lazarus te Bethanië.", "zoekvormen": ["Martha"], "gebruik": "letterlijk"},
-      {"id": "lazarus", "naam": "Lazarus", "beschrijving": "Broer van Martha en Maria, door Jezus uit de dood opgewekt.", "zoekvormen": ["Lazarus"], "boeken": ["johannes"], "gebruik": "letterlijk"},
-      {"id": "lazarus-gelijkenis", "naam": "Lazarus uit de gelijkenis", "beschrijving": "De arme man in Jezus' gelijkenis van de rijke man en Lazarus.", "zoekvormen": ["Lazarus"], "boeken": ["lukas"], "gebruik": "in een gelijkenis"},
-      {"id": "maria-magdalena", "naam": "Maria Magdalena", "beschrijving": "Volgelinge van Jezus en getuige van Zijn opstanding.", "zoekvormen": ["Maria Magdalena", "Maria Magdaléna"], "expliciet": ["markus 15:40"], "gebruik": "letterlijk"},
-      {"id": "pontius-pilatus", "naam": "Pontius Pilatus", "beschrijving": "Romeinse stadhouder die Jezus liet kruisigen.", "zoekvormen": ["Pilatus", "Pontius Pilatus"], "gebruik": "letterlijk"},
-      {"id": "samaritaanse-vrouw", "naam": "De Samaritaanse vrouw", "beschrijving": "De vrouw met wie Jezus bij de bron van Jakob spreekt.", "zoekvormen": ["Samaritaanse vrouw"], "expliciet": ["johannes 4:7"], "gebruik": "letterlijk"},
-      {"id": "ethiopische-kamerling", "naam": "De Ethiopische kamerling", "beschrijving": "Hoveling die door Filippus uit Jesaja wordt onderwezen en wordt gedoopt.", "zoekvormen": [], "expliciet": ["handelingen 8:27", "handelingen 8:34", "handelingen 8:36", "handelingen 8:38", "handelingen 8:39"], "gebruik": "letterlijk"},
-      {"id": "tobias-oud", "naam": "Tobias", "beschrijving": "De rechtvaardige vader uit het boek Tobit.", "zoekvormen": [], "expliciet": ["tobit 1:1", "tobit 1:3", "tobit 3:1"], "gebruik": "letterlijk"},
-      {"id": "tobias-jong", "naam": "Tobias, de zoon", "beschrijving": "De zoon die onder begeleiding van Rafaël op reis gaat.", "zoekvormen": [], "expliciet": ["tobit 1:9", "tobit 5:4", "tobit 8:1"], "gebruik": "letterlijk"},
-      {"id": "sara-raguel", "naam": "Sara, dochter van Raguël", "beschrijving": "De vrouw voor wie God uitkomst geeft en die met Tobias trouwt.", "zoekvormen": [], "expliciet": ["tobit 3:7"], "gebruik": "letterlijk"},
-      {"id": "judith", "naam": "Judith", "beschrijving": "De weduwe die Bethulië en Israël uit de nood verlost.", "zoekvormen": ["Judith"], "boeken": ["judith"], "expliciet": ["judith 8:1"], "gebruik": "letterlijk"},
-      {"id": "judas-makkabeus", "naam": "Judas Makkabeüs", "beschrijving": "Leider die voor Israël en het heiligdom strijdt.", "zoekvormen": ["Makkabeüs"], "expliciet": ["1makkabeeen 3:1"], "gebruik": "letterlijk"}
+      {
+        "id": "johannes-de-doper",
+        "naam": "Johannes de Doper",
+        "beschrijving": "De voorloper die de weg van de Heere bereidt.",
+        "zoekvormen": [
+          "Johannes de Doper"
+        ],
+        "expliciet": [
+          "mattheus 3:1",
+          "markus 1:4"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "petrus",
+        "naam": "Petrus",
+        "beschrijving": "Apostel van Jezus Christus, ook Simon en Cefas genoemd.",
+        "zoekvormen": [
+          "Petrus",
+          "Simon Petrus",
+          "Cefas"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "paulus",
+        "naam": "Paulus",
+        "beschrijving": "Apostel van Jezus Christus en verkondiger onder de volken.",
+        "zoekvormen": [
+          "Paulus"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "barnabas",
+        "naam": "Barnabas",
+        "beschrijving": "Medewerker in de eerste gemeenten en reisgenoot van Paulus.",
+        "zoekvormen": [
+          "Barnabas"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "silas",
+        "naam": "Silas",
+        "beschrijving": "Profeet en medewerker van Paulus.",
+        "zoekvormen": [
+          "Silas"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "stefanus",
+        "naam": "Stefanus",
+        "beschrijving": "Getuige van Christus en de eerste in Handelingen die om zijn getuigenis wordt gedood.",
+        "zoekvormen": [
+          "Stefanus"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "timotheus",
+        "naam": "Timotheüs",
+        "beschrijving": "Jonge medewerker van Paulus.",
+        "zoekvormen": [
+          "Timotheüs"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "titus",
+        "naam": "Titus",
+        "beschrijving": "Medewerker van Paulus.",
+        "zoekvormen": [
+          "Titus"
+        ],
+        "boeken": [
+          "galaten",
+          "2korinthiers",
+          "titus",
+          "2timotheus"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "lukas",
+        "naam": "Lukas",
+        "beschrijving": "Geliefde arts en medewerker van Paulus.",
+        "zoekvormen": [
+          "Lukas"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "markus",
+        "naam": "Markus",
+        "beschrijving": "Johannes Markus, medewerker van Barnabas, Paulus en Petrus.",
+        "zoekvormen": [
+          "Markus",
+          "Johannes Markus"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "martha",
+        "naam": "Martha",
+        "beschrijving": "Zuster van Maria en Lazarus te Bethanië.",
+        "zoekvormen": [
+          "Martha"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "lazarus",
+        "naam": "Lazarus",
+        "beschrijving": "Broer van Martha en Maria, door Jezus uit de dood opgewekt.",
+        "zoekvormen": [
+          "Lazarus"
+        ],
+        "boeken": [
+          "johannes"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "lazarus-gelijkenis",
+        "naam": "Lazarus uit de gelijkenis",
+        "beschrijving": "De arme man in Jezus' gelijkenis van de rijke man en Lazarus.",
+        "zoekvormen": [
+          "Lazarus"
+        ],
+        "boeken": [
+          "lukas"
+        ],
+        "gebruik": "in een gelijkenis"
+      },
+      {
+        "id": "maria-magdalena",
+        "naam": "Maria Magdalena",
+        "beschrijving": "Volgelinge van Jezus en getuige van Zijn opstanding.",
+        "zoekvormen": [
+          "Maria Magdalena",
+          "Maria Magdaléna"
+        ],
+        "expliciet": [
+          "markus 15:40"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "pontius-pilatus",
+        "naam": "Pontius Pilatus",
+        "beschrijving": "Romeinse stadhouder die Jezus liet kruisigen.",
+        "zoekvormen": [
+          "Pilatus",
+          "Pontius Pilatus"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "samaritaanse-vrouw",
+        "naam": "De Samaritaanse vrouw",
+        "beschrijving": "De vrouw met wie Jezus bij de bron van Jakob spreekt.",
+        "zoekvormen": [
+          "Samaritaanse vrouw"
+        ],
+        "expliciet": [
+          "johannes 4:7"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "ethiopische-kamerling",
+        "naam": "De Ethiopische kamerling",
+        "beschrijving": "Hoveling die door Filippus uit Jesaja wordt onderwezen en wordt gedoopt.",
+        "zoekvormen": [],
+        "expliciet": [
+          "handelingen 8:27",
+          "handelingen 8:34",
+          "handelingen 8:36",
+          "handelingen 8:38",
+          "handelingen 8:39"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "tobias-oud",
+        "naam": "Tobias",
+        "beschrijving": "De rechtvaardige vader uit het boek Tobit.",
+        "zoekvormen": [],
+        "expliciet": [
+          "tobit 1:1",
+          "tobit 1:3",
+          "tobit 3:1"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "tobias-jong",
+        "naam": "Tobias, de zoon",
+        "beschrijving": "De zoon die onder begeleiding van Rafaël op reis gaat.",
+        "zoekvormen": [],
+        "expliciet": [
+          "tobit 1:9",
+          "tobit 5:4",
+          "tobit 8:1"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "sara-raguel",
+        "naam": "Sara, dochter van Raguël",
+        "beschrijving": "De vrouw voor wie God uitkomst geeft en die met Tobias trouwt.",
+        "zoekvormen": [],
+        "expliciet": [
+          "tobit 3:7"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "judith",
+        "naam": "Judith",
+        "beschrijving": "De weduwe die Bethulië en Israël uit de nood verlost.",
+        "zoekvormen": [
+          "Judith"
+        ],
+        "boeken": [
+          "judith"
+        ],
+        "expliciet": [
+          "judith 8:1"
+        ],
+        "gebruik": "letterlijk"
+      },
+      {
+        "id": "judas-makkabeus",
+        "naam": "Judas Makkabeüs",
+        "beschrijving": "Leider die voor Israël en het heiligdom strijdt.",
+        "zoekvormen": [
+          "Makkabeüs"
+        ],
+        "expliciet": [
+          "1makkabeeen 3:1"
+        ],
+        "gebruik": "letterlijk"
+      }
     ]
   }
 }
