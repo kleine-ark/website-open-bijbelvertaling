@@ -14777,6 +14777,18 @@
    "toelichting": "Henoch, Jubileeen, de drie Meqabyan-boeken en 4 Baruch zijn uit het Ge'ez vertaald en hebben geen Statenvertaling-basis, waardoor de sweeps er nooit overheen zijn gegaan. Van de zestienhonderd principes zijn er zeshonderdnegenentwintig een echte drop-in vervanging -- de regex herkent zijn eigen bronwoord volledig -- en die zijn in een doorloop toegepast, met A1 (gij) en V589 (naamwoord + Israels) erbij. Negentienhonderdeenenveertig vervangingen in dertienhonderdeenenvijftig verzen. Contextgevoelige principes (een, boze, ziet, eer) en het genitief-des blijven liggen; die vragen per plaats een oordeel.",
    "regex": "",
    "voorbeeld": "4 Baruch 1:1"
+  },
+  {
+   "id": "ET2",
+   "categorie": "Godsnamen",
+   "oud": "Heere in de Ethiopische boeken",
+   "nieuw": "JAHWEH in Jubileeen, Heere in Henoch",
+   "toelichting": "Het Ge'ez maakt geen onderscheid tussen JHWH en Adonai: እግዚአብሔር (Egziabeher, letterlijk \"Heer van het land\") dekt beide, naast እግዚእ (egzi, \"heer\") en de aanroep እግዚኦ (egzio, \"o Heer\"). Er is in de Ethiopische tekst zelf dus geen aanknopingspunt om de ene plaats JAHWEH te maken en de andere Heere. De keuze steunt daarom op de veronderstelde brontaal, net als V280 dat voor de apocriefen doet. Voor Jubileeen is die er: alle veertien a vijftien Qumran-handschriften zijn Hebreeuws, en 4Q216 -- het oudste, ongeveer 125 tot 100 voor Christus -- draagt het Tetragrammaton. Daar wordt Heere dus JAHWEH, maar alleen waar እግዚአብሔር eronder ligt; waar de aanroep እግዚኦ staat blijft het Heere, zoals in 1:19 \"O Heere, mijn God\". Vier plaatsen: 17:13, 18:14, 19:29 en 31:16. Voor Henoch ontbreekt dat bewijs: de elf Qumran-handschriften zijn Aramees, en Qumran-Aramees vermijdt het Tetragrammaton stelselmatig ten gunste van titels -- Heer der geesten, de Grote Heilige, de Allerhoogste. Bovendien dekken de fragmenten maar ongeveer een vijfde van de Ethiopische tekst, en juist de Gelijkenissen (37-71) ontbreken er volledig. Henoch houdt daarom Heere, en de Meqabyan-boeken en 4 Baruch ook: die hebben helemaal geen Qumran-getuige.",
+   "regex": "",
+   "bereik": {
+    "jubileeen": "alle"
+   },
+   "voorbeeld": "Jubileeen 18:14"
   }
  ]
 }
