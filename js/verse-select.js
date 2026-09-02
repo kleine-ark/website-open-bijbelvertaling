@@ -301,6 +301,17 @@ const VerseSelect = {
                     wrap.innerHTML = '„' + inner + '”';
                     span.replaceWith(wrap);
                 });
+                // De drie sprekers van Hooglied houden hun kleur mee naar buiten;
+                // zonder onze stylesheet zou het verschil anders wegvallen.
+                [['bride-speaks', '#a8386b'], ['groom-speaks', '#1f6f8b'],
+                 ['chorus-speaks', '#5f6b2f']].forEach(([klasse, kleur]) => {
+                    clone.querySelectorAll('.' + klasse).forEach(span => {
+                        const wrap = document.createElement('em');
+                        wrap.setAttribute('style', 'color:' + kleur + ';');
+                        wrap.innerHTML = '„' + span.innerHTML + '”';
+                        span.replaceWith(wrap);
+                    });
+                });
                 // direct-speech → cursief met „..." aanhalingstekens
                 clone.querySelectorAll('.direct-speech').forEach(span => {
                     const inner = span.innerHTML;

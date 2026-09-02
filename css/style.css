@@ -5804,3 +5804,54 @@ span.devil-speaks, span.devil-speaks i {
     .tree-group { margin-bottom: 0; }
     .tree-group-label { padding-top: 6px; padding-bottom: 6px; }
 }
+
+/* === Hooglied: elke spreker zijn eigen kleur === */
+/* Het boek is een gesprek tussen drie partijen, maar stond in een kleur: alle
+   honderdzeventien verzen droegen direct-speech. Wie zegt "Mijn vriendin" en
+   wie "mijn Liefste" was aan de opmaak niet te zien. De tekst wijst de sprekers
+   zelf aan, dus krijgen ze elk een eigen kleur: de bruid roze, de bruidegom
+   blauwgroen, en het koor -- de dochters van Jeruzalem, die de vragen stellen
+   ("Wie is zij, die daar opkomt uit de woestijn?") -- olijfgroen.
+
+   Drie kleuren die in tint en helderheid ver genoeg uit elkaar liggen om ook
+   zonder kleurwaarneming te scheiden, en die geen van drieen botsen met het
+   rood van god-speaks of het goud van een citaat-in-citaat. */
+.bride-speaks,
+.groom-speaks,
+.chorus-speaks {
+    font-style: italic !important;
+    display: inline !important;
+}
+.bride-speaks  { color: #a8386b !important; }
+.groom-speaks  { color: #1f6f8b !important; }
+.chorus-speaks { color: #5f6b2f !important; }
+.bride-speaks::before,
+.groom-speaks::before,
+.chorus-speaks::before { content: '\201C'; }
+.bride-speaks::after,
+.groom-speaks::after,
+.chorus-speaks::after { content: '\201D'; }
+
+:root[data-theme="donker"] .bride-speaks,
+:root[data-theme="donker"] .bride-speaks i  { color: #e9a3c0 !important; }
+:root[data-theme="donker"] .groom-speaks,
+:root[data-theme="donker"] .groom-speaks i  { color: #8ecae6 !important; }
+:root[data-theme="donker"] .chorus-speaks,
+:root[data-theme="donker"] .chorus-speaks i { color: #bcc98a !important; }
+
+/* De optie "citaten uit" moet ook deze drie uitzetten. */
+body.citaten-uit .bride-speaks,
+body.citaten-uit .groom-speaks,
+body.citaten-uit .chorus-speaks {
+    color: inherit !important;
+    font-style: normal !important;
+}
+body.citaten-uit .bride-speaks::before,  body.citaten-uit .bride-speaks::after,
+body.citaten-uit .groom-speaks::before,  body.citaten-uit .groom-speaks::after,
+body.citaten-uit .chorus-speaks::before, body.citaten-uit .chorus-speaks::after { content: none !important; }
+
+/* Opent het hoofdstuk met een citaat, dan geen openings-aanhalingsteken: de
+   sierletter staat er al. Zelfde regel als voor de andere sprekers. */
+.verse-row[data-verse="1"] .col-2026 .bride-speaks::before,
+.verse-row[data-verse="1"] .col-2026 .groom-speaks::before,
+.verse-row[data-verse="1"] .col-2026 .chorus-speaks::before { content: none; }

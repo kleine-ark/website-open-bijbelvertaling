@@ -760,3 +760,19 @@ body.dark #chapter-buttons button.unverified {
 /* Klikbare 'oudste handschrift' in de datering-box -> grondteksten.html */
 .book-dating .dating-link { color: var(--accent, #b8860b); text-decoration: none; border-bottom: 1px dotted var(--accent, #b8860b); }
 .book-dating .dating-link:hover { border-bottom-style: solid; }
+
+/* === Hooglied: elke spreker zijn eigen kleur === */
+/* Zie css/style.css voor de toelichting. */
+:root {
+    --bride-speaks: #a8386b;
+    --groom-speaks: #1f6f8b;
+    --chorus-speaks: #5f6b2f;
+}
+:root[data-theme="donker"] {
+    --bride-speaks: #e9a3c0;
+    --groom-speaks: #8ecae6;
+    --chorus-speaks: #bcc98a;
+}
+.bride-speaks  { color: var(--bride-speaks);  font-style: italic; }
+.groom-speaks  { color: var(--groom-speaks);  font-style: italic; }
+.chorus-speaks { color: var(--chorus-speaks); font-style: italic; }
