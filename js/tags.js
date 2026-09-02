@@ -4,6 +4,7 @@ const Tags = {
     data: null,
     loaded: false,
     verseLookup: {},  // "genesis 1:3" -> [{tag object}]
+    naslag: null,     // vers -> naslagingangen (dieren, planten, materialen, instrumenten)
 
     async ensureLoaded() {
         if (this.loaded) return;
@@ -17,6 +18,40 @@ const Tags = {
             this.data = { tags: [] };
             this.loaded = true;
         }
+        // De optie "Tekstverbanden" belooft ook dieren, planten, materialen en
+        // muziekinstrumenten. Die staan niet in tags.json maar in de
+        // naslagverzamelingen; scripts/build_naslag_verzen.py maakt daar een
+        // compacte vers-index van, want de verzamelingen zelf zijn samen ruim
+        // twee megabyte. Mislukt het laden, dan blijven de thematische tags
+        // gewoon werken.
+        if (this.naslag === null) {
+            try {
+                const r = await fetch('data/naslag-verzen.json');
+                this.naslag = await r.json();
+            } catch (e) {
+                console.warn('Naslagverwijzingen laden mislukt:', e);
+                this.naslag = { categorieen: {}, namen: {}, verzen: {} };
+            }
+        }
+    },
+
+    /* De naslagingangen bij één vers, in dezelfde vorm als een thematische tag,
+       zodat renderTagsForChapter ze niet apart hoeft te behandelen. */
+    naslagVoor(ref) {
+        if (!this.naslag || !this.naslag.verzen) return [];
+        const paren = this.naslag.verzen[ref];
+        if (!paren) return [];
+        return paren.map(([categorie, id]) => {
+            const cat = this.naslag.categorieen[categorie] || {};
+            const naam = this.naslag.namen[categorie + '/' + id] || id;
+            return {
+                naam: naam,
+                kleur: cat.kleur || '#999',
+                // De naslagpagina kiest zijn ingang uit ?item=, niet uit de hash
+                naslagUrl: (cat.pagina || '') + '?item=' + encodeURIComponent(id),
+                categorieLabel: cat.label || categorie
+            };
+        });
     },
 
     buildLookup() {
@@ -37,8 +72,8 @@ const Tags = {
         rows.forEach(row => {
             const vNum = row.dataset.verse;
             const ref = `${bookId} ${chapterNum}:${vNum}`;
-            const tags = this.verseLookup[ref];
-            if (!tags || tags.length === 0) return;
+            const tags = (this.verseLookup[ref] || []).concat(this.naslagVoor(ref));
+            if (tags.length === 0) return;
 
             const numCell = row.querySelector('.verse-num');
             if (!numCell) return;
@@ -50,10 +85,13 @@ const Tags = {
                 const dot = document.createElement('span');
                 dot.className = 'verse-tag';
                 dot.style.backgroundColor = tag.kleur;
-                dot.title = tag.naam;
+                // Een naslagingang draagt zijn categorie in de tooltip, want
+                // "Ree" alleen zegt niet waar je terechtkomt.
+                dot.title = tag.naslagUrl ? tag.categorieLabel + ': ' + tag.naam : tag.naam;
                 dot.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    this.showTagVerzen(tag);
+                    if (tag.naslagUrl) window.location.href = tag.naslagUrl;
+                    else this.showTagVerzen(tag);
                 });
                 numCell.appendChild(dot);
             }
