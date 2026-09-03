@@ -170,8 +170,8 @@
     font-size: 7.5pt; color: #8a8375; letter-spacing: 0.04em;
     display: flex; justify-content: space-between;
 }
-.dv-kop { top: calc(var(--dv-marge-boven) - 7mm); border-bottom: 0.2mm solid #e4dfd2; padding-bottom: 1.5mm; }
-.dv-voet { bottom: calc(var(--dv-marge-onder) - 6mm); justify-content: center; }
+.dv-kop { top: calc(var(--dv-marge-boven) - 6mm); border-bottom: 0.2mm solid #e4dfd2; padding-bottom: 1.5mm; }
+.dv-voet { bottom: calc(var(--dv-marge-onder) - 5.5mm); justify-content: center; }
 .dv-pagina.dv-links .dv-kop, .dv-pagina.dv-links .dv-voet {
     left: calc(var(--dv-marge-buiten) + var(--dv-notitie-zij));
     right: var(--dv-marge-binnen);
@@ -285,14 +285,35 @@
 .dv-body[data-voorwoord="aan"] .dv-alleen-voorwoord { display: block; }
 
 
+
+/* Het omslagontwerp staat als beeld achter het titelblad; de titel zelf blijft
+   echte letters, zodat de drukker hem als vector kan overnemen. */
+.dv-cover-beeld { background-size: cover; background-position: center; }
+.dv-cover-beeld .dv-cover-blok { justify-content: flex-start; padding-top: 8%; }
+.dv-cover-beeld .dv-cover-blok h1 {
+    color: #14243f;
+    text-shadow: 0 0.4mm 1.4mm rgba(255,253,246,0.85);
+}
+.dv-cover-beeld .dv-cover-onder {
+    color: #24354f; letter-spacing: 0.18em; text-transform: uppercase;
+    font-style: normal; font-size: 0.92em;
+    text-shadow: 0 0.3mm 1.2mm rgba(255,253,246,0.85);
+}
+.dv-cover-beeld .dv-cover-voet { color: #3c4a60; }
+
 /* --- de plaat bij een hoofdstuk --- */
 /* Zij vult de onderste helft van het blad; het tekstblok krijgt daarom de
    bovenste helft, zodat de opmaak er vanzelf omheen loopt. */
+/* Op een blad met een plaat staat geen notitieruimte: de plaat is er al, en
+   twee dingen die om de onderste helft vragen passen niet naast elkaar. */
+.dv-pagina.dv-met-plaat { --dv-notitie-zij: 0mm; --dv-notitie-onder: 0mm; }
+.dv-pagina.dv-met-plaat::after { display: none; }
 .dv-pagina.dv-met-plaat .dv-inhoud { height: 48%; }
+/* De plaat loopt breder dan het tekstblok, tot vlak bij de snijrand. */
 .dv-plaat {
     position: absolute; margin: 0;
-    left: var(--dv-marge-binnen);
-    right: calc(var(--dv-marge-buiten) + var(--dv-notitie-zij));
+    left: 4mm;
+    right: 4mm;
     bottom: calc(var(--dv-marge-onder) + var(--dv-notitie-onder));
     /* De bovenkant wordt uit dezelfde bladspiegel gerekend als het tekstblok
        hierboven, anders schuiven de twee over elkaar heen zodra er ook
@@ -301,10 +322,6 @@
     top: calc(var(--dv-marge-boven) + 2mm +
         (100% - var(--dv-marge-boven) - var(--dv-marge-onder) - var(--dv-notitie-onder)) * 0.5);
     display: flex; align-items: flex-end; justify-content: center;
-}
-.dv-pagina.dv-links .dv-plaat {
-    left: calc(var(--dv-marge-buiten) + var(--dv-notitie-zij));
-    right: var(--dv-marge-binnen);
 }
 .dv-plaat img { max-width: 100%; max-height: 100%; object-fit: contain; }
 

@@ -19,6 +19,11 @@ onderhouden maar uit deze map afgeleid:
 Zolang een hoofdstuk hier geen bestand heeft, blijft de plaat weg en houdt
 het blad zijn volle hoogte.
 
+Twee dingen vallen daarbij af. Een bestand voor een boek of hoofdstuk dat niet
+bestaat wordt overgeslagen, en een afbeelding die al ergens anders staat wordt
+maar een keer gebruikt: dezelfde plaat twee keer in een uitgave leest als een
+fout, ook al is het er geen. Het script zegt bij elke overslag waarom.
+
 ## Rechten
 
 Het werk van Jan van 't Hoff is niet publiek domein: de rest van deze

@@ -36,7 +36,10 @@
                     <option value="taurat-injil">Taurat &amp; Injil — Genesis en Johannes</option>
                     <option value="tora">De Tora — de vijf boeken van Mozes</option>
                     <option value="evangelien">De vier Evangeliën</option>
-                    <option value="psalmen-spreuken">Psalmen en Spreuken</option>
+                    <option value="psalmen-spreuken">Psalmen en Spreuken — zakformaat</option>
+                    <option value="ethiopisch">Ethiopische Bijbel — Tewahedo, alle 88 boeken</option>
+                    <option value="orthodox">Orthodoxe Bijbel — Septuaginta-volgorde</option>
+                    <option value="bijschrijf">Bijschrijfbijbel — A4 met schrijfmarge</option>
                     <option value="eigen">Eigen keuze…</option>
                 </select>
             </label>
@@ -149,12 +152,24 @@
             <h2>Voorwerk</h2>
             <label class="dv-veld"><span>Titelblad</span><input type="checkbox" id="dv-cover" checked></label>
             <label class="dv-veld dv-veld-blok dv-alleen-cover">
+                <span>Omslag</span>
+                <select id="dv-omslag">
+                    <option value="">Alleen typografie</option>
+                    <option value="01-klassiek" selected>Klassiek landschap</option>
+                    <option value="02-paradijstuin">Paradijstuin</option>
+                    <option value="03-bergen-regenboog">Bergen en regenboog</option>
+                    <option value="04-rivier-zonsopkomst">Rivier bij zonsopkomst</option>
+                    <option value="05-bloemenweide">Bloemenweide met olijfbomen</option>
+                    <option value="06-sober-nachtblauw">Sober nachtblauw linnen</option>
+                </select>
+            </label>
+            <label class="dv-veld dv-veld-blok dv-alleen-cover">
                 <span>Titel</span>
-                <input type="text" id="dv-titel" value="Open Vertaling">
+                <input type="text" id="dv-titel" value="Gods Woord">
             </label>
             <label class="dv-veld dv-veld-blok dv-alleen-cover">
                 <span>Ondertitel</span>
-                <input type="text" id="dv-ondertitel" placeholder="volgt de gekozen uitgave">
+                <input type="text" id="dv-ondertitel" value="Open Vertaling">
             </label>
             <label class="dv-veld"><span>Voorwoord</span><input type="checkbox" id="dv-voorwoord" checked></label>
             <label class="dv-veld dv-veld-blok dv-alleen-voorwoord">
@@ -171,14 +186,14 @@
         </section>
 
         <div class="dv-acties">
-            <button type="button" id="dv-bouw" class="dv-knop dv-knop-hoofd">Opmaakproef maken</button>
+            <button type="button" id="dv-bouw" class="dv-knop dv-knop-hoofd">Opnieuw opmaken</button>
             <button type="button" id="dv-print" class="dv-knop">Afdrukken</button>
             <p class="dv-status" id="dv-status" role="status" aria-live="polite"></p>
         </div>
     </aside>
 
     <main class="dv-vel" id="dv-vel">
-        <p class="dv-leeg" id="dv-leeg">Kies links wat erin komt en klik op <strong>Opmaakproef maken</strong>.</p>
+        <p class="dv-leeg" id="dv-leeg">De opmaakproef wordt gemaakt…</p>
         <div id="dv-paginas"></div>
         <div class="dv-verder" id="dv-verder" hidden>
             <p id="dv-verder-tekst"></p>

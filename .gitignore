@@ -11,13 +11,12 @@ data/feedback-log.json
 vendor/
 audio/_pilot/
 audio/_progress.json
-# Binaire en diagnostische audio-uitvoer wordt extern gepubliceerd
-audio/**/*.log
-audio/**/*.mp3
-audio/**/*.opus
-audio/**/*.wav
-# Overige tussenbestanden van XTTS-chunking
+audio/_errors.log
+audio/_rollout.log
+# Tussenbestanden van XTTS-chunking — alleen .mp3's commiten
+audio/*/*.chunk*.wav
 audio/*/*.concat.txt
+audio/*/*.wav
 .venv-piper/
 data/quality-scan/
 data/process_*.py
@@ -48,3 +47,9 @@ downloads/index.json
 
 # Adres van de gepubliceerde opmerkingen-sheet (niet in de geschiedenis)
 data/opmerkingen-bron.json
+
+# Afgeleide omslagdelen: scripts/prepare_gods_woord_covers.py maakt ze uit
+# volledige-omslag.png, die wel meegaat.
+images/covers/gods-woord/*/achterkant.png
+images/covers/gods-woord/*/rug.png
+images/covers/gods-woord/*/voorkant.png

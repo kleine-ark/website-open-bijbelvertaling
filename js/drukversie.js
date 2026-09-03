@@ -78,14 +78,78 @@
             ['citaten', 'Citaatopmaak', [['aan', 'aan'], ['uit', 'uit']]],
             ['geoMarkeren', 'Plaatsnamen markeren', [['uit', 'uit'], ['aan', 'aan (Tora)']]],
             ['boekvolgorde', 'Boekvolgorde', [['canoniek', 'canoniek'], ['tenach', 'Tenach'],
+                ['orthodox', 'Septuaginta'], ['ethiopisch', 'Ethiopisch'],
                 ['chronologisch', 'chronologisch'], ['auteur', 'op auteur'], ['lengte', 'op lengte']]]
         ],
 
+        /* Tien voorbeelduitgaven. Elk recept zet niet alleen welke boeken erin
+           gaan, maar ook het papier, de kolommen, de volgorde en het omslag --
+           anders is een uitgave niet meer dan een selectievakje, terwijl het
+           juist die combinatie is die een boek zijn karakter geeft. Alles blijft
+           daarna met de hand bij te stellen. */
         UITGAVEN: {
-            'taurat-injil': ['genesis', 'johannes'],
-            'tora': ['genesis', 'exodus', 'leviticus', 'numeri', 'deuteronomium'],
-            'evangelien': ['mattheus', 'markus', 'lukas', 'johannes'],
-            'psalmen-spreuken': ['psalmen', 'spreuken']
+            alles: {
+                boeken: 'westers', volgorde: 'canoniek', omslag: '01-klassiek',
+                ondertitel: 'Open Vertaling',
+                velden: { 'dv-formaat': 'a5', 'dv-kolommen': '2', 'dv-marge': 'normaal',
+                          'dv-notities': 'geen', 'dv-versregels': false }
+            },
+            ot: {
+                boeken: 'ot', volgorde: 'canoniek', omslag: '03-bergen-regenboog',
+                ondertitel: 'Het Oude Testament',
+                velden: { 'dv-formaat': 'a5', 'dv-kolommen': '2', 'dv-marge': 'normaal',
+                          'dv-notities': 'geen', 'dv-versregels': false }
+            },
+            nt: {
+                boeken: 'nt', volgorde: 'canoniek', omslag: '04-rivier-zonsopkomst',
+                ondertitel: 'Het Nieuwe Testament',
+                velden: { 'dv-formaat': 'hand', 'dv-kolommen': '2', 'dv-marge': 'normaal',
+                          'dv-notities': 'geen', 'dv-versregels': false }
+            },
+            'taurat-injil': {
+                boeken: ['genesis', 'johannes'], volgorde: 'canoniek', omslag: '02-paradijstuin',
+                ondertitel: 'Taurat en Injil',
+                velden: { 'dv-formaat': 'a5', 'dv-kolommen': '1', 'dv-marge': 'ruim',
+                          'dv-notities': 'geen', 'dv-versregels': true }
+            },
+            tora: {
+                boeken: ['genesis', 'exodus', 'leviticus', 'numeri', 'deuteronomium'],
+                volgorde: 'tenach', omslag: '05-bloemenweide', ondertitel: 'De Tora',
+                velden: { 'dv-formaat': 'a5', 'dv-kolommen': '2', 'dv-marge': 'normaal',
+                          'dv-notities': 'geen', 'dv-versregels': false }
+            },
+            evangelien: {
+                boeken: ['mattheus', 'markus', 'lukas', 'johannes'],
+                volgorde: 'canoniek', omslag: '04-rivier-zonsopkomst',
+                ondertitel: 'De vier Evangelien',
+                velden: { 'dv-formaat': 'a6', 'dv-kolommen': '1', 'dv-marge': 'krap',
+                          'dv-notities': 'geen', 'dv-versregels': false }
+            },
+            'psalmen-spreuken': {
+                boeken: ['psalmen', 'spreuken'], volgorde: 'canoniek', omslag: '05-bloemenweide',
+                ondertitel: 'Psalmen en Spreuken',
+                velden: { 'dv-formaat': 'zak', 'dv-kolommen': '1', 'dv-marge': 'krap',
+                          'dv-notities': 'geen', 'dv-versregels': true }
+            },
+            ethiopisch: {
+                boeken: 'alles', volgorde: 'ethiopisch', omslag: '06-sober-nachtblauw',
+                ondertitel: 'Ethiopische canon',
+                velden: { 'dv-formaat': 'b5', 'dv-kolommen': '2', 'dv-marge': 'normaal',
+                          'dv-notities': 'geen', 'dv-versregels': false }
+            },
+            orthodox: {
+                boeken: 'westers', volgorde: 'orthodox', omslag: '06-sober-nachtblauw',
+                ondertitel: 'Naar de Septuaginta',
+                velden: { 'dv-formaat': 'b5', 'dv-kolommen': '2', 'dv-marge': 'normaal',
+                          'dv-notities': 'geen', 'dv-versregels': false }
+            },
+            bijschrijf: {
+                boeken: 'westers', volgorde: 'canoniek', omslag: '01-klassiek',
+                ondertitel: 'Bijschrijfbijbel',
+                velden: { 'dv-formaat': 'a4', 'dv-kolommen': '1', 'dv-marge': 'krap',
+                          'dv-notities': 'zij', 'dv-notitiemaat': '60', 'dv-lijntjes': true,
+                          'dv-versregels': false }
+            }
         },
 
         async init() {
@@ -94,6 +158,13 @@
             // Eigen staat, los van wat de lezer op de site heeft ingesteld: een
             // drukproef hoort de voorkeuren van de lezer niet te overschrijven.
             Opties.state = Object.assign({}, Opties.DEFAULTS);
+            // In de lezer bepalen deze twee of de apocriefen en de Ethiopische
+            // boeken in de zijbalk staan. Hier doen de vinkjes bij "Wat erin
+            // komt" dat werk; stonden ze uit, dan liet getFlatBookOrder de
+            // Ethiopische boeken weg en verdwenen ze stil uit de Ethiopische
+            // uitgave, ook al waren ze aangevinkt.
+            Opties.state.apocriefeBoeken = 'aan';
+            Opties.state.ethiopischeBoeken = 'aan';
             Opties._initialized = true;
             document.getElementById('dv-voorwoord-tekst').value = this.VOORWOORD;
             this.vulBoekenlijst();
@@ -101,6 +172,10 @@
             this.bindPaneel();
             this.kiesUitgave('alles');
             this.pasInstellingenToe();
+            // kiesUitgave heeft zojuist een uitgestelde opmaak ingepland; die
+            // hoeft niet ook nog eens boven op deze eerste.
+            clearTimeout(this._wachtOpRust);
+            this.bouw();
         },
 
         boekenPerTestament() {
@@ -155,20 +230,43 @@
             }.bind(this));
         },
 
-        kiesUitgave(keuze) {
-            var ids;
-            if (keuze === 'alles') {
-                ids = this.boeken.filter(function (b) { return b.testament !== 'ET'; })
+        /* Welke boeken horen bij een recept: een lijst met namen, of een van de
+           korte aanduidingen. 'westers' is alles behalve de Ethiopische boeken;
+           'alles' is werkelijk alles, alle achtentachtig. */
+        boekenVoor(spec) {
+            if (Array.isArray(spec)) return spec.slice();
+            var boeken = this.boeken;
+            if (spec === 'alles') return boeken.map(function (b) { return b.id; });
+            if (spec === 'westers') {
+                return boeken.filter(function (b) { return b.testament !== 'ET'; })
                     .map(function (b) { return b.id; });
-            } else if (keuze === 'ot' || keuze === 'nt') {
-                var t = keuze.toUpperCase();
-                ids = this.boeken.filter(function (b) { return b.testament === t; })
-                    .map(function (b) { return b.id; });
-            } else if (this.UITGAVEN[keuze]) {
-                ids = this.UITGAVEN[keuze].slice();
-            } else {
-                return;   // 'eigen' laat de aangevinkte boeken staan
             }
+            var t = String(spec).toUpperCase();
+            return boeken.filter(function (b) { return b.testament === t; })
+                .map(function (b) { return b.id; });
+        },
+
+        kiesUitgave(keuze) {
+            var recept = this.UITGAVEN[keuze];
+            if (!recept) return;        // 'eigen' laat de aangevinkte boeken staan
+            var ids = this.boekenVoor(recept.boeken);
+
+            Object.keys(recept.velden || {}).forEach(function (id) {
+                var el = document.getElementById(id);
+                if (!el) return;
+                if (el.type === 'checkbox') el.checked = !!recept.velden[id];
+                else el.value = recept.velden[id];
+            });
+            if (recept.volgorde) {
+                Opties.state.boekvolgorde = recept.volgorde;
+                var keuzelijst = document.querySelector('[data-leesoptie="boekvolgorde"]');
+                if (keuzelijst) keuzelijst.value = recept.volgorde;
+            }
+            if (recept.omslag !== undefined) document.getElementById('dv-omslag').value = recept.omslag;
+            if (recept.titel) document.getElementById('dv-titel').value = recept.titel;
+            if (recept.ondertitel) document.getElementById('dv-ondertitel').value = recept.ondertitel;
+            this.pasInstellingenToe();
+
             this.gekozen = new Set(ids);
             document.querySelectorAll('#dv-boekenlijst input').forEach(function (c) {
                 c.checked = this.gekozen.has(c.value);
@@ -193,7 +291,7 @@
         meldWijziging() {
             var self = this;
             clearTimeout(this._wachtOpRust);
-            if (!document.getElementById('dv-paginas').children.length) return;
+            if (!this.boeken) return;       // de eerste opmaak wacht op books.json
             this.zetStatus('Bezig met opnieuw opmaken…');
             this._wachtOpRust = setTimeout(function () {
                 // Loopt er nog een ronde, dan wacht de nieuwe keuze tot die af is;
@@ -229,7 +327,7 @@
                 });
             });
             // Deze niet: alleen het voorwerk of de lijntjes veranderen.
-            ['dv-lijntjes', 'dv-lijnafstand', 'dv-cover', 'dv-titel', 'dv-ondertitel', 'dv-voorwoord',
+            ['dv-lijntjes', 'dv-lijnafstand', 'dv-cover', 'dv-omslag', 'dv-titel', 'dv-ondertitel', 'dv-voorwoord',
              'dv-voorwoord-tekst', 'dv-inhoudsopgave'].forEach(function (id) {
                 document.getElementById(id).addEventListener('input', function () {
                     self.pasInstellingenToe();
@@ -263,9 +361,13 @@
             s.setProperty('--dv-breedte', maat[0] + 'mm');
             s.setProperty('--dv-hoogte', maat[1] + 'mm');
 
-            var m = Math.round(maat[0] * {krap: 0.068, normaal: 0.095, ruim: 0.133}[marge]);
-            s.setProperty('--dv-marge-boven', m + 'mm');
-            s.setProperty('--dv-marge-onder', m + 'mm');
+            var m = Math.round(maat[0] * {krap: 0.050, normaal: 0.072, ruim: 0.100}[marge]);
+            // Boven en onder moet de kopregel er nog bij kunnen; zonder kopregel
+            // mag de tekst dichter naar de snijrand toe.
+            var kopregel = document.getElementById('dv-kopregel').checked;
+            var v = Math.max(m, kopregel ? 11 : 6);
+            s.setProperty('--dv-marge-boven', v + 'mm');
+            s.setProperty('--dv-marge-onder', v + 'mm');
             s.setProperty('--dv-marge-binnen', m + 'mm');
             s.setProperty('--dv-marge-buiten', m + 'mm');
 
@@ -473,6 +575,16 @@
                 var onder = document.getElementById('dv-ondertitel').value.trim() ||
                     this.omschrijvingVanSelectie();
                 var c = this.voorwerkPagina('dv-cover');
+                // De omslagontwerpen staan er zonder tekst: GODS WOORD en
+                // OPEN VERTALING worden hier als echte letters gezet, niet als
+                // onderdeel van het beeld. Zo blijft de titel scherp en
+                // aanpasbaar, en kan de drukker hem als vector overnemen.
+                var omslag = document.getElementById('dv-omslag').value;
+                if (omslag) {
+                    c.classList.add('dv-cover-beeld');
+                    c.style.backgroundImage =
+                        'url("images/covers/gods-woord/web/' + omslag + '.webp")';
+                }
                 c.querySelector('.dv-inhoud').innerHTML =
                     '<div class="dv-cover-blok">' +
                     '<h1>' + this.tekstVeilig(titel) + '</h1>' +
@@ -549,9 +661,8 @@
             var bron = this.platen;
             if (!bron || !bron.platen) return null;
             var lijst = bron.platen[taak.boek.id];
-            if (!lijst || lijst.indexOf(taak.hoofdstuk) === -1) return null;
-            return (bron.map || '') + taak.boek.id + '_' + taak.hoofdstuk +
-                (bron.extensie || '.jpg');
+            var naam = lijst && lijst[String(taak.hoofdstuk)];
+            return naam ? (bron.map || '') + naam : null;
         },
 
         zetPlaat(pagina, bron) {
