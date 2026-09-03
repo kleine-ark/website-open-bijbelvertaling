@@ -13,13 +13,15 @@
 (function () {
     'use strict';
 
-    var BASE = 'audio';
-
     function manifestUrl(bookId, chapter, voice) {
-        return BASE + '/' + bookId + '/' + chapter + '/' + voice + '/manifest.json';
+        return window.OV_ASSETS.url(
+            'audio/' + bookId + '/' + chapter + '/' + voice + '/manifest.json'
+        );
     }
     function segUrl(bookId, chapter, voice, file) {
-        return BASE + '/' + bookId + '/' + chapter + '/' + voice + '/' + file;
+        return window.OV_ASSETS.url(
+            'audio/' + bookId + '/' + chapter + '/' + voice + '/' + file
+        );
     }
 
     // Standaardinstellingen; lezer-voorkeuren komen uit localStorage.

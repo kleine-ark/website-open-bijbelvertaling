@@ -30,5 +30,6 @@ jobs:
         .git/
         .github/
         .claude/
+        audio/
     secrets:
       deploy_ssh_key: ${{ secrets.DEPLOY_SSH_KEY }}

@@ -84,7 +84,10 @@ scripts/                  o.a. build_stats.py
 ```
 
 De site is **statisch** (HTML/CSS/vanilla JS) — geen build nodig; serveer de map met
-een willekeurige statische server.
+een willekeurige statische server. De grote audiobestanden staan op de externe
+assetserver en worden ook tijdens lokale ontwikkeling via internet geladen. Zie
+[`docs/external-assets.md`](docs/external-assets.md) voor de opslaglocatie en het
+publicatieproces.
 
 ## Bijdragen
 

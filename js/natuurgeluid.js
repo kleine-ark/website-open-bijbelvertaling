@@ -57,7 +57,7 @@
     }
 
     function maakElement(clip) {
-        var el = new Audio('audio/natuur/' + clip.bestand);
+        var el = new Audio(window.OV_ASSETS.url('audio/natuur/' + clip.bestand));
         el.preload = 'auto';
         el.volume = 0;
         return el;

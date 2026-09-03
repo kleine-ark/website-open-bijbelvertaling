@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Stelt de web-assets samen die in de desktop-app (Tauri) gebundeld worden.
 // Cross-platform (Linux + Windows CI): gebruikt alleen node:fs.
-// Sluit bewust uit: audio/ (11 GB), git/venvs/scripts/docs en alle build-mappen.
+// Sluit bewust uit: extern gepubliceerde audio, git/venvs/scripts/docs en build-mappen.
 import { cpSync, rmSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";

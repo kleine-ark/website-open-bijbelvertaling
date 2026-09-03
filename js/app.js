@@ -177,7 +177,7 @@ const App = {
         let done = false;
         const once = (fn) => { if (!done) { done = true; fn(); } };
         try {
-            const clip = new Audio(`audio/_announce/${voice}/${chapter}.mp3`);
+            const clip = new Audio(window.OV_ASSETS.url(`audio/_announce/${voice}/${chapter}.mp3`));
             clip.addEventListener('ended', () => once(start));
             clip.addEventListener('error', () => once(() => App._announceTTS(chapter, start)));
             clip.play().catch(() => once(() => App._announceTTS(chapter, start)));

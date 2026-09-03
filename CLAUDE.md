@@ -9,7 +9,8 @@ De lijst van hoofdstukken die een MP3-voorlezing hebben staat in **`js/audio-ava
 Reden: meerdere parallelle Claude-sessies werken in deze repo (één voor tekstverbetering in `js/lees.js`/`js/app.js`, één voor TTS-rollouts). Toen de audio-map nog inline in beide JS-files stond, werd hij meerdere keren per ongeluk teruggezet bij niet-gerelateerde edits.
 
 **Regels:**
-- Ga je MP3's genereren? Update `js/audio-available.js` na de rollout.
+- Ga je audio genereren? Publiceer die eerst met `scripts/publish_audio.sh` en
+  update `js/audio-available.js` pas nadat de checksumcontrole slaagt.
 - Edit je `js/lees.js` of `js/app.js`? Laat de audio-data met rust — die zit niet meer in deze files.
 - Tijdens runtime gebruiken beide entry-points `window.AUDIO_AVAILABLE` (geladen via `<script src="js/audio-available.js">` in `lees.html` en `index.html`, vóór de hoofd-JS).
 

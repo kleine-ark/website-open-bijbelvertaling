@@ -57,6 +57,6 @@ window.OV_AUDIO = {
     setVoice(v) { if (v === 'm' || v === 'v') localStorage.setItem('ov_voice', v); },
     toggleVoice() { const nv = this.getVoice() === 'm' ? 'v' : 'm'; this.setVoice(nv); return nv; },
     label(v) { return this.labels[v || this.getVoice()]; },
-    src(bookId, chapter) { return `audio/${bookId}/${chapter}-${this.getVoice()}.mp3`; },
+    src(bookId, chapter) { return window.OV_ASSETS.url(`audio/${bookId}/${chapter}-${this.getVoice()}.mp3`); },
     available(bookId, chapter) { const list = (window.AUDIO_AVAILABLE || {})[bookId] || []; return list.includes(chapter); },
 };

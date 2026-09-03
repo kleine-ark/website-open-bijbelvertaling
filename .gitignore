@@ -13,7 +13,11 @@ audio/_pilot/
 audio/_progress.json
 audio/_errors.log
 audio/_rollout.log
-# Tussenbestanden van XTTS-chunking — alleen .mp3's commiten
+audio/*.log
+audio/**/*.mp3
+audio/**/*.opus
+audio/**/*.wav
+# Tussenbestanden van XTTS-chunking — binaire audio wordt extern gepubliceerd
 audio/*/*.chunk*.wav
 audio/*/*.concat.txt
 audio/*/*.wav

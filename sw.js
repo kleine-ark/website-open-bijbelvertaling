@@ -22,6 +22,7 @@ const PRECACHE_URLS = [
     '/js/i18n.js',
     '/js/teksteditie.js',
     '/js/data-loader.js',
+    '/js/assets.js',
     '/js/book-orders.js',
     '/js/navigation.js',
     // Lokale fonts — pre-cachen zodat ze ook in slechte verbinding-situaties direct aanwezig zijn

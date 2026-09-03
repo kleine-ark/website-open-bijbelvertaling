@@ -4,8 +4,8 @@ De website wordt met [Tauri 2](https://tauri.app) verpakt tot een **offline
 desktop-app** voor **Windows** en **Linux**. De volledige bijbeltekst, grondtekst,
 kanttekeningen, onderwerpen en opmaak zitten in de app — geen internet nodig.
 
-> Audio (voorlezingen) zit **niet** in de app (11 GB). Wanneer er internet is, kan de
-> app de voorlezing alsnog van openvertaling.nl halen.
+> Audio (voorlezingen) zit **niet** in de app. Wanneer er internet is, haalt de app
+> de voorlezing via de algemene assetlocatie op bij kleineark.com.
 
 ## Structuur
 
