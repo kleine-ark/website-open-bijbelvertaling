@@ -16,6 +16,7 @@
     --dv-marge-binnen: 16mm;
     --dv-marge-buiten: 16mm;
     --dv-notitie-zij: 0mm;
+    --dv-lijnafstand: 5mm;
     --dv-notitie-onder: 0mm;
     --dv-kolommen: 2;
     --dv-kolomkier: 6mm;
@@ -62,7 +63,12 @@
 }
 .dv-veld output { color: #777; font-variant-numeric: tabular-nums; }
 /* Afmeting en lijntjes hebben alleen zin als er notitieruimte is. */
-.dv-alleen-notities { display: none; }
+.dv-alleen-notities, .dv-alleen-eigenmaat { display: none; }
+.dv-body[data-formaat="eigen"] .dv-alleen-eigenmaat { display: flex; }
+.dv-veld input[type="number"] {
+    font: inherit; width: 5.5em; padding: 4px 7px; border: 1px solid #d6d2c8;
+    border-radius: 5px; background: #fff; color: #222;
+}
 .dv-body:not([data-notities="geen"]) .dv-alleen-notities { display: flex; }
 
 .dv-boeken { margin-top: 6px; font-size: 13px; }
@@ -152,9 +158,9 @@
 }
 .dv-body:not([data-notities="geen"])[data-lijntjes="aan"] .dv-pagina:not(.dv-voorwerk)::after {
     background-image: repeating-linear-gradient(to bottom,
-        transparent 0, transparent calc(var(--dv-grootte) * var(--dv-interlinie) - 0.2mm),
-        #d9d3c6 calc(var(--dv-grootte) * var(--dv-interlinie) - 0.2mm),
-        #d9d3c6 calc(var(--dv-grootte) * var(--dv-interlinie)));
+        transparent 0, transparent calc(var(--dv-lijnafstand) - 0.2mm),
+        #d9d3c6 calc(var(--dv-lijnafstand) - 0.2mm),
+        #d9d3c6 var(--dv-lijnafstand));
 }
 
 /* --- kopregel en paginanummer --- */
@@ -277,6 +283,30 @@
 .dv-alleen-cover, .dv-alleen-voorwoord { display: none; }
 .dv-body[data-cover="aan"] .dv-alleen-cover { display: block; }
 .dv-body[data-voorwoord="aan"] .dv-alleen-voorwoord { display: block; }
+
+
+/* --- de plaat bij een hoofdstuk --- */
+/* Zij vult de onderste helft van het blad; het tekstblok krijgt daarom de
+   bovenste helft, zodat de opmaak er vanzelf omheen loopt. */
+.dv-pagina.dv-met-plaat .dv-inhoud { height: 48%; }
+.dv-plaat {
+    position: absolute; margin: 0;
+    left: var(--dv-marge-binnen);
+    right: calc(var(--dv-marge-buiten) + var(--dv-notitie-zij));
+    bottom: calc(var(--dv-marge-onder) + var(--dv-notitie-onder));
+    /* De bovenkant wordt uit dezelfde bladspiegel gerekend als het tekstblok
+       hierboven, anders schuiven de twee over elkaar heen zodra er ook
+       notitieruimte onderaan staat: percentages van een absoluut geplaatst
+       element gaan over het hele blad, die van .dv-inhoud over de bladspiegel. */
+    top: calc(var(--dv-marge-boven) + 2mm +
+        (100% - var(--dv-marge-boven) - var(--dv-marge-onder) - var(--dv-notitie-onder)) * 0.5);
+    display: flex; align-items: flex-end; justify-content: center;
+}
+.dv-pagina.dv-links .dv-plaat {
+    left: calc(var(--dv-marge-buiten) + var(--dv-notitie-zij));
+    right: var(--dv-marge-binnen);
+}
+.dv-plaat img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
 /* --- afdrukken --- */
 @media print {

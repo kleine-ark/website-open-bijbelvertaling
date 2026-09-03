@@ -25,7 +25,7 @@ jobs:
       # Bouwt downloads/ (EPUB + brondata-zip + index.json) tijdens de deploy,
       # zodat de uitgaven altijd gelijk lopen met de tekst en er geen binaire
       # bestanden in git terechtkomen.
-      build_command: python scripts/build_naslag_teksten.py && python scripts/build_naslag_verzen.py && python scripts/build_downloads.py
+      build_command: python scripts/build_naslag_teksten.py && python scripts/build_naslag_verzen.py && python scripts/build_illustraties.py && python scripts/build_downloads.py
       rsync_excludes: |
         .git/
         .github/

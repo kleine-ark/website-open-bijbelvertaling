@@ -36,6 +36,16 @@
         paginaNr: 0,
         bezig: false,
         perikopen: null,
+        platen: null,           // boek-id -> hoofdstukken met een plaat
+
+        /* Bladmaten in millimeters. De marge volgt de breedte in plaats van een
+           vaste maat per formaat, anders staat een zakbijbel met de marge van
+           een A4 op zijn kop. De factoren komen overeen met wat A4 en A5
+           hiervoor hadden. */
+        FORMATEN: {
+            letter: [216, 279], a4: [210, 297], b5: [176, 250], royaal: [156, 234],
+            a5: [148, 210], hand: [130, 190], zak: [115, 170], a6: [105, 148]
+        },
         boekStart: {},          // boek-id -> eerste bladnummer, voor de inhoudsopgave
 
         VOORWOORD:
@@ -209,8 +219,9 @@
                 if (this.value !== 'eigen') document.getElementById('dv-boeken-details').open = false;
             });
             // Deze keuzes veranderen de bladspiegel: de opmaak moet opnieuw.
-            ['dv-formaat', 'dv-kolommen', 'dv-marge', 'dv-letter', 'dv-grootte', 'dv-interlinie',
-             'dv-notities', 'dv-notitiemaat', 'dv-tussenkopjes', 'dv-inleiding', 'dv-kanttekeningen',
+            ['dv-formaat', 'dv-breedte-mm', 'dv-hoogte-mm', 'dv-kolommen', 'dv-marge',
+             'dv-letter', 'dv-grootte', 'dv-interlinie', 'dv-notities', 'dv-notitiemaat',
+             'dv-tussenkopjes', 'dv-inleiding', 'dv-platen', 'dv-kanttekeningen',
              'dv-versnummers', 'dv-versregels', 'dv-sierletter', 'dv-kopregel'].forEach(function (id) {
                 document.getElementById(id).addEventListener('input', function () {
                     self.pasInstellingenToe();
@@ -218,7 +229,7 @@
                 });
             });
             // Deze niet: alleen het voorwerk of de lijntjes veranderen.
-            ['dv-lijntjes', 'dv-cover', 'dv-titel', 'dv-ondertitel', 'dv-voorwoord',
+            ['dv-lijntjes', 'dv-lijnafstand', 'dv-cover', 'dv-titel', 'dv-ondertitel', 'dv-voorwoord',
              'dv-voorwoord-tekst', 'dv-inhoudsopgave'].forEach(function (id) {
                 document.getElementById(id).addEventListener('input', function () {
                     self.pasInstellingenToe();
@@ -239,11 +250,20 @@
             var b = document.body, s = b.style;
             var formaat = document.getElementById('dv-formaat').value;
             var marge = document.getElementById('dv-marge').value;
-            var a4 = formaat === 'a4';
-            s.setProperty('--dv-breedte', a4 ? '210mm' : '148mm');
-            s.setProperty('--dv-hoogte', a4 ? '297mm' : '210mm');
+            var maat = this.FORMATEN[formaat];
+            if (!maat) {
+                maat = [+document.getElementById('dv-breedte-mm').value || 148,
+                        +document.getElementById('dv-hoogte-mm').value || 210];
+            } else {
+                document.getElementById('dv-breedte-mm').value = maat[0];
+                document.getElementById('dv-hoogte-mm').value = maat[1];
+            }
+            b.dataset.formaat = formaat;
+            this.bladmaat = maat;
+            s.setProperty('--dv-breedte', maat[0] + 'mm');
+            s.setProperty('--dv-hoogte', maat[1] + 'mm');
 
-            var m = {krap: a4 ? 14 : 10, normaal: a4 ? 20 : 14, ruim: a4 ? 28 : 20}[marge];
+            var m = Math.round(maat[0] * {krap: 0.068, normaal: 0.095, ruim: 0.133}[marge]);
             s.setProperty('--dv-marge-boven', m + 'mm');
             s.setProperty('--dv-marge-onder', m + 'mm');
             s.setProperty('--dv-marge-binnen', m + 'mm');
@@ -259,6 +279,11 @@
             document.getElementById('dv-notitiemaat-uit').textContent =
                 document.getElementById('dv-notitiemaat').value + ' mm';
             b.dataset.notities = waar;
+            // De lijntjes staan los van de regelafstand van de tekst: met de hand
+            // schrijf je grover dan een zetter zet, en onderaan wil je er meer.
+            var lijn = document.getElementById('dv-lijnafstand').value;
+            s.setProperty('--dv-lijnafstand', lijn + 'mm');
+            document.getElementById('dv-lijnafstand-uit').textContent = lijn + ' mm';
 
             s.setProperty('--dv-kolommen', document.getElementById('dv-kolommen').value);
             s.setProperty('--dv-grootte', (document.getElementById('dv-grootte').value / 10) + 'pt');
@@ -286,7 +311,7 @@
                 regel.id = 'dv-page-rule';
                 document.head.appendChild(regel);
             }
-            regel.textContent = '@page { size: ' + (a4 ? '210mm 297mm' : '148mm 210mm') + '; margin: 0; }';
+            regel.textContent = '@page { size: ' + maat[0] + 'mm ' + maat[1] + 'mm; margin: 0; }';
         },
 
         /* De tabellen die de omzetters nodig hebben. Zonder deze stap zouden
@@ -303,6 +328,12 @@
                     .then(function (r) { return r.ok ? r.json() : {}; })
                     .then(function (d) { Druk.perikopen = d; })
                     .catch(function () { Druk.perikopen = {}; }));
+            }
+            if (document.getElementById('dv-platen').checked && !this.platen) {
+                werk.push(fetch('data/illustraties.json')
+                    .then(function (r) { return r.ok ? r.json() : {}; })
+                    .then(function (d) { Druk.platen = d; })
+                    .catch(function () { Druk.platen = { map: '', platen: {} }; }));
             }
             if (werk.length) await Promise.all(werk);
         },
@@ -361,6 +392,19 @@
                 this.zetStatus('Bezig: ' + taak.boek.nameDutch + ' ' + taak.hoofdstuk +
                     ' — ' + this.paginaNr + ' bladen');
                 var blokken = await this.blokkenVoorHoofdstuk(taak);
+
+                // Een plaat vult de onderste helft van het blad. Staat er al
+                // tekst op, dan begint het hoofdstuk op een nieuw blad: anders
+                // zou de plaat een halfvolle bladzijde doormidden snijden.
+                var plaat = this.plaatVoor(taak);
+                if (plaat) {
+                    if (inhoud.children.length) {
+                        pagina = this.nieuwePagina(houder, taak.boek);
+                        inhoud = pagina.querySelector('.dv-inhoud');
+                    }
+                    this.zetPlaat(pagina, plaat);
+                }
+
                 for (var i = 0; i < blokken.length; i++) {
                     inhoud.appendChild(blokken[i]);
                     if (this.looptOver(inhoud)) {
@@ -494,6 +538,33 @@
             return String(s).replace(/[&<>]/g, function (c) {
                 return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c];
             });
+        },
+
+        /* De platen staan in data/illustraties.json: per boek de hoofdstukken die
+           er een hebben, plus de map en de extensie. Ontbreekt het bestand of
+           het hoofdstuk, dan gebeurt er niets -- de opmaak mag niet afhangen van
+           beeldmateriaal dat er nog niet is. */
+        plaatVoor(taak) {
+            if (!document.getElementById('dv-platen').checked) return null;
+            var bron = this.platen;
+            if (!bron || !bron.platen) return null;
+            var lijst = bron.platen[taak.boek.id];
+            if (!lijst || lijst.indexOf(taak.hoofdstuk) === -1) return null;
+            return (bron.map || '') + taak.boek.id + '_' + taak.hoofdstuk +
+                (bron.extensie || '.jpg');
+        },
+
+        zetPlaat(pagina, bron) {
+            pagina.classList.add('dv-met-plaat');
+            var f = document.createElement('figure');
+            f.className = 'dv-plaat';
+            f.innerHTML = '<img src="' + bron + '" alt="">';
+            // Ontbreekt het bestand, dan krijgt het blad zijn volle hoogte terug.
+            f.firstChild.addEventListener('error', function () {
+                pagina.classList.remove('dv-met-plaat');
+                f.remove();
+            });
+            pagina.appendChild(f);
         },
 
         nieuwePagina(houder, boek) {

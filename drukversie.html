@@ -51,9 +51,24 @@
             <label class="dv-veld">
                 <span>Formaat</span>
                 <select id="dv-formaat">
+                    <option value="letter">US Letter — 216 × 279 mm</option>
                     <option value="a4">A4 — 210 × 297 mm</option>
+                    <option value="b5">B5 — 176 × 250 mm</option>
+                    <option value="royaal">Royaal — 156 × 234 mm</option>
                     <option value="a5" selected>A5 — 148 × 210 mm</option>
+                    <option value="hand">Handbijbel — 130 × 190 mm</option>
+                    <option value="zak">Zakbijbel — 115 × 170 mm</option>
+                    <option value="a6">A6 — 105 × 148 mm</option>
+                    <option value="eigen">Eigen maat…</option>
                 </select>
+            </label>
+            <label class="dv-veld dv-alleen-eigenmaat">
+                <span>Breedte</span>
+                <input type="number" id="dv-breedte-mm" min="70" max="320" step="1" value="148"> 
+            </label>
+            <label class="dv-veld dv-alleen-eigenmaat">
+                <span>Hoogte</span>
+                <input type="number" id="dv-hoogte-mm" min="100" max="460" step="1" value="210">
             </label>
             <label class="dv-veld">
                 <span>Kolommen</span>
@@ -91,6 +106,10 @@
                 <span>Lijntjes</span>
                 <input type="checkbox" id="dv-lijntjes" checked>
             </label>
+            <label class="dv-veld dv-alleen-notities">
+                <span>Lijnafstand <output id="dv-lijnafstand-uit">5 mm</output></span>
+                <input type="range" id="dv-lijnafstand" min="3" max="12" step="1" value="5">
+            </label>
         </section>
 
         <section class="dv-groep">
@@ -118,6 +137,7 @@
             <h2>Inhoud van de pagina</h2>
             <label class="dv-veld"><span>Tussenkopjes</span><input type="checkbox" id="dv-tussenkopjes" checked></label>
             <label class="dv-veld"><span>Hoofdstukinleiding</span><input type="checkbox" id="dv-inleiding"></label>
+            <label class="dv-veld"><span>Illustraties</span><input type="checkbox" id="dv-platen"></label>
             <label class="dv-veld"><span>Kanttekeningen</span><input type="checkbox" id="dv-kanttekeningen"></label>
             <label class="dv-veld"><span>Versnummers</span><input type="checkbox" id="dv-versnummers" checked></label>
             <label class="dv-veld"><span>Elk vers op een nieuwe regel</span><input type="checkbox" id="dv-versregels"></label>
