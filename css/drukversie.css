@@ -1,0 +1,217 @@
+/* === Drukversie — opmaakproef van een zelf samengestelde uitgave === */
+/* De maten staan in millimeters, want dat is wat een drukker leest. De
+   paginabladen op het scherm zijn even groot als op papier; wat u ziet is wat
+   er uit de printer komt. De variabelen hieronder worden door js/drukversie.js
+   gezet aan de hand van het paneel. */
+
+.dv-body {
+    margin: 0;
+    background: #e9e5dd;
+    font-family: var(--font-body);
+    color: #222;
+    --dv-breedte: 148mm;
+    --dv-hoogte: 210mm;
+    --dv-marge-boven: 16mm;
+    --dv-marge-onder: 16mm;
+    --dv-marge-binnen: 16mm;
+    --dv-marge-buiten: 16mm;
+    --dv-kolommen: 2;
+    --dv-kolomkier: 6mm;
+    --dv-letter: 'EB Garamond', Georgia, serif;
+    --dv-grootte: 9.5pt;
+    --dv-interlinie: 1.3;
+    --dv-accent: #142e42;
+}
+
+.dv-layout { display: flex; align-items: flex-start; min-height: 100vh; }
+
+/* --- het paneel --- */
+.dv-paneel {
+    flex: 0 0 320px;
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    background: #fffdf9;
+    border-right: 1px solid #d8d2c4;
+    padding: 22px 20px 40px;
+    box-sizing: border-box;
+}
+.dv-paneel h1 {
+    font-family: var(--font-cursive, 'EB Garamond', serif);
+    font-size: 30px; font-weight: 400; color: var(--navy, #142e42); margin: 0 0 6px;
+}
+.dv-uitleg { font-size: 13px; line-height: 1.55; color: #555; margin: 0 0 20px; }
+.dv-groep { border-top: 1px solid #eae4d6; padding-top: 14px; margin-bottom: 16px; }
+.dv-groep h2 {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--gold, #cba449); margin: 0 0 10px; font-weight: 600;
+}
+.dv-groep-uitleg { font-size: 12px; color: #777; margin: -4px 0 10px; line-height: 1.45; }
+.dv-veld {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; margin-bottom: 9px; font-size: 13px; color: #333;
+}
+.dv-veld > span { flex: 1 1 auto; }
+.dv-veld select, .dv-veld input[type="range"] { flex: 0 0 auto; max-width: 62%; }
+.dv-veld select {
+    font: inherit; padding: 4px 7px; border: 1px solid #d6d2c8;
+    border-radius: 5px; background: #fff; color: #222;
+}
+.dv-veld output { color: #777; font-variant-numeric: tabular-nums; }
+/* De schrijfmarge-instelling heeft alleen zin bij een bijschrijfbijbel. */
+.dv-alleen-bijschrijf { display: none; }
+.dv-body[data-marge="bijschrijf"] .dv-alleen-bijschrijf { display: flex; }
+
+.dv-boeken { margin-top: 6px; font-size: 13px; }
+.dv-boeken summary { cursor: pointer; color: var(--navy, #142e42); }
+.dv-telling { color: #999; }
+.dv-boekenlijst { max-height: 260px; overflow-y: auto; margin-top: 8px; padding-right: 4px; }
+.dv-boekenlijst h3 {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em;
+    color: #999; margin: 12px 0 4px; font-weight: 600;
+}
+.dv-boekenlijst h3:first-child { margin-top: 0; }
+.dv-boekenlijst label {
+    display: flex; align-items: center; gap: 7px; padding: 2px 0;
+    font-size: 12.5px; color: #333; cursor: pointer;
+}
+
+.dv-acties { border-top: 1px solid #eae4d6; padding-top: 14px; }
+.dv-knop {
+    font: inherit; font-size: 13px; padding: 8px 15px; border-radius: 6px;
+    border: 1px solid #d6d2c8; background: #f2ede3; color: #333; cursor: pointer;
+}
+.dv-knop:hover { background: #e7e0d2; }
+.dv-knop-hoofd { background: var(--navy, #142e42); border-color: var(--navy, #142e42); color: #fff; }
+.dv-knop-hoofd:hover { background: var(--gold, #cba449); border-color: var(--gold, #cba449); color: var(--navy, #142e42); }
+.dv-knop[disabled] { opacity: .55; cursor: progress; }
+.dv-status { font-size: 12px; color: #666; margin: 10px 0 0; min-height: 1.2em; line-height: 1.45; }
+
+/* --- de vellen --- */
+.dv-vel { flex: 1 1 auto; padding: 26px 20px 60px; display: flex; flex-direction: column; align-items: center; }
+.dv-leeg { color: #7a7365; font-size: 14px; margin-top: 60px; }
+.dv-verder { text-align: center; margin: 26px 0 0; }
+.dv-verder p { font-size: 13px; color: #666; margin: 0 0 10px; }
+
+.dv-pagina {
+    width: var(--dv-breedte);
+    height: var(--dv-hoogte);
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.16);
+    margin: 0 auto 18px;
+    padding: var(--dv-marge-boven) var(--dv-marge-buiten) var(--dv-marge-onder) var(--dv-marge-binnen);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--dv-letter);
+    font-size: var(--dv-grootte);
+    line-height: var(--dv-interlinie);
+    color: #1a1a1a;
+}
+/* Rechterpagina's spiegelen: de binnenmarge zit aan de rug. */
+.dv-pagina.dv-links { padding-left: var(--dv-marge-buiten); padding-right: var(--dv-marge-binnen); }
+
+.dv-inhoud { column-count: var(--dv-kolommen); column-gap: var(--dv-kolomkier); height: 100%; }
+.dv-pagina[data-kolommen="1"] .dv-inhoud { column-count: 1; }
+
+/* De schrijfmarge van een bijschrijfbijbel, met optionele lijntjes. */
+.dv-body[data-marge="bijschrijf"] .dv-pagina::after {
+    content: '';
+    position: absolute;
+    top: var(--dv-marge-boven);
+    bottom: var(--dv-marge-onder);
+    right: 4mm;
+    width: calc(var(--dv-marge-buiten) - 8mm);
+    pointer-events: none;
+}
+.dv-body[data-marge="bijschrijf"][data-lijntjes="aan"] .dv-pagina::after {
+    background-image: repeating-linear-gradient(to bottom,
+        transparent 0, transparent calc(var(--dv-grootte) * var(--dv-interlinie) - 0.2mm),
+        #d9d3c6 calc(var(--dv-grootte) * var(--dv-interlinie) - 0.2mm),
+        #d9d3c6 calc(var(--dv-grootte) * var(--dv-interlinie)));
+}
+.dv-body[data-marge="bijschrijf"] .dv-pagina.dv-links::after { right: auto; left: 4mm; }
+
+/* --- kopregel en paginanummer --- */
+.dv-kop, .dv-voet {
+    position: absolute; left: var(--dv-marge-binnen); right: var(--dv-marge-buiten);
+    font-size: 7.5pt; color: #8a8375; letter-spacing: 0.04em;
+    display: flex; justify-content: space-between;
+}
+.dv-kop { top: calc(var(--dv-marge-boven) - 7mm); border-bottom: 0.2mm solid #e4dfd2; padding-bottom: 1.5mm; }
+.dv-voet { bottom: calc(var(--dv-marge-onder) - 6mm); justify-content: center; }
+.dv-pagina.dv-links .dv-kop, .dv-pagina.dv-links .dv-voet {
+    left: var(--dv-marge-buiten); right: var(--dv-marge-binnen);
+}
+.dv-body[data-kopregel="uit"] .dv-kop, .dv-body[data-kopregel="uit"] .dv-voet { display: none; }
+
+/* --- de tekst zelf --- */
+.dv-boektitel {
+    column-span: all;
+    font-family: var(--font-cursive, 'EB Garamond', serif);
+    font-size: 2.1em; font-weight: 400; text-align: center;
+    color: var(--dv-accent); margin: 0 0 0.6em; letter-spacing: 0.02em;
+}
+.dv-hoofdstuk {
+    font-size: 1.25em; font-weight: 600; color: var(--dv-accent);
+    margin: 0.9em 0 0.35em; break-after: avoid;
+}
+.dv-hoofdstuk:first-child { margin-top: 0; }
+.dv-inleiding {
+    font-size: 0.86em; font-style: italic; color: #5b544a;
+    margin: 0 0 0.6em; line-height: 1.4; break-after: avoid;
+}
+/* Elk vers is een eigen element; de opmaak bepaalt of ze doorlopen of onder
+   elkaar staan. Doorlopend is inline, zodat een blad op versgrens kan breken. */
+.dv-inhoud { text-align: justify; hyphens: auto; }
+.dv-body[data-versregels="uit"] .dv-vers { display: inline; }
+.dv-body[data-versregels="aan"] .dv-vers {
+    display: block; margin-bottom: 0.12em; text-indent: 0; text-align: left;
+}
+.dv-versnr {
+    font-size: 0.72em; font-weight: 600; color: var(--gold, #a08432);
+    vertical-align: super; line-height: 0; margin-right: 0.15em;
+}
+.dv-body[data-versnummers="uit"] .dv-versnr { display: none; }
+.dv-noten {
+    column-span: all;
+    border-top: 0.2mm solid #ddd7c8;
+    margin-top: 1.2em; padding-top: 0.5em;
+    font-size: 0.72em; line-height: 1.35; color: #55504a;
+}
+.dv-noot { margin: 0 0 0.25em; }
+.dv-noot b { color: var(--gold, #a08432); font-weight: 600; }
+.dv-sierletter {
+    float: left; font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
+    font-size: 2.7em; line-height: 0.78; padding: 0.06em 0.1em 0 0; color: var(--dv-accent);
+}
+.dv-body[data-sierletter="uit"] .dv-sierletter { float: none; font-size: inherit; line-height: inherit; padding: 0; color: inherit; }
+
+/* lettertypekeuze */
+.dv-body[data-letter="garamond"] { --dv-letter: 'EB Garamond', Georgia, serif; }
+.dv-body[data-letter="georgia"]  { --dv-letter: Georgia, 'Times New Roman', serif; }
+.dv-body[data-letter="fira"]     { --dv-letter: 'Fira Sans', 'Segoe UI', sans-serif; }
+.dv-body[data-letter="lexend"]   { --dv-letter: 'Lexend', 'Segoe UI', sans-serif; }
+
+/* --- afdrukken --- */
+@media print {
+    .dv-paneel, .dv-verder, .dv-leeg { display: none !important; }
+    .dv-body { background: #fff; }
+    .dv-layout { display: block; }
+    .dv-vel { padding: 0; display: block; }
+    .dv-pagina {
+        box-shadow: none;
+        margin: 0;
+        break-after: page;
+        page-break-after: always;
+    }
+    .dv-pagina:last-child { break-after: auto; page-break-after: auto; }
+}
+
+@media (max-width: 900px) {
+    .dv-layout { display: block; }
+    .dv-paneel { position: static; flex: none; width: auto; max-height: none; border-right: 0; border-bottom: 1px solid #d8d2c4; }
+    .dv-vel { padding: 18px 8px 40px; }
+    .dv-pagina { transform-origin: top center; }
+}

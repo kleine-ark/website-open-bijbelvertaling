@@ -1,0 +1,451 @@
+/* Drukversie — een zelf samengestelde uitgave, pagina voor pagina opgemaakt.
+ *
+ * De tekst loopt door precies dezelfde bewerking als in de lezer: Opties.
+ * transformOV, markeerGeo, rekenMaten en rekenTijden, in die volgorde. Dat is
+ * geen keuze uit gemak maar uit noodzaak — zou deze pagina zijn eigen omzetting
+ * doen, dan zou de drukproef stilletjes iets anders laten zien dan de site, en
+ * juist dat verschil valt op papier niet meer te herstellen.
+ *
+ * Die omzetters laden hun tabellen lui en geven de tekst ongewijzigd terug
+ * zolang die er niet zijn. Op de leespagina valt dat niet op, want daar wordt
+ * na het laden opnieuw gerenderd; hier zou een lezer een uitgave afdrukken
+ * waarin de maten stilzwijgend onomgerekend zijn gebleven. Vandaar dat alles
+ * wat nodig is vóór het opmaken wordt binnengehaald.
+ *
+ * Opmaken gebeurt door te meten. Er bestaat geen manier om vooraf te weten waar
+ * een pagina vol is, dus vullen we een blad tot het overloopt, halen het laatste
+ * blok er weer af en beginnen een nieuw blad. Bij twee kolommen loopt een blad
+ * niet in de hoogte over maar in de breedte — de tekst maakt een derde kolom
+ * naast de tweede — en daarom wordt op allebei gemeten.
+ *
+ * De hele Bijbel is ruim eenendertigduizend verzen. Dat in een keer opmaken
+ * duurt te lang en levert een pagina op die niet meer reageert, dus gaat het
+ * per honderd bladen, met een knop voor de volgende ronde.
+ */
+(function () {
+    'use strict';
+
+    var PAGINAS_PER_RONDE = 100;
+
+    var Druk = {
+        boeken: null,
+        gekozen: new Set(),
+        /* De opdracht die nog te doen is: een vlakke lijst hoofdstukken. */
+        wachtrij: [],
+        klaar: 0,
+        paginaNr: 0,
+        bezig: false,
+
+        /* De leesopties die op een gedrukte uitgave van toepassing zijn. De
+           overige — thema, kolomindeling, Strong-nummers — gaan over het scherm
+           en horen hier niet thuis. */
+        LEESOPTIES: [
+            ['godsnaam', 'Godsnaam', [['ov', 'JAHWEH'], ['klassiek', 'de HEERE'],
+                ['jehovah', 'Jehovah'], ['jhwh', 'יהוה']]],
+            ['heereNT', 'Aanspreektitel in het NT', [['heere', 'Heere'], ['here', 'Here']]],
+            ['jezusNaam', 'Naam van Jezus', [['nl', 'Jezus Christus'], ['hebreeuws', 'Yeshua HaMashiach'],
+                ['koranisch', 'Isa'], ['arabisch', 'Yasūʿ al-Masīḥ']]],
+            ['arabischeNamen', 'Arabische naamvormen', [['uit', 'Nederlands'], ['aan', 'Musa, Ibrahim, Isa']]],
+            ['otSheol', 'Sheol in het OT', [['dodenrijk', 'dodenrijk'], ['hel', 'hel']]],
+            ['maatstelsel', 'Maten en gewichten', [['bijbels', 'bijbels'], ['metrisch', 'metrisch'],
+                ['imperiaal', 'imperiaal']]],
+            ['tijdrekening', 'Tijdsaanduidingen', [['bijbels', 'de derde ure'], ['modern', 'omgerekend']]],
+            ['getalweergave', 'Getallen', [['woorden', 'in woorden'], ['cijfers', 'met cijfers erbij']]],
+            ['citaten', 'Citaatopmaak', [['aan', 'aan'], ['uit', 'uit']]],
+            ['geoMarkeren', 'Plaatsnamen markeren', [['uit', 'uit'], ['aan', 'aan (Tora)']]],
+            ['boekvolgorde', 'Boekvolgorde', [['canoniek', 'canoniek'], ['tenach', 'Tenach'],
+                ['chronologisch', 'chronologisch'], ['auteur', 'op auteur'], ['lengte', 'op lengte']]]
+        ],
+
+        UITGAVEN: {
+            'taurat-injil': ['genesis', 'johannes'],
+            'tora': ['genesis', 'exodus', 'leviticus', 'numeri', 'deuteronomium'],
+            'evangelien': ['mattheus', 'markus', 'lukas', 'johannes'],
+            'psalmen-spreuken': ['psalmen', 'spreuken']
+        },
+
+        async init() {
+            var manifest = await DataLoader.loadManifest();
+            this.boeken = (manifest && manifest.books) || [];
+            // Eigen staat, los van wat de lezer op de site heeft ingesteld: een
+            // drukproef hoort de voorkeuren van de lezer niet te overschrijven.
+            Opties.state = Object.assign({}, Opties.DEFAULTS);
+            Opties._initialized = true;
+            this.vulBoekenlijst();
+            this.vulLeesopties();
+            this.bindPaneel();
+            this.kiesUitgave('alles');
+            this.pasInstellingenToe();
+        },
+
+        boekenPerTestament() {
+            var groepen = [['OT', 'Oude Testament'], ['NT', 'Nieuwe Testament'],
+                ['AP', 'Apocriefen'], ['ET', 'Ethiopische boeken']];
+            var uit = [];
+            groepen.forEach(function (g) {
+                var lijst = this.boeken.filter(function (b) { return b.testament === g[0]; });
+                if (lijst.length) uit.push([g[1], lijst]);
+            }, this);
+            return uit;
+        },
+
+        vulBoekenlijst() {
+            var houder = document.getElementById('dv-boekenlijst');
+            var html = '';
+            this.boekenPerTestament().forEach(function (groep) {
+                html += '<h3>' + groep[0] + '</h3>';
+                groep[1].forEach(function (b) {
+                    html += '<label><input type="checkbox" value="' + b.id + '"> ' +
+                        b.nameDutch + '</label>';
+                });
+            });
+            houder.innerHTML = html;
+            houder.addEventListener('change', function (e) {
+                if (e.target.type !== 'checkbox') return;
+                if (e.target.checked) this.gekozen.add(e.target.value);
+                else this.gekozen.delete(e.target.value);
+                document.getElementById('dv-uitgave').value = 'eigen';
+                this.werkTellingBij();
+            }.bind(this));
+        },
+
+        vulLeesopties() {
+            var houder = document.getElementById('dv-leesopties');
+            var html = '';
+            this.LEESOPTIES.forEach(function (o) {
+                html += '<label class="dv-veld"><span>' + o[1] + '</span><select data-leesoptie="' +
+                    o[0] + '">';
+                o[2].forEach(function (keuze) {
+                    var gekozen = Opties.DEFAULTS[o[0]] === keuze[0] ? ' selected' : '';
+                    html += '<option value="' + keuze[0] + '"' + gekozen + '>' + keuze[1] + '</option>';
+                });
+                html += '</select></label>';
+            });
+            houder.innerHTML = html;
+            houder.addEventListener('change', function (e) {
+                var sleutel = e.target.getAttribute('data-leesoptie');
+                if (!sleutel) return;
+                Opties.state[sleutel] = e.target.value;
+                this.meldWijziging();
+            }.bind(this));
+        },
+
+        kiesUitgave(keuze) {
+            var ids;
+            if (keuze === 'alles') {
+                ids = this.boeken.filter(function (b) { return b.testament !== 'ET'; })
+                    .map(function (b) { return b.id; });
+            } else if (keuze === 'ot' || keuze === 'nt') {
+                var t = keuze.toUpperCase();
+                ids = this.boeken.filter(function (b) { return b.testament === t; })
+                    .map(function (b) { return b.id; });
+            } else if (this.UITGAVEN[keuze]) {
+                ids = this.UITGAVEN[keuze].slice();
+            } else {
+                return;   // 'eigen' laat de aangevinkte boeken staan
+            }
+            this.gekozen = new Set(ids);
+            document.querySelectorAll('#dv-boekenlijst input').forEach(function (c) {
+                c.checked = this.gekozen.has(c.value);
+            }, this);
+            this.werkTellingBij();
+        },
+
+        werkTellingBij() {
+            var n = this.gekozen.size;
+            document.getElementById('dv-boeken-telling').textContent =
+                '— ' + n + (n === 1 ? ' boek' : ' boeken');
+            this.meldWijziging();
+        },
+
+        meldWijziging() {
+            if (!document.getElementById('dv-paginas').children.length) return;
+            this.zetStatus('De instellingen zijn gewijzigd. Klik op Opmaakproef maken om ze door te voeren.');
+        },
+
+        zetStatus(tekst) { document.getElementById('dv-status').textContent = tekst; },
+
+        bindPaneel() {
+            var self = this;
+            document.getElementById('dv-uitgave').addEventListener('change', function () {
+                self.kiesUitgave(this.value);
+                if (this.value !== 'eigen') document.getElementById('dv-boeken-details').open = false;
+            });
+            ['dv-formaat', 'dv-kolommen', 'dv-marge', 'dv-letter', 'dv-grootte', 'dv-interlinie',
+             'dv-lijntjes', 'dv-inleiding', 'dv-kanttekeningen', 'dv-versnummers', 'dv-versregels',
+             'dv-sierletter', 'dv-kopregel'].forEach(function (id) {
+                document.getElementById(id).addEventListener('input', function () {
+                    self.pasInstellingenToe();
+                    self.meldWijziging();
+                });
+            });
+            document.getElementById('dv-bouw').addEventListener('click', function () { self.bouw(); });
+            document.getElementById('dv-print').addEventListener('click', function () { window.print(); });
+            document.getElementById('dv-verder-knop').addEventListener('click', function () {
+                self.rendeerRonde();
+            });
+        },
+
+        /* Paneel -> CSS-variabelen en kenmerken op body. De maten staan in
+           millimeters omdat een blad op het scherm even groot hoort te zijn als
+           op papier. */
+        pasInstellingenToe() {
+            var b = document.body, s = b.style;
+            var formaat = document.getElementById('dv-formaat').value;
+            var marge = document.getElementById('dv-marge').value;
+            var a4 = formaat === 'a4';
+            s.setProperty('--dv-breedte', a4 ? '210mm' : '148mm');
+            s.setProperty('--dv-hoogte', a4 ? '297mm' : '210mm');
+
+            var m = {krap: a4 ? 14 : 10, normaal: a4 ? 20 : 14, ruim: a4 ? 28 : 20,
+                     bijschrijf: a4 ? 20 : 14}[marge];
+            s.setProperty('--dv-marge-boven', m + 'mm');
+            s.setProperty('--dv-marge-onder', m + 'mm');
+            s.setProperty('--dv-marge-binnen', m + 'mm');
+            // De schrijfmarge van een bijschrijfbijbel zit aan de buitenkant,
+            // waar de hand bij kan zonder over de rug te schrijven.
+            s.setProperty('--dv-marge-buiten', marge === 'bijschrijf' ? (a4 ? '62mm' : '45mm') : m + 'mm');
+
+            s.setProperty('--dv-kolommen', document.getElementById('dv-kolommen').value);
+            s.setProperty('--dv-grootte', (document.getElementById('dv-grootte').value / 10) + 'pt');
+            s.setProperty('--dv-interlinie', document.getElementById('dv-interlinie').value / 100);
+
+            b.dataset.marge = marge;
+            b.dataset.letter = document.getElementById('dv-letter').value;
+            b.dataset.lijntjes = document.getElementById('dv-lijntjes').checked ? 'aan' : 'uit';
+            b.dataset.versnummers = document.getElementById('dv-versnummers').checked ? 'aan' : 'uit';
+            b.dataset.versregels = document.getElementById('dv-versregels').checked ? 'aan' : 'uit';
+            b.dataset.sierletter = document.getElementById('dv-sierletter').checked ? 'aan' : 'uit';
+            b.dataset.kopregel = document.getElementById('dv-kopregel').checked ? 'aan' : 'uit';
+
+            document.getElementById('dv-grootte-uit').textContent =
+                (document.getElementById('dv-grootte').value / 10).toFixed(1).replace('.', ',') + ' pt';
+            document.getElementById('dv-interlinie-uit').textContent =
+                (document.getElementById('dv-interlinie').value / 100).toFixed(2).replace('.', ',');
+
+            // De printer moet hetzelfde papier krijgen als het scherm laat zien.
+            var regel = document.getElementById('dv-page-rule');
+            if (!regel) {
+                regel = document.createElement('style');
+                regel.id = 'dv-page-rule';
+                document.head.appendChild(regel);
+            }
+            regel.textContent = '@page { size: ' + (a4 ? '210mm 297mm' : '148mm 210mm') + '; margin: 0; }';
+        },
+
+        /* De tabellen die de omzetters nodig hebben. Zonder deze stap zouden
+           maten, tijden en namen ongemerkt onvertaald blijven. */
+        async laadTabellen() {
+            var werk = [];
+            var st = Opties.state;
+            if (st.maatstelsel !== 'bijbels' || st.getalweergave === 'cijfers') werk.push(Opties.loadEenheden());
+            if (st.tijdrekening === 'modern') werk.push(Opties.loadTijden());
+            if (st.arabischeNamen === 'aan') werk.push(Opties.loadArabischeNamen());
+            if (st.geoMarkeren === 'aan') werk.push(Opties.loadGeoData());
+            if (werk.length) await Promise.all(werk);
+        },
+
+        async bouw() {
+            if (this.bezig) return;
+            if (!this.gekozen.size) { this.zetStatus('Kies eerst ten minste één boek.'); return; }
+            document.getElementById('dv-leeg').hidden = true;
+            document.getElementById('dv-paginas').innerHTML = '';
+            document.getElementById('dv-verder').hidden = true;
+            this.paginaNr = 0;
+            this.klaar = 0;
+            this.zetStatus('Tabellen laden…');
+            await this.laadTabellen();
+
+            // Boekvolgorde volgens de gekozen ordening, beperkt tot de selectie.
+            var volgorde;
+            try {
+                volgorde = getFlatBookOrder(Opties.state.boekvolgorde, { books: this.boeken });
+            } catch (e) {
+                volgorde = this.boeken.map(function (b) { return b.id; });
+            }
+            var perId = {};
+            this.boeken.forEach(function (b) { perId[b.id] = b; });
+
+            this.wachtrij = [];
+            volgorde.forEach(function (id) {
+                if (!this.gekozen.has(id)) return;
+                var boek = perId[id];
+                if (!boek) return;
+                (boek.chaptersIncluded || []).forEach(function (ch, i) {
+                    this.wachtrij.push({ boek: boek, hoofdstuk: ch, eerste: i === 0 });
+                }, this);
+            }, this);
+
+            await this.rendeerRonde();
+        },
+
+        async rendeerRonde() {
+            if (this.bezig) return;
+            this.bezig = true;
+            var knop = document.getElementById('dv-verder-knop');
+            knop.disabled = true;
+            document.getElementById('dv-verder').hidden = true;
+
+            var houder = document.getElementById('dv-paginas');
+            var start = this.paginaNr;
+            var pagina = this.nieuwePagina(houder);
+            var inhoud = pagina.querySelector('.dv-inhoud');
+
+            while (this.klaar < this.wachtrij.length && (this.paginaNr - start) < PAGINAS_PER_RONDE) {
+                var taak = this.wachtrij[this.klaar];
+                this.zetStatus('Bezig: ' + taak.boek.nameDutch + ' ' + taak.hoofdstuk +
+                    ' — ' + this.paginaNr + ' bladen');
+                var blokken = await this.blokkenVoorHoofdstuk(taak);
+                for (var i = 0; i < blokken.length; i++) {
+                    inhoud.appendChild(blokken[i]);
+                    if (this.looptOver(inhoud)) {
+                        inhoud.removeChild(blokken[i]);
+                        // Een leeg blad zou een blok opleveren dat nergens past;
+                        // dan blijft het staan waar het staat.
+                        if (!inhoud.children.length) { inhoud.appendChild(blokken[i]); continue; }
+                        pagina = this.nieuwePagina(houder, taak.boek);
+                        inhoud = pagina.querySelector('.dv-inhoud');
+                        inhoud.appendChild(blokken[i]);
+                        if ((this.paginaNr - start) >= PAGINAS_PER_RONDE) break;
+                    }
+                }
+                this.klaar++;
+                // De pagina moet tussendoor kunnen tekenen, anders lijkt hij vast te zitten.
+                await new Promise(function (r) { setTimeout(r, 0); });
+            }
+
+            this.bezig = false;
+            knop.disabled = false;
+            var rest = this.wachtrij.length - this.klaar;
+            if (rest > 0) {
+                document.getElementById('dv-verder').hidden = false;
+                document.getElementById('dv-verder-tekst').textContent =
+                    this.paginaNr + ' bladen opgemaakt. Er staan nog ' + rest +
+                    (rest === 1 ? ' hoofdstuk' : ' hoofdstukken') + ' in de wachtrij.';
+                this.zetStatus(this.paginaNr + ' bladen klaar, ' + rest + ' hoofdstukken te gaan.');
+            } else {
+                this.zetStatus('Klaar: ' + this.paginaNr + ' bladen.');
+            }
+        },
+
+        nieuwePagina(houder, boek) {
+            this.paginaNr++;
+            var p = document.createElement('div');
+            p.className = 'dv-pagina' + (this.paginaNr % 2 === 0 ? ' dv-links' : '');
+            p.dataset.kolommen = document.getElementById('dv-kolommen').value;
+            var titel = boek ? boek.nameDutch : '';
+            p.innerHTML =
+                '<div class="dv-kop"><span>' + titel + '</span><span>Open Vertaling</span></div>' +
+                '<div class="dv-inhoud"></div>' +
+                '<div class="dv-voet"><span>' + this.paginaNr + '</span></div>';
+            houder.appendChild(p);
+            return p;
+        },
+
+        /* Een blad loopt bij een kolom in de hoogte over en bij twee kolommen in
+           de breedte, want de tekst maakt dan een kolom naast de laatste. */
+        looptOver(inhoud) {
+            return inhoud.scrollHeight > inhoud.clientHeight + 1 ||
+                   inhoud.scrollWidth > inhoud.clientWidth + 1;
+        },
+
+        async blokkenVoorHoofdstuk(taak) {
+            var data = await DataLoader.loadChapter(taak.boek.id, taak.hoofdstuk);
+            var blokken = [];
+            var testament = taak.boek.testament;
+
+            if (taak.eerste) {
+                var t = document.createElement('h2');
+                t.className = 'dv-boektitel';
+                t.textContent = taak.boek.nameDutch;
+                blokken.push(t);
+            }
+            var h = document.createElement('h3');
+            h.className = 'dv-hoofdstuk';
+            h.textContent = taak.boek.nameDutch + ' ' + taak.hoofdstuk;
+            blokken.push(h);
+
+            if (document.getElementById('dv-inleiding').checked && data && data.chapterIntro) {
+                var intro = data.chapterIntro.text2026 || data.chapterIntro.textSV1888 ||
+                    data.chapterIntro.text1637;
+                if (intro) {
+                    var p = document.createElement('p');
+                    p.className = 'dv-inleiding';
+                    p.innerHTML = this.schoon(intro);
+                    blokken.push(p);
+                }
+            }
+
+            var verzen = ((data && data.verses) || []).filter(function (v) { return v && v.number; });
+            var noten = [];
+            var sierletter = document.getElementById('dv-sierletter').checked;
+
+            // Elk vers is een eigen element, ook bij doorlopende tekst. Zou een
+            // heel hoofdstuk in één alinea staan, dan valt het niet te breken en
+            // loopt elk blad over -- de eerste opzet leverde zo bladen op met
+            // alleen een kopje erop. Of de verzen naast elkaar of onder elkaar
+            // komen bepaalt de CSS, niet de opbouw.
+            verzen.forEach(function (v, idx) {
+                var tekst = v.text2026_html || v.text2026 || '';
+                tekst = this.bewerk(tekst, taak.boek.id, taak.hoofdstuk, v.number, testament);
+                tekst = this.schoon(tekst);
+                if (sierletter && idx === 0) tekst = this.metSierletter(tekst);
+
+                var r = document.createElement('span');
+                r.className = 'dv-vers';
+                r.innerHTML = '<span class="dv-versnr">' + v.number + '</span>' + tekst + ' ';
+                blokken.push(r);
+                if (document.getElementById('dv-kanttekeningen').checked) {
+                    (v.marginNotes || []).forEach(function (n) {
+                        var nt = n.text2026 || n.textSV1888;
+                        if (nt) noten.push([taak.hoofdstuk + ':' + v.number, n.marker, nt]);
+                    });
+                }
+            }, this);
+
+            if (noten.length) {
+                var blok = document.createElement('div');
+                blok.className = 'dv-noten';
+                blok.innerHTML = noten.map(function (n) {
+                    return '<p class="dv-noot"><b>' + n[0] + '</b> ' +
+                        Druk.schoon(String(n[2])) + '</p>';
+                }).join('');
+                blokken.push(blok);
+            }
+            return blokken;
+        },
+
+        /* Dezelfde keten als de lezer, in dezelfde volgorde. */
+        bewerk(html, boekId, hs, vs, testament) {
+            if (Opties.transformOV) html = Opties.transformOV(html, testament);
+            if (Opties.markeerGeo) html = Opties.markeerGeo(html, boekId, hs, vs);
+            if (Opties.rekenMaten) html = Opties.rekenMaten(html, boekId, hs, vs);
+            if (Opties.rekenTijden) html = Opties.rekenTijden(html, boekId, hs, vs, testament);
+            return html;
+        },
+
+        /* Nootmarkeringen en woordnummers horen niet in een drukproef; de
+           citaatopmaak blijft, want die is een keuze in het paneel. */
+        schoon(html) {
+            return String(html)
+                .replace(/<sup class="note-marker"[^>]*>.*?<\/sup>/g, '')
+                .replace(/<span class="strongs[^"]*"[^>]*>.*?<\/span>/g, '')
+                .replace(/\s{2,}/g, ' ')
+                .trim();
+        },
+
+        metSierletter(html) {
+            return html.replace(/([A-Za-zÀ-ÖØ-öø-ÿ])/, function (m) {
+                return '<span class="dv-sierletter">' + m + '</span>';
+            });
+        }
+    };
+
+    window.Druk = Druk;
+    document.addEventListener('DOMContentLoaded', function () {
+        Druk.init().catch(function (e) {
+            console.error(e);
+            Druk.zetStatus('Er ging iets mis bij het laden: ' + e.message);
+        });
+    });
+})();
