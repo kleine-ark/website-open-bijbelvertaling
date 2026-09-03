@@ -582,14 +582,23 @@
                 var omslag = document.getElementById('dv-omslag').value;
                 if (omslag) {
                     c.classList.add('dv-cover-beeld');
+                    c.dataset.omslag = omslag;
                     c.style.backgroundImage =
                         'url("images/covers/gods-woord/web/' + omslag + '.webp")';
                 }
+                // Titel en editieaanduiding staan in een vaste lockup: een dunne
+                // regel met een ruitje, de naam in kapitalen, weer een regel, en
+                // daaronder de aanduiding in gespatieerde kapitalen. Zo staat het
+                // op het ontwerp zelf ook, en zo blijft het over elk van de zes
+                // beelden leesbaar zonder er een gloed omheen te leggen.
                 c.querySelector('.dv-inhoud').innerHTML =
-                    '<div class="dv-cover-blok">' +
+                    '<div class="dv-cover-blok"><div class="dv-cover-naam">' +
+                    '<span class="dv-cover-regel" aria-hidden="true"></span>' +
                     '<h1>' + this.tekstVeilig(titel) + '</h1>' +
+                    '<span class="dv-cover-regel" aria-hidden="true"></span>' +
                     (onder ? '<p class="dv-cover-onder">' + this.tekstVeilig(onder) + '</p>' : '') +
-                    '<p class="dv-cover-voet">openvertaling.nl</p></div>';
+                    '</div></div>' +
+                    '<p class="dv-cover-voet">openvertaling.nl</p>';
                 bladen.push(c);
             }
 

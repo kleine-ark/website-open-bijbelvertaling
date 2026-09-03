@@ -248,15 +248,41 @@
     height: 100%; display: flex; flex-direction: column;
     align-items: center; justify-content: center; text-align: center;
 }
+.dv-cover-naam { width: 86%; }
 .dv-cover-blok h1 {
-    font-family: var(--font-cursive, 'EB Garamond', serif);
-    font-size: 3.4em; font-weight: 400; color: var(--dv-accent);
-    margin: 0 0 0.35em; line-height: 1.1;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 2.5em; font-weight: 400; color: var(--dv-accent);
+    /* Kapitalen met wat lucht ertussen: bij die corpsgrootte staan ze anders
+       tegen elkaar aan. De regelafstand mag krap, want er zitten geen staarten
+       onder de letters. */
+    text-transform: uppercase; letter-spacing: 0.055em;
+    line-height: 1.06; margin: 0.34em 0;
 }
-.dv-cover-onder { font-size: 1.15em; font-style: italic; color: #6b6355; margin: 0; }
+.dv-cover-onder {
+    font-size: 0.82em; color: var(--dv-accent); margin: 0.9em 0 0;
+    text-transform: uppercase; letter-spacing: 0.32em;
+    /* De spatiering zet ook achter de laatste letter een gat; die haalt het
+       woord uit het midden. Een halve spatie terug herstelt dat. */
+    text-indent: 0.32em;
+}
+/* Dunne regel met een ruitje in het midden, boven en onder de naam. */
+.dv-cover-regel {
+    display: block; height: 0.5em; position: relative;
+}
+.dv-cover-regel::before {
+    content: ''; position: absolute; left: 0; right: 0; top: 50%;
+    border-top: 0.22mm solid currentColor; opacity: 0.55;
+}
+.dv-cover-regel::after {
+    content: ''; position: absolute; left: 50%; top: 50%;
+    width: 1.1mm; height: 1.1mm; margin: -0.55mm 0 0 -0.55mm;
+    background: currentColor; transform: rotate(45deg);
+}
+.dv-cover-naam { color: var(--dv-accent); }
 .dv-cover-voet {
     position: absolute; bottom: var(--dv-marge-onder); left: 0; right: 0;
-    font-size: 0.78em; color: #9a9284; letter-spacing: 0.08em; margin: 0;
+    font-size: 0.7em; color: #9a9284; letter-spacing: 0.22em; text-indent: 0.22em;
+    text-transform: uppercase; margin: 0; text-align: center;
 }
 .dv-voorwerk-kop {
     font-family: var(--font-cursive, 'EB Garamond', serif);
@@ -289,17 +315,30 @@
 /* Het omslagontwerp staat als beeld achter het titelblad; de titel zelf blijft
    echte letters, zodat de drukker hem als vector kan overnemen. */
 .dv-cover-beeld { background-size: cover; background-position: center; }
-.dv-cover-beeld .dv-cover-blok { justify-content: flex-start; padding-top: 8%; }
-.dv-cover-beeld .dv-cover-blok h1 {
+.dv-cover-beeld .dv-cover-blok { justify-content: flex-start; padding-top: 7%; }
+/* Over een schilderij heeft de naam een eigen ondergrond nodig. Een gloed om de
+   letters heen doet dat ook wel, maar die is op papier meteen te zien als een
+   noodgreep; een rustig veld met een haarlijn eromheen is wat een omslag doet. */
+.dv-cover-beeld .dv-cover-naam {
+    width: 78%;
+    background: rgba(252, 249, 241, 0.86);
+    border: 0.22mm solid rgba(20, 36, 63, 0.35);
+    outline: 0.22mm solid rgba(252, 249, 241, 0.55); outline-offset: 0.9mm;
+    padding: 5% 6% 5.5%;
     color: #14243f;
-    text-shadow: 0 0.4mm 1.4mm rgba(255,253,246,0.85);
 }
-.dv-cover-beeld .dv-cover-onder {
-    color: #24354f; letter-spacing: 0.18em; text-transform: uppercase;
-    font-style: normal; font-size: 0.92em;
-    text-shadow: 0 0.3mm 1.2mm rgba(255,253,246,0.85);
+.dv-cover-beeld .dv-cover-voet { color: rgba(252, 249, 241, 0.72); }
+
+/* Het nachtblauwe linnen is al sober; daar hoort goud op donker, zonder veld,
+   en hoger dan de gouden takjes die in het ontwerp zelf staan. */
+.dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-blok { padding-top: 17%; }
+.dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-naam {
+    background: none; border: none; outline: none; padding: 0; width: 72%;
+    color: #d9b877;
 }
-.dv-cover-beeld .dv-cover-voet { color: #3c4a60; }
+.dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-blok h1,
+.dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-onder { color: #d9b877; }
+.dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-voet { color: #7e8ba3; }
 
 /* --- de plaat bij een hoofdstuk --- */
 /* Zij vult de onderste helft van het blad; het tekstblok krijgt daarom de
