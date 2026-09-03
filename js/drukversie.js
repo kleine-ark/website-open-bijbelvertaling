@@ -35,6 +35,20 @@
         klaar: 0,
         paginaNr: 0,
         bezig: false,
+        perikopen: null,
+        boekStart: {},          // boek-id -> eerste bladnummer, voor de inhoudsopgave
+
+        VOORWOORD:
+            'De Open Vertaling neemt de Statenvertaling van 1888 als basistekst. Verouderde ' +
+            'naamvallen, werkwoordsvormen en woorden zijn vervangen door hedendaags Nederlands, ' +
+            'maar de zinsbouw is gelaten zoals hij stond. Wie een zin herschrijft omdat hij hem ' +
+            'mooier vindt is aan het vertalen en niet aan het herzien.\n\n' +
+            'Elke wijziging loopt via een genummerd principe, zodat op elke plaats na te gaan is ' +
+            'waaróm daar iets anders staat dan in 1888. Die principes staan openbaar op ' +
+            'openvertaling.nl, met hun vindplaatsen erbij.\n\n' +
+            'Deze uitgave is samengesteld met de drukversie op de website. De keuzes die u daar ' +
+            'maakte — de Godsnaam, de maten, de namen, de opmaak — staan in deze afdruk vast; ' +
+            'op de website kan elke lezer ze zelf anders zetten.',
 
         /* De leesopties die op een gedrukte uitgave van toepassing zijn. De
            overige — thema, kolomindeling, Strong-nummers — gaan over het scherm
@@ -71,6 +85,7 @@
             // drukproef hoort de voorkeuren van de lezer niet te overschrijven.
             Opties.state = Object.assign({}, Opties.DEFAULTS);
             Opties._initialized = true;
+            document.getElementById('dv-voorwoord-tekst').value = this.VOORWOORD;
             this.vulBoekenlijst();
             this.vulLeesopties();
             this.bindPaneel();
@@ -158,9 +173,31 @@
             this.meldWijziging();
         },
 
+        /* Een wijziging wordt meteen doorgevoerd. Dat kan omdat er per ronde maar
+           honderd bladen worden opgemaakt: opnieuw beginnen kost een paar tellen,
+           en dat weegt niet op tegen een knop die je bij elke keuze moet
+           aanklikken. Wat er al voorbij die honderd lag gaat wel verloren -- dat
+           moet u opnieuw ophalen met "Volgende honderd pagina's".
+           Het uitstel vangt het slepen aan een schuifregelaar op; anders zou elke
+           tussenstand een hele opmaak in gang zetten. */
         meldWijziging() {
+            var self = this;
+            clearTimeout(this._wachtOpRust);
             if (!document.getElementById('dv-paginas').children.length) return;
-            this.zetStatus('De instellingen zijn gewijzigd. Klik op Opmaakproef maken om ze door te voeren.');
+            this.zetStatus('Bezig met opnieuw opmaken…');
+            this._wachtOpRust = setTimeout(function () {
+                // Loopt er nog een ronde, dan wacht de nieuwe keuze tot die af is;
+                // bouw() zou hem anders zonder meer laten vallen.
+                if (self.bezig) { self._opnieuw = true; return; }
+                self.bouw();
+            }, 350);
+        },
+
+        /* Titel, ondertitel en de tekst van het voorwoord raken de bladspiegel
+           niet: daarvoor hoeft alleen het voorwerk opnieuw. */
+        werkVoorwerkBij() {
+            if (!document.getElementById('dv-paginas').children.length) return;
+            this.bouwVoorwerk();
         },
 
         zetStatus(tekst) { document.getElementById('dv-status').textContent = tekst; },
@@ -171,12 +208,21 @@
                 self.kiesUitgave(this.value);
                 if (this.value !== 'eigen') document.getElementById('dv-boeken-details').open = false;
             });
+            // Deze keuzes veranderen de bladspiegel: de opmaak moet opnieuw.
             ['dv-formaat', 'dv-kolommen', 'dv-marge', 'dv-letter', 'dv-grootte', 'dv-interlinie',
-             'dv-lijntjes', 'dv-inleiding', 'dv-kanttekeningen', 'dv-versnummers', 'dv-versregels',
-             'dv-sierletter', 'dv-kopregel'].forEach(function (id) {
+             'dv-notities', 'dv-notitiemaat', 'dv-tussenkopjes', 'dv-inleiding', 'dv-kanttekeningen',
+             'dv-versnummers', 'dv-versregels', 'dv-sierletter', 'dv-kopregel'].forEach(function (id) {
                 document.getElementById(id).addEventListener('input', function () {
                     self.pasInstellingenToe();
                     self.meldWijziging();
+                });
+            });
+            // Deze niet: alleen het voorwerk of de lijntjes veranderen.
+            ['dv-lijntjes', 'dv-cover', 'dv-titel', 'dv-ondertitel', 'dv-voorwoord',
+             'dv-voorwoord-tekst', 'dv-inhoudsopgave'].forEach(function (id) {
+                document.getElementById(id).addEventListener('input', function () {
+                    self.pasInstellingenToe();
+                    self.werkVoorwerkBij();
                 });
             });
             document.getElementById('dv-bouw').addEventListener('click', function () { self.bouw(); });
@@ -197,14 +243,22 @@
             s.setProperty('--dv-breedte', a4 ? '210mm' : '148mm');
             s.setProperty('--dv-hoogte', a4 ? '297mm' : '210mm');
 
-            var m = {krap: a4 ? 14 : 10, normaal: a4 ? 20 : 14, ruim: a4 ? 28 : 20,
-                     bijschrijf: a4 ? 20 : 14}[marge];
+            var m = {krap: a4 ? 14 : 10, normaal: a4 ? 20 : 14, ruim: a4 ? 28 : 20}[marge];
             s.setProperty('--dv-marge-boven', m + 'mm');
             s.setProperty('--dv-marge-onder', m + 'mm');
             s.setProperty('--dv-marge-binnen', m + 'mm');
-            // De schrijfmarge van een bijschrijfbijbel zit aan de buitenkant,
-            // waar de hand bij kan zonder over de rug te schrijven.
-            s.setProperty('--dv-marge-buiten', marge === 'bijschrijf' ? (a4 ? '62mm' : '45mm') : m + 'mm');
+            s.setProperty('--dv-marge-buiten', m + 'mm');
+
+            // De notitieruimte komt niet uit de marge maar uit het tekstblok:
+            // zij zit aan de buitenkant, waar de hand bij kan zonder over de rug
+            // te schrijven, of onderaan over de hele breedte.
+            var waar = document.getElementById('dv-notities').value;
+            var maat = document.getElementById('dv-notitiemaat').value + 'mm';
+            s.setProperty('--dv-notitie-zij', waar === 'zij' ? maat : '0mm');
+            s.setProperty('--dv-notitie-onder', waar === 'onder' ? maat : '0mm');
+            document.getElementById('dv-notitiemaat-uit').textContent =
+                document.getElementById('dv-notitiemaat').value + ' mm';
+            b.dataset.notities = waar;
 
             s.setProperty('--dv-kolommen', document.getElementById('dv-kolommen').value);
             s.setProperty('--dv-grootte', (document.getElementById('dv-grootte').value / 10) + 'pt');
@@ -217,6 +271,8 @@
             b.dataset.versregels = document.getElementById('dv-versregels').checked ? 'aan' : 'uit';
             b.dataset.sierletter = document.getElementById('dv-sierletter').checked ? 'aan' : 'uit';
             b.dataset.kopregel = document.getElementById('dv-kopregel').checked ? 'aan' : 'uit';
+            b.dataset.cover = document.getElementById('dv-cover').checked ? 'aan' : 'uit';
+            b.dataset.voorwoord = document.getElementById('dv-voorwoord').checked ? 'aan' : 'uit';
 
             document.getElementById('dv-grootte-uit').textContent =
                 (document.getElementById('dv-grootte').value / 10).toFixed(1).replace('.', ',') + ' pt';
@@ -242,6 +298,12 @@
             if (st.tijdrekening === 'modern') werk.push(Opties.loadTijden());
             if (st.arabischeNamen === 'aan') werk.push(Opties.loadArabischeNamen());
             if (st.geoMarkeren === 'aan') werk.push(Opties.loadGeoData());
+            if (document.getElementById('dv-tussenkopjes').checked && !this.perikopen) {
+                werk.push(fetch('data/pericopen.json')
+                    .then(function (r) { return r.ok ? r.json() : {}; })
+                    .then(function (d) { Druk.perikopen = d; })
+                    .catch(function () { Druk.perikopen = {}; }));
+            }
             if (werk.length) await Promise.all(werk);
         },
 
@@ -253,6 +315,7 @@
             document.getElementById('dv-verder').hidden = true;
             this.paginaNr = 0;
             this.klaar = 0;
+            this.boekStart = {};
             this.zetStatus('Tabellen laden…');
             await this.laadTabellen();
 
@@ -265,6 +328,8 @@
             }
             var perId = {};
             this.boeken.forEach(function (b) { perId[b.id] = b; });
+            this.boekPerId = perId;
+            this.volgordeIds = volgorde.filter(function (id) { return this.gekozen.has(id); }, this);
 
             this.wachtrij = [];
             volgorde.forEach(function (id) {
@@ -308,11 +373,16 @@
                         inhoud.appendChild(blokken[i]);
                         if ((this.paginaNr - start) >= PAGINAS_PER_RONDE) break;
                     }
+                    this.zetBereik(pagina, taak.boek, taak.hoofdstuk);
                 }
                 this.klaar++;
                 // De pagina moet tussendoor kunnen tekenen, anders lijkt hij vast te zitten.
                 await new Promise(function (r) { setTimeout(r, 0); });
             }
+
+            // Het voorwerk wordt na elke ronde opnieuw gemaakt: de
+            // inhoudsopgave kent alleen de boeken die al opgemaakt zijn.
+            this.bouwVoorwerk();
 
             this.bezig = false;
             knop.disabled = false;
@@ -326,6 +396,104 @@
             } else {
                 this.zetStatus('Klaar: ' + this.paginaNr + ' bladen.');
             }
+
+            if (this._opnieuw) { this._opnieuw = false; this.bouw(); }
+        },
+
+        /* Het voorwerk komt vooraan maar wordt achteraf gemaakt: pas als de
+           bladen er liggen is bekend op welke bladzijde elk boek begint. Dat is
+           ook de reden dat het voorwerk zijn eigen nummering krijgt in Romeinse
+           cijfers -- zou het meetellen, dan zou de inhoudsopgave zichzelf
+           verschuiven zodra hij een blad langer werd. */
+        romeins(n) {
+            var tabel = [[10, 'x'], [9, 'ix'], [5, 'v'], [4, 'iv'], [1, 'i']], uit = '';
+            tabel.forEach(function (p) { while (n >= p[0]) { uit += p[1]; n -= p[0]; } });
+            return uit;
+        },
+
+        voorwerkPagina(klasse) {
+            var p = document.createElement('div');
+            p.className = 'dv-pagina dv-voorwerk ' + klasse;
+            p.dataset.kolommen = '1';
+            p.innerHTML = '<div class="dv-inhoud"></div><div class="dv-voet"><span></span></div>';
+            return p;
+        },
+
+        bouwVoorwerk() {
+            var houder = document.getElementById('dv-paginas');
+            houder.querySelectorAll('.dv-voorwerk').forEach(function (p) { p.remove(); });
+            var bladen = [];
+
+            if (document.getElementById('dv-cover').checked) {
+                var titel = document.getElementById('dv-titel').value.trim() || 'Open Vertaling';
+                var onder = document.getElementById('dv-ondertitel').value.trim() ||
+                    this.omschrijvingVanSelectie();
+                var c = this.voorwerkPagina('dv-cover');
+                c.querySelector('.dv-inhoud').innerHTML =
+                    '<div class="dv-cover-blok">' +
+                    '<h1>' + this.tekstVeilig(titel) + '</h1>' +
+                    (onder ? '<p class="dv-cover-onder">' + this.tekstVeilig(onder) + '</p>' : '') +
+                    '<p class="dv-cover-voet">openvertaling.nl</p></div>';
+                bladen.push(c);
+            }
+
+            if (document.getElementById('dv-voorwoord').checked) {
+                var tekst = document.getElementById('dv-voorwoord-tekst').value.trim();
+                if (tekst) {
+                    var v = this.voorwerkPagina('dv-voorwoordblad');
+                    v.querySelector('.dv-inhoud').innerHTML =
+                        '<h2 class="dv-voorwerk-kop">Voorwoord</h2>' +
+                        tekst.split(/\n{2,}/).map(function (a) {
+                            return '<p class="dv-voorwoord-alinea">' + Druk.tekstVeilig(a) + '</p>';
+                        }).join('');
+                    bladen.push(v);
+                }
+            }
+
+            if (document.getElementById('dv-inhoudsopgave').checked) {
+                var regels = [];
+                (this.volgordeIds || []).forEach(function (id) {
+                    if (!this.boekStart[id]) return;   // nog niet opgemaakt
+                    var boek = this.boekPerId[id];
+                    regels.push('<li><span class="dv-io-naam">' + this.tekstVeilig(boek.nameDutch) +
+                        '</span><span class="dv-io-punten"></span><span class="dv-io-nr">' +
+                        this.boekStart[id] + '</span></li>');
+                }, this);
+                if (regels.length) {
+                    var i = this.voorwerkPagina('dv-inhoudsblad');
+                    i.querySelector('.dv-inhoud').innerHTML =
+                        '<h2 class="dv-voorwerk-kop">Inhoud</h2><ul class="dv-io">' +
+                        regels.join('') + '</ul>';
+                    bladen.push(i);
+                }
+            }
+
+            // achterstevoren invoegen, zodat de volgorde klopt
+            for (var n = bladen.length - 1; n >= 0; n--) houder.insertBefore(bladen[n], houder.firstChild);
+            bladen.forEach(function (blad, idx) {
+                var voet = blad.querySelector('.dv-voet span');
+                if (voet) voet.textContent = Druk.romeins(idx + 1);
+                blad.classList.toggle('dv-links', (idx + 1) % 2 === 0);
+            });
+        },
+
+        omschrijvingVanSelectie() {
+            var keuze = document.getElementById('dv-uitgave');
+            var label = keuze.options[keuze.selectedIndex].textContent;
+            if (keuze.value === 'eigen') {
+                var n = this.gekozen.size;
+                return n === 1 ? this.boekPerId[[...this.gekozen][0]].nameDutch
+                               : n + ' boeken';
+            }
+            // "Taurat & Injil — Genesis en Johannes" -> alleen het deel na de streep
+            var streep = label.indexOf('—');
+            return streep > 0 ? label.slice(streep + 1).trim() : label;
+        },
+
+        tekstVeilig(s) {
+            return String(s).replace(/[&<>]/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c];
+            });
         },
 
         nieuwePagina(houder, boek) {
@@ -333,13 +501,36 @@
             var p = document.createElement('div');
             p.className = 'dv-pagina' + (this.paginaNr % 2 === 0 ? ' dv-links' : '');
             p.dataset.kolommen = document.getElementById('dv-kolommen').value;
-            var titel = boek ? boek.nameDutch : '';
             p.innerHTML =
-                '<div class="dv-kop"><span>' + titel + '</span><span>Open Vertaling</span></div>' +
+                '<div class="dv-kop"><span></span><span></span></div>' +
                 '<div class="dv-inhoud"></div>' +
                 '<div class="dv-voet"><span>' + this.paginaNr + '</span></div>';
             houder.appendChild(p);
+            if (boek) this.zetBereik(p, boek, null);
             return p;
+        },
+
+        /* De kopregel van een bijbel noemt waar je bent, niet wie hem uitgeeft:
+           links de boeknaam, rechts het hoofdstukbereik dat op het blad staat.
+           Het bereik groeit mee terwijl het blad zich vult. */
+        zetBereik(pagina, boek, hoofdstuk) {
+            if (boek) {
+                pagina._boek = boek;
+                if (!this.boekStart[boek.id]) this.boekStart[boek.id] = this.paginaNr;
+            }
+            if (hoofdstuk != null) {
+                if (pagina._hsVan == null) pagina._hsVan = hoofdstuk;
+                pagina._hsTot = hoofdstuk;
+            }
+            var kop = pagina.querySelector('.dv-kop');
+            if (!kop || !pagina._boek) return;
+            var bereik = '';
+            if (pagina._hsVan != null) {
+                bereik = '' + pagina._hsVan +
+                    (pagina._hsTot !== pagina._hsVan ? '–' + pagina._hsTot : '');
+            }
+            kop.children[0].textContent = pagina._boek.nameDutch;
+            kop.children[1].textContent = bereik;
         },
 
         /* Een blad loopt bij een kolom in de hoogte over en bij twee kolommen in
@@ -365,6 +556,16 @@
             h.textContent = taak.boek.nameDutch + ' ' + taak.hoofdstuk;
             blokken.push(h);
 
+            // Tussenkopjes staan per vers in data/pericopen.json en gaan door
+            // dezelfde omzetting als de tekst, anders zou een kopje "de HEERE"
+            // zeggen boven een stuk waar JAHWEH staat.
+            var koppen = {};
+            if (document.getElementById('dv-tussenkopjes').checked && this.perikopen) {
+                (this.perikopen[taak.boek.id] || []).forEach(function (p) {
+                    if (p.c === taak.hoofdstuk) koppen[p.v] = p.t;
+                });
+            }
+
             if (document.getElementById('dv-inleiding').checked && data && data.chapterIntro) {
                 var intro = data.chapterIntro.text2026 || data.chapterIntro.textSV1888 ||
                     data.chapterIntro.text1637;
@@ -386,6 +587,13 @@
             // alleen een kopje erop. Of de verzen naast elkaar of onder elkaar
             // komen bepaalt de CSS, niet de opbouw.
             verzen.forEach(function (v, idx) {
+                if (koppen[v.number]) {
+                    var k = document.createElement('h4');
+                    k.className = 'dv-tussenkop';
+                    k.innerHTML = Opties.transformOV
+                        ? Opties.transformOV(koppen[v.number], testament) : koppen[v.number];
+                    blokken.push(k);
+                }
                 var tekst = v.text2026_html || v.text2026 || '';
                 tekst = this.bewerk(tekst, taak.boek.id, taak.hoofdstuk, v.number, testament);
                 tekst = this.schoon(tekst);

@@ -11,8 +11,8 @@
     <link rel="canonical" href="https://openvertaling.nl/drukversie.html">
 
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css?v=0.52.0">
-    <link rel="stylesheet" href="css/drukversie.css?v=0.52.0">
+    <link rel="stylesheet" href="css/style.css?v=0.53.0">
+    <link rel="stylesheet" href="css/drukversie.css?v=0.53.0">
 </head>
 <body class="dv-body">
 <div class="dv-layout">
@@ -68,11 +68,27 @@
                     <option value="krap">Krap</option>
                     <option value="normaal" selected>Normaal</option>
                     <option value="ruim">Ruim</option>
-                    <option value="bijschrijf">Bijschrijfbijbel — brede schrijfmarge</option>
                 </select>
             </label>
-            <label class="dv-veld dv-alleen-bijschrijf">
-                <span>Lijntjes in de schrijfmarge</span>
+        </section>
+
+        <section class="dv-groep">
+            <h2>Notitieruimte</h2>
+            <p class="dv-groep-uitleg">Ruimte om zelf in te schrijven — een bijschrijfbijbel.</p>
+            <label class="dv-veld">
+                <span>Waar</span>
+                <select id="dv-notities">
+                    <option value="geen" selected>Geen</option>
+                    <option value="zij">Aan de zijkant</option>
+                    <option value="onder">Onderaan, over de hele breedte</option>
+                </select>
+            </label>
+            <label class="dv-veld dv-alleen-notities">
+                <span>Afmeting <output id="dv-notitiemaat-uit">40 mm</output></span>
+                <input type="range" id="dv-notitiemaat" min="10" max="80" step="5" value="40">
+            </label>
+            <label class="dv-veld dv-alleen-notities">
+                <span>Lijntjes</span>
                 <input type="checkbox" id="dv-lijntjes" checked>
             </label>
         </section>
@@ -100,12 +116,32 @@
 
         <section class="dv-groep">
             <h2>Inhoud van de pagina</h2>
+            <label class="dv-veld"><span>Tussenkopjes</span><input type="checkbox" id="dv-tussenkopjes" checked></label>
             <label class="dv-veld"><span>Hoofdstukinleiding</span><input type="checkbox" id="dv-inleiding"></label>
             <label class="dv-veld"><span>Kanttekeningen</span><input type="checkbox" id="dv-kanttekeningen"></label>
             <label class="dv-veld"><span>Versnummers</span><input type="checkbox" id="dv-versnummers" checked></label>
             <label class="dv-veld"><span>Elk vers op een nieuwe regel</span><input type="checkbox" id="dv-versregels"></label>
             <label class="dv-veld"><span>Sierletter bij het hoofdstuk</span><input type="checkbox" id="dv-sierletter" checked></label>
             <label class="dv-veld"><span>Kopregel en paginanummer</span><input type="checkbox" id="dv-kopregel" checked></label>
+        </section>
+
+        <section class="dv-groep">
+            <h2>Voorwerk</h2>
+            <label class="dv-veld"><span>Titelblad</span><input type="checkbox" id="dv-cover" checked></label>
+            <label class="dv-veld dv-veld-blok dv-alleen-cover">
+                <span>Titel</span>
+                <input type="text" id="dv-titel" value="Open Vertaling">
+            </label>
+            <label class="dv-veld dv-veld-blok dv-alleen-cover">
+                <span>Ondertitel</span>
+                <input type="text" id="dv-ondertitel" placeholder="volgt de gekozen uitgave">
+            </label>
+            <label class="dv-veld"><span>Voorwoord</span><input type="checkbox" id="dv-voorwoord" checked></label>
+            <label class="dv-veld dv-veld-blok dv-alleen-voorwoord">
+                <span>Tekst van het voorwoord</span>
+                <textarea id="dv-voorwoord-tekst" rows="7"></textarea>
+            </label>
+            <label class="dv-veld"><span>Inhoudsopgave</span><input type="checkbox" id="dv-inhoudsopgave" checked></label>
         </section>
 
         <section class="dv-groep">
@@ -133,9 +169,9 @@
 </div>
 
 <script src="js/storage.js"></script>
-<script src="js/data-loader.js?v=0.52.0"></script>
-<script src="js/book-orders.js?v=0.52.0"></script>
-<script src="js/opties.js?v=0.52.0"></script>
-<script src="js/drukversie.js?v=0.52.0"></script>
+<script src="js/data-loader.js?v=0.53.0"></script>
+<script src="js/book-orders.js?v=0.53.0"></script>
+<script src="js/opties.js?v=0.53.0"></script>
+<script src="js/drukversie.js?v=0.53.0"></script>
 </body>
 </html>
