@@ -11,16 +11,13 @@ data/feedback-log.json
 vendor/
 audio/_pilot/
 audio/_progress.json
-audio/_errors.log
-audio/_rollout.log
-audio/*.log
+# Binaire en diagnostische audio-uitvoer wordt extern gepubliceerd
+audio/**/*.log
 audio/**/*.mp3
 audio/**/*.opus
 audio/**/*.wav
-# Tussenbestanden van XTTS-chunking — binaire audio wordt extern gepubliceerd
-audio/*/*.chunk*.wav
+# Overige tussenbestanden van XTTS-chunking
 audio/*/*.concat.txt
-audio/*/*.wav
 .venv-piper/
 data/quality-scan/
 data/process_*.py

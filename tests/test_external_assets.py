@@ -98,6 +98,7 @@ def test_binary_audio_is_ignored_but_manifests_remain_trackable():
         "audio/genesis/1/m/v1.opus",
         "audio/_pilot/sample.wav",
         "audio/_generation.log",
+        "audio/genesis/1/m/generation.log",
     ):
         ignored = subprocess.run(
             ["git", "check-ignore", "-q", "--no-index", path],
