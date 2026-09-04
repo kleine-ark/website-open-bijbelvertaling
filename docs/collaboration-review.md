@@ -25,6 +25,13 @@ al als nog niet aangemelde accounts in de lijst en worden bij hun eerste sessie
 aan hun echte Firebase-uid gekoppeld. Rolwijzigingen worden eveneens als
 onveranderlijke gebeurtenissen met uitvoerende beheerder bewaard.
 
+De gebruikerspagina blijft verborgen totdat Firebase de aanmeldstatus heeft
+vastgesteld en de API de beheerdersrol heeft bevestigd. Bezoekers zonder die
+rol worden naar de hoofdpagina teruggestuurd. Dezelfde toegangspoort geldt voor
+`/beoordelingen.html`, met de rol `reviewer`. De API controleert de rol bij elk
+verzoek; de toegangspoort in de browser voorkomt daarnaast dat onbevoegde
+bezoekers de pagina-interface zien.
+
 ## Generiek beoordelingsmodel
 
 `scripts/build_review_catalog.py` maakt tijdens elke deployment

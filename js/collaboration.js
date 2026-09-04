@@ -8,7 +8,7 @@
 
     function emit(profile) {
         listeners.slice().forEach(function (listener) {
-            try { listener(profile); } catch (error) { console.warn('[Collaboration] listener mislukt'); }
+            try { listener(profile, Collaboration.ready); } catch (error) { console.warn('[Collaboration] listener mislukt'); }
         });
         window.dispatchEvent(new CustomEvent('ov:collaboration-ready', { detail: profile }));
     }
@@ -64,9 +64,12 @@
         }
     }
 
-    async function synchronize(user) {
+    async function synchronize(user, stateResolved) {
+        if (!stateResolved) return;
+        Collaboration.ready = false;
         if (!user) {
             Collaboration.currentUser = null;
+            Collaboration.ready = true;
             setNavigation(null);
             emit(null);
             return;
@@ -74,10 +77,12 @@
         try {
             var payload = await request('/session', { method: 'POST', body: '{}' });
             Collaboration.currentUser = payload.user;
+            Collaboration.ready = true;
             setNavigation(payload.user);
             emit(payload.user);
         } catch (error) {
             Collaboration.currentUser = null;
+            Collaboration.ready = true;
             setNavigation(null);
             console.warn('[Collaboration] sessie kon niet worden geladen');
             emit(null);
@@ -86,6 +91,7 @@
 
     var Collaboration = {
         currentUser: null,
+        ready: false,
 
         init: function () {
             if (initialized || !window.Auth) return;
@@ -95,7 +101,7 @@
 
         onChange: function (listener) {
             listeners.push(listener);
-            listener(this.currentUser);
+            listener(this.currentUser, this.ready);
         },
 
         hasRole: function (role) {

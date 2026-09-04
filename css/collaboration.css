@@ -2,6 +2,7 @@
     width: min(1180px, calc(100% - 32px));
     margin: 36px auto 80px;
 }
+.collaboration-main[hidden] { display: none !important; }
 
 .collaboration-main h1 { margin-bottom: 8px; }
 .collaboration-main h2 { margin: 38px 0 8px; }

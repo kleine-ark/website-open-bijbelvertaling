@@ -14,18 +14,20 @@ const Auth = {
     auth: null,
     db: null,
     currentUser: null,
-    listeners: [],   // (user|null) => void
+    stateResolved: false,
+    initializing: false,
+    listeners: [],   // (user|null, stateResolved) => void
     CACHE_KEY: 'osv_auth_cache',
 
     onChange(cb) {
         this.listeners.push(cb);
         // Roep direct aan met huidige status
-        try { cb(this.currentUser); } catch (e) { console.warn(e); }
+        try { cb(this.currentUser, this.stateResolved); } catch (e) { console.warn(e); }
     },
 
     notify() {
         this.listeners.forEach(cb => {
-            try { cb(this.currentUser); } catch (e) { console.warn(e); }
+            try { cb(this.currentUser, this.stateResolved); } catch (e) { console.warn(e); }
         });
     },
 
@@ -51,6 +53,8 @@ const Auth = {
     },
 
     async init() {
+        if (this.initializing || this.stateResolved) return;
+        this.initializing = true;
         // Instant render vanuit cache zodat de naam direct verschijnt
         // i.p.v. te wachten op Firebase-CDN + onAuthStateChanged round-trip.
         const cached = this.loadCache();
@@ -59,6 +63,8 @@ const Auth = {
         if (!window.firebaseEnabled) {
             console.info('[Auth] Firebase niet geconfigureerd — login uitgeschakeld.');
             if (!cached) this.renderButton(null);
+            this.stateResolved = true;
+            this.notify();
             return;
         }
         try {
@@ -80,6 +86,7 @@ const Auth = {
             };
             authMod.onAuthStateChanged(this.auth, (user) => {
                 this.currentUser = user;
+                this.stateResolved = true;
                 this.saveCache(user);
                 this.renderButton(user);
                 this.notify();
@@ -95,6 +102,8 @@ const Auth = {
         } catch (e) {
             console.warn('[Auth] kon Firebase niet laden:', e);
             if (!cached) this.renderButton(null);
+            this.stateResolved = true;
+            this.notify();
         }
     },
 

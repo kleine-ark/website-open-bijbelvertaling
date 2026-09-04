@@ -1,6 +1,7 @@
 (function () {
     'use strict';
     var body;
+    var main;
     var status;
     var search;
     var timer;
@@ -146,21 +147,20 @@
         document.getElementById('users-next').disabled = true;
     }
 
-    function handleProfile(profile) {
-        if (!profile) {
-            showStatus('Log in met Google om deze pagina te gebruiken.', true);
+    function handleProfile(profile, ready) {
+        if (!ready) return;
+        if (!profile || profile.roles.indexOf('administrator') === -1) {
+            main.hidden = true;
             clearData();
+            location.replace('index.html');
             return;
         }
-        if (profile.roles.indexOf('administrator') === -1) {
-            showStatus('Deze pagina is alleen toegankelijk voor beheerders.', true);
-            clearData();
-            return;
-        }
+        main.hidden = false;
         Promise.all([loadUsers(), loadRoleEvents()]);
     }
 
     document.addEventListener('DOMContentLoaded', function () {
+        main = document.querySelector('.collaboration-main');
         body = document.querySelector('#users-table tbody');
         status = document.getElementById('users-status');
         search = document.getElementById('users-search');

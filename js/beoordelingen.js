@@ -1,6 +1,7 @@
 (function () {
     'use strict';
     var body;
+    var main;
     var status;
     var search;
     var typeFilter;
@@ -187,21 +188,20 @@
         document.getElementById('review-events-next').disabled = true;
     }
 
-    function handleProfile(profile) {
-        if (!profile) {
-            showStatus('Log in met Google om deze pagina te gebruiken.', true);
+    function handleProfile(profile, ready) {
+        if (!ready) return;
+        if (!profile || profile.roles.indexOf('reviewer') === -1) {
+            main.hidden = true;
             clearData();
+            location.replace('index.html');
             return;
         }
-        if (profile.roles.indexOf('reviewer') === -1) {
-            showStatus('Voor deze pagina is de rol reviewer vereist.', true);
-            clearData();
-            return;
-        }
+        main.hidden = false;
         Promise.all([loadSubjects(), loadEvents()]);
     }
 
     document.addEventListener('DOMContentLoaded', function () {
+        main = document.querySelector('.collaboration-main');
         body = document.querySelector('#reviews-table tbody');
         status = document.getElementById('reviews-status');
         search = document.getElementById('reviews-search');
