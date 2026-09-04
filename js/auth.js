@@ -122,7 +122,7 @@ const Auth = {
                 try { await signInWithRedirect(this.auth, provider); return; } catch (e2) { e = e2; }
             }
             console.warn('[Auth] login afgebroken:', e);
-            alert('Inloggen mislukt: ' + (e.message || e.code || 'onbekend'));
+            alert('Inloggen mislukt. Controleer het logboek.');
         }
     },
 
@@ -142,24 +142,41 @@ const Auth = {
             return;
         }
         slot.style.display = '';
+        slot.replaceChildren();
         if (!user) {
-            slot.innerHTML = `<button class="auth-btn auth-login" title="Login met Google">
-                <svg width="14" height="14" viewBox="0 0 18 18" aria-hidden="true"><path fill="#fff" d="M17.64 9.2c0-.64-.06-1.25-.17-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.71-1.57 2.68-3.89 2.68-6.62z"/><path fill="#fff" opacity=".85" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.81.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.92v2.34A9 9 0 0 0 9 18z"/><path fill="#fff" opacity=".7" d="M3.97 10.71A5.41 5.41 0 0 1 3.68 9c0-.59.1-1.17.29-1.71V4.95H.92A9 9 0 0 0 0 9c0 1.45.35 2.82.92 4.05l3.05-2.34z"/><path fill="#fff" opacity=".55" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .92 4.95l3.05 2.34C4.68 5.16 6.66 3.58 9 3.58z"/></svg>
-                <span>Login</span>
-            </button>`;
-            slot.querySelector('button').addEventListener('click', () => this.login());
-        } else {
-            const photo = user.photoURL ? `<img src="${user.photoURL}" alt="" class="auth-avatar">`
-                                        : `<span class="auth-avatar auth-avatar-fallback">${(user.displayName||user.email||'?')[0].toUpperCase()}</span>`;
-            const name = (user.displayName || user.email || 'Ingelogd').split(' ')[0];
-            slot.innerHTML = `
-                <div class="auth-user" title="${user.email||''}">
-                    ${photo}
-                    <span class="auth-name">${name}</span>
-                    <button class="auth-btn auth-logout" title="Uitloggen">↪</button>
-                </div>`;
-            slot.querySelector('.auth-logout').addEventListener('click', () => this.logout());
+            const button = document.createElement('button');
+            button.className = 'auth-btn auth-login';
+            button.title = 'Login met Google';
+            button.innerHTML = '<svg width="14" height="14" viewBox="0 0 18 18" aria-hidden="true"><path fill="#fff" d="M17.64 9.2c0-.64-.06-1.25-.17-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.71-1.57 2.68-3.89 2.68-6.62z"/><path fill="#fff" opacity=".85" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.81.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.92v2.34A9 9 0 0 0 9 18z"/><path fill="#fff" opacity=".7" d="M3.97 10.71A5.41 5.41 0 0 1 3.68 9c0-.59.1-1.17.29-1.71V4.95H.92A9 9 0 0 0 0 9c0 1.45.35 2.82.92 4.05l3.05-2.34z"/><path fill="#fff" opacity=".55" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .92 4.95l3.05 2.34C4.68 5.16 6.66 3.58 9 3.58z"/></svg><span>Login</span>';
+            button.addEventListener('click', () => this.login());
+            slot.appendChild(button);
+            return;
         }
+        const wrap = document.createElement('div');
+        wrap.className = 'auth-user';
+        wrap.title = user.email || '';
+        if (user.photoURL) {
+            const photo = document.createElement('img');
+            photo.src = user.photoURL;
+            photo.alt = '';
+            photo.className = 'auth-avatar';
+            wrap.appendChild(photo);
+        } else {
+            const fallback = document.createElement('span');
+            fallback.className = 'auth-avatar auth-avatar-fallback';
+            fallback.textContent = (user.displayName || user.email || '?')[0].toUpperCase();
+            wrap.appendChild(fallback);
+        }
+        const name = document.createElement('span');
+        name.className = 'auth-name';
+        name.textContent = (user.displayName || user.email || 'Ingelogd').split(' ')[0];
+        const logout = document.createElement('button');
+        logout.className = 'auth-btn auth-logout';
+        logout.title = 'Uitloggen';
+        logout.textContent = '↪';
+        logout.addEventListener('click', () => this.logout());
+        wrap.append(name, logout);
+        slot.appendChild(wrap);
     }
 };
 

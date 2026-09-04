@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Gebruikers — Open Vertaling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/collaboration.css">
+</head>
+<body>
+    <nav id="topnav"></nav>
+    <script src="js/topnav.js"></script>
+    <main class="collaboration-main">
+        <h1>Gebruikers</h1>
+        <p class="collaboration-intro">Zoek aangemelde accounts en beheer hun rollen. Beheerders kunnen rollen wijzigen; reviewers kunnen gegevens goedkeuren.</p>
+        <div class="collaboration-toolbar">
+            <label>Zoeken
+                <input id="users-search" type="search" autocomplete="off" placeholder="Naam of e-mailadres">
+            </label>
+        </div>
+        <p id="users-status" class="collaboration-status" role="status"></p>
+        <div class="table-shell">
+            <table id="users-table" class="collaboration-table">
+                <thead><tr><th>Account</th><th>Rollen</th><th>Laatst actief</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="collaboration-pagination">
+            <button id="users-prev" class="secondary-button" type="button">Vorige</button>
+            <span id="users-page"></span>
+            <button id="users-next" class="secondary-button" type="button">Volgende</button>
+        </div>
+        <h2>Rolgeschiedenis</h2>
+        <p class="collaboration-intro">Iedere rolwijziging blijft bewaard met de beheerder die haar heeft uitgevoerd.</p>
+        <div class="table-shell">
+            <table id="role-events-table" class="collaboration-table">
+                <thead><tr><th>Account</th><th>Nieuwe rollen</th><th>Gewijzigd door</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/collaboration.js"></script>
+    <script src="js/gebruikers.js"></script>
+</body>
+</html>

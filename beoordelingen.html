@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Beoordelingen — Open Vertaling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/collaboration.css">
+</head>
+<body>
+    <nav id="topnav"></nav>
+    <script src="js/topnav.js"></script>
+    <main class="collaboration-main">
+        <h1>Beoordelingen</h1>
+        <p class="collaboration-intro">Goedkeuringen zijn aan de exacte gegevensversie gekoppeld. Verandert de tekst of locatie, dan moet die nieuwe versie opnieuw worden beoordeeld.</p>
+        <div class="collaboration-toolbar">
+            <label>Zoeken
+                <input id="reviews-search" type="search" autocomplete="off" placeholder="Naam of gegevens-id">
+            </label>
+            <label>Soort
+                <select id="reviews-type">
+                    <option value="">Alle gegevens</option>
+                </select>
+            </label>
+            <label>Status
+                <select id="reviews-state">
+                    <option value="">Alle statussen</option>
+                    <option value="pending">Te beoordelen</option>
+                    <option value="approved">Goedgekeurd</option>
+                </select>
+            </label>
+        </div>
+        <p id="reviews-status" class="collaboration-status" role="status"></p>
+        <div class="table-shell">
+            <table id="reviews-table" class="collaboration-table">
+                <thead><tr><th>Gegevens</th><th>Soort</th><th>Status en reviewer</th><th>Beslissing</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="collaboration-pagination">
+            <button id="reviews-prev" class="secondary-button" type="button">Vorige</button>
+            <span id="reviews-page"></span>
+            <button id="reviews-next" class="secondary-button" type="button">Volgende</button>
+        </div>
+        <h2>Beslissingsgeschiedenis</h2>
+        <p class="collaboration-intro">Deze gebeurtenissen blijven bewaard, ook als een goedkeuring later wordt ingetrokken of de gegevens veranderen.</p>
+        <div class="table-shell">
+            <table id="review-events-table" class="collaboration-table">
+                <thead><tr><th>Gegevens</th><th>Beslissing</th><th>Gebruiker</th><th>Toelichting</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="collaboration-pagination">
+            <button id="review-events-prev" class="secondary-button" type="button">Vorige</button>
+            <span id="review-events-page"></span>
+            <button id="review-events-next" class="secondary-button" type="button">Volgende</button>
+        </div>
+    </main>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/collaboration.js"></script>
+    <script src="js/beoordelingen.js"></script>
+</body>
+</html>

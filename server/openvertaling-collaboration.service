@@ -1,0 +1,30 @@
+[Unit]
+Description=Open Vertaling collaboration API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=OV_COLLABORATION_DB=/var/lib/openvertaling-collaboration/collaboration.sqlite3
+Environment=OV_REVIEW_CATALOG=/var/www/openvertaling.nl/site/data/review-catalog.json
+Environment=OV_BOOTSTRAP_ADMIN_EMAILS=maartenvroegindeweij@gmail.com,real.johnheikens@gmail.com
+ExecStart=/usr/bin/python3 /opt/openvertaling-collaboration/collaboration_api.py
+Restart=on-failure
+RestartSec=3
+UMask=0077
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/openvertaling-collaboration
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

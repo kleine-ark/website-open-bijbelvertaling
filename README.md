@@ -89,6 +89,9 @@ assetserver en worden ook tijdens lokale ontwikkeling via internet geladen. Zie
 [`docs/external-assets.md`](docs/external-assets.md) voor de opslaglocatie en het
 publicatieproces.
 
+Accounts, rollen en herleidbare goedkeuringen staan beschreven in
+[`docs/collaboration-review.md`](docs/collaboration-review.md).
+
 ## Bijdragen
 
 Correcties, suggesties en bijdragen zijn welkom — via een fout-melding op de site,

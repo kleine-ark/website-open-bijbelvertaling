@@ -25,11 +25,54 @@ jobs:
       # Bouwt downloads/ (EPUB + brondata-zip + index.json) tijdens de deploy,
       # zodat de uitgaven altijd gelijk lopen met de tekst en er geen binaire
       # bestanden in git terechtkomen.
-      build_command: python scripts/build_naslag_teksten.py && python scripts/build_naslag_verzen.py && python scripts/build_illustraties.py && python scripts/build_downloads.py
+      build_command: python scripts/build_naslag_teksten.py && python scripts/build_naslag_verzen.py && python scripts/build_illustraties.py && python scripts/build_review_catalog.py && python scripts/build_downloads.py
       rsync_excludes: |
         .git/
         .github/
         .claude/
         audio/
+        server/
     secrets:
       deploy_ssh_key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+  deploy-collaboration-api:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+      - name: Trust deploy host
+        env:
+          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ vars.DEPLOY_PORT }}
+        run: ssh-keyscan -p "$DEPLOY_PORT" -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+      - name: Upload collaboration API
+        env:
+          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ vars.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ vars.DEPLOY_USER }}
+        run: |
+          stage="/tmp/openvertaling-collaboration-${GITHUB_SHA}"
+          ssh -p "$DEPLOY_PORT" "$DEPLOY_USER@$DEPLOY_HOST" "install -d -m 0700 '$stage'"
+          scp -P "$DEPLOY_PORT" server/* "$DEPLOY_USER@$DEPLOY_HOST:$stage/"
+      - name: Install collaboration API
+        env:
+          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ vars.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ vars.DEPLOY_USER }}
+        run: |
+          stage="/tmp/openvertaling-collaboration-${GITHUB_SHA}"
+          ssh -p "$DEPLOY_PORT" "$DEPLOY_USER@$DEPLOY_HOST" "bash '$stage/install_collaboration_api.sh' '$stage'"
+      - name: Remove uploaded installation files
+        if: always()
+        env:
+          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ vars.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ vars.DEPLOY_USER }}
+        run: |
+          stage="/tmp/openvertaling-collaboration-${GITHUB_SHA}"
+          ssh -p "$DEPLOY_PORT" "$DEPLOY_USER@$DEPLOY_HOST" "find '$stage' -type f -delete && rmdir '$stage'"
