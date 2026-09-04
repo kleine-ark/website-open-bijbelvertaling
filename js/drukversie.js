@@ -60,17 +60,43 @@
         ],
         woordkracht: null,
 
+        /* Het voorwoord van de gedrukte uitgave. De inhoud komt van over-ov.html:
+           wat de Open Vertaling is, waarom zij bestaat en wat "open" betekent.
+           Het staat hier als tekst en niet als verwijzing, omdat de lezer van een
+           gedrukt boek de website niet bij de hand heeft -- en het is een
+           invoerveld, zodat wie een eigen uitgave maakt er zijn eigen woord voor
+           in de plaats kan zetten. */
         VOORWOORD:
-            'De Open Vertaling neemt de Statenvertaling van 1888 als basistekst. Verouderde ' +
-            'naamvallen, werkwoordsvormen en woorden zijn vervangen door hedendaags Nederlands, ' +
-            'maar de zinsbouw is gelaten zoals hij stond. Wie een zin herschrijft omdat hij hem ' +
-            'mooier vindt is aan het vertalen en niet aan het herzien.\n\n' +
-            'Elke wijziging loopt via een genummerd principe, zodat op elke plaats na te gaan is ' +
-            'waaróm daar iets anders staat dan in 1888. Die principes staan openbaar op ' +
-            'openvertaling.nl, met hun vindplaatsen erbij.\n\n' +
-            'Deze uitgave is samengesteld met de drukversie op de website. De keuzes die u daar ' +
-            'maakte — de Godsnaam, de maten, de namen, de opmaak — staan in deze afdruk vast; ' +
-            'op de website kan elke lezer ze zelf anders zetten.',
+            'De Open Vertaling is een herziening van de Statenvertaling. Zij neemt de editie ' +
+            'van 1888 als basistekst en vervangt daarin verouderde naamvallen, ' +
+            'werkwoordsvormen en woorden door hedendaags Nederlands. De zinsbouw blijft ' +
+            'staan zoals hij stond: wie een zin herschrijft omdat hij hem mooier vindt is ' +
+            'aan het vertalen en niet aan het herzien.\n\n' +
+
+            'Niet alles is gemoderniseerd. Uitspansel, gedierte en gevogelte blijven; ' +
+            'vervaart, dewijl en alzo gaan eruit. Die vermenging is een keuze. Het verschil ' +
+            'tussen zeventiende-eeuws en hedendaags Nederlands is zo groot dat wie alles ' +
+            'consequent moderniseert geen herziening overhoudt maar een nieuwe vertaling ' +
+            '— en die zijn er al.\n\n' +
+
+            'De aanleiding was praktisch. Op vrijwel elke leesbare Nederlandse vertaling van ' +
+            'na 1900 rust auteursrecht, zodat zij niet vrij gedrukt en uitgedeeld mag worden. ' +
+            'Daarom is deze tekst vrijgegeven in het publieke domein: u mag hem drukken, ' +
+            'kopieren, uitdelen en verkopen zonder iemand om toestemming te vragen. Wat u om ' +
+            'niet ontvangen hebt, geeft het om niet (Mattheus 10:8).\n\n' +
+
+            'Open slaat ook op de keuzes. Waar over een herziening te twisten valt, staat de ' +
+            'keuze open: de Godsnaam als JAHWEH of als de HEERE, de maten bijbels of ' +
+            'metrisch, de namen Nederlands of Arabisch. Op de website zet elke lezer dat ' +
+            'zelf; in een gedrukte uitgave ligt het vast, en dit boek laat zien welke keuze ' +
+            'hier gemaakt is.\n\n' +
+
+            'Elke wijziging loopt via een genummerd principe, zodat op elke plaats na te gaan ' +
+            'is waarom daar iets anders staat dan in 1888. Die principes staan met hun ' +
+            'vindplaatsen openbaar op openvertaling.nl, samen met de kanttekeningen en de ' +
+            'begrippenlijst.\n\n' +
+
+            'Het is een poging. Het werk is niet af, en zal dat voorlopig niet zijn.',
 
         /* De leesopties die op een gedrukte uitgave van toepassing zijn. De
            overige — thema, kolomindeling, Strong-nummers — gaan over het scherm
@@ -648,6 +674,7 @@
                 hulp.innerHTML = html;
                 var el = hulp.firstChild;
                 inhoud.appendChild(el);
+                void el.offsetHeight;
                 if (this.looptOver(inhoud) && inhoud.children.length > 1) {
                     inhoud.removeChild(el);
                     blad = this.voorwerkPagina(klasse);
@@ -711,7 +738,10 @@
                     });
                 }
                 // De teksten over de kracht van Gods Woord sluiten het voorwoord
-                // af, zoals ze op de site de pagina openen.
+                // af, zoals ze op de site de pagina openen. Ze gaan als een blok
+                // mee naar het volgende blad: drie op het ene en de vierde alleen
+                // op het volgende leest als een fout.
+                var citaten = [];
                 (this.woordkracht || []).forEach(function (t) {
                     var body = Druk.schoon(Druk.bewerk(t.tekst, t.boek.id, t.hoofdstuk,
                         t.vers, t.boek.testament));
@@ -719,30 +749,40 @@
                     // Hebreeuwse letter. Binnen de psalm hoort die erbij, als
                     // los citaat in een voorwoord is het ruis.
                     body = body.replace(/^\s*<span class="acrostichon">[^<]*<\/span>\s*/, '');
-                    stukken.push('<blockquote class="dv-woordkracht">' + body +
+                    citaten.push('<blockquote class="dv-woordkracht">' + body +
                         '<cite>' + Druk.tekstVeilig(t.boek.nameDutch) + ' ' + t.hoofdstuk +
                         ':' + t.vers + '</cite></blockquote>');
                 });
+                if (citaten.length) {
+                    stukken.push('<div class="dv-woordkracht-groep">' + citaten.join('') + '</div>');
+                }
                 if (stukken.length) {
                     bladen = bladen.concat(this.voorwerkBladenVoor(stukken, 'dv-voorwoordblad', houder));
                 }
             }
 
             if (document.getElementById('dv-inhoudsopgave').checked) {
+                // Elke regel is een eigen blok en geen lijstitem: alleen zo kan
+                // voorwerkBladenVoor hem verplaatsen als het blad vol is. Een
+                // <ul> die over twee bladen loopt kan dat niet -- de lijst werd
+                // dan zonder waarschuwing afgesneden.
                 var regels = [];
                 (this.volgordeIds || []).forEach(function (id) {
                     if (!this.boekStart[id]) return;   // nog niet opgemaakt
                     var boek = this.boekPerId[id];
-                    regels.push('<li><span class="dv-io-naam">' + this.tekstVeilig(boek.nameDutch) +
+                    regels.push('<p class="dv-io-regel"><span class="dv-io-naam">' +
+                        this.tekstVeilig(boek.nameDutch) +
                         '</span><span class="dv-io-punten"></span><span class="dv-io-nr">' +
-                        this.boekStart[id] + '</span></li>');
+                        this.boekStart[id] + '</span></p>');
                 }, this);
                 if (regels.length) {
-                    var i = this.voorwerkPagina('dv-inhoudsblad');
-                    i.querySelector('.dv-inhoud').innerHTML =
-                        '<h2 class="dv-voorwerk-kop">Inhoud</h2><ul class="dv-io">' +
-                        regels.join('') + '</ul>';
-                    bladen.push(i);
+                    var stukken = ['<h2 class="dv-voorwerk-kop">Inhoudsopgave</h2>'].concat(regels);
+                    // Achtentachtig boeken onder elkaar vullen drie bladen met
+                    // vooral wit; naast elkaar is het er anderhalf en leest het
+                    // als de inhoudsopgave van een bijbel.
+                    var breed = regels.length > 24;
+                    bladen = bladen.concat(this.voorwerkBladenVoor(stukken, 'dv-inhoudsblad' +
+                        (breed ? ' dv-io-breed' : ''), houder));
                 }
             }
 

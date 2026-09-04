@@ -242,6 +242,7 @@
    verschuiven zodra hij een blad langer werd. */
 .dv-voorwerk { --dv-notitie-zij: 0mm; --dv-notitie-onder: 0mm; }
 .dv-voorwerk .dv-inhoud { column-count: 1; }
+.dv-pagina.dv-io-breed[data-kolommen] .dv-inhoud { column-count: 2; }
 .dv-voorwerk .dv-kop { display: none; }
 .dv-cover .dv-voet { display: none; }
 .dv-cover-blok {
@@ -307,8 +308,9 @@
 .dv-voorwoord-alinea { margin: 0 0 0.7em; text-align: justify; hyphens: auto; }
 /* De teksten over de kracht van Gods Woord: ingesprongen, cursief, met de
    vindplaats eronder rechts. */
+.dv-woordkracht-groep { margin-top: 1.2em; }
 .dv-woordkracht {
-    margin: 1.1em 0 0; padding: 0 6% 0 6%;
+    margin: 0.9em 0 0; padding: 0 6% 0 6%;
     font-style: italic; color: #4a4438; text-align: justify; hyphens: auto;
 }
 .dv-woordkracht cite {
@@ -316,12 +318,17 @@
     font-style: normal; font-size: 0.86em; letter-spacing: 0.06em;
     color: var(--dv-accent);
 }
-.dv-io { list-style: none; margin: 0; padding: 0; }
-.dv-io li { display: flex; align-items: baseline; gap: 0.3em; margin: 0 0 0.28em; }
+.dv-io-regel {
+    display: flex; align-items: baseline; gap: 0.3em; margin: 0 0 0.28em;
+    break-inside: avoid;
+}
 .dv-io-punten {
     flex: 1 1 auto; border-bottom: 0.15mm dotted #bdb6a6; transform: translateY(-0.22em);
 }
 .dv-io-nr { font-variant-numeric: tabular-nums; color: #5b544a; }
+/* Bij veel boeken twee kolommen; de kop loopt daar overheen. */
+.dv-io-breed .dv-inhoud { column-count: 2; column-gap: 7mm; }
+.dv-io-breed .dv-voorwerk-kop { column-span: all; }
 
 /* meerregelige velden in het paneel */
 .dv-veld-blok { display: block; }
