@@ -162,7 +162,9 @@ def main():
                     print("  %s %d:%d bestaat niet" % (boek, c, n))
                     tot_af += 1
                     continue
-                oud = vers[n].get("text2026_html") or ""
+                # Een boek dat nooit door de html-pijplijn ging heeft het veld niet;
+                # dan is de platte tekst de stand van zaken.
+                oud = vers[n].get("text2026_html") or vers[n].get("text2026") or ""
                 if oud == html:
                     tot_gelijk += 1
                     continue

@@ -53,7 +53,7 @@ def main():
         data = json.load(open(pad, encoding="utf-8"))
         print("=== %s %d ===" % (args.boek, c))
         for v in data.get("verses", []):
-            html = v.get("text2026_html") or ""
+            html = v.get("text2026_html") or v.get("text2026") or ""
             if not args.volledig:
                 html = re.sub(r'<sup class="note-marker" data-note="(\d+)">\d+</sup>',
                               r'[\1]', html)
