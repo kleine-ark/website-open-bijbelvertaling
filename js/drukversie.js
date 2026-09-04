@@ -60,43 +60,68 @@
         ],
         woordkracht: null,
 
-        /* Het voorwoord van de gedrukte uitgave. De inhoud komt van over-ov.html:
-           wat de Open Vertaling is, waarom zij bestaat en wat "open" betekent.
-           Het staat hier als tekst en niet als verwijzing, omdat de lezer van een
-           gedrukt boek de website niet bij de hand heeft -- en het is een
-           invoerveld, zodat wie een eigen uitgave maakt er zijn eigen woord voor
-           in de plaats kan zetten. */
+        /* Het voorwoord van de gedrukte uitgave. Het legt uit waarom dit een
+           herziening is en geen nieuwe vertaling: de zinsbouw blijft staan, en
+           elk vervangen woord loopt via een genummerd principe dat overal geldt.
+           De inhoud komt van over-ov.html; het staat hier als tekst en niet als
+           verwijzing, omdat de lezer van een gedrukt boek de website niet bij de
+           hand heeft -- en het is een invoerveld, zodat wie een eigen uitgave
+           maakt er zijn eigen woord voor in de plaats kan zetten. */
         VOORWOORD:
-            'De Open Vertaling is een herziening van de Statenvertaling. Zij neemt de editie ' +
-            'van 1888 als basistekst en vervangt daarin verouderde naamvallen, ' +
-            'werkwoordsvormen en woorden door hedendaags Nederlands. De zinsbouw blijft ' +
-            'staan zoals hij stond: wie een zin herschrijft omdat hij hem mooier vindt is ' +
-            'aan het vertalen en niet aan het herzien.\n\n' +
+            'Dit is de Statenvertaling, leesbaar gemaakt. De basistekst is de editie van ' +
+            '1888. Wat een lezer van nu doet struikelen — naamvallen als des en der, ' +
+            'werkwoordsvormen als zeide, aanspreekvormen als gij, en woorden die niemand ' +
+            'meer kent zoals dewijl, alzo en vervaart — is vervangen. Al het overige is ' +
+            'blijven staan.\n\n' +
 
-            'Niet alles is gemoderniseerd. Uitspansel, gedierte en gevogelte blijven; ' +
-            'vervaart, dewijl en alzo gaan eruit. Die vermenging is een keuze. Het verschil ' +
-            'tussen zeventiende-eeuws en hedendaags Nederlands is zo groot dat wie alles ' +
-            'consequent moderniseert geen herziening overhoudt maar een nieuwe vertaling ' +
-            '— en die zijn er al.\n\n' +
+            'Daar zit de helderheid in, en niet in het herschrijven van zinnen. De woordvolgorde ' +
+            'van de Statenvertaling is niet aangeraakt. Een vers heeft hier nog dezelfde bouw ' +
+            'als in 1888, met de nadruk op dezelfde plaats; alleen de woorden die de weg ' +
+            'versperden zijn weggenomen. Wie meeleest met iemand die de oude editie voor zich ' +
+            'heeft, komt regel voor regel op hetzelfde uit. Dat is wat een herziening ' +
+            'onderscheidt van een nieuwe vertaling: wie elke zin naar zijn eigen hand zet kan ' +
+            'een gladdere tekst afleveren, maar levert de Statenvertaling niet meer af.\n\n' +
 
-            'De aanleiding was praktisch. Op vrijwel elke leesbare Nederlandse vertaling van ' +
-            'na 1900 rust auteursrecht, zodat zij niet vrij gedrukt en uitgedeeld mag worden. ' +
-            'Daarom is deze tekst vrijgegeven in het publieke domein: u mag hem drukken, ' +
-            'kopieren, uitdelen en verkopen zonder iemand om toestemming te vragen. Wat u om ' +
-            'niet ontvangen hebt, geeft het om niet (Mattheus 10:8).\n\n' +
+            'Er is ook geen wijziging die op smaak berust. Elke verandering loopt via een ' +
+            'genummerd principe — doch wordt maar, zeide wordt zei, den wordt de — ' +
+            'en dat principe geldt dan in heel de Schrift, op elke plaats waar het van ' +
+            'toepassing is. Zo staat er niet in het ene boek doch en in het andere maar. Elk ' +
+            'principe wordt eenmaal toegepast, vanuit de tekst van 1888, zodat geen ' +
+            'vervanging op een eerdere vervanging voortbouwt. De principes zijn door mensen ' +
+            'opgesteld en goedgekeurd; alleen het doorvoeren ervan gaat machinaal. Bij elk ' +
+            'vers staat op de website wat er veranderd is en welk principe daarvoor ' +
+            'verantwoordelijk is, zodat wie het met een keuze oneens is precies weet waar hij ' +
+            'hem moet zoeken.\n\n' +
 
-            'Open slaat ook op de keuzes. Waar over een herziening te twisten valt, staat de ' +
-            'keuze open: de Godsnaam als JAHWEH of als de HEERE, de maten bijbels of ' +
-            'metrisch, de namen Nederlands of Arabisch. Op de website zet elke lezer dat ' +
-            'zelf; in een gedrukte uitgave ligt het vast, en dit boek laat zien welke keuze ' +
-            'hier gemaakt is.\n\n' +
+            'Niet alles is gemoderniseerd, en dat is opzet. Uitspansel, gedierte, gevogelte, ' +
+            'geboomte, te zijner tijd, voorwaar: die woorden zijn niet moeilijk, ze zijn ' +
+            'plechtig, en ze horen bij het register waarin dit boek al vier eeuwen gelezen ' +
+            'wordt. Wie ook die zou wegpoetsen maakt de tekst niet duidelijker maar vlakker. ' +
+            'Wat overblijft is een vermenging van oud en nieuw: geen zeventiende-eeuws ' +
+            'Nederlands en geen eenentwintigste-eeuws, maar iets ertussenin — herkenbaar ' +
+            'voor wie ermee is opgegroeid, leesbaar voor wie er voor het eerst in leest.\n\n' +
 
-            'Elke wijziging loopt via een genummerd principe, zodat op elke plaats na te gaan ' +
-            'is waarom daar iets anders staat dan in 1888. Die principes staan met hun ' +
-            'vindplaatsen openbaar op openvertaling.nl, samen met de kanttekeningen en de ' +
-            'begrippenlijst.\n\n' +
+            'Zo wordt trouwens allang gelezen. Een vader die aan tafel uit de Statenvertaling ' +
+            'voorleest vervangt onderweg vanzelf des, der, denzelve en gij, zonder dat iemand ' +
+            'het hem gezegd heeft. Dit boek doet dat werk vooraf, en dan overal op dezelfde ' +
+            'manier.\n\n' +
 
-            'Het is een poging. Het werk is niet af, en zal dat voorlopig niet zijn.',
+            'De aanleiding was dat op vrijwel elke leesbare Nederlandse vertaling van na 1900 ' +
+            'auteursrecht rust: zij mag niet vrij gedrukt en uitgedeeld worden. Deze tekst is ' +
+            'daarom vrijgegeven in het publieke domein. U mag hem drukken, kopieren, uitdelen ' +
+            'en verkopen zonder iemand om toestemming te vragen. Wat u om niet ontvangen ' +
+            'hebt, geeft het om niet (Mattheus 10:8).\n\n' +
+
+            'Open slaat ook op de keuzes die niet voor iedereen hetzelfde hoeven uit te ' +
+            'vallen: de Godsnaam als JAHWEH of als de HEERE, de maten bijbels of omgerekend, ' +
+            'de namen Nederlands of Arabisch. Op openvertaling.nl zet elke lezer dat zelf; in ' +
+            'een gedrukte uitgave ligt het vast, en dit boek laat zien welke keuze hier ' +
+            'gemaakt is. De kanttekeningen van de Statenvertaling staan erbij, op dezelfde ' +
+            'manier herzien, en de apocriefe boeken ook.\n\n' +
+
+            'Het is een poging. De tekst wordt vers voor vers door mensenogen nagelopen en ' +
+            'dat werk is nog niet af; er zal ook een tweede ronde nodig zijn. Wat u hier ' +
+            'leest is een stand van zaken en geen eindpunt.',
 
         /* De leesopties die op een gedrukte uitgave van toepassing zijn. De
            overige — thema, kolomindeling, Strong-nummers — gaan over het scherm
