@@ -36,7 +36,13 @@ def main():
     p.add_argument("tot", nargs="?", type=int)
     p.add_argument("--volledig", action="store_true",
                    help="notenmarkeringen voluit in plaats van [n]")
+    p.add_argument("--wortel", help="andere map met data/ dan de repository zelf; "
+                                    "voor werken op een uitgepakte kopie van origin/main")
     args = p.parse_args()
+
+    global WORTEL
+    if args.wortel:
+        WORTEL = args.wortel
 
     alle = hoofdstukken(args.boek)
     van = args.van or alle[0]
