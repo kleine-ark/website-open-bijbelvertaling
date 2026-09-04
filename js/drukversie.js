@@ -48,6 +48,18 @@
         },
         boekStart: {},          // boek-id -> eerste bladnummer, voor de inhoudsopgave
 
+        /* Dezelfde vier teksten die op over-ov.html boven aan de pagina staan.
+           Ze worden niet overgetikt maar uit de tekst zelf gehaald, zodat ze de
+           gekozen Godsnaam en de overige leesopties volgen -- een overgetikt
+           citaat zou in een uitgave met "de HEERE" ineens JAHWEH zeggen. */
+        WOORDKRACHT: [
+            ['psalmen', 119, 9],
+            ['hebreeen', 4, 12],
+            ['jesaja', 55, 11],
+            ['jeremia', 23, 29]
+        ],
+        woordkracht: null,
+
         VOORWOORD:
             'De Open Vertaling neemt de Statenvertaling van 1888 als basistekst. Verouderde ' +
             'naamvallen, werkwoordsvormen en woorden zijn vervangen door hedendaags Nederlands, ' +
@@ -327,7 +339,7 @@
                 });
             });
             // Deze niet: alleen het voorwerk of de lijntjes veranderen.
-            ['dv-lijntjes', 'dv-lijnafstand', 'dv-cover', 'dv-omslag', 'dv-titel', 'dv-ondertitel', 'dv-voorwoord',
+            ['dv-lijntjes', 'dv-lijnafstand', 'dv-cover', 'dv-omslag', 'dv-onderregel', 'dv-titel', 'dv-ondertitel', 'dv-voorwoord',
              'dv-voorwoord-tekst', 'dv-inhoudsopgave'].forEach(function (id) {
                 document.getElementById(id).addEventListener('input', function () {
                     self.pasInstellingenToe();
@@ -338,6 +350,10 @@
             document.getElementById('dv-print').addEventListener('click', function () { window.print(); });
             document.getElementById('dv-verder-knop').addEventListener('click', function () {
                 self.rendeerRonde();
+            });
+            document.getElementById('dv-alles').addEventListener('click', function () {
+                if (self.allesBezig) { self.allesBezig = false; return; }
+                self.rendeerAlles();
             });
         },
 
@@ -431,6 +447,10 @@
                     .then(function (d) { Druk.perikopen = d; })
                     .catch(function () { Druk.perikopen = {}; }));
             }
+            // Altijd ophalen, ook als het voorwoord nu uitstaat: het vinkje kan
+            // aan zonder dat er opnieuw wordt opgemaakt, en dan moeten de vier
+            // teksten er meteen zijn.
+            if (!this.woordkracht) werk.push(this.laadWoordkracht());
             if (document.getElementById('dv-platen').checked && !this.platen) {
                 werk.push(fetch('data/illustraties.json')
                     .then(function (r) { return r.ok ? r.json() : {}; })
@@ -438,6 +458,31 @@
                     .catch(function () { Druk.platen = { map: '', platen: {} }; }));
             }
             if (werk.length) await Promise.all(werk);
+        },
+
+        /* De vier teksten uit de bijbeltekst zelf halen. Mislukt een ervan, dan
+           blijft hij weg; het voorwoord is geen reden om de opmaak te staken. */
+        async laadWoordkracht() {
+            var uit = [];
+            for (var i = 0; i < this.WOORDKRACHT.length; i++) {
+                var w = this.WOORDKRACHT[i];
+                var boek = (this.boeken || []).filter(function (b) { return b.id === w[0]; })[0];
+                if (!boek) continue;
+                try {
+                    var data = await DataLoader.loadChapter(w[0], w[1]);
+                    var vers = ((data && data.verses) || []).filter(function (v) {
+                        return v && v.number === w[2];
+                    })[0];
+                    if (!vers) continue;
+                    uit.push({
+                        boek: boek,
+                        hoofdstuk: w[1],
+                        vers: w[2],
+                        tekst: vers.text2026_html || vers.text2026 || ''
+                    });
+                } catch (e) { /* een ontbrekend hoofdstuk laat de tekst weg */ }
+            }
+            this.woordkracht = uit;
         },
 
         async bouw() {
@@ -533,7 +578,7 @@
             this.bezig = false;
             knop.disabled = false;
             var rest = this.wachtrij.length - this.klaar;
-            if (rest > 0) {
+            if (rest > 0 && !this.allesBezig) {
                 document.getElementById('dv-verder').hidden = false;
                 document.getElementById('dv-verder-tekst').textContent =
                     this.paginaNr + ' bladen opgemaakt. Er staan nog ' + rest +
@@ -544,6 +589,26 @@
             }
 
             if (this._opnieuw) { this._opnieuw = false; this.bouw(); }
+        },
+
+        /* Ronde na ronde tot de wachtrij leeg is. De hele Bijbel is ruim
+           zestienhonderd bladen; dat duurt minuten en de pagina wordt er zwaar
+           van, dus is het een aparte keuze en geen standaardgedrag. Nog een keer
+           klikken breekt af na de lopende ronde. */
+        async rendeerAlles() {
+            if (this.bezig || this.allesBezig) return;
+            var knop = document.getElementById('dv-alles');
+            this.allesBezig = true;
+            knop.textContent = 'Stoppen';
+            knop.classList.add('dv-knop-bezig');
+            while (this.allesBezig && this.klaar < this.wachtrij.length) {
+                await this.rendeerRonde();
+            }
+            var afgebroken = this.klaar < this.wachtrij.length;
+            this.allesBezig = false;
+            knop.textContent = 'Maak de hele Bijbel op';
+            knop.classList.remove('dv-knop-bezig');
+            if (!afgebroken) this.zetStatus('Klaar: ' + this.paginaNr + ' bladen, alles opgemaakt.');
         },
 
         /* Het voorwerk komt vooraan maar wordt achteraf gemaakt: pas als de
@@ -563,6 +628,36 @@
             p.dataset.kolommen = '1';
             p.innerHTML = '<div class="dv-inhoud"></div><div class="dv-voet"><span></span></div>';
             return p;
+        },
+
+        /* Voorwerk kan langer zijn dan een blad -- vier teksten plus drie
+           alinea's passen wel op een A5 maar niet op een A6, en een blad snijdt
+           zonder waarschuwing af wat er niet op past. Daarom hier dezelfde
+           meetmethode als bij de bijbeltekst: vullen tot het overloopt, het
+           laatste blok eraf, verder op een nieuw blad. De bladen worden
+           tussentijds achteraan gehangen omdat er alleen in de pagina gemeten
+           kan worden; bouwVoorwerk zet ze daarna vooraan. */
+        voorwerkBladenVoor(stukken, klasse, houder) {
+            var bladen = [];
+            var blad = this.voorwerkPagina(klasse);
+            houder.appendChild(blad);
+            bladen.push(blad);
+            var inhoud = blad.querySelector('.dv-inhoud');
+            stukken.forEach(function (html) {
+                var hulp = document.createElement('div');
+                hulp.innerHTML = html;
+                var el = hulp.firstChild;
+                inhoud.appendChild(el);
+                if (this.looptOver(inhoud) && inhoud.children.length > 1) {
+                    inhoud.removeChild(el);
+                    blad = this.voorwerkPagina(klasse);
+                    houder.appendChild(blad);
+                    bladen.push(blad);
+                    inhoud = blad.querySelector('.dv-inhoud');
+                    inhoud.appendChild(el);
+                }
+            }, this);
+            return bladen;
         },
 
         bouwVoorwerk() {
@@ -591,12 +686,16 @@
                 // daaronder de aanduiding in gespatieerde kapitalen. Zo staat het
                 // op het ontwerp zelf ook, en zo blijft het over elk van de zes
                 // beelden leesbaar zonder er een gloed omheen te leggen.
+                var slot = document.getElementById('dv-onderregel').value.trim();
                 c.querySelector('.dv-inhoud').innerHTML =
                     '<div class="dv-cover-blok"><div class="dv-cover-naam">' +
-                    '<span class="dv-cover-regel" aria-hidden="true"></span>' +
+                    // Een regel boven de naam stond alleen op het eerste ontwerp,
+                    // en verdween daar in het gebladerte; op de andere staat er
+                    // er een tussen naam en aanduiding. Die ene houden we aan.
                     '<h1>' + this.tekstVeilig(titel) + '</h1>' +
                     '<span class="dv-cover-regel" aria-hidden="true"></span>' +
                     (onder ? '<p class="dv-cover-onder">' + this.tekstVeilig(onder) + '</p>' : '') +
+                    (slot ? '<p class="dv-cover-slot">' + this.tekstVeilig(slot) + '</p>' : '') +
                     '</div></div>' +
                     '<p class="dv-cover-voet">openvertaling.nl</p>';
                 bladen.push(c);
@@ -604,14 +703,28 @@
 
             if (document.getElementById('dv-voorwoord').checked) {
                 var tekst = document.getElementById('dv-voorwoord-tekst').value.trim();
+                var stukken = [];
                 if (tekst) {
-                    var v = this.voorwerkPagina('dv-voorwoordblad');
-                    v.querySelector('.dv-inhoud').innerHTML =
-                        '<h2 class="dv-voorwerk-kop">Voorwoord</h2>' +
-                        tekst.split(/\n{2,}/).map(function (a) {
-                            return '<p class="dv-voorwoord-alinea">' + Druk.tekstVeilig(a) + '</p>';
-                        }).join('');
-                    bladen.push(v);
+                    stukken.push('<h2 class="dv-voorwerk-kop">Voorwoord</h2>');
+                    tekst.split(/\n{2,}/).forEach(function (a) {
+                        stukken.push('<p class="dv-voorwoord-alinea">' + Druk.tekstVeilig(a) + '</p>');
+                    });
+                }
+                // De teksten over de kracht van Gods Woord sluiten het voorwoord
+                // af, zoals ze op de site de pagina openen.
+                (this.woordkracht || []).forEach(function (t) {
+                    var body = Druk.schoon(Druk.bewerk(t.tekst, t.boek.id, t.hoofdstuk,
+                        t.vers, t.boek.testament));
+                    // Psalm 119 is een alfabetlied: elk vers opent met zijn
+                    // Hebreeuwse letter. Binnen de psalm hoort die erbij, als
+                    // los citaat in een voorwoord is het ruis.
+                    body = body.replace(/^\s*<span class="acrostichon">[^<]*<\/span>\s*/, '');
+                    stukken.push('<blockquote class="dv-woordkracht">' + body +
+                        '<cite>' + Druk.tekstVeilig(t.boek.nameDutch) + ' ' + t.hoofdstuk +
+                        ':' + t.vers + '</cite></blockquote>');
+                });
+                if (stukken.length) {
+                    bladen = bladen.concat(this.voorwerkBladenVoor(stukken, 'dv-voorwoordblad', houder));
                 }
             }
 
@@ -639,7 +752,33 @@
                 var voet = blad.querySelector('.dv-voet span');
                 if (voet) voet.textContent = Druk.romeins(idx + 1);
                 blad.classList.toggle('dv-links', (idx + 1) % 2 === 0);
+                Druk.pasTitelAan(blad);
             });
+        },
+
+        /* De naam staat op het ontwerp zo groot als hij kan: het langste woord
+           beslaat ruim zestig procent van het blad, en een titel van twee
+           woorden valt daardoor vanzelf in twee regels uiteen -- GODS boven
+           WOORD, zoals op de omslagen zelf. Een vaste corpsgrootte kan dat niet,
+           want de titel is een invoerveld: hij kan ook Het Nieuwe Testament
+           heten. Daarom wordt hij hier gemeten en teruggeschaald tot hij past. */
+        pasTitelAan(blad) {
+            var kop = blad.querySelector('.dv-cover-blok h1');
+            if (!kop) return;
+            var blok = blad.querySelector('.dv-cover-naam');
+            var breed = blad.getBoundingClientRect().width;
+            if (!blok || !breed) return;
+            // De maat gaat via de variabele en niet via de kop zelf: ondertitel,
+            // onderregel en de sierlijnen rekenen zich eraan, zodat de lockup bij
+            // een langere titel als geheel meekrimpt.
+            var maat = breed * 0.21;
+            for (var i = 0; i < 26; i++) {
+                blok.style.setProperty('--dv-titelmaat', maat + 'px');
+                var regels = Math.round(kop.getBoundingClientRect().height /
+                    (parseFloat(getComputedStyle(kop).lineHeight) || maat));
+                if (kop.scrollWidth <= kop.clientWidth + 1 && regels <= 3) break;
+                maat *= 0.93;
+            }
         },
 
         omschrijvingVanSelectie() {

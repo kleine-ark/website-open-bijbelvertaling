@@ -248,29 +248,45 @@
     height: 100%; display: flex; flex-direction: column;
     align-items: center; justify-content: center; text-align: center;
 }
-.dv-cover-naam { width: 86%; }
+/* De naam beslaat op het ontwerp ruim zestig procent van de bladbreedte; de
+   corpsgrootte komt uit pasTitelAan() en staat in --dv-titelmaat. Alles
+   eronder houdt zijn verhouding tot die maat. */
+.dv-cover-naam { width: 80%; color: var(--dv-accent); --dv-titelmaat: 2.5em; }
 .dv-cover-blok h1 {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 2.5em; font-weight: 400; color: var(--dv-accent);
-    /* Kapitalen met wat lucht ertussen: bij die corpsgrootte staan ze anders
-       tegen elkaar aan. De regelafstand mag krap, want er zitten geen staarten
-       onder de letters. */
-    text-transform: uppercase; letter-spacing: 0.055em;
-    line-height: 1.06; margin: 0.34em 0;
+    font-size: var(--dv-titelmaat);
+    font-weight: 400; color: inherit;
+    text-transform: uppercase; letter-spacing: 0.02em;
+    line-height: 1.0; margin: 0.16em 0;
+    /* Een woord dat niet past mag niet uit het blok steken; pasTitelAan meet
+       daarop en schaalt terug. */
+    white-space: normal; overflow-wrap: normal;
 }
 .dv-cover-onder {
-    font-size: 0.82em; color: var(--dv-accent); margin: 0.9em 0 0;
-    text-transform: uppercase; letter-spacing: 0.32em;
+    font-size: calc(var(--dv-titelmaat) * 0.27); color: inherit; margin: 0.5em 0 0;
+    text-transform: uppercase; letter-spacing: 0.16em;
     /* De spatiering zet ook achter de laatste letter een gat; die haalt het
        woord uit het midden. Een halve spatie terug herstelt dat. */
-    text-indent: 0.32em;
+    text-indent: 0.16em; line-height: 1.2;
 }
-/* Dunne regel met een ruitje in het midden, boven en onder de naam. */
+.dv-cover-slot {
+    font-size: calc(var(--dv-titelmaat) * 0.155); color: inherit; opacity: 0.85;
+    margin: 1.1em 0 0; font-style: italic; letter-spacing: 0.02em; line-height: 1.3;
+}
+/* Dunne regel met een ruitje in het midden, tussen naam en aanduiding. */
 .dv-cover-regel {
-    display: block; height: 0.5em; position: relative;
+    display: block; height: calc(var(--dv-titelmaat) * 0.34); position: relative;
 }
+/* De lichtwaas die de letters over een schilderij draagt komt uit text-shadow;
+   een lijn heeft daar niets aan; zonder dit verdwijnt de streep in een donker
+   stuk schilderij. */
+.dv-cover-beeld .dv-cover-regel {
+    filter: drop-shadow(0 0 0.7mm rgba(255, 252, 244, 0.95))
+            drop-shadow(0 0 1.8mm rgba(255, 252, 244, 0.7));
+}
+.dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-regel { filter: none; }
 .dv-cover-regel::before {
-    content: ''; position: absolute; left: 0; right: 0; top: 50%;
+    content: ''; position: absolute; left: 6%; right: 6%; top: 50%;
     border-top: 0.22mm solid currentColor; opacity: 0.55;
 }
 .dv-cover-regel::after {
@@ -278,7 +294,6 @@
     width: 1.1mm; height: 1.1mm; margin: -0.55mm 0 0 -0.55mm;
     background: currentColor; transform: rotate(45deg);
 }
-.dv-cover-naam { color: var(--dv-accent); }
 .dv-cover-voet {
     position: absolute; bottom: var(--dv-marge-onder); left: 0; right: 0;
     font-size: 0.7em; color: #9a9284; letter-spacing: 0.22em; text-indent: 0.22em;
@@ -290,6 +305,17 @@
     margin: 0 0 0.8em; text-align: center;
 }
 .dv-voorwoord-alinea { margin: 0 0 0.7em; text-align: justify; hyphens: auto; }
+/* De teksten over de kracht van Gods Woord: ingesprongen, cursief, met de
+   vindplaats eronder rechts. */
+.dv-woordkracht {
+    margin: 1.1em 0 0; padding: 0 6% 0 6%;
+    font-style: italic; color: #4a4438; text-align: justify; hyphens: auto;
+}
+.dv-woordkracht cite {
+    display: block; margin-top: 0.25em; text-align: right;
+    font-style: normal; font-size: 0.86em; letter-spacing: 0.06em;
+    color: var(--dv-accent);
+}
 .dv-io { list-style: none; margin: 0; padding: 0; }
 .dv-io li { display: flex; align-items: baseline; gap: 0.3em; margin: 0 0 0.28em; }
 .dv-io-punten {
@@ -315,29 +341,25 @@
 /* Het omslagontwerp staat als beeld achter het titelblad; de titel zelf blijft
    echte letters, zodat de drukker hem als vector kan overnemen. */
 .dv-cover-beeld { background-size: cover; background-position: center; }
-.dv-cover-beeld .dv-cover-blok { justify-content: flex-start; padding-top: 7%; }
-/* Over een schilderij heeft de naam een eigen ondergrond nodig. Een gloed om de
-   letters heen doet dat ook wel, maar die is op papier meteen te zien als een
-   noodgreep; een rustig veld met een haarlijn eromheen is wat een omslag doet. */
+.dv-cover-beeld .dv-cover-blok { justify-content: flex-start; padding-top: 6%; }
+/* Op het ontwerp staat de naam recht op het schilderij, niet in een kader. Wat
+   hem daar draagt is een zachte lichtwaas rondom, zo breed dat de lucht erachter
+   iets terugwijkt en zo licht dat je hem niet als rand ziet. */
 .dv-cover-beeld .dv-cover-naam {
-    width: 78%;
-    background: rgba(252, 249, 241, 0.86);
-    border: 0.22mm solid rgba(20, 36, 63, 0.35);
-    outline: 0.22mm solid rgba(252, 249, 241, 0.55); outline-offset: 0.9mm;
-    padding: 5% 6% 5.5%;
-    color: #14243f;
+    color: #16233f;
+    text-shadow:
+        0 0 0.9mm rgba(255, 252, 244, 0.95),
+        0 0 2.2mm rgba(255, 252, 244, 0.8),
+        0 0 5mm rgba(255, 252, 244, 0.55);
 }
 .dv-cover-beeld .dv-cover-voet { color: rgba(252, 249, 241, 0.72); }
 
 /* Het nachtblauwe linnen is al sober; daar hoort goud op donker, zonder veld,
    en hoger dan de gouden takjes die in het ontwerp zelf staan. */
-.dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-blok { padding-top: 17%; }
+.dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-blok { padding-top: 15%; }
 .dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-naam {
-    background: none; border: none; outline: none; padding: 0; width: 72%;
-    color: #d9b877;
+    color: #d6b478; text-shadow: none;
 }
-.dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-blok h1,
-.dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-onder { color: #d9b877; }
 .dv-cover-beeld[data-omslag="06-sober-nachtblauw"] .dv-cover-voet { color: #7e8ba3; }
 
 /* --- de plaat bij een hoofdstuk --- */
@@ -363,6 +385,8 @@
     display: flex; align-items: flex-end; justify-content: center;
 }
 .dv-plaat img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+.dv-knop-bezig { background: #8d3b2f; border-color: #8d3b2f; color: #fff; }
 
 /* --- afdrukken --- */
 @media print {

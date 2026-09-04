@@ -11,8 +11,8 @@
     <link rel="canonical" href="https://openvertaling.nl/drukversie.html">
 
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css?v=0.53.0">
-    <link rel="stylesheet" href="css/drukversie.css?v=0.53.0">
+    <link rel="stylesheet" href="css/style.css?v=0.54.0">
+    <link rel="stylesheet" href="css/drukversie.css?v=0.54.0">
 </head>
 <body class="dv-body">
 <div class="dv-layout">
@@ -171,6 +171,10 @@
                 <span>Ondertitel</span>
                 <input type="text" id="dv-ondertitel" value="Open Vertaling">
             </label>
+            <label class="dv-veld dv-veld-blok dv-alleen-cover">
+                <span>Onderregel</span>
+                <input type="text" id="dv-onderregel" placeholder="leeg laten of zelf invullen">
+            </label>
             <label class="dv-veld"><span>Voorwoord</span><input type="checkbox" id="dv-voorwoord" checked></label>
             <label class="dv-veld dv-veld-blok dv-alleen-voorwoord">
                 <span>Tekst van het voorwoord</span>
@@ -187,6 +191,7 @@
 
         <div class="dv-acties">
             <button type="button" id="dv-bouw" class="dv-knop dv-knop-hoofd">Opnieuw opmaken</button>
+            <button type="button" id="dv-alles" class="dv-knop">Maak de hele Bijbel op</button>
             <button type="button" id="dv-print" class="dv-knop">Afdrukken</button>
             <p class="dv-status" id="dv-status" role="status" aria-live="polite"></p>
         </div>
@@ -204,9 +209,9 @@
 </div>
 
 <script src="js/storage.js"></script>
-<script src="js/data-loader.js?v=0.53.0"></script>
-<script src="js/book-orders.js?v=0.53.0"></script>
-<script src="js/opties.js?v=0.53.0"></script>
-<script src="js/drukversie.js?v=0.53.0"></script>
+<script src="js/data-loader.js?v=0.54.0"></script>
+<script src="js/book-orders.js?v=0.54.0"></script>
+<script src="js/opties.js?v=0.54.0"></script>
+<script src="js/drukversie.js?v=0.54.0"></script>
 </body>
 </html>
