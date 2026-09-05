@@ -112,12 +112,47 @@ rede elders *"wij"* zegt. Dat laatste is een vertaalvraag, geen opmaakvraag.
 de Heere"* binnen de engelenrede), 6:19 (half citaat, half opschrift), 6:6, en
 9:12 en 9:14 (*"een stem"* zonder naam).
 
+**4 Ezra** — 2:5-7 (gaat de moeder door of neemt God het over?), 11:38-46 (de
+leeuw bestraft de adelaar: 11:39-42 spreken in Gods eerste persoon, 11:43-44 in
+de derde), 16:17 en 16:19 (*"Wee mij, wee mij"* staat nu als godsspraak en leest
+scheef, maar wie het dan wél roept staat er niet), 9:32 (*"mijn rechten"* midden
+in Ezra's gebed — een naad in de brontekst), en 11:8-9 en 11:16-17 (de adelaar en
+de stem in het droomgezicht, waar geen van de vier klassen echt past).
+
+**Jubileeën** — 4:5, 4:32, 5:17 en 16:29: wat op de hemelse tafelen geschreven
+staat, telkens na een dubbele punt. Er is geen spreker die onder een van de vier
+klassen valt. Nu onopgemaakt, maar die keuze moet voor het hele boek gelijk zijn.
+Verder 7:21-25 en 22:6 (waar begint de rede?), 1:28 en 18:10-11 (de engel spreekt
+met Gods eigen *"Ik"*).
+
+**1 Meqabyan** — hoofdstuk 12 is de zwaarste: vanaf 12:14 spreekt God zonder
+enige aankondiging, en 12:29-32 en 12:38-39 vallen daar middenin terug in de
+derde persoon. Verder 4:33, 5:10, 6:26, 7:10, 13:3-7, 19:13, 24:9-22 en 34:5-13.
+Drie keuzes die wél gemaakt zijn en controle verdienen: 3:1 (*"een stem uit de
+hemel"* als godsspraak — zou een engel kunnen zijn), 23:7 en 33:9-10.
+
+**2 Meqabyan** — 2:8, 3:6-7, 10:14-15, 12:1-3, 13:4-6, 14:6a, 16:2, 21:19-20 en
+1:10.
+
+**1 Makkabeeën** — 5:15, 6:11, 8:29-32, 12:22, 13:42 en 14:46-49 (loopt de tekst
+van het bronzen besluit daar nog door?).
+
+**2 en 3 Makkabeeën** — 3 Makk 1:12, 5:28 en 6:21 (daar loopt de tekst zelf dood
+op *"over uw on"*), en 2 Makk 2:19, 8:23, 13:15, 1:24-29 en 15:16.
+
+**Jezus Sirach** — 22:31-23:6 en 36:1-19: twee gebeden van de schrijver zonder
+enige aankondiging. Regel 7 zegt dat een gebed mensenspraak is, regel 8 dat
+Sirachs eigen tekst geen span krijgt. Nu onopgemaakt. Verder 14:18, 24:32-38,
+25:3, 25:9-12 en 39:19-40 (waar houdt de lofzang op?).
+
 ## Fouten in de data zelf, buiten de citaatopmaak om
 
 - **Jubileeën 26:33 ontbreekt.** Het hoofdstuk springt van 32 naar 34, waardoor
   26:34 zonder aankondiging begint.
 - **Jubileeën 27:2** begint eveneens zonder aankondiging; de zin *"en zij riep
   Jakob en zei tot hem"* ontbreekt.
+- **3 Makkabeeën 6:21** loopt midden in het vers dood op *"over uw on"*.
+- **1 Meqabyan 13:12** is verminkt: *"gelijk gezegd is: Waarom?"*
 - **4 Baruch 7:3** luidt *"En Baruch zeide tot hem: Gij, o Baruch…"* — de
   aangesprokene moet de arend zijn.
 - **Achtergebleven markdown-noten.** In 128 verzen van Henoch, 1 Meqabyan,
