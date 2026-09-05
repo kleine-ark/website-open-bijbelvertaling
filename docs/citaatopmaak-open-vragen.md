@@ -6,6 +6,12 @@ wat niet met zekerheid vast te stellen viel is **ongemoeid gelaten** en staat
 hieronder. De regel daarachter: een ontbrekende span is een gemis, een verkeerde
 span zet de lezer op het verkeerde been.
 
+Deze lijst is ook als werkpagina te gebruiken: **[citaatvragen.html](../citaatvragen.html)**
+zet elke vraag naast de tekst zoals die nu op de site staat, met de kleuren van de
+sprekers, en houdt per punt uw oordeel vast. Wat u daar invult komt onderaan als
+een tekst die teruggegeven kan worden om de wijzigingen door te voeren. De vragen
+zelf staan in `data/citaatvragen.json`.
+
 Dit is een lijst van open vragen, geen takenlijst. Sommige punten zijn een
 leesvraag, andere een besluit dat één keer genomen moet worden en dan
 Bijbelbreed geldt.
