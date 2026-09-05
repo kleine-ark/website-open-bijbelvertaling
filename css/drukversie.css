@@ -24,16 +24,21 @@
     --dv-grootte: 9.5pt;
     --dv-interlinie: 1.3;
     --dv-accent: #142e42;
+    /* Hoogte van de bovenbalk van de site; onder 768px is hij lager. */
+    --dv-balk: 72px;
 }
+@media (max-width: 768px) { .dv-body { --dv-balk: 56px; } }
 
-.dv-layout { display: flex; align-items: flex-start; min-height: 100vh; }
+/* De bovenbalk van de site staat boven het geheel; het paneel plakt eronder
+   in plaats van tegen de bovenkant van het venster. */
+.dv-layout { display: flex; align-items: flex-start; min-height: calc(100vh - var(--dv-balk)); }
 
 /* --- het paneel --- */
 .dv-paneel {
     flex: 0 0 320px;
     position: sticky;
-    top: 0;
-    max-height: 100vh;
+    top: var(--dv-balk);
+    max-height: calc(100vh - var(--dv-balk));
     overflow-y: auto;
     background: #fffdf9;
     border-right: 1px solid #d8d2c4;
@@ -396,6 +401,8 @@
 .dv-knop-bezig { background: #8d3b2f; border-color: #8d3b2f; color: #fff; }
 
 /* --- afdrukken --- */
+@media print { #topnav { display: none !important; } }
+
 @media print {
     .dv-paneel, .dv-verder, .dv-leeg { display: none !important; }
     .dv-body { background: #fff; }

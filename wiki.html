@@ -151,8 +151,11 @@
             <div class="wiki-groep" data-groep="downloaden">
                 <button type="button" class="wiki-groep-kop" aria-expanded="true">Downloaden</button>
                 <div class="wiki-groep-inhoud">
-                    <a href="#drukversie" data-page="drukversie.html">Drukversie</a>
                     <a href="#downloads" data-page="downloads.html">Downloads</a>
+                    <!-- Zonder data-page, dus buiten het frame: de drukversie heeft
+                         zelf al een paneel naast de bladen en zou anders als een
+                         tweede site binnen deze site komen te staan. -->
+                    <a href="drukversie.html">Drukversie <span aria-hidden="true">&#8599;</span></a>
                 </div>
             </div>
 
