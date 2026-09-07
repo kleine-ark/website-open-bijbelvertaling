@@ -423,6 +423,14 @@ class CollaborationHttpTests(unittest.TestCase):
 
 
 class CollaborationFrontendTests(unittest.TestCase):
+    def test_google_login_uses_popup_on_every_viewport(self):
+        auth = (ROOT / "js" / "auth.js").read_text(encoding="utf-8")
+
+        self.assertIn("await signInWithPopup(this.auth, provider)", auth)
+        self.assertNotIn("signInWithRedirect", auth)
+        self.assertNotIn("getRedirectResult", auth)
+        self.assertNotIn("matchMedia('(max-width: 768px)')", auth)
+
     def test_pages_and_global_client_exist(self):
         auth = (ROOT / "js" / "auth.js").read_text(encoding="utf-8")
         topnav = (ROOT / "js" / "topnav.js").read_text(encoding="utf-8")

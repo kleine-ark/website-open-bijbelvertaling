@@ -5,6 +5,13 @@ De browser stuurt het actuele Firebase ID-token naar dezelfde herkomst onder
 `/api/collaboration/`. De API controleert handtekening, project, uitgever,
 geldigheid en het geverifieerde e-mailadres voordat een account wordt gebruikt.
 
+Google-login gebruikt op ieder schermformaat `signInWithPopup`. Dat is de
+Firebase-route die geen opslag van een ander domein nodig heeft en daardoor
+werkt in browsers die opslag van derden blokkeren, waaronder Safari en Firefox.
+Gebruik geen `signInWithRedirect` zolang de Firebase-authhelper niet onder
+dezelfde herkomst als de site wordt aangeboden en de bijbehorende OAuth-
+redirect-URI niet bij Google is geautoriseerd.
+
 De samenwerkingstoestand staat niet in browseropslag of in publieke JSON. De
 productieserver bewaart die in:
 
