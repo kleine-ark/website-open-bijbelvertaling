@@ -149,7 +149,20 @@ const App = {
         setHidden(mfnAudio, !show);
         setHidden(voiceBtn, !show);
         setHidden(voiceMob, !show);
-        if (!show) { audioEl.removeAttribute('src'); App._autoplayNext = false; return; }
+        if (playBtn) playBtn.classList.remove('is-playing');
+        if (playMob) playMob.classList.remove('is-playing');
+        const scrubber = document.getElementById('audio-scrubber');
+        const cur = document.getElementById('audio-time-cur');
+        const tot = document.getElementById('audio-time-tot');
+        if (scrubber) scrubber.value = 0;
+        if (cur) cur.textContent = '0:00';
+        if (tot) tot.textContent = '0:00';
+        if (!show) {
+            audioEl.removeAttribute('src');
+            try { audioEl.load(); } catch (e) {}
+            App._autoplayNext = false;
+            return;
+        }
         audioEl.src = ov.src(bookId, chapter);
         // Auto-doorspelen: na 'ended' navigeren we naar het volgende hoofdstuk;
         // zodra dat fragment geladen is, meteen verder afspelen.
@@ -162,15 +175,6 @@ const App = {
         }
         if (voiceBtn) voiceBtn.textContent = ov.label();
         if (voiceMob) voiceMob.textContent = ov.label();
-        if (playBtn) playBtn.classList.remove('is-playing');
-        if (playMob) playMob.classList.remove('is-playing');
-        // Reset scrubber
-        const scrubber = document.getElementById('audio-scrubber');
-        const cur = document.getElementById('audio-time-cur');
-        const tot = document.getElementById('audio-time-tot');
-        if (scrubber) scrubber.value = 0;
-        if (cur) cur.textContent = '0:00';
-        if (tot) tot.textContent = '0:00';
     },
 
     // Kondig "Hoofdstuk N" aan en start daarna de voorlezing.
@@ -482,6 +486,7 @@ const App = {
             return;
         }
         if (chapter._unavailable) {
+            App._updateAudioPlayer(bookId, chapterNum);
             const meta = chapter._translation || { code: 'nl-ov', naam: 'Open Vertaling' };
             const message = (typeof I18n !== 'undefined')
                 ? I18n.t('edition.unavailable', { boek: book.nameDutch, editie: meta.naam })

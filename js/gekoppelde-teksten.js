@@ -97,6 +97,7 @@
 
         var kop = element('div', 'gt-vers-kop');
         var link = element('a', '', labelVoor(ref, parts, opties.boeknamen));
+        link.setAttribute('data-ov-reader-ref', ref);
         link.href = linkVoor(ref, parts);
         link.target = '_top';
         kop.appendChild(link);

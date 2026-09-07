@@ -57,6 +57,27 @@ class OpvReaderTests(unittest.TestCase):
         return page
 
     @staticmethod
+    def observe_runtime(page):
+        observed = {"pageerrors": [], "console_errors": [], "http_errors": [], "requests": []}
+        page.on("pageerror", lambda error: observed["pageerrors"].append(str(error)))
+        page.on(
+            "console",
+            lambda message: observed["console_errors"].append(message.text)
+            if message.type == "error"
+            else None,
+        )
+        page.on("request", lambda request: observed["requests"].append(request.url))
+        page.on(
+            "response",
+            lambda response: observed["http_errors"].append(
+                {"status": response.status, "url": response.url}
+            )
+            if response.status >= 400
+            else None,
+        )
+        return observed
+
+    @staticmethod
     def open_sources(page):
         page.locator("#topnav-tekstopties").click()
         sources = page.locator('details[data-options-category="bronnen"]')
@@ -76,25 +97,47 @@ class OpvReaderTests(unittest.TestCase):
 
             readerdata = page.evaluate(
                 """async () => {
+                    const raw = await fetch('data/edities/opv/chapters/genesis/1.json').then(r => r.json());
                     const chapter = await TekstEditie.loadChapterForEdition('nl-opv', 'genesis', 1);
-                    const first = chapter.verses.find(verse => verse.number === 1);
-                    const spoken = chapter.verses.find(verse => verse.number === 3);
                     return {
-                        edition: chapter._translation.code,
-                        block: chapter.blokken[0],
-                        status: first.status,
-                        source: first.bron,
-                        concepts: first.begrippen,
-                        citations: spoken.citaten,
+                        meta: chapter._translation,
+                        raw,
+                        normalized: {
+                            schema: chapter.schema,
+                            editie: chapter.editie,
+                            boek: chapter.boek,
+                            hoofdstuk: chapter.number,
+                            kop: chapter.heading,
+                            blokken: chapter.blokken,
+                            verzen: chapter.verses.map(verse => ({
+                                nummer: verse.number,
+                                status: verse.status,
+                                bron: verse.bron,
+                                begrippen: verse.begrippen,
+                                citaten: verse.citaten,
+                                review: verse.review,
+                                segmenten: verse.segmenten,
+                                translationSegments: verse.translationSegments,
+                            })),
+                        },
                     };
                 }"""
             )
-            self.assertEqual(readerdata["edition"], "nl-opv")
-            self.assertEqual(readerdata["block"]["kop"], "Het begin")
-            self.assertEqual(readerdata["status"], "concept")
-            self.assertEqual(readerdata["source"]["bestand"], "data/genesis/1.json")
-            self.assertEqual(readerdata["concepts"][0]["conceptId"], "schepping")
-            self.assertEqual(readerdata["citations"][0]["spreker"]["type"], "god")
+            raw = readerdata["raw"]
+            normalized = readerdata["normalized"]
+            self.assertEqual(readerdata["meta"]["code"], "nl-opv")
+            self.assertEqual(readerdata["meta"]["naam"], "Open Parafrase Vertaling (proef)")
+            self.assertEqual(
+                {key: normalized[key] for key in ("schema", "editie", "boek", "hoofdstuk", "kop", "blokken")},
+                {key: raw[key] for key in ("schema", "editie", "boek", "hoofdstuk", "kop", "blokken")},
+            )
+            self.assertEqual(len(normalized["verzen"]), 31)
+            for actual, expected in zip(normalized["verzen"], raw["verzen"]):
+                self.assertEqual(actual["nummer"], expected["nummer"])
+                self.assertEqual(actual["status"], expected["review"]["status"])
+                for key in ("bron", "begrippen", "citaten", "review", "segmenten"):
+                    self.assertEqual(actual[key], expected[key], f"vers {expected['nummer']} veld {key}")
+                self.assertEqual(actual["translationSegments"], expected["segmenten"])
         finally:
             page.close()
 
@@ -119,6 +162,10 @@ class OpvReaderTests(unittest.TestCase):
                 ),
                 "nl-opv",
             )
+            page.reload(wait_until="domcontentloaded")
+            page.locator('.verse-row[data-verse="1"] .col-2026').filter(has_text="hemel").wait_for()
+            self.assertEqual(page.locator("#opt-teksteditie").input_value(), "nl-opv")
+            self.assertIn("editie=nl-opv", page.url)
         finally:
             page.close()
 
@@ -145,6 +192,49 @@ class OpvReaderTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_parallelle_opv_promotie_maakt_drie_echte_parallelle_plaatsen_vrij(self):
+        page = self.new_page()
+        try:
+            page.goto(f"{self.base_url}/index.html#genesis/1", wait_until="domcontentloaded")
+            page.locator('.verse-row[data-verse="1"]').wait_for()
+            self.open_sources(page)
+            opv = page.locator('[data-parallel-editie="nl-opv"]')
+            opv.check()
+            page.locator(
+                '.verse-row[data-verse="1"] .parallel-edition[data-editie="nl-opv"]'
+            ).wait_for()
+
+            page.locator("#opt-teksteditie").select_option("nl-opv")
+            page.locator('.verse-row[data-verse="1"] .col-2026').filter(
+                has_text="maakte God de hemel"
+            ).wait_for()
+            self.assertFalse(opv.is_checked())
+            self.assertEqual(
+                page.evaluate(
+                    "JSON.parse(localStorage.getItem('sv2026_vertaalopties')).parallelEdities"
+                ),
+                [],
+            )
+
+            for code in ("nl-ov", "en-webbe", "fr-lsg1910"):
+                page.locator(f'[data-parallel-editie="{code}"]').check()
+            page.locator(
+                '.verse-row[data-verse="1"] .parallel-edition[data-editie="fr-lsg1910"]'
+            ).wait_for()
+            self.assertEqual(
+                page.evaluate(
+                    "JSON.parse(localStorage.getItem('sv2026_vertaalopties')).parallelEdities"
+                ),
+                ["nl-ov", "en-webbe", "fr-lsg1910"],
+            )
+            self.assertEqual(
+                page.locator('.verse-row[data-verse="1"] .parallel-edition:not(.primary-edition)').count(),
+                3,
+            )
+            self.assertTrue(page.locator('[data-parallel-editie="ar-vd"]').is_disabled())
+        finally:
+            page.close()
+
     def test_opv_toont_buiten_pilotdekking_een_explicitiete_melding(self):
         page = self.new_page()
         try:
@@ -157,6 +247,78 @@ class OpvReaderTests(unittest.TestCase):
             self.assertIn("Genesis is niet beschikbaar", unavailable.inner_text())
             self.assertIn("Open Parafrase Vertaling (proef)", unavailable.inner_text())
             self.assertEqual(page.locator(".verse-row").count(), 0)
+        finally:
+            page.close()
+
+    def test_ov_audio_wordt_gewist_bij_onbeschikbare_opv_en_herstelt_via_link(self):
+        page = self.new_page()
+        observed = self.observe_runtime(page)
+        try:
+            page.goto(f"{self.base_url}/index.html#genesis/6", wait_until="domcontentloaded")
+            ov_row = page.locator('.verse-row[data-verse="1"]')
+            ov_row.wait_for()
+            self.assertEqual(ov_row.get_attribute("data-status"), "final")
+            self.assertTrue(page.locator("#audio-play-big").is_visible())
+            self.assertIn("audio/genesis/6-m.mp3", page.locator("#audio-el").get_attribute("src"))
+
+            observed["requests"].clear()
+            self.open_sources(page)
+            page.locator("#opt-teksteditie").select_option("nl-opv")
+            unavailable = page.locator(".translation-unavailable")
+            unavailable.wait_for()
+            self.assertEqual(page.locator(".verse-row").count(), 0)
+            self.assertFalse(page.locator("#audio-play-big").is_visible())
+            self.assertFalse(page.locator("#audio-play-mobile").is_visible())
+            self.assertIsNone(page.locator("#audio-el").get_attribute("src"))
+            self.assertFalse(
+                any(url.endswith("/data/edities/opv/chapters/genesis/6.json") for url in observed["requests"])
+            )
+
+            restore = unavailable.locator("a")
+            self.assertIn("?editie=nl-ov#genesis/6", restore.get_attribute("href"))
+            page.locator("#sidebar-right-toggle").click()
+            page.locator("#sidebar-right").wait_for(state="hidden")
+            page.wait_for_function("document.activeElement?.id === 'topnav-tekstopties'")
+            restore.focus()
+            self.assertTrue(restore.evaluate("element => element === document.activeElement"))
+            restore.click()
+            restored = page.locator('.verse-row[data-verse="1"]')
+            restored.wait_for()
+            self.assertEqual(restored.get_attribute("data-status"), "final")
+            self.assertTrue(page.locator("#audio-play-big").is_visible())
+            self.assertIn("audio/genesis/6-m.mp3", page.locator("#audio-el").get_attribute("src"))
+            self.assertEqual(observed["pageerrors"], [])
+            self.assertEqual(observed["http_errors"], [])
+        finally:
+            page.close()
+
+    def test_opv_prefetch_respecteert_werkelijk_gepubliceerde_hoofdstukken(self):
+        page = self.new_page()
+        page.add_init_script(
+            """window.__opvIdleCallbacks = 0;
+               window.requestIdleCallback = callback => {
+                   window.__opvIdleCallbacks += 1;
+                   setTimeout(() => callback({ didTimeout: false, timeRemaining: () => 50 }), 0);
+                   return window.__opvIdleCallbacks;
+               };"""
+        )
+        observed = self.observe_runtime(page)
+        try:
+            page.goto(
+                f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.verse-row[data-verse="1"]').wait_for()
+            page.wait_for_function("window.__opvIdleCallbacks > 0")
+            page.wait_for_timeout(250)
+            opv_requests = [
+                url for url in observed["requests"] if "/data/edities/opv/chapters/" in url
+            ]
+            self.assertFalse(any(url.endswith("/genesis/2.json") for url in opv_requests))
+            self.assertFalse(any(url.endswith("/genesis/6.json") for url in opv_requests))
+            self.assertEqual(observed["pageerrors"], [])
+            self.assertEqual(observed["console_errors"], [])
+            self.assertEqual(observed["http_errors"], [])
         finally:
             page.close()
 
@@ -187,6 +349,51 @@ class OpvReaderTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_echte_wiki_refresh_bewaart_url_en_item_en_ververst_bronlink(self):
+        page = self.new_page()
+        observed = self.observe_runtime(page)
+        try:
+            page.goto(f"{self.base_url}/wiki.html#dieren", wait_until="domcontentloaded")
+            page.locator("#wiki-frame").evaluate(
+                "frame => { frame.src = 'dieren.html?item=vee'; }"
+            )
+            frame = page.frame_locator("#wiki-frame")
+            item = frame.locator('.gt-vers[data-ref="genesis 1:24"]')
+            item.locator(".ov-naslagtekst .osv-vers").first.wait_for(timeout=15_000)
+            wiki_url = page.url
+            frame_url = page.locator("#wiki-frame").evaluate("frame => frame.contentWindow.location.href")
+
+            self.open_sources(page)
+            page.locator("#opt-teksteditie").select_option("nl-opv")
+            page.wait_for_function(
+                """() => {
+                    const frame = document.getElementById('wiki-frame');
+                    const item = frame && frame.contentDocument &&
+                        frame.contentDocument.querySelector('.gt-vers[data-ref="genesis 1:24"]');
+                    const citation = item && item.querySelector('.ov-naslagtekst');
+                    return citation && citation.dataset.osvEditie === 'nl-opv';
+                }""",
+                timeout=15_000,
+            )
+            citation = item.locator(".ov-naslagtekst")
+            self.assertIn("Laat de aarde levende wezens", citation.inner_text())
+            self.assertEqual(citation.get_attribute("lang"), "nl")
+            self.assertEqual(citation.get_attribute("data-osv-editie"), "nl-opv")
+            self.assertEqual(
+                item.locator(".gt-vers-kop > a").get_attribute("href"),
+                "index.html?editie=nl-opv#genesis/1/24",
+            )
+            self.assertEqual(page.url, wiki_url)
+            self.assertEqual(
+                page.locator("#wiki-frame").evaluate("frame => frame.contentWindow.location.href"),
+                frame_url,
+            )
+            self.assertIn("?item=vee", frame_url)
+            self.assertEqual(observed["pageerrors"], [])
+            self.assertEqual(observed["http_errors"], [])
+        finally:
+            page.close()
+
     def test_opv_erft_geen_ov_verificatiestatus_of_audio(self):
         page = self.new_page()
         try:
@@ -201,6 +408,17 @@ class OpvReaderTests(unittest.TestCase):
             self.assertFalse(page.locator("#audio-play-mobile").is_visible())
             self.assertEqual(page.locator("#ai-concept-banner:visible").count(), 0)
             self.assertEqual(page.locator("#chapter-title .chapter-concept-tag").count(), 0)
+
+            self.open_sources(page)
+            page.locator("#opt-teksteditie").select_option("nl-ov")
+            restored = page.locator('.verse-row[data-verse="1"]')
+            page.wait_for_function(
+                "document.querySelector('.verse-row[data-verse=\"1\"]')?.dataset.status === 'final'"
+            )
+            self.assertEqual(restored.get_attribute("data-status"), "final")
+            self.assertNotIn("editie=", page.url)
+            self.assertTrue(page.locator("#audio-play-big").is_visible())
+            self.assertIn("audio/genesis/1-m.mp3", page.locator("#audio-el").get_attribute("src"))
         finally:
             page.close()
 

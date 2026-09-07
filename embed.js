@@ -161,7 +161,11 @@
       editionChapterCache[key] = loadEditions().then(function (editions) {
         var meta = editions.filter(function (item) { return item.code === edition; })[0];
         var chapters = meta && meta.hoofdstukken && meta.hoofdstukken[book];
-        if (!meta || !meta.boeken.includes(book) || (chapters && chapters.indexOf(Number(ch)) === -1)) {
+        var published = meta && meta.gepubliceerdeHoofdstukken;
+        var publishedChapters = published && published[book];
+        if (!meta || !meta.boeken.includes(book) ||
+            (chapters && chapters.indexOf(Number(ch)) === -1) ||
+            (published && (!publishedChapters || publishedChapters.indexOf(Number(ch)) === -1))) {
           throw new Error('vertaling niet gevonden');
         }
         return fetch(BASE + '/' + meta.dataRoot + '/' + book + '/' + ch + '.json')

@@ -98,7 +98,9 @@ const Opties = {
         if (vnCb) vnCb.checked = this.state.versnummers !== 'uit';
 
         if (!Array.isArray(this.state.parallelEdities)) this.state.parallelEdities = [];
-        this.state.parallelEdities = [...new Set(this.state.parallelEdities)].slice(0, 3);
+        this.state.parallelEdities = [...new Set(this.state.parallelEdities)]
+            .filter(code => code !== this.state.teksteditie)
+            .slice(0, 3);
         const parallelInputs = [...document.querySelectorAll('[data-parallel-editie]')];
         const syncParallelInputs = () => {
             const selected = this.state.parallelEdities;
@@ -191,9 +193,15 @@ const Opties = {
                     return;
                 }
                 if (input.tagName === 'SELECT' || input.checked) {
-                    this.state[input.dataset.optie] = input.value;
-                    this.save();
                     const optie = input.dataset.optie;
+                    this.state[optie] = input.value;
+                    if (optie === 'teksteditie') {
+                        this.state.parallelEdities = this.state.parallelEdities
+                            .filter(code => code !== input.value)
+                            .slice(0, 3);
+                        syncParallelInputs();
+                    }
+                    this.save();
                     if (optie === 'kolomLayout') {
                         this.applyLayoutClass();
                     } else if (optie === 'versnummers') {

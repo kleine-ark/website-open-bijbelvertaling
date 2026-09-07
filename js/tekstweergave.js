@@ -96,6 +96,7 @@
 
         var link = document.createElement('a');
         link.className = 'ov-naslagtekst-link' + (options.linkClass ? ' ' + options.linkClass : '');
+        link.setAttribute('data-ov-reader-ref', ref);
         link.href = lezerLink(ref);
         link.target = options.target === '_blank' ? '_blank' : '_top';
         if (link.target === '_blank') link.rel = 'noopener';
@@ -143,7 +144,12 @@
 
     function verversCitaten(root) {
         pasDocumentToe();
-        var houders = (root || document).querySelectorAll('[data-ov-citaat-ref]');
+        var scope = root || document;
+        var links = scope.querySelectorAll('[data-ov-reader-ref]');
+        for (var linkIndex = 0; linkIndex < links.length; linkIndex++) {
+            links[linkIndex].href = lezerLink(links[linkIndex].getAttribute('data-ov-reader-ref'));
+        }
+        var houders = scope.querySelectorAll('[data-ov-citaat-ref]');
         var taken = [];
         for (var i = 0; i < houders.length; i++) {
             var houder = houders[i];
@@ -154,7 +160,7 @@
             ).catch(function () {}));
         }
         if (global.OSV && typeof global.OSV.refresh === 'function') {
-            global.OSV.refresh(root || document);
+            global.OSV.refresh(scope);
         }
         return Promise.all(taken).then(function () {
             global.dispatchEvent(new CustomEvent('ov:citaten-ververst'));

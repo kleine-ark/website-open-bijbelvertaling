@@ -65,7 +65,11 @@
                 return result;
             }
             const chapters = meta && meta.hoofdstukken && meta.hoofdstukken[bookId];
-            if (!meta || !meta.boeken.includes(bookId) || (chapters && !chapters.includes(Number(chapter)))) {
+            const published = meta && meta.gepubliceerdeHoofdstukken;
+            const publishedChapters = published && published[bookId];
+            if (!meta || !meta.boeken.includes(bookId) ||
+                (chapters && !chapters.includes(Number(chapter))) ||
+                (published && (!publishedChapters || !publishedChapters.includes(Number(chapter))))) {
                 return { _unavailable: true, _translation: meta || { code, naam: code }, boek: bookId, hoofdstuk: chapter };
             }
             const key = `${code}:${bookId}:${chapter}`;

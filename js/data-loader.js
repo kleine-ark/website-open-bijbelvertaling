@@ -83,21 +83,36 @@ const DataLoader = {
 
     /** Pre-fetch buurchapters bij idle — geeft instant volgende-chapter klik. */
     prefetchAdjacent(bookId, chapterNum) {
-        const fn = () => {
-            [chapterNum - 1, chapterNum + 1].forEach(n => {
-                if (n >= 1) {
-                    const key = `${bookId}:${n}`;
-                    if (!this.chapterCache[key]) {
-                        this.loadChapter(bookId, n).catch(() => {});
+        const edition = (typeof TekstEditie !== 'undefined') ? TekstEditie.code() : 'nl-ov';
+        const schedule = availableChapters => {
+            const fn = () => {
+                if (typeof TekstEditie !== 'undefined' && TekstEditie.code() !== edition) return;
+                [chapterNum - 1, chapterNum + 1].forEach(n => {
+                    if (n >= 1 && (!availableChapters || availableChapters.includes(n))) {
+                        const key = `${edition}:${bookId}:${n}`;
+                        if (!this.chapterCache[key]) {
+                            this.loadChapter(bookId, n).catch(() => {});
+                        }
                     }
-                }
-            });
+                });
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(fn, { timeout: 2000 });
+            } else {
+                setTimeout(fn, 500);
+            }
         };
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(fn, { timeout: 2000 });
-        } else {
-            setTimeout(fn, 500);
+
+        if (edition !== 'nl-ov' && typeof TekstEditie !== 'undefined') {
+            TekstEditie.metadata(edition).then(meta => {
+                const published = meta && meta.gepubliceerdeHoofdstukken;
+                const declared = meta && meta.hoofdstukken;
+                const chapters = published || declared;
+                schedule(chapters ? (Array.isArray(chapters[bookId]) ? chapters[bookId] : []) : null);
+            }).catch(() => {});
+            return;
         }
+        schedule(null);
     },
 
     _mergeChapterEdits(chapter, edits, chapterNum) {
