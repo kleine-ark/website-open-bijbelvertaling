@@ -672,6 +672,114 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
                          "tekstveld": "textSV1888"}, verse["bron"],
                     )
 
+    @staticmethod
+    def _concept_texts(verse: dict, concept_id: str) -> list[str]:
+        segments = {segment["id"]: segment["tekst"] for segment in verse["segmenten"]}
+        return [
+            "".join(segments[reference] for reference in concept["segmenten"])
+            for concept in verse["begrippen"] if concept["conceptId"] == concept_id
+        ]
+
+    @staticmethod
+    def _citation_text(verse: dict, citation: dict) -> str:
+        ids = [segment["id"] for segment in verse["segmenten"]]
+        start = ids.index(citation["startSegment"])
+        end = ids.index(citation["endSegment"])
+        return "".join(segment["tekst"] for segment in verse["segmenten"][start:end + 1])
+
+    def test_john_links_both_life_occurrences_and_required_concepts(self) -> None:
+        chapter = self._chapter("johannes")
+        self.assertEqual(["leven", "Dat leven"], self._concept_texts(chapter["verzen"][3], "leven"))
+        required = {"woord", "leven", "licht", "genade", "waarheid", "messias",
+                    "lam-van-god", "heilige-geest", "zoon-van-god", "mensenzoon"}
+        linked = {c["conceptId"] for v in chapter["verzen"] for c in v["begrippen"]}
+        registry = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))
+        self.assertLessEqual(required, linked)
+        self.assertLessEqual(required, {c["id"] for c in registry["concepten"]})
+
+    def test_john_isaiah_quote_is_exact_and_nested(self) -> None:
+        verse = self._chapter("johannes")["verzen"][22]
+        self.assertEqual(2, len(verse["citaten"]))
+        outer, inner = verse["citaten"]
+        self.assertEqual("johannes", outer["spreker"]["id"])
+        self.assertEqual(("jesaja", "human"), (inner["spreker"]["id"], inner["spreker"]["type"]))
+        self.assertEqual("Maak voor de Heere een rechte weg.", self._citation_text(verse, inner))
+        self.assertEqual("Ik ben de stem van iemand die in de woestijn roept: Maak voor de Heere een rechte weg. Dat heeft de profeet Jesaja gezegd.", self._citation_text(verse, outer))
+        ids = [s["id"] for s in verse["segmenten"]]
+        self.assertLess(ids.index(outer["startSegment"]), ids.index(inner["startSegment"]))
+        self.assertLess(ids.index(inner["endSegment"]), ids.index(outer["endSegment"]))
+
+    def test_concept_anchors_include_essential_modifiers_and_action(self) -> None:
+        for book, number, concept, expected in (
+            ("genesis", 21, "zeedieren", "grote zeedieren"),
+            ("johannes", 14, "menswording", "werd mens"),
+            ("johannes", 21, "de-profeet", "de profeet"),
+        ):
+            with self.subTest(book=book, verse=number):
+                verse = self._chapter(book)["verzen"][number - 1]
+                self.assertEqual([expected], self._concept_texts(verse, concept))
+
+    def test_calibration_blocks_follow_the_repository_verse_boundaries(self) -> None:
+        expected = {
+            "genesis": [(1, 2), (3, 5), (6, 8), (9, 13), (14, 19), (20, 23), (24, 31)],
+            "johannes": [(1, 5), (6, 13), (14, 18), (19, 28), (29, 34), (35, 43), (44, 52)],
+        }
+        for book, ranges in expected.items():
+            self.assertEqual(ranges, [(b["vanaf"], b["tot"]) for b in self._chapter(book)["blokken"]])
+
+    def test_john_creation_statement_retains_the_created_scope(self) -> None:
+        text = self._chapter("johannes")["verzen"][2]["tekst"]
+        self.assertIn("Zonder Hem is niets ontstaan van alles wat gemaakt is.", text)
+        self.assertNotIn("wat bestaat", text)
+
+    def test_genesis_water_both_produces_and_teems_with_life(self) -> None:
+        for number in (20, 21):
+            with self.subTest(verse=number):
+                text = self._chapter("genesis")["verzen"][number - 1]["tekst"]
+                self.assertIn("voortbr", text)
+                self.assertIn("overvloed", text)
+                self.assertIn("wemel", text)
+
+    def test_genesis_food_refers_explicitly_to_plants_and_fruit(self) -> None:
+        text = self._chapter("genesis")["verzen"][28]["tekst"]
+        self.assertIn("De planten en de vruchten dienen jullie als voedsel.", text)
+
+    def test_john_second_identity_question_has_a_narrative_speaker_intro(self) -> None:
+        verse = self._chapter("johannes")["verzen"][20]
+        self.assertIn("Ze vroegen verder: Bent u de profeet?", verse["tekst"])
+        self.assertEqual(["gezanten", "johannes", "gezanten", "johannes"],
+                         [q["spreker"]["id"] for q in verse["citaten"]])
+        self.assertEqual("Bent u de profeet?", self._citation_text(verse, verse["citaten"][2]))
+
+    def test_annotations_are_owned_by_their_verse_and_segments_are_sequential(self) -> None:
+        for book, prefix in (("genesis", "GEN"), ("johannes", "JHN")):
+            for verse in self._chapter(book)["verzen"]:
+                ids = [s["id"] for s in verse["segmenten"]]
+                self.assertEqual([f"{prefix}.1.{verse['nummer']}.s{i}" for i in range(1, len(ids) + 1)], ids)
+                for concept in verse["begrippen"]:
+                    self.assertLessEqual(set(concept["segmenten"]), set(ids))
+                for citation in verse["citaten"]:
+                    self.assertIn(citation["startSegment"], ids)
+                    self.assertIn(citation["endSegment"], ids)
+
+    def test_capitalization_preserves_sentence_starts_without_extra_reverence(self) -> None:
+        cases = [
+            ("genesis", 30, "geef ik de groene planten"),
+            ("johannes", 12, ". Dat zijn de mensen die in Zijn naam geloven."),
+            ("johannes", 13, ". Dat komt niet door hun afkomst"),
+            ("johannes", 14, ". Wij zagen Zijn majesteit"),
+            ("johannes", 15, "Dit is degene over wie ik sprak."),
+            ("johannes", 30, "een man die boven mij staat"),
+            ("johannes", 38, "Jezus draaide zich om"),
+            ("johannes", 44, "Volg mij."),
+            ("johannes", 48, "naar zich toe"),
+            ("johannes", 49, "zag ik je al"),
+            ("johannes", 51, "omdat ik je zei dat ik je"),
+        ]
+        for book, number, expected in cases:
+            with self.subTest(book=book, verse=number):
+                self.assertIn(expected, self._chapter(book)["verzen"][number - 1]["tekst"])
+
     def test_calibration_slice_passes_real_corpus_validation(self) -> None:
         chapters = {book: self._chapter(book) for book in ("genesis", "johannes")}
         with tempfile.TemporaryDirectory() as directory:

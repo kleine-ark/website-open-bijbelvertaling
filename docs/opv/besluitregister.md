@@ -8,7 +8,7 @@ De directe basisteksten zijn `data/genesis/1.json` en `data/johannes/1.json`, te
 
 Elk vers verwijst naar hetzelfde boek, hoofdstuk en vers in SV1888. Elke stabiele segment-id draagt een `bronfrase`: voor gekoppelde kernbegrippen waar mogelijk de specifieke bronwoorden, voor de overige zinsdelen de volledige bronversregel als context. Dit is herleidbaarheid, geen claim op woord-voor-woord-uitlijning. De bron- en inhoudshashes betreffen exact de UTF-8-tekstvelden, zonder normalisatie achteraf. Alle vers- en blokreviews blijven `concept`; de controlelijsten zijn leeg.
 
-De begrippenlijst is noodzakelijk uitgebreid van alleen `schepping` naar de 37 daadwerkelijk gekoppelde begrippen in deze twee hoofdstukken. Er zijn geen begrippen voor latere hoofdstukken vooruit toegevoegd.
+De begrippenlijst is noodzakelijk uitgebreid van alleen `schepping` naar de 38 daadwerkelijk gekoppelde begrippen in deze twee hoofdstukken. Er zijn geen begrippen voor latere hoofdstukken vooruit toegevoegd.
 
 ## Blokindeling en versificatie
 
@@ -23,13 +23,13 @@ Johannes telt hier 52 verzen, omdat de repository de gebruikelijk als 1:38 genum
 
 SV1888: “woest en ledig”, “afgrond” en “de Geest Gods zweefde op de wateren”. SV1637 en OV behouden dezelfde onderdelen. De Hebreeuwse reeks bevat `tohu wabohu`, `tehom` en `ruach elohim`, gevolgd door het zweven boven het water.
 
-Besluit: “ongevormd en leeg”, “Het diepe water lag in het donker” en “de Geest van God zweefde boven het water”. “Ongevormd” is een gewone omschrijving van de ongeordende toestand, geen tijdlijn over een eerdere wereld. De afgrond wordt hier als waterdiepte weergegeven, niet als hel. “Geest van God” volgt de primaire bron; de mogelijke windlezing wordt niet ingevoerd. Geen scheppingsmechanisme of theologische uitleg toegevoegd. Begrip: `heilige-geest`.
+Besluit: “ongevormd en leeg”, “Duisternis lag over de afgrond” en “de Geest van God zweefde boven het water”. “Ongevormd” beschrijft de ongeordende toestand, geen tijdlijn over een eerdere wereld. De afgrond en de wateren blijven afzonderlijk genoemd: het donker ligt over de afgrond; de Geest zweeft boven het water. De afgrond wordt niet tot een hoeveelheid water of tot de hel verklaard. “Geest van God” volgt de primaire bron; de mogelijke windlezing wordt niet ingevoerd. Geen scheppingsmechanisme of theologische uitleg toegevoegd. Begrip: `heilige-geest`.
 
 ### G2 — 1:6–8: uitspansel
 
 SV1888 en controlevertalingen noemen een uitspansel met water erboven en eronder, door God hemel genoemd. De grondtekst herhaalt `raqia` en de ruimtelijke relaties onder/boven.
 
-Besluit: “gewelf”, met uitleg onder `uitspansel`. Beide waterlagen en Gods naamgeving blijven uitdrukkelijk aanwezig. “Lucht” zou de formulering te sterk naar een modern atmosferisch model trekken; een vaste materiaalsoort wordt evenmin toegevoegd. Deze passage vereist bij latere review speciale aandacht voor de begrijpelijkheid van “gewelf”.
+Besluit: “gewelf”, met uitleg onder `uitspansel`; het gewelf scheidt het water “in tweeën”, niet het ongespecificeerde water “van elkaar”. Beide waterlagen en Gods naamgeving blijven uitdrukkelijk aanwezig. “Lucht” zou de formulering te sterk naar een modern atmosferisch model trekken; een vaste materiaalsoort wordt evenmin toegevoegd. Deze passage vereist bij latere review speciale aandacht voor de begrijpelijkheid van “gewelf”.
 
 ### G3 — 1:14: tekenen en tijden
 
@@ -41,25 +41,25 @@ Besluit: de lichten “als tekenen” laten dienen en de “vastgestelde tijden,
 
 SV1888 spreekt van wemelende levende zielen en van grote walvissen; de controlevertalingen behouden die formulering. De grondtekst gebruikt in vers 20 `nefesh chayyah` voor levende wezens, en in vers 21 `tanninim` voor grote waterdieren.
 
-Besluit: “levende wezens” voorkomt dat een zestienjarige hier losstaande zielen leest. “Grote zeedieren” moderniseert het bereik van het oude woord walvissen zonder de categorie te beperken tot een moderne diersoort. Dit is een expliciet grondtekstgestuurde verbreding van het hedendaagse woordbereik, niet een weglating van de grote dieren. De overvloed, het vliegen, de vleugels en de afzonderlijke soorten blijven behouden. Begrippen: `levende-ziel`, `zeedieren`.
+Besluit: “levende wezens” voorkomt dat een zestienjarige hier losstaande zielen leest. “Grote zeedieren” moderniseert het bereik van het oude woord walvissen zonder de categorie te beperken tot een moderne diersoort. Dit is een expliciet grondtekstgestuurde verbreding van het hedendaagse woordbereik, niet een weglating van de grote dieren. Het voortbrengen is naast de overvloed én het wemelen expliciet aanwezig in vers 20 en 21. Het water is dus niet alleen de plaats waar dieren al aanwezig zijn. Vliegen, vleugels en afzonderlijke soorten blijven behouden. Het begrip `zeedieren` omvat exact “grote zeedieren”. Begrippen: `levende-ziel`, `zeedieren`.
 
 ### G5 — 1:26–28: Gods beeld, meervoud en gezag
 
 Alle drie Nederlandse teksten bewaren het goddelijke meervoud, beeld/gelijkenis, man en vrouw, zegen, vruchtbaarheid, vullen, onderwerpen en heersen. De grondtekst bevat `na‘aseh`, beeld/gelijkenis, `radah` en `kabash`.
 
-Besluit: “Laten Wij”, “Ons beeld, zodat ze op Ons lijken”; geen uitleg wie het meervoud omvat. In vers 27 blijft de nadrukkelijke herhaling van Gods beeld staan, met man en vrouw. “Krijg kinderen, word talrijk en vul de aarde” bewaart de drie opdrachten. “Breng de aarde onder jullie gezag” en “Heers” bewaren de kracht van onderwerpen en heersen; die zijn niet vervangen door alleen verzorgen. Evenmin wordt een recht op misbruik toegevoegd. De lijsten vissen, vogels, vee, hele aarde en kruipende dieren zijn gecontroleerd. Begrippen: `beeld-van-god`, `heerschappij`, `zegen`.
+Besluit: “Laten wij mensen maken naar ons beeld en onze gelijkenis”; beide parallelle begrippen blijven naast elkaar staan. Er wordt geen gevolgrelatie met “zodat” ingevoerd en niet uitgelegd wie het meervoud omvat. Vers 27 herhaalt “naar Zijn beeld” en “Naar Gods beeld”, met man en vrouw. De slotcategorie kruipende dieren staat in een volledige zin, niet een los fragment. “Krijg kinderen, word talrijk en vul de aarde” bewaart de drie opdrachten. “Breng de aarde onder jullie gezag” en “Heers” bewaren de kracht van onderwerpen en heersen; die zijn niet vervangen door alleen verzorgen. Evenmin wordt een recht op misbruik toegevoegd. De lijsten vissen, vogels, vee, hele aarde en kruipende dieren zijn gecontroleerd. Begrippen: `beeld-van-god`, `heerschappij`, `zegen`.
 
 ### G6 — 1:11–12, 16–18, 29–31: ritme en volledigheid
 
-Zaadvorming, zaad in de vruchten en soortonderscheid blijven behouden. De twee grote lichten worden niet eigenmachtig met zon en maan benoemd. Hun leiding over dag en nacht blijft als beeld staan. De voedseltoewijzing aan mensen en dieren wordt over korte zinnen verdeeld. In 1:31 blijft “heel goed” sterker dan het eerdere “goed”. Alle zes avond/morgenformules blijven aanwezig. De Godsnaam HEERE komt niet voor in de bron van Genesis 1; daarom is die hier ook niet ingevoegd.
+Zaadvorming, zaad in de vruchten en soortonderscheid blijven behouden. De twee grote lichten worden niet eigenmachtig met zon en maan benoemd. Hun heersen over dag en nacht blijft tweemaal als regeringsbeeld staan. De bomen dragen vruchten naar hun soort, niet iedere boom een unieke eigen soort. Vers 12 bewaart zaadvormende planten én bomen met zaad in hun vruchten, elk naar hun soort. De voedseltoewijzing wordt over korte zinnen verdeeld en noemt ondubbelzinnig “De planten en de vruchten dienen jullie als voedsel.” In 1:31 vervangt het gewone “zag” het inspecterende “bekeek”; de korte uitroep “Het was heel goed!” bewaart de nadruk zonder dubbele kijkwoorden. “Heel goed” blijft sterker dan het eerdere “goed”. Alle zes avond/morgenformules blijven aanwezig. De Godsnaam HEERE komt niet voor in de bron van Genesis 1; daarom is die hier ook niet ingevoegd.
 
 ## Johannes
 
 ### J1 — 1:1–5: Woord, God, leven en Licht
 
-SV1888, SV1637 en OV bewaren de drie beweringen: het Woord was in het begin, was bij God en was God. De Griekse zin heeft `logos`, `pros ton theon` en `theos en ho logos`. Vers 3 bewaart zowel alles als niets zonder Hem.
+SV1888, SV1637 en OV bewaren de drie beweringen: het Woord was in het begin, was bij God en was God. De Griekse zin heeft `logos`, `pros ton theon` en `theos en ho logos`. Vers 3 bewaart zowel alles als niets zonder Hem én de bronbeperking: “Zonder Hem is niets ontstaan van alles wat gemaakt is.” Het bereik is het gemaakte, niet al wat bestaat.
 
-Besluit: “Toen alles begon, was het Woord er al” maakt het bestaande contrast met ontstaan begrijpelijk; het zegt niet dat het Woord ontstond. “Was bij God” en “was God” blijven onverkort staan. Woord en Licht worden niet vervangen door een abstract plan, boodschap of leraar. Leven en Licht blijven verbonden. Voor `katelaben` in vers 5 volgt “niet begrepen” bewust de SV-lijn; “niet overwonnen” wordt niet als extra betekenis in de hoofdtekst gezet. De dubbelzinnigheid blijft een expliciet punt voor onafhankelijke review. Begrippen: `woord`, `schepping`, `licht`.
+Besluit: “In het begin was het Woord er al” bewaart de sleutelverbinding met Genesis en het voorafgaande bestaan, zonder het extra woord “alles” in deze beginformule. “Was bij God” en “was God” blijven onverkort staan. Woord en Licht worden niet vervangen door een abstract plan, boodschap of leraar. Leven en Licht blijven verbonden. Beide voorkomens in vers 4 zijn exact gekoppeld: “leven” en “Dat leven”, naast het eigen Licht-segment. Voor `katelaben` in vers 5 volgt “niet begrepen” bewust de SV-lijn; “niet overwonnen” wordt niet als extra betekenis in de hoofdtekst gezet. De dubbelzinnigheid blijft een expliciet punt voor onafhankelijke review. Begrippen: `woord`, `schepping`, `licht`.
 
 ### J2 — 1:9: wie komt in de wereld?
 
@@ -77,13 +77,13 @@ Besluit: “uit God geboren”, gevolgd door “niet door hun afkomst, niet door
 
 De bron zegt vlees worden, onder ons wonen, geziene heerlijkheid van de Eniggeborene van de Vader, vol genade en waarheid. Het Grieks heeft `sarx egeneto`, `eskenosen`, `doxa`, `monogenes`, `charis` en `aletheia`.
 
-Besluit: “werd mens” bewaart de volledige menswording, “woonde onder ons” de nabijheid. Geen tijdelijk kostuum of alleen lichamelijke verschijning. “Grootheid” met het gekoppelde begrip heerlijkheid; “enige Zoon van de Vader” met het gekoppelde begrip eniggeboren Zoon. “Onverdiende goedheid” omschrijft genade; waarheid blijft herkenbaar. De getuigen “wij” en het zien blijven aanwezig. De identiteitstitel impliceert geen geschapen oorsprong van de Zoon.
+Besluit: “werd mens” bewaart de volledige menswording, “woonde onder ons” de nabijheid. Geen tijdelijk kostuum of alleen lichamelijke verschijning. “Majesteit” bewaart zichtbare, indrukwekkende grootheid met het gekoppelde begrip heerlijkheid; “enige Zoon van de Vader” bewaart de identiteit met het gekoppelde begrip eniggeboren Zoon. “Goedheid die niemand verdiende” geeft genade natuurlijk weer; de aparte herhaling “vol waarheid” houdt beide eigenschappen duidelijk. Het anker menswording omvat “werd mens”, niet alleen mens. De getuigen “wij” en het zien blijven aanwezig. De identiteitstitel impliceert geen geschapen oorsprong van de Zoon.
 
 ### J5 — 1:15–17: eerder, boven, overvloed en genade
 
 SV1888 plaatst de Komende vóór Johannes en zegt dat Hij eerder was. De Griekse onderscheidingen `emprosthen` en `protos` ondersteunen het bewaren van rang én eerder bestaan. In 1:16 staan volheid en `charin anti charitos`.
 
-Besluit: “staat boven mij” voor rang, “was er eerder dan ik” voor eerder bestaan. Dit wordt ook in 1:27 en 1:30 consequent toegepast. “Uit Zijn overvloed” en “de ene gave van onverdiende goedheid na de andere” volgen de stapeling van genade, zonder er een leer over het vervangen van verbonden aan toe te voegen. Vers 17 behoudt Mozes als middelaar van de wet en Jezus Christus als Degene door Wie genade en waarheid kwamen; er staat geen afwijzing van Mozes of zijn wet.
+Besluit: “staat boven mij” voor rang, “was er eerder dan ik” voor eerder bestaan. Dit wordt ook in 1:27 en 1:30 consequent toegepast. “Uit Zijn overvloed” en “steeds opnieuw onverdiende goedheid” volgen de stapeling van genade, zonder het toegevoegde zelfstandig naamwoord gave en zonder leer over het vervangen van verbonden. Vers 17 behoudt Mozes als middelaar van de wet en Jezus Christus als Degene door Wie genade en waarheid kwamen; er staat geen afwijzing van Mozes of zijn wet.
 
 ### J6 — 1:18: enige Zoon en nabijheid van de Vader
 
@@ -93,7 +93,7 @@ Besluit: de SV/plaatselijke grondtekstlezing “enige Zoon” blijft leidend. �
 
 ### J7 — 1:19–28: identiteit en aanspreekvormen
 
-“Joden” wordt niet eigenmachtig vervangen door een beperkter benoemde groep leiders. Priesters, Levieten en Farizeeën blijven herkenbaar met uitleg waar nodig. Johannes’ herhaalde ontkenningen blijven staan, net als de afzonderlijke vragen over Christus, Elia en de profeet. De vraagvormen tegen Johannes gebruiken klein “u”; Jezus krijgt U/Uw. Jesaja’s wegbeeld blijft behouden en krijgt een begripkoppeling. “Heere” staat hier in een nieuwtestamentisch citaat; de instructie HEERE geldt voor de Godsnaam in het Oude Testament zelf.
+“Dit is het getuigenis van Johannes” bewaart het terugkerende getuigenismotief en heeft een eigen begripkoppeling. “Joden” wordt niet eigenmachtig vervangen door een beperkter benoemde groep leiders. Priesters, Levieten en Farizeeën blijven herkenbaar met uitleg waar nodig. Johannes’ herhaalde ontkenningen blijven staan, net als de afzonderlijke vragen over Christus, Elia en de profeet. De vraagvormen tegen Johannes gebruiken klein “u”; Jezus krijgt U/Uw. Voor de tweede vraag in vers 21 staat uitdrukkelijk “Ze vroegen verder”, buiten de vraagspraak. Het begrip `de-profeet` omvat de volledige bepaalde titel. Jesaja’s wegbeeld luidt natuurlijk “Maak voor de Heere een rechte weg.” en krijgt een begripkoppeling. Deze hele zin, inclusief punt maar zonder spraakinleiding en bronvermelding, is een eigen Jesaja-citaat genest binnen het antwoord van Johannes. “Heere” staat hier in een nieuwtestamentisch citaat; de instructie HEERE geldt voor de Godsnaam in het Oude Testament zelf.
 
 Bethabara blijft de SV-plaatsnaam; geen vervanging door een andere tekstvariant. De sandaalriem blijft het concrete beeld voor Johannes’ onwaardigheid; er wordt geen extra historische uitleg aan de hoofdtekst toegevoegd.
 
@@ -105,7 +105,7 @@ Besluit: “Lam van God” blijft als essentieel beeld behouden, niet vervangen 
 
 ### J9 — 1:31–34: kennen, Geest en geneste spraak
 
-Johannes’ “ik kende Hem niet” blijft tweemaal staan; er wordt niet ingevuld welk eerder persoonlijk contact er wel of niet was. De Geest daalt “als een duif” neer, niet noodzakelijk als een duif in biologische zin. Het blijven op Jezus blijft vermeld. “Zoon van God” blijft de getuigde identiteit.
+Johannes’ “ik kende Hem niet” blijft tweemaal staan; er wordt niet ingevuld welk eerder persoonlijk contact er wel of niet was. De Geest daalt “als een duif” neer, niet noodzakelijk als een duif in biologische zin. “Hij bleef op Jezus rusten” bewaart het blijven én het op-beeld in natuurlijk Nederlands. In vers 33 blijft de herkenningsfunctie expliciet: degene op wie Johannes de Geest ziet blijven rusten, doopt met de Heilige Geest. Het toekomstige zien, neerdalen, rusten en blijven zijn alle behouden. “Zoon van God” blijft de getuigde identiteit.
 
 De woorden die God tegen Johannes zei, hebben in vers 33 een eigen citaatbereik binnen Johannes’ doorlopende citaat. Zo blijft ook technisch zichtbaar dat Johannes Gods woorden navertelt. Waterdoop en doop met de Heilige Geest zijn afzonderlijk gekoppeld.
 
@@ -113,7 +113,7 @@ De woorden die God tegen Johannes zei, hebben in vers 33 een eigen citaatbereik 
 
 Vers 38 eindigt op een dubbele punt; Jezus’ vraag staat alleen in vers 39. In doorlopende lezing vormt dit een natuurlijke overgang zonder inhoud naar een ander vers te verplaatsen. Verklaringen van Rabbi, Messias en Cefas staan buiten de spraaksegmenten, als verklaringen van de verteller.
 
-“Het tiende uur” blijft staan met uitleg in metadata. Een omzetting naar vier uur in de middag zou een keuze voor tijdrekening toevoegen. Jonas blijft Jonas; Cefas en Petrus blijven beide genoemd. De blokgrens volgt de repository en valt na vers 43.
+De uitnodiging in vers 40 wordt “Kom maar kijken”; in vers 47 “Kom zelf kijken”. Het vage, toegevoegde object “het” verdwijnt. “Het tiende uur” blijft staan met uitleg dat dit een oude urentelling is en niet zonder meer tien uur op een moderne klok. Een omzetting naar vier uur in de middag zou een keuze voor tijdrekening toevoegen. Jonas blijft Jonas; Cefas en Petrus blijven beide genoemd. De blokgrens volgt de repository en valt na vers 43.
 
 ### J11 — 1:46–51: woorden van personages
 
@@ -123,9 +123,12 @@ Jezus uit Nazareth, zoon van Jozef, blijft een uitspraak van Filippus; dit is ge
 
 SV1888 leest “Voorwaar, voorwaar”, “ulieden”, “Van nu aan”, een geopende hemel en engelen die opklimmen en neerdalen op de Zoon des mensen. De opgeslagen Griekse tekst bevat het dubbele `amen`, meervoud `hymin`, `ap arti`, en `epi ton huion tou anthropou`.
 
-Besluit: “Ja, zeker, Ik verzeker jullie” bewaart de sterke dubbele bevestiging in natuurlijk Nederlands. Jezus spreekt tegen Nathanaël maar richt de belofte in het meervoud tot de kring; de hoofdtekst gebruikt daarom jullie. “Vanaf nu” wordt niet weggelaten. “Opstijgen en neerdalen op de Mensenzoon” bewaart het lastige maar centrale beeld en de richtingvolgorde. De titel wordt niet versmald tot “Ik” of een gewone mens; de uitleglaag bewaart Zoon des mensen. Er is geen eigen uitleg van een ladder, visioen of hemelreis toegevoegd.
+Besluit: “Luister goed, ik verzeker jullie” bewaart de nadruk in twee natuurlijke spreekdelen, zonder de stijve driedubbele formule “Ja, zeker, Ik verzeker jullie”. Jezus spreekt tegen Nathanaël maar richt de belofte in het meervoud tot de kring; de hoofdtekst gebruikt daarom jullie. “Vanaf nu” wordt niet weggelaten. “Opstijgen en neerdalen op de Mensenzoon” bewaart het lastige maar centrale beeld en de richtingvolgorde. De titel wordt niet versmald tot “Ik” of een gewone mens; de uitleglaag bewaart Zoon des mensen. Er is geen eigen uitleg van een ladder, visioen of hemelreis toegevoegd.
+
+## Hoofdletterbeleid
+
+Alleen Hij, Hem, Zijn, U en Uw krijgen de afgesproken eerbiedshoofdletter. Namen en identiteitstitels behouden hun normale spelling. Andere persoonlijke en betrekkelijke voornaamwoorden en soortnamen (ik, mij, wij, ons, onze, zich, die, dat, wie, iemand, degene, man, naam) krijgen binnen een zin geen extra hoofdletter. Een gewoon zinsbegin of begin van directe rede blijft wel met een hoofdletter geschreven. Broncitaten in dit register volgen de spelling van de aangehaalde bron.
 
 ## Openstaande beoordeling
 
 Alle besluiten moeten nog onafhankelijk op brongetrouwheid, taal en leesbaarheid worden beoordeeld. Bijzondere aandacht: het hemelgewelf, “niet begrepen” in Johannes 1:5, de verbinding in 1:9, genade in 1:16 en het engelenbeeld in 1:52. De technische validator bewijst structuur en hashes, niet de juistheid van deze redactionele keuzes.
-
