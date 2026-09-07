@@ -13,12 +13,13 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 
-ALLOWED_REVIEW_STATUSES = {
+REVIEW_STATUS_SEQUENCE = (
     "concept",
     "bron_gecontroleerd",
     "taal_gecontroleerd",
     "definitief",
-}
+)
+ALLOWED_REVIEW_STATUSES = set(REVIEW_STATUS_SEQUENCE)
 ALLOWED_SPEAKER_TYPES = {
     "god",
     "human",
@@ -39,17 +40,62 @@ REQUIRED_REGISTRY_FIELDS = {
     "hoofdstukken",
     "status",
 }
+REQUIRED_EDITION_FIELDS = {
+    "editie",
+    "naam",
+    "taal",
+    "richting",
+    "status",
+    "versie",
+    "doelgroep",
+    "bronnenbeleid",
+    "redactioneleStatussen",
+    "boeken",
+}
+OPV_DATA_ROOT = "data/edities/opv/chapters"
 HTML_RE = re.compile(r"<\s*/?\s*[A-Za-z!][^>]*>")
 SEMANTIC_ID_RE = re.compile(r"^[a-z0-9]+(?:\.[a-z0-9]+)+$")
+BOOK_CODE_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
 
 def _error(code: str, filename: str, json_path: str) -> str:
     return f"{code} {filename} {json_path}"
 
 
+def _safe_relative_path(
+    repo_root: Path,
+    raw_path: Any,
+    *,
+    require_data: bool = True,
+    require_json: bool = False,
+) -> Path | None:
+    if not isinstance(raw_path, str) or not raw_path or "\\" in raw_path:
+        return None
+    pure = PurePosixPath(raw_path)
+    if pure.is_absolute() or ".." in pure.parts or "." in pure.parts:
+        return None
+    if require_data and (not pure.parts or pure.parts[0] != "data"):
+        return None
+    if require_json and pure.suffix != ".json":
+        return None
+    candidate = (repo_root / Path(*pure.parts)).resolve()
+    try:
+        candidate.relative_to(repo_root.resolve())
+    except ValueError:
+        return None
+    return candidate
+
+
 def _load_json(repo_root: Path, filename: str, errors: list[str]) -> Any | None:
-    path = repo_root / Path(*PurePosixPath(filename).parts)
-    if not path.is_file():
+    path = _safe_relative_path(repo_root, filename, require_json=True)
+    if path is None:
+        errors.append(_error("MANIFEST_PATH_UNSAFE", str(filename), "$"))
+        return None
+    try:
+        is_file = path.is_file()
+    except OSError:
+        is_file = False
+    if not is_file:
         errors.append(_error("FILE_MISSING", filename, "$"))
         return None
     try:
@@ -102,19 +148,7 @@ def _validate_no_strong_fields(value: Any, filename: str) -> list[str]:
 
 
 def _safe_repo_file(repo_root: Path, raw_path: Any) -> Path | None:
-    if not isinstance(raw_path, str) or not raw_path or "\\" in raw_path:
-        return None
-    pure = PurePosixPath(raw_path)
-    if pure.is_absolute() or ".." in pure.parts or "." in pure.parts:
-        return None
-    if not pure.parts or pure.parts[0] != "data" or pure.suffix != ".json":
-        return None
-    candidate = (repo_root / Path(*pure.parts)).resolve()
-    try:
-        candidate.relative_to(repo_root.resolve())
-    except ValueError:
-        return None
-    return candidate
+    return _safe_relative_path(repo_root, raw_path, require_json=True)
 
 
 def _sha256(text: str) -> str:
@@ -130,9 +164,38 @@ def _book_chapters_from_edition_manifest(manifest: Any) -> dict[str, list[int]]:
             continue
         code = book.get("code")
         chapters = book.get("hoofdstukken")
-        if isinstance(code, str) and isinstance(chapters, list):
+        if (
+            isinstance(code, str)
+            and BOOK_CODE_RE.fullmatch(code)
+            and isinstance(chapters, list)
+            and all(
+                isinstance(chapter, int)
+                and not isinstance(chapter, bool)
+                and chapter > 0
+                for chapter in chapters
+            )
+        ):
             result[code] = chapters
     return result
+
+
+def _is_non_empty_string(value: Any) -> bool:
+    return isinstance(value, str) and bool(value.strip())
+
+
+def _valid_chapter_numbers(value: Any) -> bool:
+    return (
+        isinstance(value, list)
+        and bool(value)
+        and all(
+            isinstance(chapter, int)
+            and not isinstance(chapter, bool)
+            and chapter > 0
+            for chapter in value
+        )
+        and len(value) == len(set(value))
+        and value == sorted(value)
+    )
 
 
 def validate_manifest(
@@ -181,44 +244,173 @@ def validate_manifest(
                 errors.append(
                     _error("MANIFEST_FIELD_MISSING", registry_file, f"$.edities[{index}].{field}")
                 )
-        if entry.get("richting") not in {"ltr", "rtl"}:
+        for field in ("naam", "taal", "status"):
+            if not _is_non_empty_string(entry.get(field)):
+                errors.append(
+                    _error(
+                        "MANIFEST_FIELD_INVALID",
+                        registry_file,
+                        f"$.edities[{index}].{field}",
+                    )
+                )
+        expected_registry_values = {
+            "naam": "Open Parafrase Vertaling (proef)",
+            "taal": "nl",
+            "status": "pilot",
+        }
+        for field, expected_value in expected_registry_values.items():
+            value = entry.get(field)
+            if isinstance(value, str) and value != expected_value:
+                errors.append(
+                    _error(
+                        "MANIFEST_METADATA_MISMATCH",
+                        registry_file,
+                        f"$.edities[{index}].{field}",
+                    )
+                )
+        direction = entry.get("richting")
+        if not isinstance(direction, str) or direction != "ltr":
             errors.append(
                 _error("MANIFEST_DIRECTION", registry_file, f"$.edities[{index}].richting")
             )
-        if entry.get("dataRoot") != "data/edities/opv/chapters":
+        data_root = entry.get("dataRoot")
+        if data_root != OPV_DATA_ROOT:
             errors.append(
                 _error("MANIFEST_DATA_ROOT", registry_file, f"$.edities[{index}].dataRoot")
             )
-        registry_chapters = (
-            entry.get("hoofdstukken")
-            if isinstance(entry.get("hoofdstukken"), dict)
-            else {}
+        if _safe_relative_path(repo_root, data_root, require_json=False) is None:
+            errors.append(
+                _error("MANIFEST_PATH_UNSAFE", registry_file, f"$.edities[{index}].dataRoot")
+            )
+
+        raw_books = entry.get("boeken")
+        if not isinstance(raw_books, list) or any(
+            not isinstance(book, str) or BOOK_CODE_RE.fullmatch(book) is None
+            for book in raw_books
+        ):
+            errors.append(
+                _error("MANIFEST_BOOKS_INVALID", registry_file, f"$.edities[{index}].boeken")
+            )
+        books = (
+            [
+                book
+                for book in raw_books
+                if isinstance(book, str) and BOOK_CODE_RE.fullmatch(book)
+            ]
+            if isinstance(raw_books, list)
+            else []
         )
-        books = entry.get("boeken") if isinstance(entry.get("boeken"), list) else []
-        if sorted(books) != sorted(registry_chapters):
+        if len(books) != len(set(books)):
+            errors.append(
+                _error("MANIFEST_BOOKS_INVALID", registry_file, f"$.edities[{index}].boeken")
+            )
+
+        registry_chapters = {}
+        raw_registry_chapters = entry.get("hoofdstukken")
+        if not isinstance(raw_registry_chapters, dict):
+            errors.append(
+                _error(
+                    "MANIFEST_CHAPTERS_INVALID",
+                    registry_file,
+                    f"$.edities[{index}].hoofdstukken",
+                )
+            )
+        else:
+            for book, chapters in raw_registry_chapters.items():
+                if not isinstance(book, str) or BOOK_CODE_RE.fullmatch(book) is None:
+                    errors.append(
+                        _error(
+                            "MANIFEST_PATH_UNSAFE",
+                            registry_file,
+                            f"$.edities[{index}].hoofdstukken",
+                        )
+                    )
+                    continue
+                if not _valid_chapter_numbers(chapters):
+                    errors.append(
+                        _error(
+                            "MANIFEST_CHAPTERS_INVALID",
+                            registry_file,
+                            f"$.edities[{index}].hoofdstukken.{book}",
+                        )
+                    )
+                    continue
+                registry_chapters[book] = chapters
+        if set(books) != set(registry_chapters):
             errors.append(
                 _error("MANIFEST_BOOKS_MISMATCH", registry_file, f"$.edities[{index}].boeken")
             )
 
-    if not isinstance(edition_manifest, dict) or edition_manifest.get("schema") != 1:
+    if not isinstance(edition_manifest, dict):
+        errors.append(_error("EDITION_SCHEMA", edition_file, "$"))
+        return errors
+    if edition_manifest.get("schema") != 1:
         errors.append(_error("EDITION_SCHEMA", edition_file, "$.schema"))
-    if not isinstance(edition_manifest, dict) or edition_manifest.get("editie") != "nl-opv":
+    for field in sorted(REQUIRED_EDITION_FIELDS):
+        value = edition_manifest.get(field)
+        if (
+            field not in edition_manifest
+            or value is None
+            or value == ""
+            or value == []
+            or value == {}
+        ):
+            errors.append(_error("EDITION_FIELD_MISSING", edition_file, f"$.{field}"))
+    if edition_manifest.get("editie") != "nl-opv":
         errors.append(_error("EDITION_CODE", edition_file, "$.editie"))
+    if edition_manifest.get("naam") != "Open Parafrase Vertaling (proef)":
+        errors.append(_error("EDITION_NAME", edition_file, "$.naam"))
+    if edition_manifest.get("taal") != "nl":
+        errors.append(_error("EDITION_LANGUAGE", edition_file, "$.taal"))
+    if edition_manifest.get("richting") != "ltr":
+        errors.append(_error("EDITION_DIRECTION", edition_file, "$.richting"))
+    if edition_manifest.get("status") != "pilot":
+        errors.append(_error("EDITION_STATUS", edition_file, "$.status"))
+    if not _is_non_empty_string(edition_manifest.get("versie")):
+        errors.append(_error("EDITION_VERSION", edition_file, "$.versie"))
+    if not _is_non_empty_string(edition_manifest.get("doelgroep")):
+        errors.append(_error("EDITION_AUDIENCE", edition_file, "$.doelgroep"))
+    source_policy = edition_manifest.get("bronnenbeleid")
+    if (
+        not isinstance(source_policy, dict)
+        or not _is_non_empty_string(source_policy.get("basistekst"))
+        or not isinstance(source_policy.get("controlebronnen"), list)
+        or not source_policy.get("controlebronnen")
+        or any(
+            not _is_non_empty_string(source)
+            for source in source_policy.get("controlebronnen", [])
+        )
+    ):
+        errors.append(_error("EDITION_SOURCE_POLICY", edition_file, "$.bronnenbeleid"))
+    if edition_manifest.get("redactioneleStatussen") != list(REVIEW_STATUS_SEQUENCE):
+        errors.append(
+            _error("EDITION_REVIEW_STATUSES", edition_file, "$.redactioneleStatussen")
+        )
 
     edition_chapters = _book_chapters_from_edition_manifest(edition_manifest)
-    if not edition_chapters:
+    raw_edition_books = edition_manifest.get("boeken")
+    if not isinstance(raw_edition_books, list) or not raw_edition_books:
         errors.append(_error("EDITION_BOOKS", edition_file, "$.boeken"))
+    else:
+        seen_books: set[str] = set()
+        for book_index, book in enumerate(raw_edition_books):
+            book_path = f"$.boeken[{book_index}]"
+            if not isinstance(book, dict):
+                errors.append(_error("EDITION_BOOK_INVALID", edition_file, book_path))
+                continue
+            code = book.get("code")
+            if not isinstance(code, str) or BOOK_CODE_RE.fullmatch(code) is None:
+                errors.append(_error("MANIFEST_PATH_UNSAFE", edition_file, f"{book_path}.code"))
+            elif code in seen_books:
+                errors.append(_error("EDITION_BOOK_DUPLICATE", edition_file, f"{book_path}.code"))
+            else:
+                seen_books.add(code)
+            if not _valid_chapter_numbers(book.get("hoofdstukken")):
+                errors.append(
+                    _error("EDITION_CHAPTER_INVALID", edition_file, f"{book_path}.hoofdstukken")
+                )
     if registry_chapters != edition_chapters:
         errors.append(_error("MANIFEST_CHAPTERS_MISMATCH", edition_file, "$.boeken"))
-
-    for book, chapters in edition_chapters.items():
-        if not isinstance(chapters, list) or any(
-            not isinstance(chapter, int) or isinstance(chapter, bool) or chapter < 1
-            for chapter in chapters
-        ):
-            errors.append(_error("EDITION_CHAPTER_INVALID", edition_file, f"$.boeken.{book}"))
-        elif len(chapters) != len(set(chapters)) or chapters != sorted(chapters):
-            errors.append(_error("EDITION_CHAPTER_ORDER", edition_file, f"$.boeken.{book}"))
     return errors
 
 
@@ -235,7 +427,7 @@ def validate_review(
     if not isinstance(review, dict):
         return [_error("REVIEW_MISSING", filename, json_path)]
     status = review.get("status")
-    if status not in ALLOWED_REVIEW_STATUSES:
+    if not isinstance(status, str) or status not in ALLOWED_REVIEW_STATUSES:
         errors.append(_error("REVIEW_STATUS", filename, f"{json_path}.status"))
     content_hash = _sha256(reading_text)
     if review.get("inhoudSha256") != content_hash:
@@ -252,6 +444,7 @@ def validate_review(
             control.get("type")
             for control in controls
             if isinstance(control, dict)
+            and isinstance(control.get("type"), str)
             and control.get("status") == "goedgekeurd"
             and control.get("inhoudSha256") == content_hash
         }
@@ -266,6 +459,8 @@ def _source_text_for_verse(
     filename: str,
     json_path: str,
     source_cache: dict[str, Any],
+    expected_book: str,
+    expected_chapter: int,
 ) -> tuple[str | None, str | None, list[str]]:
     errors: list[str] = []
     source_ref = verse.get("bron")
@@ -278,7 +473,16 @@ def _source_text_for_verse(
             _error("SOURCE_PATH_UNSAFE", filename, f"{json_path}.bron.bestand")
         ]
     source_name = PurePosixPath(str(raw_path)).as_posix()
-    if not source_path.is_file():
+    expected_source_name = f"data/{expected_book}/{expected_chapter}.json"
+    if source_name != expected_source_name:
+        return source_name, None, [
+            _error("SOURCE_PATH_MISMATCH", filename, f"{json_path}.bron.bestand")
+        ]
+    try:
+        is_file = source_path.is_file()
+    except OSError:
+        is_file = False
+    if not is_file:
         return source_name, None, [
             _error("SOURCE_FILE_MISSING", filename, f"{json_path}.bron.bestand")
         ]
@@ -293,11 +497,17 @@ def _source_text_for_verse(
             _error("SOURCE_JSON_INVALID", filename, f"{json_path}.bron.bestand")
         ]
 
-    source_number = source_ref.get("vers")
+    if source_doc.get("number") != expected_chapter:
+        errors.append(
+            _error("SOURCE_CHAPTER_MISMATCH", filename, f"{json_path}.bron.bestand")
+        )
+    verse_number = verse.get("nummer")
+    if source_ref.get("vers") != verse_number:
+        errors.append(_error("SOURCE_VERSE_MISMATCH", filename, f"{json_path}.bron.vers"))
     candidates = [
         candidate
         for candidate in source_doc["verses"]
-        if isinstance(candidate, dict) and candidate.get("number") == source_number
+        if isinstance(candidate, dict) and candidate.get("number") == verse_number
     ]
     if len(candidates) != 1:
         return source_name, None, [
@@ -318,6 +528,8 @@ def validate_verse(
     json_path: str,
     source_cache: dict[str, Any],
     seen_segment_ids: dict[str, str],
+    expected_book: str,
+    expected_chapter: int,
 ) -> tuple[list[str], list[str], str | None]:
     """Valideer één vers en retourneer fouten, segment-id's en bronbestand."""
 
@@ -358,7 +570,13 @@ def validate_verse(
         errors.append(_error("SEGMENTS_TEXT_MISMATCH", filename, f"{json_path}.segmenten"))
 
     source_name, source_text, source_errors = _source_text_for_verse(
-        repo_root, verse, filename, json_path, source_cache
+        repo_root,
+        verse,
+        filename,
+        json_path,
+        source_cache,
+        expected_book,
+        expected_chapter,
     )
     errors.extend(source_errors)
     errors.extend(
@@ -393,14 +611,15 @@ def validate_annotations(
         if not isinstance(concept, dict):
             errors.append(_error("CONCEPT_INVALID", filename, concept_path))
             continue
-        if concept.get("conceptId") not in concept_ids:
+        concept_id = concept.get("conceptId")
+        if not isinstance(concept_id, str) or concept_id not in concept_ids:
             errors.append(_error("CONCEPT_UNKNOWN", filename, f"{concept_path}.conceptId"))
         references = concept.get("segmenten")
         if not isinstance(references, list):
             errors.append(_error("SEGMENT_REFERENCES_INVALID", filename, f"{concept_path}.segmenten"))
             continue
         for ref_index, reference in enumerate(references):
-            if reference not in segment_positions:
+            if not isinstance(reference, str) or reference not in segment_positions:
                 errors.append(
                     _error(
                         "SEGMENT_REFERENCE_UNKNOWN",
@@ -451,9 +670,10 @@ def validate_annotations(
         else:
             if not isinstance(speaker.get("id"), str) or not speaker.get("id"):
                 errors.append(_error("SPEAKER_ID_MISSING", filename, f"{citation_path}.spreker.id"))
-            if "type" not in speaker or speaker.get("type") in (None, ""):
+            speaker_type = speaker.get("type")
+            if not isinstance(speaker_type, str) or not speaker_type:
                 errors.append(_error("SPEAKER_TYPE_MISSING", filename, f"{citation_path}.spreker.type"))
-            elif speaker.get("type") not in ALLOWED_SPEAKER_TYPES:
+            elif speaker_type not in ALLOWED_SPEAKER_TYPES:
                 errors.append(_error("SPEAKER_TYPE_INVALID", filename, f"{citation_path}.spreker.type"))
     return errors, ranges
 
@@ -471,12 +691,24 @@ def _validate_blocks(chapter: dict[str, Any], filename: str) -> list[str]:
     coverage = {number: 0 for number in verse_numbers}
     blocks = chapter.get("blokken")
     if not isinstance(blocks, list):
+        errors.append(_error("BLOCKS_INVALID", filename, "$.blokken"))
         blocks = []
+    block_ids: set[str] = set()
+    ordered_ranges: list[tuple[int, int]] = []
     for index, block in enumerate(blocks):
         block_path = f"$.blokken[{index}]"
         if not isinstance(block, dict):
             errors.append(_error("BLOCK_INVALID", filename, block_path))
             continue
+        block_id = block.get("id")
+        if not _is_non_empty_string(block_id):
+            errors.append(_error("BLOCK_ID_MISSING", filename, f"{block_path}.id"))
+        elif block_id in block_ids:
+            errors.append(_error("BLOCK_ID_DUPLICATE", filename, f"{block_path}.id"))
+        else:
+            block_ids.add(block_id)
+        if not _is_non_empty_string(block.get("kop")):
+            errors.append(_error("BLOCK_HEADING_MISSING", filename, f"{block_path}.kop"))
         start = block.get("vanaf")
         end = block.get("tot")
         if (
@@ -488,6 +720,7 @@ def _validate_blocks(chapter: dict[str, Any], filename: str) -> list[str]:
         ):
             errors.append(_error("BLOCK_RANGE_INVALID", filename, block_path))
             continue
+        ordered_ranges.append((start, end))
         for number in range(start, end + 1):
             if number in coverage:
                 coverage[number] += 1
@@ -497,6 +730,8 @@ def _validate_blocks(chapter: dict[str, Any], filename: str) -> list[str]:
         errors.append(_error("BLOCKS_OVERLAP", filename, "$.blokken"))
     if any(count == 0 for count in coverage.values()) or (verse_numbers and not blocks):
         errors.append(_error("BLOCKS_INCOMPLETE", filename, "$.blokken"))
+    if ordered_ranges != sorted(ordered_ranges):
+        errors.append(_error("BLOCK_ORDER", filename, "$.blokken"))
     return errors
 
 
@@ -526,6 +761,8 @@ def validate_chapter(
         errors.append(_error("CHAPTER_BOOK", filename, "$.boek"))
     if chapter.get("hoofdstuk") != expected_chapter:
         errors.append(_error("CHAPTER_NUMBER", filename, "$.hoofdstuk"))
+    if not _is_non_empty_string(chapter.get("kop")):
+        errors.append(_error("CHAPTER_HEADING_MISSING", filename, "$.kop"))
 
     verses = chapter.get("verzen")
     if not isinstance(verses, list) or not verses:
@@ -557,6 +794,8 @@ def validate_chapter(
             f"$.verzen[{index}]",
             source_cache,
             seen_segment_ids,
+            expected_book,
+            expected_chapter,
         )
         errors.extend(verse_errors)
         segment_order.extend(segment_ids)
@@ -622,6 +861,17 @@ def _concept_ids(concepts: Any, filename: str) -> tuple[set[str], list[str]]:
     return identifiers, errors
 
 
+def _opv_registry_entry(registry: Any) -> dict[str, Any] | None:
+    if not isinstance(registry, dict) or not isinstance(registry.get("edities"), list):
+        return None
+    matches = [
+        entry
+        for entry in registry["edities"]
+        if isinstance(entry, dict) and entry.get("code") == "nl-opv"
+    ]
+    return matches[0] if len(matches) == 1 else None
+
+
 def validate_corpus(repo_root: Path) -> list[str]:
     """Valideer alle in het OPV-manifest geregistreerde hoofdstukken."""
 
@@ -644,13 +894,30 @@ def validate_corpus(repo_root: Path) -> list[str]:
     if edition_manifest is None:
         return sorted(set(errors))
 
+    registry_entry = _opv_registry_entry(registry)
+    data_root = registry_entry.get("dataRoot") if registry_entry is not None else None
+    data_root_path = _safe_relative_path(root, data_root, require_json=False)
+    if data_root_path is None:
+        return sorted(set(errors))
     chapter_map = _book_chapters_from_edition_manifest(edition_manifest)
     source_cache: dict[str, Any] = {}
     seen_segment_ids: dict[str, str] = {}
     seen_citation_ids: dict[str, str] = {}
     for book in sorted(chapter_map):
         for chapter_number in chapter_map[book]:
-            filename = f"data/edities/opv/chapters/{book}/{chapter_number}.json"
+            filename = f"{data_root}/{book}/{chapter_number}.json"
+            chapter_path = _safe_relative_path(root, filename, require_json=True)
+            if chapter_path is None:
+                within_data_root = False
+            else:
+                try:
+                    chapter_path.relative_to(data_root_path)
+                    within_data_root = True
+                except ValueError:
+                    within_data_root = False
+            if not within_data_root:
+                errors.append(_error("MANIFEST_PATH_UNSAFE", edition_file, "$.boeken"))
+                continue
             chapter = _load_json(root, filename, errors)
             if chapter is None:
                 continue

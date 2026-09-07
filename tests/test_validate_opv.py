@@ -55,14 +55,14 @@ def write_json(path: Path, value: object) -> None:
 class ValidateOpvTests(unittest.TestCase):
     def setUp(self) -> None:
         self.temp_dir = tempfile.TemporaryDirectory()
-        self.root = Path(self.temp_dir.name)
+        self.root = Path(self.temp_dir.name) / "repo"
         self.chapter = copy.deepcopy(VALID_CHAPTER)
         self.registry = {
             "schema": 1,
             "edities": [
                 {
                     "code": "nl-opv",
-                    "naam": "Open Parafrase Vertaling",
+                    "naam": "Open Parafrase Vertaling (proef)",
                     "taal": "nl",
                     "richting": "ltr",
                     "dataRoot": "data/edities/opv/chapters",
@@ -75,6 +75,26 @@ class ValidateOpvTests(unittest.TestCase):
         self.edition_manifest = {
             "schema": 1,
             "editie": "nl-opv",
+            "naam": "Open Parafrase Vertaling (proef)",
+            "taal": "nl",
+            "richting": "ltr",
+            "status": "pilot",
+            "versie": "0.1.0",
+            "doelgroep": "16-jarige HAVO-lezer",
+            "bronnenbeleid": {
+                "basistekst": "Statenvertaling 1888",
+                "controlebronnen": [
+                    "Statenvertaling 1637",
+                    "Open Vertaling",
+                    "Hebreeuwse en Griekse grondtekst",
+                ],
+            },
+            "redactioneleStatussen": [
+                "concept",
+                "bron_gecontroleerd",
+                "taal_gecontroleerd",
+                "definitief",
+            ],
             "boeken": [{"code": "genesis", "hoofdstukken": [1]}],
         }
         self.concepts = {
@@ -100,9 +120,16 @@ class ValidateOpvTests(unittest.TestCase):
         self._write_chapter(self.chapter)
 
     def _write_source(self, book: str, chapter: int, text: str) -> None:
+        self._write_source_verses(
+            book, chapter, [{"number": 1, "textSV1888": text}]
+        )
+
+    def _write_source_verses(
+        self, book: str, chapter: int, verses: list[dict]
+    ) -> None:
         write_json(
             self.root / f"data/{book}/{chapter}.json",
-            {"number": chapter, "verses": [{"number": 1, "textSV1888": text}]},
+            {"number": chapter, "verses": verses},
         )
 
     def _write_chapter(self, chapter: dict) -> None:
@@ -124,8 +151,186 @@ class ValidateOpvTests(unittest.TestCase):
             f"{code!r} niet gevonden in {errors!r}",
         )
 
+    def _configure_two_verse_chapter(self) -> None:
+        second = {
+            "nummer": 2,
+            "tekst": "De aarde was leeg en donker.",
+            "bron": {
+                "bestand": "data/genesis/1.json",
+                "vers": 2,
+                "tekstveld": "textSV1888",
+            },
+            "segmenten": [
+                {"id": "GEN.1.2.s1", "tekst": "De aarde was leeg en donker."}
+            ],
+            "begrippen": [],
+            "citaten": [],
+            "review": {
+                "status": "concept",
+                "inhoudSha256": "9c6fcc12a7bbf286f47042b100fb8cb9c8462c1585ab444443074f5bcbb5951c",
+                "bronSha256": "25f782d86a4d2b779fce6a903d2d5770cdc7c363d0ee92842bc6b76c6a683583",
+                "controles": [],
+            },
+        }
+        self.chapter["verzen"].append(second)
+        self.chapter["blokken"][0]["tot"] = 2
+
     def test_valid_mini_corpus_has_no_errors(self) -> None:
         self.assertEqual([], validate_corpus(self.root))
+
+    def test_source_verse_must_match_current_opv_verse(self) -> None:
+        self._configure_two_verse_chapter()
+        self.chapter["verzen"][1]["bron"]["vers"] = 1
+        self.chapter["verzen"][1]["review"]["bronSha256"] = (
+            "ad7db6a21814ca5d62e90b9d9f04b435d51c91f41fbea1dcd872f573e4d4d5ee"
+        )
+        self._write_all()
+        self._write_source_verses(
+            "genesis",
+            1,
+            [
+                {"number": 1, "textSV1888": SOURCE_TEXT},
+                {
+                    "number": 2,
+                    "textSV1888": "De aarde nu was woest en ledig.",
+                },
+            ],
+        )
+        errors = validate_corpus(self.root)
+        self.assertHasCode(errors, "SOURCE_VERSE_MISMATCH")
+
+    def test_source_file_must_match_current_opv_book_and_chapter(self) -> None:
+        self.chapter["verzen"][0]["bron"]["bestand"] = "data/johannes/2.json"
+        self._write_all()
+        self._write_source("johannes", 2, SOURCE_TEXT)
+        errors = validate_corpus(self.root)
+        self.assertHasCode(errors, "SOURCE_PATH_MISMATCH")
+
+    def test_source_document_chapter_must_match_current_opv_chapter(self) -> None:
+        self._write_all()
+        write_json(
+            self.root / "data/genesis/1.json",
+            {"number": 2, "verses": [{"number": 1, "textSV1888": SOURCE_TEXT}]},
+        )
+        errors = validate_corpus(self.root)
+        self.assertHasCode(errors, "SOURCE_CHAPTER_MISMATCH")
+
+    def test_edition_manifest_requires_all_contract_metadata(self) -> None:
+        complete = copy.deepcopy(self.edition_manifest)
+        fields = [
+            "naam",
+            "taal",
+            "richting",
+            "status",
+            "versie",
+            "doelgroep",
+            "bronnenbeleid",
+            "redactioneleStatussen",
+        ]
+        for field in fields:
+            with self.subTest(field=field):
+                self.edition_manifest = copy.deepcopy(complete)
+                del self.edition_manifest[field]
+                self._write_all()
+                errors = validate_corpus(self.root)
+                self.assertTrue(
+                    any(
+                        error.startswith("EDITION_FIELD_MISSING ")
+                        and error.endswith(f"$.{field}")
+                        for error in errors
+                    ),
+                    errors,
+                )
+
+    def test_edition_manifest_rejects_incorrect_editorial_statuses(self) -> None:
+        self.edition_manifest["redactioneleStatussen"] = ["concept", "klaar"]
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "EDITION_REVIEW_STATUSES")
+
+    def test_chapter_and_block_require_non_empty_headings_and_block_id(self) -> None:
+        self.chapter["kop"] = " "
+        self.chapter["blokken"][0]["kop"] = ""
+        self.chapter["blokken"][0]["id"] = None
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "CHAPTER_HEADING_MISSING")
+        self.assertHasCode(errors, "BLOCK_HEADING_MISSING")
+        self.assertHasCode(errors, "BLOCK_ID_MISSING")
+
+    def test_block_ids_are_unique(self) -> None:
+        self._configure_two_verse_chapter()
+        self.chapter["blokken"] = [
+            {"id": "gen-1-b1", "kop": "Eerste", "vanaf": 1, "tot": 1},
+            {"id": "gen-1-b1", "kop": "Tweede", "vanaf": 2, "tot": 2},
+        ]
+        self._write_all()
+        self._write_source_verses(
+            "genesis",
+            1,
+            [
+                {"number": 1, "textSV1888": SOURCE_TEXT},
+                {
+                    "number": 2,
+                    "textSV1888": "De aarde nu was woest en ledig.",
+                },
+            ],
+        )
+        errors = validate_corpus(self.root)
+        self.assertHasCode(errors, "BLOCK_ID_DUPLICATE")
+
+    def test_blocks_must_be_sorted_by_verse_range(self) -> None:
+        self._configure_two_verse_chapter()
+        self.chapter["blokken"] = [
+            {"id": "gen-1-b2", "kop": "Tweede", "vanaf": 2, "tot": 2},
+            {"id": "gen-1-b1", "kop": "Eerste", "vanaf": 1, "tot": 1},
+        ]
+        self._write_all()
+        self._write_source_verses(
+            "genesis",
+            1,
+            [
+                {"number": 1, "textSV1888": SOURCE_TEXT},
+                {
+                    "number": 2,
+                    "textSV1888": "De aarde nu was woest en ledig.",
+                },
+            ],
+        )
+        errors = validate_corpus(self.root)
+        self.assertHasCode(errors, "BLOCK_ORDER")
+
+    def test_manifest_book_code_cannot_escape_data_root(self) -> None:
+        malicious_book = "../../../../../escaped"
+        self.registry["edities"][0]["boeken"] = [malicious_book]
+        self.registry["edities"][0]["hoofdstukken"] = {malicious_book: [1]}
+        self.edition_manifest["boeken"] = [
+            {"code": malicious_book, "hoofdstukken": [1]}
+        ]
+        escaped_chapter = copy.deepcopy(self.chapter)
+        escaped_chapter["boek"] = malicious_book
+        self._write_all()
+        write_json(self.root.parent / "escaped/1.json", escaped_chapter)
+        errors = validate_corpus(self.root)
+        self.assertHasCode(errors, "MANIFEST_PATH_UNSAFE")
+
+    def test_wrong_registry_container_types_return_errors_without_traceback(self) -> None:
+        self.registry["edities"][0]["boeken"] = ["genesis", 1]
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "MANIFEST_BOOKS_INVALID")
+        self.assertEqual(sorted(errors), errors)
+
+    def test_wrong_registry_scalar_container_returns_error_without_traceback(self) -> None:
+        self.registry["edities"][0]["richting"] = {}
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "MANIFEST_DIRECTION")
+        self.assertEqual(sorted(errors), errors)
+
+    def test_registry_text_fields_reject_non_empty_containers(self) -> None:
+        self.registry["edities"][0]["naam"] = {"waarde": "OPV"}
+        self.registry["edities"][0]["taal"] = ["nl"]
+        self.registry["edities"][0]["status"] = {"fase": "pilot"}
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "MANIFEST_FIELD_INVALID")
+        self.assertEqual(sorted(errors), errors)
 
     def test_duplicate_verse_number_is_reported(self) -> None:
         self.chapter["verzen"].append(copy.deepcopy(self.chapter["verzen"][0]))

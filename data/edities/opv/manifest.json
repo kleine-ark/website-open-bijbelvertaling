@@ -1,6 +1,26 @@
 {
   "schema": 1,
   "editie": "nl-opv",
+  "naam": "Open Parafrase Vertaling (proef)",
+  "taal": "nl",
+  "richting": "ltr",
+  "status": "pilot",
+  "versie": "0.1.0",
+  "doelgroep": "16-jarige HAVO-lezer",
+  "bronnenbeleid": {
+    "basistekst": "Statenvertaling 1888",
+    "controlebronnen": [
+      "Statenvertaling 1637",
+      "Open Vertaling",
+      "Hebreeuwse en Griekse grondtekst"
+    ]
+  },
+  "redactioneleStatussen": [
+    "concept",
+    "bron_gecontroleerd",
+    "taal_gecontroleerd",
+    "definitief"
+  ],
   "boeken": [
     {
       "code": "genesis",
