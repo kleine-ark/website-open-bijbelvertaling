@@ -292,6 +292,45 @@ class OpvReaderTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_onbeschikbare_opv_wist_alle_warme_ov_hoofdstukstatus_en_herstelt(self):
+        page = self.new_page()
+        observed = self.observe_runtime(page)
+        try:
+            page.goto(f"{self.base_url}/index.html#spreuken/1", wait_until="domcontentloaded")
+            page.locator('.verse-row[data-verse="1"]').wait_for()
+            page.locator("#ai-concept-banner").wait_for(state="visible")
+            page.locator("#book-dating").wait_for(state="visible")
+            title = page.locator("#chapter-title")
+            self.assertTrue(title.evaluate("element => element.classList.contains('chapter-unverified')"))
+            self.assertEqual(title.locator(".chapter-concept-tag").count(), 1)
+
+            self.open_sources(page)
+            page.locator("#opt-teksteditie").select_option("nl-opv")
+            page.locator(".translation-unavailable").wait_for()
+            self.assertEqual(page.locator(".verse-row").count(), 0)
+            self.assertFalse(page.locator("#ai-concept-banner").is_visible())
+            self.assertFalse(title.evaluate("element => element.classList.contains('chapter-unverified')"))
+            self.assertEqual(title.locator(".chapter-concept-tag").count(), 0)
+            self.assertFalse(page.locator("#book-dating").is_visible())
+            self.assertFalse(page.locator("#ethiopic-banner").is_visible())
+            self.assertFalse(page.locator("#audio-play-big").is_visible())
+            self.assertIsNone(page.locator("#audio-el").get_attribute("src"))
+            self.assertFalse(page.locator("#book-intro").is_visible())
+            self.assertFalse(page.locator("#chapter-intro").is_visible())
+            self.assertIn("Spreuken 1", title.inner_text())
+
+            page.locator("#opt-teksteditie").select_option("nl-ov")
+            page.locator('.verse-row[data-verse="1"]').wait_for()
+            page.locator("#ai-concept-banner").wait_for(state="visible")
+            page.locator("#book-dating").wait_for(state="visible")
+            self.assertTrue(title.evaluate("element => element.classList.contains('chapter-unverified')"))
+            self.assertEqual(title.locator(".chapter-concept-tag").count(), 1)
+            self.assertNotIn("editie=", page.url)
+            self.assertEqual(observed["pageerrors"], [])
+            self.assertEqual(observed["http_errors"], [])
+        finally:
+            page.close()
+
     def test_opv_prefetch_respecteert_werkelijk_gepubliceerde_hoofdstukken(self):
         page = self.new_page()
         page.add_init_script(

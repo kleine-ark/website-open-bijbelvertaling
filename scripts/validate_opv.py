@@ -38,6 +38,7 @@ REQUIRED_REGISTRY_FIELDS = {
     "dataRoot",
     "boeken",
     "hoofdstukken",
+    "gepubliceerdeHoofdstukken",
     "status",
 }
 REQUIRED_EDITION_FIELDS = {
@@ -50,6 +51,7 @@ REQUIRED_EDITION_FIELDS = {
     "doelgroep",
     "bronnenbeleid",
     "redactioneleStatussen",
+    "gepubliceerdeHoofdstukken",
     "boeken",
 }
 OPV_DATA_ROOT = "data/edities/opv/chapters"
@@ -226,6 +228,48 @@ def _valid_chapter_numbers(value: Any) -> bool:
     )
 
 
+def _published_chapter_map(
+    value: Any,
+    planned: dict[str, list[int]],
+    filename: str,
+    json_path: str,
+    errors: list[str],
+) -> dict[str, list[int]]:
+    """Valideer de werkelijk aanwezige subset van de geplande hoofdstukken."""
+
+    if not isinstance(value, dict):
+        errors.append(_error("PUBLISHED_CHAPTERS_INVALID", filename, json_path))
+        return {}
+
+    result: dict[str, list[int]] = {}
+    safe_books: set[str] = set()
+    for book, chapters in value.items():
+        if not isinstance(book, str) or BOOK_CODE_RE.fullmatch(book) is None:
+            errors.append(_error("MANIFEST_PATH_UNSAFE", filename, json_path))
+            continue
+        safe_books.add(book)
+        book_path = _json_path_key(json_path, book)
+        if book not in planned:
+            errors.append(_error("PUBLISHED_BOOK_UNKNOWN", filename, book_path))
+            continue
+        valid = (
+            isinstance(chapters, list)
+            and all(_is_json_integer(chapter) and chapter > 0 for chapter in chapters)
+            and len(chapters) == len(set(chapters))
+            and chapters == sorted(chapters)
+        )
+        if not valid:
+            errors.append(_error("PUBLISHED_CHAPTERS_INVALID", filename, book_path))
+            continue
+        result[book] = chapters
+        if not set(chapters).issubset(planned[book]):
+            errors.append(_error("PUBLISHED_CHAPTER_OUTSIDE_PLAN", filename, book_path))
+
+    if safe_books != set(planned):
+        errors.append(_error("PUBLISHED_BOOKS_MISMATCH", filename, json_path))
+    return result
+
+
 def validate_manifest(
     repo_root: Path,
     registry: Any | None = None,
@@ -265,6 +309,7 @@ def validate_manifest(
     if len(opv_entries) != 1:
         errors.append(_error("MANIFEST_OPV_ENTRY", registry_file, "$.edities"))
         registry_chapters: dict[str, list[int]] = {}
+        registry_published: dict[str, list[int]] = {}
     else:
         index, entry = opv_entries[0]
         for field in sorted(REQUIRED_REGISTRY_FIELDS):
@@ -368,6 +413,13 @@ def validate_manifest(
             errors.append(
                 _error("MANIFEST_BOOKS_MISMATCH", registry_file, f"$.edities[{index}].boeken")
             )
+        registry_published = _published_chapter_map(
+            entry.get("gepubliceerdeHoofdstukken"),
+            registry_chapters,
+            registry_file,
+            f"$.edities[{index}].gepubliceerdeHoofdstukken",
+            errors,
+        )
 
     if not isinstance(edition_manifest, dict):
         errors.append(_error("EDITION_SCHEMA", edition_file, "$"))
@@ -439,6 +491,17 @@ def validate_manifest(
                 )
     if registry_chapters != edition_chapters:
         errors.append(_error("MANIFEST_CHAPTERS_MISMATCH", edition_file, "$.boeken"))
+    edition_published = _published_chapter_map(
+        edition_manifest.get("gepubliceerdeHoofdstukken"),
+        edition_chapters,
+        edition_file,
+        "$.gepubliceerdeHoofdstukken",
+        errors,
+    )
+    if registry_published != edition_published:
+        errors.append(
+            _error("PUBLISHED_CHAPTERS_MISMATCH", edition_file, "$.gepubliceerdeHoofdstukken")
+        )
     return errors
 
 
@@ -922,8 +985,66 @@ def _opv_registry_entry(registry: Any) -> dict[str, Any] | None:
     return matches[0] if len(matches) == 1 else None
 
 
+def _published_chapters_for_corpus(entry: dict[str, Any] | None) -> dict[str, list[int]]:
+    if entry is None or not isinstance(entry.get("gepubliceerdeHoofdstukken"), dict):
+        return {}
+    return {
+        book: chapters
+        for book, chapters in entry["gepubliceerdeHoofdstukken"].items()
+        if isinstance(book, str)
+        and BOOK_CODE_RE.fullmatch(book)
+        and isinstance(chapters, list)
+        and all(_is_json_integer(chapter) and chapter > 0 for chapter in chapters)
+        and len(chapters) == len(set(chapters))
+        and chapters == sorted(chapters)
+    }
+
+
+def _validate_published_file_inventory(
+    data_root_path: Path,
+    data_root: str,
+    chapter_map: dict[str, list[int]],
+) -> list[str]:
+    """Meld ieder hoofdstukbestand dat niet in de publicatielijst staat."""
+
+    errors: list[str] = []
+    registered = {
+        (book, chapter)
+        for book, chapters in chapter_map.items()
+        for chapter in chapters
+    }
+    try:
+        candidates = sorted(data_root_path.rglob("*.json"), key=lambda path: path.as_posix())
+    except OSError:
+        return [_error("MANIFEST_PATH_UNSAFE", data_root, "$")]
+    for candidate in candidates:
+        try:
+            relative = candidate.relative_to(data_root_path)
+            candidate.resolve().relative_to(data_root_path.resolve())
+        except (OSError, RuntimeError, ValueError):
+            errors.append(_error("MANIFEST_PATH_UNSAFE", data_root, "$"))
+            continue
+        filename = f"{data_root}/{relative.as_posix()}"
+        if len(relative.parts) != 2:
+            errors.append(_error("PUBLISHED_FILE_PATH_INVALID", filename, "$"))
+            continue
+        book, chapter_file = relative.parts
+        stem = Path(chapter_file).stem
+        if (
+            BOOK_CODE_RE.fullmatch(book) is None
+            or not stem.isdecimal()
+            or int(stem) <= 0
+            or chapter_file != f"{int(stem)}.json"
+        ):
+            errors.append(_error("PUBLISHED_FILE_PATH_INVALID", filename, "$"))
+            continue
+        if (book, int(stem)) not in registered:
+            errors.append(_error("PUBLISHED_FILE_UNREGISTERED", filename, "$"))
+    return errors
+
+
 def validate_corpus(repo_root: Path) -> list[str]:
-    """Valideer alle in het OPV-manifest geregistreerde hoofdstukken."""
+    """Valideer alle werkelijk gepubliceerde OPV-hoofdstukken."""
 
     root = Path(repo_root).resolve()
     errors: list[str] = []
@@ -949,7 +1070,8 @@ def validate_corpus(repo_root: Path) -> list[str]:
     data_root_path = _safe_relative_path(root, data_root, require_json=False)
     if data_root_path is None:
         return sorted(set(errors))
-    chapter_map = _book_chapters_from_edition_manifest(edition_manifest)
+    chapter_map = _published_chapters_for_corpus(registry_entry)
+    errors.extend(_validate_published_file_inventory(data_root_path, data_root, chapter_map))
     source_cache: dict[str, Any] = {}
     seen_segment_ids: dict[str, str] = {}
     seen_citation_ids: dict[str, str] = {}

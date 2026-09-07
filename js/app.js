@@ -69,6 +69,21 @@ const App = {
         banner.style.display = 'block';
     },
 
+    _resetUnavailableChapterChrome(book, bookId, chapter) {
+        App._contNames = App._contNames || {};
+        App._contNames[bookId] = book.nameDutch;
+        App._setTitle(bookId, chapter);
+        App._updateVerifiedBanner(bookId, chapter);
+        App._updateEthiopicBanner(null);
+
+        const dating = document.getElementById('book-dating');
+        if (dating) dating.style.display = 'none';
+        ['book-intro', 'chapter-intro'].forEach(id => {
+            const element = document.getElementById(id);
+            if (element) element.style.display = 'none';
+        });
+    },
+
     async _updateDatingBox(book) {
         if (App._bookDating === undefined) {
             App._bookDating = null;
@@ -487,6 +502,7 @@ const App = {
         }
         if (chapter._unavailable) {
             App._updateAudioPlayer(bookId, chapterNum);
+            App._resetUnavailableChapterChrome(book, bookId, chapterNum);
             const meta = chapter._translation || { code: 'nl-ov', naam: 'Open Vertaling' };
             const message = (typeof I18n !== 'undefined')
                 ? I18n.t('edition.unavailable', { boek: book.nameDutch, editie: meta.naam })

@@ -70,6 +70,7 @@ class ValidateOpvTests(unittest.TestCase):
                     "dataRoot": "data/edities/opv/chapters",
                     "boeken": ["genesis"],
                     "hoofdstukken": {"genesis": [1]},
+                    "gepubliceerdeHoofdstukken": {"genesis": [1]},
                     "status": "pilot",
                 }
             ],
@@ -97,6 +98,7 @@ class ValidateOpvTests(unittest.TestCase):
                 "taal_gecontroleerd",
                 "definitief",
             ],
+            "gepubliceerdeHoofdstukken": {"genesis": [1]},
             "boeken": [{"code": "genesis", "hoofdstukken": [1]}],
         }
         self.concepts = {
@@ -179,6 +181,70 @@ class ValidateOpvTests(unittest.TestCase):
 
     def test_valid_mini_corpus_has_no_errors(self) -> None:
         self.assertEqual([], validate_corpus(self.root))
+
+    def test_gepubliceerde_hoofdstukken_is_verplicht_in_beide_manifesten(self) -> None:
+        del self.registry["edities"][0]["gepubliceerdeHoofdstukken"]
+        del self.edition_manifest["gepubliceerdeHoofdstukken"]
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "MANIFEST_FIELD_MISSING")
+        self.assertHasCode(errors, "EDITION_FIELD_MISSING")
+
+    def test_gepubliceerde_hoofdstukken_weigert_malformed_waarden(self) -> None:
+        cases = (
+            ({"genesis": "1"}, "PUBLISHED_CHAPTERS_INVALID"),
+            ({"genesis": [True]}, "PUBLISHED_CHAPTERS_INVALID"),
+            ({"genesis": [1, 1]}, "PUBLISHED_CHAPTERS_INVALID"),
+            ({"genesis": [2, 1]}, "PUBLISHED_CHAPTERS_INVALID"),
+            ({"exodus": [1]}, "PUBLISHED_BOOK_UNKNOWN"),
+            ({"../escape": [True, 999, "1"]}, "MANIFEST_PATH_UNSAFE"),
+        )
+        for value, expected_code in cases:
+            with self.subTest(value=value):
+                self.registry["edities"][0]["hoofdstukken"]["genesis"] = [1, 2]
+                self.edition_manifest["boeken"][0]["hoofdstukken"] = [1, 2]
+                self.registry["edities"][0]["gepubliceerdeHoofdstukken"] = copy.deepcopy(value)
+                self.edition_manifest["gepubliceerdeHoofdstukken"] = copy.deepcopy(value)
+                errors = self._errors_after_rewrite()
+                self.assertHasCode(errors, expected_code)
+                self.assertEqual(sorted(errors), errors)
+
+    def test_gepubliceerde_hoofdstukken_moet_binnen_de_planning_vallen(self) -> None:
+        published = {"genesis": [2]}
+        self.registry["edities"][0]["gepubliceerdeHoofdstukken"] = published
+        self.edition_manifest["gepubliceerdeHoofdstukken"] = copy.deepcopy(published)
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "PUBLISHED_CHAPTER_OUTSIDE_PLAN")
+
+    def test_publicatielijsten_in_beide_manifesten_moeten_gelijk_zijn(self) -> None:
+        self.edition_manifest["gepubliceerdeHoofdstukken"] = {"genesis": []}
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "PUBLISHED_CHAPTERS_MISMATCH")
+
+    def test_geregistreerd_gepubliceerd_hoofdstuk_moet_bestaan(self) -> None:
+        planned = [1, 2]
+        published = {"genesis": [1, 2]}
+        self.registry["edities"][0]["hoofdstukken"]["genesis"] = planned
+        self.edition_manifest["boeken"][0]["hoofdstukken"] = planned
+        self.registry["edities"][0]["gepubliceerdeHoofdstukken"] = published
+        self.edition_manifest["gepubliceerdeHoofdstukken"] = copy.deepcopy(published)
+        errors = self._errors_after_rewrite()
+        self.assertIn(
+            "FILE_MISSING data/edities/opv/chapters/genesis/2.json $",
+            errors,
+        )
+
+    def test_aanwezig_hoofdstukbestand_moet_geregistreerd_zijn(self) -> None:
+        second = copy.deepcopy(self.chapter)
+        second["hoofdstuk"] = 2
+        second["blokken"][0]["id"] = "gen-2-b1"
+        second["verzen"][0]["bron"]["bestand"] = "data/genesis/2.json"
+        self.registry["edities"][0]["hoofdstukken"]["genesis"] = [1, 2]
+        self.edition_manifest["boeken"][0]["hoofdstukken"] = [1, 2]
+        self._write_all()
+        self._write_source("genesis", 2, SOURCE_TEXT)
+        self._write_chapter(second)
+        errors = validate_corpus(self.root)
+        self.assertHasCode(errors, "PUBLISHED_FILE_UNREGISTERED")
 
     def test_json_booleans_are_rejected_for_every_schema_field(self) -> None:
         self.registry["schema"] = True
@@ -492,6 +558,8 @@ class ValidateOpvTests(unittest.TestCase):
         second["verzen"][0]["bron"]["bestand"] = "data/genesis/2.json"
         self.registry["edities"][0]["hoofdstukken"]["genesis"] = [1, 2]
         self.edition_manifest["boeken"][0]["hoofdstukken"] = [1, 2]
+        self.registry["edities"][0]["gepubliceerdeHoofdstukken"]["genesis"] = [1, 2]
+        self.edition_manifest["gepubliceerdeHoofdstukken"]["genesis"] = [1, 2]
         self._write_all()
         self._write_source("genesis", 2, SOURCE_TEXT)
         self._write_chapter(second)
@@ -801,10 +869,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             root = Path(directory)
             registry = json.loads((self.root / "data/edities/manifest.json").read_text(encoding="utf-8"))
             registry["edities"] = [entry for entry in registry["edities"] if entry["code"] == "nl-opv"]
-            registry["edities"][0]["hoofdstukken"] = {"genesis": [1], "johannes": [1]}
             edition = json.loads((self.root / "data/edities/opv/manifest.json").read_text(encoding="utf-8"))
-            for book in edition["boeken"]:
-                book["hoofdstukken"] = [1]
             write_json(root / "data/edities/manifest.json", registry)
             write_json(root / "data/edities/opv/manifest.json", edition)
             concepts = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))
@@ -814,6 +879,17 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
                 source = json.loads((self.root / f"data/{book}/1.json").read_text(encoding="utf-8"))
                 write_json(root / f"data/{book}/1.json", source)
             self.assertEqual([], validate_corpus(root))
+
+    def test_productie_cli_accepteert_geplande_maar_niet_gepubliceerde_hoofdstukken(self) -> None:
+        script = self.root / "scripts/validate_opv.py"
+        result = subprocess.run(
+            [sys.executable, str(script), "--root", str(self.root)],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+        self.assertEqual("", result.stdout)
 
 
 if __name__ == "__main__":

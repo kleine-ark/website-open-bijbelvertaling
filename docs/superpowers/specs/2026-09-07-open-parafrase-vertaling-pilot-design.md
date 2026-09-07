@@ -78,7 +78,7 @@ De centrale editiemetadata verwijst naar deze map, zodat de bestaande primaire e
 
 ### Manifest
 
-Het manifest legt minimaal editiecode `nl-opv`, naam, taal, richting, pilotstatus, versie, doelgroep, bronnenbeleid, beschikbare hoofdstukken en redactionele statussen vast.
+Het manifest legt minimaal editiecode `nl-opv`, naam, taal, richting, pilotstatus, versie, doelgroep, bronnenbeleid, geplande hoofdstukken, gepubliceerde hoofdstukken en redactionele statussen vast. `hoofdstukken` beschrijft de geplande pilotdekking; `gepubliceerdeHoofdstukken` is in zowel het centrale register als het OPV-manifest verplicht en bevat uitsluitend de bestanden die werkelijk onder `dataRoot` staan. Wanneer een hoofdstuk wordt toegevoegd, worden bestand en beide publicatielijsten atomair bijgewerkt.
 
 ### Hoofdstuk
 
