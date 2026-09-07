@@ -1121,7 +1121,20 @@ def main(argv: list[str] | None = None) -> int:
     errors = validate_corpus(args.root)
     for error in errors:
         print(error)
-    return 1 if errors else 0
+    if errors:
+        return 1
+    registry = json.loads((args.root / "data/edities/manifest.json").read_text(encoding="utf-8"))
+    entry = _opv_registry_entry(registry)
+    chapter_count = 0
+    verse_count = 0
+    for book, numbers in _published_chapters_for_corpus(entry).items():
+        for number in numbers:
+            path = args.root / entry["dataRoot"] / book / f"{number}.json"
+            chapter = json.loads(path.read_text(encoding="utf-8"))
+            chapter_count += 1
+            verse_count += len(chapter["verzen"])
+    print(f"OPV geldig: {chapter_count} hoofdstukken, {verse_count} verzen.")
+    return 0
 
 
 if __name__ == "__main__":

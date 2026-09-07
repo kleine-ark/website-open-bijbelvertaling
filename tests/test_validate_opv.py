@@ -685,6 +685,7 @@ class ValidateOpvTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, valid.returncode, valid.stdout + valid.stderr)
+        self.assertEqual("OPV geldig: 1 hoofdstukken, 1 verzen.\n", valid.stdout)
 
         self.chapter["verzen"][0]["tekst"] = ""
         self.chapter["verzen"][0]["segmenten"] = []
@@ -882,7 +883,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
                 write_json(root / f"data/{book}/1.json", source)
             self.assertEqual([], validate_corpus(root))
 
-    def test_productie_cli_accepteert_geplande_maar_niet_gepubliceerde_hoofdstukken(self) -> None:
+    def test_productie_cli_meldt_de_volledige_gepubliceerde_pilot(self) -> None:
         script = self.root / "scripts/validate_opv.py"
         result = subprocess.run(
             [sys.executable, str(script), "--root", str(self.root)],
@@ -891,7 +892,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual("", result.stdout)
+        self.assertEqual("OPV geldig: 10 hoofdstukken, 352 verzen.\n", result.stdout)
 
 
 class OpvGenesisPilotTests(unittest.TestCase):
@@ -929,16 +930,16 @@ class OpvGenesisPilotTests(unittest.TestCase):
             with self.subTest(chapter=number):
                 self.assertEqual(ranges, [(b["vanaf"], b["tot"]) for b in self.chapter(number)["blokken"]])
 
-    def test_publication_registers_genesis_one_to_five_only_john_two_to_five_pending(self) -> None:
+    def test_publication_registers_both_complete_pilot_books(self) -> None:
         registry = json.loads((self.root / "data/edities/manifest.json").read_text(encoding="utf-8"))
         edition = json.loads((self.root / "data/edities/opv/manifest.json").read_text(encoding="utf-8"))
         entry = next(e for e in registry["edities"] if e["code"] == "nl-opv")
-        expected = {"genesis": [1, 2, 3, 4, 5], "johannes": [1]}
+        expected = {"genesis": [1, 2, 3, 4, 5], "johannes": [1, 2, 3, 4, 5]}
         self.assertEqual(expected, entry["gepubliceerdeHoofdstukken"])
         self.assertEqual(expected, edition["gepubliceerdeHoofdstukken"])
         pending = [(book, n) for book, ns in entry["hoofdstukken"].items()
                    for n in ns if n not in entry["gepubliceerdeHoofdstukken"][book]]
-        self.assertEqual([("johannes", 2), ("johannes", 3), ("johannes", 4), ("johannes", 5)], pending)
+        self.assertEqual([], pending)
         self.assertEqual([], validate_corpus(self.root))
 
     def test_genesis_five_preserves_names_numbers_children_and_death_refrain(self) -> None:
@@ -1088,6 +1089,154 @@ class OpvGenesisPilotTests(unittest.TestCase):
             self.assertIn(element, explanation)
         self.assertEqual("god", verse["citaten"][0]["spreker"]["id"])
         self.assertEqual(["kain"], verse["citaten"][0]["aangesprokene"])
+
+
+class OpvJohannesPilotTests(unittest.TestCase):
+    root = Path(__file__).resolve().parents[1]
+
+    def chapter(self, number: int) -> dict:
+        path = self.root / f"data/edities/opv/chapters/johannes/{number}.json"
+        self.assertTrue(path.is_file(), f"Johannes-hoofdstuk {number} ontbreekt")
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_johannes_has_source_verse_lists_214_verses_and_pilot_352(self) -> None:
+        total = 0
+        for number in range(1, 6):
+            with self.subTest(chapter=number):
+                chapter = self.chapter(number)
+                source = json.loads((self.root / f"data/johannes/{number}.json").read_text(encoding="utf-8"))
+                self.assertEqual([v["number"] for v in source["verses"]],
+                                 [v["nummer"] for v in chapter["verzen"]])
+                self.assertEqual(("johannes", number), (chapter["boek"], chapter["hoofdstuk"]))
+                total += len(chapter["verzen"])
+                for verse in chapter["verzen"]:
+                    self.assertEqual({"bestand": f"data/johannes/{number}.json",
+                                      "vers": verse["nummer"], "tekstveld": "textSV1888"}, verse["bron"])
+        self.assertEqual(214, total)
+        genesis_total = sum(len(json.loads(p.read_text(encoding="utf-8"))["verzen"])
+                            for p in (self.root / "data/edities/opv/chapters/genesis").glob("*.json"))
+        self.assertEqual(352, total + genesis_total)
+
+    def test_johannes_blocks_match_all_approved_boundaries(self) -> None:
+        expected = {
+            2: [(1, 12), (13, 17), (18, 22), (23, 25)],
+            3: [(1, 8), (9, 15), (16, 21), (22, 30), (31, 36)],
+            4: [(1, 6), (7, 15), (16, 26), (27, 30), (31, 38), (39, 42), (43, 45), (46, 54)],
+            5: [(1, 9), (10, 18), (19, 30), (31, 40), (41, 47)],
+        }
+        for number, ranges in expected.items():
+            with self.subTest(chapter=number):
+                self.assertEqual(ranges, [(b["vanaf"], b["tot"]) for b in self.chapter(number)["blokken"]])
+
+    def test_new_johannes_annotations_are_precise_owned_and_unique(self) -> None:
+        all_ids = set()
+        citation_ids = set()
+        for number in range(2, 6):
+            for verse in self.chapter(number)["verzen"]:
+                ids = [s["id"] for s in verse["segmenten"]]
+                self.assertEqual([f"JHN.{number}.{verse['nummer']}.s{i}" for i in range(1, len(ids) + 1)], ids)
+                self.assertFalse(all_ids.intersection(ids))
+                all_ids.update(ids)
+                self.assertEqual(verse["tekst"], "".join(s["tekst"] for s in verse["segmenten"]))
+                source = json.loads((self.root / verse["bron"]["bestand"]).read_text(encoding="utf-8"))
+                original = source["verses"][verse["nummer"] - 1]["textSV1888"]
+                for segment in verse["segmenten"]:
+                    self.assertTrue(segment["bronfrase"])
+                    self.assertIn(segment["bronfrase"], original)
+                for concept in verse["begrippen"]:
+                    self.assertTrue(concept["segmenten"])
+                    self.assertLessEqual(set(concept["segmenten"]), set(ids))
+                for citation in verse["citaten"]:
+                    self.assertNotIn(citation["id"], citation_ids)
+                    citation_ids.add(citation["id"])
+                    self.assertIn(citation["startSegment"], ids)
+                    self.assertIn(citation["endSegment"], ids)
+                    self.assertLessEqual(ids.index(citation["startSegment"]), ids.index(citation["endSegment"]))
+                    self.assertIsInstance(citation["aangesprokene"], list)
+                self.assertEqual("concept", verse["review"]["status"])
+                self.assertEqual([], verse["review"]["controles"])
+        self.assertEqual([], validate_corpus(self.root))
+
+    def test_johannes_three_speaker_choices_are_explicit_in_metadata(self) -> None:
+        verses = self.chapter(3)["verzen"]
+        for start, end, speaker in ((16, 21, "jezus"), (31, 36, "johannes")):
+            for number in range(start, end + 1):
+                verse = verses[number - 1]
+                self.assertEqual(speaker, verse["citaten"][0]["spreker"]["id"])
+                self.assertEqual(verse["tekst"], OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+        self.assertTrue(OpvCalibrationCorpusTests._concept_texts(verses[15], "sprekergrens-johannes-3"))
+        self.assertTrue(OpvCalibrationCorpusTests._concept_texts(verses[30], "sprekergrens-johannes-3"))
+
+    def test_johannes_five_tr_passage_has_exact_variant_anchors(self) -> None:
+        verses = self.chapter(5)["verzen"]
+        waiting, angel = verses[2], verses[3]
+        self.assertEqual(["Ze wachtten tot het water bewoog."],
+                         OpvCalibrationCorpusTests._concept_texts(waiting, "bethesda-handschriften"))
+        self.assertEqual([angel["tekst"]],
+                         OpvCalibrationCorpusTests._concept_texts(angel, "bethesda-handschriften"))
+        for word in ("engel", "water", "eerste", "gezond", "ziekte"):
+            self.assertIn(word, angel["tekst"])
+        self.assertIn("blinden", waiting["tekst"])
+        self.assertIn("verschrompelde ledematen", waiting["tekst"])
+        registry = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))
+        note = next(c["uitleg"] for c in registry["concepten"] if c["id"] == "bethesda-handschriften")
+        self.assertIn("handschriften", note)
+        self.assertIn("Statenvertaling", note)
+
+    def test_johannes_images_units_and_wordplay_keep_the_second_layer(self) -> None:
+        cases = ((2, 6, "metreet"), (3, 3, "opnieuw-van-boven"), (3, 8, "wind-geest"),
+                 (4, 10, "levend-water"), (4, 24, "aanbidden-geest-waarheid"),
+                 (5, 39, "schriften-onderzoeken"))
+        for chapter, number, concept in cases:
+            with self.subTest(chapter=chapter, verse=number):
+                verse = self.chapter(chapter)["verzen"][number - 1]
+                self.assertTrue(OpvCalibrationCorpusTests._concept_texts(verse, concept))
+        measure = self.chapter(2)["verzen"][5]["tekst"]
+        self.assertIn("zes", measure)
+        self.assertIn("twee of drie metreten", measure)
+        self.assertNotIn("liter", measure)
+
+    def test_johannes_nested_speech_excludes_narrative_introductions(self) -> None:
+        for chapter, number, expected in ((3, 7, "Jullie moeten opnieuw geboren worden."),
+                                           (4, 17, "Ik heb geen man."),
+                                           (4, 35, "Nog vier maanden en dan komt de oogst."),
+                                           (5, 11, "Pak je slaapmat op en loop.")):
+            verse = self.chapter(chapter)["verzen"][number - 1]
+            self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][-1]))
+
+    def test_unspoken_questions_are_not_quotes_and_proverb_has_jesus_as_speaker(self) -> None:
+        verses = self.chapter(4)["verzen"]
+        self.assertEqual([], verses[26]["citaten"])
+        self.assertIn("Toch vroeg niemand", verses[26]["tekst"])
+        self.assertEqual("jezus", verses[43]["citaten"][0]["spreker"]["id"])
+        self.assertEqual("Een profeet krijgt in zijn eigen land geen eer.",
+                         OpvCalibrationCorpusTests._citation_text(verses[43], verses[43]["citaten"][0]))
+
+    def test_all_registry_concepts_are_linked_in_the_published_pilot(self) -> None:
+        registry = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))
+        linked = {c["conceptId"] for p in (self.root / "data/edities/opv/chapters").glob("*/*.json")
+                  for v in json.loads(p.read_text(encoding="utf-8"))["verzen"] for c in v["begrippen"]}
+        self.assertEqual({c["id"] for c in registry["concepten"]}, linked)
+
+    def test_johannes_human_address_and_future_temple_question_are_preserved(self) -> None:
+        human_address = self.chapter(3)["verzen"][25]["tekst"]
+        self.assertNotIn("Rabbi, U", human_address)
+        self.assertNotIn("U weet toch", human_address)
+        temple_question = self.chapter(2)["verzen"][19]["tekst"]
+        self.assertIn("zult U", temple_question)
+        self.assertNotIn("wilt", temple_question)
+
+    def test_johannes_five_keeps_all_distinct_life_judgment_and_number_statements(self) -> None:
+        verses = self.chapter(5)["verzen"]
+        for number, phrase in ((2, "vijf"), (5, "38"), (19, "niets uit zichzelf"),
+                               (21, "wie Hij wil"), (22, "het hele oordeel"),
+                               (24, "al overgegaan"), (25, "nu al"),
+                               (26, "de Vader Hem gegeven"), (27, "omdat Hij de Mensenzoon is"),
+                               (28, "iedereen in de graven"), (29, "veroordeeld"),
+                               (30, "de wil van de Vader"), (45, "Mozes"),
+                               (46, "over mij geschreven")):
+            with self.subTest(verse=number):
+                self.assertIn(phrase, verses[number - 1]["tekst"])
 
 
 if __name__ == "__main__":

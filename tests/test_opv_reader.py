@@ -427,13 +427,64 @@ class OpvReaderTests(unittest.TestCase):
             opv_requests = [
                 url for url in observed["requests"] if "/data/edities/opv/chapters/" in url
             ]
-            self.assertFalse(any(url.endswith("/johannes/2.json") for url in opv_requests))
+            self.assertTrue(any(url.endswith("/johannes/2.json") for url in opv_requests))
+            self.assertFalse(any(url.endswith("/johannes/6.json") for url in opv_requests))
+            observed["requests"].clear()
+            page.goto(
+                f"{self.base_url}/index.html?editie=nl-opv#johannes/5",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.verse-row[data-verse="47"]').wait_for()
+            page.wait_for_function("window.__opvIdleCallbacks > 0")
+            page.wait_for_timeout(250)
+            opv_requests = [
+                url for url in observed["requests"] if "/data/edities/opv/chapters/" in url
+            ]
+            self.assertTrue(any(url.endswith("/johannes/4.json") for url in opv_requests))
             self.assertFalse(any(url.endswith("/johannes/6.json") for url in opv_requests))
             self.assertEqual(observed["pageerrors"], [])
             self.assertEqual(observed["console_errors"], [])
             self.assertEqual(observed["http_errors"], [])
         finally:
             page.close()
+
+    def test_johannes_two_to_five_render_all_verses_and_preserve_annotations(self):
+        expected = {2: (25, "Jezus laat zien wie Hij is"),
+                    3: (36, "Nieuw leven van God"),
+                    4: (54, "Jezus geeft levend water"),
+                    5: (47, "Jezus geeft leven")}
+        for number, (count, heading) in expected.items():
+            with self.subTest(chapter=number):
+                page = self.new_page()
+                observed = self.observe_runtime(page)
+                try:
+                    page.goto(f"{self.base_url}/index.html?editie=nl-opv#johannes/{number}",
+                              wait_until="domcontentloaded")
+                    page.locator(f'.verse-row[data-verse="{count}"] .col-2026').wait_for()
+                    raw = json.loads((ROOT / f"data/edities/opv/chapters/johannes/{number}.json")
+                                     .read_text(encoding="utf-8"))
+                    self.assertEqual(count, page.locator(".verse-row[data-verse]").count())
+                    for verse in raw["verzen"]:
+                        rendered = page.locator(f'.verse-row[data-verse="{verse["nummer"]}"] .col-2026')
+                        self.assertTrue(rendered.is_visible())
+                        self.assertIn(verse["tekst"], rendered.text_content())
+                    normalized = page.evaluate(
+                        """async n => {
+                            const c = await TekstEditie.loadChapterForEdition('nl-opv', 'johannes', n);
+                            return {heading: c.heading, blocks: c.blokken,
+                                verses: c.verses.map(v => ({number: v.number, bron: v.bron,
+                                    segmenten: v.segmenten, begrippen: v.begrippen,
+                                    citaten: v.citaten, review: v.review}))};
+                        }""", number)
+                    self.assertEqual(heading, normalized["heading"])
+                    self.assertEqual(raw["blokken"], normalized["blocks"])
+                    self.assertEqual([{"number": v["nummer"], **{key: v[key] for key in
+                                      ("bron", "segmenten", "begrippen", "citaten", "review")}}
+                                      for v in raw["verzen"]], normalized["verses"])
+                    self.assertEqual([], observed["pageerrors"])
+                    self.assertEqual([], observed["http_errors"])
+                finally:
+                    page.close()
 
     def test_wiki_citaat_volgt_de_globale_opv_editie_en_bronnaam(self):
         page = self.new_page({"teksteditie": "nl-opv"})

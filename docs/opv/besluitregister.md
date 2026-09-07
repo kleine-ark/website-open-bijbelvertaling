@@ -254,3 +254,165 @@ Tijdens deze lezing zijn ook de onduidelijke verwijzing naar de mens in 3:23, de
 De redactionele herstelronde ontvlecht ook de zinsbouw in 2:5, 3:8, 3:22 en 3:24. In 3:7 wordt “hun beider” het gewone “bij allebei”. In 4:3 staat de landopbrengst direct bij het brengen en volgt “als offer aan de HEERE” zonder los aangehechte bijzin. In 4:6 luidt de tweede vraag “Waarom is je gezicht zo somber?”; boosheid en gezichtsuitdrukking blijven afzonderlijk. Alle gewijzigde verzen zijn opnieuw naast SV1888 en zonder versnummers in hun blokcontext gelezen als tekstuele hardopleessimulatie. Dit is geen auditieve of menselijke review. Er zijn geen zinnen boven 25 woorden overgebleven.
 
 De tweede prozaherziening maakt van 2:5 een rechtstreekse toestandsbeschrijving en herstelt in 4:7 het verlangen met een concrete relationele betekenis. De twee hele blokken 2:4–7 en 4:6–7 zijn opnieuw zonder versnummers gelezen, met daarnaast 4:5–8 voor de overgang van boosheid naar broedermoord. De nieuwe begripkoppeling is uitsluitend bij het daadwerkelijk geparafraseerde verlangen in 4:7 aangebracht. De redactionele keuzes en hun grenzen staan in G7 en G17; deze herlezing verleent geen onafhankelijke bron- of taalstatus.
+
+## Uitbreiding Johannes 2–5
+
+De 162 verzen van Johannes 2–5 zijn zelfstandig vanuit `textSV1888` geformuleerd. Alle overeenkomstige `text1637`- en `text2026`-regels zijn alleen ter controle gelezen. De grondtekst is bij de hieronder genoemde risicopassages geraadpleegd. Er zijn geen formuleringen uit moderne beschermde Bijbelvertalingen overgenomen. De handschriftnoot gebruikt aanvullend tekstkritische documentatie, niet de vertaaltekst daarvan.
+
+De hoofdstukkoppen zijn: Johannes 2 **Jezus laat zien wie Hij is**; Johannes 3 **Nieuw leven van God**; Johannes 4 **Jezus geeft levend water**; Johannes 5 **Jezus geeft leven**.
+
+De 22 blokken volgen exact: Johannes 2: 1–12, 13–17, 18–22, 23–25; Johannes 3: 1–8, 9–15, 16–21, 22–30, 31–36; Johannes 4: 1–6, 7–15, 16–26, 27–30, 31–38, 39–42, 43–45, 46–54; Johannes 5: 1–9, 10–18, 19–30, 31–40, 41–47. Beide publicatieregisters bevatten nu Genesis én Johannes 1–5. Alle vers- en blokreviews blijven `concept`; de controlelijsten blijven leeg.
+
+### J13 — 2:4: afstand, moeder en tijd
+
+Het Griekse `ti emoi kai soi, gynai` is een afstandscheppende vraag. De historische kanttekeningen 4–6 verbinden die met begrenzing van moederlijk gezag en met de nog niet geschikte tijd. De hoofdtekst maakt daarvan: “Vrouw, waarom betrekt u mij hierin? Mijn tijd is nog niet gekomen.” Dat is een expliciete idiomatische parafrase, niet slechts een spellingmodernisering. De eerdere letterlijke poging met wat u en ik hiermee te maken hebben was onvoldoende duidelijk.
+
+Vrouw en de aanspreekvorm u blijven staan; er wordt geen belediging, boosheid, weigering om ooit te helpen of uitleg over Maria toegevoegd. Het bezittelijke mijn hoort bij Jezus’ eigen uitspraak. De precieze bestemming van Zijn uur wordt niet ingevuld. `uur-jezus` is aan de volledige nog-niet-zin zonder slotpunt gekoppeld.
+
+### J14 — 2:6–12: maten, feest en eerste teken
+
+Zes stenen vaten, Joodse reiniging en twee of drie metreten per vat blijven afzonderlijk behouden. Er is geen onzekere omrekening naar liters. De oude maat heeft een eigen uitleglaag, evenals reiniging en de hofmeester. De hofmeester wordt de leider van het feest, niet de gastheer of bruidegom.
+
+Het vullen tot de rand, scheppen, brengen, proeven en het verschil tussen de kennis van de dienaren en de leider blijven staan. Flink gedronken houdt de hoeveelheid uit de bron vast zonder iedereen dronken te verklaren. Het eerste teken, Jezus’ majesteit en het geloof van de leerlingen blijven onderscheiden. De afdaling naar Kapernaüm en moeder, broers, leerlingen en korte verblijfsduur blijven behouden. Broers worden niet eigenmachtig neven of geestelijke broeders.
+
+### J15 — 2:13–17: tempel en psalm
+
+Het paasfeest blijft uitdrukkelijk Joods. Ossen, schapen, duiven, geldwisselaars, de van touw gemaakte zweep, het uitdrijven van allen, het uitstorten van geld en het omkeren van tafels blijven staan. Er wordt niet verteld dat Jezus mensen sloeg. De duivenverkopers krijgen een eigen aangesprokenen-id.
+
+De tempel is het huis van mijn Vader in Jezus’ spraak. Het psalmcitaat begint pas bij “De vurige inzet” en eindigt na “verteerd.” De herinnering van de leerlingen staat erbuiten. De spreker-id `psalmist` voegt geen auteursnaam toe die hier niet staat; God is de aangesprokene, met Uw. Het verteringsbeeld blijft behouden en krijgt uitleg onder `ijver-huis`.
+
+### J16 — 2:19–25: lichaam, tijd en vertrouwen
+
+Afbreken en oprichten, drie dagen en de 46 bouwjaren zijn behouden. De vraag luidt toekomstig “zult U”, niet “wilt U”: een wens zou de bewering veranderen. De uitleg dat Jezus Zijn lichaam bedoelde staat uitsluitend in vers 21 bij de verteller, niet al in Zijn eerste antwoord. Het geloof na de opstanding betreft zowel de Schrift als Jezus’ woorden.
+
+Veel mensen geloven in Zijn naam door de tekenen, maar Jezus vertrouwt zichzelf niet aan hen toe. Beide kanten van het geloof-/vertrouwensmotief blijven staan. Er is geen uitspraak bij bedacht dat hun geloof vals of reddend was. De universele kennis van mensen en het niet nodig hebben van een menselijke getuige blijven in 24–25 behouden.
+
+### J17 — 3:3–8: nieuwe geboorte, water, vlees en wind
+
+De hoofdtekst volgt wederom uit SV1888 met opnieuw, niet stilzwijgend uitsluitend van boven. `Anōthen` en beide mogelijkheden staan in de tweede laag, bij 3:3 en 3:7. Koninkrijk zien in vers 3 is onderscheiden van binnengaan in vers 5. Nicodemus’ oude mens, moeders buik, opnieuw binnengaan en geboren worden blijven een concrete tegenvraag.
+
+Water én Geest blijven in vers 5 naast elkaar staan; geen sacramentele, biologische of uitsluitend figuurlijke identificatie van water ingevoegd. Het centrale vlees/geest-contrast blijft in vers 6 herkenbaar met uitleg; vlees betekent hier niet vlees eten of alleen zondigheid. Geest bij de goddelijke oorsprong is groot, geest als uitkomst klein.
+
+Het enkelvoud tegen Nicodemus en het meervoud jullie blijven onderscheiden. `kring-nicodemus` in de aangesprokenenlijst benoemt uitsluitend het ongespecificeerde meervoud waarop Nicodemus wordt aangesproken; het is geen claim dat meer mensen bij het nachtelijke gesprek aanwezig waren. Vers 7 heeft een genest citaat van Jezus binnen Zijn eigen spreken.
+
+De wind blaast waarheen hij wil, is hoorbaar en heeft voor de aangesprokene onbekende herkomst en bestemming. `Pneuma` kan wind of geest betekenen. De hoofdtekst kiest met SV1888 wind aan het begin en Geest aan het slot; `wind-geest` legt de dubbelzinnigheid uit.
+
+### J18 — 3:11–15: wij, hemel en verhoging
+
+Het wij van Jezus’ getuigenis blijft onuitgelegd. Er wordt niet besloten dat het de Drie-eenheid, de leerlingen of de profeten aanduidt. Aardse en hemelse dingen blijven tegenover elkaar staan, evenals kennis, zien, getuigen en niet aannemen.
+
+Vers 13 bewaart zowel het neerdalen als de Mensenzoon die in de hemel is. De SV/plaatselijke Griekse slotlezing blijft hoofdtekst; er wordt geen verklarende leer over alomtegenwoordigheid, eerste hemelvaart of Henoch aan toegevoegd. Mozes, slang, woestijn, omhoogheffen, noodzaak, geloof, niet verloren gaan en eeuwig leven blijven in 14–15 behouden. De verhoging krijgt uitleg zonder alvast het kruis als extra woord in te voegen.
+
+### J19 — 3:16–21 en 3:31–36: expliciete sprekergrenzen
+
+De citaatmetadata laat Jezus doorpraten tot en met 3:21 en Johannes de Doper tot en met 3:36. Dit volgt de voortzetting na de laatste expliciete spraakinleidingen in 3:10 en 3:27. In beide blokken ontbreekt bij het begin een nieuwe spraakinleiding. Het is daarom een redactionele keuze, niet een handschriftelijk bewezen sprekergrens of een dogmatische conclusie.
+
+Een serieus alternatief is in 3:16 en/of 3:31 commentaar van de evangelist te laten beginnen. De gedeelde vertelstijl en de overgang naar algemene uitspraken ondersteunen die mogelijkheid. [Darrell Bock bespreekt de sprekergrens bij 3:16–21](https://blogs.bible.org/john-316-is-jesus-or-john-commenting-here/); die secundaire uitleg is alleen als controle op het bestaan en de aard van het alternatief gebruikt. De formuleringen blijven zelfstandig uit de primaire bron gemaakt.
+
+De gekoppelde noot `sprekergrens-johannes-3` staat precies bij de openingsgedachte van 3:16 en 3:31. Alle zes verzen in elk blok hebben consequent dezelfde gekozen spreker. De namen in de metadata onderscheiden Johannes de Doper (`johannes`) van de onuitgesproken alternatieve verteller.
+
+### J20 — 3:16–21: wereld, veroordeling en Licht
+
+Gods liefde, de wereld, het geven van Zijn enige Zoon, ieder die gelooft, niet verloren gaan en eeuwig leven blijven alle behouden. Zoveel volgt het alzo lief van de Nederlandse basistekst; de zin wordt niet beperkt tot één groep. Enige Zoon volgt de kalibratie van 1:14 en 1:18, met `eniggeboren-zoon` als uitleg.
+
+Zending om te redden staat tegenover zending om te veroordelen. Dat is een doelzin, geen extra conclusie dat iedereen daadwerkelijk gered wordt. Niet veroordeeld en al veroordeeld blijven onderscheiden; de reden in 3:18 noemt geloof in de naam van Gods enige Zoon. Het Licht behoudt de kalibratiespelling.
+
+De duisternis heeft de voorkeur omdat de daden kwaad zijn. In 3:20 wordt bestraft volgens het gecontroleerde `elenchthē` weergegeven als de daden als kwaad aanwijzen; niet als een verzonnen lichamelijke straf. Waarheid doen wordt naar de waarheid handelen. In God gedaan blijft als moeilijke maar brede verhouding staan met uitleg, niet beperkt tot menselijke verdienste, opdracht of uitsluitend goddelijke kracht.
+
+### J21 — 3:22–36: doop, bruiloftsbeeld en de Zoon
+
+Judea, Enon, Salim, de vele wateren en Johannes’ nog niet begonnen gevangenschap blijven behouden. De reinigingsdiscussie is met de Joden, meervoud, volgens SV1888. Er wordt geen concrete twistvraag bij bedacht. Jezus doopt in 3:22; de vertellersprecisering dat Zijn leerlingen het uitvoeren blijft waar zij staat, in 4:2.
+
+Johannes’ eigen eerdere uitspraak in 3:28 is als geheel genest geciteerd. Bruid, bruidegom, vriend, staan, horen, stem, vreugde en vervulde blijdschap blijven als beeld bijeen. Groter/kleiner bewaart wassen/minder worden zonder toevoeging van aantallen volgelingen of lichaamslengte. De menselijke voornaamwoorden binnen de vergelijking blijven klein.
+
+In 3:31 blijven afkomst, behoren bij de aarde, spreken vanuit de aarde en de tweevoudige uitspraak boven iedereen behouden. Niemand in vers 32 wordt niet afgezwakt tot bijna niemand; de aannemer in vers 33 blijft ernaast staan. Verzegelen wordt bevestigen, zonder een nieuw fysiek zegel. God geeft Hem de Geest zonder beperking volgens de SV-aanvulling Hem; geen hoeveelheid geestelijke gaven of tijdstip toegevoegd. De Vader houdt van de Zoon en geeft alles in Zijn hand. Geloof/ongehoorzaamheid, eeuwig leven/het leven niet zien en blijvende toorn blijven onderscheiden.
+
+### J22 — 4:1–9: reis en omgang
+
+Heere, de dubbele berichtlaag rond de Farizeeën, meer leerlingen én meer dopelingen blijven behouden. Vers 2 is de correctie van de verteller, niet een nieuw citaat. Moeten door Samaria reizen blijft zonder geografische of goddelijke verklaring. Sichar, Jakob, Jozef, het gegeven land, de bron, vermoeidheid, zitten en ongeveer het zesde uur blijven staan. Het uur krijgt geen moderne kloktijd.
+
+De vrouw is Samaritaans en Jezus is Joods in haar eigen woorden. De opmerking over ontbrekende omgang in 4:9 is hier een vertellersverklaring buiten haar citaat. Dat is een expliciete keuze bij een zin zonder afzonderlijke spraakinleiding; zij wordt niet tot afkeer van alle individuele personen uitgewerkt.
+
+### J23 — 4:10–24: gave, water en aanbidden
+
+Wat God geeft, de identiteit van degene die om drinken vraagt, de mogelijke omgekeerde vraag en het geven van levend water blijven in 4:10 behouden. De herhaalde drinkvraag is hier indirect geformuleerd, dus zonder extra genest citaat. Dit spaart een lange dubbele citaatzin zonder de inhoud te laten verdwijnen.
+
+De diepe put, het ontbrekende schepmiddel, Jakob als voorvader, zijn eigen drinken, zijn kinderen en zijn vee blijven staan. Het waterbeeld blijft doorlopend: opnieuw dorst tegenover nooit meer dorst, water dat Jezus geeft, een bron in de ontvanger en water dat opwelt tot in het eeuwige leven. Het wordt niet alvast vervangen door geluk, geloof of de Heilige Geest.
+
+Vijf mannen en het feit dat de huidige man niet haar man is, worden niet uitgebreid met echtscheiding, prostitutie, weduwschap of een oordeel van de verteller. De herhaling van haar eigen antwoord in 4:17 heeft een exact genest vrouw-citaat binnen Jezus’ antwoord.
+
+De berg en Jeruzalem, de komende tijd én nu al, de Vader, kennen/niet kennen, redding uit de Joden, echte aanbidders en de Vader die hen zoekt blijven afzonderlijk behouden. In geest en waarheid wordt niet alleen met oprecht vertaald. God is Geest bewaart het Griekse predicaat `pneuma ho theos`, zonder Hem als één geest onder meerdere te tellen of tot uitsluitend de Heilige Geest te beperken. De gewone kleine letter bij geest in aanbidden volgt SV1888. De gekoppelde uitleg bewaart deze grenzen.
+
+### J24 — 4:25–42: verteller, onuitgesproken vragen, voedsel en oogst
+
+De verklaring dat Messias Christus genoemd wordt staat buiten de vrouwspraak, net als de titelverklaringen in het kalibratiehoofdstuk. Jezus’ identiteitsantwoord blijft direct. In 4:27 zijn de twee vragen uitdrukkelijk niet uitgesproken; daarom hebben ze geen citaatrecord. Geen verborgen gedachten of nieuwe uitspraken aan leerlingen toegevoegd.
+
+Waterkruik, weggaan, de stad, haar uitnodiging en vraag, en het naar Jezus komen blijven behouden. De uitspraak dat Jezus alles vertelde wat zij deed, blijft haar getuigenis; zij wordt in 4:39 opnieuw precies geciteerd.
+
+Het voedselbeeld bewaart doen wat de zender wil én Zijn werk afmaken. In 4:34 is God als onbetwiste referent expliciet gemaakt en de relatieve bijzin afgesplitst: dit voorkomt de stroeve stapeling doen wat degene die mij gestuurd heeft wil. Geen nieuwe bedoeling of andere zender ingevoegd.
+
+Vier maanden, oogst, opkijken, witte velden, maaien, loon, vrucht voor eeuwig leven en gedeelde blijdschap blijven staan. De leerlinguitspraak in 4:35 en het spreekwoord in 4:37 zijn genest binnen Jezus’ woorden. De spreekwoordspreker is `unknown`, niet een verzonnen auteur. Het werk van anderen en het toetreden tot dat werk blijven behouden; er worden geen concrete eerdere arbeiders ingevuld.
+
+Twee dagen blijven twee dagen. Het geloof op grond van Jezus’ eigen woorden is onderscheiden van geloof op grond van de vrouw. Christus en Redder van de wereld staan beide in de gezamenlijke erkenning.
+
+### J25 — 4:44–54: eigen land, hoveling en tijd
+
+De uitspraak over gebrek aan eer in het eigen land is een herinnerd citaat van Jezus. Het verbindingswoord namelijk bewaart want; het spanningsveld met de ontvangst door de Galileeërs blijft bestaan. Eigen land krijgt geen toegevoegde plaatsnaam en die ontvangst wordt niet als onecht verklaard.
+
+De hoveling wordt niet een legerofficier, een Romein of een met naam genoemde bestuurder. Kana, Galilea, Judea, Kapernaüm, de zieke zoon en het op sterven liggen blijven staan. Jezus’ uitspraak tegen hem gebruikt meervoud jullie: de groep `galileeers` benoemt de bredere aangesproken kring zonder aanwezigen te tellen.
+
+De afdaling, het leven van zijn zoon/kind, de dienaren, gisteren, het zevende uur, het verdwijnen van de koorts en hetzelfde uur als Jezus’ uitspraak blijven behouden. Er is geen moderne kloktijd ingevoerd. Uw in “Uw kind leeft!” is alleen een normaal citaatbegin tegen een mens; je in Jezus’ antwoord is menselijk. Het hele huis gelooft; er is geen doop van het huis bij bedacht. Het teken blijft het tweede na Zijn terugkeer uit Judea naar Galilea.
+
+### J26 — 5:2–4: Bethesda en de handschriften
+
+Bethesda volgt SV1888, niet een andere plaatsnaamvariant. De vijf zalen worden op grond van `stoas` en kanttekening 5 overdekte zuilengangen. De ziekenlijst behoudt blinden, mensen die moeilijk lopen en mensen met verschrompelde ledematen. Dat laatste bewaart het kenmerk van verdorden/`xērōn`; de eerste proefwoorden verlamde ledematen waren daarvoor te onbepaald.
+
+Het wachten op bewegend water in vers 3 en de volledige engelpassage in vers 4 blijven SV/TR-hoofdtekst. Engel, bepaalde tijden, afdalen, waterbeweging, eerste binnengaan en genezing van om het even welke ziekte zijn behouden. Er staat niet dat de zieken dit alleen geloofden; dat zou de bronvertelling veranderen.
+
+De noot `bethesda-handschriften` omvat exact de laatste zin van 5:3 en heel 5:4. Vroege getuigen waaronder papyri 66 en 75 missen deze passage; andere getuigen bewaren haar geheel of gedeeltelijk. Dit is gecontroleerd in de [tekstkritische noot bij Johannes 5:4](https://classic.net.bible.org/passage.php?passage=Joh+5%3A4). Alleen die documentatie is gebruikt, niet de daar getoonde moderne vertaalformulering. De noot legt de bronkeuze uit zonder de variant uit te wissen en bevat geen HTML of woordnummerkoppelingen.
+
+### J27 — 5:5–18: genezing en het sabbatsconflict
+
+38 jaar, het langdurig ziek liggen, Jezus’ kennis, de vraag om gezond te worden, gebrek aan hulp en het eerder afdalen van een ander blijven behouden. Slaapmat geeft een draagbaar bed weer, zonder materiaal of maat. Opstaan, oppakken en lopen worden afzonderlijk bewaard, evenals onmiddellijke genezing.
+
+De herhaalde opdracht van Jezus in 5:11 en 5:12 heeft een eigen genest citaat. In vers 12 hoort het vraagteken bij de vraag van de Joden, niet bij Jezus’ aangehaalde opdracht. De genezen man weet niet wie Hij is; Jezus is intussen weggegaan in de menigte. Er is geen extra motief toegevoegd aan de latere melding van de man.
+
+De waarschuwing niet meer te zondigen en het gevaar van iets ergers blijven staan, zonder een algemene leer dat alle ziekte uit persoonlijke zonde voortkomt. Vervolging en poging tot doden zijn beide genoemd. De Vader werkt tot nu en Jezus ook. Vers 18 bewaart sabbat breken, God Zijn eigen Vader noemen en zichzelf gelijk maken aan God. Het is niet afgezwakt tot alleen een gerucht, maar ook niet uitgebreid tot een nieuwe leerstellige toelichting.
+
+### J28 — 5:19–30: Vader, Zoon, leven en oordeel
+
+De Zoon kan niets uit zichzelf doen; Hij doet wat Hij de Vader ziet doen; alles wat de Vader doet, doet de Zoon op dezelfde manier. De drie onderdelen blijven apart. Liefde, alles tonen, grotere werken en het doel van verwondering zijn behouden. Wie Hij wil in 5:21 blijft onverkort.
+
+De Vader oordeelt niemand en heeft het hele oordeel aan de Zoon gegeven. Iedereen moet de Zoon eren zoals de Vader; geen eer voor de Zoon betekent geen eer voor de Vader die Hem stuurde. Horen én geloven, eeuwig leven, geen veroordeling en reeds overgegaan zijn uit dood naar leven blijven in 5:24 onderscheiden.
+
+In 5:25 blijft de tijd toekomstig én nu al. Doden, de stem van Gods Zoon horen en leven blijven staan. In 5:26 wordt de lastige dubbele constructie ontvlochten: de Vader heeft het leven in zichzelf; ook de Zoon heeft het leven in zichzelf, en de Vader heeft Hem dat gegeven. Beide levensfrasen hebben een eigen anker. Er wordt geen moment vóór het bestaan van de Zoon of een scheppingshandeling ingevoegd.
+
+De macht om te oordelen is gegeven omdat Hij de Mensenzoon is. Iedereen in de graven zal Zijn stem horen en eruit komen. Goed gedaan/opstaan tot leven en kwaad gedaan/opstaan tot veroordeling blijven twee uitkomsten; geen toevoeging van een eigen heilsleer of chronologie. In 5:30 blijven niets uit zichzelf doen, naar het gehoorde oordelen, rechtvaardigheid, niet eigen wil zoeken en de wil van de Vader die Hem stuurde behouden.
+
+### J29 — 5:31–39: getuigenis en Schriften
+
+“Als ik alleen over mezelf getuig, geldt mijn getuigenis niet als betrouwbaar” volgt de uitleg van SV-kanttekeningen 41–42: getuigenis dat op zichzelf staat is niet bevestigd. Alleen en geldt als zijn bewuste expliciteringen. Jezus wordt niet tot leugenaar gemaakt. De andere getuige in 5:32 wordt overeenkomstig kanttekening 43 en vers 37 op de Vader betrokken; daarom Zijn. Er wordt geen naam aan de hoofdtekst toegevoegd.
+
+De zending naar Johannes, diens getuigenis van de waarheid, het niet aannemen van menselijk getuigenis en het reddingsdoel blijven staan. Johannes’ brandende en lichtgevende kaars wordt lamp volgens `lychnos`, zonder het beeld tot een leraar weg te verklaren. Het kort willen genieten van zijn licht blijft tijdelijk en vrijwillig.
+
+Groter getuigenis, van de Vader ontvangen werken, ze uitvoeren en daardoor getuigen van de zending zijn elk behouden. Stem nooit horen, gestalte nooit zien, het woord niet blijvend in hen hebben en niet geloven in de gestuurde blijven afzonderlijk.
+
+In 5:39 staat het bevel Onderzoek, conform SV1888. `Ereunate` kan ook jullie onderzoeken betekenen; kanttekening 53 vermeldt dat alternatief. Het staat onder `schriften-onderzoeken`, niet stilzwijgend in de hoofdtekst. Het denken eeuwig leven in de Schriften te hebben en het getuigen van die Schriften over Jezus blijven behouden.
+
+### J30 — 5:40–47: weigering, liefde, eer en Mozes
+
+Het niet willen komen om leven te hebben blijft een weigering. Jezus neemt geen menselijke eer aan. De liefde van God in 5:42 behoudt de brede genitief; liefde voor God staat als mogelijke uitleg in de tweede laag, niet als enig vastgestelde lezing.
+
+De naam van mijn Vader, afwijzing, de andere die in eigen naam komt en diens aanneming blijven staan zonder een toekomstige persoon te identificeren. Eer van elkaar tegenover eer van God alleen blijft de reden van de vraag over geloof.
+
+Jezus zegt niet dat Hij zal aanklagen; Mozes is de aanklager op wie de aangesprokenen hopen. Dat blijft een uitspraak van Jezus, geen optreden van Mozes in het verhaal. Mozes geloven zou Jezus geloven betekenen omdat hij over Hem schreef. Zijn geschriften en mijn woorden blijven onderscheiden; er wordt geen zelfgekozen Mozestekst tussengevoegd.
+
+### J31 — Metadata, leesritme en resterende review
+
+Alle 22 nieuwe blokken zijn zonder versnummers als doorlopende tekst gelezen: een tekstuele voorleessimulatie, geen auditieve beluistering en geen menselijke leesproef. Geen zin in de gemaakte versies kwam boven 25 spatiegescheiden woorden uit, met punt, vraagteken en uitroepteken als zinsgrenzen; dubbele punten en puntkomma’s splitsen de telling niet. Ook korte zinnen zijn inhoudelijk herzien: de afstandsvraag in 2:4, toekomstsvraag in 2:20, aanspreekvorm in 3:26, het voedselbeeld in 4:34, de ziekenlijst in 5:3 en de levensconstructie in 5:26.
+
+De 51 nieuwe begrippen zijn allemaal daadwerkelijk gekoppeld. De 124 nieuwe citatierecords zijn verdeeld als 11, 33, 41 en 39. De spreker, aangesprokenen, geneste bereiken en grenzen met vertellerstekst zijn per citaat nagegaan. Indirect geformuleerde spraak krijgt geen kunstmatig citaatbereik. Alle segmentteksten reconstrueren exact hun vers. De 324 nieuwe vershashvelden en de corpusbrede tellingen zijn gecontroleerd.
+
+Het bestaande hoofdletterbeleid blijft exact gelden: Hij, Hem, Zijn, U en Uw voor goddelijke verwijzingen; ik, mij, mijn, zich, zichzelf, die, degene en naam krijgen binnen een zin geen extra eerbiedshoofdletter. Gewone zins- en citaatbeginnen blijven groot, ook bij menselijke verwijzingen. Licht en identiteitstitels volgen de kalibratie.
+
+Bijzondere onafhankelijke aandacht blijft nodig voor 2:4, de metrische eenheid, 3:3–8, beide sprekergrenzen, 3:13/20–21/34, 4:9–24/34/44 en 5:3–4/18–32/39/42. De validator bewijst geen exegetische juistheid; de proefeditie blijft in bewerking.
