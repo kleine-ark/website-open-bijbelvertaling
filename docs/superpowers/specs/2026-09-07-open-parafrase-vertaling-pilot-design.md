@@ -94,6 +94,8 @@ Een hoofdstuk bevat minimaal:
 
 Bronkoppelingen gebruiken stabiele segment-id’s en bronfrases of grondtekstindices. Alleen tekenposities gebruiken is onvoldoende, omdat een redactionele wijziging die posities verschuift.
 
+De opgeslagen inhouds- en bronhash maken zichtbaar wanneer een eerdere beoordeling door een tekst- of bronwijziging verouderd is.
+
 ## Status- en reviewmodel
 
 Iedere passage doorloopt vier onafhankelijke statussen:
@@ -117,6 +119,7 @@ Een redacteur keurt zijn eigen tekst niet als definitief goed. Risicopassages kr
 ## Technische acceptatiecriteria
 
 - De pilot bevat exact 138 verzen voor Genesis 1–5 en 214 verzen voor Johannes 1–5.
+- Johannes 1 volgt de versificatie van deze repository en telt daarom 52 verzen; die bewuste afwijking wordt in het besluitregister vastgelegd.
 - Geen vers ontbreekt, komt dubbel voor of is leeg.
 - Boek- en hoofdstuknummers komen overeen met de canonieke gegevens.
 - Iedere versregel heeft een geldige bronverwijzing naar het corresponderende hoofdstuk.
