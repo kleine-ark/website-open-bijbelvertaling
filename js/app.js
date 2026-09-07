@@ -41,6 +41,7 @@ const App = {
     },
 
     _isVerified(bookId, chapter) {
+        if (typeof TekstEditie !== 'undefined' && TekstEditie.code() !== 'nl-ov') return false;
         const v = App.VERIFIED_CHAPTERS[bookId];
         if (!v) return false;
         if (v === 'all') return true;
@@ -49,6 +50,10 @@ const App = {
 
     _updateVerifiedBanner(bookId, chapter) {
         let banner = document.getElementById('ai-concept-banner');
+        if (typeof TekstEditie !== 'undefined' && TekstEditie.code() !== 'nl-ov') {
+            if (banner) banner.style.display = 'none';
+            return;
+        }
         if (App._isVerified(bookId, chapter)) {
             if (banner) banner.style.display = 'none';
             return;
@@ -131,7 +136,8 @@ const App = {
         App._audioChapter = chapter;
 
         const ov = window.OV_AUDIO;
-        const show = !!(ov && ov.available(bookId, chapter));
+        const isOpenVertaling = typeof TekstEditie === 'undefined' || TekstEditie.code() === 'nl-ov';
+        const show = !!(isOpenVertaling && ov && ov.available(bookId, chapter));
         const setHidden = (el, hide) => { if (el) el.classList.toggle('hidden', hide); };
         setHidden(playBtn, !show);
         setHidden(playMob, !show);
@@ -457,7 +463,9 @@ const App = {
     },
 
     async renderChapter(bookId, chapterNum, opts = {}) {
-        await App._laadVerified();   // banner mag niet op verouderde info draaien
+        if (typeof TekstEditie === 'undefined' || TekstEditie.code() === 'nl-ov') {
+            await App._laadVerified();   // banner mag niet op verouderde info draaien
+        }
         const append = !!opts.append;    // doorlopend-lezen: hoofdstuk onderaan toevoegen
         const prepend = !!opts.prepend;  // doorlopend-lezen: hoofdstuk bovenaan toevoegen
         // Manifest (klein) + chapter (klein) parallel
@@ -616,7 +624,9 @@ const App = {
             row.className = 'verse-row';
             // Statuskleur volgt de enige bron (VERIFIED_CHAPTERS): een nagekeken hoofdstuk
             // toont 'final' (groen), anders de redactionele status van het vers zelf.
-            row.dataset.status = App._isVerified(bookId, chapterNum) ? 'final' : (verse.status || 'empty');
+            row.dataset.status = primaryEditionCode === 'nl-ov' && App._isVerified(bookId, chapterNum)
+                ? 'final'
+                : (verse.status || 'empty');
             row.dataset.book = bookId;
             row.dataset.chapter = chapterNum;
             row.dataset.verse = verse.number;
@@ -875,10 +885,11 @@ const App = {
         const titleEl = document.getElementById('chapter-title');
         if (!titleEl) return;
         const name = (App._contNames && App._contNames[bookId]) || bookId;
+        const isOpenVertaling = typeof TekstEditie === 'undefined' || TekstEditie.code() === 'nl-ov';
         const verified = App._isVerified(bookId, chapterNum);
         titleEl.textContent = `${name} ${chapterNum}`;
-        titleEl.classList.toggle('chapter-unverified', !verified);
-        if (!verified) {
+        titleEl.classList.toggle('chapter-unverified', isOpenVertaling && !verified);
+        if (isOpenVertaling && !verified) {
             const tag = document.createElement('span');
             tag.className = 'chapter-concept-tag';
             tag.textContent = 'CONCEPT — NIET GECONTROLEERD';

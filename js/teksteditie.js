@@ -1,7 +1,7 @@
 /* Gedeelde teksteditie-laag voor OV en de genormaliseerde buitenlandse corpora. */
 (function (global) {
     'use strict';
-    const CODES = new Set(['nl-ov', 'fr-lsg1910', 'en-webbe', 'ar-vd', 'uk-ukrfb', 'de-luther1912', 'es-rv1909', 'pl-gdanska1881', 'tr-open-basic-nt']);
+    const CODES = new Set(['nl-ov', 'nl-opv', 'fr-lsg1910', 'en-webbe', 'ar-vd', 'uk-ukrfb', 'de-luther1912', 'es-rv1909', 'pl-gdanska1881', 'tr-open-basic-nt']);
     const STORAGE_KEY = 'sv2026_vertaalopties';
 
     function storedCode() {
@@ -25,9 +25,21 @@
         async manifest() {
             if (this._manifest) return this._manifest;
             if (!this._manifestPromise) {
-                this._manifestPromise = fetch('data/vertalingen/manifest.json')
-                    .then(r => { if (!r.ok) throw new Error('Vertalingenmanifest ontbreekt'); return r.json(); })
-                    .then(data => { this._manifest = data; return data; });
+                this._manifestPromise = Promise.all([
+                    fetch('data/vertalingen/manifest.json')
+                        .then(r => { if (!r.ok) throw new Error('Vertalingenmanifest ontbreekt'); return r.json(); }),
+                    fetch('data/edities/manifest.json')
+                        .then(r => { if (!r.ok) throw new Error('Editiesmanifest ontbreekt'); return r.json(); }),
+                ]).then(([translations, editions]) => {
+                    const generated = (translations.edities || []).map(item => ({
+                        ...item,
+                        dataRoot: item.dataRoot || `data/vertalingen/${item.code}`,
+                    }));
+                    const merged = { schema: 1, edities: generated.concat(editions.edities || []) };
+                    merged.edities.forEach(item => CODES.add(item.code));
+                    this._manifest = merged;
+                    return merged;
+                });
             }
             return this._manifestPromise;
         },
@@ -52,12 +64,13 @@
                 this._cache.set(key, result);
                 return result;
             }
-            if (!meta || !meta.boeken.includes(bookId)) {
+            const chapters = meta && meta.hoofdstukken && meta.hoofdstukken[bookId];
+            if (!meta || !meta.boeken.includes(bookId) || (chapters && !chapters.includes(Number(chapter)))) {
                 return { _unavailable: true, _translation: meta || { code, naam: code }, boek: bookId, hoofdstuk: chapter };
             }
             const key = `${code}:${bookId}:${chapter}`;
             if (this._cache.has(key)) return this._cache.get(key);
-            const response = await fetch(`data/vertalingen/${code}/${bookId}/${chapter}.json`);
+            const response = await fetch(`${meta.dataRoot}/${bookId}/${chapter}.json`);
             if (!response.ok) return { _unavailable: true, _translation: meta, boek: bookId, hoofdstuk: chapter };
             const normalized = await response.json();
             const result = this.chapterToReaderData(normalized, meta);
@@ -66,12 +79,21 @@
         },
         chapterToReaderData(chapter, meta) {
             return {
+                schema: chapter.schema,
+                editie: chapter.editie,
+                boek: chapter.boek,
                 number: chapter.hoofdstuk,
                 _translation: meta,
                 heading: chapter.kop,
+                blokken: chapter.blokken || [],
                 verses: (chapter.verzen || []).map(verse => ({
                     number: verse.nummer,
-                    status: 'external',
+                    status: (verse.review && verse.review.status) || verse.status || 'external',
+                    bron: verse.bron,
+                    begrippen: verse.begrippen || [],
+                    citaten: verse.citaten || [],
+                    review: verse.review,
+                    segmenten: verse.segmenten || [],
                     text1637: '', textSV1888: '',
                     text2026: verse.tekst,
                     text2026_html: verse.html || verse.tekst,

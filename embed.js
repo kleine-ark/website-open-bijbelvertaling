@@ -128,9 +128,17 @@
 
   function loadEditions() {
     if (!editionsPromise) {
-      editionsPromise = fetch(BASE + '/data/vertalingen/manifest.json')
-        .then(function (r) { if (!r.ok) throw new Error('vertalingenmanifest niet gevonden'); return r.json(); })
-        .then(function (data) { return data.edities || []; });
+      editionsPromise = Promise.all([
+        fetch(BASE + '/data/vertalingen/manifest.json')
+          .then(function (r) { if (!r.ok) throw new Error('vertalingenmanifest niet gevonden'); return r.json(); }),
+        fetch(BASE + '/data/edities/manifest.json')
+          .then(function (r) { if (!r.ok) throw new Error('editiesmanifest niet gevonden'); return r.json(); })
+      ]).then(function (manifests) {
+        var generated = (manifests[0].edities || []).map(function (item) {
+          return Object.assign({}, item, { dataRoot: item.dataRoot || 'data/vertalingen/' + item.code });
+        });
+        return generated.concat(manifests[1].edities || []);
+      });
     }
     return editionsPromise;
   }
@@ -150,8 +158,15 @@
     if (edition === 'nl-ov') return loadChapter(book, ch);
     var key = edition + ':' + book + '/' + ch;
     if (!editionChapterCache[key]) {
-      editionChapterCache[key] = fetch(BASE + '/data/vertalingen/' + edition + '/' + book + '/' + ch + '.json')
-        .then(function (r) { if (!r.ok) throw new Error('vertaling niet gevonden'); return r.json(); });
+      editionChapterCache[key] = loadEditions().then(function (editions) {
+        var meta = editions.filter(function (item) { return item.code === edition; })[0];
+        var chapters = meta && meta.hoofdstukken && meta.hoofdstukken[book];
+        if (!meta || !meta.boeken.includes(book) || (chapters && chapters.indexOf(Number(ch)) === -1)) {
+          throw new Error('vertaling niet gevonden');
+        }
+        return fetch(BASE + '/' + meta.dataRoot + '/' + book + '/' + ch + '.json')
+          .then(function (r) { if (!r.ok) throw new Error('vertaling niet gevonden'); return r.json(); });
+      });
     }
     return editionChapterCache[key];
   }
@@ -275,7 +290,7 @@
       var url = SITE + '/index.html' + (external ? '?editie=' + encodeURIComponent(edition) : '') + '#' + p.book + '/' + p.chapter;
       var linkHtml = showLink
         ? '<a class="osv-bron" href="' + url + '" target="_blank" rel="noopener">— ' + label +
-          ' <span class="osv-merk">(Open Vertaling)</span></a>'
+          ' <span class="osv-merk">(' + escapeHtml(editionMeta.naam || editionMeta.code) + ')</span></a>'
         : '';
       var html = '<span class="osv-tekst" lang="' + escapeHtml(editionMeta.taal || 'nl') + '"' +
         ((editionMeta.richting || 'ltr') === 'rtl' ? ' dir="rtl"' : '') + '>' + parts.join(' ') + '</span>' + linkHtml;
