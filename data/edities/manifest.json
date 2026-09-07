@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "edities": [
+    {
+      "code": "nl-opv",
+      "naam": "Open Parafrase Vertaling",
+      "taal": "nl",
+      "richting": "ltr",
+      "dataRoot": "data/edities/opv/chapters",
+      "boeken": [
+        "genesis",
+        "johannes"
+      ],
+      "hoofdstukken": {
+        "genesis": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "johannes": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "status": "pilot"
+    }
+  ]
+}
