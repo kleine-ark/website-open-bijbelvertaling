@@ -25,6 +25,8 @@ OUTPUTS = {
     "bomen-planten": "naslag-bomen-planten.json",
     "personen": "naslag-personen.json",
     "muziekinstrumenten": "naslag-muziekinstrumenten.json",
+    "voedsel": "naslag-voedsel.json",
+    "afgoden": "naslag-afgoden.json",
 }
 LETTER = r"0-9A-Za-zÀ-ÖØ-öø-ÿ"
 
@@ -609,6 +611,13 @@ def build_all(root: Path = ROOT, write: bool = True) -> dict[str, dict[str, Any]
         elif category == "muziekinstrumenten":
             built[category] = _build_instruments(
                 definition, books, nature_corpus, empty, instrument_reviewqueue
+            )
+        elif category in ("voedsel", "afgoden"):
+            # Deze twee moeten de Ethiopische boeken meenemen: Mastema staat
+            # alleen in Jubileeen, Azazel en de wachters in Henoch, en het
+            # linzenmoes eveneens in Jubileeen.
+            built[category] = _build_category(
+                definition, books, nature_corpus, empty, category
             )
         else:
             built[category] = _build_category(

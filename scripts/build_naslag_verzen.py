@@ -36,6 +36,8 @@ BRONNEN = [
     ("materialen", "naslag-materialen.json", "Materialen", "#7d6b57", "materialen.html"),
     ("muziekinstrumenten", "naslag-muziekinstrumenten.json", "Muziekinstrumenten", "#8a6aa8",
      "muziekinstrumenten.html"),
+    ("voedsel", "naslag-voedsel.json", "Voedsel", "#c07a2a", "voedsel.html"),
+    ("afgoden", "naslag-afgoden.json", "Afgoden en machten", "#8a3a3a", "afgoden.html"),
 ]
 
 
