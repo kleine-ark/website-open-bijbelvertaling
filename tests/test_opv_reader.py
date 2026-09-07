@@ -414,8 +414,21 @@ class OpvReaderTests(unittest.TestCase):
             opv_requests = [
                 url for url in observed["requests"] if "/data/edities/opv/chapters/" in url
             ]
-            self.assertFalse(any(url.endswith("/genesis/2.json") for url in opv_requests))
+            self.assertTrue(any(url.endswith("/genesis/2.json") for url in opv_requests))
             self.assertFalse(any(url.endswith("/genesis/6.json") for url in opv_requests))
+            observed["requests"].clear()
+            page.goto(
+                f"{self.base_url}/index.html?editie=nl-opv#johannes/1",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.verse-row[data-verse="52"]').wait_for()
+            page.wait_for_function("window.__opvIdleCallbacks > 0")
+            page.wait_for_timeout(250)
+            opv_requests = [
+                url for url in observed["requests"] if "/data/edities/opv/chapters/" in url
+            ]
+            self.assertFalse(any(url.endswith("/johannes/2.json") for url in opv_requests))
+            self.assertFalse(any(url.endswith("/johannes/6.json") for url in opv_requests))
             self.assertEqual(observed["pageerrors"], [])
             self.assertEqual(observed["console_errors"], [])
             self.assertEqual(observed["http_errors"], [])

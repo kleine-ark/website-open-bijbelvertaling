@@ -4,11 +4,11 @@
 
 Status: concept, 7 september 2026. Deze besluiten leggen de eerste redactionele keuzes vast; ze vormen geen onafhankelijke bron- of taalgoedkeuring.
 
-De directe basisteksten zijn `data/genesis/1.json` en `data/johannes/1.json`, telkens `verses[number].textSV1888`. Alle 83 bronverzen zijn naast `text1637` en `text2026` gelezen. De genoemde risicopassages zijn daarnaast gecontroleerd met de woorden in `grondtekst` in hetzelfde vers. Moderne commerciële vertalingen zijn niet als tekstbron gebruikt. De formuleringen zijn zelfstandig vanuit de Statenvertaling opgesteld.
+Voor de eerste kalibratieslice waren de directe basisteksten `data/genesis/1.json` en `data/johannes/1.json`, telkens `verses[number].textSV1888`. Alle 83 bronverzen zijn naast `text1637` en `text2026` gelezen. De genoemde risicopassages zijn daarnaast gecontroleerd met de woorden in `grondtekst` in hetzelfde vers. Moderne commerciële vertalingen zijn niet als tekstbron gebruikt. De formuleringen zijn zelfstandig vanuit de Statenvertaling opgesteld.
 
 Elk vers verwijst naar hetzelfde boek, hoofdstuk en vers in SV1888. Elke stabiele segment-id draagt een `bronfrase`: voor gekoppelde kernbegrippen waar mogelijk de specifieke bronwoorden, voor de overige zinsdelen de volledige bronversregel als context. Dit is herleidbaarheid, geen claim op woord-voor-woord-uitlijning. De bron- en inhoudshashes betreffen exact de UTF-8-tekstvelden, zonder normalisatie achteraf. Alle vers- en blokreviews blijven `concept`; de controlelijsten zijn leeg.
 
-De begrippenlijst is noodzakelijk uitgebreid van alleen `schepping` naar de 38 daadwerkelijk gekoppelde begrippen in deze twee hoofdstukken. Er zijn geen begrippen voor latere hoofdstukken vooruit toegevoegd.
+Voor die eerste slice is de begrippenlijst uitgebreid van alleen `schepping` naar de 38 daadwerkelijk gekoppelde begrippen in die twee hoofdstukken. Er zijn geen begrippen voor latere hoofdstukken vooruit toegevoegd.
 
 ## Blokindeling en versificatie
 
@@ -132,3 +132,115 @@ Alleen Hij, Hem, Zijn, U en Uw krijgen de afgesproken eerbiedshoofdletter. Namen
 ## Openstaande beoordeling
 
 Alle besluiten moeten nog onafhankelijk op brongetrouwheid, taal en leesbaarheid worden beoordeeld. Bijzondere aandacht: het hemelgewelf, “niet begrepen” in Johannes 1:5, de verbinding in 1:9, genade in 1:16 en het engelenbeeld in 1:52. De technische validator bewijst structuur en hashes, niet de juistheid van deze redactionele keuzes.
+
+## Uitbreiding Genesis 2–5
+
+Alle 107 verzen zijn zelfstandig geformuleerd vanuit `data/genesis/2.json` tot en met `5.json`, veld `textSV1888`. `text1637` en `text2026` zijn per vers alleen als controle gelezen. Bij de hieronder genoemde moeilijke keuzes zijn de plaatselijk opgeslagen Hebreeuwse woorden en relevante historische kanttekeningen geraadpleegd. De bronverwijzingen blijven exclusief SV1888. Alle vers- en blokstatussen blijven `concept`; er is geen onafhankelijke goedkeuring vastgelegd.
+
+De uitbreiding heeft 22 blokken: Genesis 2: 1–3, 4–7, 8–14, 15–17, 18–20, 21–25; Genesis 3: 1–5, 6–7, 8–13, 14–19, 20–21, 22–24; Genesis 4: 1–5, 6–7, 8–16, 17–24, 25–26; Genesis 5: 1–5, 6–20, 21–24, 25–27, 28–32. De twee publicatieregisters zijn samen uitgebreid tot Genesis 1–5; Johannes 2–5 is nog niet gepubliceerd.
+
+### G7 — 2:1–6: voltooiing en de terugblik op het ontstaan
+
+“Al hun heir” wordt “alles wat daarin was”: geen nieuw leger van personen of engelen toegevoegd. De zevende dag blijft in vers 2 tweemaal genoemd. “Gezegend” en “geheiligd” blijven twee handelingen, met eigen begrippenankers. In 2:3 wordt “geschapen had, om te volmaken” “had geschapen en afgemaakt”. Dit leest het volmaken in het verband van het voltooide werk en het daaropvolgende rusten; geen nieuw scheppingswerk op een andere dag. Het Hebreeuwse `la'asot` en het alternatief “scheppende gemaakt” in kanttekening 5 zijn gecontroleerd. Het is een parafrase van voltooiing, geen uitspraak over vermoeidheid.
+
+Vers 4 vertelt over het ontstaan van hemel en aarde en herhaalt aarde en hemel in de tweede zin. Vers 5 wordt grammaticaal verbonden met het maken in vers 4: ook struiken en veldplanten maakte God voordat ze er waren/opkwamen. Dat volgt de zinsverbinding van de primaire SV en kanttekening 8–9; er wordt geen eigen tweede scheppingschronologie opgesteld. Geen regen en geen mens om de grond te bewerken blijven beide redenen. De damp uit vers 6 blijft damp, zonder omzetting in een bron, miststelsel of meteorologisch model.
+
+### G8 — 2:7: stof, adem en levende ziel
+
+Stof van de aarde, Gods vormen, blazen in de neusgaten en het daardoor levend worden zijn afzonderlijk behouden. `Nishmat chayyim` wordt “levensadem”; `nefesh chayyah` wordt “levend wezen”, in lijn met Genesis 1. Geen los in het lichaam geplaatste ziel of uitsluitend biologisch mechanisme toegevoegd. De bestaande begripsuitleg `levende-ziel` omvat nu terecht dieren én mensen.
+
+### G9 — 2:8–17: tuin, bomen, rivieren en verbod
+
+Hof wordt tuin. Eden, Pison, Havila, Gihon, Cusch, Hiddekel, Assur en Frath blijven herkenbare namen. Alle vier rivieren en de twee vermeldingen van een heel land blijven aanwezig. “Vier hoofden” wordt de splitsing in vier rivieren; er is geen moderne kaartidentificatie toegevoegd. Bedolah en sardonix blijven staan omdat de kanttekeningen 30–31 de identificatie onzeker noemen. Beide krijgen een afzonderlijke uitleglaag, zonder bedolah zonder voorbehoud als hars te benoemen.
+
+De boom van het leven staat in het midden van de tuin; de boom van de kennis van goed en kwaad wordt daarnaast genoemd. Beide volledige namen hebben precieze begrippenankers. Bewerken én bewaken blijven de twee opdrachten. Het vrije eten uit vers 16 en het verbod uit vers 17 zijn afzonderlijk bewaard. “Op de dag” en “zeker sterven” blijven staan; niet vervangen door alleen uiteindelijk sterfelijk worden.
+
+### G10 — 2:18–20: hulp en overeenkomst
+
+`Ezer kenegdo` wordt iemand die de mens “helpt en bij hem past”. Dit bewaart de hulp én de overeenkomst/tegenoverpositie, zonder huishoudelijke functie, minderwaardigheid, moderne rolverdeling of een abstract gelijkheidsprogramma in te voegen. Vers 20 herhaalt hetzelfde tekort met “kon helpen en bij hem paste”. De naamgeving noemt vee, vogels en wilde dieren, en de door Adam gegeven namen blijven de namen van de dieren. Er wordt geen dier als bijna geschikte partner aangewezen.
+
+### G11 — 2:21–24: rib, vrouw en één vlees
+
+De rib volgt de primaire SV; `tsela` wordt niet stilzwijgend een lichaamshelft. Diepe slaap, het slapen, wegnemen en de plek met vlees sluiten blijven elk aanwezig. God “bouwde” de vrouw en bracht haar bij Adam. Het bot-/vleesbeeld blijft in Adams uitspraak herkenbaar. “Manninne” wordt het gewone “vrouw”; het woordspel met man staat in de uitleglaag `man-vrouw-woordspel`, terwijl de verklaring “uit de man genomen” in de hoofdtekst blijft.
+
+Vers 24 staat als vertellerstekst buiten Adams citaat: de bron heeft daar geen nieuwe spraakinleiding en gaat over de algemene gevolgtrekking. De man verlaat vader én moeder, verbindt zich aan zijn vrouw en wordt met haar één lichaam. “Eén lichaam” bewaart het lichamelijke beeld van één vlees, niet alleen emotionele verbondenheid. De verbinding en het één-worden zijn afzonderlijk gekoppeld. Naaktheid en afwezigheid van schaamte blijven in vers 25 zonder uitleg.
+
+### G12 — 3:1–7: woorden van slang en vrouw
+
+De slang is een dierlijke spreker (`animal`), niet in de hoofdtekst geïdentificeerd als een andere persoon. Zijn vraag geeft een vermeende uitspraak van God weer; daarom krijgt die uitspraak een genest God-citaat binnen de slangspraak. Het afsluitende vraagteken hoort alleen bij de vraag van de slang, niet bij Gods toegeschreven verbod. De vrouw citeert God eveneens genest. Haar “niet aanraken” blijft haar gerapporteerde formulering: geen terugwerkende toevoeging aan Genesis 2.
+
+In 3:5 blijft “als God”, conform SV1888 en het gecontroleerde `ke'elohim`; geen vervanging door goden, geen ontkenning of eigen theologische uitleg toegevoegd. Het openen van ogen en kennis van goed en kwaad blijven apart. Vers 6 houdt drie aspecten bijeen: eetbaar, mooi en aantrekkelijk om verstandig te worden. Het is haar waarneming, geen redactionele garantie dat de boom verstandig maakt. Haar man is bij haar en eet ook. De vijgenbladeren worden een bedekking voor hun middel: het schortkarakter blijft behouden zonder naald of naaitechniek toe te voegen.
+
+### G13 — 3:8–13: stem, wind en aanspreekvorm
+
+`Qol` blijft “stem”, volgens de primaire SV. Het wandelen wordt aan de HEERE God verbonden; geen lichaamsvorm of voetstappen toegevoegd. “Aan den wind des daags” wordt “toen er die dag een wind waaide”. Dit bewaart wind en dag zonder de keuze voor ochtend, avond of koelte, waarvoor de kanttekening verschillende mogelijkheden noemt. Deze weinig gangbare formulering blijft een aandachtspunt bij taalreview.
+
+God vraagt, Adam antwoordt en de vrouw antwoordt ieder in eigen segmentbereiken. Alle vragen, het bang worden vanwege naaktheid, Gods gave van de vrouw, het geven, eten en bedrog zijn bewaard. Adam spreekt God aan met U/Uw. “God vroeg” maakt de spreker duidelijk waar de bron Hij gebruikt; voornaamwoorden voor mensen krijgen geen eerbiedshoofdletter.
+
+### G14 — 3:14–16: vloek, nageslacht, pijn en gezag
+
+De slang is vervloekt boven het vee en de wilde dieren; op de buik gaan, stof eten en de levensduur blijven staan. Vers 15 bewaart beide vijandschapsparen: slang/vrouw en beider nageslacht. Beide voorkomens van zaad zijn apart gekoppeld. Het nageslacht van de vrouw verbrijzelt de kop van de slang; de slang verbrijzelt de hiel van dat nageslacht. Hetzelfde werkwoord blijft voor beide slagen behouden. De hoofdtekst benoemt geen Christus, Messias, Satan of kerk. De christologische uitleg in de historische kanttekeningen wordt niet tot een extra gebeurtenis of identiteit in de hoofdtekst gemaakt.
+
+Vers 16 bewaart de sterke vermeerdering van pijn bij zwangerschap en afzonderlijk het kinderen krijgen met pijn. Het verlangen is gericht op de man; hij zal over haar heersen. Geen toegevoegde begeerte om hem te beheersen, geen uitsluitend seksuele uitleg en geen morele opdracht aan lezers. De zinnen blijven woorden van God binnen dit verhaal, niet een redactionele rechtvaardiging van menselijk machtsmisbruik.
+
+### G15 — 3:17–24: arbeid, kleding en uitdrijving
+
+Luisteren naar de vrouw én eten ondanks het verbod zijn aanwezig; het herhaalde verbod heeft een eigen genest citaat binnen Gods spraak. De grond is vervloekt om Adams toedoen. Moeite, levensduur, doornen, distels, veldplanten, brood, zweet en terugkeer tot stof blijven alle behouden. Eva moderniseert de historische naam Heva volgens de herkenbare Nederlandse naam, zonder een andere persoon te maken. Zij blijft moeder van alle levende mensen. Kleren van huiden en het aantrekken blijven staan, zonder een eerste offer of dierdoding te vertellen.
+
+Het goddelijke meervoud in 3:22 blijft “een van ons”; geen uitleg van de groep. Hand uitsteken, nemen, eten en eeuwig leven blijven onderscheiden. Vers 23 noemt expliciet “De mens” als degene die de grond moet bewerken, zodat Hij niet voor God wordt aangezien. Cherubim wordt “cherubs”, met uitleg; hun uiterlijk en aantal worden niet ingevuld. Het vlammende, bewegende zwaard en het bewaken van de weg blijven staan. Er wordt niet beweerd dat een cherub het zwaard vasthoudt.
+
+### G16 — 4:1–5: geboorte en offers zonder verzonnen motief
+
+“Bekende” wordt “sliep met”: de seksuele gemeenschap is begrijpelijk zonder technische of grafische uitleg. “Een man van den HEERE” wordt “van de HEERE een zoon”, conform de primaire SV en kanttekening 3. Geen uitspraak dat Kaïn de HEERE of de Messias is. Heva/Habel worden consequent Eva/Abel; Kaïn blijft Kaïn.
+
+Kaïn geeft van zijn landopbrengst. Abel geeft eerstgeboren schapen én hun vet. Goedkeuring parafraseert het positieve aanzien tegenover het niet aanzien; zowel persoon als offer blijven object van Gods reactie. Er wordt geen oorzaak bij bedacht: geen mindere kwaliteit, onjuiste offercategorie, gebrek aan geloof of verborgen intentie. Kaïns grote boosheid en betrokken gezicht blijven beide genoemd.
+
+### G17 — 4:7: verhoging, zonde aan de deur en de broer
+
+De formulering is bewust SV-gestuurd. “Je hoofd ... omhoog houden” geeft de verhoging weer volgens het in SV1637-kanttekening 14 genoemde hoofd/aangezicht-opheffen, in aansluiting op het betrokken gezicht van 4:5–6. “De zonde ... aan de deur” blijft het centrale beeld en heeft een eigen begripanker; geen aanvallend roofdier of zelfstandig duivel toegevoegd.
+
+Voor het slot verwijzen “zijn” en “hem” volgens de gevolgde Statenvertaling-uitleg naar Abel, Kaïns broer: kanttekening 17 zegt dat uitdrukkelijk. Om een onbegrijpelijk voornaamwoord te vermijden luidt de hoofdtekst: “Het verlangen van je broer gaat toch naar jou uit, en jij zult over hem heersen.” Dit maakt de gevolgde referent zichtbaar zonder een extra gebeurtenis te vertellen. De toekomstige vorm “zult” blijft behouden; geen vervanging door het bevel “moet”.
+
+De alternatieve uitleg verbindt het mannelijke achtervoegsel in `teshuqato` en `bo` met gepersonifieerde zonde. Dat is een serieus redactioneel risico, maar staat uitsluitend hier als alternatief. Het wordt niet als tweede betekenis aan de hoofdtekst toegevoegd. Onafhankelijke bronreview moet juist deze explicitering beoordelen; de metadata draagt geen definitieve goedkeuring.
+
+### G18 — 4:8–14: broedermoord, bloed en vergeving
+
+Vers 8 zegt alleen dat Kaïn met Abel sprak; er is geen uitnodiging om naar het veld te gaan toegevoegd uit een andere teksttraditie. Broer en veld worden bij de aanval herhaald. Gods vraag en Kaïns ontkenning/tegenvraag blijven aparte citaten. Het bloed dat vanuit de grond roept is behouden als beeld.
+
+In 4:11 wordt de vloek “van den aardbodem” “een vloek vanuit de grond”. Dit bewaart de grond als oorsprongs-/uitvoeringsbeeld; de historische kanttekening 24 verklaart de grond als uitvoerder die zijn vruchten onthoudt. Het vervolg houdt de geopende mond, het bloed van de broer en Kaïns hand apart. Er is niet alleen een geografisch reisverbod van gemaakt.
+
+4:13 volgt de hoofdtekst van SV1888: de misdaad is te groot om vergeven te worden. `Awon` en `nasa` en het alternatief straf/dragen in kanttekening 27 zijn gecontroleerd. “Mijn straf is te zwaar om te dragen” is dus niet stilzwijgend ingevoerd. Kaïns uitspraak krijgt geen vertellersgoedkeuring en er wordt geen oprecht berouw uit afgeleid. Verdrijving, verborgen zijn voor God, zwerven en gevaar van iedere vinder blijven in vers 14 behouden.
+
+### G19 — 4:15–16: bescherming en zevenvoudige wraak
+
+De SV-zinsbouw over wie gewroken wordt is ontvlochten: “de dood van Kaïn” wordt zeven keer gewroken wanneer iemand hem doodslaat. Daardoor lijkt de dader niet de beschermde persoon. Het getal zeven blijft onveranderd. Het teken voorkomt dat een vinder Kaïn doodt; vorm, kleur, lichaamsplek en identiteit van mogelijke aanvallers zijn onbekend en niet ingevuld. Nod en de ligging ten oosten van Eden blijven staan; weggaan bij de HEERE is niet omgezet in een leer over Gods geografische afwezigheid.
+
+### G20 — 4:17–22: namen, verwantschap en ambachten
+
+Geboorten, namenketen, twee vrouwen en hun namen, tentbewoners met vee, musici, metaalbewerkers en zus Naema zijn stuk voor stuk behouden. De Henoch en Lamech uit dit hoofdstuk worden niet gelijkgesteld aan de latere personen in Genesis 5. “Stamvader” bewaart vader van een groep; geen uitvinding, datum of exclusieve biologische afstamming van alle latere vakgenoten toegevoegd. Tubal-Kaïn blijft leermeester van alle werkers in koper én ijzer.
+
+“Harpen en orgelen” wordt “harpen en fluiten”. Dit is een expliciete modernisering van oude instrumentnamen, geen claim over een hedendaags kerkorgel of concertfluit. De lokale grondtekst heeft `kinnor` en `ugab`; de historische kanttekening 42 zegt dat de precieze uitvoering onzeker is. Als aanvullende lexicale controle zijn de historische lexiconartikelen geraadpleegd: [BDB bij ugab](https://biblehub.com/hebrew/5748.htm) noemt onder meer pijp/fluit, en [BDB bij kinnor](https://biblehub.com/hebrew/3658.htm) noemt een lier/snaarinstrument. Alleen deze lexicale laag is gebruikt, niet de moderne vertaalcitaten of toegevoegde thematische uitleg op die pagina's. De conceptuitleg houdt de instrumentidentificatie bescheiden.
+
+### G21 — 4:23–24: Lamechs woorden en de getallen
+
+Beide oproepen om te luisteren blijven staan. De primaire SV-vorm wordt als gedane daad weergegeven: “ik doodde”, met man/wond en jonge man/buil. De mogelijke hypothetische lezing in de kanttekening wordt niet als eigen verhaal ingevoegd. De formulering bepaalt niet dat er noodzakelijk twee verschillende slachtoffers zijn en noemt geen wapens of zelfverdediging. Het blijft Lamechs uitspraak, niet een vertellersbevestiging of morele goedkeuring.
+
+“Zeventigmaal zevenmaal” blijft “zeventig keer zeven”, naast Kaïns zeven keer. De plaatselijke Hebreeuwse woorden zeventig-en-zeven laten de andere bekende getalslezing zien; de OPV wijzigt de primaire SV hier niet naar 77. Er is evenmin een uitgerekend getal aan de hoofdtekst toegevoegd. Dit expliciete bronniveauverschil blijft een risicopunt voor onafhankelijke review.
+
+### G22 — 4:25–26: Seth en het aanroepen van de naam
+
+Opnieuw gemeenschap, een zoon, naamgeving en vervanging van het door Kaïn gedode Abel blijven aanwezig. “Ander zaad” wordt “ander kind”, met begripkoppeling nageslacht. Geen extra geboorteprofetie. Seth krijgt Enos; de naamgeving blijft zijn handeling. Het beginnen met aanroepen volgt de positieve SV-hoofdtekst, niet een alternatieve lezing over ontheiliging. “Naam” blijft in eigen tekst klein volgens het vastgelegde hoofdletterbeleid.
+
+### G23 — 5:1–32: genealogie, Henoch en Noach
+
+Alle 13 persoonsnamen blijven herkenbaar, inclusief Mahalal-el, Methusalach, Sem, Cham en Jafeth. Alle leeftijden zijn omgezet naar cijfers zonder getalwijziging. De negen vermeldingen van zonen en dochters en de acht slotformules “en hij stierf” zijn onverkort bewaard. Geboorten zijn vaderschap, niet alleen het toevallig ontmoeten van een kind. Bij Noach blijft de leeftijd 500 onderscheiden van de opsomming van drie zonen; er is geen drieling of gelijktijdige geboorte toegevoegd. Zijn naam wordt in 5:32 herhaald.
+
+Gods gelijkenis in 5:1, man en vrouw, de zegen en hun naam Mens blijven behouden. Adams zoon lijkt op hem én is zijn evenbeeld; deze verwijzingen blijven menselijk gespeld. “Wandelen met God” wordt tweemaal “leefde met God”, met een eigen nauw begripanker. Henochs 300 jaar na Methusalachs geboorte en 365 jaar totaal blijven onderscheiden. “Hij was er niet meer, want God nam hem weg” voegt geen hemelreis, vervoermiddel of dood toe.
+
+Noachs troost bij werk en het gezwoeg van de handen blijft de uitspraak van Lamech. De vervloekte grond blijft de oorzaak van het gezwoeg. Er is geen zondvloed, landbouwuitvinding of vervulling van een profetie toegevoegd.
+
+### G24 — Voorleesritme en status van de controle
+
+Alle 22 nieuwe blokken zijn zonder versnummers als doorlopende tekst op ritme en verwijzingen gelezen: een tekstuele hardopleessimulatie, geen auditieve beluistering of menselijke hardopleesreview. De eerste versie had één zin langer dan 25 woorden: Genesis 3:3, 27 woorden inclusief de citaatinleiding. Die is gesplitst vóór “Anders sterven jullie.” De waarschuwing blijft binnen het door de vrouw aangehaalde God-citaat. Na herlezing heeft geen zin in Genesis 2–5 meer dan 25 woorden, gerekend met spatiegescheiden woorden en een zinsgrens na punt, vraagteken of uitroepteken; een dubbele punt splitst de telling niet.
+
+Tijdens deze lezing zijn ook de onduidelijke verwijzing naar de mens in 3:23, de diervoornaamwoorden in 2:19, de bedekking in 3:7 en het omslachtige aanzien van de offers herschreven. De bron- en inhoudshashes zijn daarna opnieuw berekend. De 17 nieuwe registry-begrippen zijn alle daadwerkelijk gekoppeld; bestaande uitleg bij levende ziel, zegen en zonde is alleen verbreed voor het nu aanwezige Genesis-materiaal. Geen toekomstige hoofdstukken zijn alvast geannoteerd. Bron-, taal- en menselijke leesbaarheidsgoedkeuring blijven onafhankelijk open.
