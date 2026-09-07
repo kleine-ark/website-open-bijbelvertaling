@@ -5,10 +5,11 @@ import json
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 from pathlib import Path
 
-from scripts.validate_opv import validate_corpus
+from scripts.validate_opv import _validate_blocks, validate_corpus
 
 
 READING_TEXT = "God maakte in het begin de hemel en de aarde."
@@ -467,6 +468,21 @@ class ValidateOpvTests(unittest.TestCase):
         self.chapter["blokken"] = []
         errors = self._errors_after_rewrite()
         self.assertHasCode(errors, "BLOCKS_INCOMPLETE")
+
+    def test_extreme_block_range_is_bounded_and_reports_one_compact_error(self) -> None:
+        self.chapter["blokken"][0]["tot"] = 100_000
+
+        started_at = time.perf_counter()
+        errors = _validate_blocks(self.chapter, "chapter.json")
+        elapsed = time.perf_counter() - started_at
+
+        unknown_verse_errors = [
+            error
+            for error in errors
+            if error.startswith("BLOCK_RANGE_UNKNOWN_VERSE ")
+        ]
+        self.assertEqual(1, len(unknown_verse_errors), errors[:3])
+        self.assertLess(elapsed, 0.25)
 
     def test_duplicate_segment_id_across_chapters_is_reported(self) -> None:
         second = copy.deepcopy(self.chapter)

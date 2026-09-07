@@ -764,11 +764,13 @@ def _validate_blocks(chapter: dict[str, Any], filename: str) -> list[str]:
             errors.append(_error("BLOCK_RANGE_INVALID", filename, block_path))
             continue
         ordered_ranges.append((start, end))
-        for number in range(start, end + 1):
-            if number in coverage:
-                coverage[number] += 1
-            else:
-                errors.append(_error("BLOCK_RANGE_UNKNOWN_VERSE", filename, block_path))
+        covered_numbers = {
+            number for number in verse_numbers if start <= number <= end
+        }
+        if len(covered_numbers) != end - start + 1:
+            errors.append(_error("BLOCK_RANGE_UNKNOWN_VERSE", filename, block_path))
+        for number in covered_numbers:
+            coverage[number] += 1
     if any(count > 1 for count in coverage.values()):
         errors.append(_error("BLOCKS_OVERLAP", filename, "$.blokken"))
     if any(count == 0 for count in coverage.values()) or (verse_numbers and not blocks):
