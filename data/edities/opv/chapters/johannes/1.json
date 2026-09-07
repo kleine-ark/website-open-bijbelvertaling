@@ -1,0 +1,2707 @@
+{
+  "schema": 1,
+  "editie": "nl-opv",
+  "boek": "johannes",
+  "hoofdstuk": 1,
+  "kop": "Het Woord wordt mens",
+  "blokken": [
+    {
+      "id": "jhn-1-b1",
+      "kop": "Het Woord en het Licht",
+      "vanaf": 1,
+      "tot": 5,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "jhn-1-b2",
+      "kop": "Johannes getuigt van het Licht",
+      "vanaf": 6,
+      "tot": 13,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "jhn-1-b3",
+      "kop": "Het Woord onder de mensen",
+      "vanaf": 14,
+      "tot": 18,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "jhn-1-b4",
+      "kop": "Wie is Johannes?",
+      "vanaf": 19,
+      "tot": 28,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "jhn-1-b5",
+      "kop": "Het Lam van God",
+      "vanaf": 29,
+      "tot": 34,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "jhn-1-b6",
+      "kop": "De eerste leerlingen",
+      "vanaf": 35,
+      "tot": 43,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "jhn-1-b7",
+      "kop": "Filippus en Nathanaël",
+      "vanaf": 44,
+      "tot": 52,
+      "review": {
+        "status": "concept"
+      }
+    }
+  ],
+  "verzen": [
+    {
+      "nummer": 1,
+      "tekst": "Toen alles begon, was het Woord er al. Het Woord was bij God en het Woord was God.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 1,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.1.s1",
+          "tekst": "Toen alles begon, was het ",
+          "bronfrase": "In den beginne was het Woord, en het Woord was bij God, en het Woord was God."
+        },
+        {
+          "id": "JHN.1.1.s2",
+          "tekst": "Woord",
+          "bronfrase": "Woord"
+        },
+        {
+          "id": "JHN.1.1.s3",
+          "tekst": " er al. Het Woord was bij God en het Woord was God.",
+          "bronfrase": "In den beginne was het Woord, en het Woord was bij God, en het Woord was God."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "woord",
+          "segmenten": [
+            "JHN.1.1.s2"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "719c9ca2b399111e3ab7efaeec9a6179a8f9360e31260a12f27104cf0bb01ed4",
+        "bronSha256": "4de5ab480b7b78b333537a19909c86bd88057f30078f02f83b82fe40d0ffba09",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 2,
+      "tekst": "Het Woord was vanaf het begin bij God.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 2,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.2.s1",
+          "tekst": "Het Woord was vanaf het begin bij God.",
+          "bronfrase": "Dit was in den beginne bij God."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ad92ddc5ee6bc6d9fdbb9cb138064e9ad758d98b44d346b0d3f6e5fac657a575",
+        "bronSha256": "df223d3d2da7b1187b03e2595afb3e0872b3c59d44e9860270f436e5be750542",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 3,
+      "tekst": "Alles is door Hem ontstaan. Niets van wat bestaat, is zonder Hem ontstaan.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 3,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.3.s1",
+          "tekst": "Alles is ",
+          "bronfrase": "Alle dingen zijn door Hetzelve gemaakt, en zonder Hetzelve is geen ding gemaakt, dat gemaakt is."
+        },
+        {
+          "id": "JHN.1.3.s2",
+          "tekst": "door Hem ontstaan",
+          "bronfrase": "gemaakt"
+        },
+        {
+          "id": "JHN.1.3.s3",
+          "tekst": ". Niets van wat bestaat, is zonder Hem ontstaan.",
+          "bronfrase": "Alle dingen zijn door Hetzelve gemaakt, en zonder Hetzelve is geen ding gemaakt, dat gemaakt is."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "schepping",
+          "segmenten": [
+            "JHN.1.3.s2"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "5223d9bf01b3f602f7c4b0b2fb831c3cba8082d36de4cb509b3b3631b48c9c85",
+        "bronSha256": "9fee79925ed8296db619f77636d440b2edf51ae9f16995cdca307a8323773756",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 4,
+      "tekst": "In Hem was het leven. Dat leven was het Licht voor de mensen.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 4,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.4.s1",
+          "tekst": "In Hem was het leven. Dat leven was het ",
+          "bronfrase": "In Hetzelve was het Leven, en het Leven was het Licht der mensen."
+        },
+        {
+          "id": "JHN.1.4.s2",
+          "tekst": "Licht",
+          "bronfrase": "Licht"
+        },
+        {
+          "id": "JHN.1.4.s3",
+          "tekst": " voor de mensen.",
+          "bronfrase": "In Hetzelve was het Leven, en het Leven was het Licht der mensen."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "licht",
+          "segmenten": [
+            "JHN.1.4.s2"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "8e44b9bc89468d218672f349afc64242583eadcdc26d9a123e3405ff3acd9cc5",
+        "bronSha256": "3b167f6ce75914e9975e24b41d9782f374eb1732bda5f36ae1079c3686dda410",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 5,
+      "tekst": "Het Licht schijnt in het donker, maar het donker heeft het niet begrepen.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 5,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.5.s1",
+          "tekst": "Het ",
+          "bronfrase": "En het Licht schijnt in de duisternis, en de duisternis heeft hetzelve niet begrepen."
+        },
+        {
+          "id": "JHN.1.5.s2",
+          "tekst": "Licht",
+          "bronfrase": "Licht"
+        },
+        {
+          "id": "JHN.1.5.s3",
+          "tekst": " schijnt in het donker, maar het donker heeft het niet begrepen.",
+          "bronfrase": "En het Licht schijnt in de duisternis, en de duisternis heeft hetzelve niet begrepen."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "licht",
+          "segmenten": [
+            "JHN.1.5.s2"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ea6102ed52fc1d19b853327925f62c3bf09d44333804a0ca7132f02fa33d25e9",
+        "bronSha256": "ecd091100a7da26473350bfabbba48c724f1f7adb1476f4989deefcc2b6a259a",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 6,
+      "tekst": "God stuurde een man die Johannes heette.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 6,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.6.s1",
+          "tekst": "God stuurde een man die Johannes heette.",
+          "bronfrase": "Er was een mens van God gezonden, wiens naam was Johannes."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "2bf3b181ec479a8516b8770d06b689ffa9388444ec271be4d300f836d41ab37e",
+        "bronSha256": "c273d1ac31ed8be5708eb892cb53434e7f036a6443430d5cfc8ea7bb7b02f27b",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 7,
+      "tekst": "Hij kwam om te getuigen van het Licht, zodat iedereen door zijn getuigenis zou geloven.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 7,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.7.s1",
+          "tekst": "Hij kwam om te ",
+          "bronfrase": "Deze kwam tot een getuigenis, om van het Licht te getuigen, opdat zij allen door hem geloven zouden."
+        },
+        {
+          "id": "JHN.1.7.s2",
+          "tekst": "getuigen",
+          "bronfrase": "getuigenis"
+        },
+        {
+          "id": "JHN.1.7.s3",
+          "tekst": " van het Licht, zodat iedereen door zijn getuigenis zou geloven.",
+          "bronfrase": "Deze kwam tot een getuigenis, om van het Licht te getuigen, opdat zij allen door hem geloven zouden."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "getuigenis",
+          "segmenten": [
+            "JHN.1.7.s2"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "593ac506f5849f633389862d991a94923854ab0651f3fcd468d456316f218ba2",
+        "bronSha256": "0a252a3556592ffc7d87ab72b6354e18b260e09d52a49d6e85d4cf4e9d231a47",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 8,
+      "tekst": "Johannes was zelf niet het Licht. Hij was gestuurd om van het Licht te getuigen.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 8,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.8.s1",
+          "tekst": "Johannes was zelf niet het Licht. Hij was gestuurd om van het Licht te getuigen.",
+          "bronfrase": "Hij was het Licht niet, maar was gezonden, opdat hij van het Licht getuigen zou."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "13fa683d7196e84486d70954cf1ad8e34d627ed598b0954d8f04b1268a58d990",
+        "bronSha256": "e53c983134a6e49860db71c1a1088d275161c6290f8b2343edf3dfc2a4905403",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 9,
+      "tekst": "Het Woord was het ware Licht. Het verlicht ieder mens die in de wereld komt.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 9,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.9.s1",
+          "tekst": "Het Woord was het ware ",
+          "bronfrase": "Dit was het waarachtige Licht, Hetwelk verlicht een iegelijk mens, komende in de wereld."
+        },
+        {
+          "id": "JHN.1.9.s2",
+          "tekst": "Licht",
+          "bronfrase": "Licht"
+        },
+        {
+          "id": "JHN.1.9.s3",
+          "tekst": ". Het verlicht ieder mens die in de wereld komt.",
+          "bronfrase": "Dit was het waarachtige Licht, Hetwelk verlicht een iegelijk mens, komende in de wereld."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "licht",
+          "segmenten": [
+            "JHN.1.9.s2"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "b869368dbba2c1acdeff4ccd1781b19817677d4c8d7bef3daf0bec99f60f3d14",
+        "bronSha256": "976acaae4edce278b803b6642ef2c4f7f49854d0681d1fccc9d6f6b8e3099299",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 10,
+      "tekst": "Hij was in de wereld. De wereld was door Hem ontstaan, maar herkende Hem niet.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 10,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.10.s1",
+          "tekst": "Hij was in de wereld. De wereld was door Hem ontstaan, maar herkende Hem niet.",
+          "bronfrase": "Hij was in de wereld, en de wereld is door Hem gemaakt; en de wereld heeft Hem niet gekend."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "9f4294551fc10f2c812da0c5a0276323776c08cf772a47ba17f86bdb48404e72",
+        "bronSha256": "c88df88a7a39c0241f6e9483c1d7ecb9445fc729d8e129251c6b1a321561a254",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 11,
+      "tekst": "Hij kwam naar wat van Hem was, maar Zijn eigen mensen namen Hem niet aan.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 11,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.11.s1",
+          "tekst": "Hij kwam naar wat van Hem was, maar Zijn eigen mensen namen Hem niet aan.",
+          "bronfrase": "Hij is gekomen tot het Zijne, en de Zijnen hebben Hem niet aangenomen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "24a44bf50c3da9ee9e52b36246c31ed3a432111330212625507c1171b0944e3f",
+        "bronSha256": "6745a27ba1d6e98cea65b8967908cde6d388c37ee7d6c7f34c316bf2867c7a4a",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 12,
+      "tekst": "Maar wie Hem wel aannamen, gaf Hij het recht om kinderen van God te worden. Dat zijn de mensen die in Zijn Naam geloven.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 12,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.12.s1",
+          "tekst": "Maar wie Hem wel aannamen, gaf Hij het recht om ",
+          "bronfrase": "Maar zovelen Hem aangenomen hebben, dien heeft Hij macht gegeven kinderen Gods te worden, namelijk die in Zijn Naam geloven;"
+        },
+        {
+          "id": "JHN.1.12.s2",
+          "tekst": "kinderen van God",
+          "bronfrase": "kinderen Gods"
+        },
+        {
+          "id": "JHN.1.12.s3",
+          "tekst": " te worden. Dat zijn de mensen die in Zijn Naam geloven.",
+          "bronfrase": "Maar zovelen Hem aangenomen hebben, dien heeft Hij macht gegeven kinderen Gods te worden, namelijk die in Zijn Naam geloven;"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "kinderen-van-god",
+          "segmenten": [
+            "JHN.1.12.s2"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "bb1217532a2c95c9257a20d2c82524d0d37dc9c8d702071280b970738702ddfe",
+        "bronSha256": "87b2d692fe714e71a701b232a212ab541f1098b4aa301c1adf131e068c5cdd1a",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 13,
+      "tekst": "Zij zijn uit God geboren. Dat komt niet door hun afkomst, niet door lichamelijk verlangen en niet door de wil van een man.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 13,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.13.s1",
+          "tekst": "Zij zijn ",
+          "bronfrase": "Welke niet uit den bloede, noch uit den wil des vleses, noch uit den wil des mans, maar uit God geboren zijn."
+        },
+        {
+          "id": "JHN.1.13.s2",
+          "tekst": "uit God geboren",
+          "bronfrase": "uit God geboren"
+        },
+        {
+          "id": "JHN.1.13.s3",
+          "tekst": ". Dat komt niet door hun afkomst, niet door lichamelijk verlangen en niet door de wil van een man.",
+          "bronfrase": "Welke niet uit den bloede, noch uit den wil des vleses, noch uit den wil des mans, maar uit God geboren zijn."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "geboren-uit-god",
+          "segmenten": [
+            "JHN.1.13.s2"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "26e78f6a9ac33ab9cbe7c119540103bce11e2bcf0d221205b1a436482cc9d611",
+        "bronSha256": "51518a7bab161ad0d083e8cbda0aa86aa2d8539b52d16f13c69862c38b1270ad",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 14,
+      "tekst": "Het Woord werd mens en woonde onder ons. Wij hebben Zijn grootheid gezien: de grootheid van de enige Zoon van de Vader. Hij was vol onverdiende goedheid en waarheid.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 14,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.14.s1",
+          "tekst": "Het ",
+          "bronfrase": "En het Woord is vlees geworden, en heeft onder ons gewoond (en wij hebben Zijn heerlijkheid aanschouwd, een heerlijkheid als des Eniggeborenen van den Vader), vol van genade en waarheid."
+        },
+        {
+          "id": "JHN.1.14.s2",
+          "tekst": "Woord",
+          "bronfrase": "Woord"
+        },
+        {
+          "id": "JHN.1.14.s3",
+          "tekst": " werd ",
+          "bronfrase": "En het Woord is vlees geworden, en heeft onder ons gewoond (en wij hebben Zijn heerlijkheid aanschouwd, een heerlijkheid als des Eniggeborenen van den Vader), vol van genade en waarheid."
+        },
+        {
+          "id": "JHN.1.14.s4",
+          "tekst": "mens",
+          "bronfrase": "vlees geworden"
+        },
+        {
+          "id": "JHN.1.14.s5",
+          "tekst": " en woonde onder ons. Wij hebben Zijn ",
+          "bronfrase": "En het Woord is vlees geworden, en heeft onder ons gewoond (en wij hebben Zijn heerlijkheid aanschouwd, een heerlijkheid als des Eniggeborenen van den Vader), vol van genade en waarheid."
+        },
+        {
+          "id": "JHN.1.14.s6",
+          "tekst": "grootheid",
+          "bronfrase": "heerlijkheid"
+        },
+        {
+          "id": "JHN.1.14.s7",
+          "tekst": " gezien: de grootheid van de ",
+          "bronfrase": "En het Woord is vlees geworden, en heeft onder ons gewoond (en wij hebben Zijn heerlijkheid aanschouwd, een heerlijkheid als des Eniggeborenen van den Vader), vol van genade en waarheid."
+        },
+        {
+          "id": "JHN.1.14.s8",
+          "tekst": "enige Zoon van de Vader",
+          "bronfrase": "Eniggeborenen van den Vader"
+        },
+        {
+          "id": "JHN.1.14.s9",
+          "tekst": ". Hij was vol ",
+          "bronfrase": "En het Woord is vlees geworden, en heeft onder ons gewoond (en wij hebben Zijn heerlijkheid aanschouwd, een heerlijkheid als des Eniggeborenen van den Vader), vol van genade en waarheid."
+        },
+        {
+          "id": "JHN.1.14.s10",
+          "tekst": "onverdiende goedheid",
+          "bronfrase": "genade"
+        },
+        {
+          "id": "JHN.1.14.s11",
+          "tekst": " en ",
+          "bronfrase": "En het Woord is vlees geworden, en heeft onder ons gewoond (en wij hebben Zijn heerlijkheid aanschouwd, een heerlijkheid als des Eniggeborenen van den Vader), vol van genade en waarheid."
+        },
+        {
+          "id": "JHN.1.14.s12",
+          "tekst": "waarheid",
+          "bronfrase": "waarheid"
+        },
+        {
+          "id": "JHN.1.14.s13",
+          "tekst": ".",
+          "bronfrase": "En het Woord is vlees geworden, en heeft onder ons gewoond (en wij hebben Zijn heerlijkheid aanschouwd, een heerlijkheid als des Eniggeborenen van den Vader), vol van genade en waarheid."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "woord",
+          "segmenten": [
+            "JHN.1.14.s2"
+          ]
+        },
+        {
+          "conceptId": "menswording",
+          "segmenten": [
+            "JHN.1.14.s4"
+          ]
+        },
+        {
+          "conceptId": "heerlijkheid",
+          "segmenten": [
+            "JHN.1.14.s6"
+          ]
+        },
+        {
+          "conceptId": "eniggeboren-zoon",
+          "segmenten": [
+            "JHN.1.14.s8"
+          ]
+        },
+        {
+          "conceptId": "genade",
+          "segmenten": [
+            "JHN.1.14.s10"
+          ]
+        },
+        {
+          "conceptId": "waarheid",
+          "segmenten": [
+            "JHN.1.14.s12"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "dd05e4da09698fd93baa49f28957d02e13316ff42cec2d3e3c2f62316987b11d",
+        "bronSha256": "15994070e1c6ea6877bacd52d08e7114905c6dfdae80078063ca9bc5e7f6297b",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 15,
+      "tekst": "Johannes getuigt van Hem. Hij heeft luid geroepen: Dit is Degene over Wie ik sprak. Hij komt na mij, maar staat boven mij, want Hij was er eerder dan ik.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 15,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.15.s1",
+          "tekst": "Johannes getuigt van Hem. Hij heeft luid geroepen: ",
+          "bronfrase": "Johannes getuigt van Hem, en heeft geroepen, zeggende: Deze was het, van Welken ik zeide: Die na mij komt, is voor mij geworden, want Hij was eer dan ik."
+        },
+        {
+          "id": "JHN.1.15.s2",
+          "tekst": "Dit is Degene over Wie ik sprak. Hij komt na mij, maar staat boven mij, want Hij was er eerder dan ik.",
+          "bronfrase": "Johannes getuigt van Hem, en heeft geroepen, zeggende: Deze was het, van Welken ik zeide: Die na mij komt, is voor mij geworden, want Hij was eer dan ik."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.15.q1",
+          "semanticId": "spraak.johannes.jhn1v15q1",
+          "startSegment": "JHN.1.15.s2",
+          "endSegment": "JHN.1.15.s2",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "a23de1d83d054b71fdf165cf8ba029fec9fa1af518c7c5e8dbe76da53e572172",
+        "bronSha256": "0f28f262c4975fdbf34b4d1a517cfd1dc505c1189e871faf678b0ea3f3ad6896",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 16,
+      "tekst": "Uit Zijn overvloed hebben wij allemaal ontvangen: de ene gave van onverdiende goedheid na de andere.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 16,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.16.s1",
+          "tekst": "Uit Zijn ",
+          "bronfrase": "En uit Zijn volheid hebben wij allen ontvangen, ook genade voor genade."
+        },
+        {
+          "id": "JHN.1.16.s2",
+          "tekst": "overvloed",
+          "bronfrase": "volheid"
+        },
+        {
+          "id": "JHN.1.16.s3",
+          "tekst": " hebben wij allemaal ontvangen: de ene gave van ",
+          "bronfrase": "En uit Zijn volheid hebben wij allen ontvangen, ook genade voor genade."
+        },
+        {
+          "id": "JHN.1.16.s4",
+          "tekst": "onverdiende goedheid",
+          "bronfrase": "genade"
+        },
+        {
+          "id": "JHN.1.16.s5",
+          "tekst": " na de andere.",
+          "bronfrase": "En uit Zijn volheid hebben wij allen ontvangen, ook genade voor genade."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "volheid",
+          "segmenten": [
+            "JHN.1.16.s2"
+          ]
+        },
+        {
+          "conceptId": "genade",
+          "segmenten": [
+            "JHN.1.16.s4"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "6ae7e4e46e3b6a495b705c70c306eb760bb0a6b851b354370536d2160ab617d2",
+        "bronSha256": "74d5331737378c030bf8bda1761c4b9c42b45d00f7c9fa5f1ff59e64e20bf349",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 17,
+      "tekst": "Want de wet is via Mozes gegeven. Door Jezus Christus zijn onverdiende goedheid en waarheid gekomen.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 17,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.17.s1",
+          "tekst": "Want de ",
+          "bronfrase": "Want de wet is door Mozes gegeven, de genade en de waarheid is door Jezus Christus geworden."
+        },
+        {
+          "id": "JHN.1.17.s2",
+          "tekst": "wet",
+          "bronfrase": "wet"
+        },
+        {
+          "id": "JHN.1.17.s3",
+          "tekst": " is via Mozes gegeven. Door Jezus Christus zijn ",
+          "bronfrase": "Want de wet is door Mozes gegeven, de genade en de waarheid is door Jezus Christus geworden."
+        },
+        {
+          "id": "JHN.1.17.s4",
+          "tekst": "onverdiende goedheid",
+          "bronfrase": "genade"
+        },
+        {
+          "id": "JHN.1.17.s5",
+          "tekst": " en ",
+          "bronfrase": "Want de wet is door Mozes gegeven, de genade en de waarheid is door Jezus Christus geworden."
+        },
+        {
+          "id": "JHN.1.17.s6",
+          "tekst": "waarheid",
+          "bronfrase": "waarheid"
+        },
+        {
+          "id": "JHN.1.17.s7",
+          "tekst": " gekomen.",
+          "bronfrase": "Want de wet is door Mozes gegeven, de genade en de waarheid is door Jezus Christus geworden."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "wet",
+          "segmenten": [
+            "JHN.1.17.s2"
+          ]
+        },
+        {
+          "conceptId": "genade",
+          "segmenten": [
+            "JHN.1.17.s4"
+          ]
+        },
+        {
+          "conceptId": "waarheid",
+          "segmenten": [
+            "JHN.1.17.s6"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ca976c7edeb2f3a56b85cdab466fb468998897f0ab371fce8c777f262e3b3233",
+        "bronSha256": "785bfd8b09c84f4975ab71c5be90816654de77ae9a69dcd90819c5db840d10df",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 18,
+      "tekst": "Niemand heeft God ooit gezien. De enige Zoon, Die heel dicht bij de Vader is, heeft ons laten zien wie God is.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 18,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.18.s1",
+          "tekst": "Niemand heeft God ooit gezien. De ",
+          "bronfrase": "Niemand heeft ooit God gezien; de eniggeboren Zoon, Die in den schoot des Vaders is, Die heeft Hem ons verklaard."
+        },
+        {
+          "id": "JHN.1.18.s2",
+          "tekst": "enige Zoon",
+          "bronfrase": "eniggeboren Zoon"
+        },
+        {
+          "id": "JHN.1.18.s3",
+          "tekst": ", Die heel dicht bij de Vader is, heeft ons laten zien wie God is.",
+          "bronfrase": "Niemand heeft ooit God gezien; de eniggeboren Zoon, Die in den schoot des Vaders is, Die heeft Hem ons verklaard."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "eniggeboren-zoon",
+          "segmenten": [
+            "JHN.1.18.s2"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "a9b0c1d57170560c527029e13d1813454d2ad30600e5fe217bc705fa0a25c54a",
+        "bronSha256": "6d135a31d47799efc4c72c3b8d45f47af53af1a0b46297ef97438e0f11cd5c57",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 19,
+      "tekst": "Dit is wat Johannes verklaarde toen de Joden priesters en Levieten uit Jeruzalem naar hem stuurden. Ze moesten hem vragen: Wie bent u?",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 19,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.19.s1",
+          "tekst": "Dit is wat Johannes verklaarde toen de Joden priesters en ",
+          "bronfrase": "En dit is de getuigenis van Johannes, toen de Joden enige priesters en Levieten afzonden van Jeruzalem, opdat zij hem zouden vragen: Wie zijt gij?"
+        },
+        {
+          "id": "JHN.1.19.s2",
+          "tekst": "Levieten",
+          "bronfrase": "Levieten"
+        },
+        {
+          "id": "JHN.1.19.s3",
+          "tekst": " uit Jeruzalem naar hem stuurden. Ze moesten hem vragen: ",
+          "bronfrase": "En dit is de getuigenis van Johannes, toen de Joden enige priesters en Levieten afzonden van Jeruzalem, opdat zij hem zouden vragen: Wie zijt gij?"
+        },
+        {
+          "id": "JHN.1.19.s4",
+          "tekst": "Wie bent u?",
+          "bronfrase": "En dit is de getuigenis van Johannes, toen de Joden enige priesters en Levieten afzonden van Jeruzalem, opdat zij hem zouden vragen: Wie zijt gij?"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "levieten",
+          "segmenten": [
+            "JHN.1.19.s2"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.19.q1",
+          "semanticId": "spraak.gezanten.jhn1v19q1",
+          "startSegment": "JHN.1.19.s4",
+          "endSegment": "JHN.1.19.s4",
+          "spreker": {
+            "id": "gezanten",
+            "type": "group",
+            "naam": "Priesters en Levieten"
+          },
+          "aangesprokene": [
+            "johannes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "40ed3ce8e9e933e8e6beb4f1967047497c55be090424949080a81d7330b69f35",
+        "bronSha256": "8aad9b185ff74000adcf19f4877362eae19f2e5ab5c020d8dfd764f2e67cf762",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 20,
+      "tekst": "Johannes kwam er openlijk voor uit. Hij ontkende het niet, maar zei duidelijk: Ik ben niet de Christus.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 20,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.20.s1",
+          "tekst": "Johannes kwam er openlijk voor uit. Hij ontkende het niet, maar zei duidelijk: ",
+          "bronfrase": "En hij beleed en loochende het niet; en beleed: Ik ben de Christus niet."
+        },
+        {
+          "id": "JHN.1.20.s2",
+          "tekst": "Ik ben niet de ",
+          "bronfrase": "En hij beleed en loochende het niet; en beleed: Ik ben de Christus niet."
+        },
+        {
+          "id": "JHN.1.20.s3",
+          "tekst": "Christus",
+          "bronfrase": "Christus"
+        },
+        {
+          "id": "JHN.1.20.s4",
+          "tekst": ".",
+          "bronfrase": "En hij beleed en loochende het niet; en beleed: Ik ben de Christus niet."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "messias",
+          "segmenten": [
+            "JHN.1.20.s3"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.20.q1",
+          "semanticId": "spraak.johannes.jhn1v20q1",
+          "startSegment": "JHN.1.20.s2",
+          "endSegment": "JHN.1.20.s4",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": [
+            "gezanten"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "0f970cc0e86753baee1889520183f52a932feb163a6c39d202ac9edbb927fa65",
+        "bronSha256": "1bea9834e07f435b5f0eccccca64f4a211e65f0b126d437ecb1dbc7e2388f75d",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 21,
+      "tekst": "Ze vroegen: Wie dan? Bent u Elia? Hij zei: Dat ben ik niet. Bent u de profeet? Hij antwoordde: Nee.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 21,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.21.s1",
+          "tekst": "Ze vroegen: ",
+          "bronfrase": "En zij vraagden hem: Wat dan? Zijt gij Elias? En hij zeide: Ik ben die niet. Zijt gij de profeet? En hij antwoordde: Neen."
+        },
+        {
+          "id": "JHN.1.21.s2",
+          "tekst": "Wie dan? Bent u Elia?",
+          "bronfrase": "En zij vraagden hem: Wat dan? Zijt gij Elias? En hij zeide: Ik ben die niet. Zijt gij de profeet? En hij antwoordde: Neen."
+        },
+        {
+          "id": "JHN.1.21.s3",
+          "tekst": " Hij zei: ",
+          "bronfrase": "En zij vraagden hem: Wat dan? Zijt gij Elias? En hij zeide: Ik ben die niet. Zijt gij de profeet? En hij antwoordde: Neen."
+        },
+        {
+          "id": "JHN.1.21.s4",
+          "tekst": "Dat ben ik niet.",
+          "bronfrase": "En zij vraagden hem: Wat dan? Zijt gij Elias? En hij zeide: Ik ben die niet. Zijt gij de profeet? En hij antwoordde: Neen."
+        },
+        {
+          "id": "JHN.1.21.s5",
+          "tekst": " ",
+          "bronfrase": "En zij vraagden hem: Wat dan? Zijt gij Elias? En hij zeide: Ik ben die niet. Zijt gij de profeet? En hij antwoordde: Neen."
+        },
+        {
+          "id": "JHN.1.21.s6",
+          "tekst": "Bent u de ",
+          "bronfrase": "En zij vraagden hem: Wat dan? Zijt gij Elias? En hij zeide: Ik ben die niet. Zijt gij de profeet? En hij antwoordde: Neen."
+        },
+        {
+          "id": "JHN.1.21.s7",
+          "tekst": "profeet",
+          "bronfrase": "de profeet"
+        },
+        {
+          "id": "JHN.1.21.s8",
+          "tekst": "?",
+          "bronfrase": "En zij vraagden hem: Wat dan? Zijt gij Elias? En hij zeide: Ik ben die niet. Zijt gij de profeet? En hij antwoordde: Neen."
+        },
+        {
+          "id": "JHN.1.21.s9",
+          "tekst": " Hij antwoordde: ",
+          "bronfrase": "En zij vraagden hem: Wat dan? Zijt gij Elias? En hij zeide: Ik ben die niet. Zijt gij de profeet? En hij antwoordde: Neen."
+        },
+        {
+          "id": "JHN.1.21.s10",
+          "tekst": "Nee.",
+          "bronfrase": "En zij vraagden hem: Wat dan? Zijt gij Elias? En hij zeide: Ik ben die niet. Zijt gij de profeet? En hij antwoordde: Neen."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "de-profeet",
+          "segmenten": [
+            "JHN.1.21.s7"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.21.q1",
+          "semanticId": "spraak.gezanten.jhn1v21q1",
+          "startSegment": "JHN.1.21.s2",
+          "endSegment": "JHN.1.21.s2",
+          "spreker": {
+            "id": "gezanten",
+            "type": "group",
+            "naam": "Priesters en Levieten"
+          },
+          "aangesprokene": [
+            "johannes"
+          ]
+        },
+        {
+          "id": "JHN.1.21.q2",
+          "semanticId": "spraak.johannes.jhn1v21q2",
+          "startSegment": "JHN.1.21.s4",
+          "endSegment": "JHN.1.21.s4",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": [
+            "gezanten"
+          ]
+        },
+        {
+          "id": "JHN.1.21.q3",
+          "semanticId": "spraak.gezanten.jhn1v21q3",
+          "startSegment": "JHN.1.21.s6",
+          "endSegment": "JHN.1.21.s8",
+          "spreker": {
+            "id": "gezanten",
+            "type": "group",
+            "naam": "Priesters en Levieten"
+          },
+          "aangesprokene": [
+            "johannes"
+          ]
+        },
+        {
+          "id": "JHN.1.21.q4",
+          "semanticId": "spraak.johannes.jhn1v21q4",
+          "startSegment": "JHN.1.21.s10",
+          "endSegment": "JHN.1.21.s10",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": [
+            "gezanten"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "a42a91c8e58bebb02afadf514d3b6f74c5a36e54bf697d88578c0607942348fa",
+        "bronSha256": "b6101ed37695532ddc8c3f159d69a0eb635c8a1d1d758ab1fd124b18d57a6da1",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 22,
+      "tekst": "Toen zeiden ze tegen hem: Wie bent u dan? We moeten antwoord geven aan de mensen die ons gestuurd hebben. Wat zegt u over uzelf?",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 22,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.22.s1",
+          "tekst": "Toen zeiden ze tegen hem: ",
+          "bronfrase": "Zij zeiden dan tot hem: Wie zijt gij? opdat wij antwoord geven mogen dengenen, die ons gezonden hebben; wat zegt gij van uzelven?"
+        },
+        {
+          "id": "JHN.1.22.s2",
+          "tekst": "Wie bent u dan? We moeten antwoord geven aan de mensen die ons gestuurd hebben. Wat zegt u over uzelf?",
+          "bronfrase": "Zij zeiden dan tot hem: Wie zijt gij? opdat wij antwoord geven mogen dengenen, die ons gezonden hebben; wat zegt gij van uzelven?"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.22.q1",
+          "semanticId": "spraak.gezanten.jhn1v22q1",
+          "startSegment": "JHN.1.22.s2",
+          "endSegment": "JHN.1.22.s2",
+          "spreker": {
+            "id": "gezanten",
+            "type": "group",
+            "naam": "Priesters en Levieten"
+          },
+          "aangesprokene": [
+            "johannes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "fcd844120a33f47faef43854b6f8d6992c79747859f21c90a565d47b095c8048",
+        "bronSha256": "35c4cb9cf8e8510fe07c17bd026983bf9a0885c258d8363c9c2a7378577c3e73",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 23,
+      "tekst": "Hij zei: Ik ben de stem van iemand die in de woestijn roept: Maak de weg voor de Heere recht. Dat heeft de profeet Jesaja gezegd.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 23,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.23.s1",
+          "tekst": "Hij zei: ",
+          "bronfrase": "Hij zeide: Ik ben de stem des roependen in de woestijn: Maakt den weg des Heeren recht, gelijk Jesaja, de profeet, gesproken heeft."
+        },
+        {
+          "id": "JHN.1.23.s2",
+          "tekst": "Ik ben de stem van iemand die in de woestijn roept: Maak de ",
+          "bronfrase": "Hij zeide: Ik ben de stem des roependen in de woestijn: Maakt den weg des Heeren recht, gelijk Jesaja, de profeet, gesproken heeft."
+        },
+        {
+          "id": "JHN.1.23.s3",
+          "tekst": "weg voor de Heere recht",
+          "bronfrase": "weg des Heeren recht"
+        },
+        {
+          "id": "JHN.1.23.s4",
+          "tekst": ". Dat heeft de profeet Jesaja gezegd.",
+          "bronfrase": "Hij zeide: Ik ben de stem des roependen in de woestijn: Maakt den weg des Heeren recht, gelijk Jesaja, de profeet, gesproken heeft."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "weg-van-de-heere",
+          "segmenten": [
+            "JHN.1.23.s3"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.23.q1",
+          "semanticId": "spraak.johannes.jhn1v23q1",
+          "startSegment": "JHN.1.23.s2",
+          "endSegment": "JHN.1.23.s4",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": [
+            "gezanten"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "7a5346c7248521dbd3a6cdfe3fced69dda7a4665d6a70ad48429aef90f17a7a2",
+        "bronSha256": "da3de242a8563a137694e663e338bd990307d30b20fc9c570f3a8490859a1360",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 24,
+      "tekst": "De gezanten hoorden bij de Farizeeën.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 24,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.24.s1",
+          "tekst": "De gezanten hoorden bij de ",
+          "bronfrase": "En de afgezondenen waren uit de Farizeën;"
+        },
+        {
+          "id": "JHN.1.24.s2",
+          "tekst": "Farizeeën",
+          "bronfrase": "Farizeën"
+        },
+        {
+          "id": "JHN.1.24.s3",
+          "tekst": ".",
+          "bronfrase": "En de afgezondenen waren uit de Farizeën;"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "farizeeen",
+          "segmenten": [
+            "JHN.1.24.s2"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "f5b84052d26e4954a804ee50c5b7756401d6fda7b30faf879e319f3bdbaadbeb",
+        "bronSha256": "4a749ee7cc3cf6ea1e85efc02fc714309691449434981c6fa54224e6ecf91e64",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 25,
+      "tekst": "Ze vroegen hem: Waarom doopt u dan, als u niet de Christus bent, niet Elia en ook niet de profeet?",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 25,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.25.s1",
+          "tekst": "Ze vroegen hem: ",
+          "bronfrase": "En zij vraagden hem en spraken tot hem: Waarom doopt gij dan, zo gij de Christus niet zijt, noch Elias, noch de profeet?"
+        },
+        {
+          "id": "JHN.1.25.s2",
+          "tekst": "Waarom ",
+          "bronfrase": "En zij vraagden hem en spraken tot hem: Waarom doopt gij dan, zo gij de Christus niet zijt, noch Elias, noch de profeet?"
+        },
+        {
+          "id": "JHN.1.25.s3",
+          "tekst": "doopt",
+          "bronfrase": "doopt"
+        },
+        {
+          "id": "JHN.1.25.s4",
+          "tekst": " u dan, als u niet de Christus bent, niet Elia en ook niet de profeet?",
+          "bronfrase": "En zij vraagden hem en spraken tot hem: Waarom doopt gij dan, zo gij de Christus niet zijt, noch Elias, noch de profeet?"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "doop",
+          "segmenten": [
+            "JHN.1.25.s3"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.25.q1",
+          "semanticId": "spraak.gezanten.jhn1v25q1",
+          "startSegment": "JHN.1.25.s2",
+          "endSegment": "JHN.1.25.s4",
+          "spreker": {
+            "id": "gezanten",
+            "type": "group",
+            "naam": "Priesters en Levieten"
+          },
+          "aangesprokene": [
+            "johannes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "6b6a7518daf960c8399af311da0b1d82d928450691b0e7b93d10b1e2ddaea78c",
+        "bronSha256": "d4a7b837b138c178af0efd26693fdd8aea768b58c376fcff6a76eaba22440617",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 26,
+      "tekst": "Johannes antwoordde: Ik doop met water. Maar midden onder jullie staat Iemand Die jullie niet kennen.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 26,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.26.s1",
+          "tekst": "Johannes antwoordde: ",
+          "bronfrase": "Johannes antwoordde hun, zeggende: Ik doop met water, maar Hij staat midden onder ulieden, Dien gij niet kent;"
+        },
+        {
+          "id": "JHN.1.26.s2",
+          "tekst": "Ik ",
+          "bronfrase": "Johannes antwoordde hun, zeggende: Ik doop met water, maar Hij staat midden onder ulieden, Dien gij niet kent;"
+        },
+        {
+          "id": "JHN.1.26.s3",
+          "tekst": "doop",
+          "bronfrase": "doop"
+        },
+        {
+          "id": "JHN.1.26.s4",
+          "tekst": " met water. Maar midden onder jullie staat Iemand Die jullie niet kennen.",
+          "bronfrase": "Johannes antwoordde hun, zeggende: Ik doop met water, maar Hij staat midden onder ulieden, Dien gij niet kent;"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "doop",
+          "segmenten": [
+            "JHN.1.26.s3"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.26.q1",
+          "semanticId": "spraak.johannes.jhn1v26q1",
+          "startSegment": "JHN.1.26.s2",
+          "endSegment": "JHN.1.26.s4",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": [
+            "gezanten"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "3766fe6a815dbcc3e3c5a9932fb62364d18f7a1b9dc43227a54d043577bfa61e",
+        "bronSha256": "98aa91a086a0034ebc06f4adaf1dc061ec1530a1f76af442fda0b612ee82d35b",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 27,
+      "tekst": "Hij komt na mij, maar staat boven mij. Ik ben het niet eens waard om de riem van Zijn sandaal los te maken.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 27,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.27.s1",
+          "tekst": "Hij komt na mij, maar staat boven mij. Ik ben het niet eens waard om de riem van Zijn sandaal los te maken.",
+          "bronfrase": "Dezelve is het, Die na mij komt, Welke voor mij geworden is, Wien ik niet waardig ben, dat ik Zijn schoenriem zou ontbinden."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.27.q1",
+          "semanticId": "spraak.johannes.jhn1v27q1",
+          "startSegment": "JHN.1.27.s1",
+          "endSegment": "JHN.1.27.s1",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": [
+            "gezanten"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "325fe8b369a44314fc287885e945abfdb536666187c64938ac89a8605a6d05ba",
+        "bronSha256": "036e499e761e9c81e632e4820f8e99055a846d6356c10282b6ca2a8cc871c3e0",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 28,
+      "tekst": "Dit gebeurde in Bethabara, aan de overkant van de Jordaan, waar Johannes doopte.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 28,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.28.s1",
+          "tekst": "Dit gebeurde in Bethabara, aan de overkant van de Jordaan, waar Johannes doopte.",
+          "bronfrase": "Deze dingen zijn geschied in Bethabara, over de Jordaan, waar Johannes was dopende."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "7b3ffc81ada107e0158bbf652b844cd9f7bc5fd16fc14960f234d3b1a5a864e3",
+        "bronSha256": "23efeec2325f6b9af263b2c7856a167719ae89d537836794a2ab1144226bf266",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 29,
+      "tekst": "De volgende dag zag Johannes Jezus naar zich toe komen. Hij zei: Kijk, het Lam van God, Dat de zonde van de wereld wegneemt!",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 29,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.29.s1",
+          "tekst": "De volgende dag zag Johannes Jezus naar zich toe komen. Hij zei: ",
+          "bronfrase": "Des anderen daags zag Johannes Jezus tot zich komende, en zeide: Zie het Lam Gods, Dat de zonde der wereld wegneemt!"
+        },
+        {
+          "id": "JHN.1.29.s2",
+          "tekst": "Kijk, het ",
+          "bronfrase": "Des anderen daags zag Johannes Jezus tot zich komende, en zeide: Zie het Lam Gods, Dat de zonde der wereld wegneemt!"
+        },
+        {
+          "id": "JHN.1.29.s3",
+          "tekst": "Lam van God",
+          "bronfrase": "Lam Gods"
+        },
+        {
+          "id": "JHN.1.29.s4",
+          "tekst": ", Dat de ",
+          "bronfrase": "Des anderen daags zag Johannes Jezus tot zich komende, en zeide: Zie het Lam Gods, Dat de zonde der wereld wegneemt!"
+        },
+        {
+          "id": "JHN.1.29.s5",
+          "tekst": "zonde van de wereld",
+          "bronfrase": "zonde der wereld"
+        },
+        {
+          "id": "JHN.1.29.s6",
+          "tekst": " wegneemt!",
+          "bronfrase": "Des anderen daags zag Johannes Jezus tot zich komende, en zeide: Zie het Lam Gods, Dat de zonde der wereld wegneemt!"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "lam-van-god",
+          "segmenten": [
+            "JHN.1.29.s3"
+          ]
+        },
+        {
+          "conceptId": "zonde",
+          "segmenten": [
+            "JHN.1.29.s5"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.29.q1",
+          "semanticId": "spraak.johannes.jhn1v29q1",
+          "startSegment": "JHN.1.29.s2",
+          "endSegment": "JHN.1.29.s6",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ae23d0d06a263d13cf29cdc18999f88241ed0479e3bf3c949df20420c53fc4a6",
+        "bronSha256": "d4a40a431606dccca8219b044e2141bd159757cef1919c69961078c484337cb9",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 30,
+      "tekst": "Hij is Degene over Wie ik zei: Na mij komt een Man Die boven mij staat, want Hij was er eerder dan ik.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 30,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.30.s1",
+          "tekst": "Hij is Degene over Wie ik zei: Na mij komt een Man Die boven mij staat, want Hij was er eerder dan ik.",
+          "bronfrase": "Deze is het, van Welken ik gezegd heb: Na mij komt een Man, Die voor mij geworden is, want Hij was eer dan ik."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.30.q1",
+          "semanticId": "spraak.johannes.jhn1v30q1",
+          "startSegment": "JHN.1.30.s1",
+          "endSegment": "JHN.1.30.s1",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "d5351ee0bed6c4b9f4f4c3705202322849972281bff049789e513deaec487640",
+        "bronSha256": "3eaafa3a8c023f6c52b9a48be7f87cbf4187423ffa97bf8a356fec9b0d35af87",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 31,
+      "tekst": "Ik kende Hem niet. Maar ik ben met water komen dopen om Hem aan Israël bekend te maken.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 31,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.31.s1",
+          "tekst": "Ik kende Hem niet. Maar ik ben met water komen dopen om Hem aan Israël bekend te maken.",
+          "bronfrase": "En ik kende Hem niet; maar opdat Hij aan Israël zou geopenbaard worden, daarom ben ik gekomen, dopende met het water."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.31.q1",
+          "semanticId": "spraak.johannes.jhn1v31q1",
+          "startSegment": "JHN.1.31.s1",
+          "endSegment": "JHN.1.31.s1",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "7589aa755648c2288bf49a90e72a613005f6b72bfa5a20d950c1c688080c3d11",
+        "bronSha256": "9fe765a90f6348801ad026f2d96b0e12bbbe9f5b802fe28194cabf484ff70bf5",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 32,
+      "tekst": "Johannes getuigde: Ik heb de Geest als een duif uit de hemel zien neerdalen. Hij bleef op Jezus.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 32,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.32.s1",
+          "tekst": "Johannes getuigde: ",
+          "bronfrase": "En Johannes getuigde, zeggende: Ik heb den Geest zien nederdalen uit den hemel, gelijk een duif, en bleef op Hem."
+        },
+        {
+          "id": "JHN.1.32.s2",
+          "tekst": "Ik heb de ",
+          "bronfrase": "En Johannes getuigde, zeggende: Ik heb den Geest zien nederdalen uit den hemel, gelijk een duif, en bleef op Hem."
+        },
+        {
+          "id": "JHN.1.32.s3",
+          "tekst": "Geest",
+          "bronfrase": "den Geest"
+        },
+        {
+          "id": "JHN.1.32.s4",
+          "tekst": " als een duif uit de hemel zien neerdalen. Hij bleef op Jezus.",
+          "bronfrase": "En Johannes getuigde, zeggende: Ik heb den Geest zien nederdalen uit den hemel, gelijk een duif, en bleef op Hem."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "heilige-geest",
+          "segmenten": [
+            "JHN.1.32.s3"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.32.q1",
+          "semanticId": "spraak.johannes.jhn1v32q1",
+          "startSegment": "JHN.1.32.s2",
+          "endSegment": "JHN.1.32.s4",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "d5b2f7f6315d010f890e2a5576cc2c6cb7e5b04a39a649844face51422fa4739",
+        "bronSha256": "fce8ca170c954d33c349ad16f1dad659e8ca72699f7ee68bb2ebb8a31937b4e8",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 33,
+      "tekst": "Ik kende Hem niet. Maar God had mij gestuurd om met water te dopen. Hij had tegen mij gezegd: Je zult de Geest op Iemand zien neerdalen en op Hem zien blijven. Hij is het Die doopt met de Heilige Geest.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 33,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.33.s1",
+          "tekst": "Ik kende Hem niet. Maar God had mij gestuurd om met water te dopen. Hij had tegen mij gezegd: ",
+          "bronfrase": "En ik kende Hem niet; maar Die mij gezonden heeft, om te dopen met water, Die had mij gezegd: Op Welken gij den Geest zult zien nederdalen, en op Hem blijven, Deze is het, Die met den Heiligen Geest doopt."
+        },
+        {
+          "id": "JHN.1.33.s2",
+          "tekst": "Je zult de Geest op Iemand zien neerdalen en op Hem zien blijven. Hij is het Die ",
+          "bronfrase": "En ik kende Hem niet; maar Die mij gezonden heeft, om te dopen met water, Die had mij gezegd: Op Welken gij den Geest zult zien nederdalen, en op Hem blijven, Deze is het, Die met den Heiligen Geest doopt."
+        },
+        {
+          "id": "JHN.1.33.s3",
+          "tekst": "doopt met de Heilige Geest",
+          "bronfrase": "met den Heiligen Geest doopt"
+        },
+        {
+          "id": "JHN.1.33.s4",
+          "tekst": ".",
+          "bronfrase": "En ik kende Hem niet; maar Die mij gezonden heeft, om te dopen met water, Die had mij gezegd: Op Welken gij den Geest zult zien nederdalen, en op Hem blijven, Deze is het, Die met den Heiligen Geest doopt."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "doop-met-de-geest",
+          "segmenten": [
+            "JHN.1.33.s3"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.33.q1",
+          "semanticId": "spraak.johannes.jhn1v33q1",
+          "startSegment": "JHN.1.33.s1",
+          "endSegment": "JHN.1.33.s4",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": []
+        },
+        {
+          "id": "JHN.1.33.q2",
+          "semanticId": "spraak.god.jhn1v33q2",
+          "startSegment": "JHN.1.33.s2",
+          "endSegment": "JHN.1.33.s4",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "God"
+          },
+          "aangesprokene": [
+            "johannes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "472ba6b9ab2aa044b77e1b30506ea945a9f76d92e55b2d34ec557b2b25cd616e",
+        "bronSha256": "557b66e16c209d71c5a6fe7c2aba3be2808d69fef49e6f96cad3c0eaac148280",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 34,
+      "tekst": "Ik heb het gezien en heb getuigd: Hij is de Zoon van God.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 34,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.34.s1",
+          "tekst": "Ik heb het gezien en heb getuigd: Hij is de ",
+          "bronfrase": "En ik heb gezien, en heb getuigd, dat Deze de Zoon van God is."
+        },
+        {
+          "id": "JHN.1.34.s2",
+          "tekst": "Zoon van God",
+          "bronfrase": "Zoon van God"
+        },
+        {
+          "id": "JHN.1.34.s3",
+          "tekst": ".",
+          "bronfrase": "En ik heb gezien, en heb getuigd, dat Deze de Zoon van God is."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "zoon-van-god",
+          "segmenten": [
+            "JHN.1.34.s2"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.34.q1",
+          "semanticId": "spraak.johannes.jhn1v34q1",
+          "startSegment": "JHN.1.34.s1",
+          "endSegment": "JHN.1.34.s3",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "e94503b9172d9968d04fca229b00441ef138a72aee20357b4ec03223a1457074",
+        "bronSha256": "195c18b983ce1443b40951249a345fdf2cc995c060229220175914c75f66493f",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 35,
+      "tekst": "De volgende dag stond Johannes daar weer, met twee van zijn leerlingen.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 35,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.35.s1",
+          "tekst": "De volgende dag stond Johannes daar weer, met twee van zijn leerlingen.",
+          "bronfrase": "Des anderen daags wederom stond Johannes, en twee uit zijn discipelen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "4bee6a5154cd9263fc98616ee19fa7e67dbddd196e6fc1a347c91ab489c354b4",
+        "bronSha256": "7ac964c4124ac0cd01ba09856016fee3d8d2f14a4271379a631b03ca4b212921",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 36,
+      "tekst": "Hij zag Jezus voorbijlopen en zei: Kijk, het Lam van God!",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 36,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.36.s1",
+          "tekst": "Hij zag Jezus voorbijlopen en zei: ",
+          "bronfrase": "En ziende op Jezus, daar wandelende, zeide hij: Ziet, het Lam Gods!"
+        },
+        {
+          "id": "JHN.1.36.s2",
+          "tekst": "Kijk, het ",
+          "bronfrase": "En ziende op Jezus, daar wandelende, zeide hij: Ziet, het Lam Gods!"
+        },
+        {
+          "id": "JHN.1.36.s3",
+          "tekst": "Lam van God",
+          "bronfrase": "Lam Gods"
+        },
+        {
+          "id": "JHN.1.36.s4",
+          "tekst": "!",
+          "bronfrase": "En ziende op Jezus, daar wandelende, zeide hij: Ziet, het Lam Gods!"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "lam-van-god",
+          "segmenten": [
+            "JHN.1.36.s3"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.36.q1",
+          "semanticId": "spraak.johannes.jhn1v36q1",
+          "startSegment": "JHN.1.36.s2",
+          "endSegment": "JHN.1.36.s4",
+          "spreker": {
+            "id": "johannes",
+            "type": "human",
+            "naam": "Johannes"
+          },
+          "aangesprokene": [
+            "twee-leerlingen"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "9869b64f327446c36f63d9b990950b9f94b6f7e9886bd16d47269c195ee351e2",
+        "bronSha256": "6b5b97503d91f9f4006ca235d2686ba5830e34d63f383d292d6cd57fe81fcce9",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 37,
+      "tekst": "De twee leerlingen hoorden wat hij zei en gingen achter Jezus aan.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 37,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.37.s1",
+          "tekst": "De twee leerlingen hoorden wat hij zei en gingen achter Jezus aan.",
+          "bronfrase": "En die twee discipelen hoorden hem dat spreken, en zij volgden Jezus."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "cf175bcc74a4e2fc178c19bcfb34e5bb67206d353ba4dc3ac4b64f7cfd11613f",
+        "bronSha256": "5f6a579126b57395950208632052356ba1cb370a0486d09efdf1d064b27b4c14",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 38,
+      "tekst": "Jezus draaide Zich om en zag dat ze Hem volgden. Hij vroeg hun:",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 38,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.38.s1",
+          "tekst": "Jezus draaide Zich om en zag dat ze Hem volgden. Hij vroeg hun:",
+          "bronfrase": "En Jezus Zich omkerende, en ziende hen volgen, zeide tot hen:"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "a47d4f8baa42178064216560124ad7c7ac36fa6479285f81b7385ccb6d3ddb78",
+        "bronSha256": "5040a3afd8daaad64c644ac78d3a659f0b1b80733566fdb186871ea34f432ec6",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 39,
+      "tekst": "Wat zoeken jullie? Ze zeiden tegen Hem: Rabbi, waar verblijft U? Rabbi betekent meester.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 39,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.39.s1",
+          "tekst": "Wat zoeken jullie?",
+          "bronfrase": "Wat zoekt gij? En zij zeiden tot Hem: Rabbi! (hetwelk is te zeggen, overgezet zijnde, Meester) waar woont Gij?"
+        },
+        {
+          "id": "JHN.1.39.s2",
+          "tekst": " Ze zeiden tegen Hem: ",
+          "bronfrase": "Wat zoekt gij? En zij zeiden tot Hem: Rabbi! (hetwelk is te zeggen, overgezet zijnde, Meester) waar woont Gij?"
+        },
+        {
+          "id": "JHN.1.39.s3",
+          "tekst": "Rabbi",
+          "bronfrase": "Rabbi"
+        },
+        {
+          "id": "JHN.1.39.s4",
+          "tekst": ", waar verblijft U?",
+          "bronfrase": "Wat zoekt gij? En zij zeiden tot Hem: Rabbi! (hetwelk is te zeggen, overgezet zijnde, Meester) waar woont Gij?"
+        },
+        {
+          "id": "JHN.1.39.s5",
+          "tekst": " Rabbi betekent meester.",
+          "bronfrase": "Wat zoekt gij? En zij zeiden tot Hem: Rabbi! (hetwelk is te zeggen, overgezet zijnde, Meester) waar woont Gij?"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "rabbi",
+          "segmenten": [
+            "JHN.1.39.s3"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.39.q1",
+          "semanticId": "spraak.jezus.jhn1v39q1",
+          "startSegment": "JHN.1.39.s1",
+          "endSegment": "JHN.1.39.s1",
+          "spreker": {
+            "id": "jezus",
+            "type": "god",
+            "naam": "Jezus"
+          },
+          "aangesprokene": [
+            "twee-leerlingen"
+          ]
+        },
+        {
+          "id": "JHN.1.39.q2",
+          "semanticId": "spraak.tweeleerlingen.jhn1v39q2",
+          "startSegment": "JHN.1.39.s3",
+          "endSegment": "JHN.1.39.s4",
+          "spreker": {
+            "id": "twee-leerlingen",
+            "type": "group",
+            "naam": "De twee leerlingen"
+          },
+          "aangesprokene": [
+            "jezus"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "120b52eb7bf4fc27a7b70a348f66f7e240c45a25d1d7eb5fda19bf38c89a2ddc",
+        "bronSha256": "065c01ef0cd19aa96f606fc7117fcde72eb73f31fd229b1a8a16f8beb8a2456c",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 40,
+      "tekst": "Hij zei tegen hen: Kom mee, dan zien jullie het. Ze gingen mee en zagen waar Hij verbleef. Ze bleven die dag bij Hem. Het was ongeveer het tiende uur.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 40,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.40.s1",
+          "tekst": "Hij zei tegen hen: ",
+          "bronfrase": "Hij zeide tot hen: Komt en ziet! Zij kwamen en zagen, waar Hij woonde, en bleven dien dag bij Hem. En het was omtrent de tiende ure."
+        },
+        {
+          "id": "JHN.1.40.s2",
+          "tekst": "Kom mee, dan zien jullie het.",
+          "bronfrase": "Hij zeide tot hen: Komt en ziet! Zij kwamen en zagen, waar Hij woonde, en bleven dien dag bij Hem. En het was omtrent de tiende ure."
+        },
+        {
+          "id": "JHN.1.40.s3",
+          "tekst": " Ze gingen mee en zagen waar Hij verbleef. Ze bleven die dag bij Hem. Het was ongeveer het ",
+          "bronfrase": "Hij zeide tot hen: Komt en ziet! Zij kwamen en zagen, waar Hij woonde, en bleven dien dag bij Hem. En het was omtrent de tiende ure."
+        },
+        {
+          "id": "JHN.1.40.s4",
+          "tekst": "tiende uur",
+          "bronfrase": "tiende ure"
+        },
+        {
+          "id": "JHN.1.40.s5",
+          "tekst": ".",
+          "bronfrase": "Hij zeide tot hen: Komt en ziet! Zij kwamen en zagen, waar Hij woonde, en bleven dien dag bij Hem. En het was omtrent de tiende ure."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "tiende-uur",
+          "segmenten": [
+            "JHN.1.40.s4"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.40.q1",
+          "semanticId": "spraak.jezus.jhn1v40q1",
+          "startSegment": "JHN.1.40.s2",
+          "endSegment": "JHN.1.40.s2",
+          "spreker": {
+            "id": "jezus",
+            "type": "god",
+            "naam": "Jezus"
+          },
+          "aangesprokene": [
+            "twee-leerlingen"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "a50c2d2dc4f6bf2a316c2ae55d005c144dd19ec1bd0246389f4a5c14dd11c21e",
+        "bronSha256": "9f118af7a801b4c58d793720cd0314062b694a6d13bcf94a83805b70e5a4ddfb",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 41,
+      "tekst": "Een van de twee was Andreas, de broer van Simon Petrus. Hij had Johannes horen spreken en was Jezus gevolgd.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 41,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.41.s1",
+          "tekst": "Een van de twee was Andreas, de broer van Simon Petrus. Hij had Johannes horen spreken en was Jezus gevolgd.",
+          "bronfrase": "Andreas, de broeder van Simon Petrus, was een van de twee, die het van Johannes gehoord hadden, en Hem gevolgd waren."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "24dbb0d588ce7a2405408fbac53efead899256512b72546daccc126d38183fea",
+        "bronSha256": "aed4c21146079995ef7b3ce190e5ca9bdf91bc706d8f719134b685fe0a7767a6",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 42,
+      "tekst": "Andreas vond eerst zijn broer Simon en zei tegen hem: We hebben de Messias gevonden! Messias betekent Christus.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 42,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.42.s1",
+          "tekst": "Andreas vond eerst zijn broer Simon en zei tegen hem: ",
+          "bronfrase": "Deze vond eerst zijn broeder Simon, en zeide tot hem: Wij hebben gevonden den Messias, hetwelk is, overgezet zijnde, de Christus."
+        },
+        {
+          "id": "JHN.1.42.s2",
+          "tekst": "We hebben de ",
+          "bronfrase": "Deze vond eerst zijn broeder Simon, en zeide tot hem: Wij hebben gevonden den Messias, hetwelk is, overgezet zijnde, de Christus."
+        },
+        {
+          "id": "JHN.1.42.s3",
+          "tekst": "Messias",
+          "bronfrase": "Messias"
+        },
+        {
+          "id": "JHN.1.42.s4",
+          "tekst": " gevonden!",
+          "bronfrase": "Deze vond eerst zijn broeder Simon, en zeide tot hem: Wij hebben gevonden den Messias, hetwelk is, overgezet zijnde, de Christus."
+        },
+        {
+          "id": "JHN.1.42.s5",
+          "tekst": " Messias betekent Christus.",
+          "bronfrase": "Deze vond eerst zijn broeder Simon, en zeide tot hem: Wij hebben gevonden den Messias, hetwelk is, overgezet zijnde, de Christus."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "messias",
+          "segmenten": [
+            "JHN.1.42.s3"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.42.q1",
+          "semanticId": "spraak.andreas.jhn1v42q1",
+          "startSegment": "JHN.1.42.s2",
+          "endSegment": "JHN.1.42.s4",
+          "spreker": {
+            "id": "andreas",
+            "type": "human",
+            "naam": "Andreas"
+          },
+          "aangesprokene": [
+            "simon"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "cb92082477ce42257fc7ccb73faae053f28fb0969d84b7fe4cf564e451392c20",
+        "bronSha256": "c9761f559185f4db7f4a98c551761b631e00a0cfa0f42444d3a796375909c2d2",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 43,
+      "tekst": "Hij bracht Simon naar Jezus. Jezus keek hem aan en zei: Jij bent Simon, de zoon van Jonas. Je zult Cefas heten. Cefas betekent Petrus.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 43,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.43.s1",
+          "tekst": "Hij bracht Simon naar Jezus. Jezus keek hem aan en zei: ",
+          "bronfrase": "En hij leidde hem tot Jezus. En Jezus, hem aanziende, zeide: Gij zijt Simon, de zoon van Jonas; gij zult genaamd worden Cefas, hetwelk overgezet wordt Petrus."
+        },
+        {
+          "id": "JHN.1.43.s2",
+          "tekst": "Jij bent Simon, de zoon van Jonas. Je zult ",
+          "bronfrase": "En hij leidde hem tot Jezus. En Jezus, hem aanziende, zeide: Gij zijt Simon, de zoon van Jonas; gij zult genaamd worden Cefas, hetwelk overgezet wordt Petrus."
+        },
+        {
+          "id": "JHN.1.43.s3",
+          "tekst": "Cefas",
+          "bronfrase": "Cefas"
+        },
+        {
+          "id": "JHN.1.43.s4",
+          "tekst": " heten.",
+          "bronfrase": "En hij leidde hem tot Jezus. En Jezus, hem aanziende, zeide: Gij zijt Simon, de zoon van Jonas; gij zult genaamd worden Cefas, hetwelk overgezet wordt Petrus."
+        },
+        {
+          "id": "JHN.1.43.s5",
+          "tekst": " Cefas betekent Petrus.",
+          "bronfrase": "En hij leidde hem tot Jezus. En Jezus, hem aanziende, zeide: Gij zijt Simon, de zoon van Jonas; gij zult genaamd worden Cefas, hetwelk overgezet wordt Petrus."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "cefas",
+          "segmenten": [
+            "JHN.1.43.s3"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.43.q1",
+          "semanticId": "spraak.jezus.jhn1v43q1",
+          "startSegment": "JHN.1.43.s2",
+          "endSegment": "JHN.1.43.s4",
+          "spreker": {
+            "id": "jezus",
+            "type": "god",
+            "naam": "Jezus"
+          },
+          "aangesprokene": [
+            "simon"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "3106ef994614d5926c84429924b231c6453a854a150931da92c19fea0835652b",
+        "bronSha256": "fb5d4216dad5ac2c6ff61ca2cc1fdc9e51375cb1098febaad4431058dc9d46fa",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 44,
+      "tekst": "De volgende dag wilde Jezus naar Galilea vertrekken. Hij vond Filippus en zei tegen hem: Volg Mij.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 44,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.44.s1",
+          "tekst": "De volgende dag wilde Jezus naar Galilea vertrekken. Hij vond Filippus en zei tegen hem: ",
+          "bronfrase": "Des anderen daags wilde Jezus heengaan naar Galilea, en vond Filippus, en zeide tot hem: Volg Mij."
+        },
+        {
+          "id": "JHN.1.44.s2",
+          "tekst": "Volg Mij.",
+          "bronfrase": "Des anderen daags wilde Jezus heengaan naar Galilea, en vond Filippus, en zeide tot hem: Volg Mij."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.44.q1",
+          "semanticId": "spraak.jezus.jhn1v44q1",
+          "startSegment": "JHN.1.44.s2",
+          "endSegment": "JHN.1.44.s2",
+          "spreker": {
+            "id": "jezus",
+            "type": "god",
+            "naam": "Jezus"
+          },
+          "aangesprokene": [
+            "filippus"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "8f95326b3ca05c161e3520f3082dd39e8d6460e9295d6bf8f12ca822d6abdccf",
+        "bronSha256": "ee33cda5ddc7c57cdf31a628dbcd2f12a2016be62b77e2570035875238ecc5fe",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 45,
+      "tekst": "Filippus kwam uit Bethsaïda, de stad waar ook Andreas en Petrus vandaan kwamen.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 45,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.45.s1",
+          "tekst": "Filippus kwam uit Bethsaïda, de stad waar ook Andreas en Petrus vandaan kwamen.",
+          "bronfrase": "Filippus nu was van Bethsaida, uit de stad van Andreas en Petrus."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "0ac1e3a4f8fe8f3dfa5694a24096d994f21f3aed3c2fbc6a2e2d922f23a9725f",
+        "bronSha256": "41e6fc3d7f366c0c6c4e6fea4f8f25611168a1772a7281e37b3da2de369b8f12",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 46,
+      "tekst": "Filippus vond Nathanaël en zei tegen hem: We hebben Hem gevonden! Mozes schreef over Hem in de wet, en ook de profeten schreven over Hem. Het is Jezus uit Nazareth, de zoon van Jozef.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 46,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.46.s1",
+          "tekst": "Filippus vond Nathanaël en zei tegen hem: ",
+          "bronfrase": "Filippus vond Nathanaël en zeide tot hem: Wij hebben Dien gevonden, van Welken Mozes in de wet geschreven heeft, en de profeten, namelijk Jezus, den zoon van Jozef, van Nazareth."
+        },
+        {
+          "id": "JHN.1.46.s2",
+          "tekst": "We hebben Hem gevonden! Mozes schreef over Hem in de wet, en ook de profeten schreven over Hem. Het is Jezus uit Nazareth, de zoon van Jozef.",
+          "bronfrase": "Filippus vond Nathanaël en zeide tot hem: Wij hebben Dien gevonden, van Welken Mozes in de wet geschreven heeft, en de profeten, namelijk Jezus, den zoon van Jozef, van Nazareth."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.46.q1",
+          "semanticId": "spraak.filippus.jhn1v46q1",
+          "startSegment": "JHN.1.46.s2",
+          "endSegment": "JHN.1.46.s2",
+          "spreker": {
+            "id": "filippus",
+            "type": "human",
+            "naam": "Filippus"
+          },
+          "aangesprokene": [
+            "nathanael"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "abd8361baea056b31b2ca914df5bc89be85f4c8d6bc1f182fcd9539ecece16f5",
+        "bronSha256": "1987f7f2d5b481ec89a4852f43b2b1f93f019551f7ad14eb8146de3ad6d274ca",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 47,
+      "tekst": "Nathanaël vroeg hem: Kan er uit Nazareth iets goeds komen? Filippus zei: Kom mee, dan zie je het.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 47,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.47.s1",
+          "tekst": "Nathanaël vroeg hem: ",
+          "bronfrase": "En Nathanaël zeide tot hem: Kan uit Nazareth iets goeds zijn? Filippus zeide van hem: Kom en zie."
+        },
+        {
+          "id": "JHN.1.47.s2",
+          "tekst": "Kan er uit Nazareth iets goeds komen?",
+          "bronfrase": "En Nathanaël zeide tot hem: Kan uit Nazareth iets goeds zijn? Filippus zeide van hem: Kom en zie."
+        },
+        {
+          "id": "JHN.1.47.s3",
+          "tekst": " Filippus zei: ",
+          "bronfrase": "En Nathanaël zeide tot hem: Kan uit Nazareth iets goeds zijn? Filippus zeide van hem: Kom en zie."
+        },
+        {
+          "id": "JHN.1.47.s4",
+          "tekst": "Kom mee, dan zie je het.",
+          "bronfrase": "En Nathanaël zeide tot hem: Kan uit Nazareth iets goeds zijn? Filippus zeide van hem: Kom en zie."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.47.q1",
+          "semanticId": "spraak.nathanael.jhn1v47q1",
+          "startSegment": "JHN.1.47.s2",
+          "endSegment": "JHN.1.47.s2",
+          "spreker": {
+            "id": "nathanael",
+            "type": "human",
+            "naam": "Nathanaël"
+          },
+          "aangesprokene": [
+            "filippus"
+          ]
+        },
+        {
+          "id": "JHN.1.47.q2",
+          "semanticId": "spraak.filippus.jhn1v47q2",
+          "startSegment": "JHN.1.47.s4",
+          "endSegment": "JHN.1.47.s4",
+          "spreker": {
+            "id": "filippus",
+            "type": "human",
+            "naam": "Filippus"
+          },
+          "aangesprokene": [
+            "nathanael"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "a2f5e478c7eb39551df01fcda71115aeb34e18f4402b010125fc7f66c7ac307d",
+        "bronSha256": "2f5264f8d2a367902e24c4addc96d85a845a28174e8afd0ed1c7f1909a8a28af",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 48,
+      "tekst": "Jezus zag Nathanaël naar Zich toe komen en zei over hem: Kijk, een echte Israëliet! Er is geen bedrog in hem.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 48,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.48.s1",
+          "tekst": "Jezus zag Nathanaël naar Zich toe komen en zei over hem: ",
+          "bronfrase": "Jezus zag Nathanaël tot Zich komen, en zeide van hem: Zie, waarlijk een Israëliet, in welken geen bedrog is."
+        },
+        {
+          "id": "JHN.1.48.s2",
+          "tekst": "Kijk, een echte Israëliet! Er is geen bedrog in hem.",
+          "bronfrase": "Jezus zag Nathanaël tot Zich komen, en zeide van hem: Zie, waarlijk een Israëliet, in welken geen bedrog is."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.48.q1",
+          "semanticId": "spraak.jezus.jhn1v48q1",
+          "startSegment": "JHN.1.48.s2",
+          "endSegment": "JHN.1.48.s2",
+          "spreker": {
+            "id": "jezus",
+            "type": "god",
+            "naam": "Jezus"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "df9c2b5d4fceaf6a3bf65380e4cfaa3b009bf2847e895fab8173f8ad7b810351",
+        "bronSha256": "0e2cafbf551c6730585de2caf3fd2e5f222be3c32b227eeebd2a423630c7c6e8",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 49,
+      "tekst": "Nathanaël vroeg Hem: Waar kent U mij van? Jezus antwoordde: Voordat Filippus je riep, zag Ik je al onder de vijgenboom.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 49,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.49.s1",
+          "tekst": "Nathanaël vroeg Hem: ",
+          "bronfrase": "Nathanaël zeide tot Hem: Van waar kent Gij mij? Jezus antwoordde en zeide tot hem: Eer u Filippus riep, daar gij onder den vijgeboom waart, zag Ik u."
+        },
+        {
+          "id": "JHN.1.49.s2",
+          "tekst": "Waar kent U mij van?",
+          "bronfrase": "Nathanaël zeide tot Hem: Van waar kent Gij mij? Jezus antwoordde en zeide tot hem: Eer u Filippus riep, daar gij onder den vijgeboom waart, zag Ik u."
+        },
+        {
+          "id": "JHN.1.49.s3",
+          "tekst": " Jezus antwoordde: ",
+          "bronfrase": "Nathanaël zeide tot Hem: Van waar kent Gij mij? Jezus antwoordde en zeide tot hem: Eer u Filippus riep, daar gij onder den vijgeboom waart, zag Ik u."
+        },
+        {
+          "id": "JHN.1.49.s4",
+          "tekst": "Voordat Filippus je riep, zag Ik je al onder de vijgenboom.",
+          "bronfrase": "Nathanaël zeide tot Hem: Van waar kent Gij mij? Jezus antwoordde en zeide tot hem: Eer u Filippus riep, daar gij onder den vijgeboom waart, zag Ik u."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.49.q1",
+          "semanticId": "spraak.nathanael.jhn1v49q1",
+          "startSegment": "JHN.1.49.s2",
+          "endSegment": "JHN.1.49.s2",
+          "spreker": {
+            "id": "nathanael",
+            "type": "human",
+            "naam": "Nathanaël"
+          },
+          "aangesprokene": [
+            "jezus"
+          ]
+        },
+        {
+          "id": "JHN.1.49.q2",
+          "semanticId": "spraak.jezus.jhn1v49q2",
+          "startSegment": "JHN.1.49.s4",
+          "endSegment": "JHN.1.49.s4",
+          "spreker": {
+            "id": "jezus",
+            "type": "god",
+            "naam": "Jezus"
+          },
+          "aangesprokene": [
+            "nathanael"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ab2355c60bfe28bd6e0f3848b7e2b358a5f20ed7ed46de9d824489b330beb981",
+        "bronSha256": "2043b7a89e5ae4fb60fd0136fe9e971e60b22543ebc97190267e376c677b6bc7",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 50,
+      "tekst": "Nathanaël antwoordde Hem: Rabbi, U bent de Zoon van God, U bent de Koning van Israël!",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 50,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.50.s1",
+          "tekst": "Nathanaël antwoordde Hem: ",
+          "bronfrase": "Nathanaël antwoordde en zeide tot Hem: Rabbi! Gij zijt de Zone Gods, Gij zijt de Koning Israëls."
+        },
+        {
+          "id": "JHN.1.50.s2",
+          "tekst": "Rabbi",
+          "bronfrase": "Rabbi"
+        },
+        {
+          "id": "JHN.1.50.s3",
+          "tekst": ", U bent de ",
+          "bronfrase": "Nathanaël antwoordde en zeide tot Hem: Rabbi! Gij zijt de Zone Gods, Gij zijt de Koning Israëls."
+        },
+        {
+          "id": "JHN.1.50.s4",
+          "tekst": "Zoon van God",
+          "bronfrase": "Zone Gods"
+        },
+        {
+          "id": "JHN.1.50.s5",
+          "tekst": ", U bent de ",
+          "bronfrase": "Nathanaël antwoordde en zeide tot Hem: Rabbi! Gij zijt de Zone Gods, Gij zijt de Koning Israëls."
+        },
+        {
+          "id": "JHN.1.50.s6",
+          "tekst": "Koning van Israël",
+          "bronfrase": "Koning Israëls"
+        },
+        {
+          "id": "JHN.1.50.s7",
+          "tekst": "!",
+          "bronfrase": "Nathanaël antwoordde en zeide tot Hem: Rabbi! Gij zijt de Zone Gods, Gij zijt de Koning Israëls."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "rabbi",
+          "segmenten": [
+            "JHN.1.50.s2"
+          ]
+        },
+        {
+          "conceptId": "zoon-van-god",
+          "segmenten": [
+            "JHN.1.50.s4"
+          ]
+        },
+        {
+          "conceptId": "koning-van-israel",
+          "segmenten": [
+            "JHN.1.50.s6"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.50.q1",
+          "semanticId": "spraak.nathanael.jhn1v50q1",
+          "startSegment": "JHN.1.50.s2",
+          "endSegment": "JHN.1.50.s7",
+          "spreker": {
+            "id": "nathanael",
+            "type": "human",
+            "naam": "Nathanaël"
+          },
+          "aangesprokene": [
+            "jezus"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "0753b196ab0786780053d863d22ee1fe4537f354b91aaa010f4487d2b5075d13",
+        "bronSha256": "c455a22a5bd149a4947f03f660b2f98ebc5f3aea5bb19c0b0e6b76443580dcc6",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 51,
+      "tekst": "Jezus antwoordde hem: Je gelooft omdat Ik je zei dat Ik je onder de vijgenboom zag. Je zult nog grotere dingen zien.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 51,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.51.s1",
+          "tekst": "Jezus antwoordde hem: ",
+          "bronfrase": "Jezus antwoordde en zeide tot hem: Omdat Ik u gezegd heb: Ik zag u onder de vijgeboom, zo gelooft gij; gij zult grotere dingen zien dan deze."
+        },
+        {
+          "id": "JHN.1.51.s2",
+          "tekst": "Je gelooft omdat Ik je zei dat Ik je onder de vijgenboom zag. Je zult nog grotere dingen zien.",
+          "bronfrase": "Jezus antwoordde en zeide tot hem: Omdat Ik u gezegd heb: Ik zag u onder de vijgeboom, zo gelooft gij; gij zult grotere dingen zien dan deze."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "JHN.1.51.q1",
+          "semanticId": "spraak.jezus.jhn1v51q1",
+          "startSegment": "JHN.1.51.s2",
+          "endSegment": "JHN.1.51.s2",
+          "spreker": {
+            "id": "jezus",
+            "type": "god",
+            "naam": "Jezus"
+          },
+          "aangesprokene": [
+            "nathanael"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "8915f821c73a60b0126d6920c96875806c5f02a6df69b162afef01a808fe2446",
+        "bronSha256": "6191041f376b44d7e9550645ec6f7a8d5a665638456baed17e5de13826fec5dc",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 52,
+      "tekst": "Hij zei tegen hem: Ja, zeker, Ik verzeker jullie: vanaf nu zullen jullie de hemel open zien. Jullie zullen Gods engelen zien opstijgen en neerdalen op de Mensenzoon.",
+      "bron": {
+        "bestand": "data/johannes/1.json",
+        "vers": 52,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "JHN.1.52.s1",
+          "tekst": "Hij zei tegen hem: ",
+          "bronfrase": "En Hij zeide tot hem: Voorwaar, voorwaar zeg Ik ulieden: Van nu aan zult gij den hemel zien geopend, en de engelen Gods opklimmende en nederdalende op den Zoon des mensen."
+        },
+        {
+          "id": "JHN.1.52.s2",
+          "tekst": "Ja, zeker, Ik verzeker jullie",
+          "bronfrase": "Voorwaar, voorwaar"
+        },
+        {
+          "id": "JHN.1.52.s3",
+          "tekst": ": vanaf nu zullen jullie de hemel open zien. Jullie zullen Gods engelen zien opstijgen en neerdalen op de ",
+          "bronfrase": "En Hij zeide tot hem: Voorwaar, voorwaar zeg Ik ulieden: Van nu aan zult gij den hemel zien geopend, en de engelen Gods opklimmende en nederdalende op den Zoon des mensen."
+        },
+        {
+          "id": "JHN.1.52.s4",
+          "tekst": "Mensenzoon",
+          "bronfrase": "Zoon des mensen"
+        },
+        {
+          "id": "JHN.1.52.s5",
+          "tekst": ".",
+          "bronfrase": "En Hij zeide tot hem: Voorwaar, voorwaar zeg Ik ulieden: Van nu aan zult gij den hemel zien geopend, en de engelen Gods opklimmende en nederdalende op den Zoon des mensen."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "amen",
+          "segmenten": [
+            "JHN.1.52.s2"
+          ]
+        },
+        {
+          "conceptId": "mensenzoon",
+          "segmenten": [
+            "JHN.1.52.s4"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "JHN.1.52.q1",
+          "semanticId": "spraak.jezus.jhn1v52q1",
+          "startSegment": "JHN.1.52.s2",
+          "endSegment": "JHN.1.52.s5",
+          "spreker": {
+            "id": "jezus",
+            "type": "god",
+            "naam": "Jezus"
+          },
+          "aangesprokene": [
+            "nathanael",
+            "leerlingen"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ed414afc65b103da1adff16cdea065b8a071475fbba97596130eef8442279d24",
+        "bronSha256": "455e518c309987c0a574bcc1cdf6382b4b5af108ca291505d5ccfd3bdada9800",
+        "controles": []
+      }
+    }
+  ]
+}

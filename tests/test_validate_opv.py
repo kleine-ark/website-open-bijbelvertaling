@@ -643,5 +643,55 @@ class ValidateOpvTests(unittest.TestCase):
         }
 
 
+class OpvCalibrationCorpusTests(unittest.TestCase):
+    """Detecteer ontbrekende verzen en ongeldige bron- of metadatakoppelingen."""
+
+    root = Path(__file__).resolve().parents[1]
+
+    def _chapter(self, book: str) -> dict:
+        path = self.root / f"data/edities/opv/chapters/{book}/1.json"
+        self.assertTrue(path.is_file(), f"Kalibratiehoofdstuk ontbreekt: {path}")
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_genesis_one_has_all_31_verses(self) -> None:
+        chapter = self._chapter("genesis")
+        self.assertEqual(list(range(1, 32)), [v["nummer"] for v in chapter["verzen"]])
+
+    def test_john_one_has_all_52_repository_verses(self) -> None:
+        chapter = self._chapter("johannes")
+        self.assertEqual(list(range(1, 53)), [v["nummer"] for v in chapter["verzen"]])
+
+    def test_calibration_sources_point_to_corresponding_sv_verse(self) -> None:
+        for book in ("genesis", "johannes"):
+            chapter = self._chapter(book)
+            self.assertEqual((book, 1), (chapter["boek"], chapter["hoofdstuk"]))
+            for verse in chapter["verzen"]:
+                with self.subTest(book=book, verse=verse["nummer"]):
+                    self.assertEqual(
+                        {"bestand": f"data/{book}/1.json", "vers": verse["nummer"],
+                         "tekstveld": "textSV1888"}, verse["bron"],
+                    )
+
+    def test_calibration_slice_passes_real_corpus_validation(self) -> None:
+        chapters = {book: self._chapter(book) for book in ("genesis", "johannes")}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            registry = json.loads((self.root / "data/edities/manifest.json").read_text(encoding="utf-8"))
+            registry["edities"] = [entry for entry in registry["edities"] if entry["code"] == "nl-opv"]
+            registry["edities"][0]["hoofdstukken"] = {"genesis": [1], "johannes": [1]}
+            edition = json.loads((self.root / "data/edities/opv/manifest.json").read_text(encoding="utf-8"))
+            for book in edition["boeken"]:
+                book["hoofdstukken"] = [1]
+            write_json(root / "data/edities/manifest.json", registry)
+            write_json(root / "data/edities/opv/manifest.json", edition)
+            concepts = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))
+            write_json(root / "data/edities/opv/concepten.json", concepts)
+            for book, chapter in chapters.items():
+                write_json(root / f"data/edities/opv/chapters/{book}/1.json", chapter)
+                source = json.loads((self.root / f"data/{book}/1.json").read_text(encoding="utf-8"))
+                write_json(root / f"data/{book}/1.json", source)
+            self.assertEqual([], validate_corpus(root))
+
+
 if __name__ == "__main__":
     unittest.main()
