@@ -84,12 +84,18 @@ const App = {
         });
     },
 
-    async _updateDatingBox(book) {
+    async _updateDatingBox(book, renderGeneration) {
         if (App._bookDating === undefined) {
             App._bookDating = null;
-            try { App._bookDating = await (await fetch('data/book-dating.json')).json(); }
-            catch (e) { App._bookDating = {}; }
+            App._bookDatingLoading = (async () => {
+                try { App._bookDating = await (await fetch('data/book-dating.json')).json(); }
+                catch (e) { App._bookDating = {}; }
+                finally { App._bookDatingLoading = null; }
+            })();
         }
+        if (App._bookDatingLoading) await App._bookDatingLoading;
+        if (renderGeneration !== App._chapterChromeGeneration) return;
+
         const d = App._bookDating && App._bookDating[book.id];
         let box = document.getElementById('book-dating');
         if (!box) {
@@ -482,11 +488,15 @@ const App = {
     },
 
     async renderChapter(bookId, chapterNum, opts = {}) {
+        const append = !!opts.append;    // doorlopend-lezen: hoofdstuk onderaan toevoegen
+        const prepend = !!opts.prepend;  // doorlopend-lezen: hoofdstuk bovenaan toevoegen
+        const updatesChapterChrome = !append && !prepend;
+        const renderGeneration = updatesChapterChrome
+            ? (App._chapterChromeGeneration = (App._chapterChromeGeneration || 0) + 1)
+            : App._chapterChromeGeneration;
         if (typeof TekstEditie === 'undefined' || TekstEditie.code() === 'nl-ov') {
             await App._laadVerified();   // banner mag niet op verouderde info draaien
         }
-        const append = !!opts.append;    // doorlopend-lezen: hoofdstuk onderaan toevoegen
-        const prepend = !!opts.prepend;  // doorlopend-lezen: hoofdstuk bovenaan toevoegen
         // Manifest (klein) + chapter (klein) parallel
         const [book, chapter] = await Promise.all([
             DataLoader.loadBook(bookId),                      // bouwt lazy book-object
@@ -559,7 +569,7 @@ const App = {
         // AI-concept-banner tonen voor niet-geverifieerde hoofdstukken
         App._updateVerifiedBanner(bookId, chapterNum);
         App._updateEthiopicBanner(book);
-        App._updateDatingBox(book);
+        App._updateDatingBox(book, renderGeneration);
 
         // Boek- en hoofdstukinleiding worden nu INLINE in de tekstkolom getoond
         // (zie hieronder), niet meer in een apart frame.

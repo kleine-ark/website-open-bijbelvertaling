@@ -331,6 +331,67 @@ class OpvReaderTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_vertraagde_ov_datering_kan_onbeschikbare_opv_niet_overschrijven(self):
+        page = self.new_page()
+        page.add_init_script(
+            """(() => {
+                const fetchNow = window.fetch.bind(window);
+                window.__datingRequestStarted = false;
+                let releaseDating;
+                const datingGate = new Promise(resolve => { releaseDating = resolve; });
+                window.__releaseDatingResponse = () => releaseDating();
+                window.fetch = (...args) => {
+                    const url = String(args[0]);
+                    if (url.endsWith('data/book-dating.json')) {
+                        window.__datingRequestStarted = true;
+                        return datingGate.then(() => fetchNow(...args));
+                    }
+                    return fetchNow(...args);
+                };
+            })();"""
+        )
+        observed = self.observe_runtime(page)
+        try:
+            page.goto(f"{self.base_url}/index.html#spreuken/1", wait_until="domcontentloaded")
+            page.locator('.verse-row[data-verse="1"]').wait_for()
+            page.wait_for_function("window.__datingRequestStarted")
+
+            self.open_sources(page)
+            page.locator("#opt-teksteditie").select_option("nl-opv")
+            page.locator(".translation-unavailable").wait_for()
+            page.evaluate("window.__releaseDatingResponse()")
+            page.wait_for_function("App._bookDating && App._bookDating.spreuken")
+
+            stale_dating = page.evaluate(
+                """() => {
+                    const box = document.getElementById('book-dating');
+                    return {
+                        visible: !!box && getComputedStyle(box).display !== 'none',
+                        text: box ? box.textContent.trim() : '',
+                    };
+                }"""
+            )
+            self.assertFalse(stale_dating["visible"])
+            self.assertEqual(stale_dating["text"], "")
+
+            page.locator("#opt-teksteditie").select_option("nl-ov")
+            page.locator('.verse-row[data-verse="1"]').wait_for()
+            page.locator("#book-dating").wait_for(state="visible")
+            self.assertIn("Schrijftijd:", page.locator("#book-dating").inner_text())
+
+            page.locator("#opt-teksteditie").select_option("nl-opv")
+            page.locator(".translation-unavailable").wait_for()
+            page.evaluate("location.hash = '#genesis/1'")
+            page.locator('.verse-row[data-verse="1"] .col-2026').filter(
+                has_text="maakte God de hemel"
+            ).wait_for()
+            page.locator("#book-dating").wait_for(state="visible")
+            self.assertIn("Schrijftijd:", page.locator("#book-dating").inner_text())
+            self.assertEqual(observed["pageerrors"], [])
+            self.assertEqual(observed["http_errors"], [])
+        finally:
+            page.close()
+
     def test_opv_prefetch_respecteert_werkelijk_gepubliceerde_hoofdstukken(self):
         page = self.new_page()
         page.add_init_script(
