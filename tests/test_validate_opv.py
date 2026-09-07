@@ -178,6 +178,101 @@ class ValidateOpvTests(unittest.TestCase):
     def test_valid_mini_corpus_has_no_errors(self) -> None:
         self.assertEqual([], validate_corpus(self.root))
 
+    def test_json_booleans_are_rejected_for_every_schema_field(self) -> None:
+        self.registry["schema"] = True
+        self.edition_manifest["schema"] = True
+        self.concepts["schema"] = True
+        self.chapter["schema"] = True
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "MANIFEST_SCHEMA")
+        self.assertHasCode(errors, "EDITION_SCHEMA")
+        self.assertHasCode(errors, "CONCEPT_SCHEMA")
+        self.assertHasCode(errors, "CHAPTER_SCHEMA")
+
+    def test_json_boolean_is_not_an_opv_chapter_number(self) -> None:
+        self.chapter["hoofdstuk"] = True
+        write_json(
+            self.root / "data/edities/opv/chapters/genesis/1.json",
+            self.chapter,
+        )
+        errors = validate_corpus(self.root)
+        self.assertHasCode(errors, "CHAPTER_NUMBER")
+
+    def test_json_booleans_are_rejected_for_source_chapter_and_verse_numbers(self) -> None:
+        self.chapter["verzen"][0]["bron"]["vers"] = True
+        self._write_all()
+        write_json(
+            self.root / "data/genesis/1.json",
+            {
+                "number": True,
+                "verses": [{"number": True, "textSV1888": SOURCE_TEXT}],
+            },
+        )
+        errors = validate_corpus(self.root)
+        self.assertHasCode(errors, "SOURCE_CHAPTER_MISMATCH")
+        self.assertHasCode(errors, "SOURCE_VERSE_MISMATCH")
+        self.assertHasCode(errors, "SOURCE_VERSE_NUMBER_INVALID")
+
+    def test_boolean_verse_and_block_numbers_remain_invalid(self) -> None:
+        self.chapter["verzen"][0]["nummer"] = True
+        self.chapter["blokken"][0]["vanaf"] = True
+        self.chapter["blokken"][0]["tot"] = True
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "VERSE_NUMBER_INVALID")
+        self.assertHasCode(errors, "BLOCK_RANGE_INVALID")
+
+    def test_boolean_manifest_chapter_number_remains_invalid(self) -> None:
+        self.registry["edities"][0]["hoofdstukken"]["genesis"] = [True]
+        self.edition_manifest["boeken"][0]["hoofdstukken"] = [True]
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "MANIFEST_CHAPTERS_INVALID")
+        self.assertHasCode(errors, "EDITION_CHAPTER_INVALID")
+
+    def test_nul_in_source_path_returns_a_deterministic_error(self) -> None:
+        self.chapter["verzen"][0]["bron"]["bestand"] = "data/genesis/\x00.json"
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "SOURCE_PATH_UNSAFE")
+        self.assertEqual(sorted(errors), errors)
+
+    def test_nul_in_data_root_returns_a_deterministic_error(self) -> None:
+        self.registry["edities"][0]["dataRoot"] = "data/edities/\x00/chapters"
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "MANIFEST_PATH_UNSAFE")
+        self.assertEqual(sorted(errors), errors)
+
+    def test_other_unsafe_path_characters_return_contract_errors(self) -> None:
+        for character in ("\n", "\r", "\t", ":", "?", "*", "<", ">", '"', "|"):
+            with self.subTest(character=repr(character)):
+                self.chapter["verzen"][0]["bron"]["bestand"] = (
+                    f"data/genesis/unsafe{character}.json"
+                )
+                self.registry["edities"][0]["dataRoot"] = (
+                    "data/edities/opv/chapters"
+                )
+                source_errors = self._errors_after_rewrite()
+                self.assertHasCode(source_errors, "SOURCE_PATH_UNSAFE")
+
+                self.chapter["verzen"][0]["bron"]["bestand"] = "data/genesis/1.json"
+                self.registry["edities"][0]["dataRoot"] = (
+                    f"data/edities/opv/{character}/chapters"
+                )
+                manifest_errors = self._errors_after_rewrite()
+                self.assertHasCode(manifest_errors, "MANIFEST_PATH_UNSAFE")
+
+    def test_dynamic_json_path_control_characters_stay_on_one_cli_line(self) -> None:
+        self.chapter["strong\nbad"] = "H1"
+        self._write_all()
+        script = Path(__file__).parents[1] / "scripts/validate_opv.py"
+        result = subprocess.run(
+            [sys.executable, str(script), "--root", str(self.root)],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(1, result.returncode)
+        self.assertEqual(1, len(result.stdout.splitlines()), result.stdout)
+        self.assertIn(r"\n", result.stdout)
+
     def test_source_verse_must_match_current_opv_verse(self) -> None:
         self._configure_two_verse_chapter()
         self.chapter["verzen"][1]["bron"]["vers"] = 1

@@ -56,10 +56,41 @@ OPV_DATA_ROOT = "data/edities/opv/chapters"
 HTML_RE = re.compile(r"<\s*/?\s*[A-Za-z!][^>]*>")
 SEMANTIC_ID_RE = re.compile(r"^[a-z0-9]+(?:\.[a-z0-9]+)+$")
 BOOK_CODE_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+JSON_PATH_IDENTIFIER_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
+UNSAFE_PATH_CHARACTER_RE = re.compile(r'[\x00-\x1f\x7f-\x9f<>:"|?*]')
+
+
+def _escape_control_characters(value: Any) -> str:
+    text = str(value)
+    return "".join(
+        f"\\u{ord(character):04x}"
+        if ord(character) < 0x20
+        or 0x7F <= ord(character) <= 0x9F
+        or character in ("\u2028", "\u2029")
+        else character
+        for character in text
+    )
+
+
+def _json_path_key(json_path: str, key: Any) -> str:
+    key_text = str(key)
+    if JSON_PATH_IDENTIFIER_RE.fullmatch(key_text):
+        return f"{json_path}.{key_text}"
+    return f"{json_path}[{json.dumps(key_text, ensure_ascii=True)}]"
 
 
 def _error(code: str, filename: str, json_path: str) -> str:
-    return f"{code} {filename} {json_path}"
+    return " ".join(
+        _escape_control_characters(part) for part in (code, filename, json_path)
+    )
+
+
+def _is_json_integer(value: Any) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
+def _is_schema_one(value: Any) -> bool:
+    return _is_json_integer(value) and value == 1
 
 
 def _safe_relative_path(
@@ -69,19 +100,26 @@ def _safe_relative_path(
     require_data: bool = True,
     require_json: bool = False,
 ) -> Path | None:
-    if not isinstance(raw_path, str) or not raw_path or "\\" in raw_path:
+    if (
+        not isinstance(raw_path, str)
+        or not raw_path
+        or "\\" in raw_path
+        or UNSAFE_PATH_CHARACTER_RE.search(raw_path) is not None
+    ):
         return None
-    pure = PurePosixPath(raw_path)
-    if pure.is_absolute() or ".." in pure.parts or "." in pure.parts:
-        return None
-    if require_data and (not pure.parts or pure.parts[0] != "data"):
-        return None
-    if require_json and pure.suffix != ".json":
-        return None
-    candidate = (repo_root / Path(*pure.parts)).resolve()
     try:
+        pure = PurePosixPath(raw_path)
+        if pure.is_absolute() or ".." in pure.parts or "." in pure.parts:
+            return None
+        if any(part.endswith((" ", ".")) for part in pure.parts):
+            return None
+        if require_data and (not pure.parts or pure.parts[0] != "data"):
+            return None
+        if require_json and pure.suffix != ".json":
+            return None
+        candidate = (repo_root / Path(*pure.parts)).resolve()
         candidate.relative_to(repo_root.resolve())
-    except ValueError:
+    except (OSError, RuntimeError, ValueError):
         return None
     return candidate
 
@@ -93,7 +131,7 @@ def _load_json(repo_root: Path, filename: str, errors: list[str]) -> Any | None:
         return None
     try:
         is_file = path.is_file()
-    except OSError:
+    except (OSError, ValueError):
         is_file = False
     if not is_file:
         errors.append(_error("FILE_MISSING", filename, "$"))
@@ -109,7 +147,7 @@ def _walk(value: Any, json_path: str = "$") -> Iterable[tuple[str, Any]]:
     yield json_path, value
     if isinstance(value, dict):
         for key, child in value.items():
-            yield from _walk(child, f"{json_path}.{key}")
+            yield from _walk(child, _json_path_key(json_path, key))
     elif isinstance(value, list):
         for index, child in enumerate(value):
             yield from _walk(child, f"{json_path}[{index}]")
@@ -135,7 +173,7 @@ def _validate_no_strong_fields(value: Any, filename: str) -> list[str]:
     def visit(child: Any, json_path: str) -> None:
         if isinstance(child, dict):
             for key, nested in child.items():
-                key_path = f"{json_path}.{key}"
+                key_path = _json_path_key(json_path, key)
                 if "strong" in str(key).casefold():
                     errors.append(_error("STRONG_FIELD_FORBIDDEN", filename, key_path))
                 visit(nested, key_path)
@@ -168,12 +206,7 @@ def _book_chapters_from_edition_manifest(manifest: Any) -> dict[str, list[int]]:
             isinstance(code, str)
             and BOOK_CODE_RE.fullmatch(code)
             and isinstance(chapters, list)
-            and all(
-                isinstance(chapter, int)
-                and not isinstance(chapter, bool)
-                and chapter > 0
-                for chapter in chapters
-            )
+            and all(_is_json_integer(chapter) and chapter > 0 for chapter in chapters)
         ):
             result[code] = chapters
     return result
@@ -187,12 +220,7 @@ def _valid_chapter_numbers(value: Any) -> bool:
     return (
         isinstance(value, list)
         and bool(value)
-        and all(
-            isinstance(chapter, int)
-            and not isinstance(chapter, bool)
-            and chapter > 0
-            for chapter in value
-        )
+        and all(_is_json_integer(chapter) and chapter > 0 for chapter in value)
         and len(value) == len(set(value))
         and value == sorted(value)
     )
@@ -220,7 +248,7 @@ def validate_manifest(
     errors.extend(_validate_no_strong_fields(registry, registry_file))
     errors.extend(_validate_no_strong_fields(edition_manifest, edition_file))
 
-    if not isinstance(registry, dict) or registry.get("schema") != 1:
+    if not isinstance(registry, dict) or not _is_schema_one(registry.get("schema")):
         errors.append(_error("MANIFEST_SCHEMA", registry_file, "$.schema"))
         editions: list[Any] = []
     else:
@@ -344,7 +372,7 @@ def validate_manifest(
     if not isinstance(edition_manifest, dict):
         errors.append(_error("EDITION_SCHEMA", edition_file, "$"))
         return errors
-    if edition_manifest.get("schema") != 1:
+    if not _is_schema_one(edition_manifest.get("schema")):
         errors.append(_error("EDITION_SCHEMA", edition_file, "$.schema"))
     for field in sorted(REQUIRED_EDITION_FIELDS):
         value = edition_manifest.get(field)
@@ -480,7 +508,7 @@ def _source_text_for_verse(
         ]
     try:
         is_file = source_path.is_file()
-    except OSError:
+    except (OSError, ValueError):
         is_file = False
     if not is_file:
         return source_name, None, [
@@ -489,7 +517,7 @@ def _source_text_for_verse(
     if source_name not in source_cache:
         try:
             source_cache[source_name] = json.loads(source_path.read_text(encoding="utf-8"))
-        except (OSError, UnicodeError, json.JSONDecodeError):
+        except (OSError, UnicodeError, ValueError, json.JSONDecodeError):
             source_cache[source_name] = None
     source_doc = source_cache[source_name]
     if not isinstance(source_doc, dict) or not isinstance(source_doc.get("verses"), list):
@@ -497,22 +525,40 @@ def _source_text_for_verse(
             _error("SOURCE_JSON_INVALID", filename, f"{json_path}.bron.bestand")
         ]
 
-    if source_doc.get("number") != expected_chapter:
+    source_chapter = source_doc.get("number")
+    if not _is_json_integer(source_chapter) or source_chapter != expected_chapter:
         errors.append(
             _error("SOURCE_CHAPTER_MISMATCH", filename, f"{json_path}.bron.bestand")
         )
     verse_number = verse.get("nummer")
-    if source_ref.get("vers") != verse_number:
+    source_verse_reference = source_ref.get("vers")
+    if (
+        not _is_json_integer(verse_number)
+        or not _is_json_integer(source_verse_reference)
+        or source_verse_reference != verse_number
+    ):
         errors.append(_error("SOURCE_VERSE_MISMATCH", filename, f"{json_path}.bron.vers"))
+    for index, source_verse in enumerate(source_doc["verses"]):
+        source_number = source_verse.get("number") if isinstance(source_verse, dict) else None
+        if not _is_json_integer(source_number):
+            errors.append(
+                _error(
+                    "SOURCE_VERSE_NUMBER_INVALID",
+                    source_name,
+                    f"$.verses[{index}].number",
+                )
+            )
     candidates = [
         candidate
         for candidate in source_doc["verses"]
-        if isinstance(candidate, dict) and candidate.get("number") == verse_number
+        if isinstance(candidate, dict)
+        and _is_json_integer(verse_number)
+        and _is_json_integer(candidate.get("number"))
+        and candidate.get("number") == verse_number
     ]
     if len(candidates) != 1:
-        return source_name, None, [
-            _error("SOURCE_VERSE_MISSING", filename, f"{json_path}.bron.vers")
-        ]
+        errors.append(_error("SOURCE_VERSE_MISSING", filename, f"{json_path}.bron.vers"))
+        return source_name, None, errors
     text_field = source_ref.get("tekstveld")
     source_text = candidates[0].get(text_field) if isinstance(text_field, str) else None
     if not isinstance(source_text, str):
@@ -685,8 +731,7 @@ def _validate_blocks(chapter: dict[str, Any], filename: str) -> list[str]:
         verse.get("nummer")
         for verse in verses
         if isinstance(verse, dict)
-        and isinstance(verse.get("nummer"), int)
-        and not isinstance(verse.get("nummer"), bool)
+        and _is_json_integer(verse.get("nummer"))
     }
     coverage = {number: 0 for number in verse_numbers}
     blocks = chapter.get("blokken")
@@ -712,10 +757,8 @@ def _validate_blocks(chapter: dict[str, Any], filename: str) -> list[str]:
         start = block.get("vanaf")
         end = block.get("tot")
         if (
-            not isinstance(start, int)
-            or isinstance(start, bool)
-            or not isinstance(end, int)
-            or isinstance(end, bool)
+            not _is_json_integer(start)
+            or not _is_json_integer(end)
             or start > end
         ):
             errors.append(_error("BLOCK_RANGE_INVALID", filename, block_path))
@@ -753,13 +796,14 @@ def validate_chapter(
         return [_error("CHAPTER_INVALID", filename, "$" )]
     errors.extend(_validate_text_integrity(chapter, filename))
     errors.extend(_validate_no_strong_fields(chapter, filename))
-    if chapter.get("schema") != 1:
+    if not _is_schema_one(chapter.get("schema")):
         errors.append(_error("CHAPTER_SCHEMA", filename, "$.schema"))
     if chapter.get("editie") != "nl-opv":
         errors.append(_error("CHAPTER_EDITION", filename, "$.editie"))
     if chapter.get("boek") != expected_book:
         errors.append(_error("CHAPTER_BOOK", filename, "$.boek"))
-    if chapter.get("hoofdstuk") != expected_chapter:
+    chapter_number = chapter.get("hoofdstuk")
+    if not _is_json_integer(chapter_number) or chapter_number != expected_chapter:
         errors.append(_error("CHAPTER_NUMBER", filename, "$.hoofdstuk"))
     if not _is_non_empty_string(chapter.get("kop")):
         errors.append(_error("CHAPTER_HEADING_MISSING", filename, "$.kop"))
@@ -774,7 +818,7 @@ def validate_chapter(
     valid_numbers = [
         number
         for number in verse_numbers
-        if isinstance(number, int) and not isinstance(number, bool) and number > 0
+        if _is_json_integer(number) and number > 0
     ]
     if len(valid_numbers) != len(verse_numbers):
         errors.append(_error("VERSE_NUMBER_INVALID", filename, "$.verzen"))
@@ -812,7 +856,11 @@ def validate_chapter(
                 for source_verse in source_doc["verses"]
                 if isinstance(source_verse, dict)
             ]
-            if verse_numbers != source_numbers:
+            if (
+                not all(_is_json_integer(number) for number in verse_numbers)
+                or not all(_is_json_integer(number) for number in source_numbers)
+                or verse_numbers != source_numbers
+            ):
                 errors.append(_error("VERSE_LIST_MISMATCH", filename, "$.verzen"))
 
     positions = {segment_id: index for index, segment_id in enumerate(segment_order)}
@@ -843,7 +891,7 @@ def validate_chapter(
 def _concept_ids(concepts: Any, filename: str) -> tuple[set[str], list[str]]:
     errors: list[str] = []
     identifiers: set[str] = set()
-    if not isinstance(concepts, dict) or concepts.get("schema") != 1:
+    if not isinstance(concepts, dict) or not _is_schema_one(concepts.get("schema")):
         errors.append(_error("CONCEPT_SCHEMA", filename, "$.schema"))
         return identifiers, errors
     entries = concepts.get("concepten")
