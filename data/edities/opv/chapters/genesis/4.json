@@ -120,7 +120,7 @@
     },
     {
       "nummer": 3,
-      "tekst": "Na verloop van tijd bracht Kaïn een offer aan de HEERE, van wat zijn land had opgebracht.",
+      "tekst": "Na verloop van tijd bracht Kaïn een deel van de opbrengst van zijn land als offer aan de HEERE.",
       "bron": {
         "bestand": "data/genesis/4.json",
         "vers": 3,
@@ -129,7 +129,7 @@
       "segmenten": [
         {
           "id": "GEN.4.3.s1",
-          "tekst": "Na verloop van tijd bracht Kaïn een ",
+          "tekst": "Na verloop van tijd bracht Kaïn een deel van de opbrengst van zijn land als ",
           "bronfrase": "En het geschiedde ten einde van enige dagen, dat Kaïn van de vrucht des lands den HEERE offer bracht."
         },
         {
@@ -139,7 +139,7 @@
         },
         {
           "id": "GEN.4.3.s3",
-          "tekst": " aan de HEERE, van wat zijn land had opgebracht.",
+          "tekst": " aan de HEERE.",
           "bronfrase": "En het geschiedde ten einde van enige dagen, dat Kaïn van de vrucht des lands den HEERE offer bracht."
         }
       ],
@@ -154,7 +154,7 @@
       "citaten": [],
       "review": {
         "status": "concept",
-        "inhoudSha256": "2f630e58f2b42c1265d7d52d7c04a6828643ef54e9124c1e0064664cb3ba5aa7",
+        "inhoudSha256": "80cf29c31dc66586fc272632cf52a13354da7f9baeccf4667793bc2c4b5ec08a",
         "bronSha256": "2dcc235330fea0eacf8b0b84d83aac799aae691b473d8349cbbc3a7a565938f5",
         "controles": []
       }
@@ -226,7 +226,7 @@
     },
     {
       "nummer": 6,
-      "tekst": "De HEERE vroeg aan Kaïn: Waarom ben je boos? Waarom staat je gezicht zo somber?",
+      "tekst": "De HEERE vroeg aan Kaïn: Waarom ben je boos? Waarom is je gezicht zo somber?",
       "bron": {
         "bestand": "data/genesis/4.json",
         "vers": 6,
@@ -240,7 +240,7 @@
         },
         {
           "id": "GEN.4.6.s2",
-          "tekst": "Waarom ben je boos? Waarom staat je gezicht zo somber?",
+          "tekst": "Waarom ben je boos? Waarom is je gezicht zo somber?",
           "bronfrase": "En de HEERE zeide tot Kaïn: Waarom zijt gij ontstoken, en waarom is uw aangezicht vervallen?"
         }
       ],
@@ -263,14 +263,14 @@
       ],
       "review": {
         "status": "concept",
-        "inhoudSha256": "959c608ea09a5a93b9d5f8ac326e215059ec1195a6b5b8111525585e1b2ff8ea",
+        "inhoudSha256": "6fb546c8b262854cdbc36bdaada638735c8fe76b401afa4d70b7cc24d2b91b6e",
         "bronSha256": "2f01806674f5c4c0e50c42b67d562233eb57eb3ce368d893ed0a653950b7b11f",
         "controles": []
       }
     },
     {
       "nummer": 7,
-      "tekst": "Als je goed handelt, kun je je hoofd dan niet omhoog houden? Maar als je niet goed handelt, ligt de zonde aan de deur. Het verlangen van je broer gaat toch naar jou uit, en jij zult over hem heersen.",
+      "tekst": "Als je goed handelt, kun je je hoofd dan niet omhoog houden? Maar als je niet goed handelt, ligt de zonde aan de deur. Je broer is toch op jou gericht, en jij zult over hem heersen.",
       "bron": {
         "bestand": "data/genesis/4.json",
         "vers": 7,
@@ -289,7 +289,7 @@
         },
         {
           "id": "GEN.4.7.s3",
-          "tekst": " aan de deur. Het verlangen van je broer gaat toch naar jou uit, en jij zult over hem heersen.",
+          "tekst": " aan de deur. Je broer is toch op jou gericht, en jij zult over hem heersen.",
           "bronfrase": "Is er niet, indien gij weldoet, verhoging? en zo gij niet weldoet, de zonde ligt aan de deur. Zijn begeerte is toch tot u, en gij zult over hem heersen."
         }
       ],
@@ -319,7 +319,7 @@
       ],
       "review": {
         "status": "concept",
-        "inhoudSha256": "42546daa031d4d14f254d17953566e2a805111f8aa7815fec7ea02dd1446bef6",
+        "inhoudSha256": "3fdd76188654cf02722aad1e8532949bb8a7749af4527b49f4987a09cbb05d9c",
         "bronSha256": "d7f674a624c637a2878c5e880a1631a09aea82c54cdbd10f08306af8f256a2e2",
         "controles": []
       }
@@ -913,11 +913,11 @@
       "citaten": [
         {
           "id": "GEN.4.23.q1",
-          "semanticId": "spraak.lamech.gen4v23q1",
+          "semanticId": "spraak.lamechkain.gen4v23q1",
           "startSegment": "GEN.4.23.s2",
           "endSegment": "GEN.4.23.s2",
           "spreker": {
-            "id": "lamech",
+            "id": "lamech-kain",
             "type": "human",
             "naam": "Lamech"
           },
@@ -953,11 +953,11 @@
       "citaten": [
         {
           "id": "GEN.4.24.q1",
-          "semanticId": "spraak.lamech.gen4v24q1",
+          "semanticId": "spraak.lamechkain.gen4v24q1",
           "startSegment": "GEN.4.24.s1",
           "endSegment": "GEN.4.24.s1",
           "spreker": {
-            "id": "lamech",
+            "id": "lamech-kain",
             "type": "human",
             "naam": "Lamech"
           },

@@ -25,7 +25,7 @@
     },
     {
       "id": "gen-5-b3",
-      "kop": "Henoch leeft met God",
+      "kop": "Henoch wandelt met God",
       "vanaf": 21,
       "tot": 24,
       "review": {
@@ -592,7 +592,7 @@
     },
     {
       "nummer": 22,
-      "tekst": "Henoch leefde met God in de 300 jaar na de geboorte van Methusalach. Hij kreeg zonen en dochters.",
+      "tekst": "Henoch wandelde met God in de 300 jaar na de geboorte van Methusalach. Hij kreeg zonen en dochters.",
       "bron": {
         "bestand": "data/genesis/5.json",
         "vers": 22,
@@ -606,7 +606,7 @@
         },
         {
           "id": "GEN.5.22.s2",
-          "tekst": "leefde met God",
+          "tekst": "wandelde met God",
           "bronfrase": "wandelde met God"
         },
         {
@@ -626,7 +626,7 @@
       "citaten": [],
       "review": {
         "status": "concept",
-        "inhoudSha256": "994770a3c348bc4d06ad17cc708ba71864474e4fbe6706729db2a356af6a8f8e",
+        "inhoudSha256": "7e109b7619d50336d0b8887839186c830ccf305deb57ec08bedb63797c045ff1",
         "bronSha256": "ef0729273ad4c5ce9a57e79aaf8c2b02a9476efa50eb0ecab9771637b58158fe",
         "controles": []
       }
@@ -657,7 +657,7 @@
     },
     {
       "nummer": 24,
-      "tekst": "Henoch leefde met God. Hij was er niet meer, want God nam hem weg.",
+      "tekst": "Henoch wandelde met God. Hij was er niet meer, want God nam hem weg.",
       "bron": {
         "bestand": "data/genesis/5.json",
         "vers": 24,
@@ -671,7 +671,7 @@
         },
         {
           "id": "GEN.5.24.s2",
-          "tekst": "leefde met God",
+          "tekst": "wandelde met God",
           "bronfrase": "wandelde met God"
         },
         {
@@ -691,7 +691,7 @@
       "citaten": [],
       "review": {
         "status": "concept",
-        "inhoudSha256": "cef4f1e1ec5bca6574c0a78a5523c0befad22d4d650c141c24d2ba8e4f16df64",
+        "inhoudSha256": "33ba0af73ed62cb6fb6e20ccf16202c1e0adf46916f1594ba997118d90ca849c",
         "bronSha256": "4c1e4b3e5dfd38baf39abe09fe1f26928a2be2b5fa3b2b028752dfb10feb929a",
         "controles": []
       }
@@ -794,7 +794,7 @@
     },
     {
       "nummer": 29,
-      "tekst": "Hij noemde hem Noach en zei: Deze jongen zal ons troosten bij ons werk en het gezwoeg van onze handen. Dat gezwoeg komt door de grond die de HEERE heeft vervloekt.",
+      "tekst": "Lamech noemde hem Noach en zei: Deze jongen zal ons troosten bij ons werk en het gezwoeg van onze handen. Dat gezwoeg komt door de grond die de HEERE heeft vervloekt.",
       "bron": {
         "bestand": "data/genesis/5.json",
         "vers": 29,
@@ -803,7 +803,7 @@
       "segmenten": [
         {
           "id": "GEN.5.29.s1",
-          "tekst": "Hij noemde hem Noach en zei: ",
+          "tekst": "Lamech noemde hem Noach en zei: ",
           "bronfrase": "En hij noemde zijn naam Noach, zeggende: Deze zal ons troosten over ons werk, en over de smart onzer handen, vanwege het aardrijk, dat de HEERE vervloekt heeft!"
         },
         {
@@ -833,11 +833,11 @@
       "citaten": [
         {
           "id": "GEN.5.29.q1",
-          "semanticId": "spraak.lamech.gen5v29q1",
+          "semanticId": "spraak.lamechnoach.gen5v29q1",
           "startSegment": "GEN.5.29.s2",
           "endSegment": "GEN.5.29.s4",
           "spreker": {
-            "id": "lamech",
+            "id": "lamech-noach",
             "type": "human",
             "naam": "Lamech"
           },
@@ -846,7 +846,7 @@
       ],
       "review": {
         "status": "concept",
-        "inhoudSha256": "7b74feebb26b544789e01d9bad67c39f16e3b320817fe1b7ec6a062d9514212a",
+        "inhoudSha256": "404fd7a0029e332a1ed2f162daf99e51ee3a01e14e90144682372aa38000e5e9",
         "bronSha256": "31499d8cfce08df3eb70aa2a9fd11e6f0f42e37269e76f1b4acbaff5e2c53bf9",
         "controles": []
       }

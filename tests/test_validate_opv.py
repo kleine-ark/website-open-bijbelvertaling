@@ -994,8 +994,8 @@ class OpvGenesisPilotTests(unittest.TestCase):
                         17: ["god", "god"], 18: ["god"], 19: ["god"], 22: ["god"]},
                     4: {1: ["eva"], 6: ["god"], 7: ["god"], 9: ["god", "kain"],
                         10: ["god"], 11: ["god"], 12: ["god"], 13: ["kain"], 14: ["kain"],
-                        15: ["god"], 23: ["lamech"], 24: ["lamech"], 25: ["eva"]},
-                    5: {29: ["lamech"]}}
+                        15: ["god"], 23: ["lamech-kain"], 24: ["lamech-kain"], 25: ["eva"]},
+                    5: {29: ["lamech-noach"]}}
         for number, speakers in expected.items():
             actual = {v["nummer"]: [q["spreker"]["id"] for q in v["citaten"]]
                       for v in self.chapter(number)["verzen"] if v["citaten"]}
@@ -1010,6 +1010,68 @@ class OpvGenesisPilotTests(unittest.TestCase):
         self.assertIn("zeventig keer zeven", fourth[23]["tekst"])
         for verse in fourth[2:5]:
             self.assertNotRegex(verse["tekst"], r"omdat|slechte|beste|ongeloof|geloof")
+
+    def test_genesis_three_22_prevents_a_possibility_without_new_permission_bans(self) -> None:
+        verse = self.chapter(3)["verzen"][21]
+        text = verse["tekst"]
+        self.assertNotRegex(text, r"(?i)\bmag\b[^.!?]*\bniet\b")
+        self.assertIn("zou", text)
+        self.assertIn("voorkomen", text)
+        for element in ("een van ons", "goed en kwaad", "hand", "uitsteken", "boom van het leven", "nemen", "eten", "voor altijd leven"):
+            self.assertIn(element, text)
+        self.assertEqual(1, len(verse["citaten"]))
+        self.assertEqual("god", verse["citaten"][0]["spreker"]["id"])
+        self.assertEqual([], verse["citaten"][0]["aangesprokene"])
+        self.assertIn("voorkomen", OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+
+    def test_genesis_two_5_does_not_make_plants_before_they_exist(self) -> None:
+        text = self.chapter(2)["verzen"][4]["tekst"]
+        self.assertNotRegex(text, r"(?i)maakte[^.!?]*voordat ze er waren")
+        self.assertRegex(text, r"(?:Daarvoor|Voordien|Eerder)[^.!?]*nog niet")
+        for element in ("struiken", "veldplanten", "maakte Hij", "nog niet waren opgekomen", "nog niet laten regenen", "nog geen mens", "grond te bewerken"):
+            self.assertIn(element, text)
+
+    def test_genesis_three_24_keeps_combined_placement_as_the_guarding_means(self) -> None:
+        text = self.chapter(3)["verzen"][23]["tekst"]
+        self.assertNotIn("Ze moesten", text)
+        self.assertRegex(text, r"plaatste Hij cherubs en een vlammend zwaard")
+        self.assertRegex(text, r"(?:Zo|Daarmee) liet Hij[^.!?]*bewaken")
+        for element in ("oosten", "Eden", "draaide", "weg naar de boom van het leven"):
+            self.assertIn(element, text)
+        self.assertNotRegex(text, r"vasthield|vasthielden|hanteerde|hanteerden")
+
+    def test_henoch_retains_the_repeated_walking_image_and_its_exact_anchors(self) -> None:
+        for number in (22, 24):
+            with self.subTest(verse=number):
+                verse = self.chapter(5)["verzen"][number - 1]
+                self.assertIn("Henoch wandelde met God", verse["tekst"])
+                self.assertEqual(["wandelde met God"],
+                                 OpvCalibrationCorpusTests._concept_texts(verse, "wandelen-met-god"))
+        self.assertEqual([300], [int(n) for n in re.findall(r"\b\d+\b", self.chapter(5)["verzen"][21]["tekst"])])
+
+    def test_lamechs_from_distinct_families_never_share_a_speaker_identity(self) -> None:
+        fourth = self.chapter(4)["verzen"]
+        fifth = self.chapter(5)["verzen"]
+        first, repeated, other = fourth[22]["citaten"][0], fourth[23]["citaten"][0], fifth[28]["citaten"][0]
+        self.assertNotEqual(first["spreker"]["id"], other["spreker"]["id"])
+        self.assertEqual(first["spreker"]["id"], repeated["spreker"]["id"])
+        self.assertEqual("lamech-kain", first["spreker"]["id"])
+        self.assertEqual("lamech-noach", other["spreker"]["id"])
+        for citation in (first, repeated, other):
+            self.assertEqual(("Lamech", "human"), (citation["spreker"]["naam"], citation["spreker"]["type"]))
+        self.assertTrue(fifth[28]["tekst"].startswith("Lamech noemde hem Noach"))
+
+    def test_genesis_four_7_explains_the_door_image_without_changing_the_brother_reading(self) -> None:
+        verse = self.chapter(4)["verzen"][6]
+        self.assertIn("Je broer is toch op jou gericht", verse["tekst"])
+        self.assertIn("jij zult over hem heersen", verse["tekst"])
+        self.assertNotRegex(verse["tekst"], r"\bstraf\b|eerstgeboren|oudste|moet.*heersen")
+        self.assertIn("ligt de zonde aan de deur", verse["tekst"])
+        concepts = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))["concepten"]
+        explanation = next(c["uitleg"] for c in concepts if c["id"] == "zonde")
+        self.assertIn("Genesis 4:7", explanation)
+        self.assertIn("straf", explanation)
+        self.assertIn("Statenvertaling", explanation)
 
 
 if __name__ == "__main__":
