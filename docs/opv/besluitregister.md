@@ -41,7 +41,7 @@ Besluit: de lichten “als tekenen” laten dienen en de “vastgestelde tijden,
 
 SV1888 spreekt van wemelende levende zielen en van grote walvissen; de controlevertalingen behouden die formulering. De grondtekst gebruikt in vers 20 `nefesh chayyah` voor levende wezens, en in vers 21 `tanninim` voor grote waterdieren.
 
-Besluit: “levende wezens” voorkomt dat een zestienjarige hier losstaande zielen leest. “Grote zeedieren” moderniseert het bereik van het oude woord walvissen zonder de categorie te beperken tot een moderne diersoort. Dit is een expliciet grondtekstgestuurde verbreding van het hedendaagse woordbereik, niet een weglating van de grote dieren. Het voortbrengen is naast de overvloed én het wemelen expliciet aanwezig in vers 20 en 21. Het water is dus niet alleen de plaats waar dieren al aanwezig zijn. Vliegen, vleugels en afzonderlijke soorten blijven behouden. Het begrip `zeedieren` omvat exact “grote zeedieren”. Begrippen: `levende-ziel`, `zeedieren`.
+Besluit: “levende wezens” voorkomt dat een zestienjarige hier losstaande zielen leest. “Grote zeedieren” moderniseert het bereik van het oude woord walvissen zonder de categorie te beperken tot een moderne diersoort. Dit is een expliciet grondtekstgestuurde verbreding van het hedendaagse woordbereik, niet een weglating van de grote dieren. Het voortbrengen is naast de overvloed én het wemelen expliciet aanwezig in vers 20 en 21. Vers 20 gebruikt één samenhangende naamwoordgroep, “een overvloed aan levende wezens”; vers 21 benoemt “alle soorten” direct bij de levende wezens. Het water is dus niet alleen de plaats waar dieren al aanwezig zijn. Vliegen, vleugels en afzonderlijke soorten blijven behouden. Het begrip `zeedieren` omvat exact “grote zeedieren”. Begrippen: `levende-ziel`, `zeedieren`.
 
 ### G5 — 1:26–28: Gods beeld, meervoud en gezag
 
@@ -51,13 +51,13 @@ Besluit: “Laten wij mensen maken naar ons beeld en onze gelijkenis”; beide p
 
 ### G6 — 1:11–12, 16–18, 29–31: ritme en volledigheid
 
-Zaadvorming, zaad in de vruchten en soortonderscheid blijven behouden. De twee grote lichten worden niet eigenmachtig met zon en maan benoemd. Hun heersen over dag en nacht blijft tweemaal als regeringsbeeld staan. De bomen dragen vruchten naar hun soort, niet iedere boom een unieke eigen soort. Vers 12 bewaart zaadvormende planten én bomen met zaad in hun vruchten, elk naar hun soort. De voedseltoewijzing wordt over korte zinnen verdeeld en noemt ondubbelzinnig “De planten en de vruchten dienen jullie als voedsel.” In 1:31 vervangt het gewone “zag” het inspecterende “bekeek”; de korte uitroep “Het was heel goed!” bewaart de nadruk zonder dubbele kijkwoorden. “Heel goed” blijft sterker dan het eerdere “goed”. Alle zes avond/morgenformules blijven aanwezig. De Godsnaam HEERE komt niet voor in de bron van Genesis 1; daarom is die hier ook niet ingevoegd.
+Zaadvorming, zaad in de vruchten en soortonderscheid blijven behouden. De twee grote lichten worden niet eigenmachtig met zon en maan benoemd. Hun heersen over dag en nacht blijft tweemaal als regeringsbeeld staan. De bomen dragen vruchten naar hun soort, niet iedere boom een unieke eigen soort. De distributieve formulering luidt consequent “elk naar zijn soort”; de gezamenlijke opsomming in vers 12 gebruikt “allemaal naar hun soort”. Vers 12 bewaart zaadvormende planten én bomen met zaad in hun vruchten, elk naar hun soort. De voedseltoewijzing wordt over korte zinnen verdeeld en noemt ondubbelzinnig “De planten en de vruchten zijn jullie voedsel.” In 1:31 vervangt het gewone “zag” het inspecterende “bekeek”; de korte uitroep “Het was heel goed!” bewaart de nadruk zonder dubbele kijkwoorden. “Heel goed” blijft sterker dan het eerdere “goed”. Alle zes avond/morgenformules blijven aanwezig. De Godsnaam HEERE komt niet voor in de bron van Genesis 1; daarom is die hier ook niet ingevoegd.
 
 ## Johannes
 
 ### J1 — 1:1–5: Woord, God, leven en Licht
 
-SV1888, SV1637 en OV bewaren de drie beweringen: het Woord was in het begin, was bij God en was God. De Griekse zin heeft `logos`, `pros ton theon` en `theos en ho logos`. Vers 3 bewaart zowel alles als niets zonder Hem én de bronbeperking: “Zonder Hem is niets ontstaan van alles wat gemaakt is.” Het bereik is het gemaakte, niet al wat bestaat.
+SV1888, SV1637 en OV bewaren de drie beweringen: het Woord was in het begin, was bij God en was God. De Griekse zin heeft `logos`, `pros ton theon` en `theos en ho logos`. Vers 3 bewaart zowel alles als niets zonder Hem én de bronbeperking: “Niets wat gemaakt is, is zonder Hem ontstaan.” Het bereik is het gemaakte, niet al wat bestaat.
 
 Besluit: “In het begin was het Woord er al” bewaart de sleutelverbinding met Genesis en het voorafgaande bestaan, zonder het extra woord “alles” in deze beginformule. “Was bij God” en “was God” blijven onverkort staan. Woord en Licht worden niet vervangen door een abstract plan, boodschap of leraar. Leven en Licht blijven verbonden. Beide voorkomens in vers 4 zijn exact gekoppeld: “leven” en “Dat leven”, naast het eigen Licht-segment. Voor `katelaben` in vers 5 volgt “niet begrepen” bewust de SV-lijn; “niet overwonnen” wordt niet als extra betekenis in de hoofdtekst gezet. De dubbelzinnigheid blijft een expliciet punt voor onafhankelijke review. Begrippen: `woord`, `schepping`, `licht`.
 
@@ -83,7 +83,7 @@ Besluit: “werd mens” bewaart de volledige menswording, “woonde onder ons�
 
 SV1888 plaatst de Komende vóór Johannes en zegt dat Hij eerder was. De Griekse onderscheidingen `emprosthen` en `protos` ondersteunen het bewaren van rang én eerder bestaan. In 1:16 staan volheid en `charin anti charitos`.
 
-Besluit: “staat boven mij” voor rang, “was er eerder dan ik” voor eerder bestaan. Dit wordt ook in 1:27 en 1:30 consequent toegepast. “Uit Zijn overvloed” en “steeds opnieuw onverdiende goedheid” volgen de stapeling van genade, zonder het toegevoegde zelfstandig naamwoord gave en zonder leer over het vervangen van verbonden. Vers 17 behoudt Mozes als middelaar van de wet en Jezus Christus als Degene door Wie genade en waarheid kwamen; er staat geen afwijzing van Mozes of zijn wet.
+Besluit: “staat boven mij” voor rang, “was er eerder dan ik” voor eerder bestaan. Dit wordt ook in 1:27 en 1:30 consequent toegepast. “Uit Zijn overvloed” en “steeds opnieuw onverdiende goedheid” volgen de stapeling van genade, zonder het toegevoegde zelfstandig naamwoord gave en zonder leer over het vervangen van verbonden. Vers 17 behoudt Mozes als middelaar van de wet en Jezus Christus als degene door wie genade en waarheid kwamen; er staat geen afwijzing van Mozes of zijn wet.
 
 ### J6 — 1:18: enige Zoon en nabijheid van de Vader
 
@@ -105,7 +105,7 @@ Besluit: “Lam van God” blijft als essentieel beeld behouden, niet vervangen 
 
 ### J9 — 1:31–34: kennen, Geest en geneste spraak
 
-Johannes’ “ik kende Hem niet” blijft tweemaal staan; er wordt niet ingevuld welk eerder persoonlijk contact er wel of niet was. De Geest daalt “als een duif” neer, niet noodzakelijk als een duif in biologische zin. “Hij bleef op Jezus rusten” bewaart het blijven én het op-beeld in natuurlijk Nederlands. In vers 33 blijft de herkenningsfunctie expliciet: degene op wie Johannes de Geest ziet blijven rusten, doopt met de Heilige Geest. Het toekomstige zien, neerdalen, rusten en blijven zijn alle behouden. “Zoon van God” blijft de getuigde identiteit.
+Johannes’ “ik kende Hem niet” blijft tweemaal staan; er wordt niet ingevuld welk eerder persoonlijk contact er wel of niet was. De Geest daalt “als een duif” neer, niet noodzakelijk als een duif in biologische zin. “Hij bleef op Jezus rusten” bewaart het blijven én het op-beeld in natuurlijk Nederlands. In vers 33 staat het volledige herkenningsteken eenmaal: “Je zult de Geest op iemand zien neerdalen en op Hem blijven rusten.” Daarna verwijst “Die persoon” direct terug naar degene op wie de Geest blijft. Zo blijft de herkenningsfunctie expliciet zonder de waarneming te herhalen. Het toekomstige zien, neerdalen, rusten en blijven zijn alle behouden. “Zoon van God” blijft de getuigde identiteit.
 
 De woorden die God tegen Johannes zei, hebben in vers 33 een eigen citaatbereik binnen Johannes’ doorlopende citaat. Zo blijft ook technisch zichtbaar dat Johannes Gods woorden navertelt. Waterdoop en doop met de Heilige Geest zijn afzonderlijk gekoppeld.
 

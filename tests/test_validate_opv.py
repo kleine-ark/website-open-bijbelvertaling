@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -729,7 +730,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
 
     def test_john_creation_statement_retains_the_created_scope(self) -> None:
         text = self._chapter("johannes")["verzen"][2]["tekst"]
-        self.assertIn("Zonder Hem is niets ontstaan van alles wat gemaakt is.", text)
+        self.assertIn("Niets wat gemaakt is, is zonder Hem ontstaan.", text)
         self.assertNotIn("wat bestaat", text)
 
     def test_genesis_water_both_produces_and_teems_with_life(self) -> None:
@@ -742,7 +743,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
 
     def test_genesis_food_refers_explicitly_to_plants_and_fruit(self) -> None:
         text = self._chapter("genesis")["verzen"][28]["tekst"]
-        self.assertIn("De planten en de vruchten dienen jullie als voedsel.", text)
+        self.assertIn("De planten en de vruchten zijn jullie voedsel.", text)
 
     def test_john_second_identity_question_has_a_narrative_speaker_intro(self) -> None:
         verse = self._chapter("johannes")["verzen"][20]
@@ -779,6 +780,20 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
         for book, number, expected in cases:
             with self.subTest(book=book, verse=number):
                 self.assertIn(expected, self._chapter(book)["verzen"][number - 1]["tekst"])
+
+    def test_concept_explanations_do_not_add_reverence_capitals(self) -> None:
+        registry = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))
+        for concept in registry["concepten"]:
+            with self.subTest(concept=concept["id"]):
+                self.assertNotRegex(concept["uitleg"], r"\b(?:Naam|Persoon|Zichzelf)\b")
+        explanations = {c["id"]: c["uitleg"] for c in registry["concepten"]}
+        self.assertIn("Zijn naam", explanations["kinderen-van-god"])
+
+    def test_editorial_decisions_do_not_add_reverence_capitals(self) -> None:
+        register = (self.root / "docs/opv/besluitregister.md").read_text(encoding="utf-8")
+        own_prose = re.sub(r"“[^”]*”|`[^`]*`", "", register)
+        self.assertEqual([], re.findall(r"\b(?:Naam|Persoon|Zichzelf|Degene door Wie)\b", own_prose))
+        self.assertIn("Jezus Christus als degene door wie", own_prose)
 
     def test_calibration_slice_passes_real_corpus_validation(self) -> None:
         chapters = {book: self._chapter(book) for book in ("genesis", "johannes")}
