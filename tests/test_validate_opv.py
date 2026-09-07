@@ -1027,9 +1027,13 @@ class OpvGenesisPilotTests(unittest.TestCase):
     def test_genesis_two_5_does_not_make_plants_before_they_exist(self) -> None:
         text = self.chapter(2)["verzen"][4]["tekst"]
         self.assertNotRegex(text, r"(?i)maakte[^.!?]*voordat ze er waren")
-        self.assertRegex(text, r"(?:Daarvoor|Voordien|Eerder)[^.!?]*nog niet")
-        for element in ("struiken", "veldplanten", "maakte Hij", "nog niet waren opgekomen", "nog niet laten regenen", "nog geen mens", "grond te bewerken"):
+        self.assertNotRegex(text, r"(?i)maakte Hij|daarvoor|daarvóór")
+        self.assertRegex(text, r"(?i)nog geen struiken[^.!?]*land")
+        self.assertRegex(text, r"(?i)veldplanten[^.!?]*nog niet opgekomen")
+        for element in ("De HEERE God", "nog niet laten regenen", "nog geen mens", "grond te bewerken"):
             self.assertIn(element, text)
+        self.assertLess(text.index("struiken"), text.index("regenen"))
+        self.assertLess(text.index("regenen"), text.index("grond te bewerken"))
 
     def test_genesis_three_24_keeps_combined_placement_as_the_guarding_means(self) -> None:
         text = self.chapter(3)["verzen"][23]["tekst"]
@@ -1063,7 +1067,8 @@ class OpvGenesisPilotTests(unittest.TestCase):
 
     def test_genesis_four_7_explains_the_door_image_without_changing_the_brother_reading(self) -> None:
         verse = self.chapter(4)["verzen"][6]
-        self.assertIn("Je broer is toch op jou gericht", verse["tekst"])
+        self.assertRegex(verse["tekst"], r"Je broer verlangt\b[^.!?]*\bmet jou\b")
+        self.assertNotIn("op jou gericht", verse["tekst"])
         self.assertIn("jij zult over hem heersen", verse["tekst"])
         self.assertNotRegex(verse["tekst"], r"\bstraf\b|eerstgeboren|oudste|moet.*heersen")
         self.assertIn("ligt de zonde aan de deur", verse["tekst"])
@@ -1072,6 +1077,17 @@ class OpvGenesisPilotTests(unittest.TestCase):
         self.assertIn("Genesis 4:7", explanation)
         self.assertIn("straf", explanation)
         self.assertIn("Statenvertaling", explanation)
+
+    def test_genesis_four_7_explains_its_relational_desire_at_a_precise_anchor(self) -> None:
+        verse = self.chapter(4)["verzen"][6]
+        self.assertEqual(["verlangt toch naar een goede band met jou"],
+                         OpvCalibrationCorpusTests._concept_texts(verse, "verlangen-van-de-broer"))
+        concepts = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))["concepten"]
+        explanation = next(c["uitleg"] for c in concepts if c["id"] == "verlangen-van-de-broer")
+        for element in ("Genesis 4:7", "Abel", "oudere broer", "Statenvertaling"):
+            self.assertIn(element, explanation)
+        self.assertEqual("god", verse["citaten"][0]["spreker"]["id"])
+        self.assertEqual(["kain"], verse["citaten"][0]["aangesprokene"])
 
 
 if __name__ == "__main__":

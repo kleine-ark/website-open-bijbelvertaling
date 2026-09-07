@@ -270,7 +270,7 @@
     },
     {
       "nummer": 7,
-      "tekst": "Als je goed handelt, kun je je hoofd dan niet omhoog houden? Maar als je niet goed handelt, ligt de zonde aan de deur. Je broer is toch op jou gericht, en jij zult over hem heersen.",
+      "tekst": "Als je goed handelt, kun je je hoofd dan niet omhoog houden? Maar als je niet goed handelt, ligt de zonde aan de deur. Je broer verlangt toch naar een goede band met jou, en jij zult over hem heersen.",
       "bron": {
         "bestand": "data/genesis/4.json",
         "vers": 7,
@@ -289,8 +289,18 @@
         },
         {
           "id": "GEN.4.7.s3",
-          "tekst": " aan de deur. Je broer is toch op jou gericht, en jij zult over hem heersen.",
+          "tekst": " aan de deur. Je broer ",
           "bronfrase": "Is er niet, indien gij weldoet, verhoging? en zo gij niet weldoet, de zonde ligt aan de deur. Zijn begeerte is toch tot u, en gij zult over hem heersen."
+        },
+        {
+          "id": "GEN.4.7.s4",
+          "tekst": "verlangt toch naar een goede band met jou",
+          "bronfrase": "Zijn begeerte is toch tot u"
+        },
+        {
+          "id": "GEN.4.7.s5",
+          "tekst": ", en jij zult over hem heersen.",
+          "bronfrase": "en gij zult over hem heersen."
         }
       ],
       "begrippen": [
@@ -299,6 +309,12 @@
           "segmenten": [
             "GEN.4.7.s2"
           ]
+        },
+        {
+          "conceptId": "verlangen-van-de-broer",
+          "segmenten": [
+            "GEN.4.7.s4"
+          ]
         }
       ],
       "citaten": [
@@ -306,7 +322,7 @@
           "id": "GEN.4.7.q1",
           "semanticId": "spraak.god.gen4v7q1",
           "startSegment": "GEN.4.7.s1",
-          "endSegment": "GEN.4.7.s3",
+          "endSegment": "GEN.4.7.s5",
           "spreker": {
             "id": "god",
             "type": "god",
@@ -319,7 +335,7 @@
       ],
       "review": {
         "status": "concept",
-        "inhoudSha256": "3fdd76188654cf02722aad1e8532949bb8a7749af4527b49f4987a09cbb05d9c",
+        "inhoudSha256": "7c28844a9819a8a86541455db36bf66a15088163bac03b170d6689567fc2de80",
         "bronSha256": "d7f674a624c637a2878c5e880a1631a09aea82c54cdbd10f08306af8f256a2e2",
         "controles": []
       }
