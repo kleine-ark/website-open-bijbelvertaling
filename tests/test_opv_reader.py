@@ -1437,6 +1437,92 @@ class OpvReaderTests(unittest.TestCase):
         finally:
             legacy.close()
 
+    def test_eerste_opv_versanker_blijft_klikbaar_onder_de_decoratieve_dropcap(self):
+        for theme in ("licht", "donker"):
+            for layout in ("naast", "eronder"):
+                with self.subTest(theme=theme, layout=layout):
+                    page = self.new_page(
+                        {
+                            "teksteditie": "nl-opv",
+                            "kolomLayout": layout,
+                            "thema": theme,
+                        },
+                        viewport={"width": 1440, "height": 900},
+                    )
+                    try:
+                        page.goto(
+                            f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                            wait_until="domcontentloaded",
+                        )
+                        row = page.locator('.opv-verse[data-verse="1"]')
+                        row.wait_for()
+                        anchor = row.locator(".opv-verse-anchor")
+                        dropcap = row.locator(".dropcap-image:visible")
+                        self.assertEqual(dropcap.count(), 1)
+                        dropcap_box = dropcap.bounding_box()
+                        self.assertIsNotNone(dropcap_box)
+                        self.assertGreater(dropcap_box["width"], 0)
+                        self.assertGreater(dropcap_box["height"], 0)
+
+                        hit_samples = anchor.evaluate(
+                            """anchor => {
+                                const rect = anchor.getBoundingClientRect();
+                                const samples = [];
+                                for (let row = 0; row < 5; row += 1) {
+                                    for (let column = 0; column < 5; column += 1) {
+                                        const x = rect.left + rect.width * (column + 0.5) / 5;
+                                        const y = rect.top + rect.height * (row + 0.5) / 5;
+                                        const hit = document.elementFromPoint(x, y);
+                                        samples.push({
+                                            ownsHit: Boolean(hit &&
+                                                (hit === anchor || anchor.contains(hit))),
+                                            target: hit && (hit.id ||
+                                                (typeof hit.className === 'string'
+                                                    ? hit.className
+                                                    : hit.className?.baseVal) || hit.tagName),
+                                        });
+                                    }
+                                }
+                                return samples;
+                            }"""
+                        )
+                        self.assertEqual(len(hit_samples), 25)
+                        self.assertEqual(
+                            [sample for sample in hit_samples if not sample["ownsHit"]], []
+                        )
+
+                        anchor_box = anchor.bounding_box()
+                        self.assertIsNotNone(anchor_box)
+                        page.mouse.click(
+                            anchor_box["x"] + anchor_box["width"] / 2,
+                            anchor_box["y"] + anchor_box["height"] / 2,
+                        )
+                        self.assertEqual(page.evaluate("location.hash"), "#genesis/1/1")
+                    finally:
+                        page.close()
+
+        legacy = self.new_page(
+            {"teksteditie": "nl-ov", "kolomLayout": "eronder", "thema": "donker"},
+            viewport={"width": 1440, "height": 900},
+        )
+        try:
+            legacy.goto(
+                f"{self.base_url}/index.html#genesis/1", wait_until="domcontentloaded"
+            )
+            first_number = legacy.locator(
+                '#verses-container > .verse-row[data-verse="1"] > .verse-num'
+            )
+            first_number.wait_for(state="attached")
+            legacy_dropcap = legacy.locator(
+                '#verses-container > .verse-row[data-verse="1"] .dropcap-image:visible'
+            )
+            self.assertEqual(first_number.evaluate("el => getComputedStyle(el).display"), "none")
+            self.assertEqual(legacy_dropcap.count(), 1)
+            self.assertIsNotNone(legacy_dropcap.bounding_box())
+            self.assertEqual(legacy.locator(".opv-reading-flow").count(), 0)
+        finally:
+            legacy.close()
+
     def test_hoofdstuknavigatie_negeert_vertraagde_oude_boekrequest(self):
         page = self.new_page({"teksteditie": "nl-opv"})
         try:

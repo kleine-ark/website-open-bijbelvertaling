@@ -5822,6 +5822,9 @@ span.devil-speaks, span.devil-speaks i {
     border-radius: 50%;
     transform: translateX(-50%);
 }
+/* De sierletter is decoratief en mag het overlappende, deelbare versanker niet
+   als pointerdoel vervangen. De legacy dropcap blijft ongewijzigd. */
+#content.reading-mode .opv-reading-flow .dropcap-image { pointer-events: none; }
 .opv-verse-anchor:hover { text-decoration: underline; text-underline-offset: 2px; }
 .opv-verse-anchor:focus-visible,
 .opv-concept:focus-visible,
