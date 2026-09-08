@@ -487,10 +487,321 @@ const App = {
         }
     },
 
+    _opvSpeakerClass(type) {
+        if (type === 'god' || type === 'spirit') return 'god-speaks';
+        if (type === 'angel') return 'angel-speaks';
+        return 'direct-speech';
+    },
+
+    _appendOpvSegments(target, verse) {
+        const segments = Array.isArray(verse.segmenten) ? verse.segmenten : [];
+        if (!segments.length) {
+            target.appendChild(document.createTextNode(verse.text2026 || ''));
+            return;
+        }
+
+        const segmentIndex = new Map(segments.map((segment, index) => [segment.id, index]));
+        const conceptsBySegment = new Map();
+        for (const concept of (verse.begrippen || [])) {
+            for (const segmentId of (concept.segmenten || [])) {
+                if (!conceptsBySegment.has(segmentId)) conceptsBySegment.set(segmentId, concept.conceptId);
+            }
+        }
+
+        const openings = new Map();
+        for (const citation of (verse.citaten || [])) {
+            const start = segmentIndex.get(citation.startSegment);
+            const end = segmentIndex.get(citation.endSegment);
+            if (start == null || end == null || end < start) continue;
+            const interval = { citation, start, end };
+            if (!openings.has(start)) openings.set(start, []);
+            openings.get(start).push(interval);
+        }
+        openings.forEach(items => items.sort((left, right) => right.end - left.end));
+
+        const stack = [];
+        let current = target;
+        segments.forEach((segment, index) => {
+            for (const interval of (openings.get(index) || [])) {
+                const citation = interval.citation;
+                const speaker = citation.spreker || {};
+                const wrapper = document.createElement('span');
+                wrapper.classList.add('opv-citation', App._opvSpeakerClass(speaker.type));
+                wrapper.dataset.opvCitation = citation.id || '';
+                wrapper.dataset.opvCitationSemantic = citation.semanticId || '';
+                wrapper.dataset.opvSpeaker = speaker.id || '';
+                wrapper.dataset.opvSpeakerType = speaker.type || '';
+                if (speaker.naam) wrapper.setAttribute('aria-label', `Woorden van ${speaker.naam}`);
+                current.appendChild(wrapper);
+                stack.push({ element: wrapper, end: interval.end });
+                current = wrapper;
+            }
+
+            const conceptId = conceptsBySegment.get(segment.id);
+            const segmentNode = document.createElement(conceptId ? 'button' : 'span');
+            segmentNode.dataset.opvSegment = segment.id || '';
+            if (conceptId) {
+                segmentNode.type = 'button';
+                segmentNode.className = 'opv-concept';
+                segmentNode.dataset.opvConcept = conceptId;
+                segmentNode.setAttribute('aria-expanded', 'false');
+                segmentNode.setAttribute('aria-controls', 'opv-concept-dialog');
+                segmentNode.setAttribute('aria-label', `${segment.tekst || ''} — toon uitleg`);
+                segmentNode.tabIndex = App._opvConceptsEnabled === false ? -1 : 0;
+                segmentNode.classList.toggle('opv-concept-disabled', App._opvConceptsEnabled === false);
+                segmentNode.setAttribute('aria-disabled', App._opvConceptsEnabled === false ? 'true' : 'false');
+                segmentNode.addEventListener('click', event => {
+                    event.stopPropagation();
+                    if (!segmentNode.classList.contains('opv-concept-disabled')) {
+                        App._openOpvConcept(segmentNode);
+                    }
+                });
+            }
+            segmentNode.textContent = segment.tekst || '';
+            current.appendChild(segmentNode);
+
+            while (stack.length && stack[stack.length - 1].end === index) {
+                stack.pop();
+                current = stack.length ? stack[stack.length - 1].element : target;
+            }
+        });
+    },
+
+    _createOpvVerse(verse, book, bookId, chapterNum, parallelEditions) {
+        const row = document.createElement('span');
+        row.className = 'verse-row opv-verse';
+        row.classList.toggle('opv-verse--parallel', parallelEditions.length > 0);
+        row.dataset.status = verse.status || 'empty';
+        row.dataset.book = bookId;
+        row.dataset.chapter = chapterNum;
+        row.dataset.verse = verse.number;
+
+        const anchor = document.createElement('a');
+        anchor.className = 'verse-num opv-verse-anchor';
+        anchor.dataset.col = 'num';
+        anchor.href = `#${bookId}/${chapterNum}/${verse.number}`;
+        anchor.textContent = String(verse.number);
+        anchor.title = `${book.nameDutch} ${chapterNum}:${verse.number}`;
+        anchor.setAttribute('aria-label', `${book.nameDutch} ${chapterNum} vers ${verse.number}`);
+        const hideNumbers = window.Opties && Opties.state && Opties.state.versnummers === 'uit';
+        anchor.tabIndex = hideNumbers ? -1 : 0;
+        anchor.setAttribute('aria-hidden', hideNumbers ? 'true' : 'false');
+        anchor.addEventListener('contextmenu', event => {
+            event.preventDefault();
+            if (typeof Tags !== 'undefined') {
+                Tags.showAddTagPopup(bookId, chapterNum, verse.number, anchor);
+            }
+        });
+
+        const cell = document.createElement('span');
+        cell.className = 'verse-cell col-2026 opv-verse-text';
+        cell.dataset.col = '2026';
+        cell.lang = 'nl';
+        cell.dir = 'ltr';
+
+        if (parallelEditions.length) {
+            const comparison = document.createElement('span');
+            comparison.className = 'edition-comparison opv-edition-comparison';
+            comparison.dataset.layout = (window.Opties && Opties.state.kolomLayout === 'eronder') ? 'eronder' : 'naast';
+            comparison.style.setProperty('--edition-count', String(parallelEditions.length + 1));
+
+            const primary = document.createElement('span');
+            primary.className = 'parallel-edition primary-edition';
+            primary.dataset.editie = 'nl-opv';
+            primary.dataset.editionLabel = 'Open Parafrase Vertaling (proef)';
+            primary.lang = 'nl';
+            App._appendOpvSegments(primary, verse);
+            comparison.appendChild(primary);
+
+            for (const item of parallelEditions) {
+                const parallelVerse = item.verses.get(Number(verse.number));
+                if (!parallelVerse) continue;
+                const meta = item.meta || { naam: item.code, taal: '', richting: 'ltr' };
+                const parallel = document.createElement('span');
+                parallel.className = 'parallel-edition';
+                parallel.dataset.editie = item.code;
+                parallel.dataset.editionLabel = meta.naam || item.code;
+                parallel.lang = meta.taal || '';
+                parallel.dir = meta.richting === 'rtl' ? 'rtl' : 'ltr';
+                parallel.textContent = parallelVerse.text2026 || parallelVerse.textHerzien || '';
+                comparison.appendChild(parallel);
+            }
+            cell.appendChild(comparison);
+        } else {
+            App._appendOpvSegments(cell, verse);
+        }
+
+        row.append(anchor, cell);
+        return row;
+    },
+
+    _renderOpvReadingFlow(chapter, book, bookId, chapterNum, sink, parallelEditions) {
+        const flow = document.createElement('article');
+        flow.className = 'opv-reading-flow';
+        flow.dataset.book = bookId;
+        flow.dataset.chapter = chapterNum;
+        flow.lang = 'nl';
+
+        const verses = new Map((chapter.verses || []).map(verse => [Number(verse.number), verse]));
+        const rendered = new Set();
+        for (const block of (chapter.blokken || [])) {
+            const passage = document.createElement('section');
+            passage.className = 'opv-passage';
+            passage.dataset.blockId = block.id || '';
+            passage.dataset.range = `${block.vanaf}-${block.tot}`;
+            passage.dataset.from = block.vanaf;
+            passage.dataset.to = block.tot;
+
+            const title = document.createElement('h2');
+            title.className = 'opv-passage-title';
+            title.textContent = block.kop || '';
+            passage.appendChild(title);
+
+            const passageText = document.createElement('div');
+            passageText.className = 'opv-passage-text';
+            for (let number = Number(block.vanaf); number <= Number(block.tot); number += 1) {
+                const verse = verses.get(number);
+                if (!verse || rendered.has(number)) continue;
+                if (passageText.childNodes.length) passageText.appendChild(document.createTextNode(' '));
+                passageText.appendChild(App._createOpvVerse(
+                    verse, book, bookId, chapterNum, parallelEditions
+                ));
+                rendered.add(number);
+            }
+            passage.appendChild(passageText);
+            flow.appendChild(passage);
+        }
+        sink.appendChild(flow);
+    },
+
+    _ensureOpvConceptDialog() {
+        let dialog = document.getElementById('opv-concept-dialog');
+        if (dialog) return dialog;
+        dialog = document.createElement('dialog');
+        dialog.id = 'opv-concept-dialog';
+        dialog.className = 'opv-concept-dialog';
+        dialog.setAttribute('aria-labelledby', 'opv-concept-title');
+
+        const content = document.createElement('div');
+        content.className = 'opv-concept-dialog-content';
+        const eyebrow = document.createElement('p');
+        eyebrow.className = 'opv-concept-eyebrow';
+        eyebrow.textContent = 'Begrip bij de tekst';
+        const title = document.createElement('h2');
+        title.id = 'opv-concept-title';
+        title.className = 'opv-concept-title';
+        const explanation = document.createElement('p');
+        explanation.className = 'opv-concept-explanation';
+        const close = document.createElement('button');
+        close.type = 'button';
+        close.className = 'opv-concept-close';
+        close.textContent = 'Sluiten';
+        close.addEventListener('click', () => App._closeOpvConcept(true));
+        content.append(eyebrow, title, explanation, close);
+        dialog.appendChild(content);
+        dialog.addEventListener('click', event => {
+            if (event.target === dialog) App._closeOpvConcept(true);
+        });
+        dialog.addEventListener('cancel', event => {
+            event.preventDefault();
+            App._closeOpvConcept(true);
+        });
+        dialog.addEventListener('close', () => {
+            const trigger = App._opvConceptTrigger;
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+            App._opvConceptTrigger = null;
+            if (App._opvRestoreConceptFocus && trigger && trigger.isConnected) trigger.focus();
+            App._opvRestoreConceptFocus = false;
+        });
+        document.body.appendChild(dialog);
+        return dialog;
+    },
+
+    _loadOpvConcepts() {
+        if (!App._opvConceptsPromise) {
+            App._opvConceptsPromise = fetch('data/edities/opv/concepten.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('OPV-begrippenregister ontbreekt');
+                    return response.json();
+                })
+                .then(data => new Map((data.concepten || []).map(item => [item.id, item])))
+                .catch(error => {
+                    App._opvConceptsPromise = null;
+                    console.warn('[OPV] Begrippenregister laden mislukt:', error);
+                    return new Map();
+                });
+        }
+        return App._opvConceptsPromise;
+    },
+
+    async _openOpvConcept(trigger) {
+        const generation = App._opvViewGeneration;
+        const concepts = await App._loadOpvConcepts();
+        if (generation !== App._opvViewGeneration || !trigger.isConnected ||
+            App._currentPrimaryEditionCode !== 'nl-opv' ||
+            trigger.classList.contains('opv-concept-disabled')) return;
+        const concept = concepts.get(trigger.dataset.opvConcept);
+        if (!concept) return;
+
+        App._closeOpvConcept(false);
+        const dialog = App._ensureOpvConceptDialog();
+        dialog.querySelector('.opv-concept-title').textContent = concept.label || '';
+        dialog.querySelector('.opv-concept-explanation').textContent = concept.uitleg || '';
+        App._opvConceptTrigger = trigger;
+        trigger.setAttribute('aria-expanded', 'true');
+        if (typeof dialog.showModal === 'function') dialog.showModal();
+        else dialog.setAttribute('open', '');
+        dialog.querySelector('.opv-concept-close').focus();
+    },
+
+    _closeOpvConcept(restoreFocus) {
+        const dialog = document.getElementById('opv-concept-dialog');
+        if (!dialog || !dialog.open) return;
+        App._opvRestoreConceptFocus = !!restoreFocus;
+        if (typeof dialog.close === 'function') dialog.close();
+        else {
+            dialog.removeAttribute('open');
+            dialog.dispatchEvent(new Event('close'));
+        }
+    },
+
+    _setOpvConceptsEnabled(enabled) {
+        App._opvConceptsEnabled = !!enabled;
+        document.body.classList.toggle('opv-concepts-uit', !enabled);
+        document.querySelectorAll('[data-opv-concept]').forEach(trigger => {
+            trigger.tabIndex = enabled ? 0 : -1;
+            trigger.classList.toggle('opv-concept-disabled', !enabled);
+            trigger.setAttribute('aria-disabled', enabled ? 'false' : 'true');
+        });
+        if (!enabled) App._closeOpvConcept(false);
+    },
+
+    _finishChapterRender(bookId, chapterNum, append, prepend) {
+        this.updateProgress();
+        this.updateGrid();
+        if (typeof ColumnReorder !== 'undefined') ColumnReorder.reorderDOM();
+        if (typeof updateStickyOffset === 'function') updateStickyOffset();
+        if (typeof Tags !== 'undefined') Tags.renderTagsForChapter(bookId, chapterNum);
+        if (typeof Begrippen !== 'undefined') {
+            const begrCb = document.getElementById('toggle-begrippen') || document.getElementById('quick-begrippen');
+            if (begrCb && begrCb.checked) Begrippen.active = true;
+            Begrippen.reload(bookId);
+        }
+        if (typeof Highlight !== 'undefined') Highlight.applyToChapter(bookId, chapterNum);
+        App._applyDropcap();
+        if (typeof Opties !== 'undefined') Opties.applyVerseNumbersClass();
+        App._afterRenderContinuous(append, prepend);
+        App._clearVerseFocus();
+    },
+
     async renderChapter(bookId, chapterNum, opts = {}) {
         const append = !!opts.append;    // doorlopend-lezen: hoofdstuk onderaan toevoegen
         const prepend = !!opts.prepend;  // doorlopend-lezen: hoofdstuk bovenaan toevoegen
         const updatesChapterChrome = !append && !prepend;
+        if (updatesChapterChrome) {
+            App._opvViewGeneration = (App._opvViewGeneration || 0) + 1;
+            App._closeOpvConcept(false);
+        }
         const renderGeneration = updatesChapterChrome
             ? (App._chapterChromeGeneration = (App._chapterChromeGeneration || 0) + 1)
             : App._chapterChromeGeneration;
@@ -511,6 +822,7 @@ const App = {
             return;
         }
         if (chapter._unavailable) {
+            if (append || prepend) return false;
             App._updateAudioPlayer(bookId, chapterNum);
             App._resetUnavailableChapterChrome(book, bookId, chapterNum);
             const meta = chapter._translation || { code: 'nl-ov', naam: 'Open Vertaling' };
@@ -527,6 +839,7 @@ const App = {
         const translationMeta = chapter._translation || null;
         const isExternalTranslation = !!translationMeta;
         const primaryEditionCode = translationMeta ? translationMeta.code : 'nl-ov';
+        App._currentPrimaryEditionCode = primaryEditionCode;
         const configuredParallels = (typeof Opties !== 'undefined' && Array.isArray(Opties.state.parallelEdities))
             ? Opties.state.parallelEdities.filter(code => code !== primaryEditionCode).slice(0, 3)
             : [];
@@ -634,6 +947,21 @@ const App = {
             intro.dataset.chapter = chapterNum;
             intro.textContent = chapter.chapterIntro.text2026 || chapter.chapterIntro.text1637;
             sink.appendChild(intro);
+        }
+
+        if (primaryEditionCode === 'nl-opv') {
+            App._renderOpvReadingFlow(
+                chapter, book, bookId, chapterNum, sink, parallelEditions
+            );
+            if (prepend) {
+                const scroller = App._getScroller();
+                const prevH = scroller ? scroller.scrollHeight : 0;
+                const prevTop = scroller ? scroller.scrollTop : 0;
+                container.insertBefore(sink, container.firstChild);
+                if (scroller) scroller.scrollTop = prevTop + (scroller.scrollHeight - prevH);
+            }
+            App._finishChapterRender(bookId, chapterNum, append, prepend);
+            return true;
         }
 
         for (const verse of chapter.verses) {
@@ -818,7 +1146,8 @@ const App = {
                     if (!parallelVerse) return '';
                     const text = parallelVerse.text2026_html || parallelVerse.text2026 || '';
                     const meta = item.meta || { naam: item.code, taal: '', richting: 'ltr' };
-                    return `<section class="parallel-edition" data-editie="${App._escapeStrongHtml(item.code)}" data-edition-label="${App._escapeStrongHtml(meta.naam)}" lang="${App._escapeStrongHtml(meta.taal || '')}" dir="${meta.richting === 'rtl' ? 'rtl' : 'ltr'}">${text}</section>`;
+                    const safeTextOnly = item.code === 'nl-opv';
+                    return `<section class="parallel-edition" data-editie="${App._escapeStrongHtml(item.code)}" data-edition-label="${App._escapeStrongHtml(meta.naam)}" lang="${App._escapeStrongHtml(meta.taal || '')}" dir="${meta.richting === 'rtl' ? 'rtl' : 'ltr'}"${safeTextOnly ? ' data-opv-parallel-text="true"' : ''}>${safeTextOnly ? '' : text}</section>`;
                 }).join('');
                 editionTextHtml = `<div class="edition-comparison" data-layout="${layout}" style="--edition-count:${parallelEditions.length + 1}">` +
                     `<section class="parallel-edition primary-edition" data-editie="${App._escapeStrongHtml(primaryEditionCode)}" data-edition-label="${App._escapeStrongHtml(primaryName)}">${openVertaling}</section>` +
@@ -837,6 +1166,15 @@ const App = {
                 <div class="verse-cell col-diff" data-col="diff">${diffHtml}</div>
                 <div class="verse-cell col-noteDiff" data-col="noteDiff">${noteDiffHtml}</div>
             `;
+
+            for (const item of parallelEditions) {
+                if (item.code !== 'nl-opv') continue;
+                const parallelVerse = item.verses.get(Number(verse.number));
+                const parallel = row.querySelector('.parallel-edition[data-editie="nl-opv"]');
+                if (parallel && parallelVerse) {
+                    parallel.textContent = parallelVerse.text2026 || parallelVerse.textHerzien || '';
+                }
+            }
 
             sink.appendChild(row);
             if (!isExternalTranslation) Editor.attachVerseListeners(row, bookId, chapterNum, verse.number);
@@ -859,29 +1197,8 @@ const App = {
             if (scroller) scroller.scrollTop = prevTop + (scroller.scrollHeight - prevH);
         }
 
-        this.updateProgress();
-        this.updateGrid();
-        // Pas kolomvolgorde toe op nieuwe rijen
-        if (typeof ColumnReorder !== 'undefined') ColumnReorder.reorderDOM();
-        if (typeof updateStickyOffset === 'function') updateStickyOffset();
-        // Tags tonen bij verzen
-        if (typeof Tags !== 'undefined') Tags.renderTagsForChapter(bookId, chapterNum);
-        // Begrippen herladen bij boekwisseling — eerst checkbox-state synchroniseren
-        if (typeof Begrippen !== 'undefined') {
-            const begrCb = document.getElementById('toggle-begrippen') || document.getElementById('quick-begrippen');
-            if (begrCb && begrCb.checked) Begrippen.active = true;
-            Begrippen.reload(bookId);
-        }
-        // Highlights toepassen op nieuwe rijen
-        if (typeof Highlight !== 'undefined') Highlight.applyToChapter(bookId, chapterNum);
-        // Versierde initiaal (drop-cap) op het eerste vers
-        App._applyDropcap();
-        // Doorlopend lezen: sentinel/observer beheren
-        App._afterRenderContinuous(append, prepend);
-        // Versmarkering wordt NIET meer op scroll gezet (gaf een storende "bracket"
-        // tijdens gewoon lezen). De markering verschijnt alleen tijdens het voorlezen,
-        // exact op het vers dat klinkt (zie audio timeupdate + _followAudio).
-        App._clearVerseFocus();
+        App._finishChapterRender(bookId, chapterNum, append, prepend);
+        return true;
     },
 
     // Scroll naar een specifiek vers en selecteer/markeer het (bv. vanaf Onderwerpen)
@@ -894,7 +1211,9 @@ const App = {
                 if (tries++ < 20) { setTimeout(tryFocus, 80); } else { window.scrollTo(0, 0); }
                 return;
             }
-            row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const reducedOpvMotion = row.classList.contains('opv-verse') &&
+                window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            row.scrollIntoView({ behavior: reducedOpvMotion ? 'auto' : 'smooth', block: 'center' });
             try {
                 if (window.VerseSelect && VerseSelect._key) {
                     VerseSelect.clearAll();
@@ -905,8 +1224,10 @@ const App = {
                     row.classList.add('verse-selected');
                 }
             } catch (e) {}
-            row.classList.add('verse-flash');
-            setTimeout(() => row.classList.remove('verse-flash'), 1700);
+            if (!reducedOpvMotion) {
+                row.classList.add('verse-flash');
+                setTimeout(() => row.classList.remove('verse-flash'), 1700);
+            }
         };
         setTimeout(tryFocus, 60);
     },
@@ -987,12 +1308,18 @@ const App = {
                 ? getFlatBookOrder(mode, manifest) : manifest.books.map(b => b.id);
             const byId = Object.fromEntries(manifest.books.map(b => [b.id, b]));
             const cur = byId[last.bookId];
-            const chs = (cur && cur.chaptersIncluded) || [];
+            const primaryOpv = typeof TekstEditie !== 'undefined' && TekstEditie.code() === 'nl-opv';
+            let chs = (cur && cur.chaptersIncluded) || [];
+            if (primaryOpv) {
+                const meta = await TekstEditie.metadata('nl-opv');
+                chs = (meta && meta.gepubliceerdeHoofdstukken &&
+                    meta.gepubliceerdeHoofdstukken[last.bookId]) || [];
+            }
             const idx = chs.indexOf(last.chapterNum);
             let nextBook = null, nextCh = null;
             if (idx >= 0 && idx < chs.length - 1) {
                 nextBook = last.bookId; nextCh = chs[idx + 1];
-            } else {
+            } else if (!primaryOpv) {
                 const bi = orderIds.indexOf(last.bookId);
                 const nb = (bi >= 0 && bi < orderIds.length - 1) ? byId[orderIds[bi + 1]] : null;
                 if (nb && nb.chaptersIncluded && nb.chaptersIncluded.length) {
@@ -1000,8 +1327,8 @@ const App = {
                 }
             }
             if (nextCh != null) {
-                await App.renderChapter(nextBook, nextCh, { append: true });
-                App._contLast = { bookId: nextBook, chapterNum: nextCh };
+                const rendered = await App.renderChapter(nextBook, nextCh, { append: true });
+                if (rendered !== false) App._contLast = { bookId: nextBook, chapterNum: nextCh };
             }
         } catch (e) { console.warn('[doorlopend] laden volgende hoofdstuk faalde:', e); }
         App._contLoading = false;
@@ -1019,12 +1346,18 @@ const App = {
                 ? getFlatBookOrder(mode, manifest) : manifest.books.map(b => b.id);
             const byId = Object.fromEntries(manifest.books.map(b => [b.id, b]));
             const cur = byId[first.bookId];
-            const chs = (cur && cur.chaptersIncluded) || [];
+            const primaryOpv = typeof TekstEditie !== 'undefined' && TekstEditie.code() === 'nl-opv';
+            let chs = (cur && cur.chaptersIncluded) || [];
+            if (primaryOpv) {
+                const meta = await TekstEditie.metadata('nl-opv');
+                chs = (meta && meta.gepubliceerdeHoofdstukken &&
+                    meta.gepubliceerdeHoofdstukken[first.bookId]) || [];
+            }
             const idx = chs.indexOf(first.chapterNum);
             let prevBook = null, prevCh = null;
             if (idx > 0) {
                 prevBook = first.bookId; prevCh = chs[idx - 1];
-            } else {
+            } else if (!primaryOpv) {
                 const bi = orderIds.indexOf(first.bookId);
                 const pb = (bi > 0) ? byId[orderIds[bi - 1]] : null;
                 if (pb && pb.chaptersIncluded && pb.chaptersIncluded.length) {
@@ -1032,8 +1365,8 @@ const App = {
                 }
             }
             if (prevCh != null) {
-                await App.renderChapter(prevBook, prevCh, { prepend: true });
-                App._contFirst = { bookId: prevBook, chapterNum: prevCh };
+                const rendered = await App.renderChapter(prevBook, prevCh, { prepend: true });
+                if (rendered !== false) App._contFirst = { bookId: prevBook, chapterNum: prevCh };
             }
         } catch (e) { console.warn('[doorlopend] vorige hoofdstuk laden faalde:', e); }
         App._contLoading = false;
@@ -1153,7 +1486,9 @@ const App = {
         App._focusedRow = row;
         // Meescrollen, tenzij de gebruiker net handmatig scrolde (~6s rust).
         if (!App._userScrollAt || (Date.now() - App._userScrollAt > 6000)) {
-            try { row.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (e) {}
+            const reducedOpvMotion = row.classList.contains('opv-verse') &&
+                window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            try { row.scrollIntoView({ block: 'center', behavior: reducedOpvMotion ? 'auto' : 'smooth' }); } catch (e) {}
         }
     },
 

@@ -90,6 +90,7 @@ const Begrippen = {
 
     async toggle(on) {
         this.active = on;
+        if (window.App && App._setOpvConceptsEnabled) App._setOpvConceptsEnabled(on);
         if (on) {
             await this.ensureLoaded();
             this.highlightWords();
@@ -109,6 +110,9 @@ const Begrippen = {
         // Verwerk elke verse-cell col-2026
         const cells = document.querySelectorAll('.col-2026');
         cells.forEach(cell => {
+            // OPV koppelt begrippen exact aan corpussegmenten. De generieke
+            // woordenboekscanner mag die redactionele koppelingen niet verdubbelen.
+            if (cell.closest('.opv-reading-flow')) return;
             if (cell.dataset.begrippenApplied) return;
             this.wrapWordsInCell(cell, words);
             cell.dataset.begrippenApplied = 'true';

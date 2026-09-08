@@ -5689,6 +5689,305 @@ span.devil-speaks, span.devil-speaks i {
     padding-left: 24px;
     padding-right: 24px;
 }
+
+/* === Open Parafrase Vertaling: rustige, doorlopende boekweergave ===
+   De legacy vershooks blijven in de DOM voor navigatie en leeshulpen, maar
+   krijgen binnen deze editie geen tabel- of kaartpresentatie. */
+#content.reading-mode .opv-reading-flow {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 72ch;
+    margin-inline: auto;
+    padding: clamp(24px, 4vw, 48px) clamp(16px, 3vw, 32px)
+        max(32px, calc(24px + env(safe-area-inset-bottom)));
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--text-primary, #252525);
+    font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
+    font-size: 19px;
+    line-height: 1.78;
+    overflow-wrap: anywhere;
+}
+
+.opv-passage {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+.opv-passage + .opv-passage { margin-top: 2.65em; }
+.opv-passage-title {
+    margin: 0 0 0.52em;
+    color: var(--navy, #142e42);
+    font-family: var(--font-body, 'Fira Sans', sans-serif);
+    font-size: 0.92em;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 1.25;
+    letter-spacing: 0.015em;
+    break-after: avoid;
+    page-break-after: avoid;
+    text-wrap: balance;
+}
+.opv-passage-title + .opv-passage-text {
+    break-before: avoid;
+    page-break-before: avoid;
+}
+.opv-passage-text {
+    margin: 0;
+    padding: 0;
+    orphans: 3;
+    widows: 3;
+    text-wrap: pretty;
+}
+
+#content.reading-mode .opv-reading-flow .verse-row.opv-verse {
+    display: inline !important;
+    position: static;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0 !important;
+    border: 0;
+    background: transparent !important;
+    box-shadow: none;
+    font: inherit;
+    line-height: inherit;
+}
+#content.reading-mode .opv-reading-flow .verse-row.opv-verse::after { content: none; }
+#content.reading-mode .opv-reading-flow .verse-cell.col-2026.opv-verse-text {
+    display: inline !important;
+    min-width: 0;
+    min-height: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent !important;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    overflow-wrap: anywhere;
+}
+#content.reading-mode .opv-reading-flow .verse-num.opv-verse-anchor {
+    display: inline-flex !important;
+    box-sizing: border-box;
+    inline-size: 24px;
+    block-size: 24px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.08em 0.08em;
+    padding: 0;
+    border: 0;
+    color: #73530b;
+    font-family: var(--font-body, 'Fira Sans', sans-serif);
+    font-size: 0.58em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: baseline;
+    cursor: pointer;
+    scroll-margin-top: 9rem;
+}
+#content.reading-mode .opv-reading-flow .opv-verse-anchor::after { content: none; }
+.opv-verse-anchor:hover { text-decoration: underline; text-underline-offset: 2px; }
+.opv-verse-anchor:focus-visible,
+.opv-concept:focus-visible,
+.opv-concept-close:focus-visible {
+    outline: 2px solid var(--navy, #142e42);
+    outline-offset: 2px;
+}
+body.hide-verse-numbers #content.reading-mode .opv-reading-flow .opv-verse-anchor,
+body.hide-verse-numbers #content.reading-mode .opv-reading-flow .opv-verse-anchor:hover {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.opv-segment { display: inline; }
+.opv-concept {
+    display: inline;
+    min-block-size: 24px;
+    margin: 0;
+    padding: 0 0.08em;
+    border: 0;
+    border-bottom: 1px dotted currentColor;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    vertical-align: baseline;
+    cursor: help;
+    text-decoration-thickness: from-font;
+}
+.opv-concept:hover { background: rgba(20, 46, 66, 0.07); }
+.opv-concept.opv-concept-disabled {
+    padding-inline: 0;
+    border-bottom-color: transparent;
+    background: transparent;
+    pointer-events: none;
+    cursor: text;
+}
+
+.opv-citation { display: inline; }
+.opv-reading-flow .god-speaks,
+.opv-reading-flow .direct-speech,
+.opv-reading-flow .angel-speaks {
+    transition: color 120ms ease;
+}
+
+#content.reading-mode .opv-reading-flow .opv-verse--parallel {
+    display: block !important;
+    margin-block: 0.7em;
+}
+#content.reading-mode .opv-reading-flow .opv-verse--parallel .opv-verse-text {
+    display: inline-block !important;
+    width: calc(100% - 32px);
+    vertical-align: top;
+}
+.opv-edition-comparison {
+    display: grid;
+    grid-template-columns: repeat(var(--edition-count), minmax(0, 1fr));
+    gap: 1.1em;
+    width: 100%;
+}
+.opv-edition-comparison[data-layout="eronder"] { grid-template-columns: 1fr; }
+.opv-edition-comparison .parallel-edition {
+    display: block;
+    min-width: 0;
+    padding-inline-start: 0.75em;
+    border-inline-start: 1px solid color-mix(in srgb, var(--gold, #cba449) 55%, transparent);
+}
+.opv-edition-comparison .parallel-edition::before {
+    content: attr(data-edition-label);
+    display: block;
+    margin-bottom: 0.25em;
+    color: #73530b;
+    font: 650 0.62em/1.3 var(--font-body, 'Fira Sans', sans-serif);
+    letter-spacing: 0.035em;
+}
+
+.opv-concept-dialog {
+    box-sizing: border-box;
+    width: min(34rem, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+    border: 1px solid var(--border-default, #d8d2c6);
+    border-radius: 12px;
+    background: var(--bg-surface, #fff);
+    color: var(--text-primary, #252525);
+    box-shadow: 0 18px 55px rgba(20, 46, 66, 0.24);
+}
+.opv-concept-dialog::backdrop { background: rgba(13, 29, 42, 0.58); }
+.opv-concept-dialog-content { padding: clamp(22px, 5vw, 36px); }
+.opv-concept-eyebrow {
+    margin: 0 0 0.45rem;
+    color: #73530b;
+    font: 700 0.72rem/1.3 var(--font-body, 'Fira Sans', sans-serif);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+.opv-concept-title {
+    margin: 0;
+    color: var(--navy, #142e42);
+    font: 650 clamp(1.35rem, 4vw, 1.75rem)/1.2 var(--font-serif, Georgia, serif);
+}
+.opv-concept-explanation {
+    margin: 0.9rem 0 1.35rem;
+    font: 1rem/1.65 var(--font-body, sans-serif);
+}
+.opv-concept-close {
+    min-width: 88px;
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--navy, #142e42);
+    border-radius: 7px;
+    background: var(--navy, #142e42);
+    color: #fff;
+    font: 650 0.9rem/1 var(--font-body, sans-serif);
+    cursor: pointer;
+}
+
+body.reader-font-klassiek #content.reading-mode .opv-reading-flow {
+    font-family: var(--font-serif, 'EB Garamond', Georgia, serif);
+}
+body.reader-font-rustig #content.reading-mode .opv-reading-flow {
+    font-family: var(--font-body, 'Fira Sans', sans-serif);
+}
+body.reader-spacing-compact #content.reading-mode .opv-reading-flow { line-height: 1.65; }
+body.reader-spacing-normaal #content.reading-mode .opv-reading-flow { line-height: 1.78; }
+body.reader-spacing-ruim #content.reading-mode .opv-reading-flow { line-height: 1.9; }
+body.dyslexia-mode #content.reading-mode .opv-reading-flow,
+body.dyslexia-mode #content.reading-mode .opv-reading-flow .opv-verse-text {
+    max-width: 60ch;
+    color: #1a1a2e;
+    font-family: 'Lexend', sans-serif !important;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.08em;
+    word-spacing: 0.25em;
+}
+
+:root[data-theme="donker"] .opv-reading-flow { color: var(--text-primary, #ece8df); }
+:root[data-theme="donker"] .opv-passage-title { color: var(--teal-light, #9bc9c7); }
+:root[data-theme="donker"] #content.reading-mode .opv-reading-flow .opv-verse-anchor,
+:root[data-theme="donker"] .opv-edition-comparison .parallel-edition::before,
+:root[data-theme="donker"] .opv-concept-eyebrow { color: #d6b75f; }
+:root[data-theme="donker"] .opv-reading-flow button.opv-concept {
+    background: transparent !important;
+    color: inherit !important;
+}
+:root[data-theme="donker"] .opv-reading-flow button.opv-concept:hover:not(.opv-concept-disabled) {
+    background: rgba(214, 183, 95, 0.1) !important;
+}
+:root[data-theme="donker"] .opv-concept-dialog {
+    border-color: var(--border-default, #42505a);
+    background: var(--bg-surface, #1c252d);
+    color: var(--text-primary, #ece8df);
+}
+:root[data-theme="donker"] .opv-concept-title { color: var(--teal-light, #9bc9c7); }
+:root[data-theme="donker"] .opv-concept-close {
+    border-color: #d6b75f !important;
+    background: #d6b75f !important;
+    color: #14202a !important;
+}
+
+@media (max-width: 640px) {
+    #content.reading-mode .opv-reading-flow {
+        max-width: 100%;
+        padding: 26px 16px max(40px, calc(28px + env(safe-area-inset-bottom)));
+        font-size: 18px;
+        line-height: 1.75;
+    }
+    .opv-passage + .opv-passage { margin-top: 2.25em; }
+    .opv-passage-title { font-size: 0.9em; }
+    .opv-edition-comparison { grid-template-columns: 1fr; gap: 0.7em; }
+    .opv-concept-dialog {
+        width: calc(100vw - 24px);
+        max-width: calc(100vw - 24px);
+        max-height: calc(100dvh - 24px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .opv-reading-flow,
+    .opv-reading-flow *,
+    .opv-concept-dialog,
+    .opv-concept-dialog * {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
 @media (max-width: 768px) {
     .ov-ingebed .page {
         padding-left: 16px;

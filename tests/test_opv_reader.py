@@ -45,8 +45,11 @@ class OpvReaderTests(unittest.TestCase):
         cls.server.server_close()
         cls.thread.join(timeout=2)
 
-    def new_page(self, settings=None):
-        page = self.browser.new_page(viewport={"width": 1280, "height": 900})
+    def new_page(self, settings=None, viewport=None):
+        page = self.browser.new_page(
+            viewport=viewport or {"width": 1280, "height": 900},
+            service_workers="block",
+        )
         page.set_default_timeout(10_000)
         if settings is not None:
             page.add_init_script(
@@ -94,6 +97,44 @@ class OpvReaderTests(unittest.TestCase):
             verse.wait_for()
             self.assertIn("hemel", verse.inner_text())
             self.assertEqual(verse.get_attribute("lang"), "nl")
+
+            flow = page.locator('.opv-reading-flow[data-book="genesis"][data-chapter="1"]')
+            self.assertEqual(flow.count(), 1)
+            self.assertEqual(page.locator("#verses-container > .opv-reading-flow").count(), 1)
+            self.assertEqual(flow.locator(".opv-passage").count(), 7)
+            self.assertEqual(flow.locator(".verse-row.opv-verse").count(), 31)
+            self.assertEqual(flow.locator(".opv-verse-anchor").count(), 31)
+            self.assertEqual(page.locator("#verses-container > .verse-row").count(), 0)
+            self.assertEqual(
+                flow.locator(".opv-passage").evaluate_all(
+                    "els => els.map(el => [el.dataset.blockId, el.dataset.range, "
+                    "el.querySelector('.opv-passage-title').textContent.trim()])"
+                ),
+                [
+                    ["gen-1-b1", "1-2", "Het begin"],
+                    ["gen-1-b2", "3-5", "Licht en donker"],
+                    ["gen-1-b3", "6-8", "Het hemelgewelf"],
+                    ["gen-1-b4", "9-13", "Land en planten"],
+                    ["gen-1-b5", "14-19", "Lichten aan de hemel"],
+                    ["gen-1-b6", "20-23", "Dieren in het water en vogels"],
+                    ["gen-1-b7", "24-31", "Landdieren en mensen"],
+                ],
+            )
+            self.assertEqual(
+                flow.locator(".opv-verse").evaluate_all(
+                    "els => els.map(el => Number(el.dataset.verse))"
+                ),
+                list(range(1, 32)),
+            )
+            first_anchor = flow.locator('.opv-verse[data-verse="1"] .opv-verse-anchor')
+            self.assertEqual(first_anchor.get_attribute("href"), "#genesis/1/1")
+            self.assertEqual(first_anchor.get_attribute("data-col"), "num")
+            self.assertEqual(first_anchor.get_attribute("aria-label"), "Genesis 1 vers 1")
+            self.assertEqual(first_anchor.get_attribute("tabindex"), "0")
+            self.assertEqual(
+                flow.locator('.opv-verse[data-verse="1"] .opv-verse-text').get_attribute("data-col"),
+                "2026",
+            )
 
             readerdata = page.evaluate(
                 """async () => {
@@ -485,6 +526,419 @@ class OpvReaderTests(unittest.TestCase):
                     self.assertEqual([], observed["http_errors"])
                 finally:
                     page.close()
+
+    def test_alle_opv_hoofdstukken_hebben_exacte_boekstructuur_en_annotaties(self):
+        expected = {
+            ("genesis", 1): (31, 7, 15, 13, 78),
+            ("genesis", 2): (25, 6, 15, 4, 58),
+            ("genesis", 3): (24, 6, 7, 21, 57),
+            ("genesis", 4): (26, 5, 9, 14, 55),
+            ("genesis", 5): (32, 5, 5, 1, 43),
+            ("johannes", 1): (52, 7, 45, 36, 180),
+            ("johannes", 2): (25, 4, 16, 11, 69),
+            ("johannes", 3): (36, 5, 49, 33, 134),
+            ("johannes", 4): (54, 8, 29, 41, 143),
+            ("johannes", 5): (47, 5, 40, 39, 131),
+        }
+        page = self.new_page()
+        observed = self.observe_runtime(page)
+        totals = [0, 0, 0, 0, 0]
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                      wait_until="domcontentloaded")
+            page.locator(".opv-reading-flow").wait_for()
+            for (book, chapter), wanted in expected.items():
+                actual = page.evaluate(
+                    """async ([book, chapter]) => {
+                        await App.renderChapter(book, chapter);
+                        const flow = document.querySelector('.opv-reading-flow');
+                        return [
+                            flow.querySelectorAll('.opv-verse-anchor').length,
+                            flow.querySelectorAll('.opv-passage').length,
+                            flow.querySelectorAll('[data-opv-concept]').length,
+                            flow.querySelectorAll('[data-opv-citation]').length,
+                            flow.querySelectorAll('[data-opv-segment]').length,
+                        ];
+                    }""",
+                    [book, chapter],
+                )
+                self.assertEqual(actual, list(wanted), f"{book} {chapter}")
+                self.assertEqual(page.locator(".opv-reading-flow").count(), 1)
+                self.assertEqual(page.locator(".opv-reading-flow .verse-row.opv-verse").count(), wanted[0])
+                totals = [a + b for a, b in zip(totals, actual)]
+            self.assertEqual(totals, [352, 58, 230, 213, 948])
+            self.assertEqual(observed["pageerrors"], [])
+        finally:
+            page.close()
+
+    def test_opv_segmenttekst_wordt_nooit_als_html_uitgevoerd(self):
+        payload = json.loads(
+            (ROOT / "data/edities/opv/chapters/genesis/1.json").read_text(encoding="utf-8")
+        )
+        injected = '<img src=x onerror="window.__opvInjected=true"> & letterlijk'
+        payload["verzen"][0]["segmenten"][0]["tekst"] = injected
+        payload["verzen"][0]["tekst"] = "".join(
+            segment["tekst"] for segment in payload["verzen"][0]["segmenten"]
+        )
+        page = self.new_page()
+        page.route(
+            "**/data/edities/opv/chapters/genesis/1.json",
+            lambda route: route.fulfill(
+                status=200, content_type="application/json", body=json.dumps(payload)
+            ),
+        )
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                      wait_until="domcontentloaded")
+            text = page.locator('.opv-verse[data-verse="1"] .opv-verse-text')
+            text.wait_for()
+            self.assertIn(injected, text.text_content())
+            self.assertEqual(text.locator('img:not(.dropcap-image), img[src="x"]').count(), 0)
+            self.assertFalse(page.evaluate("Boolean(window.__opvInjected)"))
+        finally:
+            page.close()
+
+    def test_geneste_citaten_volgen_globale_toggle_zonder_rerender_of_tekstverlies(self):
+        page = self.new_page()
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#johannes/3",
+                      wait_until="domcontentloaded")
+            verse = page.locator('.opv-verse[data-verse="7"] .opv-verse-text')
+            verse.wait_for()
+            outer = verse.locator('[data-opv-citation="JHN.3.7.q1"]')
+            inner = outer.locator('[data-opv-citation="JHN.3.7.q2"]')
+            self.assertEqual(outer.count(), 1)
+            self.assertEqual(inner.count(), 1)
+            self.assertTrue(outer.evaluate("el => el.classList.contains('god-speaks')"))
+            self.assertEqual(outer.get_attribute("data-opv-citation-semantic"),
+                             "spraak.jezus.jhn3v7q1")
+            self.assertEqual(outer.get_attribute("data-opv-speaker"), "jezus")
+            self.assertEqual(outer.get_attribute("data-opv-speaker-type"), "god")
+            before_text = verse.text_content()
+            outer.evaluate("el => { el.__sameCitationNode = true; }")
+
+            page.locator("#topnav-tekstopties").click()
+            page.locator('details[data-options-category="weergave"]').evaluate(
+                "element => { element.open = true; }"
+            )
+            toggle = page.locator("#toggle-citaten")
+            toggle.uncheck()
+            self.assertTrue(page.locator("body").evaluate("el => el.classList.contains('citaten-uit')"))
+            self.assertTrue(outer.evaluate("el => el.__sameCitationNode === true"))
+            self.assertEqual(verse.text_content(), before_text)
+            toggle.check()
+            self.assertFalse(page.locator("body").evaluate("el => el.classList.contains('citaten-uit')"))
+            self.assertTrue(outer.evaluate("el => el.__sameCitationNode === true"))
+            self.assertEqual(verse.text_content(), before_text)
+        finally:
+            page.close()
+
+    def test_exact_begrip_is_veilig_toetsenbordvriendelijk_en_sluit_met_focus_return(self):
+        registry = json.loads(
+            (ROOT / "data/edities/opv/concepten.json").read_text(encoding="utf-8")
+        )
+        concept = next(item for item in registry["concepten"] if item["id"] == "farizeeen")
+        concept["label"] = '<img src=x onerror="window.__conceptInjected=true"> Farizeeën'
+        concept["uitleg"] = '<script>window.__conceptInjected=true</script> veilige uitleg'
+        page = self.new_page()
+        concept_requests = []
+
+        def fulfill_registry(route):
+            concept_requests.append(route.request.url)
+            route.fulfill(status=200, content_type="application/json", body=json.dumps(registry))
+
+        page.route("**/data/edities/opv/concepten.json", fulfill_registry)
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#johannes/3",
+                      wait_until="domcontentloaded")
+            trigger = page.locator('[data-opv-concept="farizeeen"]').first
+            trigger.wait_for()
+            self.assertEqual(trigger.evaluate("el => el.tagName"), "BUTTON")
+            self.assertEqual(trigger.get_attribute("type"), "button")
+            self.assertEqual(trigger.get_attribute("aria-expanded"), "false")
+            self.assertEqual(trigger.get_attribute("aria-controls"), "opv-concept-dialog")
+            trigger.focus()
+            page.keyboard.press("Enter")
+            dialog = page.locator("#opv-concept-dialog")
+            dialog.wait_for(state="visible")
+            self.assertEqual(trigger.get_attribute("aria-expanded"), "true")
+            self.assertEqual(dialog.locator(".opv-concept-title").text_content(), concept["label"])
+            self.assertEqual(dialog.locator(".opv-concept-explanation").text_content(), concept["uitleg"])
+            self.assertEqual(dialog.locator("img, script").count(), 0)
+            self.assertFalse(page.evaluate("Boolean(window.__conceptInjected)"))
+            page.keyboard.press("Escape")
+            dialog.wait_for(state="hidden")
+            self.assertEqual(trigger.get_attribute("aria-expanded"), "false")
+            self.assertTrue(trigger.evaluate("el => el === document.activeElement"))
+
+            second = page.locator("[data-opv-concept]").nth(1)
+            second.focus()
+            page.keyboard.press("Space")
+            dialog.wait_for(state="visible")
+            dialog.locator(".opv-concept-close").click()
+            self.assertEqual(len(concept_requests), 1)
+
+            before = trigger.text_content()
+            page.evaluate("Begrippen.toggle(false)")
+            self.assertEqual(trigger.text_content(), before)
+            self.assertEqual(trigger.get_attribute("tabindex"), "-1")
+            self.assertTrue(trigger.evaluate("el => el.classList.contains('opv-concept-disabled')"))
+            page.evaluate("Begrippen.toggle(true)")
+            self.assertEqual(trigger.get_attribute("tabindex"), "0")
+            self.assertEqual(page.locator(".opv-reading-flow .begrip-link").count(), 0)
+        finally:
+            page.close()
+
+    def test_vertraagd_begrippenregister_mag_na_editiewissel_niets_openen(self):
+        page = self.new_page()
+        page.add_init_script(
+            """(() => {
+                const fetchNow = window.fetch.bind(window);
+                let release;
+                const gate = new Promise(resolve => { release = resolve; });
+                window.__releaseOpvConcepts = () => release();
+                window.fetch = (...args) => String(args[0]).endsWith('data/edities/opv/concepten.json')
+                    ? gate.then(() => fetchNow(...args)) : fetchNow(...args);
+            })();"""
+        )
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#johannes/3",
+                      wait_until="domcontentloaded")
+            page.locator('[data-opv-concept="farizeeen"]').click()
+            page.evaluate("TekstEditie.setCode('nl-ov'); App.renderChapter('johannes', 3)")
+            page.locator('.verse-row:not(.opv-verse)[data-verse="1"]').wait_for()
+            page.evaluate("window.__releaseOpvConcepts()")
+            page.wait_for_timeout(150)
+            self.assertEqual(page.locator(".opv-reading-flow").count(), 0)
+            self.assertEqual(page.locator("#opv-concept-dialog:visible").count(), 0)
+        finally:
+            page.close()
+
+    def test_parallelpaden_en_editiewissel_behouden_elk_hun_eigen_dom(self):
+        page = self.new_page({"teksteditie": "nl-opv", "parallelEdities": ["nl-ov"]})
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                      wait_until="domcontentloaded")
+            flow = page.locator(".opv-reading-flow")
+            flow.wait_for()
+            self.assertEqual(flow.locator('.parallel-edition.primary-edition[data-editie="nl-opv"]').count(), 31)
+            self.assertEqual(flow.locator('.parallel-edition[data-editie="nl-ov"]').count(), 31)
+            self.assertIn("In het begin", flow.locator('.opv-verse[data-verse="1"] .parallel-edition[data-editie="nl-ov"]').inner_text())
+
+            page.evaluate(
+                """async () => {
+                    Opties.state.teksteditie = 'nl-ov';
+                    Opties.state.parallelEdities = ['nl-opv'];
+                    Opties.save();
+                    TekstEditie.setCode('nl-ov');
+                    await App.renderChapter('genesis', 1);
+                }"""
+            )
+            legacy = page.locator('.verse-row:not(.opv-verse)[data-verse="1"]')
+            legacy.wait_for()
+            self.assertEqual(page.locator(".opv-reading-flow").count(), 0)
+            self.assertEqual(page.locator("#verses-container > .verse-row").count(), 31)
+            self.assertEqual(page.locator('.parallel-edition[data-editie="nl-opv"]').count(), 31)
+
+            page.evaluate(
+                """async () => {
+                    Opties.state.teksteditie = 'nl-opv';
+                    Opties.state.parallelEdities = [];
+                    Opties.save();
+                    TekstEditie.setCode('nl-opv');
+                    await App.renderChapter('genesis', 1);
+                }"""
+            )
+            page.locator(".opv-reading-flow").wait_for()
+            self.assertEqual(page.locator("#verses-container > .verse-row").count(), 0)
+            self.assertEqual(page.locator(".verse-row.opv-verse").count(), 31)
+        finally:
+            page.close()
+
+    def test_versanker_hashfocus_en_reduced_motion_blijven_werken(self):
+        page = self.new_page()
+        page.emulate_media(reduced_motion="reduce")
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#johannes/3/16",
+                      wait_until="domcontentloaded")
+            row = page.locator('.opv-verse[data-verse="16"]')
+            row.wait_for()
+            anchor = row.locator(".opv-verse-anchor")
+            self.assertEqual(anchor.get_attribute("href"), "#johannes/3/16")
+            page.evaluate(
+                """() => {
+                    const row = document.querySelector('.opv-verse[data-verse="16"]');
+                    row.scrollIntoView = options => { window.__opvScrollOptions = options; };
+                    App.focusVerse('johannes', 3, 16);
+                }"""
+            )
+            page.wait_for_function("window.__opvScrollOptions")
+            self.assertEqual(page.evaluate("window.__opvScrollOptions.behavior"), "auto")
+            self.assertFalse(row.evaluate("el => el.classList.contains('verse-flash')"))
+            anchor.click()
+            self.assertTrue(page.url.endswith("#johannes/3/16"))
+        finally:
+            page.close()
+
+    def test_doorlopend_lezen_append_prepend_en_publicatiegrenzen(self):
+        page = self.new_page()
+        page.add_init_script(
+            """localStorage.setItem('doorlopend', 'true');
+               window.IntersectionObserver = class { observe() {} disconnect() {} };"""
+        )
+        observed = self.observe_runtime(page)
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#genesis/2",
+                      wait_until="domcontentloaded")
+            page.locator('.opv-reading-flow[data-chapter="2"]').wait_for()
+            page.evaluate("App._contFirst={bookId:'genesis',chapterNum:2}; App._loadPrevContinuous()")
+            page.wait_for_function("document.querySelectorAll('.opv-reading-flow').length === 2")
+            self.assertEqual(
+                page.locator(".opv-reading-flow").evaluate_all("els => els.map(el => el.dataset.chapter)"),
+                ["1", "2"],
+            )
+            page.evaluate("App._contLast={bookId:'genesis',chapterNum:2}; App._loadNextContinuous()")
+            page.wait_for_function("document.querySelectorAll('.opv-reading-flow').length === 3")
+            self.assertEqual(
+                page.locator(".opv-reading-flow").evaluate_all("els => els.map(el => el.dataset.chapter)"),
+                ["1", "2", "3"],
+            )
+
+            for book in ("genesis", "johannes"):
+                page.evaluate("([book]) => App.renderChapter(book, 5)", [book])
+                page.locator('.opv-reading-flow[data-chapter="5"]').wait_for()
+                observed["requests"].clear()
+                page.evaluate("([book]) => { App._contLast={bookId:book,chapterNum:5}; return App._loadNextContinuous(); }", [book])
+                page.wait_for_timeout(150)
+                self.assertEqual(page.locator('.opv-reading-flow[data-chapter="5"]').count(), 1)
+                self.assertEqual(page.locator(".translation-unavailable").count(), 0)
+                self.assertFalse(any(url.endswith(f"/{book}/6.json") for url in observed["requests"]))
+            self.assertFalse(any("/lukas/" in url for url in observed["requests"]))
+            self.assertEqual(observed["pageerrors"], [])
+        finally:
+            page.close()
+
+    def test_boektypografie_opties_contrast_en_mobiele_viewport(self):
+        page = self.new_page(viewport={"width": 1280, "height": 900})
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#johannes/3",
+                      wait_until="domcontentloaded")
+            flow = page.locator(".opv-reading-flow")
+            flow.wait_for()
+            metrics = flow.evaluate(
+                """el => {
+                    const style = getComputedStyle(el);
+                    const rect = el.getBoundingClientRect();
+                    const anchor = el.querySelector('.opv-verse-anchor');
+                    const ar = anchor.getBoundingClientRect();
+                    const rgb = value => value.match(/[0-9.]+/g).slice(0, 3).map(Number);
+                    const luminance = value => {
+                        const parts = rgb(value).map(v => v / 255).map(v =>
+                            v <= .04045 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4));
+                        return .2126 * parts[0] + .7152 * parts[1] + .0722 * parts[2];
+                    };
+                    const fg = luminance(getComputedStyle(anchor).color);
+                    const bg = luminance(getComputedStyle(document.body).backgroundColor);
+                    const probe = document.createElement('span');
+                    probe.style.cssText = 'position:absolute;visibility:hidden;width:1ch;padding:0';
+                    probe.textContent = '0'; el.appendChild(probe);
+                    const ch = probe.getBoundingClientRect().width; probe.remove();
+                    const contentWidth = rect.width - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+                    const parentRect = el.parentElement.getBoundingClientRect();
+                    return {maxWidth: style.maxWidth, contentCh: contentWidth / ch,
+                        fontSize: parseFloat(style.fontSize),
+                        lineHeight: parseFloat(style.lineHeight), width: rect.width,
+                        centered: Math.abs((rect.left - parentRect.left) - (parentRect.right - rect.right)) < 3,
+                        anchorWidth: ar.width, anchorHeight: ar.height,
+                        contrast: (Math.max(fg, bg) + .05) / (Math.min(fg, bg) + .05),
+                        border: style.borderTopWidth, shadow: style.boxShadow,
+                        background: style.backgroundColor};
+                }"""
+            )
+            self.assertGreaterEqual(metrics["contentCh"], 62)
+            self.assertLessEqual(metrics["contentCh"], 72)
+            self.assertGreaterEqual(metrics["fontSize"], 18)
+            self.assertLessEqual(metrics["fontSize"], 20)
+            self.assertGreaterEqual(metrics["lineHeight"] / metrics["fontSize"], 1.65)
+            self.assertLessEqual(metrics["lineHeight"] / metrics["fontSize"], 1.9)
+            self.assertTrue(metrics["centered"])
+            self.assertGreaterEqual(metrics["anchorWidth"], 24)
+            self.assertGreaterEqual(metrics["anchorHeight"], 24)
+            self.assertGreaterEqual(metrics["contrast"], 4.5)
+            self.assertEqual(metrics["border"], "0px")
+            self.assertEqual(metrics["shadow"], "none")
+
+            base = flow.evaluate("el => ({font:getComputedStyle(el).fontFamily,line:getComputedStyle(el).lineHeight})")
+            page.locator("#topnav-tekstopties").click()
+            page.locator('details[data-options-category="weergave"]').evaluate(
+                "element => { element.open = true; }"
+            )
+            page.locator("#toggle-lettertype-alternatief").check()
+            alternate = flow.evaluate("el => getComputedStyle(el).fontFamily")
+            self.assertNotEqual(alternate, base["font"])
+            page.locator("#opt-regelafstand").fill("2")
+            roomy = flow.evaluate("el => parseFloat(getComputedStyle(el).lineHeight)")
+            self.assertGreater(roomy, float(base["line"].replace("px", "")))
+            page.locator("#toggle-dyslexia").check()
+            self.assertTrue(page.locator("body").evaluate("el => el.classList.contains('dyslexia-mode')"))
+            self.assertNotEqual(flow.evaluate("el => getComputedStyle(el).letterSpacing"), "normal")
+            page.locator("#sidebar-right-toggle").click()
+            page.locator("#sidebar-right").wait_for(state="hidden")
+
+            anchor = page.locator(".opv-verse-anchor").first
+            box_before = anchor.bounding_box()
+            page.evaluate("Opties.state.versnummers='uit'; Opties.applyVerseNumbersClass()")
+            self.assertEqual(anchor.count(), 1)
+            self.assertEqual(anchor.get_attribute("tabindex"), "-1")
+            box_after = anchor.bounding_box()
+            self.assertAlmostEqual(box_before["width"], box_after["width"], delta=0.5)
+            self.assertAlmostEqual(box_before["height"], box_after["height"], delta=0.5)
+
+            page.set_viewport_size({"width": 390, "height": 844})
+            page.evaluate("document.documentElement.dataset.theme='donker'")
+            page.evaluate("Opties.state.versnummers='aan'; Opties.applyVerseNumbersClass()")
+            dark_concept = page.locator(".opv-citation [data-opv-concept]").first.evaluate(
+                """el => ({background:getComputedStyle(el).backgroundColor,
+                    color:getComputedStyle(el).color,
+                    citationColor:getComputedStyle(el.closest('.opv-citation')).color})"""
+            )
+            self.assertEqual(dark_concept["background"], "rgba(0, 0, 0, 0)")
+            self.assertEqual(dark_concept["color"], dark_concept["citationColor"])
+            mobile = flow.evaluate(
+                """el => { const r=el.getBoundingClientRect(), s=getComputedStyle(el);
+                    return {left:r.left,right:r.right,width:r.width,client:el.clientWidth,
+                        scroll:el.scrollWidth,paddingBottom:parseFloat(s.paddingBottom),
+                        viewport:document.documentElement.clientWidth,
+                        bodyScroll:document.body.scrollWidth}; }"""
+            )
+            self.assertGreaterEqual(mobile["left"], 0)
+            self.assertLessEqual(mobile["right"], mobile["viewport"] + 1)
+            self.assertLessEqual(mobile["scroll"], mobile["client"] + 1)
+            self.assertLessEqual(mobile["bodyScroll"], mobile["viewport"] + 1)
+            self.assertGreaterEqual(mobile["paddingBottom"], 24)
+
+            page.locator("[data-opv-concept]").first.click()
+            dialog = page.locator("#opv-concept-dialog")
+            dialog.wait_for(state="visible")
+            dialog_box = dialog.bounding_box()
+            self.assertGreaterEqual(dialog_box["x"], 0)
+            self.assertLessEqual(dialog_box["x"] + dialog_box["width"], 391)
+            self.assertGreaterEqual(dialog_box["y"], 0)
+            self.assertLessEqual(dialog_box["y"] + dialog_box["height"], 845)
+            self.assertIn("rgb", dialog.evaluate("el => getComputedStyle(el).backgroundColor"))
+            dark_close = dialog.locator(".opv-concept-close").evaluate(
+                "el => ({background:getComputedStyle(el).backgroundColor, "
+                "color:getComputedStyle(el).color})"
+            )
+            self.assertEqual(dark_close["background"], "rgb(214, 183, 95)")
+            self.assertEqual(dark_close["color"], "rgb(20, 32, 42)")
+            dialog.locator(".opv-concept-close").click()
+
+            page.evaluate("document.documentElement.style.zoom='2'")
+            zoomed = flow.evaluate("el => ({client:el.clientWidth, scroll:el.scrollWidth})")
+            self.assertLessEqual(zoomed["scroll"], zoomed["client"] + 1)
+        finally:
+            page.close()
 
     def test_wiki_citaat_volgt_de_globale_opv_editie_en_bronnaam(self):
         page = self.new_page({"teksteditie": "nl-opv"})

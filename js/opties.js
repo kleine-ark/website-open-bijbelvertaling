@@ -177,6 +177,10 @@ const Opties = {
                         document.body.classList.toggle('show-tags', input.checked);
                     }
                     this.save();
+                    if (input.dataset.optie === 'citaten') {
+                        this.applyCitationsClass();
+                        return;
+                    }
                     if (input.dataset.optie === 'apocriefeBoeken' || input.dataset.optie === 'ethiopischeBoeken') {
                         if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
                         if (typeof Navigation !== 'undefined' && Navigation.renderBookNav) Navigation.renderBookNav();
@@ -209,7 +213,6 @@ const Opties = {
                         this.applyVerseNumbersClass();
                     } else if (optie === 'citaten') {
                         this.applyCitationsClass();
-                        this.applyToCurrentChapter();
                     } else if (optie === 'thema') {
                         this.applyThemeClass();
                     } else if (optie === 'lettertype' || optie === 'regelafstand') {
@@ -248,7 +251,12 @@ const Opties = {
 
     applyVerseNumbersClass() {
         // Toggle een class op <body> zodat CSS de versnummers kan verbergen.
-        document.body.classList.toggle('hide-verse-numbers', this.state.versnummers === 'uit');
+        const hidden = this.state.versnummers === 'uit';
+        document.body.classList.toggle('hide-verse-numbers', hidden);
+        document.querySelectorAll('.opv-verse-anchor').forEach(anchor => {
+            anchor.tabIndex = hidden ? -1 : 0;
+            anchor.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+        });
     },
 
     applyCitationsClass() {
