@@ -635,13 +635,16 @@ const App = {
         return row;
     },
 
-    _renderOpvReadingFlow(chapter, book, bookId, chapterNum, sink, parallelEditions) {
+    _renderOpvReadingFlow(
+        chapter, book, bookId, chapterNum, sink, parallelEditions, labelledBy = 'chapter-title'
+    ) {
         const flow = document.createElement('article');
         flow.className = 'opv-reading-flow';
         flow.dataset.editie = 'nl-opv';
         flow.dataset.book = bookId;
         flow.dataset.chapter = chapterNum;
         flow.lang = 'nl';
+        flow.setAttribute('aria-labelledby', labelledBy);
 
         const verses = new Map((chapter.verses || []).map(verse => [Number(verse.number), verse]));
         const rendered = new Set();
@@ -653,7 +656,7 @@ const App = {
             passage.dataset.from = block.vanaf;
             passage.dataset.to = block.tot;
 
-            const title = document.createElement('h2');
+            const title = document.createElement('h3');
             title.className = 'opv-passage-title';
             title.textContent = block.kop || '';
             passage.appendChild(title);
@@ -675,9 +678,24 @@ const App = {
         sink.appendChild(flow);
     },
 
+    _beginNavigationRequest(bookId, chapterNum) {
+        const request = {
+            id: (App._navigationRequestSequence = (App._navigationRequestSequence || 0) + 1),
+            bookId,
+            chapterNum: Number(chapterNum),
+        };
+        App._navigationRequest = request;
+        return request;
+    },
+
+    _isCurrentNavigationRequest(request) {
+        return !!request && App._navigationRequest === request;
+    },
+
     _isCurrentRenderOwner(owner) {
         const edition = (typeof TekstEditie === 'undefined') ? 'nl-ov' : TekstEditie.code();
-        return !!owner && App._renderOwner === owner && owner.editionCode === edition;
+        return !!owner && App._renderOwner === owner && owner.editionCode === edition &&
+            owner.navigationRequest === (App._navigationRequest || null);
     },
 
     _isCurrentContinuousOwner(owner) {
@@ -695,6 +713,7 @@ const App = {
         dialog = document.createElement('dialog');
         dialog.id = 'opv-concept-dialog';
         dialog.className = 'opv-concept-dialog';
+        dialog.tabIndex = -1;
         dialog.setAttribute('aria-labelledby', 'opv-concept-title');
 
         const content = document.createElement('div');
@@ -721,6 +740,36 @@ const App = {
             event.preventDefault();
             App._closeOpvConcept(true);
         });
+        dialog.addEventListener('keydown', event => {
+            if (event.key !== 'Tab' || !dialog.open) return;
+            const focusable = [...dialog.querySelectorAll(
+                'a[href], button:not([disabled]), input:not([disabled]), ' +
+                'select:not([disabled]), textarea:not([disabled]), ' +
+                '[tabindex]:not([tabindex="-1"])'
+            )].filter(element => !element.hidden &&
+                element.getAttribute('aria-hidden') !== 'true' &&
+                element.getClientRects().length > 0);
+            if (!focusable.length) {
+                event.preventDefault();
+                dialog.focus();
+                return;
+            }
+            if (focusable.length === 1) {
+                event.preventDefault();
+                focusable[0].focus();
+                return;
+            }
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            const active = document.activeElement;
+            if (event.shiftKey && (active === first || !dialog.contains(active))) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && (active === last || !dialog.contains(active))) {
+                event.preventDefault();
+                first.focus();
+            }
+        });
         dialog.addEventListener('close', () => {
             App._resetOpvConceptState(App._opvRestoreConceptFocus);
         });
@@ -746,9 +795,14 @@ const App = {
     },
 
     async _openOpvConcept(trigger) {
+        const renderOwner = App._renderOwner;
+        if (!renderOwner || !renderOwner.committed ||
+            !App._isCurrentRenderOwner(renderOwner)) return;
         const generation = App._opvViewGeneration;
         const concepts = await App._loadOpvConcepts();
-        if (generation !== App._opvViewGeneration || !trigger.isConnected ||
+        if (generation !== App._opvViewGeneration || renderOwner !== App._renderOwner ||
+            !renderOwner.committed || !App._isCurrentRenderOwner(renderOwner) ||
+            !trigger.isConnected ||
             !trigger.closest('[data-editie="nl-opv"]') ||
             trigger.classList.contains('opv-concept-disabled')) return;
         const concept = concepts.get(trigger.dataset.opvConcept);
@@ -827,6 +881,7 @@ const App = {
                 editionCode: requestedEditionCode,
                 bookId,
                 chapterNum: Number(chapterNum),
+                navigationRequest: App._navigationRequest || null,
                 committed: false,
             };
             App._renderOwner = renderOwner;
@@ -922,6 +977,7 @@ const App = {
         if (!ownsRender()) return false;
 
         // Vanaf hier publiceert alleen de nog actuele render naar DOM en app-state.
+        if (updatesChapterChrome) App._closeOpvConcept(false);
         App._currentPrimaryEditionCode = primaryEditionCode;
         DataLoader.prefetchAdjacent(bookId, chapterNum);
         App._contNames = App._contNames || {};
@@ -970,13 +1026,38 @@ const App = {
                 container.appendChild(unavailable);
             }
         }
+        let opvChapterHeadingId = 'chapter-title';
+        if ((append || prepend) && primaryEditionCode === 'nl-opv') {
+            container.querySelectorAll(
+                '.opv-reading-flow[aria-labelledby="chapter-title"]'
+            ).forEach(existingFlow => {
+                const existingBook = existingFlow.dataset.book;
+                const existingChapter = existingFlow.dataset.chapter;
+                const headingId = `opv-chapter-heading-${existingBook}-${existingChapter}`;
+                let heading = document.getElementById(headingId);
+                if (!heading) {
+                    heading = document.createElement('h2');
+                    heading.id = headingId;
+                    heading.className = 'opv-continuous-heading';
+                    const bookName = (App._contNames && App._contNames[existingBook]) || existingBook;
+                    heading.textContent = `${bookName} ${existingChapter}`;
+                    existingFlow.before(heading);
+                }
+                existingFlow.setAttribute('aria-labelledby', headingId);
+            });
+        }
         if (append || prepend) {
             // Doorlopend lezen: scheidingskop voor het toegevoegde hoofdstuk
-            const sep = document.createElement('div');
+            const isOpvChapter = primaryEditionCode === 'nl-opv';
+            const sep = document.createElement(isOpvChapter ? 'h2' : 'div');
             sep.className = 'chapter-separator';
             sep.textContent = `${book.nameDutch} ${chapterNum}`;
             sep.dataset.book = bookId;
             sep.dataset.chapter = chapterNum;
+            if (isOpvChapter) {
+                opvChapterHeadingId = `opv-chapter-heading-${bookId}-${chapterNum}`;
+                sep.id = opvChapterHeadingId;
+            }
             sink.appendChild(sep);
         }
 
@@ -1004,7 +1085,8 @@ const App = {
 
         if (primaryEditionCode === 'nl-opv') {
             App._renderOpvReadingFlow(
-                chapter, book, bookId, chapterNum, sink, parallelEditions
+                chapter, book, bookId, chapterNum, sink, parallelEditions,
+                opvChapterHeadingId
             );
             if (prepend) {
                 const scroller = App._getScroller();

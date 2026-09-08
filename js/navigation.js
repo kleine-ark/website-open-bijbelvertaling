@@ -127,10 +127,14 @@ const Navigation = {
         const bookId = parts[0];
         const chapter = parseInt(parts[1]) || 1;
         const targetVerse = parts[2] ? parseInt(parts[2]) : null;
+        const navigationRequest = (typeof App !== 'undefined' && App._beginNavigationRequest)
+            ? App._beginNavigationRequest(bookId, chapter)
+            : null;
 
         if (bookId !== this.currentBook) {
             this.currentBook = bookId;
             await this.renderChapterNav(bookId);
+            if (navigationRequest && !App._isCurrentNavigationRequest(navigationRequest)) return;
         }
         this.currentChapter = chapter;
         this.updateActiveButtons();
@@ -143,6 +147,7 @@ const Navigation = {
 
         // Laad en render het hoofdstuk
         await App.renderChapter(bookId, chapter);
+        if (navigationRequest && !App._isCurrentNavigationRequest(navigationRequest)) return;
 
         // Naar een specifiek vers scrollen + selecteren, anders naar boven
         if (targetVerse && App.focusVerse) {

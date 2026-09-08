@@ -100,7 +100,16 @@ class OpvReaderTests(unittest.TestCase):
             flow = page.locator('.opv-reading-flow[data-book="genesis"][data-chapter="1"]')
             self.assertEqual(flow.count(), 1)
             self.assertEqual(page.locator("#verses-container > .opv-reading-flow").count(), 1)
+            self.assertEqual(flow.get_attribute("aria-labelledby"), "chapter-title")
+            self.assertEqual(page.locator("#chapter-title").evaluate("el => el.tagName"), "H2")
+            self.assertIn("Genesis 1", page.locator("#chapter-title").inner_text())
             self.assertEqual(flow.locator(".opv-passage").count(), 7)
+            self.assertEqual(
+                flow.locator(".opv-passage-title").evaluate_all(
+                    "titles => titles.map(title => title.tagName)"
+                ),
+                ["H3"] * 7,
+            )
             self.assertEqual(flow.locator(".verse-row.opv-verse").count(), 31)
             self.assertEqual(flow.locator(".opv-verse-anchor").count(), 31)
             self.assertEqual(page.locator("#verses-container > .verse-row").count(), 0)
@@ -725,6 +734,29 @@ class OpvReaderTests(unittest.TestCase):
             dialog = page.locator("#opv-concept-dialog")
             dialog.wait_for(state="visible")
             self.assertEqual(trigger.get_attribute("aria-expanded"), "true")
+            self.assertEqual(dialog.get_attribute("tabindex"), "-1")
+            self.assertTrue(dialog.evaluate("el => el.contains(document.activeElement)"))
+            page.keyboard.press("Tab")
+            self.assertTrue(dialog.evaluate("el => el.contains(document.activeElement)"))
+            page.keyboard.press("Shift+Tab")
+            self.assertTrue(dialog.evaluate("el => el.contains(document.activeElement)"))
+            fallback_focus = dialog.evaluate(
+                """el => {
+                    el.querySelector('.opv-concept-close').hidden = true;
+                    el.focus();
+                    return document.activeElement === el;
+                }"""
+            )
+            self.assertTrue(fallback_focus)
+            page.keyboard.press("Tab")
+            self.assertTrue(dialog.evaluate("el => document.activeElement === el"))
+            dialog.evaluate(
+                """el => {
+                    const close = el.querySelector('.opv-concept-close');
+                    close.hidden = false;
+                    close.focus();
+                }"""
+            )
             self.assertEqual(dialog.locator(".opv-concept-title").text_content(), concept["label"])
             self.assertEqual(dialog.locator(".opv-concept-explanation").text_content(), concept["uitleg"])
             self.assertEqual(dialog.locator("img, script").count(), 0)
@@ -983,6 +1015,145 @@ class OpvReaderTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_hashnavigatie_invalideert_oude_render_al_voor_nieuwe_render_start(self):
+        page = self.new_page({"teksteditie": "nl-opv", "parallelEdities": []})
+        try:
+            page.goto(
+                f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.opv-reading-flow[data-book="genesis"][data-chapter="1"]').wait_for()
+            page.evaluate(
+                """() => {
+                    const loadChapter = DataLoader.loadChapter.bind(DataLoader);
+                    let releaseChapter;
+                    const chapterGate = new Promise(resolve => { releaseChapter = resolve; });
+                    window.__releaseOldHashRender = releaseChapter;
+                    window.__oldHashRenderHeld = false;
+                    DataLoader.prefetchAdjacent = () => {};
+                    DataLoader.loadChapter = async (book, chapter) => {
+                        if (book === 'genesis' && Number(chapter) === 2) {
+                            window.__oldHashRenderHeld = true;
+                            await chapterGate;
+                        }
+                        return loadChapter(book, chapter);
+                    };
+
+                    const renderChapterNav = Navigation.renderChapterNav.bind(Navigation);
+                    let releaseNavigation;
+                    const navigationGate = new Promise(resolve => { releaseNavigation = resolve; });
+                    window.__releaseNewHashNavigation = releaseNavigation;
+                    window.__newHashNavigationHeld = false;
+                    Navigation.renderChapterNav = async book => {
+                        if (book === 'johannes') {
+                            window.__newHashNavigationHeld = true;
+                            await navigationGate;
+                        }
+                        return renderChapterNav(book);
+                    };
+
+                    Navigation.currentBook = 'genesis';
+                    Navigation.currentChapter = 2;
+                    window.__oldHashRender = App.renderChapter('genesis', 2);
+                }"""
+            )
+            page.wait_for_function("window.__oldHashRenderHeld")
+            page.evaluate("location.hash = '#johannes/1'")
+            page.wait_for_function(
+                "window.__newHashNavigationHeld && Navigation.currentBook === 'johannes'"
+            )
+            during = page.evaluate(
+                """async () => {
+                    window.__releaseOldHashRender();
+                    const oldResult = await window.__oldHashRender;
+                    const flow = document.querySelector('.opv-reading-flow');
+                    return {
+                        oldResult,
+                        flow: flow && `${flow.dataset.book}/${flow.dataset.chapter}`,
+                        hash: location.hash,
+                        navigationBook: Navigation.currentBook,
+                    };
+                }"""
+            )
+            self.assertEqual(during, {
+                "oldResult": False,
+                "flow": "genesis/1",
+                "hash": "#johannes/1",
+                "navigationBook": "johannes",
+            })
+            page.evaluate("window.__releaseNewHashNavigation()")
+            page.locator('.opv-reading-flow[data-book="johannes"][data-chapter="1"]').wait_for()
+        finally:
+            page.close()
+
+    def test_oude_opv_begriptrigger_kan_tijdens_editiewissel_geen_dialog_openen(self):
+        page = self.new_page({"teksteditie": "nl-opv", "parallelEdities": []})
+        try:
+            page.goto(
+                f"{self.base_url}/index.html?editie=nl-opv#johannes/3",
+                wait_until="domcontentloaded",
+            )
+            trigger = page.locator('[data-opv-concept="farizeeen"]').first
+            trigger.wait_for()
+            page.evaluate(
+                """() => {
+                    const loadChapter = DataLoader.loadChapter.bind(DataLoader);
+                    let release;
+                    const gate = new Promise(resolve => { release = resolve; });
+                    window.__releaseEditionRender = release;
+                    window.__editionRenderHeld = false;
+                    DataLoader.loadChapter = async (book, chapter) => {
+                        if (TekstEditie.code() === 'nl-ov' && book === 'johannes' &&
+                            Number(chapter) === 3) {
+                            window.__editionRenderHeld = true;
+                            await gate;
+                        }
+                        return loadChapter(book, chapter);
+                    };
+                    window.__oldOpvTrigger = document.querySelector(
+                        '[data-opv-concept="farizeeen"]'
+                    );
+                    Opties.state.teksteditie = 'nl-ov';
+                    Opties.state.parallelEdities = [];
+                    Opties.save();
+                    TekstEditie.setCode('nl-ov');
+                    window.__pendingEditionRender = App.renderChapter('johannes', 3);
+                }"""
+            )
+            page.wait_for_function("window.__editionRenderHeld")
+            trigger.click()
+            page.wait_for_timeout(150)
+            state = page.evaluate(
+                """async () => {
+                    window.__releaseEditionRender();
+                    await window.__pendingEditionRender;
+                    const dialog = document.getElementById('opv-concept-dialog');
+                    const oldTrigger = window.__oldOpvTrigger;
+                    return {
+                        edition: App._currentPrimaryEditionCode,
+                        flowCount: document.querySelectorAll('.opv-reading-flow').length,
+                        dialogOpen: Boolean(dialog && dialog.open),
+                        oldTriggerConnected: oldTrigger.isConnected,
+                        oldTriggerExpanded: oldTrigger.getAttribute('aria-expanded'),
+                        triggerCleared: App._opvConceptTrigger === null,
+                        restoreCleared: App._opvRestoreConceptFocus === false,
+                        activeInDialog: Boolean(dialog && dialog.contains(document.activeElement)),
+                    };
+                }"""
+            )
+            self.assertEqual(state, {
+                "edition": "nl-ov",
+                "flowCount": 0,
+                "dialogOpen": False,
+                "oldTriggerConnected": False,
+                "oldTriggerExpanded": "false",
+                "triggerCleared": True,
+                "restoreCleared": True,
+                "activeInDialog": False,
+            })
+        finally:
+            page.close()
+
     def test_verouderde_append_en_prepend_verliezen_dom_en_continuous_state(self):
         page = self.new_page({"teksteditie": "nl-opv", "parallelEdities": []})
         page.add_init_script(
@@ -1105,6 +1276,31 @@ class OpvReaderTests(unittest.TestCase):
                 page.locator(".opv-reading-flow").evaluate_all("els => els.map(el => el.dataset.chapter)"),
                 ["1", "2", "3"],
             )
+            chapter_labels = page.locator(".opv-reading-flow").evaluate_all(
+                """flows => flows.map(flow => {
+                    const id = flow.getAttribute('aria-labelledby');
+                    const heading = id && document.getElementById(id);
+                    return {
+                        id,
+                        headingTag: heading && heading.tagName,
+                        headingText: heading && heading.textContent.trim(),
+                        passageTags: [...flow.querySelectorAll('.opv-passage-title')]
+                            .map(title => title.tagName),
+                    };
+                })"""
+            )
+            self.assertEqual(
+                [item["headingText"] for item in chapter_labels],
+                ["Genesis 1", "Genesis 2", "Genesis 3"],
+            )
+            self.assertEqual(
+                [item["headingTag"] for item in chapter_labels], ["H2", "H2", "H2"]
+            )
+            self.assertEqual(len({item["id"] for item in chapter_labels}), 3)
+            self.assertTrue(all(
+                item["passageTags"] and set(item["passageTags"]) == {"H3"}
+                for item in chapter_labels
+            ))
 
             for book in ("genesis", "johannes"):
                 page.evaluate("([book]) => App.renderChapter(book, 5)", [book])
@@ -1119,6 +1315,257 @@ class OpvReaderTests(unittest.TestCase):
             self.assertEqual(observed["pageerrors"], [])
         finally:
             page.close()
+
+    def test_mobiele_opv_versankers_blijven_op_360_en_390_bedienbaar(self):
+        for width in (360, 390):
+            with self.subTest(width=width):
+                page = self.new_page(
+                    {"teksteditie": "nl-opv"},
+                    viewport={"width": width, "height": 800},
+                )
+                try:
+                    page.goto(
+                        f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                        wait_until="domcontentloaded",
+                    )
+                    page.locator('.opv-verse[data-verse="31"]').wait_for()
+                    self.assertTrue(
+                        page.locator("#content").evaluate(
+                            "el => el.classList.contains('layout-eronder')"
+                        )
+                    )
+                    anchors = page.locator(".opv-reading-flow .opv-verse-anchor").evaluate_all(
+                        """items => items.map(anchor => {
+                            const rect = anchor.getBoundingClientRect();
+                            return {
+                                verse: anchor.closest('.opv-verse').dataset.verse,
+                                display: getComputedStyle(anchor).display,
+                                width: rect.width,
+                                height: rect.height,
+                                tabIndex: anchor.tabIndex,
+                                ariaHidden: anchor.getAttribute('aria-hidden'),
+                            };
+                        })"""
+                    )
+                    self.assertEqual(len(anchors), 31)
+                    self.assertEqual(
+                        [item for item in anchors if item["display"] == "none"], []
+                    )
+                    self.assertEqual(
+                        [item for item in anchors if item["width"] < 24 or item["height"] < 24],
+                        [],
+                    )
+                    self.assertTrue(all(item["tabIndex"] == 0 for item in anchors))
+                    self.assertTrue(all(item["ariaHidden"] == "false" for item in anchors))
+                    first = page.locator('.opv-verse[data-verse="1"] .opv-verse-anchor')
+                    first.focus()
+                    self.assertTrue(first.evaluate("el => document.activeElement === el"))
+                finally:
+                    page.close()
+
+    def test_donkere_opv_focusindicatoren_hebben_minimaal_drie_op_een_contrast(self):
+        page = self.new_page(
+            {"teksteditie": "nl-opv", "thema": "donker"},
+            viewport={"width": 390, "height": 800},
+        )
+        try:
+            page.goto(
+                f"{self.base_url}/index.html?editie=nl-opv#johannes/3",
+                wait_until="domcontentloaded",
+            )
+            page.locator('[data-opv-concept="farizeeen"]').first.wait_for()
+
+            def focus_contrast(selector, background_selector):
+                page.keyboard.press("Tab")
+                locator = page.locator(selector).first
+                locator.focus()
+                return locator.evaluate(
+                    """(el, backgroundSelector) => {
+                        const channels = value => (value.match(/[0-9.]+/g) || [])
+                            .slice(0, 3).map(Number);
+                        const luminance = value => {
+                            const rgb = channels(value).map(channel => channel / 255).map(channel =>
+                                channel <= 0.04045 ? channel / 12.92 :
+                                    Math.pow((channel + 0.055) / 1.055, 2.4));
+                            return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+                        };
+                        const style = getComputedStyle(el);
+                        const background = getComputedStyle(
+                            el.closest(backgroundSelector) || document.body
+                        ).backgroundColor;
+                        const foregroundLuminance = luminance(style.outlineColor);
+                        const backgroundLuminance = luminance(background);
+                        return {
+                            contrast: (Math.max(foregroundLuminance, backgroundLuminance) + 0.05) /
+                                (Math.min(foregroundLuminance, backgroundLuminance) + 0.05),
+                            focusVisible: el.matches(':focus-visible'),
+                            outlineColor: style.outlineColor,
+                            outlineStyle: style.outlineStyle,
+                        };
+                    }""",
+                    background_selector,
+                )
+
+            for selector in (
+                '.opv-verse[data-verse="2"] .opv-verse-anchor',
+                "[data-opv-concept]",
+            ):
+                measured = focus_contrast(selector, "body")
+                self.assertTrue(measured["focusVisible"], measured)
+                self.assertNotEqual(measured["outlineStyle"], "none")
+                self.assertGreaterEqual(measured["contrast"], 3, measured)
+
+            trigger = page.locator('[data-opv-concept="farizeeen"]').first
+            trigger.focus()
+            page.keyboard.press("Enter")
+            dialog = page.locator("#opv-concept-dialog")
+            dialog.wait_for(state="visible")
+            measured = focus_contrast(".opv-concept-close", ".opv-concept-dialog")
+            self.assertTrue(measured["focusVisible"], measured)
+            self.assertNotEqual(measured["outlineStyle"], "none")
+            self.assertGreaterEqual(measured["contrast"], 3, measured)
+        finally:
+            page.close()
+
+    def test_mobiele_opv_scrollruimte_houdt_hoofdstukpijlen_vrij_van_tekst(self):
+        page = self.new_page(
+            {"teksteditie": "nl-opv", "kolomLayout": "eronder"},
+            viewport={"width": 390, "height": 844},
+        )
+        try:
+            page.goto(
+                f"{self.base_url}/index.html?editie=nl-opv#johannes/4",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.opv-verse[data-verse="54"]').wait_for()
+            for zoom in (1, 2):
+                page.evaluate("zoom => { document.documentElement.style.zoom = String(zoom); }", zoom)
+                geometry = page.evaluate(
+                    """async () => {
+                        const content = document.getElementById('content');
+                        const footer = document.getElementById('mobile-footer-nav');
+                        const buttons = [
+                            document.getElementById('mobile-prev-btn'),
+                            document.getElementById('mobile-next-btn'),
+                        ];
+                        const area = (left, right) => Math.max(0,
+                            Math.min(left.right, right.right) - Math.max(left.left, right.left)) *
+                            Math.max(0,
+                                Math.min(left.bottom, right.bottom) - Math.max(left.top, right.top));
+                        const overlapAtCurrentPosition = () => {
+                            const viewport = content.getBoundingClientRect();
+                            const buttonRects = buttons.map(button => button.getBoundingClientRect());
+                            let maximum = 0;
+                            const walker = document.createTreeWalker(
+                                content.querySelector('.opv-reading-flow'), NodeFilter.SHOW_TEXT
+                            );
+                            while (walker.nextNode()) {
+                                if (!walker.currentNode.textContent.trim()) continue;
+                                const range = document.createRange();
+                                range.selectNodeContents(walker.currentNode);
+                                for (const rect of range.getClientRects()) {
+                                    const clipped = {
+                                        left: Math.max(rect.left, viewport.left),
+                                        right: Math.min(rect.right, viewport.right),
+                                        top: Math.max(rect.top, viewport.top),
+                                        bottom: Math.min(rect.bottom, viewport.bottom),
+                                    };
+                                    if (clipped.right <= clipped.left || clipped.bottom <= clipped.top) continue;
+                                    for (const buttonRect of buttonRects) {
+                                        maximum = Math.max(maximum, area(clipped, buttonRect));
+                                    }
+                                }
+                            }
+                            return maximum;
+                        };
+                        const positions = [0, content.scrollHeight / 2, content.scrollHeight];
+                        const overlaps = [];
+                        for (const position of positions) {
+                            content.scrollTop = position;
+                            await new Promise(resolve => requestAnimationFrame(resolve));
+                            overlaps.push(overlapAtCurrentPosition());
+                        }
+                        const footerStyle = getComputedStyle(footer);
+                        const buttonRects = buttons.map(button => button.getBoundingClientRect());
+                        return {
+                            contentPosition: getComputedStyle(content).position,
+                            contentTop: parseFloat(getComputedStyle(content).top),
+                            contentBottom: getComputedStyle(content).bottom,
+                            contentOverflowY: getComputedStyle(content).overflowY,
+                            footerBackground: footerStyle.backgroundColor,
+                            footerBorder: parseFloat(footerStyle.borderTopWidth),
+                            ownsScroller: App._getScroller() === content,
+                            maxOverlap: Math.max(...overlaps),
+                            horizontalOverflow: Math.max(
+                                document.documentElement.scrollWidth - window.innerWidth,
+                                document.body.scrollWidth - window.innerWidth,
+                                content.scrollWidth - content.clientWidth
+                            ),
+                            buttons: buttons.map((button, index) => {
+                                const rect = buttonRects[index];
+                                const x = rect.left + rect.width / 2;
+                                const y = rect.top + rect.height / 2;
+                                const hit = document.elementFromPoint(x, y);
+                                return {
+                                    left: rect.left,
+                                    right: rect.right,
+                                    top: rect.top,
+                                    bottom: rect.bottom,
+                                    hit: Boolean(hit && (hit === button || button.contains(hit))),
+                                };
+                            }),
+                            viewport: {width: window.innerWidth, height: window.innerHeight},
+                        };
+                    }"""
+                )
+                self.assertEqual(geometry["contentPosition"], "fixed", geometry)
+                self.assertEqual(geometry["contentTop"], 109, geometry)
+                self.assertIn("57px", geometry["contentBottom"])
+                self.assertIn(geometry["contentOverflowY"], ("auto", "scroll"))
+                self.assertTrue(geometry["ownsScroller"], geometry)
+                self.assertEqual(geometry["maxOverlap"], 0, geometry)
+                self.assertLessEqual(geometry["horizontalOverflow"], 1, geometry)
+                self.assertGreaterEqual(geometry["footerBorder"], 1, geometry)
+                self.assertNotIn(geometry["footerBackground"], ("transparent", "rgba(0, 0, 0, 0)"))
+                for button in geometry["buttons"]:
+                    self.assertGreaterEqual(button["left"], 0, geometry)
+                    self.assertLessEqual(button["right"], geometry["viewport"]["width"] + 1, geometry)
+                    self.assertGreaterEqual(button["top"], 0, geometry)
+                    self.assertLessEqual(button["bottom"], geometry["viewport"]["height"] + 1, geometry)
+                    self.assertTrue(button["hit"], geometry)
+        finally:
+            page.close()
+
+        legacy = self.new_page(
+            {"teksteditie": "nl-ov", "kolomLayout": "eronder"},
+            viewport={"width": 390, "height": 844},
+        )
+        try:
+            legacy.goto(f"{self.base_url}/index.html#johannes/4", wait_until="domcontentloaded")
+            legacy.locator('.verse-row[data-verse="54"]').wait_for()
+            sentinel = legacy.evaluate(
+                """() => {
+                    const content = document.getElementById('content');
+                    const footer = document.getElementById('mobile-footer-nav');
+                    const first = document.querySelector('.verse-row[data-verse="1"] .verse-num');
+                    return {
+                        contentPosition: getComputedStyle(content).position,
+                        footerBackground: getComputedStyle(footer).backgroundColor,
+                        footerBorder: getComputedStyle(footer).borderTopWidth,
+                        ownsScroller: App._getScroller() === content,
+                        firstNumberDisplay: getComputedStyle(first).display,
+                    };
+                }"""
+            )
+            self.assertEqual(sentinel, {
+                "contentPosition": "static",
+                "footerBackground": "rgba(0, 0, 0, 0)",
+                "footerBorder": "0px",
+                "ownsScroller": False,
+                "firstNumberDisplay": "none",
+            })
+        finally:
+            legacy.close()
 
     def test_boektypografie_opties_contrast_en_mobiele_viewport(self):
         page = self.new_page(viewport={"width": 1280, "height": 900})
