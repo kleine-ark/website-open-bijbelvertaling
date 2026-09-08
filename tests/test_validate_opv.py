@@ -920,7 +920,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual("OPV geldig: 83 hoofdstukken, 2551 verzen.\n", result.stdout)
+        self.assertEqual("OPV geldig: 89 hoofdstukken, 2746 verzen.\n", result.stdout)
 
 
 class OpvGenesisPilotTests(unittest.TestCase):
@@ -964,7 +964,7 @@ class OpvGenesisPilotTests(unittest.TestCase):
         entry = next(e for e in registry["edities"] if e["code"] == "nl-opv")
         expected = {
             "genesis": list(range(1, 51)),
-            "exodus": list(range(1, 29)),
+            "exodus": list(range(1, 35)),
             "johannes": [1, 2, 3, 4, 5],
         }
         self.assertEqual(expected, entry["gepubliceerdeHoofdstukken"])
@@ -1153,9 +1153,9 @@ class OpvExodusProductionTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Exodus-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_exodus_has_exact_source_verse_lists_and_804_verses(self) -> None:
+    def test_exodus_has_exact_source_verse_lists_and_999_verses(self) -> None:
         total = 0
-        for number in range(1, 29):
+        for number in range(1, 35):
             with self.subTest(chapter=number):
                 chapter = self.chapter(number)
                 source = json.loads((self.root / f"data/exodus/{number}.json").read_text(encoding="utf-8"))
@@ -1167,22 +1167,43 @@ class OpvExodusProductionTests(unittest.TestCase):
                 for verse in chapter["verzen"]:
                     self.assertEqual({"bestand": f"data/exodus/{number}.json",
                                       "vers": verse["nummer"], "tekstveld": "textSV1888"}, verse["bron"])
-        self.assertEqual(804, total)
+        self.assertEqual(999, total)
 
     def test_tabernacle_terminology_is_readable_and_consistent(self) -> None:
         text = " ".join(
             verse["tekst"]
-            for number in range(25, 29)
+            for number in range(25, 35)
             for verse in self.chapter(number)["verzen"]
         )
         self.assertNotRegex(text, r"\b(?:sittimhout|hemelsblauw)\b")
+        self.assertNotRegex(text, r"\b(?:borstlap|draagbomen|wasvat)\b")
         self.assertIn("acaciahout", text)
         self.assertIn("blauw", text)
+        self.assertIn("borststuk", text)
+        self.assertIn("draagstokken", text)
+        self.assertIn("wasbekken", text)
+
+    def test_meeting_tent_and_evening_are_consistent_plain_dutch(self) -> None:
+        tabernacle_text = " ".join(
+            verse["tekst"]
+            for number in range(27, 35)
+            for verse in self.chapter(number)["verzen"]
+        )
+        self.assertNotRegex(tabernacle_text, r"\btent van (?:samenkomst|ontmoeting)\b")
+        self.assertIn("ontmoetingstent", tabernacle_text)
+
+        offering_text = " ".join(
+            verse["tekst"]
+            for number in (29, 30)
+            for verse in self.chapter(number)["verzen"]
+        )
+        self.assertNotIn("tussen de twee avonden", offering_text)
+        self.assertIn("tegen de avond", offering_text)
 
     def test_tabernacle_measurements_use_modern_approximations(self) -> None:
         text = " ".join(
             verse["tekst"]
-            for number in range(25, 29)
+            for number in range(25, 31)
             for verse in self.chapter(number)["verzen"]
         )
         self.assertNotRegex(text, r"\b(?:el|ellen|span|talent|handbreed)\b")
@@ -1192,6 +1213,11 @@ class OpvExodusProductionTests(unittest.TestCase):
             (26, 2): ("12,5 meter", "1,8 meter"),
             (27, 18): ("45 meter", "22,5 meter", "2,25 meter"),
             (28, 16): ("22 centimeter",),
+            (29, 40): ("2 liter", "1 liter olie", "1 liter wijn"),
+            (30, 2): ("45 centimeter", "90 centimeter"),
+            (30, 13): ("twintig gera", "11 gram", "5,5 gram"),
+            (30, 23): ("5,5 kilo", "2,75 kilo"),
+            (30, 24): ("5,5 kilo", "4 liter"),
         }
         for (chapter, verse), phrases in expected.items():
             with self.subTest(chapter=chapter, verse=verse):
@@ -1208,7 +1234,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Johannes-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_johannes_has_source_verse_lists_214_verses_and_corpus_2551(self) -> None:
+    def test_johannes_has_source_verse_lists_214_verses_and_corpus_2746(self) -> None:
         total = 0
         for number in range(1, 6):
             with self.subTest(chapter=number):
@@ -1229,9 +1255,9 @@ class OpvJohannesPilotTests(unittest.TestCase):
                 (self.root / f"data/edities/opv/chapters/exodus/{number}.json")
                 .read_text(encoding="utf-8")
             )["verzen"])
-            for number in range(1, 29)
+            for number in range(1, 35)
         )
-        self.assertEqual(2551, total + genesis_total + exodus_total)
+        self.assertEqual(2746, total + genesis_total + exodus_total)
 
     def test_johannes_blocks_match_all_approved_boundaries(self) -> None:
         expected = {
