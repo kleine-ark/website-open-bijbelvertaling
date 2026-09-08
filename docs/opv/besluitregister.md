@@ -83,7 +83,7 @@ Besluit: “werd mens” bewaart de volledige menswording, “woonde onder ons�
 
 SV1888 plaatst de Komende vóór Johannes en zegt dat Hij eerder was. De Griekse onderscheidingen `emprosthen` en `protos` ondersteunen het bewaren van rang én eerder bestaan. In 1:16 staan volheid en `charin anti charitos`.
 
-Besluit: “staat boven mij” voor rang, “was er eerder dan ik” voor eerder bestaan. Dit wordt ook in 1:27 en 1:30 consequent toegepast. “Uit Zijn overvloed” en “steeds opnieuw onverdiende goedheid” volgen de stapeling van genade, zonder het toegevoegde zelfstandig naamwoord gave en zonder leer over het vervangen van verbonden. Vers 17 behoudt Mozes als middelaar van de wet en Jezus Christus als degene door wie genade en waarheid kwamen; er staat geen afwijzing van Mozes of zijn wet.
+Besluit: “staat boven mij” voor rang, “was er eerder dan ik” voor eerder bestaan. Dit wordt ook in 1:27 en 1:30 consequent toegepast. “Uit Zijn overvloed hebben wij allemaal volop onverdiende goedheid ontvangen” bewaart volheid, gezamenlijke ontvangst en genade zonder één uitleg van `genade voor genade` als enige betekenis vast te leggen. De precieze verhouding tussen beide genadetermen blijft in de uitleglaag. Vers 17 behoudt Mozes als middelaar van de wet en Jezus Christus als degene door wie genade en waarheid kwamen; er staat geen afwijzing van Mozes of zijn wet.
 
 ### J6 — 1:18: enige Zoon en nabijheid van de Vader
 
@@ -165,7 +165,7 @@ De boom van het leven staat in het midden van de tuin; de boom van de kennis van
 
 De rib volgt de primaire SV; `tsela` wordt niet stilzwijgend een lichaamshelft. Diepe slaap, het slapen, wegnemen en de plek met vlees sluiten blijven elk aanwezig. God “bouwde” de vrouw en bracht haar bij Adam. Het bot-/vleesbeeld blijft in Adams uitspraak herkenbaar. “Manninne” wordt het gewone “vrouw”; het woordspel met man staat in de uitleglaag `man-vrouw-woordspel`, terwijl de verklaring “uit de man genomen” in de hoofdtekst blijft.
 
-Vers 24 staat als vertellerstekst buiten Adams citaat: de bron heeft daar geen nieuwe spraakinleiding en gaat over de algemene gevolgtrekking. De man verlaat vader én moeder, verbindt zich aan zijn vrouw en wordt met haar één lichaam. “Eén lichaam” bewaart het lichamelijke beeld van één vlees, niet alleen emotionele verbondenheid. De verbinding en het één-worden zijn afzonderlijk gekoppeld. Naaktheid en afwezigheid van schaamte blijven in vers 25 zonder uitleg.
+Vers 24 staat als vertellerstekst buiten Adams citaat: de bron heeft daar geen nieuwe spraakinleiding en gaat over de algemene gevolgtrekking. De man verlaat vader én moeder, verbindt zich aan zijn vrouw en wordt met haar “één vlees”. Het bronbeeld blijft daardoor herkenbaar; de uitleglaag maakt duidelijk dat dit de nieuwe lichamelijke en relationele eenheid van man en vrouw beschrijft. De verbinding en het één-worden zijn afzonderlijk gekoppeld. Naaktheid en afwezigheid van schaamte blijven in vers 25 zonder uitleg.
 
 ### G12 — 3:1–7: woorden van slang en vrouw
 
@@ -175,7 +175,7 @@ In 3:5 blijft “als God”, conform SV1888 en het gecontroleerde `ke'elohim`; g
 
 ### G13 — 3:8–13: stem, wind en aanspreekvorm
 
-`Qol` blijft “stem”, volgens de primaire SV. Horen en lopen zijn ontvlochten: “Ze hoorden die dag de stem van de HEERE God. Hij liep door de tuin terwijl er wind waaide.” Het wandelen wordt zo ondubbelzinnig aan God verbonden, niet aan Zijn stem; geen lichaamsvorm of voetstappen toegevoegd. Wind en dag blijven behouden zonder de keuze voor ochtend, middag, avond of koelte, waarvoor de kanttekening verschillende mogelijkheden noemt. Het verbergen volgt als afzonderlijke zin.
+`Qol` blijft “stem”, volgens de primaire SV. De hoofdtekst luidt: “Toen de wind van de dag waaide, hoorden ze de stem van de HEERE God terwijl Hij door de tuin liep.” Het wandelen wordt zo ondubbelzinnig aan God verbonden, niet aan Zijn stem; geen lichaamsvorm of voetstappen toegevoegd. Wind en moment van de dag blijven als één ongespecificeerde bepaling bijeen, zonder een beginmoment (`opstak`) of de keuze voor ochtend, middag, avond of koelte in te voeren. Het verbergen volgt als afzonderlijke zin.
 
 God vraagt, Adam antwoordt en de vrouw antwoordt ieder in eigen segmentbereiken. Alle vragen, het bang worden vanwege naaktheid, Gods gave van de vrouw, het geven, eten en bedrog zijn bewaard. Adam spreekt God aan met U/Uw. “God vroeg” maakt de spreker duidelijk waar de bron Hij gebruikt; voornaamwoorden voor mensen krijgen geen eerbiedshoofdletter.
 
@@ -197,15 +197,13 @@ Het goddelijke meervoud in 3:22 blijft “een van ons”; geen uitleg van de gro
 
 Kaïn geeft van zijn landopbrengst. Abel geeft eerstgeboren schapen én hun vet. Goedkeuring parafraseert het positieve aanzien tegenover het niet aanzien; zowel persoon als offer blijven object van Gods reactie. Er wordt geen oorzaak bij bedacht: geen mindere kwaliteit, onjuiste offercategorie, gebrek aan geloof of verborgen intentie. Kaïns grote boosheid en betrokken gezicht blijven beide genoemd.
 
-### G17 — 4:7: verhoging, zonde aan de deur en de broer
+### G17 — 4:7: verhoging, zonde aan de deur en onbesliste referent
 
-De formulering is bewust SV-gestuurd. “Je hoofd ... omhoog houden” geeft de verhoging weer volgens het in SV1637-kanttekening 14 genoemde hoofd/aangezicht-opheffen, in aansluiting op het betrokken gezicht van 4:5–6. “De zonde ... aan de deur” blijft het centrale beeld en heeft een eigen begripanker; geen aanvallend roofdier of zelfstandig duivel toegevoegd. De uitleglaag bij `zonde` verklaart dit beeld uitsluitend voor Genesis 4:7 als de straf die dichtbij is, volgens kanttekeningen 15–16. Dat is geen algemene definitie van zonde als straf en wordt niet als extra zin in de hoofdtekst ingevoegd.
+De formulering is bewust SV-gestuurd. “Je hoofd ... omhoog houden” geeft de verhoging weer volgens het in SV1637-kanttekening 14 genoemde hoofd/aangezicht-opheffen, in aansluiting op het betrokken gezicht van 4:5–6. “De zonde ... aan de deur” blijft het centrale beeld en heeft een eigen begripanker; geen aanvallend roofdier of zelfstandig duivel toegevoegd. De uitleglaag bij `zonde` beschrijft het beeld als kwaad dat dichtbij ligt en vermeldt afzonderlijk dat de Statenvertaling-kanttekening hier ook aan een naderende straf denkt.
 
-Voor het slot verwijzen “zijn” en “hem” volgens de gevolgde Statenvertaling-uitleg naar Abel, Kaïns broer: kanttekening 17 zegt dat uitdrukkelijk. De hoofdtekst luidt: “Je broer verlangt toch naar een goede band met jou, en jij zult over hem heersen.” Het werkwoord verlangt bewaart het afzonderlijke betekeniselement begeerte; de goede band maakt de aard van die gerichtheid begrijpelijk. Dit is een expliciete, beperkte uitlegkeuze: kanttekening 17 beschrijft Abel als Kaïn genegen en tevreden met diens verheven positie als eerstgeborene. Die genegenheid en eerbied voor zijn oudere broer verklaren hier het verlangen naar een goede band, niet alleen aandacht of een onbepaald gericht-zijn. “Goede band” is dus niet een afzonderlijk letterlijk bronwoord, maar de concrete relationele parafrase van de gevolgde uitleg.
+De hoofdtekst luidt voor het slot: “Toch is zijn verlangen op jou gericht, en jij zult over hem heersen.” De bron noemt niet uitdrukkelijk wie met “zijn” en “hem” wordt bedoeld. Daarom voegt de leeslaag geen broer, goede band, emotie of gepersonifieerde zonde als vaststaande referent toe. Het werkwoord verlangen, de gerichtheid op Kaïn en de toekomstige vorm “zult” blijven behouden; “zult” wordt niet vervangen door het bevel “moet”.
 
-De hoofdtekst beweert niet dat de band al goed is, dat Kaïn hetzelfde verlangt of dat een verzoening plaatsvindt. Zij noemt geen eerstgeboorterecht, extra gebeurtenis, seksuele begeerte of heerszucht. De toekomstige vorm “zult” blijft behouden; geen vervanging door het bevel “moet”. De passagegebonden uitleg `verlangen-van-de-broer` verantwoordt de Abelduiding en de oudere-broerrelatie voor de lezer, met alleen het verlangensdeel als nauw anker. Het aparte deurbeeld en de uitleg over nabije straf blijven daarvan onderscheiden.
-
-De alternatieve uitleg verbindt het mannelijke achtervoegsel in `teshuqato` en `bo` met gepersonifieerde zonde. Dat is een serieus redactioneel risico, maar staat uitsluitend hier als alternatief. Het wordt niet als tweede betekenis aan de hoofdtekst toegevoegd. Onafhankelijke bronreview moet juist deze explicitering beoordelen; de metadata draagt geen definitieve goedkeuring.
+De passagegebonden uitleg `verlangen-genesis-4-7` legt twee serieus verdedigde lezingen naast elkaar. De Statenvertaling-kanttekening betrekt de voornaamwoorden op Abel en zijn verhouding tot Kaïn; een andere uitleg betrekt ze op de als macht voorgestelde zonde. De metadata houdt deze uitlegkeuze uitdrukkelijk open en verleent geen definitieve goedkeuring.
 
 ### G18 — 4:8–14: broedermoord, bloed en vergeving
 
@@ -227,7 +225,7 @@ Geboorten, namenketen, twee vrouwen en hun namen, tentbewoners met vee, musici, 
 
 ### G21 — 4:23–24: Lamechs woorden en de getallen
 
-Beide oproepen om te luisteren blijven staan. De primaire SV-vorm wordt als gedane daad weergegeven: “ik doodde”, met man/wond en jonge man/buil. De mogelijke hypothetische lezing in de kanttekening wordt niet als eigen verhaal ingevoegd. De formulering bepaalt niet dat er noodzakelijk twee verschillende slachtoffers zijn en noemt geen wapens of zelfverdediging. Het blijft Lamechs uitspraak, niet een vertellersbevestiging of morele goedkeuring.
+Beide oproepen om te luisteren blijven staan. De primaire SV-vorm wordt als gedane daad weergegeven: “ik doodde”, met man/wond en jonge man/buil. “Vanwege mijn wond” en “vanwege mijn buil” bewaren bewust de dubbelzinnigheid van de bron en leggen niet vast dat de genoemde mannen die verwondingen veroorzaakten. De mogelijke hypothetische lezing in de kanttekening wordt niet als eigen verhaal ingevoegd. De formulering bepaalt evenmin dat er noodzakelijk twee verschillende slachtoffers zijn en noemt geen wapens of zelfverdediging. Het blijft Lamechs uitspraak, niet een vertellersbevestiging of morele goedkeuring.
 
 “Zeventigmaal zevenmaal” blijft “zeventig keer zeven”, naast Kaïns zeven keer. De plaatselijke Hebreeuwse woorden zeventig-en-zeven laten de andere bekende getalslezing zien; de OPV wijzigt de primaire SV hier niet naar 77. Er is evenmin een uitgerekend getal aan de hoofdtekst toegevoegd. Dit expliciete bronniveauverschil blijft een risicopunt voor onafhankelijke review.
 
@@ -239,7 +237,7 @@ Opnieuw gemeenschap, een zoon, naamgeving en vervanging van het door Kaïn gedod
 
 Alle 13 persoonsnamen blijven herkenbaar, inclusief Mahalal-el, Methusalach, Sem, Cham en Jafeth. Alle leeftijden zijn omgezet naar cijfers zonder getalwijziging. De negen vermeldingen van zonen en dochters en de acht slotformules “en hij stierf” zijn onverkort bewaard. Geboorten zijn vaderschap, niet alleen het toevallig ontmoeten van een kind. Bij Noach blijft de leeftijd 500 onderscheiden van de opsomming van drie zonen; er is geen drieling of gelijktijdige geboorte toegevoegd. Zijn naam wordt in 5:32 herhaald.
 
-Gods gelijkenis in 5:1, man en vrouw, de zegen en hun naam Mens blijven behouden. Adams zoon lijkt op hem én is zijn evenbeeld; deze verwijzingen blijven menselijk gespeld. “Wandelde met God” blijft tweemaal als centraal beeld staan, met exact die woorden als begripanker. De verklaring als leven in verbondenheid met God staat alleen in de tweede laag. De blokkop bewaart eveneens het wandelen. Henochs 300 jaar na Methusalachs geboorte en 365 jaar totaal blijven onderscheiden. “Hij was er niet meer, want God nam hem weg” voegt geen hemelreis, vervoermiddel of dood toe.
+Gods gelijkenis in 5:1, man en vrouw, de zegen en hun naam Mens blijven behouden. Adams zoon lijkt op hem én is zijn evenbeeld; deze verwijzingen blijven menselijk gespeld. “Wandelde met God” blijft tweemaal als centraal beeld staan, met exact die woorden als begripanker. De verklaring als leven in verbondenheid met God staat alleen in de tweede laag. De blokkop bewaart eveneens het wandelen. Henochs driehonderd jaar na Methusalachs geboorte en 365 jaar totaal blijven onderscheiden. “Hij was er niet meer, want God nam hem weg” voegt geen hemelreis, vervoermiddel of dood toe.
 
 Noachs troost bij werk en het gezwoeg van de handen blijft de uitspraak van Lamech. “Lamech noemde hem Noach” maakt de vader als spreker expliciet, zodat het voorafgaande God in 5:24 niet als referent van een onduidelijk Hij kan gelden. De vervloekte grond blijft de oorzaak van het gezwoeg. Er is geen zondvloed, landbouwuitvinding of vervulling van een profetie toegevoegd.
 
@@ -259,7 +257,7 @@ De tweede prozaherziening maakt van 2:5 een rechtstreekse toestandsbeschrijving 
 
 De 162 verzen van Johannes 2–5 zijn zelfstandig vanuit `textSV1888` geformuleerd. Alle overeenkomstige `text1637`- en `text2026`-regels zijn alleen ter controle gelezen. De grondtekst is bij de hieronder genoemde risicopassages geraadpleegd. Er zijn geen formuleringen uit moderne beschermde Bijbelvertalingen overgenomen. De handschriftnoot gebruikt aanvullend tekstkritische documentatie, niet de vertaaltekst daarvan.
 
-De hoofdstukkoppen zijn: Johannes 2 **Jezus laat zien wie Hij is**; Johannes 3 **Nieuw leven van God**; Johannes 4 **Jezus geeft levend water**; Johannes 5 **Jezus geeft leven**.
+De hoofdstukkoppen zijn: Johannes 2 **De bruiloft in Kana en de tempel in Jeruzalem**; Johannes 3 **Nieuw leven van God**; Johannes 4 **Jezus geeft levend water**; Johannes 5 **Jezus geeft leven**.
 
 De 22 blokken volgen exact: Johannes 2: 1–12, 13–17, 18–22, 23–25; Johannes 3: 1–8, 9–15, 16–21, 22–30, 31–36; Johannes 4: 1–6, 7–15, 16–26, 27–30, 31–38, 39–42, 43–45, 46–54; Johannes 5: 1–9, 10–18, 19–30, 31–40, 41–47. Beide publicatieregisters bevatten nu Genesis én Johannes 1–5. Alle vers- en blokreviews blijven `concept`; de controlelijsten blijven leeg.
 
@@ -271,7 +269,7 @@ Vrouw en de aanspreekvorm u blijven staan; er wordt geen belediging, boosheid, w
 
 ### J14 — 2:6–12: maten, feest en eerste teken
 
-Zes stenen vaten, Joodse reiniging en twee of drie metreten per vat blijven afzonderlijk behouden. Er is geen onzekere omrekening naar liters. De oude maat heeft een eigen uitleglaag, evenals reiniging en de hofmeester. De hofmeester wordt de leider van het feest, niet de gastheer of bruidegom.
+Zes stenen vaten en de Joodse reiniging blijven afzonderlijk behouden. De leeslaag geeft per vat het afgeronde bereik “ongeveer tachtig tot honderdtwintig liter”, zodat de omvang van het teken direct begrijpelijk is. De precieze bronmaat van twee of drie metreten en de onzekerheid van de omrekening staan in de uitleglaag. Ook reiniging en hofmeester hebben daar hun eigen uitleg; de hofmeester wordt de leider van het feest, niet de gastheer of bruidegom.
 
 Het vullen tot de rand, scheppen, brengen, proeven en het verschil tussen de kennis van de dienaren en de leider blijven staan. Flink gedronken houdt de hoeveelheid uit de bron vast zonder iedereen dronken te verklaren. Het eerste teken, Jezus’ majesteit en het geloof van de leerlingen blijven onderscheiden. De afdaling naar Kapernaüm en moeder, broers, leerlingen en korte verblijfsduur blijven behouden. Broers worden niet eigenmachtig neven of geestelijke broeders.
 
@@ -279,13 +277,13 @@ Het vullen tot de rand, scheppen, brengen, proeven en het verschil tussen de ken
 
 Het paasfeest blijft uitdrukkelijk Joods. Ossen, schapen, duiven, geldwisselaars, de van touw gemaakte zweep, het uitdrijven van allen, het uitstorten van geld en het omkeren van tafels blijven staan. Er wordt niet verteld dat Jezus mensen sloeg. De duivenverkopers krijgen een eigen aangesprokenen-id.
 
-De tempel is het huis van mijn Vader in Jezus’ spraak. Het psalmcitaat begint pas bij “De vurige inzet” en eindigt na “verteerd.” De herinnering van de leerlingen staat erbuiten. De spreker-id `psalmist` voegt geen auteursnaam toe die hier niet staat; God is de aangesprokene, met Uw. Het verteringsbeeld blijft behouden en krijgt uitleg onder `ijver-huis`.
+De tempel is het huis van mijn Vader in Jezus’ spraak. Het psalmcitaat begint pas bij “Mijn ijver” en eindigt na “verteerd.” De herinnering van de leerlingen staat erbuiten. `IJver` blijft behouden; “als een vuur” is niet toegevoegd, omdat dat beeld niet in deze bronzin staat. De spreker-id `psalmist` voegt geen auteursnaam toe die hier niet staat; God is de aangesprokene, met Uw. Het verteringsbeeld krijgt uitleg onder `ijver-huis`.
 
 ### J16 — 2:19–25: lichaam, tijd en vertrouwen
 
 Afbreken en oprichten, drie dagen en de 46 bouwjaren zijn behouden. De vraag luidt toekomstig “zult U”, niet “wilt U”: een wens zou de bewering veranderen. De uitleg dat Jezus Zijn lichaam bedoelde staat uitsluitend in vers 21 bij de verteller, niet al in Zijn eerste antwoord. Het geloof na de opstanding betreft zowel de Schrift als deze concrete uitspraak van Jezus over de tempel van Zijn lichaam; het wordt niet verbreed tot al Zijn woorden.
 
-Veel mensen geloven in Zijn naam door de tekenen, maar Jezus vertrouwt zichzelf niet aan hen toe. Beide kanten van het geloof-/vertrouwensmotief blijven staan. Er is geen uitspraak bij bedacht dat hun geloof vals of reddend was. De universele kennis van mensen en het niet nodig hebben van een menselijke getuige blijven in 24–25 behouden.
+Veel mensen geloven in Zijn naam door de tekenen, maar Jezus vertrouwt zichzelf niet aan hen toe. Zo blijft het reflexieve object van de bron behouden, evenals beide kanten van het geloof-/vertrouwensmotief. Er is geen uitspraak bij bedacht dat hun geloof vals of reddend was. De universele kennis van mensen en het niet nodig hebben van een menselijke getuige blijven in 24–25 behouden.
 
 ### J17 — 3:3–8: nieuwe geboorte, water, vlees en wind
 
@@ -303,9 +301,9 @@ Het wij van Jezus’ getuigenis blijft onuitgelegd. Er wordt niet besloten dat h
 
 Vers 13 bewaart zowel het neerdalen als de Mensenzoon die in de hemel is. De SV/plaatselijke Griekse slotlezing blijft hoofdtekst; er wordt geen verklarende leer over alomtegenwoordigheid, eerste hemelvaart of Henoch aan toegevoegd. Mozes, slang, woestijn, omhoogheffen, noodzaak, geloof, niet verloren gaan en eeuwig leven blijven in 14–15 behouden. De verhoging krijgt uitleg zonder alvast het kruis als extra woord in te voegen.
 
-### J19 — 3:16–21 en 3:31–36: expliciete sprekergrenzen
+### J19 — 3:16–21 en 3:31–36: redactionele sprekergrenzen en onzekerheid
 
-De citaatmetadata laat Jezus doorpraten tot en met 3:21 en Johannes de Doper tot en met 3:36. Dit volgt de voortzetting na de laatste expliciete spraakinleidingen in 3:10 en 3:27. In beide blokken ontbreekt bij het begin een nieuwe spraakinleiding. Het is daarom een redactionele keuze, niet een handschriftelijk bewezen sprekergrens of een dogmatische conclusie.
+De citaatmetadata modelleert als werkkeuze dat Jezus doorpraat tot en met 3:21 en Johannes de Doper tot en met 3:36. Dit volgt de voortzetting na de laatste expliciete spraakinleidingen in 3:10 en 3:27. In beide blokken ontbreekt bij het begin een nieuwe spraakinleiding. De hoofdtekst voegt daarom bij 3:31 geen sprekerintroductie toe; de toewijzing blijft een redactionele metadata-keuze, geen handschriftelijk bewezen sprekergrens of dogmatische conclusie.
 
 Een serieus alternatief is in 3:16 en/of 3:31 commentaar van de evangelist te laten beginnen. De gedeelde vertelstijl en de overgang naar algemene uitspraken ondersteunen die mogelijkheid. [Darrell Bock bespreekt de sprekergrens bij 3:16–21](https://blogs.bible.org/john-316-is-jesus-or-john-commenting-here/); die secundaire uitleg is alleen als controle op het bestaan en de aard van het alternatief gebruikt. De formuleringen blijven zelfstandig uit de primaire bron gemaakt.
 
@@ -313,7 +311,7 @@ De gekoppelde noot `sprekergrens-johannes-3` staat precies bij de openingsgedach
 
 ### J20 — 3:16–21: wereld, veroordeling en Licht
 
-Gods liefde, de wereld, het geven van Zijn enige Zoon, ieder die gelooft, niet verloren gaan en eeuwig leven blijven alle behouden. Zoveel volgt het alzo lief van de Nederlandse basistekst; de zin wordt niet beperkt tot één groep. Enige Zoon volgt de kalibratie van 1:14 en 1:18, met `eniggeboren-zoon` als uitleg.
+Gods liefde, de wereld, het geven van Zijn enige Zoon, ieder die gelooft, niet verloren gaan en eeuwig leven blijven alle behouden. “Zo liet God zien dat Hij van de wereld hield: Hij gaf Zijn enige Zoon” geeft `alzo` weer als de wijze waarop Gods liefde zichtbaar werd, niet als een meetbare hoeveelheid gevoel. De zin wordt niet beperkt tot één groep. Enige Zoon volgt de kalibratie van 1:14 en 1:18, met `eniggeboren-zoon` als uitleg.
 
 Zending om te redden staat tegenover zending om te veroordelen. Dat is een doelzin, geen extra conclusie dat iedereen daadwerkelijk gered wordt. Niet veroordeeld en al veroordeeld blijven onderscheiden; de reden in 3:18 noemt geloof in de naam van Gods enige Zoon. Het Licht behoudt de kalibratiespelling.
 
@@ -335,7 +333,7 @@ De vrouw is Samaritaans en Jezus is Joods in haar eigen woorden. De opmerking ov
 
 ### J23 — 4:10–24: gave, water en aanbidden
 
-Wat God geeft, de identiteit van degene die om drinken vraagt, de mogelijke omgekeerde vraag en het geven van levend water blijven in 4:10 behouden. De herhaalde drinkvraag is hier indirect geformuleerd, dus zonder extra genest citaat. Dit spaart een lange dubbele citaatzin zonder de inhoud te laten verdwijnen.
+Wat God geeft, de identiteit van degene die om drinken vraagt, de mogelijke omgekeerde vraag en het geven van levend water blijven in 4:10 behouden. “Wat God geeft” maakt daar geen nog niet uitgedrukte wil van (`wil geven`). De vrouw zou Jezus om levend water vragen; Hij zou het haar geven. De herhaalde drinkvraag is indirect geformuleerd, dus zonder extra genest citaat. Dit spaart een lange dubbele citaatzin zonder de inhoud te laten verdwijnen.
 
 De diepe put, het ontbrekende schepmiddel, Jakob als voorvader, zijn eigen drinken, zijn kinderen en zijn vee blijven staan. Het waterbeeld blijft doorlopend: opnieuw dorst tegenover nooit meer dorst, water dat Jezus geeft, een bron in de ontvanger en water dat opwelt tot in het eeuwige leven. Het wordt niet alvast vervangen door geluk, geloof of de Heilige Geest.
 
@@ -351,21 +349,21 @@ Waterkruik, weggaan, de stad, haar uitnodiging en vraag, en het naar Jezus komen
 
 Het voedselbeeld bewaart doen wat de zender wil én Zijn werk afmaken. In 4:34 is God als onbetwiste referent expliciet gemaakt en de relatieve bijzin afgesplitst: dit voorkomt de stroeve stapeling doen wat degene die mij gestuurd heeft wil. Geen nieuwe bedoeling of andere zender ingevoegd.
 
-Vier maanden, oogst, opkijken, witte velden, maaien, loon, vrucht voor eeuwig leven en gedeelde blijdschap blijven staan. De leerlinguitspraak in 4:35 en het spreekwoord in 4:37 zijn genest binnen Jezus’ woorden. De spreekwoordspreker is `unknown`, niet een verzonnen auteur. Het werk van anderen en het toetreden tot dat werk blijven behouden; er worden geen concrete eerdere arbeiders ingevuld.
+Vier maanden, oogst, opkijken, witte velden, maaien, loon, oogst voor eeuwig leven en gedeelde blijdschap blijven staan. Vers 36 identificeert de oogst niet als “mensen die eeuwig leven ontvangen”; die uitleg wordt niet als extra betekenis aan de hoofdtekst toegevoegd. De leerlinguitspraak in 4:35 en het spreekwoord in 4:37 zijn genest binnen Jezus’ woorden. De spreekwoordspreker is `unknown`, niet een verzonnen auteur. De leerlingen delen in wat de arbeid van anderen heeft opgeleverd; er worden geen concrete eerdere arbeiders ingevuld en de tekst beweert niet dat zij precies hetzelfde werk voortzetten.
 
 Twee dagen blijven twee dagen. Het geloof op grond van Jezus’ eigen woorden is onderscheiden van geloof op grond van de vrouw. Christus en Redder van de wereld staan beide in de gezamenlijke erkenning.
 
 ### J25 — 4:44–54: eigen land, hoveling en tijd
 
-De uitspraak over gebrek aan eer in het eigen land is een herinnerd citaat van Jezus. Het verbindingswoord namelijk bewaart want; het spanningsveld met de ontvangst door de Galileeërs blijft bestaan. Eigen land krijgt geen toegevoegde plaatsnaam en die ontvangst wordt niet als onecht verklaard.
+De uitspraak over gebrek aan eer in het eigen land is een herinnerd citaat van Jezus. De volgende zin begint neutraal met “Toen Hij in Galilea kwam”; het niet-bronmatige contrastwoord “Toch” is verwijderd. De ontvangst door de Galileeërs en wat zij tijdens het feest zagen blijven staan zonder daar een waardering van te maken. Eigen land krijgt geen toegevoegde plaatsnaam.
 
 De hoveling wordt niet een legerofficier, een Romein of een met naam genoemde bestuurder. Kana, Galilea, Judea, Kapernaüm, de zieke zoon en het op sterven liggen blijven staan. Jezus’ uitspraak tegen hem gebruikt meervoud jullie: de groep `galileeers` benoemt de bredere aangesproken kring zonder aanwezigen te tellen.
 
-De afdaling, het leven van zijn zoon/kind, de dienaren, gisteren, het zevende uur, het verdwijnen van de koorts en hetzelfde uur als Jezus’ uitspraak blijven behouden. Er is geen moderne kloktijd ingevoerd. Uw in “Uw kind leeft!” is alleen een normaal citaatbegin tegen een mens; je in Jezus’ antwoord is menselijk. Het hele huis gelooft; er is geen doop van het huis bij bedacht. Het teken blijft het tweede na Zijn terugkeer uit Judea naar Galilea.
+De reis, het leven van zijn zoon/kind, de dienaren, gisteren, het zevende uur, het verdwijnen van de koorts en hetzelfde uur als Jezus’ uitspraak blijven behouden. “Volgens de oude dagtelling” voorkomt dat het zevende uur als een moderne kloktijd wordt gelezen; de precieze omrekening blijft in de uitleglaag. Uw in “Uw kind leeft!” is alleen een normaal citaatbegin tegen een mens; je in Jezus’ antwoord is menselijk. Het hele huis gelooft; er is geen doop van het huis bij bedacht. Het teken blijft het tweede na Zijn terugkeer uit Judea naar Galilea.
 
 ### J26 — 5:2–4: Bethesda en de handschriften
 
-Bethesda volgt SV1888, niet een andere plaatsnaamvariant. De vijf zalen worden op grond van `stoas` en kanttekening 5 overdekte zuilengangen. De ziekenlijst behoudt blinden, mensen die moeilijk lopen en mensen met verschrompelde ledematen. Dat laatste bewaart het kenmerk van verdorden/`xērōn`; de eerste proefwoorden verlamde ledematen waren daarvoor te onbepaald.
+Bethesda volgt SV1888, niet een andere plaatsnaamvariant. De vijf zalen worden op grond van `stoas` en kanttekening 5 overdekte zuilengangen. De ziekenlijst behoudt blinden, mensen die moeilijk lopen en mensen met armen of benen die dun en krachteloos waren geworden. Die gewone omschrijving bewaart het kenmerk van verdorden/`xērōn` zonder het formele “verschrompelde ledematen”.
 
 Het wachten op bewegend water in vers 3 en de volledige engelpassage in vers 4 blijven SV/TR-hoofdtekst. Engel, bepaalde tijden, afdalen, waterbeweging, eerste binnengaan en genezing van om het even welke ziekte zijn behouden. Er staat niet dat de zieken dit alleen geloofden; dat zou de bronvertelling veranderen.
 
@@ -383,11 +381,11 @@ De waarschuwing niet meer te zondigen en het gevaar van iets ergers blijven staa
 
 De Zoon kan niets uit zichzelf doen; Hij doet wat Hij de Vader ziet doen; alles wat de Vader doet, doet de Zoon op dezelfde manier. De drie onderdelen blijven apart. Liefde, alles tonen, grotere werken en het doel van verwondering zijn behouden. Wie Hij wil in 5:21 blijft onverkort.
 
-De Vader oordeelt niemand en heeft het hele oordeel aan de Zoon gegeven. Het doel daarvan is dat iedereen de Zoon eert zoals men de Vader eert; dit is geen voorspelling dat iedereen dat daadwerkelijk zal doen. Geen eer voor de Zoon betekent geen eer voor de Vader die Hem stuurde. Horen én geloven, eeuwig leven, geen veroordeling en reeds overgegaan zijn uit dood naar leven blijven in 5:24 onderscheiden.
+De Vader oordeelt niemand en heeft het hele oordeel aan de Zoon gegeven. Het doel daarvan is dat alle mensen de Zoon eren zoals zij de Vader eren; dit is geen voorspelling dat iedereen dat daadwerkelijk zal doen. Geen eer voor de Zoon betekent geen eer voor de Vader die Hem stuurde. Horen én geloven, eeuwig leven, geen veroordeling en reeds overgegaan zijn uit dood naar leven blijven in 5:24 onderscheiden.
 
-In 5:25 blijft de tijd toekomstig én nu al. Doden, de stem van Gods Zoon horen en leven blijven staan. In 5:26 wordt de lastige dubbele constructie ontvlochten: de Vader heeft het leven in zichzelf; ook de Zoon heeft het leven in zichzelf, en de Vader heeft Hem dat gegeven. Beide levensfrasen hebben een eigen anker. Er wordt geen moment vóór het bestaan van de Zoon of een scheppingshandeling ingevoegd.
+In 5:25 blijft de tijd toekomstig én nu al. Doden, de stem van Gods Zoon horen en leven blijven staan. In 5:26 wordt de lastige dubbele constructie ontvlochten: de Vader heeft het leven in zichzelf; ook de Zoon heeft het leven in zichzelf gekregen van de Vader. Beide levensfrasen hebben een eigen anker. `zichzelf` blijft hier volgens het schrijfbeleid klein, omdat het wederkerend is. Er wordt geen moment vóór het bestaan van de Zoon of een scheppingshandeling ingevoegd.
 
-De Vader geeft de Zoon de macht om te oordelen omdat de Zoon de Mensenzoon is. Iedereen in de graven zal Zijn stem horen en eruit komen. Goed gedaan/opstaan tot leven en kwaad gedaan/opstaan tot veroordeling blijven twee uitkomsten; geen toevoeging van een eigen heilsleer of chronologie. In 5:30 blijven niets uit zichzelf doen, naar het gehoorde oordelen, rechtvaardigheid, niet eigen wil zoeken en de wil van de Vader die Hem stuurde behouden.
+De Vader geeft de Zoon gezag om te oordelen omdat de Zoon de Mensenzoon is. Iedereen in de graven zal Zijn stem horen en eruit komen. Goed gedaan/opstaan tot leven en kwaad gedaan/opstaan tot veroordeling blijven twee uitkomsten; geen toevoeging van een eigen heilsleer of chronologie. In 5:30 blijven niets uit zichzelf doen, naar het gehoorde oordelen, rechtvaardigheid, niet eigen wil zoeken en de wil van de Vader die Hem stuurde behouden.
 
 ### J29 — 5:31–39: getuigenis en Schriften
 
@@ -427,14 +425,14 @@ Zes semantische punten zijn eerst afzonderlijk met falende regressietests vastge
 | 2:22 | Deze uitspraak van Jezus verwijst terug naar de tempeluitspraak, niet naar Zijn woorden in het algemeen. Schrift en uitspraak blijven afzonderlijke geloofsobjecten. |
 | 3:36 | Niet gehoorzamen vervangt ongehoorzaam zijn. Het contrast met geloven en de blijvende toorn veranderen niet. |
 | 4:1 | De concrete inhoud volgt direct op wat de Farizeeën hadden gehoord. De Heere hoort over dat bericht; meer leerlingen en meer dopelingen blijven beide genoemd. |
-| 4:10 | Wie het is die jou om drinken vraagt wijst Jezus ondubbelzinnig als vrager aan. De mogelijke omgekeerde vraag van de vrouw volgt daarna. De identiteit en beide rollen mogen niet door het dubbelzinnige je verwisselen. |
-| 4:27 | Wat wilt U van haar vraagt naar Jezus’ bedoeling tegenover de vrouw, niet naar de inhoud van Zijn vraag. Beide vragen blijven onuitgesproken en krijgen geen citatierecord. |
+| 4:10 | Jezus zegt in de eerste persoon dat Hij degene is die om drinken vraagt en dat de vrouw het Hem zou kunnen vragen. God blijft de gever van de gave; de identiteit en beide rollen kunnen daardoor niet door dubbelzinnige voornaamwoorden verwisselen. |
+| 4:27 | De verteller noemt indirect wat Jezus van de vrouw zou willen en waarom Hij met haar sprak. Beide vragen blijven onuitgesproken en krijgen geen citatierecord. |
 | 5:13 | In de menigte uit het zicht verdwenen maakt het ontwijken concreet. Geen vluchtreden of wonder toegevoegd; de genezen man weet nog niet wie Jezus is. |
 | 5:18 | Er nog sterker op uit Hem te doden bewaart de geïntensiveerde inspanning; liever zou voorkeur of genoegen kunnen suggereren. De twee gronden en het gelijkstellen blijven ongewijzigd. |
 | 5:22 | Namelijk bewaart de verklarende verbinding. Dat de Vader niemand oordeelt en het hele oordeel aan de Zoon heeft gegeven, blijft volledig staan. |
-| 5:23 | Dat heeft Hij gedaan zodat bewaart het doel van de voorafgaande overdracht van het oordeel. Zoals men de Vader eert benoemt de menselijke eerbetuiging expliciet; de Vader en de Zoon zijn beiden ontvangers van eer. De tweede zin blijft ongewijzigd. |
+| 5:23 | Dat heeft Hij gedaan zodat bewaart het doel van de voorafgaande overdracht van het oordeel. Alle mensen en zij maken de menselijke eerbetuiging expliciet; de Vader en de Zoon zijn beiden ontvangers van eer. De tweede zin blijft ongewijzigd. |
 
-De segment-id’s, citaat-id’s, semantic-id’s, sprekers, aangesprokenen, geneste grenzen en conceptverwijzingen zijn tegen de voorafgaande inhoudscommit vergeleken en ongewijzigd. Het anker in 5:23 luidt nu de Zoon eert zoals men de Vader eert; de bijbehorende bronfrase blijft den Zoon eren, gelijk zij den Vader eren. Enkele brede bronfrases zijn toegespitst op de betrokken bronclausule. Alle tien inhoudshashes zijn vernieuwd; alle bronhashes en conceptreviewstatussen bleven gelijk.
+De segment-id’s, citaat-id’s, semantic-id’s, sprekers, aangesprokenen, geneste grenzen en conceptverwijzingen zijn tegen de voorafgaande inhoudscommit vergeleken en ongewijzigd. Het anker in 5:23 luidt nu de Zoon eren zoals zij de Vader eren; de bijbehorende bronfrase blijft den Zoon eren, gelijk zij den Vader eren. Enkele brede bronfrases zijn toegespitst op de betrokken bronclausule. Alle tien inhoudshashes zijn vernieuwd; alle bronhashes en conceptreviewstatussen bleven gelijk.
 
 De acht betrokken blokken zijn opnieuw zonder versnummers als doorlopende tekst gelezen: 2:1–12 en 18–22; 3:31–36; 4:1–6, 7–15 en 27–30; 5:10–18 en 19–30. Dit is een tekstuele voorleessimulatie, geen menselijke leesproef. De maxima per hoofdstuk zijn nu 23, 22, 22 en 19 woorden; er zijn geen zinnen boven 25 woorden. Onafhankelijke eindgoedkeuring blijft vereist.
 
@@ -442,21 +440,21 @@ De acht betrokken blokken zijn opnieuw zonder versnummers als doorlopende tekst 
 
 Veertien verzen zijn opnieuw aan SV1888 getoetst, met SV1637 als controle. In 3:17 wordt de herhaalde verwijzing door Hem expliciet door Zijn Zoon: de Zoon is degene door wie God de wereld wil redden. Het doel en de tegenstelling met veroordelen blijven staan. In 3:35 is de Zoon uitdrukkelijk de ontvanger van alles; het beeld van in handen geven blijft bewaard. Het begripanker bevat nu Hem alles in handen gegeven.
 
-In 5:20 wordt de Vader herhaald als degene die werkt, toont en grotere werken zal tonen. De Zoon is degene aan wie de Vader toont; het doel is de verwondering van de aangesprokenen. In 5:27 worden zowel de gever (de Vader) als de ontvanger (de Zoon) benoemd. De reden omdat de Zoon de Mensenzoon is blijft verbonden met de gegeven macht om te oordelen.
+In 5:20 wordt de Vader herhaald als degene die werkt, toont en grotere werken zal tonen. De Zoon is degene aan wie de Vader toont; het doel is dat de aangesprokenen verbaasd zullen zijn. In 5:27 worden zowel de gever (de Vader) als de ontvanger (de Zoon) benoemd. De reden omdat de Zoon de Mensenzoon is blijft verbonden met het gegeven gezag om te oordelen.
 
 In 4:42 wordt niet meer alleen gebruikt om de overgang van het bericht van de vrouw naar zelf horen duidelijk te maken. Haar getuigenis wordt niet onwaar verklaard. Het voorgestelde inkorten tot uitsluitend Redder van de wereld zou de Christus uit de primaire bron laten wegvallen. Daarom blijft de Christus nadrukkelijk staan, met het bestaande messias-anker. De twee zinnen scheiden het zelf horen van de erkenning van Christus als Redder van de wereld; het is één ononderbroken citaat van dezelfde Samaritanen.
 
 | Vers | Verdere vereenvoudiging |
 | --- | --- |
-| 2:6 | Elk vat kon twee of drie metreten bevatten maakt de capaciteit grammaticaal volledig. Geen aantallen of eenheden gewijzigd. |
+| 2:6 | Elk vat kon ongeveer tachtig tot honderdtwintig liter bevatten maakt de capaciteit en omvang direct begrijpelijk. De bronmaat van twee of drie metreten en de onzekerheid van de omrekening blijven in de uitleglaag. |
 | 2:13 | Naderde maakt duidelijk dat het feest in de tijd dichterbij kwam. Daarom verbindt het naderende paasfeest met de reis naar Jeruzalem. De reis wordt zonder letterlijk omhoog weergegeven; de bestemming en het feest blijven expliciet. |
 | 2:25 | Iets over mensen vertellen maakt het menselijke getuigenis in gewone taal duidelijk. Jezus’ eigen kennis van wat in een mens omgaat blijft de afzonderlijke reden. |
 | 3:23 | De losse komma na doopte vervalt. Naar hem toe verduidelijkt het komen naar Johannes voor de genoemde doop, zonder een ander reisdoel toe te voegen. |
 | 4:1 | Wist volgt verstond zonder een extra gehoorhandeling aan de Heere toe te schrijven. De Farizeeën hadden het bericht gehoord; leerlingen maken en dopen blijven onderscheiden. De precisering van de verteller in vers 2 blijft staan. |
 | 4:25 | Bekendmaken bewaart het verkondigen; het wordt niet beperkt tot het uitleggen van iets dat al bekend is. De naamverklaring blijft buiten de vrouwspraak. |
-| 4:26 | Dat ben ik, degene die met je spreekt maakt de identiteitsuitspraak direct. Ik en degene krijgen geen extra hoofdletter binnen het citaat. |
+| 4:26 | Ik ben het. Ik ben degene die met je spreekt maakt de identiteitsuitspraak direct en natuurlijk. Ik en degene krijgen geen extra hoofdletter binnen het citaat. |
 | 4:46 | Ambtenaar van de koning verduidelijkt de koninklijke functie. Het bestaande concept hoveling blijft gekoppeld aan die gehele functieomschrijving. Er wordt geen rang, legerfunctie of naam toegevoegd. |
-| 4:52 | Was opgeknapt vereenvoudigt beter geworden. De vraag naar het uur blijft afzonderlijk van het antwoord over de koorts op het zevende uur. |
+| 4:52 | Was opgeknapt vereenvoudigt beter geworden. De vraag naar het uur blijft afzonderlijk van het antwoord over de koorts; volgens de oude dagtelling markeert dat het zevende uur geen moderne kloktijd is. |
 
 Voor alle veertien formuleringen zijn eerst falende regressietests geschreven. De bestaande inhoudstest voor 5:27 is aangescherpt voordat de tekst veranderde. De betrokken citaatteksten en ankers worden op exacte reconstructie gecontroleerd. Alle segment-, citaat- en semantic-id’s, sprekers, aangesprokenen en conceptverwijzingen zijn behouden; alle veertien inhoudshashes zijn vernieuwd. Bronhashes, aantallen en conceptstatussen blijven ongewijzigd.
 
@@ -464,7 +462,7 @@ De elf betrokken blokken zijn zonder versnummers als doorlopende tekst herlezen:
 
 ### J34 — Volledige eervergelijking en één zichtbare functiebenaming
 
-In 5:23 is de ellips opgeheven: de Zoon wordt geëerd zoals men de Vader eert. Daarmee kan de Vader grammaticaal niet als degene die de Zoon eert worden gelezen. Het doel van de overdracht van het oordeel blijft staan, evenals de ongewijzigde tweede zin over het niet eren van de Zoon en de Vader die Hem stuurde. Het gehele vergelijkingselement blijft één precies gekoppeld vader-zoon-anker.
+In 5:23 is de ellips opgeheven: alle mensen eren de Zoon zoals zij de Vader eren. Daarmee kan de Vader grammaticaal niet als degene die de Zoon eert worden gelezen. Het doel van de overdracht van het oordeel blijft staan, evenals de ongewijzigde tweede zin over het niet eren van de Zoon en de Vader die Hem stuurde. Het gehele vergelijkingselement blijft één precies gekoppeld vader-zoon-anker.
 
 De blokkop bij 4:46–54 luidt De zoon van de ambtenaar leeft. In 4:47 en 4:49 wordt dezelfde persoon consequent ambtenaar genoemd, aansluitend op ambtenaar van de koning in 4:46. De zichtbare sprekernaam bij 4:49 is De ambtenaar van de koning. Bij 4:51 en 4:52 gebruiken de dienaren zichtbaar De dienaren van de ambtenaar. De bronfrases, het verklaringsbegrip hoveling en alle technische identiteitssleutels, waaronder hoveling en dienaren-hoveling, blijven behouden. De aangesproken personen en de inhoud van de citaten veranderen niet.
 

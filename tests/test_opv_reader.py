@@ -498,7 +498,7 @@ class OpvReaderTests(unittest.TestCase):
             page.close()
 
     def test_johannes_two_to_five_render_all_verses_and_preserve_annotations(self):
-        expected = {2: (25, "Jezus laat zien wie Hij is"),
+        expected = {2: (25, "De bruiloft in Kana en de tempel in Jeruzalem"),
                     3: (36, "Nieuw leven van God"),
                     4: (54, "Jezus geeft levend water"),
                     5: (47, "Jezus geeft leven")}
@@ -539,12 +539,12 @@ class OpvReaderTests(unittest.TestCase):
         expected = {
             ("genesis", 1): (31, 7, 15, 13, 78),
             ("genesis", 2): (25, 6, 15, 4, 58),
-            ("genesis", 3): (24, 6, 7, 21, 57),
+            ("genesis", 3): (24, 6, 7, 20, 57),
             ("genesis", 4): (26, 5, 9, 14, 55),
             ("genesis", 5): (32, 5, 5, 1, 43),
             ("johannes", 1): (52, 7, 45, 36, 180),
             ("johannes", 2): (25, 4, 16, 11, 69),
-            ("johannes", 3): (36, 5, 49, 33, 134),
+            ("johannes", 3): (36, 5, 49, 33, 133),
             ("johannes", 4): (54, 8, 29, 41, 143),
             ("johannes", 5): (47, 5, 40, 39, 131),
         }
@@ -574,7 +574,7 @@ class OpvReaderTests(unittest.TestCase):
                 self.assertEqual(page.locator(".opv-reading-flow").count(), 1)
                 self.assertEqual(page.locator(".opv-reading-flow .verse-row.opv-verse").count(), wanted[0])
                 totals = [a + b for a, b in zip(totals, actual)]
-            self.assertEqual(totals, [352, 58, 230, 213, 948])
+            self.assertEqual(totals, [352, 58, 230, 212, 947])
             self.assertEqual(observed["pageerrors"], [])
         finally:
             page.close()

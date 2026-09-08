@@ -803,10 +803,11 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
         self.assertNotIn("wat bestaat", text)
 
     def test_genesis_water_both_produces_and_teems_with_life(self) -> None:
+        verses = self._chapter("genesis")["verzen"]
+        self.assertIn("voortbr", verses[19]["tekst"])
         for number in (20, 21):
             with self.subTest(verse=number):
-                text = self._chapter("genesis")["verzen"][number - 1]["tekst"]
-                self.assertIn("voortbr", text)
+                text = verses[number - 1]["tekst"]
                 self.assertIn("overvloed", text)
                 self.assertIn("wemel", text)
 
@@ -842,7 +843,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             ("johannes", 30, "een man die boven mij staat"),
             ("johannes", 38, "Jezus draaide zich om"),
             ("johannes", 44, "Volg mij."),
-            ("johannes", 48, "naar zich toe"),
+            ("johannes", 48, "naar Hem toe"),
             ("johannes", 49, "zag ik je al"),
             ("johannes", 51, "omdat ik je zei dat ik je"),
         ]
@@ -992,7 +993,7 @@ class OpvGenesisPilotTests(unittest.TestCase):
                     3: {1: ["slang", "god"], 2: ["eva"], 3: ["eva", "god"], 4: ["slang"],
                         5: ["slang"], 9: ["god"], 10: ["adam"], 11: ["god"], 12: ["adam"],
                         13: ["god", "eva"], 14: ["god"], 15: ["god"], 16: ["god"],
-                        17: ["god", "god"], 18: ["god"], 19: ["god"], 22: ["god"]},
+                        17: ["god"], 18: ["god"], 19: ["god"], 22: ["god"]},
                     4: {1: ["eva"], 6: ["god"], 7: ["god"], 9: ["god", "kain"],
                         10: ["god"], 11: ["god"], 12: ["god"], 13: ["kain"], 14: ["kain"],
                         15: ["god"], 23: ["lamech-kain"], 24: ["lamech-kain"], 25: ["eva"]},
@@ -1046,11 +1047,13 @@ class OpvGenesisPilotTests(unittest.TestCase):
         self.assertNotRegex(text, r"vasthield|vasthielden|hanteerde|hanteerden")
 
     def test_henoch_retains_the_repeated_walking_image_and_its_exact_anchors(self) -> None:
+        expected_anchors = {22: "wandelde Henoch met God", 24: "wandelde met God"}
         for number in (22, 24):
             with self.subTest(verse=number):
                 verse = self.chapter(5)["verzen"][number - 1]
-                self.assertIn("Henoch wandelde met God", verse["tekst"])
-                self.assertEqual(["wandelde met God"],
+                self.assertIn("Henoch", verse["tekst"])
+                self.assertIn("wandelde", verse["tekst"])
+                self.assertEqual([expected_anchors[number]],
                                  OpvCalibrationCorpusTests._concept_texts(verse, "wandelen-met-god"))
         self.assertEqual([300], [int(n) for n in re.findall(r"\b\d+\b", self.chapter(5)["verzen"][21]["tekst"])])
 
@@ -1066,10 +1069,11 @@ class OpvGenesisPilotTests(unittest.TestCase):
             self.assertEqual(("Lamech", "human"), (citation["spreker"]["naam"], citation["spreker"]["type"]))
         self.assertTrue(fifth[28]["tekst"].startswith("Lamech noemde hem Noach"))
 
-    def test_genesis_four_7_explains_the_door_image_without_changing_the_brother_reading(self) -> None:
+    def test_genesis_four_7_keeps_the_disputed_referent_out_of_the_reading_text(self) -> None:
         verse = self.chapter(4)["verzen"][6]
-        self.assertRegex(verse["tekst"], r"Je broer verlangt\b[^.!?]*\bmet jou\b")
-        self.assertNotIn("op jou gericht", verse["tekst"])
+        self.assertNotIn("goede band", verse["tekst"])
+        self.assertNotRegex(verse["tekst"], r"(?i)\b(?:abel|broer)\b")
+        self.assertIn("zijn verlangen op jou gericht", verse["tekst"])
         self.assertIn("jij zult over hem heersen", verse["tekst"])
         self.assertNotRegex(verse["tekst"], r"\bstraf\b|eerstgeboren|oudste|moet.*heersen")
         self.assertIn("ligt de zonde aan de deur", verse["tekst"])
@@ -1079,16 +1083,35 @@ class OpvGenesisPilotTests(unittest.TestCase):
         self.assertIn("straf", explanation)
         self.assertIn("Statenvertaling", explanation)
 
-    def test_genesis_four_7_explains_its_relational_desire_at_a_precise_anchor(self) -> None:
+    def test_genesis_four_7_documents_both_readings_in_the_second_layer(self) -> None:
         verse = self.chapter(4)["verzen"][6]
-        self.assertEqual(["verlangt toch naar een goede band met jou"],
-                         OpvCalibrationCorpusTests._concept_texts(verse, "verlangen-van-de-broer"))
+        self.assertEqual(["zijn verlangen op jou gericht"],
+                         OpvCalibrationCorpusTests._concept_texts(verse, "verlangen-genesis-4-7"))
         concepts = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))["concepten"]
-        explanation = next(c["uitleg"] for c in concepts if c["id"] == "verlangen-van-de-broer")
-        for element in ("Genesis 4:7", "Abel", "oudere broer", "Statenvertaling"):
+        explanation = next(c["uitleg"] for c in concepts if c["id"] == "verlangen-genesis-4-7")
+        for element in ("Genesis 4:7", "Abel", "zonde", "Statenvertaling"):
             self.assertIn(element, explanation)
+        lowered = explanation.lower()
+        self.assertIn("een andere uitleg", lowered)
+        self.assertIn("hoofdtekst", lowered)
+        self.assertIn("open", lowered)
         self.assertEqual("god", verse["citaten"][0]["spreker"]["id"])
         self.assertEqual(["kain"], verse["citaten"][0]["aangesprokene"])
+
+    def test_task7_genesis_source_and_clarity_findings_remain_fixed(self) -> None:
+        chapters = {number: self.chapter(number) for number in range(1, 5)}
+        self.assertRegex(chapters[1]["verzen"][17]["tekst"], r"(?:De|Deze) lichten")
+        self.assertIn("Die damp", chapters[2]["verzen"][5]["tekst"])
+        self.assertIn("één vlees", chapters[2]["verzen"][23]["tekst"])
+        self.assertNotIn("één lichaam", chapters[2]["verzen"][23]["tekst"])
+        self.assertIn("Toen vroeg de slang", chapters[3]["verzen"][0]["tekst"])
+        self.assertNotIn("Toen gingen bij allebei de ogen open", chapters[3]["verzen"][6]["tekst"])
+        wind_sentence = next(
+            sentence for sentence in re.split(r"(?<=[.!?])\s+", chapters[3]["verzen"][7]["tekst"])
+            if "wind" in sentence.lower()
+        )
+        self.assertIn("dag", wind_sentence.lower())
+        self.assertIn("De grond", chapters[4]["verzen"][10]["tekst"])
 
 
 class OpvJohannesPilotTests(unittest.TestCase):
@@ -1163,7 +1186,8 @@ class OpvJohannesPilotTests(unittest.TestCase):
             for number in range(start, end + 1):
                 verse = verses[number - 1]
                 self.assertEqual(speaker, verse["citaten"][0]["spreker"]["id"])
-                self.assertEqual(verse["tekst"], OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+                citation = OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0])
+                self.assertEqual(verse["tekst"], citation)
         self.assertTrue(OpvCalibrationCorpusTests._concept_texts(verses[15], "sprekergrens-johannes-3"))
         self.assertTrue(OpvCalibrationCorpusTests._concept_texts(verses[30], "sprekergrens-johannes-3"))
 
@@ -1177,7 +1201,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
         for word in ("engel", "water", "eerste", "gezond", "ziekte"):
             self.assertIn(word, angel["tekst"])
         self.assertIn("blinden", waiting["tekst"])
-        self.assertIn("verschrompelde ledematen", waiting["tekst"])
+        self.assertIn("armen of benen die dun en krachteloos waren geworden", waiting["tekst"])
         registry = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))
         note = next(c["uitleg"] for c in registry["concepten"] if c["id"] == "bethesda-handschriften")
         self.assertIn("handschriften", note)
@@ -1193,8 +1217,12 @@ class OpvJohannesPilotTests(unittest.TestCase):
                 self.assertTrue(OpvCalibrationCorpusTests._concept_texts(verse, concept))
         measure = self.chapter(2)["verzen"][5]["tekst"]
         self.assertIn("zes", measure)
-        self.assertIn("twee of drie metreten", measure)
-        self.assertNotIn("liter", measure)
+        self.assertIn("ongeveer tachtig tot honderdtwintig liter", measure)
+        self.assertNotIn("metreten", measure)
+        registry = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))
+        explanation = next(c["uitleg"] for c in registry["concepten"] if c["id"] == "metreet")
+        self.assertIn("oude inhoudsmaat", explanation)
+        self.assertIn("Twee of drie metreten", explanation)
 
     def test_johannes_nested_speech_excludes_narrative_introductions(self) -> None:
         for chapter, number, expected in ((3, 7, "Jullie moeten opnieuw geboren worden."),
@@ -1231,7 +1259,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
         for number, phrase in ((2, "vijf"), (5, "38"), (19, "niets uit zichzelf"),
                                (21, "wie Hij wil"), (22, "het hele oordeel"),
                                (24, "al overgegaan"), (25, "nu al"),
-                               (26, "de Vader Hem gegeven"), (27, "omdat de Zoon de Mensenzoon is"),
+                               (26, "gekregen van de Vader"), (27, "omdat de Zoon de Mensenzoon is"),
                                (28, "iedereen in de graven"), (29, "veroordeeld"),
                                (30, "de wil van de Vader"), (45, "Mozes"),
                                (46, "over mij geschreven")):
@@ -1240,19 +1268,19 @@ class OpvJohannesPilotTests(unittest.TestCase):
 
     def test_johannes_four_10_keeps_jesus_as_the_one_requesting_water(self) -> None:
         verse = self.chapter(4)["verzen"][9]
-        self.assertIn("wie het is die jou om drinken vraagt", verse["tekst"])
-        self.assertIn("zou jij Hem erom vragen", verse["tekst"])
+        self.assertIn("wie jou nu om drinken vraagt", verse["tekst"])
+        self.assertIn("zou jij mij om levend water vragen", verse["tekst"])
         self.assertNotIn("wie je om drinken vraagt", verse["tekst"])
         self.assertEqual("jezus", verse["citaten"][0]["spreker"]["id"])
-        self.assertIn("die jou om drinken vraagt", OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+        self.assertIn("wie jou nu om drinken vraagt", OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
         self.assertEqual(["levend water"], OpvCalibrationCorpusTests._concept_texts(verse, "levend-water"))
 
     def test_johannes_five_23_preserves_the_purpose_of_giving_judgment(self) -> None:
         verse = self.chapter(5)["verzen"][22]
-        self.assertTrue(verse["tekst"].startswith("Dat heeft Hij gedaan zodat iedereen de Zoon eert zoals men de Vader eert."))
+        self.assertTrue(verse["tekst"].startswith("Dat heeft Hij gedaan zodat alle mensen de Zoon eren zoals zij de Vader eren."))
         self.assertNotIn("Zo zal iedereen", verse["tekst"])
         self.assertIn("Wie de Zoon niet eert, eert ook de Vader niet die Hem gestuurd heeft.", verse["tekst"])
-        self.assertEqual(["de Zoon eert zoals men de Vader eert"], OpvCalibrationCorpusTests._concept_texts(verse, "vader-zoon"))
+        self.assertEqual(["de Zoon eren zoals zij de Vader eren"], OpvCalibrationCorpusTests._concept_texts(verse, "vader-zoon"))
         self.assertEqual(verse["tekst"], OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
 
     def test_johannes_five_18_keeps_intensified_effort_to_kill(self) -> None:
@@ -1271,9 +1299,9 @@ class OpvJohannesPilotTests(unittest.TestCase):
 
     def test_johannes_four_27_keeps_the_object_of_the_unasked_question(self) -> None:
         verse = self.chapter(4)["verzen"][26]
-        self.assertIn("Toch vroeg niemand: Wat wilt U van haar?", verse["tekst"])
+        self.assertIn("Toch vroeg niemand wat Hij van haar wilde", verse["tekst"])
         self.assertNotIn("Wat vraagt U?", verse["tekst"])
-        self.assertIn("Waarom praat U met haar?", verse["tekst"])
+        self.assertIn("waarom Hij met haar sprak", verse["tekst"])
         self.assertEqual([], verse["citaten"])
 
     def test_johannes_five_22_keeps_the_explanatory_link_to_judgment(self) -> None:
@@ -1299,12 +1327,12 @@ class OpvJohannesPilotTests(unittest.TestCase):
 
     def test_johannes_five_20_names_the_father_as_the_one_showing_his_works(self) -> None:
         verse = self.chapter(5)["verzen"][19]
-        expected = "Want de Vader houdt van de Zoon en laat Hem alles zien wat de Vader doet. De Vader zal Hem nog grotere werken laten zien, zodat jullie je zullen verwonderen."
+        expected = "Want de Vader houdt van de Zoon en laat Hem alles zien wat de Vader doet. De Vader zal Hem nog grotere werken laten zien, zodat jullie verbaasd zullen zijn."
         self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
 
     def test_johannes_five_27_names_the_giver_and_recipient_of_judgment(self) -> None:
         verse = self.chapter(5)["verzen"][26]
-        expected = "De Vader heeft de Zoon ook de macht gegeven om het oordeel uit te voeren, omdat de Zoon de Mensenzoon is."
+        expected = "De Vader heeft de Zoon ook gezag gegeven om te oordelen, omdat de Zoon de Mensenzoon is."
         self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
         self.assertEqual(["Mensenzoon"], OpvCalibrationCorpusTests._concept_texts(verse, "mensenzoon"))
 
@@ -1325,11 +1353,11 @@ class OpvJohannesPilotTests(unittest.TestCase):
         expected = "Ik weet dat de Messias komt. Wanneer Hij komt, zal Hij ons alles bekendmaken."
         self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
 
-    def test_johannes_two_6_expresses_capacity_without_converting_the_unit(self) -> None:
+    def test_johannes_two_6_expresses_capacity_with_a_rounded_conversion(self) -> None:
         verse = self.chapter(2)["verzen"][5]
-        expected = "Er stonden zes stenen watervaten voor de reiniging van de Joden. Elk vat kon twee of drie metreten bevatten."
+        expected = "Er stonden zes stenen watervaten voor de reiniging van de Joden. Elk vat kon ongeveer tachtig tot honderdtwintig liter bevatten."
         self.assertEqual(expected, verse["tekst"])
-        self.assertEqual(["twee of drie metreten"], OpvCalibrationCorpusTests._concept_texts(verse, "metreet"))
+        self.assertEqual(["ongeveer tachtig tot honderdtwintig liter"], OpvCalibrationCorpusTests._concept_texts(verse, "metreet"))
 
     def test_johannes_two_13_connects_the_passover_and_the_journey(self) -> None:
         verse = self.chapter(2)["verzen"][12]
@@ -1350,7 +1378,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
 
     def test_johannes_four_26_makes_jesus_identity_statement_direct(self) -> None:
         verse = self.chapter(4)["verzen"][25]
-        expected = "Dat ben ik, degene die met je spreekt."
+        expected = "Ik ben het. Ik ben degene die met je spreekt."
         self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
 
     def test_johannes_four_46_identifies_the_royal_official_in_plain_words(self) -> None:
@@ -1361,17 +1389,17 @@ class OpvJohannesPilotTests(unittest.TestCase):
 
     def test_johannes_four_52_asks_when_the_son_recovered(self) -> None:
         verse = self.chapter(4)["verzen"][51]
-        expected = "Hij vroeg op welk uur zijn zoon was opgeknapt. Ze zeiden: Gisteren, op het zevende uur, verdween zijn koorts."
+        expected = "Hij vroeg op welk uur zijn zoon was opgeknapt. Ze zeiden: Gisteren, op het zevende uur volgens de oude dagtelling, verdween zijn koorts."
         self.assertEqual(expected, verse["tekst"])
         self.assertEqual(["zevende uur"], OpvCalibrationCorpusTests._concept_texts(verse, "zevende-uur"))
 
     def test_johannes_five_23_makes_human_honor_to_both_explicit(self) -> None:
         verse = self.chapter(5)["verzen"][22]
-        expected = ("Dat heeft Hij gedaan zodat iedereen de Zoon eert zoals men de Vader eert. "
+        expected = ("Dat heeft Hij gedaan zodat alle mensen de Zoon eren zoals zij de Vader eren. "
                     "Wie de Zoon niet eert, eert ook de Vader niet die Hem gestuurd heeft.")
         self.assertEqual(expected, verse["tekst"])
         self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
-        self.assertEqual(["de Zoon eert zoals men de Vader eert"],
+        self.assertEqual(["de Zoon eren zoals zij de Vader eren"],
                          OpvCalibrationCorpusTests._concept_texts(verse, "vader-zoon"))
 
     def test_johannes_four_46_to_49_uses_one_visible_name_for_official(self) -> None:
@@ -1400,6 +1428,154 @@ class OpvJohannesPilotTests(unittest.TestCase):
                 self.assertEqual("De dienaren van de ambtenaar", citation["spreker"]["naam"])
                 self.assertEqual("dienaren-hoveling", citation["spreker"]["id"])
                 self.assertEqual(f"spraak.dienarenhoveling.jhn4v{number}q1", citation["semanticId"])
+
+    def test_task7_johannes_source_findings_remain_fixed(self) -> None:
+        first = self.chapter(1)["verzen"]
+        third = self.chapter(3)["verzen"]
+        fourth = self.chapter(4)["verzen"]
+        self.assertNotIn("steeds opnieuw", first[15]["tekst"])
+        expected = ("Want zo liet God zien dat Hij van de wereld hield: Hij gaf Zijn enige Zoon. "
+                    "Hij deed dat zodat iedereen die in Hem gelooft niet verloren zal gaan, "
+                    "maar eeuwig leven zal hebben.")
+        self.assertEqual(expected, third[15]["tekst"])
+        self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(third[15], third[15]["citaten"][0]))
+        self.assertNotIn("verdergegaan", fourth[37]["tekst"])
+        self.assertIn("delen", fourth[37]["tekst"])
+
+    def test_task7_johannes_referents_and_plain_language_remain_clear(self) -> None:
+        chapters = {number: self.chapter(number) for number in range(1, 6)}
+        self.assertNotIn("wat van Hem was", chapters[1]["verzen"][10]["tekst"])
+        for chapter, number in ((1, 39), (1, 42), (1, 43), (4, 25)):
+            with self.subTest(chapter=chapter, verse=number):
+                self.assertRegex(chapters[chapter]["verzen"][number - 1]["tekst"], r"(?:Het woord|Die naam)")
+        self.assertNotIn("metreten", chapters[2]["verzen"][5]["tekst"])
+        self.assertRegex(chapters[2]["verzen"][5]["tekst"], r"\b(?:liter|inhoud)\b")
+        self.assertIn("in God zijn gedaan", chapters[3]["verzen"][20]["tekst"])
+        self.assertNotIn("laat hij zien", chapters[3]["verzen"][20]["tekst"])
+        self.assertIn("God", chapters[3]["verzen"][26]["tekst"])
+        wedding_text = chapters[3]["verzen"][28]["tekst"].lower()
+        self.assertIn("de bruidegom", wedding_text)
+        self.assertIn("de vriend van de bruidegom", wedding_text)
+        self.assertNotRegex(chapters[3]["verzen"][30]["tekst"], r"^Johannes")
+        self.assertRegex(chapters[4]["verzen"][9]["tekst"], r"\bmij\b")
+        self.assertIn("die bron", chapters[4]["verzen"][13]["tekst"].lower())
+        self.assertRegex(chapters[4]["verzen"][22]["tekst"], r"Er komt een tijd")
+        self.assertNotIn("Of:", chapters[4]["verzen"][26]["tekst"])
+        self.assertNotIn("namelijk", chapters[4]["verzen"][43]["tekst"])
+        for number in (26, 27):
+            with self.subTest(verse=number):
+                text = chapters[5]["verzen"][number - 1]["tekst"]
+                self.assertIn("Vader", text)
+                self.assertIn("Zoon", text)
+        self.assertNotIn("Zijn gestalte", chapters[5]["verzen"][36]["tekst"])
+        self.assertNotIn("Zijn woord blijft niet", chapters[5]["verzen"][37]["tekst"])
+
+    def test_task7_source_rereview_findings_remain_fixed(self) -> None:
+        genesis_two = json.loads(
+            (self.root / "data/edities/opv/chapters/genesis/2.json").read_text(encoding="utf-8")
+        )
+        chapters = {number: self.chapter(number) for number in range(1, 6)}
+        expected = {
+            ("genesis", 2, 12): (
+                "Het goud uit dat land is van goede kwaliteit. Ook het materiaal bedolah en "
+                "de edelsteen sardonix zijn er te vinden."
+            ),
+            ("johannes", 1, 11): (
+                "Hij kwam naar wat Hem toebehoorde, maar Zijn eigen mensen namen Hem niet aan."
+            ),
+            ("johannes", 1, 48): (
+                "Jezus zag Nathanaël naar Hem toe komen en zei over hem: Kijk, daar komt een "
+                "echte Israëliet! Er is geen bedrog in hem."
+            ),
+            ("johannes", 2, 17): (
+                "Zijn leerlingen herinnerden zich deze woorden uit de Schrift: Mijn ijver voor "
+                "Uw huis heeft mij verteerd."
+            ),
+            ("johannes", 2, 24): (
+                "Maar Jezus vertrouwde zichzelf niet aan hen toe, want Hij kende hen allemaal."
+            ),
+            ("johannes", 3, 8): (
+                "De wind waait waarheen hij wil. Je hoort zijn geluid, maar weet niet waar hij "
+                "vandaan komt of naartoe gaat. Zo is het met iedereen die uit de Geest geboren "
+                "is: je merkt wat de Geest doet, maar je begrijpt niet hoe het gebeurt."
+            ),
+            ("johannes", 3, 21): (
+                "Maar wie naar de waarheid handelt, komt naar het Licht. Dan wordt zichtbaar dat "
+                "zijn daden in God zijn gedaan."
+            ),
+            ("johannes", 3, 31): (
+                "Wie van boven komt, staat boven iedereen. Wie van de aarde komt, hoort bij de "
+                "aarde en spreekt als iemand van de aarde. Wie uit de hemel komt, staat boven iedereen."
+            ),
+            ("johannes", 4, 10): (
+                "Jezus antwoordde: Als je wist wat God geeft, en wist wie jou nu om drinken vraagt, "
+                "zou jij mij om levend water vragen. Dan zou ik het je geven."
+            ),
+            ("johannes", 4, 36): (
+                "Wie maait, krijgt loon en verzamelt de oogst voor het eeuwige leven. Zo kunnen de "
+                "zaaier en de maaier samen blij zijn."
+            ),
+            ("johannes", 4, 45): (
+                "Toen Hij in Galilea kwam, ontvingen de Galileeërs Hem. Ze hadden alles gezien wat "
+                "Hij tijdens het feest in Jeruzalem had gedaan. Zij waren zelf ook naar het feest gegaan."
+            ),
+            ("johannes", 5, 26): (
+                "Zoals de Vader het leven in zichzelf heeft, zo heeft ook de Zoon het leven in "
+                "zichzelf gekregen van de Vader."
+            ),
+            ("johannes", 1, 16): (
+                "Uit Zijn overvloed hebben wij allemaal volop onverdiende goedheid ontvangen."
+            ),
+            ("johannes", 3, 5): (
+                "Jezus antwoordde: Luister goed, ik verzeker je: als iemand niet uit water en Geest "
+                "geboren wordt, kan hij het Koninkrijk van God niet binnengaan."
+            ),
+            ("johannes", 3, 29): (
+                "De bruid hoort bij de bruidegom. De vriend van de bruidegom staat ernaast en luistert. "
+                "Wanneer hij de stem van de bruidegom hoort, is hij heel blij. Zo is mijn blijdschap "
+                "nu helemaal vervuld."
+            ),
+            ("johannes", 4, 38): (
+                "Ik heb jullie gestuurd om te maaien waar jullie niet voor hebben gewerkt. Anderen "
+                "hebben het werk gedaan en jullie delen nu in het resultaat van hun werk."
+            ),
+            ("johannes", 5, 24): (
+                "Luister goed, ik verzeker jullie: wie mijn woord hoort en vertrouwt op Hem die mij "
+                "gestuurd heeft, heeft eeuwig leven. Hij wordt niet veroordeeld, maar is al overgegaan "
+                "van de dood naar het leven."
+            ),
+            ("johannes", 5, 36): (
+                "Maar ik heb een belangrijker getuigenis dan dat van Johannes. De Vader gaf mij werken "
+                "om te doen. De werken die ik doe, getuigen ervan dat de Vader mij gestuurd heeft."
+            ),
+        }
+        for (book, chapter, number), wanted in expected.items():
+            with self.subTest(book=book, chapter=chapter, verse=number):
+                data = genesis_two if book == "genesis" else chapters[chapter]
+                self.assertEqual(wanted, data["verzen"][number - 1]["tekst"])
+        third = chapters[3]
+        self.assertEqual("Hij die uit de hemel komt", third["blokken"][-1]["kop"])
+        verse_31 = third["verzen"][30]
+        self.assertEqual(
+            verse_31["tekst"],
+            OpvCalibrationCorpusTests._citation_text(verse_31, verse_31["citaten"][0]),
+        )
+        self.assertNotIn("Johannes zei verder", verse_31["tekst"])
+        self.assertNotIn("Toch ontvingen", chapters[4]["verzen"][44]["tekst"])
+        self.assertEqual(
+            "Toen de wind van de dag waaide, hoorden ze de stem van de HEERE God terwijl Hij door "
+            "de tuin liep. Adam en zijn vrouw verstopten zich tussen de bomen voor Hem.",
+            json.loads(
+                (self.root / "data/edities/opv/chapters/genesis/3.json").read_text(encoding="utf-8")
+            )["verzen"][7]["tekst"],
+        )
+        self.assertEqual(
+            "Lamech zei tegen zijn vrouwen Ada en Zilla: Luister naar mijn stem, vrouwen van Lamech! "
+            "Hoor wat ik zeg! Ja, ik doodde een man vanwege mijn wond, en een jonge man vanwege mijn buil!",
+            json.loads(
+                (self.root / "data/edities/opv/chapters/genesis/4.json").read_text(encoding="utf-8")
+            )["verzen"][22]["tekst"],
+        )
 
 
 if __name__ == "__main__":
