@@ -638,6 +638,7 @@ const App = {
     _renderOpvReadingFlow(chapter, book, bookId, chapterNum, sink, parallelEditions) {
         const flow = document.createElement('article');
         flow.className = 'opv-reading-flow';
+        flow.dataset.editie = 'nl-opv';
         flow.dataset.book = bookId;
         flow.dataset.chapter = chapterNum;
         flow.lang = 'nl';
@@ -674,6 +675,20 @@ const App = {
         sink.appendChild(flow);
     },
 
+    _isCurrentRenderOwner(owner) {
+        const edition = (typeof TekstEditie === 'undefined') ? 'nl-ov' : TekstEditie.code();
+        return !!owner && App._renderOwner === owner && owner.editionCode === edition;
+    },
+
+    _isCurrentContinuousOwner(owner) {
+        if (!owner || App._continuousOwner !== owner ||
+            !App._isCurrentRenderOwner(owner.renderOwner) ||
+            localStorage.getItem('doorlopend') !== 'true') return false;
+        const boundary = owner.direction === 'next' ? App._contLast : App._contFirst;
+        return !!boundary && boundary.bookId === owner.edge.bookId &&
+            Number(boundary.chapterNum) === Number(owner.edge.chapterNum);
+    },
+
     _ensureOpvConceptDialog() {
         let dialog = document.getElementById('opv-concept-dialog');
         if (dialog) return dialog;
@@ -707,11 +722,7 @@ const App = {
             App._closeOpvConcept(true);
         });
         dialog.addEventListener('close', () => {
-            const trigger = App._opvConceptTrigger;
-            if (trigger) trigger.setAttribute('aria-expanded', 'false');
-            App._opvConceptTrigger = null;
-            if (App._opvRestoreConceptFocus && trigger && trigger.isConnected) trigger.focus();
-            App._opvRestoreConceptFocus = false;
+            App._resetOpvConceptState(App._opvRestoreConceptFocus);
         });
         document.body.appendChild(dialog);
         return dialog;
@@ -738,7 +749,7 @@ const App = {
         const generation = App._opvViewGeneration;
         const concepts = await App._loadOpvConcepts();
         if (generation !== App._opvViewGeneration || !trigger.isConnected ||
-            App._currentPrimaryEditionCode !== 'nl-opv' ||
+            !trigger.closest('[data-editie="nl-opv"]') ||
             trigger.classList.contains('opv-concept-disabled')) return;
         const concept = concepts.get(trigger.dataset.opvConcept);
         if (!concept) return;
@@ -756,13 +767,22 @@ const App = {
 
     _closeOpvConcept(restoreFocus) {
         const dialog = document.getElementById('opv-concept-dialog');
-        if (!dialog || !dialog.open) return;
-        App._opvRestoreConceptFocus = !!restoreFocus;
-        if (typeof dialog.close === 'function') dialog.close();
-        else {
+        const trigger = App._opvConceptTrigger;
+        App._resetOpvConceptState(false);
+        if (dialog && dialog.open && typeof dialog.close === 'function') dialog.close();
+        else if (dialog && dialog.open) {
             dialog.removeAttribute('open');
             dialog.dispatchEvent(new Event('close'));
         }
+        if (restoreFocus && trigger && trigger.isConnected) trigger.focus();
+    },
+
+    _resetOpvConceptState(restoreFocus) {
+        const trigger = App._opvConceptTrigger;
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        App._opvConceptTrigger = null;
+        App._opvRestoreConceptFocus = false;
+        if (restoreFocus && trigger && trigger.isConnected) trigger.focus();
     },
 
     _setOpvConceptsEnabled(enabled) {
@@ -790,7 +810,7 @@ const App = {
         if (typeof Highlight !== 'undefined') Highlight.applyToChapter(bookId, chapterNum);
         App._applyDropcap();
         if (typeof Opties !== 'undefined') Opties.applyVerseNumbersClass();
-        App._afterRenderContinuous(append, prepend);
+        App._afterRenderContinuous(append, prepend, bookId, chapterNum);
         App._clearVerseFocus();
     },
 
@@ -798,21 +818,46 @@ const App = {
         const append = !!opts.append;    // doorlopend-lezen: hoofdstuk onderaan toevoegen
         const prepend = !!opts.prepend;  // doorlopend-lezen: hoofdstuk bovenaan toevoegen
         const updatesChapterChrome = !append && !prepend;
+        const requestedEditionCode = (typeof TekstEditie === 'undefined') ? 'nl-ov' : TekstEditie.code();
+        let renderOwner = opts.owner || null;
+        let ownsRender;
         if (updatesChapterChrome) {
+            renderOwner = {
+                id: (App._renderOwnerSequence = (App._renderOwnerSequence || 0) + 1),
+                editionCode: requestedEditionCode,
+                bookId,
+                chapterNum: Number(chapterNum),
+                committed: false,
+            };
+            App._renderOwner = renderOwner;
+            App._continuousOwner = null;
+            App._contLoading = false;
             App._opvViewGeneration = (App._opvViewGeneration || 0) + 1;
             App._closeOpvConcept(false);
+            ownsRender = () => App._isCurrentRenderOwner(renderOwner);
+        } else if (renderOwner) {
+            ownsRender = () => App._isCurrentContinuousOwner(renderOwner);
+        } else {
+            const parentOwner = App._renderOwner;
+            const parentGeneration = App._renderOwnerSequence || 0;
+            ownsRender = () => App._renderOwner === parentOwner &&
+                (App._renderOwnerSequence || 0) === parentGeneration &&
+                ((typeof TekstEditie === 'undefined') ? 'nl-ov' : TekstEditie.code()) === requestedEditionCode;
         }
+        if (!ownsRender()) return false;
         const renderGeneration = updatesChapterChrome
             ? (App._chapterChromeGeneration = (App._chapterChromeGeneration || 0) + 1)
             : App._chapterChromeGeneration;
         if (typeof TekstEditie === 'undefined' || TekstEditie.code() === 'nl-ov') {
             await App._laadVerified();   // banner mag niet op verouderde info draaien
+            if (!ownsRender()) return false;
         }
         // Manifest (klein) + chapter (klein) parallel
         const [book, chapter] = await Promise.all([
             DataLoader.loadBook(bookId),                      // bouwt lazy book-object
             DataLoader.loadChapter(bookId, chapterNum),       // alleen huidige chapter
         ]);
+        if (!ownsRender()) return false;
         if (!book) {
             document.getElementById('verses-container').innerHTML = '<p>Boek niet gevonden.</p>';
             return;
@@ -839,7 +884,7 @@ const App = {
         const translationMeta = chapter._translation || null;
         const isExternalTranslation = !!translationMeta;
         const primaryEditionCode = translationMeta ? translationMeta.code : 'nl-ov';
-        App._currentPrimaryEditionCode = primaryEditionCode;
+        if (primaryEditionCode !== requestedEditionCode) return false;
         const configuredParallels = (typeof Opties !== 'undefined' && Array.isArray(Opties.state.parallelEdities))
             ? Opties.state.parallelEdities.filter(code => code !== primaryEditionCode).slice(0, 3)
             : [];
@@ -862,9 +907,23 @@ const App = {
             }));
             parallelEditions.push(...loadedParallels.filter(Boolean));
         }
-        // Pre-fetch buurchapters bij idle (volgende klik = instant)
+        if (!ownsRender()) return false;
+
+        // Pericoop-kopjes (NBG-stijl indeling, eigen koppen) — eenmalig laden
+        if (App._pericopen === undefined) {
+            App._pericopen = null;
+            App._pericopenPromise = fetch('data/pericopen.json')
+                .then(response => response.json())
+                .then(data => { App._pericopen = data || {}; })
+                .catch(() => { App._pericopen = {}; })
+                .finally(() => { App._pericopenPromise = null; });
+        }
+        if (App._pericopenPromise) await App._pericopenPromise;
+        if (!ownsRender()) return false;
+
+        // Vanaf hier publiceert alleen de nog actuele render naar DOM en app-state.
+        App._currentPrimaryEditionCode = primaryEditionCode;
         DataLoader.prefetchAdjacent(bookId, chapterNum);
-        // Boeknaam onthouden (gebruikt door scroll-spy bij doorlopend lezen)
         App._contNames = App._contNames || {};
         App._contNames[bookId] = book.nameDutch;
 
@@ -892,12 +951,6 @@ const App = {
         if (introFrame) introFrame.style.display = 'none';
         }  // einde if(!append): bovenstaande chrome alleen bij normaal renderen
 
-        // Pericoop-kopjes (NBG-stijl indeling, eigen koppen) — eenmalig laden
-        if (App._pericopen === undefined) {
-            App._pericopen = null;
-            try { App._pericopen = await (await fetch('data/pericopen.json')).json(); }
-            catch (e) { App._pericopen = {}; }
-        }
         const pericMap = {};
         for (const p of (isExternalTranslation ? [] : ((App._pericopen && App._pericopen[bookId]) || []))) {
             if (p.c === chapterNum) pericMap[p.v] = p.t;
@@ -960,6 +1013,7 @@ const App = {
                 container.insertBefore(sink, container.firstChild);
                 if (scroller) scroller.scrollTop = prevTop + (scroller.scrollHeight - prevH);
             }
+            if (updatesChapterChrome) renderOwner.committed = true;
             App._finishChapterRender(bookId, chapterNum, append, prepend);
             return true;
         }
@@ -1172,7 +1226,7 @@ const App = {
                 const parallelVerse = item.verses.get(Number(verse.number));
                 const parallel = row.querySelector('.parallel-edition[data-editie="nl-opv"]');
                 if (parallel && parallelVerse) {
-                    parallel.textContent = parallelVerse.text2026 || parallelVerse.textHerzien || '';
+                    App._appendOpvSegments(parallel, parallelVerse);
                 }
             }
 
@@ -1197,6 +1251,7 @@ const App = {
             if (scroller) scroller.scrollTop = prevTop + (scroller.scrollHeight - prevH);
         }
 
+        if (updatesChapterChrome) renderOwner.committed = true;
         App._finishChapterRender(bookId, chapterNum, append, prepend);
         return true;
     },
@@ -1258,7 +1313,7 @@ const App = {
     },
 
     // === Doorlopend lezen (lazy-load hoofdstukken bij omhoog/omlaag scrollen) ===
-    _afterRenderContinuous(append, prepend) {
+    _afterRenderContinuous(append, prepend, bookId, chapterNum) {
         const container = document.getElementById('verses-container');
         if (!container) return;
         const on = localStorage.getItem('doorlopend') === 'true';
@@ -1273,8 +1328,8 @@ const App = {
         }
         App._setupScrollSpy();
         if (!append && !prepend) {
-            App._contLast = { bookId: Navigation.currentBook, chapterNum: Navigation.currentChapter };
-            App._contFirst = { bookId: Navigation.currentBook, chapterNum: Navigation.currentChapter };
+            App._contLast = { bookId, chapterNum: Number(chapterNum) };
+            App._contFirst = { bookId, chapterNum: Number(chapterNum) };
             App._contLoading = false;
         }
         if (!bottom) { bottom = document.createElement('div'); bottom.id = 'continuous-sentinel'; bottom.style.height = '1px'; }
@@ -1298,11 +1353,22 @@ const App = {
 
     async _loadNextContinuous() {
         if (App._contLoading || localStorage.getItem('doorlopend') !== 'true') return;
-        const last = App._contLast;
-        if (!last) return;
+        const last = App._contLast && { ...App._contLast };
+        const renderOwner = App._renderOwner;
+        if (!last || !renderOwner || !renderOwner.committed ||
+            !App._isCurrentRenderOwner(renderOwner)) return;
+        const owner = {
+            id: (App._continuousOwnerSequence = (App._continuousOwnerSequence || 0) + 1),
+            direction: 'next',
+            editionCode: renderOwner.editionCode,
+            edge: last,
+            renderOwner,
+        };
+        App._continuousOwner = owner;
         App._contLoading = true;
         try {
             const manifest = await DataLoader.loadManifest();
+            if (!App._isCurrentContinuousOwner(owner)) return;
             const mode = (window.Opties && Opties.state && Opties.state.boekvolgorde) || 'canoniek';
             const orderIds = (typeof getFlatBookOrder === 'function')
                 ? getFlatBookOrder(mode, manifest) : manifest.books.map(b => b.id);
@@ -1312,6 +1378,7 @@ const App = {
             let chs = (cur && cur.chaptersIncluded) || [];
             if (primaryOpv) {
                 const meta = await TekstEditie.metadata('nl-opv');
+                if (!App._isCurrentContinuousOwner(owner)) return;
                 chs = (meta && meta.gepubliceerdeHoofdstukken &&
                     meta.gepubliceerdeHoofdstukken[last.bookId]) || [];
             }
@@ -1327,20 +1394,38 @@ const App = {
                 }
             }
             if (nextCh != null) {
-                const rendered = await App.renderChapter(nextBook, nextCh, { append: true });
-                if (rendered !== false) App._contLast = { bookId: nextBook, chapterNum: nextCh };
+                const rendered = await App.renderChapter(nextBook, nextCh, { append: true, owner });
+                if (rendered !== false && App._isCurrentContinuousOwner(owner)) {
+                    App._contLast = { bookId: nextBook, chapterNum: nextCh };
+                }
             }
         } catch (e) { console.warn('[doorlopend] laden volgende hoofdstuk faalde:', e); }
-        App._contLoading = false;
+        finally {
+            if (App._continuousOwner === owner) {
+                App._continuousOwner = null;
+                App._contLoading = false;
+            }
+        }
     },
 
     async _loadPrevContinuous() {
         if (App._contLoading || localStorage.getItem('doorlopend') !== 'true') return;
-        const first = App._contFirst;
-        if (!first) return;
+        const first = App._contFirst && { ...App._contFirst };
+        const renderOwner = App._renderOwner;
+        if (!first || !renderOwner || !renderOwner.committed ||
+            !App._isCurrentRenderOwner(renderOwner)) return;
+        const owner = {
+            id: (App._continuousOwnerSequence = (App._continuousOwnerSequence || 0) + 1),
+            direction: 'previous',
+            editionCode: renderOwner.editionCode,
+            edge: first,
+            renderOwner,
+        };
+        App._continuousOwner = owner;
         App._contLoading = true;
         try {
             const manifest = await DataLoader.loadManifest();
+            if (!App._isCurrentContinuousOwner(owner)) return;
             const mode = (window.Opties && Opties.state && Opties.state.boekvolgorde) || 'canoniek';
             const orderIds = (typeof getFlatBookOrder === 'function')
                 ? getFlatBookOrder(mode, manifest) : manifest.books.map(b => b.id);
@@ -1350,6 +1435,7 @@ const App = {
             let chs = (cur && cur.chaptersIncluded) || [];
             if (primaryOpv) {
                 const meta = await TekstEditie.metadata('nl-opv');
+                if (!App._isCurrentContinuousOwner(owner)) return;
                 chs = (meta && meta.gepubliceerdeHoofdstukken &&
                     meta.gepubliceerdeHoofdstukken[first.bookId]) || [];
             }
@@ -1365,11 +1451,18 @@ const App = {
                 }
             }
             if (prevCh != null) {
-                const rendered = await App.renderChapter(prevBook, prevCh, { prepend: true });
-                if (rendered !== false) App._contFirst = { bookId: prevBook, chapterNum: prevCh };
+                const rendered = await App.renderChapter(prevBook, prevCh, { prepend: true, owner });
+                if (rendered !== false && App._isCurrentContinuousOwner(owner)) {
+                    App._contFirst = { bookId: prevBook, chapterNum: prevCh };
+                }
             }
         } catch (e) { console.warn('[doorlopend] vorige hoofdstuk laden faalde:', e); }
-        App._contLoading = false;
+        finally {
+            if (App._continuousOwner === owner) {
+                App._continuousOwner = null;
+                App._contLoading = false;
+            }
+        }
     },
 
     // Scroll-spy: werk de hoofdstuktitel bovenaan (en de URL) bij naar het
@@ -1558,6 +1651,29 @@ const App = {
     updateProgress() {
         const rows = document.querySelectorAll('.verse-row');
         if (rows.length === 0) return;
+
+        const opvRows = Array.from(rows).filter(row => row.classList.contains('opv-verse'));
+        if (opvRows.length) {
+            const counts = {
+                concept: 0,
+                bron_gecontroleerd: 0,
+                taal_gecontroleerd: 0,
+                definitief: 0,
+            };
+            opvRows.forEach(row => {
+                const status = row.dataset.status || 'concept';
+                if (counts[status] !== undefined) counts[status]++;
+            });
+            const total = opvRows.length;
+            const done = counts.definitief;
+            const pct = Math.round((done / total) * 100);
+            document.getElementById('progress-fill').style.width = pct + '%';
+            document.getElementById('progress-text').textContent =
+                `${done}/${total} definitief (${counts.concept} concept, ` +
+                `${counts.bron_gecontroleerd} bron gecontroleerd, ` +
+                `${counts.taal_gecontroleerd} taal gecontroleerd)`;
+            return;
+        }
 
         let counts = { empty: 0, draft: 0, review: 0, final: 0 };
         rows.forEach(r => {

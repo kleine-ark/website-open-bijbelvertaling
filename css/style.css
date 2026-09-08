@@ -2237,6 +2237,10 @@ body.hide-verse-numbers .verse-num::after {
 .verse-row[data-status="draft"] .verse-num::after { background: var(--status-draft); }
 .verse-row[data-status="review"] .verse-num::after { background: var(--status-review); }
 .verse-row[data-status="final"] .verse-num::after { background: var(--status-final); }
+.verse-row[data-status="concept"] .verse-num::after { background: var(--status-draft); }
+.verse-row[data-status="bron_gecontroleerd"] .verse-num::after,
+.verse-row[data-status="taal_gecontroleerd"] .verse-num::after { background: var(--status-review); }
+.verse-row[data-status="definitief"] .verse-num::after { background: var(--status-final); }
 
 /* Cellen */
 .verse-cell {
@@ -2992,9 +2996,11 @@ sup.note-marker:hover {
 /* === Citaatopmaak UIT (optie) — alle citaat-styling neutraliseren === */
 body.citaten-uit .direct-speech,
 body.citaten-uit .god-speaks,
+body.citaten-uit .angel-speaks,
 body.citaten-uit .devil-speaks,
 body.citaten-uit .direct-speech i,
 body.citaten-uit .god-speaks i,
+body.citaten-uit .angel-speaks i,
 body.citaten-uit .devil-speaks i {
     color: inherit !important;
     font-style: normal !important;
@@ -3048,6 +3054,8 @@ body.citaten-uit .direct-speech::before,
 body.citaten-uit .direct-speech::after,
 body.citaten-uit .god-speaks::before,
 body.citaten-uit .god-speaks::after,
+body.citaten-uit .angel-speaks::before,
+body.citaten-uit .angel-speaks::after,
 body.citaten-uit .devil-speaks::before,
 body.citaten-uit .devil-speaks::after { content: none !important; }
 
@@ -5793,7 +5801,14 @@ span.devil-speaks, span.devil-speaks i {
     cursor: pointer;
     scroll-margin-top: 9rem;
 }
-#content.reading-mode .opv-reading-flow .opv-verse-anchor::after { content: none; }
+#content.reading-mode .opv-reading-flow .opv-verse-anchor::after {
+    content: '';
+    inset: auto auto 1px 50%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
 .opv-verse-anchor:hover { text-decoration: underline; text-underline-offset: 2px; }
 .opv-verse-anchor:focus-visible,
 .opv-concept:focus-visible,
@@ -5959,6 +5974,20 @@ body.dyslexia-mode #content.reading-mode .opv-reading-flow .opv-verse-text {
     border-color: #d6b75f !important;
     background: #d6b75f !important;
     color: #14202a !important;
+}
+
+/* De globale citaatoptie neutraliseert ook exacte OPV-segmenten en hun
+   interactieve begrippen, inclusief geneste sprekerlagen en donker thema. */
+body.citaten-uit #content [data-editie="nl-opv"] .opv-citation,
+body.citaten-uit #content [data-editie="nl-opv"] .opv-citation [data-opv-concept] {
+    color: inherit !important;
+    font-style: normal !important;
+    font-weight: inherit !important;
+    transition: none !important;
+}
+body.citaten-uit #content [data-editie="nl-opv"] .opv-citation::before,
+body.citaten-uit #content [data-editie="nl-opv"] .opv-citation::after {
+    content: none !important;
 }
 
 @media (max-width: 640px) {

@@ -110,9 +110,6 @@ const Begrippen = {
         // Verwerk elke verse-cell col-2026
         const cells = document.querySelectorAll('.col-2026');
         cells.forEach(cell => {
-            // OPV koppelt begrippen exact aan corpussegmenten. De generieke
-            // woordenboekscanner mag die redactionele koppelingen niet verdubbelen.
-            if (cell.closest('.opv-reading-flow')) return;
             if (cell.dataset.begrippenApplied) return;
             this.wrapWordsInCell(cell, words);
             cell.dataset.begrippenApplied = 'true';
@@ -120,8 +117,23 @@ const Begrippen = {
     },
 
     wrapWordsInCell(cell, words) {
-        // Loop door alle text nodes in de cel
-        const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+        // Scan alleen niet-OPV-editietekst. In beide parallelrichtingen kan één
+        // tekstcel zowel exacte OPV-segmenten als generieke woordenboektekst bevatten.
+        const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+                const parent = node.parentElement;
+                if (!parent || parent.closest('[data-opv-concept], .begrip-link')) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                const edition = parent.closest('[data-editie]');
+                if (edition) {
+                    return edition.dataset.editie === 'nl-opv'
+                        ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+                }
+                return parent.closest('.opv-reading-flow')
+                    ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+            },
+        });
         const textNodes = [];
         while (walker.nextNode()) textNodes.push(walker.currentNode);
 

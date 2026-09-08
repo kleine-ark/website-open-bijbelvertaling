@@ -12,7 +12,6 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 
-
 class _QuietHandler(http.server.SimpleHTTPRequestHandler):
     def log_message(self, _format, *_args):
         pass
@@ -614,6 +613,32 @@ class OpvReaderTests(unittest.TestCase):
                              "spraak.jezus.jhn3v7q1")
             self.assertEqual(outer.get_attribute("data-opv-speaker"), "jezus")
             self.assertEqual(outer.get_attribute("data-opv-speaker-type"), "god")
+            citation_fixture = page.evaluate(
+                """() => {
+                    const verse = document.querySelector('.opv-verse[data-verse="7"] .opv-verse-text');
+                    const fixture = document.createElement('span');
+                    fixture.className = 'opv-citation-fixture';
+                    for (const speakerClass of ['direct-speech', 'god-speaks', 'angel-speaks']) {
+                        const wrapper = document.createElement('span');
+                        wrapper.className = `opv-citation ${speakerClass}`;
+                        const concept = document.createElement('button');
+                        concept.type = 'button';
+                        concept.className = 'opv-concept';
+                        concept.dataset.opvConcept = speakerClass;
+                        concept.textContent = speakerClass;
+                        wrapper.appendChild(concept);
+                        fixture.appendChild(wrapper);
+                    }
+                    verse.append(' ', fixture);
+                    const angel = fixture.querySelector('.angel-speaks');
+                    return {
+                        before:getComputedStyle(angel, '::before').content,
+                        after:getComputedStyle(angel, '::after').content,
+                    };
+                }"""
+            )
+            self.assertNotIn(citation_fixture["before"], ("none", "normal", '""'))
+            self.assertNotIn(citation_fixture["after"], ("none", "normal", '""'))
             before_text = verse.text_content()
             outer.evaluate("el => { el.__sameCitationNode = true; }")
 
@@ -626,6 +651,44 @@ class OpvReaderTests(unittest.TestCase):
             self.assertTrue(page.locator("body").evaluate("el => el.classList.contains('citaten-uit')"))
             self.assertTrue(outer.evaluate("el => el.__sameCitationNode === true"))
             self.assertEqual(verse.text_content(), before_text)
+            neutral_light = verse.evaluate(
+                """el => {
+                    const failures = [...el.querySelectorAll(
+                        '.opv-citation, .opv-citation [data-opv-concept]'
+                    )].map(node => {
+                        const own=getComputedStyle(node), parent=getComputedStyle(node.parentElement);
+                        return {tag:node.tagName, classes:node.className, color:own.color,
+                            parentColor:parent.color, style:own.fontStyle,
+                            parentStyle:parent.fontStyle, weight:own.fontWeight,
+                            parentWeight:parent.fontWeight};
+                    }).filter(item => item.color!==item.parentColor ||
+                        item.style!==item.parentStyle || item.weight!==item.parentWeight);
+                    return {
+                        descendants: failures.length === 0,
+                        failures,
+                        pseudos:[...el.querySelectorAll('.opv-citation-fixture .opv-citation')]
+                            .every(node => ['none','normal','""'].includes(
+                                getComputedStyle(node, '::before').content
+                            ) && ['none','normal','""'].includes(
+                                getComputedStyle(node, '::after').content
+                            )),
+                    };
+                }"""
+            )
+            self.assertTrue(neutral_light["descendants"], neutral_light["failures"])
+            self.assertTrue(neutral_light["pseudos"])
+
+            page.evaluate("document.documentElement.dataset.theme='donker'")
+            neutral_dark = verse.evaluate(
+                """el => [...el.querySelectorAll(
+                    '.opv-citation, .opv-citation [data-opv-concept]'
+                )].every(node => {
+                    const own=getComputedStyle(node), parent=getComputedStyle(node.parentElement);
+                    return own.color===parent.color && own.fontStyle===parent.fontStyle &&
+                        own.fontWeight===parent.fontWeight;
+                })"""
+            )
+            self.assertTrue(neutral_dark)
             toggle.check()
             self.assertFalse(page.locator("body").evaluate("el => el.classList.contains('citaten-uit')"))
             self.assertTrue(outer.evaluate("el => el.__sameCitationNode === true"))
@@ -677,6 +740,45 @@ class OpvReaderTests(unittest.TestCase):
             dialog.wait_for(state="visible")
             dialog.locator(".opv-concept-close").click()
             self.assertEqual(len(concept_requests), 1)
+
+            trigger.focus()
+            page.keyboard.press("Enter")
+            dialog.wait_for(state="visible")
+            closed = page.evaluate(
+                """() => {
+                    const trigger = document.querySelector('[data-opv-concept="farizeeen"]');
+                    App._closeOpvConcept(true);
+                    return {
+                        open: document.getElementById('opv-concept-dialog').open,
+                        expanded: trigger.getAttribute('aria-expanded'),
+                        triggerCleared: App._opvConceptTrigger === null,
+                        restoreCleared: App._opvRestoreConceptFocus === false,
+                        focused: document.activeElement === trigger,
+                    };
+                }"""
+            )
+            self.assertEqual(closed, {
+                "open": False,
+                "expanded": "false",
+                "triggerCleared": True,
+                "restoreCleared": True,
+                "focused": True,
+            })
+            repeated = page.evaluate(
+                """() => {
+                    App._closeOpvConcept(true);
+                    return {
+                        open: document.getElementById('opv-concept-dialog').open,
+                        triggerCleared: App._opvConceptTrigger === null,
+                        restoreCleared: App._opvRestoreConceptFocus === false,
+                    };
+                }"""
+            )
+            self.assertEqual(repeated, {
+                "open": False,
+                "triggerCleared": True,
+                "restoreCleared": True,
+            })
 
             before = trigger.text_content()
             page.evaluate("Begrippen.toggle(false)")
@@ -755,6 +857,53 @@ class OpvReaderTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_begrippen_scannen_alleen_niet_opv_in_beide_parallelrichtingen(self):
+        page = self.new_page({"teksteditie": "nl-opv", "parallelEdities": ["nl-ov"]})
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                      wait_until="domcontentloaded")
+            flow = page.locator(".opv-reading-flow")
+            flow.wait_for()
+            page.evaluate("async () => { Begrippen.active=false; await Begrippen.toggle(true); }")
+
+            opv_primary = flow.locator('.parallel-edition[data-editie="nl-opv"]')
+            ov_parallel = flow.locator('.parallel-edition[data-editie="nl-ov"]')
+            self.assertEqual(opv_primary.locator("[data-opv-segment]").count(), 78)
+            self.assertEqual(opv_primary.locator("[data-opv-concept]").count(), 15)
+            self.assertEqual(opv_primary.locator(".opv-citation").count(), 13)
+            self.assertEqual(opv_primary.locator(".begrip-link").count(), 0)
+            self.assertGreater(ov_parallel.locator(".begrip-link").count(), 0)
+
+            page.evaluate(
+                """async () => {
+                    await Begrippen.toggle(false);
+                    const checkbox = document.getElementById('toggle-begrippen');
+                    if (checkbox) checkbox.checked = false;
+                    Begrippen.active = false;
+                    Opties.state.teksteditie = 'nl-ov';
+                    Opties.state.parallelEdities = ['nl-opv'];
+                    Opties.save();
+                    TekstEditie.setCode('nl-ov');
+                    await App.renderChapter('genesis', 1);
+                    await Begrippen.toggle(true);
+                }"""
+            )
+            legacy = page.locator('.verse-row:not(.opv-verse)[data-verse="1"]')
+            legacy.wait_for()
+            opv_parallel = page.locator('.parallel-edition[data-editie="nl-opv"]')
+            ov_primary = page.locator('.parallel-edition.primary-edition[data-editie="nl-ov"]')
+            self.assertEqual(opv_parallel.locator("[data-opv-segment]").count(), 78)
+            self.assertEqual(opv_parallel.locator("[data-opv-concept]").count(), 15)
+            self.assertEqual(opv_parallel.locator(".opv-citation").count(), 13)
+            self.assertEqual(opv_parallel.locator(".begrip-link").count(), 0)
+            self.assertGreater(ov_primary.locator(".begrip-link").count(), 0)
+            opv_parallel.locator('[data-opv-concept]').first.click()
+            page.wait_for_timeout(150)
+            self.assertEqual(page.locator("#opv-concept-dialog:visible").count(), 1)
+            self.assertTrue(page.locator("#opv-concept-dialog .opv-concept-title").inner_text())
+        finally:
+            page.close()
+
     def test_versanker_hashfocus_en_reduced_motion_blijven_werken(self):
         page = self.new_page()
         page.emulate_media(reduced_motion="reduce")
@@ -777,6 +926,159 @@ class OpvReaderTests(unittest.TestCase):
             self.assertFalse(row.evaluate("el => el.classList.contains('verse-flash')"))
             anchor.click()
             self.assertTrue(page.url.endswith("#johannes/3/16"))
+        finally:
+            page.close()
+
+    def test_verouderde_normale_render_publiceert_na_nieuw_hoofdstuk_niets(self):
+        page = self.new_page({"teksteditie": "nl-opv", "parallelEdities": ["nl-ov"]})
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                      wait_until="domcontentloaded")
+            page.locator('.opv-reading-flow[data-chapter="1"]').wait_for()
+            page.evaluate(
+                """() => {
+                    const original = TekstEditie.loadChapterForEdition.bind(TekstEditie);
+                    let release;
+                    const gate = new Promise(resolve => { release = resolve; });
+                    window.__releaseStaleNormal = release;
+                    window.__staleNormalHeld = false;
+                    TekstEditie.loadChapterForEdition = async (code, book, chapter) => {
+                        if (code === 'nl-ov' && book === 'genesis' && chapter === 2) {
+                            window.__staleNormalHeld = true;
+                            await gate;
+                        }
+                        return original(code, book, chapter);
+                    };
+                    Navigation.currentBook = 'genesis';
+                    Navigation.currentChapter = 2;
+                    window.__staleNormalRender = App.renderChapter('genesis', 2);
+                }"""
+            )
+            page.wait_for_function("window.__staleNormalHeld")
+
+            page.evaluate(
+                """async () => {
+                    Navigation.currentBook = 'johannes';
+                    Navigation.currentChapter = 1;
+                    await App.renderChapter('johannes', 1);
+                }"""
+            )
+            page.locator('.opv-reading-flow[data-book="johannes"][data-chapter="1"]').wait_for()
+            page.evaluate(
+                """async () => {
+                    window.__releaseStaleNormal();
+                    await window.__staleNormalRender;
+                }"""
+            )
+
+            self.assertEqual(page.locator(".opv-reading-flow").count(), 1)
+            self.assertEqual(
+                page.locator(".opv-reading-flow").get_attribute("data-book"), "johannes"
+            )
+            self.assertEqual(
+                page.locator(".opv-reading-flow").get_attribute("data-chapter"), "1"
+            )
+            self.assertEqual(page.evaluate("App._currentPrimaryEditionCode"), "nl-opv")
+            self.assertIn("Johannes 1", page.locator("#chapter-title").inner_text())
+        finally:
+            page.close()
+
+    def test_verouderde_append_en_prepend_verliezen_dom_en_continuous_state(self):
+        page = self.new_page({"teksteditie": "nl-opv", "parallelEdities": []})
+        page.add_init_script(
+            "localStorage.setItem('doorlopend', 'true');"
+            "window.IntersectionObserver = class { observe() {} disconnect() {} };"
+        )
+        try:
+            page.goto(f"{self.base_url}/index.html?editie=nl-opv#genesis/2",
+                      wait_until="domcontentloaded")
+            page.locator('.opv-reading-flow[data-chapter="2"]').wait_for()
+
+            page.evaluate(
+                """() => {
+                    const original = DataLoader.loadChapter.bind(DataLoader);
+                    const holds = new Map();
+                    window.__holdChapter = (book, chapter) => {
+                        let release;
+                        const gate = new Promise(resolve => { release = resolve; });
+                        holds.set(`${book}:${chapter}`, {gate, release, seen:false});
+                    };
+                    window.__chapterHeld = (book, chapter) =>
+                        Boolean(holds.get(`${book}:${chapter}`)?.seen);
+                    window.__releaseChapter = (book, chapter) =>
+                        holds.get(`${book}:${chapter}`)?.release();
+                    DataLoader.loadChapter = async (book, chapter) => {
+                        const hold = holds.get(`${book}:${chapter}`);
+                        if (hold) {
+                            hold.seen = true;
+                            await hold.gate;
+                        }
+                        return original(book, chapter);
+                    };
+                    DataLoader.prefetchAdjacent = () => {};
+                    window.__holdChapter('genesis', 3);
+                    App._contLast = {bookId:'genesis', chapterNum:2};
+                    window.__staleAppend = App._loadNextContinuous();
+                }"""
+            )
+            page.wait_for_function("window.__chapterHeld('genesis', 3)")
+            page.evaluate(
+                """async () => {
+                    Navigation.currentBook = 'johannes';
+                    Navigation.currentChapter = 1;
+                    await App.renderChapter('johannes', 1);
+                    window.__releaseChapter('genesis', 3);
+                    await window.__staleAppend;
+                }"""
+            )
+            self.assertEqual(
+                page.locator(".opv-reading-flow").evaluate_all(
+                    "els => els.map(el => `${el.dataset.book}/${el.dataset.chapter}`)"
+                ),
+                ["johannes/1"],
+            )
+            self.assertEqual(
+                page.evaluate("App._contLast"), {"bookId": "johannes", "chapterNum": 1}
+            )
+            self.assertEqual(
+                page.evaluate("App._contFirst"), {"bookId": "johannes", "chapterNum": 1}
+            )
+            self.assertFalse(page.evaluate("App._contLoading"))
+
+            page.evaluate(
+                """async () => {
+                    Navigation.currentBook = 'genesis';
+                    Navigation.currentChapter = 2;
+                    await App.renderChapter('genesis', 2);
+                    window.__holdChapter('genesis', 1);
+                    App._contFirst = {bookId:'genesis', chapterNum:2};
+                    window.__stalePrepend = App._loadPrevContinuous();
+                }"""
+            )
+            page.wait_for_function("window.__chapterHeld('genesis', 1)")
+            page.evaluate(
+                """async () => {
+                    Opties.state.teksteditie = 'nl-ov';
+                    Opties.state.parallelEdities = [];
+                    Opties.save();
+                    TekstEditie.setCode('nl-ov');
+                    Navigation.currentBook = 'genesis';
+                    Navigation.currentChapter = 2;
+                    await App.renderChapter('genesis', 2);
+                    window.__releaseChapter('genesis', 1);
+                    await window.__stalePrepend;
+                }"""
+            )
+            self.assertEqual(page.locator(".opv-reading-flow").count(), 0)
+            self.assertEqual(page.locator("#verses-container > .verse-row").count(), 25)
+            self.assertEqual(page.evaluate("App._currentPrimaryEditionCode"), "nl-ov")
+            self.assertEqual(
+                page.evaluate("App._contLast"), {"bookId": "genesis", "chapterNum": 2}
+            )
+            self.assertEqual(
+                page.evaluate("App._contFirst"), {"bookId": "genesis", "chapterNum": 2}
+            )
+            self.assertFalse(page.evaluate("App._contLoading"))
         finally:
             page.close()
 
@@ -894,7 +1196,7 @@ class OpvReaderTests(unittest.TestCase):
             self.assertAlmostEqual(box_before["width"], box_after["width"], delta=0.5)
             self.assertAlmostEqual(box_before["height"], box_after["height"], delta=0.5)
 
-            page.set_viewport_size({"width": 390, "height": 844})
+            page.set_viewport_size({"width": 360, "height": 800})
             page.evaluate("document.documentElement.dataset.theme='donker'")
             page.evaluate("Opties.state.versnummers='aan'; Opties.applyVerseNumbersClass()")
             dark_concept = page.locator(".opv-citation [data-opv-concept]").first.evaluate(
@@ -916,15 +1218,17 @@ class OpvReaderTests(unittest.TestCase):
             self.assertLessEqual(mobile["scroll"], mobile["client"] + 1)
             self.assertLessEqual(mobile["bodyScroll"], mobile["viewport"] + 1)
             self.assertGreaterEqual(mobile["paddingBottom"], 24)
+            self.assertEqual(page.evaluate("window.innerWidth"), 360)
 
             page.locator("[data-opv-concept]").first.click()
             dialog = page.locator("#opv-concept-dialog")
             dialog.wait_for(state="visible")
             dialog_box = dialog.bounding_box()
+            viewport = page.evaluate("({width:window.innerWidth,height:window.innerHeight})")
             self.assertGreaterEqual(dialog_box["x"], 0)
-            self.assertLessEqual(dialog_box["x"] + dialog_box["width"], 391)
+            self.assertLessEqual(dialog_box["x"] + dialog_box["width"], viewport["width"] + 1)
             self.assertGreaterEqual(dialog_box["y"], 0)
-            self.assertLessEqual(dialog_box["y"] + dialog_box["height"], 845)
+            self.assertLessEqual(dialog_box["y"] + dialog_box["height"], viewport["height"] + 1)
             self.assertIn("rgb", dialog.evaluate("el => getComputedStyle(el).backgroundColor"))
             dark_close = dialog.locator(".opv-concept-close").evaluate(
                 "el => ({background:getComputedStyle(el).backgroundColor, "
@@ -1037,6 +1341,71 @@ class OpvReaderTests(unittest.TestCase):
             self.assertNotIn("editie=", page.url)
             self.assertTrue(page.locator("#audio-play-big").is_visible())
             self.assertIn("audio/genesis/1-m.mp3", page.locator("#audio-el").get_attribute("src"))
+        finally:
+            page.close()
+
+    def test_opv_progress_en_statusindicator_gebruiken_eigen_vocabulaire_met_legacybehoud(self):
+        page = self.new_page()
+        try:
+            page.goto(
+                f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.opv-reading-flow[data-chapter="1"]').wait_for()
+            page.evaluate(
+                """() => {
+                    const rows = [...document.querySelectorAll('.opv-reading-flow .opv-verse')];
+                    rows.forEach(row => { row.dataset.status = 'concept'; });
+                    rows[1].dataset.status = 'bron_gecontroleerd';
+                    rows[2].dataset.status = 'taal_gecontroleerd';
+                    rows[3].dataset.status = 'definitief';
+                    App.updateProgress();
+                }"""
+            )
+            self.assertEqual(
+                page.locator("#progress-text").inner_text(),
+                "1/31 definitief (28 concept, 1 bron gecontroleerd, 1 taal gecontroleerd)",
+            )
+            self.assertEqual(page.locator("#progress-fill").evaluate("el => el.style.width"), "3%")
+            opv_markers = page.locator(".opv-reading-flow .opv-verse-anchor").evaluate_all(
+                """anchors => anchors.slice(0, 4).map(anchor => ({
+                    background: getComputedStyle(anchor, '::after').backgroundColor,
+                    width: parseFloat(getComputedStyle(anchor, '::after').width),
+                    height: parseFloat(getComputedStyle(anchor, '::after').height),
+                }))"""
+            )
+            self.assertEqual(
+                [marker["background"] for marker in opv_markers],
+                [
+                    "rgb(203, 164, 73)",
+                    "rgb(118, 151, 138)",
+                    "rgb(118, 151, 138)",
+                    "rgb(92, 184, 92)",
+                ],
+            )
+            self.assertTrue(all(marker["width"] > 0 and marker["height"] > 0
+                                for marker in opv_markers))
+
+            page.evaluate(
+                """async () => {
+                    Opties.state.teksteditie = 'nl-ov';
+                    Opties.state.parallelEdities = [];
+                    Opties.save();
+                    TekstEditie.setCode('nl-ov');
+                    await App.renderChapter('genesis', 1);
+                    const rows = [...document.querySelectorAll('#verses-container > .verse-row')];
+                    rows.forEach(row => { row.dataset.status = 'empty'; });
+                    rows[1].dataset.status = 'draft';
+                    rows[2].dataset.status = 'review';
+                    rows[3].dataset.status = 'final';
+                    App.updateProgress();
+                }"""
+            )
+            self.assertEqual(
+                page.locator("#progress-text").inner_text(),
+                "1/31 definitief (1 concept, 1 review)",
+            )
+            self.assertEqual(page.locator("#progress-fill").evaluate("el => el.style.width"), "3%")
         finally:
             page.close()
 
