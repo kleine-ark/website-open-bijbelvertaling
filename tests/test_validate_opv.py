@@ -1238,6 +1238,52 @@ class OpvJohannesPilotTests(unittest.TestCase):
             with self.subTest(verse=number):
                 self.assertIn(phrase, verses[number - 1]["tekst"])
 
+    def test_johannes_four_10_keeps_jesus_as_the_one_requesting_water(self) -> None:
+        verse = self.chapter(4)["verzen"][9]
+        self.assertIn("wie het is die jou om drinken vraagt", verse["tekst"])
+        self.assertIn("zou jij Hem erom vragen", verse["tekst"])
+        self.assertNotIn("wie je om drinken vraagt", verse["tekst"])
+        self.assertEqual("jezus", verse["citaten"][0]["spreker"]["id"])
+        self.assertIn("die jou om drinken vraagt", OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+        self.assertEqual(["levend water"], OpvCalibrationCorpusTests._concept_texts(verse, "levend-water"))
+
+    def test_johannes_five_23_preserves_the_purpose_of_giving_judgment(self) -> None:
+        verse = self.chapter(5)["verzen"][22]
+        self.assertTrue(verse["tekst"].startswith("Dat heeft Hij gedaan zodat iedereen de Zoon eert zoals de Vader."))
+        self.assertNotIn("Zo zal iedereen", verse["tekst"])
+        self.assertIn("Wie de Zoon niet eert, eert ook de Vader niet die Hem gestuurd heeft.", verse["tekst"])
+        self.assertEqual(["de Zoon eert zoals de Vader"], OpvCalibrationCorpusTests._concept_texts(verse, "vader-zoon"))
+        self.assertEqual(verse["tekst"], OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+
+    def test_johannes_five_18_keeps_intensified_effort_to_kill(self) -> None:
+        text = self.chapter(5)["verzen"][17]["tekst"]
+        self.assertIn("waren de Joden er nog sterker op uit Hem te doden", text)
+        self.assertNotIn("liever", text)
+        for phrase in ("Hij brak niet alleen de sabbat", "Zijn eigen Vader", "zichzelf gelijk aan God"):
+            self.assertIn(phrase, text)
+
+    def test_johannes_two_22_refers_to_the_specific_temple_statement(self) -> None:
+        verse = self.chapter(2)["verzen"][21]
+        self.assertIn("de Schrift en deze uitspraak van Jezus", verse["tekst"])
+        self.assertNotIn("de woorden van Jezus", verse["tekst"])
+        self.assertIn("dat Hij dit tegen hen had gezegd", verse["tekst"])
+        self.assertEqual(["de Schrift"], OpvCalibrationCorpusTests._concept_texts(verse, "schriften"))
+
+    def test_johannes_four_27_keeps_the_object_of_the_unasked_question(self) -> None:
+        verse = self.chapter(4)["verzen"][26]
+        self.assertIn("Toch vroeg niemand: Wat wilt U van haar?", verse["tekst"])
+        self.assertNotIn("Wat vraagt U?", verse["tekst"])
+        self.assertIn("Waarom praat U met haar?", verse["tekst"])
+        self.assertEqual([], verse["citaten"])
+
+    def test_johannes_five_22_keeps_the_explanatory_link_to_judgment(self) -> None:
+        verse = self.chapter(5)["verzen"][21]
+        self.assertTrue(verse["tekst"].startswith("De Vader oordeelt namelijk niemand."))
+        self.assertIn("Hij heeft het hele oordeel aan de Zoon gegeven.", verse["tekst"])
+        self.assertNotIn("ook over niemand", verse["tekst"])
+        self.assertEqual(["het hele oordeel"], OpvCalibrationCorpusTests._concept_texts(verse, "oordeel"))
+        self.assertEqual(verse["tekst"], OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -283,7 +283,7 @@ De tempel is het huis van mijn Vader in Jezus’ spraak. Het psalmcitaat begint 
 
 ### J16 — 2:19–25: lichaam, tijd en vertrouwen
 
-Afbreken en oprichten, drie dagen en de 46 bouwjaren zijn behouden. De vraag luidt toekomstig “zult U”, niet “wilt U”: een wens zou de bewering veranderen. De uitleg dat Jezus Zijn lichaam bedoelde staat uitsluitend in vers 21 bij de verteller, niet al in Zijn eerste antwoord. Het geloof na de opstanding betreft zowel de Schrift als Jezus’ woorden.
+Afbreken en oprichten, drie dagen en de 46 bouwjaren zijn behouden. De vraag luidt toekomstig “zult U”, niet “wilt U”: een wens zou de bewering veranderen. De uitleg dat Jezus Zijn lichaam bedoelde staat uitsluitend in vers 21 bij de verteller, niet al in Zijn eerste antwoord. Het geloof na de opstanding betreft zowel de Schrift als deze concrete uitspraak van Jezus over de tempel van Zijn lichaam; het wordt niet verbreed tot al Zijn woorden.
 
 Veel mensen geloven in Zijn naam door de tekenen, maar Jezus vertrouwt zichzelf niet aan hen toe. Beide kanten van het geloof-/vertrouwensmotief blijven staan. Er is geen uitspraak bij bedacht dat hun geloof vals of reddend was. De universele kennis van mensen en het niet nodig hebben van een menselijke getuige blijven in 24–25 behouden.
 
@@ -383,7 +383,7 @@ De waarschuwing niet meer te zondigen en het gevaar van iets ergers blijven staa
 
 De Zoon kan niets uit zichzelf doen; Hij doet wat Hij de Vader ziet doen; alles wat de Vader doet, doet de Zoon op dezelfde manier. De drie onderdelen blijven apart. Liefde, alles tonen, grotere werken en het doel van verwondering zijn behouden. Wie Hij wil in 5:21 blijft onverkort.
 
-De Vader oordeelt niemand en heeft het hele oordeel aan de Zoon gegeven. Iedereen moet de Zoon eren zoals de Vader; geen eer voor de Zoon betekent geen eer voor de Vader die Hem stuurde. Horen én geloven, eeuwig leven, geen veroordeling en reeds overgegaan zijn uit dood naar leven blijven in 5:24 onderscheiden.
+De Vader oordeelt niemand en heeft het hele oordeel aan de Zoon gegeven. Het doel daarvan is dat iedereen de Zoon eert zoals de Vader; dit is geen voorspelling dat iedereen dat daadwerkelijk zal doen. Geen eer voor de Zoon betekent geen eer voor de Vader die Hem stuurde. Horen én geloven, eeuwig leven, geen veroordeling en reeds overgegaan zijn uit dood naar leven blijven in 5:24 onderscheiden.
 
 In 5:25 blijft de tijd toekomstig én nu al. Doden, de stem van Gods Zoon horen en leven blijven staan. In 5:26 wordt de lastige dubbele constructie ontvlochten: de Vader heeft het leven in zichzelf; ook de Zoon heeft het leven in zichzelf, en de Vader heeft Hem dat gegeven. Beide levensfrasen hebben een eigen anker. Er wordt geen moment vóór het bestaan van de Zoon of een scheppingshandeling ingevoegd.
 
@@ -416,3 +416,24 @@ De 51 nieuwe begrippen zijn allemaal daadwerkelijk gekoppeld. De 124 nieuwe cita
 Het bestaande hoofdletterbeleid blijft exact gelden: Hij, Hem, Zijn, U en Uw voor goddelijke verwijzingen; ik, mij, mijn, zich, zichzelf, die, degene en naam krijgen binnen een zin geen extra eerbiedshoofdletter. Gewone zins- en citaatbeginnen blijven groot, ook bij menselijke verwijzingen. Licht en identiteitstitels volgen de kalibratie.
 
 Bijzondere onafhankelijke aandacht blijft nodig voor 2:4, de metrische eenheid, 3:3–8, beide sprekergrenzen, 3:13/20–21/34, 4:9–24/34/44 en 5:3–4/18–32/39/42. De validator bewijst geen exegetische juistheid; de proefeditie blijft in bewerking.
+
+### J32 — Herstel van betekenis en proza in tien verzen
+
+Zes semantische punten zijn eerst afzonderlijk met falende regressietests vastgelegd. De reparaties volgen de SV1888-brontekst, met SV1637 als controle. De overige vier punten verbeteren gewone Nederlandse formuleringen zonder het inhoudelijke bereik te veranderen.
+
+| Vers | Besluit |
+| --- | --- |
+| 2:10 | De minder goede wijn wordt geschonken. De ellips komt de minder goede vervalt; de volgorde en het flinke drinken blijven staan. |
+| 2:22 | Deze uitspraak van Jezus verwijst terug naar de tempeluitspraak, niet naar Zijn woorden in het algemeen. Schrift en uitspraak blijven afzonderlijke geloofsobjecten. |
+| 3:36 | Niet gehoorzamen vervangt ongehoorzaam zijn. Het contrast met geloven en de blijvende toorn veranderen niet. |
+| 4:1 | De concrete inhoud volgt direct op wat de Farizeeën hadden gehoord. De Heere hoort over dat bericht; meer leerlingen en meer dopelingen blijven beide genoemd. |
+| 4:10 | Wie het is die jou om drinken vraagt wijst Jezus ondubbelzinnig als vrager aan. De mogelijke omgekeerde vraag van de vrouw volgt daarna. De identiteit en beide rollen mogen niet door het dubbelzinnige je verwisselen. |
+| 4:27 | Wat wilt U van haar vraagt naar Jezus’ bedoeling tegenover de vrouw, niet naar de inhoud van Zijn vraag. Beide vragen blijven onuitgesproken en krijgen geen citatierecord. |
+| 5:13 | In de menigte uit het zicht verdwenen maakt het ontwijken concreet. Geen vluchtreden of wonder toegevoegd; de genezen man weet nog niet wie Jezus is. |
+| 5:18 | Er nog sterker op uit Hem te doden bewaart de geïntensiveerde inspanning; liever zou voorkeur of genoegen kunnen suggereren. De twee gronden en het gelijkstellen blijven ongewijzigd. |
+| 5:22 | Namelijk bewaart de verklarende verbinding. Dat de Vader niemand oordeelt en het hele oordeel aan de Zoon heeft gegeven, blijft volledig staan. |
+| 5:23 | Dat heeft Hij gedaan zodat bewaart het doel van de voorafgaande overdracht van het oordeel. Zoals de Vader is een ellips voor zoals men de Vader eert; beide personen zijn ontvangers van eer. De tweede zin blijft ongewijzigd. |
+
+De segment-id’s, citaat-id’s, semantic-id’s, sprekers, aangesprokenen, geneste grenzen en conceptverwijzingen zijn tegen de voorafgaande inhoudscommit vergeleken en ongewijzigd. Het anker in 5:23 luidt nu de Zoon eert zoals de Vader; de bijbehorende bronfrase blijft den Zoon eren, gelijk zij den Vader eren. Enkele brede bronfrases zijn toegespitst op de betrokken bronclausule. Alle tien inhoudshashes zijn vernieuwd; alle bronhashes en conceptreviewstatussen bleven gelijk.
+
+De acht betrokken blokken zijn opnieuw zonder versnummers als doorlopende tekst gelezen: 2:1–12 en 18–22; 3:31–36; 4:1–6, 7–15 en 27–30; 5:10–18 en 19–30. Dit is een tekstuele voorleessimulatie, geen menselijke leesproef. De maxima per hoofdstuk zijn nu 23, 22, 22 en 19 woorden; er zijn geen zinnen boven 25 woorden. Onafhankelijke eindgoedkeuring blijft vereist.
