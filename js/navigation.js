@@ -67,19 +67,24 @@ const Navigation = {
         if (unassigned.length > 0) addGroup('Overig', unassigned);
     },
 
-    async renderChapterNav(bookId) {
-        const manifest = await DataLoader.loadManifest();
-        const bookMeta = manifest.books.find(b => b.id === bookId);
-        if (!bookMeta) return;
+    async renderChapterNav(bookId, navigationRequest = null) {
+        const isCurrentRequest = () => !navigationRequest ||
+            typeof App === 'undefined' || !App._isCurrentNavigationRequest ||
+            App._isCurrentNavigationRequest(navigationRequest);
+        if (!isCurrentRequest()) return false;
 
-        const nav = document.getElementById('chapter-nav');
-        nav.innerHTML = '';
-        nav.className = 'nav-bar';
+        const manifest = await DataLoader.loadManifest();
+        if (!isCurrentRequest()) return false;
+        const bookMeta = manifest.books.find(b => b.id === bookId);
+        if (!bookMeta) return false;
 
         // Laad boekdata om status per hoofdstuk te bepalen
         const book = await DataLoader.loadBook(bookId);
+        if (!isCurrentRequest()) return false;
 
+        const fragment = document.createDocumentFragment();
         for (const ch of bookMeta.chaptersIncluded) {
+            if (!isCurrentRequest()) return false;
             const btn = document.createElement('button');
             btn.textContent = ch;
             btn.dataset.chapter = ch;
@@ -96,8 +101,15 @@ const Navigation = {
                 }
             }
 
-            nav.appendChild(btn);
+            if (!isCurrentRequest()) return false;
+            fragment.appendChild(btn);
         }
+        const nav = document.getElementById('chapter-nav');
+        if (!isCurrentRequest()) return false;
+        nav.className = 'nav-bar';
+        if (!isCurrentRequest()) return false;
+        nav.replaceChildren(fragment);
+        return true;
     },
 
     updateActiveButtons() {
@@ -133,7 +145,7 @@ const Navigation = {
 
         if (bookId !== this.currentBook) {
             this.currentBook = bookId;
-            await this.renderChapterNav(bookId);
+            await this.renderChapterNav(bookId, navigationRequest);
             if (navigationRequest && !App._isCurrentNavigationRequest(navigationRequest)) return;
         }
         this.currentChapter = chapter;

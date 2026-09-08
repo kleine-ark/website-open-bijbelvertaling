@@ -1363,6 +1363,426 @@ class OpvReaderTests(unittest.TestCase):
                 finally:
                     page.close()
 
+    def test_opv_versankers_blijven_op_desktop_in_beide_layouts_bedienbaar(self):
+        for layout in ("naast", "eronder"):
+            with self.subTest(layout=layout):
+                page = self.new_page(
+                    {"teksteditie": "nl-opv", "kolomLayout": layout},
+                    viewport={"width": 1440, "height": 900},
+                )
+                try:
+                    page.goto(
+                        f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                        wait_until="domcontentloaded",
+                    )
+                    page.locator('.opv-verse[data-verse="31"]').wait_for()
+                    self.assertEqual(
+                        page.locator("#content").evaluate(
+                            "(el, expected) => el.classList.contains(`layout-${expected}`)",
+                            layout,
+                        ),
+                        True,
+                    )
+                    anchors = page.locator(
+                        ".opv-reading-flow .opv-verse-anchor"
+                    ).evaluate_all(
+                        """items => items.map(anchor => {
+                            const rect = anchor.getBoundingClientRect();
+                            return {
+                                verse: anchor.closest('.opv-verse').dataset.verse,
+                                display: getComputedStyle(anchor).display,
+                                width: rect.width,
+                                height: rect.height,
+                                tabIndex: anchor.tabIndex,
+                                ariaHidden: anchor.getAttribute('aria-hidden'),
+                            };
+                        })"""
+                    )
+                    self.assertEqual(len(anchors), 31)
+                    self.assertEqual(
+                        [item for item in anchors if item["display"] == "none"], []
+                    )
+                    self.assertEqual(
+                        [
+                            item
+                            for item in anchors
+                            if item["width"] < 24 or item["height"] < 24
+                        ],
+                        [],
+                    )
+                    self.assertTrue(all(item["tabIndex"] == 0 for item in anchors))
+                    self.assertTrue(all(item["ariaHidden"] == "false" for item in anchors))
+                    first = page.locator(
+                        '.opv-verse[data-verse="1"] .opv-verse-anchor'
+                    )
+                    first.focus()
+                    self.assertTrue(first.evaluate("el => document.activeElement === el"))
+                finally:
+                    page.close()
+
+        legacy = self.new_page(
+            {"teksteditie": "nl-ov", "kolomLayout": "eronder"},
+            viewport={"width": 1440, "height": 900},
+        )
+        try:
+            legacy.goto(
+                f"{self.base_url}/index.html#genesis/1", wait_until="domcontentloaded"
+            )
+            first_number = legacy.locator(
+                '#verses-container > .verse-row[data-verse="1"] > .verse-num'
+            )
+            first_number.wait_for(state="attached")
+            self.assertEqual(first_number.evaluate("el => getComputedStyle(el).display"), "none")
+            self.assertEqual(legacy.locator(".opv-reading-flow").count(), 0)
+        finally:
+            legacy.close()
+
+    def test_hoofdstuknavigatie_negeert_vertraagde_oude_boekrequest(self):
+        page = self.new_page({"teksteditie": "nl-opv"})
+        try:
+            page.goto(
+                f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.opv-reading-flow[data-book="genesis"][data-chapter="1"]').wait_for()
+            page.evaluate(
+                """() => {
+                    const loadBook = DataLoader.loadBook.bind(DataLoader);
+                    let release;
+                    const gate = new Promise(resolve => { release = resolve; });
+                    window.__releaseOldChapterNav = release;
+                    window.__oldChapterNavHeld = false;
+                    DataLoader.loadBook = async bookId => {
+                        if (bookId === 'johannes') {
+                            window.__oldChapterNavHeld = true;
+                            await gate;
+                        }
+                        return loadBook(bookId);
+                    };
+
+                    const renderChapterNav = Navigation.renderChapterNav.bind(Navigation);
+                    Navigation.renderChapterNav = async (...args) => {
+                        const result = await renderChapterNav(...args);
+                        if (args[0] === 'johannes') window.__oldChapterNavSettled = true;
+                        return result;
+                    };
+                }"""
+            )
+            page.evaluate("location.hash = '#johannes/1'")
+            page.wait_for_function(
+                "window.__oldChapterNavHeld && Navigation.currentBook === 'johannes'"
+            )
+
+            page.evaluate("location.hash = '#genesis/2'")
+            page.wait_for_function(
+                """() => document.querySelector(
+                    '.opv-reading-flow[data-book="genesis"][data-chapter="2"]'
+                ) && document.querySelectorAll('#chapter-nav button').length === 50"""
+            )
+            page.evaluate(
+                """() => {
+                    window.__oldChapterNavMutationCount = 0;
+                    window.__oldChapterNavObserver = new MutationObserver(records => {
+                        window.__oldChapterNavMutationCount += records.length;
+                    });
+                    window.__oldChapterNavObserver.observe(
+                        document.getElementById('chapter-nav'),
+                        {childList: true, attributes: true, subtree: true}
+                    );
+                    window.__releaseOldChapterNav();
+                }"""
+            )
+            page.wait_for_function("window.__oldChapterNavSettled")
+            page.evaluate("() => new Promise(resolve => requestAnimationFrame(resolve))")
+            state = page.evaluate(
+                """() => {
+                    window.__oldChapterNavObserver.disconnect();
+                    const buttons = [...document.querySelectorAll('#chapter-nav button')];
+                    return {
+                        hash: location.hash,
+                        book: Navigation.currentBook,
+                        chapter: Navigation.currentChapter,
+                        flow: document.querySelector('.opv-reading-flow')?.dataset.book + '/' +
+                            document.querySelector('.opv-reading-flow')?.dataset.chapter,
+                        chapters: buttons.map(button => Number(button.dataset.chapter)),
+                        active: buttons.filter(button => button.classList.contains('active'))
+                            .map(button => Number(button.dataset.chapter)),
+                        staleMutations: window.__oldChapterNavMutationCount,
+                    };
+                }"""
+            )
+            self.assertEqual(state["hash"], "#genesis/2")
+            self.assertEqual(state["book"], "genesis")
+            self.assertEqual(state["chapter"], 2)
+            self.assertEqual(state["flow"], "genesis/2")
+            self.assertEqual(state["chapters"], list(range(1, 51)))
+            self.assertEqual(state["active"], [2])
+            self.assertEqual(state["staleMutations"], 0)
+        finally:
+            page.close()
+
+    def test_mobiele_header_blijft_bij_zoom_hittestbaar_zonder_overlap(self):
+        for width in (360, 390):
+            for theme in ("licht", "donker"):
+                with self.subTest(width=width, theme=theme):
+                    page = self.new_page(
+                        {"teksteditie": "nl-opv", "thema": theme},
+                        viewport={"width": width, "height": 844},
+                    )
+                    try:
+                        page.goto(
+                            f"{self.base_url}/index.html?editie=nl-opv#genesis/1",
+                            wait_until="domcontentloaded",
+                        )
+                        page.locator('.opv-reading-flow[data-chapter="1"]').wait_for()
+                        for zoom in (1, 2):
+                            page.evaluate(
+                                "value => { document.documentElement.style.zoom = String(value); }",
+                                zoom,
+                            )
+                            page.evaluate(
+                                "() => new Promise(resolve => requestAnimationFrame(resolve))"
+                            )
+                            geometry = page.evaluate(
+                                """() => {
+                                    const nav = document.getElementById('topnav');
+                                    const brand = document.querySelector('.topnav-brand-link');
+                                    const logo = document.querySelector('.topnav-logo');
+                                    const settings = document.getElementById('topnav-tekstopties');
+                                    const menu = document.getElementById('topnav-hamburger');
+                                    const controls = [brand, settings, menu];
+                                    const rects = controls.map(control =>
+                                        control.getBoundingClientRect());
+                                    const logoRect = logo.getBoundingClientRect();
+                                    const area = (left, right) => Math.max(0,
+                                        Math.min(left.right, right.right) -
+                                            Math.max(left.left, right.left)) *
+                                        Math.max(0, Math.min(left.bottom, right.bottom) -
+                                            Math.max(left.top, right.top));
+                                    return {
+                                        overlaps: [
+                                            area(logoRect, rects[1]),
+                                            area(logoRect, rects[2]),
+                                            area(rects[1], rects[2]),
+                                        ],
+                                        controls: controls.map((control, index) => {
+                                            const rect = rects[index];
+                                            const x = rect.left + rect.width / 2;
+                                            const y = rect.top + rect.height / 2;
+                                            const hit = document.elementFromPoint(x, y);
+                                            return {
+                                                width: rect.width,
+                                                height: rect.height,
+                                                left: rect.left,
+                                                right: rect.right,
+                                                top: rect.top,
+                                                bottom: rect.bottom,
+                                                hit: Boolean(hit &&
+                                                    (hit === control || control.contains(hit))),
+                                                hitId: hit?.id || '',
+                                                hitClass: hit?.className?.baseVal ||
+                                                    hit?.className || '',
+                                            };
+                                        }),
+                                        viewport: {
+                                            width: window.innerWidth,
+                                            height: window.innerHeight,
+                                        },
+                                        horizontalOverflow: Math.max(
+                                            document.documentElement.scrollWidth - window.innerWidth,
+                                            document.body.scrollWidth - window.innerWidth,
+                                            nav.scrollWidth - nav.clientWidth
+                                        ),
+                                        logoCssHeight: parseFloat(getComputedStyle(logo).height),
+                                    };
+                                }"""
+                            )
+                            self.assertEqual(geometry["overlaps"], [0, 0, 0], geometry)
+                            self.assertLessEqual(geometry["horizontalOverflow"], 1, geometry)
+                            for control in geometry["controls"]:
+                                self.assertGreater(control["width"], 0, geometry)
+                                self.assertGreater(control["height"], 0, geometry)
+                                self.assertGreaterEqual(control["left"], 0, geometry)
+                                self.assertLessEqual(
+                                    control["right"], geometry["viewport"]["width"] + 1, geometry
+                                )
+                                self.assertGreaterEqual(control["top"], 0, geometry)
+                                self.assertLessEqual(
+                                    control["bottom"], geometry["viewport"]["height"] + 1, geometry
+                                )
+                                self.assertTrue(control["hit"], geometry)
+                            if zoom == 1:
+                                self.assertAlmostEqual(
+                                    geometry["logoCssHeight"], 44, delta=0.5
+                                )
+                    finally:
+                        page.close()
+
+    def test_parallelle_opv_houdt_mobiele_hoofdstukpijlen_in_beide_richtingen_vrij(self):
+        directions = (
+            ("nl-opv", "nl-ov", "?editie=nl-opv"),
+            ("nl-ov", "nl-opv", ""),
+        )
+        for primary, parallel, query in directions:
+            for width in (360, 390):
+                for theme in ("licht", "donker"):
+                    with self.subTest(
+                        primary=primary, parallel=parallel, width=width, theme=theme
+                    ):
+                        page = self.new_page(
+                            {
+                                "teksteditie": primary,
+                                "parallelEdities": [parallel],
+                                "kolomLayout": "eronder",
+                                "thema": theme,
+                            },
+                            viewport={"width": width, "height": 844},
+                        )
+                        try:
+                            page.goto(
+                                f"{self.base_url}/index.html{query}#johannes/4",
+                                wait_until="domcontentloaded",
+                            )
+                            page.locator(
+                                '.verse-row[data-verse="54"] '
+                                '.parallel-edition[data-editie="nl-opv"]'
+                            ).wait_for()
+                            for zoom in (1, 2):
+                                page.evaluate(
+                                    "value => { document.documentElement.style.zoom = String(value); }",
+                                    zoom,
+                                )
+                                geometry = page.evaluate(
+                                    """async () => {
+                                        const content = document.getElementById('content');
+                                        const footer = document.getElementById('mobile-footer-nav');
+                                        const buttons = [
+                                            document.getElementById('mobile-prev-btn'),
+                                            document.getElementById('mobile-next-btn'),
+                                        ];
+                                        const opvRoots = [...document.querySelectorAll(
+                                            '#verses-container .parallel-edition[data-editie="nl-opv"]'
+                                        )];
+                                        const area = (left, right) => Math.max(0,
+                                            Math.min(left.right, right.right) -
+                                                Math.max(left.left, right.left)) *
+                                            Math.max(0, Math.min(left.bottom, right.bottom) -
+                                                Math.max(left.top, right.top));
+                                        const overlap = () => {
+                                            const contentRect = content.getBoundingClientRect();
+                                            const viewport = {
+                                                left: Math.max(0, contentRect.left),
+                                                right: Math.min(window.innerWidth, contentRect.right),
+                                                top: Math.max(0, contentRect.top),
+                                                bottom: Math.min(window.innerHeight, contentRect.bottom),
+                                            };
+                                            const buttonRects = buttons.map(button =>
+                                                button.getBoundingClientRect());
+                                            let maximum = 0;
+                                            for (const root of opvRoots) {
+                                                const walker = document.createTreeWalker(
+                                                    root, NodeFilter.SHOW_TEXT
+                                                );
+                                                while (walker.nextNode()) {
+                                                    if (!walker.currentNode.textContent.trim()) continue;
+                                                    const range = document.createRange();
+                                                    range.selectNodeContents(walker.currentNode);
+                                                    for (const rect of range.getClientRects()) {
+                                                        const clipped = {
+                                                            left: Math.max(rect.left, viewport.left),
+                                                            right: Math.min(rect.right, viewport.right),
+                                                            top: Math.max(rect.top, viewport.top),
+                                                            bottom: Math.min(rect.bottom, viewport.bottom),
+                                                        };
+                                                        if (clipped.right <= clipped.left ||
+                                                            clipped.bottom <= clipped.top) continue;
+                                                        for (const buttonRect of buttonRects) {
+                                                            maximum = Math.max(
+                                                                maximum, area(clipped, buttonRect)
+                                                            );
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            return maximum;
+                                        };
+                                        const scroller = App._getScroller();
+                                        const maximumScroll = scroller === content
+                                            ? content.scrollHeight - content.clientHeight
+                                            : document.documentElement.scrollHeight - window.innerHeight;
+                                        const overlaps = [];
+                                        for (const position of [0, maximumScroll / 2, maximumScroll]) {
+                                            if (scroller === content) content.scrollTop = position;
+                                            else window.scrollTo(0, position);
+                                            await new Promise(resolve => requestAnimationFrame(resolve));
+                                            overlaps.push(overlap());
+                                        }
+                                        const footerStyle = getComputedStyle(footer);
+                                        const buttonRects = buttons.map(button =>
+                                            button.getBoundingClientRect());
+                                        return {
+                                            contentPosition: getComputedStyle(content).position,
+                                            ownsScroller: App._getScroller() === content,
+                                            maxOverlap: Math.max(...overlaps),
+                                            footerBackground: footerStyle.backgroundColor,
+                                            footerBorder: parseFloat(footerStyle.borderTopWidth),
+                                            horizontalOverflow: Math.max(
+                                                document.documentElement.scrollWidth - window.innerWidth,
+                                                document.body.scrollWidth - window.innerWidth,
+                                                content.scrollWidth - content.clientWidth
+                                            ),
+                                            buttons: buttons.map((button, index) => {
+                                                const rect = buttonRects[index];
+                                                const hit = document.elementFromPoint(
+                                                    rect.left + rect.width / 2,
+                                                    rect.top + rect.height / 2
+                                                );
+                                                return {
+                                                    left: rect.left,
+                                                    right: rect.right,
+                                                    top: rect.top,
+                                                    bottom: rect.bottom,
+                                                    hit: Boolean(hit &&
+                                                        (hit === button || button.contains(hit))),
+                                                };
+                                            }),
+                                            viewport: {
+                                                width: window.innerWidth,
+                                                height: window.innerHeight,
+                                            },
+                                        };
+                                    }"""
+                                )
+                                self.assertEqual(
+                                    geometry["contentPosition"], "fixed", geometry
+                                )
+                                self.assertTrue(geometry["ownsScroller"], geometry)
+                                self.assertEqual(geometry["maxOverlap"], 0, geometry)
+                                self.assertLessEqual(
+                                    geometry["horizontalOverflow"], 1, geometry
+                                )
+                                self.assertGreaterEqual(geometry["footerBorder"], 1, geometry)
+                                self.assertNotIn(
+                                    geometry["footerBackground"],
+                                    ("transparent", "rgba(0, 0, 0, 0)"),
+                                )
+                                for button in geometry["buttons"]:
+                                    self.assertGreaterEqual(button["left"], 0, geometry)
+                                    self.assertLessEqual(
+                                        button["right"],
+                                        geometry["viewport"]["width"] + 1,
+                                        geometry,
+                                    )
+                                    self.assertGreaterEqual(button["top"], 0, geometry)
+                                    self.assertLessEqual(
+                                        button["bottom"],
+                                        geometry["viewport"]["height"] + 1,
+                                        geometry,
+                                    )
+                                    self.assertTrue(button["hit"], geometry)
+                        finally:
+                            page.close()
+
     def test_donkere_opv_focusindicatoren_hebben_minimaal_drie_op_een_contrast(self):
         page = self.new_page(
             {"teksteditie": "nl-opv", "thema": "donker"},
@@ -1520,7 +1940,7 @@ class OpvReaderTests(unittest.TestCase):
                 )
                 self.assertEqual(geometry["contentPosition"], "fixed", geometry)
                 self.assertEqual(geometry["contentTop"], 109, geometry)
-                self.assertIn("57px", geometry["contentBottom"])
+                self.assertIn("64px", geometry["contentBottom"])
                 self.assertIn(geometry["contentOverflowY"], ("auto", "scroll"))
                 self.assertTrue(geometry["ownsScroller"], geometry)
                 self.assertEqual(geometry["maxOverlap"], 0, geometry)

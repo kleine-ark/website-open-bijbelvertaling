@@ -418,14 +418,16 @@
     .topnav-brand {
         flex: 0 1 auto;
         gap: 5px;
+        overflow: hidden;
     }
-    .topnav-logo { width: auto; height: 44px; max-width: 150px; }
+    .topnav-brand-link { max-width: 150px; overflow: hidden; }
+    .topnav-logo { width: auto; height: 44px; max-width: 100%; }
     .topnav-subtitle { display: none; }
     /* Versienummer klein zichtbaar naast de merknaam op mobiel. */
     .topnav-version { display: none; }
     .topnav-version a { font-size: 11px; }
 
-    .topnav-hamburger { display: flex; }
+    .topnav-hamburger { display: flex; flex: 0 0 44px; }
     /* Links als off-canvas dropdown vanuit topnav */
     .topnav-links {
         display: none;
@@ -6006,6 +6008,23 @@ body.citaten-uit #content [data-editie="nl-opv"] .opv-citation::after {
     content: none !important;
 }
 
+/* OPV houdt zijn deelbare ankers ook in de compacte gestapelde layout. De
+   generieke legacyregel verbergt daar bewust alleen het eerste OV-versnummer. */
+#content.reading-mode.layout-eronder .opv-reading-flow
+    .verse-row.opv-verse .verse-num.opv-verse-anchor,
+#content.reading-mode.layout-eronder .opv-reading-flow
+    .verse-row.opv-verse[data-verse="1"] .verse-num.opv-verse-anchor {
+    display: inline-flex !important;
+    width: 24px !important;
+    min-width: 24px !important;
+    height: 24px !important;
+    min-height: 24px !important;
+    inline-size: 24px !important;
+    block-size: 24px !important;
+    padding: 0 !important;
+    vertical-align: baseline;
+}
+
 @media (max-width: 640px) {
     #content.reading-mode .opv-reading-flow {
         max-width: 100%;
@@ -6021,31 +6040,17 @@ body.citaten-uit #content [data-editie="nl-opv"] .opv-citation::after {
         max-width: calc(100vw - 24px);
         max-height: calc(100dvh - 24px);
     }
-    #content.reading-mode.layout-eronder .opv-reading-flow
-        .verse-row.opv-verse .verse-num.opv-verse-anchor,
-    #content.reading-mode.layout-eronder .opv-reading-flow
-        .verse-row.opv-verse[data-verse="1"] .verse-num.opv-verse-anchor {
-        display: inline-flex !important;
-        width: 24px !important;
-        min-width: 24px !important;
-        height: 24px !important;
-        min-height: 24px !important;
-        inline-size: 24px !important;
-        block-size: 24px !important;
-        padding: 0 !important;
-        vertical-align: baseline;
-    }
 }
 
 @media (max-width: 768px) {
-    body:has(#verses-container > .opv-reading-flow) {
+    body:has(#verses-container [data-editie="nl-opv"]) {
         padding-bottom: 0;
     }
-    body:has(#verses-container > .opv-reading-flow) #content {
+    body:has(#verses-container [data-editie="nl-opv"]) #content {
         position: fixed;
         inset-inline: 0;
         top: 113px;
-        bottom: calc(57px + env(safe-area-inset-bottom, 0px));
+        bottom: calc(64px + env(safe-area-inset-bottom, 0px));
         box-sizing: border-box;
         width: auto;
         max-width: none;
@@ -6053,7 +6058,7 @@ body.citaten-uit #content [data-editie="nl-opv"] .opv-citation::after {
         overflow-y: auto;
         overscroll-behavior: contain;
     }
-    body:has(#verses-container > .opv-reading-flow) #mobile-footer-nav {
+    body:has(#verses-container [data-editie="nl-opv"]) #mobile-footer-nav {
         background: var(--bg-page);
         border-top: 1px solid var(--border-default, var(--border));
         box-shadow: none;
@@ -6061,7 +6066,7 @@ body.citaten-uit #content [data-editie="nl-opv"] .opv-citation::after {
 }
 
 @media (max-width: 480px) {
-    body:has(#verses-container > .opv-reading-flow) #content {
+    body:has(#verses-container [data-editie="nl-opv"]) #content {
         top: 109px;
     }
 }
