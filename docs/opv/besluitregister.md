@@ -469,3 +469,13 @@ De blokkop bij 4:46–54 luidt De zoon van de ambtenaar leeft. In 4:47 en 4:49 w
 Drie nieuwe gerichte regressietests en de aangescherpte bestaande doeltest zijn vóór hun bijbehorende correcties rood gezien, verdeeld over twee herstelrondes. De eerste twee nieuwe tests en de aangescherpte doeltest gaven samen 3 tests met 7 failures; de derde nieuwe test voor 4:51–52 gaf daarna afzonderlijk 1 test met 2 failures. Na de eerste ronde waren 114 corpus-/validatietests en 13 browsertests groen; na de labelcorrectie waren dat 115 corpus-/validatietests en 13 browsertests. De tests controleren de volledige eervergelijking, het begripanker, de blokkop, de leestekst van 4:46–49 en de drie zichtbare sprekernamen. Drie versteksten en hun inhoudshashes zijn gewijzigd; daarnaast zijn de blokkop en drie zichtbare spreker.naam-velden aangepast: 4:49, 4:51 en 4:52. De twee laatstgenoemde labelwijzigingen veranderden geen teksten, segmenten of hashes. Alle IDs, citaatgrenzen, conceptverwijzingen, bronhashes, tellingen en conceptstatussen blijven behouden.
 
 De blokken 4:46–54 en 5:19–30 zijn opnieuw zonder versnummers als doorlopende tekst gelezen. Dit is een tekstuele voorleessimulatie, geen menselijke leesproef. Geen zin overschrijdt 25 woorden; de maxima per hoofdstuk blijven 23, 22, 22 en 21. De onafhankelijke eindgoedkeuring blijft open.
+
+## Exodus
+
+### E1 — 25–28: materialen en oude maten in gewone taal
+
+De OPV-leestekst gebruikt voor het oude `sittimhout` consequent `acaciahout`. Het kleurwoord `hemelsblauw` wordt in deze opsommingen eenvoudig `blauw`. De letterlijke woorden uit SV1888 blijven ongewijzigd in `bronfrase` en in de gekoppelde bronbestanden; de modernisering betreft uitsluitend de zelfstandige leestekst.
+
+Oude lengtematen en gewichten worden in de leestekst afgerond omgerekend: een el is ongeveer 45 centimeter, een span ongeveer 22 centimeter, een handbreed ongeveer 7,5 centimeter en een talent goud ongeveer 34 kilo. Bij samengestelde maten wordt een natuurlijke eenheid gekozen, bijvoorbeeld 2,5 el als ongeveer 1,1 meter. `Ongeveer` of een andere duidelijke afrondingsmarkering voorkomt schijnprecisie. De broneenheid en de exacte SV1888-formulering blijven controleerbaar in de bronlaag.
+
+Deze keuze volgt dezelfde aanpak als de omzetting van metreten naar liters in Johannes 2:6: de hoofdtekst moet direct begrijpelijk zijn, terwijl historische details niet verdwijnen. De technische validatie controleert de tekst-hashes en bronkoppelingen; de gekozen omrekenfactoren blijven bij een onafhankelijke inhoudelijke eindcontrole expliciet te beoordelen.
