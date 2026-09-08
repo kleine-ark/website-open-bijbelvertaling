@@ -653,6 +653,7 @@ def validate_verse(
     segments = verse.get("segmenten")
     segment_ids: list[str] = []
     segment_texts: list[str] = []
+    segment_source_anchors: list[tuple[int, str]] = []
     if not isinstance(segments, list) or not segments:
         errors.append(_error("SEGMENTS_MISSING", filename, f"{json_path}.segmenten"))
         segments = []
@@ -663,6 +664,7 @@ def validate_verse(
             continue
         segment_id = segment.get("id")
         segment_text = segment.get("tekst")
+        source_anchor = segment.get("bronfrase")
         if not isinstance(segment_id, str) or not segment_id:
             errors.append(_error("SEGMENT_ID_MISSING", filename, f"{segment_path}.id"))
         else:
@@ -675,6 +677,16 @@ def validate_verse(
             errors.append(_error("SEGMENT_TEXT_INVALID", filename, f"{segment_path}.tekst"))
         else:
             segment_texts.append(segment_text)
+        if not isinstance(source_anchor, str) or not source_anchor.strip():
+            errors.append(
+                _error(
+                    "SEGMENT_SOURCE_ANCHOR_MISSING",
+                    filename,
+                    f"{segment_path}.bronfrase",
+                )
+            )
+        else:
+            segment_source_anchors.append((index, source_anchor))
     if "".join(segment_texts) != reading_text:
         errors.append(_error("SEGMENTS_TEXT_MISMATCH", filename, f"{json_path}.segmenten"))
 
@@ -688,6 +700,16 @@ def validate_verse(
         expected_chapter,
     )
     errors.extend(source_errors)
+    if source_text is not None:
+        for index, source_anchor in segment_source_anchors:
+            if source_anchor not in source_text:
+                errors.append(
+                    _error(
+                        "SEGMENT_SOURCE_ANCHOR_NOT_FOUND",
+                        filename,
+                        f"{json_path}.segmenten[{index}].bronfrase",
+                    )
+                )
     errors.extend(
         validate_review(
             verse.get("review"), reading_text, source_text, filename, f"{json_path}.review"

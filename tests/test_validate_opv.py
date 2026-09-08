@@ -33,7 +33,13 @@ VALID_CHAPTER = {
                 "vers": 1,
                 "tekstveld": "textSV1888",
             },
-            "segmenten": [{"id": "GEN.1.1.s1", "tekst": READING_TEXT}],
+            "segmenten": [
+                {
+                    "id": "GEN.1.1.s1",
+                    "tekst": READING_TEXT,
+                    "bronfrase": "In den beginne schiep God den hemel en de aarde.",
+                }
+            ],
             "begrippen": [],
             "citaten": [],
             "review": {
@@ -165,7 +171,11 @@ class ValidateOpvTests(unittest.TestCase):
                 "tekstveld": "textSV1888",
             },
             "segmenten": [
-                {"id": "GEN.1.2.s1", "tekst": "De aarde was leeg en donker."}
+                {
+                    "id": "GEN.1.2.s1",
+                    "tekst": "De aarde was leeg en donker.",
+                    "bronfrase": "De aarde nu was woest en ledig.",
+                }
             ],
             "begrippen": [],
             "citaten": [],
@@ -597,6 +607,17 @@ class ValidateOpvTests(unittest.TestCase):
         errors = self._errors_after_rewrite()
         self.assertHasCode(errors, "SEGMENTS_TEXT_MISMATCH")
 
+    def test_segment_source_anchor_must_be_an_exact_source_substring(self) -> None:
+        segment = self.chapter["verzen"][0]["segmenten"][0]
+        segment["bronfrase"] = "In den beginne schiep God den hemel en de aardÃ«"
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "SEGMENT_SOURCE_ANCHOR_NOT_FOUND")
+
+    def test_segment_source_anchor_is_required(self) -> None:
+        del self.chapter["verzen"][0]["segmenten"][0]["bronfrase"]
+        errors = self._errors_after_rewrite()
+        self.assertHasCode(errors, "SEGMENT_SOURCE_ANCHOR_MISSING")
+
     def test_source_and_content_hashes_are_checked(self) -> None:
         review = self.chapter["verzen"][0]["review"]
         review["inhoudSha256"] = "0" * 64
@@ -872,7 +893,13 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             registry = json.loads((self.root / "data/edities/manifest.json").read_text(encoding="utf-8"))
             registry["edities"] = [entry for entry in registry["edities"] if entry["code"] == "nl-opv"]
             edition = json.loads((self.root / "data/edities/opv/manifest.json").read_text(encoding="utf-8"))
+            registry["edities"][0]["boeken"] = ["genesis", "johannes"]
+            registry["edities"][0]["hoofdstukken"] = {"genesis": [1], "johannes": [1]}
             registry["edities"][0]["gepubliceerdeHoofdstukken"] = {"genesis": [1], "johannes": [1]}
+            edition["boeken"] = [
+                {"code": "genesis", "hoofdstukken": [1]},
+                {"code": "johannes", "hoofdstukken": [1]},
+            ]
             edition["gepubliceerdeHoofdstukken"] = {"genesis": [1], "johannes": [1]}
             write_json(root / "data/edities/manifest.json", registry)
             write_json(root / "data/edities/opv/manifest.json", edition)
@@ -893,7 +920,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual("OPV geldig: 55 hoofdstukken, 1747 verzen.\n", result.stdout)
+        self.assertEqual("OPV geldig: 65 hoofdstukken, 2021 verzen.\n", result.stdout)
 
 
 class OpvGenesisPilotTests(unittest.TestCase):
@@ -931,11 +958,15 @@ class OpvGenesisPilotTests(unittest.TestCase):
             with self.subTest(chapter=number):
                 self.assertEqual(ranges, [(b["vanaf"], b["tot"]) for b in self.chapter(number)["blokken"]])
 
-    def test_publication_registers_both_complete_pilot_books(self) -> None:
+    def test_publication_registers_current_opv_coverage(self) -> None:
         registry = json.loads((self.root / "data/edities/manifest.json").read_text(encoding="utf-8"))
         edition = json.loads((self.root / "data/edities/opv/manifest.json").read_text(encoding="utf-8"))
         entry = next(e for e in registry["edities"] if e["code"] == "nl-opv")
-        expected = {"genesis": list(range(1, 51)), "johannes": [1, 2, 3, 4, 5]}
+        expected = {
+            "genesis": list(range(1, 51)),
+            "exodus": list(range(1, 11)),
+            "johannes": [1, 2, 3, 4, 5],
+        }
         self.assertEqual(expected, entry["gepubliceerdeHoofdstukken"])
         self.assertEqual(expected, edition["gepubliceerdeHoofdstukken"])
         pending = [(book, n) for book, ns in entry["hoofdstukken"].items()
@@ -1114,6 +1145,31 @@ class OpvGenesisPilotTests(unittest.TestCase):
         self.assertIn("De grond", chapters[4]["verzen"][10]["tekst"])
 
 
+class OpvExodusProductionTests(unittest.TestCase):
+    root = Path(__file__).resolve().parents[1]
+
+    def chapter(self, number: int) -> dict:
+        path = self.root / f"data/edities/opv/chapters/exodus/{number}.json"
+        self.assertTrue(path.is_file(), f"Exodus-hoofdstuk {number} ontbreekt")
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_exodus_has_exact_source_verse_lists_and_274_verses(self) -> None:
+        total = 0
+        for number in range(1, 11):
+            with self.subTest(chapter=number):
+                chapter = self.chapter(number)
+                source = json.loads((self.root / f"data/exodus/{number}.json").read_text(encoding="utf-8"))
+                self.assertEqual([v["number"] for v in source["verses"]],
+                                 [v["nummer"] for v in chapter["verzen"]])
+                total += len(chapter["verzen"])
+                self.assertEqual(("exodus", number), (chapter["boek"], chapter["hoofdstuk"]))
+                self.assertTrue(chapter["blokken"])
+                for verse in chapter["verzen"]:
+                    self.assertEqual({"bestand": f"data/exodus/{number}.json",
+                                      "vers": verse["nummer"], "tekstveld": "textSV1888"}, verse["bron"])
+        self.assertEqual(274, total)
+
+
 class OpvJohannesPilotTests(unittest.TestCase):
     root = Path(__file__).resolve().parents[1]
 
@@ -1122,7 +1178,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Johannes-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_johannes_has_source_verse_lists_214_verses_and_corpus_1747(self) -> None:
+    def test_johannes_has_source_verse_lists_214_verses_and_corpus_2021(self) -> None:
         total = 0
         for number in range(1, 6):
             with self.subTest(chapter=number):
@@ -1138,7 +1194,9 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertEqual(214, total)
         genesis_total = sum(len(json.loads(p.read_text(encoding="utf-8"))["verzen"])
                             for p in (self.root / "data/edities/opv/chapters/genesis").glob("*.json"))
-        self.assertEqual(1747, total + genesis_total)
+        exodus_total = sum(len(json.loads(p.read_text(encoding="utf-8"))["verzen"])
+                           for p in (self.root / "data/edities/opv/chapters/exodus").glob("*.json"))
+        self.assertEqual(2021, total + genesis_total + exodus_total)
 
     def test_johannes_blocks_match_all_approved_boundaries(self) -> None:
         expected = {
