@@ -920,7 +920,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual("OPV geldig: 65 hoofdstukken, 2021 verzen.\n", result.stdout)
+        self.assertEqual("OPV geldig: 71 hoofdstukken, 2198 verzen.\n", result.stdout)
 
 
 class OpvGenesisPilotTests(unittest.TestCase):
@@ -964,7 +964,7 @@ class OpvGenesisPilotTests(unittest.TestCase):
         entry = next(e for e in registry["edities"] if e["code"] == "nl-opv")
         expected = {
             "genesis": list(range(1, 51)),
-            "exodus": list(range(1, 11)),
+            "exodus": list(range(1, 17)),
             "johannes": [1, 2, 3, 4, 5],
         }
         self.assertEqual(expected, entry["gepubliceerdeHoofdstukken"])
@@ -1153,9 +1153,9 @@ class OpvExodusProductionTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Exodus-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_exodus_has_exact_source_verse_lists_and_274_verses(self) -> None:
+    def test_exodus_has_exact_source_verse_lists_and_451_verses(self) -> None:
         total = 0
-        for number in range(1, 11):
+        for number in range(1, 17):
             with self.subTest(chapter=number):
                 chapter = self.chapter(number)
                 source = json.loads((self.root / f"data/exodus/{number}.json").read_text(encoding="utf-8"))
@@ -1167,7 +1167,7 @@ class OpvExodusProductionTests(unittest.TestCase):
                 for verse in chapter["verzen"]:
                     self.assertEqual({"bestand": f"data/exodus/{number}.json",
                                       "vers": verse["nummer"], "tekstveld": "textSV1888"}, verse["bron"])
-        self.assertEqual(274, total)
+        self.assertEqual(451, total)
 
 
 class OpvJohannesPilotTests(unittest.TestCase):
@@ -1178,7 +1178,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Johannes-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_johannes_has_source_verse_lists_214_verses_and_corpus_2021(self) -> None:
+    def test_johannes_has_source_verse_lists_214_verses_and_corpus_2198(self) -> None:
         total = 0
         for number in range(1, 6):
             with self.subTest(chapter=number):
@@ -1196,7 +1196,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
                             for p in (self.root / "data/edities/opv/chapters/genesis").glob("*.json"))
         exodus_total = sum(len(json.loads(p.read_text(encoding="utf-8"))["verzen"])
                            for p in (self.root / "data/edities/opv/chapters/exodus").glob("*.json"))
-        self.assertEqual(2021, total + genesis_total + exodus_total)
+        self.assertEqual(2198, total + genesis_total + exodus_total)
 
     def test_johannes_blocks_match_all_approved_boundaries(self) -> None:
         expected = {
