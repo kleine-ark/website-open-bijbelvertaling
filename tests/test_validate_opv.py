@@ -1231,7 +1231,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
         for number, phrase in ((2, "vijf"), (5, "38"), (19, "niets uit zichzelf"),
                                (21, "wie Hij wil"), (22, "het hele oordeel"),
                                (24, "al overgegaan"), (25, "nu al"),
-                               (26, "de Vader Hem gegeven"), (27, "omdat Hij de Mensenzoon is"),
+                               (26, "de Vader Hem gegeven"), (27, "omdat de Zoon de Mensenzoon is"),
                                (28, "iedereen in de graven"), (29, "veroordeeld"),
                                (30, "de wil van de Vader"), (45, "Mozes"),
                                (46, "over mij geschreven")):
@@ -1283,6 +1283,87 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertNotIn("ook over niemand", verse["tekst"])
         self.assertEqual(["het hele oordeel"], OpvCalibrationCorpusTests._concept_texts(verse, "oordeel"))
         self.assertEqual(verse["tekst"], OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+
+
+    def test_johannes_three_17_identifies_the_son_as_the_means_of_rescue(self) -> None:
+        verse = self.chapter(3)["verzen"][16]
+        expected = "God stuurde Zijn Zoon immers niet naar de wereld om die te veroordelen, maar om de wereld door Zijn Zoon te redden."
+        self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+        self.assertEqual(["de wereld door Zijn Zoon te redden"], OpvCalibrationCorpusTests._concept_texts(verse, "redding"))
+
+    def test_johannes_three_35_gives_everything_to_the_son(self) -> None:
+        verse = self.chapter(3)["verzen"][34]
+        expected = "De Vader houdt van de Zoon en heeft Hem alles in handen gegeven."
+        self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+        self.assertEqual(["Hem alles in handen gegeven"], OpvCalibrationCorpusTests._concept_texts(verse, "alles-in-zijn-hand"))
+
+    def test_johannes_five_20_names_the_father_as_the_one_showing_his_works(self) -> None:
+        verse = self.chapter(5)["verzen"][19]
+        expected = "Want de Vader houdt van de Zoon en laat Hem alles zien wat de Vader doet. De Vader zal Hem nog grotere werken laten zien, zodat jullie je zullen verwonderen."
+        self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+
+    def test_johannes_five_27_names_the_giver_and_recipient_of_judgment(self) -> None:
+        verse = self.chapter(5)["verzen"][26]
+        expected = "De Vader heeft de Zoon ook de macht gegeven om het oordeel uit te voeren, omdat de Zoon de Mensenzoon is."
+        self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+        self.assertEqual(["Mensenzoon"], OpvCalibrationCorpusTests._concept_texts(verse, "mensenzoon"))
+
+    def test_johannes_four_42_keeps_the_womans_witness_and_adds_direct_hearing(self) -> None:
+        verse = self.chapter(4)["verzen"][41]
+        expected = "We geloven nu niet meer alleen vanwege jouw verhaal, want we hebben Hem zelf gehoord. We weten dat Hij werkelijk de Christus is, de Redder van de wereld."
+        self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+        self.assertEqual(["Christus"], OpvCalibrationCorpusTests._concept_texts(verse, "messias"))
+        self.assertEqual(["Redder van de wereld"], OpvCalibrationCorpusTests._concept_texts(verse, "redder-wereld"))
+
+    def test_johannes_four_1_gives_the_report_content_directly(self) -> None:
+        verse = self.chapter(4)["verzen"][0]
+        expected = "De Heere wist dat de Farizeeën hadden gehoord dat Hij meer leerlingen maakte en doopte dan Johannes."
+        self.assertEqual(expected, verse["tekst"])
+
+    def test_johannes_four_25_keeps_the_promise_to_make_everything_known(self) -> None:
+        verse = self.chapter(4)["verzen"][24]
+        expected = "Ik weet dat de Messias komt. Wanneer Hij komt, zal Hij ons alles bekendmaken."
+        self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+
+    def test_johannes_two_6_expresses_capacity_without_converting_the_unit(self) -> None:
+        verse = self.chapter(2)["verzen"][5]
+        expected = "Er stonden zes stenen watervaten voor de reiniging van de Joden. Elk vat kon twee of drie metreten bevatten."
+        self.assertEqual(expected, verse["tekst"])
+        self.assertEqual(["twee of drie metreten"], OpvCalibrationCorpusTests._concept_texts(verse, "metreet"))
+
+    def test_johannes_two_13_connects_the_passover_and_the_journey(self) -> None:
+        verse = self.chapter(2)["verzen"][12]
+        expected = "Het Joodse paasfeest naderde. Daarom ging Jezus naar Jeruzalem."
+        self.assertEqual(expected, verse["tekst"])
+        self.assertEqual(["Joodse paasfeest"], OpvCalibrationCorpusTests._concept_texts(verse, "pascha"))
+
+    def test_johannes_two_25_describes_human_testimony_in_plain_words(self) -> None:
+        verse = self.chapter(2)["verzen"][24]
+        expected = "Hij had niemand nodig om Hem iets over mensen te vertellen. Hij wist zelf wat er in een mens omging."
+        self.assertEqual(expected, verse["tekst"])
+
+    def test_johannes_three_23_connects_johns_baptizing_and_its_location(self) -> None:
+        verse = self.chapter(3)["verzen"][22]
+        expected = "Ook Johannes doopte in Enon bij Salim, omdat daar veel water was. Mensen kwamen naar hem toe en werden gedoopt."
+        self.assertEqual(expected, verse["tekst"])
+        self.assertEqual(["doopte"], OpvCalibrationCorpusTests._concept_texts(verse, "doop"))
+
+    def test_johannes_four_26_makes_jesus_identity_statement_direct(self) -> None:
+        verse = self.chapter(4)["verzen"][25]
+        expected = "Dat ben ik, degene die met je spreekt."
+        self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+
+    def test_johannes_four_46_identifies_the_royal_official_in_plain_words(self) -> None:
+        verse = self.chapter(4)["verzen"][45]
+        expected = "Jezus kwam weer in Kana in Galilea, waar Hij water in wijn had veranderd. Een ambtenaar van de koning had een zoon die ziek lag in Kapernaüm."
+        self.assertEqual(expected, verse["tekst"])
+        self.assertEqual(["ambtenaar van de koning"], OpvCalibrationCorpusTests._concept_texts(verse, "hoveling"))
+
+    def test_johannes_four_52_asks_when_the_son_recovered(self) -> None:
+        verse = self.chapter(4)["verzen"][51]
+        expected = "Hij vroeg op welk uur zijn zoon was opgeknapt. Ze zeiden: Gisteren, op het zevende uur, verdween zijn koorts."
+        self.assertEqual(expected, verse["tekst"])
+        self.assertEqual(["zevende uur"], OpvCalibrationCorpusTests._concept_texts(verse, "zevende-uur"))
 
 
 if __name__ == "__main__":

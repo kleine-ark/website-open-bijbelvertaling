@@ -325,7 +325,7 @@ Judea, Enon, Salim, de vele wateren en Johannes’ nog niet begonnen gevangensch
 
 Johannes’ eigen eerdere uitspraak in 3:28 is als geheel genest geciteerd. Bruid, bruidegom, vriend, staan, horen, stem, vreugde en vervulde blijdschap blijven als beeld bijeen. Groter/kleiner bewaart wassen/minder worden zonder toevoeging van aantallen volgelingen of lichaamslengte. De menselijke voornaamwoorden binnen de vergelijking blijven klein.
 
-In 3:31 blijven afkomst, behoren bij de aarde, spreken vanuit de aarde en de tweevoudige uitspraak boven iedereen behouden. Niemand in vers 32 wordt niet afgezwakt tot bijna niemand; de aannemer in vers 33 blijft ernaast staan. Verzegelen wordt bevestigen, zonder een nieuw fysiek zegel. God geeft Hem de Geest zonder beperking volgens de SV-aanvulling Hem; geen hoeveelheid geestelijke gaven of tijdstip toegevoegd. De Vader houdt van de Zoon en geeft alles in Zijn hand. Geloof/ongehoorzaamheid, eeuwig leven/het leven niet zien en blijvende toorn blijven onderscheiden.
+In 3:31 blijven afkomst, behoren bij de aarde, spreken vanuit de aarde en de tweevoudige uitspraak boven iedereen behouden. Niemand in vers 32 wordt niet afgezwakt tot bijna niemand; de aannemer in vers 33 blijft ernaast staan. Verzegelen wordt bevestigen, zonder een nieuw fysiek zegel. God geeft Hem de Geest zonder beperking volgens de SV-aanvulling Hem; geen hoeveelheid geestelijke gaven of tijdstip toegevoegd. De Vader houdt van de Zoon en geeft Hem alles in handen: de Zoon is de ontvanger. Geloof/ongehoorzaamheid, eeuwig leven/het leven niet zien en blijvende toorn blijven onderscheiden.
 
 ### J22 — 4:1–9: reis en omgang
 
@@ -387,7 +387,7 @@ De Vader oordeelt niemand en heeft het hele oordeel aan de Zoon gegeven. Het doe
 
 In 5:25 blijft de tijd toekomstig én nu al. Doden, de stem van Gods Zoon horen en leven blijven staan. In 5:26 wordt de lastige dubbele constructie ontvlochten: de Vader heeft het leven in zichzelf; ook de Zoon heeft het leven in zichzelf, en de Vader heeft Hem dat gegeven. Beide levensfrasen hebben een eigen anker. Er wordt geen moment vóór het bestaan van de Zoon of een scheppingshandeling ingevoegd.
 
-De macht om te oordelen is gegeven omdat Hij de Mensenzoon is. Iedereen in de graven zal Zijn stem horen en eruit komen. Goed gedaan/opstaan tot leven en kwaad gedaan/opstaan tot veroordeling blijven twee uitkomsten; geen toevoeging van een eigen heilsleer of chronologie. In 5:30 blijven niets uit zichzelf doen, naar het gehoorde oordelen, rechtvaardigheid, niet eigen wil zoeken en de wil van de Vader die Hem stuurde behouden.
+De Vader geeft de Zoon de macht om te oordelen omdat de Zoon de Mensenzoon is. Iedereen in de graven zal Zijn stem horen en eruit komen. Goed gedaan/opstaan tot leven en kwaad gedaan/opstaan tot veroordeling blijven twee uitkomsten; geen toevoeging van een eigen heilsleer of chronologie. In 5:30 blijven niets uit zichzelf doen, naar het gehoorde oordelen, rechtvaardigheid, niet eigen wil zoeken en de wil van de Vader die Hem stuurde behouden.
 
 ### J29 — 5:31–39: getuigenis en Schriften
 
@@ -437,3 +437,27 @@ Zes semantische punten zijn eerst afzonderlijk met falende regressietests vastge
 De segment-id’s, citaat-id’s, semantic-id’s, sprekers, aangesprokenen, geneste grenzen en conceptverwijzingen zijn tegen de voorafgaande inhoudscommit vergeleken en ongewijzigd. Het anker in 5:23 luidt nu de Zoon eert zoals de Vader; de bijbehorende bronfrase blijft den Zoon eren, gelijk zij den Vader eren. Enkele brede bronfrases zijn toegespitst op de betrokken bronclausule. Alle tien inhoudshashes zijn vernieuwd; alle bronhashes en conceptreviewstatussen bleven gelijk.
 
 De acht betrokken blokken zijn opnieuw zonder versnummers als doorlopende tekst gelezen: 2:1–12 en 18–22; 3:31–36; 4:1–6, 7–15 en 27–30; 5:10–18 en 19–30. Dit is een tekstuele voorleessimulatie, geen menselijke leesproef. De maxima per hoofdstuk zijn nu 23, 22, 22 en 19 woorden; er zijn geen zinnen boven 25 woorden. Onafhankelijke eindgoedkeuring blijft vereist.
+
+### J33 — Expliciete verwijzingen en eenvoudige formuleringen
+
+Veertien verzen zijn opnieuw aan SV1888 getoetst, met SV1637 als controle. In 3:17 wordt de herhaalde verwijzing door Hem expliciet door Zijn Zoon: de Zoon is degene door wie God de wereld wil redden. Het doel en de tegenstelling met veroordelen blijven staan. In 3:35 is de Zoon uitdrukkelijk de ontvanger van alles; het beeld van in handen geven blijft bewaard. Het begripanker bevat nu Hem alles in handen gegeven.
+
+In 5:20 wordt de Vader herhaald als degene die werkt, toont en grotere werken zal tonen. De Zoon is degene aan wie de Vader toont; het doel is de verwondering van de aangesprokenen. In 5:27 worden zowel de gever (de Vader) als de ontvanger (de Zoon) benoemd. De reden omdat de Zoon de Mensenzoon is blijft verbonden met de gegeven macht om te oordelen.
+
+In 4:42 wordt niet meer alleen gebruikt om de overgang van het bericht van de vrouw naar zelf horen duidelijk te maken. Haar getuigenis wordt niet onwaar verklaard. Het voorgestelde inkorten tot uitsluitend Redder van de wereld zou de Christus uit de primaire bron laten wegvallen. Daarom blijft de Christus nadrukkelijk staan, met het bestaande messias-anker. De twee zinnen scheiden het zelf horen van de erkenning van Christus als Redder van de wereld; het is één ononderbroken citaat van dezelfde Samaritanen.
+
+| Vers | Verdere vereenvoudiging |
+| --- | --- |
+| 2:6 | Elk vat kon twee of drie metreten bevatten maakt de capaciteit grammaticaal volledig. Geen aantallen of eenheden gewijzigd. |
+| 2:13 | Naderde maakt duidelijk dat het feest in de tijd dichterbij kwam. Daarom verbindt het naderende paasfeest met de reis naar Jeruzalem. De reis wordt zonder letterlijk omhoog weergegeven; de bestemming en het feest blijven expliciet. |
+| 2:25 | Iets over mensen vertellen maakt het menselijke getuigenis in gewone taal duidelijk. Jezus’ eigen kennis van wat in een mens omgaat blijft de afzonderlijke reden. |
+| 3:23 | De losse komma na doopte vervalt. Naar hem toe verduidelijkt het komen naar Johannes voor de genoemde doop, zonder een ander reisdoel toe te voegen. |
+| 4:1 | Wist volgt verstond zonder een extra gehoorhandeling aan de Heere toe te schrijven. De Farizeeën hadden het bericht gehoord; leerlingen maken en dopen blijven onderscheiden. De precisering van de verteller in vers 2 blijft staan. |
+| 4:25 | Bekendmaken bewaart het verkondigen; het wordt niet beperkt tot het uitleggen van iets dat al bekend is. De naamverklaring blijft buiten de vrouwspraak. |
+| 4:26 | Dat ben ik, degene die met je spreekt maakt de identiteitsuitspraak direct. Ik en degene krijgen geen extra hoofdletter binnen het citaat. |
+| 4:46 | Ambtenaar van de koning verduidelijkt de koninklijke functie. Het bestaande concept hoveling blijft gekoppeld aan die gehele functieomschrijving. Er wordt geen rang, legerfunctie of naam toegevoegd. |
+| 4:52 | Was opgeknapt vereenvoudigt beter geworden. De vraag naar het uur blijft afzonderlijk van het antwoord over de koorts op het zevende uur. |
+
+Voor alle veertien formuleringen zijn eerst falende regressietests geschreven. De bestaande inhoudstest voor 5:27 is aangescherpt voordat de tekst veranderde. De betrokken citaatteksten en ankers worden op exacte reconstructie gecontroleerd. Alle segment-, citaat- en semantic-id’s, sprekers, aangesprokenen en conceptverwijzingen zijn behouden; alle veertien inhoudshashes zijn vernieuwd. Bronhashes, aantallen en conceptstatussen blijven ongewijzigd.
+
+De elf betrokken blokken zijn zonder versnummers als doorlopende tekst herlezen: 2:1–12, 13–17 en 23–25; 3:16–21, 22–30 en 31–36; 4:1–6, 16–26, 39–42 en 46–54; 5:19–30. Dit is een tekstuele voorleessimulatie, geen menselijke leesproef. Geen zin is langer dan 25 woorden; de maxima per hoofdstuk zijn nu 23, 22, 22 en 21 woorden. De conceptstatus verleent geen onafhankelijke exegetische of taalgoedkeuring.
