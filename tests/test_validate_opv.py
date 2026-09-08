@@ -920,7 +920,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual("OPV geldig: 95 hoofdstukken, 2960 verzen.\n", result.stdout)
+        self.assertEqual("OPV geldig: 105 hoofdstukken, 3212 verzen.\n", result.stdout)
 
 
 class OpvGenesisPilotTests(unittest.TestCase):
@@ -965,6 +965,7 @@ class OpvGenesisPilotTests(unittest.TestCase):
         expected = {
             "genesis": list(range(1, 51)),
             "exodus": list(range(1, 41)),
+            "leviticus": list(range(1, 11)),
             "johannes": [1, 2, 3, 4, 5],
         }
         self.assertEqual(expected, entry["gepubliceerdeHoofdstukken"])
@@ -1231,6 +1232,58 @@ class OpvExodusProductionTests(unittest.TestCase):
                     self.assertIn(phrase, actual)
 
 
+class OpvLeviticusProductionTests(unittest.TestCase):
+    root = Path(__file__).resolve().parents[1]
+
+    def chapter(self, number: int) -> dict:
+        path = self.root / f"data/edities/opv/chapters/leviticus/{number}.json"
+        self.assertTrue(path.is_file(), f"Leviticus-hoofdstuk {number} ontbreekt")
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_leviticus_has_exact_source_verse_lists_and_252_verses(self) -> None:
+        total = 0
+        for number in range(1, 11):
+            with self.subTest(chapter=number):
+                chapter = self.chapter(number)
+                source = json.loads(
+                    (self.root / f"data/leviticus/{number}.json").read_text(encoding="utf-8")
+                )
+                self.assertEqual(
+                    [verse["number"] for verse in source["verses"]],
+                    [verse["nummer"] for verse in chapter["verzen"]],
+                )
+                total += len(chapter["verzen"])
+                self.assertEqual(("leviticus", number), (chapter["boek"], chapter["hoofdstuk"]))
+                self.assertTrue(chapter["blokken"])
+                for verse in chapter["verzen"]:
+                    self.assertEqual(
+                        {
+                            "bestand": f"data/leviticus/{number}.json",
+                            "vers": verse["nummer"],
+                            "tekstveld": "textSV1888",
+                        },
+                        verse["bron"],
+                    )
+        self.assertEqual(252, total)
+
+    def test_offer_terminology_is_readable_and_consistent(self) -> None:
+        text = " ".join(
+            verse["tekst"]
+            for number in range(1, 11)
+            for verse in self.chapter(number)["verzen"]
+        )
+        self.assertNotRegex(text, r"\b(?:spijsoffer|meelbloem|schenkelen|smeer|weekdarmen|wijfje|var)\b")
+        self.assertNotRegex(text, r"\btent van (?:de )?(?:samenkomst|ontmoeting)\b")
+        for phrase in ("graanoffer", "fijn meel", "onderpoten", "ontmoetingstent"):
+            self.assertIn(phrase, text)
+
+    def test_leviticus_nine_preserves_both_one_year_old_animals(self) -> None:
+        text = self.chapter(9)["verzen"][2]["tekst"]
+        self.assertIn("een eenjarig kalf", text)
+        self.assertIn("een eenjarig lam", text)
+        self.assertIn("Beide dieren moeten zonder gebrek zijn", text)
+
+
 class OpvJohannesPilotTests(unittest.TestCase):
     root = Path(__file__).resolve().parents[1]
 
@@ -1239,7 +1292,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Johannes-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_johannes_has_source_verse_lists_214_verses_and_corpus_2960(self) -> None:
+    def test_johannes_has_source_verse_lists_214_verses_and_corpus_3212(self) -> None:
         total = 0
         for number in range(1, 6):
             with self.subTest(chapter=number):
@@ -1262,7 +1315,14 @@ class OpvJohannesPilotTests(unittest.TestCase):
             )["verzen"])
             for number in range(1, 41)
         )
-        self.assertEqual(2960, total + genesis_total + exodus_total)
+        leviticus_total = sum(
+            len(json.loads(
+                (self.root / f"data/edities/opv/chapters/leviticus/{number}.json")
+                .read_text(encoding="utf-8")
+            )["verzen"])
+            for number in range(1, 11)
+        )
+        self.assertEqual(3212, total + genesis_total + exodus_total + leviticus_total)
 
     def test_johannes_blocks_match_all_approved_boundaries(self) -> None:
         expected = {
