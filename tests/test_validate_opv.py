@@ -1249,10 +1249,10 @@ class OpvJohannesPilotTests(unittest.TestCase):
 
     def test_johannes_five_23_preserves_the_purpose_of_giving_judgment(self) -> None:
         verse = self.chapter(5)["verzen"][22]
-        self.assertTrue(verse["tekst"].startswith("Dat heeft Hij gedaan zodat iedereen de Zoon eert zoals de Vader."))
+        self.assertTrue(verse["tekst"].startswith("Dat heeft Hij gedaan zodat iedereen de Zoon eert zoals men de Vader eert."))
         self.assertNotIn("Zo zal iedereen", verse["tekst"])
         self.assertIn("Wie de Zoon niet eert, eert ook de Vader niet die Hem gestuurd heeft.", verse["tekst"])
-        self.assertEqual(["de Zoon eert zoals de Vader"], OpvCalibrationCorpusTests._concept_texts(verse, "vader-zoon"))
+        self.assertEqual(["de Zoon eert zoals men de Vader eert"], OpvCalibrationCorpusTests._concept_texts(verse, "vader-zoon"))
         self.assertEqual(verse["tekst"], OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
 
     def test_johannes_five_18_keeps_intensified_effort_to_kill(self) -> None:
@@ -1364,6 +1364,33 @@ class OpvJohannesPilotTests(unittest.TestCase):
         expected = "Hij vroeg op welk uur zijn zoon was opgeknapt. Ze zeiden: Gisteren, op het zevende uur, verdween zijn koorts."
         self.assertEqual(expected, verse["tekst"])
         self.assertEqual(["zevende uur"], OpvCalibrationCorpusTests._concept_texts(verse, "zevende-uur"))
+
+    def test_johannes_five_23_makes_human_honor_to_both_explicit(self) -> None:
+        verse = self.chapter(5)["verzen"][22]
+        expected = ("Dat heeft Hij gedaan zodat iedereen de Zoon eert zoals men de Vader eert. "
+                    "Wie de Zoon niet eert, eert ook de Vader niet die Hem gestuurd heeft.")
+        self.assertEqual(expected, verse["tekst"])
+        self.assertEqual(expected, OpvCalibrationCorpusTests._citation_text(verse, verse["citaten"][0]))
+        self.assertEqual(["de Zoon eert zoals men de Vader eert"],
+                         OpvCalibrationCorpusTests._concept_texts(verse, "vader-zoon"))
+
+    def test_johannes_four_46_to_49_uses_one_visible_name_for_official(self) -> None:
+        chapter = self.chapter(4)
+        block = next(b for b in chapter["blokken"] if b["vanaf"] == 46)
+        with self.subTest(surface="heading"):
+            self.assertEqual("De zoon van de ambtenaar leeft", block["kop"])
+        for verse in chapter["verzen"][45:49]:
+            with self.subTest(verse=verse["nummer"], surface="reading"):
+                self.assertNotIn("hoveling", verse["tekst"].lower())
+            for citation in verse["citaten"]:
+                with self.subTest(verse=verse["nummer"], surface="speaker"):
+                    self.assertNotIn("hoveling", citation["spreker"]["naam"].lower())
+        self.assertIn("Toen de ambtenaar hoorde", chapter["verzen"][46]["tekst"])
+        self.assertTrue(chapter["verzen"][48]["tekst"].startswith("De ambtenaar zei tegen Hem:"))
+        self.assertEqual("De ambtenaar van de koning", chapter["verzen"][48]["citaten"][0]["spreker"]["naam"])
+        self.assertEqual("hoveling", chapter["verzen"][48]["citaten"][0]["spreker"]["id"])
+        self.assertEqual(["ambtenaar van de koning"],
+                         OpvCalibrationCorpusTests._concept_texts(chapter["verzen"][45], "hoveling"))
 
 
 if __name__ == "__main__":

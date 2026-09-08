@@ -383,7 +383,7 @@ De waarschuwing niet meer te zondigen en het gevaar van iets ergers blijven staa
 
 De Zoon kan niets uit zichzelf doen; Hij doet wat Hij de Vader ziet doen; alles wat de Vader doet, doet de Zoon op dezelfde manier. De drie onderdelen blijven apart. Liefde, alles tonen, grotere werken en het doel van verwondering zijn behouden. Wie Hij wil in 5:21 blijft onverkort.
 
-De Vader oordeelt niemand en heeft het hele oordeel aan de Zoon gegeven. Het doel daarvan is dat iedereen de Zoon eert zoals de Vader; dit is geen voorspelling dat iedereen dat daadwerkelijk zal doen. Geen eer voor de Zoon betekent geen eer voor de Vader die Hem stuurde. Horen én geloven, eeuwig leven, geen veroordeling en reeds overgegaan zijn uit dood naar leven blijven in 5:24 onderscheiden.
+De Vader oordeelt niemand en heeft het hele oordeel aan de Zoon gegeven. Het doel daarvan is dat iedereen de Zoon eert zoals men de Vader eert; dit is geen voorspelling dat iedereen dat daadwerkelijk zal doen. Geen eer voor de Zoon betekent geen eer voor de Vader die Hem stuurde. Horen én geloven, eeuwig leven, geen veroordeling en reeds overgegaan zijn uit dood naar leven blijven in 5:24 onderscheiden.
 
 In 5:25 blijft de tijd toekomstig én nu al. Doden, de stem van Gods Zoon horen en leven blijven staan. In 5:26 wordt de lastige dubbele constructie ontvlochten: de Vader heeft het leven in zichzelf; ook de Zoon heeft het leven in zichzelf, en de Vader heeft Hem dat gegeven. Beide levensfrasen hebben een eigen anker. Er wordt geen moment vóór het bestaan van de Zoon of een scheppingshandeling ingevoegd.
 
@@ -432,9 +432,9 @@ Zes semantische punten zijn eerst afzonderlijk met falende regressietests vastge
 | 5:13 | In de menigte uit het zicht verdwenen maakt het ontwijken concreet. Geen vluchtreden of wonder toegevoegd; de genezen man weet nog niet wie Jezus is. |
 | 5:18 | Er nog sterker op uit Hem te doden bewaart de geïntensiveerde inspanning; liever zou voorkeur of genoegen kunnen suggereren. De twee gronden en het gelijkstellen blijven ongewijzigd. |
 | 5:22 | Namelijk bewaart de verklarende verbinding. Dat de Vader niemand oordeelt en het hele oordeel aan de Zoon heeft gegeven, blijft volledig staan. |
-| 5:23 | Dat heeft Hij gedaan zodat bewaart het doel van de voorafgaande overdracht van het oordeel. Zoals de Vader is een ellips voor zoals men de Vader eert; beide personen zijn ontvangers van eer. De tweede zin blijft ongewijzigd. |
+| 5:23 | Dat heeft Hij gedaan zodat bewaart het doel van de voorafgaande overdracht van het oordeel. Zoals men de Vader eert benoemt de menselijke eerbetuiging expliciet; de Vader en de Zoon zijn beiden ontvangers van eer. De tweede zin blijft ongewijzigd. |
 
-De segment-id’s, citaat-id’s, semantic-id’s, sprekers, aangesprokenen, geneste grenzen en conceptverwijzingen zijn tegen de voorafgaande inhoudscommit vergeleken en ongewijzigd. Het anker in 5:23 luidt nu de Zoon eert zoals de Vader; de bijbehorende bronfrase blijft den Zoon eren, gelijk zij den Vader eren. Enkele brede bronfrases zijn toegespitst op de betrokken bronclausule. Alle tien inhoudshashes zijn vernieuwd; alle bronhashes en conceptreviewstatussen bleven gelijk.
+De segment-id’s, citaat-id’s, semantic-id’s, sprekers, aangesprokenen, geneste grenzen en conceptverwijzingen zijn tegen de voorafgaande inhoudscommit vergeleken en ongewijzigd. Het anker in 5:23 luidt nu de Zoon eert zoals men de Vader eert; de bijbehorende bronfrase blijft den Zoon eren, gelijk zij den Vader eren. Enkele brede bronfrases zijn toegespitst op de betrokken bronclausule. Alle tien inhoudshashes zijn vernieuwd; alle bronhashes en conceptreviewstatussen bleven gelijk.
 
 De acht betrokken blokken zijn opnieuw zonder versnummers als doorlopende tekst gelezen: 2:1–12 en 18–22; 3:31–36; 4:1–6, 7–15 en 27–30; 5:10–18 en 19–30. Dit is een tekstuele voorleessimulatie, geen menselijke leesproef. De maxima per hoofdstuk zijn nu 23, 22, 22 en 19 woorden; er zijn geen zinnen boven 25 woorden. Onafhankelijke eindgoedkeuring blijft vereist.
 
@@ -461,3 +461,13 @@ In 4:42 wordt niet meer alleen gebruikt om de overgang van het bericht van de vr
 Voor alle veertien formuleringen zijn eerst falende regressietests geschreven. De bestaande inhoudstest voor 5:27 is aangescherpt voordat de tekst veranderde. De betrokken citaatteksten en ankers worden op exacte reconstructie gecontroleerd. Alle segment-, citaat- en semantic-id’s, sprekers, aangesprokenen en conceptverwijzingen zijn behouden; alle veertien inhoudshashes zijn vernieuwd. Bronhashes, aantallen en conceptstatussen blijven ongewijzigd.
 
 De elf betrokken blokken zijn zonder versnummers als doorlopende tekst herlezen: 2:1–12, 13–17 en 23–25; 3:16–21, 22–30 en 31–36; 4:1–6, 16–26, 39–42 en 46–54; 5:19–30. Dit is een tekstuele voorleessimulatie, geen menselijke leesproef. Geen zin is langer dan 25 woorden; de maxima per hoofdstuk zijn nu 23, 22, 22 en 21 woorden. De conceptstatus verleent geen onafhankelijke exegetische of taalgoedkeuring.
+
+### J34 — Volledige eervergelijking en één zichtbare functiebenaming
+
+In 5:23 is de ellips opgeheven: de Zoon wordt geëerd zoals men de Vader eert. Daarmee kan de Vader grammaticaal niet als degene die de Zoon eert worden gelezen. Het doel van de overdracht van het oordeel blijft staan, evenals de ongewijzigde tweede zin over het niet eren van de Zoon en de Vader die Hem stuurde. Het gehele vergelijkingselement blijft één precies gekoppeld vader-zoon-anker.
+
+De blokkop bij 4:46–54 luidt De zoon van de ambtenaar leeft. In 4:47 en 4:49 wordt dezelfde persoon consequent ambtenaar genoemd, aansluitend op ambtenaar van de koning in 4:46. De zichtbare sprekernaam bij 4:49 wordt De ambtenaar van de koning. De bronfrases, het verklaringsbegrip hoveling en alle identiteitssleutels blijven behouden. De aangesproken persoon en de inhoud van zijn verzoek veranderen niet.
+
+Twee nieuwe gerichte regressietests en de aangescherpte bestaande doeltest zijn vóór de correcties rood gezien. De tests controleren de volledige eervergelijking, het begripanker, de blokkop, de leestekst van 4:46–49 en de zichtbare sprekernaam. Drie versteksten en hun inhoudshashes zijn gewijzigd; verder is alleen de blokkop en de ene zichtbare sprekernaam aangepast. Alle IDs, citaatgrenzen, conceptverwijzingen, bronhashes, tellingen en conceptstatussen blijven behouden.
+
+De blokken 4:46–54 en 5:19–30 zijn opnieuw zonder versnummers als doorlopende tekst gelezen. Dit is een tekstuele voorleessimulatie, geen menselijke leesproef. Geen zin overschrijdt 25 woorden; de maxima per hoofdstuk blijven 23, 22, 22 en 21. De onafhankelijke eindgoedkeuring blijft open.
