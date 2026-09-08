@@ -288,7 +288,7 @@ class OpvReaderTests(unittest.TestCase):
         page = self.new_page()
         try:
             page.goto(
-                f"{self.base_url}/index.html?editie=nl-opv#genesis/16",
+                f"{self.base_url}/index.html?editie=nl-opv#genesis/21",
                 wait_until="domcontentloaded",
             )
             unavailable = page.locator(".translation-unavailable")
@@ -303,12 +303,12 @@ class OpvReaderTests(unittest.TestCase):
         page = self.new_page()
         observed = self.observe_runtime(page)
         try:
-            page.goto(f"{self.base_url}/index.html#genesis/16", wait_until="domcontentloaded")
+            page.goto(f"{self.base_url}/index.html#genesis/21", wait_until="domcontentloaded")
             ov_row = page.locator('.verse-row[data-verse="1"]')
             ov_row.wait_for()
             self.assertEqual(ov_row.get_attribute("data-status"), "final")
             self.assertTrue(page.locator("#audio-play-big").is_visible())
-            self.assertIn("audio/genesis/16-m.mp3", page.locator("#audio-el").get_attribute("src"))
+            self.assertIn("audio/genesis/21-m.mp3", page.locator("#audio-el").get_attribute("src"))
 
             observed["requests"].clear()
             self.open_sources(page)
@@ -320,11 +320,11 @@ class OpvReaderTests(unittest.TestCase):
             self.assertFalse(page.locator("#audio-play-mobile").is_visible())
             self.assertIsNone(page.locator("#audio-el").get_attribute("src"))
             self.assertFalse(
-                any(url.endswith("/data/edities/opv/chapters/genesis/16.json") for url in observed["requests"])
+                any(url.endswith("/data/edities/opv/chapters/genesis/21.json") for url in observed["requests"])
             )
 
             restore = unavailable.locator("a")
-            self.assertIn("?editie=nl-ov#genesis/16", restore.get_attribute("href"))
+            self.assertIn("?editie=nl-ov#genesis/21", restore.get_attribute("href"))
             page.locator("#sidebar-right-toggle").click()
             page.locator("#sidebar-right").wait_for(state="hidden")
             page.wait_for_function("document.activeElement?.id === 'topnav-tekstopties'")
@@ -335,7 +335,7 @@ class OpvReaderTests(unittest.TestCase):
             restored.wait_for()
             self.assertEqual(restored.get_attribute("data-status"), "final")
             self.assertTrue(page.locator("#audio-play-big").is_visible())
-            self.assertIn("audio/genesis/16-m.mp3", page.locator("#audio-el").get_attribute("src"))
+            self.assertIn("audio/genesis/21-m.mp3", page.locator("#audio-el").get_attribute("src"))
             self.assertEqual(observed["pageerrors"], [])
             self.assertEqual(observed["http_errors"], [])
         finally:
@@ -464,7 +464,7 @@ class OpvReaderTests(unittest.TestCase):
                 url for url in observed["requests"] if "/data/edities/opv/chapters/" in url
             ]
             self.assertTrue(any(url.endswith("/genesis/2.json") for url in opv_requests))
-            self.assertFalse(any(url.endswith("/genesis/16.json") for url in opv_requests))
+            self.assertFalse(any(url.endswith("/genesis/21.json") for url in opv_requests))
             observed["requests"].clear()
             page.goto(
                 f"{self.base_url}/index.html?editie=nl-opv#johannes/1",
