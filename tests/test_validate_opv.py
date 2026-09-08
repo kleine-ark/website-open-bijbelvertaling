@@ -893,7 +893,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual("OPV geldig: 40 hoofdstukken, 1255 verzen.\n", result.stdout)
+        self.assertEqual("OPV geldig: 45 hoofdstukken, 1410 verzen.\n", result.stdout)
 
 
 class OpvGenesisPilotTests(unittest.TestCase):
@@ -904,9 +904,9 @@ class OpvGenesisPilotTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Genesis-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_genesis_has_exact_source_verse_lists_and_1041_verses(self) -> None:
+    def test_genesis_has_exact_source_verse_lists_and_1196_verses(self) -> None:
         total = 0
-        for number in range(1, 36):
+        for number in range(1, 41):
             with self.subTest(chapter=number):
                 chapter = self.chapter(number)
                 source = json.loads((self.root / f"data/genesis/{number}.json").read_text(encoding="utf-8"))
@@ -918,7 +918,7 @@ class OpvGenesisPilotTests(unittest.TestCase):
                 for verse in chapter["verzen"]:
                     self.assertEqual({"bestand": f"data/genesis/{number}.json",
                                       "vers": verse["nummer"], "tekstveld": "textSV1888"}, verse["bron"])
-        self.assertEqual(1041, total)
+        self.assertEqual(1196, total)
 
     def test_new_genesis_blocks_cover_the_approved_passages(self) -> None:
         expected = {
@@ -935,7 +935,7 @@ class OpvGenesisPilotTests(unittest.TestCase):
         registry = json.loads((self.root / "data/edities/manifest.json").read_text(encoding="utf-8"))
         edition = json.loads((self.root / "data/edities/opv/manifest.json").read_text(encoding="utf-8"))
         entry = next(e for e in registry["edities"] if e["code"] == "nl-opv")
-        expected = {"genesis": list(range(1, 36)), "johannes": [1, 2, 3, 4, 5]}
+        expected = {"genesis": list(range(1, 41)), "johannes": [1, 2, 3, 4, 5]}
         self.assertEqual(expected, entry["gepubliceerdeHoofdstukken"])
         self.assertEqual(expected, edition["gepubliceerdeHoofdstukken"])
         pending = [(book, n) for book, ns in entry["hoofdstukken"].items()
@@ -1122,7 +1122,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Johannes-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_johannes_has_source_verse_lists_214_verses_and_corpus_1255(self) -> None:
+    def test_johannes_has_source_verse_lists_214_verses_and_corpus_1410(self) -> None:
         total = 0
         for number in range(1, 6):
             with self.subTest(chapter=number):
@@ -1138,7 +1138,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertEqual(214, total)
         genesis_total = sum(len(json.loads(p.read_text(encoding="utf-8"))["verzen"])
                             for p in (self.root / "data/edities/opv/chapters/genesis").glob("*.json"))
-        self.assertEqual(1255, total + genesis_total)
+        self.assertEqual(1410, total + genesis_total)
 
     def test_johannes_blocks_match_all_approved_boundaries(self) -> None:
         expected = {
