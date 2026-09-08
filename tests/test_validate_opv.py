@@ -1392,6 +1392,15 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertEqual(["ambtenaar van de koning"],
                          OpvCalibrationCorpusTests._concept_texts(chapter["verzen"][45], "hoveling"))
 
+    def test_johannes_four_51_and_52_show_servants_of_the_official(self) -> None:
+        chapter = self.chapter(4)
+        for number in (51, 52):
+            with self.subTest(verse=number):
+                citation = chapter["verzen"][number - 1]["citaten"][0]
+                self.assertEqual("De dienaren van de ambtenaar", citation["spreker"]["naam"])
+                self.assertEqual("dienaren-hoveling", citation["spreker"]["id"])
+                self.assertEqual(f"spraak.dienarenhoveling.jhn4v{number}q1", citation["semanticId"])
+
 
 if __name__ == "__main__":
     unittest.main()
