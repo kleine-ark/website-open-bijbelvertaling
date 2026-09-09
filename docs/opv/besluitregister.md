@@ -481,3 +481,143 @@ Oude lengtematen, inhoudsmaten en gewichten worden in de leestekst afgerond omge
 Deze keuze volgt dezelfde aanpak als de omzetting van metreten naar liters in Johannes 2:6: de hoofdtekst moet direct begrijpelijk zijn, terwijl historische details niet verdwijnen. De technische validatie controleert de tekst-hashes en bronkoppelingen; de gekozen omrekenfactoren blijven bij een onafhankelijke inhoudelijke eindcontrole expliciet te beoordelen.
 
 In de beschrijving van tabernakel en priesterdienst gebruikt de leestekst steeds dezelfde gewone termen: `ontmoetingstent`, `borststuk`, `draagstokken` en `wasbekken`. Oudere of wisselende benamingen blijven alleen zichtbaar in de exacte bronfrases. De tijdsaanduiding `tussen de twee avonden` wordt in de leestekst `tegen de avond`; de letterlijke formulering blijft eveneens in de bronlaag bewaard.
+
+## Leviticus
+
+### L1 — Rituele taal zonder medische of morele bijbetekenis
+
+De leestekst behandelt `rein` en `onrein` consequent als rituele toestand, niet als automatisch bewijs van schuld of persoonlijke slechtheid. Bij huid, kleding en huizen wordt `melaatsheid` als bijbelse verzamelterm behouden waar de bron die gebruikt; de concrete waarneming wordt in gewone woorden beschreven. Een priester onderzoekt, isoleert en verklaart rein of onrein. De tekst maakt hem niet tot moderne arts en voegt geen diagnose toe die de bron niet geeft.
+
+Lichaamsfuncties worden helder en zakelijk benoemd: `abnormale afscheiding`, `zaadlozing`, `sperma`, `menstruatie` en `bloedverlies`. Seksuele verboden worden als `seksuele omgang` weergegeven. Oude verhullende formuleringen verdwijnen uit de leestekst, maar blijven exact controleerbaar in `bronfrase`.
+
+### L2 — Dieren, water en rituele handelingen
+
+Onzekere oude diernamen worden niet met schijnzekerheid gemoderniseerd. De directe bron, kanttekeningen en grondtekst bepalen per geval de meest aannemelijke gewone naam; in 11:5 wordt het dier `klipdas` genoemd. Opsommingen, kenmerken en het onderscheid tussen eetbaar, niet-eetbaar, rein en onrein blijven volledig behouden.
+
+`Levend water` wordt bij het reinigingsritueel als `vers bronwater` weergegeven. Daarmee blijft vers, natuurlijk water bedoeld en ontstaat niet het onmogelijke beeld van stromend water dat in een stilstaand vat zit. De levende vogel, het bloed, het aardewerken vat, cederhout, hysop, scharlaken wol en het zevenmaal besprenkelen blijven afzonderlijk genoemd.
+
+De tweede bok in Leviticus 16 heet in de leestekst de bok die wordt weggestuurd. De onzekere eigennaam of duiding `Azazel` wordt niet zonder toelichting als vaststaand ingevoerd. Belijden, overdragen van schuld, wegbrengen en loslaten in een onbewoond gebied blijven wel volledig zichtbaar.
+
+### L3 — Maten, jubeljaar en historische rechtsregels
+
+Oude maten worden volgens het bestaande OPV-beleid afgerond in liters, grammen of centimeters. `Ongeveer` voorkomt schijnprecisie. In Leviticus 27 geldt de heiligdomssikkel als circa 11 gram zilver; de hoofdtekst maakt duidelijk dat het om een gewaardeerde hoeveelheid zilver gaat, niet om een modern muntbedrag.
+
+De regels over sabbatsjaar en jubeljaar onderscheiden familiebezit, tijdelijk oogstrecht, terugkoop, vrijlating en de uitzonderingspositie van ommuurde steden en Levietensteden. Historische slavernij, erfelijk bezit, lijfstraffen, doodstraffen en verbondsstraffen worden niet verzacht of als hedendaags voorschrift gepresenteerd. De parafrase maakt de beschreven rechtsverhouding begrijpelijk zonder er een nieuwe morele beoordeling aan toe te voegen.
+
+### L4 — Sprekers en resterende review
+
+Wanneer God Mozes opdraagt woorden aan Aäron, priesters of Israëlieten door te geven, legt de citaatlaag zowel God als oorspronkelijke spreker als Mozes als bemiddelende spreker vast. Nieuwe goddelijke spreekformules beginnen een nieuwe laag; vertellerszinnen krijgen geen kunstmatig citaatrecord. Vragen en aangehaalde uitspraken binnen een goddelijk citaat worden afzonderlijk genest.
+
+Alle 27 hoofdstukken hebben conceptstatus. Segmenten reconstrueren de leestekst exact en blijven gekoppeld aan de precieze SV1888-bronfrase. De technische validatie bewijst geen onafhankelijke exegetische of menselijke eindgoedkeuring; die blijft voor het hele boek open.
+
+## Numeri
+
+### N1 — Tellingen, leeftijden en taken
+
+De volkstelling bewaart iedere stam, familietak, leider en tussen- en eindtelling. Getallen boven twintig staan als cijfers met Nederlandse duizendtallenpunten. De leestekst maakt steeds duidelijk of mannen, mannelijke nakomelingen, eerstgeborenen of Levieten worden geteld. Kinderen van één maand of ouder worden daarom niet als `mannen van één maand` aangeduid.
+
+De afzonderlijke familiesommen van de Levieten in Numeri 3 komen samen op 22.300, terwijl de bron vervolgens 22.000 Levieten als inzetbare vergelijkingstelling noemt. Dit verschil wordt niet stilzwijgend gladgestreken. Ook de 273 mannelijke eerstgeborenen boven het aantal Levieten en hun losgeld van 1.365 sikkels blijven exact staan.
+
+De dienstleeftijd van dertig tot en met vijftig jaar wordt bij iedere betrokken Levietenfamilie volledig genoemd. Draaglasten, afdekkingen, heilige voorwerpen en verantwoordelijkheden blijven per familie onderscheiden. `Ontmoetingstent` is de vaste gewone benaming; de precieze oude formulering blijft in de bronlaag staan.
+
+### N2 — Reinheid, vergoeding en de jaloezieprocedure
+
+Rituele onreinheid wordt niet als een moderne medische diagnose of automatisch moreel oordeel gepresenteerd. Bij benadeling blijven belijdenis, volledige vergoeding, de toevoeging van een vijfde en de positie van een ontbrekende naaste verwant afzonderlijk zichtbaar.
+
+Numeri 5 beschrijft een historische procedure bij verdenking van ontrouw. De leestekst maakt zowel werkelijke schuld als mogelijke onschuld expliciet en voegt geen medische verklaring of hedendaagse toepassing toe. Priester, vrouw, echtgenoot, water, stof, geschreven vloek, eed, offer en mogelijke lichamelijke gevolgen blijven volledig in de beschreven volgorde staan. Een tiende efa gerstemeel is in de leestekst afgerond tot ongeveer twee liter; de broneenheid blijft controleerbaar.
+
+### N3 — Nazireeërschap en priesterlijke zegen
+
+De nazireeërsgelofte kan door een man of vrouw worden afgelegd. Wijn, sterke drank, azijn, druivensap, verse en gedroogde druiven, pitten en schillen blijven afzonderlijk genoemd. Ook ongeschoren haar, contact met een dode, onverwachte verontreiniging, opnieuw beginnen en alle voorgeschreven offers blijven behouden.
+
+De driedelige zegen in Numeri 6 bewaart zegen en bescherming, het stralende aangezicht en genade, en het toegewende aangezicht en vrede. God is de oorspronkelijke spreker, Mozes de bemiddelaar en Aäron met zijn zonen spreekt de zegen tot Israël uit. De citaatlagen houden die rollen uit elkaar.
+
+## Johannes 6–21
+
+### J35 — Brood, water, licht en herderschap
+
+Johannes 6 bewaart het onderscheid tussen het teken, de zoektocht van de menigte, tijdelijk voedsel, brood uit de hemel en Jezus als brood van het leven. De 200 penningen worden niet naar een modern geldbedrag omgerekend: een penning was ongeveer een dagloon en een hedendaags bedrag zou schijnprecisie geven. De afstand van 25 of 30 stadiën is in de leestekst afgerond tot ongeveer vijf kilometer; de oude maat blijft in de uitleg- en bronlaag staan.
+
+In Johannes 7 blijft Jezus’ uitspraak over stromen van levend water onderscheiden van de daaropvolgende uitleg van de verteller over de Geest. De reacties van menigte, dienaren, Farizeeën en Nicodemus worden niet tot één stem samengevoegd. Johannes 9 legt de blindheid vanaf de geboorte niet als persoonlijke schuld van de man of zijn ouders uit. Het verhoor van de man, zijn ouders en de Farizeeën behoudt iedere eigen spreker.
+
+Johannes 10 gebruikt consequent één kudde met één herder, niet één schaapskooi. De deur, herder, huurling, dief, wolf, schapen en kudde blijven herkenbare beelden. In het citaat `jullie zijn goden` is Jezus de citerende spreker en God de oorspronkelijke spreker van de aangehaalde Schriftzin.
+
+### J36 — Tekstoverlevering en tweede uitleglaag
+
+Johannes 7:53–8:11 blijft overeenkomstig de Statenvertaling en de Textus Receptus in de hoofdtekst. Een centrale uitleg vermeldt dat de passage in de vroegste bewaard gebleven Griekse handschriften ontbreekt en in latere overlevering op verschillende plaatsen voorkomt. De noot verandert de leestekst niet en is aan elk betrokken vers gekoppeld.
+
+De vijftien stadiën tussen Bethanië en Jeruzalem in Johannes 11:18 worden ongeveer drie kilometer. Het Romeinse pond zalf in 12:3 wordt ongeveer 330 gram; de honderd Romeinse ponden specerijen in 19:39 worden ongeveer 33 kilo. De 200 el in 21:8 worden ongeveer negentig meter. Alle moderne waarden zijn bewust afgerond en ieder anker wijst terug naar de exacte oude bronfrase.
+
+Het zesde uur in Johannes 19:14 blijft als antieke tijdsaanduiding staan. Bij een telling vanaf zonsopgang ligt dit rond het middaguur, maar de precieze aansluiting op onze klok en de evangeliechronologie zijn niet zeker. De uitleglaag maakt dit zichtbaar zonder een omstreden exact tijdstip in de hoofdtekst vast te leggen.
+
+### J37 — Vader, Zoon en Geest in de afscheidswoorden
+
+Johannes 14–16 bewaart Vader, Zoon, Trooster en Geest van de waarheid als onderscheiden verwijzingen. `Een andere Trooster`, leren, herinneren, getuigen, leiden en overtuigen worden niet tot één algemene werking samengevat. Jezus’ uitspraken over weg, waarheid en leven; vrede; de wijnstok en ranken; liefde; geboden; vrienden en dienaren blijven elk in hun eigen beeld en verband staan.
+
+In Johannes 16 blijft het verschil zichtbaar tussen een vraag aan Jezus stellen en de Vader iets in Jezus’ naam vragen. Verdriet dat in vreugde zal veranderen blijft toekomstig. De leerlingen zeggen niet dat niemand ooit iets aan Jezus mag vragen, maar dat Hij geen voorafgaande vraag nodig heeft om te weten wat zij bedoelen.
+
+Johannes 17 is vanaf `Vader` in vers 1 tot het slot van vers 26 één doorlopend gebed van Jezus. De vertellersin vóór die aanspreking valt buiten het citaat. Heerlijkheid vóór het bestaan van de wereld, bewaring, heiliging in de waarheid, zending, eenheid, liefde en het bekendmaken van Gods naam blijven zonder aanvullende leerstellige uitwerking staan.
+
+### J38 — Verhoor, kruisiging en opstanding
+
+In Johannes 18–19 heeft iedere vraag en ieder antwoord van Jezus, Petrus, dienaren, hogepriester, Pilatus, Joodse leiders, overpriesters en soldaten een eigen citaatbereik. `Ik ben het` wordt niet uitgebreid tot een extra identiteitsverklaring. Annas, Kajafas en Pilatus houden hun eigen rol. Er worden geen niet-genoemde aantallen geselslagen of andere harmonisaties met de overige evangeliën toegevoegd.
+
+De Schriftcitaten bij de kleding, het ongebroken been en de doorstoken persoon behouden hun oorspronkelijke spreker naast de vertellende of citerende laag. Gabbatha en Golgotha worden als Aramese namen weergegeven volgens de verklarende laag bij de Statenvertaling; de letterlijke aanduiding `Hebreeuws` blijft in de bronlaag controleerbaar.
+
+Johannes 20 onderscheidt Maria, twee engelen, Jezus, de leerlingen en Thomas. `Houd Mij niet vast` blijft zonder toegevoegde verklaring staan. Thomas spreekt Jezus rechtstreeks aan als `Mijn Heere en mijn God`. De doelzin van het evangelie bewaart zowel geloven dat Jezus de Christus en Gods Zoon is als leven hebben in Zijn naam.
+
+In Johannes 21 blijven 153 vissen, het ongescheurde net, drie vragen aan Petrus, lammeren en schapen, voeren en hoeden, Petrus’ toekomstige dood en het misverstand over de geliefde leerling afzonderlijk zichtbaar. `Meer dan dezen` wordt gelezen als meer liefhebben dan de andere leerlingen Hem liefhebben; deze interpretatie is expliciet geformuleerd en blijft bij de inhoudelijke eindcontrole herkenbaar als keuze. De slothyperbool over de wereld en de boeken wordt niet afgezwakt tot een letterlijk aantal.
+
+### J39 — Onafhankelijke hercontrole van heel Johannes
+
+Een afzonderlijke tweede lezing van alle 21 hoofdstukken heeft brongetrouwheid, gewone taal, hoofdletterbeleid, getallen, citaatlagen en begripankers opnieuw gecontroleerd. In 3:8 is een toegevoegde uitleg over de werking van de Geest verwijderd. In 7:20 en 10:20 staat de demon weer expliciet; 8:9 maakt de `laatsten` niet langer tot de jongsten; 18:15 bewaart dat de leerling bij de hogepriester bekend was. Enkele stroeve of te sterke formuleringen in 4:18, 6:4, 8:50, 16:21, 17:2, 18:38 en 19:30 zijn tegen de bron aangescherpt.
+
+Getallen boven twintig staan nu ook in 2:6 en 6:10 als cijfers. Eerste-persoonsvormen en wederkerende voornaamwoorden krijgen midden in een zin geen eerbiedshoofdletter. De wetsaanhaling in 8:17 heeft Jezus als citerende spreker en Mozes als oorspronkelijke tekstuele spreker; het Psalmcitaat in 12:13 omvat ook `Hosanna`.
+
+Het begrip `Het Woord` wordt uitsluitend gebruikt voor de Logos in 1:1 en 1:14. Begrippen met een specifiek eigen bronverband — de weg van de Heere, in God gedane werken, de naam van de HEERE aanroepen, offer en oordeel — worden niet meer hergebruikt voor alleen oppervlakkig gelijkende woorden. In 13:1, 17:24 en 18:28 zijn brede hele-versankers opgesplitst tot de precieze frase waarop ieder begrip werkelijk betrekking heeft.
+
+## Mattheüs 1–8
+
+### M1 — Afkomst, geboorte en vervulling
+
+Het geslachtsregister bewaart alle namen, relaties en drie reeksen van veertien generaties, maar vervangt het herhaalde `gewon` door gewone ouder-kindzinnen. De tekst maakt Maria, Jozef en Jezus grammaticaal ondubbelzinnig zonder een niet-genoemd tijdstip of aantal wijzen toe te voegen. In 1:18 betekent `samengekomen` dat Maria en Jozef nog niet als echtpaar samenleefden; de parafrase beperkt dit niet tot alleen een verhuizing.
+
+Schriftcitaten bewaren zowel de citerende of bemiddelende profeet als God waar de brontekst Hem als oorspronkelijke spreker presenteert. Jesaja, Micha, Hosea en Jeremia blijven onderscheiden. De ongespecificeerde profeten in 2:23 worden niet tot één verzonnen bron teruggebracht.
+
+### M2 — Koninkrijk en Bergrede
+
+`Bekeert u` wordt in 3:2 en 4:17 `Keer terug naar God`; het naderende koninkrijk blijft nabij en wordt niet tot een datum gemaakt. Johannes’ doop met water is een teken van bekering; Jezus’ doop, de Geest en de stem uit de hemel blijven afzonderlijk beschreven. De verzoekingen bewaren de duivel als spreker, Jezus als citerende spreker en Mozes of de psalmdichter als de oorspronkelijke tekstuele stem.
+
+In Mattheüs 5–7 vormt Jezus’ onderwijs een doorlopende citaatlaag. Aangehaalde geboden, de woorden die mensen op de oordeelsdag zullen zeggen en andere spraak binnen de rede krijgen een geneste laag. Het Onze Vader volgt de Statenvertaling inclusief de slotlofprijzing. Goddelijke passieven in de zaligsprekingen blijven passief waar het expliciet noemen van een handelende persoon meer zou zeggen dan de bron.
+
+De Romeinse mijl in 5:41 wordt afgerond tot ongeveer 1,5 kilometer en twee mijl tot drie kilometer. De el in 6:27 wordt ongeveer 45 centimeter. De oude maten blijven exact in de bronlaag en via het gekoppelde begrip controleerbaar.
+
+### M3 — Genezingen, gezag en sprekers
+
+Mattheüs 8 houdt de melaatse man, de hoofdman, zijn knecht, Petrus’ schoonmoeder, de leerlingen, de twee bezeten mannen en de inwoners van het gebied uit elkaar. Ziekte, demonische bezetenheid, natuurgeweld en rituele reiniging worden niet tot één oorzaak samengevoegd. `Aanbad` bij de melaatse man wordt als eerbiedig neerknielen weergegeven zonder vooraf een volledige uitleg van zijn bedoeling vast te leggen.
+
+De opdracht aan de genezen man, het gesprek met de hoofdman, Jesaja’s aanhaling en de woorden van de demonen hebben afzonderlijke citaatbereiken. De tekst noemt een hoofdman over 100 soldaten overeenkomstig de bron en behoudt de twee bezeten mannen en de variantnaam Gergesenen.
+
+### M4 — Roeping, conflict en gewone geloofstaal
+
+Mattheüs 9–12 noemt mensen bij wat er werkelijk wordt beschreven. Iemand die niet kon spreken heet daarom niet zonder meer `stom`; ziekte, verlamming, blindheid en demonische bezetenheid blijven afzonderlijke situaties. `Het goede nieuws van het koninkrijk` is de vaste gewone formulering voor de verkondiging. De sabbatsgesprekken bewaren zowel Jezus’ redenering als de aangehaalde Schriftwoorden, zonder de voorbeelden tot algemene medische of juridische regels uit te breiden.
+
+Rechtstreekse uitspraken van Jezus krijgen eerste-persoonsvormen in gewone Nederlandse spelling: `ik`, `mij` en `mijn`, behalve wanneer het woord grammaticaal aan het begin van een zin staat. Alleen de eerbiedsvoornaamwoorden `Hij`, `Hem`, `Zijn`, `U` en `Uw` krijgen een hoofdletter; gewone zelfstandige naamwoorden zoals `naam` en `koninkrijk` niet. Aangehaalde woorden van Hosea, Jesaja, Maleachi en God houden afzonderlijke, overlappende sprekerlagen.
+
+### M5 — Gelijkenissen, maten en vertellerperspectief
+
+Mattheüs 13–14 houdt de verteller, Jezus, figuren binnen gelijkenissen, profeten en God als oorspronkelijke spreker uit elkaar. In de aanhaling uit Jesaja 6 staan Jezus, Jesaja en God daarom als afzonderlijke lagen. De gelijkenissen blijven beelden: zaaier, grondsoorten, onkruid, mosterdzaad, zuurdesem, schat, parel en visnet worden niet in de hoofdtekst van een aanvullende uitleg voorzien.
+
+Drie maten meel worden voor de leestekst afgerond tot ongeveer 40 liter. De vierde nachtwake wordt `het laatste deel van de nacht`, omdat een exact modern kloktijdstip meer zekerheid zou suggereren dan de bron geeft. Bij Herodes verwijzen gewone voornaamwoorden zonder eerbiedshoofdletter naar Johannes of Herodes; eerbiedshoofdletters blijven voor verwijzingen naar God en Jezus gereserveerd. Alle 14 hoofdstukken hebben conceptstatus: de technische bron-, segment-, citaat- en hashcontrole is afgerond, maar onafhankelijke menselijke eindgoedkeuring blijft open.
+
+### M6 — Belijdenis, navolging en onderlinge zorg
+
+Mattheüs 15–20 bewaart de voortgang van ieder gesprek: Jezus, leerlingen, menigten, religieuze leiders, zieken, ouders, kinderen en figuren binnen gelijkenissen krijgen hun eigen stem. Aangehaalde Schriftwoorden hebben naast Jezus als citerende spreker ook Mozes, Jesaja of God als oorspronkelijke spreker waar de bron dat draagt. `Broer` is de gewone leesvorm voor de onderlinge aanspreking; historische groepsnamen en ambten blijven herkenbaar.
+
+Oude geldbedragen worden niet met schijnprecisie naar euro's omgerekend. De 10.000 talenten in de gelijkenis van de onbarmhartige dienaar worden daarom als een onbetaalbare schuld uitgelegd, terwijl het exacte brontal in de bronlaag blijft staan. De arbeiders in de wijngaard ontvangen de afgesproken penning zonder dat een moderne dagvergoeding wordt verzonnen. Beeldspraak over een molensteen, een kameel en een naald, lichaamsdelen en het drinken van een beker blijft beeldspraak.
+
+### M7 — Jeruzalem, lijden, opstanding en semantische begrippen
+
+Mattheüs 21–28 houdt de intocht, tempelgesprekken, gelijkenissen, rede over de toekomst, laatste maaltijd, Gethsemané, verhoren, kruisiging, begrafenis en opstanding van elkaar onderscheiden. De Jeremia-toeschrijving in 27:9 en `het hele land` in 27:45 volgen Mattheüs en de Statenvertaling; zij worden niet met andere Bijbelpassages geharmoniseerd. Tijdsaanduidingen rond de kruisiging worden voor de leesbaarheid afgerond naar twaalf en drie uur, met behoud van de oude formulering in de bronlaag.
+
+Geneste uitspraken — waaronder woorden van profeten, God, Jezus, gelijkenisfiguren, valse getuigen en mensen die Jezus' eerdere woorden navertellen — krijgen afzonderlijke citaatlagen. Begrippen worden alleen gekoppeld wanneer de betekenis werkelijk overeenkomt. Johannes-specifieke begrippen zoals `Het Woord`, `Het Licht`, `De profeet` en `Koning van Israël` worden daarom niet op basis van een losse woordovereenkomst aan Mattheüs gekoppeld. Alle 28 hoofdstukken hebben conceptstatus: de technische bron-, segment-, citaat- en hashcontrole is afgerond, maar onafhankelijke menselijke eindgoedkeuring blijft open.

@@ -920,7 +920,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual("OPV geldig: 105 hoofdstukken, 3212 verzen.\n", result.stdout)
+        self.assertEqual("OPV geldig: 172 hoofdstukken, 5802 verzen.\n", result.stdout)
 
 
 class OpvGenesisPilotTests(unittest.TestCase):
@@ -965,8 +965,10 @@ class OpvGenesisPilotTests(unittest.TestCase):
         expected = {
             "genesis": list(range(1, 51)),
             "exodus": list(range(1, 41)),
-            "leviticus": list(range(1, 11)),
-            "johannes": [1, 2, 3, 4, 5],
+            "leviticus": list(range(1, 28)),
+            "numeri": list(range(1, 7)),
+            "mattheus": list(range(1, 29)),
+            "johannes": list(range(1, 22)),
         }
         self.assertEqual(expected, entry["gepubliceerdeHoofdstukken"])
         self.assertEqual(expected, edition["gepubliceerdeHoofdstukken"])
@@ -1240,9 +1242,9 @@ class OpvLeviticusProductionTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Leviticus-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_leviticus_has_exact_source_verse_lists_and_252_verses(self) -> None:
+    def test_leviticus_has_exact_source_verse_lists_and_859_verses(self) -> None:
         total = 0
-        for number in range(1, 11):
+        for number in range(1, 28):
             with self.subTest(chapter=number):
                 chapter = self.chapter(number)
                 source = json.loads(
@@ -1264,12 +1266,12 @@ class OpvLeviticusProductionTests(unittest.TestCase):
                         },
                         verse["bron"],
                     )
-        self.assertEqual(252, total)
+        self.assertEqual(859, total)
 
     def test_offer_terminology_is_readable_and_consistent(self) -> None:
         text = " ".join(
             verse["tekst"]
-            for number in range(1, 11)
+            for number in range(1, 28)
             for verse in self.chapter(number)["verzen"]
         )
         self.assertNotRegex(text, r"\b(?:spijsoffer|meelbloem|schenkelen|smeer|weekdarmen|wijfje|var)\b")
@@ -1283,6 +1285,167 @@ class OpvLeviticusProductionTests(unittest.TestCase):
         self.assertIn("een eenjarig lam", text)
         self.assertIn("Beide dieren moeten zonder gebrek zijn", text)
 
+    def test_leviticus_preserves_key_source_nuances_in_readable_dutch(self) -> None:
+        expected_phrases = {
+            (14, 5): ("aardewerken vat met vers bronwater",),
+            (19, 16): ("Breng je naaste niet om", "door valse getuigenis"),
+            (20, 7): ("Wijd jullie aan mij toe",),
+            (22, 3): ("Wie er toch van eet terwijl hij onrein is",),
+            (23, 5): ("tegen de avond",),
+            (25, 10): ("naar zijn familie en krijgt zijn familiebezit terug",),
+            (26, 45): ("om hun God te zijn",),
+            (27, 13): ("vastgestelde waarde plus twintig procent",),
+        }
+        for (chapter_number, verse_number), phrases in expected_phrases.items():
+            with self.subTest(chapter=chapter_number, verse=verse_number):
+                text = self.chapter(chapter_number)["verzen"][verse_number - 1]["tekst"]
+                for phrase in phrases:
+                    self.assertIn(phrase, text)
+
+    def test_leviticus_ten_uses_lowercase_first_person_inside_gods_quote(self) -> None:
+        text = self.chapter(10)["verzen"][2]["tekst"]
+        self.assertIn("tot mij naderen, zal ik", text)
+        self.assertIn("hoe heerlijk ik ben", text)
+        self.assertNotRegex(text, r"\b(?:Mij|Mijn)\b")
+
+
+class OpvNumeriProductionTests(unittest.TestCase):
+    root = Path(__file__).resolve().parents[1]
+
+    def chapter(self, number: int) -> dict:
+        path = self.root / f"data/edities/opv/chapters/numeri/{number}.json"
+        self.assertTrue(path.is_file(), f"Numeri-hoofdstuk {number} ontbreekt")
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_numeri_one_to_six_have_exact_source_verse_lists_and_246_verses(self) -> None:
+        total = 0
+        for number in range(1, 7):
+            with self.subTest(chapter=number):
+                chapter = self.chapter(number)
+                source = json.loads(
+                    (self.root / f"data/numeri/{number}.json").read_text(encoding="utf-8")
+                )
+                self.assertEqual(
+                    [verse["number"] for verse in source["verses"]],
+                    [verse["nummer"] for verse in chapter["verzen"]],
+                )
+                total += len(chapter["verzen"])
+                self.assertEqual(("numeri", number), (chapter["boek"], chapter["hoofdstuk"]))
+                self.assertTrue(chapter["blokken"])
+                for verse in chapter["verzen"]:
+                    self.assertEqual(
+                        {
+                            "bestand": f"data/numeri/{number}.json",
+                            "vers": verse["nummer"],
+                            "tekstveld": "textSV1888",
+                        },
+                        verse["bron"],
+                    )
+        self.assertEqual(246, total)
+
+    def test_numeri_preserves_the_key_census_totals_and_age_ranges(self) -> None:
+        chapter_one = self.chapter(1)["verzen"]
+        self.assertIn("603.550", chapter_one[45]["tekst"])
+        chapter_three = self.chapter(3)["verzen"]
+        for number in (15, 22, 28, 34, 39):
+            with self.subTest(chapter=3, verse=number):
+                self.assertIn("1 maand of ouder", chapter_three[number - 1]["tekst"])
+                self.assertNotIn("mannen van 1 maand", chapter_three[number - 1]["tekst"])
+        for number in (40, 41, 43, 45, 46, 48):
+            with self.subTest(chapter=3, verse=number):
+                self.assertIn("eerstgeboren", chapter_three[number - 1]["tekst"])
+                self.assertNotIn("eerstgeboren jongens", chapter_three[number - 1]["tekst"])
+        self.assertIn("22.000", chapter_three[38]["tekst"])
+        self.assertIn("22.273", chapter_three[42]["tekst"])
+        self.assertIn("1.365", chapter_three[49]["tekst"])
+        self.assertIn("8.580", self.chapter(4)["verzen"][47]["tekst"])
+
+
+class OpvMattheusProductionTests(unittest.TestCase):
+    root = Path(__file__).resolve().parents[1]
+
+    def chapter(self, number: int) -> dict:
+        path = self.root / f"data/edities/opv/chapters/mattheus/{number}.json"
+        self.assertTrue(path.is_file(), f"Mattheüs-hoofdstuk {number} ontbreekt")
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_mattheus_one_to_twenty_eight_have_exact_source_verse_lists_and_1071_verses(self) -> None:
+        total = 0
+        for number in range(1, 29):
+            with self.subTest(chapter=number):
+                chapter = self.chapter(number)
+                source = json.loads(
+                    (self.root / f"data/mattheus/{number}.json").read_text(encoding="utf-8")
+                )
+                self.assertEqual(
+                    [verse["number"] for verse in source["verses"]],
+                    [verse["nummer"] for verse in chapter["verzen"]],
+                )
+                total += len(chapter["verzen"])
+                self.assertEqual(("mattheus", number), (chapter["boek"], chapter["hoofdstuk"]))
+                self.assertTrue(chapter["blokken"])
+                for verse in chapter["verzen"]:
+                    self.assertEqual(
+                        {
+                            "bestand": f"data/mattheus/{number}.json",
+                            "vers": verse["nummer"],
+                            "tekstveld": "textSV1888",
+                        },
+                        verse["bron"],
+                    )
+        self.assertEqual(1071, total)
+
+    def test_mattheus_preserves_key_names_numbers_and_nested_scripture_speakers(self) -> None:
+        chapter_one = self.chapter(1)["verzen"]
+        self.assertIn("veertien generaties", chapter_one[16]["tekst"])
+        self.assertIn("Heilige Geest", chapter_one[17]["tekst"])
+        self.assertIn("Immanuël", chapter_one[22]["tekst"])
+        self.assertEqual(
+            {"jesaja", "god"},
+            {citation["spreker"]["id"] for citation in chapter_one[22]["citaten"]},
+        )
+        chapter_two = self.chapter(2)["verzen"]
+        self.assertIn("twee jaar en jonger", chapter_two[15]["tekst"])
+        self.assertEqual(
+            {"hosea", "god"},
+            {citation["spreker"]["id"] for citation in chapter_two[14]["citaten"]},
+        )
+        self.assertIn("Dit is mijn geliefde Zoon", self.chapter(3)["verzen"][16]["tekst"])
+        self.assertNotIn("Volg Mij", self.chapter(4)["verzen"][18]["tekst"])
+        self.assertIn("Volg mij", self.chapter(4)["verzen"][18]["tekst"])
+        self.assertIn("40 dagen en 40 nachten", self.chapter(4)["verzen"][1]["tekst"])
+        self.assertNotIn("Zich", self.chapter(8)["verzen"][16]["tekst"])
+
+    def test_mattheus_does_not_reuse_johannes_specific_concepts_by_word_match(self) -> None:
+        johannes_specific = {
+            "aanroepen-heere",
+            "de-profeet",
+            "groter-kleiner",
+            "koning-van-israel",
+            "leven",
+            "licht",
+            "reiniging",
+            "woord",
+        }
+        for chapter_number in range(1, 29):
+            chapter_path = (
+                self.root
+                / f"data/edities/opv/chapters/mattheus/{chapter_number}.json"
+            )
+            if not chapter_path.is_file():
+                continue
+            chapter = json.loads(chapter_path.read_text(encoding="utf-8"))
+            for verse in chapter["verzen"]:
+                with self.subTest(chapter=chapter_number, verse=verse["nummer"]):
+                    used = {
+                        concept["conceptId"]
+                        for concept in verse.get("begrippen", [])
+                    }
+                    self.assertFalse(
+                        used & johannes_specific,
+                        "Een woordovereenkomst is geen semantische conceptkoppeling",
+                    )
+
 
 class OpvJohannesPilotTests(unittest.TestCase):
     root = Path(__file__).resolve().parents[1]
@@ -1292,9 +1455,9 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Johannes-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_johannes_has_source_verse_lists_214_verses_and_corpus_3212(self) -> None:
+    def test_johannes_one_to_twenty_one_have_880_verses_and_corpus_has_5802(self) -> None:
         total = 0
-        for number in range(1, 6):
+        for number in range(1, 22):
             with self.subTest(chapter=number):
                 chapter = self.chapter(number)
                 source = json.loads((self.root / f"data/johannes/{number}.json").read_text(encoding="utf-8"))
@@ -1305,7 +1468,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
                 for verse in chapter["verzen"]:
                     self.assertEqual({"bestand": f"data/johannes/{number}.json",
                                       "vers": verse["nummer"], "tekstveld": "textSV1888"}, verse["bron"])
-        self.assertEqual(214, total)
+        self.assertEqual(880, total)
         genesis_total = sum(len(json.loads(p.read_text(encoding="utf-8"))["verzen"])
                             for p in (self.root / "data/edities/opv/chapters/genesis").glob("*.json"))
         exodus_total = sum(
@@ -1320,9 +1483,26 @@ class OpvJohannesPilotTests(unittest.TestCase):
                 (self.root / f"data/edities/opv/chapters/leviticus/{number}.json")
                 .read_text(encoding="utf-8")
             )["verzen"])
-            for number in range(1, 11)
+            for number in range(1, 28)
         )
-        self.assertEqual(3212, total + genesis_total + exodus_total + leviticus_total)
+        numeri_total = sum(
+            len(json.loads(
+                (self.root / f"data/edities/opv/chapters/numeri/{number}.json")
+                .read_text(encoding="utf-8")
+            )["verzen"])
+            for number in range(1, 7)
+        )
+        mattheus_total = sum(
+            len(json.loads(
+                (self.root / f"data/edities/opv/chapters/mattheus/{number}.json")
+                .read_text(encoding="utf-8")
+            )["verzen"])
+            for number in range(1, 29)
+        )
+        self.assertEqual(
+            5802,
+            total + genesis_total + exodus_total + leviticus_total + numeri_total + mattheus_total,
+        )
 
     def test_johannes_blocks_match_all_approved_boundaries(self) -> None:
         expected = {
@@ -1338,7 +1518,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
     def test_new_johannes_annotations_are_precise_owned_and_unique(self) -> None:
         all_ids = set()
         citation_ids = set()
-        for number in range(2, 6):
+        for number in range(2, 22):
             for verse in self.chapter(number)["verzen"]:
                 ids = [s["id"] for s in verse["segmenten"]]
                 self.assertEqual([f"JHN.{number}.{verse['nummer']}.s{i}" for i in range(1, len(ids) + 1)], ids)
@@ -1363,6 +1543,106 @@ class OpvJohannesPilotTests(unittest.TestCase):
                 self.assertEqual("concept", verse["review"]["status"])
                 self.assertEqual([], verse["review"]["controles"])
         self.assertEqual([], validate_corpus(self.root))
+
+    def test_full_johannes_independent_qa_findings_remain_fixed(self) -> None:
+        expected_text = {
+            (3, 8): (
+                "De wind waait waarheen hij wil. Je hoort zijn geluid, maar weet niet waar hij "
+                "vandaan komt of naartoe gaat. Zo is het ook met iedereen die uit de Geest geboren is."
+            ),
+            (4, 18): (
+                "Je hebt namelijk vijf mannen gehad. De man met wie je nu samenleeft, is niet je man. "
+                "Wat je zei, is waar."
+            ),
+            (6, 4): "Het Pascha, het feest van de Joden, kwam eraan.",
+            (7, 20): "De menigte antwoordde: U bent door een demon bezeten! Wie probeert U te doden?",
+            (8, 9): (
+                "Toen ze dit hoorden, klaagde hun geweten hen aan. Ze gingen één voor één weg, "
+                "te beginnen bij de oudsten. Zo bleef Jezus achter met de vrouw, die nog in het midden stond."
+            ),
+            (8, 50): "Ik zoek niet mijn eigen eer. God zoekt mijn eer en Hij oordeelt.",
+            (10, 20): (
+                "Veel van hen zeiden: Hij is door een demon bezeten en krankzinnig! "
+                "Waarom luisteren jullie naar Hem?"
+            ),
+            (16, 21): (
+                "Wanneer een vrouw gaat bevallen, heeft ze pijn omdat haar tijd gekomen is. "
+                "Na de geboorte denkt ze niet meer aan haar pijn, uit blijdschap dat er een mens ter wereld is gekomen."
+            ),
+            (17, 2): (
+                "U hebt Hem gezag gegeven over alle mensen, zodat Hij eeuwig leven geeft aan "
+                "iedereen die U aan Hem hebt gegeven."
+            ),
+            (18, 15): (
+                "Simon Petrus volgde Jezus, samen met een andere leerling. Die leerling was bekend "
+                "bij de hogepriester en ging met Jezus de binnenplaats van de hogepriester op."
+            ),
+            (18, 38): (
+                "Pilatus vroeg Hem: Wat is waarheid? Daarna ging hij weer naar buiten en zei tegen "
+                "de Joden: Ik vind niets waaraan Hij schuldig is."
+            ),
+            (19, 30): (
+                "Nadat Jezus van de zure wijn had genomen, zei Hij: Het is volbracht! "
+                "Toen boog Hij Zijn hoofd en gaf Hij Zijn geest over."
+            ),
+        }
+        for (chapter, number), expected in expected_text.items():
+            with self.subTest(chapter=chapter, verse=number):
+                self.assertEqual(expected, self.chapter(chapter)["verzen"][number - 1]["tekst"])
+
+        self.assertIn("ongeveer 80 tot 120 liter", self.chapter(2)["verzen"][5]["tekst"])
+        self.assertIn("ongeveer 5.000", self.chapter(6)["verzen"][9]["tekst"])
+        self.assertIn("5.000", self.chapter(6)["blokken"][0]["kop"])
+        self.assertNotIn("Mij", self.chapter(20)["verzen"][16]["tekst"])
+        self.assertNotIn("Mij", self.chapter(20)["verzen"][28]["tekst"])
+        self.assertNotIn("Zich", self.chapter(21)["verzen"][0]["tekst"])
+        self.assertNotIn("Zich", self.chapter(21)["verzen"][13]["tekst"])
+
+        law_speakers = {
+            citation["spreker"]["id"] for citation in self.chapter(8)["verzen"][16]["citaten"]
+        }
+        self.assertEqual({"jezus", "mozes"}, law_speakers)
+        psalm = next(
+            citation
+            for citation in self.chapter(12)["verzen"][12]["citaten"]
+            if citation["spreker"]["id"] == "psalmist"
+        )
+        self.assertEqual(("JHN.12.13.s2", "JHN.12.13.s3"),
+                         (psalm["startSegment"], psalm["endSegment"]))
+
+        word_refs = {
+            (chapter, verse["nummer"])
+            for chapter in range(1, 22)
+            for verse in self.chapter(chapter)["verzen"]
+            if any(concept["conceptId"] == "woord" for concept in verse["begrippen"])
+        }
+        self.assertEqual({(1, 1), (1, 14)}, word_refs)
+        forbidden = {
+            "weg-van-de-heere": ((14, 4), (14, 5), (14, 6)),
+            "werken-in-god": ((14, 10), (14, 11), (14, 12), (15, 2), (15, 5), (15, 8), (15, 24)),
+            "aanroepen-heere": ((14, 13), (14, 14), (15, 7), (15, 16)),
+            "offer": ((15, 13),),
+            "oordeel": ((14, 30),),
+        }
+        for concept_id, references in forbidden.items():
+            for chapter, number in references:
+                with self.subTest(concept=concept_id, chapter=chapter, verse=number):
+                    ids = {c["conceptId"] for c in self.chapter(chapter)["verzen"][number - 1]["begrippen"]}
+                    self.assertNotIn(concept_id, ids)
+
+        scoped = {
+            (13, 1, "pascha"): ["pascha"],
+            (13, 1, "uur-jezus"): ["Zijn tijd gekomen was"],
+            (13, 1, "vader-zoon"): ["naar de Vader te gaan"],
+            (17, 24, "heerlijkheid"): ["mijn heerlijkheid"],
+            (17, 24, "liefde-god"): ["U hebt mij namelijk liefgehad"],
+            (18, 28, "reiniging"): ["niet onrein worden"],
+            (18, 28, "pascha"): ["pascha"],
+        }
+        for (chapter, number, concept_id), expected in scoped.items():
+            with self.subTest(concept=concept_id, chapter=chapter, verse=number):
+                verse = self.chapter(chapter)["verzen"][number - 1]
+                self.assertEqual(expected, OpvCalibrationCorpusTests._concept_texts(verse, concept_id))
 
     def test_johannes_three_speaker_choices_are_explicit_in_metadata(self) -> None:
         verses = self.chapter(3)["verzen"]
@@ -1391,6 +1671,28 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertIn("handschriften", note)
         self.assertIn("Statenvertaling", note)
 
+    def test_johannes_eight_tr_passage_is_preserved_and_documented(self) -> None:
+        verses = self.chapter(8)["verzen"]
+        for verse in verses[:11]:
+            with self.subTest(verse=verse["nummer"]):
+                self.assertEqual(
+                    [verse["tekst"]],
+                    OpvCalibrationCorpusTests._concept_texts(
+                        verse, "overspelige-vrouw-handschriften"
+                    ),
+                )
+        registry = json.loads(
+            (self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8")
+        )
+        note = next(
+            concept["uitleg"]
+            for concept in registry["concepten"]
+            if concept["id"] == "overspelige-vrouw-handschriften"
+        )
+        self.assertIn("vroegste bewaard gebleven Griekse handschriften", note)
+        self.assertIn("Statenvertaling", note)
+        self.assertIn("Textus Receptus", note)
+
     def test_johannes_images_units_and_wordplay_keep_the_second_layer(self) -> None:
         cases = ((2, 6, "metreet"), (3, 3, "opnieuw-van-boven"), (3, 8, "wind-geest"),
                  (4, 10, "levend-water"), (4, 24, "aanbidden-geest-waarheid"),
@@ -1401,12 +1703,99 @@ class OpvJohannesPilotTests(unittest.TestCase):
                 self.assertTrue(OpvCalibrationCorpusTests._concept_texts(verse, concept))
         measure = self.chapter(2)["verzen"][5]["tekst"]
         self.assertIn("zes", measure)
-        self.assertIn("ongeveer tachtig tot honderdtwintig liter", measure)
+        self.assertIn("ongeveer 80 tot 120 liter", measure)
         self.assertNotIn("metreten", measure)
         registry = json.loads((self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8"))
         explanation = next(c["uitleg"] for c in registry["concepten"] if c["id"] == "metreet")
         self.assertIn("oude inhoudsmaat", explanation)
         self.assertIn("Twee of drie metreten", explanation)
+
+    def test_johannes_eleven_modernizes_stadia_with_an_exact_second_layer(self) -> None:
+        verse = self.chapter(11)["verzen"][17]
+        self.assertEqual(
+            "Bethanië lag dicht bij Jeruzalem, op ongeveer drie kilometer afstand.",
+            verse["tekst"],
+        )
+        self.assertNotIn("stadi", verse["tekst"].lower())
+        self.assertEqual(
+            ["drie kilometer"],
+            OpvCalibrationCorpusTests._concept_texts(verse, "stadie"),
+        )
+        registry = json.loads(
+            (self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8")
+        )
+        explanation = next(
+            concept["uitleg"] for concept in registry["concepten"]
+            if concept["id"] == "stadie"
+        )
+        self.assertIn("vijftien stadiën", explanation)
+        self.assertIn("ongeveer drie kilometer", explanation)
+
+    def test_johannes_six_and_twelve_explain_old_measures_and_money(self) -> None:
+        rowing = self.chapter(6)["verzen"][18]
+        self.assertEqual(
+            "Nadat ze ongeveer vijf kilometer hadden geroeid, zagen ze Jezus over het meer lopen. Hij kwam naar het schip, en ze werden bang.",
+            rowing["tekst"],
+        )
+        self.assertNotIn("stadi", rowing["tekst"].lower())
+        self.assertEqual(
+            ["ongeveer vijf kilometer"],
+            OpvCalibrationCorpusTests._concept_texts(rowing, "stadie"),
+        )
+
+        feeding = self.chapter(6)["verzen"][6]
+        anointing = self.chapter(12)["verzen"][2]
+        sale = self.chapter(12)["verzen"][4]
+        self.assertEqual(
+            ["200 penningen"],
+            OpvCalibrationCorpusTests._concept_texts(feeding, "penning"),
+        )
+        self.assertEqual(
+            ["300 penningen"],
+            OpvCalibrationCorpusTests._concept_texts(sale, "penning"),
+        )
+        self.assertEqual(
+            ["330 gram"],
+            OpvCalibrationCorpusTests._concept_texts(anointing, "romeins-pond"),
+        )
+
+        registry = json.loads(
+            (self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8")
+        )
+        explanations = {
+            concept["id"]: concept["uitleg"] for concept in registry["concepten"]
+        }
+        self.assertIn("dagloon", explanations["penning"])
+        self.assertIn("Romeins pond", explanations["romeins-pond"])
+        self.assertIn("ongeveer 330 gram", explanations["romeins-pond"])
+
+    def test_johannes_nineteen_and_twenty_one_keep_exact_unit_explanations(self) -> None:
+        hour = self.chapter(19)["verzen"][13]
+        self.assertEqual(
+            ["ongeveer het zesde uur"],
+            OpvCalibrationCorpusTests._concept_texts(hour, "zesde-uur"),
+        )
+        weight = self.chapter(19)["verzen"][38]
+        self.assertEqual(
+            ["33 kilo"],
+            OpvCalibrationCorpusTests._concept_texts(weight, "romeins-pond"),
+        )
+        distance = self.chapter(21)["verzen"][7]
+        self.assertEqual(
+            ["ongeveer 90 meter"],
+            OpvCalibrationCorpusTests._concept_texts(distance, "el"),
+        )
+
+        registry = json.loads(
+            (self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8")
+        )
+        explanations = {
+            concept["id"]: concept["uitleg"] for concept in registry["concepten"]
+        }
+        self.assertIn("honderd Romeinse ponden", explanations["romeins-pond"])
+        self.assertIn("ongeveer 33 kilo", explanations["romeins-pond"])
+        self.assertIn("ongeveer 45 centimeter", explanations["el"])
+        self.assertIn("200 el", explanations["el"])
 
     def test_johannes_nested_speech_excludes_narrative_introductions(self) -> None:
         for chapter, number, expected in ((3, 7, "Jullie moeten opnieuw geboren worden."),
@@ -1539,9 +1928,9 @@ class OpvJohannesPilotTests(unittest.TestCase):
 
     def test_johannes_two_6_expresses_capacity_with_a_rounded_conversion(self) -> None:
         verse = self.chapter(2)["verzen"][5]
-        expected = "Er stonden zes stenen watervaten voor de reiniging van de Joden. Elk vat kon ongeveer tachtig tot honderdtwintig liter bevatten."
+        expected = "Er stonden zes stenen watervaten voor de reiniging van de Joden. Elk vat kon ongeveer 80 tot 120 liter bevatten."
         self.assertEqual(expected, verse["tekst"])
-        self.assertEqual(["ongeveer tachtig tot honderdtwintig liter"], OpvCalibrationCorpusTests._concept_texts(verse, "metreet"))
+        self.assertEqual(["ongeveer 80 tot 120 liter"], OpvCalibrationCorpusTests._concept_texts(verse, "metreet"))
 
     def test_johannes_two_13_connects_the_passover_and_the_journey(self) -> None:
         verse = self.chapter(2)["verzen"][12]
@@ -1680,8 +2069,8 @@ class OpvJohannesPilotTests(unittest.TestCase):
             ),
             ("johannes", 3, 8): (
                 "De wind waait waarheen hij wil. Je hoort zijn geluid, maar weet niet waar hij "
-                "vandaan komt of naartoe gaat. Zo is het met iedereen die uit de Geest geboren "
-                "is: je merkt wat de Geest doet, maar je begrijpt niet hoe het gebeurt."
+                "vandaan komt of naartoe gaat. Zo is het ook met iedereen die uit de Geest "
+                "geboren is."
             ),
             ("johannes", 3, 21): (
                 "Maar wie naar de waarheid handelt, komt naar het Licht. Dan wordt zichtbaar dat "
@@ -1712,7 +2101,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
             ),
             ("johannes", 3, 5): (
                 "Jezus antwoordde: Luister goed, ik verzeker je: als iemand niet uit water en Geest "
-                "geboren wordt, kan hij het Koninkrijk van God niet binnengaan."
+                "geboren wordt, kan hij het koninkrijk van God niet binnengaan."
             ),
             ("johannes", 3, 29): (
                 "De bruid hoort bij de bruidegom. De vriend van de bruidegom staat ernaast en luistert. "

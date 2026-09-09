@@ -288,12 +288,12 @@ class OpvReaderTests(unittest.TestCase):
         page = self.new_page()
         try:
             page.goto(
-                f"{self.base_url}/index.html?editie=nl-opv#leviticus/11",
+                f"{self.base_url}/index.html?editie=nl-opv#numeri/7",
                 wait_until="domcontentloaded",
             )
             unavailable = page.locator(".translation-unavailable")
             unavailable.wait_for()
-            self.assertIn("Leviticus is niet beschikbaar", unavailable.inner_text())
+            self.assertIn("Numeri is niet beschikbaar", unavailable.inner_text())
             self.assertIn("Open Parafrase Vertaling (proef)", unavailable.inner_text())
             self.assertEqual(page.locator(".verse-row").count(), 0)
         finally:
@@ -303,12 +303,12 @@ class OpvReaderTests(unittest.TestCase):
         page = self.new_page()
         observed = self.observe_runtime(page)
         try:
-            page.goto(f"{self.base_url}/index.html#leviticus/11", wait_until="domcontentloaded")
+            page.goto(f"{self.base_url}/index.html#numeri/7", wait_until="domcontentloaded")
             ov_row = page.locator('.verse-row[data-verse="1"]')
             ov_row.wait_for()
             self.assertEqual(ov_row.get_attribute("data-status"), "final")
             self.assertTrue(page.locator("#audio-play-big").is_visible())
-            self.assertIn("audio/leviticus/11-m.mp3", page.locator("#audio-el").get_attribute("src"))
+            self.assertIn("audio/numeri/7-m.mp3", page.locator("#audio-el").get_attribute("src"))
 
             observed["requests"].clear()
             self.open_sources(page)
@@ -320,11 +320,11 @@ class OpvReaderTests(unittest.TestCase):
             self.assertFalse(page.locator("#audio-play-mobile").is_visible())
             self.assertIsNone(page.locator("#audio-el").get_attribute("src"))
             self.assertFalse(
-                any(url.endswith("/data/edities/opv/chapters/leviticus/11.json") for url in observed["requests"])
+                any(url.endswith("/data/edities/opv/chapters/numeri/7.json") for url in observed["requests"])
             )
 
             restore = unavailable.locator("a")
-            self.assertIn("?editie=nl-ov#leviticus/11", restore.get_attribute("href"))
+            self.assertIn("?editie=nl-ov#numeri/7", restore.get_attribute("href"))
             page.locator("#sidebar-right-toggle").click()
             page.locator("#sidebar-right").wait_for(state="hidden")
             page.wait_for_function("document.activeElement?.id === 'topnav-tekstopties'")
@@ -335,7 +335,7 @@ class OpvReaderTests(unittest.TestCase):
             restored.wait_for()
             self.assertEqual(restored.get_attribute("data-status"), "final")
             self.assertTrue(page.locator("#audio-play-big").is_visible())
-            self.assertIn("audio/leviticus/11-m.mp3", page.locator("#audio-el").get_attribute("src"))
+            self.assertIn("audio/numeri/7-m.mp3", page.locator("#audio-el").get_attribute("src"))
             self.assertEqual(observed["pageerrors"], [])
             self.assertEqual(observed["http_errors"], [])
         finally:
@@ -477,7 +477,7 @@ class OpvReaderTests(unittest.TestCase):
                 url for url in observed["requests"] if "/data/edities/opv/chapters/" in url
             ]
             self.assertTrue(any(url.endswith("/johannes/2.json") for url in opv_requests))
-            self.assertFalse(any(url.endswith("/johannes/6.json") for url in opv_requests))
+            self.assertFalse(any(url.endswith("/johannes/22.json") for url in opv_requests))
             observed["requests"].clear()
             page.goto(
                 f"{self.base_url}/index.html?editie=nl-opv#johannes/5",
@@ -490,18 +490,47 @@ class OpvReaderTests(unittest.TestCase):
                 url for url in observed["requests"] if "/data/edities/opv/chapters/" in url
             ]
             self.assertTrue(any(url.endswith("/johannes/4.json") for url in opv_requests))
-            self.assertFalse(any(url.endswith("/johannes/6.json") for url in opv_requests))
+            self.assertTrue(any(url.endswith("/johannes/6.json") for url in opv_requests))
+            observed["requests"].clear()
+            page.goto(
+                f"{self.base_url}/index.html?editie=nl-opv#johannes/21",
+                wait_until="domcontentloaded",
+            )
+            page.locator('.verse-row[data-verse="25"]').wait_for()
+            page.wait_for_function("window.__opvIdleCallbacks > 0")
+            page.wait_for_timeout(250)
+            opv_requests = [
+                url for url in observed["requests"] if "/data/edities/opv/chapters/" in url
+            ]
+            self.assertTrue(any(url.endswith("/johannes/20.json") for url in opv_requests))
+            self.assertFalse(any(url.endswith("/johannes/22.json") for url in opv_requests))
             self.assertEqual(observed["pageerrors"], [])
             self.assertEqual(observed["console_errors"], [])
             self.assertEqual(observed["http_errors"], [])
         finally:
             page.close()
 
-    def test_johannes_two_to_five_render_all_verses_and_preserve_annotations(self):
+    def test_johannes_two_to_twenty_one_render_all_verses_and_preserve_annotations(self):
         expected = {2: (25, "De bruiloft in Kana en de tempel in Jeruzalem"),
                     3: (36, "Nieuw leven van God"),
                     4: (54, "Jezus geeft levend water"),
-                    5: (47, "Jezus geeft leven")}
+                    5: (47, "Jezus geeft leven"),
+                    6: (71, "Jezus, het brood dat leven geeft"),
+                    7: (53, "Jezus op het Loofhuttenfeest"),
+                    8: (59, "Het licht maakt werkelijk vrij"),
+                    9: (41, "De blindgeboren man gaat zien"),
+                    10: (42, "Jezus, de goede herder"),
+                    11: (57, "Jezus wekt Lazarus op"),
+                    12: (50, "Jezus gaat Zijn dood tegemoet"),
+                    13: (38, "Jezus wast de voeten van Zijn leerlingen"),
+                    14: (31, "Jezus belooft de Trooster en Zijn vrede"),
+                    15: (27, "De ware wijnstok, liefde en getuigenis"),
+                    16: (33, "De Geest van de waarheid en komende vreugde"),
+                    17: (26, "Jezus bidt tot Zijn Vader"),
+                    18: (40, "Jezus wordt gevangengenomen en verhoord"),
+                    19: (42, "Jezus wordt gekruisigd en begraven"),
+                    20: (31, "Jezus staat op en verschijnt aan Zijn leerlingen"),
+                    21: (25, "Jezus verschijnt bij het Meer van Tiberias")}
         for number, (count, heading) in expected.items():
             with self.subTest(chapter=number):
                 page = self.new_page()
@@ -530,6 +559,69 @@ class OpvReaderTests(unittest.TestCase):
                     self.assertEqual([{"number": v["nummer"], **{key: v[key] for key in
                                       ("bron", "segmenten", "begrippen", "citaten", "review")}}
                                       for v in raw["verzen"]], normalized["verses"])
+                    self.assertEqual([], observed["pageerrors"])
+                    self.assertEqual([], observed["http_errors"])
+                finally:
+                    page.close()
+
+    def test_mattheus_one_to_twenty_eight_render_all_verses_and_preserve_annotations(self):
+        expected = {
+            1: (25, "Jezus' afkomst en geboorte"),
+            2: (23, "Wijzen uit het Oosten en de vlucht naar Egypte"),
+            3: (17, "Johannes de Doper en de doop van Jezus"),
+            4: (25, "Jezus wordt verzocht en begint Zijn werk"),
+            5: (48, "De Bergrede: leven in Gods koninkrijk"),
+            6: (34, "De Bergrede: leven voor God"),
+            7: (29, "Jezus leert over oordeel, keuzes en gehoorzaamheid"),
+            8: (34, "Jezus geneest, roept en heerst over natuur en geesten"),
+            9: (38, "Jezus vergeeft, geneest en roept mensen"),
+            10: (42, "Jezus zendt de twaalf apostelen uit"),
+            11: (30, "Johannes vraagt wie Jezus is; Jezus roept vermoeide mensen"),
+            12: (50, "Jezus is Heere over de sabbat en weerlegt Zijn tegenstanders"),
+            13: (58, "Gelijkenissen over het koninkrijk en ongeloof in Jezus’ vaderstad"),
+            14: (36, "Johannes sterft en Jezus toont Zijn macht en ontferming"),
+            15: (39, "Jezus leert wat werkelijk onrein maakt en helpt mensen in nood"),
+            16: (28, "Petrus belijdt wie Jezus is en Jezus kondigt Zijn lijden aan"),
+            17: (27, "Jezus toont Zijn heerlijkheid en macht"),
+            18: (35, "Nederigheid, zorg voor elkaar en vergeving"),
+            19: (30, "Jezus spreekt over huwelijk, rijkdom en volgen"),
+            20: (34, "Genade, dienstbaarheid en medelijden"),
+            21: (46, "De Koning komt en stelt de leiders ter verantwoording"),
+            22: (46, "Uitgenodigd tot het feest en beproefd met vragen"),
+            23: (39, "Jezus waarschuwt voor huichelarij en klaagt Jeruzalem aan"),
+            24: (51, "De verwoesting, de komst van de Mensenzoon en waakzaamheid"),
+            25: (46, "Waakzaamheid, trouw en het oordeel"),
+            26: (75, "De maaltijd, Gethsemané en het verhoor"),
+            27: (66, "Jezus wordt gekruisigd, sterft en wordt begraven"),
+            28: (20, "De opstanding en de opdracht aan de leerlingen"),
+        }
+        for number, (count, heading) in expected.items():
+            with self.subTest(chapter=number):
+                page = self.new_page()
+                observed = self.observe_runtime(page)
+                try:
+                    page.goto(
+                        f"{self.base_url}/index.html?editie=nl-opv#mattheus/{number}",
+                        wait_until="domcontentloaded",
+                    )
+                    page.locator(f'.verse-row[data-verse="{count}"] .col-2026').wait_for()
+                    raw = json.loads(
+                        (ROOT / f"data/edities/opv/chapters/mattheus/{number}.json")
+                        .read_text(encoding="utf-8")
+                    )
+                    self.assertEqual(count, page.locator(".verse-row[data-verse]").count())
+                    normalized_heading = page.evaluate(
+                        """async n => (await TekstEditie.loadChapterForEdition(
+                            'nl-opv', 'mattheus', n)).heading""",
+                        number,
+                    )
+                    self.assertEqual(heading, normalized_heading)
+                    for verse in raw["verzen"]:
+                        rendered = page.locator(
+                            f'.verse-row[data-verse="{verse["nummer"]}"] .col-2026'
+                        )
+                        self.assertTrue(rendered.is_visible())
+                        self.assertIn(verse["tekst"], rendered.text_content())
                     self.assertEqual([], observed["pageerrors"])
                     self.assertEqual([], observed["http_errors"])
                 finally:
