@@ -28,7 +28,10 @@ const References = {
         '1 kron': '1kronieken', '1 kronieken': '1kronieken',
         '2 kron': '2kronieken', '2 kronieken': '2kronieken',
         // Ezra, Nehemia, Esther
-        'ezra': 'esther', 'neh': 'nehemia', 'esth': 'esther', 'esther': 'esther',
+        // 'ezra' wees hier lange tijd naar 'esther'; 469 kanttekening-verwijzingen
+        // naar Ezra landden daardoor in Esther (meestal op een niet-bestaand vers).
+        'ezra': 'ezra', 'neh': 'nehemia', 'nehemia': 'nehemia',
+        'esth': 'esther', 'esther': 'esther',
         // Job
         'job': 'job', 'iob': 'job',
         // Psalmen
@@ -44,11 +47,12 @@ const References = {
         // Jeremia
         'jer': 'jeremia', 'jeremia': 'jeremia',
         // Klaagliederen
-        'klaagl': 'klaagliederen',
+        'klaagl': 'klaagliederen', 'klaagliederen': 'klaagliederen',
         // Ezechiël
         'ezech': 'ezechiel', 'ez': 'ezechiel',
+        'ezechiel': 'ezechiel', 'ezechiël': 'ezechiel',
         // Daniël
-        'dan': 'daniel',
+        'dan': 'daniel', 'daniel': 'daniel', 'daniël': 'daniel',
         // Hosea
         'hos': 'hosea', 'hosea': 'hosea',
         // Joël
@@ -64,61 +68,72 @@ const References = {
         // Nahum
         'nah': 'nahum', 'nahum': 'nahum',
         // Habakuk
-        'hab': 'habakuk',
+        'hab': 'habakuk', 'habakuk': 'habakuk',
         // Zefanja
-        'zef': 'zefanja',
+        'zef': 'zefanja', 'zefanja': 'zefanja',
         // Haggaï
-        'hagg': 'haggai', 'hag': 'haggai',
+        'hagg': 'haggai', 'hag': 'haggai', 'haggai': 'haggai', 'haggaï': 'haggai',
         // Zacharia
         'zach': 'zacharia', 'zacharia': 'zacharia',
         // Maleachi
         'mal': 'maleachi', 'maleachi': 'maleachi',
         // Mattheüs
         'matt': 'mattheus', 'matth': 'mattheus', 'mat': 'mattheus',
+        'mattheus': 'mattheus', 'mattheüs': 'mattheus',
         // Markus
-        'mark': 'markus', 'marc': 'markus', 'markus': 'markus',
+        'mark': 'markus', 'marc': 'markus', 'markus': 'markus', 'marcus': 'markus',
         // Lukas
-        'luk': 'lukas', 'luc': 'lukas', 'lukas': 'lukas',
+        'luk': 'lukas', 'luc': 'lukas', 'lukas': 'lukas', 'lucas': 'lukas',
         // Johannes
         'joh': 'johannes', 'johannes': 'johannes',
         // Handelingen
         'hand': 'handelingen', 'handelingen': 'handelingen', 'act': 'handelingen',
         // Romeinen
         'rom': 'romeinen', 'romeinen': 'romeinen',
-        // 1/2 Korinthe
-        '1 kor': '1korinthe', '1 cor': '1korinthe',
-        '2 kor': '2korinthe', '2 cor': '2korinthe',
+        // 1/2 Korinthe — boek-id in data/ is '1korinthiers' / '2korinthiers'
+        '1 kor': '1korinthiers', '1 cor': '1korinthiers', '1 korinthe': '1korinthiers',
+        '1 korinthiers': '1korinthiers', '1 korinthiërs': '1korinthiers',
+        '2 kor': '2korinthiers', '2 cor': '2korinthiers', '2 korinthe': '2korinthiers',
+        '2 korinthiers': '2korinthiers', '2 korinthiërs': '2korinthiers',
         // Galaten
-        'gal': 'galaten',
+        'gal': 'galaten', 'galaten': 'galaten',
         // Efeziërs
         'ef': 'efeziers', 'efez': 'efeziers',
+        'efeziers': 'efeziers', 'efeziërs': 'efeziers',
         // Filippenzen
-        'fil': 'filippenzen', 'filipp': 'filippenzen',
+        'fil': 'filippenzen', 'filipp': 'filippenzen', 'filippenzen': 'filippenzen',
         // Kolossenzen
         'kol': 'kolossenzen', 'col': 'kolossenzen', 'coloss': 'kolossenzen',
-        // 1/2 Thessalonicenzen
-        '1 thess': '1thessalonicenzen', '2 thess': '2thessalonicenzen',
+        'kolossenzen': 'kolossenzen',
+        // 1/2 Thessalonicenzen — boek-id in data/ is '1tessalonicensen' / '2tessalonicensen'
+        '1 thess': '1tessalonicensen', '2 thess': '2tessalonicensen',
+        '1 thessalonicenzen': '1tessalonicensen', '2 thessalonicenzen': '2tessalonicensen',
+        '1 tessalonicensen': '1tessalonicensen', '2 tessalonicensen': '2tessalonicensen',
         // 1/2 Timotheüs
         '1 tim': '1timotheus', '2 tim': '2timotheus',
+        '1 timotheus': '1timotheus', '2 timotheus': '2timotheus',
+        '1 timotheüs': '1timotheus', '2 timotheüs': '2timotheus',
         // Titus
-        'tit': 'titus',
+        'tit': 'titus', 'titus': 'titus',
         // Filemon
-        'filem': 'filemon',
+        'filem': 'filemon', 'filemon': 'filemon',
         // Hebreeën
         'hebr': 'hebreeen', 'heb': 'hebreeen',
+        'hebreeen': 'hebreeen', 'hebreeën': 'hebreeen',
         // Jakobus
         'jak': 'jakobus', 'jac': 'jakobus', 'jakobus': 'jakobus',
         // 1/2 Petrus
-        '1 petr': '1petrus', '1 pet': '1petrus',
-        '2 petr': '2petrus', '2 pet': '2petrus',
+        '1 petr': '1petrus', '1 pet': '1petrus', '1 petrus': '1petrus',
+        '2 petr': '2petrus', '2 pet': '2petrus', '2 petrus': '2petrus',
         // 1/2/3 Johannes
         '1 joh': '1johannes', '2 joh': '2johannes', '3 joh': '3johannes',
+        '1 johannes': '1johannes', '2 johannes': '2johannes', '3 johannes': '3johannes',
         // Judas
         'jud': 'judas', 'judas': 'judas',
         // Openbaring
         'openb': 'openbaring', 'openbaring': 'openbaring', 'apoc': 'openbaring',
-        // Wijsheid (apocrief)
-        'wijsh': 'wijsheid', 'wijsheid': 'wijsheid',
+        // Wijsheid (apocrief) — boek-id in data/ is 'boekderwijsheid'
+        'wijsh': 'boekderwijsheid', 'wijsheid': 'boekderwijsheid',
         // Oude SV-afkortingen
         'genes': 'genesis', 'deuter': 'deuteronomium',
         'iohan': 'johannes', 'iohan.': 'johannes',
@@ -128,7 +143,10 @@ const References = {
     // Regex voor Bijbelverwijzingen
     // Match patronen als: "Gen. 2:1", "Ps. 90:2-3", "1 Kor. 16:2", "vers 21"
     // Punt na boekafkorting is OPTIONEEL: "Job 38:4" matcht ook (fix: bug zonder punt)
-    REF_REGEX: /\b((?:[123]\s)?(?:Genesis|Exodus|Leviticus|Numeri|Deuteronomium|Deuter|Genes|Jozua|Richteren|Samuel|Koningen|Kronieken|Esther|Psalmen|Psalm|Psal|Spreuken|Prediker|Hooglied|Hoogl|Jesaja|Jesa|Jeremia|Klaagl|Ezechiel|Ezech|Daniel|Hosea|Obadja|Obad|Micha|Mich|Nahum|Habakuk|Zefanja|Haggai|Hagg|Zacharia|Zach|Maleachi|Mattheus|Matth|Markus|Marcus|Lukas|Lucas|Iohan|Iohannes|Johannes|Handelingen|Romeinen|Korinthe|Korinthiers|Korinthen|Galaten|Efeziers|Filippenzen|Filipp|Kolossenzen|Coloss|Thessalonicenzen|Thess|Timotheus|Filemon|Filem|Hebreeen|Jakobus|Petrus|Judas|Openbaring|Apoc|Wijsheid|Wijsh|Gen|Ex|Exod|Lev|Levit|Num|Numer|Deut|Joz|Jos|Richt|Ruth|Sam|Kon|Reg|Kron|Ezra|Neh|Esth|Job|Iob|Ps|Spr|Prov|Pred|Jes|Jer|Ez|Dan|Hos|Joel|Joël|Amos|Jona|Nah|Hab|Zef|Hag|Mal|Matt|Mat|Mark|Marc|Luk|Luc|Joh|Hand|Act|Rom|Kor|Cor|Gal|Ef|Efez|Fil|Kol|Col|Tim|Tit|Hebr|Heb|Jak|Jac|Petr|Pet|Jud|Openb))\.?\s+(\d+)(?::(\d+(?:[,-]\d+)*))?/gi,
+    // De volledige boeknamen mét trema stonden hier niet in; "Mattheüs 27:55",
+    // "Ezechiël 3:17", "1 Korinthiërs 15:27" e.d. matchten daardoor nooit en
+    // bleven platte tekst. Ze staan vooraan zodat de langste vorm eerst wint.
+    REF_REGEX: /\b((?:[123]\s)?(?:Mattheüs|Ezechiël|Korinthiërs|Hebreeën|Efeziërs|Timotheüs|Daniël|Nehemia|Klaagliederen|Tessalonicensen|Haggaï|Titus|Genesis|Exodus|Leviticus|Numeri|Deuteronomium|Deuter|Genes|Jozua|Richteren|Samuel|Koningen|Kronieken|Esther|Psalmen|Psalm|Psal|Spreuken|Prediker|Hooglied|Hoogl|Jesaja|Jesa|Jeremia|Klaagl|Ezechiel|Ezech|Daniel|Hosea|Obadja|Obad|Micha|Mich|Nahum|Habakuk|Zefanja|Haggai|Hagg|Zacharia|Zach|Maleachi|Mattheus|Matth|Markus|Marcus|Lukas|Lucas|Iohan|Iohannes|Johannes|Handelingen|Romeinen|Korinthe|Korinthiers|Korinthen|Galaten|Efeziers|Filippenzen|Filipp|Kolossenzen|Coloss|Thessalonicenzen|Thess|Timotheus|Filemon|Filem|Hebreeen|Jakobus|Petrus|Judas|Openbaring|Apoc|Wijsheid|Wijsh|Gen|Ex|Exod|Lev|Levit|Num|Numer|Deut|Joz|Jos|Richt|Ruth|Sam|Kon|Reg|Kron|Ezra|Neh|Esth|Job|Iob|Ps|Spr|Prov|Pred|Jes|Jer|Ez|Dan|Hos|Joel|Joël|Amos|Jona|Nah|Hab|Zef|Hag|Mal|Matt|Mat|Mark|Marc|Luk|Luc|Joh|Hand|Act|Rom|Kor|Cor|Gal|Ef|Efez|Fil|Kol|Col|Tim|Tit|Hebr|Heb|Jak|Jac|Petr|Pet|Jud|Openb))\.?\s+(\d+)(?::(\d+(?:[,-]\d+)*))?/gi,
 
     // Regex voor "vers X" verwijzingen (binnen hetzelfde hoofdstuk)
     VERSE_REF_REGEX: /\bvers\s+(\d+(?:\s*(?:,|en)\s*\d+)*)/gi,
