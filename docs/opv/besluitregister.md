@@ -621,3 +621,17 @@ Oude geldbedragen worden niet met schijnprecisie naar euro's omgerekend. De 10.0
 Mattheüs 21–28 houdt de intocht, tempelgesprekken, gelijkenissen, rede over de toekomst, laatste maaltijd, Gethsemané, verhoren, kruisiging, begrafenis en opstanding van elkaar onderscheiden. De Jeremia-toeschrijving in 27:9 en `het hele land` in 27:45 volgen Mattheüs en de Statenvertaling; zij worden niet met andere Bijbelpassages geharmoniseerd. Tijdsaanduidingen rond de kruisiging worden voor de leesbaarheid afgerond naar twaalf en drie uur, met behoud van de oude formulering in de bronlaag.
 
 Geneste uitspraken — waaronder woorden van profeten, God, Jezus, gelijkenisfiguren, valse getuigen en mensen die Jezus' eerdere woorden navertellen — krijgen afzonderlijke citaatlagen. Begrippen worden alleen gekoppeld wanneer de betekenis werkelijk overeenkomt. Johannes-specifieke begrippen zoals `Het Woord`, `Het Licht`, `De profeet` en `Koning van Israël` worden daarom niet op basis van een losse woordovereenkomst aan Mattheüs gekoppeld. Alle 28 hoofdstukken hebben conceptstatus: de technische bron-, segment-, citaat- en hashcontrole is afgerond, maar onafhankelijke menselijke eindgoedkeuring blijft open.
+
+## Markus 1–16
+
+### MK1 — Beknopte verteltrant en eigen evangelieprofiel
+
+Markus blijft snel en direct vertellen. Herhalingen worden alleen gestroomlijnd wanneer de inhoud volledig behouden blijft. Kenmerkende details — de vier mannen bij de verlamde, het kussen waarop Jezus slaapt, het groene gras, de genezing in twee stappen en de jongeman bij het graf — worden niet met gegevens uit andere evangeliën vervangen. `Leerlingen` is de gewone leesvorm voor discipelen; historische ambten, groepen en plaatsnamen blijven herkenbaar.
+
+Schriftcitaten bewaren de citerende of bemiddelende stem naast de oorspronkelijke spreker. Dit geldt onder meer voor de gecombineerde profetenaanhaling aan het begin, Davids Psalmwoord, woorden uit Mozes en Jezus' roep aan het kruis. Eerste-persoonsvormen volgen gewone Nederlandse spelling; alleen verwijzingen naar God en Jezus krijgen de vastgelegde eerbiedshoofdletters.
+
+### MK2 — Lijden, opstanding en het langere slot
+
+Markus 14–16 houdt de maaltijd, Gethsemané, verhoren, verloochening, kruisiging, begrafenis en opstanding in de eigen volgorde van Markus. Oude uuraanduidingen rond de kruisiging worden voor de leesbaarheid afgerond naar ongeveer negen uur, twaalf uur en drie uur. De oorspronkelijke formuleringen blijven in de bronlaag controleerbaar.
+
+Markus 16:9–20 blijft overeenkomstig de Statenvertaling en de Textus Receptus in de hoofdtekst. Een centraal begrip vermeldt dat Codex Sinaiticus na 16:8 direct met Lukas doorgaat. Dit maakt de handschriftvariatie zichtbaar zonder de gekozen basistekst stilzwijgend te wijzigen. Alle zestien hoofdstukken hebben conceptstatus: de technische bron-, segment-, citaat- en hashcontrole is afgerond, maar onafhankelijke menselijke eindgoedkeuring blijft open.

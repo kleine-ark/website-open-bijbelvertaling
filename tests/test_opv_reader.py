@@ -627,6 +627,57 @@ class OpvReaderTests(unittest.TestCase):
                 finally:
                     page.close()
 
+    def test_markus_one_to_sixteen_render_all_verses_and_preserve_annotations(self):
+        expected = {
+            1: (45, "Jezus begint Zijn werk in Galilea"),
+            2: (28, "Jezus vergeeft, roept en onderwijst"),
+            3: (35, "Jezus geneest, kiest twaalf mannen en beantwoordt Zijn tegenstanders"),
+            4: (41, "Jezus onderwijst met gelijkenissen en stilt de storm"),
+            5: (43, "Jezus bevrijdt een bezeten man en geneest twee vrouwen"),
+            6: (56, "Jezus zendt de twaalf uit, voedt duizenden en loopt over het water"),
+            7: (37, "Jezus laat zien wat een mens werkelijk onrein maakt"),
+            8: (38, "Jezus geeft brood, opent ogen en spreekt over Zijn lijden"),
+            9: (50, "Jezus toont Zijn heerlijkheid en leert wat werkelijk groot is"),
+            10: (52, "Jezus leert over trouw, bezit en dienen"),
+            11: (33, "De Koning komt naar Jeruzalem en reinigt de tempel"),
+            12: (44, "Jezus ontmaskert de leiders en wijst de weg van God"),
+            13: (37, "Jezus spreekt over verdrukking, Zijn komst en waakzaamheid"),
+            14: (72, "Jezus wordt gezalfd, verraden, gevangengenomen en verhoord"),
+            15: (47, "Jezus wordt gekruisigd, sterft en wordt begraven"),
+            16: (20, "Jezus staat op en stuurt Zijn leerlingen de wereld in"),
+        }
+        for number, (count, heading) in expected.items():
+            with self.subTest(chapter=number):
+                page = self.new_page()
+                observed = self.observe_runtime(page)
+                try:
+                    page.goto(
+                        f"{self.base_url}/index.html?editie=nl-opv#markus/{number}",
+                        wait_until="domcontentloaded",
+                    )
+                    page.locator(f'.verse-row[data-verse="{count}"] .col-2026').wait_for()
+                    raw = json.loads(
+                        (ROOT / f"data/edities/opv/chapters/markus/{number}.json")
+                        .read_text(encoding="utf-8")
+                    )
+                    self.assertEqual(count, page.locator(".verse-row[data-verse]").count())
+                    normalized_heading = page.evaluate(
+                        """async n => (await TekstEditie.loadChapterForEdition(
+                            'nl-opv', 'markus', n)).heading""",
+                        number,
+                    )
+                    self.assertEqual(heading, normalized_heading)
+                    for verse in raw["verzen"]:
+                        rendered = page.locator(
+                            f'.verse-row[data-verse="{verse["nummer"]}"] .col-2026'
+                        )
+                        self.assertTrue(rendered.is_visible())
+                        self.assertIn(verse["tekst"], rendered.text_content())
+                    self.assertEqual([], observed["pageerrors"])
+                    self.assertEqual([], observed["http_errors"])
+                finally:
+                    page.close()
+
     def test_alle_opv_hoofdstukken_hebben_exacte_boekstructuur_en_annotaties(self):
         expected = {
             ("genesis", 1): (31, 7, 15, 13, 78),

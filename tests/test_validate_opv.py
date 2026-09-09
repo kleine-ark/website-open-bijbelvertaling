@@ -920,7 +920,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual("OPV geldig: 172 hoofdstukken, 5802 verzen.\n", result.stdout)
+        self.assertEqual("OPV geldig: 188 hoofdstukken, 6480 verzen.\n", result.stdout)
 
 
 class OpvGenesisPilotTests(unittest.TestCase):
@@ -968,6 +968,8 @@ class OpvGenesisPilotTests(unittest.TestCase):
             "leviticus": list(range(1, 28)),
             "numeri": list(range(1, 7)),
             "mattheus": list(range(1, 29)),
+            "markus": list(range(1, 17)),
+            "lukas": list(range(1, 10)),
             "johannes": list(range(1, 22)),
         }
         self.assertEqual(expected, entry["gepubliceerdeHoofdstukken"])
@@ -1447,6 +1449,92 @@ class OpvMattheusProductionTests(unittest.TestCase):
                     )
 
 
+class OpvMarkusProductionTests(unittest.TestCase):
+    root = Path(__file__).resolve().parents[1]
+
+    def chapter(self, number: int) -> dict:
+        path = self.root / f"data/edities/opv/chapters/markus/{number}.json"
+        self.assertTrue(path.is_file(), f"Markus-hoofdstuk {number} ontbreekt")
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_markus_one_to_sixteen_have_exact_source_verse_lists_and_678_verses(self) -> None:
+        total = 0
+        for number in range(1, 17):
+            with self.subTest(chapter=number):
+                chapter = self.chapter(number)
+                source = json.loads(
+                    (self.root / f"data/markus/{number}.json").read_text(encoding="utf-8")
+                )
+                self.assertEqual(
+                    [verse["number"] for verse in source["verses"]],
+                    [verse["nummer"] for verse in chapter["verzen"]],
+                )
+                total += len(chapter["verzen"])
+                self.assertEqual(("markus", number), (chapter["boek"], chapter["hoofdstuk"]))
+                self.assertTrue(chapter["blokken"])
+                for verse in chapter["verzen"]:
+                    self.assertEqual(
+                        {
+                            "bestand": f"data/markus/{number}.json",
+                            "vers": verse["nummer"],
+                            "tekstveld": "textSV1888",
+                        },
+                        verse["bron"],
+                    )
+        self.assertEqual(678, total)
+
+    def test_markus_preserves_nested_scripture_speakers_without_harmonizing(self) -> None:
+        self.assertEqual(
+            {"profeten", "god"},
+            {citation["spreker"]["id"] for citation in self.chapter(1)["verzen"][1]["citaten"]},
+        )
+        self.assertEqual(
+            {"jezus", "david", "heilige-geest", "god"},
+            {citation["spreker"]["id"] for citation in self.chapter(12)["verzen"][35]["citaten"]},
+        )
+        self.assertEqual(
+            {"jezus", "david"},
+            {citation["spreker"]["id"] for citation in self.chapter(15)["verzen"][33]["citaten"]},
+        )
+        self.assertIn("een jonge man", self.chapter(16)["verzen"][4]["tekst"])
+        self.assertNotIn("engel", self.chapter(16)["verzen"][4]["tekst"].lower())
+
+    def test_markus_long_ending_is_preserved_and_documented(self) -> None:
+        verses = self.chapter(16)["verzen"]
+        for verse in verses[8:]:
+            with self.subTest(verse=verse["nummer"]):
+                ids = {concept["conceptId"] for concept in verse["begrippen"]}
+                self.assertIn("markus-lang-slot-handschriften", ids)
+        registry = json.loads(
+            (self.root / "data/edities/opv/concepten.json").read_text(encoding="utf-8")
+        )
+        note = next(
+            concept["uitleg"]
+            for concept in registry["concepten"]
+            if concept["id"] == "markus-lang-slot-handschriften"
+        )
+        self.assertIn("Codex Sinaiticus", note)
+        self.assertIn("Statenvertaling", note)
+        self.assertIn("Textus Receptus", note)
+
+    def test_markus_does_not_reuse_johannes_specific_concepts_by_word_match(self) -> None:
+        johannes_specific = {
+            "aanroepen-heere",
+            "de-profeet",
+            "groter-kleiner",
+            "koning-van-israel",
+            "leven",
+            "licht",
+            "reiniging",
+            "woord",
+        }
+        for chapter_number in range(1, 17):
+            for verse in self.chapter(chapter_number)["verzen"]:
+                with self.subTest(chapter=chapter_number, verse=verse["nummer"]):
+                    used = {concept["conceptId"] for concept in verse.get("begrippen", [])}
+                    self.assertFalse(used & johannes_specific)
+
+
 class OpvJohannesPilotTests(unittest.TestCase):
     root = Path(__file__).resolve().parents[1]
 
@@ -1455,7 +1543,7 @@ class OpvJohannesPilotTests(unittest.TestCase):
         self.assertTrue(path.is_file(), f"Johannes-hoofdstuk {number} ontbreekt")
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def test_johannes_one_to_twenty_one_have_880_verses_and_corpus_has_5802(self) -> None:
+    def test_johannes_one_to_twenty_one_have_880_verses_and_corpus_has_6480(self) -> None:
         total = 0
         for number in range(1, 22):
             with self.subTest(chapter=number):
@@ -1499,9 +1587,24 @@ class OpvJohannesPilotTests(unittest.TestCase):
             )["verzen"])
             for number in range(1, 29)
         )
+        markus_total = sum(
+            len(json.loads(
+                (self.root / f"data/edities/opv/chapters/markus/{number}.json")
+                .read_text(encoding="utf-8")
+            )["verzen"])
+            for number in range(1, 17)
+        )
+        lukas_total = sum(
+            len(json.loads(
+                (self.root / f"data/edities/opv/chapters/lukas/{number}.json")
+                .read_text(encoding="utf-8")
+            )["verzen"])
+            for number in range(1, 10)
+        )
         self.assertEqual(
-            5802,
-            total + genesis_total + exodus_total + leviticus_total + numeri_total + mattheus_total,
+            6950,
+            total + genesis_total + exodus_total + leviticus_total + numeri_total
+            + mattheus_total + markus_total + lukas_total,
         )
 
     def test_johannes_blocks_match_all_approved_boundaries(self) -> None:
