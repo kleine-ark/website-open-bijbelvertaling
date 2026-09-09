@@ -192,6 +192,13 @@ def bereik_nagelopen(principes, verzen):
         ber = p.get("bereik")
         if not ber:
             continue
+        # Vijf principes schrijven hun bereik als tekst ("hele corpus") in
+        # plaats van als boek-naar-hoofdstukken. Dat is geen beperking, en het
+        # liet deze controle met een AttributeError afbreken -- waardoor de
+        # hele audit halverwege stopte en de laatste twee controles nooit
+        # draaiden.
+        if not isinstance(ber, dict):
+            continue
         kern_oud = kernwoord(p.get("oud"))
         kern_nieuw = kernwoord(p.get("nieuw"))
         if not kern_oud:
