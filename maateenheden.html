@@ -205,6 +205,33 @@
             <em>mna</em>, en bij Johannes de Romeinse <em>litra</em> van ongeveer 327 g.
         </div>
 
+        <h3 class="me-subgroep">Wat is dat aan zilver of goud vandaag waard?</h3>
+        <p>
+            De Bijbel weegt zilver en goud in deze eenheden. Hieronder staat wat dat gewicht op de
+            edelmetaalmarkt van vandaag opbrengt, tegen de spotprijs van
+            <strong><span data-metaal="datum">—</span></strong>: goud <span data-metaal="goud-gram">—</span> per gram,
+            zilver <span data-metaal="zilver-gram">—</span> per gram.
+        </p>
+        <table class="me-tab" id="me-metaalwaarde">
+            <thead><tr><th>Eenheid</th><th>Gewicht</th><th>In zilver</th><th>In goud</th></tr></thead>
+            <tbody>
+                <tr><td class="me-naam">talent</td><td class="me-waarde">34 kg</td><td data-gram="34000" data-metaal-cel="zilver">—</td><td data-gram="34000" data-metaal-cel="goud">—</td></tr>
+                <tr><td class="me-naam">pond (maneh)</td><td class="me-waarde">570 g</td><td data-gram="570" data-metaal-cel="zilver">—</td><td data-gram="570" data-metaal-cel="goud">—</td></tr>
+                <tr><td class="me-naam">sikkel</td><td class="me-waarde">11,4 g</td><td data-gram="11.4" data-metaal-cel="zilver">—</td><td data-gram="11.4" data-metaal-cel="goud">—</td></tr>
+                <tr><td class="me-naam">beka</td><td class="me-waarde">5,7 g</td><td data-gram="5.7" data-metaal-cel="zilver">—</td><td data-gram="5.7" data-metaal-cel="goud">—</td></tr>
+                <tr><td class="me-naam">gera</td><td class="me-waarde">0,57 g</td><td data-gram="0.57" data-metaal-cel="zilver">—</td><td data-gram="0.57" data-metaal-cel="goud">—</td></tr>
+                <tr><td class="me-naam">penning (denarius)</td><td class="me-waarde">3,9 g</td><td data-gram="3.9" data-metaal-cel="zilver">—</td><td data-gram="3.9" data-metaal-cel="goud">—</td></tr>
+                <tr><td class="me-naam">drachme</td><td class="me-waarde">4,3 g</td><td data-gram="4.3" data-metaal-cel="zilver">—</td><td data-gram="4.3" data-metaal-cel="goud">—</td></tr>
+            </tbody>
+        </table>
+        <div class="me-let">
+            <strong>Dit is metaalwaarde, geen koopkracht.</strong> Wat een penning zilver vandaag op de markt
+            opbrengt, zegt niets over wat je er in de eerste eeuw voor kreeg. Mattheüs 20:2 noemt de penning het
+            dagloon van een landarbeider; dát is de bruikbare maatstaf. De dertig zilverlingen van Mattheüs 26:15
+            zijn vandaag ongeveer <span data-metaal="dertig-zilverlingen">—</span> aan zilver waard, maar Exodus
+            21:32 laat zien wat het bedrag wérkelijk betekende: de prijs van een slaaf.
+        </div>
+
         <div class="me-detailgalerij" aria-label="Gewichten in beeld">
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/talent.webp" alt="Een talent als zwaar gewicht" loading="lazy" width="1024" height="1024"><figcaption><strong>Talent</strong>De zwaarste gewichtsmaat.</figcaption></figure>
             <figure class="me-detailkaart"><img src="images/wiki/maateenheden/pond.webp" alt="Een pond als gewicht" loading="lazy" width="1024" height="1024"><figcaption><strong>Pond</strong>Een gewicht met meerdere waarden.</figcaption></figure>
@@ -218,7 +245,7 @@
             <img src="images/wiki/maateenheden/geld.webp" alt="Bijbelse munten en geldwaarden" loading="lazy" width="1024" height="1024">
             <figcaption class="me-illustratie-tekst"><strong>Munten vertellen geen vaste prijs</strong>Penning, drachme, stater en oort verschillen sterk in grootte en zilvergewicht. Hun koopkracht wordt daarom op deze pagina vooral naast een dagloon uitgelegd.</figcaption>
         </figure>
-        <p class="me-note">Geldbedragen zijn bewust niet omgerekend naar euro's. De zilverwaarde van een munt zegt namelijk weinig over wat je ervoor kon kopen; een dagloon is een veel bruikbaarder maatstaf.</p>
+        <p class="me-note">De bedragen hieronder staan in daglonen en muntverhoudingen, niet in euro's. De zilverwaarde van een munt zegt namelijk weinig over wat je ervoor kon kopen; een dagloon is een veel bruikbaarder maatstaf. Wilt u tóch weten wat het metaal vandaag opbrengt, dan staat dat <a href="#me-metaalwaarde">bij de gewichten</a>.</p>
         <table class="me-tab">
             <thead><tr><th>Munt</th><th>Waarde</th><th>Toelichting</th><th>Voorbeeld</th></tr></thead>
             <tbody>
@@ -296,5 +323,63 @@
             Zie ook <a href="wiki.html#bronnen" target="_top">verantwoording &amp; bronnen</a>.
         </p>
     </div>
+
+    <!-- Metaalwaarde: vult de tabel uit data/edelmetaalprijzen.json.
+         De koersen staan in een databestand en worden niet live opgehaald, zodat
+         de pagina offline werkt en de bezoeker geen externe partij aandoet.
+         Verversen: python scripts/haal_edelmetaalprijzen.py -->
+    <script>
+    (function () {
+        var tabel = document.getElementById('me-metaalwaarde');
+        if (!tabel) return;
+
+        function euro(bedrag, decimalen) {
+            // Bij grote bedragen zijn centen ruis; een gramprijs heeft ze juist nodig.
+            if (decimalen === undefined) decimalen = bedrag < 100 ? 2 : 0;
+            return bedrag.toLocaleString('nl-NL', {
+                style: 'currency', currency: 'EUR',
+                minimumFractionDigits: decimalen, maximumFractionDigits: decimalen
+            });
+        }
+
+        function datumNL(iso) {
+            var maanden = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli',
+                           'augustus', 'september', 'oktober', 'november', 'december'];
+            var d = iso.split('-');
+            if (d.length !== 3) return iso;
+            return parseInt(d[2], 10) + ' ' + maanden[parseInt(d[1], 10) - 1] + ' ' + d[0];
+        }
+
+        fetch('data/edelmetaalprijzen.json').then(function (r) {
+            if (!r.ok) throw new Error('koersen niet beschikbaar');
+            return r.json();
+        }).then(function (p) {
+            var perGram = p.euroPerGram;
+
+            document.querySelectorAll('[data-metaal-cel]').forEach(function (cel) {
+                var gram = parseFloat(cel.getAttribute('data-gram'));
+                var metaal = cel.getAttribute('data-metaal-cel');
+                cel.textContent = euro(gram * perGram[metaal]);
+            });
+
+            var zet = function (sleutel, waarde) {
+                document.querySelectorAll('[data-metaal="' + sleutel + '"]').forEach(function (el) {
+                    el.textContent = waarde;
+                });
+            };
+            zet('datum', datumNL(p.bijgewerkt));
+            zet('goud-gram', euro(perGram.goud, 2));
+            zet('zilver-gram', euro(perGram.zilver, 2));
+            zet('dertig-zilverlingen', euro(30 * 11.4 * perGram.zilver));
+        }).catch(function () {
+            // Zonder koersen blijft de tabel op streepjes staan; liever geen getal
+            // dan een verzonnen getal.
+            var melding = document.createElement('p');
+            melding.className = 'me-note';
+            melding.textContent = 'De actuele edelmetaalkoersen konden niet geladen worden.';
+            tabel.parentNode.insertBefore(melding, tabel);
+        });
+    })();
+    </script>
 </body>
 </html>
