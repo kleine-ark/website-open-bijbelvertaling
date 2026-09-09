@@ -3588,6 +3588,15 @@ body.show-tags .verse-tag {
 }
 .undo-btn:hover { border-color: #c0392b; color: #c0392b; }
 .undo-btn.undone { background: #fef2f2; border-color: #c0392b; color: #c0392b; }
+/* De uitzonderingsknop is redactiegereedschap: hij noteert lokaal, in deze
+   browser, dat een principe hier niet had moeten gelden. Hij verandert de
+   vertaling niet. Voor een uitgelogde bezoeker is hij daarom verborgen —
+   anders wekt hij de indruk dat je de tekst zelf kunt aanpassen, terwijl er
+   op de pagina niets verandert. js/principes.js zet de klasse. */
+.undo-btn { display: none; }
+body.is-ingelogd .undo-btn { display: inline-block; }
+.uitzondering-uitleg { display: none; }
+body.is-ingelogd .uitzondering-uitleg { display: block; }
 .vers-undone .vers-diff { text-decoration: line-through; opacity: 0.5; }
 .undo-diff-btn {
     font-size: 10px; background: none; border: none; color: #ccc;
