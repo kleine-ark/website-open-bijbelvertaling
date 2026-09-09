@@ -4330,6 +4330,44 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     color: #4c1d95;
 }
 .ethiopic-banner strong { color: #5b21b6; }
+
+/* === Projectmelding op de voorpagina (Open Vertaling + Open Parafrase Vertaling) === */
+.projecten-banner {
+    position: relative;
+    background: #f8f4ec;
+    border: 1px solid #e8e0cf;
+    border-left: 4px solid var(--gold, #cba449);
+    border-radius: 0 6px 6px 0;
+    padding: 14px 44px 14px 16px;
+    margin: 12px 0 18px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--navy, #142e42);
+}
+.projecten-banner p { margin: 0 0 6px; }
+.projecten-banner p:last-child { margin-bottom: 0; }
+.projecten-banner strong { color: var(--navy, #142e42); }
+.projecten-banner-sluit {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: none;
+    border: 0;
+    padding: 4px 8px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--teal, #4a6b7c);
+}
+.projecten-banner-sluit:hover { color: var(--navy, #142e42); }
+[data-theme="donker"] .projecten-banner {
+    background: rgba(203, 164, 73, 0.08);
+    border-color: rgba(203, 164, 73, 0.28);
+    border-left-color: var(--gold, #cba449);
+    color: #e8e2d4;
+}
+[data-theme="donker"] .projecten-banner strong { color: var(--gold, #cba449); }
 /* Ge'ez-grondtekst is links-naar-rechts (anders dan Hebreeuws RTL) */
 .col-hebrew .hebrew-text[lang="gez"] {
     direction: ltr;

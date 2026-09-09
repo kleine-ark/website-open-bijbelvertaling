@@ -99,13 +99,18 @@ def main():
             continue   # Ethiopische stub-boeken tellen niet mee in de statistieken (nog geen tekst)
         bid = b['id']; chs = b.get('chaptersIncluded', [])
         test = b.get('testament')
-        ch_total += len(chs)
+        # De kopcijfers en de nakijksnelheid gaan over de 66 canonieke boeken.
+        # De apocriefe boeken staan in het corpus en houden hun eigen regel in
+        # by_test, maar tellen niet mee in totalen, percentages en einddatum.
+        canoniek = test in ('OT', 'NT')
+        if canoniek:
+            ch_total += len(chs)
         v = verified.get(bid)
         full = v == 'all' or (isinstance(v, list) and len(chs) > 0 and len(v) >= len(chs))
-        if full:
+        if full and canoniek:
             books_full += 1
             verified_books.append(b['nameDutch'])
-        elif isinstance(v, list) and len(v) > 0:
+        elif canoniek and isinstance(v, list) and len(v) > 0:
             # gedeeltelijk nagekeken → naam + hoofdstukbereik (bv. "Genesis 1–20")
             verified_books.append(f"{b['nameDutch']} {min(v)}–{max(v)}")
         for ch in chs:
@@ -114,14 +119,18 @@ def main():
                 continue
             d = json.load(open(fp, encoding='utf-8'))
             vs = [x for x in d.get('verses', []) if isinstance(x, dict)]
-            verses_total += len(vs)
+            if canoniek:
+                verses_total += len(vs)
             if test in by_test:
                 by_test[test][0] += len(vs)
             verified_ch = v == 'all' or (isinstance(v, list) and ch in v)
             if verified_ch:
-                ch_ver += 1; verses_ver += len(vs)
+                if canoniek:
+                    ch_ver += 1; verses_ver += len(vs)
                 if test in by_test:
                     by_test[test][1] += len(vs)
+            if not canoniek:
+                continue
             for x in vs:
                 pds = x.get('phraseDiff') or []
                 # Tel het AANTAL GEWIJZIGDE WOORDEN t.o.v. SV1888 (niet het aantal
@@ -141,7 +150,8 @@ def main():
     stats = {
         'version': version,
         'date': datum,
-        'books_total': len([b for b in books if not b.get('ethiopic')]),
+        'books_total': len([b for b in books
+                            if not b.get('ethiopic') and b.get('testament') in ('OT', 'NT')]),
         'books_verified': books_full,
         'chapters_total': ch_total,
         'chapters_verified': ch_ver,
@@ -164,6 +174,11 @@ def main():
         'ap_verses_total': by_test['AP'][0],
         'ap_verses_verified': by_test['AP'][1],
         'ap_verses_verified_pct': pct(by_test['AP'][1], by_test['AP'][0]),
+        # verses_total gaat over de 66 canonieke boeken. Wie het volledige
+        # corpus nodig heeft — zoals de naslagbouw, die ook de apocriefen
+        # indexeert — telt hier de drie testamenten samen.
+        'corpus_verses_total': sum(v[0] for v in by_test.values()),
+        'corpus_verses_verified': sum(v[1] for v in by_test.values()),
     }
 
     # === Nakijksnelheid + verwachte einddatum (zelf-bijwerkend) ===

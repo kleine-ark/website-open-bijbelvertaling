@@ -149,6 +149,28 @@
                 <button type="button" id="quick-strongs-btn" class="quickfilter-btn" aria-pressed="false">Grondtekst-link</button>
             </div>
         </div>
+        <!-- Projectmelding: waar we aan werken. Eenmalig weg te klikken. -->
+        <div id="projecten-banner" class="projecten-banner" hidden>
+            <button type="button" class="projecten-banner-sluit" aria-label="Melding sluiten">&times;</button>
+            <p><strong>Waar we aan werken.</strong> Aan twee Bijbelvertalingen, allebei vrij te gebruiken.</p>
+            <p><strong>De Open Vertaling</strong> is een beperkte herziening van de Statenvertaling: dicht bij het origineel, maar met de onbekende 17e-eeuwse woorden vervangen.</p>
+            <p><strong>De Open Parafrase Vertaling</strong> is een goed leesbare vertaling in gewone taal, in de geest van Het Boek en de Bijbel in Gewone Taal, en komt in het publieke domein.</p>
+        </div>
+        <script>
+            (function () {
+                var banner = document.getElementById('projecten-banner');
+                if (!banner) return;
+                var SLEUTEL = 'ov_projecten_banner_gesloten';
+                var gesloten = false;
+                try { gesloten = localStorage.getItem(SLEUTEL) === '1'; } catch (e) { /* privémodus */ }
+                if (!gesloten) banner.hidden = false;
+                banner.querySelector('.projecten-banner-sluit').addEventListener('click', function () {
+                    banner.hidden = true;
+                    try { localStorage.setItem(SLEUTEL, '1'); } catch (e) { /* privémodus */ }
+                });
+            })();
+        </script>
+
         <div id="book-intro"></div>
         <div id="chapter-intro"></div>
 

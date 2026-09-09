@@ -23,7 +23,9 @@ def built_naslag():
 def test_corpus_bevat_alleen_echte_verzen():
     corpus = load_corpus(ROOT)
 
-    assert len(corpus) == read_json("data/stats.json")["verses_total"]
+    # De naslag indexeert het hele corpus, inclusief de apocriefen; verses_total
+    # telt alleen de 66 canonieke boeken.
+    assert len(corpus) == read_json("data/stats.json")["corpus_verses_total"]
     assert all(item.text and item.chapter > 0 and item.verse > 0 for item in corpus)
     assert {item.testament for item in corpus} == {"OT", "NT", "AP"}
 
