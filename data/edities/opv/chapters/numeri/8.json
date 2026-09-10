@@ -1,0 +1,1020 @@
+{
+  "schema": 1,
+  "editie": "nl-opv",
+  "boek": "numeri",
+  "hoofdstuk": 8,
+  "kop": "De zeven lampen, en de Levieten in dienst gesteld",
+  "blokken": [
+    {
+      "id": "num-8-b1",
+      "kop": "De zeven lampen",
+      "vanaf": 1,
+      "tot": 4,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "num-8-b2",
+      "kop": "De Levieten gereinigd en aangeboden",
+      "vanaf": 5,
+      "tot": 22,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "num-8-b3",
+      "kop": "De diensttijd van de Levieten",
+      "vanaf": 23,
+      "tot": 26,
+      "review": {
+        "status": "concept"
+      }
+    }
+  ],
+  "verzen": [
+    {
+      "nummer": 1,
+      "tekst": "En de Heere zei tegen Mozes:",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 1,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.1.s1",
+          "tekst": "En de Heere zei tegen Mozes:",
+          "bronfrase": "En de HEERE sprak tot Mozes, zeggende:"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "853eaa133745d113c7c0b3e78b0b51ca014640710306a304ffa7f14c033a1c8b",
+        "bronSha256": "b45dd358e038e69566eb8fe4dc5a31333eebdc0162255fedad44000e697529e2",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 2,
+      "tekst": "Zeg tegen Aaron: Als u de lampen aansteekt, moeten de zeven lampen naar voren schijnen, naar de kant tegenover de kandelaar.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 2,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.2.s1",
+          "tekst": "Zeg tegen Aaron: ",
+          "bronfrase": "Spreek tot Aäron, en zeg tot hem: Als gij de lampen aansteken zult, recht tegenover den kandelaar zullen de zeven lampen lichten."
+        },
+        {
+          "id": "NUM.8.2.s2",
+          "tekst": "Als u de lampen aansteekt, moeten de zeven lampen naar voren schijnen, naar de kant tegenover de kandelaar.",
+          "bronfrase": "Spreek tot Aäron, en zeg tot hem: Als gij de lampen aansteken zult, recht tegenover den kandelaar zullen de zeven lampen lichten."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.8.2.q1",
+          "semanticId": "spraak.god.num8v2q1",
+          "startSegment": "NUM.8.2.s1",
+          "endSegment": "NUM.8.2.s2",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        },
+        {
+          "id": "NUM.8.2.q2",
+          "semanticId": "spraak.mozes.num8v2q2",
+          "startSegment": "NUM.8.2.s2",
+          "endSegment": "NUM.8.2.s2",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "aaron"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "1945629db10538c325ed173f34397279a113a44c3316fca2f91107e0d1bcdb99",
+        "bronSha256": "0d1e97c800aec729910769d53c0e463553edf8bebf6a3917fbae241626dbd6b8",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 3,
+      "tekst": "Aaron deed dat. Hij stak de lampen aan aan de voorkant van de kandelaar, zoals de Heere Mozes had opgedragen.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 3,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.3.s1",
+          "tekst": "Aaron deed dat. Hij stak de lampen aan aan de voorkant van de kandelaar, zoals de Heere Mozes had opgedragen.",
+          "bronfrase": "En Aäron deed alzo: tegenover vooraan den kandelaar stak hij deszelfs lampen aan; gelijk als de HEERE Mozes geboden had."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "6a3d3c886b206d6768de4ef8a5892bb2d246ea82d0015578886e128cb71cbac0",
+        "bronSha256": "116cc24ed8bec319bb0ddcf474db9931c30d723fbaf4e1c22b3d30d18031a2f4",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 4,
+      "tekst": "De kandelaar was uit een stuk goud gedreven, van de schacht tot de bloemen. Mozes had hem gemaakt naar het model dat de Heere hem had laten zien.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 4,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.4.s1",
+          "tekst": "De kandelaar was uit een stuk goud gedreven, van de schacht tot de bloemen. Mozes had hem gemaakt naar het model dat de Heere hem had laten zien.",
+          "bronfrase": "Dit werk nu des kandelaars was van dicht goud, tot zijn schacht, tot zijn bloemen was het dicht; naar de gedaante, die de HEERE Mozes vertoond had, alzo had hij den kandelaar gemaakt."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "4fa179d0e9160e59d7e673f83b8056153e77a06619c7b195bc238b9d5eaba0fd",
+        "bronSha256": "970a0de1b0ee8eb435b67f0452cdf90c7b83b28fdfc1afd374484640695e919a",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 5,
+      "tekst": "En de Heere zei tegen Mozes:",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 5,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.5.s1",
+          "tekst": "En de Heere zei tegen Mozes:",
+          "bronfrase": "En de HEERE sprak tot Mozes, zeggende:"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "853eaa133745d113c7c0b3e78b0b51ca014640710306a304ffa7f14c033a1c8b",
+        "bronSha256": "b45dd358e038e69566eb8fe4dc5a31333eebdc0162255fedad44000e697529e2",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 6,
+      "tekst": "Neem de Levieten apart van de andere Israelieten en maak hen rein.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 6,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.6.s1",
+          "tekst": "Neem de Levieten apart van de andere Israelieten en maak hen rein.",
+          "bronfrase": "Neem de Levieten uit het midden van de kinderen Israëls, en reinig hen."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "levieten",
+          "segmenten": [
+            "NUM.8.6.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.8.6.q1",
+          "semanticId": "spraak.god.num8v6q1",
+          "startSegment": "NUM.8.6.s1",
+          "endSegment": "NUM.8.6.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "062d7cd8566b181a97a5f2eff71330cf3e0e94b8b9fb5be4893ef117b24f0e08",
+        "bronSha256": "233e4d48d14a92a276c7755171849e2fea526912912330f6f2852b9bcf7c7a8f",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 7,
+      "tekst": "Doe het zo: sprenkel het reinigingswater op hen. Laat hen hun hele lichaam scheren en hun kleren wassen, en zo zichzelf reinigen.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 7,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.7.s1",
+          "tekst": "Doe het zo: sprenkel het reinigingswater op hen. Laat hen hun hele lichaam scheren en hun kleren wassen, en zo zichzelf reinigen.",
+          "bronfrase": "En aldus zult gij hun doen, om hen te reinigen: spreng op hen water der ontzondiging; en zij zullen het scheermes over hun ganse vlees doen gaan, en zij zullen hun klederen wassen, en zich reinigen."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "reiniging",
+          "segmenten": [
+            "NUM.8.7.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.8.7.q1",
+          "semanticId": "spraak.god.num8v7q1",
+          "startSegment": "NUM.8.7.s1",
+          "endSegment": "NUM.8.7.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "c7c788a30e2b08fcd1b8598701ff88d6a8e26de0de74be1a93ed55eea46f20b4",
+        "bronSha256": "8e0bedbe2470d64e1ac793d56e075759da91f18bd5edf9a7edaa92aa518125ef",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 8,
+      "tekst": "Daarna moeten zij een jonge stier nemen, met het graanoffer van fijn meel aangemaakt met olie. En u neemt een tweede jonge stier voor het zondoffer.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 8,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.8.s1",
+          "tekst": "Daarna moeten zij een jonge stier nemen, met het graanoffer van fijn meel aangemaakt met olie. En u neemt een tweede jonge stier voor het zondoffer.",
+          "bronfrase": "Daarna zullen zij nemen een var, een jong rund, met zijn spijsoffer van meelbloem, met olie gemengd; en een anderen var, een jong rund, zult gij nemen ten zondoffer."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "offer",
+          "segmenten": [
+            "NUM.8.8.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.8.8.q1",
+          "semanticId": "spraak.god.num8v8q1",
+          "startSegment": "NUM.8.8.s1",
+          "endSegment": "NUM.8.8.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "16e0da937621b4371e99f88029ab79f660ed873b02627111c24b93253fcc199a",
+        "bronSha256": "03700c5c0adfdc7b636732d4141fb4c0a2ce06d9c2189f1e565ea68d0aab4895",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 9,
+      "tekst": "Laat de Levieten naar voren komen bij de tent van ontmoeting en roep heel de gemeenschap van Israel bijeen.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 9,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.9.s1",
+          "tekst": "Laat de Levieten naar voren komen bij de tent van ontmoeting en roep heel de gemeenschap van Israel bijeen.",
+          "bronfrase": "En gij zult de Levieten voor de tent der samenkomst doen naderen; en gij zult de gehele vergadering der kinderen Israëls doen verzamelen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.8.9.q1",
+          "semanticId": "spraak.god.num8v9q1",
+          "startSegment": "NUM.8.9.s1",
+          "endSegment": "NUM.8.9.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "f5a04b39dfa97dcc915d923487425f4b22dbced97b8a3768b3533a776a8b6de9",
+        "bronSha256": "25dc4266e8a8f33abd75fc2addbf17ec645b5bd89a16230cb9f92f0fa6a0cc66",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 10,
+      "tekst": "Laat de Levieten voor de Heere komen. De Israelieten leggen dan hun handen op hen.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 10,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.10.s1",
+          "tekst": "Laat de Levieten voor de Heere komen. De Israelieten leggen dan hun handen op hen.",
+          "bronfrase": "Ja, gij zult de Levieten voor het aangezicht des HEEREN doen naderen; en de kinderen Israëls zullen hun handen op de Levieten leggen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.8.10.q1",
+          "semanticId": "spraak.god.num8v10q1",
+          "startSegment": "NUM.8.10.s1",
+          "endSegment": "NUM.8.10.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "6b5d3502665b44da97d0fcdd5a6425d56828fc1df045763f80febf8f5ca468aa",
+        "bronSha256": "68576a43c807444efbfa2920f2afa87eb73615c9f07800d52e64764880e16c74",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 11,
+      "tekst": "Aaron moet de Levieten voor de Heere aanbieden als een beweegoffer namens de Israelieten. Zo staan zij klaar om het werk voor de Heere te doen.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 11,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.11.s1",
+          "tekst": "Aaron moet de Levieten voor de Heere aanbieden als een beweegoffer namens de Israelieten. Zo staan zij klaar om het werk voor de Heere te doen.",
+          "bronfrase": "En Aäron zal de Levieten bewegen ten beweegoffer voor het aangezicht des HEEREN, vanwege de kinderen Israëls; opdat zij zijn, om den dienst des HEEREN te bedienen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.8.11.q1",
+          "semanticId": "spraak.god.num8v11q1",
+          "startSegment": "NUM.8.11.s1",
+          "endSegment": "NUM.8.11.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "a3bcabd4c05a5b235addb43d5ee7d5b5591825c15239fda90d0f1dfa20a1623a",
+        "bronSha256": "06a4e1e82e5d6a3d71de2f47b06400b827c2f74f0abfeebbe8cb93c8dd644994",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 12,
+      "tekst": "De Levieten leggen hun handen op de kop van de stieren. Bereid daarna de ene als zondoffer en de andere als brandoffer voor de Heere, om verzoening te doen voor de Levieten.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 12,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.12.s1",
+          "tekst": "De Levieten leggen hun handen op de kop van de stieren. Bereid daarna de ene als zondoffer en de andere als brandoffer voor de Heere, om verzoening te doen voor de Levieten.",
+          "bronfrase": "En de Levieten zullen hun handen op het hoofd der varren leggen; daarna bereidt gij een ten zondoffer, en een ten brandoffer den HEERE, om over de Levieten verzoening te doen."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "offer",
+          "segmenten": [
+            "NUM.8.12.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.8.12.q1",
+          "semanticId": "spraak.god.num8v12q1",
+          "startSegment": "NUM.8.12.s1",
+          "endSegment": "NUM.8.12.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "8b04b5be2ec25e060351816d6aaef7a7922875e1c858cbbfd1c595a4b860b895",
+        "bronSha256": "a0c4d374c4a68ed58c554f2f5ec8d30447ab28af7e93805cb2721f4553e4bfb4",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 13,
+      "tekst": "Zet de Levieten voor Aaron en zijn zonen, en bied hen aan als beweegoffer voor de Heere.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 13,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.13.s1",
+          "tekst": "Zet de Levieten voor Aaron en zijn zonen, en bied hen aan als beweegoffer voor de Heere.",
+          "bronfrase": "En gij zult de Levieten stellen voor het aangezicht van Aäron, en voor het aangezicht van zijn zonen, en gij zult hen bewegen ten beweegoffer den HEERE."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.8.13.q1",
+          "semanticId": "spraak.god.num8v13q1",
+          "startSegment": "NUM.8.13.s1",
+          "endSegment": "NUM.8.13.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "5620e43256fbca676bc1b4986a518d58c4e8d3936ed61f5e93c74d82a1e49a1e",
+        "bronSha256": "e906e7eaecc9487be0a1b49754cc61c25130f2ce1f85d57b4ff06b350afabda2",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 14,
+      "tekst": "Zo zondert u de Levieten af van de andere Israelieten, zodat zij van Mij zijn.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 14,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.14.s1",
+          "tekst": "Zo zondert u de Levieten af van de andere Israelieten, zodat zij van Mij zijn.",
+          "bronfrase": "En gij zult de Levieten uit het midden van de kinderen Israëls uitscheiden, opdat de Levieten Mijn zijn."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "levieten",
+          "segmenten": [
+            "NUM.8.14.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.8.14.q1",
+          "semanticId": "spraak.god.num8v14q1",
+          "startSegment": "NUM.8.14.s1",
+          "endSegment": "NUM.8.14.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "005ee3ebe5d74eb3250c7f07c4d53278022653567df44ac7566a188a34f97652",
+        "bronSha256": "9b2f6f0b8776a338e45edf607755f90ae8755febf321846fba7eaabd970ce539",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 15,
+      "tekst": "Daarna mogen de Levieten binnenkomen om in de tent van ontmoeting te werken. U maakt hen eerst rein en biedt hen aan als beweegoffer.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 15,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.15.s1",
+          "tekst": "Daarna mogen de Levieten binnenkomen om in de tent van ontmoeting te werken. U maakt hen eerst rein en biedt hen aan als beweegoffer.",
+          "bronfrase": "En daarna zullen de Levieten inkomen, om de tent der samenkomst te bedienen; en gij zult hen reinigen, en zult hen ten beweegoffer bewegen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.8.15.q1",
+          "semanticId": "spraak.god.num8v15q1",
+          "startSegment": "NUM.8.15.s1",
+          "endSegment": "NUM.8.15.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "27613614333f024070d4e0b766c9360327379506e48ecf8980dea9bb40370457",
+        "bronSha256": "fd92627f72eb0c5e7bcd29a9abed676ddfd4f1b2e633c5f3f649937cb7a2051d",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 16,
+      "tekst": "Want zij zijn Mij helemaal gegeven uit het midden van Israel. In plaats van elke eerstgeborene, elke zoon die als eerste geboren wordt, heb Ik hen voor Mijzelf genomen.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 16,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.16.s1",
+          "tekst": "Want zij zijn Mij helemaal gegeven uit het midden van Israel. In plaats van elke eerstgeborene, elke zoon die als eerste geboren wordt, heb Ik hen voor Mijzelf genomen.",
+          "bronfrase": "Want zij zijn gegeven, zij zijn Mij gegeven uit het midden van de kinderen Israëls; voor de opening van alle baarmoeder, voor de eerstgeborenen van een ieder uit de kinderen Israëls, heb Ik ze Mij genomen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.8.16.q1",
+          "semanticId": "spraak.god.num8v16q1",
+          "startSegment": "NUM.8.16.s1",
+          "endSegment": "NUM.8.16.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "c81e374125310d6d219f19aca3ba72bdda624253fb6c16baa588e59fb219edb1",
+        "bronSha256": "08a59179282832c07f8980b42196f63781a9aabb1a7e2679d55dcabe49f0304e",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 17,
+      "tekst": "Want elke eerstgeborene in Israel is van Mij, bij mensen en bij dieren. Op de dag dat Ik alle eerstgeborenen in Egypte trof, heb Ik hen voor Mijzelf apart gezet.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 17,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.17.s1",
+          "tekst": "Want elke eerstgeborene in Israel is van Mij, bij mensen en bij dieren. Op de dag dat Ik alle eerstgeborenen in Egypte trof, heb Ik hen voor Mijzelf apart gezet.",
+          "bronfrase": "Want alle eerstgeborene onder de kinderen Israëls is Mijn, onder de mensen en onder de beesten; ten dage dat Ik alle eerstgeboorte in Egypteland sloeg, heb Ik dezelve Mij geheiligd."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.8.17.q1",
+          "semanticId": "spraak.god.num8v17q1",
+          "startSegment": "NUM.8.17.s1",
+          "endSegment": "NUM.8.17.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "434a622103f8ebbb1a794433820819b62a06307541e741a72b2fd1a87fa02cd1",
+        "bronSha256": "d6bd64fd72b878d9aa8455831931a4d5bf6d5471ab79adb3690885fccc289a96",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 18,
+      "tekst": "En Ik heb de Levieten genomen in plaats van alle eerstgeborenen in Israel.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 18,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.18.s1",
+          "tekst": "En Ik heb de Levieten genomen in plaats van alle eerstgeborenen in Israel.",
+          "bronfrase": "En Ik heb de Levieten genomen voor alle eerstgeborenen onder de kinderen Israëls."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "levieten",
+          "segmenten": [
+            "NUM.8.18.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.8.18.q1",
+          "semanticId": "spraak.god.num8v18q1",
+          "startSegment": "NUM.8.18.s1",
+          "endSegment": "NUM.8.18.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "81d48c941fa0c8752ca24b9bfa57a65b1c010f2dde025412590e833bdfc9d928",
+        "bronSha256": "3e060873200b82bbec019449bfd3ec160455bbf6b91f69a4a303f6efa71abb92",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 19,
+      "tekst": "Uit het midden van Israel heb Ik de Levieten als gave aan Aaron en zijn zonen gegeven. Zij doen het werk van de Israelieten in de tent van ontmoeting en doen verzoening voor hen. Zo treft geen plaag het volk wanneer het tot het heiligdom nadert.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 19,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.19.s1",
+          "tekst": "Uit het midden van Israel heb Ik de Levieten als gave aan Aaron en zijn zonen gegeven. Zij doen het werk van de Israelieten in de tent van ontmoeting en doen verzoening voor hen. Zo treft geen plaag het volk wanneer het tot het heiligdom nadert.",
+          "bronfrase": "En Ik heb de Levieten aan Aäron en aan zijn zonen tot een gift gegeven, uit het midden van de kinderen Israëls, om den dienst van de kinderen Israëls in de tent der samenkomst te bedienen, en om voor de kinderen Israëls verzoening te doen, dat er geen plage zij onder de kinderen Israëls, als de kinderen Israëls tot het heiligdom naderen zouden."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "levieten",
+          "segmenten": [
+            "NUM.8.19.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.8.19.q1",
+          "semanticId": "spraak.god.num8v19q1",
+          "startSegment": "NUM.8.19.s1",
+          "endSegment": "NUM.8.19.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "31e73b6143462bfdff7e7e348cde44c1601c99ee1ecfc3826903a39ffa75c52e",
+        "bronSha256": "cd7bfe17ce602d7593db6488a08b6ab9fc6857390a73c348040297f3a883f39c",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 20,
+      "tekst": "Mozes, Aaron en heel de gemeenschap van Israel deden met de Levieten precies wat de Heere Mozes had opgedragen.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 20,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.20.s1",
+          "tekst": "Mozes, Aaron en heel de gemeenschap van Israel deden met de Levieten precies wat de Heere Mozes had opgedragen.",
+          "bronfrase": "En Mozes deed, en Aäron, en de ganse vergadering der kinderen Israëls, aan de Levieten, naar alles, wat de HEERE Mozes geboden had van de Levieten, zo deden de kinderen Israëls aan hen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "02ddf123a9cc50cdb9b3f0700f68b94b10a95f37936eaf393cc654f2d5a6232d",
+        "bronSha256": "3989b5e9eeaf8fdcc394f30271ebe575064237685433736715c78037fa30ab3c",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 21,
+      "tekst": "De Levieten reinigden zich van zonde en wasten hun kleren. Aaron bood hen aan als beweegoffer voor de Heere en deed verzoening over hen om hen rein te maken.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 21,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.21.s1",
+          "tekst": "De Levieten reinigden zich van zonde en wasten hun kleren. Aaron bood hen aan als beweegoffer voor de Heere en deed verzoening over hen om hen rein te maken.",
+          "bronfrase": "En de Levieten ontzondigden zich, en wiesen hun klederen, en Aäron bewoog hen ten beweegoffer voor het aangezicht des HEEREN; en Aäron deed verzoening over hen, om hen te reinigen."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "reiniging",
+          "segmenten": [
+            "NUM.8.21.s1"
+          ]
+        },
+        {
+          "conceptId": "zonde",
+          "segmenten": [
+            "NUM.8.21.s1"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ba42fa2d8f4969df6bb6fb6af3fd255d86b3c5ad8eab912e402d82efe48698a2",
+        "bronSha256": "189adf77ab275ab291c0ea225c5dae3c89d8b36bd34c1e02384b4d70c9e83c5c",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 22,
+      "tekst": "Daarna kwamen de Levieten binnen om hun werk te doen in de tent van ontmoeting, onder Aaron en zijn zonen. Zo deden zij met hen wat de Heere Mozes had opgedragen.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 22,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.22.s1",
+          "tekst": "Daarna kwamen de Levieten binnen om hun werk te doen in de tent van ontmoeting, onder Aaron en zijn zonen. Zo deden zij met hen wat de Heere Mozes had opgedragen.",
+          "bronfrase": "En daarna kwamen de Levieten, om hun dienst te bedienen in de tent der samenkomst, voor het aangezicht van Aäron, en voor het aangezicht zijner zonen; gelijk als de HEERE Mozes van de Levieten geboden had, alzo deden zij aan hen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "41df48b731cc9996593abaa73f0ecd2eab395a50ea6ca2e7381043cd620869ce",
+        "bronSha256": "b173bc6c06ccb91d220f762c4fcf78a533012bb07134b39529d96e2ce1db1331",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 23,
+      "tekst": "En de Heere zei tegen Mozes:",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 23,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.23.s1",
+          "tekst": "En de Heere zei tegen Mozes:",
+          "bronfrase": "En de HEERE sprak tot Mozes, zeggende:"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "853eaa133745d113c7c0b3e78b0b51ca014640710306a304ffa7f14c033a1c8b",
+        "bronSha256": "b45dd358e038e69566eb8fe4dc5a31333eebdc0162255fedad44000e697529e2",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 24,
+      "tekst": "Dit geldt voor de Levieten. Vanaf hun vijfentwintigste jaar komen zij in dienst om te werken in de tent van ontmoeting.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 24,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.24.s1",
+          "tekst": "Dit geldt voor de Levieten. Vanaf hun vijfentwintigste jaar komen zij in dienst om te werken in de tent van ontmoeting.",
+          "bronfrase": "Dit is het, wat de Levieten aangaat: van vijf en twintig jaren oud en daarboven, zullen zij inkomen, om den strijd te strijden, in den dienst van de tent der samenkomst."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "levieten",
+          "segmenten": [
+            "NUM.8.24.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.8.24.q1",
+          "semanticId": "spraak.god.num8v24q1",
+          "startSegment": "NUM.8.24.s1",
+          "endSegment": "NUM.8.24.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "b80f1cd713c4478c9f73ea25315e478b2977d0162eb2a0ffd7c03ec42870bb64",
+        "bronSha256": "60734a7c1223a0a9a37ddd0baacec4b8601fe2eb1b27b840f9897f600fc21075",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 25,
+      "tekst": "Vanaf hun vijftigste jaar houden zij met dat werk op en dienen zij niet meer.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 25,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.25.s1",
+          "tekst": "Vanaf hun vijftigste jaar houden zij met dat werk op en dienen zij niet meer.",
+          "bronfrase": "Maar van dat hij vijftig jaren oud is, zal hij van den strijd van dezen dienst afgaan, en hij zal niet meer dienen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.8.25.q1",
+          "semanticId": "spraak.god.num8v25q1",
+          "startSegment": "NUM.8.25.s1",
+          "endSegment": "NUM.8.25.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "3c946b7a65a69e9c00bf39ff4dcb3e14d80abf5be84d4a3bb84a0d0abfa890bd",
+        "bronSha256": "c48351ece4d08e2580cf37cc4df178e7d7117e53ee122fc639e98b32307e5a60",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 26,
+      "tekst": "Zij mogen hun broeders in de tent van ontmoeting wel helpen met de wacht, maar het werk zelf doen zij niet meer. Zo regelt u de taken van de Levieten.",
+      "bron": {
+        "bestand": "data/numeri/8.json",
+        "vers": 26,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.8.26.s1",
+          "tekst": "Zij mogen hun broeders in de tent van ontmoeting wel helpen met de wacht, maar het werk zelf doen zij niet meer. Zo regelt u de taken van de Levieten.",
+          "bronfrase": "Doch hij zal met zijn broederen dienen in de tent der samenkomst, om de wacht waar te nemen; maar den dienst zal hij niet bedienen. Alzo zult gij aan de Levieten doen in hun wachten."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.8.26.q1",
+          "semanticId": "spraak.god.num8v26q1",
+          "startSegment": "NUM.8.26.s1",
+          "endSegment": "NUM.8.26.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "763d261d5519f537fa15e1846da48c319c0370ad6137b53f454a21e8d0fe1f7f",
+        "bronSha256": "2309c6b648664cffcf03f232e1fbcfd0b58f89b2e7df4258edf18440971a1560",
+        "controles": []
+      }
+    }
+  ]
+}
