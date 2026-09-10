@@ -300,15 +300,18 @@ class OpvReaderTests(unittest.TestCase):
             page.close()
 
     def test_ov_audio_wordt_gewist_bij_onbeschikbare_opv_en_herstelt_via_link(self):
+        # Handelingen heeft wel een voorlezing en staat niet in de OPV; dat is
+        # precies de combinatie die deze test nodig heeft. Numeri stond hier
+        # eerder, maar heeft geen audio meer.
         page = self.new_page()
         observed = self.observe_runtime(page)
         try:
-            page.goto(f"{self.base_url}/index.html#numeri/7", wait_until="domcontentloaded")
+            page.goto(f"{self.base_url}/index.html#handelingen/1", wait_until="domcontentloaded")
             ov_row = page.locator('.verse-row[data-verse="1"]')
             ov_row.wait_for()
             self.assertEqual(ov_row.get_attribute("data-status"), "final")
             self.assertTrue(page.locator("#audio-play-big").is_visible())
-            self.assertIn("audio/numeri/7-m.mp3", page.locator("#audio-el").get_attribute("src"))
+            self.assertIn("audio/handelingen/1-m.mp3", page.locator("#audio-el").get_attribute("src"))
 
             observed["requests"].clear()
             self.open_sources(page)
@@ -320,11 +323,11 @@ class OpvReaderTests(unittest.TestCase):
             self.assertFalse(page.locator("#audio-play-mobile").is_visible())
             self.assertIsNone(page.locator("#audio-el").get_attribute("src"))
             self.assertFalse(
-                any(url.endswith("/data/edities/opv/chapters/numeri/7.json") for url in observed["requests"])
+                any(url.endswith("/data/edities/opv/chapters/handelingen/1.json") for url in observed["requests"])
             )
 
             restore = unavailable.locator("a")
-            self.assertIn("?editie=nl-ov#numeri/7", restore.get_attribute("href"))
+            self.assertIn("?editie=nl-ov#handelingen/1", restore.get_attribute("href"))
             page.locator("#sidebar-right-toggle").click()
             page.locator("#sidebar-right").wait_for(state="hidden")
             page.wait_for_function("document.activeElement?.id === 'topnav-tekstopties'")
@@ -335,7 +338,7 @@ class OpvReaderTests(unittest.TestCase):
             restored.wait_for()
             self.assertEqual(restored.get_attribute("data-status"), "final")
             self.assertTrue(page.locator("#audio-play-big").is_visible())
-            self.assertIn("audio/numeri/7-m.mp3", page.locator("#audio-el").get_attribute("src"))
+            self.assertIn("audio/handelingen/1-m.mp3", page.locator("#audio-el").get_attribute("src"))
             self.assertEqual(observed["pageerrors"], [])
             self.assertEqual(observed["http_errors"], [])
         finally:
@@ -1445,16 +1448,18 @@ class OpvReaderTests(unittest.TestCase):
                 for item in chapter_labels
             ))
 
-            for book in ("genesis", "johannes"):
-                page.evaluate("([book]) => App.renderChapter(book, 5)", [book])
-                page.locator('.opv-reading-flow[data-chapter="5"]').wait_for()
-                observed["requests"].clear()
-                page.evaluate("([book]) => { App._contLast={bookId:book,chapterNum:5}; return App._loadNextContinuous(); }", [book])
-                page.wait_for_timeout(150)
-                self.assertEqual(page.locator('.opv-reading-flow[data-chapter="5"]').count(), 1)
-                self.assertEqual(page.locator(".translation-unavailable").count(), 0)
-                self.assertFalse(any(url.endswith(f"/{book}/6.json") for url in observed["requests"]))
-            self.assertFalse(any("/lukas/" in url for url in observed["requests"]))
+            # Doorlopend lezen mag niet over de publicatiegrens heen vragen.
+            # Numeri is het boek dat in de OPV bij hoofdstuk 6 ophoudt; Genesis
+            # en Johannes staan er compleet in, dus daar is hoofdstuk 6 ophalen
+            # juist wel de bedoeling.
+            page.evaluate("App.renderChapter('numeri', 6)")
+            page.locator('.opv-reading-flow[data-chapter="6"]').wait_for()
+            observed["requests"].clear()
+            page.evaluate("() => { App._contLast={bookId:'numeri',chapterNum:6}; return App._loadNextContinuous(); }")
+            page.wait_for_timeout(150)
+            self.assertEqual(page.locator('.opv-reading-flow[data-chapter="6"]').count(), 1)
+            self.assertEqual(page.locator(".translation-unavailable").count(), 0)
+            self.assertFalse(any(url.endswith("/numeri/7.json") for url in observed["requests"]))
             self.assertEqual(observed["pageerrors"], [])
         finally:
             page.close()
