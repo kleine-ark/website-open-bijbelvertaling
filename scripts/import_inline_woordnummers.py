@@ -9,7 +9,11 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-STRONG_RE = re.compile(r"[HG]\d+[A-Za-z]?")
+# De Ethiopische boeken hebben geen Strong's maar een eigen nummering uit
+# Dillmann, geschreven als OVG####. Zonder het OV-deel in dit patroon knipt
+# findall er G#### uit en belandt een Ge'ez-woord op een Grieks nummer:
+# 4 Baruch 1:1 "stad" kwam zo op G127 terecht, het Griekse aidos.
+STRONG_RE = re.compile(r"(?:OV)?[HG]\d+[A-Za-z]?")
 REVIEWED = "handmatig_gecontroleerd"
 
 
