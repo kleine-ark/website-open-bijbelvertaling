@@ -51,7 +51,7 @@ class TekstEditieTests(unittest.TestCase):
         manifest = json.loads((ROOT / "data" / "vertalingen" / "manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(
             [item["code"] for item in manifest["edities"]],
-            ["fr-lsg1910", "en-webbe", "ar-vd", "uk-ukrfb", "de-luther1912", "es-rv1909", "pl-gdanska1881", "tr-open-basic-nt"],
+            ["nl-opv", "fr-lsg1910", "en-webbe", "ar-vd", "uk-ukrfb", "de-luther1912", "es-rv1909", "pl-gdanska1881", "tr-open-basic-nt"],
         )
 
     def test_french_query_renders_french_text_with_text_language(self):
