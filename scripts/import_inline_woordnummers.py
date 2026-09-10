@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # Dillmann, geschreven als OVG####. Zonder het OV-deel in dit patroon knipt
 # findall er G#### uit en belandt een Ge'ez-woord op een Grieks nummer:
 # 4 Baruch 1:1 "stad" kwam zo op G127 terecht, het Griekse aidos.
-STRONG_RE = re.compile(r"(?:OV)?[HG]\d+[A-Za-z]?")
+STRONG_RE = re.compile(r"(?:OVL\d+|OVG\d+|[HG]\d+[A-Za-z]?)")
 REVIEWED = "handmatig_gecontroleerd"
 
 

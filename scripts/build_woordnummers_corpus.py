@@ -15,7 +15,10 @@ DATA = ROOT / "data"
 OUTPUT = DATA / "woordnummers-inline"
 REVIEW_POLICIES = OUTPUT / "review-policies.json"
 WORD_RE = re.compile(r"[^\W\d_]+", re.UNICODE)
-NUMBER_RE = re.compile(r"(?:H\d+[A-Za-z]?|G\d+[A-Za-z]?|OVG\d+)")
+# 4 Ezra is in het Latijn overgeleverd en heeft een eigen nummering uit Lewis
+# & Short, geschreven als OVL####. js/woordnummers.js kent die familie al;
+# zonder OVL hier ziet de projectie in dat boek geen enkel bronwoord.
+NUMBER_RE = re.compile(r"(?:H\d+[A-Za-z]?|G\d+[A-Za-z]?|OVG\d+|OVL\d+)")
 
 # Lidwoorden en andere functiewoorden zijn alleen bruikbaar wanneer ze zelf de
 # volledige primaire gloss zijn (bijvoorbeeld G1722: "in"). In een langere
@@ -71,12 +74,15 @@ def lexicon_terms(entry):
     return standalone_function_terms if len(alternatives) == 1 else set()
 
 
-def geez_terms(word):
-    """Geef uitsluitend enkelvoudige, letterlijke Ge'ez-glossen terug.
+def eigen_glossen(word):
+    """Geef uitsluitend enkelvoudige, letterlijke glossen uit de brondata terug.
 
-    De Ethiopische brondata heeft per woord een korte Nederlandse betekenis.
-    Alleen een betekenis die precies één Nederlands woord is, is veilig genoeg
-    om zonder handmatige redactie als positieanker in de leestekst te tonen.
+    Boeken met een eigen nummering dragen de Nederlandse betekenis in de
+    grondtekstlaag zelf: de Ethiopische boeken (OVG, uit Dillmann) en 4 Ezra
+    (OVL, uit Lewis & Short). Voor die nummers staat niets in bdb-nl of
+    abbott-nl, dus is dit de enige bron. Alleen een betekenis die precies één
+    Nederlands woord is, is veilig genoeg om zonder handmatige redactie als
+    positieanker in de leestekst te tonen.
     """
     value = str(word.get("betekenis") or word.get("gloss") or "")
     result = set()
@@ -89,8 +95,8 @@ def geez_terms(word):
 
 
 def source_terms(item, lexicon):
-    if item["number"].startswith("OVG"):
-        return geez_terms(item["word"])
+    if item["number"].startswith(("OVG", "OVL")):
+        return eigen_glossen(item["word"])
     return lexicon_terms(lexicon.get(item["number"]))
 
 
@@ -107,6 +113,10 @@ def project_verse(verse, lexicon, chapter_verified, allow_auto=True):
             if not NUMBER_RE.fullmatch(raw_number):
                 continue
             number = raw_number
+            # Een kaal Latijns projectnummer zonder betekenis levert niets op en
+            # blijft buiten de projectie; 4 Ezra draagt zijn betekenis wel mee.
+            if number.startswith("OVL") and not eigen_glossen(word):
+                continue
             source.append({"number": number, "word": word})
 
     manual = [item for item in verse.get("woordnummers") or [] if isinstance(item, dict)]
