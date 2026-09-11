@@ -1433,6 +1433,14 @@ body {
     gap: 0;
     padding: 0 4px 9px 14px;
 }
+.option-choice-sub {
+    padding: 6px 0 0;
+    color: var(--text-secondary);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
 .option-choice-values label,
 .option-choice-inline label {
     display: flex;

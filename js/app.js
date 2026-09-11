@@ -669,6 +669,7 @@ const App = {
             let openVertaling = verse.text2026_html || verse.text2026 || verse.textHerzien || '';
             // Pas vertalingsopties toe (Godsnaam etc.) — alleen tekst, niet HTML-tags
             if (!isExternalTranslation && typeof Opties !== 'undefined') openVertaling = Opties.transformOV(openVertaling, book.testament);
+            if (primaryEditionCode === 'nl-opv' && typeof Opties !== 'undefined' && Opties.transformOPV) openVertaling = Opties.transformOPV(openVertaling);
             // Optioneel: geografische locaties markeren (nu Genesis)
             if (!isExternalTranslation && typeof Opties !== 'undefined' && Opties.markeerGeo) openVertaling = Opties.markeerGeo(openVertaling, bookId, chapterNum, verse.number);
             // Optioneel: Bijbelse maten vervangen door metrisch of imperiaal
@@ -775,7 +776,12 @@ const App = {
                 const parallelHtml = parallelEditions.map(item => {
                     const parallelVerse = item.verses.get(Number(verse.number));
                     if (!parallelVerse) return '';
-                    const text = parallelVerse.text2026_html || parallelVerse.text2026 || '';
+                    let text = parallelVerse.text2026_html || parallelVerse.text2026 || '';
+                    // De Godsnaam-keuze geldt ook in de parallelle kolom.
+                    if (typeof Opties !== 'undefined') {
+                        if (item.code === 'nl-ov') text = Opties.transformOV(text, book.testament);
+                        else if (item.code === 'nl-opv' && Opties.transformOPV) text = Opties.transformOPV(text);
+                    }
                     const meta = item.meta || { naam: item.code, taal: '', richting: 'ltr' };
                     return `<section class="parallel-edition" data-editie="${App._escapeStrongHtml(item.code)}" data-edition-label="${App._escapeStrongHtml(meta.naam)}" lang="${App._escapeStrongHtml(meta.taal || '')}" dir="${meta.richting === 'rtl' ? 'rtl' : 'ltr'}">${text}</section>`;
                 }).join('');

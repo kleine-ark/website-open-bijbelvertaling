@@ -5,6 +5,7 @@ const Opties = {
 
     DEFAULTS: {
         godsnaam: 'ov',          // 'ov' (JAHWEH) | 'klassiek' (HEERE) | 'jehovah' (Jehovah) | 'jhwh' (יהוה)
+        godsnaamOPV: 'heere',    // Open Parafrase Vertaling: 'heere' (zoals geschreven) | 'jahweh' | 'jehovah' | 'jhwh'
         heereNT: 'heere',        // NT-aanspreektitel (Kurios): 'heere' (OSV) | 'here' (Heere → Here)
         kolomLayout: 'naast',    // 'naast' (parallelle kolom) | 'eronder' (nieuwe regel onder OV2026)
         boekvolgorde: 'canoniek',// 'canoniek' | 'tenach' | 'chronologisch' | 'auteur' | 'lengte'
@@ -1196,6 +1197,25 @@ const Opties = {
     /** Eén kloktijd uitschrijven; middernacht krijgt geen "uur" achter zich. */
     _tijdTekst(e) {
         return e.los ? e.los : (e.getal + ' uur ' + e.deel);
+    },
+
+    /**
+     * De Godsnaam in de Open Parafrase Vertaling. Die tekst schrijft HEERE, dus
+     * dit werkt andersom dan transformOV: HEERE is de bron, JAHWEH de keuze.
+     * Een eigen optie, omdat de OPV een andere standaard heeft dan de OV.
+     *
+     * "de HEERE" wordt de naam zonder lidwoord, zodat "van de HEERE" vanzelf
+     * "van JAHWEH" wordt en "De HEERE God maakte" "JAHWEH God maakte".
+     * "Heere" (Adonai, of Jezus in het NT) is een ander woord en blijft staan.
+     */
+    transformOPV(html) {
+        if (!html) return html;
+        const naam = { jahweh: 'JAHWEH', jehovah: 'Jehovah', jhwh: 'יהוה' }[this.state.godsnaamOPV];
+        if (!naam) return html;
+        return this._replaceOutsideTags(html, [
+            [/\b(?:[Dd]e|DE) HEERE\b/g, naam],
+            [/\bHEERE\b/g, naam],
+        ]);
     },
 
     /**

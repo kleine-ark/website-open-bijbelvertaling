@@ -227,7 +227,7 @@ const OptionsPanel = {
             control.removeAttribute('onchange');
             control.removeAttribute('data-optie');
             control.removeAttribute('data-toggle-col');
-            if (control.type === 'radio') control.name = `option-mirror-${key}`;
+            if (control.type === 'radio') control.name = `option-mirror-${key}-${control.name}`;
             control.addEventListener('change', () => {
                 const primary = primaryControls[index];
                 if (!primary || (control.type === 'radio' && !control.checked)) return;
