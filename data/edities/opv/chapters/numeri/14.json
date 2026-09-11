@@ -1,0 +1,1784 @@
+{
+  "schema": 1,
+  "editie": "nl-opv",
+  "boek": "numeri",
+  "hoofdstuk": 14,
+  "kop": "Het volk weigert, en veertig jaar in de woestijn",
+  "blokken": [
+    {
+      "id": "num-14-b1",
+      "kop": "Het volk wil terug naar Egypte",
+      "vanaf": 1,
+      "tot": 10,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "num-14-b2",
+      "kop": "Mozes pleit voor het volk",
+      "vanaf": 11,
+      "tot": 25,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "num-14-b3",
+      "kop": "Veertig jaar in de woestijn",
+      "vanaf": 26,
+      "tot": 38,
+      "review": {
+        "status": "concept"
+      }
+    },
+    {
+      "id": "num-14-b4",
+      "kop": "Een mislukte aanval",
+      "vanaf": 39,
+      "tot": 45,
+      "review": {
+        "status": "concept"
+      }
+    }
+  ],
+  "verzen": [
+    {
+      "nummer": 1,
+      "tekst": "Toen begon de hele gemeenschap luid te schreeuwen, en het volk huilde die hele nacht.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 1,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.1.s1",
+          "tekst": "Toen begon de hele gemeenschap luid te schreeuwen, en het volk huilde die hele nacht.",
+          "bronfrase": "Toen verhief zich de gehele vergadering, en zij hieven hun stem op, en het volk weende in dienzelven nacht."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "20eee01c3c1644801d84eb652feadfef28c55f2db6e8cdab5cf46299dea79296",
+        "bronSha256": "f0969d7bd6214463e2ad840fb36346f425be61f44e08fe842f749d5e3f6926bc",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 2,
+      "tekst": "Alle Israelieten mopperden op Mozes en Aaron. De hele gemeenschap zei tegen hen: Waren wij maar in Egypte gestorven, of hier in de woestijn.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 2,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.2.s1",
+          "tekst": "Alle Israelieten mopperden op Mozes en Aaron. De hele gemeenschap zei tegen hen: ",
+          "bronfrase": "En al de kinderen Israëls murmureerden tegen Mozes en tegen Aäron; en de gehele vergadering zeide tot hen: Och, of wij in Egypteland gestorven waren! of, och, of wij in deze woestijn gestorven waren!"
+        },
+        {
+          "id": "NUM.14.2.s2",
+          "tekst": "Waren wij maar in Egypte gestorven, of hier in de woestijn.",
+          "bronfrase": "En al de kinderen Israëls murmureerden tegen Mozes en tegen Aäron; en de gehele vergadering zeide tot hen: Och, of wij in Egypteland gestorven waren! of, och, of wij in deze woestijn gestorven waren!"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.2.q1",
+          "semanticId": "spraak.gemeenschap.num14v2q1",
+          "startSegment": "NUM.14.2.s2",
+          "endSegment": "NUM.14.2.s2",
+          "spreker": {
+            "id": "gemeenschap",
+            "type": "group",
+            "naam": "De gemeenschap van Israel"
+          },
+          "aangesprokene": [
+            "mozes",
+            "aaron"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "765a2ae007623d0b0d2f2fbe68e57163cd9c549d31dff04da25cfe21a68b7463",
+        "bronSha256": "69ba96a3fdca68b12b0323f16390ed1fbd99e31984ed8d2659c395d3502b0a42",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 3,
+      "tekst": "Waarom brengt de Heere ons naar dat land, waar wij door het zwaard zullen vallen? Onze vrouwen en kinderen worden buit. Kunnen wij niet beter teruggaan naar Egypte?",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 3,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.3.s1",
+          "tekst": "Waarom brengt de Heere ons naar dat land, waar wij door het zwaard zullen vallen? Onze vrouwen en kinderen worden buit. Kunnen wij niet beter teruggaan naar Egypte?",
+          "bronfrase": "En waarom brengt ons de HEERE naar dat land, dat wij door het zwaard vallen, en onze vrouwen, en onze kinderkens ten roof worden? Zou het ons niet goed zijn naar Egypte weder te keren?"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.3.q1",
+          "semanticId": "spraak.gemeenschap.num14v3q1",
+          "startSegment": "NUM.14.3.s1",
+          "endSegment": "NUM.14.3.s1",
+          "spreker": {
+            "id": "gemeenschap",
+            "type": "group",
+            "naam": "De gemeenschap van Israel"
+          },
+          "aangesprokene": [
+            "mozes",
+            "aaron"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "61a3fe282f439b9097d2c221ba66383f49513430beba1c07828fd33f0099d147",
+        "bronSha256": "c41e5218395239f31ac7cb9d057cafbda5e4ab47b79599f0015c234565f4b902",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 4,
+      "tekst": "Zij zeiden tegen elkaar: Laten wij een leider kiezen en teruggaan naar Egypte.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 4,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.4.s1",
+          "tekst": "Zij zeiden tegen elkaar: ",
+          "bronfrase": "En zij zeiden de een tot den ander: Laat ons een hoofd opwerpen, en wederkeren naar Egypte!"
+        },
+        {
+          "id": "NUM.14.4.s2",
+          "tekst": "Laten wij een leider kiezen en teruggaan naar Egypte.",
+          "bronfrase": "En zij zeiden de een tot den ander: Laat ons een hoofd opwerpen, en wederkeren naar Egypte!"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.4.q1",
+          "semanticId": "spraak.gemeenschap.num14v4q1",
+          "startSegment": "NUM.14.4.s2",
+          "endSegment": "NUM.14.4.s2",
+          "spreker": {
+            "id": "gemeenschap",
+            "type": "group",
+            "naam": "De gemeenschap van Israel"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "2fc480b149e3ea2e1d85cca6493875572d2db602d6450348e5c16b36766cfbc4",
+        "bronSha256": "2e7528736d8cf768e4e2a2d2ba273129240d91916f90daa4c8c33fafa2047997",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 5,
+      "tekst": "Toen vielen Mozes en Aaron op hun gezicht voor de hele verzamelde gemeenschap van Israel.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 5,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.5.s1",
+          "tekst": "Toen vielen Mozes en Aaron op hun gezicht voor de hele verzamelde gemeenschap van Israel.",
+          "bronfrase": "Toen vielen Mozes en Aäron op hun aangezichten, voor het aangezicht van de ganse gemeente der vergadering van de kinderen Israëls."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "460174319d880bd959bd20fe9228d15a80e22d51c1ea24f9e5b7ac45ebb91031",
+        "bronSha256": "89e51257a0a5017abb798f5ee9873f27bcfebf4bbbe9dd214cea3fcfea35abb2",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 6,
+      "tekst": "Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, die ook het land verkend hadden, scheurden hun kleren.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 6,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.6.s1",
+          "tekst": "Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, die ook het land verkend hadden, scheurden hun kleren.",
+          "bronfrase": "En Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, zijnde van degenen, die dat land verspied hadden, scheurden hun klederen."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ba69488970ae63e9b86480fe46fa989b572cc9148e7461ed83a8ac18c50b0944",
+        "bronSha256": "9dd0bd07cc181dadba3d8e12fa6898da624769bb7f8168dccbc07a30f827b09a",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 7,
+      "tekst": "Zij zeiden tegen de hele gemeenschap van Israel: Het land waar wij doorheen trokken om het te verkennen, is een uitzonderlijk goed land.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 7,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.7.s1",
+          "tekst": "Zij zeiden tegen de hele gemeenschap van Israel: ",
+          "bronfrase": "En zij spraken tot de ganse vergadering der kinderen Israëls, zeggende: Het land, door hetwelk wij getrokken zijn, om hetzelve te verspieden, is een uitermate goed land."
+        },
+        {
+          "id": "NUM.14.7.s2",
+          "tekst": "Het land waar wij doorheen trokken om het te verkennen, is een uitzonderlijk goed land.",
+          "bronfrase": "En zij spraken tot de ganse vergadering der kinderen Israëls, zeggende: Het land, door hetwelk wij getrokken zijn, om hetzelve te verspieden, is een uitermate goed land."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.7.q1",
+          "semanticId": "spraak.jozuakaleb.num14v7q1",
+          "startSegment": "NUM.14.7.s2",
+          "endSegment": "NUM.14.7.s2",
+          "spreker": {
+            "id": "jozua-kaleb",
+            "type": "group",
+            "naam": "Jozua en Kaleb"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "6be06fee11c47f1454c96ad2bc388cea736e376ad5780f1a693ceb0d9898d5a0",
+        "bronSha256": "45de6e0f809bafab8f5c934e2121082d9bfe092af0e4eff9e73eeea15b607443",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 8,
+      "tekst": "Als de Heere ons goedgezind is, brengt Hij ons in dat land en geeft Hij het ons, een land dat overvloeit van melk en honing.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 8,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.8.s1",
+          "tekst": "Als de Heere ons goedgezind is, brengt Hij ons in dat land en geeft Hij het ons, een land dat overvloeit van melk en honing.",
+          "bronfrase": "Indien de HEERE een welgevallen aan ons heeft, zo zal Hij ons in dat land brengen, en zal ons dat geven; een land, hetwelk van melk en honig is vloeiende."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.8.q1",
+          "semanticId": "spraak.jozuakaleb.num14v8q1",
+          "startSegment": "NUM.14.8.s1",
+          "endSegment": "NUM.14.8.s1",
+          "spreker": {
+            "id": "jozua-kaleb",
+            "type": "group",
+            "naam": "Jozua en Kaleb"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "5b2a019ffdd8d7127c47cb79abaf51b7e7113683dd9429c99ad98761a9e0144f",
+        "bronSha256": "a7e9b9b268ae78419c245007f7d1dd18e7f5af060c0c0765fe3ece3308ddd5d3",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 9,
+      "tekst": "Kom alleen niet in opstand tegen de Heere. En wees niet bang voor het volk van dat land, want wij zullen hen verslinden. Hun bescherming is van hen geweken en de Heere is met ons. Wees niet bang voor hen.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 9,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.9.s1",
+          "tekst": "Kom alleen niet in opstand tegen de Heere. En wees niet bang voor het volk van dat land, want wij zullen hen verslinden. Hun bescherming is van hen geweken en de Heere is met ons. Wees niet bang voor hen.",
+          "bronfrase": "Alleen zijt tegen den HEERE niet wederspannig! en vreest gij niet het volk dezes lands; want zij zijn ons brood! hun schaduw is van hen geweken, en de HEERE is met ons; vreest hen niet!"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.9.q1",
+          "semanticId": "spraak.jozuakaleb.num14v9q1",
+          "startSegment": "NUM.14.9.s1",
+          "endSegment": "NUM.14.9.s1",
+          "spreker": {
+            "id": "jozua-kaleb",
+            "type": "group",
+            "naam": "Jozua en Kaleb"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ca9c4e416618f82762a08022dc9cb10c8eea6e10fce002fcb427ffa831b001af",
+        "bronSha256": "3568dcd8f2eb0e3a363137ecac4a632e5b8f5b3494ee5f935570a2e0b6f378b2",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 10,
+      "tekst": "Maar de hele gemeenschap wilde hen stenigen. Toen verscheen de heerlijkheid van de Heere bij de tent van ontmoeting, voor alle Israelieten.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 10,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.10.s1",
+          "tekst": "Maar de hele gemeenschap wilde hen stenigen. Toen verscheen de heerlijkheid van de Heere bij de tent van ontmoeting, voor alle Israelieten.",
+          "bronfrase": "Toen zeide de ganse vergadering, dat men hen met stenen stenigen zoude. Maar de heerlijkheid des HEEREN verscheen in de tent der samenkomst, voor al de kinderen Israëls."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "heerlijkheid",
+          "segmenten": [
+            "NUM.14.10.s1"
+          ]
+        }
+      ],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "247362c915ee2a0e69a41bccecd61d0d142bc74c0e4cb3f5ac294367acbe3360",
+        "bronSha256": "365cafa305fc3e4277fcf9980320bf881de2dbbcfb0805069a10422496e86a07",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 11,
+      "tekst": "De Heere zei tegen Mozes: Hoe lang blijft dit volk Mij nog minachten? Hoe lang blijven zij Mij wantrouwen, ondanks alle tekenen die Ik onder hen gedaan heb?",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 11,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.11.s1",
+          "tekst": "De Heere zei tegen Mozes: ",
+          "bronfrase": "En de HEERE zeide tot Mozes: Hoe lang zal mij dit volk tergen? En hoe lang zullen zij aan Mij niet geloven, door alle tekenen, die Ik in het midden van hen gedaan heb?"
+        },
+        {
+          "id": "NUM.14.11.s2",
+          "tekst": "Hoe lang blijft dit volk Mij nog minachten? Hoe lang blijven zij Mij wantrouwen, ondanks alle tekenen die Ik onder hen gedaan heb?",
+          "bronfrase": "En de HEERE zeide tot Mozes: Hoe lang zal mij dit volk tergen? En hoe lang zullen zij aan Mij niet geloven, door alle tekenen, die Ik in het midden van hen gedaan heb?"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "teken",
+          "segmenten": [
+            "NUM.14.11.s1",
+            "NUM.14.11.s2"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.14.11.q1",
+          "semanticId": "spraak.god.num14v11q1",
+          "startSegment": "NUM.14.11.s2",
+          "endSegment": "NUM.14.11.s2",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "872721b462cf10d0eb9f911b991659432ac4cc9f5d17943bbcfa9727bbda32b2",
+        "bronSha256": "1f4ccbd65de255065e5f3d124d2850002a36e6965a23ef8a70a58d327a2897b7",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 12,
+      "tekst": "Ik zal hen met de pest treffen en hen verstoten. Van u maak Ik een volk dat groter en sterker is dan zij.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 12,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.12.s1",
+          "tekst": "Ik zal hen met de pest treffen en hen verstoten. Van u maak Ik een volk dat groter en sterker is dan zij.",
+          "bronfrase": "Ik zal het met pestilentie slaan, en Ik zal het verstoten; en Ik zal u tot een groter en sterker volk maken, dan dit is."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.12.q1",
+          "semanticId": "spraak.god.num14v12q1",
+          "startSegment": "NUM.14.12.s1",
+          "endSegment": "NUM.14.12.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "245e94a6a954b875a7b8dd2b8e2651cf8409892b978a8b0b210cd112b6460595",
+        "bronSha256": "7d608a3d0377bc184d8bcdaafe783fb8b64e772b4c5e61ad6500f1933249776c",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 13,
+      "tekst": "Maar Mozes zei tegen de Heere: Dan zullen de Egyptenaren het horen. U hebt dit volk met Uw kracht uit hun midden weggeleid.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 13,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.13.s1",
+          "tekst": "Maar Mozes zei tegen de Heere: ",
+          "bronfrase": "En Mozes zeide tot den HEERE: Zo zullen het de Egyptenaars horen; want Gij hebt door Uw kracht dit volk uit het midden van hen doen optrekken;"
+        },
+        {
+          "id": "NUM.14.13.s2",
+          "tekst": "Dan zullen de Egyptenaren het horen. U hebt dit volk met Uw kracht uit hun midden weggeleid.",
+          "bronfrase": "En Mozes zeide tot den HEERE: Zo zullen het de Egyptenaars horen; want Gij hebt door Uw kracht dit volk uit het midden van hen doen optrekken;"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.13.q1",
+          "semanticId": "spraak.mozes.num14v13q1",
+          "startSegment": "NUM.14.13.s2",
+          "endSegment": "NUM.14.13.s2",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "god"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "085fb222f915930a4658d22f3f1ec29e32788900111c513b11699f6aa72bc200",
+        "bronSha256": "ee1f65acc00d6c77829999cab02ef7a8e33d24b1d5d8431cb2d3ac8f23b8ebd9",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 14,
+      "tekst": "Zij zullen het vertellen aan de bewoners van dit land. Die hebben gehoord dat U, Heere, midden onder dit volk bent. U, Heere, wordt van aangezicht tot aangezicht gezien. Uw wolk staat boven hen, en U gaat overdag voor hen uit in een wolkkolom en in de nacht in een vuurkolom.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 14,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.14.s1",
+          "tekst": "Zij zullen het vertellen aan de bewoners van dit land. Die hebben gehoord dat U, Heere, midden onder dit volk bent. U, Heere, wordt van aangezicht tot aangezicht gezien. Uw wolk staat boven hen, en U gaat overdag voor hen uit in een wolkkolom en in de nacht in een vuurkolom.",
+          "bronfrase": "En zij zullen zeggen tot de inwoners van dit land, die gehoord hebben, dat Gij, HEERE! in het midden van dit volk zijt; dat Gij, HEERE! oog aan oog gezien wordt, dat Uw wolk over hen staat, en Gij in een wolkkolom voor hun aangezicht gaat des daags, en in een vuurkolom des nachts."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.14.q1",
+          "semanticId": "spraak.mozes.num14v14q1",
+          "startSegment": "NUM.14.14.s1",
+          "endSegment": "NUM.14.14.s1",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "god"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "d68822dd4e2ecb4d75460fa1ab6f38dd98cbb39e2b3acea6895f215acf8aab43",
+        "bronSha256": "7015343ef6994e32ea8c8d08a3dcabd56228de492497df1d30e70be5db61c54b",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 15,
+      "tekst": "Als U dit volk nu allemaal tegelijk doodt, zullen de volken die van U gehoord hebben zeggen:",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 15,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.15.s1",
+          "tekst": "Als U dit volk nu allemaal tegelijk doodt, zullen de volken die van U gehoord hebben zeggen:",
+          "bronfrase": "En zoudt Gij dit volk als een enigen man doden, zo zouden de heidenen, die Uw gerucht gehoord hebben, spreken, zeggende:"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.15.q1",
+          "semanticId": "spraak.mozes.num14v15q1",
+          "startSegment": "NUM.14.15.s1",
+          "endSegment": "NUM.14.15.s1",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "god"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "c6a0de75ca275c446aec00de7a63176c1ca2618e6a35a62030bcd7c5e98e9258",
+        "bronSha256": "aa8b63e69dcefc3edcd1553a993e6db43a7a6ad104e61c00d345b172bad2d89b",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 16,
+      "tekst": "De Heere kon dit volk niet brengen in het land dat Hij hun beloofd had. Daarom heeft Hij hen in de woestijn afgeslacht.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 16,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.16.s1",
+          "tekst": "De Heere kon dit volk niet brengen in het land dat Hij hun beloofd had. Daarom heeft Hij hen in de woestijn afgeslacht.",
+          "bronfrase": "Omdat de HEERE dit volk niet kon brengen in dat land, hetwelk Hij hun gezworen had, zo heeft Hij hen geslacht in de woestijn!"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.16.q1",
+          "semanticId": "spraak.mozes.num14v16q1",
+          "startSegment": "NUM.14.16.s1",
+          "endSegment": "NUM.14.16.s1",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "god"
+          ]
+        },
+        {
+          "id": "NUM.14.16.q2",
+          "semanticId": "spraak.volken.num14v16q2",
+          "startSegment": "NUM.14.16.s1",
+          "endSegment": "NUM.14.16.s1",
+          "spreker": {
+            "id": "volken",
+            "type": "group",
+            "naam": "De volken"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "bb76454e6f2bc6194c89f106318f6edc899645af25e7f3e43713bb39d0d3ea44",
+        "bronSha256": "3943f46c92c3875573a6877a016a191401ef39108f91d74d7678a7466fadd9d6",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 17,
+      "tekst": "Laat nu toch de kracht van de Heere groot blijken, zoals U gezegd hebt:",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 17,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.17.s1",
+          "tekst": "Laat nu toch de kracht van de Heere groot blijken, zoals U gezegd hebt:",
+          "bronfrase": "Nu dan, laat toch de kracht des HEEREN groot worden, gelijk als Gij gesproken hebt, zeggende:"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.17.q1",
+          "semanticId": "spraak.mozes.num14v17q1",
+          "startSegment": "NUM.14.17.s1",
+          "endSegment": "NUM.14.17.s1",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "god"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "0742aef83800351e7b9070fcd3ca056ef43f21497a36c580f89763c3b2341384",
+        "bronSha256": "d102dbecf530a891ca582b127c718c0a8433158d0632083007a64331e4bac913",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 18,
+      "tekst": "De Heere is geduldig en rijk aan trouw. Hij vergeeft schuld en overtreding, maar laat de schuldige niet vrijuit gaan. Hij straft de schuld van de ouders aan de kinderen, tot in het derde en vierde geslacht.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 18,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.18.s1",
+          "tekst": "De Heere is geduldig en rijk aan trouw. Hij vergeeft schuld en overtreding, maar laat de schuldige niet vrijuit gaan. Hij straft de schuld van de ouders aan de kinderen, tot in het derde en vierde geslacht.",
+          "bronfrase": "De HEERE is lankmoedig en groot van weldadigheid, vergevende de ongerechtigheid en overtreding, die den schuldige geenszins onschuldig houdt, bezoekende de ongerechtigheid der vaderen aan de kinderen, in het derde en in het vierde lid."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "zonde",
+          "segmenten": [
+            "NUM.14.18.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.14.18.q1",
+          "semanticId": "spraak.mozes.num14v18q1",
+          "startSegment": "NUM.14.18.s1",
+          "endSegment": "NUM.14.18.s1",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "god"
+          ]
+        },
+        {
+          "id": "NUM.14.18.q2",
+          "semanticId": "spraak.god.num14v18q2",
+          "startSegment": "NUM.14.18.s1",
+          "endSegment": "NUM.14.18.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "0c54e2606535bc960750564f3ef949b2f156dca074056635885dcabef889f006",
+        "bronSha256": "02385a03fb2f89be72dbd21f5d49685e8d5e495434148767dfa55f826c6e7e3f",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 19,
+      "tekst": "Vergeef toch de schuld van dit volk, want Uw trouw is groot. Vergeef het zoals U dit volk vergeven hebt vanaf Egypte tot nu toe.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 19,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.19.s1",
+          "tekst": "Vergeef toch de schuld van dit volk, want Uw trouw is groot. Vergeef het zoals U dit volk vergeven hebt vanaf Egypte tot nu toe.",
+          "bronfrase": "Vergeef toch de ongerechtigheid dezes volks, naar de grootte Uwer goedertierenheid, en gelijk Gij ze aan dit volk, van Egypteland af tot hiertoe, vergeven hebt!"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "zonde",
+          "segmenten": [
+            "NUM.14.19.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.14.19.q1",
+          "semanticId": "spraak.mozes.num14v19q1",
+          "startSegment": "NUM.14.19.s1",
+          "endSegment": "NUM.14.19.s1",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "god"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "9c0c162be9cc4b2726480ca32e4ec6ed886439c3ef0450cb63eaf533a6d18e51",
+        "bronSha256": "a90407bf13d6cd22d4394205533be72a67b7d4b96aca6c187cc49443d8a06f1e",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 20,
+      "tekst": "De Heere zei: Ik vergeef het, zoals u gevraagd hebt.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 20,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.20.s1",
+          "tekst": "De Heere zei: ",
+          "bronfrase": "En de HEERE zeide: Ik heb hun vergeven naar uw woord."
+        },
+        {
+          "id": "NUM.14.20.s2",
+          "tekst": "Ik vergeef het, zoals u gevraagd hebt.",
+          "bronfrase": "En de HEERE zeide: Ik heb hun vergeven naar uw woord."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.20.q1",
+          "semanticId": "spraak.god.num14v20q1",
+          "startSegment": "NUM.14.20.s2",
+          "endSegment": "NUM.14.20.s2",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ca2be3d5ec748105d3dd4782e50c33f1b9c2346a5d46e33307cf7ffb0e939aa1",
+        "bronSha256": "3a59bd0c4ad30d578bef088658dfbe92ead4f8f2ff4c6d6a7123a9fcde834dbd",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 21,
+      "tekst": "Maar zo waar Ik leef en zo waar de hele aarde vervuld zal worden van de heerlijkheid van de Heere, dit zeg Ik:",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 21,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.21.s1",
+          "tekst": "Maar zo waar Ik leef en zo waar de hele aarde vervuld zal worden van de heerlijkheid van de Heere, dit zeg Ik:",
+          "bronfrase": "Doch zekerlijk, zo waarachtig als Ik leef, zo zal de ganse aarde met de heerlijkheid des HEEREN vervuld worden!"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "heerlijkheid",
+          "segmenten": [
+            "NUM.14.21.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.14.21.q1",
+          "semanticId": "spraak.god.num14v21q1",
+          "startSegment": "NUM.14.21.s1",
+          "endSegment": "NUM.14.21.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "4d831ed8a10b9bbc5d52a29eb31dab2f8477460ce73702bb1e879129dd022aae",
+        "bronSha256": "cea6bf09c32cffe04cbe5cad7b2e1b02fde3d13eed489d8274fc636057873016",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 22,
+      "tekst": "Al deze mannen hebben Mijn heerlijkheid gezien en de tekenen die Ik in Egypte en in de woestijn deed. Toch hebben zij Mij nu tien keer op de proef gesteld en niet naar Mij geluisterd.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 22,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.22.s1",
+          "tekst": "Al deze mannen hebben Mijn heerlijkheid gezien en de tekenen die Ik in Egypte en in de woestijn deed. Toch hebben zij Mij nu tien keer op de proef gesteld en niet naar Mij geluisterd.",
+          "bronfrase": "Want al de mannen, die gezien hebben Mijn heerlijkheid, en Mijn tekenen, die Ik in Egypte en in de woestijn gedaan heb, en Mij nu tienmaal verzocht hebben, en Mijner stem niet zijn gehoorzaam geweest;"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "heerlijkheid",
+          "segmenten": [
+            "NUM.14.22.s1"
+          ]
+        },
+        {
+          "conceptId": "teken",
+          "segmenten": [
+            "NUM.14.22.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.14.22.q1",
+          "semanticId": "spraak.god.num14v22q1",
+          "startSegment": "NUM.14.22.s1",
+          "endSegment": "NUM.14.22.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "c6622584d569f42b285df19898702cd669ee01155dac352b6c6c4d14f00c38f4",
+        "bronSha256": "e081d539ad16dfbdd19d72ef3ef882826078e9bdd7161c911853b15ed075802b",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 23,
+      "tekst": "Zij zullen het land dat Ik hun voorouders beloofd heb, beslist niet zien. Niemand van hen die Mij geminacht hebben, zal het zien.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 23,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.23.s1",
+          "tekst": "Zij zullen het land dat Ik hun voorouders beloofd heb, beslist niet zien. Niemand van hen die Mij geminacht hebben, zal het zien.",
+          "bronfrase": "Zo zij het land, hetwelk Ik aan hun vaderen gezworen heb, zien zullen. Ja, geen van die Mij getergd hebben, zullen dat zien!"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.23.q1",
+          "semanticId": "spraak.god.num14v23q1",
+          "startSegment": "NUM.14.23.s1",
+          "endSegment": "NUM.14.23.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "4c4e6b36b00c682480c34253bc7374fe615b2c20c97ca55eae4f7bb19d898558",
+        "bronSha256": "f4b34f43fdf4b6549f161887cbd8dc3d8ae46ff889acb7acfa0b1ec91f459cea",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 24,
+      "tekst": "Maar Mijn dienaar Kaleb heeft een andere houding gehad en is Mij trouw gevolgd. Hem zal Ik brengen in het land waar hij geweest is, en zijn nakomelingen zullen het in bezit krijgen.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 24,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.24.s1",
+          "tekst": "Maar Mijn dienaar Kaleb heeft een andere houding gehad en is Mij trouw gevolgd. Hem zal Ik brengen in het land waar hij geweest is, en zijn nakomelingen zullen het in bezit krijgen.",
+          "bronfrase": "Doch Mijn knecht Kaleb, omdat een andere geest met hem geweest is, en hij volhard heeft Mij na te volgen, zo zal Ik hem brengen tot het land, in hetwelk hij gekomen was, en zijn zaad zal het erfelijk bezitten."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.24.q1",
+          "semanticId": "spraak.god.num14v24q1",
+          "startSegment": "NUM.14.24.s1",
+          "endSegment": "NUM.14.24.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "d0f4b2fdb1a7e44d144691ae0118c84474f61c505a959d1decef9698bb2f3f93",
+        "bronSha256": "15acedfea81c6d950ee02654f8b14d509ede0fed906a8d7a40b8de59850316c1",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 25,
+      "tekst": "De Amalekieten en de Kanaanieten wonen in de vlakte. Keer morgen om en trek de woestijn in, in de richting van de Rietzee.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 25,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.25.s1",
+          "tekst": "De Amalekieten en de Kanaanieten wonen in de vlakte. Keer morgen om en trek de woestijn in, in de richting van de Rietzee.",
+          "bronfrase": "De Amalekieten nu en de Kanaänieten wonen in het dal; wendt u morgen, en maakt uw reize naar de woestijn, op den weg naar de Schelfzee."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.25.q1",
+          "semanticId": "spraak.god.num14v25q1",
+          "startSegment": "NUM.14.25.s1",
+          "endSegment": "NUM.14.25.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "f8332d29e78f0bab5dee0b7a4f3e48e2971982a45eac8c828290098febff06ea",
+        "bronSha256": "67eaac8f34d57e727fb143ee236906ccf99f5fa8e4a3322822f43445e510d8cc",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 26,
+      "tekst": "Daarna zei de Heere tegen Mozes en Aaron:",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 26,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.26.s1",
+          "tekst": "Daarna zei de Heere tegen Mozes en Aaron:",
+          "bronfrase": "Daarna sprak de HEERE tot Mozes en tot Aäron, zeggende:"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "53d1c786f421f010878ea56d0c07ae70dcf7afe52db5d4a4d87ca17ef6767506",
+        "bronSha256": "ddcd8195570cec05aff4243888f9a23fd62d7a7f77bae15c21ab6efce8eb0799",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 27,
+      "tekst": "Hoe lang moet Ik deze slechte gemeenschap nog verdragen, die tegen Mij moppert? Ik heb het gemopper van de Israelieten tegen Mij gehoord.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 27,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.27.s1",
+          "tekst": "Hoe lang moet Ik deze slechte gemeenschap nog verdragen, die tegen Mij moppert? Ik heb het gemopper van de Israelieten tegen Mij gehoord.",
+          "bronfrase": "Hoe lang zal Ik bij deze boze vergadering zijn, die tegen Mij zijn murmurerende? Ik heb gehoord de murmureringen van de kinderen Israëls, waarmede zij tegen Mij zijn murmurerende."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.27.q1",
+          "semanticId": "spraak.god.num14v27q1",
+          "startSegment": "NUM.14.27.s1",
+          "endSegment": "NUM.14.27.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes",
+            "aaron"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ff12095f110285efeaa168d7c4d414aee20cfae5dfd6b0859d603d2453f214a3",
+        "bronSha256": "7de4a36d697cc67506d41fb34d4dfe6e0c41368dd5b4e6290bf5ee5713e56c30",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 28,
+      "tekst": "Zeg tegen hen: Zo waar Ik leef, zegt de Heere, Ik zal met u doen wat u Mij hebt horen zeggen.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 28,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.28.s1",
+          "tekst": "Zeg tegen hen: ",
+          "bronfrase": "Zeg tot hen: Zo waarachtig als Ik leef, spreekt de HEERE, indien Ik ulieden zo niet doe, gelijk als gij in Mijn oren gesproken hebt!"
+        },
+        {
+          "id": "NUM.14.28.s2",
+          "tekst": "Zo waar Ik leef, zegt de Heere, Ik zal met u doen wat u Mij hebt horen zeggen.",
+          "bronfrase": "Zeg tot hen: Zo waarachtig als Ik leef, spreekt de HEERE, indien Ik ulieden zo niet doe, gelijk als gij in Mijn oren gesproken hebt!"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.28.q1",
+          "semanticId": "spraak.god.num14v28q1",
+          "startSegment": "NUM.14.28.s1",
+          "endSegment": "NUM.14.28.s2",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "mozes",
+            "aaron"
+          ]
+        },
+        {
+          "id": "NUM.14.28.q2",
+          "semanticId": "spraak.god.num14v28q2",
+          "startSegment": "NUM.14.28.s2",
+          "endSegment": "NUM.14.28.s2",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "254a13cc9b7bf390b8f809e8f0e014a2a0db1453a317f477789c467f465ead79",
+        "bronSha256": "2652c4cdce981e9b6759b6f84bfc0216892b21dd55d96934aa2dde000e33cd0e",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 29,
+      "tekst": "Uw lichamen zullen in deze woestijn vallen, van u allen die geteld zijn, van twintig jaar en ouder, allen die tegen Mij gemopperd hebben.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 29,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.29.s1",
+          "tekst": "Uw lichamen zullen in deze woestijn vallen, van u allen die geteld zijn, van twintig jaar en ouder, allen die tegen Mij gemopperd hebben.",
+          "bronfrase": "Uw dode lichamen zullen in deze woestijn vallen; en al uw getelden, naar uw gehele getal, van twintig jaren oud en daarboven, gij, die tegen Mij gemurmureerd hebt."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.29.q1",
+          "semanticId": "spraak.god.num14v29q1",
+          "startSegment": "NUM.14.29.s1",
+          "endSegment": "NUM.14.29.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "1513b3274d34e4b6b69ae86a41b10df3595213c0ae357f74dc7c3eb28544a942",
+        "bronSha256": "3e44f1e59ff49355056d837810426b3c0a6a14060f387d6ada0f268c1440acce",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 30,
+      "tekst": "Niemand van u zal het land binnengaan waarvan Ik gezworen heb u daar te laten wonen. Alleen Kaleb, de zoon van Jefunne, en Jozua, de zoon van Nun, komen erin.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 30,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.30.s1",
+          "tekst": "Niemand van u zal het land binnengaan waarvan Ik gezworen heb u daar te laten wonen. Alleen Kaleb, de zoon van Jefunne, en Jozua, de zoon van Nun, komen erin.",
+          "bronfrase": "Zo gij in dat land komt, over hetwelk Ik Mijn hand opgeheven heb, dat Ik u daarin zou doen wonen, behalve Kaleb, de zoon van Jefunne, en Jozua, de zoon van Nun."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.30.q1",
+          "semanticId": "spraak.god.num14v30q1",
+          "startSegment": "NUM.14.30.s1",
+          "endSegment": "NUM.14.30.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "f44f52328c1557b0e9efcdb76625e4463226038349b9f495f68f55d511114bce",
+        "bronSha256": "4d40946261e62bf0a8548586d9fc21bdde53d4c6929862f2631e9ed665aa976c",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 31,
+      "tekst": "Uw kinderen, van wie u zei dat zij buit zouden worden, die zal Ik erin brengen. Zij zullen het land leren kennen dat u hebt afgewezen.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 31,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.31.s1",
+          "tekst": "Uw kinderen, van wie u zei dat zij buit zouden worden, die zal Ik erin brengen. Zij zullen het land leren kennen dat u hebt afgewezen.",
+          "bronfrase": "En uw kinderkens, waarvan gij zeidet: Zij zullen ten roof worden! die zal Ik daarin brengen, en die zullen bekennen dat land, hetwelk gij smadelijk verworpen hebt."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.31.q1",
+          "semanticId": "spraak.god.num14v31q1",
+          "startSegment": "NUM.14.31.s1",
+          "endSegment": "NUM.14.31.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "3e068b559a15550a96999ae9545d2ea422edaea691b7f262fdcd11dc8226d501",
+        "bronSha256": "aa8a0ee7e256a043ee13be2e73dbec1bfaa82f64234c1e4a98b2231074659d50",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 32,
+      "tekst": "Maar uw lichamen zullen in deze woestijn vallen.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 32,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.32.s1",
+          "tekst": "Maar uw lichamen zullen in deze woestijn vallen.",
+          "bronfrase": "Maar u aangaande, uw dode lichamen zullen in deze woestijn vallen!"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.32.q1",
+          "semanticId": "spraak.god.num14v32q1",
+          "startSegment": "NUM.14.32.s1",
+          "endSegment": "NUM.14.32.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "49f31839822d3dc08b0f39b1f5c2037e05f5dafe7337351c592850591f6bd3db",
+        "bronSha256": "d010ee8544e5f74623fdb2fda8c00364bd2c58f95a22dc121fc021d2bfdf833b",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 33,
+      "tekst": "Uw kinderen zullen veertig jaar als herders in deze woestijn rondtrekken. Zij dragen de gevolgen van uw ontrouw, tot uw lichamen allemaal in de woestijn zijn gevallen.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 33,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.33.s1",
+          "tekst": "Uw kinderen zullen veertig jaar als herders in deze woestijn rondtrekken. Zij dragen de gevolgen van uw ontrouw, tot uw lichamen allemaal in de woestijn zijn gevallen.",
+          "bronfrase": "En uw kinderen zullen gaan weiden in deze woestijn, veertig jaren, en zullen uw hoererijen dragen, totdat uw dode lichamen verteerd zijn in deze woestijn."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.33.q1",
+          "semanticId": "spraak.god.num14v33q1",
+          "startSegment": "NUM.14.33.s1",
+          "endSegment": "NUM.14.33.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "ee5e597732f039cc541e976dbdd32e330f262f79f267deb75a2e6d8264224c7d",
+        "bronSha256": "b0e9db3e3d0d03b2703f672a7a1d175814e680d9a3836e5371561381c84aec57",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 34,
+      "tekst": "U hebt het land veertig dagen verkend. Voor elke dag een jaar: veertig jaar lang zult u de gevolgen van uw schuld dragen. Dan zult u merken wat het is als Ik Mij tegen u keer.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 34,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.34.s1",
+          "tekst": "U hebt het land veertig dagen verkend. Voor elke dag een jaar: veertig jaar lang zult u de gevolgen van uw schuld dragen. Dan zult u merken wat het is als Ik Mij tegen u keer.",
+          "bronfrase": "Naar het getal der dagen, in welke gij dat land verspied hebt, veertig dagen, elken dag voor elk jaar, zult gij uw ongerechtigheden dragen, veertig jaren, en gij zult gewaar worden Mijn afbreking."
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "zonde",
+          "segmenten": [
+            "NUM.14.34.s1"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.14.34.q1",
+          "semanticId": "spraak.god.num14v34q1",
+          "startSegment": "NUM.14.34.s1",
+          "endSegment": "NUM.14.34.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "8e7b97c293a7b634f7a29c89ebab815c59dea899e9dbb80507f6f65d8752cf43",
+        "bronSha256": "79173f38ec8acffd3a9448da8f7c6e9c6e08ccd3f5e1e9019900db96307b4ae2",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 35,
+      "tekst": "Ik, de Heere, heb gesproken. Dit zal Ik zeker doen met deze hele slechte gemeenschap die zich tegen Mij heeft verzameld. In deze woestijn komen zij om, daar zullen zij sterven.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 35,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.35.s1",
+          "tekst": "Ik, de Heere, heb gesproken. Dit zal Ik zeker doen met deze hele slechte gemeenschap die zich tegen Mij heeft verzameld. In deze woestijn komen zij om, daar zullen zij sterven.",
+          "bronfrase": "Ik, de HEERE, heb gesproken: zo Ik dit aan deze ganse boze vergadering dergenen, die zich tegen Mij verzameld hebben, niet doe, zij zullen in deze woestijn te niet worden, en zullen daar sterven!"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.35.q1",
+          "semanticId": "spraak.god.num14v35q1",
+          "startSegment": "NUM.14.35.s1",
+          "endSegment": "NUM.14.35.s1",
+          "spreker": {
+            "id": "god",
+            "type": "god",
+            "naam": "De Heere"
+          },
+          "aangesprokene": [
+            "gemeenschap"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "96ecd2c10740aac7b5f59f7e861c302255c8a63bd7de3ea4bbb624c21dcad983",
+        "bronSha256": "f72b96fdc597f162b03c1728535a5a7c6334a304b76ca99a5769ba2bb722d1a8",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 36,
+      "tekst": "De mannen die Mozes had gestuurd om het land te verkennen, waren teruggekomen. Met hun slechte verhaal over het land hadden zij de hele gemeenschap tegen hem laten mopperen.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 36,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.36.s1",
+          "tekst": "De mannen die Mozes had gestuurd om het land te verkennen, waren teruggekomen. Met hun slechte verhaal over het land hadden zij de hele gemeenschap tegen hem laten mopperen.",
+          "bronfrase": "En die mannen, die Mozes gezonden had, om het land te verspieden, en wedergekomen zijnde, de ganse vergadering tegen hem hadden doen murmureren, een kwaad gerucht over dat land voortbrengende;"
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "2a2bb77a8e0b0fa003d391983ab2c3a4a72c9ae9df275f5d315c5243d52fa0f4",
+        "bronSha256": "48866b254845151eb26cb7d48dae7d5ffd40f2a1239de16c25c8c32ec7d2236e",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 37,
+      "tekst": "Die mannen, die het slechte verhaal over het land hadden verspreid, stierven door een plaag voor de Heere.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 37,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.37.s1",
+          "tekst": "Die mannen, die het slechte verhaal over het land hadden verspreid, stierven door een plaag voor de Heere.",
+          "bronfrase": "Diezelfde mannen, die een kwaad gerucht van dat land voortgebracht hadden, stierven door een plaag, voor het aangezicht des HEEREN."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "caf07d23db4453846930f489600667a294655ed8cd3014d30b5ca30f35aba462",
+        "bronSha256": "533b8d73242fb55f415028571fb2b60d1a17087b312452755dc87e5a08c865cb",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 38,
+      "tekst": "Maar Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, bleven in leven, van de mannen die het land waren gaan verkennen.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 38,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.38.s1",
+          "tekst": "Maar Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, bleven in leven, van de mannen die het land waren gaan verkennen.",
+          "bronfrase": "Maar Jozua, de zoon van Nun, en Kaleb, de zoon van Jefunne, bleven levende van de mannen, die heengegaan waren, om het land te verspieden."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "a92149351503ad310c5a507bfe28469363bc907cdf5902e9987450c15d793a6a",
+        "bronSha256": "6c64036d6b372bdad6333798130299cdbfce61078f560de516aa052703c18737",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 39,
+      "tekst": "Mozes vertelde dit alles aan alle Israelieten. Toen raakte het volk diep in de rouw.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 39,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.39.s1",
+          "tekst": "Mozes vertelde dit alles aan alle Israelieten. Toen raakte het volk diep in de rouw.",
+          "bronfrase": "En Mozes sprak deze woorden tot al de kinderen Israëls. Toen treurde het volk zeer."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "489d4b2ed137ab3545631f4447072474befec19f679e83676e287b7d69f1370b",
+        "bronSha256": "c74107c8b7d4b8e0998dda91f2499d1b658344b4e8ccef579e777a5b77774755",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 40,
+      "tekst": "De volgende morgen stonden zij vroeg op en gingen de berg op. Zij zeiden: Hier zijn wij. Wij trekken op naar de plaats die de Heere ons genoemd heeft, want wij hebben gezondigd.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 40,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.40.s1",
+          "tekst": "De volgende morgen stonden zij vroeg op en gingen de berg op. Zij zeiden: ",
+          "bronfrase": "En zij stonden des morgens vroeg op, en klommen op de hoogte des bergs, zeggende: Ziet, hier zijn wij, en wij zullen optrekken tot de plaats, die de HEERE gezegd heeft; want wij hebben gezondigd!"
+        },
+        {
+          "id": "NUM.14.40.s2",
+          "tekst": "Hier zijn wij. Wij trekken op naar de plaats die de Heere ons genoemd heeft, want wij hebben gezondigd.",
+          "bronfrase": "En zij stonden des morgens vroeg op, en klommen op de hoogte des bergs, zeggende: Ziet, hier zijn wij, en wij zullen optrekken tot de plaats, die de HEERE gezegd heeft; want wij hebben gezondigd!"
+        }
+      ],
+      "begrippen": [
+        {
+          "conceptId": "zonde",
+          "segmenten": [
+            "NUM.14.40.s1",
+            "NUM.14.40.s2"
+          ]
+        }
+      ],
+      "citaten": [
+        {
+          "id": "NUM.14.40.q1",
+          "semanticId": "spraak.volk.num14v40q1",
+          "startSegment": "NUM.14.40.s2",
+          "endSegment": "NUM.14.40.s2",
+          "spreker": {
+            "id": "volk",
+            "type": "group",
+            "naam": "Het volk"
+          },
+          "aangesprokene": []
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "41588caa615c64af887f8fab7091c7aa3e4f4b5c23425d57f15941f27c5b4168",
+        "bronSha256": "6f93428ab1dee6d742d660e41c167ef051a180ed95571317d094264d75693fb3",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 41,
+      "tekst": "Maar Mozes zei: Waarom gaat u opnieuw tegen het bevel van de Heere in? Dat zal niet lukken.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 41,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.41.s1",
+          "tekst": "Maar Mozes zei: ",
+          "bronfrase": "Maar Mozes zeide: Waarom overtreedt gij alzo het bevel des HEEREN? Want dat zal geen voorspoed hebben."
+        },
+        {
+          "id": "NUM.14.41.s2",
+          "tekst": "Waarom gaat u opnieuw tegen het bevel van de Heere in? Dat zal niet lukken.",
+          "bronfrase": "Maar Mozes zeide: Waarom overtreedt gij alzo het bevel des HEEREN? Want dat zal geen voorspoed hebben."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.41.q1",
+          "semanticId": "spraak.mozes.num14v41q1",
+          "startSegment": "NUM.14.41.s2",
+          "endSegment": "NUM.14.41.s2",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "volk"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "97219d278402d159bcab590e0b24fca10eec71714c41b0c262e01e19fb848525",
+        "bronSha256": "8610bde5f279d07060ca0fbe3d301189f9b1b7b5ec81c40413834cb04a312928",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 42,
+      "tekst": "Trek niet op, want de Heere is niet in uw midden. Anders wordt u door uw vijanden verslagen.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 42,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.42.s1",
+          "tekst": "Trek niet op, want de Heere is niet in uw midden. Anders wordt u door uw vijanden verslagen.",
+          "bronfrase": "Trekt niet op, want de HEERE zal in het midden van u niet zijn; opdat gij niet geslagen wordt, voor het aangezicht uwer vijanden."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.42.q1",
+          "semanticId": "spraak.mozes.num14v42q1",
+          "startSegment": "NUM.14.42.s1",
+          "endSegment": "NUM.14.42.s1",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "volk"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "6d847cfae56810f271183bb400c4cdfadfec4a8a88a82ae4f6827e560f4be451",
+        "bronSha256": "6bbb395951f670916ca618a32205d3ee08628af32d6cfe765b6d91a09379e8a8",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 43,
+      "tekst": "De Amalekieten en de Kanaanieten staan daar tegenover u, en u zult door het zwaard vallen. Omdat u zich van de Heere hebt afgekeerd, zal de Heere niet met u zijn.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 43,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.43.s1",
+          "tekst": "De Amalekieten en de Kanaanieten staan daar tegenover u, en u zult door het zwaard vallen. Omdat u zich van de Heere hebt afgekeerd, zal de Heere niet met u zijn.",
+          "bronfrase": "Want de Amalekieten, en de Kanaänieten zijn daar voor uw aangezicht, en gij zult door het zwaard vallen; want, omdat gij u afgekeerd hebt van den HEERE, zo zal de HEERE met u niet zijn."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [
+        {
+          "id": "NUM.14.43.q1",
+          "semanticId": "spraak.mozes.num14v43q1",
+          "startSegment": "NUM.14.43.s1",
+          "endSegment": "NUM.14.43.s1",
+          "spreker": {
+            "id": "mozes",
+            "type": "human",
+            "naam": "Mozes"
+          },
+          "aangesprokene": [
+            "volk"
+          ]
+        }
+      ],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "267b2fe8352b56af5a13c248446fe9374686e1ef035c1fb75db01f99d3f00427",
+        "bronSha256": "197b3fde40f091b681c24ef8d340cd349712da60ac884e9396a0d860f178cd15",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 44,
+      "tekst": "Toch waagden zij het de berg op te trekken. Maar de ark van het verbond van de Heere en Mozes gingen niet mee uit het kamp.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 44,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.44.s1",
+          "tekst": "Toch waagden zij het de berg op te trekken. Maar de ark van het verbond van de Heere en Mozes gingen niet mee uit het kamp.",
+          "bronfrase": "Nochtans poogden zij vermetel, om op de hoogte des bergs te klimmen; maar de ark des verbonds des HEEREN en Mozes scheidden niet uit het midden des legers."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "4f37770e399b583cbaf332c8b0fe36e65a7755054bae5be4ef43563f7db3f9b3",
+        "bronSha256": "3de0819dbf6a740e762016bdef571b251ac42711ca9a40b81607bb4966f17f3c",
+        "controles": []
+      }
+    },
+    {
+      "nummer": 45,
+      "tekst": "Toen kwamen de Amalekieten en de Kanaanieten, die in dat bergland woonden, naar beneden. Zij versloegen hen en joegen hen uiteen tot Horma.",
+      "bron": {
+        "bestand": "data/numeri/14.json",
+        "vers": 45,
+        "tekstveld": "textSV1888"
+      },
+      "segmenten": [
+        {
+          "id": "NUM.14.45.s1",
+          "tekst": "Toen kwamen de Amalekieten en de Kanaanieten, die in dat bergland woonden, naar beneden. Zij versloegen hen en joegen hen uiteen tot Horma.",
+          "bronfrase": "Toen kwamen af de Amalekieten en de Kanaänieten, die in dat gebergte woonden, en sloegen hen, en versmeten hen, tot Horma toe."
+        }
+      ],
+      "begrippen": [],
+      "citaten": [],
+      "review": {
+        "status": "concept",
+        "inhoudSha256": "08cfd3bcc3f6c10921b833ce47b4bd9c4d1cf986e5630d59613c78ca7e51966c",
+        "bronSha256": "0d7a29d0f078fc7ef509256de02b0717d0d228779c7c5dd62ef62b561d89706a",
+        "controles": []
+      }
+    }
+  ]
+}
