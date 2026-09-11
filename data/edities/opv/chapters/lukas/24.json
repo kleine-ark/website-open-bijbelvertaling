@@ -431,7 +431,7 @@
     },
     {
       "nummer": 13,
-      "tekst": "Diezelfde dag liepen twee van hen naar een dorp dat Emmaüs heette, zestig stadiën van Jeruzalem.",
+      "tekst": "Diezelfde dag liepen twee van hen naar een dorp dat Emmaüs heette, ongeveer elf kilometer van Jeruzalem.",
       "bron": {
         "bestand": "data/lukas/24.json",
         "vers": 13,
@@ -440,15 +440,22 @@
       "segmenten": [
         {
           "id": "LUK.24.13.s1",
-          "tekst": "Diezelfde dag liepen twee van hen naar een dorp dat Emmaüs heette, zestig stadiën van Jeruzalem.",
+          "tekst": "Diezelfde dag liepen twee van hen naar een dorp dat Emmaüs heette, ongeveer elf kilometer van Jeruzalem.",
           "bronfrase": "En zie, twee van hen gingen op denzelfden dag naar een vlek, dat zestig stadiën van Jeruzalem was, welks naam was Emmaüs;"
         }
       ],
-      "begrippen": [],
+      "begrippen": [
+        {
+          "conceptId": "stadie",
+          "segmenten": [
+            "LUK.24.13.s1"
+          ]
+        }
+      ],
       "citaten": [],
       "review": {
         "status": "concept",
-        "inhoudSha256": "2232d7bbab3a2b3d3d5ed6880bd65aeecc561e8948bd9aad449b8e9ba44d2cb5",
+        "inhoudSha256": "0acace3ffd5661d8e1b7d29b3e173b9bff5d01a9d9554eda622c68d23a812738",
         "bronSha256": "194d86e090516dc6a63d876c02cf5709470d5da74f8966cacece899a0210f355",
         "controles": []
       }
