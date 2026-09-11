@@ -68,6 +68,7 @@ const Lees = {
         this.chapterCache = this.chapterCache || {};
         if (this.chapterCache[key]) return this.chapterCache[key];
         const data = await this.fetchJSON(`/data/${bookId}/${chapter}.json`);
+        if (window.CitatieUit) window.CitatieUit.hoofdstuk(data, bookId);
         if (window.OVWoordnummers) {
             const mappings = await window.OVWoordnummers.loadBookMappings(bookId);
             window.OVWoordnummers.mergeChapterMappings(data, mappings, chapter);

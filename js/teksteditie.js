@@ -48,6 +48,7 @@
                 const response = await fetch(`data/${bookId}/${chapter}.json`);
                 if (!response.ok) return { _unavailable: true, _translation: meta, boek: bookId, hoofdstuk: chapter };
                 const result = await response.json();
+                if (global.CitatieUit) global.CitatieUit.hoofdstuk(result, bookId);
                 result._translation = meta;
                 this._cache.set(key, result);
                 return result;

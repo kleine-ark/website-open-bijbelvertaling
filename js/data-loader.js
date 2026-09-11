@@ -45,6 +45,7 @@ const DataLoader = {
             const resp = await fetch(`data/${bookId}/${chapterNum}.json`, { cache: 'no-cache' });
             if (!resp.ok) return null;
             ch = await resp.json();
+            if (window.CitatieUit) window.CitatieUit.hoofdstuk(ch, bookId);
             if (window.OVWoordnummers) {
                 const mappings = await window.OVWoordnummers.loadBookMappings(bookId);
                 window.OVWoordnummers.mergeChapterMappings(ch, mappings, chapterNum);
