@@ -5633,7 +5633,7 @@
       "number": 10,
       "textSV1888": "Uw spijze nu, die gij eten zult, zal in gewicht zijn twintig sikkelen daags; van tijd tot tijd zult gij die eten.",
       "text1637": "Uwe spijse nu, die ghy eten sult, sal in gewichte zijn twintich [36] sikelen ’sdaegs: [37] van tijt tot tijt, sult ghy die eten.",
-      "text2026": "Uw voedsel nu, dat u eten zult, zal in gewicht zijn twintig sikkels daags; van tijd tot tijd zult u die eten.",
+      "text2026": "Uw voedsel nu, dat u eten zult, zal in gewicht zijn twintig sikkels per dag; van tijd tot tijd zult u die eten.",
       "marginNotes": [
         {
           "marker": "36",
@@ -5707,7 +5707,7 @@
           "morph": "HVqi2ms/Sp3ms"
         }
       ],
-      "text2026_html": "Uw voedsel nu, dat u eten zult, zal in gewicht zijn twintig<sup class=\"note-marker\" data-note=\"36\">36</sup> sikkels daags;<sup class=\"note-marker\" data-note=\"37\">37</sup> van tijd tot tijd zult u die eten.",
+      "text2026_html": "Uw voedsel nu, dat u eten zult, zal in gewicht zijn twintig<sup class=\"note-marker\" data-note=\"36\">36</sup> sikkels per dag;<sup class=\"note-marker\" data-note=\"37\">37</sup> van tijd tot tijd zult u die eten.",
       "textSV1888_html": "Uw spijze nu, die gij eten zult, zal in gewicht zijn twintig<sup class=\"note-marker\" data-note=\"36\">36</sup> sikkelen daags;<sup class=\"note-marker\" data-note=\"37\">37</sup> van tijd tot tijd zult gij die eten.",
       "text1637_html": "Uwe spijse nu, die ghy eten sult, sal in gewichte zijn twintich <sup class=\"note-marker\" data-note=\"36\">36</sup> sikelen ’sdaegs: <sup class=\"note-marker\" data-note=\"37\">37</sup> van tijt tot tijt, sult ghy die eten.",
       "phraseDiff": [
@@ -5722,9 +5722,9 @@
           "principe": "A1"
         },
         {
-          "old": "sikkelen",
-          "new": "sikkels",
-          "principe": "V941"
+          "old": "sikkelen daags;",
+          "new": "sikkels per dag;",
+          "principe": "V1612"
         },
         {
           "old": "gij",
@@ -7908,7 +7908,7 @@
       "number": 15,
       "textSV1888": "En Hij zeide tot mij: Zie, Ik heb u rundermest gegeven voor mensendrek, zo zult gij uw brood daarmede bereiden.",
       "text1637": "Ende hy seyde tot my; Siet, [50] ick hebbe u runderen mist gegeven voor menschen dreck, so sult ghy u broot daermede bereyden.",
-      "text2026": "En Hij zei tot mij: Zie, Ik heb u rundermest gegeven voor mensendrek, zo zult u uw brood daarmee bereiden.",
+      "text2026": "En Hij zei tot mij: Zie, Ik heb u rundermest gegeven voor mensenpoep, zo zult u uw brood daarmee bereiden.",
       "marginNotes": [
         {
           "marker": "50",
@@ -7995,7 +7995,7 @@
           "morph": "HR/Sp3mp"
         }
       ],
-      "text2026_html": "En Hij zei tot mij: <span class=\"god-speaks\"><i>Zie, Ik heb u rundermest gegeven voor mensendrek, zo zult u uw brood daarmee bereiden.</i></span>",
+      "text2026_html": "En Hij zei tot mij: <span class=\"god-speaks\"><i>Zie, Ik heb u rundermest gegeven voor mensenpoep, zo zult u uw brood daarmee bereiden.</i></span>",
       "textSV1888_html": "En Hij zeide tot mij: Zie,<sup class=\"note-marker\" data-note=\"50\">50</sup> Ik heb u rundermest gegeven voor mensendrek, zo zult gij uw brood daarmede bereiden.",
       "text1637_html": "Ende hy seyde tot my; Siet, <sup class=\"note-marker\" data-note=\"50\">50</sup> ick hebbe u runderen mist gegeven voor menschen dreck, so sult ghy u broot daermede bereyden.",
       "phraseDiff": [
@@ -8003,6 +8003,11 @@
           "old": "zeide",
           "new": "zei",
           "principe": "W1"
+        },
+        {
+          "old": "mensendrek,",
+          "new": "mensenpoep,",
+          "principe": "V1613"
         },
         {
           "old": "gij",

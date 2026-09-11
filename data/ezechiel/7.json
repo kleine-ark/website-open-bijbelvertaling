@@ -7430,7 +7430,7 @@
       "number": 17,
       "textSV1888": "Alle handen zullen slap worden, en alle knieën zullen henenvlieten als water.",
       "text1637": "Alle handen sullen [b] [58] slap worden; ende alle knyen [59] sullen henen vlieten [als] water.",
-      "text2026": "Alle handen zullen slap worden, en alle knieën zullen henenvlieten als water.",
+      "text2026": "Alle handen zullen slap worden, en alle knieën zullen wegvloeien als water.",
       "marginNotes": [
         {
           "marker": "58",
@@ -7491,7 +7491,7 @@
           "morph": "HNcmpa"
         }
       ],
-      "text2026_html": "Alle handen zullen<sup class=\"note-marker\" data-note=\"58\">58</sup><sup class=\"note-marker\" data-note=\"b\">b</sup> slap worden, en alle knieën<sup class=\"note-marker\" data-note=\"59\">59</sup> zullen henenvlieten als water.",
+      "text2026_html": "Alle handen zullen<sup class=\"note-marker\" data-note=\"58\">58</sup><sup class=\"note-marker\" data-note=\"b\">b</sup> slap worden, en alle knieën<sup class=\"note-marker\" data-note=\"59\">59</sup> zullen wegvloeien als water.",
       "textSV1888_html": "Alle handen zullen<sup class=\"note-marker\" data-note=\"58\">58</sup><sup class=\"note-marker\" data-note=\"b\">b</sup> slap worden, en alle knieën<sup class=\"note-marker\" data-note=\"59\">59</sup> zullen henenvlieten als water.",
       "text1637_html": "Alle handen sullen <sup class=\"note-marker\" data-note=\"b\">b</sup> <sup class=\"note-marker\" data-note=\"58\">58</sup> slap worden; ende alle knyen <sup class=\"note-marker\" data-note=\"59\">59</sup> sullen henen vlieten [als] water.",
       "woordnummers": [
@@ -7688,13 +7688,20 @@
             ]
           }
         }
+      ],
+      "phraseDiff": [
+        {
+          "old": "henenvlieten",
+          "new": "wegvloeien",
+          "principe": "V1616"
+        }
       ]
     },
     {
       "number": 18,
       "textSV1888": "Ook zullen zij zakken aangorden, gruwen zal ze bedekken, en over alle aangezichten zal schaamte wezen, en op al hun hoofden kaalheid.",
       "text1637": "Oock sullen sy sacken [c] [60] aengorden, [61] grouwen salse bedecken, ende over alle aengesichten sal schaemte wesen, ende op alle hare hoofden [62] kaelheyt.",
-      "text2026": "Ook zullen zij zakken aangorden, gruwen zal ze bedekken, en over alle aangezichten zal schaamte wezen, en op al hun hoofden kaalheid.",
+      "text2026": "Ook zullen zij zakken aangorden, huivering zal ze bedekken, en over alle aangezichten zal schaamte wezen, en op al hun hoofden kaalheid.",
       "marginNotes": [
         {
           "marker": "60",
@@ -7787,7 +7794,7 @@
           "morph": "HNcfsa"
         }
       ],
-      "text2026_html": "Ook zullen zij zakken<sup class=\"note-marker\" data-note=\"60\">60</sup><sup class=\"note-marker\" data-note=\"c\">c</sup> aangorden,<sup class=\"note-marker\" data-note=\"61\">61</sup> gruwen zal ze bedekken, en over alle aangezichten zal schaamte wezen, en op al hun hoofden<sup class=\"note-marker\" data-note=\"62\">62</sup> kaalheid.",
+      "text2026_html": "Ook zullen zij zakken<sup class=\"note-marker\" data-note=\"60\">60</sup><sup class=\"note-marker\" data-note=\"c\">c</sup> aangorden,<sup class=\"note-marker\" data-note=\"61\">61</sup> huivering zal ze bedekken, en over alle aangezichten zal schaamte wezen, en op al hun hoofden<sup class=\"note-marker\" data-note=\"62\">62</sup> kaalheid.",
       "textSV1888_html": "Ook zullen zij zakken<sup class=\"note-marker\" data-note=\"60\">60</sup><sup class=\"note-marker\" data-note=\"c\">c</sup> aangorden,<sup class=\"note-marker\" data-note=\"61\">61</sup> gruwen zal ze bedekken, en over alle aangezichten zal schaamte wezen, en op al hun hoofden<sup class=\"note-marker\" data-note=\"62\">62</sup> kaalheid.",
       "text1637_html": "Oock sullen sy sacken <sup class=\"note-marker\" data-note=\"c\">c</sup> <sup class=\"note-marker\" data-note=\"60\">60</sup> aengorden, <sup class=\"note-marker\" data-note=\"61\">61</sup> grouwen salse bedecken, ende over alle aengesichten sal schaemte wesen, ende op alle hare hoofden <sup class=\"note-marker\" data-note=\"62\">62</sup> kaelheyt.",
       "woordnummers": [
@@ -8115,6 +8122,13 @@
               11
             ]
           }
+        }
+      ],
+      "phraseDiff": [
+        {
+          "old": "gruwen",
+          "new": "huivering",
+          "principe": "V1617"
         }
       ]
     },

@@ -14862,6 +14862,92 @@
    "toelichting": "Cascade van de naamvalssweep: de derde naamval verloor zijn uitgang maar kreeg geen voorzetsel terug, zodat er twee zelfstandige naamwoorden zonder verband naast elkaar kwamen te staan. De Statenvertaling heeft \"niet tot een vreze den goeden werken, maar den kwaden\", te lezen als \"voor de goede werken\". Wat er weggelaten is staat in de kanttekening zelf: bij \"den kwaden\" tekent zij aan \"Namelijk, werken\", dus voor de kwade en niet voor de kwaden. Kanttekening 13 legt \"tot een vreze\" uit als \"van te zullen straffen\". Een plaats, Romeinen 13:3. De derde naamval zonder voorzetsel komt vermoedelijk op meer plaatsen voor; dat is nog niet Bijbelbreed nagezocht.",
    "regex": "",
    "voorbeeld": "Romeinen 13:3 | de oversten zijn niet tot een vrees de goede werken, maar de kwaden | de oversten zijn niet tot een vrees voor de goede werken, maar voor de kwade"
+  },
+  {
+   "id": "V1612",
+   "categorie": "Verouderde woorden",
+   "oud": "daags / 's daags / drie tijden 's daags / tweemaal daags",
+   "nieuw": "per dag / per dag / drie keer per dag / tweemaal per dag",
+   "toelichting": "Daags als bijwoord bij een hoeveelheid of een aantal keren betekent per dag. Vijf plaatsen met een 1888-bron: Ezechiël 4:10 (twintig sikkels per dag), Daniël 6:11 en 6:14 (drie keer per dag, aansluitend op driemaal → drie keer elders), Jezus Sirach 45:17 (tweemaal per dag), en Lukas 17:4, waar het al zo stond maar aan geen principe hing. Des daags (overdag) en des anderen daags (op de andere dag) vallen onder N3 en blijven buiten dit principe. 4 Baruch 3:21 en Henoch 78:17 hebben geen 1888-brontekst en zijn niet aangeraakt.",
+   "regex": "",
+   "voorbeeld": "Ezechiël 4:10 | twintig sikkels daags | twintig sikkels per dag"
+  },
+  {
+   "id": "V1613",
+   "categorie": "Verouderde woorden",
+   "oud": "mensendrek",
+   "nieuw": "mensenpoep",
+   "toelichting": "Een plaats, Ezechiël 4:15. Drek werd elders mest (V345), maar hier gaat het juist om het verschil tussen rundermest en menselijke uitwerpselen: mensenmest zou die tegenstelling wegvlakken. Voorgesteld door een lezer.",
+   "regex": "\bmensendrek\b",
+   "voorbeeld": "Ezechiël 4:15 | rundermest gegeven voor mensendrek | rundermest gegeven voor mensenpoep"
+  },
+  {
+   "id": "V1614",
+   "categorie": "Verouderde woorden",
+   "oud": "koedrek",
+   "nieuw": "koeienmest",
+   "toelichting": "Een plaats, Jezus Sirach 22:2. Sluit aan bij drek → mest (V345); de samenstelling viel daar buiten.",
+   "regex": "\bkoedrek\b",
+   "voorbeeld": "Jezus Sirach 22:2 | zoals koedrek op de mesthoop | zoals koeienmest op de mesthoop"
+  },
+  {
+   "id": "V1615",
+   "categorie": "Verouderde woorden",
+   "oud": "barbieren",
+   "nieuw": "kappers",
+   "toelichting": "Een plaats, Ezechiël 5:1: een scheermes van de kappers. Voorgesteld door een lezer.",
+   "regex": "\bbarbieren\b",
+   "voorbeeld": "Ezechiël 5:1 | een scheermes van de barbieren | een scheermes van de kappers"
+  },
+  {
+   "id": "V1616",
+   "categorie": "Verouderde woorden",
+   "oud": "henenvlieten",
+   "nieuw": "wegvloeien",
+   "toelichting": "Henen- is weg- (vgl. V412) en vlieten is vloeien. Twee plaatsen, Ezechiël 7:17 en 21:7: de knieën vloeien weg als water, het beeld van knieën die het begeven. V1593 noemde henenvlieten al als ander woord dan wegvlieden.",
+   "regex": "\bhenenvlieten\b",
+   "voorbeeld": "Ezechiël 7:17 | alle knieën zullen henenvlieten als water | alle knieën zullen wegvloeien als water"
+  },
+  {
+   "id": "V1617",
+   "categorie": "Verouderde woorden",
+   "oud": "gruwen (zelfstandig naamwoord)",
+   "nieuw": "huivering",
+   "toelichting": "Het gruwen als zelfstandig naamwoord is de huivering van afschuw of angst; het woord is verdwenen en leest nu als werkwoord. Vier plaatsen: Ezechiël 7:18, Jesaja 21:4, Job 21:6 (een huivering) en Psalm 55:6. Job 9:31 heeft het werkwoord en valt onder V1618.",
+   "regex": "",
+   "voorbeeld": "Ezechiël 7:18 | gruwen zal ze bedekken | huivering zal ze bedekken"
+  },
+  {
+   "id": "V1618",
+   "categorie": "Verouderde woorden",
+   "oud": "gruwen (werkwoord)",
+   "nieuw": "walgen",
+   "toelichting": "Een plaats, Job 9:31: mijn kleren zullen van mij walgen. Gruwen van iets is er een afkeer van hebben.",
+   "regex": "",
+   "voorbeeld": "Job 9:31 | mijn kleren zullen van mij gruwen | mijn kleren zullen van mij walgen",
+   "bereik": {
+    "job": [
+     "9:31"
+    ]
+   }
+  },
+  {
+   "id": "V1619",
+   "categorie": "Verouderde woorden",
+   "oud": "verf / verven (kleur)",
+   "nieuw": "kleur / kleuren",
+   "toelichting": "In de Statenvertaling is verf de kleur of het uitzicht van iets (kanttekening bij Ezechiël 1:4: Hebreeuws oog, dat is kleur of verf). Een hedendaagse lezer denkt aan verf uit een pot. Alle twaalf plaatsen hebben die oude betekenis: Numeri 11:7 (tweemaal), Richteren 5:30 (driemaal), Ezechiël 1:4, 1:7, 1:16, 1:22, 1:27, 8:2, 10:9, 17:3 en Daniël 10:6.",
+   "regex": "\b[Vv]erf\b|\b[Vv]erven\b",
+   "voorbeeld": "Numeri 11:7 | zijn verf was als de verf van de bedolah | zijn kleur was als de kleur van de bedolah"
+  },
+  {
+   "id": "V1620",
+   "categorie": "Verouderde woorden",
+   "oud": "Hasmal",
+   "nieuw": "glanzend metaal",
+   "toelichting": "De Statenvertaling laat het Hebreeuwse chasjmal onvertaald staan. De kanttekening noemt amber, electrum (goud met een vijfde zilver, van kleur als bleek goud) en het reinste brandende koper; de metaal-uitleg is de gangbare en ook die van de hedendaagse vertalingen. Drie plaatsen: Ezechiël 1:4, 1:27 en 8:2. De kanttekening met de andere uitleggingen blijft staan. Gemeld door een lezer.",
+   "regex": "\bHasmal\b",
+   "voorbeeld": "Ezechiël 1:4 | als de verf van Hasmal | als de kleur van glanzend metaal"
   }
  ]
 }

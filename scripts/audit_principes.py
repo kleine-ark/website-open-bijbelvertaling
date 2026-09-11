@@ -213,7 +213,9 @@ def bereik_nagelopen(principes, verzen):
             # Een boek zonder hoofdstukken (null of een lege lijst) betekent
             # "het hele boek". Wie dat als een leeg bereik leest, meldt elke
             # toepassing in dat boek als "buiten bereik" — precies andersom.
-            if not plaatsen:
+            # ET2 schrijft het als tekst ("alle"); die zou anders per letter
+            # als hoofdstuknummer gelezen worden.
+            if not plaatsen or isinstance(plaatsen, str):
                 binnen.update(k for k in per_vers if k[0] == boek.lower())
                 continue
             for x in plaatsen:
