@@ -920,7 +920,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual("OPV geldig: 305 hoofdstukken, 10435 verzen.\n", result.stdout)
+        self.assertEqual("OPV geldig: 307 hoofdstukken, 10500 verzen.\n", result.stdout)
 
 
 class OpvGenesisPilotTests(unittest.TestCase):
@@ -969,7 +969,7 @@ class OpvGenesisPilotTests(unittest.TestCase):
             "numeri": list(range(1, 37)),
             "deuteronomium": list(range(1, 35)),
             "jozua": list(range(1, 25)),
-            "richteren": list(range(1, 6)),
+            "richteren": list(range(1, 8)),
             "mattheus": list(range(1, 29)),
             "markus": list(range(1, 17)),
             "lukas": list(range(1, 25)),
