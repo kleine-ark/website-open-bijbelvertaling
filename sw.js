@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = 'v0.53.0';
+const VERSION = 'v0.54.0';
 const SHELL_CACHE   = `shell-${VERSION}`;
 const DATA_CACHE    = `data-${VERSION}`;
 const LEXICON_CACHE = `lexicon-${VERSION}`;
@@ -22,6 +22,7 @@ const PRECACHE_URLS = [
     '/js/i18n.js',
     '/js/teksteditie.js',
     '/js/data-loader.js',
+    '/js/citatie-uit.js',
     '/js/assets.js',
     '/js/book-orders.js',
     '/js/navigation.js',
