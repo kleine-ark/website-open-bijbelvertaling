@@ -7899,7 +7899,7 @@
    "oud": "des <znw>es",
    "nieuw": "van de/het <znw>",
    "toelichting": "Dubbele genitief op -es ('des angstes', 'des gerstenoogstes'). De hele uitgang vervalt; het lidwoord volgt het geslacht van het woord.",
-   "regex": "\bvan de \\w+es\b"
+   "regex": "\\bvan de \\w+es\\b"
   },
   {
    "id": "N15",
@@ -7907,7 +7907,7 @@
    "oud": "des <bnw>en <znw>s",
    "nieuw": "van de/het <bnw>e <znw>",
    "toelichting": "Het bijvoeglijk naamwoord hield zijn oude genitief-uitgang -en toen 'des' verdween ('van de almachtigen Gods'). Zowel de uitgang van het bijvoeglijk naamwoord als de genitief-s van het zelfstandig naamwoord vervalt.",
-   "regex": "\bvan de \\w+en \\w+s\b"
+   "regex": "\\bvan de \\w+en \\w+s\\b"
   },
   {
    "id": "V941",
@@ -8531,7 +8531,7 @@
    "oud": "elle",
    "nieuw": "el",
    "toelichting": "Verouderde enkelvoudsvorm van de lengtemaat el. Het meervoud 'ellen' blijft ongewijzigd.",
-   "regex": "\belle\b"
+   "regex": "\\belle\\b"
   },
   {
    "id": "V995",
@@ -9751,7 +9751,7 @@
    "oud": "twintig jaren oud",
    "nieuw": "twintig jaar oud",
    "toelichting": "Na een telwoord blijft \"jaar\" in het Nederlands enkelvoud: honderd jaar oud, niet honderd jaren oud. Alleen in de verbinding \"... jaren oud\"; los \"jaren\" (in die jaren, vele jaren) blijft staan.",
-   "regex": "\bjaren oud\b",
+   "regex": "\\bjaren oud\\b",
    "voorbeeld": "Numeri 1:3 — van twintig jaren oud → van twintig jaar oud"
   },
   {
@@ -14878,7 +14878,7 @@
    "oud": "mensendrek",
    "nieuw": "mensenpoep",
    "toelichting": "Een plaats, Ezechiël 4:15. Drek werd elders mest (V345), maar hier gaat het juist om het verschil tussen rundermest en menselijke uitwerpselen: mensenmest zou die tegenstelling wegvlakken. Voorgesteld door een lezer.",
-   "regex": "\bmensendrek\b",
+   "regex": "\\bmensendrek\\b",
    "voorbeeld": "Ezechiël 4:15 | rundermest gegeven voor mensendrek | rundermest gegeven voor mensenpoep"
   },
   {
@@ -14887,7 +14887,7 @@
    "oud": "koedrek",
    "nieuw": "koeienmest",
    "toelichting": "Een plaats, Jezus Sirach 22:2. Sluit aan bij drek → mest (V345); de samenstelling viel daar buiten.",
-   "regex": "\bkoedrek\b",
+   "regex": "\\bkoedrek\\b",
    "voorbeeld": "Jezus Sirach 22:2 | zoals koedrek op de mesthoop | zoals koeienmest op de mesthoop"
   },
   {
@@ -14896,7 +14896,7 @@
    "oud": "barbieren",
    "nieuw": "kappers",
    "toelichting": "Een plaats, Ezechiël 5:1: een scheermes van de kappers. Voorgesteld door een lezer.",
-   "regex": "\bbarbieren\b",
+   "regex": "\\bbarbieren\\b",
    "voorbeeld": "Ezechiël 5:1 | een scheermes van de barbieren | een scheermes van de kappers"
   },
   {
@@ -14905,7 +14905,7 @@
    "oud": "henenvlieten",
    "nieuw": "wegvloeien",
    "toelichting": "Henen- is weg- (vgl. V412) en vlieten is vloeien. Twee plaatsen, Ezechiël 7:17 en 21:7: de knieën vloeien weg als water, het beeld van knieën die het begeven. V1593 noemde henenvlieten al als ander woord dan wegvlieden.",
-   "regex": "\bhenenvlieten\b",
+   "regex": "\\bhenenvlieten\\b",
    "voorbeeld": "Ezechiël 7:17 | alle knieën zullen henenvlieten als water | alle knieën zullen wegvloeien als water"
   },
   {
@@ -14937,7 +14937,7 @@
    "oud": "verf / verven (kleur)",
    "nieuw": "kleur / kleuren",
    "toelichting": "In de Statenvertaling is verf de kleur of het uitzicht van iets (kanttekening bij Ezechiël 1:4: Hebreeuws oog, dat is kleur of verf). Een hedendaagse lezer denkt aan verf uit een pot. Alle twaalf plaatsen hebben die oude betekenis: Numeri 11:7 (tweemaal), Richteren 5:30 (driemaal), Ezechiël 1:4, 1:7, 1:16, 1:22, 1:27, 8:2, 10:9, 17:3 en Daniël 10:6.",
-   "regex": "\b[Vv]erf\b|\b[Vv]erven\b",
+   "regex": "\\b[Vv]erf\\b|\\b[Vv]erven\\b",
    "voorbeeld": "Numeri 11:7 | zijn verf was als de verf van de bedolah | zijn kleur was als de kleur van de bedolah"
   },
   {
@@ -14946,7 +14946,7 @@
    "oud": "Hasmal",
    "nieuw": "glanzend metaal",
    "toelichting": "De Statenvertaling laat het Hebreeuwse chasjmal onvertaald staan. De kanttekening noemt amber, electrum (goud met een vijfde zilver, van kleur als bleek goud) en het reinste brandende koper; de metaal-uitleg is de gangbare en ook die van de hedendaagse vertalingen. Drie plaatsen: Ezechiël 1:4, 1:27 en 8:2. De kanttekening met de andere uitleggingen blijft staan. Gemeld door een lezer.",
-   "regex": "\bHasmal\b",
+   "regex": "\\bHasmal\\b",
    "voorbeeld": "Ezechiël 1:4 | als de verf van Hasmal | als de kleur van glanzend metaal"
   }
  ]
