@@ -506,9 +506,9 @@ const Opties = {
             if (eersteMorfemen === null || !eersteMorfemen.length) continue;
 
             var links = i, rechts = i;
-            while (links > 0 && /^\s+$/.test(plain.slice(woorden[links - 1].eind, woorden[links].start)) &&
+            while (links > 0 && this._getalSluitAan(E, plain, woorden, links - 1) &&
                 this._maatMorfemen(E, woorden[links - 1].woord) !== null) links--;
-            while (rechts + 1 < woorden.length && /^\s+$/.test(plain.slice(woorden[rechts].eind, woorden[rechts + 1].start)) &&
+            while (rechts + 1 < woorden.length && this._getalSluitAan(E, plain, woorden, rechts) &&
                 this._maatMorfemen(E, woorden[rechts + 1].woord) !== null) rechts++;
 
             while (links <= rechts && E.scheiders.indexOf(woorden[links].woord) !== -1) links++;
@@ -541,6 +541,24 @@ const Opties = {
             html = html.slice(0, item.positie) + item.html + html.slice(item.positie);
         }
         return html;
+    },
+
+    /**
+     * Horen twee opeenvolgende telwoorden bij hetzelfde getal?
+     * Normaal staat er alleen witruimte tussen, maar de Statenvertaling zet
+     * geregeld een komma achter de duizendtallen: "vijfduizend,
+     * vierhonderdennegenenzestig" (3 Ezra 2:14) en "twee duizend, honderd
+     * twee en zeventig" (Nehemia 7:8) zijn elk één getal. Volgt er na de
+     * komma een koppelwoord, dan begint juist een nieuw getal — 1 Kronieken
+     * 21:5 telt "vierhonderd duizend, en zeventig duizend" apart — en dan
+     * blijven het er twee.
+     */
+    _getalSluitAan(E, plain, woorden, index) {
+        var gat = plain.slice(woorden[index].eind, woorden[index + 1].start);
+        if (/^\s+$/.test(gat)) return true;
+        return /^,\s+$/.test(gat) &&
+            /duizend$/.test(woorden[index].woord) &&
+            E.scheiders.indexOf(woorden[index + 1].woord) === -1;
     },
 
     /** Exacte Nederlandse cijfernotatie voor een expliciet genoemd aantal. */
