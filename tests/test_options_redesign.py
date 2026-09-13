@@ -45,9 +45,9 @@ class OptionsRedesignTests(unittest.TestCase):
         page.goto(f"{self.base_url}/index.html#genesis/1", wait_until="domcontentloaded")
         if width <= 768:
             page.locator("#topnav-hamburger").click()
-            page.locator("#topnav-mobile-tekstopties").click()
+            page.locator("#topnav-mobile-weergave").click()
         else:
-            page.locator("#topnav-tekstopties").click()
+            page.locator("#topnav-weergave").click()
         page.locator("#sidebar-right").wait_for(state="visible")
         return page
 
@@ -57,9 +57,9 @@ class OptionsRedesignTests(unittest.TestCase):
             self.assertEqual(page.locator('#sidebar-right [role="tab"]').count(), 0)
             self.assertEqual(
                 page.locator("#sidebar-right > .options-body > details.options-category > summary").all_text_contents(),
-                ["Meest gebruikt", "Vertalingen, talen & kanttekeningen", "Weergave", "Theologie", "Voorlezen"],
+                ["Meest gebruikt", "Vertalingen, talen & kanttekeningen", "Leestekst", "Theologie", "Voorlezen"],
             )
-            self.assertTrue(page.locator("details.options-category").first.get_attribute("open") is not None)
+            self.assertEqual(page.locator("details.options-category:not([open])").count(), 0)
         finally:
             page.close()
 
@@ -72,7 +72,7 @@ class OptionsRedesignTests(unittest.TestCase):
             self.assertAlmostEqual(box["width"], 390, delta=1)
             self.assertAlmostEqual(box["height"], 633, delta=2)
             self.assertTrue(page.locator("#sidebar-right-toggle").is_visible())
-            self.assertEqual(page.locator("#sidebar-right-toggle").get_attribute("aria-label"), "Opties sluiten")
+            self.assertEqual(page.locator("#sidebar-right-toggle").get_attribute("aria-label"), "Weergave sluiten")
         finally:
             page.close()
 
@@ -98,7 +98,7 @@ class OptionsRedesignTests(unittest.TestCase):
     def test_instelingen_zoeken_en_boekzichtbaarheid_zijn_globale_theologieopties(self):
         page = self.open_reader(width=1280)
         try:
-            self.assertEqual(page.locator("#options-title").inner_text(), "Instellingen")
+            self.assertEqual(page.locator("#options-title").inner_text(), "Weergave")
             search = page.locator("#options-search")
             self.assertEqual(search.get_attribute("placeholder"), "Zoek een instelling")
 
@@ -125,8 +125,6 @@ class OptionsRedesignTests(unittest.TestCase):
     def test_taalkeuze_bewaart_en_activeert_de_editie(self):
         page = self.open_reader(width=1280)
         try:
-            section = page.locator('details.options-category[data-options-category="bronnen"]')
-            section.locator("summary").click()
             page.locator("#opt-teksteditie").select_option("fr-lsg1910")
             page.wait_for_function(
                 "JSON.parse(localStorage.getItem('sv2026_vertaalopties')).teksteditie === 'fr-lsg1910'"
@@ -159,7 +157,7 @@ class OptionsRedesignTests(unittest.TestCase):
             self.assertTrue({
                 "Dyslexiemodus", "Citaatopmaak", "Doorlopend lezen", "Versnummers",
                 "Hoofdstuknummers", "Alternatief lettertype", "Thema", "Regelafstand",
-            }.issubset(labels("weergave")))
+            }.issubset(labels("leestekst")))
             self.assertIn("Strong- en woordnummers", labels("bronnen"))
             self.assertTrue({
                 "Godsnaam in het Oude Testament", "Namen van personen",
@@ -176,12 +174,9 @@ class OptionsRedesignTests(unittest.TestCase):
         page = self.open_reader(width=1280)
         try:
             most = page.locator('details[data-options-category="meest-gebruikt"]')
-            view = page.locator('details[data-options-category="weergave"]')
+            view = page.locator('details[data-options-category="leestekst"]')
             theology = page.locator('details[data-options-category="theologie"]')
             sources = page.locator('details[data-options-category="bronnen"]')
-            for category in (view, theology, sources):
-                category.locator("summary").first.click()
-
             mirror_dyslexia = most.locator('[data-option-mirror="dyslexie"] input')
             primary_dyslexia = view.locator("#toggle-dyslexia")
             mirror_dyslexia.check()
