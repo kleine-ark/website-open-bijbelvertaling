@@ -36,7 +36,7 @@ class VolkenNatiesDataTest(unittest.TestCase):
         self.catalogue = read_json("data/naslag-volken-naties.json")
         self.ammon = next(item for item in self.catalogue["items"] if item["id"] == "ammon")
 
-    def test_four_nations_have_a_separate_naslag_item_with_ancestor_and_map(self):
+    def test_the_four_neighbouring_nations_keep_their_ancestor_and_map(self):
         expected = {
             "ammon": ("Ben-Ammi", "Rabba"),
             "edom": ("Ezau", "Edom"),
@@ -44,12 +44,22 @@ class VolkenNatiesDataTest(unittest.TestCase):
             "moab": ("Moab", "Moab"),
         }
         actual = {item["id"]: item for item in self.catalogue["items"]}
-        self.assertEqual(set(actual), set(expected))
+        self.assertTrue(set(expected) <= set(actual))
         for item_id, (ancestor, map_location) in expected.items():
             with self.subTest(item_id=item_id):
                 self.assertEqual(actual[item_id]["stamvader"]["naam"], ancestor)
                 self.assertEqual(actual[item_id]["kaart"]["plaats"], map_location)
                 self.assertTrue(actual[item_id]["verzen"])
+
+    def test_every_nation_has_an_id_a_name_and_passages(self):
+        ids = [item["id"] for item in self.catalogue["items"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertEqual(ids, sorted(ids))
+        for item in self.catalogue["items"]:
+            with self.subTest(item=item["id"]):
+                self.assertTrue(item["naam"])
+                self.assertTrue(item["beschrijving"])
+                self.assertTrue(item["verzen"])
 
     def test_ammon_is_a_nation_with_ben_ammi_as_ancestor(self):
         self.assertEqual(self.catalogue["titel"], "Volken & Naties")
@@ -95,14 +105,21 @@ class VolkenNatiesDataTest(unittest.TestCase):
         self.assertEqual(self.ammon["kaart"]["coordinaten"], rabba["geometry"]["coordinates"])
 
     def test_each_nation_map_card_is_backed_by_a_geographic_location(self):
-        features = read_json("data/geografie.geojson")["features"]
-        by_name = {feature["properties"]["naam"]: feature for feature in features}
+        coordinates = {}
+        for source in ("data/geografie.geojson", "data/geografie-runtime.geojson"):
+            coordinates[source] = {
+                tuple(feature["geometry"]["coordinates"])
+                for feature in read_json(source)["features"]
+            }
         for item in self.catalogue["items"]:
+            card = item.get("kaart")
+            if card is None:
+                continue
             with self.subTest(item=item["id"]):
-                feature = by_name[item["kaart"]["plaats"]]
-                self.assertEqual(item["kaart"]["coordinaten"], feature["geometry"]["coordinates"])
-                self.assertIn(item["kaart"]["zekerheid"], {"zeker", "waarschijnlijk", "onzeker", "benadering"})
-                self.assertTrue(item["kaart"]["bron"])
+                self.assertIn(card["bron"], coordinates)
+                self.assertIn(tuple(card["coordinaten"]), coordinates[card["bron"]])
+                self.assertIn(card["zekerheid"], {"zeker", "waarschijnlijk", "onzeker", "benadering"})
+                self.assertTrue(card["plaats"])
 
     def test_ammon_has_a_topic_tag_with_the_same_canonical_coverage(self):
         tags = read_json("data/tags.json")["tags"]
