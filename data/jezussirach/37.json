@@ -3540,9 +3540,9 @@
       "number": 30,
       "text1637": "Zijt niet onverzadelijk in alle lekkernijen, en stort u niet heen op de spijzen.",
       "textSV1888": "Zijt niet onverzadelijk in alle lekkernijen, en stort u niet heen op de spijzen.",
-      "text2026": "Wees niet onverzadelijk in alle lekkernijen, en stort u niet heen op de spijzen.",
+      "text2026": "Wees niet onverzadigbaar in alle lekkernijen, en stort u niet heen op de spijzen.",
       "marginNotes": [],
-      "text2026_html": "Wees niet onverzadelijk in alle lekkernijen, en stort u niet heen op de spijzen.",
+      "text2026_html": "Wees niet onverzadigbaar in alle lekkernijen, en stort u niet heen op de spijzen.",
       "grondtekst": [
         {
           "woord": "ἐν",
@@ -3608,6 +3608,11 @@
           "old": "Zijt",
           "new": "Wees",
           "principe": null
+        },
+        {
+          "old": "onverzadelijk",
+          "new": "onverzadigbaar",
+          "principe": "V1622"
         }
       ],
       "woordnummers": [
@@ -3647,9 +3652,9 @@
       "number": 31,
       "text1637": "Want door veel spijs komt ziekte, en de onverzadelijkheid nadert tot buikpijn.",
       "textSV1888": "Want door veel spijs komt ziekte, en de onverzadelijkheid nadert tot buikpijn.",
-      "text2026": "Want door veel voedsel komt ziekte, en de onverzadelijkheid nadert tot buikpijn.",
+      "text2026": "Want door veel voedsel komt ziekte, en de onverzadigbaarheid nadert tot buikpijn.",
       "marginNotes": [],
-      "text2026_html": "Want door veel voedsel komt ziekte, en de onverzadelijkheid nadert tot buikpijn.",
+      "text2026_html": "Want door veel voedsel komt ziekte, en de onverzadigbaarheid nadert tot buikpijn.",
       "grondtekst": [
         {
           "woord": "δι᾿",
@@ -3701,6 +3706,11 @@
           "old": "spijs",
           "new": "voedsel",
           "principe": "V526"
+        },
+        {
+          "old": "onverzadelijkheid",
+          "new": "onverzadigbaarheid",
+          "principe": "V1622"
         }
       ],
       "woordnummers": [
@@ -3740,10 +3750,17 @@
       "number": 32,
       "text1637": "Door de onverzadelijkheid zijn er velen gestorven, maar die daarop let zal zijn leven verlengen.",
       "textSV1888": "Door de onverzadelijkheid zijn er velen gestorven, maar die daarop let zal zijn leven verlengen.",
-      "text2026": "Door de onverzadelijkheid zijn er velen gestorven, maar die daarop let zal zijn leven verlengen.",
+      "text2026": "Door de onverzadigbaarheid zijn er velen gestorven, maar die daarop let zal zijn leven verlengen.",
       "marginNotes": [],
-      "text2026_html": "Door de onverzadelijkheid zijn er velen gestorven, maar die daarop let zal zijn leven verlengen.",
-      "grondtekst": null
+      "text2026_html": "Door de onverzadigbaarheid zijn er velen gestorven, maar die daarop let zal zijn leven verlengen.",
+      "grondtekst": null,
+      "phraseDiff": [
+        {
+          "old": "onverzadelijkheid",
+          "new": "onverzadigbaarheid",
+          "principe": "V1622"
+        }
+      ]
     }
   ],
   "chapterIntro": {

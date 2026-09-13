@@ -4507,9 +4507,9 @@
   {
    "id": "V506",
    "categorie": "Verouderde woorden",
-   "oud": "vlieten / vliett (werkwoord)",
-   "nieuw": "stromen / stroomt",
-   "toelichting": "Verouderd werkwoord voor 'stromen' (Hebr. nahar). 'Vliet' als zelfstandig naamwoord (riviertje) blijft.",
+   "oud": "vlieten / vliet / vlietende / vloten (werkwoord)",
+   "nieuw": "stromen / stroomt / stromende / stroomden",
+   "toelichting": "Verouderd werkwoord voor stromen (Hebr. nahar). Vliet als zelfstandig naamwoord (riviertje) blijft, en de vloot van schepen in de Makkabeeenboeken blijft ook: die staat los van dit werkwoord. De vormen vlietende (Boek der Wijsheid 11:7, Jeremia 18:14), vloten (Ezechiel 47:1) en vliet (Klaagliederen 1:16 en 3:49) bleven bij de eerste doorvoering staan en zijn later toegevoegd.",
    "regex": "\\b[Vv]liett?e?(?:n)?\\b"
   },
   {
@@ -7509,7 +7509,7 @@
    "categorie": "Verouderde woorden",
    "oud": "boelen (=minnaars)",
    "nieuw": "minnaars",
-   "toelichting": "Verouderd 'boelen' (minnaars/geliefden in ontuchtige zin) -> 'minnaars'. NIET 'boelerij' (=hoererij).",
+   "toelichting": "Verouderd boelen (minnaars/geliefden in ontuchtige zin) -> minnaars. NIET boelerij (=hoererij). De eerste doorvoering raakte Hosea en Jeremia 3:1; negen plaatsen bleven staan en zijn later alsnog gedaan: Ezechiel 16:33, 16:36, 16:37, 23:5, 23:9 en 23:22, Jeremia 4:30 en 4 Ezra 15:47 en 15:51.",
    "regex": "\\bboelen\\b"
   },
   {
@@ -7826,7 +7826,7 @@
    "categorie": "Verouderde woorden",
    "oud": "in de keur",
    "nieuw": "in het beste",
-   "toelichting": "'Keur' als 'het uitgelezene, het beste' is verouderd; het moderne 'keur' betekent juist 'grote verscheidenheid'.",
+   "toelichting": "Keur als het uitgelezene, het beste is verouderd; het moderne keur betekent juist grote verscheidenheid. Deze regel dekt de vaste verbinding in de keur; voor de keur van staat V1625.",
    "regex": "\\bin de keure?\\b"
   },
   {
@@ -14948,6 +14948,60 @@
    "toelichting": "De Statenvertaling laat het Hebreeuwse chasjmal onvertaald staan. De kanttekening noemt amber, electrum (goud met een vijfde zilver, van kleur als bleek goud) en het reinste brandende koper; de metaal-uitleg is de gangbare en ook die van de hedendaagse vertalingen. Drie plaatsen: Ezechiël 1:4, 1:27 en 8:2. De kanttekening met de andere uitleggingen blijft staan. Gemeld door een lezer.",
    "regex": "\\bHasmal\\b",
    "voorbeeld": "Ezechiël 1:4 | als de verf van Hasmal | als de kleur van glanzend metaal"
+  },
+  {
+   "id": "V1621",
+   "categorie": "Verouderde woorden",
+   "oud": "tepelen",
+   "nieuw": "tepels",
+   "toelichting": "Oude meervoudsvorm. Drie plaatsen, alle in Ezechiel 23: 23:3, 23:8 en 23:21. Gemeld door een lezer.",
+   "regex": "\\btepelen\\b",
+   "voorbeeld": "Ezechiel 23:8 | de tepelen van haar maagdom | de tepels van haar maagdom"
+  },
+  {
+   "id": "V1622",
+   "categorie": "Verouderde woorden",
+   "oud": "onverzadelijk / onverzadelijkheid",
+   "nieuw": "onverzadigbaar / onverzadigbaarheid",
+   "toelichting": "De vorm op -elijk is verdwenen; het achtervoegsel is nu -baar. Zes plaatsen: Ezechiel 16:28 en vijf in Jezus Sirach (31:19, 31:22, 37:30, 37:31 en 37:32). Gemeld door een lezer.",
+   "regex": "\\bonverzadelijk(heid)?\\b",
+   "voorbeeld": "Ezechiel 16:28 | omdat u onverzadelijk was | omdat u onverzadigbaar was"
+  },
+  {
+   "id": "V1623",
+   "categorie": "Verouderde woorden",
+   "oud": "verwelfsel",
+   "nieuw": "gewelf",
+   "toelichting": "Het verwelfsel van Ezechiel 16 is een overwelfd bouwsel bij de weg, waar de hoererij plaatsvond; de kanttekening spreekt van een gewelf of hoerenhuis. Het woord verwelfsel bestaat niet meer, gewelf wel, en het houdt hetzelfde beeld vast. De hoge plaats die er in dezelfde zin naast staat blijft ongemoeid, want dat is een andere zaak. Drie plaatsen: Ezechiel 16:24, 16:31 en 16:39. Gemeld door een lezer.",
+   "regex": "\\bverwelfsel\\b",
+   "voorbeeld": "Ezechiel 16:24 | Dat u zich een verwelfsel gebouwd hebt | Dat u zich een gewelf gebouwd hebt"
+  },
+  {
+   "id": "V1624",
+   "categorie": "Verouderde woorden",
+   "oud": "opzieden",
+   "nieuw": "doorkoken",
+   "toelichting": "Aanvulling op V1074, dat zieden in al zijn vervoegingen koken maakte maar het samengestelde opzieden liet staan. Op- is hier niet omhoog maar terdege: het vlees moet goed doorkoken. Een plaats, Ezechiel 24:5. Een lezer stelde opkoken voor; dat betekent in hedendaags Nederlands inkoken of opnieuw verhitten, en dat is een andere handeling.",
+   "regex": "\\bopzieden\\b",
+   "voorbeeld": "Ezechiel 24:5 | doe hem wel opzieden | doe hem wel doorkoken"
+  },
+  {
+   "id": "V1625",
+   "categorie": "Verouderde woorden",
+   "oud": "de keur van / de keure van",
+   "nieuw": "het beste van / de besten van",
+   "toelichting": "Verbreding van V936, dat alleen de vaste verbinding in de keur aanpakte. Keur betekende het uitgelezene; het hedendaagse keur betekent juist een grote verscheidenheid, en dat is het tegenovergestelde. Bij zaken wordt het het beste, bij personen de besten. In Ezechiel 31:16 staat het beste er al naast (de keur en het beste van Libanon); daar is het het uitgelezene geworden. Zeven plaatsen: Exodus 15:4, Deuteronomium 12:11, Jeremia 48:15, Ezechiel 23:7, 24:4, 24:5 en 31:16. In Jeremia 48:15 hoort een enkelvoudig werkwoord (is afgegaan), dus daar het beste en niet de besten. Gemeld door een lezer.",
+   "regex": "\\bde keure? van\\b",
+   "voorbeeld": "Ezechiel 24:5 | Neem de keur van de kudde | Neem het beste van de kudde"
+  },
+  {
+   "id": "V1626",
+   "categorie": "Verouderde woorden",
+   "oud": "statuur",
+   "nieuw": "gestalte",
+   "toelichting": "Statuur betekende lichaamslengte; hedendaags hoort een lezer er vooral aanzien in, en dat is een andere zaak. Twee plaatsen. In 1 Samuel 16:7 staat gestalte er al naast voor een ander woord (Hebreeuws mar'eh, het uiterlijk); dat is uiterlijk geworden, anders zou er tweemaal gestalte in een zin staan. In Ezechiel 13:18 gaat het om hoofddoeken die voor mensen van elke lengte gemaakt worden. Gemeld door een lezer, die aan aanzien dacht; de Statenvertaling bedoelt de lengte.",
+   "regex": "\\bstatuur\\b",
+   "voorbeeld": "Ezechiel 13:18 | hoofddeksels voor het hoofd van alle statuur | hoofddeksels voor hoofden van elke gestalte"
   }
  ]
 }
