@@ -692,12 +692,20 @@ const Opties = {
             if (/^[A-ZÀ-ÖØ-Þ]/.test(origineel)) {
                 nieuweTekst = nieuweTekst.charAt(0).toUpperCase() + nieuweTekst.slice(1);
             }
-            // Nootcijfers en tags binnen het vervangen stuk mogen niet verdwijnen
-            var behoud = this._maatBehoudTags(html.slice(map[g.start], map[eind]));
+            // Nootcijfers en tags binnen het vervangen stuk mogen niet verdwijnen.
+            // Staat het stuk HTML op zichzelf, dan gaat het in zijn geheel mee en
+            // blijft het cijferbeeld op zijn plaats staan: "vijf en twintig (25)
+            // ellen (ongeveer 13 meter)". Is de opmaak halverwege geopend, dan
+            // blijft het bij de platte tekst met de tags erachter, want een halve
+            // tag mag niet in de nieuwe span terechtkomen.
+            var fragment = html.slice(map[g.start], map[eind]);
+            var heel = this._maatHeelFragment(fragment);
+            var behoud = heel ? '' : this._maatBehoudTags(fragment);
             stukken.push({
                 van: map[g.start], tot: map[eind],
                 nieuw: '<span class="maat-omgerekend" title="' +
-                    this._maatAttr(uitleg) + '">' + origineel + ' (' + nieuweTekst + ')</span>' + behoud,
+                    this._maatAttr(uitleg) + '">' + (heel ? fragment : origineel) +
+                    ' (' + nieuweTekst + ')</span>' + behoud,
             });
             grens = eind;
         }
@@ -713,12 +721,12 @@ const Opties = {
 
     /**
      * Vul alleen expliciet geregistreerde, elliptische maten aan. Soms noemt
-     * een vers de eenheid maar Ã©Ã©n keer (bijvoorbeeld: â€œzestig ellen â€¦
-     * twintig in zijn breedteâ€). De bron blijft onaangeroerd; de tabel legt
+     * een vers de eenheid maar één keer (bijvoorbeeld: “zestig ellen …
+     * twintig in zijn breedte”). De bron blijft onaangeroerd; de tabel legt
      * per vers vast welk getal die eerder genoemde eenheid herhaalt.
      */
     _rekenImplicieteMaten(html, book, ch, vnum, stelsel, E) {
-        var regels = E.implicieteMaten || [];
+        var regels = E.implicieteMaten || [], zelf = this;
         for (var i = 0; i < regels.length; i++) {
             var regel = regels[i];
             if (!regel || !regel.zoek || !regel.eenheid || !regel.verzen ||
@@ -730,11 +738,16 @@ const Opties = {
             if (!deel) continue;
             var nieuw = 'ongeveer ' + deel.getal + ' ' + deel.eenheid;
             var origineel = regel.zoek + ' ' + (eh.enkelvoud || regel.eenheid);
-            var titel = 'Oorspronkelijk: ' + origineel + ' Â· ' +
+            var titel = 'Oorspronkelijk: ' + origineel + ' · ' +
                 (regel.uitleg || 'de eenheid is in deze zin uit de directe context aangevuld');
-            html = html.replace(regel.zoek,
-                '<span class="maat-omgerekend maat-impliciet" title="' +
-                this._maatAttr(titel) + '">' + regel.zoek + ' (' + nieuw + ')</span>');
+            // Het cijferbeeld van toonGetalcijfers staat direct achter het
+            // telwoord; de aangevulde maat hoort daarachter en niet ertussen.
+            var zoekRe = new RegExp(this._maatEscape(regel.zoek) +
+                '(\\s*<span[^>]*\\bgetal-cijfer\\b[^>]*>[^<]*<\\/span>)?');
+            html = html.replace(zoekRe, function (heel) {
+                return '<span class="maat-omgerekend maat-impliciet" title="' +
+                    zelf._maatAttr(titel) + '">' + heel + ' (' + nieuw + ')</span>';
+            });
         }
         return html;
     },
@@ -743,6 +756,10 @@ const Opties = {
      * Projecteer HTML op platte tekst met een index-kaart terug naar de HTML.
      * Inhoud van <sup>…</sup> (de nootcijfers) telt niet mee, anders zou
      * "driehonderd<sup>37</sup> ellen" nooit als één getal + maat herkend worden.
+     * Om dezelfde reden telt het cijferbeeld van toonGetalcijfers niet mee.
+     * Dat komt tussen het telwoord en de maat te staan ("vijf en twintig
+     * (25) ellen"), en zonder deze uitzondering zou juist vanaf eenentwintig
+     * geen enkele maat meer omgerekend worden.
      */
     _maatPlatteTekst(html) {
         var plain = '', map = [], i = 0, n = html.length;
@@ -753,6 +770,9 @@ const Opties = {
                 if (/^<sup[\s>]/i.test(html.slice(i, gt + 1))) {
                     var dicht = html.toLowerCase().indexOf('</sup>', gt);
                     i = dicht === -1 ? gt + 1 : dicht + 6;
+                } else if (/^<span[^>]*\bgetal-cijfer\b/i.test(html.slice(i, gt + 1))) {
+                    var dichtCijfer = html.toLowerCase().indexOf('</span>', gt);
+                    i = dichtCijfer === -1 ? gt + 1 : dichtCijfer + 7;
                 } else {
                     i = gt + 1;
                 }
@@ -782,6 +802,28 @@ const Opties = {
             }
         }
         return uit;
+    },
+
+    /** Maak een zoekstring veilig voor gebruik in een RegExp. */
+    _maatEscape(tekst) {
+        return String(tekst).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    },
+
+    /**
+     * Staat dit stuk HTML op zichzelf, zonder halverwege geopende opmaak?
+     * Alleen dan mag het in zijn geheel in een nieuwe span gezet worden.
+     */
+    _maatHeelFragment(fragment) {
+        var stapel = [], re = /<(\/?)([A-Za-z][A-Za-z0-9]*)[^>]*?(\/?)>/g, m;
+        while ((m = re.exec(fragment)) !== null) {
+            if (m[3] === '/' || /^(br|img|hr|input|meta|link)$/i.test(m[2])) continue;
+            if (m[1] === '/') {
+                if (!stapel.length || stapel.pop() !== m[2].toLowerCase()) return false;
+            } else {
+                stapel.push(m[2].toLowerCase());
+            }
+        }
+        return stapel.length === 0;
     },
 
     /** Staat het gevonden woord vrij, of plakt het aan een ander woord/koppelteken vast? */

@@ -71,7 +71,49 @@
       "zoek": "twintig",
       "eenheid": "el",
       "aantal": 20,
-      "uitleg": "twintig ellen â€” de maat wordt in de middelste afmeting van het huis niet herhaald"
+      "uitleg": "twintig ellen — de maat wordt in de middelste afmeting van het huis niet herhaald"
+    },
+    {
+      "verzen": ["ezechiel 45:3"],
+      "zoek": "vijf en twintig duizend",
+      "eenheid": "meetriet",
+      "aantal": 25000,
+      "uitleg": "de maat wordt hier niet herhaald; Ezechiël 45:1 meet in meetrieten. De Hebreeuwse tekst noemt in dit hoofdstuk geen maat: de kanttekening bij 45:1 zegt dat meetrieten een ingevoegd woord is, ontleend aan 42:16-20"
+    },
+    {
+      "verzen": ["ezechiel 45:3"],
+      "zoek": "tien duizend",
+      "eenheid": "meetriet",
+      "aantal": 10000,
+      "uitleg": "de maat wordt hier niet herhaald; Ezechiël 45:1 meet in meetrieten. De Hebreeuwse tekst noemt in dit hoofdstuk geen maat: de kanttekening bij 45:1 zegt dat meetrieten een ingevoegd woord is, ontleend aan 42:16-20"
+    },
+    {
+      "verzen": ["ezechiel 45:5"],
+      "zoek": "vijf en twintig duizend",
+      "eenheid": "meetriet",
+      "aantal": 25000,
+      "uitleg": "de maat wordt hier niet herhaald; Ezechiël 45:1 meet in meetrieten. De Hebreeuwse tekst noemt in dit hoofdstuk geen maat: de kanttekening bij 45:1 zegt dat meetrieten een ingevoegd woord is, ontleend aan 42:16-20"
+    },
+    {
+      "verzen": ["ezechiel 45:5"],
+      "zoek": "tien duizend",
+      "eenheid": "meetriet",
+      "aantal": 10000,
+      "uitleg": "de maat wordt hier niet herhaald; Ezechiël 45:1 meet in meetrieten. De Hebreeuwse tekst noemt in dit hoofdstuk geen maat: de kanttekening bij 45:1 zegt dat meetrieten een ingevoegd woord is, ontleend aan 42:16-20"
+    },
+    {
+      "verzen": ["ezechiel 45:6"],
+      "zoek": "vijf duizend",
+      "eenheid": "meetriet",
+      "aantal": 5000,
+      "uitleg": "de maat wordt hier niet herhaald; Ezechiël 45:1 meet in meetrieten. De Hebreeuwse tekst noemt in dit hoofdstuk geen maat: de kanttekening bij 45:1 zegt dat meetrieten een ingevoegd woord is, ontleend aan 42:16-20"
+    },
+    {
+      "verzen": ["ezechiel 45:6"],
+      "zoek": "vijf en twintig duizend",
+      "eenheid": "meetriet",
+      "aantal": 25000,
+      "uitleg": "de maat wordt hier niet herhaald; Ezechiël 45:1 meet in meetrieten. De Hebreeuwse tekst noemt in dit hoofdstuk geen maat: de kanttekening bij 45:1 zegt dat meetrieten een ingevoegd woord is, ontleend aan 42:16-20"
     }
   ],
 
@@ -143,6 +185,16 @@
           "uitleg": "het riet = zes lange ellen ≈ 3,1 m — Ezechiël meet met de lange el van “een el en een handbreed” (40:5)"
         }
       ]
+    },
+    {
+      "id": "meetriet",
+      "categorie": "lengte",
+      "grondEenheid": "m",
+      "vormen": ["meetrieten", "meetriet"],
+      "enkelvoud": "meetriet",
+      "waarde": 3.108,
+      "alleenIn": ["ezechiel 40-48"],
+      "uitleg": "het meetriet = zes lange ellen ≈ 3,1 m — de meetstok uit het visioen, omschreven in Ezechiël 40:5"
     },
     {
       "id": "vadem",
@@ -628,7 +680,7 @@
   },
 
   "eenheden": ["*"],
-      "verzen": ["exodus 16:36", "exodus 30:13", "exodus 38:26", "leviticus 27:25", "numeri 3:47", "numeri 18:16", "ezechiel 45:11-14"]
+      "verzen": ["exodus 16:36", "exodus 30:13", "exodus 38:26", "leviticus 27:25", "numeri 3:47", "numeri 18:16", "ezechiel 45:11-12", "ezechiel 45:14"]
     },
     {
       "reden": "gebod over eerlijke maten en gewichten — het gaat om de norm, niet om een hoeveelheid",
