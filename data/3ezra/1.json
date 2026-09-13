@@ -284,14 +284,19 @@
       "number": 2,
       "text1637": "En stelde de priesters, die met lange klederen waren aangedaan, naar hun dagordening in de tempel des Heren.",
       "textSV1888": "En stelde de priesters, die met lange klederen waren aangedaan, naar hun dagordening in de tempel des Heren.",
-      "text2026": "En stelde de priesters, die met lange kleren waren aangedaan, naar hun dagordening in de tempel van de Heere.",
+      "text2026": "En stelde de priesters, die met lange kleren waren aangedaan, naar hun dagelijkse beurt in de tempel van de Heere.",
       "marginNotes": [],
-      "text2026_html": "En stelde de priesters, die met lange kleren waren aangedaan, naar hun dagordening in de tempel van de Heere.",
+      "text2026_html": "En stelde de priesters, die met lange kleren waren aangedaan, naar hun dagelijkse beurt in de tempel van de Heere.",
       "phraseDiff": [
         {
           "old": "klederen",
           "new": "kleren",
           "principe": "V68"
+        },
+        {
+          "old": "dagordening",
+          "new": "dagelijkse beurt",
+          "principe": "V1628"
         },
         {
           "old": "des Heren.",
@@ -1139,14 +1144,24 @@
       "number": 5,
       "text1637": "Naar het voorschrift Davids; de koning Israëls, en naar de heerlijke instelling Salomo's, zijn zoon; en staat in het heiligdom naar de verdeling der oversten uwer vaderen, de Levieten, die voor uw broederen de kinderen Israëls dienen.",
       "textSV1888": "Naar het voorschrift Davids; de koning Israëls, en naar de heerlijke instelling Salomo's, zijn zoon; en staat in het heiligdom naar de verdeling der oversten uwer vaderen, de Levieten, die voor uw broederen de kinderen Israëls dienen.",
-      "text2026": "Naar het voorschrift Davids; de koning van Israël, en naar de heerlijke instelling Salomo's, zijn zoon; en staat in het heiligdom naar de verdeling van de oversten van uw vaders, de Levieten, die voor uw broers de Israëlieten dienen.",
+      "text2026": "Naar het voorschrift van David; de koning van Israël, en naar de heerlijke instelling van Salomo, zijn zoon; en staat in het heiligdom naar de verdeling van de oversten van uw vaders, de Levieten, die voor uw broers de Israëlieten dienen.",
       "marginNotes": [],
-      "text2026_html": "<span class=\"direct-speech\"><i>Naar het voorschrift Davids; de koning van Israël, en naar de heerlijke instelling Salomo's, zijn zoon; en staat in het heiligdom naar de verdeling van de oversten van uw vaders, de Levieten, die voor uw broers de Israëlieten dienen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Naar het voorschrift van David; de koning van Israël, en naar de heerlijke instelling van Salomo, zijn zoon; en staat in het heiligdom naar de verdeling van de oversten van uw vaders, de Levieten, die voor uw broers de Israëlieten dienen.</i></span>",
       "phraseDiff": [
+        {
+          "old": "Davids;",
+          "new": "van David;",
+          "principe": "O26"
+        },
         {
           "old": "Israëls,",
           "new": "van Israël,",
           "principe": null
+        },
+        {
+          "old": "Salomo's,",
+          "new": "van Salomo,",
+          "principe": "O26"
         },
         {
           "old": "der",
@@ -6005,9 +6020,9 @@
       "number": 32,
       "text1637": "En in geheel Juda treurden zij over Josia, en Jeremia, de profeet beklaagde Josia, en de voornaamsten met hun vrouwen beklaagden hem tot op deze dag; en daar is een bevel uitgegeven, dat zulks altijd geschieden zou door geheel het geslacht Israëls.",
       "textSV1888": "En in geheel Juda treurden zij over Josia, en Jeremia, de profeet beklaagde Josia, en de voornaamsten met hun vrouwen beklaagden hem tot op deze dag; en daar is een bevel uitgegeven, dat zulks altijd geschieden zou door geheel het geslacht Israëls.",
-      "text2026": "En in geheel Juda treurden zij over Josia, en Jeremia, de profeet beklaagde Josia, en de voornaamsten met hun vrouwen beklaagden hem tot op deze dag; en daar is een bevel uitgegeven, dat dat altijd gebeuren zou door geheel het geslacht Israëls.",
+      "text2026": "En in geheel Juda treurden zij over Josia, en Jeremia, de profeet beklaagde Josia, en de voornaamsten met hun vrouwen beklaagden hem tot op deze dag; en daar is een bevel uitgegeven, dat dat altijd gebeuren zou door geheel het geslacht van Israël.",
       "marginNotes": [],
-      "text2026_html": "En in geheel Juda treurden zij over Josia, en Jeremia, de profeet beklaagde Josia, en de voornaamsten met hun vrouwen beklaagden hem tot op deze dag; en daar is een bevel uitgegeven, dat dat altijd gebeuren zou door geheel het geslacht Israëls.",
+      "text2026_html": "En in geheel Juda treurden zij over Josia, en Jeremia, de profeet beklaagde Josia, en de voornaamsten met hun vrouwen beklaagden hem tot op deze dag; en daar is een bevel uitgegeven, dat dat altijd gebeuren zou door geheel het geslacht van Israël.",
       "phraseDiff": [
         {
           "old": "zulks",
@@ -6018,6 +6033,11 @@
           "old": "geschieden",
           "new": "gebeuren",
           "principe": "V40"
+        },
+        {
+          "old": "Israëls.",
+          "new": "van Israël.",
+          "principe": "O26"
         }
       ],
       "grondtekst": [

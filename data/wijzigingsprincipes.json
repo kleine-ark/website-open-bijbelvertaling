@@ -2380,7 +2380,7 @@
    "categorie": "Verouderde woorden",
    "oud": "vlek/vlekken (= dorp)",
    "nieuw": "plaats/plaatsen",
-   "toelichting": "'Vlek' (oud-Nederlands voor klein dorp/gehucht) → 'plaats'. Behouden: gevallen waar 'vlek' = smet/spot betekent (2 Petr 2:13, Ef 5:27, Jud 1:12, Jer 13:23 luipaard, BdW 13:14 op afgodsbeeld).",
+   "toelichting": "Vlek als aanduiding voor een dorp of gehucht is verdwenen en wordt plaats. Het woord is onzijdig en plaats niet, dus het lidwoord en het betrekkelijk voornaamwoord gaan mee; op acht plaatsen bleef het bij de eerste doorvoering op het plaats staan en dat is later hersteld. In Johannes 11:30 staan vlek en plaats in een zin naast elkaar; daar is het dorp geworden, anders zou er tweemaal plaats staan in twee betekenissen.",
    "regex": "\\bvlek(ken)?\\b",
    "voorbeeld": "Mar 1:38 'in de bijliggende vlekken' → 'in de bijliggende plaatsen'"
   },
@@ -15012,6 +15012,79 @@
    "regex": "\\bboezem\\b",
    "bereik": "ezechiel 43",
    "voorbeeld": "Ezechiel 43:13 | de boezem van een el | het voetstuk van een el"
+  },
+  {
+   "id": "V1628",
+   "categorie": "Verouderde woorden",
+   "oud": "dagordening",
+   "nieuw": "dagelijkse beurt",
+   "toelichting": "De priesters dienden bij toerbeurt; de dagordening is de beurt die op die dag aan hen was. Een plaats, 3 Ezra 1:2. Gemeld door een lezer.",
+   "regex": "\\bdagordening\\b",
+   "voorbeeld": "3 Ezra 1:2 | naar hun dagordening | naar hun dagelijkse beurt"
+  },
+  {
+   "id": "V1629",
+   "categorie": "Verouderde woorden",
+   "oud": "oversterk",
+   "nieuw": "buitengewoon sterk",
+   "toelichting": "Over- als versterking bestaat niet meer in deze vorm. Een plaats, 3 Ezra 3:19, in de wedstrijd van de drie lijfwachten over wat het sterkste is. Gemeld door een lezer.",
+   "regex": "\\boversterk\\b",
+   "voorbeeld": "3 Ezra 3:19 | hoe oversterk is de wijn | hoe buitengewoon sterk is de wijn"
+  },
+  {
+   "id": "V1630",
+   "categorie": "Verouderde woorden",
+   "oud": "slechten",
+   "nieuw": "met de grond gelijkmaken",
+   "toelichting": "Slechten betekende vlak maken, met de grond gelijkmaken. Het woord bestaat nog in vakbetekenis (muren slechten) maar wordt nu eerder gelezen als slecht maken. Een plaats, 3 Ezra 4:4, waar bergen, muren en torens onder een en hetzelfde werkwoord vallen. Het bereik is nodig vanwege het homoniem: V408 maakt van de slechten juist de eenvoudigen, en dat is het zelfstandig naamwoord en niet dit werkwoord. Gemeld door een lezer.",
+   "regex": "\\bslechten\\b",
+   "voorbeeld": "3 Ezra 4:4 | zij slechten de bergen, en de muren, en de torens | zij maken de bergen, en de muren, en de torens met de grond gelijk",
+   "bereik": "3ezra 4"
+  },
+  {
+   "id": "V1631",
+   "categorie": "Verouderde woorden",
+   "oud": "verworgen / verworging",
+   "nieuw": "wurgen / wurging",
+   "toelichting": "De vorm met ver- is verdwenen. Vier plaatsen: 3 Ezra 4:27, Job 7:15 en Tobit 2:3 worden wurgen. Mattheus 27:5 wordt verhing zichzelf: de kanttekening verwijst daar naar Achitofel in 2 Samuel 17:23, waar de Statenvertaling zelf verhing zich schrijft. Gemeld door een lezer.",
+   "regex": "\\bverworg\\w*\\b",
+   "voorbeeld": "3 Ezra 4:27 | zijn verworgd geworden | zijn gewurgd"
+  },
+  {
+   "id": "V1632",
+   "categorie": "Verouderde woorden",
+   "oud": "herderen",
+   "nieuw": "herders",
+   "toelichting": "Oude meervoudsvorm die bij de eerdere doorvoering bleef staan; herders stond er op de meeste plaatsen allang. Elf plaatsen, waaronder Ezechiel 34:2 en Jeremia 23:1, waar herders en herderen in hetzelfde vers naast elkaar stonden.",
+   "regex": "\\bherderen\\b",
+   "voorbeeld": "Jeremia 23:1 | Wee de herderen | Wee de herders"
+  },
+  {
+   "id": "N13",
+   "categorie": "Naamvallen",
+   "oud": "onzes",
+   "nieuw": "van onze",
+   "toelichting": "Bezittelijke naamval, aanvulling op N7. Zeven plaatsen bleven staan, en op vijf ervan was het al krom geworden: een eerdere sweep maakte van Heren Heere, zodat er onzes Heere stond. Alle zeven worden nu van onze Heere. Gemeld door een lezer bij 3 Ezra 8:53.",
+   "regex": "\\bonzes\\b",
+   "voorbeeld": "3 Ezra 8:53 | de sterkte onzes Heere | de sterkte van onze Heere"
+  },
+  {
+   "id": "O26",
+   "categorie": "Genitief-modernisering",
+   "oud": "[zelfstandig naamwoord] Davids / Israëls / Jakobs",
+   "nieuw": "[zelfstandig naamwoord] van David / van Israël / van Jakob",
+   "toelichting": "De achtergeplaatste eigennaam-genitief (de bergen Israëls, het voorschrift Davids) is geen Nederlands meer; de vooropgeplaatste (Davids toorn) is dat wel en blijft staan. Negenenveertig plaatsen in eenendertig boeken. Gemeld door een lezer bij 3 Ezra 1:5.",
+   "regex": "\\b(Davids|Salomo's|Israëls|Jakobs|Abrahams|Aärons|Izaks)\\b",
+   "voorbeeld": "3 Ezra 1:5 | het voorschrift Davids | het voorschrift van David"
+  },
+  {
+   "id": "V1633",
+   "categorie": "Verouderde woorden",
+   "oud": "bouwende waren",
+   "nieuw": "bouwden",
+   "toelichting": "De omschrijving met een tegenwoordig deelwoord leest in dit vers als een fragment: het onderwerp staat in vers 8 en het vers begint zonder. Een plaats, 3 Ezra 6:9. De andere plaatsen met bouwende (Ezra 4:12, Jozua 22:26, Micha 3:10) staan in een zin die wel loopt en blijven ongemoeid. Gemeld door een lezer.",
+   "regex": "\bbouwende waren\b",
+   "voorbeeld": "3 Ezra 6:9 | In de stad Jeruzalem bouwende waren een nieuw en groot huis | In de stad Jeruzalem een nieuw en groot huis bouwden"
   }
  ]
 }
