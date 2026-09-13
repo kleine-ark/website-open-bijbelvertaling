@@ -235,6 +235,7 @@
             <header class="ond-detail-head">
                 <button id="ond-terug" class="ond-terug">&#8249; Alle onderwerpen</button>
                 <p id="ond-detail-categorie" class="ond-detail-categorie"></p>
+                <img id="ond-detail-beeld" alt="" width="640" height="640" hidden style="width:min(100%,360px);height:auto;border-radius:12px;margin-bottom:16px">
                 <h2 id="ond-detail-titel"></h2>
                 <p id="ond-detail-beschr" class="beschr-detail"></p>
                 <div id="ond-detail-count" class="ond-detail-count"></div>
@@ -263,6 +264,7 @@
     <script>Opties.init();</script>
     <script src="js/tekstweergave.js"></script>
     <script src="embed.js"></script>
+    <script src="js/onderwerp-afbeeldingen.js"></script>
     <script>
     (function () {
         const grid = document.getElementById('ond-grid');
@@ -351,6 +353,7 @@
             const sleutel = (tag.verzen || []).filter(v => typeof v !== 'string' && v.rang === 1).length;
             const zoektekst = `${tag.naam || ''} ${tag.beschrijving || ''}`.toLowerCase();
             return `<button class="ond-card" data-id="${tag.id}" data-zoek="${zoektekst.replace(/"/g, '&quot;')}" style="--kleur:${tag.kleur || '#999'}">
+                    ${OnderwerpAfbeeldingen.html(tag.id)}
                     <h2>${tag.naam || ''}</h2>
                     ${tag.beschrijving ? `<p class="beschr">${tag.beschrijving}</p>` : ''}
                     <div class="count"><span class="count-num">${n}</span> ${n === 1 ? 'vers' : 'verzen'}${sleutel ? ` · ${sleutel} sleutelteksten` : ''}<span class="count-arrow">&rsaquo;</span></div>
@@ -401,6 +404,7 @@
             document.getElementById('ond-detail-categorie').textContent = categorieVoor(id);
             document.getElementById('ond-detail-titel').innerHTML =
                 `<span class="ond-dot" style="background:${tag.kleur || '#999'}"></span>${tag.naam || ''}`;
+            OnderwerpAfbeeldingen.detail(document.getElementById('ond-detail-beeld'), tag.id, tag.naam);
             document.getElementById('ond-detail-beschr').textContent = tag.beschrijving || '';
             document.getElementById('ond-detail-count').textContent = `${ACTIEVE_VERZEN.length} ${ACTIEVE_VERZEN.length === 1 ? 'tekst' : 'teksten'} uit Gods Woord`;
             renderTopTien(tag);

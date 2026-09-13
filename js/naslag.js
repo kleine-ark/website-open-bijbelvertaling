@@ -53,6 +53,19 @@
             if (!d) { houder.textContent = 'De gegevens konden niet geladen worden.'; return; }
             var gekozen = itemParam();
             var collectie = d.personen || d.items || [];
+            if (d.titel === 'Voedsel in de Bijbel') {
+                var voedselbeelden = {
+                    brood: 'brood', 'koren-en-graan': 'graan',
+                    'moes-en-linzen': 'linzen', honing: 'honing', melk: 'melk',
+                    olie: 'olijfolie', druiven: 'druiven', vijgen: 'vijgen',
+                    granaatappels: 'granaatappels', vis: 'vis', wijn: '../onderwerpen/wijn-v2'
+                };
+                collectie.forEach(function (voedsel) {
+                    if (!voedsel.afbeelding && voedselbeelden[voedsel.id]) {
+                        voedsel.afbeelding = 'images/wiki/voedsel/' + voedselbeelden[voedsel.id] + '.webp';
+                    }
+                });
+            }
             var item = null;
             var itemIndex = -1;
             if (gekozen) {
