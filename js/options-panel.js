@@ -11,8 +11,8 @@ const OptionsPanel = {
         if (this._initialized) return;
         this.dialog = document.getElementById('sidebar-right');
         const openButtons = [
-            document.getElementById('topnav-tekstopties'),
-            document.getElementById('topnav-mobile-tekstopties'),
+            document.getElementById('topnav-weergave'),
+            document.getElementById('topnav-mobile-weergave'),
         ].filter(Boolean);
         const closeButton = document.getElementById('sidebar-right-toggle');
         if (!this.dialog || !openButtons.length || !closeButton) return;
@@ -72,7 +72,7 @@ const OptionsPanel = {
         this.syncOptionSummaries();
         this.syncOptionMirrors();
         document.body.classList.add('options-open');
-        document.querySelectorAll('#topnav-tekstopties, #topnav-mobile-tekstopties').forEach(opener => {
+        document.querySelectorAll('#topnav-weergave, #topnav-mobile-weergave').forEach(opener => {
             opener.setAttribute('aria-expanded', 'true');
         });
         const closeButton = document.getElementById('sidebar-right-toggle');
@@ -100,7 +100,7 @@ const OptionsPanel = {
                 ],
             },
             {
-                key: 'weergave', label: 'Weergave',
+                key: 'leestekst', label: 'Leestekst',
                 selectors: [
                     '#toggle-citaten', '#toggle-doorlopend',
                     '#toggle-versnummers', '#toggle-hoofdstuknummers',
@@ -131,7 +131,9 @@ const OptionsPanel = {
             const category = document.createElement('details');
             category.className = 'options-category';
             category.dataset.optionsCategory = definition.key;
-            category.open = Boolean(definition.open);
+            // Alle kopjes staan open, zodat het paneel een doorloopbare lijst is
+            // en geen reeks laatjes die eerst opengeklikt moet worden.
+            category.open = true;
             const summary = document.createElement('summary');
             summary.textContent = definition.label;
             const list = document.createElement('div');

@@ -101,7 +101,7 @@
 .topnav-theme svg { display: block; }
 
 /* Centrale ingang voor dezelfde globale leesvoorkeuren als in de leestekst. */
-.topnav-tekstopties {
+.topnav-weergave {
     background: rgba(203,164,73,0.13);
     border: 1px solid rgba(203,164,73,0.44);
     color: #f7ecd0;
@@ -118,14 +118,14 @@
     white-space: nowrap;
     transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
-.topnav-tekstopties:hover,
-.topnav-tekstopties[aria-expanded="true"] {
+.topnav-weergave:hover,
+.topnav-weergave[aria-expanded="true"] {
     color: #fff;
     background: rgba(203,164,73,0.28);
     border-color: var(--gold);
 }
-.topnav-tekstopties svg { flex: 0 0 auto; }
-.topnav-mobile-tekstopties { display: none; }
+.topnav-weergave svg { flex: 0 0 auto; }
+.topnav-mobile-weergave { display: none; }
 /* Toon sun in licht-mode, moon in donker-mode (icoon van wat je KRIJGT bij klik). */
 .topnav-theme .theme-icon-sun { display: none; }
 .topnav-theme .theme-icon-moon { display: block; }
@@ -365,10 +365,10 @@
         border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     .topnav-links a:last-child { border-bottom: none; }
-    .topnav-mobile-tekstopties { display: none; }
+    .topnav-mobile-weergave { display: none; }
     .topnav-links a:hover { background: rgba(203,164,73,0.15); color: var(--gold); }
-    .topnav-tekstopties { width: 38px; padding: 0; gap: 0; }
-    .topnav-tekstopties span { display: none; }
+    .topnav-weergave { width: 38px; padding: 0; gap: 0; }
+    .topnav-weergave span { display: none; }
 }
 .feedback-modal-dialog .fb-types {
     display: flex;
@@ -410,10 +410,10 @@
 @media (max-width: 768px) {
     .feedback-modal-dialog textarea { font-size: 16px; }
     #topnav { padding: 0 12px; height: 56px; }
-    /* Tekstopties blijven als zelfstandige hoofdactie zichtbaar; ze horen niet
+    /* De weergaveknop blijft als zelfstandige hoofdactie zichtbaar; ze horen niet
        verstopt te zitten in het hamburgermenu. */
-    .topnav-tekstopties { display: inline-flex; width: 38px; padding: 0; gap: 0; flex: 0 0 38px; }
-    .topnav-tekstopties span { display: none; }
+    .topnav-weergave { display: inline-flex; width: 38px; padding: 0; gap: 0; flex: 0 0 38px; }
+    .topnav-weergave span { display: none; }
     .topnav-theme { display: none; }
     .topnav-brand {
         flex: 0 1 auto;
@@ -451,7 +451,7 @@
     }
     .topnav-links a:last-child { border-bottom: none; }
     .topnav-links a:hover { background: rgba(203,164,73,0.15); color: var(--gold); }
-    .topnav-mobile-tekstopties {
+    .topnav-mobile-weergave {
         display: block;
         width: 100%;
         padding: 12px 24px;
@@ -474,7 +474,7 @@
         width: 100%;
         justify-content: flex-start;
     }
-    .topnav-mobile-tekstopties:hover { background: rgba(203,164,73,.15); color: var(--gold); }
+    .topnav-mobile-weergave:hover { background: rgba(203,164,73,.15); color: var(--gold); }
 }
 
 /* === Versierde initiaal (drop-cap) op eerste vers van een hoofdstuk ===

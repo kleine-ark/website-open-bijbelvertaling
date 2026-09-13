@@ -24,8 +24,8 @@ def test_reader_has_no_floating_or_mobile_options_opener():
 
     assert 'id="sidebar-right-open"' not in html
     assert 'id="mobile-opties-btn"' not in html
-    assert 'id="topnav-tekstopties"' in topnav
-    assert 'id="topnav-mobile-tekstopties"' in topnav
+    assert 'id="topnav-weergave"' in topnav
+    assert 'id="topnav-mobile-weergave"' in topnav
 
 
 def test_options_headers_use_shared_navigation_palette():

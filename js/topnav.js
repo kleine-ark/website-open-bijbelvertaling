@@ -52,10 +52,10 @@
             '<a href="over-ov.html">Over OV</a>' +
             '<a href="index.html#johannes/1">Tekst</a>' +
             '<a href="wiki.html">Wiki</a>' +
-            '<button class="topnav-mobile-tekstopties" id="topnav-mobile-tekstopties" type="button" aria-label="Tekstopties openen" aria-controls="sidebar-right" aria-expanded="false">Tekstopties</button>' +
+            '<button class="topnav-mobile-weergave" id="topnav-mobile-weergave" type="button" aria-label="Weergave openen" aria-controls="sidebar-right" aria-expanded="false">Weergave</button>' +
         '</div>' +
         '<input type="search" id="topnav-search-input" class="topnav-search-input" placeholder="Zoek in Gods Woord… (Ctrl+K)" autocomplete="off" aria-label="Zoeken in Gods Woord" onkeydown="if(event.key===\'Enter\'){var q=this.value.trim();if(q){location.href=\'index.html?q=\'+encodeURIComponent(q);}}">' +
-        '<button class="topnav-tekstopties" id="topnav-tekstopties" type="button" aria-label="Tekstopties openen" aria-controls="sidebar-right" aria-expanded="false" title="Tekstopties"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10"/><path d="M18 7h2"/><circle cx="16" cy="7" r="2"/><path d="M4 17h3"/><path d="M11 17h9"/><circle cx="9" cy="17" r="2"/></svg><span>Tekstopties</span></button>' +
+        '<button class="topnav-weergave" id="topnav-weergave" type="button" aria-label="Weergave openen" aria-controls="sidebar-right" aria-expanded="false" title="Weergave"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10"/><path d="M18 7h2"/><circle cx="16" cy="7" r="2"/><path d="M4 17h3"/><path d="M11 17h9"/><circle cx="9" cy="17" r="2"/></svg><span>Weergave</span></button>' +
         '<button class="topnav-theme" id="topnav-theme-toggle" title="Thema: licht/donker" aria-label="Wissel thema"><svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>' +
         '<span id="topnav-auth-home" hidden></span>' +
         '<div id="auth-slot" class="topnav-auth"></div>' +
@@ -77,10 +77,10 @@
     else if (mobileAuthQuery.addListener) mobileAuthQuery.addListener(placeAuthSlot);
 
     var optiesKnoppen = [
-        document.getElementById('topnav-tekstopties'),
-        document.getElementById('topnav-mobile-tekstopties')
+        document.getElementById('topnav-weergave'),
+        document.getElementById('topnav-mobile-weergave')
     ].filter(Boolean);
-    function openTekstopties(trigger) {
+    function openWeergave(trigger) {
             if (window.OptionsPanel && document.getElementById('sidebar-right')) {
                 // De hoofdlezer heeft het paneel al in het document; daar
                 // hoeft de host niet eerst asynchroon te worden geladen.
@@ -91,13 +91,13 @@
                 });
             } else {
                 window.addEventListener('ov:options-host-loaded', function () {
-                    openTekstopties(trigger);
+                    openWeergave(trigger);
                 }, { once: true });
             }
     }
     optiesKnoppen.forEach(function (optiesKnop) {
         optiesKnop.dataset.globalOptionsBound = 'true';
-        optiesKnop.addEventListener('click', function () { openTekstopties(optiesKnop); });
+        optiesKnop.addEventListener('click', function () { openWeergave(optiesKnop); });
     });
 
     /* Het versienummer stond hier hardgecodeerd en liep daardoor achter: bij
