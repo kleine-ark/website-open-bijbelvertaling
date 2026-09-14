@@ -411,9 +411,21 @@
     .feedback-modal-dialog textarea { font-size: 16px; }
     #topnav { padding: 0 12px; height: 56px; }
     /* De weergaveknop blijft als zelfstandige hoofdactie zichtbaar; ze horen niet
-       verstopt te zitten in het hamburgermenu. */
-    .topnav-weergave { display: inline-flex; width: 38px; padding: 0; gap: 0; flex: 0 0 38px; }
-    .topnav-weergave span { display: none; }
+       verstopt te zitten in het hamburgermenu. Met het woord erbij, want een
+       icoon alleen leest niet als een knop; er is naast de merknaam ruimte zat. */
+    .topnav-weergave {
+        display: inline-flex;
+        width: auto;
+        min-height: 40px;
+        padding: 0 12px;
+        gap: 7px;
+        flex: 0 0 auto;
+        margin-left: 10px;
+        background: rgba(203, 164, 73, 0.24);
+        border-color: var(--gold);
+        color: #fff;
+    }
+    .topnav-weergave span { display: inline; font-size: 13px; }
     .topnav-theme { display: none; }
     .topnav-brand {
         flex: 0 1 auto;
@@ -1750,6 +1762,12 @@ body {
         background: var(--bg-surface);
         border-color: var(--border-soft);
     }
+}
+/* Op de smalste telefoons past het merk plus de weergaveknop net; het merk
+   krimpt daarom mee zodat de knop het woord kan houden. */
+@media (max-width: 360px) {
+    .topnav-logo { max-width: 112px; }
+    .topnav-weergave { padding: 0 9px; gap: 5px; }
 }
 @media (max-width: 430px) {
     .option-choice-grid { grid-template-columns: 1fr; }
