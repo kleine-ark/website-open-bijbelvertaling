@@ -1,11 +1,11 @@
-"""All old chapter statuses are pinned migration history, never current sign-off."""
+"""Historical reviews pin content revisions; attribution stays in the private API."""
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_historical_chapters_have_stable_ids_and_revisions_but_no_invented_verifier():
+def test_historical_chapters_have_stable_ids_and_revisions_but_no_public_verifier():
     history = json.loads((ROOT / "migrations/review-history-v1.json").read_text())
     assert history["schemaVersion"] == 1
     assert history["sourceCommit"] == "fcdc46f6773d9daea52b29108c0ac6ba761d44cd"

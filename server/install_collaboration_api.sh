@@ -17,7 +17,7 @@ for tool in curl install nginx python3 systemctl; do
     }
 done
 python3 -c 'import cryptography'
-for file in collaboration_api.py openvertaling-collaboration.service openvertaling-collaboration.nginx; do
+for file in collaboration_api.py collaboration_schema.py openvertaling-collaboration.service openvertaling-collaboration.nginx; do
     test -f "$SOURCE_DIR/$file" || {
         echo "Installatiebestand ontbreekt: $file" >&2
         exit 1
@@ -27,6 +27,7 @@ test -f "$NGINX_SITE"
 
 install -d -m 0755 /opt/openvertaling-collaboration
 install -m 0644 "$SOURCE_DIR/collaboration_api.py" /opt/openvertaling-collaboration/collaboration_api.py
+install -m 0644 "$SOURCE_DIR/collaboration_schema.py" /opt/openvertaling-collaboration/collaboration_schema.py
 install -d -o www-data -g www-data -m 0700 /var/lib/openvertaling-collaboration
 install -m 0644 "$SOURCE_DIR/openvertaling-collaboration.service" /etc/systemd/system/openvertaling-collaboration.service
 install -m 0644 "$SOURCE_DIR/openvertaling-collaboration.nginx" /etc/nginx/snippets/openvertaling-collaboration.conf

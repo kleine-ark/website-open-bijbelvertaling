@@ -30,6 +30,8 @@ from cryptography import x509
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
+from collaboration_schema import HISTORICAL_REVIEWER_EMAIL, HISTORICAL_REVIEWER_NAME, initialize_database
+
 PROJECT_ID = "open-vertaling"
 CERTIFICATES_URL = (
     "https://www.googleapis.com/robot/v1/metadata/x509/"
@@ -208,94 +210,7 @@ class ReviewStore:
 
     def _initialize(self) -> None:
         with self._connect() as db:
-            db.executescript(
-                """
-                PRAGMA journal_mode = WAL;
-                CREATE TABLE IF NOT EXISTS users (
-                    uid TEXT PRIMARY KEY,
-                    email TEXT NOT NULL UNIQUE COLLATE NOCASE,
-                    display_name TEXT NOT NULL,
-                    photo_url TEXT,
-                    roles_json TEXT NOT NULL DEFAULT '[]',
-                    registered INTEGER NOT NULL DEFAULT 1,
-                    bootstrap INTEGER NOT NULL DEFAULT 0,
-                    created_at TEXT NOT NULL,
-                    last_seen_at TEXT NOT NULL
-                );
-                CREATE TABLE IF NOT EXISTS role_events (
-                    id TEXT PRIMARY KEY,
-                    target_uid TEXT NOT NULL,
-                    target_email TEXT NOT NULL,
-                    target_name TEXT NOT NULL,
-                    roles_json TEXT NOT NULL,
-                    actor_uid TEXT NOT NULL,
-                    actor_email TEXT NOT NULL,
-                    actor_name TEXT NOT NULL,
-                    created_at TEXT NOT NULL
-                );
-                CREATE TABLE IF NOT EXISTS review_subjects (
-                    subject_type TEXT NOT NULL,
-                    subject_id TEXT NOT NULL,
-                    revision TEXT NOT NULL,
-                    label TEXT NOT NULL,
-                    href TEXT NOT NULL,
-                    source TEXT NOT NULL,
-                    metadata_json TEXT NOT NULL,
-                    active INTEGER NOT NULL DEFAULT 1,
-                    PRIMARY KEY (subject_type, subject_id, revision)
-                );
-                CREATE TABLE IF NOT EXISTS review_events (
-                    id TEXT PRIMARY KEY,
-                    subject_type TEXT NOT NULL,
-                    subject_id TEXT NOT NULL,
-                    revision TEXT NOT NULL,
-                    decision TEXT NOT NULL CHECK(decision IN ('approved', 'revoked')),
-                    note TEXT NOT NULL,
-                    actor_kind TEXT NOT NULL CHECK(actor_kind IN ('user', 'historical-import')),
-                    actor_uid TEXT,
-                    actor_email TEXT,
-                    actor_name TEXT NOT NULL,
-                    created_at TEXT NOT NULL,
-                    FOREIGN KEY(subject_type, subject_id, revision)
-                      REFERENCES review_subjects(subject_type, subject_id, revision)
-                );
-                CREATE INDEX IF NOT EXISTS review_events_subject
-                  ON review_events(subject_type, subject_id, revision, created_at DESC);
-                CREATE TRIGGER IF NOT EXISTS immutable_role_events_update
-                  BEFORE UPDATE ON role_events BEGIN
-                    SELECT RAISE(ABORT, 'role_events are immutable');
-                  END;
-                CREATE TRIGGER IF NOT EXISTS immutable_role_events_delete
-                  BEFORE DELETE ON role_events BEGIN
-                    SELECT RAISE(ABORT, 'role_events are immutable');
-                  END;
-                CREATE TRIGGER IF NOT EXISTS immutable_review_events_update
-                  BEFORE UPDATE ON review_events BEGIN
-                    SELECT RAISE(ABORT, 'review_events are immutable');
-                  END;
-                CREATE TRIGGER IF NOT EXISTS immutable_review_events_delete
-                  BEFORE DELETE ON review_events BEGIN
-                    SELECT RAISE(ABORT, 'review_events are immutable');
-                  END;
-                CREATE TABLE IF NOT EXISTS metadata (
-                    key TEXT PRIMARY KEY,
-                    value TEXT NOT NULL
-                );
-                """
-            )
-            for email in sorted(self.bootstrap_admins):
-                pending_uid = "pending:" + hashlib.sha256(email.encode()).hexdigest()[:24]
-                timestamp = now_iso()
-                db.execute(
-                    """INSERT OR IGNORE INTO users
-                       (uid, email, display_name, roles_json, registered, bootstrap,
-                        created_at, last_seen_at)
-                       VALUES (?, ?, ?, ?, 0, 1, ?, ?)""",
-                    (
-                        pending_uid, email, email,
-                        serialize_roles(ALLOWED_ROLES), timestamp, timestamp,
-                    ),
-                )
+            initialize_database(db, self.bootstrap_admins, serialize_roles(ALLOWED_ROLES), now_iso())
 
     def _row_to_user(self, row: sqlite3.Row) -> dict:
         roles = set(parse_roles(row["roles_json"]))
@@ -314,35 +229,49 @@ class ReviewStore:
         }
 
     def upsert_user(self, claims: dict) -> dict:
-        uid = str(claims["sub"])
+        if claims.get("email_verified") is not True:
+            raise Unauthorized()
+        firebase_uid = str(claims["sub"])
         email = normalized_email(claims.get("email"))
         display_name = str(claims.get("name") or email).strip()[:200]
         photo_url = str(claims.get("picture") or "").strip()[:2000] or None
         timestamp = now_iso()
         with self._connect() as db:
             db.execute("BEGIN IMMEDIATE")
+            existing_identity = db.execute(
+                "SELECT * FROM users WHERE firebase_uid = ?", (firebase_uid,)
+            ).fetchone()
             existing_email = db.execute(
                 "SELECT * FROM users WHERE email = ? COLLATE NOCASE", (email,)
             ).fetchone()
-            roles = set(parse_roles(existing_email["roles_json"])) if existing_email else set()
-            created_at = existing_email["created_at"] if existing_email else timestamp
+            if existing_email and existing_email["registered"] and existing_email["firebase_uid"] != firebase_uid:
+                raise Unauthorized()
+            if existing_identity and existing_email and existing_identity["uid"] != existing_email["uid"]:
+                raise Unauthorized()
+            existing = existing_identity or existing_email
+            uid = existing["uid"] if existing else firebase_uid
+            roles = set(parse_roles(existing["roles_json"])) if existing else set()
+            created_at = existing["created_at"] if existing else timestamp
             if email in self.bootstrap_admins:
                 roles.update(ALLOWED_ROLES)
-            if existing_email and existing_email["uid"] != uid:
-                db.execute("DELETE FROM users WHERE uid = ?", (existing_email["uid"],))
+            # Keep the internal account ID: immutable audit references survive
+            # the first verified Google sign-in without being rewritten.
+            if existing:
+                db.execute(
+                    """UPDATE users SET firebase_uid=?, email=?, display_name=?, photo_url=?,
+                       roles_json=?, registered=1, bootstrap=?, last_seen_at=? WHERE uid=?""",
+                    (firebase_uid, email, display_name, photo_url, serialize_roles(roles),
+                     int(email in self.bootstrap_admins), timestamp, uid),
+                )
+                return self._row_to_user(db.execute("SELECT * FROM users WHERE uid=?", (uid,)).fetchone())
             db.execute(
                 """INSERT INTO users
                    (uid, email, display_name, photo_url, roles_json, registered,
-                    bootstrap, created_at, last_seen_at)
-                   VALUES (?, ?, ?, ?, ?, 1, ?, ?, ?)
-                   ON CONFLICT(uid) DO UPDATE SET
-                     email=excluded.email, display_name=excluded.display_name,
-                     photo_url=excluded.photo_url, roles_json=excluded.roles_json,
-                     registered=1, bootstrap=excluded.bootstrap,
-                     last_seen_at=excluded.last_seen_at""",
+                    bootstrap, created_at, last_seen_at, firebase_uid)
+                   VALUES (?, ?, ?, ?, ?, 1, ?, ?, ?, ?)""",
                 (
                     uid, email, display_name, photo_url, serialize_roles(roles),
-                    int(email in self.bootstrap_admins), created_at, timestamp,
+                    int(email in self.bootstrap_admins), created_at, timestamp, firebase_uid,
                 ),
             )
             row = db.execute("SELECT * FROM users WHERE uid = ?", (uid,)).fetchone()
@@ -351,7 +280,7 @@ class ReviewStore:
     def _require_role(self, actor: dict, role: str) -> dict:
         with self._connect() as db:
             row = db.execute("SELECT * FROM users WHERE uid=?", (actor["uid"],)).fetchone()
-        if row is None:
+        if row is None or not row["registered"]:
             raise Forbidden()
         current = self._row_to_user(row)
         if role not in current["roles"]:
@@ -495,6 +424,9 @@ class ReviewStore:
                 "SELECT value FROM metadata WHERE key = 'historical-review-import-v2'"
             ).fetchone()
             if not imported:
+                historical_actor = db.execute(
+                    "SELECT * FROM users WHERE email=?", (HISTORICAL_REVIEWER_EMAIL,)
+                ).fetchone()
                 for item in catalog["historicalSubjects"]:
                     self._validate_subject(item)
                     db.execute(
@@ -515,13 +447,14 @@ class ReviewStore:
                            (id, subject_type, subject_id, revision, decision, note,
                             actor_kind, actor_uid, actor_email, actor_name, created_at)
                            VALUES (?, ?, ?, ?, 'approved', ?, 'historical-import',
-                                   NULL, NULL, ?, ?)""",
+                                   ?, ?, ?, ?)""",
                         (
                             str(uuid.uuid4()), item["type"], item["id"], item["revision"],
                             "Bestaande status geïmporteerd uit " + item.get(
                                 "migrationSource", "onbekende bron"
                             ),
-                            "Onbekend (bestaande reviewstatus)", now_iso(),
+                            historical_actor["uid"], historical_actor["email"],
+                            HISTORICAL_REVIEWER_NAME, now_iso(),
                         ),
                     )
                 db.execute(
@@ -558,13 +491,15 @@ class ReviewStore:
             "actor": {
                 "kind": row["actor_kind"], "uid": row["actor_uid"],
                 "email": row["actor_email"], "displayName": row["actor_name"],
+                "registered": bool(row["actor_registered"]),
             },
             "createdAt": row["created_at"],
         }
 
     def _subject(self, db: sqlite3.Connection, row: sqlite3.Row, actor=None) -> dict:
         event = db.execute(
-            """SELECT * FROM review_events
+            """SELECT *, (SELECT registered FROM users WHERE uid=actor_uid) AS actor_registered
+               FROM review_events
                WHERE subject_type=? AND subject_id=? AND revision=?
                ORDER BY (actor_kind='user') DESC, rowid DESC LIMIT 1""",
             (row["subject_type"], row["subject_id"], row["revision"]),
@@ -572,7 +507,7 @@ class ReviewStore:
         latest = self._event(event)
         previous = db.execute(
             """SELECT 1 FROM review_events WHERE subject_type=? AND subject_id=?
-               AND revision<>? AND actor_kind='user' AND decision='approved' LIMIT 1""",
+               AND revision<>? AND decision='approved' LIMIT 1""",
             (row["subject_type"], row["subject_id"], row["revision"]),
         ).fetchone()
         result = {
@@ -580,8 +515,7 @@ class ReviewStore:
             "revision": row["revision"], "label": row["label"],
             "href": row["href"], "source": row["source"],
             "metadata": json.loads(row["metadata_json"]),
-            "status": "approved" if latest and latest["decision"] == "approved"
-                      and latest["actor"]["kind"] == "user" else "pending",
+            "status": "approved" if latest and latest["decision"] == "approved" else "pending",
             "needsReverification": bool(previous and not latest),
         }
         if actor and "administrator" in actor["roles"]:
@@ -592,7 +526,7 @@ class ReviewStore:
         with self._connect() as db:
             if actor:
                 user = db.execute("SELECT * FROM users WHERE uid=?", (actor["uid"],)).fetchone()
-                if user is None:
+                if user is None or not user["registered"]:
                     raise Forbidden()
                 actor = self._row_to_user(user)
             row = db.execute(
@@ -697,7 +631,7 @@ class ReviewStore:
             ).fetchone()
             # First successful click owns this verification. Retries (including
             # another tab/account) cannot silently replace the responsible person.
-            if last and last["actor_kind"] == "user" and last["decision"] == decision:
+            if last and last["decision"] == decision:
                 return self._subject(db, row, actor)
             db.execute(
                 """INSERT INTO review_events
@@ -725,19 +659,16 @@ class ReviewStore:
         with self._connect() as db:
             total = db.execute("SELECT count(*) FROM review_events").fetchone()[0]
             rows = db.execute(
-                """SELECT e.*, s.label FROM review_events e
+                """SELECT e.*, s.label, u.registered AS actor_registered FROM review_events e
                    JOIN review_subjects s USING(subject_type, subject_id, revision)
+                   JOIN users u ON u.uid=e.actor_uid
                    ORDER BY e.created_at DESC, e.rowid DESC LIMIT ? OFFSET ?""",
                 (limit, offset),
             ).fetchall()
         items = [{
             "id": row["id"], "subjectType": row["subject_type"],
             "subjectId": row["subject_id"], "revision": row["revision"],
-            "label": row["label"], "decision": row["decision"],
-            "note": row["note"], "actor": {
-                "kind": row["actor_kind"], "uid": row["actor_uid"],
-            "email": row["actor_email"], "displayName": row["actor_name"],
-            }, "createdAt": row["created_at"],
+            "label": row["label"], **self._event(row),
         } for row in rows]
         return {"total": total, "items": items}
 

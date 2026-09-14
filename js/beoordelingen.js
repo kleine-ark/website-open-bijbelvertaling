@@ -26,12 +26,6 @@
         status.classList.toggle('is-error', !!error);
     }
 
-    function actorLabel(review) {
-        if (!review) return '—';
-        if (review.actor.kind === 'historical-import') return 'Onbekend (geïmporteerd)';
-        return review.actor.displayName || review.actor.email || 'Onbekend';
-    }
-
     function renderSubjects(items) {
         body.replaceChildren();
         items.forEach(function (subject) {
@@ -46,8 +40,8 @@
             stateCell.append(element('span', subject.status === 'approved' ? 'Goedgekeurd' : 'Te beoordelen', 'badge ' + subject.status));
             if (subject.latestReview) {
                 stateCell.append(
-                    element('span', actorLabel(subject.latestReview), 'block'),
-                    element('span', new Date(subject.latestReview.createdAt).toLocaleString('nl-NL'), 'muted block')
+                    element('span', Collaboration.reviewActorLabel(subject.latestReview), 'block'),
+                    element('span', Collaboration.reviewDateLabel(subject.latestReview), 'muted block')
                 );
             }
 
@@ -117,8 +111,8 @@
                 var subject = element('td', review.label);
                 subject.append(element('span', review.subjectType + ' · ' + review.subjectId, 'muted block'));
                 var decision = element('td', review.decision === 'approved' ? 'Goedgekeurd' : 'Ingetrokken');
-                var actor = element('td', actorLabel(review));
-                actor.append(element('span', new Date(review.createdAt).toLocaleString('nl-NL'), 'muted block'));
+                var actor = element('td', Collaboration.reviewActorLabel(review));
+                actor.append(element('span', Collaboration.reviewDateLabel(review), 'muted block'));
                 row.append(subject, decision, actor, element('td', review.note || '—'));
                 eventBody.appendChild(row);
             });

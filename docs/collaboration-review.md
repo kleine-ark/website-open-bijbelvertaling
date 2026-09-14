@@ -13,7 +13,8 @@ maar in de private SQLite-database:
 ## Gebruikers beheren
 
 Beheerders openen `/gebruikers.html`, zoeken een account en wijzigen de rechten.
-Een account verschijnt zodra het eenmaal met Google bij dit systeem is aangemeld.
+Een account verschijnt zodra het eenmaal met Google bij dit systeem is aangemeld,
+met uitzondering van vooraf gereserveerde accounts.
 Dit is geen overzicht van nog nooit aangemelde Firebase-accounts.
 
 - Gewone accounts kunnen lezen, maar niet verifiëren.
@@ -25,13 +26,20 @@ De vaste beheerders zijn `maartenvroegindeweij@gmail.com` en
 `real.johnheikens@gmail.com`. Hun gereserveerde account wordt bij de eerste
 sessie gekoppeld aan hun echte Firebase-uid. Hun beheerdersrecht kan niet via
 de gebruikerspagina worden verwijderd. Iedere rolwijziging wordt gelogd.
+Een gereserveerd account heeft nog geen login en staat als “Nog niet aangemeld”
+in het beheerdersoverzicht. Het kan zelf geen handelingen uitvoeren.
+De interne account-id (`uid`) blijft bij het aanmelden gelijk; de afzonderlijke
+`firebase_uid` koppelt het account aan het gecontroleerde Google-token.
+Koppelen gebeurt alleen bij een geverifieerd Google-e-mailadres dat exact
+overeenkomt (hoofdletterongevoelig), nooit op basis van een naam of clientvelden.
+Een al gekoppeld account kan niet door een ander Firebase-account worden overgenomen.
 Rechten worden binnen de schrijftransactie opnieuw gecontroleerd: een oude
 browsersessie kan een ingetrokken recht niet blijven gebruiken.
 
 ## Eén klik, geen toewijzingen
 
 Een bevoegde gebruiker logt in, leest de inhoud en klikt **Verifiëren**.
-De server legt zelf de ingelogde uid, naam, het e-mailadres, tijdstip en de
+De server legt zelf de interne account-id, naam, het e-mailadres, tijdstip en de
 inhoudsrevisie vast. Er is geen persoonselector, eigenaarstoewijzing of
 overdrachtsworkflow. Aangeleverde verifier-identiteiten worden geweigerd.
 
@@ -91,10 +99,27 @@ Bij bestaande databases vult de idempotente migratie
 `historical-review-import-v2` ontbrekende historische records aan, zonder
 bestaande beslissingen te verwijderen of dubbele imports te maken.
 
-Historische controles zonder bekend account blijven zichtbaar voor beheerders
-als `historical-import`, maar gelden niet als nieuwe accountgebonden verificatie.
-Er wordt geen verantwoordelijke afgeleid uit Git-auteurschap. Bestaande benoemde
-verificaties blijven geldig zolang hun inhoudsrevisie niet verandert.
+De eigenaar heeft bevestigd dat Maarten Vroegindeweij de bestaande controles
+heeft uitgevoerd. Alle historische controles zijn daarom gekoppeld aan zijn
+gereserveerde account voor `maartenvroegindeweij@gmail.com`, ook zolang Google-login
+nog niet gelukt is. Ongewijzigde, gecontroleerde inhoud blijft geverifieerd;
+ontbrekende login is geen ontbrekende controle. Alleen beheerders zien zijn naam
+en, zolang nodig, “nog niet aangemeld”. Zijn eerste Google-login activeert hetzelfde
+account zonder dubbele gebruiker of herschreven auditgebeurtenissen.
+
+Bij het opstarten voert `server/collaboration_schema.py` de versiegebonden migraties
+`account-identity-v1` en `historical-review-attribution-v3` transactioneel uit.
+Ook bestaande databases met een ongewijzigde catalogus worden bijgewerkt:
+geregistreerde accounts behouden hun id, oude verwijzingen naar inmiddels gekoppelde
+placeholderaccounts worden hersteld, en alle historische controles krijgen Maarten
+als verantwoordelijke. De migratie bewaart ids, volgorde, inhoudsrevisies, herkomst
+en importtijdstippen. Normale API-handelingen kunnen auditgegevens niet wijzigen.
+
+De herkomst blijft `historical-import`; de UI vermeldt dat de oorspronkelijke
+controledatum onbekend is en onderscheidt deze van het importtijdstip.
+Er wordt geen datum of verantwoordelijke afgeleid uit Git-auteurschap. Latere
+accountgebonden goedkeuringen en intrekkingen krijgen voorrang boven imports.
+Een gewijzigde inhoudsrevisie vereist opnieuw verifiëren.
 
 Beide lezers halen actuele hoofdstukstatus uit
 `GET /api/collaboration/verified-chapters`. De gegenereerde, Git-genegeerde
@@ -133,6 +158,7 @@ tijdelijke databases en synthetische testidentiteiten, nooit echte accounts:
 ```bash
 python3 -m unittest discover -s tests -p 'test_collaboration_system.py'
 python3 -m unittest discover -s tests -p 'test_direct_verification.py'
+python3 -m unittest discover -s tests -p 'test_ghost_verification.py'
 python3 -m unittest discover -s tests -p 'test_verification_exports.py'
 node --test tests/verification-sw.test.cjs
 node --test --test-timeout=60000 tests/verification.browser.test.cjs

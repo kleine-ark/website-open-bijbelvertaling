@@ -81,7 +81,7 @@ test('location verification uses the same control and permission checks', async 
     await control.getByText('Verificatie opgeslagen.', { exact: true }).waitFor();
     assert.equal(await control.locator('.verification-author').count(), 0);
     await page.evaluate(() => setTestUser('admin'));
-    await page.waitForFunction(() => Collaboration.currentUser?.uid === 'admin');
+    await page.waitForFunction(() => Collaboration.currentUser?.email === 'admin@example.test');
     await control.locator('.verification-author').waitFor();
     assert.match(await control.innerText(), /Reviewer/);
     await page.close();
@@ -236,6 +236,62 @@ test('leaving an administrator page clears private data before browser history c
     await page.goto(base + '/index.html#genesis/1');
     await page.locator('#chapter-verification .verification-author').waitFor();
     await page.evaluate(() => window.dispatchEvent(new PageTransitionEvent('pagehide')));
+    assert.equal(await page.locator('.verification-author').count(), 0);
+    await page.close();
+});
+
+test('historical reviews stay verified; only admins see the ghost and its first sign-in', async () => {
+    const publicPage = await pageAs(null);
+    for (const reader of ['index.html', 'lees.html']) {
+        await publicPage.goto(base + '/' + reader + '#genesis/3');
+        await publicPage.locator('#chapter-verification')
+            .getByRole('button', { name: 'Geverifieerd: Genesis 3', exact: true }).waitFor();
+        assert.equal(await publicPage.locator('.chapter-concept-tag').count(), 0);
+        assert.equal(await publicPage.locator('.verification-author').count(), 0);
+        assert.doesNotMatch(await publicPage.locator('body').innerText(), /Maarten Vroegindeweij/);
+    }
+    await publicPage.close();
+    const page = await pageAs('admin');
+    await page.goto(base + '/lees.html#genesis/3');
+    const author = page.locator('#chapter-verification .verification-author');
+    await author.waitFor();
+    assert.match(await author.innerText(), /Maarten Vroegindeweij \(nog niet aangemeld\)/);
+    assert.match(await author.innerText(), /controledatum onbekend.*Geïmporteerd op/);
+    const before = await page.evaluate(async () =>
+        (await Collaboration.api('/subject?type=text-chapter&id=genesis/3')).subject.latestReview);
+    await page.setViewportSize({ width: 390, height: 844 });
+    const box = await page.locator('#chapter-verification').boundingBox();
+    assert.ok(box.x >= 0 && box.x + box.width <= 390);
+
+    await page.goto(base + '/beoordelingen.html');
+    await page.locator('#reviews-table tbody tr').filter({ hasText: 'genesis/3' })
+        .getByText('Maarten Vroegindeweij (nog niet aangemeld)', { exact: true }).waitFor();
+    await page.locator('#review-events-table tbody tr').filter({ hasText: 'genesis/3' })
+        .getByText(/Maarten Vroegindeweij/).waitFor();
+    await page.goto(base + '/gebruikers.html');
+    const account = page.locator('#users-table tbody tr').filter({ hasText: 'maartenvroegindeweij@gmail.com' });
+    await account.getByText('Nog niet aangemeld', { exact: true }).waitFor();
+    await page.evaluate(() => setTestUser('maarten'));
+    await page.waitForFunction(() => Collaboration.currentUser?.email === 'maartenvroegindeweij@gmail.com');
+    await page.waitForFunction(() => {
+        const row = Array.from(document.querySelectorAll('#users-table tbody tr'))
+            .find(row => row.textContent.includes('maartenvroegindeweij@gmail.com'));
+        return row && !row.textContent.includes('Nog niet aangemeld');
+    });
+    assert.equal(await account.count(), 1);
+    const after = await page.evaluate(async () =>
+        (await Collaboration.api('/subject?type=text-chapter&id=genesis/3')).subject.latestReview);
+    assert.equal(after.id, before.id);
+    assert.equal(after.actor.uid, before.actor.uid);
+    assert.equal(after.createdAt, before.createdAt);
+    assert.equal(after.actor.registered, true);
+    await page.goto(base + '/lees.html#genesis/3');
+    await page.locator('#chapter-verification .verification-author').waitFor();
+    assert.doesNotMatch(await page.locator('#chapter-verification').innerText(), /nog niet aangemeld/);
+    await page.evaluate(() => setTestUser('reviewer'));
+    await page.waitForFunction(() => Collaboration.currentUser?.email === 'reviewer@example.test');
+    await page.locator('#chapter-verification')
+        .getByRole('button', { name: 'Geverifieerd: Genesis 3', exact: true }).waitFor();
     assert.equal(await page.locator('.verification-author').count(), 0);
     await page.close();
 });

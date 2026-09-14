@@ -1,6 +1,7 @@
 import base64
 import importlib.util
 import json
+import sys
 import tempfile
 import threading
 import time
@@ -18,6 +19,7 @@ from cryptography.hazmat.primitives.asymmetric import padding, rsa
 from cryptography.x509.oid import NameOID
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "server"))
 
 
 def load_module(name, relative_path):
@@ -165,7 +167,7 @@ class CollaborationStoreTests(unittest.TestCase):
 
         self.assertEqual(updated["roles"], ["reviewer"])
         events = self.store.list_role_events(self.admin)
-        self.assertEqual(events[0]["actor"]["uid"], "john")
+        self.assertEqual(events[0]["actor"]["uid"], self.admin["uid"])
         self.assertEqual(events[0]["targetUid"], "reader")
         self.assertEqual(events[0]["targetEmail"], "reader@example.test")
 
@@ -213,13 +215,13 @@ class CollaborationStoreTests(unittest.TestCase):
                 "revision": "b" * 64, "sourceHash": "b" * 64, "decision": "approved", "note": "",
             })
 
-    def test_historical_status_is_migrated_once_without_fabricated_user(self):
+    def test_historical_status_is_migrated_once_with_confirmed_attribution(self):
         subjects = self.store.list_subjects(self.admin, subject_type="text-chapter")
-        self.assertEqual(subjects["items"][0]["status"], "pending")
+        self.assertEqual(subjects["items"][0]["status"], "approved")
         self.assertEqual(subjects["items"][0]["typeLabel"], "Bijbelhoofdstuk")
         self.assertEqual(subjects["types"][0]["id"], "text-chapter")
         self.assertEqual(subjects["items"][0]["latestReview"]["actor"]["kind"], "historical-import")
-        self.assertIsNone(subjects["items"][0]["latestReview"]["actor"]["uid"])
+        self.assertEqual(subjects["items"][0]["latestReview"]["actor"]["uid"], self.maarten["uid"])
 
         changed = json.loads(json.dumps(self.catalog))
         changed["subjects"][0]["revision"] = "d" * 64
@@ -293,7 +295,7 @@ class TokenClaimTests(unittest.TestCase):
                 "email_verified": True, "name": "John",
             })
             subjects = app["store"].list_subjects(admin, subject_type="text-chapter")
-            self.assertEqual(subjects["items"][0]["status"], "pending")
+            self.assertEqual(subjects["items"][0]["status"], "approved")
 
     def test_verifier_accepts_valid_signature_and_rejects_tampering(self):
         private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
@@ -411,10 +413,11 @@ class CollaborationHttpTests(unittest.TestCase):
         status, payload = self.request("/session", method="POST", body={})
         self.assertEqual(status, 200)
         self.assertIn("administrator", payload["user"]["roles"])
+        account_uid = payload["user"]["uid"]
 
         status, payload = self.request("/users?q=john")
         self.assertEqual(status, 200)
-        self.assertEqual(payload["items"][0]["uid"], "john")
+        self.assertEqual(payload["items"][0]["uid"], account_uid)
 
         status, payload = self.request("/subjects?type=location")
         self.assertEqual(status, 200)
@@ -425,7 +428,7 @@ class CollaborationHttpTests(unittest.TestCase):
             "sourceHash": subject["metadata"]["sourceHash"],
         })
         self.assertEqual(status, 201)
-        self.assertEqual(payload["subject"]["latestReview"]["actor"]["uid"], "john")
+        self.assertEqual(payload["subject"]["latestReview"]["actor"]["uid"], account_uid)
 
         status, payload = self.request("/users", authenticated=False)
         self.assertEqual(status, 401)

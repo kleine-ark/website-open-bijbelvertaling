@@ -72,8 +72,8 @@ class DirectVerificationTests(fixtures.CollaborationStoreTests):
         ))
 
     def test_public_chapter_status_comes_from_current_decisions(self):
-        # Old unattributed flags remain evidence, not named verification.
-        self.assertEqual(self.store.verified_chapters(), {})
+        # Confirmed historical reviews count for their unchanged content revision.
+        self.assertEqual(self.store.verified_chapters(), {"genesis": [1]})
         self.store.record_review(self.admin, {
             "subjectType": "text-chapter", "subjectId": "genesis/1",
             "revision": "a" * 64, "sourceHash": "a" * 64, "decision": "approved", "note": "",
@@ -125,7 +125,7 @@ class DirectVerificationTests(fixtures.CollaborationStoreTests):
     def test_export_rejects_a_catalog_from_another_release(self):
         with self.assertRaises(api.Conflict):
             self.store.verified_chapters("f" * 64)
-        self.assertEqual(self.store.verified_chapters(self.catalog["catalogRevision"]), {})
+        self.assertEqual(self.store.verified_chapters(self.catalog["catalogRevision"]), {"genesis": [1]})
 
     def test_imported_history_cannot_supersede_an_existing_named_verification(self):
         approval = self.approve()

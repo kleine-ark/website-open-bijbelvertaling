@@ -68,9 +68,8 @@
             const review = state.latestReview;
             const author = document.createElement('span');
             author.className = 'verification-author';
-            author.textContent = review.actor.kind === 'historical-import'
-                ? 'Eerder nagekeken; account onbekend'
-                : review.actor.displayName + ' · ' + new Date(review.createdAt).toLocaleString('nl-NL');
+            author.textContent = Collaboration.reviewActorLabel(review) + ' · '
+                + Collaboration.reviewDateLabel(review);
             details.appendChild(author);
         }
         if (approved && canVerify()) {

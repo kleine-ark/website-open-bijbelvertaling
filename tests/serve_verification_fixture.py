@@ -9,6 +9,7 @@ from http.server import ThreadingHTTPServer
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "server"))
 spec = importlib.util.spec_from_file_location("api", ROOT / "server/collaboration_api.py")
 api = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(api)
@@ -16,6 +17,9 @@ spec.loader.exec_module(api)
 
 class Verifier:
     def verify(self, token):
+        if token == "maarten":
+            return {"sub": "google-maarten", "email": "maartenvroegindeweij@gmail.com",
+                    "email_verified": True, "name": "Maarten Vroegindeweij"}
         if token not in ("admin", "reviewer", "reader"):
             raise api.Unauthorized()
         return {"sub": token, "email": token + "@example.test",
@@ -27,7 +31,7 @@ signal.signal(signal.SIGTERM, lambda *_: sys.exit(0))
 with tempfile.TemporaryDirectory(prefix="ov-verification-test-") as temporary:
     root = Path(temporary)
     subjects = []
-    for chapter in (1, 2):
+    for chapter in (1, 2, 3):
         path = ROOT / f"data/genesis/{chapter}.json"
         source_hash = hashlib.sha256(path.read_bytes()).hexdigest()
         content = json.loads(path.read_text())
@@ -48,13 +52,15 @@ with tempfile.TemporaryDirectory(prefix="ov-verification-test-") as temporary:
         "label": location["naam"], "href": "plaats.html?plaats=" + location["id"],
         "source": "data/geografie-runtime.geojson", "metadata": {"sourceHash": location_hash},
     })
-    catalog = {"schemaVersion": 2, "historicalSubjects": [], "subjectTypes": {
+    history = [dict(item, migrationSource="test historical review") for item in subjects
+               if item["type"] == "text-chapter" and item["id"] == "genesis/3"]
+    catalog = {"schemaVersion": 2, "historicalSubjects": history, "subjectTypes": {
         "text-chapter": "Hoofdstuk", "text-verse": "Vers", "location": "Plaats",
     }, "subjects": subjects}
     catalog["catalogRevision"] = api.review_catalog_revision(catalog)
     catalog_path = root / "catalog.json"
     catalog_path.write_text(json.dumps(catalog))
-    store = api.ReviewStore(root / "reviews.sqlite3", {"admin@example.test"})
+    store = api.ReviewStore(root / "reviews.sqlite3", {"admin@example.test", "maartenvroegindeweij@gmail.com"})
     admin = store.upsert_user(Verifier().verify("admin"))
     store.upsert_user(Verifier().verify("reviewer"))
     store.upsert_user(Verifier().verify("reader"))

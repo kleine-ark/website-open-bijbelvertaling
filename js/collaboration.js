@@ -117,6 +117,16 @@
             return !!this.currentUser && this.currentUser.roles.indexOf(role) !== -1;
         },
 
+        reviewActorLabel: function (review) {
+            return review.actor.displayName + (review.actor.registered ? '' : ' (nog niet aangemeld)');
+        },
+
+        reviewDateLabel: function (review) {
+            var date = new Date(review.createdAt).toLocaleString('nl-NL');
+            return review.actor.kind === 'historical-import'
+                ? 'Eerdere controle; controledatum onbekend. Geïmporteerd op ' + date : date;
+        },
+
         api: function (path, options) {
             return request(path, options);
         }
