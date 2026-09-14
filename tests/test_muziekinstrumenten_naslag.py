@@ -43,7 +43,7 @@ def test_alle_afzonderlijke_instrumentnamen_worden_gepubliceerd(instruments_data
 def test_alle_88_boeken_worden_gescand_en_corpusdelen_blijven_onderscheiden(instruments_data):
     assert instruments_data["dekking"] == {
         "boekenGescand": 88,
-        "verzenGescand": 41132,
+        "verzenGescand": 41181,
     }
     assert instruments_data["reviewStatus"] == "agent-reviewed"
     assert instruments_data["humanReviewed"] is False

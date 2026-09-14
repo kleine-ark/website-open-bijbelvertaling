@@ -22,7 +22,7 @@ def test_bouw_is_deterministisch_en_audit_omvat_het_hele_corpus():
 
     assert first == second
     assert first["report"]["boekenGescand"] == 88
-    assert first["report"]["verzenGescand"] == 41132
+    assert first["report"]["verzenGescand"] == 41181
     assert len(first["report"]["perBoek"]) == 88
     assert {tag["id"] for tag in first["tags"]} == {
         "zegeningen", "vervloekingen", "beloften", "bijbelse-feesten"
