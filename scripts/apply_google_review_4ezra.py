@@ -10,8 +10,8 @@ getaloptie las "de duizenden van de hemel" in 13:3 als getal). Nieuw hier:
    Salomo, 3 Makkabeeën, 3 Meqabyan en 4 Baruch.
 2. De datering: die noemt nu dat hoofdstuk 1-2 en 15-16 later zijn toegevoegd.
 
-De melding bij 3:4 (hoofdletters voor God in alle apocriefen) raakt veel meer
-verzen en loopt als eigen doorvoering.
+De melding bij 3:4 (hoofdletters voor God in alle apocriefen) is uitgevoerd
+met apply_hoofdletters_god_apocriefen.py; deze lijst noemt het resultaat.
 
 Draaien vanuit de repo-root:  python scripts/apply_google_review_4ezra.py
 """
@@ -93,9 +93,12 @@ BESLUITEN = [
     ("2:9", "[Oude woorden vervangen] Pekachollen", "tekst_eenduidig", "afgedekt",
      "'pekschollen' staat als 'brokken pek'."),
     ("3:4", "Ina lle apocrieven hoofdletter gebruik van God nalopen", "hoofdletters",
-     "gepland",
-     "Loopt als eigen doorvoering door de apocriefe boeken die nog niet definitief "
-     "zijn: U en Uw waar iemand God aanspreekt."),
+     "verwerkt",
+     "Nu 'O heersende Heere, U hebt van de beginne gesproken'. In de apocriefe boeken die "
+     "nog niet definitief zijn staat in de gebeden tot God nu U en Uw: 3 Ezra 8, 4 Ezra "
+     "3, 5, 8, 9 en 12, Tobit 3, Esther 13-14, Jezus Sirach 23, 36 en 51, Wijsheid 9-19, "
+     "Bel en de draak en 2 Makkabeeën 1. In de gesprekken van Ezra met de engel is de "
+     "kleine letter blijven staan, omdat daar niet zeker is wie wordt aangesproken."),
     ("3:9", "[Oude woorden vervangen] Mettertijd", "tekst_eenduidig", "afgedekt",
      "'mettertijd' staat als 'na verloop van tijd' (principe V1635). Daarbij zijn "
      "'deedt' en 'verdierft' nu 'deed' en 'verdierf'."),

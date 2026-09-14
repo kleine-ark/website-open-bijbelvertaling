@@ -83,7 +83,9 @@ def pas_tekst_aan(vers, correcties, referentie):
         # overslaan. Is het oude een deel van het nieuwe, dan is het al gedaan.
         if oud in nieuw and not (oud in vervang and vervang in nieuw):
             nieuw = nieuw.replace(oud, vervang)
-        elif vervang not in nieuw:
+        elif vervang.lower() not in nieuw.lower():
+            # Een latere ronde kan alleen de hoofdletters hebben veranderd ("deed u"
+            # werd in een gebed "deed U"); dan is de vervanging al gedaan.
             raise ValueError("%s: niet gevonden: %r" % (referentie, oud))
     if nieuw == vers["text2026"]:
         return False

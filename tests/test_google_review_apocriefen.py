@@ -53,7 +53,8 @@ def test_oude_verleden_tijd_op_t_is_weg():
         ("4baruch", 5, 20, "Waart", "Was u geen oude man"),
     ):
         tekst = zichtbaar(boek, hoofdstuk, nummer)
-        assert nieuw in tekst, f"{boek} {hoofdstuk}:{nummer}"
+        # In de gebeden tot God staat het voornaamwoord inmiddels met hoofdletter.
+        assert nieuw.lower() in tekst.lower(), f"{boek} {hoofdstuk}:{nummer}"
         assert not re.search(rf"\b{oud}\b", tekst), f"{boek} {hoofdstuk}:{nummer}"
 
 
