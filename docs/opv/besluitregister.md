@@ -699,3 +699,19 @@ In 4:17 staat in de Statenvertaling `wij zullen zien het einde van de wijze, en 
 De Statenvertaling geeft de Griekse godennamen in 2 Makkabeeën met hun Romeinse tegenhanger: `Jupiter Olympius` en `Jupiter Xenius` in 6:2, `Bacchus` in 6:7 en 14:33, en `de maand van Jupiter Corinthius` in 11:21. De parafrase houdt de Griekse naam aan die in het verhaal thuishoort: Zeus en Dionysus. Zo blijft zichtbaar dat het om de goden van de Griekse koningen gaat en niet om een latere Romeinse cultus.
 
 Ook in 1 Makkabeeën volgen de namen de rest van de vertaling waar die het verhaal al kent: `Zambri, de zoon van Salom` in 2:26 wordt Zimri, de zoon van Salu, zoals in Numeri 25; `Ananias, Azaria, Misaël` in 2:59 wordt Hananja, Azarja en Misaël, zoals in Daniël; en de maand `Chasleu` heet Kislev. De brieven en de verdragstekst op de koperen platen staan in de citaatopmaak, omdat geschreven woorden in deze uitgave als spraak tellen.
+
+### A7 — De lerende stem in Jezus Sirach
+
+Jezus Sirach is van begin tot eind onderwijs, en onderwijs krijgt geen citaatopmaak, net als in Spreuken, Prediker en het Boek der Wijsheid. Dat geldt ook voor de gebeden die de leraar zelf uitspreekt — het gebed om bewaring in 23:1 tot 6, het gebed om ontferming over Israël in 36:1 tot 19 en het dankgebed in 51:1 tot 16 — en voor de aanspraken waarin hij zich rechtstreeks tot iemand richt: tot Salomo in 47:17 tot 22, tot Elia in 48:3 tot 12, tot de hogepriester Simon in 50:5 tot 10 en tot de dood in 41:1 tot 4. Dat is de vorm van de leerrede zelf en geen aangehaalde rede.
+
+Wat binnen die leerrede werkelijk gezegd wordt, staat wel in de opmaak. De grootste rede is die van de Wijsheid zelf in 24:3 tot 25 en 24:32 tot 38, aangekondigd door `Zij doet haar mond open in de vergadering van de Allerhoogste`. Binnen die rede staat het woord van God in 24:9 als citaat binnen het citaat, en de wet van Mozes komt in 24:26 aan het woord met een eigen aankondiging. Verder krijgen de korte redes hun opmaak: de rijke in 13:7, de mensen in 13:28, God in 15:15 en 17:12, de knecht in 19:19, de dwaas in 20:16 en 22:9, de overspeler in 23:23 en 24, de ondankbare gastheer in 29:30 en 31, de oversten van de volken in 36:12, de vriend in 37:1, de raadgever in 37:10, de gestorvene in 38:23, Samuël in 46:21 en de leraar zelf in 51:33. De lofzang die 39:19 aankondigt met `zeg zo in je dankzegging` loopt van 39:20 tot en met 39:36 en staat op naam van de heiligen die in 39:17 worden aangesproken.
+
+### A8 — Zeg niet, en wie dat zegt
+
+Sirach waarschuwt telkens tegen een zin die iemand zou kunnen zeggen: `Ik heb gezondigd, en wat is mij overkomen?` (5:4), `Hij heeft mij zo gemaakt` (15:12), `Ik zal mij voor de Heere verbergen` (16:16), `Er staat hier van alles!` (31:13) en `Wat is dit nou?` (39:20 en 39:25). Die zinnen staan in de citaatopmaak, net als de onpersoonlijke aanhaling in Prediker 1:10. De spreker heet in de sprekerslijst `wie zo spreekt`, want de bron noemt geen naam; het gaat om de mens die zich dat in het hoofd haalt. De waarschuwing eromheen — `Zeg niet:` — hoort bij de leerrede en blijft buiten de opmaak, zoals elke aankondiging in deze uitgave.
+
+Waar de spreker binnen een rede zichzelf aanhaalt, komt er geen tweede opmaak omheen. In 24:34 zegt de Wijsheid `Ik heb gezegd: ik zal mijn beste tuin bewateren`; dat staat binnen haar eigen rede en wisselt dus niet van spreker. Een citaat binnen een citaat markeert een wisseling van spreker, niet een aanhaling van zichzelf.
+
+### A9 — Het opschrift van Sirach 51
+
+Sirach 51:1 begint in de Statenvertaling met een opschrift tussen dubbele punthaken: `Een Gebed van Jezus, de zoon van Sirach`. Het staat in de bron binnen vers 1 en niet als apart vers, en het blijft daarom in de parafrase binnen vers 1 staan, als eerste zin en zonder haken. Het vers heeft twee segmenten, zodat het opschrift en het begin van het gebed elk hun eigen bronfrase houden.
