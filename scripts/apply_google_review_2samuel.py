@@ -18,8 +18,8 @@ tags. Die staan hier bij elkaar, omdat ze in dezelfde verzen samenkomen:
 
 Wat níet hier staat: de opmerkingen die om een principe voor alle boeken
 vroegen (wiens, één als geen telwoord, kinderen Ammons, wederkomen, bij
-geval, zachtkens, bekwaam, vertoeven). Die raken meer boeken dan 2 Samuël en
-horen in een eigen doorvoering.
+geval, zachtkens, bekwaam, vertoeven). Die zijn doorgevoerd met
+apply_opmerkingen_principes_open_boeken.py; deze lijst noemt het resultaat.
 
 Draaien vanuit de repo-root:  python scripts/apply_google_review_2samuel.py
 """
@@ -265,19 +265,22 @@ VERVALLEN = "vervallen"
 
 REEDS = "Stond al zo in de leestekst (review van augustus)."
 DUBBEL = "Dubbele melding; zie de melding hierboven."
-PRINCIPE = ("Vraagt om een principe voor alle boeken; wordt doorgevoerd in de boeken "
-            "die nog niet definitief zijn.")
+WIENS = ("'wiens' en 'wier' zijn nu vervangen in alle boeken die nog niet definitief "
+         "zijn, telkens passend bij de zin: 'van wie de naam', 'die Salomo heette', "
+         "'te midden van wie'.")
 
 BESLUITEN = [
     ("1:1", "Wedergekomen - teruggekomen", "tekst_eenduidig", AFGEDEKT, REEDS),
-    ("1:1", "Wedergekomen - teruggekeerd - principe! Overal", "principe", GEPLAND,
-     PRINCIPE + " Wederkomen wordt terugkeren."),
+    ("1:1", "Wedergekomen - teruggekeerd - principe! Overal", "principe", VERWERKT,
+     "Nu 'was teruggekeerd'. Ook elders in de boeken die nog niet definitief zijn: 2 Samuël 12:23, Tobit 6:20, "
+     "2 Makkabeeën 6:17, Ezechiël 20:38 en Jubileeën 42:12."),
     ("1:2", "Wiens - van wie de", "tekst_eenduidig", AFGEDEKT, REEDS),
     ("1:4", "Verhaal - Vertel", "tekst_eenduidig", AFGEDEKT, REEDS),
     ("1:5", "Citatie nakijken", "citatieopmaak", VERWERKT,
      "'die hem de boodschap bracht:' staat nu buiten het citaat."),
-    ("1:6", "Bij geval - toevallig - principe!", "principe", GEPLAND,
-     "In 1:6 al verwerkt. " + PRINCIPE),
+    ("1:6", "Bij geval - toevallig - principe!", "principe", VERWERKT,
+     "In 1:6 al verwerkt; nu ook in 2 Samuël 20:1 en Wijsheid 2:2. In de definitieve "
+     "boeken (Ruth 2:3, Lukas 10:31) staat het nog."),
     ("1:9", "Malienkolder - bnauwdheid", "tekst_eenduidig", VERWERKT,
      "Maliënkolder is benauwdheid geworden."),
     ("1:10", "Armgesmijde - armband", "tekst_eenduidig", VERWERKT,
@@ -331,16 +334,16 @@ BESLUITEN = [
     ("6:1", "Uitgelezenen - beste mannen", "tekst_eenduidig", AFGEDEKT, DUBBEL),
     ("6:8", "Scheur gescheurd - zware slag toegebracht", "tekst_eenduidig", AFGEDEKT,
      REEDS),
-    ("6:20", "Daar geen getL!", "getalweergave", GEPLAND,
-     "'één' wordt 'een' waar het geen telwoord is. Dat speelt in veel boeken en "
-     "loopt mee in een eigen doorvoering."),
+    ("6:20", "Daar geen getL!", "getalweergave", VERWERKT,
+     "Nu 'zoals een van de ijdele mensen'. 'één van' is 'een van' geworden waar het "
+     "geen telwoord is, in de boeken die nog niet definitief zijn; waar het nadruk heeft ('niet één van hen') bleef het staan."),
     ("6:21", "Mijninstellende - mij aangesteld heeft", "tekst_eenduidig", AFGEDEKT, REEDS),
     ("7:29", "Zo believe het u nu - zo moge het u nu behagen", "tekst_eenduidig",
      AFGEDEKT, REEDS),
     ("8:8", "Kopers - koper", "tekst_eenduidig", AFGEDEKT, REEDS),
     ("9:1", "Omwille van - vanwege", "tekst_eenduidig", AFGEDEKT, REEDS),
-    ("10:1", "Kinderen van Ammon", "principe", GEPLAND,
-     "'kinderen Ammons' staat vijftien keer in 2 Samuël en in meer boeken. " + PRINCIPE),
+    ("10:1", "Kinderen van Ammon", "principe", VERWERKT,
+     "'kinderen Ammons' is nu 'kinderen van Ammon', in 2 Samuël, Judith en Ezechiël."),
     ("10:5", "Gewassen - gegrieid", "tekst_eenduidig", AFGEDEKT, REEDS),
     ("10:8", "Bijzonder - afzonderlijk", "tekst_eenduidig", AFGEDEKT, REEDS),
     ("11:1", "Wederkomst van het jaar - aanbreken van het nieuwe jaar",
@@ -358,9 +361,9 @@ BESLUITEN = [
      "als citaat daarbinnen."),
     ("11:20-21", "Citatie van Jiab", "citatieopmaak", VERWERKT,
      "Zie 11:20; in 11:21 is 'Dan zult u zeggen' weer Joab zelf."),
-    ("12:1", "Getallen pas boven de 20 pas als cijferr", "getalweergave", AFGEDEKT,
-     "De optie 'getallen in cijfers' doet dit al, vanaf 21. De 'één' in dit vers "
-     "wordt 'een' in de doorvoering over 'één'."),
+    ("12:1", "Getallen pas boven de 20 pas als cijferr", "getalweergave", VERWERKT,
+     "De optie 'getallen in cijfers' doet dit al, vanaf 21. De 'één' in dit vers is nu "
+     "'een': 'in een stad, de een rijk'."),
     ("12:4", "Overkwam - ontving", "tekst_eenduidig", AFGEDEKT, REEDS),
     ("12:4", "Verschoonde - negeerde", "tekst_eenduidig", AFGEDEKT,
      "Staat als 'zag hij ervan af'; 'negeerde' past niet in deze zin. Wel is 'de "
@@ -372,15 +375,15 @@ BESLUITEN = [
     ("12:23", "Citatie", "citatieopmaak", AFGEDEKT, DUBBEL),
     ("12:31", "Ticheloven - kleioven", "tekst_eenduidig", AFGEDEKT, REEDS),
     ("13:1", "Schone zus - knappe zus  Wier - van wie - voer dit overal door!",
-     "principe", GEPLAND, "In 13:1 al verwerkt. " + PRINCIPE),
+     "principe", VERWERKT, "In 13:1 al verwerkt. " + WIENS),
     ("13:16", "Oorzaken - redenen", "tekst_eenduidig", AFGEDEKT,
      REEDS + " Daarbij is 'maar hij wilde naar haar niet horen' uit het citaat gehaald."),
     ("14:2", "Droef - draagt", "tekst_eenduidig", AFGEDEKT,
      "Staat als 'alsof u rouw draagt' in de leestekst."),
     ("14:26", "Sikkel als gewicht toevoegen", "eenheden", AFGEDEKT,
      "De leesoptie voor maten rekent dit al om: 'tweehonderd sikkels (ongeveer 2,3 kilo)'."),
-    ("14:27", "Wier vervangen start subagent", "principe", GEPLAND,
-     "In 14:27 al verwerkt. " + PRINCIPE),
+    ("14:27", "Wier vervangen start subagent", "principe", VERWERKT,
+     "In 14:27 al verwerkt. " + WIENS),
     ("14:30", "Akkers - akker", "tekst_eenduidig", VERWERKT,
      "De tweede plaats in dit vers is nu ook 'die akker'."),
     ("15:1-6", "Tag manipulatie", "tag_of_onderwerp", VERWERKT,
@@ -389,23 +392,27 @@ BESLUITEN = [
     ("15:2", "Citatie", "citatieopmaak", VERWERKT,
      "'Als hij dan zei:' staat nu buiten het citaat; het antwoord is een eigen citaat."),
     ("15:4", "Tot mij kwame - tot mij zou komen", "tekst_eenduidig", AFGEDEKT, REEDS),
-    ("15:28", "Vertoe en - verblijven principe", "principe", GEPLAND,
-     "In 15:28 al verwerkt. " + PRINCIPE),
+    ("15:28", "Vertoe en - verblijven principe", "principe", VERWERKT,
+     "In 15:28 al verwerkt; de enige andere plaats in een open boek, 4 Baruch 3:1, "
+     "heeft nu 'zij bleven daar'."),
     ("16:3", "Dubbele citatie", "citatieopmaak", VERWERKT,
      "Ziba citeert Mefiboseth; dat citaat staat nu binnen het zijne."),
     ("17:1", "Uitlezen - uitzoeken", "tekst_eenduidig", AFGEDEKT, REEDS),
     ("17:1", "Uitlezen - uitzoeken", "tekst_eenduidig", AFGEDEKT, DUBBEL),
     ("17:1", "Test", "test", VERVALLEN, "Controleregel van het formulier."),
     ("17:10", "Wiens overal vervangen met subagent door van wie en andere varaiten "
-     "passend bij de zin", "principe", GEPLAND, "In 17:10 al verwerkt. " + PRINCIPE),
+     "passend bij de zin", "principe", VERWERKT, "In 17:10 al verwerkt. " + WIENS),
     ("17:14", "Citatie", "citatieopmaak", VERWERKT,
      "'en alle man van Israël:' staat buiten het citaat, en 'Maar JAHWEH had het "
      "geboden ...' is vertelling."),
-    ("18:5", "Zachtkens - voorzichtig principe", "principe", GEPLAND,
-     "In 18:5 al verwerkt. " + PRINCIPE),
+    ("18:5", "Zachtkens - voorzichtig principe", "principe", VERWERKT,
+     "In 18:5 al verwerkt. In de andere open boeken komt 'zachtkens' niet voor; in "
+     "het definitieve Exodus 15:13 staat het nog."),
     ("18:5", "Zachtkens - voorzichtig principe", "principe", AFGEDEKT, DUBBEL),
-    ("18:22", "Bekwame - passende primcipe", "principe", GEPLAND,
-     "In 18:22 al verwerkt. " + PRINCIPE),
+    ("18:22", "Bekwame - passende primcipe", "principe", VERWERKT,
+     "In 18:22 al verwerkt; nu ook waar 'bekwaam' 'passend' of 'geschikt' betekent in "
+     "Wijsheid, Jezus Sirach, Esther en 2 Makkabeeën. Waar het 'in staat' betekent "
+     "bleef het staan."),
     ("18:22", "Bekwame - passende", "tekst_eenduidig", AFGEDEKT, REEDS),
     ("18:27", "De loop- de manier van lopen", "tekst_eenduidig", VERWERKT,
      "De eerste plaats stond er al; de tweede is nu 'als die van Ahimaäz'."),

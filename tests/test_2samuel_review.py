@@ -17,7 +17,7 @@ def visible_html(value: str) -> str:
 
 def test_2samuel_sheet_language_corrections_are_in_the_reading_text():
     expected = {
-        (1, 1): "teruggekomen",
+        (1, 1): "teruggekeerd",
         (1, 10): "armband",
         (2, 14): "vechten",
         (4, 4): "verlamd was aan beide voeten",
