@@ -78,22 +78,27 @@ def pas_tekst_aan(vers, correcties, referentie):
     """
     nieuw = vers["text2026"]
     for oud, vervang, _ in correcties:
-        if vervang in nieuw:
-            continue
-        if oud not in nieuw:
+        # Eerst kijken of het oude er nog staat: "verleidde" zit ook in
+        # "verleiddet", dus alleen op het nieuwe letten zou ten onrechte
+        # overslaan. Is het oude een deel van het nieuwe, dan is het al gedaan.
+        if oud in nieuw and not (oud in vervang and vervang in nieuw):
+            nieuw = nieuw.replace(oud, vervang)
+        elif vervang not in nieuw:
             raise ValueError("%s: niet gevonden: %r" % (referentie, oud))
-        nieuw = nieuw.replace(oud, vervang)
     if nieuw == vers["text2026"]:
         return False
     html = bijtrekken(vers["text2026_html"], nieuw)
     if html is None or kaal(html) != kaal(nieuw):
         raise ValueError("%s: HTML kon niet veilig worden bijgewerkt" % referentie)
-    oude_diff = vers.get("phraseDiff", [])
-    diff = nieuwe_diff(kaal(vers["textSV1888"]), kaal(nieuw), oude_diff, None,
-                       referentie.lower())
     vers["text2026"] = nieuw
     vers["text2026_html"] = html
-    vers["phraseDiff"] = koppel(oude_diff, herkoppel(oude_diff, diff), correcties)
+    # De Ethiopische boeken hebben geen tekst uit 1888; daar is geen woorddiff om
+    # bij te werken, en een diff tegen een lege tekst zou één groot blok zijn.
+    if (vers.get("textSV1888") or "").strip():
+        oude_diff = vers.get("phraseDiff", [])
+        diff = nieuwe_diff(kaal(vers["textSV1888"]), kaal(nieuw), oude_diff, None,
+                           referentie.lower())
+        vers["phraseDiff"] = koppel(oude_diff, herkoppel(oude_diff, diff), correcties)
     return True
 
 
