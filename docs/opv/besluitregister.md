@@ -675,3 +675,9 @@ Namen volgen de rest van de vertaling waar die het boek al kent. `Nabuchodonosor
 ### A2 — Waar de bron zelf stukloopt
 
 Twee plaatsen zijn beschadigd overgeleverd en worden niet stilzwijgend gerepareerd. In 3 Makkabeeën 6:21 loopt de Statenvertaling halverwege dood in onleesbare woorden; de parafrase geeft het leesbare begin en de aankondiging, en de rede zelf staat in vers 22. In 4 Baruch 7:3 spreekt Baruch volgens de bron zichzelf aan terwijl hij de arend bedoelt; omdat de rest van datzelfde vers over de vogels van de hemel gaat, is de aanspraak op de arend gezet. In beide gevallen bewaart de bronfrase de regel zoals hij er staat.
+
+### A3 — Ik-vertelling en geschreven stukken
+
+3 Ezra vertelt hoofdstuk 8 vanaf vers 30 in de ik-vorm van Ezra zelf. Zulke vertelling krijgt geen citaatopmaak, net als in Ezra 8 en 9 en in Nehemia 2, en net als in de eerste hoofdstukken van Tobit. Wat Ezra binnen zijn verslag hardop zegt, staat wel in de opmaak: de lofprijzing in 8:28, de opdracht aan de priesters in 8:59 en het gebed vanaf 8:75. In dat gebed haalt hij aan wat God door de profeten gezegd heeft; die woorden staan als citaat binnen het citaat, zoals overal in de vertaling.
+
+Geschreven woorden tellen als spraak. De drie zinnen die de lijfwachten in 3 Ezra 3:10 tot 12 onder het hoofdkussen van de koning leggen, staan daarom in de opmaak, en zo ook de brieven van Sisinnes in hoofdstuk 6 en van Artaxerxes in hoofdstuk 8. De aankondiging blijft er telkens buiten: `De eerste schreef:` en `En ik zei tegen hen:` horen bij de vertelling, niet bij wat er gezegd wordt.
