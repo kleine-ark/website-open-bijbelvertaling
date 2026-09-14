@@ -655,3 +655,11 @@ Een opschrift dat een eigen vers vormt krijgt geen citaatopmaak; het is vertelli
 Psalm 108 bestaat uit twee stukken die eerder in het boek staan: 108:2–6 komt overeen met 57:8–12 en 108:7–14 met 60:7–14. Beide stukken volgen de weergave die daar al gekozen is, inclusief het besluit dat `Gilead is mijn` in 108:9–10 woorden van God zijn en niet van de dichter, en inclusief de stemwisseling van de dichter naar het volk halverwege. De kleine verschillen tussen de Statenvertaling van 57:9 en 108:3 blijven staan: daar waar 57:9 de dageraad wekt wordt in 108:3 de zanger zelf wakker.
 
 Psalm 105:1–15 loopt gelijk op met 1 Kronieken 16:8–22, maar de twee boeken hebben een eigen weergave gehouden. Kronieken laat het loflied als één stem klinken; in de psalm is het de dichter die het volk aanspreekt, met de belofte aan de aartsvaders als godsspraak erin. Waar de brontekst zelf verschilt — Kronieken zegt Israël waar de psalm Abraham zegt in vers 6 — volgt elke plaats zijn eigen bron.
+
+### P4 — Opschriften, instrumenten en het slot van het boek
+
+De opschriften worden vertaald waar zij een functie noemen en blijven staan waar zij een wijs of een instrument noemen. `Opperzangmeester` wordt de koorleider; `Hammaaloth` wordt Een pelgrimslied, omdat het woord de opgangen betekent en de vijftien liederen 120 tot 134 naar de tocht omhoog naar Jeruzalem heten. `Gittith`, `Muth-labben` en de andere wijsaanduidingen houden hun naam, voorafgegaan door op de wijs van; alleen waar de aanduiding een instrument noemt staat er wat er gespeeld wordt, zoals `Neginoth` dat bij snaarspel wordt en `Nechiloth` bij fluitspel. Instrumenten volgen de rest van de vertaling: `bazuin` wordt ramshoorn, `trommel` wordt tamboerijn, cimbalen, luit en harp blijven staan. In 150:4 houdt de Statenvertaling twee blaasinstrumenten uit elkaar; die blijven onderscheiden als fluit en pijpen.
+
+De alfabetliederen 111, 112, 119 en 145 laten de Hebreeuwse letternamen buiten de leestekst, zoals eerder al in 25, 34 en 37. In 119 is hun plaats zichtbaar gemaakt in de tweeëntwintig blokken van acht verzen. Psalm 145 heeft in de Statenvertaling geen vers bij de letter Nun; dat blijft zo, er is niets bijgeschreven.
+
+Alle 150 psalmen hebben conceptstatus: de technische bron-, segment-, citaat- en hashcontrole is afgerond, maar onafhankelijke menselijke eindgoedkeuring blijft open.
