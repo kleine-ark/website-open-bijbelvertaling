@@ -920,7 +920,7 @@ class OpvCalibrationCorpusTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual("OPV geldig: 1219 hoofdstukken, 31778 verzen.\n", result.stdout)
+        self.assertEqual("OPV geldig: 1231 hoofdstukken, 32066 verzen.\n", result.stdout)
 
 
 class OpvGenesisPilotTests(unittest.TestCase):
@@ -1031,6 +1031,12 @@ class OpvGenesisPilotTests(unittest.TestCase):
     "openbaring": list(range(1, 23)),
     "tobit": list(range(1, 15)),
     "judith": list(range(1, 17)),
+    "estherapocrief": list(range(10, 17)),
+    "gebedvanazaria": [1],
+    "gezangindevuuroven": [1],
+    "susanna": [1],
+    "belenddedraak": [1],
+    "gebedvanmanasse": [1],
         }
         self.assertEqual(expected, entry["gepubliceerdeHoofdstukken"])
         self.assertEqual(expected, edition["gepubliceerdeHoofdstukken"])
