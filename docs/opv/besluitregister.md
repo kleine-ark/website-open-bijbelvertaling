@@ -635,3 +635,23 @@ Schriftcitaten bewaren de citerende of bemiddelende stem naast de oorspronkelijk
 Markus 14–16 houdt de maaltijd, Gethsemané, verhoren, verloochening, kruisiging, begrafenis en opstanding in de eigen volgorde van Markus. Oude uuraanduidingen rond de kruisiging worden voor de leesbaarheid afgerond naar ongeveer negen uur, twaalf uur en drie uur. De oorspronkelijke formuleringen blijven in de bronlaag controleerbaar.
 
 Markus 16:9–20 blijft overeenkomstig de Statenvertaling en de Textus Receptus in de hoofdtekst. Een centraal begrip vermeldt dat Codex Sinaiticus na 16:8 direct met Lukas doorgaat. Dit maakt de handschriftvariatie zichtbaar zonder de gekozen basistekst stilzwijgend te wijzigen. Alle zestien hoofdstukken hebben conceptstatus: de technische bron-, segment-, citaat- en hashcontrole is afgerond, maar onafhankelijke menselijke eindgoedkeuring blijft open.
+
+## Psalmen
+
+### P1 — Vaste weergave van terugkerende woorden
+
+De Psalmen kennen een kleine groep woorden die tientallen keren terugkomt; die houdt overal dezelfde weergave, zodat een lezer het verband tussen de psalmen blijft zien. `Goedertierenheid` wordt overal trouw. `Psalmzingen` wordt zingen voor, `welgelukzalig` wordt gelukkig, `heidenen` wordt volken, `wederpartijders` wordt tegenstanders en in het enkelvoud soms vijand, `hovaardigen` wordt trotsen, `nooddruftige` wordt arme, `knechten` wordt dienaren en `achterklappen` wordt roddelen. `Ongerechtigheid` wordt onrecht waar het om daden gaat en schuld waar het om de aansprakelijkheid gaat. `Goddelozen` blijft staan of wordt slechte mensen, afhankelijk van wat de zin draagt. `Belialsstuk` heeft geen Nederlandse tegenhanger en wordt omschreven als iets ergs. `Sela` en `Halleluja` blijven staan. Dier- en plaatsnamen volgen de rest van de vertaling: `konijnen` in 104:18 wordt klipdassen zoals in Leviticus 11, `kwakkelen` in 105:40 wordt kwartels zoals in Exodus 16, en de plagen in 105:31 houden de zwermen ongedierte en de luizen van Exodus 8.
+
+De zinnen zijn kort. De aanspreking van mensen is je en jullie; alleen God wordt met U aangesproken. Verwijzingen naar God krijgen de vastgelegde eerbiedshoofdletters `Hij`, `Hem`, `Zijn`, `U` en `Uw`; gewone zelfstandige naamwoorden niet, ook niet naam of koninkrijk. Spreekt God zelf, dan volgt Hij de gewone Nederlandse spelling met ik, mij en mijn.
+
+### P2 — Sprekers, opschriften en geneste spraak
+
+De dichter is de vaste stem, `dichter`, ook in psalmen die aan David worden toegeschreven; alleen Psalm 18 gebruikt `david`, omdat het opschrift daar een heel verhaal vertelt. Een psalm die het volk als geheel laat spreken krijgt `volk`; Psalm 106 doet dat vanaf het eerste `wij` in vers 6, terwijl de twee verzen ervoor nog een enkeling zijn. Waar God zelf spreekt staat `heere`, en zulke verzen krijgen de kleur van godsspraak.
+
+Een opschrift dat een eigen vers vormt krijgt geen citaatopmaak; het is vertelling en geen spraak. Staat het opschrift in hetzelfde vers als de eerste regel van de psalm, zoals in 101:1 en 103:1, dan loopt de opmaak over het hele vers. De aankondiging van spraak blijft altijd buiten de span: in 105:11 staat `Hij zei:` in een eigen segment en alleen de belofte over Kanaän is godsspraak. Loopt de aankondiging aan het eind van een vers door naar het volgende, zoals van 105:14 naar 105:15, dan is het hele volgende vers godsspraak.
+
+### P3 — Psalmen die elkaar herhalen
+
+Psalm 108 bestaat uit twee stukken die eerder in het boek staan: 108:2–6 komt overeen met 57:8–12 en 108:7–14 met 60:7–14. Beide stukken volgen de weergave die daar al gekozen is, inclusief het besluit dat `Gilead is mijn` in 108:9–10 woorden van God zijn en niet van de dichter, en inclusief de stemwisseling van de dichter naar het volk halverwege. De kleine verschillen tussen de Statenvertaling van 57:9 en 108:3 blijven staan: daar waar 57:9 de dageraad wekt wordt in 108:3 de zanger zelf wakker.
+
+Psalm 105:1–15 loopt gelijk op met 1 Kronieken 16:8–22, maar de twee boeken hebben een eigen weergave gehouden. Kronieken laat het loflied als één stem klinken; in de psalm is het de dichter die het volk aanspreekt, met de belofte aan de aartsvaders als godsspraak erin. Waar de brontekst zelf verschilt — Kronieken zegt Israël waar de psalm Abraham zegt in vers 6 — volgt elke plaats zijn eigen bron.
