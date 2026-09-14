@@ -8,6 +8,13 @@
 .verification-details { display: inline-flex; gap: .5em; align-items: center; flex-wrap: wrap; }
 .verification-compact { position: relative; font-size: 11px; margin-left: .3em; }
 .verification-compact > button:first-child { padding: .2em .4em; }
+/* Keep verse controls in the existing gutter, out of the grid/block flow. */
+.verse-row { position: relative; }
+.verse-row > .verification-compact { position: absolute; inset-inline-start: 0; top: 2px; margin: 0; }
+@media (max-width: 768px) {
+    /* A visible control needs the same gutter as desktop, clear of the number/text. */
+    #content #verses-container .verse-row:has(> .verification-compact:not([hidden])) { padding-inline-start: 24px; }
+}
 .verification-compact .verification-details { display: none; position: absolute; left: 0; top: 100%; width: 210px; z-index: 50; padding: .7em; border-radius: 6px; background: var(--bg-surface, var(--header-bg, white)); box-shadow: 0 3px 15px #0003; text-align: left; }
 .verification-compact:focus-within .verification-details,
 .verification-compact:hover .verification-details { display: inline-flex; }

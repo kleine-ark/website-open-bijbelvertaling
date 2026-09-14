@@ -240,6 +240,58 @@ test('leaving an administrator page clears private data before browser history c
     await page.close();
 });
 
+test('verse verification does not add a row or increase verse spacing', async () => {
+    const page = await pageAs('reviewer');
+    await page.goto(base + '/index.html#genesis/2');
+    await page.locator('[data-verification="text-verse:genesis/2/25"] > button').waitFor();
+    for (const [width, layout, diff] of [[1500, 'naast', false], [1500, 'naast', true],
+        [1500, 'eronder', true], [390, 'eronder', false]]) {
+        await page.setViewportSize({ width, height: 900 });
+        await page.evaluate(({ layout, diff }) => {
+            Opties.state.kolomLayout = layout;
+            Opties.applyLayoutClass();
+            const checkbox = document.querySelector('[data-toggle-col="diff"]');
+            checkbox.checked = diff;
+            checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+        }, { layout, diff });
+        if (width < 768) await page.waitForFunction(() => document.querySelector('#sidebar').getBoundingClientRect().right <= 0);
+        const metrics = await page.evaluate(() => {
+            const rows = Array.from(document.querySelectorAll('.verse-row'));
+            const rect = element => {
+                const { x, y, width, height } = element.getBoundingClientRect();
+                return { x, y, width, height };
+            };
+            const shown = rows.map(row => ({ row: rect(row), number: rect(row.querySelector('.verse-num')),
+                text: rect(row.querySelector('.col-2026')),
+                button: rect(row.querySelector('.verification-compact > button')) }));
+            const controls = rows.map(row => row.querySelector('.verification-compact'));
+            controls.forEach(control => control.style.display = 'none');
+            const hidden = rows.map(row => rect(row));
+            controls.forEach(control => control.style.removeProperty('display'));
+            return { shown, hidden };
+        });
+        for (let index = 0; index < metrics.shown.length; index++) {
+            const { row, button, number, text } = metrics.shown[index];
+            assert.ok(Math.abs(row.height - metrics.hidden[index].height) < 1,
+                JSON.stringify({ width, layout, diff, verse: index + 1, shown: metrics.shown[index], withoutControl: metrics.hidden[index] }));
+            assert.ok(button.y < row.y + 12, 'Button belongs next to the start of its verse');
+            assert.ok(button.x >= 0 && button.x + button.width <= width, 'Button remains inside the viewport');
+            if (number.width) assert.ok(button.x + button.width + 2 <= number.x, 'Button does not overlap the verse number');
+            assert.ok(button.x + button.width + 2 <= text.x, 'Button does not overlap the verse text');
+        }
+        if (process.env.OV_SCREENSHOTS) {
+            await page.locator('.verse-row').nth(1).scrollIntoViewIfNeeded();
+            await page.screenshot({ path: process.env.OV_SCREENSHOTS + '/verse-spacing-' + width + '-' + layout + '-' + diff + '.png' });
+        }
+    }
+    const verse = page.locator('[data-verification="text-verse:genesis/2/2"]');
+    await verse.getByRole('button', { name: 'Verifiëren: Genesis 2:2', exact: true }).click();
+    await verse.getByRole('button', { name: 'Geverifieerd: Genesis 2:2', exact: true }).waitFor();
+    await verse.getByRole('button', { name: 'Intrekken', exact: true }).click();
+    await verse.getByRole('button', { name: 'Verifiëren: Genesis 2:2', exact: true }).waitFor();
+    await page.close();
+});
+
 test('historical reviews stay verified; only admins see the ghost and its first sign-in', async () => {
     const publicPage = await pageAs(null);
     for (const reader of ['index.html', 'lees.html']) {
