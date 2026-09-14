@@ -14,13 +14,7 @@ DATA = os.path.join(ROOT, 'data')
 SKIP = {'speech-v2', 'speech', 'audio', 'tts'}
 
 def parse_verified():
-    """Nagekeken hoofdstukken uit data/verified-chapters.json.
-
-    Stond eerder als JS-object in app.js en werd hier met een regex uitgelezen.
-    Dat brak zodra de opmaak daar veranderde, en de lijst stond bovendien
-    dubbel (ook in lees.js). Nu leest iedereen — app.js, lees.js, dit script
-    en build_downloads.py — dezelfde JSON.
-    """
+    """Releasesnapshot uit export_review_status.py; nooit handmatig bijwerken."""
     pad = os.path.join(DATA, 'verified-chapters.json')
     with open(pad, encoding='utf-8') as fh:
         return json.load(fh)
@@ -105,12 +99,12 @@ def main():
         canoniek = test in ('OT', 'NT')
         if canoniek:
             ch_total += len(chs)
-        v = verified.get(bid)
-        full = v == 'all' or (isinstance(v, list) and len(chs) > 0 and len(v) >= len(chs))
+        v = verified.get(bid, [])
+        full = len(chs) > 0 and len(v) >= len(chs)
         if full and canoniek:
             books_full += 1
             verified_books.append(b['nameDutch'])
-        elif canoniek and isinstance(v, list) and len(v) > 0:
+        elif canoniek and len(v) > 0:
             # gedeeltelijk nagekeken → naam + hoofdstukbereik (bv. "Genesis 1–20")
             verified_books.append(f"{b['nameDutch']} {min(v)}–{max(v)}")
         for ch in chs:
@@ -123,7 +117,7 @@ def main():
                 verses_total += len(vs)
             if test in by_test:
                 by_test[test][0] += len(vs)
-            verified_ch = v == 'all' or (isinstance(v, list) and ch in v)
+            verified_ch = ch in v
             if verified_ch:
                 if canoniek:
                     ch_ver += 1; verses_ver += len(vs)

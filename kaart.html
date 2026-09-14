@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+    <link rel="stylesheet" href="css/verification.css">
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
@@ -125,6 +126,8 @@
             </fieldset>
         </section>
     </main>
+    <script src="js/collaboration.js"></script>
+    <script src="js/verification.js"></script>
     <div id="popup" class="ol-popup" style="display:none;">
         <a href="#" id="popup-closer" class="ol-popup-closer">✕</a>
         <div id="popup-content"></div>
@@ -248,6 +251,7 @@
         }
         ['f-zeker', 'f-waarschijnlijk', 'f-onzeker'].forEach(function (id) { document.getElementById(id).addEventListener('change', pasFilterToe); });
 
+        var verificationSourceHash;
         map.on('singleclick', function (evt) {
             var feat = map.forEachFeatureAtPixel(evt.pixel, function (f) { return f; });
             if (!feat) { overlay.setPosition(undefined); document.getElementById('popup').style.display = 'none'; return; }
@@ -266,17 +270,21 @@
                 (actieveRefs.some(function (r) { return r.status === 'needs-human-review'; }) ? '<div class="pp-koppeling">Gestippeld: tekstkoppeling nog menselijk te controleren</div>' : '') +
                 (zl ? '<span class="pp-zeker z-' + esc(p.zekerheid) + '">' + zl + '</span>' : '');
             document.getElementById('popup').style.display = '';
+            Verification.mount(document.getElementById('popup-content'), 'location', p.id, {
+                sourceHash: verificationSourceHash
+            });
             overlay.setPosition(feat.getGeometry().getCoordinates());
         });
         map.on('pointermove', function (e) { map.getTargetElement().style.cursor = map.hasFeatureAtPixel(e.pixel) ? 'pointer' : ''; });
 
         Promise.all([
-            fetch('data/geografie-runtime.geojson').then(function (r) { return r.json(); }),
+            Verification.loadJSON('data/geografie-runtime.geojson'),
             fetch('data/books.json').then(function (r) { return r.json(); }).catch(function () { return { books: [] }; })
         ]).then(function (res) {
             (res[1].books || []).forEach(function (b) { BOOKNAMES[b.id] = b.nameDutch || b.id; });
             var manifest = { books: res[1].books || [] };
             var inData = {};
+            verificationSourceHash = res[0]._verificationSourceHash;
             (res[0].features || []).forEach(function (feature) { (feature.properties.refs || []).forEach(function (ref) { inData[ref.boek] = true; }); });
             var volgorde = window.getFlatBookOrder ? window.getFlatBookOrder('canoniek', manifest) : Object.keys(inData);
             volgorde.concat(Object.keys(inData)).filter(function (id, i, arr) { return inData[id] && arr.indexOf(id) === i; }).forEach(function (id) {

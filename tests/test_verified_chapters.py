@@ -1,75 +1,26 @@
-"""Regressietests voor de menselijke reviewstatus van Bijbelboeken."""
-
+"""All old chapter statuses are pinned migration history, never current sign-off."""
 import json
 from pathlib import Path
-
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
-    verified = json.loads(
-        (ROOT / "data" / "verified-chapters.json").read_text(encoding="utf-8")
-    )
+def test_historical_chapters_have_stable_ids_and_revisions_but_no_invented_verifier():
+    history = json.loads((ROOT / "migrations/review-history-v1.json").read_text())
+    assert history["schemaVersion"] == 1
+    assert history["sourceCommit"] == "fcdc46f6773d9daea52b29108c0ac6ba761d44cd"
+    subjects = history["subjects"]
+    assert len(subjects) == 1141
+    assert len({(item["type"], item["id"], item["revision"]) for item in subjects}) == len(subjects)
+    for item in subjects:
+        assert len(item["revision"]) == 64
+        assert "actor" not in item and "verifierUid" not in item
+        assert item["migrationSource"] in ("data/verified-chapters.json", "data/geografie-runtime.geojson")
 
-    assert verified["genesis"] == "all"
-    assert verified["exodus"] == "all"
-    assert verified["leviticus"] == "all"
-    assert verified["prediker"] == "all"
-    assert verified["ruth"] == "all"
-    assert verified["numeri"] == "all"
-    assert verified["deuteronomium"] == "all"
-    assert verified["jozua"] == "all"
-    assert verified["richteren"] == "all"
 
-    nieuw_testament = {
-        "mattheus", "markus", "lukas", "johannes", "handelingen", "romeinen",
-        "1korinthiers", "2korinthiers", "galaten", "efeziers", "filippenzen",
-        "kolossenzen", "1tessalonicensen", "2tessalonicensen", "1timotheus",
-        "2timotheus", "titus", "filemon", "hebreeen", "jakobus", "1petrus",
-        "2petrus", "1johannes", "2johannes", "3johannes", "judas", "openbaring",
-    }
-    assert all(verified.get(boek) == "all" for boek in nieuw_testament)
-
-    eerder_menselijk_nagekeken_ot = {
-        "psalmen", "ezra", "prediker", "hosea", "joel", "amos", "obadja",
-        "jona", "micha", "nahum", "habakuk", "zefanja", "haggai",
-        "zacharia", "maleachi",
-    }
-    nagekeken_apocrieven = {
-        "1makkabeeen", "baruch", "gebedvanmanasse", "susanna",
-    }
-    assert all(verified.get(boek) == "all" for boek in eerder_menselijk_nagekeken_ot)
-    assert all(verified.get(boek) == "all" for boek in nagekeken_apocrieven)
-
-    assert set(verified) == {
-        "genesis",
-        "exodus",
-        "leviticus",
-        "ruth",
-        "prediker",
-        "numeri",
-        "deuteronomium",
-        "jozua",
-        "richteren",
-        "1samuel",
-        "1koningen",
-        "2koningen",
-        "esther",
-        "nehemia",
-        "1kronieken",
-        "2kronieken",
-    } | nieuw_testament | eerder_menselijk_nagekeken_ot | nagekeken_apocrieven
-
-    niet_menselijk_bevestigd = {
-        "jeremia",
-        "2samuel",
-        "job",
-        "spreuken",
-        "hooglied",
-        "jesaja",
-        "klaagliederen",
-        "ezechiel",
-        "daniel",
-    }
-    assert niet_menselijk_bevestigd.isdisjoint(verified)
+def test_previous_full_chapter_lists_are_preserved_in_the_migration():
+    history = json.loads((ROOT / "migrations/review-history-v1.json").read_text())
+    identifiers = {item["id"] for item in history["subjects"] if item["type"] == "text-chapter"}
+    for book, total in (("genesis", 50), ("exodus", 40), ("leviticus", 27),
+                        ("1samuel", 31), ("esther", 10), ("openbaring", 22)):
+        assert {f"{book}/{chapter}" for chapter in range(1, total + 1)} <= identifiers

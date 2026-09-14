@@ -196,7 +196,7 @@ def project_verse(verse, lexicon, chapter_verified, allow_auto=True):
 
 
 def is_verified(selection, chapter):
-    return selection == "all" or isinstance(selection, list) and chapter in selection
+    return chapter in selection
 
 
 def sha256(path):
@@ -252,7 +252,7 @@ def build(output_dir=OUTPUT, write=False):
         output_dir.mkdir(parents=True, exist_ok=True)
 
     for book in books:
-        selection = verified.get(book["id"])
+        selection = verified.get(book["id"], [])
         allow_auto = auto_projection_allowed(book["id"], policies)
         book_output = {"source": source, "book": book["id"], "chapters": {}}
         counters = defaultdict(int)

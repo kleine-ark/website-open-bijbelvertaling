@@ -33,7 +33,8 @@
             showStatus('Rollen opgeslagen.', false);
             await Promise.all([loadUsers(), loadRoleEvents()]);
         } catch (error) {
-            showStatus(error.message, true);
+            console.error('[collaboration]', error);
+            showStatus('Er is een fout opgetreden. Controleer het logboek.', true);
             checkboxes.forEach(function (checkbox) { checkbox.disabled = user.bootstrap; });
         }
     }
@@ -62,7 +63,8 @@
 
             var roleCell = document.createElement('td');
             var administrator = roleControl(user, 'administrator', 'Beheerder');
-            var reviewer = roleControl(user, 'reviewer', 'Reviewer');
+            var reviewer = roleControl(user, 'reviewer', 'Mag verifiëren');
+            reviewer.input.disabled = user.bootstrap || user.roles.indexOf('administrator') !== -1;
             var controls = [administrator.input, reviewer.input];
             controls.forEach(function (input) {
                 input.addEventListener('change', function () { saveRoles(user, controls); });
@@ -92,25 +94,30 @@
     }
 
     async function loadUsers() {
+        var requestedUser = Collaboration.currentUser;
         showStatus('Accounts laden…', false);
         try {
             var query = new URLSearchParams({
                 q: search.value.trim(), offset: String(offset), limit: String(pageSize)
             });
             var payload = await Collaboration.api('/users?' + query.toString());
+            if (Collaboration.currentUser !== requestedUser) return;
             total = payload.total;
             renderUsers(payload.items);
             showStatus(total + ' account(s)', false);
         } catch (error) {
             body.replaceChildren();
-            showStatus(error.message, true);
+            console.error('[collaboration]', error);
+            showStatus('Er is een fout opgetreden. Controleer het logboek.', true);
         }
     }
 
     async function loadRoleEvents() {
+        var requestedUser = Collaboration.currentUser;
         var eventBody = document.querySelector('#role-events-table tbody');
         try {
             var payload = await Collaboration.api('/role-events');
+            if (Collaboration.currentUser !== requestedUser) return;
             eventBody.replaceChildren();
             payload.events.forEach(function (event) {
                 var row = document.createElement('tr');
@@ -148,6 +155,8 @@
     }
 
     function handleProfile(profile, ready) {
+        main.hidden = true;
+        clearData();
         if (!ready) return;
         if (!profile || profile.roles.indexOf('administrator') === -1) {
             main.hidden = true;

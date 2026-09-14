@@ -43,8 +43,9 @@ class ReviewCatalogTests(unittest.TestCase):
                 }]}),
                 encoding="utf-8",
             )
-            (root / "data" / "verified-chapters.json").write_text(
-                json.dumps({"genesis": "all"}), encoding="utf-8"
+            (root / "migrations").mkdir()
+            (root / "migrations/review-history-v1.json").write_text(
+                json.dumps({"schemaVersion": 1, "subjects": []}), encoding="utf-8"
             )
             (root / "data" / "genesis" / "1.json").write_text(
                 json.dumps({
@@ -71,9 +72,10 @@ class ReviewCatalogTests(unittest.TestCase):
         subjects = {(item["type"], item["id"]): item for item in catalog["subjects"]}
         chapter = subjects[("text-chapter", "genesis/1")]
         location = subjects[("location", "geo-jerusalem")]
-        self.assertEqual(chapter["publishedStatus"], "approved")
-        self.assertEqual(chapter["migrationSource"], "data/verified-chapters.json")
-        self.assertEqual(location["publishedStatus"], "pending")
+        self.assertNotIn("publishedStatus", chapter)
+        self.assertNotIn("migrationSource", chapter)
+        self.assertIn(("text-verse", "genesis/1/1"), subjects)
+        self.assertEqual(len(chapter["metadata"]["sourceHash"]), 64)
         self.assertEqual(len(chapter["revision"]), 64)
         self.assertEqual(len(location["revision"]), 64)
 
@@ -106,7 +108,7 @@ class CollaborationStoreTests(unittest.TestCase):
             {"real.johnheikens@gmail.com", "maartenvroegindeweij@gmail.com"},
         )
         self.catalog = {
-            "schemaVersion": 1,
+            "schemaVersion": 2, "historicalSubjects": [],
             "subjectTypes": {
                 "text-chapter": "Bijbelhoofdstuk",
                 "location": "Geografische locatie",
@@ -128,6 +130,9 @@ class CollaborationStoreTests(unittest.TestCase):
                 },
             ],
         }
+        self.catalog["historicalSubjects"] = [dict(self.catalog["subjects"][0])]
+        for subject in self.catalog["subjects"]:
+            subject["metadata"] = {"sourceHash": subject["revision"]}
         self.catalog["catalogRevision"] = api_module.review_catalog_revision(self.catalog)
         self.store.sync_catalog(self.catalog)
         self.admin = self.store.upsert_user({
@@ -185,13 +190,14 @@ class CollaborationStoreTests(unittest.TestCase):
             "subjectType": "location",
             "subjectId": "geo-jerusalem",
             "revision": "b" * 64,
+            "sourceHash": "b" * 64,
             "decision": "approved",
             "note": "Coordinaten met de bron vergeleken.",
         })
 
         self.assertEqual(approval["status"], "approved")
-        self.assertEqual(approval["latestReview"]["actor"]["uid"], "reader")
-        history = self.store.list_review_events(reviewer)
+        self.assertNotIn("latestReview", approval)
+        history = self.store.list_review_events(self.admin)
         self.assertEqual(history["total"], 2)
         self.assertEqual(history["items"][0]["actor"]["uid"], "reader")
         with self.assertRaises(api_module.Conflict):
@@ -204,12 +210,12 @@ class CollaborationStoreTests(unittest.TestCase):
         with self.assertRaises(api_module.Forbidden):
             self.store.record_review(self.user, {
                 "subjectType": "location", "subjectId": "geo-jerusalem",
-                "revision": "b" * 64, "decision": "approved", "note": "",
+                "revision": "b" * 64, "sourceHash": "b" * 64, "decision": "approved", "note": "",
             })
 
     def test_historical_status_is_migrated_once_without_fabricated_user(self):
         subjects = self.store.list_subjects(self.admin, subject_type="text-chapter")
-        self.assertEqual(subjects["items"][0]["status"], "approved")
+        self.assertEqual(subjects["items"][0]["status"], "pending")
         self.assertEqual(subjects["items"][0]["typeLabel"], "Bijbelhoofdstuk")
         self.assertEqual(subjects["types"][0]["id"], "text-chapter")
         self.assertEqual(subjects["items"][0]["latestReview"]["actor"]["kind"], "historical-import")
@@ -260,7 +266,7 @@ class TokenClaimTests(unittest.TestCase):
             catalog_path = root / "catalog.json"
             database_path = root / "reviews.sqlite3"
             catalog = {
-                "schemaVersion": 1,
+                "schemaVersion": 2, "historicalSubjects": [],
                 "subjectTypes": {"text-chapter": "Bijbelhoofdstuk"},
                 "subjects": [{
                     "type": "text-chapter", "id": "genesis/1",
@@ -270,6 +276,8 @@ class TokenClaimTests(unittest.TestCase):
                     "migrationSource": "data/verified-chapters.json",
                 }],
             }
+            catalog["historicalSubjects"] = [dict(catalog["subjects"][0])]
+            catalog["subjects"][0]["metadata"] = {"sourceHash": "a" * 64}
             catalog["catalogRevision"] = api_module.review_catalog_revision(catalog)
             catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
             environment = {
@@ -285,7 +293,7 @@ class TokenClaimTests(unittest.TestCase):
                 "email_verified": True, "name": "John",
             })
             subjects = app["store"].list_subjects(admin, subject_type="text-chapter")
-            self.assertEqual(subjects["items"][0]["status"], "approved")
+            self.assertEqual(subjects["items"][0]["status"], "pending")
 
     def test_verifier_accepts_valid_signature_and_rejects_tampering(self):
         private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
@@ -339,12 +347,13 @@ class CollaborationHttpTests(unittest.TestCase):
         root = Path(self.directory.name)
         self.catalog_path = root / "catalog.json"
         catalog = {
-            "schemaVersion": 1,
+            "schemaVersion": 2, "historicalSubjects": [],
             "subjectTypes": {"location": "Geografische locatie"},
             "subjects": [{
                 "type": "location", "id": "geo-test", "revision": "a" * 64,
                 "label": "Testplaats", "href": "plaats.html?id=geo-test",
                 "source": "data/geografie-runtime.geojson", "publishedStatus": "pending",
+                "metadata": {"sourceHash": "a" * 64},
             }],
         }
         catalog["catalogRevision"] = api_module.review_catalog_revision(catalog)
@@ -413,6 +422,7 @@ class CollaborationHttpTests(unittest.TestCase):
         status, payload = self.request("/reviews", method="POST", body={
             "subjectType": subject["type"], "subjectId": subject["id"],
             "revision": subject["revision"], "decision": "approved", "note": "Gecheckt",
+            "sourceHash": subject["metadata"]["sourceHash"],
         })
         self.assertEqual(status, 201)
         self.assertEqual(payload["subject"]["latestReview"]["actor"]["uid"], "john")

@@ -1,109 +1,157 @@
-# Accounts, rollen en beoordelingen
+# Accounts, rechten en verificatie
 
-De site gebruikt Firebase Authentication uitsluitend als identiteitsprovider.
-De browser stuurt het actuele Firebase ID-token naar dezelfde herkomst onder
-`/api/collaboration/`. De API controleert handtekening, project, uitgever,
-geldigheid en het geverifieerde e-mailadres voordat een account wordt gebruikt.
-
-Google-login gebruikt op ieder schermformaat `signInWithPopup`. Dat is de
-Firebase-route die geen opslag van een ander domein nodig heeft en daardoor
-werkt in browsers die opslag van derden blokkeren, waaronder Safari en Firefox.
-Gebruik geen `signInWithRedirect` zolang de Firebase-authhelper niet onder
-dezelfde herkomst als de site wordt aangeboden en de bijbehorende OAuth-
-redirect-URI niet bij Google is geautoriseerd.
-
-De samenwerkingstoestand staat niet in browseropslag of in publieke JSON. De
-productieserver bewaart die in:
+De site gebruikt Firebase Authentication (Google-login via popup) als
+identiteitsprovider. De API controleert bij ieder verzoek het Firebase ID-token:
+handtekening, project, uitgever, geldigheid en geverifieerd e-mailadres.
+Rechten en verificaties staan niet in Firebase-profielvelden of browseropslag,
+maar in de private SQLite-database:
 
 ```text
 /var/lib/openvertaling-collaboration/collaboration.sqlite3
 ```
 
-De twee vaste beheerders zijn:
+## Gebruikers beheren
 
-- `maartenvroegindeweij@gmail.com`
-- `real.johnheikens@gmail.com`
+Beheerders openen `/gebruikers.html`, zoeken een account en wijzigen de rechten.
+Een account verschijnt zodra het eenmaal met Google bij dit systeem is aangemeld.
+Dit is geen overzicht van nog nooit aangemelde Firebase-accounts.
 
-Zij hebben ook de reviewbevoegdheid. Een beheerder kan op
-`/gebruikers.html` aangemelde accounts doorzoeken en de rollen `administrator`
-en `reviewer` toekennen. Een account komt in de lijst zodra het na invoering
-van dit systeem eenmaal met Google is aangemeld. De twee vaste beheerders staan
-al als nog niet aangemelde accounts in de lijst en worden bij hun eerste sessie
-aan hun echte Firebase-uid gekoppeld. Rolwijzigingen worden eveneens als
-onveranderlijke gebeurtenissen met uitvoerende beheerder bewaard.
+- Gewone accounts kunnen lezen, maar niet verifiëren.
+- `reviewer` (“Mag verifiëren”) kan inhoud verifiëren en verificaties intrekken.
+- `administrator` kan daarnaast accounts/rechten beheren en verantwoordelijken
+  en de volledige geschiedenis zien. Deze rol omvat altijd `reviewer`.
 
-De gebruikerspagina blijft verborgen totdat Firebase de aanmeldstatus heeft
-vastgesteld en de API de beheerdersrol heeft bevestigd. Bezoekers zonder die
-rol worden naar de hoofdpagina teruggestuurd. Dezelfde toegangspoort geldt voor
-`/beoordelingen.html`, met de rol `reviewer`. De API controleert de rol bij elk
-verzoek; de toegangspoort in de browser voorkomt daarnaast dat onbevoegde
-bezoekers de pagina-interface zien.
+De vaste beheerders zijn `maartenvroegindeweij@gmail.com` en
+`real.johnheikens@gmail.com`. Hun gereserveerde account wordt bij de eerste
+sessie gekoppeld aan hun echte Firebase-uid. Hun beheerdersrecht kan niet via
+de gebruikerspagina worden verwijderd. Iedere rolwijziging wordt gelogd.
+Rechten worden binnen de schrijftransactie opnieuw gecontroleerd: een oude
+browsersessie kan een ingetrokken recht niet blijven gebruiken.
 
-## Generiek beoordelingsmodel
+## Eén klik, geen toewijzingen
 
-`scripts/build_review_catalog.py` maakt tijdens elke deployment
-`data/review-catalog.json`. Een onderwerp heeft altijd:
+Een bevoegde gebruiker logt in, leest de inhoud en klikt **Verifiëren**.
+De server legt zelf de ingelogde uid, naam, het e-mailadres, tijdstip en de
+inhoudsrevisie vast. Er is geen persoonselector, eigenaarstoewijzing of
+overdrachtsworkflow. Aangeleverde verifier-identiteiten worden geweigerd.
 
-- een soort, bijvoorbeeld `text-chapter` of `location`;
-- een stabiele gegevens-id;
-- een label, bronbestand en link naar de gegevens;
-- een SHA-256-revisie van uitsluitend de inhoud die wordt beoordeeld.
+De knop staat bij:
 
-Een beslissing geldt alleen voor die exacte revisie. Verandert beoordeelde
-tekst of locatie-inhoud, dan verschijnt de nieuwe revisie automatisch als te
-beoordelen. Nieuwe soorten gegevens worden toegevoegd als een nieuwe
-catalogusadapter; rollen en auditopslag veranderen daarvoor niet.
+- hoofdstukken en afzonderlijke verzen in `index.html` en `lees.html`;
+- locaties in `plaats.html` en kaartpopups.
 
-Reviewers werken via `/beoordelingen.html`. Iedere goedkeuring en intrekking
-is een nieuwe, onveranderlijke gebeurtenis met uid, naam en e-mailadres zoals
-die op dat moment door Firebase zijn bevestigd. De actuele status is de laatste
-beslissing voor dezelfde soort, id en revisie. De volledige geschiedenis blijft
-zichtbaar voor reviewers en beheerders.
+Het overzicht `/beoordelingen.html` heeft filters voor soort, status en zoektekst.
+Van daaruit opent men de inhoud; een lijstregel zelf is geen verificatieknop.
 
-## Bestaande tekststatus
+De eerste geslaagde klik legt de verantwoordelijke vast. Herhaalde of gelijktijdige
+klikken overschrijven die persoon niet. **Intrekken** maakt een nieuwe gebeurtenis;
+daarna kan iemand opnieuw verifiëren. Geschiedenis wordt nooit overschreven.
+Hoofdstuk- en versverificaties zijn afzonderlijke beslissingen: het systeem
+verzint geen individuele versverificaties uit een hoofdstukbeslissing, of omgekeerd.
 
-Het vroegere tekstsysteem is geen accountsysteem. De enige bron is
-`data/verified-chapters.json`, met per boek `"all"` of een lijst
-hoofdstuknummers. `scripts/build_stats.py` telt de verzen in die hoofdstukken en
-schrijft totalen naar `data/stats.json`. `data/review-history.json` bevat alleen
-gedateerde totaalaantallen; `js/review-chart.js` tekent daar de voortgang en
-projectie van. Geen van die bestanden bevat een reviewer of afzonderlijke
-beslissing.
+## Revisies en weergegeven inhoud
 
-Bij de eerste start importeert de API elke bestaande hoofdstukstatus als één
-goedkeuring voor de toenmalige teksthash. De actor is bewust
-`historical-import` met de zichtbare naam `Onbekend (bestaande reviewstatus)`.
-Er wordt geen persoon uit Git-auteurschap afgeleid. Deze import wordt precies
-eenmaal uitgevoerd. Een latere tekstwijziging vereist daardoor een nieuwe,
-genoemde reviewer.
+`scripts/build_review_catalog.py` bouwt `data/review-catalog.json` (schema 2).
+Een onderwerp heeft een soort, stabiele id, label, link, bronbestand en SHA-256-revisie
+van de beoordeelde inhoud. Hoofdstukken omvatten de hoofdstukinleiding,
+verstekst/opmaak en kanttekeningen; locaties omvatten geometrie en inhoudelijke
+eigenschappen. Woordkoppelingen en historische reviewvlaggen zijn geen tekstbeslissing.
+
+Verandert deze inhoud, dan is de nieuwe revisie onbevestigd. De oude beslissing,
+verantwoordelijke en revisie blijven in het beheerderslog staan. Een nieuwe
+gegevenssoort vereist een catalogusadapter en een `Verification.mount` naast de
+weergegeven inhoud; accounts en auditopslag hoeven niet opnieuw ontworpen te worden.
+
+De browser hasht ook de daadwerkelijk geladen bronbytes. De server vergelijkt
+deze `sourceHash` bij de klik met de actuele catalogus. Oude caches of een
+deployment tussen lezen en klikken kunnen zo geen andere inhoud goedkeuren.
+Lokale tekstbewerkingen zijn geen gepubliceerde inhoud en blokkeren verificatie.
+De controles horen uitsluitend bij de Open Vertaling, niet bij parallelle edities.
+
+## Privacy
+
+Iedereen kan de status lezen, maar uitsluitend beheerders krijgen
+`latestReview`, namen, uid's, e-mailadressen, tijdstippen en notities terug.
+Reviewers hebben geen toegang tot het geschiedenisendpoint. Dit wordt op de
+server afgedwongen, niet met alleen verborgen HTML.
+
+API-responses zijn `no-store` en worden nooit in de service-worker-cache gezet.
+Bij activatie worden eerder gecachete private responses verwijderd. Bij uitloggen
+of accountwisseling worden identiteiten onmiddellijk uit de pagina verwijderd;
+late requests mogen ze niet terugplaatsen. Accountwisseling tijdens tokenvernieuwing
+mag evenmin een klik onder een ander account uitvoeren.
+
+## Migratie en releasesnapshots
+
+De vroegere, handmatig onderhouden hoofdstuklijst is vervangen door de vaste
+migratie `migrations/review-history-v1.json`. Deze bewaart alle 1.141 oude records
+met hun inhoudsrevisie en herkomst uit commit
+`fcdc46f6773d9daea52b29108c0ac6ba761d44cd`.
+Bij bestaande databases vult de idempotente migratie
+`historical-review-import-v2` ontbrekende historische records aan, zonder
+bestaande beslissingen te verwijderen of dubbele imports te maken.
+
+Historische controles zonder bekend account blijven zichtbaar voor beheerders
+als `historical-import`, maar gelden niet als nieuwe accountgebonden verificatie.
+Er wordt geen verantwoordelijke afgeleid uit Git-auteurschap. Bestaande benoemde
+verificaties blijven geldig zolang hun inhoudsrevisie niet verandert.
+
+Beide lezers halen actuele hoofdstukstatus uit
+`GET /api/collaboration/verified-chapters`. De gegenereerde, Git-genegeerde
+`data/verified-chapters.json` is alleen een releasesnapshot voor de bouwscripts.
+Die bevat uitsluitend lijsten hoofdstuknummers, nooit `"all"` of identiteiten:
+
+```bash
+python3 scripts/export_review_status.py --api http://127.0.0.1:8787
+python3 scripts/build_stats.py
+python3 scripts/build_downloads.py
+```
+
+De export weigert een catalogus van een andere release. Statistieken en downloads
+weerspiegelen het exportmoment; live leesstatus gebruikt deze snapshot niet.
+Zonder geverifieerde hoofdstukken wordt geen EPUB aangeboden en wordt een eerdere
+gegenereerde EPUB verwijderd. De ongefilterde brondata-ZIP blijft beschikbaar.
+`data/review-history.json` bewaart historische totaalaantallen, geen accountbeslissingen.
 
 ## Lokale controle
 
-Bouw eerst de genegeerde runtimecatalogus:
+Bouw de catalogus en start de API met een eigen testdatabase:
 
 ```bash
 python3 scripts/build_review_catalog.py
-```
-
-De API kan met een tijdelijke lokale database worden gestart door de
-productievariabelen te overschrijven. Voor Google-login moet de gebruikte
-localhost-herkomst in Firebase Authentication als toegestaan domein staan.
-
-```bash
 OV_COLLABORATION_DB=/tmp/openvertaling-review.sqlite3 \
 OV_REVIEW_CATALOG="$PWD/data/review-catalog.json" \
 OV_STATIC_ROOT="$PWD" \
 python3 server/collaboration_api.py
 ```
 
-Open daarna `http://localhost:8787/gebruikers.html` of
-`http://localhost:8787/beoordelingen.html`.
+Open `http://localhost:8787/index.html` of `/gebruikers.html`.
+Voor echte Google-login moet localhost in Firebase Authentication toegestaan zijn.
+Python 3 met `cryptography` is vereist. De automatische tests gebruiken uitsluitend
+tijdelijke databases en synthetische testidentiteiten, nooit echte accounts:
+
+```bash
+python3 -m unittest discover -s tests -p 'test_collaboration_system.py'
+python3 -m unittest discover -s tests -p 'test_direct_verification.py'
+python3 -m unittest discover -s tests -p 'test_verification_exports.py'
+node --test tests/verification-sw.test.cjs
+node --test --test-timeout=60000 tests/verification.browser.test.cjs
+```
+
+Voor de browsertest zijn het Node-pakket `playwright` en Chrome vereist
+(standaard `/usr/bin/google-chrome`, instelbaar met `CHROME_PATH`).
+Deze test start zelf een echte lokale API en controleert beide lezers,
+locaties, rechten, accountwisseling, bronrevisies en doorlopend lezen.
 
 ## Deployment
 
-De websiteworkflow bouwt de catalogus, installeert de API als de afgeschermde
-systemd-service `openvertaling-collaboration.service`, en plaatst alleen een
-Nginx-proxy onder `/api/collaboration/`. Serverbroncode wordt uitgesloten van
-de publieke site. De installer controleert de Python-afhankelijkheid,
-service-health en Nginx-configuratie en herstelt de vorige Nginx-site bij een
-mislukte installatie.
+De websiteworkflow bouwt eerst de catalogus en publiceert de statische site.
+Vervolgens installeert hij de API als `openvertaling-collaboration.service`,
+met een Nginx-proxy onder `/api/collaboration/`. Na de healthcheck exporteert
+de server de actuele status en bouwt hij statistieken en downloads.
+Oude releasebestanden blijven tijdens het uploaden bewaard tot die stap slaagt.
+
+De database staat buiten de webroot en blijft bij deployments intact; neem hem
+op in de serverback-up. Serverbroncode en migratiebronbestanden worden uitgesloten
+van de publieke site. De catalogus en brondata bevatten geen verifier-identiteiten.
+De installer controleert Python-afhankelijkheden, service-health en Nginx-configuratie.

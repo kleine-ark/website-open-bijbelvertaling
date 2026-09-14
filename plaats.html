@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+    <link rel="stylesheet" href="css/verification.css">
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
@@ -47,6 +48,8 @@
     <script src="js/topnav.js"></script>
     <main class="page" id="plaats-inhoud" aria-live="polite"><p>Gegevens laden…</p></main>
     <script src="js/book-orders.js"></script>
+    <script src="js/collaboration.js"></script>
+    <script src="js/verification.js"></script>
     <script>
     (function () {
         var inhoud = document.getElementById('plaats-inhoud');
@@ -86,7 +89,7 @@
                 (bron.onderbouwing ? '<br>' + esc(bron.onderbouwing) : '') + '</div>';
         }
         Promise.all([
-            fetch('data/geografie-runtime.geojson').then(function (r) { if (!r.ok) throw new Error('kaartgegevens niet beschikbaar'); return r.json(); }),
+            Verification.loadJSON('data/geografie-runtime.geojson'),
             fetch('data/books.json').then(function (r) { return r.ok ? r.json() : { books: [] }; }).catch(function () { return { books: [] }; })
         ]).then(function (resultaten) {
             (resultaten[1].books || []).forEach(function (boek) { boeknamen[boek.id] = boek.nameDutch || boek.id; });
@@ -97,6 +100,11 @@
                 return;
             }
             detail(feature);
+            var verification = document.createElement('div');
+            inhoud.querySelector('h1').after(verification);
+            Verification.mount(verification, 'location', feature.properties.id, {
+                sourceHash: resultaten[0]._verificationSourceHash
+            });
         }).catch(function () { inhoud.innerHTML = '<p class="fout">De plaatsgegevens konden niet worden geladen.</p>'; });
     })();
     </script>

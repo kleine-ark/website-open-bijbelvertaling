@@ -6,8 +6,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_1samuel_is_marked_human_reviewed_after_the_full_review():
-    reviewed = json.loads((ROOT / "data" / "verified-chapters.json").read_text(encoding="utf-8"))
-    assert reviewed["1samuel"] == "all"
+    history = json.loads((ROOT / "migrations/review-history-v1.json").read_text(encoding="utf-8"))
+    identifiers = {item["id"] for item in history["subjects"] if item["type"] == "text-chapter"}
+    assert {f"1samuel/{chapter}" for chapter in range(1, 32)} <= identifiers
 
 
 def test_1samuel_reviewed_sheet_corrections_are_visible_in_text_and_diff():

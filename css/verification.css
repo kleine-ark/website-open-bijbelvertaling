@@ -1,0 +1,15 @@
+.ov-verification { display: inline-flex; flex-wrap: wrap; gap: .5em; align-items: center; margin: .4em 0; font: 13px/1.4 var(--font-ui, sans-serif); color: var(--text-primary, var(--text, #142e42)); }
+.ov-verification button { font: inherit; padding: .45em .8em; border: 1px solid currentColor; border-radius: 6px; background: transparent; color: inherit; cursor: pointer; }
+.ov-verification button:focus-visible { outline: 2px solid var(--gold, #cba449); outline-offset: 3px; }
+.ov-verification button:disabled { cursor: default; }
+.ov-verification[data-status="approved"] > button:first-child { color: #237a44; }
+.verification-author, .verification-message { font-size: 12px; }
+.ov-verification[hidden] { display: none; }
+.verification-details { display: inline-flex; gap: .5em; align-items: center; flex-wrap: wrap; }
+.verification-compact { position: relative; font-size: 11px; margin-left: .3em; }
+.verification-compact > button:first-child { padding: .2em .4em; }
+.verification-compact .verification-details { display: none; position: absolute; left: 0; top: 100%; width: 210px; z-index: 50; padding: .7em; border-radius: 6px; background: var(--bg-surface, var(--header-bg, white)); box-shadow: 0 3px 15px #0003; text-align: left; }
+.verification-compact:focus-within .verification-details,
+.verification-compact:hover .verification-details { display: inline-flex; }
+:root[data-theme="donker"] .ov-verification[data-status="approved"] > button:first-child,
+body.dark .ov-verification[data-status="approved"] > button:first-child { color: #8ad3a5; }

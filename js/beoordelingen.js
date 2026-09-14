@@ -32,28 +32,6 @@
         return review.actor.displayName || review.actor.email || 'Onbekend';
     }
 
-    async function decide(subject, decision, note, button) {
-        button.disabled = true;
-        try {
-            await Collaboration.api('/reviews', {
-                method: 'POST',
-                body: JSON.stringify({
-                    subjectType: subject.type,
-                    subjectId: subject.id,
-                    revision: subject.revision,
-                    decision: decision,
-                    note: note.value.trim()
-                })
-            });
-            showStatus(decision === 'approved' ? 'Goedkeuring opgeslagen.' : 'Goedkeuring ingetrokken.', false);
-            eventOffset = 0;
-            await Promise.all([loadSubjects(), loadEvents()]);
-        } catch (error) {
-            showStatus(error.message, true);
-            button.disabled = false;
-        }
-    }
-
     function renderSubjects(items) {
         body.replaceChildren();
         items.forEach(function (subject) {
@@ -74,18 +52,9 @@
             }
 
             var actionCell = document.createElement('td');
-            var note = document.createElement('input');
-            note.type = 'text';
-            note.maxLength = 2000;
-            note.placeholder = 'Toelichting (optioneel)';
-            note.className = 'review-note';
-            var button = element('button', subject.status === 'approved' ? 'Intrekken' : 'Goedkeuren');
-            button.type = 'button';
-            button.className = subject.status === 'approved' ? 'secondary-button' : 'primary-button';
-            button.addEventListener('click', function () {
-                decide(subject, subject.status === 'approved' ? 'revoked' : 'approved', note, button);
-            });
-            actionCell.append(note, button);
+            var open = element('a', 'Open de inhoud');
+            open.href = subject.href;
+            actionCell.append(open);
             row.append(subjectCell, typeCell, stateCell, actionCell);
             body.appendChild(row);
         });
@@ -104,6 +73,7 @@
     }
 
     async function loadSubjects() {
+        var requestedUser = Collaboration.currentUser;
         var query = new URLSearchParams({
             q: search.value.trim(),
             type: typeFilter.value,
@@ -114,6 +84,7 @@
         showStatus('Reviewgegevens laden…', false);
         try {
             var payload = await Collaboration.api('/subjects?' + query.toString());
+            if (Collaboration.currentUser !== requestedUser) return;
             total = payload.total;
             var selectedType = typeFilter.value;
             typeFilter.replaceChildren(new Option('Alle gegevens', ''));
@@ -125,16 +96,20 @@
             showStatus(total + ' onderwerp(en)', false);
         } catch (error) {
             body.replaceChildren();
-            showStatus(error.message, true);
+            console.error('[collaboration]', error);
+            showStatus('Er is een fout opgetreden. Controleer het logboek.', true);
         }
     }
 
     async function loadEvents() {
+        if (!Collaboration.hasRole('administrator')) return;
+        var requestedUser = Collaboration.currentUser;
         var eventBody = document.querySelector('#review-events-table tbody');
         try {
             var payload = await Collaboration.api(
                 '/reviews?offset=' + eventOffset + '&limit=' + eventPageSize
             );
+            if (Collaboration.currentUser !== requestedUser) return;
             eventBody.replaceChildren();
             eventTotal = payload.total;
             payload.items.forEach(function (review) {
@@ -189,6 +164,9 @@
     }
 
     function handleProfile(profile, ready) {
+        main.hidden = true;
+        clearData();
+        document.getElementById('review-history').hidden = true;
         if (!ready) return;
         if (!profile || profile.roles.indexOf('reviewer') === -1) {
             main.hidden = true;
@@ -197,6 +175,7 @@
             return;
         }
         main.hidden = false;
+        document.getElementById('review-history').hidden = !Collaboration.hasRole('administrator');
         Promise.all([loadSubjects(), loadEvents()]);
     }
 

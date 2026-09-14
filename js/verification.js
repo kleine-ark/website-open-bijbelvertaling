@@ -1,0 +1,268 @@
+/* Account-linked verification. No assignments; the authenticated click is the record. */
+(function () {
+    'use strict';
+    const ERROR = 'Er is een fout opgetreden. Controleer het logboek.';
+    const chapters = new Map();
+    const controls = new Set();
+    let generation = 0;
+
+    async function loadJSON(url) {
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) throw new Error(ERROR);
+        const bytes = await response.arrayBuffer();
+        const digest = await crypto.subtle.digest('SHA-256', bytes);
+        const hash = Array.from(new Uint8Array(digest), n => n.toString(16).padStart(2, '0')).join('');
+        const data = JSON.parse(new TextDecoder().decode(bytes));
+        data._verificationSourceHash = hash;
+        return data;
+    }
+
+    async function subject(type, id) {
+        const path = '/subject?' + new URLSearchParams({ type, id });
+        if (window.Collaboration && Collaboration.currentUser) return (await Collaboration.api(path)).subject;
+        const response = await fetch('/api/collaboration' + path, { cache: 'no-store' });
+        if (!response.ok) throw new Error(ERROR);
+        return (await response.json()).subject;
+    }
+
+    function canVerify() {
+        return window.Collaboration && Collaboration.hasRole('reviewer');
+    }
+
+    function administrator() {
+        return window.Collaboration && Collaboration.hasRole('administrator');
+    }
+
+    function label(state) {
+        if (state.status === 'approved') return 'Geverifieerd';
+        if (!canVerify()) return 'Nog niet geverifieerd';
+        return state.needsReverification ? 'Opnieuw verifiëren' : 'Verifiëren';
+    }
+
+    function render(control) {
+        const { node, state } = control;
+        node.replaceChildren();
+        if (!state) return;
+        node.hidden = control.compact && !canVerify();
+        if (node.hidden) return;
+        const matches = control.sourceHash === state.metadata.sourceHash;
+        const localEdits = control.localCheck && control.localCheck();
+        const approved = matches && !localEdits && state.status === 'approved';
+        node.dataset.status = approved ? 'approved' : 'pending';
+        const actionLabel = !matches ? 'Gegevens gewijzigd — herlaad'
+            : localEdits ? 'Lokale bewerkingen — niet geverifieerd' : label(state);
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = control.compact ? (approved ? '✓' : '○') : actionLabel;
+        button.setAttribute('aria-label', actionLabel + ': ' + state.label);
+        button.title = actionLabel + ': ' + state.label;
+        button.disabled = !canVerify() || !matches || control.busy || approved || localEdits;
+        if (!matches) button.title = 'De gegevens zijn gewijzigd. Herlaad deze pagina.';
+        if (localEdits) button.title = 'Lokale bewerkingen kunnen niet als gepubliceerde tekst worden geverifieerd.';
+        button.addEventListener('click', () => decide(control, 'approved'));
+        node.appendChild(button);
+        const details = document.createElement('span');
+        details.className = 'verification-details';
+        node.appendChild(details);
+        if (matches && !localEdits && administrator() && state.latestReview) {
+            const review = state.latestReview;
+            const author = document.createElement('span');
+            author.className = 'verification-author';
+            author.textContent = review.actor.kind === 'historical-import'
+                ? 'Eerder nagekeken; account onbekend'
+                : review.actor.displayName + ' · ' + new Date(review.createdAt).toLocaleString('nl-NL');
+            details.appendChild(author);
+        }
+        if (approved && canVerify()) {
+            const revoke = document.createElement('button');
+            revoke.type = 'button';
+            revoke.textContent = 'Intrekken';
+            revoke.className = 'verification-revoke';
+            revoke.disabled = !matches || control.busy;
+            revoke.addEventListener('click', () => decide(control, 'revoked'));
+            details.appendChild(revoke);
+        }
+        if (control.message) {
+            const message = document.createElement('span');
+            message.className = 'verification-message';
+            message.textContent = control.message;
+            message.setAttribute('role', 'status');
+            details.appendChild(message);
+        }
+        if (control.type === 'text-chapter') {
+            const chapter = chapters.get(control.id);
+            if (chapter) chapter.approved = approved;
+            if (typeof App !== 'undefined' && Navigation.currentBook + '/' + Navigation.currentChapter === control.id) {
+                App._setTitle(Navigation.currentBook, Navigation.currentChapter);
+                App._updateVerifiedBanner(Navigation.currentBook, Navigation.currentChapter);
+            }
+            if (typeof Lees !== 'undefined' && Lees.currentBook + '/' + Lees.currentChapter === control.id) {
+                Lees.updateHeading(Lees._bookObj, Lees.currentChapter);
+                Lees._updateVerifiedBanner(Lees.currentBook, Lees.currentChapter);
+            }
+        }
+    }
+
+    async function refresh(control) {
+        if (control.compact && !canVerify()) {
+            control.node.hidden = true;
+            return;
+        }
+        const requestGeneration = generation;
+        try {
+            const state = await subject(control.type, control.id);
+            if (generation !== requestGeneration || !control.node.isConnected) return;
+            control.state = state;
+            render(control);
+        } catch (error) {
+            console.error('[verification]', error);
+            if (generation !== requestGeneration || !control.node.isConnected) return;
+            control.node.textContent = 'Verificatiestatus niet beschikbaar.';
+        }
+    }
+
+    async function decide(control, decision) {
+        if (control.busy) return;
+        if (decision === 'approved' && control.localCheck && control.localCheck()) {
+            control.message = 'Lokale bewerkingen kunnen niet als gepubliceerde tekst worden geverifieerd.';
+            render(control);
+            return;
+        }
+        const requestGeneration = generation;
+        control.busy = true;
+        control.message = '';
+        render(control);
+        try {
+            const result = await Collaboration.api('/reviews', {
+                method: 'POST',
+                body: JSON.stringify({
+                    subjectType: control.type, subjectId: control.id,
+                    revision: control.state.revision,
+                    sourceHash: control.sourceHash,
+                    decision, note: ''
+                })
+            });
+            if (generation !== requestGeneration || !control.node.isConnected) return;
+            control.state = result.subject;
+            for (const other of controls) {
+                if (other !== control && other.type === control.type && other.id === control.id) refresh(other);
+            }
+            control.message = decision === 'approved' ? 'Verificatie opgeslagen.' : 'Verificatie ingetrokken.';
+            window.dispatchEvent(new CustomEvent('ov:verification-changed', { detail: {
+                type: control.type, id: control.id, status: control.state.status
+            } }));
+        } catch (error) {
+            console.error('[verification]', error);
+            if (generation !== requestGeneration || !control.node.isConnected) return;
+            control.message = error.status === 409
+                ? 'De gegevens zijn gewijzigd. Herlaad deze pagina en controleer ze opnieuw.' : ERROR;
+        } finally {
+            control.busy = false;
+            if (generation === requestGeneration && control.node.isConnected) render(control);
+        }
+    }
+
+    function mount(parent, type, id, options = {}) {
+        const key = type + ':' + id;
+        let node = Array.from(parent.children).find(child => child.dataset.verification === key);
+        if (node) return;
+        node = document.createElement('span');
+        node.className = 'ov-verification' + (options.compact ? ' verification-compact' : '');
+        node.dataset.verification = key;
+        node.dataset.sourceHash = options.sourceHash;
+        // A verification click must not also select, edit or navigate a verse.
+        ['click', 'pointerdown', 'pointerup'].forEach(event => {
+            node.addEventListener(event, e => e.stopPropagation());
+        });
+        parent.appendChild(node);
+        const control = { node, type, id, sourceHash: options.sourceHash,
+            compact: !!options.compact, localCheck: options.localCheck };
+        if (control.compact) node.tabIndex = 0;
+        controls.add(control);
+        refresh(control);
+    }
+
+    function heading(book, chapter, reader = false) {
+        const options = chapters.get(book + '/' + chapter);
+        const current = document.querySelector('#chapter-verification [data-verification]');
+        if (current && options && current.dataset.verification === 'text-chapter:' + book + '/' + chapter
+            && current.dataset.sourceHash === options.sourceHash) return;
+        document.getElementById('chapter-verification')?.remove();
+        if (!reader && typeof TekstEditie !== 'undefined' && TekstEditie.code() !== 'nl-ov') return;
+        if (!options) return;
+        const heading = document.getElementById(reader ? 'chapter-heading' : 'chapter-title');
+        const slot = document.createElement('div');
+        slot.id = 'chapter-verification';
+        heading.after(slot);
+        mount(slot, 'text-chapter', book + '/' + chapter, options);
+    }
+
+    function readerRendered(book, chapter, reader, sourceHash, continuous = false) {
+        if (!reader && typeof TekstEditie !== 'undefined' && TekstEditie.code() !== 'nl-ov') {
+            document.getElementById('chapter-verification')?.remove();
+            return;
+        }
+        const localCheck = () => {
+            const local = !reader && typeof Storage !== 'undefined' ? Storage.getEdits(book) : null;
+            return !!local && Object.keys(local).some(key => key.startsWith(chapter + ':'));
+        };
+        const options = { sourceHash, localCheck };
+        chapters.set(book + '/' + chapter, options);
+        if (!continuous) heading(book, chapter, reader);
+        const separator = document.querySelector('.chapter-separator[data-book="' + book + '"][data-chapter="' + chapter + '"]');
+        if (separator) mount(separator, 'text-chapter', book + '/' + chapter, options);
+        const rows = reader ? document.querySelectorAll('#verses .verse-span')
+            : document.querySelectorAll('.verse-row[data-book="' + book + '"][data-chapter="' + chapter + '"]');
+        rows.forEach(row => {
+            const parent = reader ? row : row.querySelector('.verse-num').parentElement;
+            mount(parent, 'text-verse', book + '/' + chapter + '/' + row.dataset.verse, { ...options, compact: true });
+        });
+        for (const control of controls) if (!control.node.isConnected) controls.delete(control);
+    }
+
+    async function refreshAll() {
+        generation++;
+        const current = [];
+        for (const control of controls) {
+            if (!control.node.isConnected) { controls.delete(control); continue; }
+            // Clear identities synchronously, before requesting data for a new account.
+            control.state = null;
+            control.message = '';
+            control.node.replaceChildren();
+            current.push(control);
+        }
+        if (window.Collaboration && !Collaboration.ready) return;
+        await Promise.all(current.map(refresh));
+    }
+
+    function isChapterVerified(book, chapter) {
+        const displayed = chapters.get(book + '/' + chapter);
+        return displayed ? !!displayed.approved && !displayed.localCheck() : null;
+    }
+
+    window.Verification = { loadJSON, mount, heading, readerRendered, refreshAll, isChapterVerified };
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.Collaboration) Collaboration.onChange(refreshAll);
+        window.addEventListener('ov:verification-changed', async event => {
+            if (event.detail.type !== 'text-chapter') return;
+            if (typeof App !== 'undefined') {
+                App._verifiedGeladen = null;
+                await App._laadVerified();
+                App._setTitle(Navigation.currentBook, Navigation.currentChapter);
+                App._updateVerifiedBanner(Navigation.currentBook, Navigation.currentChapter);
+                document.querySelectorAll('.tree-ch-btn').forEach(button => {
+                    const verified = App._isVerified(button.dataset.bookId, Number(button.dataset.chapter));
+                    button.classList.toggle('unverified', !verified);
+                    button.title = verified ? 'Geverifieerd' : 'Concept — nog niet handmatig gecontroleerd';
+                });
+            }
+            if (typeof Lees !== 'undefined') {
+                Lees._verifiedGeladen = null;
+                await Lees._laadVerified();
+                Lees.updateHeading(Lees._bookObj, Lees.currentChapter);
+                Lees.renderChapterButtons(Lees._bookObj);
+                Lees._updateVerifiedBanner(Lees.currentBook, Lees.currentChapter);
+            }
+        });
+    });
+})();

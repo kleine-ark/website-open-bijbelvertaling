@@ -6,13 +6,14 @@ Levert in downloads/:
   open-vertaling-nagekeken.epub  alleen nagekeken hoofdstukken, verstekst
   index.json                     naam, omvang en datum per uitgave
 
-Draait tijdens de deploy (build_command in .github/workflows/deploy.yml),
+Draait tijdens de deploy, na export_review_status.py en build_stats.py,
 zodat de uitgaven altijd gelijk lopen met de tekst en er geen binaire
 bestanden in git komen.
 
 Gebruik:  python scripts/build_downloads.py [--datum "4 augustus 2026"]
 """
 import json, os, re, sys, zipfile, html, datetime
+from contextlib import contextmanager
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -21,6 +22,18 @@ SITE = "https://openvertaling.nl"
 
 ZIP_NAAM = "open-vertaling-brondata.zip"
 EPUB_NAAM = "open-vertaling-nagekeken.epub"
+
+
+@contextmanager
+def atomic_output(path):
+    """A live release URL must never serve a partly written archive or index."""
+    temporary = path + ".tmp"
+    try:
+        yield temporary
+        os.replace(temporary, path)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
 
 
 def lees(pad, standaard=None):
@@ -33,12 +46,7 @@ def lees(pad, standaard=None):
 
 def nagekeken_hoofdstukken(verified, boek_id, totaal):
     """Welke hoofdstukken van dit boek zijn nagekeken? Lege lijst = geen."""
-    v = verified.get(boek_id)
-    if v == "all":
-        return list(range(1, totaal + 1))
-    if isinstance(v, list):
-        return sorted(v)
-    return []
+    return sorted(verified.get(boek_id, []))
 
 
 def verstekst(vers):
@@ -57,7 +65,7 @@ def verstekst(vers):
 # ---------------------------------------------------------------- brondata
 def bouw_zip():
     pad = os.path.join(UIT, ZIP_NAAM)
-    with zipfile.ZipFile(pad, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+    with atomic_output(pad) as temporary, zipfile.ZipFile(temporary, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         for wortel, _dirs, bestanden in os.walk(DATA):
             for f in sorted(bestanden):
                 vol = os.path.join(wortel, f)
@@ -198,7 +206,7 @@ span.n { font-size: 0.7em; vertical-align: super; color: #777; margin-right: 0.3
 p.deels { font-style: italic; color: #666; font-size: 0.9em; }
 """
 
-    with zipfile.ZipFile(pad, "w") as z:
+    with atomic_output(pad) as temporary, zipfile.ZipFile(temporary, "w") as z:
         # mimetype moet als eerste en ongecomprimeerd
         z.writestr(zipfile.ZipInfo("mimetype"), "application/epub+zip",
                    compress_type=zipfile.ZIP_STORED)
@@ -221,30 +229,17 @@ p.deels { font-style: italic; color: #666; font-size: 0.9em; }
 # -------------------------------------------------------------------- main
 def main():
     os.makedirs(UIT, exist_ok=True)
-    verified = lees(os.path.join(DATA, "verified-chapters.json"), {})
+    with open(os.path.join(DATA, "verified-chapters.json"), encoding="utf-8") as fh:
+        verified = json.load(fh)
     boeken = (lees(os.path.join(DATA, "books.json"), {}) or {}).get("books", [])
     stats = lees(os.path.join(DATA, "stats.json"), {}) or {}
-    if not verified:
-        print("!! data/verified-chapters.json ontbreekt of is leeg", file=sys.stderr)
-        return 1
-
     zippad = bouw_zip()
-    epubpad, telling = bouw_epub(boeken, verified, stats)
     vandaag = datetime.date.today().isoformat()
 
     index = {
         "versie": stats.get("version", ""),
         "gebouwd": vandaag,
         "uitgaven": [
-            {
-                "naam": "Nagekeken tekst (EPUB)",
-                "bestand": EPUB_NAAM,
-                "omschrijving": (f"Leesuitgave voor e-reader en tablet. Bevat "
-                                 f"{telling['boeken']} boeken, {telling['hoofdstukken']} hoofdstukken "
-                                 f"en {telling['verzen']} verzen — alleen wat vers voor vers is nagekeken."),
-                "bytes": os.path.getsize(epubpad),
-                "datum": vandaag,
-            },
             {
                 "naam": "Brondata (ZIP)",
                 "bestand": ZIP_NAAM,
@@ -256,13 +251,28 @@ def main():
             },
         ],
     }
-    with open(os.path.join(UIT, "index.json"), "w", encoding="utf-8") as fh:
+    if any(verified.values()):
+        epubpad, telling = bouw_epub(boeken, verified, stats)
+        index["uitgaven"].insert(0, {
+            "naam": "Geverifieerde tekst (EPUB)",
+            "bestand": EPUB_NAAM,
+            "omschrijving": (
+                f"Leesuitgave: {telling['boeken']} boeken, {telling['hoofdstukken']} hoofdstukken "
+                f"en {telling['verzen']} verzen. Accountgebonden hoofdstukverificaties op {vandaag}."
+            ),
+            "bytes": os.path.getsize(epubpad),
+            "datum": vandaag,
+        })
+    with atomic_output(os.path.join(UIT, "index.json")) as temporary, open(temporary, "w", encoding="utf-8") as fh:
         json.dump(index, fh, ensure_ascii=False, indent=1)
+    if not any(verified.values()):
+        # Trek eerst de link in; verwijder daarna uitsluitend de oude gegenereerde EPUB.
+        previous_epub = os.path.join(UIT, EPUB_NAAM)
+        if os.path.exists(previous_epub):
+            os.unlink(previous_epub)
 
     for u in index["uitgaven"]:
         print(f"  {u['bestand']:<34} {u['bytes']/1024/1024:>7.1f} MB")
-    print(f"EPUB: {telling['boeken']} boeken, {telling['hoofdstukken']} hoofdstukken, "
-          f"{telling['verzen']} verzen")
     return 0
 
 

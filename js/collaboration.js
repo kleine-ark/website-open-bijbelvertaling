@@ -5,6 +5,7 @@
 
     var listeners = [];
     var initialized = false;
+    var sessionGeneration = 0;
 
     function emit(profile) {
         listeners.slice().forEach(function (listener) {
@@ -13,25 +14,27 @@
         window.dispatchEvent(new CustomEvent('ov:collaboration-ready', { detail: profile }));
     }
 
-    async function token(forceRefresh) {
-        var user = window.Auth && window.Auth.currentUser;
+    async function token(forceRefresh, user) {
         if (!user) throw new Error('AUTH_REQUIRED');
-        return user.getIdToken(!!forceRefresh);
+        var value = await user.getIdToken(!!forceRefresh);
+        if (user !== Auth.currentUser) throw new Error('AUTH_CHANGED');
+        return value;
     }
 
     async function request(path, options, retry) {
         options = options || {};
+        var user = window.Auth && Auth.currentUser;
         var headers = new Headers(options.headers || {});
-        headers.set('Authorization', 'Bearer ' + await token(false));
+        headers.set('Authorization', 'Bearer ' + await token(false, user));
         if (options.body && !headers.has('Content-Type')) headers.set('Content-Type', 'application/json');
-        var response = await fetch('/api/collaboration' + path, Object.assign({}, options, { headers: headers }));
+        var response = await fetch('/api/collaboration' + path, Object.assign({}, options, { headers: headers, cache: 'no-store' }));
         if (response.status === 401 && retry !== false) {
-            headers.set('Authorization', 'Bearer ' + await token(true));
-            response = await fetch('/api/collaboration' + path, Object.assign({}, options, { headers: headers }));
+            headers.set('Authorization', 'Bearer ' + await token(true, user));
+            response = await fetch('/api/collaboration' + path, Object.assign({}, options, { headers: headers, cache: 'no-store' }));
         }
         var payload = await response.json().catch(function () { return {}; });
         if (!response.ok) {
-            var error = new Error(payload.error || 'Er is een fout opgetreden. Controleer het logboek.');
+            var error = new Error('Er is een fout opgetreden. Controleer het logboek.');
             error.status = response.status;
             throw error;
         }
@@ -66,7 +69,11 @@
 
     async function synchronize(user, stateResolved) {
         if (!stateResolved) return;
+        var generation = ++sessionGeneration;
+        Collaboration.currentUser = null;
         Collaboration.ready = false;
+        setNavigation(null);
+        emit(null);
         if (!user) {
             Collaboration.currentUser = null;
             Collaboration.ready = true;
@@ -76,11 +83,13 @@
         }
         try {
             var payload = await request('/session', { method: 'POST', body: '{}' });
+            if (generation !== sessionGeneration) return;
             Collaboration.currentUser = payload.user;
             Collaboration.ready = true;
             setNavigation(payload.user);
             emit(payload.user);
         } catch (error) {
+            if (generation !== sessionGeneration) return;
             Collaboration.currentUser = null;
             Collaboration.ready = true;
             setNavigation(null);
@@ -114,6 +123,17 @@
     };
 
     window.Collaboration = Collaboration;
+    window.addEventListener('pagehide', function () {
+        sessionGeneration++;
+        Collaboration.currentUser = null;
+        Collaboration.ready = false;
+        setNavigation(null);
+        emit(null);
+    });
+    window.addEventListener('pageshow', function (event) {
+        // A restored document must resolve the current login again, not reuse private DOM.
+        if (event.persisted) location.reload();
+    });
     if (window.Auth) Collaboration.init();
     else document.addEventListener('DOMContentLoaded', function () { Collaboration.init(); });
 })();

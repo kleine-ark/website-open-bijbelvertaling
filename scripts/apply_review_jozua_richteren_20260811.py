@@ -120,19 +120,10 @@ def werk_reuzentag_bij() -> None:
     schrijf(str(pad), data, vorm)
 
 
-def werk_reviewstatus_bij() -> None:
-    pad = ROOT / "data" / "verified-chapters.json"
-    data = json.loads(pad.read_text(encoding="utf-8"))
-    data["jozua"] = "all"
-    data["richteren"] = list(range(1, 8))
-    pad.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-
-
 def main() -> None:
     pas_verzen_aan()
     werk_reuzentag_bij()
-    werk_reviewstatus_bij()
-    print(f"{len(CORRECTIES)} verzen bijgewerkt; Jozua en Richteren 1-7 geregistreerd.")
+    print(f"{len(CORRECTIES)} verzen bijgewerkt; verifieer de nieuwe tekst op de site.")
 
 
 if __name__ == "__main__":

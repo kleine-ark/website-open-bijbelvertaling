@@ -34,7 +34,7 @@
         <p id="reviews-status" class="collaboration-status" role="status"></p>
         <div class="table-shell">
             <table id="reviews-table" class="collaboration-table">
-                <thead><tr><th>Gegevens</th><th>Soort</th><th>Status en reviewer</th><th>Beslissing</th></tr></thead>
+                <thead><tr><th>Gegevens</th><th>Soort</th><th>Status</th><th>Verifiëren</th></tr></thead>
                 <tbody></tbody>
             </table>
         </div>
@@ -43,6 +43,7 @@
             <span id="reviews-page"></span>
             <button id="reviews-next" class="secondary-button" type="button">Volgende</button>
         </div>
+        <section id="review-history" hidden>
         <h2>Beslissingsgeschiedenis</h2>
         <p class="collaboration-intro">Deze gebeurtenissen blijven bewaard, ook als een goedkeuring later wordt ingetrokken of de gegevens veranderen.</p>
         <div class="table-shell">
@@ -56,6 +57,7 @@
             <span id="review-events-page"></span>
             <button id="review-events-next" class="secondary-button" type="button">Volgende</button>
         </div>
+        </section>
     </main>
     <script src="js/firebase-config.js"></script>
     <script src="js/auth.js"></script>

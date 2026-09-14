@@ -83,17 +83,14 @@ def location_review_payload(feature: dict) -> dict:
     return {"geometry": feature.get("geometry"), "properties": properties}
 
 
-def is_verified(verified: dict, book_id: str, chapter: int) -> bool:
-    value = verified.get(book_id)
-    return value == "all" or isinstance(value, list) and chapter in value
-
-
 def build_catalog(root: Path = ROOT) -> dict:
     data = root / "data"
     books = json.loads((data / "books.json").read_text(encoding="utf-8"))["books"]
-    verified = json.loads(
-        (data / "verified-chapters.json").read_text(encoding="utf-8")
+    history = json.loads(
+        (root / "migrations/review-history-v1.json").read_text(encoding="utf-8")
     )
+    if history["schemaVersion"] != 1:
+        raise ValueError("onbekende historische migratieversie")
     geography = json.loads(
         (data / "geografie-runtime.geojson").read_text(encoding="utf-8")
     )
@@ -101,9 +98,6 @@ def build_catalog(root: Path = ROOT) -> dict:
     book_ids = [book["id"] for book in books]
     if len(book_ids) != len(set(book_ids)):
         raise ValueError("books.json bevat dubbele boek-id's")
-    unknown_verified = set(verified) - set(book_ids)
-    if unknown_verified:
-        raise ValueError(f"reviewstatus voor onbekende boeken: {sorted(unknown_verified)}")
 
     subjects = []
     for book in books:
@@ -111,18 +105,10 @@ def build_catalog(root: Path = ROOT) -> dict:
         included = book.get("chaptersIncluded")
         if not isinstance(included, list) or len(included) != len(set(included)):
             raise ValueError(f"ongeldige hoofdstuklijst voor {book_id}")
-        verified_value = verified.get(book_id)
-        if verified_value is not None and verified_value != "all":
-            if (
-                not isinstance(verified_value, list)
-                or len(verified_value) != len(set(verified_value))
-                or any(chapter not in included for chapter in verified_value)
-            ):
-                raise ValueError(f"ongeldige reviewstatus voor {book_id}")
         for chapter_number in included:
             path = data / book_id / f"{chapter_number}.json"
             chapter = json.loads(path.read_text(encoding="utf-8"))
-            approved = is_verified(verified, book_id, chapter_number)
+            source_hash = hashlib.sha256(path.read_bytes()).hexdigest()
             subject = {
                 "type": "text-chapter",
                 "id": f"{book_id}/{chapter_number}",
@@ -130,18 +116,27 @@ def build_catalog(root: Path = ROOT) -> dict:
                 "label": f"{book['nameDutch']} {chapter_number}",
                 "href": f"index.html#{book_id}/{chapter_number}",
                 "source": f"data/{book_id}/{chapter_number}.json",
-                "publishedStatus": "approved" if approved else "pending",
                 "metadata": {
+                    "sourceHash": source_hash,
                     "book": book_id,
                     "chapter": chapter_number,
                     "verses": len(chapter.get("verses", [])),
                 },
             }
-            if approved:
-                subject["migrationSource"] = "data/verified-chapters.json"
             subjects.append(subject)
+            for verse in text_review_payload(chapter)["verses"]:
+                subjects.append({
+                    "type": "text-verse",
+                    "id": f"{book_id}/{chapter_number}/{verse['number']}",
+                    "revision": canonical_hash(verse),
+                    "label": f"{book['nameDutch']} {chapter_number}:{verse['number']}",
+                    "href": f"index.html#{book_id}/{chapter_number}/{verse['number']}",
+                    "source": f"data/{book_id}/{chapter_number}.json",
+                    "metadata": {"sourceHash": source_hash},
+                })
 
     features = geography.get("features")
+    geography_hash = hashlib.sha256((data / "geografie-runtime.geojson").read_bytes()).hexdigest()
     if not isinstance(features, list):
         raise ValueError("geografie-runtime.geojson moet features bevatten")
     for feature in features:
@@ -151,24 +146,19 @@ def build_catalog(root: Path = ROOT) -> dict:
         subject_id = properties.get("id")
         if not subject_id:
             raise ValueError("Geografisch punt zonder stabiele id")
-        if not isinstance(properties.get("humanReviewed"), bool):
-            raise ValueError(f"humanReviewed moet boolean zijn voor {subject_id}")
-        approved = properties.get("humanReviewed") is True
         subject = {
             "type": "location",
             "id": subject_id,
             "revision": canonical_hash(location_review_payload(feature)),
             "label": properties.get("naam") or subject_id,
-            "href": f"plaats.html?id={subject_id}",
+            "href": f"plaats.html?plaats={subject_id}",
             "source": "data/geografie-runtime.geojson",
-            "publishedStatus": "approved" if approved else "pending",
             "metadata": {
+                "sourceHash": geography_hash,
                 "certainty": properties.get("zekerheid", "onzeker"),
                 "sourceDataset": (properties.get("bron") or {}).get("dataset"),
             },
         }
-        if approved:
-            subject["migrationSource"] = "data/geografie-runtime.geojson"
         subjects.append(subject)
 
     subject_keys = [(item["type"], item["id"]) for item in subjects]
@@ -176,9 +166,11 @@ def build_catalog(root: Path = ROOT) -> dict:
         raise ValueError("reviewcatalogus bevat dubbele onderwerp-id's")
     subjects.sort(key=lambda item: (item["type"], item["label"].casefold(), item["id"]))
     catalog = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
+        "historicalSubjects": history["subjects"],
         "subjectTypes": {
             "text-chapter": "Bijbelhoofdstuk",
+            "text-verse": "Bijbelvers",
             "location": "Geografische locatie",
         },
         "subjects": subjects,

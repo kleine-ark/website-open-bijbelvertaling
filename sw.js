@@ -9,9 +9,11 @@
  */
 
 const VERSION = 'v0.56.0';
-const SHELL_CACHE   = `shell-${VERSION}`;
-const DATA_CACHE    = `data-${VERSION}`;
-const LEXICON_CACHE = `lexicon-${VERSION}`;
+// New reader modules must not be mixed with HTML from before verification.
+const CACHE_VERSION = `${VERSION}-verification-v2`;
+const SHELL_CACHE   = `shell-${CACHE_VERSION}`;
+const DATA_CACHE    = `data-${CACHE_VERSION}`;
+const LEXICON_CACHE = `lexicon-${CACHE_VERSION}`;
 
 // Pre-cache: minimal kritieke files voor instant 1e bezoek
 const PRECACHE_URLS = [
@@ -22,6 +24,11 @@ const PRECACHE_URLS = [
     '/js/i18n.js',
     '/js/teksteditie.js',
     '/js/data-loader.js',
+    '/js/verification.js',
+    '/js/collaboration.js',
+    '/js/chapter-renderer.js',
+    '/js/lees-renderer.js',
+    '/css/verification.css',
     '/js/citatie-uit.js',
     '/js/assets.js',
     '/js/book-orders.js',
@@ -77,6 +84,15 @@ self.addEventListener('activate', (event) => {
     event.waitUntil((async () => {
         // Verwijder oude caches
         const keys = await caches.keys();
+        // Remove authenticated responses saved by older versions of the worker.
+        for (const key of keys) {
+            const cache = await caches.open(key);
+            for (const request of await cache.keys()) {
+                if (new URL(request.url).pathname.startsWith('/api/') || request.headers.has('Authorization')) {
+                    await cache.delete(request);
+                }
+            }
+        }
         await Promise.all(
             keys.filter(k => ![SHELL_CACHE, DATA_CACHE, LEXICON_CACHE].includes(k))
                 .map(k => caches.delete(k))
@@ -94,6 +110,10 @@ self.addEventListener('fetch', (event) => {
     if (url.origin !== self.location.origin) return;
 
     const path = url.pathname;
+    if (path.startsWith('/api/') || req.headers.has('Authorization')) {
+        event.respondWith(fetch(req, { cache: 'no-store' }));
+        return;
+    }
 
     // Lexicon (grote JS)
     if (path.endsWith('/js/hebreeuws-woordenboek.js') || path.endsWith('/js/grieks-woordenboek.js') || path.endsWith('/js/grieks-tbesg.js')) {

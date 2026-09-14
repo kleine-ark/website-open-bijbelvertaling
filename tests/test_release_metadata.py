@@ -80,7 +80,7 @@ def test_current_release_describes_review_en_uses_one_version():
     assert current_release["versie"] == "v0.38.2"
     assert "volledige woordenboekartikel" in descriptions
     assert stats["version"] == current_release["versie"]
-    assert service_worker_install_cache() == [f"shell-{current_release['versie']}"]
+    assert service_worker_install_cache() == [f"shell-{current_release['versie']}-verification-v2"]
     assert current_release["datum"] == "2026-08-22"
     assert stats["date"] == "22 augustus 2026"
 
@@ -94,49 +94,11 @@ def test_statische_release_fallbacks_verwijzen_naar_de_actuele_versie():
         assert "v0.21.6" not in inhoud
 
 
-def test_human_review_statistics_include_nehemia_and_esther():
-    stats = read_json("data/stats.json")
-    verified = read_json("data/verified-chapters.json")
-
-    assert stats["books_verified"] == 61
-    assert stats["chapters_verified"] == 925
-    assert stats["verses_verified"] == 25157
-    assert stats["verses_verified_pct"] == 67.6
-    assert "Numeri" in stats["verified_books"]
-    assert "Deuteronomium" in stats["verified_books"]
-    assert "Jozua" in stats["verified_books"]
-    assert "Richteren" in stats["verified_books"]
-    assert "2 Koningen" in stats["verified_books"]
-    assert "Nehemia" in stats["verified_books"]
-    assert "Esther" in stats["verified_books"]
-    assert "1 Kronieken" in stats["verified_books"]
-    assert "2 Kronieken" in stats["verified_books"]
-    assert stats["ot_verses_verified"] == 15978
-    assert stats["ot_verses_verified_pct"] == 68.8
-    assert stats["nt_verses_verified"] == 7960
-    assert stats["nt_verses_verified_pct"] == 100.0
-    assert stats["ap_verses_verified"] == 1219
-    assert stats["ap_verses_verified_pct"] == 20.1
-    assert verified["numeri"] == "all"
-    assert verified["deuteronomium"] == "all"
-    assert verified["jozua"] == "all"
-    assert verified["richteren"] == "all"
-    assert verified["1samuel"] == "all"
-    assert verified["2koningen"] == "all"
-    assert verified["nehemia"] == "all"
-    assert verified["mattheus"] == "all"
-    assert verified["openbaring"] == "all"
-    assert verified["psalmen"] == "all"
-    assert verified["prediker"] == "all"
-    for kleine_profeet in (
-        "hosea", "joel", "amos", "obadja", "jona", "micha", "nahum",
-        "habakuk", "zefanja", "haggai", "zacharia", "maleachi",
-    ):
-        assert verified[kleine_profeet] == "all"
-    assert verified["1makkabeeen"] == "all"
-    assert verified["baruch"] == "all"
-    assert verified["gebedvanmanasse"] == "all"
-    assert verified["susanna"] == "all"
+def test_verification_snapshot_is_generated_from_the_api_not_hand_maintained():
+    source = (ROOT / "scripts/export_review_status.py").read_text(encoding="utf-8")
+    assert "/api/collaboration/verified-chapters" in source
+    assert "catalogRevision" in source
+    assert "data/verified-chapters.json" in (ROOT / ".gitignore").read_text()
 
 
 def test_desktop_version_remains_independent():

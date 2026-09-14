@@ -320,6 +320,7 @@ class ReviewStore:
         photo_url = str(claims.get("picture") or "").strip()[:2000] or None
         timestamp = now_iso()
         with self._connect() as db:
+            db.execute("BEGIN IMMEDIATE")
             existing_email = db.execute(
                 "SELECT * FROM users WHERE email = ? COLLATE NOCASE", (email,)
             ).fetchone()
@@ -347,10 +348,15 @@ class ReviewStore:
             row = db.execute("SELECT * FROM users WHERE uid = ?", (uid,)).fetchone()
         return self._row_to_user(row)
 
-    @staticmethod
-    def _require_role(actor: dict, role: str) -> None:
-        if role not in actor.get("roles", []):
+    def _require_role(self, actor: dict, role: str) -> dict:
+        with self._connect() as db:
+            row = db.execute("SELECT * FROM users WHERE uid=?", (actor["uid"],)).fetchone()
+        if row is None:
             raise Forbidden()
+        current = self._row_to_user(row)
+        if role not in current["roles"]:
+            raise Forbidden()
+        return current
 
     def list_users(
         self, actor: dict, query: str = "", offset: int = 0, limit: int = 100,
@@ -375,13 +381,15 @@ class ReviewStore:
         return {"total": total, "items": [self._row_to_user(row) for row in rows]}
 
     def set_roles(self, actor: dict, target_uid: str, roles: list[str]) -> dict:
-        self._require_role(actor, "administrator")
+        actor = self._require_role(actor, "administrator")
         if not isinstance(roles, list) or any(role not in ALLOWED_ROLES for role in roles):
             raise InvalidRequest()
         roles = sorted(set(roles))
         if "administrator" in roles:
             roles = sorted(set(roles) | {"reviewer"})
         with self._connect() as db:
+            db.execute("BEGIN IMMEDIATE")
+            actor = self._require_role(actor, "administrator")
             target = db.execute("SELECT * FROM users WHERE uid = ?", (target_uid,)).fetchone()
             if not target:
                 raise NotFound()
@@ -442,7 +450,7 @@ class ReviewStore:
         subject_types = catalog.get("subjectTypes")
         declared_revision = catalog.get("catalogRevision")
         if (
-            catalog.get("schemaVersion") != 1
+            catalog.get("schemaVersion") != 2
             or not isinstance(declared_revision, str)
             or not re.fullmatch(r"[a-f0-9]{64}", declared_revision)
             or declared_revision != review_catalog_revision(catalog)
@@ -454,6 +462,7 @@ class ReviewStore:
                 for key, label in subject_types.items()
             )
             or not isinstance(catalog.get("subjects"), list)
+            or not isinstance(catalog.get("historicalSubjects"), list)
         ):
             raise InvalidRequest()
         revision = declared_revision
@@ -483,11 +492,23 @@ class ReviewStore:
                     ),
                 )
             imported = db.execute(
-                "SELECT value FROM metadata WHERE key = 'historical-review-import-v1'"
+                "SELECT value FROM metadata WHERE key = 'historical-review-import-v2'"
             ).fetchone()
             if not imported:
-                for item in catalog["subjects"]:
-                    if item.get("publishedStatus") != "approved":
+                for item in catalog["historicalSubjects"]:
+                    self._validate_subject(item)
+                    db.execute(
+                        """INSERT OR IGNORE INTO review_subjects
+                           (subject_type, subject_id, revision, label, href, source, metadata_json, active)
+                           VALUES (?, ?, ?, ?, ?, ?, '{}', 0)""",
+                        tuple(item[key] for key in ("type", "id", "revision", "label", "href", "source")),
+                    )
+                    previous = db.execute(
+                        """SELECT 1 FROM review_events WHERE subject_type=? AND subject_id=?
+                           AND revision=? AND actor_kind='historical-import'""",
+                        (item["type"], item["id"], item["revision"]),
+                    ).fetchone()
+                    if previous:
                         continue
                     db.execute(
                         """INSERT INTO review_events
@@ -504,7 +525,7 @@ class ReviewStore:
                         ),
                     )
                 db.execute(
-                    "INSERT INTO metadata(key, value) VALUES ('historical-review-import-v1', ?)",
+                    "INSERT INTO metadata(key, value) VALUES ('historical-review-import-v2', ?)",
                     (now_iso(),),
                 )
             db.execute(
@@ -541,28 +562,69 @@ class ReviewStore:
             "createdAt": row["created_at"],
         }
 
-    def _subject(self, db: sqlite3.Connection, row: sqlite3.Row) -> dict:
+    def _subject(self, db: sqlite3.Connection, row: sqlite3.Row, actor=None) -> dict:
         event = db.execute(
             """SELECT * FROM review_events
                WHERE subject_type=? AND subject_id=? AND revision=?
-               ORDER BY created_at DESC, rowid DESC LIMIT 1""",
+               ORDER BY (actor_kind='user') DESC, rowid DESC LIMIT 1""",
             (row["subject_type"], row["subject_id"], row["revision"]),
         ).fetchone()
         latest = self._event(event)
-        return {
+        previous = db.execute(
+            """SELECT 1 FROM review_events WHERE subject_type=? AND subject_id=?
+               AND revision<>? AND actor_kind='user' AND decision='approved' LIMIT 1""",
+            (row["subject_type"], row["subject_id"], row["revision"]),
+        ).fetchone()
+        result = {
             "type": row["subject_type"], "id": row["subject_id"],
             "revision": row["revision"], "label": row["label"],
             "href": row["href"], "source": row["source"],
             "metadata": json.loads(row["metadata_json"]),
-            "status": "approved" if latest and latest["decision"] == "approved" else "pending",
-            "latestReview": latest,
+            "status": "approved" if latest and latest["decision"] == "approved"
+                      and latest["actor"]["kind"] == "user" else "pending",
+            "needsReverification": bool(previous and not latest),
         }
+        if actor and "administrator" in actor["roles"]:
+            result["latestReview"] = latest
+        return result
+
+    def get_subject(self, actor, subject_type: str, subject_id: str) -> dict:
+        with self._connect() as db:
+            if actor:
+                user = db.execute("SELECT * FROM users WHERE uid=?", (actor["uid"],)).fetchone()
+                if user is None:
+                    raise Forbidden()
+                actor = self._row_to_user(user)
+            row = db.execute(
+                "SELECT * FROM review_subjects WHERE subject_type=? AND subject_id=? AND active=1",
+                (subject_type, subject_id),
+            ).fetchone()
+            if row is None:
+                raise NotFound()
+            return self._subject(db, row, actor)
+
+    def verified_chapters(self, catalog_revision="") -> dict:
+        with self._connect() as db:
+            db.execute("BEGIN")
+            if catalog_revision:
+                current = db.execute("SELECT value FROM metadata WHERE key='catalog-revision'").fetchone()
+                if current is None or current["value"] != catalog_revision:
+                    raise Conflict()
+            rows = db.execute(
+                "SELECT * FROM review_subjects WHERE active=1 AND subject_type='text-chapter'"
+            ).fetchall()
+            chapters = {}
+            for row in rows:
+                if self._subject(db, row)["status"] == "approved":
+                    book, chapter = row["subject_id"].split("/")
+                    chapters.setdefault(book, []).append(int(chapter))
+        return {book: sorted(numbers) for book, numbers in sorted(chapters.items())}
 
     def list_subjects(
         self, actor: dict, subject_type: str = "", status: str = "",
         query: str = "", offset: int = 0, limit: int = 100,
     ) -> dict:
-        self._require_role(actor, "reviewer")
+        actor = self._require_role(actor, "reviewer")
         if status not in ("", "approved", "pending"):
             raise InvalidRequest()
         limit = max(1, min(int(limit), 100))
@@ -578,7 +640,7 @@ class ReviewStore:
             values.extend((needle, needle))
         sql += " ORDER BY subject_type, label COLLATE NOCASE, subject_id"
         with self._connect() as db:
-            items = [self._subject(db, row) for row in db.execute(sql, values).fetchall()]
+            items = [self._subject(db, row, actor) for row in db.execute(sql, values).fetchall()]
             type_row = db.execute(
                 "SELECT value FROM metadata WHERE key = 'subject-types'"
             ).fetchone()
@@ -597,7 +659,9 @@ class ReviewStore:
         }
 
     def record_review(self, actor: dict, payload: dict) -> dict:
-        self._require_role(actor, "reviewer")
+        actor = self._require_role(actor, "reviewer")
+        if set(payload) - {"subjectType", "subjectId", "revision", "decision", "note", "sourceHash"}:
+            raise InvalidRequest()
         subject_type = str(payload.get("subjectType") or "")
         subject_id = str(payload.get("subjectId") or "")
         revision = str(payload.get("revision") or "")
@@ -605,7 +669,10 @@ class ReviewStore:
         note = str(payload.get("note") or "").strip()
         if decision not in ("approved", "revoked") or len(note) > 2000:
             raise InvalidRequest()
-        with self._connect() as db:
+        with self.catalog_lock, self._connect() as db:
+            db.execute("BEGIN IMMEDIATE")
+            # Permissions and identity must still be current when the decision is committed.
+            actor = self._require_role(actor, "reviewer")
             row = db.execute(
                 """SELECT * FROM review_subjects
                    WHERE subject_type=? AND subject_id=? AND revision=? AND active=1""",
@@ -620,6 +687,18 @@ class ReviewStore:
                 if current:
                     raise Conflict()
                 raise NotFound()
+            source_hash = json.loads(row["metadata_json"])["sourceHash"]
+            if payload.get("sourceHash") != source_hash:
+                raise Conflict()
+            last = db.execute(
+                """SELECT * FROM review_events WHERE subject_type=? AND subject_id=? AND revision=?
+                   ORDER BY (actor_kind='user') DESC, rowid DESC LIMIT 1""",
+                (subject_type, subject_id, revision),
+            ).fetchone()
+            # First successful click owns this verification. Retries (including
+            # another tab/account) cannot silently replace the responsible person.
+            if last and last["actor_kind"] == "user" and last["decision"] == decision:
+                return self._subject(db, row, actor)
             db.execute(
                 """INSERT INTO review_events
                    (id, subject_type, subject_id, revision, decision, note,
@@ -635,12 +714,12 @@ class ReviewStore:
                    WHERE subject_type=? AND subject_id=? AND revision=?""",
                 (subject_type, subject_id, revision),
             ).fetchone()
-            return self._subject(db, row)
+            return self._subject(db, row, actor)
 
     def list_review_events(
         self, actor: dict, offset: int = 0, limit: int = 100,
     ) -> dict:
-        self._require_role(actor, "reviewer")
+        self._require_role(actor, "administrator")
         limit = max(1, min(int(limit), 500))
         offset = max(0, int(offset))
         with self._connect() as db:
@@ -739,6 +818,18 @@ class CollaborationHandler(BaseHTTPRequestHandler):
             path, query = self._route()
             if method == "GET" and path == "/api/collaboration/health":
                 self._write_json(200, {"ok": True})
+                return
+            store = self.app["store"]
+            if method == "GET" and path == "/api/collaboration/verified-chapters":
+                self._sync_catalog()
+                self._write_json(200, store.verified_chapters(self._one(query, "catalogRevision")))
+                return
+            if method == "GET" and path == "/api/collaboration/subject":
+                self._sync_catalog()
+                actor = self._actor() if self.headers.get("Authorization") else None
+                self._write_json(200, {"subject": store.get_subject(
+                    actor, self._one(query, "type"), self._one(query, "id")
+                )})
                 return
             actor = self._actor()
             store = self.app["store"]

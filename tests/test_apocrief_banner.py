@@ -8,7 +8,7 @@ EXPECTED = "<strong>⚠ Apocrief boek - geen onderdeel van de canon van Gods Woo
 
 
 def test_beide_lezers_tonen_alleen_de_korte_apocriefwaarschuwing():
-    for relative_path in ("js/app.js", "js/lees.js"):
+    for relative_path in ("js/app.js", "js/lees-renderer.js"):
         source = (ROOT / relative_path).read_text(encoding="utf-8")
         assert EXPECTED in source
         assert "Dit boek behoort tot de apocriefe" not in source

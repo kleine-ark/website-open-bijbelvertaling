@@ -42,9 +42,7 @@ const DataLoader = {
         if (edition !== 'nl-ov' && typeof TekstEditie !== 'undefined') {
             ch = await TekstEditie.loadChapter(bookId, chapterNum);
         } else {
-            const resp = await fetch(`data/${bookId}/${chapterNum}.json`, { cache: 'no-cache' });
-            if (!resp.ok) return null;
-            ch = await resp.json();
+            ch = await Verification.loadJSON(`data/${bookId}/${chapterNum}.json`);
             if (window.CitatieUit) window.CitatieUit.hoofdstuk(ch, bookId);
             if (window.OVWoordnummers) {
                 const mappings = await window.OVWoordnummers.loadBookMappings(bookId);

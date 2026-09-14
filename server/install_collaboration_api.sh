@@ -64,7 +64,8 @@ systemctl enable --now openvertaling-collaboration.service
 systemctl restart openvertaling-collaboration.service
 nginx -t
 systemctl reload nginx
-curl --fail --silent --show-error http://127.0.0.1:8787/api/collaboration/health >/dev/null
+curl --fail --silent --show-error --retry 10 --retry-delay 1 --retry-connrefused \
+    --retry-max-time 30 http://127.0.0.1:8787/api/collaboration/health >/dev/null
 
 trap - ERR
 unlink -- "$SITE_BACKUP"

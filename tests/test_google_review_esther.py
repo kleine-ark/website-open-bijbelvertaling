@@ -33,5 +33,6 @@ def test_citaten_begrenzen_spraak_en_vertelling():
     assert '</i></span> Het woord ging' in vers(7, 8)["text2026_html"]
 
 def test_esther_is_pas_na_verwerking_afgerond():
-    verified = json.loads((ROOT / "data" / "verified-chapters.json").read_text(encoding="utf-8"))
-    assert verified.get("esther") == "all"
+    history = json.loads((ROOT / "migrations/review-history-v1.json").read_text(encoding="utf-8"))
+    identifiers = {item["id"] for item in history["subjects"] if item["type"] == "text-chapter"}
+    assert {f"esther/{chapter}" for chapter in range(1, 11)} <= identifiers
