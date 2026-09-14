@@ -1043,6 +1043,27 @@ const Lees = {
 
     // === Book selector ===
 
+    /** De hoofdstukknoppen van één boek, voor onder dat boek in de boekkeuze. */
+    _bookChapterGrid(book, overlay) {
+        const grid = document.createElement('div');
+        grid.className = 'book-chapters';
+        for (const ch of book.chaptersIncluded) {
+            const knop = document.createElement('button');
+            knop.textContent = ch;
+            knop.setAttribute('aria-label', `${book.nameDutch} ${ch}`);
+            if (ch === this.currentChapter) {
+                knop.classList.add('active');
+                knop.setAttribute('aria-current', 'page');
+            }
+            knop.addEventListener('click', () => {
+                overlay.classList.add('hidden');
+                location.hash = `#${book.id}/${ch}`;
+            });
+            grid.appendChild(knop);
+        }
+        return grid;
+    },
+
     openBookSelector() {
         const overlay = document.getElementById('book-selector');
         const list = document.getElementById('book-list');
@@ -1086,12 +1107,25 @@ const Lees = {
                     flag.setAttribute('aria-hidden', 'true');
                     btn.appendChild(flag);
                 }
-                btn.addEventListener('click', () => {
-                    overlay.classList.add('hidden');
-                    location.hash = `#${book.id}/1`;
-                });
-                items.appendChild(btn);
-
+                if (book.id === this.currentBook && book.chaptersIncluded.length > 1) {
+                    // Het geopende boek staat meteen opengeklapt: elk hoofdstuk
+                    // is dan met één tik te bereiken, zonder eerst naar
+                    // hoofdstuk 1 te springen. Nog eens tikken klapt het dicht.
+                    const chapters = this._bookChapterGrid(book, overlay);
+                    btn.setAttribute('aria-expanded', 'true');
+                    btn.addEventListener('click', () => {
+                        chapters.hidden = !chapters.hidden;
+                        btn.setAttribute('aria-expanded', String(!chapters.hidden));
+                    });
+                    items.appendChild(btn);
+                    items.appendChild(chapters);
+                } else {
+                    btn.addEventListener('click', () => {
+                        overlay.classList.add('hidden');
+                        location.hash = `#${book.id}/1`;
+                    });
+                    items.appendChild(btn);
+                }
             }
             group.appendChild(items);
             list.appendChild(group);
