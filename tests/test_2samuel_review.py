@@ -29,7 +29,7 @@ def test_2samuel_sheet_language_corrections_are_in_the_reading_text():
         (15, 28): "verblijven",
         (18, 5): "voorzichtig",
         (20, 3): "hun dood",
-        (23, 7): "op die plaats",
+        (23, 7): "ter plekke",
     }
     for (chapter, number), fragment in expected.items():
         item = verse(chapter, number)

@@ -58,7 +58,7 @@ CORRECTIES = {
     (20, 3): [("haarlieder dood", "hun dood")],
     (20, 6): [("meer kwaads doen", "meer kwaad doen")],
     (21, 12): [("burgeren", "burgers")],
-    (23, 7): [("ter zelver plaats", "op die plaats")],
+    (23, 7): [("ter zelver plaats", "ter plekke")],
 }
 
 

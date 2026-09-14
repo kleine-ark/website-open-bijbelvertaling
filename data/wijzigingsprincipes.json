@@ -12305,7 +12305,7 @@
    "id": "MR-SK-101",
    "categorie": "Menselijke review",
    "oud": "ter zelver plaats",
-   "nieuw": "op die plaats",
+   "nieuw": "ter plekke",
    "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
    "regex": "",
    "voorbeeld": "2samuel 23:7",
@@ -15160,6 +15160,66 @@
    "regex": "\\b(ik|mij|mijn)\\b",
    "bereik": "4 Ezra, en daarbinnen alleen wat als Godsspraak is opgemaakt",
    "voorbeeld": "4 Ezra 1:5 | verkondig mijn volk hun boosheden ... die zij tegen mij hebben begaan | verkondig Mijn volk hun boosheden ... die zij tegen Mij hebben begaan"
+  },
+  {
+   "id": "MR-2SA-001",
+   "categorie": "Menselijke review",
+   "oud": "maliënkolder",
+   "nieuw": "benauwdheid",
+   "toelichting": "Het Hebreeuwse woord komt alleen hier voor. De Statenvertaling denkt aan een pantser; de samenhang (Saul vraagt om de genadeslag) wijst op de doodsstrijd zelf. Beoordeeld in de review van 2 Samuël; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2samuel 1:9",
+   "bereik": {
+    "2samuel": [
+     "1:9"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-2SA-002",
+   "categorie": "Menselijke review",
+   "oud": "de pont overvoer",
+   "nieuw": "men de doorwaadbare plaats overstak",
+   "toelichting": "Het Hebreeuws spreekt van de overgang zelf; een veerboot wordt niet genoemd. Keuze van de eigenaar van het project. Beoordeeld in de review van 2 Samuël; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2samuel 19:18",
+   "bereik": {
+    "2samuel": [
+     "19:18"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-2SA-003",
+   "categorie": "Menselijke review",
+   "oud": "Steunsel",
+   "nieuw": "Steun",
+   "toelichting": "Gelijkgetrokken met Psalm 18:19, waar dezelfde zin al zo luidt. Beoordeeld in de review van 2 Samuël; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2samuel 22:19",
+   "bereik": {
+    "2samuel": [
+     "22:19"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-2SA-004",
+   "categorie": "Menselijke review",
+   "oud": "reinigheid",
+   "nieuw": "reinheid",
+   "toelichting": "Gelijkgetrokken met Psalm 18:21 en 18:25; in 22:21 valt het woord onder het naamvalprincipe van dezelfde woordgroep. Beoordeeld in de review van 2 Samuël; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2samuel 22:25",
+   "bereik": {
+    "2samuel": [
+     "22:25"
+    ]
+   },
+   "bron": "menselijke-review"
   }
  ]
 }
