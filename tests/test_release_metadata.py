@@ -80,7 +80,7 @@ def test_current_release_describes_review_en_uses_one_version():
     assert current_release["versie"] == "v0.38.2"
     assert "volledige woordenboekartikel" in descriptions
     assert stats["version"] == current_release["versie"]
-    assert service_worker_install_cache() == [f"shell-{current_release['versie']}-verification-v5"]
+    assert service_worker_install_cache() == [f"shell-{current_release['versie']}-verification-v6"]
     assert current_release["datum"] == "2026-08-22"
     assert stats["date"] == "22 augustus 2026"
 

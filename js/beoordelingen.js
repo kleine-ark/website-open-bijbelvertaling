@@ -12,6 +12,10 @@
     var eventOffset = 0;
     var eventTotal = 0;
     var eventPageSize = 100;
+    var eventRequest = 0;
+    var historyDialog;
+    var historyButton;
+    var eventStatus;
     var timer;
 
     function element(tag, value, className) {
@@ -96,14 +100,19 @@
     }
 
     async function loadEvents() {
-        if (!Collaboration.hasRole('administrator')) return;
+        if (!historyDialog.open || !Collaboration.hasRole('administrator')) return;
+        var request = ++eventRequest;
         var requestedUser = Collaboration.currentUser;
         var eventBody = document.querySelector('#review-events-table tbody');
+        eventStatus.textContent = 'Beoordelingsgeschiedenis laden…';
+        eventStatus.classList.remove('is-error');
+        document.getElementById('review-events-prev').disabled = true;
+        document.getElementById('review-events-next').disabled = true;
         try {
             var payload = await Collaboration.api(
                 '/reviews?offset=' + eventOffset + '&limit=' + eventPageSize
             );
-            if (Collaboration.currentUser !== requestedUser) return;
+            if (request !== eventRequest || Collaboration.currentUser !== requestedUser || !historyDialog.open) return;
             eventBody.replaceChildren();
             eventTotal = payload.total;
             payload.items.forEach(function (review) {
@@ -129,15 +138,15 @@
             document.getElementById('review-events-page').textContent = eventTotal
                 ? (eventOffset + 1) + '–' + Math.min(eventOffset + payload.items.length, eventTotal) + ' van ' + eventTotal
                 : '0 gebeurtenissen';
+            eventStatus.textContent = '';
+            document.querySelector('.review-history-body').scrollTop = 0;
         } catch (error) {
+            console.error('[collaboration]', error);
+            if (request !== eventRequest || Collaboration.currentUser !== requestedUser || !historyDialog.open) return;
             eventBody.replaceChildren();
-            var failed = document.createElement('tr');
-            var failedCell = element('td', 'Er is een fout opgetreden. Controleer het logboek.', 'empty-state');
-            failedCell.colSpan = 4;
-            failed.appendChild(failedCell);
-            eventBody.appendChild(failed);
-            document.getElementById('review-events-prev').disabled = true;
-            document.getElementById('review-events-next').disabled = true;
+            eventStatus.textContent = 'Er is een fout opgetreden. Controleer het logboek.';
+            eventStatus.classList.add('is-error');
+            document.getElementById('review-events-page').textContent = '';
         }
     }
 
@@ -148,10 +157,19 @@
 
     function clearData() {
         body.replaceChildren();
-        document.querySelector('#review-events-table tbody').replaceChildren();
         document.getElementById('reviews-page').textContent = '';
         document.getElementById('reviews-prev').disabled = true;
         document.getElementById('reviews-next').disabled = true;
+        clearEvents();
+    }
+
+    function clearEvents() {
+        eventRequest++;
+        eventOffset = 0;
+        eventTotal = 0;
+        document.querySelector('#review-events-table tbody').replaceChildren();
+        eventStatus.textContent = '';
+        eventStatus.classList.remove('is-error');
         document.getElementById('review-events-page').textContent = '';
         document.getElementById('review-events-prev').disabled = true;
         document.getElementById('review-events-next').disabled = true;
@@ -159,18 +177,17 @@
 
     function handleProfile(profile, ready) {
         main.hidden = true;
+        historyButton.hidden = true;
+        if (historyDialog.open) historyDialog.close();
         clearData();
-        document.getElementById('review-history').hidden = true;
         if (!ready) return;
         if (!profile || profile.roles.indexOf('reviewer') === -1) {
-            main.hidden = true;
-            clearData();
             location.replace('index.html');
             return;
         }
         main.hidden = false;
-        document.getElementById('review-history').hidden = !Collaboration.hasRole('administrator');
-        Promise.all([loadSubjects(), loadEvents()]);
+        historyButton.hidden = !Collaboration.hasRole('administrator');
+        loadSubjects();
     }
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -180,6 +197,17 @@
         search = document.getElementById('reviews-search');
         typeFilter = document.getElementById('reviews-type');
         statusFilter = document.getElementById('reviews-state');
+        historyDialog = document.getElementById('review-history');
+        historyButton = document.getElementById('review-history-open');
+        eventStatus = document.getElementById('review-events-status');
+        historyButton.addEventListener('click', function () {
+            historyDialog.showModal();
+            loadEvents();
+        });
+        document.getElementById('review-history-close').addEventListener('click', function () {
+            historyDialog.close();
+        });
+        historyDialog.addEventListener('close', clearEvents);
         search.addEventListener('input', function () {
             clearTimeout(timer);
             timer = setTimeout(resetAndLoad, 250);

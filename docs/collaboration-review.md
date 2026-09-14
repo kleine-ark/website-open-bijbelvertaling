@@ -50,6 +50,11 @@ De knop staat bij:
 
 Het overzicht `/beoordelingen.html` heeft filters voor soort, status en zoektekst.
 Van daaruit opent men de inhoud; een lijstregel zelf is geen verificatieknop.
+Beheerders openen de geschiedenis via **Beoordelingsgeschiedenis** naast de
+paginatitel. Deze knop opent een apart venster met eigen bladerknoppen; de
+geschiedenis staat niet onder de onderwerpenlijst en wordt pas bij openen geladen.
+Sluiten of Escape keert terug naar het overzicht met behoud van de zoekfilters.
+Bij accountwisseling sluit het venster en worden de geschiedenisgegevens gewist.
 
 De eerste geslaagde klik legt de verantwoordelijke vast. Herhaalde of gelijktijdige
 klikken overschrijven die persoon niet. **Intrekken** maakt een nieuwe gebeurtenis;
