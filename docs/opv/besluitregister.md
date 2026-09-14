@@ -715,3 +715,15 @@ Waar de spreker binnen een rede zichzelf aanhaalt, komt er geen tweede opmaak om
 ### A9 — Het opschrift van Sirach 51
 
 Sirach 51:1 begint in de Statenvertaling met een opschrift tussen dubbele punthaken: `Een Gebed van Jezus, de zoon van Sirach`. Het staat in de bron binnen vers 1 en niet als apart vers, en het blijft daarom in de parafrase binnen vers 1 staan, als eerste zin en zonder haken. Het vers heeft twee segmenten, zodat het opschrift en het begin van het gebed elk hun eigen bronfrase houden.
+
+### A10 — De tegenstander aan het woord in 3 Meqabyan
+
+3 Meqabyan is één gesprek. Na twee verzen vertelling neemt de tegenstander in 1:3 het woord met `En hij zei`, en hij houdt dat woord tot en met 2:7. Binnen zijn rede vertelt hij zijn gesprek met God na; die woorden van God staan als citaat binnen het citaat, in 1:18, in 1:22 tot 24 en in 2:1. Vanaf 2:8 antwoordt de profeet hem, aangekondigd met `En de profeet zei`, en dat antwoord loopt tot het eind van hoofdstuk 4. Binnen dat antwoord staan het gebod aan Adam in 2:15 en het woord van Salomo in 4:15 tot 18 als citaat binnen het citaat. Vanaf 5:1 richt het boek zich tot de mens zelf — `terwijl je stof bent, heeft Hij jou gemaakt` — en dat is de lerende stem van het boek; die krijgt geen opmaak, net als in Spreuken en in Jezus Sirach. Wat daarbinnen aangehaald wordt, staat wel in de opmaak: het woord van God in 5:10, 5:11, 6:12, 7:4 en 10:5, van Mozes in 6:10, van David in 7:1, 7:2 en 9:23 tot 27, van Job in 8:1, en de zinnen waar het boek tegen waarschuwt in 5:9, 5:10, 10:6 en 10:24.
+
+De tegenstander heet in de sprekerslijst Sablyanos, de naam die 1:1 hem geeft, met het soort `spirit`; de leeseditie geeft zijn woorden daardoor de opmaak van de duivel en niet die van gewone spraak. Waar hij zichzelf aanhaalt — `omdat ik zei: Ik buig niet voor dit schepsel van klei` in 1:15, en zijn eigen smeekbede in 1:17 en 1:18 — komt er geen tweede opmaak omheen, omdat een citaat binnen een citaat een wisseling van spreker markeert en niet een aanhaling van zichzelf.
+
+### A11 — Waar 3 Meqabyan zelf stukloopt
+
+De bron van 3 Meqabyan is op vier plaatsen onvolledig: 2:23 (`En Hij schiep voor hem…`), 3:1 (`Maar aan jou…`), 3:2 en 3:5. De parafrase geeft wat er staat en laat het beletselteken staan; er wordt niets aangevuld. Twee verzenparen zijn dubbel overgeleverd — 2:5 en 2:6, en 4:5 en 4:6 herhalen elkaar bijna woordelijk — en allebei de verzen blijven staan zoals de bron ze geeft, omdat het samenvoegen ervan de versnummering zou verschuiven. In 2:5 en 2:6 slaat de bron binnen de rede van de tegenstander om naar de derde persoon (`leidt hij hen af`); ook dat blijft staan.
+
+In 2:2 loopt de zin `en laat hen niet staan in goede werken — of u hen al zou kunnen verleiden` vast: `verleiden` is overal in het boek het werk van de tegenstander zelf, en een tweede persoon die verleidt past hier niet. De parafrase leest hier dat God hen niet voor hem zou kunnen bewaren, en houdt de aanspreekvorm U aan omdat de tegenstander in dit deel tegen God spreekt. De bronfrase bewaart de regel zoals hij er staat.
