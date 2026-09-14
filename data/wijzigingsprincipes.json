@@ -15220,6 +15220,54 @@
     ]
    },
    "bron": "menselijke-review"
+  },
+  {
+   "id": "V1641",
+   "categorie": "Werkwoordsvormen",
+   "oud": "mat (verleden tijd van meten)",
+   "nieuw": "meette",
+   "toelichting": "Beide vormen zijn goed Nederlands, maar 'mat' leest snel als het zelfstandig of bijvoeglijk naamwoord, en in Ezechiël 40-47 staat het tientallen keren achter elkaar. Toegepast in de boeken die bij het doorvoeren nog niet definitief waren.",
+   "regex": "\\bmat\\b",
+   "voorbeeld": "ezechiel 41:13",
+   "bereik": {
+    "ezechiel": [
+     "40:5",
+     "40:6",
+     "40:8",
+     "40:9",
+     "40:11",
+     "40:13",
+     "40:19",
+     "40:20",
+     "40:23",
+     "40:24",
+     "40:27",
+     "40:28",
+     "40:32",
+     "40:35",
+     "40:47",
+     "40:48",
+     "41:1",
+     "41:2",
+     "41:3",
+     "41:4",
+     "41:5",
+     "41:13",
+     "41:15",
+     "42:15",
+     "42:16",
+     "42:17",
+     "42:18",
+     "42:19",
+     "42:20",
+     "47:3",
+     "47:4",
+     "47:5"
+    ],
+    "2samuel": [
+     "8:2"
+    ]
+   }
   }
  ]
 }
