@@ -24,7 +24,7 @@ vul aan bij elke nieuwe terugkerende term of eigennaam (met Ge'ez-vorm).
 | ገብርኤል | Gabriël | aartsengel (40:9) |
 | ፋኑኤል | Fanuël | aartsengel (40:9) |
 | ሰይጣናት | de satans | enk. ሰይጣን (40:7) |
-| ትጉሃን | de wakers | lett. "de wakenden"; hemelse wezens (1:5) |
+| ትጉሃን | de wachters | lett. "de wakenden"; hemelse wezens (1:5); tot 2026 "de wakers" |
 | ቅዱሳን | de heiligen | |
 | ዲያብሎስ | de duivel | 3 Meqabyan |
 | አጋንንት | de duivelen / boze geesten | enk. ጋኔን; 3 Meqabyan |

@@ -15298,6 +15298,62 @@
     ]
    },
    "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-JUB-001",
+   "categorie": "Menselijke review",
+   "oud": "het mishaagde hem",
+   "nieuw": "het beviel hem niet",
+   "toelichting": "Beoordeeld in de review van Jubileeën; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "jubileeen 7:13",
+   "bereik": {
+    "jubileeen": [
+     "7:13"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-JUB-002",
+   "categorie": "Menselijke review",
+   "oud": "een vrees Gods zijn",
+   "nieuw": "godvrezend zijn",
+   "toelichting": "'Een vrees Gods' is hier een persoon die God vreest, geen eigenschap van God. Beoordeeld in de review van Jubileeën.",
+   "regex": "",
+   "voorbeeld": "jubileeen 18:11",
+   "bereik": {
+    "jubileeen": [
+     "18:9",
+     "18:11"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-JUB-003",
+   "categorie": "Menselijke review",
+   "oud": "dertien maten",
+   "nieuw": "dertien hele bakstenen",
+   "toelichting": "Vertaalcorrectie: het Ge'ez heeft ግንፋል, 'baksteen', hetzelfde woord als in 10:20. Beoordeeld in de review van Jubileeën.",
+   "regex": "",
+   "voorbeeld": "jubileeen 10:21",
+   "bereik": {
+    "jubileeen": [
+     "10:21"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "V1642",
+   "categorie": "Verouderde woorden",
+   "oud": "wakers",
+   "nieuw": "wachters",
+   "toelichting": "De hemelse wezens die in Henoch en Jubileeën over de mensen waken (Ge'ez ትጉሃን). Op verzoek van de eigenaar 'wachters', de gangbare Nederlandse benaming. Geldt voor de vertaling uit het Ge'ez; in de parafrase van Henoch staat nog 'wakers'.",
+   "regex": "\\bwakers\\b",
+   "voorbeeld": "jubileeen 4:22",
+   "bereik": {}
   }
  ]
 }
