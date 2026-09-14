@@ -663,3 +663,15 @@ De opschriften worden vertaald waar zij een functie noemen en blijven staan waar
 De alfabetliederen 111, 112, 119 en 145 laten de Hebreeuwse letternamen buiten de leestekst, zoals eerder al in 25, 34 en 37. In 119 is hun plaats zichtbaar gemaakt in de tweeëntwintig blokken van acht verzen. Psalm 145 heeft in de Statenvertaling geen vers bij de letter Nun; dat blijft zo, er is niets bijgeschreven.
 
 Alle 150 psalmen hebben conceptstatus: de technische bron-, segment-, citaat- en hashcontrole is afgerond, maar onafhankelijke menselijke eindgoedkeuring blijft open.
+
+## Apocriefen en Ethiopische boeken
+
+### A1 — Welke tekst de bron is
+
+Voor de apocriefen die de Statenvertaling heeft, is `textSV1888` de basistekst, net als voor de rest van de vertaling. De zes Ethiopische boeken — Henoch, Jubileeën, 1, 2 en 3 Meqabyan en 4 Baruch — hebben geen Statenvertaling; daar is de Open Vertaling zelf de bron, die uit het Ge’ez is vertaald. Het veld `bron.tekstveld` in elk vers zegt welke van de twee het is, zodat een lezer niet hoeft te raden waar de parafrase vandaan komt.
+
+Namen volgen de rest van de vertaling waar die het boek al kent. `Nabuchodonosor` wordt daarom Nebukadnezar en `Assuerus` wordt Ahasveros. In Tobit heet de vader Tobit en de zoon Tobias; de Statenvertaling noemt allebei Tobias, waardoor in de hoofdstukken 5 tot 12 niet te volgen is wie er spreekt.
+
+### A2 — Waar de bron zelf stukloopt
+
+Twee plaatsen zijn beschadigd overgeleverd en worden niet stilzwijgend gerepareerd. In 3 Makkabeeën 6:21 loopt de Statenvertaling halverwege dood in onleesbare woorden; de parafrase geeft het leesbare begin en de aankondiging, en de rede zelf staat in vers 22. In 4 Baruch 7:3 spreekt Baruch volgens de bron zichzelf aan terwijl hij de arend bedoelt; omdat de rest van datzelfde vers over de vogels van de hemel gaat, is de aanspraak op de arend gezet. In beide gevallen bewaart de bronfrase de regel zoals hij er staat.
