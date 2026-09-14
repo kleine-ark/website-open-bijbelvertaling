@@ -997,7 +997,6 @@ body {
 :root[data-theme="donker"] .god-speaks i { color: #f0978a !important; }
 :root[data-theme="donker"] .devil-speaks,
 :root[data-theme="donker"] .devil-speaks i { color: #d8d18a !important; }
-:root[data-theme="donker"] img { opacity: 0.92; }
 /* Geen brightness-dimming op de hero: de bovenkant moet helder zijn; alleen de
    gradient onderaan (in over-ov.html) verzorgt de fade naar de donkere pagina. */
 #app-container {
@@ -1583,6 +1582,15 @@ body {
     border-bottom-color: #2c5d89;
     color: #f4f8fc;
 }
+:root[data-theme="donker"] #options-title { color: var(--text-primary); }
+:root[data-theme="donker"] #sidebar-right input[type="checkbox"]:checked {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+:root[data-theme="donker"] #sidebar-right input[type="checkbox"]:checked::after {
+    background: #1a1d24;
+    box-shadow: none;
+}
 
 @media (max-width: 768px) {
     #sidebar-right.options-panel::backdrop {
@@ -1607,10 +1615,6 @@ body {
         transform: none;
         animation: none;
         box-shadow: 0 -12px 38px rgba(5, 24, 38, 0.28);
-    }
-    :root[data-theme="donker"] #sidebar-right.options-panel {
-        background: #fbfaf7 !important;
-        color: #172d40;
     }
     #sidebar-right-header.options-header {
         min-height: 54px;
@@ -1690,6 +1694,62 @@ body {
     .option-choice-inline label { min-height: 44px; }
     .option-row small { display: none; }
     #opt-regelafstand { width: 118px; }
+
+    /* Donker thema op mobiel — het blok hierboven zet het optiepaneel als een
+       licht vel op; in donkere modus moet datzelfde vel donker zijn. */
+    :root[data-theme="donker"] #sidebar-right.options-panel {
+        background: var(--bg-surface) !important;
+        color: var(--text-primary);
+        border-color: var(--border-soft);
+        box-shadow: 0 -12px 38px rgba(0, 0, 0, 0.6);
+    }
+    :root[data-theme="donker"] #sidebar-right-header.options-header {
+        background: var(--bg-surface);
+        color: var(--text-primary);
+        border-bottom-color: var(--border-soft);
+    }
+    :root[data-theme="donker"] #sidebar-right-toggle { color: var(--text-primary) !important; }
+    :root[data-theme="donker"] .options-tabs [role="tab"],
+    :root[data-theme="donker"] .options-tabs [role="tab"][aria-selected="true"] {
+        color: var(--text-primary) !important;
+    }
+    :root[data-theme="donker"] #sidebar-right-body.options-body {
+        background: var(--bg-surface);
+        color: var(--text-primary);
+    }
+    :root[data-theme="donker"] #sidebar-right .option-row,
+    :root[data-theme="donker"] #sidebar-right .option-choice > summary,
+    :root[data-theme="donker"] #sidebar-right .option-choice > legend,
+    :root[data-theme="donker"] #sidebar-right .option-status strong { color: var(--text-primary); }
+    :root[data-theme="donker"] #sidebar-right .option-row small,
+    :root[data-theme="donker"] #sidebar-right .option-current,
+    :root[data-theme="donker"] #sidebar-right .option-choice-values label,
+    :root[data-theme="donker"] #sidebar-right .option-status { color: var(--text-secondary); }
+    :root[data-theme="donker"] #sidebar-right .options-list,
+    :root[data-theme="donker"] #sidebar-right .option-row,
+    :root[data-theme="donker"] #sidebar-right .option-choice,
+    :root[data-theme="donker"] #sidebar-right .options-header { border-color: var(--border-soft); }
+    :root[data-theme="donker"] #sidebar-right input[type="radio"] { background: var(--bg-surface-alt); }
+    :root[data-theme="donker"] #sidebar-right label:has(input[type="radio"]:checked) {
+        color: var(--text-primary);
+    }
+    :root[data-theme="donker"] #sidebar-right .options-zoom-controls { background: var(--bg-surface-alt); }
+    :root[data-theme="donker"] #sidebar-right .options-zoom-controls button {
+        color: var(--text-primary) !important;
+    }
+    :root[data-theme="donker"] #sidebar-right input[type="checkbox"] { background: var(--bg-elevated) !important; }
+    :root[data-theme="donker"] #sidebar-right input[type="checkbox"]:checked {
+        background: var(--gold) !important;
+        border-color: var(--gold) !important;
+    }
+    :root[data-theme="donker"] #sidebar-right input[type="checkbox"]:checked::after {
+        background: #1a1d24;
+        box-shadow: none;
+    }
+    :root[data-theme="donker"] .options-category {
+        background: var(--bg-surface);
+        border-color: var(--border-soft);
+    }
 }
 @media (max-width: 430px) {
     .option-choice-grid { grid-template-columns: 1fr; }
