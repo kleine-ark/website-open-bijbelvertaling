@@ -114,6 +114,24 @@ def ankers(html):
     return uit, [w["vorm"] for w in ws]
 
 
+def tussen_zekere_blokken(blokken, index):
+    """Het woord aan de andere kant voor een woord dat gemoderniseerd is.
+
+    "En God zeide: Dat de wateren" tegenover "En God zei: Dat de wateren":
+    zeide valt buiten elk gelijk blok, maar staat tussen twee blokken van
+    minstens twee woorden, en tussen die blokken staan aan beide kanten
+    evenveel woorden. Dan hoort het k-de woord van het gat bij het k-de woord
+    van het andere gat. Verschilt het aantal, dan is er meer herschreven dan
+    een woord en blijft het onzeker."""
+    sterk = [(a, b, g) for a, b, g in blokken if g >= 2]
+    for (a1, b1, g1), (a2, b2, _) in zip(sterk, sterk[1:]):
+        gat_bron, gat_doel = (a1 + g1, a2), (b1 + g1, b2)
+        lengte = gat_bron[1] - gat_bron[0]
+        if gat_bron[0] <= index < gat_bron[1] and 0 < lengte <= 3 and lengte == gat_doel[1] - gat_doel[0]:
+            return gat_doel[0] + (index - gat_bron[0])
+    return None
+
+
 def plaats(doel_html, nummer, anker, bron_vormen):
     """Geeft (nieuwe_html, None) of (None, reden)."""
     doel = woorden(doel_html)
@@ -122,8 +140,9 @@ def plaats(doel_html, nummer, anker, bron_vormen):
     else:
         vormen = [w["vorm"] for w in doel]
         sm = difflib.SequenceMatcher(None, bron_vormen, vormen, autojunk=False)
+        blokken = sm.get_matching_blocks()
         j = None
-        for a, b, grootte in sm.get_matching_blocks():
+        for a, b, grootte in blokken:
             # Een blok van een woord is te zwak ("en", "de" komen overal voor),
             # behalve het eerste woord van beide verzen: "In den beginne" en
             # "In het begin" delen alleen "In", en dat is wel zeker.
@@ -131,6 +150,8 @@ def plaats(doel_html, nummer, anker, bron_vormen):
             if (grootte >= 2 or eerste_woord) and a <= anker["index"] < a + grootte:
                 j = b + (anker["index"] - a)
                 break
+        if j is None:
+            j = tussen_zekere_blokken(blokken, anker["index"])
         if j is None:
             return None, "benaderd"
         if abs(anker["index"] / max(1, len(bron_vormen)) - j / max(1, len(vormen))) > 0.35:

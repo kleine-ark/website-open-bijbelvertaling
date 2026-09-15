@@ -95,6 +95,24 @@ class PlaatsingTests(unittest.TestCase):
         html, _, _ = herstel.herstel_vers(v)
         self.assertEqual(html, f"Of tergen wij de Heere?{sup('44')} Zijn wij sterker dan Hij?")
 
+    def test_nummertje_achter_een_gemoderniseerd_woord_tussen_zekere_stukken(self):
+        # Genesis 1:9: zeide werd zei, de woorden ervoor en erna zijn gelijk gebleven.
+        v = vers(["e"],
+                 f"En God zeide:{sup('e')} Dat de wateren van onder den hemel vergaderd worden.",
+                 "En God zei: Dat de wateren van onder de hemel verzameld worden.")
+        html, geplaatst, _ = herstel.herstel_vers(v)
+        self.assertEqual(html, f"En God zei:{sup('e')} Dat de wateren van onder de hemel verzameld worden.")
+        self.assertEqual(geplaatst, ["e"])
+
+    def test_meer_herschreven_dan_een_woord_blijft_onzeker(self):
+        # Drie woorden werden er een: welk woord het nummertje draagt is niet zeker.
+        v = vers(["x"],
+                 f"En God sprak aldus zeggende:{sup('x')} Dat de wateren vergaderd worden.",
+                 "En God zei: Dat de wateren verzameld worden.")
+        html, geplaatst, lijst = herstel.herstel_vers(v)
+        self.assertEqual(html, v["text2026_html"])
+        self.assertEqual((geplaatst, [i["reden"] for i in lijst]), ([], ["benaderd"]))
+
     def test_onzekere_plek_gaat_naar_de_werklijst_en_niet_in_de_tekst(self):
         v = vers(["7"],
                  f"Toen sprak de koning{sup('7')} tot zijn knechten.",
