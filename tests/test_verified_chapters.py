@@ -42,6 +42,12 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
     assert all(verified.get(boek) == "all" for boek in eerder_menselijk_nagekeken_ot)
     assert all(verified.get(boek) == "all" for boek in nagekeken_apocrieven)
 
+    later_afgerond = {
+        "jeremia", "job", "spreuken", "hooglied", "jesaja", "klaagliederen",
+        "daniel", "2samuel", "ezechiel", "3ezra", "4ezra", "judith", "jubileeen",
+    }
+    assert all(verified.get(boek) == "all" for boek in later_afgerond)
+
     assert set(verified) == {
         "genesis",
         "exodus",
@@ -59,17 +65,12 @@ def test_alleen_menselijk_bevestigde_boeken_krijgen_reviewstatus():
         "nehemia",
         "1kronieken",
         "2kronieken",
-    } | nieuw_testament | eerder_menselijk_nagekeken_ot | nagekeken_apocrieven
+    } | nieuw_testament | eerder_menselijk_nagekeken_ot | nagekeken_apocrieven | later_afgerond
 
     niet_menselijk_bevestigd = {
-        "jeremia",
-        "2samuel",
-        "job",
-        "spreuken",
-        "hooglied",
-        "jesaja",
-        "klaagliederen",
-        "ezechiel",
-        "daniel",
+        "tobit", "boekderwijsheid", "jezussirach", "estherapocrief",
+        "gebedvanazaria", "gezangindevuuroven", "belenddedraak",
+        "2makkabeeen", "3makkabeeen", "henoch", "1meqabyan", "2meqabyan",
+        "3meqabyan", "4baruch",
     }
     assert niet_menselijk_bevestigd.isdisjoint(verified)
