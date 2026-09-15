@@ -483,6 +483,8 @@ const App = {
             document.getElementById('verses-container').innerHTML =
                 `<section class="translation-unavailable"><p>${App._escapeStrongHtml(message)}</p>` +
                 `<a href="${App._escapeStrongHtml(href)}">${App._escapeStrongHtml(action)}</a></section>`;
+            // Geen tekst in deze editie: ook de voorlezing van het vorige hoofdstuk stoppen.
+            App._updateAudioPlayer(bookId, chapterNum);
             return;
         }
         const translationMeta = chapter._translation || null;

@@ -58,5 +58,11 @@ window.OV_AUDIO = {
     toggleVoice() { const nv = this.getVoice() === 'm' ? 'v' : 'm'; this.setVoice(nv); return nv; },
     label(v) { return this.labels[v || this.getVoice()]; },
     src(bookId, chapter) { return window.OV_ASSETS.url(`audio/${bookId}/${chapter}-${this.getVoice()}.mp3`); },
-    available(bookId, chapter) { const list = (window.AUDIO_AVAILABLE || {})[bookId] || []; return list.includes(chapter); },
+    // De opnames lezen de Open Vertaling voor. Staat er een andere teksteditie in
+    // beeld, zoals de Open Parafrase Vertaling, dan hoort de opname niet bij de tekst.
+    available(bookId, chapter) {
+        const editie = (window.TekstEditie && typeof window.TekstEditie.code === 'function') ? window.TekstEditie.code() : 'nl-ov';
+        if (editie !== 'nl-ov') return false;
+        const list = (window.AUDIO_AVAILABLE || {})[bookId] || []; return list.includes(chapter);
+    },
 };
