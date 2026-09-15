@@ -447,6 +447,7 @@ class CollaborationFrontendTests(unittest.TestCase):
     def test_pages_and_global_client_exist(self):
         auth = (ROOT / "js" / "auth.js").read_text(encoding="utf-8")
         topnav = (ROOT / "js" / "topnav.js").read_text(encoding="utf-8")
+        bootstrap = (ROOT / "js" / "auth-bootstrap.js").read_text(encoding="utf-8")
         client = (ROOT / "js" / "collaboration.js").read_text(encoding="utf-8")
         users = (ROOT / "gebruikers.html").read_text(encoding="utf-8")
         reviews = (ROOT / "beoordelingen.html").read_text(encoding="utf-8")
@@ -455,7 +456,10 @@ class CollaborationFrontendTests(unittest.TestCase):
         reviews_client = (ROOT / "js" / "beoordelingen.js").read_text(encoding="utf-8")
         history_client = (ROOT / "js" / "beoordelingsgeschiedenis.js").read_text(encoding="utf-8")
 
-        self.assertIn("js/collaboration.js", topnav)
+        self.assertNotIn("js/collaboration.js", topnav)
+        self.assertIn("import './collaboration.js'", bootstrap)
+        for page in (users, reviews, history):
+            self.assertIn('type="module" src="/js/auth-bootstrap.js"', page)
         self.assertIn("'/api/collaboration' + path", client)
         self.assertIn("Gebruikers", users)
         self.assertIn("Beoordelingen", reviews)

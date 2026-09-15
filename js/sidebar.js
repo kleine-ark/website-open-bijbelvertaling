@@ -93,21 +93,7 @@ const Sidebar = {
 
         // Boekvolgorde uit gebruikersopties (canoniek / tenach / chronologisch / auteur / lengte)
         const mode = (typeof Opties !== 'undefined' && Opties.state && Opties.state.boekvolgorde) || 'canoniek';
-        const bookOrder = (typeof getBookOrderGroups === 'function')
-            ? getBookOrderGroups(mode, manifest)
-            : {
-                'Pentateuch': ['genesis', 'exodus', 'leviticus', 'numeri', 'deuteronomium'],
-                'Historische boeken': ['jozua', 'richteren', 'ruth', '1samuel', '2samuel', '1koningen', '2koningen', '1kronieken', '2kronieken', 'ezra', 'nehemia', 'esther'],
-                'Poëtische boeken': ['job', 'psalmen', 'spreuken', 'prediker', 'hooglied'],
-                'Grote profeten': ['jesaja', 'jeremia', 'klaagliederen', 'ezechiel', 'daniel'],
-                'Kleine profeten': ['hosea', 'joel', 'amos', 'obadja', 'jona', 'micha', 'nahum', 'habakuk', 'zefanja', 'haggai', 'zacharia', 'maleachi'],
-                'Apocriefen': ['3ezra', '4ezra', 'tobit', 'judith', 'boekderwijsheid', 'jezussirach', 'baruch', 'estherapocrief', 'gebedvanazaria', 'gezangindevuuroven', 'susanna', 'belenddedraak', 'gebedvanmanasse', '1makkabeeen', '2makkabeeen', '3makkabeeen'],
-                'Evangeliën': ['mattheus', 'markus', 'lukas', 'johannes'],
-                'Handelingen': ['handelingen'],
-                'Brieven van Paulus': ['romeinen', '1korinthiers', '2korinthiers', 'galaten', 'efeziers', 'filippenzen', 'kolossenzen', '1tessalonicensen', '2tessalonicensen', '1timotheus', '2timotheus', 'titus', 'filemon'],
-                'Algemene brieven': ['hebreeen', 'jakobus', '1petrus', '2petrus', '1johannes', '2johannes', '3johannes', 'judas'],
-                'Openbaring': ['openbaring'],
-            };
+        const bookOrder = getBookOrderGroups(mode, manifest);
 
         // Maak een lookup van book id -> book object
         const bookById = {};
@@ -123,7 +109,7 @@ const Sidebar = {
         // Voeg eventuele ontbrekende boeken toe aan de juiste groep
         const assignedIds = new Set(Object.values(bookOrder).flat());
         const unassigned = manifest.books.filter(b => !assignedIds.has(b.id) &&
-            (typeof isBookVisibleInNavigation !== 'function' || isBookVisibleInNavigation(b)));
+            isBookVisibleInNavigation(b));
         if (unassigned.length > 0) {
             groups.push({ label: 'Overig', books: unassigned });
         }
@@ -149,14 +135,14 @@ const Sidebar = {
             const booksContainer = document.createElement('div');
             booksContainer.className = 'tree-books';
 
-            const ethSet = new Set(window.ETHIOPIC_BOOKS || []);
+            const ethSet = new Set(window.ETHIOPIC_BOOKS);
             let ethHeaderDone = false;
             for (const book of books) {
                 // Sub-kop vóór het eerste Ethiopische boek (subcategorie binnen Apocriefen)
                 if (!ethHeaderDone && ethSet.has(book.id)) {
                     const sub = document.createElement('div');
                     sub.className = 'tree-subgroup-label';
-                    sub.textContent = window.ETHIOPIC_GROUP_LABEL || 'Ethiopische boeken (buiten de canon)';
+                    sub.textContent = window.ETHIOPIC_GROUP_LABEL;
                     booksContainer.appendChild(sub);
                     ethHeaderDone = true;
                 }

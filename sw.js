@@ -10,7 +10,7 @@
 
 const VERSION = 'v0.56.0';
 // New reader modules must not be mixed with HTML from before verification.
-const CACHE_VERSION = `${VERSION}-verification-v8`;
+const CACHE_VERSION = `${VERSION}-verification-v9`;
 const SHELL_CACHE   = `shell-${CACHE_VERSION}`;
 const DATA_CACHE    = `data-${CACHE_VERSION}`;
 const LEXICON_CACHE = `lexicon-${CACHE_VERSION}`;
@@ -20,6 +20,12 @@ const PRECACHE_URLS = [
     '/',
     '/index.html',
     '/js/theme.js',
+    '/js/auth-bootstrap.js',
+    '/js/firebase-config.js',
+    '/js/auth.js',
+    '/js/iframe-navigation.js',
+    '/js/doc-sidebar.js',
+    '/css/doc-sidebar.css',
     '/css/style.css',
     '/js/storage.js',
     '/js/i18n.js',

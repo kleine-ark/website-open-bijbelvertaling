@@ -1,5 +1,6 @@
 /* Open Vertaling — gedeelde bovenbalk (shared nav).
- * Gebruik: plaats <nav id="topnav"></nav> in de body en laad dit script er direct na.
+ * Gebruik: laad /js/auth-bootstrap.js als module in de head; plaats
+ * <nav id="topnav"></nav> in de body en laad dit script er direct na.
  * Injecteert de canonieke balk (merk, links, zoekbalk, thema-knop, auth-slot, hamburger)
  * en zet de actieve link op basis van de huidige pagina. Zo blijft de nav overal gelijk. */
 (function () {
@@ -135,21 +136,6 @@
             links[i].classList.add('active');
         }
     }
-
-    // Inlog-UI (auth-slot) vullen: laad de auth-scripts indien nog niet aanwezig,
-    // in volgorde (config vóór auth), zodat de login-knop overal verschijnt en de balk niet verspringt.
-    ['js/firebase-config.js', 'js/auth.js', 'js/collaboration.js'].forEach(function (src) {
-        var name = src.split('/').pop();
-        if (document.querySelector('script[src$="' + name + '"]')) return;
-        var s = document.createElement('script'); s.src = src; s.async = false;
-        if (name === 'auth.js') {
-            // auth.js init't normaal op DOMContentLoaded; dat is bij dynamisch laden al voorbij → zelf init'en.
-            s.onload = function () { if (window.Auth && document.readyState !== 'loading') window.Auth.init(); };
-        } else if (name === 'collaboration.js') {
-            s.onload = function () { if (window.Collaboration) window.Collaboration.init(); };
-        }
-        document.head.appendChild(s);
-    });
 
     // Mobiele zoomregeling (zweefknop −/+) — self-contained, op elke pagina.
     if (!document.querySelector('script[src$="zoom.js"]')) {

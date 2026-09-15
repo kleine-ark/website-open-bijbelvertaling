@@ -4949,16 +4949,6 @@ body.dark .geez-lex-popup .geez-lex-betekenis { color: #d8d8d8; }
 :root[data-theme="donker"] table th { background: var(--bg-surface-alt) !important; color: var(--text-primary) !important; }
 :root[data-theme="donker"] table td { border-color: var(--border-default) !important; }
 
-/* Side navigation (in iframes — statistieken etc.) */
-:root[data-theme="donker"] nav[style*="background:#f5f2ed"],
-:root[data-theme="donker"] nav[style*="background: #f5f2ed"] {
-    background: var(--bg-surface) !important;
-}
-:root[data-theme="donker"] nav[style*="background:#f5f2ed"] a,
-:root[data-theme="donker"] nav[style*="background: #f5f2ed"] a {
-    color: var(--text-primary) !important;
-}
-
 /* Statistieken stat-cards */
 :root[data-theme="donker"] .stat-card { background: var(--bg-surface) !important; color: var(--text-primary) !important; border-color: var(--border-default) !important; }
 :root[data-theme="donker"] .stat-number { color: var(--text-primary) !important; }
@@ -5204,12 +5194,6 @@ body.dark .geez-lex-popup .geez-lex-betekenis { color: #d8d8d8; }
     color: var(--text-primary) !important;
 }
 :root[data-theme="donker"] .page a { color: var(--gold) !important; }
-
-/* Side-navigatie op stat-pagina's (iframe-context) */
-:root[data-theme="donker"] nav[style*="background:#f5f2ed"] a,
-:root[data-theme="donker"] nav[style*="background: #f5f2ed"] a {
-    color: var(--text-primary) !important;
-}
 
 /* Hero op over-ov.html — donker thema: GEEN brightness-dimming (afbeelding helder
    houden; alleen de gradient onderaan in over-ov.html fadet naar donker). */
@@ -5604,32 +5588,7 @@ body.doorlopend-aan #chapter-footer::after {
 .page { min-width: 0; }
 @media (max-width: 820px) {
   .doc-shell { flex-direction: column; }
-  .doc-sidebar {
-    width: 100% !important;
-    min-width: 0 !important;
-    border-right: none !important;
-    border-bottom: 1px solid #e5e1d8 !important;
-    padding: 8px 10px !important;
-    box-sizing: border-box;
-    display: flex !important;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 2px 3px;
-  }
-  .doc-sidebar > a {
-    display: inline-block !important;
-    padding: 6px 10px !important;
-    border-left: none !important;
-    border-radius: 6px;
-    font-size: 13px;
-  }
-  .doc-sidebar > div {            /* sectiekopjes 'Documentatie' / 'Lexicons' */
-    width: 100%;
-    padding: 8px 6px 2px !important;
-    margin: 0 !important;
-  }
 }
-:root[data-theme="donker"] .doc-sidebar { border-bottom-color: var(--border-default) !important; }
 
 /* ── Mobiele weergave: doc-content die niet meekromp ──────────────────────────
    Een brede tabel (bv. .book-table, 9 kolommen) rekt anders de héle

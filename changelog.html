@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+    <script type="module" src="/js/auth-bootstrap.js"></script>
     <meta charset="UTF-8">
     <script src="/js/theme.js"></script>
     
@@ -62,7 +63,7 @@
     </style>
 </head>
 <body>
-<script>if (window.self !== window.top) { document.body.classList.add('in-iframe'); document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('a[href]').forEach(function(a){ var h=a.getAttribute('href'); if(h && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('http') && !h.startsWith('javascript:')) a.target='_top'; }); }); }</script>
+<script src="js/iframe-navigation.js"></script>
     <nav id="topnav"></nav>
     <script src="js/topnav.js"></script>
 
@@ -139,8 +140,6 @@
 
     loadChangelog();
     </script>
-<script src="js/firebase-config.js"></script>
-<script src="js/auth.js"></script>
 <script src="js/stats-inject.js"></script>
 <script src="js/review-chart.js"></script>
 </body>

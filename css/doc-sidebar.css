@@ -1,0 +1,64 @@
+.doc-sidebar {
+    width: 220px;
+    min-width: 220px;
+    background: #f5f2ed;
+    border-right: 1px solid #e5e1d8;
+    padding: 20px 0;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+}
+.doc-sidebar-title, .doc-sidebar-section {
+    padding: 0 16px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #cba449;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.doc-sidebar-section { padding: 12px 16px 8px; margin-top: 12px; }
+.doc-sidebar a {
+    display: block;
+    padding: 8px 20px;
+    color: #333;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+}
+.doc-sidebar a:where(.doc-sidebar-child) { padding-left: 32px; }
+.doc-sidebar a[aria-current="page"] {
+    color: #142e42;
+    font-weight: 600;
+    border-left-color: #cba449;
+    background: rgba(203, 164, 73, 0.08);
+}
+:root[data-theme="donker"] .doc-sidebar {
+    background: var(--bg-surface);
+    border-bottom-color: var(--border-default);
+}
+:root[data-theme="donker"] .doc-sidebar a { color: var(--text-primary); }
+
+@media (max-width: 820px) {
+  .doc-sidebar {
+    width: 100%;
+    min-width: 0;
+    border-right: none;
+    border-bottom: 1px solid #e5e1d8;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px 3px;
+  }
+  .doc-sidebar > a {
+    display: inline-block;
+    padding: 6px 10px;
+    border-left: none;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+  .doc-sidebar > div {            /* sectiekopjes 'Documentatie' / 'Lexicons' */
+    width: 100%;
+    padding: 8px 6px 2px;
+    margin: 0;
+  }
+}

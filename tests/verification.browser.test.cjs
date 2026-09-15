@@ -1,48 +1,12 @@
 const { test, before, after } = require('node:test');
 const assert = require('node:assert/strict');
-const { spawn } = require('node:child_process');
-const { chromium } = require('playwright');
-const { once } = require('node:events');
-let server, browser, base, locationId;
-
+const { startFixture } = require('./helpers/browser-fixture.cjs');
+let fixture, browser, base, locationId, pageAs;
 before(async () => {
-    server = spawn('python3', ['-B', 'tests/serve_verification_fixture.py']);
-    server.stderr.on('data', () => {});
-    const [data] = await once(server.stdout, 'data');
-    const config = JSON.parse(String(data));
-    base = 'http://127.0.0.1:' + config.port;
-    locationId = config.location;
-    browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome', headless: true });
+    fixture = await startFixture();
+    ({ browser, base, locationId, pageAs } = fixture);
 });
-after(async () => {
-    await browser?.close();
-    if (server && server.exitCode === null) { server.kill(); await once(server, 'exit'); }
-});
-
-async function pageAs(who) {
-    // Routing deliberately controls in-flight responses; worker behavior has its own tests.
-    const page = await browser.newPage({ serviceWorkers: 'block' });
-    await page.route('https://**', route => route.abort());
-    await page.route('**/js/firebase-config.js', route => route.fulfill({ body: 'window.firebaseEnabled = true;' }));
-    await page.route('**/js/auth.js', route => route.fulfill({ body: '' }));
-    for (const file of ['cloud-opties', 'cloud-highlights']) {
-        await page.route('**/js/' + file + '.js', route => route.fulfill({ body: '' }));
-    }
-    await page.addInitScript(user => {
-        let listeners = [];
-        window.Auth = {
-            currentUser: null, stateResolved: true,
-            onChange(callback) { listeners.push(callback); callback(this.currentUser, true); },
-        };
-        window.setTestUser = name => {
-            Auth.currentUser = name ? { uid: name, getIdToken: async () => name } : null;
-            listeners.forEach(callback => callback(Auth.currentUser, true));
-        };
-        setTestUser(user);
-        localStorage.setItem('doorlopend', 'false');
-    }, who);
-    return page;
-}
+after(async () => { await fixture.close(); });
 
 test('management pages apply the saved or system theme before opening display settings', async () => {
     for (const file of ['beoordelingen.html', 'beoordelingsgeschiedenis.html', 'gebruikers.html']) {

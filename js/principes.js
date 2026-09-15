@@ -282,8 +282,8 @@
     // De uitzonderingsknop hoort alleen bij een ingelogde redacteur. Voor een
     // uitgelogde bezoeker wekte hij de indruk dat je de vertaling kon aanpassen,
     // terwijl hij alleen in deze browser een aantekening bewaart.
-    // js/auth.js wordt ná dit bestand geladen, maar bestaat wel zodra het
-    // document geladen is; onChange meldt de huidige status meteen terug.
+    // auth-bootstrap.js laadt Auth vóór DOMContentLoaded;
+    // onChange meldt de huidige status meteen terug.
     function koppelInlogstatus() {
         if (!window.Auth || typeof window.Auth.onChange !== 'function') return;
         window.Auth.onChange(function (gebruiker) {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+    <script type="module" src="/js/auth-bootstrap.js"></script>
     <meta charset="UTF-8">
     <script src="/js/theme.js"></script>
     <link rel="stylesheet" href="css/verification.css">
@@ -126,7 +127,6 @@
             </fieldset>
         </section>
     </main>
-    <script src="js/collaboration.js"></script>
     <script src="js/verification.js"></script>
     <div id="popup" class="ol-popup" style="display:none;">
         <a href="#" id="popup-closer" class="ol-popup-closer">✕</a>
@@ -326,7 +326,5 @@
         }).catch(function (e) { document.getElementById('telling').textContent = 'Kon kaartgegevens niet laden.'; console.error(e); });
     })();
     </script>
-    <script src="js/firebase-config.js"></script>
-    <script src="js/auth.js"></script>
 </body>
 </html>

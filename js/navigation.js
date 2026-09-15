@@ -16,21 +16,7 @@ const Navigation = {
 
         // Boekvolgorde uit gebruikersopties (canoniek / tenach / chronologisch / auteur / lengte)
         const mode = (typeof Opties !== 'undefined' && Opties.state && Opties.state.boekvolgorde) || 'canoniek';
-        const bookOrder = (typeof getBookOrderGroups === 'function')
-            ? getBookOrderGroups(mode, manifest)
-            : {
-                'Pentateuch': ['genesis', 'exodus', 'leviticus', 'numeri', 'deuteronomium'],
-                'Historische boeken': ['jozua', 'richteren', 'ruth', '1samuel', '2samuel', '1koningen', '2koningen', '1kronieken', '2kronieken', 'ezra', 'nehemia', 'esther'],
-                'Poëtische boeken': ['job', 'psalmen', 'spreuken', 'prediker', 'hooglied'],
-                'Grote profeten': ['jesaja', 'jeremia', 'klaagliederen', 'ezechiel', 'daniel'],
-                'Kleine profeten': ['hosea', 'joel', 'amos', 'obadja', 'jona', 'micha', 'nahum', 'habakuk', 'zefanja', 'haggai', 'zacharia', 'maleachi'],
-                'Apocriefen': ['3ezra', '4ezra', 'tobit', 'judith', 'boekderwijsheid', 'jezussirach', 'baruch', 'estherapocrief', 'gebedvanazaria', 'gezangindevuuroven', 'susanna', 'belenddedraak', 'gebedvanmanasse', '1makkabeeen', '2makkabeeen', '3makkabeeen'],
-                'Evangeliën': ['mattheus', 'markus', 'lukas', 'johannes'],
-                'Handelingen': ['handelingen'],
-                'Brieven van Paulus': ['romeinen', '1korinthiers', '2korinthiers', 'galaten', 'efeziers', 'filippenzen', 'kolossenzen', '1tessalonicensen', '2tessalonicensen', '1timotheus', '2timotheus', 'titus', 'filemon'],
-                'Algemene brieven': ['hebreeen', 'jakobus', '1petrus', '2petrus', '1johannes', '2johannes', '3johannes', 'judas'],
-                'Openbaring': ['openbaring'],
-            };
+        const bookOrder = getBookOrderGroups(mode, manifest);
 
         const bookById = {};
         for (const b of manifest.books) bookById[b.id] = b;
@@ -63,7 +49,7 @@ const Navigation = {
         // Eventuele ontbrekende boeken
         const assignedIds = new Set(Object.values(bookOrder).flat());
         const unassigned = manifest.books.filter(b => !assignedIds.has(b.id) &&
-            (typeof isBookVisibleInNavigation !== 'function' || isBookVisibleInNavigation(b)));
+            isBookVisibleInNavigation(b));
         if (unassigned.length > 0) addGroup('Overig', unassigned);
     },
 

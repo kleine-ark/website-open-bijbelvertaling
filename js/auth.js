@@ -5,17 +5,12 @@
  */
 
 (function () {
-// Guard: sommige pagina's laden auth.js statisch, topnav.js injecteert het ook
-// dynamisch. Zonder deze check gaf dat "Identifier 'Auth' has already been declared"
-// (en op Safari/WebKit kan zo'n dubbele const de scriptuitvoering stoppen).
-if (window.Auth) return;
 const Auth = {
     app: null,
     auth: null,
     db: null,
     currentUser: null,
     stateResolved: false,
-    initializing: false,
     listeners: [],   // (user|null, stateResolved) => void
     CACHE_KEY: 'osv_auth_cache',
 
@@ -53,8 +48,6 @@ const Auth = {
     },
 
     async init() {
-        if (this.initializing || this.stateResolved) return;
-        this.initializing = true;
         // Instant render vanuit cache zodat de naam direct verschijnt
         // i.p.v. te wachten op Firebase-CDN + onAuthStateChanged round-trip.
         const cached = this.loadCache();
@@ -170,6 +163,5 @@ const Auth = {
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => Auth.init());
 window.Auth = Auth;
 })();

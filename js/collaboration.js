@@ -1,10 +1,8 @@
 /* Gedeelde client voor accounts, rollen en beoordelingen. */
 (function () {
     'use strict';
-    if (window.Collaboration) return;
 
     var listeners = [];
-    var initialized = false;
     var sessionGeneration = 0;
 
     function emit(profile) {
@@ -104,8 +102,6 @@
         ready: false,
 
         init: function () {
-            if (initialized || !window.Auth) return;
-            initialized = true;
             window.Auth.onChange(synchronize);
         },
 
@@ -145,6 +141,4 @@
         // A restored document must resolve the current login again, not reuse private DOM.
         if (event.persisted) location.reload();
     });
-    if (window.Auth) Collaboration.init();
-    else document.addEventListener('DOMContentLoaded', function () { Collaboration.init(); });
 })();
