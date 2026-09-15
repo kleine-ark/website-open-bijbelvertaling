@@ -37,6 +37,12 @@ KLASSE = {"god": "god-speaks", "mens": "direct-speech"}
 SPAN = re.compile(r'<span class="(?:god-speaks|direct-speech|angel-speaks|devil-speaks)"><i>(.*?)</i></span>', re.S)
 
 
+def noten(html):
+    """De notenmarkeringen in volgorde. kaal() laat ze buiten beschouwing, en
+    zo zijn ze bij eerdere opmaakrondes in duizenden verzen ongemerkt verdwenen."""
+    return re.findall(r'<sup class="note-marker" data-note="([^"]*)"', html)
+
+
 def kaal(html):
     """Alleen de leesbare tekst — om te toetsen dat er niets zoekraakt."""
     zonder = re.sub(r'<sup[^>]*>.*?</sup>', '', html)
@@ -52,6 +58,7 @@ class Hoofdstuk:
         self.data = json.loads(ruw)
         self.vers = {v["number"]: v for v in self.data["verses"]}
         self.voor = {n: kaal(v["text2026_html"]) for n, v in self.vers.items()}
+        self.noten = {n: noten(v["text2026_html"]) for n, v in self.vers.items()}
         self.gewijzigd = []
 
     # -- bouwstenen ---------------------------------------------------------
@@ -143,6 +150,10 @@ class Hoofdstuk:
                 raise AssertionError(f"vers {n}: de tekst is veranderd, alleen opmaak mocht wijzigen\n"
                                      f"  was: {self.voor[n][:110]}\n"
                                      f"  nu : {kaal(v['text2026_html'])[:110]}")
+            if noten(v["text2026_html"]) != self.noten[n]:
+                raise AssertionError(f"vers {n}: notenmarkeringen verdwenen of verplaatst\n"
+                                     f"  was: {self.noten[n]}\n"
+                                     f"  nu : {noten(v['text2026_html'])}")
             h = v["text2026_html"]
             if h.count('<span') != h.count('</span>') or h.count('<i>') != h.count('</i>'):
                 raise AssertionError(f"vers {n}: ongebalanceerde opmaak")

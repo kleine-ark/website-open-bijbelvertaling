@@ -54,6 +54,10 @@ VERS = re.compile(
     r'\s*(.+)</i></span>(.*)$', re.S)
 
 
+# kaal() negeert notenmarkeringen; die worden daarom apart vergeleken.
+NOOT = re.compile(r'<sup class="note-marker" data-note="([^"]*)"')
+
+
 def kaal(html):
     zonder = re.sub(r'<sup[^>]*>.*?</sup>', '', html)
     return re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', zonder)).strip()
@@ -82,6 +86,8 @@ def herzie(html):
     nieuw = f'{kopnoten}{aankondiging} <span class="{klasse}"><i>{rede}</i></span>{staart}'
     if kaal(nieuw) != kaal(html):
         return None                                  # er zou tekst verschuiven
+    if NOOT.findall(nieuw) != NOOT.findall(html):
+        return None                                  # er zou een nummertje verdwijnen
     if nieuw.count('<span') != nieuw.count('</span>') or nieuw.count('<i>') != nieuw.count('</i>'):
         return None
     return nieuw
