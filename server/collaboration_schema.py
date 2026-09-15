@@ -139,4 +139,3 @@ def initialize_database(db, bootstrap_admins, administrator_roles, timestamp):
                 END"""
         )
     db.execute("INSERT INTO metadata VALUES ('historical-review-attribution-v3', ?)", (timestamp,))
-

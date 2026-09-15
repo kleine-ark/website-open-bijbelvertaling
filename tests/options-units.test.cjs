@@ -24,6 +24,7 @@ test('extracted number formatting preserves small numbers and marks composite nu
     assert.doesNotMatch(current.toonGetalcijfers('drie dagen en twintig nachten, maar een mens'), /getal-cijfer/);
     assert.match(current.toonGetalcijfers('twintig en een stammen'), /\(21\)<\/span>/);
     assert.match(current.toonGetalcijfers('zeven en vijftig duizend en vierhonderd'), /\(57\.400\)<\/span>/);
+    assert.equal(current.toonGetalcijfers('met de duizenden van de hemel'), 'met de duizenden van de hemel');
 });
 
 test('extracted measurement helpers preserve default text and support metric conversion', () => {

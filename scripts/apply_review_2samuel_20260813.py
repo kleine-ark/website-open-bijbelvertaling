@@ -16,7 +16,7 @@ from synchroniseer_opmaak import bijtrekken  # noqa: E402
 # Alleen expliciete, tekstuele vervangingen. Citatie-, tag- en onderzoeksverzoeken
 # blijven in de bronlijst staan totdat zij inhoudelijk zijn uitgewerkt.
 CORRECTIES = {
-    (1, 1): [("wedergekomen", "teruggekomen")],
+    (1, 1): [("wedergekomen", "teruggekeerd")],
     (1, 2): [("wiens kleren", "van wie de kleren")],
     (1, 4): [("Verhaal het mij", "Vertel het mij")],
     (1, 6): [("bij geval", "toevallig")],
@@ -58,7 +58,7 @@ CORRECTIES = {
     (20, 3): [("haarlieder dood", "hun dood")],
     (20, 6): [("meer kwaads doen", "meer kwaad doen")],
     (21, 12): [("burgeren", "burgers")],
-    (23, 7): [("ter zelver plaats", "op die plaats")],
+    (23, 7): [("ter zelver plaats", "ter plekke")],
 }
 
 

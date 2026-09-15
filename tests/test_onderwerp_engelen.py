@@ -22,7 +22,7 @@ def test_engelenbouw_is_deterministisch_en_scant_alle_boeken():
 
     assert first == second
     assert first["report"]["boekenGescand"] == 88
-    assert first["report"]["verzenGescand"] == 41132
+    assert first["report"]["verzenGescand"] == 41181
     assert len(first["report"]["perBoek"]) == 88
 
 

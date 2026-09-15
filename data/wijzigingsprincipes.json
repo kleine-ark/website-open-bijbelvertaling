@@ -109,7 +109,7 @@
    "categorie": "Aanspreekvormen",
    "oud": "gij / Gij",
    "nieuw": "u / U",
-   "toelichting": "Aanspreekvorm",
+   "toelichting": "Aanspreekvorm In de apocriefen schreef de Statenvertaling ook tot God 'gij' en 'uw' met een kleine letter; in de gebeden die tot God gericht zijn staat daar 'U' en 'Uw'.",
    "regex": "\\b[Gg]ij\\b"
   },
   {
@@ -6309,7 +6309,7 @@
    "categorie": "Spelling",
    "oud": "een (telwoord)",
    "nieuw": "één",
-   "toelichting": "Telwoord \"een\" → \"één\" waar het nadrukkelijk 1 betekent (op één dag, één lichaam, niet één). Lidwoord \"een\" blijft.",
+   "toelichting": "Telwoord \"een\" → \"één\" waar het nadrukkelijk 1 betekent (op één dag, één lichaam, niet één). Lidwoord \"een\" blijft. Niet bij 'een van' zonder nadruk: daar is 'een' geen telwoord ('een van de jongens').",
    "regex": "\\b[Ee]en\\b"
   },
   {
@@ -12305,7 +12305,7 @@
    "id": "MR-SK-101",
    "categorie": "Menselijke review",
    "oud": "ter zelver plaats",
-   "nieuw": "op die plaats",
+   "nieuw": "ter plekke",
    "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
    "regex": "",
    "voorbeeld": "2samuel 23:7",
@@ -12846,7 +12846,7 @@
    "id": "MR-SK-137",
    "categorie": "Menselijke review",
    "oud": "wedergekomen",
-   "nieuw": "teruggekomen",
+   "nieuw": "teruggekeerd",
    "toelichting": "Contextueel beoordeeld tijdens de menselijke review van 1–2 Samuel en 1 Koningen; niet zonder herbeoordeling buiten het vermelde bereik toepassen.",
    "regex": "",
    "voorbeeld": "2samuel 1:1",
@@ -15160,6 +15160,286 @@
    "regex": "\\b(ik|mij|mijn)\\b",
    "bereik": "4 Ezra, en daarbinnen alleen wat als Godsspraak is opgemaakt",
    "voorbeeld": "4 Ezra 1:5 | verkondig mijn volk hun boosheden ... die zij tegen mij hebben begaan | verkondig Mijn volk hun boosheden ... die zij tegen Mij hebben begaan"
+  },
+  {
+   "id": "V1641",
+   "categorie": "Werkwoordsvormen",
+   "oud": "mat (verleden tijd van meten)",
+   "nieuw": "meette",
+   "toelichting": "Beide vormen zijn goed Nederlands, maar 'mat' leest snel als het zelfstandig of bijvoeglijk naamwoord, en in Ezechiël 40-47 staat het tientallen keren achter elkaar. Toegepast in de boeken die bij het doorvoeren nog niet definitief waren.",
+   "regex": "\\bmat\\b",
+   "voorbeeld": "ezechiel 41:13",
+   "bereik": {
+    "ezechiel": [
+     "40:5",
+     "40:6",
+     "40:8",
+     "40:9",
+     "40:11",
+     "40:13",
+     "40:19",
+     "40:20",
+     "40:23",
+     "40:24",
+     "40:27",
+     "40:28",
+     "40:32",
+     "40:35",
+     "40:47",
+     "40:48",
+     "41:1",
+     "41:2",
+     "41:3",
+     "41:4",
+     "41:5",
+     "41:13",
+     "41:15",
+     "42:15",
+     "42:16",
+     "42:17",
+     "42:18",
+     "42:19",
+     "42:20",
+     "47:3",
+     "47:4",
+     "47:5"
+    ],
+    "2samuel": [
+     "8:2"
+    ]
+   }
+  },
+  {
+   "id": "MR-3EZ-001",
+   "categorie": "Menselijke review",
+   "oud": "niet te verzuimen",
+   "nieuw": "dit niet te laten liggen",
+   "toelichting": "De brief aan de koning zegt dat men de zaak niet wil laten liggen. Beoordeeld in de review van 3 Ezra; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "3ezra 2:20",
+   "bereik": {
+    "3ezra": [
+     "2:20"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-JDT-001",
+   "categorie": "Menselijke review",
+   "oud": "uitgelezen mannen",
+   "nieuw": "uitgekozen mannen",
+   "toelichting": "Zoals MR-1KR-004 in 1 Kronieken 9:22. Beoordeeld in de review van Judith; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "judith 2:7",
+   "bereik": {
+    "judith": [
+     "2:7"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-JUB-001",
+   "categorie": "Menselijke review",
+   "oud": "het mishaagde hem",
+   "nieuw": "het beviel hem niet",
+   "toelichting": "Beoordeeld in de review van Jubileeën; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "jubileeen 7:13",
+   "bereik": {
+    "jubileeen": [
+     "7:13"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-JUB-002",
+   "categorie": "Menselijke review",
+   "oud": "een vrees Gods zijn",
+   "nieuw": "godvrezend zijn",
+   "toelichting": "'Een vrees Gods' is hier een persoon die God vreest, geen eigenschap van God. Beoordeeld in de review van Jubileeën.",
+   "regex": "",
+   "voorbeeld": "jubileeen 18:11",
+   "bereik": {
+    "jubileeen": [
+     "18:9",
+     "18:11"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-JUB-003",
+   "categorie": "Menselijke review",
+   "oud": "dertien maten",
+   "nieuw": "dertien hele bakstenen",
+   "toelichting": "Vertaalcorrectie: het Ge'ez heeft ግንፋል, 'baksteen', hetzelfde woord als in 10:20. Beoordeeld in de review van Jubileeën.",
+   "regex": "",
+   "voorbeeld": "jubileeen 10:21",
+   "bereik": {
+    "jubileeen": [
+     "10:21"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "V1642",
+   "categorie": "Verouderde woorden",
+   "oud": "wakers",
+   "nieuw": "wachters",
+   "toelichting": "De hemelse wezens die in Henoch en Jubileeën over de mensen waken (Ge'ez ትጉሃን). Op verzoek van de eigenaar 'wachters', de gangbare Nederlandse benaming. Geldt voor de vertaling uit het Ge'ez; in de parafrase van Henoch staat nog 'wakers'.",
+   "regex": "\\bwakers\\b",
+   "voorbeeld": "jubileeen 4:22",
+   "bereik": {}
+  },
+  {
+   "id": "MR-OPM-001",
+   "categorie": "Menselijke review",
+   "oud": "wederkomen",
+   "nieuw": "terugkeren",
+   "toelichting": "Op verzoek 'terugkeren' in plaats van 'terugkomen' (V769), in de boeken die nog niet definitief waren.",
+   "regex": "",
+   "bron": "menselijke-review",
+   "bereik": {
+    "2makkabeeen": [
+     "6:17"
+    ],
+    "2samuel": [
+     "12:23"
+    ],
+    "ezechiel": [
+     "20:38"
+    ],
+    "jubileeen": [
+     "42:12"
+    ],
+    "tobit": [
+     "6:20"
+    ]
+   },
+   "voorbeeld": "2makkabeeen 6:17"
+  },
+  {
+   "id": "MR-OPM-002",
+   "categorie": "Menselijke review",
+   "oud": "bij geval",
+   "nieuw": "toevallig",
+   "toelichting": "Zoals MR-SK-015 in 2 Samuël 1:6, in de boeken die nog niet definitief waren.",
+   "regex": "",
+   "bron": "menselijke-review",
+   "bereik": {
+    "2samuel": [
+     "20:1"
+    ],
+    "boekderwijsheid": [
+     "2:2"
+    ]
+   },
+   "voorbeeld": "2samuel 20:1"
+  },
+  {
+   "id": "MR-OPM-003",
+   "categorie": "Menselijke review",
+   "oud": "bekwaam (in de zin van passend of geschikt)",
+   "nieuw": "passend / geschikt / juist",
+   "toelichting": "Zoals MR-SK-012 in 2 Samuël 18:22. Waar 'bekwaam' 'in staat' betekent (4 Ezra 4:44, Jezus Sirach 50:29), blijft het staan.",
+   "regex": "",
+   "bron": "menselijke-review",
+   "bereik": {
+    "2makkabeeen": [
+     "14:22",
+     "15:40"
+    ],
+    "boekderwijsheid": [
+     "16:20"
+    ],
+    "estherapocrief": [
+     "14:13"
+    ],
+    "jezussirach": [
+     "18:22",
+     "20:20"
+    ]
+   },
+   "voorbeeld": "2makkabeeen 14:22"
+  },
+  {
+   "id": "MR-OPM-004",
+   "categorie": "Menselijke review",
+   "oud": "bekwamelijk",
+   "nieuw": "op gepaste wijze",
+   "toelichting": "V155 maakte hier 'bekwaam' van, wat als bijwoord 'kundig' zou betekenen; Lysias verantwoordde de zaak op gepaste wijze.",
+   "regex": "",
+   "bron": "menselijke-review",
+   "bereik": {
+    "2makkabeeen": [
+     "13:26"
+    ]
+   },
+   "voorbeeld": "2makkabeeen 13:26"
+  },
+  {
+   "id": "MR-2SA-001",
+   "categorie": "Menselijke review",
+   "oud": "maliënkolder",
+   "nieuw": "benauwdheid",
+   "toelichting": "Het Hebreeuwse woord komt alleen hier voor. De Statenvertaling denkt aan een pantser; de samenhang (Saul vraagt om de genadeslag) wijst op de doodsstrijd zelf. Beoordeeld in de review van 2 Samuël; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2samuel 1:9",
+   "bereik": {
+    "2samuel": [
+     "1:9"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-2SA-002",
+   "categorie": "Menselijke review",
+   "oud": "de pont overvoer",
+   "nieuw": "men de doorwaadbare plaats overstak",
+   "toelichting": "Het Hebreeuws spreekt van de overgang zelf; een veerboot wordt niet genoemd. Keuze van de eigenaar van het project. Beoordeeld in de review van 2 Samuël; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2samuel 19:18",
+   "bereik": {
+    "2samuel": [
+     "19:18"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-2SA-003",
+   "categorie": "Menselijke review",
+   "oud": "Steunsel",
+   "nieuw": "Steun",
+   "toelichting": "Gelijkgetrokken met Psalm 18:19, waar dezelfde zin al zo luidt. Beoordeeld in de review van 2 Samuël; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2samuel 22:19",
+   "bereik": {
+    "2samuel": [
+     "22:19"
+    ]
+   },
+   "bron": "menselijke-review"
+  },
+  {
+   "id": "MR-2SA-004",
+   "categorie": "Menselijke review",
+   "oud": "reinigheid",
+   "nieuw": "reinheid",
+   "toelichting": "Gelijkgetrokken met Psalm 18:21 en 18:25; in 22:21 valt het woord onder het naamvalprincipe van dezelfde woordgroep. Beoordeeld in de review van 2 Samuël; niet zonder herbeoordeling buiten dit bereik toepassen.",
+   "regex": "",
+   "voorbeeld": "2samuel 22:25",
+   "bereik": {
+    "2samuel": [
+     "22:25"
+    ]
+   },
+   "bron": "menselijke-review"
   }
  ]
 }

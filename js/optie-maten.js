@@ -515,6 +515,10 @@ const OptieMaten = {
             if (!gevonden) return null;
             i += gevonden.length;
             if (typeof E.getallen[gevonden] === 'number') res.push(E.getallen[gevonden]);
+            // Eindigt een telwoord op een koppelwoord, dan is het een meervoud
+            // en geen getal: "de duizenden van de hemel" (4 Ezra 13:3). Het losse
+            // woord "en" blijft wel een koppeling tussen twee telwoorden.
+            else if (i === n && res.length && E.scheiders.indexOf(gevonden) !== -1) return null;
         }
         return res;
     },

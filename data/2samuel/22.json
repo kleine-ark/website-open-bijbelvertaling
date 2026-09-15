@@ -1393,7 +1393,7 @@
       "number": 5,
       "textSV1888": "Want baren des doods hadden mij omvangen; beken Belials verschrikten mij.",
       "text1637": "Want [10] baren des doots hadden my omvangen: beken [11] Belials verschrickten my.",
-      "text2026": "Want baren van de dood hadden mij omvangen; beken Belials verschrikten mij.",
+      "text2026": "Want baren van de dood hadden mij omvangen; beken van Belial verschrikten mij.",
       "marginNotes": [
         {
           "marker": "10",
@@ -1447,7 +1447,7 @@
           "morph": "HVpi3mp/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want<sup class=\"note-marker\" data-note=\"10\">10</sup> baren van de dood hadden mij omvangen; beken<sup class=\"note-marker\" data-note=\"11\">11</sup> Belials verschrikten mij.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want<sup class=\"note-marker\" data-note=\"10\">10</sup> baren van de dood hadden mij omvangen; beken<sup class=\"note-marker\" data-note=\"11\">11</sup> van Belial verschrikten mij.</i></span>",
       "textSV1888_html": "Want<sup class=\"note-marker\" data-note=\"10\">10</sup> baren des doods hadden mij omvangen; beken<sup class=\"note-marker\" data-note=\"11\">11</sup> Belials verschrikten mij.",
       "text1637_html": "Want <sup class=\"note-marker\" data-note=\"10\">10</sup> baren des doots hadden my omvangen: beken <sup class=\"note-marker\" data-note=\"11\">11</sup> Belials verschrickten my.",
       "phraseDiff": [
@@ -1455,6 +1455,11 @@
           "old": "des doods",
           "new": "van de dood",
           "principe": "N3"
+        },
+        {
+          "old": "Belials",
+          "new": "van Belial",
+          "principe": "V448"
         }
       ],
       "woordnummers": [
@@ -5249,7 +5254,7 @@
       "number": 19,
       "textSV1888": "Zij hadden mij bejegend ten dage mijns ongevals; maar de HEERE was mij een Steunsel.",
       "text1637": "Sy hadden my bejegent ten dage mijns [29] ongevals; maer de HEERE was my een steunsel.",
-      "text2026": "Zij hadden mij bejegend op de dag van mijn ongeval; maar JAHWEH was mij een Steunsel.",
+      "text2026": "Zij hadden mij bejegend op de dag van mijn ongeluk; maar JAHWEH was mij een Steun.",
       "marginNotes": [
         {
           "marker": "29",
@@ -5296,19 +5301,24 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zij hadden mij bejegend op de dag van mijn ongeval<sup class=\"note-marker\" data-note=\"29\">29</sup>; maar JAHWEH was mij een Steunsel.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zij hadden mij bejegend op de dag van mijn ongeluk; maar JAHWEH was mij een Steun.</i></span>",
       "textSV1888_html": "Zij hadden mij bejegend ten dage mijns<sup class=\"note-marker\" data-note=\"29\">29</sup> ongevals; maar de HEERE was mij een Steunsel.",
       "text1637_html": "Sy hadden my bejegent ten dage mijns <sup class=\"note-marker\" data-note=\"29\">29</sup> ongevals; maer de HEERE was my een steunsel.",
       "phraseDiff": [
         {
           "old": "ten dage mijns ongevals;",
-          "new": "op de dag van mijn ongeval;",
+          "new": "op de dag van mijn ongeluk;",
           "principe": "V213"
         },
         {
           "old": "de HEERE",
           "new": "JAHWEH",
           "principe": "G1"
+        },
+        {
+          "old": "Steunsel.",
+          "new": "Steun.",
+          "principe": "MR-2SA-003"
         }
       ],
       "woordnummers": [
@@ -5691,7 +5701,7 @@
       "number": 21,
       "textSV1888": "De HEERE vergold mij naar mijn gerechtigheid; Hij gaf mij weder naar de reinigheid mijner handen.",
       "text1637": "De HEERE vergoldt my nae mijne [30] gerechticheyt; Hy gaf my weder nae de [31] reynicheyt mijner handen.",
-      "text2026": "JAHWEH vergold mij naar mijn gerechtigheid; Hij gaf mij weer naar de reinigheid van mijn handen.",
+      "text2026": "JAHWEH vergold mij naar mijn gerechtigheid; Hij gaf mij weer naar de reinheid van mijn handen.",
       "marginNotes": [
         {
           "marker": "30",
@@ -5745,7 +5755,7 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>JAHWEH vergold mij naar mijn gerechtigheid; Hij gaf mij weer naar de reinigheid<sup class=\"note-marker\" data-note=\"30\">30</sup> van mijn<sup class=\"note-marker\" data-note=\"31\">31</sup> handen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>JAHWEH vergold mij naar mijn gerechtigheid; Hij gaf mij weer naar de reinheid<sup class=\"note-marker\" data-note=\"30\">30</sup> van mijn<sup class=\"note-marker\" data-note=\"31\">31</sup> handen.</i></span>",
       "textSV1888_html": "De HEERE vergold mij naar mijn<sup class=\"note-marker\" data-note=\"30\">30</sup> gerechtigheid; Hij gaf mij weder naar de<sup class=\"note-marker\" data-note=\"31\">31</sup> reinigheid mijner handen.",
       "text1637_html": "De HEERE vergoldt my nae mijne <sup class=\"note-marker\" data-note=\"30\">30</sup> gerechticheyt; Hy gaf my weder nae de <sup class=\"note-marker\" data-note=\"31\">31</sup> reynicheyt mijner handen.",
       "phraseDiff": [
@@ -5760,8 +5770,8 @@
           "principe": "V66"
         },
         {
-          "old": "mijner",
-          "new": "van mijn",
+          "old": "reinigheid mijner",
+          "new": "reinheid van mijn",
           "principe": "N7"
         }
       ],
@@ -6629,7 +6639,7 @@
       "number": 25,
       "textSV1888": "Zo gaf mij de HEERE weder naar mijn gerechtigheid, naar mijn reinigheid, voor Zijn ogen.",
       "text1637": "So gaf my de HEERE weder nae mijne gerechticheyt, nae mijne reynicheyt, [34] voor sijne oogen.",
-      "text2026": "Zo gaf mij JAHWEH weer naar mijn gerechtigheid, naar mijn reinigheid, voor Zijn ogen.",
+      "text2026": "Zo gaf mij JAHWEH weer naar mijn gerechtigheid, naar mijn reinheid, voor Zijn ogen.",
       "marginNotes": [
         {
           "marker": "34",
@@ -6676,7 +6686,7 @@
           "morph": "HNcbdc/Sp3ms"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Zo gaf mij JAHWEH weer naar mijn gerechtigheid, naar mijn reinigheid,<sup class=\"note-marker\" data-note=\"34\">34</sup> voor Zijn ogen.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Zo gaf mij JAHWEH weer naar mijn gerechtigheid, naar mijn reinheid,<sup class=\"note-marker\" data-note=\"34\">34</sup> voor Zijn ogen.</i></span>",
       "textSV1888_html": "Zo gaf mij de HEERE weder naar mijn gerechtigheid, naar mijn reinigheid,<sup class=\"note-marker\" data-note=\"34\">34</sup> voor Zijn ogen.",
       "text1637_html": "So gaf my de HEERE weder nae mijne gerechticheyt, nae mijne reynicheyt, <sup class=\"note-marker\" data-note=\"34\">34</sup> voor sijne oogen.",
       "phraseDiff": [
@@ -6684,6 +6694,11 @@
           "old": "de HEERE weder",
           "new": "JAHWEH weer",
           "principe": "G1"
+        },
+        {
+          "old": "reinigheid,",
+          "new": "reinheid,",
+          "principe": "MR-2SA-004"
         }
       ],
       "woordnummers": [
@@ -10536,7 +10551,7 @@
       "number": 40,
       "textSV1888": "Want Gij omgorddet mij met kracht ten strijde; Gij deedt onder mij nederbukken, die tegen mij opstonden.",
       "text1637": "Want ghy omgorddet my met kracht ten strijde; ghy deedt onder my nederbucken, die tegen my opstonden.",
-      "text2026": "Want U omgordde mij met kracht ten strijde; U deedt onder mij neerbuigen, die tegen mij opstonden.",
+      "text2026": "Want U omgordde mij met kracht ten strijde; U deed onder mij neerbuigen, die tegen mij opstonden.",
       "marginNotes": [],
       "grondtekst": [
         {
@@ -10570,7 +10585,7 @@
           "morph": "HR/Sp1cs"
         }
       ],
-      "text2026_html": "<span class=\"direct-speech\"><i>Want U omgordde mij met kracht ten strijde; U deedt onder mij neerbuigen, die tegen mij opstonden.</i></span>",
+      "text2026_html": "<span class=\"direct-speech\"><i>Want U omgordde mij met kracht ten strijde; U deed onder mij neerbuigen, die tegen mij opstonden.</i></span>",
       "text1637_html": "Want ghy omgorddet my met kracht ten strijde; ghy deedt onder my nederbucken, die tegen my opstonden.",
       "phraseDiff": [
         {
@@ -10579,8 +10594,8 @@
           "principe": "A1"
         },
         {
-          "old": "Gij",
-          "new": "U",
+          "old": "Gij deedt",
+          "new": "U deed",
           "principe": "A1"
         },
         {

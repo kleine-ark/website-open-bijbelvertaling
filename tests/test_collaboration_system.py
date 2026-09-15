@@ -46,9 +46,10 @@ class ReviewCatalogTests(unittest.TestCase):
                 encoding="utf-8",
             )
             (root / "migrations").mkdir()
-            (root / "migrations/review-history-v1.json").write_text(
-                json.dumps({"schemaVersion": 1, "subjects": []}), encoding="utf-8"
-            )
+            for filename in ("review-history-v1.json", "review-history-v2.json"):
+                (root / "migrations" / filename).write_text(
+                    json.dumps({"schemaVersion": 1, "subjects": []}), encoding="utf-8"
+                )
             (root / "data" / "genesis" / "1.json").write_text(
                 json.dumps({
                     "number": 1,

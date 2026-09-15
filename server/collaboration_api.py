@@ -421,7 +421,7 @@ class ReviewStore:
                     ),
                 )
             imported = db.execute(
-                "SELECT value FROM metadata WHERE key = 'historical-review-import-v2'"
+                "SELECT value FROM metadata WHERE key = 'historical-review-import-v3'"
             ).fetchone()
             if not imported:
                 historical_actor = db.execute(
@@ -458,7 +458,7 @@ class ReviewStore:
                         ),
                     )
                 db.execute(
-                    "INSERT INTO metadata(key, value) VALUES ('historical-review-import-v2', ?)",
+                    "INSERT INTO metadata(key, value) VALUES ('historical-review-import-v3', ?)",
                     (now_iso(),),
                 )
             db.execute(

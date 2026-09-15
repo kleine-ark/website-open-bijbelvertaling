@@ -188,6 +188,14 @@ body.dark .icon-sun { display: none; }
     font-size: 11px; line-height: 1;
 }
 .book-group-items button.active .book-flag-unverified { color: #fff; }
+/* Hoofdstukken van het geopende boek, direct onder dat boek */
+.book-chapters {
+    flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 4px;
+    margin: 2px 0 8px; padding: 4px 0 4px 10px;
+    border-left: 2px solid var(--accent);
+}
+.book-chapters[hidden] { display: none; }
+.book-group-items .book-chapters button { min-width: 2.6em; padding: 4px 6px; text-align: center; }
 
 /* === Main content === */
 #reader-content {

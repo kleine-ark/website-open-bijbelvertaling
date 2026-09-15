@@ -20,7 +20,7 @@ def test_alle_88_boeken_worden_vers_voor_vers_geinventariseerd(result):
     coverage = result["coverage"]
 
     assert coverage["boekenTotaal"] == 88
-    assert coverage["verzenTotaal"] == 41132
+    assert coverage["verzenTotaal"] == 41181
     assert len(coverage["perBoek"]) == 88
     assert all(book["status"] == "agent-reviewed" for book in coverage["perBoek"])
     assert {book["id"] for book in coverage["perBoek"] if book["testament"] == "ET"} == {

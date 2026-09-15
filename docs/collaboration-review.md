@@ -102,8 +102,11 @@ De vroegere, handmatig onderhouden hoofdstuklijst is vervangen door de vaste
 migratie `migrations/review-history-v1.json`. Deze bewaart alle 1.141 oude records
 met hun inhoudsrevisie en herkomst uit commit
 `fcdc46f6773d9daea52b29108c0ac6ba761d44cd`.
+`migrations/review-history-v2.json` bewaart daarnaast de 163 hoofdstukken van
+de zes op main afgeronde boeken uit commit
+`8f37805c8b9d93534fe3d9af7dd2a540cd29b743`. De eerste migratie blijft ongewijzigd.
 Bij bestaande databases vult de idempotente migratie
-`historical-review-import-v2` ontbrekende historische records aan, zonder
+`historical-review-import-v3` ontbrekende historische records aan, zonder
 bestaande beslissingen te verwijderen of dubbele imports te maken.
 
 De eigenaar heeft bevestigd dat Maarten Vroegindeweij de bestaande controles
@@ -178,11 +181,21 @@ locaties, rechten, accountwisseling, bronrevisies en doorlopend lezen.
 
 ## Deployment
 
-De websiteworkflow bouwt eerst de catalogus en publiceert de statische site.
-Vervolgens installeert hij de API als `openvertaling-collaboration.service`,
-met een Nginx-proxy onder `/api/collaboration/`. Na de healthcheck exporteert
-de server de actuele status en bouwt hij statistieken en downloads.
-Oude releasebestanden blijven tijdens het uploaden bewaard tot die stap slaagt.
+De GitHub-deployworkflow is op main verwijderd; publicatie gebeurt rechtstreeks
+via de bestaande servertoegang. Publiceer een gecontroleerde commit vanuit een
+private stagingmap, niet vanuit een volledige lokale werkmap.
+
+Maak vóór publicatie een SQLite-back-up en bewaar de vorige website en API.
+Bouw de naslagbundels, illustratie-index en reviewcatalogus in staging. De
+statische site krijgt geen `.git`, `.github`, `.claude`, `server` of `migrations`.
+Bewaar de bestaande externe audio en gegenereerde verificatiesnapshot/downloads
+tot hun vervangers zijn gebouwd.
+
+`server/install_collaboration_api.sh` installeert de API als
+`openvertaling-collaboration.service`, met een Nginx-proxy onder
+`/api/collaboration/`. Na de healthcheck exporteert
+`scripts/export_review_status.py` de actuele status; bouw daarna statistieken
+en downloads. Controleer vervolgens ook de publieke URL en accountkoppeling.
 
 De database staat buiten de webroot en blijft bij deployments intact; neem hem
 op in de serverback-up. Serverbroncode en migratiebronbestanden worden uitgesloten

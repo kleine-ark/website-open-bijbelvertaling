@@ -504,6 +504,7 @@ class OptionsPanelBrowserTests(unittest.TestCase):
                     klein: Opties.toonGetalcijfers('drie dagen en twintig nachten, maar een mens'),
                     grens: Opties.toonGetalcijfers('twintig en een stammen'),
                     samengesteld: Opties.toonGetalcijfers('zeven en vijftig duizend en vierhonderd'),
+                    meervoud: Opties.toonGetalcijfers('met de duizenden van de hemel'),
                     html: Opties.toonGetalcijfers('<i>twaalf</i> stammen')
                 })"""
             )
@@ -511,6 +512,8 @@ class OptionsPanelBrowserTests(unittest.TestCase):
             self.assertNotIn('een <span class="getal-cijfer"', voorbeelden["klein"])
             self.assertIn('(21)</span>', voorbeelden["grens"])
             self.assertIn('(57.400)</span>', voorbeelden["samengesteld"])
+            # Een meervoud als "duizenden" is geen getal (4 Ezra 13:3).
+            self.assertNotIn('getal-cijfer', voorbeelden["meervoud"])
             self.assertEqual(voorbeelden["html"], '<i>twaalf</i> stammen')
 
             verse_acht = page.locator('.verse-row[data-verse="8"] .col-2026')

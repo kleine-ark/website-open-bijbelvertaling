@@ -86,11 +86,12 @@ def location_review_payload(feature: dict) -> dict:
 def build_catalog(root: Path = ROOT) -> dict:
     data = root / "data"
     books = json.loads((data / "books.json").read_text(encoding="utf-8"))["books"]
-    history = json.loads(
-        (root / "migrations/review-history-v1.json").read_text(encoding="utf-8")
-    )
-    if history["schemaVersion"] != 1:
-        raise ValueError("onbekende historische migratieversie")
+    historical_subjects = []
+    for filename in ("review-history-v1.json", "review-history-v2.json"):
+        history = json.loads((root / "migrations" / filename).read_text(encoding="utf-8"))
+        if history["schemaVersion"] != 1:
+            raise ValueError("onbekende historische migratieversie")
+        historical_subjects.extend(history["subjects"])
     geography = json.loads(
         (data / "geografie-runtime.geojson").read_text(encoding="utf-8")
     )
@@ -167,7 +168,7 @@ def build_catalog(root: Path = ROOT) -> dict:
     subjects.sort(key=lambda item: (item["type"], item["label"].casefold(), item["id"]))
     catalog = {
         "schemaVersion": 2,
-        "historicalSubjects": history["subjects"],
+        "historicalSubjects": historical_subjects,
         "subjectTypes": {
             "text-chapter": "Bijbelhoofdstuk",
             "text-verse": "Bijbelvers",

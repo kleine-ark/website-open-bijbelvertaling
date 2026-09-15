@@ -111,7 +111,7 @@ class DirectVerificationTests(fixtures.CollaborationStoreTests):
     def test_migration_is_idempotent_and_survives_restarts(self):
         original = self.store.list_review_events(self.admin)["total"]
         with self.store._connect() as db:
-            db.execute("DELETE FROM metadata WHERE key='historical-review-import-v2'")
+            db.execute("DELETE FROM metadata WHERE key='historical-review-import-v3'")
             db.execute("DELETE FROM metadata WHERE key='catalog-revision'")
             db.execute("INSERT INTO metadata VALUES ('historical-review-import-v1', 'old')")
         self.catalog["subjects"][0]["revision"] = "d" * 64
@@ -127,12 +127,28 @@ class DirectVerificationTests(fixtures.CollaborationStoreTests):
             self.store.verified_chapters("f" * 64)
         self.assertEqual(self.store.verified_chapters(self.catalog["catalogRevision"]), {"genesis": [1]})
 
+    def test_v3_import_adds_later_completed_chapters_to_an_existing_v2_store_once(self):
+        before = self.store.list_review_events(self.admin)["total"]
+        with self.store._connect() as db:
+            db.execute("DELETE FROM metadata WHERE key='historical-review-import-v3'")
+            db.execute("INSERT INTO metadata VALUES ('historical-review-import-v2', 'old')")
+        chapter = dict(self.catalog["subjects"][0], id="genesis/2", label="Genesis 2")
+        self.catalog["subjects"].append(chapter)
+        self.catalog["historicalSubjects"].append(dict(chapter))
+        self.catalog["catalogRevision"] = api.review_catalog_revision(self.catalog)
+        self.store.sync_catalog(self.catalog)
+        self.assertEqual(self.store.verified_chapters(), {"genesis": [1, 2]})
+        self.assertEqual(self.store.list_review_events(self.admin)["total"], before + 1)
+        restarted = api.ReviewStore(Path(self.directory.name) / "reviews.sqlite3", self.store.bootstrap_admins)
+        restarted.sync_catalog(self.catalog)
+        self.assertEqual(restarted.list_review_events(self.admin)["total"], before + 1)
+
     def test_imported_history_cannot_supersede_an_existing_named_verification(self):
         approval = self.approve()
         self.catalog["historicalSubjects"].append(dict(self.catalog["subjects"][1]))
         self.catalog["catalogRevision"] = api.review_catalog_revision(self.catalog)
         with self.store._connect() as db:
-            db.execute("DELETE FROM metadata WHERE key='historical-review-import-v2'")
+            db.execute("DELETE FROM metadata WHERE key='historical-review-import-v3'")
         self.store.sync_catalog(self.catalog)
         subject = self.store.get_subject(self.admin, "location", "geo-jerusalem")
         self.assertEqual(subject["status"], "approved")
