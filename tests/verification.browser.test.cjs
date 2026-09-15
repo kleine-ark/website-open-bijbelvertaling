@@ -91,7 +91,7 @@ test('review history is administrator-only and regular users cannot verify', asy
     const page = await pageAs('reviewer');
     await page.goto(base + '/beoordelingen.html');
     await page.locator('.collaboration-main:not([hidden])').waitFor();
-    assert.equal(await page.locator('#review-history').isVisible(), false);
+    assert.equal(await page.getByRole('link', { name: 'Beoordelingsgeschiedenis', exact: true }).count(), 0);
     await page.goto(base + '/lees.html#genesis/2');
     await page.locator('#chapter-verification button').waitFor();
     await page.evaluate(() => setTestUser('reader'));
@@ -100,51 +100,59 @@ test('review history is administrator-only and regular users cannot verify', asy
     await page.close();
 });
 
-test('history opens from a top button without scrolling, and closes on Escape or account change', async () => {
+test('the top history link opens a separate administrator page with a return link', async () => {
     const page = await pageAs('admin');
     let historyRequests = 0;
     page.on('request', request => {
         if (new URL(request.url()).pathname === '/api/collaboration/reviews' && request.method() === 'GET') historyRequests++;
     });
     await page.goto(base + '/beoordelingen.html');
-    const open = page.getByRole('button', { name: 'Beoordelingsgeschiedenis', exact: true });
+    await page.locator('.collaboration-main:not([hidden])').waitFor();
+    assert.equal(await page.locator('a#review-history-link').getAttribute('href'), 'beoordelingsgeschiedenis.html');
+    const open = page.getByRole('link', { name: 'Beoordelingsgeschiedenis', exact: true });
     await open.waitFor();
     await page.waitForFunction(() => document.querySelector('#reviews-page').textContent.length > 0);
     assert.equal(historyRequests, 0, 'History is loaded only when requested');
     const buttonBox = await open.boundingBox();
     assert.ok(buttonBox.y >= 0 && buttonBox.y + buttonBox.height < 720);
-    await page.locator('#reviews-search').fill('Genesis 3');
     await open.click();
-    const history = page.getByRole('dialog', { name: 'Beoordelingsgeschiedenis', exact: true });
-    await history.waitFor();
+    await page.waitForURL(base + '/beoordelingsgeschiedenis.html');
+    await page.getByRole('heading', { name: 'Beoordelingsgeschiedenis', level: 1, exact: true }).waitFor();
+    assert.equal(await page.locator('dialog').count(), 0);
+    assert.equal(await page.locator('#reviews-table').count(), 0);
+    assert.equal(await page.locator('[data-collaboration-link="review"]').getAttribute('class'), 'active');
     await page.waitForFunction(() => document.querySelector('#review-events-page').textContent.length > 0);
     assert.equal(historyRequests, 1);
     assert.equal(await page.evaluate(() => window.scrollY), 0);
-    assert.equal(await history.getByRole('button', { name: 'Vorige', exact: true }).isDisabled(), true);
-    await page.keyboard.press('Escape');
-    assert.equal(await history.count(), 0);
-    assert.equal(await open.evaluate(button => button === document.activeElement), true);
-    assert.equal(await page.locator('#reviews-search').inputValue(), 'Genesis 3');
-
-    await page.setViewportSize({ width: 390, height: 844 });
+    assert.equal(await page.getByRole('button', { name: 'Vorige', exact: true }).isDisabled(), true);
+    await page.getByRole('link', { name: 'Terug naar beoordelingen', exact: true }).click();
+    await page.waitForURL(base + '/beoordelingen.html');
+    await open.waitFor();
+    assert.equal(await page.locator('#review-events-table').count(), 0);
     await open.click();
-    await history.waitFor();
-    const dialogBox = await history.boundingBox();
-    assert.ok(dialogBox.x >= 0 && dialogBox.x + dialogBox.width <= 390);
-    assert.ok(dialogBox.y >= 0 && dialogBox.y + dialogBox.height <= 844);
-    await history.getByRole('button', { name: 'Sluiten', exact: true }).click();
-    assert.equal(await history.count(), 0);
-    await open.click();
-    await history.waitFor();
+    await page.waitForURL(base + '/beoordelingsgeschiedenis.html');
+    await page.locator('#review-events-table tbody tr').first().waitFor();
     await page.evaluate(() => setTestUser('reviewer'));
-    await page.waitForFunction(() => Collaboration.currentUser?.email === 'reviewer@example.test');
-    assert.equal(await history.count(), 0);
-    assert.equal(await open.count(), 0);
-    assert.equal(await page.locator('#review-events-table tbody').innerText(), '');
+    await page.waitForURL(url => url.pathname === '/index.html');
+    assert.equal(await page.locator('#review-events-table').count(), 0);
     await page.close();
 });
 
-test('a late history response cannot repopulate a closed dialog after account switching', async () => {
+test('direct history navigation denies non-administrators without requesting private history', async () => {
+    for (const user of ['reviewer', 'reader', null]) {
+        const page = await pageAs(user);
+        let historyRequests = 0;
+        page.on('request', request => {
+            if (new URL(request.url()).pathname === '/api/collaboration/reviews') historyRequests++;
+        });
+        await page.goto(base + '/beoordelingsgeschiedenis.html');
+        await page.waitForURL(url => url.pathname === '/index.html');
+        assert.equal(historyRequests, 0);
+        await page.close();
+    }
+});
+
+test('a late history response cannot repopulate the page while an account switch resolves', async () => {
     const page = await pageAs('admin');
     let release, captured, delivered;
     const gate = new Promise(resolve => { release = resolve; });
@@ -157,20 +165,28 @@ test('a late history response cannot repopulate a closed dialog after account sw
         await route.fulfill({ response });
         delivered();
     });
-    await page.goto(base + '/beoordelingen.html');
-    await page.getByRole('button', { name: 'Beoordelingsgeschiedenis', exact: true }).click();
+    let releaseSession;
+    const sessionGate = new Promise(resolve => { releaseSession = resolve; });
+    await page.route(url => url.pathname === '/api/collaboration/session', async route => {
+        if (route.request().headers().authorization !== 'Bearer reviewer') return route.continue();
+        await sessionGate;
+        await route.continue();
+    });
+    await page.goto(base + '/beoordelingsgeschiedenis.html');
     await capture;
     await page.evaluate(() => setTestUser('reviewer'));
-    await page.waitForFunction(() => Collaboration.currentUser?.email === 'reviewer@example.test');
+    await page.waitForFunction(() => !Collaboration.ready && !Collaboration.currentUser);
     release();
     await delivery;
     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-    assert.equal(await page.locator('#review-history').isVisible(), false);
+    assert.equal(await page.locator('.collaboration-main').isVisible(), false);
     assert.equal(await page.locator('#review-events-table tbody').innerText(), '');
+    releaseSession();
+    await page.waitForURL(url => url.pathname === '/index.html');
     await page.close();
 });
 
-test('history pagination stays in the dialog, including loading errors and an empty history', async () => {
+test('the history page supports pagination, mobile layout, loading errors and an empty history', async () => {
     const page = await pageAs('admin');
     let scenario = 'many';
     const offsets = [];
@@ -188,44 +204,48 @@ test('history pagination stays in the dialog, including loading errors and an em
         } });
     });
     await page.goto(base + '/beoordelingen.html');
-    const open = page.getByRole('button', { name: 'Beoordelingsgeschiedenis', exact: true });
+    const open = page.getByRole('link', { name: 'Beoordelingsgeschiedenis', exact: true });
     if (process.env.OV_SCREENSHOTS) {
         await open.waitFor();
         await page.screenshot({ path: process.env.OV_SCREENSHOTS + '/history-button.png' });
     }
     await open.click();
-    const dialog = page.getByRole('dialog', { name: 'Beoordelingsgeschiedenis', exact: true });
-    await dialog.getByText('1–100 van 101', { exact: true }).waitFor();
-    assert.equal(await dialog.locator('tbody tr').count(), 100);
-    const next = dialog.getByRole('button', { name: 'Volgende', exact: true });
+    await page.waitForURL(base + '/beoordelingsgeschiedenis.html');
+    const history = page.locator('.collaboration-main');
+    await history.getByText('1–100 van 101', { exact: true }).waitFor();
+    assert.equal(await history.locator('tbody tr').count(), 100);
+    const next = history.getByRole('button', { name: 'Volgende', exact: true });
     const nextBox = await next.boundingBox();
     assert.ok(nextBox.y >= 0 && nextBox.y + nextBox.height <= 720, 'Pagination is visible without scrolling the table');
-    await dialog.locator('.review-history-body').evaluate(body => body.scrollTop = body.scrollHeight);
     await next.click();
-    await dialog.getByText('101–101 van 101', { exact: true }).waitFor();
-    assert.equal(await dialog.locator('tbody tr').count(), 1);
+    await history.getByText('101–101 van 101', { exact: true }).waitFor();
+    assert.equal(await history.locator('tbody tr').count(), 1);
     assert.equal(await next.isDisabled(), true);
-    await dialog.getByRole('button', { name: 'Vorige', exact: true }).click();
-    await dialog.getByText('1–100 van 101', { exact: true }).waitFor();
-    assert.equal(await dialog.locator('.review-history-body').evaluate(body => body.scrollTop), 0);
+    await history.getByRole('button', { name: 'Vorige', exact: true }).click();
+    await history.getByText('1–100 van 101', { exact: true }).waitFor();
+    assert.equal(await page.evaluate(() => window.scrollY), 0);
     if (process.env.OV_SCREENSHOTS) {
         await page.screenshot({ path: process.env.OV_SCREENSHOTS + '/history-desktop.png' });
-        await page.setViewportSize({ width: 390, height: 844 });
+    }
+    await page.setViewportSize({ width: 390, height: 844 });
+    const returnBox = await page.getByRole('link', { name: 'Terug naar beoordelingen', exact: true }).boundingBox();
+    assert.ok(returnBox.x >= 0 && returnBox.x + returnBox.width <= 390);
+    assert.ok(returnBox.y >= 0 && returnBox.y + returnBox.height <= 844);
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    if (process.env.OV_SCREENSHOTS) {
         await page.screenshot({ path: process.env.OV_SCREENSHOTS + '/history-mobile.png' });
         await page.evaluate(() => document.documentElement.dataset.theme = 'donker');
         await page.screenshot({ path: process.env.OV_SCREENSHOTS + '/history-mobile-dark.png' });
     }
-    await dialog.getByRole('button', { name: 'Sluiten', exact: true }).click();
     scenario = 'error';
-    await open.click();
-    await dialog.getByText('Er is een fout opgetreden. Controleer het logboek.', { exact: true }).waitFor();
-    assert.doesNotMatch(await dialog.innerText(), /Private backend details/);
-    await dialog.getByRole('button', { name: 'Sluiten', exact: true }).click();
+    await page.reload();
+    await history.getByText('Er is een fout opgetreden. Controleer het logboek.', { exact: true }).waitFor();
+    assert.doesNotMatch(await history.innerText(), /Private backend details/);
     scenario = 'empty';
-    await open.click();
-    await dialog.getByText('Nog geen beslissingen.', { exact: true }).waitFor();
+    await page.reload();
+    await history.getByText('Nog geen beslissingen.', { exact: true }).waitFor();
     assert.equal(await next.isDisabled(), true);
-    assert.equal(await dialog.getByRole('button', { name: 'Vorige', exact: true }).isDisabled(), true);
+    assert.equal(await history.getByRole('button', { name: 'Vorige', exact: true }).isDisabled(), true);
     assert.deepEqual(offsets, [0, 100, 0, 0, 0]);
     await page.close();
 });
@@ -456,7 +476,7 @@ test('historical reviews stay verified; only admins see the ghost and its first 
     await page.goto(base + '/beoordelingen.html');
     await page.locator('#reviews-table tbody tr').filter({ hasText: 'genesis/3' })
         .getByText('Maarten Vroegindeweij (nog niet aangemeld)', { exact: true }).waitFor();
-    await page.getByRole('button', { name: 'Beoordelingsgeschiedenis', exact: true }).click();
+    await page.getByRole('link', { name: 'Beoordelingsgeschiedenis', exact: true }).click();
     await page.locator('#review-events-table tbody tr').filter({ hasText: 'genesis/3' })
         .getByText(/Maarten Vroegindeweij/).waitFor();
     await page.goto(base + '/gebruikers.html');

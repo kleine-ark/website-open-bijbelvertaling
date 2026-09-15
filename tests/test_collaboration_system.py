@@ -450,8 +450,10 @@ class CollaborationFrontendTests(unittest.TestCase):
         client = (ROOT / "js" / "collaboration.js").read_text(encoding="utf-8")
         users = (ROOT / "gebruikers.html").read_text(encoding="utf-8")
         reviews = (ROOT / "beoordelingen.html").read_text(encoding="utf-8")
+        history = (ROOT / "beoordelingsgeschiedenis.html").read_text(encoding="utf-8")
         users_client = (ROOT / "js" / "gebruikers.js").read_text(encoding="utf-8")
         reviews_client = (ROOT / "js" / "beoordelingen.js").read_text(encoding="utf-8")
+        history_client = (ROOT / "js" / "beoordelingsgeschiedenis.js").read_text(encoding="utf-8")
 
         self.assertIn("js/collaboration.js", topnav)
         self.assertIn("'/api/collaboration' + path", client)
@@ -459,12 +461,17 @@ class CollaborationFrontendTests(unittest.TestCase):
         self.assertIn("Beoordelingen", reviews)
         self.assertIn('href="css/style.css"', users)
         self.assertIn('href="css/style.css"', reviews)
+        self.assertIn('href="css/style.css"', history)
+        self.assertIn('href="beoordelingsgeschiedenis.html"', reviews)
+        self.assertNotIn('<dialog', reviews)
+        self.assertNotIn('review-events-table', reviews)
+        self.assertIn('js/beoordelingsgeschiedenis.js', history)
 
         self.assertIn("stateResolved: false", auth)
         self.assertIn("ready: false", client)
-        for page in (users, reviews):
+        for page in (users, reviews, history):
             self.assertRegex(page, r'<main[^>]+class="collaboration-main"[^>]+hidden')
-        for page_client in (users_client, reviews_client):
+        for page_client in (users_client, reviews_client, history_client):
             self.assertIn("if (!ready) return;", page_client)
             self.assertIn("location.replace('index.html')", page_client)
 

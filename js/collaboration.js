@@ -54,7 +54,8 @@
             reviews.href = 'beoordelingen.html';
             reviews.dataset.collaborationLink = 'review';
             reviews.textContent = 'Beoordelingen';
-            if (location.pathname.endsWith('/beoordelingen.html')) reviews.classList.add('active');
+            if (location.pathname.endsWith('/beoordelingen.html') ||
+                location.pathname.endsWith('/beoordelingsgeschiedenis.html')) reviews.classList.add('active');
             links.appendChild(reviews);
         }
         if (profile.roles.indexOf('administrator') !== -1) {

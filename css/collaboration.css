@@ -5,35 +5,15 @@
 .collaboration-main[hidden] { display: none !important; }
 
 .collaboration-main h1 { margin-bottom: 8px; }
-.collaboration-main h2 { margin: 38px 0 8px; }
 .collaboration-intro { color: var(--text-secondary, #5f6870); max-width: 760px; }
 .collaboration-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
-.collaboration-heading h1,
-.collaboration-heading h2 { margin: 0; }
+.collaboration-heading h1 { margin: 0; }
 
-.review-history-dialog {
-    width: min(1180px, calc(100vw - 32px));
-    max-width: none;
-    max-height: calc(100dvh - 32px);
-    box-sizing: border-box;
-    margin: auto;
-    padding: 24px;
-    border: 1px solid var(--border-default, #d7d3ca);
-    border-radius: 12px;
-    background: var(--bg-page, #fff);
-    color: var(--text-primary, #142e42);
-    box-shadow: 0 16px 60px #0004;
+.collaboration-heading a.secondary-button:not([hidden]) {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
 }
-.review-history-dialog[open] { display: flex; flex-direction: column; gap: 16px; }
-.review-history-dialog::backdrop { background: #0008; }
-.review-history-dialog h2 { font-size: 1.35rem; }
-.review-history-dialog .collaboration-intro,
-.review-history-dialog .collaboration-status,
-.review-history-dialog .collaboration-pagination { margin: 0; }
-.review-history-dialog .collaboration-status:empty { display: none; }
-.review-history-dialog .collaboration-heading,
-.review-history-dialog .collaboration-pagination { flex-shrink: 0; }
-.review-history-dialog .review-history-body { min-height: 0; overflow: auto; }
 
 .collaboration-toolbar {
     display: flex;
@@ -96,7 +76,6 @@
 
 @media (max-width: 720px) {
     .collaboration-main { width: min(100% - 20px, 1180px); margin-top: 22px; }
-    .review-history-dialog { padding: 16px; gap: 12px; }
     #users-table th:nth-child(3),
     #users-table td:nth-child(3) { display: none; }
     .collaboration-table th,

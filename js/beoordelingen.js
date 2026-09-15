@@ -9,13 +9,7 @@
     var offset = 0;
     var pageSize = 50;
     var total = 0;
-    var eventOffset = 0;
-    var eventTotal = 0;
-    var eventPageSize = 100;
-    var eventRequest = 0;
-    var historyDialog;
-    var historyButton;
-    var eventStatus;
+    var historyLink;
     var timer;
 
     function element(tag, value, className) {
@@ -99,57 +93,6 @@
         }
     }
 
-    async function loadEvents() {
-        if (!historyDialog.open || !Collaboration.hasRole('administrator')) return;
-        var request = ++eventRequest;
-        var requestedUser = Collaboration.currentUser;
-        var eventBody = document.querySelector('#review-events-table tbody');
-        eventStatus.textContent = 'Beoordelingsgeschiedenis laden…';
-        eventStatus.classList.remove('is-error');
-        document.getElementById('review-events-prev').disabled = true;
-        document.getElementById('review-events-next').disabled = true;
-        try {
-            var payload = await Collaboration.api(
-                '/reviews?offset=' + eventOffset + '&limit=' + eventPageSize
-            );
-            if (request !== eventRequest || Collaboration.currentUser !== requestedUser || !historyDialog.open) return;
-            eventBody.replaceChildren();
-            eventTotal = payload.total;
-            payload.items.forEach(function (review) {
-                var row = document.createElement('tr');
-                var subject = element('td', review.label);
-                subject.append(element('span', review.subjectType + ' · ' + review.subjectId, 'muted block'));
-                var decision = element('td', review.decision === 'approved' ? 'Goedgekeurd' : 'Ingetrokken');
-                var actor = element('td', Collaboration.reviewActorLabel(review));
-                actor.append(element('span', Collaboration.reviewDateLabel(review), 'muted block'));
-                row.append(subject, decision, actor, element('td', review.note || '—'));
-                eventBody.appendChild(row);
-            });
-            if (!payload.items.length) {
-                var empty = document.createElement('tr');
-                var cell = element('td', 'Nog geen beslissingen.', 'empty-state');
-                cell.colSpan = 4;
-                empty.appendChild(cell);
-                eventBody.appendChild(empty);
-            }
-            document.getElementById('review-events-prev').disabled = eventOffset === 0;
-            document.getElementById('review-events-next').disabled =
-                eventOffset + payload.items.length >= eventTotal;
-            document.getElementById('review-events-page').textContent = eventTotal
-                ? (eventOffset + 1) + '–' + Math.min(eventOffset + payload.items.length, eventTotal) + ' van ' + eventTotal
-                : '0 gebeurtenissen';
-            eventStatus.textContent = '';
-            document.querySelector('.review-history-body').scrollTop = 0;
-        } catch (error) {
-            console.error('[collaboration]', error);
-            if (request !== eventRequest || Collaboration.currentUser !== requestedUser || !historyDialog.open) return;
-            eventBody.replaceChildren();
-            eventStatus.textContent = 'Er is een fout opgetreden. Controleer het logboek.';
-            eventStatus.classList.add('is-error');
-            document.getElementById('review-events-page').textContent = '';
-        }
-    }
-
     function resetAndLoad() {
         offset = 0;
         loadSubjects();
@@ -160,25 +103,11 @@
         document.getElementById('reviews-page').textContent = '';
         document.getElementById('reviews-prev').disabled = true;
         document.getElementById('reviews-next').disabled = true;
-        clearEvents();
-    }
-
-    function clearEvents() {
-        eventRequest++;
-        eventOffset = 0;
-        eventTotal = 0;
-        document.querySelector('#review-events-table tbody').replaceChildren();
-        eventStatus.textContent = '';
-        eventStatus.classList.remove('is-error');
-        document.getElementById('review-events-page').textContent = '';
-        document.getElementById('review-events-prev').disabled = true;
-        document.getElementById('review-events-next').disabled = true;
     }
 
     function handleProfile(profile, ready) {
         main.hidden = true;
-        historyButton.hidden = true;
-        if (historyDialog.open) historyDialog.close();
+        historyLink.hidden = true;
         clearData();
         if (!ready) return;
         if (!profile || profile.roles.indexOf('reviewer') === -1) {
@@ -186,7 +115,7 @@
             return;
         }
         main.hidden = false;
-        historyButton.hidden = !Collaboration.hasRole('administrator');
+        historyLink.hidden = !Collaboration.hasRole('administrator');
         loadSubjects();
     }
 
@@ -197,17 +126,7 @@
         search = document.getElementById('reviews-search');
         typeFilter = document.getElementById('reviews-type');
         statusFilter = document.getElementById('reviews-state');
-        historyDialog = document.getElementById('review-history');
-        historyButton = document.getElementById('review-history-open');
-        eventStatus = document.getElementById('review-events-status');
-        historyButton.addEventListener('click', function () {
-            historyDialog.showModal();
-            loadEvents();
-        });
-        document.getElementById('review-history-close').addEventListener('click', function () {
-            historyDialog.close();
-        });
-        historyDialog.addEventListener('close', clearEvents);
+        historyLink = document.getElementById('review-history-link');
         search.addEventListener('input', function () {
             clearTimeout(timer);
             timer = setTimeout(resetAndLoad, 250);
@@ -221,14 +140,6 @@
         document.getElementById('reviews-next').addEventListener('click', function () {
             offset += pageSize;
             loadSubjects();
-        });
-        document.getElementById('review-events-prev').addEventListener('click', function () {
-            eventOffset = Math.max(0, eventOffset - eventPageSize);
-            loadEvents();
-        });
-        document.getElementById('review-events-next').addEventListener('click', function () {
-            eventOffset += eventPageSize;
-            loadEvents();
         });
         Collaboration.onChange(handleProfile);
     });

@@ -14,7 +14,7 @@
     <main class="collaboration-main" hidden>
         <div class="collaboration-heading">
             <h1>Beoordelingen</h1>
-            <button id="review-history-open" class="secondary-button" type="button" aria-haspopup="dialog" aria-controls="review-history" hidden>Beoordelingsgeschiedenis</button>
+            <a id="review-history-link" class="secondary-button" href="beoordelingsgeschiedenis.html" hidden>Beoordelingsgeschiedenis</a>
         </div>
         <p class="collaboration-intro">Goedkeuringen zijn aan de exacte gegevensversie gekoppeld. Verandert de tekst of locatie, dan moet die nieuwe versie opnieuw worden beoordeeld.</p>
         <div class="collaboration-toolbar">
@@ -47,25 +47,6 @@
             <button id="reviews-next" class="secondary-button" type="button">Volgende</button>
         </div>
     </main>
-    <dialog id="review-history" class="review-history-dialog" aria-labelledby="review-history-title" aria-describedby="review-history-description">
-        <div class="collaboration-heading">
-            <h2 id="review-history-title">Beoordelingsgeschiedenis</h2>
-            <button id="review-history-close" class="secondary-button" type="button" autofocus>Sluiten</button>
-        </div>
-        <p id="review-history-description" class="collaboration-intro">Deze gebeurtenissen blijven bewaard, ook als een goedkeuring later wordt ingetrokken of de gegevens veranderen.</p>
-        <p id="review-events-status" class="collaboration-status" role="status"></p>
-        <div class="review-history-body table-shell">
-            <table id="review-events-table" class="collaboration-table">
-                <thead><tr><th>Gegevens</th><th>Beslissing</th><th>Gebruiker</th><th>Toelichting</th></tr></thead>
-                <tbody></tbody>
-            </table>
-        </div>
-        <div class="collaboration-pagination">
-            <button id="review-events-prev" class="secondary-button" type="button">Vorige</button>
-            <span id="review-events-page"></span>
-            <button id="review-events-next" class="secondary-button" type="button">Volgende</button>
-        </div>
-    </dialog>
     <script src="js/firebase-config.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/collaboration.js"></script>
