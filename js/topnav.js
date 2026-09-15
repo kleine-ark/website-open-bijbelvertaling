@@ -100,6 +100,10 @@
         optiesKnop.addEventListener('click', function () { openWeergave(optiesKnop); });
     });
 
+    document.getElementById('topnav-theme-toggle').addEventListener('click', function () {
+        window.OVTheme.toggle();
+    });
+
     /* Het versienummer stond hier hardgecodeerd en liep daardoor achter: bij
        v0.28.0 wees de balk nog naar v0.26.0. Nu komt hij uit data/stats.json,
        dat build_stats.py bij elke uitgave bijwerkt — zo kan hij niet meer

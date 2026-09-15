@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <script src="/js/theme.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistieken — Open Vertaling</title>
     <meta name="description" content="Actuele voortgang van het handmatig nakijken van de Open Vertaling.">
@@ -117,18 +118,6 @@
             }
         }
     </style>
-    <script>
-        (function () {
-            try {
-                var saved = localStorage.getItem('sv2026_vertaalopties');
-                var theme = saved ? (JSON.parse(saved).thema || 'auto') : 'auto';
-                if (theme === 'auto') {
-                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'donker' : 'licht';
-                }
-                document.documentElement.setAttribute('data-theme', theme);
-            } catch (error) {}
-        })();
-    </script>
 </head>
 <body>
     <script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>

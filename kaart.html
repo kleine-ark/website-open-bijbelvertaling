@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <link rel="stylesheet" href="css/verification.css">
     <meta charset="UTF-8">
+    <script src="/js/theme.js"></script>
+    <link rel="stylesheet" href="css/verification.css">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#142e42">
@@ -59,7 +60,6 @@
         :root[data-theme="donker"] .ol-popup h3 { color: var(--text-primary); }
         :root[data-theme="donker"] .ol-popup .pp-toel { color: var(--text-secondary, #bbb); }
     </style>
-    <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
     <nav id="topnav"></nav>
@@ -326,7 +326,6 @@
         }).catch(function (e) { document.getElementById('telling').textContent = 'Kon kaartgegevens niet laden.'; console.error(e); });
     })();
     </script>
-    <script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);}catch(e){console.error(e);}});})();</script>
     <script src="js/firebase-config.js"></script>
     <script src="js/auth.js"></script>
 </body>

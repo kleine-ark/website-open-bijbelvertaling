@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <link rel="stylesheet" href="css/verification.css">
     <meta charset="UTF-8">
+    <script src="/js/theme.js"></script>
+    <link rel="stylesheet" href="css/verification.css">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
@@ -34,8 +35,6 @@
 
 
 
-    <!-- Thema vroeg zetten om flash-of-light te voorkomen bij donker thema. -->
-    <script>(function(){try{var s=localStorage.getItem('sv2026_vertaalopties');var t=s?(JSON.parse(s).thema||'auto'):'auto';if(t==='auto'){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'donker':'licht';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
     <!-- Auto-open Search bij ?q=... van andere pagina's -->
     <script>window.addEventListener('load',function(){try{var p=new URLSearchParams(location.search);var q=p.get('q');if(q&&typeof Search!=='undefined'){setTimeout(function(){Search.open(q);},200);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}});</script>
     <link rel="stylesheet" href="css/fonts.css">
@@ -918,6 +917,7 @@
     <script src="js/highlight.js"></script>
     <script src="js/begrippen.js"></script>
     <script src="js/tags.js"></script>
+    <script src="js/optie-maten.js"></script>
     <script src="js/opties.js?v=0.38.3"></script>
     <script src="js/tekstweergave.js"></script>
     <script src="js/assets.js"></script>

@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <script src="/js/theme.js"></script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#142e42">
@@ -65,7 +66,6 @@
             body.in-iframe { min-height: auto; }
         }
     </style>
-    <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
 <script>if (window.self !== window.top) { document.body.classList.add('in-iframe'); document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('a[href]').forEach(function(a){ var h=a.getAttribute('href'); if(h && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('http') && !h.startsWith('javascript:')) a.target='_top'; }); }); }</script>
@@ -138,6 +138,5 @@
         }).catch(function (e) { document.getElementById('geo-inhoud').innerHTML = '<p style="color:#c0392b">Kon de gegevens niet laden.</p>'; console.error(e); });
     })();
     </script>
-    <script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);if(window.parent&&window.parent.WikiSyncIframeTheme)window.parent.WikiSyncIframeTheme();}catch(e){console.error(e);}});})();</script>
 </body>
 </html>

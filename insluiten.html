@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <script src="/js/theme.js"></script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#142e42">
@@ -58,7 +59,6 @@
         :root[data-theme="donker"] .gen, :root[data-theme="donker"] .preview { background: var(--bg-surface) !important; border-color: #333 !important; }
         :root[data-theme="donker"] table.opts code, :root[data-theme="donker"] .gen input, :root[data-theme="donker"] .gen select { background: var(--bg-surface-alt); color: var(--text-primary); }
     </style>
-    <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
     <nav id="topnav"></nav>
@@ -144,6 +144,5 @@
         start();
     })();
     </script>
-    <script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);}catch(e){}});})();</script>
 </body>
 </html>

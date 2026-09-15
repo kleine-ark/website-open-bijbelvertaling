@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <script src="/js/theme.js"></script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#142e42">
@@ -39,7 +40,6 @@
         :root[data-theme="donker"] .dl-kaart { background: var(--bg-surface-alt); }
         @media (max-width: 620px) { .dl-meta { white-space: normal; } }
     </style>
-    <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
     <nav id="topnav"></nav>

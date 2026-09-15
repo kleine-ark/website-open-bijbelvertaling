@@ -37,7 +37,8 @@
     function ensure() {
         if (ready) return ready;
         ready = Promise.all([
-            laadScript('js/opties.js', function () { return !!global.Opties; }),
+            laadScript('js/optie-maten.js', function () { return !!global.OptieMaten; })
+                .then(function () { return laadScript('js/opties.js', function () { return !!global.Opties; }); }),
             laadScript('js/tekstweergave.js', function () { return !!global.OVTekstweergave; }),
             laadScript('embed.js', function () { return !!global.OSV; }),
             laadScript('js/options-panel.js', function () { return !!global.OptionsPanel; })
@@ -58,11 +59,11 @@
         if (!event.data || event.data.type !== 'ov:opties-gewijzigd') return;
         if (event.data.state && global.Opties) {
             global.Opties.state = { ...global.Opties.DEFAULTS, ...event.data.state };
-            global.Opties.applyThemeClass();
             global.Opties.applyVerseNumbersClass();
             global.Opties.applyCitationsClass();
             global.Opties.applyReaderStyleClasses();
         }
+        if (event.data.state) global.OVTheme.apply(event.data.state.thema ?? 'auto');
         global.dispatchEvent(new CustomEvent('ov:opties-gewijzigd', { detail: event.data }));
     });
 })(window);

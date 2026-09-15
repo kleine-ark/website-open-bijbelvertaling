@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <script src="/js/theme.js"></script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#142e42">
@@ -34,7 +35,6 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/handschriften.css">
-    <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
 <script>if (window.self !== window.top) { document.body.classList.add('in-iframe'); document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('a[href]').forEach(function(a){ var h=a.getAttribute('href'); if(h && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('http') && !h.startsWith('javascript:')) a.target='_top'; }); }); }</script>
@@ -56,7 +56,6 @@
         <p style="color:var(--teal);">Bezig met laden…</p>
     </div>
 </div>
-<script>(function(){var b=document.getElementById('topnav-theme-toggle');if(!b)return;b.addEventListener('click',function(){try{var s=JSON.parse(localStorage.getItem('sv2026_vertaalopties')||'{}');var cur=document.documentElement.dataset.theme==='donker'?'licht':'donker';s.thema=cur;localStorage.setItem('sv2026_vertaalopties',JSON.stringify(s));document.documentElement.setAttribute('data-theme',cur);}catch(e){console.error(e);}});})();</script>
 <script src="js/handschriften.js"></script>
 <script src="js/firebase-config.js"></script>
 <script src="js/auth.js"></script>

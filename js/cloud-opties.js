@@ -97,7 +97,7 @@ const CloudOpties = {
             });
             if (Opties.applyLayoutClass) Opties.applyLayoutClass();
             if (Opties.applyVerseNumbersClass) Opties.applyVerseNumbersClass();
-            if (Opties.applyThemeClass) Opties.applyThemeClass();
+            OVTheme.apply(Opties.state.thema);
             // Boekvolgorde kan veranderd zijn → sidebar/nav opnieuw
             if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
             if (typeof Navigation !== 'undefined' && Navigation.renderBookNav) Navigation.renderBookNav();

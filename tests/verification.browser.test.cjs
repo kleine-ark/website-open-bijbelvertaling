@@ -44,6 +44,96 @@ async function pageAs(who) {
     return page;
 }
 
+test('management pages apply the saved or system theme before opening display settings', async () => {
+    for (const file of ['beoordelingen.html', 'beoordelingsgeschiedenis.html', 'gebruikers.html']) {
+        for (const [system, saved, expected] of [
+            ['dark', null, 'donker'], ['light', 'auto', 'licht'],
+            ['dark', 'licht', 'licht'], ['light', 'donker', 'donker'],
+        ]) {
+            const page = await pageAs('admin');
+            await page.emulateMedia({ colorScheme: system });
+            await page.addInitScript(choice => {
+                if (choice) localStorage.setItem('sv2026_vertaalopties', JSON.stringify({ thema: choice }));
+                document.addEventListener('DOMContentLoaded', () => {
+                    window.themeAtDOMContentLoaded = document.documentElement.dataset.theme;
+                });
+            }, saved);
+            await page.goto(base + '/' + file);
+            assert.equal(await page.evaluate(() => themeAtDOMContentLoaded), expected, file + ' / ' + system + ' / ' + saved);
+            const stored = await page.evaluate(() => localStorage.getItem('sv2026_vertaalopties'));
+            const background = await page.locator('body').evaluate(body => getComputedStyle(body).backgroundColor);
+            await page.locator('#topnav-weergave').click();
+            await page.locator('#sidebar-right[open]').waitFor();
+            assert.equal(await page.locator('html').getAttribute('data-theme'), expected);
+            assert.equal(await page.locator('body').evaluate(body => getComputedStyle(body).backgroundColor), background);
+            await page.keyboard.press('Escape');
+            assert.equal(await page.locator('html').getAttribute('data-theme'), expected);
+            assert.equal(await page.evaluate(() => localStorage.getItem('sv2026_vertaalopties')), stored);
+            await page.close();
+        }
+    }
+});
+
+test('the shared theme toggle changes once before and after loading display settings', async () => {
+    for (const file of ['beoordelingen.html', 'over-ov.html', 'wiki.html#statistieken', 'index.html#genesis/1']) {
+        const page = await pageAs('admin');
+        await page.emulateMedia({ colorScheme: 'light' });
+        await page.addInitScript(() => {
+            localStorage.setItem('sv2026_vertaalopties', JSON.stringify({ thema: 'licht', godsnaam: 'klassiek' }));
+        });
+        await page.goto(base + '/' + file);
+        await page.locator('#topnav-theme-toggle').click();
+        assert.equal(await page.locator('html').getAttribute('data-theme'), 'donker', file);
+        assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('sv2026_vertaalopties')).thema), 'donker');
+        await page.locator('#topnav-weergave').click();
+        await page.locator('#sidebar-right[open]').waitFor();
+        assert.equal(await page.evaluate(() => Opties.state.thema), 'donker');
+        assert.equal(await page.locator('html').getAttribute('data-theme'), 'donker');
+        await page.keyboard.press('Escape');
+        await page.locator('#topnav-theme-toggle').click();
+        assert.equal(await page.locator('html').getAttribute('data-theme'), 'licht', file);
+        assert.equal(await page.evaluate(() => Opties.state.thema), 'licht');
+        assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('sv2026_vertaalopties')).godsnaam), 'klassiek');
+        await page.locator('#topnav-weergave').click();
+        await page.locator('#sidebar-right [data-optie="thema"]').selectOption('donker');
+        assert.equal(await page.locator('html').getAttribute('data-theme'), 'donker');
+        await page.keyboard.press('Escape');
+        await page.close();
+    }
+});
+
+test('the standalone reader also applies the shared theme without loading the options panel', async () => {
+    const page = await pageAs('admin');
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.goto(base + '/lees.html#genesis/1');
+    assert.equal(await page.locator('html').getAttribute('data-theme'), 'donker');
+    assert.equal(await page.evaluate(() => typeof Opties), 'undefined');
+    await page.close();
+});
+
+test('cloud and wiki updates apply the same shared theme', async () => {
+    const page = await pageAs('admin');
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.goto(base + '/index.html#genesis/1');
+    await page.waitForFunction(() => window.Opties?._initialized);
+    await page.addScriptTag({ path: require('node:path').join(__dirname, '../js/cloud-opties.js') });
+    await page.evaluate(() => {
+        Opties.state.thema = 'donker';
+        CloudOpties._applyAll();
+    });
+    assert.equal(await page.locator('html').getAttribute('data-theme'), 'donker');
+    await page.goto(base + '/wiki.html#statistieken');
+    const frame = page.frameLocator('iframe');
+    await frame.locator('h1').waitFor();
+    await page.locator('#topnav-theme-toggle').click();
+    await frame.locator('html[data-theme="donker"]').waitFor();
+    await page.locator('#topnav-weergave').click();
+    await page.locator('#sidebar-right[open]').waitFor();
+    await page.locator('#sidebar-right [data-optie="thema"]').selectOption('licht');
+    await frame.locator('html[data-theme="licht"]').waitFor();
+    await page.close();
+});
+
 test('reader chapter and verse clicks link the authenticated account; signout clears identities', async () => {
     const page = await pageAs('admin');
     await page.goto(base + '/index.html#genesis/1');

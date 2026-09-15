@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <script src="/js/theme.js"></script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#142e42">
@@ -210,7 +211,6 @@
             .ond-vers-tekst { font-size: 16px; }
         }
     </style>
-    <script>(function(){try{var s=localStorage.getItem("sv2026_vertaalopties");var t=s?(JSON.parse(s).thema||"auto"):"auto";if(t==="auto"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"donker":"licht";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
     <nav id="topnav"></nav>
@@ -260,6 +260,7 @@
     </div>
 
     <script src="js/book-orders.js"></script>
+    <script src="js/optie-maten.js"></script>
     <script src="js/opties.js"></script>
     <script>Opties.init();</script>
     <script src="js/tekstweergave.js"></script>
