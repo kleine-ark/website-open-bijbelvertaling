@@ -740,6 +740,7 @@ const App = {
         container.querySelectorAll('.dropcap').forEach(d => {
             d.replaceWith(document.createTextNode(d.dataset.letter || d.textContent));
         });
+        container.querySelectorAll('.verse-row--dropcap').forEach(r => r.classList.remove('verse-row--dropcap'));
         // Drop-cap op het EERSTE vers van ELK hoofdstuk (ook in doorlopend lezen,
         // waar meerdere hoofdstukken na elkaar staan).
         const firstVerseRows = container.querySelectorAll('.verse-row[data-verse="1"]');
@@ -795,6 +796,11 @@ const App = {
                     span.className = 'dropcap dropcap--fallback';
                 }
                 after.replaceWith(span);                     // vervang de losse letter-node
+                // Begint het hoofdstuk niet bij vers 1 (Gezang in de vuuroven
+                // begint bij 51), dan staat het versnummer vóór de zwevende
+                // sierletter en loopt de tekst eroverheen. Net als bij vers 1
+                // markeert de sierletter zelf het begin.
+                row.classList.add('verse-row--dropcap');
                 break;
             }
         });

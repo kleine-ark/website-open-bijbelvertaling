@@ -175,7 +175,9 @@ const OptionsPanel = {
             const row = control && control.closest('.option-row, .option-choice');
             if (row) mostUsedList.appendChild(this.createOptionMirror(key, row));
         });
-        body.prepend(mostUsed);
+        // Het zoekveld blijft bovenaan; Meest gebruikt komt er direct onder.
+        const searchField = body.querySelector('.options-search');
+        if (searchField) searchField.after(mostUsed); else body.prepend(mostUsed);
         body.dataset.categoriesBuilt = 'true';
         this.syncOptionMirrors();
     },

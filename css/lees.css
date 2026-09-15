@@ -498,6 +498,19 @@ body.dark .icon-sun { display: none; }
 }
 .ethiopic-banner strong { color: #5b21b6; }
 
+/* Op de telefoon nemen de waarschuwingen boven de tekst anders het halve
+   scherm in; compacter, zodat de leestekst direct in beeld komt. */
+@media (max-width: 768px) {
+    .ai-concept-banner,
+    .ethiopic-banner {
+        padding: 6px 10px;
+        margin: 6px 0 10px;
+        border-left-width: 3px;
+        font-size: 11.5px;
+        line-height: 1.4;
+    }
+}
+
 /* ===========================================================================
    Bijbel-zoek-overlay (js/search.js) — gedeeld met index.html
    =========================================================================== */

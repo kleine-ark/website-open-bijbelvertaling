@@ -1214,6 +1214,18 @@ body {
     display: block;
     padding: 0 12px 8px;
 }
+/* Het label is er voor schermlezers; zichtbaar staat de placeholder al. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
 .options-search input {
     box-sizing: border-box;
     width: 100%;
@@ -1267,7 +1279,10 @@ body {
 }
 #sidebar-right select {
     min-height: 34px;
-    max-width: 52%;
+    /* Vaste maat, geen percentage: in de grid van een optieregel rekent een
+       percentage terug naar de volle tekstbreedte van de langste optie, en
+       dan duwt de keuzelijst het label weg. */
+    max-width: 180px;
     padding: 0 31px 0 10px;
     appearance: none;
     border: 1px solid var(--border-default);
@@ -4304,7 +4319,8 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
 #content.reading-mode.layout-eronder .verse-row .verse-num .verse-tag { display: none !important; }
 /* Vers 1 heeft al de sierletter (drop-cap) als markering; het inline nummer '1'
    zou tussen de drop-cap en de rest van het eerste woord vallen (I¹n) → verbergen. */
-#content.reading-mode.layout-eronder .verse-row[data-verse="1"] .verse-num { display: none !important; }
+#content.reading-mode.layout-eronder .verse-row[data-verse="1"] .verse-num,
+#content.reading-mode.layout-eronder .verse-row.verse-row--dropcap .verse-num { display: none !important; }
 /* Cellen die niet zichtbaar moeten zijn — hide via grid (display: none) blijft werken */
 #content.reading-mode.hide-sv1888 .col-sv1888,
 #content.reading-mode.hide-1637 .col-1637,
@@ -4416,6 +4432,19 @@ body.kt-popup-mode .col-2026 sup.note-marker:hover {
     color: #4c1d95;
 }
 .ethiopic-banner strong { color: #5b21b6; }
+
+/* Op de telefoon nemen de waarschuwingen boven de tekst anders het halve
+   scherm in; compacter, zodat de leestekst direct in beeld komt. */
+@media (max-width: 768px) {
+    .ai-concept-banner,
+    .ethiopic-banner {
+        padding: 6px 10px;
+        margin: 6px 0 10px;
+        border-left-width: 3px;
+        font-size: 11.5px;
+        line-height: 1.4;
+    }
+}
 
 /* Ge'ez-grondtekst is links-naar-rechts (anders dan Hebreeuws RTL) */
 .col-hebrew .hebrew-text[lang="gez"] {
