@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = 'v0.58.2';
+const VERSION = 'v0.58.3';
 // New reader modules must not be mixed with HTML from before verification.
 const CACHE_VERSION = `${VERSION}-verification-v9`;
 const SHELL_CACHE   = `shell-${CACHE_VERSION}`;
@@ -59,6 +59,9 @@ const PRECACHE_URLS = [
     '/js/optie-maten.js',
     '/js/begrippen.js',
     '/js/references.js',
+    '/js/verwijzing-popup.js',
+    '/js/noot-grondwoorden.js',
+    '/css/verwijzing-popup.css',
     '/js/lexicon.js',
     '/js/woordnummers.js',
     '/js/editor.js',

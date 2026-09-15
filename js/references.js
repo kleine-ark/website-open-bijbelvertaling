@@ -151,6 +151,15 @@ const References = {
     // Regex voor "vers X" verwijzingen (binnen hetzelfde hoofdstuk)
     VERSE_REF_REGEX: /\bvers\s+(\d+(?:\s*(?:,|en)\s*\d+)*)/gi,
 
+    /** Laatste vers van een reeks als "22-23" of "22,23"; null bij een los vers. */
+    _totVers(verses) {
+        if (!verses) return null;
+        const nummers = String(verses).split(/[,-]/).map(n => parseInt(n, 10)).filter(n => !isNaN(n));
+        if (nummers.length < 2) return null;
+        const laatste = Math.max.apply(null, nummers);
+        return laatste > nummers[0] ? laatste : null;
+    },
+
     /**
      * Maak verwijzingen in tekst klikbaar.
      * @param {string} text - De tekst met verwijzingen
@@ -206,8 +215,9 @@ const References = {
                 const ch = parseInt(chapter);
                 const hash = `#${bookId}/${ch}`;
                 const vs = verses ? parseInt(verses) : null;
+                const tot = this._totVers(verses);
 
-                return `<a class="ref-link" href="${hash}" data-ref-book="${bookId}" data-ref-ch="${ch}"${vs ? ` data-ref-vs="${vs}"` : ''} title="${match}">${match}</a>`;
+                return `<a class="ref-link" href="${hash}" data-ref-book="${bookId}" data-ref-ch="${ch}"${vs ? ` data-ref-vs="${vs}"` : ''}${tot ? ` data-ref-tot="${tot}"` : ''} title="${match}">${match}</a>`;
             }
             // Verkorte ref (ch:vs zonder boek)
             if (shortCh) {
@@ -215,10 +225,11 @@ const References = {
                 if (!lastBookId) return match;
                 const ch = parseInt(shortCh);
                 const vs = shortVs ? parseInt(shortVs) : null;
+                const tot = this._totVers(shortVs);
                 const hash = `#${lastBookId}/${ch}`;
                 // `match` bevat nu ook de voorafgaande komma; die hoort buiten de link.
                 const ref = match.slice(scheider.length);
-                return `${scheider}<a class="ref-link" href="${hash}" data-ref-book="${lastBookId}" data-ref-ch="${ch}"${vs ? ` data-ref-vs="${vs}"` : ''} title="${lastBookId} ${ref}">${ref}</a>`;
+                return `${scheider}<a class="ref-link" href="${hash}" data-ref-book="${lastBookId}" data-ref-ch="${ch}"${vs ? ` data-ref-vs="${vs}"` : ''}${tot ? ` data-ref-tot="${tot}"` : ''} title="${lastBookId} ${ref}">${ref}</a>`;
             }
             return match;
         });
@@ -246,7 +257,8 @@ const References = {
             // Na navigatie: scroll naar vers
             if (vs) {
                 setTimeout(() => {
-                    const verseRow = document.querySelector(`.verse-row[data-verse="${vs}"]`);
+                    // .verse-row in de hoofdapp, .verse-span op de leespagina
+                    const verseRow = document.querySelector(`.verse-row[data-verse="${vs}"], .verse-span[data-verse="${vs}"]`);
                     if (verseRow) {
                         verseRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         verseRow.classList.add('ref-highlight');

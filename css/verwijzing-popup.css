@@ -1,0 +1,80 @@
+/* Popup met de tekst van een Bijbelverwijzing (js/verwijzing-popup.js) en
+   klikbare grondwoorden in kanttekeningen (js/noot-grondwoorden.js).
+
+   Geladen door index.html en lees.html. Die pagina's hebben elk hun eigen
+   kleurvariabelen (lees.css: --header-bg, --text; style.css: --bg-surface,
+   --text-primary), vandaar de terugvalwaarden. Beide zetten ze opnieuw in
+   donkere modus, zodat de popup vanzelf meekleurt. */
+
+.verwijzing-popup {
+    position: fixed;
+    z-index: 1200;
+    min-width: 220px;
+    max-width: 380px;
+    padding: 10px 14px 8px;
+    border-radius: 8px;
+    background: var(--header-bg, var(--bg-surface, #fffdf9));
+    color: var(--text, var(--text-primary, #2c2c2c));
+    border: 1px solid var(--border, var(--border-default, #e5e1d8));
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
+    font-family: var(--font-body, 'EB Garamond', Georgia, serif);
+    font-size: 15px;
+    line-height: 1.5;
+}
+.verwijzing-popup .vp-kop {
+    margin-bottom: 4px;
+    font-family: var(--font-ui, 'Fira Sans', system-ui, sans-serif);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--accent, var(--gold, #b8860b));
+}
+.verwijzing-popup .vp-tekst sup {
+    margin-right: 2px;
+    font-size: 10px;
+    color: var(--text-muted, #999);
+}
+.verwijzing-popup .vp-hint,
+.verwijzing-popup .vp-laden {
+    margin-top: 6px;
+    font-family: var(--font-ui, 'Fira Sans', system-ui, sans-serif);
+    font-size: 11px;
+    color: var(--text-muted, #999);
+}
+.verwijzing-popup .vp-laden { margin-top: 0; }
+
+/* De leespagina laadt style.css niet; daar hebben verwijzingen in het
+   notenpaneel anders geen eigen opmaak. */
+#notes-panel .ref-link {
+    color: var(--link, #2563a8);
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor;
+}
+#notes-panel .ref-link:hover { border-bottom-style: solid; }
+.verse-span.ref-highlight {
+    background: var(--selected, rgba(203, 164, 73, 0.18));
+    border-radius: 3px;
+}
+
+/* Grondwoord in een kanttekening: leest als tekst, klikt als woordenboek. */
+button.grondwoord-link {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px dotted var(--link, #2563a8);
+    background: none;
+    color: inherit;
+    font: inherit;
+    font-size: 1.05em;
+    line-height: inherit;
+    vertical-align: baseline;
+    cursor: pointer;
+}
+button.grondwoord-link:hover,
+button.grondwoord-link:focus-visible {
+    color: var(--link, #2563a8);
+    border-bottom-style: solid;
+    outline: none;
+}
+button.grondwoord-link[lang="he"] { font-family: 'Noto Serif Hebrew', serif; }

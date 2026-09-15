@@ -35,6 +35,7 @@ const Lees = {
         this.manifest = await this.fetchJSON('/data/books.json');
         this.buildBookById();
         this.setupEventListeners();
+        if (typeof References !== 'undefined') References.init();
         this.setupAudioPlayer();
         this.restoreDarkMode();
         this.handleHash();
@@ -192,9 +193,13 @@ const Lees = {
             const text2026 = note.text2026 || note.text1637 || '';
             if (!text2026) continue;
             const isActive = note.marker === focusNoteId ? ' style="background:var(--selected);padding:4px 6px;border-radius:4px;"' : '';
+            // references.js declareert `const References`; dat is geen eigenschap van window.
+            let tekst = typeof References !== 'undefined'
+                ? References.linkify(text2026, this.currentBook, this.currentChapter) : text2026;
+            if (window.NootGrondwoorden) tekst = NootGrondwoorden.link(tekst, verse);
             notesHtml += `<div class="note-item"${isActive}>
                 <span class="note-item-marker">${note.marker}</span>
-                ${text2026}
+                ${tekst}
             </div>`;
         }
 
@@ -830,6 +835,12 @@ const Lees = {
         // Notes panel close
         document.querySelector('.notes-close').addEventListener('click', () => {
             document.getElementById('notes-panel').classList.add('hidden');
+        });
+        // Op mobiel bedekt het notenpaneel de tekst: wie een verwijzing volgt, wil die tekst zien.
+        document.getElementById('notes-panel').addEventListener('click', (e) => {
+            if (e.target.closest('.ref-link') && window.matchMedia('(max-width: 768px)').matches) {
+                document.getElementById('notes-panel').classList.add('hidden');
+            }
         });
 
         // Dark mode

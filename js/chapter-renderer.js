@@ -272,7 +272,8 @@ const ChapterRenderer = {
             let margin2026Html = '';
             if (verse.marginNotes && verse.marginNotes.length > 0) {
                 margin2026Html = verse.marginNotes.map((n, i) => {
-                    const linkedText = n.text2026 ? References.linkify(n.text2026, bookId, chapterNum) : '';
+                    let linkedText = n.text2026 ? References.linkify(n.text2026, bookId, chapterNum) : '';
+                    if (linkedText && window.NootGrondwoorden) linkedText = NootGrondwoorden.link(linkedText, verse);
                     return `<div class="note-item"><span class="note-marker-label">${n.marker}</span> <span class="margin-note-edit">${linkedText}</span></div>`;
                 }).join('');
             } else {
