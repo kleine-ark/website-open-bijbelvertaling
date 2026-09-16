@@ -4011,9 +4011,9 @@
   {
    "id": "V442",
    "categorie": "Verouderde woorden",
-   "oud": "verschonen / verschoont / verschoonde",
-   "nieuw": "sparen / spaart / spaarde / ontzien",
-   "toelichting": "Meestal sparen; waar iemand ontzien wordt, ontzien.",
+   "oud": "verschonen / verschoont / verschoonde / verschoond",
+   "nieuw": "sparen / spaart / spaarde / gespaard / ontzien",
+   "toelichting": "Meestal sparen; waar iemand ontzien wordt, ontzien. Het voltooid deelwoord verschoond ontbrak in de eerste doorvoering en bleef op zeven plaatsen staan, tot een lezersmelding bij Boek der Wijsheid 12:8.",
    "regex": "\\b[Vv]erschon(en|t|de|den)?\\b"
   },
   {
@@ -10046,9 +10046,9 @@
   {
    "id": "V1161",
    "categorie": "Verouderde woorden",
-   "oud": "vermetel",
-   "nieuw": "overmoedig",
-   "toelichting": "Als bijwoord. Het zelfstandig naamwoord vermetelheid en de vermetele blijven vooralsnog staan.",
+   "oud": "vermetel / vermetelheid",
+   "nieuw": "overmoedig / overmoed",
+   "toelichting": "Als bijwoord overmoedig. Het zelfstandig naamwoord vermetelheid werd eerst nog niet aangeraakt; na een lezersmelding bij Boek der Wijsheid 2:9 is het overmoed geworden, op alle drie de plaatsen.",
    "regex": "",
    "voorbeeld": "Numeri 14:44"
   },
@@ -15294,6 +15294,60 @@
    "regex": "\\bwakers\\b",
    "voorbeeld": "jubileeen 4:22",
    "bereik": {}
+  },
+  {
+   "id": "V1643",
+   "categorie": "Verouderde woorden",
+   "oud": "gemeen / in het gemeen",
+   "nieuw": "gemeenschappelijk / gezamenlijk / algemeen / gewoon / afgesproken",
+   "toelichting": "SV 'gemeen' betekent gedeeld of algemeen; modern Nederlands hoort er 'laag, vals' in. Elf plaatsen, en elke plaats vraagt een andere vorm: de lucht die ons gemeen is, hebben wij samen (Boek der Wijsheid 7:3); gemeen brood is gewoon brood tegenover heilig brood (1 Samuel 21:4); alle dingen gemeen hebben is gemeenschappelijk (Handelingen 2:44); in het gemeen spreken is in het algemeen spreken (3 Makkabeeen 4:3); een gemeen teken is een afgesproken teken (Markus 14:44). Daarom geen enkele vervanging maar een vaste keuze per zin.",
+   "regex": "\\bgemeen\\b",
+   "voorbeeld": "Boek der Wijsheid 7:3"
+  },
+  {
+   "id": "V1644",
+   "categorie": "Verouderde woorden",
+   "oud": "somtijds",
+   "nieuw": "soms",
+   "toelichting": "Verouderd bijwoord; betekenis onveranderd. Drie plaatsen.",
+   "regex": "\\b[Ss]omtijds\\b",
+   "voorbeeld": "Boek der Wijsheid 16:19"
+  },
+  {
+   "id": "V1645",
+   "categorie": "Verouderde woorden",
+   "oud": "gevoegelijk",
+   "nieuw": "op passende wijze",
+   "toelichting": "SV 'gevoegelijk' (= zoals het voegt, passend). Het woord is uitgestorven; V816 deed eerder het tegendeel ongevoegelijk. Een plaats.",
+   "regex": "\\bgevoegelijk\\b",
+   "voorbeeld": "Boek der Wijsheid 19:17"
+  },
+  {
+   "id": "V1646",
+   "categorie": "Verouderde woorden",
+   "oud": "getemperd tot",
+   "nieuw": "afgestemd op",
+   "toelichting": "Temperen betekende mengen of afstemmen; tegenwoordig alleen nog matigen, en dat is hier de verkeerde richting: het manna nam de smaak aan die ieder wilde. Een plaats.",
+   "regex": "\\bgetemperd\\b",
+   "voorbeeld": "Boek der Wijsheid 16:21"
+  },
+  {
+   "id": "V1647",
+   "categorie": "Verouderde woorden",
+   "oud": "baren (zelfstandig naamwoord)",
+   "nieuw": "golven",
+   "toelichting": "De baren van de zee zijn de golven. Het werkwoord baren (een kind ter wereld brengen) blijft staan, en dat is hier de valkuil: 'de tijd van haar baren' (Job 39:5) en 'het hard in haar baren' (Genesis 35:17) gaan over een bevalling. Daarom alleen na een lidwoord of bepaling en alleen in een vers dat over water gaat. Psalm 42:8 en Jona 2:3 zetten baren en golven naast elkaar als twee woorden; daar blijft baren staan.",
+   "regex": "\\b(de|haar|vele|wilde) baren\\b",
+   "voorbeeld": "Boek der Wijsheid 5:10"
+  },
+  {
+   "id": "V1648",
+   "categorie": "Naamvallen",
+   "oud": "wij zijn uw",
+   "nieuw": "wij zijn van U",
+   "toelichting": "Het bezittelijk voornaamwoord zonder zelfstandig naamwoord erachter is verouderd: 'wij zijn uw' is 'wij zijn van U'. Een plaats; 'zij zijn Uw volk' en dergelijke blijven ongemoeid.",
+   "regex": "\\bwij zijn uw\\b",
+   "voorbeeld": "Boek der Wijsheid 15:2"
   },
   {
    "id": "MR-OPM-001",
