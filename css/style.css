@@ -1558,6 +1558,55 @@ body {
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 18%, transparent);
 }
 .option-row-book-order select { max-width: 230px; }
+/* Drieknopsschakelaar (thema). Een keuzelijst met drie korte keuzes kost een
+   extra tik en kapt op smalle schermen het woord af; alle drie naast elkaar
+   is in één oogopslag te lezen en met één tik te zetten. */
+.option-segmented {
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid var(--border-default);
+    border-radius: 999px;
+    background: var(--bg-surface-alt);
+}
+.option-segmented label {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    color: var(--text-secondary);
+    font: 600 12px var(--font-body);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 140ms ease, color 140ms ease;
+}
+#sidebar-right .option-segmented input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    appearance: none;
+    background: none !important;
+    border: 0;
+    pointer-events: none;
+}
+.option-segmented label:hover { color: var(--text-primary); }
+#sidebar-right .option-segmented label:has(input:checked),
+.option-segmented label:has(input:checked) {
+    background: var(--gold);
+    color: #1a1d24;
+    font-weight: 700;
+}
+.option-segmented label:has(input:focus-visible) {
+    outline: 2px solid color-mix(in srgb, var(--gold) 70%, transparent);
+    outline-offset: 2px;
+}
 .options-zoom-controls {
     display: inline-flex;
     flex: 0 0 auto;
@@ -1692,6 +1741,9 @@ body {
         color: #17344e;
         font-weight: 600;
     }
+    #sidebar-right .option-segmented { background: #f1eee8; border-color: rgba(20, 46, 66, 0.14); }
+    #sidebar-right .option-segmented label { color: #657078; }
+    #sidebar-right .option-segmented label:has(input:checked) { background: var(--navy); color: #fff; }
     #sidebar-right .options-zoom-controls { background: #f1eee8; }
     #sidebar-right .options-zoom-controls button {
         background: transparent !important;
@@ -1759,6 +1811,15 @@ body {
     :root[data-theme="donker"] #sidebar-right input[type="radio"] { background: var(--bg-surface-alt); }
     :root[data-theme="donker"] #sidebar-right label:has(input[type="radio"]:checked) {
         color: var(--text-primary);
+    }
+    :root[data-theme="donker"] #sidebar-right .option-segmented {
+        background: var(--bg-surface-alt);
+        border-color: var(--border-soft);
+    }
+    :root[data-theme="donker"] #sidebar-right .option-segmented label { color: var(--text-secondary); }
+    :root[data-theme="donker"] #sidebar-right .option-segmented label:has(input:checked) {
+        background: var(--gold);
+        color: #1a1d24;
     }
     :root[data-theme="donker"] #sidebar-right .options-zoom-controls { background: var(--bg-surface-alt); }
     :root[data-theme="donker"] #sidebar-right .options-zoom-controls button {

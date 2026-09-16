@@ -14,7 +14,10 @@
             : choice;
         document.documentElement.dataset.theme = theme;
         document.querySelectorAll('[data-optie="thema"]').forEach(function (control) {
-            control.value = choice;
+            // De keuze staat in een drieknopsschakelaar; bij een radio zou
+            // control.value zetten de keuze zelf overschrijven.
+            if (control.type === 'radio') control.checked = control.value === choice;
+            else control.value = choice;
         });
         if (global.OptionsPanel) global.OptionsPanel.syncOptionMirrors();
         global.dispatchEvent(new Event('ov:theme-changed'));

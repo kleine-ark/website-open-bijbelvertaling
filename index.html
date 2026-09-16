@@ -39,7 +39,7 @@
     <!-- Auto-open Search bij ?q=... van andere pagina's -->
     <script>window.addEventListener('load',function(){try{var p=new URLSearchParams(location.search);var q=p.get('q');if(q&&typeof Search!=='undefined'){setTimeout(function(){Search.open(q);},200);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}});</script>
     <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/style.css?v=0.58.1">
+  <link rel="stylesheet" href="css/style.css?v=0.58.4">
     <link rel="stylesheet" href="css/verwijzing-popup.css">
     <link rel="stylesheet" href="css/print.css" media="print">
 
@@ -549,11 +549,15 @@
                     <div><h3>Leestekst</h3><p>Maak de leestekst rustig en persoonlijk.</p></div>
                 </div>
                 <div class="options-list">
-                    <label class="option-row option-row-with-icon option-row-select" for="opt-thema">
+                    <div class="option-row option-row-with-icon" role="group" aria-label="Thema">
                         <img class="option-icon" src="images/iconen/instellingen/thema.png" alt="" aria-hidden="true">
                         <span><strong>Thema</strong></span>
-                        <span class="option-select-shell"><select id="opt-thema" data-optie="thema" aria-label="Thema"><option value="auto">Automatisch</option><option value="licht">Licht</option><option value="donker">Donker</option></select></span>
-                    </label>
+                        <span class="option-segmented">
+                            <label><input type="radio" name="opt-thema" data-optie="thema" value="auto"><span>Auto</span></label>
+                            <label><input type="radio" name="opt-thema" data-optie="thema" value="licht"><span>Licht</span></label>
+                            <label><input type="radio" name="opt-thema" data-optie="thema" value="donker"><span>Donker</span></label>
+                        </span>
+                    </div>
                     <label class="option-row option-row-with-icon"><img class="option-icon" src="images/iconen/instellingen/lettertype.png" alt="" aria-hidden="true"><span><strong>Alternatief lettertype</strong></span><input type="checkbox" id="toggle-lettertype-alternatief"></label>
                     <div id="options-zoom" class="option-row option-row-with-icon options-zoom" role="group" aria-label="Tekstgrootte">
                         <img class="option-icon" src="images/iconen/instellingen/tekstgrootte.png" alt="" aria-hidden="true">
