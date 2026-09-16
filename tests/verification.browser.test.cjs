@@ -110,6 +110,10 @@ test('reader chapter and verse clicks link the authenticated account; signout cl
     assert.match(await chapter.innerText(), /Admin/);
     assert.equal(await page.locator('#chapter-title .chapter-concept-tag').count(), 0);
     const verse = page.locator('[data-verification="text-verse:genesis/1/1"]');
+    // A chapter review now covers the unchanged components of its verses too.
+    await verse.getByRole('button', { name: 'Geverifieerd: Genesis 1:1', exact: true }).waitFor();
+    await verse.getByRole('button', { name: 'Beoordelingsacties: Genesis 1:1', exact: true }).click();
+    await verse.getByRole('button', { name: 'Intrekken', exact: true }).click();
     await verse.getByRole('button', { name: 'Verifiëren: Genesis 1:1', exact: true }).click();
     await verse.getByText('Verificatie opgeslagen.', { exact: true }).waitFor();
     await page.evaluate(() => setTestUser('reviewer'));
@@ -495,7 +499,7 @@ test('verse verification stays to the right of text and changes without adding r
         }
     }
     const verse = page.locator('[data-verification="text-verse:genesis/2/2"]');
-    await verse.getByRole('button', { name: 'Verifiëren: Genesis 2:2', exact: true }).click();
+    await verse.getByRole('button', { name: 'Beoordelingsacties: Genesis 2:2', exact: true }).click();
     await verse.getByRole('button', { name: 'Geverifieerd: Genesis 2:2', exact: true }).waitFor();
     const popup = await verse.locator('.verification-details').boundingBox();
     assert.ok(popup.x >= 0 && popup.x + popup.width <= 390, 'Right-side details open inward and remain on screen');

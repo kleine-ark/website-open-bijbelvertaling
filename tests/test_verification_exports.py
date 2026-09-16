@@ -1,6 +1,7 @@
 """Real HTTP/database export and release build, using a small temporary corpus."""
 import importlib.util
 import json
+from component_fixtures import fingerprint_catalog
 import unittest
 import unittest.mock
 import urllib.error
@@ -28,7 +29,7 @@ class VerificationExportTests(fixtures.CollaborationHttpTests):
             "label": "Genesis 1", "href": "index.html#genesis/1", "source": "data/genesis/1.json",
             "metadata": {"sourceHash": "b" * 64},
         })
-        catalog["catalogRevision"] = fixtures.api_module.review_catalog_revision(catalog)
+        catalog["catalogRevision"] = fingerprint_catalog(catalog)
         self.catalog_path.write_text(json.dumps(catalog))
         (self.root / "data/review-catalog.json").write_text(json.dumps(catalog))
         (self.root / "data/books.json").write_text(json.dumps({"books": [{

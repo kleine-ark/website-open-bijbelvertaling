@@ -352,7 +352,7 @@ const ChapterRenderer = {
             `;
 
             sink.appendChild(row);
-            if (!isExternalTranslation) Editor.attachVerseListeners(row, bookId, chapterNum, verse.number);
+            if (!isExternalTranslation) Editor.attachVerseListeners(row, bookId, chapterNum, verse);
             // Rechtermuisknop op versnummer = tag toevoegen
             row.querySelector('.verse-num').addEventListener('contextmenu', (e) => {
                 e.preventDefault();

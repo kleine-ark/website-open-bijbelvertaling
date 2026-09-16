@@ -16,6 +16,7 @@ from collaboration_api import ReviewStore, Forbidden, Conflict, InvalidRequest
 from corrections import Corrections
 from correction_files import apply_bundle
 from review_content import canonical_hash, text_review_payload, location_review_payload
+from review_components import component_metadata
 from correction_cli import prepare
 import correction_files
 
@@ -55,11 +56,12 @@ class CorrectionsTests(unittest.TestCase):
                   for v in text_review_payload(chapter)['verses']]
         location = json.loads((self.root / 'data/geografie-runtime.geojson').read_text())['features'][0]
         items += [('location', 'jerusalem', location_review_payload(location), 'data/geografie-runtime.geojson')]
-        catalog = {'schemaVersion': 2, 'historicalSubjects': [], 'subjectTypes': {
+        catalog = {'schemaVersion': 3, 'componentHistory': [], 'historicalSubjects': [], 'subjectTypes': {
             'text-chapter': 'Hoofdstuk', 'text-verse': 'Vers', 'location': 'Locatie'}, 'subjects': [
                 {'type': kind, 'id': key, 'revision': canonical_hash(value), 'label': key,
                  'href': 'index.html#' + key, 'source': source,
-                 'metadata': {'sourceHash': hashlib.sha256((self.root / source).read_bytes()).hexdigest()}}
+                 'metadata': {'sourceHash': hashlib.sha256((self.root / source).read_bytes()).hexdigest(),
+                              'components': component_metadata(kind, value)}}
                 for kind, key, value, source in items]}
         catalog['catalogRevision'] = canonical_hash(catalog)
         self.store.sync_catalog(catalog)

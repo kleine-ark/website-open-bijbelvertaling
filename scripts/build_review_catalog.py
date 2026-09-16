@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'server'))
 from review_content import canonical_hash, text_review_payload, text_revision, location_review_payload
+from review_components import component_metadata
 OUTPUT = ROOT / "data" / "review-catalog.json"
 
 
@@ -22,11 +23,18 @@ def build_catalog(root: Path = ROOT) -> dict:
     data = root / "data"
     books = json.loads((data / "books.json").read_text(encoding="utf-8"))["books"]
     historical_subjects = []
+    component_history = json.loads((root / 'migrations/review-components-v1.json').read_text())
+    if component_history['schemaVersion'] != 1:
+        raise ValueError('Unknown component migration version')
+    historical_components = {(i['type'], i['id'], i['revision']): i['metadata']['components']
+                             for i in component_history['subjects']}
     for filename in ("review-history-v1.json", "review-history-v2.json"):
         history = json.loads((root / "migrations" / filename).read_text(encoding="utf-8"))
         if history["schemaVersion"] != 1:
             raise ValueError("onbekende historische migratieversie")
         historical_subjects.extend(history["subjects"])
+    for item in historical_subjects:
+        item['metadata'] = {'components': historical_components[(item['type'], item['id'], item['revision'])]}
     geography = json.loads(
         (data / "geografie-runtime.geojson").read_text(encoding="utf-8")
     )
@@ -57,6 +65,7 @@ def build_catalog(root: Path = ROOT) -> dict:
                     "book": book_id,
                     "chapter": chapter_number,
                     "verses": len(chapter.get("verses", [])),
+                    "components": component_metadata('text-chapter', text_review_payload(chapter)),
                 },
             }
             subjects.append(subject)
@@ -68,7 +77,8 @@ def build_catalog(root: Path = ROOT) -> dict:
                     "label": f"{book['nameDutch']} {chapter_number}:{verse['number']}",
                     "href": f"index.html#{book_id}/{chapter_number}/{verse['number']}",
                     "source": f"data/{book_id}/{chapter_number}.json",
-                    "metadata": {"sourceHash": source_hash},
+                    "metadata": {"sourceHash": source_hash,
+                                 "components": component_metadata('text-verse', verse)},
                 })
 
     features = geography.get("features")
@@ -91,6 +101,7 @@ def build_catalog(root: Path = ROOT) -> dict:
             "source": "data/geografie-runtime.geojson",
             "metadata": {
                 "sourceHash": geography_hash,
+                "components": component_metadata('location', location_review_payload(feature)),
                 "certainty": properties.get("zekerheid", "onzeker"),
                 "sourceDataset": (properties.get("bron") or {}).get("dataset"),
             },
@@ -102,7 +113,8 @@ def build_catalog(root: Path = ROOT) -> dict:
         raise ValueError("reviewcatalogus bevat dubbele onderwerp-id's")
     subjects.sort(key=lambda item: (item["type"], item["label"].casefold(), item["id"]))
     catalog = {
-        "schemaVersion": 2,
+        "schemaVersion": 3,
+        "componentHistory": component_history['subjects'],
         "historicalSubjects": historical_subjects,
         "subjectTypes": {
             "text-chapter": "Bijbelhoofdstuk",

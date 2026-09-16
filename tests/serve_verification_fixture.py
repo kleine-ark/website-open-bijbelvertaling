@@ -14,6 +14,7 @@ spec = importlib.util.spec_from_file_location("api", ROOT / "server/collaboratio
 api = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(api)
 from review_content import canonical_hash, subject_payload
+from review_components import component_metadata
 
 
 class Verifier:
@@ -44,7 +45,8 @@ with tempfile.TemporaryDirectory(prefix="ov-verification-test-") as temporary:
                 "revision": canonical_hash(subject_payload(subject_type, identifier, content)),
                 "label": f"Genesis {chapter}" + (f":{verse}" if verse else ""),
                 "href": "index.html#" + identifier, "source": f"data/genesis/{chapter}.json",
-                "metadata": {"sourceHash": source_hash},
+                "metadata": {"sourceHash": source_hash,
+                             "components": component_metadata(subject_type, subject_payload(subject_type, identifier, content))},
             })
     location_path = ROOT / "data/geografie-runtime.geojson"
     location = json.loads(location_path.read_text())["features"][0]["properties"]
@@ -53,11 +55,12 @@ with tempfile.TemporaryDirectory(prefix="ov-verification-test-") as temporary:
         "type": "location", "id": location["id"],
         "revision": canonical_hash(subject_payload('location', location['id'], json.loads(location_path.read_text()))),
         "label": location["naam"], "href": "plaats.html?plaats=" + location["id"],
-        "source": "data/geografie-runtime.geojson", "metadata": {"sourceHash": location_hash},
+        "source": "data/geografie-runtime.geojson", "metadata": {"sourceHash": location_hash,
+            "components": component_metadata('location', subject_payload('location', location['id'], json.loads(location_path.read_text())))},
     })
     history = [dict(item, migrationSource="test historical review") for item in subjects
                if item["type"] == "text-chapter" and item["id"] == "genesis/3"]
-    catalog = {"schemaVersion": 2, "historicalSubjects": history, "subjectTypes": {
+    catalog = {"schemaVersion": 3, "componentHistory": [], "historicalSubjects": history, "subjectTypes": {
         "text-chapter": "Hoofdstuk", "text-verse": "Vers", "location": "Plaats",
     }, "subjects": subjects}
     catalog["catalogRevision"] = api.review_catalog_revision(catalog)

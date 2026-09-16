@@ -62,21 +62,42 @@ naar de leesomgeving teruggestuurd.
 De eerste geslaagde klik legt de verantwoordelijke vast. Herhaalde of gelijktijdige
 klikken overschrijven die persoon niet. **Intrekken** maakt een nieuwe gebeurtenis;
 daarna kan iemand opnieuw verifiëren. Geschiedenis wordt nooit overschreven.
-Hoofdstuk- en versverificaties zijn afzonderlijke beslissingen: het systeem
-verzint geen individuele versverificaties uit een hoofdstukbeslissing, of omgekeerd.
+Een hoofdstukbeslissing geldt ook voor dezelfde beoordeelde onderdelen van de
+afzonderlijke verzen. Dit blijft één auditgebeurtenis met dezelfde verantwoordelijke.
+Een latere versintrekking maakt het betreffende onderdeel van het hoofdstuk
+onbevestigd; een nieuwe hoofdstukverificatie kan die intrekking weer opvolgen.
 
 ## Revisies en weergegeven inhoud
 
-`scripts/build_review_catalog.py` bouwt `data/review-catalog.json` (schema 2).
+`scripts/build_review_catalog.py` bouwt `data/review-catalog.json` (schema 3).
 Een onderwerp heeft een soort, stabiele id, label, link, bronbestand en SHA-256-revisie
-van de beoordeelde inhoud. Hoofdstukken omvatten de hoofdstukinleiding,
-verstekst/opmaak en kanttekeningen; locaties omvatten geometrie en inhoudelijke
-eigenschappen. Woordkoppelingen en historische reviewvlaggen zijn geen tekstbeslissing.
+van de beoordeelde inhoud. Die totaalrevisie bindt correctietaken en bronbestanden.
+Verificatie heeft daarnaast onafhankelijke revisies voor de Bijbeltekst,
+kanttekeningen, nootnummers, citaatopmaak, overige tekstopmaak en hoofdstukinleiding.
+De tekstvingerafdruk omvat zowel de platte tekst als de woorden in de HTML, zonder
+nootmarkeringen of opmaaktags. Locaties hebben één inhoudelijke revisie voor
+geometrie en eigenschappen. Woordkoppelingen en historische reviewvlaggen zijn geen tekstbeslissing.
 
-Verandert deze inhoud, dan is de nieuwe revisie onbevestigd. De oude beslissing,
+Verandert een onderdeel, dan is uitsluitend dat onderdeel onbevestigd. De oude beslissing,
 verantwoordelijke en revisie blijven in het beheerderslog staan. Een nieuwe
 gegevenssoort vereist een catalogusadapter en een `Verification.mount` naast de
 weergegeven inhoud; accounts en auditopslag hoeven niet opnieuw ontworpen te worden.
+
+De hoofdstukstatus en `verified-chapters` betreffen uitsluitend de Bijbeltekst.
+De waarschuwing benoemt alleen ongecontroleerde onderdelen die daadwerkelijk
+getoond worden: verborgen kanttekeningen, nootnummers, inleidingen of citaatopmaak
+tellen niet mee. Een geopende kanttekening krijgt haar eigen versgebonden melding.
+De boodschap onderscheidt gewijzigde inhoud, ontbrekende verificatie, lokale
+bewerkingen en correctieverzoeken; ze veronderstelt niet dat iedere wijziging door
+AI is gemaakt. De instelling voor nootnummers heet **Nootnummers tonen — klik voor
+de kanttekening** onder Weergave, Vertalingen, talen & kanttekeningen.
+
+De leesknop verstuurt uitsluitend de zichtbare onderdelen plus hun revisies.
+De API controleert de selectie en legt die vast in de immutable tabel
+`review_components`, gekoppeld aan de bestaande auditgebeurtenis. Een expliciete
+hele-onderwerpbeoordeling via de API kan `components` weglaten; dan worden alle
+onderdelen beoordeeld. Herhaalde goedkeuringen nemen geen bestaande eigenaar over.
+Alleen beheerders ontvangen verantwoordelijken, ook bij beoordelingen per onderdeel.
 
 De browser hasht ook de daadwerkelijk geladen bronbytes. De server vergelijkt
 deze `sourceHash` bij de klik met de actuele catalogus. Oude caches of een
@@ -100,6 +121,28 @@ late requests mogen ze niet terugplaatsen. Accountwisseling tijdens tokenvernieu
 mag evenmin een klik onder een ander account uitvoeren.
 
 ## Migratie en releasesnapshots
+
+`migrations/review-components-v1.json` reconstrueert 1.442 bestaande beoordeelde
+revisies uit hun exacte Git-bronnen. Bij catalogussynchronisatie koppelt
+`component-reviews-v1` die onderdelen transactioneel aan de bestaande beslissingen.
+Audit-ids, personen, besluiten, tijden en volgorde blijven ongewijzigd. Dit keurt
+geen gewijzigde inhoud goed. Ongewijzigde nootmarkeringen/opmaak en tekst behouden
+wel hun oorspronkelijke beoordeling. Zonder passende historische bron stopt de
+migratie met een serverfout; er wordt nooit een oude revisie uit huidige tekst geraden.
+
+Controleer vóór publicatie of sinds de laatste migratiebouw nieuwe oude-formatreviews
+zijn toegevoegd. De audit leest de productiedatabase alleen; Git wordt uitsluitend
+door dit bouwscript gebruikt, nooit door de draaiende API:
+
+```bash
+python3 scripts/build_component_history.py --audit-host root@open-aec.com
+python3 scripts/build_review_catalog.py
+```
+
+Optioneel controleert `--database /pad/naar/collaboration.sqlite3` ook een lokale
+database. Maak vóór de eerste nieuwe API-start een SQLite-back-up; de eerste
+catalogussynchronisatie voert de eenmalige migratie uit. Publiceer schema-3-catalogus,
+nieuwe servermodules en lezermodules samen; oude catalogi worden niet ondersteund.
 
 De vroegere, handmatig onderhouden hoofdstuklijst is vervangen door de vaste
 migratie `migrations/review-history-v1.json`. Deze bewaart alle 1.141 oude records

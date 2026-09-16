@@ -31,7 +31,8 @@ const Editor = {
         });
     },
 
-    attachVerseListeners(row, bookId, chapterNum, verseNum) {
+    attachVerseListeners(row, bookId, chapterNum, verse) {
+        const verseNum = verse.number;
         // Auto-save bij blur (vers-cellen)
         const editables = row.querySelectorAll('.col-2026[contenteditable="true"], .col-opmerkingen[contenteditable="true"], .col-notes[contenteditable="true"]');
         editables.forEach(cell => {
@@ -51,7 +52,7 @@ const Editor = {
         row.querySelectorAll('.note-marker').forEach(marker => {
             marker.addEventListener('click', (e) => {
                 e.stopPropagation();
-                this.showNoteTooltip(e.target, bookId, chapterNum, verseNum);
+                this.showNoteTooltip(e.currentTarget, bookId, chapterNum, verse);
             });
         });
 
@@ -130,46 +131,58 @@ const Editor = {
         App.updateProgress();
     },
 
-    showNoteTooltip(marker, bookId, chapterNum, verseNum) {
+    showNoteTooltip(marker, bookId, chapterNum, verse) {
         this.hideTooltip();
 
         const noteId = marker.dataset.note;
-        const book = DataLoader.cache[bookId];
-        if (!book) return;
-
-        const chapter = book.chapters.find(c => c.number === chapterNum);
-        if (!chapter) return;
-        const verse = chapter.verses.find(v => v.number === verseNum);
-        if (!verse) return;
-
-        const note = verse.marginNotes.find(n => n.marker === noteId);
-        if (!note) return;
-
         const tooltip = document.createElement('div');
-        tooltip.className = 'note-tooltip';
-        const linkedText1637 = References.linkify(note.text1637, bookId, chapterNum);
-        const linkedText2026 = note.text2026 ? References.linkify(note.text2026, bookId, chapterNum) : '';
-        // Toon hertaalde tekst als hoofdtekst, 1637 als ondertekst
-        const mainText = linkedText2026 || linkedText1637;
-        tooltip.innerHTML = `
-            <div class="note-type">${note.type === 'crossref' ? 'Kruisverwijzing' : 'Kanttekening'}</div>
-            <div class="note-label">Noot ${note.marker}</div>
-            <div>${mainText}</div>
-            ${linkedText2026 && linkedText1637 ? `<div style="margin-top:8px;padding-top:8px;border-top:1px solid #eee;font-size:11px;color:#888;"><em>1637:</em> ${linkedText1637}</div>` : ''}
-        `;
+        tooltip.className = 'note-tooltip reviewed-notes';
+        // The review concerns this verse's notes, so show the entire reviewed set.
+        // Put the clicked note first, followed by the remaining notes of the verse.
+        const notes = [...verse.marginNotes].sort((a, b) => Number(b.marker === noteId) - Number(a.marker === noteId));
+        for (const note of notes) {
+            const linkedText1637 = References.linkify(note.text1637, bookId, chapterNum);
+            const linkedText2026 = note.text2026 ? References.linkify(note.text2026, bookId, chapterNum) : '';
+            const item = document.createElement('section');
+            item.className = 'note-popup-item';
+            const label = document.createElement('div');
+            label.className = 'note-label';
+            label.textContent = 'Noot ' + note.marker;
+            const text = document.createElement('div');
+            text.innerHTML = linkedText2026 || linkedText1637;
+            item.append(label, text);
+            if (linkedText2026 && linkedText1637) {
+                const original = document.createElement('details');
+                const summary = document.createElement('summary');
+                summary.textContent = 'Statenvertaling 1637';
+                const originalText = document.createElement('div');
+                originalText.innerHTML = linkedText1637;
+                original.append(summary, originalText);
+                item.appendChild(original);
+            }
+            tooltip.appendChild(item);
+        }
 
         document.body.appendChild(tooltip);
+        const review = document.createElement('div');
+        tooltip.prepend(review);
+        Verification.notes(review, bookId, chapterNum, verse.number);
 
-        // Positioneer bij de marker
         const rect = marker.getBoundingClientRect();
-        tooltip.style.top = (rect.bottom + 8) + 'px';
-        tooltip.style.left = Math.min(rect.left, window.innerWidth - 420) + 'px';
+        const position = () => {
+            tooltip.style.top = Math.max(12, Math.min(rect.bottom + 8, innerHeight - tooltip.offsetHeight - 12)) + 'px';
+            tooltip.style.left = Math.max(12, Math.min(rect.left, innerWidth - tooltip.offsetWidth - 12)) + 'px';
+        };
+        this.tooltipResize = new ResizeObserver(position);
+        this.tooltipResize.observe(tooltip);
+        position();
 
         this.activeTooltip = tooltip;
     },
 
     hideTooltip() {
         if (this.activeTooltip) {
+            this.tooltipResize.disconnect();
             this.activeTooltip.remove();
             this.activeTooltip = null;
         }

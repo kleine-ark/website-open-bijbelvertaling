@@ -18,7 +18,7 @@ for tool in curl install nginx python3 systemctl; do
 done
 python3 -c 'import cryptography'
 MODULES=(collaboration_api.py collaboration_schema.py collaboration_errors.py correction_schema.py
-    review_content.py correction_files.py corrections.py correction_routes.py correction_cli.py)
+    review_content.py review_components.py component_reviews.py correction_files.py corrections.py correction_routes.py correction_cli.py)
 for file in "${MODULES[@]}" openvertaling-collaboration.service openvertaling-collaboration.nginx; do
     test -f "$SOURCE_DIR/$file" || {
         echo "Installatiebestand ontbreekt: $file" >&2

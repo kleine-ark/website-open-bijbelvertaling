@@ -4,15 +4,8 @@ const LeesRenderer = {
         // Heading — concept-marker bij niet-geverifieerde hoofdstukken
         const headingEl = document.getElementById('chapter-heading');
         const isVerified = this._isVerified(this.currentBook, chapterNum);
-        headingEl.textContent = `${book.nameDutch} ${chapterNum}`;
-        headingEl.classList.toggle('chapter-unverified', !isVerified);
-        if (!isVerified) {
-            const tag = document.createElement('span');
-            tag.className = 'chapter-concept-tag';
-            tag.textContent = 'CONCEPT — NIET GECONTROLEERD';
-            headingEl.appendChild(document.createTextNode(' '));
-            headingEl.appendChild(tag);
-        }
+        VerificationDisplay.title(headingEl, `${book.nameDutch} ${chapterNum}`,
+            isVerified || !Verification.textVisible(this.currentBook, chapterNum));
     },
     async _updateDatingBox(book) {
         if (this._bookDating === undefined) {

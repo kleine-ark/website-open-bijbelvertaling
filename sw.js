@@ -10,7 +10,7 @@
 
 const VERSION = 'v0.58.8';
 // New reader modules must not be mixed with HTML from before verification.
-const CACHE_VERSION = `${VERSION}-verification-v10`;
+const CACHE_VERSION = `${VERSION}-verification-v11`;
 const SHELL_CACHE   = `shell-${CACHE_VERSION}`;
 const DATA_CACHE    = `data-${CACHE_VERSION}`;
 const LEXICON_CACHE = `lexicon-${CACHE_VERSION}`;
@@ -32,6 +32,8 @@ const PRECACHE_URLS = [
     '/js/teksteditie.js',
     '/js/data-loader.js',
     '/js/verification.js',
+    '/js/review-components.js',
+    '/js/verification-display.js',
     '/js/collaboration.js',
     '/correcties.html',
     '/js/corrections.js',

@@ -132,21 +132,11 @@ const Lees = {
     _verifiedGeladen: null,
 
     _laadVerified() {
-        if (!Lees._verifiedGeladen) {
-            Lees._verifiedGeladen = fetch('/api/collaboration/verified-chapters', { cache: 'no-store' })
-                .then(r => (r.ok ? r.json() : {}))
-                .then(d => { Lees.VERIFIED_CHAPTERS = d || {}; })
-                .catch(() => { Lees.VERIFIED_CHAPTERS = {}; });
-        }
-        return Lees._verifiedGeladen;
+        return Verification.loadChapters(Lees);
     },
 
     _isVerified(bookId, chapter) {
-        const displayed = Verification.isChapterVerified(bookId, chapter);
-        if (displayed !== null) return displayed;
-        const v = this.VERIFIED_CHAPTERS[bookId];
-        if (!v) return false;
-        return v.includes(chapter);
+        return Verification.chapterVerified(Lees, bookId, chapter);
     },
 
     // Boek-niveau: is élk hoofdstuk in dit boek nagekeken?
@@ -161,20 +151,7 @@ const Lees = {
     },
 
     _updateVerifiedBanner(bookId, chapter) {
-        let banner = document.getElementById('ai-concept-banner');
-        if (this._isVerified(bookId, chapter)) {
-            if (banner) banner.style.display = 'none';
-            return;
-        }
-        if (!banner) {
-            banner = document.createElement('div');
-            banner.id = 'ai-concept-banner';
-            banner.className = 'ai-concept-banner';
-            banner.innerHTML = '<strong>⚠ Let op:</strong> AI-wijzigingen. Concept. Nog geen menselijke controle plaatsgevonden — kans op nog niet opgeloste onjuistheden.';
-            const versesEl = document.getElementById('verses');
-            if (versesEl && versesEl.parentNode) versesEl.parentNode.insertBefore(banner, versesEl);
-        }
-        banner.style.display = 'block';
+        VerificationDisplay.banner(bookId, chapter, true);
     },
 
     ...LeesRenderer,
@@ -205,6 +182,7 @@ const Lees = {
 
         content.innerHTML = notesHtml;
         panel.classList.remove('hidden');
+        Verification.notes(content, this.currentBook, this.currentChapter, verseNum);
     },
 
     // === Tekst-selectie-driven toolbar ===

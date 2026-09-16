@@ -35,6 +35,27 @@ async function startFixture() {
 
     return {
         browser, pageAs, base: 'http://127.0.0.1:' + config.port, locationId: config.location,
+        publishChapter(number, chapter) {
+            const raw = JSON.stringify(chapter);
+            execFileSync('python3', ['-c', `
+import sys,json,hashlib
+from pathlib import Path
+sys.path.insert(0,'server')
+from review_content import canonical_hash,subject_payload
+from review_components import component_metadata
+path=Path(sys.argv[1]); raw=sys.stdin.buffer.read(); doc=json.loads(raw)
+catalog=json.loads(path.read_text())
+for item in catalog['subjects']:
+    if item['source'] != 'data/genesis/'+sys.argv[2]+'.json': continue
+    payload=subject_payload(item['type'],item['id'],doc)
+    item['revision']=canonical_hash(payload)
+    item['metadata']={'sourceHash':hashlib.sha256(raw).hexdigest(),'components':component_metadata(item['type'],payload)}
+del catalog['catalogRevision']
+catalog['catalogRevision']=canonical_hash(catalog)
+path.write_text(json.dumps(catalog))
+`, config.catalog, String(number)], { input: raw });
+            return raw;
+        },
         propose(payload) {
             return JSON.parse(execFileSync('python3', ['server/correction_cli.py', 'propose'], {
                 input: JSON.stringify(payload), encoding: 'utf8',

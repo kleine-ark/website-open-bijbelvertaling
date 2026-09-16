@@ -36,6 +36,7 @@ from correction_schema import open_correction
 from corrections import Corrections
 from correction_routes import route as correction_route
 from review_content import canonical_hash
+import component_reviews
 
 PROJECT_ID = "open-vertaling"
 CERTIFICATES_URL = (
@@ -351,7 +352,7 @@ class ReviewStore:
         subject_types = catalog.get("subjectTypes")
         declared_revision = catalog.get("catalogRevision")
         if (
-            catalog.get("schemaVersion") != 2
+            catalog.get("schemaVersion") != 3
             or not isinstance(declared_revision, str)
             or not re.fullmatch(r"[a-f0-9]{64}", declared_revision)
             or declared_revision != review_catalog_revision(catalog)
@@ -364,6 +365,7 @@ class ReviewStore:
             )
             or not isinstance(catalog.get("subjects"), list)
             or not isinstance(catalog.get("historicalSubjects"), list)
+            or not isinstance(catalog.get("componentHistory"), list)
         ):
             raise InvalidRequest()
         revision = declared_revision
@@ -376,6 +378,7 @@ class ReviewStore:
             db.execute("UPDATE review_subjects SET active = 0")
             for item in catalog["subjects"]:
                 self._validate_subject(item)
+                component_reviews.validate_components(item)
                 if item["type"] not in subject_types:
                     raise InvalidRequest()
                 db.execute(
@@ -414,6 +417,7 @@ class ReviewStore:
                     ).fetchone()
                     if previous:
                         continue
+                    event_id = str(uuid.uuid4())
                     db.execute(
                         """INSERT INTO review_events
                            (id, subject_type, subject_id, revision, decision, note,
@@ -421,7 +425,7 @@ class ReviewStore:
                            VALUES (?, ?, ?, ?, 'approved', ?, 'historical-import',
                                    ?, ?, ?, ?)""",
                         (
-                            str(uuid.uuid4()), item["type"], item["id"], item["revision"],
+                            event_id, item["type"], item["id"], item["revision"],
                             "Bestaande status geïmporteerd uit " + item.get(
                                 "migrationSource", "onbekende bron"
                             ),
@@ -429,10 +433,13 @@ class ReviewStore:
                             HISTORICAL_REVIEWER_NAME, now_iso(),
                         ),
                     )
+                    components = item['metadata']['components']
+                    component_reviews.attach(db, event_id, {key: part['revision'] for key, part in components.items()}, components)
                 db.execute(
                     "INSERT INTO metadata(key, value) VALUES ('historical-review-import-v3', ?)",
                     (now_iso(),),
                 )
+            component_reviews.migrate(db, catalog)
             db.execute(
                 """INSERT INTO metadata(key, value) VALUES ('catalog-revision', ?)
                    ON CONFLICT(key) DO UPDATE SET value=excluded.value""",
@@ -469,34 +476,27 @@ class ReviewStore:
         }
 
     def _subject(self, db: sqlite3.Connection, row: sqlite3.Row, actor=None) -> dict:
-        event = db.execute(
-            """SELECT *, (SELECT registered FROM users WHERE uid=actor_uid) AS actor_registered
-               FROM review_events
-               WHERE subject_type=? AND subject_id=? AND revision=?
-               ORDER BY (actor_kind='user') DESC, rowid DESC LIMIT 1""",
-            (row["subject_type"], row["subject_id"], row["revision"]),
-        ).fetchone()
-        latest = self._event(event)
-        previous = db.execute(
-            """SELECT 1 FROM review_events WHERE subject_type=? AND subject_id=?
-               AND revision<>? AND decision='approved' LIMIT 1""",
-            (row["subject_type"], row["subject_id"], row["revision"]),
-        ).fetchone()
+        administrator = bool(actor and 'administrator' in actor['roles'])
+        parts = component_reviews.states(db, row, self._event, administrator)
+        main = parts['text' if row['subject_type'].startswith('text-') else 'content']
         result = {
             "type": row["subject_type"], "id": row["subject_id"],
             "revision": row["revision"], "label": row["label"],
             "href": row["href"], "source": row["source"],
             "metadata": json.loads(row["metadata_json"]),
-            "status": "approved" if latest and latest["decision"] == "approved" else "pending",
-            "needsReverification": bool(previous and not latest),
+            "status": main['status'],
+            "needsReverification": main['needsReverification'],
+            "components": parts,
         }
         correction = open_correction(db, row)
         if correction:
             result['status'] = 'correction-needed'
+            for part in parts.values():
+                part['status'] = 'correction-needed'
             if actor and 'reviewer' in actor['roles']:
                 result['correctionId'] = correction['id']
-        if actor and "administrator" in actor["roles"]:
-            result["latestReview"] = latest
+        if administrator:
+            result["latestReview"] = main['latestReview']
         return result
 
     def get_subject(self, actor, subject_type: str, subject_id: str) -> dict:
@@ -571,7 +571,7 @@ class ReviewStore:
 
     def record_review(self, actor: dict, payload: dict) -> dict:
         actor = self._require_role(actor, "reviewer")
-        if set(payload) - {"subjectType", "subjectId", "revision", "decision", "note", "sourceHash"}:
+        if set(payload) - {"subjectType", "subjectId", "revision", "decision", "note", "sourceHash", "components"}:
             raise InvalidRequest()
         subject_type = str(payload.get("subjectType") or "")
         subject_id = str(payload.get("subjectId") or "")
@@ -603,25 +603,24 @@ class ReviewStore:
                 raise Conflict()
             if decision == 'approved' and open_correction(db, row):
                 raise Conflict()
-            last = db.execute(
-                """SELECT * FROM review_events WHERE subject_type=? AND subject_id=? AND revision=?
-                   ORDER BY (actor_kind='user') DESC, rowid DESC LIMIT 1""",
-                (subject_type, subject_id, revision),
-            ).fetchone()
+            selected = component_reviews.selection(row, payload)
+            selected = component_reviews.undecided(db, row, selected, decision, self._event)
             # First successful click owns this verification. Retries (including
             # another tab/account) cannot silently replace the responsible person.
-            if last and last["decision"] == decision:
+            if not selected:
                 return self._subject(db, row, actor)
+            event_id = str(uuid.uuid4())
             db.execute(
                 """INSERT INTO review_events
                    (id, subject_type, subject_id, revision, decision, note,
                     actor_kind, actor_uid, actor_email, actor_name, created_at)
                    VALUES (?, ?, ?, ?, ?, ?, 'user', ?, ?, ?, ?)""",
                 (
-                    str(uuid.uuid4()), subject_type, subject_id, revision, decision, note,
+                    event_id, subject_type, subject_id, revision, decision, note,
                     actor["uid"], actor["email"], actor["displayName"], now_iso(),
                 ),
             )
+            component_reviews.attach(db, event_id, selected, json.loads(row['metadata_json'])['components'])
             row = db.execute(
                 """SELECT * FROM review_subjects
                    WHERE subject_type=? AND subject_id=? AND revision=?""",
@@ -644,10 +643,13 @@ class ReviewStore:
                    ORDER BY e.created_at DESC, e.rowid DESC LIMIT ? OFFSET ?""",
                 (limit, offset),
             ).fetchall()
+            scopes = {row['id']: [c[0] for c in db.execute(
+                'SELECT component FROM review_components WHERE event_id=? ORDER BY component', (row['id'],))]
+                for row in rows}
         items = [{
             "id": row["id"], "subjectType": row["subject_type"],
             "subjectId": row["subject_id"], "revision": row["revision"],
-            "label": row["label"], **self._event(row),
+            "label": row["label"], "components": scopes[row['id']], **self._event(row),
         } for row in rows]
         return {"total": total, "items": items}
 

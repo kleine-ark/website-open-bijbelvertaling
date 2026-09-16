@@ -20,3 +20,15 @@
 .verification-compact:hover .verification-details { display: inline-flex; }
 :root[data-theme="donker"] .ov-verification[data-status="approved"] > button:first-child,
 body.dark .ov-verification[data-status="approved"] > button:first-child { color: #8ad3a5; }
+.ai-concept-banner[hidden] { display: none !important; }
+.verification-component-warning { display: block; color: var(--gold, #a45c16); font-size: .85rem; }
+.note-tooltip.reviewed-notes {
+    max-width: min(400px, calc(100vw - 24px));
+    max-height: 70dvh;
+    overflow: auto;
+    background: var(--bg-surface);
+    color: var(--text-primary);
+}
+.note-tooltip.reviewed-notes .note-label { color: var(--text-primary); }
+.note-popup-item { margin-top: .8rem; }
+.note-popup-item details { color: var(--text-secondary); font-size: .85em; }

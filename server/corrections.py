@@ -9,6 +9,7 @@ from pathlib import Path
 from collaboration_errors import Conflict, InvalidRequest, NotFound
 from correction_files import data_path, validate_files
 from review_content import canonical_hash, subject_payload
+import component_reviews
 
 STATES = ('requested', 'proposed', 'accepted', 'applied', 'closed')
 OPEN = ('requested', 'proposed', 'accepted')
@@ -81,15 +82,16 @@ class Corrections:
 
     def _revoke_rows(self, db, rows, actor, note):
         for row in rows:
-            latest = db.execute('''SELECT decision FROM review_events WHERE subject_type=? AND subject_id=?
-                AND revision=? ORDER BY (actor_kind='user') DESC, rowid DESC LIMIT 1''',
-                (row['subject_type'], row['subject_id'], row['revision'])).fetchone()
-            if latest and latest['decision'] == 'approved':
+            parts = component_reviews.states(db, row, self.store._event, False)
+            approved = {key: part['revision'] for key, part in parts.items() if part['status'] == 'approved'}
+            if approved:
+                event_id = str(uuid.uuid4())
                 db.execute('''INSERT INTO review_events
                     (id,subject_type,subject_id,revision,decision,note,actor_kind,actor_uid,actor_email,actor_name,created_at)
                     VALUES (?,?,?,?,'revoked',?,'user',?,?,?,?)''',
-                    (str(uuid.uuid4()), row['subject_type'], row['subject_id'], row['revision'],
+                    (event_id, row['subject_type'], row['subject_id'], row['revision'],
                      note, actor['uid'], actor['email'], actor['displayName'], timestamp()))
+                component_reviews.attach(db, event_id, approved, json.loads(row['metadata_json'])['components'])
 
     def create(self, actor, payload):
         self.store._require_role(actor, 'reviewer')

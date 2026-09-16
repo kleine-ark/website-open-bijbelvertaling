@@ -20,6 +20,7 @@ from cryptography.x509.oid import NameOID
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "server"))
+from component_fixtures import fingerprint_catalog
 
 
 def load_module(name, relative_path):
@@ -46,6 +47,7 @@ class ReviewCatalogTests(unittest.TestCase):
                 encoding="utf-8",
             )
             (root / "migrations").mkdir()
+            (root / 'migrations/review-components-v1.json').write_text('{"schemaVersion":1,"subjects":[]}')
             for filename in ("review-history-v1.json", "review-history-v2.json"):
                 (root / "migrations" / filename).write_text(
                     json.dumps({"schemaVersion": 1, "subjects": []}), encoding="utf-8"
@@ -136,7 +138,7 @@ class CollaborationStoreTests(unittest.TestCase):
         self.catalog["historicalSubjects"] = [dict(self.catalog["subjects"][0])]
         for subject in self.catalog["subjects"]:
             subject["metadata"] = {"sourceHash": subject["revision"]}
-        self.catalog["catalogRevision"] = api_module.review_catalog_revision(self.catalog)
+        self.catalog["catalogRevision"] = fingerprint_catalog(self.catalog)
         self.store.sync_catalog(self.catalog)
         self.admin = self.store.upsert_user({
             "sub": "john", "email": "real.johnheikens@gmail.com",
@@ -226,7 +228,7 @@ class CollaborationStoreTests(unittest.TestCase):
 
         changed = json.loads(json.dumps(self.catalog))
         changed["subjects"][0]["revision"] = "d" * 64
-        changed["catalogRevision"] = api_module.review_catalog_revision(changed)
+        changed["catalogRevision"] = fingerprint_catalog(changed)
         self.store.sync_catalog(changed)
         subjects = self.store.list_subjects(self.admin, subject_type="text-chapter")
         self.assertEqual(subjects["items"][0]["status"], "pending")
@@ -281,7 +283,7 @@ class TokenClaimTests(unittest.TestCase):
             }
             catalog["historicalSubjects"] = [dict(catalog["subjects"][0])]
             catalog["subjects"][0]["metadata"] = {"sourceHash": "a" * 64}
-            catalog["catalogRevision"] = api_module.review_catalog_revision(catalog)
+            catalog["catalogRevision"] = fingerprint_catalog(catalog)
             catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
             environment = {
                 "OV_COLLABORATION_DB": str(database_path),
@@ -359,7 +361,7 @@ class CollaborationHttpTests(unittest.TestCase):
                 "metadata": {"sourceHash": "a" * 64},
             }],
         }
-        catalog["catalogRevision"] = api_module.review_catalog_revision(catalog)
+        catalog["catalogRevision"] = fingerprint_catalog(catalog)
         self.catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
         self.store = api_module.ReviewStore(
             root / "reviews.sqlite3", {"real.johnheikens@gmail.com"}

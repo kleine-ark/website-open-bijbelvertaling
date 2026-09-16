@@ -1,6 +1,7 @@
 """Historical attribution and first Google sign-in must share one stable account."""
 import importlib.util
 import json
+from component_fixtures import fingerprint_catalog
 import sqlite3
 import tempfile
 import unittest
@@ -37,7 +38,7 @@ class GhostVerificationTests(unittest.TestCase):
             "subjects": subjects,
             "historicalSubjects": [dict(item, migrationSource="confirmed historical reviews") for item in subjects],
         }
-        self.catalog["catalogRevision"] = api.review_catalog_revision(self.catalog)
+        self.catalog["catalogRevision"] = fingerprint_catalog(self.catalog)
         self.store.sync_catalog(self.catalog)
 
     @staticmethod
@@ -127,7 +128,7 @@ class GhostVerificationTests(unittest.TestCase):
 
     def test_changed_historical_content_needs_reverification(self):
         self.catalog["subjects"][0]["revision"] = "c" * 64
-        self.catalog["catalogRevision"] = api.review_catalog_revision(self.catalog)
+        self.catalog["catalogRevision"] = fingerprint_catalog(self.catalog)
         self.store.sync_catalog(self.catalog)
         subject = self.store.get_subject(self.admin, "text-chapter", "genesis/1")
         self.assertEqual(subject["status"], "pending")

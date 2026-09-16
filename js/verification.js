@@ -4,6 +4,7 @@
     const ERROR = 'Er is een fout opgetreden. Controleer het logboek.';
     const chapters = new Map();
     const controls = new Set();
+    const contents = new Map();
     let generation = 0;
 
     async function loadJSON(url) {
@@ -14,6 +15,12 @@
         const hash = Array.from(new Uint8Array(digest), n => n.toString(16).padStart(2, '0')).join('');
         const data = JSON.parse(new TextDecoder().decode(bytes));
         data._verificationSourceHash = hash;
+        if (Array.isArray(data.verses)) {
+            const chapter = await ReviewComponents.revisions('text-chapter', data);
+            const verses = Object.fromEntries(await Promise.all(data.verses.map(async verse =>
+                [verse.number, await ReviewComponents.revisions('text-verse', verse)])));
+            contents.set(hash, { chapter, verses });
+        }
         return data;
     }
 
@@ -36,7 +43,7 @@
     function label(state) {
         if (state.status === 'correction-needed') return 'Aanpassing nodig';
         if (state.status === 'approved') return 'Geverifieerd';
-        if (!canVerify()) return 'Nog niet geverifieerd';
+        if (!canVerify()) return state.additionsOnly ? 'Toevoegingen niet geverifieerd' : 'Nog niet geverifieerd';
         return state.needsReverification ? 'Opnieuw verifiëren' : 'Verifiëren';
     }
 
@@ -47,17 +54,23 @@
         node.hidden = control.compact && !canVerify();
         if (node.hidden) return;
         const matches = control.sourceHash === state.metadata.sourceHash;
-        const localEdits = control.localCheck && control.localCheck();
-        const approved = matches && !localEdits && state.status === 'approved';
+        const parts = VerificationDisplay.parts(control);
+        const localEdits = control.localCheck && control.localCheck(Object.keys(parts));
+        const selected = Object.values(parts);
+        const approved = selected.length > 0 && !localEdits && selected.every(part => !part.stale && part.status === 'approved');
+        const displayState = { status: approved ? 'approved' : selected.some(p => p.status === 'correction-needed')
+            ? 'correction-needed' : 'pending', needsReverification: selected.some(p => p.needsReverification),
+            additionsOnly: parts.text?.status === 'approved' && !parts.text.stale };
         node.dataset.status = approved ? 'approved' : 'pending';
         const actionLabel = !matches ? 'Gegevens gewijzigd — herlaad'
-            : localEdits ? 'Lokale bewerkingen — niet geverifieerd' : label(state);
+            : localEdits ? 'Lokale bewerkingen — niet geverifieerd' : label(displayState);
         const button = document.createElement('button');
         button.type = 'button';
         button.textContent = control.compact ? (approved ? '✓' : '○') : actionLabel;
         button.setAttribute('aria-label', actionLabel + ': ' + state.label);
-        button.title = actionLabel + ': ' + state.label;
-        button.disabled = !canVerify() || !matches || control.busy || approved || localEdits || state.status === 'correction-needed';
+        button.title = actionLabel + ': ' + state.label + ' — ' + ReviewComponents.join(Object.keys(parts));
+        button.disabled = !canVerify() || !matches || control.busy || approved || localEdits
+            || !selected.length || displayState.status === 'correction-needed';
         if (!matches) button.title = 'De gegevens zijn gewijzigd. Herlaad deze pagina.';
         if (localEdits) button.title = 'Lokale bewerkingen kunnen niet als gepubliceerde tekst worden geverifieerd.';
         button.addEventListener('click', () => decide(control, 'approved'));
@@ -84,13 +97,25 @@
                     revision: state.revision, sourceHash: control.sourceHash }));
             details.appendChild(correction);
         }
-        if (matches && !localEdits && administrator() && state.latestReview) {
-            const review = state.latestReview;
+        const authors = new Map();
+        if (!localEdits && administrator()) for (const [key, part] of Object.entries(parts)) {
+            if (part.stale || !part.latestReview) continue;
+            const review = part.latestReview;
+            if (!authors.has(review.id)) authors.set(review.id, { review, keys: [] });
+            authors.get(review.id).keys.push(key);
+        }
+        for (const { review, keys } of authors.values()) {
             const author = document.createElement('span');
             author.className = 'verification-author';
-            author.textContent = Collaboration.reviewActorLabel(review) + ' · '
+            author.textContent = ReviewComponents.join(keys) + ': ' + Collaboration.reviewActorLabel(review) + ' · '
                 + Collaboration.reviewDateLabel(review);
             details.appendChild(author);
+        }
+        if (control.onlyComponents) {
+            const warning = document.createElement('span');
+            warning.className = 'verification-component-warning';
+            warning.textContent = ReviewComponents.warning(parts);
+            node.appendChild(warning);
         }
         if (approved && canVerify()) {
             const revoke = document.createElement('button');
@@ -110,7 +135,12 @@
         }
         if (control.type === 'text-chapter') {
             const chapter = chapters.get(control.id);
-            if (chapter) chapter.approved = approved;
+            if (chapter) {
+                const text = state.components.text;
+                chapter.approved = text.status === 'approved' && control.revisions.text === text.revision && !control.localCheck(['text']);
+                chapter.control = control;
+                chapter.error = '';
+            }
             if (typeof App !== 'undefined' && Navigation.currentBook + '/' + Navigation.currentChapter === control.id) {
                 App._setTitle(Navigation.currentBook, Navigation.currentChapter);
                 App._updateVerifiedBanner(Navigation.currentBook, Navigation.currentChapter);
@@ -137,12 +167,17 @@
             console.error('[verification]', error);
             if (generation !== requestGeneration || !control.node.isConnected) return;
             control.node.textContent = 'Verificatiestatus niet beschikbaar.';
+            if (control.type === 'text-chapter') {
+                chapters.get(control.id).error = 'Verificatiestatus niet beschikbaar. Herlaad om het opnieuw te proberen.';
+                const [book, chapter] = control.id.split('/');
+                VerificationDisplay.banner(book, Number(chapter), control.reader);
+            }
         }
     }
 
     async function decide(control, decision) {
         if (control.busy) return;
-        if (decision === 'approved' && control.localCheck && control.localCheck()) {
+        if (decision === 'approved' && control.localCheck && control.localCheck(VerificationDisplay.keys(control))) {
             control.message = 'Lokale bewerkingen kunnen niet als gepubliceerde tekst worden geverifieerd.';
             render(control);
             return;
@@ -158,13 +193,16 @@
                     subjectType: control.type, subjectId: control.id,
                     revision: control.state.revision,
                     sourceHash: control.sourceHash,
+                    components: Object.fromEntries(VerificationDisplay.keys(control)
+                        .map(key => [key, control.state.components[key].revision])),
                     decision, note: ''
                 })
             });
             if (generation !== requestGeneration || !control.node.isConnected) return;
             control.state = result.subject;
             for (const other of controls) {
-                if (other !== control && other.type === control.type && other.id === control.id) refresh(other);
+                if (other !== control && (other.id === control.id || other.id.startsWith(control.id + '/')
+                    || control.id.startsWith(other.id + '/'))) refresh(other);
             }
             control.message = decision === 'approved' ? 'Verificatie opgeslagen.' : 'Verificatie ingetrokken.';
             window.dispatchEvent(new CustomEvent('ov:verification-changed', { detail: {
@@ -194,8 +232,11 @@
             node.addEventListener(event, e => e.stopPropagation());
         });
         parent.appendChild(node);
-        const control = { node, type, id, sourceHash: options.sourceHash,
-            compact: !!options.compact, localCheck: options.localCheck };
+        const loaded = contents.get(options.sourceHash);
+        const revisions = type === 'text-chapter' ? loaded.chapter
+            : type === 'text-verse' ? loaded.verses[id.split('/')[2]] : null;
+        const control = { node, type, id, ...options, revisions, compact: !!options.compact };
+        if (options.localCheck) control.localCheck = keys => options.localCheck(keys, id.split('/')[2]);
         if (control.compact) node.tabIndex = 0;
         controls.add(control);
         refresh(control);
@@ -221,11 +262,13 @@
             document.getElementById('chapter-verification')?.remove();
             return;
         }
-        const localCheck = () => {
+        const localCheck = (keys = ['text'], verse) => {
             const local = !reader && typeof Storage !== 'undefined' ? Storage.getEdits(book) : null;
-            return !!local && Object.keys(local).some(key => key.startsWith(chapter + ':'));
+            return !!local && Object.entries(local).some(([key, edit]) => key.startsWith(chapter + ':')
+                && (!verse || key === chapter + ':' + verse)
+                && ((keys.includes('text') && 'text2026' in edit) || (keys.includes('notes') && 'marginNotes' in edit)));
         };
-        const options = { sourceHash, localCheck };
+        const options = { sourceHash, localCheck, reader };
         chapters.set(book + '/' + chapter, options);
         if (!continuous) heading(book, chapter, reader);
         const separator = document.querySelector('.chapter-separator[data-book="' + book + '"][data-chapter="' + chapter + '"]');
@@ -259,11 +302,48 @@
         return displayed ? !!displayed.approved && !displayed.localCheck() : null;
     }
 
-    window.Verification = { loadJSON, mount, heading, readerRendered, refreshAll, isChapterVerified };
+    function warning(book, chapter) {
+        const displayed = chapters.get(book + '/' + chapter);
+        if (displayed?.error) return displayed.error;
+        if (!displayed?.control?.state || !displayed.control.node.isConnected) return '';
+        const parts = VerificationDisplay.parts(displayed.control);
+        for (const key of Object.keys(parts)) if (displayed.localCheck([key])) parts[key] = { status: 'pending', local: true };
+        return ReviewComponents.warning(parts);
+    }
+
+    function textVisible(book, chapter) {
+        const control = chapters.get(book + '/' + chapter)?.control;
+        if (!control?.state) return true;
+        return control.node.isConnected && VerificationDisplay.keys(control).includes('text');
+    }
+
+    function notes(parent, book, chapter, verse) {
+        mount(parent, 'text-verse', book + '/' + chapter + '/' + verse,
+            { ...chapters.get(book + '/' + chapter), onlyComponents: ['notes'] });
+    }
+
+    function loadChapters(owner) {
+        if (!owner._verifiedGeladen) owner._verifiedGeladen = fetch('/api/collaboration/verified-chapters', { cache: 'no-store' })
+            .then(response => { if (!response.ok) throw new Error(ERROR); return response.json(); })
+            .then(data => { owner.VERIFIED_CHAPTERS = data; })
+            .catch(error => { console.error('[verification]', error); owner.VERIFIED_CHAPTERS = {}; });
+        return owner._verifiedGeladen;
+    }
+
+    function chapterVerified(owner, book, chapter) {
+        const displayed = isChapterVerified(book, chapter);
+        return displayed === null ? (owner.VERIFIED_CHAPTERS[book] || []).includes(chapter) : displayed;
+    }
+
+    window.Verification = { loadJSON, mount, heading, readerRendered, refreshAll, isChapterVerified,
+        warning, notes, loadChapters, chapterVerified, textVisible };
     document.addEventListener('DOMContentLoaded', () => {
+        VerificationDisplay.watch(() => {
+            for (const control of controls) if (control.node.isConnected && control.state) render(control);
+        });
         if (window.Collaboration) Collaboration.onChange(refreshAll);
         window.addEventListener('ov:verification-changed', async event => {
-            if (event.detail.type !== 'text-chapter') return;
+            if (!event.detail.type.startsWith('text-')) return;
             if (typeof App !== 'undefined') {
                 App._verifiedGeladen = null;
                 await App._laadVerified();

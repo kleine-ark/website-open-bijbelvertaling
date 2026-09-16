@@ -1,6 +1,7 @@
 """Behavioral tests for account-linked, private, one-click verification."""
 import importlib.util
 import json
+from component_fixtures import fingerprint_catalog
 import unittest
 from pathlib import Path
 
@@ -58,7 +59,7 @@ class DirectVerificationTests(fixtures.CollaborationStoreTests):
     def test_changed_content_requires_reverification_but_preserves_history(self):
         self.approve()
         self.catalog["subjects"][1]["revision"] = "c" * 64
-        self.catalog["catalogRevision"] = api.review_catalog_revision(self.catalog)
+        self.catalog["catalogRevision"] = fingerprint_catalog(self.catalog)
         self.store.sync_catalog(self.catalog)
         current = self.store.get_subject(self.admin, "location", "geo-jerusalem")
         self.assertEqual(current["status"], "pending")
@@ -115,7 +116,7 @@ class DirectVerificationTests(fixtures.CollaborationStoreTests):
             db.execute("DELETE FROM metadata WHERE key='catalog-revision'")
             db.execute("INSERT INTO metadata VALUES ('historical-review-import-v1', 'old')")
         self.catalog["subjects"][0]["revision"] = "d" * 64
-        self.catalog["catalogRevision"] = api.review_catalog_revision(self.catalog)
+        self.catalog["catalogRevision"] = fingerprint_catalog(self.catalog)
         restarted = api.ReviewStore(Path(self.directory.name) / "reviews.sqlite3", self.store.bootstrap_admins)
         restarted.sync_catalog(self.catalog)
         self.assertEqual(restarted.list_review_events(self.admin)["total"], original)
@@ -135,7 +136,7 @@ class DirectVerificationTests(fixtures.CollaborationStoreTests):
         chapter = dict(self.catalog["subjects"][0], id="genesis/2", label="Genesis 2")
         self.catalog["subjects"].append(chapter)
         self.catalog["historicalSubjects"].append(dict(chapter))
-        self.catalog["catalogRevision"] = api.review_catalog_revision(self.catalog)
+        self.catalog["catalogRevision"] = fingerprint_catalog(self.catalog)
         self.store.sync_catalog(self.catalog)
         self.assertEqual(self.store.verified_chapters(), {"genesis": [1, 2]})
         self.assertEqual(self.store.list_review_events(self.admin)["total"], before + 1)
@@ -146,7 +147,7 @@ class DirectVerificationTests(fixtures.CollaborationStoreTests):
     def test_imported_history_cannot_supersede_an_existing_named_verification(self):
         approval = self.approve()
         self.catalog["historicalSubjects"].append(dict(self.catalog["subjects"][1]))
-        self.catalog["catalogRevision"] = api.review_catalog_revision(self.catalog)
+        self.catalog["catalogRevision"] = fingerprint_catalog(self.catalog)
         with self.store._connect() as db:
             db.execute("DELETE FROM metadata WHERE key='historical-review-import-v3'")
         self.store.sync_catalog(self.catalog)

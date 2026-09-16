@@ -19,48 +19,16 @@ const App = {
     // AUDIO_AVAILABLE leeft in js/audio-available.js (window.AUDIO_AVAILABLE) —
     // niet hier definieren. Wordt door de TTS-rollout-script bijgewerkt.
 
-    // Hoofdstukken die handmatig vers-voor-vers zijn nagelopen.
-    // Voor andere hoofdstukken: AI-concept-banner tonen.
-    // Live accountgebonden beslissingen; nooit de statische releasesnapshot.
+    // Alleen de Bijbeltekst; toevoegingen hebben een afzonderlijke beoordeling.
     VERIFIED_CHAPTERS: {},
     _verifiedGeladen: null,
 
-    /** Laad de nagekeken-lijst eenmalig. Faalt dit, dan geldt alles als NIET
-     *  nagekeken, zodat de waarschuwingsbanner verschijnt. Nooit andersom: een
-     *  storing mag geen onnagekeken tekst zonder waarschuwing tonen. */
-    _laadVerified() {
-        if (!App._verifiedGeladen) {
-            App._verifiedGeladen = fetch('/api/collaboration/verified-chapters', { cache: 'no-store' })
-                .then(r => (r.ok ? r.json() : {}))
-                .then(d => { App.VERIFIED_CHAPTERS = d || {}; })
-                .catch(() => { App.VERIFIED_CHAPTERS = {}; });
-        }
-        return App._verifiedGeladen;
-    },
+    _laadVerified() { return Verification.loadChapters(App); },
 
-    _isVerified(bookId, chapter) {
-        const displayed = Verification.isChapterVerified(bookId, chapter);
-        if (displayed !== null) return displayed;
-        const v = App.VERIFIED_CHAPTERS[bookId];
-        if (!v) return false;
-        return v.includes(chapter);
-    },
+    _isVerified(bookId, chapter) { return Verification.chapterVerified(App, bookId, chapter); },
 
     _updateVerifiedBanner(bookId, chapter) {
-        let banner = document.getElementById('ai-concept-banner');
-        if (App._isVerified(bookId, chapter)) {
-            if (banner) banner.style.display = 'none';
-            return;
-        }
-        if (!banner) {
-            banner = document.createElement('div');
-            banner.id = 'ai-concept-banner';
-            banner.className = 'ai-concept-banner';
-            banner.innerHTML = '<strong>⚠ Let op:</strong> AI-wijzigingen. Concept. Nog geen menselijke controle plaatsgevonden — kans op nog niet opgeloste onjuistheden.';
-            const container = document.getElementById('verses-container');
-            if (container && container.parentNode) container.parentNode.insertBefore(banner, container);
-        }
-        banner.style.display = 'block';
+        VerificationDisplay.banner(bookId, chapter);
     },
 
     async _updateDatingBox(book) {
@@ -486,20 +454,7 @@ const App = {
 
     // Hoofdstuktitel (met concept-marker) zetten — gedeeld door render + scroll-spy
     _setTitle(bookId, chapterNum) {
-        Verification.heading(bookId, chapterNum);
-        const titleEl = document.getElementById('chapter-title');
-        if (!titleEl) return;
-        const name = (App._contNames && App._contNames[bookId]) || bookId;
-        const verified = App._isVerified(bookId, chapterNum);
-        titleEl.textContent = `${name} ${chapterNum}`;
-        titleEl.classList.toggle('chapter-unverified', !verified);
-        if (!verified) {
-            const tag = document.createElement('span');
-            tag.className = 'chapter-concept-tag';
-            tag.textContent = 'CONCEPT — NIET GECONTROLEERD';
-            titleEl.appendChild(document.createTextNode(' '));
-            titleEl.appendChild(tag);
-        }
+        VerificationDisplay.readerTitle(App, bookId, chapterNum);
     },
 
     // Bepaal het scrollbare element (document of #content)
