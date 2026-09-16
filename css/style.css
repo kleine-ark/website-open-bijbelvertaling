@@ -507,7 +507,9 @@
 .col-2026 .dropcap-image {
     display: block;
     width: auto;
-    height: 3.2em;
+    /* Standaard drie regels hoog; bij een kort vers zet JS hier de hoogte
+       van het vers zelf neer, anders valt er een gat tot het volgende vers. */
+    height: var(--dropcap-height, 3.2em);
 }
 .col-2026 .dropcap-image--dark { display: none; }
 :root[data-theme="donker"] .col-2026 .dropcap-image--light { display: none; }

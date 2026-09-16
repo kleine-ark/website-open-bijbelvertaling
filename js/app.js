@@ -804,6 +804,71 @@ const App = {
                 break;
             }
         });
+        // Meten kan pas als de regels staan; direct na het opbouwen is de cel
+        // nog niet opgemaakt en zijn de letters van het weblettertype nog niet
+        // binnen, en dan valt er niets te tellen.
+        const passend = () => this._scheduleFitDropcaps();
+        requestAnimationFrame(passend);
+        setTimeout(passend, 300);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(passend);
+        if (!this._dropcapResizeBound) {
+            this._dropcapResizeBound = true;
+            // Een ander venster, een andere tekstgrootte of regelafstand
+            // verandert het aantal regels van het vers.
+            window.addEventListener('resize', passend);
+            window.addEventListener('ov:opties-gewijzigd', passend);
+        }
+    },
+
+    /* Een sierletter van drie regels hoog boven een vers van één regel laat een
+     * gat vallen: het volgende vers begint pas onder de krul (Wijsheid 8:1).
+     * Tel daarom de regels van het vers zelf en maak de letter zo nodig kleiner,
+     * zoals een zetter dat ook zou doen. */
+    _scheduleFitDropcaps() {
+        clearTimeout(this._dropcapTimer);
+        this._dropcapTimer = setTimeout(() => this._fitDropcaps(), 120);
+    },
+
+    _fitDropcaps() {
+        const container = document.getElementById('verses-container');
+        if (!container) return;
+        container.querySelectorAll('.dropcap--penkrul').forEach(span => {
+            const cell = span.closest('.col-2026');
+            if (!cell) return;
+            span.style.removeProperty('--dropcap-height');
+            const stijl = getComputedStyle(cell);
+            const regelhoogte = parseFloat(stijl.lineHeight);
+            const volleMaat = 3.2 * parseFloat(stijl.fontSize);   // de maat uit de CSS
+            if (!regelhoogte || !volleMaat) return;
+            // Tel de tekstregels. Een regel is breed; smalle stukjes zijn de
+            // zwevende letter zelf of de spatie ernaast, en tellen niet mee.
+            // Inline-stukken binnen één regel (een citaat, een cursief woord)
+            // liggen op dezelfde hoogte en tellen samen voor één regel.
+            const bereik = document.createRange();
+            bereik.selectNodeContents(cell);
+            const bovenkanten = [];
+            for (const rect of bereik.getClientRects()) {
+                if (rect.width < regelhoogte) continue;
+                if (rect.height > regelhoogte * 1.4) continue;
+                if (!bovenkanten.some(top => Math.abs(top - rect.top) < regelhoogte * 0.6)) {
+                    bovenkanten.push(rect.top);
+                }
+            }
+            if (!bovenkanten.length) return;
+            // Nooit groter dan de CSS-maat: alleen korte verzen krijgen een
+            // kleinere letter, zodat het volgende vers niet ver weg komt te staan.
+            const hoogte = Math.min(volleMaat, (bovenkanten.length + 0.25) * regelhoogte);
+            span.style.setProperty('--dropcap-height', hoogte.toFixed(1) + 'px');
+            // Verandert de cel alsnog van vorm (een lettertype dat later binnenkomt,
+            // een andere regelafstand), dan opnieuw meten.
+            // De cel zelf is inline; een ResizeObserver meet daar niets aan.
+            // De regel eromheen is een blok en verandert wel van hoogte.
+            const blok = span.closest('.verse-row') || cell.parentElement;
+            if (blok && !span._dropcapObserver && typeof ResizeObserver === 'function') {
+                span._dropcapObserver = new ResizeObserver(() => this._scheduleFitDropcaps());
+                span._dropcapObserver.observe(blok);
+            }
+        });
     },
 
     updateProgress() {
