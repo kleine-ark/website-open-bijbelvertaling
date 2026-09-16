@@ -6,7 +6,7 @@ const { resolve } = require('node:path');
 const menus = require('./fixtures/doc-menus.json');
 const root = resolve(__dirname, '..');
 const read = file => readFileSync(resolve(root, file), 'utf8');
-const pages = execFileSync('git', ['ls-files', '-z', '*.html'], { cwd: root, encoding: 'utf8' })
+const pages = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z', '*.html'], { cwd: root, encoding: 'utf8' })
     .split('\0').filter(Boolean).map(file => [file, read(file)]);
 
 test('all navigation and standalone auth consumers use exactly one module entry', () => {
@@ -20,7 +20,7 @@ test('all navigation and standalone auth consumers use exactly one module entry'
         assert.ok(entries[0].index < html.indexOf('</head>'), file);
         checked++;
     }
-    assert.equal(checked, 136);
+    assert.equal(checked, 137);
     assert.doesNotMatch(read('js/topnav.js'), /firebase-config\.js|auth\.js|collaboration\.js/);
     const bootstrap = read('js/auth-bootstrap.js');
     assert.deepEqual([...bootstrap.matchAll(/import '([^']+)';/g)].map(m => m[1]),
@@ -79,5 +79,5 @@ test('the worker caches the shared modules and their local dependencies', () => 
         assert.ok(read(file).split('\n').length < 1000, file);
         assert.ok(read('sw.js').includes("'/" + file + "'"), file);
     }
-    assert.match(read('sw.js'), /verification-v9/);
+    assert.match(read('sw.js'), /verification-v10/);
 });

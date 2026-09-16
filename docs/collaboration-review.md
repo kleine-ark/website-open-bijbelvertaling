@@ -19,6 +19,7 @@ Dit is geen overzicht van nog nooit aangemelde Firebase-accounts.
 
 - Gewone accounts kunnen lezen, maar niet verifiëren.
 - `reviewer` (“Mag verifiëren”) kan inhoud verifiëren en verificaties intrekken.
+  Dezelfde rol mag correcties aanvragen en wijzigingsvoorstellen beoordelen.
 - `administrator` kan daarnaast accounts/rechten beheren en verantwoordelijken
   en de volledige geschiedenis zien. Deze rol omvat altijd `reviewer`.
 
@@ -87,7 +88,9 @@ De controles horen uitsluitend bij de Open Vertaling, niet bij parallelle editie
 
 Iedereen kan de status lezen, maar uitsluitend beheerders krijgen
 `latestReview`, namen, uid's, e-mailadressen, tijdstippen en notities terug.
-Reviewers hebben geen toegang tot het geschiedenisendpoint. Dit wordt op de
+Reviewers hebben geen toegang tot het verificatiegeschiedenisendpoint. Correctietaken
+hebben een afzonderlijke, voor reviewers zichtbare taakgeschiedenis met redenen
+en voorstellen, maar zonder accountidentiteiten. Dit wordt op de
 server afgedwongen, niet met alleen verborgen HTML.
 
 API-responses zijn `no-store` en worden nooit in de service-worker-cache gezet.
@@ -180,6 +183,10 @@ Deze test start zelf een echte lokale API en controleert beide lezers,
 locaties, rechten, accountwisseling, bronrevisies en doorlopend lezen.
 
 ## Deployment
+
+De workflow voor aanvragen, handmatige AI-verwerking en acceptatie staat in
+[`correction-workflow.md`](correction-workflow.md). Een geaccepteerd voorstel
+verandert geen live bestanden en wordt nooit automatisch geverifieerd.
 
 De GitHub-deployworkflow is op main verwijderd; publicatie gebeurt rechtstreeks
 via de bestaande servertoegang. Publiceer een gecontroleerde commit vanuit een

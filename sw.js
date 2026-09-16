@@ -10,7 +10,7 @@
 
 const VERSION = 'v0.58.8';
 // New reader modules must not be mixed with HTML from before verification.
-const CACHE_VERSION = `${VERSION}-verification-v9`;
+const CACHE_VERSION = `${VERSION}-verification-v10`;
 const SHELL_CACHE   = `shell-${CACHE_VERSION}`;
 const DATA_CACHE    = `data-${CACHE_VERSION}`;
 const LEXICON_CACHE = `lexicon-${CACHE_VERSION}`;
@@ -33,6 +33,10 @@ const PRECACHE_URLS = [
     '/js/data-loader.js',
     '/js/verification.js',
     '/js/collaboration.js',
+    '/correcties.html',
+    '/js/corrections.js',
+    '/css/corrections.css',
+    '/css/collaboration.css',
     '/js/chapter-renderer.js',
     '/js/lees-renderer.js',
     '/css/verification.css',

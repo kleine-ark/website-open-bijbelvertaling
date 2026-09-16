@@ -34,6 +34,7 @@
     }
 
     function label(state) {
+        if (state.status === 'correction-needed') return 'Aanpassing nodig';
         if (state.status === 'approved') return 'Geverifieerd';
         if (!canVerify()) return 'Nog niet geverifieerd';
         return state.needsReverification ? 'Opnieuw verifiëren' : 'Verifiëren';
@@ -56,7 +57,7 @@
         button.textContent = control.compact ? (approved ? '✓' : '○') : actionLabel;
         button.setAttribute('aria-label', actionLabel + ': ' + state.label);
         button.title = actionLabel + ': ' + state.label;
-        button.disabled = !canVerify() || !matches || control.busy || approved || localEdits;
+        button.disabled = !canVerify() || !matches || control.busy || approved || localEdits || state.status === 'correction-needed';
         if (!matches) button.title = 'De gegevens zijn gewijzigd. Herlaad deze pagina.';
         if (localEdits) button.title = 'Lokale bewerkingen kunnen niet als gepubliceerde tekst worden geverifieerd.';
         button.addEventListener('click', () => decide(control, 'approved'));
@@ -64,6 +65,25 @@
         const details = document.createElement('span');
         details.className = 'verification-details';
         node.appendChild(details);
+        if (control.compact && canVerify()) {
+            const menu = document.createElement('button');
+            menu.type = 'button';
+            menu.textContent = '⋯';
+            menu.setAttribute('aria-label', 'Beoordelingsacties: ' + state.label);
+            menu.title = 'Beoordelingsacties';
+            menu.addEventListener('click', () => menu.focus());
+            node.insertBefore(menu, details);
+        }
+        if (canVerify() && matches && !localEdits) {
+            const correction = document.createElement('a');
+            correction.className = 'verification-correction';
+            correction.textContent = state.correctionId ? 'Correctietaak bekijken' : 'Aanpassing aanvragen';
+            correction.href = '/correcties.html?' + (state.correctionId
+                ? new URLSearchParams({ id: state.correctionId })
+                : new URLSearchParams({ type: control.type, subject: control.id,
+                    revision: state.revision, sourceHash: control.sourceHash }));
+            details.appendChild(correction);
+        }
         if (matches && !localEdits && administrator() && state.latestReview) {
             const review = state.latestReview;
             const author = document.createElement('span');

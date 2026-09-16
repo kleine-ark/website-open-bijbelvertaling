@@ -31,6 +31,11 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
 from collaboration_schema import HISTORICAL_REVIEWER_EMAIL, HISTORICAL_REVIEWER_NAME, initialize_database
+from collaboration_errors import ApiError, Unauthorized, Forbidden, NotFound, Conflict, InvalidRequest
+from correction_schema import open_correction
+from corrections import Corrections
+from correction_routes import route as correction_route
+from review_content import canonical_hash
 
 PROJECT_ID = "open-vertaling"
 CERTIFICATES_URL = (
@@ -42,35 +47,6 @@ MAX_BODY_BYTES = 64 * 1024
 GENERIC_ERROR = "Er is een fout opgetreden. Controleer het logboek."
 
 LOGGER = logging.getLogger("openvertaling.collaboration")
-
-
-class ApiError(Exception):
-    status = 400
-    public_message = "Ongeldig verzoek."
-
-
-class Unauthorized(ApiError):
-    status = 401
-    public_message = "Inloggen is vereist."
-
-
-class Forbidden(ApiError):
-    status = 403
-    public_message = "Geen toegang."
-
-
-class NotFound(ApiError):
-    status = 404
-    public_message = "Niet gevonden."
-
-
-class Conflict(ApiError):
-    status = 409
-    public_message = "De gegevens zijn intussen gewijzigd. Laad de pagina opnieuw."
-
-
-class InvalidRequest(ApiError):
-    pass
 
 
 def now_iso() -> str:
@@ -184,11 +160,7 @@ def parse_roles(value: str) -> list[str]:
 
 
 def review_catalog_revision(catalog: dict) -> str:
-    payload = {key: value for key, value in catalog.items() if key != "catalogRevision"}
-    encoded = json.dumps(
-        payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")
-    ).encode("utf-8")
-    return hashlib.sha256(encoded).hexdigest()
+    return canonical_hash({key: value for key, value in catalog.items() if key != "catalogRevision"})
 
 
 class ReviewStore:
@@ -518,6 +490,11 @@ class ReviewStore:
             "status": "approved" if latest and latest["decision"] == "approved" else "pending",
             "needsReverification": bool(previous and not latest),
         }
+        correction = open_correction(db, row)
+        if correction:
+            result['status'] = 'correction-needed'
+            if actor and 'reviewer' in actor['roles']:
+                result['correctionId'] = correction['id']
         if actor and "administrator" in actor["roles"]:
             result["latestReview"] = latest
         return result
@@ -559,7 +536,7 @@ class ReviewStore:
         query: str = "", offset: int = 0, limit: int = 100,
     ) -> dict:
         actor = self._require_role(actor, "reviewer")
-        if status not in ("", "approved", "pending"):
+        if status not in ("", "approved", "pending", "correction-needed"):
             raise InvalidRequest()
         limit = max(1, min(int(limit), 100))
         offset = max(0, int(offset))
@@ -623,6 +600,8 @@ class ReviewStore:
                 raise NotFound()
             source_hash = json.loads(row["metadata_json"])["sourceHash"]
             if payload.get("sourceHash") != source_hash:
+                raise Conflict()
+            if decision == 'approved' and open_correction(db, row):
                 raise Conflict()
             last = db.execute(
                 """SELECT * FROM review_events WHERE subject_type=? AND subject_id=? AND revision=?
@@ -722,6 +701,7 @@ class CollaborationHandler(BaseHTTPRequestHandler):
 
     def _sync_catalog(self) -> None:
         self.app["store"].sync_catalog_file(self.app["catalog_path"])
+        self.app['corrections'].reconcile()
 
     def do_OPTIONS(self) -> None:
         self.send_response(204)
@@ -764,6 +744,8 @@ class CollaborationHandler(BaseHTTPRequestHandler):
                 return
             actor = self._actor()
             store = self.app["store"]
+            if correction_route(self, method, path, query, actor):
+                return
             if method == "POST" and path == "/api/collaboration/session":
                 self._write_json(200, {"user": actor})
                 return
@@ -872,6 +854,7 @@ def configured_app() -> dict:
         "store": store,
         "verifier": FirebaseTokenVerifier(PROJECT_ID),
         "catalog_path": catalog_path,
+        "corrections": Corrections(store, Path(os.environ.get('OV_CONTENT_ROOT', str(catalog_path.parent.parent)))),
         "static_root": os.environ.get("OV_STATIC_ROOT") or None,
     }
 

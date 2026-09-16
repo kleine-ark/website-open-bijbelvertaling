@@ -9,78 +9,13 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'server'))
+from review_content import canonical_hash, text_review_payload, text_revision, location_review_payload
 OUTPUT = ROOT / "data" / "review-catalog.json"
-
-
-def canonical_hash(value: object) -> str:
-    encoded = json.dumps(
-        value, ensure_ascii=False, sort_keys=True, separators=(",", ":")
-    ).encode("utf-8")
-    return hashlib.sha256(encoded).hexdigest()
-
-
-def text_review_payload(chapter: dict) -> dict:
-    intro = chapter.get("chapterIntro") or {}
-    if not isinstance(intro, dict):
-        raise ValueError("chapterIntro moet een object zijn")
-    chapter_verses = chapter.get("verses")
-    if not isinstance(chapter_verses, list):
-        raise ValueError("verses moet een lijst zijn")
-    verses = []
-    for verse in chapter_verses:
-        if not isinstance(verse, dict):
-            raise ValueError("ieder vers moet een object zijn")
-        margin_notes = verse.get("marginNotes") or []
-        if not isinstance(margin_notes, list):
-            raise ValueError("marginNotes moet een lijst zijn")
-        notes = []
-        for note in margin_notes:
-            if not isinstance(note, dict):
-                raise ValueError("iedere kanttekening moet een object zijn")
-            notes.append({
-                "marker": note.get("marker"),
-                "type": note.get("type"),
-                "text2026": note.get("text2026"),
-            })
-        verses.append({
-            "number": verse.get("number"),
-            "text2026": verse.get("text2026"),
-            "text2026_html": verse.get("text2026_html"),
-            "marginNotes": notes,
-        })
-    return {
-        "number": chapter.get("number"),
-        "chapterIntro": {"text2026": intro.get("text2026")},
-        "verses": verses,
-    }
-
-
-def text_revision(chapter: dict) -> str:
-    return canonical_hash(text_review_payload(chapter))
-
-
-def location_review_payload(feature: dict) -> dict:
-    if not isinstance(feature, dict) or not isinstance(feature.get("properties"), dict):
-        raise ValueError("ieder geografisch punt moet properties hebben")
-    properties = dict(feature["properties"])
-    properties.pop("humanReviewed", None)
-    properties.pop("koppelingStatus", None)
-    refs = []
-    source_refs = properties.get("refs", [])
-    if not isinstance(source_refs, list):
-        raise ValueError("geografische refs moet een lijst zijn")
-    for ref in source_refs:
-        if not isinstance(ref, dict):
-            raise ValueError("iedere geografische ref moet een object zijn")
-        item = dict(ref)
-        item.pop("status", None)
-        refs.append(item)
-    if "refs" in properties:
-        properties["refs"] = refs
-    return {"geometry": feature.get("geometry"), "properties": properties}
 
 
 def build_catalog(root: Path = ROOT) -> dict:

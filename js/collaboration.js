@@ -42,7 +42,7 @@
     function setNavigation(profile) {
         var links = document.getElementById('topnav-links');
         if (!links) return;
-        ['review', 'users'].forEach(function (name) {
+        ['review', 'users', 'corrections'].forEach(function (name) {
             var old = links.querySelector('[data-collaboration-link="' + name + '"]');
             if (old) old.remove();
         });
@@ -55,6 +55,12 @@
             if (location.pathname.endsWith('/beoordelingen.html') ||
                 location.pathname.endsWith('/beoordelingsgeschiedenis.html')) reviews.classList.add('active');
             links.appendChild(reviews);
+            var corrections = document.createElement('a');
+            corrections.href = '/correcties.html';
+            corrections.dataset.collaborationLink = 'corrections';
+            corrections.textContent = 'Correctietaken';
+            if (location.pathname.endsWith('/correcties.html')) corrections.classList.add('active');
+            links.appendChild(corrections);
         }
         if (profile.roles.indexOf('administrator') !== -1) {
             var users = document.createElement('a');

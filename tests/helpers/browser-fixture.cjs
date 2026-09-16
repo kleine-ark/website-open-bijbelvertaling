@@ -1,4 +1,4 @@
-const { spawn } = require('node:child_process');
+const { spawn, execFileSync } = require('node:child_process');
 const { chromium } = require('playwright');
 const { once } = require('node:events');
 
@@ -35,6 +35,13 @@ async function startFixture() {
 
     return {
         browser, pageAs, base: 'http://127.0.0.1:' + config.port, locationId: config.location,
+        propose(payload) {
+            return JSON.parse(execFileSync('python3', ['server/correction_cli.py', 'propose'], {
+                input: JSON.stringify(payload), encoding: 'utf8',
+                env: { ...process.env, OV_COLLABORATION_DB: config.database,
+                    OV_REVIEW_CATALOG: config.catalog, OV_CONTENT_ROOT: process.cwd() },
+            }));
+        },
         async close() {
             await browser.close();
             if (server.exitCode === null) { server.kill(); await once(server, 'exit'); }

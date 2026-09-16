@@ -1,5 +1,6 @@
 """SQLite schema and versioned migrations for stable collaboration accounts."""
 import hashlib
+from correction_schema import SCHEMA as CORRECTION_SCHEMA
 
 HISTORICAL_REVIEWER_EMAIL = "maartenvroegindeweij@gmail.com"
 HISTORICAL_REVIEWER_NAME = "Maarten Vroegindeweij"
@@ -80,8 +81,9 @@ CREATE TABLE IF NOT EXISTS metadata (
 
 
 def initialize_database(db, bootstrap_admins, administrator_roles, timestamp):
-    db.executescript(SCHEMA)
+    db.executescript(SCHEMA + CORRECTION_SCHEMA)
     db.execute("BEGIN IMMEDIATE")
+    db.execute("INSERT OR IGNORE INTO metadata VALUES ('corrections-v1', ?)", (timestamp,))
     identity_version = db.execute(
         "SELECT 1 FROM metadata WHERE key='account-identity-v1'"
     ).fetchone()

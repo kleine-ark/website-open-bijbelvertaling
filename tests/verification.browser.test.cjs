@@ -447,7 +447,7 @@ test('leaving an administrator page clears private data before browser history c
 test('verse verification stays to the right of text and changes without adding row height', async () => {
     const page = await pageAs('reviewer');
     await page.goto(base + '/index.html#genesis/2');
-    await page.locator('[data-verification="text-verse:genesis/2/25"] > button').waitFor();
+    await page.locator('[data-verification="text-verse:genesis/2/25"] > button').first().waitFor();
     for (const [width, layout, diff] of [[1500, 'naast', false], [1500, 'naast', true],
         [1500, 'eronder', true], [390, 'eronder', false]]) {
         await page.setViewportSize({ width, height: 900 });

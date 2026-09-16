@@ -35,7 +35,8 @@
 
             var typeCell = element('td', subject.typeLabel);
             var stateCell = document.createElement('td');
-            stateCell.append(element('span', subject.status === 'approved' ? 'Goedgekeurd' : 'Te beoordelen', 'badge ' + subject.status));
+            const stateLabel = { approved: 'Goedgekeurd', pending: 'Te beoordelen', 'correction-needed': 'Aanpassing nodig' };
+            stateCell.append(element('span', stateLabel[subject.status], 'badge ' + subject.status));
             if (subject.latestReview) {
                 stateCell.append(
                     element('span', Collaboration.reviewActorLabel(subject.latestReview), 'block'),
@@ -47,6 +48,11 @@
             var open = element('a', 'Open de inhoud');
             open.href = subject.href;
             actionCell.append(open);
+            if (subject.correctionId) {
+                const correction = element('a', 'Correctietaak', 'block');
+                correction.href = 'correcties.html?id=' + subject.correctionId;
+                actionCell.append(correction);
+            }
             row.append(subjectCell, typeCell, stateCell, actionCell);
             body.appendChild(row);
         });

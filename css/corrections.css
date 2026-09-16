@@ -1,0 +1,25 @@
+.correction-card { border: 1px solid var(--border-default, #ccc); border-radius: 8px; padding: 20px; margin: 16px 0; }
+.correction-card h2 { margin-top: 0; }
+.correction-card p, .correction-note { white-space: pre-wrap; overflow-wrap: anywhere; }
+.correction-form { display: grid; gap: 12px; max-width: 760px; }
+.correction-form label { display: grid; gap: 8px; }
+.correction-form textarea { width: 100%; min-height: 120px; box-sizing: border-box; padding: 12px; font: inherit; border: 1px solid var(--border-default, #ccc); border-radius: 6px; color: var(--text-primary); background: var(--bg-surface); }
+.correction-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 15px 0; }
+.correction-actions a { color: var(--gold, #9a7421); }
+.collaboration-toolbar > div { display: grid; gap: 5px; }
+.correction-diff { table-layout: fixed; }
+.correction-diff th:first-child { width: 22%; }
+.correction-diff td { white-space: pre-wrap; overflow-wrap: anywhere; }
+.correction-diff .before { background: #b8393910; }
+.correction-diff .after { background: #16843e10; }
+.correction-files pre, .correction-snapshot { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; max-height: 420px; overflow-y: auto; padding: 12px; }
+.correction-files details { margin: 12px 0; }
+.correction-card summary { cursor: pointer; font-weight: 600; }
+.correction-warning { padding: 12px; border-inline-start: 4px solid #b07a16; background: #b07a1614; }
+.correction-log { padding-inline-start: 22px; }
+.correction-log li { margin: 12px 0; }
+@media (max-width: 600px) {
+    .correction-card { padding: 12px; }
+    .correction-diff { font-size: 13px; }
+    .correction-diff th:first-child { width: 25%; }
+}

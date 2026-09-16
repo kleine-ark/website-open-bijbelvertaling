@@ -378,6 +378,7 @@ class CollaborationHttpTests(unittest.TestCase):
             ("127.0.0.1", 0), api_module.CollaborationHandler
         )
         self.server.app = {
+            "corrections": api_module.Corrections(self.store, root),
             "store": self.store,
             "verifier": Verifier(),
             "catalog_path": self.catalog_path,

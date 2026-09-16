@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "server"))
 spec = importlib.util.spec_from_file_location("api", ROOT / "server/collaboration_api.py")
 api = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(api)
+from review_content import canonical_hash, subject_payload
 
 
 class Verifier:
@@ -39,7 +40,8 @@ with tempfile.TemporaryDirectory(prefix="ov-verification-test-") as temporary:
             subject_type = "text-chapter" if verse is None else "text-verse"
             identifier = f"genesis/{chapter}" + (f"/{verse}" if verse else "")
             subjects.append({
-                "type": subject_type, "id": identifier, "revision": source_hash,
+                "type": subject_type, "id": identifier,
+                "revision": canonical_hash(subject_payload(subject_type, identifier, content)),
                 "label": f"Genesis {chapter}" + (f":{verse}" if verse else ""),
                 "href": "index.html#" + identifier, "source": f"data/genesis/{chapter}.json",
                 "metadata": {"sourceHash": source_hash},
@@ -48,7 +50,8 @@ with tempfile.TemporaryDirectory(prefix="ov-verification-test-") as temporary:
     location = json.loads(location_path.read_text())["features"][0]["properties"]
     location_hash = hashlib.sha256(location_path.read_bytes()).hexdigest()
     subjects.append({
-        "type": "location", "id": location["id"], "revision": location_hash,
+        "type": "location", "id": location["id"],
+        "revision": canonical_hash(subject_payload('location', location['id'], json.loads(location_path.read_text()))),
         "label": location["naam"], "href": "plaats.html?plaats=" + location["id"],
         "source": "data/geografie-runtime.geojson", "metadata": {"sourceHash": location_hash},
     })
@@ -67,8 +70,9 @@ with tempfile.TemporaryDirectory(prefix="ov-verification-test-") as temporary:
     store.set_roles(admin, "reviewer", ["reviewer"])
     server = ThreadingHTTPServer(("127.0.0.1", 0), api.CollaborationHandler)
     server.app = {"store": store, "verifier": Verifier(), "catalog_path": catalog_path,
-                  "static_root": str(ROOT)}
-    print(json.dumps({"port": server.server_port, "location": location["id"]}), flush=True)
+                  "static_root": str(ROOT), "corrections": api.Corrections(store, ROOT)}
+    print(json.dumps({"port": server.server_port, "location": location["id"],
+                      "database": str(store.database_path), "catalog": str(catalog_path)}), flush=True)
     try:
         server.serve_forever()
     finally:
