@@ -6,7 +6,8 @@ const OptieMaten = {
     // Bij `maatstelsel: 'metrisch'` of `'imperiaal'` blijft de Bijbelse maat in
     // de OV-tekst staan en volgt de moderne waarde tussen haakjes
     // ("driehonderd ellen (ongeveer 133 meter)").
-    // Bij 'bijbels' (de standaard) verandert er niets aan de tekst.
+    // Bij 'bijbels' verandert er niets aan de tekst. Standaard staat de optie
+    // op 'metrisch' (zie Opties.DEFAULTS).
     //
     // Rekenwaarden, de schalen per stelsel, contextvarianten (de lange el van
     // Ezechiël 40-48) en alle uitzonderingen staan in data/eenheden.json, zodat
