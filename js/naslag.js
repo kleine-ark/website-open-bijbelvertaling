@@ -42,14 +42,58 @@
                '/' + rest.split(':')[0] + '">' + esc(toon) + '</a>';
     }
 
+    /* Apocriefe en Ethiopische boeken staan alleen in de lijst als de lezer ze
+     * bij Weergave heeft aangevinkt. Anders zou een kaart verwijzen naar een
+     * hoofdstuk dat in zijn leesomgeving niet bestaat. Dezelfde regel als in
+     * js/book-orders.js, maar die hoort bij de leespagina en wordt hier niet
+     * geladen; vandaar de kleine kaart boek -> testament. */
+    var boekTestament = null;
+
+    function boekenLaden() {
+        return fetch('data/books.json')
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (manifest) {
+                boekTestament = {};
+                var boeken = (manifest && manifest.books) || [];
+                for (var i = 0; i < boeken.length; i++) {
+                    boekTestament[boeken[i].id] = boeken[i].testament;
+                }
+            })
+            .catch(function () { boekTestament = {}; });
+    }
+
+    function boekZichtbaar(boekId) {
+        if (!boekTestament) return true;
+        var opties = (window.Opties && Opties.state) || {};
+        var testament = boekTestament[boekId];
+        if (testament === 'ET') return opties.ethiopischeBoeken === 'aan';
+        if (testament === 'AP') return opties.apocriefeBoeken !== 'uit';
+        return true;
+    }
+
+    function zichtbareItems(d) {
+        var items = d.personen || d.items || [];
+        return items.filter(function (it) {
+            var passages = it.tekstpassages || [];
+            if (!passages.length) return true;
+            for (var i = 0; i < passages.length; i++) {
+                if (boekZichtbaar(passages[i].boek)) return true;
+            }
+            return false;
+        });
+    }
+
     function itemParam() {
         var m = /[?&](?:persoon|item)=([^&]+)/.exec(location.search);
         return m ? decodeURIComponent(m[1]) : null;
     }
 
-    fetch(bron)
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (d) {
+    Promise.all([
+        fetch(bron).then(function (r) { return r.ok ? r.json() : null; }),
+        boekenLaden()
+    ])
+        .then(function (resultaten) {
+            var d = resultaten[0];
             if (!d) { houder.textContent = 'De gegevens konden niet geladen worden.'; return; }
             var gekozen = itemParam();
             var collectie = d.personen || d.items || [];
@@ -78,6 +122,12 @@
                 }
             }
             if (item) { toonItem(d, item, itemIndex); } else { toonOverzicht(d); }
+            // Vinkt de lezer de apocriefe of Ethiopische boeken aan of uit,
+            // dan verandert de lijst mee. Een rechtstreekse koppeling naar een
+            // kaart blijft werken, ook als het boek verborgen is.
+            window.addEventListener('ov:opties-gewijzigd', function () {
+                if (!itemParam()) toonOverzicht(d);
+            });
         })
         .catch(function () { houder.textContent = 'De gegevens konden niet geladen worden.'; });
 
@@ -109,7 +159,7 @@
         document.title = d.titel + ' — Open Vertaling';
         var h = '<h1>' + esc(d.titel) + '</h1>';
         if (d.intro) h += '<p class="ns-lead">' + esc(d.intro) + '</p>';
-        var items = (d.personen || d.items || []).slice();
+        var items = zichtbareItems(d).slice();
         if (!d.nummerType) {
             items.sort(function (a, b) {
                 var byName = a.naam.localeCompare(b.naam, 'nl', { sensitivity: 'base' });
