@@ -8,7 +8,8 @@
     };
     const events = { requested: 'Aanpassing aangevraagd', proposed: 'Voorstel toegevoegd',
         accept: 'Voorstel geaccepteerd', return: 'Nieuw voorstel gevraagd', rebased: 'Aanvraag vernieuwd',
-        close: 'Afgesloten zonder wijziging', applied: 'Wijziging gepubliceerd' };
+        close: 'Afgesloten zonder wijziging', applied: 'Wijziging gepubliceerd',
+        'scope-migrated': 'Onderdeel van de aanvraag vastgelegd' };
     let main, content, status, generation = 0;
 
     function el(tag, text, className) {
@@ -54,31 +55,69 @@
         return form;
     }
 
+    function targetFields(subject, form) {
+        const fields = el('div', undefined, 'correction-target');
+        const label = el('label', 'Onderdeel');
+        const select = el('select');
+        select.name = 'component'; select.id = 'correction-component'; label.htmlFor = select.id;
+        for (const key of Object.keys(subject.components)) {
+            const name = ReviewComponents.labels[key].replace(/^de /, '');
+            select.append(new Option(name[0].toUpperCase() + name.slice(1), key));
+        }
+        select.append(new Option('Anders — zelf omschrijven', 'custom'));
+        select.value = subject.type.startsWith('text-') ? 'text' : 'content';
+        const customLabel = el('label', 'Welk onderdeel moet worden aangepast?');
+        const custom = el('input');
+        custom.type = 'text'; custom.name = 'customTarget'; custom.maxLength = 200;
+        customLabel.append(custom);
+        const explanation = el('p', 'Bij een eigen onderdeel trekken we niet automatisch de verificatie van de Bijbeltekst of andere onderdelen in.');
+        const existing = el('p', undefined, 'correction-warning');
+        function update() {
+            const isCustom = select.value === 'custom';
+            customLabel.hidden = explanation.hidden = !isCustom;
+            custom.required = isCustom;
+            custom.disabled = !isCustom;
+            custom.setCustomValidity('');
+            existing.replaceChildren();
+            const task = subject.corrections.find(task => task.component === select.value);
+            existing.hidden = !task;
+            form.querySelector('[type="submit"]').disabled = !!task;
+            if (task) existing.append('Voor dit onderdeel staat al een aanvraag open. ',
+                link('Open correctietaak', 'correcties.html?id=' + task.id));
+        }
+        select.addEventListener('change', update);
+        custom.addEventListener('input', () => custom.setCustomValidity(
+            custom.value.trim() ? '' : 'Omschrijf het onderdeel.'));
+        fields.append(label, select, customLabel, explanation, existing);
+        form.prepend(fields);
+        update();
+        return () => ({ component: select.value, customTarget: select.value === 'custom' ? custom.value.trim() : '' });
+    }
+
     async function createForm(params, current) {
         const query = new URLSearchParams({ type: params.get('type'), id: params.get('subject') });
         const { subject } = await Collaboration.api('/subject?' + query);
         if (current !== generation) return;
         const card = el('section', undefined, 'correction-card');
         card.append(el('h2', 'Aanpassing aanvragen: ' + subject.label), link('Open de inhoud', subject.href));
-        if (subject.correctionId) {
-            card.append(el('p', 'Er staat al een correctietaak open voor deze inhoud.'),
-                link('Open correctietaak', 'correcties.html?id=' + subject.correctionId));
-        } else if (subject.revision !== params.get('revision') || subject.metadata.sourceHash !== params.get('sourceHash')) {
+        if (subject.revision !== params.get('revision') || subject.metadata.sourceHash !== params.get('sourceHash')) {
             card.append(el('p', 'De gegevens zijn gewijzigd. Open de inhoud opnieuw en vraag daar de aanpassing aan.', 'correction-warning'));
         } else {
             card.append(el('p', 'Beschrijf wat er fout is. Voeg eventueel een voorgestelde tekst of bron toe.'));
-            card.append(noteForm('Reden voor de aanpassing', 'Aanvraag opslaan', async reason => {
+            const form = noteForm('Reden voor de aanpassing', 'Aanvraag opslaan', async reason => {
                 try {
                     const payload = await Collaboration.api('/corrections', { method: 'POST', body: JSON.stringify({
                         subjectType: subject.type, subjectId: subject.id, revision: subject.revision,
-                        sourceHash: subject.metadata.sourceHash, reason
+                        sourceHash: subject.metadata.sourceHash, reason, ...target()
                     }) });
                     if (current !== generation) return;
                     history.replaceState(null, '', 'correcties.html?id=' + payload.correction.id);
                     renderTask(payload.correction);
                     show('Aanvraag opgeslagen. Deze wacht op verwerking op verzoek.');
                 } catch (error) { failure(error, current); }
-            }));
+            });
+            const target = targetFields(subject, form);
+            card.append(form);
         }
         content.append(card);
         show('');
@@ -156,7 +195,8 @@
         const nav = el('div', undefined, 'correction-actions');
         nav.append(link('Alle correctietaken', 'correcties.html'), link('Open de inhoud', task.href));
         const card = el('section', undefined, 'correction-card');
-        card.append(el('h2', task.label), el('p', labels[task.status]), el('h3', 'Reden van de aanvraag'),
+        card.append(el('h2', task.label), el('p', labels[task.status]),
+            el('p', 'Onderdeel: ' + ReviewComponents.correctionLabel(task), 'correction-scope'), el('h3', 'Reden van de aanvraag'),
             el('p', task.reason, 'correction-note'));
         if (task.stale) card.append(el('p', 'De brondata is intussen gewijzigd. Laat de aanvraag opnieuw verwerken voor de huidige versie.', 'correction-warning'));
         const snapshot = el('details');
@@ -214,7 +254,8 @@
         for (const task of result.items) {
             const card = el('article', undefined, 'correction-card');
             const title = el('h2'); title.append(link(task.label, 'correcties.html?id=' + task.id));
-            card.append(title, el('p', labels[task.status] + (task.stale ? ' · Bron gewijzigd' : '')), el('p', task.reason));
+            card.append(title, el('p', 'Onderdeel: ' + ReviewComponents.correctionLabel(task), 'correction-scope'),
+                el('p', labels[task.status] + (task.stale ? ' · Bron gewijzigd' : '')), el('p', task.reason));
             content.append(card);
         }
         const pagination = el('nav', undefined, 'correction-actions');

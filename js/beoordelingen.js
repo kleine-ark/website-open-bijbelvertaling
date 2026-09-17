@@ -48,9 +48,9 @@
             var open = element('a', 'Open de inhoud');
             open.href = subject.href;
             actionCell.append(open);
-            if (subject.correctionId) {
-                const correction = element('a', 'Correctietaak', 'block');
-                correction.href = 'correcties.html?id=' + subject.correctionId;
+            for (const task of subject.corrections) {
+                const correction = element('a', 'Correctietaak: ' + ReviewComponents.correctionLabel(task), 'block');
+                correction.href = 'correcties.html?id=' + task.id;
                 actionCell.append(correction);
             }
             row.append(subjectCell, typeCell, stateCell, actionCell);

@@ -2,6 +2,7 @@
 import hashlib
 from correction_schema import SCHEMA as CORRECTION_SCHEMA
 from component_reviews import SCHEMA as COMPONENT_SCHEMA
+import correction_scope
 
 HISTORICAL_REVIEWER_EMAIL = "maartenvroegindeweij@gmail.com"
 HISTORICAL_REVIEWER_NAME = "Maarten Vroegindeweij"
@@ -85,6 +86,7 @@ def initialize_database(db, bootstrap_admins, administrator_roles, timestamp):
     db.executescript(SCHEMA + CORRECTION_SCHEMA + COMPONENT_SCHEMA)
     db.execute("BEGIN IMMEDIATE")
     db.execute("INSERT OR IGNORE INTO metadata VALUES ('corrections-v1', ?)", (timestamp,))
+    correction_scope.initialize(db)
     identity_version = db.execute(
         "SELECT 1 FROM metadata WHERE key='account-identity-v1'"
     ).fetchone()

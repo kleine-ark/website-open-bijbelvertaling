@@ -32,7 +32,8 @@ from cryptography.hazmat.primitives.asymmetric import padding
 
 from collaboration_schema import HISTORICAL_REVIEWER_EMAIL, HISTORICAL_REVIEWER_NAME, initialize_database
 from collaboration_errors import ApiError, Unauthorized, Forbidden, NotFound, Conflict, InvalidRequest
-from correction_schema import open_correction
+from correction_schema import open_corrections
+import correction_scope
 from corrections import Corrections
 from correction_routes import route as correction_route
 from review_content import canonical_hash
@@ -370,10 +371,12 @@ class ReviewStore:
             raise InvalidRequest()
         revision = declared_revision
         with self.catalog_lock, self._connect() as db:
+            db.execute('BEGIN IMMEDIATE')
             current = db.execute(
                 "SELECT value FROM metadata WHERE key = 'catalog-revision'"
             ).fetchone()
             if current and current["value"] == revision:
+                correction_scope.migrate_reviews(db, now_iso())
                 return
             db.execute("UPDATE review_subjects SET active = 0")
             for item in catalog["subjects"]:
@@ -440,6 +443,7 @@ class ReviewStore:
                     (now_iso(),),
                 )
             component_reviews.migrate(db, catalog)
+            correction_scope.migrate_reviews(db, now_iso())
             db.execute(
                 """INSERT INTO metadata(key, value) VALUES ('catalog-revision', ?)
                    ON CONFLICT(key) DO UPDATE SET value=excluded.value""",
@@ -488,13 +492,14 @@ class ReviewStore:
             "needsReverification": main['needsReverification'],
             "components": parts,
         }
-        correction = open_correction(db, row)
-        if correction:
-            result['status'] = 'correction-needed'
-            for part in parts.values():
-                part['status'] = 'correction-needed'
-            if actor and 'reviewer' in actor['roles']:
-                result['correctionId'] = correction['id']
+        corrections = open_corrections(db, row)
+        for correction in corrections:
+            if correction['component'] in parts:
+                parts[correction['component']]['status'] = 'correction-needed'
+        result['status'] = main['status']
+        if actor and 'reviewer' in actor['roles']:
+            result['corrections'] = [{'id': c['id'], 'component': c['component'],
+                                      'customTarget': c['custom_target']} for c in corrections]
         if administrator:
             result["latestReview"] = main['latestReview']
         return result
@@ -601,9 +606,9 @@ class ReviewStore:
             source_hash = json.loads(row["metadata_json"])["sourceHash"]
             if payload.get("sourceHash") != source_hash:
                 raise Conflict()
-            if decision == 'approved' and open_correction(db, row):
-                raise Conflict()
             selected = component_reviews.selection(row, payload)
+            if decision == 'approved' and any(c['component'] in selected for c in open_corrections(db, row)):
+                raise Conflict()
             selected = component_reviews.undecided(db, row, selected, decision, self._event)
             # First successful click owns this verification. Retries (including
             # another tab/account) cannot silently replace the responsible person.

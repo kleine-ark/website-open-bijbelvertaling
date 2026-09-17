@@ -15,10 +15,10 @@ CREATE TABLE IF NOT EXISTS corrections (
     status TEXT NOT NULL CHECK(status IN ('requested','proposed','accepted','applied','closed')),
     version INTEGER NOT NULL,
     created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL
+    updated_at TEXT NOT NULL,
+    component TEXT NOT NULL,
+    custom_target TEXT NOT NULL
 );
-CREATE UNIQUE INDEX IF NOT EXISTS correction_open_subject
-    ON corrections(subject_type, subject_id) WHERE status NOT IN ('applied','closed');
 CREATE INDEX IF NOT EXISTS correction_source ON corrections(source, status);
 CREATE TABLE IF NOT EXISTS correction_proposals (
     id TEXT PRIMARY KEY,
@@ -53,9 +53,9 @@ CREATE TRIGGER IF NOT EXISTS immutable_correction_proposals_delete
 """
 
 
-def open_correction(db, subject):
+def open_corrections(db, subject):
     """Chapter/verse decisions overlap; different locations do not."""
-    return db.execute("""SELECT id FROM corrections WHERE status NOT IN ('applied','closed')
+    return db.execute("""SELECT id,component,custom_target FROM corrections WHERE status NOT IN ('applied','closed')
         AND source=? AND (subject_type='text-chapter' OR ?='text-chapter'
-                          OR (subject_type=? AND subject_id=?)) LIMIT 1""",
-        (subject['source'], subject['subject_type'], subject['subject_type'], subject['subject_id'])).fetchone()
+                          OR (subject_type=? AND subject_id=?)) ORDER BY rowid""",
+        (subject['source'], subject['subject_type'], subject['subject_type'], subject['subject_id'])).fetchall()

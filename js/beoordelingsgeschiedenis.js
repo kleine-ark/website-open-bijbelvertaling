@@ -34,8 +34,10 @@
                 var row = document.createElement('tr');
                 var subject = element('td', review.label);
                 subject.append(element('span', review.subjectType + ' · ' + review.subjectId, 'muted block'));
-                subject.append(element('span', ReviewComponents.join(review.components), 'muted block'));
-                var decision = element('td', review.decision === 'approved' ? 'Goedgekeurd' : 'Ingetrokken');
+                subject.append(element('span', review.components.length ? ReviewComponents.join(review.components)
+                    : 'Geen onderdelen meer van toepassing', 'muted block'));
+                var decision = element('td', review.components.length
+                    ? (review.decision === 'approved' ? 'Goedgekeurd' : 'Ingetrokken') : 'Hersteld');
                 var actor = element('td', Collaboration.reviewActorLabel(review));
                 actor.append(element('span', Collaboration.reviewDateLabel(review), 'muted block'));
                 row.append(subject, decision, actor, element('td', review.note || '—'));

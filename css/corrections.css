@@ -3,7 +3,10 @@
 .correction-card p, .correction-note { white-space: pre-wrap; overflow-wrap: anywhere; }
 .correction-form { display: grid; gap: 12px; max-width: 760px; }
 .correction-form label { display: grid; gap: 8px; }
-.correction-form textarea { width: 100%; min-height: 120px; box-sizing: border-box; padding: 12px; font: inherit; border: 1px solid var(--border-default, #ccc); border-radius: 6px; color: var(--text-primary); background: var(--bg-surface); }
+.correction-form textarea, .correction-form select, .correction-form input { width: 100%; min-width: 0; box-sizing: border-box; padding: 12px; font: inherit; border: 1px solid var(--border-default, #ccc); border-radius: 6px; color: var(--text-primary); background: var(--bg-surface); }
+.correction-form textarea { min-height: 120px; }
+.correction-target { display: grid; gap: 12px; min-width: 0; }
+.correction-form [hidden] { display: none; }
 .correction-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 15px 0; }
 .correction-actions a { color: var(--gold, #9a7421); }
 .collaboration-toolbar > div { display: grid; gap: 5px; }

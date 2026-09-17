@@ -69,7 +69,17 @@ class CorrectionsTests(unittest.TestCase):
     def payload(self, kind='text-verse', key='genesis/1/1'):
         subject = self.store.get_subject(self.reviewer, kind, key)
         return {'subjectType': kind, 'subjectId': key, 'revision': subject['revision'],
-                'sourceHash': subject['metadata']['sourceHash'], 'reason': 'De vertaling klopt niet.'}
+                'sourceHash': subject['metadata']['sourceHash'], 'reason': 'De vertaling klopt niet.',
+                'component': 'text' if kind.startswith('text-') else 'content', 'customTarget': ''}
+
+    def review_payload(self, kind='text-verse', key='genesis/1/1', components=None):
+        payload = self.payload(kind, key)
+        for field in ('reason', 'component', 'customTarget'):
+            payload.pop(field)
+        if components is not None:
+            subject = self.store.get_subject(self.reviewer, kind, key)
+            payload['components'] = {key: subject['components'][key]['revision'] for key in components}
+        return dict(payload, decision='approved', note='')
 
     def request(self, kind='text-verse', key='genesis/1/1'):
         return self.service.create(self.reviewer, self.payload(kind, key))
@@ -107,18 +117,14 @@ class CorrectionsTests(unittest.TestCase):
 
     def test_request_revokes_affected_approvals_and_blocks_reverification(self):
         for kind, key in [('text-verse', 'genesis/1/1'), ('text-chapter', 'genesis/1')]:
-            payload = self.payload(kind, key)
-            payload.pop('reason')
-            self.store.record_review(self.admin, dict(payload, decision='approved', note=''))
+            self.store.record_review(self.admin, self.review_payload(kind, key))
         task = self.request()
         for kind, key in [('text-verse', 'genesis/1/1'), ('text-chapter', 'genesis/1')]:
             subject = self.store.get_subject(None, kind, key)
             self.assertEqual(subject['status'], 'correction-needed')
             self.assertNotIn('latestReview', subject)
-            payload = self.payload(kind, key)
-            payload.pop('reason')
             with self.assertRaises(Conflict):
-                self.store.record_review(self.admin, dict(payload, decision='approved', note=''))
+                self.store.record_review(self.admin, self.review_payload(kind, key))
         self.assertEqual(self.store.verified_chapters(), {})
         self.decision(task, 'close', 'Melding ingetrokken.')
         self.assertEqual(self.store.get_subject(None, 'text-chapter', 'genesis/1')['status'], 'pending')
@@ -142,9 +148,7 @@ class CorrectionsTests(unittest.TestCase):
         task = self.service.get(self.reviewer, task['id'])
         self.assertEqual(task['status'], 'applied')
         self.assertEqual(self.store.get_subject(None, 'text-verse', 'genesis/1/1')['status'], 'pending')
-        payload = self.payload()
-        payload.pop('reason')
-        self.store.record_review(self.reviewer, dict(payload, decision='approved', note=''))
+        self.store.record_review(self.reviewer, self.review_payload())
         self.assertEqual(self.store.get_subject(None, 'text-verse', 'genesis/1/1')['status'], 'approved')
 
     def test_returned_proposal_preserves_history_and_requires_new_acceptance(self):
@@ -214,15 +218,14 @@ class CorrectionsTests(unittest.TestCase):
         self.assertEqual(Corrections(another, self.root).list(self.reviewer)['total'], 1)
 
     def test_pre_correction_database_is_migrated_without_changing_accounts_or_reviews(self):
-        payload = self.payload()
-        payload.pop('reason')
-        self.store.record_review(self.reviewer, dict(payload, decision='approved', note='Al nagekeken.'))
+        self.store.record_review(self.reviewer, dict(self.review_payload(), note='Al nagekeken.'))
         with self.store._connect() as db:
             users = [tuple(row) for row in db.execute('SELECT * FROM users ORDER BY uid')]
             reviews = [tuple(row) for row in db.execute('SELECT * FROM review_events ORDER BY id')]
             for table in ('correction_proposals', 'correction_events', 'corrections'):
                 db.execute('DROP TABLE ' + table)
             db.execute("DELETE FROM metadata WHERE key='corrections-v1'")
+            db.execute("DELETE FROM metadata WHERE key IN ('correction-scope-columns-v1','correction-review-scopes-v1')")
         upgraded = ReviewStore(self.store.database_path, {'admin@example.test'})
         with upgraded._connect() as db:
             self.assertEqual(users, [tuple(row) for row in db.execute('SELECT * FROM users ORDER BY uid')])
@@ -301,9 +304,7 @@ class CorrectionsTests(unittest.TestCase):
         future['verses'][0].update(text2026='Nieuwe tekst.', text2026_html='Nieuwe tekst.')
         self.path.write_text(json.dumps(future))
         self.sync()
-        payload = self.payload()
-        payload.pop('reason')
-        self.store.record_review(self.reviewer, dict(payload, decision='approved', note='Eerdere versie.'))
+        self.store.record_review(self.reviewer, dict(self.review_payload(), note='Eerdere versie.'))
         self.path.write_text(original)
         self.sync()
         task = self.propose(self.request())

@@ -79,5 +79,5 @@ test('the worker caches the shared modules and their local dependencies', () => 
         assert.ok(read(file).split('\n').length < 1000, file);
         assert.ok(read('sw.js').includes("'/" + file + "'"), file);
     }
-    assert.match(read('sw.js'), /verification-v11/);
+    assert.match(read('sw.js'), /verification-v12/);
 });

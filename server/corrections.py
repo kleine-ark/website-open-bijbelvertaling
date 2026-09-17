@@ -10,6 +10,9 @@ from collaboration_errors import Conflict, InvalidRequest, NotFound
 from correction_files import data_path, validate_files
 from review_content import canonical_hash, subject_payload
 import component_reviews
+import correction_scope
+from correction_schema import open_corrections
+from review_components import component_metadata
 
 STATES = ('requested', 'proposed', 'accepted', 'applied', 'closed')
 OPEN = ('requested', 'proposed', 'accepted')
@@ -73,17 +76,18 @@ class Corrections:
         self._snapshot(subject)
         return subject
 
-    def _revoke_affected(self, db, subject, actor, note):
+    def _revoke_affected(self, db, subject, actor, note, component):
         affected = db.execute('''SELECT * FROM review_subjects WHERE active=1 AND source=?
             AND (subject_type='text-chapter' OR ?='text-chapter'
                  OR (subject_type=? AND subject_id=?))''',
             (subject['source'], subject['subject_type'], subject['subject_type'], subject['subject_id'])).fetchall()
-        self._revoke_rows(db, affected, actor, 'Aanpassing aangevraagd: ' + note)
+        self._revoke_rows(db, [(row, {component}) for row in affected], actor, 'Aanpassing aangevraagd: ' + note)
 
     def _revoke_rows(self, db, rows, actor, note):
-        for row in rows:
+        for row, selected in rows:
             parts = component_reviews.states(db, row, self.store._event, False)
-            approved = {key: part['revision'] for key, part in parts.items() if part['status'] == 'approved'}
+            approved = {key: part['revision'] for key, part in parts.items()
+                        if key in selected and part['status'] == 'approved'}
             if approved:
                 event_id = str(uuid.uuid4())
                 db.execute('''INSERT INTO review_events
@@ -95,27 +99,30 @@ class Corrections:
 
     def create(self, actor, payload):
         self.store._require_role(actor, 'reviewer')
-        if set(payload) != {'subjectType', 'subjectId', 'revision', 'sourceHash', 'reason'}:
+        if set(payload) != {'subjectType', 'subjectId', 'revision', 'sourceHash', 'reason', 'component', 'customTarget'}:
             raise InvalidRequest()
         note = reason(payload['reason'])
         with self.store.catalog_lock, self.store._connect() as db:
             db.execute('BEGIN IMMEDIATE')
             actor = self.store._require_role(actor, 'reviewer')
             subject = self._subject(db, payload['subjectType'], payload['subjectId'])
+            component, custom = correction_scope.selection(subject, payload)
             if (subject['revision'] != payload['revision'] or
                     json.loads(subject['metadata_json'])['sourceHash'] != payload['sourceHash']):
                 raise Conflict()
-            if db.execute("SELECT 1 FROM corrections WHERE subject_type=? AND subject_id=? AND status NOT IN ('applied','closed')",
-                          (payload['subjectType'], payload['subjectId'])).fetchone():
+            if any(c['component'] == component for c in open_corrections(db, subject)):
                 raise Conflict()
             before = self._snapshot(subject)
             identifier, now = str(uuid.uuid4()), timestamp()
-            db.execute('INSERT INTO corrections VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+            db.execute('''INSERT INTO corrections
+                (id,subject_type,subject_id,revision,source,source_hash,label,href,reason,before_json,
+                 status,version,created_at,updated_at,component,custom_target) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
                 (identifier, subject['subject_type'], subject['subject_id'], subject['revision'],
                  subject['source'], payload['sourceHash'], subject['label'], subject['href'], note,
-                 encoded(before), 'requested', 1, now, now))
-            self._revoke_affected(db, subject, actor, note)
-            event(db, identifier, 'requested', note, actor, {'revision': subject['revision'], 'before': before})
+                 encoded(before), 'requested', 1, now, now, component, custom))
+            self._revoke_affected(db, subject, actor, note, component)
+            event(db, identifier, 'requested', note, actor,
+                  {'revision': subject['revision'], 'before': before, 'component': component, 'customTarget': custom})
         return self.get(actor, identifier)
 
     def _present(self, db, task, actor=None, detail=True, artifact=False):
@@ -123,6 +130,7 @@ class Corrections:
                              (task['subject_type'], task['subject_id'])).fetchone()
         result = {key: task[key] for key in ('id', 'label', 'href', 'reason', 'status', 'version', 'revision', 'source')}
         result.update(subjectType=task['subject_type'], subjectId=task['subject_id'],
+                      component=task['component'], customTarget=task['custom_target'],
                       createdAt=task['created_at'], updatedAt=task['updated_at'],
                       stale=task['status'] in OPEN and (not subject or subject['revision'] != task['revision']))
         if not detail:
@@ -251,7 +259,7 @@ class Corrections:
                 before = self._snapshot(subject)
                 db.execute('''UPDATE corrections SET revision=?,source_hash=?,before_json=? WHERE id=?''',
                            (subject['revision'], json.loads(subject['metadata_json'])['sourceHash'], encoded(before), identifier))
-                self._revoke_affected(db, subject, actor, note)
+                self._revoke_affected(db, subject, actor, note, task['component'])
                 event(db, identifier, 'rebased', note, actor, {'revision': subject['revision'], 'before': before})
             else:
                 event(db, identifier, action, note, actor, {'proposalVersion': task['version']})
@@ -299,9 +307,12 @@ class Corrections:
                 for file in json.loads(proposal['files_json']):
                     before_document = json.loads(file['before'])
                     for row in db.execute('SELECT * FROM review_subjects WHERE active=1 AND source=?', (file['path'],)):
-                        before_revision = canonical_hash(subject_payload(row['subject_type'], row['subject_id'], before_document))
-                        if before_revision != row['revision']:
-                            changed.append(row)
+                        before_parts = component_metadata(row['subject_type'],
+                            subject_payload(row['subject_type'], row['subject_id'], before_document))
+                        after_parts = json.loads(row['metadata_json'])['components']
+                        selected = {key for key in before_parts if before_parts[key]['revision'] != after_parts[key]['revision']}
+                        if selected:
+                            changed.append((row, selected))
                 self._revoke_rows(db, changed, acceptor, 'Correctie gepubliceerd; de gewijzigde versie moet opnieuw worden geverifieerd.')
                 db.execute("UPDATE corrections SET status='applied',version=version+1,updated_at=? WHERE id=?",
                            (timestamp(), task['id']))

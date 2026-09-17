@@ -80,5 +80,6 @@
         return sentences.length ? 'Let op: ' + sentences.join(' ') : '';
     }
 
-    global.ReviewComponents = { labels, payloads, revisions, join, warning };
+    const correctionLabel = task => task.component === 'custom' ? task.customTarget : labels[task.component];
+    global.ReviewComponents = { labels, payloads, revisions, join, warning, correctionLabel };
 })(typeof window === 'undefined' ? globalThis : window);

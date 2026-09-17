@@ -12,16 +12,34 @@ beoordelingsacties. Bij een vers opent **⋯** die acties, ook op een touchscree
 De knop opent een formulier voor het onderdeel en de werkelijk gelezen versie.
 Een reden is verplicht; een gewenste tekst of bron kan in die reden staan.
 
+Elke aanvraag betreft **één onderdeel**. Bij een vers of hoofdstuk staat standaard
+**Bijbeltekst** geselecteerd. De beoordelaar kan in plaats daarvan kiezen voor
+kanttekeningen, nootnummers, citaatopmaak, overige tekstopmaak of (bij een hoofdstuk)
+de hoofdstukinleiding. Bij locaties is de inhoud de standaardkeuze.
+**Anders — zelf omschrijven** opent een verplicht vrij veld voor het onderdeel.
+Die eigen omschrijving blijft zichtbaar in de taak, de takenlijst en de private
+export voor AI-verwerking. De reden beschrijft vervolgens wat er moet veranderen.
+
 **Correctietaken** staat in het menu en bovenaan **Beoordelingen**. Elke taak
 toont de reden, inhoud bij de aanvraag, voorstellen en taakgeschiedenis. De
 vergelijking toont oorspronkelijke en voorgestelde waarden naast elkaar.
 Opmaak en alle bijkomende bestandswijzigingen zijn afzonderlijk uitklapbaar.
 
-Een aanvraag zet de betrokken inhoud op **Aanpassing nodig**. Een versaanvraag
-blokkeert ook goedkeuring van het hoofdstuk; een hoofdstukaanvraag blokkeert
-goedkeuring van zijn verzen. Bestaande betrokken goedkeuringen worden met een
-nieuwe auditgebeurtenis ingetrokken, niet verwijderd. Afzonderlijke locaties
-blokkeren elkaar niet. Een open taak kan niet worden omzeild met **Verifiëren**.
+Een aanvraag zet uitsluitend het gekozen onderdeel op **Aanpassing nodig**.
+De waarschuwing noemt alleen dat onderdeel, en alleen wanneer het zichtbaar is.
+Een kanttekeningenaanvraag trekt dus geen tekstverificatie in. De blokkade tussen
+hoofdstuk en vers geldt eveneens alleen voor het gekozen onderdeel. Bestaande
+betrokken goedkeuringen worden met een nieuwe auditgebeurtenis ingetrokken, niet
+verwijderd. Andere onderdelen kunnen wel worden geverifieerd en kunnen een eigen
+aanvraag krijgen. Overlappende open aanvragen voor hetzelfde onderdeel worden
+geweigerd; afzonderlijke locaties blokkeren elkaar niet.
+
+Bij **Anders** kennen we geen automatisch verband met een van de verifieerbare
+onderdelen. Zo'n aanvraag verschijnt bij de beoordelingsacties en correctietaken,
+maar trekt niet op goed geluk tekst- of opmaakverificaties in. Na publicatie bepalen
+de daadwerkelijk gewijzigde inhoudsvingerafdrukken welke onderdelen opnieuw
+geverifieerd moeten worden. Een vrije omschrijving verruimt niet de toegestane
+gegevensbestanden of de bevoegdheden van de AI-verwerking.
 
 De statussen zijn:
 
@@ -143,6 +161,16 @@ en verificaties. `corrections-v1` wordt ook op bestaande databases geïnstalleer
 er zijn geen oude aanvragen om te converteren. Accounts, oude verificaties en
 hun identiteiten blijven intact. Voorstellen en correctiegebeurtenissen zijn
 tegen wijzigen en verwijderen beschermd met SQLite-triggers.
+
+`correction-scope-columns-v1` zet bestaande tekstaanvragen om naar onderdeel
+`text` en locatieaanvragen naar `content`. `correction-review-scopes-v1` verwijdert
+eenmalig de onterechte componentkoppelingen van automatische intrekkingen voor
+andere onderdelen, ook bij al gepubliceerde voorstellen. De oorspronkelijke reviewgebeurtenissen blijven bestaan;
+verwijderde koppelingen worden in een migratiegebeurtenis bij de taak bewaard.
+Intrekkingen zonder resterende onderdelen worden in de beoordelingsgeschiedenis
+als **Hersteld** getoond. Er worden geen nieuwe goedkeuringen of vervangende beoordelaars aangemaakt.
+De migratie draait vóór de API verzoeken afhandelt, binnen een transactie, ook
+wanneer de inhoudscatalogus niet is gewijzigd.
 
 De bestaande installer installeert alle aanvullende servermodules en de CLI.
 `OV_CONTENT_ROOT` wijst naar de publieke bronbestanden; standaard is dat de

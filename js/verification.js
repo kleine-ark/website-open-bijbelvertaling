@@ -90,12 +90,16 @@
         if (canVerify() && matches && !localEdits) {
             const correction = document.createElement('a');
             correction.className = 'verification-correction';
-            correction.textContent = state.correctionId ? 'Correctietaak bekijken' : 'Aanpassing aanvragen';
-            correction.href = '/correcties.html?' + (state.correctionId
-                ? new URLSearchParams({ id: state.correctionId })
-                : new URLSearchParams({ type: control.type, subject: control.id,
-                    revision: state.revision, sourceHash: control.sourceHash }));
+            correction.textContent = 'Aanpassing aanvragen';
+            correction.href = '/correcties.html?' + new URLSearchParams({ type: control.type, subject: control.id,
+                revision: state.revision, sourceHash: control.sourceHash });
             details.appendChild(correction);
+            for (const task of state.corrections) {
+                const link = document.createElement('a');
+                link.textContent = 'Correctietaak: ' + ReviewComponents.correctionLabel(task);
+                link.href = '/correcties.html?id=' + task.id;
+                details.appendChild(link);
+            }
         }
         const authors = new Map();
         if (!localEdits && administrator()) for (const [key, part] of Object.entries(parts)) {
