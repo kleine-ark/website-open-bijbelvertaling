@@ -2308,6 +2308,58 @@ body.show-chapter-intro #chapter-intro { display: block !important; }
     content: '(klik om in te vouwen)';
 }
 
+/* === Aangezette kolommen boven de tekst ===
+   Elke extra kolom als knopje met een minteken, zodat een lezer hem met één
+   tik weer weghaalt (js/kolom-chips.js). */
+.kolom-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
+    margin: 4px 24px 10px;
+}
+.kolom-chips[hidden] { display: none; }
+.kolom-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 28px;
+    padding: 0 5px 0 12px;
+    border: 1px solid var(--border-default);
+    border-radius: 999px;
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+    font: 500 12.5px var(--font-body);
+    cursor: pointer;
+    transition: border-color 140ms ease;
+}
+.kolom-chip:hover { border-color: var(--gold); }
+.kolom-chip:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+.kolom-chip-min {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--border-default);
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1;
+    transition: background 140ms ease, color 140ms ease;
+}
+.kolom-chip:hover .kolom-chip-min {
+    background: var(--gold);
+    color: #1a1d24;
+}
+.kolom-chip-alles {
+    padding: 0 12px;
+    color: var(--text-secondary);
+}
+
 /* === Kolom headers === */
 .column-headers {
     display: grid;
