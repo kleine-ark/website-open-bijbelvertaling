@@ -8,7 +8,7 @@
  * Versionering: bump VERSION bij elke deploy om alle caches te vernieuwen.
  */
 
-const VERSION = 'v0.58.8';
+const VERSION = 'v0.58.9';
 // New reader modules must not be mixed with HTML from before verification.
 const CACHE_VERSION = `${VERSION}-verification-v9`;
 const SHELL_CACHE   = `shell-${CACHE_VERSION}`;
@@ -68,6 +68,7 @@ const PRECACHE_URLS = [
     '/js/export.js',
     '/js/column-resize.js',
     '/js/column-reorder.js',
+    '/js/kolom-chips.js',
     '/js/verse-select.js',
     '/js/highlight.js',
     '/js/tags.js',
