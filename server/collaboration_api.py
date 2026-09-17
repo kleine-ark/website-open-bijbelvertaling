@@ -34,6 +34,7 @@ from collaboration_schema import HISTORICAL_REVIEWER_EMAIL, HISTORICAL_REVIEWER_
 from collaboration_errors import ApiError, Unauthorized, Forbidden, NotFound, Conflict, InvalidRequest
 from correction_schema import open_corrections
 import correction_scope
+import correction_verse_scope
 from corrections import Corrections
 from correction_routes import route as correction_route
 from review_content import canonical_hash
@@ -377,6 +378,7 @@ class ReviewStore:
             ).fetchone()
             if current and current["value"] == revision:
                 correction_scope.migrate_reviews(db, now_iso())
+                correction_verse_scope.migrate(db, now_iso())
                 return
             db.execute("UPDATE review_subjects SET active = 0")
             for item in catalog["subjects"]:
@@ -444,6 +446,7 @@ class ReviewStore:
                 )
             component_reviews.migrate(db, catalog)
             correction_scope.migrate_reviews(db, now_iso())
+            correction_verse_scope.migrate(db, now_iso())
             db.execute(
                 """INSERT INTO metadata(key, value) VALUES ('catalog-revision', ?)
                    ON CONFLICT(key) DO UPDATE SET value=excluded.value""",
@@ -648,13 +651,15 @@ class ReviewStore:
                    ORDER BY e.created_at DESC, e.rowid DESC LIMIT ? OFFSET ?""",
                 (limit, offset),
             ).fetchall()
-            scopes = {row['id']: [c[0] for c in db.execute(
-                'SELECT component FROM review_components WHERE event_id=? ORDER BY component', (row['id'],))]
+            scopes = {row['id']: [dict(c) for c in db.execute(
+                'SELECT component,scope,members_json FROM review_components WHERE event_id=? ORDER BY component', (row['id'],))]
                 for row in rows}
         items = [{
             "id": row["id"], "subjectType": row["subject_type"],
             "subjectId": row["subject_id"], "revision": row["revision"],
-            "label": row["label"], "components": scopes[row['id']], **self._event(row),
+            "label": row["label"], "components": [c['component'] for c in scopes[row['id']]],
+            "verseScopes": {c['component']: sorted(map(int, json.loads(c['members_json'])))
+                            for c in scopes[row['id']] if c['scope'] == 'verses'}, **self._event(row),
         } for row in rows]
         return {"total": total, "items": items}
 

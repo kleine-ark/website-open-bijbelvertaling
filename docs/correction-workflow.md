@@ -34,6 +34,14 @@ verwijderd. Andere onderdelen kunnen wel worden geverifieerd en kunnen een eigen
 aanvraag krijgen. Overlappende open aanvragen voor hetzelfde onderdeel worden
 geweigerd; afzonderlijke locaties blokkeren elkaar niet.
 
+Een versaanvraag trekt alleen de betrokken versverificatie in. Het hoofdstuk is
+daardoor niet meer volledig geverifieerd, maar zijn oorspronkelijke goedkeuring
+blijft bestaan voor de andere verzen. Na afsluiten of publiceren moet het betrokken
+vers opnieuw worden geverifieerd; de overige verzen hoeven niet opnieuw langs een
+beoordelaar. Een expliciete aanvraag voor het hele hoofdstuk betreft wel alle verzen.
+Ook bij publicatie worden uitsluitend daadwerkelijk gewijzigde verzen ingetrokken;
+een gewijzigde hoofdstukinleiding blijft een afzonderlijk hoofdstukonderdeel.
+
 Bij **Anders** kennen we geen automatisch verband met een van de verifieerbare
 onderdelen. Zo'n aanvraag verschijnt bij de beoordelingsacties en correctietaken,
 maar trekt niet op goed geluk tekst- of opmaakverificaties in. Na publicatie bepalen
@@ -171,6 +179,16 @@ Intrekkingen zonder resterende onderdelen worden in de beoordelingsgeschiedenis
 als **Hersteld** getoond. Er worden geen nieuwe goedkeuringen of vervangende beoordelaars aangemaakt.
 De migratie draait vóór de API verzoeken afhandelt, binnen een transactie, ook
 wanneer de inhoudscatalogus niet is gewijzigd.
+
+`review-component-scope-v1` legt de dekking van bestaande componentbeslissingen
+expliciet vast. Vervolgens beperkt `correction-verse-scopes-v1` de eerdere
+hoofdstukintrekkingen namens een vers tot de werkelijk betrokken versrevisies.
+Dit herstelt ook onterechte effecten van eerdere publicaties. Bij latere aanvragen
+die door dezelfde intrekking al onbevestigd waren, blijft hun betrokken vers
+onbevestigd. Originele gebeurtenissen, volgorde en personen veranderen niet;
+latere individuele goedkeuringen en intrekkingen behouden voorrang. Een
+migratiegebeurtenis bewaart de oude en nieuwe dekking. Nieuwe aanvragen en
+publicaties bewaren de bijbehorende review-id's expliciet in hun auditgebeurtenis.
 
 De bestaande installer installeert alle aanvullende servermodules en de CLI.
 `OV_CONTENT_ROOT` wijst naar de publieke bronbestanden; standaard is dat de

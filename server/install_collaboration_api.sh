@@ -17,7 +17,7 @@ for tool in curl install nginx python3 systemctl; do
     }
 done
 python3 -c 'import cryptography'
-MODULES=(collaboration_api.py collaboration_schema.py collaboration_errors.py correction_schema.py correction_scope.py
+MODULES=(collaboration_api.py collaboration_schema.py collaboration_errors.py correction_schema.py correction_scope.py correction_verse_scope.py
     review_content.py review_components.py component_reviews.py correction_files.py corrections.py correction_routes.py correction_cli.py)
 for file in "${MODULES[@]}" openvertaling-collaboration.service openvertaling-collaboration.nginx; do
     test -f "$SOURCE_DIR/$file" || {

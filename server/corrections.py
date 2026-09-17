@@ -77,13 +77,12 @@ class Corrections:
         return subject
 
     def _revoke_affected(self, db, subject, actor, note, component):
-        affected = db.execute('''SELECT * FROM review_subjects WHERE active=1 AND source=?
-            AND (subject_type='text-chapter' OR ?='text-chapter'
-                 OR (subject_type=? AND subject_id=?))''',
-            (subject['source'], subject['subject_type'], subject['subject_type'], subject['subject_id'])).fetchall()
-        self._revoke_rows(db, [(row, {component}) for row in affected], actor, 'Aanpassing aangevraagd: ' + note)
+        # A verse withdrawal makes the chapter incomplete through aggregation;
+        # recording a chapter withdrawal here would revoke its other verses too.
+        return self._revoke_rows(db, [(subject, {component})], actor, 'Aanpassing aangevraagd: ' + note)
 
     def _revoke_rows(self, db, rows, actor, note):
+        identifiers = []
         for row, selected in rows:
             parts = component_reviews.states(db, row, self.store._event, False)
             approved = {key: part['revision'] for key, part in parts.items()
@@ -96,6 +95,8 @@ class Corrections:
                     (event_id, row['subject_type'], row['subject_id'], row['revision'],
                      note, actor['uid'], actor['email'], actor['displayName'], timestamp()))
                 component_reviews.attach(db, event_id, approved, json.loads(row['metadata_json'])['components'])
+                identifiers.append(event_id)
+        return identifiers
 
     def create(self, actor, payload):
         self.store._require_role(actor, 'reviewer')
@@ -120,9 +121,10 @@ class Corrections:
                 (identifier, subject['subject_type'], subject['subject_id'], subject['revision'],
                  subject['source'], payload['sourceHash'], subject['label'], subject['href'], note,
                  encoded(before), 'requested', 1, now, now, component, custom))
-            self._revoke_affected(db, subject, actor, note, component)
+            reviews = self._revoke_affected(db, subject, actor, note, component)
             event(db, identifier, 'requested', note, actor,
-                  {'revision': subject['revision'], 'before': before, 'component': component, 'customTarget': custom})
+                  {'revision': subject['revision'], 'before': before, 'component': component, 'customTarget': custom,
+                   'reviewEventIds': reviews})
         return self.get(actor, identifier)
 
     def _present(self, db, task, actor=None, detail=True, artifact=False):
@@ -259,8 +261,9 @@ class Corrections:
                 before = self._snapshot(subject)
                 db.execute('''UPDATE corrections SET revision=?,source_hash=?,before_json=? WHERE id=?''',
                            (subject['revision'], json.loads(subject['metadata_json'])['sourceHash'], encoded(before), identifier))
-                self._revoke_affected(db, subject, actor, note, task['component'])
-                event(db, identifier, 'rebased', note, actor, {'revision': subject['revision'], 'before': before})
+                reviews = self._revoke_affected(db, subject, actor, note, task['component'])
+                event(db, identifier, 'rebased', note, actor,
+                      {'revision': subject['revision'], 'before': before, 'reviewEventIds': reviews})
             else:
                 event(db, identifier, action, note, actor, {'proposalVersion': task['version']})
             state = {'accept': 'accepted', 'return': 'requested', 'close': 'closed', 'rebase': 'requested'}[action]
@@ -311,9 +314,13 @@ class Corrections:
                             subject_payload(row['subject_type'], row['subject_id'], before_document))
                         after_parts = json.loads(row['metadata_json'])['components']
                         selected = {key for key in before_parts if before_parts[key]['revision'] != after_parts[key]['revision']}
+                        if row['subject_type'] == 'text-chapter':
+                            # Verse changes are handled by the verse rows, not by
+                            # a chapter-wide withdrawal covering unchanged verses.
+                            selected &= {'intro'}
                         if selected:
                             changed.append((row, selected))
-                self._revoke_rows(db, changed, acceptor, 'Correctie gepubliceerd; de gewijzigde versie moet opnieuw worden geverifieerd.')
+                reviews = self._revoke_rows(db, changed, acceptor, 'Correctie gepubliceerd; de gewijzigde versie moet opnieuw worden geverifieerd.')
                 db.execute("UPDATE corrections SET status='applied',version=version+1,updated_at=? WHERE id=?",
                            (timestamp(), task['id']))
-                event(db, task['id'], 'applied', data={'revision': proposal['revision']})
+                event(db, task['id'], 'applied', data={'revision': proposal['revision'], 'reviewEventIds': reviews})

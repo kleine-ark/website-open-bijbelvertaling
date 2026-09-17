@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS review_components (
     component TEXT NOT NULL,
     revision TEXT NOT NULL,
     members_json TEXT NOT NULL,
+    scope TEXT NOT NULL CHECK(scope IN ('subject','verses')),
     PRIMARY KEY(event_id, component)
 );
 CREATE INDEX IF NOT EXISTS component_revision ON review_components(component, revision, event_id);
@@ -30,8 +31,18 @@ def validate_components(item):
         raise InvalidRequest()
 
 
+def initialize(db):
+    if db.execute("SELECT 1 FROM metadata WHERE key='review-component-scope-v1'").fetchone():
+        return
+    columns = {row['name'] for row in db.execute('PRAGMA table_info(review_components)')}
+    if 'scope' not in columns:
+        db.execute("ALTER TABLE review_components ADD COLUMN scope TEXT NOT NULL DEFAULT 'subject' CHECK(scope IN ('subject','verses'))")
+    db.execute("INSERT INTO metadata VALUES ('review-component-scope-v1', '1')")
+
+
 def attach(db, event_id, components, metadata):
-    db.executemany('INSERT INTO review_components VALUES (?, ?, ?, ?)',
+    db.executemany("""INSERT INTO review_components
+        (event_id,component,revision,members_json,scope) VALUES (?, ?, ?, ?, 'subject')""",
                    [(event_id, key, revision, json.dumps(metadata[key].get('members', {})))
                     for key, revision in components.items()])
 
@@ -53,7 +64,7 @@ def migrate(db, catalog):
 
 def states(db, row, present_event, administrator):
     metadata = json.loads(row['metadata_json'])
-    events = db.execute('''SELECT e.*, e.rowid AS sequence, c.component, c.revision AS component_revision,
+    events = db.execute('''SELECT e.*, e.rowid AS sequence, c.component, c.revision AS component_revision, c.scope, c.members_json,
         (SELECT registered FROM users WHERE uid=e.actor_uid) AS actor_registered
         FROM review_events e JOIN review_components c ON c.event_id=e.id
         WHERE e.subject_type=? AND e.subject_id=?
@@ -79,6 +90,19 @@ def states(db, row, present_event, administrator):
             WHERE e.subject_type='text-verse' AND e.subject_id LIKE ?
             ORDER BY (e.actor_kind='user') DESC, e.rowid DESC''', (row['subject_id'] + '/%',)).fetchall()
     rank = lambda e: (e['actor_kind'] == 'user', e['sequence'])
+    if row['subject_type'] == 'text-chapter':
+        # A member-scoped decision affects only its listed verses. It is not a
+        # withdrawal of the chapter approval from which other verses inherit.
+        children = list(children)
+        for event in events:
+            if event['scope'] == 'verses':
+                members = json.loads(event['members_json'])
+                for number in metadata['components'][event['component']]['members']:
+                    if number in members:
+                        children.append({**dict(event), 'subject_id': row['subject_id'] + '/' + number,
+                                         'component_revision': members[number]})
+        children.sort(key=rank, reverse=True)
+        events = [event for event in events if event['scope'] == 'subject']
     result = {}
     for key, part in metadata['components'].items():
         relevant = sorted([e for e in [*events, *inherited] if e['component'] == key], key=rank, reverse=True)

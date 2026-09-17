@@ -84,6 +84,12 @@ gegevenssoort vereist een catalogusadapter en een `Verification.mount` naast de
 weergegeven inhoud; accounts en auditopslag hoeven niet opnieuw ontworpen te worden.
 
 De hoofdstukstatus en `verified-chapters` betreffen uitsluitend de Bijbeltekst.
+Een intrekking bij één vers maakt het hoofdstuk onvolledig, maar trekt de
+hoofdstukbeoordeling zelf niet in. Andere verzen blijven daarvan hun goedkeuring
+erven. Na hernieuwde verificatie van het betrokken vers kan die bestaande
+hoofdstukgoedkeuring weer volledig gelden, zonder een andere verantwoordelijke
+aan het hoofdstuk toe te wijzen. Een expliciete hoofdstukintrekking blijft wel
+alle verzen omvatten.
 De waarschuwing benoemt alleen ongecontroleerde onderdelen die daadwerkelijk
 getoond worden: verborgen kanttekeningen, nootnummers, inleidingen of citaatopmaak
 tellen niet mee. Een geopende kanttekening krijgt haar eigen versgebonden melding.
@@ -98,6 +104,12 @@ De API controleert de selectie en legt die vast in de immutable tabel
 hele-onderwerpbeoordeling via de API kan `components` weglaten; dan worden alle
 onderdelen beoordeeld. Herhaalde goedkeuringen nemen geen bestaande eigenaar over.
 Alleen beheerders ontvangen verantwoordelijken, ook bij beoordelingen per onderdeel.
+
+Elke componentbeslissing heeft expliciete dekking: `scope=subject` voor het
+onderwerp zelf, of `scope=verses` voor uitsluitend de versrevisies in `members_json`.
+Een versgebonden hoofdstukgebeurtenis telt mee bij de betrokken verzen en bij de
+samengestelde hoofdstukstatus; zij vervangt geen volledige hoofdstukbeslissing.
+De geschiedenis vermeldt bij zo'n gebeurtenis om welke verzen het gaat.
 
 De browser hasht ook de daadwerkelijk geladen bronbytes. De server vergelijkt
 deze `sourceHash` bij de klik met de actuele catalogus. Oude caches of een

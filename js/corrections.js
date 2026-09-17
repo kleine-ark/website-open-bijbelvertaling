@@ -9,7 +9,8 @@
     const events = { requested: 'Aanpassing aangevraagd', proposed: 'Voorstel toegevoegd',
         accept: 'Voorstel geaccepteerd', return: 'Nieuw voorstel gevraagd', rebased: 'Aanvraag vernieuwd',
         close: 'Afgesloten zonder wijziging', applied: 'Wijziging gepubliceerd',
-        'scope-migrated': 'Onderdeel van de aanvraag vastgelegd' };
+        'scope-migrated': 'Onderdeel van de aanvraag vastgelegd',
+        'verse-scope-migrated': 'Verificaties van andere verzen hersteld' };
     let main, content, status, generation = 0;
 
     function el(tag, text, className) {
