@@ -8,7 +8,7 @@
     "verzenBeoordeeld": 113,
     "verzenMetBronvermelding": 1,
     "vermeldingen": 2,
-    "reviewQueue": 2
+    "reviewQueue": 1
   },
   "mentions": {
     "1:3": [
@@ -16,9 +16,11 @@
         "entityId": "geo-ephesus-5feb15",
         "ref": "1timotheus 1:3",
         "href": "index.html#1timotheus/1/3",
-        "label": null,
-        "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "label": "Efeze",
+        "status": "agent-reviewed",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Tim.1.3",
+        "lokaleOsis": "1Tim.1.3"
       },
       {
         "entityId": "geo-macedonia-69e1b8",
@@ -26,19 +28,13 @@
         "href": "index.html#1timotheus/1/3",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Tim.1.3",
+        "lokaleOsis": "1Tim.1.3"
       }
     ]
   },
   "reviewQueue": [
-    {
-      "type": "label-of-homoniem",
-      "entityId": "geo-ephesus-5feb15",
-      "ref": "1timotheus 1:3",
-      "tekst": "Zoals ik u vermaand heb, dat u te Efeze zou blijven, als ik naar Macedonië reisde, zo vermaan ik het u nog, opdat u sommigen beveelt geen andere leer te leren;",
-      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
-      "status": "needs-human-review"
-    },
     {
       "type": "label-of-homoniem",
       "entityId": "geo-macedonia-69e1b8",

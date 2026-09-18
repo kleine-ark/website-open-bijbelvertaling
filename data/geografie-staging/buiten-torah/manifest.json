@@ -4,6 +4,8 @@
   "status": "agent-reviewed",
   "humanReviewed": false,
   "publicatieStatus": "staging-niet-samenvoegen-zonder-afstemming",
+  "bronSha256": "b8187aa4737e8517ccc090f765d2be11da4c548cd2a59d3cdcb62e952cb8c0f2",
+  "nietGeplaatsteBronentiteiten": 17,
   "boeken": [
     "1johannes",
     "1koningen",
@@ -92,24 +94,25 @@
   "aantallen": {
     "boeken": 83,
     "verzenBeoordeeld": 35280,
-    "entiteiten": 1149,
-    "vermeldingen": 7371,
-    "agentReviewedVermeldingen": 2045,
-    "teBeoordelenVermeldingen": 5326,
-    "reviewQueueTotaal": 6027,
-    "aliasBotsingen": 57,
+    "entiteiten": 1139,
+    "vermeldingen": 7356,
+    "agentReviewedVermeldingen": 3668,
+    "teBeoordelenVermeldingen": 3688,
+    "reviewQueueTotaal": 4792,
+    "aliasBotsingen": 55,
     "perCategorie": {
       "berg": 63,
-      "dal-vlakte": 26,
+      "dal-vlakte": 25,
       "eiland": 20,
       "land-streek": 144,
-      "plaats": 93,
+      "plaats": 92,
       "rivier-water": 49,
-      "stad-dorp": 754
+      "stad-dorp": 746
     },
     "perZekerheid": {
-      "onzeker": 814,
-      "zeker": 335
+      "onzeker": 467,
+      "waarschijnlijk": 346,
+      "zeker": 326
     }
   }
 }

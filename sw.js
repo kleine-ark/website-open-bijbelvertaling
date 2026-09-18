@@ -142,7 +142,7 @@ self.addEventListener('fetch', (event) => {
     // Data files (JSON in /data/): network-first — bewerkte verzen + stats altijd
     // direct vers; cache alleen als offline-fallback. (Voorheen stale-while-
     // revalidate, waardoor net-bewerkte tekst één refresh achterliep.)
-    if (path.startsWith('/data/') && path.endsWith('.json')) {
+    if (path.startsWith('/data/') && (path.endsWith('.json') || path.endsWith('.geojson'))) {
         event.respondWith(networkFirst(req, DATA_CACHE));
         return;
     }

@@ -8,7 +8,7 @@
     "verzenBeoordeeld": 89,
     "verzenMetBronvermelding": 7,
     "vermeldingen": 10,
-    "reviewQueue": 9
+    "reviewQueue": 7
   },
   "mentions": {
     "1:1": [
@@ -18,7 +18,9 @@
         "href": "index.html#1tessalonicensen/1/1",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Thess.1.1",
+        "lokaleOsis": "1Thess.1.1"
       }
     ],
     "1:7": [
@@ -28,7 +30,9 @@
         "href": "index.html#1tessalonicensen/1/7",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Thess.1.7",
+        "lokaleOsis": "1Thess.1.7"
       },
       {
         "entityId": "geo-greece-4492a0",
@@ -36,7 +40,9 @@
         "href": "index.html#1tessalonicensen/1/7",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Thess.1.7",
+        "lokaleOsis": "1Thess.1.7"
       },
       {
         "entityId": "geo-macedonia-69e1b8",
@@ -44,7 +50,9 @@
         "href": "index.html#1tessalonicensen/1/7",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Thess.1.7",
+        "lokaleOsis": "1Thess.1.7"
       }
     ],
     "1:8": [
@@ -54,7 +62,9 @@
         "href": "index.html#1tessalonicensen/1/8",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Thess.1.8",
+        "lokaleOsis": "1Thess.1.8"
       },
       {
         "entityId": "geo-macedonia-69e1b8",
@@ -62,7 +72,9 @@
         "href": "index.html#1tessalonicensen/1/8",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Thess.1.8",
+        "lokaleOsis": "1Thess.1.8"
       }
     ],
     "2:14": [
@@ -72,7 +84,9 @@
         "href": "index.html#1tessalonicensen/2/14",
         "label": "Judea",
         "status": "agent-reviewed",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Thess.2.14",
+        "lokaleOsis": "1Thess.2.14"
       }
     ],
     "2:2": [
@@ -80,9 +94,11 @@
         "entityId": "geo-philippi-49e1d0",
         "ref": "1tessalonicensen 2:2",
         "href": "index.html#1tessalonicensen/2/2",
-        "label": null,
-        "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "label": "Filippi",
+        "status": "agent-reviewed",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Thess.2.2",
+        "lokaleOsis": "1Thess.2.2"
       }
     ],
     "3:1": [
@@ -90,9 +106,11 @@
         "entityId": "geo-athens-1fe6e7",
         "ref": "1tessalonicensen 3:1",
         "href": "index.html#1tessalonicensen/3/1",
-        "label": null,
-        "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "label": "Athene",
+        "status": "agent-reviewed",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Thess.3.1",
+        "lokaleOsis": "1Thess.3.1"
       }
     ],
     "4:10": [
@@ -102,7 +120,9 @@
         "href": "index.html#1tessalonicensen/4/10",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "1Thess.4.10",
+        "lokaleOsis": "1Thess.4.10"
       }
     ]
   },
@@ -120,14 +140,6 @@
       "entityId": "geo-achaia-ef4242",
       "ref": "1tessalonicensen 1:8",
       "tekst": "Want van u is het Woord van de Heere luidbaar geworden niet alleen in Macedonië en Achaje; maar ook in alle plaatsen is uw geloof, dat u op God hebt, uitgegaan, zodat wij niet nodig hebben, iets daarvan te spreken.",
-      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
-      "status": "needs-human-review"
-    },
-    {
-      "type": "label-of-homoniem",
-      "entityId": "geo-athens-1fe6e7",
-      "ref": "1tessalonicensen 3:1",
-      "tekst": "Daarom, deze begeerte niet langer kunnende verdragen, hebben wij graag willen te Athene alleen gelaten worden;",
       "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
       "status": "needs-human-review"
     },
@@ -160,14 +172,6 @@
       "entityId": "geo-macedonia-69e1b8",
       "ref": "1tessalonicensen 4:10",
       "tekst": "Want u doet ook hetzelfde aan al de broeders, die in geheel Macedonië zijn. Maar wij vermanen u, broeders, dat u meer overvloedig wordt;",
-      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
-      "status": "needs-human-review"
-    },
-    {
-      "type": "label-of-homoniem",
-      "entityId": "geo-philippi-49e1d0",
-      "ref": "1tessalonicensen 2:2",
-      "tekst": "Maar, hoewel wij te voren geleden hadden, en ook ons smaad aangedaan was, zoals u weet, te Filippi, zo hebben wij toch vrijmoedigheid gebruikt in onze God, om het Evangelie van God tot u te spreken in veel strijd.",
       "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
       "status": "needs-human-review"
     },

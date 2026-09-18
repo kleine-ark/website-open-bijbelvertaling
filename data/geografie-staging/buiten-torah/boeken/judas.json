@@ -8,7 +8,7 @@
     "verzenBeoordeeld": 25,
     "verzenMetBronvermelding": 2,
     "vermeldingen": 3,
-    "reviewQueue": 2
+    "reviewQueue": 1
   },
   "mentions": {
     "1:5": [
@@ -16,9 +16,11 @@
         "entityId": "geo-egypt-f301ca",
         "ref": "judas 1:5",
         "href": "index.html#judas/1/5",
-        "label": null,
-        "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "label": "Egypteland",
+        "status": "agent-reviewed",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Jude.1.5",
+        "lokaleOsis": "Jude.1.5"
       }
     ],
     "1:7": [
@@ -28,7 +30,9 @@
         "href": "index.html#judas/1/7",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Jude.1.7",
+        "lokaleOsis": "Jude.1.7"
       },
       {
         "entityId": "geo-sodom-0aa664",
@@ -36,19 +40,13 @@
         "href": "index.html#judas/1/7",
         "label": "Sodoma",
         "status": "agent-reviewed",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Jude.1.7",
+        "lokaleOsis": "Jude.1.7"
       }
     ]
   },
   "reviewQueue": [
-    {
-      "type": "label-of-homoniem",
-      "entityId": "geo-egypt-f301ca",
-      "ref": "judas 1:5",
-      "tekst": "Maar ik wil u eraan herinneren, hoewel u dit eens wist, dat de Heere, het volk uit Egypteland verlost hebbende, opnieuw degenen, die niet geloofden, verdorven heeft.",
-      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
-      "status": "needs-human-review"
-    },
     {
       "type": "label-of-homoniem",
       "entityId": "geo-gomorrah-a572e2",

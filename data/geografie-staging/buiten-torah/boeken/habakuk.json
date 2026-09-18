@@ -8,7 +8,7 @@
     "verzenBeoordeeld": 56,
     "verzenMetBronvermelding": 4,
     "vermeldingen": 6,
-    "reviewQueue": 4
+    "reviewQueue": 3
   },
   "mentions": {
     "1:6": [
@@ -18,7 +18,9 @@
         "href": "index.html#habakuk/1/6",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Hab.1.6",
+        "lokaleOsis": "Hab.1.6"
       }
     ],
     "2:17": [
@@ -26,9 +28,11 @@
         "entityId": "geo-lebanon-730058",
         "ref": "habakuk 2:17",
         "href": "index.html#habakuk/2/17",
-        "label": null,
-        "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "label": "Libanon",
+        "status": "agent-reviewed",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Hab.2.17",
+        "lokaleOsis": "Hab.2.17"
       }
     ],
     "3:3": [
@@ -38,7 +42,9 @@
         "href": "index.html#habakuk/3/3",
         "label": "Paran",
         "status": "agent-reviewed",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Hab.3.3",
+        "lokaleOsis": "Hab.3.3"
       },
       {
         "entityId": "geo-teman-831506",
@@ -46,7 +52,9 @@
         "href": "index.html#habakuk/3/3",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Hab.3.3",
+        "lokaleOsis": "Hab.3.3"
       }
     ],
     "3:7": [
@@ -56,7 +64,9 @@
         "href": "index.html#habakuk/3/7",
         "label": null,
         "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Hab.3.7",
+        "lokaleOsis": "Hab.3.7"
       },
       {
         "entityId": "geo-midian-cc6d8e",
@@ -64,7 +74,9 @@
         "href": "index.html#habakuk/3/7",
         "label": "Midian",
         "status": "agent-reviewed",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Hab.3.7",
+        "lokaleOsis": "Hab.3.7"
       }
     ]
   },
@@ -82,14 +94,6 @@
       "entityId": "geo-cushan-567e0e",
       "ref": "habakuk 3:7",
       "tekst": "Ik zag de tenten van Kusan onder de zinloosheid; de gordijnen van het land van Midian schudden.",
-      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
-      "status": "needs-human-review"
-    },
-    {
-      "type": "label-of-homoniem",
-      "entityId": "geo-lebanon-730058",
-      "ref": "habakuk 2:17",
-      "tekst": "Want het geweld, dat tegen Libanon begaan is, zal u bedekken, en de verwoesting van de beesten zal ze verschrikken, vanwege het bloed van de mensen, en van het geweld in het land, de stad en aan alle inwoners daarvan.",
       "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
       "status": "needs-human-review"
     },

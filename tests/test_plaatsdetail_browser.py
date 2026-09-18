@@ -52,6 +52,10 @@ class PlaatsdetailBrowserTests(unittest.TestCase):
             source = page.get_by_role("link", name="Bron openen ↗")
             self.assertEqual(
                 source.get_attribute("href"),
+                "https://www.openbible.info/geo/ancient/aa8275b/abarim",
+            )
+            self.assertEqual(
+                page.get_by_role("link", name="Dataset openen ↗").get_attribute("href"),
                 "https://github.com/openbibleinfo/Bible-Geocoding-Data",
             )
             self.assertEqual(

@@ -8,7 +8,7 @@
     "verzenBeoordeeld": 95,
     "verzenMetBronvermelding": 5,
     "vermeldingen": 6,
-    "reviewQueue": 1
+    "reviewQueue": 0
   },
   "mentions": {
     "1:2": [
@@ -16,9 +16,11 @@
         "entityId": "geo-colossae-4e5a69",
         "ref": "kolossenzen 1:2",
         "href": "index.html#kolossenzen/1/2",
-        "label": null,
-        "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "label": "Kolosse",
+        "status": "agent-reviewed",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Col.1.2",
+        "lokaleOsis": "Col.1.2"
       }
     ],
     "2:1": [
@@ -28,7 +30,9 @@
         "href": "index.html#kolossenzen/2/1",
         "label": "Laodicea",
         "status": "agent-reviewed",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Col.2.1",
+        "lokaleOsis": "Col.2.1"
       }
     ],
     "4:13": [
@@ -38,7 +42,9 @@
         "href": "index.html#kolossenzen/4/13",
         "label": "Hierapolis",
         "status": "agent-reviewed",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Col.4.13",
+        "lokaleOsis": "Col.4.13"
       },
       {
         "entityId": "geo-laodicea-83fb1e",
@@ -46,7 +52,9 @@
         "href": "index.html#kolossenzen/4/13",
         "label": "Laodicea",
         "status": "agent-reviewed",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Col.4.13",
+        "lokaleOsis": "Col.4.13"
       }
     ],
     "4:15": [
@@ -56,7 +64,9 @@
         "href": "index.html#kolossenzen/4/15",
         "label": "Laodicea",
         "status": "agent-reviewed",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Col.4.15",
+        "lokaleOsis": "Col.4.15"
       }
     ],
     "4:16": [
@@ -66,18 +76,11 @@
         "href": "index.html#kolossenzen/4/16",
         "label": "Laodicea",
         "status": "agent-reviewed",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Col.4.16",
+        "lokaleOsis": "Col.4.16"
       }
     ]
   },
-  "reviewQueue": [
-    {
-      "type": "label-of-homoniem",
-      "entityId": "geo-colossae-4e5a69",
-      "ref": "kolossenzen 1:2",
-      "tekst": "De heiligen en gelovige broeders in Christus, die te Kolosse zijn; genade zij u en vrede van God, onze Vader, en de Heere Jezus Christus.",
-      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
-      "status": "needs-human-review"
-    }
-  ]
+  "reviewQueue": []
 }

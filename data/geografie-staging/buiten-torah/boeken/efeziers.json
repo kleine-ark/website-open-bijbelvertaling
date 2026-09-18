@@ -8,7 +8,7 @@
     "verzenBeoordeeld": 155,
     "verzenMetBronvermelding": 1,
     "vermeldingen": 1,
-    "reviewQueue": 1
+    "reviewQueue": 0
   },
   "mentions": {
     "1:1": [
@@ -16,20 +16,13 @@
         "entityId": "geo-ephesus-5feb15",
         "ref": "efeziers 1:1",
         "href": "index.html#efeziers/1/1",
-        "label": null,
-        "status": "needs-human-review",
-        "bronVerskoppeling": "OpenBible.info verse disambiguation"
+        "label": "Efeze",
+        "status": "agent-reviewed",
+        "bronVerskoppeling": "OpenBible.info verse disambiguation",
+        "bronOsis": "Eph.1.1",
+        "lokaleOsis": "Eph.1.1"
       }
     ]
   },
-  "reviewQueue": [
-    {
-      "type": "label-of-homoniem",
-      "entityId": "geo-ephesus-5feb15",
-      "ref": "efeziers 1:1",
-      "tekst": "Paulus, een apostel van Jezus Christus, door de wil van God, aan de heiligen, die te Efeze zijn, en gelovigen in Christus Jezus:",
-      "reden": "Geen eenduidige Nederlandse plaatsvorm gevonden of de vorm is contextueel ambigu.",
-      "status": "needs-human-review"
-    }
-  ]
+  "reviewQueue": []
 }

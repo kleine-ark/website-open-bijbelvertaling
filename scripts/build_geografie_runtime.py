@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Bouw de compacte, canonieke runtime-index voor kaart en geografielijst.
 
-De generator voegt de bestaande buiten-Torah-staging, de reeds beoordeelde
-Torah-inventaris en de handmatig samengestelde kaartlaag samen. Bronentiteiten
-houden hun stabiele id; gelijknamige plaatsen worden daardoor niet samengevoegd.
+De generator voegt de buiten-Torah-staging en Torah-bronvermeldingen samen.
+Gecontroleerde namen uit de oude kaartlaag worden als aliassen toegevoegd;
+onopgeloste oude punten blijven in de review-inventaris. Bronentiteiten houden
+hun stabiele id; gelijknamige plaatsen worden niet op alleen hun naam verenigd.
 Alle output blijft expliciet ``humanReviewed: false`` zolang dat voor de bron zo
 is. Waarschijnlijke en onzekere punten worden wel gepubliceerd, met hun label.
 """
@@ -35,6 +36,7 @@ TORAH_OSIS = {
 # Hergebruik exact dezelfde bronresolutie en stabiele ids als de stagingbouw.
 sys.path.insert(0, str(Path(__file__).parent))
 import build_geografie_buiten_torah as staging_builder  # noqa: E402
+from geografie_reviewbesluiten import apply_reviews  # noqa: E402
 
 
 def read_json(path: Path):
@@ -90,6 +92,7 @@ def empty_feature(entity: dict) -> dict:
             ),
             "refs": [],
             "bron": entity.get("coordinatenBron", {}),
+            "moderneNaam": entity.get("coordinatenBron", {}).get("moderneNaam", ""),
         },
     }
 
@@ -121,10 +124,10 @@ def add_outside_inventory(features: dict[str, dict]) -> None:
                 feature = features.get(mention["entityId"])
                 if not feature:
                     continue
-                add_ref(
-                    feature,
-                    runtime_ref(mention["ref"], mention["status"], mention.get("label")),
-                )
+                ref = runtime_ref(mention["ref"], mention["status"], mention.get("label"))
+                if mention.get("bronOsis"):
+                    ref["bronOsis"] = mention["bronOsis"]
+                add_ref(feature, ref)
 
 
 def parse_torah_osis(value: str) -> tuple[str, str] | None:
@@ -154,9 +157,9 @@ def add_torah_inventory(features: dict[str, dict], source: Path) -> dict:
             continue
         uses = []
         for verse in row.get("verses", []):
-            parsed = parse_torah_osis(verse.get("osis", ""))
+            parsed = parse_torah_osis(staging_builder.source_osis(verse))
             if parsed and parsed[1] in texts[parsed[0]]:
-                uses.append(parsed)
+                uses.append((*parsed, verse.get("osis", "")))
         if not uses:
             continue
 
@@ -175,17 +178,19 @@ def add_torah_inventory(features: dict[str, dict], source: Path) -> dict:
             })
         feature = features[entity_id]
         labels = staging_builder.possible_labels(row)
-        for book, key in uses:
+        for book, key, source_ref in uses:
             source_refs += 1
             label = staging_builder.exact_label(texts[book][key], labels)
-            # De bron identificeert het vers; de lokale inventaris bevestigt dat
-            # het vers geografische metadata bevat. Alleen een teruggevonden
-            # Nederlandse vorm krijgt de sterkere agent-reviewed status.
-            status = "agent-reviewed" if label and (book, key) in explicit else "needs-human-review"
+            # Niet alleen hetzelfde vers, maar dezelfde Nederlandse labelvorm
+            # moet in de lokale inventaris staan. Ambigue namen blijven review.
+            same_label = label and any(fold(item.get("label", "")) == fold(label) for item in explicit.get((book, key), []))
+            status = "agent-reviewed" if same_label and staging_builder.slug(label) not in staging_builder.AMBIGUOUS else "needs-human-review"
             if (book, key) in explicit:
                 matched_explicit_refs += 1
             ref = f"{book} {key}"
-            add_ref(feature, runtime_ref(ref, status, label))
+            reference = runtime_ref(ref, status, label)
+            reference["bronOsis"] = source_ref
+            add_ref(feature, reference)
             if label and label not in feature["properties"]["aliases"]:
                 feature["properties"]["aliases"].append(label)
 
@@ -201,80 +206,102 @@ def enrich_from_legacy(features: dict[str, dict]) -> dict:
     owners: dict[str, set[str]] = defaultdict(set)
     for entity_id, feature in features.items():
         props = feature["properties"]
-        for value in [props["naam"], *props.get("aliases", [])]:
+        for value in [props["naam"], re.sub(r" \d+$", "", props["naam"]), *props.get("aliases", [])]:
             if fold(value):
                 owners[fold(value)].add(entity_id)
-    ref_owners: dict[str, set[str]] = defaultdict(set)
-    for entity_id, feature in features.items():
-        for ref in feature["properties"].get("refs", []):
-            ref_owners[ref["ref"]].add(entity_id)
-
+    # Gecontroleerde Nederlandse namen voor dezelfde bronidentiteit. Andere
+    # homoniemen mogen alleen via naam EN gedeelde verwijzing worden verbonden.
+    crosswalk = {fold(name): entity_id for name, entity_id in staging_builder.legacy_crosswalk().items()}
     enriched = 0
-    appended = 0
+    pending = []
     for old in legacy:
         props = old.get("properties", {})
-        ids = owners.get(fold(props.get("naam", "")), set())
-        if len(ids) != 1:
-            overlap = Counter()
-            for ref in props.get("verwijzingen", []):
-                overlap.update(ref_owners.get(ref, set()))
-            if overlap:
-                best_score = max(overlap.values())
-                best = {entity_id for entity_id, score in overlap.items() if score == best_score}
-                if len(best) == 1:
-                    ids = best
+        name = fold(props.get("naam", ""))
+        ids = {crosswalk[name]} if name in crosswalk else owners.get(name, set())
+        old_refs = set(props.get("verwijzingen", []))
+        ids = {entity_id for entity_id in ids if entity_id in features and
+               old_refs.intersection(ref["ref"] for ref in features[entity_id]["properties"].get("refs", []))}
         if len(ids) == 1:
             target = features[next(iter(ids))]["properties"]
-            for key in ("moderneNaam", "landModern", "toelichting"):
-                if props.get(key) and not target.get(key):
-                    target[key] = props[key]
+            if props.get("naam") not in target["aliases"]:
+                target["aliases"].append(props["naam"])
+            old_id = "geo-legacy-" + staging_builder.slug(props.get("naam", "plaats"))
+            if old_id not in target.setdefault("legacyIds", []):
+                target["legacyIds"].append(old_id)
+            # De moderne naam/omschrijving hoort bij de gekozen bronresolutie,
+            # niet bij een oude (mogelijk concurrerende) coördinaat.
             enriched += 1
             continue
 
-        # Handmatig gepubliceerde punten zonder eenduidige crosswalk blijven
-        # beschikbaar, maar worden nooit met een homoniem samengevoegd.
-        coords = old.get("geometry", {}).get("coordinates")
-        if not coords or len(coords) != 2:
-            continue
-        legacy_id = "geo-legacy-" + staging_builder.slug(props.get("naam", "plaats"))
-        suffix = 2
-        while legacy_id in features:
-            legacy_id = f"{legacy_id}-{suffix}"
-            suffix += 1
-        refs = []
-        for ref in props.get("verwijzingen", []):
-            if parse_ref(ref):
-                refs.append(runtime_ref(ref, "agent-reviewed"))
-        old["properties"] = {
-            **props,
-            "id": legacy_id,
-            "koppelingStatus": "agent-reviewed",
-            "humanReviewed": False,
-            "aliases": [],
-            "refs": refs,
-            "bron": {
-                "dataset": "Open Vertaling bestaande kaartgegevens",
-                "url": "https://openvertaling.nl/geografie.html",
-                "onderbouwing": "Bestaand handmatig samengesteld kaartpunt; de tekstverwijzingen zijn in de runtime-index opgenomen.",
-            },
-        }
-        features[legacy_id] = old
-        appended += 1
-    return {"verrijkt": enriched, "losBehouden": appended}
+        # Oude punten zonder controleerbare identiteit zijn geen extra plaatsen.
+        # Bewaar ze volledig in de bronlaag en expliciet in de review-inventaris.
+        pending.append({"naam": props.get("naam"), "verwijzingen": sorted(old_refs),
+                        "reden": "Geen eenduidige bronidentiteit; controleer naam, homoniem en coördinaat.",
+                        "status": "needs-human-review"})
+    return {"verrijkt": enriched, "losBehouden": 0, "teControleren": pending}
+
+
+def apply_location_preferences(features: dict[str, dict]) -> None:
+    """Gebruik redactioneel gekozen bronkandidaten zonder hun zekerheid te verhogen."""
+    path = DATA / "geografie-locatievoorkeuren.json"
+    if not path.exists():
+        return
+    document = read_json(path)
+    if document.get("schemaVersion") != 1:
+        raise ValueError("Onbekend schema voor locatievoorkeuren")
+    for preference in document["voorkeuren"]:
+        for place_id in preference["plaatsIds"]:
+            feature = features[place_id]
+            props = feature["properties"]
+            source = props["bron"]
+            # Een reeds toegepast voorkeurspunt blijft bij herhaald toepassen gelijk.
+            if source.get("kaartVoorkeur", {}).get("modernId") == preference["modernId"]:
+                continue
+            candidates = source.get("alternatieven", [])
+            candidate = next((item for item in candidates if item.get("modernId") == preference["modernId"]), None)
+            if not candidate:
+                raise ValueError(f"Locatievoorkeur is geen bestaande bronkandidaat: {place_id}")
+            original = {
+                "modernId": source.get("modernId"),
+                "lon": feature["geometry"]["coordinates"][0],
+                "lat": feature["geometry"]["coordinates"][1],
+                "score": source.get("score"),
+                "onderbouwing": source.get("onderbouwing"),
+            }
+            source["alternatieven"] = [original] + [item for item in candidates if item is not candidate]
+            source["kaartVoorkeur"] = {
+                "modernId": preference["modernId"], "url": preference["bronUrl"],
+                "titel": preference["bronTitel"], "oorspronkelijkeModernId": original["modernId"],
+            }
+            source["voorkeursInterpretatie"] = preference["toelichting"]
+            # Bron-id, bronweging en oorspronkelijke bronvoorkeur blijven intact.
+            source["onderbouwing"] = (source.get("onderbouwing") or "") + ". Dit is de oorspronkelijke bronvoorkeur; het weergegeven kaartpunt volgt de locatievoorkeur hierboven."
+            feature["geometry"]["coordinates"] = [candidate["lon"], candidate["lat"]]
+            props["moderneNaam"] = "Jabal al-Lawz" if props["type"] == "berg" else "Omgeving van Jabal al-Lawz"
+            props["landModern"] = preference["landModern"]
+            props["zekerheid"] = "onzeker"
+            props["toelichting"] = preference["toelichting"]
 
 
 def build(source: Path, output: Path = OUTPUT) -> dict:
     features: dict[str, dict] = {}
     add_outside_inventory(features)
     torah_counts = add_torah_inventory(features, source)
+    reviewed = apply_reviews(features)
     legacy_counts = enrich_from_legacy(features)
+    apply_location_preferences(features)
+    legacy_review = legacy_counts.pop("teControleren")
+    legacy_counts["teControleren"] = len(legacy_review)
+    (STAGING / "legacy-review.json").write_text(
+        json.dumps({"humanReviewed": False, "plaatsen": legacy_review}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     published = []
     excluded = Counter()
     for path in (STAGING / "boeken").glob("*.json"):
         for item in read_json(path).get("reviewQueue", []):
             if item.get("type") == "niet-canonieke-naamtreffer":
-                excluded["apocrief-of-ethiopisch-naamskandidaat-zonder-bevestigde-puntkoppeling"] += 1
+                if (item.get("entityId"), item.get("ref")) not in reviewed["settled"]:
+                    excluded["apocrief-of-ethiopisch-naamskandidaat-zonder-bevestigde-puntkoppeling"] += 1
     for feature in features.values():
         geometry = feature.get("geometry", {})
         coords = geometry.get("coordinates")
@@ -316,6 +343,9 @@ def build(source: Path, output: Path = OUTPUT) -> dict:
         "perKoppelingStatus": dict(sorted(statuses.items())),
         "torah": torah_counts,
         "legacy": legacy_counts,
+        "inhoudelijkeControle": reviewed["metadata"],
+        "bronSha256": read_json(STAGING / "manifest.json").get("bronSha256"),
+        "nietGeplaatsteBronentiteiten": read_json(STAGING / "manifest.json").get("nietGeplaatsteBronentiteiten", 0),
         "uitgesloten": dict(sorted(excluded.items())),
         "toelichting": "Onzekere punten zijn zichtbaar als zodanig; humanReviewed blijft false voor agentinventarisatie.",
     }

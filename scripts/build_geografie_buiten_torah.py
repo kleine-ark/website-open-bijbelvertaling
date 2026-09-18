@@ -11,12 +11,18 @@ niets stilzwijgend als zekere identificatie gepubliceerd.
 from __future__ import annotations
 
 import argparse
+import hashlib
+import html
 import json
+import math
 import re
 import unicodedata
 import urllib.request
 from collections import Counter, defaultdict
+from functools import lru_cache
 from pathlib import Path
+
+from geografie_versificatie import source_osis
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -117,9 +123,18 @@ def source_rows(source: Path):
 
 
 def choose_resolution(row: dict):
-    candidates = []
+    candidates = {}
+    special_options = []
     for identification in row.get("identifications", []):
+        scores = identification.get("score", {})
+        time_score = max(0, min(1000, scores.get("time_total", 0)))
         for resolution in identification.get("resolutions", []):
+            # Volg ook tussenstappen: de bron definieert modern_associations
+            # als time_total * best_time_score / 1000, niet vote_average.
+            score = time_score * max(0, min(1000, resolution.get("best_time_score", 1000))) / 1000
+            if resolution.get("special"):
+                special_options.append((score, resolution.get("special"), identification.get("description", "")))
+                continue
             lonlat = resolution.get("lonlat")
             if not lonlat:
                 continue
@@ -127,31 +142,60 @@ def choose_resolution(row: dict):
                 lon, lat = (float(part) for part in lonlat.split(","))
             except (TypeError, ValueError):
                 continue
-            score = identification.get("score", {}).get("vote_average", 0)
-            candidates.append((score, lon, lat, identification, resolution))
+            if not (math.isfinite(lon) and math.isfinite(lat) and -180 <= lon <= 180 and -90 <= lat <= 90):
+                continue
+            key = (resolution.get("modern_basis_id"), lon, lat)
+            if key not in candidates or candidates[key][0] < score:
+                candidates[key] = (score, lon, lat, identification, resolution)
     if not candidates:
         return None
+    candidates = list(candidates.values())
     candidates.sort(key=lambda item: item[0], reverse=True)
     score, lon, lat, identification, resolution = candidates[0]
+    special_options.sort(key=lambda item: item[0], reverse=True)
+    preferred_special = special_options[0] if special_options and special_options[0][0] >= score else None
+    # Een voorkeurslezing 'persoon/geen plaats' met sterke bronweging wordt
+    # niet als stad gepubliceerd. De bronrij blijft in de review-inventaris.
+    if score <= 0 or (preferred_special and preferred_special[1] == "not_a_place" and preferred_special[0] >= 500):
+        return None
     tied = sum(1 for item in candidates if item[0] == score) > 1
-    # De bron gebruikt een gewogen stemschaal met 500 als sterke consensus.
-    confidence = "onzeker" if tied or score < 250 else "waarschijnlijk"
-    if not tied and len(candidates) == 1 and score >= 450:
+    # Publicatielabels zijn conservatieve categorieën, geen kanspercentages.
+    confidence = "onzeker" if tied or preferred_special or score < 500 else "waarschijnlijk"
+    if not tied and not preferred_special and score >= 900 and identification.get("score", {}).get("vote_total", 0) >= 500:
         confidence = "zeker"
+    description = resolution.get("description", identification.get("description", ""))
+    modern_name = re.search(r"<modern\b[^>]*>(.*?)</modern>", description)
     return {
         "lat": lat,
         "lon": lon,
         "zekerheid": confidence,
         "bron": {
             "dataset": "OpenBible.info Bible Geocoding Data",
-            "url": SOURCE_PAGE,
+            "url": f"https://www.openbible.info/geo/ancient/{row['id']}/{row.get('url_slug', slug(row['friendly_id']))}",
+            "datasetUrl": SOURCE_PAGE,
             "ancientId": row["id"],
-            "modernId": identification.get("id"),
-            "onderbouwing": resolution.get("description", identification.get("description", "")),
+            "identificationId": identification.get("id"),
+            "modernId": resolution.get("modern_basis_id"),
+            "moderneNaam": (plain_description(modern_name.group(1)) if modern_name else
+                            row.get("modern_associations", {}).get(resolution.get("modern_basis_id"), {}).get("name", "")),
+            "onderbouwing": plain_description(description),
             "score": score,
+            "scoreType": "time_total × best_time_score / 1000",
+            "scores": identification.get("score", {}),
+            "puntType": " / ".join(str(resolution[key]) for key in ("lonlat_type", "ancient_geometry") if resolution.get(key)),
+            "voorkeursInterpretatie": plain_description(preferred_special[2]) if preferred_special else "",
+            "alternatieven": [
+                {"modernId": item[4].get("modern_basis_id"), "lon": item[1], "lat": item[2],
+                 "score": item[0], "onderbouwing": plain_description(item[4].get("description", ""))}
+                for item in candidates[1:]
+            ],
         },
-        "betwist": tied or len(candidates) > 1,
+        "betwist": bool(preferred_special) or tied or len(candidates) > 1,
     }
+
+
+def plain_description(value: str) -> str:
+    return html.unescape(re.sub(r"<[^>]*>", "", value)).strip()
 
 
 def entity_type(row: dict) -> str:
@@ -165,10 +209,20 @@ def entity_type(row: dict) -> str:
 
 
 def possible_labels(row: dict) -> list[str]:
+    # Per bronidentiteit gecontroleerde SV-vormen. Globale Engelse varianten
+    # zoals Ashan -> Ain mogen niet het andere woord in hetzelfde vers stelen.
+    verified = {
+        "ab5175f": ["Asan", "Ashan"],
+        "ac24f5f": ["Gibeä", "Gibea", "Gibeah"],
+        "ae981db": ["Seïr", "Seir"],
+    }
+    if row.get("id") in verified:
+        return verified[row["id"]]
     labels = [row.get("friendly_id", "")]
+    labels.extend(name for name, entity_id in legacy_crosswalk().items() if entity_id == stable_id(row))
     labels.extend(row.get("translation_name_counts", {}).keys())
     labels.extend(item.get("name", "") for item in row.get("names", []))
-    return sorted({label.strip() for label in labels if label.strip()}, key=len, reverse=True)
+    return sorted({label.strip() for label in labels if label.strip()}, key=lambda label: (-len(label), label.casefold()))
 
 
 def exact_label(text: str, labels: list[str]):
@@ -184,6 +238,21 @@ def stable_id(row: dict) -> str:
     return f"geo-{slug(row['friendly_id'])}-{row['id'][1:]}"
 
 
+@lru_cache(maxsize=1)
+def legacy_crosswalk() -> dict:
+    return read_json(DATA / "geografie-staging" / "legacy-crosswalk.json")
+
+
+def review_colliding_mentions(mentions: list[dict]) -> None:
+    owners = defaultdict(set)
+    for mention in mentions:
+        if mention.get("label"):
+            owners[mention["label"].casefold()].add(mention["entityId"])
+    for mention in mentions:
+        if mention.get("label") and len(owners[mention["label"].casefold()]) > 1:
+            mention["status"] = "needs-human-review"
+
+
 def build(source: Path):
     books = [book for book in bible_books() if book not in TORAH]
     text = {book: verses_for_book(book) for book in books}
@@ -191,11 +260,16 @@ def build(source: Path):
     per_book = {book: defaultdict(list) for book in books}
     review = {book: [] for book in books}
     alias_hits = defaultdict(lambda: defaultdict(list))
+    unlocated = []
 
     # Eerst de bron-gedisambigueerde 66-boekencorpus verwerken.
     for row in source_rows(source):
         resolution = choose_resolution(row)
         if not resolution:
+            unlocated.append({"entityId": stable_id(row), "naam": row["friendly_id"],
+                              "bron": f"https://www.openbible.info/geo/ancient/{row['id']}/{row.get('url_slug', slug(row['friendly_id']))}",
+                              "reden": "Geen publiceerbaar punt; onbekende locatie, onvoldoende bronweging of voorkeurslezing geen plaats.",
+                              "status": "needs-human-review", "humanReviewed": False})
             continue
         entity_id = stable_id(row)
         labels = possible_labels(row)
@@ -213,7 +287,7 @@ def build(source: Path):
         }
         used = False
         for verse in row.get("verses", []):
-            parsed = parse_osis(verse.get("osis", ""))
+            parsed = parse_osis(source_osis(verse))
             if not parsed:
                 continue
             book, key = parsed
@@ -221,7 +295,7 @@ def build(source: Path):
                 continue
             used = True
             label = exact_label(text[book][key], labels)
-            status = "agent-reviewed" if label and label.casefold() not in AMBIGUOUS else "needs-human-review"
+            status = "agent-reviewed" if label and slug(label) not in AMBIGUOUS else "needs-human-review"
             mention = {
                 "entityId": entity_id,
                 "ref": f"{book} {key}",
@@ -229,6 +303,8 @@ def build(source: Path):
                 "label": label,
                 "status": status,
                 "bronVerskoppeling": "OpenBible.info verse disambiguation",
+                "bronOsis": verse.get("osis", ""),
+                "lokaleOsis": source_osis(verse),
             }
             per_book[book][key].append(mention)
             if status == "agent-reviewed":
@@ -246,6 +322,22 @@ def build(source: Path):
             if resolution["betwist"]:
                 entity["status"] = "needs-human-review"
             entities[entity_id] = entity
+
+    # Een overeenkomstige tekstvorm bewijst bij meerdere bronentiteiten geen
+    # identiteit. Neem zulke Engelse vertaalvarianten niet als NL-aliassen over.
+    alias_hits.clear()
+    for book, verses in per_book.items():
+        for key, mentions in verses.items():
+            previously_reviewed = {item["entityId"] for item in mentions if item["status"] == "agent-reviewed"}
+            review_colliding_mentions(mentions)
+            for item in mentions:
+                if item["status"] == "agent-reviewed":
+                    alias_hits[item["entityId"]][item["label"]].append(item["ref"])
+                elif item["entityId"] in previously_reviewed:
+                    review[book].append({"type": "labelbotsing-in-vers", "entityId": item["entityId"],
+                                         "ref": item["ref"], "tekst": text[book][key],
+                                         "reden": "Dezelfde tekstvorm wordt aan meerdere bronentiteiten gekoppeld.",
+                                         "status": "needs-human-review"})
 
     for entity_id, labels in alias_hits.items():
         folded = {}
@@ -295,6 +387,9 @@ def build(source: Path):
                 })
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
+    (OUTPUT / "niet-gepubliceerde-punten.json").write_text(
+        json.dumps({"status": "needs-human-review", "humanReviewed": False, "plaatsen": unlocated},
+                   ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (OUTPUT / "boeken").mkdir(exist_ok=True)
     counts = Counter()
     total_verses = 0
@@ -364,6 +459,8 @@ def build(source: Path):
         "status": "agent-reviewed",
         "humanReviewed": False,
         "publicatieStatus": "staging-niet-samenvoegen-zonder-afstemming",
+        "bronSha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+        "nietGeplaatsteBronentiteiten": len(unlocated),
         "boeken": books,
         "aantallen": {
             "boeken": len(books), "verzenBeoordeeld": total_verses,
