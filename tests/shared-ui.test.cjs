@@ -20,7 +20,7 @@ test('all navigation and standalone auth consumers use exactly one module entry'
         assert.ok(entries[0].index < html.indexOf('</head>'), file);
         checked++;
     }
-    assert.equal(checked, 137);
+    assert.equal(checked, 138);
     assert.doesNotMatch(read('js/topnav.js'), /firebase-config\.js|auth\.js|collaboration\.js/);
     const bootstrap = read('js/auth-bootstrap.js');
     assert.deepEqual([...bootstrap.matchAll(/import '([^']+)';/g)].map(m => m[1]),

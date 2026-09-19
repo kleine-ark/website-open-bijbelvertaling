@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <script type="module" src="/js/auth-bootstrap.js"></script>
+    <script src="/js/theme.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Opnieuw verifiëren — Open Vertaling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/collaboration.css">
+    <style>
+        .herverificatie-rijen { list-style: none; padding: 0; margin: 12px 0 28px; }
+        .herverificatie-rijen li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; padding: 10px 0;
+            border-bottom: 1px solid var(--border-default, #e3ded4); }
+        .herverificatie-rijen a { font-weight: 600; }
+        .herverificatie-rijen .review-note { min-height: 0; border: 0; padding: 0; background: none; }
+    </style>
+</head>
+<body>
+    <nav id="topnav"></nav>
+    <script src="js/topnav.js"></script>
+    <main class="collaboration-main" hidden>
+        <div class="collaboration-heading">
+            <h1>Opnieuw verifiëren</h1>
+            <a class="secondary-button" href="beoordelingen.html">Beoordelingen</a>
+        </div>
+        <p class="collaboration-intro">Een goedkeuring hoort bij één versie van de tekst. Hieronder staan de hoofdstukken die eerder zijn geverifieerd en waarvan de tekst daarna is gewijzigd, bijvoorbeeld door een nieuw principe. Open een hoofdstuk om de huidige tekst te bekijken en bevestig het opnieuw. De verificatie wordt vastgelegd onder het account waarmee is ingelogd. Hoofdstukken die nog nooit zijn nagekeken staan hier niet.</p>
+        <p id="herverificatie-status" class="collaboration-status" role="status"></p>
+        <div class="collaboration-toolbar">
+            <button id="herverificatie-alles" class="primary-button" type="button" hidden></button>
+        </div>
+        <section id="herverificatie-lijst"></section>
+    </main>
+    <script src="js/review-components.js"></script>
+    <script src="js/herverificatie.js"></script>
+</body>
+</html>
