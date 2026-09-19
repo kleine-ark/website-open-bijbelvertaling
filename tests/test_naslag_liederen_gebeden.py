@@ -84,7 +84,7 @@ def test_reeksen_zijn_compleet_en_chronologisch(liederen, gebeden):
     assert liederen["nummerType"] == "Lied"
     assert gebeden["nummerType"] == "Gebed"
     assert [item["id"] for item in liederen["items"]] == LIED_IDS
-    assert len(gebeden["items"]) == 140
+    assert len(gebeden["items"]) == 141
 
     positie = {boek: index for index, boek in enumerate(BOOK_ORDER)}
     sleutels = []
@@ -303,10 +303,10 @@ def built():
 
 def test_builder_leidt_aaneengesloten_nummers_af(built):
     assert [bundle["nummer"] for bundle in built["liederen"].values()] == list(
-        range(1, 178)
+        range(1, 179)
     )
     assert [bundle["nummer"] for bundle in built["gebeden"].values()] == list(
-        range(1, 141)
+        range(1, 142)
     )
     assert all(bundle["nummerType"] == "Lied" for bundle in built["liederen"].values())
     assert all(bundle["nummerType"] == "Gebed" for bundle in built["gebeden"].values())
@@ -380,7 +380,7 @@ def test_builder_weigert_verkeerd_aantal_items(tmp_path):
         json.dumps({"nummerType": "Lied", "items": []}), encoding="utf-8"
     )
 
-    with pytest.raises(ValueError, match="177 items"):
+    with pytest.raises(ValueError, match="178 items"):
         build_collection(tmp_path, "liederen", "bron.json")
 
 

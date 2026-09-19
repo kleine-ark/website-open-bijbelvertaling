@@ -86,9 +86,9 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         page = self.open_page("liederen.html")
         try:
             labels = page.locator(".ns-kaart .ns-nummer").all_inner_texts()
-            self.assertEqual(labels, [f"Lied {number}" for number in range(1, 178)])
+            self.assertEqual(labels, [f"Lied {number}" for number in range(1, 179)])
             passages = page.locator(".ns-kaart .ns-kaart-passage").all_inner_texts()
-            self.assertEqual(len(passages), 177)
+            self.assertEqual(len(passages), 178)
             self.assertEqual(passages[0], "Exodus 15:1–18")
             self.assertEqual(passages[11], "Psalm 1")
             self.assertEqual(passages[161], "Hooglied 1–8")
@@ -100,11 +100,11 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         finally:
             page.close()
 
-    def test_gebeden_overzicht_is_genummerd_van_1_tot_140(self):
+    def test_gebeden_overzicht_is_genummerd_van_1_tot_141(self):
         page = self.open_page("gebeden.html")
         try:
             labels = page.locator(".ns-kaart .ns-nummer").all_inner_texts()
-            self.assertEqual(labels, [f"Gebed {number}" for number in range(1, 141)])
+            self.assertEqual(labels, [f"Gebed {number}" for number in range(1, 142)])
             self.assertEqual(page.locator(".ns-lead").count(), 0)
             names = page.locator(".ns-kaart-naam").all_inner_texts()
             paulus_names = [name for name in names if name.startswith("Paulus'")]
@@ -123,7 +123,7 @@ class WikiLiederenGebedenTest(unittest.TestCase):
         page = self.open_page("gebeden.html")
         try:
             passages = page.locator(".ns-kaart .ns-kaart-passage").all_inner_texts()
-            self.assertEqual(len(passages), 140)
+            self.assertEqual(len(passages), 141)
             self.assertEqual(passages[0], "Genesis 18")
             self.assertEqual(passages[2], "Exodus 5")
             self.assertEqual(passages[4], "Exodus 32 · Deuteronomium 9")
@@ -138,8 +138,8 @@ class WikiLiederenGebedenTest(unittest.TestCase):
             page.goto(f"{self.base_url}/wiki-overzicht.html")
             page.locator(".wo-badge").first.wait_for(state="visible")
             badges = page.locator(".wo-badge").all_inner_texts()
-            self.assertIn("177 liederen", badges)
-            self.assertIn("140 gebeden", badges)
+            self.assertIn("178 liederen", badges)
+            self.assertIn("141 gebeden", badges)
         finally:
             page.close()
 
