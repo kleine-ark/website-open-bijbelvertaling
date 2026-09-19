@@ -1,7 +1,7 @@
 {
  "titel": "Open Vertaling — boekenindex",
- "beschrijving": "Alle Bijbelboeken in de Open Vertaling met hun data-id, testament en aantal hoofdstukken. Tekst per hoofdstuk: https://openvertaling.nl/data/{boek-id}/{hoofdstuk}.json",
- "licentie": "Bijbeltekst vrij/niet-commercieel; zie /llms.txt voor bronnen",
+ "beschrijving": "Alle Bijbelboeken in de Open Vertaling met hun data-id, testament, aantal hoofdstukken en het nummer van het eerste hoofdstuk. Tekst per hoofdstuk: https://openvertaling.nl/data/{boek-id}/{hoofdstuk}.json",
+ "licentie": "Bijbeltekst van de Open Vertaling (alle 88 boeken): CC0 1.0, publiek domein, https://creativecommons.org/publicdomain/zero/1.0/ . Grondtekst- en woordenboekdata van derden hebben een eigen licentie; zie https://openvertaling.nl/llms.txt",
  "aantal_boeken": 88,
  "boeken": [
   {
@@ -9,6 +9,7 @@
    "naam": "1 Koningen",
    "testament": "Oude Testament",
    "hoofdstukken": 22,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/1koningen/{hoofdstuk}.json"
   },
   {
@@ -16,6 +17,7 @@
    "naam": "1 Kronieken",
    "testament": "Oude Testament",
    "hoofdstukken": 29,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/1kronieken/{hoofdstuk}.json"
   },
   {
@@ -23,6 +25,7 @@
    "naam": "1 Samuël",
    "testament": "Oude Testament",
    "hoofdstukken": 31,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/1samuel/{hoofdstuk}.json"
   },
   {
@@ -30,6 +33,7 @@
    "naam": "2 Koningen",
    "testament": "Oude Testament",
    "hoofdstukken": 25,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/2koningen/{hoofdstuk}.json"
   },
   {
@@ -37,6 +41,7 @@
    "naam": "2 Kronieken",
    "testament": "Oude Testament",
    "hoofdstukken": 36,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/2kronieken/{hoofdstuk}.json"
   },
   {
@@ -44,6 +49,7 @@
    "naam": "2 Samuël",
    "testament": "Oude Testament",
    "hoofdstukken": 24,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/2samuel/{hoofdstuk}.json"
   },
   {
@@ -51,6 +57,7 @@
    "naam": "Amos",
    "testament": "Oude Testament",
    "hoofdstukken": 9,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/amos/{hoofdstuk}.json"
   },
   {
@@ -58,6 +65,7 @@
    "naam": "Daniël",
    "testament": "Oude Testament",
    "hoofdstukken": 12,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/daniel/{hoofdstuk}.json"
   },
   {
@@ -65,6 +73,7 @@
    "naam": "Deuteronomium",
    "testament": "Oude Testament",
    "hoofdstukken": 34,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/deuteronomium/{hoofdstuk}.json"
   },
   {
@@ -72,6 +81,7 @@
    "naam": "Esther",
    "testament": "Oude Testament",
    "hoofdstukken": 10,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/esther/{hoofdstuk}.json"
   },
   {
@@ -79,6 +89,7 @@
    "naam": "Exodus",
    "testament": "Oude Testament",
    "hoofdstukken": 40,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/exodus/{hoofdstuk}.json"
   },
   {
@@ -86,6 +97,7 @@
    "naam": "Ezechiël",
    "testament": "Oude Testament",
    "hoofdstukken": 48,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/ezechiel/{hoofdstuk}.json"
   },
   {
@@ -93,6 +105,7 @@
    "naam": "Ezra",
    "testament": "Oude Testament",
    "hoofdstukken": 10,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/ezra/{hoofdstuk}.json"
   },
   {
@@ -100,6 +113,7 @@
    "naam": "Genesis",
    "testament": "Oude Testament",
    "hoofdstukken": 50,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/genesis/{hoofdstuk}.json"
   },
   {
@@ -107,6 +121,7 @@
    "naam": "Habakuk",
    "testament": "Oude Testament",
    "hoofdstukken": 3,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/habakuk/{hoofdstuk}.json"
   },
   {
@@ -114,6 +129,7 @@
    "naam": "Haggaï",
    "testament": "Oude Testament",
    "hoofdstukken": 2,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/haggai/{hoofdstuk}.json"
   },
   {
@@ -121,6 +137,7 @@
    "naam": "Hooglied",
    "testament": "Oude Testament",
    "hoofdstukken": 8,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/hooglied/{hoofdstuk}.json"
   },
   {
@@ -128,6 +145,7 @@
    "naam": "Hosea",
    "testament": "Oude Testament",
    "hoofdstukken": 14,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/hosea/{hoofdstuk}.json"
   },
   {
@@ -135,6 +153,7 @@
    "naam": "Jeremia",
    "testament": "Oude Testament",
    "hoofdstukken": 52,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/jeremia/{hoofdstuk}.json"
   },
   {
@@ -142,6 +161,7 @@
    "naam": "Jesaja",
    "testament": "Oude Testament",
    "hoofdstukken": 66,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/jesaja/{hoofdstuk}.json"
   },
   {
@@ -149,6 +169,7 @@
    "naam": "Job",
    "testament": "Oude Testament",
    "hoofdstukken": 42,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/job/{hoofdstuk}.json"
   },
   {
@@ -156,6 +177,7 @@
    "naam": "Jona",
    "testament": "Oude Testament",
    "hoofdstukken": 4,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/jona/{hoofdstuk}.json"
   },
   {
@@ -163,6 +185,7 @@
    "naam": "Jozua",
    "testament": "Oude Testament",
    "hoofdstukken": 24,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/jozua/{hoofdstuk}.json"
   },
   {
@@ -170,6 +193,7 @@
    "naam": "Joël",
    "testament": "Oude Testament",
    "hoofdstukken": 3,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/joel/{hoofdstuk}.json"
   },
   {
@@ -177,6 +201,7 @@
    "naam": "Klaagliederen",
    "testament": "Oude Testament",
    "hoofdstukken": 5,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/klaagliederen/{hoofdstuk}.json"
   },
   {
@@ -184,6 +209,7 @@
    "naam": "Leviticus",
    "testament": "Oude Testament",
    "hoofdstukken": 27,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/leviticus/{hoofdstuk}.json"
   },
   {
@@ -191,6 +217,7 @@
    "naam": "Maleachi",
    "testament": "Oude Testament",
    "hoofdstukken": 4,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/maleachi/{hoofdstuk}.json"
   },
   {
@@ -198,6 +225,7 @@
    "naam": "Micha",
    "testament": "Oude Testament",
    "hoofdstukken": 7,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/micha/{hoofdstuk}.json"
   },
   {
@@ -205,6 +233,7 @@
    "naam": "Nahum",
    "testament": "Oude Testament",
    "hoofdstukken": 3,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/nahum/{hoofdstuk}.json"
   },
   {
@@ -212,6 +241,7 @@
    "naam": "Nehemia",
    "testament": "Oude Testament",
    "hoofdstukken": 13,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/nehemia/{hoofdstuk}.json"
   },
   {
@@ -219,6 +249,7 @@
    "naam": "Numeri",
    "testament": "Oude Testament",
    "hoofdstukken": 36,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/numeri/{hoofdstuk}.json"
   },
   {
@@ -226,6 +257,7 @@
    "naam": "Obadja",
    "testament": "Oude Testament",
    "hoofdstukken": 1,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/obadja/{hoofdstuk}.json"
   },
   {
@@ -233,6 +265,7 @@
    "naam": "Prediker",
    "testament": "Oude Testament",
    "hoofdstukken": 12,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/prediker/{hoofdstuk}.json"
   },
   {
@@ -240,6 +273,7 @@
    "naam": "Psalmen",
    "testament": "Oude Testament",
    "hoofdstukken": 150,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/psalmen/{hoofdstuk}.json"
   },
   {
@@ -247,6 +281,7 @@
    "naam": "Richteren",
    "testament": "Oude Testament",
    "hoofdstukken": 21,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/richteren/{hoofdstuk}.json"
   },
   {
@@ -254,6 +289,7 @@
    "naam": "Ruth",
    "testament": "Oude Testament",
    "hoofdstukken": 4,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/ruth/{hoofdstuk}.json"
   },
   {
@@ -261,6 +297,7 @@
    "naam": "Spreuken",
    "testament": "Oude Testament",
    "hoofdstukken": 31,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/spreuken/{hoofdstuk}.json"
   },
   {
@@ -268,6 +305,7 @@
    "naam": "Zacharia",
    "testament": "Oude Testament",
    "hoofdstukken": 14,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/zacharia/{hoofdstuk}.json"
   },
   {
@@ -275,6 +313,7 @@
    "naam": "Zefanja",
    "testament": "Oude Testament",
    "hoofdstukken": 3,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/zefanja/{hoofdstuk}.json"
   },
   {
@@ -282,6 +321,7 @@
    "naam": "1 Johannes",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 5,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/1johannes/{hoofdstuk}.json"
   },
   {
@@ -289,6 +329,7 @@
    "naam": "1 Korinthiërs",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 16,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/1korinthiers/{hoofdstuk}.json"
   },
   {
@@ -296,6 +337,7 @@
    "naam": "1 Petrus",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 5,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/1petrus/{hoofdstuk}.json"
   },
   {
@@ -303,6 +345,7 @@
    "naam": "1 Tessalonicensen",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 5,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/1tessalonicensen/{hoofdstuk}.json"
   },
   {
@@ -310,6 +353,7 @@
    "naam": "1 Timotheüs",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 6,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/1timotheus/{hoofdstuk}.json"
   },
   {
@@ -317,6 +361,7 @@
    "naam": "2 Johannes",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 1,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/2johannes/{hoofdstuk}.json"
   },
   {
@@ -324,6 +369,7 @@
    "naam": "2 Korinthiërs",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 13,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/2korinthiers/{hoofdstuk}.json"
   },
   {
@@ -331,6 +377,7 @@
    "naam": "2 Petrus",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 3,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/2petrus/{hoofdstuk}.json"
   },
   {
@@ -338,6 +385,7 @@
    "naam": "2 Tessalonicensen",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 3,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/2tessalonicensen/{hoofdstuk}.json"
   },
   {
@@ -345,6 +393,7 @@
    "naam": "2 Timotheüs",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 4,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/2timotheus/{hoofdstuk}.json"
   },
   {
@@ -352,6 +401,7 @@
    "naam": "3 Johannes",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 1,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/3johannes/{hoofdstuk}.json"
   },
   {
@@ -359,6 +409,7 @@
    "naam": "Efeziërs",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 6,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/efeziers/{hoofdstuk}.json"
   },
   {
@@ -366,6 +417,7 @@
    "naam": "Filemon",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 1,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/filemon/{hoofdstuk}.json"
   },
   {
@@ -373,6 +425,7 @@
    "naam": "Filippenzen",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 4,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/filippenzen/{hoofdstuk}.json"
   },
   {
@@ -380,6 +433,7 @@
    "naam": "Galaten",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 6,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/galaten/{hoofdstuk}.json"
   },
   {
@@ -387,6 +441,7 @@
    "naam": "Handelingen",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 28,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/handelingen/{hoofdstuk}.json"
   },
   {
@@ -394,6 +449,7 @@
    "naam": "Hebreeën",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 13,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/hebreeen/{hoofdstuk}.json"
   },
   {
@@ -401,6 +457,7 @@
    "naam": "Jakobus",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 5,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/jakobus/{hoofdstuk}.json"
   },
   {
@@ -408,6 +465,7 @@
    "naam": "Johannes",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 21,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/johannes/{hoofdstuk}.json"
   },
   {
@@ -415,6 +473,7 @@
    "naam": "Judas",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 1,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/judas/{hoofdstuk}.json"
   },
   {
@@ -422,6 +481,7 @@
    "naam": "Kolossenzen",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 4,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/kolossenzen/{hoofdstuk}.json"
   },
   {
@@ -429,6 +489,7 @@
    "naam": "Lukas",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 24,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/lukas/{hoofdstuk}.json"
   },
   {
@@ -436,6 +497,7 @@
    "naam": "Markus",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 16,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/markus/{hoofdstuk}.json"
   },
   {
@@ -443,6 +505,7 @@
    "naam": "Mattheüs",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 28,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/mattheus/{hoofdstuk}.json"
   },
   {
@@ -450,6 +513,7 @@
    "naam": "Openbaring",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 22,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/openbaring/{hoofdstuk}.json"
   },
   {
@@ -457,6 +521,7 @@
    "naam": "Romeinen",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 16,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/romeinen/{hoofdstuk}.json"
   },
   {
@@ -464,6 +529,7 @@
    "naam": "Titus",
    "testament": "Nieuwe Testament",
    "hoofdstukken": 3,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/titus/{hoofdstuk}.json"
   },
   {
@@ -471,6 +537,7 @@
    "naam": "1 Makkabeeën",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 16,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/1makkabeeen/{hoofdstuk}.json"
   },
   {
@@ -478,6 +545,7 @@
    "naam": "2 Makkabeeën",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 15,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/2makkabeeen/{hoofdstuk}.json"
   },
   {
@@ -485,6 +553,7 @@
    "naam": "3 Ezra",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 9,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/3ezra/{hoofdstuk}.json"
   },
   {
@@ -492,6 +561,7 @@
    "naam": "3 Makkabeeën",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 7,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/3makkabeeen/{hoofdstuk}.json"
   },
   {
@@ -499,6 +569,7 @@
    "naam": "4 Ezra",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 16,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/4ezra/{hoofdstuk}.json"
   },
   {
@@ -506,6 +577,7 @@
    "naam": "Baruch",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 6,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/baruch/{hoofdstuk}.json"
   },
   {
@@ -513,6 +585,7 @@
    "naam": "Bel en de draak",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 1,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/belenddedraak/{hoofdstuk}.json"
   },
   {
@@ -520,6 +593,7 @@
    "naam": "Boek der Wijsheid",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 19,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/boekderwijsheid/{hoofdstuk}.json"
   },
   {
@@ -527,6 +601,7 @@
    "naam": "Esther (apocrief)",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 7,
+   "eerste_hoofdstuk": 10,
    "data": "https://openvertaling.nl/data/estherapocrief/{hoofdstuk}.json"
   },
   {
@@ -534,6 +609,7 @@
    "naam": "Gebed van Azarja",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 1,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/gebedvanazaria/{hoofdstuk}.json"
   },
   {
@@ -541,6 +617,7 @@
    "naam": "Gebed van Manasse",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 1,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/gebedvanmanasse/{hoofdstuk}.json"
   },
   {
@@ -548,6 +625,7 @@
    "naam": "Gezang in de vuuroven",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 1,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/gezangindevuuroven/{hoofdstuk}.json"
   },
   {
@@ -555,6 +633,7 @@
    "naam": "Jezus Sirach",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 51,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/jezussirach/{hoofdstuk}.json"
   },
   {
@@ -562,6 +641,7 @@
    "naam": "Judith",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 16,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/judith/{hoofdstuk}.json"
   },
   {
@@ -569,6 +649,7 @@
    "naam": "Susanna",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 1,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/susanna/{hoofdstuk}.json"
   },
   {
@@ -576,6 +657,7 @@
    "naam": "Tobit",
    "testament": "Apocrief / deuterocanoniek",
    "hoofdstukken": 14,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/tobit/{hoofdstuk}.json"
   },
   {
@@ -583,6 +665,7 @@
    "naam": "1 Meqabyan",
    "testament": "Ethiopisch (Ge’ez)",
    "hoofdstukken": 36,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/1meqabyan/{hoofdstuk}.json"
   },
   {
@@ -590,6 +673,7 @@
    "naam": "2 Meqabyan",
    "testament": "Ethiopisch (Ge’ez)",
    "hoofdstukken": 21,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/2meqabyan/{hoofdstuk}.json"
   },
   {
@@ -597,6 +681,7 @@
    "naam": "3 Meqabyan",
    "testament": "Ethiopisch (Ge’ez)",
    "hoofdstukken": 10,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/3meqabyan/{hoofdstuk}.json"
   },
   {
@@ -604,6 +689,7 @@
    "naam": "4 Baruch",
    "testament": "Ethiopisch (Ge’ez)",
    "hoofdstukken": 9,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/4baruch/{hoofdstuk}.json"
   },
   {
@@ -611,6 +697,7 @@
    "naam": "Henoch",
    "testament": "Ethiopisch (Ge’ez)",
    "hoofdstukken": 108,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/henoch/{hoofdstuk}.json"
   },
   {
@@ -618,6 +705,7 @@
    "naam": "Jubileeën",
    "testament": "Ethiopisch (Ge’ez)",
    "hoofdstukken": 50,
+   "eerste_hoofdstuk": 1,
    "data": "https://openvertaling.nl/data/jubileeen/{hoofdstuk}.json"
   }
  ]
