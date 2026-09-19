@@ -110,7 +110,12 @@ const Auth = {
     },
 
     async logout() {
-        if (!this.auth) return;
+        // Meteen afgemeld in beeld, ook als Firebase nog niet geladen is: de naam
+        // kwam uit de cache, en die mag dan niet blijven staan.
+        this.saveCache(null);
+        this.currentUser = null;
+        this.renderButton(null);
+        if (!this.auth) { this.notify(); return; }
         const { signOut } = window._fb.authMod;
         try { await signOut(this.auth); } catch (e) { console.warn(e); }
     },
@@ -154,9 +159,9 @@ const Auth = {
         name.className = 'auth-name';
         name.textContent = (user.displayName || user.email || 'Ingelogd').split(' ')[0];
         const logout = document.createElement('button');
+        logout.type = 'button';
         logout.className = 'auth-btn auth-logout';
-        logout.title = 'Uitloggen';
-        logout.textContent = '↪';
+        logout.textContent = 'Uitloggen';
         logout.addEventListener('click', () => this.logout());
         wrap.append(name, logout);
         slot.appendChild(wrap);

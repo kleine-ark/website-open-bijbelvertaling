@@ -486,6 +486,10 @@
         width: 100%;
         justify-content: flex-start;
     }
+    /* In het menu is ruimte voor de naam, en Uitloggen vult de rest van de regel. */
+    .topnav-links .topnav-auth .auth-user { display: flex; width: 100%; }
+    .topnav-links .topnav-auth .auth-name { display: inline; max-width: none; }
+    .topnav-links .topnav-auth .auth-logout { width: auto; flex: 1; justify-content: center; padding: 8px 10px; }
     .topnav-mobile-weergave:hover { background: rgba(203,164,73,.15); color: var(--gold); }
 }
 
