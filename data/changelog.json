@@ -2,6 +2,24 @@
   "wijzigingen": [
     {
       "datum": "2026-09-19",
+      "versie": "v0.59.5",
+      "items": [
+        {
+          "type": "verbetering",
+          "beschrijving": "De site opent veel sneller. De lezer wacht niet meer op gegevens die pas bij een instelling zichtbaar worden: het boekbestand met Strong-koppelingen (voor Genesis ruim 7 MB), de tekstverbanden en de iconen van Weergave laden pas als je ze gebruikt. Bij een volgend bezoek komt alleen nog binnen wat veranderd is."
+        },
+        {
+          "type": "feature",
+          "beschrijving": "Elk hoofdstuk van alle 88 boeken staat nu ook als gewone webpagina op openvertaling.nl/bijbel/, en de hele tekst als platte tekst in llms-full.txt. Zo vinden zoekmachines en AI-taalmodellen de Bijbeltekst zelf, niet alleen de voorpagina."
+        },
+        {
+          "type": "correctie",
+          "beschrijving": "Overal staat nu dat de Bijbeltekst vrij van rechten is (CC0), in alle 88 boeken, ook de apocriefe en de Ethiopische; op enkele plaatsen stond nog 'niet-commercieel'. Het citeervoorbeeld op de pagina voor AI's toont nu de tekst van de Open Vertaling."
+        }
+      ]
+    },
+    {
+      "datum": "2026-09-19",
       "versie": "v0.59.4",
       "items": [
         {
