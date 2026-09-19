@@ -67,6 +67,10 @@ const Tags = {
 
     // Toon tags bij een vers (kleine labels onder het versnummer)
     async renderTagsForChapter(bookId, chapterNum) {
+        // Zonder de optie Tekstverbanden zijn de labels onzichtbaar; dan hoeven
+        // tags.json en naslag-verzen.json (samen ruim twee megabyte) niet mee te
+        // komen. Gaat de optie aan, dan tekent de lezer het hoofdstuk opnieuw.
+        if (!document.body.classList.contains('show-tags')) return;
         await this.ensureLoaded();
         const rows = document.querySelectorAll('.verse-row');
         rows.forEach(row => {
@@ -177,7 +181,9 @@ const Tags = {
     },
 
     // Tag-invoer popup bij een vers
-    showAddTagPopup(bookId, chapterNum, verseNum, anchorEl) {
+    async showAddTagPopup(bookId, chapterNum, verseNum, anchorEl) {
+        // De tags komen niet meer vanzelf mee met elk hoofdstuk (zie renderTagsForChapter).
+        await this.ensureLoaded();
         let popup = document.getElementById('tag-add-popup');
         if (!popup) {
             popup = document.createElement('div');

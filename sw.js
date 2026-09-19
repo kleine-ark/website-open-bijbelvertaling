@@ -208,11 +208,14 @@ async function cacheFirstWithRefresh(req, cacheName) {
 }
 
 /** Network-first: probeer netwerk, val terug op cache bij offline.
- *  Voor CSS/JS zodat wijzigingen direct zichtbaar zijn. */
+ *  Voor CSS/JS zodat wijzigingen direct zichtbaar zijn. 'no-cache' vraagt de
+ *  server bij elk verzoek of het bestand veranderd is; is dat niet zo, dan komt
+ *  er alleen een korte 304 terug in plaats van het hele bestand ('no-store'
+ *  downloadde bij elk bezoek alle scripts en hoofdstukdata opnieuw). */
 async function networkFirst(req, cacheName) {
     const cache = await caches.open(cacheName);
     try {
-        const resp = await fetch(req, { cache: 'no-store' });
+        const resp = await fetch(req, { cache: 'no-cache' });
         if (resp.ok) cache.put(req, resp.clone());
         return resp;
     } catch (e) {

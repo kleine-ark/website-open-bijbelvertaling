@@ -36,6 +36,8 @@ const DataLoader = {
             const idx = this._chapterCacheOrder.indexOf(key);
             if (idx >= 0) this._chapterCacheOrder.splice(idx, 1);
             this._chapterCacheOrder.push(key);
+            // Gaan de Strong-nummers pas later aan, dan vult het hoofdstuk zich hier alsnog aan.
+            if (edition === 'nl-ov') await this._vulWoordnummersAan(this.chapterCache[key], bookId, chapterNum);
             return this.chapterCache[key];
         }
         let ch;
@@ -44,10 +46,7 @@ const DataLoader = {
         } else {
             ch = await Verification.loadJSON(`data/${bookId}/${chapterNum}.json`);
             if (window.CitatieUit) window.CitatieUit.hoofdstuk(ch, bookId);
-            if (window.OVWoordnummers) {
-                const mappings = await window.OVWoordnummers.loadBookMappings(bookId);
-                window.OVWoordnummers.mergeChapterMappings(ch, mappings, chapterNum);
-            }
+            await this._vulWoordnummersAan(ch, bookId, chapterNum);
         }
 
         // Merge localStorage edits voor deze chapter
@@ -58,6 +57,24 @@ const DataLoader = {
         this._chapterCacheOrder.push(key);
         this._evictOld();
         return ch;
+    },
+
+    /** Vult woordnummers aan uit het boekbestand in data/woordnummers-inline/.
+     *  Dat bestand is per boek megabytes groot en voegt alleen iets toe aan verzen
+     *  die in de hoofdstuk-JSON nog geen woordnummers hebben. De lezer toont ze
+     *  bovendien alleen als de Strong-nummers aan staan; zonder die twee
+     *  voorwaarden wacht de eerste weergave er dus niet op. */
+    _woordnummersAangevuld: new WeakSet(),
+
+    async _vulWoordnummersAan(ch, bookId, chapterNum) {
+        if (!ch || !window.OVWoordnummers || this._woordnummersAangevuld.has(ch)) return;
+        if (typeof Opties === 'undefined' || !Opties.state || Opties.state.strongs !== 'aan') return;
+        const zonderWoordnummers = (ch.verses || []).some(v => !(Array.isArray(v.woordnummers) && v.woordnummers.length));
+        if (zonderWoordnummers) {
+            const mappings = await window.OVWoordnummers.loadBookMappings(bookId);
+            window.OVWoordnummers.mergeChapterMappings(ch, mappings, chapterNum);
+        }
+        this._woordnummersAangevuld.add(ch);
     },
 
     /** Backward-compat: bouwt 'oude' formaat dict {chapters: [...]} maar laadt LAZY.

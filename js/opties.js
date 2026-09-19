@@ -84,10 +84,12 @@ const Opties = {
         this.applyReaderStyleClasses();
         document.body.classList.toggle('show-tags', this.state.geoMarkeren === 'aan');
 
-        // Arabische namen lui laden (en, indien al ingeschakeld, hoofdstuk herrenderen)
+        // Arabische namen lui laden (en, indien al ingeschakeld, hoofdstuk herrenderen).
+        // De geodata van de Tora is alleen nodig voor Tekstverbanden; die komt pas
+        // als de optie aan staat of aangezet wordt.
         this.ready = Promise.all([
             this.loadArabischeNamen(),
-            this.loadGeoData(),
+            this.state.geoMarkeren === 'aan' ? this.loadGeoData() : Promise.resolve(),
             this.loadEenheden(),
             this.loadTijden(),
         ]);
@@ -164,6 +166,7 @@ const Opties = {
                     if (input.id === 'toggle-contextmarkeringen') {
                         document.body.classList.toggle('show-tags', input.checked);
                     }
+                    if (input.dataset.optie === 'geoMarkeren' && input.checked) this.loadGeoData();
                     this.save();
                     if (input.dataset.optie === 'apocriefeBoeken' || input.dataset.optie === 'ethiopischeBoeken') {
                         if (typeof Sidebar !== 'undefined' && Sidebar.renderTree) Sidebar.renderTree();
@@ -385,8 +388,9 @@ const Opties = {
 
     /** Laad de geografische-locatie-data voor de vijf boeken van de Torah. */
     loadGeoData() {
+        if (this._geoLaden) return this._geoLaden;
         var boeken = ['genesis', 'exodus', 'leviticus', 'numeri', 'deuteronomium'];
-        return Promise.all(boeken.map(function (boek) {
+        return this._geoLaden = Promise.all(boeken.map(function (boek) {
             return fetch('data/' + boek + '-geo.json')
                 .then(function (r) { return r.ok ? r.json() : null; })
                 .then(function (data) { return [boek, data]; });
