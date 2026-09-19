@@ -30,6 +30,8 @@ Achter elk boek staat het data-id voor de adressen hieronder, met het aantal hoo
 
 ## Tekst ophalen
 
+- [Volledige tekst (llms-full.txt)](https://openvertaling.nl/llms-full.txt): alle 88 boeken als platte tekst (ongeveer 6 MB), met een kop per boek en per hoofdstuk en één vers per regel.
+- [Leespagina's](https://openvertaling.nl/bijbel/): elk hoofdstuk als gewone webpagina, zonder JavaScript: https://openvertaling.nl/bijbel/{boek-id}/{hoofdstuk}.html, bijvoorbeeld https://openvertaling.nl/bijbel/johannes/3.html; per boek https://openvertaling.nl/bijbel/{boek-id}/.
 - Hoofdstuk als JSON: https://openvertaling.nl/data/{boek-id}/{hoofdstuk}.json — bijvoorbeeld https://openvertaling.nl/data/johannes/3.json of https://openvertaling.nl/data/henoch/1.json. Per vers (`verses[]`): `number`, `text2026` (Open Vertaling, platte tekst), `text2026_html`, `textSV1888` (Statenvertaling 1888), `text1637` (Statenvertaling 1637), `marginNotes` (kanttekeningen), `grondtekst` (grondtekst met Strong's-nummers en morfologie) en `phraseDiff` (verschillen met 1888).
 - [Boekenindex (JSON)](https://openvertaling.nl/data/books-index.json): alle 88 boeken met data-id, naam, testament, aantal hoofdstukken en het nummer van het eerste hoofdstuk.
 - Lezen in de browser: https://openvertaling.nl/#{boek-id}/{hoofdstuk} of met vers https://openvertaling.nl/#{boek-id}/{hoofdstuk}/{vers}, bijvoorbeeld https://openvertaling.nl/#johannes/3/16. De leesweergave is een JavaScript-toepassing; voor machines is de JSON geschikter.
@@ -96,6 +98,7 @@ Bronvermelding is niet verplicht (CC0), maar wordt op prijs gesteld. Kort: "Joha
 - [Voor AI's & ontwikkelaars](https://openvertaling.nl/voor-ai.html): hoe je de Open Vertaling leest, gebruikt en citeert, met data-adressen en boekenindex.
 - [Boekenindex (JSON)](https://openvertaling.nl/data/books-index.json): alle 88 Bijbelboeken met data-id, testament en aantal hoofdstukken.
 - Tekst per hoofdstuk (JSON): https://openvertaling.nl/data/{boek-id}/{hoofdstuk}.json — zie "Tekst ophalen" hierboven.
+- [Volledige tekst (llms-full.txt)](https://openvertaling.nl/llms-full.txt) en [leespagina's per hoofdstuk](https://openvertaling.nl/bijbel/).
 
 ## Optional
 

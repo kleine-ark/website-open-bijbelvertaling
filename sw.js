@@ -165,7 +165,8 @@ self.addEventListener('fetch', (event) => {
 
     // HTML: network-first — altijd de nieuwste pagina als online (voorkomt dat
     // mobiel een versie achterloopt met verouderde JS-structuur); cache = offline-fallback.
-    if (path.endsWith('.html') || path === '/') {
+    // Een adres dat op / eindigt (bijv. /bijbel/genesis/) is ook een pagina.
+    if (path.endsWith('.html') || path.endsWith('/')) {
         event.respondWith(networkFirst(req, SHELL_CACHE));
         return;
     }

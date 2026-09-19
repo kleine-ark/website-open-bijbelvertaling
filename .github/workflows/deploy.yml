@@ -24,7 +24,9 @@ jobs:
       deploy_source: .
       # De API synchroniseert hierna de catalogus; pas daarna worden status en
       # downloads op de server uit de actuele, accountgebonden beslissingen gebouwd.
-      build_command: python scripts/build_naslag_teksten.py && python scripts/build_naslag_verzen.py && python scripts/build_illustraties.py && python scripts/build_review_catalog.py
+      # build_leespaginas.py schrijft de Bijbeltekst als gewone HTML (bijbel/) en
+      # als platte tekst (llms-full.txt), zodat zoekmachines en AI-crawlers hem vinden.
+      build_command: python scripts/build_naslag_teksten.py && python scripts/build_naslag_verzen.py && python scripts/build_illustraties.py && python scripts/build_review_catalog.py && python scripts/build_leespaginas.py
       rsync_excludes: |
         .git/
         .github/

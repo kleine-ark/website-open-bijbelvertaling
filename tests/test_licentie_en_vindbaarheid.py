@@ -42,6 +42,12 @@ def test_llms_txt_zegt_dat_alle_boeken_vrij_van_rechten_zijn():
             assert re.search(r"LXX|Rahlfs|Dillmann|BY-NC", regel), regel
 
 
+def test_llms_txt_wijst_naar_de_volledige_tekst_en_de_leespaginas():
+    tekst = lees("llms.txt")
+    assert "https://openvertaling.nl/llms-full.txt" in tekst
+    assert "https://openvertaling.nl/bijbel/{boek-id}/{hoofdstuk}.html" in tekst
+
+
 def test_llms_txt_noemt_ieder_boek_met_zijn_data_id():
     tekst = lees("llms.txt")
     ontbrekend = [boek["id"] for boek in boeken() if f"`{boek['id']}`" not in tekst]
@@ -65,6 +71,11 @@ def test_citeervoorbeeld_op_de_ai_pagina_is_de_tekst_van_de_open_vertaling():
     vers = next(v for v in json.loads(lees("data/johannes/3.json"))["verses"] if v["number"] == 16)
     citaat = re.search(r'<div class="ai-quote">&ldquo;(.*?)&rdquo;</div>', lees("voor-ai.html"), re.S).group(1)
     assert " ".join(citaat.split()) == vers["text2026"]
+
+
+def test_homepage_wijst_crawlers_zonder_javascript_naar_de_leespaginas():
+    noscript = re.search(r"<noscript>(.*?)</noscript>", lees("index.html"), re.S).group(1)
+    assert 'href="bijbel/"' in noscript and 'href="llms-full.txt"' in noscript
 
 
 def test_homepage_json_ld_draagt_de_cc0_licentie():

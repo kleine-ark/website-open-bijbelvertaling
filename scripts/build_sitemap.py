@@ -49,6 +49,15 @@ def main():
     for f in sorted(glob.glob(os.path.join(ROOT, "handschriften", "*.html"))):
         name = os.path.basename(f)
         urls.append((f"{BASE}/handschriften/{name}", "0.6", "monthly"))
+    # Leespagina's (scripts/build_leespaginas.py bouwt ze bij de uitrol uit de data)
+    urls.append((f"{BASE}/bijbel/", "0.9", "weekly"))
+    with open(os.path.join(ROOT, "data", "books-index.json"), encoding="utf-8") as fh:
+        boeken = json.load(fh)["boeken"]
+    for boek in boeken:
+        urls.append((f"{BASE}/bijbel/{boek['id']}/", "0.7", "weekly"))
+        eerste = boek.get("eerste_hoofdstuk", 1)
+        for nummer in range(eerste, eerste + boek["hoofdstukken"]):
+            urls.append((f"{BASE}/bijbel/{boek['id']}/{nummer}.html", "0.8", "weekly"))
 
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -60,7 +69,8 @@ def main():
         out.append(f"    <priority>{prio}</priority>")
         out.append("  </url>")
     out.append("</urlset>")
-    with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as fh:
+    # newline="\n": ook op Windows LF, zoals de rest van de repo
+    with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(out) + "\n")
     print(f"sitemap.xml geschreven: {len(urls)} URL's ({len(urls)-len([u for u in urls if '/handschriften/' not in u[0]])} boekpagina's)")
 

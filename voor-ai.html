@@ -94,7 +94,11 @@ Volledig:   Open Vertaling (openvertaling.nl), een herziening van de
 
         <h2>Directe toegang tot de tekst</h2>
         <div class="ai-card">
-            <p>Elk hoofdstuk is als JSON beschikbaar op een vast, voorspelbaar adres:</p>
+            <p>De hele tekst staat als platte tekst in <a href="/llms-full.txt"><code>/llms-full.txt</code></a>
+            (alle 88 boeken, één vers per regel). Elk hoofdstuk is bovendien een gewone webpagina zonder
+            JavaScript, bijvoorbeeld <a href="/bijbel/johannes/3.html"><code>/bijbel/johannes/3.html</code></a>;
+            het overzicht staat op <a href="/bijbel/"><code>/bijbel/</code></a>.</p>
+            <p>Elk hoofdstuk is ook als JSON beschikbaar op een vast, voorspelbaar adres:</p>
             <pre class="ai-code"><span class="k">GET</span> https://openvertaling.nl/data/{boek-id}/{hoofdstuk}.json
 
 Voorbeeld:  https://openvertaling.nl/data/johannes/3.json</pre>
@@ -142,6 +146,8 @@ Voorbeeld:  https://openvertaling.nl/data/johannes/3.json</pre>
         <h2>Machine-leesbare bestanden</h2>
         <ul class="ai-res">
             <li><a href="/llms.txt">llms.txt</a></li>
+            <li><a href="/llms-full.txt">llms-full.txt</a></li>
+            <li><a href="/bijbel/">leespagina's</a></li>
             <li><a href="/data/books-index.json">books-index.json</a></li>
             <li><a href="/sitemap.xml">sitemap.xml</a></li>
             <li><a href="/robots.txt">robots.txt</a></li>
