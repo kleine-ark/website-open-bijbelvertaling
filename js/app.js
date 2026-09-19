@@ -58,10 +58,12 @@ const App = {
     },
 
     _updateEthiopicBanner(book) {
+        // Alleen de apocriefe boeken krijgen een waarschuwing; de Ethiopische boeken
+        // tonen er bewust geen meer (ook als ze als apocrief gemarkeerd zouden zijn).
         const isEth = book && (book.testament === 'ET' || (window.ETHIOPIC_BOOKS && window.ETHIOPIC_BOOKS.includes(book.id)));
         const isApoc = book && book.testament === 'AP';
         let banner = document.getElementById('ethiopic-banner');
-        if (!isEth && !isApoc) { if (banner) banner.style.display = 'none'; return; }
+        if (isEth || !isApoc) { if (banner) banner.style.display = 'none'; return; }
         if (!banner) {
             banner = document.createElement('div');
             banner.id = 'ethiopic-banner';
@@ -69,11 +71,7 @@ const App = {
             const container = document.getElementById('verses-container');
             if (container && container.parentNode) container.parentNode.insertBefore(banner, container);
         }
-        banner.innerHTML = isEth
-            ? '<strong>⚠ Buiten-canoniek boek (Ethiopisch-orthodoxe traditie).</strong> ' +
-              'Dit boek is géén onderdeel van de canon van Gods Woord en hoort niet tot de Statenvertaling-canon. ' +
-              'De vertaling is in bewerking en de Ge’ez-grondtekst wordt slechts gedeeltelijk (per beschikbaar hoofdstuk) getoond.'
-            : '<strong>⚠ Apocrief boek - geen onderdeel van de canon van Gods Woord</strong>';
+        banner.innerHTML = '<strong>⚠ Apocrief boek - geen onderdeel van de canon van Gods Woord</strong>';
         banner.style.display = 'block';
     },
 

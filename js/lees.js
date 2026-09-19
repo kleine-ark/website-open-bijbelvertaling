@@ -109,7 +109,7 @@ const Lees = {
 
         // AI-concept-banner tonen voor niet-geverifieerde hoofdstukken
         this._updateVerifiedBanner(bookId, chapter);
-        // Waarschuwing voor Ethiopische (buiten-canonieke) boeken
+        // Waarschuwing boven apocriefe boeken (de Ethiopische boeken hebben er geen)
         this._updateEthiopicBanner(book);
         // Datering (schrijftijd + oudste handschrift) bovenin
         this._updateDatingBox(book);

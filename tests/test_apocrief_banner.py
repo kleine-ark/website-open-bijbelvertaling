@@ -13,3 +13,10 @@ def test_beide_lezers_tonen_alleen_de_korte_apocriefwaarschuwing():
         assert EXPECTED in source
         assert "Dit boek behoort tot de apocriefe" not in source
         assert "niet als gezaghebbend Woord van God" not in source
+
+
+def test_de_ethiopische_boeken_krijgen_geen_waarschuwing_meer():
+    for relative_path in ("js/app.js", "js/lees-renderer.js"):
+        source = (ROOT / relative_path).read_text(encoding="utf-8")
+        assert "Buiten-canoniek boek" not in source, relative_path
+        assert "Ethiopisch-orthodoxe traditie" not in source, relative_path
