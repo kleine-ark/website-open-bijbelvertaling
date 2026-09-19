@@ -60,6 +60,13 @@ def test_voor_ai_pagina_en_json_ld_noemen_cc0():
     assert gevonden and all(waarde == CC0 for waarde in gevonden), gevonden
 
 
+def test_citeervoorbeeld_op_de_ai_pagina_is_de_tekst_van_de_open_vertaling():
+    # Een taalmodel neemt dit voorbeeld over als "de" Open Vertaling van Johannes 3:16.
+    vers = next(v for v in json.loads(lees("data/johannes/3.json"))["verses"] if v["number"] == 16)
+    citaat = re.search(r'<div class="ai-quote">&ldquo;(.*?)&rdquo;</div>', lees("voor-ai.html"), re.S).group(1)
+    assert " ".join(citaat.split()) == vers["text2026"]
+
+
 def test_homepage_json_ld_draagt_de_cc0_licentie():
     grafen = [knoop for blok in json_ld("index.html") for knoop in blok.get("@graph", [blok])]
     boek = next(knoop for knoop in grafen if knoop.get("@type") == "Book")
