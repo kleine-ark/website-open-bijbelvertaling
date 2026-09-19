@@ -6,7 +6,7 @@
     <script src="/js/theme.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
-    <title>Opnieuw verifiëren — Open Vertaling</title>
+    <title>Hoofdstukken afvinken — Open Vertaling</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/collaboration.css">
     <style>
@@ -15,6 +15,11 @@
             border-bottom: 1px solid var(--border-default, #e3ded4); }
         .herverificatie-rijen a { font-weight: 600; }
         .herverificatie-rijen .review-note { min-height: 0; border: 0; padding: 0; background: none; }
+        .herverificatie-rijen input[type="checkbox"] { width: 18px; height: 18px; margin: 0; accent-color: var(--navy, #142e42); }
+        .boek-keuze { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+        .boek-keuze select { font: inherit; padding: 6px 8px; border: 1px solid var(--border-default, #d4d0c8);
+            border-radius: 6px; background: var(--bg-surface, #fff); color: var(--text-primary, #333); max-width: 100%; }
+        .herverificatie-sectie { margin-top: 32px; }
     </style>
 </head>
 <body>
@@ -22,15 +27,31 @@
     <script src="js/topnav.js"></script>
     <main class="collaboration-main" hidden>
         <div class="collaboration-heading">
-            <h1>Opnieuw verifiëren</h1>
+            <h1>Hoofdstukken afvinken</h1>
             <a class="secondary-button" href="beoordelingen.html">Beoordelingen</a>
         </div>
-        <p class="collaboration-intro">Een goedkeuring hoort bij één versie van de tekst. Hieronder staan de hoofdstukken die eerder zijn geverifieerd en waarvan de tekst daarna is gewijzigd, bijvoorbeeld door een nieuw principe. Open een hoofdstuk om de huidige tekst te bekijken en bevestig het opnieuw. De verificatie wordt vastgelegd onder het account waarmee is ingelogd. Hoofdstukken die nog nooit zijn nagekeken staan hier niet.</p>
-        <p id="herverificatie-status" class="collaboration-status" role="status"></p>
-        <div class="collaboration-toolbar">
-            <button id="herverificatie-alles" class="primary-button" type="button" hidden></button>
-        </div>
-        <section id="herverificatie-lijst"></section>
+
+        <section id="boek-afvinken-sectie" hidden>
+            <p class="collaboration-intro">Kies een boek en vink de hoofdstukken aan die je hebt nagelezen. Met één knop worden ze in hun geheel goedgekeurd, net als met de knop Verifiëren in de lezer: de Bijbeltekst, de citaten en de inleiding, zoals ze nu gepubliceerd zijn. De goedkeuring wordt vastgelegd onder het account waarmee je bent ingelogd.</p>
+            <div class="collaboration-toolbar boek-keuze">
+                <label for="boek-keuze">Boek</label>
+                <select id="boek-keuze"></select>
+                <button id="boek-alles-aan" class="secondary-button" type="button" hidden>Alles aanvinken</button>
+                <button id="boek-afvinken" class="primary-button" type="button" hidden></button>
+            </div>
+            <p id="boek-status" class="collaboration-status" role="status"></p>
+            <ul id="boek-lijst" class="herverificatie-rijen"></ul>
+        </section>
+
+        <section class="herverificatie-sectie">
+            <h2>Opnieuw verifiëren</h2>
+            <p class="collaboration-intro">Een goedkeuring hoort bij één versie van de tekst. Hieronder staan de hoofdstukken die eerder zijn geverifieerd en waarvan de tekst daarna is gewijzigd, bijvoorbeeld door een nieuw principe. Open een hoofdstuk om de huidige tekst te bekijken en bevestig het opnieuw. De verificatie wordt vastgelegd onder het account waarmee is ingelogd.</p>
+            <p id="herverificatie-status" class="collaboration-status" role="status"></p>
+            <div class="collaboration-toolbar">
+                <button id="herverificatie-alles" class="primary-button" type="button" hidden></button>
+            </div>
+            <section id="herverificatie-lijst"></section>
+        </section>
     </main>
     <script src="js/review-components.js"></script>
     <script src="js/herverificatie.js"></script>

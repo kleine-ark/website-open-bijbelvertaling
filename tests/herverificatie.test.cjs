@@ -198,7 +198,7 @@ test('de pagina start de login op, blijft buiten zoekmachines en biedt wat het s
     assert.match(html, /href="beoordelingen\.html"/);
 });
 
-test('de pagina Beoordelingen wijst reviewers de weg naar het opnieuw verifiëren', () => {
+test('de pagina Beoordelingen wijst reviewers de weg naar het afvinken en opnieuw verifiëren', () => {
     const html = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'beoordelingen.html'), 'utf8');
-    assert.match(html, /<a class="secondary-button" href="herverificatie\.html">Opnieuw verifiëren<\/a>/);
+    assert.match(html, /<a class="secondary-button" href="herverificatie\.html">Hoofdstukken afvinken<\/a>/);
 });
