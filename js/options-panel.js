@@ -186,8 +186,10 @@ const OptionsPanel = {
         const search = document.getElementById('options-search');
         if (!search || search.dataset.bound === 'true') return;
         search.dataset.bound = 'true';
+        const empty = document.getElementById('options-search-empty');
         search.addEventListener('input', () => {
             const query = search.value.trim().toLocaleLowerCase('nl');
+            let found = 0;
             this.dialog.querySelectorAll('details.options-category').forEach(category => {
                 const rows = Array.from(category.querySelectorAll(
                     ':scope > .options-list > .option-row, :scope > .options-list > .option-choice'
@@ -195,6 +197,11 @@ const OptionsPanel = {
                 if (!query) {
                     category.hidden = false;
                     rows.forEach(row => { row.hidden = false; });
+                    return;
+                }
+                // Meest gebruikt bevat alleen kopieën; bij zoeken staat elke instelling één keer in beeld.
+                if (category.dataset.optionsCategory === 'meest-gebruikt') {
+                    category.hidden = true;
                     return;
                 }
                 const categoryMatch = category.querySelector(':scope > summary')
@@ -207,7 +214,9 @@ const OptionsPanel = {
                 });
                 category.hidden = visibleRows === 0;
                 if (visibleRows) category.open = true;
+                found += visibleRows;
             });
+            if (empty) empty.hidden = !query || found > 0;
         });
     },
 

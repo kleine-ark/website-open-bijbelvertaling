@@ -100,6 +100,37 @@ class OptionsPanelBrowserTests(unittest.TestCase):
         finally:
             page.close()
 
+    def test_zoeken_filtert_tijdens_het_typen_over_alle_categorieen(self):
+        page = self.open_reader()
+        try:
+            page.locator("#topnav-weergave").click()
+            search = page.locator("#options-search")
+            self.assertEqual(search.get_attribute("spellcheck"), "false")
+            search.press_sequentially("regelafsta")
+            rows = page.locator("#sidebar-right .option-row:visible, #sidebar-right .option-choice:visible")
+            # Elke instelling één keer: de kopie onder Meest gebruikt valt weg.
+            self.assertEqual(rows.count(), 1)
+            self.assertIn("Regelafstand", rows.first.inner_text())
+            self.assertFalse(page.locator('[data-options-category="meest-gebruikt"]').is_visible())
+            search.fill("")
+            self.assertTrue(page.locator('[data-options-category="meest-gebruikt"]').is_visible())
+            self.assertGreater(rows.count(), 10)
+        finally:
+            page.close()
+
+    def test_zoeken_zonder_treffers_zegt_dat_er_niets_is_gevonden(self):
+        page = self.open_reader()
+        try:
+            page.locator("#topnav-weergave").click()
+            page.locator("#options-search").press_sequentially("xyzq")
+            empty = page.locator("#options-search-empty")
+            self.assertTrue(empty.is_visible())
+            self.assertIn("Geen instellingen gevonden", empty.inner_text())
+            page.locator("#options-search").fill("")
+            self.assertFalse(empty.is_visible())
+        finally:
+            page.close()
+
     def test_hoofdinstellingen_gebruiken_de_aangeleverde_iconen(self):
         expected = {
             "thema.png",

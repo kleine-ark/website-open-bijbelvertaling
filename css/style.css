@@ -1244,6 +1244,15 @@ body {
     outline-offset: 1px;
 }
 .options-tabpanel[hidden] { display: none !important; }
+/* De rijen zetten zelf display: flex; zonder deze regel verbergt het zoekfilter niets. */
+.options-category[hidden],
+.option-row[hidden],
+.option-choice[hidden] { display: none !important; }
+.options-search-empty {
+    margin: 14px 16px;
+    color: var(--text-secondary);
+    font-size: 13.5px;
+}
 .options-category {
     margin: 0;
     overflow: hidden;
