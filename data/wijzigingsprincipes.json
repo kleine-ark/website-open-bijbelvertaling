@@ -7778,8 +7778,8 @@
    "categorie": "Verouderde woorden",
    "oud": "kwelen",
    "nieuw": "verwelken",
-   "toelichting": "'kwelen' (van planten: verdorren) -> 'verwelken'.",
-   "regex": "\\bkwee?l\\w*\\b"
+   "toelichting": "'kwelen' (van planten: verdorren) -> 'verwelken'. Let op: het patroon stond eerder op \bkwee?l\\w*\b en raakte daarmee ook kwellen, kwelling en kwelt van kwellen; nu alleen de vormen van kwelen.",
+   "regex": "\\b(kwelen|kweelt|kweelde|kweelden|gekweeld)\\b"
   },
   {
    "id": "V931",
