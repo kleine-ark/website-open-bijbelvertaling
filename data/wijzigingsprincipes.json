@@ -69,7 +69,7 @@
    "categorie": "Naamvallen",
    "oud": "dien / dezen / denzelven",
    "nieuw": "die / deze",
-   "toelichting": "Verwijzende naamvallen",
+   "toelichting": "Verwijzende naamvallen. In een vaste uitdrukking gaat de hele uitdrukking mee: te dien dage wordt op die dag, te dien tijde in die tijd (V1657). Alleen dien vervangen gaf op dertig plaatsen in de profeten 'Te die dage'; die zijn op 2026-09-28 alsnog Op die dag geworden.",
    "regex": "\\b(dien|dezen|denzelven)\\b"
   },
   {
@@ -9495,7 +9495,7 @@
    "categorie": "Verouderde woorden",
    "oud": "vel (huid)",
    "nieuw": "huid",
-   "toelichting": "'Vel' is nu vooral papier of pels; het lichaamsdeel heet huid. Vooral in de melaatsheidswetten.",
+   "toelichting": "'Vel' is nu vooral papier of pels; het lichaamsdeel heet huid. Vooral in de melaatsheidswetten. Huid is een de-woord: het vel wordt de huid, dat vel die huid, het gehele vel de hele huid. En het geldt alleen voor het zelfstandig naamwoord: vel hem neer (Psalm 17:13) is de gebiedende wijs van vellen en blijft staan. Beide fouten zijn op 2026-09-28 hersteld (Exodus 34, Leviticus 13, Psalm 17:13).",
    "regex": ""
   },
   {
@@ -15609,6 +15609,15 @@
    "toelichting": "De versteende datief 'te dien tijde' wordt 'in die tijd', zoals V698 dat doet met 'te dierzelfder tijd'. Alleen 'dien' vervangen (N4) levert 'te die tijde' op, dat geen Nederlands is.",
    "regex": "\\bte dien tijde\\b",
    "voorbeeld": "4 Ezra 6:24"
+  },
+  {
+   "id": "V1658",
+   "categorie": "Naamvallen",
+   "oud": "te dezer tijd",
+   "nieuw": "in deze tijd",
+   "toelichting": "De versteende datief 'te dezer tijd' wordt 'in deze tijd', zoals Esther 4:14 in de canon. N5 (dezer -> van deze) past hier niet: 'te van deze tijd' is geen Nederlands.",
+   "regex": "\\bte dezer tijd\\b",
+   "voorbeeld": "Baruch 3:5"
   }
  ]
 }
