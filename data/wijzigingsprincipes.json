@@ -15524,6 +15524,64 @@
    "regex": "\baalmoe(s|zen)\b",
    "bron": "menselijke-review",
    "bereik": "hele corpus"
+  },
+  {
+   "id": "V1652",
+   "categorie": "Verouderde woorden",
+   "oud": "schelmstuk",
+   "nieuw": "wandaad",
+   "toelichting": "Verouderd woord voor een gemene, verraderlijke daad. Staat tweemaal, beide keren in 2 Makkabeeën: de verdrinking van de Joden van Joppe (12:3) en de vrees voor een overval van de vijand (14:22). Schelmstuk is onzijdig en wandaad niet, dus het aanwijzend voornaamwoord gaat mee: dit schelmstuk wordt deze wandaad.",
+   "regex": "\\bschelmstuk\\b",
+   "bron": "lezersmelding",
+   "bereik": "hele corpus"
+  },
+  {
+   "id": "V1653",
+   "categorie": "Verouderde woorden",
+   "oud": "ongerijmds (niets ongerijmds)",
+   "nieuw": "ongepasts",
+   "toelichting": "In de uitdrukking niets ongerijmds gaat het om wat ongepast of onbehoorlijk is (2 Makkabeeën 14:23, Job 1:22, Job 24:12). Het zelfstandige ongerijmdheid bij de profeten (Jeremia 23:13, Klaagliederen 2:14) betekent dwaasheid en blijft hier buiten.",
+   "regex": "\\bongerijmds\\b",
+   "bron": "lezersmelding",
+   "bereik": "hele corpus"
+  },
+  {
+   "id": "V1654",
+   "categorie": "Verouderde woorden",
+   "oud": "daarbenevens",
+   "nieuw": "daarbij",
+   "toelichting": "Verouderd voor daarbij of bovendien; sluit aan bij V24 (benevens → naast). Staat in 2 Kronieken 34:16, 2 Makkabeeën 12:45 en 3 Makkabeeën 1:19.",
+   "regex": "\\b[Dd]aarbenevens\\b",
+   "bron": "lezersmelding",
+   "bereik": "hele corpus"
+  },
+  {
+   "id": "V1655",
+   "categorie": "Verouderde woorden",
+   "oud": "zich gekweten hebben (van een taak)",
+   "nieuw": "zich hebben ingezet",
+   "toelichting": "Zich kwijten van een taak is verouderd. In 2 Makkabeeën 2:22 gaat het om hen die zich voor het Jodendom hebben ingespannen; de woordvolgorde verschuift mee (gekweten hebben → hebben ingezet).",
+   "regex": "\\bgekweten\\b",
+   "bron": "lezersmelding",
+   "bereik": "hele corpus"
+  },
+  {
+   "id": "V1656",
+   "categorie": "Godsnamen",
+   "oud": "prins (als aanduiding van God)",
+   "nieuw": "Prins",
+   "toelichting": "Waar prins God aanduidt, hoort de hoofdletter erbij, zoals bij de andere godsnamen: 2 Makkabeeën 3:24 (de prins van de geesten), 12:15 (de grote prins van de wereld), 12:28 (God de prins), 15:4 (een machtig prins in de hemel) en 15:23 (U prins van de hemelen). In 15:5 gaat het over Nicanor zelf, daar blijft de kleine letter.",
+   "regex": "\\bprins\\b",
+   "bron": "lezersmelding",
+   "bereik": {
+    "2makkabeeen": [
+     "3:24",
+     "12:15",
+     "12:28",
+     "15:4",
+     "15:23"
+    ]
+   }
   }
  ]
 }
