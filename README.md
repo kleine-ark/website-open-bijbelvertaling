@@ -24,7 +24,7 @@ omkeerbaar.
    prediking, studie, apps of welk doel dan ook.
 2. **Open keuzes.** Voor herzieningskeuzes waarover discussie mogelijk is, zijn er
    instelbare opties (bijvoorbeeld de weergave van de Godsnaam: JAHWEH / de HEERE /
-   Jehovah / יהוה).
+   Jehovah / Yehováh / יהוה).
 3. **Open einde.** Een project dat vermoedelijk nooit helemaal ‘af’ is, maar
    onderhevig blijft aan nieuwe inzichten — altijd gebaseerd op de Statenvertaling.
 

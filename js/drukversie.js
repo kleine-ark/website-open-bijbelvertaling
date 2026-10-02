@@ -128,7 +128,7 @@
            en horen hier niet thuis. */
         LEESOPTIES: [
             ['godsnaam', 'Godsnaam', [['ov', 'JAHWEH'], ['klassiek', 'de HEERE'],
-                ['jehovah', 'Jehovah'], ['jhwh', 'יהוה']]],
+                ['jehovah', 'Jehovah'], ['yehovah', 'Yehováh'], ['jhwh', 'יהוה']]],
             ['heereNT', 'Aanspreektitel in het NT', [['heere', 'Heere'], ['here', 'Here']]],
             ['jezusNaam', 'Naam van Jezus', [['nl', 'Jezus Christus'], ['hebreeuws', 'Yeshua HaMashiach'],
                 ['koranisch', 'Isa'], ['arabisch', 'Yasūʿ al-Masīḥ']]],

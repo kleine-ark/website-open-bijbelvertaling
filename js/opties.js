@@ -5,8 +5,8 @@ const Opties = {
     STORAGE_KEY: 'sv2026_vertaalopties',
 
     DEFAULTS: {
-        godsnaam: 'ov',          // 'ov' (JAHWEH) | 'klassiek' (HEERE) | 'jehovah' (Jehovah) | 'jhwh' (יהוה)
-        godsnaamOPV: 'heere',    // Open Parafrase Vertaling: 'heere' (zoals geschreven) | 'jahweh' | 'jehovah' | 'jhwh'
+        godsnaam: 'ov',          // 'ov' (JAHWEH) | 'klassiek' (HEERE) | 'jehovah' (Jehovah) | 'yehovah' (Yehováh) | 'jhwh' (יהוה)
+        godsnaamOPV: 'heere',    // Open Parafrase Vertaling: 'heere' (zoals geschreven) | 'jahweh' | 'jehovah' | 'yehovah' | 'jhwh'
         heereNT: 'heere',        // NT-aanspreektitel (Kurios): 'heere' (OSV) | 'here' (Heere → Here)
         kolomLayout: 'naast',    // 'naast' (parallelle kolom) | 'eronder' (nieuwe regel onder OV2026)
         boekvolgorde: 'canoniek',// 'canoniek' | 'tenach' | 'chronologisch' | 'auteur' | 'lengte'
@@ -311,6 +311,11 @@ const Opties = {
             out = this._replaceOutsideTags(out, [
                 [/\bGod JAHWEH\b/g, 'God Jehovah'],
                 [/\bJAHWEH\b/g, 'Jehovah'],
+            ]);
+        } else if (this.state.godsnaam === 'yehovah') {
+            out = this._replaceOutsideTags(out, [
+                [/\bGod JAHWEH\b/g, 'God Yehováh'],
+                [/\bJAHWEH\b/g, 'Yehováh'],
             ]);
         } else if (this.state.godsnaam === 'jhwh') {
             out = this._replaceOutsideTags(out, [
@@ -656,7 +661,7 @@ const Opties = {
      */
     transformOPV(html) {
         if (!html) return html;
-        const naam = { jahweh: 'JAHWEH', jehovah: 'Jehovah', jhwh: 'יהוה' }[this.state.godsnaamOPV];
+        const naam = { jahweh: 'JAHWEH', jehovah: 'Jehovah', yehovah: 'Yehováh', jhwh: 'יהוה' }[this.state.godsnaamOPV];
         if (!naam) return html;
         return this._replaceOutsideTags(html, [
             [/\b(?:[Dd]e|DE) HEERE\b/g, naam],
